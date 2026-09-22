@@ -59,7 +59,7 @@
 [90m       10  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
 [90m           uma só fonte[0m
 
-[90m  hoje é 21.09.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+[90m  hoje é 22.09.2026; uma afirmação datada de hoje confere-se como corrente.[0m
 
   [32m✓[0m VISAO.md                                          0 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 5 avaliada(s), chão 4
 [90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
@@ -733,11 +733,12 @@ B1 país: todas as conferências a 0.
 
   B1: 28 páginas pela lista fechada; 7 temas conferidos.
 
-[32m  voz ✓ [0m65 marcadores · 12 exceções (0 de registo) · 762 frases distintas, 20910 ocorrências em 1376 rotas · autorreferência 0 · nada por classificar · divulgação 1404 ocorrência(s) nas rotas medidas · 1136 linhas do inventário com bloco (598 vivas, todas rendidas; 538 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 6656 · nomes declarados: areas 54, regioes 0, dominios 1974, figuras 170, medidas 82, projeto 646, oficial 0, concelho 4928 · palavras proibidas: 0 em 7354 página(s) da superfície (14 palavras da norma §1.3; 44 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
-[90m        9 bloco(s) do inventário por ler, e o registo di-lo:[0m
+[32m  voz ✓ [0m65 marcadores · 12 exceções (0 de registo) · 764 frases distintas, 20910 ocorrências em 1376 rotas · autorreferência 0 · nada por classificar · divulgação 1404 ocorrência(s) nas rotas medidas · 1140 linhas do inventário com bloco (600 vivas, todas rendidas; 540 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 6656 · nomes declarados: areas 54, regioes 0, dominios 1974, figuras 170, medidas 82, projeto 646, oficial 0, concelho 4928 · palavras proibidas: 0 em 7354 página(s) da superfície (14 palavras da norma §1.3; 44 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+[90m        10 bloco(s) do inventário por ler, e o registo di-lo:[0m
 [90m        · B1-peca1 · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu[0m
 [90m        · b1-peca3 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1-peca3-correcao · por ler[0m
 [90m        · cartao · por ler[0m
 [90m        · e1-evora-2027 · por ler[0m
 [90m        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados[0m
@@ -862,8 +863,84 @@ A leitura do olho, provada contra o motor:
 [90m        /livro-razao: 208 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0[0m
   [32m✓[0m I7 · sem transbordo a 390 nas páginas de linha
 [90m        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)[0m
-  [31m✗[0m I11 · o espaço entre o número e a palavra, a 390
-[90m        /: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 0 de 1 apanhada(s) · /en/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 0 de 1 apanhada(s)[0m
-[31m        · /: com o defeito plantado (`.dominios-estado,.mapa-nome-repouso{display:flex;gap:0}`, que devolve o texto a item anónimo) a régua apanhou 0 de 1 par(es). Tinha de apanhar todos: um par apanhado em sete deixava-a verde sobre uma página inteira por medir, e uma régua assim não prova nada.[0m
-[31m        · /en/: com o defeito plantado (`.dominios-estado,.mapa-nome-repouso{display:flex;gap:0}`, que devolve o texto a item anónimo) a régua apanhou 0 de 1 par(es). Tinha de apanhar todos: um par apanhado em sete deixava-a verde sobre uma página inteira por medir, e uma régua assim não prova nada.[0m
+  [32m✓[0m I11 · o espaço entre o número e a palavra, a 390
+[90m        /: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s) · /en/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s)[0m
+
+
+> o-estado-do-pais@0.1.0 check:cartao
+> node tests/cartao/cartao.mjs --prova
+
+[90m  prova: 11 estragos plantados, 11 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7354[0m
+[90m    cartões                          5272 (2636 pt, 2636 en)[0m
+[90m    com nome                         5272 de 5272[0m
+[90m    com a frase do que medem         4398 de 5272 com frase[0m
+[90m    com régua                        766 de 5272 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             152[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          1 (a exceção da I92)[0m
+[90m    o marcador em português          6 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    282 (a porta é a do cartão)[0m
+[90m    valores de referência, as duas testemunhas comparadas  13[0m
+[90m    medidas com nome oficial no recibo                    0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[32m  ✓ 5272 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 4398 de 5272 com frase e 766 de 5272 com régua, e os 152 períodos anteriores da mesma série e da mesma unidade[0m
+
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7354 página(s) lidas, 13 analisadas · 0 nome(s) em recibo, 0 em título de cartão · confirmados no ficheiro do motor: 0 do INE, 0 da PORDATA · recusados: 36[0m
+[33m  nenhum nome do ficheiro do motor está marcado «mesma_medida: true»: nenhum nome oficial se rende, e voltam um a um quando o motor os confirmar.[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 21 plantas foram recusadas ou aceites como deviam.
+
+> o-estado-do-pais@0.1.0 check:palavras
+> node tests/voz/palavras-proibidas.mjs --prova
+
+[32m  palavras ✓ [0m[90m20 de 20 plantas vistas (14 palavras, 6 buracos da superfície) · 7354 página(s) medidas em repouso, 0 achados · 44 página(s) com a superfície estreitada por rota declarada[0m
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs
+
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit 6e3baae · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   378983  [32m✓[0m
+  02-tipo.html                      Fundamentos   375631  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   410211  [32m✓[0m
+  04-regua.html                     Disposições   377550  [32m✓[0m
+  05-mapa.html                      Disposições   444050  [32m✓[0m
+  06-estados.html                   Componentes   374652  [32m✓[0m
+  07-cartoes.html                   Componentes   286961  [32m✓[0m
+  10-pagina-primeira.html           Páginas       471157  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       471451  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       225700  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       551404  [32m✓[0m
+  14-pagina-municipio.html          Páginas       277321  [32m✓[0m
+  15-pagina-lugares.html            Páginas       485913  [32m✓[0m
+  16-pagina-metodo.html             Páginas       253438  [32m✓[0m
+  17-pagina-agenda.html             Páginas       285885  [32m✓[0m
+  18-pagina-estudos.html            Páginas       203604  [32m✓[0m
+  19-pagina-sobre.html              Páginas       198787  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       251835  [32m✓[0m
+  21-pagina-404.html                Páginas       197522  [32m✓[0m
+  30-regras.html                    Fundamentos   240174  [32m✓[0m
+
+[90m  6603.7 KiB de cartões · maior cartão 538.5 KiB · tecto 596.75 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 15 ligações para fontes, intactas · 11 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7354 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
 
