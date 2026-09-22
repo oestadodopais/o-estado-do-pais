@@ -469,9 +469,9 @@ def main(argv):
         erros.append('o `BRIEF-M5.json` não foi lido, e é ele que cruza as contagens deste portão.')
     else:
         esperado = {m.get('nome'): m.get('valor') for m in medidas_do_m5.get('medidas', [])}
-        for chave, contado in (('briefs_conferidos_pelo_portao', conferidos_ate_ao_corte),
-                               ('briefs_isentos_por_data', len(por_data)),
-                               ('briefs_isentos_por_nomeacao', len(por_nomeacao))):
+        contado_por_chave = dict(zip(CRUZADAS, (conferidos_ate_ao_corte, len(por_data),
+                                                len(por_nomeacao))))
+        for chave, contado in contado_por_chave.items():
             if chave not in esperado:
                 erros.append(
                     f'o `BRIEF-M5.json` não declara «{chave}», e é uma das contagens que as duas '
