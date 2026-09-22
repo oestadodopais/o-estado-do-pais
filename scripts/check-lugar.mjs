@@ -991,11 +991,22 @@ for (const ficheiro of paginas) {
        declarado para o marcador, dentro da definição conferida do cartão. */
     if (a.matches('a.marcador') && a.closest('[data-cartao-definicao]') &&
         href === routePath('marcador', lang)) continue;
-    const chave = href.split('#')[0];
+    const chave = href.split('#')[0].replace(/\/$/, '') || (href.startsWith('/') ? '/' : '');
     if (!chave) continue;
     destinos.set(chave, (destinos.get(chave) ?? 0) + 1);
   }
   const repetidos = [...destinos.entries()].filter(([, n]) => n > 1);
+  /* A mobília conserva a sua exclusão da catraca. Porém, duas grafias da mesma
+     porta entre o menu e o corpo não podem esconder-se nessa exclusão. */
+  for (const a of cabecalho?.querySelectorAll('#nav-principal a[href]') ?? []) {
+    const href = a.getAttribute('href');
+    const chave = href.split('#')[0].replace(/\/$/, '') || '/';
+    const gemeas = corpo.querySelectorAll('a[href]').filter(b => !daMobilia.has(b) &&
+      !!b.getAttribute('href') && !b.getAttribute('href').startsWith('#') &&
+      (b.getAttribute('href').split('#')[0].replace(/\/$/, '') || '/') === chave);
+    const outras = gemeas.filter(b => b.getAttribute('href').split('#')[0] !== href.split('#')[0]);
+    if (outras.length) falhas.push(`L1 · ${url}: ${chave} ×${outras.length + 1}, porta repetida com duas grafias entre o menu e o corpo.`);
+  }
   if (repetidos.length) {
     medidas.l1_paginas++;
     anota('l1_paginas', `${url} · ${repetidos.length} destinos repetidos (ex.: ${repetidos[0][0]} ×${repetidos[0][1]})`);
