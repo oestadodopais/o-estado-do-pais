@@ -369,8 +369,8 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       en: 'How much does my municipality owe, and what is the cap?',
     },
     nome: {
-      pt: 'Dívida da câmara contra o limite legal',
-      en: 'Municipal debt against the legal cap',
+      pt: 'Limite legal da dívida das câmaras',
+      en: 'Legal cap on municipal debt',
     },
     unidade: { pt: 'Percentagem', en: 'Percentage' },
     limiar: null,
