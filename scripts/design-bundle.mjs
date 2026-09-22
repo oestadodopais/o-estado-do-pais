@@ -506,11 +506,25 @@ if (!direcao.includes(EMENDA_20C)) {
 /**
  * A paleta lê-se de `tokens.css`, nos dois temas, com o comentário de cada ficha.
  *
- * `:root` nu é a paleta clara completa, para todos; `:root[data-theme='dark']` é
- * a escolha do leitor, e o único caminho para o papel escuro (Emenda 12). O
+ * `:root` nu é a paleta clara completa; o bloco `@media (prefers-color-scheme:
+ * dark) { :root {…} }` é o papel escuro, que desde 22.09.2026 segue a
+ * preferência do sistema (§1.117, I130: o comando «claro · escuro» saiu com a
+ * mobília antiga na peça 3 do B1 e a preferência guardada deixou de se ler; a
+ * Emenda 12, que fechava a porta do sistema, fica revogada nesta parte). A
+ * expressão aceita também a forma antiga, `:root[data-theme='dark']`, para que
+ * um retorno a ela não deixe o feixe sem paleta escura sem ninguém dar por isso. O
  * comentário ao lado de cada ficha é o que traz as medições de contraste, e é
  * ele que o cartão imprime: nenhum destes números é datilografado aqui.
  */
+/** O texto do bloco escuro de `tokens.css`, na forma nova ou na antiga. */
+function blocoEscuro() {
+  const m =
+    css.tokens.match(/@media \(prefers-color-scheme: dark\) \{\s*\n\s*:root \{([\s\S]*?)\n  \}\n\}/) ??
+    css.tokens.match(/:root\[data-theme='dark'\] \{([\s\S]*?)\n\}/);
+  if (!m) morre("não encontrei o bloco escuro em `src/styles/tokens.css` (nem `@media (prefers-color-scheme: dark) { :root {…} }` nem `:root[data-theme='dark']`).");
+  return m[1];
+}
+
 function paleta() {
   const bloco = (re, oQue) => {
     const m = css.tokens.match(re);
@@ -527,7 +541,7 @@ function paleta() {
     return mapa;
   };
   const claro = pares(bloco(/\n:root \{([\s\S]*?)\n\}/, '`:root`'));
-  const escuro = pares(bloco(/:root\[data-theme='dark'\] \{([\s\S]*?)\n\}/, "`:root[data-theme='dark']`"));
+  const escuro = pares(blocoEscuro());
   const cores = [];
   const outras = [];
   for (const [nome, ficha] of claro) {
@@ -931,9 +945,16 @@ function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '' 
       `\n<style>\n${folhaDe(familias)}\n</style>\n`
   );
   if (tema) {
+    /* O PAPEL ESCURO SEM DEPENDER DO SISTEMA (22.09.2026). O sítio segue
+       `prefers-color-scheme`; um cartão da ferramenta de desenho tem de mostrar
+       o papel escuro a quem o abre num sistema claro, por isso o bloco escuro
+       entra aqui sem a condição, depois das folhas, com as mesmas fichas. */
     const html = root.querySelector('html');
     if (!html) morre(`\`dist/${rota}\` não tem <html>.`);
-    html.setAttribute('data-theme', tema);
+    cabeca.insertAdjacentHTML(
+      'beforeend',
+      `\n<style>\n/* o papel escuro, aplicado sem a condição do sistema, para a ferramenta de desenho */\n:root {${blocoEscuro()}\n}\n</style>\n`
+    );
   }
   const ligacoes = absolutizaLigacoes(root, `dist/${rota}`);
   return {
@@ -1214,7 +1235,7 @@ ${amostras}
     <h2>O tema</h2>
     <p class="ds-nota">Emenda 12, de 21.08.2026: «${emLinha(EMENDA('**Tema (§3 «Modo escuro» concretizado'))}»</p>
     ${citar(REGRA('**A paleta escura é regra provisória, e não proposta.**'))}
-    <p class="ds-nota">O controlo «claro · escuro» está no cabeçalho de todas as páginas e chega ao cartão com o atributo <code class="ds-mono">hidden</code> que a página lhe dá: é o código adiado do sítio que o mostra, e um cartão não tem código. O papel escuro vê-se no cartão <code class="ds-mono">11-pagina-primeira-escuro.html</code>.</p>
+    <p class="ds-nota">Desde 22.09.2026 (§1.117, I130) o papel escuro segue a preferência do sistema, por <code class="ds-mono">@media (prefers-color-scheme: dark)</code>, e não há comando nas páginas: o comando «claro · escuro» saiu com a mobília antiga na peça 3 do B1, e a preferência guardada deixou de se ler. A Emenda 12 fica revogada nesta parte. O papel escuro vê-se no cartão <code class="ds-mono">11-pagina-primeira-escuro.html</code>, que o aplica sem a condição do sistema.</p>
   </section>
 
   <section class="ds-bloco">
@@ -2087,8 +2108,8 @@ const PAGINAS = [
     titulo: 'Página: primeira, papel escuro',
     tema: 'dark',
     nota:
-      'O sítio serve CLARO a toda a gente, independentemente da preferência do sistema (Emenda 12). ' +
-      'Este cartão põe `data-theme="dark"` no <html> para que a paleta escura, que é a escolha do leitor no controlo do cabeçalho, se veja na ferramenta de desenho.',
+      'O sítio segue a preferência do sistema (§1.117, I130, 22.09.2026): escuro para quem o sistema pede escuro, sem comando nas páginas. ' +
+      'Este cartão embute o bloco escuro de `tokens.css` sem a condição do sistema, para que o papel escuro se veja na ferramenta de desenho num sistema claro.',
   },
   { ficheiro: '12-pagina-linha-livro-razao.html', rota: 'livro-razao/divida-publica-2025/index.html', titulo: 'Página: linha do livro-razão' },
   { ficheiro: '13-pagina-livro-razao.html', rota: 'livro-razao/index.html', titulo: 'Página: índice do livro-razão' },
@@ -2118,7 +2139,7 @@ for (const p of PAGINAS) {
     'Páginas',
     1240,
     feito.html,
-    `dist/${p.rota}${p.tema ? ' · data-theme=' + p.tema : ''}${feito.familias.length ? ' · +' + feito.familias.join('+') : ''}`
+    `dist/${p.rota}${p.tema ? ' · papel escuro' : ''}${feito.familias.length ? ' · +' + feito.familias.join('+') : ''}`
   );
 }
 

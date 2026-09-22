@@ -49,8 +49,10 @@ const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
 /* ============================================================= as duas paletas
  *
  * O ficheiro declara duas, por esta ordem: `:root` nu é a paleta clara, que é a
- * de toda a gente; `:root[data-theme='dark']` é a escura, que é a escolha do
- * leitor.
+ * de toda a gente; o bloco `@media (prefers-color-scheme: dark) { :root {…} }`
+ * é a escura, que desde 22.09.2026 segue a preferência do sistema (§1.117,
+ * I130: o comando saiu com a mobília antiga na peça 3 do B1, e a Emenda 12 fica
+ * revogada nesta parte). A régua aceita também a forma antiga do bloco.
  *
  * ERAM TRÊS BLOCOS ATÉ 21.08.2026, e a régua tinha uma conferência a mais: o
  * escuro vinha por duas portas — a preferência do sistema e a escolha explícita
@@ -65,8 +67,8 @@ const ESTADOS = [
   { chave: 'claro', titulo: 'claro (:root)', bloco: /:root\s*\{([\s\S]*?)\n\}/ },
   {
     chave: 'escuro',
-    titulo: "escuro, à escolha do leitor (:root[data-theme='dark'])",
-    bloco: /:root\[data-theme=['"]dark['"]\]\s*\{([\s\S]*?)\n\}/,
+    titulo: 'escuro, pela preferência do sistema (@media (prefers-color-scheme: dark))',
+    bloco: /(?:@media \(prefers-color-scheme: dark\) \{\s*\n\s*:root \{|:root\[data-theme=['"]dark['"]\]\s*\{)([\s\S]*?)\n  ?\}/,
   },
 ];
 
