@@ -88,25 +88,8 @@
 }
 
 /* ============================================================
-   TOKENS v3 — uma folha clara, e um leitor que pede escuro (Emenda 12).
-
-   :root nu                  = paleta clara completa, para todos
-   :root[data-theme="dark"]  = a escolha do leitor, e o único caminho para o
-                               escuro
-
-   O PADRÃO DE TRÊS ESTADOS ACABOU A 21.08.2026, e o que o substitui é uma
-   decisão e não uma simplificação. A direção leu a pré-visualização n.º 1 e
-   decidiu (Emenda 12; `DECISIONS.md` §1.52): **claro por defeito para todos,
-   independentemente da preferência do sistema**, com um controlo «claro ·
-   escuro» no cabeçalho e a escolha guardada no aparelho do leitor. O bloco de
-   consulta que lia a preferência de cor do sistema saiu daqui com essa decisão:
-   enquanto ele existia, dois leitores com o mesmo endereço viam páginas
-   diferentes sem nenhum ter escolhido nada, e a folha era a mesma para todos só
-   no papel.
-
-   Não há por isso dois blocos escuros para comparar: há um. A régua do
-   contraste mede as duas paletas que existem — a clara de `:root` e a escura de
-   `:root[data-theme='dark']` —, e é ela que diz os números.
+   TOKENS v3: a paleta segue o sistema, pela decisão do B1 de 22.09.2026.
+   A regra sem consulta dá a paleta clara; a consulta aplica a paleta escura.
 
    ------------------------------------------------------------
    A COR É O ESTADO (v3; `IDENTIDADE.md` §2, `DECISIONS.md` §1.50, Emenda 1 de
@@ -191,16 +174,8 @@
 }
 
 /* ============================================================
-   O ESCURO É UMA ESCOLHA DO LEITOR, E MAIS NADA (Emenda 12, 21.08.2026;
-   `DECISIONS.md` §1.52).
-
-   A regra que governa este bloco mudou de dono. A 20.08.2026 a direção tinha-o
-   adotado como REGRA PROVISÓRIA, com duas condições; a 21.08.2026, depois de o
-   ver no ar na pré-visualização n.º 1, decidiu que o escuro deixa de ser uma
-   leitura da preferência do sistema e passa a ser um pedido do leitor, feito num
-   controlo do cabeçalho e guardado no aparelho dele. Este selector é agora o
-   ÚNICO caminho para o escuro: sem ele, e sem o controlo, o sítio é claro para
-   toda a gente.
+   O ESCURO SEGUE O SISTEMA (B1, 22.09.2026).
+   A paleta conserva as cores e as condições de contraste já medidas.
 
    AS DUAS CONDIÇÕES DA DIREÇÃO CONTINUAM DE PÉ, porque são sobre a paleta e não
    sobre a porta por onde ela entra:
@@ -218,14 +193,16 @@
    (7,18:1), enquanto o marcador pode ficar no cobalto escuro porque leva
    contorno.
    ============================================================ */
-:root[data-theme='dark'] {
-  --paper: #15171a;
-  --ink: #eceeea; /* 15,38:1 sobre o papel escuro */
-  --g1: #b9beba; /* 9,52:1 */
-  --g2: #8e948f; /* 5,80:1 */
-  --g3: #3a3f3c; /* 1,67:1, decoração */
-  --amber: #e0a21a; /* 8,00:1 sobre papel escuro: aqui o âmbar lê-se sozinho */
-  --ochre: #e0a21a; /* a palavra do estado em escuro É o âmbar; o ocre falha aqui */
-  --cobalt: #1f4e8c; /* marcador; 2,16:1 sozinho, e por isso leva contorno */
-  --cobalt-palavra: #7fa6dc; /* 7,18:1 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15171a;
+    --ink: #eceeea; /* 15,38:1 sobre o papel escuro */
+    --g1: #b9beba; /* 9,52:1 */
+    --g2: #8e948f; /* 5,80:1 */
+    --g3: #3a3f3c; /* 1,67:1, decoração */
+    --amber: #e0a21a; /* 8,00:1 sobre papel escuro: aqui o âmbar lê-se sozinho */
+    --ochre: #e0a21a; /* a palavra do estado em escuro É o âmbar; o ocre falha aqui */
+    --cobalt: #1f4e8c; /* marcador; 2,16:1 sozinho, e por isso leva contorno */
+    --cobalt-palavra: #7fa6dc; /* 7,18:1 */
+  }
 }

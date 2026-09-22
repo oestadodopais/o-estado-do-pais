@@ -4374,11 +4374,6 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
-  for (const cadeia of CADEIAS_HEAD) textoHead = textoHead.split(cadeia).join(' ');
-  for (const token of tokensProibidos(textoHead, 'head')) {
-    err(
-      `<head>: o token "${token}" tem algarismos e não é nem um título de estudo ` +
-        `registado nem uma excepção declarada.\n      contexto: ${contexto(textoHead, token)}`,
   // B1: a contagem da Carta na descrição do país tem a mesma origem do mapa.
   // Só sai da varredura este número, na frase declarada e com a conta conferida.
   if (rota?.key === 'home') {
@@ -4388,6 +4383,11 @@ for (const file of ficheirosHtml(DIST)) {
         contagem?.[1] === String(MUNICIPIOS.length))
       textoHead = textoHead.replace(contagem[0], contagem[0].replace(contagem[1], ''));
   }
+  for (const cadeia of CADEIAS_HEAD) textoHead = textoHead.split(cadeia).join(' ');
+  for (const token of tokensProibidos(textoHead, 'head')) {
+    err(
+      `<head>: o token "${token}" tem algarismos e não é nem um título de estudo ` +
+        `registado nem uma excepção declarada.\n      contexto: ${contexto(textoHead, token)}`,
     );
   }
 
@@ -4470,23 +4470,13 @@ for (const file of ficheirosHtml(DIST)) {
       ligacoesInternas.push({ rel, base: baseDeResolucao(rel, caminho), href });
     }
 
-    /* A cor da mobília do navegador é a do papel desta página, e é UMA só.
-       A razão de não serem duas com `media` está escrita em `Base.astro` e é a
-       Emenda 12: neste sítio a preferência do sistema não decide o tema, e uma
-       etiqueta que a lesse prometia uma barra escura por cima de uma página
-       clara. Quem troca a cor é `public/js/tema.js`, com a escolha do leitor. */
+    /* A cor do navegador acompanha o sistema e continua presa aos tokens. */
     const cores = root.querySelectorAll('head meta[name="theme-color"]');
-    if (cores.length !== 1) {
-      err(
-        `o <head> tem ${cores.length} etiqueta(s) <meta name="theme-color"> e devia ter uma.\n` +
-          `      Uma por esquema do sistema mentiria: desde a Emenda 12 o escuro deste sítio é ` +
-          `uma escolha do leitor, não a preferência do aparelho dele.`,
-      );
-    } else if ((cores[0].getAttribute('content') ?? '').toLowerCase() !== PAPEL_CLARO) {
-      err(
-        `o <meta name="theme-color"> diz "${cores[0].getAttribute('content')}" e o papel claro ` +
-          `dos tokens é "${PAPEL_CLARO}".`,
-      );
+    if (cores.length !== 2) err(`tema do sistema: esperava duas etiquetas theme-color, encontrei ${cores.length}.`);
+    for (const [esquema, papel] of [['light', PAPEL_CLARO], ['dark', PAPEL_ESCURO]]) {
+      const daConsulta = cores.filter(c => c.getAttribute('media') === `(prefers-color-scheme: ${esquema})`);
+      if (daConsulta.length !== 1 || (daConsulta[0]?.getAttribute('content') ?? '').toLowerCase() !== papel)
+        err(`tema do sistema: theme-color de ${esquema} difere do papel declarado ${papel}.`);
     }
 
     const titulo = root.querySelector('head meta[name="apple-mobile-web-app-title"]');
@@ -6939,7 +6929,7 @@ for (const { rel, base, href } of ligacoesInternas) {
     const m = /--paper:\s*(#[0-9a-fA-F]{6})/.exec(dentro);
     return m ? m[1].toLowerCase() : null;
   };
-  const escuroBloco = /:root\[data-theme='dark'\]\s*\{([\s\S]*?)\}/.exec(cru);
+  const escuroBloco = /@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*:root\s*\{([^{}]*)\}/.exec(cru);
   const claro = papel(cru);
   const escuro = escuroBloco ? papel(escuroBloco[1]) : null;
   if (claro !== PAPEL_CLARO) {
@@ -6957,30 +6947,8 @@ for (const { rel, base, href } of ligacoesInternas) {
       msg: `o papel escuro dos tokens é "${escuro}" e site.config.mjs diz "${PAPEL_ESCURO}".`,
     });
   }
-  /* E a terceira cópia: a que `public/js/tema.js` escreve na etiqueta quando o
-     leitor carrega no botão. É JavaScript servido tal e qual, e por isso lê-se
-     do ficheiro e não se importa. */
-  const relTema = 'public/js/tema.js';
-  const tema = fs.readFileSync(path.join(ROOT, 'public', 'js', 'tema.js'), 'utf8');
-  const naEscolha = /var PAPEL = \{\s*light:\s*'(#[0-9a-fA-F]{6})',\s*dark:\s*'(#[0-9a-fA-F]{6})'/.exec(
-    tema,
-  );
-  if (!naEscolha) {
-    erros.push({
-      rel: relTema,
-      msg:
-        `não encontrei os dois papéis (var PAPEL = { light: '…', dark: '…' }).\n` +
-        `      É o que troca a cor da mobília do navegador quando o leitor escolhe o escuro; ` +
-        `sem eles a barra fica a dizer o papel claro por cima de uma página escura.`,
-    });
-  } else if (naEscolha[1].toLowerCase() !== PAPEL_CLARO || naEscolha[2].toLowerCase() !== PAPEL_ESCURO) {
-    erros.push({
-      rel: relTema,
-      msg:
-        `os papéis do controlo do tema são "${naEscolha[1]}" e "${naEscolha[2]}", e os tokens ` +
-        `dizem "${PAPEL_CLARO}" e "${PAPEL_ESCURO}".`,
-    });
-  }
+  // O guião deixou de ser servido. A N3 recusa a sua reposição nas páginas.
+
 }
 
 for (const m of MANIFESTOS) {
