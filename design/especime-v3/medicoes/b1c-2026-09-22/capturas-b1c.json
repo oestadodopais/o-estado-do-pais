@@ -1,5 +1,5 @@
 {
-  "cabeca": "9d30af50508f589457e534d05d88ba9552aa7f87",
+  "cabeca": "d91e899960cea85df511abe4b86fd6d38a25d0d5",
   "navegador": "148.0.7778.96",
   "resultados": [
     {
@@ -11,8 +11,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 6838,
-      "mudancasNaLista": 8,
+      "altura": 6197,
+      "mudancasNaLista": 1,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -26,7 +26,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "5e46215f1915f6100a06511e7e9ef6acfd226197e3d62996a8c4911375d1518a"
+      "sha256": "a00b0ae3181de49ced7338bf8a95cdb33aaab23f05928ac012ce5a442dc88bbf"
     },
     {
       "ficheiro": "depois-pais-pt-1280.png",
@@ -37,8 +37,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 5166,
-      "mudancasNaLista": 8,
+      "altura": 4791,
+      "mudancasNaLista": 1,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -52,7 +52,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "63869f62565e407326f4c71634f450ad1a6558d6794ba3c9e6b4fbdd5cda2d01"
+      "sha256": "1c5db5af5fb31290c2af57d14fc26913b3b5c57d67d5d008cb1dbc004a2c5075"
     },
     {
       "ficheiro": "depois-pais-en-390.png",
@@ -63,8 +63,8 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
-      "altura": 6892,
-      "mudancasNaLista": 8,
+      "altura": 6250,
+      "mudancasNaLista": 1,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -78,7 +78,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "7936e1b32c4d40aa7c795e265e2ff30c20fc38b293a117a381c87eb324061362"
+      "sha256": "360745f1a7454949e0c84bce2079ff1996f0cbbe2672f06722817001ef2264ad"
     },
     {
       "ficheiro": "depois-pais-en-1280.png",
@@ -89,8 +89,8 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
-      "altura": 5255,
-      "mudancasNaLista": 8,
+      "altura": 4880,
+      "mudancasNaLista": 1,
       "mudancasNoRegisto": 0,
       "lugaresComPorta": 0,
       "portasDeMudancas": [
@@ -104,7 +104,7 @@
       "selosPartidos": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "0db4511122be34d240c8f04a5ff35a7ce0875d56aa3c29ee2dd85a2c02a3722b"
+      "sha256": "a8deb1220ba318dd835ecd65b9ec4b48efde5df5be9eefa8716ca0a6d19da4b1"
     },
     {
       "ficheiro": "depois-registo-pt-390.png",

@@ -2,7 +2,7 @@
 
 Construtor: Claude Opus 5, 22.09.2026, na worktree `oquemudou-2026-09-22`, sobre `main` em `83e9df2d`.\
 Brief: `design/observatorio/BRIEF-B1c-o-que-mudou-no-seu-lugar.md`.\
-Os três portões inteiros e os três códigos estão na última secção, lidos dos ficheiros `.codigo`.
+Duas passagens: a construção, e a passagem curta da tarde, depois da leitura do lugar de direção. As contagens e as capturas deste ficheiro são as da segunda; o que a primeira mediu e o que mudou entre as duas está na última secção.
 
 ## O que se mediu antes, e duas coisas que o brief diz e a medição desmente
 
@@ -25,20 +25,20 @@ A medição de partida foi feita sobre `main` em `83e9df2d`, com `npm run build`
 | # | O que | A medida |
 | --- | --- | --- |
 | 1 | O âmbito das três listas numa função só, `src/lib/mudancas.mjs` | as três listas contadas em `dist/`, na tabela abaixo |
-| 2 | O teto de oito e a porta «Todas as mudanças» / «All changes» na página do país e nas de lugar | 8 linhas em cada uma das quatro páginas medidas; uma porta por página |
+| 2 | O teto de oito e a porta «Todas as mudanças» / «All changes» na página do país e nas de lugar | 1 linha na página do país e 8 em Évora, nas duas edições; uma porta por página |
 | 3 | O registo em `/correcoes` e `/en/corrections`, por data, com o lugar de cada linha e a sua porta | 30 linhas por edição, 30 portas de lugar; a norma, o canal e as revisões de proveniência intactos |
 | 4 | A definição do marcador uma vez por página | 1 por página, antes e depois |
-| 5 | As três células novas do `check:pais` com plantas | `plantas-b1c.json`, 20 provas |
+| 5 | As três células novas do `check:pais` com plantas | `plantas-b1c.json`, 21 provas |
 | 6 | O inventário, as listas fechadas do `check:voz` e o mapa do repositório | `check:voz` a 0 |
 | 7 | Relatório, capturas e os três portões | este ficheiro, `capturas-b1c.json`, os `.codigo` |
 
 ### As contagens
 
-| Página | Antes | Depois |
-| --- | ---: | ---: |
-| País (`/`, `/en`) | 30 | **8** (1 mudança do projeto, 7 publicações) |
-| Évora (`/municipios/evora`, `/en/municipalities/evora`) | 10 | **8** |
-| Registo (`/correcoes`, `/en/corrections`) | 16 linhas datadas | **30** (1 mudança do projeto, 13 publicações, 16 correções) |
+| Página | Antes | Depois da construção | Depois da passagem da tarde |
+| --- | ---: | ---: | ---: |
+| País (`/`, `/en`) | 30 | 8 (1 mudança do projeto, 7 publicações) | **1** (a mudança do projeto de 21.09) |
+| Évora (`/municipios/evora`, `/en/municipalities/evora`) | 10 | 8 | **8** |
+| Registo (`/correcoes`, `/en/corrections`) | 16 linhas datadas | 30 | **30** (1 mudança do projeto, 13 publicações, 16 correções) |
 
 As 16 correções do livro-razão inteiro, as 13 publicações do arquivo e a mudança declarada do projeto estão todas no registo, e a célula A3 fecha a construção se faltar ou sobrar uma. Nenhuma linha foi inventada e nenhuma foi apagada: o que saiu da primeira página está no registo, com a porta para o lugar a que pertence.
 
@@ -46,8 +46,8 @@ Os três lugares que o registo nomeia, com a porta de cada um: **Portugal → `/
 
 ### Duas consequências que o lugar de direção deve ler
 
-1. **A página do país ficou sem nenhuma linha de correção.** Das 16 entradas do livro-razão, nenhuma é de uma medida de `DOMINIO_DAS_MEDIDAS` nem de uma das sete linhas que a leitura do país cita: são dez do PRR de Évora, quatro da contagem dos estudos sobre Évora e duas do PIB por habitante do Alentejo. Pelo âmbito que o brief escreve, nenhuma pertence à página do país. O que lá fica são sete publicações e a mudança declarada de 21.09 — e **três dessas sete publicações são exactamente os três estudos que a secção «Estudos recentes», logo acima, já mostra**. A repetição é a que o §0 do brief apontava nas treze publicações, reduzida de treze para sete, e fica dita porque o teto não a resolve: resolve-a uma decisão sobre se as publicações pertencem à página do país quando ela já tem a secção dos estudos recentes.
-2. **A página do país a 1 280 px encurtou de 6 695 px (medida da segunda passagem da peça 3) para 5 166 px.** São 22 linhas a menos.
+1. **A página do país ficou sem nenhuma linha de correção.** Das 16 entradas do livro-razão, nenhuma é de uma medida de `DOMINIO_DAS_MEDIDAS` nem de uma das sete linhas que a leitura do país cita: são dez do PRR de Évora, quatro da contagem dos estudos sobre Évora e duas do PIB por habitante do Alentejo. Pelo âmbito que o brief escreve, nenhuma pertence à página do país. O que lá fica são sete publicações e a mudança declarada de 21.09 — e **três dessas sete publicações são exactamente os três estudos que a secção «Estudos recentes», logo acima, já mostra**. A repetição é a que o §0 do brief apontava nas treze publicações, reduzida de treze para sete, e o teto não a resolvia. **O lugar de direção decidiu-a nessa tarde e as publicações saíram da página do país**; a decisão e o que ela mudou estão na penúltima secção.
+2. **A página do país a 1 280 px encurtou de 6 695 px (medida da segunda passagem da peça 3) para 5 166 px.** São 22 linhas a menos. Com a decisão da tarde ficou em 4 791 px.
 
 ### O lugar de uma linha
 
@@ -59,7 +59,7 @@ Uma linha não alcançada por nenhuma dessas declarações fecha a construção,
 
 | Célula | Antes | Agora | Planta a morder |
 | --- | --- | --- | --- |
-| `check:pais` **A1** | não existia | uma linha fora do âmbito da sua página fecha a construção; o âmbito é lido das declarações, sem chamar a função que compõe a página | uma linha de correção de Évora posta na lista do país: código 1. A lista de Évora declarada de outro lugar: código 1 |
+| `check:pais` **A1** | não existia | uma linha fora do âmbito da sua página fecha a construção; o âmbito é lido das declarações, sem chamar a função que compõe a página. Desde a tarde de 22.09, uma PUBLICAÇÃO na página do país também fecha | uma linha de correção de Évora posta na lista do país: código 1. Uma publicação copiada do registo para a lista do país: código 1. A lista de Évora declarada de outro lugar: código 1 |
 | `check:pais` **A2** | não existia | mais do que oito linhas numa lista, ou fora da ordem, fecham | uma linha duplicada na lista do país: código 1 |
 | `check:pais` **A3** | não existia | o registo tem exactamente as entradas do livro inteiro, as publicações do arquivo e as mudanças declaradas, e cada mudança declarada uma vez | uma linha retirada do registo: código 1 |
 | `check:pais` **C1** | contava as linhas de correção da primeira página contra o livro INTEIRO | a contagem contra o livro passou para a A3, no registo; a C1 continua a exigir que cada linha nasça de uma entrada inteira do livro, com o índice e a data, e a correr agora sobre **todas** as listas medidas, e não só sobre a primeira página | um índice que não existe no livro: código 1 |
@@ -74,7 +74,7 @@ Nenhum portão desceu no que protege. A C1, a M3 e a M2 passaram a medir mais su
 
 ### As provas
 
-`node tests/pais/pais.mjs --json design/especime-v3/medicoes/b1c-2026-09-22/plantas-b1c.json`: **20 provas, todas a morder** ([plantas-b1c.json](plantas-b1c.json)). Uma delas é o positivo conhecido («páginas sem estrago», código 0); as outras dezanove fecham a construção com a célula esperada. As quatro rotas que o ficheiro copiava passaram a oito: sem o registo e sem uma página de lugar, a régua não media nenhuma das listas novas.
+`node tests/pais/pais.mjs --json design/especime-v3/medicoes/b1c-2026-09-22/plantas-b1c.json`: **21 provas, todas a morder** ([plantas-b1c.json](plantas-b1c.json)). Uma delas é o positivo conhecido («páginas sem estrago», código 0); as outras vinte fecham a construção com a célula esperada. As quatro rotas que o ficheiro copiava passaram a oito: sem o registo e sem uma página de lugar, a régua não media nenhuma das listas novas.
 
 `OEDP_MEDICOES=… node tests/pais/portoes.mjs --only html`, `--only html-mudanca-fora-de-rota` e `--only feixe-correcao`: as três a morder ([plantas-portoes-html.json](plantas-portoes-html.json), [plantas-portoes-html-mudanca-fora-de-rota.json](plantas-portoes-html-mudanca-fora-de-rota.json), [plantas-portoes-feixe-correcao.json](plantas-portoes-feixe-correcao.json)), com os sha256 de cada ficheiro antes e depois da reposição iguais.
 
@@ -94,20 +94,34 @@ Oito, em [capturas/b1c-2026-09-22](../../capturas/b1c-2026-09-22/): a primeira p
 
 | Captura | Altura | Deslocamento lateral | Linhas | Portas de lugar |
 | --- | ---: | ---: | ---: | ---: |
-| `depois-pais-pt-390` | 6 838 px | 0 | 8 | — |
-| `depois-pais-pt-1280` | 5 166 px | 0 | 8 | — |
-| `depois-pais-en-390` | 6 892 px | 0 | 8 | — |
-| `depois-pais-en-1280` | 5 255 px | 0 | 8 | — |
+| `depois-pais-pt-390` | 6 197 px | 0 | 1 | — |
+| `depois-pais-pt-1280` | 4 791 px | 0 | 1 | — |
+| `depois-pais-en-390` | 6 250 px | 0 | 1 | — |
+| `depois-pais-en-1280` | 4 880 px | 0 | 1 | — |
 | `depois-registo-pt-390` | 9 966 px | 0 | 30 | 30 |
 | `depois-registo-pt-1280` | 9 375 px | 0 | 30 | 30 |
 | `depois-registo-en-390` | 10 061 px | 0 | 30 | 30 |
 | `depois-registo-en-1280` | 9 270 px | 0 | 30 | 30 |
 
-Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowrap`, a porta «Todas as mudanças» uma vez em cada página do país, e uma definição do marcador em cada página que tem marcador.
+Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowrap`, a porta «Todas as mudanças» uma vez em cada página do país, e uma definição do marcador em cada página que tem marcador. As quatro da página do país foram refeitas na passagem da tarde; as quatro do registo são os mesmos bytes, conferidos por sha256 contra o manifesto anterior.
 
 ## Os commits
 
-Oito, por caminhos explícitos, com os dois trailers num bloco contíguo. O último só leva os ficheiros dos portões e esta tabela.
+Dez, por caminhos explícitos, com os dois trailers num bloco contíguo. Os três portões inteiros correram na cabeça `dee436cf`, que é a do sétimo; o oitavo guarda os registos deles, e a passagem da tarde ficou nos dois últimos. É o lugar de direção que corre os três portões na cabeça final.
+
+## A passagem de 22.09.2026, depois da leitura do lugar de direção
+
+O lugar de direção leu a construção e decidiu duas coisas. As duas correções ao §0 do brief ficam registadas como erros de medição dele: contou `<time>` onde a data era um `<span>`, e leu uma definição repetida onde havia uma só.
+
+**As publicações saem de «O que mudou» na página do país.** A secção «Estudos recentes», logo acima, é a notícia dos estudos, e a página dos estudos tem-nos todos; repeti-los como mudanças é o que o diretor apontou, reduzido de treze para sete. A página do país fica com as correções das suas linhas e as mudanças declaradas do projeto, no máximo oito, com a mesma porta «Todas as mudanças» para o registo, onde as treze publicações continuam com a sua data. Hoje dá **uma linha**, a mudança declarada de 21.09 («Sete nomes do INE…»), e amanhã duas, com a I129, que está a aterrar noutro ramo com a sua mudança declarada. É o que mudou no país, e uma linha honesta vale mais do que sete repetidas.
+
+A célula **A1 passa a recusar uma publicação na página do país**, com planta: uma linha de publicação copiada do registo para a lista do país dá código 1. A **A3 não muda**: o registo continua a exigir as 16 entradas do livro, as 13 publicações e a mudança declarada, nem uma a mais nem uma a menos, e é a célula que garante que nada se perdeu no caminho.
+
+**As páginas de região e de distrito não ganham «O que mudou» neste bloco**, e é decisão do lugar de direção: as duas correções do PIB por habitante do Alentejo ficam no registo, com a porta para `/regioes/alentejo`, e a secção nessas páginas faz-se no B3, que as refaz pela mesma gramática.
+
+O que a passagem mediu, em `dist/`, nas duas edições: a lista do país passou de 8 linhas para **1**; Évora ficou nas mesmas **8**; o registo ficou nas mesmas **30**. A altura da página do país a 1 280 px passou de 5 166 para **4 791 px** (en: de 5 255 para 4 880). As quatro capturas da página do país foram refeitas; as quatro do registo são byte a byte as mesmas.
+
+**As conferências desta passagem, e só as que a mudança toca:** `npm run build` inteiro (código 0, e com ele o `check:pais` e o `check:voz` na cadeia), as **21 plantas** de `tests/pais/pais.mjs` (todas a morder, incluindo a nova da A1), e a planta `html` de `tests/pais/portoes.mjs`, que mudou de página com a marca da data de publicação e continua a morder. **Os três portões inteiros não correram nesta cabeça**: o lugar de direção acrescenta os registos da sessão e corre-os na cabeça final.
 
 ## Conferência final
 
