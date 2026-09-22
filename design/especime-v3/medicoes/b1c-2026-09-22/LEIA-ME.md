@@ -25,10 +25,10 @@ A medição de partida foi feita sobre `main` em `83e9df2d`, com `npm run build`
 | # | O que | A medida |
 | --- | --- | --- |
 | 1 | O âmbito das três listas numa função só, `src/lib/mudancas.mjs` | as três listas contadas em `dist/`, na tabela abaixo |
-| 2 | O teto de oito e a porta «Todas as mudanças» / «All changes» na página do país e nas de lugar | 1 linha na página do país e 8 em Évora, nas duas edições; uma porta por página |
+| 2 | O teto de oito e a porta «Todas as mudanças» / «All changes» na página do país e nas de lugar | 2 linhas na página do país e 8 em Évora, nas duas edições; uma porta por página |
 | 3 | O registo em `/correcoes` e `/en/corrections`, por data, com o lugar de cada linha e a sua porta | 30 linhas por edição, 30 portas de lugar; a norma, o canal e as revisões de proveniência intactos |
 | 4 | A definição do marcador uma vez por página | 1 por página, antes e depois |
-| 5 | As três células novas do `check:pais` com plantas | `plantas-b1c.json`, 24 provas |
+| 5 | As três células novas do `check:pais` com plantas | `plantas-b1c.json`, 26 provas, mais a da catraca L1 em `plantas-portoes-lugar-marcador-de-titulo.json` |
 | 6 | O inventário, as listas fechadas do `check:voz` e o mapa do repositório | `check:voz` a 0 |
 | 7 | Relatório, capturas e os três portões | este ficheiro, `capturas-b1c.json`, os `.codigo` |
 
@@ -39,6 +39,8 @@ A medição de partida foi feita sobre `main` em `83e9df2d`, com `npm run build`
 | País (`/`, `/en`) | 30 | 8 (1 mudança do projeto, 7 publicações) | **1** (a mudança do projeto de 21.09) |
 | Évora (`/municipios/evora`, `/en/municipalities/evora`) | 10 | 8 | **8** |
 | Registo (`/correcoes`, `/en/corrections`) | 16 linhas datadas | 30 | **30** (1 mudança do projeto, 13 publicações, 16 correções) |
+
+Depois do rebase sobre o `main` com a I129, que traz uma mudança declarada nova, os números do ramo são **2** na página do país, **8** em Évora e **31** no registo (2 mudanças do projeto, 13 publicações, 16 correções). A última secção diz o resto.
 
 As 16 correções do livro-razão inteiro, as 13 publicações do arquivo e a mudança declarada do projeto estão todas no registo, e a célula A3 fecha a construção se faltar ou sobrar uma. Nenhuma linha foi inventada e nenhuma foi apagada: o que saiu da primeira página está no registo, com a porta para o lugar a que pertence.
 
@@ -94,16 +96,16 @@ Oito, em [capturas/b1c-2026-09-22](../../capturas/b1c-2026-09-22/): a primeira p
 
 | Captura | Altura | Deslocamento lateral | Linhas | Portas de lugar |
 | --- | ---: | ---: | ---: | ---: |
-| `depois-pais-pt-390` | 6 197 px | 0 | 1 | — |
-| `depois-pais-pt-1280` | 4 791 px | 0 | 1 | — |
-| `depois-pais-en-390` | 6 250 px | 0 | 1 | — |
-| `depois-pais-en-1280` | 4 880 px | 0 | 1 | — |
-| `depois-registo-pt-390` | 9 966 px | 0 | 30 | 30 |
-| `depois-registo-pt-1280` | 9 375 px | 0 | 30 | 30 |
-| `depois-registo-en-390` | 10 061 px | 0 | 30 | 30 |
-| `depois-registo-en-1280` | 9 270 px | 0 | 30 | 30 |
+| `depois-pais-pt-390` | 6 411 px | 0 | 2 | — |
+| `depois-pais-pt-1280` | 4 955 px | 0 | 2 | — |
+| `depois-pais-en-390` | 6 465 px | 0 | 2 | — |
+| `depois-pais-en-1280` | 5 023 px | 0 | 2 | — |
+| `depois-registo-pt-390` | 10 028 px | 0 | 31 | 31 |
+| `depois-registo-pt-1280` | 9 537 px | 0 | 31 | 31 |
+| `depois-registo-en-390` | 10 170 px | 0 | 31 | 31 |
+| `depois-registo-en-1280` | 9 432 px | 0 | 31 | 31 |
 
-Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowrap`, a porta «Todas as mudanças» uma vez em cada página do país, e uma definição do marcador em cada página que tem marcador. As quatro da página do país foram refeitas na passagem da tarde; as quatro do registo são os mesmos bytes, conferidos por sha256 contra o manifesto anterior.
+Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowrap`, a porta «Todas as mudanças» uma vez em cada página do país, e uma definição do marcador em cada página que tem marcador. As oito foram refeitas na cabeça rebaseada, `59c27b5b`, e é essa que o manifesto nomeia.
 
 ## Os commits
 
@@ -158,6 +160,42 @@ A **A3** passa a conferir, linha a linha do registo, o lugar escrito e a porta d
 `npm run build` inteiro, **código 0**, e com ele o `check:pais` («todas as conferências a 0») e o `check:voz` (verde, 598 linhas vivas todas rendidas, 546 retiradas nenhuma rendida). As **24 plantas** de `tests/pais/pais.mjs`, todas a morder, com as três novas. E o `check:lugar` isolado, **código 0**, porque a marca nova é uma porta para `/a-verificar`: a catraca **L1 ficou em 2 271, o mesmo teto**, e a célula §7.10 da definição do marcador continua verde.
 
 **Os três portões inteiros não correram nesta cabeça**, e é por decisão do lugar de direção: o ramo vai ser rebaseado sobre o `main` depois de aterrar outro bloco, e é ele que os corre na cabeça final.
+
+## A marca em todas as páginas, e o rebase, 22.09.2026
+
+**A decisão do lugar de direção:** um título que o arquivo declara por confirmar leva a marca em todas as páginas onde se rende. Um leitor que a veja numa página e não noutra vê o projeto a dizer duas coisas sobre o mesmo facto.
+
+**O que mudou no componente.** A propriedade explícita saiu: quem chama já não pode esquecer a marca, porque já não é ele que decide. `TituloDeTrabalho` recebe a edição de quem a tem (`edicao=…`) e, de quem só tem a cadeia, resolve-a pela mesma escada que o resto do sítio usa — `edicaoDoTitulo()`, em `src/data/studies.mjs`: a edição da língua da página, e na falta dela a primeira do trabalho. Uma página que liste as duas edições do mesmo trabalho tem duas respostas para a mesma cadeia, e por isso passa a edição.
+
+**A medida, e uma correção à expectativa.** Esperavam-se as 14 páginas que eu tinha contado, mais o registo inglês. São **7 páginas e 11 marcas**, todas inglesas, e é o número certo: as 14 eram as páginas que rendem as duas CADEIAS, e sete delas são páginas portuguesas que rendem a edição PORTUGUESA, que está confirmada. A marca é da edição, não da cadeia.
+
+| Página | Marcas |
+| --- | ---: |
+| `en/studies/index` | 2 |
+| `en/studies/agua-nao-faturada` | 2 |
+| `en/studies/onde-esta-a-agua` | 2 |
+| `en/corrections` | 2 |
+| `en/ledger/agua-nao-faturada-portugal-2024` | 1 |
+| `en/ledger/ciclo-substituicao-condutas` | 1 |
+| `en/areas/ambiente-e-energia` | 1 |
+
+**A catraca L1 não se mexeu: 2 271 antes, 2 271 depois.** O desconto é o mesmo mecanismo que já descontava o marcador da definição conferida de um cartão — a classe `marcador-de-titulo` e o destino exato do marcador — e a planta prova que é ele que segura o teto: tiradas as classes das duas marcas do arquivo inglês, a catraca sobe acima do teto e o `check:lugar` fecha.
+
+**A A4** passou a correr sobre cada elemento que declara a edição que rende, em vez de só sobre o registo: os artigos das três listas de estudos (`[data-estudo][data-estudo-edicao]`) e as linhas de publicação do registo. Mede **56 títulos de edição** por construção, e exige a marca onde o arquivo a declara e em mais lado nenhum. As duas listas fechadas do `check:voz` passam a admitir a cadeia exacta do marcador, que é declarada em `src/data/marcador.mjs` e não é prosa da casa; qualquer outra prosa continua a fechar a construção.
+
+**As plantas novas:** o marcador retirado de uma publicação do registo (**A4**); uma edição que a primeira página rende declarada por confirmar sem a página a ter (**A4**); a marca retirada da lista dos estudos (**A4**); e a classe do desconto tirada às marcas do arquivo inglês (**L1 acima do teto**).
+
+### O rebase
+
+`git rebase main`, sobre `95655124` (o bloco I129). **Um conflito**, em `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`: os dois lados acrescentam uma secção no fim do ficheiro. Resolvido ficando com os dois, por ordem de data, com a I129 primeiro por ter aterrado primeiro. O `INVENTARIO-FRASES.md` e o `MAPA-DO-REPOSITORIO-para-construtores.md` fundiram-se sozinhos.
+
+**As contagens novas**, medidas em `dist/` nas duas edições: a página do país passa de 1 para **2** linhas, que são as duas mudanças declaradas do projeto (os nomes do INE, de 21.09, e o grupo etário dos jovens NEM, de 22.09); Évora fica nas mesmas **8**; o registo passa de 30 para **31**. A altura da página do país a 1 280 px passa de 4 791 para 4 955 px (en: de 4 880 para 5 023).
+
+### O que se correu nesta passagem, e só isto
+
+`npm run build` inteiro, **código 0**, na cabeça rebaseada (e com ele o `check:pais`, «todas as conferências a 0», e o `check:voz`, verde). As **26 plantas** de `tests/pais/pais.mjs`, todas a morder. O `check:lugar` isolado, **código 0**, com a L1 em 2 271. O `check:cartao --prova`, **código 0**, porque a I129 mexeu na célula K13 e nas figuras. E a planta da L1 em `tests/pais/portoes.mjs`, a morder.
+
+**Os três portões inteiros não correram nesta cabeça**, e a tabela da secção seguinte é de antes do rebase: as cabeças que ela nomeia já não existem neste ramo. É o lugar de direção que acrescenta os registos da sessão e corre os três na cabeça final.
 
 ## Conferência final
 
