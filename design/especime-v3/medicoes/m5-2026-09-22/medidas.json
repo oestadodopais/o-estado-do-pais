@@ -1,5 +1,5 @@
 {
-  "cabeca": "415b6866900ed488918e5096c94b0cc2aa1c98d1",
+  "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
   "nome_de_quem_responde": {
     "onde_mora": "scripts/textos-aprovados.json",
     "sha256_do_oraculo": "2646f242c13deb68ee9e7cf54f16fc762d24a8505ab6d574f4bcacbd437bf9ca",
@@ -82,24 +82,30 @@
   "portoes": {
     "build": {
       "codigo": "0",
-      "inicio": "2026-09-22T15:04:30Z",
-      "fim": "2026-09-22T15:09:17Z",
-      "cabeca": "0aa2e8c9c3aa7aba775a7e38a7b9b49cae70143d",
-      "segundos": 287,
+      "inicio": "2026-09-22T15:20:35Z",
+      "fim": "2026-09-22T15:25:25Z",
+      "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
+      "segundos": 290,
       "minutos": 4,
-      "segundos_restantes": 47
+      "segundos_restantes": 50
     },
     "verify": {
-      "codigo": null,
-      "inicio": null,
-      "fim": null,
-      "cabeca": null
+      "codigo": "0",
+      "inicio": "2026-09-22T15:25:25Z",
+      "fim": "2026-09-22T15:33:08Z",
+      "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
+      "segundos": 463,
+      "minutos": 7,
+      "segundos_restantes": 43
     },
     "typecheck": {
-      "codigo": null,
-      "inicio": null,
-      "fim": null,
-      "cabeca": null
+      "codigo": "0",
+      "inicio": "2026-09-22T15:33:08Z",
+      "fim": "2026-09-22T15:33:09Z",
+      "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
+      "segundos": 1,
+      "minutos": 0,
+      "segundos_restantes": 1
     }
   }
 }

@@ -131,3 +131,23 @@ As três citações novas foram conferidas com `scripts/leituras/conferir-mapa.p
 - **A deriva de linha do mapa**, acima.
 
 ## 9 · Os commits, a cabeça e os três portões
+
+A cabeça sobre a qual os três portões correram: `3571da4ccc0e263bad9497a1053863250672db29`, no ramo `medidas-2026-09-22`, sobre `main` em `b03a6efc`. Os commits, do mais recente para o mais antigo:
+
+- `a71dae9b` M5: o nome do diretor sai do código, e a célula do portão muda de forma
+- `35cec254` M5: o bloco `medidas` de um brief, o `check:briefs` no `verify`, e este brief a cumpri-lo primeiro
+- `fec84cf0` M5: o `conferir-relatorio.py`, e o `pacote.sh` a corrê-lo ao montar um pacote
+- `50c03557` M5: o mapa ganha o `check:briefs`, os dois guiões e a célula do nome
+- `0aa2e8c9` M5: o relatório, as suas medições, as seis plantas e as quatro leituras de 22.09
+- `415b6866` M5: o leitor dos números aperta a regra dos artigos, e a prosa nova fica sem travessões
+- `3571da4c` M5: uma planta apanhou quatro buracos no leitor dos números, e as contagens são outras
+
+Os três portões, cada um no seu comando, com o código de saída lido de um ficheiro acabado de escrever e não de um `echo` atrás de um `|`. Os ficheiros `.codigo` foram apagados antes da corrida, e ao lado de cada um ficam o `.inicio`, o `.fim`, o `.cabeca` e o `.log` (M16: a presença de um ficheiro não prova que ele é desta corrida).
+
+| Comando | Início | Fim | Tempo de parede | Código |
+|---|---|---|---:|---:|
+| `npm run build` | 2026-09-22T15:20:35Z | 2026-09-22T15:25:25Z | **4 m 50 s** | **0** |
+| `npm run verify` | 2026-09-22T15:25:25Z | 2026-09-22T15:33:08Z | **7 m 43 s** | **0** |
+| `npm run typecheck` | 2026-09-22T15:33:08Z | 2026-09-22T15:33:09Z | **1 s** | **0** |
+
+As plantas e as medições foram corridas com a árvore de trabalho que se tornou a cabeça `3571da4c`; o campo `cabeca` de `plantas-m5.json` e de `medidas.json` diz `415b6866`, que é o commit anterior, porque o commit destes próprios ficheiros veio a seguir a eles. O código que as plantas exercitaram é, byte a byte, o que essa cabeça contém.
