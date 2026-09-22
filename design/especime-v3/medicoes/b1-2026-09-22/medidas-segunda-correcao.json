@@ -1,0 +1,326 @@
+{
+  "cabeca_do_codigo": "5b76753fda03bfb7291bf7b1aacdf307cf1ca781",
+  "capturas_refeitas": 14,
+  "janelas_refeitas": 8,
+  "resumos_do_manifesto_conferidos": 35,
+  "capturas": [
+    {
+      "ficheiro": "depois-pais-pt-390.png",
+      "sha256": "5f55a5ed23a3b49fbd4e8560c5fe870cab342a0d21190b4dba7c51b4045394c5",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-768.png",
+      "sha256": "4488fd82805579dbd9da7998756455be4b9aaa1ef6a30ec20952d46775e79679",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1024.png",
+      "sha256": "2e8478251511f5e8d3d2e7c9d28dbf2a8335b5497e63bd1041c5a77181183253",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1280.png",
+      "sha256": "2838ebf8215d9b1ab96abed8c9e0976c32962f49276993e26fa12fcb82b9ec0d",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1600.png",
+      "sha256": "d186c76910434beb6b85a6429614858550243fc3ea40b32d527babca0112edd7",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-pais-en-390.png",
+      "sha256": "3882a4a16befeca440e0f4d4458d930e5b0e10d8b70742a081df98f100d9d46d",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-pais-en-1280.png",
+      "sha256": "b783b697f2b04dff8529ae0d14ad4bc2993b866dddc0693e7a1e3408981e02bb",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-390.png",
+      "sha256": "3c50be2e62ddffbfe6a4fd5e1b5504dd3aff36b40095195c0300696cd229e557",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-768.png",
+      "sha256": "7eb651a51d9785522256f104c76146200b55d2117120b5c11452726efb44a789",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1024.png",
+      "sha256": "39a7e002c1c28a8ebe7dee439f3d4dbff15fd6dcc9652e02341275cf94d388a8",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1280.png",
+      "sha256": "226777b0b672c3e7a7069edbe18272fbdced82c4b40baf9523ee3516363dd036",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1600.png",
+      "sha256": "c5ebed4eead5615645551102b7723bcf3c6316e18162476005f304c1d9ee2c34",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-en-390.png",
+      "sha256": "5a8dcf6f05fb9eb3447e9aea4f8c7b7740acd671b1e514446797c1683c1b504c",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-temas-en-1280.png",
+      "sha256": "b14b7b6c04db2a56d66b32178eeb6244d887d0d196dcfa2a32804439ec9d38e4",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-390.png",
+      "sha256": "e6c55e60ab198e34172599e7a000af9214e9421c4eeebbe60a5ddae44d9a78ba",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-768.png",
+      "sha256": "23eb4da8a1059dc554f60d90d44d7bc97c50b874cc38e87ec75f36f5f4556b1f",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1024.png",
+      "sha256": "ae073e2fad41be8f6ecb34cb5060cb776cecc8c672c2938fc50611769c103816",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1280.png",
+      "sha256": "9e87ef9b863e6cf564a64776820ba008cef435302c09140500b85ad9ca4457f5",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-pt-1600.png",
+      "sha256": "6d25c265d465914d02a6b7ea0aa9ac3915f226a4e3e5b388e1a8ca25c8fa1265",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-en-390.png",
+      "sha256": "2106dc226891fde9ef26347b85fcfc1fef95771ac1008ac44bb4d26615b4763c",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-concelho-en-1280.png",
+      "sha256": "930366f89cb8d4e57463173e179e3e3e86e9c8ed90861960824f11abc0cec74d",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-390.png",
+      "sha256": "287e9fc64ff5a9b2a430c1bc1a181912b7eea719878b0f6211436fd8af89f6b6",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-768.png",
+      "sha256": "6af1af3cf070c5d3a7c07a4e071457dd54c3c9ad24e39a11cb2630b1d2cc05e5",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1024.png",
+      "sha256": "fbf77519beeff8153e3b63f493d0c5f332bcdd2bdf15e8de3886e1a404d8f08d",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1280.png",
+      "sha256": "cfaccf3abd622d7f51537dca622e49f2ea5ac0dac90c4c82507138af95bb4f94",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-pt-1600.png",
+      "sha256": "5a2de01d3bcaae612fa282ca4b92e13d3e2dd8ab35aaa0b1dd4742b8aca6ad82",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-en-390.png",
+      "sha256": "0379591fb1173c85ab158b46c56734e695ef9bb925fe3882de53bdcd1d887fad",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-estudo-en-1280.png",
+      "sha256": "a4134d01ae50c1f6b17886954c8b25bde0e6502c6ec37ae4c4a0889708880eb7",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-390.png",
+      "sha256": "dd3ab2065da6de4b9edd24a902891c80f3bf601f1ae6059f992a347ed5e01fcc",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-768.png",
+      "sha256": "b9b823ad6565742f19e305deee5bc843e8eac4cf07325cd7810c87384daa1814",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1024.png",
+      "sha256": "864edde5ec11c4c092f5a1742948003c065a09cc595c2480613d3d25aee6ed3b",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1280.png",
+      "sha256": "8f449b62fe009c093175a851706ca3f88922072cb2b08c7004cd46456312dc82",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-pt-1600.png",
+      "sha256": "266ac4f774da57863fde723513c87ec3aa85c590eb77a5b568195042c57f88d6",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-en-390.png",
+      "sha256": "91f9042c5920c77a64af51401ab5deb8ed4aa43190b25d04b201754d64647c6a",
+      "conferido": true
+    },
+    {
+      "ficheiro": "depois-sobre-en-1280.png",
+      "sha256": "3ad8fca810a6af77c65a9273ba251311c6c4e5c4ae39db0257172a1b594d02cb",
+      "conferido": true
+    }
+  ],
+  "janelas": [
+    {
+      "ficheiro": "janela-concelho-en-1280.png",
+      "sha256": "4d22f7d1c6a6a8160b52bd1b4da8195139c5a739685be06292172d5656dfcc2a",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-concelho-en-390.png",
+      "sha256": "f4870f5e1d07cb1828cedb69f7909695f06cd2737bec6a17627cd6d48c056a72",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-concelho-pt-1280.png",
+      "sha256": "3d5bf4c0600e977070422ec12d3ca3e518e5ed2d3e0ce2f4aa92ab963b58bfd0",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-concelho-pt-390.png",
+      "sha256": "4c4d503899cd7ad6d3caeb0412912f45e8ac911ed348c6528ce9bd4b6975dd31",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-estudo-en-1280.png",
+      "sha256": "87fb86fa694ce8ae7c4208e801a037b045f027196be362eac52ea03ad358e84d",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-estudo-en-390.png",
+      "sha256": "dc19c7d59c498c2d5c5622c3366add1344dcfc97b12e282b25beb8b5990a043e",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-estudo-pt-1280.png",
+      "sha256": "731fd1212a6bff95cf57e84a8669d407d0027324fd280e5c028d46ac533ac435",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-estudo-pt-390.png",
+      "sha256": "64040032179feaccb2588a0878319da30a534a1827ac46f229b63c3d3b9c7446",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-pais-en-1280.png",
+      "sha256": "3be9f6d922e2afc7aab92f248767ea24a3cb89e1afe8fbd6f6a4729547de147c",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-pais-en-390.png",
+      "sha256": "905510bac80a3c7f679c034ba566827745c198174386a74644967abfa43967e8",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-pais-pt-1280.png",
+      "sha256": "a48b74e0a1d6142fa36124a17d9c4aa05ae348910f6fcf6b4327100f480ade64",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-pais-pt-390.png",
+      "sha256": "933dbfe65be7960b900bbf8791ffeeaedd9d30d4a82d2ad61dd4fcc92cc65664",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-sobre-en-1280.png",
+      "sha256": "d7c60f729c2325f7611c0ad3aafa44b20a0bf200e468628516e28c4ea159cf66",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-sobre-en-390.png",
+      "sha256": "0fc85689fff4cc8fb4f3ea1fe62bae7f0564e30cb799d2b08d7d5e080e6bb7e0",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-sobre-pt-1280.png",
+      "sha256": "75d5519d4e4e36553cb597a9403060485431c4532a254442d950baee30a43cfa",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-sobre-pt-390.png",
+      "sha256": "91178bfa697552518ebd8f6380770dd96051a363de06204bb6f8739572762b64",
+      "refeita": false
+    },
+    {
+      "ficheiro": "janela-temas-en-1280.png",
+      "sha256": "be0a6b950aa5def96b3a1d6543b46f7915e787e58420e4d33f521c3daf85bd66",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-temas-en-390.png",
+      "sha256": "2aa6fac3fb1c3e83936358011c56446f8e03edb391d625edf83e94f5d8a3187f",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-temas-pt-1280.png",
+      "sha256": "99e105b4c594a8584831f9e3271c5ce961ce5993c5fc1c1c5c83f74b80b89818",
+      "refeita": true
+    },
+    {
+      "ficheiro": "janela-temas-pt-390.png",
+      "sha256": "ad3170740287eb54a666db82c87f50b11f45c1990f3d1685ca05d1806f65f6ba",
+      "refeita": true
+    }
+  ],
+  "alturas_pais": [
+    {
+      "lingua": "pt",
+      "largura": 390,
+      "altura": 9121
+    },
+    {
+      "lingua": "pt",
+      "largura": 768,
+      "altura": 6950
+    },
+    {
+      "lingua": "pt",
+      "largura": 1024,
+      "altura": 6649
+    },
+    {
+      "lingua": "pt",
+      "largura": 1280,
+      "altura": 6695
+    },
+    {
+      "lingua": "pt",
+      "largura": 1600,
+      "altura": 6684
+    },
+    {
+      "lingua": "en",
+      "largura": 390,
+      "altura": 9221
+    },
+    {
+      "lingua": "en",
+      "largura": 1280,
+      "altura": 6738
+    }
+  ],
+  "deslocamento_maximo": 0,
+  "valores_partidos": 0,
+  "selos_partidos": 0,
+  "ficheiros_protegidos_identicos": 2976
+}

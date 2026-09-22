@@ -1,0 +1,137 @@
+[
+  {
+    "nome": "moldura sem paleta escura",
+    "codigo": 1,
+    "passou": true
+  },
+  {
+    "nome": "reposição da paleta",
+    "antes": "286152d33c11f19679b8595645ac9eb897713ea31750d94d501c6cd4a3e1080a",
+    "depois": "286152d33c11f19679b8595645ac9eb897713ea31750d94d501c6cd4a3e1080a",
+    "passou": true
+  },
+  {
+    "nome": "N3, guião reposto na Base",
+    "codigo": 1,
+    "mordidas": [
+      "N3: guião ou atributo do tema em index.html."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "reposição da Base e do HTML",
+    "baseAntes": "2addce2f58dcf61a9a2625f384d2ce327e9f948fa74685937874436052793ef8",
+    "baseDepois": "2addce2f58dcf61a9a2625f384d2ce327e9f948fa74685937874436052793ef8",
+    "htmlAntes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "htmlDepois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/",
+    "esquema": "dark",
+    "papel": "rgb(21, 23, 26)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/en/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/en/",
+    "esquema": "dark",
+    "papel": "rgb(21, 23, 26)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/en/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/temas/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/temas/",
+    "esquema": "dark",
+    "papel": "rgb(21, 23, 26)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/temas/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/en/themes/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/en/themes/",
+    "esquema": "dark",
+    "papel": "rgb(21, 23, 26)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  },
+  {
+    "nome": "tema do sistema",
+    "rota": "/en/themes/",
+    "esquema": "light",
+    "papel": "rgb(246, 247, 244)",
+    "atributo": false,
+    "armazenamento": [],
+    "passou": true
+  }
+]

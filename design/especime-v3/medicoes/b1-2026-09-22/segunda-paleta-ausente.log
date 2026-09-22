@@ -1,0 +1,19 @@
+file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca3-2026-09-22/src/lib/documentos.mjs:284
+  throw new Error(
+        ^
+
+Error: documentos: não encontrei a paleta escura do sistema em src/styles/tokens.css.
+      A faixa não escreve um valor de raiz: lê as cores, as letras e a composição da
+      folha da casa, na construção. Se a folha mudou, muda-se aqui o NOME que se lhe
+      pede, e nunca o valor.
+    at morre (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca3-2026-09-22/src/lib/documentos.mjs:284:9)
+    at estiloDaMoldura (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca3-2026-09-22/src/lib/documentos.mjs:1059:24)
+    at comFaixa (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca3-2026-09-22/src/lib/documentos.mjs:1684:15)
+    at documentoServido (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca3-2026-09-22/src/lib/documentos.mjs:1731:22)
+    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca3-2026-09-22/[eval1]:1:62
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:282:26)
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:278:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

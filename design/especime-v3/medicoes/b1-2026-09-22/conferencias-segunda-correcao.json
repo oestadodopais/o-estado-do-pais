@@ -1,0 +1,120 @@
+{
+  "codigo_confirmado_em": "5b76753fda03bfb7291bf7b1aacdf307cf1ca781",
+  "conferencias": [
+    {
+      "conferencia": "astro",
+      "comando": "astro build (sem a cadeia npm run build)",
+      "codigo": 0,
+      "saida": "segunda-astro.log"
+    },
+    {
+      "conferencia": "cartoes",
+      "comando": "node scripts/cartoes.mjs",
+      "codigo": 0,
+      "saida": "segunda-cartoes.log"
+    },
+    {
+      "conferencia": "tipos",
+      "comando": "tsc -p design/especime-v3/medicoes/b1-2026-09-22/tipos-segunda-correcao.json",
+      "codigo": 0,
+      "saida": "segunda-tipos.log"
+    },
+    {
+      "conferencia": "ledger",
+      "comando": "node scripts/check-ledger.mjs",
+      "codigo": 0,
+      "saida": "segunda-ledger.log"
+    },
+    {
+      "conferencia": "mortos",
+      "comando": "node scripts/check-mortos.mjs --prova",
+      "codigo": 0,
+      "saida": "segunda-mortos.log"
+    },
+    {
+      "conferencia": "datas",
+      "comando": "node scripts/check-datas.mjs",
+      "codigo": 0,
+      "saida": "segunda-datas.log"
+    },
+    {
+      "conferencia": "lugares",
+      "comando": "node scripts/check-lugares.mjs",
+      "codigo": 0,
+      "saida": "segunda-lugares.log"
+    },
+    {
+      "conferencia": "voz",
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 0,
+      "saida": "segunda-voz.log"
+    },
+    {
+      "conferencia": "css",
+      "comando": "node scripts/check-css.mjs --prova",
+      "codigo": 0,
+      "saida": "segunda-css.log"
+    },
+    {
+      "conferencia": "alvos",
+      "comando": "node tests/acessibilidade/alvos.mjs --json alvos-segunda-correcao.json",
+      "codigo": 0,
+      "saida": "segunda-alvos.log"
+    },
+    {
+      "conferencia": "tema",
+      "comando": "node design/especime-v3/medicoes/b1-2026-09-22/provar-segunda-tema.mjs",
+      "codigo": 0,
+      "saida": "segunda-tema.log"
+    },
+    {
+      "conferencia": "moldura",
+      "comando": "node tests/documentos/moldura.mjs --json moldura-segunda-correcao.json",
+      "codigo": 0,
+      "saida": "segunda-moldura.log"
+    },
+    {
+      "conferencia": "capturas",
+      "comando": "node design/especime-v3/medicoes/b1-2026-09-22/captar-peca3.mjs depois pais temas",
+      "codigo": 0,
+      "saida": "segunda-capturas.log"
+    },
+    {
+      "conferencia": "porta",
+      "comando": "node tests/inicio/porta.mjs --vermelhos --json /tmp/b1-porta-segunda.json",
+      "codigo": 0,
+      "saida": "segunda-porta.log"
+    },
+    {
+      "conferencia": "segunda-pais-sao",
+      "comando": "node scripts/check-pais.mjs",
+      "codigo": 0,
+      "saida": "segunda-pais-sao.log"
+    },
+    {
+      "conferencia": "segunda-lugar-sao",
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 0,
+      "saida": "segunda-lugar-sao.log"
+    },
+    {
+      "conferencia": "segunda-html-sao",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "saida": "segunda-html-sao.log"
+    },
+    {
+      "conferencia": "segunda-pais-reposto",
+      "comando": "node scripts/check-pais.mjs",
+      "codigo": 0,
+      "saida": "segunda-pais-reposto.log"
+    },
+    {
+      "conferencia": "segunda-lugar-reposto",
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 0,
+      "saida": "segunda-lugar-reposto.log"
+    }
+  ],
+  "portoes_completos": "não corridos nesta passagem; reservados ao lugar de direção"
+}

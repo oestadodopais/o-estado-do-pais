@@ -1,0 +1,12 @@
+{
+  "quando": "2026-09-22T05:14:08.096Z",
+  "origem": "event_msg.token_count.info.total_token_usage",
+  "uso": {
+    "input_tokens": 13633276,
+    "cached_input_tokens": 13361664,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 60107,
+    "reasoning_output_tokens": 24742,
+    "total_tokens": 13693383
+  }
+}

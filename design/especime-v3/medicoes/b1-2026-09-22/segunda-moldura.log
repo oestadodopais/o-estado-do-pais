@@ -1,0 +1,23 @@
+
+[90m  a régua da moldura · 18 documentos × 2 temas × 2 larguras (390, 1280 px)[0m
+
+  [32m✓[0m C1  0 nó(s) graves em 72 passagens · nenhuma
+  [32m✓[0m C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 39964 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+  [32m✓[0m C3  326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  [32m✓[0m C4  72 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  [32m✓[0m C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  [32m✓[0m C6  18 de 18 verdes · 18 de 18 plantas apanhadas
+
+[90m  o axe, regra a regra (as dezasseis páginas nos dois temas):[0m
+[90m        72  region [moderate][0m
+[90m         8  heading-order [moderate][0m
+[90m         0  region [moderate] · em tabela[0m
+[90m         0  heading-order [moderate] · em tabela[0m
+
+[90m  o que a moldura NÃO corrige, contado:[0m
+[90m    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)[0m
+[90m
+  escrito design/especime-v3/medicoes/b1-2026-09-22/moldura-segunda-correcao.json[0m
+
+[32m  todas as células verdes.[0m
+
