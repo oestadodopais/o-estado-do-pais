@@ -18,6 +18,7 @@ import { parse } from 'node-html-parser';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..', '..', '..');
+const { temAviso } = await import(path.join(RAIZ, 'src', 'lib', 'aviso-do-motor.mjs'));
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 const FICHEIRO = path.join(RAIZ, 'src', 'data', 'enquadramento', 'nomes.json');
 
@@ -37,8 +38,14 @@ for (const i of j.indicadores ?? []) {
     const o = i?.[campo];
     if (!o || typeof o !== 'object') continue;
     if (c[chave] !== 'exata' || o.estado !== 'lido' || o.mesma_medida !== true) continue;
-    if (Object.prototype.hasOwnProperty.call(o, 'aviso')) continue;
+    /* AS MESMAS SEIS CONDIÇÕES DOS LEITORES, e não cinco (leitura a frio do M3b,
+       achado 10): faltava a hora de leitura, e uma medição que contasse como
+       confirmado um nome que `nomeOficial()` recusa dava um número que a página
+       não podia mostrar. O aviso lê-se a qualquer profundidade, pela função que
+       os três leitores usam. */
+    if (temAviso(o)) continue;
     if (typeof o.nome !== 'string' || o.nome === '' || typeof o.endereco !== 'string' || o.endereco === '') continue;
+    if (typeof o.lido_em !== 'string' || o.lido_em === '') continue;
     if (!confirmados.has(i.id_da_linha)) confirmados.set(i.id_da_linha, []);
     confirmados.get(i.id_da_linha).push({ nome: o.nome, endereco: o.endereco, fonte });
   }

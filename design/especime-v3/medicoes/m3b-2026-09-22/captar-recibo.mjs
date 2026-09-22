@@ -7,7 +7,12 @@
  * `dist/` por um servidor próprio, corta a rede para fora, e mede a página ao
  * mesmo tempo que a fotografa.
  *
+ * O MANIFESTO ESCREVE-SE NO FIM, e só se todas as asserções passarem: um
+ * ficheiro escrito antes da conferência tem ar de prova e não é uma. Regista a
+ * cabeça em que correu, para que se veja de que construção ele fala.
+ *
  * Uso:  node design/especime-v3/medicoes/m3b-2026-09-22/captar-recibo.mjs
+ *       --planta  força a primeira asserção a falhar (prova que não escreve)
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -84,14 +89,18 @@ try {
     }
   }
   const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: raiz, encoding: 'utf8' }).trim();
-  await fs.writeFile(path.join(AQUI, 'capturas-recibo.json'), `${JSON.stringify({ cabeca, navegador: navegador.version(), resultados }, null, 2)}\n`);
-  /* OS CONHECIDOS-POSITIVOS DESTA MEDIÇÃO: alguma captura TEM de ter os dois
-     nomes oficiais, senão a medida não mediu nada; e nenhuma pode ter
-     deslocamento lateral, um valor partido ou um nome a transbordar. */
-  if (resultados.some((r) => r.nomesOficiais.length !== 2))
-    throw new Error('Um recibo de despesa-em-id-2024 não tem os dois nomes oficiais: a medição não mediu o que devia.');
+  /* OS CONHECIDOS-POSITIVOS DESTA MEDIÇÃO, ANTES DE SE ESCREVER O MANIFESTO
+     (leitura a frio do M3b, achado 9). A primeira forma escrevia o manifesto e
+     só depois corria as asserções: uma corrida que falhasse deixava na mesma um
+     ficheiro com ar de prova, e o relatório dizia o contrário do que o guião
+     fazia. Agora o manifesto é a ÚLTIMA coisa, e só existe se tudo passou.
+     `--planta` força a primeira asserção a falhar, para se ver que não escreve. */
+  const planta = process.argv.includes('--planta');
+  if (planta || resultados.some((r) => r.nomesOficiais.length !== 2))
+    throw new Error(`Um recibo de despesa-em-id-2024 não tem os dois nomes oficiais: a medição não mediu o que devia.${planta ? ' (planta)' : ''}`);
   if (resultados.some((r) => r.deslocamento > 0 || r.valoresPartidos || r.selosPartidos || r.nomesOficiais.some((n) => n.transborda)))
     throw new Error('Há deslocamento lateral, valor partido ou nome a transbordar numa captura.');
+  await fs.writeFile(path.join(AQUI, 'capturas-recibo.json'), `${JSON.stringify({ cabeca, navegador: navegador.version(), resultados }, null, 2)}\n`);
   console.log(
     `${resultados.length} capturas · ${resultados.map((r) => `${r.lingua}/${r.largura}: ${r.nomesOficiais.length} nomes oficiais, altura ${Math.round(r.altura)} px`).join(' · ')}`,
   );
