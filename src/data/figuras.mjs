@@ -1019,13 +1019,30 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'jovens-nem-2025': {
     /* «E SEXO» (achado 7 de 14.09.2026). O excerto diz «the population of a
        given age group and sex», e as duas definições guardavam a idade e
-       deixavam cair o sexo: a condição que a fonte põe é dupla. */
+       deixavam cair o sexo: a condição que a fonte põe é dupla.
+
+       E O GRUPO, DITO (I129, 22.09.2026). A condição era dupla e ficava por
+       preencher nas duas metades: a frase dizia «um grupo de idades e sexo» sem
+       dizer qual. O título que o catálogo do Eurostat dá ao quadro diz «aged
+       15-24» e a dimensão `age` da resposta ao pedido da linha diz «From 15 to
+       29 years»; o recibo mostrava a primeira coisa ao lado de um valor da
+       segunda. Os dois limites saem da etiqueta que o excerto da linha agora
+       traz, e o sexo é o total que a resposta declara (`sex: T: Total`). A
+       célula K13 do `check:cartao` compara estas palavras com a linha. */
     origens: ['glossario-nem'],
     pt: [
-      'A percentagem das pessoas de um grupo de idades e sexo que não tem emprego e não está em estudos nem em formação.',
+      'A percentagem das pessoas dos ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '29', motivo: 'escala-de-instrumento' },
+      ' anos, de ambos os sexos, que não tem emprego e não está em estudos nem em formação.',
     ],
     en: [
-      'The percentage of the population of a given age group and sex who is not employed and not involved in further education or training.',
+      'The percentage of the population aged ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '29', motivo: 'escala-de-instrumento' },
+      ', of both sexes, who is not employed and not involved in further education or training.',
     ],
   },
   'abandono-escolar-precoce-2025': {
