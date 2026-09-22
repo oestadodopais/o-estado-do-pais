@@ -180,3 +180,27 @@ linha (I129), e os três do INE esperam uma página do INE que declare a popula�
 do indicador.
 
 ## Os três portões na cabeça final
+
+Cada um no seu comando, com o código lido de um ficheiro e nunca atrás de um
+`|`, na cabeça `50eb7aa38eaf1d5f22c1550dc875110a9622396b`. Os ficheiros estão ao
+lado desta página.
+
+| portão | início (UTC) | fim (UTC) | código | registo |
+|---|---|---|---|---|
+| `npm run build` | 08:11:25 | 08:16:14 | **0** | `build.log`, 11 058 linhas |
+| `npm run verify` | 08:16:39 | 08:24:23 | **0** | `verify.log`, 946 linhas |
+| `npm run typecheck` | 08:24:37 | 08:24:38 | **0** | `typecheck.log`, 4 linhas |
+
+O `build` dessa corrida conta, na linha do `check:nomes`: 7 354 páginas lidas,
+43 analisadas, 36 nomes em recibo, 0 em título de cartão, 4 confirmados do INE e
+14 da PORDATA, 23 recusados, e as 24 plantas recusadas ou aceites como deviam.
+
+**Uma corrida anterior foi deitada fora, e fica dito porquê.** A primeira
+tentativa de correr os três seguidos leu um `build.codigo` que tinha ficado da
+corrida anterior, e por isso o `verify` arrancou com o `astro build` ainda a
+escrever o `dist/`: saiu a 1 num ficheiro que ainda não existia
+(`dist/municipios/evora/index.html`). Não é um defeito do sítio nem de um
+portão: é a regra da casa a ser quebrada por quem a escreveu, porque a presença
+de um ficheiro não é prova de que ele é desta corrida. Os ficheiros foram
+apagados e os três portões correram de novo, por ordem, cada um depois de o
+anterior ter escrito o seu código.
