@@ -1,0 +1,55 @@
+[
+  {
+    "nome": "segunda-H10-conhecido-positivo",
+    "positivo": {
+      "ocorrencias": 1,
+      "aceite": false
+    },
+    "sao": true,
+    "falsoVerde": false,
+    "passou": true
+  },
+  {
+    "nome": "segunda-H10-comando-real",
+    "reais": [
+      {
+        "i": 0,
+        "antes": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "depois": {
+          "atributo": "true",
+          "aberto": true
+        },
+        "reposto": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "mudou": true
+      }
+    ],
+    "parado": [
+      {
+        "i": 0,
+        "antes": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "depois": {
+          "atributo": "false",
+          "aberto": true
+        },
+        "reposto": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "mudou": false
+      }
+    ],
+    "funciona": true,
+    "passaParado": false,
+    "passaSemMedir": false,
+    "passou": true
+  }
+]

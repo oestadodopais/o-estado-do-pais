@@ -1,5 +1,11 @@
 # B1, peça 3: o país
 
+Três passagens: construção, primeira correção e segunda correção.\
+Estado desta passagem: sete pontos corrigidos e provados, capturas refeitas.\
+Cabeça final do código: `5b76753f`; o commit deste relatório acrescenta as provas e as capturas.\
+Os três portões só se leem na tabela da última passagem, onde aguardam o lugar de direção.\
+O primeiro parágrafo descreve a construção e é história.
+
 A peça ainda não cumpre integralmente a aceitação. Há duas partes paradas pela regra dos portões P: a atribuição da Carta continua por baixo do mapa e os valores da leitura inglesa conservam a vírgula do livro-razão. O único `verify` completo ficou a 1 na planta I11. A I11 foi corrigida e conferida à parte; a continuação encontrou a K6, também corrigida e provada. Os cinco comandos de continuação terminaram a 0, sem repetir a cadeia completa. Não há, portanto, três códigos finais a 0.
 
 ## As cinco partes
@@ -187,3 +193,32 @@ A construção ficou em `4c992fb4`, depois do nome e da K1 em `cb426ccb`. O gui�
 | `npm run typecheck` | 0 | 2026-09-22T04:05:44Z | 2026-09-22T04:05:44Z | `6e3baae0` |
 
 Os códigos foram lidos dos três ficheiros `.codigo`; cada comando guarda também `.log`, `.inicio`, `.fim` e `.cabeca`. As três cadeias completas passaram à primeira nesta cabeça. Antes delas, as capturas foram repetidas em `6e3baae0`: 55 PNG idênticos aos arquivados e 35 SHA-256 reconferidos. O manifesto conserva a cabeça da construção dos ficheiros, `4c992fb4`. O commit seguinte só regista estas saídas e esta tabela, pela exceção expressa do guião.
+
+
+## A segunda passagem de correção, 22.09.2026
+
+Partida em `6fd5aab7`, sobre `7d323c5f`. Código final em `5b76753f`. As 2 975 linhas do livro-razão e a leitura aprovada continuam idênticas aos bytes da partida. Nenhum push.
+
+| Ponto | Célula | Planta a morder |
+| --- | --- | --- |
+| 1. Descrição e título do país | D1, nas duas edições; contagem da descrição conferida contra a Carta no `gate:html`. | Descrição antiga: código 1 em pt e en. «309 concelhos»: código 1. |
+| 2. Descrição e título dos temas | D1 compara título, descrição e os dois campos de partilha com `strings.mjs`. | Descrição de uma palavra reposta: código 1 nas duas edições. |
+| 3. Uma entrada por correção | C1 conta cada índice; M3 confere as três marcas, os valores e a data. São 16 correções, 13 publicações e uma mudança do projeto por edição. | Índice misturado e «4 → 4»: código 1 nas duas edições. O dia 12.08 rende «4 → 3» e «3 → 4». |
+| 4. H10 medida | Zero `aria-expanded` nas páginas próprias; conhecido positivo obrigatório recusado na corrida normal, sem `--planta-b1`. Todos os comandos reais encontrados têm prova no navegador. | Conhecido positivo dado como aceite: célula falsa. Comando parado e comando sem medição: célula falsa. |
+| 5. Referência europeia | Mesma edição, unidade e período; nota que declara o agregado da mesma medida. | Edição de outro conjunto de dados: código 1. Unidade e nota de outra série também recusadas, em provas independentes. Só se alterou a cópia em memória. |
+| 6. Tema do sistema | N3; paleta, escala e cor do navegador seguem o sistema. Moldura conserva as cores. | Guião reposto na `Base.astro` e rendido por Astro: N3 a 1. Paleta ausente e cor errada recusadas. Doze estados no navegador, sem leitura nem escrita da preferência guardada. |
+| 7. Grafia das portas | `routePath()` declara a barra; L1 normaliza-a e compara menu e corpo. Teto conservado: 2 271. | Menu sem barra: L1 conta duas portas e sai a 1 em pt e en. |
+
+As provas e reposições estão em [plantas-segunda-correcao.json](plantas-segunda-correcao.json) e [plantas-segunda-tema.json](plantas-segunda-tema.json): 34 e 16 resultados verdes. O inventário acompanha as quatro descrições; «Tema» e «Theme» saem da lista de palavras retiradas porque pertencem às frases aprovadas. A N3 protege o mecanismo retirado. Os documentos originais conservam a exclusão das páginas próprias: cinco transcrições trazem mecanismos de tema da obra publicada.
+
+Conferências isoladas a 0: `check:pais`, `check:lugar`, `gate:html`, `check:datas`, `check:lugares`, `check:voz`, `check:css`, `check:alvos`, `check:moldura`, `ledger:check`, `check:mortos` e tipos dos módulos alterados. Houve construção Astro direta e geração dos cartões, sem as cadeias completas. Comandos, códigos e saídas em [conferencias-segunda-correcao.json](conferencias-segunda-correcao.json). Os seletores antigos da paleta e a regra de uma única cor do navegador foram acertados, com as plantas acima; nenhuma proteção de valor ou fonte foi dispensada.
+
+`captar-peca3.mjs depois pais temas` refez 14 capturas e oito janelas, com os mesmos nomes: cinco larguras portuguesas e 390 e 1 280 em inglês. Zero deslocamentos laterais, valores ou selos partidos. Os 35 resumos do manifesto e os vinte das janelas foram conferidos. A altura do país em português a 1 280 passou de 6 622 para 6 695 px. [Medidas e resumos](medidas-segunda-correcao.json). As saídas inteiras da régua da porta, anterior e atual, estão em [porta-correcao-peca3.json](porta-correcao-peca3.json): 66 células verdes em cada passagem, com plantas e reposições.
+
+**Dois achados sem defeito.** O 17 é a normalização admitida pela §1.47, T4: U+202F e U+00A0 representam o mesmo separador de milhares. O 20 distingue o campo por confirmar do valor: nas origens do PRR o marcador está em `excerpt`; os valores estão confirmados. As duas linhas derivadas não têm esse campo por confirmar e as expressões `check` recalculam os seus valores. O `ledger:check` desta passagem passou.
+
+| Portão completo desta passagem | Estado | Quem o corre |
+| --- | --- | --- |
+| `npm run build` | Não corrido | Lugar de direção, na cabeça que integrar os registos da sessão. |
+| `npm run verify` | Não corrido | Lugar de direção, na mesma cabeça. |
+| `npm run typecheck` | Não corrido | Lugar de direção, na mesma cabeça. |

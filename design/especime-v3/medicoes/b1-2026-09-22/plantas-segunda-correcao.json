@@ -1,0 +1,300 @@
+[
+  {
+    "nome": "segunda-pais-sao",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 0,
+    "mordidas": [],
+    "passou": true
+  },
+  {
+    "nome": "segunda-lugar-sao",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 0,
+    "mordidas": [],
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-pais-pt",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "D1 pt país: head meta[name=\"description\"] difere da declaração."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-pais-pt-reposição",
+    "antes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "depois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-temas-pt",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "D1 pt temas: head meta[name=\"description\"] difere da declaração."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-temas-pt-reposição",
+    "antes": "cb7194d0a886dcf83d71112d44d69417f4215772e2aa287f29fd598af9c0bfec",
+    "depois": "cb7194d0a886dcf83d71112d44d69417f4215772e2aa287f29fd598af9c0bfec",
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-indice-pt",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "M3 pt: estudos-evora-publicados mistura correções, repete o valor ou difere da correção declarada."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-indice-pt-reposição",
+    "antes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "depois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-igual-pt",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "M3 pt: estudos-evora-publicados mistura correções, repete o valor ou difere da correção declarada."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-igual-pt-reposição",
+    "antes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "depois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "segunda-L1-pt",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "  ✗ L1 · /: /lugares ×2, porta repetida com duas grafias entre o menu e o corpo."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-L1-pt-reposição",
+    "antes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "depois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-pais-en",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "D1 en país: head meta[name=\"description\"] difere da declaração."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-pais-en-reposição",
+    "antes": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "depois": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-temas-en",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "D1 en temas: head meta[name=\"description\"] difere da declaração."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-D1-temas-en-reposição",
+    "antes": "d3ec8986e9c324f8c1c1af34e1175f0e92d25fa31caf36d1f38ac52398f01671",
+    "depois": "d3ec8986e9c324f8c1c1af34e1175f0e92d25fa31caf36d1f38ac52398f01671",
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-indice-en",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "M3 en: estudos-evora-publicados mistura correções, repete o valor ou difere da correção declarada."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-indice-en-reposição",
+    "antes": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "depois": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-igual-en",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "M3 en: estudos-evora-publicados mistura correções, repete o valor ou difere da correção declarada."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-M3-igual-en-reposição",
+    "antes": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "depois": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "passou": true
+  },
+  {
+    "nome": "segunda-L1-en",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "  ✗ L1 · /en: /en/places ×2, porta repetida com duas grafias entre o menu e o corpo."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-L1-en-reposição",
+    "antes": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "depois": "520b24c45e6ccbf1aee06f9e3e85fb7e434c740208975f559010a17c00880470",
+    "passou": true
+  },
+  {
+    "nome": "segunda-html-sao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 0,
+    "mordidas": [],
+    "passou": true
+  },
+  {
+    "nome": "segunda-descricao-contagem",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "    ✗ <head>: o token \"309\" tem algarismos e não é nem um título de estudo registado nem uma excepção declarada."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-descricao-contagem-reposição",
+    "antes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "depois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "segunda-cor-do-sistema",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "    ✗ tema do sistema: theme-color de dark difere do papel declarado #15171a."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-cor-do-sistema-reposição",
+    "antes": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "depois": "36b7f4e326d208004a1f9ca84303cb838897dfe60a97ec64ff3797e2a218aeb0",
+    "passou": true
+  },
+  {
+    "nome": "segunda-ue-edition",
+    "comando": "node --input-type=module -e import { loadClaims } from './src/lib/ledger.mjs'; const livro = loadClaims(); const alvo = livro.get('taxa-de-desemprego-mip-2025-ue'); alvo.document = { ...alvo.document, edition: livro.get('divida-publica-2025-ue').document.edition }; await import('./scripts/gate-html.mjs');",
+    "codigo": 1,
+    "mordidas": [
+      "    ✗ o valor da afirmação \"taxa-de-desemprego-mip-2025-ue\" aparece sem selo para a sua própria linha.",
+      "    ✗ o valor da afirmação \"taxa-de-desemprego-mip-2025-ue\" aparece sem selo para a sua própria linha."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-ue-unit",
+    "comando": "node --input-type=module -e import { loadClaims } from './src/lib/ledger.mjs'; const livro = loadClaims(); const alvo = livro.get('taxa-de-desemprego-mip-2025-ue'); alvo.unit = livro.get('divida-publica-2025-ue').unit; await import('./scripts/gate-html.mjs');",
+    "codigo": 1,
+    "mordidas": [
+      "    ✗ o valor da afirmação \"taxa-de-desemprego-mip-2025-ue\" aparece sem selo para a sua própria linha.",
+      "    ✗ o valor da afirmação \"taxa-de-desemprego-mip-2025-ue\" aparece sem selo para a sua própria linha."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-ue-note",
+    "comando": "node --input-type=module -e import { loadClaims } from './src/lib/ledger.mjs'; const livro = loadClaims(); const alvo = livro.get('taxa-de-desemprego-mip-2025-ue'); alvo.note = livro.get('divida-publica-2025-ue').note; await import('./scripts/gate-html.mjs');",
+    "codigo": 1,
+    "mordidas": [
+      "    ✗ o valor da afirmação \"taxa-de-desemprego-mip-2025-ue\" aparece sem selo para a sua própria linha.",
+      "    ✗ o valor da afirmação \"taxa-de-desemprego-mip-2025-ue\" aparece sem selo para a sua própria linha."
+    ],
+    "passou": true
+  },
+  {
+    "nome": "segunda-pais-reposto",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 0,
+    "mordidas": [],
+    "passou": true
+  },
+  {
+    "nome": "segunda-lugar-reposto",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 0,
+    "mordidas": [],
+    "passou": true
+  },
+  {
+    "nome": "segunda-H10-conhecido-positivo",
+    "positivo": {
+      "ocorrencias": 1,
+      "aceite": false
+    },
+    "sao": true,
+    "falsoVerde": false,
+    "passou": true
+  },
+  {
+    "nome": "segunda-H10-comando-real",
+    "reais": [
+      {
+        "i": 0,
+        "antes": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "depois": {
+          "atributo": "true",
+          "aberto": true
+        },
+        "reposto": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "mudou": true
+      }
+    ],
+    "parado": [
+      {
+        "i": 0,
+        "antes": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "depois": {
+          "atributo": "false",
+          "aberto": true
+        },
+        "reposto": {
+          "atributo": "false",
+          "aberto": false
+        },
+        "mudou": false
+      }
+    ],
+    "funciona": true,
+    "passaParado": false,
+    "passaSemMedir": false,
+    "passou": true
+  }
+]

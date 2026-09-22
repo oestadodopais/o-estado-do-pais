@@ -7,6 +7,7 @@ import { execFileSync } from 'node:child_process';
 
 const fase = process.argv[2];
 if (!['antes', 'depois'].includes(fase)) throw new Error('Indique antes ou depois.');
+const escolhidas = process.argv.slice(3);
 const raiz = process.cwd();
 const dist = path.join(raiz, 'dist');
 const pasta = path.join(raiz, 'design/especime-v3/capturas/b1-2026-09-22');
@@ -18,7 +19,8 @@ const familias = [
   ['estudo', '/estudos/evora-2027-prometido-painel-dinheiro/', '/en/studies/evora-2027-prometido-painel-dinheiro/'],
   ['sobre', '/sobre/', '/en/about/'],
 ];
-const paginas = familias.filter(f => fase === 'depois' || ['pais', 'sobre'].includes(f[0]))
+if (escolhidas.some(n => !familias.some(f => f[0] === n))) throw new Error('Família desconhecida.');
+const paginas = familias.filter(f => (!escolhidas.length || escolhidas.includes(f[0])) && (fase === 'depois' || ['pais', 'sobre'].includes(f[0])))
   .flatMap(([nome, pt, en]) => fase === 'antes' ? [[nome, 'pt', pt]] : [[nome, 'pt', pt], [nome, 'en', en]]);
 const larguraDe = lingua => fase === 'antes' || lingua === 'en' ? [390, 1280] : larguras;
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
@@ -75,7 +77,13 @@ try {
       await contexto.close();
     }
   }
-  await fs.writeFile(path.join(medicoes, `capturas-${fase}-peca3.json`), JSON.stringify({ cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), navegador: navegador.version(), resultados }, null, 2) + '\n');
+  const manifesto = path.join(medicoes, `capturas-${fase}-peca3.json`);
+  const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+  const anterior = escolhidas.length ? JSON.parse(await fs.readFile(manifesto, 'utf8')) : null;
+  const todos = anterior ? anterior.resultados.map(r => resultados.find(n => n.ficheiro === r.ficheiro)
+    ? { ...resultados.find(n => n.ficheiro === r.ficheiro), cabeca }
+    : { ...r, cabeca: r.cabeca ?? anterior.cabeca }) : resultados;
+  await fs.writeFile(manifesto, JSON.stringify({ cabeca, navegador: navegador.version(), resultados: todos }, null, 2) + '\n');
   /* A PÁGINA DE UMA UNIDADE DA CARTA NÃO PUBLICA VALORES, e não é um defeito: é
      um índice dos concelhos daquela unidade, com o mapa deles, e o livro-razão
      não tem uma única linha de distrito ou de ilha (é o que a I8 da régua do
