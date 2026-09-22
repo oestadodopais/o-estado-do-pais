@@ -1,0 +1,340 @@
+{
+  "resumo": {
+    "cabeca": "8ff76593dd125d0ddf02a25ca528074d06194424",
+    "dist": "dist",
+    "ficheiro_sha256": "46a7c1be160c4d24f85a699f97648598dd91ad6005266bd0a0939e0cfe60cafb",
+    "confirmados_no_ficheiro": {
+      "total": 18,
+      "ine": 4,
+      "pordata": 14,
+      "linhas": 15
+    },
+    "paginas_lidas": 7354,
+    "recibos": {
+      "total": 36,
+      "ine": 8,
+      "pordata": 28,
+      "fora_dos_confirmados": 0,
+      "pt": 18,
+      "en": 18,
+      "linhas": [
+        "abandono-escolar-precoce-2025",
+        "competencias-digitais-2025",
+        "desemprego-de-longa-duracao-2025",
+        "despesa-em-id-2024",
+        "divida-publica-2025",
+        "formacao-bruta-de-capital-fixo-2025",
+        "independencia-da-justica-2025",
+        "indice-de-percepcao-da-corrupcao-2025",
+        "necessidades-medicas-nao-satisfeitas-2025",
+        "posicao-de-investimento-internacional-2025",
+        "racio-s80-s20-2025",
+        "risco-de-pobreza-ou-exclusao-2025",
+        "taxa-de-desemprego-2025",
+        "taxa-de-desemprego-mip-2025",
+        "taxa-de-emprego-2025"
+      ]
+    },
+    "cartoes": {
+      "total": 0,
+      "ine": 0,
+      "pordata": 0,
+      "fora_dos_confirmados": 0,
+      "pt": 0,
+      "en": 0,
+      "linhas": [],
+      "paginas": []
+    }
+  },
+  "recibos": [
+    {
+      "pagina": "en/ledger/abandono-escolar-precoce-2025/index.html",
+      "edicao": "en",
+      "id": "abandono-escolar-precoce-2025",
+      "texto": "Taxa de abandono escolar: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+abandono+escolar+total+e+por+sexo-1350",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/competencias-digitais-2025/index.html",
+      "edicao": "en",
+      "id": "competencias-digitais-2025",
+      "texto": "Proporção de indivíduos com idade entre 16 e 74 anos com competências digitais ao nível básico ou acima de básico (Série 2021 - %) por Local de residência (NUTS - 2024); Anual - INE, Inquérito à utilização de TIC pelas famílias",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014597&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "en/ledger/competencias-digitais-2025/index.html",
+      "edicao": "en",
+      "id": "competencias-digitais-2025",
+      "texto": "População com pelo menos competências digitais básicas: total e por sexo (%)",
+      "href": "https://www.pordata.pt/europa/populacao+com+pelo+menos+competencias+digitais+basicas+total+e+por+sexo+(percentagem)-3655",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/desemprego-de-longa-duracao-2025/index.html",
+      "edicao": "en",
+      "id": "desemprego-de-longa-duracao-2025",
+      "texto": "Taxa de desemprego de longa duração: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+desemprego+de+longa+duracao+total+e+por+sexo-2264",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/despesa-em-id-2024/index.html",
+      "edicao": "en",
+      "id": "despesa-em-id-2024",
+      "texto": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual - DGEEC, Potencial científico e tecnológico nacional (sector institucional e sector empresas)",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014403&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "en/ledger/despesa-em-id-2024/index.html",
+      "edicao": "en",
+      "id": "despesa-em-id-2024",
+      "texto": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+      "href": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/divida-publica-2025/index.html",
+      "edicao": "en",
+      "id": "divida-publica-2025",
+      "texto": "Administrações Públicas: dívida bruta em % do PIB",
+      "href": "https://www.pordata.pt/europa/administracoes+publicas+divida+bruta+em+percentagem+do+pib-1763",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/formacao-bruta-de-capital-fixo-2025/index.html",
+      "edicao": "en",
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "texto": "Investimento: Formação bruta de capital fixo em % do PIB",
+      "href": "https://www.pordata.pt/europa/investimento+formacao+bruta+de+capital+fixo+em+percentagem+do+pib-3568",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/independencia-da-justica-2025/index.html",
+      "edicao": "en",
+      "id": "independencia-da-justica-2025",
+      "texto": "Perceção de independência do sistema judicial",
+      "href": "https://www.pordata.pt/europa/percecao+de+independencia+do+sistema+judicial-3593",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/indice-de-percepcao-da-corrupcao-2025/index.html",
+      "edicao": "en",
+      "id": "indice-de-percepcao-da-corrupcao-2025",
+      "texto": "Índice de perceção de corrupção",
+      "href": "https://www.pordata.pt/europa/indice+de+percecao+de+corrupcao-3595",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/necessidades-medicas-nao-satisfeitas-2025/index.html",
+      "edicao": "en",
+      "id": "necessidades-medicas-nao-satisfeitas-2025",
+      "texto": "População com necessidades insatisfeitas de cuidados médicos: total e por sexo (%)",
+      "href": "https://www.pordata.pt/europa/populacao+com+necessidades+insatisfeitas+de+cuidados+medicos+total+e+por+sexo+(percentagem)-3548",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/posicao-de-investimento-internacional-2025/index.html",
+      "edicao": "en",
+      "id": "posicao-de-investimento-internacional-2025",
+      "texto": "Posição de investimento internacional em % do PIB",
+      "href": "https://www.pordata.pt/europa/posicao+de+investimento+internacional+em+percentagem+do+pib-2674",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/racio-s80-s20-2025/index.html",
+      "edicao": "en",
+      "id": "racio-s80-s20-2025",
+      "texto": "Desigualdade na distribuição do rendimento (S80/S20)",
+      "href": "https://www.pordata.pt/europa/desigualdade+na+distribuicao+do+rendimento+(s80+s20)-1540",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/risco-de-pobreza-ou-exclusao-2025/index.html",
+      "edicao": "en",
+      "id": "risco-de-pobreza-ou-exclusao-2025",
+      "texto": "Proporção da população residente em risco de pobreza ou exclusão social (Europa 2030) (%) por Local de residência (NUTS - 2024); Anual - INE, Inquérito às condições de vida e rendimento",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014076&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "en/ledger/risco-de-pobreza-ou-exclusao-2025/index.html",
+      "edicao": "en",
+      "id": "risco-de-pobreza-ou-exclusao-2025",
+      "texto": "População em risco de pobreza ou exclusão social: total e por sexo (%)",
+      "href": "https://www.pordata.pt/europa/populacao+em+risco+de+pobreza+ou+exclusao+social+total+e+por+sexo+(percentagem)-2330",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/taxa-de-desemprego-2025/index.html",
+      "edicao": "en",
+      "id": "taxa-de-desemprego-2025",
+      "texto": "Taxa de desemprego, dos 15 aos 74 anos: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+desemprego++dos+15+aos+74+anos+total+e+por+sexo-1775",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/taxa-de-desemprego-mip-2025/index.html",
+      "edicao": "en",
+      "id": "taxa-de-desemprego-mip-2025",
+      "texto": "Taxa de desemprego, dos 15 aos 74 anos: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+desemprego++dos+15+aos+74+anos+total+e+por+sexo-1775",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "en/ledger/taxa-de-emprego-2025/index.html",
+      "edicao": "en",
+      "id": "taxa-de-emprego-2025",
+      "texto": "Taxa de emprego da população com idade entre 20 e 64 anos (Série 2021 - %) por Local de residência (NUTS - 2024) e Grupo etário; Anual - INE, Inquérito ao emprego (Série - 2021)",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012189&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "livro-razao/abandono-escolar-precoce-2025/index.html",
+      "edicao": "pt",
+      "id": "abandono-escolar-precoce-2025",
+      "texto": "Taxa de abandono escolar: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+abandono+escolar+total+e+por+sexo-1350",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/competencias-digitais-2025/index.html",
+      "edicao": "pt",
+      "id": "competencias-digitais-2025",
+      "texto": "Proporção de indivíduos com idade entre 16 e 74 anos com competências digitais ao nível básico ou acima de básico (Série 2021 - %) por Local de residência (NUTS - 2024); Anual - INE, Inquérito à utilização de TIC pelas famílias",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014597&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "livro-razao/competencias-digitais-2025/index.html",
+      "edicao": "pt",
+      "id": "competencias-digitais-2025",
+      "texto": "População com pelo menos competências digitais básicas: total e por sexo (%)",
+      "href": "https://www.pordata.pt/europa/populacao+com+pelo+menos+competencias+digitais+basicas+total+e+por+sexo+(percentagem)-3655",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/desemprego-de-longa-duracao-2025/index.html",
+      "edicao": "pt",
+      "id": "desemprego-de-longa-duracao-2025",
+      "texto": "Taxa de desemprego de longa duração: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+desemprego+de+longa+duracao+total+e+por+sexo-2264",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/despesa-em-id-2024/index.html",
+      "edicao": "pt",
+      "id": "despesa-em-id-2024",
+      "texto": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual - DGEEC, Potencial científico e tecnológico nacional (sector institucional e sector empresas)",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014403&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "livro-razao/despesa-em-id-2024/index.html",
+      "edicao": "pt",
+      "id": "despesa-em-id-2024",
+      "texto": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+      "href": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/divida-publica-2025/index.html",
+      "edicao": "pt",
+      "id": "divida-publica-2025",
+      "texto": "Administrações Públicas: dívida bruta em % do PIB",
+      "href": "https://www.pordata.pt/europa/administracoes+publicas+divida+bruta+em+percentagem+do+pib-1763",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/formacao-bruta-de-capital-fixo-2025/index.html",
+      "edicao": "pt",
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "texto": "Investimento: Formação bruta de capital fixo em % do PIB",
+      "href": "https://www.pordata.pt/europa/investimento+formacao+bruta+de+capital+fixo+em+percentagem+do+pib-3568",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/independencia-da-justica-2025/index.html",
+      "edicao": "pt",
+      "id": "independencia-da-justica-2025",
+      "texto": "Perceção de independência do sistema judicial",
+      "href": "https://www.pordata.pt/europa/percecao+de+independencia+do+sistema+judicial-3593",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/indice-de-percepcao-da-corrupcao-2025/index.html",
+      "edicao": "pt",
+      "id": "indice-de-percepcao-da-corrupcao-2025",
+      "texto": "Índice de perceção de corrupção",
+      "href": "https://www.pordata.pt/europa/indice+de+percecao+de+corrupcao-3595",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/necessidades-medicas-nao-satisfeitas-2025/index.html",
+      "edicao": "pt",
+      "id": "necessidades-medicas-nao-satisfeitas-2025",
+      "texto": "População com necessidades insatisfeitas de cuidados médicos: total e por sexo (%)",
+      "href": "https://www.pordata.pt/europa/populacao+com+necessidades+insatisfeitas+de+cuidados+medicos+total+e+por+sexo+(percentagem)-3548",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/posicao-de-investimento-internacional-2025/index.html",
+      "edicao": "pt",
+      "id": "posicao-de-investimento-internacional-2025",
+      "texto": "Posição de investimento internacional em % do PIB",
+      "href": "https://www.pordata.pt/europa/posicao+de+investimento+internacional+em+percentagem+do+pib-2674",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/racio-s80-s20-2025/index.html",
+      "edicao": "pt",
+      "id": "racio-s80-s20-2025",
+      "texto": "Desigualdade na distribuição do rendimento (S80/S20)",
+      "href": "https://www.pordata.pt/europa/desigualdade+na+distribuicao+do+rendimento+(s80+s20)-1540",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/risco-de-pobreza-ou-exclusao-2025/index.html",
+      "edicao": "pt",
+      "id": "risco-de-pobreza-ou-exclusao-2025",
+      "texto": "Proporção da população residente em risco de pobreza ou exclusão social (Europa 2030) (%) por Local de residência (NUTS - 2024); Anual - INE, Inquérito às condições de vida e rendimento",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014076&lang=PT",
+      "fonte": "INE"
+    },
+    {
+      "pagina": "livro-razao/risco-de-pobreza-ou-exclusao-2025/index.html",
+      "edicao": "pt",
+      "id": "risco-de-pobreza-ou-exclusao-2025",
+      "texto": "População em risco de pobreza ou exclusão social: total e por sexo (%)",
+      "href": "https://www.pordata.pt/europa/populacao+em+risco+de+pobreza+ou+exclusao+social+total+e+por+sexo+(percentagem)-2330",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/taxa-de-desemprego-2025/index.html",
+      "edicao": "pt",
+      "id": "taxa-de-desemprego-2025",
+      "texto": "Taxa de desemprego, dos 15 aos 74 anos: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+desemprego++dos+15+aos+74+anos+total+e+por+sexo-1775",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/taxa-de-desemprego-mip-2025/index.html",
+      "edicao": "pt",
+      "id": "taxa-de-desemprego-mip-2025",
+      "texto": "Taxa de desemprego, dos 15 aos 74 anos: total e por sexo",
+      "href": "https://www.pordata.pt/europa/taxa+de+desemprego++dos+15+aos+74+anos+total+e+por+sexo-1775",
+      "fonte": "PORDATA"
+    },
+    {
+      "pagina": "livro-razao/taxa-de-emprego-2025/index.html",
+      "edicao": "pt",
+      "id": "taxa-de-emprego-2025",
+      "texto": "Taxa de emprego da população com idade entre 20 e 64 anos (Série 2021 - %) por Local de residência (NUTS - 2024) e Grupo etário; Anual - INE, Inquérito ao emprego (Série - 2021)",
+      "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0012189&lang=PT",
+      "fonte": "INE"
+    }
+  ],
+  "cartoes": []
+}

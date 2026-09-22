@@ -1,0 +1,214 @@
+{
+  "cabeca": "a781fd479435016e0ea08d1c56d66b88b31ddf30",
+  "navegador": "148.0.7778.96",
+  "resultados": [
+    {
+      "ficheiro": "recibo-despesa-em-id-2024-pt-390.png",
+      "rota": "/livro-razao/despesa-em-id-2024/",
+      "familia": "recibo",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2854,
+      "titulo": "1,73% do PIB",
+      "nomesOficiais": [
+        {
+          "rotulo": "Nome no INE",
+          "texto": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual - DGEEC, Potencial científico e tecnológico nacional (sector institucional e sector empresas)",
+          "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014403&lang=PT",
+          "caixa": {
+            "x": 18,
+            "y": 1824.203125,
+            "width": 354,
+            "height": 123,
+            "top": 1824.203125,
+            "right": 372,
+            "bottom": 1947.203125,
+            "left": 18
+          },
+          "transborda": false
+        },
+        {
+          "rotulo": "Nome na PORDATA",
+          "texto": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+          "href": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+          "caixa": {
+            "x": 18,
+            "y": 1998.75,
+            "width": 354,
+            "height": 55,
+            "top": 1998.75,
+            "right": 372,
+            "bottom": 2053.75,
+            "left": 18
+          },
+          "transborda": false
+        }
+      ],
+      "valores": 3,
+      "selos": 2,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "deslocamento": 0,
+      "sha256": "0a5d1f829b013503538d1dc742a6e8e7ee62c6140e24bf25b69b49a74e775f15"
+    },
+    {
+      "ficheiro": "recibo-despesa-em-id-2024-pt-1280.png",
+      "rota": "/livro-razao/despesa-em-id-2024/",
+      "familia": "recibo",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1602,
+      "titulo": "1,73% do PIB",
+      "nomesOficiais": [
+        {
+          "rotulo": "Nome no INE",
+          "texto": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual - DGEEC, Potencial científico e tecnológico nacional (sector institucional e sector empresas)",
+          "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014403&lang=PT",
+          "caixa": {
+            "x": 689.1875,
+            "y": 707.6875,
+            "width": 295.5,
+            "height": 127.5,
+            "top": 707.6875,
+            "right": 984.6875,
+            "bottom": 835.1875,
+            "left": 689.1875
+          },
+          "transborda": false
+        },
+        {
+          "rotulo": "Nome na PORDATA",
+          "texto": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+          "href": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+          "caixa": {
+            "x": 689.1875,
+            "y": 882.734375,
+            "width": 272.3125,
+            "height": 52.5,
+            "top": 882.734375,
+            "right": 961.5,
+            "bottom": 935.234375,
+            "left": 689.1875
+          },
+          "transborda": false
+        }
+      ],
+      "valores": 3,
+      "selos": 2,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "deslocamento": 0,
+      "sha256": "27d8db8f99839e17b98ba05541e5309d98a97e3788fe255df59a8e7e058d14e9"
+    },
+    {
+      "ficheiro": "recibo-despesa-em-id-2024-en-390.png",
+      "rota": "/en/ledger/despesa-em-id-2024/",
+      "familia": "recibo",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2926,
+      "titulo": "1,73% of GDP",
+      "nomesOficiais": [
+        {
+          "rotulo": "Name at Statistics Portugal",
+          "texto": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual - DGEEC, Potencial científico e tecnológico nacional (sector institucional e sector empresas)",
+          "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014403&lang=PT",
+          "caixa": {
+            "x": 18,
+            "y": 1824.203125,
+            "width": 354,
+            "height": 123,
+            "top": 1824.203125,
+            "right": 372,
+            "bottom": 1947.203125,
+            "left": 18
+          },
+          "transborda": false
+        },
+        {
+          "rotulo": "Name at PORDATA",
+          "texto": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+          "href": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+          "caixa": {
+            "x": 18,
+            "y": 1998.75,
+            "width": 354,
+            "height": 55,
+            "top": 1998.75,
+            "right": 372,
+            "bottom": 2053.75,
+            "left": 18
+          },
+          "transborda": false
+        }
+      ],
+      "valores": 3,
+      "selos": 2,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "deslocamento": 0,
+      "sha256": "8420d3cee0ce0784ccdbc159b3b0b0c0b55b243052188aef33da2f96a18b5e61"
+    },
+    {
+      "ficheiro": "recibo-despesa-em-id-2024-en-1280.png",
+      "rota": "/en/ledger/despesa-em-id-2024/",
+      "familia": "recibo",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1602,
+      "titulo": "1,73% of GDP",
+      "nomesOficiais": [
+        {
+          "rotulo": "Name at Statistics Portugal",
+          "texto": "Proporção da despesa em investigação e desenvolvimento (I&D) no PIB (Base 2021 - %) por Localização geográfica (NUTS - 2024) e Setor de execução; Anual - DGEEC, Potencial científico e tecnológico nacional (sector institucional e sector empresas)",
+          "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014403&lang=PT",
+          "caixa": {
+            "x": 689.1875,
+            "y": 707.6875,
+            "width": 287.03125,
+            "height": 127.5,
+            "top": 707.6875,
+            "right": 976.21875,
+            "bottom": 835.1875,
+            "left": 689.1875
+          },
+          "transborda": false
+        },
+        {
+          "rotulo": "Name at PORDATA",
+          "texto": "Despesas em atividades de investigação e desenvolvimento (I&D) em % do PIB",
+          "href": "https://www.pordata.pt/portugal/despesas+em+atividades+de+investigacao+e+desenvolvimento+(i+d)+em+percentagem+do+pib-779",
+          "caixa": {
+            "x": 689.1875,
+            "y": 882.734375,
+            "width": 294.421875,
+            "height": 52.5,
+            "top": 882.734375,
+            "right": 983.609375,
+            "bottom": 935.234375,
+            "left": 689.1875
+          },
+          "transborda": false
+        }
+      ],
+      "valores": 3,
+      "selos": 2,
+      "valoresPartidos": 0,
+      "selosPartidos": 0,
+      "deslocamento": 0,
+      "sha256": "855d5de1ca99b3985f1e900a38ee99cc37f02e3f0eea1b55f0c3ba6f942c81d7"
+    }
+  ]
+}
