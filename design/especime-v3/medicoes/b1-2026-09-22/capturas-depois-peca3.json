@@ -1,5 +1,5 @@
 {
-  "cabeca": "45f056f86daf6512d1651befce6e0f8e8bd31700",
+  "cabeca": "4c992fb468a72eed1d0d71e39db425635147c2ff",
   "navegador": "148.0.7778.96",
   "resultados": [
     {
@@ -11,6 +11,47 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 9023,
+      "conteudo": {
+        "x": 18,
+        "y": 132.359375,
+        "width": 354,
+        "height": 8513.796875,
+        "top": 132.359375,
+        "right": 372,
+        "bottom": 8646.15625,
+        "left": 18
+      },
+      "temas": {
+        "x": 18,
+        "y": 1048.3125,
+        "width": 354,
+        "height": 3548.453125,
+        "top": 1048.3125,
+        "right": 372,
+        "bottom": 4596.765625,
+        "left": 18
+      },
+      "olhoDosTemas": {
+        "x": 18,
+        "y": 1099.3125,
+        "width": 354,
+        "height": 20.796875,
+        "top": 1099.3125,
+        "right": 372,
+        "bottom": 1120.109375,
+        "left": 18
+      },
+      "primeiroTema": {
+        "x": 18,
+        "y": 1138.109375,
+        "width": 354,
+        "height": 22.390625,
+        "top": 1138.109375,
+        "right": 372,
+        "bottom": 1160.5,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -77,7 +118,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "0996570c1cf679a67064b472a485c95b62b2d168d420b21a8bee4a1acdc2ded1"
+      "sha256": "34b5655cdc568205fd9e8787e73897132f22d516bd001f8313835dde22f30139"
     },
     {
       "ficheiro": "depois-pais-pt-768.png",
@@ -88,6 +129,47 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
+      "altura": 6877,
+      "conteudo": {
+        "x": 30.71875,
+        "y": 168.765625,
+        "width": 706.5625,
+        "height": 6450.0625,
+        "top": 168.765625,
+        "right": 737.28125,
+        "bottom": 6618.828125,
+        "left": 30.71875
+      },
+      "temas": {
+        "x": 30.71875,
+        "y": 936.34375,
+        "width": 706.5625,
+        "height": 2814.359375,
+        "top": 936.34375,
+        "right": 737.28125,
+        "bottom": 3750.703125,
+        "left": 30.71875
+      },
+      "olhoDosTemas": {
+        "x": 30.71875,
+        "y": 987.34375,
+        "width": 706.5625,
+        "height": 20.796875,
+        "top": 987.34375,
+        "right": 737.28125,
+        "bottom": 1008.140625,
+        "left": 30.71875
+      },
+      "primeiroTema": {
+        "x": 30.71875,
+        "y": 1026.5625,
+        "width": 706.5625,
+        "height": 22.390625,
+        "top": 1026.5625,
+        "right": 737.28125,
+        "bottom": 1048.953125,
+        "left": 30.71875
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -154,7 +236,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "6f1700aeed0df90eb9c083b56e691660ad08b9b69a85dfbf4f82121cb9341f1c"
+      "sha256": "ca0506a8ad9de624091fdfec57ee759a148eb031208935cdbfb7015028b82262"
     },
     {
       "ficheiro": "depois-pais-pt-1024.png",
@@ -165,6 +247,47 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
+      "altura": 6575,
+      "conteudo": {
+        "x": 40.953125,
+        "y": 182.765625,
+        "width": 942.09375,
+        "height": 6190.921875,
+        "top": 182.765625,
+        "right": 983.046875,
+        "bottom": 6373.6875,
+        "left": 40.953125
+      },
+      "temas": {
+        "x": 40.953125,
+        "y": 742.625,
+        "width": 942.09375,
+        "height": 2762.0625,
+        "top": 742.625,
+        "right": 983.046875,
+        "bottom": 3504.6875,
+        "left": 40.953125
+      },
+      "olhoDosTemas": {
+        "x": 40.953125,
+        "y": 743.625,
+        "width": 942.09375,
+        "height": 20.796875,
+        "top": 743.625,
+        "right": 983.046875,
+        "bottom": 764.421875,
+        "left": 40.953125
+      },
+      "primeiroTema": {
+        "x": 40.953125,
+        "y": 770.421875,
+        "width": 942.09375,
+        "height": 22.390625,
+        "top": 770.421875,
+        "right": 983.046875,
+        "bottom": 792.8125,
+        "left": 40.953125
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -216,12 +339,12 @@
       },
       "primeiroCartao": {
         "x": 40.953125,
-        "y": 541.9375,
-        "width": 262.375,
-        "height": 179.34375,
-        "top": 541.9375,
-        "right": 303.328125,
-        "bottom": 721.28125,
+        "y": 799.8125,
+        "width": 296.28125,
+        "height": 160.15625,
+        "top": 799.8125,
+        "right": 337.234375,
+        "bottom": 959.96875,
         "left": 40.953125
       },
       "valores": 58,
@@ -231,7 +354,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "5aeca9a6e8ec6189e5bf15863fab510fdb8cb652607231a7348efbea60ed3c43"
+      "sha256": "913c62aac113129d9089b0abe1542f3e8bf6f54cad4ff5897d8d29c53cbf61ed"
     },
     {
       "ficheiro": "depois-pais-pt-1280.png",
@@ -242,6 +365,47 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 6622,
+      "conteudo": {
+        "x": 94,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 6214.34375,
+        "top": 187.71875,
+        "right": 1186,
+        "bottom": 6402.0625,
+        "left": 94
+      },
+      "temas": {
+        "x": 94,
+        "y": 747.578125,
+        "width": 1092,
+        "height": 2744.421875,
+        "top": 747.578125,
+        "right": 1186,
+        "bottom": 3492,
+        "left": 94
+      },
+      "olhoDosTemas": {
+        "x": 94,
+        "y": 748.578125,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 748.578125,
+        "right": 1186,
+        "bottom": 769.375,
+        "left": 94
+      },
+      "primeiroTema": {
+        "x": 94,
+        "y": 775.375,
+        "width": 1092,
+        "height": 22.390625,
+        "top": 775.375,
+        "right": 1186,
+        "bottom": 797.765625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -293,12 +457,12 @@
       },
       "primeiroCartao": {
         "x": 94,
-        "y": 584.421875,
-        "width": 330.171875,
-        "height": 160.15625,
-        "top": 584.421875,
-        "right": 424.171875,
-        "bottom": 744.578125,
+        "y": 804.765625,
+        "width": 248.046875,
+        "height": 179.34375,
+        "top": 804.765625,
+        "right": 342.046875,
+        "bottom": 984.109375,
         "left": 94
       },
       "valores": 58,
@@ -308,7 +472,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "7f313b653b0b88f0d88bc8539af21cb9c6ca7d0d215aa3db3ada3b22d68f573f"
+      "sha256": "392e617899de5a2c2eaf19e583c22d2d3ff002abf4e1cdb7a2739db6b6967dc9"
     },
     {
       "ficheiro": "depois-pais-pt-1600.png",
@@ -319,6 +483,47 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
+      "altura": 6611,
+      "conteudo": {
+        "x": 254,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 6196.875,
+        "top": 187.71875,
+        "right": 1346,
+        "bottom": 6384.59375,
+        "left": 254
+      },
+      "temas": {
+        "x": 254,
+        "y": 747.578125,
+        "width": 1092,
+        "height": 2720.859375,
+        "top": 747.578125,
+        "right": 1346,
+        "bottom": 3468.4375,
+        "left": 254
+      },
+      "olhoDosTemas": {
+        "x": 254,
+        "y": 748.578125,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 748.578125,
+        "right": 1346,
+        "bottom": 769.375,
+        "left": 254
+      },
+      "primeiroTema": {
+        "x": 254,
+        "y": 775.375,
+        "width": 1092,
+        "height": 22.390625,
+        "top": 775.375,
+        "right": 1346,
+        "bottom": 797.765625,
+        "left": 254
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -370,12 +575,12 @@
       },
       "primeiroCartao": {
         "x": 254,
-        "y": 587.46875,
-        "width": 325,
+        "y": 804.765625,
+        "width": 341.328125,
         "height": 160.15625,
-        "top": 587.46875,
-        "right": 579,
-        "bottom": 747.625,
+        "top": 804.765625,
+        "right": 595.328125,
+        "bottom": 964.921875,
         "left": 254
       },
       "valores": 58,
@@ -385,7 +590,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "25c4eaa4cd1a3ea81db51c24a18d04cb6247321294e63d2cb718cb79accf5a26"
+      "sha256": "235133eede1c61009c62b1663391df0d12052faa172a629ef38b746be34d60be"
     },
     {
       "ficheiro": "depois-pais-en-390.png",
@@ -396,6 +601,47 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 9122,
+      "conteudo": {
+        "x": 18,
+        "y": 132.359375,
+        "width": 354,
+        "height": 8565.703125,
+        "top": 132.359375,
+        "right": 372,
+        "bottom": 8698.0625,
+        "left": 18
+      },
+      "temas": {
+        "x": 18,
+        "y": 1048.3125,
+        "width": 354,
+        "height": 3506.859375,
+        "top": 1048.3125,
+        "right": 372,
+        "bottom": 4555.171875,
+        "left": 18
+      },
+      "olhoDosTemas": {
+        "x": 18,
+        "y": 1099.3125,
+        "width": 354,
+        "height": 20.796875,
+        "top": 1099.3125,
+        "right": 372,
+        "bottom": 1120.109375,
+        "left": 18
+      },
+      "primeiroTema": {
+        "x": 18,
+        "y": 1138.109375,
+        "width": 354,
+        "height": 22.390625,
+        "top": 1138.109375,
+        "right": 372,
+        "bottom": 1160.5,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -462,7 +708,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "3fca9bdfacbc1162b04ad3b69fd33297340d0956a8bef75dc5cc08b0ad5fbaab"
+      "sha256": "b4c80f52c0b1a3b7ca7aecccf9685c4d013df54dcf51f185f63edff2d4068d9d"
     },
     {
       "ficheiro": "depois-pais-en-1280.png",
@@ -473,6 +719,47 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 6664,
+      "conteudo": {
+        "x": 94,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 6256.71875,
+        "top": 187.71875,
+        "right": 1186,
+        "bottom": 6444.4375,
+        "left": 94
+      },
+      "temas": {
+        "x": 94,
+        "y": 747.578125,
+        "width": 1092,
+        "height": 2786.296875,
+        "top": 747.578125,
+        "right": 1186,
+        "bottom": 3533.875,
+        "left": 94
+      },
+      "olhoDosTemas": {
+        "x": 94,
+        "y": 748.578125,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 748.578125,
+        "right": 1186,
+        "bottom": 769.375,
+        "left": 94
+      },
+      "primeiroTema": {
+        "x": 94,
+        "y": 775.375,
+        "width": 1092,
+        "height": 22.390625,
+        "top": 775.375,
+        "right": 1186,
+        "bottom": 797.765625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "O Estado do País",
       "menu": [
@@ -524,12 +811,12 @@
       },
       "primeiroCartao": {
         "x": 94,
-        "y": 546.328125,
-        "width": 330.171875,
-        "height": 138.96875,
-        "top": 546.328125,
-        "right": 424.171875,
-        "bottom": 685.296875,
+        "y": 804.765625,
+        "width": 248.046875,
+        "height": 179.34375,
+        "top": 804.765625,
+        "right": 342.046875,
+        "bottom": 984.109375,
         "left": 94
       },
       "valores": 58,
@@ -539,7 +826,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "cda19ac256eabc62787a4a00f087115e5d21e447b8c439e1d937af1321393144"
+      "sha256": "ba545479eb2f1291b3962a7fcd7c350c313a8e75a3002fd26d0f07a0b3636c52"
     },
     {
       "ficheiro": "depois-temas-pt-390.png",
@@ -550,6 +837,27 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 6516,
+      "conteudo": {
+        "x": 18,
+        "y": 117.953125,
+        "width": 354,
+        "height": 6044.84375,
+        "top": 117.953125,
+        "right": 372,
+        "bottom": 6162.796875,
+        "left": 18
+      },
+      "primeiroTema": {
+        "x": 18,
+        "y": 176.75,
+        "width": 354,
+        "height": 16.09375,
+        "top": 176.75,
+        "right": 372,
+        "bottom": 192.84375,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Temas",
       "menu": [
@@ -596,7 +904,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "193653b939079d2cea0a9291e134e6f723ea399c3ba4762339c599ad1f0126b2"
+      "sha256": "3c50be2e62ddffbfe6a4fd5e1b5504dd3aff36b40095195c0300696cd229e557"
     },
     {
       "ficheiro": "depois-temas-pt-768.png",
@@ -607,6 +915,27 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
+      "altura": 4617,
+      "conteudo": {
+        "x": 30.71875,
+        "y": 148.203125,
+        "width": 706.5625,
+        "height": 4210.421875,
+        "top": 148.203125,
+        "right": 737.28125,
+        "bottom": 4358.625,
+        "left": 30.71875
+      },
+      "primeiroTema": {
+        "x": 30.71875,
+        "y": 213.375,
+        "width": 706.5625,
+        "height": 16.09375,
+        "top": 213.375,
+        "right": 737.28125,
+        "bottom": 229.46875,
+        "left": 30.71875
+      },
       "finalDaIAInteiro": true,
       "titulo": "Temas",
       "menu": [
@@ -653,7 +982,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "a0b8d77f7067d829f7c7794abd2025be47e6144529b55d2460ee46e66175951f"
+      "sha256": "7eb651a51d9785522256f104c76146200b55d2117120b5c11452726efb44a789"
     },
     {
       "ficheiro": "depois-temas-pt-1024.png",
@@ -664,6 +993,27 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
+      "altura": 4087,
+      "conteudo": {
+        "x": 40.953125,
+        "y": 169.953125,
+        "width": 942.09375,
+        "height": 3715.84375,
+        "top": 169.953125,
+        "right": 983.046875,
+        "bottom": 3885.796875,
+        "left": 40.953125
+      },
+      "primeiroTema": {
+        "x": 40.953125,
+        "y": 244.140625,
+        "width": 942.09375,
+        "height": 16.09375,
+        "top": 244.140625,
+        "right": 983.046875,
+        "bottom": 260.234375,
+        "left": 40.953125
+      },
       "finalDaIAInteiro": true,
       "titulo": "Temas",
       "menu": [
@@ -710,7 +1060,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "1dd76248aa3971bb462442288e801697f011517a84bb68534e28787d9467ed02"
+      "sha256": "39a7e002c1c28a8ebe7dee439f3d4dbff15fd6dcc9652e02341275cf94d388a8"
     },
     {
       "ficheiro": "depois-temas-pt-1280.png",
@@ -721,6 +1071,27 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 4040,
+      "conteudo": {
+        "x": 94,
+        "y": 170.359375,
+        "width": 1092,
+        "height": 3650.234375,
+        "top": 170.359375,
+        "right": 1186,
+        "bottom": 3820.59375,
+        "left": 94
+      },
+      "primeiroTema": {
+        "x": 94,
+        "y": 244.546875,
+        "width": 1092,
+        "height": 16.09375,
+        "top": 244.546875,
+        "right": 1186,
+        "bottom": 260.640625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Temas",
       "menu": [
@@ -767,7 +1138,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "5db0aae191e91dff5516aae2a045ac671a363d11ad23f26de934a0029edbb49e"
+      "sha256": "226777b0b672c3e7a7069edbe18272fbdced82c4b40baf9523ee3516363dd036"
     },
     {
       "ficheiro": "depois-temas-pt-1600.png",
@@ -778,6 +1149,27 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
+      "altura": 3968,
+      "conteudo": {
+        "x": 254,
+        "y": 170.359375,
+        "width": 1092,
+        "height": 3571.375,
+        "top": 170.359375,
+        "right": 1346,
+        "bottom": 3741.734375,
+        "left": 254
+      },
+      "primeiroTema": {
+        "x": 254,
+        "y": 244.546875,
+        "width": 1092,
+        "height": 16.09375,
+        "top": 244.546875,
+        "right": 1346,
+        "bottom": 260.640625,
+        "left": 254
+      },
       "finalDaIAInteiro": true,
       "titulo": "Temas",
       "menu": [
@@ -824,7 +1216,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "0859989b9f4128f3577c45b5e968c4a243758fdc292b93298fb4d2ccce8cc818"
+      "sha256": "c5ebed4eead5615645551102b7723bcf3c6316e18162476005f304c1d9ee2c34"
     },
     {
       "ficheiro": "depois-temas-en-390.png",
@@ -835,6 +1227,27 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 6525,
+      "conteudo": {
+        "x": 18,
+        "y": 117.953125,
+        "width": 354,
+        "height": 5982.34375,
+        "top": 117.953125,
+        "right": 372,
+        "bottom": 6100.296875,
+        "left": 18
+      },
+      "primeiroTema": {
+        "x": 18,
+        "y": 176.75,
+        "width": 354,
+        "height": 16.09375,
+        "top": 176.75,
+        "right": 372,
+        "bottom": 192.84375,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Themes",
       "menu": [
@@ -881,7 +1294,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "49978b3b7e9eb49583b48dce78e47884c2bde9bb04c0fbe52bb1c014b0b7f9ce"
+      "sha256": "5a8dcf6f05fb9eb3447e9aea4f8c7b7740acd671b1e514446797c1683c1b504c"
     },
     {
       "ficheiro": "depois-temas-en-1280.png",
@@ -892,6 +1305,27 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 4144,
+      "conteudo": {
+        "x": 94,
+        "y": 170.359375,
+        "width": 1092,
+        "height": 3754.34375,
+        "top": 170.359375,
+        "right": 1186,
+        "bottom": 3924.703125,
+        "left": 94
+      },
+      "primeiroTema": {
+        "x": 94,
+        "y": 244.546875,
+        "width": 1092,
+        "height": 16.09375,
+        "top": 244.546875,
+        "right": 1186,
+        "bottom": 260.640625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Themes",
       "menu": [
@@ -938,7 +1372,7 @@
       "separadoresQuebraveis": 0,
       "selosSemNowrap": 0,
       "deslocamento": 0,
-      "sha256": "2f317bd29f59c8fcb0278139b4c0da461584b5bb2e625db077f92ae3386f2073"
+      "sha256": "b14b7b6c04db2a56d66b32178eeb6244d887d0d196dcfa2a32804439ec9d38e4"
     },
     {
       "ficheiro": "depois-concelho-pt-390.png",
@@ -949,6 +1383,27 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 8723,
+      "conteudo": {
+        "x": 18,
+        "y": 87.953125,
+        "width": 354,
+        "height": 8281.984375,
+        "top": 87.953125,
+        "right": 372,
+        "bottom": 8369.9375,
+        "left": 18
+      },
+      "olhoDosTemas": {
+        "x": 18,
+        "y": 386.34375,
+        "width": 354,
+        "height": 20.796875,
+        "top": 386.34375,
+        "right": 372,
+        "bottom": 407.140625,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -996,6 +1451,27 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
+      "altura": 6238,
+      "conteudo": {
+        "x": 30.71875,
+        "y": 118.203125,
+        "width": 706.5625,
+        "height": 5861.46875,
+        "top": 118.203125,
+        "right": 737.28125,
+        "bottom": 5979.671875,
+        "left": 30.71875
+      },
+      "olhoDosTemas": {
+        "x": 30.71875,
+        "y": 380.4375,
+        "width": 706.5625,
+        "height": 20.796875,
+        "top": 380.4375,
+        "right": 737.28125,
+        "bottom": 401.234375,
+        "left": 30.71875
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -1043,6 +1519,27 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
+      "altura": 6047,
+      "conteudo": {
+        "x": 40.953125,
+        "y": 139.953125,
+        "width": 942.09375,
+        "height": 5705.3125,
+        "top": 139.953125,
+        "right": 983.046875,
+        "bottom": 5845.265625,
+        "left": 40.953125
+      },
+      "olhoDosTemas": {
+        "x": 40.953125,
+        "y": 447.59375,
+        "width": 942.09375,
+        "height": 20.796875,
+        "top": 447.59375,
+        "right": 983.046875,
+        "bottom": 468.390625,
+        "left": 40.953125
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -1090,6 +1587,27 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 6228,
+      "conteudo": {
+        "x": 94,
+        "y": 140.359375,
+        "width": 1092,
+        "height": 5867.625,
+        "top": 140.359375,
+        "right": 1186,
+        "bottom": 6007.984375,
+        "left": 94
+      },
+      "olhoDosTemas": {
+        "x": 94,
+        "y": 482.9375,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 482.9375,
+        "right": 1186,
+        "bottom": 503.734375,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -1137,6 +1655,27 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
+      "altura": 6175,
+      "conteudo": {
+        "x": 254,
+        "y": 140.359375,
+        "width": 1092,
+        "height": 5808.421875,
+        "top": 140.359375,
+        "right": 1346,
+        "bottom": 5948.78125,
+        "left": 254
+      },
+      "olhoDosTemas": {
+        "x": 254,
+        "y": 485.984375,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 485.984375,
+        "right": 1346,
+        "bottom": 506.78125,
+        "left": 254
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -1184,6 +1723,27 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 8740,
+      "conteudo": {
+        "x": 18,
+        "y": 87.953125,
+        "width": 354,
+        "height": 8227.203125,
+        "top": 87.953125,
+        "right": 372,
+        "bottom": 8315.15625,
+        "left": 18
+      },
+      "olhoDosTemas": {
+        "x": 18,
+        "y": 386.34375,
+        "width": 354,
+        "height": 20.796875,
+        "top": 386.34375,
+        "right": 372,
+        "bottom": 407.140625,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -1231,6 +1791,27 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 6243,
+      "conteudo": {
+        "x": 94,
+        "y": 140.359375,
+        "width": 1092,
+        "height": 5882.765625,
+        "top": 140.359375,
+        "right": 1186,
+        "bottom": 6023.125,
+        "left": 94
+      },
+      "olhoDosTemas": {
+        "x": 94,
+        "y": 447.84375,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 447.84375,
+        "right": 1186,
+        "bottom": 468.640625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora",
       "menu": [
@@ -1278,6 +1859,17 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 48184,
+      "conteudo": {
+        "x": 18,
+        "y": 159.953125,
+        "width": 354,
+        "height": 47671.5,
+        "top": 159.953125,
+        "right": 372,
+        "bottom": 47831.453125,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
       "menu": [
@@ -1325,6 +1917,17 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
+      "altura": 31775,
+      "conteudo": {
+        "x": 30.71875,
+        "y": 154.203125,
+        "width": 706.5625,
+        "height": 31362.546875,
+        "top": 154.203125,
+        "right": 737.28125,
+        "bottom": 31516.75,
+        "left": 30.71875
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
       "menu": [
@@ -1372,6 +1975,17 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
+      "altura": 31037,
+      "conteudo": {
+        "x": 40.953125,
+        "y": 175.953125,
+        "width": 942.09375,
+        "height": 30659.46875,
+        "top": 175.953125,
+        "right": 983.046875,
+        "bottom": 30835.421875,
+        "left": 40.953125
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
       "menu": [
@@ -1419,6 +2033,17 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 31149,
+      "conteudo": {
+        "x": 94,
+        "y": 176.359375,
+        "width": 1092,
+        "height": 30752.546875,
+        "top": 176.359375,
+        "right": 1186,
+        "bottom": 30928.90625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
       "menu": [
@@ -1466,6 +2091,17 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
+      "altura": 31155,
+      "conteudo": {
+        "x": 254,
+        "y": 176.359375,
+        "width": 1092,
+        "height": 30752.546875,
+        "top": 176.359375,
+        "right": 1346,
+        "bottom": 30928.90625,
+        "left": 254
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas",
       "menu": [
@@ -1513,6 +2149,17 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 48986,
+      "conteudo": {
+        "x": 18,
+        "y": 159.953125,
+        "width": 354,
+        "height": 48401.40625,
+        "top": 159.953125,
+        "right": 372,
+        "bottom": 48561.359375,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: what was promised, what the panel wrote, and the money line by line",
       "menu": [
@@ -1560,6 +2207,17 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 30535,
+      "conteudo": {
+        "x": 94,
+        "y": 176.359375,
+        "width": 1092,
+        "height": 30138.796875,
+        "top": 176.359375,
+        "right": 1186,
+        "bottom": 30315.15625,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Évora 2027: what was promised, what the panel wrote, and the money line by line",
       "menu": [
@@ -1607,6 +2265,17 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 1297,
+      "conteudo": {
+        "x": 18,
+        "y": 113.953125,
+        "width": 354,
+        "height": 830.53125,
+        "top": 113.953125,
+        "right": 372,
+        "bottom": 944.484375,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "Sobre",
       "menu": [
@@ -1654,6 +2323,17 @@
       "janela": 768,
       "documento": 768,
       "corpo": 768,
+      "altura": 1036,
+      "conteudo": {
+        "x": 30.71875,
+        "y": 144.203125,
+        "width": 706.5625,
+        "height": 634.15625,
+        "top": 144.203125,
+        "right": 737.28125,
+        "bottom": 778.359375,
+        "left": 30.71875
+      },
       "finalDaIAInteiro": true,
       "titulo": "Sobre",
       "menu": [
@@ -1701,6 +2381,17 @@
       "janela": 1024,
       "documento": 1024,
       "corpo": 1024,
+      "altura": 979,
+      "conteudo": {
+        "x": 40.953125,
+        "y": 165.953125,
+        "width": 942.09375,
+        "height": 611.28125,
+        "top": 165.953125,
+        "right": 983.046875,
+        "bottom": 777.234375,
+        "left": 40.953125
+      },
       "finalDaIAInteiro": true,
       "titulo": "Sobre",
       "menu": [
@@ -1748,6 +2439,17 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 1029,
+      "conteudo": {
+        "x": 94,
+        "y": 166.359375,
+        "width": 1092,
+        "height": 642.734375,
+        "top": 166.359375,
+        "right": 1186,
+        "bottom": 809.09375,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "Sobre",
       "menu": [
@@ -1795,6 +2497,17 @@
       "janela": 1600,
       "documento": 1600,
       "corpo": 1600,
+      "altura": 1035,
+      "conteudo": {
+        "x": 254,
+        "y": 166.359375,
+        "width": 1092,
+        "height": 642.734375,
+        "top": 166.359375,
+        "right": 1346,
+        "bottom": 809.09375,
+        "left": 254
+      },
       "finalDaIAInteiro": true,
       "titulo": "Sobre",
       "menu": [
@@ -1842,6 +2555,17 @@
       "janela": 390,
       "documento": 390,
       "corpo": 390,
+      "altura": 1394,
+      "conteudo": {
+        "x": 18,
+        "y": 113.953125,
+        "width": 354,
+        "height": 855.328125,
+        "top": 113.953125,
+        "right": 372,
+        "bottom": 969.28125,
+        "left": 18
+      },
       "finalDaIAInteiro": true,
       "titulo": "About",
       "menu": [
@@ -1889,6 +2613,17 @@
       "janela": 1280,
       "documento": 1280,
       "corpo": 1280,
+      "altura": 1029,
+      "conteudo": {
+        "x": 94,
+        "y": 166.359375,
+        "width": 1092,
+        "height": 642.734375,
+        "top": 166.359375,
+        "right": 1186,
+        "bottom": 809.09375,
+        "left": 94
+      },
       "finalDaIAInteiro": true,
       "titulo": "About",
       "menu": [

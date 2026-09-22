@@ -26,7 +26,7 @@ const pais={};
 for(const [lang,p] of [['pt','dist/index.html'],['en','dist/en/index.html']]){
  const root=parse(fs.readFileSync(p,'utf8')),r=ROTULOS_B1[lang];
  const olho=root.querySelector('#estudos-k').textContent.trim();
- const publicacoes=root.querySelectorAll('[data-mudanca="publicacao"] p span');
+ const publicacoes=root.querySelectorAll('[data-mudanca="publicacao"] p').map(p=>p.querySelector('span'));
  const estudos=root.querySelectorAll('.estudo-meta time');
  if(olho!==r.estudosRecentes||!publicacoes.length||publicacoes.some(p=>p.textContent!==r.estudoPublicado))throw Error(`Rótulos errados: ${lang}`);
  if(estudos.some(t=>!t.parentNode.textContent.startsWith(r.publicado+' ')))throw Error(`Data sem rótulo: ${lang}`);

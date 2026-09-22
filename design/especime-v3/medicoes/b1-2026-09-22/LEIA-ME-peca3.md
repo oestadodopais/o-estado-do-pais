@@ -152,3 +152,36 @@ A worktree começou limpa em `977a1c13607709ab70d5f346055898e822cf7687`, um comm
 O mapa do repositório identificou corretamente as duas proteções P. As cadeias de comandos que transcreve antecedem a entrada de `check:lugares`; a cadeia real do `package.json` foi preservada e ganhou `check:pais`. A necessidade de atualizar a sentinela da célula 10 e as extrações do feixe confirmou os avisos dos relatórios anteriores.
 
 O mapa já classificava I11 e K6 como M. Ficou por antecipar, nesta construção, que a planta I11 dependia do pai do par e que K6 não tratava estas glosas declaradas. Foram falhas da preparação das conferências isoladas, não erros do mapa nesses dois casos. A próxima passagem por uma primeira página deve incluir ambas antes da corrida completa.
+
+## A passagem de correção de 22.09.2026
+
+As duas paragens estão decididas: a atribuição da Carta fica por baixo do mapa, com a R6 intacta; a leitura inglesa conserva a vírgula do livro-razão, sem alteração ao `Claim` ou à comparação do `gate:html`. A maqueta `design/especime-v3/maquetas/b1/pais.html` não mudou e conserva o olho antigo dos estudos.
+
+| Ponto | Célula e planta | Medida |
+| --- | --- | --- |
+| Temas por baixo da cabeça, a toda a largura | `porta.mjs`: P1 exige menu, nome, leitura, mapa, porta, olho e primeiro tema dentro dos 800 px; P2 mede a largura; G1 compara com `/temas/`. O olho a 1 757,4 px e a grelha reduzida a 655,2 px são recusados nas duas línguas. | 66 células verdes, incluindo seis plantas e seis reposições. A 1 280, temas de 693,6 para 1 092 px, iguais ao conteúdo. Leitura até 418,3 px (pt) e 380,2 px (en); olho até 769,4 px; primeiro tema até 797,8 px. Grelhas iguais nas cinco larguras, nas duas línguas. |
+| Nome do limite legal | K1 compara o título com `MEDIDAS_DO_DOMINIO_1`; K2 e N6 conservadas. Nome antigo reposto no cartão: código 1 nas duas línguas. | Nome novo em 12 páginas, seis por edição: país, temas, domínio antigo, estudo das contas de Évora de 2025, índice dos concelhos do livro e recibo do limite. Lista dos caminhos em `medidas-correcao-peca3.json`. |
+| Olho dos estudos | Lista fechada do país aceita `estudosRecentes` e recusa `estudosDoLugar`. Repor o olho antigo: código 1 nas duas línguas. | Dois olhos novos no país. Os dois olhos rendidos nas páginas de lugar, ambos em Évora, continuam «Estudos sobre este lugar» e a forma inglesa. |
+| Linhas de publicação | Lista fechada aceita `estudoPublicado`; `gate:html` mantém a comparação dos campos e das datas. Prosa solta no lugar do rótulo: código 1 nas duas línguas. | 13 linhas por edição com o rótulo novo. Os três estudos recentes de cada edição conservam `publicado` seguido da data. |
+
+A altura portuguesa a 1 280 **aumentou de 6 470 para 6 622 px**, mais 152 px. Os temas deixaram a coluna esquerda e passaram a começar abaixo do mapa inteiro. A grelha comum tem quatro colunas mais estreitas, com mais quebras de texto. A passagem cumpre a disposição e o primeiro ecrã decididos; não encurtou a página.
+
+O guião atribuía a K1/K2 uma comparação de títulos que o código não tinha: K1 contava as partes e K2 recusava rótulos de recibo. A prova inicial deu código 0 com o nome antigo e a declaração nova (`cartao-antes-correcao.*`). Completou-se K1, sem chamar `nomeDoCartao()`, com positivo, planta e reposição nas duas línguas em `check:cartao --prova`. A primeira conferência isolada da voz também exigiu acertar o inventário: quatro cadeias novas, duas retiradas. Nenhum portão P foi alterado.
+
+Saída das plantas, por `node tests/inicio/porta.mjs --vermelhos` e `node design/especime-v3/medicoes/b1-2026-09-22/provar-correcao-peca3.mjs` (as saídas completas e as gémeas inglesas estão em `porta-correcao.log` e `provas-correcao.log`):
+
+```text
+OK planta-dobra.pt {"olho":1757.375,"conteudo":1092,"temas":1092,"grelha":1092}
+OK planta-largura.pt {"olho":769.375,"conteudo":1092,"temas":655.1875,"grelha":655.1875}
+OK planta-correcao-nome-pt: código 1; K1 · / · indice-de-divida-limite-legal: o nome do cartão difere da declaração: «Dívida da câmara contra o limite legal»; esperado «Limite legal da dívida das câmaras»; bytes repostos true
+OK planta-correcao-olho-pt: código 1; B1 lista fechada país: /: «Estudos sobre este lugar».; bytes repostos true
+OK planta-correcao-publicacao-pt: código 1; B1 lista fechada país: /: «Prosa solta da planta».; bytes repostos true
+```
+
+A construção ficou em `4c992fb4`, depois do nome e da K1 em `cb426ccb`. O guião `captar-peca3.mjs` refez as 35 capturas depois e as vinte janelas, com os mesmos nomes: as cinco famílias nas cinco larguras portuguesas e a 390 e 1 280 em inglês. Os 35 SHA-256 foram reconferidos contra os PNG; os vinte das janelas também ficaram registados. Zero deslocamentos laterais e nenhum valor ou selo partido. Os registos e as capturas entram antes dos três comandos completos; o último commit fica limitado aos registos desses comandos e a esta tabela. Não houve checkout noutra árvore nem push.
+
+| Comando completo na cabeça final | Código lido do ficheiro | Início UTC | Fim UTC | Cabeça medida |
+| --- | --- | --- | --- | --- |
+| `npm run build` | por correr | por correr | por correr | por correr |
+| `npm run verify` | por correr | por correr | por correr | por correr |
+| `npm run typecheck` | por correr | por correr | por correr | por correr |
