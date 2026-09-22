@@ -4374,6 +4374,15 @@ for (const file of ficheirosHtml(DIST)) {
     err(
       `<head>: o token "${token}" tem algarismos e não é nem um título de estudo ` +
         `registado nem uma excepção declarada.\n      contexto: ${contexto(textoHead, token)}`,
+  // B1: a contagem da Carta na descrição do país tem a mesma origem do mapa.
+  // Só sai da varredura este número, na frase declarada e com a conta conferida.
+  if (rota?.key === 'home') {
+    const declarada = t(rota.lang).home.metaDescription;
+    const contagem = /\b(\d+) (?:concelhos|municipalities)\b/.exec(declarada);
+    if (decodeEntities(descricao?.getAttribute('content') ?? '') === declarada &&
+        contagem?.[1] === String(MUNICIPIOS.length))
+      textoHead = textoHead.replace(contagem[0], contagem[0].replace(contagem[1], ''));
+  }
     );
   }
 
