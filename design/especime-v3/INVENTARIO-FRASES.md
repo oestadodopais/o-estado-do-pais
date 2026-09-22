@@ -3050,7 +3050,7 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | A penalização por antecipar a reforma um ano é de % ou de % , consoante a porta por onde o trabalhador entra, quando o valor atuarialmente neutro calculado pelo próprio relatório é de % : a lei falha nos dois sentidos, e é mais dura com quem se desvia menos. | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: € contra € . Da soma aprovada para o concelho, % está vencida contra % paga. | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Portugal Segurança social e pensões publicado a | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
-| conteudo | publicado a · | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | publicado a · | b1-peca3-correcao | retirada | O rótulo ficava sem data; a linha de mudança passa a dizer que se publicou um estudo. |
 | conteudo | Évora Cultura publicado a | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Évora Economia e finanças públicas publicado a | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | navegacao | (in Portuguese) | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
@@ -3058,9 +3058,18 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | conteudo | Portugal Social security and pensions published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Public debt fell from % to % of GDP in a year and remains above the European Union average of % . Unemployment stands at % , level with the European average , and house prices rose % in a year, against % in the Union. | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | The penalty for retiring one year early is % or % , depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is % : the law misses in both directions, and is harshest on those who deviate least. | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
-| conteudo | published on · | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | published on · | b1-peca3-correcao | retirada | O rótulo ficava sem data; a linha de mudança passa a dizer que se publicou um estudo. |
 | conteudo | Évora Culture published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | Évora Economy and public finances published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
 | conteudo | → | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
 | conteudo | → · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
 | conteudo | → · a field not confirmed against the source, not a doubt about what is published | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
+
+## B1, peça 3: correção dos olhos e das publicações, 22.09.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Estudos recentes | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Recent studies | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Estudo publicado · | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Study published · | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
