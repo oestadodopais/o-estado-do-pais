@@ -28,7 +28,7 @@ A medição de partida foi feita sobre `main` em `83e9df2d`, com `npm run build`
 | 2 | O teto de oito e a porta «Todas as mudanças» / «All changes» na página do país e nas de lugar | 1 linha na página do país e 8 em Évora, nas duas edições; uma porta por página |
 | 3 | O registo em `/correcoes` e `/en/corrections`, por data, com o lugar de cada linha e a sua porta | 30 linhas por edição, 30 portas de lugar; a norma, o canal e as revisões de proveniência intactos |
 | 4 | A definição do marcador uma vez por página | 1 por página, antes e depois |
-| 5 | As três células novas do `check:pais` com plantas | `plantas-b1c.json`, 21 provas |
+| 5 | As três células novas do `check:pais` com plantas | `plantas-b1c.json`, 24 provas |
 | 6 | O inventário, as listas fechadas do `check:voz` e o mapa do repositório | `check:voz` a 0 |
 | 7 | Relatório, capturas e os três portões | este ficheiro, `capturas-b1c.json`, os `.codigo` |
 
@@ -122,6 +122,42 @@ A célula **A1 passa a recusar uma publicação na página do país**, com plant
 O que a passagem mediu, em `dist/`, nas duas edições: a lista do país passou de 8 linhas para **1**; Évora ficou nas mesmas **8**; o registo ficou nas mesmas **30**. A altura da página do país a 1 280 px passou de 5 166 para **4 791 px** (en: de 5 255 para 4 880). As quatro capturas da página do país foram refeitas; as quatro do registo são byte a byte as mesmas.
 
 **As conferências desta passagem, e só as que a mudança toca:** `npm run build` inteiro (código 0, e com ele o `check:pais` e o `check:voz` na cadeia), as **21 plantas** de `tests/pais/pais.mjs` (todas a morder, incluindo a nova da A1), e a planta `html` de `tests/pais/portoes.mjs`, que mudou de página com a marca da data de publicação e continua a morder. **Os três portões inteiros não correram nesta cabeça**: o lugar de direção acrescenta os registos da sessão e corre-os na cabeça final.
+
+## A passagem de correção, 22.09.2026
+
+A leitura a frio (Codex `gpt-5.6-sol`, cinco estragos plantados só nas cópias do pacote, os cinco apanhados) deixou três achados reais que este ramo consertou. Os outros são as plantas e as suas consequências, o brief antigo contra a decisão da tarde, ou o pacote; o lugar de direção triou-os.
+
+### 1 · A proveniência de um título não se perde no registo (achado 4)
+
+**A instrução do lugar de direção contradizia o código em dois pontos, e a medição está aqui.** (a) O registo **já** rendia cada título por `TituloDeTrabalho`, desde a construção (`RegistoCorrecoes.astro`). (b) `TituloDeTrabalho` **não levava marca nenhuma**: punha `data-nonledger="titulo-de-estudo"` e o `lang` do texto, e mais nada. Medido: `titleUnverified` aparece três vezes em `src/data/studies.mjs` (duas declarações e uma menção num comentário) e **não é lido em parte nenhuma do código**. O defeito era portanto maior do que o achado dizia: uma incerteza declarada que o sítio não mostrava em página nenhuma.
+
+O que se fez: a marca passa a viver em `TituloDeTrabalho`, que é onde o próprio ficheiro diz que a marca e a língua vivem, atrás de uma propriedade explícita. **Não se deriva da cadeia**, e a razão está nas duas edições que a declaram: o título inglês dos dois estudos da água é, carácter a carácter, o título português, e uma marca decidida pelo texto marcaria as duas. Quem rende o título de uma edição passa `naoConfirmado={edicao.titleUnverified}`, e é o registo que o passa.
+
+Medido em `dist/`: o registo inglês rende **2** publicações com `[a verificar]` («Água Não Faturada» e «Onde está a água?»), de 13; o português rende **0**, que é o certo, porque as edições portuguesas não estão por confirmar.
+
+**A célula A4** confere cada linha de publicação do registo contra o arquivo: o texto do título, a marca da língua que `linguaDoTitulo()` lhe dá, e o marcador presente **se e só se** o arquivo declarar `titleUnverified`. **A planta:** o marcador retirado de uma publicação inglesa dá código 1.
+
+**O que fica por fazer, e é uma falta dita e não uma decisão:** as outras vistas que rendem um título de edição (o arquivo, a primeira página, a página de um lugar) continuam a rendê-lo sem marca. Não se alargou aqui porque o marcador é uma PORTA para `/a-verificar`, e acrescentá-lo a 14 páginas mexe na catraca L1 do `check:lugar`, que tem teto medido e é conta do lugar de direção.
+
+**A outra metade do achado 4 não era defeito, e o que estava errado era um comentário.** «publicado a» é, desde o bloco F1.4b de 04.09.2026 (`DECISIONS.md` §1.99), o dia em que o ficheiro da edição entrou neste repositório, lido de `src/data/datas-de-publicacao.json`, e é o mesmo dia em toda a parte. O cabeçalho de `src/data/studies.mjs` dizia só «nenhuma data de publicação está confirmada» sem dizer de onde vem a data que o leitor vê, e a nota do estudo das penalizações dizia que ele «não foi publicado» quando o sítio o publica e o data. Os dois comentários passam a dizer o que a §1.99 decidiu e onde a data vive. **Nenhuma data mudou**, e nenhum valor mudou.
+
+### 2 · O lugar de uma linha confere-se por duas vias (achado 6, a primeira metade)
+
+O compositor e a régua devolviam a declaração explícita de `lugar-das-linhas.mjs` antes de tudo: uma régua que lê a mesma declaração que a página lê não é uma segunda leitura. A régua passa a **derivar** o lugar por conta própria — do estudo que a linha declara e dos segmentos do seu identificador contra os slugs da Carta — e a **comparar** com a declaração. Uma declaração que contradiga a derivação fecha a construção, e cada entrada da tabela explícita tem de derivar o lugar que declara, o que é o conhecido-positivo da comparação: sem ele, uma tabela que nunca derivasse nada passava por não haver nada com que discordar.
+
+Medido sobre o livro inteiro: **2 863 das 2 975 linhas** derivam um lugar do identificador; as sete linhas da leitura do país e as medidas de `DOMINIO_DAS_MEDIDAS` não derivam nenhum, e por isso a comparação não as toca; há **uma** ambiguidade (`distancia-setubal-grande-lisboa-2024`, que nomeia dois lugares), que nunca chega a uma lista de mudanças e que a régua diz em vez de escolher.
+
+A **A3** passa a conferir, linha a linha do registo, o lugar escrito e a porta dele, compostos na régua a partir da Carta e das rotas, e não lidos da vista. **As plantas:** `estudos-evora-publicados` declarado como `portugal` dá A1, código 1; uma porta do registo apontada a outro lugar dá A3, código 1.
+
+### 3 · A nota do registo sai (achado 12)
+
+«Todas as mudanças deste sítio…» e «Every change to this site…» descreviam a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor. Saem de `strings.mjs` e ficam `retirada` no inventário, com a razão. O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página e não se tocou.
+
+### O que se correu nesta passagem, e só isto
+
+`npm run build` inteiro, **código 0**, e com ele o `check:pais` («todas as conferências a 0») e o `check:voz` (verde, 598 linhas vivas todas rendidas, 546 retiradas nenhuma rendida). As **24 plantas** de `tests/pais/pais.mjs`, todas a morder, com as três novas. E o `check:lugar` isolado, **código 0**, porque a marca nova é uma porta para `/a-verificar`: a catraca **L1 ficou em 2 271, o mesmo teto**, e a célula §7.10 da definição do marcador continua verde.
+
+**Os três portões inteiros não correram nesta cabeça**, e é por decisão do lugar de direção: o ramo vai ser rebaseado sobre o `main` depois de aterrar outro bloco, e é ele que os corre na cabeça final.
 
 ## Conferência final
 
