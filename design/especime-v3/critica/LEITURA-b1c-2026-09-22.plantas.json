@@ -1,0 +1,37 @@
+{
+ "registado_em": "2026-09-22T11:37:03+00:00",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/index.html",
+   "descricao": "uma correção de uma linha de Évora (as verbas do PRR) na lista «O que mudou» da página do país",
+   "sha256_depois": "47f438f4d3de3025905130cb2f9dfc0355c8caf0308a270d66fa7a60c4887229"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "o registo português com uma linha de correção a menos",
+   "sha256_depois": "1eeb5f739c4e971ce1a4df8fa3894a18ce73f9e98e23c12266292df7d8917212"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem do registo trocada no relatório (30 passa a 31); as páginas construídas têm 30",
+   "sha256_depois": "1e5c42e0de6775310fee0e9d3a97488968efaae40752afa4ea8e2b53f03f0499"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/data/lugar-das-linhas.mjs",
+   "descricao": "a linha da contagem dos estudos sobre Évora declarada com o lugar de Portugal, contra o registo construído que a dá a Évora",
+   "sha256_antes": "5b73ee7d0730c7bb0b77b6af712808f033984bd2747c103894bb80fea6ade201",
+   "sha256_depois": "764a72470a3d1920cf276c43cd12fa40addebf3826b3bd26a97fe89c19d5426a"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/index.html",
+   "descricao": "o rótulo da porta na primeira página inglesa fora da lista fechada («See all changes»)",
+   "sha256_antes": "221b193d78093a9e2e6e5443e1c701a2b51101ebf4cdf2453e1573d0b18fa15b",
+   "sha256_depois": "7eebeba24030f31caa1bc47f68e461dc17d07b401fe79564b7f3e425ba9e24e3"
+  }
+ ]
+}
