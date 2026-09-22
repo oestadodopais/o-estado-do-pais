@@ -274,8 +274,13 @@ function anda(dir) {
         if (!chavesDoRegisto.has(chave))
           erros.push(`A1: ${onde}: a linha ${chave} não é do livro, do arquivo nem das mudanças declaradas.`);
         const doLugar = claim ? lugarDaLinha(claim) : null;
+        /* A página do país mostra o que mudou NO PAÍS: as correções das suas
+           linhas e as mudanças declaradas do projeto. Uma PUBLICAÇÃO nesta
+           página fecha a construção desde 22.09.2026, pela leitura do lugar de
+           direção: a notícia de um estudo é a secção «Estudos recentes», e a
+           lista de todos é a página dos estudos. Continuam no registo. */
         const dentro = ambito === 'pais'
-          ? (tipo !== 'correcao' || doLugar === PAIS)
+          ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
           : (tipo === 'correcao' && doLugar === ambito);
         if (!dentro)
           erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);

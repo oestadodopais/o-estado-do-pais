@@ -46,7 +46,13 @@ try {
   const evora=parse(fs.readFileSync(path.join(pasta,'correcoes/index.html'),'utf8')).querySelector('[data-mudou-registo] li[data-mudanca="correcao"]').outerHTML;
   html('index.html',r=>{const l=r.querySelectorAll('.pais-mudou li');l[l.length-1].remove();r.querySelector('.pais-mudou').insertAdjacentHTML('beforeend',evora);});
  });
- prova('mais mudanças do que o teto','A2',()=>html('index.html',r=>{const li=r.querySelector('.pais-mudou li');li.insertAdjacentHTML('afterend',li.outerHTML);}));
+ prova('publicação na página do país','A1',()=>{
+  const pub=parse(fs.readFileSync(path.join(pasta,'correcoes/index.html'),'utf8')).querySelector('[data-mudou-registo] li[data-mudanca="publicacao"]').outerHTML;
+  html('index.html',r=>r.querySelector('.pais-mudou').insertAdjacentHTML('beforeend',pub));
+ });
+ /* O teto são oito, e a lista do país tem hoje uma linha: a planta tem de a
+    repetir até passar o teto, e não uma vez só. */
+ prova('mais mudanças do que o teto','A2',()=>html('index.html',r=>{const li=r.querySelector('.pais-mudou li');for(let i=0;i<8;i++)li.insertAdjacentHTML('afterend',li.outerHTML);}));
  prova('registo sem uma das mudanças do livro','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] li[data-mudanca="correcao"]').remove()));
  prova('correção que não é uma entrada do livro','C1',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] [data-correcao-campo="date"]').setAttribute('data-correcao-n','99')));
  prova('valor antigo igual ao novo numa correção','M3',()=>html('correcoes/index.html',r=>{const li=r.querySelector('[data-mudou-registo] li[data-mudanca="correcao"]');li.querySelector('s[data-correcao-campo="old_value"]').set_content(li.querySelector('[data-correcao-campo="new_value"]').textContent);}));
