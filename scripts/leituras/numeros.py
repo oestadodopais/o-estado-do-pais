@@ -59,7 +59,7 @@ _RE_HORA = re.compile(r'\d{1,2}:\d{2}(?::\d{2})?')
 _RE_RESUMO = re.compile(
     r'(?<![0-9a-zA-Z])(?=[0-9a-f]{7,})(?=[0-9a-f]*[a-f])(?=[0-9a-f]*[0-9])[0-9a-f]{7,}(?![0-9a-zA-Z])')
 _RE_ORDINAL = re.compile(r'\d+\.?\s?[ºª]')
-_RE_ARTIGO = re.compile(r'(?:n\.?\s?[ºo]|art(?:igo)?s?\.?)\s?\d+', re.I)
+_RE_ARTIGO = re.compile(r'(?:\bn\.?\s?[º°]|\bn\.\s?o\b|\barts?\.|\bartigos?\b)\s?\d+', re.I)
 _RE_IDENT = re.compile(r'[^\W\d_][\w.\-]*\d[\w.\-]*|\d[\w.\-]*[^\W\d_][\w.\-]*', re.U)
 _RE_ANO = re.compile(r'(?<![\d.,])(19\d{2}|20\d{2}|2100)(?![\d.,])')
 
@@ -182,7 +182,7 @@ def do_json(caminhos):
         try:
             with open(c, encoding='utf-8') as f:
                 dados = json.load(f)
-        except Exception as erro:  # noqa: BLE001 — a razão vai para a saída
+        except Exception as erro:  # noqa: BLE001, a razão vai para a saída
             ilegiveis.append((c, f'{type(erro).__name__}: {erro}'))
             continue
         _anda(dados, formas, valores)
