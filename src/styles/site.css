@@ -5354,8 +5354,9 @@ a.marcador::after {
 
    O CORPO É 12px E NÃO 11, e é uma medição e não um gosto: a primeira versão
    deste bloco escreveu 11px, e a régua A9 de `tests/inicio/correcoes-a.mjs`
-   fechou vermelha nas duas edições com «11px span. "Nuno dos Santos"». O chão
-   de 12px na rota `home` é da A9, e a regra da casa escrita em B10 é que toda a
+   fechou vermelha nas duas edições com «11px span» no elemento que rendia o
+   nome do responsável editorial. O chão de 12px na rota `home` é da A9, e a
+   regra da casa escrita em B10 é que toda a
    classe que declare corpo abaixo de 12px tem de aparecer na lista das excepções
    de 640: em vez de a acrescentar, esta declara 12 e o problema deixa de
    existir. O nome de quem responde não é sítio para ganhar um píxel. */

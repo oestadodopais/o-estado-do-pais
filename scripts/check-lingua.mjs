@@ -131,12 +131,25 @@ import {
   LINGUA_DAS_EDICOES,
 } from '../src/i18n/lingua-dos-titulos.mjs';
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
-import { LINGUA_DO_RESPONSAVEL, RESPONSAVEL_EDITORIAL } from '../src/data/politica-ia.mjs';
+import { LINGUA_DO_RESPONSAVEL } from '../src/data/politica-ia.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
+
+/**
+ * O nome de quem responde, lido do oráculo do portão e não de `src/` (M5,
+ * 22.09.2026). A constante `RESPONSAVEL_EDITORIAL` saiu de
+ * `src/data/politica-ia.mjs` porque nenhuma página rende o nome desde
+ * 15.09.2026 e um nome de pessoa não fica no código de um repositório público
+ * sem uma página que o peça. A L9 não perde nada: o que ela compara é o texto
+ * de um `[data-rotulo-nome]` rendido contra o nome decidido, e o nome decidido
+ * está no oráculo, que é onde o `gate:html` sempre o foi buscar.
+ */
+const RESPONSAVEL_EDITORIAL = JSON.parse(
+  fs.readFileSync(path.join(RAIZ, 'scripts', 'textos-aprovados.json'), 'utf8'),
+).responsavel;
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -794,8 +807,8 @@ for (const ficheiro of paginasDe(DIST)) {
    * responsabilidade editorial, e esse nome é português nas duas edições. Vale
    * aqui a regra da §1.82, aplicada a um nome de pessoa em vez de a um título
    * de documento: **um nome não se traduz, e diz em que língua está**. Sem
-   * marca, uma página inglesa manda um leitor de ecrã ler «Nuno dos Santos»
-   * com fonética inglesa, e é o nome de quem responde pela publicação.
+   * marca, uma página inglesa manda um leitor de ecrã ler com fonética inglesa
+   * o nome de quem responde pela publicação.
    *
    * NOS DOIS SENTIDOS, como L4d e L4e: a marca que falta e a marca a mais são o
    * mesmo defeito visto de dois lados. Numa página portuguesa o nome está na

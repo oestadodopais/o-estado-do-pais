@@ -137,7 +137,6 @@ import {
   FICHA_DA_PRIMEIRA_PAGINA,
   FRASE as FRASE_DA_POLITICA,
   LINGUA_DO_RESPONSAVEL,
-  RESPONSAVEL_EDITORIAL,
   ROTULO as ROTULO_DA_CASA,
   textoDoRotulo,
 } from '../src/data/politica-ia.mjs';
@@ -169,6 +168,20 @@ const ALLOWLIST = path.join(ROOT, 'ledger', 'allowlist.yml');
 const TEXTOS_APROVADOS = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'scripts', 'textos-aprovados.json'), 'utf8'),
 );
+
+/**
+ * O nome de quem responde pelo sítio, lido do oráculo e de mais lado nenhum
+ * (M5, 22.09.2026). Saiu de `src/data/politica-ia.mjs` porque nenhuma página o
+ * rende desde 15.09.2026 e um nome de pessoa não fica no código de um
+ * repositório público sem uma página que o peça. O portão continua a precisar
+ * dele para poder exigir que ele não apareça: `veONome()` é o detetor, e o
+ * `nomeVisto` conta as páginas onde ele aparece, para que um zero seja um zero
+ * medido e não um zero de um detetor calado.
+ */
+const NOME_DE_QUEM_RESPONDE = TEXTOS_APROVADOS.responsavel;
+const veONome = (texto) => typeof texto === 'string' && texto.includes(NOME_DE_QUEM_RESPONDE);
+let paginasComONome = 0;
+
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -3888,12 +3901,10 @@ const cartoesUsados = new Set();
  * divulgação do artigo 50.º deixa de identificar ninguém.
  *
  * A CONFERÊNCIA É SOBRE OS FICHEIROS e não sobre as páginas, e corre uma vez. O
- * oráculo é `scripts/textos-aprovados.json`, e é contra ele que os dois textos
+ * oráculo é `scripts/textos-aprovados.json`, e é contra ele que os textos
  * governados se medem: o nome tem de estar, carácter a carácter, num pedaço
- * `{ forte: … }` das dez regras de `src/data/metodo.mjs` E em
- * `src/data/politica-ia.mjs`. Sem o segundo braço, o oráculo e o ficheiro que
- * rende podiam divergir sem que nada o dissesse até alguém olhar para uma
- * página.
+ * `{ forte: … }` das dez regras de `src/data/metodo.mjs` sempre que o rótulo o
+ * imprimir, e em nenhum se o rótulo não o imprimir.
  *
  * E OS TEXTOS TAMBÉM SE MEDEM AQUI, não só na página: o rótulo composto de
  * `politica-ia.mjs` tem de ser o do oráculo, e a frase da política também. A
@@ -3905,9 +3916,28 @@ const cartoesUsados = new Set();
  * Método deixou de o nomear também, por decisão do diretor. A invariante passa
  * a ter dois estados e não um: ou o rótulo do oráculo contém o nome e então a
  * regra 9 tem de o imprimir (o estado de 01.09), ou o rótulo não o contém e
- * então nenhuma regra do Método o pode imprimir (o estado de hoje). O oráculo
- * continua a guardar quem responde, porque a `politica-ia.mjs` o declara e os
- * dois têm de dizer o mesmo; só não se imprime.
+ * então nenhuma regra do Método o pode imprimir (o estado de hoje).
+ *
+ * ---------------------------------------------------------------------------
+ * A CÉLULA MUDOU DE FORMA A 22.09.2026 (M5), CONSERVANDO O QUE PROTEGIA
+ * ---------------------------------------------------------------------------
+ * Havia aqui uma terceira comparação: o nome de `src/data/politica-ia.mjs`
+ * contra o do oráculo. O que ela protegia era que o nome de quem responde fosse
+ * uma cadeia só no dia em que uma página o rendia, porque duas grafias são duas
+ * pessoas para quem lê. Desde 15.09.2026 nenhuma página o rende, e a 22.09.2026
+ * mediu-se em todas as páginas construídas: zero. A constante saiu de `src/`,
+ * que é código de um repositório público, e a comparação foi substituída por
+ * duas exigências que protegem a mesma coisa pelo outro lado, e mais:
+ *
+ *   · o nome do oráculo não se rende em página nenhuma de `dist/` (contado no
+ *     varrimento, página a página);
+ *   · o nome do oráculo não existe em ficheiro nenhum de `src/` e de `public/`.
+ *
+ * E O DETETOR PROVA PRIMEIRO QUE VÊ (M18, §1.120). As duas exigências dizem
+ * «zero», e um zero de um detetor que não deteta nada não é um zero: antes de
+ * contar, o mesmo `veONome()` passa por uma linha escrita para o efeito, e se
+ * não a apanhar a construção fecha ali. O mesmo para a leitura de `src/` e de
+ * `public/`: uma varredura que não leia ficheiro nenhum é um erro, não um zero.
  */
 {
   const fortes = [];
@@ -3941,14 +3971,54 @@ const cartoesUsados = new Set();
         `ainda imprime ${JSON.stringify(nome)}: o sítio não diz nome nenhum, ou diz o mesmo nos dois lugares.`,
     });
   }
-  if (RESPONSAVEL_EDITORIAL !== nome) {
+  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero. */
+  if (!veONome(`<p data-prova>${nome}</p>`)) {
     erros.push({
-      rel: 'src/data/politica-ia.mjs',
+      rel: 'scripts/gate-html.mjs',
       msg:
-        `o responsável editorial é ${JSON.stringify(RESPONSAVEL_EDITORIAL)} e o oráculo diz ` +
-        `${JSON.stringify(nome)}.`,
+        `o detetor do nome de quem responde não encontrou ${JSON.stringify(nome)} numa linha ` +
+        `escrita com ele: enquanto não vir, os zeros que ele conta não valem nada.`,
     });
   }
+
+  /* O nome não existe em ficheiro nenhum de `src/` e de `public/`. */
+  const ficheirosDeFonte = (dir) => {
+    const out = [];
+    if (!fs.existsSync(dir)) return out;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...ficheirosDeFonte(full));
+      else if (!/\.(woff2?|ttf|otf|eot|png|jpe?g|webp|avif|gif|ico|pdf|zip|mp4|webm)$/i.test(entry.name))
+        out.push(full);
+    }
+    return out;
+  };
+  const fontes = [...ficheirosDeFonte(path.join(ROOT, 'src')), ...ficheirosDeFonte(path.join(ROOT, 'public'))];
+  if (fontes.length === 0) {
+    erros.push({
+      rel: 'scripts/gate-html.mjs',
+      msg: 'a varredura de `src/` e de `public/` não leu ficheiro nenhum: um zero assim não é uma conferência.',
+    });
+  }
+  let fontesComONome = 0;
+  for (const f of fontes) {
+    if (!veONome(fs.readFileSync(f, 'utf8'))) continue;
+    fontesComONome++;
+    erros.push({
+      rel: path.relative(ROOT, f),
+      msg:
+        `este ficheiro escreve o nome de quem responde, e nenhum ficheiro de \`src/\` ou de ` +
+        `\`public/\` o pode escrever (M5, 22.09.2026). O nome mora no oráculo, ` +
+        `\`scripts/textos-aprovados.json\`, e é de lá que os portões o leem; um comentário diz ` +
+        `«o diretor» ou «o responsável editorial».`,
+    });
+  }
+  console.log(
+    cinza(
+      `  o nome de quem responde · ${fontesComONome} ficheiro(s) com o nome em ` +
+      `${fontes.length} lido(s) de src/ e public/`,
+    ),
+  );
   if (LINGUA_DO_RESPONSAVEL !== TEXTOS_APROVADOS.lingua_do_responsavel) {
     erros.push({
       rel: 'src/data/politica-ia.mjs',
@@ -4027,6 +4097,20 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
+
+  /* O nome de quem responde não se rende em página nenhuma (M5, 22.09.2026).
+     Corre antes de tudo o resto e antes de qualquer saída antecipada, para
+     apanhar também os documentos alojados: nenhuma página é exceção. Lê-se o
+     HTML cru, e não só o texto, porque um nome num atributo, num JSON-LD ou num
+     cartão é o mesmo nome. A contagem vai à saída no fim do varrimento. */
+  if (veONome(html)) {
+    paginasComONome++;
+    err(
+      `esta página rende o nome de quem responde, e desde 15.09.2026 (§1.108, §1.109) ` +
+      `nenhuma página do sítio o diz. Se o nome tiver de voltar, volta por decisão escrita em ` +
+      `\`DECISIONS.md\`, e esta célula muda com ela.`,
+    );
+  }
 
   /* A língua desta edição, lida da própria página. É ela que decide qual das
      duas versões do motivo de uma correção tem de estar renderizada. */
@@ -7752,7 +7836,8 @@ console.log(
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
-        : ''),
+        : '') +
+      ` · ${paginasComONome} página(s) com o nome de quem responde`,
   ),
 );
 console.log(

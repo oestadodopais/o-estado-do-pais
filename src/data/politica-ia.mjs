@@ -22,12 +22,16 @@
  * ---------------------------------------------------------------------------
  * As cadeias de `ROTULO`, a `FRASE` e a `O_PROJETO` são texto decidido, e só
  * mudam por decisão escrita, aqui e no oráculo do portão ao mesmo tempo. A
- * redação de 01.09.2026 era:
+ * redação de 01.09.2026 acabava no nome do responsável editorial:
  *
- *   pt · «Texto gerado por IA sob a política da casa · responsável editorial:
- *         Nuno dos Santos»
- *   en · «AI-generated text under the house policy · editorial responsibility:
- *         Nuno dos Santos»
+ *   pt · «Texto gerado por IA sob a política da casa · responsável editorial:»
+ *         seguido do nome do diretor
+ *   en · «AI-generated text under the house policy · editorial responsibility:»
+ *         seguido do mesmo nome
+ *
+ * O nome não se escreve aqui: mora no oráculo do portão
+ * (`scripts/textos-aprovados.json`), que nenhum ficheiro de `src/` lê, e é lá
+ * que o `gate:html` e o `check:lingua` o vão buscar (M5, 22.09.2026).
  *
  * **E MUDOU A 15.09.2026, PELO BLOCO P1** (`BRIEF-P1-o-rodape-e-a-primeira-
  * pagina.md`, itens 1, 2 e 3), depois de o diretor ler o rodapé no ar. Três
@@ -61,39 +65,37 @@
  */
 
 /**
- * O NOME DE QUEM RESPONDE PELO SÍTIO.
+ * O NOME DE QUEM RESPONDE PELO SÍTIO, E PORQUE NÃO ESTÁ AQUI (M5, 22.09.2026).
  *
- * A forma exacta foi lida em `src/data/metodo.mjs`, regra 9 («A direção é de
- * **Nuno dos Santos**, que escolhe o que se publica e responde por ele»), que é
- * onde o sítio já a imprimia, e não escrita de memória. O portão de HTML
- * confere que as duas formas continuam a ser a mesma cadeia: uma segunda grafia
- * do nome da pessoa que responde seria duas pessoas para um leitor.
+ * Havia aqui uma constante exportada com o nome do diretor, escrita a
+ * 01.09.2026 quando o rótulo de todas as páginas o imprimia. Desde 15.09.2026
+ * (§1.108, as emendas da tarde, e §1.109) nem o rótulo nem a regra 9 do Método
+ * o imprimem: o sítio não diz nome nenhum, medido em todas as páginas
+ * construídas. O que ficava era um nome de pessoa no código de um repositório
+ * público, sem uma página que o rendesse, e por isso saiu.
  *
- * **JÁ NÃO SE RENDE EM PÁGINA NENHUMA DESTE FICHEIRO** (P1, itens 1, 2 e 3,
- * 15.09.2026, com a emenda do diretor das 16:35 UTC): o rótulo de todas as
- * páginas e a ficha da primeira página deixaram de o dizer, e o Sobre passou a
- * dizer o que o projeto é em vez de dizer de quem ele é. O único sítio do
- * sítio onde o nome continua a render-se é a regra 9 do Método, que é um dos
- * dois textos governados pela amarra das decisões e uma das dez regras da
- * lista fechada do diretor: muda com uma entrada em `DECISIONS.md` escrita do
- * lugar de direção, e não com um commit de construtor.
+ * O NOME NÃO DESAPARECEU DO PORTÃO, MUDOU DE CASA. Mora no oráculo,
+ * `scripts/textos-aprovados.json`, que nenhum ficheiro de `src/` e de `public/`
+ * lê e que existe para ser independente do que confere. É de lá que o
+ * `gate:html` e o `check:lingua` o leem.
  *
- * Esta constante fica por uma razão só, e é a comparação: o portão de HTML
- * confere que o nome deste ficheiro e o do oráculo são a mesma cadeia, e que
- * o Método a imprime se o rótulo a imprimir, e não a imprime se o rótulo não a
- * imprimir. Desde 15.09.2026 (§1.108, as emendas da tarde, e §1.109) nem o
- * rótulo nem a regra 9 a imprimem: o sítio não diz nome nenhum, e quem
- * responde fica aqui e no registo, por decisão do diretor.
- *
- * É um NOME, e um nome não se traduz.
+ * O QUE O PORTÃO PROTEGIA CONTINUA PROTEGIDO, E POR MAIS LADOS. A célula
+ * comparava esta constante com o oráculo, para que o nome de quem responde
+ * fosse uma cadeia só no dia em que uma página o rendia. Hoje exige duas coisas
+ * que valem enquanto o sítio não disser nome nenhum: que o nome do oráculo não
+ * se renda em página nenhuma de `dist/`, e que não exista em ficheiro nenhum de
+ * `src/` e de `public/`, com o detetor a provar primeiro que vê. Quem responde
+ * está no registo deste repositório e na ficha que a lei vier a exigir, se a
+ * exigir (a pergunta 2 da `DILIGENCIA-LEGAL.md`).
  */
-export const RESPONSAVEL_EDITORIAL = 'Nuno dos Santos';
 
 /**
- * A língua em que o nome está escrito, na forma que o `lang` do HTML usa.
+ * A língua em que o nome de quem responde está escrito, na forma que o `lang`
+ * do HTML usa.
  *
  * Fica declarada porque continua a ser verdade e porque o oráculo a confere;
- * nenhuma página a escreve num atributo desde que o nome saiu do rótulo.
+ * nenhuma página a escreve num atributo desde que o nome saiu do rótulo. Não é
+ * um nome: é uma etiqueta de língua, e por isso fica aqui.
  */
 export const LINGUA_DO_RESPONSAVEL = 'pt-PT';
 
