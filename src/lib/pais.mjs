@@ -2,11 +2,10 @@
  * As duas taxas de desemprego são a mesma medida. Fica a do procedimento,
  * com a comparação europeia e o valor de referência na régua existente. */
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
-import { getClaim, loadClaims } from './ledger.mjs';
+import { getClaim, entradasDoRegisto } from './ledger.mjs';
 import { WORKS } from '../data/studies.mjs';
 import { fichaDoEstudo } from './estudos-b1.mjs';
-import { mudancasDoLugar } from './lugar.mjs';
-import { nomeDaLinhaDerivada } from './nomes.mjs';
+import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
 import { MUDANCAS_DO_PROJETO } from '../data/mudancas-do-projeto.mjs';
 
 /** @type {Record<string, string>} */
@@ -28,14 +27,24 @@ export function estudosRecentes(lang) {
   return WORKS.map(w => fichaDoEstudo(w, lang)).sort((a, b) =>
     (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
-/** A mesma reunião de correções por linha e dia que a página do lugar.
+/** Cada entrada nasce de uma correção inteira, mesmo quando partilha a data.
  * As publicações são factos da edição, sem repetir a porta dos três estudos.
  * @param {'pt'|'en'} lang */
 export function mudancasDoPais(lang) {
-  const publicacoes = estudosRecentes(lang).map(e => ({ tipo: 'publicacao', data: e.data, estudo: e }));
+  const publicacoes = estudosRecentes(lang).map(e => {
+    if (!e.data) throw new Error(`Publicação sem data: ${e.work.slug}.`);
+    return { tipo: 'publicacao', data: e.data, estudo: e };
+  });
   // A primeira página reúne o registo do projeto inteiro, incluindo os lugares.
-  const correcoes = mudancasDoLugar('', [...loadClaims().keys()].map(claim => ({ claim, vazia: false })), lang)
-    .map(e => ({ ...e, nome: nomeDaLinhaDerivada(getClaim(e.claim), lang) ?? e.nome, tipo: 'correcao' }));
+  const correcoes = entradasDoRegisto().filter(e => ['correcao', 'atualizacao'].includes(e.kind))
+    .map(e => {
+      if (!e.date) throw new Error(`Correção sem data: ${e.claimId}, entrada ${e.n}.`);
+      const linha = getClaim(e.claimId);
+      return { tipo: 'correcao', data: e.date, n: e.n, claim: e.claimId,
+        nome: nomeDaLinhaDerivada(linha, lang) ?? nomeDoCartao(linha, lang),
+        antes: e.old_value, depois: e.new_value,
+        unidade: typeof linha.unit === 'string' ? linha.unit : null };
+    }).sort((a, b) => a.claim.localeCompare(b.claim) || a.n - b.n);
   const projeto = MUDANCAS_DO_PROJETO.map(e => ({ ...e, tipo: 'projeto' }));
   return [...projeto, ...publicacoes, ...correcoes].sort((a,b) => b.data.localeCompare(a.data));
 }
