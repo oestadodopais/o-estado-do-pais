@@ -164,8 +164,10 @@ fotografa. As quatro capturas estão em
 | `recibo-despesa-em-id-2024-en-390.png` | `/en/ledger/despesa-em-id-2024/` | 2 926 px | 2 | 0 |
 | `recibo-despesa-em-id-2024-en-1280.png` | `/en/ledger/despesa-em-id-2024/` | 1 602 px | 2 | 0 |
 
-O guião tem o seu conhecido-positivo: se um recibo não tiver os dois nomes, ou
-se algum nome transbordar a página, sai com erro e não escreve o manifesto.
+Refeitas na passagem de correção, sobre a cabeça
+`ee3dd513489d9e097c81c6f6839aa585f21280b3`, que é a que o manifesto regista. O
+guião tem o seu conhecido-positivo: se um recibo não tiver os dois nomes, ou se
+algum nome transbordar a página, sai com erro **e não escreve o manifesto**.
 
 Na edição inglesa os dois rótulos são «Name at Statistics Portugal» e «Name at
 PORDATA», e os nomes ficam em português com `lang="pt-PT"`, que é a regra de
@@ -178,6 +180,68 @@ do livro-razão mudou. Nenhum `push`. Os quatro nomes por decidir continuam por
 decidir, e esperam o motor: o da PORDATA para `tipslm90` espera a correção da
 linha (I129), e os três do INE esperam uma página do INE que declare a população
 do indicador.
+
+## A passagem de correção, 22.09.2026
+
+*A leitura a frio (Codex `gpt-5.6-sol`, cinco estragos plantados só nas cópias do
+pacote, os cinco apanhados) deixou seis achados reais, do 6 ao 11. Cada um foi
+conferido no código antes de ser fechado, e os cinco plantados foram conferidos
+no ramo para não se fechar um defeito verdadeiro por engano: a marca do INE da
+formação bruta de capital fixo é `null` com `mesma_medida: false`, o recibo dela
+rende só o nome confirmado da PORDATA, os dois recibos da despesa em I&D rendem
+o mesmo par nas duas edições, e as duas âncoras inglesas levam `lang="pt-PT"`.*
+
+| # | o achado | a célula | a planta que morde |
+|---|---|---|---|
+| 6 | a N3 pedia só que se visse um nome qualquer | **N3** passa a exigir cada nome confirmado, por linha e por fonte, no recibo das DUAS edições; o esperado deriva do ficheiro (36 = 18 × 2) e não se escreve | o recibo inglês sem o nome · um nome confirmado ausente do recibo português · a linha sem página naquela edição · o conjunto inteiro, que tem de passar |
+| 7 | o `aviso` recusava-se só à cabeça | a travessia passa a ser uma só, em `src/lib/aviso-do-motor.mjs`, usada pelos três leitores e pela medição | nove casos ao lado da função, entre eles o aviso em `conferencia.criterios.unidade`, dentro de uma lista, e a `null` · mais um recibo com o aviso fundo |
+| 8 | a N5 via só `a[href]` e a N6 só o texto inteiro | as duas passam a procurar por subcadeia no texto de fora da marca, com o limite de 40 caracteres para o nome e nenhum limite para o endereço | um nome comprido dentro de uma frase · um endereço do INE como texto simples · um nome curto dentro de uma frase, que continua a passar |
+| 9 | o manifesto das capturas escrevia-se antes das asserções | passa a escrever-se no fim, e só se todas passarem; regista a cabeça em que correu | `--planta` força a primeira asserção a falhar: código 1 e nenhum manifesto |
+| 10 | a contagem pedia cinco das seis condições dos leitores | passa a exigir também a hora de leitura, e lê o aviso a qualquer profundidade | a contagem depois da mudança dá os mesmos 18 e os mesmos 36 |
+| 11 | a repartição «nove e cinco» não se lê no pacote de leitura | é uma nota e não um defeito, e fica dita aqui | contada em `src/data/figuras.mjs` (nove) e em `src/data/nomes-das-medidas.mjs` (cinco), chamando `nomeDoCartao()` para cada uma das 15 linhas |
+
+### O que se mediu antes de decidir o ponto 8
+
+O limite de 40 caracteres não é uma escolha de gosto. Dos 39 nomes do ficheiro,
+cinco têm menos de 40 caracteres, e um deles é «PIB per capita», que é prosa
+corrente da casa e se rende em 13 páginas construídas: uma régua que o
+procurasse como subcadeia fechava a construção por causa de uma frase
+portuguesa. O limite é o maior dos cinco curtos (36) arredondado para cima.
+
+**O que o limite deixa de fora, dito:** «Índice de perceção de corrupção» (31) é
+o único nome CONFIRMADO abaixo dele. Continua protegido pela N6 inteira, e
+medido nas 7 354 páginas só aparece dentro da marca, nos seus dois recibos.
+
+Medido nas 7 354 páginas antes de mudar a régua: **zero nomes embebidos fora da
+marca e zero endereços como texto**, e por isso nenhuma página teve de mudar. O
+detetor foi provado com um conhecido-positivo antes de se acreditar no zero (uma
+página com o nome do INE dentro de uma frase e o endereço em texto simples: os
+dois apanhados).
+
+### A saída do `check:nomes --prova` nesta passagem
+
+```
+nomes oficiais · 7354 página(s) lidas, 43 analisadas · 36 nome(s) em recibo
+(36 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela
+marca por fonte: 4 do INE, 14 da PORDATA · recusados: 23
+✓ nenhuma página rende um nome oficial que o motor não confirme como a mesma
+medida, e as 40 plantas foram recusadas ou aceites como deviam.
+```
+
+As 40 plantas são 26 sobre páginas, 4 sobre conjuntos de páginas (a N3), 9 sobre
+a travessia do aviso e 1 sobre a forma do ficheiro.
+
+### Os portões desta passagem
+
+Correram só as conferências que as mudanças tocam, e são estas: a **construção**
+inteira (`npm run build`, que leva o `gate:html`, o `check:voz` e o
+`check:nomes`) a **0** na cabeça `ee3dd513489d9e097c81c6f6839aa585f21280b3`, e o
+`check:voz` à parte, também a 0, porque a mudança passou por
+`scripts/medir-defeitos.mjs`. As capturas foram refeitas nessa mesma cabeça, e o
+manifesto regista-a. **Os três portões inteiros não correram nesta passagem:**
+ficam para o lugar de direção, na cabeça final, depois de acrescentar os
+registos do bloco. A tabela da secção seguinte é a da primeira passagem, na
+cabeça `50eb7aa3`.
 
 ## Os três portões na cabeça final
 
