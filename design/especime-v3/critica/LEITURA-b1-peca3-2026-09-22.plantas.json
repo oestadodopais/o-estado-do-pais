@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-22T04:09:21+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/peca3/leitura/pacote",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/index.html",
+   "descricao": "um valor da leitura do país trocado na página construída (89,7 passa a 89,9); a linha divida-publica-2025 no pacote diz 89,7",
+   "sha256_antes": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+   "sha256_depois": "931bca57a075b01136f7a7b9d544fd3fbd60c5f43dc0b6cf4707e41072120671",
+   "contexto_antes": "s=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></span><span> para </span><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value\">89,7</span><span class=\"claim-sufixo\"> % do PIB</span><a class=\"src-chip\" href=\"/livro-razao/divida-publica-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"",
+   "contexto_depois": "s=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></span><span> para </span><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value\">89,9</span><span class=\"claim-sufixo\"> % do PIB</span><a class=\"src-chip\" href=\"/livro-razao/divida-publica-2025\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\""
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "um nome de fora preso à medida errada: o cartão da dívida pública em /temas/ com o título do saldo (a classe do item 6)",
+   "sha256_antes": "3f5ed5efe6621e79bad2d7f4a009b220e13f03e62bae056f1110d8e9121b5f01",
+   "sha256_depois": "55343ad7de1a4af75832f60418676f9d9a723e08f5463b49edfaac9b1da2d22c",
+   "contexto_antes": "p></article><article class=\"cartao-medida\" data-cartao-medida=\"divida-publica-2025\" data-estado=\"completa\"><span class=\"cartao-medida-nome\" data-nome=\"figuras\" data-de-linha=\"divida-publica-2025\">Dívida pública</span><p class=\"cartao-medida-valor\"><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value cartao-medida-num\">89,7</span><a cla",
+   "contexto_depois": "p></article><article class=\"cartao-medida\" data-cartao-medida=\"divida-publica-2025\" data-estado=\"completa\"><span class=\"cartao-medida-nome\" data-nome=\"figuras\" data-de-linha=\"divida-publica-2025\">Saldo das administrações públicas</span><p class=\"cartao-medida-valor\"><span class=\"claim claim-com-chip\"><span data-claim=\"divida-publica-2025\" class=\"claim-value cartao-medida-num\">89,7</span><a cla"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/en/index.html",
+   "descricao": "uma sexta entrada no menu inglês (Agenda), só na página construída",
+   "sha256_antes": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+   "sha256_depois": "5f10112c0b2bac3df37941f1a54e912805fdfc91db4feb738dc573d3985e601a",
+   "contexto_antes": "=\"Main navigation\"><a href=\"/en\" aria-current=\"page\">Portugal</a><a href=\"/en/places\">Places</a><a href=\"/en/themes\">Themes</a><a href=\"/en/studies\">Studies</a><a href=\"/en/about\">About</a></nav><div class=\"masthead masthead-pais\"><h1 class=\"wordmark\">O Estado do País</h1></div></header><main id=\"conteudo\"><div class=\"pais-cabeca\"><p class=\"pais-leitura",
+   "contexto_depois": "=\"Main navigation\"><a href=\"/en\" aria-current=\"page\">Portugal</a><a href=\"/en/places\">Places</a><a href=\"/en/themes\">Themes</a><a href=\"/en/studies\">Studies</a><a href=\"/en/about\">About</a><a href=\"/en/agenda\">Agenda</a></nav><div class=\"masthead masthead-pais\"><h1 class=\"wordmark\">O Estado do País</h1></div></header><main id=\"conteudo\"><div class=\"pais-cabeca\"><p class=\"pais-leitura"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório trocado com a prova no pacote (a altura a 1 280: 6 622 passa a 6 322, «diminuiu»); a captura não vai, mas a página construída e a medida do construtor vão",
+   "sha256_antes": "71a3c7aa306c705ed28df1cd9144b1828ac0ac208cf84d94316e1b5b5693d9df",
+   "sha256_depois": "a5fa06fa7b52b1028fef66b17aa4dacbcf5b8751be2da3dd07c6a0808b66aeca",
+   "contexto_antes": " rótulo: código 1 nas duas línguas. | 13 linhas por edição com o rótulo novo. Os três estudos recentes de cada edição conservam `publicado` seguido da data. |\n\nA altura portuguesa a 1 280 **aumentou de 6 470 para 6 622 px**, mais 152 px. Os temas deixaram a coluna esquerda e passaram a começar abaixo do mapa inteiro. A grelha comum tem quatro colunas mais estreitas, com mais quebras de texto. A",
+   "contexto_depois": " rótulo: código 1 nas duas línguas. | 13 linhas por edição com o rótulo novo. Os três estudos recentes de cada edição conservam `publicado` seguido da data. |\n\nA altura portuguesa a 1 280 **diminuiu de 6 470 para 6 322 px**, menos 148 px. Os temas deixaram a coluna esquerda e passaram a começar abaixo do mapa inteiro. A grelha comum tem quatro colunas mais estreitas, com mais quebras de texto. A"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/data/dominios.mjs",
+   "descricao": "uma medida mudada de tema na tabela copiada (a taxa de emprego para «educacao»), sem a página construída nem o diff a acompanharem",
+   "sha256_antes": "4d02e492e1d398324d152b4c7883df34aa1f2f569dbdde6834d2e0ec2ada7d87",
+   "sha256_depois": "b546e81d8e07b8f58226a7ed0b44c1f8fb2725bc213ad31405f3e855f87d8369",
+   "contexto_antes": "25': 'economia-e-financas-publicas',\n  'fluxo-de-credito-as-familias-2025': 'economia-e-financas-publicas',\n\n  /* 2 · Trabalho (carta §2 e §3, domínio 2). */\n  'taxa-de-emprego-2025': 'trabalho',\n  'taxa-de-desemprego-2025': 'trabalho',\n  'taxa-de-desemprego-mip-2025': 'trabalho',\n  'ganho-medio-mensal-2024': 'trabalho',\n  'disparidade-salarial-entre-s",
+   "contexto_depois": "25': 'economia-e-financas-publicas',\n  'fluxo-de-credito-as-familias-2025': 'economia-e-financas-publicas',\n\n  /* 2 · Trabalho (carta §2 e §3, domínio 2). */\n  'taxa-de-emprego-2025': 'educacao',\n  'taxa-de-desemprego-2025': 'trabalho',\n  'taxa-de-desemprego-mip-2025': 'trabalho',\n  'ganho-medio-mensal-2024': 'trabalho',\n  'disparidade-salarial-entre-s"
+  }
+ ]
+}
