@@ -87,11 +87,22 @@
  *   K13 · **o grupo etário da linha está escrito na definição** · quando a
  *        linha de uma medida fixa um grupo de idades — a etiqueta `Age class`
  *        no excerto ou o filtro `age=` no endereço do pedido —, a definição das
- *        duas edições escreve os dois limites. Entrou pela I129: o título do
+ *        duas edições escreve-o COMO INTERVALO. Entrou pela I129: o título do
  *        quadro do Eurostat diz «aged 15-24», a série é dos 15 aos 29, e a
  *        definição dizia «um grupo de idades e sexo» sem dizer qual. Não lê
  *        `dist/`: compara a declaração com a linha, que é onde o defeito vive.
- *        Traz uma catraca declarada e datada, e a razão dela está ao pé dela.
+ *
+ *        **A leitura a frio de 22.09.2026 (achados 6 e 7) mudou-lhe três
+ *        coisas**, e as três eram buracos: corre sobre AS LINHAS e não sobre as
+ *        definições, para que uma linha sem definição nenhuma deixe de ser
+ *        invisível; quando a etiqueta do excerto e o filtro do pedido existem
+ *        os dois, COMPARA-OS, porque são dois registos do mesmo facto e um
+ *        excerto errado com uma definição igualmente errada passava; e exige o
+ *        intervalo escrito como intervalo, porque «os dois algarismos em
+ *        qualquer sítio da frase» deixava passar «entre 15 concelhos e 29
+ *        freguesias». A catraca está vazia e a asserção de que está vazia corre
+ *        em TODA a corrida, não só na prova: uma dívida nova fecha a construção
+ *        no acto de ser declarada, que é o único sítio onde alguém a lê.
  *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
@@ -136,7 +147,7 @@ import {
   linguaDoRotuloDaFonte,
   linguaDoTituloDoDocumento,
 } from '../../src/i18n/lingua-dos-titulos.mjs';
-import { getClaim, hasClaim } from '../../src/lib/ledger.mjs';
+import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const argv = process.argv.slice(2);
@@ -310,6 +321,7 @@ function corre(dist) {
     regua_periodo_anterior: 0,
     /* O GRUPO ETÁRIO DA LINHA NA DEFINIÇÃO (K13, I129, 22.09.2026). */
     medidas_com_grupo_etario: 0,
+    linhas_com_grupo_etario: 0,
     medidas_na_catraca_do_grupo_etario: 0,
     governo_constitucional_pt: 0,
     governo_constitucional_en: 0,
@@ -636,6 +648,7 @@ function corre(dist) {
   const k13 = celulaK13();
   erros.push(...k13.erros);
   contas.medidas_com_grupo_etario = k13.medidas;
+  contas.linhas_com_grupo_etario = k13.linhas;
   contas.medidas_na_catraca_do_grupo_etario = CATRACA_DO_GRUPO_ETARIO.size;
 
   return { erros, contas };
@@ -673,70 +686,163 @@ function corre(dist) {
  */
 const CATRACA_DO_GRUPO_ETARIO = /** @type {Map<string, string>} */ (new Map([]));
 
-/** Os dois limites que a linha fixa, ou `null`. @param {string} id */
-function grupoEtarioDaLinha(id) {
-  if (!hasClaim(id)) return null;
-  const linha = getClaim(id);
+/* AS FORMAS EM QUE UM INTERVALO SE ESCREVE, por edição (achado 6 da leitura a
+   frio de 22.09.2026). Antes bastava que os dois algarismos aparecessem em
+   qualquer sítio da frase, e «entre 15 pessoas e 29 empresas» passava: dois
+   números soltos não são um grupo etário. O que a definição tem de escrever é o
+   INTERVALO, e estas são as formas que a casa aceita. Uma forma nova
+   acrescenta-se aqui, à vista, e não se descobre por uma expressão frouxa. */
+const FORMAS_DO_INTERVALO = {
+  pt: (a, b) => [
+    new RegExp(`\\bdos\\s+${a}\\s+aos\\s+${b}\\s+anos\\b`),
+    new RegExp(`\\bentre\\s+os\\s+${a}\\s+e\\s+os\\s+${b}\\s+anos\\b`),
+  ],
+  en: (a, b) => [
+    new RegExp(`\\baged\\s+${a}\\s+to\\s+${b}\\b`),
+    new RegExp(`\\bbetween\\s+${a}\\s+and\\s+${b}\\b`),
+  ],
+};
+
+/** O identificador da medida a que uma linha pertence: sem período e sem `-ue`. */
+const familiaDaLinha = (id) => id.replace(/-ue$/, '').replace(/-\d{4}(-\d{2})?$/, '');
+
+/**
+ * O grupo de idades que uma linha fixa, pelas DUAS vias, e a discordância entre
+ * elas se houver. A leitura a frio: «it accepts the excerpt first and never
+ * compares the two; a wrong excerpt plus a matching wrong definition can
+ * therefore pass despite a contradictory request». As duas vias são dois
+ * registos independentes do mesmo facto, e quando existem as duas comparam-se.
+ *
+ * @param {{ id: string, excerpt?: unknown, source_url?: unknown }} linha
+ */
+function grupoEtarioDaLinha(linha) {
   const excerto = typeof linha.excerpt === 'string' ? linha.excerpt : '';
   const endereco = typeof linha.source_url === 'string' ? linha.source_url : '';
   const daEtiqueta = excerto.match(/Age class: From (\d+) to (\d+) years/);
-  if (daEtiqueta) return { limites: [daEtiqueta[1], daEtiqueta[2]], onde: 'o excerto' };
   const doFiltro = endereco.match(/[?&]age=Y?(\d+)-(\d+)/);
-  if (doFiltro) return { limites: [doFiltro[1], doFiltro[2]], onde: 'o source_url' };
-  return null;
+  if (!daEtiqueta && !doFiltro) return null;
+  const etiqueta = daEtiqueta ? [daEtiqueta[1], daEtiqueta[2]] : null;
+  const filtro = doFiltro ? [doFiltro[1], doFiltro[2]] : null;
+  return {
+    limites: etiqueta ?? filtro,
+    etiqueta,
+    filtro,
+    discordam: !!(etiqueta && filtro && etiqueta.join('-') !== filtro.join('-')),
+  };
 }
 
 /**
- * A catraca entra por argumento para que a prova a possa exercer com uma
- * entrada dentro: vazia como está, a segunda metade da regra não teria como
- * mostrar que ainda morde, e uma regra que não se pode exercer é uma regra por
- * provar.
+ * K13. Corre sobre AS LINHAS do livro-razão que fixam um grupo de idades, e não
+ * sobre as definições: era por iterar as definições que uma linha sem definição
+ * nenhuma ficava invisível (achado 6). As linhas juntam-se por medida, porque o
+ * período anterior e o agregado da União não têm definição própria e leem-se
+ * debaixo da definição da linha âncora: se uma delas fixasse outro grupo, o
+ * cartão punha um valor de um grupo ao lado da frase de outro.
+ *
+ * A catraca e as definições entram por argumento para a prova as poder exercer;
+ * a lista EM VIGOR confere-se sempre, corra a prova ou não (achado 7).
  *
  * @param {Record<string, { pt: readonly unknown[], en: readonly unknown[] }>} definicoes
  * @param {Map<string, string>} catraca
- * @returns {{ erros: string[], medidas: number }}
+ * @param {{ id: string, excerpt?: unknown, source_url?: unknown }[]} linhas
+ * @returns {{ erros: string[], medidas: number, linhas: number }}
  */
 function celulaK13(
   definicoes = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS),
   catraca = CATRACA_DO_GRUPO_ETARIO,
+  linhas = [...loadClaims().values()],
 ) {
   /** @type {string[]} */
   const erros = [];
-  let medidas = 0;
-  for (const id of Object.keys(definicoes)) {
-    const grupo = grupoEtarioDaLinha(id);
+
+  /* A LISTA EM VIGOR ESTÁ VAZIA, e isto corre em toda a corrida. A leitura a
+     frio: «the assertion that the active ratchet has zero entries exists only
+     inside the optional `if (PROVA)` block, so adding a new debt can turn a
+     normal check green». Uma dívida nova passa a fechar a construção no acto de
+     ser declarada, que é o único sítio onde alguém a lê. */
+  if (CATRACA_DO_GRUPO_ETARIO.size !== 0) {
+    erros.push(
+      `K13 · a catraca do grupo etário tem ${CATRACA_DO_GRUPO_ETARIO.size} entrada(s) ` +
+        `(${[...CATRACA_DO_GRUPO_ETARIO.keys()].join(', ')}) e tem de estar vazia. ` +
+        `Uma medida cuja linha fixa um grupo de idades escreve-o na definição, ou ` +
+        `a regra deixa de valer para todas.`,
+    );
+  }
+
+  /** @type {Map<string, { id: string, grupo: ReturnType<typeof grupoEtarioDaLinha> }[]>} */
+  const porMedida = new Map();
+  let comGrupo = 0;
+  for (const linha of linhas) {
+    const grupo = grupoEtarioDaLinha(linha);
     if (!grupo) continue;
-    medidas++;
-    const faltam = [];
-    for (const lang of ['pt', 'en']) {
-      const partes = definicoes[id][lang] ?? definicoes[id].pt;
-      const texto = textoDaDefinicao(partes);
-      /* Os dois limites como números inteiros do texto, e não como subcadeia:
-         «15» não se dá por escrito num «2015». */
-      const escreve = grupo.limites.every((n) =>
-        new RegExp(`(^|[^0-9])${n}([^0-9]|$)`).test(texto));
-      if (!escreve) faltam.push({ lang, texto });
-    }
-    const naCatraca = catraca.get(id);
-    if (faltam.length === 0) {
-      if (naCatraca) {
-        erros.push(
-          `K13 · ${id}: escreve o grupo dos ${grupo.limites.join(' aos ')} anos nas duas ` +
-            `edições e continua na catraca. Tira-a de CATRACA_DO_GRUPO_ETARIO: uma dívida ` +
-            `paga que fica declarada esconde a seguinte.`,
-        );
-      }
-      continue;
-    }
-    if (naCatraca === grupo.limites.join('-')) continue;
-    for (const { lang, texto } of faltam) {
+    comGrupo++;
+    if (grupo.discordam) {
       erros.push(
-        `K13 · ${id} · ${lang}: a linha fixa o grupo dos ${grupo.limites.join(' aos ')} anos ` +
-          `(${grupo.onde}) e a definição não escreve os dois limites: «${texto}»`,
+        `K13 · ${linha.id}: a etiqueta do excerto diz dos ${grupo.etiqueta.join(' aos ')} ` +
+          `anos e o filtro do pedido diz age=Y${grupo.filtro.join('-')}. Os dois são da ` +
+          `fonte e não podem discordar: um deles está desactualizado.`,
       );
     }
+    const familia = familiaDaLinha(linha.id);
+    if (!porMedida.has(familia)) porMedida.set(familia, []);
+    porMedida.get(familia).push({ id: linha.id, grupo });
   }
-  return { erros, medidas };
+
+  for (const [familia, doGrupo] of [...porMedida].sort()) {
+    /* Todas as linhas de uma medida fixam o MESMO grupo. */
+    const grupos = new Set(doGrupo.map((l) => l.grupo.limites.join('-')));
+    if (grupos.size > 1) {
+      erros.push(
+        `K13 · ${familia}: as linhas desta medida fixam grupos diferentes ` +
+          `(${doGrupo.map((l) => `${l.id}: ${l.grupo.limites.join('-')}`).join('; ')}). ` +
+          `O período anterior e o agregado leem-se debaixo da mesma definição.`,
+      );
+      continue;
+    }
+    const [a, b] = doGrupo[0].grupo.limites;
+
+    /* A medida tem de ter uma definição declarada, e é aqui que uma linha sem
+       definição nenhuma deixa de ser invisível. */
+    const comDefinicao = doGrupo.map((l) => l.id).filter((id) => definicoes[id]);
+    if (comDefinicao.length === 0) {
+      erros.push(
+        `K13 · ${familia}: ${doGrupo.length} linha(s) fixam o grupo dos ${a} aos ${b} anos ` +
+          `(${doGrupo.map((l) => l.id).join(', ')}) e nenhuma delas tem definição ` +
+          `declarada em DEFINICOES_DAS_MEDIDAS. Um grupo que a linha fixa e que o sítio ` +
+          `não escreve deixa o leitor a supor de quem é o número.`,
+      );
+      continue;
+    }
+
+    for (const id of comDefinicao) {
+      const naCatraca = catraca.get(id);
+      const faltam = [];
+      for (const lang of ['pt', 'en']) {
+        const texto = textoDaDefinicao(definicoes[id][lang] ?? definicoes[id].pt);
+        if (!FORMAS_DO_INTERVALO[lang](a, b).some((forma) => forma.test(texto))) {
+          faltam.push({ lang, texto });
+        }
+      }
+      if (faltam.length === 0) {
+        if (naCatraca) {
+          erros.push(
+            `K13 · ${id}: escreve o grupo dos ${a} aos ${b} anos nas duas edições e ` +
+              `continua na catraca. Tira-a de CATRACA_DO_GRUPO_ETARIO: uma dívida paga ` +
+              `que fica declarada esconde a seguinte.`,
+          );
+        }
+        continue;
+      }
+      if (naCatraca === `${a}-${b}`) continue;
+      for (const { lang, texto } of faltam) {
+        erros.push(
+          `K13 · ${id} · ${lang}: a linha fixa o grupo dos ${a} aos ${b} anos e a ` +
+            `definição não o escreve como intervalo: «${texto}»`,
+        );
+      }
+    }
+  }
+  return { erros, medidas: porMedida.size, linhas: comGrupo };
 }
 
 /* =========================================================================
@@ -904,35 +1010,37 @@ if (PROVA) {
   }
 
   /* -------------------------------------------------------------------- K13
-     A PLANTA DO GRUPO ETÁRIO: a definição diz «dos 15 aos 24 anos» e a linha
-     fixa os 15 aos 29. É o defeito da I129 escrito por inteiro, e é o que a
-     célula existe para apanhar. Nenhuma linha falsa entra: a linha é a
-     verdadeira, e o que se troca é a DECLARAÇÃO, que é o lado que se corrige.
-     Positivo, planta, e a reposição a passar. */
+     AS PLANTAS DO GRUPO ETÁRIO. Nenhuma linha falsa se escreve: as linhas são
+     as verdadeiras, e o que se estraga é uma CÓPIA delas ou a DECLARAÇÃO, que
+     é o lado que se corrige. As três primeiras vieram da leitura a frio de
+     22.09.2026 (achado 6): a definição sem intervalo, a linha sem definição, e
+     a etiqueta a contradizer o filtro. */
   {
     const id = 'jovens-nem-2025';
+    const reais = [...loadClaims().values()];
     const real = celulaK13();
     if (real.erros.length) {
       falhas.push(`K13 recusa a declaração em vigor: ${real.erros[0]}`);
     }
-    if (real.medidas < 4) {
-      falhas.push(`K13 só viu ${real.medidas} medida(s) com grupo etário na linha`);
-    }
-    if (CATRACA_DO_GRUPO_ETARIO.size !== 0) {
+    if (real.medidas !== 4 || real.linhas !== 12) {
       falhas.push(
-        `K13: a catraca tem ${CATRACA_DO_GRUPO_ETARIO.size} entrada(s) e o ficheiro ` +
-          `diz que está vazia desde a segunda passagem de 22.09.2026`,
+        `K13 viu ${real.medidas} medida(s) e ${real.linhas} linha(s) com grupo etário, ` +
+          `e o livro-razão tem 4 e 12`,
       );
     }
-    /* A linha tem de trazer mesmo a etiqueta: sem ela a planta não prova nada,
-       porque a célula nem sequer olharia para esta medida. */
-    const grupo = grupoEtarioDaLinha(id);
-    if (!grupo || grupo.limites.join('-') !== '15-29' || grupo.onde !== 'o excerto') {
-      falhas.push(`K13: a linha «${id}» não fixa os 15 aos 29 pelo excerto`);
+    if (CATRACA_DO_GRUPO_ETARIO.size !== 0) {
+      falhas.push('K13: a catraca em vigor tem entradas e o ficheiro diz que está vazia');
     }
+    /* A linha tem de trazer mesmo a etiqueta: sem ela a planta não prova nada. */
+    const grupo = grupoEtarioDaLinha(reais.find((l) => l.id === id));
+    if (!grupo || grupo.limites.join('-') !== '15-29') {
+      falhas.push(`K13: a linha «${id}» não fixa os 15 aos 29`);
+    }
+
+    /* PLANTA A: o segundo limite trocado na definição (o defeito da I129). */
     const trocaOSegundoLimite = (partes) =>
       partes.map((p) => (typeof p !== 'string' && p.nl === '29' ? { ...p, nl: '24' } : p));
-    const plantadas = {
+    const comDefeito = {
       ...DEFINICOES_DAS_MEDIDAS,
       [id]: {
         ...DEFINICOES_DAS_MEDIDAS[id],
@@ -940,28 +1048,89 @@ if (PROVA) {
         en: trocaOSegundoLimite(DEFINICOES_DAS_MEDIDAS[id].en),
       },
     };
-    const mordidas = celulaK13(plantadas).erros.filter((e) => e.startsWith(`K13 · ${id}`));
+    const mordidas = celulaK13(comDefeito).erros.filter((e) => e.startsWith(`K13 · ${id} ·`));
     if (mordidas.length !== 2) {
       falhas.push(
         `K13 NÃO MORDEU a definição com «dos 15 aos 24 anos»: ${mordidas.length} ` +
           `vermelho(s) em vez de um por edição`,
       );
-    } else if (!mordidas.every((e) => e.includes('dos 15 aos 29 anos'))) {
-      falhas.push(`K13 mordeu noutra coisa: ${mordidas[0]}`);
     }
-    /* AS DUAS METADES DA CATRACA, exercidas com ela VAZIA em vigor. A catraca
-       entra por argumento porque uma lista vazia não se pode exercer, e uma
-       regra que não se exerce é uma regra por provar. Nenhuma das duas plantas
-       toca na lista em vigor. */
+
+    /* PLANTA B: os dois algarismos presentes, mas fora do intervalo. É o caso
+       que passava antes, porque a régua só procurava os dois números soltos. */
+    const soltos = {
+      ...DEFINICOES_DAS_MEDIDAS,
+      [id]: {
+        ...DEFINICOES_DAS_MEDIDAS[id],
+        pt: ['Entre ', { nl: '15', motivo: 'escala-de-instrumento' }, ' concelhos e ',
+             { nl: '29', motivo: 'escala-de-instrumento' }, ' freguesias.'],
+        en: ['Between ', { nl: '15', motivo: 'escala-de-instrumento' }, ' municipalities and ',
+             { nl: '29', motivo: 'escala-de-instrumento' }, ' parishes.'],
+      },
+    };
+    const doisSoltos = celulaK13(soltos).erros.filter((e) => e.startsWith(`K13 · ${id} ·`));
+    if (doisSoltos.length !== 2) {
+      falhas.push(
+        `K13 NÃO MORDEU dois algarismos soltos fora do intervalo: ${doisSoltos.length} ` +
+          `vermelho(s) em vez de um por edição`,
+      );
+    }
+
+    /* PLANTA C: uma medida cujas linhas fixam um grupo e que não tem definição
+       nenhuma. Era o buraco do achado 6: a régua iterava as definições, e uma
+       linha sem definição não era vista por ninguém. */
+    const semDefinicao = { ...DEFINICOES_DAS_MEDIDAS };
+    delete semDefinicao[id];
+    const invisivel = celulaK13(semDefinicao).erros
+      .filter((e) => e.startsWith('K13 · jovens-nem:'));
+    if (invisivel.length !== 1) {
+      falhas.push(
+        `K13 NÃO MORDEU uma medida sem definição: ${invisivel.length} vermelho(s)`,
+      );
+    } else if (!invisivel[0].includes('3 linha(s)')) {
+      falhas.push(`K13 contou mal as linhas sem definição: ${invisivel[0]}`);
+    }
+
+    /* PLANTA D: a etiqueta do excerto a contradizer o filtro do pedido. A linha
+       é a verdadeira, numa CÓPIA com a etiqueta trocada. */
+    const contraditoria = reais.map((l) =>
+      l.id === 'taxa-de-desemprego-2025'
+        ? { ...l, excerpt: String(l.excerpt).replace('From 15 to 74 years', 'From 15 to 64 years') }
+        : l);
+    const discordancia = celulaK13(DEFINICOES_DAS_MEDIDAS, CATRACA_DO_GRUPO_ETARIO, contraditoria)
+      .erros.filter((e) => e.includes('não podem discordar'));
+    if (discordancia.length !== 1) {
+      falhas.push(
+        `K13 NÃO MORDEU a etiqueta a contradizer o filtro: ${discordancia.length} vermelho(s)`,
+      );
+    }
+
+    /* PLANTA E: duas linhas da mesma medida a fixar grupos diferentes. */
+    const desalinhada = reais.map((l) =>
+      l.id === 'taxa-de-emprego-2024'
+        ? {
+            ...l,
+            excerpt: String(l.excerpt).replace('From 20 to 64 years', 'From 25 to 64 years'),
+            source_url: String(l.source_url).replace('age=Y20-64', 'age=Y25-64'),
+          }
+        : l);
+    const familias = celulaK13(DEFINICOES_DAS_MEDIDAS, CATRACA_DO_GRUPO_ETARIO, desalinhada)
+      .erros.filter((e) => e.includes('fixam grupos diferentes'));
+    if (familias.length !== 1) {
+      falhas.push(
+        `K13 NÃO MORDEU duas linhas da mesma medida com grupos diferentes: ` +
+          `${familias.length} vermelho(s)`,
+      );
+    }
+
+    /* AS DUAS METADES DA CATRACA, exercidas com ela VAZIA em vigor: a lista
+       entra por argumento porque uma lista vazia não se pode exercer. */
     const paga = new Map([['taxa-de-desemprego-2025', '15-74']]);
     const aviso = celulaK13(DEFINICOES_DAS_MEDIDAS, paga).erros
       .filter((e) => e.includes('continua na catraca'));
     if (aviso.length !== 1) {
       falhas.push('K13: a catraca não reclamou uma dívida paga que ficou declarada');
     }
-    /* A metade de cima: uma medida NA catraca, com a definição estragada, não
-       dá vermelho por essa falha, e a mesma medida FORA dela dá. É o que faz a
-       lista ser a única porta de saída da regra. */
     const estragadas = {
       ...DEFINICOES_DAS_MEDIDAS,
       'taxa-de-emprego-2025': {
@@ -970,8 +1139,7 @@ if (PROVA) {
         en: ['A definition without the bounds.'],
       },
     };
-    const comLista = new Map([['taxa-de-emprego-2025', '20-64']]);
-    const dentro = celulaK13(estragadas, comLista).erros
+    const dentro = celulaK13(estragadas, new Map([['taxa-de-emprego-2025', '20-64']])).erros
       .filter((e) => e.startsWith('K13 · taxa-de-emprego-2025 ·'));
     const fora = celulaK13(estragadas, new Map()).erros
       .filter((e) => e.startsWith('K13 · taxa-de-emprego-2025 ·'));
@@ -1127,8 +1295,10 @@ if (PROVA) {
         `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
         `par bom e dois maus; a mesma série com um par que bate e um que não bate; ` +
         `K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; ` +
-        `K13 sobre ${celulaK13().medidas} medidas com grupo etário na linha, com a definição em vigor a passar, ` +
-        `«dos 15 aos 24 anos» a morder nas duas edições, e a catraca vazia exercida nas duas metades`,
+        `K13 sobre ${celulaK13().medidas} medidas e ${celulaK13().linhas} linhas com grupo etário, com a ` +
+        `declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos ` +
+        `soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e ` +
+        `duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades`,
     ),
   );
 }
@@ -1223,6 +1393,7 @@ console.log(cinza(`    valores de régua sem marca própria                    $
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));
+console.log(cinza(`      linhas dessas medidas, todas conferidas               ${r.contas.linhas_com_grupo_etario}`));
 console.log(cinza(`      delas, na catraca declarada (I132, vazia)           ${r.contas.medidas_na_catraca_do_grupo_etario}`));
 console.log(
   cinza(

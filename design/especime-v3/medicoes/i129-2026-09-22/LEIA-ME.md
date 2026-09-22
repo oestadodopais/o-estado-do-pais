@@ -1,7 +1,9 @@
 # I129 · O grupo etário dos jovens que não estudam nem trabalham
 
 *Construtor: Claude Opus 5, 22.09.2026, na worktree `jovens-nem-2026-09-22`
-sobre `83e9df2d`, e no motor na árvore principal sobre `3cf1ccb`. O brief é
+sobre `83e9df2d`, e no motor na árvore principal sobre `3cf1ccb`. Três passagens:
+a do bloco, a que fechou o que ela deixou nomeado, e a de correção da leitura a
+frio do Codex, cada uma na sua secção. O brief é
 `design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md`. Cada número
 desta página sai de `medir-i129.mjs`, que corre sobre o `dist/` construído e
 sobre o livro-razão e fica ao lado, ou da saída de um portão guardada aqui.
@@ -126,8 +128,7 @@ catraca declarada**.
 ## A segunda passagem, 22.09.2026
 
 *A regra do diretor desse dia: nada fica para depois. O que a primeira passagem
-deixou nomeado fecha-se aqui, sobre o sítio `3b6cbf27` e o motor `f408e1c`. As
-duas secções seguintes ficam como foram escritas, e esta diz o que mudou nelas.*
+deixou nomeado fecha-se aqui, sobre o sítio `3b6cbf27` e o motor `f408e1c`.*
 
 **Nove linhas, e não seis.** Cada uma das três medidas tem, além da sua, a linha
 do período anterior e a do agregado da União, pelo mesmo pedido: 3 × 3. Todas
@@ -191,6 +192,118 @@ na catraca), `check:pais` **0** (35 medidas, 2 mudanças declaradas, tudo a 0). 
 nenhuma rendida. **Os três portões inteiros não correram nesta passagem**: o
 lugar de direção acrescenta os registos do bloco e corre-os na cabeça final. No
 motor, o `core.gate` do pre-commit: `GATE: PASS`.
+
+## A passagem de correção, 22.09.2026
+
+*A leitura a frio do Codex (`gpt-5.6-sol`, cinco plantas em cinco) deixou sete
+achados reais. Um deles é meu e é grave, e começa por ele.*
+
+### A fixture inventada, e o que a substituiu
+
+A primeira forma de `indicators/enquadramento_excerto_test.py` trazia uma
+«resposta guardada» com o endereço e a hora no cabeçalho, como se tivesse sido
+lida, e dava **6,4** para o desemprego de 2025. **O Eurostat dá 6,0**, que é o
+valor que a linha publica desde sempre e que o painel de 21.09 reconferiu.
+Aquele pedido nunca foi feito: os números foram escritos por mim para o teste
+passar. A leitura apanhou-o pela aritmética, que é a única maneira de o apanhar
+de fora: a mesma resposta não pode dar dois valores ao mesmo período. Nenhuma
+linha do livro-razão foi afetada, porque a invenção estava dentro do teste e não
+no caminho que escreve as linhas; o que ficou por provar foi precisamente aquilo
+que o teste dizia provar.
+
+**O que a substituiu.** Uma fixture deixa de ser uma cadeia escrita num teste. As
+oito respostas aos oito pedidos que este bloco reescreveu foram pedidas ao
+Eurostat pelo cliente da casa, um pedido de cada vez, e estão em
+`indicators/out/i129-2026-09-22/`, byte a byte, com `pedidos.jsonl` ao lado
+(endereço, hora, http, sha256, bytes, `updated`).
+As mesmas oito ficam também em `indicators/fixtures/i129-2026-09-22/`, cada uma
+com a proveniência dentro do próprio ficheiro, que é o que a célula nova do
+portão confere (secção seguinte). `indicators/respostas_guardadas.py` é o único
+caminho por onde um teste lhes toca, e **recalcula o `sha256` sobre o corpo**:
+uma resposta mexida num dígito levanta `RespostaAdulterada` e fecha a suíte. Truncar uma série aos
+períodos que um teste usa passa a ser código (`so_periodos()`, que recalcula os
+índices a partir da resposta inteira), nunca caneta. A resposta da União é a
+resposta da União, pedida ao endereço `geo=EU27_2020`, e não a de Portugal com a
+etiqueta trocada, que era como a primeira forma a fabricava.
+
+| resposta | hora UTC (22.09.2026) | http | bytes | sha256 |
+|---|---|---|---|---|
+| `tipslm90-PT` | 11:25:42 | 200 | 5642 | `de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef` |
+| `tipslm90-UE` | 11:25:42 | 200 | 5696 | `c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434` |
+| `une_rt_a-PT` | 11:25:44 | 200 | 3910 | `06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23` |
+| `une_rt_a-UE` | 11:25:46 | 200 | 3955 | `b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33` |
+| `tipsun20-PT` | 11:25:48 | 200 | 5470 | `6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f` |
+| `tipsun20-UE` | 11:25:50 | 200 | 5515 | `6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e` |
+| `lfsi_emp_a-PT` | 11:25:52 | 200 | 4109 | `f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6` |
+| `lfsi_emp_a-UE` | 11:25:54 | 200 | 4156 | `2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece` |
+
+Os valores que estas respostas dão para 2024 e 2025 são, um a um, os que as doze
+linhas publicam. Conferido pelo guião, não de cabeça: 8,7 e 8,0 (jovens NEM PT),
+11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1
+(UE).
+
+### A célula nova do portão do motor
+
+O erro não foi só meu: foi possível. Uma frase num cabeçalho não é proveniência,
+é uma afirmação sobre proveniência, e nada no motor distinguia as duas. O portão
+(`core.gate`) passa a ter a célula **`fixtures`**, em dois sítios: um passo sobre
+a árvore (`GATE  fixtures`) e uma suíte de plantas
+(`GATE  proveniencia_das_fixtures_test`).
+
+A regra: um JSON que um teste leia como resposta de uma fonte traz `endereco`,
+`lido_em`, `cliente`, `sha256` e `corpo`, e o portão **recalcula o resumo sobre o
+corpo**. Uma fixture sintética continua a poder existir, porque há coisas que só
+se provam com um corpo que nenhuma fonte dá, mas declara `sintetica: true` e a
+`razao`, e **não pode anunciar-se com as palavras de uma resposta real**
+(«guardada», «resposta de <data>»), que foi exactamente a frase que o erro usou.
+
+Onde se aplica: `indicators/fixtures/`, que é a declaração, e qualquer outro JSON
+debaixo de `indicators/` que uma suíte nomeie **por caminho**. Por caminho e não
+pelo nome, e isto mediu-se: `state.json` contém «te.json», e três suítes de
+`core/` escrevem um `ledger.json` temporário que nada tem a ver com
+`indicators/coverage/ledger.json`. Casar pelo nome dava duas queixas falsas e
+nenhuma verdadeira. Fora da regra: `indicators/out/`, que é o arquivo em bruto
+das corridas, e os ficheiros de outras corridas que não se tocam.
+
+As oito respostas passaram a `indicators/fixtures/i129-2026-09-22/` com esse
+cabeçalho; o arquivo em bruto e o `pedidos.jsonl` ficam onde estavam.
+
+A saída da suíte:
+
+```
+PASS — 18 conferências: oito plantas a morder, dois controlos a passar, e as 8
+fixtures do repositório com a proveniência provada pelo resumo do corpo.
+```
+
+As plantas: o `sha256` que não bate com o corpo; um ficheiro sem cabeçalho a
+dizer-se «a resposta guardada de 22.09.2026»; uma sintética a anunciar-se como
+real; uma sintética sem razão; uma sintética com campos de proveniência; a hora
+sem fuso; o cliente vazio; o endereço que não é um pedido. Os dois controlos: uma
+fixture provada e uma sintética honesta, que têm de passar. E a planta que
+importa correu contra a árvore a sério: **o mesmo 6,0 para 6,4 que começou isto
+fecha agora o passo do portão** (`FAIL — 1 queixa(s) em 8 fixture(s)`) e a suíte.
+
+### Os outros achados, cada um com a sua planta
+
+| achado | o que mudou | a planta que o prova |
+|---|---|---|
+| **6**, a K13 | Corre sobre **as linhas** do livro-razão e não sobre as definições, juntando-as por medida (o período anterior e o agregado leem-se debaixo da definição da âncora); compara a etiqueta do excerto com o filtro `age=` quando existem os dois; e exige o intervalo escrito **como intervalo** e não dois algarismos soltos | cinco: o limite trocado; dois algarismos soltos fora do intervalo («entre 15 concelhos e 29 freguesias»); uma medida sem definição nenhuma; a etiqueta a contradizer o filtro; duas linhas da mesma medida com grupos diferentes |
+| **7**, a catraca | A asserção de que a lista em vigor está vazia saiu de dentro do `if (PROVA)` e corre em toda a corrida | uma entrada na lista em vigor fecha o `check:cartao` normal, sem `--prova` (medido: código 1) |
+| **8**, a guarda | `reescrever()` confere também o `value` (pelo número, porque «11,0» e «11» são o mesmo) e a `unit` da linha contra a resposta, e não só o excerto | um `value` de 79,8 que a resposta não dá; uma `unit` trocada; e dois controlos, «8» e «8,0», que têm de passar |
+| **10**, o `--write` | `escrever_linha` passa a levar as **correcções** para a linha nova, como já levava as reconferências, e recusa-se se o corpo novo não tiver onde as pôr | uma linha com uma correcção reescrita sem a perder; o controlo de uma linha sem correcções; e a recusa |
+| **9**, as respostas | Resolvido pelo que está em cima: as oito respostas e o `pedidos.jsonl` | o `sha256` de cada uma, conferido à leitura |
+
+Cada uma foi exercida ao contrário antes de se fechar: embotada a metade nova, a
+suíte dá o vermelho com o nome («A PLANTA NÃO MORDEU», «A GUARDA NÃO MORDEU»,
+«K13 NÃO MORDEU»), e reposta volta a verde.
+
+### O achado 12, que não era para corrigir
+
+A leitura diz que o relatório soma 9 + 3 e escreve 15. **No ramo ele escreve
+12**, que é a conta certa, e o `pacote.plantas.json` regista a P3 como um estrago
+plantado em `relatorio-construtor.md`. O achado é uma das cinco plantas, e não há
+nada a corrigir. Fica dito porque o guião desta passagem pedia as duas coisas ao
+mesmo tempo.
 
 ## O que a célula apanhou, e que a segunda passagem fechou
 
