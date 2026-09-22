@@ -851,7 +851,26 @@ const TAGS_CITADAS = new Set(['blockquote', 'q', 'cite', 'script', 'style', 'tem
  * deixava de poder ser copiado. É a mesma razão do `titulo-de-estudo`, que já
  * cá estava.
  */
-const NONLEDGER_CITADO = new Set(['titulo-de-estudo', 'proveniencia', 'identificador-tecnico']);
+/**
+ * `nome-oficial-da-medida` entrou a 22.09.2026, com os nomes confirmados de
+ * volta ao recibo (bloco M3b). O nome com que o INE publica a despesa em
+ * investigação e desenvolvimento acaba em «(sector institucional e sector
+ * empresas)»: é o nome de uma fonte, transcrito, e a §9 da constituição nomeia-o
+ * à letra («o nome de uma fonte: cita-se pelas palavras exatas»). Escrever
+ * «setor» ali era a casa a publicar um nome que o INE não publica, e a régua
+ * `check:nomes` fechava logo a seguir, porque compara o texto rendido carácter a
+ * carácter com o ficheiro do motor. É essa comparação que torna esta isenção
+ * segura, e mais estreita do que as três de cima: dentro desta marca não pode
+ * estar prosa nenhuma da casa, só o nome daquela linha e o endereço onde ele foi
+ * lido. O que fica por ver conta-se do lado da fonte, como o resto do que é
+ * transcrito.
+ */
+const NONLEDGER_CITADO = new Set([
+  'titulo-de-estudo',
+  'proveniencia',
+  'identificador-tecnico',
+  'nome-oficial-da-medida',
+]);
 
 function eCitado(no) {
   const tag = String(no.rawTagName ?? '').toLowerCase();
@@ -3271,10 +3290,11 @@ const PROVENIENCIAS_ACEITES = new Set();
  * A PROVA DA CONFERÊNCIA — corre a cada construção, sobre páginas de mentira.
  * ---------------------------------------------------------------------------
  *
- * Uma conferência que nunca disparou não se sabe se funciona. Estes seis casos
+ * Uma conferência que nunca disparou não se sabe se funciona. Estes oito casos
  * são a prova mínima, e são o que separa a lista `iguais` de um comentário: se
  * alguém puser «facto» em `pares`, este bloco fecha o build antes de a página
- * chegar a ser construída.
+ * chegar a ser construída. Cada isenção nova traz aqui um par: um caso que ela
+ * deixa passar e um caso vizinho que ela NÃO pode deixar passar.
  *
  * Não é uma dispensa nem uma amostra do sítio: são cadeias escritas aqui, que
  * não existem em lado nenhum e não entram em `dist/`.
@@ -3289,6 +3309,12 @@ function provaDaOrtografia() {
     { nome: 'forma anterior num campo de linha', lang: 'pt', corpo: '<span data-linha-campo="derivation">Uma correcção.</span>', espera: 0 },
     { nome: 'travessão na edição portuguesa', lang: 'pt', corpo: '<p>Uma coisa — outra.</p>', espera: 1 },
     { nome: 'travessão na edição inglesa', lang: 'en', corpo: '<p>One thing — another.</p>', espera: 1 },
+    /* AS DUAS DE 22.09.2026, e são um par: a primeira prova que a isenção nova
+       existe, e a segunda prova que ela não se espalhou. Um motivo de
+       `data-nonledger` que não esteja em `NONLEDGER_CITADO` continua a ser prosa
+       da casa e continua a ser apanhado, que é o que esta conferência protege. */
+    { nome: 'forma anterior num nome oficial de medida', lang: 'pt', corpo: '<span data-nonledger="nome-oficial-da-medida">Sector institucional.</span>', espera: 0 },
+    { nome: 'forma anterior num nonledger que não é transcrito', lang: 'pt', corpo: '<span data-nonledger="data-da-linha">Uma correcção.</span>', espera: 1 },
   ];
   for (const c of casos) {
     const lingua = LINGUA_POR_HREFLANG[c.lang === 'pt' ? HREFLANG.pt : HREFLANG.en] ?? c.lang;
