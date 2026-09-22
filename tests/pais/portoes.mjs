@@ -9,7 +9,10 @@ import { spawnSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
-const pasta='design/especime-v3/medicoes/b1-2026-09-22';
+/* A pasta das provas é a do bloco que as corre: por omissão a da peça 3, que
+   foi quem escreveu este ficheiro, e `OEDP_MEDICOES` manda-as para outra sem
+   tocar nos registos dessa (B1c, 22.09.2026). */
+const pasta=process.env.OEDP_MEDICOES ?? 'design/especime-v3/medicoes/b1-2026-09-22';
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const registos=[];
 const indice=process.argv.indexOf('--only');

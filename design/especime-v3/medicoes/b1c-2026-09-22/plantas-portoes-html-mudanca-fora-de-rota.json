@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "html-mudanca-fora-de-rota",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 mudança: campo fora da página do país e do registo"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "cb7194d0a886dcf83d71112d44d69417f4215772e2aa287f29fd598af9c0bfec",
+        "reposto": "cb7194d0a886dcf83d71112d44d69417f4215772e2aa287f29fd598af9c0bfec"
+      }
+    ]
+  }
+]
