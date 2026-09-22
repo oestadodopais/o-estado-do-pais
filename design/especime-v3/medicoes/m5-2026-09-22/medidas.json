@@ -1,5 +1,5 @@
 {
-  "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
+  "cabeca": "44a718b4a88842ee35ed51521d11ca40cba48488",
   "nome_de_quem_responde": {
     "onde_mora": "scripts/textos-aprovados.json",
     "sha256_do_oraculo": "2646f242c13deb68ee9e7cf54f16fc762d24a8505ab6d574f4bcacbd437bf9ca",
@@ -24,16 +24,18 @@
     "conferidos": 1,
     "isentos_por_data": 33,
     "isentos_por_nomeacao": 3,
+    "ligacoes_do_zero": 8,
     "codigo": 0
   },
   "medidas_do_brief_m5": {
     "ficheiro": "design/observatorio/medidas/BRIEF-M5.json",
-    "quantas": 7,
-    "conhecidos_positivos_encontrados": 7,
+    "quantas": 8,
+    "conhecidos_positivos_encontrados_numa_corrida_fresca": 8,
     "valores": {
       "briefs_ate_22_09_2026": 37,
       "briefs_com_seccao_de_medicoes": 34,
       "briefs_com_guiao_de_medicoes": 1,
+      "briefs_conferidos_pelo_portao": 1,
       "briefs_isentos_por_data": 33,
       "briefs_isentos_por_nomeacao": 3,
       "ocorrencias_do_nome_de_quem_responde_em_src_e_public": 0,
@@ -75,9 +77,18 @@
     }
   },
   "plantas": {
-    "corridas": 6,
-    "morderam": 6,
-    "bytes_repostos": 6
+    "corridas": 8,
+    "morderam": 8,
+    "bytes_repostos": 8
+  },
+  "mapa_do_repositorio": {
+    "na_linha_citada": 7,
+    "noutro_ponto": 1,
+    "nao_encontradas": 0,
+    "para_la_do_fim": 0,
+    "sha256_do_mapa": "8a8eb22f0f4ab390dc3b4d61b021905ff77970d6a72abafbcb9e70c19b8dc32d",
+    "citacoes_dos_guioes_deste_bloco": 3,
+    "codigo": 0
   },
   "portoes": {
     "build": {

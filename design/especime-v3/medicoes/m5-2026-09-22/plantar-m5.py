@@ -14,15 +14,21 @@ O NOME DE QUEM RESPONDE não se escreve neste ficheiro: lê-se do oráculo
 `scripts/textos-aprovados.json` no momento de plantar, que é o único sítio do
 repositório onde ele mora desde 22.09.2026 (M5).
 
-As seis plantas, e o que cada uma prova:
+As oito plantas, e o que cada uma prova:
 
   1. um valor do `medidas.json` trocado · o `check:briefs` compara mesmo;
   2. um conhecido-positivo que não se encontra · o `check:briefs` não aceita um
      valor de um detetor cego, mesmo quando o valor não mudou;
-  3. um número no §0 sem medição · o `check:briefs` lê o §0 e compara;
-  4. um número num relatório sem ficheiro · o `conferir-relatorio.py` aponta-o;
-  5. o nome numa cadeia de uma vista · o `gate:html` recusa o nome em `src/`;
-  6. o nome numa página construída · o `gate:html` recusa o nome em `dist/`.
+  3. um número no §0 sem medição nomeada na sua frase · o `check:briefs` lê o §0
+     frase a frase;
+  4. um número CERTO ao lado do nome de OUTRA medição · a ligação é por frase e
+     não uma procura no monte de todos os valores, que é o buraco que a leitura
+     a frio de 22.09.2026 apontou no achado 4;
+  5. um brief isento com um byte mudado · a isenção está presa pelo sha256, e
+     emendar um brief antigo não passa em silêncio;
+  6. um número num relatório sem ficheiro · o `conferir-relatorio.py` aponta-o;
+  7. o nome numa cadeia de uma vista · o `gate:html` recusa o nome em `src/`;
+  8. o nome numa página construída · o `gate:html` recusa o nome em `dist/`.
 """
 import hashlib
 import json
@@ -109,10 +115,23 @@ def main():
         planta(
             'o bloco medidas de um brief', 'numero-do-zero-sem-medicao',
             'design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md',
-            lambda t: t.replace('34 deles com uma secção de medições',
-                                '41 deles com uma secção de medições'),
+            lambda t: t.replace('O portão confere 1 brief',
+                                'Ficaram 41 coisas por medir. O portão confere 1 brief'),
             CHECK_BRIEFS,
-            r'o §0 escreve «41» e esse número não está em'),
+            r'escreve «41» e não nomeia medição nenhuma entre crases'),
+        planta(
+            'o bloco medidas de um brief', 'numero-certo-no-nome-errado',
+            'design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md',
+            lambda t: t.replace('34 trazem uma secção de medições (`briefs_com_seccao_de_medicoes`)',
+                                '34 trazem uma secção de medições (`briefs_isentos_por_data`)'),
+            CHECK_BRIEFS,
+            r'o §0 escreve «34» e esse número não é o valor de nenhuma das medições nomeadas na sua frase'),
+        planta(
+            'o bloco medidas de um brief', 'brief-isento-com-um-byte-mudado',
+            'design/observatorio/BRIEF-F1.1-porta-da-frente.md',
+            lambda t: t + '\n',
+            CHECK_BRIEFS,
+            r'BRIEF-F1\.1-porta-da-frente\.md: o brief mudou desde que foi isento'),
         planta(
             'os números de um relatório', 'numero-do-relatorio-sem-ficheiro',
             RELATORIO,

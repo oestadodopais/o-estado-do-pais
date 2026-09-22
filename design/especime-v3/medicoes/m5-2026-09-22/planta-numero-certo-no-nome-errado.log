@@ -1,15 +1,15 @@
-planta: valor-trocado
-ficheiro: design/observatorio/medidas/BRIEF-M5.json
+planta: numero-certo-no-nome-errado
+ficheiro: design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md
 comando: python3 scripts/check-briefs.py
 código: 1
-mordida esperada: a medição «briefs_ate_22_09_2026» vale 37 hoje e o ficheiro diz 38
+mordida esperada: o §0 escreve «34» e esse número não é o valor de nenhuma das medições nomeadas na sua frase
 mordeu: True
-sha256 antes: 1c3311bbd6702bbacb933e0f9efab623ba34c41fc619d46cf86bedb361027cd2
-sha256 reposto: 1c3311bbd6702bbacb933e0f9efab623ba34c41fc619d46cf86bedb361027cd2
+sha256 antes: edcba258e0ae399d4617fd0bc73bb96954d126cd7a0901b73dcd5051eb471824
+sha256 reposto: edcba258e0ae399d4617fd0bc73bb96954d126cd7a0901b73dcd5051eb471824
 
   portão dos briefs · 37 brief(s) em design/observatorio/ · 1 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
     conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
-      §0 liga «34» a `briefs_com_seccao_de_medicoes`
+      §0 liga «37» a `briefs_ate_22_09_2026`
       §0 liga «1» a `briefs_com_guiao_de_medicoes`
       §0 liga «1» a `briefs_conferidos_pelo_portao`
       §0 liga «33» a `briefs_isentos_por_data`
@@ -22,8 +22,6 @@ sha256 reposto: 1c3311bbd6702bbacb933e0f9efab623ba34c41fc619d46cf86bedb361027cd2
     chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
     apagado antes de contar no §0: codigo 16, enderecos 0, seccoes 4, datas 1, resumos 0, ordinais 0, identificadores 0, anos 0
 
-  O PORTÃO DOS BRIEFS FECHOU · 2 erro(s):
-    · BRIEF-M5-as-medicoes-provam-que-veem.md: a medição «briefs_ate_22_09_2026» vale 37 hoje e o ficheiro diz 38.
-      comando: python3 design/observatorio/medidas/BRIEF-M5.py · conta os BRIEF-*.md de design/observatorio/ cuja data, a mais recente entre a do nome e a primeira do cabeçalho, é anterior ou igual a 22.09.2026
-    · BRIEF-M5-as-medicoes-provam-que-veem.md: o §0 escreve «37» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`briefs_ate_22_09_2026`=38).
-      «Em `design/observatorio/` há 37 briefs datados até hoje (`briefs_ate_22_09_2026`).»
+  O PORTÃO DOS BRIEFS FECHOU · 1 erro(s):
+    · BRIEF-M5-as-medicoes-provam-que-veem.md: o §0 escreve «34» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`briefs_isentos_por_data`=33).
+      «Desses, 34 trazem uma secção de medições (`briefs_isentos_por_data`).»
