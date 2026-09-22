@@ -1425,7 +1425,13 @@ ${tabelaTipos}
      sua própria página (`CampoDaLinha.astro`, bloco B, item B5). A marca e a
      classe são as mesmas; o que mudou foi o elemento. */
   const marcador = peca('a-verificar/index.html', 'a.marcador');
-  const correcao = peca('correcoes/index.html', '.log-linha');
+  /* A LINHA DE UMA CORREÇÃO MUDOU DE FORMA, E O FEIXE SEGUE-A (B1c,
+     22.09.2026). O registo tinha duas listas e uma tabela de quatro colunas
+     (`.log-linha`); passou a ser uma lista só, por data, com as três classes de
+     mudança e o lugar de cada linha. A peça que o feixe mostra é a linha de uma
+     correção nessa lista, que é onde o valor antigo riscado e o novo em tinta
+     vivem agora. */
+  const correcao = peca('correcoes/index.html', '.registo-mudanca[data-mudanca="correcao"]');
 
   /* O texto oculto do selo mostra-se como texto, porque é isso que ele é para
      quem ouve a página. O `.vh` é lido do próprio selo que está ao lado. */

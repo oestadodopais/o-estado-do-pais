@@ -67,6 +67,7 @@ Uma linha não alcançada por nenhuma dessas declarações fecha a construção,
 | `check:pais` **M2** | cada mudança declarada exactamente uma vez na primeira página | a presença de todas passou para a A3, no registo, porque a primeira página tem teto; na primeira página, se estiver, coincide com a declaração e não se repete | o texto da mudança alterado: código 1 |
 | `gate:html`, marcas das mudanças | só na rota `home` | nas rotas `home` e `correcoes`, com a mesma comparação contra `datas-de-publicacao.json` e `MUDANCAS_DO_PROJETO` | a marca numa terceira rota: código 1 (`B1 mudança: campo fora da página do país e do registo`) |
 | `gate:html`, unidade de uma correção | só na rota `home`, que ficou sem linhas de correção | nas rotas `home` e `correcoes`, com a mesma comparação contra a linha da própria entrada | a unidade trocada no registo: código 1 |
+| `design:feixe`, a peça da correção | lia a linha por `.log-linha`, a classe da tabela de quatro colunas | lê-a pela linha de correção da lista única do registo | as linhas de correção retiradas do registo: código 1 (`não encontrei ".registo-mudanca…"`) |
 | `check:lugar` **§7.10** | não se tocou | não se tocou | — |
 
 Nenhum portão desceu no que protege. A C1, a M3 e a M2 passaram a medir mais superfície do que mediam: a C1 e a M3 corriam sobre uma lista e correm agora sobre quatro (o país nas duas edições e Évora nas duas) mais os dois registos.
@@ -75,7 +76,7 @@ Nenhum portão desceu no que protege. A C1, a M3 e a M2 passaram a medir mais su
 
 `node tests/pais/pais.mjs --json design/especime-v3/medicoes/b1c-2026-09-22/plantas-b1c.json`: **20 provas, todas a morder** ([plantas-b1c.json](plantas-b1c.json)). Uma delas é o positivo conhecido («páginas sem estrago», código 0); as outras dezanove fecham a construção com a célula esperada. As quatro rotas que o ficheiro copiava passaram a oito: sem o registo e sem uma página de lugar, a régua não media nenhuma das listas novas.
 
-`OEDP_MEDICOES=… node tests/pais/portoes.mjs --only html` e `--only html-mudanca-fora-de-rota`: as duas a morder ([plantas-portoes-html.json](plantas-portoes-html.json), [plantas-portoes-html-mudanca-fora-de-rota.json](plantas-portoes-html-mudanca-fora-de-rota.json)), com os sha256 de cada ficheiro antes e depois da reposição iguais.
+`OEDP_MEDICOES=… node tests/pais/portoes.mjs --only html`, `--only html-mudanca-fora-de-rota` e `--only feixe-correcao`: as três a morder ([plantas-portoes-html.json](plantas-portoes-html.json), [plantas-portoes-html-mudanca-fora-de-rota.json](plantas-portoes-html-mudanca-fora-de-rota.json), [plantas-portoes-feixe-correcao.json](plantas-portoes-feixe-correcao.json)), com os sha256 de cada ficheiro antes e depois da reposição iguais.
 
 O `check:pais` traz dois positivos conhecidos novos, para que zero nunca seja verde: uma corrida sem nenhuma lista de mudanças medida falha, e uma que não encontre exactamente dois registos falha.
 
