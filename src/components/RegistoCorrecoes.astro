@@ -1,26 +1,43 @@
 ---
 /**
- * O registo de correções.
+ * O REGISTO DE TODAS AS MUDANÇAS.
  *
- * Dois grupos, não uma lista. A distinção é o ponto:
+ * ---------------------------------------------------------------------------
+ * B1c, 22.09.2026: UMA LISTA, POR DATA, COM O LUGAR DE CADA LINHA
+ * ---------------------------------------------------------------------------
+ * Esta página tinha duas listas, as correções e as atualizações, e mais nada:
+ * os estudos publicados e as mudanças declaradas do projeto viviam só na
+ * primeira página, que por isso trazia trinta linhas, dezasseis delas de Évora
+ * e do Alentejo. O diretor leu-as lá a 22.09.2026 e a divisão passou a ser
+ * esta: cada página mostra as mudanças que lhe pertencem, no máximo oito, e o
+ * registo INTEIRO vive aqui.
  *
- *   Correções    — o valor publicado estava errado. É a confissão, e é a razão
- *                  de o registo existir. Vem primeiro, com peso, e é o que a
- *                  contagem conta.
- *   Atualizações — o valor estava certo e deixou de estar. Vem depois, em
- *                  surdina, uma linha cada.
+ * O que muda de forma: uma lista só, da mais recente para a mais antiga, com as
+ * três classes de mudança juntas, e cada linha a dizer o lugar a que pertence
+ * com a porta para a página desse lugar. O que não muda: nenhuma entrada se
+ * inventa nem se apaga, nenhum valor muda, e a natureza de cada correção
+ * continua escrita na linha («Correção», «Atualização»), como a política acima
+ * as define.
  *
- * As **revisões de proveniência** não são listadas aqui, e é decisão. Uma
- * mudança de endereço não é uma alteração do que foi publicado; são muitas de
- * cada vez (nove no mesmo dia, quando duas fontes mudaram de sítio) e, postas a
- * par das confissões, afogavam-nas — que é a regra em cascata do
- * `ledger/README.md`. Aparecem aqui como CONTAGEM, com o caminho para as linhas
- * que as trazem, e por extenso na história de cada uma dessas linhas.
+ * O ÂMBITO E A ORDEM VIVEM NUMA FUNÇÃO SÓ, `src/lib/mudancas.mjs`, que é a
+ * mesma que compõe a lista da primeira página e a de cada lugar. A célula A3 do
+ * `check:pais` confere que esta lista tem exactamente as entradas do livro
+ * inteiro, as publicações do arquivo e as mudanças declaradas: nem uma a mais,
+ * nem uma a menos.
+ *
+ * As **revisões de proveniência** continuam de fora da lista, e é a mesma
+ * decisão de sempre. Uma mudança de endereço não é uma alteração do que foi
+ * publicado; são muitas de cada vez (nove no mesmo dia, quando duas fontes
+ * mudaram de sítio) e, postas a par das confissões, afogavam-nas — que é a
+ * regra em cascata do `ledger/README.md`. Aparecem por baixo como CONTAGEM, com
+ * o caminho para as linhas que as trazem, e por extenso na história de cada uma
+ * dessas linhas.
  *
  * Nada aqui é escrito à mão: as entradas vêm do campo corrections das próprias
- * afirmações, e cada pedaço renderizado — data, natureza, valor antigo, valor
- * novo, motivo e id — é conferido pelo portão contra o livro-razão. Nem o
- * conteúdo nem a classificação podem ser reescritos em silêncio.
+ * afirmações, do arquivo dos estudos e das mudanças declaradas, e cada pedaço
+ * renderizado — data, natureza, valor antigo, valor novo, motivo e id — é
+ * conferido pelo portão contra a sua origem. Nem o conteúdo nem a classificação
+ * podem ser reescritos em silêncio.
  *
  * O motivo é o único pedaço que muda de língua: `reason` na edição portuguesa,
  * `reason_en` na inglesa. A escolha é feita em motivoDaEntrada(), e o portão
@@ -62,21 +79,29 @@
  * «valor novo: »), **fora** do elemento marcado com `data-correcao-campo`, para
  * que o portão continue a comparar só o valor com o do livro-razão.
  */
-import { entradasDoRegisto, motivoDaEntrada } from '../lib/ledger.mjs';
+import { entradasDoRegisto } from '../lib/ledger.mjs';
+import { mudancasDoRegisto } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
 import Claim from './Claim.astro';
+import CampoDaLinha from './CampoDaLinha.astro';
 import Provenance from './Provenance.astro';
+import TituloDeTrabalho from './TituloDeTrabalho.astro';
 import ValorDaProva from './ValorDaProva.astro';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
+const r = ROTULOS_B1[lang];
 const p = prova(lang);
 
+const mudancas = mudancasDoRegisto(lang);
+/* A contagem das correções continua a ser a linha do livro-razão, e conta só as
+   de natureza «correção»: é a confissão, e é o número que a política promete. */
 const correcoes = entradasDoRegisto('correcao');
-const atualizacoes = entradasDoRegisto('atualizacao');
 /* As revisões de proveniência entram como contagem e como caminho, não como
    lista: ver o cabeçalho deste ficheiro. */
 const revisoes = entradasDoRegisto('proveniencia');
@@ -103,72 +128,116 @@ const palavraRevisoes =
 ---
 
 <div class="registo">
-  <!-- ============================ CORREÇÕES -->
-  <section class="registo-grupo registo-grupo-correcoes" aria-labelledby="registo-correcoes">
+  <!-- ============================ TODAS AS MUDANÇAS, POR DATA -->
+  <section class="registo-grupo registo-grupo-correcoes" aria-labelledby="registo-mudancas">
     <div class="registo-cabeca">
-      <h3 class="registo-titulo" id="registo-correcoes">{s.correcoes.registoCorrecoesK}</h3>
+      <h3 class="registo-titulo" id="registo-mudancas">{s.correcoes.registoMudancasK}</h3>
       <p class="registo-conta">
         <Claim id="correcoes-publicadas" lang={lang} chip={true} /> {palavraConta}
       </p>
     </div>
-    <p class="registo-nota">{s.correcoes.registoCorrecoesNota}</p>
+    <p class="registo-nota">{s.correcoes.registoMudancasNota}</p>
 
-    {
-      correcoes.length === 0 ? (
-        <p class="log-vazio-v">{s.correcoes.correcoesVazioV}</p>
-      ) : (
-        <div class="registo-lista">
-          <div class="log-cabecalho">
-            <span>{s.correcoes.colunaData}</span>
-            <span>{s.correcoes.colunaAntigo}</span>
-            <span>{s.correcoes.colunaNovo}</span>
-            <span>{s.correcoes.colunaMotivo}</span>
-          </div>
-          {correcoes.map((e) => (
-            <div class="log-linha" data-correcao-entrada={e.claimId}>
-              <span
+    <ol class="registo-mudancas" data-mudou-registo>
+      {
+        mudancas.map((e) => (
+          <li
+            class="registo-mudanca"
+            data-mudanca={e.tipo}
+            data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined}
+            data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}
+          >
+            {/* O LUGAR DE CADA LINHA, E A PORTA PARA ELE (B1c). É o que faltava
+                a um registo de todos os lugares: saber de quem é a linha sem
+                abrir o recibo. O nome do lugar é o da sua página, e a porta é a
+                dessa página. */}
+            {e.tipo === 'correcao' ? (
+              <time
                 class="log-data"
-                data-correcao-claim={e.claimId}
+                datetime={e.data}
+                data-correcao-claim={e.claim}
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="date"
               >
-                {dataDaCasa(e.date)}
-              </span>
-              <span class="log-valor log-valor-antigo">
-                <span class="vh">{s.correcoes.valorAnteriorVh}</span>
-                <s
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="old_value"
-                >
-                  {e.old_value}
-                </s>
-              </span>
-              <span class="log-valor">
-                <span class="vh">{s.correcoes.valorNovoVh}</span>
-                <span
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="new_value"
-                >
-                  {e.new_value}
-                </span>
-                {/* A PORTA DA ENTRADA, ao pé do par (decisão c). */}
-                <Provenance id={e.claimId} lang={lang} />
-              </span>
-              <div>
+                {dataDaCasa(e.data)}
+              </time>
+            ) : e.tipo === 'publicacao' ? (
+              <time
+                class="log-data"
+                datetime={e.data}
+                data-publicacao-estudo={`${e.estudo.work.slug}/${e.estudo.edicao.lang}`}
+              >
+                {dataDaCasa(e.data)}
+              </time>
+            ) : (
+              <time class="log-data" datetime={e.data} data-mudanca-campo="data">
+                {dataDaCasa(e.data)}
+              </time>
+            )}
+            <a class="registo-lugar" href={e.lugar.rota}>
+              {e.lugar.nome}
+            </a>
+
+            {e.tipo === 'correcao' ? (
+              <div class="registo-mudanca-corpo">
+                {/* A MESMA FORMA DAS OUTRAS DUAS LISTAS (B1c). O nome da
+                    medida, o valor antigo riscado, a seta, o valor novo com a
+                    sua unidade e o selo: é o que a primeira página e a página de
+                    um lugar rendem desde 21.09.2026, e uma só forma para a mesma
+                    coisa é o que faz a lista ler-se de seguida. Os dois prefixos
+                    que só um leitor de ecrã ouvia («valor anterior: », «valor
+                    novo: ») saíram com a tabela de quatro colunas que os pedia:
+                    ali os dois valores viviam em células separadas e sem nada
+                    entre eles; aqui a seta está no texto, não é `aria-hidden`, e
+                    a ordem ouve-se. */}
+                <p class="registo-mudanca-o-que">
+                  {e.nome?.fonte && (
+                    <span class="registo-mudanca-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
+                      {e.nome.texto}
+                    </span>
+                  )}
+                  <span class="registo-mudanca-par">
+                    <s
+                      data-correcao-claim={e.claim}
+                      data-correcao-n={String(e.n)}
+                      data-correcao-campo="old_value"
+                    >
+                      {e.antes}
+                    </s>
+                    {' → '}
+                    <span
+                      data-correcao-claim={e.claim}
+                      data-correcao-n={String(e.n)}
+                      data-correcao-campo="new_value"
+                    >
+                      {e.depois}
+                    </span>
+                    {' '}
+                    {e.unidade && (
+                      <CampoDaLinha
+                        id={e.claim}
+                        campo="unit"
+                        valor={unidadeDaLinha(e.unidade, lang).texto}
+                        lang={lang}
+                        lingua={unidadeDaLinha(e.unidade, lang).lingua}
+                      />
+                    )}
+                    {/* A PORTA DA ENTRADA, ao pé do par (decisão c). */}
+                    <Provenance id={e.claim} lang={lang} />
+                  </span>
+                </p>
                 <p
                   class="log-motivo"
-                  data-correcao-claim={e.claimId}
+                  data-correcao-claim={e.claim}
                   data-correcao-n={String(e.n)}
                   data-correcao-campo="reason"
                 >
-                  {motivoDaEntrada(e, lang)}
+                  {e.motivo}
                 </p>
                 <p class="log-afirmacao">
                   <span
                     class="etiqueta-kind etiqueta-correcao"
-                    data-correcao-claim={e.claimId}
+                    data-correcao-claim={e.claim}
                     data-correcao-n={String(e.n)}
                     data-correcao-campo="kind"
                   >
@@ -177,95 +246,34 @@ const palavraRevisoes =
                   {' '}
                   {s.correcoes.colunaAfirmacao}:{' '}
                   <code
-                    data-correcao-claim={e.claimId}
+                    data-correcao-claim={e.claim}
                     data-correcao-n={String(e.n)}
                     data-correcao-campo="id"
                   >
-                    {e.claimId}
+                    {e.claim}
                   </code>
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-      )
-    }
+            ) : e.tipo === 'publicacao' ? (
+              <div class="registo-mudanca-corpo">
+                <p class="registo-mudanca-o-que">
+                  <span>{r.estudoPublicado}</span>
+                  {' · '}
+                  <TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} />
+                </p>
+              </div>
+            ) : (
+              <div class="registo-mudanca-corpo">
+                <p class="registo-mudanca-o-que" data-mudanca-campo="texto">
+                  {e.texto[lang]}
+                </p>
+              </div>
+            )}
+          </li>
+        ))
+      }
+    </ol>
   </section>
-
-  <!-- ============================ ATUALIZAÇÕES -->
-  {
-    atualizacoes.length > 0 && (
-      <section class="registo-grupo registo-grupo-atualizacoes" aria-labelledby="registo-atualizacoes">
-        <h3 class="registo-titulo registo-titulo-quieto" id="registo-atualizacoes">
-          {s.correcoes.registoAtualizacoesK}
-        </h3>
-        <p class="registo-nota registo-nota-quieta">{s.correcoes.registoAtualizacoesNota}</p>
-
-        <ul class="registo-linhas">
-          {atualizacoes.map((e) => (
-            <li class="registo-linha" data-correcao-entrada={e.claimId}>
-              <span
-                class="log-data"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="date"
-              >
-                {dataDaCasa(e.date)}
-              </span>
-              <span class="registo-salto">
-                <span class="log-valor-antigo">
-                  <span class="vh">{s.correcoes.valorAnteriorVh}</span>
-                  <s
-                    data-correcao-claim={e.claimId}
-                    data-correcao-n={String(e.n)}
-                    data-correcao-campo="old_value"
-                  >
-                    {e.old_value}
-                  </s>
-                </span>
-                <span aria-hidden="true"> → </span>
-                <span class="log-valor">
-                  <span class="vh">{s.correcoes.valorNovoVh}</span>
-                  <span
-                    data-correcao-claim={e.claimId}
-                    data-correcao-n={String(e.n)}
-                    data-correcao-campo="new_value"
-                  >
-                    {e.new_value}
-                  </span>
-                </span>
-                <Provenance id={e.claimId} lang={lang} />
-              </span>
-              <span
-                class="registo-motivo-curto"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="reason"
-              >
-                {motivoDaEntrada(e, lang)}
-              </span>
-              <code
-                class="registo-id"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="id"
-              >
-                {e.claimId}
-              </code>
-              <span
-                class="vh"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="kind"
-              >
-                {rotulo(e.kind)}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )
-  }
 
   <!-- ============================ REVISÕES DE PROVENIÊNCIA -->
   {
