@@ -57,6 +57,14 @@ try {
  prova('correção que não é uma entrada do livro','C1',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] [data-correcao-campo="date"]').setAttribute('data-correcao-n','99')));
  prova('valor antigo igual ao novo numa correção','M3',()=>html('correcoes/index.html',r=>{const li=r.querySelector('[data-mudou-registo] li[data-mudanca="correcao"]');li.querySelector('s[data-correcao-campo="old_value"]').set_content(li.querySelector('[data-correcao-campo="new_value"]').textContent);}));
  prova('mudança de lugar sem o seu lugar','A1',()=>html('municipios/evora/index.html',r=>r.querySelector('.lugar-mudou').setAttribute('data-mudou-ambito','lisboa')));
+ /* A passagem de correção de 22.09.2026: a régua deriva o lugar por conta
+    própria e compara-o com a declaração, e a A3 confere o lugar escrito e a
+    porta de cada linha do registo. */
+ prova('declaração do lugar contra a derivação','A1',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['estudos-evora-publicados']='portugal';`);
+ prova('porta do registo apontada a outro lugar','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] .registo-lugar').setAttribute('href','/municipios/lisboa')));
+ /* As duas edições por confirmar são inglesas (os dois estudos da água), e por
+    isso a planta do título vive na edição inglesa: é lá que a marca se rende. */
+ prova('título por confirmar sem a marca','A4',()=>html('en/corrections/index.html',r=>r.querySelector('[data-mudou-registo] li[data-mudanca="publicacao"] .marcador').remove()));
  prova('texto da mudança alterado','M2',()=>html('index.html',r=>r.querySelector('[data-mudanca-campo="texto"]').set_content('Uma frase que a direção não escreveu.')));
  prova('ordem dos estudos trocada','E1',()=>html('index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('comparação europeia sem recibo','L3',()=>html('index.html',r=>r.querySelector('[data-leitura-pais] a[href="/livro-razao/taxa-de-desemprego-2025-ue"]').remove()));

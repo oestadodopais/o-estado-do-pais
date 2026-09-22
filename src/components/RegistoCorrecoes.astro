@@ -136,8 +136,11 @@ const palavraRevisoes =
         <Claim id="correcoes-publicadas" lang={lang} chip={true} /> {palavraConta}
       </p>
     </div>
-    <p class="registo-nota">{s.correcoes.registoMudancasNota}</p>
-
+    {/* A NOTA DA LISTA SAIU a 22.09.2026, na passagem de correção: «Todas as
+        mudanças deste sítio…» descrevia a cobertura da página e o que o projeto
+        faz, que é a classe de frase que a Emenda 15 tira de uma página do
+        leitor. O registo fica com o título, a lista e a norma das correções,
+        que já estava no topo da página e continua lá. */}
     <ol class="registo-mudancas" data-mudou-registo>
       {
         mudancas.map((e) => (
@@ -259,7 +262,18 @@ const palavraRevisoes =
                 <p class="registo-mudanca-o-que">
                   <span>{r.estudoPublicado}</span>
                   {' · '}
-                  <TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} />
+                  {/* O TÍTULO COM O QUE O ARQUIVO DECLARA SOBRE ELE (a passagem
+                      de correção de 22.09.2026). Duas edições inglesas dizem
+                      `titleUnverified: true` e chegavam aqui como títulos
+                      comuns: uma incerteza declarada que a página não mostrava.
+                      A célula A4 do `check:pais` confere cada linha de
+                      publicação contra o arquivo, com a marca onde ele a
+                      declara. */}
+                  <TituloDeTrabalho
+                    titulo={e.estudo.edicao.title}
+                    lang={lang}
+                    naoConfirmado={e.estudo.edicao.titleUnverified === true}
+                  />
                 </p>
               </div>
             ) : (
