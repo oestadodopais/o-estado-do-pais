@@ -67,6 +67,12 @@ planta('voz','scripts/check-voz.mjs',[
 planta('feixe-porta','scripts/design-bundle.mjs',[
  ['index.html',r=>r.querySelector('.pais-porta-lugares').remove()]
 ],[/perdeu a porta dos lugares/]);
+/* A PEÇA DA CORREÇÃO NO FEIXE CONTINUA A MORDER (B1c): o feixe deixou de a ler
+   por `.log-linha`, que saiu com a tabela de quatro colunas, e passou a lê-la
+   pela linha de correção da lista única. Sem uma, fecha. */
+planta('feixe-correcao','scripts/design-bundle.mjs',[
+ ['correcoes/index.html',r=>r.querySelectorAll('.registo-mudanca[data-mudanca="correcao"]').forEach(l=>l.remove())]
+],[/não encontrei ".registo-mudanca/]);
 const europa=routePath('uniaoEuropeia','pt').slice(1)+'/index.html';
 planta('feixe-estados','scripts/design-bundle.mjs',[
  [europa,r=>r.querySelectorAll('.cartao[data-estado="fora"]').forEach(c=>c.remove())]

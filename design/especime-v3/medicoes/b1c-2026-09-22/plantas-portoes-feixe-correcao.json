@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "feixe-correcao",
+    "comando": "node scripts/design-bundle.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "não encontrei \".registo-mudanca"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/correcoes/index.html",
+        "antes": "a8852126b3d2eab35b030c1f75a1f658e0a20c4dd96e6bb64fa6529d7f00a9cc",
+        "reposto": "a8852126b3d2eab35b030c1f75a1f658e0a20c4dd96e6bb64fa6529d7f00a9cc"
+      }
+    ]
+  }
+]
