@@ -1,0 +1,945 @@
+
+> o-estado-do-pais@0.1.0 verify
+> npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:nomes && npm run check:palavras && npm run design:feixe
+
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node scripts/check-ledger.mjs
+
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 2975 afirmações[0m
+
+  [32m✓[0m 2975 afirmações válidas · 330 derivadas · 334 com aritmética reavaliada no build · 1866 com o rótulo da fonte
+[33m  3 marcador(es) por resolver em notas não publicadas: disparidade-salarial-entre-sexos-2024, retribuicao-minima-mensal-garantida-continente-2026 (2)[0m
+[90m    O campo "note" não vai à página, e por isso estes 3 não mudam o estado de nenhum selo nem fecham a construção. Ficam aqui para não se perderem.[0m
+
+[33m  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"[0m
+[90m    agua-nao-faturada-portugal-2024 → source_url, excerpt[0m
+[90m    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+
+[90m  amarra das decisões · 81 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+  [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+[90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
+  [32m✓[0m os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+
+> o-estado-do-pais@0.1.0 check:registo
+> node scripts/check-registo.mjs
+
+
+[90m  registo · os números dos documentos que governam, contra a fonte[0m
+
+[90m  os factos, medidos:[0m
+[90m     2975  linhas do livro-razão                                ledger/claims/*.yml[0m
+[90m           2.ª medição: loadClaims().size · subconjunto: as que o painel semanal reconfere = 91[0m
+[90m      308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA[0m
+[90m           2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`[0m
+[90m       13  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS[0m
+[90m           uma só fonte · linha `estudos-publicados`[0m
+[90m       18  edições do arquivo                                   src/data/studies.mjs · EDITIONS[0m
+[90m           uma só fonte · linha `edicoes-publicadas`[0m
+[90m       18  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml[0m
+[90m           2.ª medição: studies-src/manifest.yml · edicoes[0m
+[90m        3  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'[0m
+[90m           uma só fonte · linha `correcoes-publicadas`[0m
+[90m       21  passos da construção                                 package.json · scripts.build[0m
+[90m           uma só fonte[0m
+[90m       10  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
+[90m           uma só fonte[0m
+
+[90m  hoje é 22.09.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+
+  [32m✓[0m VISAO.md                                          3 corrente(s) ·  3 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 6 avaliada(s), chão 4
+[90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:38 «doze estudos» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+  [32m✓[0m README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+[90m      README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:263 «dezoito documentos» saltada pela forma (i) · 16.09.2026[0m
+[90m      README.md:265 «dezasseis documentos» saltada pela forma (iii-a)[0m
+[90m      README.md:265 «dezasseis edições do arquivo» saltada pela forma (iii-a)[0m
+[90m      README.md:266 «doze trabalhos» saltada pela forma (iii-a)[0m
+[90m      README.md:342 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:342 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida[0m
+[90m      README.md:61 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:89 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:93 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:97 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:157 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:162 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:194 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:248 «oito edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:325 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      README.md:350 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/especime-v3/PENDENTES-DO-DIRETOR.md        1 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 3 avaliada(s), chão 3
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:9 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:21 «uma edição» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:26 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.[0m
+  [32m✓[0m CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+  [32m✓[0m design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+[90m      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026[0m
+
+  [32m✓[0m 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 9 afirmação(ões) corrente(s) conferida(s) · 15 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+[90m        5 documento(s) lidos · 34 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs
+
+
+[90m  cruzamentos · 2850 linha(s) de origem externa em 4 registo(s) · 2469 com reconferência de programa acrescentada (3391 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 1866 de 2975 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  cruzamentos · 3 ficheiro(s) inteiro(s) em 2 registo(s) · 5 item(ns) da agenda reconferidos[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 6[0m
+[90m    evora-economia-investidores-portas-abertas-2026: 8[0m
+[90m    evora-orcamentado-pago-devido-2025: 27[0m
+[90m    evora-os-pelouros-quem-os-teve-o-que-fizeram: 7[0m
+[90m    evora-prometido-pago-auditado-2026: 7[0m
+[90m    evora-quinze-anos-cinco-mandatos: 20[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou.
+
+
+> o-estado-do-pais@0.1.0 check:documentos
+> node scripts/check-documentos.mjs
+
+
+[90m  portão dos documentos · 18 edição(ões) no manifesto · 18 em disco[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ 7c0b24700d76cb3a67442f2495178212169c7586[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m  registos de conteúdo · 10 atravessado(s) · D5 correu em 9 e não corre em 1[0m
+[90m    · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate[0m
+
+  [32m✓[0m cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+
+
+> o-estado-do-pais@0.1.0 gate:html
+> node scripts/gate-html.mjs
+
+  B1 leitura evora-orcamentado-pago-devido-2025/en: sem leitura, o registo não começa por In brief.
+  B1 leitura evora-prometido-pago-auditado-2026/en: sem leitura, o registo não começa por In brief.
+  B1 leitura avaliacao-economica-regional-de-portugal-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-economia-investidores-portas-abertas-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-orcamentado-pago-devido-2025/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-os-pelouros-quem-os-teve-o-que-fizeram/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-prometido-pago-auditado-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
+
+[90m  portão de HTML · 7354 páginas · 2625/2975 afirmações citadas fora do livro-razão · 5950 páginas de linha · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo[0m
+[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 30 · nome-oficial-da-medida 36 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 166 · limiar-do-quadro 114 · data-da-linha 25398 · data-do-repositorio 56 · ambito-da-medida 4 · periodo-da-fonte 556 · data-de-referencia 5174 · numeracao 182 · proveniencia 14633 · data-da-agenda 156 · data-de-leitura-de-uma-definicao 56 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
+  rótulo de IA · 7336 no rodapé (de 7336 páginas fora dos documentos alojados) · 26 no topo das páginas de estudo · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
+[90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
+[90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
+[90m  as duas edições · 24 peça(s) de página de leitura com os mesmos ids pela mesma ordem[0m
+
+[33m  350 aviso(s):[0m
+[90m    · a afirmação "abrantes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "agueda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "aguiar-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alandroal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "albergaria-a-velha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "albufeira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alcacer-do-sal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alcanena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alcobaca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alcochete-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alcoutim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alenquer-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alfandega-da-fe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alijo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "aljezur-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "aljezur-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "aljustrel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "aljustrel-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "almada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "almada-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "almeida-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "almeirim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "almodovar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alpiarca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alter-do-chao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alvaiazere-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "alvito-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "amadora-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "amarante-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "amares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "anadia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "angra-do-heroismo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ansiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "arcos-de-valdevez-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "arganil-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "armamar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "arouca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "arraiolos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "arronches-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "arruda-dos-vinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "aveiro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avis-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "azambuja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "baiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "barcelos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "barrancos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "barreiro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "batalha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "batalha-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "beja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "belmonte-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "benavente-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "bombarral-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "borba-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "boticas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "braga-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "braganca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cabeceiras-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cadaval-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "caldas-da-rainha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "calheta-de-sao-jorge-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "calheta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "camara-de-lobos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "caminha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "campo-maior-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cantanhede-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "carrazeda-de-ansiaes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "carregal-do-sal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cartaxo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cascais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castanheira-de-pera-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castelo-branco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castelo-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castelo-de-vide-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castro-daire-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castro-marim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "castro-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "celorico-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "celorico-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "chamusca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "chaves-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cinfaes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "coimbra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "condeixa-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "constancia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "coruche-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "corvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "covilha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "crato-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "credito-malparado-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "cuba-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "edicoes-publicadas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "elvas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "entroncamento-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "espinho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "esposende-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "estarreja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "estremoz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "estudos-publicados" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-desemprego-registado-2013" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-desemprego-registado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-despesa-paga-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-divergencia-municipio-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-divida-total-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-execucao-da-receita-2021" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-execucao-da-receita-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-limite-divida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-margem-endividamento-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-orcamento-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-populacao-2021" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-receita-cobrada-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "evora-vab-empresarial-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "factor-sustentabilidade-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fafe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "faro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "felgueiras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ferreira-do-alentejo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ferreira-do-zezere-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "figueira-da-foz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "figueira-de-castelo-rodrigo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "figueiro-dos-vinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fornos-de-algodres-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "freixo-de-espada-a-cinta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fronteira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "funchal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "fundao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "gaviao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "gois-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "golega-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "gondomar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "gouveia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "grandola-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "guarda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "guimaraes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "horta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "idanha-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ilhavo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lagoa-faro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lagoa-ilha-de-sao-miguel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lagos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lajes-das-flores-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lajes-do-pico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lamego-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "leiria-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lisboa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "loule-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "loures-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lourinha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lousa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "lousada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "macao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "macedo-de-cavaleiros-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "machico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "madalena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mafra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "maia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mangualde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "manteigas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "marco-de-canaveses-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "marinha-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "marvao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "matosinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mealhada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "meda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "melgaco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mertola-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mesao-frio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "miranda-do-corvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "miranda-do-douro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mirandela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mogadouro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "moimenta-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "moimenta-da-beira-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "moita-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "moncao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "monchique-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mondim-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "monforte-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "montalegre-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "montemor-o-novo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "montemor-o-velho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "montijo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mora-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mortagua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "moura-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "mourao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "murca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "murtosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "nazare-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "nelas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "nisa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "nordeste-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "obidos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "odemira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "odivelas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "oeiras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "oleiros-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "olhao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "oliveira-de-azemeis-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "oliveira-de-frades-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "oliveira-do-bairro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "oliveira-do-hospital-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ourem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ourique-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ovar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pacos-de-ferreira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "palmela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pampilhosa-da-serra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "paredes-de-coura-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "paredes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pedrogao-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pedrogao-grande-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penacova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penafiel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penalva-do-castelo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penamacor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penedono-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penedono-indice-de-divida-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penedono-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penedono-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "penela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "peniche-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "peso-da-regua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pinhel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "pombal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ponta-delgada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ponta-do-sol-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ponte-da-barca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ponte-de-lima-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ponte-de-sor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "portalegre-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "portel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "portimao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "porto-de-mos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "porto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "porto-moniz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "porto-santo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "povoa-de-lanhoso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "povoa-de-varzim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "povoacao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "praia-da-vitoria-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "proenca-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "redondo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "reguengos-de-monsaraz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "resende-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "retribuicao-minima-mensal-doze-meses-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ribeira-brava-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ribeira-de-pena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "ribeira-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "rio-maior-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sabrosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sabugal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "saldo-natural-portugal-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "salvaterra-de-magos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santa-comba-dao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santa-cruz-da-graciosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santa-cruz-das-flores-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santa-cruz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santa-maria-da-feira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santa-marta-de-penaguiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santana-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santarem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santiago-do-cacem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "santo-tirso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sao-bras-de-alportel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sao-joao-da-madeira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sao-joao-da-pesqueira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sao-pedro-do-sul-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sao-roque-do-pico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sao-vicente-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sardoal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "satao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "seia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "seixal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sernancelhe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "serpa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "serta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sesimbra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "setubal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sever-do-vouga-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "silves-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sines-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sintra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sobral-de-monte-agraco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "soure-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "sousel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "tabua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "tabuaco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "tarouca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "tavira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "taxa-de-desemprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "terras-de-bouro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "tomar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "tondela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "torre-de-moncorvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "torres-novas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "torres-vedras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "trancoso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "trancoso-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "trofa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vagos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vale-de-cambra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "valenca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "valongo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "valpacos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "velas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vendas-novas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "viana-do-alentejo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "viana-do-castelo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vidigueira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vieira-do-minho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-de-rei-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-do-bispo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-do-conde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-do-porto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-flor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-franca-de-xira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-franca-do-campo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-da-barquinha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-cerveira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-famalicao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-foz-coa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-gaia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-nova-de-poiares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-pouca-de-aguiar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-real-de-santo-antonio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-real-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-velha-de-rodao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vila-vicosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vimioso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vinhais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "viseu-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+[90m    · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
+
+  [32m✓[0m nenhum algarismo sem proveniência nas páginas construídas.
+[90m    prova · 89 chaves reconferidas pelo portão · 154 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 238590 ligações internas (0 relativas, 21941 âncoras) · 44 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 834 páginas de série · 840 cartões de partilha (4740 valores recalculados, 840 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json[0m
+
+
+> o-estado-do-pais@0.1.0 check:css
+> node scripts/check-css.mjs --prova
+
+[90m  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.[0m
+
+[32m  folhas ✓ [0m7336 página(s) · 7 folha(s) construída(s) com 771 classe(s) estilizada(s) · 639 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 27602 fronteira(s) sem espaço no HTML, 0 coladas
+[90m        C2, das 27602 fronteiras: 3559 entre duas caixas (duas caixas não fazem uma palavra) · 24043 entre duas peças de texto, das quais 24043 a folha desta página separa com um «gap», uma margem ou um «display»[0m
+[90m        C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.[0m
+[90m        18 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.[0m
+
+
+> o-estado-do-pais@0.1.0 check:datas
+> node scripts/check-datas.mjs
+
+[90mcheck-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.[0m
+[32mcheck-datas[0m · 18 edição(ões) datadas, 56 data(s) impressa(s) em 32 página(s), 56 laço(s) data-edição em 646 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
+
+> o-estado-do-pais@0.1.0 check:moldura
+> node tests/documentos/moldura.mjs
+
+
+[90m  a régua da moldura · 18 documentos × 2 temas × 2 larguras (390, 1280 px)[0m
+
+  [32m✓[0m C1  0 nó(s) graves em 72 passagens · nenhuma
+  [32m✓[0m C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 39964 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+  [32m✓[0m C3  326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  [32m✓[0m C4  72 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  [32m✓[0m C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  [32m✓[0m C6  18 de 18 verdes · 18 de 18 plantas apanhadas
+
+[90m  o axe, regra a regra (as dezasseis páginas nos dois temas):[0m
+[90m        72  region [moderate][0m
+[90m         8  heading-order [moderate][0m
+[90m         0  region [moderate] · em tabela[0m
+[90m         0  heading-order [moderate] · em tabela[0m
+
+[90m  o que a moldura NÃO corrige, contado:[0m
+[90m    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)[0m
+
+[32m  todas as células verdes.[0m
+
+
+> o-estado-do-pais@0.1.0 check:alvos
+> node tests/acessibilidade/alvos.mjs
+
+
+[90m  a régua dos alvos · 46 rotas × 5 larguras · dist: dist[0m
+
+  [32m✓[0m H1  [90m0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação[0m
+  [32m✓[0m H2  [90mfichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 54 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 11854 alvos medidos, 7594 deles com 44 px a 390, 31 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 23 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (6× a.src-chip «source · Estrutura de Missão Recup» · 61.9×23 de toque (caixa 61×18.6); 3× a.src-chip «fonte · INE» · 53.3×23 de toque (caixa 52.5×18.6); 2× a.src-chip «fonte · Eurostat» · 53.3×44.7 de toque (caixa 52.5×15.6); 2× a.src-chip «fonte · Município de Évora» · 53.3×23 de toque (caixa 52.5×18.6)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 3 estão numa página de leitura, que o brief põe fora deste bloco (2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6)) e 5 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (2× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5); 1× a.marcador «[a verificar]» · 55.9×17.7 de toque (caixa 293.4×37.3); 1× a.marcador «[a verificar]» · 55.9×17.7 de toque (caixa 258.6×37.3); 1× a «Alert Mechanism Report and Macroec» · 88×23.7 de toque (caixa 528.8×45.5)) · 3151 não medido(s)[0m
+  [32m✓[0m H3  [90m7353 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 230 passagens[0m
+  [32m✓[0m H14  [90m20 passagens de estudo com IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título[0m
+  [32m✓[0m H4  [90m7353 página(s) do dist/: 7335 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 18 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
+  [32m✓[0m H5  [90m20 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel[0m
+  [32m✓[0m H6  [90mprimeira página, a 1280: 22 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)[0m
+  [32m✓[0m H7  [90m40 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 40 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)[0m
+  [32m✓[0m H8  [90mcartões: 840 registo(s), 420 da edição inglesa, 416 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 1560 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
+  [32m✓[0m H9  [90m3675 página(s) inglesas lidas: 940 com um nome de diploma, 2735 sem nenhum, 1 documento(s) alojado(s) fora da conta · 946 nome(s): 943 com lang="pt-PT", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
+  [32m✓[0m H13  [90m/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308[0m
+  [32m✓[0m H10  [90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título[0m
+
+[32m  todas as células verdes.[0m
+
+
+> o-estado-do-pais@0.1.0 check:fontes
+> node tests/linha/sem-resposta.mjs
+
+  5950 página(s) de linha lidas em /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/oquemudou-2026-09-22/dist, nas duas edições (2975 linha(s) × 2).
+  4 linha(s) devem mostrar o estado da fonte · 2971 não devem · 8 de proveniência incompleta, fora do mapa e com noindex.
+  endereços em falha: 2 · anfitriões em falha: 1
+
+FONTES: PASS — 17850 conferências (o estado e a sua ausência em cada página das duas edições, e o mapa do sítio)
+
+> o-estado-do-pais@0.1.0 check:cadeia
+> node scripts/check-cadeia.mjs
+
+
+[90m  03 pt · 53 blocos · 411 algarismos · 0 completas · 411 do motor · 0 por resolver · 0 com resumo de origem · 411 com motivo[0m
+[90m  14 en · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo[0m
+[90m  14 pt · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo[0m
+[90m  06 pt · 49 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver · 0 com resumo de origem · 171 com motivo[0m
+[90m  07 en · 87 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo[0m
+[90m  07 pt · 88 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo[0m
+[90m  09 pt · 138 blocos · 296 algarismos · 10 completas · 286 do motor · 0 por resolver · 208 com resumo de origem · 88 com motivo[0m
+[90m  04 en · 95 blocos · 324 algarismos · 11 completas · 313 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo[0m
+[90m  04 pt · 95 blocos · 324 algarismos · 12 completas · 312 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo[0m
+[90m  08 pt · 173 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo[0m
+
+[90m  as oito chaves da prova, contadas aqui:[0m
+[90m    registos_edicoes                   10[0m
+[90m    registos_blocos                  1038[0m
+[90m    registos_algarismos              2976[0m
+[90m    registos_resolvidos              2976[0m
+[90m    registos_por_resolver               0[0m
+[90m    registos_com_linha_do_sitio       196[0m
+[90m    registos_com_resumo_de_origem     510[0m
+[90m    registos_sem_resumo_de_origem    2466[0m
+
+[90m  das 196 figuras com linha do sítio, 77 imprimem o valor que a linha guarda e 119 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).[0m
+
+  [32m✓[0m cada algarismo das páginas de leitura chega ao fim da sua cadeia: 196 até ao selo, 2780 conferidos na transcrição, sem recibo do sítio.
+
+
+> o-estado-do-pais@0.1.0 check:dados
+> node scripts/check-dados.mjs
+
+
+[90m  dados descarregáveis · 2 ficheiros · 5 endereços ligados[0m
+[90m  ficheiros alojados · 3 linha(s) com document.hosted · 3 recontada(s)[0m
+[90m  conjunto de dados · 2975 registos no CSV · 1866 com o rótulo da fonte · 2975 ficheiros de linha · licença CC BY 4.0 · 2977 endereço(s) ligado(s)[0m
+
+  [32m✓[0m os ficheiros existem, batem certo com as origens e estão ligados nas duas edições.
+
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs --verifica
+
+[32m  ✓ mapa das unidades · [0m29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · conferidos
+
+> o-estado-do-pais@0.1.0 check:mapa
+> node scripts/check-mapa.mjs
+
+
+  [32m✓[0m R1 · os resumos de mapa/ batem com o manifesto
+  [32m✓[0m R2 · a junção: 308 concelhos, uma vez cada, com os slugs da Carta
+  [32m✓[0m R3 · cada página de distrito com tantas ligações quantos concelhos
+  [32m✓[0m R4 · a primeira página com 29 ligações de área
+  [32m✓[0m R5 · nenhuma ligação debaixo de role="img"
+  [32m✓[0m R6 · a atribuição da DGT onde o mapa está
+  [32m✓[0m R7 · a colação portuguesa nos artefactos e nas listas construídas
+  [32m✓[0m R8 · os 29 ficheiros do segundo nível são os artefactos
+  [32m✓[0m R9 · as páginas que o mapa promete estão todas construídas
+[90m
+  mapa · 30 ficheiros conferidos · 29 unidades · 308 concelhos, uma vez cada · 680 páginas prometidas e construídas (58 de unidade e 616 de concelho, nas duas edições)
+[0m
+
+> o-estado-do-pais@0.1.0 check:regioes
+> node scripts/check-regioes.mjs
+
+
+  [32m✓[0m R1 · cada região com linhas tem página, e nenhuma outra tem
+  [32m✓[0m R2 · cada página de região cita as suas linhas, com selo
+  [32m✓[0m R3 · a régua imprime só valores com linha, e um por leitura
+  [32m✓[0m R4 · a neutralidade: um só estilo de barra, e o contorno da página
+  [32m✓[0m R5 · as duas contagens, de três pontos de observação
+[90m
+  regiões · 9 declarada(s), 9 com linhas · 18 página(s) de região construída(s) · 10 leitura(s) na régua
+[0m
+
+> o-estado-do-pais@0.1.0 check:areas
+> node scripts/check-areas.mjs
+
+
+  [32m✓[0m A1 · cada área com peças tem página, e nenhuma outra tem
+  [32m✓[0m A2 · a porta de cada peça abre, cada medida vai com selo, e a porta legal abre
+  [32m✓[0m A3 · nenhuma área vazia, no mapa nem na página
+  [32m✓[0m A4 · uma peça em duas áreas traz a razão de cada uma
+  [32m✓[0m A5 · os nomes, e cada matéria com artigo, transcrição e razão
+  [32m✓[0m A6 · a contagem de cada área, de três pontos de observação
+  [32m✓[0m A7 · cada linha do livro-razão coberta uma vez, e só uma
+[90m
+  áreas · 9 declarada(s), 9 com peças · 18 página(s) de área construída(s)
+      financas · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      economia-e-coesao-territorial · 97 peça(s): 8 trabalho(s), 1 conjunto(s), 88 medida(s)
+      infraestruturas-e-habitacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)
+      educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      trabalho-solidariedade-e-seguranca-social · 23 peça(s): 2 trabalho(s), 1 conjunto(s), 20 medida(s)
+      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)
+[0m
+
+> o-estado-do-pais@0.1.0 check:formas
+> node scripts/check-formas.mjs
+
+[32m  formas ✓[0m[90m 2 páginas de domínio · 6 desenhos (mapa-por-concelho 4 · barra-concelho-pais 2) · 25398 datas de linha conferidas · 20 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 556 período(s) da fonte conferido(s) · 2 frase(s) com contagem por extenso conferida(s)[0m
+
+> o-estado-do-pais@0.1.0 check:alcance
+> node tests/dominio/alcance.mjs
+
+  0 porta(s) · 1 página(s) nova(s) · 635 linhas citadas · 314 das 314 da §1.90
+  1 porta(s) · 949 página(s) nova(s) · 2668 linhas citadas · 314 das 314 da §1.90
+  2 porta(s) · 3666 página(s) nova(s) · 2975 linhas citadas · 314 das 314 da §1.90
+  3 porta(s) · 2728 página(s) nova(s) · 2975 linhas citadas · 314 das 314 da §1.90
+[32m
+  as 314 linhas da §1.90 alcançam-se a partir de /dominios/economia-e-financas-publicas[0m[90m em 3 porta(s)
+[0m
+
+> o-estado-do-pais@0.1.0 check:lugares
+> node scripts/check-lugares.mjs
+
+
+[32m  lugares ✓ [0m308 concelhos, 29 distritos e ilhas, 9 regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · as 308 linhas do poder de compra declaram a base do índice · 9 chaves com tema · 4928 medida(s) rendidas em 616 página(s), todas debaixo do tema que a tabela lhes dá · as palavras da leitura e da régua recalculadas do livro-razão em todas elas
+
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs
+
+B1 país: 35 medidas, 9 temas, 7336 menus, 1 mudanças declaradas, 4 listas com teto 8, 2 registos de 30 mudanças.
+B1 país: todas as conferências a 0.
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+[32m  voz ✓ [0m65 marcadores · 12 exceções (0 de registo) · 762 frases distintas, 20908 ocorrências em 1376 rotas · autorreferência 0 · nada por classificar · divulgação 1404 ocorrência(s) nas rotas medidas · 1144 linhas do inventário com bloco (600 vivas, todas rendidas; 544 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 6656 · nomes declarados: areas 54, regioes 0, dominios 1974, figuras 170, medidas 82, projeto 644, oficial 0, concelho 4928 · palavras proibidas: 0 em 7354 página(s) da superfície (14 palavras da norma §1.3; 44 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+[90m        12 bloco(s) do inventário por ler, e o registo di-lo:[0m
+[90m        · B1-peca1 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu[0m
+[90m        · b1-peca3 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1-peca3-correcao · por ler[0m
+[90m        · b1-peca3-correcao2 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1c · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · cartao · por ler[0m
+[90m        · e1-evora-2027 · por ler[0m
+[90m        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados[0m
+[90m        · lugar · por ler[0m
+[90m        · mapa · leitura a frio (design/especime-v3/critica/2026-09-08-codex-leitura-f11e-distritos.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui)[0m
+[90m        · rotulo-ia · na árvore principal, fora deste ramo[0m
+[90m        1 exceção(ões) por exercer, e o ficheiro di-lo:[0m
+[90m        · «planned completion date has passed with no completion recorded»[0m
+
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node scripts/check-lingua.mjs
+
+
+[32m  língua ✓ [0m37 unidade(s) do livro-razão: 35 traduzida(s), 2 em português com razão escrita · 2527 localizador(es), todos dentro de documento português · 72 título(s) de documento com língua declarada (36 pt, 36 en) · 19 rótulo(s) da fonte com língua declarada (15 pt, 4 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 66 edição(ões) com língua declarada (19 pt, 0 en, 47 sem língua)
+[90m        7336 página(s) lidas · unidades em «en»: 8626 (8617 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6644 de 13288 rendidos · rótulos da fonte com marca de língua: 5562 de 11124 rendidos · organismos rendidos: 15858 (7929 de língua contrária: 7614 em «en» e 315 em «pt», 7929 com a marca certa) · edições rendidas: 10568 (3770 de língua contrária: 3770 em «en» e 0 em «pt», 3770 com a marca certa, 3028 sem língua nenhuma e sem marca) · localizadores em «en»: 2527 com marca · leis em «en»: 943 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 111 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7362 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[90m        3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
+
+
+> o-estado-do-pais@0.1.0 check:lugar
+> node scripts/check-lugar.mjs
+
+  8.4, o que a régua leu: 46 definições (esperadas 46) · 56 origens (esperadas 56)
+  item 5, o que a régua leu no Método: pt «selo» ×6 · en «seal» ×6 (chão 1 por edição; a rota do Método está fora da conta da L3, pela medida P9 do brief)
+  item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
+  §7.4 e 8.6, o que os dados dizem: estudo 26 · texto 10 · indice 2 · edicoes 26 · linhas 12
+check:lugar · 7354 páginas em dist/
+  L1 · páginas com dois destinos iguais fora da mobília         2271  (teto 2271) ok
+      · /agenda · 7 destinos repetidos (ex.: /agenda ×4)
+      · /correcoes · 9 destinos repetidos (ex.: / ×7)
+      · /distritos/aveiro · 20 destinos repetidos (ex.: /municipios/agueda ×2)
+      · /distritos/beja · 15 destinos repetidos (ex.: /municipios/aljustrel ×2)
+      · /distritos/braga · 15 destinos repetidos (ex.: /municipios/amares ×2)
+      · /distritos/braganca · 13 destinos repetidos (ex.: /municipios/alfandega-da-fe ×2)
+  L2 · segundas listas dos concelhos                               0  (teto 0) ok
+  L2 · réguas da convergência fora de /regioes                     0  (teto 0) ok
+  L2 · sinopses de estudo fora de /estudos                         0  (teto 0) ok
+  L3 · palavras fora do vocabulário fechado                        0  (teto 0) ok
+  L4 · frases de definição e de hierarquia em falta                0  (teto 0) ok
+  L5 · páginas sem caminho no cabeçalho                            0  (teto 0) ok
+  L6 · selos que não dizem o publicador                            0  (teto 0) ok
+  8.5 · «limiar» sozinho                                           0  (teto 0) ok
+  8.8 · «livro-razão» nos menus e nos títulos                      0  (teto 0) ok
+  8.13 · valores selados na secção dos domínios de /               0  (teto 0) ok
+  8.14 · «Relance» e «Leitura breve» nas páginas do leitor         0  (teto 0) ok
+  8.17 · pontos dos 308 na página de um concelho                   0  (teto 0) ok
+  8.17 · páginas de concelho sem o mapa da sua unidade             0  (teto 0) ok
+  8.11 · leituras de aparelho no cabeçalho                         0  (teto 0) ok
+  8.4 · definições de painel fora da declaração                    0  (teto 0) ok
+  §7.10 · «[a verificar]» sem definição ao pé do primeiro          0  (teto 0) ok
+  §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok
+  §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok
+  §7.4 e 8.6, o que a régua leu: estudo 26 · texto 10 · indice 2 · edicoes 26 · linhas 12
+  as exceções, e quantas vezes cada uma foi precisa:
+      · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
+      · «trabalho»    15 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+check:lugar · verde.
+
+> o-estado-do-pais@0.1.0 provar:eyetext
+> node scripts/provar-eyetext.mjs
+
+
+A leitura do olho, provada contra o motor:
+  evora-2027-prometido-painel-dinheiro/en           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-prometido-painel-dinheiro/pt           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·   49 no registo ·   83 unidades iguais · 21 isentas em 16 bloco(s) editado(s) · 4 apagado(s)
+  evora-orcamentado-pago-devido-2025/en              94 blocos lidos ·   87 no registo ·  179 unidades iguais · 30 isentas em 27 bloco(s) editado(s) · 7 apagado(s)
+  evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  179 unidades iguais · 31 isentas em 28 bloco(s) editado(s) · 7 apagado(s)
+  evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+  evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+  juntas apertadas na 07 pt                          20 · 0 imprimem um espaço
+
+  7 edições · 841 blocos lidos · 4415 unidades · 4219 iguais carácter a carácter · 196 isentas
+  375 operações da passagem de voz: 174 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+
+[32mEYETEXT: PASSA — 605 conferências[0m
+
+> o-estado-do-pais@0.1.0 provar:guardas
+> node scripts/provar-guardas.mjs
+
+
+[90m  guardas · 129 conferência(s) sobre os guardas de execução do bloco F0.4[0m
+  [32m✓[0m cada guarda recusa o que promete recusar e aceita o que promete aceitar.
+
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+[90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, num directório temporário.[0m
+
+  [32m✓[0m identificadores · 239 ficheiro(s) lidos, nenhuma declaração morta
+
+
+> o-estado-do-pais@0.1.0 check:indice
+> node tests/livro/indice.mjs --navegador
+
+
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7354 página(s) de /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/oquemudou-2026-09-22/dist
+
+  [32m✓[0m I1 · o nome de uma medida não é o identificador
+[90m        20 página(s) · 416 entrada(s) · 364 com nome · 52 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 416 identificador(es) em metadado
+        a escada no índice do livro-razão, por edição (208 linhas): 113 pelo nome do cartão · 3 pelo rótulo da fonte · 66 pelo TÍTULO DO DOCUMENTO, que é o nome do papel e não o da medida · 26 sem nome
+        1866 rótulo(s) do livro-razão inteiro com um localizador de uma das 4 formas conhecidas[0m
+  [32m✓[0m I2 · as datas ISO à vista
+[90m        0 data(s) ISO como valor · 0 em prosa por marcar · 918 dentro de texto transcrito (a casa não edita o que transcreve) · 305 em documentos alojados e páginas de leitura (fora do âmbito do brief §2)[0m
+  [32m✓[0m I3 · a busca do índice é um formulário, e cobre o livro-razão inteiro
+[90m        2 índice(s) com um campo de busca dentro de um <form method="get"> · 5950 entrada(s) nos dois ficheiros do índice da busca, contra 2975 linhas do livro-razão em cada[0m
+  [32m✓[0m I4 · a palavra retirada não está no rótulo da contagem
+[90m        0 ocorrência(s) no rótulo da contagem das áreas · 15 noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)[0m
+  [32m✓[0m I5 · as contagens do índice com denominador
+[90m        as duas parcelas dizem de que total saem, nas duas edições[0m
+  [32m✓[0m I6 · o marcador com um destino só
+[90m        397 ligação(ões) em «pt» e 397 em «en», uma página cada · 72 marcador(es) dentro de um selo (excepção da Emenda 2)[0m
+  [32m✓[0m I8 · a página de uma unidade da Carta
+[90m        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada[0m
+  [32m✓[0m I9 · as datas dos trabalhos, e o marcador que resta
+[90m        12 linha(s) de trabalho · 0 marcador(es) ao todo, 0 linha(s) com um e nenhuma com dois · 18 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 18 de 18 linha(s) de src/data/datas-de-publicacao.json refeitas do git[0m
+  [32m✓[0m I10 · nenhum número novo
+[90m        2975 linha(s) citada(s) em 20426 ocorrência(s) · 19 motivo(s) declarado(s)[0m
+  [32m✓[0m I3b · a busca filtra o livro-razão inteiro, no navegador
+[90m        /livro-razao: 208 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0[0m
+  [32m✓[0m I7 · sem transbordo a 390 nas páginas de linha
+[90m        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)[0m
+  [32m✓[0m I11 · o espaço entre o número e a palavra, a 390
+[90m        /: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s) · /en/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s)[0m
+
+
+> o-estado-do-pais@0.1.0 check:cartao
+> node tests/cartao/cartao.mjs --prova
+
+[90m  prova: 11 estragos plantados, 11 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7354[0m
+[90m    cartões                          5272 (2636 pt, 2636 en)[0m
+[90m    com nome                         5272 de 5272[0m
+[90m    com a frase do que medem         4398 de 5272 com frase[0m
+[90m    com régua                        766 de 5272 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             152[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          1 (a exceção da I92)[0m
+[90m    o marcador em português          6 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    282 (a porta é a do cartão)[0m
+[90m    valores de referência, as duas testemunhas comparadas  13[0m
+[90m    medidas com nome oficial no recibo                    9[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[32m  ✓ 5272 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 4398 de 5272 com frase e 766 de 5272 com régua, e os 152 períodos anteriores da mesma série e da mesma unidade[0m
+
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7354 página(s) lidas, 43 analisadas · 36 nome(s) em recibo (36 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 4 do INE, 14 da PORDATA · recusados: 23[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+
+> o-estado-do-pais@0.1.0 check:palavras
+> node tests/voz/palavras-proibidas.mjs --prova
+
+[32m  palavras ✓ [0m[90m20 de 20 plantas vistas (14 palavras, 6 buracos da superfície) · 7354 página(s) medidas em repouso, 0 achados · 44 página(s) com a superfície estreitada por rota declarada[0m
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs
+
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit dee436c · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   377220  [32m✓[0m
+  02-tipo.html                      Fundamentos   373726  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   411367  [32m✓[0m
+  04-regua.html                     Disposições   375643  [32m✓[0m
+  05-mapa.html                      Disposições   442143  [32m✓[0m
+  06-estados.html                   Componentes   372745  [32m✓[0m
+  07-cartoes.html                   Componentes   285054  [32m✓[0m
+  10-pagina-primeira.html           Páginas       451059  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       451970  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       224144  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       549499  [32m✓[0m
+  14-pagina-municipio.html          Páginas       273603  [32m✓[0m
+  15-pagina-lugares.html            Páginas       484010  [32m✓[0m
+  16-pagina-metodo.html             Páginas       254071  [32m✓[0m
+  17-pagina-agenda.html             Páginas       286518  [32m✓[0m
+  18-pagina-estudos.html            Páginas       201699  [32m✓[0m
+  19-pagina-sobre.html              Páginas       196882  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       264187  [32m✓[0m
+  21-pagina-404.html                Páginas       195617  [32m✓[0m
+  30-regras.html                    Fundamentos   238267  [32m✓[0m
+
+[90m  6552.2 KiB de cartões · maior cartão 536.6 KiB · tecto 596.75 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 16 ligações para fontes, intactas · 11 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7354 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
+

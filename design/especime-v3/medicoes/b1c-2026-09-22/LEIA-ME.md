@@ -107,8 +107,18 @@ Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowr
 
 ## Os commits
 
-Sete, por caminhos explícitos, com os dois trailers num bloco contíguo.
+Oito, por caminhos explícitos, com os dois trailers num bloco contíguo. O último só leva os ficheiros dos portões e esta tabela.
 
 ## Conferência final
 
-Os três comandos completos, cada um no seu comando, com o código lido de um ficheiro acabado de escrever, na mesma cabeça. Horas em UTC.
+Os três comandos completos, cada um no seu comando, na mesma cabeça `dee436cf`, com o código lido de um ficheiro acabado de escrever. Os `.codigo` foram apagados antes da corrida, e cada comando guarda também `.log`, `.inicio`, `.fim` e `.cabeca`, em [portoes/](portoes/). Horas em UTC.
+
+| Comando completo | Código lido do ficheiro | Início | Fim | Cabeça medida |
+| --- | ---: | --- | --- | --- |
+| `npm run build` | 0 | 2026-09-22T11:06:54Z | 2026-09-22T11:11:37Z | `dee436cf` |
+| `npm run verify` | 0 | 2026-09-22T11:11:37Z | 2026-09-22T11:19:18Z | `dee436cf` |
+| `npm run typecheck` | 0 | 2026-09-22T11:19:18Z | 2026-09-22T11:19:18Z | `dee436cf` |
+
+Houve uma corrida anterior, na cabeça `820ed629`, com `build` a 0 e `verify` a **1**: o `design:feixe`, o último passo da cadeia, lia a peça da correção por `.log-linha`, a classe da tabela que saiu com as duas listas do registo. A correção e a sua planta ficaram em `dee436cf`, e as três cadeias correram inteiras outra vez nessa cabeça. Fica dito em vez de escondido.
+
+Não se esperou por nenhuma outra construção desta máquina: as três corridas encontraram a máquina livre. Nenhum `push`, nenhum `checkout` noutra árvore, nenhum `git add -A`.
