@@ -29,6 +29,14 @@ pnpm-debug.log*
 src/pages/_gate-test-*.astro
 .vercel
 
+# O bytecode do Python (22.09.2026, M5). O `check:briefs` é o primeiro portão da
+# casa escrito em Python e importa `scripts/leituras/numeros.py`, e o Python
+# escreve o `__pycache__` ao lado do módulo importado a cada corrida do `verify`.
+# Não é do sítio e não entra: uma árvore suja depois de um portão verde é a
+# classe de coisa que faz alguém acreditar que mudou o que não mudou.
+__pycache__/
+*.pyc
+
 # A PASTA DO CLAUDE CODE, INTEIRA (03.09.2026, bloco F0.7).
 # Era só `.claude/worktrees/`, e o resto da pasta ficava a um ficheiro de
 # distância de entrar num repositório público: as definições locais da sessão,

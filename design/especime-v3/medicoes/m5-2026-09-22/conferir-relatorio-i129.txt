@@ -1,0 +1,65 @@
+relatório: design/especime-v3/medicoes/i129-2026-09-22/LEIA-ME.md
+pasta das medições: design/especime-v3/medicoes/i129-2026-09-22
+ficheiros JSON lidos: 1
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 134
+números com ficheiro: 78
+números sem ficheiro: 56
+   l.3 «5» em «*Construtor: Claude Opus 5, 22.09.2026, na worktree `jovens-nem-2026-09-22`»
+   l.58 «5» em «`compor_excerto` que ignora as dimensões, dá 5 falhas, entre elas «A PLANTA NÃO»
+   l.64 «3» em «diz 3 ficheiros, 6 inserções, 6 eliminações, e nenhum outro ficheiro do»
+   l.64 «6» em «diz 3 ficheiros, 6 inserções, 6 eliminações, e nenhum outro ficheiro do»
+   l.64 «6» em «diz 3 ficheiros, 6 inserções, 6 eliminações, e nenhum outro ficheiro do»
+   l.99 «7» em «qual: o achado 7 de 14.09.2026 tinha trazido o sexo de volta e deixado a idade»
+   l.102 «2» em «No inventário das frases: 2 retiradas, 2 vivas, no bloco `i129`, com a entrada»
+   l.102 «2» em «No inventário das frases: 2 retiradas, 2 vivas, no bloco `i129`, com a entrada»
+   l.103 «602» em «em `critica/REVISOES-DO-INVENTARIO.md`. O `check:voz` conta 602 vivas todas»
+   l.104 «542» em «rendidas e 542 retiradas nenhuma rendida.»
+   l.118 «3» em «Medido: **4 medidas** com grupo etário fixado na linha, **1 passa**, **3 na»
+   l.134 «3» em «do período anterior e a do agregado da União, pelo mesmo pedido: 3 × 3. Todas»
+   l.134 «3» em «do período anterior e a do agregado da União, pelo mesmo pedido: 3 × 3. Todas»
+   l.136 «9» em «`excerpt`: 9 ficheiros, 9 inserções, 9 eliminações. Com as três da primeira»
+   l.136 «9» em «`excerpt`: 9 ficheiros, 9 inserções, 9 eliminações. Com as três da primeira»
+   l.136 «9» em «`excerpt`: 9 ficheiros, 9 inserções, 9 eliminações. Com as três da primeira»
+   l.137 «12» em «passagem são **12 linhas do livro-razão** com a etiqueta da idade no excerto,»
+   l.190 «35» em «na catraca), `check:pais` **0** (35 medidas, 2 mudanças declaradas, tudo a 0). O»
+   l.190 «2» em «na catraca), `check:pais` **0** (35 medidas, 2 mudanças declaradas, tudo a 0). O»
+   l.191 «602» em «`check:voz` corre dentro da construção: 602 vivas todas rendidas, 546 retiradas»
+   l.191 «546» em «`check:voz` corre dentro da construção: 602 vivas todas rendidas, 546 retiradas»
+   l.205 «6,4» em «lida, e dava **6,4** para o desemprego de 2025. **O Eurostat dá 6,0**, que é o»
+   l.205 «6,0» em «lida, e dava **6,4** para o desemprego de 2025. **O Eurostat dá 6,0**, que é o»
+   l.231 «200» em «| `tipslm90-PT` | 11:25:42 | 200 | 5642 | `de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef` |»
+   l.231 «5642» em «| `tipslm90-PT` | 11:25:42 | 200 | 5642 | `de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef` |»
+   l.232 «200» em «| `tipslm90-UE` | 11:25:42 | 200 | 5696 | `c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434` |»
+   l.232 «5696» em «| `tipslm90-UE` | 11:25:42 | 200 | 5696 | `c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434` |»
+   l.233 «200» em «| `une_rt_a-PT` | 11:25:44 | 200 | 3910 | `06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23` |»
+   l.233 «3910» em «| `une_rt_a-PT` | 11:25:44 | 200 | 3910 | `06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23` |»
+   l.234 «200» em «| `une_rt_a-UE` | 11:25:46 | 200 | 3955 | `b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33` |»
+   l.234 «3955» em «| `une_rt_a-UE` | 11:25:46 | 200 | 3955 | `b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33` |»
+   l.235 «200» em «| `tipsun20-PT` | 11:25:48 | 200 | 5470 | `6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f` |»
+   l.235 «5470» em «| `tipsun20-PT` | 11:25:48 | 200 | 5470 | `6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f` |»
+   l.236 «200» em «| `tipsun20-UE` | 11:25:50 | 200 | 5515 | `6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e` |»
+   l.236 «5515» em «| `tipsun20-UE` | 11:25:50 | 200 | 5515 | `6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e` |»
+   l.237 «200» em «| `lfsi_emp_a-PT` | 11:25:52 | 200 | 4109 | `f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6` |»
+   l.237 «4109» em «| `lfsi_emp_a-PT` | 11:25:52 | 200 | 4109 | `f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6` |»
+   l.238 «200» em «| `lfsi_emp_a-UE` | 11:25:54 | 200 | 4156 | `2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece` |»
+   l.238 «4156» em «| `lfsi_emp_a-UE` | 11:25:54 | 200 | 4156 | `2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece` |»
+   l.242 «6,5» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
+   l.242 «6,0» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
+   l.242 «6,0» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
+   l.242 «78,5» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
+   l.242 «79,6» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
+   l.242 «76,1» em «11,0 (UE), 6,5 e 6,0 (desemprego PT), 6,0 (UE), 78,5 e 79,6 (emprego PT), 76,1»
+   l.280 «6,0» em «real; uma sintética sem razão; uma sintética com campos de proveniência; a hora»
+   l.280 «6,4» em «real; uma sintética sem razão; uma sintética com campos de proveniência; a hora»
+   l.287 «6» em «»
+   l.288 «7» em «| achado | o que mudou | a planta que o prova |»
+   l.289 «79,8» em «|---|---|---|»
+   l.290 «10» em «| **6**, a K13 | Corre sobre **as linhas** do livro-razão e não sobre as definições, juntando-as por medida (o período anterior e o agregado leem-se debaixo da »
+   l.291 «9» em «| **7**, a catraca | A asserção de que a lista em vigor está vazia saiu de dentro do `if (PROVA)` e corre em toda a corrida | uma entrada na lista em vigor fech»
+   l.297 «12» em «suíte dá o vermelho com o nome («A PLANTA NÃO MORDEU», «A GUARDA NÃO MORDEU»,»
+   l.299 «9» em «»
+   l.299 «3» em «»
+   l.300 «12» em «### O achado 12, que não era para corrigir»
+apagado antes de contar: codigo 176, enderecos 0, seccoes 0, datas 20, resumos 0, ordinais 0, identificadores 10, anos 9
+código de saída: 1

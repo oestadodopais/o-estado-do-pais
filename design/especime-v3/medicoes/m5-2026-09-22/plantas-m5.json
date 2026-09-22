@@ -1,0 +1,78 @@
+{
+  "bloco": "m5-2026-09-22",
+  "cabeca": "50c035577f796edfaa8bf44fa904ac4f6ce57d84",
+  "plantas": [
+    {
+      "grupo": "o bloco medidas de um brief",
+      "nome": "valor-trocado",
+      "ficheiro": "design/observatorio/medidas/BRIEF-M5.json",
+      "comando": "python3 scripts/check-briefs.py",
+      "codigo": 1,
+      "mordida": "a medição «briefs_ate_22_09_2026» vale 37 hoje e o ficheiro diz 38",
+      "mordeu": true,
+      "passou": true,
+      "antes": "54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1",
+      "reposto": "54b2168f16c4dc27dc376bfab3976966fcf6c4f280d4eed224a8345fbf0ec6c1"
+    },
+    {
+      "grupo": "o bloco medidas de um brief",
+      "nome": "conhecido-positivo-cego",
+      "ficheiro": "design/observatorio/medidas/BRIEF-M5.py",
+      "comando": "python3 scripts/check-briefs.py",
+      "codigo": 1,
+      "mordida": "conhecido-positivo da medição «ocorrencias_do_nome_de_quem_responde_em_src_e_public» NÃO foi encontrado",
+      "mordeu": true,
+      "passou": true,
+      "antes": "c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64",
+      "reposto": "c702860e95ccd06e83b20ef13639006b6b8ce8396e4a62afe73ba42bf7e5ed64"
+    },
+    {
+      "grupo": "o bloco medidas de um brief",
+      "nome": "numero-do-zero-sem-medicao",
+      "ficheiro": "design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md",
+      "comando": "python3 scripts/check-briefs.py",
+      "codigo": 1,
+      "mordida": "o §0 escreve «41» e esse número não está em",
+      "mordeu": true,
+      "passou": true,
+      "antes": "67c3e4e5ff9cbd16924c8d7e9bee8d6b65ec056629e3fa8bccb04c3326321577",
+      "reposto": "67c3e4e5ff9cbd16924c8d7e9bee8d6b65ec056629e3fa8bccb04c3326321577"
+    },
+    {
+      "grupo": "os números de um relatório",
+      "nome": "numero-do-relatorio-sem-ficheiro",
+      "ficheiro": "design/especime-v3/medicoes/m5-2026-09-22/LEIA-ME.md",
+      "comando": "python3 scripts/leituras/conferir-relatorio.py design/especime-v3/medicoes/m5-2026-09-22/LEIA-ME.md design/especime-v3/medicoes/m5-2026-09-22",
+      "codigo": 1,
+      "mordida": "«314159»",
+      "mordeu": true,
+      "passou": true,
+      "antes": "3b1b465ceb9b9f6f5f31cc6bb47f72f86979aa90d16620086c08e55d6802c50a",
+      "reposto": "3b1b465ceb9b9f6f5f31cc6bb47f72f86979aa90d16620086c08e55d6802c50a"
+    },
+    {
+      "grupo": "o nome de quem responde",
+      "nome": "nome-numa-cadeia-de-uma-vista",
+      "ficheiro": "src/views/SobreView.astro",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "escreve o nome de quem responde",
+      "mordeu": true,
+      "passou": true,
+      "antes": "e68ffea62253d73f40c13ce199ce052c70bdb987ae6132821044a221d87e49d8",
+      "reposto": "e68ffea62253d73f40c13ce199ce052c70bdb987ae6132821044a221d87e49d8"
+    },
+    {
+      "grupo": "o nome de quem responde",
+      "nome": "nome-numa-pagina-construida",
+      "ficheiro": "dist/sobre/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "rende o nome de quem responde",
+      "mordeu": true,
+      "passou": true,
+      "antes": "8636c0752f3453522cee98f635cf83cac27698f9f6f2d453a0a986760ad9ae6b",
+      "reposto": "8636c0752f3453522cee98f635cf83cac27698f9f6f2d453a0a986760ad9ae6b"
+    }
+  ]
+}
