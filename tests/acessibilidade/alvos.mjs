@@ -16,7 +16,8 @@
  *   node tests/acessibilidade/alvos.mjs --vermelhos
  *
  * `--vermelhos` corre cinco vezes o que as outras formas correm uma (a limpa, e
- * uma por estrago plantado): fica de fora do `verify` por custo, e é assim que o
+ * uma por estrago plantado): estas plantas ficam fora do `verify` por custo.
+ * O conhecido positivo da H10 corre sempre, também sem bandeira, e é assim que o
  * relatório do bloco o mede. `OEDP_DIST` aponta a régua para outra construção, e
  * serve para uma coisa só: medir o ANTES, com a mesma régua e não com outra
  * (a convenção é a de `tests/documentos/moldura.mjs`).
@@ -92,6 +93,7 @@ import { unidadeDaLinha, UNIDADES_EM_PORTUGUES } from '../../src/i18n/unidades.m
 import { feitioDeLei } from '../../src/i18n/nomes-de-lei.mjs';
 import { MUNICIPIOS } from '../../src/data/caop-centroids.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
+import { medeComandos, aceitaComandos, avaliaExpanded } from './expanded.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
@@ -107,8 +109,7 @@ const opcao = (nome) => {
   return i >= 0 ? (argv[i + 1] ?? true) : null;
 };
 const FICHEIRO_JSON = opcao('--json');
-const PLANTA_B1 = argv.includes('--planta-b1');
-const VERMELHOS = argv.includes('--vermelhos') || PLANTA_B1;
+const VERMELHOS = argv.includes('--vermelhos');
 
 if (!fs.existsSync(DIST)) {
   console.error('não existe dist/. Corra o build primeiro.');
@@ -194,14 +195,6 @@ const PREFIXO_DO_CONCELHO = Object.fromEntries(
 const CONCELHOS_DA_CARTA = MUNICIPIOS.length;
 
 /**
- * O GUIÃO QUE ACOMPANHA O `aria-expanded`. O nome está escrito aqui e a régua
- * exige que ele exista em `dist/` e que as páginas que levam o atributo o
- * peçam: uma régua que confira só o feitio do elemento dá por bom um atributo
- * escrito à mão numa página sem guião nenhum (Major 10).
- */
-const GUIAO_DO_TEMA = '/js/tema.js';
-
-/**
  * O LIVRO-RAZÃO, para a H8 poder perguntar qual é a unidade de uma linha.
  * A régua não o reescreve nem o resume: lê-o pela mesma porta que o portão de
  * HTML usa, e uma linha que ele não tenha devolve `null` em vez de atirar.
@@ -233,7 +226,7 @@ for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
  */
 const estragoB1 = html => html.replace('id="nav-principal"', 'id="nav-principal" aria-expanded="true"').replace('</head>', '<style>@media (min-width:641px){.pais-porta-tema a{min-height:20px!important;height:20px!important;line-height:20px!important;font-size:10px!important;padding:0!important}.pais-porta-tema a::after{content:none!important}}</style></head>');
 const ESTRAGOS = [
-  { nome: 'b1 · portas pequenas e aria-expanded sem comando', celulas: ['H2','H6','H10'], faz: estragoB1, noDisco: (s, f) => f.endsWith('.html') ? estragoB1(s) : s },
+  { nome: 'b1 · portas pequenas e aria-expanded sem comando', celulas: ['H2','H6','H10'], faz: estragoB1, noDisco: (s, f) => f === path.join(DIST, 'index.html') ? estragoB1(s) : s },
   {
     nome: 'h1-a-dobrar · um segundo <h1> na página',
     celulas: ['H3'],
@@ -1031,7 +1024,7 @@ function varreDist() {
     for (const e of fs.readdirSync(d, { withFileTypes: true })) {
       const p = path.join(d, e.name);
       if (e.isDirectory()) yield* paginas(p);
-      else if (e.name === 'index.html') yield p;
+      else if (e.name.endsWith('.html')) yield p;
     }
   }
   let n = 0;
@@ -1041,13 +1034,28 @@ function varreDist() {
   let portaForaDeMarco = 0;
   let portaEmMain = 0;
   let expanded = 0;
-  let expandedForaDoGuiao = 0;
-  let paginasComExpandedSemGuiao = 0;
+  const paginasExpanded = [];
   const exemplos = { h1: [], porta: [], expanded: [] };
   for (const f of paginas(DIST)) {
-    n++;
     const s = leFicheiro(f);
     const rel = path.relative(DIST, f);
+    /* OS DOCUMENTOS ALOJADOS FICAM DE FORA DESTA CONTA, e não é uma folga: um
+       documento em `/estudos/<slug>/documento` é obra já publicada, alojada
+       carácter a carácter e conferida contra a origem; o `aria-expanded` que
+       está lá dentro é DELE, com o guião dele, e a casa não lhe toca. Medido a
+       04.09.2026: 1 380 das 8 601 ocorrências estavam nesses dezasseis
+       ficheiros (e algumas nem eram markup, eram a palavra dentro do `<style>`
+       do próprio documento). É a mesma exclusão que `scripts/check-lingua.mjs`
+       faz, e pela mesma razão. */
+    if (!/[\\/](documento|document)[\\/]index\.html$/.test(rel) && /\baria-expanded\b/i.test(s)) {
+      const nos = parse(s).querySelectorAll('[aria-expanded]');
+      if (nos.length) {
+        expanded += nos.length;
+        paginasExpanded.push({ rota: '/' + rel.replace(/index\.html$/, ''), n: nos.length });
+      }
+    }
+    if (path.basename(f) !== 'index.html') continue;
+    n++;
     const nH1 = (s.match(/<h1[\s>]/g) ?? []).length;
     if (!cabecaValida(s, rel)) {
       h1Errado++;
@@ -1075,35 +1083,7 @@ function varreDist() {
         }
       }
     }
-    /* OS DOCUMENTOS ALOJADOS FICAM DE FORA DESTA CONTA, e não é uma folga: um
-       documento em `/estudos/<slug>/documento` é obra já publicada, alojada
-       carácter a carácter e conferida contra a origem; o `aria-expanded` que
-       está lá dentro é DELE, com o guião dele, e a casa não lhe toca. Medido a
-       04.09.2026: 1 380 das 8 601 ocorrências estavam nesses dezasseis
-       ficheiros (e algumas nem eram markup, eram a palavra dentro do `<style>`
-       do próprio documento). É a mesma exclusão que `scripts/check-lingua.mjs`
-       faz, e pela mesma razão. */
-    if (/[\\/](documento|document)[\\/]index\.html$/.test(rel)) continue;
-    const temExpanded = s.includes(' aria-expanded=');
-    if (temExpanded && !s.includes(GUIAO_DO_TEMA)) {
-      paginasComExpandedSemGuiao++;
-      if (exemplos.expanded.length < 5) {
-        exemplos.expanded.push(`${rel}: leva aria-expanded e não pede ${GUIAO_DO_TEMA}`);
-      }
-    }
-    for (const m of s.matchAll(/\saria-expanded=/g)) {
-      expanded++;
-      /* O único feitio que o guião acompanha: um `<summary aria-controls>`
-         dentro de um `<details>`. Lê-se a etiqueta de abertura à volta da
-         marca; o que não for esse feitio conta-se como fora do guião. */
-      const abre = s.lastIndexOf('<', m.index);
-      const fecha = s.indexOf('>', m.index);
-      const etiqueta = s.slice(abre, fecha + 1);
-      if (!/^<summary\b/.test(etiqueta) || !/\baria-controls=/.test(etiqueta)) {
-        expandedForaDoGuiao++;
-        if (exemplos.expanded.length < 5) exemplos.expanded.push(`${rel}: ${etiqueta.slice(0, 80)}`);
-      }
-    }
+
   }
   return {
     n,
@@ -1113,9 +1093,7 @@ function varreDist() {
     portaForaDeMarco,
     portaEmMain,
     expanded,
-    expandedForaDoGuiao,
-    paginasComExpandedSemGuiao,
-    guiaoNoDist: fs.existsSync(path.join(DIST, GUIAO_DO_TEMA.replace(/^\//, ''))),
+    paginasExpanded,
     exemplos,
   };
 }
@@ -1433,46 +1411,12 @@ async function passagem() {
           if (v.impacto === 'serious' || v.impacto === 'critical') graves += v.nos;
         }
       }
-      /* ---------------------------------------------------------------------
-         O GUIÃO DO `aria-expanded` EXISTE E MUDA O ESTADO (segunda passagem,
-         04.09.2026, achado Major 10 da leitura a frio)
-         ---------------------------------------------------------------------
-         A régua conferia o FEITIO do elemento («é um `details > summary` com
-         `aria-controls`?») e mais nada. Um `aria-expanded` escrito à mão numa
-         página cujo guião não fosse servido tinha exactamente esse feitio e
-         passava: a régua dizia «o guião acompanha-o» sem nunca ter perguntado se
-         o guião existia.
-
-         Aqui abre-se o `<details>` de verdade e vê-se o atributo mudar. Faz-se
-         uma vez por rota, à largura mais estreita (é onde o comando do menu
-         existe), e só onde há um `<summary>` desses. */
-      const guiao =
-        largura === LARGURAS[0]
-          ? await pagina.evaluate(async () => {
-              const sum = document.querySelector('details > summary[aria-controls]');
-              if (!sum) return null;
-              const porta = sum.parentElement;
-              const antes = sum.getAttribute('aria-expanded');
-              porta.open = !porta.open;
-              /* O `toggle` é assíncrono: dá-se-lhe uma volta do laço de eventos,
-                 que é o que o guião precisa para o ouvir. */
-              await new Promise((r) => setTimeout(r, 0));
-              const depois = sum.getAttribute('aria-expanded');
-              porta.open = !porta.open;
-              await new Promise((r) => setTimeout(r, 0));
-              const reposto = sum.getAttribute('aria-expanded');
-              /* Mudou de verdade quando o atributo seguiu o `open` nos DOIS
-                 sentidos: abriu e mudou, fechou e voltou. Um guião que só
-                 escrevesse «true» uma vez passava a meia conferência. */
-              return { antes, depois, reposto, mudou: antes !== depois && reposto === antes };
-            })
-          : null;
       const medida = await pagina.evaluate(medeNaPagina, {
         alvo: ALVO,
         alvoPonteiro: ALVO_PONTEIRO,
         prefixoDoConcelho: PREFIXO_DO_CONCELHO[r.lang],
       });
-      paginas.push({ ...r, largura, guiao, ...medida });
+      paginas.push({ ...r, largura, ...medida });
       await ctx.close();
     }
   }
@@ -1486,7 +1430,7 @@ let celulas = [];
 const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
 
 /** @param {{ axe: Record<string, number>, graves: number, paginas: any[] }} p */
-function avalia(p, dist, cartoes, leis, folhas) {
+async function avalia(p, dist, cartoes, leis, folhas) {
   celulas = [];
   const todosOsAlvos = p.paginas.flatMap((pg) =>
     pg.alvos.map((a) => ({
@@ -1853,39 +1797,30 @@ function avalia(p, dist, cartoes, leis, folhas) {
   const metodoSemTitulo = metodo.filter(
     (pg) => !pg.tituloDaPagina || pg.h1Texto.some((t) => t === ''),
   );
-  /**
-   * O GUIÃO EXISTE, E MUDA O ESTADO. Três perguntas, e as três têm de responder
-   * sim (segunda passagem, achado Major 10): o ficheiro está em `dist/`, as
-   * páginas que levam o atributo apontam para ele, e ao abrir o `<details>` o
-   * atributo muda e ao fechar volta. A primeira forma conferia só o FEITIO do
-   * elemento, e um atributo escrito à mão numa página sem guião tinha o mesmo
-   * feitio.
-   */
-  const provasDoGuiao = p.paginas.map((pg) => pg.guiao).filter((g) => g !== null && g !== undefined);
-  const guiaoQueNaoMudou = provasDoGuiao.filter((g) => !g.mudou);
-  conta(
-    'H10',
-    dist.expandedForaDoGuiao === 0 &&
-      dist.guiaoNoDist &&
-      dist.paginasComExpandedSemGuiao === 0 &&
-      /* B1: a gaveta saiu. Havendo aria-expanded, a prova dinâmica continua obrigatória. */
-      (dist.expanded === 0 || provasDoGuiao.length > 0) &&
-      guiaoQueNaoMudou.length === 0 &&
-      metodo.length > 0 &&
-      metodoSemTitulo.length === 0,
-    `aria-expanded no dist/: ${dist.expanded} ocorrência(s), ${dist.expandedForaDoGuiao} fora do ` +
-      `feitio que o guião acompanha (details > summary[aria-controls])` +
-      (dist.exemplos.expanded.length ? ` (${dist.exemplos.expanded.join('; ')})` : '') +
-      ` · o guião ${GUIAO_DO_TEMA} ${dist.guiaoNoDist ? 'está' : 'NÃO ESTÁ'} em dist/, e ` +
-      `${dist.paginasComExpandedSemGuiao} página(s) com o atributo não o pedem · abrir e fechar ` +
-      `o <details>: ${provasDoGuiao.length} prova(s) no navegador, ${guiaoQueNaoMudou.length} em ` +
-      `que o atributo não seguiu o estado` +
-      (guiaoQueNaoMudou.length ? ` (${JSON.stringify(guiaoQueNaoMudou[0])})` : '') +
-      ` · Método: ${metodo.length} passagem(ns), ${metodoSemTitulo.length} com <title> ou <h1> vazio` +
-      (metodo[0] ? ` · <title> = «${metodo[0].tituloDaPagina.slice(0, 60)}»` : ''),
-  );
+  // Todas as páginas com comandos reais, mesmo fora da amostra de famílias.
+  const contexto = await nav.newContext({ viewport: { width: 390, height: 900 } });
+  const pagina = await contexto.newPage();
+  const provas = [];
+  let positivo;
+  try {
+    for (const p of dist.paginasExpanded) {
+      await pagina.goto(base + p.rota, { waitUntil: 'networkidle' });
+      provas.push({ rota: p.rota, comandos: await medeComandos(pagina) });
+    }
+    // Corre em cada chamada da cadeia, sem bandeira e sem escrever no dist.
+    await pagina.setContent('<!doctype html><html><body><nav aria-expanded="true">Planta sem comando</nav></body></html>');
+    const plantados = await medeComandos(pagina);
+    positivo = { ocorrencias: plantados.length, aceite: aceitaComandos(plantados), provas: plantados };
+  } finally { await contexto.close(); }
+  const medidos = provas.flatMap(p => p.comandos);
+  conta('H10', avaliaExpanded(dist, provas, positivo) && metodo.length > 0 && metodoSemTitulo.length === 0,
+    `aria-expanded no dist/: ${dist.expanded} ocorrência(s) em ${dist.paginasExpanded.length} página(s)` +
+    (dist.expanded === 0 ? ' · ausência medida em todas as páginas próprias' :
+      ` · abrir e fechar: ${medidos.length} prova(s), ${medidos.filter(p => !p.mudou).length} falha(s)`) +
+    ` · conhecido positivo obrigatório: ${positivo.ocorrencias} ocorrência(s), ${positivo.aceite ? 'PASSOU INDEVIDAMENTE' : 'recusado'}` +
+    ` · Método: ${metodo.length} passagem(ns), ${metodoSemTitulo.length} sem título`);
 
-  return { todosOsAlvos, caixas, buraco: buracoMau };
+  return { todosOsAlvos, caixas, buraco: buracoMau, expanded: { provas, positivo } };
 }
 
 /** Um resumo curto dos alvos que falharam, para a prova de uma célula. */
@@ -1911,7 +1846,7 @@ const CARTOES = varreCartoes();
 const LEIS = varreLeis();
 const FOLHAS = varreFolhas();
 const primeira = await passagem();
-const diagnostico = avalia(primeira, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
+const diagnostico = await avalia(primeira, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
 const limpas = celulas;
 
 console.log('');
@@ -1931,7 +1866,7 @@ if (VERMELHOS) {
   console.log(cinza('  as plantas:'));
   const amostra = fs.readFileSync(path.join(DIST, 'lugares', 'index.html'), 'utf8');
   const amostraEn = fs.readFileSync(path.join(DIST, 'en', 'ledger', 'evora-populacao-2025', 'index.html'), 'utf8');
-  for (const estrago of ESTRAGOS.filter(e => !PLANTA_B1 || e.nome.startsWith('b1 '))) {
+  for (const estrago of ESTRAGOS) {
     const amostraDeCartao = (() => {
       const dir = path.join(DIST, 'cartoes');
       const f = fs.readdirSync(dir).find((x) => x.startsWith('en-') && x.endsWith('.json'));
@@ -1954,7 +1889,7 @@ if (VERMELHOS) {
     const cartoesAgora = estrago.noDisco ? varreCartoes() : CARTOES;
     const leisAgora = estrago.noDisco ? varreLeis() : LEIS;
     const depois = await passagem();
-    avalia(depois, varridoAgora, cartoesAgora, leisAgora, FOLHAS);
+    await avalia(depois, varridoAgora, cartoesAgora, leisAgora, FOLHAS);
     ESTRAGO = null;
     ESTRAGO_NO_DISCO = null;
     const caiu = celulas.filter((c) => !c.passa).map((c) => c.nome);
@@ -1990,6 +1925,7 @@ if (FICHEIRO_JSON) {
         axe: primeira.axe,
         graves: primeira.graves,
         dist_varrido: DIST_VARRIDO,
+        expanded: diagnostico.expanded,
         cartoes: CARTOES,
         folhas: FOLHAS,
         leis: LEIS,
