@@ -3134,9 +3134,14 @@ function auditaSelo(el, id, lang, err) {
       const m = /^(.*)-(\d{4})$/.exec(k);
       return m && m[1] === serie[1] && Number(m[2]) < Number(serie[2]);
     }).sort().at(-1) : null;
-    const permitido = item.getAttribute('data-regua') === 'ue' ? id === `${principal}-ue` :
-      item.getAttribute('data-regua') === 'anterior' && id === anterior &&
-      atual?.document?.edition === outro?.document?.edition && atual?.unit === outro?.unit;
+    const mesmaSerie = typeof atual?.document?.edition === 'string' && atual.document.edition.length > 0 &&
+      atual.document.edition === outro?.document?.edition &&
+      typeof atual?.unit === 'string' && atual.unit.length > 0 && atual.unit === outro?.unit;
+    const agregadoDaSerie = typeof outro?.note === 'string' &&
+      outro.note.startsWith(`Agregado da União Europeia (EU27_2020) da medida «${principal}»,`);
+    const permitido = mesmaSerie && (item.getAttribute('data-regua') === 'ue'
+      ? id === `${principal}-ue` && agregadoDaSerie && atual.reference_date === outro?.reference_date
+      : item.getAttribute('data-regua') === 'anterior' && id === anterior);
     if (permitido && temChipPara(cartao, [routePath('linha', lang, { slug: principal })])) return;
   }
 
