@@ -1,0 +1,8 @@
+OK cartao-correcao-sao: código 0
+OK voz-correcao-sao: código 0
+OK planta-correcao-nome-pt: código 1;     K1 · / · indice-de-divida-limite-legal: o nome do cartão difere da declaração: «Dívida da câmara contra o limite legal»; esperado «Limite legal da dívida das câmaras»; bytes repostos true
+OK planta-correcao-olho-pt: código 1;     · B1 lista fechada país: /: «Estudos sobre este lugar».; bytes repostos true
+OK planta-correcao-publicacao-pt: código 1;     · B1 lista fechada país: /: «Prosa solta da planta».; bytes repostos true
+OK planta-correcao-nome-en: código 1;     K1 · /en/ · indice-de-divida-limite-legal: o nome do cartão difere da declaração: «Municipal debt against the legal cap»; esperado «Legal cap on municipal debt»; bytes repostos true
+OK planta-correcao-olho-en: código 1;     · B1 lista fechada país: en: «Studies about this place».; bytes repostos true
+OK planta-correcao-publicacao-en: código 1;     · B1 lista fechada país: en: «Prosa solta da planta».; bytes repostos true

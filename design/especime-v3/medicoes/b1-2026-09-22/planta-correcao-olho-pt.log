@@ -1,0 +1,12 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+[31m  PORTÃO DA VOZ · 2 problema(s)
+[0m
+[31m    · [0mB1 lista fechada país: /: «Estudos sobre este lugar».
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3072: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Estudos recentes»
+

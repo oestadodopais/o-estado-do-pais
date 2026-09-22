@@ -1,0 +1,854 @@
+[
+  {
+    "id": "N1.pt.390./",
+    "passou": true,
+    "medida": {
+      "x": 18,
+      "y": 0,
+      "width": 354,
+      "height": 45,
+      "top": 0,
+      "right": 372,
+      "bottom": 45,
+      "left": 18
+    }
+  },
+  {
+    "id": "N2.pt.390./",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "N1.pt.390./temas/",
+    "passou": true,
+    "medida": {
+      "x": 18,
+      "y": 0,
+      "width": 354,
+      "height": 45,
+      "top": 0,
+      "right": 372,
+      "bottom": 45,
+      "left": 18
+    }
+  },
+  {
+    "id": "N2.pt.390./temas/",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "G1.pt.390",
+    "passou": true,
+    "medida": {
+      "altura": 9023,
+      "conteudo": 354,
+      "temas": 354,
+      "grelha": 354,
+      "colunas": "354px",
+      "colunasDosTemas": "354px"
+    }
+  },
+  {
+    "id": "N1.pt.768./",
+    "passou": true,
+    "medida": {
+      "x": 30.71875,
+      "y": 0,
+      "width": 706.5625,
+      "height": 45,
+      "top": 0,
+      "right": 737.28125,
+      "bottom": 45,
+      "left": 30.71875
+    }
+  },
+  {
+    "id": "N2.pt.768./",
+    "passou": true,
+    "medida": 768
+  },
+  {
+    "id": "N1.pt.768./temas/",
+    "passou": true,
+    "medida": {
+      "x": 30.71875,
+      "y": 0,
+      "width": 706.5625,
+      "height": 45,
+      "top": 0,
+      "right": 737.28125,
+      "bottom": 45,
+      "left": 30.71875
+    }
+  },
+  {
+    "id": "N2.pt.768./temas/",
+    "passou": true,
+    "medida": 768
+  },
+  {
+    "id": "G1.pt.768",
+    "passou": true,
+    "medida": {
+      "altura": 6877,
+      "conteudo": 706.5625,
+      "temas": 706.5625,
+      "grelha": 706.5625,
+      "colunas": "343.297px 343.312px",
+      "colunasDosTemas": "343.297px 343.312px"
+    }
+  },
+  {
+    "id": "N1.pt.1024./",
+    "passou": true,
+    "medida": {
+      "x": 40.953125,
+      "y": 0,
+      "width": 942.09375,
+      "height": 45,
+      "top": 0,
+      "right": 983.046875,
+      "bottom": 45,
+      "left": 40.953125
+    }
+  },
+  {
+    "id": "N2.pt.1024./",
+    "passou": true,
+    "medida": 1024
+  },
+  {
+    "id": "N1.pt.1024./temas/",
+    "passou": true,
+    "medida": {
+      "x": 40.953125,
+      "y": 0,
+      "width": 942.09375,
+      "height": 45,
+      "top": 0,
+      "right": 983.046875,
+      "bottom": 45,
+      "left": 40.953125
+    }
+  },
+  {
+    "id": "N2.pt.1024./temas/",
+    "passou": true,
+    "medida": 1024
+  },
+  {
+    "id": "G1.pt.1024",
+    "passou": true,
+    "medida": {
+      "altura": 6575,
+      "conteudo": 942.09375,
+      "temas": 942.09375,
+      "grelha": 942.09375,
+      "colunas": "296.281px 296.297px 296.281px",
+      "colunasDosTemas": "296.281px 296.297px 296.281px"
+    }
+  },
+  {
+    "id": "N1.pt.1280./",
+    "passou": true,
+    "medida": {
+      "x": 94,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1186,
+      "bottom": 45,
+      "left": 94
+    }
+  },
+  {
+    "id": "N2.pt.1280./",
+    "passou": true,
+    "medida": 1280
+  },
+  {
+    "id": "N1.pt.1280./temas/",
+    "passou": true,
+    "medida": {
+      "x": 94,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1186,
+      "bottom": 45,
+      "left": 94
+    }
+  },
+  {
+    "id": "N2.pt.1280./temas/",
+    "passou": true,
+    "medida": 1280
+  },
+  {
+    "id": "G1.pt.1280",
+    "passou": true,
+    "medida": {
+      "altura": 6622,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092,
+      "colunas": "248.047px 248.047px 248.047px 248.062px",
+      "colunasDosTemas": "248.047px 248.047px 248.047px 248.062px"
+    }
+  },
+  {
+    "id": "P1.pt",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 1280,
+      "documento": 1280,
+      "altura": 6622,
+      "menu": {
+        "x": 94,
+        "y": 0,
+        "width": 1092,
+        "height": 45,
+        "top": 0,
+        "right": 1186,
+        "bottom": 45,
+        "left": 94
+      },
+      "nome": {
+        "x": 94,
+        "y": 95,
+        "width": 1092,
+        "height": 70.71875,
+        "top": 95,
+        "right": 1186,
+        "bottom": 165.71875,
+        "left": 94
+      },
+      "conteudo": {
+        "x": 94,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 6214.34375,
+        "top": 187.71875,
+        "right": 1186,
+        "bottom": 6402.0625,
+        "left": 94
+      },
+      "cabeca": {
+        "x": 94,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 547.859375,
+        "top": 187.71875,
+        "right": 1186,
+        "bottom": 735.578125,
+        "left": 94
+      },
+      "leitura": {
+        "x": 94,
+        "y": 201.71875,
+        "width": 693.609375,
+        "height": 216.5625,
+        "top": 201.71875,
+        "right": 787.609375,
+        "bottom": 418.28125,
+        "left": 94
+      },
+      "mapa": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1186,
+        "bottom": 676.390625,
+        "left": 826
+      },
+      "porta": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 95.296875,
+        "height": 44,
+        "top": 201.71875,
+        "right": 921.296875,
+        "bottom": 245.71875,
+        "left": 826
+      },
+      "textoDaPorta": "308 concelhos",
+      "temas": {
+        "x": 94,
+        "y": 747.578125,
+        "width": 1092,
+        "height": 2744.421875,
+        "top": 747.578125,
+        "right": 1186,
+        "bottom": 3492,
+        "left": 94
+      },
+      "olho": {
+        "x": 94,
+        "y": 748.578125,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 748.578125,
+        "right": 1186,
+        "bottom": 769.375,
+        "left": 94
+      },
+      "primeiroTema": {
+        "x": 94,
+        "y": 775.375,
+        "width": 1092,
+        "height": 22.390625,
+        "top": 775.375,
+        "right": 1186,
+        "bottom": 797.765625,
+        "left": 94
+      },
+      "grelha": {
+        "x": 94,
+        "y": 803.765625,
+        "width": 1092,
+        "height": 180.34375,
+        "top": 803.765625,
+        "right": 1186,
+        "bottom": 984.109375,
+        "left": 94
+      },
+      "colunas": "248.047px 248.047px 248.047px 248.062px"
+    }
+  },
+  {
+    "id": "P2.pt",
+    "passou": true,
+    "medida": {
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092
+    }
+  },
+  {
+    "id": "planta-menu.pt",
+    "passou": true,
+    "medida": {
+      "olho": 945.375,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092
+    }
+  },
+  {
+    "id": "reposicao-menu.pt",
+    "passou": true,
+    "medida": "forma reposta"
+  },
+  {
+    "id": "planta-dobra.pt",
+    "passou": true,
+    "medida": {
+      "olho": 1757.375,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092
+    }
+  },
+  {
+    "id": "reposicao-dobra.pt",
+    "passou": true,
+    "medida": "forma reposta"
+  },
+  {
+    "id": "planta-largura.pt",
+    "passou": true,
+    "medida": {
+      "olho": 769.375,
+      "conteudo": 1092,
+      "temas": 655.1875,
+      "grelha": 655.1875
+    }
+  },
+  {
+    "id": "reposicao-largura.pt",
+    "passou": true,
+    "medida": "forma reposta"
+  },
+  {
+    "id": "N1.pt.1600./",
+    "passou": true,
+    "medida": {
+      "x": 254,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1346,
+      "bottom": 45,
+      "left": 254
+    }
+  },
+  {
+    "id": "N2.pt.1600./",
+    "passou": true,
+    "medida": 1600
+  },
+  {
+    "id": "N1.pt.1600./temas/",
+    "passou": true,
+    "medida": {
+      "x": 254,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1346,
+      "bottom": 45,
+      "left": 254
+    }
+  },
+  {
+    "id": "N2.pt.1600./temas/",
+    "passou": true,
+    "medida": 1600
+  },
+  {
+    "id": "G1.pt.1600",
+    "passou": true,
+    "medida": {
+      "altura": 6611,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092,
+      "colunas": "341.328px 341.328px 341.344px",
+      "colunasDosTemas": "341.328px 341.328px 341.344px"
+    }
+  },
+  {
+    "id": "N1.en.390./en/",
+    "passou": true,
+    "medida": {
+      "x": 18,
+      "y": 0,
+      "width": 354,
+      "height": 45,
+      "top": 0,
+      "right": 372,
+      "bottom": 45,
+      "left": 18
+    }
+  },
+  {
+    "id": "N2.en.390./en/",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "N1.en.390./en/themes/",
+    "passou": true,
+    "medida": {
+      "x": 18,
+      "y": 0,
+      "width": 354,
+      "height": 45,
+      "top": 0,
+      "right": 372,
+      "bottom": 45,
+      "left": 18
+    }
+  },
+  {
+    "id": "N2.en.390./en/themes/",
+    "passou": true,
+    "medida": 390
+  },
+  {
+    "id": "G1.en.390",
+    "passou": true,
+    "medida": {
+      "altura": 9122,
+      "conteudo": 354,
+      "temas": 354,
+      "grelha": 354,
+      "colunas": "354px",
+      "colunasDosTemas": "354px"
+    }
+  },
+  {
+    "id": "N1.en.768./en/",
+    "passou": true,
+    "medida": {
+      "x": 30.71875,
+      "y": 0,
+      "width": 706.5625,
+      "height": 45,
+      "top": 0,
+      "right": 737.28125,
+      "bottom": 45,
+      "left": 30.71875
+    }
+  },
+  {
+    "id": "N2.en.768./en/",
+    "passou": true,
+    "medida": 768
+  },
+  {
+    "id": "N1.en.768./en/themes/",
+    "passou": true,
+    "medida": {
+      "x": 30.71875,
+      "y": 0,
+      "width": 706.5625,
+      "height": 45,
+      "top": 0,
+      "right": 737.28125,
+      "bottom": 45,
+      "left": 30.71875
+    }
+  },
+  {
+    "id": "N2.en.768./en/themes/",
+    "passou": true,
+    "medida": 768
+  },
+  {
+    "id": "G1.en.768",
+    "passou": true,
+    "medida": {
+      "altura": 6815,
+      "conteudo": 706.5625,
+      "temas": 706.5625,
+      "grelha": 706.5625,
+      "colunas": "343.297px 343.312px",
+      "colunasDosTemas": "343.297px 343.312px"
+    }
+  },
+  {
+    "id": "N1.en.1024./en/",
+    "passou": true,
+    "medida": {
+      "x": 40.953125,
+      "y": 0,
+      "width": 942.09375,
+      "height": 45,
+      "top": 0,
+      "right": 983.046875,
+      "bottom": 45,
+      "left": 40.953125
+    }
+  },
+  {
+    "id": "N2.en.1024./en/",
+    "passou": true,
+    "medida": 1024
+  },
+  {
+    "id": "N1.en.1024./en/themes/",
+    "passou": true,
+    "medida": {
+      "x": 40.953125,
+      "y": 0,
+      "width": 942.09375,
+      "height": 45,
+      "top": 0,
+      "right": 983.046875,
+      "bottom": 45,
+      "left": 40.953125
+    }
+  },
+  {
+    "id": "N2.en.1024./en/themes/",
+    "passou": true,
+    "medida": 1024
+  },
+  {
+    "id": "G1.en.1024",
+    "passou": true,
+    "medida": {
+      "altura": 6579,
+      "conteudo": 942.09375,
+      "temas": 942.09375,
+      "grelha": 942.09375,
+      "colunas": "296.281px 296.297px 296.281px",
+      "colunasDosTemas": "296.281px 296.297px 296.281px"
+    }
+  },
+  {
+    "id": "N1.en.1280./en/",
+    "passou": true,
+    "medida": {
+      "x": 94,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1186,
+      "bottom": 45,
+      "left": 94
+    }
+  },
+  {
+    "id": "N2.en.1280./en/",
+    "passou": true,
+    "medida": 1280
+  },
+  {
+    "id": "N1.en.1280./en/themes/",
+    "passou": true,
+    "medida": {
+      "x": 94,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1186,
+      "bottom": 45,
+      "left": 94
+    }
+  },
+  {
+    "id": "N2.en.1280./en/themes/",
+    "passou": true,
+    "medida": 1280
+  },
+  {
+    "id": "G1.en.1280",
+    "passou": true,
+    "medida": {
+      "altura": 6664,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092,
+      "colunas": "248.047px 248.047px 248.047px 248.062px",
+      "colunasDosTemas": "248.047px 248.047px 248.047px 248.062px"
+    }
+  },
+  {
+    "id": "P1.en",
+    "passou": true,
+    "medida": {
+      "menuUmaLinha": true,
+      "largura": 1280,
+      "documento": 1280,
+      "altura": 6664,
+      "menu": {
+        "x": 94,
+        "y": 0,
+        "width": 1092,
+        "height": 45,
+        "top": 0,
+        "right": 1186,
+        "bottom": 45,
+        "left": 94
+      },
+      "nome": {
+        "x": 94,
+        "y": 95,
+        "width": 1092,
+        "height": 70.71875,
+        "top": 95,
+        "right": 1186,
+        "bottom": 165.71875,
+        "left": 94
+      },
+      "conteudo": {
+        "x": 94,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 6256.71875,
+        "top": 187.71875,
+        "right": 1186,
+        "bottom": 6444.4375,
+        "left": 94
+      },
+      "cabeca": {
+        "x": 94,
+        "y": 187.71875,
+        "width": 1092,
+        "height": 547.859375,
+        "top": 187.71875,
+        "right": 1186,
+        "bottom": 735.578125,
+        "left": 94
+      },
+      "leitura": {
+        "x": 94,
+        "y": 201.71875,
+        "width": 693.609375,
+        "height": 178.46875,
+        "top": 201.71875,
+        "right": 787.609375,
+        "bottom": 380.1875,
+        "left": 94
+      },
+      "mapa": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 360,
+        "height": 474.671875,
+        "top": 201.71875,
+        "right": 1186,
+        "bottom": 676.390625,
+        "left": 826
+      },
+      "porta": {
+        "x": 826,
+        "y": 201.71875,
+        "width": 123.421875,
+        "height": 44,
+        "top": 201.71875,
+        "right": 949.421875,
+        "bottom": 245.71875,
+        "left": 826
+      },
+      "textoDaPorta": "308 municipalities",
+      "temas": {
+        "x": 94,
+        "y": 747.578125,
+        "width": 1092,
+        "height": 2786.296875,
+        "top": 747.578125,
+        "right": 1186,
+        "bottom": 3533.875,
+        "left": 94
+      },
+      "olho": {
+        "x": 94,
+        "y": 748.578125,
+        "width": 1092,
+        "height": 20.796875,
+        "top": 748.578125,
+        "right": 1186,
+        "bottom": 769.375,
+        "left": 94
+      },
+      "primeiroTema": {
+        "x": 94,
+        "y": 775.375,
+        "width": 1092,
+        "height": 22.390625,
+        "top": 775.375,
+        "right": 1186,
+        "bottom": 797.765625,
+        "left": 94
+      },
+      "grelha": {
+        "x": 94,
+        "y": 803.765625,
+        "width": 1092,
+        "height": 180.34375,
+        "top": 803.765625,
+        "right": 1186,
+        "bottom": 984.109375,
+        "left": 94
+      },
+      "colunas": "248.047px 248.047px 248.047px 248.062px"
+    }
+  },
+  {
+    "id": "P2.en",
+    "passou": true,
+    "medida": {
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092
+    }
+  },
+  {
+    "id": "planta-menu.en",
+    "passou": true,
+    "medida": {
+      "olho": 945.375,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092
+    }
+  },
+  {
+    "id": "reposicao-menu.en",
+    "passou": true,
+    "medida": "forma reposta"
+  },
+  {
+    "id": "planta-dobra.en",
+    "passou": true,
+    "medida": {
+      "olho": 1757.375,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092
+    }
+  },
+  {
+    "id": "reposicao-dobra.en",
+    "passou": true,
+    "medida": "forma reposta"
+  },
+  {
+    "id": "planta-largura.en",
+    "passou": true,
+    "medida": {
+      "olho": 769.375,
+      "conteudo": 1092,
+      "temas": 655.1875,
+      "grelha": 655.1875
+    }
+  },
+  {
+    "id": "reposicao-largura.en",
+    "passou": true,
+    "medida": "forma reposta"
+  },
+  {
+    "id": "N1.en.1600./en/",
+    "passou": true,
+    "medida": {
+      "x": 254,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1346,
+      "bottom": 45,
+      "left": 254
+    }
+  },
+  {
+    "id": "N2.en.1600./en/",
+    "passou": true,
+    "medida": 1600
+  },
+  {
+    "id": "N1.en.1600./en/themes/",
+    "passou": true,
+    "medida": {
+      "x": 254,
+      "y": 0,
+      "width": 1092,
+      "height": 45,
+      "top": 0,
+      "right": 1346,
+      "bottom": 45,
+      "left": 254
+    }
+  },
+  {
+    "id": "N2.en.1600./en/themes/",
+    "passou": true,
+    "medida": 1600
+  },
+  {
+    "id": "G1.en.1600",
+    "passou": true,
+    "medida": {
+      "altura": 6569,
+      "conteudo": 1092,
+      "temas": 1092,
+      "grelha": 1092,
+      "colunas": "341.328px 341.328px 341.344px",
+      "colunasDosTemas": "341.328px 341.328px 341.344px"
+    }
+  }
+]

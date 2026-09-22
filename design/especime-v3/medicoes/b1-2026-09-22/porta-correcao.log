@@ -1,0 +1,66 @@
+OK N1.pt.390./ {"x":18,"y":0,"width":354,"height":45,"top":0,"right":372,"bottom":45,"left":18}
+OK N2.pt.390./ 390
+OK N1.pt.390./temas/ {"x":18,"y":0,"width":354,"height":45,"top":0,"right":372,"bottom":45,"left":18}
+OK N2.pt.390./temas/ 390
+OK G1.pt.390 {"altura":9023,"conteudo":354,"temas":354,"grelha":354,"colunas":"354px","colunasDosTemas":"354px"}
+OK N1.pt.768./ {"x":30.71875,"y":0,"width":706.5625,"height":45,"top":0,"right":737.28125,"bottom":45,"left":30.71875}
+OK N2.pt.768./ 768
+OK N1.pt.768./temas/ {"x":30.71875,"y":0,"width":706.5625,"height":45,"top":0,"right":737.28125,"bottom":45,"left":30.71875}
+OK N2.pt.768./temas/ 768
+OK G1.pt.768 {"altura":6877,"conteudo":706.5625,"temas":706.5625,"grelha":706.5625,"colunas":"343.297px 343.312px","colunasDosTemas":"343.297px 343.312px"}
+OK N1.pt.1024./ {"x":40.953125,"y":0,"width":942.09375,"height":45,"top":0,"right":983.046875,"bottom":45,"left":40.953125}
+OK N2.pt.1024./ 1024
+OK N1.pt.1024./temas/ {"x":40.953125,"y":0,"width":942.09375,"height":45,"top":0,"right":983.046875,"bottom":45,"left":40.953125}
+OK N2.pt.1024./temas/ 1024
+OK G1.pt.1024 {"altura":6575,"conteudo":942.09375,"temas":942.09375,"grelha":942.09375,"colunas":"296.281px 296.297px 296.281px","colunasDosTemas":"296.281px 296.297px 296.281px"}
+OK N1.pt.1280./ {"x":94,"y":0,"width":1092,"height":45,"top":0,"right":1186,"bottom":45,"left":94}
+OK N2.pt.1280./ 1280
+OK N1.pt.1280./temas/ {"x":94,"y":0,"width":1092,"height":45,"top":0,"right":1186,"bottom":45,"left":94}
+OK N2.pt.1280./temas/ 1280
+OK G1.pt.1280 {"altura":6622,"conteudo":1092,"temas":1092,"grelha":1092,"colunas":"248.047px 248.047px 248.047px 248.062px","colunasDosTemas":"248.047px 248.047px 248.047px 248.062px"}
+OK P1.pt {"menuUmaLinha":true,"largura":1280,"documento":1280,"altura":6622,"menu":{"x":94,"y":0,"width":1092,"height":45,"top":0,"right":1186,"bottom":45,"left":94},"nome":{"x":94,"y":95,"width":1092,"height":70.71875,"top":95,"right":1186,"bottom":165.71875,"left":94},"conteudo":{"x":94,"y":187.71875,"width":1092,"height":6214.34375,"top":187.71875,"right":1186,"bottom":6402.0625,"left":94},"cabeca":{"x":94,"y":187.71875,"width":1092,"height":547.859375,"top":187.71875,"right":1186,"bottom":735.578125,"left":94},"leitura":{"x":94,"y":201.71875,"width":693.609375,"height":216.5625,"top":201.71875,"right":787.609375,"bottom":418.28125,"left":94},"mapa":{"x":826,"y":201.71875,"width":360,"height":474.671875,"top":201.71875,"right":1186,"bottom":676.390625,"left":826},"porta":{"x":826,"y":201.71875,"width":95.296875,"height":44,"top":201.71875,"right":921.296875,"bottom":245.71875,"left":826},"textoDaPorta":"308 concelhos","temas":{"x":94,"y":747.578125,"width":1092,"height":2744.421875,"top":747.578125,"right":1186,"bottom":3492,"left":94},"olho":{"x":94,"y":748.578125,"width":1092,"height":20.796875,"top":748.578125,"right":1186,"bottom":769.375,"left":94},"primeiroTema":{"x":94,"y":775.375,"width":1092,"height":22.390625,"top":775.375,"right":1186,"bottom":797.765625,"left":94},"grelha":{"x":94,"y":803.765625,"width":1092,"height":180.34375,"top":803.765625,"right":1186,"bottom":984.109375,"left":94},"colunas":"248.047px 248.047px 248.047px 248.062px"}
+OK P2.pt {"conteudo":1092,"temas":1092,"grelha":1092}
+OK planta-menu.pt {"olho":945.375,"conteudo":1092,"temas":1092,"grelha":1092}
+OK reposicao-menu.pt "forma reposta"
+OK planta-dobra.pt {"olho":1757.375,"conteudo":1092,"temas":1092,"grelha":1092}
+OK reposicao-dobra.pt "forma reposta"
+OK planta-largura.pt {"olho":769.375,"conteudo":1092,"temas":655.1875,"grelha":655.1875}
+OK reposicao-largura.pt "forma reposta"
+OK N1.pt.1600./ {"x":254,"y":0,"width":1092,"height":45,"top":0,"right":1346,"bottom":45,"left":254}
+OK N2.pt.1600./ 1600
+OK N1.pt.1600./temas/ {"x":254,"y":0,"width":1092,"height":45,"top":0,"right":1346,"bottom":45,"left":254}
+OK N2.pt.1600./temas/ 1600
+OK G1.pt.1600 {"altura":6611,"conteudo":1092,"temas":1092,"grelha":1092,"colunas":"341.328px 341.328px 341.344px","colunasDosTemas":"341.328px 341.328px 341.344px"}
+OK N1.en.390./en/ {"x":18,"y":0,"width":354,"height":45,"top":0,"right":372,"bottom":45,"left":18}
+OK N2.en.390./en/ 390
+OK N1.en.390./en/themes/ {"x":18,"y":0,"width":354,"height":45,"top":0,"right":372,"bottom":45,"left":18}
+OK N2.en.390./en/themes/ 390
+OK G1.en.390 {"altura":9122,"conteudo":354,"temas":354,"grelha":354,"colunas":"354px","colunasDosTemas":"354px"}
+OK N1.en.768./en/ {"x":30.71875,"y":0,"width":706.5625,"height":45,"top":0,"right":737.28125,"bottom":45,"left":30.71875}
+OK N2.en.768./en/ 768
+OK N1.en.768./en/themes/ {"x":30.71875,"y":0,"width":706.5625,"height":45,"top":0,"right":737.28125,"bottom":45,"left":30.71875}
+OK N2.en.768./en/themes/ 768
+OK G1.en.768 {"altura":6815,"conteudo":706.5625,"temas":706.5625,"grelha":706.5625,"colunas":"343.297px 343.312px","colunasDosTemas":"343.297px 343.312px"}
+OK N1.en.1024./en/ {"x":40.953125,"y":0,"width":942.09375,"height":45,"top":0,"right":983.046875,"bottom":45,"left":40.953125}
+OK N2.en.1024./en/ 1024
+OK N1.en.1024./en/themes/ {"x":40.953125,"y":0,"width":942.09375,"height":45,"top":0,"right":983.046875,"bottom":45,"left":40.953125}
+OK N2.en.1024./en/themes/ 1024
+OK G1.en.1024 {"altura":6579,"conteudo":942.09375,"temas":942.09375,"grelha":942.09375,"colunas":"296.281px 296.297px 296.281px","colunasDosTemas":"296.281px 296.297px 296.281px"}
+OK N1.en.1280./en/ {"x":94,"y":0,"width":1092,"height":45,"top":0,"right":1186,"bottom":45,"left":94}
+OK N2.en.1280./en/ 1280
+OK N1.en.1280./en/themes/ {"x":94,"y":0,"width":1092,"height":45,"top":0,"right":1186,"bottom":45,"left":94}
+OK N2.en.1280./en/themes/ 1280
+OK G1.en.1280 {"altura":6664,"conteudo":1092,"temas":1092,"grelha":1092,"colunas":"248.047px 248.047px 248.047px 248.062px","colunasDosTemas":"248.047px 248.047px 248.047px 248.062px"}
+OK P1.en {"menuUmaLinha":true,"largura":1280,"documento":1280,"altura":6664,"menu":{"x":94,"y":0,"width":1092,"height":45,"top":0,"right":1186,"bottom":45,"left":94},"nome":{"x":94,"y":95,"width":1092,"height":70.71875,"top":95,"right":1186,"bottom":165.71875,"left":94},"conteudo":{"x":94,"y":187.71875,"width":1092,"height":6256.71875,"top":187.71875,"right":1186,"bottom":6444.4375,"left":94},"cabeca":{"x":94,"y":187.71875,"width":1092,"height":547.859375,"top":187.71875,"right":1186,"bottom":735.578125,"left":94},"leitura":{"x":94,"y":201.71875,"width":693.609375,"height":178.46875,"top":201.71875,"right":787.609375,"bottom":380.1875,"left":94},"mapa":{"x":826,"y":201.71875,"width":360,"height":474.671875,"top":201.71875,"right":1186,"bottom":676.390625,"left":826},"porta":{"x":826,"y":201.71875,"width":123.421875,"height":44,"top":201.71875,"right":949.421875,"bottom":245.71875,"left":826},"textoDaPorta":"308 municipalities","temas":{"x":94,"y":747.578125,"width":1092,"height":2786.296875,"top":747.578125,"right":1186,"bottom":3533.875,"left":94},"olho":{"x":94,"y":748.578125,"width":1092,"height":20.796875,"top":748.578125,"right":1186,"bottom":769.375,"left":94},"primeiroTema":{"x":94,"y":775.375,"width":1092,"height":22.390625,"top":775.375,"right":1186,"bottom":797.765625,"left":94},"grelha":{"x":94,"y":803.765625,"width":1092,"height":180.34375,"top":803.765625,"right":1186,"bottom":984.109375,"left":94},"colunas":"248.047px 248.047px 248.047px 248.062px"}
+OK P2.en {"conteudo":1092,"temas":1092,"grelha":1092}
+OK planta-menu.en {"olho":945.375,"conteudo":1092,"temas":1092,"grelha":1092}
+OK reposicao-menu.en "forma reposta"
+OK planta-dobra.en {"olho":1757.375,"conteudo":1092,"temas":1092,"grelha":1092}
+OK reposicao-dobra.en "forma reposta"
+OK planta-largura.en {"olho":769.375,"conteudo":1092,"temas":655.1875,"grelha":655.1875}
+OK reposicao-largura.en "forma reposta"
+OK N1.en.1600./en/ {"x":254,"y":0,"width":1092,"height":45,"top":0,"right":1346,"bottom":45,"left":254}
+OK N2.en.1600./en/ 1600
+OK N1.en.1600./en/themes/ {"x":254,"y":0,"width":1092,"height":45,"top":0,"right":1346,"bottom":45,"left":254}
+OK N2.en.1600./en/themes/ 1600
+OK G1.en.1600 {"altura":6569,"conteudo":1092,"temas":1092,"grelha":1092,"colunas":"341.328px 341.328px 341.344px","colunasDosTemas":"341.328px 341.328px 341.344px"}

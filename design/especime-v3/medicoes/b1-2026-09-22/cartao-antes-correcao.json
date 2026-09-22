@@ -1,0 +1,29 @@
+{
+  "contas": {
+    "paginas": 7354,
+    "cartoes": 5272,
+    "cartoes_pt": 2636,
+    "cartoes_en": 2636,
+    "com_nome": 5272,
+    "com_frase": 4398,
+    "com_regua": 766,
+    "sem_nome": 0,
+    "linhas_sem_nome": 48,
+    "linhas_sem_nome_com_conta": 42,
+    "regua_periodo_anterior": 152,
+    "governo_constitucional_pt": 1,
+    "governo_constitucional_en": 1,
+    "legenda_da_marca": 2,
+    "unidade_noutra_lingua": 1,
+    "marcador_em_portugues": 6,
+    "nome_noutra_lingua": 0,
+    "valores_de_regua_sem_marca": 282,
+    "valores_de_referencia_comparados": 13,
+    "medidas_com_nome_oficial": 0
+  },
+  "erros": [],
+  "motor": {
+    "referencias": true,
+    "nomes": true
+  }
+}

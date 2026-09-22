@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+[31m  PORTÃO DA VOZ · 2 problema(s)
+[0m
+[31m    · [0mB1 lista fechada país: /: «Prosa solta da planta».
+[31m    · [0mbloco por classificar em /: «Prosa solta da planta ·»
+

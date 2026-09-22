@@ -1,0 +1,104 @@
+[
+  {
+    "nome": "cartao-correcao-sao",
+    "comando": "npm run check:cartao",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "voz-correcao-sao",
+    "comando": "npm run check:voz",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "planta-correcao-nome-pt",
+    "ficheiro": "dist/index.html",
+    "antigo": "Limite legal da dívida das câmaras",
+    "novo": "Dívida da câmara contra o limite legal",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "    K1 · / · indice-de-divida-limite-legal: o nome do cartão difere da declaração: «Dívida da câmara contra o limite legal»; esperado «Limite legal da dívida das câmaras»"
+    ],
+    "antes": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+    "plantado": "3505057e83227904eff5e309c6631c0f9eaabe265d51ba63df45d9d0cad051af",
+    "depois": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+    "passou": true
+  },
+  {
+    "nome": "planta-correcao-olho-pt",
+    "ficheiro": "dist/index.html",
+    "antigo": "Estudos recentes",
+    "novo": "Estudos sobre este lugar",
+    "comando": "npm run check:voz",
+    "codigo": 1,
+    "mordidas": [
+      "    · B1 lista fechada país: /: «Estudos sobre este lugar»."
+    ],
+    "antes": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+    "plantado": "e21047bb29e4507add9d21ffbc9c683f3394735429fcfada2122b0d9536d08a8",
+    "depois": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+    "passou": true
+  },
+  {
+    "nome": "planta-correcao-publicacao-pt",
+    "ficheiro": "dist/index.html",
+    "antigo": "Estudo publicado",
+    "novo": "Prosa solta da planta",
+    "comando": "npm run check:voz",
+    "codigo": 1,
+    "mordidas": [
+      "    · B1 lista fechada país: /: «Prosa solta da planta»."
+    ],
+    "antes": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+    "plantado": "1bf62ed77cf2801509daf457d58f68ade3683360269901f88fa3ac137b06e5c0",
+    "depois": "4d2caf68a0daf759f55d86083bad7ed749c0fd420131bb866efdfef7a4c8c864",
+    "passou": true
+  },
+  {
+    "nome": "planta-correcao-nome-en",
+    "ficheiro": "dist/en/index.html",
+    "antigo": "Legal cap on municipal debt",
+    "novo": "Municipal debt against the legal cap",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "    K1 · /en/ · indice-de-divida-limite-legal: o nome do cartão difere da declaração: «Municipal debt against the legal cap»; esperado «Legal cap on municipal debt»"
+    ],
+    "antes": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+    "plantado": "1540b557b457458f1c6def0c01b9ef3be89b4f137efd3b25d4643fc357303379",
+    "depois": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+    "passou": true
+  },
+  {
+    "nome": "planta-correcao-olho-en",
+    "ficheiro": "dist/en/index.html",
+    "antigo": "Recent studies",
+    "novo": "Studies about this place",
+    "comando": "npm run check:voz",
+    "codigo": 1,
+    "mordidas": [
+      "    · B1 lista fechada país: en: «Studies about this place»."
+    ],
+    "antes": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+    "plantado": "06b43fc8e727f8023a3401b044da402609e0dcaa3693718093b0273cfcd3c5af",
+    "depois": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+    "passou": true
+  },
+  {
+    "nome": "planta-correcao-publicacao-en",
+    "ficheiro": "dist/en/index.html",
+    "antigo": "Study published",
+    "novo": "Prosa solta da planta",
+    "comando": "npm run check:voz",
+    "codigo": 1,
+    "mordidas": [
+      "    · B1 lista fechada país: en: «Prosa solta da planta»."
+    ],
+    "antes": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+    "plantado": "ef8cd5576b847ce3b7429d2ab38dc3a45082f868ef490c15edc1effa1916a430",
+    "depois": "260a0e7714d551235696b6948be5e78337138cf8efdd4c4627377ac6128da8a6",
+    "passou": true
+  }
+]
