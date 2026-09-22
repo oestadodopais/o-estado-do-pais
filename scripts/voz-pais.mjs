@@ -9,6 +9,7 @@ import { DOMINIOS } from '../src/data/dominios.mjs';
 import { leituraDe } from '../src/data/leituras.mjs';
 import { primeirasFrases } from '../src/lib/estudos-b1.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
+import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
 const texto = el => {
   const copia = parse(el.outerHTML);
@@ -47,6 +48,9 @@ export function verificaVozPais(raiz) {
         `${ROTULOS_B1[lang].todasAsMudancas} →`,
         ...Object.values(SUBJECTS).map(s=>s[lang]),
         ...DOMINIOS.map(d=>d.nome[lang]), ...WORKS.flatMap(w=>w.editions.map(e=>e.title)),
+        /* O marcador único do sítio, pela mesma razão do `voz-b1.mjs`: é uma
+           cadeia declarada e não prosa da casa. */
+        POR_VERIFICAR,
         '·','→',
       ].map(normal));
       function anda(n) {

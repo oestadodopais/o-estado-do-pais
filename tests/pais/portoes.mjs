@@ -73,6 +73,14 @@ planta('feixe-porta','scripts/design-bundle.mjs',[
 planta('feixe-correcao','scripts/design-bundle.mjs',[
  ['correcoes/index.html',r=>r.querySelectorAll('.registo-mudanca[data-mudanca="correcao"]').forEach(l=>l.remove())]
 ],[/não encontrei ".registo-mudanca/]);
+/* A CATRACA L1 NÃO CONTA A PORTA DE UM MARCADOR OBRIGATÓRIO (B1c, 22.09.2026).
+   O desconto vive na classe `marcador-de-titulo`: tirá-la faz das duas marcas
+   do arquivo inglês duas portas comuns para `/en/to-verify`, e a catraca sobe
+   acima do teto. É a prova de que o desconto é o que segura o teto, e não a
+   sorte. */
+planta('lugar-marcador-de-titulo','scripts/check-lugar.mjs',[
+ ['en/studies/index.html',r=>r.querySelectorAll('a.marcador-de-titulo').forEach(a=>a.setAttribute('class','marcador'))]
+],[/L1 .*ACIMA DO TETO/]);
 const europa=routePath('uniaoEuropeia','pt').slice(1)+'/index.html';
 planta('feixe-estados','scripts/design-bundle.mjs',[
  [europa,r=>r.querySelectorAll('.cartao[data-estado="fora"]').forEach(c=>c.remove())]

@@ -15,6 +15,7 @@ import { t } from '../src/i18n/strings.mjs';
 const S = { pt: t('pt'), en: t('en') };
 import { VERBATIM } from '../src/data/verbatim.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
+import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 const normal = s => s.replace(/\s+/g, ' ').trim();
 export function verificaB1(raiz) {
   const erros = [];
@@ -61,6 +62,14 @@ export function verificaB1(raiz) {
         /* A porta para o registo inteiro, por baixo de «O que mudou» (B1c). */
         `${ROTULOS_B1[lang].todasAsMudancas} →`,
         `· ${S[lang].marcador.definicao}`,
+        /* O MARCADOR ÚNICO DO SÍTIO não é prosa da casa: é a cadeia declarada
+           em `src/data/marcador.mjs`, rendida só por `Marcador.astro` e pelo
+           selo, e a página que a explica é `/a-verificar`. Dentro de um selo já
+           era dispensada por `.src-chip`; desde 22.09.2026 ela também se rende
+           ao lado de um título que o arquivo declara por confirmar, e é a mesma
+           cadeia. Admite-se a cadeia EXACTA, e mais nada: qualquer outra prosa
+           continua a fechar a construção. */
+        POR_VERIFICAR,
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';

@@ -203,6 +203,7 @@ const chavesDoRegisto = new Set([
   ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
 ]);
 let listasMedidas = 0;
+let titulosMedidos = 0;
 let registosMedidos = 0;
 for (const lang of ['pt', 'en']) {
   const home = le(lang === 'pt' ? '' : 'en');
@@ -336,8 +337,39 @@ function anda(dir) {
     if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de cinco errado em ${path.relative(dist, abs)}.`);
     if (doc.querySelectorAll('[data-rotulo-ia="rodape"] .rotulo-ia-final').length !== 1) erros.push(`N2: ponto final sem ligação inseparável em ${path.relative(dist,abs)}.`);
 
-    /* ------------------------------------------------------- A1, A2 e A3 */
+    /* ---------------------------------------------------------------- A4 */
+    /* UM TÍTULO POR CONFIRMAR DIZ-SE, EM TODAS AS PÁGINAS ONDE SE RENDE (a
+       decisão de 22.09.2026). O arquivo declara `titleUnverified` em duas
+       edições inglesas, e elas rendiam-se como títulos comuns. A célula corre
+       sobre cada elemento que DECLARA a edição que está a render — os artigos
+       das três listas de estudos (`[data-estudo][data-estudo-edicao]`) e as
+       linhas de publicação do registo — e confere o título tal como
+       `TituloDeTrabalho` o rende: o texto do arquivo, a marca da língua do
+       texto, e o marcador da classe `marcador-de-titulo` presente se e só se o
+       arquivo o declarar por confirmar. A classe é o que distingue esta marca
+       das outras que a mesma sinopse possa trazer. */
     const onde = path.relative(dist, abs);
+    const daEdicao = [
+      ...doc.querySelectorAll('[data-estudo][data-estudo-edicao]').map(el => [el, el.getAttribute('data-estudo-edicao')]),
+      ...doc.querySelectorAll('li[data-mudanca="publicacao"]').map(el => [el, el.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '']),
+    ];
+    for (const [el, par] of daEdicao) {
+      titulosMedidos++;
+      const [slug, edLang] = String(par).split('/');
+      const w = WORKS.find(x => x.slug === slug);
+      const ed = w?.editions.find(x => x.lang === edLang);
+      const titulo = el.querySelector('[data-nonledger="titulo-de-estudo"]');
+      const marcas = el.querySelectorAll('.marcador-de-titulo').length;
+      if (!ed || !titulo) { erros.push(`A4: ${onde}: a edição «${par}» não rende o título do arquivo.`); continue; }
+      if (normal(titulo.textContent) !== normal(ed.title) ||
+          (titulo.getAttribute('lang') ?? null) !== (linguaDoTitulo(ed.title, lang) ?? null))
+        erros.push(`A4: ${onde}: o título de ${par} difere do arquivo ou da língua que o texto tem.`);
+      if ((marcas > 0) !== (ed.titleUnverified === true))
+        erros.push(`A4: ${onde}: ${par} tem ${marcas} marcador(es) de título e o arquivo declara titleUnverified=${ed.titleUnverified === true}.`);
+      if (marcas > 1) erros.push(`A4: ${onde}: ${par} repete o marcador do título.`);
+    }
+
+    /* ------------------------------------------------------- A1, A2 e A3 */
     for (const lista of doc.querySelectorAll('[data-mudou-ambito]')) {
       listasMedidas++;
       const ambito = lista.getAttribute('data-mudou-ambito');
@@ -403,22 +435,6 @@ function anda(dir) {
         if (!chave || !nome || !rota) { erros.push(`A3: ${onde}: uma linha do registo sem lugar que se possa compor.`); continue; }
         if (!porta || normal(porta.textContent) !== nome || porta.getAttribute('href') !== rota)
           erros.push(`A3: ${onde}: uma linha de «${chave}» escreve «${normal(porta?.textContent)}» com a porta «${porta?.getAttribute('href')}»; esperava-se «${nome}» e «${rota}».`);
-        /* A4 · UM TÍTULO POR CONFIRMAR DIZ-SE. O registo dos estudos declara
-           `titleUnverified` em duas edições inglesas, e elas chegavam aqui como
-           títulos comuns. A linha traz o título tal como `TituloDeTrabalho` o
-           rende: o texto do arquivo, a marca da língua do texto, e o marcador
-           quando o arquivo o declara por confirmar. */
-        if (tipo !== 'publicacao') continue;
-        const w = WORKS.find(x => x.slug === slug);
-        const ed = w?.editions.find(x => x.lang === edLang);
-        const titulo = li.querySelector('[data-nonledger="titulo-de-estudo"]');
-        const marcas = li.querySelectorAll('.marcador').length;
-        if (!ed || !titulo) { erros.push(`A4: ${onde}: a publicação ${slug}/${edLang} não rende o título do arquivo.`); continue; }
-        if (normal(titulo.textContent) !== normal(ed.title) ||
-            (titulo.getAttribute('lang') ?? null) !== (linguaDoTitulo(ed.title, lang) ?? null))
-          erros.push(`A4: ${onde}: o título de ${slug}/${edLang} difere do arquivo ou da língua que o texto tem.`);
-        if ((marcas > 0) !== (ed.titleUnverified === true))
-          erros.push(`A4: ${onde}: ${slug}/${edLang} tem ${marcas} marcador(es) e o arquivo declara titleUnverified=${ed.titleUnverified === true}.`);
       }
       const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
       if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A3: ${onde}: o registo não está da mais recente para a mais antiga.`);
@@ -431,7 +447,8 @@ if (!paginas) erros.push('N1: nenhuma página própria medida.');
 /* Os dois positivos conhecidos do bloco B1c: uma régua que não encontre nem uma
    lista nem um registo mediu zero, e zero nunca é verde. */
 if (!listasMedidas) erros.push('A1: nenhuma lista de «O que mudou» medida.');
+if (!titulosMedidos) erros.push('A4: nenhum título de edição medido.');
 if (registosMedidos !== 2) erros.push(`A3: ${registosMedidos} registos medidos, e as duas edições têm um cada.`);
-console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegisto.size} mudanças.`);
+console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegisto.size} mudanças, ${titulosMedidos} títulos de edição.`);
 if (erros.length) { console.error(erros.join('\n')); process.exitCode = 1; }
 else console.log('B1 país: todas as conferências a 0.');

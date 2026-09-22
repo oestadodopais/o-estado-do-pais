@@ -15,7 +15,8 @@ const pasta=path.join(raiz,'dist');
    lugar nem nenhum registo, e uma régua que não mede nada é verde por engano. */
 const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html',
  'correcoes/index.html','en/corrections/index.html',
- 'municipios/evora/index.html','en/municipalities/evora/index.html'];
+ 'municipios/evora/index.html','en/municipalities/evora/index.html',
+ 'estudos/index.html','en/studies/index.html'];
 const originais=new Map(rotas.map(f=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
 const resultados=[];
 const repor=()=>{for(const [f,s] of originais){const alvo=path.join(pasta,f);fs.mkdirSync(path.dirname(alvo),{recursive:true});fs.writeFileSync(alvo,s);}};
@@ -64,7 +65,15 @@ try {
  prova('porta do registo apontada a outro lugar','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] .registo-lugar').setAttribute('href','/municipios/lisboa')));
  /* As duas edições por confirmar são inglesas (os dois estudos da água), e por
     isso a planta do título vive na edição inglesa: é lá que a marca se rende. */
- prova('título por confirmar sem a marca','A4',()=>html('en/corrections/index.html',r=>r.querySelector('[data-mudou-registo] li[data-mudanca="publicacao"] .marcador').remove()));
+ prova('título por confirmar sem a marca no registo','A4',()=>html('en/corrections/index.html',r=>r.querySelector('[data-mudou-registo] li[data-mudanca="publicacao"] .marcador-de-titulo').remove()));
+ /* A DECISÃO DE 22.09.2026: a marca vai a todas as páginas onde o título se
+    rende. A planta declara por confirmar uma edição que a primeira página rende
+    nos estudos recentes; a página construída não a tem, e a A4 fecha. */
+ prova('título por confirmar sem a marca na página do país','A4',()=>{},`import {WORKS} from './src/data/studies.mjs';const w=WORKS.find(w=>w.slug==='evora-2027-prometido-painel-dinheiro');w.editions.find(e=>e.lang==='pt').titleUnverified=true;`);
+ /* E um chamador que tente esconder a marca por propriedade: a propriedade não
+    existe, e o componente decide na mesma. A planta é a prova de que a decisão
+    não é de quem chama — a marca continua na página. */
+ prova('marca escondida por propriedade do chamador','A4',()=>html('en/studies/index.html',r=>r.querySelector('[data-estudo-edicao] .marcador-de-titulo').remove()));
  prova('texto da mudança alterado','M2',()=>html('index.html',r=>r.querySelector('[data-mudanca-campo="texto"]').set_content('Uma frase que a direção não escreveu.')));
  prova('ordem dos estudos trocada','E1',()=>html('index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('comparação europeia sem recibo','L3',()=>html('index.html',r=>r.querySelector('[data-leitura-pais] a[href="/livro-razao/taxa-de-desemprego-2025-ue"]').remove()));

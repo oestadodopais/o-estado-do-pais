@@ -27,41 +27,58 @@
  * português é pior do que nenhum.
  *
  * ---------------------------------------------------------------------------
- * UM TÍTULO POR CONFIRMAR DIZ-SE (B1c, a passagem de correção de 22.09.2026)
+ * UM TÍTULO POR CONFIRMAR DIZ-SE, EM TODAS AS PÁGINAS ONDE SE RENDE
  * ---------------------------------------------------------------------------
  * Duas edições inglesas do arquivo declaram `titleUnverified: true` — as dos
  * dois estudos da água, que guardam o título português por o inglês não ser
  * conhecido. Era uma incerteza DECLARADA que o sítio não mostrava em lado
- * nenhum, e a §6 da `IDENTIDADE.md` é clara: a ausência diz-se com o marcador
- * único, `[a verificar]`. A leitura a frio de 22.09.2026 apanhou-a no registo.
+ * nenhum (`titleUnverified` estava escrito e não era lido por código nenhum),
+ * e a §6 da `IDENTIDADE.md` é clara: a ausência diz-se com o marcador único,
+ * `[a verificar]`.
  *
- * A MARCA NÃO SE DERIVA DA CADEIA, e a razão está nas duas edições que a
- * declaram: o título inglês é, carácter a carácter, o título português, e uma
- * marca decidida pelo texto marcaria as duas. Quem sabe se a edição está por
- * confirmar é quem tem a edição, e por isso a propriedade é explícita: quem
- * rende um título de uma edição passa `naoConfirmado={edicao.titleUnverified}`.
+ * A DECISÃO DE 22.09.2026 é que a marca vai a TODAS as páginas onde o título se
+ * rende: o arquivo, a primeira página, as páginas de lugar, o registo, a página
+ * do estudo, a de uma linha do livro-razão. Um leitor que a veja numa página e
+ * não noutra vê o projeto a dizer duas coisas sobre o mesmo facto.
  *
- * ONDE ELA JÁ ESTÁ, E ONDE FALTA. Esta passagem põe-na no registo de
- * `/correcoes`, que é onde a leitura a frio a exigiu e onde a célula A4 do
- * `check:pais` a confere. As outras vistas que rendem um título de edição (o
- * arquivo, a primeira página, a página de um lugar) continuam a rendê-lo sem
- * marca, e isso é uma falta dita e não uma decisão: o marcador é uma PORTA para
- * `/a-verificar`, e pô-lo nessas vistas mexe na catraca L1 do `check:lugar`,
- * que é conta do lugar de direção e não deste bloco.
+ * E É ESTE COMPONENTE QUE DECIDE, não quem o chama. Uma propriedade que o
+ * chamador passa é uma propriedade que o chamador esquece, e foi assim que a
+ * marca nasceu só no registo. Quem tem a edição passa-a (`edicao=…`) e a
+ * resposta é a dela; quem tem só a cadeia passa-a (`titulo=…`) e o componente
+ * resolve a edição pela mesma escada que o resto do sítio usa
+ * (`edicaoDoTitulo()`, em `src/data/studies.mjs`): a edição da língua da
+ * página, e na falta dela a primeira do trabalho. Uma página que liste as duas
+ * edições do mesmo trabalho tem duas respostas para a mesma cadeia, e por isso
+ * passa a edição.
+ *
+ * A MARCA LEVA A SUA CLASSE, `marcador-de-titulo`, e é ela que diz à catraca L1
+ * do `check:lugar` que esta porta para `/a-verificar` é um marcador obrigatório
+ * e não uma segunda porta de navegação — a mesma regra, o mesmo mecanismo e o
+ * mesmo destino que já descontam o marcador da definição conferida de um
+ * cartão. A célula A4 do `check:pais` confere, em cada lista de estudos e em
+ * cada linha de publicação do registo, que a marca está onde o arquivo a
+ * declara e em mais lado nenhum.
  */
-import { linguaDoTitulo } from '../data/studies.mjs';
+import { linguaDoTitulo, edicaoDoTitulo } from '../data/studies.mjs';
 import Marcador from './Marcador.astro';
 
 const {
-  titulo,
+  edicao = null,
+  titulo: tituloDado = null,
   lang = 'pt',
-  naoConfirmado = false,
   as: Tag = 'span',
   class: classe = null,
   ...resto
 } = Astro.props;
 
+const titulo = edicao ? edicao.title : tituloDado;
+if (typeof titulo !== 'string' || !titulo.trim()) {
+  throw new Error('<TituloDeTrabalho> sem "titulo" nem "edicao": um título é uma citação e não se compõe aqui.');
+}
+const daArquivo = edicao ?? edicaoDoTitulo(titulo, lang);
+const porConfirmar = daArquivo?.titleUnverified === true;
+
 const marca = linguaDoTitulo(titulo, lang);
 ---
 
-<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>{naoConfirmado && <Marcador lang={lang} />}
+<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>{porConfirmar && <Marcador lang={lang} class="marcador-de-titulo" />}
