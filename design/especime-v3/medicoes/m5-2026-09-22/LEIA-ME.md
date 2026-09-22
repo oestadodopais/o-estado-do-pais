@@ -139,3 +139,28 @@ São 3 as citações que este bloco acrescentou ao mapa com referência de linha
 - **O `check:briefs` é o primeiro portão da casa em Python**, e a CI corre em `ubuntu-24.04`. Se o anfitrião não trouxer `python3`, o portão falha alto e não em silêncio; a primeira corrida da CI confirma-o.
 
 ## 9 · Os commits, a cabeça e os três portões
+
+A cabeça sobre a qual os três portões correram: `d90e6d10c663ca42480e0f94b689ba6a086af00f`, no ramo `medidas-2026-09-22`, sobre `main` em `b03a6efc`. Os commits, do mais antigo para o mais recente:
+
+- `a71dae9b` M5: o nome do diretor sai do código, e a célula do portão muda de forma
+- `35cec254` M5: o bloco `medidas` de um brief, o `check:briefs` no `verify`, e este brief a cumpri-lo primeiro
+- `fec84cf0` M5: o `conferir-relatorio.py`, e o `pacote.sh` a corrê-lo ao montar um pacote
+- `50c03557` M5: o mapa ganha o `check:briefs`, os dois guiões e a célula do nome
+- `0aa2e8c9` M5: o relatório, as suas medições, as seis plantas e as quatro leituras de 22.09
+- `415b6866` M5: o leitor dos números aperta a regra dos artigos, e a prosa nova fica sem travessões
+- `3571da4c` M5: uma planta apanhou quatro buracos no leitor dos números, e as contagens são outras
+- `44a718b4` M5: as saídas dos três portões na cabeça final, e a tabela deles
+- `38d48e04` M5 correção: cada número do §0 liga à sua medição pela frase, e a isenção fica presa pelo resumo
+- `0661f669` M5 correção: o pacote confere antes de copiar, e os caminhos saem relativos
+- `020e8bdb` M5 correção: o relatório, as oito plantas e os artefactos das corridas de ensaio
+- `d90e6d10` M5 correção: o guião que escreve o §9 passa a viver no bloco, e as chaves cruzadas usam a sua lista
+
+Os três portões, cada um no seu comando, com o código de saída lido de um ficheiro acabado de escrever e não de um `echo` atrás de um `|`. Os ficheiros `.codigo` foram apagados antes da corrida, e ao lado de cada um ficam o `.inicio`, o `.fim`, o `.cabeca` e o `.log` (M16: a presença de um ficheiro não prova que ele é desta corrida).
+
+| Comando | Início | Fim | Tempo de parede | Código |
+|---|---|---|---:|---:|
+| `npm run build` | 2026-09-22T16:16:20Z | 2026-09-22T16:21:01Z | **4 m 41 s** | **0** |
+| `npm run verify` | 2026-09-22T16:21:01Z | 2026-09-22T16:28:44Z | **7 m 43 s** | **0** |
+| `npm run typecheck` | 2026-09-22T16:28:44Z | 2026-09-22T16:28:44Z | **0 s** | **0** |
+
+As plantas e as medições foram corridas com a árvore de trabalho que se tornou esta cabeça, antes de os commits desta passagem existirem: o campo `cabeca` de `plantas-m5.json` diz `44a718b4` e o de `medidas.json` diz `d90e6d10`, que é o commit anterior a elas. O código que as plantas exercitaram é, byte a byte, o que esta cabeça contém.

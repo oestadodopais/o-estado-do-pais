@@ -1,5 +1,5 @@
 {
-  "cabeca": "44a718b4a88842ee35ed51521d11ca40cba48488",
+  "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
   "nome_de_quem_responde": {
     "onde_mora": "scripts/textos-aprovados.json",
     "sha256_do_oraculo": "2646f242c13deb68ee9e7cf54f16fc762d24a8505ab6d574f4bcacbd437bf9ca",
@@ -93,30 +93,30 @@
   "portoes": {
     "build": {
       "codigo": "0",
-      "inicio": "2026-09-22T15:20:35Z",
-      "fim": "2026-09-22T15:25:25Z",
-      "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
-      "segundos": 290,
+      "inicio": "2026-09-22T16:16:20Z",
+      "fim": "2026-09-22T16:21:01Z",
+      "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
+      "segundos": 281,
       "minutos": 4,
-      "segundos_restantes": 50
+      "segundos_restantes": 41
     },
     "verify": {
       "codigo": "0",
-      "inicio": "2026-09-22T15:25:25Z",
-      "fim": "2026-09-22T15:33:08Z",
-      "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
+      "inicio": "2026-09-22T16:21:01Z",
+      "fim": "2026-09-22T16:28:44Z",
+      "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
       "segundos": 463,
       "minutos": 7,
       "segundos_restantes": 43
     },
     "typecheck": {
       "codigo": "0",
-      "inicio": "2026-09-22T15:33:08Z",
-      "fim": "2026-09-22T15:33:09Z",
-      "cabeca": "3571da4ccc0e263bad9497a1053863250672db29",
-      "segundos": 1,
+      "inicio": "2026-09-22T16:28:44Z",
+      "fim": "2026-09-22T16:28:44Z",
+      "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
+      "segundos": 0,
       "minutos": 0,
-      "segundos_restantes": 1
+      "segundos_restantes": 0
     }
   }
 }
