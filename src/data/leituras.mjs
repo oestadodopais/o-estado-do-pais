@@ -26,6 +26,11 @@
  * marcado como o que é, e não como uma medição.
  */
 
+import { getClaim } from '../lib/ledger.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+/** @param {string} id @param {string} lang */
+const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
+
 export const LEITURAS = {
   /* ----------------------------------------------------------------- 04 */
   'evora-prometido-pago-auditado-2026': {
@@ -33,13 +38,13 @@ export const LEITURAS = {
       {
         claim: 'evora-prr-aprovado-2026',
         nome: {
-          pt: ['€ aprovados e atribuídos ao concelho pelo registo do plano de recuperação'],
-          en: ['€ approved and attributed to the municipality by the recovery-plan register'],
+          pt: [`${unidade('evora-prr-aprovado-2026', 'pt')} aprovados e atribuídos ao concelho pelo registo do plano de recuperação`],
+          en: [`${unidade('evora-prr-aprovado-2026', 'en')} approved and attributed to the municipality by the recovery-plan register`],
         },
       },
       {
         claim: 'evora-prr-pago-2026',
-        nome: { pt: ['€ efetivamente pagos'], en: ['€ actually paid'] },
+        nome: { pt: [`${unidade('evora-prr-pago-2026', 'pt')} efetivamente pagos`], en: [`${unidade('evora-prr-pago-2026', 'en')} actually paid`] },
       },
     ],
     /* A NOTA DAS MEDIDAS FICA COM O QUE MUDA A LEITURA DE UM NÚMERO (G6, decisão
@@ -73,9 +78,9 @@ export const LEITURAS = {
     frase: {
       pt: [
         'Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: ',
-        { claim: 'evora-prr-universidade-contratado', sufixo: '\u00A0€' },
+        { claim: 'evora-prr-universidade-contratado', sufixo: '\u00A0' + unidade('evora-prr-universidade-contratado', 'pt') },
         ' contra ',
-        { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0€' },
+        { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'pt') },
         '. Da soma aprovada para o concelho, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
         ' está vencida contra ',
@@ -84,9 +89,9 @@ export const LEITURAS = {
       ],
       en: [
         'Of the recovery-plan money contracted in the municipality, the university holds more than the council: ',
-        { claim: 'evora-prr-universidade-contratado', sufixo: '\u00A0€' },
+        { claim: 'evora-prr-universidade-contratado', sufixo: '\u00A0' + unidade('evora-prr-universidade-contratado', 'en') },
         ' against ',
-        { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0€' },
+        { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'en') },
         '. Of the sum approved for the municipality, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
         ' is overdue against ',
@@ -107,8 +112,8 @@ export const LEITURAS = {
       {
         claim: 'evora-vab-empresarial-2024',
         nome: {
-          pt: ['€ de valor acrescentado bruto das empresas do concelho'],
-          en: ['€ of gross value added by enterprises in the municipality'],
+          pt: [`${unidade('evora-vab-empresarial-2024', 'pt')} de valor acrescentado bruto das empresas do concelho`],
+          en: [`${unidade('evora-vab-empresarial-2024', 'en')} of gross value added by enterprises in the municipality`],
         },
       },
       {
@@ -206,14 +211,14 @@ export const LEITURAS = {
         'O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal: ',
         { claim: 'evora-prazo-medio-de-pagamento-2025' },
         ' dias para pagar a um fornecedor, e ',
-        { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0€' },
+        { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0' + unidade('evora-pagamentos-em-atraso-2025', 'pt') },
         ' em atraso, com a dívida total ainda abaixo do limite.',
       ],
       en: [
         'Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt: ',
         { claim: 'evora-prazo-medio-de-pagamento-2025' },
         ' days to pay a supplier, and ',
-        { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0€' },
+        { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0' + unidade('evora-pagamentos-em-atraso-2025', 'en') },
         ' overdue, with total debt still below the limit.',
       ],
     },
@@ -266,9 +271,9 @@ export const LEITURAS = {
     frase: {
       pt: [
         'Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida (',
-        { claim: 'evora-divida-31-10-2013', sufixo: '\u00A0€' },
+        { claim: 'evora-divida-31-10-2013', sufixo: '\u00A0' + unidade('evora-divida-31-10-2013', 'pt') },
         ' logo a seguir à mudança de executivo, ',
-        { claim: 'evora-divida-inicio-mandato-reexpressa', sufixo: '\u00A0€' },
+        { claim: 'evora-divida-inicio-mandato-reexpressa', sufixo: '\u00A0' + unidade('evora-divida-inicio-mandato-reexpressa', 'pt') },
         ' na reexpressão final), uma década a desbastá-la, e um último mandato em que a fila de pagamento se alongou, de ',
         { claim: 'evora-prazo-medio-de-pagamento-2023' },
         ' para ',
@@ -277,9 +282,9 @@ export const LEITURAS = {
       ],
       en: [
         'Fifteen years of accounts show an inherited debt that took years to measure (',
-        { claim: 'evora-divida-31-10-2013', sufixo: '\u00A0€' },
+        { claim: 'evora-divida-31-10-2013', sufixo: '\u00A0' + unidade('evora-divida-31-10-2013', 'en') },
         ' right after the executive changed, ',
-        { claim: 'evora-divida-inicio-mandato-reexpressa', sufixo: '\u00A0€' },
+        { claim: 'evora-divida-inicio-mandato-reexpressa', sufixo: '\u00A0' + unidade('evora-divida-inicio-mandato-reexpressa', 'en') },
         ' in the final restatement), a decade of grinding it down, and a last term in which the payment queue lengthened, from ',
         { claim: 'evora-prazo-medio-de-pagamento-2023' },
         ' to ',

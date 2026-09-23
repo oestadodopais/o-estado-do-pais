@@ -30,6 +30,7 @@ import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
 import Frase from '../Frase.astro';
 import { getClaim, parsePtNumber } from '../../lib/ledger.mjs';
+import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import '../../styles/municipio.css';
 
@@ -515,9 +516,9 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                         <div>
                           <span data-nonledger="data-de-referencia">{r.ref}</span>:{' '}
                           {s.municipio.distanciaDivida}{' '}
-                          <Claim id={r.divida} lang={lang} chip={true} /> €{' · '}
+                          <Claim id={r.divida} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(r.divida).unit, lang).texto} />{' · '}
                           {s.municipio.distanciaTecto}{' '}
-                          <Claim id={r.limite} lang={lang} chip={true} /> €{' · '}
+                          <Claim id={r.limite} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(r.limite).unit, lang).texto} />{' · '}
                           {s.municipio.tempoIndice}{' '}
                           <Claim id={r.indice} lang={lang} chip={true} sufixo="%" />
                         </div>
@@ -591,11 +592,11 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
       <div class="mun-tempo-notas">
         <p class="mun-distancia-legenda">
           <span class="mun-tempo-nota-k">{s.municipio.tempoExcessoK}</span>{' · '}
-          <Claim id={m.tempo.excesso.de} lang={lang} chip={true} /> €{' '}
+          <Claim id={m.tempo.excesso.de} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(m.tempo.excesso.de).unit, lang).texto} />{' '}
           <span data-nonledger="data-de-referencia">
             {lang === 'pt' ? m.tempo.excesso.deRef : m.tempo.excesso.deRefEn}
           </span>{' → '}
-          <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} /> €{' '}
+          <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(m.tempo.excesso.ate).unit, lang).texto} />{' '}
           <span data-nonledger="data-de-referencia">
             {lang === 'pt' ? m.tempo.excesso.ateRef : m.tempo.excesso.ateRefEn}
           </span>.

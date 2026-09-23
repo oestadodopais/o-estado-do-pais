@@ -62,6 +62,11 @@ import { relanceDoConcelho, entradasGeradas } from './concelhos.mjs';
  * }} Mosaico
  */
 
+import { getClaim } from '../lib/ledger.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+/** @param {string} id @param {string} lang */
+const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
+
 const EVORA = {
     slug: 'evora',
     nome: { pt: 'Évora', en: 'Évora' },
@@ -273,8 +278,8 @@ const EVORA = {
           ' dias em ',
           { ref: '2025' },
           ', com ',
-          { claim: 'evora-pagamentos-em-atraso-2025' },
-          ' € de pagamentos em atraso no fim do ano.',
+          { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0' + unidade('evora-pagamentos-em-atraso-2025', 'pt') },
+          ' de pagamentos em atraso no fim do ano.',
         ],
         en: [
           'The average time to pay suppliers went from ',
@@ -286,8 +291,8 @@ const EVORA = {
           ' days in ',
           { ref: '2025' },
           ', with ',
-          { claim: 'evora-pagamentos-em-atraso-2025' },
-          ' € of payments overdue at year end.',
+          { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0' + unidade('evora-pagamentos-em-atraso-2025', 'en') },
+          ' of payments overdue at year end.',
         ],
       },
     ],
@@ -394,8 +399,8 @@ const EVORA = {
             {
               claim: 'evora-pael-emprestimo',
               texto: {
-                pt: '€ de empréstimo do Programa de Apoio à Economia Local.',
-                en: '€ of loan under the local-economy support programme.',
+                pt: `${unidade('evora-pael-emprestimo', 'pt')} de empréstimo do Programa de Apoio à Economia Local.`,
+                en: `${unidade('evora-pael-emprestimo', 'en')} of loan under the local-economy support programme.`,
               },
             },
           ],
@@ -403,8 +408,8 @@ const EVORA = {
             {
               claim: 'evora-divida-31-10-2013',
               texto: {
-                pt: '€ de dívida total, medidos duas semanas depois da mudança de executivo.',
-                en: '€ of total debt, measured two weeks after the executive changed.',
+                pt: `${unidade('evora-divida-31-10-2013', 'pt')} de dívida total, medidos duas semanas depois da mudança de executivo.`,
+                en: `${unidade('evora-divida-31-10-2013', 'en')} of total debt, measured two weeks after the executive changed.`,
               },
             },
             {
@@ -415,8 +420,8 @@ const EVORA = {
                    diferença existe.»: a página como sujeito, a explicar porque é
                    que fez o que fez. O facto fica, e é ele que muda a leitura dos
                    dois valores: um relatório posterior reexpressa a mesma data. */
-                pt: '€ na reexpressão de um relatório posterior, para a mesma data de início de mandato.',
-                en: '€ in a later report’s restatement, for the same start-of-term date.',
+                pt: `${unidade('evora-divida-inicio-mandato-reexpressa', 'pt')} na reexpressão de um relatório posterior, para a mesma data de início de mandato.`,
+                en: `${unidade('evora-divida-inicio-mandato-reexpressa', 'en')} in a later report’s restatement, for the same start-of-term date.`,
               },
             },
           ],
@@ -447,26 +452,26 @@ const EVORA = {
           herdou: [
             {
               claim: 'evora-divida-31-10-2013',
-              texto: { pt: '€ como reportado, e', en: '€ as reported, and' },
+              texto: { pt: `${unidade('evora-divida-31-10-2013', 'pt')} como reportado, e`, en: `${unidade('evora-divida-31-10-2013', 'en')} as reported, and` },
             },
             {
               claim: 'evora-divida-inicio-mandato-reexpressa',
-              texto: { pt: '€ como reexpresso mais tarde.', en: '€ as later restated.' },
+              texto: { pt: `${unidade('evora-divida-inicio-mandato-reexpressa', 'pt')} como reexpresso mais tarde.`, en: `${unidade('evora-divida-inicio-mandato-reexpressa', 'en')} as later restated.` },
             },
           ],
           decidiu: [
             {
               claim: 'evora-saneamento-financeiro-2016',
               texto: {
-                pt: '€ de empréstimo de saneamento financeiro.',
-                en: '€ of financial-recovery loan.',
+                pt: `${unidade('evora-saneamento-financeiro-2016', 'pt')} de empréstimo de saneamento financeiro.`,
+                en: `${unidade('evora-saneamento-financeiro-2016', 'en')} of financial-recovery loan.`,
               },
             },
           ],
           deixou: [
             {
               claim: 'evora-divida-total-2017',
-              texto: { pt: '€ de dívida total, na conta do próprio município.', en: '€ of total debt, on the municipality’s own account.' },
+              texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dívida total, na conta do próprio município.`, en: `${unidade('evora-divida-total-2017', 'en')} of total debt, on the municipality’s own account.` },
             },
           ],
           regulador: [
@@ -494,7 +499,7 @@ const EVORA = {
           lista: 'CDU',
           lugares: 'evora-camara-mandatos-cdu-2017',
           herdou: [
-            { claim: 'evora-divida-total-2017', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
+            { claim: 'evora-divida-total-2017', texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2017', 'en')} of total debt.` } },
           ],
           decidiu: null,
           /* SEM NOTA, E A AUSÊNCIA DIZ-SE NAS DUAS PALAVRAS DA CASA (direção,
@@ -505,7 +510,7 @@ const EVORA = {
              «no row yet», que é a mesma cadeia que uma peça vazia usa. */
           decidiuNota: null,
           deixou: [
-            { claim: 'evora-divida-total-2021', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
+            { claim: 'evora-divida-total-2021', texto: { pt: `${unidade('evora-divida-total-2021', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2021', 'en')} of total debt.` } },
           ],
           regulador: [
             { divida: 'evora-divida-dgal-2021', limite: 'evora-limite-divida-dgal-2021', indice: 'evora-indice-de-divida-2021', ref: '2021' },
@@ -530,7 +535,7 @@ const EVORA = {
           listaNota: { pt: 'em minoria', en: 'in minority' },
           lugares: 'evora-camara-mandatos-cdu-2021',
           herdou: [
-            { claim: 'evora-divida-total-2021', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
+            { claim: 'evora-divida-total-2021', texto: { pt: `${unidade('evora-divida-total-2021', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2021', 'en')} of total debt.` } },
           ],
           decidiu: [
             {
@@ -542,12 +547,12 @@ const EVORA = {
             },
           ],
           deixou: [
-            { claim: 'evora-divida-total-2025', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
+            { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt.` } },
             {
               claim: 'evora-prazo-medio-de-pagamento-2025',
               texto: { pt: 'dias de prazo médio de pagamento a fornecedores, e', en: 'days of average time to pay suppliers, and' },
             },
-            { claim: 'evora-pagamentos-em-atraso-2025', texto: { pt: '€ de pagamentos em atraso.', en: '€ of overdue payments.' } },
+            { claim: 'evora-pagamentos-em-atraso-2025', texto: { pt: `${unidade('evora-pagamentos-em-atraso-2025', 'pt')} de pagamentos em atraso.`, en: `${unidade('evora-pagamentos-em-atraso-2025', 'en')} of overdue payments.` } },
           ],
           regulador: [
             { divida: 'evora-divida-dgal-2024', limite: 'evora-limite-divida-dgal-2024', indice: 'evora-indice-de-divida-2024', ref: '2024' },
@@ -579,7 +584,7 @@ const EVORA = {
           lugares: 'evora-camara-mandatos-ps-2025',
           lugaresTotal: 'evora-camara-lugares',
           herdou: [
-            { claim: 'evora-divida-total-2025', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
+            { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt.` } },
           ],
           decidiu: [
             {
