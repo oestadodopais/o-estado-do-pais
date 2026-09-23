@@ -20,7 +20,7 @@
    "sem_resposta": []
   }
  },
- "confirmados": 21,
+ "confirmados": 22,
  "propostos_por_conferir": 0,
  "nomes_do_ine": {
   "lido": 16,
@@ -2013,7 +2013,7 @@
    },
    "correspondencia": {
     "ine": "proxima",
-    "pordata": null
+    "pordata": "exata"
    },
    "nome_ine": {
     "estado": "lido",
@@ -2121,7 +2121,7 @@
     "nome": "Taxa de jovens não empregados que não estão em educação ou formação: total e por sexo",
     "endereco": "https://www.pordata.pt/europa/taxa+de+jovens+nao+empregados+que+nao+estao+em+educacao+ou+formacao+total+e+por+sexo-3569",
     "lido_em": "2026-09-21T19:35:09+00:00",
-    "mesma_medida": null,
+    "mesma_medida": true,
     "proposta": "vizinha",
     "diferenca": "A fórmula da página é da população entre os 15 e os 29 anos; a linha é dos 15 aos 24.",
     "prova": {
@@ -2186,6 +2186,45 @@
       }
      },
      "veredicto": "mesma"
+    },
+    "resolucao": {
+     "nome_lido": "Taxa de jovens não empregados que não estão em educação ou formação: total e por sexo",
+     "cega": false,
+     "criterios": {
+      "conceito": {
+       "veredicto": "igual",
+       "diz": "Taxa de jovens não empregados que não estão em educação ou formação: total e por sexo · Que países têm maior e menor percentagem de homens e de mulheres entre os 15 e os 29 anos que não trabalham nem estudam?",
+       "endereco": "https://www.pordata.pt/europa/taxa+de+jovens+nao+empregados+que+nao+estao+em+educacao+ou+formacao+total+e+por+sexo-3569",
+       "lido_em": "2026-09-23T15:26:05+00:00",
+       "razao": "Os jovens que não estão empregados nem em educação ou formação, em percentagem da população da mesma idade, como a linha."
+      },
+      "unidade": {
+       "veredicto": "igual",
+       "diz": "Série: Sexo · Unidade de Medida · Tipo de Valor: Taxa · Escala: % (a metainformação); «Taxa - %» na página do indicador",
+       "endereco": "https://www.pordata.pt/MetaInfoPage_Temp_Popup.aspx?DatabaseModeId=3&ShowLinkAdditionalNotes=True&WorkMicroVersionId=0&MicroIDs=3569&ExpandMeta=True&GeographicGroupId_Level1=1075&ShowPrinterIcon=True&LanguageId=1",
+       "lido_em": "2026-09-23T15:26:07+00:00",
+       "razao": "Uma taxa em percentagem da população, como a unidade da linha («Percentage of total population»)."
+      },
+      "populacao": {
+       "veredicto": "igual",
+       "diz": "(População entre os 15 e os 29 anos que não está empregada nem a estudar/População entre os 15 e os 29 anos)*100",
+       "endereco": "https://www.pordata.pt/MetaInfoPage_Temp_Popup.aspx?DatabaseModeId=3&ShowLinkAdditionalNotes=True&WorkMicroVersionId=0&MicroIDs=3569&ExpandMeta=True&GeographicGroupId_Level1=1075&ShowPrinterIcon=True&LanguageId=1",
+       "lido_em": "2026-09-23T15:26:07+00:00",
+       "razao": "Dos 15 aos 29 anos, que é a etiqueta da idade da resposta do Eurostat ao pedido da linha («Age class: From 15 to 29 years»), escrita no excerto da linha desde 22.09.2026 (I129). A proposta de 21.09 disse «vizinha» por ler o título do catálogo do Eurostat («aged 15-24»), que a resposta ao pedido da própria linha desmente."
+      },
+      "periodicidade": {
+       "veredicto": "igual",
+       "diz": "Periodicidade: Trimestral | Anual · Período ou momento de referência: Ano civil",
+       "endereco": "https://www.pordata.pt/MetaInfoPage_Temp_Popup.aspx?DatabaseModeId=3&ShowLinkAdditionalNotes=True&WorkMicroVersionId=0&MicroIDs=3569&ExpandMeta=True&GeographicGroupId_Level1=1075&ShowPrinterIcon=True&LanguageId=1",
+       "lido_em": "2026-09-23T15:26:07+00:00",
+       "razao": "A página declara séries trimestrais e anuais, e a linha é anual, do ano civil de 2025."
+      }
+     },
+     "veredicto": "mesma",
+     "diferenca": null,
+     "razao": "A proposta de quem escolheu (21.09.2026) disse «vizinha» por a linha ser «dos 15 aos 24», lendo o título que o catálogo do Eurostat dá ao quadro; a resposta do Eurostat ao pedido da própria linha declara a dimensão da idade como «From 15 to 29 years», e desde 22.09.2026 o excerto da linha escreve-a (I129, §1.119). A página da PORDATA, lida a 23.09.2026 pelo cliente da casa, pergunta pela percentagem de homens e de mulheres «entre os 15 e os 29 anos que não trabalham nem estudam», e a metainformação divide a população dos 15 aos 29 anos que não está empregada nem a estudar pela população dos 15 aos 29 anos: a população da linha. E a PORDATA publica para Portugal em 2025 o valor da linha: 8,0 %, lido em https://www.pordata.pt/europa/taxa+de+jovens+nao+empregados+que+nao+estao+em+educacao+ou+formacao+total+e+por+sexo-3569 a 2026-09-23T15:26:05+00:00. Para a UE27 (2020) a mesma página imprime 10,9 % em 2025, com a data do último acesso 2026-03-13, onde a linha da União (jovens-nem-2025-ue), lida no Eurostat a 22.09.2026, diz 11,0: o Eurostat reviu o agregado depois da leitura da PORDATA; a linha deste nome é a de Portugal, e a da União não leva este nome.",
+     "por": "lugar-de-direcao-claude-fable-5-1",
+     "quando": "2026-09-23T15:28:12+00:00"
     }
    }
   },
@@ -4901,9 +4940,9 @@
  "recusados": 19,
  "resolucao_de": {
   "ficheiro": "resolucoes-aplicadas.json",
-  "sha256": "603778c52a7a17c849ee721e578f10cb37209b2e2e3707b81fee55bdf9119f71",
+  "sha256": "c582a25eec2c90b732a2a84ec65124ce845d411cc1a1297df982a504e3341afb",
   "por": "lugar-de-direcao-claude-fable-5-1",
-  "quando": "2026-09-22T15:19:20+00:00"
+  "quando": "2026-09-23T15:28:12+00:00"
  },
- "por_decidir": 1
+ "por_decidir": 0
 }
