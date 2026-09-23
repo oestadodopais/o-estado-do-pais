@@ -22,14 +22,14 @@
  *     mudanças; o que não cabe não desaparece, e esta é a porta para ele.
  */
 export const ROTULOS_B1 = {
-  pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', porLugar: 'Por lugar', fontes: 'Fontes e verificação',
+  pt: { valor: 'Valor', medida: 'Medida', fonte: 'Fonte', verificacao: 'Verificado a', estudos: 'Estudos', fontes: 'Fontes e verificação',
     edicao: 'Edição tal como foi publicada', publicado: 'publicado a', estudoPublicado: 'Estudo publicado',
     pais: 'Portugal', outraLingua: '(em inglês)', indice: 'Nesta página',
     temas: 'Temas', estudosDoLugar: 'Estudos sobre este lugar', estudosRecentes: 'Estudos recentes', mudou: 'O que mudou',
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
     todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '',
     todasAsMudancas: 'Todas as mudanças' },
-  en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', porLugar: 'By place', fontes: 'Sources and verification',
+  en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',
     temas: 'Themes', estudosDoLugar: 'Studies about this place', estudosRecentes: 'Recent studies', mudou: 'What changed',

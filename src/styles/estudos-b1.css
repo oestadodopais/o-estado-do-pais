@@ -28,9 +28,6 @@
 .estudo-meta > :not(:first-child)::before { content: '· '; color: var(--rule-strong); margin-right: 4px; }
 .estudo-lingua { font-family: var(--f-instr); letter-spacing: .02em; color: var(--muted); font-size: 13px; font-weight: 400; }
 .estudos-lista .estudo-resumo { font-family: var(--f-prosa); color: var(--ink); max-width: 64ch; margin: 9px 0 0; font-size: 15px; line-height: 1.55; }
-.estudos-lugares { margin-top: 34px; }
-.estudos-lugares ul { list-style: none; padding: 0; }
-.estudos-lugares a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--ink); }
 
 .estudos-lista .arquivo-porta { border-bottom: 0; }
 

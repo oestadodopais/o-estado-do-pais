@@ -17,8 +17,13 @@ const sha=s=>createHash('sha256').update(s).digest('hex');
 const registos=[];
 const indice=process.argv.indexOf('--only');
 const apenas=indice===-1 ? null : process.argv[indice+1];
+/* `--prefixo r1-` corre só as plantas de um bloco e escreve-as num ficheiro
+   dele, `plantas-portoes-r1.json` (bloco R1, 23.09.2026). */
+const indicePrefixo=process.argv.indexOf('--prefixo');
+const prefixo=indicePrefixo===-1 ? null : process.argv[indicePrefixo+1];
 function planta(nome,script,alteracoes,mordidas) {
  if(apenas && nome!==apenas)return;
+ if(prefixo && !nome.startsWith(prefixo))return;
  const originais=new Map(alteracoes.map(([f])=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
  let r;
  try {
@@ -30,7 +35,7 @@ function planta(nome,script,alteracoes,mordidas) {
  const ficheiros=[...originais].map(([f,s])=>({ficheiro:`dist/${f}`,antes:sha(s),reposto:sha(fs.readFileSync(path.join('dist',f)))}));
  const passou=r.status===1&&mordidas.every(re=>re.test(saida))&&ficheiros.every(f=>f.antes===f.reposto);
  const registo={nome,comando:`node ${script}`,codigo:r.status,mordidas:mordidas.map(re=>re.source),passou,ficheiros};registos.push(registo);
- fs.writeFileSync(path.join(pasta,apenas ? `plantas-portoes-${apenas}.json` : 'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
+ fs.writeFileSync(path.join(pasta,apenas ? `plantas-portoes-${apenas}.json` : prefixo ? `plantas-portoes-${prefixo.replace(/-$/,'')}.json` : 'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
  console.log(`${passou?'OK':'FALHA'} ${nome}: código ${r.status}`);
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
 }
@@ -85,3 +90,17 @@ const europa=routePath('uniaoEuropeia','pt').slice(1)+'/index.html';
 planta('feixe-estados','scripts/design-bundle.mjs',[
  [europa,r=>r.querySelectorAll('.cartao[data-estado="fora"]').forEach(c=>c.remove())]
 ],[/dois estados pintados|não encontrei um cartão fora/]);
+/* R1, 23.09.2026 · as células novas ou mudadas do bloco, cada uma com a sua
+   planta, e cada planta com a mordida que a falha esperada tem de casar. */
+/* Uma sinopse da lista dos estudos com uma palavra trocada, na entrada de um
+   estudo de Évora cuja leitura traz sufixos da leitura (I144). A lista passou
+   a conferir cada sinopse inteira, pela conta da primeira página. */
+planta('r1-sinopse-da-lista-trocada','scripts/check-voz.mjs',[
+ ['estudos/index.html',r=>{const t=r.querySelector('[data-estudo="evora-prometido-pago-auditado-2026"] .estudo-resumo').childNodes.find(n=>n.nodeType===3&&n.rawText.includes('universidade'));t.textContent=t.rawText.replace('universidade','faculdade');}]
+],[/B1 sinopse lista: estudos: evora-prometido-pago-auditado-2026/]);
+/* A lista dos estudos com uma entrada a menos: a coleção das «linhas» da lista
+   passou a ser todos os estudos nas duas edições (I144), e uma lista mais curta
+   do que o arquivo fecha a construção. */
+planta('r1-lista-dos-estudos-sem-um','scripts/check-lugar.mjs',[
+ ['estudos/index.html',r=>r.querySelector('[data-estudo="evora-prometido-pago-auditado-2026"]').remove()]
+],[/a régua viu 25 «linhas» em dist\/, e o registo dos estudos diz 26/,/B1 cobertura: evora-prometido-pago-auditado-2026 não é alcançável de \/estudos/]);

@@ -16,6 +16,16 @@ const texto = el => {
   copia.querySelectorAll('.src-chip, .claim-provisorio').forEach(n=>n.remove());
   return normal(copia.textContent);
 };
+/* A SINOPSE DE UM ESTUDO, CONFERIDA INTEIRA, NUM SÍTIO SÓ (bloco R1, 23.09.2026).
+   A primeira página já a conferia assim; a lista dos estudos passou a ter os
+   estudos de um lugar, cujas leituras trazem sufixos da leitura («€») e
+   referências («2021–2025»), e confere-os pela mesma conta (`voz-b1.mjs`). */
+export const textoSemSelos = texto;
+/** @param {any} w @param {'pt'|'en'} lang */
+export function sinopseEsperada(w, lang) {
+  const partes = primeirasFrases(leituraDe(w.id)?.frase[lang] ?? [w.description[lang]]);
+  return normal(partes.map(p=>typeof p==='string' ? p : p.claim ? getClaim(p.claim).value+(p.sufixo ?? (getClaim(p.claim).unit === '%' ? '%' : '')) : p.ref ?? '').join(''));
+}
 export function verificaVozPais(raiz) {
   const erros = [];
   for (const lang of ['pt','en']) {
@@ -33,9 +43,8 @@ export function verificaVozPais(raiz) {
       if (leitura) dispensados.add(leitura);
       for (const resumo of main.querySelectorAll('.estudo-resumo')) {
         const w = WORKS.find(w=>w.slug===resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));
-        const partes = w && primeirasFrases(leituraDe(w.id)?.frase[lang] ?? [w.description[lang]]);
-        const esperado = partes?.map(p=>typeof p==='string' ? p : p.claim ? v(p.claim)+(p.sufixo ?? (getClaim(p.claim).unit === '%' ? '%' : '')) : p.ref ?? '').join('');
-        if (!esperado || texto(resumo) !== normal(esperado)) erros.push(`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`);
+        const esperado = w && sinopseEsperada(w, lang);
+        if (!esperado || texto(resumo) !== esperado) erros.push(`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`);
         dispensados.add(resumo);
       }
       const permitidos = new Set([

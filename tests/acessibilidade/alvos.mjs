@@ -308,6 +308,17 @@ const ESTRAGOS = [
     },
   },
   {
+    /* O SELO NA SINOPSE DA LISTA DOS ESTUDOS (bloco R1, 23.09.2026, I144). A
+       lista passou a ter os estudos de Évora, e os selos das suas sinopses são
+       prosa corrida, contados à parte pela H2 como os da página de um lugar. O
+       estrago tira a classe da sinopse: os mesmos selos passam a caixas na faixa
+       dos 641 aos 1023 px, e a H2 cai. */
+    nome: 'sinopse-sem-classe · os selos da lista dos estudos fora da prosa corrida',
+    celulas: ['H2'],
+    amostra: '/estudos/',
+    faz: (html) => html.replaceAll('class="arquivo-desc estudo-resumo"', 'class="arquivo-desc"'),
+  },
+  {
     /* A LISTA ESCONDIDA (H15, bloco R1). O estrago é o defeito que a leitura de
        fora de 23.09.2026 encontrou, reposto no guião que o servidor entrega: a
        linha que abre a lista sai, e os itens que casam acendem-se dentro de uma
@@ -891,8 +902,13 @@ function medeNaPagina(cfg) {
         exigido,
         /* O selo está dentro da sinopse de um estudo de uma página de lugar? É a
            única informação que esta medida precisa de trazer para a célula H2
-           poder contar à parte a classe que a nota dela descreve. */
-        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura'),
+           poder contar à parte a classe que a nota dela descreve. A sinopse da
+           lista dos estudos entra desde o bloco R1 (23.09.2026, I144): a lista
+           passou a ter os estudos de Évora, cujas sinopses citam linhas com o
+           seu selo em prosa corrida, como na página do lugar e na primeira
+           página. O estrago «sinopse-sem-classe» prova que é a classe que os
+           dispensa, e só ela. */
+        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .estudos-lista .estudo-resumo'),
         ok: ok44,
         ok32,
         ok44,
@@ -1941,7 +1957,14 @@ if (VERMELHOS) {
         amostraDeCartao &&
         estrago.noDisco(amostraDeCartao.texto, amostraDeCartao.caminho) !== amostraDeCartao.texto
       ) ||
-      !!(estrago.noGuiao && estrago.noGuiao(amostraDoGuiao, '/js/municipios.js') !== amostraDoGuiao);
+      !!(estrago.noGuiao && estrago.noGuiao(amostraDoGuiao, '/js/municipios.js') !== amostraDoGuiao) ||
+      /* UM ESTRAGO PODE NOMEAR A SUA PRÓPRIA AMOSTRA (bloco R1, 23.09.2026): o
+         que mexe numa página que não é nenhuma das duas de cima prova aqui que
+         mudou alguma coisa, na página em que atua. */
+      !!(estrago.amostra && (() => {
+        const h = fs.readFileSync(path.join(DIST, estrago.amostra.replace(/^\//, ''), 'index.html'), 'utf8');
+        return estrago.faz(h, estrago.amostra) !== h;
+      })());
     ESTRAGO = estrago.faz;
     ESTRAGO_NO_DISCO = estrago.noDisco ?? null;
     ESTRAGO_NO_GUIAO = estrago.noGuiao ?? null;
