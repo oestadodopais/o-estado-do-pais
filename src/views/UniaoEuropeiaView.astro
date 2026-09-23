@@ -50,6 +50,7 @@
  * `public/js/leituras.js`, e sem ele as vinte e uma ficam à vista, fechadas.
  */
 import Base from '../layouts/Base.astro';
+import '../styles/pais.css';
 import Faixa from '../components/inicio/Faixa.astro';
 import LeituraBreve from '../components/inicio/LeituraBreve.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
@@ -184,7 +185,7 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 >
   <header class="sec-head">
     <p class="eyebrow">{s.uniaoEuropeia.h1}</p>
-    <h1 class="cabeca-h1">
+    <h1 class="cabeca-h1 temas-titulo">
       {s.inicio.cabeca.tituloPaisA}
       <ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />
       {cauda}

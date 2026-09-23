@@ -18,7 +18,7 @@
 .pais-cartoes .cartao-medida { align-content: start; }
 .pais-porta-tema { font-family: var(--f-instr); font-size: 13px; margin: 12px 0 0; }
 .pais-porta-tema a { display: inline-flex; gap: .3em; flex-wrap: wrap; align-items: baseline; color: var(--ink); text-underline-offset: 3px; min-height: 44px; }
-.temas-titulo { font-family: var(--f-prosa); font-size: clamp(28px, 4.4vw, 42px); font-weight: 400; margin: 4px 0 28px; }
+.temas-titulo, .cabeca-h1.temas-titulo { font-family: var(--f-prosa); font-size: clamp(28px, 4.4vw, 42px); font-weight: 400; margin: 4px 0 28px; }
 .pais-estudo { border-bottom: 1px solid var(--rule); padding: 22px 0; }
 .pais-estudo:first-of-type { border-top: 1px solid var(--rule); }
 .pais-mudou { list-style: none; border-top: 1px solid var(--rule); padding: 0; margin: 0; }

@@ -26,6 +26,8 @@ const versao = JSON.parse(await fs.readFile(path.join(dist, 'version.json'), 'ut
 if (versao.commit !== esperado) throw new Error(`dist/version.json declara ${versao.commit}; esperava ${esperado}`);
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const inicio = new Date();
+const familiasNovas = process.env.OEDP_CAPTURAR_FAMILIAS?.split(',');
+const anterior = familiasNovas ? JSON.parse(await fs.readFile(manifesto, 'utf8')) : null;
 const larguras = [390, 768, 1024, 1280, 1600];
 const paginas = [
   ['pais', 'pt', '/'], ['pais', 'en', '/en/'],
@@ -110,8 +112,18 @@ try {
       };
     });
     const ficheiro = `${estado}-${familia}-${lingua}-${largura}.png`;
-    const bytes = await pagina.screenshot({ path: path.join(pasta, ficheiro), fullPage: true, animations: 'disabled' });
-    const r = { ficheiro, rota, familia, lingua, largura, inteira: true, ...medida, deslocamento: Math.max(medida.documento, medida.corpo) - medida.janela, pedidosExternosAbortados: externos, errosDoNavegador: erros, sha256: sha(bytes) };
+    const refaz = !familiasNovas || familiasNovas.includes(familia);
+    const bytes = refaz
+      ? await pagina.screenshot({ path: path.join(pasta, ficheiro), fullPage: true, animations: 'disabled' })
+      : await fs.readFile(path.join(pasta, ficheiro));
+    const previa = anterior?.resultados.find(r => r.ficheiro === ficheiro);
+    if (!refaz) {
+      if (!previa || sha(bytes) !== previa.sha256) throw new Error(`${ficheiro}: captura anterior sem prova`);
+      for (const [chave, valor] of Object.entries(medida)) {
+        if (JSON.stringify(valor) !== JSON.stringify(previa[chave])) throw new Error(`${ficheiro}: mudou ${chave}; é preciso refazer esta família`);
+      }
+    }
+    const r = { ficheiro, rota, familia, lingua, largura, inteira: true, captura_cabeca: refaz ? versao.commit : (previa.captura_cabeca ?? anterior.dist_construido_de), captura_refeita: refaz, ...medida, deslocamento: Math.max(medida.documento, medida.corpo) - medida.janela, pedidosExternosAbortados: externos, errosDoNavegador: erros, sha256: sha(bytes) };
     resultados.push(r);
     falhas.push(...falhasDaCaptura(r, estado));
     await contexto.close();
