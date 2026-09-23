@@ -35,12 +35,39 @@ for (const [id, tema] of Object.entries(DOMINIO_DAS_MEDIDAS)) {
   if (!temas.has(tema)) erros.push(`T1: ${id} sem tema válido na tabela.`);
   linha(id);
 }
+/* O TEXTO DE UMA MUDANÇA DECLARADA, lido por conta própria (bloco R1,
+   23.09.2026). Uma cadeia, ou uma lista de pedaços em que um valor é
+   `{ claim, sufixo }`: achata-se com o valor que o livro-razão escreve, lido do
+   YAML e não da função da página, e compara-se com o texto rendido sem os selos,
+   que são portas e não frase. */
+const textoDeclarado = t => typeof t === 'string' ? t : Array.isArray(t)
+  ? t.map(p => typeof p === 'string' ? p : `${linha(p.claim).value}${p.sufixo ?? ''}`).join('') : null;
+const soPalavras = t => typeof t === 'string' ? t : Array.isArray(t) ? t.filter(p => typeof p === 'string').join(' ') : '';
+const semSelos = el => { if (!el) return ''; const c = parse(el.outerHTML); c.querySelectorAll('a.src-chip').forEach(n => n.remove()); return normal(c.textContent); };
+/* M4 · A LÍNGUA DO LEITOR NAS MUDANÇAS DECLARADAS (bloco R1, 23.09.2026, I141).
+   «Saíram dos recibos e dos cartões» estava na primeira página: duas palavras do
+   código, que a estrutura §6 põe fora das páginas do leitor. A célula recusa-as
+   nas duas edições, e recusa também «livro-razão», «excerto» e «linha», que são
+   as outras palavras da máquina que um texto destes tem à mão. Escritas aqui, e
+   não importadas: uma régua que lesse a lista da coisa que mede não media nada. */
+const PALAVRAS_DO_CODIGO = {
+  pt: /(?<![\p{L}-])(recibos?|cart(?:ão|ões)|livro-razão|excertos?|linhas?)(?![\p{L}-])/iu,
+  en: /(?<![\p{L}-])(receipts?|cards?|ledger|excerpts?|rows?|lines?)(?![\p{L}-])/iu,
+};
 const mudancasVistas = new Set();
 for (const m of MUDANCAS_DO_PROJETO) {
   if (!m.decisao || !capitulos.has(m.decisao)) erros.push(`M1: ${m.id} sem secção existente de DECISIONS.md.`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(m.data) || !m.texto?.pt || !m.texto?.en || mudancasVistas.has(m.id)) erros.push(`M1: entrada incompleta ou repetida ${m.id}.`);
   mudancasVistas.add(m.id);
+  for (const lang of ['pt', 'en']) {
+    const achada = soPalavras(m.texto?.[lang]).match(PALAVRAS_DO_CODIGO[lang]);
+    if (achada) erros.push(`M4: a mudança ${m.id} (${lang}) fala na língua do código: «${achada[1]}».`);
+  }
 }
+/* O conhecido-positivo da M4: o mesmo detetor encontra a palavra numa frase de
+   mentira com a forma do defeito de 21.09.2026, nas duas línguas. */
+if (!'saíram dos recibos e dos cartões'.match(PALAVRAS_DO_CODIGO.pt) || !'were removed from receipts and cards'.match(PALAVRAS_DO_CODIGO.en))
+  erros.push('M4: o detetor das palavras do código não vê a frase de 21.09.2026.');
 const datas = JSON.parse(fs.readFileSync('src/data/datas-de-publicacao.json', 'utf8')).edicoes;
 const correcoesEsperadas = new Set();
 /* B1c: a identidade de cada mudança, sem a data, que é o que o registo declara.
