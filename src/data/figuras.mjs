@@ -529,12 +529,82 @@ const LISTA_SOCIAL = [
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
+  /* TRÊS ORIGENS SELADAS NO MOTOR (B2, peça 1, segunda passagem de correção,
+     23.09.2026; achado 8 da leitura a frio). A pergunta do desemprego de longa
+     duração dizia a população ativa como denominador, e nenhuma origem
+     declarada o dizia; a conferência das outras vinte, pedaço a pedaço, achou
+     mais dois pedaços sem origem: os dois sexos dos jovens que não trabalham
+     nem estudam, e a população inteira da sobrecarga do custo da habitação. A
+     decisão do lugar de direção mandou pedir a metainformação do indicador pelo
+     cliente da casa e selar a origem no motor. Os três endereços são o
+     `source_url` das três linhas; as respostas vivem no motor
+     (`indicators/out/b2-2026-09-23/perguntas/`, com `pedidos.jsonl`), e não
+     neste repositório, que é público. `selo` diz o endereço, a hora, o cliente e
+     o sha256 do pedido, o ficheiro no motor e o campo lido, e a K16 do
+     `check:cartao` exige os quatro. O excerto dos dois sexos junta a etiqueta da
+     dimensão e a da sua única categoria com «: », que é a forma em que o motor
+     escreve as dimensões no excerto das linhas (a regra da I129). */
+  'eurostat-tesem130-denominador': {
+    publicador: 'Eurostat',
+    documento: 'Long-term unemployment rate by sex',
+    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T',
+    lido: '2026-09-23',
+    excerto:
+      'The long-term unemployment rate expresses the number of long-term unemployed aged 15-74 as a percentage of the active population of the same age.',
+    selo: {
+      motor: 'indicators/out/b2-2026-09-23/perguntas/tesem130.json',
+      campo: 'extension.description',
+      hora: '2026-09-23T21:34:16Z',
+      cliente: 'core.http.HttpClient.condicional',
+      sha256: '9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b',
+    },
+  },
+  'eurostat-tipslm90-sexo': {
+    publicador: 'Eurostat',
+    documento:
+      'Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group',
+    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP',
+    lido: '2026-09-23',
+    excerto: 'Sex: Total',
+    selo: {
+      motor: 'indicators/out/b2-2026-09-23/perguntas/tipslm90.json',
+      campo: 'dimension.sex',
+      hora: '2026-09-23T21:34:16Z',
+      cliente: 'core.http.HttpClient.condicional',
+      sha256: 'de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef',
+    },
+  },
+  'eurostat-tespm140-populacao': {
+    publicador: 'Eurostat',
+    documento: 'Housing cost overburden rate',
+    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T',
+    lido: '2026-09-23',
+    excerto:
+      'Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income (net of housing allowances).',
+    selo: {
+      motor: 'indicators/out/b2-2026-09-23/perguntas/tespm140.json',
+      campo: 'extension.description',
+      hora: '2026-09-23T21:34:17Z',
+      cliente: 'core.http.HttpClient.condicional',
+      sha256: '5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42',
+    },
+  },
   'eurostat-tessi164-inquilinos': {
     publicador: 'Eurostat',
     documento: 'Housing cost overburden rate by tenure status - EU-SILC survey',
     url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT',
     lido: '2026-09-23',
     excerto: 'Tenant, rent at market price',
+    /* O selo do pedido, lido do registo que o lugar de direção escreveu no motor
+       ao escrever o brief do B2 (`indicators/out/b2-2026-09-23/pedidos.jsonl` e o
+       `LEIA-ME.md` ao lado). */
+    selo: {
+      motor: 'indicators/out/b2-2026-09-23/tessi164_PT.json',
+      campo: 'dimension.tenure.category.label.RENT_MKT',
+      hora: '2026-09-23T15:35:40Z',
+      cliente: 'core.http.HttpClient',
+      sha256: '974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358',
+    },
   },
   'painel-pdm': {
     publicador: 'Comissão Europeia',
@@ -707,6 +777,15 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP',
     lido: '2026-09-23',
     excerto: 'Non-financial corporations debt, consolidated - % of GDP',
+    /* O selo do pedido, lido do registo do bloco R1 no motor
+       (`indicators/out/r1-2026-09-23/pedidos.jsonl`). */
+    selo: {
+      motor: 'indicators/out/r1-2026-09-23/eurostat-tipspd30-PT-PC_GDP.json',
+      campo: 'label',
+      hora: '2026-09-23T10:51:23Z',
+      cliente: "core.http.HttpClient.condicional, por core.http.for_source(core.sources.get('eurostat'))",
+      sha256: 'dcfb381ff2b8ec013ac4e5ddb1790ff056128145a37390e52bcf824c4091ddf3',
+    },
   },
   'glossario-npish': {
     publicador: 'Eurostat',
@@ -887,9 +966,13 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
  */
 export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'divida-publica-2025': {
+    /* «EM PERCENTAGEM DO PIB», E NÃO «DO QUE O PAÍS PRODUZ NUM ANO» (achado 8 da
+       leitura a frio da peça 1 do B2). A origem escreve «in % of GDP» e não
+       define o PIB; a glosa era da casa, sem origem. A pergunta diz agora o que
+       a origem diz, como as outras perguntas que dividem pelo PIB. */
     origens: ['pdm-divida-publica'],
-    pt: ['Quanto devem as administrações públicas, em percentagem do que o país produz num ano?'],
-    en: ['How much does general government owe, as a percentage of what the country produces in a year?'],
+    pt: ['Quanto devem as administrações públicas, em percentagem do PIB?'],
+    en: ['How much does general government owe, as a percentage of GDP?'],
   },
   'posicao-de-investimento-internacional-2025': {
     /* DUAS ORIGENS DESDE 14.09.2026 (achado 3): o conceito é do Banco de
@@ -1103,9 +1186,27 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'desemprego-de-longa-duracao-2025': {
-    origens: ['glossario-longa-duracao'],
-    pt: ['Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano?'],
-    en: ['What share of the labour force is out of work and has been actively seeking employment for at least a year?'],
+    /* O DENOMINADOR E O GRUPO ETÁRIO TÊM ORIGEM SELADA (achado 8 da leitura a
+       frio da peça 1 do B2). O glossário diz o que é estar desempregado há um
+       ano e não diz de que população a taxa é a parte; o título da linha também
+       não. A descrição do indicador `tesem130`, pedida pelo cliente da casa e
+       selada no motor, di-lo: a parte da população ativa dos 15 aos 74 anos. A
+       pergunta escreve o grupo como intervalo, como a do desemprego. */
+    origens: ['glossario-longa-duracao', 'eurostat-tesem130-denominador'],
+    pt: [
+      'Que parte da população ativa dos ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '74', motivo: 'escala-de-instrumento' },
+      ' anos está sem trabalho e procura emprego ativamente há pelo menos um ano?',
+    ],
+    en: [
+      'What share of the labour force aged ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '74', motivo: 'escala-de-instrumento' },
+      ' is out of work and has been actively seeking employment for at least a year?',
+    ],
   },
   'jovens-nem-2025': {
     /* «E SEXO» (achado 7 de 14.09.2026). O excerto diz «the population of a
@@ -1120,7 +1221,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        segunda. Os dois limites saem da etiqueta que o excerto da linha agora
        traz, e o sexo é o total que a resposta declara (`sex: T: Total`). A
        célula K13 do `check:cartao` compara estas palavras com a linha. */
-    origens: ['glossario-nem'],
+    origens: ['glossario-nem', 'eurostat-tipslm90-sexo'],
     pt: [
       'Que parte dos jovens dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
@@ -1190,7 +1291,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        ('net' of housing allowances)» e «disposable income ('net' of housing
        allowances)», e a definição guardava o limiar dos 40 % e deixava cair as
        duas: mudava o que entra no numerador e no denominador. */
-    origens: ['glossario-sobrecarga'],
+    origens: ['glossario-sobrecarga', 'eurostat-tespm140-populacao'],
     pt: [
       'Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
       { nl: '40', motivo: 'escala-de-instrumento' },

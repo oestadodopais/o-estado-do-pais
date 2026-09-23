@@ -1,0 +1,1178 @@
+{
+  "schema": 1,
+  "o_que_e": "A auditoria das perguntas dos cartões, pedaço a pedaço, nas duas edições (achado 8 da leitura a frio da peça 1 do B2). Cada pedaço de cada pergunta declarada em DEFINICOES_DAS_MEDIDAS cita o literal que o apoia: num campo de uma origem que a pergunta declara (excerto, excertoEn ou documento), ou num campo selado da linha da própria medida (excerpt, unit ou document.title). A escolha de cada apoio é uma leitura; a célula K16 do check:cartao confere que os pedaços juntos são a pergunta declarada, que cada literal está mesmo no campo que cita, que cada origem declarada apoia algum pedaço, e que cada origem de uma resposta da API do Eurostat traz o selo do seu pedido. Não infere equivalência de sentido: isso fica à leitura, que é de quem assina abaixo.",
+  "leituras": [
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-09-23T21:17:19.300381+00:00",
+      "o_que": "primeira leitura, a partir da cabeça 8f7b2c27"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-09-23",
+      "o_que": "releitura de cada apoio; o excerto dos dois sexos passa de «Total» a «Sex: Total», a forma em que o motor escreve as dimensões nos excertos das linhas"
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "divida-publica-2025",
+      "origens": [
+        "pdm-divida-publica"
+      ],
+      "pergunta": {
+        "pt": "Quanto devem as administrações públicas, em percentagem do PIB?",
+        "en": "How much does general government owe, as a percentage of GDP?"
+      },
+      "mudanca": "As duas perguntas passam a dizer PIB/GDP, a unidade que a origem escreve. Sai a explicação «do que o país produz num ano», sem definição própria de PIB na origem declarada.",
+      "pedacos": [
+        {
+          "pt": "Quanto devem as administrações públicas, ",
+          "en": "How much does general government owe, ",
+          "apoios": [
+            {
+              "origem": "pdm-divida-publica",
+              "campo": "excerto",
+              "literal": "general government sector debt"
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do PIB?",
+          "en": "as a percentage of GDP?",
+          "apoios": [
+            {
+              "origem": "pdm-divida-publica",
+              "campo": "excerto",
+              "literal": "in % of GDP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2025",
+      "origens": [
+        "bdp-pii",
+        "pdm-posicao-de-investimento"
+      ],
+      "pergunta": {
+        "pt": "Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB?",
+        "en": "What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, ",
+          "en": "What is the difference between residents’ financial assets and liabilities relative to the rest of the world, ",
+          "apoios": [
+            {
+              "origem": "bdp-pii",
+              "campo": "excerto",
+              "literal": "apresenta o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo."
+            },
+            {
+              "origem": "bdp-pii",
+              "campo": "excertoEn",
+              "literal": "represents the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world."
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do PIB?",
+          "en": "as a percentage of GDP?",
+          "apoios": [
+            {
+              "origem": "pdm-posicao-de-investimento",
+              "campo": "excerto",
+              "literal": "as percent of GDP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "origens": [
+        "pdm-custo-do-trabalho"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?",
+        "en": "How much has the nominal unit labour cost index, per hour worked, changed over three years?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto mudou em três anos ",
+          "en": "How much has ",
+          "apoios": [
+            {
+              "origem": "pdm-custo-do-trabalho",
+              "campo": "excerto",
+              "literal": "3-year percentage change"
+            }
+          ]
+        },
+        {
+          "pt": "o índice nominal do custo unitário do trabalho, ",
+          "en": "the nominal unit labour cost index, ",
+          "apoios": [
+            {
+              "origem": "pdm-custo-do-trabalho",
+              "campo": "excerto",
+              "literal": "nominal unit labour cost index"
+            }
+          ]
+        },
+        {
+          "pt": "por hora trabalhada?",
+          "en": "per hour worked, changed over three years?",
+          "apoios": [
+            {
+              "origem": "pdm-custo-do-trabalho",
+              "campo": "excerto",
+              "literal": "per hour worked"
+            },
+            {
+              "origem": "pdm-custo-do-trabalho",
+              "campo": "excerto",
+              "literal": "3-year percentage change"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "precos-da-habitacao-2025",
+      "origens": [
+        "glossario-hpi"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+        "en": "How much have the transaction prices of homes purchased by households changed?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram os preços de transação ",
+          "en": "How much have the transaction prices ",
+          "apoios": [
+            {
+              "origem": "glossario-hpi",
+              "campo": "excerto",
+              "literal": "measures the changes in the transaction prices"
+            }
+          ]
+        },
+        {
+          "pt": "das casas compradas pelas famílias?",
+          "en": "of homes purchased by households changed?",
+          "apoios": [
+            {
+              "origem": "glossario-hpi",
+              "campo": "excerto",
+              "literal": "dwellings purchased by households"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desempenho-das-exportacoes-2025",
+      "origens": [
+        "pdm-exportacoes"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudou em três anos o desempenho das exportações do país face às economias avançadas?",
+        "en": "How much has the country’s export performance against advanced economies changed over three years?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto mudou em três anos ",
+          "en": "How much has ",
+          "apoios": [
+            {
+              "origem": "pdm-exportacoes",
+              "campo": "excerto",
+              "literal": "3-year percentage change"
+            }
+          ]
+        },
+        {
+          "pt": "o desempenho das exportações do país face às economias avançadas?",
+          "en": "the country’s export performance against advanced economies changed over three years?",
+          "apoios": [
+            {
+              "origem": "pdm-exportacoes",
+              "campo": "excerto",
+              "literal": "export performance against advanced economies"
+            },
+            {
+              "origem": "pdm-exportacoes",
+              "campo": "excerto",
+              "literal": "3-year percentage change"
+            },
+            {
+              "linha": "desempenho-das-exportacoes-2025",
+              "campo": "excerpt",
+              "literal": "Portugal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "origens": [
+        "pdm-divida-das-empresas",
+        "eurostat-tipspd30"
+      ],
+      "pergunta": {
+        "pt": "Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB?",
+        "en": "How much do non-financial corporations owe in consolidated debt, as a percentage of GDP?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto devem as sociedades não financeiras, ",
+          "en": "How much do non-financial corporations owe ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspd30",
+              "campo": "excerto",
+              "literal": "Non-financial corporations debt"
+            }
+          ]
+        },
+        {
+          "pt": "em dívida consolidada e ",
+          "en": "in consolidated debt, ",
+          "apoios": [
+            {
+              "origem": "pdm-divida-das-empresas",
+              "campo": "excerto",
+              "literal": "consolidated debt"
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do PIB?",
+          "en": "as a percentage of GDP?",
+          "apoios": [
+            {
+              "origem": "pdm-divida-das-empresas",
+              "campo": "excerto",
+              "literal": "in % of GDP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "origens": [
+        "pdm-divida-das-familias",
+        "glossario-npish"
+      ],
+      "pergunta": {
+        "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em dívida consolidada e em percentagem do PIB?",
+        "en": "How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, ",
+          "en": "How much do households and non-profit institutions serving them owe ",
+          "apoios": [
+            {
+              "origem": "pdm-divida-das-familias",
+              "campo": "excerto",
+              "literal": "household (incl. NPISH)"
+            },
+            {
+              "origem": "glossario-npish",
+              "campo": "excerto",
+              "literal": "Non-profit institutions serving households, abbreviated as NPISH"
+            }
+          ]
+        },
+        {
+          "pt": "em dívida consolidada e ",
+          "en": "in consolidated debt, ",
+          "apoios": [
+            {
+              "origem": "pdm-divida-das-familias",
+              "campo": "excerto",
+              "literal": "consolidated debt"
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do PIB?",
+          "en": "as a percentage of GDP?",
+          "apoios": [
+            {
+              "origem": "pdm-divida-das-familias",
+              "campo": "excerto",
+              "literal": "in % of GDP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "origens": [
+        "pdm-credito-as-empresas",
+        "glossario-fdi",
+        "eurostat-tipspd30"
+      ],
+      "pergunta": {
+        "pt": "Quanto representa o fluxo de crédito consolidado às sociedades não financeiras na dívida que tinham no período anterior, excluindo o investimento direto estrangeiro das duas parcelas?",
+        "en": "What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto representa o fluxo de crédito consolidado às sociedades não financeiras ",
+          "en": "What percentage of non-financial corporations’ debt in the previous period ",
+          "apoios": [
+            {
+              "origem": "pdm-credito-as-empresas",
+              "campo": "excerto",
+              "literal": "consolidated credit flow"
+            },
+            {
+              "origem": "eurostat-tipspd30",
+              "campo": "excerto",
+              "literal": "Non-financial corporations"
+            },
+            {
+              "origem": "pdm-credito-as-empresas",
+              "campo": "excerto",
+              "literal": "in % of NFC debt stock in t-1"
+            }
+          ]
+        },
+        {
+          "pt": "na dívida que tinham no período anterior, ",
+          "en": "does their consolidated credit flow represent, ",
+          "apoios": [
+            {
+              "origem": "pdm-credito-as-empresas",
+              "campo": "excerto",
+              "literal": "NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI)"
+            }
+          ]
+        },
+        {
+          "pt": "excluindo o investimento direto estrangeiro das duas parcelas?",
+          "en": "excluding foreign direct investment from both amounts?",
+          "apoios": [
+            {
+              "origem": "pdm-credito-as-empresas",
+              "campo": "excerto",
+              "literal": "NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI)"
+            },
+            {
+              "origem": "glossario-fdi",
+              "campo": "excerto",
+              "literal": "Foreign direct investment, abbreviated as FDI"
+            }
+          ]
+        }
+      ],
+      "nota_da_leitura": "A ordem gramatical PT e EN é diferente. O primeiro pedaço inglês já traz o denominador. A exclusão do investimento direto estrangeiro qualifica o fluxo e a dívida do período anterior."
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "origens": [
+        "pdm-credito-as-familias",
+        "glossario-npish"
+      ],
+      "pergunta": {
+        "pt": "Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem?",
+        "en": "What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço ",
+          "en": "What percentage of the debt of households and non-profit institutions serving them ",
+          "apoios": [
+            {
+              "origem": "pdm-credito-as-familias",
+              "campo": "excerto",
+              "literal": "in % of household debt stock"
+            },
+            {
+              "origem": "pdm-credito-as-familias",
+              "campo": "excerto",
+              "literal": "household (incl. NPISH)"
+            },
+            {
+              "origem": "glossario-npish",
+              "campo": "excerto",
+              "literal": "Non-profit institutions serving households, abbreviated as NPISH"
+            }
+          ]
+        },
+        {
+          "pt": "no período anterior ",
+          "en": "in the previous period ",
+          "apoios": [
+            {
+              "origem": "pdm-credito-as-familias",
+              "campo": "excerto",
+              "literal": "in t-1"
+            }
+          ]
+        },
+        {
+          "pt": "representa o fluxo de crédito consolidado que recebem?",
+          "en": "does their consolidated credit flow represent?",
+          "apoios": [
+            {
+              "origem": "pdm-credito-as-familias",
+              "campo": "excerto",
+              "literal": "consolidated credit flow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2025",
+      "origens": [
+        "pdm-balanca-corrente"
+      ],
+      "pergunta": {
+        "pt": "Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás?",
+        "en": "What is the current account balance as a percentage of GDP, on a three-year backward moving average?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Qual é o saldo da balança corrente ",
+          "en": "What is the current account balance ",
+          "apoios": [
+            {
+              "origem": "pdm-balanca-corrente",
+              "campo": "excerto",
+              "literal": "current account balance"
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do PIB, ",
+          "en": "as a percentage of GDP, ",
+          "apoios": [
+            {
+              "origem": "pdm-balanca-corrente",
+              "campo": "excerto",
+              "literal": "as percent of GDP"
+            }
+          ]
+        },
+        {
+          "pt": "na média móvel de três anos para trás?",
+          "en": "on a three-year backward moving average?",
+          "apoios": [
+            {
+              "origem": "pdm-balanca-corrente",
+              "campo": "excerto",
+              "literal": "3-year backward moving average"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-actividade-2025",
+      "origens": [
+        "glossario-atividade",
+        "pdm-taxa-de-actividade"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável?",
+        "en": "How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto mudou em três anos ",
+          "en": "How much has ",
+          "apoios": [
+            {
+              "origem": "pdm-taxa-de-actividade",
+              "campo": "excerto",
+              "literal": "3-year change in pps"
+            }
+          ]
+        },
+        {
+          "pt": "a percentagem de pessoas ativas, ",
+          "en": "the percentage of active people, ",
+          "apoios": [
+            {
+              "origem": "glossario-atividade",
+              "campo": "excerto",
+              "literal": "percentage of active persons"
+            }
+          ]
+        },
+        {
+          "pt": "empregadas ou desempregadas, ",
+          "en": "employed or unemployed, ",
+          "apoios": [
+            {
+              "origem": "glossario-atividade",
+              "campo": "excerto",
+              "literal": "comprises employed and unemployed persons"
+            }
+          ]
+        },
+        {
+          "pt": "na população comparável?",
+          "en": "in the comparable total population changed over three years?",
+          "apoios": [
+            {
+              "origem": "glossario-atividade",
+              "campo": "excerto",
+              "literal": "in relation to the comparable total population"
+            },
+            {
+              "origem": "pdm-taxa-de-actividade",
+              "campo": "excerto",
+              "literal": "3-year change in pps"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-cambio-efectiva-real-2025",
+      "origens": [
+        "pdm-cambio-efectivo-real"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudou em três anos a taxa de câmbio efetiva real face a outros 41 países industriais, com base nos deflatores dos índices de preços no consumidor?",
+        "en": "How much has the real effective exchange rate relative to 41 other industrial countries, based on consumer price index deflators, changed over three years?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quanto mudou em três anos ",
+          "en": "How much has ",
+          "apoios": [
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "3-year percentage change"
+            }
+          ]
+        },
+        {
+          "pt": "a taxa de câmbio efetiva real face a outros 41 países industriais, ",
+          "en": "the real effective exchange rate relative to 41 other industrial countries, ",
+          "apoios": [
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "real effective exchange rates"
+            },
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "relative to 41 other industrial countries"
+            }
+          ]
+        },
+        {
+          "pt": "com base nos deflatores dos índices de preços no consumidor?",
+          "en": "based on consumer price index deflators, changed over three years?",
+          "apoios": [
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "based on HICP/CPI deflators"
+            },
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "3-year percentage change"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-desemprego-mip-2025",
+      "origens": [
+        "glossario-desemprego"
+      ],
+      "pergunta": {
+        "pt": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "en": "What share of the labour force aged 15 to 74 is unemployed?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que parte da população ativa ",
+          "en": "What share of the labour force ",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "as a percentage of the labour force"
+            }
+          ]
+        },
+        {
+          "pt": "dos 15 aos 74 anos ",
+          "en": "aged 15 to 74 ",
+          "apoios": [
+            {
+              "linha": "taxa-de-desemprego-mip-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "pt": "está sem emprego?",
+          "en": "is unemployed?",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "number of people unemployed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-desemprego-2025",
+      "origens": [
+        "glossario-desemprego"
+      ],
+      "pergunta": {
+        "pt": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "en": "What share of the labour force aged 15 to 74 is unemployed?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que parte da população ativa ",
+          "en": "What share of the labour force ",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "as a percentage of the labour force"
+            }
+          ]
+        },
+        {
+          "pt": "dos 15 aos 74 anos ",
+          "en": "aged 15 to 74 ",
+          "apoios": [
+            {
+              "linha": "taxa-de-desemprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "pt": "está sem emprego?",
+          "en": "is unemployed?",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "number of people unemployed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-emprego-2025",
+      "origens": [
+        "glossario-emprego"
+      ],
+      "pergunta": {
+        "pt": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+        "en": "What share of people aged 20 to 64 is employed?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que parte das pessoas ",
+          "en": "What share of people ",
+          "apoios": [
+            {
+              "origem": "glossario-emprego",
+              "campo": "excerto",
+              "literal": "percentage of employed persons in relation to the comparable total population"
+            }
+          ]
+        },
+        {
+          "pt": "dos 20 aos 64 anos ",
+          "en": "aged 20 to 64 ",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "pt": "tem emprego?",
+          "en": "is employed?",
+          "apoios": [
+            {
+              "origem": "glossario-emprego",
+              "campo": "excerto",
+              "literal": "employed persons"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desemprego-de-longa-duracao-2025",
+      "origens": [
+        "glossario-longa-duracao",
+        "eurostat-tesem130-denominador"
+      ],
+      "pergunta": {
+        "pt": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "en": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?"
+      },
+      "mudanca": "O título selado não escreve o denominador. A nova origem cita extension.description do tesem130, recebido pelo core.http, e sustenta a população ativa e o grupo dos 15 aos 74 anos agora escrito nas duas perguntas. O glossário continua a sustentar a falta de trabalho e a procura ativa durante pelo menos um ano.",
+      "pedacos": [
+        {
+          "pt": "Que parte da população ativa ",
+          "en": "What share of the labour force ",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem130-denominador",
+              "campo": "excerto",
+              "literal": "as a percentage of the active population of the same age"
+            }
+          ]
+        },
+        {
+          "pt": "dos 15 aos 74 anos ",
+          "en": "aged 15 to 74 ",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem130-denominador",
+              "campo": "excerto",
+              "literal": "aged 15-74"
+            }
+          ]
+        },
+        {
+          "pt": "está sem trabalho e procura emprego ativamente ",
+          "en": "is out of work and has been actively seeking employment ",
+          "apoios": [
+            {
+              "origem": "glossario-longa-duracao",
+              "campo": "excerto",
+              "literal": "people who are out of work and have been actively seeking employment"
+            }
+          ]
+        },
+        {
+          "pt": "há pelo menos um ano?",
+          "en": "for at least a year?",
+          "apoios": [
+            {
+              "origem": "glossario-longa-duracao",
+              "campo": "excerto",
+              "literal": "for at least a year"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jovens-nem-2025",
+      "origens": [
+        "glossario-nem",
+        "eurostat-tipslm90-sexo"
+      ],
+      "pergunta": {
+        "pt": "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?",
+        "en": "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?"
+      },
+      "mudanca": "Texto preservado. A pergunta dizia «de ambos os sexos» e nenhuma origem declarada o dizia; a dimensão sex da resposta tipslm90, pedida pelo cliente da casa e selada no motor, passa a origem declarada («Sex: Total»).",
+      "pedacos": [
+        {
+          "pt": "Que parte ",
+          "en": "What share of young people ",
+          "apoios": [
+            {
+              "origem": "glossario-nem",
+              "campo": "excerto",
+              "literal": "percentage of the population"
+            }
+          ]
+        },
+        {
+          "pt": "dos jovens dos 15 aos 29 anos, ",
+          "en": "aged 15 to 29, ",
+          "apoios": [
+            {
+              "linha": "jovens-nem-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 15 to 29 years"
+            }
+          ]
+        },
+        {
+          "pt": "de ambos os sexos, ",
+          "en": "of both sexes, ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslm90-sexo",
+              "campo": "excerto",
+              "literal": "Sex: Total"
+            }
+          ]
+        },
+        {
+          "pt": "não trabalha nem estuda nem está em formação?",
+          "en": "is not employed and is not in education or training?",
+          "apoios": [
+            {
+              "origem": "glossario-nem",
+              "campo": "excerto",
+              "literal": "not employed and not involved in further education or training"
+            }
+          ]
+        }
+      ],
+      "nota_da_leitura": "«Total» é a etiqueta no campo dimension.sex.category.label.T da resposta guardada do pedido da própria linha. O título antigo aged 15-24 não é usado para inferir o grupo; o excerpt selado escreve 15-29."
+    },
+    {
+      "id": "abandono-escolar-precoce-2025",
+      "origens": [
+        "glossario-abandono"
+      ],
+      "pergunta": {
+        "pt": "Que parte das pessoas dos 18 aos 24 anos concluiu no máximo o ensino básico e não está em estudos nem em formação?",
+        "en": "What share of people aged 18 to 24 has completed at most lower secondary education and is not in education or training?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que parte das pessoas ",
+          "en": "What share of people ",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "expressed as a percentage of the people aged 18 to 24 with such criteria out of the total population aged 18 to 24"
+            }
+          ]
+        },
+        {
+          "pt": "dos 18 aos 24 anos ",
+          "en": "aged 18 to 24 ",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "aged 18 to 24"
+            }
+          ]
+        },
+        {
+          "pt": "concluiu no máximo o ensino básico ",
+          "en": "has completed at most lower secondary education ",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "completed at most lower secondary education"
+            }
+          ]
+        },
+        {
+          "pt": "e não está em estudos nem em formação?",
+          "en": "and is not in education or training?",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "not involved in further education or training"
+            }
+          ]
+        }
+      ],
+      "nota_da_leitura": "«Ensino básico» é a tradução usada da etapa lower secondary education. Nenhuma equivalência com diploma nacional ou número de anos é acrescentada."
+    },
+    {
+      "id": "risco-de-pobreza-ou-exclusao-2025",
+      "origens": [
+        "glossario-arope"
+      ],
+      "pergunta": {
+        "pt": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+        "en": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que parte da população ",
+          "en": "What share of the population ",
+          "apoios": [
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "share of the total population"
+            }
+          ]
+        },
+        {
+          "pt": "está em risco de pobreza, ",
+          "en": "is at risk of poverty, ",
+          "apoios": [
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "at risk of poverty"
+            }
+          ]
+        },
+        {
+          "pt": "em privação material e social grave ",
+          "en": "severely materially and socially deprived ",
+          "apoios": [
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "severely materially and socially deprived"
+            }
+          ]
+        },
+        {
+          "pt": "ou num agregado com intensidade de trabalho muito baixa, ",
+          "en": "or living in a household with very low work intensity, ",
+          "apoios": [
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "living in a household with a very low work intensity"
+            }
+          ]
+        },
+        {
+          "pt": "contando cada pessoa uma única vez?",
+          "en": "counting each person only once?",
+          "apoios": [
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "People are included only once even if they are in more than one of the situations mentioned above."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "racio-s80-s20-2025",
+      "origens": [
+        "glossario-s80s20"
+      ],
+      "pergunta": {
+        "pt": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+        "en": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Quantas vezes é maior ",
+          "en": "How many times greater is ",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "It is calculated as the ratio"
+            }
+          ]
+        },
+        {
+          "pt": "o rendimento total do quinto da população com mais rendimento ",
+          "en": "the total income of the fifth of the population with the highest income ",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "total income received by the 20 % of the population with the highest income (the top quintile)"
+            }
+          ]
+        },
+        {
+          "pt": "do que o do quinto com menos?",
+          "en": "than that of the fifth with the lowest?",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "to that received by the 20 % of the population with the lowest income (the bottom quintile)"
+            }
+          ]
+        }
+      ],
+      "nota_da_leitura": "«Quinto» traduz quintile; «quantas vezes» pergunta pelo rácio, sem alterar nem calcular o valor."
+    },
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "origens": [
+        "glossario-sobrecarga",
+        "eurostat-tessi164-inquilinos"
+      ],
+      "pergunta": {
+        "pt": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "en": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Que parte dos inquilinos a preço de mercado ",
+          "en": "What share of tenants at market rent ",
+          "apoios": [
+            {
+              "origem": "eurostat-tessi164-inquilinos",
+              "campo": "excerto",
+              "literal": "Tenant, rent at market price"
+            }
+          ]
+        },
+        {
+          "pt": "vive em agregados onde o custo total da habitação, ",
+          "en": "are in households where total housing costs, ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "population living in households where the total housing costs"
+            }
+          ]
+        },
+        {
+          "pt": "líquido de subsídios à habitação, ",
+          "en": "net of housing allowances, ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "total housing costs ('net' of housing allowances)"
+            }
+          ]
+        },
+        {
+          "pt": "leva mais de 40 % do rendimento disponível, ",
+          "en": "take more than 40 % of disposable income, ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "represent more than 40 % of disposable income"
+            }
+          ]
+        },
+        {
+          "pt": "também líquido de subsídios à habitação?",
+          "en": "also net of housing allowances?",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "disposable income ('net' of housing allowances)"
+            }
+          ]
+        }
+      ],
+      "nota_da_leitura": "O excerto da linha principal contém Tenure status: Tenant, rent at market price; a origem da pergunta cita a mesma etiqueta da resposta alojada."
+    },
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-2025",
+      "origens": [
+        "glossario-sobrecarga",
+        "eurostat-tespm140-populacao"
+      ],
+      "pergunta": {
+        "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "en": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?"
+      },
+      "mudanca": "Texto preservado. Acrescenta-se a metainformação do tespm140 à origem do glossário para prender a referência à população geral ao pedido concreto da linha.",
+      "pedacos": [
+        {
+          "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, ",
+          "en": "What share of people, across all tenure statuses, ",
+          "apoios": [
+            {
+              "origem": "eurostat-tespm140-populacao",
+              "campo": "excerto",
+              "literal": "Percentage of the population living in a household"
+            }
+          ]
+        },
+        {
+          "pt": "vive em agregados onde o custo total da habitação, ",
+          "en": "are in households where total housing costs, ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "population living in households where the total housing costs"
+            }
+          ]
+        },
+        {
+          "pt": "líquido de subsídios à habitação, ",
+          "en": "net of housing allowances, ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "total housing costs ('net' of housing allowances)"
+            }
+          ]
+        },
+        {
+          "pt": "leva mais de 40 % do rendimento disponível, ",
+          "en": "take more than 40 % of disposable income, ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "represent more than 40 % of disposable income"
+            }
+          ]
+        },
+        {
+          "pt": "também líquido de subsídios à habitação?",
+          "en": "also net of housing allowances?",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "disposable income ('net' of housing allowances)"
+            }
+          ]
+        }
+      ],
+      "nota_da_leitura": "A descrição do tespm140 define a percentagem da população sem a restringir a qualquer regime de ocupação. «Todos os regimes» explicita essa população geral; a resposta não tem dimensão tenure. A pergunta dos inquilinos tem a seleção RENT_MKT, distinta e literal, na sua própria origem."
+    }
+  ]
+}
