@@ -17,6 +17,9 @@ pasta.mkdir(exist_ok=True)
 codigo = pasta / f'{nome}.codigo'
 codigo.unlink(missing_ok=True)
 cabeca = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, text=True).strip()
+motor = Path.home() / 'Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23'
+motor_cabeca = subprocess.check_output(['git', '-C', str(motor), 'rev-parse', 'HEAD'], text=True).strip()
+(pasta / f'{nome}.motor-cabeca').write_text(motor_cabeca + '\n')
 inicio = datetime.now(timezone.utc)
 (pasta / f'{nome}.inicio').write_text(inicio.isoformat() + '\n')
 (pasta / f'{nome}.cabeca').write_text(cabeca + '\n')
@@ -26,8 +29,8 @@ with log.open('w') as f:
 fim = datetime.now(timezone.utc)
 (pasta / f'{nome}.fim').write_text(fim.isoformat() + '\n')
 codigo.write_text(str(r.returncode) + '\n')
-print(json.dumps({'comando': f'npm run {nome}', 'codigo': r.returncode,
-                  'cabeca': cabeca, 'inicio': inicio.isoformat(), 'fim': fim.isoformat(),
+print(json.dumps({'comando': f'npm run {nome}', 'codigo': int(codigo.read_text().strip()),
+                  'cabeca': cabeca, 'motor_cabeca': motor_cabeca, 'inicio': inicio.isoformat(), 'fim': fim.isoformat(),
                   'segundos': (fim - inicio).total_seconds(),
                   'sha256_log': hashlib.sha256(log.read_bytes()).hexdigest()}, ensure_ascii=False))
 raise SystemExit(r.returncode)

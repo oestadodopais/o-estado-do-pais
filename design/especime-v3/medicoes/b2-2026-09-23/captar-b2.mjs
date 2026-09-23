@@ -46,7 +46,7 @@ const servidor = http.createServer(async (pedido, resposta) => {
   } catch { resposta.writeHead(404).end(); }
 });
 await fs.mkdir(pasta, { recursive: true });
-await fs.rm(manifesto, { force: true });
+if (!anterior) await fs.rm(manifesto, { force: true });
 await new Promise((resolve) => servidor.listen(0, '127.0.0.1', resolve));
 const origem = `http://127.0.0.1:${servidor.address().port}`;
 const resultados = [], falhas = [];
