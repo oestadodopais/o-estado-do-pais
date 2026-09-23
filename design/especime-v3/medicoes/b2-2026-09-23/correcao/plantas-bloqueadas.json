@@ -1,0 +1,19 @@
+{
+  "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+  "estatuto": "não executadas na cabeça final; exigem o portão de HTML limpo antes e depois da planta",
+  "portao": "node scripts/gate-html.mjs",
+  "base_codigo": 1,
+  "base_log": "portoes/build.log",
+  "base_sha256_log": "60c92cc093a7391106ebaa359c4c69db494c1c5d5a5139859b651e23e7d7d092",
+  "razao": "O portão de HTML fecha na associação do agregado europeu dos inquilinos ao recibo principal. Não se confunde essa base vermelha com a mordida de um estrago novo.",
+  "casos": [
+    {
+      "nome": "b2-contagens-das-camaras",
+      "executada": false
+    },
+    {
+      "nome": "b2-selo-do-cartao",
+      "executada": false
+    }
+  ]
+}

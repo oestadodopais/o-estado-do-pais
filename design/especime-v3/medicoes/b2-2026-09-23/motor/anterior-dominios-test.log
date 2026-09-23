@@ -36,11 +36,6 @@ DOMINIOS_TEST: 35 defeito(s) plantado(s) e visto(s) vermelho(s):
   vermelho  um `site_record` absoluto, que escreve fora do sítio
   vermelho  um `site_record` com «..», que sai do sítio
   verde     B2: as observações novas têm os valores e períodos declarados
-  verde     B2 associação: controlo positivo, declaração inicial só no agregado da medida existente
-  verde     B2 associação: planta recusada, outro quadro: Associação UE: quadro divergente: PT 'TESSI164', UE 'TESSI165'
-  verde     B2 associação: planta recusada, outro regime: Associação UE: regime divergente: PT 'RENT_MKT', UE 'OWN_L'
-  verde     B2 associação: planta recusada, outra unidade: Associação UE: unidade divergente: PT 'PC', UE 'PC_POP'
-  verde     B2 associação: planta recusada, outro período: Associação UE: período divergente: PT '2025', UE '2024'
   verde     B2: planta recusada, regime de outra série
   verde     B2: planta recusada, excerto sem regime
   verde     B2: planta recusada, título de outro quadro
@@ -50,4 +45,4 @@ DOMINIOS_TEST: 35 defeito(s) plantado(s) e visto(s) vermelho(s):
   verde     ledger.json: os bytes commitados são os que o construtor produz
   verde     manifest.dominios.json: os bytes commitados são os que o construtor produz
 
-DOMINIOS_TEST: PASS — 35 de 35 defeito(s) vistos, 14 prova(s) verde(s), 0 problema(s), a corrida limpa verde antes e depois
+DOMINIOS_TEST: PASS — 35 de 35 defeito(s) vistos, 9 prova(s) verde(s), 0 problema(s), a corrida limpa verde antes e depois

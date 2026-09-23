@@ -205,13 +205,17 @@ index 0000000..14e2a68
 \ No newline at end of file
 diff --git a/publisher/dominios_b2_test.py b/publisher/dominios_b2_test.py
 new file mode 100644
-index 0000000..dcafa64
+index 0000000..e622419
 --- /dev/null
 +++ b/publisher/dominios_b2_test.py
-@@ -0,0 +1,50 @@
+@@ -0,0 +1,102 @@
 +"""Provas B2: coordenadas, etiqueta do regime e título da fonte, sem rede."""
 +from __future__ import annotations
 +import copy
++import json
++import tempfile
++from pathlib import Path
++from publisher.dominios_readers import eurostat_series
 +from unittest.mock import patch
 +from publisher import dominios_build as B
 +
@@ -232,6 +236,54 @@ index 0000000..dcafa64
 +        assert por_id[chave]["value"] == valor, (chave, por_id[chave]["value"])
 +        assert next(m for m in manifesto if m["site_id"] == chave)["reference_date"] in ("2023", "2024", "2025")
 +    provas = ["B2: as observações novas têm os valores e períodos declarados"]
++    principal = "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
++    prefixo = f"Agregado da União Europeia (EU27_2020) da medida «{principal}»,"
++    nota = next(m for m in manifesto if m["site_id"] == principal + "-ue")["note_extra"]
++    assert nota.startswith(prefixo), nota
++    assert all("note_extra" not in m for m in manifesto if m["site_id"] != principal + "-ue")
++    provas.append("B2 associação: controlo positivo, declaração inicial só no agregado da medida existente")
++    # Cada planta relê uma cópia explicitamente estragada da resposta alojada.
++    # Não se apresenta a cópia como resposta autêntica, nem se mexe no manifesto
++    # de proveniência. A integração passa pelo mesmo build que escreve a nota.
++    original = json.loads((B.SOURCE / "eurostat/tessi164_EU27_2020.json").read_text())
++    for nome, campo, novo, razao in (
++        ("outro quadro", "dataset", "TESSI165", "quadro divergente"),
++        ("outro regime", "tenure", "OWN_L", "regime divergente"),
++        ("outra unidade", "unit", "PC_POP", "unidade divergente"),
++        ("outro período", "time", "2024", "período divergente"),
++    ):
++        doc = copy.deepcopy(original)
++        pick = {"freq": "A", "unit": "PC", "tenure": "RENT_MKT", "geo": "EU27_2020"}
++        periodo = "2025"
++        if campo == "dataset":
++            doc["extension"]["id"] = novo
++        elif campo == "time":
++            periodo = novo
++        elif campo == "unit":
++            categoria = doc["dimension"]["unit"]["category"]
++            categoria["index"][novo] = categoria["index"].pop("PC")
++            categoria["label"][novo] = categoria["label"].pop("PC")
++            pick[campo] = novo
++        else:
++            pick[campo] = novo
++        with tempfile.TemporaryDirectory() as pasta:
++            resposta = Path(pasta) / "resposta-estragada.json"
++            resposta.write_text(json.dumps(doc, ensure_ascii=False))
++            leitura = eurostat_series(resposta, "sobrecarga-inquilinos", pick,
++                                      period=periodo, label_dimensions=("tenure",))
++        copia = copy.deepcopy(limpo)
++        # Só os metadados da associação vêm desta releitura. O valor e o
++        # excerto de produção ficam intactos, isolando a guarda da associação.
++        for chave in ("dataset", "coordinates", "period", "unit_label"):
++            copia["habitacao"][("EU27_2020", "2025")][1][chave] = leitura[1][chave]
++        with patch.object(B, "read_all", return_value=copia):
++            try:
++                B.build()
++            except B.Fail as e:
++                assert razao in str(e), (nome, str(e))
++                provas.append(f"B2 associação: planta recusada, {nome}: {e}")
++            else:
++                raise AssertionError(f"B2 associação: estrago não visto: {nome}")
 +    mutacoes = (
 +        ("regime de outra série", "regime de ocupação não é", lambda d: d["habitacao"][("PT", "2025")][1]["dimension_labels"].update(tenure="Owner, with mortgage or loan")),
 +        ("excerto sem regime", "falta a etiqueta", lambda d: d["habitacao"][("PT", "2025")][0].update(excerpt=d["habitacao"][("PT", "2025")][0]["excerpt"].replace("Tenure status: Tenant, rent at market price", "Tenant, rent at market price"))),
@@ -260,10 +312,36 @@ index 0000000..dcafa64
 +        print(prova)
 +    print(f"DOMINIOS_B2_TEST: PASS, {len(provas)} conferências")
 diff --git a/publisher/dominios_build.py b/publisher/dominios_build.py
-index 8fd11ad..565744e 100644
+index 8fd11ad..e732cfb 100644
 --- a/publisher/dominios_build.py
 +++ b/publisher/dominios_build.py
-@@ -732,11 +732,70 @@ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
+@@ -197,6 +197,25 @@ def join_308() -> dict[str, dict]:
+     return out
+ 
+ 
++def associacao_habitacao(principal: str, pt: dict, ue: dict) -> str:
++    """Declara o agregado só depois de comparar as observações lidas da fonte."""
++    quadro_pt, quadro_ue = pt.get("dataset"), ue.get("dataset")
++    if quadro_pt != "TESSI164" or quadro_ue != quadro_pt:
++        raise Fail(f"Associação UE: quadro divergente: PT {quadro_pt!r}, UE {quadro_ue!r}")
++    cpt, cue = pt["coordinates"], ue["coordinates"]
++    for campo, nome in (("tenure", "regime"), ("unit", "unidade"), ("time", "período")):
++        if not cpt.get(campo) or cue.get(campo) != cpt[campo]:
++            raise Fail(f"Associação UE: {nome} divergente: PT {cpt.get(campo)!r}, UE {cue.get(campo)!r}")
++    if cpt.get("geo") != "PT" or cue.get("geo") != "EU27_2020":
++        raise Fail("Associação UE: as geografias têm de ser PT e EU27_2020")
++    if {k: v for k, v in cpt.items() if k != "geo"} != {k: v for k, v in cue.items() if k != "geo"}:
++        raise Fail("Associação UE: há outras coordenadas divergentes além da geografia")
++    if pt["unit_label"] != ue["unit_label"] or pt["period"] != ue["period"]:
++        raise Fail("Associação UE: a unidade ou o período lido diverge das coordenadas")
++    return (f"Agregado da União Europeia (EU27_2020) da medida «{principal}», "
++            "no mesmo quadro, regime de ocupação, unidade e período.")
++
++
+ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
+     """(engine rows, manifest rows, the report of the controls).
+ 
+@@ -732,11 +751,86 @@ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
              site_study=SITE_STUDY, periodo_lido=ref,
              published_at=sobre["pde"]["date_iso"])
  
@@ -310,6 +388,18 @@ index 8fd11ad..565744e 100644
 +            raise Fail(f"{ficheiro}: a bandeira {info['flag']!r} precisa de uma declaração antes de publicar")
 +        if info["label"] != lido["titles"]["tessi164"]:
 +            raise Fail(f"{ficheiro}: o título do pedido não é o título do catálogo do Eurostat")
++        declaracao = None
++        principal = f"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-{periodo}"
++        if geo == "EU27_2020":
++            pt = lido["habitacao"].get(("PT", periodo))
++            entrada_pt = next((e for e in manifesto if e["site_id"] == principal), None)
++            if pt is None or entrada_pt is None:
++                raise Fail(f"Associação UE: a medida principal {principal!r} não existe neste livro")
++            declaracao = associacao_habitacao(principal, pt[1], info)
++            if (entrada_pt["document"]["edition"] != "tessi164"
++                    or entrada_pt["unit"] != PT_UNITS[info["unit_label"]]
++                    or entrada_pt["reference_date"] != periodo):
++                raise Fail("Associação UE: edição, unidade ou período diverge da linha principal")
 +        site_id = f"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-{periodo}" + ("-ue" if geo != "PT" else "")
 +        acrescenta(site_id=site_id, linha=linha, ficheiro=ficheiro,
 +                   unit=PT_UNITS[info["unit_label"]], reference_date=periodo,
@@ -322,6 +412,10 @@ index 8fd11ad..565744e 100644
 +                         "Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; "
 +                         "a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0."),
 +                   sanity=(0.0, 100.0), tier="B", site_study=SITE_STUDY, periodo_lido=periodo)
++        if declaracao:
++            # O exportador escreve note_extra antes da nota do motor, que fica
++            # inteira, com as coordenadas e a proveniência já publicadas.
++            manifesto[-1]["note_extra"] = declaracao
 +    report.append("    lido   B2: períodos anteriores do saldo, disparidade salarial e despesa líquida; habitação por regime de ocupação")
 +
      # ------------------------------------------------- as provas das linhas --
@@ -334,7 +428,7 @@ index 8fd11ad..565744e 100644
          "ine/0012656_S7A2024.json": None,
          "text/parecer-2026-02-rap26.txt": None,
          "text/decreto-lei-139-2025.txt": None,
-@@ -760,6 +819,11 @@ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
+@@ -760,6 +854,11 @@ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
              # An assembled excerpt has no sentence in the file: what is proved is
              # that every piece of it is a string the response prints.
              for pedaco in verbatim.split(" — "):
@@ -347,7 +441,7 @@ index 8fd11ad..565744e 100644
                  if pedaco and f'"{pedaco}"' not in hosted[ficheiro]:
                      raise Fail(f'{claim["id"]}: the excerpt carries {pedaco!r}, which the '
 diff --git a/publisher/dominios_readers.py b/publisher/dominios_readers.py
-index 29bf7b2..2cd9be5 100644
+index 29bf7b2..f9a076a 100644
 --- a/publisher/dominios_readers.py
 +++ b/publisher/dominios_readers.py
 @@ -124,7 +124,8 @@ def _coordinates(doc: dict) -> dict[tuple[str, ...], int]:
@@ -374,7 +468,16 @@ index 29bf7b2..2cd9be5 100644
      if "geo" in rotulos:
          partes.append(rotulos["geo"])
      excerpt = " — ".join(partes) + f" — {period}: {escrito}"
-@@ -661,6 +667,37 @@ def read_all(source: Path = SOURCE) -> dict:
+@@ -208,6 +214,8 @@ def eurostat_series(path: Path, measure: str, pick: dict, *, period: str | None
+         "flag": bandeira or "",
+         "unit_label": rotulos.get("unit", ""),
+         "dimension_labels": rotulos,
++        "dataset": doc.get("extension", {}).get("id"),
++        "coordinates": {**pick, "time": period},
+         "periods": tempos,
+     }
+     return linha, sobre
+@@ -661,6 +669,37 @@ def read_all(source: Path = SOURCE) -> dict:
              source / "eurostat" / "earn_mw_cur.json", "t5-eurostat",
              {"freq": "S", "currency": "EUR", "geo": "PT"}, period="2026-S1")[0]["value"],
      }
@@ -431,10 +534,10 @@ index 96ff45a..d62d8ac 100644
      for nome, estrago in DEFEITOS_NA_FONTE:
          with tempfile.TemporaryDirectory() as tmp:
 diff --git a/publisher/manifest.dominios.json b/publisher/manifest.dominios.json
-index 3e39b33..38f44bf 100644
+index 3e39b33..ddfe78a 100644
 --- a/publisher/manifest.dominios.json
 +++ b/publisher/manifest.dominios.json
-@@ -6351,10 +6351,128 @@
+@@ -6351,10 +6351,129 @@
     ],
     "value_mode": "rh_value",
     "published_at": "2026-09-23"
@@ -555,7 +658,8 @@ index 3e39b33..38f44bf 100644
 +   "attributed_to": [
 +    "Eurostat"
 +   ],
-+   "value_mode": "rh_value"
++   "value_mode": "rh_value",
++   "note_extra": "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», no mesmo quadro, regime de ocupação, unidade e período."
    }
   ],
   "excluded": [

@@ -1,0 +1,14 @@
+{
+  "comando": [
+    "node",
+    "tests/pais/portoes.mjs",
+    "--only",
+    "b2-contagens-das-camaras"
+  ],
+  "codigo": 0,
+  "inicio": "2026-09-23T20:01:14.395587+00:00",
+  "fim": "2026-09-23T20:01:54.907034+00:00",
+  "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+  "log": "correcao-b2-contagens-das-camaras.log",
+  "sha256_log": "1973786929035b4a3219cd9b464679459a1c49f6cb21c3ccd71adba120cf7562"
+}

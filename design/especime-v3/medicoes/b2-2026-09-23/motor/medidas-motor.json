@@ -1,6 +1,6 @@
 {
   "base": "aa35e2e72f09988a07d6706fe0a0b59feeca120d",
-  "cabeca": "ead443cd2ae83b05127e6a7774be0c0e939bc85f",
+  "cabeca": "5269763acf380792e3e7ae660dcf5b947fe4d049",
   "linhas": {
     "antes": 317,
     "depois": 323,
@@ -53,7 +53,7 @@
   "core_gate_passou": true,
   "plantas_vistas": 35,
   "plantas_total": 35,
-  "provas": 9,
+  "provas": 14,
   "problemas": 0,
   "reguas_ausentes": {
     "ganho-medio-mensal-2024": "O ficheiro INE alojado tem apenas Dados[2024]. O ano anterior não está neste ficheiro.",

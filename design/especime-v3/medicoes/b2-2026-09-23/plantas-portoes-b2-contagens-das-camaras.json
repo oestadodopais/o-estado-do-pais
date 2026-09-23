@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "b2-contagens-das-camaras",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o número da prova \"camaras_acima_do_limite\" foi renderizado",
+      "o número da prova \"camaras_dentro_do_limite\" foi renderizado",
+      "o número da prova \"camaras_sem_valor\" foi renderizado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "4710bf6c9e760ffb4c8981163a0199beade4813e220280d5d8f00f3ae18d70f7",
+        "reposto": "4710bf6c9e760ffb4c8981163a0199beade4813e220280d5d8f00f3ae18d70f7"
+      }
+    ]
+  }
+]
