@@ -9,7 +9,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
-import { contagensDasCamaras } from '../../src/lib/prova.mjs';
+import { contagensDasCamaras, periodoDasCamaras } from '../../src/lib/prova.mjs';
 import { loadClaims, parsePtNumber } from '../../src/lib/ledger.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../../src/data/municipios.mjs';
 const resultados = [];
@@ -43,6 +43,16 @@ try {
   });
   caso('indice-repetido-fecha', () => assert.throws(() => contagensDasCamaras(claims, [...MUNICIPIOS_COM_PAGINA, MUNICIPIOS_COM_PAGINA[0]]), /índice ausente ou repetido/));
   caso('valor-ilegivel-fecha', () => assert.throws(() => contagensDasCamaras(copia(id, 'texto sem marca da fonte')), /valor ilegível/));
+  caso('periodos-diferentes-fecham', () => {
+    const c = new Map(claims); c.set(id, { ...c.get(id), reference_date: '2023' });
+    assert.throws(() => contagensDasCamaras(c), /não partilham um período/);
+    assert.throws(() => periodoDasCamaras(c), /não partilham um período/);
+  });
+  caso('periodos-das-origens-diferentes-fecham', () => {
+    const c = new Map(claims); const origem = 'evora-divida-dgal-2024';
+    c.set(origem, { ...c.get(origem), reference_date: '2023' });
+    assert.throws(() => contagensDasCamaras(c), /origens não partilham um período/);
+  });
   if (process.argv.includes('--html')) {
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(),'oedp-camaras-'));
     const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html','correcoes/index.html','en/corrections/index.html','municipios/evora/index.html','en/municipalities/evora/index.html','estudos/index.html','en/studies/index.html'];
@@ -65,7 +75,10 @@ try {
         const el=r.querySelector(`[data-cartao-camaras] [data-prova="${chave}"]`);el.set_content(String(Number(el.textContent)+1));
       },new RegExp(`V2 pt: ${chave}: a contagem não coincide`));
       planta('camaras-limite-trocado','en/themes/index.html',r=>r.querySelector('[data-cartao-camaras] [data-claim]').set_content('151'),/V2 en: o limite não é o valor selado/);
-      planta('camaras-porta-trocada','index.html',r=>r.querySelector('[data-cartao-camaras] [data-prova]').setAttribute('href','/temas/'),/V2 pt: camaras_acima_do_limite: falta a porta/);
+      planta('camaras-porta-trocada','index.html',r=>r.querySelector('[data-cartao-camaras] .pais-porta-tema a').setAttribute('href','/temas/'),/V2 pt: a porta final/);
+      planta('camaras-periodo-trocado','index.html',r=>r.querySelector('[data-cartao-camaras] [data-de-campo="reference_date"]').set_content('2023'),/V2 pt: o período não vem das linhas/);
+      planta('camaras-contagem-com-porta','index.html',r=>{const n=r.querySelector('[data-cartao-camaras] [data-prova]'); n.replaceWith(`<a data-prova="${n.getAttribute('data-prova')}" href="/lugares/">${n.textContent}</a>`);},/V2 pt: camaras_acima_do_limite: a contagem deve usar a porta comum/);
+      planta('camaras-nome-como-titulo','index.html',r=>{const n=r.querySelector('[data-cartao-camaras] .cartao-medida-nome'); n.replaceWith(`<h3 class="cartao-medida-nome">${n.textContent}</h3>`);},/V2 pt: o nome do cartão deve ser um span/);
       planta('camaras-no-inicio-da-fila','index.html',r=>{
         const c=r.querySelector('[data-cartao-camaras]');const s=c.outerHTML;const pai=c.parentNode;c.remove();pai.insertAdjacentHTML('afterbegin',s);
       },/V2 pt: o cartão das câmaras não fecha a fila/);

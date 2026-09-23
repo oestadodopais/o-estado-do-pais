@@ -32,6 +32,8 @@ import { dataDaCasa } from '../lib/datas.mjs';
  * é a âncora. `scripts/gate-html.mjs` deixou de exigir a porta exactamente nesse
  * caso, e continua a exigi-la em todos os outros.
  */
+// B2: o cartão das câmaras usa semPorta nas quatro contagens, com uma
+// porta comum conferida por V2 e pelo portão de HTML.
 const { chave, item, vazio = null, lang = 'pt', semPorta = false } = Astro.props;
 
 const valor = item?.valor ?? null;
