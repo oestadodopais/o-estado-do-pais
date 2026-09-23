@@ -78,6 +78,12 @@ try {
  prova('ordem dos estudos trocada','E1',()=>html('index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('comparação europeia sem recibo','L3',()=>html('index.html',r=>r.querySelector('[data-leitura-pais] a[href="/livro-razao/taxa-de-desemprego-2025-ue"]').remove()));
  prova('sexta entrada no menu','N1',()=>html('index.html',r=>r.querySelector('#nav-principal').insertAdjacentHTML('beforeend','<a href="/agenda">Agenda</a>')));
+ /* R1, 23.09.2026: as quatro células novas ou mudadas deste bloco, cada uma com a
+    sua planta. A M4 recusa a língua do código nas mudanças declaradas (I141); a
+    T9 exige a cor do estado nos cartões com referência (I139); a E2 exige a
+    lista dos estudos numa só (I144); a L2 exige a data da notificação do INE tal
+    como a linha a publica (I147). */
+ prova('mudança declarada na língua do código','M4',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';MUDANCAS_DO_PROJETO[0].texto.pt='Sete nomes do INE saíram dos recibos e dos cartões. Nenhum valor mudou.';`);
  prova('ponto final sem ligação inseparável','N2',()=>html('index.html',r=>r.querySelector('.rotulo-ia-final').removeAttribute('class')));
  repor();
  if(verificaVozPais(raiz).length)throw Error('A lista fechada não está verde antes da planta.');
