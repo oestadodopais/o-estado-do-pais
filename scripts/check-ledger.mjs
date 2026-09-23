@@ -379,29 +379,97 @@ for (const c of allClaims()) {
 
 /**
  * ---------------------------------------------------------------------------
- * OS MARCADORES QUE VIVEM EM CAMPOS NÃO PUBLICADOS (03.09.2026, bloco F0.7)
+ * OS MARCADORES QUE VIVEM EM NOTAS LEVAM DATA E VENCEM (23.09.2026, I136)
  * ---------------------------------------------------------------------------
  * `camposPorVerificar()` lê oito campos publicados e compara-os por igualdade
- * inteira com o marcador. Duas linhas escondem um `[a verificar]` DENTRO da
- * prosa do campo `note`, que é `CAMPOS_NAO_PUBLICADOS` e não vai à página: a
- * licença dos termos do Diário da República na retribuição mínima, e o produtor
- * da estimativa do Eurostat na disparidade salarial. As duas ficam invisíveis
- * às duas peneiras ao mesmo tempo, pelo campo e pela forma.
+ * inteira com o marcador. Um `[a verificar]` DENTRO da prosa do campo `note`,
+ * que é `CAMPOS_NAO_PUBLICADOS` e não vai à página, fica invisível às duas
+ * peneiras ao mesmo tempo, pelo campo e pela forma.
  *
- * ISTO CONTA E IMPRIME, E NÃO FECHA NADA. As duas perguntas por resolver são
- * sobre a LICENÇA e sobre o PRODUTOR, e não sobre o valor: o número está lido na
- * fonte, com o excerto e a data de acesso, e a página que o rende não fica menos
- * verdadeira por a licença do diploma não ter sido procurada. Promovê-las a um
- * campo publicado mudaria o estado do selo e tiraria as duas linhas do índice
- * dos motores de busca, que é uma consequência desproporcionada à dúvida. O que
- * faltava era o lugar de direção VER que existem, e é isso que esta linha faz.
+ * A forma de 03.09.2026 (bloco F0.7) contava e imprimia esses marcadores e não
+ * fechava nada, com uma razão escrita: as duas perguntas de então (a licença do
+ * diploma da retribuição mínima e o produtor da estimativa do Eurostat na
+ * disparidade salarial) eram sobre a proveniência e não sobre o valor, e
+ * promovê-las a um campo publicado mudava o estado do selo e tirava as linhas do
+ * índice dos motores de busca. O que aconteceu a seguir é o que a leitura a frio
+ * do M5 apontou a 22.09.2026: três marcadores em duas linhas da primeira página,
+ * listados em cada construção durante vinte dias, e ninguém os fechou (I136).
+ * Um marcador que ninguém fecha não é uma dívida registada, é uma dívida
+ * esquecida.
+ *
+ * A REGRA PASSA A FECHAR A CONSTRUÇÃO. Um `[a verificar]` numa nota leva a data
+ * em que foi escrito, colada ao marcador, na forma `[a verificar] (desde
+ * dd.mm.aaaa)`. Sem data, a construção fecha; com data no futuro ou ilegível,
+ * fecha; e ao fim de sete dias fecha também, porque nesse prazo ou a dúvida se
+ * fechou na linha (a nota diz o que se leu, com o sha256 do corpo, e o marcador
+ * sai) ou subiu a campo visível no recibo, onde o selo a mostra. A 23.09.2026 há
+ * zero marcadores em notas, e o detetor prova primeiro que vê, com cinco notas
+ * de mentira: sem data, vencida, no futuro e ilegível, as quatro recusadas; e
+ * uma viva, aceite. A régua do contador é o dia UTC em que a construção corre.
  */
+const DATA_DO_MARCADOR_EM_NOTA = /\[a verificar\] \(desde (\d{2})\.(\d{2})\.(\d{4})\)/g;
+const PRAZO_DE_UM_MARCADOR_EM_NOTA_DIAS = 7;
+
+function avaliarMarcadoresDeNota(nota, hojeUtc) {
+  const quantos = nota.split(POR_VERIFICAR).length - 1;
+  const datados = [...nota.matchAll(DATA_DO_MARCADOR_EM_NOTA)];
+  const problemas = [];
+  const vivos = [];
+  if (datados.length !== quantos) {
+    problemas.push(`${quantos - datados.length} marcador(es) sem data: escreve-se «${POR_VERIFICAR} (desde dd.mm.aaaa)»`);
+  }
+  for (const m of datados) {
+    const [dia, mes, ano] = [Number(m[1]), Number(m[2]), Number(m[3])];
+    const desde = new Date(Date.UTC(ano, mes - 1, dia));
+    const legivel = desde.getUTCFullYear() === ano && desde.getUTCMonth() === mes - 1 && desde.getUTCDate() === dia;
+    const dias = Math.floor((hojeUtc - desde.getTime()) / 86400000);
+    if (!legivel) problemas.push(`data ilegível: ${m[0]}`);
+    else if (dias < 0) problemas.push(`data no futuro: ${m[0]}`);
+    else if (dias > PRAZO_DE_UM_MARCADOR_EM_NOTA_DIAS) {
+      problemas.push(
+        `vencido há ${dias - PRAZO_DE_UM_MARCADOR_EM_NOTA_DIAS} dia(s): ${m[0]}; ou se fecha na linha ou sobe a campo visível no recibo`,
+      );
+    } else vivos.push({ marcador: m[0], dias });
+  }
+  return { quantos, problemas, vivos };
+}
+
+/* O detetor prova primeiro que vê: um zero só conta depois disto. */
+{
+  const hojeDeProva = Date.UTC(2026, 8, 23);
+  const plantas = [
+    ['sem data', `fica ${POR_VERIFICAR}.`, true],
+    ['vencida', `fica ${POR_VERIFICAR} (desde 10.09.2026).`, true],
+    ['no futuro', `fica ${POR_VERIFICAR} (desde 30.09.2026).`, true],
+    ['ilegível', `fica ${POR_VERIFICAR} (desde 31.02.2026).`, true],
+    ['viva', `fica ${POR_VERIFICAR} (desde 20.09.2026).`, false],
+  ];
+  const cegas = [];
+  for (const [nome, nota, temDeRecusar] of plantas) {
+    const r = avaliarMarcadoresDeNota(nota, hojeDeProva);
+    const recusou = r.problemas.length > 0;
+    if (r.quantos !== 1 || recusou !== temDeRecusar) cegas.push(`${nome}: ${JSON.stringify(r)}`);
+    if (!temDeRecusar && !(r.vivos.length === 1 && r.vivos[0].dias === 3)) cegas.push(`${nome}: os dias não batem: ${JSON.stringify(r)}`);
+  }
+  if (cegas.length) {
+    console.error(vermelho('\n  O DETETOR DOS MARCADORES EM NOTAS NÃO VÊ · as plantas não morderam:\n'));
+    for (const c of cegas) console.error('    ' + vermelho('✗') + ' ' + c);
+    console.error('');
+    process.exit(1);
+  }
+}
+
+const agora = new Date();
+const HOJE_UTC = Date.UTC(agora.getUTCFullYear(), agora.getUTCMonth(), agora.getUTCDate());
 const MARCADORES_EM_NOTAS = [];
+const MARCADORES_RECUSADOS = [];
 for (const c of allClaims()) {
   const nota = typeof c.note === 'string' ? c.note : '';
   if (!nota) continue;
-  const quantos = nota.split(POR_VERIFICAR).length - 1;
-  if (quantos > 0) MARCADORES_EM_NOTAS.push({ id: c.id, quantos });
+  const r = avaliarMarcadoresDeNota(nota, HOJE_UTC);
+  if (r.quantos === 0) continue;
+  MARCADORES_EM_NOTAS.push({ id: c.id, quantos: r.quantos, vivos: r.vivos });
+  for (const p of r.problemas) MARCADORES_RECUSADOS.push(`${c.id}: ${p}`);
 }
 const TOTAL_EM_NOTAS = MARCADORES_EM_NOTAS.reduce((n, m) => n + m.quantos, 0);
 
@@ -413,19 +481,35 @@ console.log(
     ` · ${stats.comRotulo} com o rótulo da fonte`,
 );
 
+if (MARCADORES_RECUSADOS.length) {
+  console.error(
+    vermelho(
+      `\n  ${MARCADORES_RECUSADOS.length} marcador(es) «${POR_VERIFICAR}» em notas sem data, vencido(s) ou ilegível(eis) (I136):\n`,
+    ),
+  );
+  for (const p of MARCADORES_RECUSADOS) console.error('    ' + vermelho('✗') + ' ' + p);
+  console.error('');
+  console.error(
+    `  Um marcador numa nota leva a data («${POR_VERIFICAR} (desde dd.mm.aaaa)») e vive ` +
+      `${PRAZO_DE_UM_MARCADOR_EM_NOTA_DIAS} dias: nesse prazo ou se fecha na linha ou sobe a campo visível no recibo.`,
+  );
+  console.error('');
+  process.exit(1);
+}
+console.log(
+  '  ' +
+    verde('✓') +
+    ` ${TOTAL_EM_NOTAS} marcador(es) «${POR_VERIFICAR}» em notas não publicadas, todos datados e dentro do prazo` +
+    ` · 5 plantas apanhadas pelo detetor`,
+);
 if (TOTAL_EM_NOTAS) {
-  console.log(
-    amarelo(
-      `  ${TOTAL_EM_NOTAS} marcador(es) por resolver em notas não publicadas: ` +
-        MARCADORES_EM_NOTAS.map((m) => (m.quantos > 1 ? `${m.id} (${m.quantos})` : m.id)).join(', '),
-    ),
-  );
-  console.log(
-    cinza(
-      `    O campo "note" não vai à página, e por isso estes ${TOTAL_EM_NOTAS} não mudam o estado de ` +
-        `nenhum selo nem fecham a construção. Ficam aqui para não se perderem.`,
-    ),
-  );
+  for (const m of MARCADORES_EM_NOTAS) {
+    for (const v of m.vivos) {
+      console.log(
+        amarelo(`    ${m.id}: ${v.marcador}, há ${v.dias} dia(s); vence em ${PRAZO_DE_UM_MARCADOR_EM_NOTA_DIAS - v.dias}`),
+      );
+    }
+  }
 }
 
 if (porVerificar.length) {
