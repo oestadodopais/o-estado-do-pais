@@ -12491,6 +12491,16 @@ quem pertence.
 
 **O que fica dito.** A leitura de fora de 23.09 tinha razão no essencial (nenhuma página principal dizia o veredicto) e em dois pontos pedia o que a casa não faz (arredondar, e uma forma única de dinheiro que apagasse a da fonte); o brief responde aos dois com a razão em vez de os seguir. O §0 medido apanhou uma coisa que a leitura não tinha medido: a marca da fonte está entre o valor e a unidade em 34 dos 35 cartões, e não «muitas vezes».
 
+### 1.128 O lançamento do construtor do Codex passa ao lugar de direção
+
+**Afecta:** nenhum
+
+**A decisão** (diretor, 23.09.2026 às 17:5x UTC, na conversa, depois de o lugar de direção lhe entregar os três comandos do lançamento da peça 1 do B2). **Por palavras dele:** «couldn't you do it. the idea is for you to be able to have control of it». A §1.113 reservava ao diretor o lançamento do construtor do Codex, porque o modo automático do Claude Code lhe reserva o lançamento de um agente com aprovações automáticas; a partir de hoje é o lugar de direção que o lança, com o guião que escreve, e o diretor pode continuar a lançá-lo quando quiser. O que muda no processo: o lugar de direção cria a worktree, instala os pacotes, lança o `construir-codex.sh` com `nohup` e vigia o registo até ao `FIM`; o resto do ciclo (o pacote, as cinco plantas, a leitura a frio pelo `leitor` Claude Opus 5.5, a passagem de correção, a aterragem) já era dele. O limite da subscrição do Codex continua a ser do diretor: o `uso.py` não o lê depois de uma leitura efémera, e o lugar de direção pergunta-lho antes de um lançamento quando a última leitura for velha.
+
+**O primeiro lançamento pelo lugar de direção, e o que ele apanhou.** A peça 1 do B2 (`design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-codex-peca1.md`), na worktree `b2-peca1-2026-09-23` sobre `main` em `7f658299`, com `npm ci` feito antes. A primeira tentativa, às 17:57:36 UTC, falhou no mesmo segundo («No such file or directory»): o guião entra na worktree com `cd` e passa o mesmo caminho ao Codex em `-C`, por isso um caminho relativo era procurado dentro de si próprio; a segunda, às 17:58:00 UTC, com o caminho absoluto, arrancou (`INICIO 17:58:00 modelo=gpt-6-astra raciocínio=xhigh`, no registo `.claude/codex-b2-peca1.log`). O guião passa a recusar um caminho relativo com a razão (M29), e o `README` das leituras e o `CLAUDE.md` do projeto dizem quem lança.
+
+**O que fica dito.** As duas linhas da primeira tentativa ficam no registo, porque o `estado.py` lê os registos dos construtores e um registo que se limpa deixa de ser um registo.
+
 ### 4.1 O que fica adiado — e para que fase
 
 ~~**As citações da constituição não são conferidas por nada**~~ (18.08.2026,
