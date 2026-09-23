@@ -15,7 +15,7 @@
   "apagada do registo (H5)."
  ],
  "counts": {
-  "eventos": 16,
+  "eventos": 17,
   "eventos_sem_data_publicada": 8,
   "itens": 5,
   "itens_por_estado": {
@@ -36,6 +36,7 @@
   "iefp-desemprego-concelhos-mensal",
   "ine-contas-regionais-preliminares-2025",
   "ine-empresas-em-portugal-2025",
+  "ine-estatisticas-do-emprego-t3-2026",
   "ine-estimativas-populacao-residente",
   "ine-indice-precos-habitacao-t2-2026",
   "ine-pde-2a-notificacao-2026",
@@ -46,16 +47,16 @@
  "exporter": "ResearchHub/publisher/export_agenda.py",
  "files": {
   "agenda.json": {
-   "exported_sha256": "e74b5ffd39db821665eb7d1ab0eb57e0202675e2162fa8f720fc965d81c3044a",
+   "exported_sha256": "34ac1cc25d8e9f714073bba6cf794b1ab25970d6def5f9065680910b9b6848dc",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "agenda/agenda.json",
-   "origin_sha256": "c8c60f3838566fc5c13b8695719a292b1c534f7dd8ca562afc7419685735c3e0"
+   "origin_sha256": "57df5962329c0e32fa26849c2466b6e813d6d01c1c07af68c916142df7b6ae6d"
   },
   "calendario.json": {
-   "exported_sha256": "9d488e43d9fc96d8f4a288c00cff8f8292b77eec1f4606a36a6f33ec2fcb2407",
+   "exported_sha256": "71fa0e64e8191f11833b9a8366a23fa4ff7ae01ee15132d2a83ac0f20c30e208",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "indicators/calendar.json",
-   "origin_sha256": "136cf8969a4192d8138b9b2e57ccb7953018ece8b91c207d53e118a39ddefede"
+   "origin_sha256": "0bd48eb97b9b3ecbbe3dfaa5a1bc5627340e7f979f76bdb6b79833ff276f75f0"
   }
  },
  "historia": {

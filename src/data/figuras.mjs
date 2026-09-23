@@ -402,6 +402,21 @@ const LISTA_SOCIAL = [
       pt: ['Percentagem da população · ', { ref: '2025' }],
       en: ['Percentage of the population · ', { ref: '2025' }],
     },
+    /* A MÉDIA EUROPEIA CALA-SE NO CARTÃO DESTA MEDIDA (bloco R1, 23.09.2026,
+       I138, decisão da §1.124). A própria Comissão adverte que a sobrecarga só se
+       lê ao lado do regime de ocupação, e onde a taxa de proprietários é alta ela
+       não vê quem não conseguiu comprar: «Published naked, it says Portuguese
+       housing is fine» (`indicators/convergence.md` §3, no motor). O cartão
+       punha 6,3 ao lado de 7,7 da União e levava o leitor à conclusão errada. A
+       linha da União fica no livro-razão e no seu recibo; o que sai é a
+       comparação no cartão, até o B2 mostrar a medida por regime de ocupação. A
+       célula K14 da régua do cartão (`tests/cartao/cartao.mjs`) conhece esta
+       medida pelo nome, e uma média que volte ao cartão, ou um silêncio novo
+       noutra medida, fecha a construção até uma decisão escrita a mudar. */
+    semMediaEuropeia: {
+      decisao: '1.124',
+      razao: 'a medida por regime de ocupação chega no B2, e a média da União volta com ela',
+    },
   },
 ];
 
