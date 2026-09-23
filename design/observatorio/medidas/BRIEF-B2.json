@@ -1,0 +1,584 @@
+{
+  "brief": "design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md",
+  "guiao": "design/observatorio/medidas/BRIEF-B2.py",
+  "cabeca_lida": "4b99dea3",
+  "copias": "design/especime-v3/medicoes/b2-2026-09-23/paginas/",
+  "medidas": [
+    {
+      "nome": "sha256_temas",
+      "valor": "b9e3ee821f36e74ed6d7c068f7c19be66124ce1e09349d29f0324d0059ce7a8d",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_primeira",
+      "valor": "4d6908aeb5109d4585b9e34afcb1201c86980decb485086b9cca05a7cf17ed7c",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_europeia",
+      "valor": "0b28388316686364d773cbb3690de306a8f3b229b4024bd433ba5276c08218f4",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/uniao-europeia_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_en_temas",
+      "valor": "6d92389ec6bae9a48d00af94692b948641c790b46b7c0f3b792007c93a860c18",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/en_themes_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_mourao",
+      "valor": "e9557852d83f65a22a1cdc787069da99aa3874a1e1c3cf24361cffbaa3b6343b",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/municipios_mourao_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_dominios",
+      "valor": "1c796d0115384dc7778a7c13bdce6234bec2d49f2e3a38869a48bc2aa10f003c",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/dominios_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_areas",
+      "valor": "cc8a47bbb77295946187c29bbf1c1a1d7cf2e513fa0f8e4ac2297ec56bcbcf70",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/areas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nacionais_nos_temas",
+      "valor": 35,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · <article class=\"cartao-medida\"> em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta pelo menos um cartão na cópia da primeira página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_com_medidas",
+      "valor": 9,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · <section class=\"pais-tema\"> em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra uma secção de tema na cópia da primeira página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_da_carta",
+      "valor": 18,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · linhas «| n |» da tabela do §2 de CARTA-DOS-CONTEUDOS.md@4b99dea3",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha a primeira linha da tabela («| 1 | Economia e finanças públicas»)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_valor_de_referencia",
+      "valor": 13,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-regua=\"referencia\" em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a referência no cartão da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_cor_de_estado",
+      "valor": 13,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-regua=\"referencia\" data-estado=\"fora|dentro\" na mesma cópia",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha «data-estado=\"fora\"» numa amostra de mentira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_media_da_uniao",
+      "valor": 24,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-regua=\"ue\" em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a União no cartão da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_periodo_anterior",
+      "valor": 29,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-regua=\"anterior\" em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra o período anterior no cartão da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_regua",
+      "valor": 6,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · artigos sem class=\"cartao-medida-regua\" em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado vê a régua no cartão da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_regua_lista",
+      "valor": "saldo-das-administracoes-publicas-2025, crescimento-da-despesa-liquida-2025, indice-de-divida-limite-legal, ganho-medio-mensal-2024, disparidade-salarial-entre-sexos-2024, retribuicao-minima-mensal-garantida-continente-2026",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · os identificadores dos artigos sem régua",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o cartão do limite legal",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_definicao",
+      "valor": 20,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-cartao-definicao= em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a definição no cartão do rácio S80/S20",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_a_marca_entre_o_valor_e_a_unidade",
+      "valor": 34,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · «num</span><a class=\"src-chip\"…</a></span><span class=\"campo-valor cartao-medida-unidade» por artigo, em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha o cartão do rácio S80/S20",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_precisao_mista",
+      "valor": 5,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · artigos cujos valores selados (o valor e a régua) têm casas decimais diferentes, em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado apanha o cartão do rácio S80/S20 («4,86» com «5,2»)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_precisao_mista_lista",
+      "valor": "fluxo-de-credito-as-empresas-2025, taxa-de-desemprego-mip-2025, jovens-nem-2025, racio-s80-s20-2025, competencias-digitais-2025",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · os identificadores desses artigos",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o rácio S80/S20",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_do_euro_nos_temas",
+      "valor": 2,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · unidades distintas com «euro» nos artigos de paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o conjunto traz «euros por mês»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "precisoes_do_euro_nos_temas",
+      "valor": 3,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · casas decimais distintas dos valores em euros nesses artigos",
+      "conhecido_positivo": {
+        "o_que": "o conjunto traz 0, 1 e 2 casas (20 600; 1 576,0; 920,00)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartao_do_limite_legal_nos_temas",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-cartao-medida=\"indice-de-divida-limite-legal\" em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra o cartão na cópia da primeira página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "limite_legal",
+      "valor": "150",
+      "comando": "git show 4b99dea3:ledger/claims/indice-de-divida-limite-legal.yml · value",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "concelhos_no_ficheiro",
+      "valor": 308,
+      "comando": "git show 4b99dea3:src/data/concelhos.gerado.json · entradas",
+      "conhecido_positivo": {
+        "o_que": "a lista traz Évora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "camaras_acima_do_limite",
+      "valor": 10,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · índice de dívida de 2024 de cada concelho (git grep ^value: 4b99dea3 -- ledger/claims/*-indice-de-divida-2024.yml) acima do limite legal",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado apanha Vila Real de Santo António (419,5)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "camaras_dentro_do_limite",
+      "valor": 297,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · o mesmo, no limite ou abaixo",
+      "conhecido_positivo": {
+        "o_que": "Évora (105,5) conta como dentro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "camaras_sem_valor",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · o mesmo, sem valor numérico",
+      "conhecido_positivo": {
+        "o_que": "a lista traz Penedono («N.d.»)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "camaras_acima_do_limite_lista",
+      "valor": "vila-real-de-santo-antonio (419,5), fornos-de-algodres (348,9), vila-franca-do-campo (304,4), cartaxo (274,1), nordeste (193,2), freixo-de-espada-a-cinta (189,4), praia-da-vitoria (177,4), fundao (160,7), vila-nova-de-poiares (160,2), alfandega-da-fe (157,4)",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · os concelhos acima do limite, do maior índice ao menor",
+      "conhecido_positivo": {
+        "o_que": "a lista começa por Vila Real de Santo António",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_na_primeira_pagina",
+      "valor": 19,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · <article class=\"cartao-medida\"> em paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta os artigos dos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_referencia_na_primeira_pagina",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-regua=\"referencia\" em paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra referências nos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medidas_na_faixa_europeia",
+      "valor": 21,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · <li class=\"cartao\" … data-estado=…> em paginas/uniao-europeia_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha um cartão de mentira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fora_do_valor_de_referencia",
+      "valor": 4,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-estado=\"fora\" nesses cartões",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos um cartão fora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dentro_do_valor_de_referencia",
+      "valor": 9,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-estado=\"dentro\" nesses cartões",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos um cartão dentro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sem_valor_de_referencia",
+      "valor": 8,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · data-estado=\"sem\" nesses cartões",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos um cartão sem referência",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "posicao_na_faixa_europeia",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · «1 de …» na faixa de paginas/uniao-europeia_index.html",
+      "conhecido_positivo": {
+        "o_que": "a cópia traz a numeração",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mourao_cartoes",
+      "valor": 8,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · <article class=\"cartao-medida\"> em paginas/municipios_mourao_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta os artigos dos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mourao_cartoes_com_regua",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · class=\"cartao-medida-regua\" na mesma cópia",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a régua nos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nome_do_projeto_a_390",
+      "valor": 34,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · .wordmark font-size clamp() em site.css@4b99dea3, a 390 px",
+      "conhecido_positivo": {
+        "o_que": "o leitor de clamp() lê a regra do .wordmark",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nome_do_projeto_a_1280",
+      "valor": 68,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · o mesmo, a 1 280 px",
+      "conhecido_positivo": {
+        "o_que": "o leitor de clamp() lê a regra do .wordmark",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "titulo_a_390",
+      "valor": 30,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · h1 font-size clamp() em site.css@4b99dea3, a 390 px",
+      "conhecido_positivo": {
+        "o_que": "o leitor de clamp() lê a regra do h1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "titulo_a_1280",
+      "valor": 46,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · o mesmo, a 1 280 px",
+      "conhecido_positivo": {
+        "o_que": "o leitor de clamp() lê a regra do h1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ligacoes_no_rodape",
+      "valor": 10,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · href= dentro de <footer> em paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o rodapé liga a /dominios e a /areas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "areas_de_governo_com_pagina",
+      "valor": 9,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · ligações distintas a /areas/<slug> em paginas/areas_index.html",
+      "conhecido_positivo": {
+        "o_que": "a lista traz /areas/saude",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dominios_com_pagina",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · ligações distintas a /dominios/<slug> em paginas/dominios_index.html",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o primeiro domínio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_que_dependem_das_rotas",
+      "valor": 17,
+      "comando": "git grep -l -E \"routePath\\('dominio|…|/en/areas\" 4b99dea3 -- src scripts tests",
+      "conhecido_positivo": {
+        "o_que": "a lista traz src/lib/routes.mjs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sobrecarga_pt_2025",
+      "valor": "6,3",
+      "comando": "git show 4b99dea3:ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml · value",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sobrecarga_ue_2025",
+      "valor": "7,7",
+      "comando": "git show 4b99dea3:ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml · value",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sobrecarga_pt_2024",
+      "valor": "6,9",
+      "comando": "git show 4b99dea3:ledger/claims/sobrecarga-do-custo-da-habitacao-2024.yml · value",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sobrecarga_sem_media_europeia_declarada",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · «semMediaEuropeia» em figuras.mjs@4b99dea3",
+      "conhecido_positivo": {
+        "o_que": "a declaração existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_tessi164_pt",
+      "valor": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tessi164_rotulo_pt",
+      "valor": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · label da resposta tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o rótulo fala do regime de ocupação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tessi164_ultimo_periodo_pt",
+      "valor": "2025",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · último período da resposta tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o período é um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inquilinos_a_preco_de_mercado_pt",
+      "valor": "27,2",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=RENT_MKT, geo da resposta, time=2025, em tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inquilinos_a_renda_reduzida_ou_gratuita_pt",
+      "valor": "2,8",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=RENT_FR, geo da resposta, time=2025, em tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "proprietarios_com_credito_pt",
+      "valor": "3,0",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=OWN_L, geo da resposta, time=2025, em tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "proprietarios_sem_credito_pt",
+      "valor": "1,3",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=OWN_NL, geo da resposta, time=2025, em tessi164_PT.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_tessi164_ue",
+      "valor": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas/tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tessi164_rotulo_ue",
+      "valor": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · label da resposta tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o rótulo fala do regime de ocupação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tessi164_ultimo_periodo_ue",
+      "valor": "2025",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · último período da resposta tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o período é um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inquilinos_a_preco_de_mercado_ue",
+      "valor": "18,6",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=RENT_MKT, geo da resposta, time=2025, em tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inquilinos_a_renda_reduzida_ou_gratuita_ue",
+      "valor": "9,2",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=RENT_FR, geo da resposta, time=2025, em tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "proprietarios_com_credito_ue",
+      "valor": "5,0",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=OWN_L, geo da resposta, time=2025, em tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "proprietarios_sem_credito_ue",
+      "valor": "3,8",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · value de tenure=OWN_NL, geo da resposta, time=2025, em tessi164_EU27_2020.json",
+      "conhecido_positivo": {
+        "o_que": "o valor existe na resposta",
+        "encontrado": true
+      }
+    }
+  ]
+}
