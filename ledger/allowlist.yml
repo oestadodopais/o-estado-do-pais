@@ -40,6 +40,9 @@ contexts:
       cartão de um concelho (`data-de-serie-lida`): o estado da fonte, declarado
       em src/data/frescura.mjs com o ficheiro de onde foi lido, e conferido pelo
       `npm run check:formas` (F17) contra essa declaração, carácter a carácter.
+      E, no limite da regra 1 do Método, a data em que uma fonte deixou de ser
+      lida por decisão (o Portal BASE, 16.09.2026, a emenda dessa manhã à §1.108
+      do DECISIONS.md, executada no motor a 23.09.2026).
   - id: nome-oficial-da-medida
     why: >-
       O nome com que o INE ou a PORDATA publicam a mesma medida, no recibo de uma

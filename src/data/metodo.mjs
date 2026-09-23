@@ -197,13 +197,23 @@ export const REGRAS = [
       ],
     },
     limite: {
+      /* A FRASE DO PORTAL BASE MUDA COM A DECISÃO DE 16.09.2026 (bloco R1,
+         23.09.2026, I140). Dizia que o Portal BASE era lido com a identidade de
+         um navegador; o diretor deixou cair a fonte nesse dia (a emenda dessa
+         manhã à §1.108), e o motor executou-o a 23.09.2026: o registo das fontes
+         marca-a caída e o cliente recusa-a antes de qualquer pedido. A data vai
+         com o motivo `data-da-conferencia`, que é o estado de uma fonte. */
       pt: [
         'Nem todas as linhas têm já a proveniência completa: a que não tem leva o marcador no campo que falta, e a conta ao lado diz quantas são.',
-        ' Uma fonte, o Portal BASE, recusa os pedidos feitos em nome deste projeto: é lida com a identidade de um navegador, e nenhuma outra o é.',
+        ' Nenhuma fonte é lida com a identidade de um navegador. O Portal BASE, que recusava os pedidos feitos em nome deste projeto, deixou de ser fonte a ',
+        { nl: '16.09.2026', motivo: 'data-da-conferencia' },
+        '.',
       ],
       en: [
         'Not every row has its provenance complete yet: one that does not carries the marker in the missing field, and the count beside says how many there are.',
-        ' One source, Portal BASE, refuses requests made in this project’s name: it is read with the identity of a browser, and no other source is.',
+        ' No source is read with the identity of a browser. Portal BASE, which refused requests made in this project’s name, stopped being a source on ',
+        { nl: '16.09.2026', motivo: 'data-da-conferencia' },
+        '.',
       ],
     },
     prova: [

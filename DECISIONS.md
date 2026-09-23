@@ -12446,6 +12446,13 @@ quem pertence.
 
 **O que fica dito.** A leitura de fora custou ao diretor uma sessão à parte e ao lugar de direção uma manhã de conferência; o que rendeu foi um defeito de funcionamento numa página que existe para o leitor ir direto ao seu concelho, que duas leituras a frio e uma leitura de editor sobre capturas não apanharam porque nenhuma escreveu no campo. A lição para as leituras a frio da casa: o que é interativo prova-se a interagir, e o prompt comum das leituras ganha essa pergunta com o R1.
 
+### 1.126 O Portal BASE caído no motor e no Método (R1, mandato 10)
+
+**Afecta:** metodo
+**Texto:** metodo 5af8e4efe6a0
+
+*Entrada aberta pelo construtor do R1 (Claude Opus 5.5, 23.09.2026) com a amarra que o `check:ledger` exige; a prosa é do lugar de direção, que a completa na aterragem. Numerada §1.126 por indicação do lugar de direção: a §1.125 é de uma mudança pequena ao Sobre que aterra antes do R1, noutro ramo, e por isso este ramo salta-a.* O que mudou no texto governado: no limite da regra 1 do Método, a frase «Uma fonte, o Portal BASE, recusa os pedidos feitos em nome deste projeto: é lida com a identidade de um navegador, e nenhuma outra o é.» passa a dizer que nenhuma fonte é lida com a identidade de um navegador e que o Portal BASE, que recusava os pedidos feitos em nome deste projeto, deixou de ser fonte a 16.09.2026 (nas duas edições). O que o motor executou, no ramo `r1-2026-09-23` (commit `59c8621`): o registo das fontes marca o `portal_base` caído a 2026-09-16, com a razão, e sem identidade de navegador; `core/http.py` recusa uma fonte caída antes de haver cliente; as conferências de saúde dizem a queda sem pedido nenhum; e o cruzamento dos concelhos deixou de pedir a geografia ao Portal BASE e passou a ler a Carta dos 308 do estudo 12.
+
 ### 4.1 O que fica adiado — e para que fase
 
 ~~**As citações da constituição não são conferidas por nada**~~ (18.08.2026,

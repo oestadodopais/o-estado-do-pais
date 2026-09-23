@@ -1,0 +1,46 @@
+[
+  {
+    "nome": "base-com-navegador",
+    "ficheiro": "core/sources.py",
+    "comando": "python3 -m core.http_nome_test",
+    "codigo": 1,
+    "mordida": "lidas com a identidade de um\\s+navegador: \\['portal_base'\\]",
+    "mordeu": true,
+    "antes": "443ff9b3303272fc3b4b65a8ad1ab437e9a54905d516c56e1c0ea066a10a69dd",
+    "reposto": "443ff9b3303272fc3b4b65a8ad1ab437e9a54905d516c56e1c0ea066a10a69dd",
+    "passou": true
+  },
+  {
+    "nome": "base-sem-queda-no-registo",
+    "ficheiro": "core/sources.py",
+    "comando": "python3 -m core.http_nome_test",
+    "codigo": 1,
+    "mordida": "o Portal BASE não está caído no registo",
+    "mordeu": true,
+    "antes": "443ff9b3303272fc3b4b65a8ad1ab437e9a54905d516c56e1c0ea066a10a69dd",
+    "reposto": "443ff9b3303272fc3b4b65a8ad1ab437e9a54905d516c56e1c0ea066a10a69dd",
+    "passou": true
+  },
+  {
+    "nome": "cliente-sem-recusa",
+    "ficheiro": "core/http.py",
+    "comando": "python3 -m core.http_nome_test",
+    "codigo": 1,
+    "mordida": "uma fonte marcada como caída não foi recusada antes do pedido",
+    "mordeu": true,
+    "antes": "758d91ccfa3d9a698f3655c0b21d5e698904bc6acb5482a651b8d7fce3891272",
+    "reposto": "758d91ccfa3d9a698f3655c0b21d5e698904bc6acb5482a651b8d7fce3891272",
+    "passou": true
+  },
+  {
+    "nome": "saude-do-nucleo-com-navegador",
+    "ficheiro": "core/sources.py",
+    "comando": "python3 -c import sys\nfrom core import health_check as hc\nr=hc.h.run(only=['portal_base: a fonte caiu a 16.09.2026, nenhum pedido'])[0]\nprint(('PASS' if r.ok else 'FAIL'), r.name, '|', r.detail)\nsys.exit(0 if r.ok else 1)",
+    "codigo": 1,
+    "mordida": "FAIL .*voltou a declarar browser_ua",
+    "mordeu": true,
+    "antes": "443ff9b3303272fc3b4b65a8ad1ab437e9a54905d516c56e1c0ea066a10a69dd",
+    "reposto": "443ff9b3303272fc3b4b65a8ad1ab437e9a54905d516c56e1c0ea066a10a69dd",
+    "passou": true
+  }
+]

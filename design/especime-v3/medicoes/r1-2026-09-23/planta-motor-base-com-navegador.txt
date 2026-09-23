@@ -1,0 +1,15 @@
+$ python3 -m core.http_nome_test  (em core/sources.py, estragado)
+código 1
+
+
+    as 5 portas públicas do cliente              todas entregam «OEstadoDoPais/corredor»
+    um User-Agent de quem chama, sem excepção    as 5 portas recusam com NomeDaCasaForcado
+    a excepção do registo das fontes             sem razão escrita não abre; com razão, passa
+    um salto para outro anfitrião                os DOIS portões tomados, a cadeia no índice
+    uma falha depois de um salto                 atribuída ao anfitrião do salto, não ao de partida
+    um corpo a um byte de cada vez               PrazoEsgotado em 1.00 s, com o prazo a 1 s
+    o portão tomado por outro processo           PortaoOcupado em 0.43 s (o portão de anfitriao.teste ...)
+    uma fonte com caida_em no registo            FonteCaida antes do pedido; 0 pedidos no servidor, 1 sem a marca
+
+HTTP_NOME: FAIL — 1 problema(s)
+  x o registo das fontes tem fonte(s) lidas com a identidade de um navegador: ['portal_base']; o Método diz que nenhuma o é

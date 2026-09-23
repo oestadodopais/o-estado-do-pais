@@ -1,0 +1,8 @@
+$ python3 -c import sys
+from core import health_check as hc
+r=hc.h.run(only=['portal_base: a fonte caiu a 16.09.2026, nenhum pedido'])[0]
+print(('PASS' if r.ok else 'FAIL'), r.name, '|', r.detail)
+sys.exit(0 if r.ok else 1)  (em core/sources.py, estragado)
+código 1
+
+FAIL portal_base: a fonte caiu a 16.09.2026, nenhum pedido | o registo voltou a declarar browser_ua para o Portal BASE
