@@ -1,6 +1,6 @@
 {
   "base": "aa35e2e72f09988a07d6706fe0a0b59feeca120d",
-  "cabeca": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+  "cabeca": "0f081711750492991306ff87d056ab4f52dae306",
   "linhas": {
     "antes": 317,
     "depois": 323,
@@ -58,5 +58,72 @@
   "reguas_ausentes": {
     "ganho-medio-mensal-2024": "O ficheiro INE alojado tem apenas Dados[2024]. O ano anterior não está neste ficheiro.",
     "retribuicao-minima-mensal-garantida-continente-2026": "O diploma alojado cita no preâmbulo um compromisso para o ano anterior. Não aloja a norma que fixou esse valor; o compromisso não prova aqui o valor legal aplicado."
+  },
+  "passagem_2": {
+    "base": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+    "commits": [
+      {
+        "commit": "8a084b8c29935ce61d3bcae0dcf6bfea7738e8eb",
+        "assunto": "B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, e o leitor do estudo 13 a recusar a camada de texto de um gráfico",
+        "pre_commit_codigo": 0,
+        "core_gate_passou": true,
+        "inicio": "2026-09-23T21:35:12Z",
+        "fim": "2026-09-23T21:38:12Z"
+      },
+      {
+        "commit": "0f081711750492991306ff87d056ab4f52dae306",
+        "assunto": "B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa",
+        "pre_commit_codigo": 0,
+        "core_gate_passou": true,
+        "inicio": "2026-09-23T21:38:32Z",
+        "fim": "2026-09-23T21:41:32Z"
+      }
+    ],
+    "plantas_vistas": 35,
+    "plantas_total": 35,
+    "provas": 18,
+    "problemas": 0,
+    "plantas_do_cfp": [
+      "verde     B2 CFP 2024: planta recusada, só rótulos do gráfico: CFP 2024: a nota 9 da página 9 não contém a frase que associa o valor ao crescimento da despesa líquida apurado pelo CFP; um índice em rótulos de gráfico não é prova",
+      "verde     B2 CFP 2024: planta recusada, a leitura antiga pelo índice do gráfico: parecer-2026-02-rap26.txt: a janela da página 10, linhas 1 a 27, abre na legenda de um gráfico ('Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 '); a camada de texto de um gráfico é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova"
+    ],
+    "pedidos_das_perguntas": [
+      {
+        "linha": "desemprego-de-longa-duracao-2025",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+        "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+        "file": "tesem130.json",
+        "timestamp_utc": "2026-09-23T21:34:16Z",
+        "http": "200",
+        "bytes": 5837,
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b"
+      },
+      {
+        "linha": "jovens-nem-2025",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+        "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+        "file": "tipslm90.json",
+        "timestamp_utc": "2026-09-23T21:34:16Z",
+        "http": "200",
+        "bytes": 5642,
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef"
+      },
+      {
+        "linha": "sobrecarga-do-custo-da-habitacao-2025",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+        "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+        "file": "tespm140.json",
+        "timestamp_utc": "2026-09-23T21:34:17Z",
+        "http": "200",
+        "bytes": 4770,
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42"
+      }
+    ]
   }
 }

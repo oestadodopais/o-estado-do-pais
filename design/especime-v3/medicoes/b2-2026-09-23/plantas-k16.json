@@ -1,0 +1,49 @@
+[
+  {
+    "grupo": "k16",
+    "nome": "k16-limpa-antes",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "grupo": "k16",
+    "nome": "k16-origem-selada-tirada",
+    "ficheiro": "src/data/figuras.mjs",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordida": "K16 · desemprego-de-longa-duracao-2025: .*que a pergunta não declara como origem",
+    "passou": true,
+    "antes": "c8b415c1f4eae4062759279297a06a2a2733947c3727d34dbf333701cfccf08a",
+    "reposto": "c8b415c1f4eae4062759279297a06a2a2733947c3727d34dbf333701cfccf08a"
+  },
+  {
+    "grupo": "k16",
+    "nome": "k16-pedaco-sem-apoio",
+    "ficheiro": "tests/cartao/perguntas-provadas.json",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordida": "K16 · risco-de-pobreza-ou-exclusao-2025: o pedaço 5 .*que não está no campo «excerto» da origem «glossario-arope»",
+    "passou": true,
+    "antes": "9becc0732a38acdcfbb01576aaca47f5bc87efec06d00f4f5e77949a49097021",
+    "reposto": "9becc0732a38acdcfbb01576aaca47f5bc87efec06d00f4f5e77949a49097021"
+  },
+  {
+    "grupo": "k16",
+    "nome": "k16-selo-sem-sha256",
+    "ficheiro": "src/data/figuras.mjs",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordida": "K16 · origem «eurostat-tesem130-denominador»: o selo não diz o sha256",
+    "passou": true,
+    "antes": "c8b415c1f4eae4062759279297a06a2a2733947c3727d34dbf333701cfccf08a",
+    "reposto": "c8b415c1f4eae4062759279297a06a2a2733947c3727d34dbf333701cfccf08a"
+  },
+  {
+    "grupo": "k16",
+    "nome": "k16-limpa-depois",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 0,
+    "passou": true
+  }
+]

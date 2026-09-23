@@ -13,8 +13,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/temas/index.html",
-        "antes": "d6a7d4062bb61d7cf0f07418da061af5484c4780b3a5b41d9c1bc4d00f01f3b1",
-        "reposto": "d6a7d4062bb61d7cf0f07418da061af5484c4780b3a5b41d9c1bc4d00f01f3b1"
+        "antes": "a4a680a920c039931972f76378a7263f4eabe4aedb9f78f66cecd45e2b81709e",
+        "reposto": "a4a680a920c039931972f76378a7263f4eabe4aedb9f78f66cecd45e2b81709e"
       },
       {
         "ficheiro": "dist/municipios/mourao/index.html",
@@ -23,8 +23,8 @@
       },
       {
         "ficheiro": "dist/en/themes/index.html",
-        "antes": "945bd360ced30548eab26bc6aea8ac329396310ac737d5dc92e1d5d7c4f8960a",
-        "reposto": "945bd360ced30548eab26bc6aea8ac329396310ac737d5dc92e1d5d7c4f8960a"
+        "antes": "42ed142e6ee2c20e9a133db77458bdc93eeb678e374f9f0a5b077c2b4dde2585",
+        "reposto": "42ed142e6ee2c20e9a133db77458bdc93eeb678e374f9f0a5b077c2b4dde2585"
       }
     ]
   }

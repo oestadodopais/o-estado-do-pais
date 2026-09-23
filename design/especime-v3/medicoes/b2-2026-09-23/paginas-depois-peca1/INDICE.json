@@ -1,56 +1,51 @@
 {
   "estado": "depois",
   "aceitacao": {
-    "passou": false,
-    "falhas": [
-      "depois-europeia-pt-768.png: wordmark 26.112 px, H1 26 px",
-      "depois-europeia-pt-1024.png: wordmark 34 px, H1 32.768 px",
-      "depois-europeia-en-768.png: wordmark 26.112 px, H1 26 px",
-      "depois-europeia-en-1024.png: wordmark 34 px, H1 32.768 px"
-    ]
+    "passou": true,
+    "falhas": []
   },
-  "cabeca_da_arvore": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
-  "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
-  "dist_construido_em": "2026-09-23T19:24:45.867Z",
-  "inicio": "2026-09-23T19:32:59.824Z",
-  "fim": "2026-09-23T19:33:27.383Z",
-  "segundos": 27.559,
+  "cabeca_da_arvore": "7110ca608ef6addba6771a50b5c47685e4e18026",
+  "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
+  "dist_construido_em": "2026-09-23T22:21:11.069Z",
+  "inicio": "2026-09-23T22:32:54.110Z",
+  "fim": "2026-09-23T22:33:20.433Z",
+  "segundos": 26.323,
   "copias": {
     "index.html": {
       "rota": "/",
       "familia": "pais",
       "lingua": "pt",
-      "sha256": "967d3e2d2485cc7fd0bc0cca15f339b5bf8f78970254ee84ad704afcc222c1ff"
+      "sha256": "a370e8ae727ad04f0562edebc75d38f4c40e36232034613894a1436116621743"
     },
     "en_index.html": {
       "rota": "/en/",
       "familia": "pais",
       "lingua": "en",
-      "sha256": "6b6aa8d73c101e0661a432930fe396a4ef2add31c4e582d8af41422504ddd48a"
+      "sha256": "c8fab2c6ffeeb5a621f7fc60c82c2767dc06277a160e1ac8bab0091d0b2e20d9"
     },
     "temas_index.html": {
       "rota": "/temas/",
       "familia": "temas",
       "lingua": "pt",
-      "sha256": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256"
+      "sha256": "a4a680a920c039931972f76378a7263f4eabe4aedb9f78f66cecd45e2b81709e"
     },
     "en_themes_index.html": {
       "rota": "/en/themes/",
       "familia": "temas",
       "lingua": "en",
-      "sha256": "464a92f601c912a704ac1390999c9eb0b1f900a52ea8fdce2737412e80040e91"
+      "sha256": "42ed142e6ee2c20e9a133db77458bdc93eeb678e374f9f0a5b077c2b4dde2585"
     },
     "uniao-europeia_index.html": {
       "rota": "/uniao-europeia/",
       "familia": "europeia",
       "lingua": "pt",
-      "sha256": "8b7531b04ab6508af506ba8dd5595098af1cb14b0390479f271d6e34a13aeed1"
+      "sha256": "f451aa6609af8461aa40d7dd49b215ea00f09bc624ddfca27df15535aa02e22b"
     },
     "en_european-union_index.html": {
       "rota": "/en/european-union/",
       "familia": "europeia",
       "lingua": "en",
-      "sha256": "fa273c0b6129275c203d3ee740c4a5ba3e3ee29bd4854e0d9e35bec346e8cb5c"
+      "sha256": "5300c196b8679918893b282080b64e6624024cd262e6941883ebd418e7050726"
     },
     "municipios_mourao_index.html": {
       "rota": "/municipios/mourao/",
@@ -65,7 +60,7 @@
       "sha256": "00b7674a41b1835d7f680220f32a2834c6555e48304466957235ca97fbdc5b00"
     },
     "site.css": {
-      "origem": "src/styles/site.css@2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+      "origem": "src/styles/site.css@7110ca608ef6addba6771a50b5c47685e4e18026",
       "sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
     }
   }

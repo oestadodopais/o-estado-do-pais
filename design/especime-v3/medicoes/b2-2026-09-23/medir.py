@@ -173,7 +173,19 @@ def conta_pagina(s):
         padrao = r'\bfora d[oa]s? valor(?:es)? de referência|\boutside (?:the )?reference values?' if estado == 'fora' else r'\bdentro d[oa]s? valor(?:es)? de referência|\bwithin (?:the )?reference values?'
         if not re.search(padrao, frase, re.I):
             faixa_sem_palavra.append({'id': n.attrs.get('data-cartao'), 'estado': estado, 'texto': frase})
+    # O cartão das câmaras depois da segunda passagem de correção: o período lido
+    # das linhas (achado 13), o elemento do nome (achado 17), as portas (achado 15)
+    # e as dicas das contagens (achado 14).
+    camaras_cartao = raiz.primeiro(lambda n: 'data-cartao-camaras' in n.attrs)
+    camaras_periodo = camaras_cartao.primeiro(lambda n: n.tem('cartao-medida-periodo')) if camaras_cartao else None
+    camaras_nome = camaras_cartao.primeiro(lambda n: n.tem('cartao-medida-nome')) if camaras_cartao else None
+    camaras_ligacoes = camaras_cartao.todos(lambda n: n.tag == 'a' and 'href' in n.attrs) if camaras_cartao else []
     return {
+        'camaras_periodo': camaras_periodo.texto() if camaras_periodo else None,
+        'camaras_nome_elemento': camaras_nome.tag if camaras_nome else None,
+        'camaras_ligacoes': [a.attrs['href'] for a in camaras_ligacoes],
+        'camaras_portas_para_os_lugares': sum(a.attrs['href'].rstrip('/').endswith(('/lugares', '/places')) for a in camaras_ligacoes),
+        'camaras_dicas': {n.attrs['data-prova']: n.attrs.get('title') for n in (camaras_cartao.todos(lambda n: 'data-prova' in n.attrs) if camaras_cartao else [])},
         'cartoes': len(artigos), 'temas_com_medidas': s.count('<section class="pais-tema"'),
         'cartoes_com_valor_de_referencia': len(re.findall(r'data-regua="referencia"', s)),
         'cartoes_com_cor_de_estado': len(re.findall(r'data-regua="referencia" data-estado="(?:fora|dentro)"', s)),
@@ -305,7 +317,10 @@ def camaras(ref, livro):
         valor = livro.get(c['linhas']['indice'], {}).get('value')
         n = numero(valor)
         grupos['sem_valor' if n is None else 'acima' if n > teto else 'dentro'].append({'concelho': c['slug'], 'linha': c['linhas']['indice'], 'valor': valor})
-    return {'limite_legal': teto, 'concelhos': len(concelhos), **{f'camaras_{k}_do_limite' if k != 'sem_valor' else 'camaras_sem_valor': len(v) for k, v in grupos.items()}, 'listas': grupos}
+    # Achado 14: a dica diz «calculado» porque cada índice é uma linha calculada,
+    # e isso lê-se da linha (uma derivação escrita) e não da dica.
+    calculados = sum(bool(re.search(r'^derivation: (?!null$).+', livro.get(c['linhas']['indice'], {}).get('texto', ''), re.M)) for c in concelhos)
+    return {'limite_legal': teto, 'concelhos': len(concelhos), 'indices_calculados': calculados, **{f'camaras_{k}_do_limite' if k != 'sem_valor' else 'camaras_sem_valor': len(v) for k, v in grupos.items()}, 'listas': grupos}
 
 
 def portao(nome, cabeca):
@@ -528,6 +543,20 @@ if M['hierarquia']:
     vistos = [(r['familia'], r['lingua'], r['largura']) for r in h['limpas']]
     if len(vistos) != len(esperado) or set(vistos) != esperado or any(r['falhas'] for r in h['limpas'] + h['repostas']):
         FALHAS.append('hierarquia: cobertura incompleta ou medida limpa com falhas')
+    M['hierarquia_resumo'] = {
+        'cabeca': h['cabeca'], 'cabecas_medidas': len(h['limpas']), 'familias': len({r['familia'] for r in h['limpas']}),
+        'mordidas': sum(len(p['casos']) for p in h['plantas']), 'plantas_passaram': all(p['passou'] for p in h['plantas']),
+    }
+    if M['depois'] and h['cabeca'] != M['depois']['cabeca']:
+        FALHAS.append('hierarquia: medida noutra construção')
+# A segunda passagem de correção: a K16 e os selos (achado 8), e a prova do CFP
+# (achado 6). As duas têm de ser da construção medida, e verdes.
+M['perguntas'] = medicao_guardada('perguntas.json', obrigatoria=True)
+if M['perguntas'] and (M['perguntas']['falhas_total'] or M['depois'] and M['perguntas']['dist_construido_de'] != M['depois']['cabeca']):
+    FALHAS.append('perguntas.json: com falhas, ou de outra construção')
+M['fonte_cfp'] = medicao_guardada('correcao-2/fonte-cfp.json', obrigatoria=True)
+if M['fonte_cfp'] and not all(x['passou'] and x['codigo'] == 1 for x in M['fonte_cfp']['plantas']):
+    FALHAS.append('fonte-cfp.json: uma planta do CFP não mordeu')
 M['plantas_desbloqueadas'] = medicao_guardada('plantas-bloqueadas.json', obrigatoria=True)
 if not all(x.get('executada') and x.get('mordida_provada') for x in M['plantas_desbloqueadas']['casos']):
     FALHAS.append('restam plantas bloqueadas sem execução e mordida')

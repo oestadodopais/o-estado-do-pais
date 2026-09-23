@@ -1,0 +1,48 @@
+{
+  "base_sitio": "8eb528f9604914c84417b2be856ae482e2d06a12",
+  "cabeca_sitio": "b84f1f9225a183a6e25c7a0f9fe1a7bfd695be82",
+  "cabeca_motor": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+  "commits_sitio": [
+    "c09feab8 B2: reexportar a associação provada do agregado europeu",
+    "0ae843f1 B2: aplicar ao título europeu a regra dos títulos interiores",
+    "f71f4f36 B2: fechar as provas da correção e a reprodução do relatório",
+    "b84f1f92 B2: guardar a prova do motor e as plantas que estavam bloqueadas"
+  ],
+  "campos_inalterados": [
+    "value",
+    "unit",
+    "reference_date",
+    "source_url",
+    "document.title",
+    "excerpt",
+    "todos os campos além da nota"
+  ],
+  "nota_anterior_preservada": true,
+  "declaracao": "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», no mesmo quadro, regime de ocupação, unidade e período. · ",
+  "ficheiros_ledger": [
+    "ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+    "ledger/cruzamentos/dominios.json"
+  ],
+  "plantas_associacao": 4,
+  "mordidas_associacao": [
+    "outro quadro: Associação UE: quadro divergente: PT 'TESSI164', UE 'TESSI165'",
+    "outro regime: Associação UE: regime divergente: PT 'RENT_MKT', UE 'OWN_L'",
+    "outra unidade: Associação UE: unidade divergente: PT 'PC', UE 'PC_POP'",
+    "outro período: Associação UE: período divergente: PT '2025', UE '2024'"
+  ],
+  "controlo_positivo": true,
+  "ledger_codigo": 0,
+  "capturas_refeitas": [
+    "depois-europeia-pt-390.png",
+    "depois-europeia-pt-768.png",
+    "depois-europeia-pt-1024.png",
+    "depois-europeia-pt-1280.png",
+    "depois-europeia-pt-1600.png",
+    "depois-europeia-en-390.png",
+    "depois-europeia-en-768.png",
+    "depois-europeia-en-1024.png",
+    "depois-europeia-en-1280.png",
+    "depois-europeia-en-1600.png"
+  ],
+  "capturas_refeitas_total": 10
+}
