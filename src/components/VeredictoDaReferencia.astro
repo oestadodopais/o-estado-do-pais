@@ -1,0 +1,27 @@
+---
+import { comparacaoComOLimiar } from '../data/figuras.mjs';
+import { estadoDaMedida } from '../lib/estado.mjs';
+
+/* A palavra e a cor saem da mesma comparação. A direção continua a ser
+   calculada à parte: acima de um chão pode ser dentro da referência. */
+const { linha, limiar, s } = Astro.props;
+const estado = estadoDaMedida(linha, limiar);
+const comparacao = comparacaoComOLimiar(linha, limiar);
+const banda = Boolean(limiar?.inferior && limiar?.superior);
+const pintado = estado === 'fora' || estado === 'dentro';
+const palavra = pintado ? s.estado[`${estado}${banda ? 'Banda' : ''}`] : null;
+const entre = banda && comparacao === null && estado === 'dentro';
+const ponta = banda ? limiar[comparacao === 'abaixo' ? 'inferior' : 'superior'] : limiar;
+const direcao = entre ? s.estado.direcao.entre : s.estado.direcao[comparacao];
+const simbolo = limiar?.simbolo?.trim() ?? '%';
+// O sinal positivo é facultativo em prosa; o negativo pertence ao valor.
+const sinal = (v) => v?.sinal === '+' ? '' : v?.sinal ?? '';
+---
+{palavra && direcao && <>
+  <span class={`sq sq-${estado}`} aria-hidden="true" />
+  <span class={`veredicto-referencia est-${estado}`} data-veredicto-referencia={estado}>
+    <span data-voz>{palavra}</span>{' ('}{direcao}{' '}
+    {entre ? <>{sinal(limiar.inferior)}<span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>{' '}{s.estado.direcao.e}{' '}{sinal(limiar.superior)}<span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span></> : <>{sinal(ponta)}<span data-nonledger="limiar-do-quadro">{ponta.nl}</span></>}
+    {' '}{simbolo}{')'}
+  </span>
+</>}

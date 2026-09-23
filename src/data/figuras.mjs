@@ -1143,7 +1143,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       { nl: '18', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '24', motivo: 'escala-de-instrumento' },
-      ' anos completou no máximo o ensino básico e não está em estudos nem em formação?',
+      ' anos concluiu no máximo o ensino básico e não está em estudos nem em formação?',
     ],
     en: [
       'What share of people aged ',
@@ -1179,7 +1179,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       ' % do rendimento disponível, também líquido de subsídios à habitação?',
     ],
     en: [
-      'What share of tenants at market rent live in households where total housing costs, net of housing allowances, take more than ',
+      'What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
       ' % of disposable income, also net of housing allowances?',
     ],
@@ -1197,7 +1197,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       ' % do rendimento disponível, também líquido de subsídios à habitação?',
     ],
     en: [
-      'What share of people, across all tenure statuses, live in households where total housing costs, net of housing allowances, take more than ',
+      'What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
       ' % of disposable income, also net of housing allowances?',
     ],

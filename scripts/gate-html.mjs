@@ -142,6 +142,7 @@ import {
 } from '../src/data/politica-ia.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
+import { seloDoValorDoCartao } from './selo-do-cartao.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../src/lib/prova.mjs';
 import {
   carregaFormas,
@@ -3189,6 +3190,14 @@ function auditaSelo(el, id, lang, err) {
      do elemento que embrulha o número — a frase, o mosaico, a célula. Procurar
      mais acima deixava passar um selo na secção seguinte. */
   const pai = el.parentNode;
+  // B2: apenas o invólucro valor + unidade da mesma linha, com selo único
+  // depois do período. A função tem plantas de afastamento, troca e duplicação.
+  if (pai?.classList?.contains('cartao-medida-quantidade')) {
+    if (seloDoValorDoCartao(el, id, alvo)) return;
+    err(`o valor da afirmação "${id}" aparece sem selo para a sua própria linha na forma do cartão: ` +
+      'exige valor e unidade juntos, período e uma marca da mesma linha, por esta ordem.');
+    return;
+  }
   if (pai && temChipPara(pai, alvos)) return;
   /* B1, peça 3: o cartão existente tem uma fonte e uma régua. A régua só
      pode usar o selo do seu próprio cartão, e só para as linhas que o recibo

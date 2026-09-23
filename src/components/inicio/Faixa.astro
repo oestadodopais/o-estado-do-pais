@@ -96,6 +96,9 @@
  * das mesmas linhas, e não uma segunda conta.
  */
 import Claim from '../Claim.astro';
+import VeredictoDaReferencia from '../VeredictoDaReferencia.astro';
+import { REFERENCIAS_DAS_MEDIDAS } from '../../data/referencias-das-medidas.mjs';
+import { getClaim } from '../../lib/ledger.mjs';
 import Frase from '../Frase.astro';
 import { palavraDoEstado } from '../../lib/estado.mjs';
 
@@ -209,6 +212,7 @@ const palavraDoCartao = (c) =>
     {
       cartoes.map((c) => {
         const palavra = palavraDoCartao(c);
+        const referencia = REFERENCIAS_DAS_MEDIDAS.get(c.id);
         const pintado = c.estado === 'fora' || c.estado === 'dentro';
         return (
           <li
@@ -250,8 +254,10 @@ const palavraDoCartao = (c) =>
                 chave da prova que o portão reconta. */}
             {palavra ? (
               <div class="cartao-topo">
-                {c.estado !== 'sem' && <span class={`sq sq-${pintado ? c.estado : 'sem'}`} aria-hidden="true" />}
-                <span class:list={['cartao-palavra', pintado && `est-${c.estado}`]}>{palavra}</span>
+                {referencia ? <span class="cartao-palavra cartao-veredicto"><VeredictoDaReferencia linha={getClaim(c.id)} limiar={referencia.limiar} s={s} /></span> : <>
+                  {c.estado !== 'sem' && <span class={`sq sq-${pintado ? c.estado : 'sem'}`} aria-hidden="true" />}
+                  <span class:list={['cartao-palavra', pintado && `est-${c.estado}`]}>{palavra}</span>
+                </>}
                 {total !== null && (
                   <span class="cartao-posicao">
                     <span data-nonledger="numeracao">{c.posicao}</span>
