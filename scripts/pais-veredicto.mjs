@@ -25,6 +25,9 @@ export function verificaVeredictoDoPais(home, indice, lang, linha = lerLinha) {
   const erros = [];
   const falha = mensagem => erros.push(`V1 ${lang}: ${mensagem}`);
   const medidas = FIGURAS_PDM.map(f => ({ ...f, estado: estadoProprio(f, linha(f.claim)) }));
+  const periodos = new Set(medidas.map(f => linha(f.claim).reference_date));
+  if (periodos.size !== 1 || ![...periodos][0]) falha('as linhas não partilham um período.');
+  const ano = [...periodos][0];
   const fora = medidas.filter(f => f.estado === 'fora');
   const contagens = {
     painel_fora_do_limiar: fora.length,
@@ -73,9 +76,9 @@ export function verificaVeredictoDoPais(home, indice, lang, linha = lerLinha) {
   const b = contagens.painel_com_limiar;
   const c = contagens.painel_dentro_do_limiar;
   const esperada = (lang === 'pt'
-    ? `Portugal está fora de ${a} dos ${b} valores de referência da Comissão Europeia e dentro de ${c}`
-    : `Portugal is outside ${a} of the ${b} reference values of the European Commission and within ${c}`)
-    + (lista ? `: ${lista}` : '') + '.';
+    ? `Em ${ano}, Portugal ficou fora de ${a} dos ${b} valores de referência da Comissão Europeia e dentro de ${c}`
+    : `In ${ano}, Portugal was outside ${a} of the European Commission's ${b} reference values and within ${c}`)
+    + (lista ? `${lang === 'pt' ? '. Fora: ' : '. Outside: '}${lista}` : '') + '.';
   if (normal(bloco.textContent) !== esperada)
     falha('a frase construída difere das contagens e dos nomes recontados.');
   return erros;

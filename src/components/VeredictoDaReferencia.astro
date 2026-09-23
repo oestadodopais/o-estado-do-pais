@@ -4,12 +4,12 @@ import { estadoDaMedida } from '../lib/estado.mjs';
 
 /* A palavra e a cor saem da mesma comparação. A direção continua a ser
    calculada à parte: acima de um chão pode ser dentro da referência. */
-const { linha, limiar, s } = Astro.props;
+const { linha, limiar, s, dono = 'comissao' } = Astro.props;
 const estado = estadoDaMedida(linha, limiar);
 const comparacao = comparacaoComOLimiar(linha, limiar);
 const banda = Boolean(limiar?.inferior && limiar?.superior);
 const pintado = estado === 'fora' || estado === 'dentro';
-const palavra = pintado ? s.estado[`${estado}${banda ? 'Banda' : ''}`] : null;
+const palavra = pintado ? s.estado[`${estado}${banda ? 'Banda' : ''}`] + (s.estado.dono[dono] ?? '') : null;
 const entre = banda && comparacao === null && estado === 'dentro';
 const ponta = banda ? limiar[comparacao === 'abaixo' ? 'inferior' : 'superior'] : limiar;
 const direcao = entre ? s.estado.direcao.entre : s.estado.direcao[comparacao];

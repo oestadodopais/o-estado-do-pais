@@ -75,8 +75,17 @@ try {
   }, /V1 pt: divida-publica-2025: a porta não abre exatamente o cartão/);
   planta('frase-trocada', 'index.html', r => {
     const p = r.querySelector('[data-veredicto-pais]');
-    p.set_content(p.innerHTML.replace('está fora', 'está dentro'));
+    p.set_content(p.innerHTML.replace('ficou fora', 'ficou dentro'));
   }, /V1 pt: a frase construída difere/);
+  for (const [f, lang] of [['index.html', 'pt'], ['en/index.html', 'en']]) {
+    planta(`veredicto-sem-ano-${lang}`, f, r => {
+      r.querySelector('[data-veredicto-pais] [data-de-campo="reference_date"]').remove();
+    }, new RegExp(`V1 ${lang}: a frase construída difere`));
+    planta(`veredicto-lista-colada-${lang}`, f, r => {
+      const p = r.querySelector('[data-veredicto-pais]');
+      p.set_content(p.innerHTML.replace(lang === 'pt' ? '. Fora: ' : '. Outside: ', ': '));
+    }, new RegExp(`V1 ${lang}: a frase construída difere`));
+  }
   planta('veredicto-depois-da-leitura', 'index.html', r => {
     const p = r.querySelector('[data-veredicto-pais]');
     const copia = p.outerHTML;

@@ -22,6 +22,7 @@ export function veredictoEsperado(id, lang, linha = linhas.get(id), referencia =
   const palavra = ingles
     ? `${estado === 'fora' ? 'outside' : 'within'} the reference value${banda ? 's' : ''}`
     : `${estado === 'fora' ? 'fora' : 'dentro'} ${banda ? 'dos valores' : 'do valor'} de referência`;
+  const dono = { pacto: ingles ? ' of the Pact' : ' do Pacto', conselho: ingles ? ' of the Council of the EU' : ' do Conselho da UE' }[referencia?.limiarFixadoPor] ?? '';
   const simbolo = r.simbolo?.trim() ?? '%';
   let direcao;
   if (banda && estado === 'dentro') {
@@ -33,7 +34,7 @@ export function veredictoEsperado(id, lang, linha = linhas.get(id), referencia =
       ? (ingles ? 'above' : 'acima de') : (ingles ? 'equal to' : 'igual a');
     direcao = `${relacao} ${escrito(ponta)}`;
   }
-  return { estado, texto: `${palavra} (${direcao} ${simbolo})` };
+  return { estado, texto: `${palavra}${dono} (${direcao} ${simbolo})` };
 }
 
 export function auditarVeredicto(cartao, id, lang, linha, referencia) {
