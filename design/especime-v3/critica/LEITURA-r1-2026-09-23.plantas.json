@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-23T12:56:44+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/89310385-4199-4fd7-9e89-79d45e2fe588/scratchpad/leituras/pacote-r1",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "o excerto da origem nova do Eurostat trocado (GDP para GNP), que deixa de ser o rótulo da resposta guardada",
+   "sha256_antes": "c1d0ed2b3c8de632858c100da1d28b79632105c9c9c033f0b857ef90e2395515",
+   "sha256_depois": "dea856e7db8d0b9cda2b4190a1779054d5cd12d174243d04d64257c8ea81f690",
+   "contexto_antes": "0',\n    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP',\n    lido: '2026-09-23',\n    excerto: 'Non-financial corporations debt, consolidated - % of GDP',\n  },\n  'glossario-npish': {\n    publicador: 'Eurostat',\n    documento:\n      'Statistics Explained · Glossary: Non-profit institutions serving households (NPIS",
+   "contexto_depois": "0',\n    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP',\n    lido: '2026-09-23',\n    excerto: 'Non-financial corporations debt, consolidated - % of GNP',\n  },\n  'glossario-npish': {\n    publicador: 'Eurostat',\n    documento:\n      'Statistics Explained · Glossary: Non-profit institutions serving households (NPIS"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "o estado do cartão da dívida pública trocado na página construída (fora para dentro), contra a linha (89,7 acima de 60)",
+   "sha256_antes": "c922dbd10ee97c77ee84bca22c8cdbeeff23312f655c5b8c2648aeb071047c56",
+   "sha256_depois": "8436de3760bac53916182a1b5ed8daccf88135bae764f34adf667d701aa1521f",
+   "contexto_antes": "s=\"cartao-medida-regua-item\" data-regua=\"ue\" data-selo-em=\"divida-publica-2025\"><span class=\"cartao-medida-regua-k\"><span data-voz>União Europeia</span>:</span><span data-claim=\"divida-publica-2025-ue\" class=\"claim-value\">81,7</span></span><span class=\"cartao-medida-regua-item\" data-regua=\"referencia\" data-estado=\"fora\"><span class=\"sq sq-fora\" aria-hidden=\"true\"></span><span data-voz class=\"est-fora\">acima do valor de referência</span><span class=\"cartao-medida-regua-v\">(<span data-nonledger=\"limiar-do-quadro\">60</span>%)</span></span></p></article><article ",
+   "contexto_depois": "s=\"cartao-medida-regua-item\" data-regua=\"ue\" data-selo-em=\"divida-publica-2025\"><span class=\"cartao-medida-regua-k\"><span data-voz>União Europeia</span>:</span><span data-claim=\"divida-publica-2025-ue\" class=\"claim-value\">81,7</span></span><span class=\"cartao-medida-regua-item\" data-regua=\"referencia\" data-estado=\"dentro\"><span class=\"sq sq-dentro\" aria-hidden=\"true\"></span><span data-voz class=\"est-dentro\">acima do valor de referência</span><span class=\"cartao-medida-regua-v\">(<span data-nonledger=\"limiar-do-quadro\">60</span>%)</span></span></p></article><article "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "uma contagem do relatório trocada (278 páginas de concelho com a frase para 288), com a prova no pacote",
+   "sha256_antes": "1fe739c2332f3f3acb1b5695ae0e8e1bfd527570d4a6f1b882100fe919930a99",
+   "sha256_depois": "6a103fd8c186fd3081e21e894f6b69e3076bcec6386fecb893a39f0af88d2170",
+   "contexto_antes": "orque não tem cartão nenhum com valor de referência: **o brief engana-se aqui, e parei neste ponto** (§8) |\n| `9` | A frescura nos cartões de concelho (I146) | 278 páginas de concelho com a frase em cada edição; Mourão: «(a fonte já publicou julho de 2026; lido a 01.09.2026)» |\n| `10` | O Portal BASE caído (I140) | `core.gate` PASS no motor; 0 pedidos ao Portal BASE; a frase ",
+   "contexto_depois": "orque não tem cartão nenhum com valor de referência: **o brief engana-se aqui, e parei neste ponto** (§8) |\n| `9` | A frescura nos cartões de concelho (I146) | 288 páginas de concelho com a frase em cada edição; Mourão: «(a fonte já publicou julho de 2026; lido a 01.09.2026)» |\n| `10` | O Portal BASE caído (I140) | `core.gate` PASS no motor; 0 pedidos ao Portal BASE; a frase "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "ledger/claims/divida-publica-2025-notificacao-ine-2026-09.yml",
+   "descricao": "o valor da linha nova do INE trocado (89,2 para 89,7, o valor do Eurostat), com o excerto a dizer 89,2",
+   "sha256_antes": "78830a86aab266f01ffc8613d33cb2c247031146924014dda91cf5ab393d7e72",
+   "sha256_depois": "bcb6b174f0adeccad006143a649befff275a35479f4da733779f9f9f29f346a1",
+   "contexto_antes": "ipts/check-cruzamento.mjs.\n\nid: \"divida-publica-2025-notificacao-ine-2026-09\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"89,2\"\nunit: \"% do PIB\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"INE\"\ndocument:\n  title: \"Procedimento dos Défices E",
+   "contexto_depois": "ipts/check-cruzamento.mjs.\n\nid: \"divida-publica-2025-notificacao-ine-2026-09\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"89,7\"\nunit: \"% do PIB\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"INE\"\ndocument:\n  title: \"Procedimento dos Défices E"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "a célula do rótulo afrouxada: «exactamente um topo» passa a «pelo menos um», e dois rótulos passariam",
+   "sha256_antes": "72e1b32d979f59816cb3bd96ff92b4a1f062882cdd31a88cdbbfcee09635fa68",
+   "sha256_depois": "e611c37586052973fe087712b5f5e50a2d4f98714f676fab3e6819a51586e7fd",
+   "contexto_antes": "izer-se duas vezes. É P,\n       proteção legal: a pergunta jurídica (se uma linha cumpre o artigo 50.º)\n       continua a ser do diretor com o advogado. */\n    if (noTopo.length !== 1) {\n      err(\n        `esta página tem ${noTopo.length} rótulo(s) de IA no topo; tem de ter exactamente um.\\n` +\n          `      <RotuloDeIA onde=\"topo\"/> entr",
+   "contexto_depois": "izer-se duas vezes. É P,\n       proteção legal: a pergunta jurídica (se uma linha cumpre o artigo 50.º)\n       continua a ser do diretor com o advogado. */\n    if (noTopo.length < 1) {\n      err(\n        `esta página tem ${noTopo.length} rótulo(s) de IA no topo; tem de ter exactamente um.\\n` +\n          `      <RotuloDeIA onde=\"topo\"/> entr"
+  }
+ ]
+}
