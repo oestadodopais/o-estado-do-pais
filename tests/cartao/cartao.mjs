@@ -994,7 +994,7 @@ if (PROVA) {
   /* K15: as quatro formas, igualdade e banda exterior, com linha em memória.
      A planta tira só a palavra e deixa a cor, depois troca só a cor. */
   for (const lang of ['pt', 'en']) {
-    for (const [id, valor] of [['divida-publica-2025', null], ['divida-das-familias-2025', null], ['saldo-da-balanca-corrente-2025', null], ['saldo-da-balanca-corrente-2025', '7'], ['divida-publica-2025', '60']]) {
+    for (const [id, valor] of [['saldo-das-administracoes-publicas-2025', null], ['crescimento-da-despesa-liquida-2025', null], ['divida-publica-2025', null], ['divida-das-familias-2025', null], ['saldo-da-balanca-corrente-2025', null], ['saldo-da-balanca-corrente-2025', '7'], ['divida-publica-2025', '60']]) {
       const linha = valor === null ? undefined : { value: valor };
       const esperado = veredictoEsperado(id, lang, linha);
       const html = `<article><span class="sq sq-${esperado.estado}"></span><span class="est-${esperado.estado}" data-veredicto-referencia="${esperado.estado}">${esperado.texto}</span></article>`;
@@ -1002,6 +1002,8 @@ if (PROVA) {
       if (ler(html).length) falhas.push(`K15 recusa ${id} ${lang}`);
       const semPalavra = html.replace(esperado.texto, '');
       if (!ler(semPalavra).some(e => e.includes('veredicto em palavras'))) falhas.push(`K15 não viu cor sem palavra ${id} ${lang}`);
+      const semDono = html.replace(/ do Pacto| do Conselho da UE| of the Pact| of the Council of the EU/, '');
+      if (semDono !== html && !ler(semDono).some(e => e.includes('veredicto em palavras'))) falhas.push(`K15 não viu referência sem dono ${id} ${lang}`);
       const corTrocada = html.replace(`sq-${esperado.estado}`, `sq-${esperado.estado === 'fora' ? 'dentro' : 'fora'}`);
       if (!ler(corTrocada).some(e => e.includes('cor não repete'))) falhas.push(`K15 não viu a cor trocada ${id} ${lang}`);
       if (ler(html).length) falhas.push(`K15 recusa reposição ${id} ${lang}`);

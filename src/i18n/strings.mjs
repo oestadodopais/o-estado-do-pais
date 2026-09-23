@@ -1210,6 +1210,7 @@ export const STRINGS = {
       dentro: 'dentro do valor de referência',
       foraBanda: 'fora dos valores de referência',
       dentroBanda: 'dentro dos valores de referência',
+      dono: { pacto: ' do Pacto', conselho: ' do Conselho da UE' },
       direcao: { acima: 'acima de', abaixo: 'abaixo de', entre: 'entre', noLimiar: 'igual a', e: 'e' },
       acima: 'acima do valor de referência',
       abaixo: 'abaixo do valor de referência',
@@ -1716,6 +1717,7 @@ export const STRINGS = {
     camaras: {
       nome: 'Câmaras com a dívida acima do limite legal',
       unidade: 'câmaras',
+      periodo: 'em ',
       de: 'de ',
       total: ' câmaras; ',
       dentro: ' dentro do limite legal (',
@@ -1726,10 +1728,11 @@ export const STRINGS = {
     home: {
       /* B2: a frase recebe as contagens provadas e os nomes da seleção. */
       veredicto: {
-        abre: 'Portugal está fora de ',
+        ano: 'Em ',
+        abre: ', Portugal ficou fora de ',
         de: ' dos ',
         referencias: ' valores de referência da Comissão Europeia e dentro de ',
-        lista: ': ',
+        lista: '. Fora: ',
         fecha: '.',
       },
       metaTitle: 'O Estado do País',
@@ -3254,6 +3257,7 @@ export const STRINGS = {
       dentro: 'within the reference value',
       foraBanda: 'outside the reference values',
       dentroBanda: 'within the reference values',
+      dono: { pacto: ' of the Pact', conselho: ' of the Council of the EU' },
       direcao: { acima: 'above', abaixo: 'below', entre: 'between', noLimiar: 'equal to', e: 'and' },
       acima: 'above the reference value',
       abaixo: 'below the reference value',
@@ -3430,6 +3434,7 @@ export const STRINGS = {
     camaras: {
       nome: 'Councils with debt above the legal limit',
       unidade: 'councils',
+      periodo: 'in ',
       de: 'of ',
       total: ' councils; ',
       dentro: ' within the legal limit (',
@@ -3439,10 +3444,11 @@ export const STRINGS = {
     },
     home: {
       veredicto: {
-        abre: 'Portugal is outside ',
-        de: ' of the ',
-        referencias: ' reference values of the European Commission and within ',
-        lista: ': ',
+        ano: 'In ',
+        abre: ', Portugal was outside ',
+        de: ' of the European Commission\'s ',
+        referencias: ' reference values and within ',
+        lista: '. Outside: ',
         fecha: '.',
       },
       metaTitle: 'O Estado do País',

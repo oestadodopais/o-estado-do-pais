@@ -40,13 +40,15 @@ const medidasDoPainel = FIGURAS_PDM.map(f => {
 });
 const lede = ledeDoPainel(medidasDoPainel, s.inicio.cabeca.ledePais, lang);
 const v = s.home.veredicto;
+const periodos = new Set(medidasDoPainel.map(m => m.linha.reference_date));
+if (!lede?.ano || periodos.size !== 1 || !periodos.has(lede.ano)) throw new Error('B2 veredicto: as linhas não partilham um período.');
 ---
 <Base lang={lang} path={path} title={s.home.metaTitle} description={s.home.metaDescription}>
   <Masthead slot="masthead" lang={lang} path={path} />
   <div class="pais-cabeca">
     <div class="pais-texto">
       <p class="pais-leitura pais-veredicto" data-veredicto-pais>
-        {v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={`${routePath('temas', lang)}#m-${m.claim}`}>{m.nome}</a></>)}</span></>}{v.fecha}
+        {v.ano}<CampoDaLinha id={medidasDoPainel[0].claim} campo="reference_date" valor={lede.ano} lang={lang} />{v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={`${routePath('temas', lang)}#m-${m.claim}`}>{m.nome}</a></>)}</span></>}{v.fecha}
       </p>
       <LeituraDoPais lang={lang} />
     </div>

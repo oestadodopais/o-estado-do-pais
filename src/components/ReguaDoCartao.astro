@@ -151,7 +151,7 @@ const temAlgumaCoisa = temRegua(regua) || pintado;
       )}
       {pintado && (
         <span class="cartao-medida-regua-item" data-regua="referencia" data-estado={estado}>
-          <VeredictoDaReferencia linha={getClaim(id)} limiar={limiar} s={s} />
+          <VeredictoDaReferencia linha={getClaim(id)} limiar={limiar} dono={REFERENCIAS_DAS_MEDIDAS.get(id)?.limiarFixadoPor} s={s} />
         </span>
       )}
     </p>
