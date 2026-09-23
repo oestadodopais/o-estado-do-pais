@@ -1,0 +1,6 @@
+$ OEDP_FIGURAS=<cópia plantada> OEDP_MEDIDAS_JSON=<temporário> python3 design/especime-v3/medicoes/r1-2026-09-23/medir.py
+planta: a origem aponta para outro pedido (outra unidade) que não o da resposta guardada
+código 1
+
+medidas-endereco-de-outro-pedido.json escrito: 34 secções; 1 falha(s).
+  FALHA o endereço da origem eurostat-tipspd30 ('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=MIO_EUR') não é o do pedido cuja resposta está guardada ('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP')

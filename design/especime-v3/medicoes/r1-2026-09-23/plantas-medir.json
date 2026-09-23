@@ -1,0 +1,23 @@
+{
+  "cabeca_das_figuras": "bc68892b",
+  "plantas": [
+    {
+      "nome": "excerto-com-outro-conceito",
+      "o_que": "o excerto da origem diz «% of GNP» onde a resposta diz «% of GDP»",
+      "codigo": 1,
+      "mordida": "o excerto da origem eurostat-tipspd30 \\('Non-financial corporations debt, consolidated - % of GNP'\\) não é, byte a byte, o rótulo da resposta guardada",
+      "mordeu": true,
+      "medidas_json_do_bloco_nao_tocado": true,
+      "passou": true
+    },
+    {
+      "nome": "endereco-de-outro-pedido",
+      "o_que": "a origem aponta para outro pedido (outra unidade) que não o da resposta guardada",
+      "codigo": 1,
+      "mordida": "o endereço da origem eurostat-tipspd30 \\(.*unit=MIO_EUR.*\\) não é o do pedido",
+      "mordeu": true,
+      "medidas_json_do_bloco_nao_tocado": true,
+      "passou": true
+    }
+  ]
+}

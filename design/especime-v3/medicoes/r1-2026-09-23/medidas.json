@@ -1,7 +1,9 @@
 {
-  "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e",
+  "cabeca": "bc68892b0bffcdce9fa58e72109cc2866a9b4f37",
+  "cabeca_da_corrida": "697df9af86ac3837ed9627d8e3259a93d90f53ef",
   "partida": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
   "commits_do_ramo": [
+    "bc68892b R1: as saídas dos três portões na cabeça final, e a tabela deles no relatório",
     "717da1d6 R1: o relatório do bloco, as suas medidas, as plantas, as capturas e as páginas congeladas",
     "68b7944c R1: o inventário das frases e a sua entrada na revisão, para os mandatos 2, 4, 6, 9, 11 e 12",
     "34e46d71 R1: a catraca L1 sobe de 2 271 para 2 279 páginas, medida página a página",
@@ -18,7 +20,7 @@
     "3cb9ede5 R1 (I138): o cartão da sobrecarga da habitação deixa de mostrar a média europeia, e a nota da agenda diz o que é verdade",
     "8982a767 R1 (I137): a pesquisa dos lugares mostra a lista ao escrever, e o Enter só abre com um resultado"
   ],
-  "commits_do_ramo_n": 15,
+  "commits_do_ramo_n": 16,
   "brief_antes": {
     "pesquisa_enter_recarrega": 0,
     "pesquisa_lista_nunca_se_mostra": 0,
@@ -287,6 +289,9 @@
     "antes_sigla_por_verificar": 2,
     "sociedades_nao_financeiras_nas_definicoes": 4,
     "origem_excerto_igual_ao_rotulo_da_resposta": true,
+    "origem_url_igual_a_do_pedido": true,
+    "excerto_da_origem": "Non-financial corporations debt, consolidated - % of GDP",
+    "figuras_lidas_de": "bc68892b:src/data/figuras.mjs",
     "rotulo_da_resposta": "Non-financial corporations debt, consolidated - % of GDP",
     "setor_da_resposta": {
       "S11": "Non-financial corporations"
