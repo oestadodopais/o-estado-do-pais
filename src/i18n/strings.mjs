@@ -3446,7 +3446,7 @@ export const STRINGS = {
       veredicto: {
         ano: 'In ',
         abre: ', Portugal was outside ',
-        de: ' of the European Commission\'s ',
+        de: ' of the European Commission’s ',
         referencias: ' reference values and within ',
         lista: '. Outside: ',
         fecha: '.',
