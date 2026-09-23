@@ -660,6 +660,12 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     <span class="eyebrow">{s.livro.linha.eyebrow}</span>
     <h1 class="linha-valor">
       <Claim id={id} lang={lang} as="span" class="linha-valor-num" />
+      {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,
+          23.09.2026, I143). A folha separava-os com o `gap` de um `flex`, e o
+          texto do título era «175pessoas»: um leitor de ecrã e quem copia o
+          título liam uma palavra só. O espaço escreve-se aqui, e a célula do
+          `gate:html` exige-o em todas as páginas de linha. */}
+      {' '}
       <CampoDaLinha
         id={id}
         campo="unit"
