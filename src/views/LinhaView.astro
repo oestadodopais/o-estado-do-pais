@@ -73,6 +73,8 @@ import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
+import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
+import { DEFINICOES_DAS_MEDIDAS, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
   linguaDoTituloDoDocumento,
@@ -90,6 +92,13 @@ import '../styles/linha.css';
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
 const claim = getClaim(id);
+/* B2: esta medida nova não pertence aos painéis europeus. A origem da sua
+   pergunta fica no recibo que o cartão abre. As definições anteriores mantêm
+   o seu lugar; nenhum outro recibo recebe este bloco. A célula 8.4 confere a
+   pergunta e cada campo das origens, com a mesma regra das restantes. */
+const definicaoNova = id === 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025'
+  ? DEFINICOES_DAS_MEDIDAS['sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025']
+  : null;
 
 const path = caminhoDaLinha(id, lang);
 const derivada = eDerivada(claim);
@@ -835,6 +844,15 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           </p>
         )
       }
+
+      {definicaoNova && (
+        <div class="linha-bloco" data-definicao={id}>
+          <p class="dobra-definicao">
+            <Frase partes={definicaoNova[lang]} lang={lang} selos={true} />
+          </p>
+          <OrigemDaDefinicao origens={origensDaDefinicao(definicaoNova, lang)} s={s} lang={lang} />
+        </div>
+      )}
 
       {/* ------------------------------------------- iii(a) · a porta humana
 
