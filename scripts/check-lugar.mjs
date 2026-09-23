@@ -202,6 +202,29 @@ const TETOS = {
      sobre a cabeça deste bloco, e guardado em
      `design/especime-v3/medicoes/e1-2026-09-16/l1-composicao-2026-09-16.txt`.
      Não foi escrito à mão. O horizonte continua a zero. */
+  /* SOBE DE 2 271 PARA 2 279 a 23.09.2026 (bloco R1), e a razão é medida e
+     inteira: entraram 8 páginas e não saiu nenhuma, e as 8 vêm de duas coisas
+     que o bloco fez por mandato.
+
+     **Seis são as páginas das três linhas novas do livro-razão** (a segunda
+     notificação do INE ao Procedimento dos Défices Excessivos, I147), nas duas
+     edições, e trazem o par que a família `linha` já tinha: a porta da regra da
+     releitura ao lado da porta do Método no rodapé do aparelho. Nenhum par novo.
+
+     **Duas são as listas dos estudos** (`/estudos` e `/en/studies`), que
+     passaram a ter os estudos de Évora (I144): as sinopses de dois estudos
+     citam a mesma linha (`evora-prazo-medio-de-pagamento-2025`), como já
+     acontece na página de Évora, onde as duas sinopses também estão.
+
+     A porta do rótulo de IA, que subiu ao topo de todas as páginas, não conta:
+     é dispensada pelo destino exato e só dentro do rótulo (a dispensa está na
+     L1, acima), e a planta `r1-porta-da-politica-fora-do-rotulo` prova que uma
+     segunda porta para o Método fora dele continua a contar.
+
+     Medido com `node design/especime-v3/medicoes/r1-2026-09-23/medir-l1-r1.mjs`,
+     que corre esta régua com `AMOSTRA` alta e compara a lista com a da
+     construção da cabeça de partida; a medição fica em `l1-r1.json`, que o
+     registo dos tetos aponta. O horizonte continua a zero. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
