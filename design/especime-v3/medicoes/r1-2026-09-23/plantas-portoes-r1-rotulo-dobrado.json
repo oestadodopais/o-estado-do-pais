@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "r1-rotulo-dobrado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "temas\\/index\\.html[\\s\\S]*esta página tem 2 rótulo\\(s\\) de IA no topo; tem de ter exactamente um"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "b9e3ee821f36e74ed6d7c068f7c19be66124ce1e09349d29f0324d0059ce7a8d",
+        "reposto": "b9e3ee821f36e74ed6d7c068f7c19be66124ce1e09349d29f0324d0059ce7a8d"
+      }
+    ]
+  }
+]

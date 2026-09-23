@@ -133,3 +133,11 @@ planta('r1-sinopse-da-lista-trocada','scripts/check-voz.mjs',[
 planta('r1-lista-dos-estudos-sem-um','scripts/check-lugar.mjs',[
  ['estudos/index.html',r=>r.querySelector('[data-estudo="evora-prometido-pago-auditado-2026"]').remove()]
 ],[/a régua viu 25 «linhas» em dist\/, e o registo dos estudos diz 26/,/B1 cobertura: evora-prometido-pago-auditado-2026 não é alcançável de \/estudos/]);
+/* Dois rótulos de IA no topo da mesma página (passagem de correção do R1,
+   23.09.2026, achado 6). As plantas acima mudavam o rótulo de lugar ou tiravam-no
+   do topo, e nenhuma punha dois: uma célula que só recusasse «menos de um»
+   passava por todas. O rótulo da página dos temas vai outra vez para o lado dele,
+   e a célula tem de dizer que são 2 e que tem de ser exactamente um. */
+planta('r1-rotulo-dobrado','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>{const x=r.querySelector('[data-rotulo-ia="topo"]');x.insertAdjacentHTML('afterend',x.outerHTML);}]
+],[/temas\/index\.html[\s\S]*esta página tem 2 rótulo\(s\) de IA no topo; tem de ter exactamente um/]);
