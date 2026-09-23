@@ -87,6 +87,7 @@ import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from '.
    reexporta: um campo que o traga é um campo por confirmar, e não um nome. */
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
 import { temAviso } from './aviso-do-motor.mjs';
+import { DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
 
 /**
  * A PASTA DOS FICHEIROS DO MOTOR, PROCURADA E NÃO COMPOSTA.
@@ -508,32 +509,38 @@ export function ficheirosDoMotor() {
  * exactamente o que a régua A3 proíbe, e o que o F1.14 §1.2 já tinha escrito: «o
  * enquadramento do cartão é uma leitura da mesma linha e não uma segunda cópia».
  *
- * A LISTA NÃO É ESCRITA À MÃO: sai de `referencias.json`, que é quem sabe que
- * indicadores o motor enquadrou, e das mesmas duas regras de nome que a régua usa.
- * Uma linha que o motor deixe de enquadrar sai desta lista sozinha, e volta a ser
- * uma medida como as outras.
+ * A LISTA NÃO É ESCRITA À MÃO: parte de `referencias.json`, que declara os
+ * indicadores do primeiro enquadramento, e da tabela única das medidas do país,
+ * `DOMINIO_DAS_MEDIDAS`. No B2, as linhas alojadas do estudo dos temas passaram
+ * a trazer períodos anteriores fora daquele inventário do painel europeu.
+ * Uma medida do país só acrescenta uma linha a esta lista quando a régua a
+ * encontra e as duas linhas provam a mesma edição e unidade. Não basta ter um
+ * identificador parecido, nem se mantém uma segunda lista dos períodos novos.
  *
  * E NÃO APANHA AS LINHAS ANTIGAS. `evora-divida-total-2024` é o período anterior
  * de `evora-divida-total-2025` e continua a ser uma medida da sua área, porque a
- * medida dela não está em `referencias.json`: o que esta lista tira é o que o
- * motor pôs lá para ser régua, e mais nada.
+ * medida dela não está em nenhuma dessas declarações nacionais.
  *
  * @returns {Set<string>}
  */
 export function linhasDeEnquadramento() {
   if (_deEnquadramento === undefined) {
     const r = referencias();
-    if (r === null) {
-      _deEnquadramento = new Set();
-    } else {
-      const s = new Set();
+    const s = new Set();
+    if (r !== null) {
       for (const id of r.keys()) {
         const c = chavesDoEnquadramento(id);
         if (c.anterior) s.add(c.anterior);
         if (c.ue) s.add(c.ue);
       }
-      _deEnquadramento = s;
     }
+    for (const id of Object.keys(DOMINIO_DAS_MEDIDAS)) {
+      if (r?.has(id)) continue;
+      const c = reguaDaMedida(id);
+      if (c.anterior) s.add(c.anterior.id);
+      if (c.ue && mesmaSerie(id, c.ue.id)) s.add(c.ue.id);
+    }
+    _deEnquadramento = s;
   }
   return _deEnquadramento;
 }

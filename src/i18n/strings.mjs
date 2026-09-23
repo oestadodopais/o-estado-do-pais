@@ -1206,6 +1206,11 @@ export const STRINGS = {
          O DONO DO VALOR DE REFERÊNCIA CONTINUA DITO, na linha da leitura
          (`rotulo`) e na frase que diz o que ele é (`frase`): o que saiu foi a
          palavra «limiar», não a atribuição. */
+      fora: 'fora do valor de referência',
+      dentro: 'dentro do valor de referência',
+      foraBanda: 'fora dos valores de referência',
+      dentroBanda: 'dentro dos valores de referência',
+      direcao: { acima: 'acima de', abaixo: 'abaixo de', entre: 'entre', noLimiar: 'igual a', e: 'e' },
       acima: 'acima do valor de referência',
       abaixo: 'abaixo do valor de referência',
       entre: 'entre os valores de referência',
@@ -1708,7 +1713,25 @@ export const STRINGS = {
       metaTitle: 'Temas · O Estado do País',
       metaDescription: 'Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo.',
     },
+    camaras: {
+      nome: 'Câmaras com a dívida acima do limite legal',
+      unidade: 'câmaras',
+      de: 'de ',
+      total: ' câmaras; ',
+      dentro: ' dentro do limite legal (',
+      sem: '); ',
+      falta: ' sem valor publicado',
+      porta: 'Os lugares',
+    },
     home: {
+      /* B2: a frase recebe as contagens provadas e os nomes da seleção. */
+      veredicto: {
+        abre: 'Portugal está fora de ',
+        de: ' dos ',
+        referencias: ' valores de referência da Comissão Europeia e dentro de ',
+        lista: ': ',
+        fecha: '.',
+      },
       metaTitle: 'O Estado do País',
       // B1: a descrição acompanha a leitura, os temas, o mapa e os estudos.
       metaDescription:
@@ -3227,6 +3250,11 @@ export const STRINGS = {
     estado: {
       /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
       /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */
+      fora: 'outside the reference value',
+      dentro: 'within the reference value',
+      foraBanda: 'outside the reference values',
+      dentroBanda: 'within the reference values',
+      direcao: { acima: 'above', abaixo: 'below', entre: 'between', noLimiar: 'equal to', e: 'and' },
       acima: 'above the reference value',
       abaixo: 'below the reference value',
       entre: 'between the reference values',
@@ -3399,7 +3427,24 @@ export const STRINGS = {
       metaTitle: 'Themes · O Estado do País',
       metaDescription: "All the country's measures, by theme, each with its value, its source and its receipt.",
     },
+    camaras: {
+      nome: 'Councils with debt above the legal limit',
+      unidade: 'councils',
+      de: 'of ',
+      total: ' councils; ',
+      dentro: ' within the legal limit (',
+      sem: '); ',
+      falta: ' with no published value',
+      porta: 'The places',
+    },
     home: {
+      veredicto: {
+        abre: 'Portugal is outside ',
+        de: ' of the ',
+        referencias: ' reference values of the European Commission and within ',
+        lista: ': ',
+        fecha: '.',
+      },
       metaTitle: 'O Estado do País',
       metaDescription:
         "The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies.",

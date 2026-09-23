@@ -56,6 +56,7 @@
  * tem página própria. Fica nos pendentes.
  */
 
+import { referenciaDaMedida } from './referencias-das-medidas.mjs';
 import { hasClaim } from '../lib/ledger.mjs';
 
 /**
@@ -283,7 +284,7 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
     /* O limite de défice de 3 % do PIB, do lado do défice: um saldo abaixo de
        −3 % está fora. O sinal escreve-se, porque o limiar é negativo. */
-    limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
+    limiar: referenciaDaMedida('saldo-das-administracoes-publicas-2025').limiar,
     /* `pacto`, E A ORIGEM É O DOCUMENTO QUE A LINHA CITA (F1.10, item 8.5,
        segunda passagem de 08.09.2026). A entrada dizia `porRegistar` enquanto
        ninguém tinha lido esse documento; a decisão do lugar de direção é que o
@@ -299,7 +300,7 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        é onde o limite está em direito, continua por ler (o EUR-Lex devolveu 202
        com corpo vazio ao verificador de 01.09.2026) e por isso não é ele que a
        página nomeia. */
-    limiarFixadoPor: 'pacto',
+    limiarFixadoPor: referenciaDaMedida('saldo-das-administracoes-publicas-2025').limiarFixadoPor,
     porConcelho: null,
     forma: null,
   },
@@ -309,11 +310,11 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     pergunta: { pt: 'Quanto deve o Estado?', en: 'How much does the State owe?' },
     nome: { pt: 'Dívida pública', en: 'Government debt' },
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
-    limiar: { nl: '60', lado: 'superior', simbolo: '%' },
+    limiar: referenciaDaMedida('divida-publica-2025').limiar,
     /* A MESMA LINHA DO PAINEL, E POR ISSO O MESMO FIXADOR: `divida-publica-2025`
        é uma das treze do Procedimento, e a sua `note` abre «Limiar do
        Procedimento relativo aos Desequilíbrios Macroeconómicos: 60%». */
-    limiarFixadoPor: 'comissao',
+    limiarFixadoPor: referenciaDaMedida('divida-publica-2025').limiarFixadoPor,
     porConcelho: null,
     forma: null,
   },
@@ -329,7 +330,7 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
     /* O teto recomendado pela trajetória do Conselho da UE, lido no parecer do
        Conselho das Finanças Públicas. É um limiar publicado, como os do
        Procedimento, e entra pelo mesmo motivo declarado. */
-    limiar: { nl: '5', lado: 'superior', simbolo: '%' },
+    limiar: referenciaDaMedida('crescimento-da-despesa-liquida-2025').limiar,
     /* `conselho`, E A ORIGEM É O MESMO DOCUMENTO QUE A LINHA CITA (F1.10, item
        8.5, segunda passagem de 08.09.2026). O excerto da linha, na p. 9 do PDF,
        escreve «superando em 1,4 p.p. a taxa de crescimento de 5% recomendada» e
@@ -341,7 +342,7 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        atribuição na frase de que o excerto é a segunda metade: «a taxa de
        crescimento em 2025 foi superior à prevista no compromisso assumido por
        Portugal e endossado pelo Conselho da UE». */
-    limiarFixadoPor: 'conselho',
+    limiarFixadoPor: referenciaDaMedida('crescimento-da-despesa-liquida-2025').limiarFixadoPor,
     porConcelho: null,
     forma: null,
   },
@@ -799,6 +800,8 @@ export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
   'saldo-das-administracoes-publicas-2025': 'economia-e-financas-publicas',
   'divida-publica-2025': 'economia-e-financas-publicas',
   'crescimento-da-despesa-liquida-2025': 'economia-e-financas-publicas',
+  /* O domínio legado ainda rende a linha da lei. O país e os temas mostram
+     a contagem das câmaras e excluem esta linha da sua seleção de cartões. */
   'indice-de-divida-limite-legal': 'economia-e-financas-publicas',
   'saldo-da-balanca-corrente-2025': 'economia-e-financas-publicas',
   'posicao-de-investimento-internacional-2025': 'economia-e-financas-publicas',
@@ -849,8 +852,9 @@ export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
   'necessidades-medicas-nao-satisfeitas-2025': 'saude',
 
   /* 9 · Habitação (carta §2 e §3). */
-  'precos-da-habitacao-2025': 'habitacao',
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': 'habitacao',
   'sobrecarga-do-custo-da-habitacao-2025': 'habitacao',
+  'precos-da-habitacao-2025': 'habitacao',
   'licencas-de-construcao-2025': 'habitacao',
 
   /* 10 · Investimento (carta §2 e §3). */

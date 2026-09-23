@@ -59,6 +59,7 @@ import { parse } from 'node-html-parser';
 
 import { routePath, LANGS } from '../src/lib/routes.mjs';
 import { AREAS, SEM_AREA, LEI_ORGANICA } from '../src/data/areas.mjs';
+import { DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { WORKS, ESTUDOS_DE_DADOS, INTERNAL_SOURCES } from '../src/data/studies.mjs';
 import { loadClaims } from '../src/lib/ledger.mjs';
 
@@ -131,8 +132,10 @@ function pastasDe(rotaDoIndice) {
  * ESTA RÉGUA NÃO CHAMA `src/lib/enquadramento.mjs`, e é a razão de ela existir: a
  * A6 reconta de três pontos de observação, e um deles que fosse buscar a conta à
  * mesma função que constrói a página confirmava a função e não o sítio. O que as
- * duas partilham é a DECLARAÇÃO, que é `src/data/enquadramento/referencias.json`,
- * exportada pelo motor; o código que a lê é outro.
+ * duas partilham é a DECLARAÇÃO: `src/data/enquadramento/referencias.json` e,
+ * desde o B2, a tabela única das medidas nacionais. Para uma medida nacional
+ * fora do primeiro ficheiro, esta leitura compara por conta própria a edição
+ * e a unidade das duas linhas, antes de excluir o período anterior.
  *
  * O AGREGADO DA UNIÃO não passa por aqui: está declarado em `SEM_AREA`, e é a
  * A7 que o confere.
@@ -142,12 +145,11 @@ function pastasDe(rotaDoIndice) {
  */
 function periodosAnterioresDoEnquadramento(claims) {
   const f = path.join(RAIZ, 'src', 'data', 'enquadramento', 'referencias.json');
-  if (!fs.existsSync(f)) return new Set();
-  const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+  const j = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
+  const originais = new Set((j?.indicadores ?? []).map(i => i?.id_da_linha).filter(id => typeof id === 'string'));
+  const declaradas = new Set([...originais, ...Object.keys(DOMINIO_DAS_MEDIDAS)]);
   const fora = new Set();
-  for (const i of j.indicadores ?? []) {
-    const id = i?.id_da_linha;
-    if (typeof id !== 'string') continue;
+  for (const id of declaradas) {
     const m = /^(.*)-(\d{4})$/.exec(id);
     if (!m) continue;
     const raiz = m[1];
@@ -162,7 +164,18 @@ function periodosAnterioresDoEnquadramento(claims) {
       melhor = outro;
       melhorAno = n;
     }
-    if (melhor) fora.add(melhor);
+    if (!melhor) continue;
+    if (originais.has(id)) {
+      fora.add(melhor);
+      continue;
+    }
+    const a = claims.get(id);
+    const b = claims.get(melhor);
+    const edicao = a?.document?.edition;
+    const unidade = a?.unit;
+    if (typeof edicao === 'string' && edicao.trim() && edicao === b?.document?.edition &&
+        typeof unidade === 'string' && unidade.trim() && unidade === b?.unit)
+      fora.add(melhor);
   }
   return fora;
 }
@@ -749,12 +762,23 @@ const ESTRAGOS = {
       return `a marca lang="pt-PT" tirada da referência legal de ${chave}`;
     },
   ],
-  A6: (m) => {
+  A6: [(m) => {
     /* Uma peça a mais no mapa que a página não rende: as contas divergem. */
     const e = m.entradas.find((x) => x.total > 0);
     e.total += 1;
     return `o mapa da área "${e.slug}" com uma peça a mais do que a página rende`;
-  },
+  }, (m) => {
+    /* B2: um período anterior não volta a ser um cartão autónomo da área. */
+    const principal = 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025';
+    const anterior = 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024';
+    const e = m.entradas.find(x => x.pecas.medidas.some(p => p.id === principal));
+    if (!e) throw new Error('B2 planta A6: a área da medida de habitação não foi encontrada.');
+    const chave = `pt:${e.slug}`;
+    const doc = parse(m.paginas[chave].html);
+    doc.querySelector('main').insertAdjacentHTML('beforeend', `<article data-area-peca="medida" data-cartao-medida="${anterior}"></article>`);
+    m.paginas[chave].html = doc.toString();
+    return `o período anterior "${anterior}" como cartão autónomo em ${chave}`;
+  }],
   /* A A7 leva DOIS estragos, porque falha de duas maneiras e as duas contam. */
   A7: [
     (m) => {

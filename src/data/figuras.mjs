@@ -120,6 +120,7 @@ const LISTA_PDM = [
     claim: 'divida-publica-2025',
     quadro: 'pdm',
     nome: { pt: 'Dívida pública', en: 'Government debt' },
+    nomeNoVeredicto: { pt: 'a dívida pública' },
     medida: {
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
       en: ['Percentage of GDP · ', { ref: '2025' }],
@@ -132,6 +133,7 @@ const LISTA_PDM = [
     claim: 'posicao-de-investimento-internacional-2025',
     quadro: 'pdm',
     nome: { pt: 'Posição de investimento internacional', en: 'Net international investment position' },
+    nomeNoVeredicto: { pt: 'a posição de investimento internacional', en: 'the international investment position' },
     medida: {
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
       en: ['Percentage of GDP · ', { ref: '2025' }],
@@ -144,6 +146,7 @@ const LISTA_PDM = [
     claim: 'custo-unitario-do-trabalho-2025',
     quadro: 'pdm',
     nome: { pt: 'Custo unitário do trabalho', en: 'Unit labour cost' },
+    nomeNoVeredicto: { pt: 'o custo unitário do trabalho' },
     medida: {
       pt: ['Variação em três anos · ', { ref: '2025' }],
       en: ['Three-year change · ', { ref: '2025' }],
@@ -156,6 +159,7 @@ const LISTA_PDM = [
     claim: 'precos-da-habitacao-2025',
     quadro: 'pdm',
     nome: { pt: 'Preços da habitação', en: 'House prices' },
+    nomeNoVeredicto: { pt: 'os preços da habitação' },
     medida: {
       pt: ['Variação anual · ', { ref: '2025' }],
       en: ['Annual change · ', { ref: '2025' }],
@@ -170,6 +174,7 @@ const LISTA_PDM = [
     claim: 'desempenho-das-exportacoes-2025',
     quadro: 'pdm',
     nome: { pt: 'Quota nas exportações', en: 'Share of exports' },
+    nomeNoVeredicto: { pt: 'a quota nas exportações' },
     medida: {
       pt: ['Percentagem do total OCDE e UE não-OCDE, variação em três anos · ', { ref: '2025' }],
       en: ['Percentage of the OECD and non-OECD EU total, three-year change · ', { ref: '2025' }],
@@ -182,6 +187,7 @@ const LISTA_PDM = [
     claim: 'divida-das-empresas-2025',
     quadro: 'pdm',
     nome: { pt: 'Dívida das empresas', en: 'Corporate debt' },
+    nomeNoVeredicto: { pt: 'a dívida das empresas' },
     medida: {
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
       en: ['Percentage of GDP · ', { ref: '2025' }],
@@ -194,6 +200,7 @@ const LISTA_PDM = [
     claim: 'divida-das-familias-2025',
     quadro: 'pdm',
     nome: { pt: 'Dívida das famílias', en: 'Household debt' },
+    nomeNoVeredicto: { pt: 'a dívida das famílias' },
     medida: {
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
       en: ['Percentage of GDP · ', { ref: '2025' }],
@@ -206,6 +213,7 @@ const LISTA_PDM = [
     claim: 'fluxo-de-credito-as-empresas-2025',
     quadro: 'pdm',
     nome: { pt: 'Fluxo de crédito às empresas', en: 'Credit flow to corporations' },
+    nomeNoVeredicto: { pt: 'o fluxo de crédito às empresas' },
     medida: {
       pt: ['Percentagem do stock no final do período anterior · ', { ref: '2025' }],
       en: ['Percentage of the stock at the end of the previous period · ', { ref: '2025' }],
@@ -218,6 +226,7 @@ const LISTA_PDM = [
     claim: 'fluxo-de-credito-as-familias-2025',
     quadro: 'pdm',
     nome: { pt: 'Fluxo de crédito às famílias', en: 'Credit flow to households' },
+    nomeNoVeredicto: { pt: 'o fluxo de crédito às famílias' },
     medida: {
       pt: ['Percentagem do stock no final do período anterior · ', { ref: '2025' }],
       en: ['Percentage of the stock at the end of the previous period · ', { ref: '2025' }],
@@ -230,6 +239,7 @@ const LISTA_PDM = [
     claim: 'saldo-da-balanca-corrente-2025',
     quadro: 'pdm',
     nome: { pt: 'Saldo da balança corrente', en: 'Current account balance' },
+    nomeNoVeredicto: { pt: 'o saldo da balança corrente' },
     medida: {
       pt: ['Percentagem do PIB, média de três anos · ', { ref: '2025' }],
       en: ['Percentage of GDP, three-year average · ', { ref: '2025' }],
@@ -247,6 +257,7 @@ const LISTA_PDM = [
     claim: 'taxa-de-actividade-2025',
     quadro: 'pdm',
     nome: { pt: 'Taxa de atividade', en: 'Activity rate' },
+    nomeNoVeredicto: { pt: 'a taxa de atividade' },
     medida: {
       pt: ['Variação em três anos, em pontos percentuais · ', { ref: '2025' }],
       en: ['Three-year change, in percentage points · ', { ref: '2025' }],
@@ -261,6 +272,7 @@ const LISTA_PDM = [
     claim: 'taxa-de-cambio-efectiva-real-2025',
     quadro: 'pdm',
     nome: { pt: 'Taxa de câmbio efetiva real', en: 'Real effective exchange rate' },
+    nomeNoVeredicto: { pt: 'a taxa de câmbio efetiva real' },
     medida: {
       pt: ['Variação em três anos · ', { ref: '2025' }],
       en: ['Three-year change · ', { ref: '2025' }],
@@ -277,6 +289,7 @@ const LISTA_PDM = [
     claim: 'taxa-de-desemprego-mip-2025',
     quadro: 'pdm',
     nome: { pt: 'Taxa de desemprego', en: 'Unemployment rate' },
+    nomeNoVeredicto: { pt: 'a taxa de desemprego' },
     medida: {
       pt: ['Percentagem da população ativa · ', { ref: '2025' }],
       en: ['Percentage of the labour force · ', { ref: '2025' }],
@@ -516,6 +529,13 @@ const LISTA_SOCIAL = [
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
+  'eurostat-tessi164-inquilinos': {
+    publicador: 'Eurostat',
+    documento: 'Housing cost overburden rate by tenure status - EU-SILC survey',
+    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT',
+    lido: '2026-09-23',
+    excerto: 'Tenant, rent at market price',
+  },
   'painel-pdm': {
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
@@ -868,8 +888,8 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
 export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'divida-publica-2025': {
     origens: ['pdm-divida-publica'],
-    pt: ['A dívida do setor das administrações públicas, em percentagem do PIB.'],
-    en: ['General government sector debt, as a percentage of GDP.'],
+    pt: ['Quanto devem as administrações públicas, em percentagem do que o país produz num ano?'],
+    en: ['How much does general government owe, as a percentage of what the country produces in a year?'],
   },
   'posicao-de-investimento-internacional-2025': {
     /* DUAS ORIGENS DESDE 14.09.2026 (achado 3): o conceito é do Banco de
@@ -878,10 +898,10 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        excerto do Banco de Portugal a diz. A ordem é a da frase. */
     origens: ['bdp-pii', 'pdm-posicao-de-investimento'],
     pt: [
-      'A diferença entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo, em percentagem do PIB.',
+      'Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB?',
     ],
     en: [
-      'The difference between the financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world, as a percentage of GDP.',
+      'What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP?',
     ],
   },
   'custo-unitario-do-trabalho-2025': {
@@ -890,19 +910,19 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        per hour worked». A produção era da casa. */
     origens: ['pdm-custo-do-trabalho'],
     pt: [
-      'O índice nominal do custo unitário do trabalho, por hora trabalhada, e quanto ele mudou em três anos.',
+      'Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?',
     ],
     en: [
-      'The nominal unit labour cost index, per hour worked, and how much it changed over three years.',
+      'How much has the nominal unit labour cost index, per hour worked, changed over three years?',
     ],
   },
   'precos-da-habitacao-2025': {
     origens: ['glossario-hpi'],
     pt: [
-      'O índice que mede a variação dos preços de transação das casas compradas pelas famílias.',
+      'Quanto mudaram os preços de transação das casas compradas pelas famílias?',
     ],
     en: [
-      'The index that measures the changes in the transaction prices of dwellings purchased by households.',
+      'How much have the transaction prices of homes purchased by households changed?',
     ],
   },
   'desempenho-das-exportacoes-2025': {
@@ -911,10 +931,10 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        against advanced economies». A quota era da casa. */
     origens: ['pdm-exportacoes'],
     pt: [
-      'O desempenho das exportações do país face às economias avançadas, e quanto ele mudou em três anos.',
+      'Quanto mudou em três anos o desempenho das exportações do país face às economias avançadas?',
     ],
     en: [
-      'The country’s export performance against advanced economies, and how much it changed over three years.',
+      'How much has the country’s export performance against advanced economies changed over three years?',
     ],
   },
   'divida-das-empresas-2025': {
@@ -924,18 +944,18 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        definição volta a escrever «sociedades não financeiras» com a segunda
        origem que o prova (`eurostat-tipspd30`). */
     origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30'],
-    pt: ['A dívida consolidada das sociedades não financeiras, em percentagem do PIB.'],
-    en: ['Consolidated debt of non-financial corporations, as a percentage of GDP.'],
+    pt: ['Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB?'],
+    en: ['How much do non-financial corporations owe in consolidated debt, as a percentage of GDP?'],
   },
   'divida-das-familias-2025': {
     /* DUAS ORIGENS: a linha da Comissão abrevia «incl. NPISH», e o nome por
        extenso é o do glossário do Eurostat. */
     origens: ['pdm-divida-das-familias', 'glossario-npish'],
     pt: [
-      'A dívida consolidada das famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem do PIB.',
+      'Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em dívida consolidada e em percentagem do PIB?',
     ],
     en: [
-      'Household consolidated debt, including non-profit institutions serving households, as a percentage of GDP.',
+      'How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP?',
     ],
   },
   'fluxo-de-credito-as-empresas-2025': {
@@ -963,10 +983,10 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        não financeiras» sem o marcador. */
     origens: ['pdm-credito-as-empresas', 'glossario-fdi', 'eurostat-tipspd30'],
     pt: [
-      'O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro.',
+      'Quanto representa o fluxo de crédito consolidado às sociedades não financeiras na dívida que tinham no período anterior, excluindo o investimento direto estrangeiro das duas parcelas?',
     ],
     en: [
-      'The consolidated credit flow to non-financial corporations, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment.',
+      'What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts?',
     ],
   },
   'fluxo-de-credito-as-familias-2025': {
@@ -979,10 +999,10 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        duas palavras da casa. A definição diz agora o que o excerto diz. */
     origens: ['pdm-credito-as-familias', 'glossario-npish'],
     pt: [
-      'O fluxo de crédito consolidado às famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem da dívida que elas tinham no período anterior.',
+      'Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem?',
     ],
     en: [
-      'The consolidated credit flow to households, including non-profit institutions serving households, as a percentage of their debt stock in the previous period.',
+      'What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?',
     ],
   },
   'saldo-da-balanca-corrente-2025': {
@@ -993,19 +1013,19 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        antes, e não uma janela de três anos que acaba na observação. */
     origens: ['pdm-balanca-corrente'],
     pt: [
-      'O saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás.',
+      'Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás?',
     ],
     en: [
-      'The current account balance as a percentage of GDP, on a three-year backward moving average.',
+      'What is the current account balance as a percentage of GDP, on a three-year backward moving average?',
     ],
   },
   'taxa-de-actividade-2025': {
     origens: ['glossario-atividade', 'pdm-taxa-de-actividade'],
     pt: [
-      'A percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável, e quanto ela mudou em três anos.',
+      'Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável?',
     ],
     en: [
-      'The percentage of active persons, employed or unemployed, in the comparable total population, and how much it changed over three years.',
+      'How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years?',
     ],
   },
   'taxa-de-cambio-efectiva-real-2025': {
@@ -1015,14 +1035,14 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        entra com a marca de escala de instrumento. */
     origens: ['pdm-cambio-efectivo-real'],
     pt: [
-      'A taxa de câmbio efetiva real face a outros ',
+      'Quanto mudou em três anos a taxa de câmbio efetiva real face a outros ',
       { nl: '41', motivo: 'escala-de-instrumento' },
-      ' países industriais, com base nos deflatores dos índices de preços no consumidor, e quanto ela mudou em três anos.',
+      ' países industriais, com base nos deflatores dos índices de preços no consumidor?',
     ],
     en: [
-      'The real effective exchange rate relative to ',
+      'How much has the real effective exchange rate relative to ',
       { nl: '41', motivo: 'escala-de-instrumento' },
-      ' other industrial countries, based on consumer price index deflators, and how much it changed over three years.',
+      ' other industrial countries, based on consumer price index deflators, changed over three years?',
     ],
   },
   /* O GRUPO ETÁRIO DESTAS TRÊS (I129, segunda passagem, 22.09.2026). A célula
@@ -1034,58 +1054,58 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'taxa-de-desemprego-mip-2025': {
     origens: ['glossario-desemprego'],
     pt: [
-      'O número de pessoas dos ',
+      'Que parte da população ativa dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' anos sem emprego, em percentagem da população ativa.',
+      ' anos está sem emprego?',
     ],
     en: [
-      'The number of unemployed people aged ',
+      'What share of the labour force aged ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ', as a percentage of the labour force.',
+      ' is unemployed?',
     ],
   },
   'taxa-de-emprego-2025': {
     origens: ['glossario-emprego'],
     pt: [
-      'A percentagem de pessoas dos ',
+      'Que parte das pessoas dos ',
       { nl: '20', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '64', motivo: 'escala-de-instrumento' },
-      ' anos com emprego na população comparável.',
+      ' anos tem emprego?',
     ],
     en: [
-      'The percentage of employed persons aged ',
+      'What share of people aged ',
       { nl: '20', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '64', motivo: 'escala-de-instrumento' },
-      ' in relation to the comparable total population.',
+      ' is employed?',
     ],
   },
   'taxa-de-desemprego-2025': {
     origens: ['glossario-desemprego'],
     pt: [
-      'O número de pessoas dos ',
+      'Que parte da população ativa dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' anos sem emprego, em percentagem da população ativa.',
+      ' anos está sem emprego?',
     ],
     en: [
-      'The number of unemployed people aged ',
+      'What share of the labour force aged ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ', as a percentage of the labour force.',
+      ' is unemployed?',
     ],
   },
   'desemprego-de-longa-duracao-2025': {
     origens: ['glossario-longa-duracao'],
-    pt: ['As pessoas sem trabalho que procuram emprego ativamente há pelo menos um ano.'],
-    en: ['People who are out of work and have been actively seeking employment for at least a year.'],
+    pt: ['Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano?'],
+    en: ['What share of the labour force is out of work and has been actively seeking employment for at least a year?'],
   },
   'jovens-nem-2025': {
     /* «E SEXO» (achado 7 de 14.09.2026). O excerto diz «the population of a
@@ -1102,53 +1122,66 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        célula K13 do `check:cartao` compara estas palavras com a linha. */
     origens: ['glossario-nem'],
     pt: [
-      'A percentagem das pessoas dos ',
+      'Que parte dos jovens dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '29', motivo: 'escala-de-instrumento' },
-      ' anos, de ambos os sexos, que não tem emprego e não está em estudos nem em formação.',
+      ' anos, de ambos os sexos, não trabalha nem estuda nem está em formação?',
     ],
     en: [
-      'The percentage of the population aged ',
+      'What share of young people aged ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '29', motivo: 'escala-de-instrumento' },
-      ', of both sexes, who is not employed and not involved in further education or training.',
+      ', of both sexes, is not employed and is not in education or training?',
     ],
   },
   'abandono-escolar-precoce-2025': {
     origens: ['glossario-abandono'],
     pt: [
-      'As pessoas dos ',
+      'Que parte das pessoas dos ',
       { nl: '18', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '24', motivo: 'escala-de-instrumento' },
-      ' anos que completaram no máximo o ensino básico e não estão em estudos nem em formação.',
+      ' anos completou no máximo o ensino básico e não está em estudos nem em formação?',
     ],
     en: [
-      'People aged ',
+      'What share of people aged ',
       { nl: '18', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '24', motivo: 'escala-de-instrumento' },
-      ' who have completed at most lower secondary education and are not involved in further education or training.',
+      ' has completed at most lower secondary education and is not in education or training?',
     ],
   },
   'risco-de-pobreza-ou-exclusao-2025': {
     origens: ['glossario-arope'],
     pt: [
-      'A parte da população que está em risco de pobreza, ou em privação material e social grave, ou a viver num agregado com intensidade de trabalho muito baixa; quem está em mais do que uma destas situações conta uma vez só.',
+      'Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?',
     ],
     en: [
-      'The share of the total population who are either at risk of poverty, or severely materially and socially deprived, or living in a household with a very low work intensity; people are counted only once even if they are in more than one of these situations.',
+      'What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?',
     ],
   },
   'racio-s80-s20-2025': {
     origens: ['glossario-s80s20'],
     pt: [
-      'Uma medida da desigualdade na distribuição do rendimento: o rendimento total do quinto da população com mais rendimento a dividir pelo do quinto com menos.',
+      'Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?',
     ],
     en: [
-      'A measure of the inequality of income distribution: the total income of the fifth of the population with the highest income divided by that of the fifth with the lowest.',
+      'How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?',
+    ],
+  },
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
+    origens: ['glossario-sobrecarga', 'eurostat-tessi164-inquilinos'],
+    pt: [
+      'Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
+      { nl: '40', motivo: 'escala-de-instrumento' },
+      ' % do rendimento disponível, também líquido de subsídios à habitação?',
+    ],
+    en: [
+      'What share of tenants at market rent live in households where total housing costs, net of housing allowances, take more than ',
+      { nl: '40', motivo: 'escala-de-instrumento' },
+      ' % of disposable income, also net of housing allowances?',
     ],
   },
   'sobrecarga-do-custo-da-habitacao-2025': {
@@ -1159,14 +1192,14 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        duas: mudava o que entra no numerador e no denominador. */
     origens: ['glossario-sobrecarga'],
     pt: [
-      'A percentagem da população que vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
+      'Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      '% do rendimento disponível, líquido de subsídios à habitação.',
+      ' % do rendimento disponível, também líquido de subsídios à habitação?',
     ],
     en: [
-      'The percentage of the population living in households where total housing costs, net of housing allowances, take more than ',
+      'What share of people, across all tenure statuses, live in households where total housing costs, net of housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      '% of disposable income, net of housing allowances.',
+      ' % of disposable income, also net of housing allowances?',
     ],
   },
 });

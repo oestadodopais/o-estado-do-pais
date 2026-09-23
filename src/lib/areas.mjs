@@ -122,8 +122,9 @@ function pecasDaArea(area, claims) {
        rendem-se dentro do cartão da medida que enquadram, e listá-las como
        cartões próprios punha a página da habitação com seis cartões em vez de
        três e o mesmo valor selado duas vezes na mesma página, que é o que a régua
-       A3 proíbe. A lista sai de `referencias.json` e não de uma lista escrita à
-       mão; a razão por extenso está em `src/lib/enquadramento.mjs`. */
+       A3 proíbe. A lista sai de `referencias.json` e da tabela única das medidas
+       nacionais, com a mesma edição e unidade provadas para as comparações
+       novas; a razão está em `src/lib/enquadramento.mjs`. */
     if (eLinhaDeEnquadramento(id)) continue;
 
     const estudo = typeof c.study === 'string' ? c.study : null;
