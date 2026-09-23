@@ -159,4 +159,16 @@ Do mais antigo para o mais recente, sobre `cbe87016`:
 - `68b7944c` R1: o inventário das frases e a sua entrada na revisão, para os mandatos 2, 4, 6, 9, 11 e 12
 - o commit das medições, deste relatório e das capturas, que é a cabeça onde os três portões correm
 
-Os ficheiros partilhados por vários mandatos (`check-pais.mjs`, `gate-html.mjs`, `alvos.mjs`, os dois ficheiros de plantas e outros) foram encenados pedaço a pedaço, cada pedaço no commit do seu mandato; um pedaço que servia dois mandatos entrou no primeiro que dele precisou (os auxiliares do texto declarado no commit da I141, que o diz; a importação de `FIGURAS` do `check:pais` no da I144; e os comentários de cabeça das plantas, que nomeiam todas as células do bloco). Os commits intermédios não foram construídos um a um: a construção inteira correu na cabeça com o código todo (`68b7944c`, código 0), e as plantas, as capturas e as medidas correram sobre essa construção. As saídas dos três portões na cabeça final, e a tabela delas, entram no commit seguinte.
+Os ficheiros partilhados por vários mandatos (`check-pais.mjs`, `gate-html.mjs`, `alvos.mjs`, os dois ficheiros de plantas e outros) foram encenados pedaço a pedaço, cada pedaço no commit do seu mandato; um pedaço que servia dois mandatos entrou no primeiro que dele precisou (os auxiliares do texto declarado no commit da I141, que o diz; a importação de `FIGURAS` do `check:pais` no da I144; e os comentários de cabeça das plantas, que nomeiam todas as células do bloco). Os commits intermédios não foram construídos um a um: a construção inteira correu na cabeça com o código todo (`68b7944c`, código 0), e as plantas, as capturas e as medidas correram sobre essa construção. As saídas dos três portões na cabeça final, e a tabela delas, entraram no commit seguinte (§20).
+
+## 20 · Os três portões na cabeça final
+
+A cabeça sobre a qual os três portões correram: `717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e`, no ramo `r1-2026-09-23`, sobre `main` em `cbe87016`; é o commit das medições e deste relatório, e o commit seguinte só acrescenta as saídas destes portões, a tabela e o `medidas.json` refeito. Cada portão correu no seu comando, com o código de saída lido de um ficheiro acabado de escrever e não de um `echo` atrás de um `|`, e os ficheiros `.codigo` apagados antes da corrida; ao lado de cada um ficam em `portoes/` o `.inicio`, o `.fim`, o `.cabeca` e o `.log`, este com o caminho da máquina tirado.
+
+| Comando | Início | Fim | Tempo de parede | Código |
+|---|---|---|---:|---:|
+| `npm run build` | 2026-09-23T12:38:30Z | 2026-09-23T12:43:18Z | **4 m 48 s** | **0** |
+| `npm run verify` | 2026-09-23T12:43:18Z | 2026-09-23T12:51:20Z | **8 m 2 s** | **0** |
+| `npm run typecheck` | 2026-09-23T12:51:20Z | 2026-09-23T12:51:20Z | **0 s** | **0** |
+
+O que as células deste bloco disseram nessa corrida: o `gate:html` contou 7342 rótulos no topo em 7342 páginas fora dos documentos alojados, 0 no rodapé e 2 fichas, e 5956 títulos de linha separados em 5956 páginas de linha; a T9 viu 26 cartões com referência nas duas edições, 8 fora e 18 dentro, cada um com a cor do seu estado; a F17 viu a frase em 278 cartões portugueses e 278 ingleses, de 278 e 278 atrasados; o `check:voz` leu 1158 linhas do inventário com bloco, 599 vivas e todas rendidas, 559 retiradas e nenhuma rendida; a H14 mediu 230 passagens com 0 partidas, e a H15 viu «mour» com 2 resultados à vista; a L1 está em 2279, com o teto em 2279; e a K14 viu 6 cartões com a média calada. No motor, o `core.gate` na cabeça `abac640` deu PASS, código 0 (§18).
