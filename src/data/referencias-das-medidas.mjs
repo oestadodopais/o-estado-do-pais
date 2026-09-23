@@ -21,7 +21,7 @@ export const REFERENCIAS_DAS_MEDIDAS = new Map([
 ]);
 
 for (const figura of FIGURAS) {
-  if (!figura.limiar) continue;
+  if (!('limiar' in figura) || !figura.limiar) continue;
   const fixador = fixadorDoLimiar(figura, 'referências dos cartões');
   if (!fixador) throw new Error(`Referência sem fixador: ${figura.claim}`);
   REFERENCIAS_DAS_MEDIDAS.set(figura.claim, { limiar: figura.limiar, limiarFixadoPor: fixador });

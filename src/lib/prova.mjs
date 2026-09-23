@@ -687,10 +687,6 @@ for (const a of AREAS) {
   };
 }
 
-/**
- * Todos os números que o sítio diz sobre si próprio, na língua de uma edição.
- * @param {'pt'|'en'} [lang]
- */
 /** B2: uma contagem sobre linhas publicadas, não uma medição nova.
  * A igualdade pertence a «dentro»; uma marca textual publicada pertence a
  * «sem valor». Uma linha ausente ou um valor ilegível fecha a construção,
@@ -720,6 +716,10 @@ export function contagensDasCamaras(claims = loadClaims(), municipios = MUNICIPI
   return contagens;
 }
 
+/**
+ * Todos os números que o sítio diz sobre si próprio, na língua de uma edição.
+ * @param {'pt'|'en'} [lang]
+ */
 export function prova(lang = 'pt') {
   const claims = loadClaims();
   const linhas = [...claims.values()];
