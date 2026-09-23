@@ -46,4 +46,16 @@ export const MUDANCAS_DO_PROJETO = [
       ],
     },
   },
+  {
+    /* A PEÇA DAS PENALIZAÇÕES CORRIGIDA (bloco M4b, 23.09.2026, decisão da §1.125).
+       Sem algarismos, porque os valores da conta não têm linha neste sítio; a
+       conta inteira está na linha ch8-racio-derivado do livro do motor. */
+    id: 'multiplo-penalizacoes-2026-09-23',
+    data: '2026-09-23',
+    decisao: '1.125',
+    texto: {
+      pt: 'No estudo «Penalizações por Reforma Antecipada em Portugal», a frase que explicava o múltiplo entre a penalização legal com o fator de sustentabilidade e a redução neutra fazia a conta com o valor arredondado, e essa conta não dava o múltiplo que a frase anunciava; a frase passou a fazer a conta com o valor antes de arredondar. Uma enumeração de escalões de carreira ganhou a palavra «anos» em dois deles. Nenhum valor do estudo mudou.',
+      en: 'In the study “Penalizações por Reforma Antecipada em Portugal”, the sentence explaining the multiple between the legal penalty with the sustainability factor and the neutral reduction made the calculation with the rounded value, and that calculation did not give the multiple the sentence announced; the sentence now makes the calculation with the value before rounding. A list of career brackets gained the word “anos” in two of them. No value in the study changed.',
+    },
+  },
 ];

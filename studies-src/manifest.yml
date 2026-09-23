@@ -246,13 +246,13 @@ edicoes:
     lang: pt
     title: "Penalizações por Reforma Antecipada em Portugal"
     origin: researchhub
-    origin_ref: "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ 7c0b24700d76cb3a67442f2495178212169c7586"
+    origin_ref: "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2"
     raw_file: _raw/penalizacoes-por-reforma-antecipada-2026.pt.html
-    fetched_utc: 2026-08-24T10:32:50Z
-    bytes_raw: 17263
-    bytes_normalized: 17263
-    sha256_raw: 96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2
-    sha256_normalized: 96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2
+    fetched_utc: 2026-09-23T13:19:42Z
+    bytes_raw: 17274
+    bytes_normalized: 17274
+    sha256_raw: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
+    sha256_normalized: 6f29b97aad33b099710137c9931a905d4e9e42f9f6e49314d49c38950d0540b4
   # O estudo de Évora 2027, produzido no motor com as fontes fechadas de
   # 15.09.2026 e atravessado como ficheiro nas duas edições. Sem anfitrião,
   # sem runtime, sem normalização: os dois resumos são iguais porque os bytes

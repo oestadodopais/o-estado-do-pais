@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-23T11:34:09+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/89310385-4199-4fd7-9e89-79d45e2fe588/scratchpad/leituras/pacote-m4b",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "content/11 Seguranca Social/ledger.json",
+   "descricao": "o valor de uma linha corrigida trocado (19,10 para 19,01), com a correção e o excerto a dizerem 19,10",
+   "sha256_antes": "75e7b6dfe92cdbb123c47f5f6e7d2274976ce4a13d2f25f7a3db341a626dde20",
+   "sha256_depois": "dc7da09f341d795242c0e79b1c927fed77f76cdb736bd4601093f27144359fd0",
+   "contexto_antes": "a TIR de 4,31% e a taxa de 2,5% assumida) está em linhas próprias.\",\n      \"check\": \"round ( ch5-pv-beneficios / ch5-av-contribuicoes , 3 )\"\n    },\n    {\n      \"id\": \"ch6-taxa-contributiva-nao-fixada\",\n      \"value\": \"19,10\",\n      \"source_url\": \"https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af0",
+   "contexto_depois": "a TIR de 4,31% e a taxa de 2,5% assumida) está em linhas próprias.\",\n      \"check\": \"round ( ch5-pv-beneficios / ch5-av-contribuicoes , 3 )\"\n    },\n    {\n      \"id\": \"ch6-taxa-contributiva-nao-fixada\",\n      \"value\": \"19,01\",\n      \"source_url\": \"https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af0"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "content/11 Seguranca Social/ledger.json",
+   "descricao": "a expressão check de uma linha calculada alterada (12 meses para 11), que deixa de dar 2,75",
+   "sha256_antes": "dc7da09f341d795242c0e79b1c927fed77f76cdb736bd4601093f27144359fd0",
+   "sha256_depois": "5e2c1edb7ccedff586e14c3ed81dad36ef4b7d66dddbd113154e51669a7f913e",
+   "contexto_antes": ",94 = 22,5722%), a dividir pela redução neutra de um ano (8,2%), a duas casas. Com a penalização arredondada, 22,6 ÷ 8,2 dá 2,76, e não 2,75.\",\n      \"check\": \"round ( ( 1 - fs-2026 * ( 1 - penalizacao-mensal * 12 ) ) * 100 / fig84-reducao-1a , 2 )\",\n      \"corrections\": [\n        {\n          \"date\": \"2026-09-23\",\n          \"kind\": \"proveniencia\",\n          \"field\": \"excerpt\",\n          \"old_value\": \"Deri",
+   "contexto_depois": ",94 = 22,5722%), a dividir pela redução neutra de um ano (8,2%), a duas casas. Com a penalização arredondada, 22,6 ÷ 8,2 dá 2,76, e não 2,75.\",\n      \"check\": \"round ( ( 1 - fs-2026 * ( 1 - penalizacao-mensal * 11 ) ) * 100 / fig84-reducao-1a , 2 )\",\n      \"corrections\": [\n        {\n          \"date\": \"2026-09-23\",\n          \"kind\": \"proveniencia\",\n          \"field\": \"excerpt\",\n          \"old_value\": \"Deri"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "uma contagem do relatório trocada (184 linhas novas para 186), com a prova no pacote (o livro antes e depois, e o medidas.json)",
+   "sha256_antes": "26983aa0fb848eeed31869ba745c4d87540bccfe74477182d921ef303a9d5712",
+   "sha256_depois": "65a95679e30db04d27e87c363da040b1273c17ce6a34c580843e5ab6d9f55441",
+   "contexto_antes": "S, IAS, NDC, GIV e CSI) passam a `_meta.glossario`, onde deixam de contar como entidades.\n\n### 2.6 O resultado\n\nO livro tem 238 linhas: 44 das da base mudaram, 184 são novas e uma saiu; a mesma validação do antes recusa 0. O `core.reconcile`, o `core.attributions`, o `core.assertions` e o `core.prose` saem, na peça, a 0, 1, 0 e 0, ",
+   "contexto_depois": "S, IAS, NDC, GIV e CSI) passam a `_meta.glossario`, onde deixam de contar como entidades.\n\n### 2.6 O resultado\n\nO livro tem 238 linhas: 44 das da base mudaram, 186 são novas e uma saiu; a mesma validação do antes recusa 0. O `core.reconcile`, o `core.attributions`, o `core.assertions` e o `core.prose` saem, na peça, a 0, 1, 0 e 0, "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "content/11 Seguranca Social/ledger.json",
+   "descricao": "o valor de uma linha de imprensa trocado («fechado» para «encerrado»), quando o corpo guardado e a correção dizem «fechado»",
+   "sha256_antes": "5e2c1edb7ccedff586e14c3ed81dad36ef4b7d66dddbd113154e51669a7f913e",
+   "sha256_depois": "e5631787a10b2be7add70aa6b27ffbcf3aa67c9ff8eb42c5865b258cecb268d9",
+   "contexto_antes": "82%) bate com a tabela 18 da ficha de Portugal do Ageing Report 2024, o de 2025 (56,28%) não sai dela; fechar exige os dados anuais do AWG.\"\n    },\n    {\n      \"id\": \"governo-posicao\",\n      \"value\": \"O dossiê está fechado\",\n      \"source_url\": \"https://observador.pt/2026/08/20/dossie-esta-fechado-leitao-amaro-afasta-reforma-das-pensoes-nesta-legislatura/\",\n      \"fetched_at\": \"20",
+   "contexto_depois": "82%) bate com a tabela 18 da ficha de Portugal do Ageing Report 2024, o de 2025 (56,28%) não sai dela; fechar exige os dados anuais do AWG.\"\n    },\n    {\n      \"id\": \"governo-posicao\",\n      \"value\": \"O dossiê está encerrado\",\n      \"source_url\": \"https://observador.pt/2026/08/20/dossie-esta-fechado-leitao-amaro-afasta-reforma-das-pensoes-nesta-legislatura/\",\n      \"fetched_at\": \"20"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "core/gate_baselines.json",
+   "descricao": "a linha de base dos órfãos do relatório afrouxada (17 para 19), contra o que o relatório e o portão dizem",
+   "sha256_antes": "1a85937ad28a6e15d0fc023da61a3a2b34c2f07c86d6a734222fef82aa5745e4",
+   "sha256_depois": "1a222bbdcc04286c8cea3e2f64885f601e13a9ae188bed78c1cd19da2867eb91",
+   "contexto_antes": "seguranca-social-relatorio\",\n   \"document\": \"content/11 Seguranca Social/RELATORIO-seguranca-social.md\",\n   \"ledger\": \"content/11 Seguranca Social/ledger.json\",\n   \"counts\": {\n    \"numbers\": 656,\n    \"matched\": 335,\n    \"orphans\": 17,\n    \"misattributions\": 89,\n    \"undeclared\": 0,\n    \"undeclared_assertions\": 0,\n    \"failed_assertions\": 0,\n    \"number_adjacencies\": 0\n   },\n   \"reason\": \"O ",
+   "contexto_depois": "seguranca-social-relatorio\",\n   \"document\": \"content/11 Seguranca Social/RELATORIO-seguranca-social.md\",\n   \"ledger\": \"content/11 Seguranca Social/ledger.json\",\n   \"counts\": {\n    \"numbers\": 656,\n    \"matched\": 335,\n    \"orphans\": 19,\n    \"misattributions\": 89,\n    \"undeclared\": 0,\n    \"undeclared_assertions\": 0,\n    \"failed_assertions\": 0,\n    \"number_adjacencies\": 0\n   },\n   \"reason\": \"O "
+  }
+ ]
+}
