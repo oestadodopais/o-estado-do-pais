@@ -92,3 +92,33 @@
   max-width: 60ch;
 }
 
+/* A origem também vive no recibo novo. A ligação e o sinal da dobra levam
+   consigo as regras que tinham na página europeia, sem depender da sua folha. */
+.def-origem-doc.lig {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.def-excerto .dobra-seta {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+.def-excerto .dobra-seta::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.def-excerto[open] > .def-excerto-abrir .dobra-seta::before {
+  transform: rotate(90deg);
+}
