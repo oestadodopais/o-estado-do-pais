@@ -254,7 +254,7 @@ const palavraDoCartao = (c) =>
                 chave da prova que o portão reconta. */}
             {palavra ? (
               <div class="cartao-topo">
-                {referencia ? <span class="cartao-palavra cartao-veredicto"><VeredictoDaReferencia linha={getClaim(c.id)} limiar={referencia.limiar} s={s} /></span> : <>
+                {referencia ? <span class="cartao-palavra cartao-veredicto"><VeredictoDaReferencia linha={getClaim(c.id)} limiar={referencia.limiar} dono={referencia.limiarFixadoPor} s={s} /></span> : <>
                   {c.estado !== 'sem' && <span class={`sq sq-${pintado ? c.estado : 'sem'}`} aria-hidden="true" />}
                   <span class:list={['cartao-palavra', pintado && `est-${c.estado}`]}>{palavra}</span>
                 </>}
