@@ -1,0 +1,106 @@
+{
+  "cabeca_do_motor": "b66c0fd4beefdaef1432390167fccae80a113484",
+  "teste": "python3 -m core.http_nome_test",
+  "plantas": [
+    {
+      "nome": "cliente-com-navegador-aceite",
+      "o_que": "o cliente deixa de recusar `browser_ua=True`",
+      "ficheiro": "core/http.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "um cliente pedido com a identidade de um navegador não foi recusado com a razão"
+      ],
+      "mordeu": true,
+      "antes": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "reposto": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "passou": true
+    },
+    {
+      "nome": "nome-de-fora-aceite",
+      "o_que": "a porta `user_agent=` volta a aceitar qualquer cadeia",
+      "ficheiro": "core/http.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "um cliente pedido com o nome de um navegador em `user_agent=` não foi recusado"
+      ],
+      "mordeu": true,
+      "antes": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "reposto": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "passou": true
+    },
+    {
+      "nome": "for-source-de-fora-aceite",
+      "o_que": "`for_source()` volta a aceitar um dicionário que não é do registo",
+      "ficheiro": "core/http.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "for_source\\(\\) aceitou um dicionário de fora do registo"
+      ],
+      "mordeu": true,
+      "antes": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "reposto": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "passou": true
+    },
+    {
+      "nome": "for-source-com-a-chave-aceite",
+      "o_que": "`for_source()` deixa de recusar a chave `browser_ua`",
+      "ficheiro": "core/http.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "uma entrada do registo com a forma antiga da excepção reabriu uma porta",
+        "não recusou com IdentidadeDeNavegadorRecusada uma fonte com a chave browser_ua"
+      ],
+      "mordeu": true,
+      "antes": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "reposto": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "passou": true
+    },
+    {
+      "nome": "cabecalho-de-fora-aceite",
+      "o_que": "as cinco portas deixam passar um `User-Agent` de quem chama",
+      "ficheiro": "core/http.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "nem todas as portas recusaram um User-Agent de fora",
+        "uma entrada do registo com a forma antiga da excepção reabriu uma porta"
+      ],
+      "mordeu": true,
+      "antes": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "reposto": "fc3f21cdf7120baef82e184537ed6b2349f92b581630643a5439d5279cbbc2cb",
+      "passou": true
+    },
+    {
+      "nome": "registo-com-a-chave",
+      "o_que": "a chave `browser_ua` volta a uma entrada do registo, a False",
+      "ficheiro": "core/sources.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "o registo das fontes tem a chave browser_ua em: \\['tribunal_contas'\\]"
+      ],
+      "mordeu": true,
+      "antes": "5483d3350b49f93197fb45161b5dde49280ee8f55663d828ac31cfedd6882ed8",
+      "reposto": "5483d3350b49f93197fb45161b5dde49280ee8f55663d828ac31cfedd6882ed8",
+      "passou": true
+    },
+    {
+      "nome": "estudo-com-navegador-de-volta",
+      "o_que": "uma busca de um estudo volta a mandar o nome de um navegador pelo `requests`",
+      "ficheiro": "content/06 Évora Economy/Technical Source/fetch_iefp_check.py",
+      "comando": "python3 -m core.http_nome_test",
+      "codigo": 1,
+      "mordidas": [
+        "linha\\(s\\) de código do motor com o nome de um navegador: \\['content/06 Évora Economy/Technical Source/fetch_iefp_check\\.py:\\d+'\\]"
+      ],
+      "mordeu": true,
+      "antes": "99e5e317d982fb3fd86dfead24487b4c013e2d065ea0b3fb01c15ce666eefa9d",
+      "reposto": "99e5e317d982fb3fd86dfead24487b4c013e2d065ea0b3fb01c15ce666eefa9d",
+      "passou": true
+    }
+  ]
+}
