@@ -1,0 +1,63 @@
+{
+  "estado": "antes",
+  "cabeca_da_arvore": "7f65829935e838c29129be0187072c5c8d87c39f",
+  "dist_construido_de": "7f65829935e838c29129be0187072c5c8d87c39f",
+  "dist_construido_em": "2026-09-23T18:04:29.442Z",
+  "inicio": "2026-09-23T18:07:43.363Z",
+  "fim": "2026-09-23T18:08:10.270Z",
+  "segundos": 26.907,
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "sha256": "4d6908aeb5109d4585b9e34afcb1201c86980decb485086b9cca05a7cf17ed7c"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "sha256": "8179d2d288b0dbce6c24a657cd88e4149ea7de42d21f56462f26ea72feddd380"
+    },
+    "temas_index.html": {
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "sha256": "b9e3ee821f36e74ed6d7c068f7c19be66124ce1e09349d29f0324d0059ce7a8d"
+    },
+    "en_themes_index.html": {
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "sha256": "6d92389ec6bae9a48d00af94692b948641c790b46b7c0f3b792007c93a860c18"
+    },
+    "uniao-europeia_index.html": {
+      "rota": "/uniao-europeia/",
+      "familia": "europeia",
+      "lingua": "pt",
+      "sha256": "0b28388316686364d773cbb3690de306a8f3b229b4024bd433ba5276c08218f4"
+    },
+    "en_european-union_index.html": {
+      "rota": "/en/european-union/",
+      "familia": "europeia",
+      "lingua": "en",
+      "sha256": "59f441af9a955ff3e23b3062017157bdef13f928e5ebb8df54cf0c27d29e0420"
+    },
+    "municipios_mourao_index.html": {
+      "rota": "/municipios/mourao/",
+      "familia": "mourao",
+      "lingua": "pt",
+      "sha256": "e9557852d83f65a22a1cdc787069da99aa3874a1e1c3cf24361cffbaa3b6343b"
+    },
+    "en_municipalities_mourao_index.html": {
+      "rota": "/en/municipalities/mourao/",
+      "familia": "mourao",
+      "lingua": "en",
+      "sha256": "e57867b385bfa04f6287cedd2260742adfb939bdd7e8bd61f534a9f356c0c252"
+    },
+    "site.css": {
+      "origem": "src/styles/site.css@7f65829935e838c29129be0187072c5c8d87c39f",
+      "sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
+    }
+  }
+}
