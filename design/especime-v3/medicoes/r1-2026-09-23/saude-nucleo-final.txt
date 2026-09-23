@@ -1,0 +1,11 @@
+2026-09-23T12:00:19Z
+abac640 A 2.ª notificação de 2026 do INE entra no livro do estudo 13: três linhas datadas, e a data de publicação que atravessa
+[PASS] tls+http: certifi handshake                              0.3s  CORDIS reachable over TLS, total=59,164
+[PASS] ine: one live request, uncached (Evora)                  2.6s  INE returned municipal data for Évora in 2.6s, live and uncached (keys=['Março de 2026'])
+[PASS] portal_base: a fonte caiu a 16.09.2026, nenhum pedido    0.0s  Portal BASE caído a 2026-09-16, recusado pelo cliente antes de qualquer pedido: a fonte 'Portal BASE — public contracts (IMPIC)' caiu a 2026-09-16: decisão do diretor de 16.09.2026 (a emenda dessa man…
+[PASS] provenance: structural invariant                         0.0s  empty-source rejected; qualifier applied: 'X spent 1M [independent foundation, not a government record]'
+[PASS] store: append-only time series                           0.0s  2 observations recorded, change detected=True
+
+5/5 checks passed.
+codigo 0
+2026-09-23T12:00:23Z

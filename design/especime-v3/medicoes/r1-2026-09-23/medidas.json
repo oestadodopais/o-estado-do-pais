@@ -1,0 +1,678 @@
+{
+  "cabeca": "68b7944cf30beffcd45e1a82180e84103adab614",
+  "partida": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
+  "commits_do_ramo": [
+    "68b7944c R1: o inventário das frases e a sua entrada na revisão, para os mandatos 2, 4, 6, 9, 11 e 12",
+    "34e46d71 R1: a catraca L1 sobe de 2 271 para 2 279 páginas, medida página a página",
+    "a1f90a17 R1 (§1.124): a leitura do país diz as duas leituras oficiais da dívida, e «O que mudou» regista-o",
+    "4ee0d9ef R1 (I147): as três linhas da 2.ª notificação de 2026 do INE atravessam do livro do estudo 13",
+    "d7a39ffe R1 (I140): o Portal BASE deixa de ser fonte no Método, pela decisão de 16.09.2026 que o motor executou",
+    "e5e60b8c R1 (I146): o cartão de um concelho diz, ao pé do período, que a fonte já publicou um mais recente",
+    "fc830a07 R1 (I139): os cartões com valor de referência rendem a cor de estado que o Método promete",
+    "4b7a5faa R1 (I143): no título do recibo, o valor e a unidade com um espaço entre si no texto da página",
+    "cdbc914a R1 (I142): as duas definições das empresas escrevem «sociedades não financeiras», provadas pela resposta do Eurostat",
+    "47e9f952 R1 (I145): o rótulo de IA no topo de todas as páginas, uma vez, e fora do rodapé",
+    "5d7d57b6 R1 (I144): a lista dos estudos é uma só, do mais recente para o mais antigo, com o lugar e o tema em cada entrada",
+    "fc057d1e R1 (I141): as mudanças declaradas do projeto na língua do leitor, e a célula M4 que recusa a do código",
+    "3cb9ede5 R1 (I138): o cartão da sobrecarga da habitação deixa de mostrar a média europeia, e a nota da agenda diz o que é verdade",
+    "8982a767 R1 (I137): a pesquisa dos lugares mostra a lista ao escrever, e o Enter só abre com um resultado"
+  ],
+  "commits_do_ramo_n": 14,
+  "brief_antes": {
+    "pesquisa_enter_recarrega": 0,
+    "pesquisa_lista_nunca_se_mostra": 0,
+    "pesquisa_lista_nasce_escondida": 1,
+    "sha256_primeira": "67ffaefb6eefb667d5a3f66b9c1a200487bfe4af8398612192d1db3f75ddfab6",
+    "sha256_temas": "2cb08db2f425a5428d15fea80ca65b0e0305f7a3b77a32bffd2153cb446f1bc4",
+    "sha256_europeia": "fdff8bc7713b22e29902fefab5f4e1a24c1a6c3a220be4206fb72e8a72c878c5",
+    "sha256_mourao": "b66f1283511befc852ae7095e504421889ac74e479e1f88141d6755710422be2",
+    "sha256_recibo": "eaf61b98f45ec9fbf011577b31b53ba2e75525464c944a18eb3f9b659753c70d",
+    "cor_de_estado_na_primeira_pagina": 0,
+    "cor_de_estado_nos_temas": 0,
+    "cor_de_estado_na_pagina_europeia": 39,
+    "ficheiros_com_a_ressalva_fora_da_agenda": 0,
+    "agenda_diz_que_a_primeira_pagina_ja_diz": 1,
+    "agenda_diz_que_nao_publica_a_media": 1,
+    "cartao_da_habitacao_com_media_europeia": 1,
+    "mudancas_declaradas": 2,
+    "mudancas_com_palavras_internas": 1,
+    "estudos_seccao_por_lugar": 1,
+    "definicoes_com_sigla_por_verificar": 2,
+    "vistas_com_o_rotulo_no_topo": 1,
+    "recibo_valor_e_unidade_colados": 1,
+    "cartoes_do_concelho": 8,
+    "cartoes_do_concelho_com_regua": 1,
+    "metodo_frase_da_cor": 1,
+    "metodo_frase_do_base": 1,
+    "sha256_ine": "880d30d8632f3e50aed26c93a527426dcb48e192097665693df7ed69f05400e5",
+    "ine_divida_2025": "89,2",
+    "ine_divida_2024": "93,0",
+    "ine_saldo_2025": "0,7"
+  },
+  "paginas_depois": {
+    "dist_construido_de": "68b7944cf30beffcd45e1a82180e84103adab614",
+    "cabeca_da_arvore": "68b7944cf30beffcd45e1a82180e84103adab614",
+    "copias": 16
+  },
+  "pesquisa": {
+    "antes": [
+      {
+        "lang": "pt",
+        "largura": 390,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 0,
+        "mouraoVisivel": false,
+        "enterComVariosFica": false,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": false,
+        "unicoVisiveis": 0,
+        "enterComUmAbre": false,
+        "passa": false
+      },
+      {
+        "lang": "pt",
+        "largura": 1280,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 0,
+        "mouraoVisivel": false,
+        "enterComVariosFica": false,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": false,
+        "unicoVisiveis": 0,
+        "enterComUmAbre": false,
+        "passa": false
+      },
+      {
+        "lang": "en",
+        "largura": 390,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 0,
+        "mouraoVisivel": false,
+        "enterComVariosFica": false,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": false,
+        "unicoVisiveis": 0,
+        "enterComUmAbre": false,
+        "passa": false
+      },
+      {
+        "lang": "en",
+        "largura": 1280,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 0,
+        "mouraoVisivel": false,
+        "enterComVariosFica": false,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": false,
+        "unicoVisiveis": 0,
+        "enterComUmAbre": false,
+        "passa": false
+      }
+    ],
+    "depois": [
+      {
+        "lang": "pt",
+        "largura": 390,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 2,
+        "mouraoVisivel": true,
+        "enterComVariosFica": true,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": true,
+        "unicoVisiveis": 1,
+        "enterComUmAbre": true,
+        "passa": true
+      },
+      {
+        "lang": "pt",
+        "largura": 1280,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 2,
+        "mouraoVisivel": true,
+        "enterComVariosFica": true,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": true,
+        "unicoVisiveis": 1,
+        "enterComUmAbre": true,
+        "passa": true
+      },
+      {
+        "lang": "en",
+        "largura": 390,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 2,
+        "mouraoVisivel": true,
+        "enterComVariosFica": true,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": true,
+        "unicoVisiveis": 1,
+        "enterComUmAbre": true,
+        "passa": true
+      },
+      {
+        "lang": "en",
+        "largura": 1280,
+        "vazioVisiveis": 0,
+        "conhecidoVisiveis": 2,
+        "mouraoVisivel": true,
+        "enterComVariosFica": true,
+        "nenhumVisiveis": 0,
+        "fraseDoNadaVisivel": true,
+        "enterComNenhumFica": true,
+        "unicoVisiveis": 1,
+        "enterComUmAbre": true,
+        "passa": true
+      }
+    ],
+    "depois_passagens": 4,
+    "depois_passam": 4,
+    "depois_mour_a_vista": [
+      2
+    ],
+    "antes_passam": 0,
+    "antes_mour_a_vista": [
+      0
+    ],
+    "antes_frase_do_nada_a_vista": 4,
+    "preventDefault_no_ramo_da_fila": 1
+  },
+  "habitacao": {
+    "cartao_com_media_europeia_primeira": 0,
+    "cartao_com_media_europeia_temas": 0,
+    "cartoes_da_primeira_com_media_europeia": 13,
+    "antes_na_primeira": 1,
+    "valor_da_uniao": "7,7",
+    "recibo_portugues_mostra_a_uniao_no_enquadramento": true
+  },
+  "agenda": {
+    "a_primeira_pagina_ja_diz": {
+      "antes": 1,
+      "depois": 0
+    },
+    "nao_publica_hoje_a_media": {
+      "antes": 1,
+      "depois": 0
+    },
+    "frase_nova_da_ressalva": 1,
+    "frase_nova_da_media": 1,
+    "frase_nova_na_pagina_da_agenda": 1
+  },
+  "calendario_trazido": {
+    "eventos_antes": 16,
+    "eventos_depois": 17,
+    "novos": [
+      "ine-estatisticas-do-emprego-t3-2026"
+    ],
+    "mudados": [
+      "dgal-endividamento-2025",
+      "iefp-desemprego-concelhos-mensal",
+      "ine-contas-regionais-preliminares-2025",
+      "ine-pde-2a-notificacao-2026"
+    ],
+    "saidos": [],
+    "chave_saidas_nova": true,
+    "excerto_do_novo_comeca_pela_marca_do_motor": [
+      true
+    ],
+    "marca_na_pagina_da_agenda": 1,
+    "mudados_n": 4
+  },
+  "mudancas": {
+    "depois": {
+      "declaradas": 3,
+      "com_palavras_m4": 0,
+      "com_palavras_brief": 0,
+      "quais_m4": []
+    },
+    "antes": {
+      "declaradas": 2,
+      "com_palavras_m4": 2,
+      "com_palavras_brief": 1,
+      "quais_m4": [
+        "grupo-etario-jovens-nem-2026-09-22",
+        "nomes-ine-2026-09-21"
+      ]
+    },
+    "brief_antes_declaradas": 2,
+    "brief_antes_com_palavras": 1,
+    "conhecido_positivo": true
+  },
+  "estudos": {
+    "pt": {
+      "entradas": 13,
+      "datas_da_mais_recente_para_a_mais_antiga": true,
+      "mais_recente": "2026-09-16",
+      "mais_antiga": "2026-08-12",
+      "com_lugar_e_tema": 13,
+      "de_evora": 6,
+      "seccao_por_lugar": 0,
+      "contagens_por_lugar": 0
+    },
+    "en": {
+      "entradas": 13,
+      "datas_da_mais_recente_para_a_mais_antiga": true,
+      "mais_recente": "2026-09-16",
+      "mais_antiga": "2026-08-12",
+      "com_lugar_e_tema": 13,
+      "de_evora": 6,
+      "seccao_por_lugar": 0,
+      "contagens_por_lugar": 0
+    },
+    "antes_seccao_por_lugar_na_vista": 1,
+    "depois_seccao_por_lugar_na_vista": 0
+  },
+  "rotulo": {
+    "no_dist": {
+      "ficheiros_html": 7360,
+      "com_um_topo": 7342,
+      "com_mais_de_um_topo": 0,
+      "com_rodape": 0,
+      "fichas": 2,
+      "sem_topo": 18,
+      "sem_topo_que_sao_documentos_alojados": 18
+    },
+    "vistas_com_o_rotulo_no_topo": 1,
+    "antes_vistas_com_o_rotulo_no_topo": 1
+  },
+  "definicoes": {
+    "sigla_por_verificar": 0,
+    "antes_sigla_por_verificar": 2,
+    "sociedades_nao_financeiras_nas_definicoes": 4,
+    "origem_excerto_igual_ao_rotulo_da_resposta": true,
+    "rotulo_da_resposta": "Non-financial corporations debt, consolidated - % of GDP",
+    "setor_da_resposta": {
+      "S11": "Non-financial corporations"
+    },
+    "resposta_sha256": "dcfb381ff2b8ec013ac4e5ddb1790ff056128145a37390e52bcf824c4091ddf3",
+    "resposta_sha256_no_pedido": "dcfb381ff2b8ec013ac4e5ddb1790ff056128145a37390e52bcf824c4091ddf3",
+    "resposta_bytes": 6440,
+    "pedido_http": 200,
+    "pedido_hora_utc": "2026-09-23T10:51:23Z",
+    "cliente": "core.http.HttpClient.condicional, por core.http.for_source(core.sources.get('eurostat'))"
+  },
+  "titulo_do_recibo": {
+    "colados_no_recibo_de_mourao": 0,
+    "antes": 1,
+    "titulos_de_linha_no_dist": 5956,
+    "colados_no_dist": 0
+  },
+  "cor_de_estado": {
+    "primeira_pagina": 0,
+    "temas": 26,
+    "pagina_europeia": 39,
+    "antes": {
+      "primeira_pagina": 0,
+      "temas": 0,
+      "pagina_europeia": 39
+    },
+    "referencias_pintadas_primeira": 0,
+    "referencias_pintadas_temas": 13,
+    "cartoes_primeira": 19,
+    "cartoes_primeira_com_limiar": 0,
+    "itens_da_referencia_primeira": 0,
+    "valor_de_referencia_escrito_primeira": 0,
+    "cartoes_temas": 35,
+    "cartoes_temas_com_limiar": 13,
+    "itens_da_referencia_temas": 13,
+    "valor_de_referencia_escrito_temas": 11,
+    "cartoes_primeira_antes": 19,
+    "cartoes_primeira_antes_com_limiar": 0,
+    "medidas_com_limiar": 13,
+    "contraste": [
+      {
+        "falhas_de_texto": 0,
+        "interface_abaixo_de_3": 4
+      }
+    ]
+  },
+  "frescura": {
+    "pt": {
+      "paginas_com_a_frase": 278,
+      "paginas_sem": 30
+    },
+    "en": {
+      "paginas_com_a_frase": 278,
+      "paginas_sem": 30
+    },
+    "mourao_pt": [
+      "(a fonte já publicou julho de 2026; lido a 01.09.2026)"
+    ],
+    "mourao_en": [
+      "(the source has already published July 2026; read on 01.09.2026)"
+    ],
+    "cartoes_de_mourao": 8,
+    "cartoes_de_mourao_antes": 8
+  },
+  "base": {
+    "frase_antiga_no_metodo": 0,
+    "antes_frase_antiga": 1,
+    "frase_nova_pt_na_pagina": 1,
+    "frase_nova_en_na_pagina": 1,
+    "decisao": "1.126",
+    "amarra": "5af8e4efe6a0"
+  },
+  "notificacao": {
+    "linhas": {
+      "divida-publica-2025-notificacao-ine-2026-09": {
+        "value": "89,2",
+        "unit": "% do PIB",
+        "published_at": "2026-09-23",
+        "reference_date": "2025",
+        "source": "INE",
+        "paginas_no_dist": 2
+      },
+      "divida-publica-2024-notificacao-ine-2026-09": {
+        "value": "93,0",
+        "unit": "% do PIB",
+        "published_at": "2026-09-23",
+        "reference_date": "2024",
+        "source": "INE",
+        "paginas_no_dist": 2
+      },
+      "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09": {
+        "value": "0,7",
+        "unit": "% do PIB",
+        "published_at": "2026-09-23",
+        "reference_date": "2025",
+        "source": "INE",
+        "paginas_no_dist": 2
+      }
+    },
+    "linhas_n": 3,
+    "paginas_no_dist": 6,
+    "cruzamento": {
+      "antes": 314,
+      "depois": 317,
+      "novas": [
+        "divida-publica-2024-notificacao-ine-2026-09",
+        "divida-publica-2025-notificacao-ine-2026-09",
+        "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09"
+      ],
+      "mudadas": 314,
+      "campos_mudados": [
+        "rh_ledger_sha256"
+      ]
+    }
+  },
+  "leitura": {
+    "pt": {
+      "linhas_seladas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-notificacao-ine-2026-09",
+        "divida-publica-2024-notificacao-ine-2026-09",
+        "divida-publica-2025-ue",
+        "taxa-de-desemprego-2025",
+        "precos-da-habitacao-2025",
+        "precos-da-habitacao-2025-ue"
+      ],
+      "linhas_seladas_n": 8,
+      "as_duas_do_ine": 2,
+      "data_da_notificacao": "23.09.2026"
+    },
+    "en": {
+      "linhas_seladas": [
+        "divida-publica-2024",
+        "divida-publica-2025",
+        "divida-publica-2025-notificacao-ine-2026-09",
+        "divida-publica-2024-notificacao-ine-2026-09",
+        "divida-publica-2025-ue",
+        "taxa-de-desemprego-2025",
+        "precos-da-habitacao-2025",
+        "precos-da-habitacao-2025-ue"
+      ],
+      "linhas_seladas_n": 8,
+      "as_duas_do_ine": 2,
+      "data_da_notificacao": "23.09.2026"
+    },
+    "lista_fechada": 9,
+    "lista_fechada_antes": 7
+  },
+  "livro_razao": {
+    "linhas_antes": 2975,
+    "linhas_depois": 2978
+  },
+  "mudanca_declarada": {
+    "na_primeira_pt": 1,
+    "na_primeira_en": 1,
+    "no_registo_pt": 1,
+    "valor_selado_pt": true
+  },
+  "plantas_pais": {
+    "corridas": 31,
+    "passaram": 31,
+    "do_r1": [
+      "M4 · mudança declarada na língua do código",
+      "T9 · cartão fora do valor de referência pintado de dentro",
+      "E2 · lista dos estudos com a ordem trocada",
+      "E2 · a secção por lugar de volta",
+      "L2 · leitura com outra data da notificação"
+    ],
+    "do_r1_n": 5
+  },
+  "plantas_portoes_r1": {
+    "corridas": 9,
+    "passaram": 9,
+    "repostas": 9,
+    "ficheiros": 9,
+    "nomes": [
+      "r1-titulo-do-recibo-colado",
+      "r1-rotulo-no-rodape",
+      "r1-rotulo-depois-do-titulo",
+      "r1-mudanca-com-valor-trocado",
+      "r1-frescura-num-cartao-sem-atraso",
+      "r1-frescura-que-falta",
+      "r1-porta-da-politica-fora-do-rotulo",
+      "r1-sinopse-da-lista-trocada",
+      "r1-lista-dos-estudos-sem-um"
+    ]
+  },
+  "plantas_alvos": {
+    "plantas": {
+      "lista-escondida · a lista dos resultados da busca nunca se abre": {
+        "bom": true,
+        "caiu": [
+          "H15"
+        ],
+        "mudou": true
+      },
+      "sinopse-sem-classe · os selos da lista dos estudos fora da prosa corrida": {
+        "bom": true,
+        "caiu": [
+          "H2"
+        ],
+        "mudou": true
+      }
+    },
+    "corridas": 2,
+    "boas": 2,
+    "celulas_limpas": {
+      "H1": true,
+      "H2": true,
+      "H3": true,
+      "H14": true,
+      "H4": true,
+      "H5": true,
+      "H6": true,
+      "H7": true,
+      "H8": true,
+      "H9": true,
+      "H13": true,
+      "H15": true,
+      "H10": true
+    }
+  },
+  "plantas_cartao": {
+    "estragos": 12,
+    "vistos": 12,
+    "k14_cartoes_calados": 6,
+    "codigo": 0
+  },
+  "motor": {
+    "ramo": "r1-2026-09-23",
+    "base_master": "1253605",
+    "cabeca": "abac640",
+    "commits": [
+      {
+        "sha": "59c8621",
+        "assunto": "O Portal BASE cai no motor: a fonte marcada caída a 16.09.2026, e nenhum pedido sai",
+        "trailer": "Claude Opus 5",
+        "ficheiros": 9
+      },
+      {
+        "sha": "6427f4d",
+        "assunto": "A resposta do Eurostat ao pedido da dívida das empresas, guardada com endereço, hora, cliente e sha256",
+        "trailer": "Claude Opus 5",
+        "ficheiros": 2
+      },
+      {
+        "sha": "c257f67",
+        "assunto": "A nota da habitação na agenda diz o que é verdade: a ressalva não está nas páginas, e a média europeia saiu do cartão",
+        "trailer": "Claude Opus 5",
+        "ficheiros": 1
+      },
+      {
+        "sha": "abac640",
+        "assunto": "A 2.ª notificação de 2026 do INE entra no livro do estudo 13: três linhas datadas, e a data de publicação que atravessa",
+        "trailer": "Claude Opus 5.5",
+        "ficheiros": 16
+      }
+    ],
+    "commits_n": 4,
+    "commits_com_o_nome_antigo": [
+      "59c8621",
+      "6427f4d",
+      "c257f67"
+    ],
+    "commits_com_o_nome_certo": [
+      "abac640"
+    ],
+    "diff_ficheiros": 28,
+    "diff_linhas_mais": 2759,
+    "diff_linhas_menos": 309,
+    "core_gate_final": {
+      "resultado": "PASS",
+      "codigo": 0
+    },
+    "dominios_test": {
+      "resultado": "PASS",
+      "defeitos_vistos": 35,
+      "defeitos": 35
+    },
+    "dominios_build_ensaio_controlos_que_batem": 17,
+    "saude_nucleo": {
+      "primeira": [
+        5,
+        5
+      ],
+      "depois": [
+        4,
+        5
+      ],
+      "final": [
+        5,
+        5
+      ]
+    },
+    "saude_pt_public_money": {
+      "primeira": [
+        16,
+        17
+      ],
+      "depois": [
+        17,
+        17
+      ],
+      "final": [
+        17,
+        17
+      ]
+    },
+    "plantas_motor": {
+      "corridas": 4,
+      "morderam": 4,
+      "repostas": 4,
+      "passaram": 4
+    },
+    "cruzamento_dos_concelhos_sem_o_base": {
+      "codigos_da_carta_no_prr": 308,
+      "codigos_da_carta": 308,
+      "residuo": 0
+    },
+    "exportacao_das_linhas": {
+      "ensaio": [
+        3,
+        0,
+        314
+      ],
+      "escrita": [
+        0,
+        0,
+        317
+      ]
+    },
+    "exportacao_da_agenda": {
+      "itens": 5,
+      "eventos": 17,
+      "sem_data_publicada": 8
+    }
+  },
+  "capturas": {
+    "antes": 34,
+    "depois": 34,
+    "depois_com_deslocamento": 0,
+    "depois_lugares_mour_resultados": [
+      2
+    ],
+    "antes_lugares_mour_resultados": [
+      0
+    ],
+    "depois_rotulo_no_topo": [
+      1
+    ],
+    "antes_rotulo_no_topo": [
+      0
+    ],
+    "depois_cores_de_estado_na_primeira_390": [],
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ]
+  },
+  "l1": {
+    "estudos": 2279,
+    "antes": 2271,
+    "entraram": 8,
+    "sairam": 0,
+    "teto": 2279
+  },
+  "inventario": {
+    "r1_novas_na_seccao": 8,
+    "r1_vivas": 9,
+    "r1_retiradas": 8,
+    "contagens_do_livro": [
+      "2978 afirmações · 330 de 2978 calculadas · 2767 de 2978 linhas de concelhos",
+      "2978 claims · 330 of 2978 calculated · 2767 of 2978 municipality rows"
+    ]
+  },
+  "portoes": {
+    "build": "por correr",
+    "verify": "por correr",
+    "typecheck": "por correr"
+  },
+  "mapa": {
+    "citacoes_no_sitio": 50,
+    "citacoes_que_andaram": 8
+  },
+  "falhas": []
+}

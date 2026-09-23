@@ -1,0 +1,9 @@
+EXPORT_AGENDA: 5 item(s), 17 event(s), 8 of them with no date the source publishes
+  em_curso    4
+  a_seguir    0
+  concluido   1
+  retirado    0
+  append-only: every history that crossed before is a prefix of the one crossing now, and no event left the calendar undeclared (H4, H5)
+  wrote <sítio>/src/data/agenda.json  sha256 34ac1cc25d8e9f71
+  wrote <sítio>/src/data/calendario.json  sha256 71fa0e64e8191f11
+  wrote <sítio>/ledger/cruzamentos/agenda.json  sha256 9a4aedd9dab56f35

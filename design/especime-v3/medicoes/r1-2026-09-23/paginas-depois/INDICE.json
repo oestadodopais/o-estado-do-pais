@@ -1,0 +1,71 @@
+{
+  "cabeca_da_arvore": "68b7944cf30beffcd45e1a82180e84103adab614",
+  "dist_construido_de": "68b7944cf30beffcd45e1a82180e84103adab614",
+  "dist_construido_em": "2026-09-23T12:06:29.553Z",
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "sha256": "e8abb2fb22eed87f3b814bdd2fe0bea3b43d8190d5a78c1f224b31bfd36c6018"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "sha256": "d976282161086bd3b1e8d9227416f4dca7dc7d0ce3bf3a7a81ee0483100d413b"
+    },
+    "temas_index.html": {
+      "rota": "/temas/",
+      "sha256": "c922dbd10ee97c77ee84bca22c8cdbeeff23312f655c5b8c2648aeb071047c56"
+    },
+    "en_themes_index.html": {
+      "rota": "/en/themes/",
+      "sha256": "6c4a17d48453784e0248d8960c5fd55b4763be8d104dcd5082da91fb7dc301bd"
+    },
+    "uniao-europeia_index.html": {
+      "rota": "/uniao-europeia/",
+      "sha256": "23ae78438838c889c6a3b9132c1cd8da908a005cf6f12142854eef7ed148afe7"
+    },
+    "municipios_mourao_index.html": {
+      "rota": "/municipios/mourao/",
+      "sha256": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2"
+    },
+    "en_municipalities_mourao_index.html": {
+      "rota": "/en/municipalities/mourao/",
+      "sha256": "e099d5c09bdf92758865a59bcec9e5a24ffa7353afffdeafb5f59474bdb86387"
+    },
+    "livro-razao_mourao-desemprego-registado-2025-12_index.html": {
+      "rota": "/livro-razao/mourao-desemprego-registado-2025-12/",
+      "sha256": "146077313695ea9d1c50f190af1e629852689fd2350c1d6e2832ca93824e20cf"
+    },
+    "estudos_index.html": {
+      "rota": "/estudos/",
+      "sha256": "79196097983d38a603c7c4e01c672b82096972ed3bbf6e4de84b07481be47a2b"
+    },
+    "en_studies_index.html": {
+      "rota": "/en/studies/",
+      "sha256": "fec2a17e3bb1d04c09c333c034d424e2f4ebe251377a768ce3aa296081dec052"
+    },
+    "lugares_index.html": {
+      "rota": "/lugares/",
+      "sha256": "e4f6fa2d53520b303fdcd86d5e318768f722c8e97a60aac4c1a544eb79f8671c"
+    },
+    "metodo_index.html": {
+      "rota": "/metodo/",
+      "sha256": "c208de6d3ba1aaaf9bfcd04ed66102b02a313256da4c388a3e4fefb34c36ee69"
+    },
+    "en_method_index.html": {
+      "rota": "/en/method/",
+      "sha256": "8851d0f2cea3e64070d3964b0218f8a260225fc271453fa6597fd5b5dc3840cc"
+    },
+    "correcoes_index.html": {
+      "rota": "/correcoes/",
+      "sha256": "fcea35fa776611e7226bfe6cb35c5973adee2440a23afd3e703bf9079375959d"
+    },
+    "livro-razao_divida-publica-2025-notificacao-ine-2026-09_index.html": {
+      "rota": "/livro-razao/divida-publica-2025-notificacao-ine-2026-09/",
+      "sha256": "c99ac2d0f951cf0e026ceda92b44f3a3613e20f9394530044d5d28c08643deac"
+    },
+    "agenda_index.html": {
+      "rota": "/agenda/",
+      "sha256": "b6f718239ede0aaf9ce2a2267b24bd7d6bd3b60fde9d27e5782fc2b9b6790029"
+    }
+  }
+}

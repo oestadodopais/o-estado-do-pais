@@ -1,7 +1,7 @@
 {
-  "cabeca": "fc057d1ee1d14b8b6bfa8c098808ee76e3850143",
-  "dist_construido_de": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
-  "dist_construido_em": "2026-09-23T11:32:08.228Z",
+  "cabeca": "68b7944cf30beffcd45e1a82180e84103adab614",
+  "dist_construido_de": "68b7944cf30beffcd45e1a82180e84103adab614",
+  "dist_construido_em": "2026-09-23T12:06:29.553Z",
   "regua": "node scripts/check-lugar.mjs, com AMOSTRA=100000",
   "contagens": {
     "estudos": 2279,
