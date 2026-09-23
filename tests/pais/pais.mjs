@@ -87,6 +87,7 @@ try {
  prova('cartão fora do valor de referência pintado de dentro','T9',()=>html('temas/index.html',r=>{const q=r.querySelector('[data-regua="referencia"] .sq-fora');q.setAttribute('class','sq sq-dentro');}));
  prova('lista dos estudos com a ordem trocada','E2',()=>html('estudos/index.html',r=>{const a=r.querySelectorAll('main [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('a secção por lugar de volta','E2',()=>html('en/studies/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<section id="por-lugar"><h2>By place</h2></section>')));
+ prova('leitura com outra data da notificação','L2',()=>html('index.html',r=>r.querySelector('[data-leitura-pais] [data-de-campo="published_at"]').set_content('24.09.2026')));
  prova('ponto final sem ligação inseparável','N2',()=>html('index.html',r=>r.querySelector('.rotulo-ia-final').removeAttribute('class')));
  repor();
  if(verificaVozPais(raiz).length)throw Error('A lista fechada não está verde antes da planta.');

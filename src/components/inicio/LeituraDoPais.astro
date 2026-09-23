@@ -1,13 +1,22 @@
 ---
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
+import CampoDaLinha from '../CampoDaLinha.astro';
 import { getClaim } from '../../lib/ledger.mjs';
 import { LINHAS_DA_LEITURA_DO_PAIS } from '../../lib/pais.mjs';
 const { lang = 'pt' } = Astro.props;
 /* Texto do lugar de direção, conferido a 21.09.2026. A guarda impede que uma
  * releitura do livro transforme uma frase aprovada numa afirmação diferente. */
+/* AS DUAS LEITURAS OFICIAIS DA DÍVIDA (bloco R1, 23.09.2026, I147, decisão da
+ * §1.124). A linha de registo continua a ser a do quadro do Eurostat, que é a
+ * notificação de abril; a 2.ª notificação do INE, de 23.09.2026 e provisória,
+ * entra como linhas próprias e datadas, e a frase diz as duas. A frase é do lugar
+ * de direção; a data escreve-se na forma da casa e sai do campo `published_at`
+ * da linha do INE. */
 const esperados = {
   'divida-publica-2024': '93,5', 'divida-publica-2025': '89,7',
+  'divida-publica-2025-notificacao-ine-2026-09': '89,2',
+  'divida-publica-2024-notificacao-ine-2026-09': '93,0',
   'divida-publica-2025-ue': '81,7', 'taxa-de-desemprego-2025': '6',
   'taxa-de-desemprego-2025-ue': '6,0', 'precos-da-habitacao-2025': '17,6',
   'precos-da-habitacao-2025-ue': '5,5',
@@ -22,7 +31,9 @@ for (const [id, valor] of Object.entries(esperados)) {
 if (Object.keys(esperados).sort().join('|') !== [...LINHAS_DA_LEITURA_DO_PAIS].sort().join('|'))
   throw new Error('B1 leitura do país: as linhas citadas divergem de LINHAS_DA_LEITURA_DO_PAIS.');
 const sufixo = lang === 'pt' ? '\u00a0%' : '%';
+const doINE = getClaim('divida-publica-2025-notificacao-ine-2026-09');
+const doINEAnterior = getClaim('divida-publica-2024-notificacao-ine-2026-09');
 ---
 <p class="pais-leitura" data-leitura-pais={lang}>
-  {lang === 'pt' ? <><span>A <strong>dívida pública</strong> desceu de </span><Claim id="divida-publica-2024" lang={lang} chip sufixo={sufixo} /><span> para </span><Claim id="divida-publica-2025" lang={lang} chip sufixo={sufixo + " do PIB"} /><span> num ano e continua acima da média da União Europeia, que é de </span><Claim id="divida-publica-2025-ue" lang={lang} chip sufixo={sufixo} /><span>. O <strong>desemprego</strong> está nos </span><Claim id="taxa-de-desemprego-2025" lang={lang} chip sufixo={sufixo} /><span>, a par da média europeia</span><Provenance id="taxa-de-desemprego-2025-ue" lang={lang} /><span>, e os <strong>preços das casas</strong> subiram </span><Claim id="precos-da-habitacao-2025" lang={lang} chip sufixo={sufixo} /><span> num ano, contra </span><Claim id="precos-da-habitacao-2025-ue" lang={lang} chip sufixo={sufixo} /><span> na União.</span></> : <><span><strong>Public debt</strong> fell from </span><Claim id="divida-publica-2024" lang={lang} chip sufixo={sufixo} /><span> to </span><Claim id="divida-publica-2025" lang={lang} chip sufixo={sufixo + " of GDP"} /><span> in a year and remains above the European Union average of </span><Claim id="divida-publica-2025-ue" lang={lang} chip sufixo={sufixo} /><span>. <strong>Unemployment</strong> stands at </span><Claim id="taxa-de-desemprego-2025" lang={lang} chip sufixo={sufixo} /><span>, level with the European average</span><Provenance id="taxa-de-desemprego-2025-ue" lang={lang} /><span>, and <strong>house prices</strong> rose </span><Claim id="precos-da-habitacao-2025" lang={lang} chip sufixo={sufixo} /><span> in a year, against </span><Claim id="precos-da-habitacao-2025-ue" lang={lang} chip sufixo={sufixo} /><span> in the Union.</span></>}
+  {lang === 'pt' ? <><span>A <strong>dívida pública</strong> desceu de </span><Claim id="divida-publica-2024" lang={lang} chip sufixo={sufixo} /><span> para </span><Claim id="divida-publica-2025" lang={lang} chip sufixo={sufixo + " do PIB"} /><span> num ano, pela notificação de abril publicada pelo Eurostat, e a segunda notificação do INE, de </span><CampoDaLinha id={doINE.id} campo="published_at" valor={doINE.published_at} lang={lang} /><span> e ainda provisória, revê-a para </span><Claim id="divida-publica-2025-notificacao-ine-2026-09" lang={lang} chip sufixo={sufixo} /><span> (</span><Claim id="divida-publica-2024-notificacao-ine-2026-09" lang={lang} chip sufixo={sufixo} /><span> em </span><CampoDaLinha id={doINEAnterior.id} campo="reference_date" valor={doINEAnterior.reference_date} lang={lang} /><span>); continua acima da média da União Europeia, que é de </span><Claim id="divida-publica-2025-ue" lang={lang} chip sufixo={sufixo} /><span>. O <strong>desemprego</strong> está nos </span><Claim id="taxa-de-desemprego-2025" lang={lang} chip sufixo={sufixo} /><span>, a par da média europeia</span><Provenance id="taxa-de-desemprego-2025-ue" lang={lang} /><span>, e os <strong>preços das casas</strong> subiram </span><Claim id="precos-da-habitacao-2025" lang={lang} chip sufixo={sufixo} /><span> num ano, contra </span><Claim id="precos-da-habitacao-2025-ue" lang={lang} chip sufixo={sufixo} /><span> na União.</span></> : <><span><strong>Public debt</strong> fell from </span><Claim id="divida-publica-2024" lang={lang} chip sufixo={sufixo} /><span> to </span><Claim id="divida-publica-2025" lang={lang} chip sufixo={sufixo + " of GDP"} /><span> in a year, by the April notification published by Eurostat, and the INE’s second notification of </span><CampoDaLinha id={doINE.id} campo="published_at" valor={doINE.published_at} lang={lang} /><span>, still provisional, revises it to </span><Claim id="divida-publica-2025-notificacao-ine-2026-09" lang={lang} chip sufixo={sufixo} /><span> (</span><Claim id="divida-publica-2024-notificacao-ine-2026-09" lang={lang} chip sufixo={sufixo} /><span> in </span><CampoDaLinha id={doINEAnterior.id} campo="reference_date" valor={doINEAnterior.reference_date} lang={lang} /><span>); it remains above the European Union average of </span><Claim id="divida-publica-2025-ue" lang={lang} chip sufixo={sufixo} /><span>. <strong>Unemployment</strong> stands at </span><Claim id="taxa-de-desemprego-2025" lang={lang} chip sufixo={sufixo} /><span>, level with the European average</span><Provenance id="taxa-de-desemprego-2025-ue" lang={lang} /><span>, and <strong>house prices</strong> rose </span><Claim id="precos-da-habitacao-2025" lang={lang} chip sufixo={sufixo} /><span> in a year, against </span><Claim id="precos-da-habitacao-2025-ue" lang={lang} chip sufixo={sufixo} /><span> in the Union.</span></>}
 </p>

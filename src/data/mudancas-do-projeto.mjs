@@ -27,4 +27,23 @@ export const MUDANCAS_DO_PROJETO = [
       en: 'Eurostat titles its table on young people not in employment, education or training with the 15 to 24 age group, while the series it publishes is the 15 to 29 one. The definitions of four measures now state the age group they measure, in both editions. No value changed.',
     },
   },
+  {
+    /* A 2.ª NOTIFICAÇÃO DO INE (bloco R1, 23.09.2026, I147, decisão da §1.124).
+       O valor vai selado à sua linha, e não escrito à mão. */
+    id: 'notificacao-ine-divida-2026-09-23',
+    data: '2026-09-23',
+    decisao: '1.124',
+    texto: {
+      pt: [
+        'O INE reviu a dívida pública de 2025 para ',
+        { claim: 'divida-publica-2025-notificacao-ine-2026-09', sufixo: '\u00a0% do PIB' },
+        ' na segunda notificação de 2026 do procedimento dos défices excessivos, ainda provisória; a leitura do país passou a dizer as duas leituras oficiais, a do INE e a do Eurostat, e o valor do quadro do Eurostat muda a 21.10.2026.',
+      ],
+      en: [
+        'The INE revised public debt for 2025 to ',
+        { claim: 'divida-publica-2025-notificacao-ine-2026-09', sufixo: '% of GDP' },
+        ' in the second notification of 2026 under the excessive deficit procedure, still provisional; the reading of the country now gives both official readings, the INE’s and Eurostat’s, and the value in the Eurostat table changes on 21.10.2026.',
+      ],
+    },
+  },
 ];

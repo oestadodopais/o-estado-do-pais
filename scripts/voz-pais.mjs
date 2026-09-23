@@ -30,9 +30,15 @@ export function verificaVozPais(raiz) {
   const erros = [];
   for (const lang of ['pt','en']) {
     const v = id => getClaim(id).value;
+    /* A frase da dívida com as duas leituras oficiais (bloco R1, 23.09.2026): a
+       data da notificação do INE é o `published_at` da linha, na forma da casa,
+       e o ano entre parênteses é o `reference_date` da linha de 2024. */
+    const ine = getClaim('divida-publica-2025-notificacao-ine-2026-09');
+    const quando = String(ine.published_at).split('-').reverse().join('.');
+    const ano = getClaim('divida-publica-2024-notificacao-ine-2026-09').reference_date;
     const esperada = lang === 'pt'
-      ? `A dívida pública desceu de ${v('divida-publica-2024')} % para ${v('divida-publica-2025')} % do PIB num ano e continua acima da média da União Europeia, que é de ${v('divida-publica-2025-ue')} %. O desemprego está nos ${v('taxa-de-desemprego-2025')} %, a par da média europeia, e os preços das casas subiram ${v('precos-da-habitacao-2025')} % num ano, contra ${v('precos-da-habitacao-2025-ue')} % na União.`
-      : `Public debt fell from ${v('divida-publica-2024')}% to ${v('divida-publica-2025')}% of GDP in a year and remains above the European Union average of ${v('divida-publica-2025-ue')}%. Unemployment stands at ${v('taxa-de-desemprego-2025')}%, level with the European average, and house prices rose ${v('precos-da-habitacao-2025')}% in a year, against ${v('precos-da-habitacao-2025-ue')}% in the Union.`;
+      ? `A dívida pública desceu de ${v('divida-publica-2024')} % para ${v('divida-publica-2025')} % do PIB num ano, pela notificação de abril publicada pelo Eurostat, e a segunda notificação do INE, de ${quando} e ainda provisória, revê-a para ${v('divida-publica-2025-notificacao-ine-2026-09')} % (${v('divida-publica-2024-notificacao-ine-2026-09')} % em ${ano}); continua acima da média da União Europeia, que é de ${v('divida-publica-2025-ue')} %. O desemprego está nos ${v('taxa-de-desemprego-2025')} %, a par da média europeia, e os preços das casas subiram ${v('precos-da-habitacao-2025')} % num ano, contra ${v('precos-da-habitacao-2025-ue')} % na União.`
+      : `Public debt fell from ${v('divida-publica-2024')}% to ${v('divida-publica-2025')}% of GDP in a year, by the April notification published by Eurostat, and the INE’s second notification of ${quando}, still provisional, revises it to ${v('divida-publica-2025-notificacao-ine-2026-09')}% (${v('divida-publica-2024-notificacao-ine-2026-09')}% in ${ano}); it remains above the European Union average of ${v('divida-publica-2025-ue')}%. Unemployment stands at ${v('taxa-de-desemprego-2025')}%, level with the European average, and house prices rose ${v('precos-da-habitacao-2025')}% in a year, against ${v('precos-da-habitacao-2025-ue')}% in the Union.`;
     for (const rota of lang === 'pt' ? ['', 'temas'] : ['en','en/themes']) {
       const main = parse(fs.readFileSync(path.join(raiz,'dist',rota,'index.html'),'utf8')).querySelector('main');
       const leitura = main.querySelector('[data-leitura-pais]');

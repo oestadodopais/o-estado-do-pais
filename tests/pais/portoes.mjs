@@ -104,6 +104,10 @@ planta('r1-rotulo-no-rodape','scripts/gate-html.mjs',[
 planta('r1-rotulo-depois-do-titulo','scripts/gate-html.mjs',[
  ['municipios/mourao/index.html',r=>{const x=r.querySelector('[data-rotulo-ia="topo"]');const h=r.querySelector('main h1');const copia=x.outerHTML;x.remove();h.insertAdjacentHTML('afterend',copia);}]
 ],[/não é a primeira coisa do «<main>»/,/vem depois do título da página/]);
+/* Uma mudança declarada com um valor que não é o da linha (I147). */
+planta('r1-mudanca-com-valor-trocado','scripts/gate-html.mjs',[
+ ['index.html',r=>r.querySelector('[data-mudanca-id="notificacao-ine-divida-2026-09-23"] [data-claim]').set_content('89,3')]
+],[/B1 mudança: campo rendido difere/]);
 /* A frase da frescura num cartão cuja linha não está atrasada, e a que falta no
    que está (I146). */
 planta('r1-frescura-num-cartao-sem-atraso','scripts/check-formas.mjs',[

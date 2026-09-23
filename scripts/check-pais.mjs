@@ -115,7 +115,9 @@ for (const m of MUNICIPIOS_COM_PAGINA) for (const p of m.relance ?? []) {
 const objetoDoEstudo = new Map(WORKS.filter(w => typeof w.subject === 'string').map(w => [w.id, w.subject]));
 /* As sete linhas da leitura do país, escritas aqui como a L2 e a L3 as
    escrevem: é a lista da régua, e não a da página. */
-const LINHAS_DA_LEITURA = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-ue','taxa-de-desemprego-2025','taxa-de-desemprego-2025-ue','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
+/* Nove desde o bloco R1 (23.09.2026): as duas leituras da 2.ª notificação do INE
+   entraram na frase da dívida. */
+const LINHAS_DA_LEITURA = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-notificacao-ine-2026-09','divida-publica-2024-notificacao-ine-2026-09','divida-publica-2025-ue','taxa-de-desemprego-2025','taxa-de-desemprego-2025-ue','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
 const linhasDoPais = new Set([...Object.keys(DOMINIO_DAS_MEDIDAS), ...LINHAS_DA_LEITURA]);
 /* -------------------------------------------------- o lugar, por duas vias
 
@@ -250,8 +252,15 @@ for (const lang of ['pt', 'en']) {
     }
   }
   const leitura = home.querySelector('main [data-leitura-pais]');
-  const citadas = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-ue','taxa-de-desemprego-2025','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
-  if (JSON.stringify(leitura?.querySelectorAll('[data-claim]').map(n=>n.getAttribute('data-claim'))) !== JSON.stringify(citadas)) erros.push(`L2 ${lang}: a leitura não cita as seis linhas aprovadas.`);
+  /* L2 · as linhas que a leitura cita, pela ordem da frase. Oito desde o bloco R1
+     (23.09.2026): as duas leituras da 2.ª notificação do INE a seguir às duas do
+     quadro do Eurostat. E a data da notificação, do campo `published_at` da linha
+     do INE, na forma da casa. */
+  const citadas = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-notificacao-ine-2026-09','divida-publica-2024-notificacao-ine-2026-09','divida-publica-2025-ue','taxa-de-desemprego-2025','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
+  if (JSON.stringify(leitura?.querySelectorAll('[data-claim]').map(n=>n.getAttribute('data-claim'))) !== JSON.stringify(citadas)) erros.push(`L2 ${lang}: a leitura não cita as oito linhas aprovadas, pela ordem da frase.`);
+  const dataDaNotificacao = leitura?.querySelector('[data-de-linha="divida-publica-2025-notificacao-ine-2026-09"][data-de-campo="published_at"]');
+  if (!dataDaNotificacao || normal(dataDaNotificacao.textContent) !== data(linha('divida-publica-2025-notificacao-ine-2026-09').published_at))
+    erros.push(`L2 ${lang}: a leitura não diz a data da notificação do INE tal como a linha a publica.`);
   for (const id of [...citadas,'taxa-de-desemprego-2025-ue']) {
     const href = `${lang === 'pt' ? '/livro-razao' : '/en/ledger'}/${id}`;
     if (!leitura?.querySelector(`a.src-chip[href="${href}"]`)) erros.push(`L3 ${lang}: a leitura perdeu o recibo ${id}.`);
@@ -358,7 +367,7 @@ for (const lang of ['pt', 'en']) {
   for (const m of MUDANCAS_DO_PROJETO) {
     const els = home.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
     if (els.length > 1) erros.push(`M2 ${lang}: a mudança ${m.id} repete-se na página do país.`);
-    if (els.length === 1 && (normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang])) erros.push(`M2 ${lang}: a mudança ${m.id} não coincide com a declaração.`);
+    if (els.length === 1 && (normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || semSelos(els[0]?.querySelector('[data-mudanca-campo="texto"]')) !== normal(textoDeclarado(m.texto[lang])))) erros.push(`M2 ${lang}: a mudança ${m.id} não coincide com a declaração.`);
   }
   /* A C1 E A M3 MUDARAM DE ÂMBITO, NÃO DE FORÇA (B1c, 22.09.2026). Corriam só
      sobre a lista da primeira página; como as correções das linhas dos lugares
@@ -512,7 +521,7 @@ function anda(dir) {
           `${aMenos.length ? `; a menos: ${aMenos.slice(0,3).join(', ')}` : ''}.`);
       for (const m of MUDANCAS_DO_PROJETO) {
         const els = registo.querySelectorAll(`[data-mudanca-id="${m.id}"]`);
-        if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || normal(els[0]?.querySelector('[data-mudanca-campo="texto"]')?.textContent) !== m.texto[lang])
+        if (els.length !== 1 || normal(els[0]?.querySelector('[data-mudanca-campo="data"]')?.textContent) !== data(m.data) || semSelos(els[0]?.querySelector('[data-mudanca-campo="texto"]')) !== normal(textoDeclarado(m.texto[lang])))
           erros.push(`A3: ${onde}: a mudança declarada ${m.id} falta no registo ou não coincide com a declaração.`);
       }
       /* O LUGAR DE CADA LINHA, E A PORTA DELE, linha a linha (a passagem de
