@@ -641,7 +641,12 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
      não sustenta nada do que a definição diz é uma citação a fazer de prova: as
      duas definições que escreviam o nome por extenso passam a publicar a sigla
      da fonte e, no lugar da expansão, o marcador da casa. O dia em que uma
-     fonte escrever a sigla ao lado do nome, a chave volta com o excerto. */
+     fonte escrever a sigla ao lado do nome, a chave volta com o excerto.
+
+     ESSE DIA FOI 23.09.2026 (bloco R1, I142), e a fonte era a das próprias
+     linhas: a resposta do Eurostat ao pedido `tipspd30` escreve o setor por
+     extenso. A origem `eurostat-tipspd30`, mais abaixo, é a prova, e as duas
+     definições voltam a dizer «sociedades não financeiras». */
   /* A SIGLA DO INVESTIMENTO DIRETO ESTRANGEIRO, PROVADA (14.09.2026, decisão do
      lugar de direção depois do relatório desta passagem). A linha da Comissão
      escreve «(excl. FDI)» e a definição da casa escreve o nome por extenso: é a
@@ -664,6 +669,24 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     lido: '2026-09-14',
     excerto:
       'Foreign direct investment, abbreviated as FDI, is an international investment within the balance of payment accounts.',
+  },
+  /* A SIGLA DAS SOCIEDADES NÃO FINANCEIRAS, PROVADA (bloco R1, 23.09.2026, I142).
+     A pergunta que ficou `[a verificar]` a 14.09.2026 tem resposta na fonte das
+     próprias linhas: a resposta do Eurostat ao pedido da linha
+     `divida-das-empresas-2024` (o conjunto `tipspd30`) escreve no `label`
+     «Non-financial corporations debt, consolidated - % of GDP», que é a linha da
+     Comissão («NFC consolidated debt in % of GDP») com a sigla por extenso, e a
+     dimensão `sector` escreve «Non-financial corporations» (S11). Lida pelo
+     cliente do motor a 23.09.2026 às 10:51:23 UTC, HTTP 200, 6 440 bytes, sha256
+     `dcfb381ff2b8ec013ac4e5ddb1790ff056128145a37390e52bcf824c4091ddf3`, guardada
+     com o registo do pedido em `indicators/out/r1-2026-09-23/` no motor. O
+     excerto é o `label` da resposta, carácter a carácter. */
+  'eurostat-tipspd30': {
+    publicador: 'Eurostat',
+    documento: 'Dissemination API · tipspd30',
+    url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP',
+    lido: '2026-09-23',
+    excerto: 'Non-financial corporations debt, consolidated - % of GDP',
   },
   'glossario-npish': {
     publicador: 'Eurostat',
@@ -895,24 +918,14 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'divida-das-empresas-2025': {
-    /* A EXPANSÃO DA SIGLA FICA `[a verificar]` (achado 6, 14.09.2026). A
-       definição escrevia «sociedades não financeiras» onde a linha da Comissão
-       escreve «NFC», e nenhuma das duas fontes declaradas liga a sigla ao nome
-       (a medição está em `ORIGENS_DAS_DEFINICOES`, ao pé de `glossario-npish`).
-       A definição publica agora a sigla da fonte e, no lugar da expansão, o
-       marcador da casa: a falta fica visível em vez de se preencher com uma
-       coisa plausível. A segunda origem saiu com a expansão. */
-    origens: ['pdm-divida-das-empresas'],
-    pt: [
-      'A dívida consolidada das NFC, em percentagem do PIB; o nome por extenso da sigla permanece ',
-      { marcador: 'a verificar', gloss: 'to verify' },
-      '.',
-    ],
-    en: [
-      'NFC consolidated debt, as a percentage of GDP; the full name behind the abbreviation remains ',
-      { marcador: 'a verificar', gloss: 'to verify' },
-      '.',
-    ],
+    /* A EXPANSÃO DA SIGLA FICOU `[a verificar]` A 14.09.2026 (achado 6), porque
+       nenhuma das fontes declaradas ligava «NFC» ao nome; a 23.09.2026 (bloco R1,
+       I142) a resposta do Eurostat ao pedido das próprias linhas liga-o, e a
+       definição volta a escrever «sociedades não financeiras» com a segunda
+       origem que o prova (`eurostat-tipspd30`). */
+    origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30'],
+    pt: ['A dívida consolidada das sociedades não financeiras, em percentagem do PIB.'],
+    en: ['Consolidated debt of non-financial corporations, as a percentage of GDP.'],
   },
   'divida-das-familias-2025': {
     /* DUAS ORIGENS: a linha da Comissão abrevia «incl. NPISH», e o nome por
@@ -942,17 +955,18 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        ficava por qualificar: o stock de dívida do período anterior também é
        sem o investimento direto estrangeiro, e a fonte di-lo por extenso. A
        frase passa a dizer os dois lados, e não acrescenta nada: a palavra
-       «também» é o que a repetição do parêntese faz na fonte. */
-    origens: ['pdm-credito-as-empresas', 'glossario-fdi'],
+       «também» é o que a repetição do parêntese faz na fonte.
+
+       E A 23.09.2026 (bloco R1, I142) A SIGLA SAI: a resposta do Eurostat ao
+       pedido da dívida das empresas escreve «Non-financial corporations» por
+       extenso (`eurostat-tipspd30`), e a definição volta a dizer «sociedades
+       não financeiras» sem o marcador. */
+    origens: ['pdm-credito-as-empresas', 'glossario-fdi', 'eurostat-tipspd30'],
     pt: [
-      'O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro; o nome por extenso da sigla permanece ',
-      { marcador: 'a verificar', gloss: 'to verify' },
-      '.',
+      'O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro.',
     ],
     en: [
-      'The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment; the full name behind the abbreviation remains ',
-      { marcador: 'a verificar', gloss: 'to verify' },
-      '.',
+      'The consolidated credit flow to non-financial corporations, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment.',
     ],
   },
   'fluxo-de-credito-as-familias-2025': {
