@@ -15,9 +15,7 @@
  * ---------------------------------------------------------------------------
  * AS CÉLULAS
  * ---------------------------------------------------------------------------
- * São treze, e o cabeçalho dizia oito enquanto o guião tinha doze (o mapa do
- * repositório apanhou-o a 21.09.2026). Ficam todas nomeadas: a K11, a K12 e a
- * K13 por baixo das nove que este bloco encontrou escritas.
+ * As células ficam todas nomeadas, incluindo as que as correções acrescentaram.
  *   K1 · **as cinco coisas e só elas** · cada `[data-cartao-medida]` do `dist/`
  *        só tem, ao primeiro nível, os blocos permitidos: o nome, a linha do
  *        valor, a frase e a régua. Um bloco a mais é um campo de recibo a
@@ -117,6 +115,13 @@
  *        que o silêncio seja uma escolha e não uma ausência. O positivo
  *        conhecido: pelo menos um cartão da medida visto no `dist/`.
  *
+ *   K15 · **a palavra do veredicto e a cor que a repete** · B2: uma conta
+ *        independente lê cada referência e o valor selado, e exige a frase
+ *        completa, a direção, os limites e as classes do estado. A faixa
+ *        europeia entra na mesma conferência; nos limites legais a palavra
+ *        própria continua obrigatória. Planta: a cor fica e a palavra sai,
+ *        depois só a cor troca de estado.
+ *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
  * ---------------------------------------------------------------------------
@@ -141,6 +146,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
+import { compararAsDuasTestemunhas, referenciaNacionalDaLinha } from './referencias.mjs';
+import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
+import { REFERENCIAS_DAS_MEDIDAS } from '../../src/data/referencias-das-medidas.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { DEFINICOES_DAS_MEDIDAS, textoDaDefinicao } from '../../src/data/figuras.mjs';
 import {
@@ -242,80 +250,6 @@ function textoVisivel(el) {
 }
 
 /**
- * Os números de um valor de referência, com sinal, e o sentido dele.
- *
- * Lê as duas formas: a cadeia que o motor copia da página da Comissão («60%»,
- * «-35%», «-4/+6%», «+/-3% (EA)», «-0.2pp») e a declaração estruturada de
- * `figuras.mjs`. Devolve os números por ordem crescente, para que a comparação
- * não dependa de qual das duas escreveu primeiro o lado de baixo.
- *
- * `+/-n` E `-/+n` SÃO DUAS PONTAS E NÃO UMA, e é o caso do câmbio efetivo real:
- * uma expressão regular de números lê «+/-3» como um número só, e a comparação
- * dizia que a declaração tem dois lados e o motor um. Expandem-se antes de ler.
- *
- * @param {string} cru
- * @returns {number[]}
- */
-function numerosDoValorDeReferencia(cru) {
-  const normal = String(cru)
-    .replace(/−/g, '-')
-    .replace(/([+]\/[-]|[-]\/[+])\s*(\d+(?:[.,]\d+)?)/g, '-$2/+$2');
-  const achados = normal.match(/[+-]?\d+(?:[.,]\d+)?/g) ?? [];
-  return achados
-    .map((s) => Number(s.replace(/,/g, '.')))
-    .filter((n) => Number.isFinite(n))
-    .sort((a, b) => a - b);
-}
-
-/**
- * Os números da declaração de `figuras.mjs`, pela mesma forma.
- *
- * @param {ReturnType<typeof ladosDoLimiar>} lados
- * @returns {number[]}
- */
-function numerosDaDeclaracao(lados) {
-  if (!lados) return [];
-  return [lados.inferior, lados.superior]
-    .filter((x) => typeof x === 'string' && x !== '')
-    .map((x) => Number(String(x).replace(/−/g, '-').replace(/,/g, '.')))
-    .filter((n) => Number.isFinite(n))
-    .sort((a, b) => a - b);
-}
-
-/**
- * A célula K9, escrita à parte para o `--prova` a poder exercer com um par que
- * NÃO bate certo. Não se planta um estrago num ficheiro de dados do motor: o que
- * se prova é a comparação, com dois valores escritos aqui.
- *
- * @param {string} id
- * @param {{ limiar: string, sentido: string }|null} doMotor
- * @param {ReturnType<typeof ladosDoLimiar>} lados
- * @param {boolean} banda
- * @returns {string|null}  a queixa, ou `null` quando batem certo
- */
-export function compararAsDuasTestemunhas(id, doMotor, lados, banda) {
-  if (!doMotor) return null;
-  const a = numerosDoValorDeReferencia(doMotor.limiar);
-  const b = numerosDaDeclaracao(lados);
-  if (a.length !== b.length || a.some((n, i) => n !== b[i])) {
-    return (
-      `K9 · ${id}: o valor de referência tem duas testemunhas e elas não batem certo. ` +
-      `A declaração de figuras.mjs diz [${b.join(', ')}] e o motor leu «${doMotor.limiar}» ` +
-      `na página do painel, que dá [${a.join(', ')}]`
-    );
-  }
-  const sentidoDeclarado = banda ? 'intervalo' : lados?.inferior ? 'inferior' : 'superior';
-  if (doMotor.sentido && doMotor.sentido !== sentidoDeclarado) {
-    return (
-      `K9 · ${id}: o sentido do valor de referência tem duas testemunhas e elas não batem ` +
-      `certo. A declaração de figuras.mjs diz «${sentidoDeclarado}» e o motor diz ` +
-      `«${doMotor.sentido}»`
-    );
-  }
-  return null;
-}
-
-/**
  * Percorre o `dist/` e mede.
  *
  * @param {string} dist
@@ -360,6 +294,7 @@ function corre(dist) {
     valores_de_regua_sem_marca: 0,
     /* K14, bloco R1: os cartões de uma medida cuja média europeia está calada. */
     cartoes_com_media_calada: 0,
+    cartoes_com_veredicto: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -402,6 +337,25 @@ function corre(dist) {
           if (x) citadas.add(x);
         }
         recibos.set(rota.replace(/\/$/, ''), citadas);
+      }
+
+      /* K15: a conta independente exige palavra, direção, referência e cor.
+         Inclui a faixa europeia, mesmo não usando CartaoDaMedida. */
+      for (const cartao of root.querySelectorAll('[data-cartao-medida], [data-faixa] [data-cartao]')) {
+        const id = cartao.getAttribute('data-cartao-medida') ?? cartao.getAttribute('data-cartao');
+        if (!REFERENCIAS_DAS_MEDIDAS.has(id)) {
+          // Os limites legais mantêm a sua palavra própria; a cor também não
+          // pode ficar sozinha nesses cartões de lugares.
+          for (const estado of ['fora', 'dentro']) {
+            if (!cartao.querySelector(`.sq-${estado}, .est-${estado}`)) continue;
+            const palavra = textoVisivel(cartao.querySelector(`.est-${estado}`) ?? parse('<span></span>'));
+            const formas = langPagina === 'en' ? { fora: /\boutside\b/, dentro: /\bwithin\b/ } : { fora: /\bfora\b/, dentro: /\bdentro\b/ };
+            if (!formas[estado].test(palavra)) erros.push(`K15 · ${id}: cor sem a palavra do estado «${estado}» · ${rota}`);
+          }
+          continue;
+        }
+        contas.cartoes_com_veredicto++;
+        erros.push(...auditarVeredicto(cartao, id, langPagina).map(e => `${e} · ${rota}`));
       }
 
       /* AS LINHAS QUE NÃO SE RENDEM COMO CARTÃO (achado 3, 15.09.2026). Contam-se
@@ -913,7 +867,7 @@ function montaAProva() {
       chip('precos-da-habitacao-2025') +
       '<span class="cartao-medida-unidade">variação anual média, %</span></p>' +
       `<p class="cartao-medida-frase" data-cartao-definicao="precos-da-habitacao-2025">${boa}</p>` +
-      '<p class="cartao-medida-regua"><span data-nonledger="limiar-do-quadro">9</span>%</p>' +
+      `<p class="cartao-medida-regua"><span class="sq sq-fora"></span><span class="est-fora" data-veredicto-referencia="fora">${veredictoEsperado('precos-da-habitacao-2025', 'pt').texto.replace(/(\d+)/g, '<span data-nonledger="limiar-do-quadro">$1</span>')}</span></p>` +
       '</article>' +
       /* PLANTA 1 (K1 e K2): um bloco a mais, com um rótulo de recibo dentro. */
       '<article data-cartao-medida="divida-publica-2025">' +
@@ -1035,6 +989,23 @@ if (PROVA) {
   const noSao = r.erros.filter((e) => e.includes('precos-da-habitacao-2025'));
   if (noSao.length > 0) {
     falhas.push(`o cartão são deu ${noSao.length} vermelho(s): ${noSao[0]}`);
+  }
+
+  /* K15: as quatro formas, igualdade e banda exterior, com linha em memória.
+     A planta tira só a palavra e deixa a cor, depois troca só a cor. */
+  for (const lang of ['pt', 'en']) {
+    for (const [id, valor] of [['divida-publica-2025', null], ['divida-das-familias-2025', null], ['saldo-da-balanca-corrente-2025', null], ['saldo-da-balanca-corrente-2025', '7'], ['divida-publica-2025', '60']]) {
+      const linha = valor === null ? undefined : { value: valor };
+      const esperado = veredictoEsperado(id, lang, linha);
+      const html = `<article><span class="sq sq-${esperado.estado}"></span><span class="est-${esperado.estado}" data-veredicto-referencia="${esperado.estado}">${esperado.texto}</span></article>`;
+      const ler = h => auditarVeredicto(parse(h), id, lang, linha);
+      if (ler(html).length) falhas.push(`K15 recusa ${id} ${lang}`);
+      const semPalavra = html.replace(esperado.texto, '');
+      if (!ler(semPalavra).some(e => e.includes('veredicto em palavras'))) falhas.push(`K15 não viu cor sem palavra ${id} ${lang}`);
+      const corTrocada = html.replace(`sq-${esperado.estado}`, `sq-${esperado.estado === 'fora' ? 'dentro' : 'fora'}`);
+      if (!ler(corTrocada).some(e => e.includes('cor não repete'))) falhas.push(`K15 não viu a cor trocada ${id} ${lang}`);
+      if (ler(html).length) falhas.push(`K15 recusa reposição ${id} ${lang}`);
+    }
   }
 
   /* O nome antigo do limite não pode sobreviver à declaração nova, mesmo
@@ -1349,6 +1320,20 @@ if (PROVA) {
     );
   }
 
+  // K9: testemunha nacional verdadeira, número trocado e direção trocada.
+  const linhasNacionais = loadClaims();
+  for (const id of ['saldo-das-administracoes-publicas-2025', 'crescimento-da-despesa-liquida-2025']) {
+    const linha = linhasNacionais.get(id);
+    const f = REFERENCIAS_DAS_MEDIDAS.get(id);
+    const testemunha = referenciaNacionalDaLinha(id, linha);
+    if (!testemunha || compararAsDuasTestemunhas(id, testemunha, ladosDoLimiar(f.limiar), false)) falhas.push(`K9 nacional recusou ${id}`);
+    const trocado = { ...f.limiar, nl: String(Number(f.limiar.nl) + 1) };
+    if (!compararAsDuasTestemunhas(id, testemunha, ladosDoLimiar(trocado), false)) falhas.push(`K9 nacional não viu valor trocado ${id}`);
+    const direcao = { ...testemunha, sentido: testemunha.sentido === 'inferior' ? 'superior' : 'inferior' };
+    if (!compararAsDuasTestemunhas(id, direcao, ladosDoLimiar(f.limiar), false)) falhas.push(`K9 nacional não viu direção trocada ${id}`);
+    if (referenciaNacionalDaLinha(id, { ...linha, excerpt: '', note: '' })) falhas.push(`K9 nacional aceitou testemunha apagada ${id}`);
+  }
+
   if (falhas.length > 0) {
     console.error(vermelho('\n  A PROVA DA RÉGUA DO CARTÃO FALHOU\n'));
     for (const f of falhas) console.error(`    ${f}`);
@@ -1361,7 +1346,7 @@ if (PROVA) {
         `a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da ` +
         `União e uma chave que não se inventa; as duas testemunhas do valor de referência com um ` +
         `par bom e dois maus; a mesma série com um par que bate e um que não bate; ` +
-        `K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; ` +
+        `K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; ` +
         `K13 sobre ${celulaK13().medidas} medidas e ${celulaK13().linhas} linhas com grupo etário, com a ` +
         `declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos ` +
         `soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e ` +
@@ -1411,12 +1396,17 @@ const motor = ficheirosDoMotor();
 /* As duas testemunhas do valor de referência, comparadas medida a medida. Não
    lê o `dist/`: lê os dois registos, que é onde o facto está. */
 let k9Comparadas = 0;
-for (const f of FIGURAS) {
-  const doMotor = valorDeReferenciaDoMotor(f.claim);
-  if (!doMotor) continue;
+const linhasK9 = loadClaims();
+for (const [id, f] of REFERENCIAS_DAS_MEDIDAS) {
+  const nacional = f.limiarFixadoPor === 'pacto' || f.limiarFixadoPor === 'conselho';
+  const doMotor = nacional ? referenciaNacionalDaLinha(id, linhasK9.get(id)) : valorDeReferenciaDoMotor(id);
+  if (!doMotor) {
+    r.erros.push(`K9 · ${id}: a referência declarada não tem segunda testemunha legível`);
+    continue;
+  }
   k9Comparadas++;
   const queixa = compararAsDuasTestemunhas(
-    f.claim,
+    id,
     doMotor,
     ladosDoLimiar(f.limiar),
     Boolean(f.limiar && (f.limiar.inferior || f.limiar.superior)),
@@ -1482,6 +1472,7 @@ console.log(cinza(`    unidade na outra língua          ${r.contas.unidade_nout
 console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_portugues} (a exceção da IDENTIDADE §6)`));
 console.log(cinza(`    valores de régua sem marca própria                    ${r.contas.valores_de_regua_sem_marca} (a porta é a do cartão)`));
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
+console.log(cinza(`    cartões com veredicto conferido (K15)                 ${r.contas.cartoes_com_veredicto}`));
 console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));

@@ -694,6 +694,11 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   letter-spacing: 0.03em;
   color: var(--muted);
 }
+.cartao-veredicto {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
 
 /* A UNIDADE É A PRIMEIRA FILA DO PÉ, e ganha altura de alvo quando leva um selo
    por dentro. É a regra da I13 posta onde ela morde: numa das sete medidas de um

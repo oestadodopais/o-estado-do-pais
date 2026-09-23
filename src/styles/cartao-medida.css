@@ -2,7 +2,7 @@
  * O CARTÃO DE UMA MEDIDA · a folha (bloco P2, 15.09.2026)
  * ---------------------------------------------------------------------------
  * Cinco coisas numa pilha, pela ordem em que se leem: o nome, o valor com a
- * unidade e o período, a frase do que a medida mede, a régua, e a marca da fonte
+ * unidade e o período, a régua e a pergunta. A marca da fonte
  * (que vive dentro da linha do valor, ao lado dele, porque é lá que o portão a
  * confere).
  *
@@ -88,6 +88,19 @@
   min-width: 0;
   margin: 0;
 }
+.cartao-medida-quantidade {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0 6px;
+  max-width: 100%;
+  min-width: 0;
+}
+.cartao-medida-quantidade > .claim-value {
+  flex: 0 0 auto;
+}
+.cartao-medida-quantidade > .cartao-medida-unidade {
+  flex: 0 1 auto;
+}
 .cartao-medida-num {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -126,7 +139,7 @@
   margin: 2px 0 0;
   max-width: 58ch;
   font-family: var(--f-prosa);
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.45;
   color: var(--ink);
 }
@@ -139,9 +152,9 @@
   align-items: baseline;
   gap: 2px 16px;
   margin: 2px 0 0;
-  font-family: var(--f-instr);
+  font-family: var(--f-prosa);
   font-variant-numeric: tabular-nums lining-nums;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--ink);
 }
 .cartao-medida-regua-item {
@@ -156,12 +169,11 @@
 }
 
 /* O TELEMÓVEL NÃO ENCOLHE O QUE SE LÊ. O chão de 12 px vale aqui como vale nas
-   listas do livro-razão: abaixo de 620 px a unidade, o período e a régua sobem
-   a 12 px, e a frase e o nome ficam como estão. */
+   listas do livro-razão: abaixo de 620 px a unidade e o período mantêm
+   os 12 px, e a régua, a frase e o nome ficam como estão. */
 @media (max-width: 620px) {
   .cartao-medida-unidade,
-  .cartao-medida-periodo,
-  .cartao-medida-regua {
+  .cartao-medida-periodo {
     font-size: 12px;
   }
   .cartao-medida-num {

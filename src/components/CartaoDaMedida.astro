@@ -24,17 +24,16 @@
  *       cartão de uma página portuguesa não escreve o nome de uma coisa em
  *       inglês (item 4 do brief);
  *   (b) **o valor com a unidade e o período, numa linha**. O valor é a linha do
- *       livro-razão, por `<Claim/>`, com a marca da fonte ao lado; a unidade e o
- *       período são campos da mesma linha, conferidos carácter a carácter pelo
+ *       livro-razão, por `<Claim/>`, unido à unidade; a marca vem depois do período.
+ *       A unidade e o período são campos da mesma linha, conferidos carácter a carácter pelo
  *       portão. «Dados de» saiu: a preposição faz o trabalho do rótulo, e o
  *       rótulo era um campo de recibo posto à vista;
- *   (c) **uma frase do que a medida mede**, que já existe em
+ *   (c) **a régua**, quando as linhas existem (ver `src/lib/enquadramento.mjs`);
+ *   (d) **a pergunta do leitor**, declarada em
  *       `src/data/figuras.mjs` e em mais lado nenhum, com as origens seladas no
- *       F1.10. Só as vinte e uma medidas dos dois painéis europeus a têm hoje;
- *       as outras não levam frase, e não se lhes escreve uma;
- *   (d) **a régua**, quando as linhas existem (ver `src/lib/enquadramento.mjs`);
+ *       F1.10. As medidas sem definição declarada não levam frase;
  *   (e) **a marca da fonte**, que abre o recibo. É o `<a class="src-chip">` que
- *       o `<Claim chip>` põe ao lado do valor, e é a única porta da proveniência
+ *       o `<Provenance>` põe depois do período, e é a única porta da proveniência
  *       que o cartão mostra.
  *
  * ---------------------------------------------------------------------------
@@ -76,6 +75,7 @@
  * pela marca `data-cartao-definicao`.
  */
 import Claim from './Claim.astro';
+import Provenance from './Provenance.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
 import Frase from './Frase.astro';
@@ -172,7 +172,8 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         </span>
       )}
       <p class="cartao-medida-valor">
-        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+        <span class="cartao-medida-quantidade">
+        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" />{' '}
         <CampoDaLinha
           id={c.id}
           campo="unit"
@@ -181,6 +182,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           class="cartao-medida-unidade"
           lingua={unidade.lingua}
         />
+        </span>
         {periodo && (
           <span class="cartao-medida-periodo">
             <span class="cartao-medida-em" data-voz>
@@ -189,6 +191,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
             <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
           </span>
         )}
+        <Provenance id={c.id} lang={lang} />
       </p>
       {/* A CONTA, POR PALAVRAS. É o campo `derivation` da linha, declarado nas
           duas edições e conferido pelo portão carácter a carácter: a casa não
@@ -208,6 +211,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
   ) : (
     <article
       class="cartao-medida"
+      id={`m-${c.id}`}
       data-cartao-medida={c.id}
       data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
       {...resto}
@@ -218,12 +222,12 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           uma coisa conferida e não uma dispensa. */}
       <NomeDaMedida linha={c} lang={lang} escada="cartao" class="cartao-medida-nome" />
 
-      {/* (b) O VALOR, A UNIDADE E O PERÍODO, NUMA LINHA. A marca da fonte, que é a
-          coisa (e) das cinco, vive dentro do `<Claim chip>`: `auditaSelo()` procura
-          o selo dentro do PAI do elemento do valor, e é essa vizinhança que o portão
-          confere. Um invólucro entre os dois partia-a. */}
+      {/* B2: o valor leva a unidade; o período e a marca vêm depois.
+          auditaSelo aceita só este invólucro, com uma unidade da mesma linha,
+          um valor e uma marca no pai imediato. */}
       <p class="cartao-medida-valor">
-        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+        <span class="cartao-medida-quantidade">
+        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" />{' '}
         <CampoDaLinha
           id={c.id}
           campo="unit"
@@ -232,6 +236,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           class="cartao-medida-unidade"
           lingua={unidade.lingua}
         />
+        </span>
         {periodo && (
           <span class="cartao-medida-periodo">
             {/* «em», e não «Dados de». A preposição é a gramática da frase, e o
@@ -243,7 +248,13 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
             <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
           </span>
         )}
+        <Provenance id={c.id} lang={lang} />
       </p>
+
+      {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
+          declarado; onde não houver, não se desenha e não se escreve a ausência por
+          palavras. */}
+      <ReguaDoCartao id={c.id} lang={lang} s={s} />
 
       {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
       {frase && (
@@ -252,10 +263,6 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         </p>
       )}
 
-      {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
-          declarado; onde não houver, não se desenha e não se escreve a ausência por
-          palavras. */}
-      <ReguaDoCartao id={c.id} lang={lang} s={s} />
     </article>
   )
 }

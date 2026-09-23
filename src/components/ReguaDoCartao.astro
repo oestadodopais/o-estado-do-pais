@@ -18,7 +18,7 @@
  *     Quem diz qual é a linha é `src/lib/enquadramento.mjs`;
  *   · **o valor de referência**, com a palavra que diz de que lado dele o valor
  *     está. O algarismo é o que a nota da linha escreve, declarado em
- *     `src/data/figuras.mjs` com o motivo `limiar-do-quadro` do registo, e a
+ *     `src/data/referencias-das-medidas.mjs` com o motivo `limiar-do-quadro` do registo, e a
  *     palavra é derivada de dois números que já existem
  *     (`comparacaoComOLimiar()`): não acrescenta um dígito à página.
  *
@@ -59,35 +59,25 @@
  * União para esta medida», que seria a casa a explicar-se ao lado de cada número
  * (regra 5 do plano das palavras).
  *
- * A PALAVRA DO ESTADO, HOJE E DEPOIS. As três cadeias («acima do valor de
- * referência», «abaixo do valor de referência», «entre os valores de
- * referência») são as chaves que o bloco P1 escreve em `s.estado` no mesmo dia,
- * pela decisão do diretor de 15.09.2026 de manhã: «limiar» sai do texto que o
- * leitor vê. Estão aqui pelas MESMAS chaves de propósito, para que os dois ramos
- * digam a mesma coisa e a fusão seja uma escolha e não uma reescrita.
- *
- * NENHUMA MEDIDA ESTÁ EXACTAMENTE NO SEU VALOR DE REFERÊNCIA hoje (medido: das
- * 21 figuras, 5 estão acima, 6 abaixo, 2 dentro de uma banda e 8 não têm valor
- * de referência; nenhuma dá `noLimiar`). Por isso não há aqui uma quarta cadeia:
- * escrevê-la era escrever uma frase que nenhuma página rende, e o inventário
- * fecha a construção quando uma linha declarada não se rende.
+ * B2: o veredicto diz fora ou dentro e a direção. A cor repete a palavra.
  */
 import Claim from './Claim.astro';
+import VeredictoDaReferencia from './VeredictoDaReferencia.astro';
+import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
 import CampoDaLinha from './CampoDaLinha.astro';
 import { reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
-import { FIGURAS, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
+import { FIGURAS } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 
 const { id, lang = 'pt', s } = Astro.props;
 
 /**
- * O VALOR DE REFERÊNCIA DE UMA MEDIDA, pela declaração que já existe.
+ * AS DECLARAÇÕES DO QUADRO, para a ressalva da média europeia.
  *
- * A lista é a de `figuras.mjs`, que é onde os valores de referência dos dois
- * quadros europeus estão declarados, cada um com a nota da sua linha ao lado.
- * Uma medida que não esteja lá não tem valor de referência para esta régua, e
- * não se lhe inventa um.
+ * A referência vem da tabela única `referencias-das-medidas.mjs`, que reúne o
+ * painel europeu e as referências nacionais. A declaração original da figura
+ * continua a mandar na ressalva que cala a média europeia.
  */
 const DECLARACAO = new Map();
 for (const f of FIGURAS) {
@@ -106,31 +96,10 @@ const figura = DECLARACAO.get(id) ?? null;
    conhece a medida pelo nome e fecha a construção se a média voltar. */
 const reguaInteira = reguaDaMedida(id);
 const regua = figura?.semMediaEuropeia ? { ...reguaInteira, ue: null } : reguaInteira;
-const limiar = figura?.limiar ?? null;
-const comparacao = limiar ? comparacaoComOLimiar(getClaim(id), limiar) : null;
-const lados = ladosDoLimiar(limiar);
-const banda = Boolean(limiar && (limiar.inferior || limiar.superior));
-const simbolo = limiar?.simbolo ?? '%';
-/* A palavra: as duas direcções, e a banda quando o valor está lá dentro. */
-const palavra =
-  comparacao === 'acima'
-    ? s.estado.acima
-    : comparacao === 'abaixo'
-      ? s.estado.abaixo
-      : comparacao === null && banda && lados
-        ? s.estado.entre
-        : null;
-
-const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
-/* O ESTADO, PELA COR QUE O MÉTODO PROMETE (bloco R1, 23.09.2026, I139). «Âmbar
-   quando o valor está fora dele, cobalto quando está dentro»: a página europeia
-   já o fazia no cartão da faixa, com o quadrado e a palavra pintada, e é essa a
-   forma que este cartão passa a usar, com as mesmas classes e sem mudar uma
-   palavra. O estado sai de `estadoDaMedida()`, a mesma função da faixa, que lê o
-   valor da linha contra o valor de referência declarado; «acima» e «abaixo»
-   continuam a ser a direção, e o veredicto em palavras é do B2. */
+const limiar = REFERENCIAS_DAS_MEDIDAS.get(id)?.limiar ?? null;
 const estado = limiar ? estadoDaMedida(getClaim(id), limiar) : null;
 const pintado = estado === 'fora' || estado === 'dentro';
+const temAlgumaCoisa = temRegua(regua) || pintado;
 ---
 
 {
@@ -180,45 +149,9 @@ const pintado = estado === 'fora' || estado === 'dentro';
           <Claim id={regua.ue.id} lang={lang} as="span" />
         </span>
       )}
-      {/* O VALOR DE REFERÊNCIA, COM A DIRECÇÃO. O algarismo leva o motivo
-          `limiar-do-quadro` do registo, que é a dispensa com que ele entra na
-          página, e é o mesmo que a peça e o cartão da faixa já usam. */}
-      {palavra && (
-        <span class="cartao-medida-regua-item" data-regua="referencia" data-estado={pintado ? estado : undefined}>
-          {pintado && <span class={`sq sq-${estado}`} aria-hidden="true" />}
-          <span data-voz class:list={[pintado && `est-${estado}`]}>{palavra}</span>
-          {/* O VALOR ENTRE PARÊNTESES É UM SÓ FILHO, E ISSO É UMA CORREÇÃO
-              MEDIDA (achado do lugar de direção às capturas, 15.09.2026). O
-              leitor lia «acima do valor de referência ( 9 %)», com dois espaços
-              que ninguém escreveu: `.cartao-medida-regua-item` é um
-              `inline-flex` com `gap: 0 4px`, e num contentor de flexão cada
-              corrida de texto vira um filho seu. Os parênteses, o algarismo e o
-              símbolo eram três filhos, e a folha punha 4 px entre cada dois.
-              Fechados num `<span>` inline, voltam a ser texto corrido: o
-              contentor passa a ter dois filhos, a palavra e o valor, e o único
-              espaço que se vê é o de 4 px entre eles, que é o que a folha quer.
-
-              O SÍMBOLO ESCREVE-SE COMO A MEDIDA O DECLARA, e a página não lhe
-              acrescenta um espaço: `simbolo` é o campo de `src/data/figuras.mjs`
-              (doze medidas escrevem «%» e a taxa de atividade escreve « pp»,
-              com o espaço dentro da declaração). É a mesma forma que o cartão da
-              faixa, a peça e a leitura breve já escrevem («limiar 60% · acima»),
-              e por isso há uma forma só em todo o sítio: «(9%)» e «(2 pp)». */}
-          <span class="cartao-medida-regua-v">{'('}{banda ? (
-              <>
-                {limiar.inferior.sinal ?? ''}
-                <span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>/
-                {limiar.superior.sinal ?? ''}
-                <span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span>
-                {simbolo}
-              </>
-            ) : (
-              <>
-                {limiar.sinal ?? ''}
-                <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>
-                {simbolo}
-              </>
-            )}{')'}</span>
+      {pintado && (
+        <span class="cartao-medida-regua-item" data-regua="referencia" data-estado={estado}>
+          <VeredictoDaReferencia linha={getClaim(id)} limiar={limiar} s={s} />
         </span>
       )}
     </p>

@@ -4,7 +4,7 @@
  * O CARTÃO DE UMA MEDIDA DE UM LUGAR (B1, peça 2, 21.09.2026)
  * ---------------------------------------------------------------------------
  * A ANATOMIA É A DO CARTÃO DO P2, e não muda: o nome, o valor com a unidade e o
- * período numa linha, uma frase do que a medida mede, a régua, e uma marca da
+ * período numa linha, a régua, uma frase do que a medida mede, e uma marca da
  * fonte. As mesmas cinco classes (`cartao-medida-nome`, `-valor`, `-frase`,
  * `-regua`), a mesma folha, a mesma régua a medi-lo (`tests/cartao/cartao.mjs`).
  *
@@ -104,16 +104,12 @@ const periodoDaFonte = (() => {
   </span>
 
   <p class="cartao-medida-valor">
+    <span class="cartao-medida-quantidade">
     {
       marca ? (
-        /* O selo é irmão do que está no lugar do valor, como é irmão do valor
-           nos outros cartões: é essa vizinhança que o portão confere. */
-        <span class="claim claim-com-chip">
-          <span class="cartao-medida-marca">{s.municipio.semValorPublicado}</span>
-          <Provenance id={tile.claim} lang={lang} />
-        </span>
+        <span class="cartao-medida-marca">{s.municipio.semValorPublicado}</span>
       ) : (
-        <Claim id={tile.claim} lang={lang} as="span" class="cartao-medida-num" chip={true} />
+        <Claim id={tile.claim} lang={lang} as="span" class="cartao-medida-num" />
       )
     }
     <CampoDaLinha
@@ -124,6 +120,7 @@ const periodoDaFonte = (() => {
       class="cartao-medida-unidade"
       lingua={unidade.lingua}
     />
+    </span>
     <span class="cartao-medida-periodo">
       {' · '}
       <Frase partes={tile.periodo[lang]} lang={lang} />
@@ -136,9 +133,8 @@ const periodoDaFonte = (() => {
         </span>
       )}
     </span>
+    <Provenance id={tile.claim} lang={lang} />
   </p>
-
-  {frase && <p class="cartao-medida-frase"><Frase partes={frase} lang={lang} /></p>}
 
   {
     palavra && (
@@ -149,4 +145,5 @@ const periodoDaFonte = (() => {
       </p>
     )
   }
+  {frase && <p class="cartao-medida-frase"><Frase partes={frase} lang={lang} /></p>}
 </article>
