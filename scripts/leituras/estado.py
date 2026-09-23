@@ -27,6 +27,7 @@ import json
 import os
 import re
 import subprocess
+import time
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -57,7 +58,18 @@ def git_de(repo: Path, nome: str, principal: str, rede: bool) -> list[str]:
     if rede:
         c, s = correr(["git", "fetch", "origin"], repo, 90)
         if c != 0:
-            linhas.append(nao_lido(f"`git fetch origin` em {nome}", s))
+            # UMA SEGUNDA TENTATIVA, E DIZ-SE (M28, 23.09.2026): a primeira corrida
+            # desta sessão falhou o fetch com «Permission denied (publickey)» e o
+            # mesmo comando passou segundos depois; um fetch que falha uma vez não
+            # prova que o remoto não se lê, e um que passa à segunda diz que passou
+            # à segunda. Se as duas falharem, é NÃO LIDO como antes.
+            primeira = s
+            time.sleep(3)
+            c, s = correr(["git", "fetch", "origin"], repo, 90)
+            if c != 0:
+                linhas.append(nao_lido(f"`git fetch origin` em {nome}", f"duas tentativas; a última: {s}"))
+            else:
+                linhas.append(f"- `git fetch origin` em {nome} passou à segunda tentativa; a primeira disse: {primeira.strip()[:120]}")
     for ref in (principal, f"origin/{principal}"):
         c, s = correr(["git", "log", "-1", "--format=%h · %cI · %s", ref], repo)
         linhas.append(f"- `{ref}`: {s.strip()[:170]}  (`git log -1 {ref}`)" if c == 0
