@@ -10,7 +10,7 @@ worktree="$1"; prompt="$2"; relatorio="$3"
 # A WORKTREE PASSA-SE EM CAMINHO ABSOLUTO (M29, 23.09.2026): o guião entra nela com `cd` e volta a passá-la ao
 # Codex em `-C`, por isso um caminho relativo era procurado dentro de si próprio e o Codex morria no mesmo segundo
 # com «No such file or directory». Recusa-se antes de lançar, com a razão.
-case "$worktree" in /*) ;; *) echo "a worktree passa-se em caminho absoluto (recebi «$worktree»)" >&2; exit 9;; esac
+case "$worktree" in /*) ;; *) echo "a worktree passa-se em caminho absoluto (recebi: ${worktree})" >&2; exit 9;; esac
 modelo="${CODEX_CONSTRUTOR:-gpt-6-astra}"
 cd "$worktree" || exit 9
 echo "INICIO $(date -u +%H:%M:%S) modelo=$modelo raciocínio=xhigh"
