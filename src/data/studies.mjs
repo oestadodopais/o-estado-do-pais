@@ -406,7 +406,7 @@ export const WORKS = [
         lang: 'pt',
         title: 'Penalizações por Reforma Antecipada em Portugal',
         date: null,
-        updated: null,
+        updated: '2026-09-23',
       },
     ],
     description: {
