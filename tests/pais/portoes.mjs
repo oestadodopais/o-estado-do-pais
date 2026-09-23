@@ -104,6 +104,14 @@ planta('r1-rotulo-no-rodape','scripts/gate-html.mjs',[
 planta('r1-rotulo-depois-do-titulo','scripts/gate-html.mjs',[
  ['municipios/mourao/index.html',r=>{const x=r.querySelector('[data-rotulo-ia="topo"]');const h=r.querySelector('main h1');const copia=x.outerHTML;x.remove();h.insertAdjacentHTML('afterend',copia);}]
 ],[/não é a primeira coisa do «<main>»/,/vem depois do título da página/]);
+/* A frase da frescura num cartão cuja linha não está atrasada, e a que falta no
+   que está (I146). */
+planta('r1-frescura-num-cartao-sem-atraso','scripts/check-formas.mjs',[
+ ['municipios/mourao/index.html',r=>{const c=r.querySelectorAll('[data-cartao-medida]').find(c=>!c.querySelector('[data-frescura]'));c.querySelector('.cartao-medida-valor').insertAdjacentHTML('beforeend','<span data-frescura="iefp-desemprego-registado-concelhos">(a fonte já publicou)</span>');}]
+],[/não está numa série atrasada \(F17\)/]);
+planta('r1-frescura-que-falta','scripts/check-formas.mjs',[
+ ['municipios/mourao/index.html',r=>r.querySelector('[data-frescura]').remove()]
+],[/frase\(s\) da frescura; tem de ter uma \(F17\)/]);
 /* A porta da política repetida FORA do rótulo continua a contar na L1: a
    dispensa é do destino exato e só dentro do rótulo (I145). */
 planta('r1-porta-da-politica-fora-do-rotulo','scripts/check-lugar.mjs',[

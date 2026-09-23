@@ -35,6 +35,11 @@ contexts:
       (ResearchHub/indicators/corredor.py, para src/data/fontes.mjs) e nunca à
       mão. A data que o PUBLICADOR carimba é outra coisa e não passa por aqui: é
       o campo published_at do livro-razão, e vai com a marca data-linha-campo.
+      Desde o bloco R1 (23.09.2026) é também a data em que se leu o último
+      período que a fonte de uma série atrasada publicou, ao pé do período no
+      cartão de um concelho (`data-de-serie-lida`): o estado da fonte, declarado
+      em src/data/frescura.mjs com o ficheiro de onde foi lido, e conferido pelo
+      `npm run check:formas` (F17) contra essa declaração, carácter a carácter.
   - id: nome-oficial-da-medida
     why: >-
       O nome com que o INE ou a PORDATA publicam a mesma medida, no recibo de uma
