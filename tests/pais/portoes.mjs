@@ -92,6 +92,10 @@ planta('feixe-estados','scripts/design-bundle.mjs',[
 ],[/dois estados pintados|não encontrei um cartão fora/]);
 /* R1, 23.09.2026 · as células novas ou mudadas do bloco, cada uma com a sua
    planta, e cada planta com a mordida que a falha esperada tem de casar. */
+/* O título do recibo sem o espaço entre o valor e a unidade (I143). */
+planta('r1-titulo-do-recibo-colado','scripts/gate-html.mjs',[
+ ['livro-razao/mourao-desemprego-registado-2025-12/index.html',r=>{const h=r.querySelector('h1.linha-valor');h.childNodes.filter(n=>n.nodeType===3&&!n.rawText.trim()).forEach(n=>h.removeChild(n));}]
+],[/cola o valor à unidade/]);
 /* O rótulo de IA de volta ao rodapé, numa página que não é de estudo (I145). */
 planta('r1-rotulo-no-rodape','scripts/gate-html.mjs',[
  ['temas/index.html',r=>r.querySelector('[data-rotulo-ia="topo"]').setAttribute('data-rotulo-ia','rodape')]

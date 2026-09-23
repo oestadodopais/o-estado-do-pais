@@ -479,6 +479,9 @@ let documentos = 0;
 /** O rótulo de IA, contado pelo lado da página: rodapé, topo, ficha e frase. */
 const ROTULO_DE_IA = { rodape: 0, topo: 0, ficha: 0, frase: 0, projeto: 0 };
 let paginasDoLivro = 0;
+/* Os títulos das páginas de linha conferidos pela célula do espaço entre o valor
+   e a unidade (bloco R1, 23.09.2026, I143), e os que colavam os dois. */
+let titulosDeLinhaConferidos = 0;
 /** Valores auditados pela regra do selo, e quantos ficaram sem ele (sempre 0: falha). */
 let valoresAuditados = 0;
 let valoresSemSelo = 0;
@@ -4245,6 +4248,30 @@ for (const file of ficheirosHtml(DIST)) {
     } else {
       linhasConstruidas.add(`${rota.lang}:${claimDaPagina.id}`);
     }
+    /* O VALOR E A UNIDADE DO TÍTULO, SEPARADOS NO TEXTO DA PÁGINA (bloco R1,
+       23.09.2026, I143). A leitura de fora ouviu «175pessoas»: o `<h1>` juntava
+       o valor e a unidade sem nada no meio, e a folha separava-os com o `gap`
+       de um `flex`, que um leitor de ecrã e quem copia o título não veem. O que
+       se exige é texto: entre o fim do valor e o começo da unidade, dentro do
+       título, pelo menos um espaço. Não se compara o valor com a linha aqui
+       (isso é a regra do `data-claim`); compara-se o que há ENTRE os dois. */
+    const titulo = root.querySelector('h1.linha-valor');
+    const valorDoTitulo = titulo?.querySelector('[data-claim]');
+    const unidadeDoTitulo = titulo?.querySelector('[data-linha-campo="unit"]');
+    if (titulo && valorDoTitulo && unidadeDoTitulo) {
+      titulosDeLinhaConferidos++;
+      const todo = decodeEntities(textoDe(titulo, { separador: '' }));
+      const valor = decodeEntities(textoDe(valorDoTitulo, { separador: '' }));
+      const unidade = decodeEntities(textoDe(unidadeDoTitulo, { separador: '' }));
+      const fimDoValor = todo.indexOf(valor) + valor.length;
+      const inicioDaUnidade = todo.indexOf(unidade, fimDoValor);
+      if (todo.indexOf(valor) < 0 || inicioDaUnidade < 0 || !/\s/.test(todo.slice(fimDoValor, inicioDaUnidade))) {
+        err(
+          `o título desta página de linha cola o valor à unidade: «${todo.trim()}». Um leitor de ` +
+            `ecrã lê uma palavra só; escreva um espaço entre os dois (bloco R1, I143).`,
+        );
+      }
+    }
   }
 
   /* O endereço diz de que língua é a página; o <html lang> tem de concordar.
@@ -7855,6 +7882,14 @@ for (const [id] of claims) {
     }
   }
 }
+/* O CONHECIDO-POSITIVO DA CÉLULA DO TÍTULO (bloco R1): uma construção com
+   páginas de linha e nenhum título conferido é uma célula que não viu nada. */
+if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
+  erros.push({
+    rel: routePath('linha', 'pt', { slug: '…' }),
+    msg: 'a célula do espaço no título do recibo não conferiu título nenhum: o seletor deixou de ver o <h1> das páginas de linha.',
+  });
+}
 if (paginasDoLivro !== LANGS.length) {
   erros.push({
     rel: routePath('livro', 'pt'),
@@ -7867,6 +7902,7 @@ console.log(
   cinza(
     `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas ` +
       `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
+      ` · ${titulosDeLinhaConferidos} títulos de linha com o valor e a unidade separados` +
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
