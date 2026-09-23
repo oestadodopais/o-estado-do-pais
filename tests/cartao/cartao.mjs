@@ -1205,13 +1205,25 @@ if (PROVA) {
     }
   }
 
-  /* A mesma K6, com a frase real e as duas glosas: verde antes, vermelha
-     quando se troca cada glosa. Nenhum valor de medida entra nesta planta. */
+  /* A mesma K6, com as duas glosas: verde antes, vermelha quando se troca cada
+     glosa. Nenhum valor de medida entra nesta planta.
+
+     DESDE O BLOCO R1 (23.09.2026, I142) NENHUMA DEFINIÇÃO DECLARADA TRAZ
+     MARCADOR: as duas das empresas, que o traziam, escrevem «sociedades não
+     financeiras», provadas pela resposta do Eurostat ao pedido da linha. A
+     conferência das glosas continua no cartão para o dia em que um marcador
+     volte, e esta planta passa a exercê-la com a frase real da medida seguida de
+     um marcador, posta na declaração EM MEMÓRIA só durante a prova e reposta no
+     `finally`. Sem isto, a planta corria sobre um marcador que já não existe. */
   const glosasDir = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-cartao-glosas-'));
+  const id = 'divida-das-empresas-2025';
+  const declaradas = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS);
+  const real = declaradas[id];
   try {
+    declaradas[id] = { ...real, en: [...real.en.map((p) => typeof p === 'string' ? p.replace(/\.$/, '') : p),
+      '; the name behind the words remains ', { marcador: 'a verificar', gloss: 'to verify' }, '.'] };
     fs.mkdirSync(path.join(glosasDir, 'en'));
-    const id = 'divida-das-empresas-2025';
-    const frase = DEFINICOES_DAS_MEDIDAS[id].en.map((p) => typeof p === 'string' ? p :
+    const frase = declaradas[id].en.map((/** @type {any} */ p) => typeof p === 'string' ? p :
       `<a class="marcador">[${p.marcador}]</a><span class="marcador-gloss"> (${p.gloss})</span>` +
       `<span class="marcador-definicao"> · ${t('en').marcador.definicao}</span>`).join('');
     const boa = `<html lang="en"><body><article data-cartao-medida="${id}"><p data-cartao-definicao="${id}">${frase}</p></article></body></html>`;
@@ -1224,7 +1236,10 @@ if (PROVA) {
       fs.writeFileSync(ficheiro, pagina.toString());
       if (!corre(glosasDir).erros.some((e) => e.startsWith('K6 ·'))) falhas.push(`K6 não vê a glosa trocada em ${seletor}`);
     }
-  } finally { fs.rmSync(glosasDir, { recursive: true, force: true }); }
+  } finally {
+    declaradas[id] = real;
+    fs.rmSync(glosasDir, { recursive: true, force: true });
+  }
 
   /* -------------------------------------------------------------------------
      A PROVA DAS LINHAS DO ENQUADRAMENTO: um positivo e um negativo, os dois com
