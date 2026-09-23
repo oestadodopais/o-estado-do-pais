@@ -34,7 +34,7 @@ try {
   ]) for (const largura of [390, 768, 1024, 1280, 1600]) {
     const pagina = await navegador.newPage({ viewport: { width: largura, height: 900 }, reducedMotion: 'reduce' });
     await pagina.route('**/*', r => new URL(r.request().url()).origin === origem ? r.continue() : r.abort());
-    const resposta = await pagina.goto(origem + rota);
+    const resposta = await pagina.goto(origem + rota, { waitUntil: 'networkidle' });
     if (resposta?.status() !== 200) throw Error(`${rota}: não abriu`);
     await pagina.evaluate(() => document.fonts.ready);
     const medir = async () => {
@@ -51,13 +51,17 @@ try {
     if (antes.falhas.length) throw Error(`Base com falhas: ${JSON.stringify(antes)}`);
     if (familia === 'europeia') {
       const folha = await pagina.addStyleTag({ content: 'h1 { font-size: clamp(26px, 3.2vw, 40px) !important; }' });
+      await pagina.waitForFunction(() => Math.abs(parseFloat(getComputedStyle(document.querySelector('h1')).fontSize) - Math.max(26, Math.min(40, innerWidth * .032))) < .001);
       const estrago = await medir();
       estragadas.push(estrago);
       if (estrago.wordmark.tamanho !== antes.wordmark.tamanho) throw Error('A planta mudou a marca');
       await folha.evaluate(e => e.remove());
+      // Reabre os bytes servidos, sem conservar folhas injetadas pela planta.
+      await pagina.reload({ waitUntil: 'networkidle' });
+      await pagina.evaluate(() => document.fonts.ready);
       const depois = await medir();
       repostas.push(depois);
-      if (JSON.stringify(antes) !== JSON.stringify(depois)) throw Error('A reposição não devolveu a medida limpa');
+      if (JSON.stringify(antes) !== JSON.stringify(depois)) throw Error(`A reposição não devolveu a medida limpa: ${JSON.stringify({antes, depois})}`);
     }
     await pagina.close();
   }

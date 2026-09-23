@@ -315,7 +315,7 @@ def portao(nome, cabeca):
         FALHAS.append(f'{nome}: cabeça diferente da construção medida')
     if codigo != 0:
         FALHAS.append(f'{nome}: código {codigo}')
-    return {'codigo': codigo, 'cabeca': lido('cabeca'), 'inicio': ini.isoformat(), 'fim': fim.isoformat(), 'segundos': (fim - ini).total_seconds(), 'sha256_log': sha((pasta / f'{nome}.log').read_bytes())}
+    return {'codigo': codigo, 'cabeca': lido('cabeca'), 'motor_cabeca': lido('motor-cabeca') if (pasta / f'{nome}.motor-cabeca').exists() else None, 'inicio': ini.isoformat(), 'fim': fim.isoformat(), 'segundos': (fim - ini).total_seconds(), 'sha256_log': sha((pasta / f'{nome}.log').read_bytes())}
 
 
 def plantas():
@@ -510,6 +510,17 @@ M['plantas_total'] = sum(p['estragos'] for p in M['plantas'].values())
 M['plantas_morderam'] = sum(p['morderam'] for p in M['plantas'].values())
 M['motor'] = medicao_guardada('motor/medidas-motor.json', obrigatoria=True)
 M['caso_portao_ue'] = medicao_guardada('caso-portao-ue.json')
+M['correcao'] = medicao_guardada('correcao/resumo.json', obrigatoria=True)
+M['hierarquia'] = medicao_guardada('plantas-titulos-b2.json', obrigatoria=True)
+if M['hierarquia']:
+    h = M['hierarquia']
+    esperado = {(f, l, w) for f, l in PAGINAS if f != 'pais' for w in LARGURAS}
+    vistos = [(r['familia'], r['lingua'], r['largura']) for r in h['limpas']]
+    if len(vistos) != len(esperado) or set(vistos) != esperado or any(r['falhas'] for r in h['limpas'] + h['repostas']):
+        FALHAS.append('hierarquia: cobertura incompleta ou medida limpa com falhas')
+M['plantas_desbloqueadas'] = medicao_guardada('plantas-bloqueadas.json', obrigatoria=True)
+if not all(x.get('executada') and x.get('mordida_provada') for x in M['plantas_desbloqueadas']['casos']):
+    FALHAS.append('restam plantas bloqueadas sem execução e mordida')
 M['correcao_captor'] = medicao_guardada('correcao-captor.json')
 M['qa_recibo'] = medicao_guardada('qa-recibo-inquilinos-390.json')
 M['checks_de_trabalho'] = checks_de_trabalho()

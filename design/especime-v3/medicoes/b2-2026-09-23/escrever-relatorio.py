@@ -7,6 +7,7 @@ from pathlib import Path
 B = Path(__file__).resolve().parent
 R = B.parents[3]
 m = json.loads((B/'medidas.json').read_text())
+assert m['falhas_total'] == 0 and m['faltas_total'] == 0, 'Aceitação exige medições completas e verdes'
 def n(v): return str(v).replace('.', ',')
 def k(s): return '`' + s + '`'
 a=m['antes']; d=m['depois']; t=d['paginas']['temas_pt']; c=m['capturas']['depois']; q=m['camaras']['depois']; motor=m['motor']
@@ -16,17 +17,17 @@ unidades=sorted({u for p in d['paginas'].values() for u in p['unidades_com_euro'
 portoes='\n'.join(f"| {x} | {m['portoes'][x]['codigo']} | `portoes.{x}.codigo`, lido de `portoes/{x}.codigo` |" for x in ('build','verify','typecheck'))
 text=f'''# O veredicto: relatório da peça 1
 
-**Estado: não aceite.** A comparação europeia dos inquilinos está parada num portão que protege a associação entre o número e a fonte. A hierarquia dos títulos está parada porque a medição do navegador contradiz a premissa do brief. As decisões foram pedidas ao lugar de direção; não houve resposta durante esta construção.
+**Estado: aceite pelo construtor; leitura a frio por fazer.** A passagem de correção executa as decisões do lugar de direção sobre a associação europeia e a hierarquia do título. A aceitação assenta nos portões e nas plantas desta passagem.
 
-A medição regista {m['falhas_total']} falhas (`falhas_total`) e {m['faltas_total']} entradas obrigatórias por completar no medidor (`faltas_total`). Esta última contagem cobre a presença dos artefactos que o guião exige; não transforma as plantas bloqueadas nem os itens parados em trabalho aceite.
+A medição regista {m['falhas_total']} falhas (`falhas_total`) e {m['faltas_total']} entradas obrigatórias por completar no medidor (`faltas_total`). As plantas antes bloqueadas foram executadas sobre o portão inteiro, com base limpa e reposição conferida.
 
 ## Cabeças e reprodução
 
 O sítio partiu de `{base}`, sobre `main`. O HTML do depois e os portões atuais pertencem a `{head}` (`depois.cabeca`, `portoes`). As capturas do antes são da cabeça de partida, e não da cabeça anterior usada pelo brief. As cópias próprias e os respetivos resumos estão em `paginas-antes-peca1/` e `paginas-depois-peca1/`. As cópias congeladas em `paginas/` e o guião do brief não foram alterados.
 
-O motor partiu de `aa35e2e72f09988a07d6706fe0a0b59feeca120d` e ficou em `ead443cd2ae83b05127e6a7774be0c0e939bc85f`, na sua worktree própria sobre `master`. O diff está em `motor/diff.patch`. Não houve publicação nem envio para um remoto.
+O motor partiu de `aa35e2e72f09988a07d6706fe0a0b59feeca120d` e ficou em `{motor['cabeca']}`, na sua worktree própria sobre `master`. O diff está em `motor/diff.patch`. Não houve publicação nem envio para um remoto.
 
-`python3 design/especime-v3/medicoes/b2-2026-09-23/medir.py` escreve `medidas.json`. `recolher-motor.py` recompõe a prova em `motor/medidas-motor.json`. Salvo indicação de outro ficheiro, os nomes de medição citados neste relatório pertencem a `medidas.json`. Os commits posteriores à cabeça de código guardam apenas guiões, medições e relatório; não se atribui o HTML construído a esses commits de entrega.
+`python3 design/especime-v3/medicoes/b2-2026-09-23/medir.py` escreve `medidas.json`. `recolher-motor.py` recompõe a prova em `motor/medidas-motor.json`. Salvo indicação de outro ficheiro, os nomes de medição citados neste relatório pertencem a `medidas.json`. As provas finais são escritas depois do último commit para que os portões meçam literalmente a cabeça final. O relatório, as capturas e os logs finais ficam atualizados no disco, por incluir num eventual commit de entrega.
 
 ## Mandato e medida
 
@@ -34,14 +35,14 @@ O motor partiu de `aa35e2e72f09988a07d6706fe0a0b59feeca120d` e ficou em `ead443c
 | --- | --- |
 | Veredicto do país | A frase aparece antes da leitura existente, sem a reescrever, nas duas edições. As contagens, os nomes, a ordem e as portas são conferidos por V1; os textos completos estão em `depois.paginas.pais_pt.veredicto_do_pais` e `depois.paginas.pais_en.veredicto_do_pais`. |
 | Estado em palavras | Os temas têm {t['cartoes_com_valor_de_referencia']} cartões com referência (`depois.paginas.temas_pt.cartoes_com_valor_de_referencia`) e {t['cores_sem_palavra']} casos de cor sem palavra (`depois.paginas.temas_pt.cores_sem_palavra`); a faixa europeia também tem {d['paginas']['europeia_pt']['faixa_cores_sem_palavra']} (`depois.paginas.europeia_pt.faixa_cores_sem_palavra`). As formas de dentro e fora, singular e plural, estão declaradas. A forma de fora de uma banda não ocorre nos valores publicados. Foi exercida nas plantas dos leitores das medições, em memória, mas não na rendição real do componente. |
-| Valor, unidade e fonte | Há {t['cartoes_com_a_marca_entre_o_valor_e_a_unidade']} marcas entre valor e unidade nos temas, pelo predicado original do brief (`depois.paginas.temas_pt.cartoes_com_a_marca_entre_o_valor_e_a_unidade`), e {c['unidades_separadas_a_390']} unidades separadas do valor a 390 px (`capturas.depois.unidades_separadas_a_390`, `capturas.depois.larguras`). A planta isolada do validador passou; a planta do portão de HTML inteiro continua bloqueada pela associação UE. |
+| Valor, unidade e fonte | Há {t['cartoes_com_a_marca_entre_o_valor_e_a_unidade']} marcas entre valor e unidade nos temas, pelo predicado original do brief (`depois.paginas.temas_pt.cartoes_com_a_marca_entre_o_valor_e_a_unidade`), e {c['unidades_separadas_a_390']} unidades separadas do valor a 390 px (`capturas.depois.unidades_separadas_a_390`, `capturas.depois.larguras`). As plantas isoladas e a planta do portão de HTML inteiro passaram (`plantas`, `plantas_desbloqueadas`). |
 | Perguntas | Os temas têm {t['cartoes_com_definicao']} definições e {t['definicoes_com_pergunta']} perguntas (`depois.paginas.temas_pt.cartoes_com_definicao`, `depois.paginas.temas_pt.definicoes_com_pergunta`), incluindo a medida nova dos inquilinos. Nas instâncias fotografadas há {c['perguntas_antes_da_regua']} perguntas antes da régua (`capturas.depois.perguntas_antes_da_regua`); as {c['perguntas_com_regua']} instâncias com régua têm a régua maior do que a pergunta (`capturas.depois.perguntas_com_regua`, `capturas.depois.reguas_maiores_que_pergunta`). As medidas sem definição continuam sem frase. |
 | Réguas nacionais | Saldo, despesa líquida e disparidade salarial ganham o período anterior publicado; saldo e despesa usam a tabela única das referências. Restam {t['cartoes_sem_regua']} cartões sem régua (`depois.paginas.temas_pt.cartoes_sem_regua`, `.cartoes_sem_regua_lista`), pelas razões de fonte descritas abaixo. |
-| Câmaras | A recontagem independente dá {q['camaras_acima_do_limite']} acima, {q['camaras_dentro_do_limite']} dentro e {q['camaras_sem_valor']} sem valor publicado (`camaras.depois.camaras_acima_do_limite`, `.camaras_dentro_do_limite`, `.camaras_sem_valor`). O cartão da contagem está presente e o do limite saiu das páginas do país e dos temas (`depois.paginas.temas_pt.cartao_das_camaras`, `.cartao_do_limite_legal`, `depois.paginas.pais_pt.cartao_do_limite_legal`). As plantas da contagem e da apresentação passaram; a planta do portão de HTML inteiro está bloqueada. |
-| Habitação | O tema abre com os inquilinos a preço de mercado e o total vem a seguir (`depois.paginas.temas_pt.habitacao_ordem`, `depois.paginas.pais_pt.habitacao_ordem`). O total continua sem a média europeia, conferido por K14. As linhas novas estão seladas; a comparação UE é desenhada, mas recusada pelo portão de HTML, como se explica abaixo. Este item não é aceite. |
-| Hierarquia dos títulos | Parado para direção. Apenas {c['titulos_interiores_maiores']} dos {c['paginas_interiores']} casos interiores têm o título maior (`capturas.depois.titulos_interiores_maiores`, `capturas.depois.paginas_interiores`). A folha e as réguas da cabeça não foram alteradas com base na premissa errada. |
+| Câmaras | A recontagem independente dá {q['camaras_acima_do_limite']} acima, {q['camaras_dentro_do_limite']} dentro e {q['camaras_sem_valor']} sem valor publicado (`camaras.depois.camaras_acima_do_limite`, `.camaras_dentro_do_limite`, `.camaras_sem_valor`). O cartão da contagem está presente e o do limite saiu das páginas do país e dos temas (`depois.paginas.temas_pt.cartao_das_camaras`, `.cartao_do_limite_legal`, `depois.paginas.pais_pt.cartao_do_limite_legal`). As plantas da contagem, da apresentação e do portão de HTML inteiro passaram (`plantas`, `plantas_desbloqueadas`). |
+| Habitação | O tema abre com os inquilinos a preço de mercado e o total vem a seguir (`depois.paginas.temas_pt.habitacao_ordem`, `depois.paginas.pais_pt.habitacao_ordem`). O total continua sem a média europeia, conferido por K14. As linhas estão seladas e a associação do agregado europeu está provada pelo motor; a comparação passa no portão de HTML sem mudar a regra (`correcao`, `portoes.build.codigo`). |
+| Hierarquia dos títulos | Fechado. Os {c['titulos_interiores_maiores']} casos interiores têm o título maior do que a marca (`capturas.depois.titulos_interiores_maiores`, `capturas.depois.paginas_interiores`). Só a página europeia passou à regra dos títulos dos temas. A planta do tamanho anterior morde (`hierarquia`). |
 | Dinheiro | Há {t['cartoes_com_simbolo_euro']} cartões com o símbolo nos temas (`depois.paginas.temas_pt.cartoes_com_simbolo_euro`); os outros conjuntos medidos estão em `depois.paginas`, na mesma chave. As leituras alteradas recebem a unidade de `unidadeDaLinha()`. Os valores mantêm a precisão da linha. O texto servido dos estudos e as citações verbatim não foram reescritos. |
-| Capturas, relatório e portões | Estão guardadas {m['capturas_total']} capturas do mandato (`capturas_total`), com {c['transbordos']} transbordos no depois (`capturas.depois.transbordos`). Os portões e a aceitação visual mantêm os vermelhos descritos neste relatório. O pacote inclui as cópias congeladas por `PACOTE_EXTRA`; a leitura a frio ainda não foi realizada. |
+| Capturas, relatório e portões | Estão guardadas {m['capturas_total']} capturas do mandato (`capturas_total`), com {c['transbordos']} transbordos no depois (`capturas.depois.transbordos`). Os portões e a aceitação das capturas passaram (`portoes`, `capturas.depois.aceitacao`). O pacote inclui as cópias congeladas por `PACOTE_EXTRA`; a leitura a frio ainda não foi realizada. |
 
 As frases lidas da construção são:
 
@@ -78,19 +79,17 @@ A L1 só reconhece os nós obrigatórios depois de V1 e V2 provarem os blocos in
 
 Há {m['plantas_total']} ensaios de estragos medidos nos índices do sítio e {m['plantas_morderam']} mordidas (`plantas_total`, `plantas_morderam`). São execuções, não uma promessa de defeitos distintos. As plantas do motor detetaram {motor['plantas_vistas']} de {motor['plantas_total']} estragos, com {motor['provas']} provas positivas e {motor['problemas']} problemas (`motor.plantas_vistas`, `motor.plantas_total`, `motor.provas`, `motor.problemas`). O `core.gate` passou no pre-commit; o comando de commit terminou com código {motor['pre_commit_codigo']} (`motor.core_gate_passou`, `motor.pre_commit_codigo`). Esse código pertence ao comando de commit, não a uma invocação separada do portão.
 
-`plantas-bloqueadas.json` identifica os ensaios `b2-contagens-das-camaras` e `b2-selo-do-cartao` sobre o portão inteiro: não foram executados na cabeça final, pois exigem base limpa e a associação UE mantém essa base vermelha. Não se apresenta essa recusa conhecida como a mordida de um estrago novo.
+## A passagem de correção
 
-## Paragem dos títulos
+O lugar de direção confirmou que a regra do `gate:html` protege a associação entre a medida e a fonte e fica intacta. O erro estava na declaração gerada da linha europeia. `publisher/dominios_readers.py` devolve o quadro e as coordenadas efetivamente lidos; `publisher/dominios_build.py` compara quadro, regime, unidade e período, exige Portugal e União como geografias e exige a medida principal no mesmo livro. Só depois escreve a declaração inicial em `note_extra` do manifesto, pelo caminho já existente do exportador. A nota anterior fica inteira a seguir. O valor, a unidade, o período, o endereço, o título e o excerto não mudaram (`correcao.campos_inalterados`).
 
-O brief calcula `.wordmark` pela regra geral, mas as páginas interiores já usam `.masthead-compact .wordmark`. O navegador confirma que temas e Mourão já cumprem todas as larguras pedidas. A página europeia falha a 768 px, com marca de 26,112 px e título de 26 px, e a 1024 px, com marca de 34 px e título de 32,768 px, nas duas edições (`capturas.antes.tamanhos`, `capturas.depois.tamanhos`).
+`publisher/dominios_b2_test.py`, chamado pela régua do estudo e pelo `core.gate`, planta uma divergência de cada dimensão e exige a razão específica. As {m['correcao']['plantas_associacao']} plantas mordem e o controlo positivo passa (`correcao.plantas_associacao`, `correcao.controlo_positivo`). O commit do motor é `{motor['cabeca']}`. A reexportação só altera a nota da linha europeia e o registo obrigatório da sua travessia (`correcao.ficheiros_ledger`). O `ledger:check` terminou com código {m['correcao']['ledger_codigo']} (`correcao.ledger_codigo`).
 
-Foi pedida autorização para corrigir apenas as falhas medidas. A regra do mandato manda parar neste ponto quando a medição contradiz o brief. A alteração e a respetiva planta da cabeça ficam por fazer até à decisão.
+O lugar de direção corrigiu a premissa geral da hierarquia: temas e Mourão já cumpriam pela regra compacta da marca. `UniaoEuropeiaView.astro` passa o título europeu à classe `temas-titulo`, sem alterar a marca. O captor conserva a célula que exige marca menor do que título em cada página interior do mandato. `tests/inicio/hierarquia-b2.mjs` aplica o tamanho europeu anterior no navegador, verifica as mordidas nas edições e larguras medidas, retira a planta e exige a medida limpa original (`hierarquia`). O brief ficou intocado.
 
-## Paragem da associação europeia
+`desbloquear-plantas.py` exige HTML limpo antes e depois de correr `b2-contagens-das-camaras` e `b2-selo-do-cartao`. `plantas-bloqueadas.json` regista agora as execuções e as mordidas; o diagnóstico anterior está em `correcao/plantas-bloqueadas.json` (`plantas_desbloqueadas`). Os commits do sítio desta passagem constam de `correcao.commits_sitio` e da lista abaixo.
 
-O `gate:html` exige que a nota da linha europeia comece por `Agregado da União Europeia (EU27_2020) da medida «<principal>»,` para autorizar a fonte do cartão principal a servir a régua. O exportador do estudo dos domínios escreve as coordenadas da observação e o prefixo `[note do motor]`, noutra forma.
-
-Nas respostas alojadas coincidem série, regime, unidade e período, mudando a geografia. O diagnóstico em `caso-portao-ue.json` reproduz a condição, os campos das linhas e os resumos dos bytes. O predicado falso é `agregadoDaSerie`. Isso permite decidir o caso; não autoriza trocar a regra. Não foram alteradas a exigência de associação nem a nota para obter um verde. Foi pedida decisão sobre uma prova explícita dessa associação a partir das respostas alojadas, com plantas para cada divergência.
+Só as imagens europeias foram refeitas. As restantes conservam a cabeça original de cada imagem; o captor voltou a medir as páginas e exigiu igualdade com as medidas anteriores antes de as reutilizar (`capturas.depois`, `correcao.capturas_refeitas`). As cópias HTML foram relidas da construção desta passagem. As medições históricas que explicaram a paragem continuam em `correcao/`.
 
 ## Portões, diagnósticos e tempo
 
@@ -108,10 +107,10 @@ Os portões atuais consumiram {n(m['portoes_segundos'])} segundos (`portoes_segu
 
 ## Commits e leitura a frio
 
-Os commits até à cabeça de código são:
+Os commits até à cabeça medida são:
 
 {chr(10).join('- `'+x.split(' ',1)[0]+'` '+x.split(' ',1)[1] for x in commits)}
 
-O pacote é montado por `scripts/leituras/pacote.sh`, com `PACOTE_EXTRA` a incluir `paginas/` e o JSON congelado do brief. Leva também o diff do motor, os guiões, as medições, as cópias próprias e as páginas construídas. Não foi enviado a ninguém. A leitura a frio e as correções dependentes das decisões acima continuam por fazer.
+O pacote é montado por `scripts/leituras/pacote.sh`, com `PACOTE_EXTRA` a incluir `paginas/` e o JSON congelado do brief. Leva também o diff do motor, os guiões, as medições, as cópias próprias e as páginas construídas. Não foi enviado a ninguém. Ficam por fazer a leitura a frio e a aterragem pelo lugar de direção. Nenhum push foi executado.
 '''
 (B/'LEIA-ME-peca1.md').write_text(text)
