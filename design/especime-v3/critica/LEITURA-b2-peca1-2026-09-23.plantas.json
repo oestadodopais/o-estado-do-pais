@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-23T20:26:59+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/d38ffe14-2fbc-45a3-b418-e944f6caba35/scratchpad/leituras/pacote-b2-peca1",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+   "descricao": "o valor da linha nova da União trocado na cópia (18,6 para 18,8), contra a resposta alojada, o diff e a página construída",
+   "sha256_antes": "aefb881e490194f29c5326f902f07c86861dfd07fb2be5e24ba4c86210721a1a",
+   "sha256_depois": "4a53554581bea0b7aa7d520cbe1c56d3b5f318a587dd21f69e7db5323ccd8d88",
+   "contexto_antes": "mento.mjs.\n\nid: \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"18,6\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Housing",
+   "contexto_depois": "mento.mjs.\n\nid: \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"18,8\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Housing"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "a palavra do veredicto do cartão da dívida pública trocada na página construída (fora para dentro), com o estado, a cor e o valor (89,7 acima de 60) a dizerem fora",
+   "sha256_antes": "d6a7d4062bb61d7cf0f07418da061af5484c4780b3a5b41d9c1bc4d00f01f3b1",
+   "sha256_depois": "7610668d8c91a32da83d3aa0e76adebeb83a00b20e597c3a016cbdf72429139b",
+   "contexto_antes": "ao-medida-regua-item\" data-regua=\"referencia\" data-estado=\"fora\"><span class=\"sq sq-fora\" aria-hidden=\"true\"></span><span class=\"veredicto-referencia est-fora\" data-veredicto-referencia=\"fora\"><span data-voz>fora do valor de referência</span> (acima de <span data-nonledger=\"limiar-do-quadro\">60</span> %)</span></span></p><p class=\"cartao-medida-frase\" data-cartao-definicao=\"divida-publica-2025\">Quanto devem as administrações públicas, em percentagem do que o pa",
+   "contexto_depois": "ao-medida-regua-item\" data-regua=\"referencia\" data-estado=\"fora\"><span class=\"sq sq-fora\" aria-hidden=\"true\"></span><span class=\"veredicto-referencia est-fora\" data-veredicto-referencia=\"fora\"><span data-voz>dentro do valor de referência</span> (acima de <span data-nonledger=\"limiar-do-quadro\">60</span> %)</span></span></p><p class=\"cartao-medida-frase\" data-cartao-definicao=\"divida-publica-2025\">Quanto devem as administrações públicas, em percentagem do que o pa"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das câmaras trocada no relatório (10 e 297 para 11 e 296), contra o medidas.json e as linhas",
+   "sha256_antes": "0ce02e50bc3466ee99c54099e67927e4402994e6fead542869ccbdf7f0dae813",
+   "sha256_depois": "b5bc9440b80612c26ca586599e5f1ce197ba1a5c09f24435fa72efb6fc0c9bd4",
+   "contexto_antes": "a (`depois.paginas.temas_pt.cartoes_sem_regua`, `.cartoes_sem_regua_lista`), pelas razões de fonte descritas abaixo. |\n| Câmaras | A recontagem independente dá 10 acima, 297 dentro e 1 sem valor publicado (`camaras.depois.camaras_acima_do_limite`, `.camaras_dentro_do_limite`, `.camaras_sem_valor`). O cartão da contagem está presente e o do limite saiu das página",
+   "contexto_depois": "a (`depois.paginas.temas_pt.cartoes_sem_regua`, `.cartoes_sem_regua_lista`), pelas razões de fonte descritas abaixo. |\n| Câmaras | A recontagem independente dá 11 acima, 296 dentro e 1 sem valor publicado (`camaras.depois.camaras_acima_do_limite`, `.camaras_dentro_do_limite`, `.camaras_sem_valor`). O cartão da contagem está presente e o do limite saiu das página"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "tests/cartao/veredicto.mjs",
+   "descricao": "a K15 deixa de comparar o texto do veredicto com o esperado (só conta os blocos), o que deixaria passar uma palavra errada",
+   "sha256_antes": "7a6943f0008b6fe5c8578f0652fe75bfc267f532a1b711e26d0f64e258176ee8",
+   "sha256_depois": "cc3dd76fc80bc918ed37ce3a48597a34ed0680b4bdac4405b2fc83d7946015c4",
+   "contexto_antes": "perado(id, lang, linha, referencia);\n  if (!esperado) return [];\n  const erros = [];\n  const blocos = cartao.querySelectorAll('[data-veredicto-referencia]');\n  if (blocos.length !== 1 || texto(blocos[0]) !== esperado.texto) {\n    erros.push(`K15 · ${id}: veredicto em palavras ausente ou diferente; esperado «${esperado.texto}»`);\n  }\n  if (blocos[0]?.getAttribute('data-veredicto-refe",
+   "contexto_depois": "perado(id, lang, linha, referencia);\n  if (!esperado) return [];\n  const erros = [];\n  const blocos = cartao.querySelectorAll('[data-veredicto-referencia]');\n  if (blocos.length !== 1) {\n    erros.push(`K15 · ${id}: veredicto em palavras ausente ou diferente; esperado «${esperado.texto}»`);\n  }\n  if (blocos[0]?.getAttribute('data-veredicto-refe"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.yml",
+   "descricao": "a etiqueta do regime de ocupação no excerto da linha de Portugal trocada (preço de mercado para renda reduzida ou gratuita), com o valor 27,2 a ser o do preço de mercado na resposta alojada",
+   "sha256_antes": "37447737f7517ff276cb18ef016f7cc0e9b887fbae67bf39405ee5d6164401be",
+   "sha256_depois": "4bcbb2b7a8ff20ea43b5cc1f08b0c959af2c2ad707a5b3d1e3760f336bd45b43",
+   "contexto_antes": "to textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Portugal — 2025: 27.2\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n#",
+   "contexto_depois": "to textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at reduced price or free — Portugal — 2025: 27.2\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n#"
+  }
+ ]
+}
