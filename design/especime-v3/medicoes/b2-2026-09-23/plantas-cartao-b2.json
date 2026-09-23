@@ -1,0 +1,262 @@
+[
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-sem-palavra-divida-publica-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-sem-palavra-divida-publica-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-sem-palavra-divida-publica-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "f66cbf53c9784ff2c89145b98868509ce9b7488c1477be69e2e7b36f289068d2",
+    "reposto": "f66cbf53c9784ff2c89145b98868509ce9b7488c1477be69e2e7b36f289068d2"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-trocada-divida-publica-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-trocada-divida-publica-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-trocada-divida-publica-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "f66cbf53c9784ff2c89145b98868509ce9b7488c1477be69e2e7b36f289068d2",
+    "reposto": "f66cbf53c9784ff2c89145b98868509ce9b7488c1477be69e2e7b36f289068d2"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-direcao-trocada-divida-publica-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-direcao-trocada-divida-publica-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-direcao-trocada-divida-publica-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "f66cbf53c9784ff2c89145b98868509ce9b7488c1477be69e2e7b36f289068d2",
+    "reposto": "f66cbf53c9784ff2c89145b98868509ce9b7488c1477be69e2e7b36f289068d2"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-sem-palavra-divida-das-familias-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-sem-palavra-divida-das-familias-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-sem-palavra-divida-das-familias-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6efc24c1e1510ec54903f66cfbf4a083c091080cdfc54ef286e01cfae127f6f5",
+    "reposto": "6efc24c1e1510ec54903f66cfbf4a083c091080cdfc54ef286e01cfae127f6f5"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-trocada-divida-das-familias-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-trocada-divida-das-familias-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-trocada-divida-das-familias-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6efc24c1e1510ec54903f66cfbf4a083c091080cdfc54ef286e01cfae127f6f5",
+    "reposto": "6efc24c1e1510ec54903f66cfbf4a083c091080cdfc54ef286e01cfae127f6f5"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-direcao-trocada-divida-das-familias-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-direcao-trocada-divida-das-familias-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-direcao-trocada-divida-das-familias-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6efc24c1e1510ec54903f66cfbf4a083c091080cdfc54ef286e01cfae127f6f5",
+    "reposto": "6efc24c1e1510ec54903f66cfbf4a083c091080cdfc54ef286e01cfae127f6f5"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "8a3e386635f237892c38a08bf6e57b06edbb7ddc5302e0762170b248462d372d",
+    "reposto": "8a3e386635f237892c38a08bf6e57b06edbb7ddc5302e0762170b248462d372d"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-trocada-saldo-da-balanca-corrente-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-trocada-saldo-da-balanca-corrente-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-trocada-saldo-da-balanca-corrente-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "8a3e386635f237892c38a08bf6e57b06edbb7ddc5302e0762170b248462d372d",
+    "reposto": "8a3e386635f237892c38a08bf6e57b06edbb7ddc5302e0762170b248462d372d"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-direcao-trocada-saldo-da-balanca-corrente-2025-pt",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-direcao-trocada-saldo-da-balanca-corrente-2025-pt.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-direcao-trocada-saldo-da-balanca-corrente-2025-pt mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "8a3e386635f237892c38a08bf6e57b06edbb7ddc5302e0762170b248462d372d",
+    "reposto": "8a3e386635f237892c38a08bf6e57b06edbb7ddc5302e0762170b248462d372d"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-sem-palavra-divida-publica-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-sem-palavra-divida-publica-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-sem-palavra-divida-publica-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "750752b5c16646271acc35c74ac7e37d56489d371485ce2c3e1186b48f3715cc",
+    "reposto": "750752b5c16646271acc35c74ac7e37d56489d371485ce2c3e1186b48f3715cc"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-trocada-divida-publica-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-trocada-divida-publica-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-trocada-divida-publica-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "750752b5c16646271acc35c74ac7e37d56489d371485ce2c3e1186b48f3715cc",
+    "reposto": "750752b5c16646271acc35c74ac7e37d56489d371485ce2c3e1186b48f3715cc"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-direcao-trocada-divida-publica-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-direcao-trocada-divida-publica-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-direcao-trocada-divida-publica-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "750752b5c16646271acc35c74ac7e37d56489d371485ce2c3e1186b48f3715cc",
+    "reposto": "750752b5c16646271acc35c74ac7e37d56489d371485ce2c3e1186b48f3715cc"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-sem-palavra-divida-das-familias-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-sem-palavra-divida-das-familias-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-sem-palavra-divida-das-familias-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "52096bc66d6ac6988521490b7887dfd528e6886c25f097661293c65d3d50d1a5",
+    "reposto": "52096bc66d6ac6988521490b7887dfd528e6886c25f097661293c65d3d50d1a5"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-trocada-divida-das-familias-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-trocada-divida-das-familias-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-trocada-divida-das-familias-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "52096bc66d6ac6988521490b7887dfd528e6886c25f097661293c65d3d50d1a5",
+    "reposto": "52096bc66d6ac6988521490b7887dfd528e6886c25f097661293c65d3d50d1a5"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-direcao-trocada-divida-das-familias-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-direcao-trocada-divida-das-familias-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-direcao-trocada-divida-das-familias-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "52096bc66d6ac6988521490b7887dfd528e6886c25f097661293c65d3d50d1a5",
+    "reposto": "52096bc66d6ac6988521490b7887dfd528e6886c25f097661293c65d3d50d1a5"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "7059aca4fff4627f6ca87a5a7306ff8ebb3f6b887ab0ef3deaf9f36ad45b55f0",
+    "reposto": "7059aca4fff4627f6ca87a5a7306ff8ebb3f6b887ab0ef3deaf9f36ad45b55f0"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-cor-trocada-saldo-da-balanca-corrente-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-cor-trocada-saldo-da-balanca-corrente-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-cor-trocada-saldo-da-balanca-corrente-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "7059aca4fff4627f6ca87a5a7306ff8ebb3f6b887ab0ef3deaf9f36ad45b55f0",
+    "reposto": "7059aca4fff4627f6ca87a5a7306ff8ebb3f6b887ab0ef3deaf9f36ad45b55f0"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K15-direcao-trocada-saldo-da-balanca-corrente-2025-en",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K15-direcao-trocada-saldo-da-balanca-corrente-2025-en.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K15-direcao-trocada-saldo-da-balanca-corrente-2025-en mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "7059aca4fff4627f6ca87a5a7306ff8ebb3f6b887ab0ef3deaf9f36ad45b55f0",
+    "reposto": "7059aca4fff4627f6ca87a5a7306ff8ebb3f6b887ab0ef3deaf9f36ad45b55f0"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K9-numero-saldo-das-administracoes-publicas-2025",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K9-numero-saldo-das-administracoes-publicas-2025.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K9-numero-saldo-das-administracoes-publicas-2025 mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "aac5b137f206fe42075bab6c61647ad2e49d20c0e68f4b6eb88419859b72f0bb",
+    "reposto": "aac5b137f206fe42075bab6c61647ad2e49d20c0e68f4b6eb88419859b72f0bb"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K9-sem-testemunha-saldo-das-administracoes-publicas-2025",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K9-sem-testemunha-saldo-das-administracoes-publicas-2025.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K9-sem-testemunha-saldo-das-administracoes-publicas-2025 mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "aac5b137f206fe42075bab6c61647ad2e49d20c0e68f4b6eb88419859b72f0bb",
+    "reposto": "aac5b137f206fe42075bab6c61647ad2e49d20c0e68f4b6eb88419859b72f0bb"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K9-numero-crescimento-da-despesa-liquida-2025",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K9-numero-crescimento-da-despesa-liquida-2025.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K9-numero-crescimento-da-despesa-liquida-2025 mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "64f5aa81928fd0426536f442ef404f7d37376cfb2386d0278ab9ece5de1c1796",
+    "reposto": "64f5aa81928fd0426536f442ef404f7d37376cfb2386d0278ab9ece5de1c1796"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "K9-sem-testemunha-crescimento-da-despesa-liquida-2025",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-K9-sem-testemunha-crescimento-da-despesa-liquida-2025.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho K9-sem-testemunha-crescimento-da-despesa-liquida-2025 mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "64f5aa81928fd0426536f442ef404f7d37376cfb2386d0278ab9ece5de1c1796",
+    "reposto": "64f5aa81928fd0426536f442ef404f7d37376cfb2386d0278ab9ece5de1c1796"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "selo-retirado",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-selo-retirado.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho selo-retirado mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb",
+    "reposto": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "selo-trocado",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-selo-trocado.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho selo-trocado mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb",
+    "reposto": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "selo-afastado",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-selo-afastado.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho selo-afastado mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb",
+    "reposto": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb"
+  },
+  {
+    "grupo": "cartao-b2",
+    "nome": "selo-duplicado",
+    "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/planta-cartao-selo-duplicado.txt",
+    "comando": "node tests/cartao/plantas-b2.mjs --filho selo-duplicado mau",
+    "codigo": 1,
+    "passou": true,
+    "antes": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb",
+    "reposto": "6dcc26f61c6158f1e5ddab0d30a8f8d712d23b49642c53706d33f8b76905c7bb"
+  }
+]

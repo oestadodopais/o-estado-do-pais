@@ -1,0 +1,354 @@
+{
+  "estatuto": "Erro do detetor de medição, não do sítio: valores? não reconhecia o singular valor. A expressão corrigida é valor(?:es)?.",
+  "cabeca_diagnostico": "27a8f4c1ea36097eb8c29dc0316d40d5784acd13",
+  "cabeca_repeticao": "27a8f4c1ea36097eb8c29dc0316d40d5784acd13",
+  "falhas_do_diagnostico": 134,
+  "falhas_da_repeticao": 4,
+  "falsos_alarmes_retirados": 130,
+  "falhas_reais_conservadas": 4,
+  "capturas_comparadas": 40,
+  "capturas_iguais": 40,
+  "capturas_diferentes": 0,
+  "copias_comparadas": 9,
+  "copias_iguais": 9,
+  "manifesto_diagnostico_sha256": "a50a838aa4deb13d2d9e339265c3498bf0d34daa86b48fe791b5f00de8311217",
+  "manifesto_repeticao_sha256": "5a1a763dcb8e1fc58a6a90c830087dc581158cb6e41168acad4b187f67e5c06a",
+  "png": [
+    {
+      "ficheiro": "depois-europeia-en-1024.png",
+      "antes_sha256": "391762854ac88ca8a2baf452dfb8f692aa3f10cbaed9df707d112d264c0f7928",
+      "depois_sha256": "391762854ac88ca8a2baf452dfb8f692aa3f10cbaed9df707d112d264c0f7928",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-en-1280.png",
+      "antes_sha256": "80e10d963138abc26bf249d396d56788ca836deda8c9f553492a872679495533",
+      "depois_sha256": "80e10d963138abc26bf249d396d56788ca836deda8c9f553492a872679495533",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-en-1600.png",
+      "antes_sha256": "f6c6f417c91fff8b47e2d1bf49005b23484c870ab20260e9b3b7597257fa0f87",
+      "depois_sha256": "f6c6f417c91fff8b47e2d1bf49005b23484c870ab20260e9b3b7597257fa0f87",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-en-390.png",
+      "antes_sha256": "4af76b53c1909c0bc3f2f9dd50b2c8595db8b5fc295f4829fd60d351c50f8afd",
+      "depois_sha256": "4af76b53c1909c0bc3f2f9dd50b2c8595db8b5fc295f4829fd60d351c50f8afd",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-en-768.png",
+      "antes_sha256": "68e4cc93f72ce1226aad91f01d08f98b59870b0d3e87987fb9b54ee621c14de9",
+      "depois_sha256": "68e4cc93f72ce1226aad91f01d08f98b59870b0d3e87987fb9b54ee621c14de9",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-pt-1024.png",
+      "antes_sha256": "d0c90197fcbb1a31b37b32d8ff1fffdb2137a16a942e79f683359c5f38329d95",
+      "depois_sha256": "d0c90197fcbb1a31b37b32d8ff1fffdb2137a16a942e79f683359c5f38329d95",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-pt-1280.png",
+      "antes_sha256": "ff61ea598c2246bd440e213d28a8b5a42b028eaab4b058101eb274fbcc340865",
+      "depois_sha256": "ff61ea598c2246bd440e213d28a8b5a42b028eaab4b058101eb274fbcc340865",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-pt-1600.png",
+      "antes_sha256": "cf3ec00aca01153c2e3a3c7ee606fc25a9a8909f117a2cd20088ab92644225ba",
+      "depois_sha256": "cf3ec00aca01153c2e3a3c7ee606fc25a9a8909f117a2cd20088ab92644225ba",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-pt-390.png",
+      "antes_sha256": "dae12d699989a7c0f47d4e7855d9a1d8b53ff20217a71bba23400350145bac86",
+      "depois_sha256": "dae12d699989a7c0f47d4e7855d9a1d8b53ff20217a71bba23400350145bac86",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-europeia-pt-768.png",
+      "antes_sha256": "5aaa7bef1c79223c824405922cb8b9e600b5b9ba94e665acc02100b86654895f",
+      "depois_sha256": "5aaa7bef1c79223c824405922cb8b9e600b5b9ba94e665acc02100b86654895f",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-en-1024.png",
+      "antes_sha256": "d69bb6a36b80a52a56b1c0147a67a062a4e9b8cb13fc7b8b930c8b19355bf3a6",
+      "depois_sha256": "d69bb6a36b80a52a56b1c0147a67a062a4e9b8cb13fc7b8b930c8b19355bf3a6",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-en-1280.png",
+      "antes_sha256": "8446659792f7ac66396fdda98750e04629c26a23aa495a645f9d0055da33b28b",
+      "depois_sha256": "8446659792f7ac66396fdda98750e04629c26a23aa495a645f9d0055da33b28b",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-en-1600.png",
+      "antes_sha256": "c2333ad4fdbc45353eed4fd399960a86ab92e4663e2a2405e6a387203f3e6382",
+      "depois_sha256": "c2333ad4fdbc45353eed4fd399960a86ab92e4663e2a2405e6a387203f3e6382",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-en-390.png",
+      "antes_sha256": "ab51f32c61da34504da5daa052b5f4910fa4f156f651e8e6acdc5cf27107218d",
+      "depois_sha256": "ab51f32c61da34504da5daa052b5f4910fa4f156f651e8e6acdc5cf27107218d",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-en-768.png",
+      "antes_sha256": "ba291884ab6bba297423822adaf706c609969349a489db2df1fede3c241b6cf6",
+      "depois_sha256": "ba291884ab6bba297423822adaf706c609969349a489db2df1fede3c241b6cf6",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-pt-1024.png",
+      "antes_sha256": "a0ec1257ff1a703f492c42411777329dda656a08c01dc2dcd4177442e6dcc4f8",
+      "depois_sha256": "a0ec1257ff1a703f492c42411777329dda656a08c01dc2dcd4177442e6dcc4f8",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-pt-1280.png",
+      "antes_sha256": "85722397615ae2b3a6bc763f6d4bd7eb8271e89cda5840777adc8a8180ea934c",
+      "depois_sha256": "85722397615ae2b3a6bc763f6d4bd7eb8271e89cda5840777adc8a8180ea934c",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-pt-1600.png",
+      "antes_sha256": "bef8fb08fcad4cca199f52a166ccf84e25431786ba6cb343ca1c09eb59c9a3e1",
+      "depois_sha256": "bef8fb08fcad4cca199f52a166ccf84e25431786ba6cb343ca1c09eb59c9a3e1",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-pt-390.png",
+      "antes_sha256": "c076a5954665f741bd4faf835880bb07db75cbf45c7abe4d30210aaac56097ee",
+      "depois_sha256": "c076a5954665f741bd4faf835880bb07db75cbf45c7abe4d30210aaac56097ee",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-mourao-pt-768.png",
+      "antes_sha256": "2ef35d0955db0b7d423e84054b679d3b93d5a31df2131b2f6ddcbd1f01d7b630",
+      "depois_sha256": "2ef35d0955db0b7d423e84054b679d3b93d5a31df2131b2f6ddcbd1f01d7b630",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-en-1024.png",
+      "antes_sha256": "3747e0eba8464bc9d0cf89bcd8cfa3a70f72834b90457c11ea8a662bdc5b1737",
+      "depois_sha256": "3747e0eba8464bc9d0cf89bcd8cfa3a70f72834b90457c11ea8a662bdc5b1737",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-en-1280.png",
+      "antes_sha256": "1b899fe3bfe9fa261c083b3f4aabcbd3266654f5fbf2ca56f26ec0ea5d7d6d8e",
+      "depois_sha256": "1b899fe3bfe9fa261c083b3f4aabcbd3266654f5fbf2ca56f26ec0ea5d7d6d8e",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-en-1600.png",
+      "antes_sha256": "b1f1d77db9caa9bc91aa545a7409d3397e3092059c6b8ed598267cb3ef7e94f3",
+      "depois_sha256": "b1f1d77db9caa9bc91aa545a7409d3397e3092059c6b8ed598267cb3ef7e94f3",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-en-390.png",
+      "antes_sha256": "977662d7efd01989b2a4a633e0baadd331f01ec11aded5236407d5ef1adbfbf9",
+      "depois_sha256": "977662d7efd01989b2a4a633e0baadd331f01ec11aded5236407d5ef1adbfbf9",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-en-768.png",
+      "antes_sha256": "996df87bceffe16e7a132498c9a7e2f79db74280350cc5e2f946ae984aa1e432",
+      "depois_sha256": "996df87bceffe16e7a132498c9a7e2f79db74280350cc5e2f946ae984aa1e432",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1024.png",
+      "antes_sha256": "c8f0b9e025092bad0be1857971525c0080ea6ce60c46d8dc50f600801f0ff58e",
+      "depois_sha256": "c8f0b9e025092bad0be1857971525c0080ea6ce60c46d8dc50f600801f0ff58e",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1280.png",
+      "antes_sha256": "6d1de1580816d102eab496f4c5f315111f7ccc2ee4cfc519a4f1ab9c3279115b",
+      "depois_sha256": "6d1de1580816d102eab496f4c5f315111f7ccc2ee4cfc519a4f1ab9c3279115b",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-1600.png",
+      "antes_sha256": "68fc904172b319b042aa8b765f2b32051bc6453d194733f5bacbe5e1c3cb37d5",
+      "depois_sha256": "68fc904172b319b042aa8b765f2b32051bc6453d194733f5bacbe5e1c3cb37d5",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-390.png",
+      "antes_sha256": "d50fb034fd5c4bcefd66da5d1f17572b8405ef942cb9889d641a11f105bbba90",
+      "depois_sha256": "d50fb034fd5c4bcefd66da5d1f17572b8405ef942cb9889d641a11f105bbba90",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-pais-pt-768.png",
+      "antes_sha256": "199f332491e93e12e208c93f8739c1b20e156a375c2a5341da9cb9d9876ca41a",
+      "depois_sha256": "199f332491e93e12e208c93f8739c1b20e156a375c2a5341da9cb9d9876ca41a",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-en-1024.png",
+      "antes_sha256": "b43d5643394991488d5f872e7273129c199fe4721a579ed4f1a2d4258e91ee71",
+      "depois_sha256": "b43d5643394991488d5f872e7273129c199fe4721a579ed4f1a2d4258e91ee71",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-en-1280.png",
+      "antes_sha256": "d335377674ff561ed053130a0f77f833a041df04c0b207c71f0c5bdc2f745b2f",
+      "depois_sha256": "d335377674ff561ed053130a0f77f833a041df04c0b207c71f0c5bdc2f745b2f",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-en-1600.png",
+      "antes_sha256": "f8964d2d9183b6e61b80472d17b5d8a0e8794b27d84b8ccfd742e50061541643",
+      "depois_sha256": "f8964d2d9183b6e61b80472d17b5d8a0e8794b27d84b8ccfd742e50061541643",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-en-390.png",
+      "antes_sha256": "898e1959736986971267b1aa7c56ec6db2ad626a1d6ae39a6ef653e94fe29ebf",
+      "depois_sha256": "898e1959736986971267b1aa7c56ec6db2ad626a1d6ae39a6ef653e94fe29ebf",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-en-768.png",
+      "antes_sha256": "5ed4b4add124d980d8cfb89a66eb8d1e04613f149c2b44dd4de884da6f0b5b67",
+      "depois_sha256": "5ed4b4add124d980d8cfb89a66eb8d1e04613f149c2b44dd4de884da6f0b5b67",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1024.png",
+      "antes_sha256": "5ab89accd5663763ecfd2ed4289f12daf90b0d88970c77b1da1054b59dc1574c",
+      "depois_sha256": "5ab89accd5663763ecfd2ed4289f12daf90b0d88970c77b1da1054b59dc1574c",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1280.png",
+      "antes_sha256": "1d257b6f77efec2e95dde039ab9d6c665dc5e03425e114430340cbd475d8a81d",
+      "depois_sha256": "1d257b6f77efec2e95dde039ab9d6c665dc5e03425e114430340cbd475d8a81d",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-1600.png",
+      "antes_sha256": "2ba3acfdea7d19dded4759f3ac7592645134cb3c57deb572ee323dd445d56c00",
+      "depois_sha256": "2ba3acfdea7d19dded4759f3ac7592645134cb3c57deb572ee323dd445d56c00",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-390.png",
+      "antes_sha256": "f827a7b8de8d27849c00453eb7a9709d59fb963a97d272441a63a0ae0bc9b6f2",
+      "depois_sha256": "f827a7b8de8d27849c00453eb7a9709d59fb963a97d272441a63a0ae0bc9b6f2",
+      "igual": true,
+      "imagem_original_preservada": true
+    },
+    {
+      "ficheiro": "depois-temas-pt-768.png",
+      "antes_sha256": "fadf782fa9b856ed4b0d7e5ebf632decbb7a2c33cbca0a8244b196c5f6c55d0e",
+      "depois_sha256": "fadf782fa9b856ed4b0d7e5ebf632decbb7a2c33cbca0a8244b196c5f6c55d0e",
+      "igual": true,
+      "imagem_original_preservada": true
+    }
+  ],
+  "copias": [
+    {
+      "ficheiro": "en_european-union_index.html",
+      "antes_sha256": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d",
+      "depois_sha256": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d",
+      "igual": true
+    },
+    {
+      "ficheiro": "en_index.html",
+      "antes_sha256": "6b6aa8d73c101e0661a432930fe396a4ef2add31c4e582d8af41422504ddd48a",
+      "depois_sha256": "6b6aa8d73c101e0661a432930fe396a4ef2add31c4e582d8af41422504ddd48a",
+      "igual": true
+    },
+    {
+      "ficheiro": "en_municipalities_mourao_index.html",
+      "antes_sha256": "00b7674a41b1835d7f680220f32a2834c6555e48304466957235ca97fbdc5b00",
+      "depois_sha256": "00b7674a41b1835d7f680220f32a2834c6555e48304466957235ca97fbdc5b00",
+      "igual": true
+    },
+    {
+      "ficheiro": "en_themes_index.html",
+      "antes_sha256": "464a92f601c912a704ac1390999c9eb0b1f900a52ea8fdce2737412e80040e91",
+      "depois_sha256": "464a92f601c912a704ac1390999c9eb0b1f900a52ea8fdce2737412e80040e91",
+      "igual": true
+    },
+    {
+      "ficheiro": "index.html",
+      "antes_sha256": "967d3e2d2485cc7fd0bc0cca15f339b5bf8f78970254ee84ad704afcc222c1ff",
+      "depois_sha256": "967d3e2d2485cc7fd0bc0cca15f339b5bf8f78970254ee84ad704afcc222c1ff",
+      "igual": true
+    },
+    {
+      "ficheiro": "municipios_mourao_index.html",
+      "antes_sha256": "b0ab8b35f8b730a4852acb84c4392b75914413d1488075c861e29c4d37a8e2fb",
+      "depois_sha256": "b0ab8b35f8b730a4852acb84c4392b75914413d1488075c861e29c4d37a8e2fb",
+      "igual": true
+    },
+    {
+      "ficheiro": "site.css",
+      "antes_sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893",
+      "depois_sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893",
+      "igual": true
+    },
+    {
+      "ficheiro": "temas_index.html",
+      "antes_sha256": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256",
+      "depois_sha256": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256",
+      "igual": true
+    },
+    {
+      "ficheiro": "uniao-europeia_index.html",
+      "antes_sha256": "b91a4a8d9b01f3f4170edc697199737630843a0518bad8133bab4717b936f20f",
+      "depois_sha256": "b91a4a8d9b01f3f4170edc697199737630843a0518bad8133bab4717b936f20f",
+      "igual": true
+    }
+  ]
+}

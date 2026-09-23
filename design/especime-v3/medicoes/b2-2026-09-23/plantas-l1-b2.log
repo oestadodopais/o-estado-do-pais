@@ -1,0 +1,8 @@
+OK l1-b2-limpo: código 0, L1 2291, esperado 2291
+OK l1-b2-porta-final-repetida: código 1, L1 2292, esperado 2292
+OK l1-b2-porta-obrigatoria-alterada: código 1, L1 2291, esperado 2291
+OK l1-b2-duas-portas-fora-do-bloco: código 1, L1 2292, esperado 2292
+OK l1-b2-duas-portas-extra-dentro-do-bloco: código 1, L1 2292, esperado 2292
+OK origem-inquilinos-b2-retirada-pt: código 1, L1 2291, esperado 2291
+OK origem-inquilinos-b2-retirada-en: código 1, L1 2291, esperado 2291
+OK l1-b2-reposto: código 0, L1 2291, esperado 2291

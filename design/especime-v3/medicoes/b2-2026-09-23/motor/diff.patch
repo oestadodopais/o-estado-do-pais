@@ -1,0 +1,566 @@
+diff --git a/content/13 Dominios/ledger.json b/content/13 Dominios/ledger.json
+index d9b8c83..dca07de 100644
+--- a/content/13 Dominios/ledger.json	
++++ b/content/13 Dominios/ledger.json	
+@@ -6986,6 +6986,136 @@
+      "INE"
+     ]
+    }
++  },
++  {
++   "id": "saldo-das-administracoes-publicas-2024",
++   "value": "0.6",
++   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10dd_edpt1?format=JSON&lang=EN&geo=PT&unit=PC_GDP&sector=S13&na_item=B9",
++   "fetched_at": "2026-09-01T13:21:32+00:00",
++   "excerpt": "gov_10dd_edpt1.json (sha256 63e91b9e39c42ad8…) freq=A, unit=PC_GDP, sector=S13, na_item=B9, geo=PT, time=2024 → “Government deficit/surplus, debt and associated data — Annual — Percentage of gross domestic product (GDP) — General government — Net lending (+)/net borrowing (-) — Portugal — 2024: 0.6”",
++   "source_type": "intergovernmental",
++   "sanity_min": -30.0,
++   "sanity_max": 30.0,
++   "tier": "B",
++   "note": "Observação anterior da mesma série do saldo das administrações públicas, nas mesmas coordenadas do pedido.",
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "entity_aliases": {
++    "Eurostat": [
++     "Eurostat"
++    ]
++   },
++   "name": "Government deficit/surplus, debt and associated data",
++   "name_source": "label"
++  },
++  {
++   "id": "disparidade-salarial-entre-sexos-2023",
++   "value": "8.6",
++   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_gr_gpgr2?format=JSON&lang=EN&geo=PT",
++   "fetched_at": "2026-09-01T13:21:32+00:00",
++   "excerpt": "earn_gr_gpgr2.json (sha256 ab6636d461d6f079…) freq=A, unit=PC, nace_r2=B-S_X_O, geo=PT, time=2023 → “Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology — Annual — Percentage — Industry, construction and services (except public administration, defense, compulsory social security) — Portugal — 2023: 8.6 p”",
++   "source_type": "intergovernmental",
++   "sanity_min": -100.0,
++   "sanity_max": 100.0,
++   "tier": "B",
++   "note": "Observação anterior da mesma série da disparidade salarial entre sexos, nas mesmas coordenadas do pedido.",
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "entity_aliases": {
++    "Eurostat": [
++     "Eurostat"
++    ]
++   },
++   "name": "Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology",
++   "name_source": "label"
++  },
++  {
++   "id": "crescimento-da-despesa-liquida-2024",
++   "value": "11,9",
++   "source_url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf",
++   "fetched_at": "2026-09-01T13:21:32+00:00",
++   "excerpt": "parecer-2026-02-rap26.txt (sha256 73b845571b4abbc1…) p. 10, linhas 1 a 27 → “Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 (taxa de variação nominal em %; desvio em % do PIB) Anual 14,0 10,0 11,9 12,0 11,8 8,0 10,0 8,0 6,0 6,4 tv. % % do PIB 6,0 4,0 5,0 5,1 4,0 3,3 2,0 2,0 0,5 0,0 1,2 0,0 0,0 2024 2025 2026 2027 2028 Desvio CFP POEN-MP (Recomendado)”",
++   "source_type": "government",
++   "sanity_min": -50.0,
++   "sanity_max": 100.0,
++   "tier": "B",
++   "note": "Observação anterior da série CFP do gráfico 2, painel Anual, p. 10. A série CFP escreve 11,9 em 2024 e 6,4 em 2025; a série POEN-MP (Recomendado) é a outra linha. O valor é lido na posição conferida na extração do PDF, com os anos e a legenda no excerto.",
++   "attributed_to": [
++    "Conselho das Finanças Públicas"
++   ],
++   "entity_aliases": {
++    "Conselho das Finanças Públicas": [
++     "Conselho das Finanças Públicas"
++    ]
++   }
++  },
++  {
++   "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
++   "value": "27.2",
++   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
++   "fetched_at": "2026-09-23T15:35:40Z",
++   "excerpt": "tessi164_PT.json (sha256 974a6804f1f150cd…) freq=A, unit=PC, tenure=RENT_MKT, geo=PT, time=2025 → “Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Portugal — 2025: 27.2”",
++   "source_type": "intergovernmental",
++   "sanity_min": 0.0,
++   "sanity_max": 100.0,
++   "tier": "B",
++   "note": "Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo PT, time 2025. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0.",
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "entity_aliases": {
++    "Eurostat": [
++     "Eurostat"
++    ]
++   },
++   "name": "Housing cost overburden rate by tenure status - EU-SILC survey",
++   "name_source": "label"
++  },
++  {
++   "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
++   "value": "30.3",
++   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
++   "fetched_at": "2026-09-23T15:35:40Z",
++   "excerpt": "tessi164_PT.json (sha256 974a6804f1f150cd…) freq=A, unit=PC, tenure=RENT_MKT, geo=PT, time=2024 → “Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Portugal — 2024: 30.3”",
++   "source_type": "intergovernmental",
++   "sanity_min": 0.0,
++   "sanity_max": 100.0,
++   "tier": "B",
++   "note": "Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo PT, time 2024. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0.",
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "entity_aliases": {
++    "Eurostat": [
++     "Eurostat"
++    ]
++   },
++   "name": "Housing cost overburden rate by tenure status - EU-SILC survey",
++   "name_source": "label"
++  },
++  {
++   "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
++   "value": "18.6",
++   "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
++   "fetched_at": "2026-09-23T15:35:41Z",
++   "excerpt": "tessi164_EU27_2020.json (sha256 4d47881e72d05056…) freq=A, unit=PC, tenure=RENT_MKT, geo=EU27_2020, time=2025 → “Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — European Union - 27 countries (from 2020) — 2025: 18.6”",
++   "source_type": "intergovernmental",
++   "sanity_min": 0.0,
++   "sanity_max": 100.0,
++   "tier": "B",
++   "note": "Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo EU27_2020, time 2025. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0.",
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "entity_aliases": {
++    "Eurostat": [
++     "Eurostat"
++    ]
++   },
++   "name": "Housing cost overburden rate by tenure status - EU-SILC survey",
++   "name_source": "label"
+   }
+  ],
+  "ignore": [
+diff --git a/content/13 Dominios/source/FETCH.json b/content/13 Dominios/source/FETCH.json
+index fbb3c5f..a6feac6 100644
+--- a/content/13 Dominios/source/FETCH.json	
++++ b/content/13 Dominios/source/FETCH.json	
+@@ -68,6 +68,30 @@
+       "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Government_finance_statistics",
+       "url_effective": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Government_finance_statistics"
+     },
++    "eurostat/tessi164_EU27_2020.json": {
++      "bytes": 5340,
++      "content_type": "application/json",
++      "fetched_at": "2026-09-23T15:35:41Z",
++      "http_status": 200,
++      "measure": "B2 · sobrecarga do custo da habitação por regime de ocupação",
++      "record": "indicators/out/b2-2026-09-23/pedidos.jsonl",
++      "sha256": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc",
++      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
++      "url_effective": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
++      "user_agent": "OEstadoDoPais/corredor"
++    },
++    "eurostat/tessi164_PT.json": {
++      "bytes": 5061,
++      "content_type": "application/json",
++      "fetched_at": "2026-09-23T15:35:40Z",
++      "http_status": 200,
++      "measure": "B2 · sobrecarga do custo da habitação por regime de ocupação",
++      "record": "indicators/out/b2-2026-09-23/pedidos.jsonl",
++      "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
++      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
++      "url_effective": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
++      "user_agent": "OEstadoDoPais/corredor"
++    },
+     "eurostat/toc.txt": {
+       "bytes": 1972458,
+       "content_type": "text/plain;charset=UTF-8",
+diff --git a/content/13 Dominios/source/MANIFEST.sha256 b/content/13 Dominios/source/MANIFEST.sha256
+index b9ee051..1a6eae9 100644
+--- a/content/13 Dominios/source/MANIFEST.sha256	
++++ b/content/13 Dominios/source/MANIFEST.sha256	
+@@ -4,6 +4,8 @@ ab6636d461d6f0797d791c5ea76fe448c88dc63e7207019b1dca8812b4efcf86  eurostat/earn_
+ 82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28  eurostat/earn_mw_cur.json
+ 63e91b9e39c42ad8f51d92c43a4278c8cc955572c7911fb7d9d1f29eb94fd9e5  eurostat/gov_10dd_edpt1.json
+ f1b107c69c196b756a56239bfac1bf0a2754bad9f0b90a3265ddc2e916b97372  eurostat/statistics-explained-government-finance-statistics.html
++4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc  eurostat/tessi164_EU27_2020.json
++974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358  eurostat/tessi164_PT.json
+ 9c3f44a1b5a521b36325d51390f28b0d463d95b24663438fecd4327dc9ee95ac  eurostat/toc.txt
+ de27d5ad65701ad96fe7ef8a73d82591d51d37863324b2329294eaac2aefdc4b  ine/0012656_S7A2024.json
+ 5b69ebc0d79dc7e73f91ef868426fa7620a4f05297acbededd511bb4c4445739  ine/0012656_meta.json
+diff --git a/content/13 Dominios/source/eurostat/tessi164_EU27_2020.json b/content/13 Dominios/source/eurostat/tessi164_EU27_2020.json
+new file mode 100644
+index 0000000..035f13e
+--- /dev/null
++++ b/content/13 Dominios/source/eurostat/tessi164_EU27_2020.json	
+@@ -0,0 +1 @@
++{"version":"2.0","class":"dataset","label":"Housing cost overburden rate by tenure status - EU-SILC survey","source":"ESTAT","updated":"2026-09-17T23:00:00+0200","value":{"0":7.7,"1":7.1,"2":5.6,"3":4.6,"4":4.0,"5":4.0,"6":3.5,"7":5.0,"8":4.2,"9":5.2,"10":5.0,"11":5.0,"12":7.1,"13":7.0,"14":6.6,"15":6.0,"16":5.5,"17":5.3,"18":4.2,"19":4.7,"20":5.1,"21":4.8,"22":4.4,"23":3.8,"36":11.3,"37":11.1,"38":12.1,"39":12.2,"40":10.2,"41":10.7,"42":8.5,"43":9.9,"44":11.3,"45":11.8,"46":10.0,"47":9.2,"24":27.1,"25":26.4,"26":27.0,"27":25.1,"28":25.1,"29":24.2,"30":20.9,"31":21.8,"32":20.8,"33":20.3,"34":19.2,"35":18.6},"status":{"0":"e","1":"e","2":"e","3":"e","4":"e","12":"e","13":"e","14":"e","15":"e","16":"e","36":"e","37":"e","38":"e","39":"e","40":"e","24":"e","25":"e","26":"e","27":"e","28":"e"},"id":["freq","unit","tenure","geo","time"],"size":[1,1,4,1,12],"dimension":{"freq":{"label":"Time frequency","category":{"index":{"A":0},"label":{"A":"Annual"}}},"unit":{"label":"Unit of measure","category":{"index":{"PC":0},"label":{"PC":"Percentage"}}},"tenure":{"label":"Tenure status","category":{"index":{"OWN_L":0,"OWN_NL":1,"RENT_MKT":2,"RENT_FR":3},"label":{"OWN_L":"Owner, with mortgage or loan","OWN_NL":"Owner, no outstanding mortgage or housing loan","RENT_MKT":"Tenant, rent at market price","RENT_FR":"Tenant, rent at reduced price or free"}}},"geo":{"label":"Geopolitical entity (reporting)","category":{"index":{"EU27_2020":0},"label":{"EU27_2020":"European Union - 27 countries (from 2020)"}}},"time":{"label":"Time","category":{"index":{"2014":0,"2015":1,"2016":2,"2017":3,"2018":4,"2019":5,"2020":6,"2021":7,"2022":8,"2023":9,"2024":10,"2025":11},"label":{"2014":"2014","2015":"2015","2016":"2016","2017":"2017","2018":"2018","2019":"2019","2020":"2020","2021":"2021","2022":"2022","2023":"2023","2024":"2024","2025":"2025"}}}},"extension":{"lang":"EN","description":"This indicator is defined as the percentage of the population living in a household where the total housing costs (net of housing allowances) represent more than 40% of the total disposable household income (net of housing allowances) presented by accommodation tenure status.","id":"TESSI164","agencyId":"ESTAT","version":"1.0","datastructure":{"id":"TESSI164","agencyId":"ESTAT","version":"69.0"},"annotation":[{"type":"CREATED","date":"2010-09-09T16:24:31+0200"},{"type":"DISSEMINATION_DOI_XML","title":"<adms:identifier xmlns:adms=\"http://www.w3.org/ns/adms#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core.html\" xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"><adms:Identifier rdf:about=\"https://doi.org/10.2908/TESSI164\"><skos:notation rdf:datatype=\"http://purl.org/spar/datacite/doi\">10.2908/TESSI164</skos:notation><dct:creator rdf:resource=\"http://publications.europa.eu/resource/authority/corporate-body/ESTAT\"/><dct:issued rdf:datatype=\"http://www.w3.org/2001/XMLSchema#date\">2023-01-19</dct:issued></adms:Identifier></adms:identifier>"},{"type":"DISSEMINATION_OBJECT_TYPE","title":"DATASET"},{"type":"DISSEMINATION_PRESENTATIONS","title":"[{\"names\":{\"de\":{\"locale\":\"de\",\"value\":\"Standardpräsentation\",\"html\":false},\"en\":{\"locale\":\"en\",\"value\":\"Default presentation\",\"html\":false},\"fr\":{\"locale\":\"fr\",\"value\":\"Présentation par défaut\",\"html\":false}},\"descriptions\":{},\"code\":\"default\",\"useAsDefault\":true,\"order\":0,\"defaultView\":\"view.table\",\"jsonFormat\":null,\"preselection\":[{\"code\":\"freq\",\"multipleSelection\":null,\"singleSelection\":\"A\"},{\"code\":\"unit\",\"multipleSelection\":null,\"singleSelection\":\"PC\"},{\"code\":\"tenure\",\"multipleSelection\":null,\"singleSelection\":null},{\"code\":\"geo\",\"multipleSelection\":null,\"singleSelection\":null}],\"preselectionTimeFilter\":{\"code\":\"time\",\"multipleSelection\":null,\"singleSelection\":null,\"mode\":\"ALL\",\"from\":null,\"to\":null,\"fixed\":null},\"layoutFormat\":{\"layoutAxes\":{\"y1\":\"time\",\"x1\":\"geo\"},\"fixedMinMax\":false,\"mapProjection\":null,\"mapShowAllGeo\":true,\"mapNumberOfColors\":0,\"rankingMode\":false,\"highlightMode\":false,\"labelOption\":null,\"labelByDimension\":null,\"businessRulesStrategy\":null,\"mapClassificartionMethode\":null}}]"},{"type":"DISSEMINATION_PRESENTATIONS_VERSION","title":"v0_4_X"},{"type":"DISSEMINATION_SOURCE_DATASET","title":"ILC_LVHO07C"},{"type":"DISSEMINATION_TIMESTAMP_DATA","date":"2026-09-17T23:00:00+0200"},{"type":"DISSEMINATION_TIMESTAMP_GLOBAL","date":"2026-09-17T23:00:00+0200"},{"type":"DISSEMINATION_TIMESTAMP_PLANNED","date":"2026-09-17T23:00:00+0200"},{"type":"ESMS_HTML","title":"Explanatory texts (metadata)","href":"https://ec.europa.eu/eurostat/cache/metadata/en/ilc_sieusilc.htm"},{"type":"ESMS_SDMX","title":"Explanatory texts (metadata)","href":"https://ec.europa.eu/eurostat/api/dissemination/files?file=metadata/ilc_sieusilc.sdmx.zip"},{"type":"OBS_COUNT","title":"1897"},{"type":"OBS_PERIOD_OVERALL_LATEST","title":"2025"},{"type":"OBS_PERIOD_OVERALL_OLDEST","title":"2014"},{"type":"SOURCE_INSTITUTIONS","text":"Eurostat"},{"type":"UPDATE_DATA","date":"2026-09-17T23:00:00+0200"},{"type":"UPDATE_STRUCTURE","date":"2026-04-30T11:00:00+0200"}],"status":{"label":{"e":"estimated"}},"positions-with-no-data":{"freq":[],"unit":[],"tenure":[],"geo":[],"time":[]}}}
+\ No newline at end of file
+diff --git a/content/13 Dominios/source/eurostat/tessi164_PT.json b/content/13 Dominios/source/eurostat/tessi164_PT.json
+new file mode 100644
+index 0000000..14e2a68
+--- /dev/null
++++ b/content/13 Dominios/source/eurostat/tessi164_PT.json	
+@@ -0,0 +1 @@
++{"version":"2.0","class":"dataset","label":"Housing cost overburden rate by tenure status - EU-SILC survey","source":"ESTAT","updated":"2026-09-17T23:00:00+0200","value":{"0":7.4,"1":6.6,"2":4.4,"3":3.9,"4":3.0,"5":2.7,"6":2.2,"7":3.9,"8":1.4,"9":1.6,"10":3.8,"11":3.0,"12":3.8,"13":3.2,"14":2.9,"15":2.5,"16":2.0,"17":2.0,"18":1.5,"19":2.6,"20":1.7,"21":1.4,"22":2.0,"23":1.3,"36":6.7,"37":7.6,"38":5.4,"39":5.7,"40":4.9,"41":4.0,"42":3.5,"43":3.9,"44":4.2,"45":4.4,"46":3.6,"47":2.8,"24":33.8,"25":35.4,"26":31.9,"27":28.2,"28":25.8,"29":26.3,"30":19.7,"31":26.9,"32":29.4,"33":27.0,"34":30.3,"35":27.2},"id":["freq","unit","tenure","geo","time"],"size":[1,1,4,1,12],"dimension":{"freq":{"label":"Time frequency","category":{"index":{"A":0},"label":{"A":"Annual"}}},"unit":{"label":"Unit of measure","category":{"index":{"PC":0},"label":{"PC":"Percentage"}}},"tenure":{"label":"Tenure status","category":{"index":{"OWN_L":0,"OWN_NL":1,"RENT_MKT":2,"RENT_FR":3},"label":{"OWN_L":"Owner, with mortgage or loan","OWN_NL":"Owner, no outstanding mortgage or housing loan","RENT_MKT":"Tenant, rent at market price","RENT_FR":"Tenant, rent at reduced price or free"}}},"geo":{"label":"Geopolitical entity (reporting)","category":{"index":{"PT":0},"label":{"PT":"Portugal"}}},"time":{"label":"Time","category":{"index":{"2014":0,"2015":1,"2016":2,"2017":3,"2018":4,"2019":5,"2020":6,"2021":7,"2022":8,"2023":9,"2024":10,"2025":11},"label":{"2014":"2014","2015":"2015","2016":"2016","2017":"2017","2018":"2018","2019":"2019","2020":"2020","2021":"2021","2022":"2022","2023":"2023","2024":"2024","2025":"2025"}}}},"extension":{"lang":"EN","description":"This indicator is defined as the percentage of the population living in a household where the total housing costs (net of housing allowances) represent more than 40% of the total disposable household income (net of housing allowances) presented by accommodation tenure status.","id":"TESSI164","agencyId":"ESTAT","version":"1.0","datastructure":{"id":"TESSI164","agencyId":"ESTAT","version":"69.0"},"annotation":[{"type":"CREATED","date":"2010-09-09T16:24:31+0200"},{"type":"DISSEMINATION_DOI_XML","title":"<adms:identifier xmlns:adms=\"http://www.w3.org/ns/adms#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core.html\" xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"><adms:Identifier rdf:about=\"https://doi.org/10.2908/TESSI164\"><skos:notation rdf:datatype=\"http://purl.org/spar/datacite/doi\">10.2908/TESSI164</skos:notation><dct:creator rdf:resource=\"http://publications.europa.eu/resource/authority/corporate-body/ESTAT\"/><dct:issued rdf:datatype=\"http://www.w3.org/2001/XMLSchema#date\">2023-01-19</dct:issued></adms:Identifier></adms:identifier>"},{"type":"DISSEMINATION_OBJECT_TYPE","title":"DATASET"},{"type":"DISSEMINATION_PRESENTATIONS","title":"[{\"names\":{\"de\":{\"locale\":\"de\",\"value\":\"Standardpräsentation\",\"html\":false},\"en\":{\"locale\":\"en\",\"value\":\"Default presentation\",\"html\":false},\"fr\":{\"locale\":\"fr\",\"value\":\"Présentation par défaut\",\"html\":false}},\"descriptions\":{},\"code\":\"default\",\"useAsDefault\":true,\"order\":0,\"defaultView\":\"view.table\",\"jsonFormat\":null,\"preselection\":[{\"code\":\"freq\",\"multipleSelection\":null,\"singleSelection\":\"A\"},{\"code\":\"unit\",\"multipleSelection\":null,\"singleSelection\":\"PC\"},{\"code\":\"tenure\",\"multipleSelection\":null,\"singleSelection\":null},{\"code\":\"geo\",\"multipleSelection\":null,\"singleSelection\":null}],\"preselectionTimeFilter\":{\"code\":\"time\",\"multipleSelection\":null,\"singleSelection\":null,\"mode\":\"ALL\",\"from\":null,\"to\":null,\"fixed\":null},\"layoutFormat\":{\"layoutAxes\":{\"y1\":\"time\",\"x1\":\"geo\"},\"fixedMinMax\":false,\"mapProjection\":null,\"mapShowAllGeo\":true,\"mapNumberOfColors\":0,\"rankingMode\":false,\"highlightMode\":false,\"labelOption\":null,\"labelByDimension\":null,\"businessRulesStrategy\":null,\"mapClassificartionMethode\":null}}]"},{"type":"DISSEMINATION_PRESENTATIONS_VERSION","title":"v0_4_X"},{"type":"DISSEMINATION_SOURCE_DATASET","title":"ILC_LVHO07C"},{"type":"DISSEMINATION_TIMESTAMP_DATA","date":"2026-09-17T23:00:00+0200"},{"type":"DISSEMINATION_TIMESTAMP_GLOBAL","date":"2026-09-17T23:00:00+0200"},{"type":"DISSEMINATION_TIMESTAMP_PLANNED","date":"2026-09-17T23:00:00+0200"},{"type":"ESMS_HTML","title":"Explanatory texts (metadata)","href":"https://ec.europa.eu/eurostat/cache/metadata/en/ilc_sieusilc.htm"},{"type":"ESMS_SDMX","title":"Explanatory texts (metadata)","href":"https://ec.europa.eu/eurostat/api/dissemination/files?file=metadata/ilc_sieusilc.sdmx.zip"},{"type":"OBS_COUNT","title":"1897"},{"type":"OBS_PERIOD_OVERALL_LATEST","title":"2025"},{"type":"OBS_PERIOD_OVERALL_OLDEST","title":"2014"},{"type":"SOURCE_INSTITUTIONS","text":"Eurostat"},{"type":"UPDATE_DATA","date":"2026-09-17T23:00:00+0200"},{"type":"UPDATE_STRUCTURE","date":"2026-04-30T11:00:00+0200"}],"positions-with-no-data":{"freq":[],"unit":[],"tenure":[],"geo":[],"time":[]}}}
+\ No newline at end of file
+diff --git a/publisher/dominios_b2_test.py b/publisher/dominios_b2_test.py
+new file mode 100644
+index 0000000..dcafa64
+--- /dev/null
++++ b/publisher/dominios_b2_test.py
+@@ -0,0 +1,50 @@
++"""Provas B2: coordenadas, etiqueta do regime e título da fonte, sem rede."""
++from __future__ import annotations
++import copy
++from unittest.mock import patch
++from publisher import dominios_build as B
++
++
++def verifica_b2():
++    limpo = B.read_all(B.SOURCE)
++    claims, manifesto, _ = B.build()
++    por_id = {c["id"]: c for c in claims}
++    ids = {
++        "saldo-das-administracoes-publicas-2024": "0.6",
++        "disparidade-salarial-entre-sexos-2023": "8.6",
++        "crescimento-da-despesa-liquida-2024": "11,9",
++        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": "27.2",
++        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024": "30.3",
++        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": "18.6",
++    }
++    for chave, valor in ids.items():
++        assert por_id[chave]["value"] == valor, (chave, por_id[chave]["value"])
++        assert next(m for m in manifesto if m["site_id"] == chave)["reference_date"] in ("2023", "2024", "2025")
++    provas = ["B2: as observações novas têm os valores e períodos declarados"]
++    mutacoes = (
++        ("regime de outra série", "regime de ocupação não é", lambda d: d["habitacao"][("PT", "2025")][1]["dimension_labels"].update(tenure="Owner, with mortgage or loan")),
++        ("excerto sem regime", "falta a etiqueta", lambda d: d["habitacao"][("PT", "2025")][0].update(excerpt=d["habitacao"][("PT", "2025")][0]["excerpt"].replace("Tenure status: Tenant, rent at market price", "Tenant, rent at market price"))),
++        ("título de outro quadro", "título do pedido", lambda d: d["habitacao"][("PT", "2025")][1].update(label="Housing cost overburden rate")),
++        ("bandeira omitida", "precisa de uma declaração", lambda d: d["habitacao"][("PT", "2025")][1].update(flag="p")),
++    )
++    for nome, mensagem, estraga in mutacoes:
++        copia = copy.deepcopy(limpo)
++        estraga(copia)
++        with patch.object(B, "read_all", return_value=copia):
++            try:
++                B.build()
++            except B.Fail as e:
++                assert mensagem in str(e), (nome, str(e))
++            else:
++                raise AssertionError(f"B2: estrago não visto: {nome}")
++        provas.append(f"B2: planta recusada, {nome}")
++    assert B.build()[0] == claims, "B2: os dados limpos mudaram depois das plantas"
++    provas.append("B2: construção limpa igual depois das plantas")
++    return provas
++
++
++if __name__ == "__main__":
++    provas = verifica_b2()
++    for prova in provas:
++        print(prova)
++    print(f"DOMINIOS_B2_TEST: PASS, {len(provas)} conferências")
+diff --git a/publisher/dominios_build.py b/publisher/dominios_build.py
+index 8fd11ad..565744e 100644
+--- a/publisher/dominios_build.py
++++ b/publisher/dominios_build.py
+@@ -732,11 +732,70 @@ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
+             site_study=SITE_STUDY, periodo_lido=ref,
+             published_at=sobre["pde"]["date_iso"])
+ 
++    # B2: linhas anteriores, sem alterar uma linha já publicada.
++    for chave, atual, anterior, ficheiro, periodo, explicacao in (
++        ("e2", "saldo-das-administracoes-publicas-2025", "saldo-das-administracoes-publicas-2024", "eurostat/gov_10dd_edpt1.json", "2024", "Observação anterior da mesma série do saldo das administrações públicas, nas mesmas coordenadas do pedido."),
++        ("t4b", "disparidade-salarial-entre-sexos-2024", "disparidade-salarial-entre-sexos-2023", "eurostat/earn_gr_gpgr2.json", "2023", "Observação anterior da mesma série da disparidade salarial entre sexos, nas mesmas coordenadas do pedido."),
++        ("e4", "crescimento-da-despesa-liquida-2025", "crescimento-da-despesa-liquida-2024", "text/parecer-2026-02-rap26.txt", "2024", "Observação anterior da série CFP do gráfico 2, painel Anual, p. 10. A série CFP escreve 11,9 em 2024 e 6,4 em 2025; a série POEN-MP (Recomendado) é a outra linha. O valor é lido na posição conferida na extração do PDF, com os anos e a legenda no excerto."),
++    ):
++        linha, anterior_sobre = lido["anteriores"][chave]
++        atual_claim = next(c for c in claims if c["id"] == atual)
++        atual_manifesto = next(e for e in manifesto if e["site_id"] == atual)
++        documento = {**atual_manifesto["document"], "_source_url": atual_claim["source_url"]}
++        if chave == "e4":
++            documento.update(locator="p. 10, gráfico 2, painel Anual, série CFP, 2024", page=10)
++        flag_anterior = anterior_sobre.get("flag")
++        acrescenta(site_id=anterior, linha=linha, ficheiro=ficheiro,
++                   unit=atual_manifesto["unit"], reference_date=periodo,
++                   source=atual_manifesto["source"], source_type=atual_claim["source_type"],
++                   document=documento, nota=explicacao,
++                   sanity=(atual_claim["sanity_min"], atual_claim["sanity_max"]),
++                   tier="B", site_study=SITE_STUDY, periodo_lido=periodo,
++                   flag=(flag_anterior, "Valor provisório, tal como o Eurostat o marca na resposta.",
++                         "Provisional value, as Eurostat flags it in the response.") if flag_anterior else None)
++
++    # B2: habitação dos inquilinos a preço de mercado. O pedido, a hora,
++    # o cliente e o resumo vieram do registo da resposta guardada, sem rede.
++    import hashlib
++    pedidos = [json.loads(l) for l in
++               (ROOT / "indicators/out/b2-2026-09-23/pedidos.jsonl").read_text(encoding="utf-8").splitlines()]
++    for (geo, periodo), (linha, info) in lido["habitacao"].items():
++        ficheiro = f"eurostat/tessi164_{geo}.json"
++        pedido = next(p for p in pedidos if p["file"] == Path(ficheiro).name)
++        b = (raiz / ficheiro).read_bytes()
++        if (hashlib.sha256(b).hexdigest() != pedido["sha256"] or len(b) != pedido["bytes"]
++                or pedido["http"] != "200" or not pedido.get("user_agent")
++                or fetched(ficheiro, raiz) != pedido["timestamp_utc"]):
++            raise Fail(f"{ficheiro}: os bytes ou a proveniência não batem com o pedido guardado")
++        if info["dimension_labels"].get("tenure") != "Tenant, rent at market price":
++            raise Fail(f"{ficheiro}: o regime de ocupação não é o dos inquilinos a preço de mercado")
++        if "Tenure status: Tenant, rent at market price" not in linha["excerpt"]:
++            raise Fail(f"{ficheiro}: falta a etiqueta do regime no excerto")
++        if info["flag"]:
++            raise Fail(f"{ficheiro}: a bandeira {info['flag']!r} precisa de uma declaração antes de publicar")
++        if info["label"] != lido["titles"]["tessi164"]:
++            raise Fail(f"{ficheiro}: o título do pedido não é o título do catálogo do Eurostat")
++        site_id = f"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-{periodo}" + ("-ue" if geo != "PT" else "")
++        acrescenta(site_id=site_id, linha=linha, ficheiro=ficheiro,
++                   unit=PT_UNITS[info["unit_label"]], reference_date=periodo,
++                   source="Eurostat", source_type="intergovernmental",
++                   document={"title": info["label"], "edition": "tessi164", "kind": "serie",
++                             "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
++                             "_source_url": pedido["url"]},
++                   nota=(f"Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo {geo}, time {periodo}. "
++                         "O excerto escreve a etiqueta do regime de ocupação publicada na resposta. "
++                         "Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; "
++                         "a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0."),
++                   sanity=(0.0, 100.0), tier="B", site_study=SITE_STUDY, periodo_lido=periodo)
++    report.append("    lido   B2: períodos anteriores do saldo, disparidade salarial e despesa líquida; habitação por regime de ocupação")
++
+     # ------------------------------------------------- as provas das linhas --
+     hosted = {
+         "eurostat/gov_10dd_edpt1.json": None,
+         "eurostat/earn_gr_gpgr2.json": None,
+         "eurostat/earn_mw_cur.json": None,
++        "eurostat/tessi164_PT.json": None,
++        "eurostat/tessi164_EU27_2020.json": None,
+         "ine/0012656_S7A2024.json": None,
+         "text/parecer-2026-02-rap26.txt": None,
+         "text/decreto-lei-139-2025.txt": None,
+@@ -760,6 +819,11 @@ def build(source: Path = SOURCE) -> tuple[list[dict], list[dict], list[str]]:
+             # An assembled excerpt has no sentence in the file: what is proved is
+             # that every piece of it is a string the response prints.
+             for pedaco in verbatim.split(" — "):
++                if pedaco.startswith("Tenure status: "):
++                    for etiqueta in pedaco.split(": ", 1):
++                        if f'"{etiqueta}"' not in hosted[ficheiro]:
++                            raise Fail(f'{claim["id"]}: a etiqueta {etiqueta!r} não está na resposta')
++                    continue
+                 pedaco = pedaco.split(":")[0].strip()
+                 if pedaco and f'"{pedaco}"' not in hosted[ficheiro]:
+                     raise Fail(f'{claim["id"]}: the excerpt carries {pedaco!r}, which the '
+diff --git a/publisher/dominios_readers.py b/publisher/dominios_readers.py
+index 29bf7b2..2cd9be5 100644
+--- a/publisher/dominios_readers.py
++++ b/publisher/dominios_readers.py
+@@ -124,7 +124,8 @@ def _coordinates(doc: dict) -> dict[tuple[str, ...], int]:
+     return out
+ 
+ 
+-def eurostat_series(path: Path, measure: str, pick: dict, *, period: str | None = None
++def eurostat_series(path: Path, measure: str, pick: dict, *, period: str | None = None,
++                    label_dimensions: tuple[str, ...] = ()
+                     ) -> tuple[dict, dict]:
+     """One cell of a JSON-stat response, and what the response says about itself.
+ 
+@@ -183,7 +184,12 @@ def eurostat_series(path: Path, measure: str, pick: dict, *, period: str | None
+     # the one indicators/generate_claims.py already writes: what is measured,
+     # then the dimensions the request fixed, then the territory, then the
+     # period, then the value, then the source's own flag when there is one.
+-    partes = [label] + [rotulos[d] for d in ids if d not in ("time", "geo")]
++    for d in label_dimensions:
++        if d not in pick or not doc["dimension"][d].get("label"):
++            raise Fail(f"{path.name}: a dimensão {d!r} não tem etiqueta publicada")
++    partes = [label] + [
++        f'{doc["dimension"][d]["label"]}: {rotulos[d]}' if d in label_dimensions else rotulos[d]
++        for d in ids if d not in ("time", "geo")]
+     if "geo" in rotulos:
+         partes.append(rotulos["geo"])
+     excerpt = " — ".join(partes) + f" — {period}: {escrito}"
+@@ -661,6 +667,37 @@ def read_all(source: Path = SOURCE) -> dict:
+             source / "eurostat" / "earn_mw_cur.json", "t5-eurostat",
+             {"freq": "S", "currency": "EUR", "geo": "PT"}, period="2026-S1")[0]["value"],
+     }
++    # B2: observações anteriores da mesma série, lidas nos ficheiros alojados.
++    out["anteriores"] = {}
++    for chave, ficheiro, medida, coordenadas, periodo in (
++        ("e2", "gov_10dd_edpt1.json", "e2-saldo", {"freq": "A", "unit": "PC_GDP", "sector": "S13", "na_item": "B9", "geo": "PT"}, "2024"),
++        ("t4b", "earn_gr_gpgr2.json", "t4b-disparidade", {"freq": "A", "unit": "PC", "nace_r2": "B-S_X_O", "geo": "PT"}, "2023"),
++    ):
++        out["anteriores"][chave] = eurostat_series(source / "eurostat" / ficheiro, medida, coordenadas, period=periodo)
++
++    # O gráfico foi conferido na página do PDF: CFP é a série vermelha.
++    # A posição no texto extraído e os dois pontos da série são controlos;
++    # a frase transcrita inclui título, painel Anual, anos e legenda.
++    caminho = source / "text" / "parecer-2026-02-rap26.txt"
++    grafico = caminho.read_text(encoding="utf-8").split("\f")[9].splitlines()
++    if (grafico[10].strip() != "11,9" or grafico[16].strip() != "6,4"
++            or grafico[25].split()[:2] != ["2024", "2025"]
++            or "CFP" not in grafico[26] or grafico[4].strip() != "Anual"):
++        raise Fail("CFP: os pontos, anos ou legenda do painel Anual do gráfico não são os conferidos")
++    out["anteriores"]["e4"] = pdf_sentence(
++        caminho, "e4-despesa-liquida", "crescimento da despesa liquida em 2024",
++        page=10, first=1, last=27,
++        opens_with="Gráfico 2 – Crescimento e desvio da despesa líquida em 2025",
++        closes_with="Desvio CFP POEN-MP (Recomendado)", value=grafico[10].strip())
++
++    out["habitacao"] = {}
++    for geo, periodos in (("PT", ("2025", "2024")), ("EU27_2020", ("2025",))):
++        for periodo in periodos:
++            out["habitacao"][(geo, periodo)] = eurostat_series(
++                source / "eurostat" / f"tessi164_{geo}.json", "sobrecarga-inquilinos",
++                {"freq": "A", "unit": "PC", "tenure": "RENT_MKT", "geo": geo},
++                period=periodo, label_dimensions=("tenure",))
++
+     out["niveis"] = ine_niveis_geograficos(source / "ine" / "0012656_meta.json")
+     out["titles"] = eurostat_titles(source / "eurostat" / "toc.txt")
+     return out
+diff --git a/publisher/dominios_test.py b/publisher/dominios_test.py
+index 96ff45a..d62d8ac 100644
+--- a/publisher/dominios_test.py
++++ b/publisher/dominios_test.py
+@@ -490,6 +490,13 @@ def main() -> int:
+         print(f"DOMINIOS_TEST: FAIL — the clean run does not pass: {exc}")
+         return 1
+ 
++    # As provas do B2 entram no mesmo portão do estudo, não num caminho opcional.
++    from publisher.dominios_b2_test import verifica_b2
++    try:
++        provas.extend(verifica_b2())
++    except Exception as exc:
++        falhas.append(f"B2: {exc}")
++
+     original_is_level5, original_collapse = R.is_level5, R.collapse
+     for nome, estrago in DEFEITOS_NA_FONTE:
+         with tempfile.TemporaryDirectory() as tmp:
+diff --git a/publisher/manifest.dominios.json b/publisher/manifest.dominios.json
+index 3e39b33..38f44bf 100644
+--- a/publisher/manifest.dominios.json
++++ b/publisher/manifest.dominios.json
+@@ -6351,10 +6351,128 @@
+    ],
+    "value_mode": "rh_value",
+    "published_at": "2026-09-23"
++  },
++  {
++   "rh_study": "13 Dominios",
++   "rh_id": "saldo-das-administracoes-publicas-2024",
++   "site_id": "saldo-das-administracoes-publicas-2024",
++   "study": "dominios-2026",
++   "unit": "% do PIB",
++   "reference_date": "2024",
++   "source": "Eurostat",
++   "document": {
++    "title": "Government deficit/surplus, debt and associated data",
++    "edition": "gov_10dd_edpt1",
++    "kind": "serie",
++    "url": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en"
++   },
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "value_mode": "rh_value"
++  },
++  {
++   "rh_study": "13 Dominios",
++   "rh_id": "disparidade-salarial-entre-sexos-2023",
++   "site_id": "disparidade-salarial-entre-sexos-2023",
++   "study": "dominios-2026",
++   "unit": "%",
++   "reference_date": "2023",
++   "source": "Eurostat",
++   "document": {
++    "title": "Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology",
++    "edition": "earn_gr_gpgr2",
++    "kind": "serie",
++    "url": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en"
++   },
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "value_mode": "rh_value",
++   "source_flag": "p",
++   "source_flag_note": "Valor provisório, tal como o Eurostat o marca na resposta.",
++   "source_flag_note_en": "Provisional value, as Eurostat flags it in the response."
++  },
++  {
++   "rh_study": "13 Dominios",
++   "rh_id": "crescimento-da-despesa-liquida-2024",
++   "site_id": "crescimento-da-despesa-liquida-2024",
++   "study": "dominios-2026",
++   "unit": "%",
++   "reference_date": "2024",
++   "source": "Conselho das Finanças Públicas",
++   "document": {
++    "title": "PARECER RELATIVO AO RELATÓRIO ANUAL DE PROGRESSO 2026",
++    "edition": "Parecer n.º 02/2026, abril de 2026",
++    "locator": "p. 10, gráfico 2, painel Anual, série CFP, 2024",
++    "page": 10,
++    "kind": "pdf"
++   },
++   "attributed_to": [
++    "Conselho das Finanças Públicas"
++   ],
++   "value_mode": "rh_value"
++  },
++  {
++   "rh_study": "13 Dominios",
++   "rh_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
++   "site_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
++   "study": "dominios-2026",
++   "unit": "%",
++   "reference_date": "2025",
++   "source": "Eurostat",
++   "document": {
++    "title": "Housing cost overburden rate by tenure status - EU-SILC survey",
++    "edition": "tessi164",
++    "kind": "serie",
++    "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
++   },
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "value_mode": "rh_value"
++  },
++  {
++   "rh_study": "13 Dominios",
++   "rh_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
++   "site_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
++   "study": "dominios-2026",
++   "unit": "%",
++   "reference_date": "2024",
++   "source": "Eurostat",
++   "document": {
++    "title": "Housing cost overburden rate by tenure status - EU-SILC survey",
++    "edition": "tessi164",
++    "kind": "serie",
++    "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
++   },
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "value_mode": "rh_value"
++  },
++  {
++   "rh_study": "13 Dominios",
++   "rh_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
++   "site_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
++   "study": "dominios-2026",
++   "unit": "%",
++   "reference_date": "2025",
++   "source": "Eurostat",
++   "document": {
++    "title": "Housing cost overburden rate by tenure status - EU-SILC survey",
++    "edition": "tessi164",
++    "kind": "serie",
++    "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
++   },
++   "attributed_to": [
++    "Eurostat"
++   ],
++   "value_mode": "rh_value"
+   }
+  ],
+  "excluded": [
+-  "0 linhas lidas e não exportadas: as 317 linhas deste livro-razão atravessam todas.",
++  "0 linhas lidas e não exportadas: as 323 linhas deste livro-razão atravessam todas.",
+   "Sem linha, e dito: o limiar de 3 % do PIB que o Eurostat imprime em Statistics Explained (a ordem de construção dá a E2 uma linha nacional); a taxa máxima de 5 % do CFP, que atravessa dentro do excerto da linha de E4; o segundo valor do Quadro 1 do parecer (5,9 %), que é outra medida."
+  ]
+ }

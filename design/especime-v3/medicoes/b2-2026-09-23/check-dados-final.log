@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 check:dados
+> node scripts/check-dados.mjs
+
+
+[90m  dados descarregáveis · 2 ficheiros · 5 endereços ligados[0m
+[90m  ficheiros alojados · 3 linha(s) com document.hosted · 3 recontada(s)[0m
+[90m  conjunto de dados · 2984 registos no CSV · 1871 com o rótulo da fonte · 2984 ficheiros de linha · licença CC BY 4.0 · 2986 endereço(s) ligado(s)[0m
+
+  [32m✓[0m os ficheiros existem, batem certo com as origens e estão ligados nas duas edições.
+

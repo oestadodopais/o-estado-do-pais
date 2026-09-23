@@ -1,0 +1,19 @@
+[
+  {
+    "nome": "b2-voz-contagem-e-prosa",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "V1 pt: painel_fora_do_limiar",
+      "bloco por classificar[^\\n]*palavras plantadas junto da contagem"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "967d3e2d2485cc7fd0bc0cca15f339b5bf8f78970254ee84ad704afcc222c1ff",
+        "reposto": "967d3e2d2485cc7fd0bc0cca15f339b5bf8f78970254ee84ad704afcc222c1ff"
+      }
+    ]
+  }
+]

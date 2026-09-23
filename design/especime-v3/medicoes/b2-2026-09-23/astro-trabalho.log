@@ -1,0 +1,79 @@
+19:15:29 [types] Generated 28ms
+19:15:29 [build] output: "static"
+19:15:29 [build] mode: "static"
+19:15:29 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/
+19:15:29 [build] Collecting build info...
+19:15:29 [build] ✓ Completed in 46ms.
+19:15:30 [build] Building static entrypoints...
+19:15:30 [vite] ✓ built in 247ms
+19:15:31 [vite] ✓ built in 29ms
+19:15:31 [build] Rearranging server assets...
+
+ generating static routes 
+19:15:31   ├─ /404.html (+12ms) 
+19:15:31   ├─ /a-verificar/index.html (+9ms) 
+19:15:31   ├─ /agenda/index.html (+63ms) 
+19:15:31   ├─ /areas/financas/index.html (+43ms) 
+19:15:31   ├─ /areas/economia-e-coesao-territorial/index.html (+435ms) 
+19:15:31   ├─ /areas/infraestruturas-e-habitacao/index.html (+44ms) 
+19:15:31   ├─ /areas/justica/index.html (+19ms) 
+19:15:31   ├─ /areas/administracao-interna/index.html (+58ms) 
+19:15:31   ├─ /areas/educacao-ciencia-e-inovacao/index.html (+35ms) 
+19:15:32   ├─ /areas/saude/index.html (+19ms) 
+19:15:32   ├─ /areas/trabalho-solidariedade-e-seguranca-social/index.html (+134ms) 
+19:15:32   ├─ /areas/ambiente-e-energia/index.html (+23ms) 
+19:15:32   ├─ /areas/index.html (+22ms) 
+19:15:32   ├─ /correcoes/index.html (+71ms) 
+19:15:32   ├─ /dados/convergencia.csv (+1ms) 
+19:15:32   ├─ /dados/livro-indice.en.json (+6ms) 
+19:15:32   ├─ /dados/livro-indice.pt.json (+4ms) 
+19:15:32   ├─ /dados/municipios-308.csv (+1ms) 
+19:15:32   ├─ /distritos/aveiro/index.html (+21ms) 
+19:15:32   ├─ /distritos/beja/index.html (+18ms) 
+19:15:32   ├─ /distritos/braga/index.html (+18ms) 
+19:15:32   ├─ /distritos/braganca/index.html (+18ms) 
+19:15:32   ├─ /distritos/castelo-branco/index.html (+18ms) 
+19:15:32   ├─ /distritos/coimbra/index.html (+18ms) 
+19:15:32   ├─ /distritos/evora/index.html (+18ms) 
+19:15:32   ├─ /distritos/faro/index.html (+19ms) 
+19:15:32   ├─ /distritos/guarda/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-da-graciosa/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-da-madeira/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-das-flores/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-de-porto-santo/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-de-santa-maria/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-de-sao-jorge/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-de-sao-miguel/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-do-corvo/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-do-faial/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-do-pico/index.html (+18ms) 
+19:15:32   ├─ /distritos/ilha-terceira/index.html (+17ms) 
+19:15:32   ├─ /distritos/leiria/index.html (+18ms) 
+19:15:32   ├─ /distritos/lisboa/index.html (+18ms) 
+19:15:32   ├─ /distritos/portalegre/index.html (+18ms) 
+19:15:32   ├─ /distritos/porto/index.html (+18ms) 
+19:15:32   ├─ /distritos/santarem/index.html (+18ms) 
+19:15:32   ├─ /distritos/setubal/index.html (+18ms) 
+19:15:32   ├─ /distritos/viana-do-castelo/index.html (+18ms) 
+19:15:32   ├─ /distritos/vila-real/index.html (+17ms) 
+19:15:32   ├─ /distritos/viseu/index.html (+18ms) 
+19:15:32   ├─ /dominios/economia-e-financas-publicas/index.html (+1.19s) 
+19:15:34   ├─ /dominios/index.html19:15:34 [ERROR] Error: dominios: 5 medida(s) declarada(s) sem domínio em DOMINIO_DAS_MEDIDAS: indice-de-divida-limite-legal, crescimento-da-despesa-liquida-2024, saldo-das-administracoes-publicas-2024, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024, disparidade-salarial-entre-sexos-2023. A contagem da primeira página é um índice do que já existe, e uma medida sem domínio é uma medida que ela não conta.
+    at indiceDosDominios (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/dominios_BVx-7veO.mjs:355:35)
+    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/DominiosView_CviybzHq.mjs:15:17
+    at AstroComponentInstance.DominiosLista [as factory] (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/Base_CHWG5w9-.mjs:26:10)
+    at AstroComponentInstance.init (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1707:27)
+    at AstroComponentInstance.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
+    at Object.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:2369:19)
+    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at RenderTemplateResult.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1265:19)
+    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at Object.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1333:9)
+19:15:34 [ERROR] [build] Caught error rendering /dominios: Error: dominios: 5 medida(s) declarada(s) sem domínio em DOMINIO_DAS_MEDIDAS: indice-de-divida-limite-legal, crescimento-da-despesa-liquida-2024, saldo-das-administracoes-publicas-2024, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024, disparidade-salarial-entre-sexos-2023. A contagem da primeira página é um índice do que já existe, e uma medida sem domínio é uma medida que ela não conta.
+dominios: 5 medida(s) declarada(s) sem domínio em DOMINIO_DAS_MEDIDAS: indice-de-divida-limite-legal, crescimento-da-despesa-liquida-2024, saldo-das-administracoes-publicas-2024, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024, disparidade-salarial-entre-sexos-2023. A contagem da primeira página é um índice do que já existe, e uma medida sem domínio é uma medida que ela não conta.
+  Stack trace:
+    at indiceDosDominios (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/dominios_BVx-7veO.mjs:355:35)
+    at AstroComponentInstance.DominiosLista [as factory] (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/Base_CHWG5w9-.mjs:26:10)
+    at AstroComponentInstance.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
+    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)

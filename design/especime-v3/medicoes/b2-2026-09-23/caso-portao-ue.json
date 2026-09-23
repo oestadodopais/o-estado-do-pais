@@ -1,0 +1,322 @@
+{
+  "gerado_em": "2026-09-23T19:02:14.903Z",
+  "estatuto": "Diagnóstico por leitura. O portão, as linhas e o motor ficam como estavam. A decisão está pendente.",
+  "cabeca_sitio": "27a8f4c1ea36097eb8c29dc0316d40d5784acd13",
+  "cabeca_observada": "d75f869ee4b453f98d85bdc03cbc97358225f24a",
+  "cabeca_motor": "ead443cd2ae83b05127e6a7774be0c0e939bc85f",
+  "portao": {
+    "ficheiro": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/scripts/gate-html.mjs",
+    "sha256": "56c7cd069952b2a1c11a9a2b9ba598d69de3fca97269171b7dc969106bde57a3",
+    "funcao": "auditaSelo",
+    "linha_inicio": 3216,
+    "linha_fim": 3224,
+    "condicao_literal": "    const mesmaSerie = typeof atual?.document?.edition === 'string' && atual.document.edition.length > 0 &&\n      atual.document.edition === outro?.document?.edition &&\n      typeof atual?.unit === 'string' && atual.unit.length > 0 && atual.unit === outro?.unit;\n    const agregadoDaSerie = typeof outro?.note === 'string' &&\n      outro.note.startsWith(`Agregado da União Europeia (EU27_2020) da medida «${principal}»,`);\n    const permitido = mesmaSerie && (item.getAttribute('data-regua') === 'ue'\n      ? id === `${principal}-ue` && agregadoDaSerie && atual.reference_date === outro?.reference_date\n      : item.getAttribute('data-regua') === 'anterior' && id === anterior);\n    if (permitido && temChipPara(cartao, [routePath('linha', lang, { slug: principal })])) return;",
+    "prefixo_exigido": "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025»,",
+    "condicoes": {
+      "edicao_nao_vazia": true,
+      "mesma_edicao": true,
+      "unidade_nao_vazia": true,
+      "mesma_unidade": true,
+      "id_ue": true,
+      "mesmo_periodo": true,
+      "agregadoDaSerie": false
+    },
+    "condicoes_falsas": [
+      "agregadoDaSerie"
+    ],
+    "protege": "A associação da linha da União ao recibo da medida principal. A fonte do cartão só serve à régua se a nota selada declarar essa associação, e se coincidirem a edição, a unidade e o período.",
+    "log": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/design/especime-v3/medicoes/b2-2026-09-23/portoes-d75f869e/build.log",
+    "sha256_log": "f266c07b6c7bbe6de6684998b1ea3251f1fc3de9bff6ab0219b7526bcf437f93",
+    "codigo": 1,
+    "fecho": "O PORTÃO DE HTML FECHOU — 4 erro(s):\n\n  en/index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.\n\n  en/themes/index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.\n\n  index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.\n\n  temas/index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista."
+  },
+  "linhas": {
+    "pt": {
+      "ficheiro": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.yml",
+      "sha256": "37447737f7517ff276cb18ef016f7cc0e9b887fbae67bf39405ee5d6164401be",
+      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "value": "27,2",
+      "unit": "%",
+      "note": "[note do motor] Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo PT, time 2025. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.",
+      "reference_date": "2025",
+      "document": {
+        "title": "Housing cost overburden rate by tenure status - EU-SILC survey",
+        "edition": "tessi164",
+        "locator": null,
+        "kind": "serie",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
+      },
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+      "access_date": "2026-09-23",
+      "excerpt": "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Portugal — 2025: 27.2"
+    },
+    "ue": {
+      "ficheiro": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+      "sha256": "a75fa4793dddbfae97d22c4ce0487c190f756c65e960215e7cb70a27958f0d79",
+      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
+      "value": "18,6",
+      "unit": "%",
+      "note": "[note do motor] Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo EU27_2020, time 2025. O excerto escreve a etiqueta do regime de ocupação publicada na resposta. Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.",
+      "reference_date": "2025",
+      "document": {
+        "title": "Housing cost overburden rate by tenure status - EU-SILC survey",
+        "edition": "tessi164",
+        "locator": null,
+        "kind": "serie",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
+      },
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
+      "access_date": "2026-09-23",
+      "excerpt": "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — European Union - 27 countries (from 2020) — 2025: 18.6"
+    }
+  },
+  "respostas": {
+    "pt": {
+      "alojado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/eurostat/tessi164_PT.json",
+      "guardado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/tessi164_PT.json",
+      "pedido": {
+        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/pedidos.jsonl",
+        "entrada": {
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+          "file": "tessi164_PT.json",
+          "timestamp_utc": "2026-09-23T15:35:40Z",
+          "http": "200",
+          "bytes": 5061,
+          "user_agent": "OEstadoDoPais/corredor",
+          "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358"
+        }
+      },
+      "fetch": {
+        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/FETCH.json",
+        "entrada": {
+          "bytes": 5061,
+          "content_type": "application/json",
+          "fetched_at": "2026-09-23T15:35:40Z",
+          "http_status": 200,
+          "measure": "B2 · sobrecarga do custo da habitação por regime de ocupação",
+          "record": "indicators/out/b2-2026-09-23/pedidos.jsonl",
+          "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+          "url_effective": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+          "user_agent": "OEstadoDoPais/corredor"
+        }
+      },
+      "manifesto": {
+        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/MANIFEST.sha256",
+        "linha": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358  eurostat/tessi164_PT.json"
+      },
+      "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
+      "bytes": 5061,
+      "provas_bytes": {
+        "pedido": true,
+        "manifesto": true,
+        "fetch": true,
+        "guardado": true,
+        "tamanho": true,
+        "url": true,
+        "hora": true,
+        "cliente": true
+      },
+      "titulo": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "dataset": "TESSI164",
+      "atualizado": "2026-09-17T23:00:00+0200",
+      "ordem": [
+        "freq",
+        "unit",
+        "tenure",
+        "geo",
+        "time"
+      ],
+      "coordenadas": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "RENT_MKT",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "dimensoes": [
+        {
+          "dimensao": "freq",
+          "etiqueta": "Time frequency",
+          "codigo": "A",
+          "etiqueta_do_codigo": "Annual",
+          "indice": 0,
+          "tamanho": 1
+        },
+        {
+          "dimensao": "unit",
+          "etiqueta": "Unit of measure",
+          "codigo": "PC",
+          "etiqueta_do_codigo": "Percentage",
+          "indice": 0,
+          "tamanho": 1
+        },
+        {
+          "dimensao": "tenure",
+          "etiqueta": "Tenure status",
+          "codigo": "RENT_MKT",
+          "etiqueta_do_codigo": "Tenant, rent at market price",
+          "indice": 2,
+          "tamanho": 4
+        },
+        {
+          "dimensao": "geo",
+          "etiqueta": "Geopolitical entity (reporting)",
+          "codigo": "PT",
+          "etiqueta_do_codigo": "Portugal",
+          "indice": 0,
+          "tamanho": 1
+        },
+        {
+          "dimensao": "time",
+          "etiqueta": "Time",
+          "codigo": "2025",
+          "etiqueta_do_codigo": "2025",
+          "indice": 11,
+          "tamanho": 12
+        }
+      ],
+      "indice_linear": 35,
+      "valor": 27.2,
+      "marca": null,
+      "provas_linha": {
+        "titulo": true,
+        "edicao": true,
+        "periodo": true,
+        "geo_no_pedido": true,
+        "valor": true,
+        "excerto_regime": true
+      }
+    },
+    "ue": {
+      "alojado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/eurostat/tessi164_EU27_2020.json",
+      "guardado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/tessi164_EU27_2020.json",
+      "pedido": {
+        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/pedidos.jsonl",
+        "entrada": {
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
+          "file": "tessi164_EU27_2020.json",
+          "timestamp_utc": "2026-09-23T15:35:41Z",
+          "http": "200",
+          "bytes": 5340,
+          "user_agent": "OEstadoDoPais/corredor",
+          "sha256": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc"
+        }
+      },
+      "fetch": {
+        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/FETCH.json",
+        "entrada": {
+          "bytes": 5340,
+          "content_type": "application/json",
+          "fetched_at": "2026-09-23T15:35:41Z",
+          "http_status": 200,
+          "measure": "B2 · sobrecarga do custo da habitação por regime de ocupação",
+          "record": "indicators/out/b2-2026-09-23/pedidos.jsonl",
+          "sha256": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc",
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
+          "url_effective": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
+          "user_agent": "OEstadoDoPais/corredor"
+        }
+      },
+      "manifesto": {
+        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/MANIFEST.sha256",
+        "linha": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc  eurostat/tessi164_EU27_2020.json"
+      },
+      "sha256": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc",
+      "bytes": 5340,
+      "provas_bytes": {
+        "pedido": true,
+        "manifesto": true,
+        "fetch": true,
+        "guardado": true,
+        "tamanho": true,
+        "url": true,
+        "hora": true,
+        "cliente": true
+      },
+      "titulo": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "dataset": "TESSI164",
+      "atualizado": "2026-09-17T23:00:00+0200",
+      "ordem": [
+        "freq",
+        "unit",
+        "tenure",
+        "geo",
+        "time"
+      ],
+      "coordenadas": {
+        "freq": "A",
+        "unit": "PC",
+        "tenure": "RENT_MKT",
+        "geo": "EU27_2020",
+        "time": "2025"
+      },
+      "dimensoes": [
+        {
+          "dimensao": "freq",
+          "etiqueta": "Time frequency",
+          "codigo": "A",
+          "etiqueta_do_codigo": "Annual",
+          "indice": 0,
+          "tamanho": 1
+        },
+        {
+          "dimensao": "unit",
+          "etiqueta": "Unit of measure",
+          "codigo": "PC",
+          "etiqueta_do_codigo": "Percentage",
+          "indice": 0,
+          "tamanho": 1
+        },
+        {
+          "dimensao": "tenure",
+          "etiqueta": "Tenure status",
+          "codigo": "RENT_MKT",
+          "etiqueta_do_codigo": "Tenant, rent at market price",
+          "indice": 2,
+          "tamanho": 4
+        },
+        {
+          "dimensao": "geo",
+          "etiqueta": "Geopolitical entity (reporting)",
+          "codigo": "EU27_2020",
+          "etiqueta_do_codigo": "European Union - 27 countries (from 2020)",
+          "indice": 0,
+          "tamanho": 1
+        },
+        {
+          "dimensao": "time",
+          "etiqueta": "Time",
+          "codigo": "2025",
+          "etiqueta_do_codigo": "2025",
+          "indice": 11,
+          "tamanho": 12
+        }
+      ],
+      "indice_linear": 35,
+      "valor": 18.6,
+      "marca": null,
+      "provas_linha": {
+        "titulo": true,
+        "edicao": true,
+        "periodo": true,
+        "geo_no_pedido": true,
+        "valor": true,
+        "excerto_regime": true
+      }
+    }
+  },
+  "associacao_recomposta": {
+    "mesmo_dataset": true,
+    "mesmo_titulo": true,
+    "mesmas_coordenadas_exceto_geo": true,
+    "mesmas_etiquetas_exceto_geo": true
+  },
+  "escritor_das_notas": {
+    "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/publisher/dominios_build.py",
+    "sha256": "93ea12ff01b3fd182cfbc9c58b90d2dcc54cc29e2d6b62749d08c77defcaeacf",
+    "linha_inicio": 757,
+    "linha_fim": 790,
+    "excerto": "    # B2: habitação dos inquilinos a preço de mercado. O pedido, a hora,\n    # o cliente e o resumo vieram do registo da resposta guardada, sem rede.\n    import hashlib\n    pedidos = [json.loads(l) for l in\n               (ROOT / \"indicators/out/b2-2026-09-23/pedidos.jsonl\").read_text(encoding=\"utf-8\").splitlines()]\n    for (geo, periodo), (linha, info) in lido[\"habitacao\"].items():\n        ficheiro = f\"eurostat/tessi164_{geo}.json\"\n        pedido = next(p for p in pedidos if p[\"file\"] == Path(ficheiro).name)\n        b = (raiz / ficheiro).read_bytes()\n        if (hashlib.sha256(b).hexdigest() != pedido[\"sha256\"] or len(b) != pedido[\"bytes\"]\n                or pedido[\"http\"] != \"200\" or not pedido.get(\"user_agent\")\n                or fetched(ficheiro, raiz) != pedido[\"timestamp_utc\"]):\n            raise Fail(f\"{ficheiro}: os bytes ou a proveniência não batem com o pedido guardado\")\n        if info[\"dimension_labels\"].get(\"tenure\") != \"Tenant, rent at market price\":\n            raise Fail(f\"{ficheiro}: o regime de ocupação não é o dos inquilinos a preço de mercado\")\n        if \"Tenure status: Tenant, rent at market price\" not in linha[\"excerpt\"]:\n            raise Fail(f\"{ficheiro}: falta a etiqueta do regime no excerto\")\n        if info[\"flag\"]:\n            raise Fail(f\"{ficheiro}: a bandeira {info['flag']!r} precisa de uma declaração antes de publicar\")\n        if info[\"label\"] != lido[\"titles\"][\"tessi164\"]:\n            raise Fail(f\"{ficheiro}: o título do pedido não é o título do catálogo do Eurostat\")\n        site_id = f\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-{periodo}\" + (\"-ue\" if geo != \"PT\" else \"\")\n        acrescenta(site_id=site_id, linha=linha, ficheiro=ficheiro,\n                   unit=PT_UNITS[info[\"unit_label\"]], reference_date=periodo,\n                   source=\"Eurostat\", source_type=\"intergovernmental\",\n                   document={\"title\": info[\"label\"], \"edition\": \"tessi164\", \"kind\": \"serie\",\n                             \"url\": \"https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en\",\n                             \"_source_url\": pedido[\"url\"]},\n                   nota=(f\"Coordenadas da observação: freq A, unit PC, tenure RENT_MKT, geo {geo}, time {periodo}. \"\n                         \"O excerto escreve a etiqueta do regime de ocupação publicada na resposta. \"\n                         \"Leitura do ficheiro guardado no pedido de 23.09.2026, pelo cliente do projeto; \"\n                         \"a resposta e o registo do pedido estão alojados com o sha256. Licença: Eurostat, CC BY 4.0.\"),\n                   sanity=(0.0, 100.0), tier=\"B\", site_study=SITE_STUDY, periodo_lido=periodo)\n    report.append(\"    lido   B2: períodos anteriores do saldo, disparidade salarial e despesa líquida; habitação por regime de ocupação\")"
+  }
+}

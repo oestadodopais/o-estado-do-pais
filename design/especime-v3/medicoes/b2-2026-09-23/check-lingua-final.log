@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node scripts/check-lingua.mjs
+
+
+[32m  língua ✓ [0m37 unidade(s) do livro-razão: 35 traduzida(s), 2 em português com razão escrita · 2531 localizador(es), todos dentro de documento português · 74 título(s) de documento com língua declarada (37 pt, 37 en) · 20 rótulo(s) da fonte com língua declarada (15 pt, 5 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 68 edição(ões) com língua declarada (20 pt, 0 en, 48 sem língua)
+[90m        7354 página(s) lidas · unidades em «en»: 8645 (8636 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6668 de 13336 rendidos · rótulos da fonte com marca de língua: 5567 de 11134 rendidos · organismos rendidos: 15912 (7956 de língua contrária: 7626 em «en» e 330 em «pt», 7956 com a marca certa) · edições rendidas: 10604 (3778 de língua contrária: 3778 em «en» e 0 em «pt», 3778 com a marca certa, 3048 sem língua nenhuma e sem marca) · localizadores em «en»: 2531 com marca · leis em «en»: 943 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 110 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7354 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[90m        3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
+

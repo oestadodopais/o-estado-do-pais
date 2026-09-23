@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 check:css
+> node scripts/check-css.mjs --prova
+
+[90m  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.[0m
+
+[31m  PORTÃO DAS FOLHAS · 4 problema(s)
+[0m
+[31m    · [0mC1 · /en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025/index.html rende «dobra-seta» e não liga nenhuma folha com a regra dela. A regra está em: _astro/inicio.CoJligbV.css.
+[31m    · [0mC1 · /en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025/index.html rende «lig» e não liga nenhuma folha com a regra dela. A regra está em: _astro/inicio.CoJligbV.css.
+[31m    · [0mC1 · /livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025/index.html rende «dobra-seta» e não liga nenhuma folha com a regra dela. A regra está em: _astro/inicio.CoJligbV.css.
+[31m    · [0mC1 · /livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025/index.html rende «lig» e não liga nenhuma folha com a regra dela. A regra está em: _astro/inicio.CoJligbV.css.
+

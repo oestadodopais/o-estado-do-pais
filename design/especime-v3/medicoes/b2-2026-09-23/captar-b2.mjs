@@ -11,6 +11,7 @@ import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
+import { falhasDaCaptura } from './conferir-captura-b2.mjs';
 
 const estado = process.argv[2];
 if (!['antes', 'depois'].includes(estado)) throw new Error('uso: captar-b2.mjs antes|depois [dist] [commit-esperado]');
@@ -112,28 +113,7 @@ try {
     const bytes = await pagina.screenshot({ path: path.join(pasta, ficheiro), fullPage: true, animations: 'disabled' });
     const r = { ficheiro, rota, familia, lingua, largura, inteira: true, ...medida, deslocamento: Math.max(medida.documento, medida.corpo) - medida.janela, pedidosExternosAbortados: externos, errosDoNavegador: erros, sha256: sha(bytes) };
     resultados.push(r);
-    if (r.deslocamento > 0) falhas.push(`${ficheiro}: transbordo de ${r.deslocamento} px`);
-    if (erros.length) falhas.push(`${ficheiro}: erros no navegador: ${erros.join('; ')}`);
-    if (estado === 'depois') {
-      if (r.h1.quantidade !== 1) falhas.push(`${ficheiro}: ${r.h1.quantidade} H1`);
-      if (familia === 'pais') {
-        if (r.wordmark.elemento !== 'h1') falhas.push(`${ficheiro}: o nome do projeto deixou de ser H1`);
-      } else if (r.wordmark.elemento !== 'p' || !(r.wordmark.tamanho < r.h1.tamanho)) falhas.push(`${ficheiro}: wordmark ${r.wordmark.tamanho} px, H1 ${r.h1.tamanho} px`);
-      for (const c of r.cartoes) {
-        if (!c.contagem && c.unidade && (!c.valorAntesDaUnidade || !c.unidadeAntesDoSelo)) falhas.push(`${ficheiro}: ${c.id}, ordem do valor/unidade/fonte`);
-        if (largura === 390 && c.valorEUnidadeMesmaLinha === false) falhas.push(`${ficheiro}: ${c.id}, unidade separada do valor`);
-        if (c.pergunta && !c.pergunta.endsWith('?')) falhas.push(`${ficheiro}: ${c.id}, definição sem pergunta`);
-        if (c.pergunta && c.regua && (!c.reguaAntesDaPergunta || !(c.reguaPx > c.perguntaPx))) falhas.push(`${ficheiro}: ${c.id}, ordem/tamanhos da régua e da pergunta`);
-        for (const ref of c.referencias) {
-          const palavra = lingua === 'pt' ? (ref.estado === 'fora' ? /\bfora d[oa]s? valores? de referência/ : /\bdentro d[oa]s? valores? de referência/) : (ref.estado === 'fora' ? /\boutside (?:the )?reference values?/i : /\bwithin (?:the )?reference values?/i);
-          if (['fora', 'dentro'].includes(ref.estado) && !palavra.test(ref.texto)) falhas.push(`${ficheiro}: ${c.id}, cor sem veredicto`);
-        }
-      }
-      for (const c of r.faixa) {
-        const palavra = lingua === 'pt' ? (c.estado === 'fora' ? /\bfora d[oa]s? valores? de referência/ : /\bdentro d[oa]s? valores? de referência/) : (c.estado === 'fora' ? /\boutside (?:the )?reference values?/i : /\bwithin (?:the )?reference values?/i);
-        if (['fora', 'dentro'].includes(c.estado) && !palavra.test(c.texto ?? '')) falhas.push(`${ficheiro}: faixa ${c.id}, cor sem veredicto`);
-      }
-    }
+    falhas.push(...falhasDaCaptura(r, estado));
     await contexto.close();
     console.log(`${ficheiro}: ${r.documento} × ${r.altura}; wordmark ${r.wordmark.tamanho} px; H1 ${r.h1.tamanho} px`);
   }

@@ -136,7 +136,7 @@ def conta_pagina(s):
     for n in refs:
         estado, frase = n.attrs.get('data-estado'), n.texto()
         formas[frase] = formas.get(frase, 0) + 1
-        palavra = r'\bfora d[oa]s? valores? de referência|\boutside (?:the )?reference values?' if estado == 'fora' else r'\bdentro d[oa]s? valores? de referência|\bwithin (?:the )?reference values?'
+        palavra = r'\bfora d[oa]s? valor(?:es)? de referência|\boutside (?:the )?reference values?' if estado == 'fora' else r'\bdentro d[oa]s? valor(?:es)? de referência|\bwithin (?:the )?reference values?'
         if estado in ('fora', 'dentro') and not re.search(palavra, frase, re.I):
             cores_sem.append(frase)
     euros = sorted({u.texto() for c in cartoes for u in c.todos(lambda n: n.tem('cartao-medida-unidade')) if re.search('euro', u.texto(), re.I)})
@@ -162,7 +162,7 @@ def conta_pagina(s):
             continue
         palavra = n.primeiro(lambda x: x.tem('cartao-palavra'))
         frase = palavra.texto() if palavra else ''
-        padrao = r'\bfora d[oa]s? valores? de referência|\boutside (?:the )?reference values?' if estado == 'fora' else r'\bdentro d[oa]s? valores? de referência|\bwithin (?:the )?reference values?'
+        padrao = r'\bfora d[oa]s? valor(?:es)? de referência|\boutside (?:the )?reference values?' if estado == 'fora' else r'\bdentro d[oa]s? valor(?:es)? de referência|\bwithin (?:the )?reference values?'
         if not re.search(padrao, frase, re.I):
             faixa_sem_palavra.append({'id': n.attrs.get('data-cartao'), 'estado': estado, 'texto': frase})
     return {
@@ -376,6 +376,103 @@ def checks_de_trabalho():
     return resultado
 
 
+def tentativas_dos_portoes():
+    # A mesma tentativa pode estar no arquivo e ainda em portoes/. Identifica-se
+    # pelo comando, cabeça e início; as duas cópias não somam o tempo duas vezes.
+    tentativas = {}
+    pastas = sorted(p for p in AQUI.iterdir() if p.is_dir() and (p.name == 'portoes' or p.name.startswith('portoes-')))
+    for pasta in pastas:
+        for nome in ('build', 'verify', 'typecheck'):
+            ficheiros = {ext: pasta / f'{nome}.{ext}' for ext in ('codigo', 'inicio', 'fim', 'cabeca', 'log')}
+            existentes = {ext: p.read_bytes() for ext, p in ficheiros.items() if p.exists()}
+            if not existentes:
+                continue
+            texto = lambda ext: existentes[ext].decode().strip() if ext in existentes else None
+            completa = set(existentes) == set(ficheiros)
+            codigo = int(texto('codigo')) if 'codigo' in existentes else None
+            inicio = texto('inicio')
+            # correr-portao.py apaga o código no início. Um .fim antigo que
+            # ainda esteja ao lado do log em curso não pertence à nova corrida.
+            fim = texto('fim') if completa else None
+            segundos = None
+            if completa:
+                ini, term = (datetime.fromisoformat(v.replace('Z', '+00:00')) for v in (inicio, fim))
+                segundos = (term - ini).total_seconds()
+                if segundos < 0:
+                    FALHAS.append(f'{pasta.name}/{nome}: fim anterior ao início')
+            identidade = (nome, texto('cabeca'), inicio)
+            origem = {'pasta': pasta.name, 'sha256_ficheiros': {ext: sha(b) for ext, b in existentes.items()}}
+            item = {
+                'portao': nome, 'comando': f'npm run {nome}', 'cabeca': texto('cabeca'),
+                'codigo': codigo, 'inicio': inicio, 'fim': fim, 'segundos': segundos,
+                'concluida': completa, 'origens': [origem],
+                'sha256_log': sha(existentes['log']) if 'log' in existentes else None,
+            }
+            if not completa and 'fim' in existentes:
+                item['fim_lido_sem_codigo_atual'] = texto('fim')
+            if identidade in tentativas:
+                anterior = tentativas[identidade]
+                campos = ('codigo', 'fim', 'segundos', 'concluida', 'sha256_log')
+                if any(anterior[c] != item[c] for c in campos):
+                    FALHAS.append(f'{nome}: cópias divergentes da tentativa iniciada em {inicio}')
+                anterior['origens'].append(origem)
+            else:
+                tentativas[identidade] = item
+    lista = sorted(tentativas.values(), key=lambda x: (x['inicio'] or '', x['portao']))
+    completas = [t for t in lista if t['concluida'] and t['segundos'] is not None and t['segundos'] >= 0]
+    return {'tentativas': lista, 'concluidas': len(completas), 'incompletas': len(lista) - len(completas),
+            'segundos_documentados': sum(t['segundos'] for t in completas) if completas else None,
+            'nota': 'Cada tentativa concluída conta uma vez, mesmo quando os mesmos ficheiros estão no arquivo e na pasta atual. Uma tentativa sem código atual não fornece uma duração.'}
+
+
+def tempo_documentado():
+    # Só lê intervalos explícitos. Não usa mtime nem a hora desta medição como
+    # se fossem o início ou o fim do trabalho do construtor.
+    intervalos = {}
+    def acrescenta(inicio, fim, origem):
+        if not inicio or not fim:
+            return
+        ini, term = (datetime.fromisoformat(v.replace('Z', '+00:00')) for v in (inicio, fim))
+        if term < ini:
+            FALHAS.append(f'{origem}: intervalo documentado invertido')
+            return
+        chave = (ini.isoformat(), term.isoformat())
+        if chave not in intervalos:
+            intervalos[chave] = {'inicio': chave[0], 'fim': chave[1], 'segundos': (term - ini).total_seconds(), 'origens': []}
+        intervalos[chave]['origens'].append(origem)
+
+    for p in sorted(AQUI.rglob('*.inicio')):
+        fim, codigo = p.with_suffix('.fim'), p.with_suffix('.codigo')
+        if fim.exists() and codigo.exists():
+            acrescenta(p.read_text().strip(), fim.read_text().strip(), p.relative_to(AQUI).as_posix().removesuffix('.inicio'))
+    for p in sorted([*AQUI.glob('capturas-*-peca1.json'), *AQUI.glob('qa-*-trabalho*.json')]):
+        d = ler_json(p)
+        acrescenta(d.get('inicio'), d.get('fim'), p.name)
+    lista = sorted(intervalos.values(), key=lambda x: (x['inicio'], x['fim']))
+    antes = AQUI / 'capturas-antes-peca1.json'
+    inicio = ler_json(antes)['inicio'] if antes.exists() else None
+    ultimo = max(lista, key=lambda x: datetime.fromisoformat(x['fim'])) if lista else None
+    fim = ultimo['fim'] if ultimo else None
+    segundos = None
+    if inicio and fim:
+        segundos = (datetime.fromisoformat(fim) - datetime.fromisoformat(inicio.replace('Z', '+00:00'))).total_seconds()
+    return {
+        'inicio': inicio, 'origem_do_inicio': 'capturas-antes-peca1.json:inicio' if inicio else None,
+        'fim': fim, 'origens_do_ultimo_fim': ultimo['origens'] if ultimo else [],
+        'janela_segundos': segundos,
+        'intervalos_documentados': lista, 'intervalos_total': len(lista),
+        'soma_intervalos_segundos': sum(i['segundos'] for i in lista) if lista else None,
+        'nota': 'A janela vai do início registado das capturas de partida ao último fim documentado. Não é o tempo total desde o pedido. A soma reúne durações registadas, sem duplicar cópias do mesmo intervalo; não se confunde com tempo de parede porque intervalos de atividades distintas podem sobrepor-se.',
+    }
+
+
+if '--prova-palavra' in sys.argv:
+    dado = conta_pagina(json.load(sys.stdin)['html'])
+    chaves = ('cores_sem_palavra', 'faixa_cores_sem_palavra', 'cartoes_com_a_marca_entre_o_valor_e_a_unidade')
+    print(json.dumps({k: dado[k] for k in chaves}, ensure_ascii=False))
+    sys.exit(1 if any(dado[k] for k in chaves) else 0)
+
+
 M = {'comando': COMANDO, 'cabeca_da_corrida': git('rev-parse', 'HEAD').decode().strip(), 'parcial': PARCIAL}
 M['conhecidos_positivos'] = {
     'marca_no_meio': bool(RE_MARCA_NO_MEIO.search('<span class="cartao-medida-num">1</span><a class="src-chip">fonte</a></span><span class="campo-valor cartao-medida-unidade">%</span>')),
@@ -412,6 +509,9 @@ M['plantas'] = plantas()
 M['plantas_total'] = sum(p['estragos'] for p in M['plantas'].values())
 M['plantas_morderam'] = sum(p['morderam'] for p in M['plantas'].values())
 M['motor'] = medicao_guardada('motor/medidas-motor.json', obrigatoria=True)
+M['caso_portao_ue'] = medicao_guardada('caso-portao-ue.json')
+M['correcao_captor'] = medicao_guardada('correcao-captor.json')
+M['qa_recibo'] = medicao_guardada('qa-recibo-inquilinos-390.json')
 M['checks_de_trabalho'] = checks_de_trabalho()
 M['l1'] = {k: medicao_guardada(v) for k, v in (
     ('diagnostico_inicial', 'l1-diagnostico-inicial/l1-b2-trabalho.json'),
@@ -426,6 +526,8 @@ portoes_medidos = [p for p in M['portoes'].values() if p]
 M['portoes_etapas_cronometradas'] = len(portoes_medidos)
 M['portoes_segundos_registados'] = sum(p['segundos'] for p in portoes_medidos) if portoes_medidos else None
 M['portoes_segundos'] = M['portoes_segundos_registados'] if len(portoes_medidos) == len(M['portoes']) else None
+M['portoes_tentativas'] = tentativas_dos_portoes()
+M['tempo_documentado'] = tempo_documentado()
 M['capturas_total'] = sum(c['quantidade'] for c in M['capturas'].values() if c)
 M['faltas'], M['falhas'] = FALTAS, FALHAS
 M['faltas_total'], M['falhas_total'] = len(FALTAS), len(FALHAS)

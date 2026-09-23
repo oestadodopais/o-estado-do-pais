@@ -1,0 +1,276 @@
+{
+  "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+  "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+  "dist_construido_em": "2026-09-23T19:24:45.867Z",
+  "inicio": "2026-09-23T19:34:51.749Z",
+  "fim": "2026-09-23T19:34:53.533Z",
+  "segundos": 1.784,
+  "largura": 390,
+  "navegador": "148.0.7778.96",
+  "codigo": 0,
+  "passou": true,
+  "falhas": [],
+  "paginas": 2,
+  "origens_abertas": 4,
+  "capturas": 6,
+  "resultados": [
+    {
+      "lingua": "pt",
+      "rota": "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025/",
+      "dobras": 2,
+      "estados": [
+        {
+          "estado": "fechada",
+          "ficheiro": "qa-recibo-inquilinos-pt-390-fechada.png",
+          "sha256": "815ebfe43f7cd560b93710519ab77eaa9ee3f5b970a8e098ab18de9b6991045b",
+          "fontes": "loaded",
+          "largura": 390,
+          "transbordoPagina": 0,
+          "transbordoBloco": 0,
+          "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "origens": [
+            {
+              "chave": "glossario-sobrecarga",
+              "documento": "Statistics Explained · Glossary: Housing cost overburden rate",
+              "href": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+              "sublinhado": "underline",
+              "aberto": false,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "none",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            },
+            {
+              "chave": "eurostat-tessi164-inquilinos",
+              "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+              "sublinhado": "underline",
+              "aberto": false,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "none",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            }
+          ]
+        },
+        {
+          "estado": "origem-1-aberta",
+          "ficheiro": "qa-recibo-inquilinos-pt-390-origem-1-aberta.png",
+          "sha256": "195de40cd246c0cf200ec3fba68a28bf38ade0dbf16f1308ba4065d51b640ebf",
+          "fontes": "loaded",
+          "largura": 390,
+          "transbordoPagina": 0,
+          "transbordoBloco": 0,
+          "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "origens": [
+            {
+              "chave": "glossario-sobrecarga",
+              "documento": "Statistics Explained · Glossary: Housing cost overburden rate",
+              "href": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+              "sublinhado": "underline",
+              "aberto": true,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "matrix(0, 1, -1, 0, 0, 0)",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            },
+            {
+              "chave": "eurostat-tessi164-inquilinos",
+              "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+              "sublinhado": "underline",
+              "aberto": false,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "none",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            }
+          ]
+        },
+        {
+          "estado": "origem-2-aberta",
+          "ficheiro": "qa-recibo-inquilinos-pt-390-origem-2-aberta.png",
+          "sha256": "c53630dbe40d2b806e9b4e7f81b7fb519bcc996644943278a3e669007ebbdc5c",
+          "fontes": "loaded",
+          "largura": 390,
+          "transbordoPagina": 0,
+          "transbordoBloco": 0,
+          "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "origens": [
+            {
+              "chave": "glossario-sobrecarga",
+              "documento": "Statistics Explained · Glossary: Housing cost overburden rate",
+              "href": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+              "sublinhado": "underline",
+              "aberto": true,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "matrix(0, 1, -1, 0, 0, 0)",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            },
+            {
+              "chave": "eurostat-tessi164-inquilinos",
+              "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+              "sublinhado": "underline",
+              "aberto": true,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "matrix(0, 1, -1, 0, 0, 0)",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            }
+          ]
+        }
+      ],
+      "errosDoNavegador": [],
+      "pedidosExternosAbortados": []
+    },
+    {
+      "lingua": "en",
+      "rota": "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025/",
+      "dobras": 2,
+      "estados": [
+        {
+          "estado": "fechada",
+          "ficheiro": "qa-recibo-inquilinos-en-390-fechada.png",
+          "sha256": "f34d7c08ac1ccd5a367da32ff8eca9b96b6c6ae13629611d6aedb85faedd32e5",
+          "fontes": "loaded",
+          "largura": 390,
+          "transbordoPagina": 0,
+          "transbordoBloco": 0,
+          "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "origens": [
+            {
+              "chave": "glossario-sobrecarga",
+              "documento": "Statistics Explained · Glossary: Housing cost overburden rate",
+              "href": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+              "sublinhado": "underline",
+              "aberto": false,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "none",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            },
+            {
+              "chave": "eurostat-tessi164-inquilinos",
+              "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+              "sublinhado": "underline",
+              "aberto": false,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "none",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            }
+          ]
+        },
+        {
+          "estado": "origem-1-aberta",
+          "ficheiro": "qa-recibo-inquilinos-en-390-origem-1-aberta.png",
+          "sha256": "56afacc37508d9ff4d47f6e2b1514c0c24c40395ab80cb56c5a165b660e5f65c",
+          "fontes": "loaded",
+          "largura": 390,
+          "transbordoPagina": 0,
+          "transbordoBloco": 0,
+          "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "origens": [
+            {
+              "chave": "glossario-sobrecarga",
+              "documento": "Statistics Explained · Glossary: Housing cost overburden rate",
+              "href": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+              "sublinhado": "underline",
+              "aberto": true,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "matrix(0, 1, -1, 0, 0, 0)",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            },
+            {
+              "chave": "eurostat-tessi164-inquilinos",
+              "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+              "sublinhado": "underline",
+              "aberto": false,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "none",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            }
+          ]
+        },
+        {
+          "estado": "origem-2-aberta",
+          "ficheiro": "qa-recibo-inquilinos-en-390-origem-2-aberta.png",
+          "sha256": "b8f0a57621920e3b60a6b5844623a4bfdbabbf24c96ad37249046d26429809bf",
+          "fontes": "loaded",
+          "largura": 390,
+          "transbordoPagina": 0,
+          "transbordoBloco": 0,
+          "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "origens": [
+            {
+              "chave": "glossario-sobrecarga",
+              "documento": "Statistics Explained · Glossary: Housing cost overburden rate",
+              "href": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Housing_cost_overburden_rate",
+              "sublinhado": "underline",
+              "aberto": true,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "matrix(0, 1, -1, 0, 0, 0)",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            },
+            {
+              "chave": "eurostat-tessi164-inquilinos",
+              "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+              "sublinhado": "underline",
+              "aberto": true,
+              "excertoVisivel": true,
+              "seta": {
+                "transform": "matrix(0, 1, -1, 0, 0, 0)",
+                "bordaEsquerda": "5px",
+                "bordaCima": "4px",
+                "conteudo": "\"\""
+              }
+            }
+          ]
+        }
+      ],
+      "errosDoNavegador": [],
+      "pedidosExternosAbortados": []
+    }
+  ]
+}

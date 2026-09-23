@@ -1,0 +1,26 @@
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+[31m  PORTÃO DA VOZ · 8 problema(s)
+[0m
+[31m    · [0mfrase com marcador da voz e sem declaração de autorreferência
+      marcador(es): complet
+      rota: / (e mais 3)
+      classe declarada: (por classificar)
+      «Que parte das pessoas dos aos anos completou no máximo o ensino básico e não está em estudos nem em formação?»
+[31m    · [0mbloco por classificar em /: «Que parte das pessoas dos aos anos completou no máximo o ensino básico e não está em estudos nem em formação?»
+[31m    · [0mbloco por classificar em /en: «What share of people, across all tenure statuses, live in households where total housing costs, net of housing allowances, take more than % of disposable income, also net of housing allowances?»
+[31m    · [0mbloco por classificar em /en: «What share of tenants at market rent live in households where total housing costs, net of housing allowances, take more than % of disposable income, also net of housing allowances?»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3156: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Que parte das pessoas dos aos anos concluiu no máximo o ensino básico e não está em estudos nem em formação?»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3163: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «What share of tenants at market rent are in households where total housing costs, net of housing allowances, t»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3165: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «What share of people, across all tenure statuses, are in households where total housing costs, net of housing »
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:240: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro
+      «live»
+
