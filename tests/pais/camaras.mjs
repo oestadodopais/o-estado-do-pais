@@ -77,6 +77,8 @@ try {
       planta('camaras-limite-trocado','en/themes/index.html',r=>r.querySelector('[data-cartao-camaras] [data-claim]').set_content('151'),/V2 en: o limite não é o valor selado/);
       planta('camaras-porta-trocada','index.html',r=>r.querySelector('[data-cartao-camaras] .pais-porta-tema a').setAttribute('href','/temas/'),/V2 pt: a porta final/);
       planta('camaras-periodo-trocado','index.html',r=>r.querySelector('[data-cartao-camaras] [data-de-campo="reference_date"]').set_content('2023'),/V2 pt: o período não vem das linhas/);
+      planta('camaras-unidade-trocada','en/index.html',r=>r.querySelector('[data-cartao-camaras] .cartao-medida-unidade').set_content('municipalities'),/V2 en: o valor principal ou a unidade da contagem difere/);
+      planta('camaras-periodo-sem-palavra','temas/index.html',r=>{const n=r.querySelector('[data-cartao-camaras] .cartao-medida-periodo');n.set_content(n.querySelector('[data-de-campo]').outerHTML);},/V2 pt: o período escrito difere/);
       planta('camaras-contagem-com-porta','index.html',r=>{const n=r.querySelector('[data-cartao-camaras] [data-prova]'); n.replaceWith(`<a data-prova="${n.getAttribute('data-prova')}" href="/lugares/">${n.textContent}</a>`);},/V2 pt: camaras_acima_do_limite: a contagem deve usar a porta comum/);
       planta('camaras-nome-como-titulo','index.html',r=>{const n=r.querySelector('[data-cartao-camaras] .cartao-medida-nome'); n.replaceWith(`<h3 class="cartao-medida-nome">${n.textContent}</h3>`);},/V2 pt: o nome do cartão deve ser um span/);
       planta('camaras-no-inicio-da-fila','index.html',r=>{
