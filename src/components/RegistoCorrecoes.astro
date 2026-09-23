@@ -86,6 +86,7 @@ import { KIND_LABELS } from '../data/correcoes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { prova } from '../lib/prova.mjs';
 import Claim from './Claim.astro';
+import Frase from './Frase.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import Provenance from './Provenance.astro';
 import TituloDeTrabalho from './TituloDeTrabalho.astro';
@@ -273,7 +274,9 @@ const palavraRevisoes =
             ) : (
               <div class="registo-mudanca-corpo">
                 <p class="registo-mudanca-o-que" data-mudanca-campo="texto">
-                  {e.texto[lang]}
+                  {/* UM TEXTO PODE TRAZER UM VALOR (bloco R1, 23.09.2026), e então
+                      é uma lista de pedaços com o valor selado à sua linha. */}
+                  <Frase partes={Array.isArray(e.texto[lang]) ? e.texto[lang] : [e.texto[lang]]} lang={lang} selos={true} />
                 </p>
               </div>
             )}

@@ -11,7 +11,7 @@ export const MEDIDA_REUNIDA = { 'taxa-de-desemprego-2025': 'taxa-de-desemprego-m
 export const CITADAS_NA_LEITURA = ['divida-publica-2025', 'taxa-de-desemprego-mip-2025', 'precos-da-habitacao-2025'];
 
 /**
- * AS SETE LINHAS QUE A LEITURA DO PAÍS CITA (B1c, 22.09.2026).
+ * AS LINHAS QUE A LEITURA DO PAÍS CITA (B1c, 22.09.2026; nove desde o R1, 23.09.2026).
  *
  * `CITADAS_NA_LEITURA` é outra coisa: são as três que não voltam a abrir a fila
  * dos cartões. Esta é a lista inteira, e existe porque o âmbito da página do
@@ -23,6 +23,9 @@ export const CITADAS_NA_LEITURA = ['divida-publica-2025', 'taxa-de-desemprego-mi
 export const LINHAS_DA_LEITURA_DO_PAIS = [
   'divida-publica-2024',
   'divida-publica-2025',
+  /* As duas leituras da 2.ª notificação do INE (bloco R1, 23.09.2026, I147). */
+  'divida-publica-2025-notificacao-ine-2026-09',
+  'divida-publica-2024-notificacao-ine-2026-09',
   'divida-publica-2025-ue',
   'taxa-de-desemprego-2025',
   'taxa-de-desemprego-2025-ue',

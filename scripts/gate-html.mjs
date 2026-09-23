@@ -739,6 +739,41 @@ function textoTranscrito(el) {
 }
 
 /**
+ * O TEXTO DECLARADO DE UMA MUDANÇA DO PROJETO, pedaço a pedaço (bloco R1,
+ * 23.09.2026). Uma cadeia é ela própria; uma lista junta as cadeias e, no lugar
+ * de um `{ claim, sufixo }`, o valor TAL COMO A LINHA O ESCREVE e o sufixo
+ * declarado. Uma linha que não exista devolve `null`, e o campo falha.
+ *
+ * @param {unknown} texto
+ * @param {Map<string, any>} claims
+ * @returns {string|null}
+ */
+function textoDaMudancaGate(texto, claims) {
+  if (typeof texto === 'string') return texto;
+  if (!Array.isArray(texto)) return null;
+  let saida = '';
+  for (const p of texto) {
+    if (typeof p === 'string') { saida += p; continue; }
+    const linha = p && typeof p.claim === 'string' ? claims.get(p.claim) : null;
+    if (!linha) return null;
+    saida += String(linha.value) + (typeof p.sufixo === 'string' ? p.sufixo : '');
+  }
+  return saida;
+}
+
+/**
+ * O texto transcrito de um elemento SEM os selos que ele leve (bloco R1). O selo
+ * é uma porta e não texto da frase, e a sua conferência é a do `data-claim`.
+ *
+ * @param {any} el
+ */
+function textoSemSelosGate(el) {
+  const copia = parse(el.outerHTML);
+  for (const selo of copia.querySelectorAll('a.src-chip')) selo.remove();
+  return textoTranscrito(copia);
+}
+
+/**
  * A FORMA DA CASA DE UMA DATA: a cópia própria do portão (bloco F1.4).
  *
  * A regra é a da §1.91 e vive em `src/lib/datas.mjs`: dd.mm.aaaa, e o que não é
@@ -5346,9 +5381,15 @@ for (const file of ficheirosHtml(DIST)) {
       const pai = el.closest('[data-mudanca-id]');
       const entrada = MUDANCAS_DO_PROJETO.find(e => e.id === pai?.getAttribute('data-mudanca-id'));
       const campo = el.getAttribute('data-mudanca-campo');
-      esperado = campo === 'data' ? entrada && dataDaCasaGate(entrada.data) : campo === 'texto' ? entrada?.texto[rota.lang] : null;
+      esperado = campo === 'data' ? entrada && dataDaCasaGate(entrada.data) : campo === 'texto' ? textoDaMudancaGate(entrada?.texto[rota.lang], claims) : null;
     }
-    if (!esperado || textoTranscrito(el).trim() !== esperado) err('B1 mudança: campo rendido difere do registo declarado.');
+    /* UM TEXTO DECLARADO PODE TRAZER UM VALOR SELADO (bloco R1, 23.09.2026).
+       O que se compara aqui é a frase, com o valor escrito como a linha o
+       escreve e o sufixo declarado; o selo sai da comparação, porque é uma porta
+       e não texto, e o valor e o selo são conferidos a seguir pela regra do
+       `data-claim`, que não dispensa este elemento. Um texto só de palavras
+       compara-se exactamente como antes. */
+    if (!esperado || textoSemSelosGate(el).trim() !== normalizeWhitespace(esperado).trim()) err('B1 mudança: campo rendido difere do registo declarado.');
     aRemover.push(el);
   }
 
