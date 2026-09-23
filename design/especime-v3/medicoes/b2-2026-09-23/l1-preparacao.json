@@ -1,0 +1,10 @@
+{
+  "preparado_em": "2026-09-23T18:26:21.689Z",
+  "cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+  "arvore": "/var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/oedp-b2-l1-antes-CdjKIb/arvore",
+  "dist": "/tmp/oedp-b2-antes-7f658299",
+  "dist_construido_em": "2026-09-23T18:04:29.442Z",
+  "regua_sha256": "37d45da4cee41c67d259ba063f3ddd978cd820e437135cfcdcc679915bc82cef",
+  "comando": "git archive 7f65829935e838c29129be0187072c5c8d87c39f",
+  "sem_checkout": true
+}

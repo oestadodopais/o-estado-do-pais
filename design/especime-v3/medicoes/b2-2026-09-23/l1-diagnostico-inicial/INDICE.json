@@ -1,0 +1,11 @@
+{
+  "estatuto": "Medição original com agravamentos, conservada antes do reconhecimento condicionado das portas obrigatórias do B2.",
+  "copias_sha256": {
+    "l1-b2-trabalho.json": "0292bc573e2f7a8cf3431159cc4140be96a6ecc1d2fae0fb2308f0b0dd111297",
+    "l1-depois-trabalho.json": "94bd986d88fe8aa96f232d24a2682a614395b9accec8ae63f7ea8fffa1f524a3",
+    "l1-depois-trabalho-check-lugar.codigo": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "l1-depois-trabalho-check-lugar.txt": "2e23f42789ca2f1ad92a8ef3b8c99201f97ea6f8a41e1c7e3dbec48d7ef6b32b",
+    "l1-depois-trabalho-check-lugar.inicio": "3ab3557ff407f4393a8c02dbeeaea53bda055b29bee502e2c84be9d50595e557",
+    "l1-depois-trabalho-check-lugar.fim": "379be7ce71585ab72535cb2aa183a6b1b2bea2a087b321730ef4ede9821b6daa"
+  }
+}
