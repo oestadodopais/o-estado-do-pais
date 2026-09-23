@@ -121,6 +121,21 @@
  *        europeia entra na mesma conferência; nos limites legais a palavra
  *        própria continua obrigatória. Planta: a cor fica e a palavra sai,
  *        depois só a cor troca de estado.
+ *   K16 · **cada pedaço de cada pergunta tem origem** · B2, segunda passagem de
+ *        correção (23.09.2026), achado 8 da leitura a frio: a pergunta do
+ *        desemprego de longa duração dizia um denominador que nenhuma origem
+ *        declarada dizia, e a K6 não o via, porque compara o texto rendido com
+ *        a declaração. A auditoria pedaço a pedaço vive em
+ *        `perguntas-provadas.json` e a célula em `perguntas.mjs`: os pedaços
+ *        juntos são a pergunta declarada nas duas edições, cada literal está no
+ *        campo que cita (de uma origem declarada, ou da linha da própria
+ *        medida), cada origem declarada apoia algum pedaço, e cada resposta da
+ *        API do Eurostat citada como origem traz o selo do seu pedido no motor.
+ *        Não lê `dist/`. Plantas: a origem selada tirada à pergunta (o defeito
+ *        que a leitura a frio achou), a pergunta mudada sem nova leitura, um
+ *        literal que o campo não tem, um pedaço sem apoio, uma pergunta sem
+ *        auditoria, uma origem declarada sem uso, outra linha citada, um literal
+ *        curto, o selo tirado e o sha256 tirado.
  *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
@@ -148,9 +163,10 @@ import { parse } from 'node-html-parser';
 
 import { compararAsDuasTestemunhas, referenciaNacionalDaLinha } from './referencias.mjs';
 import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
+import { auditarPerguntas, lerAuditoriaDasPerguntas } from './perguntas.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../../src/data/referencias-das-medidas.mjs';
 import { t } from '../../src/i18n/strings.mjs';
-import { DEFINICOES_DAS_MEDIDAS, textoDaDefinicao } from '../../src/data/figuras.mjs';
+import { DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES, textoDaDefinicao } from '../../src/data/figuras.mjs';
 import {
   chavesDoEnquadramento,
   reguaDaMedida,
@@ -1336,6 +1352,54 @@ if (PROVA) {
     if (referenciaNacionalDaLinha(id, { ...linha, excerpt: '', note: '' })) falhas.push(`K9 nacional aceitou testemunha apagada ${id}`);
   }
 
+  /* -------------------------------------------------------------------- K16
+     AS PLANTAS DAS PERGUNTAS, todas em memória: a declaração, a auditoria e as
+     origens são cópias, e nada se escreve no disco. A primeira repete o defeito
+     que a leitura a frio achou: a pergunta do desemprego de longa duração com a
+     única origem que tinha antes, e o denominador sem nada que o diga. */
+  {
+    const limpa = auditarPerguntas();
+    if (limpa.erros.length) falhas.push(`K16 recusa a declaração em vigor: ${limpa.erros[0]}`);
+    const base = lerAuditoriaDasPerguntas();
+    const definicoes = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS);
+    const origensReais = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES);
+    /** @param {(a: any) => void} estraga */
+    const auditoriaCom = (estraga) => { const c = structuredClone(base); estraga(c); return c; };
+    /** @param {any} a @param {string} id */
+    const dela = (a, id) => a.perguntas.find((/** @type {any} */ q) => q.id === id);
+    /** @type {[string, string, string, Parameters<typeof auditarPerguntas>[0]][]} */
+    const plantas = [
+      ['a origem selada tirada à pergunta', 'desemprego-de-longa-duracao-2025', 'que a pergunta não declara como origem',
+        { definicoes: { ...definicoes, 'desemprego-de-longa-duracao-2025': { ...definicoes['desemprego-de-longa-duracao-2025'], origens: ['glossario-longa-duracao'] } } }],
+      ['a pergunta mudada sem nova leitura', 'divida-publica-2025', 'os pedaços juntos',
+        { definicoes: { ...definicoes, 'divida-publica-2025': { ...definicoes['divida-publica-2025'], pt: ['Quanto devem as administrações públicas, em percentagem do que o país produz num ano?'] } } }],
+      ['um literal que o campo não tem', 'desemprego-de-longa-duracao-2025', 'que não está no campo',
+        { auditoria: auditoriaCom((a) => { dela(a, 'desemprego-de-longa-duracao-2025').pedacos[0].apoios[0].literal = 'as a percentage of the labour force'; }) }],
+      ['um pedaço sem apoio', 'risco-de-pobreza-ou-exclusao-2025', 'não tem apoio nenhum',
+        { auditoria: auditoriaCom((a) => { dela(a, 'risco-de-pobreza-ou-exclusao-2025').pedacos[4].apoios = []; }) }],
+      ['uma pergunta sem auditoria', 'jovens-nem-2025', 'não tem auditoria',
+        { auditoria: auditoriaCom((a) => { a.perguntas = a.perguntas.filter((/** @type {any} */ q) => q.id !== 'jovens-nem-2025'); }) }],
+      ['uma origem declarada sem uso', 'divida-publica-2025', 'não apoia pedaço nenhum',
+        { definicoes: { ...definicoes, 'divida-publica-2025': { ...definicoes['divida-publica-2025'], origens: ['pdm-divida-publica', 'painel-pdm'] } },
+          auditoria: auditoriaCom((a) => { dela(a, 'divida-publica-2025').origens = ['pdm-divida-publica', 'painel-pdm']; }) }],
+      ['outra linha citada', 'taxa-de-emprego-2025', 'só a linha da própria medida conta',
+        { auditoria: auditoriaCom((a) => { dela(a, 'taxa-de-emprego-2025').pedacos[1].apoios[0].linha = 'taxa-de-desemprego-2025'; }) }],
+      ['um literal curto', 'divida-publica-2025', 'menos de 4 caracteres',
+        { auditoria: auditoriaCom((a) => { dela(a, 'divida-publica-2025').pedacos[1].apoios[0].literal = 'GDP'; }) }],
+      ['o selo tirado', 'origem «eurostat-tesem130-denominador»', 'não traz o selo do pedido',
+        { origens: { ...origensReais, 'eurostat-tesem130-denominador': { ...origensReais['eurostat-tesem130-denominador'], selo: undefined } } }],
+      ['o sha256 tirado', 'origem «eurostat-tipspd30»', 'o selo não diz o sha256',
+        { origens: { ...origensReais, 'eurostat-tipspd30': { ...origensReais['eurostat-tipspd30'], selo: { ...origensReais['eurostat-tipspd30'].selo, sha256: '' } } } }],
+    ];
+    for (const [nome, alvo, mordida, entrada] of plantas) {
+      const vistos = auditarPerguntas(entrada).erros.filter((e) => e.startsWith(`K16 · ${alvo}:`));
+      if (!vistos.some((e) => e.includes(mordida))) {
+        falhas.push(`K16 NÃO MORDEU ${nome}: ${vistos[0] ?? 'nenhum vermelho para ' + alvo}`);
+      }
+    }
+    if (auditarPerguntas().erros.length) falhas.push('K16: a declaração em vigor deixou de passar depois das plantas');
+  }
+
   if (falhas.length > 0) {
     console.error(vermelho('\n  A PROVA DA RÉGUA DO CARTÃO FALHOU\n'));
     for (const f of falhas) console.error(`    ${f}`);
@@ -1352,7 +1416,8 @@ if (PROVA) {
         `K13 sobre ${celulaK13().medidas} medidas e ${celulaK13().linhas} linhas com grupo etário, com a ` +
         `declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos ` +
         `soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e ` +
-        `duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades`,
+        `duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; ` +
+        `K16 com a declaração em vigor a passar e dez plantas a morder, a primeira o defeito da leitura a frio`,
     ),
   );
 }
@@ -1417,6 +1482,18 @@ for (const [id, f] of REFERENCIAS_DAS_MEDIDAS) {
 }
 r.contas.valores_de_referencia_comparados = k9Comparadas;
 
+/* -------------------------------------------------------------------- K16 */
+/* Cada pedaço de cada pergunta com a sua origem. Não lê o `dist/`: lê a
+   auditoria, a declaração e o livro-razão, que é onde o apoio vive. */
+{
+  const k16 = auditarPerguntas();
+  r.erros.push(...k16.erros);
+  r.contas.perguntas_auditadas = k16.contas.perguntas;
+  r.contas.pedacos_auditados = k16.contas.pedacos;
+  r.contas.apoios_das_perguntas = k16.contas.apoios;
+  r.contas.origens_seladas = k16.contas.origens_seladas;
+}
+
 /* Os nomes oficiais que o recibo mostra: só os que o motor marca como a mesma
    medida. A conta escreve-se para o relatório do bloco. */
 let comNomeOficial = 0;
@@ -1477,6 +1554,13 @@ console.log(cinza(`    valores de referência, as duas testemunhas comparadas  $
 console.log(cinza(`    cartões com veredicto conferido (K15)                 ${r.contas.cartoes_com_veredicto}`));
 console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
+console.log(
+  cinza(
+    `    perguntas com cada pedaço apoiado (K16)               ${r.contas.perguntas_auditadas} ` +
+      `(${r.contas.pedacos_auditados} pedaços, ${r.contas.apoios_das_perguntas} apoios, ` +
+      `${r.contas.origens_seladas} origens seladas no motor)`,
+  ),
+);
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));
 console.log(cinza(`      linhas dessas medidas, todas conferidas               ${r.contas.linhas_com_grupo_etario}`));
 console.log(cinza(`      delas, na catraca declarada (I132, vazia)           ${r.contas.medidas_na_catraca_do_grupo_etario}`));
