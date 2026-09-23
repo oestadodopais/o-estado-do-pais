@@ -1,0 +1,73 @@
+{
+  "dist_construido_de": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
+  "medidas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "rota": "/lugares/",
+      "campo": 1,
+      "vazioVisiveis": 0,
+      "conhecidoVisiveis": 0,
+      "mouraoVisivel": false,
+      "conhecidoTodosCasam": true,
+      "enterComVariosFica": false,
+      "nenhumVisiveis": 0,
+      "fraseDoNadaVisivel": true,
+      "enterComNenhumFica": false,
+      "unicoVisiveis": 0,
+      "enterComUmAbre": false,
+      "passa": false
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "rota": "/lugares/",
+      "campo": 1,
+      "vazioVisiveis": 0,
+      "conhecidoVisiveis": 0,
+      "mouraoVisivel": false,
+      "conhecidoTodosCasam": true,
+      "enterComVariosFica": false,
+      "nenhumVisiveis": 0,
+      "fraseDoNadaVisivel": true,
+      "enterComNenhumFica": false,
+      "unicoVisiveis": 0,
+      "enterComUmAbre": false,
+      "passa": false
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "rota": "/en/places/",
+      "campo": 1,
+      "vazioVisiveis": 0,
+      "conhecidoVisiveis": 0,
+      "mouraoVisivel": false,
+      "conhecidoTodosCasam": true,
+      "enterComVariosFica": false,
+      "nenhumVisiveis": 0,
+      "fraseDoNadaVisivel": true,
+      "enterComNenhumFica": false,
+      "unicoVisiveis": 0,
+      "enterComUmAbre": false,
+      "passa": false
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "rota": "/en/places/",
+      "campo": 1,
+      "vazioVisiveis": 0,
+      "conhecidoVisiveis": 0,
+      "mouraoVisivel": false,
+      "conhecidoTodosCasam": true,
+      "enterComVariosFica": false,
+      "nenhumVisiveis": 0,
+      "fraseDoNadaVisivel": true,
+      "enterComNenhumFica": false,
+      "unicoVisiveis": 0,
+      "enterComUmAbre": false,
+      "passa": false
+    }
+  ]
+}

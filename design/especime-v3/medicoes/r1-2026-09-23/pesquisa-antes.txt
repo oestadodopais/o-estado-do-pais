@@ -1,0 +1,5 @@
+✗ pt@390: vazio 0 · «mour» 0 à vista, Mourão NÃO · Enter com vários SAI · «xyzq» 0 à vista, frase à vista, Enter SAI · «mourao» 0 à vista, Enter NÃO abre
+✗ pt@1280: vazio 0 · «mour» 0 à vista, Mourão NÃO · Enter com vários SAI · «xyzq» 0 à vista, frase à vista, Enter SAI · «mourao» 0 à vista, Enter NÃO abre
+✗ en@390: vazio 0 · «mour» 0 à vista, Mourão NÃO · Enter com vários SAI · «xyzq» 0 à vista, frase à vista, Enter SAI · «mourao» 0 à vista, Enter NÃO abre
+✗ en@1280: vazio 0 · «mour» 0 à vista, Mourão NÃO · Enter com vários SAI · «xyzq» 0 à vista, frase à vista, Enter SAI · «mourao» 0 à vista, Enter NÃO abre
+codigo 1
