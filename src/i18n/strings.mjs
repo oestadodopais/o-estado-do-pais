@@ -2816,6 +2816,13 @@ export const STRINGS = {
     cartao: {
       em: 'em',
       uniaoEuropeia: 'União Europeia',
+      /* A FRESCURA AO PÉ DO PERÍODO NO CARTÃO DE UM CONCELHO (bloco R1,
+         23.09.2026, I146): «dezembro de 2025 (a fonte já publicou julho de 2026;
+         lido a 01.09.2026)». Uma lista fechada de três pedaços: as duas
+         expressões e os nomes dos meses com que o período da fonte se escreve. */
+      fonteJaPublicou: 'a fonte já publicou',
+      lidoA: 'lido a',
+      meses: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
     },
   },
 
@@ -3854,6 +3861,9 @@ export const STRINGS = {
     cartao: {
       em: 'in',
       uniaoEuropeia: 'European Union',
+      fonteJaPublicou: 'the source has already published',
+      lidoA: 'read on',
+      meses: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     },
   },
 };

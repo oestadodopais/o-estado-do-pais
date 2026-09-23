@@ -32,6 +32,8 @@ import Provenance from '../Provenance.astro';
 import Frase from '../Frase.astro';
 import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 import { marcaDoValor, provenienciaIncompleta } from '../../lib/ledger.mjs';
+import { atrasoDaLinha } from '../../lib/frescura.mjs';
+import { dataDaCasa } from '../../lib/datas.mjs';
 
 const { tile, lang = 'pt', s } = Astro.props;
 
@@ -72,6 +74,23 @@ const frase = tile.derivada ? null : primeiraFrase(tile.nota?.[lang] ?? null);
    calcula é `pecasDoConcelho()`, com a linha do teto. */
 const palavra =
   tile.estado === 'dentro' ? s.estado.lei.dentro : tile.estado === 'fora' ? s.estado.lei.fora : null;
+/* A FONTE JÁ PUBLICOU UM PERÍODO MAIS RECENTE (bloco R1, 23.09.2026, I146). O
+   recibo de Mourão diz «Último período publicado pela fonte: 2026-07; nesta
+   linha: 2025-12», e o cartão mostrava «dezembro de 2025» sem dizer que havia
+   dados mais novos. O cartão passa a dizê-lo ao pé do período, numa frase curta,
+   com a data em que isso se leu. A série e o período da fonte são os de
+   `src/data/frescura.mjs`, pela mesma conta que o recibo faz
+   (`atrasoDaLinha()`); a frase só se rende quando o período da fonte é mais
+   recente do que o da linha, e o `check:formas` (F17) confere as duas coisas.
+   Nenhum valor muda. */
+const atraso = tile.linha ? atrasoDaLinha(tile.linha) : null;
+const maisRecente = Boolean(atraso && tile.linha?.reference_date && atraso.periodoDaFonte > tile.linha.reference_date);
+const periodoDaFonte = (() => {
+  if (!maisRecente || !atraso) return null;
+  const [ano, mes] = atraso.periodoDaFonte.split('-');
+  const nome = s.cartao.meses[Number(mes) - 1];
+  return lang === 'pt' ? `${nome} de ${ano}` : `${nome} ${ano}`;
+})();
 ---
 
 <article
@@ -108,6 +127,14 @@ const palavra =
     <span class="cartao-medida-periodo">
       {' · '}
       <Frase partes={tile.periodo[lang]} lang={lang} />
+      {atraso && periodoDaFonte && (
+        <span class="cartao-medida-frescura" data-frescura={atraso.id}>
+          {' ('}<span data-voz>{s.cartao.fonteJaPublicou}</span>{' '}
+          <span data-nonledger="periodo-da-fonte" data-de-serie={atraso.id}>{periodoDaFonte}</span>
+          {'; '}<span data-voz>{s.cartao.lidoA}</span>{' '}
+          <span data-nonledger="data-da-conferencia" data-de-serie-lida={atraso.id}>{dataDaCasa(atraso.origem.lidoEm)}</span>{')'}
+        </span>
+      )}
     </span>
   </p>
 

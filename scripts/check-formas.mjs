@@ -67,6 +67,15 @@
  *        nas duas edições. O total lê-se do livro-razão e não da própria
  *        varredura: as duas edições podiam faltar a mesma página e continuar a
  *        bater uma com a outra, que é a razão escrita em F7.
+ *   F17 · **a frase da frescura no cartão de um concelho, se e só se a fonte
+ *        já publicou um período mais recente** (bloco R1, 23.09.2026, I146). Em
+ *        cada página de concelho, um cartão cuja linha está numa série atrasada
+ *        (a regra de pertença escrita aqui outra vez, e o período da fonte depois
+ *        do da linha) tem exactamente uma frase, com a série certa, o período da
+ *        fonte por extenso (a tabela dos meses é deste guião) e a data em que ele
+ *        se leu (`origem.lidoEm`, na forma da casa); um cartão cuja linha não está
+ *        atrasada não tem frase nenhuma. A conta das frases vistas tem de ser a
+ *        das linhas atrasadas rendidas em cartões, e maior do que zero.
  *   F16 · **a contagem por extenso da frase do Painel Social, lida da página
  *        construída.** A frase diz «Oito das medidas principais», e a régua dos
  *        algarismos não vê palavras. A palavra recompõe-se aqui de
@@ -282,6 +291,22 @@ function campoDaData(linha, campo) {
 
 /** O texto de um nó, com os espaços normalizados. */
 const texto = (no) => String(no.text ?? '').replace(/\s+/g, ' ').trim();
+
+/* OS MESES POR EXTENSO, escritos aqui outra vez e não importados (bloco R1,
+   23.09.2026): o cartão de um concelho escreve o período da fonte como «julho de
+   2026», e a comparação com a declaração (`2026-07`) só é uma segunda conta se a
+   tabela for outra. */
+const MESES = {
+  pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+};
+/** @param {string} periodo AAAA-MM @param {string} lang */
+const periodoPorExtenso = (periodo, lang) => {
+  const m = /^(\d{4})-(\d{2})$/.exec(periodo);
+  if (!m) return null;
+  const nome = MESES[lang === 'en' ? 'en' : 'pt'][Number(m[2]) - 1];
+  return lang === 'en' ? `${nome} ${m[1]}` : `${nome} de ${m[1]}`;
+};
 const temAlgarismo = (s) => /\d/.test(s);
 
 /* ========================================================================== */
@@ -365,6 +390,9 @@ const contas = {
   periodos_da_fonte: 0,
   contagens_por_extenso: 0,
   paginas_com_atraso: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
+  /* F17, bloco R1: os cartões de concelho numa série atrasada, e as frases certas. */
+  frescura_esperada: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
+  frescura_nos_cartoes: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
 };
 
 /* Os rótulos das duas medidas dos 308 que a F7 conta, lidos da declaração e não
@@ -449,10 +477,15 @@ for (const ficheiro of paginasDe(DIST)) {
       continue;
     }
     const rendido = texto(el);
-    if (rendido !== serie.periodoDaFonte) {
+    /* DUAS FORMAS, E AS DUAS RECOMPOSTAS AQUI (bloco R1, 23.09.2026): o recibo
+       escreve o período como a série o declara (`2026-07`), e o cartão de um
+       concelho escreve-o por extenso («julho de 2026»), pela tabela dos meses
+       deste guião. Qualquer outra coisa é um período sem origem. */
+    const formas = [serie.periodoDaFonte, periodoPorExtenso(serie.periodoDaFonte, rota?.lang ?? 'pt')];
+    if (!formas.includes(rendido)) {
       err(
         `${rel}: o período da fonte da série "${id}" não é o que a declaração traz.\n` +
-          `      em src/data/frescura.mjs: ${serie.periodoDaFonte}\n` +
+          `      em src/data/frescura.mjs: ${formas.join(' ou ')}\n` +
           `      renderizado:              ${rendido}`,
       );
     }
@@ -493,6 +526,45 @@ for (const ficheiro of paginasDe(DIST)) {
            verificação antiga passava por mostrar a mais recente (achado 11). */
         registo.verificacoes.add(campo);
       }
+    }
+  }
+
+  /* ------------------------------------------------------------------ F17 --- */
+  if (rota?.key === 'municipio') {
+    for (const cartao of root.querySelectorAll('[data-cartao-medida]')) {
+      const id = cartao.getAttribute('data-cartao-medida') ?? '';
+      const c = claims.get(id);
+      const serie = c ? SERIES_ATRASADAS.find((s) =>
+        c.source === s.fonte &&
+        /** @type {{title?: unknown}} */ (c.document ?? {}).title === s.documento &&
+        c.reference_date === s.periodoDaCasa) : null;
+      const atrasada = Boolean(serie && c && serie.periodoDaFonte > String(c.reference_date));
+      const frases = cartao.querySelectorAll('[data-frescura]');
+      if (!atrasada) {
+        if (frases.length) err(`${rel}: o cartão de "${id}" diz que a fonte já publicou um período mais recente, e a linha não está numa série atrasada (F17).`);
+        continue;
+      }
+      contas.frescura_esperada[rota.lang]++;
+      if (frases.length !== 1) {
+        err(`${rel}: o cartão de "${id}" está numa série atrasada e tem ${frases.length} frase(s) da frescura; tem de ter uma (F17).`);
+        continue;
+      }
+      const f = frases[0];
+      const periodo = f.querySelector('[data-nonledger="periodo-da-fonte"]');
+      const lido = f.querySelector('[data-de-serie-lida]');
+      const esperadoPeriodo = periodoPorExtenso(serie.periodoDaFonte, rota.lang);
+      const esperadoLido = dataDaCasa(serie.origem.lidoEm);
+      if (f.getAttribute('data-frescura') !== serie.id || !periodo || texto(periodo) !== esperadoPeriodo ||
+          !lido || lido.getAttribute('data-de-serie-lida') !== serie.id || texto(lido) !== esperadoLido) {
+        err(
+          `${rel}: a frase da frescura do cartão de "${id}" não é a da série declarada (F17).\n` +
+            `      esperado: ${serie.id} · ${esperadoPeriodo} · lido a ${esperadoLido}\n` +
+            `      rendido:  ${f.getAttribute('data-frescura')} · ${periodo ? texto(periodo) : '(sem período)'} · ` +
+            `${lido ? texto(lido) : '(sem data)'}`,
+        );
+        continue;
+      }
+      contas.frescura_nos_cartoes[rota.lang]++;
     }
   }
 
@@ -886,6 +958,20 @@ if (contas.paginas > 0) {
   }
 }
 
+/* F17 · a conta: tantas frases certas quantos cartões de concelho numa série
+   atrasada, em cada edição, e mais do que zero (o conhecido-positivo: a série
+   do IEFP está atrasada, e as páginas dos concelhos do continente rendem-na). */
+if (contas.paginas > 0) {
+  for (const lang of LANGS) {
+    if (contas.frescura_esperada[lang] === 0 || contas.frescura_nos_cartoes[lang] !== contas.frescura_esperada[lang]) {
+      err(
+        `F17 · a edição "${lang}" tem ${contas.frescura_esperada[lang]} cartão(ões) de concelho numa ` +
+          `série atrasada e ${contas.frescura_nos_cartoes[lang]} com a frase da frescura certa.`,
+      );
+    }
+  }
+}
+
 /* ---------------------------------------------------------------------------
  * F16 · as duas contagens por extenso, lidas da PÁGINA e não da declaração
  * ---------------------------------------------------------------------------
@@ -1110,6 +1196,7 @@ console.log(
         ` (controlo: população em ${contas.concelhos_com_populacao.pt})` +
         ` · atraso: ${SERIES_ATRASADAS.length} série(s), ${idsAtrasados.size} linha(s),` +
         ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)` +
+        ` · frescura nos cartões de concelho: ${contas.frescura_nos_cartoes.pt} pt e ${contas.frescura_nos_cartoes.en} en, de ${contas.frescura_esperada.pt} e ${contas.frescura_esperada.en} cartões numa série atrasada (F17)` +
         ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)`,
     ),
 );
