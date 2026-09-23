@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do INE</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+<style>
+    .highlight-section 
+        {
+ 		   background-color: #f8f9fa;
+		    padding: 20px;
+		    border-radius: 8px;
+		    border: 2px solid #005b94;
+		    margin-top: 30px;
+		    margin-bottom: 30px;
+		    width: 80%;
+		    max-width: 1200px; /* Define uma largura mÃ¡xima */
+		    margin-left: auto;
+		    margin-right: auto;
+                    text-align: justify;
+	}
+    
+    
+        .highlight-section h3 
+        {
+            font-size: 22px; /* TÃ­tulo maior */
+            color: #005b94; /* Azul institucional */
+            margin-bottom: 20px;
+        }
+        .highlight-section .index-list a {
+            font-size: 16px; /* Links maiores */
+            color: #005b94; /* Azul institucional */
+        }
+        .highlight-section .index-list a:hover {
+            text-decoration: underline;
+        }    
+    
+    .text-content p {
+    text-align: justify;
+    padding-right: 25px;  /* Adiciona 10px de padding apenas Ã  esquerda */
+}    
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+</style> 
+
+
+      <!-- IE Edge Meta Tag -->
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/bootstrap-datetimepicker.min.css">
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/bootstrap-social.css">
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/font-awesome.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <style>
+           body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+                 } 
+        </style>
+
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/personal.css">
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/menu_topo.css">
+      <link rel="stylesheet" href="/scripts/portal_2017/_v7/css/mainstyles.css">
+   
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>     
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     
+      <script src="/scripts/portal_2017/_v7/js/bootstrap-datetimepicker.js"></script>
+      <script src="/scripts/portal_2017/_v7/js/locales/bootstrap-datetimepicker.pt.js"></script>
+      <script type="text/javascript" src="/scripts/portal_2017/_v7/js/canvasjs.min.js"></script>
+      <script src="/scripts/portal_2017/_v7/js/myscript.js"></script>
+
+<!-- Slider Vertical -->
+    <script src="/scripts/portal_2017/_v7/vertical_novo/carouselengine/jquery.js"></script>
+    <script src="/scripts/portal_2017/_v7/vertical_novo/carouselengine/amazingcarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="/scripts/portal_2017/_v7/vertical_novo/carouselengine/initcarousel-1.css">
+    <script src="/scripts/portal_2017/_v7/vertical_novo/carouselengine/initcarousel-1.js"></script>
+<!-- Fim Slider Vertical -->
+
+
+<!-- cookies -->
+        <link href="/scripts/Cookies/cookies-message.min-css.css" rel="stylesheet">
+	<script src="/scripts/Cookies/cookies-message.min.js"></script>
+<!-- fim cookies -->
+
+      <!--END_EDIT_AREA_head-->
+      <!--START_EDIT_AREA_head-->
+                <script type="text/javascript" src="/scripts/swfobject.js"></script>
+   	        <link rel="STYLESHEET" href="xcache/_css/css_html349595735_any.css" type="text/css">
+   	        <link rel="STYLESHEET" href="xcache/_css/css_html13865052_any.css" type="text/css">     
+
+       
+        <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+	<script src="https://ine.pt/scripts/share/src/jquery.sharebox.js"></script>
+	<link href="https://ine.pt/scripts/share/src/jquery.sharebox.css" rel="stylesheet">
+
+<style>
+.sharebox {
+		margin:1em 0;
+	        }
+</style>
+
+<script>
+     // FunÃ§Ã£o para obter parÃ¢metros da URL
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Extrair o nÃºmero do parÃ¢metro DESTAQUESdest_boui
+const numeroDstBoui = getUrlParameter('DESTAQUESdest_boui');
+
+// Criar o novo tÃ­tulo com ou sem nÃºmero
+if (numeroDstBoui) {
+    document.title = "Portal INE - Destaque " + numeroDstBoui;
+} else {
+    document.title = "Portal INE - Lista Destaques";
+}
+</script>
+
+
+  
+<!--END_EDIT_AREA_head-->
+   </head>
+   <body>
+      <a href="#specific_content" class="skip-link">Saltar para o conte&uacute;do principal</a>
+	<h1 class="visually-hidden">Portal Oficial - Instituto Nacional de Estat&iacute;stica</h1>
+      <section class="topo">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-4" id="logotipo">
+               <a href="/xportal/xmain?xpid=INE&xpgid=ine_main"><img class="img-responsive"  alt="Portal Oficial - Instituto Nacional de Estat&iacute;stica" src="https://www.ine.pt/img/n_logotipo.gif"></a>
+               </div>
+               <!-- logotipo -->
+               <div class="col-sm-8">
+                 <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+     
+        <!-- Estatisticas-->
+	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Menu: Estat&iacute;sticas">Estat&iacute;sticas<span class="caret"></span></a>
+          <ul class="dropdown-menu multi-column columns-3"><li>
+                                 <div class="row">
+                                    <div class="col-sm-6">
+                                       <ul class="multi-column-dropdown">		 
+					  <li class="dropdown-header" title="Estat&iacute;sticas: Popula&ccedil;&atilde;o e sociedade">Popula&ccedil;&atilde;o e sociedade</li>                                          
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1110" title="Popula&ccedil;&atilde;o e sociedade: Condi&ccedil;&otilde;es de vida e cidadania">&nbsp;&nbsp;Condi&ccedil;&otilde;es de vida e cidadania</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1111" title="Popula&ccedil;&atilde;o e sociedade: Cultura, desporto e lazer">&nbsp;&nbsp;Cultura, desporto e lazer</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1112" title="Popula&ccedil;&atilde;o e sociedade: Educa&ccedil;&atilde;o, forma&ccedil;&atilde;o e aprendizagem">&nbsp;&nbsp;Educa&ccedil;&atilde;o, forma&ccedil;&atilde;o e aprendizagem</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1113" title="Popula&ccedil;&atilde;o e sociedade: Justi&ccedil;a">&nbsp;&nbsp;Justi&ccedil;a</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1114" title="Popula&ccedil;&atilde;o e sociedade: Mercado de trabalho">&nbsp;&nbsp;Mercado de trabalho</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1115" title="Popula&ccedil;&atilde;o e sociedade: Popula&ccedil;&atilde;o">&nbsp;&nbsp;Popula&ccedil;&atilde;o</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1116" title="Popula&ccedil;&atilde;o e sociedade: Protec&ccedil;&atilde;o social">&nbsp;&nbsp;Protec&ccedil;&atilde;o social</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1117" title="Popula&ccedil;&atilde;o e sociedade: Sa&uacute;de">&nbsp;&nbsp;Sa&uacute;de</a></li>
+                                          <li class="dropdown-header" title="Estat&iacute;sticas: Territ&oacute;rio e ambiente">Territ&oacute;rio e ambiente</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema_a&tema_cod=1210">&nbsp;&nbsp;Ambiente</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema_t&tema_cod=1211">&nbsp;&nbsp;Territ&oacute;rio</a></li>
+                                          <li class="dropdown-header" title="Estat&iacute;sticas: Economia e finan&ccedil;as">Economia e finan&ccedil;as</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1310" title="Economia e finan&ccedil;as: Administra&ccedil;&otilde;es p&uacute;blicas">&nbsp;&nbsp;Administra&ccedil;&otilde;es p&uacute;blicas</a></li>
+                                          <li><a title="Economia e finan&ccedil;as: Conjuntura" href="/xportal/xmain?xpid=INE&xpgid=ine_tema_c&tema_cod=1311">&nbsp;&nbsp;Conjuntura</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1312" title="Economia e finan&ccedil;as: Contas nacionais e regionais">&nbsp;&nbsp;Contas nacionais e regionais</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1313" title="Economia e finan&ccedil;as: Empresas">&nbsp;&nbsp;Empresas</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1314" title="Economia e finan&ccedil;as: Pre&ccedil;os">&nbsp;&nbsp;Pre&ccedil;os</a></li>
+                                       </ul>
+				    </div>
+					<div class="col-sm-6">
+                                       <ul class="multi-column-dropdown">
+                                          <li class="dropdown-header" title="Menu:Com&eacute;rcio internacional">Com&eacute;rcio internacional</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1410" title="Com&eacute;rcio internacional:Com&eacute;rcio internacional">&nbsp;&nbsp;Com&eacute;rcio internacional</a></li>
+                                          <li class="dropdown-header" title="Menu:Agricultura, floresta e pescas">Agricultura, floresta e pescas</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1510" title="Agricultura, floresta e pescas: Agricultura, floresta e pescas">&nbsp;&nbsp;Agricultura, floresta e pescas</a></li>
+                                          <li class="dropdown-header" title="Industria, energia e Constru&ccedil;&atilde;o" title="Menu:Industria, energia e Constru&ccedil;&atilde;o">Industria, energia e Constru&ccedil;&atilde;o</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1610" title="Industria, energia e Constru&ccedil;&atilde;o:Constru&ccedil;&atilde;o e habita&ccedil;&atilde;o">&nbsp;&nbsp;Constru&ccedil;&atilde;o e habita&ccedil;&atilde;o</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1611" title="Industria, energia e Constru&ccedil;&atilde;o: Industria e energia">&nbsp;&nbsp;Industria e energia</a></li>
+                                          <li class="dropdown-header" title="Menu:Servi&ccedil;os">Servi&ccedil;os</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1710" title="Servi&ccedil;os: Com&eacute;rcio interno">&nbsp;&nbsp;Com&eacute;rcio interno</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1711" title="Servi&ccedil;os: Servi&ccedil;os &agrave;s empresas e outros">&nbsp;&nbsp;Servi&ccedil;os &agrave;s empresas e outros</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1712" title="Servi&ccedil;os: Transportes e comunica&ccedil;&otilde;es">&nbsp;&nbsp;Transportes e comunica&ccedil;&otilde;es</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1713" title="Servi&ccedil;os: Turismo">&nbsp;&nbsp;Turismo</a></li>
+                                          <li class="dropdown-header" title="Inova&ccedil;&atilde;o e conhecimento" title="Menu: Inova&ccedil;&atilde;o e conhecimento">Inova&ccedil;&atilde;o e conhecimento</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_tema&tema_cod=1810" title="Inova&ccedil;&atilde;o e conhecimento:Inova&ccedil;&atilde;o e conhecimento">&nbsp;&nbsp;Inova&ccedil;&atilde;o e conhecimento</a></li>
+                                       </ul>
+                                    </div>
+								</div>
+			</ul>					
+        </li>
+	<!-- TERRITORIO -->
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Menu: Territ&oacute;rio">Territ&oacute;rio<span class="caret"></span></a>
+          <ul class="dropdown-menu multi-column columns-3"><li>
+                                 <div class="row">
+                                    <div class="col-sm-12">
+                                       <ul class="multi-column-dropdown">		 
+					  <li><a title="Territ&oacute;rio: Infraestrutura de Informa&ccedil;&atilde;o Territorial" href="https://iit.ine.pt" ><strong>IIT - Infraestrutura de Informa&ccedil;&atilde;o Territorial</strong></a></li>
+                                         <li><a href="https://ce-sig.ine.pt/" title="Territ&oacute;rio: Carta de Equipamentos e Servi&ccedil;os de Interesse Geral"> &nbsp;&nbsp;&nbsp;&nbsp;CE-SIG</a></li>
+                                         <li><a href="https://iit.ine.pt/Search" title="Territ&oacute;rio: GeoPortal">&nbsp;&nbsp;&nbsp;&nbsp;GeoPortal IIT</a></li>
+                                         <li><a href="https://www.ine.pt/scripts/siou_2023.html" title="Territ&oacute;rio: SIOU">&nbsp;&nbsp;&nbsp;&nbsp;SIOU (Obras licenciadas e conclu&iacute;das)</a></li>
+                                         <li><a href="https://geoc2021.ine.pt/" title="Territ&oacute;rio: Geo Censos">&nbsp;&nbsp;&nbsp;&nbsp;GeoCensos</a></li>
+                                         <li><a href="https://geohab.ine.pt/index.html?locale=Pt-pt" title="Territ&oacute;rio: Geohab">&nbsp;&nbsp;&nbsp;&nbsp;Geohab (pre&ccedil;os de habita&ccedil;&atilde;o nas cidades)</a></li>
+                                         <li><a href="https://geoescolas.ine.pt/" title="Territ&oacute;rio: Geoescolas">&nbsp;&nbsp;&nbsp;&nbsp;Geoescolas</a></li>
+										</ul>
+									</div>
+									
+								</div>
+			</ul>					
+        </li>	
+     <!-- PRODUTOS-->
+	  <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produtos <span class="caret"></span></a>
+           <ul class="dropdown-menu multi-column columns-3"><li>
+                                 <div class="row">
+                                    <div class="col-sm-5">
+                                       <ul class="multi-column-dropdown">
+					  <li class="dropdown-header" title="Menu: Dados Estat&iacute;sticos">Dados Estat&iacute;sticos</li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_base_dados&contexto=bd&selTab=tab2" title="Dados Estat&iacute;sticos:Base de Dados">&nbsp;&nbsp;Base de Dados</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_destaques" title="Dados Estat&iacute;sticos:Destaques">&nbsp;&nbsp;Destaques</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_publicacoes" title="Dados Estat&iacute;sticos:Publica&ccedil;&otilde;es">&nbsp;&nbsp;Publica&ccedil;&otilde;es</a></li>                                          										 
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_estudos" title="Dados Estat&iacute;sticos:Estudos">&nbsp;&nbsp;Estudos</a></li>
+  					  <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_statslab" title="Dados Estat&iacute;sticos:STATSLAB">&nbsp;&nbsp;STATSLAB</a></li>
+                                          <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_qa_resumo" title="Dados Estat&iacute;sticos:Censos: Quadros de apuramento">&nbsp;&nbsp;Censos: Quadros de apuramento</a></li>
+					  <li><a href="https://mapas.ine.pt/download/index2021.phtml" title="Dados Estat&iacute;sticos:Geopackage - Censos">&nbsp;&nbsp;Geopackage - Censos</a></li>
+
+			          	  <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_pufs&menuBOUI=13707095&contexto=up&selTab=tab5&xlang=pt" title="Dados Estat&iacute;sticos:Microdados">&nbsp;&nbsp;Microdados</a></li>
+                                          <li><a href="https://biblioteca.ine.pt/" title="Dados Estat&iacute;sticos:Bibliotecal">&nbsp;&nbsp;Biblioteca</a></li>
+					  <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_infografias" title="Dados Estat&iacute;sticos:Infografias">&nbsp;&nbsp;Infografias</a></li>
+					  <li><a href="https://www.ine.pt/scripts/hvd/pt/home.html" title="Dados Estat&iacute;sticos:Conjunto de dados de elevado valor">&nbsp;&nbsp;Conjunto de dados de elevado valor (HVD)</a></li>
+
+                                         
+					  <li class="dropdown-header" title="Menu:Metainforma&ccedil;&atilde;o">Metainforma&ccedil;&atilde;o</li>
+					  <li><a href="http://smi.ine.pt/" title="Metainforma&ccedil;&atilde;o:Dados Estat&iacute;sticos:Sistema de Metainforma&ccedil;&atilde;o">Sistema de Metainforma&ccedil;&atilde;o</a></li>
+                                          
+					  <li class="dropdown-header" title="Menu:Aplica&ccedil;&otilde;es Interativas">Aplica&ccedil;&otilde;es Interativas</li>
+					  <li><a href="/xportal/xmain?xpid=INE&xpgid=ipc" title="Aplica&ccedil;&otilde;es Interativas: IPC - Atualiza&ccedil;&atilde;o de Valores">&nbsp;&nbsp;IPC - Atualiza&ccedil;&atilde;o de Valores</a></li>
+<li><a title="Aplica&ccedil;&otilde;es Interativas: &Iacute;ndice Sint&eacute;tico de Desenvolvimento Regional" target="_Blank" rel="noopener" aria-label="Abre numa nova janela" href="https://www.ine.pt/scripts/isdr/isdr.html">&nbsp;&nbsp;&Iacute;ndice Sint&eacute;tico de Desenvolvimento Regional</a></li>
+                                          <li><a title="Aplica&ccedil;&otilde;es Interativas: Indicadores de Conjuntura" target="_Blank" rel="noopener" aria-label="Abre numa nova janela" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_ind_conjuntura">&nbsp;&nbsp;Indicadores de Conjuntura</a></li>
+
+                                          <li><a href="https://www.ine.pt/scripts/ec/eco_cir.html" title="Aplica&ccedil;&otilde;es Interativas: Economia Circular">&nbsp;&nbsp;Economia Circular</a></li>
+                                          <li><a href="https://www.ine.pt/scripts/siou_2023.html" title="Aplica&ccedil;&otilde;es Interativass:Estat&iacute;sticas da Constru&ccedil;&atilde;o - Obras Licenciadas e Conclu&iacute;das">&nbsp;&nbsp;Estat&iacute;sticas da Constru&ccedil;&atilde;o - Obras Licenciadas e Conclu&iacute;das</a></li>
+                                          <li><a href="https://www.ine.pt/scripts/metro.html" title="Aplica&ccedil;&otilde;es Interativas:Transporte por Metropolitano">&nbsp;&nbsp;Transporte por Metropolitano</a></li>
+                                          <li><a href="https://www.ine.pt/scripts/transp_aero.html" title="Aplica&ccedil;&otilde;es Interativas:Transporte A&eacute;reo">&nbsp;&nbsp;Transporte A&eacute;reo</a></li>
+                                          <li><a href="https://geogrid.ine.pt" title="Aplica&ccedil;&otilde;es Interativas:CensosGRID 2011">&nbsp;&nbsp;CensosGRID 2011</a></li>				
+					  <li><a href="https://censos.ine.pt/xportal/xmain?xpid=CENSOS21&xpgid=censos21_dados_finais&xlang=pt" title="Aplica&ccedil;&otilde;es Interativas:Plataforma de Divulga&ccedil;&atilde;o CENSOS 2021">&nbsp;&nbsp;Plataforma de Divulga&ccedil;&atilde;o CENSOS 2021</a></li>
+					  <li><a href="https://www.ine.pt/scripts/db_ra_2019.html" title="Aplica&ccedil;&otilde;es Interativas:Plataforma de Divulga&ccedil;&atilde;o RA2019">&nbsp;&nbsp;Plataforma de Divulga&ccedil;&atilde;o RA 2019</a></li>
+					  <li><a href="https://www.ine.pt/scripts/90_anos/index.html" title="Aplica&ccedil;&otilde;es Interativas:O que mudou em Portugal 1935-2025">&nbsp;&nbsp;O que mudou em Portugal 1935-2025</a></li>					  									  
+                                          </ul>
+                                    </div>
+                                    <div class="col-sm-7">
+                                       <ul class="multi-column-dropdown">	
+																		   
+					  <li class="dropdown-header" title="Menu:Dossi&ecirc;s Tem&aacute;ticos">Dossi&ecirc;s Tem&aacute;ticos</li>
+					     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_cnacionais" title="Dossi&ecirc;s Tem&aacute;ticos:Contas Nacionais">&nbsp;&nbsp;Contas Nacionais</a></li>
+                                             <li><a target="_Blank" rel="noopener" aria-label="Abre numa nova janela" href="https://censos.ine.pt" title="Dossi&ecirc;s Tem&aacute;ticos:CENSOS 2021">&nbsp;&nbsp;CENSOS 2021</a></li>
+                                             <li><a target="_Blank" rel="noopener" aria-label="Abre numa nova janela" href="https://ra2019.ine.pt" title="Dossi&ecirc;s Tem&aacute;ticos:RA 2019">&nbsp;&nbsp;RA 2019</a></li>
+					     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_perfterrindic" title="Dossi&ecirc;s Tem&aacute;ticos:Territ&oacute;rio">&nbsp;&nbsp;Territ&oacute;rio</a></li>
+   					     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_doc_municipios" title="Dossi&ecirc;s Tem&aacute;ticos:Munic&iacute;pios">&nbsp;&nbsp;Munic&iacute;pios</a></li>
+					     <li><a href="https://genero.ine.pt" title="Dossi&ecirc;s Tem&aacute;ticos:G&eacute;nero">&nbsp;&nbsp;G&eacute;nero</a></li>
+					     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_indbemestar" title="Dossi&ecirc;s Tem&aacute;ticos:&Iacute;ndice de Bem-estar">&nbsp;&nbsp;&Iacute;ndice de Bem-estar</a></li>
+		  			     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_see_ieeuropeia"  title="Dossi&ecirc;s Tem&aacute;ticos:Informa&ccedil;&atilde;o Estat&iacute;stica Europeia">&nbsp;&nbsp;Informa&ccedil;&atilde;o Estat&iacute;stica Europeia</a></li>                                         
+					     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_indeuropa2020" title="Dossi&ecirc;s Tem&aacute;ticos:Indicadores Europa 2020">&nbsp;&nbsp;Indicadores Europa 2020</a></li>
+					     <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_perfpt2020" title="Dossi&ecirc;s Tem&aacute;ticos:Sistema de Indicadores do Portugal 2020">&nbsp;&nbsp;Sistema de Indicadores do Portugal 2020</a></li>
+                                             <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_perfsdg" title="Dossi&ecirc;s Tem&aacute;ticos:Objetivos de Desenvolvimento Sustent&aacute;vel">&nbsp;&nbsp;Objetivos de Desenvolvimento Sustent&aacute;vel</a></li>
+                                             <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_covid_dossier" title="Dossi&ecirc;s Tem&aacute;ticos:Especial INE Covid-19">&nbsp;&nbsp;Especial INE COVID-19</a></li>
+					     <li class="dropdown-header" title="Multim&eacute;dia" title="Menu:Multim&eacute;dia">Multim&eacute;dia</li>
+					     <li><a href="https://fototeca.ine.pt/" title="Multim&eacute;dia:Fototeca - INE">&nbsp;&nbsp;Fototeca</a></li>
+                                             <li><a href="https://www.youtube.com/channel/UCDNaM16x_CTjzs_Hg0qrzLw" title="Multim&eacute;dia:V&iacute;deos&nbsp;[Youtube]">&nbsp;&nbsp;V&iacute;deos&nbsp;[Youtube]</a></li>
+                                             	                                          
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </ul>
+</li>
+        </li>
+	  
+	  <!-- -->
+	  
+		<li><a href="http://webinq.ine.pt/home.aspx" title="Webinq : Inqu&eacute;ritos On-Line" title="WebInq : Inqu&eacute;ritos On-Line" >WebInq</a></li>
+                <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_contactos&ine_smenu.boui=13711615&INST=56501" title="Contactos" alt="Contactos"><span class="fa fa-phone-square" style="font-size:23px"></span></a></li>
+		<li><a href="/xportal/xmain?xpid=INE&xpgid=ine_calendarios" alt="Calend&aacute;rio" title="Calend&aacute;rio"><span class="glyphicon glyphicon-calendar" style="font-size:20px"></span></a></li>
+		<li><a href="/xportal/xmain?xpid=INE&xpgid=ics_feeds&xlang=PT" title="RSS" alt="RSS"><span class="fa fa-rss-square" style="font-size:23px"></span></a></li>
+                <li><a href="/xportal/xmain?xpid=INE&xpgid=ine_autenticacao_login" alt="&Aacute;rea de Utilizadores" title="Menu: &Aacute;rea de Utilizadores"><span class="glyphicon glyphicon-user"  aria-hidden="true"  style="font-size:20px"></span ><span class="sr-only">&Aacute;rea de Utilizadores</span></a></li>
+                <li><a href="http://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_destaques&amp;DESTAQUESdest_boui=771939216&amp;DESTAQUESmodo=2&amp;xlang=en" title="L&iacute;ngua" alt="L&iacute;ngua">EN</a></li>
+	 
+	 </ul>
+
+<!-- ???? -->
+<!-- Inicio pesquisa-->
+
+
+
+
+
+
+    <div id='dpesquisa' class="input-group">
+
+      
+      <form id='frm_PesquisaSimples'
+            name='frm_PesquisaSimples'
+            action='/xportal/xmain?xpid=INE&amp;xpgid=ine_pesquisa'
+            method='get'
+            onsubmit='return valida_pesquisa_simples(this);'
+            class='navbar-form navbar-right'
+            >
+
+       <div class="form-group">
+        <div class="input-group">
+
+
+         
+         <input type='hidden'  name='xpid'              value='INE' >
+         
+         <!-- <input type='hidden'  name='xpgid'             value='ine_destaques' > -->
+         <input type='hidden'  name='xpgid'             value='ine_pesquisa' >
+
+         <input type='hidden'  name='frm_accao'         value='PESQUISAR' >
+
+         
+         <input type='hidden'  name='frm_show_page_num' value='1' >
+
+         <input type='hidden'  name='frm_modo_pesquisa' value='PESQUISA_SIMPLES' >
+
+         
+         <input type='hidden'  name='frm_modo_texto' value='MODO_TEXTO_ALL' >
+
+         
+         
+         <label for='frm_texto_simples' class='sr-only'>Pesquisar</label>
+         <input type='text' id='frm_texto_simples' name='frm_texto' 
+                value=''
+                maxlength='2000'
+                accesskey='1'
+                class='form-control input-sm'
+                placeholder='Pesquisa'
+                title='Palavra(s) a encontrar' >
+
+         <div class="input-group-btn">
+
+           
+          <button type="submit" id="frm_imgPesquisar1" name="frm_imgPesquisar" 
+                    class="btn btn-default btn-sm"
+                    title='Submeter a pesquisa'>
+            <span class="glyphicon glyphicon-search custom-glyph-color"></span>
+          </button>				
+
+          
+          <a id="apesquisa" href='/xportal/xmain?xpid=INE&amp;xpgid=ine_pesquisa&amp;frm_modo_pesquisa=PESQUISA_AVANCADA'
+              class="btn btn-default btn-sm" 
+              role="button"
+              title='Pesquisa avan&ccedil;ada'>
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+
+         </div>  
+
+        </div>  
+       </div>  
+
+      </form>
+      
+
+    </div>  
+
+
+    
+  
+  <script type='text/javascript'>
+    <!--  
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    function valida_pesquisa_simples( par_form ) {
+        
+      ret_val = true ;
+
+      if ( par_form.frm_texto.value == null ) {
+        ret_val = false ;
+      } else {
+
+        
+        
+        aux_regexp = "^\\s*$" ;
+        if ( par_form.frm_texto.value.search(aux_regexp) != -1 ) {
+          
+          ret_val = false ;
+        } 
+
+      } 
+
+        
+        
+      return ret_val ;
+
+    } 
+
+
+    
+    function valida_pesquisa_avancada( par_form ) {
+        
+      
+      ret_val = true ;
+
+      aux_frm_date_ini = par_form.frm_data_ini.value ;
+      aux_frm_date_fim = par_form.frm_data_fim.value ;
+
+      
+      aux_frm_date_ini = aux_frm_date_ini.replace( /^\s*/, "" ).replace( /\s*$/, "" ) ;
+      aux_frm_date_fim = aux_frm_date_fim.replace( /^\s*/, "" ).replace( /\s*$/, "" ) ;
+        
+
+
+      
+      aux_date_ini = null ;
+      if ( aux_frm_date_ini != "" ) {
+        aux_date_ini = cal_prs_date1( aux_frm_date_ini ) ;
+        if ( aux_date_ini == null ) {
+          ret_val = false ;
+        }
+      }
+
+      
+      aux_date_fim = null ;
+      if ( aux_frm_date_fim != "" ) {
+        aux_date_fim = cal_prs_date1( aux_frm_date_fim ) ;
+        if ( aux_date_fim == null ) {
+          ret_val = false ;
+        }
+      }
+
+        
+
+
+      
+      if ( aux_date_ini != null  &&  aux_date_fim != null ) {
+        aux_time_ini = aux_date_ini.getTime() ;
+        aux_time_fim = aux_date_fim.getTime() ;
+          
+
+        if ( aux_time_ini!=0  &&  aux_time_fim!=0 ) {
+          if ( aux_time_ini > aux_time_fim ) {
+            alert( "A data inicial deverá ser inferior à data final" ) ;
+            ret_val = false ;
+          }
+        }
+
+      } 
+
+        
+      return ret_val ;      
+    } 
+
+
+    
+    function valida_data( par_form_input ) {
+        
+
+      
+      aux_trim = par_form_input.value.replace( /^\s*/, "" ).replace( /\s*$/, "" ) ;
+
+      
+      aux_valid = cal_prs_date1( aux_trim );
+      if ( !aux_valid  &&  aux_valid != '' ) {
+        par_form_input.focus();		
+      } else {
+        
+        par_form_input.value = aux_trim ;
+      }
+
+    } 
+
+
+    //-->  
+  </script>
+  
+  
+  
+
+<!-- Fim pesquisa -->
+<!-- ???? -->
+
+    </div><!-- /.navbar-collapse -->
+  
+  </div><!-- /.container-fluid -->
+
+  </nav>
+               </div>
+            </div>
+         </div>
+         </div>
+      </section>
+
+<!-- User LogIn --->
+<div class="container">   
+    
+
+
+
+<!--   <div align="right"> -->
+  
+<!--        <DIV id="menu_esq"> -->
+<!--     <UL id="umenu_esq"> -->
+<!-- <LI> -->
+
+<!-- <UL> -->
+
+
+<!-- </LI></UL></LI></UL> -->
+<!--     </div> -->
+<!--   </div>fim da div login -->
+
+</div>
+
+<!-- Fim User LogIn ---><main id="specific_content" class="container" tabindex="-1">
+	<div class="row escaparate">
+		<!--START_EDIT_AREA_content-->       
+<!-- Caminho Breadcrumb -->   
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/xportal/xmain?xpid=INE&xpgid=ine_main">In&iacute;cio</a></li>
+    <li class="breadcrumb-item">Produtos</li>
+      <li class="breadcrumb-item active" aria-current="page">Destaques</li>
+  </ol>
+</nav>
+<!--FIM Caminho Breadcrumb -->  
+
+<div>
+
+
+<div class="div_container">   
+    <div class="div_dir_ea_pe"><span class="menudestaques"><img src="/img/n_sep_seta.gif" alt="seta decorativa"></span><span class="menudestaques_txt">&nbsp;&nbsp;<a title="Edi&ccedil;&otilde;es anteriores" class="menudestaques_sel" href="/xportal/xmain?xpid=INE&amp;xpgid=ine_destaques&amp;DESTAQUEStipo=ea&amp;DESTAQUEScoleccao=69838&amp;selTab=tab0">Edi&ccedil;&otilde;es anteriores</a>&nbsp;</span><span class="menudestaques"><img src="/img/n_sep_seta.gif" alt="seta decorativa"></span><span class="menudestaques_txt">&nbsp;&nbsp;<a title="Calend&aacute;rio" class="menudestaques" href="/xportal/xmain?xpid=INE&amp;xpgid=ine_destaques&amp;DESTAQUEStipo=pe&amp;selTab=tab1">Calend&aacute;rio</a>&nbsp;</span></div><br>
+</div>
+<div class="linha_cinzenta"></div>
+
+
+
+    <script type="text/javascript" src="/xportal/ine/portal/portlets/html/select_data/calendar_pt.js"></script>
+        
+    <form id="headerform" name="headerform" method="GET" action="/xportal/xmain?xpid=INE&amp;xpgid=ine_destaques" onsubmit="submitdata();">
+    <div class="container_blue">
+      <div class="container_blue_left">
+              <input type="hidden" name="PORTLET_ID" value="JSP">
+<input type="hidden" name="xpgid" value="ine_destaques">
+<input type="hidden" name="xlang" value="pt">
+<input type="hidden" name="xpid" value="INE">
+<input type="hidden" name="PORTLET_NAME" value="ine_cont_header_dest">
+<input type="hidden" name="PORTLET_UID" value="#JSP:ine_cont_header_dest#">
+
+              <label class="linkdestaques" for="DESTAQUEStema">Por tema&nbsp;</label><select class="combobox" onblur="headerform.submit();" onchange="headerform.submit();" size="1" id="DESTAQUEStema" name="DESTAQUEStema">
+<option class="combobox" value="00" selected>Qualquer</option> 
+<option class="combobox" value="55536">Administrações públicas</option> 
+<option class="combobox" value="55505">Agricultura, floresta e pescas</option> 
+<option class="combobox" value="55523">Ambiente</option> 
+<option class="combobox" value="55448">Comércio internacional</option> 
+<option class="combobox" value="55545">Comércio interno</option> 
+<option class="combobox" value="55565">Condições de vida e cidadania</option> 
+<option class="combobox" value="55529">Conjuntura</option> 
+<option class="combobox" value="55534">Construção e habitação</option> 
+<option class="combobox" value="55557">Contas nacionais e regionais</option> 
+<option class="combobox" value="55554">Cultura, desporto e lazer</option> 
+<option class="combobox" value="248990485">Documentação estatística</option> 
+<option class="combobox" value="55445">Educação, formação e aprendizagem</option> 
+<option class="combobox" value="55579">Empresas</option> 
+<option class="combobox" value="55535">Indústria e energia</option> 
+<option class="combobox" value="55453">Informação não estatística</option> 
+<option class="combobox" value="55483">Inovação e conhecimento</option> 
+<option class="combobox" value="55547">Justiça</option> 
+<option class="combobox" value="55574">Mercado de trabalho</option> 
+<option class="combobox" value="55480">Multitemas</option> 
+<option class="combobox" value="55466">População</option> 
+<option class="combobox" value="55507">Preços</option> 
+<option class="combobox" value="55499">Proteção social</option> 
+<option class="combobox" value="55538">Saúde</option> 
+<option class="combobox" value="55527">Serviços às empresas e outros</option> 
+<option class="combobox" value="248990506">Terminologia estatística</option> 
+<option class="combobox" value="55481">Território</option> 
+<option class="combobox" value="55488">Transportes e comunicações</option> 
+<option class="combobox" value="55581">Turismo</option> 
+</select>
+      </div>
+     
+      <div class="container_blue_right">
+              &nbsp;<label class="linkdestaques" for="DESTAQUESdata_inicial">Data&nbsp;</label><input class="combobox" title="Data inicial dd-mm-aaaa" type="text" value="" id="DESTAQUESdata_inicial" name="DESTAQUESdata_inicial" onBlur="var valid=cal_prs_date1(this.value);if (!valid &amp;&amp; valid!='')this.focus();" size="10">&nbsp;<script type='text/javascript'> document.write('<a href="javascript:cal1.popup();"><img class="cal_img" src="/img/cal.gif" alt="Clique aqui para inserir a data" title="Clique aqui para inserir a data"><\/a>');</script>&nbsp;<label class="linkdestaques" for="DESTAQUESdata_final">a&nbsp;</label><input class="combobox" title="Data final dd-mm-aaaa" type="text" value="" id="DESTAQUESdata_final" name="DESTAQUESdata_final" onBlur="var valid=cal_prs_date1(this.value);if (!valid &amp;&amp; valid!='')this.focus();" size="10">&nbsp;<script type='text/javascript'> document.write('<a href="javascript:cal2.popup();"><img class="cal_img" src="/img/cal.gif" alt="Clique aqui para inserir a data" title="Clique aqui para inserir a data"><\/a>');</script>&nbsp;&nbsp;<input class="sbmtimg" type="image" src="/img/n_bt_pesquisa_blue.gif" alt="Submeter" title="Submeter">
+      </div>
+      <div class="container_blue_right">
+              &nbsp;<label class="linkdestaques" for="DESTAQUESfreeText">Pesquisa por palavra&nbsp;</label><input class="combobox" title="Palavra(s) a encontrar" type="text" value="" id="DESTAQUESfreeText" name="DESTAQUESfreeText" size="20">
+      </div>
+    </div>
+    </form>
+    
+    <script type="text/javascript">
+ 
+     cal1 = new calendar1(document.getElementById('headerform').DESTAQUESdata_inicial);
+     cal1.year_scroll = true;
+     cal1.time_comp = false;
+     cal2 = new calendar1(document.getElementById('headerform').DESTAQUESdata_final);
+     cal2.year_scroll = true;
+     cal2.time_comp = false;     
+
+    function submitdata()
+    {
+      aux_date_ini = document.getElementById('headerform').DESTAQUESdata_inicial.value ;
+      aux_date_fim = document.getElementById('headerform').DESTAQUESdata_final.value ;
+
+      // Truncar Leading e Trailing Whitespace
+      aux_date_ini = aux_date_ini.replace( /^\s*/, "" ).replace( /\s*$/, "" ) ;
+      aux_date_fim = aux_date_fim.replace( /^\s*/, "" ).replace( /\s*$/, "" ) ;
+
+      if ( aux_date_ini != ""  && aux_date_fim != "" ) {
+        aux_time_ini = cal_prs_date1(aux_date_ini).getTime() ;
+        aux_time_fim = cal_prs_date1(aux_date_fim).getTime() ;
+
+        if ( aux_time_ini!=0  &&  aux_time_fim!=0 ) {
+          if ( aux_time_ini > aux_time_fim )
+          {
+            alert("A data inicial deverá ser inferior à data final");
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    </script>
+
+
+
+
+
+
+    
+
+    </br>
+    
+        
+         <div class="container">
+        	<div class="row-destaques row">
+        	
+        		<div class="col-md-3">
+              
+                      <img class="img-responsive publicacoes_l" alt="Procedimento dos Défices Excessivos" src="/ngt_server/attachfileu.jsp?look_parentBoui=604679729&amp;att_display=n&amp;att_download=y">
+                     
+                   
+        		
+        		</div>
+        	
+        	
+        		<div class="col-xs-11 col-md-9">
+        			<div class="datadst_dir">
+			            <b>Procedimento dos Défices Excessivos	</br>
+			             2ª Notificação</b>
+			          </div>
+		          	<div class="large_bullet">
+		                <div class="linkpublicacoes_b">Procedimento dos Défices Excessivos
+		                 
+		                 - 2026</div>
+		                <div class="datapublicacoes">23 de setembro de 2026</div>
+		         	</div>
+		         	
+		         	
+			        <br>
+			        <div class="resumo">
+			            <b>Resumo</b>
+			            <br>
+			            <p>Nos termos dos Regulamentos da Uni&atilde;o Europeia, o INE envia ao Eurostat, at&eacute; ao final do m&ecirc;s corrente, a segunda notifica&ccedil;&atilde;o de 2026 relativa ao Procedimento dos D&eacute;fices Excessivos (PDE). De acordo com os resultados provis&oacute;rios obtidos neste exerc&iacute;cio, as Administra&ccedil;&otilde;es P&uacute;blicas (AP) apresentaram um saldo positivo de 2 045,4 milh&otilde;es de euros em 2025, o que correspondeu a 0,7% do PIB (0,7% em 2024). A d&iacute;vida bruta das AP ter&aacute; diminu&iacute;do para 89,2% do PIB (93,0% no ano anterior).</p>
+<p>A receita total das AP ascendeu a 132,7 mil milh&otilde;es de euros, tendo aumentado 6,3% entre 2024 e 2025 (mais 7,9 mil milh&otilde;es de euros), impulsionada pelo aumento da receita corrente (varia&ccedil;&atilde;o de 5,6%, correspondendo a mais 6,8 mil milh&otilde;es de euros).&nbsp;</p>
+<p>A despesa total das AP cresceu 6,5% em 2025 (mais 7,9 mil milh&otilde;es de euros), para 130,6 mil milh&otilde;es de euros, tendo a despesa corrente aumentado 6,3 mil milh&otilde;es de euros (5,6%) em consequ&ecirc;ncia do crescimento das remunera&ccedil;&otilde;es dos empregados (+7,5%) e das presta&ccedil;&otilde;es sociais, exceto transfer&ecirc;ncias sociais em esp&eacute;cie (+5,7%). A despesa de capital aumentou 15,6% face ao ano anterior, com uma varia&ccedil;&atilde;o de +1,6 mil milh&otilde;es de euros.</p>
+<p>Em 2025, as receitas fiscais das AP aumentaram 6,8% em termos nominais, atingindo 108,8 mil milh&otilde;es de euros. O indicador de carga fiscal, correspondente ao r&aacute;cio entre as receitas fiscais e o PIB, aumentou para 35,3% (35,0% no ano anterior).</p>
+<p></p>
+			            <br>
+			        </div>
+			        
+		         	
+		         	
+		         	
+		         	<div class="container">
+          <div class="div_esq">
+            <div class="small_bullet">
+              <div class="datadestaques">Destaque<br>
+              
+                      
+                      <div class="cont_files"><img alt="Download do documento" src="/img/ficheiros/PDF.gif">
+                      <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816377733&amp;att_display=n&amp;att_download=y">PDF</a><span class="txt_cinza">&nbsp;(691&nbsp;Kb)</span></div>
+                  
+              </div>
+            </div>
+          </div>
+          <div class="div_esq">
+          
+            <div class="small_bullet">
+            <div class="datadestaques">Quadros<br>
+                
+                        <div class="cont_files"><img alt="Excel" src="/img/ficheiros/XLS.gif">
+                        <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816377878&amp;att_display=n&amp;att_download=y">Excel</a><span class="txt_cinza">&nbsp;(123&nbsp;Kb)</span></div>
+                      <!--  <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816377878&amp;att_display=n&amp;att_download=y">Excel</a><span class="txt_cinza">&nbsp;(123&nbsp;Kb)</span></div> -->
+                        
+                        <div class="cont_files"><img alt="Excel" src="/img/ficheiros/XLSX.gif">
+                        <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816377956&amp;att_display=n&amp;att_download=y">Excel</a><span class="txt_cinza">&nbsp;(28&nbsp;Kb)</span></div>
+                      <!--  <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816377956&amp;att_display=n&amp;att_download=y">Excel</a><span class="txt_cinza">&nbsp;(28&nbsp;Kb)</span></div> -->
+                        
+                        <div class="cont_files"><img alt="Excel" src="/img/ficheiros/XLSX.gif">
+                        <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816378100&amp;att_display=n&amp;att_download=y">Excel</a><span class="txt_cinza">&nbsp;(32&nbsp;Kb)</span></div>
+                      <!--  <a title="Download do documento" class="bread_link" href="/ngt_server/attachfileu.jsp?look_parentBoui=816378100&amp;att_display=n&amp;att_download=y">Excel</a><span class="txt_cinza">&nbsp;(32&nbsp;Kb)</span></div> -->
+                        
+              </div>
+            </div>
+            
+          </div>
+        
+        </div>
+		         	
+      </div>
+        		
+      </div>
+        
+        
+        
+        
+        <br><br><br>
+        <div class="container">
+         
+        <div class="div_dir">
+        <br>
+         <div class="linkdestaques_b"><a title="Autentique-se para subscrever (Abre uma nova janela)" class="menudestaques" target="_blank" href="/xportal/xmain?xpid=INE&xpgid=ine_autenticacao_login">Autentique-se para subscrever</a></div>
+          </div>
+        
+        </div>
+       
+        </div>
+        </div>
+<!-- INICIO ESTATISTICA INE -->
+<script type="text/javascript">
+_XO=771939216;
+_OI='';
+_U='PUBLIC';
+_L='PT';
+all_ok=0;
+</script>
+<script type="text/javascript" src="/ine_stats/stats.js"></script>
+<script type="text/javascript">
+if(all_ok==1){process('www.ine.pt',1,2);}
+</script>
+<!-- FIM ESTATISTICA INE -->
+            
+        <div class="linha_cinzenta"></div>
+
+    
+<script>
+if (document.getElementById('DESTAQUEStema') != null)
+{
+         document.getElementById("DESTAQUEStema").value='null';
+}
+</script>    
+</div>
+
+<div style="padding-top:10px;" align="right">
+	<!--<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Partilhar </button>-->        
+        <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+        <!--<div class="addthis_inline_share_toolbox"></div>--> 
+
+
+<!-- INICO PARTILHAR -->
+<!--<div class="sharebox" data-services="facebook linkedin twitter"></div>-->
+
+ <div id="my-sharebox"></div>
+<script>
+jQuery(document).ready(function() {
+    
+    var url_aux = window.location.href; 
+    var lingua = "&xlang=pt";
+
+    var url_final=url_aux+lingua;
+
+    jQuery("#my-sharebox").sharebox({
+		url      : url_final,
+		title    : "Portal INE - Destaque - @pt_INE ",
+		services : "facebook twitter linkedin"
+	});
+});
+</script>
+    
+</div>
+<!-- Fim PARTILHAR -->
+
+</script> 
+
+</div>
+
+</div>
+<!--END_EDIT_AREA_content-->
+    </div>
+</main>
+<!-- AREA VARIOS LINKS -------------- -->
+<div class="container">
+<div align="center"> 
+    <div class="row escaparate">
+      
+	<div class="row">
+			
+			 <!-- pos1 -->
+	     <div class="col-md-2">
+	     <a title="WebInq" target="_Blank" href="http://webinq.ine.pt/home.aspx"> <img style="padding:0px;" alt="WebInq" title="WebInq" class="img-responsive"  border="0" src="/img/1_WebInq_170x44.png">			  
+	                        </a>
+	     </div>
+				
+			<!-- pos2 -->
+             <div class="col-md-2">
+             <a title="SICAE" target="_Blank" href="http://www.sicae.pt/"><img style="padding:0px;" alt="SICAE" title="SICAE" class="img-responsive"  border="0" src="/img/sicae.gif"></a>				
+				</div>
+      
+            <!-- pos3 -->
+              <div class="col-md-2">
+				<a title="Simulador - IPC" href="/xportal/xmain?xpid=INE&xpgid=ipc">
+				<img style="padding:0px;" alt="Simulador - IPC" title="Simulador - IPC" class="img-responsive"  border="0" src="/img/5_IPC_170x44.png">		  
+				</a>
+				</div>
+            
+			<!-- pos4 -->	
+				<div class="col-md-2">
+             	<a title="ODS" href="/xportal/xmain?xpid=INE&xpgid=ine_perfsdg">
+				<img style="padding:0px;" alt="ODS" title="ODS" class="img-responsive"  border="0" src="/img/7_ODS_170x44.png">	  
+				</a>	
+			  </div>
+			
+      
+			<!-- pos5 --> 
+               <div class="col-md-2">
+				<a title="Sistema Estat&iacute;stico Nacional Sobre Igualdade de G&eacute;nero" href="https://www.ine.pt/xportal/xmain?xpgid=IGenero_Main&xpid=IGEN&xlang=pt">
+				<img style="padding:0px;" alt="Sistema Estat&iacute;stico Nacional Sobre Igualdade de G&eacute;nero" title="Sistema Estat&iacute;stico Nacional Sobre Igualdade de G&eacute;nero" class="img-responsive"  border="0" src="/img/6_IgualdadeGenero_170x44.png">			  
+				</a>
+			  </div>            
+			  <!-- pos6 --> 
+                <div class="col-md-2">
+				<a title="Contas Nacionais" href="/xportal/xmain?xpid=INE&xpgid=ine_cnacionais">
+				<img style="padding:0px;" class="img-responsive" alt="Contas Nacionais" title="Contas Nacionais"  border="0" src="/img/4_ContasNacionais_170x44.png">			  
+				</a>
+			    </div>
+			</div>
+			<div class="row">
+                            <div class="col-md-12">&nbsp;</div>
+                       </div>
+			<div class="row">
+			
+			<!-- pos1 -->
+			   <div class="col-md-2">
+				<a title="ESC2026" href="https://esc2026.ine.pt/">
+				<img style="padding:0px;" class="img-responsive" alt="ESC2026" title="ESC2026"  border="0" src="/img/esc2022_rodape.png">				  
+				</a>
+				</div>
+				
+			<!-- pos2 -->
+			   <div class="col-md-2">
+				<a title="ISLP 2022/2023" href="https://posters-islp.ine.pt">
+                <img style="padding:0px;" class="img-responsive" alt="ISLP 2022/2023" title="ISLP 2022/2023"  border="0" src="/img/islp_170x44.png">			  
+				</a>
+				</div>
+      
+			<!-- pos3 -->
+			    <div class="col-md-2">
+				<a title="A&ccedil;&atilde;o Local de Estat&iacute;stica&nbsp; Aplicada - ALEA" href="https://autenticacao.ine.pt/manutencao.html"> <!-- href="http://www.alea.pt/index.php?lang=pt"> -->
+                <img style="padding:0px;" class="img-responsive" alt="A&ccedil;&atilde;o Local de Estat&iacute;stica&nbsp; Aplicada - ALEA" title="A&ccedil;&atilde;o Local de Estat&iacute;stica&nbsp; Aplicada - ALEA"  border="0" src="/img/alea2018.jpg">			  
+				</a>
+				</div>
+            
+			<!-- pos4 -->
+				 <div class="col-md-2">
+				<a title="Conselho Superior de Estat&iacute;stica&nbsp; - CSE" href="https://cse.ine.pt/xportal/xmain?xpgid=cse_home&xpid=CSE">
+                <img style="padding:0px;" class="img-responsive" alt="Conselho Superior de Estat&iacute;stica&nbsp; - CSE" title="Conselho Superior de Estat&iacute;stica&nbsp; - CSE"  border="0" src="/img/cse_rodape.png">			  
+				</a>
+				</div>
+                        
+      
+			<!-- pos5 --> 
+				<div class="col-md-2">
+				<a title="Sistema Estat&iacute;stico&nbsp; Europeu - SEE" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_inst_see&ine_smenu.boui=133216385">
+                <img style="padding:0px;" class="img-responsive" alt="Sistema Estat&iacute;stico&nbsp; Europeu - SEE" title="Sistema Estat&iacute;stico&nbsp; Europeu - SEE"  border="0" src="/img/see.png">			  
+				</a>
+				</div>
+			<!-- pos6 -->
+				<div class="col-md-2">
+				<a title="Censos 2021" target="_Blank" href="https://censos.ine.pt/">
+				<img style="padding:0px;" class="img-responsive" alt="Censos 2021" title="Censos 2021"  border="0" src="/img/2_Censos_170x44.png">			  
+				</a>
+				</div>
+
+			</div>
+
+    </div>
+</div>
+</div>
+<!-- Widget acess -->
+<!-- <script type="text/javascript">
+/*var _userway_config = {
+	/* uncomment the following line to override default position*/
+	/* position: '1', */
+	/* uncomment the following line to override default size (values: small, large)*/
+	/* size: 'large', */
+	/* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/
+	/* language: 'en-US', */
+	/* uncomment the following line to override color set via widget (e.g., #053f67)*/
+	/* color: '#053f67', */
+	/* uncomment the following line to override type set via widget(1=person, 2=chair, 3=eye)*/
+	/* type: '1', */
+	/* uncomment the following line to override support on mobile devices*/
+	/* mobile: true, */
+    /*account: 'vlKpqLdIDk'
+/*};
+</script>
+<script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
+<!-- FIM Widget acess -->
+
+<!--END_EDIT_AREA_content--><footer role="contentinfo">
+   <div class="footer" id="footer">
+      <div class="container">
+         <div class="row">
+            <br>		
+            <div class="col-md-4">
+			<div style="padding-left:95px;">
+         	           <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_sobre_o_ine" title="Menu: Sobre o INE" alt="Sobre o INE"">Sobre o INE</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=inews&INST=80066558" title="Menu: INEWS " alt="INEWS (Newsletter do INE)">INEWS (Newsletter do INE)</a></p>   
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_autenticacao_login"  title="Menu: Utilizadores" alt="&Aacute;rea de utilizadores">&Aacute;rea de utilizadores</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_ped_informacao"  title="Menu: Pedidos" alt="Pedidos de Informa&ccedil;&atilde;o">Pedidos de Informa&ccedil;&atilde;o</a></p>               
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_captcha_elo_rec"  title="Menu: Elogios, Sugest&otilde;es e Reclama&ccedil;&otilde;es" alt="Elogios, Sugest&otilde;es e Reclama&ccedil;&otilde;es">Elogios, Sugest&otilde;es e Reclama&ccedil;&otilde;es</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_denuncia"  title="Menu: den&uacute;ncia" alt="Canal de den&uacute;ncia">Canal de den&uacute;ncia</a></p>
+         	           <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_ligacoes&INST=57965&ine_smenu.boui=13711379&xlang=pt" title="Menu: Liga&ccedil;&otilde;es" alt="Liga&ccedil;&otilde;es">Liga&ccedil;&otilde;es</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_rh_recmob"  title="Menu: Recrutamento" alt="Recrutamento">Recrutamento</a></p>               		   			   
+			</div>
+            </div>
+            <!-- $$$$$$$$$$$$ CENTRO RODAPE $$$$$$$$$$$$$$$$$$$$$ -->
+            <div class="col-md-4">
+			
+			  <div align="center">
+
+                  <a href="https://www.facebook.com/INEPORTUGAL/"><img alt="Facebook - INE" title="Facebook - INE" style="padding:3px;" src="https://www.ine.pt/img/face_s.png"></a>
+                  <a href="https://www.instagram.com/pt_ine/"><img alt="Instagram - INE" title="Instagram - INE" style="padding:3px;" src="https://www.ine.pt/img/instaicon.png"></a>                 
+                  <a href="https://www.pinterest.pt/INE_Portugal/"><img alt="Pinterest - INE" title="Pinterest - INE" style="padding:3px;" src="https://www.ine.pt/img/pint_s.png"></a>
+                  <a href="https://twitter.com/pt_ine"><img alt="twitter - INE" title="twitter - INE" style="padding:3px;" src="https://www.ine.pt/img/twee_s.png"></a>
+                  <a href="https://www.youtube.com/channel/UCDNaM16x_CTjzs_Hg0qrzLw"><img alt="Canal Youtube - INE" title="Canal Youtube - INE" style="padding:3px;" src="https://www.ine.pt/img/you_t_s.png"></a>
+		          <a href="https://pt.linkedin.com/company/ine"><img alt="Linkedin - INE" title="Linkedin - INE" style="padding:3px;" src="https://www.ine.pt/img/in_s.png"></a>
+		          <!-- <a href="https://www.amazon.com/Instituto-Nacional-de-Estatistica-Portugal/dp/B010MC0FFK/ref=sr_1_4?s=mobile-apps&ie=UTF8&qid=1440166518&sr=1-4&keywords=ine"><img alt="INE Mobile (APP) - Amazon" title="INE Mobile (APP) - Amazon" style="padding-left:0px;" src="https://www.ine.pt/img/amazon_app.png"></a> --> 
+			   </div>
+			   <div align="center">
+				  <!--<br><a href="https://play.google.com/store/apps/details?id=com.INE_Mobile&hl=en"><img alt="INE Mobile (APP) " title="INE Mobile (APP)" style="padding-left:35px;" src="https://www.ine.pt/img/ine_mobile_n.png"></a><br>-->
+          <!--<a href="https://play.google.com/store/apps/details?id=com.INE_Mobile&hl=en"><img alt="INE Mobile (APP) - Google Play Store" title="INE Mobile (APP) - Google Play Store" style="padding-left:0px;" src="https://www.ine.pt/img/google_play.png"></a>-->
+          <!--<a href="https://itunes.apple.com/us/app/ine-mobile/id1017687181?mt=8"><img alt="INE Mobile (APP) - Itunes" title="INE Mobile (APP) - Itunes" style="padding-left:0px;" src="https://www.ine.pt/img/app_store.png"></a> -->
+          <!-- <a href="https://www.amazon.com/Instituto-Nacional-de-Estatistica-Portugal/dp/B010MC0FFK/ref=sr_1_4?s=mobile-apps&ie=UTF8&qid=1440166518&sr=1-4&keywords=ine"><img alt="INE Mobile (APP) - Amazon" title="INE Mobile (APP) - Amazon" style="padding-left:0px;" src="https://www.ine.pt/img/amazon_app.png"></a> -->
+        <br>
+               
+			<p class="rodape_title"><a class="blue_n" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_inst_pppdpessoais&xlang=pt" alt="Link: Pol&iacute;tica de Privacidade e Prote&ccedil;&atilde;o de Dados Pessoais" title="Link: Pol&iacute;tica de Privacidade e Prote&ccedil;&atilde;o de Dados Pessoais">Pol&iacute;tica de Privacidade e Prote&ccedil;&atilde;o de Dados Pessoais</a></p> 
+			<p class="rodape_title"><a class="blue_n" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_inst_psinformacao" alt="Link: Pol&iacute;tica de Seguran&ccedil;a da Informa&ccedil;&atilde;o" title="Link: Pol&iacute;tica de Seguran&ccedil;a da Informa&ccedil;&atilde;o">Pol&iacute;tica de Seguran&ccedil;a da Informa&ccedil;&atilde;o</a></p>   
+			<p class="rodape_title"><a class="blue_n" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_inst_pqualidade" alt="Link: Pol&iacute;tica da Qualidade do INE" title="Link:Pol&iacute;tica da Qualidade do INE">Pol&iacute;tica da Qualidade do INE</a></p>   
+			<p class="rodape_title"><a class="blue_n" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_inst_confestatistica" alt="Link:Pol&iacute;tica de Confidencialidade" title="Link: Pol&iacute;tica de Confidencialidade">Pol&iacute;tica de Confidencialidade</a></p>   
+			<p class="rodape_title"><a class="blue_n" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_cookies" alt="Link: Utiliza&ccedil;&atilde;o de Cookies" title="Link: Utiliza&ccedil;&atilde;o de Cookies">Utiliza&ccedil;&atilde;o de Cookies</a></p>
+       </div>
+               <!--<ul class="rodape">-->
+               <!--<li> <a href="#"> Biblioteca</a> </li>-->
+               <!--</ul>-->
+			 
+            </div>
+            <!------------------------------------------------------>
+            <div class="col-md-4">
+			<div style="padding-left:35px;">
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ics_feeds&ine_smenu.boui=357197120&ine_smenu.selected=357197349" alt="Servi&ccedil;os, Feeds e API&acute;s">Recursos (Servi&ccedil;os, Feeds e API&acute;s)</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="https://biblioteca.ine.pt" alt="Biblioteca do INE">Biblioteca</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/publicacoes/catalogo/index.html" alt="Cat&aacute;logo&nbsp;" title="Cat&aacute;logo&nbsp;">Cat&aacute;logo de Publica&ccedil;&otilde;es</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_statslab" alt="STATSLAB - Portugal">STATSLAB</a></p>
+			   <p class="rodape_title"><a class="blue_n" href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=prr_2023&xlang=pt" alt="Projetos PRR" title="Projetos PRR">Projetos PRR no INE</a></p> 
+			   <p class="rodape_title"><a class="blue_n" href="https://revstat.ine.pt" alt="REVSTAT" title="REVSTAT">REVSTAT - Statistical Journal </a></p>
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_sem_lista" alt="Lista Eventos">Eventos</a></p>			   
+			   <p class="rodape_title"><a class="blue_n" href="/xportal/xmain?xpid=INE&xpgid=ine_faqs" alt="Ajuda e Perguntas Frequentes">Ajuda/Perguntas Frequentes</a></p>
+            		</div>
+            </div>
+         </div>
+         <!--/.row-->
+      </div>
+      <!--/.container-->
+   </div>
+    <!--/.footer-->
+   <div class="footer-bottom">
+   <div class="container">
+   <div class="row">
+    
+  <div class="col-md-2">
+				<a title="Menu: Distin&ccedil;&atilde;o &ndash; Healthy Workplaces Award 2024 &ndash; Locais de Trabalho Saud&aacute;veis" href="/xportal/xmain?&xpid=INE&xpgid=ine_inst_hwadistincao"><img style="padding:15px;" alt="Distin&ccedil;&atilde;o &ndash; Healthy Workplaces Award 2024 &ndash; Locais de Trabalho Saud&aacute;veis" title="Menu: Distin&ccedil;&atilde;o &ndash; Healthy Workplaces Award 2024 &ndash; Locais de Trabalho Saud&aacute;veis" src="https://www.ine.pt/img/OPP_HWA24_Selos_Horizontal_RGB_policromatico_2.png"></a> 			
+				</div>
+ <div class="col-md-2">
+             <a href="/xportal/xmain?&xpid=INE&xpgid=ine_inst_segpremio"><img style="padding:15px;" alt="Pr&eacute;mios de Seguran&ccedil;a 2024 - Security Magazine" title="Manu: Pr&eacute;mios de Seguran&ccedil;a 2024 - Security Magazine" src="https://www.ine.pt/img/premio_sem _fundo.png"></a>  						 
+				</div>
+ <div class="col-md-2"></div>
+ <div class="col-md-2"></div>
+<div class="col-md-2">
+             <a href="/xportal/xmain?&xpid=INE&xpgid=ine_inst_sgicertificacao"><img style="padding:15px;" alt="Certifica&ccedil;&atilde;o pela ISO/IEC 27001:2022 do Sistema de Gest&atilde;o de Seguran&ccedil;a de Informa&ccedil;&atilde;o do INE" title="Menu: Certifica&ccedil;&atilde;o pela ISO/IEC 27001:2022 do Sistema de Gest&atilde;o de Seguran&ccedil;a de Informa&ccedil;&atilde;o do INE" src="https://www.ine.pt/img/apcer.png"></a> 		
+				</div>
+       <div class="col-md-2">
+             <a href="/xportal/xmain?&xpid=INE&xpgid=ine_inst_sgicertificacao"><img style="padding:15px;" alt="Sistema de Gest&atilde;o Integrado do INE - Certifica&ccedil;&atilde;o ISO 9001 e 27001" title="Menu: Sistema de Gest&atilde;o Integrado do INE - Certifica&ccedil;&atilde;o ISO 9001 e 27001" src="https://www.ine.pt/img/ISO_9001_IQNET_COR.png"></a> 	
+				</div>
+
+   </div>
+   </div>
+   </div> 		
+   </div>
+   <div class="container">
+ <!-- <div align="center"> 
+	<a target="_Blank" href="https://eportugal.gov.pt/"><img alt="ePortugal" title="ePortugal" class="img-responsive" src="/img/banner_eportugal.png" title="ePortugal"></a>
+ </div>   -->
+   <br>
+   <p class="pull-right"><a title="Declara&ccedil;&atilde;o de Acessibilidade e Usabilidade" href="/xportal/xmain?xpid=INE&xpgid=ine_inst_acess_usabilidade">Acessibilidade</a> | <a title="Copyright &copy" href="/xportal/xmain?xpid=INE&xpgid=ine_cont_inst&INST=3585857">Copyright &copy; Instituto Nacional de Estat&iacute;stica</a></p>
+   </div>
+   </div>
+   <!--/.footer-bottom-->
+</footer>
+</body>
+
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.ine.pt/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.ine.pt/matomo.php?idsite=2&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+
+
+</html>
+<!-- Optional IE8 Support -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->

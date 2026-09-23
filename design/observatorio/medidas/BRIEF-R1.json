@@ -1,0 +1,269 @@
+{
+  "brief": "design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md",
+  "guiao": "design/observatorio/medidas/BRIEF-R1.py",
+  "cabeca_lida": "d3481ba9",
+  "copias": "design/especime-v3/medicoes/r1-2026-09-23/paginas/",
+  "medidas": [
+    {
+      "nome": "pesquisa_enter_recarrega",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · preventDefault( no ramo da fila de municipios.js@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra o preventDefault( do ramo da lista agrupada, acima da marca",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_lista_nunca_se_mostra",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «<lista>.hidden = false» no ramo da fila de municipios.js@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a linha «lista.hidden = false;» numa amostra de mentira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_lista_nasce_escondida",
+      "valor": 1,
+      "comando": "git grep -c -E '<ul class=\"pesquisa-res\"[^>]* hidden' d3481ba9 -- src",
+      "conhecido_positivo": {
+        "o_que": "o mesmo grep encontra a lista escondida numa vista ou componente de src/",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_primeira",
+      "valor": "67ffaefb6eefb667d5a3f66b9c1a200487bfe4af8398612192d1db3f75ddfab6",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/r1-2026-09-23/paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_temas",
+      "valor": "2cb08db2f425a5428d15fea80ca65b0e0305f7a3b77a32bffd2153cb446f1bc4",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/r1-2026-09-23/paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_europeia",
+      "valor": "fdff8bc7713b22e29902fefab5f4e1a24c1a6c3a220be4206fb72e8a72c878c5",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/r1-2026-09-23/paginas/uniao-europeia_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_mourao",
+      "valor": "b66f1283511befc852ae7095e504421889ac74e479e1f88141d6755710422be2",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/r1-2026-09-23/paginas/municipios_mourao_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_recibo",
+      "valor": "eaf61b98f45ec9fbf011577b31b53ba2e75525464c944a18eb3f9b659753c70d",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/r1-2026-09-23/paginas/livro-razao_mourao-desemprego-registado-2025-12_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cor_de_estado_na_primeira_pagina",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · classes de estado em paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra as classes na cópia da página europeia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cor_de_estado_nos_temas",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · classes de estado em paginas/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra as classes na cópia da página europeia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cor_de_estado_na_pagina_europeia",
+      "valor": 39,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · classes de estado em paginas/uniao-europeia_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta pelo menos uma classe nesta cópia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_com_a_ressalva_fora_da_agenda",
+      "valor": 0,
+      "comando": "git grep -l -E \"regime de propriedade|regime de ocupação|tenure\" d3481ba9 -- src, sem agenda.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo grep encontra a ressalva em src/data/agenda.json",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "agenda_diz_que_a_primeira_pagina_ja_diz",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «a primeira página já diz» em agenda.json@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "agenda_diz_que_nao_publica_a_media",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «não publica hoje a média europeia» em agenda.json@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartao_da_habitacao_com_media_europeia",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · o cartão da sobrecarga com «União Europeia» antes do cartão seguinte, em paginas/index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado encontra a média noutros cartões da mesma cópia (mais do que um artigo com «União Europeia»)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mudancas_declaradas",
+      "valor": 2,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · entradas «pt:» em mudancas-do-projeto.mjs@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor conta pelo menos uma entrada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mudancas_com_palavras_internas",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · entradas com «recibos» ou «cartões»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado apanha «saíram dos recibos» numa entrada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_seccao_por_lugar",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · id=\"por-lugar\" em EstudosView.astro@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a secção",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_com_sigla_por_verificar",
+      "valor": 2,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «por extenso da sigla permanece » em figuras.mjs@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "vistas_com_o_rotulo_no_topo",
+      "valor": 1,
+      "comando": "git grep -l onde=\"topo\" d3481ba9 -- src",
+      "conhecido_positivo": {
+        "o_que": "o mesmo grep encontra EstudoView.astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibo_valor_e_unidade_colados",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «</span><span class=\"campo-valor» sem espaço, em paginas/livro-razao_…_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão encontra o par colado na cópia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_do_concelho",
+      "valor": 8,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · <article class=\"cartao-medida\"> em paginas/municipios_mourao_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta pelo menos um cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_do_concelho_com_regua",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · class=\"cartao-medida-regua\" na mesma cópia",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a régua do índice de dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metodo_frase_da_cor",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «âmbar quando o valor está fora dele» em metodo.mjs@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metodo_frase_do_base",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «Uma fonte, o Portal BASE» em metodo.mjs@d3481ba9",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador encontra a frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_ine",
+      "valor": "880d30d8632f3e50aed26c93a527426dcb48e192097665693df7ed69f05400e5",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/r1-2026-09-23/paginas/ine_destaque-pde-771939216.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ine_divida_2025",
+      "valor": "89,2",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «terá diminuído para N% do PIB» no destaque do INE copiado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha «89,2» numa frase de mentira com essa forma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ine_divida_2024",
+      "valor": "93,0",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «(N% no ano anterior)» na mesma frase",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha «93,0» na frase de mentira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ine_saldo_2025",
+      "valor": "0,7",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «o que correspondeu a N% do PIB» no destaque copiado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha «0,7» na frase de mentira",
+        "encontrado": true
+      }
+    }
+  ]
+}
