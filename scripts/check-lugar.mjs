@@ -77,6 +77,7 @@ import { VERBATIM } from '../src/data/verbatim.mjs';
 import { ANCORA_DA_POLITICA } from '../src/data/politica-ia.mjs';
 import { temRegisto } from '../src/lib/registos.mjs';
 import { documentosDoEstudo } from '../src/lib/documentos.mjs';
+import { portasObrigatoriasB2 } from './portas-b2.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -225,6 +226,18 @@ const TETOS = {
      que corre esta régua com `AMOSTRA` alta e compara a lista com a da
      construção da cabeça de partida; a medição fica em `l1-r1.json`, que o
      registo dos tetos aponta. O horizonte continua a zero. */
+  /* SOBE DE 2 279 PARA 2 291 a 23.09.2026 (bloco B2). A composição
+     independente em `design/especime-v3/medicoes/b2-2026-09-23/l1-b2-trabalho.json`
+     encontra apenas as 12 páginas das seis linhas novas, nas duas edições,
+     com os pares já existentes nos recibos. Não entrou outra página nem se
+     agravou uma página antiga. O horizonte continua a zero.
+
+     As portas obrigatórias do veredicto e da contagem das câmaras só ficam
+     fora da L1 depois de V1 e V2 conferirem valores, nomes, ordem e destinos.
+     `portas-b2.mjs` devolve os nós concretos conferidos. A fonte do limite e
+     qualquer âncora extra continuam no contador, mesmo dentro do cartão.
+     `tests/pais/l1-b2.mjs` planta repetição, destino alterado e portas extras
+     dentro e fora dos blocos, e exige a reposição do HTML e o portão limpo. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
@@ -1002,12 +1015,22 @@ for (const ficheiro of paginas) {
   }
 
   /* -------------------------------------------------------------------- L1 */
+  /* B2: as contagens provadas têm portas obrigatórias e cada nome do
+     veredicto abre a medida que nomeia. V1 e V2 conferem primeiro os blocos
+     inteiros, incluindo cada porta e a sua multiplicidade. Só os nós exatos
+     devolvidos depois dessa prova saem da conta; outra âncora dentro ou fora
+     dos blocos continua a ser uma porta de navegação contada pela L1. */
+  const temasB2 = chaveDaRota === 'home'
+    ? parse(fs.readFileSync(path.join(DIST, lang === 'pt' ? 'temas' : 'en/themes', 'index.html'), 'utf8'))
+    : null;
+  const b2 = portasObrigatoriasB2(raiz, chaveDaRota, lang, temasB2);
+  for (const erro of b2.erros) falhas.push(`L1 B2 · ${url}: ${erro}`);
   /* Dois destinos iguais no MESMO ecrã, fora do cabeçalho e do rodapé. O
      fragmento não conta: `#m-x` e `#m-y` são dois sítios da mesma página, e
      `/x#a` e `/x#b` são duas portas para dois sítios da mesma página. */
   const destinos = new Map();
   for (const a of corpo.querySelectorAll('a[href]')) {
-    if (daMobilia.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
+    if (daMobilia.has(a) || b2.portas.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
     const href = a.getAttribute('href') ?? '';
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
     /* O marcador de um campo não confirmado é obrigatório em cada cartão.
@@ -1043,7 +1066,7 @@ for (const ficheiro of paginas) {
   for (const a of cabecalho?.querySelectorAll('#nav-principal a[href]') ?? []) {
     const href = a.getAttribute('href');
     const chave = href.split('#')[0].replace(/\/$/, '') || '/';
-    const gemeas = corpo.querySelectorAll('a[href]').filter(b => !daMobilia.has(b) &&
+    const gemeas = corpo.querySelectorAll('a[href]').filter(b => !daMobilia.has(b) && !b2.portas.has(b) &&
       !!b.getAttribute('href') && !b.getAttribute('href').startsWith('#') &&
       (b.getAttribute('href').split('#')[0].replace(/\/$/, '') || '/') === chave);
     const outras = gemeas.filter(b => b.getAttribute('href').split('#')[0] !== href.split('#')[0]);

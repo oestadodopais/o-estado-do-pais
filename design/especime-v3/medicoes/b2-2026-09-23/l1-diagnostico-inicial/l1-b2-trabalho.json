@@ -1,0 +1,829 @@
+{
+  "cabeca": "b870624c162e656568135cb8444991ca3dd6da6c",
+  "trabalho": true,
+  "estatuto": "árvore de trabalho, sem atribuir a construção a um commit",
+  "dist_construido_de": null,
+  "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+  "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
+  "codigos": {
+    "antes": 0,
+    "depois": 1
+  },
+  "contagens": {
+    "estudos": 2293,
+    "antes": 2279,
+    "entraram": 14,
+    "sairam": 0,
+    "recibos_de_linhas_novas": 12,
+    "outras_entradas": 2,
+    "paginas_antigas_agravadas": 4
+  },
+  "familias": {
+    "antes": {
+      "agenda": 2,
+      "correcoes": 2,
+      "distrito": 58,
+      "dominio": 2,
+      "dominios": 2,
+      "sobre": 2,
+      "uniaoEuropeia": 2,
+      "home": 2,
+      "linha": 1546,
+      "livro": 2,
+      "livroConcelhos": 2,
+      "metodo": 2,
+      "municipio": 616,
+      "lugares": 2,
+      "regiao": 18,
+      "documento": 17,
+      "estudos": 2
+    },
+    "depois": {
+      "agenda": 2,
+      "correcoes": 2,
+      "distrito": 58,
+      "dominio": 2,
+      "dominios": 2,
+      "sobre": 2,
+      "uniaoEuropeia": 2,
+      "home": 2,
+      "linha": 1558,
+      "livro": 2,
+      "livroConcelhos": 2,
+      "metodo": 2,
+      "municipio": 616,
+      "lugares": 2,
+      "regiao": 18,
+      "documento": 17,
+      "estudos": 2,
+      "temas": 2
+    }
+  },
+  "novas_linhas": [
+    "crescimento-da-despesa-liquida-2024",
+    "disparidade-salarial-entre-sexos-2023",
+    "saldo-das-administracoes-publicas-2024",
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"
+  ],
+  "entraram": [
+    {
+      "url": "/en/ledger/crescimento-da-despesa-liquida-2024",
+      "familia": "linha",
+      "destinos": 1,
+      "repetidos": {
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/en/ledger/disparidade-salarial-entre-sexos-2023",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "texto": "Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "texto": "Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/en/ledger/saldo-das-administracoes-publicas-2024",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "texto": "Government deficit/surplus, debt and associated data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "texto": "Government deficit/surplus, debt and associated data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/en/themes",
+      "familia": "temas",
+      "destinos": 1,
+      "repetidos": {
+        "/en/places": {
+          "vezes": 5,
+          "ancoras": [
+            {
+              "href": "/en/places/",
+              "texto": "10",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/en/places/",
+              "texto": "308",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/en/places/",
+              "texto": "297",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/en/places/",
+              "texto": "1",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/en/places/",
+              "texto": "The places →",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": false,
+      "recibo_de_linha_nova": false
+    },
+    {
+      "url": "/livro-razao/crescimento-da-despesa-liquida-2024",
+      "familia": "linha",
+      "destinos": 1,
+      "repetidos": {
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/livro-razao/disparidade-salarial-entre-sexos-2023",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "texto": "Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/earn_gr_gpgr2/default/table?lang=en",
+              "texto": "Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/livro-razao/saldo-das-administracoes-publicas-2024",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "texto": "Government deficit/surplus, debt and associated data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=en",
+              "texto": "Government deficit/surplus, debt and associated data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en",
+              "texto": "Housing cost overburden rate by tenure status - EU-SILC survey",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": true,
+      "recibo_de_linha_nova": true
+    },
+    {
+      "url": "/temas",
+      "familia": "temas",
+      "destinos": 1,
+      "repetidos": {
+        "/lugares": {
+          "vezes": 5,
+          "ancoras": [
+            {
+              "href": "/lugares/",
+              "texto": "10",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/lugares/",
+              "texto": "308",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/lugares/",
+              "texto": "297",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/lugares/",
+              "texto": "1",
+              "classe": "prova-valor",
+              "cartao": null
+            },
+            {
+              "href": "/lugares/",
+              "texto": "Os lugares →",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      },
+      "pagina_nova": false,
+      "recibo_de_linha_nova": false
+    }
+  ],
+  "sairam": [],
+  "paginas_antigas_alteradas": [
+    {
+      "url": "/en",
+      "mudancas": [
+        {
+          "destino": "/en/european-union",
+          "antes": 0,
+          "depois": 3
+        },
+        {
+          "destino": "/en/places",
+          "antes": 0,
+          "depois": 6
+        },
+        {
+          "destino": "/en/themes",
+          "antes": 9,
+          "depois": 13
+        }
+      ]
+    },
+    {
+      "url": "/en/themes",
+      "mudancas": [
+        {
+          "destino": "/en/places",
+          "antes": 0,
+          "depois": 5
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "mudancas": [
+        {
+          "destino": "/lugares",
+          "antes": 0,
+          "depois": 6
+        },
+        {
+          "destino": "/temas",
+          "antes": 9,
+          "depois": 13
+        },
+        {
+          "destino": "/uniao-europeia",
+          "antes": 0,
+          "depois": 3
+        }
+      ]
+    },
+    {
+      "url": "/temas",
+      "mudancas": [
+        {
+          "destino": "/lugares",
+          "antes": 0,
+          "depois": 5
+        }
+      ]
+    }
+  ],
+  "paginas_antigas_agravadas": [
+    {
+      "url": "/en",
+      "mudancas": [
+        {
+          "destino": "/en/european-union",
+          "antes": 0,
+          "depois": 3
+        },
+        {
+          "destino": "/en/places",
+          "antes": 0,
+          "depois": 6
+        },
+        {
+          "destino": "/en/themes",
+          "antes": 9,
+          "depois": 13
+        }
+      ]
+    },
+    {
+      "url": "/en/themes",
+      "mudancas": [
+        {
+          "destino": "/en/places",
+          "antes": 0,
+          "depois": 5
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "mudancas": [
+        {
+          "destino": "/lugares",
+          "antes": 0,
+          "depois": 6
+        },
+        {
+          "destino": "/temas",
+          "antes": 9,
+          "depois": 13
+        },
+        {
+          "destino": "/uniao-europeia",
+          "antes": 0,
+          "depois": 3
+        }
+      ]
+    },
+    {
+      "url": "/temas",
+      "mudancas": [
+        {
+          "destino": "/lugares",
+          "antes": 0,
+          "depois": 5
+        }
+      ]
+    }
+  ],
+  "crescimento_apenas_em_recibos_novos": false,
+  "segundos": 35.996
+}
