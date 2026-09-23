@@ -77,6 +77,7 @@ import CampoDaLinha from './CampoDaLinha.astro';
 import { reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
 import { FIGURAS, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
+import { estadoDaMedida } from '../lib/estado.mjs';
 
 const { id, lang = 'pt', s } = Astro.props;
 
@@ -121,6 +122,15 @@ const palavra =
         : null;
 
 const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
+/* O ESTADO, PELA COR QUE O MÉTODO PROMETE (bloco R1, 23.09.2026, I139). «Âmbar
+   quando o valor está fora dele, cobalto quando está dentro»: a página europeia
+   já o fazia no cartão da faixa, com o quadrado e a palavra pintada, e é essa a
+   forma que este cartão passa a usar, com as mesmas classes e sem mudar uma
+   palavra. O estado sai de `estadoDaMedida()`, a mesma função da faixa, que lê o
+   valor da linha contra o valor de referência declarado; «acima» e «abaixo»
+   continuam a ser a direção, e o veredicto em palavras é do B2. */
+const estado = limiar ? estadoDaMedida(getClaim(id), limiar) : null;
+const pintado = estado === 'fora' || estado === 'dentro';
 ---
 
 {
@@ -174,8 +184,9 @@ const temAlgumaCoisa = temRegua(regua) || Boolean(palavra);
           `limiar-do-quadro` do registo, que é a dispensa com que ele entra na
           página, e é o mesmo que a peça e o cartão da faixa já usam. */}
       {palavra && (
-        <span class="cartao-medida-regua-item" data-regua="referencia">
-          <span data-voz>{palavra}</span>
+        <span class="cartao-medida-regua-item" data-regua="referencia" data-estado={pintado ? estado : undefined}>
+          {pintado && <span class={`sq sq-${estado}`} aria-hidden="true" />}
+          <span data-voz class:list={[pintado && `est-${estado}`]}>{palavra}</span>
           {/* O VALOR ENTRE PARÊNTESES É UM SÓ FILHO, E ISSO É UMA CORREÇÃO
               MEDIDA (achado do lugar de direção às capturas, 15.09.2026). O
               leitor lia «acima do valor de referência ( 9 %)», com dois espaços
