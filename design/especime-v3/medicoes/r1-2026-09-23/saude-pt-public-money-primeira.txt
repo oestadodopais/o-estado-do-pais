@@ -1,0 +1,22 @@
+2026-09-23T10:42:52Z
+[PASS] prr: live snapshot discovery                             0.3s  snapshot 2026-09-22: listagem-de-projetos-prr-20260922.xlsx, listagem-de-projetos-prr-por-distribuicao-geografica-260922.xlsx, listagem-de-entidades-prr-20260922.xlsx
+[FAIL] prr: index built from live XLSX                          0.0s  --fast given but no index exists yet; run once without --fast
+[PASS] prr: Évora promised-vs-actual                           81.9s  2,339 project locations; approved €169,136,743.24 / paid €89,926,769.47 (53.17% executed), both sourced; 1463 on time (1027 of them dated exactly on plan) / 223 late / 632 overdue (€121,472,312) / 21 not yet due; largest: C07-i02.01 €29,684,100.97
+[PASS] prr: ADVERSARIAL two routes agree on the money           0.0s  manager-layer route €169,136,743.24 vs share-column route €169,135,578.93 — delta €1,164.31, within tolerance €16,913.67 (4-dp share rounding)
+[PASS] prr: ADVERSARIAL attribution layer reconciles exactly    1.7s  manager layer over all 402,950 projects: 0 approved / 0 paid mismatches, 0 row-count differences — exact decomposition; and perc_valor_pago still has 1 distinct value across 01/C05-i11/2024.PC645808870-00000067's 44 locations (still the trap, still unused)
+[PASS] prr: ADVERSARIAL recipient layers do not double-count    0.0s  manager layer paid €89,926,769.47 reconciles to the concelho total €89,926,769.47; recipient layer €59,227,999.27 (5 of 1,840 shown, gap = directly-contracted projects); top actual recipient: 'UNIVERSIDADE DE ÉVORA' €15,156,212.99
+[PASS] prr: ADVERSARIAL localizacao_sede is not a seat          0.4s  NIF 501373357 (IAPMEI) carries 303 distinct localizacao_sede values and 4,503 NIFs have more than one — confirms it is the PROJECT's location, not a company address
+[PASS] crosswalk: Évora across sources                          2.4s  Évora = Carta DICO 0705 (Évora); PRR 'Évora' cd_concelho 0705; NUTS3 187 (2013) bridged by name 'Alentejo Central' to PT1C4 (EU 2021); Portal BASE fell on 2026-09-16, no BASE id
+[PASS] crosswalk: all 308 concelhos reconciled                  0.1s  308/308 of the Carta's codes in the PRR index, 0 residual either way; Portal BASE fell on 2026-09-16 and is no longer a reference list
+[PASS] crosswalk: ADVERSARIAL ambiguous name warns              0.0s  'Lagoa' and 'Calheta' both return an explicit ambiguity warning listing every municipality the name reaches; the PRR's 'Vila da Praia da Vitória' resolves by its code to the Carta's 'Praia da Vitória'
+[PASS] base: a fonte caiu a 16.09.2026, nenhum pedido           0.0s  refused before any request (0 tried to leave): Portal BASE fell on 2026-09-16; a fonte 'Portal BASE — public contracts (IMPIC)' caiu a 2026-09-16: decisão do diretor de …
+[PASS] cohesion: PT vs peers, draw-down                         0.2s  PT planned €31,969,586,905, spent €6,176,264,622 (19.32%); ranking by draw-down: EL 25.85%, PT 19.32%, IT 17.32%, ES 14.29%
+[PASS] cohesion: ADVERSARIAL double-count guard bites           0.3s  PT spend with is_latest_tod_cycle='Y' = €6,176,264,622; without it €21,260,266,398 (3.4x inflated) — guard is load-bearing
+[PASS] cohesion: Kohesio projects in Évora's NUTS3              0.5s  2,569 EU projects in PT1C4; largest: 'ADMINISTRAÇÃO REGIONAL DE SAUDE DO ALENTEJO, I.P.' — 'Construction of the Alentejo Central Hospital – External Consultations' €48142080.44 (ERDF); periods {'2014-2020': 2569} — 2014-2020 ONLY, not comparable with the 2021-2027 cycle or PRR; NUTS3 only, no concelho field
+[PASS] findings: qualifier auto-applied to EU source            0.0s  PRR (government) unqualified; EU Cohesion auto-qualified: ...'4 compared states on draw-down [intergovernmental source (e.g. EU/OECD)]'
+[PASS] server: tool surface enforces §11                        0.3s  5 tools registered (eu_cohesion_compare, eu_projects_in_region, pt_contracts_concelho, pt_prr_beneficiaries, pt_prr_concelho); store-writing set DERIVED from server.py's call graph, not hardcoded: ['eu_cohesion_compare', 'pt_contracts_concelho', 'pt_prr_concelho'] — all require `question` (non-writing: ['eu_projects_in_region', 'pt_prr_beneficiaries'])
+[PASS] store: Évora observations recorded                       0.0s  2 observations recorded against one question; PRR key has 1 snapshot(s) — time series ready
+
+16/17 checks passed.
+codigo 1
+2026-09-23T10:44:20Z

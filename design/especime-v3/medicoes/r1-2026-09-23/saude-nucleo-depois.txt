@@ -1,0 +1,11 @@
+2026-09-23T10:51:14Z
+59c8621 O Portal BASE cai no motor: a fonte marcada caída a 16.09.2026, e nenhum pedido sai
+[FAIL] tls+http: certifi handshake                            275.0s  EXCEPTION: RuntimeError: GET https://cordis.europa.eu/api/search/results failed after 3 tries: HTTPSConnectionPool(host='cordis.europa.eu', port=443): Read timed out. (read timeout=90.0)
+[PASS] ine: one live request, uncached (Evora)                  3.4s  INE returned municipal data for Évora in 3.4s, live and uncached (keys=['Março de 2026'])
+[PASS] portal_base: a fonte caiu a 16.09.2026, nenhum pedido    0.0s  Portal BASE caído a 2026-09-16, recusado pelo cliente antes de qualquer pedido: a fonte 'Portal BASE — public contracts (IMPIC)' caiu a 2026-09-16: decisão do diretor de 16.09.2026 (a emenda dessa man…
+[PASS] provenance: structural invariant                         0.0s  empty-source rejected; qualifier applied: 'X spent 1M [independent foundation, not a government record]'
+[PASS] store: append-only time series                           0.0s  2 observations recorded, change detected=True
+
+4/5 checks passed.
+codigo 1
+2026-09-23T10:55:52Z
