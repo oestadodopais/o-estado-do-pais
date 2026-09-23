@@ -1,0 +1,12 @@
+{
+  "comando": [
+    "node",
+    "scripts/gate-html.mjs"
+  ],
+  "codigo": 0,
+  "inicio": "2026-09-23T20:00:36.976281+00:00",
+  "fim": "2026-09-23T20:01:14.394679+00:00",
+  "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+  "log": "correcao-html-limpo.log",
+  "sha256_log": "ab1fd80a800410224f691df7118ec5f68113ee403ad07521aad6fde1943f87be"
+}

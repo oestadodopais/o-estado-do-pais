@@ -1,0 +1,758 @@
+{
+  "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+  "inicio": "2026-09-23T20:04:39.948Z",
+  "fim": "2026-09-23T20:05:03.984Z",
+  "limpas": [
+    {
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "pt",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "temas",
+      "lingua": "en",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "pt",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 30
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "pt",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 38.4
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "pt",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 46
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "pt",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 46
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "pt",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 46
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "en",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 30
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "en",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 38.4
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "en",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 46
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "en",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 46
+      },
+      "falhas": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "en",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 46
+      },
+      "falhas": []
+    }
+  ],
+  "estragadas": [
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 26
+      },
+      "falhas": [
+        "/uniao-europeia/: wordmark 26.112 px, H1 26 px"
+      ]
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 32.768
+      },
+      "falhas": [
+        "/uniao-europeia/: wordmark 34 px, H1 32.768 px"
+      ]
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 26
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 40
+      },
+      "falhas": []
+    }
+  ],
+  "repostas": [
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 390,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 24
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 28
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 768,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 26.112
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 33.792
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1024,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1280,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "largura": 1600,
+      "wordmark": {
+        "elemento": "p",
+        "tamanho": 34
+      },
+      "h1": {
+        "quantidade": 1,
+        "tamanho": 42
+      },
+      "falhas": []
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "b2-titulo-europeu-anterior",
+      "comando": "node tests/inicio/hierarquia-b2.mjs",
+      "codigo": 1,
+      "mordida": "wordmark maior ou igual ao H1 nas duas edições a 768 e 1024",
+      "passou": false,
+      "casos": [
+        {
+          "familia": "europeia",
+          "lingua": "pt",
+          "largura": 768,
+          "wordmark": {
+            "elemento": "p",
+            "tamanho": 26.112
+          },
+          "h1": {
+            "quantidade": 1,
+            "tamanho": 26
+          },
+          "falhas": [
+            "/uniao-europeia/: wordmark 26.112 px, H1 26 px"
+          ]
+        },
+        {
+          "familia": "europeia",
+          "lingua": "pt",
+          "largura": 1024,
+          "wordmark": {
+            "elemento": "p",
+            "tamanho": 34
+          },
+          "h1": {
+            "quantidade": 1,
+            "tamanho": 32.768
+          },
+          "falhas": [
+            "/uniao-europeia/: wordmark 34 px, H1 32.768 px"
+          ]
+        }
+      ]
+    }
+  ]
+}

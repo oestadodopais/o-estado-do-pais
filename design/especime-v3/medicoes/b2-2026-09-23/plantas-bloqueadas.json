@@ -1,19 +1,44 @@
 {
-  "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
-  "estatuto": "não executadas na cabeça final; exigem o portão de HTML limpo antes e depois da planta",
+  "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+  "estatuto": "executadas, com base limpa e reposição conferida",
   "portao": "node scripts/gate-html.mjs",
-  "base_codigo": 1,
-  "base_log": "portoes/build.log",
-  "base_sha256_log": "60c92cc093a7391106ebaa359c4c69db494c1c5d5a5139859b651e23e7d7d092",
-  "razao": "O portão de HTML fecha na associação do agregado europeu dos inquilinos ao recibo principal. Não se confunde essa base vermelha com a mordida de um estrago novo.",
+  "base": {
+    "comando": [
+      "node",
+      "scripts/gate-html.mjs"
+    ],
+    "codigo": 0,
+    "inicio": "2026-09-23T20:00:36.976281+00:00",
+    "fim": "2026-09-23T20:01:14.394679+00:00",
+    "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+    "log": "correcao-html-limpo.log",
+    "sha256_log": "ab1fd80a800410224f691df7118ec5f68113ee403ad07521aad6fde1943f87be"
+  },
+  "reposicao": {
+    "comando": [
+      "node",
+      "scripts/gate-html.mjs"
+    ],
+    "codigo": 0,
+    "inicio": "2026-09-23T20:02:32.177363+00:00",
+    "fim": "2026-09-23T20:03:08.271341+00:00",
+    "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+    "log": "correcao-html-reposto.log",
+    "sha256_log": "ab1fd80a800410224f691df7118ec5f68113ee403ad07521aad6fde1943f87be"
+  },
   "casos": [
     {
       "nome": "b2-contagens-das-camaras",
-      "executada": false
+      "executada": true,
+      "mordida_provada": true,
+      "registo": "plantas-portoes-b2-contagens-das-camaras.json"
     },
     {
       "nome": "b2-selo-do-cartao",
-      "executada": false
+      "executada": true,
+      "mordida_provada": true,
+      "registo": "plantas-portoes-b2-selo-do-cartao.json"
     }
-  ]
+  ],
+  "diagnostico_anterior": "correcao/plantas-bloqueadas.json"
 }

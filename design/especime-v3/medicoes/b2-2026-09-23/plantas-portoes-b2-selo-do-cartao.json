@@ -1,0 +1,31 @@
+[
+  {
+    "nome": "b2-selo-do-cartao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "divida-publica-2025\" aparece sem selo para a sua própria linha na forma do cartão",
+      "saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha na forma do cartão",
+      "precos-da-habitacao-2025\" aparece sem selo para a sua própria linha na forma do cartão",
+      "mourao-divida-dgal-2024\" aparece sem selo para a sua própria linha na forma do cartão"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "d6a7d4062bb61d7cf0f07418da061af5484c4780b3a5b41d9c1bc4d00f01f3b1",
+        "reposto": "d6a7d4062bb61d7cf0f07418da061af5484c4780b3a5b41d9c1bc4d00f01f3b1"
+      },
+      {
+        "ficheiro": "dist/municipios/mourao/index.html",
+        "antes": "b0ab8b35f8b730a4852acb84c4392b75914413d1488075c861e29c4d37a8e2fb",
+        "reposto": "b0ab8b35f8b730a4852acb84c4392b75914413d1488075c861e29c4d37a8e2fb"
+      },
+      {
+        "ficheiro": "dist/en/themes/index.html",
+        "antes": "945bd360ced30548eab26bc6aea8ac329396310ac737d5dc92e1d5d7c4f8960a",
+        "reposto": "945bd360ced30548eab26bc6aea8ac329396310ac737d5dc92e1d5d7c4f8960a"
+      }
+    ]
+  }
+]

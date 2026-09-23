@@ -1,0 +1,14 @@
+{
+  "comando": [
+    "node",
+    "tests/pais/portoes.mjs",
+    "--only",
+    "b2-selo-do-cartao"
+  ],
+  "codigo": 0,
+  "inicio": "2026-09-23T20:01:54.907951+00:00",
+  "fim": "2026-09-23T20:02:32.176686+00:00",
+  "cabeca": "0ae843f152d2f80a4e16e44b98a2270993c99c9b",
+  "log": "correcao-b2-selo-do-cartao.log",
+  "sha256_log": "22c03fcd2aafc0816b30c58b9db1ab760544e035a3ab1548e22dcea835766ab7"
+}

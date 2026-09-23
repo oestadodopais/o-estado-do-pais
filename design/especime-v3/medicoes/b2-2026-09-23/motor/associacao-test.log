@@ -1,0 +1,12 @@
+B2: as observações novas têm os valores e períodos declarados
+B2 associação: controlo positivo, declaração inicial só no agregado da medida existente
+B2 associação: planta recusada, outro quadro: Associação UE: quadro divergente: PT 'TESSI164', UE 'TESSI165'
+B2 associação: planta recusada, outro regime: Associação UE: regime divergente: PT 'RENT_MKT', UE 'OWN_L'
+B2 associação: planta recusada, outra unidade: Associação UE: unidade divergente: PT 'PC', UE 'PC_POP'
+B2 associação: planta recusada, outro período: Associação UE: período divergente: PT '2025', UE '2024'
+B2: planta recusada, regime de outra série
+B2: planta recusada, excerto sem regime
+B2: planta recusada, título de outro quadro
+B2: planta recusada, bandeira omitida
+B2: construção limpa igual depois das plantas
+DOMINIOS_B2_TEST: PASS, 11 conferências
