@@ -37,10 +37,12 @@ export const LINHAS_DA_LEITURA_DO_PAIS = [
 export function temasDoPais(lang, resumo = false) {
   return DOMINIOS.map(d => {
     const ids = [...new Set(Object.keys(DOMINIO_DAS_MEDIDAS)
+      .filter(id => id !== 'indice-de-divida-limite-legal')
       .filter(id => DOMINIO_DAS_MEDIDAS[id] === d.slug).map(id => MEDIDA_REUNIDA[id] ?? id))];
     const todas = ids.map(id => getClaim(id));
     return { slug: d.slug, nome: d.nome[lang], medidas: resumo
-      ? todas.filter(c => !CITADAS_NA_LEITURA.includes(c.id)).slice(0, 4) : todas };
+      /* A contagem das câmaras ocupa o lugar do antigo cartão do limite legal. */
+      ? todas.filter(c => !CITADAS_NA_LEITURA.includes(c.id)).slice(0, d.slug === 'economia-e-financas-publicas' ? 3 : 4) : todas };
   }).filter(d => d.medidas.length);
 }
 /** @param {'pt'|'en'} lang */

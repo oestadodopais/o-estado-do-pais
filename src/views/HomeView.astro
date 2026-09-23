@@ -10,7 +10,12 @@ import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import Provenance from '../components/Provenance.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
-import { concelhos } from '../lib/inicio.mjs';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
+import { FIGURAS_PDM } from '../data/figuras.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { estadoDaMedida } from '../lib/estado.mjs';
+import { prova } from '../lib/prova.mjs';
 import { estudosRecentes } from '../lib/pais.mjs';
 import { mudancasDoPais } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -28,11 +33,23 @@ const r = ROTULOS_B1[lang];
 const path = routePath('home', lang);
 const recentes = estudosRecentes(lang).slice(0, 3);
 const mudou = mudancasDoPais(lang);
+const p = prova(lang);
+const medidasDoPainel = FIGURAS_PDM.map(f => {
+  const linha = getClaim(f.claim);
+  return { ...f, linha, estado: estadoDaMedida(linha, f.limiar) };
+});
+const lede = ledeDoPainel(medidasDoPainel, s.inicio.cabeca.ledePais, lang);
+const v = s.home.veredicto;
 ---
 <Base lang={lang} path={path} title={s.home.metaTitle} description={s.home.metaDescription}>
   <Masthead slot="masthead" lang={lang} path={path} />
   <div class="pais-cabeca">
-    <LeituraDoPais lang={lang} />
+    <div class="pais-texto">
+      <p class="pais-leitura pais-veredicto" data-veredicto-pais>
+        {v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={`${routePath('temas', lang)}#m-${m.claim}`}>{m.nome}</a></>)}</span></>}{v.fecha}
+      </p>
+      <LeituraDoPais lang={lang} />
+    </div>
     <div class="pais-mapa">
       <MapaRespira s={s} lang={lang} concelhos={concelhos()} portaLugares />
       <LegendaDoMapa />

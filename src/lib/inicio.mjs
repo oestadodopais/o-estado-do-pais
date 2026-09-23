@@ -342,13 +342,21 @@ export function nomeEmFrase(nome) {
  * @param {MedidaDoPainel[]} medidas  as peças do painel, já com `estado` e `linha`
  * @param {GramaticaDoLede} gramatica  `s.inicio.cabeca.ledePais` da edição
  * @param {'pt'|'en'} lang
- * @returns {{ itens: string[], nomes: string[], ano: string|null, cauda: any[] } | null}
+ * @returns {{ itens: string[], nomes: string[], referencias: { claim: string, nome: string }[], ano: string|null, cauda: any[] } | null}
  */
 export function ledeDoPainel(medidas, gramatica, lang) {
   const fora = medidas.filter((m) => m.estado === 'fora');
   if (fora.length === 0) return null;
 
   const nomes = fora.map((m) => nomeEmFrase(m.nome[lang] ?? m.nome.pt));
+
+  /* B2: a mesma seleção dá as portas e a forma frásica do veredicto do país.
+     Os artigos e a forma aprovada de um nome vivem junto da medida, nunca
+     numa segunda lista da vista. A lede europeia conserva os seus nomes. */
+  const referencias = fora.map((m, i) => ({
+    claim: m.claim,
+    nome: m.nomeNoVeredicto?.[lang] ?? nomes[i],
+  }));
 
   /* Os itens já com os separadores pelo meio, para que o gabarito os renda como
      uma lista de pedaços adjacentes e não tenha de decidir nada: um espaço a
@@ -374,6 +382,7 @@ export function ledeDoPainel(medidas, gramatica, lang) {
   return {
     itens,
     nomes,
+    referencias,
     ano,
     cauda: ano ? [gramatica.ano, { ref: ano }, gramatica.fecha] : [gramatica.fecha],
   };

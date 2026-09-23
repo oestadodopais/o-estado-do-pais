@@ -1,0 +1,68 @@
+/** B2: conferência independente do cartão da contagem das câmaras.
+ * Lê as linhas em YAML e compara cada índice com a linha do limite. A vista
+ * não fornece nem a conta nem a frase que se espera encontrar. */
+import fs from 'node:fs';
+import path from 'node:path';
+import { load } from 'js-yaml';
+import { parse } from 'node-html-parser';
+import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
+const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
+const lerLinha = id => load(fs.readFileSync(path.join(process.cwd(), 'ledger/claims', `${id}.yml`), 'utf8'));
+const numero = v => Number(String(v).replace(/[\s\u00a0]/g, '').replace(/\u2212/g, '-').replace(',', '.'));
+export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
+  const erros = [];
+  const falha = s => erros.push(`V2 ${lang}: ${s}`);
+  const limite = linha('indice-de-divida-limite-legal');
+  const teto = numero(limite.value);
+  const valores = MUNICIPIOS_COM_PAGINA.map(m => numero(linha(m.distancia.indice).value));
+  const contagens = {
+    camaras_acima_do_limite: valores.filter(v => Number.isFinite(v) && v > teto).length,
+    municipios_com_pagina: valores.length,
+    camaras_dentro_do_limite: valores.filter(v => Number.isFinite(v) && v <= teto).length,
+    camaras_sem_valor: valores.filter(v => !Number.isFinite(v)).length,
+  };
+  const cartoes = doc.querySelectorAll('main [data-cartao-camaras]');
+  if (cartoes.length !== 1) {
+    falha(`a página tem ${cartoes.length} cartões das câmaras; tem de ter um.`);
+    return erros;
+  }
+  const c = cartoes[0];
+  if (c.closest('[data-tema]')?.getAttribute('data-tema') !== 'economia-e-financas-publicas')
+    falha('o cartão das câmaras não está no tema da economia e finanças públicas.');
+  if (c.hasAttribute('data-cartao-medida')) falha('uma contagem aparece como linha publicada.');
+  const ordem = c.parentNode.querySelectorAll('[data-cartao-medida], [data-cartao-camaras]');
+  if (ordem[ordem.length - 1] !== c) falha('o cartão das câmaras não fecha a fila do tema.');
+  const provas = c.querySelectorAll('[data-prova]');
+  if (JSON.stringify(provas.map(n => n.getAttribute('data-prova'))) !== JSON.stringify(Object.keys(contagens)))
+    falha('as chaves da contagem das câmaras não são as declaradas, pela ordem da frase.');
+  const porta = lang === 'pt' ? '/lugares/' : '/en/places/';
+  for (const [chave, valor] of Object.entries(contagens)) {
+    const el = provas.find(n => n.getAttribute('data-prova') === chave);
+    if (!el || normal(el.textContent) !== String(valor)) falha(`${chave}: a contagem não coincide com as linhas do índice de dívida.`);
+    if (el?.tagName !== 'A' || el.getAttribute('href') !== porta) falha(`${chave}: falta a porta para os lugares.`);
+  }
+  const legal = c.querySelectorAll('[data-claim]');
+  if (legal.length !== 1 || legal[0].getAttribute('data-claim') !== limite.id || normal(legal[0].textContent) !== limite.value)
+    falha('o limite não é o valor selado da sua linha.');
+  const selo = c.querySelectorAll('.src-chip');
+  if (selo.length !== 1 || selo[0].getAttribute('href') !== `${lang === 'pt' ? '/livro-razao' : '/en/ledger'}/${limite.id}`)
+    falha('falta a marca da fonte da linha do limite.');
+  const nome = lang === 'pt' ? 'Câmaras com a dívida acima do limite legal' : 'Councils with debt above the legal limit';
+  if (normal(c.querySelector('.cartao-medida-nome')?.textContent) !== nome) falha('o título do cartão difere do aprovado.');
+  const regua = c.querySelector('[data-camaras-regua]');
+  const copia = regua ? parse(regua.outerHTML) : null;
+  copia?.querySelectorAll('.src-chip').forEach(n => n.remove());
+  const esperado = lang === 'pt'
+    ? `de ${contagens.municipios_com_pagina} câmaras; ${contagens.camaras_dentro_do_limite} dentro do limite legal (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} sem valor publicado`
+    : `of ${contagens.municipios_com_pagina} councils; ${contagens.camaras_dentro_do_limite} within the legal limit (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} with no published value`;
+  if (normal(copia?.textContent) !== esperado) falha('a régua difere das contagens e do limite lidos nas linhas.');
+  const valorEsperado = `${contagens.camaras_acima_do_limite} ${lang === 'pt' ? 'câmaras' : 'councils'}`;
+  if (normal(c.querySelector('.cartao-medida-valor')?.textContent) !== valorEsperado) falha('o valor principal ou a unidade da contagem difere.');
+  const textoDaPorta = lang === 'pt' ? 'Os lugares →' : 'The places →';
+  const portas = c.querySelectorAll('.pais-porta-tema a');
+  if (portas.length !== 1 || portas[0].getAttribute('href') !== porta || normal(portas[0].textContent) !== textoDaPorta)
+    falha('a porta final não abre os lugares com o nome aprovado.');
+  if (doc.querySelector('main [data-cartao-medida="indice-de-divida-limite-legal"]'))
+    falha('o limite legal voltou a aparecer como uma medida do país.');
+  return erros;
+}

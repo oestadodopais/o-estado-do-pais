@@ -381,12 +381,14 @@ interface ContextoDoRegisto {
 /**
  * Uma peça do painel, como a primeira página e o cartão a compõem.
  *
- * São os três campos que `ledeDoPainel()` lê, e mais nenhum: quem constrói a
- * peça traz outros, e esta função não os toca.
+ * Os campos que `ledeDoPainel()` lê: a identidade permite ligar cada nome ao
+ * cartão e a forma frásica guarda os artigos do veredicto junto da medida.
  */
 interface MedidaDoPainel {
+  claim: string;
   estado: string | null;
   nome: ParDeLinguas;
+  nomeNoVeredicto?: Partial<ParDeLinguas>;
   linha?: Linha | null;
 }
 

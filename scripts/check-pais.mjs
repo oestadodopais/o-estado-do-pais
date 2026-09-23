@@ -7,7 +7,7 @@ import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
-import { FIGURAS } from '../src/data/figuras.mjs';
+import { REFERENCIAS_DAS_MEDIDAS } from '../src/data/referencias-das-medidas.mjs';
 import { WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
@@ -15,6 +15,8 @@ import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
+import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
+import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const erros = [];
@@ -31,7 +33,9 @@ const ids = Object.keys(DOMINIO_DAS_MEDIDAS);
 const desempregos = ['taxa-de-desemprego-2025', 'taxa-de-desemprego-mip-2025'].map(linha);
 if (desempregos[0].value !== desempregos[1].value || desempregos[0].unit !== desempregos[1].unit || desempregos[0].reference_date !== desempregos[1].reference_date)
   erros.push('T0: as duas linhas de desemprego deixaram de ser a mesma medida.');
-const reunidas = ids.filter(id => id !== 'taxa-de-desemprego-2025');
+/* A tabela também serve o domínio legado; a linha da lei não é uma medição
+   do país e o B2 substitui o seu cartão pela contagem provada das câmaras. */
+const reunidas = ids.filter(id => id !== 'taxa-de-desemprego-2025' && id !== 'indice-de-divida-limite-legal');
 for (const [id, tema] of Object.entries(DOMINIO_DAS_MEDIDAS)) {
   if (!temas.has(tema)) erros.push(`T1: ${id} sem tema válido na tabela.`);
   linha(id);
@@ -240,6 +244,9 @@ let registosMedidos = 0;
 for (const lang of ['pt', 'en']) {
   const home = le(lang === 'pt' ? '' : 'en');
   const indice = le(lang === 'pt' ? 'temas' : 'en/themes');
+  /* V1, B2: a frase do veredicto contra a leitura independente das linhas,
+     das referências e dos nomes; as portas têm de abrir os cartões certos. */
+  erros.push(...verificaVeredictoDoPais(home, indice, lang, linha));
   for (const [nome, doc, declarado] of [['país', home, t(lang).home], ['temas', indice, t(lang).temas]]) {
     for (const [seletor, esperado] of [
       ['head title', declarado.metaTitle], ['head meta[property="og:title"]', declarado.metaTitle],
@@ -266,6 +273,7 @@ for (const lang of ['pt', 'en']) {
     if (!leitura?.querySelector(`a.src-chip[href="${href}"]`)) erros.push(`L3 ${lang}: a leitura perdeu o recibo ${id}.`);
   }
   for (const [nome, doc, resumo] of [['país', home, true], ['temas', indice, false]]) {
+    erros.push(...verificaCartaoDasCamaras(doc, lang, linha));
     const cards = doc.querySelectorAll('main [data-cartao-medida]');
     const vistos = new Set();
     for (const c of cards) {
@@ -282,10 +290,17 @@ for (const lang of ['pt', 'en']) {
     if (grupos.length !== esperados.length || esperados.some(t => !grupos.some(g => g.getAttribute('data-tema') === t))) erros.push(`T6 ${lang} ${nome}: conjunto de temas diferente da tabela.`);
     for (const g of grupos) {
       const slug = g.getAttribute('data-tema');
-      const n = g.querySelectorAll('[data-cartao-medida]').length;
+      const n = g.querySelectorAll('[data-cartao-medida], [data-cartao-camaras]').length;
       if (!n || (resumo && n > 4)) erros.push(`T7 ${lang}: fila vazia ou demasiado longa em ${slug}.`);
       if (!resumo && g.id !== slug) erros.push(`T8 ${lang}: âncora de tema em falta.`);
       if (resumo && !g.querySelector(`a[href="${caminho(lang, '/temas/', '/en/themes/')}#${slug}"]`)) erros.push(`T8 ${lang}: porta do tema em falta.`);
+      /* B2: a habitação começa pelo regime que a fonte manda distinguir;
+         o total de todos os regimes vem imediatamente a seguir. */
+      if (slug === 'habitacao') {
+        const primeiras = g.querySelectorAll('[data-cartao-medida]').slice(0, 2).map(c => c.getAttribute('data-cartao-medida'));
+        const esperadas = ['sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025', 'sobrecarga-do-custo-da-habitacao-2025'];
+        if (JSON.stringify(primeiras) !== JSON.stringify(esperadas)) erros.push(`T10 ${lang} ${nome}: a habitação não abre com os inquilinos a preço de mercado, seguidos do total.`);
+      }
     }
   }
   /* T9 · A COR DO ESTADO NOS CARTÕES COM VALOR DE REFERÊNCIA (bloco R1,
@@ -311,7 +326,7 @@ for (const lang of ['pt', 'en']) {
   for (const [nome, doc] of [['país', home], ['temas', indice]]) {
     for (const c of doc.querySelectorAll('main [data-cartao-medida]')) {
       const id = c.getAttribute('data-cartao-medida');
-      const f = FIGURAS.find(x => x.claim === id);
+      const f = REFERENCIAS_DAS_MEDIDAS.get(id);
       const item = c.querySelector('[data-regua="referencia"]');
       const cores = c.querySelectorAll('.sq-fora, .sq-dentro, .est-fora, .est-dentro').length;
       if (!f?.limiar) {

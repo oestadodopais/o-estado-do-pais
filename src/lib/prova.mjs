@@ -50,6 +50,8 @@ import {
   TIPOS_DE_DOCUMENTO,
   documentoDaLinha,
   listaDaLinha,
+  parsePtNumber,
+  eValorTextual,
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
 import { estadoDaMedida } from './estado.mjs';
@@ -528,6 +530,18 @@ const FRASES = {
     pt: 'concelhos',
     en: 'concelhos',
   },
+  camaras_acima_do_limite: {
+    pt: 'câmaras cujo índice de dívida publicado é superior ao limite legal',
+    en: 'councils whose published debt index exceeds the legal limit',
+  },
+  camaras_dentro_do_limite: {
+    pt: 'câmaras cujo índice de dívida publicado não excede o limite legal',
+    en: 'councils whose published debt index does not exceed the legal limit',
+  },
+  camaras_sem_valor: {
+    pt: 'câmaras cuja fonte não publica um valor numérico do índice de dívida',
+    en: 'councils whose source publishes no numeric debt index',
+  },
   concelhos_linhas: {
     pt: 'linhas do livro-razão do estudo dos concelhos',
     en: 'ledger rows of the municipalities study',
@@ -677,6 +691,35 @@ for (const a of AREAS) {
  * Todos os números que o sítio diz sobre si próprio, na língua de uma edição.
  * @param {'pt'|'en'} [lang]
  */
+/** B2: uma contagem sobre linhas publicadas, não uma medição nova.
+ * A igualdade pertence a «dentro»; uma marca textual publicada pertence a
+ * «sem valor». Uma linha ausente ou um valor ilegível fecha a construção,
+ * porque não equivale a a fonte declarar que não publica um valor.
+ * @param {Map<string, any>} claims
+ * @param {typeof MUNICIPIOS_COM_PAGINA} municipios
+ */
+export function contagensDasCamaras(claims = loadClaims(), municipios = MUNICIPIOS_COM_PAGINA) {
+  const limite = claims.get('indice-de-divida-limite-legal');
+  const teto = parsePtNumber(limite?.value);
+  if (teto === null) throw new Error('B2 câmaras: falta o valor numérico do limite legal.');
+  const contagens = { camaras_acima_do_limite: 0, camaras_dentro_do_limite: 0, camaras_sem_valor: 0 };
+  const vistos = new Set();
+  for (const municipio of municipios) {
+    const id = municipio.distancia?.indice;
+    const linha = id ? claims.get(id) : null;
+    if (!linha || vistos.has(id)) throw new Error(`B2 câmaras: índice ausente ou repetido em ${municipio.slug}.`);
+    vistos.add(id);
+    if (linha.unit !== limite.unit && linha.unit !== `${limite.unit} (limite legal = ${limite.value})`) throw new Error(`B2 câmaras: o índice de ${municipio.slug} e o limite não têm a mesma unidade.`);
+    const valor = parsePtNumber(linha.value);
+    if (valor === null) {
+      if (!eValorTextual(linha.value)) throw new Error(`B2 câmaras: valor ilegível em ${id}.`);
+      contagens.camaras_sem_valor++;
+    } else if (valor > teto) contagens.camaras_acima_do_limite++;
+    else contagens.camaras_dentro_do_limite++;
+  }
+  return contagens;
+}
+
 export function prova(lang = 'pt') {
   const claims = loadClaims();
   const linhas = [...claims.values()];
@@ -693,6 +736,7 @@ export function prova(lang = 'pt') {
   const registos = contagensDosRegistos(cruzadas.doMotor);
   const verificacao = estadoDaVerificacao();
   const dosConcelhos = contagensDosConcelhos();
+  const camaras = contagensDasCamaras(claims);
   const ag = agenda();
   const atraso = contagensDoAtraso();
 
@@ -832,6 +876,9 @@ export function prova(lang = 'pt') {
       routePath('lugares', lang),
     ),
     municipios_total: k('municipios_total', MUNICIPIOS.length, routePath('lugares', lang)),
+    camaras_acima_do_limite: k('camaras_acima_do_limite', camaras.camaras_acima_do_limite, routePath('lugares', lang)),
+    camaras_dentro_do_limite: k('camaras_dentro_do_limite', camaras.camaras_dentro_do_limite, routePath('lugares', lang)),
+    camaras_sem_valor: k('camaras_sem_valor', camaras.camaras_sem_valor, routePath('lugares', lang)),
 
     /* ---- as 29 unidades da Carta, e os concelhos de cada uma (Emenda 20) ----
        A contagem do índice, e uma por página de distrito. As 30 saem do

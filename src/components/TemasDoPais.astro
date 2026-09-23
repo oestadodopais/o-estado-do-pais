@@ -1,5 +1,6 @@
 ---
 import CartaoDaMedida from './CartaoDaMedida.astro';
+import CartaoDasCamaras from './CartaoDasCamaras.astro';
 import { temasDoPais } from '../lib/pais.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -10,6 +11,9 @@ const Tag = resumo ? 'h3' : 'h2';
 ---
 {temasDoPais(lang, resumo).map(tema => <section class="pais-tema" data-tema={tema.slug} id={tema.slug}>
   <Tag class="pais-tema-k" data-nome="dominios">{tema.nome}</Tag>
-  <div class="pais-cartoes">{tema.medidas.map(linha => <CartaoDaMedida linha={linha} lang={lang} />)}</div>
+  <div class="pais-cartoes">
+    {tema.medidas.map(linha => <CartaoDaMedida linha={linha} lang={lang} />)}
+    {tema.slug === 'economia-e-financas-publicas' && <CartaoDasCamaras lang={lang} />}
+  </div>
   {resumo && <p class="pais-porta-tema"><a href={`${routePath('temas', lang)}#${tema.slug}`}><span>{r.todasAsMedidasA}</span><span data-nome="dominios">{tema.nome}</span>{r.todasAsMedidasB}</a></p>}
 </section>)}

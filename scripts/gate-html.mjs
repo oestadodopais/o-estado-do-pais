@@ -3647,6 +3647,28 @@ function contasDoPortao(claims) {
     return 'dentro';
   };
 
+  /* B2: segunda contagem dos índices municipais contra a linha do limite.
+     Não chama contagensDasCamaras(): lê o livro e classifica cada valor aqui.
+     Uma linha em falta não pode fingir uma ausência publicada pela fonte. */
+  const tetoDasCamaras = parsePtNumber(claims.get('indice-de-divida-limite-legal')?.value);
+  if (tetoDasCamaras === null) throw new Error('B2 câmaras: o portão não leu o limite legal.');
+  const indicesDasCamaras = MUNICIPIOS_COM_PAGINA.map(m => m.distancia?.indice);
+  if (new Set(indicesDasCamaras).size !== indicesDasCamaras.length)
+    throw new Error('B2 câmaras: a lista de índices repete uma linha.');
+  const camaras = { acima: 0, dentro: 0, sem: 0 };
+  for (const id of indicesDasCamaras) {
+    const c = claims.get(id);
+    if (!c || typeof c.value !== 'string' || !c.value.trim())
+      throw new Error(`B2 câmaras: o portão não leu a linha ${id}.`);
+    const l = claims.get('indice-de-divida-limite-legal');
+    if (c.unit !== l.unit && c.unit !== `${l.unit} (limite legal = ${l.value})`)
+      throw new Error(`B2 câmaras: o índice ${id} não tem a unidade do limite.`);
+    const v = parsePtNumber(c.value);
+    if (v === null) camaras.sem++;
+    else if (v <= tetoDasCamaras) camaras.dentro++;
+    else camaras.acima++;
+  }
+
   return Object.fromEntries([
     ...contagensDeLugares,
     conta('painel_total', FIGURAS_PDM.length, 'ledger'),
@@ -3658,6 +3680,9 @@ function contasDoPortao(claims) {
       'ledger',
     ),
     conta('painel_social_total', FIGURAS_SOCIAL.length, 'ledger'),
+    conta('camaras_acima_do_limite', camaras.acima, 'ledger'),
+    conta('camaras_dentro_do_limite', camaras.dentro, 'ledger'),
+    conta('camaras_sem_valor', camaras.sem, 'ledger'),
     conta('afirmacoes', paginasDeLinhaPt, 'dist'),
     conta('indexaveis', indexaveisPt, 'dist'),
     conta('divida', paginasDeLinhaPt - indexaveisPt, 'dist'),
