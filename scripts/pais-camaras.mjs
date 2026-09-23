@@ -68,11 +68,25 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
     ? `de ${contagens.municipios_com_pagina} câmaras; ${contagens.camaras_dentro_do_limite} dentro do limite legal (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} sem valor publicado`
     : `of ${contagens.municipios_com_pagina} councils; ${contagens.camaras_dentro_do_limite} within the legal limit (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} with no published value`;
   if (normal(copia?.textContent) !== esperado) falha('a régua difere das contagens e do limite lidos nas linhas.');
-  const valorEsperado = `${contagens.camaras_acima_do_limite} ${lang === 'pt' ? 'câmaras em' : 'councils in'} ${periodo}`;
   const data = c.querySelector('[data-de-campo="reference_date"]');
   if (data?.getAttribute('data-de-linha') !== datas[0].id || normal(data?.textContent) !== periodo) falha('o período não vem das linhas contadas.');
   if (c.querySelector('.cartao-medida-nome')?.tagName !== 'SPAN') falha('o nome do cartão deve ser um span.');
-  if (normal(c.querySelector('.cartao-medida-valor')?.textContent) !== valorEsperado) falha('o valor principal ou a unidade da contagem difere.');
+  /* A LINHA DO VALOR TEM DUAS PARTES, E COMPARA-SE CADA UMA (segunda passagem
+     de correção do B2, 23.09.2026): a contagem com a unidade, e o período lido
+     das linhas. O texto das duas não leva espaço entre elas, porque é a folha
+     que as separa, como em todos os cartões («do PIBem 2025» no texto, «do PIB
+     em 2025» no ecrã); comparada como uma frase só, a linha nunca batia. A
+     conferência compara parte a parte e exige que a linha não tenha mais nada. */
+  const partes = (c.querySelector('.cartao-medida-valor')?.childNodes ?? [])
+    .filter(n => n.nodeType === 1 || normal(n.textContent));
+  const [quantidade, dataDoCartao] = partes;
+  const quantidadeEsperada = `${contagens.camaras_acima_do_limite} ${lang === 'pt' ? 'câmaras' : 'councils'}`;
+  const periodoEsperado = `${lang === 'pt' ? 'em' : 'in'} ${periodo}`;
+  if (partes.length !== 2 || !quantidade?.classList?.contains('cartao-medida-quantidade') ||
+      normal(quantidade.textContent) !== quantidadeEsperada)
+    falha('o valor principal ou a unidade da contagem difere.');
+  if (!dataDoCartao?.classList?.contains('cartao-medida-periodo') || normal(dataDoCartao.textContent) !== periodoEsperado)
+    falha('o período escrito difere do período das linhas contadas.');
   const textoDaPorta = lang === 'pt' ? 'Os lugares →' : 'The places →';
   const portas = c.querySelectorAll('.pais-porta-tema a');
   if (portas.length !== 1 || portas[0].getAttribute('href') !== porta || normal(portas[0].textContent) !== textoDaPorta)
