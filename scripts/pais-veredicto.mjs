@@ -77,7 +77,7 @@ export function verificaVeredictoDoPais(home, indice, lang, linha = lerLinha) {
   const c = contagens.painel_dentro_do_limiar;
   const esperada = (lang === 'pt'
     ? `Em ${ano}, Portugal ficou fora de ${a} dos ${b} valores de referência da Comissão Europeia e dentro de ${c}`
-    : `In ${ano}, Portugal was outside ${a} of the European Commission's ${b} reference values and within ${c}`)
+    : `In ${ano}, Portugal was outside ${a} of the European Commission’s ${b} reference values and within ${c}`)
     + (lista ? `${lang === 'pt' ? '. Fora: ' : '. Outside: '}${lista}` : '') + '.';
   if (normal(bloco.textContent) !== esperada)
     falha('a frase construída difere das contagens e dos nomes recontados.');
