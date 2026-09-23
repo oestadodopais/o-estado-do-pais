@@ -1,0 +1,28 @@
+---
+/** B2: a contagem das câmaras, calculada sobre as linhas dos seus índices.
+ * É uma chave da prova, não uma linha nova: a fonte publica cada índice e o
+ * limite legal. Cada contagem abre os lugares e o limite conserva o seu selo. */
+import ValorDaProva from './ValorDaProva.astro';
+import Claim from './Claim.astro';
+import { prova } from '../lib/prova.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/cartao-medida.css';
+const { lang = 'pt' } = Astro.props;
+const p = prova(lang);
+const s = t(lang).camaras;
+const limite = getClaim('indice-de-divida-limite-legal');
+const unidade = unidadeDaLinha(limite.unit, lang);
+---
+<article class="cartao-medida" data-cartao-camaras>
+  <h3 class="cartao-medida-nome">{s.nome}</h3>
+  <p class="cartao-medida-valor">
+    <span class="cartao-medida-quantidade"><span class="cartao-medida-num"><ValorDaProva chave="camaras_acima_do_limite" item={p.camaras_acima_do_limite} lang={lang} /></span>{' '}<span class="cartao-medida-unidade">{s.unidade}</span></span>
+  </p>
+  <p class="cartao-medida-regua"><span data-camaras-regua>
+    {s.de}<ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />{s.total}<ValorDaProva chave="camaras_dentro_do_limite" item={p.camaras_dentro_do_limite} lang={lang} />{s.dentro}<Claim id={limite.id} lang={lang} as="span" sufixo={` ${unidade.texto}`} chip={true} />{s.sem}<ValorDaProva chave="camaras_sem_valor" item={p.camaras_sem_valor} lang={lang} />{s.falta}
+  </span></p>
+  <p class="pais-porta-tema"><a href={routePath('lugares', lang)}>{s.porta} →</a></p>
+</article>

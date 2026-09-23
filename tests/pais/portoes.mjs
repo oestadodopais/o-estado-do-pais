@@ -141,3 +141,40 @@ planta('r1-lista-dos-estudos-sem-um','scripts/check-lugar.mjs',[
 planta('r1-rotulo-dobrado','scripts/gate-html.mjs',[
  ['temas/index.html',r=>{const x=r.querySelector('[data-rotulo-ia="topo"]');x.insertAdjacentHTML('afterend',x.outerHTML);}]
 ],[/temas\/index\.html[\s\S]*esta página tem 2 rótulo\(s\) de IA no topo; tem de ter exactamente um/]);
+
+/* B2: as três contagens são recusadas pelo portão que as reconta do livro. */
+planta('b2-contagens-das-camaras','scripts/gate-html.mjs',[
+ ['index.html',r=>{for(const chave of ['camaras_acima_do_limite','camaras_dentro_do_limite','camaras_sem_valor']){const n=r.querySelector(`[data-cartao-camaras] [data-prova="${chave}"]`);n.set_content(String(Number(n.textContent)+1));}}]
+],[/o número da prova "camaras_acima_do_limite" foi renderizado/,/o número da prova "camaras_dentro_do_limite" foi renderizado/,/o número da prova "camaras_sem_valor" foi renderizado/]);
+
+/* B2: a integração do invólucro valor + unidade passa pelo auditaSelo real.
+   As funções puras têm plantas próprias; estas removem, trocam e afastam
+   selos nas páginas construídas e correm o portão completo. */
+planta('b2-selo-do-cartao','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>{
+  r.querySelector('[data-cartao-medida="divida-publica-2025"] .src-chip').remove();
+  r.querySelector('[data-cartao-medida="saldo-das-administracoes-publicas-2025"] .src-chip').setAttribute('href','/livro-razao/divida-publica-2025');
+ }],
+ ['municipios/mourao/index.html',r=>r.querySelector('[data-cartao-medida="mourao-divida-dgal-2024"] .src-chip').remove()],
+ ['en/themes/index.html',r=>{
+  const c=r.querySelector('[data-cartao-medida="precos-da-habitacao-2025"]');
+  const selo=c.querySelector('.src-chip'), copia=selo.outerHTML;selo.remove();
+  c.querySelector('.cartao-medida-quantidade').insertAdjacentHTML('beforeend',copia);
+ }]
+],[/divida-publica-2025" aparece sem selo para a sua própria linha na forma do cartão/,/saldo-das-administracoes-publicas-2025" aparece sem selo para a sua própria linha na forma do cartão/,/precos-da-habitacao-2025" aparece sem selo para a sua própria linha na forma do cartão/,/mourao-divida-dgal-2024" aparece sem selo para a sua própria linha na forma do cartão/]);
+
+/* B2: a cor ficou intacta e só a palavra foi retirada. K15 tem de a ver. */
+planta('b2-cartao-cor-sem-palavra','tests/cartao/cartao.mjs',[
+ ['temas/index.html',r=>r.querySelector('[data-cartao-medida="divida-publica-2025"] [data-veredicto-referencia] [data-voz]').remove()],
+ ['en/european-union/index.html',r=>r.querySelector('[data-cartao="divida-publica-2025"] [data-veredicto-referencia] [data-voz]').remove()]
+],[/K15 · divida-publica-2025: veredicto em palavras ausente ou diferente[^\n]* · \/temas\//,/K15 · divida-publica-2025: veredicto em palavras ausente ou diferente[^\n]* · \/en\/european-union\//]);
+
+/* B2: tirar os algarismos provados do inventário não dispensa a conferência
+   deles nem pode esconder prosa acrescentada junto da contagem. */
+planta('b2-voz-contagem-e-prosa','scripts/check-voz.mjs',[
+ ['index.html',r=>{
+  const n=r.querySelector('[data-veredicto-pais] [data-prova="painel_fora_do_limiar"]');
+  n.set_content(String(Number(n.textContent)+1));
+  r.querySelector('[data-cartao-camaras] .cartao-medida-valor').insertAdjacentHTML('beforeend',' palavras plantadas junto da contagem');
+ }]
+],[/V1 pt: painel_fora_do_limiar/,/bloco por classificar[^\n]*palavras plantadas junto da contagem/]);

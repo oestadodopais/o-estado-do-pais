@@ -211,9 +211,22 @@ const BLOCOS_DA_VOZ = `${BLOCOS},${ROTULOS_EM_SPAN}`;
 const ORIGEM_DECLARADA =
   '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger],' +
   '[data-agenda],[data-registo],[data-registo-unidade],[data-registo-linha],[data-registo-conta],' +
+  /* B2: retiram-se só os valores da prova dos dois blocos novos. As palavras
+     continuam inventariadas; V1/V2 conferem a frase inteira e gate:html reconta
+     as chaves. A normalização não congela uma contagem no inventário. */
+  '[data-veredicto-pais] [data-prova],[data-cartao-camaras] [data-prova],' +
   /* B1: texto e data das mudanças, comparados com a declaração por check:pais
      e gate:html. Uma marca que não corresponda à entrada não passa. */
   '[data-mudanca-campo],[data-publicacao-estudo]';
+
+/* O seletor com antepassado é lido a partir do documento. Quando o próprio
+   bloco é esse antepassado, querySelector nele não o inclui no âmbito da
+   pesquisa. A pertença já conferida no documento resolve só esse caso das
+   provas do B2, sem retirar as palavras que as rodeiam. */
+function temProvaDoB2(no, marcados) {
+  return no.querySelectorAll('[data-prova]').some(el => marcados.has(el) &&
+    el.closest('[data-veredicto-pais], [data-cartao-camaras]'));
+}
 
 function blocosDe(root) {
   const out = [];
@@ -225,7 +238,7 @@ function blocosDe(root) {
   for (const el of root.querySelectorAll(BLOCOS)) {
     if (el.querySelector(BLOCOS)) continue;
     if (marcados.has(el)) continue;
-    if (el.querySelector(ORIGEM_DECLARADA)) continue;
+    if (el.querySelector(ORIGEM_DECLARADA) || temProvaDoB2(el, marcados)) continue;
     const t = norm(texto(el));
     if (t.length >= 30) out.push(t);
   }
@@ -902,7 +915,7 @@ function frasesDaCasa(root, rotaKey) {
        linhas do inventário de uma vez, e isso é uma migração e não uma correção.
        A diferença está no `temOrigem`, e vale só para os blocos que até hoje não
        eram contados de todo. */
-    const temOrigem = !!el.querySelector(DECLARADO);
+    const temOrigem = !!el.querySelector(DECLARADO) || temProvaDoB2(el, marcados);
     /* Numa rota que ainda não entrou em `ROTAS_COM_ORIGEM_LIDA`, o bloco com
        marca continua a ser saltado como sempre foi. É o comportamento antigo,
        preservado à letra: uma rota entra quando as suas frases forem

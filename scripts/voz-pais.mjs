@@ -10,6 +10,8 @@ import { leituraDe } from '../src/data/leituras.mjs';
 import { primeirasFrases } from '../src/lib/estudos-b1.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
+import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
+import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
 const texto = el => {
   const copia = parse(el.outerHTML);
@@ -42,14 +44,20 @@ export function verificaVozPais(raiz) {
     for (const rota of lang === 'pt' ? ['', 'temas'] : ['en','en/themes']) {
       const main = parse(fs.readFileSync(path.join(raiz,'dist',rota,'index.html'),'utf8')).querySelector('main');
       const leitura = main.querySelector('[data-leitura-pais]');
+      erros.push(...verificaCartaoDasCamaras(main.parentNode, lang));
       if (rota === '' || rota === 'en') {
         if (!leitura || texto(leitura) !== esperada) erros.push(`B1 leitura aprovada: ${rota || '/'} difere do texto da direção.`);
+        const indice = parse(fs.readFileSync(path.join(raiz, 'dist', lang === 'pt' ? 'temas' : 'en/themes', 'index.html'), 'utf8'));
+        erros.push(...verificaVeredictoDoPais(main.parentNode, indice, lang));
       }
       /* O rótulo de IA do topo (bloco R1, 23.09.2026) é texto aprovado, que o
          `gate:html` compara carácter a carácter com o oráculo; não é prosa da
          lista fechada destas páginas. */
       const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mapa-raiz], [data-mapa-legenda], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"]'));
       if (leitura) dispensados.add(leitura);
+      for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
+      /* A marca só sai da lista depois de a V1 conferir a frase inteira. */
+      if (rota === '' || rota === 'en') for (const v of main.querySelectorAll('[data-veredicto-pais]')) dispensados.add(v);
       for (const resumo of main.querySelectorAll('.estudo-resumo')) {
         const w = WORKS.find(w=>w.slug===resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));
         const esperado = w && sinopseEsperada(w, lang);
