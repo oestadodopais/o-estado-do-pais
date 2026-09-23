@@ -5624,3 +5624,44 @@ a.marcador::after {
   .menu-cinco { gap: 0 12px; }
   .menu-cinco a { font-size: 13.5px; letter-spacing: .03em; }
 }
+
+/* ---------------------------------------------------------------------------
+   O QUADRADO E A PALAVRA DO ESTADO (vieram de `inicio.css` no bloco R1,
+   23.09.2026, I139)
+   ---------------------------------------------------------------------------
+   O Método diz que um valor de referência se lê pela cor, «âmbar quando o valor
+   está fora dele, cobalto quando está dentro», e até 23.09.2026 só a página
+   europeia o fazia: os cartões da primeira página e dos temas diziam «acima» ou
+   «abaixo» a cinzento, e a frase do Método era falsa nessas duas páginas. As
+   regras vêm para a folha que todas as páginas ligam, sem mudar uma cor: a
+   página dos temas e a de área não ligam `inicio.css`, e uma classe cuja regra
+   não chega à página é o que a C1 do `check:css` recusa. */
+.sq {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  flex: none;
+}
+/* O contorno é sempre tinta, nos dois temas: em claro segura o âmbar (2,09:1
+   sozinho), em escuro segura o cobalto (2,16:1 sozinho). Ver a nota da etapa 1c. */
+.sq-fora {
+  background: var(--amber);
+  border: 1px solid var(--onamber);
+}
+.sq-dentro {
+  background: var(--cobalt);
+  border: 1px solid var(--ink);
+}
+.sq-sem {
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+.est-fora {
+  color: var(--ochre);
+}
+.est-dentro {
+  color: var(--cobalt-palavra);
+}
+.est-sem {
+  color: var(--muted);
+}

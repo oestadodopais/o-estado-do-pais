@@ -953,35 +953,11 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    ao pé de um valor (Emenda 10) e é isso que a peça desenha; o que saiu foi o
    friso que os alinhava longe do número a que se referem. */
 
-.sq {
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  flex: none;
-}
-/* O contorno é sempre tinta, nos dois temas: em claro segura o âmbar (2,09:1
-   sozinho), em escuro segura o cobalto (2,16:1 sozinho). Ver a nota da etapa 1c. */
-.sq-fora {
-  background: var(--amber);
-  border: 1px solid var(--onamber);
-}
-.sq-dentro {
-  background: var(--cobalt);
-  border: 1px solid var(--ink);
-}
-.sq-sem {
-  background: transparent;
-  border: 1px solid var(--ink);
-}
-.est-fora {
-  color: var(--ochre);
-}
-.est-dentro {
-  color: var(--cobalt-palavra);
-}
-.est-sem {
-  color: var(--muted);
-}
+/* O QUADRADO E A PALAVRA DO ESTADO MUDARAM-SE PARA `site.css` (bloco R1,
+   23.09.2026, I139): os cartões com valor de referência da primeira página, dos
+   temas e das páginas de área passaram a render o estado como o cartão da página
+   europeia já rendia, e a página dos temas e a de área não ligam esta folha. As
+   regras são as mesmas, com as mesmas cores; mudou a folha que as leva. */
 
 /* ---------------------------------------------------------------------- mapa */
 

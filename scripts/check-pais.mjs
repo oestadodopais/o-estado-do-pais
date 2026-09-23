@@ -231,6 +231,8 @@ const chavesDoRegisto = new Set([
   ...MUDANCAS_DO_PROJETO.map(m => `projeto|${m.id}`),
 ]);
 let listasMedidas = 0;
+/* T9: os cartões com valor de referência vistos, e quantos em cada estado. */
+const estadosVistos = { cartoes: 0, fora: 0, dentro: 0 };
 let titulosMedidos = 0;
 let registosMedidos = 0;
 for (const lang of ['pt', 'en']) {
@@ -275,6 +277,44 @@ for (const lang of ['pt', 'en']) {
       if (!n || (resumo && n > 4)) erros.push(`T7 ${lang}: fila vazia ou demasiado longa em ${slug}.`);
       if (!resumo && g.id !== slug) erros.push(`T8 ${lang}: âncora de tema em falta.`);
       if (resumo && !g.querySelector(`a[href="${caminho(lang, '/temas/', '/en/themes/')}#${slug}"]`)) erros.push(`T8 ${lang}: porta do tema em falta.`);
+    }
+  }
+  /* T9 · A COR DO ESTADO NOS CARTÕES COM VALOR DE REFERÊNCIA (bloco R1,
+     23.09.2026, I139). O Método diz «âmbar quando o valor está fora dele,
+     cobalto quando está dentro», e a primeira página e os temas não tinham cor
+     nenhuma. Cada cartão cuja medida declara um valor de referência tem de trazer
+     o estado no item da referência, com as classes da página europeia (o
+     quadrado `sq-<estado>` e a palavra `est-<estado>`), e o estado calcula-se
+     AQUI, do valor que o livro-razão escreve contra o valor de referência
+     declarado, e não da função que a página usa. Um cartão sem referência não
+     leva cor nenhuma. */
+  const numero = v => Number(String(v).replace(/\s|\u00a0/g, '').replace('\u2212', '-').replace(',', '.'));
+  const lado = (l) => l?.nl !== undefined ? numero(`${l.sinal === '\u2212' ? '-' : ''}${l.nl}`) : null;
+  const estadoProprio = (id, limiar) => {
+    const v = numero(linha(id).value);
+    if (!Number.isFinite(v)) return null;
+    const inf = limiar.inferior ? lado(limiar.inferior) : limiar.lado === 'inferior' ? lado(limiar) : null;
+    const sup = limiar.superior ? lado(limiar.superior) : limiar.lado === 'superior' ? lado(limiar) : null;
+    if (sup !== null && v > sup) return 'fora';
+    if (inf !== null && v < inf) return 'fora';
+    return 'dentro';
+  };
+  for (const [nome, doc] of [['país', home], ['temas', indice]]) {
+    for (const c of doc.querySelectorAll('main [data-cartao-medida]')) {
+      const id = c.getAttribute('data-cartao-medida');
+      const f = FIGURAS.find(x => x.claim === id);
+      const item = c.querySelector('[data-regua="referencia"]');
+      const cores = c.querySelectorAll('.sq-fora, .sq-dentro, .est-fora, .est-dentro').length;
+      if (!f?.limiar) {
+        if (cores) erros.push(`T9 ${lang} ${nome}: ${id} não tem valor de referência e leva cor de estado.`);
+        continue;
+      }
+      estadosVistos.cartoes++;
+      const estado = estadoProprio(id, f.limiar);
+      estadosVistos[estado] = (estadosVistos[estado] ?? 0) + 1;
+      if (!item || item.getAttribute('data-estado') !== estado || !item.querySelector(`.sq.sq-${estado}`) || !item.querySelector(`.est-${estado}`) ||
+          item.querySelectorAll('.sq').length !== 1)
+        erros.push(`T9 ${lang} ${nome}: ${id} está ${estado} do valor de referência e o cartão não o diz pela cor da página europeia (sq-${estado}, est-${estado}).`);
     }
   }
   for (const id of ['divida-publica-2025','taxa-de-desemprego-mip-2025','precos-da-habitacao-2025'])
@@ -506,6 +546,10 @@ if (!paginas) erros.push('N1: nenhuma página própria medida.');
 if (!listasMedidas) erros.push('A1: nenhuma lista de «O que mudou» medida.');
 if (!titulosMedidos) erros.push('A4: nenhum título de edição medido.');
 if (registosMedidos !== 2) erros.push(`A3: ${registosMedidos} registos medidos, e as duas edições têm um cada.`);
+/* O conhecido-positivo da T9: cartões com referência vistos, e os dois estados. */
+if (!estadosVistos.cartoes || !estadosVistos.fora || !estadosVistos.dentro)
+  erros.push(`T9: ${estadosVistos.cartoes} cartões com referência vistos (${estadosVistos.fora} fora, ${estadosVistos.dentro} dentro); a célula tem de ver os dois estados.`);
+console.log(`T9: ${estadosVistos.cartoes} cartões com valor de referência na primeira página e nos temas, ${estadosVistos.fora} fora e ${estadosVistos.dentro} dentro, cada um com a cor do seu estado.`);
 console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegisto.size} mudanças, ${titulosMedidos} títulos de edição.`);
 if (erros.length) { console.error(erros.join('\n')); process.exitCode = 1; }
 else console.log('B1 país: todas as conferências a 0.');

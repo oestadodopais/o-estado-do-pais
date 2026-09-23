@@ -84,6 +84,7 @@ try {
     lista dos estudos numa só (I144); a L2 exige a data da notificação do INE tal
     como a linha a publica (I147). */
  prova('mudança declarada na língua do código','M4',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';MUDANCAS_DO_PROJETO[0].texto.pt='Sete nomes do INE saíram dos recibos e dos cartões. Nenhum valor mudou.';`);
+ prova('cartão fora do valor de referência pintado de dentro','T9',()=>html('temas/index.html',r=>{const q=r.querySelector('[data-regua="referencia"] .sq-fora');q.setAttribute('class','sq sq-dentro');}));
  prova('lista dos estudos com a ordem trocada','E2',()=>html('estudos/index.html',r=>{const a=r.querySelectorAll('main [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('a secção por lugar de volta','E2',()=>html('en/studies/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<section id="por-lugar"><h2>By place</h2></section>')));
  prova('ponto final sem ligação inseparável','N2',()=>html('index.html',r=>r.querySelector('.rotulo-ia-final').removeAttribute('class')));
