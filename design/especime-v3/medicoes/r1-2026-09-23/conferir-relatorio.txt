@@ -2,8 +2,8 @@ relatório: design/especime-v3/medicoes/r1-2026-09-23/RELATORIO.md
 pasta das medições: design/especime-v3/medicoes/r1-2026-09-23
 ficheiros JSON lidos: 13
 conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
-números conferidos: 236
-números com ficheiro: 236
+números conferidos: 267
+números com ficheiro: 267
 números sem ficheiro: 0
-apagado antes de contar: codigo 215, enderecos 0, seccoes 30, datas 20, resumos 0, ordinais 4, identificadores 82, anos 14
+apagado antes de contar: codigo 235, enderecos 0, seccoes 33, datas 26, resumos 0, ordinais 4, identificadores 88, anos 14
 codigo 0

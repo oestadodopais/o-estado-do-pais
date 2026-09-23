@@ -1,7 +1,8 @@
 {
-  "cabeca": "68b7944cf30beffcd45e1a82180e84103adab614",
+  "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e",
   "partida": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
   "commits_do_ramo": [
+    "717da1d6 R1: o relatório do bloco, as suas medidas, as plantas, as capturas e as páginas congeladas",
     "68b7944c R1: o inventário das frases e a sua entrada na revisão, para os mandatos 2, 4, 6, 9, 11 e 12",
     "34e46d71 R1: a catraca L1 sobe de 2 271 para 2 279 páginas, medida página a página",
     "a1f90a17 R1 (§1.124): a leitura do país diz as duas leituras oficiais da dívida, e «O que mudou» regista-o",
@@ -17,7 +18,7 @@
     "3cb9ede5 R1 (I138): o cartão da sobrecarga da habitação deixa de mostrar a média europeia, e a nota da agenda diz o que é verdade",
     "8982a767 R1 (I137): a pesquisa dos lugares mostra a lista ao escrever, e o Enter só abre com um resultado"
   ],
-  "commits_do_ramo_n": 14,
+  "commits_do_ramo_n": 15,
   "brief_antes": {
     "pesquisa_enter_recarrega": 0,
     "pesquisa_lista_nunca_se_mostra": 0,
@@ -666,9 +667,73 @@
     ]
   },
   "portoes": {
-    "build": "por correr",
-    "verify": "por correr",
-    "typecheck": "por correr"
+    "build": {
+      "codigo": 0,
+      "inicio": "2026-09-23T12:38:30Z",
+      "fim": "2026-09-23T12:43:18Z",
+      "segundos": 288,
+      "minutos": 4,
+      "resto_segundos": 48,
+      "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e"
+    },
+    "verify": {
+      "codigo": 0,
+      "inicio": "2026-09-23T12:43:18Z",
+      "fim": "2026-09-23T12:51:20Z",
+      "segundos": 482,
+      "minutos": 8,
+      "resto_segundos": 2,
+      "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "inicio": "2026-09-23T12:51:20Z",
+      "fim": "2026-09-23T12:51:20Z",
+      "segundos": 0,
+      "minutos": 0,
+      "resto_segundos": 0,
+      "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e"
+    },
+    "gate_html": {
+      "rotulo_topo": 7342,
+      "paginas_fora_dos_documentos": 7342,
+      "rotulo_rodape": 0,
+      "fichas": 2,
+      "paginas_de_linha": 5956,
+      "titulos_separados": 5956,
+      "paginas": 7360
+    },
+    "t9": [
+      26,
+      8,
+      18
+    ],
+    "f17": [
+      278,
+      278,
+      278,
+      278
+    ],
+    "voz_inventario": [
+      1158,
+      599,
+      559
+    ],
+    "verify_celulas": {
+      "h14": [
+        230,
+        0
+      ],
+      "h15_pt_390": [
+        0,
+        2
+      ],
+      "l1": [
+        2279,
+        2279
+      ],
+      "k14": 6
+    }
   },
   "mapa": {
     "citacoes_no_sitio": 50,

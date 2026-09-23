@@ -493,7 +493,6 @@ if g.exists():
     r = re.search(r'rótulo de IA · (\d+) no topo \(de (\d+) páginas fora dos documentos alojados\) · (\d+) no rodapé · (\d+) ficha', t)
     ti = re.search(r'(\d+) páginas de linha · (\d+) títulos de linha com o valor e a unidade separados', t)
     pg = re.search(r'portão de HTML · (\d+) páginas', t)
-    fr = re.search(r'F17[^\n]*?(\d+) cart', t)
     M['portoes']['gate_html'] = {
         'rotulo_topo': int(r.group(1)) if r else None, 'paginas_fora_dos_documentos': int(r.group(2)) if r else None,
         'rotulo_rodape': int(r.group(3)) if r else None, 'fichas': int(r.group(4)) if r else None,
@@ -501,7 +500,7 @@ if g.exists():
         'paginas': int(pg.group(1)) if pg else None,
     }
     for rx, chave in ((r'T9: (\d+) cartões com valor de referência na primeira página e nos temas, (\d+) fora e (\d+) dentro', 't9'),
-                      (r'E2[^\n]*?(\d+) estudos', 'e2')):
+                      (r'frescura nos cartões de concelho: (\d+) pt e (\d+) en, de (\d+) e (\d+) cartões numa série atrasada', 'f17')):
         m = re.search(rx, t)
         if m:
             M['portoes'][chave] = [int(x) for x in m.groups()]
