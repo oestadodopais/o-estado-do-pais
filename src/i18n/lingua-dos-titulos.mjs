@@ -84,6 +84,9 @@ export const LINGUA_DOS_TITULOS = {
     'pt',
   'PARECER RELATIVO AO RELATÓRIO ANUAL DE PROGRESSO 2026': 'pt',
   'Decreto-Lei n.º 139/2025, de 29 de dezembro': 'pt',
+  /* A 2.ª notificação de 2026 do Procedimento dos Défices Excessivos, o destaque
+     do INE de onde saem três linhas (bloco R1, 23.09.2026). */
+  'Procedimento dos Défices Excessivos 2ª Notificação': 'pt',
   /* Os dois documentos do próprio sítio. O nome deles é português nas duas
      edições, e é o nome com que eles se publicam: a edição inglesa cita-os pelo
      nome que eles têm, e diz em que língua está. */
@@ -360,6 +363,9 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 export const LINGUA_DAS_EDICOES = {
   /* --- as edições escritas em português --------------------------------- */
   'dezembro de 2025': 'pt',
+  /* A data impressa do destaque da 2.ª notificação de 2026 do Procedimento dos
+     Défices Excessivos, que é a edição das suas três linhas (bloco R1). */
+  '23 de setembro de 2026': 'pt',
   'dezembro 2024': 'pt',
   'dezembro 2013': 'pt',
   'indicador 0014580': 'pt',

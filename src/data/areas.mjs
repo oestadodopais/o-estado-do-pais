@@ -702,6 +702,26 @@ export const SEM_AREA = [
       'linha; rende-se dentro do cartão dessa medida, e não como um cartão próprio.',
   },
   {
+    /* ------------------------------------------------------------------
+       A NOTIFICAÇÃO NACIONAL DE UMA MEDIDA QUE O QUADRO DO EUROSTAT JÁ PUBLICA
+       (bloco R1, 23.09.2026, decisão da §1.124)
+       ------------------------------------------------------------------
+       As três linhas da 2.ª notificação de 2026 do Procedimento dos Défices
+       Excessivos são a dívida bruta e o saldo das administrações públicas, lidos
+       na fonte nacional e datados, ao lado da linha de registo, que é a do quadro
+       do Eurostat. O assunto delas é o da linha de registo, declarado na matéria
+       das Finanças; rendem-se na leitura do país e no seu recibo, e não como
+       cartões próprios de uma área. */
+    assunto: 'A notificação nacional de uma medida que o quadro do Eurostat já publica',
+    id: /-notificacao-ine-\d{4}-\d{2}$/,
+    motivo:
+      'Uma linha de uma notificação do Procedimento dos Défices Excessivos que o INE envia ao ' +
+      'Eurostat é a mesma medida da linha do quadro do Eurostat, lida na fonte nacional e datada ' +
+      '(§1.124). O assunto dela é o da linha de registo, declarado na matéria dessa linha (a ' +
+      'política financeira do Estado); rende-se na leitura do país ao lado da linha de registo, e ' +
+      'não como um cartão próprio.',
+  },
+  {
     assunto: 'A população residente de um concelho',
     estudos: ['concelhos-2026', 'evora-economia-investidores-portas-abertas-2026'],
     id: /-populacao-\d{4}$/,
