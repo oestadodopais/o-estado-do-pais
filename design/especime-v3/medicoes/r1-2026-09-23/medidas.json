@@ -1,6 +1,6 @@
 {
   "cabeca": "bc68892b0bffcdce9fa58e72109cc2866a9b4f37",
-  "cabeca_da_corrida": "697df9af86ac3837ed9627d8e3259a93d90f53ef",
+  "cabeca_da_corrida": "661ccce0b907a9c916fefad9497eb3f740c0b92e",
   "partida": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
   "commits_do_ramo": [
     "bc68892b R1: as saídas dos três portões na cabeça final, e a tabela deles no relatório",
@@ -744,5 +744,358 @@
     "citacoes_no_sitio": 50,
     "citacoes_que_andaram": 8
   },
-  "falhas": []
+  "pacote": {
+    "base_do_ramo": "cbe87016",
+    "pai_do_commit_do_brief": "d4d4dcae",
+    "paginas_no_ramo": 6,
+    "paginas_levadas_com_a_base_do_ramo": 0,
+    "brief_json_levado_com_a_base_do_ramo": 0,
+    "paginas_levadas_com_o_pai_do_brief": 6,
+    "brief_json_levado_com_o_pai_do_brief": 1,
+    "commit_em_que_entraram": "cbe87016"
+  },
+  "dependencias_externas": {
+    "dist": {
+      "o_que": "o dist/ inteiro, construído a partir da cabeça do R1",
+      "chaves": [
+        "rotulo.no_dist",
+        "titulo_do_recibo.titulos_de_linha_no_dist",
+        "titulo_do_recibo.colados_no_dist",
+        "frescura.pt",
+        "frescura.en",
+        "portoes.gate_html",
+        "portoes.t9",
+        "portoes.f17",
+        "portoes.voz_inventario",
+        "portoes.verify_celulas",
+        "l1",
+        "plantas_pais",
+        "plantas_portoes_r1",
+        "plantas_alvos",
+        "plantas_cartao"
+      ],
+      "repete_se": "numa árvore do sítio na cabeça do R1 (o código é o de 68b7944c): npm ci, npm run build, e o medir.py; sem construir, os registos dos três portões dessa cabeça estão guardados em portoes/"
+    },
+    "git_do_sitio": {
+      "o_que": "o git do sítio, com o histórico",
+      "chaves": [
+        "cabeca",
+        "commits_do_ramo",
+        "pesquisa.preventDefault_no_ramo_da_fila",
+        "agenda",
+        "calendario_trazido",
+        "mudancas",
+        "estudos.depois_seccao_por_lugar_na_vista",
+        "definicoes",
+        "base",
+        "notificacao",
+        "leitura",
+        "livro_razao",
+        "inventario",
+        "pacote",
+        "correcao"
+      ],
+      "repete_se": "num clone com o histórico inteiro (fetch-depth: 0), por git show <cabeça>:<ficheiro>, como o guião do brief"
+    },
+    "copias_congeladas": {
+      "o_que": "as cópias congeladas: o antes do brief e o depois do bloco",
+      "chaves": [
+        "brief_antes",
+        "paginas_depois",
+        "habitacao",
+        "estudos.pt",
+        "estudos.en",
+        "cor_de_estado",
+        "frescura.mourao_pt",
+        "frescura.mourao_en",
+        "mudanca_declarada",
+        "titulo_do_recibo.colados_no_recibo_de_mourao"
+      ],
+      "repete_se": "no ramo, nesta pasta: paginas/ e o BRIEF-R1.json (o antes, commit cbe87016) e paginas-depois/ (o depois, presas pelo sha256 do INDICE.json); o pacote só as leva com uma base anterior ao commit do brief (ver pacote)"
+    },
+    "motor": {
+      "o_que": "o git do motor, que é privado",
+      "chaves": [
+        "motor",
+        "correcao.motor"
+      ],
+      "repete_se": "no repositório do motor, por recolher-motor.py e recolher-motor-correcao.py; as saídas ficam em motor/ e nesta pasta"
+    },
+    "navegador": {
+      "o_que": "um navegador sobre o dist/",
+      "chaves": [
+        "capturas",
+        "pesquisa"
+      ],
+      "repete_se": "numa árvore com o dist/ e o Playwright: captar-r1.mjs e tests/acessibilidade/pesquisa.mjs"
+    }
+  },
+  "correcao": {
+    "commits": [
+      "fb05b52e Depois do R1: a agenda com o excerto da fonte, o pacote das leituras a ler caminhos com acentos, a pergunta do interativo, o mapa repontado, e o rótulo do rodapé sem régua nem regras",
+      "697df9af M4b no sítio: a peça das penalizações republicada com a frase do múltiplo certa, a §1.125, a I125 fechada, a I149, as melhorias M25 e M26, e a leitura a frio do M4b",
+      "715a364e R1, passagem de correção, achado 4: as saídas do motor e as sete plantas, guardadas ao lado do relatório",
+      "748f2c2d R1, passagem de correção, achado 3: o medir.py falha quando o excerto da origem do Eurostat não é o rótulo da resposta",
+      "661ccce0 R1, passagem de correção, achado 6: a planta que põe dois rótulos de IA no topo de uma página"
+    ],
+    "commits_n": 5,
+    "plantas": {
+      "motor": {
+        "corridas": 7,
+        "morderam": 7,
+        "nomes": [
+          "cliente-com-navegador-aceite",
+          "nome-de-fora-aceite",
+          "for-source-de-fora-aceite",
+          "for-source-com-a-chave-aceite",
+          "cabecalho-de-fora-aceite",
+          "registo-com-a-chave",
+          "estudo-com-navegador-de-volta"
+        ]
+      },
+      "medir": {
+        "corridas": 2,
+        "morderam": 2,
+        "medidas_do_bloco_intactas": 2
+      },
+      "rotulo_dobrado": {
+        "corridas": 1,
+        "morderam": 1,
+        "repostas": 1
+      },
+      "todas": 10,
+      "todas_morderam": 10
+    },
+    "motor": {
+      "ramo": "r1c-2026-09-23",
+      "base_master": "1031258",
+      "cabeca": "b66c0fd",
+      "commits": [
+        {
+          "sha": "ba016a4",
+          "assunto": "O cliente da casa deixa de ter a identidade de um navegador, e as portas por onde ela saía recusam",
+          "trailer": "Claude Opus 5.5",
+          "ficheiros": 7
+        },
+        {
+          "sha": "b66c0fd",
+          "assunto": "As oito buscas dos estudos 03 a 06 que se disfarçavam de navegador passam ao nome da casa, e o portão varre o código todo",
+          "trailer": "Claude Opus 5.5",
+          "ficheiros": 9
+        }
+      ],
+      "commits_n": 2,
+      "diff_ficheiros": 15,
+      "diff_linhas_mais": 441,
+      "diff_linhas_menos": 118,
+      "portas": {
+        "antes": {
+          "httpclient_browser_ua_true": [
+            "content/10 Housing/Technical Source/fetch_accounting.py:210",
+            "content/10 Housing/Technical Source/fetch_frameworks.py:220",
+            "content/10 Housing/Technical Source/fetch_sq3.py:82",
+            "content/10 Housing/Technical Source/fetch_sq7.py:392",
+            "content/10 Housing/Technical Source/fetch_sq7.py:428"
+          ],
+          "nome_de_navegador_no_codigo": [
+            "content/03 Regional Economy/Technical Source/fetch_eurostat.py",
+            "content/03 Regional Economy/Technical Source/fetch_ine.py",
+            "content/03 Regional Economy/Technical Source/fetch_nuts_2024.py",
+            "content/04 Évora Public Money/Technical Source/probe_tc_coverage.py",
+            "content/05 Fund Access Register/Technical Source/fetch_pdfs.py",
+            "content/06 Évora Economy/Technical Source/fetch_iefp_check.py",
+            "content/06 Évora Economy/Technical Source/fetch_ine.py",
+            "content/06 Évora Economy/Technical Source/fetch_pt2030_evora.py",
+            "core/http.py",
+            "core/http_nome_test.py"
+          ],
+          "for_source_chamadas": 26,
+          "for_source_com_sources_get": 14,
+          "for_source_outras": [
+            "core/health_check.py:57: c = for_source(src)",
+            "core/health_check.py:92: `browser_ua`) e no cliente (`core/http.py`: `for_source()` levanta",
+            "core/health_check.py:105: for_source(src)",
+            "core/http.py:844: Levanta-se em `for_source()`, antes de haver cliente, e por isso antes de",
+            "core/http_nome_test.py:289: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(",
+            "core/http_nome_test.py:296: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(f\"{base_a}/de-pe\", use_cache=False)",
+            "core/http_nome_test.py:321: H.for_source(base)",
+            "servers/pt_public_money/base_contracts.py:74: `for_source()` levanta `core.http.FonteCaida` para uma fonte marcada caída no",
+            "servers/pt_public_money/crosswalk.py:6: caída (`core/sources.py`: `caida_em`, `caida_razao`); `core/http.py:for_source()`",
+            "servers/pt_public_money/falsify.py:274: _real_for_source(src),",
+            "servers/pt_public_money/falsify.py:294: _real_for_source(src),",
+            "servers/pt_public_money/health_check.py:26: `core/http.py:for_source()` refuses it before any request. Its three checks (the"
+          ],
+          "user_agent_chamadas": [
+            "core/http_nome_test.py:132: cliente = H.HttpClient(user_agent=H.CASA_UA, min_interval_s=0.0,",
+            "core/http_nome_test.py:244: lento = H.HttpClient(user_agent=H.CASA_UA, min_interval_s=0.0, timeout_s=1.0,",
+            "indicators/corredor.py:688: cliente = http.HttpClient(user_agent=UA, timeout_s=args.timeout)",
+            "indicators/enquadramento.py:130: _CLIENTE = HttpClient(user_agent=CASA_UA, min_interval_s=INTERVALO_S,",
+            "indicators/generate_claims.py:287: return http.HttpClient(user_agent=NOME_NO_PEDIDO, min_interval_s=1.0)",
+            "indicators/semear_arquivo.py:116: cliente = http.HttpClient(user_agent=UA, timeout_s=90)",
+            "publisher/concelhos_fetch.py:303: _CLIENTE = HTTP.HttpClient(user_agent=UA, min_interval_s=INTERVALO_S,",
+            "publisher/dominios_fetch.py:220: _CLIENTE = HTTP.HttpClient(user_agent=UA, min_interval_s=GAP_SECONDS,"
+          ],
+          "registo_com_a_chave_browser_ua": 10,
+          "constante_de_navegador_no_cliente": 1,
+          "httpclient_browser_ua_true_n": 5,
+          "nome_de_navegador_no_codigo_n": 10,
+          "nome_de_navegador_em_estudos": [
+            "content/03 Regional Economy/Technical Source/fetch_eurostat.py",
+            "content/03 Regional Economy/Technical Source/fetch_ine.py",
+            "content/03 Regional Economy/Technical Source/fetch_nuts_2024.py",
+            "content/04 Évora Public Money/Technical Source/probe_tc_coverage.py",
+            "content/05 Fund Access Register/Technical Source/fetch_pdfs.py",
+            "content/06 Évora Economy/Technical Source/fetch_iefp_check.py",
+            "content/06 Évora Economy/Technical Source/fetch_ine.py",
+            "content/06 Évora Economy/Technical Source/fetch_pt2030_evora.py"
+          ],
+          "nome_de_navegador_em_estudos_n": 8,
+          "user_agent_chamadas_n": 8,
+          "for_source_outras_n": 12,
+          "for_source_mencoes_em_texto_n": 5,
+          "for_source_por_variavel": [
+            "core/health_check.py:57: c = for_source(src)",
+            "core/health_check.py:105: for_source(src)",
+            "core/http_nome_test.py:289: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(",
+            "core/http_nome_test.py:296: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(f\"{base_a}/de-pe\", use_cache=False)",
+            "core/http_nome_test.py:321: H.for_source(base)",
+            "servers/pt_public_money/falsify.py:274: _real_for_source(src),",
+            "servers/pt_public_money/falsify.py:294: _real_for_source(src),"
+          ],
+          "for_source_por_variavel_n": 7
+        },
+        "depois": {
+          "httpclient_browser_ua_true": [],
+          "nome_de_navegador_no_codigo": [],
+          "for_source_chamadas": 40,
+          "for_source_com_sources_get": 14,
+          "for_source_outras": [
+            "core/health_check.py:57: c = for_source(src)",
+            "core/health_check.py:92: `browser_ua`) e no cliente (`core/http.py`: `for_source()` levanta",
+            "core/health_check.py:105: for_source(src)",
+            "core/http.py:193: \"\"\"`for_source()` recebeu um dicionário que não é uma entrada do registo.\"\"\"",
+            "core/http.py:868: Levanta-se em `for_source()`, antes de haver cliente, e por isso antes de",
+            "core/http.py:900: raise FonteForaDoRegisto(f\"for_source() recebeu {type(source).__name__}, e só \"",
+            "core/http.py:904: f\"for_source() recebeu uma fonte com a chave `browser_ua` \"",
+            "core/http.py:910: f\"for_source() recebeu um dicionário que não é uma entrada do registo das \"",
+            "core/http_nome_test.py:24: `for_source()` recusa-a antes de haver cliente;",
+            "core/http_nome_test.py:39: 11. `for_source()` só aceita entradas do registo: um dicionário escrito no sítio",
+            "core/http_nome_test.py:229: H.for_source(sources.SOURCES[\"fixture_navegador\"])",
+            "core/http_nome_test.py:333: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(",
+            "core/http_nome_test.py:340: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(f\"{base_a}/de-pe\", use_cache=False)",
+            "core/http_nome_test.py:365: H.for_source(base)",
+            "core/http_nome_test.py:433: H.for_source(fonte_).get(f\"{base_a}/fora\", use_cache=False)",
+            "core/http_nome_test.py:444: H.for_source(sources.SOURCES[\"fixture_registada\"]).get(f\"{base_a}/dentro\",",
+            "core/http_nome_test.py:451: falhas.append(f\"for_source() aceitou um dicionário de fora do registo: {resultado}\")",
+            "core/http_nome_test.py:453: falhas.append(f\"for_source() não recusou com IdentidadeDeNavegadorRecusada uma fonte \"",
+            "core/http_nome_test.py:456: falhas.append(f\"as recusas de for_source() deixaram sair {chegaram_de_fora} pedido(s)\")",
+            "core/http_nome_test.py:461: vistos.append(f\"{'for_source() com um dicionário de fora':<44} \"",
+            "core/sources.py:11: this registry with Portal BASE, and `core/http.py:for_source()` refuses any",
+            "servers/pt_public_money/base_contracts.py:74: `for_source()` levanta `core.http.FonteCaida` para uma fonte marcada caída no",
+            "servers/pt_public_money/crosswalk.py:6: caída (`core/sources.py`: `caida_em`, `caida_razao`); `core/http.py:for_source()`",
+            "servers/pt_public_money/falsify.py:274: _real_for_source(src),",
+            "servers/pt_public_money/falsify.py:294: _real_for_source(src),",
+            "servers/pt_public_money/health_check.py:26: `core/http.py:for_source()` refuses it before any request. Its three checks (the"
+          ],
+          "user_agent_chamadas": [
+            "content/10 Housing/Technical Source/fetch_accounting.py:218: client = HttpClient(user_agent=CASA_UA, min_interval_s=1.5, timeout_s=120, retries=2)",
+            "content/10 Housing/Technical Source/fetch_frameworks.py:230: client = HttpClient(user_agent=CASA_UA, min_interval_s=1.0, timeout_s=180,",
+            "content/10 Housing/Technical Source/fetch_sq3.py:90: client = HttpClient(user_agent=CASA_UA, min_interval_s=1.0, timeout_s=60, retries=2)",
+            "content/10 Housing/Technical Source/fetch_sq7.py:400: client = HttpClient(user_agent=CASA_UA, min_interval_s=2.0, timeout_s=90, retries=2)",
+            "content/10 Housing/Technical Source/fetch_sq7.py:436: client = HttpClient(user_agent=CASA_UA, min_interval_s=1.5, timeout_s=180, retries=2)",
+            "core/http_nome_test.py:37: está escrita, e `HttpClient(user_agent=<um navegador>)` levanta",
+            "core/http_nome_test.py:167: cliente = H.HttpClient(user_agent=H.CASA_UA, min_interval_s=0.0,",
+            "core/http_nome_test.py:288: lento = H.HttpClient(user_agent=H.CASA_UA, min_interval_s=0.0, timeout_s=1.0,",
+            "core/http_nome_test.py:398: casa = H.HttpClient(user_agent=\"OEstadoDoPais/gerador-das-linhas\",",
+            "indicators/corredor.py:688: cliente = http.HttpClient(user_agent=UA, timeout_s=args.timeout)",
+            "indicators/enquadramento.py:130: _CLIENTE = HttpClient(user_agent=CASA_UA, min_interval_s=INTERVALO_S,",
+            "indicators/generate_claims.py:287: return http.HttpClient(user_agent=NOME_NO_PEDIDO, min_interval_s=1.0)",
+            "indicators/semear_arquivo.py:116: cliente = http.HttpClient(user_agent=UA, timeout_s=90)",
+            "publisher/concelhos_fetch.py:303: _CLIENTE = HTTP.HttpClient(user_agent=UA, min_interval_s=INTERVALO_S,",
+            "publisher/dominios_fetch.py:220: _CLIENTE = HTTP.HttpClient(user_agent=UA, min_interval_s=GAP_SECONDS,"
+          ],
+          "registo_com_a_chave_browser_ua": 0,
+          "constante_de_navegador_no_cliente": 0,
+          "httpclient_browser_ua_true_n": 0,
+          "nome_de_navegador_no_codigo_n": 0,
+          "nome_de_navegador_em_estudos": [],
+          "nome_de_navegador_em_estudos_n": 0,
+          "user_agent_chamadas_n": 15,
+          "for_source_outras_n": 26,
+          "for_source_mencoes_em_texto_n": 16,
+          "for_source_por_variavel": [
+            "core/health_check.py:57: c = for_source(src)",
+            "core/health_check.py:105: for_source(src)",
+            "core/http_nome_test.py:229: H.for_source(sources.SOURCES[\"fixture_navegador\"])",
+            "core/http_nome_test.py:333: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(",
+            "core/http_nome_test.py:340: H.for_source(sources.SOURCES[\"fixture_caida\"]).get(f\"{base_a}/de-pe\", use_cache=False)",
+            "core/http_nome_test.py:365: H.for_source(base)",
+            "core/http_nome_test.py:433: H.for_source(fonte_).get(f\"{base_a}/fora\", use_cache=False)",
+            "core/http_nome_test.py:444: H.for_source(sources.SOURCES[\"fixture_registada\"]).get(f\"{base_a}/dentro\",",
+            "servers/pt_public_money/falsify.py:274: _real_for_source(src),",
+            "servers/pt_public_money/falsify.py:294: _real_for_source(src),"
+          ],
+          "for_source_por_variavel_n": 10
+        }
+      },
+      "browser_ua_true_no_estudo_10_ficheiros": [
+        "content/10 Housing/Technical Source/fetch_accounting.py",
+        "content/10 Housing/Technical Source/fetch_frameworks.py",
+        "content/10 Housing/Technical Source/fetch_sq3.py",
+        "content/10 Housing/Technical Source/fetch_sq7.py"
+      ],
+      "browser_ua_true_no_estudo_10_ficheiros_n": 4,
+      "ficheiros_de_codigo_na_cabeca": 221,
+      "r1_aterrado_em_master": [
+        {
+          "no_ramo": "59c8621",
+          "em_master": "79c745c",
+          "assunto": "O Portal BASE cai no motor: a fonte marcada caída a 16.09.2026, e nenhum pedido sai"
+        },
+        {
+          "no_ramo": "6427f4d",
+          "em_master": "7dd57d1",
+          "assunto": "A resposta do Eurostat ao pedido da dívida das empresas, guardada com endereço, hora, cliente e sha256"
+        },
+        {
+          "no_ramo": "c257f67",
+          "em_master": "37e9691",
+          "assunto": "A nota da habitação na agenda diz o que é verdade: a ressalva não está nas páginas, e a média europeia saiu do cartão"
+        },
+        {
+          "no_ramo": "abac640",
+          "em_master": "8b57c55",
+          "assunto": "A 2.ª notificação de 2026 do INE entra no livro do estudo 13: três linhas datadas, e a data de publicação que atravessa"
+        }
+      ],
+      "core_gate": {
+        "resultado": "PASS",
+        "codigo": 0,
+        "cabeca": "b66c0fd"
+      },
+      "http_nome_test": {
+        "conferencias": 12,
+        "ficheiros_varridos": 221,
+        "com_nome_de_navegador": 0
+      },
+      "saude_nucleo": [
+        5,
+        5
+      ],
+      "saude_pt_public_money": [
+        17,
+        17
+      ],
+      "plantas": {
+        "cabeca": "b66c0fd",
+        "corridas": 7,
+        "morderam": 7,
+        "repostas": 7,
+        "passaram": 7
+      }
+    },
+    "mudancas_declaradas_na_cabeca": 4
+  },
+  "falhas": [],
+  "falhas_n": 0
 }

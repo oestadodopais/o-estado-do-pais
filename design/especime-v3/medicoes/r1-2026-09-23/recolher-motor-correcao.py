@@ -100,6 +100,10 @@ for nome, ref in (('antes', base), ('depois', cabeca)):
     }
     portas[nome]['httpclient_browser_ua_true_n'] = len(portas[nome]['httpclient_browser_ua_true'])
     portas[nome]['nome_de_navegador_no_codigo_n'] = len(portas[nome]['nome_de_navegador_no_codigo'])
+    # Os que são buscas de um estudo (em `content/`) e não passam pelo cliente da casa.
+    portas[nome]['nome_de_navegador_em_estudos'] = [f for f in portas[nome]['nome_de_navegador_no_codigo']
+                                                    if f.startswith('content/')]
+    portas[nome]['nome_de_navegador_em_estudos_n'] = len(portas[nome]['nome_de_navegador_em_estudos'])
     portas[nome]['user_agent_chamadas_n'] = len(portas[nome]['user_agent_chamadas'])
     portas[nome]['for_source_outras_n'] = len(portas[nome]['for_source_outras'])
     # Das outras, as que só NOMEIAM a função, numa docstring ou numa mensagem
