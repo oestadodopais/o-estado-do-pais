@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from pathlib import Path; import json,sys; from publisher.dominios_readers import cfp_crescimento_2024; print(json.dumps(cfp_crescimento_2024(Path(sys.argv[1])),ensure_ascii=False))
+                                                                                                                             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/publisher/dominios_readers.py", line 498, in cfp_crescimento_2024
+    raise Fail("CFP 2024: a nota 9 da página 9 não contém a frase que associa "
+               "o valor ao crescimento da despesa líquida apurado pelo CFP; "
+               "um índice em rótulos de gráfico não é prova")
+publisher.dominios_readers.Fail: CFP 2024: a nota 9 da página 9 não contém a frase que associa o valor ao crescimento da despesa líquida apurado pelo CFP; um índice em rótulos de gráfico não é prova

@@ -1,24 +1,24 @@
 {
   "relatorio": "design/especime-v3/medicoes/b2-2026-09-23/LEIA-ME-peca1.md",
   "pasta": "design/especime-v3/medicoes/b2-2026-09-23",
-  "ficheiros_json_lidos": 45,
+  "ficheiros_json_lidos": 61,
   "ilegiveis": [],
   "conhecido_positivo": {
     "numero": 987654321,
     "encontrado": true
   },
-  "numeros_conferidos": 59,
-  "numeros_com_ficheiro": 59,
+  "numeros_conferidos": 106,
+  "numeros_com_ficheiro": 106,
   "numeros_sem_ficheiro": 0,
   "sem_ficheiro": [],
   "apagado_antes_de_contar": {
-    "codigo": 125,
+    "codigo": 265,
     "enderecos": 0,
-    "seccoes": 0,
+    "seccoes": 1,
     "datas": 0,
     "resumos": 0,
-    "ordinais": 0,
-    "identificadores": 26,
-    "anos": 2
+    "ordinais": 19,
+    "identificadores": 68,
+    "anos": 6
   }
 }

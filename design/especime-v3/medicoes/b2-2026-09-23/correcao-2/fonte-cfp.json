@@ -1,0 +1,66 @@
+{
+  "achado": 6,
+  "resultado": "valor conservado, provado por uma frase do documento alojado do CFP",
+  "motor": {
+    "base": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+    "cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+    "commits": [
+      "8a084b8 B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, e o leitor do estudo 13 a recusar a camada de texto de um gráfico",
+      "0f08171 B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa"
+    ]
+  },
+  "valor": "11,9",
+  "periodo": "2024",
+  "fonte": {
+    "url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf",
+    "lido_em": "2026-09-01T13:21:32+00:00",
+    "pdf_sha256": "d2e9bb45bca111519c094c2550673ddbc14fdee00b2aa8be4192340bc27b201e",
+    "pdf": "content/13 Dominios/source/cfp/parecer-2026-02-rap26.pdf",
+    "texto": "content/13 Dominios/source/text/parecer-2026-02-rap26.txt",
+    "texto_sha256": "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2",
+    "extracao_refeita_identica": true,
+    "extrator": "pdftotext -layout",
+    "pagina_impressa": 9,
+    "nota": 9,
+    "linha_inicial": 48,
+    "linha_final": 50,
+    "excerto": "Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, valor que compara com 11,8% subjacente à trajetória acordada.",
+    "localizador_publico": "p. 9, nota 9"
+  },
+  "controlo_codigo": 0,
+  "plantas": [
+    {
+      "nome": "a nota 9 tirada, o gráfico intacto",
+      "comando": "cfp_crescimento_2024 sobre uma cópia estragada",
+      "codigo": 1,
+      "mordida": "um índice em rótulos de gráfico não é prova",
+      "passou": true
+    },
+    {
+      "nome": "a leitura antiga pelo índice do gráfico, sobre o ficheiro alojado",
+      "comando": "pdf_sentence(page=10, first=1, last=27, value=linha 10 da corrida de rótulos)",
+      "codigo": 1,
+      "mordida": "um índice em rótulos de gráfico não é prova",
+      "passou": true
+    }
+  ],
+  "reposto_codigo": 0,
+  "bytes_alojados": {
+    "antes": "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2",
+    "reposto": "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2"
+  },
+  "linhas_do_motor": {
+    "total": 323,
+    "alteradas": [
+      "crescimento-da-despesa-liquida-2024"
+    ],
+    "valores_alterados": 0
+  },
+  "linha_do_sitio": {
+    "value": "11,9",
+    "locator": "p. 9, nota 9",
+    "excerpt": "Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, valor que compara com 11,8% subjacente à trajetória acordada.",
+    "source_url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf#page=9",
+    "reference_date": "2024"
+  }
+}

@@ -11,13 +11,13 @@
     "ficheiros": [
       {
         "ficheiro": "dist/temas/index.html",
-        "antes": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256",
-        "reposto": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256"
+        "antes": "a4a680a920c039931972f76378a7263f4eabe4aedb9f78f66cecd45e2b81709e",
+        "reposto": "a4a680a920c039931972f76378a7263f4eabe4aedb9f78f66cecd45e2b81709e"
       },
       {
         "ficheiro": "dist/en/european-union/index.html",
-        "antes": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d",
-        "reposto": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d"
+        "antes": "5300c196b8679918893b282080b64e6624024cd262e6941883ebd418e7050726",
+        "reposto": "5300c196b8679918893b282080b64e6624024cd262e6941883ebd418e7050726"
       }
     ]
   }

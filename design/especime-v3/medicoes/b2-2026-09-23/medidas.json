@@ -1,8 +1,10 @@
 {
   "comando": "python3 design/especime-v3/medicoes/b2-2026-09-23/medir.py",
-  "cabeca_da_corrida": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+  "cabeca_da_corrida": "5e8ef1dd79bc8e615b784f211e799efc63fb8f23",
   "parcial": false,
   "conhecidos_positivos": {
+    "marca_no_meio_novo": true,
+    "marca_depois_novo": true,
     "marca_no_meio": true,
     "cartao_sem_regua": true,
     "numero_indisponivel": true,
@@ -13,6 +15,11 @@
     "cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
     "paginas": {
       "pais_pt": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 19,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 0,
@@ -37,7 +44,7 @@
           "abandono-escolar-precoce-2025": "As pessoas dos 18 aos 24 anos que completaram no máximo o ensino básico e não estão em estudos nem em formação.",
           "sobrecarga-do-custo-da-habitacao-2025": "A percentagem da população que vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40% do rendimento disponível, líquido de subsídios à habitação."
         },
-        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 18,
+        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 19,
         "cartoes_com_precisao_mista": 2,
         "cartoes_com_precisao_mista_lista": [
           "racio-s80-s20-2025",
@@ -80,6 +87,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "pais_en": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 19,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 0,
@@ -104,7 +116,7 @@
           "abandono-escolar-precoce-2025": "People aged 18 to 24 who have completed at most lower secondary education and are not involved in further education or training.",
           "sobrecarga-do-custo-da-habitacao-2025": "The percentage of the population living in households where total housing costs, net of housing allowances, take more than 40% of disposable income, net of housing allowances."
         },
-        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 18,
+        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 19,
         "cartoes_com_precisao_mista": 2,
         "cartoes_com_precisao_mista_lista": [
           "racio-s80-s20-2025",
@@ -147,6 +159,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "temas_pt": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 35,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 13,
@@ -186,7 +203,7 @@
           "precos-da-habitacao-2025": "O índice que mede a variação dos preços de transação das casas compradas pelas famílias.",
           "sobrecarga-do-custo-da-habitacao-2025": "A percentagem da população que vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40% do rendimento disponível, líquido de subsídios à habitação."
         },
-        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 34,
+        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 35,
         "cartoes_com_precisao_mista": 5,
         "cartoes_com_precisao_mista_lista": [
           "fluxo-de-credito-as-empresas-2025",
@@ -256,6 +273,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "temas_en": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 35,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 13,
@@ -295,7 +317,7 @@
           "precos-da-habitacao-2025": "The index that measures the changes in the transaction prices of dwellings purchased by households.",
           "sobrecarga-do-custo-da-habitacao-2025": "The percentage of the population living in households where total housing costs, net of housing allowances, take more than 40% of disposable income, net of housing allowances."
         },
-        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 34,
+        "cartoes_com_a_marca_entre_o_valor_e_a_unidade": 35,
         "cartoes_com_precisao_mista": 5,
         "cartoes_com_precisao_mista_lista": [
           "fluxo-de-credito-as-empresas-2025",
@@ -365,6 +387,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "europeia_pt": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 0,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -481,6 +508,11 @@
         ]
       },
       "europeia_en": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 0,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -597,6 +629,11 @@
         ]
       },
       "mourao_pt": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 8,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -648,6 +685,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "mourao_en": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 8,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -733,9 +775,22 @@
     }
   },
   "depois": {
-    "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
     "paginas": {
       "pais_pt": {
+        "camaras_periodo": "em 2024",
+        "camaras_nome_elemento": "span",
+        "camaras_ligacoes": [
+          "/livro-razao/indice-de-divida-limite-legal",
+          "/lugares/"
+        ],
+        "camaras_portas_para_os_lugares": 1,
+        "camaras_dicas": {
+          "camaras_acima_do_limite": "câmaras cujo índice de dívida calculado é superior ao limite legal",
+          "municipios_com_pagina": "concelhos",
+          "camaras_dentro_do_limite": "câmaras cujo índice de dívida calculado não excede o limite legal",
+          "camaras_sem_valor": "câmaras sem valor numérico para calcular o índice de dívida"
+        },
         "cartoes": 20,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 2,
@@ -781,11 +836,11 @@
         "cores_sem_palavra": 0,
         "cores_sem_palavra_lista": [],
         "formas_do_veredicto": {
-          "dentro do valor de referência (acima de −3 %)": 1,
-          "fora do valor de referência (acima de 5 %)": 1
+          "dentro do valor de referência do Pacto (acima de −3 %)": 1,
+          "fora do valor de referência do Conselho da UE (acima de 5 %)": 1
         },
         "veredicto_do_pais": [
-          "Portugal está fora de 4 dos 13 valores de referência da Comissão Europeia e dentro de 9: a dívida pública, a posição de investimento internacional, o custo unitário do trabalho e os preços da habitação."
+          "Em 2025, Portugal ficou fora de 4 dos 13 valores de referência da Comissão Europeia e dentro de 9. Fora: a dívida pública, a posição de investimento internacional, o custo unitário do trabalho e os preços da habitação."
         ],
         "ligacoes_do_veredicto": [
           "/uniao-europeia#painel",
@@ -836,6 +891,19 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "pais_en": {
+        "camaras_periodo": "in 2024",
+        "camaras_nome_elemento": "span",
+        "camaras_ligacoes": [
+          "/en/ledger/indice-de-divida-limite-legal",
+          "/en/places/"
+        ],
+        "camaras_portas_para_os_lugares": 1,
+        "camaras_dicas": {
+          "camaras_acima_do_limite": "councils whose calculated debt index exceeds the legal limit",
+          "municipios_com_pagina": "municipalities",
+          "camaras_dentro_do_limite": "councils whose calculated debt index does not exceed the legal limit",
+          "camaras_sem_valor": "councils with no numeric value to calculate the debt index"
+        },
         "cartoes": 20,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 2,
@@ -881,11 +949,11 @@
         "cores_sem_palavra": 0,
         "cores_sem_palavra_lista": [],
         "formas_do_veredicto": {
-          "within the reference value (above −3 %)": 1,
-          "outside the reference value (above 5 %)": 1
+          "within the reference value of the Pact (above −3 %)": 1,
+          "outside the reference value of the Council of the EU (above 5 %)": 1
         },
         "veredicto_do_pais": [
-          "Portugal is outside 4 of the 13 reference values of the European Commission and within 9: government debt, the international investment position, unit labour cost and house prices."
+          "In 2025, Portugal was outside 4 of the European Commission’s 13 reference values and within 9. Outside: government debt, the international investment position, unit labour cost and house prices."
         ],
         "ligacoes_do_veredicto": [
           "/en/european-union#painel",
@@ -936,6 +1004,19 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "temas_pt": {
+        "camaras_periodo": "em 2024",
+        "camaras_nome_elemento": "span",
+        "camaras_ligacoes": [
+          "/livro-razao/indice-de-divida-limite-legal",
+          "/lugares/"
+        ],
+        "camaras_portas_para_os_lugares": 1,
+        "camaras_dicas": {
+          "camaras_acima_do_limite": "câmaras cujo índice de dívida calculado é superior ao limite legal",
+          "municipios_com_pagina": "concelhos",
+          "camaras_dentro_do_limite": "câmaras cujo índice de dívida calculado não excede o limite legal",
+          "camaras_sem_valor": "câmaras sem valor numérico para calcular o índice de dívida"
+        },
         "cartoes": 36,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 15,
@@ -950,7 +1031,7 @@
         "cartoes_com_definicao": 21,
         "definicoes_com_pergunta": 21,
         "definicoes": {
-          "divida-publica-2025": "Quanto devem as administrações públicas, em percentagem do que o país produz num ano?",
+          "divida-publica-2025": "Quanto devem as administrações públicas, em percentagem do PIB?",
           "saldo-da-balanca-corrente-2025": "Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás?",
           "posicao-de-investimento-internacional-2025": "Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB?",
           "taxa-de-cambio-efectiva-real-2025": "Quanto mudou em três anos a taxa de câmbio efetiva real face a outros 41 países industriais, com base nos deflatores dos índices de preços no consumidor?",
@@ -961,7 +1042,7 @@
           "fluxo-de-credito-as-familias-2025": "Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem?",
           "taxa-de-emprego-2025": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
           "taxa-de-desemprego-mip-2025": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
-          "desemprego-de-longa-duracao-2025": "Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+          "desemprego-de-longa-duracao-2025": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
           "jovens-nem-2025": "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?",
           "taxa-de-actividade-2025": "Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável?",
           "custo-unitario-do-trabalho-2025": "Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?",
@@ -999,12 +1080,13 @@
         "cores_sem_palavra": 0,
         "cores_sem_palavra_lista": [],
         "formas_do_veredicto": {
-          "dentro do valor de referência (acima de −3 %)": 2,
+          "dentro do valor de referência do Pacto (acima de −3 %)": 1,
           "fora do valor de referência (acima de 60 %)": 1,
-          "fora do valor de referência (acima de 5 %)": 1,
+          "fora do valor de referência do Conselho da UE (acima de 5 %)": 1,
           "dentro dos valores de referência (entre −4 e 6 %)": 1,
           "fora do valor de referência (abaixo de −35 %)": 1,
           "dentro dos valores de referência (entre −3 e 3 %)": 1,
+          "dentro do valor de referência (acima de −3 %)": 1,
           "dentro do valor de referência (abaixo de 85 %)": 1,
           "dentro do valor de referência (abaixo de 55 %)": 1,
           "dentro do valor de referência (abaixo de 13 %)": 1,
@@ -1044,6 +1126,19 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "temas_en": {
+        "camaras_periodo": "in 2024",
+        "camaras_nome_elemento": "span",
+        "camaras_ligacoes": [
+          "/en/ledger/indice-de-divida-limite-legal",
+          "/en/places/"
+        ],
+        "camaras_portas_para_os_lugares": 1,
+        "camaras_dicas": {
+          "camaras_acima_do_limite": "councils whose calculated debt index exceeds the legal limit",
+          "municipios_com_pagina": "municipalities",
+          "camaras_dentro_do_limite": "councils whose calculated debt index does not exceed the legal limit",
+          "camaras_sem_valor": "councils with no numeric value to calculate the debt index"
+        },
         "cartoes": 36,
         "temas_com_medidas": 9,
         "cartoes_com_valor_de_referencia": 15,
@@ -1058,7 +1153,7 @@
         "cartoes_com_definicao": 21,
         "definicoes_com_pergunta": 21,
         "definicoes": {
-          "divida-publica-2025": "How much does general government owe, as a percentage of what the country produces in a year?",
+          "divida-publica-2025": "How much does general government owe, as a percentage of GDP?",
           "saldo-da-balanca-corrente-2025": "What is the current account balance as a percentage of GDP, on a three-year backward moving average?",
           "posicao-de-investimento-internacional-2025": "What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP?",
           "taxa-de-cambio-efectiva-real-2025": "How much has the real effective exchange rate relative to 41 other industrial countries, based on consumer price index deflators, changed over three years?",
@@ -1069,7 +1164,7 @@
           "fluxo-de-credito-as-familias-2025": "What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?",
           "taxa-de-emprego-2025": "What share of people aged 20 to 64 is employed?",
           "taxa-de-desemprego-mip-2025": "What share of the labour force aged 15 to 74 is unemployed?",
-          "desemprego-de-longa-duracao-2025": "What share of the labour force is out of work and has been actively seeking employment for at least a year?",
+          "desemprego-de-longa-duracao-2025": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?",
           "jovens-nem-2025": "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?",
           "taxa-de-actividade-2025": "How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years?",
           "custo-unitario-do-trabalho-2025": "How much has the nominal unit labour cost index, per hour worked, changed over three years?",
@@ -1107,12 +1202,13 @@
         "cores_sem_palavra": 0,
         "cores_sem_palavra_lista": [],
         "formas_do_veredicto": {
-          "within the reference value (above −3 %)": 2,
+          "within the reference value of the Pact (above −3 %)": 1,
           "outside the reference value (above 60 %)": 1,
-          "outside the reference value (above 5 %)": 1,
+          "outside the reference value of the Council of the EU (above 5 %)": 1,
           "within the reference values (between −4 and 6 %)": 1,
           "outside the reference value (below −35 %)": 1,
           "within the reference values (between −3 and 3 %)": 1,
+          "within the reference value (above −3 %)": 1,
           "within the reference value (below 85 %)": 1,
           "within the reference value (below 55 %)": 1,
           "within the reference value (below 13 %)": 1,
@@ -1152,6 +1248,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "europeia_pt": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 0,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -1202,6 +1303,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "europeia_en": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 0,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -1252,6 +1358,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "mourao_pt": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 8,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -1303,6 +1414,11 @@
         "faixa_cores_sem_palavra_lista": []
       },
       "mourao_en": {
+        "camaras_periodo": null,
+        "camaras_nome_elemento": null,
+        "camaras_ligacoes": [],
+        "camaras_portas_para_os_lugares": 0,
+        "camaras_dicas": {},
         "cartoes": 8,
         "temas_com_medidas": 0,
         "cartoes_com_valor_de_referencia": 0,
@@ -1356,13 +1472,8 @@
     },
     "copias": 9,
     "aceitacao": {
-      "passou": false,
-      "falhas": [
-        "depois-europeia-pt-768.png: wordmark 26.112 px, H1 26 px",
-        "depois-europeia-pt-1024.png: wordmark 34 px, H1 32.768 px",
-        "depois-europeia-en-768.png: wordmark 26.112 px, H1 26 px",
-        "depois-europeia-en-1024.png: wordmark 34 px, H1 32.768 px"
-      ]
+      "passou": true,
+      "falhas": []
     },
     "folha": {
       "wordmark": {
@@ -2546,15 +2657,10 @@
     "depois": {
       "quantidade": 40,
       "aceitacao": {
-        "passou": false,
-        "falhas": [
-          "depois-europeia-pt-768.png: wordmark 26.112 px, H1 26 px",
-          "depois-europeia-pt-1024.png: wordmark 34 px, H1 32.768 px",
-          "depois-europeia-en-768.png: wordmark 26.112 px, H1 26 px",
-          "depois-europeia-en-1024.png: wordmark 34 px, H1 32.768 px"
-        ]
+        "passou": true,
+        "falhas": []
       },
-      "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
       "larguras": [
         390,
         768,
@@ -2564,13 +2670,13 @@
       ],
       "transbordos": 0,
       "maior_transbordo_px": 0,
-      "titulos_interiores_maiores": 26,
+      "titulos_interiores_maiores": 30,
       "paginas_interiores": 30,
       "unidades_separadas_a_390": 0,
       "perguntas_antes_da_regua": 0,
       "perguntas_com_regua": 270,
       "reguas_maiores_que_pergunta": 270,
-      "segundos": 27.559,
+      "segundos": 26.323,
       "tamanhos": [
         {
           "familia": "pais",
@@ -2598,7 +2704,7 @@
               "altura": 35.359375
             }
           },
-          "altura": 7501
+          "altura": 7563
         },
         {
           "familia": "pais",
@@ -2654,7 +2760,7 @@
               "altura": 70.71875
             }
           },
-          "altura": 5338
+          "altura": 5360
         },
         {
           "familia": "pais",
@@ -2710,7 +2816,7 @@
               "altura": 70.71875
             }
           },
-          "altura": 5338
+          "altura": 5360
         },
         {
           "familia": "pais",
@@ -2738,7 +2844,7 @@
               "altura": 35.359375
             }
           },
-          "altura": 7487
+          "altura": 7574
         },
         {
           "familia": "pais",
@@ -2794,7 +2900,7 @@
               "altura": 70.71875
             }
           },
-          "altura": 5345
+          "altura": 5367
         },
         {
           "familia": "pais",
@@ -2850,7 +2956,7 @@
               "altura": 70.71875
             }
           },
-          "altura": 5347
+          "altura": 5369
         },
         {
           "familia": "temas",
@@ -2878,7 +2984,7 @@
               "altura": 30.796875
             }
           },
-          "altura": 6769
+          "altura": 6831
         },
         {
           "familia": "temas",
@@ -2934,7 +3040,7 @@
               "altura": 46.1875
             }
           },
-          "altura": 4214
+          "altura": 4231
         },
         {
           "familia": "temas",
@@ -3018,7 +3124,7 @@
               "altura": 30.796875
             }
           },
-          "altura": 6701
+          "altura": 6787
         },
         {
           "familia": "temas",
@@ -3074,7 +3180,7 @@
               "altura": 46.1875
             }
           },
-          "altura": 4153
+          "altura": 4171
         },
         {
           "familia": "temas",
@@ -3102,7 +3208,7 @@
               "altura": 46.1875
             }
           },
-          "altura": 4027
+          "altura": 4009
         },
         {
           "familia": "temas",
@@ -3150,15 +3256,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-            "tamanho": 26,
+            "tamanho": 28,
             "caixa": {
               "x": 18,
-              "y": 219.75,
+              "y": 223.75,
               "largura": 354,
-              "altura": 118.4375
+              "altura": 158.796875
             }
           },
-          "altura": 1138
+          "altura": 1210
         },
         {
           "familia": "europeia",
@@ -3178,15 +3284,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-            "tamanho": 26,
+            "tamanho": 33.792,
             "caixa": {
               "x": 30.71875,
-              "y": 250,
-              "largura": 416,
-              "altura": 118.4375
+              "y": 254,
+              "largura": 540.671875,
+              "altura": 155.375
             }
           },
-          "altura": 2300
+          "altura": 2369
         },
         {
           "familia": "europeia",
@@ -3206,15 +3312,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-            "tamanho": 32.768,
+            "tamanho": 42,
             "caixa": {
               "x": 40.953125,
-              "y": 271.75,
-              "largura": 524.28125,
-              "altura": 148.75
+              "y": 275.75,
+              "largura": 672,
+              "altura": 190.125
             }
           },
-          "altura": 2161
+          "altura": 2234
         },
         {
           "familia": "europeia",
@@ -3234,15 +3340,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-            "tamanho": 40,
+            "tamanho": 42,
             "caixa": {
               "x": 94,
-              "y": 272.15625,
-              "largura": 640,
-              "altura": 183.1875
+              "y": 276.15625,
+              "largura": 672,
+              "altura": 190.125
             }
           },
-          "altura": 2055
+          "altura": 2094
         },
         {
           "familia": "europeia",
@@ -3262,15 +3368,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
-            "tamanho": 40,
+            "tamanho": 42,
             "caixa": {
               "x": 254,
-              "y": 272.15625,
-              "largura": 640,
-              "altura": 183.1875
+              "y": 276.15625,
+              "largura": 672,
+              "altura": 190.125
             }
           },
-          "altura": 2065
+          "altura": 2104
         },
         {
           "familia": "europeia",
@@ -3290,15 +3396,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
-            "tamanho": 26,
+            "tamanho": 28,
             "caixa": {
               "x": 18,
-              "y": 219.75,
+              "y": 223.75,
               "largura": 354,
-              "altura": 118.4375
+              "altura": 127.4375
             }
           },
-          "altura": 1186
+          "altura": 1227
         },
         {
           "familia": "europeia",
@@ -3318,15 +3424,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
-            "tamanho": 26,
+            "tamanho": 33.792,
             "caixa": {
               "x": 30.71875,
-              "y": 250,
-              "largura": 416,
-              "altura": 89.328125
+              "y": 254,
+              "largura": 540.671875,
+              "altura": 117.53125
             }
           },
-          "altura": 2243
+          "altura": 2304
         },
         {
           "familia": "europeia",
@@ -3346,15 +3452,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
-            "tamanho": 32.768,
+            "tamanho": 42,
             "caixa": {
               "x": 40.953125,
-              "y": 271.75,
-              "largura": 524.28125,
-              "altura": 112.0625
+              "y": 275.75,
+              "largura": 672,
+              "altura": 143.09375
             }
           },
-          "altura": 2097
+          "altura": 2160
         },
         {
           "familia": "europeia",
@@ -3374,15 +3480,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
-            "tamanho": 40,
+            "tamanho": 42,
             "caixa": {
               "x": 94,
-              "y": 272.15625,
-              "largura": 640,
-              "altura": 138.390625
+              "y": 276.15625,
+              "largura": 672,
+              "altura": 143.09375
             }
           },
-          "altura": 1982
+          "altura": 2019
         },
         {
           "familia": "europeia",
@@ -3402,15 +3508,15 @@
           "h1": {
             "quantidade": 1,
             "texto": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
-            "tamanho": 40,
+            "tamanho": 42,
             "caixa": {
               "x": 254,
-              "y": 272.15625,
-              "largura": 640,
-              "altura": 138.390625
+              "y": 276.15625,
+              "largura": 672,
+              "altura": 143.09375
             }
           },
-          "altura": 1992
+          "altura": 2028
         },
         {
           "familia": "mourao",
@@ -3699,6 +3805,7 @@
     "antes": {
       "limite_legal": 150.0,
       "concelhos": 308,
+      "indices_calculados": 308,
       "camaras_acima_do_limite": 10,
       "camaras_dentro_do_limite": 297,
       "camaras_sem_valor": 1,
@@ -5254,6 +5361,7 @@
     "depois": {
       "limite_legal": 150.0,
       "concelhos": 308,
+      "indices_calculados": 308,
       "camaras_acima_do_limite": 10,
       "camaras_dentro_do_limite": 297,
       "camaras_sem_valor": 1,
@@ -6824,41 +6932,66 @@
     "novas_n": 6
   },
   "commits": [
-    "2415107b B2: levar os estilos da origem ao recibo novo",
-    "27a8f4c1 B2: declarar os tipos da língua e das referências opcionais",
-    "d75f869e B2: tornar reproduzíveis a medição e a prova do motor",
-    "9eb5ab47 B2: conferir as portas obrigatórias e medir as fichas novas",
-    "31edfdd4 B2: registar perguntas e estados no inventário das frases",
-    "10206d83 B2: tornar acessíveis as origens da pergunta dos inquilinos",
-    "19ccd46d B2: guardar o antes nas páginas e larguras do mandato",
-    "fc6717f1 B2: compor o veredicto e contar as câmaras contra o limite",
-    "b870624c B2: mostrar estado em palavras e unir valor à unidade",
-    "30905d50 B2: declarar perguntas e referências numa tabela comum",
-    "836168c5 B2: escrever a unidade monetária da linha nas leituras",
-    "c7ed629a B2: importar períodos anteriores e habitação dos inquilinos"
+    "7110ca60 B2: a faixa também nomeia o dono da referência nacional",
+    "e774add0 B2: o medidor do bloco conta a marca entre o valor e a unidade no invólucro novo",
+    "d1bf2c2b B2: os guiões da segunda passagem de correção e a leitura a frio da peça 1",
+    "043f7291 B2: o inventário das frases da segunda passagem de correção",
+    "a425f9a3 B2: o apóstrofo tipográfico na frase inglesa do veredicto",
+    "f033b7aa B2: a V2 compara a linha do valor das câmaras parte a parte, a contagem e o período",
+    "2dea9e22 B2: cada pedaço de cada pergunta com a sua origem, e a K16 do check:cartao a conferi-lo",
+    "49a63cca B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, reexportado do motor",
+    "8f7b2c27 B2: datar o veredicto e nomear o dono das referências",
+    "a4cc0e17 B2: provar o período das câmaras e usar uma porta comum",
+    "6151dec5 B2: integrar a hierarquia das cabeças no verify",
+    "ed44e493 B2: guardar a prova do motor e as plantas que estavam bloqueadas",
+    "5ffcaa94 B2: fechar as provas da correção e a reprodução do relatório",
+    "5d4e0c99 B2: aplicar ao título europeu a regra dos títulos interiores",
+    "f2bd5bff B2: reexportar a associação provada do agregado europeu",
+    "7c381662 B2: relatar a prova e as decisões necessárias à aceitação",
+    "57124036 B2: guardar capturas finais, plantas e medições dos pontos suspensos",
+    "bc44858a B2: levar os estilos da origem ao recibo novo",
+    "1920024c B2: declarar os tipos da língua e das referências opcionais",
+    "4aa1c128 B2: tornar reproduzíveis a medição e a prova do motor",
+    "ff9d5662 B2: conferir as portas obrigatórias e medir as fichas novas",
+    "8479ff91 B2: registar perguntas e estados no inventário das frases",
+    "ffe43c06 B2: tornar acessíveis as origens da pergunta dos inquilinos",
+    "353d7bb8 B2: guardar o antes nas páginas e larguras do mandato",
+    "3283b6b5 B2: compor o veredicto e contar as câmaras contra o limite",
+    "b715dda6 B2: mostrar estado em palavras e unir valor à unidade",
+    "58a0b81d B2: declarar perguntas e referências numa tabela comum",
+    "8999e903 B2: escrever a unidade monetária da linha nas leituras",
+    "f8e82713 B2: importar períodos anteriores e habitação dos inquilinos",
+    "97e84232 A emenda do brief do B2 depois da construção da peça 1: a premissa dos dois títulos estava errada no geral (o guião leu a regra geral e as páginas interiores usam a compacta), a associação da linha da União prova-se na linha e o portão fica, e dois cartões ficam sem régua com a razão da fonte",
+    "13da4dc2 A guarda do caminho absoluto sem as aspas angulares coladas ao nome da variável: o sh lia «$worktree»» como um nome e morria em «unbound variable»; a planta (um caminho relativo) sai com 9 e a razão",
+    "1be30174 O lançamento do construtor do Codex passa ao lugar de direção (§1.128), por decisão do diretor; o guião recusa um caminho relativo da worktree (M29)"
   ],
-  "commits_n": 12,
+  "commits_n": 32,
   "plantas": {
     "plantas-bloqueadas.json": {
       "estragos": 0,
       "morderam": 0,
       "corridas_limpas": 0,
       "ficheiros_repostos": 0,
-      "sha256": "90061e390052ca772b76cea708bb6baee2b393f1abe8a0d158660d21184322ea",
+      "sha256": "e564ffd87501137aab80a9e656236b378ec2b8d49e5bd924d0419e26048119ab",
       "nomes": []
     },
     "plantas-camaras.json": {
-      "estragos": 10,
-      "morderam": 10,
-      "corridas_limpas": 9,
-      "ficheiros_repostos": 10,
-      "sha256": "3238e480f3e0994cc714c24986f52372f10ce0b43607a71c94b0f5b5bc025f79",
+      "estragos": 15,
+      "morderam": 15,
+      "corridas_limpas": 11,
+      "ficheiros_repostos": 15,
+      "sha256": "76a3a7f72ad2fa836cbd058abcc5ba64034be64d126929f10b286eab0230e354",
       "nomes": [
         "camaras-camaras_acima_do_limite-trocada",
         "camaras-camaras_dentro_do_limite-trocada",
         "camaras-camaras_sem_valor-trocada",
         "camaras-limite-trocado",
         "camaras-porta-trocada",
+        "camaras-periodo-trocado",
+        "camaras-unidade-trocada",
+        "camaras-periodo-sem-palavra",
+        "camaras-contagem-com-porta",
+        "camaras-nome-como-titulo",
         "camaras-no-inicio-da-fila",
         "economia-com-cinco-cartoes",
         "habitacao-com-total-primeiro",
@@ -6936,12 +7069,24 @@
         "selo-duplicado"
       ]
     },
+    "plantas-k16.json": {
+      "estragos": 3,
+      "morderam": 3,
+      "corridas_limpas": 2,
+      "ficheiros_repostos": 3,
+      "sha256": "b8ae2bc4497ad2c24526d8772ddb03010e1f647c42411f3673e0dda76ceaa9f2",
+      "nomes": [
+        "k16-origem-selada-tirada",
+        "k16-pedaco-sem-apoio",
+        "k16-selo-sem-sha256"
+      ]
+    },
     "plantas-l1-b2.json": {
       "estragos": 6,
       "morderam": 6,
       "corridas_limpas": 2,
       "ficheiros_repostos": 0,
-      "sha256": "71d125f0f49c0d4a46e7a2c13cf9c813031f1f2bf3e87a98a662fcf255cb7ba9",
+      "sha256": "90d84b89c2ef8f8716ff6fba530e45a9dc127dab3a524308daf58dae2eb37408",
       "nomes": [
         "l1-b2-porta-final-repetida",
         "l1-b2-porta-obrigatoria-alterada",
@@ -6966,9 +7111,29 @@
       "morderam": 1,
       "corridas_limpas": 0,
       "ficheiros_repostos": 2,
-      "sha256": "4243ecee2b236fbb1aed44d5131d6077bc6a57afbe610906ff0898cf7668902a",
+      "sha256": "728d9450a2bb4f23fa2bb071a69a2b0adc2a80dd2ab5e79f7c48efcf3d450614",
       "nomes": [
         "b2-cartao-cor-sem-palavra"
+      ]
+    },
+    "plantas-portoes-b2-contagens-das-camaras.json": {
+      "estragos": 1,
+      "morderam": 1,
+      "corridas_limpas": 0,
+      "ficheiros_repostos": 1,
+      "sha256": "67eac4fe61d64484e4c59e517da523bea5935c3754f737f2a7a9a113abfda7d2",
+      "nomes": [
+        "b2-contagens-das-camaras"
+      ]
+    },
+    "plantas-portoes-b2-selo-do-cartao.json": {
+      "estragos": 1,
+      "morderam": 1,
+      "corridas_limpas": 0,
+      "ficheiros_repostos": 3,
+      "sha256": "4ac052f4651ed5e8112fb2ba99e9830297052151a36ed472632bb7f81dbb778e",
+      "nomes": [
+        "b2-selo-do-cartao"
       ]
     },
     "plantas-portoes-b2-voz-contagem-e-prosa.json": {
@@ -6976,17 +7141,27 @@
       "morderam": 1,
       "corridas_limpas": 0,
       "ficheiros_repostos": 1,
-      "sha256": "883534e717bc3473b67352b31b7cd1bdcb7f400300a4d8112733a807455c160a",
+      "sha256": "b3ee0b2cf73b935a74b7abe787a85237c639451a45d84d6faa85b36221d998dc",
       "nomes": [
         "b2-voz-contagem-e-prosa"
       ]
     },
+    "plantas-titulos-b2.json": {
+      "estragos": 1,
+      "morderam": 1,
+      "corridas_limpas": 0,
+      "ficheiros_repostos": 0,
+      "sha256": "c55f7ef4222ab7e0306017848b43c4258e370110fce6157337b263890e2e9d77",
+      "nomes": [
+        "b2-titulo-europeu-anterior"
+      ]
+    },
     "plantas-veredicto.json": {
-      "estragos": 8,
-      "morderam": 8,
+      "estragos": 12,
+      "morderam": 12,
       "corridas_limpas": 2,
-      "ficheiros_repostos": 8,
-      "sha256": "a8fb12dc35d5a447a03e70bb885958579ad3c21b9ad153dee0c04e651a8c4ca5",
+      "ficheiros_repostos": 12,
+      "sha256": "176c68961bab5604559834b9a70198abab424fadddd6f8d5d822d06d49652c2a",
       "nomes": [
         "contagem-trocada-pt",
         "contagem-trocada-en",
@@ -6995,15 +7170,19 @@
         "porta-da-medida-trocada",
         "ancora-do-cartao-ausente",
         "frase-trocada",
+        "veredicto-sem-ano-pt",
+        "veredicto-lista-colada-pt",
+        "veredicto-sem-ano-en",
+        "veredicto-lista-colada-en",
         "veredicto-depois-da-leitura"
       ]
     }
   },
-  "plantas_total": 79,
-  "plantas_morderam": 79,
+  "plantas_total": 94,
+  "plantas_morderam": 94,
   "motor": {
     "base": "aa35e2e72f09988a07d6706fe0a0b59feeca120d",
-    "cabeca": "ead443cd2ae83b05127e6a7774be0c0e939bc85f",
+    "cabeca": "0f081711750492991306ff87d056ab4f52dae306",
     "linhas": {
       "antes": 317,
       "depois": 323,
@@ -7056,14 +7235,81 @@
     "core_gate_passou": true,
     "plantas_vistas": 35,
     "plantas_total": 35,
-    "provas": 9,
+    "provas": 14,
     "problemas": 0,
     "reguas_ausentes": {
       "ganho-medio-mensal-2024": "O ficheiro INE alojado tem apenas Dados[2024]. O ano anterior não está neste ficheiro.",
       "retribuicao-minima-mensal-garantida-continente-2026": "O diploma alojado cita no preâmbulo um compromisso para o ano anterior. Não aloja a norma que fixou esse valor; o compromisso não prova aqui o valor legal aplicado."
     },
+    "passagem_2": {
+      "base": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+      "commits": [
+        {
+          "commit": "8a084b8c29935ce61d3bcae0dcf6bfea7738e8eb",
+          "assunto": "B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, e o leitor do estudo 13 a recusar a camada de texto de um gráfico",
+          "pre_commit_codigo": 0,
+          "core_gate_passou": true,
+          "inicio": "2026-09-23T21:35:12Z",
+          "fim": "2026-09-23T21:38:12Z"
+        },
+        {
+          "commit": "0f081711750492991306ff87d056ab4f52dae306",
+          "assunto": "B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa",
+          "pre_commit_codigo": 0,
+          "core_gate_passou": true,
+          "inicio": "2026-09-23T21:38:32Z",
+          "fim": "2026-09-23T21:41:32Z"
+        }
+      ],
+      "plantas_vistas": 35,
+      "plantas_total": 35,
+      "provas": 18,
+      "problemas": 0,
+      "plantas_do_cfp": [
+        "verde     B2 CFP 2024: planta recusada, só rótulos do gráfico: CFP 2024: a nota 9 da página 9 não contém a frase que associa o valor ao crescimento da despesa líquida apurado pelo CFP; um índice em rótulos de gráfico não é prova",
+        "verde     B2 CFP 2024: planta recusada, a leitura antiga pelo índice do gráfico: parecer-2026-02-rap26.txt: a janela da página 10, linhas 1 a 27, abre na legenda de um gráfico ('Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 '); a camada de texto de um gráfico é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova"
+      ],
+      "pedidos_das_perguntas": [
+        {
+          "linha": "desemprego-de-longa-duracao-2025",
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+          "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+          "file": "tesem130.json",
+          "timestamp_utc": "2026-09-23T21:34:16Z",
+          "http": "200",
+          "bytes": 5837,
+          "user_agent": "OEstadoDoPais/corredor",
+          "cliente": "core.http.HttpClient.condicional",
+          "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b"
+        },
+        {
+          "linha": "jovens-nem-2025",
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+          "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+          "file": "tipslm90.json",
+          "timestamp_utc": "2026-09-23T21:34:16Z",
+          "http": "200",
+          "bytes": 5642,
+          "user_agent": "OEstadoDoPais/corredor",
+          "cliente": "core.http.HttpClient.condicional",
+          "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef"
+        },
+        {
+          "linha": "sobrecarga-do-custo-da-habitacao-2025",
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+          "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+          "file": "tespm140.json",
+          "timestamp_utc": "2026-09-23T21:34:17Z",
+          "http": "200",
+          "bytes": 4770,
+          "user_agent": "OEstadoDoPais/corredor",
+          "cliente": "core.http.HttpClient.condicional",
+          "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42"
+        }
+      ]
+    },
     "ficheiro_de_medicao": "motor/medidas-motor.json",
-    "sha256_do_ficheiro": "afebb17521ff1e267d0c75fb0da68055c45b0b005e2bc5e04112db92e82edbfa"
+    "sha256_do_ficheiro": "f71577cc04b693833980db5f8a43a9fbf104b1bb250b6d6dca440056d1807b5f"
   },
   "caso_portao_ue": {
     "gerado_em": "2026-09-23T19:02:14.903Z",
@@ -7388,6 +7634,2381 @@
     },
     "ficheiro_de_medicao": "caso-portao-ue.json",
     "sha256_do_ficheiro": "73f3b0bb3c12f3f42f2cca2241535c8e42c7f34a79a541dd173846ba77ea94c6"
+  },
+  "correcao": {
+    "base_sitio": "8eb528f9604914c84417b2be856ae482e2d06a12",
+    "cabeca_sitio": "b84f1f9225a183a6e25c7a0f9fe1a7bfd695be82",
+    "cabeca_motor": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+    "commits_sitio": [
+      "c09feab8 B2: reexportar a associação provada do agregado europeu",
+      "0ae843f1 B2: aplicar ao título europeu a regra dos títulos interiores",
+      "f71f4f36 B2: fechar as provas da correção e a reprodução do relatório",
+      "b84f1f92 B2: guardar a prova do motor e as plantas que estavam bloqueadas"
+    ],
+    "campos_inalterados": [
+      "value",
+      "unit",
+      "reference_date",
+      "source_url",
+      "document.title",
+      "excerpt",
+      "todos os campos além da nota"
+    ],
+    "nota_anterior_preservada": true,
+    "declaracao": "Agregado da União Europeia (EU27_2020) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», no mesmo quadro, regime de ocupação, unidade e período. · ",
+    "ficheiros_ledger": [
+      "ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+      "ledger/cruzamentos/dominios.json"
+    ],
+    "plantas_associacao": 4,
+    "mordidas_associacao": [
+      "outro quadro: Associação UE: quadro divergente: PT 'TESSI164', UE 'TESSI165'",
+      "outro regime: Associação UE: regime divergente: PT 'RENT_MKT', UE 'OWN_L'",
+      "outra unidade: Associação UE: unidade divergente: PT 'PC', UE 'PC_POP'",
+      "outro período: Associação UE: período divergente: PT '2025', UE '2024'"
+    ],
+    "controlo_positivo": true,
+    "ledger_codigo": 0,
+    "capturas_refeitas": [
+      "depois-europeia-pt-390.png",
+      "depois-europeia-pt-768.png",
+      "depois-europeia-pt-1024.png",
+      "depois-europeia-pt-1280.png",
+      "depois-europeia-pt-1600.png",
+      "depois-europeia-en-390.png",
+      "depois-europeia-en-768.png",
+      "depois-europeia-en-1024.png",
+      "depois-europeia-en-1280.png",
+      "depois-europeia-en-1600.png"
+    ],
+    "capturas_refeitas_total": 10,
+    "ficheiro_de_medicao": "correcao/resumo.json",
+    "sha256_do_ficheiro": "1b319453b94ba60d95bf2a1d8d175e300495c54236a9858041183f386b837925"
+  },
+  "hierarquia": {
+    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "construido_em": "2026-09-23T22:21:11.069Z",
+    "inicio": "2026-09-23T22:34:01.091Z",
+    "fim": "2026-09-23T22:34:04.148Z",
+    "familias": [
+      "temas",
+      "europeia",
+      "lugares",
+      "concelho",
+      "estudos",
+      "estudo",
+      "sobre",
+      "metodo",
+      "correcoes",
+      "agenda",
+      "recibo"
+    ],
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ],
+    "edicoes": [
+      "pt",
+      "en"
+    ],
+    "limpas": [
+      {
+        "familia": "temas",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/temas/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/temas/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/temas/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/temas/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/temas/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/themes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/themes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/themes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/themes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "temas",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/themes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/lugares/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/lugares/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/lugares/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/lugares/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/lugares/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/places/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/places/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/places/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/places/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "lugares",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/places/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/municipios/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/municipios/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 38.4
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/municipios/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/municipios/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/municipios/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/municipalities/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/municipalities/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 38.4
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/municipalities/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/municipalities/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "concelho",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/municipalities/mourao/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/estudos/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/estudos/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/estudos/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/estudos/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/estudos/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/studies/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/studies/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/studies/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/studies/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudos",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/studies/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/estudos/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 27
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/estudos/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30.72
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/estudos/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/estudos/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/estudos/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/studies/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 27
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/studies/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30.72
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/studies/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/studies/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "estudo",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/studies/evora-prometido-pago-auditado-2026/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/sobre/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/sobre/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/sobre/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/sobre/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/sobre/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/about/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/about/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/about/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/about/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "sobre",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/about/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/metodo/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/metodo/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/metodo/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/metodo/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/metodo/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/method/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/method/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/method/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/method/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "metodo",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/method/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/correcoes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/correcoes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/correcoes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/correcoes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/correcoes/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/corrections/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/corrections/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/corrections/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/corrections/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "correcoes",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/corrections/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "agenda",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/agenda/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/livro-razao/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/livro-razao/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/livro-razao/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/livro-razao/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/livro-razao/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/ledger/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 30
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/ledger/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.256
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/ledger/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 43.008
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/ledger/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      },
+      {
+        "familia": "recibo",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/ledger/divida-publica-2025/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 46
+        },
+        "falhas": []
+      }
+    ],
+    "estragadas": [
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 26
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 26
+        },
+        "falhas": [
+          "/uniao-europeia/: C1, wordmark 26.112 px, H1 26 px"
+        ]
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.768
+        },
+        "falhas": [
+          "/uniao-europeia/: C1, wordmark 34 px, H1 32.768 px"
+        ]
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 26
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 26
+        },
+        "falhas": [
+          "/en/european-union/: C1, wordmark 26.112 px, H1 26 px"
+        ]
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 32.768
+        },
+        "falhas": [
+          "/en/european-union/: C1, wordmark 34 px, H1 32.768 px"
+        ]
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 40
+        },
+        "falhas": []
+      }
+    ],
+    "repostas": [
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 390,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 768,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1024,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1280,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "pt",
+        "largura": 1600,
+        "ficheiro": "/uniao-europeia/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 390,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 24
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 28
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 768,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 26.112
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 33.792
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1024,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1280,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      },
+      {
+        "familia": "europeia",
+        "lingua": "en",
+        "largura": 1600,
+        "ficheiro": "/en/european-union/",
+        "wordmark": {
+          "elemento": "p",
+          "tamanho": 34
+        },
+        "h1": {
+          "quantidade": 1,
+          "tamanho": 42
+        },
+        "falhas": []
+      }
+    ],
+    "plantas": [
+      {
+        "nome": "b2-titulo-europeu-anterior",
+        "comando": "node tests/inicio/hierarquia-b2.mjs --planta-titulo-europeu",
+        "codigo": 1,
+        "mordida": "C1, wordmark maior ou igual ao H1 nas duas edições a 768 e 1024",
+        "passou": true,
+        "marca_intacta": true,
+        "reposicao": true,
+        "casos": [
+          {
+            "familia": "europeia",
+            "lingua": "pt",
+            "largura": 768,
+            "ficheiro": "/uniao-europeia/",
+            "wordmark": {
+              "elemento": "p",
+              "tamanho": 26.112
+            },
+            "h1": {
+              "quantidade": 1,
+              "tamanho": 26
+            },
+            "falhas": [
+              "/uniao-europeia/: C1, wordmark 26.112 px, H1 26 px"
+            ]
+          },
+          {
+            "familia": "europeia",
+            "lingua": "pt",
+            "largura": 1024,
+            "ficheiro": "/uniao-europeia/",
+            "wordmark": {
+              "elemento": "p",
+              "tamanho": 34
+            },
+            "h1": {
+              "quantidade": 1,
+              "tamanho": 32.768
+            },
+            "falhas": [
+              "/uniao-europeia/: C1, wordmark 34 px, H1 32.768 px"
+            ]
+          },
+          {
+            "familia": "europeia",
+            "lingua": "en",
+            "largura": 768,
+            "ficheiro": "/en/european-union/",
+            "wordmark": {
+              "elemento": "p",
+              "tamanho": 26.112
+            },
+            "h1": {
+              "quantidade": 1,
+              "tamanho": 26
+            },
+            "falhas": [
+              "/en/european-union/: C1, wordmark 26.112 px, H1 26 px"
+            ]
+          },
+          {
+            "familia": "europeia",
+            "lingua": "en",
+            "largura": 1024,
+            "ficheiro": "/en/european-union/",
+            "wordmark": {
+              "elemento": "p",
+              "tamanho": 34
+            },
+            "h1": {
+              "quantidade": 1,
+              "tamanho": 32.768
+            },
+            "falhas": [
+              "/en/european-union/: C1, wordmark 34 px, H1 32.768 px"
+            ]
+          }
+        ],
+        "stdout": "check:cabeca C1; construção 7110ca608ef6addba6771a50b5c47685e4e18026; 0 cabeças; 4 mordidas; 0 reposições\ncheck:cabeca: FAIL\n",
+        "stderr": "/uniao-europeia/: C1, wordmark 26.112 px, H1 26 px (pt, 768 px)\n/uniao-europeia/: C1, wordmark 34 px, H1 32.768 px (pt, 1024 px)\n/en/european-union/: C1, wordmark 26.112 px, H1 26 px (en, 768 px)\n/en/european-union/: C1, wordmark 34 px, H1 32.768 px (en, 1024 px)\n"
+      }
+    ],
+    "falhas": [],
+    "ficheiro_de_medicao": "plantas-titulos-b2.json",
+    "sha256_do_ficheiro": "c55f7ef4222ab7e0306017848b43c4258e370110fce6157337b263890e2e9d77"
+  },
+  "hierarquia_resumo": {
+    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "cabecas_medidas": 110,
+    "familias": 11,
+    "mordidas": 4,
+    "plantas_passaram": true
+  },
+  "perguntas": {
+    "comando": "python3 design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py",
+    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+    "k16": {
+      "comando": "node tests/cartao/cartao.mjs --json",
+      "codigo": 0,
+      "erros_do_portao": 0,
+      "erros_k16": [],
+      "perguntas": 22,
+      "pedacos": 72,
+      "apoios": 85,
+      "origens_seladas": 5
+    },
+    "conhecidos_positivos": {
+      "excerto_estragado_apanhado": true,
+      "sha256_estragado_apanhado": true,
+      "origem_limpa_aceite": true
+    },
+    "origens_seladas": 5,
+    "origens_seladas_que_conferem": 5,
+    "selos": {
+      "eurostat-tesem130-denominador": {
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+        "motor": "indicators/out/b2-2026-09-23/perguntas/tesem130.json",
+        "campo": "extension.description",
+        "hora": "2026-09-23T21:34:16Z",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b",
+        "excerto": "The long-term unemployment rate expresses the number of long-term unemployed aged 15-74 as a percentage of the active population of the same age.",
+        "confere": true,
+        "faltas": []
+      },
+      "eurostat-tipslm90-sexo": {
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+        "motor": "indicators/out/b2-2026-09-23/perguntas/tipslm90.json",
+        "campo": "dimension.sex",
+        "hora": "2026-09-23T21:34:16Z",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef",
+        "excerto": "Sex: Total",
+        "confere": true,
+        "faltas": []
+      },
+      "eurostat-tespm140-populacao": {
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+        "motor": "indicators/out/b2-2026-09-23/perguntas/tespm140.json",
+        "campo": "extension.description",
+        "hora": "2026-09-23T21:34:17Z",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42",
+        "excerto": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income (net of housing allowances).",
+        "confere": true,
+        "faltas": []
+      },
+      "eurostat-tessi164-inquilinos": {
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+        "motor": "indicators/out/b2-2026-09-23/tessi164_PT.json",
+        "campo": "dimension.tenure.category.label.RENT_MKT",
+        "hora": "2026-09-23T15:35:40Z",
+        "cliente": "core.http.HttpClient",
+        "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
+        "excerto": "Tenant, rent at market price",
+        "confere": true,
+        "faltas": []
+      },
+      "eurostat-tipspd30": {
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+        "motor": "indicators/out/r1-2026-09-23/eurostat-tipspd30-PT-PC_GDP.json",
+        "campo": "label",
+        "hora": "2026-09-23T10:51:23Z",
+        "cliente": "core.http.HttpClient.condicional, por core.http.for_source(core.sources.get('eurostat'))",
+        "sha256": "dcfb381ff2b8ec013ac4e5ddb1790ff056128145a37390e52bcf824c4091ddf3",
+        "excerto": "Non-financial corporations debt, consolidated - % of GDP",
+        "confere": true,
+        "faltas": []
+      }
+    },
+    "copia_anterior": {
+      "commit": "ed44e493",
+      "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1"
+    },
+    "perguntas_com_texto_mudado": [
+      "desemprego-de-longa-duracao-2025",
+      "divida-publica-2025"
+    ],
+    "perguntas_com_texto_mudado_n": 2,
+    "perguntas_rendidas_pt": 21,
+    "perguntas_rendidas_en": 21,
+    "mudancas": {
+      "pt": {
+        "desemprego-de-longa-duracao-2025": {
+          "antes": "Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+          "agora": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?"
+        },
+        "divida-publica-2025": {
+          "antes": "Quanto devem as administrações públicas, em percentagem do que o país produz num ano?",
+          "agora": "Quanto devem as administrações públicas, em percentagem do PIB?"
+        }
+      },
+      "en": {
+        "desemprego-de-longa-duracao-2025": {
+          "antes": "What share of the labour force is out of work and has been actively seeking employment for at least a year?",
+          "agora": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?"
+        },
+        "divida-publica-2025": {
+          "antes": "How much does general government owe, as a percentage of what the country produces in a year?",
+          "agora": "How much does general government owe, as a percentage of GDP?"
+        }
+      }
+    },
+    "auditoria_com_mudanca_declarada": [
+      "desemprego-de-longa-duracao-2025",
+      "divida-publica-2025",
+      "jovens-nem-2025",
+      "sobrecarga-do-custo-da-habitacao-2025"
+    ],
+    "auditoria_com_mudanca_declarada_n": 4,
+    "falhas": [],
+    "falhas_total": 0,
+    "ficheiro_de_medicao": "perguntas.json",
+    "sha256_do_ficheiro": "7eb0b9f81236944bb20cb27f99fe4be433faa4bd20cab28d804bb38827f403b0"
+  },
+  "fonte_cfp": {
+    "achado": 6,
+    "resultado": "valor conservado, provado por uma frase do documento alojado do CFP",
+    "motor": {
+      "base": "5269763acf380792e3e7ae660dcf5b947fe4d049",
+      "cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+      "commits": [
+        "8a084b8 B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, e o leitor do estudo 13 a recusar a camada de texto de um gráfico",
+        "0f08171 B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa"
+      ]
+    },
+    "valor": "11,9",
+    "periodo": "2024",
+    "fonte": {
+      "url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf",
+      "lido_em": "2026-09-01T13:21:32+00:00",
+      "pdf_sha256": "d2e9bb45bca111519c094c2550673ddbc14fdee00b2aa8be4192340bc27b201e",
+      "pdf": "content/13 Dominios/source/cfp/parecer-2026-02-rap26.pdf",
+      "texto": "content/13 Dominios/source/text/parecer-2026-02-rap26.txt",
+      "texto_sha256": "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2",
+      "extracao_refeita_identica": true,
+      "extrator": "pdftotext -layout",
+      "pagina_impressa": 9,
+      "nota": 9,
+      "linha_inicial": 48,
+      "linha_final": 50,
+      "excerto": "Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, valor que compara com 11,8% subjacente à trajetória acordada.",
+      "localizador_publico": "p. 9, nota 9"
+    },
+    "controlo_codigo": 0,
+    "plantas": [
+      {
+        "nome": "a nota 9 tirada, o gráfico intacto",
+        "comando": "cfp_crescimento_2024 sobre uma cópia estragada",
+        "codigo": 1,
+        "mordida": "um índice em rótulos de gráfico não é prova",
+        "passou": true
+      },
+      {
+        "nome": "a leitura antiga pelo índice do gráfico, sobre o ficheiro alojado",
+        "comando": "pdf_sentence(page=10, first=1, last=27, value=linha 10 da corrida de rótulos)",
+        "codigo": 1,
+        "mordida": "um índice em rótulos de gráfico não é prova",
+        "passou": true
+      }
+    ],
+    "reposto_codigo": 0,
+    "bytes_alojados": {
+      "antes": "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2",
+      "reposto": "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2"
+    },
+    "linhas_do_motor": {
+      "total": 323,
+      "alteradas": [
+        "crescimento-da-despesa-liquida-2024"
+      ],
+      "valores_alterados": 0
+    },
+    "linha_do_sitio": {
+      "value": "11,9",
+      "locator": "p. 9, nota 9",
+      "excerpt": "Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, valor que compara com 11,8% subjacente à trajetória acordada.",
+      "source_url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf#page=9",
+      "reference_date": "2024"
+    },
+    "ficheiro_de_medicao": "correcao-2/fonte-cfp.json",
+    "sha256_do_ficheiro": "68c3bc10f671f307e9867ca3e2466f803f509f7fc2fe65c71f773fdc9c65e086"
+  },
+  "plantas_desbloqueadas": {
+    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "estatuto": "executadas, com base limpa e reposição conferida",
+    "portao": "node scripts/gate-html.mjs",
+    "base": {
+      "comando": [
+        "node",
+        "scripts/gate-html.mjs"
+      ],
+      "codigo": 0,
+      "inicio": "2026-09-23T22:34:15.626210+00:00",
+      "fim": "2026-09-23T22:34:50.210668+00:00",
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "log": "correcao-html-limpo.log",
+      "sha256_log": "0477c436086ff7589f47534f940448a508f211ef3529c6c8a5d382f45b8f05ce"
+    },
+    "reposicao": {
+      "comando": [
+        "node",
+        "scripts/gate-html.mjs"
+      ],
+      "codigo": 0,
+      "inicio": "2026-09-23T22:35:59.110476+00:00",
+      "fim": "2026-09-23T22:36:33.485471+00:00",
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "log": "correcao-html-reposto.log",
+      "sha256_log": "0477c436086ff7589f47534f940448a508f211ef3529c6c8a5d382f45b8f05ce"
+    },
+    "casos": [
+      {
+        "nome": "b2-contagens-das-camaras",
+        "executada": true,
+        "mordida_provada": true,
+        "registo": "plantas-portoes-b2-contagens-das-camaras.json"
+      },
+      {
+        "nome": "b2-selo-do-cartao",
+        "executada": true,
+        "mordida_provada": true,
+        "registo": "plantas-portoes-b2-selo-do-cartao.json"
+      }
+    ],
+    "diagnostico_anterior": "correcao/plantas-bloqueadas.json",
+    "ficheiro_de_medicao": "plantas-bloqueadas.json",
+    "sha256_do_ficheiro": "e564ffd87501137aab80a9e656236b378ec2b8d49e5bd924d0419e26048119ab"
   },
   "correcao_captor": {
     "estatuto": "Erro do detetor de medição, não do sítio: valores? não reconhecia o singular valor. A expressão corrigida é valor(?:es)?.",
@@ -8025,14 +10646,14 @@
   },
   "checks_de_trabalho": {
     "capturas-depois-peca1": {
-      "codigo": 1,
+      "codigo": 0,
       "ficheiro_codigo": "capturas-depois-peca1.codigo",
-      "sha256_codigo": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "sha256_codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
       "log": "capturas-depois-peca1.log",
-      "sha256_log": "1e21efa891966467368749efef3e05d8366d6f888a3864c1f4fcfcb60e8db8b5",
-      "inicio": "2026-09-23T19:32:59.606672+00:00",
-      "fim": "2026-09-23T19:33:27.412249+00:00",
-      "segundos": 27.805577,
+      "sha256_log": "02cfafd833250f90c12099c9ee46f8e0e65e7c817e125cf28af4b8b78d13b3d2",
+      "inicio": "2026-09-23T22:32:53.000Z",
+      "fim": "2026-09-23T22:33:20.000Z",
+      "segundos": 27.0,
       "estatuto": "diagnóstico guardado, não substitui o portão final"
     },
     "check-alvos-final": {
@@ -8244,6 +10865,28 @@
       "segundos": null,
       "estatuto": "diagnóstico guardado, não substitui o portão final"
     },
+    "conferencia-relatorio": {
+      "codigo": 0,
+      "ficheiro_codigo": "conferencia-relatorio.codigo",
+      "sha256_codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "log": "conferencia-relatorio.log",
+      "sha256_log": "e7dab5d32743e0eabdd04b88310661e3b783d5c0885356fba95e499919a1335c",
+      "inicio": null,
+      "fim": null,
+      "segundos": null,
+      "estatuto": "diagnóstico guardado, não substitui o portão final"
+    },
+    "hierarquia-final": {
+      "codigo": 0,
+      "ficheiro_codigo": "hierarquia-final.codigo",
+      "sha256_codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "log": "hierarquia-final.log",
+      "sha256_log": "39287e4dc94bdf67b5641ea4b03bbe75fb1852fd93fe69a7dd91415da72c6e10",
+      "inicio": null,
+      "fim": null,
+      "segundos": null,
+      "estatuto": "diagnóstico guardado, não substitui o portão final"
+    },
     "l1-antes-check-lugar": {
       "codigo": 0,
       "ficheiro_codigo": "l1-antes-check-lugar.codigo",
@@ -8260,10 +10903,10 @@
       "ficheiro_codigo": "l1-depois-check-lugar.codigo",
       "sha256_codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
       "log": "l1-depois-check-lugar.txt",
-      "sha256_log": "9d274e4f89fbcff00e659ee6533fb39c53c5f96d4f2d52736096bc32028e2d00",
-      "inicio": "2026-09-23T19:33:44.007Z",
-      "fim": "2026-09-23T19:34:01.494Z",
-      "segundos": 17.487,
+      "sha256_log": "70bdf596d6fdaf69c42f597109d03398f3969baa558e5b707912a22e276c36d0",
+      "inicio": "2026-09-23T22:38:20.670Z",
+      "fim": "2026-09-23T22:38:36.939Z",
+      "segundos": 16.269,
       "estatuto": "diagnóstico guardado, não substitui o portão final"
     },
     "l1-depois-trabalho-check-lugar": {
@@ -9808,10 +12451,10 @@
       "sha256_do_ficheiro": "b0f23a5e65f35ed352b02acd395e81e7c8376c2ffa4df512ffeb8f8c8bc82f39"
     },
     "final": {
-      "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
       "trabalho": false,
       "estatuto": "construção com versão do commit conferida",
-      "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+      "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
       "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
       "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
       "codigos": {
@@ -10457,9 +13100,9 @@
       "paginas_antigas_alteradas": [],
       "paginas_antigas_agravadas": [],
       "crescimento_apenas_em_recibos_novos": true,
-      "segundos": 36.247,
+      "segundos": 35.028999999999996,
       "ficheiro_de_medicao": "l1-b2.json",
-      "sha256_do_ficheiro": "6f4273a621d667f3c08a19c9238b3e3b77c2af0348a2238410885b7de09c7364"
+      "sha256_do_ficheiro": "7c93388ec7713452a7a280fcbd64465aed0b48227a418d45147d90d64f2561d8"
     }
   },
   "qa_de_trabalho": {
@@ -14146,33 +16789,36 @@
   },
   "portoes": {
     "build": {
-      "codigo": 1,
-      "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
-      "inicio": "2026-09-23T19:21:08.590122+00:00",
-      "fim": "2026-09-23T19:25:34.131695+00:00",
-      "segundos": 265.541573,
-      "sha256_log": "60c92cc093a7391106ebaa359c4c69db494c1c5d5a5139859b651e23e7d7d092"
+      "codigo": 0,
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+      "inicio": "2026-09-23T22:17:37.188268+00:00",
+      "fim": "2026-09-23T22:22:34.567345+00:00",
+      "segundos": 297.379077,
+      "sha256_log": "efc869ae4f0a289a77f3115ce32061fe6aa7f15575211768664281a8ad511787"
     },
     "verify": {
-      "codigo": 1,
-      "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
-      "inicio": "2026-09-23T19:26:56.017082+00:00",
-      "fim": "2026-09-23T19:27:34.068947+00:00",
-      "segundos": 38.051865,
-      "sha256_log": "3e861e6a6cae5c352f70b088b7fb39a9b8b9623481575dc9cf0510d4ad350254"
+      "codigo": 0,
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+      "inicio": "2026-09-23T22:24:05.428412+00:00",
+      "fim": "2026-09-23T22:32:10.062685+00:00",
+      "segundos": 484.634273,
+      "sha256_log": "ee610ec28f40f5711b88d40109f86849a50ba6ce5e51cd68faad3d35a42df22c"
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
-      "inicio": "2026-09-23T19:28:01.798998+00:00",
-      "fim": "2026-09-23T19:28:02.028704+00:00",
-      "segundos": 0.229706,
+      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+      "inicio": "2026-09-23T22:32:33.910678+00:00",
+      "fim": "2026-09-23T22:32:34.131207+00:00",
+      "segundos": 0.220529,
       "sha256_log": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
     }
   },
   "portoes_etapas_cronometradas": 3,
-  "portoes_segundos_registados": 303.823144,
-  "portoes_segundos": 303.823144,
+  "portoes_segundos_registados": 782.233879,
+  "portoes_segundos": 782.233879,
   "portoes_tentativas": {
     "tentativas": [
       {
@@ -14324,7 +16970,7 @@
         "concluida": true,
         "origens": [
           {
-            "pasta": "portoes",
+            "pasta": "portoes-2415107b",
             "sha256_ficheiros": {
               "codigo": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
               "inicio": "d5fae86ee4670d0e5fcb633dfa75f619762c09f8878e2ec4e91197848ec64402",
@@ -14347,7 +16993,7 @@
         "concluida": true,
         "origens": [
           {
-            "pasta": "portoes",
+            "pasta": "portoes-2415107b",
             "sha256_ficheiros": {
               "codigo": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
               "inicio": "d048bd1f0a3f6d58705d8f83d6c8e8c04819b2224009b64f47bf63220da0b535",
@@ -14370,7 +17016,7 @@
         "concluida": true,
         "origens": [
           {
-            "pasta": "portoes",
+            "pasta": "portoes-2415107b",
             "sha256_ficheiros": {
               "codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
               "inicio": "cfe14a9e90b199558ee831c213d79a23d7f3ae211ee931d904b63e9a406da583",
@@ -14381,21 +17027,136 @@
           }
         ],
         "sha256_log": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+      },
+      {
+        "portao": "build",
+        "comando": "npm run build",
+        "cabeca": "e774add0904be4913fad431f118888b2e05e3255",
+        "codigo": 0,
+        "inicio": "2026-09-23T22:03:56.298988+00:00",
+        "fim": "2026-09-23T22:08:55.979872+00:00",
+        "segundos": 299.680884,
+        "concluida": true,
+        "origens": [
+          {
+            "pasta": "portoes-e774add0",
+            "sha256_ficheiros": {
+              "codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+              "inicio": "352509a3595b331e858f2bc47678f82523bb7a1c6ef5b8749372d1ae292916eb",
+              "fim": "2f7500bc7459394c6ba3b5c708c51b2983940f0b8b555df5d97d80fa21e2d838",
+              "cabeca": "426699213b3232efa129db709645da5d9e49a7dfd0a2e5354093463b002134b2",
+              "log": "9f8ff50a9fa13594ad4c31c77e56c50e1fa6999080759c4a4d16bc2e5130a11f"
+            }
+          }
+        ],
+        "sha256_log": "9f8ff50a9fa13594ad4c31c77e56c50e1fa6999080759c4a4d16bc2e5130a11f"
+      },
+      {
+        "portao": "verify",
+        "comando": "npm run verify",
+        "cabeca": "e774add0904be4913fad431f118888b2e05e3255",
+        "codigo": 1,
+        "inicio": "2026-09-23T22:09:03.301567+00:00",
+        "fim": "2026-09-23T22:15:52.890458+00:00",
+        "segundos": 409.588891,
+        "concluida": true,
+        "origens": [
+          {
+            "pasta": "portoes-e774add0",
+            "sha256_ficheiros": {
+              "codigo": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+              "inicio": "99ce5732393b02cddc760c66a8f6fa066ca01883419980c0514c88b72220bd01",
+              "fim": "ae7508d609e99f23c217b4ee773c049b049f06871405b4c16357177b84fed1fe",
+              "cabeca": "426699213b3232efa129db709645da5d9e49a7dfd0a2e5354093463b002134b2",
+              "log": "9e78d7da7f2ca6ed5fba34db01303d456498fb1396a91e4d68620d027416e9a1"
+            }
+          }
+        ],
+        "sha256_log": "9e78d7da7f2ca6ed5fba34db01303d456498fb1396a91e4d68620d027416e9a1"
+      },
+      {
+        "portao": "build",
+        "comando": "npm run build",
+        "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+        "codigo": 0,
+        "inicio": "2026-09-23T22:17:37.188268+00:00",
+        "fim": "2026-09-23T22:22:34.567345+00:00",
+        "segundos": 297.379077,
+        "concluida": true,
+        "origens": [
+          {
+            "pasta": "portoes",
+            "sha256_ficheiros": {
+              "codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+              "inicio": "53b69de4376a4837c378a0a8f3c857de16eb0ded6bf208398941f02214c65ca2",
+              "fim": "70c53cf6814f29dba50fcf0d4eedb48c30f1d49cd8fdaf267a295fa8ad902745",
+              "cabeca": "ea5bb40af295e6a3eadadd2e2fa99985289310fb1dbb5508c02d36f799036bcb",
+              "log": "efc869ae4f0a289a77f3115ce32061fe6aa7f15575211768664281a8ad511787"
+            }
+          }
+        ],
+        "sha256_log": "efc869ae4f0a289a77f3115ce32061fe6aa7f15575211768664281a8ad511787"
+      },
+      {
+        "portao": "verify",
+        "comando": "npm run verify",
+        "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+        "codigo": 0,
+        "inicio": "2026-09-23T22:24:05.428412+00:00",
+        "fim": "2026-09-23T22:32:10.062685+00:00",
+        "segundos": 484.634273,
+        "concluida": true,
+        "origens": [
+          {
+            "pasta": "portoes",
+            "sha256_ficheiros": {
+              "codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+              "inicio": "31531378fac8ff03f4b3ce8bf55acab9085ca5b6d1344a82d24bd91ebedd3328",
+              "fim": "4cddcddf74709cb7cd807d136d15f9b8784daf55e5198965af99f4cbc914ae20",
+              "cabeca": "ea5bb40af295e6a3eadadd2e2fa99985289310fb1dbb5508c02d36f799036bcb",
+              "log": "ee610ec28f40f5711b88d40109f86849a50ba6ce5e51cd68faad3d35a42df22c"
+            }
+          }
+        ],
+        "sha256_log": "ee610ec28f40f5711b88d40109f86849a50ba6ce5e51cd68faad3d35a42df22c"
+      },
+      {
+        "portao": "typecheck",
+        "comando": "npm run typecheck",
+        "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+        "codigo": 0,
+        "inicio": "2026-09-23T22:32:33.910678+00:00",
+        "fim": "2026-09-23T22:32:34.131207+00:00",
+        "segundos": 0.220529,
+        "concluida": true,
+        "origens": [
+          {
+            "pasta": "portoes",
+            "sha256_ficheiros": {
+              "codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+              "inicio": "ee49fb68df73309a5b7d2678c9527c9b1d513e951abbfb6cc8ff431a2b808e07",
+              "fim": "09ac0e2ff74daaa54827d0154eb5293191ea052f3d4fc6adea1e6a2c2829f92e",
+              "cabeca": "ea5bb40af295e6a3eadadd2e2fa99985289310fb1dbb5508c02d36f799036bcb",
+              "log": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+            }
+          }
+        ],
+        "sha256_log": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
       }
     ],
-    "concluidas": 9,
+    "concluidas": 14,
     "incompletas": 0,
-    "segundos_documentados": 900.313133,
+    "segundos_documentados": 2391.816787,
     "nota": "Cada tentativa concluída conta uma vez, mesmo quando os mesmos ficheiros estão no arquivo e na pasta atual. Uma tentativa sem código atual não fornece uma duração."
   },
   "tempo_documentado": {
     "inicio": "2026-09-23T18:07:43.363Z",
     "origem_do_inicio": "capturas-antes-peca1.json:inicio",
-    "fim": "2026-09-23T19:34:53.533000+00:00",
+    "fim": "2026-09-23T22:38:36.939000+00:00",
     "origens_do_ultimo_fim": [
-      "qa-recibo-inquilinos-390"
+      "l1-depois-check-lugar"
     ],
-    "janela_segundos": 5230.17,
+    "janela_segundos": 16253.576,
     "intervalos_documentados": [
       {
         "inicio": "2026-09-23T18:07:43.363000+00:00",
@@ -14636,7 +17397,7 @@
         "fim": "2026-09-23T19:25:34.131695+00:00",
         "segundos": 265.541573,
         "origens": [
-          "portoes/build"
+          "portoes-2415107b/build"
         ]
       },
       {
@@ -14644,7 +17405,7 @@
         "fim": "2026-09-23T19:27:34.068947+00:00",
         "segundos": 38.051865,
         "origens": [
-          "portoes/verify"
+          "portoes-2415107b/verify"
         ]
       },
       {
@@ -14652,7 +17413,7 @@
         "fim": "2026-09-23T19:28:02.028704+00:00",
         "segundos": 0.229706,
         "origens": [
-          "portoes/typecheck"
+          "portoes-2415107b/typecheck"
         ]
       },
       {
@@ -14672,52 +17433,109 @@
         ]
       },
       {
-        "inicio": "2026-09-23T19:32:59.606672+00:00",
-        "fim": "2026-09-23T19:33:27.412249+00:00",
-        "segundos": 27.805577,
-        "origens": [
-          "capturas-depois-peca1"
-        ]
-      },
-      {
-        "inicio": "2026-09-23T19:32:59.824000+00:00",
-        "fim": "2026-09-23T19:33:27.383000+00:00",
-        "segundos": 27.559,
-        "origens": [
-          "capturas-depois-peca1.json"
-        ]
-      },
-      {
-        "inicio": "2026-09-23T19:33:44.007000+00:00",
-        "fim": "2026-09-23T19:34:01.494000+00:00",
-        "segundos": 17.487,
-        "origens": [
-          "l1-depois-check-lugar"
-        ]
-      },
-      {
         "inicio": "2026-09-23T19:34:51.749000+00:00",
         "fim": "2026-09-23T19:34:53.533000+00:00",
         "segundos": 1.784,
         "origens": [
           "qa-recibo-inquilinos-390"
         ]
+      },
+      {
+        "inicio": "2026-09-23T19:51:09.221829+00:00",
+        "fim": "2026-09-23T19:54:15.609458+00:00",
+        "segundos": 186.387629,
+        "origens": [
+          "motor/pre-commit"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T21:35:12+00:00",
+        "fim": "2026-09-23T21:38:12+00:00",
+        "segundos": 180.0,
+        "origens": [
+          "motor/passagem-2/commit-8a084b8"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T21:38:32+00:00",
+        "fim": "2026-09-23T21:41:32+00:00",
+        "segundos": 180.0,
+        "origens": [
+          "motor/passagem-2/commit-0f08171"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:03:56.298988+00:00",
+        "fim": "2026-09-23T22:08:55.979872+00:00",
+        "segundos": 299.680884,
+        "origens": [
+          "portoes-e774add0/build"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:09:03.301567+00:00",
+        "fim": "2026-09-23T22:15:52.890458+00:00",
+        "segundos": 409.588891,
+        "origens": [
+          "portoes-e774add0/verify"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:17:37.188268+00:00",
+        "fim": "2026-09-23T22:22:34.567345+00:00",
+        "segundos": 297.379077,
+        "origens": [
+          "portoes/build"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:24:05.428412+00:00",
+        "fim": "2026-09-23T22:32:10.062685+00:00",
+        "segundos": 484.634273,
+        "origens": [
+          "portoes/verify"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:32:33.910678+00:00",
+        "fim": "2026-09-23T22:32:34.131207+00:00",
+        "segundos": 0.220529,
+        "origens": [
+          "portoes/typecheck"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:32:53+00:00",
+        "fim": "2026-09-23T22:33:20+00:00",
+        "segundos": 27.0,
+        "origens": [
+          "capturas-depois-peca1"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:32:54.110000+00:00",
+        "fim": "2026-09-23T22:33:20.433000+00:00",
+        "segundos": 26.323,
+        "origens": [
+          "capturas-depois-peca1.json"
+        ]
+      },
+      {
+        "inicio": "2026-09-23T22:38:20.670000+00:00",
+        "fim": "2026-09-23T22:38:36.939000+00:00",
+        "segundos": 16.269,
+        "origens": [
+          "l1-depois-check-lugar"
+        ]
       }
     ],
-    "intervalos_total": 37,
-    "soma_intervalos_segundos": 1595.458993,
+    "intervalos_total": 45,
+    "soma_intervalos_segundos": 3630.090699,
     "nota": "A janela vai do início registado das capturas de partida ao último fim documentado. Não é o tempo total desde o pedido. A soma reúne durações registadas, sem duplicar cópias do mesmo intervalo; não se confunde com tempo de parede porque intervalos de atividades distintas podem sobrepor-se."
   },
   "capturas_total": 80,
   "faltas": [],
-  "falhas": [
-    "aceitação das capturas depois: depois-europeia-pt-768.png: wordmark 26.112 px, H1 26 px",
-    "aceitação das capturas depois: depois-europeia-pt-1024.png: wordmark 34 px, H1 32.768 px",
-    "aceitação das capturas depois: depois-europeia-en-768.png: wordmark 26.112 px, H1 26 px",
-    "aceitação das capturas depois: depois-europeia-en-1024.png: wordmark 34 px, H1 32.768 px",
-    "build: código 1",
-    "verify: código 1"
-  ],
+  "falhas": [],
   "faltas_total": 0,
-  "falhas_total": 6
+  "falhas_total": 0
 }

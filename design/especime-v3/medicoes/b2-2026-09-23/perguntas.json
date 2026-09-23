@@ -1,0 +1,122 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py",
+  "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+  "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
+  "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
+  "k16": {
+    "comando": "node tests/cartao/cartao.mjs --json",
+    "codigo": 0,
+    "erros_do_portao": 0,
+    "erros_k16": [],
+    "perguntas": 22,
+    "pedacos": 72,
+    "apoios": 85,
+    "origens_seladas": 5
+  },
+  "conhecidos_positivos": {
+    "excerto_estragado_apanhado": true,
+    "sha256_estragado_apanhado": true,
+    "origem_limpa_aceite": true
+  },
+  "origens_seladas": 5,
+  "origens_seladas_que_conferem": 5,
+  "selos": {
+    "eurostat-tesem130-denominador": {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+      "motor": "indicators/out/b2-2026-09-23/perguntas/tesem130.json",
+      "campo": "extension.description",
+      "hora": "2026-09-23T21:34:16Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b",
+      "excerto": "The long-term unemployment rate expresses the number of long-term unemployed aged 15-74 as a percentage of the active population of the same age.",
+      "confere": true,
+      "faltas": []
+    },
+    "eurostat-tipslm90-sexo": {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+      "motor": "indicators/out/b2-2026-09-23/perguntas/tipslm90.json",
+      "campo": "dimension.sex",
+      "hora": "2026-09-23T21:34:16Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef",
+      "excerto": "Sex: Total",
+      "confere": true,
+      "faltas": []
+    },
+    "eurostat-tespm140-populacao": {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+      "motor": "indicators/out/b2-2026-09-23/perguntas/tespm140.json",
+      "campo": "extension.description",
+      "hora": "2026-09-23T21:34:17Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42",
+      "excerto": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income (net of housing allowances).",
+      "confere": true,
+      "faltas": []
+    },
+    "eurostat-tessi164-inquilinos": {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+      "motor": "indicators/out/b2-2026-09-23/tessi164_PT.json",
+      "campo": "dimension.tenure.category.label.RENT_MKT",
+      "hora": "2026-09-23T15:35:40Z",
+      "cliente": "core.http.HttpClient",
+      "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
+      "excerto": "Tenant, rent at market price",
+      "confere": true,
+      "faltas": []
+    },
+    "eurostat-tipspd30": {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "motor": "indicators/out/r1-2026-09-23/eurostat-tipspd30-PT-PC_GDP.json",
+      "campo": "label",
+      "hora": "2026-09-23T10:51:23Z",
+      "cliente": "core.http.HttpClient.condicional, por core.http.for_source(core.sources.get('eurostat'))",
+      "sha256": "dcfb381ff2b8ec013ac4e5ddb1790ff056128145a37390e52bcf824c4091ddf3",
+      "excerto": "Non-financial corporations debt, consolidated - % of GDP",
+      "confere": true,
+      "faltas": []
+    }
+  },
+  "copia_anterior": {
+    "commit": "ed44e493",
+    "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1"
+  },
+  "perguntas_com_texto_mudado": [
+    "desemprego-de-longa-duracao-2025",
+    "divida-publica-2025"
+  ],
+  "perguntas_com_texto_mudado_n": 2,
+  "perguntas_rendidas_pt": 21,
+  "perguntas_rendidas_en": 21,
+  "mudancas": {
+    "pt": {
+      "desemprego-de-longa-duracao-2025": {
+        "antes": "Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "agora": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?"
+      },
+      "divida-publica-2025": {
+        "antes": "Quanto devem as administrações públicas, em percentagem do que o país produz num ano?",
+        "agora": "Quanto devem as administrações públicas, em percentagem do PIB?"
+      }
+    },
+    "en": {
+      "desemprego-de-longa-duracao-2025": {
+        "antes": "What share of the labour force is out of work and has been actively seeking employment for at least a year?",
+        "agora": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?"
+      },
+      "divida-publica-2025": {
+        "antes": "How much does general government owe, as a percentage of what the country produces in a year?",
+        "agora": "How much does general government owe, as a percentage of GDP?"
+      }
+    }
+  },
+  "auditoria_com_mudanca_declarada": [
+    "desemprego-de-longa-duracao-2025",
+    "divida-publica-2025",
+    "jovens-nem-2025",
+    "sobrecarga-do-custo-da-habitacao-2025"
+  ],
+  "auditoria_com_mudanca_declarada_n": 4,
+  "falhas": [],
+  "falhas_total": 0
+}

@@ -1,0 +1,57 @@
+
+DOMINIOS_TEST: 35 defeito(s) plantado(s) e visto(s) vermelho(s):
+  vermelho  o valor de Évora, alterado no ficheiro alojado
+  vermelho  o valor de Portugal, alterado no ficheiro alojado
+  vermelho  um concelho que desapareceu da resposta do INE
+  vermelho  um código geográfico que os 308 do estudo 12 não têm
+  vermelho  o nome de um concelho, diferente do que o estudo 12 leu
+  vermelho  o rótulo do INE, esvaziado
+  vermelho  o rótulo do INE, com o enchimento de uma coluna à volta
+  vermelho  uma resposta do INE com dois períodos onde se pediu um
+  vermelho  o último ano do saldo, retirado da resposta do Eurostat
+  vermelho  a bandeira «p» da disparidade, retirada da resposta
+  vermelho  os dois semestres de 2026 da retribuição mínima, retirados
+  vermelho  o rótulo do Eurostat, esvaziado
+  vermelho  o teto de 5 % que o CFP cita, apagado da sua própria frase
+  vermelho  uma linha a mais na página do parecer, que desloca a janela
+  vermelho  o valor do parecer, trocado pelo outro número do Quadro 1
+  vermelho  o valor do diploma, trocado pelo do ano anterior
+  vermelho  a página do diploma, esvaziada
+  vermelho  o filtro do nível 5 escrito como sete ALGARISMOS
+  vermelho  um excerto com uma palavra que o ficheiro alojado não tem
+  vermelho  a dívida da notificação do INE, trocada na página do destaque
+  vermelho  a dívida da notificação do INE, trocada no PDF do mesmo destaque
+  vermelho  a data que o destaque do INE imprime, trocada
+  vermelho  um parágrafo a mais à cabeça do resumo do destaque
+  vermelho  um resumo do MANIFEST.sha256, alterado
+  vermelho  um ficheiro alojado que desapareceu
+  vermelho  um excerto que não é um pedaço do excerto do motor (V3)
+  vermelho  uma expressão `check` que não dá o valor publicado (V5)
+  vermelho  uma página humana de outro conjunto com os mesmos algarismos (V15)
+  vermelho  um localizador cujos algarismos ninguém leu (V7)
+  vermelho  uma bandeira declarada sobre um excerto que não acaba nela
+  vermelho  um valor que mexeu e uma linha publicada que não o diz (V16)
+  vermelho  `--site` a apontar a árvore principal, com a worktree forçada
+  vermelho  `--site` com um caminho vazio
+  vermelho  um `site_record` absoluto, que escreve fora do sítio
+  vermelho  um `site_record` com «..», que sai do sítio
+  verde     B2 CFP 2024: controlo positivo, valor ligado à medida e ao ano na nota 9, página 9
+  verde     B2 CFP 2024: planta recusada, só rótulos do gráfico: CFP 2024: a nota 9 da página 9 não contém a frase que associa o valor ao crescimento da despesa líquida apurado pelo CFP; um índice em rótulos de gráfico não é prova
+  verde     B2 CFP 2024: planta recusada, a leitura antiga pelo índice do gráfico: parecer-2026-02-rap26.txt: a janela da página 10, linhas 1 a 27, abre na legenda de um gráfico ('Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 '); a camada de texto de um gráfico é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova
+  verde     B2 CFP 2024: bytes originais intactos e controlo limpo repetido
+  verde     B2: as observações novas têm os valores e períodos declarados
+  verde     B2 associação: controlo positivo, declaração inicial só no agregado da medida existente
+  verde     B2 associação: planta recusada, outro quadro: Associação UE: quadro divergente: PT 'TESSI164', UE 'TESSI165'
+  verde     B2 associação: planta recusada, outro regime: Associação UE: regime divergente: PT 'RENT_MKT', UE 'OWN_L'
+  verde     B2 associação: planta recusada, outra unidade: Associação UE: unidade divergente: PT 'PC', UE 'PC_POP'
+  verde     B2 associação: planta recusada, outro período: Associação UE: período divergente: PT '2025', UE '2024'
+  verde     B2: planta recusada, regime de outra série
+  verde     B2: planta recusada, excerto sem regime
+  verde     B2: planta recusada, título de outro quadro
+  verde     B2: planta recusada, bandeira omitida
+  verde     B2: construção limpa igual depois das plantas
+  verde     a deteção da worktree, fora do estrago, é a do disco
+  verde     ledger.json: os bytes commitados são os que o construtor produz
+  verde     manifest.dominios.json: os bytes commitados são os que o construtor produz
+
+DOMINIOS_TEST: PASS — 35 de 35 defeito(s) vistos, 18 prova(s) verde(s), 0 problema(s), a corrida limpa verde antes e depois

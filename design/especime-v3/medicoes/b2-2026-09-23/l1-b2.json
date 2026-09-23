@@ -1,8 +1,8 @@
 {
-  "cabeca": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+  "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
   "trabalho": false,
   "estatuto": "construção com versão do commit conferida",
-  "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1",
+  "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
   "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
   "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
   "codigos": {
@@ -648,5 +648,5 @@
   "paginas_antigas_alteradas": [],
   "paginas_antigas_agravadas": [],
   "crescimento_apenas_em_recibos_novos": true,
-  "segundos": 36.247
+  "segundos": 35.028999999999996
 }

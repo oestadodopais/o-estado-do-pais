@@ -1,6 +1,6 @@
 
 > o-estado-do-pais@0.1.0 verify
-> npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:nomes && npm run check:palavras && npm run design:feixe
+> npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:nomes && npm run check:palavras && npm run design:feixe
 
 
 > o-estado-do-pais@0.1.0 ledger:check
@@ -27,7 +27,7 @@
 [90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
 
 
-[90m  amarra das decisões · 90 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+[90m  amarra das decisões · 91 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
   [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
 
 [90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
@@ -276,7 +276,7 @@
   B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
 
 [90m  portão de HTML · 7372 páginas · 2632/2984 afirmações citadas fora do livro-razão · 5968 páginas de linha · 5968 títulos de linha com o valor e a unidade separados · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo · 0 página(s) com o nome de quem responde[0m
-[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 230 · limiar-do-quadro 166 · data-da-linha 25502 · data-do-repositorio 70 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 5178 · numeracao 182 · proveniencia 14709 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 64 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
+[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 242 · limiar-do-quadro 166 · data-da-linha 25508 · data-do-repositorio 70 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 5178 · numeracao 182 · proveniencia 14709 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 70 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
   rótulo de IA · 7354 no topo (de 7354 páginas fora dos documentos alojados) · 0 no rodapé · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
 [90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
 [90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
@@ -636,29 +636,443 @@
 [90m    · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
 [90m    · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
 
-[31m  O PORTÃO DE HTML FECHOU — 4 erro(s):[0m
+  [32m✓[0m nenhum algarismo sem proveniência nas páginas construídas.
+[90m    prova · 92 chaves reconferidas pelo portão · 172 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 239281 ligações internas (0 relativas, 22005 âncoras) · 44 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 844 páginas de série · 876 cartões de partilha (4956 valores recalculados, 876 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json[0m
 
-  [31men/index.html[0m
-    [31m✗[0m o valor da afirmação "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" aparece sem selo para a sua própria linha.
-      esperava-se <a class="src-chip" href="/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.
-      Use <Claim id="sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" chip/>, ou <Frase … selos/> quando o valor vai numa frase.
-      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.
 
-  [31men/themes/index.html[0m
-    [31m✗[0m o valor da afirmação "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" aparece sem selo para a sua própria linha.
-      esperava-se <a class="src-chip" href="/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.
-      Use <Claim id="sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" chip/>, ou <Frase … selos/> quando o valor vai numa frase.
-      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.
+> o-estado-do-pais@0.1.0 check:css
+> node scripts/check-css.mjs --prova
 
-  [31mindex.html[0m
-    [31m✗[0m o valor da afirmação "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" aparece sem selo para a sua própria linha.
-      esperava-se <a class="src-chip" href="/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.
-      Use <Claim id="sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" chip/>, ou <Frase … selos/> quando o valor vai numa frase.
-      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.
+[90m  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.[0m
 
-  [31mtemas/index.html[0m
-    [31m✗[0m o valor da afirmação "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" aparece sem selo para a sua própria linha.
-      esperava-se <a class="src-chip" href="/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.
-      Use <Claim id="sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue" chip/>, ou <Frase … selos/> quando o valor vai numa frase.
-      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.
+[32m  folhas ✓ [0m7354 página(s) · 7 folha(s) construída(s) com 763 classe(s) estilizada(s) · 643 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 23688 fronteira(s) sem espaço no HTML, 0 coladas
+[90m        C2, das 23688 fronteiras: 3565 entre duas caixas (duas caixas não fazem uma palavra) · 20123 entre duas peças de texto, das quais 20123 a folha desta página separa com um «gap», uma margem ou um «display»[0m
+[90m        C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.[0m
+[90m        18 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.[0m
+
+
+> o-estado-do-pais@0.1.0 check:datas
+> node scripts/check-datas.mjs
+
+[90mcheck-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.[0m
+[32mcheck-datas[0m · 18 edição(ões) datadas, 70 data(s) impressa(s) em 32 página(s), 70 laço(s) data-edição em 646 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
+
+> o-estado-do-pais@0.1.0 check:moldura
+> node tests/documentos/moldura.mjs
+
+
+[90m  a régua da moldura · 18 documentos × 2 temas × 2 larguras (390, 1280 px)[0m
+
+  [32m✓[0m C1  0 nó(s) graves em 72 passagens · nenhuma
+  [32m✓[0m C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 39964 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+  [32m✓[0m C3  326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+  [32m✓[0m C4  72 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+  [32m✓[0m C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+  [32m✓[0m C6  18 de 18 verdes · 18 de 18 plantas apanhadas
+
+[90m  o axe, regra a regra (as dezasseis páginas nos dois temas):[0m
+[90m        72  region [moderate][0m
+[90m         8  heading-order [moderate][0m
+[90m         0  region [moderate] · em tabela[0m
+[90m         0  heading-order [moderate] · em tabela[0m
+
+[90m  o que a moldura NÃO corrige, contado:[0m
+[90m    · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)[0m
+
+[32m  todas as células verdes.[0m
+
+
+> o-estado-do-pais@0.1.0 check:alvos
+> node tests/acessibilidade/alvos.mjs
+
+
+[90m  a régua dos alvos · 46 rotas × 5 larguras · dist: dist[0m
+
+  [32m✓[0m H1  [90m0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação[0m
+  [32m✓[0m H2  [90mfichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 54 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 12198 alvos medidos, 7816 deles com 44 px a 390, 40 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 34 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (8× a.src-chip «source · Estrutura de Missão Recup» · 61.9×44.7 de toque (caixa 61×18.6); 6× a.src-chip «fonte · INE» · 53.3×23 de toque (caixa 52.5×18.6); 5× a.src-chip «source · Município de Évora» · 61.9×23 de toque (caixa 61×18.6); 4× a.src-chip «fonte · Município de Évora» · 53.3×23 de toque (caixa 52.5×18.6)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 3 estão numa página de leitura, que o brief põe fora deste bloco (2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (2× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.9 de toque (caixa 528.8×45.5)) · 3129 não medido(s)[0m
+  [32m✓[0m H3  [90m7371 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 230 passagens[0m
+  [32m✓[0m H14  [90m230 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título[0m
+  [32m✓[0m H4  [90m7371 página(s) do dist/: 7353 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 18 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
+  [32m✓[0m H5  [90m20 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel[0m
+  [32m✓[0m H6  [90mprimeira página, a 1280: 24 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)[0m
+  [32m✓[0m H7  [90m40 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 40 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)[0m
+  [32m✓[0m H8  [90mcartões: 876 registo(s), 438 da edição inglesa, 434 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 1605 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
+  [32m✓[0m H9  [90m3684 página(s) inglesas lidas: 940 com um nome de diploma, 2744 sem nenhum, 1 documento(s) alojado(s) fora da conta · 946 nome(s): 943 com lang="pt-PT", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
+  [32m✓[0m H13  [90m/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308[0m
+  [32m✓[0m H15  [90mpt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão[0m
+  [32m✓[0m H10  [90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título[0m
+
+[32m  todas as células verdes.[0m
+
+
+> o-estado-do-pais@0.1.0 check:cabeca
+> node tests/inicio/hierarquia-b2.mjs
+
+check:cabeca C1; construção 7110ca608ef6addba6771a50b5c47685e4e18026; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca: PASS
+
+> o-estado-do-pais@0.1.0 check:fontes
+> node tests/linha/sem-resposta.mjs
+
+  5968 página(s) de linha lidas em /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist, nas duas edições (2984 linha(s) × 2).
+  4 linha(s) devem mostrar o estado da fonte · 2980 não devem · 8 de proveniência incompleta, fora do mapa e com noindex.
+  endereços em falha: 2 · anfitriões em falha: 1
+
+FONTES: PASS — 17904 conferências (o estado e a sua ausência em cada página das duas edições, e o mapa do sítio)
+
+> o-estado-do-pais@0.1.0 check:cadeia
+> node scripts/check-cadeia.mjs
+
+
+[90m  03 pt · 53 blocos · 411 algarismos · 0 completas · 411 do motor · 0 por resolver · 0 com resumo de origem · 411 com motivo[0m
+[90m  14 en · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo[0m
+[90m  14 pt · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo[0m
+[90m  06 pt · 49 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver · 0 com resumo de origem · 171 com motivo[0m
+[90m  07 en · 87 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo[0m
+[90m  07 pt · 88 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo[0m
+[90m  09 pt · 138 blocos · 296 algarismos · 10 completas · 286 do motor · 0 por resolver · 208 com resumo de origem · 88 com motivo[0m
+[90m  04 en · 95 blocos · 324 algarismos · 11 completas · 313 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo[0m
+[90m  04 pt · 95 blocos · 324 algarismos · 12 completas · 312 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo[0m
+[90m  08 pt · 173 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo[0m
+
+[90m  as oito chaves da prova, contadas aqui:[0m
+[90m    registos_edicoes                   10[0m
+[90m    registos_blocos                  1038[0m
+[90m    registos_algarismos              2976[0m
+[90m    registos_resolvidos              2976[0m
+[90m    registos_por_resolver               0[0m
+[90m    registos_com_linha_do_sitio       196[0m
+[90m    registos_com_resumo_de_origem     510[0m
+[90m    registos_sem_resumo_de_origem    2466[0m
+
+[90m  das 196 figuras com linha do sítio, 77 imprimem o valor que a linha guarda e 119 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).[0m
+
+  [32m✓[0m cada algarismo das páginas de leitura chega ao fim da sua cadeia: 196 até ao selo, 2780 conferidos na transcrição, sem recibo do sítio.
+
+
+> o-estado-do-pais@0.1.0 check:dados
+> node scripts/check-dados.mjs
+
+
+[90m  dados descarregáveis · 2 ficheiros · 5 endereços ligados[0m
+[90m  ficheiros alojados · 3 linha(s) com document.hosted · 3 recontada(s)[0m
+[90m  conjunto de dados · 2984 registos no CSV · 1871 com o rótulo da fonte · 2984 ficheiros de linha · licença CC BY 4.0 · 2986 endereço(s) ligado(s)[0m
+
+  [32m✓[0m os ficheiros existem, batem certo com as origens e estão ligados nas duas edições.
+
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs --verifica
+
+[32m  ✓ mapa das unidades · [0m29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · conferidos
+
+> o-estado-do-pais@0.1.0 check:mapa
+> node scripts/check-mapa.mjs
+
+
+  [32m✓[0m R1 · os resumos de mapa/ batem com o manifesto
+  [32m✓[0m R2 · a junção: 308 concelhos, uma vez cada, com os slugs da Carta
+  [32m✓[0m R3 · cada página de distrito com tantas ligações quantos concelhos
+  [32m✓[0m R4 · a primeira página com 29 ligações de área
+  [32m✓[0m R5 · nenhuma ligação debaixo de role="img"
+  [32m✓[0m R6 · a atribuição da DGT onde o mapa está
+  [32m✓[0m R7 · a colação portuguesa nos artefactos e nas listas construídas
+  [32m✓[0m R8 · os 29 ficheiros do segundo nível são os artefactos
+  [32m✓[0m R9 · as páginas que o mapa promete estão todas construídas
+[90m
+  mapa · 30 ficheiros conferidos · 29 unidades · 308 concelhos, uma vez cada · 680 páginas prometidas e construídas (58 de unidade e 616 de concelho, nas duas edições)
+[0m
+
+> o-estado-do-pais@0.1.0 check:regioes
+> node scripts/check-regioes.mjs
+
+
+  [32m✓[0m R1 · cada região com linhas tem página, e nenhuma outra tem
+  [32m✓[0m R2 · cada página de região cita as suas linhas, com selo
+  [32m✓[0m R3 · a régua imprime só valores com linha, e um por leitura
+  [32m✓[0m R4 · a neutralidade: um só estilo de barra, e o contorno da página
+  [32m✓[0m R5 · as duas contagens, de três pontos de observação
+[90m
+  regiões · 9 declarada(s), 9 com linhas · 18 página(s) de região construída(s) · 10 leitura(s) na régua
+[0m
+
+> o-estado-do-pais@0.1.0 check:areas
+> node scripts/check-areas.mjs
+
+
+  [32m✓[0m A1 · cada área com peças tem página, e nenhuma outra tem
+  [32m✓[0m A2 · a porta de cada peça abre, cada medida vai com selo, e a porta legal abre
+  [32m✓[0m A3 · nenhuma área vazia, no mapa nem na página
+  [32m✓[0m A4 · uma peça em duas áreas traz a razão de cada uma
+  [32m✓[0m A5 · os nomes, e cada matéria com artigo, transcrição e razão
+  [32m✓[0m A6 · a contagem de cada área, de três pontos de observação
+  [32m✓[0m A7 · cada linha do livro-razão coberta uma vez, e só uma
+[90m
+  áreas · 9 declarada(s), 9 com peças · 18 página(s) de área construída(s)
+      financas · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      economia-e-coesao-territorial · 97 peça(s): 8 trabalho(s), 1 conjunto(s), 88 medida(s)
+      infraestruturas-e-habitacao · 4 peça(s): 0 trabalho(s), 0 conjunto(s), 4 medida(s)
+      justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)
+      educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      trabalho-solidariedade-e-seguranca-social · 23 peça(s): 2 trabalho(s), 1 conjunto(s), 20 medida(s)
+      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)
+[0m
+
+> o-estado-do-pais@0.1.0 check:formas
+> node scripts/check-formas.mjs
+
+[32m  formas ✓[0m[90m 2 páginas de domínio · 6 desenhos (mapa-por-concelho 4 · barra-concelho-pais 2) · 25508 datas de linha conferidas · 20 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s)[0m
+
+> o-estado-do-pais@0.1.0 check:alcance
+> node tests/dominio/alcance.mjs
+
+  0 porta(s) · 1 página(s) nova(s) · 638 linhas citadas · 317 das 323 da §1.90
+  1 porta(s) · 949 página(s) nova(s) · 2677 linhas citadas · 323 das 323 da §1.90
+  2 porta(s) · 3676 página(s) nova(s) · 2984 linhas citadas · 323 das 323 da §1.90
+  3 porta(s) · 2738 página(s) nova(s) · 2984 linhas citadas · 323 das 323 da §1.90
+[32m
+  as 323 linhas da §1.90 alcançam-se a partir de /dominios/economia-e-financas-publicas[0m[90m em 3 porta(s)
+[0m
+
+> o-estado-do-pais@0.1.0 check:lugares
+> node scripts/check-lugares.mjs
+
+
+[32m  lugares ✓ [0m308 concelhos, 29 distritos e ilhas, 9 regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · as 308 linhas do poder de compra declaram a base do índice · 9 chaves com tema · 4928 medida(s) rendidas em 616 página(s), todas debaixo do tema que a tabela lhes dá · as palavras da leitura e da régua recalculadas do livro-razão em todas elas
+
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs
+
+T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.
+B1 país: 35 medidas, 9 temas, 7354 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.
+B1 país: todas as conferências a 0.
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+[32m  voz ✓ [0m65 marcadores · 12 exceções (0 de registo) · 798 frases distintas, 22662 ocorrências em 1376 rotas · autorreferência 0 · nada por classificar · divulgação 1378 ocorrência(s) nas rotas medidas · 1245 linhas do inventário com bloco (627 vivas, todas rendidas; 618 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 6674 · nomes declarados: areas 54, regioes 0, dominios 1974, figuras 170, medidas 78, projeto 674, oficial 0, concelho 4928 · palavras proibidas: 0 em 7372 página(s) da superfície (14 palavras da norma §1.3; 44 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+[90m        15 bloco(s) do inventário por ler, e o registo di-lo:[0m
+[90m        · B1-peca1 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu[0m
+[90m        · b1-peca3 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1-peca3-correcao · por ler[0m
+[90m        · b1-peca3-correcao2 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b1c · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b2-peca1 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · b2-peca1-correcao-2 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · cartao · por ler[0m
+[90m        · e1-evora-2027 · por ler[0m
+[90m        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados[0m
+[90m        · lugar · por ler[0m
+[90m        · mapa · leitura a frio (design/especime-v3/critica/2026-09-08-codex-leitura-f11e-distritos.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui)[0m
+[90m        · r1 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · rotulo-ia · na árvore principal, fora deste ramo[0m
+[90m        1 exceção(ões) por exercer, e o ficheiro di-lo:[0m
+[90m        · «planned completion date has passed with no completion recorded»[0m
+
+
+> o-estado-do-pais@0.1.0 check:lingua
+> node scripts/check-lingua.mjs
+
+
+[32m  língua ✓ [0m37 unidade(s) do livro-razão: 35 traduzida(s), 2 em português com razão escrita · 2531 localizador(es), todos dentro de documento português · 74 título(s) de documento com língua declarada (37 pt, 37 en) · 20 rótulo(s) da fonte com língua declarada (15 pt, 5 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 68 edição(ões) com língua declarada (20 pt, 0 en, 48 sem língua)
+[90m        7354 página(s) lidas · unidades em «en»: 8645 (8636 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6668 de 13336 rendidos · rótulos da fonte com marca de língua: 5567 de 11134 rendidos · organismos rendidos: 15912 (7956 de língua contrária: 7626 em «en» e 330 em «pt», 7956 com a marca certa) · edições rendidas: 10604 (3778 de língua contrária: 3778 em «en» e 0 em «pt», 3778 com a marca certa, 3048 sem língua nenhuma e sem marca) · localizadores em «en»: 2531 com marca · leis em «en»: 943 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 110 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7354 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[90m        3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
+
+
+> o-estado-do-pais@0.1.0 check:lugar
+> node scripts/check-lugar.mjs
+
+  8.4, o que a régua leu: 48 definições (esperadas 48) · 70 origens (esperadas 70)
+  item 5, o que a régua leu no Método: pt «selo» ×6 · en «seal» ×6 (chão 1 por edição; a rota do Método está fora da conta da L3, pela medida P9 do brief)
+  item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
+  §7.4 e 8.6, o que os dados dizem: estudo 26 · texto 10 · indice 2 · edicoes 26 · linhas 26
+check:lugar · 7372 páginas em dist/
+  L1 · páginas com dois destinos iguais fora da mobília         2291  (teto 2291) ok
+      · /agenda · 8 destinos repetidos (ex.: /agenda ×4)
+      · /correcoes · 9 destinos repetidos (ex.: / ×10)
+      · /distritos/aveiro · 20 destinos repetidos (ex.: /municipios/agueda ×2)
+      · /distritos/beja · 15 destinos repetidos (ex.: /municipios/aljustrel ×2)
+      · /distritos/braga · 15 destinos repetidos (ex.: /municipios/amares ×2)
+      · /distritos/braganca · 13 destinos repetidos (ex.: /municipios/alfandega-da-fe ×2)
+  L2 · segundas listas dos concelhos                               0  (teto 0) ok
+  L2 · réguas da convergência fora de /regioes                     0  (teto 0) ok
+  L2 · sinopses de estudo fora de /estudos                         0  (teto 0) ok
+  L3 · palavras fora do vocabulário fechado                        0  (teto 0) ok
+  L4 · frases de definição e de hierarquia em falta                0  (teto 0) ok
+  L5 · páginas sem caminho no cabeçalho                            0  (teto 0) ok
+  L6 · selos que não dizem o publicador                            0  (teto 0) ok
+  8.5 · «limiar» sozinho                                           0  (teto 0) ok
+  8.8 · «livro-razão» nos menus e nos títulos                      0  (teto 0) ok
+  8.13 · valores selados na secção dos domínios de /               0  (teto 0) ok
+  8.14 · «Relance» e «Leitura breve» nas páginas do leitor         0  (teto 0) ok
+  8.17 · pontos dos 308 na página de um concelho                   0  (teto 0) ok
+  8.17 · páginas de concelho sem o mapa da sua unidade             0  (teto 0) ok
+  8.11 · leituras de aparelho no cabeçalho                         0  (teto 0) ok
+  8.4 · definições de painel fora da declaração                    0  (teto 0) ok
+  §7.10 · «[a verificar]» sem definição ao pé do primeiro          0  (teto 0) ok
+  §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok
+  §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok
+  §7.4 e 8.6, o que a régua leu: estudo 26 · texto 10 · indice 2 · edicoes 26 · linhas 26
+  as exceções, e quantas vezes cada uma foi precisa:
+      · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
+      · «trabalho»    12 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+check:lugar · verde.
+
+> o-estado-do-pais@0.1.0 provar:eyetext
+> node scripts/provar-eyetext.mjs
+
+
+A leitura do olho, provada contra o motor:
+  evora-2027-prometido-painel-dinheiro/en           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-prometido-painel-dinheiro/pt           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·   49 no registo ·   83 unidades iguais · 21 isentas em 16 bloco(s) editado(s) · 4 apagado(s)
+  evora-orcamentado-pago-devido-2025/en              94 blocos lidos ·   87 no registo ·  179 unidades iguais · 30 isentas em 27 bloco(s) editado(s) · 7 apagado(s)
+  evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  179 unidades iguais · 31 isentas em 28 bloco(s) editado(s) · 7 apagado(s)
+  evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+  evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+  juntas apertadas na 07 pt                          20 · 0 imprimem um espaço
+
+  7 edições · 841 blocos lidos · 4415 unidades · 4219 iguais carácter a carácter · 196 isentas
+  375 operações da passagem de voz: 174 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+
+[32mEYETEXT: PASSA — 605 conferências[0m
+
+> o-estado-do-pais@0.1.0 provar:guardas
+> node scripts/provar-guardas.mjs
+
+
+[90m  guardas · 129 conferência(s) sobre os guardas de execução do bloco F0.4[0m
+  [32m✓[0m cada guarda recusa o que promete recusar e aceita o que promete aceitar.
+
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+[90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, num directório temporário.[0m
+
+  [32m✓[0m identificadores · 246 ficheiro(s) lidos, nenhuma declaração morta
+
+
+> o-estado-do-pais@0.1.0 check:indice
+> node tests/livro/indice.mjs --navegador
+
+
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7372 página(s) de /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist
+
+  [32m✓[0m I1 · o nome de uma medida não é o identificador
+[90m        20 página(s) · 434 entrada(s) · 382 com nome · 52 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 434 identificador(es) em metadado
+        a escada no índice do livro-razão, por edição (217 linhas): 119 pelo nome do cartão · 3 pelo rótulo da fonte · 69 pelo TÍTULO DO DOCUMENTO, que é o nome do papel e não o da medida · 26 sem nome
+        1871 rótulo(s) do livro-razão inteiro com um localizador de uma das 4 formas conhecidas[0m
+  [32m✓[0m I2 · as datas ISO à vista
+[90m        0 data(s) ISO como valor · 0 em prosa por marcar · 922 dentro de texto transcrito (a casa não edita o que transcreve) · 305 em documentos alojados e páginas de leitura (fora do âmbito do brief §2)[0m
+  [32m✓[0m I3 · a busca do índice é um formulário, e cobre o livro-razão inteiro
+[90m        2 índice(s) com um campo de busca dentro de um <form method="get"> · 5968 entrada(s) nos dois ficheiros do índice da busca, contra 2984 linhas do livro-razão em cada[0m
+  [32m✓[0m I4 · a palavra retirada não está no rótulo da contagem
+[90m        0 ocorrência(s) no rótulo da contagem das áreas · 15 noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)[0m
+  [32m✓[0m I5 · as contagens do índice com denominador
+[90m        as duas parcelas dizem de que total saem, nas duas edições[0m
+  [32m✓[0m I6 · o marcador com um destino só
+[90m        402 ligação(ões) em «pt» e 413 em «en», uma página cada · 72 marcador(es) dentro de um selo (excepção da Emenda 2)[0m
+  [32m✓[0m I8 · a página de uma unidade da Carta
+[90m        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada[0m
+  [32m✓[0m I9 · as datas dos trabalhos, e o marcador que resta
+[90m        26 linha(s) de trabalho · 2 marcador(es) ao todo, 2 linha(s) com um e nenhuma com dois · 18 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 18 de 18 linha(s) de src/data/datas-de-publicacao.json refeitas do git[0m
+  [32m✓[0m I10 · nenhum número novo
+[90m        2984 linha(s) citada(s) em 20550 ocorrência(s) · 19 motivo(s) declarado(s)[0m
+  [32m✓[0m I3b · a busca filtra o livro-razão inteiro, no navegador
+[90m        /livro-razao: 217 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0[0m
+  [32m✓[0m I7 · sem transbordo a 390 nas páginas de linha
+[90m        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)[0m
+  [32m✓[0m I11 · o espaço entre o número e a palavra, a 390
+[90m        /: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s) · /en/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s)[0m
+
+
+> o-estado-do-pais@0.1.0 check:cartao
+> node tests/cartao/cartao.mjs --prova
+
+[90m  prova: 12 estragos plantados, 12 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; K13 sobre 4 medidas e 12 linhas com grupo etário, com a declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; K16 com a declaração em vigor a passar e dez plantas a morder, a primeira o defeito da leitura a frio[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7372[0m
+[90m    cartões                          5274 (2637 pt, 2637 en)[0m
+[90m    com nome                         5274 de 5274[0m
+[90m    com a frase do que medem         4404 de 5274 com frase[0m
+[90m    com régua                        796 de 5274 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             182[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          1 (a exceção da I92)[0m
+[90m    o marcador em português          4 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    312 (a porta é a do cartão)[0m
+[90m    valores de referência, as duas testemunhas comparadas  15[0m
+[90m    cartões com veredicto conferido (K15)                 90[0m
+[90m    cartões com a média europeia calada (K14)              6[0m
+[90m    medidas com nome oficial no recibo                    11[0m
+[90m    perguntas com cada pedaço apoiado (K16)               22 (72 pedaços, 85 apoios, 5 origens seladas no motor)[0m
+[90m    medidas com grupo etário fixado na linha (K13)         4[0m
+[90m      linhas dessas medidas, todas conferidas               12[0m
+[90m      delas, na catraca declarada (I132, vazia)           0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[32m  ✓ 5274 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 4404 de 5274 com frase e 796 de 5274 com régua, e os 182 períodos anteriores da mesma série e da mesma unidade[0m
+
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7372 página(s) lidas, 47 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+
+> o-estado-do-pais@0.1.0 check:palavras
+> node tests/voz/palavras-proibidas.mjs --prova
+
+[32m  palavras ✓ [0m[90m20 de 20 plantas vistas (14 palavras, 6 buracos da superfície) · 7372 página(s) medidas em repouso, 0 achados · 44 página(s) com a superfície estreitada por rota declarada[0m
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs
+
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit 7110ca6 · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   375506  [32m✓[0m
+  02-tipo.html                      Fundamentos   371654  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   409610  [32m✓[0m
+  04-regua.html                     Disposições   373575  [32m✓[0m
+  05-mapa.html                      Disposições   440071  [32m✓[0m
+  06-estados.html                   Componentes   371137  [32m✓[0m
+  07-cartoes.html                   Componentes   286361  [32m✓[0m
+  10-pagina-primeira.html           Páginas       457965  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       458876  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       225444  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       567173  [32m✓[0m
+  14-pagina-municipio.html          Páginas       275742  [32m✓[0m
+  15-pagina-lugares.html            Páginas       481930  [32m✓[0m
+  16-pagina-metodo.html             Páginas       255441  [32m✓[0m
+  17-pagina-agenda.html             Páginas       292186  [32m✓[0m
+  18-pagina-estudos.html            Páginas       216224  [32m✓[0m
+  19-pagina-sobre.html              Páginas       198181  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       267804  [32m✓[0m
+  21-pagina-404.html                Páginas       196916  [32m✓[0m
+  30-regras.html                    Fundamentos   239574  [32m✓[0m
+
+[90m  6602.9 KiB de cartões · maior cartão 553.9 KiB · tecto 596.75 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7372 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
 

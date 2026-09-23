@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from pathlib import Path; import sys; from publisher.dominios_readers import pdf_sentence; g = Path(sys.argv[1]).read_text(encoding='utf-8').split('\f')[9].splitlines(); pdf_sentence(Path(sys.argv[1]), 'e4-despesa-liquida', 'crescimento da despesa liquida em 2024', page=10, first=1, last=27, opens_with='Gráfico 2 – Crescimento e desvio da despesa líquida em 2025', closes_with='Desvio CFP POEN-MP (Recomendado)', value=g[10].strip())
+                                                                                                                                                                              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/publisher/dominios_readers.py", line 458, in pdf_sentence
+    raise Fail(f"{path.name}: a janela da página {page}, linhas {first} a {last}, abre na "
+               f"legenda de um gráfico ({frase[:60]!r}); a camada de texto de um gráfico "
+               f"é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova")
+publisher.dominios_readers.Fail: parecer-2026-02-rap26.txt: a janela da página 10, linhas 1 a 27, abre na legenda de um gráfico ('Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 '); a camada de texto de um gráfico é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova

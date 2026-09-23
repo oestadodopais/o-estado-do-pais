@@ -1,0 +1,16 @@
+B2 CFP 2024: controlo positivo, valor ligado à medida e ao ano na nota 9, página 9
+B2 CFP 2024: planta recusada, só rótulos do gráfico: CFP 2024: a nota 9 da página 9 não contém a frase que associa o valor ao crescimento da despesa líquida apurado pelo CFP; um índice em rótulos de gráfico não é prova
+B2 CFP 2024: planta recusada, a leitura antiga pelo índice do gráfico: parecer-2026-02-rap26.txt: a janela da página 10, linhas 1 a 27, abre na legenda de um gráfico ('Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 '); a camada de texto de um gráfico é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova
+B2 CFP 2024: bytes originais intactos e controlo limpo repetido
+B2: as observações novas têm os valores e períodos declarados
+B2 associação: controlo positivo, declaração inicial só no agregado da medida existente
+B2 associação: planta recusada, outro quadro: Associação UE: quadro divergente: PT 'TESSI164', UE 'TESSI165'
+B2 associação: planta recusada, outro regime: Associação UE: regime divergente: PT 'RENT_MKT', UE 'OWN_L'
+B2 associação: planta recusada, outra unidade: Associação UE: unidade divergente: PT 'PC', UE 'PC_POP'
+B2 associação: planta recusada, outro período: Associação UE: período divergente: PT '2025', UE '2024'
+B2: planta recusada, regime de outra série
+B2: planta recusada, excerto sem regime
+B2: planta recusada, título de outro quadro
+B2: planta recusada, bandeira omitida
+B2: construção limpa igual depois das plantas
+DOMINIOS_B2_TEST: PASS, 15 conferências

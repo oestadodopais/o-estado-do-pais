@@ -1,0 +1,29 @@
+{
+  "o_que_e": "O que o registo da corrida do Codex que parou diz da paragem, lido deste ficheiro por um guião, sem nada escrito à mão.",
+  "comando": "python3 (guião em linha): lê o registo, e a linha do erro é a que precede «tokens used»; os símbolos são a linha a seguir",
+  "registo": ".claude/codex-b2-peca1-correcao-2.log (na árvore principal do sítio, fora do repositório)",
+  "registo_sha256": "21692be9264de46e970cfd4d811877182cb565aadaed7ce1eb9098e715149036",
+  "registo_linhas": 17379,
+  "linha_do_limite": "ERROR: You’ve hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 28th, 2026 1:44 PM.",
+  "linha_do_erro": "2026-09-23T21:17:30.854936Z ERROR codex_core::tools::router: error=write_stdin failed: Unknown process id 6867",
+  "hora_do_erro": "2026-09-23T21:17:30.854936Z",
+  "simbolos_usados": "143,421",
+  "linha_do_fim": "FIM exit=1 21:17:31",
+  "comandos_registados": 41,
+  "commits_registados": [
+    {
+      "commit": "6151dec5",
+      "assunto": "B2: integrar a hierarquia das cabeças no verify"
+    },
+    {
+      "commit": "a4cc0e17",
+      "assunto": "B2: provar o período das câmaras e usar uma porta comum"
+    },
+    {
+      "commit": "8f7b2c27",
+      "assunto": "B2: datar o veredicto e nomear o dono das referências"
+    }
+  ],
+  "simbolos_usados_n": 143421,
+  "nota_dos_simbolos": "O registo escreve os milhares com vírgula, à inglesa; simbolos_usados_n é o mesmo número inteiro, sem o separador."
+}

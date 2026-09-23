@@ -1,5 +1,5 @@
 diff --git a/content/13 Dominios/ledger.json b/content/13 Dominios/ledger.json
-index d9b8c83..dca07de 100644
+index d9b8c83..41e0870 100644
 --- a/content/13 Dominios/ledger.json	
 +++ b/content/13 Dominios/ledger.json	
 @@ -6986,6 +6986,136 @@
@@ -56,12 +56,12 @@ index d9b8c83..dca07de 100644
 +   "value": "11,9",
 +   "source_url": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf",
 +   "fetched_at": "2026-09-01T13:21:32+00:00",
-+   "excerpt": "parecer-2026-02-rap26.txt (sha256 73b845571b4abbc1…) p. 10, linhas 1 a 27 → “Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 (taxa de variação nominal em %; desvio em % do PIB) Anual 14,0 10,0 11,9 12,0 11,8 8,0 10,0 8,0 6,0 6,4 tv. % % do PIB 6,0 4,0 5,0 5,1 4,0 3,3 2,0 2,0 0,5 0,0 1,2 0,0 0,0 2024 2025 2026 2027 2028 Desvio CFP POEN-MP (Recomendado)”",
++   "excerpt": "parecer-2026-02-rap26.txt (sha256 73b845571b4abbc1…) p. 9, nota 9, linhas 48 a 50 → “Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, valor que compara com 11,8% subjacente à trajetória acordada.”",
 +   "source_type": "government",
 +   "sanity_min": -50.0,
 +   "sanity_max": 100.0,
 +   "tier": "B",
-+   "note": "Observação anterior da série CFP do gráfico 2, painel Anual, p. 10. A série CFP escreve 11,9 em 2024 e 6,4 em 2025; a série POEN-MP (Recomendado) é a outra linha. O valor é lido na posição conferida na extração do PDF, com os anos e a legenda no excerto.",
++   "note": "Observação anterior da mesma série do crescimento da despesa líquida apurado pelo CFP. A nota 9 da p. 9 associa expressamente o valor de 2024 à medida e ao CFP; distingue-o do valor subjacente à trajetória acordada. Leitura da frase nas linhas 48 a 50 da extração por pdftotext -layout do PDF alojado, sem leitura de rótulos do gráfico.",
 +   "attributed_to": [
 +    "Conselho das Finanças Públicas"
 +   ],
@@ -203,21 +203,160 @@ index 0000000..14e2a68
 @@ -0,0 +1 @@
 +{"version":"2.0","class":"dataset","label":"Housing cost overburden rate by tenure status - EU-SILC survey","source":"ESTAT","updated":"2026-09-17T23:00:00+0200","value":{"0":7.4,"1":6.6,"2":4.4,"3":3.9,"4":3.0,"5":2.7,"6":2.2,"7":3.9,"8":1.4,"9":1.6,"10":3.8,"11":3.0,"12":3.8,"13":3.2,"14":2.9,"15":2.5,"16":2.0,"17":2.0,"18":1.5,"19":2.6,"20":1.7,"21":1.4,"22":2.0,"23":1.3,"36":6.7,"37":7.6,"38":5.4,"39":5.7,"40":4.9,"41":4.0,"42":3.5,"43":3.9,"44":4.2,"45":4.4,"46":3.6,"47":2.8,"24":33.8,"25":35.4,"26":31.9,"27":28.2,"28":25.8,"29":26.3,"30":19.7,"31":26.9,"32":29.4,"33":27.0,"34":30.3,"35":27.2},"id":["freq","unit","tenure","geo","time"],"size":[1,1,4,1,12],"dimension":{"freq":{"label":"Time frequency","category":{"index":{"A":0},"label":{"A":"Annual"}}},"unit":{"label":"Unit of measure","category":{"index":{"PC":0},"label":{"PC":"Percentage"}}},"tenure":{"label":"Tenure status","category":{"index":{"OWN_L":0,"OWN_NL":1,"RENT_MKT":2,"RENT_FR":3},"label":{"OWN_L":"Owner, with mortgage or loan","OWN_NL":"Owner, no outstanding mortgage or housing loan","RENT_MKT":"Tenant, rent at market price","RENT_FR":"Tenant, rent at reduced price or free"}}},"geo":{"label":"Geopolitical entity (reporting)","category":{"index":{"PT":0},"label":{"PT":"Portugal"}}},"time":{"label":"Time","category":{"index":{"2014":0,"2015":1,"2016":2,"2017":3,"2018":4,"2019":5,"2020":6,"2021":7,"2022":8,"2023":9,"2024":10,"2025":11},"label":{"2014":"2014","2015":"2015","2016":"2016","2017":"2017","2018":"2018","2019":"2019","2020":"2020","2021":"2021","2022":"2022","2023":"2023","2024":"2024","2025":"2025"}}}},"extension":{"lang":"EN","description":"This indicator is defined as the percentage of the population living in a household where the total housing costs (net of housing allowances) represent more than 40% of the total disposable household income (net of housing allowances) presented by accommodation tenure status.","id":"TESSI164","agencyId":"ESTAT","version":"1.0","datastructure":{"id":"TESSI164","agencyId":"ESTAT","version":"69.0"},"annotation":[{"type":"CREATED","date":"2010-09-09T16:24:31+0200"},{"type":"DISSEMINATION_DOI_XML","title":"<adms:identifier xmlns:adms=\"http://www.w3.org/ns/adms#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core.html\" xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"><adms:Identifier rdf:about=\"https://doi.org/10.2908/TESSI164\"><skos:notation rdf:datatype=\"http://purl.org/spar/datacite/doi\">10.2908/TESSI164</skos:notation><dct:creator rdf:resource=\"http://publications.europa.eu/resource/authority/corporate-body/ESTAT\"/><dct:issued rdf:datatype=\"http://www.w3.org/2001/XMLSchema#date\">2023-01-19</dct:issued></adms:Identifier></adms:identifier>"},{"type":"DISSEMINATION_OBJECT_TYPE","title":"DATASET"},{"type":"DISSEMINATION_PRESENTATIONS","title":"[{\"names\":{\"de\":{\"locale\":\"de\",\"value\":\"Standardpräsentation\",\"html\":false},\"en\":{\"locale\":\"en\",\"value\":\"Default presentation\",\"html\":false},\"fr\":{\"locale\":\"fr\",\"value\":\"Présentation par défaut\",\"html\":false}},\"descriptions\":{},\"code\":\"default\",\"useAsDefault\":true,\"order\":0,\"defaultView\":\"view.table\",\"jsonFormat\":null,\"preselection\":[{\"code\":\"freq\",\"multipleSelection\":null,\"singleSelection\":\"A\"},{\"code\":\"unit\",\"multipleSelection\":null,\"singleSelection\":\"PC\"},{\"code\":\"tenure\",\"multipleSelection\":null,\"singleSelection\":null},{\"code\":\"geo\",\"multipleSelection\":null,\"singleSelection\":null}],\"preselectionTimeFilter\":{\"code\":\"time\",\"multipleSelection\":null,\"singleSelection\":null,\"mode\":\"ALL\",\"from\":null,\"to\":null,\"fixed\":null},\"layoutFormat\":{\"layoutAxes\":{\"y1\":\"time\",\"x1\":\"geo\"},\"fixedMinMax\":false,\"mapProjection\":null,\"mapShowAllGeo\":true,\"mapNumberOfColors\":0,\"rankingMode\":false,\"highlightMode\":false,\"labelOption\":null,\"labelByDimension\":null,\"businessRulesStrategy\":null,\"mapClassificartionMethode\":null}}]"},{"type":"DISSEMINATION_PRESENTATIONS_VERSION","title":"v0_4_X"},{"type":"DISSEMINATION_SOURCE_DATASET","title":"ILC_LVHO07C"},{"type":"DISSEMINATION_TIMESTAMP_DATA","date":"2026-09-17T23:00:00+0200"},{"type":"DISSEMINATION_TIMESTAMP_GLOBAL","date":"2026-09-17T23:00:00+0200"},{"type":"DISSEMINATION_TIMESTAMP_PLANNED","date":"2026-09-17T23:00:00+0200"},{"type":"ESMS_HTML","title":"Explanatory texts (metadata)","href":"https://ec.europa.eu/eurostat/cache/metadata/en/ilc_sieusilc.htm"},{"type":"ESMS_SDMX","title":"Explanatory texts (metadata)","href":"https://ec.europa.eu/eurostat/api/dissemination/files?file=metadata/ilc_sieusilc.sdmx.zip"},{"type":"OBS_COUNT","title":"1897"},{"type":"OBS_PERIOD_OVERALL_LATEST","title":"2025"},{"type":"OBS_PERIOD_OVERALL_OLDEST","title":"2014"},{"type":"SOURCE_INSTITUTIONS","text":"Eurostat"},{"type":"UPDATE_DATA","date":"2026-09-17T23:00:00+0200"},{"type":"UPDATE_STRUCTURE","date":"2026-04-30T11:00:00+0200"}],"positions-with-no-data":{"freq":[],"unit":[],"tenure":[],"geo":[],"time":[]}}}
 \ No newline at end of file
+diff --git a/indicators/out/b2-2026-09-23/perguntas/LEIA-ME.md b/indicators/out/b2-2026-09-23/perguntas/LEIA-ME.md
+new file mode 100644
+index 0000000..4e02744
+--- /dev/null
++++ b/indicators/out/b2-2026-09-23/perguntas/LEIA-ME.md
+@@ -0,0 +1,15 @@
++# As três respostas do Eurostat que selam pedaços das perguntas (23.09.2026)
++
++*Escrito pelo construtor da segunda passagem de correção da peça 1 do B2 do sítio (Claude Opus 5.5) a 23.09.2026. Sem travessões na prosa.*
++
++A leitura a frio da peça 1 (achado 8) viu que a pergunta do desemprego de longa duração dizia um denominador que nenhuma origem declarada da definição dizia. A decisão do lugar de direção manda que cada pedaço de cada pergunta se apoie numa origem selada ou num campo selado da linha, e que, onde faltar, se peça a metainformação do indicador pelo cliente da casa e se sele a origem no motor. Três perguntas precisavam disso, e as três respostas estão aqui.
++
++Os três pedidos foram feitos pelo cliente da casa (`core.http.HttpClient`, com o nome `CASA_UA`, pela porta `condicional()`, que nunca passa por cache), pelo guião `pedir.py` desta pasta, e estão registados em `pedidos.jsonl` com o endereço, a hora UTC, o cliente e o sha256 do corpo. Os endereços são, carácter a carácter, o `source_url` das três linhas do sítio. O que se lê delas é metainformação, nunca um valor.
++
++| ficheiro | linha do sítio | campo lido | o que sela |
++|---|---|---|---|
++| `tesem130.json` | `desemprego-de-longa-duracao-2025` | `extension.description`, a primeira frase | a população ativa como denominador e o grupo dos 15 aos 74 anos |
++| `tipslm90.json` | `jovens-nem-2025` | `dimension.sex`, a etiqueta da dimensão e a da única categoria («Sex: Total») | os dois sexos |
++| `tespm140.json` | `sobrecarga-do-custo-da-habitacao-2025` | `extension.description` | a população inteira, sem repartição por regime de ocupação |
++
++Um pedido anterior aos mesmos três endereços, às 21:11 UTC do mesmo dia, pelo construtor do Codex que começou esta passagem, devolveu os mesmos bytes (os três sha256 são iguais aos de `pedidos.jsonl`); o registo da sua corrida não guardou o comando do pedido, e por isso a origem que se sela é a destes pedidos, e não a dele.
+diff --git a/indicators/out/b2-2026-09-23/perguntas/pedidos.jsonl b/indicators/out/b2-2026-09-23/perguntas/pedidos.jsonl
+new file mode 100644
+index 0000000..589fde4
+--- /dev/null
++++ b/indicators/out/b2-2026-09-23/perguntas/pedidos.jsonl
+@@ -0,0 +1,3 @@
++{"linha": "desemprego-de-longa-duracao-2025", "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T", "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T", "file": "tesem130.json", "timestamp_utc": "2026-09-23T21:34:16Z", "http": "200", "bytes": 5837, "user_agent": "OEstadoDoPais/corredor", "cliente": "core.http.HttpClient.condicional", "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b"}
++{"linha": "jovens-nem-2025", "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP", "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP", "file": "tipslm90.json", "timestamp_utc": "2026-09-23T21:34:16Z", "http": "200", "bytes": 5642, "user_agent": "OEstadoDoPais/corredor", "cliente": "core.http.HttpClient.condicional", "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef"}
++{"linha": "sobrecarga-do-custo-da-habitacao-2025", "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T", "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T", "file": "tespm140.json", "timestamp_utc": "2026-09-23T21:34:17Z", "http": "200", "bytes": 4770, "user_agent": "OEstadoDoPais/corredor", "cliente": "core.http.HttpClient.condicional", "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42"}
+diff --git a/indicators/out/b2-2026-09-23/perguntas/pedir.py b/indicators/out/b2-2026-09-23/perguntas/pedir.py
+new file mode 100644
+index 0000000..f9c7bf4
+--- /dev/null
++++ b/indicators/out/b2-2026-09-23/perguntas/pedir.py
+@@ -0,0 +1,52 @@
++#!/usr/bin/env python3
++"""As três respostas do Eurostat que selam pedaços de três perguntas do sítio.
++
++    python3 indicators/out/b2-2026-09-23/perguntas/pedir.py
++
++Escrito a 23.09.2026 pelo construtor da segunda passagem de correção da peça 1
++do B2 do sítio (Claude Opus 5.5), pelo achado 8 da leitura a frio: cada pedaço
++de cada pergunta apoia-se numa origem selada ou num campo selado da linha, e
++onde faltar pede-se a metainformação do indicador pelo cliente da casa e sela-se
++a origem no motor, com o endereço, a hora, o cliente e o sha256.
++
++Os três endereços são, carácter a carácter, o `source_url` das três linhas do
++sítio (a resposta de onde o valor já veio), e o que se lê delas é metainformação
++(a descrição do indicador e as etiquetas das dimensões), nunca um valor. O
++cliente é o da casa (`core.http.HttpClient`, com o nome `CASA_UA`), pela porta
++`condicional()`, que nunca passa por cache. Os bytes escrevem-se tal como
++vieram, e o registo de cada pedido vai para `pedidos.jsonl`.
++"""
++import json
++import sys
++from datetime import datetime, timezone
++from pathlib import Path
++
++AQUI = Path(__file__).resolve().parent
++RAIZ = AQUI.parents[3]
++sys.path.insert(0, str(RAIZ))
++from core.http import CASA_UA, HttpClient  # noqa: E402
++
++BASE = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
++PEDIDOS = (
++    ("desemprego-de-longa-duracao-2025", "tesem130.json", BASE + "tesem130?format=JSON&lang=EN&geo=PT&sex=T"),
++    ("jovens-nem-2025", "tipslm90.json", BASE + "tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP"),
++    ("sobrecarga-do-custo-da-habitacao-2025", "tespm140.json", BASE + "tespm140?format=JSON&lang=EN&geo=PT&sex=T"),
++)
++
++cliente = HttpClient(user_agent=CASA_UA)
++registos = []
++for linha, ficheiro, url in PEDIDOS:
++    quando = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
++    r = cliente.condicional(url)
++    if r.status != 200 or not r.corpo or r.erro:
++        raise SystemExit(f"{url}: estado {r.status}, erro {r.erro!r}; nada se escreve")
++    (AQUI / ficheiro).write_bytes(r.corpo)
++    registos.append({
++        "linha": linha, "url": url, "url_final": r.url_final, "file": ficheiro,
++        "timestamp_utc": quando, "http": str(r.status), "bytes": len(r.corpo),
++        "user_agent": CASA_UA, "cliente": "core.http.HttpClient.condicional",
++        "sha256": r.sha256,
++    })
++    print(f"{ficheiro}: {r.status}, {len(r.corpo)} bytes, sha256 {r.sha256}")
++(AQUI / "pedidos.jsonl").write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in registos),
++                                     encoding="utf-8")
 diff --git a/publisher/dominios_b2_test.py b/publisher/dominios_b2_test.py
 new file mode 100644
-index 0000000..e622419
+index 0000000..9422823
 --- /dev/null
 +++ b/publisher/dominios_b2_test.py
-@@ -0,0 +1,102 @@
+@@ -0,0 +1,153 @@
 +"""Provas B2: coordenadas, etiqueta do regime e título da fonte, sem rede."""
 +from __future__ import annotations
 +import copy
 +import json
 +import tempfile
 +from pathlib import Path
-+from publisher.dominios_readers import eurostat_series
++from publisher.dominios_readers import eurostat_series, cfp_crescimento_2024, pdf_sentence, Fail as ReaderFail
 +from unittest.mock import patch
 +from publisher import dominios_build as B
++
++
++def verifica_cfp_2024():
++    fonte = B.SOURCE / "text/parecer-2026-02-rap26.txt"
++    original = fonte.read_bytes()
++    linha, sobre = cfp_crescimento_2024(fonte)
++    assert linha["value"] == "11,9", linha
++    assert linha["excerpt"] == (
++        "Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, "
++        "valor que compara com 11,8% subjacente à trajetória acordada.")
++    assert sobre["evidence_kind"] == "sentence" and sobre["footnote"] == 9
++    provas = ["B2 CFP 2024: controlo positivo, valor ligado à medida e ao ano na nota 9, página 9"]
++    paginas = original.decode("utf-8").split("\f")
++    grafico = paginas[9]
++    # O gráfico conserva exatamente os bytes que a leitura antiga aceitava.
++    # A frase desaparece, com os mesmos números soltos nas mesmas linhas.
++    nota = paginas[8].splitlines()
++    nota[47:50] = ["2024 CFP", "11,9 11,8", "crescimento da despesa líquida"]
++    paginas[8] = "\n".join(nota)
++    assert paginas[9] == grafico
++    with tempfile.TemporaryDirectory() as pasta:
++        estragado = Path(pasta) / "cfp-apenas-rotulos-de-grafico.txt"
++        estragado.write_text("\f".join(paginas), encoding="utf-8")
++        try:
++            cfp_crescimento_2024(estragado)
++        except ReaderFail as erro:
++            assert "um índice em rótulos de gráfico não é prova" in str(erro), str(erro)
++            provas.append(f"B2 CFP 2024: planta recusada, só rótulos do gráfico: {erro}")
++        else:
++            raise AssertionError("B2 CFP 2024: leitura aceitou rótulos do gráfico sem frase")
++    # A LEITURA ANTIGA, REPETIDA TAL COMO ERA, sobre o ficheiro alojado sem
++    # estrago nenhum: a janela do gráfico 2 da p. 10, linhas 1 a 27, com o valor
++    # escolhido pela posição 10 da corrida de rótulos. O que se planta é a
++    # leitura, e é o `pdf_sentence()` de todas as leituras do estudo que a recusa.
++    rotulos = grafico.splitlines()
++    assert rotulos[10].strip() == "11,9" and "11,8" in grafico, "B2 CFP 2024: o gráfico mudou"
++    try:
++        pdf_sentence(fonte, "e4-despesa-liquida", "crescimento da despesa liquida em 2024",
++                     page=10, first=1, last=27,
++                     opens_with="Gráfico 2 – Crescimento e desvio da despesa líquida em 2025",
++                     closes_with="Desvio CFP POEN-MP (Recomendado)",
++                     value=rotulos[10].strip())
++    except ReaderFail as erro:
++        assert "um índice em rótulos de gráfico não é prova" in str(erro), str(erro)
++        provas.append(f"B2 CFP 2024: planta recusada, a leitura antiga pelo índice do gráfico: {erro}")
++    else:
++        raise AssertionError("B2 CFP 2024: pdf_sentence aceitou a camada de texto de um gráfico")
++    assert fonte.read_bytes() == original
++    assert cfp_crescimento_2024(fonte) == (linha, sobre)
++    provas.append("B2 CFP 2024: bytes originais intactos e controlo limpo repetido")
++    return provas
 +
 +
 +def verifica_b2():
@@ -235,7 +374,7 @@ index 0000000..e622419
 +    for chave, valor in ids.items():
 +        assert por_id[chave]["value"] == valor, (chave, por_id[chave]["value"])
 +        assert next(m for m in manifesto if m["site_id"] == chave)["reference_date"] in ("2023", "2024", "2025")
-+    provas = ["B2: as observações novas têm os valores e períodos declarados"]
++    provas = verifica_cfp_2024() + ["B2: as observações novas têm os valores e períodos declarados"]
 +    principal = "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
 +    prefixo = f"Agregado da União Europeia (EU27_2020) da medida «{principal}»,"
 +    nota = next(m for m in manifesto if m["site_id"] == principal + "-ue")["note_extra"]
@@ -312,7 +451,7 @@ index 0000000..e622419
 +        print(prova)
 +    print(f"DOMINIOS_B2_TEST: PASS, {len(provas)} conferências")
 diff --git a/publisher/dominios_build.py b/publisher/dominios_build.py
-index 8fd11ad..e732cfb 100644
+index 8fd11ad..ccb503d 100644
 --- a/publisher/dominios_build.py
 +++ b/publisher/dominios_build.py
 @@ -197,6 +197,25 @@ def join_308() -> dict[str, dict]:
@@ -349,14 +488,14 @@ index 8fd11ad..e732cfb 100644
 +    for chave, atual, anterior, ficheiro, periodo, explicacao in (
 +        ("e2", "saldo-das-administracoes-publicas-2025", "saldo-das-administracoes-publicas-2024", "eurostat/gov_10dd_edpt1.json", "2024", "Observação anterior da mesma série do saldo das administrações públicas, nas mesmas coordenadas do pedido."),
 +        ("t4b", "disparidade-salarial-entre-sexos-2024", "disparidade-salarial-entre-sexos-2023", "eurostat/earn_gr_gpgr2.json", "2023", "Observação anterior da mesma série da disparidade salarial entre sexos, nas mesmas coordenadas do pedido."),
-+        ("e4", "crescimento-da-despesa-liquida-2025", "crescimento-da-despesa-liquida-2024", "text/parecer-2026-02-rap26.txt", "2024", "Observação anterior da série CFP do gráfico 2, painel Anual, p. 10. A série CFP escreve 11,9 em 2024 e 6,4 em 2025; a série POEN-MP (Recomendado) é a outra linha. O valor é lido na posição conferida na extração do PDF, com os anos e a legenda no excerto."),
++        ("e4", "crescimento-da-despesa-liquida-2025", "crescimento-da-despesa-liquida-2024", "text/parecer-2026-02-rap26.txt", "2024", "Observação anterior da mesma série do crescimento da despesa líquida apurado pelo CFP. A nota 9 da p. 9 associa expressamente o valor de 2024 à medida e ao CFP; distingue-o do valor subjacente à trajetória acordada. Leitura da frase nas linhas 48 a 50 da extração por pdftotext -layout do PDF alojado, sem leitura de rótulos do gráfico."),
 +    ):
 +        linha, anterior_sobre = lido["anteriores"][chave]
 +        atual_claim = next(c for c in claims if c["id"] == atual)
 +        atual_manifesto = next(e for e in manifesto if e["site_id"] == atual)
 +        documento = {**atual_manifesto["document"], "_source_url": atual_claim["source_url"]}
 +        if chave == "e4":
-+            documento.update(locator="p. 10, gráfico 2, painel Anual, série CFP, 2024", page=10)
++            documento.update(locator="p. 9, nota 9", page=9)
 +        flag_anterior = anterior_sobre.get("flag")
 +        acrescenta(site_id=anterior, linha=linha, ficheiro=ficheiro,
 +                   unit=atual_manifesto["unit"], reference_date=periodo,
@@ -441,7 +580,7 @@ index 8fd11ad..e732cfb 100644
                  if pedaco and f'"{pedaco}"' not in hosted[ficheiro]:
                      raise Fail(f'{claim["id"]}: the excerpt carries {pedaco!r}, which the '
 diff --git a/publisher/dominios_readers.py b/publisher/dominios_readers.py
-index 29bf7b2..f9a076a 100644
+index 29bf7b2..0fa19c8 100644
 --- a/publisher/dominios_readers.py
 +++ b/publisher/dominios_readers.py
 @@ -124,7 +124,8 @@ def _coordinates(doc: dict) -> dict[tuple[str, ...], int]:
@@ -477,7 +616,78 @@ index 29bf7b2..f9a076a 100644
          "periods": tempos,
      }
      return linha, sobre
-@@ -661,6 +669,37 @@ def read_all(source: Path = SOURCE) -> dict:
+@@ -393,6 +401,18 @@ def ine_indicator(path: Path, measure: str) -> tuple[list[dict], dict, dict]:
+ 
+ # ------------------------------------------------------------------ pdf --
+ 
++# UM GRÁFICO NÃO É UMA FRASE (achado 6 da leitura a frio da peça 1 do B2 do
++# sítio, 23.09.2026). A camada de texto de um gráfico é uma corrida de rótulos
++# de eixos e de pontos, pela ordem em que o paginador os deixou; nenhuma palavra
++# do publicador liga ali um número à sua série. Um valor escolhido pela posição
++# nessa corrida não está provado, mesmo que a corrida o contenha: foi assim que
++# «11,9» e «11,8» ficaram lado a lado no excerto do crescimento da despesa
++# líquida de 2024, com uma inspeção visual por única prova. A janela que abre na
++# legenda de um gráfico recusa-se aqui, antes de qualquer leitor a poder citar;
++# o valor prova-se numa frase ou numa linha de tabela que o ligue à medida.
++_LEGENDA_DE_GRAFICO = re.compile(r"(?:Gráfico|Grafico|Figura|Chart|Figure)\s+\d")
++
++
+ def pdf_sentence(path: Path, measure: str, key: str, *, page: int, first: int, last: int,
+                  opens_with: str, closes_with: str, value: str, label: str | None = None,
+                  label_at: str | None = None) -> tuple[dict, dict]:
+@@ -434,6 +454,10 @@ def pdf_sentence(path: Path, measure: str, key: str, *, page: int, first: int, l
+                    f"{closes_with!r} after {opens_with!r}. What is there is:"
+                    f"\n      {janela[:300]!r}")
+     frase = janela[inicio:fim + len(closes_with)]
++    if _LEGENDA_DE_GRAFICO.match(frase):
++        raise Fail(f"{path.name}: a janela da página {page}, linhas {first} a {last}, abre na "
++                   f"legenda de um gráfico ({frase[:60]!r}); a camada de texto de um gráfico "
++                   f"é uma corrida de rótulos, e um índice em rótulos de gráfico não é prova")
+     if value not in frase:
+         raise Fail(f"{path.name}: the sentence at page {page}, lines {first} to {last} does "
+                    f"not carry the value {value!r}")
+@@ -450,6 +474,40 @@ def pdf_sentence(path: Path, measure: str, key: str, *, page: int, first: int, l
+     return entrada, {"page": page, "first": first, "last": last, "pages": len(pages)}
+ 
+ 
++def cfp_crescimento_2024(path: Path) -> tuple[dict, dict]:
++    """A frase da nota 9 associa explicitamente período, medida, autor e valor.
++
++    Um índice na camada de texto de um gráfico não prova qual é a série.
++    A janela localiza a nota; a frase inteira, e não uma posição na sequência
++    de rótulos, escolhe o valor. Sem essa frase o leitor recusa a observação,
++    mesmo que o gráfico e todos os seus números continuem no ficheiro.
++    """
++    paginas = path.read_text(encoding="utf-8").split("\f")
++    if len(paginas) < 9:
++        raise Fail("CFP 2024: falta a página 9 com a nota 9")
++    linhas = paginas[8].splitlines()
++    if len(linhas) < 53 or not linhas[44].startswith(
++            "9 A taxa de crescimento para 2024 não constitui uma recomendação"):
++        raise Fail("CFP 2024: falta o início da nota 9 na página 9")
++    janela = collapse(" ".join(linhas[47:50]))
++    frase = re.search(
++        r"Para 2024, o CFP apura um crescimento da despesa líquida de "
++        r"(?P<valor>[0-9]+,[0-9]+)%, valor que compara com [0-9]+,[0-9]+% "
++        r"subjacente à trajetória acordada\.", janela)
++    if frase is None:
++        raise Fail("CFP 2024: a nota 9 da página 9 não contém a frase que associa "
++                   "o valor ao crescimento da despesa líquida apurado pelo CFP; "
++                   "um índice em rótulos de gráfico não é prova")
++    linha, sobre = pdf_sentence(
++        path, "e4-despesa-liquida", "crescimento da despesa liquida em 2024",
++        page=9, first=48, last=50,
++        opens_with="Para 2024, o CFP apura um crescimento da despesa líquida de ",
++        closes_with="subjacente à trajetória acordada.", value=frase.group("valor"))
++    linha["locator"] = "p. 9, nota 9, linhas 48 a 50"
++    sobre.update(evidence_kind="sentence", footnote=9, period="2024")
++    return linha, sobre
++
++
+ # ----------------------------------------------------------------- html --
+ 
+ _ENTRE_ETIQUETAS = re.compile(r"<[^>]+>")
+@@ -661,6 +719,27 @@ def read_all(source: Path = SOURCE) -> dict:
              source / "eurostat" / "earn_mw_cur.json", "t5-eurostat",
              {"freq": "S", "currency": "EUR", "geo": "PT"}, period="2026-S1")[0]["value"],
      }
@@ -489,20 +699,10 @@ index 29bf7b2..f9a076a 100644
 +    ):
 +        out["anteriores"][chave] = eurostat_series(source / "eurostat" / ficheiro, medida, coordenadas, period=periodo)
 +
-+    # O gráfico foi conferido na página do PDF: CFP é a série vermelha.
-+    # A posição no texto extraído e os dois pontos da série são controlos;
-+    # a frase transcrita inclui título, painel Anual, anos e legenda.
-+    caminho = source / "text" / "parecer-2026-02-rap26.txt"
-+    grafico = caminho.read_text(encoding="utf-8").split("\f")[9].splitlines()
-+    if (grafico[10].strip() != "11,9" or grafico[16].strip() != "6,4"
-+            or grafico[25].split()[:2] != ["2024", "2025"]
-+            or "CFP" not in grafico[26] or grafico[4].strip() != "Anual"):
-+        raise Fail("CFP: os pontos, anos ou legenda do painel Anual do gráfico não são os conferidos")
-+    out["anteriores"]["e4"] = pdf_sentence(
-+        caminho, "e4-despesa-liquida", "crescimento da despesa liquida em 2024",
-+        page=10, first=1, last=27,
-+        opens_with="Gráfico 2 – Crescimento e desvio da despesa líquida em 2025",
-+        closes_with="Desvio CFP POEN-MP (Recomendado)", value=grafico[10].strip())
++    # O período anterior lê-se na frase que o CFP imprime na nota 9.
++    # A corrida de rótulos do gráfico nunca serve de prova da associação.
++    out["anteriores"]["e4"] = cfp_crescimento_2024(
++        source / "text" / "parecer-2026-02-rap26.txt")
 +
 +    out["habitacao"] = {}
 +    for geo, periodos in (("PT", ("2025", "2024")), ("EU27_2020", ("2025",))):
@@ -534,7 +734,7 @@ index 96ff45a..d62d8ac 100644
      for nome, estrago in DEFEITOS_NA_FONTE:
          with tempfile.TemporaryDirectory() as tmp:
 diff --git a/publisher/manifest.dominios.json b/publisher/manifest.dominios.json
-index 3e39b33..ddfe78a 100644
+index 3e39b33..1224435 100644
 --- a/publisher/manifest.dominios.json
 +++ b/publisher/manifest.dominios.json
 @@ -6351,10 +6351,129 @@
@@ -594,8 +794,8 @@ index 3e39b33..ddfe78a 100644
 +   "document": {
 +    "title": "PARECER RELATIVO AO RELATÓRIO ANUAL DE PROGRESSO 2026",
 +    "edition": "Parecer n.º 02/2026, abril de 2026",
-+    "locator": "p. 10, gráfico 2, painel Anual, série CFP, 2024",
-+    "page": 10,
++    "locator": "p. 9, nota 9",
++    "page": 9,
 +    "kind": "pdf"
 +   },
 +   "attributed_to": [
