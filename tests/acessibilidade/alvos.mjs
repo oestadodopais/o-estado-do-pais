@@ -17,6 +17,15 @@
  *
  * `--vermelhos` corre cinco vezes o que as outras formas correm uma (a limpa, e
  * uma por estrago plantado): estas plantas ficam fora do `verify` por custo.
+ * `--so <prefixo>` corre só os estragos cujo nome começa por esse prefixo (bloco
+ * R1, 23.09.2026): cada estrago é uma passagem inteira, e provar a planta de uma
+ * célula nova não precisa de pagar as outras seis.
+ *
+ * A H15 (bloco R1, 23.09.2026, I137) é a busca dos lugares ESCRITA: escreve
+ * «mour» no campo e exige uma ligação visível para Mourão, que o `Enter` com
+ * vários resultados não sai da página e que com um só abre a do concelho. A
+ * medição vive em `tests/acessibilidade/pesquisa.mjs`, que corre também sozinho
+ * sobre qualquer construção, e é por isso o mesmo guião para o antes e o depois.
  * O conhecido positivo da H10 corre sempre, também sem bandeira, e é assim que o
  * relatório do bloco o mede. `OEDP_DIST` aponta a régua para outra construção, e
  * serve para uma coisa só: medir o ANTES, com a mesma régua e não com outra
@@ -94,6 +103,7 @@ import { feitioDeLei } from '../../src/i18n/nomes-de-lei.mjs';
 import { MUNICIPIOS } from '../../src/data/caop-centroids.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { medeComandos, aceitaComandos, avaliaExpanded } from './expanded.mjs';
+import { medePesquisa, resumoDaPesquisa } from './pesquisa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
@@ -110,6 +120,7 @@ const opcao = (nome) => {
 };
 const FICHEIRO_JSON = opcao('--json');
 const VERMELHOS = argv.includes('--vermelhos');
+const SO = opcao('--so');
 
 if (!fs.existsSync(DIST)) {
   console.error('não existe dist/. Corra o build primeiro.');
@@ -296,6 +307,18 @@ const ESTRAGOS = [
       return html.slice(0, fim) + lista.replace(' data-lista-agrupada', '') + html.slice(fim);
     },
   },
+  {
+    /* A LISTA ESCONDIDA (H15, bloco R1). O estrago é o defeito que a leitura de
+       fora de 23.09.2026 encontrou, reposto no guião que o servidor entrega: a
+       linha que abre a lista sai, e os itens que casam acendem-se dentro de uma
+       caixa que continua fechada. Passa pelo terceiro canal, o do guião, porque
+       o HTML não muda: foi por isso que nenhuma leitura sobre capturas o viu. */
+    nome: 'lista-escondida · a lista dos resultados da busca nunca se abre',
+    celulas: ['H15'],
+    faz: (html) => html,
+    noGuiao: (texto, rota) =>
+      rota === '/js/municipios.js' ? texto.replace('if (lista) lista.hidden = q.length === 0;', '') : texto,
+  },
 ];
 
 /* -------------------------------------------------------------- o servidor */
@@ -337,6 +360,16 @@ let ESTRAGO = null;
 let ESTRAGO_NO_DISCO = null;
 
 /**
+ * O TERCEIRO CANAL DO ESTRAGO: O GUIÃO (bloco R1, 23.09.2026). A H15 mede o que
+ * um guião faz à página quando o leitor escreve, e o defeito que ela existe para
+ * apanhar vivia no guião e não no HTML. Um estrago que só passasse pelo HTML
+ * nunca lhe chegava.
+ *
+ * @type {((texto: string, rota: string) => string) | null}
+ */
+let ESTRAGO_NO_GUIAO = null;
+
+/**
  * Ler um ficheiro pelo caminho por onde os estragos passam.
  * @param {string} caminho
  */
@@ -362,6 +395,10 @@ const servidor = http.createServer((req, res) => {
   if (ESTRAGO && path.extname(ficheiro) === '.html') {
     res.writeHead(200, { 'content-type': tipo });
     return void res.end(ESTRAGO(fs.readFileSync(ficheiro, 'utf8'), semQuery));
+  }
+  if (ESTRAGO_NO_GUIAO && path.extname(ficheiro) === '.js') {
+    res.writeHead(200, { 'content-type': tipo });
+    return void res.end(ESTRAGO_NO_GUIAO(fs.readFileSync(ficheiro, 'utf8'), semQuery));
   }
   res.writeHead(200, { 'content-type': tipo });
   fs.createReadStream(ficheiro).pipe(res);
@@ -1792,6 +1829,28 @@ async function avalia(p, dist, cartoes, leis, folhas) {
       `${[...new Set(doIndice.map((pg) => pg.naListaAgrupada))].sort((a, b) => a - b).join(', ')}`,
   );
 
+  /* --- H15 · a busca dos lugares, escrita (bloco R1, 23.09.2026, I137) ----
+   *
+   * A leitura de fora escreveu «mour» e não viu nada: a lista nascia escondida e
+   * o guião nunca a abria, e o `Enter` recarregava a página com o campo vazio.
+   * Nenhuma das outras células o via, porque todas medem o que a página É e
+   * nenhuma o que ela FAZ quando o leitor escreve. Esta escreve, nas duas edições
+   * e nas duas larguras da casa, e exige os cinco passos de `medePesquisa()`: o
+   * campo vazio sem resultados, uma ligação VISÍVEL para Mourão com «mour», no
+   * máximo oito à vista, o `Enter` a ficar na página com vários e com nenhum, e
+   * a abrir a página de Mourão com um só. É o conhecido-positivo da M18: um nome
+   * conhecido tem de ser encontrado, ou a régua não viu nada.
+   */
+  const pesquisas = [];
+  for (const lang of LANGS) {
+    for (const largura of [390, 1280]) pesquisas.push(await medePesquisa(nav, base, lang, largura));
+  }
+  conta(
+    'H15',
+    pesquisas.length === 4 && pesquisas.every((m) => m.passa),
+    pesquisas.map((m) => resumoDaPesquisa(m)).join(' || '),
+  );
+
   /* --- H10 · `aria-expanded` e o título do Método ------------------------- */
   const metodo = p.paginas.filter((pg) => pg.familia === 'metodo');
   const metodoSemTitulo = metodo.filter(
@@ -1866,7 +1925,9 @@ if (VERMELHOS) {
   console.log(cinza('  as plantas:'));
   const amostra = fs.readFileSync(path.join(DIST, 'lugares', 'index.html'), 'utf8');
   const amostraEn = fs.readFileSync(path.join(DIST, 'en', 'ledger', 'evora-populacao-2025', 'index.html'), 'utf8');
+  const amostraDoGuiao = fs.readFileSync(path.join(DIST, 'js', 'municipios.js'), 'utf8');
   for (const estrago of ESTRAGOS) {
+    if (SO && !estrago.nome.startsWith(String(SO))) continue;
     const amostraDeCartao = (() => {
       const dir = path.join(DIST, 'cartoes');
       const f = fs.readdirSync(dir).find((x) => x.startsWith('en-') && x.endsWith('.json'));
@@ -1879,9 +1940,11 @@ if (VERMELHOS) {
         estrago.noDisco &&
         amostraDeCartao &&
         estrago.noDisco(amostraDeCartao.texto, amostraDeCartao.caminho) !== amostraDeCartao.texto
-      );
+      ) ||
+      !!(estrago.noGuiao && estrago.noGuiao(amostraDoGuiao, '/js/municipios.js') !== amostraDoGuiao);
     ESTRAGO = estrago.faz;
     ESTRAGO_NO_DISCO = estrago.noDisco ?? null;
+    ESTRAGO_NO_GUIAO = estrago.noGuiao ?? null;
     /* Uma planta que mexe no disco obriga a refazer as varreduras: as células
        que lêem ficheiros lêem-nos uma vez, no princípio, e um estrago que não
        as refizesse era um estrago que elas nunca viam. */
@@ -1892,6 +1955,7 @@ if (VERMELHOS) {
     await avalia(depois, varridoAgora, cartoesAgora, leisAgora, FOLHAS);
     ESTRAGO = null;
     ESTRAGO_NO_DISCO = null;
+    ESTRAGO_NO_GUIAO = null;
     const caiu = celulas.filter((c) => !c.passa).map((c) => c.nome);
     const nomeadas = estrago.celulas.filter((n) => caiu.includes(n));
     const verdesAntes = estrago.celulas.filter((n) => limpas.find((c) => c.nome === n)?.passa);

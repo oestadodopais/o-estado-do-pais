@@ -5,7 +5,11 @@
  * O QUE ESTE FICHEIRO PODE FAZER, e é a mesma regra de `public/js/inicio.js`
  * (resposta 3 da direção, 20.08.2026):
  *
- *   · trocar `hidden`, e mais nada.
+ *   · trocar `hidden`;
+ *   · e, desde o bloco R1 (23.09.2026), impedir que o `Enter` recarregue a
+ *     página e, quando a busca deixa UM resultado à vista, seguir a porta que o
+ *     servidor já rendeu nesse resultado. Não se compõe endereço nenhum: o
+ *     destino é o `href` que está no documento.
  *
  * O QUE NÃO PODE FAZER, nunca: `innerHTML`, criar texto visível, formatar um
  * número, escrever um algarismo. Tudo o que se vê veio do servidor.
@@ -106,10 +110,20 @@
     return;
   }
 
-  /* --------------------------------- a fila de resultados (livro-razão) */
+  /* ------------------ a fila de resultados (os lugares e o livro-razão) */
 
   var itens = bloco.querySelectorAll('.pesquisa-item');
   if (!itens.length) return;
+  /* A LISTA, E NÃO SÓ OS ITENS (bloco R1, 23.09.2026, I137). A lista nasce
+     escondida na página dos lugares (`resultadosOcultos`, para que sem guião a
+     página seja o mapa e as duas listas), e este ramo tirava o `hidden` a cada
+     item que casava e nunca à lista: escrever «mour» acendia Moura e Mourão
+     dentro de uma caixa que continuava fechada, e o leitor via nada. A leitura
+     de fora de 23.09.2026 foi a primeira a escrever no campo. Agora a lista
+     abre-se quando há texto escrito e fecha-se quando não há; com texto e sem
+     nenhum resultado, a folha tira-a do caminho (`.pesquisa-res:not(:has(…))`)
+     e abre-se no lugar dela a frase de que nada casou. */
+  var lista = bloco.querySelector('[data-pesquisa-lista]');
 
   /* O tecto da fila de resultados: oito, e a ordem é a da Carta. É o mesmo
      número da primeira página, e por isso está escrito nos dois sítios com a
@@ -117,6 +131,28 @@
   var MAX = 8;
 
   bloco.hidden = false;
+
+  /* O `ENTER` NÃO RECARREGA A PÁGINA (bloco R1, 23.09.2026). A busca é um
+     `<form>` que sem guião submete para esta mesma página, e com guião a
+     resposta já está aqui: um `Enter` que recarregasse deitava fora o que o
+     leitor escreveu e voltava com o campo vazio, que foi o que a leitura de
+     fora viu. Com UM resultado à vista, o `Enter` faz o que o leitor espera e
+     abre a página desse concelho, pela porta que o servidor rendeu nele; com
+     mais do que um, ou nenhum, não faz nada, e a lista (ou a frase) continua à
+     vista. */
+  var forma = bloco.querySelector('form');
+  if (forma) {
+    forma.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var vistos = [];
+      for (var i = 0; i < itens.length; i++) {
+        if (!itens[i].hidden) vistos.push(itens[i]);
+      }
+      if (pedido().length === 0 || vistos.length !== 1) return;
+      var porta = vistos[0].querySelector('a[href]');
+      if (porta) window.location.assign(porta.href);
+    });
+  }
 
   ligaCampo(function () {
     var q = pedido();
@@ -133,6 +169,7 @@
       itens[i].hidden = !mostrar;
       if (mostrar) vistos++;
     }
+    if (lista) lista.hidden = q.length === 0;
     if (semResultado) semResultado.hidden = !(q.length > 0 && vistos === 0);
   });
 })();
