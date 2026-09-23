@@ -5,7 +5,7 @@
 
 Escreve medidas.json. As cópias do captor têm sha256 e commit de origem;
 nenhuma medição lê as congeladas do brief. Os predicados de cartões, régua,
-marca entre valor/unidade e clamp são os de BRIEF-B2.py. A leitura do HTML,
+e clamp são os de BRIEF-B2.py. A marca entre valor e unidade lê também o invólucro novo. A leitura do HTML,
 dos valores do livro e da contagem das câmaras não importa código das páginas.
 Sem --parcial, a falta de capturas, portões ou plantas impede uma corrida verde.
 Uma saída por correr é null, nunca um zero suposto. OEDP_MEDIDAS_JSON permite
@@ -112,9 +112,17 @@ def casas(s):
     return (len(m.group(1)) if m.group(1) else 0) if m else None
 
 
-# Estes dois padrões são byte a byte os do guião do §0 do brief.
+# O padrão do artigo conserva o guião do §0; a marca antiga fica como testemunha.
 RE_ARTIGO = re.compile(r'<article class="cartao-medida"[^>]*>.*?</article>', re.S)
 RE_MARCA_NO_MEIO = re.compile(r'cartao-medida-num">[^<]*</span><a class="src-chip".*?</a></span><span class="campo-valor cartao-medida-unidade', re.S)
+
+
+def marca_no_meio(artigo):
+    nos = Leitor(artigo).raiz.todos(lambda n: True)
+    valores = [i for i, n in enumerate(nos) if n.tem('cartao-medida-num')]
+    unidades = [i for i, n in enumerate(nos) if n.tem('cartao-medida-unidade')]
+    marcas = [i for i, n in enumerate(nos) if n.tem('src-chip')]
+    return any(v < m < u for v in valores for u in unidades for m in marcas)
 
 
 def id_cartao(artigo):
@@ -175,7 +183,7 @@ def conta_pagina(s):
         'cartoes_com_definicao': s.count('data-cartao-definicao='),
         'definicoes_com_pergunta': sum(n.texto().endswith('?') for n in definicoes),
         'definicoes': {n.attrs['data-cartao-definicao']: n.texto() for n in definicoes},
-        'cartoes_com_a_marca_entre_o_valor_e_a_unidade': sum(bool(RE_MARCA_NO_MEIO.search(a)) for a in artigos),
+        'cartoes_com_a_marca_entre_o_valor_e_a_unidade': sum(marca_no_meio(a) for a in artigos),
         'cartoes_com_precisao_mista': len(mista), 'cartoes_com_precisao_mista_lista': mista,
         'cartoes_com_simbolo_euro': sum('€' in c.texto() for c in cartoes),
         'formas_do_euro_nos_temas': len(euros), 'unidades_com_euro': euros,
@@ -475,7 +483,9 @@ if '--prova-palavra' in sys.argv:
 
 M = {'comando': COMANDO, 'cabeca_da_corrida': git('rev-parse', 'HEAD').decode().strip(), 'parcial': PARCIAL}
 M['conhecidos_positivos'] = {
-    'marca_no_meio': bool(RE_MARCA_NO_MEIO.search('<span class="cartao-medida-num">1</span><a class="src-chip">fonte</a></span><span class="campo-valor cartao-medida-unidade">%</span>')),
+    'marca_no_meio_novo': marca_no_meio('<span class="cartao-medida-quantidade"><span class="cartao-medida-num"><span data-claim="planta">1</span></span><a class="src-chip">fonte</a><span class="campo-valor cartao-medida-unidade">%</span></span>'),
+    'marca_depois_novo': not marca_no_meio('<span class="cartao-medida-quantidade"><span class="cartao-medida-num">1</span><span class="campo-valor cartao-medida-unidade">%</span></span><a class="src-chip">fonte</a>'),
+    'marca_no_meio': marca_no_meio('<span class="cartao-medida-num">1</span><a class="src-chip">fonte</a></span><span class="campo-valor cartao-medida-unidade">%</span>'),
     'cartao_sem_regua': conta_pagina('<article class="cartao-medida" data-cartao-medida="amostra"></article>')['cartoes_sem_regua'] == 1,
     'numero_indisponivel': numero('N.d.') is None,
     'numero_com_virgula': numero('150,1') > numero('150'),
@@ -514,7 +524,7 @@ M['correcao'] = medicao_guardada('correcao/resumo.json', obrigatoria=True)
 M['hierarquia'] = medicao_guardada('plantas-titulos-b2.json', obrigatoria=True)
 if M['hierarquia']:
     h = M['hierarquia']
-    esperado = {(f, l, w) for f, l in PAGINAS if f != 'pais' for w in LARGURAS}
+    esperado = {(f, l, w) for f in ('temas', 'europeia', 'lugares', 'concelho', 'estudos', 'estudo', 'sobre', 'metodo', 'correcoes', 'agenda', 'recibo') for l in ('pt', 'en') for w in LARGURAS}
     vistos = [(r['familia'], r['lingua'], r['largura']) for r in h['limpas']]
     if len(vistos) != len(esperado) or set(vistos) != esperado or any(r['falhas'] for r in h['limpas'] + h['repostas']):
         FALHAS.append('hierarquia: cobertura incompleta ou medida limpa com falhas')
