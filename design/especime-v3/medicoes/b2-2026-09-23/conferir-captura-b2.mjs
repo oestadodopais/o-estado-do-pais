@@ -1,14 +1,13 @@
 /** Predicados da captura B2, exercidos pelo captor e pelas plantas. */
+import { falhasDaCabeca } from '../../../../tests/inicio/cabeca.mjs';
+
 export function falhasDaCaptura(r, estado = 'depois') {
-  const { ficheiro, familia, lingua, largura } = r;
+  const { ficheiro, lingua, largura } = r;
   const falhas = [];
     if (r.deslocamento > 0) falhas.push(`${ficheiro}: transbordo de ${r.deslocamento} px`);
     if (r.errosDoNavegador?.length) falhas.push(`${ficheiro}: erros no navegador: ${r.errosDoNavegador.join('; ')}`);
     if (estado === 'depois') {
-      if (r.h1.quantidade !== 1) falhas.push(`${ficheiro}: ${r.h1.quantidade} H1`);
-      if (familia === 'pais') {
-        if (r.wordmark.elemento !== 'h1') falhas.push(`${ficheiro}: o nome do projeto deixou de ser H1`);
-      } else if (r.wordmark.elemento !== 'p' || !(r.wordmark.tamanho < r.h1.tamanho)) falhas.push(`${ficheiro}: wordmark ${r.wordmark.tamanho} px, H1 ${r.h1.tamanho} px`);
+      falhas.push(...falhasDaCabeca(r));
       for (const c of r.cartoes) {
         if (!c.contagem && c.unidade && (!c.valorAntesDaUnidade || !c.unidadeAntesDoSelo)) falhas.push(`${ficheiro}: ${c.id}, ordem do valor/unidade/fonte`);
         if (largura === 390 && c.valorEUnidadeMesmaLinha === false) falhas.push(`${ficheiro}: ${c.id}, unidade separada do valor`);
