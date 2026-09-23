@@ -53,10 +53,10 @@
    "origin_sha256": "57df5962329c0e32fa26849c2466b6e813d6d01c1c07af68c916142df7b6ae6d"
   },
   "calendario.json": {
-   "exported_sha256": "71fa0e64e8191f11833b9a8366a23fa4ff7ae01ee15132d2a83ac0f20c30e208",
+   "exported_sha256": "a1ea6604f7055f42dd4fdf950bdae3cc1cb861a4bb21d51abbf2cf4373f62fcc",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "indicators/calendar.json",
-   "origin_sha256": "0bd48eb97b9b3ecbbe3dfaa5a1bc5627340e7f979f76bdb6b79833ff276f75f0"
+   "origin_sha256": "9859de7cd68eeb1092035542da9f6b3f02774b826345dbc986825e8bf7b060e6"
   }
  },
  "historia": {

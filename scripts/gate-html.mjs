@@ -1050,7 +1050,7 @@ function ocorrenciasDaPagina(raiz, lingua) {
  *
  * **E O QUE ELA NÃO ALCANÇA, DITO E NÃO ESCONDIDO**: uma regra numa folha de
  * estilos. Este é um portão estático, lê HTML e não corre CSS. Quem apanha a
- * ocultação por folha é a régua do navegador, `tests/inicio/rotulo.mjs`, que
+ * ocultação por folha é a H14 do `check:alvos`, em navegador, que
  * mede a caixa de facto e tem o estrago plantado que o prova.
  */
 const ESTILO_QUE_ESCONDE = /(^|;)\s*(display\s*:\s*none|visibility\s*:\s*hidden)\s*(;|$)/i;
@@ -4994,7 +4994,7 @@ for (const file of ficheirosHtml(DIST)) {
    * **O LIMITE DESTA REGRA, DITO E NÃO ESCONDIDO.** É um portão estático: lê o
    * HTML, e não corre folhas de estilo. Uma regra de CSS que esconda `.rotulo-ia`
    * numa folha passa por aqui, e quem a apanha é a régua do navegador
-   * (`tests/inicio/rotulo.mjs`, célula M1, com o estrago plantado que a prova).
+   * (a H14 do `check:alvos`, que substituiu a régua `tests/inicio/rotulo.mjs` a 23.09.2026, quando o rótulo passou ao topo).
    * O que este portão fecha é a ocultação escrita no próprio documento.
    */
   {
