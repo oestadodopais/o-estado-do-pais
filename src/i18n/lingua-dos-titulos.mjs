@@ -43,6 +43,7 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  'Housing cost overburden rate by tenure status - EU-SILC survey': 'en',
   /* --- os documentos portugueses ---------------------------------------- */
   'Evolução do endividamento total, por município - prestação de contas 2024': 'pt',
   'Lista do prazo médio de pagamento registado por município em dezembro de 2025': 'pt',
@@ -190,6 +191,7 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  'Housing cost overburden rate by tenure status - EU-SILC survey': 'en',
   /* --- os rótulos portugueses ------------------------------------------- */
   'PMP (N.º dias)': 'pt',
   Total: 'pt',
@@ -419,6 +421,7 @@ export const LINGUA_DAS_EDICOES = {
   earn_mw_cur: null,
   edat_lfse_14: null,
   gov_10dd_edpt1: null,
+  tessi164: null,
   lfsi_emp_a: null,
   sdg_16_40: null,
   sdg_16_50: null,

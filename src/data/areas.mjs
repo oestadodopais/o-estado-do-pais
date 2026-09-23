@@ -401,7 +401,7 @@ export const AREAS = [
           'O Ministro das Infraestruturas e Habitação formula, conduz, executa e avalia as políticas de infraestruturas nas áreas da mobilidade, transportes terrestres e aéreos e respetivas infraestruturas, incluindo a segurança dos mesmos, e das comunicações, bem como as políticas dos transportes fluviais, marítimos e dos portos, incluindo a segurança dos mesmos, e as políticas de habitação, de reabilitação urbana, da construção e de imobiliário, incluindo a regulação dos contratos públicos.',
         regras: [
           {
-            id: /^(precos-da-habitacao|sobrecarga-do-custo-da-habitacao)-\d{4}$/,
+            id: /^(precos-da-habitacao|sobrecarga-do-custo-da-habitacao(?:-inquilinos-mercado)?)-\d{4}$/,
             razao:
               'O preço das casas e a parte das famílias que gasta mais de 40 % do rendimento com a habitação são o custo de ter casa. A matéria chama-se habitação.',
           },

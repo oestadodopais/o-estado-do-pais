@@ -73,6 +73,27 @@
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DO_PROJETO = {
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
+    pt: 'Sobrecarga do custo da habitação, inquilinos a preço de mercado',
+    en: 'Housing cost overburden, tenants at market rent',
+  },
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024': {
+    pt: 'Sobrecarga do custo da habitação, inquilinos a preço de mercado',
+    en: 'Housing cost overburden, tenants at market rent',
+  },
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue': {
+    pt: 'Sobrecarga do custo da habitação, inquilinos a preço de mercado na União Europeia',
+    en: 'Housing cost overburden, tenants at market rent in the European Union',
+  },
+  'saldo-das-administracoes-publicas-2024': {
+    pt: 'Saldo das administrações públicas', en: 'General government balance',
+  },
+  'disparidade-salarial-entre-sexos-2023': {
+    pt: 'Disparidade salarial entre sexos', en: 'Gender pay gap',
+  },
+  'crescimento-da-despesa-liquida-2024': {
+    pt: 'Crescimento da despesa líquida', en: 'Net expenditure growth',
+  },
   /* ---------------------------------------------------------- água e ambiente */
   'agua-nao-faturada-portugal-2024': {
     pt: 'Água não faturada',
