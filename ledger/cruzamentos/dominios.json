@@ -3004,7 +3004,7 @@
     "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": {
       "corrections_at_export": 0,
       "exported_at": "2026-09-23",
-      "exported_row_sha256": "a75fa4793dddbfae97d22c4ce0487c190f756c65e960215e7cb70a27958f0d79",
+      "exported_row_sha256": "aefb881e490194f29c5326f902f07c86861dfd07fb2be5e24ba4c86210721a1a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1c1661a371fe90437c4757a4f146bce9c244bfb8b45f667618dd70ec2d4d5c20",
       "rh_id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
