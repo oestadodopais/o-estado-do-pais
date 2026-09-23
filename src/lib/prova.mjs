@@ -528,19 +528,19 @@ const FRASES = {
      retirou. Com 308 de 308 o qualificativo não diz nada que a frase não diga. */
   municipios_com_pagina: {
     pt: 'concelhos',
-    en: 'concelhos',
+    en: 'municipalities',
   },
   camaras_acima_do_limite: {
-    pt: 'câmaras cujo índice de dívida publicado é superior ao limite legal',
-    en: 'councils whose published debt index exceeds the legal limit',
+    pt: 'câmaras cujo índice de dívida calculado é superior ao limite legal',
+    en: 'councils whose calculated debt index exceeds the legal limit',
   },
   camaras_dentro_do_limite: {
-    pt: 'câmaras cujo índice de dívida publicado não excede o limite legal',
-    en: 'councils whose published debt index does not exceed the legal limit',
+    pt: 'câmaras cujo índice de dívida calculado não excede o limite legal',
+    en: 'councils whose calculated debt index does not exceed the legal limit',
   },
   camaras_sem_valor: {
-    pt: 'câmaras cuja fonte não publica um valor numérico do índice de dívida',
-    en: 'councils whose source publishes no numeric debt index',
+    pt: 'câmaras sem valor numérico para calcular o índice de dívida',
+    en: 'councils with no numeric value to calculate the debt index',
   },
   concelhos_linhas: {
     pt: 'linhas do livro-razão do estudo dos concelhos',
@@ -694,6 +694,26 @@ for (const a of AREAS) {
  * @param {Map<string, any>} claims
  * @param {typeof MUNICIPIOS_COM_PAGINA} municipios
  */
+export function periodoDasCamaras(claims = loadClaims(), municipios = MUNICIPIOS_COM_PAGINA) {
+  /** @param {string} id @param {Set<string>} visitados @returns {{ id: string, periodo: string }} */
+  const ler = (id, visitados = new Set()) => {
+    const linha = claims.get(id);
+    if (!linha || visitados.has(id)) throw new Error('B2 câmaras: origem do período ausente ou circular.');
+    if (typeof linha.reference_date === 'string' && linha.reference_date) return { id, periodo: linha.reference_date };
+    /** @type {string[]} */
+    const origens = linha.derived_from ?? [];
+    if (!origens.length) throw new Error('B2 câmaras: origem sem período.');
+    const datas = origens.map(origem => ler(origem, new Set([...visitados, id])));
+    if (new Set(datas.map(d => d.periodo)).size !== 1) throw new Error('B2 câmaras: as origens não partilham um período.');
+    return datas[0];
+  };
+  const datas = municipios.map(m => ler(m.distancia?.indice));
+  if (!datas.length || new Set(datas.map(d => d.periodo)).size !== 1)
+    throw new Error('B2 câmaras: as linhas não partilham um período.');
+  return datas[0];
+}
+
+/** @param {Map<string, any>} claims @param {typeof MUNICIPIOS_COM_PAGINA} municipios */
 export function contagensDasCamaras(claims = loadClaims(), municipios = MUNICIPIOS_COM_PAGINA) {
   const limite = claims.get('indice-de-divida-limite-legal');
   const teto = parsePtNumber(limite?.value);
@@ -713,6 +733,7 @@ export function contagensDasCamaras(claims = loadClaims(), municipios = MUNICIPI
     } else if (valor > teto) contagens.camaras_acima_do_limite++;
     else contagens.camaras_dentro_do_limite++;
   }
+  periodoDasCamaras(claims, municipios);
   return contagens;
 }
 

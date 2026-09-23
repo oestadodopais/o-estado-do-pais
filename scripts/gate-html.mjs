@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
+import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 /**
  * Portão (a) e (c): varrimento do HTML construído.
@@ -3655,6 +3656,17 @@ function contasDoPortao(claims) {
   const indicesDasCamaras = MUNICIPIOS_COM_PAGINA.map(m => m.distancia?.indice);
   if (new Set(indicesDasCamaras).size !== indicesDasCamaras.length)
     throw new Error('B2 câmaras: a lista de índices repete uma linha.');
+  const periodoDoIndice = (id, vistos = new Set()) => {
+    const c = claims.get(id);
+    if (!c || vistos.has(id)) throw new Error('B2 câmaras: origem do período ausente ou circular.');
+    if (c.reference_date) return c.reference_date;
+    const datas = (c.derived_from ?? []).map(origem => periodoDoIndice(origem, new Set([...vistos, id])));
+    if (!datas.length || new Set(datas).size !== 1) throw new Error('B2 câmaras: origens sem período comum.');
+    return datas[0];
+  };
+  const periodosDasCamaras = new Set(indicesDasCamaras.map(id => periodoDoIndice(id)));
+  if (periodosDasCamaras.size !== 1 || ![...periodosDasCamaras][0])
+    throw new Error('B2 câmaras: o portão encontrou períodos diferentes ou ausentes.');
   const camaras = { acima: 0, dentro: 0, sem: 0 };
   for (const id of indicesDasCamaras) {
     const c = claims.get(id);
@@ -6735,7 +6747,14 @@ for (const file of ficheirosHtml(DIST)) {
     if (daPorta?.ancora) {
       ancorasDaProva.push({ rel, chave, destino, caminho: daPorta.caminho, ancora: daPorta.ancora });
     }
-    let temPorta = false;
+    // B2: as quatro contagens partilham uma porta visível, validada por V2.
+    // A exceção exige o cartão inteiro e só vale para estas chaves e páginas.
+    const noCartaoDasCamaras = el.closest('[data-cartao-camaras]');
+    const portaComumDasCamaras = Boolean(noCartaoDasCamaras)
+      && ['index.html', 'en/index.html', 'temas/index.html', 'en/themes/index.html'].includes(rel)
+      && ['camaras_acima_do_limite', 'municipios_com_pagina', 'camaras_dentro_do_limite', 'camaras_sem_valor'].includes(chave)
+      && verificaCartaoDasCamaras(body, linguaPagina ?? 'pt').length === 0;
+    let temPorta = portaComumDasCamaras;
     if (dentroDeSvg(el)) {
       const raiz = raizDoInstrumento(el);
       for (const legenda of raiz?.querySelectorAll?.('[data-legenda-prova]') ?? []) {

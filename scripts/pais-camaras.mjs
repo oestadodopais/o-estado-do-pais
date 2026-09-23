@@ -14,7 +14,19 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   const falha = s => erros.push(`V2 ${lang}: ${s}`);
   const limite = linha('indice-de-divida-limite-legal');
   const teto = numero(limite.value);
-  const valores = MUNICIPIOS_COM_PAGINA.map(m => numero(linha(m.distancia.indice).value));
+  const linhas = MUNICIPIOS_COM_PAGINA.map(m => linha(m.distancia.indice));
+  const dataDaLinha = (l, vistos = new Set()) => {
+    if (!l || vistos.has(l.id)) throw new Error('V2: origem do período ausente ou circular.');
+    if (l.reference_date) return { id: l.id, periodo: l.reference_date };
+    const datas = (l.derived_from ?? []).map(id => dataDaLinha(linha(id), new Set([...vistos, l.id])));
+    if (!datas.length || new Set(datas.map(d => d.periodo)).size !== 1) throw new Error('V2: origens sem período comum.');
+    return datas[0];
+  };
+  const datas = linhas.map(l => dataDaLinha(l));
+  const periodos = new Set(datas.map(d => d.periodo));
+  if (periodos.size !== 1 || ![...periodos][0]) falha('as linhas não partilham um período.');
+  const periodo = [...periodos][0];
+  const valores = linhas.map(l => numero(l.value));
   const contagens = {
     camaras_acima_do_limite: valores.filter(v => Number.isFinite(v) && v > teto).length,
     municipios_com_pagina: valores.length,
@@ -39,7 +51,7 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   for (const [chave, valor] of Object.entries(contagens)) {
     const el = provas.find(n => n.getAttribute('data-prova') === chave);
     if (!el || normal(el.textContent) !== String(valor)) falha(`${chave}: a contagem não coincide com as linhas do índice de dívida.`);
-    if (el?.tagName !== 'A' || el.getAttribute('href') !== porta) falha(`${chave}: falta a porta para os lugares.`);
+    if (el?.tagName !== 'SPAN' || el.closest('a')) falha(`${chave}: a contagem deve usar a porta comum dos lugares.`);
   }
   const legal = c.querySelectorAll('[data-claim]');
   if (legal.length !== 1 || legal[0].getAttribute('data-claim') !== limite.id || normal(legal[0].textContent) !== limite.value)
@@ -56,7 +68,10 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
     ? `de ${contagens.municipios_com_pagina} câmaras; ${contagens.camaras_dentro_do_limite} dentro do limite legal (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} sem valor publicado`
     : `of ${contagens.municipios_com_pagina} councils; ${contagens.camaras_dentro_do_limite} within the legal limit (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} with no published value`;
   if (normal(copia?.textContent) !== esperado) falha('a régua difere das contagens e do limite lidos nas linhas.');
-  const valorEsperado = `${contagens.camaras_acima_do_limite} ${lang === 'pt' ? 'câmaras' : 'councils'}`;
+  const valorEsperado = `${contagens.camaras_acima_do_limite} ${lang === 'pt' ? 'câmaras em' : 'councils in'} ${periodo}`;
+  const data = c.querySelector('[data-de-campo="reference_date"]');
+  if (data?.getAttribute('data-de-linha') !== datas[0].id || normal(data?.textContent) !== periodo) falha('o período não vem das linhas contadas.');
+  if (c.querySelector('.cartao-medida-nome')?.tagName !== 'SPAN') falha('o nome do cartão deve ser um span.');
   if (normal(c.querySelector('.cartao-medida-valor')?.textContent) !== valorEsperado) falha('o valor principal ou a unidade da contagem difere.');
   const textoDaPorta = lang === 'pt' ? 'Os lugares →' : 'The places →';
   const portas = c.querySelectorAll('.pais-porta-tema a');
