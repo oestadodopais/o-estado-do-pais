@@ -16,6 +16,7 @@ const S = { pt: t('pt'), en: t('en') };
 import { VERBATIM } from '../src/data/verbatim.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
+import { sinopseEsperada, textoSemSelos } from './voz-pais.mjs';
 const normal = s => s.replace(/\s+/g, ' ').trim();
 export function verificaB1(raiz) {
   const erros = [];
@@ -51,7 +52,9 @@ export function verificaB1(raiz) {
           erros.push(`B1 língua: ${rota}: ${item.getAttribute('data-estudo-edicao')} deve ter ${esperadas} marca(s) da língua da edição.`);
       }
       const w = WORKS.find(w => rota === `${base}/${w.slug}`);
-      const dados = w ? [w] : WORKS.filter(w => !w.subject);
+      /* A lista tem todos os estudos desde o bloco R1 (23.09.2026): os de lugar
+         deixaram de estar atrás da secção «Por lugar». */
+      const dados = w ? [w] : WORKS;
       const permitidos = new Set([
         ...Object.values(ROTULOS_B1[lang]),
         ...Object.values(SUBJECTS).map(s => s[lang]),
@@ -79,7 +82,23 @@ export function verificaB1(raiz) {
         if (motivo === 'data-do-repositorio' && el.closest('[data-estudo-edicao]')) dispensados.add(el);
         if (motivo === 'identificador-tecnico' && el.closest('.texto-dobra')) dispensados.add(el);
       }
+      /* NA LISTA, CADA SINOPSE CONFERE-SE INTEIRA (bloco R1, 23.09.2026). Desde
+         que a lista tem os estudos de um lugar, a sinopse de uma entrada pode
+         ser a leitura escrita de um estudo de Évora, com sufixos que são da
+         leitura («€», e não a unidade da linha) e referências («2021–2025»).
+         A conferência é a da primeira página (`voz-pais.mjs`): o texto rendido,
+         sem os selos, igual carácter a carácter às duas primeiras frases da
+         leitura com os valores do livro-razão, ou à descrição quando não há
+         leitura. Uma sinopse conferida sai da lista fechada e da conferência
+         da unidade por sufixo, que é uma conferência mais fraca da mesma coisa. */
+      if (!w) for (const resumo of main.querySelectorAll('.estudo-item[data-estudo] .estudo-resumo')) {
+        const estudo = WORKS.find(x => x.slug === resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));
+        if (!estudo || textoSemSelos(resumo) !== sinopseEsperada(estudo, lang))
+          erros.push(`B1 sinopse lista: ${rota}: ${estudo?.slug ?? '(sem estudo)'} difere das duas primeiras frases da leitura ou da descrição.`);
+        dispensados.add(resumo);
+      }
       for (const el of main.querySelectorAll('.claim-sufixo')) {
+        if ([...dispensados].some(d => d.classList?.contains('estudo-resumo') && d.querySelectorAll('.claim-sufixo').includes(el))) continue;
         const id = el.parentNode.querySelector('[data-claim]')?.getAttribute('data-claim');
         if (id && normal(el.textContent) === getClaim(id).unit) dispensados.add(el);
         else erros.push(`B1 unidade: ${rota}: unidade sem correspondência na linha ${id}.`);

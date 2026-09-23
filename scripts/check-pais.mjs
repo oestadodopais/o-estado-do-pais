@@ -7,7 +7,8 @@ import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
 import { DOMINIOS, DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
-import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
+import { FIGURAS } from '../src/data/figuras.mjs';
+import { WORKS, SUBJECTS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
@@ -284,6 +285,32 @@ for (const lang of ['pt', 'en']) {
   }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
   const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
   if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não são os mais recentes.`);
+  /* E2 · A LISTA DOS ESTUDOS É UMA SÓ (bloco R1, 23.09.2026, I144). Todos os
+     estudos do arquivo, cada um uma vez, do mais recente para o mais antigo pela
+     data de `datas-de-publicacao.json` (num empate, a ordem do arquivo), cada um
+     com o seu lugar e o seu tema na entrada; e sem a secção «Por lugar» nem as
+     contagens dela. A ordem e o lugar leem-se aqui do arquivo e das datas, e não
+     da função que compõe a página. */
+  const listaDosEstudos = le(lang === 'pt' ? 'estudos' : 'en/studies');
+  const todos = WORKS.map((w,i) => {
+    const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
+    return { w, i, data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
+  }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i);
+  const entradas = listaDosEstudos.querySelectorAll('main [data-estudo]');
+  if (JSON.stringify(entradas.map(e => e.getAttribute('data-estudo'))) !== JSON.stringify(todos.map(e => e.w.slug)))
+    erros.push(`E2 ${lang}: a lista dos estudos não é uma só, com todos, do mais recente para o mais antigo.`);
+  for (const [n, el] of entradas.entries()) {
+    const w = todos[n]?.w;
+    if (!w) continue;
+    const meta = el.querySelectorAll('.estudo-meta > span').map(x => normal(x.textContent));
+    const lugar = w.subject ? SUBJECTS[w.subject]?.[lang] : 'Portugal';
+    const tema = DOMINIOS.find(d => d.slug === w.tema)?.nome[lang];
+    if (meta[0] !== lugar || meta[1] !== tema)
+      erros.push(`E2 ${lang}: a entrada de ${w.slug} diz «${meta.join(' · ')}» e o arquivo dá «${lugar} · ${tema}».`);
+  }
+  if (listaDosEstudos.querySelector('#por-lugar') || listaDosEstudos.querySelectorAll('main [data-prova]').length)
+    erros.push(`E2 ${lang}: a lista dos estudos voltou a ter a secção por lugar, ou contagens.`);
+  if (!entradas.length) erros.push(`E2 ${lang}: a lista dos estudos não tem entrada nenhuma: a célula não mediu nada.`);
   /* M2 · a mudança declarada que a primeira página rende tem de ser a declarada,
      e não se repete. A PRESENÇA de todas mudou de casa a 22.09.2026 (B1c): a
      primeira página mostra no máximo oito mudanças, e quem tem de as ter todas

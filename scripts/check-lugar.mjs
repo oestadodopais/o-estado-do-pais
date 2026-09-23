@@ -1980,26 +1980,32 @@ if (origensVistas !== ORIGENS_ESPERADAS) {
 
 /* --------------------------------------------------------------- §7.4 e 8.6 */
 /** B1: cobertura de cada estudo nas duas línguas e dos dez corpos com registo.
- * Uma edição fixada por página; o país na lista e cada lugar na sua secção.
+ * Uma edição fixada por página. A lista dos estudos tem-nos todos desde o bloco
+ * R1 (23.09.2026, I144): uma lista só, do mais recente para o mais antigo, com
+ * o lugar e o tema de cada um na entrada, e por isso as «linhas» da lista são
+ * todos os estudos nas duas edições, e não só os do país. Cada estudo de um
+ * lugar continua também na secção dos trabalhos da página desse lugar.
  */
 const COLECOES_DOS_ESTUDOS = {
   estudo: WORKS.length * LANGS.length,
   texto: WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
   indice: LANGS.length,
   edicoes: WORKS.length * LANGS.length,
-  linhas: WORKS.filter(w => !w.subject).length * LANGS.length,
+  linhas: WORKS.length * LANGS.length,
 };
-// B1: toda a coleção existe e cada estudo sai da lista do país ou do seu lugar.
+// B1: toda a coleção existe, cada estudo sai da lista, e o de um lugar sai
+// também da página desse lugar.
 for (const lang of LANGS) {
   for (const w of WORKS) {
-    const rota = w.subject
-      ? routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject })
-      : routePath('estudos', lang);
-    const f = path.join(DIST, rota.slice(1), 'index.html');
-    const doc = fs.existsSync(f) ? parse(fs.readFileSync(f, 'utf8')) : null;
-    const destino = routePath('estudo', lang, { slug: w.slug });
-    if (!doc?.querySelectorAll('main a[href]').some(a => a.getAttribute('href') === destino)) {
-      falhas.push(`B1 cobertura: ${w.slug} não é alcançável de ${rota}.`);
+    const rotas = [routePath('estudos', lang)];
+    if (w.subject) rotas.push(routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject }));
+    for (const rota of rotas) {
+      const f = path.join(DIST, rota.slice(1), 'index.html');
+      const doc = fs.existsSync(f) ? parse(fs.readFileSync(f, 'utf8')) : null;
+      const destino = routePath('estudo', lang, { slug: w.slug });
+      if (!doc?.querySelectorAll('main a[href]').some(a => a.getAttribute('href') === destino)) {
+        falhas.push(`B1 cobertura: ${w.slug} não é alcançável de ${rota}.`);
+      }
     }
   }
 }

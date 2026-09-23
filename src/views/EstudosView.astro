@@ -2,8 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
-import { WORKS, SUBJECTS } from '../data/studies.mjs';
-import { estudosDoPais, portaDoLugar } from '../lib/estudos-b1.mjs';
+import { todosOsEstudos } from '../lib/estudos-b1.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -11,11 +10,14 @@ import '../styles/estudos-b1.css';
 const { lang = 'pt' } = Astro.props;
 const r = ROTULOS_B1[lang];
 const path = routePath('estudos', lang);
-const trabalhos = estudosDoPais(lang);
-const lugares = Object.keys(SUBJECTS).filter(lugar => WORKS.some(w => w.subject === lugar));
+const trabalhos = todosOsEstudos(lang);
 ---
 <Base lang={lang} path={path} title={r.estudos} description={r.estudos}>
   <h1 class="estudos-titulo">{r.estudos}</h1>
+  {/* UMA LISTA SÓ (bloco R1, 23.09.2026, I144): todos os estudos, do mais recente
+      para o mais antigo, cada um com o seu lugar e o seu tema na entrada. A
+      secção «Por lugar», com as contagens de cada lugar, saiu: o lugar lê-se em
+      cada entrada, e os estudos de um lugar leem-se na página desse lugar. */}
   <div class="estudos-lista">
     {trabalhos.map(e => (
       <article class="arquivo-item estudo-item" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
@@ -26,16 +28,13 @@ const lugares = Object.keys(SUBJECTS).filter(lugar => WORKS.some(w => w.subject 
         <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span>
           <time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time>
         </p>
-        <p class="arquivo-desc estudo-resumo" data-verbatim={e.work.verbatimDaAbertura?.[lang]}>
+        {/* A marca do verbatim só vale quando o resumo é a descrição, como na
+            primeira página e na página de um lugar: com leitura escrita, o que
+            se rende são as duas primeiras frases dela (`fichaDoEstudo`). */}
+        <p class="arquivo-desc estudo-resumo" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}>
           <Frase partes={e.resumo} lang={lang} selos={true} />
         </p>
       </article>
     ))}
   </div>
-  <section class="estudos-lugares" aria-labelledby="por-lugar">
-    <h2 id="por-lugar">{r.porLugar}</h2>
-    <ul>{lugares.map(lugar => <li><a href={portaDoLugar(lugar, lang)}>
-      {SUBJECTS[lugar][lang]} <span data-prova={`estudos_lugar_${lugar}`}>{WORKS.filter(w => w.subject === lugar).length}</span>
-    </a></li>)}</ul>
-  </section>
 </Base>

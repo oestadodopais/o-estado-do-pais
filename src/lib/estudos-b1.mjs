@@ -42,9 +42,18 @@ export function primeirasFrases(partes) {
   }
   return saida;
 }
-/** @param {'pt'|'en'} lang */
-export function estudosDoPais(lang) {
-  return WORKS.filter(w => !w.subject).map(w => fichaDoEstudo(w, lang))
+/**
+ * TODOS OS ESTUDOS, UMA LISTA SÓ, DO MAIS RECENTE PARA O MAIS ANTIGO (bloco R1,
+ * 23.09.2026, I144). A lista punha os estudos do país primeiro e os de um lugar
+ * atrás de uma secção «Por lugar», e o mais recente de todos (Évora 2027) ficava
+ * lá. A estrutura de 17.09.2026, §3, diz uma lista só; o lugar e o tema de cada
+ * estudo dizem-se na sua entrada. A data é a mesma que o índice já usava, a de
+ * `datas-de-publicacao.json`; num empate, a ordem do arquivo.
+ *
+ * @param {'pt'|'en'} lang
+ */
+export function todosOsEstudos(lang) {
+  return WORKS.map(w => fichaDoEstudo(w, lang))
     .sort((a, b) => (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
 /** @param {string} lugar @param {'pt'|'en'} lang */
