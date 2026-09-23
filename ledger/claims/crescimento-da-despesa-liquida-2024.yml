@@ -14,15 +14,15 @@ source: "Conselho das Finanças Públicas"
 document:
   title: "PARECER RELATIVO AO RELATÓRIO ANUAL DE PROGRESSO 2026"
   edition: "Parecer n.º 02/2026, abril de 2026"
-  locator: "p. 10, gráfico 2, painel Anual, série CFP, 2024"
-  page: 10
+  locator: "p. 9, nota 9"
+  page: 9
   kind: "pdf"
-source_url: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf#page=10"
+source_url: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp_parecer-2026-02-rap26.pdf#page=9"
 access_date: "2026-09-01"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Gráfico 2 – Crescimento e desvio da despesa líquida em 2025 (taxa de variação nominal em %; desvio em % do PIB) Anual 14,0 10,0 11,9 12,0 11,8 8,0 10,0 8,0 6,0 6,4 tv. % % do PIB 6,0 4,0 5,0 5,1 4,0 3,3 2,0 2,0 0,5 0,0 1,2 0,0 0,0 2024 2025 2026 2027 2028 Desvio CFP POEN-MP (Recomendado)"
+excerpt: "Para 2024, o CFP apura um crescimento da despesa líquida de 11,9%, valor que compara com 11,8% subjacente à trajetória acordada."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -37,7 +37,7 @@ attributed_to:
 
 study: "dominios-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Observação anterior da série CFP do gráfico 2, painel Anual, p. 10. A série CFP escreve 11,9 em 2024 e 6,4 em 2025; a série POEN-MP (Recomendado) é a outra linha. O valor é lido na posição conferida na extração do PDF, com os anos e a legenda no excerto. · Cruzado de ResearchHub content/13 Dominios · crescimento-da-despesa-liquida-2024."
+note: "[note do motor] Observação anterior da mesma série do crescimento da despesa líquida apurado pelo CFP. A nota 9 da p. 9 associa expressamente o valor de 2024 à medida e ao CFP; distingue-o do valor subjacente à trajetória acordada. Leitura da frase nas linhas 48 a 50 da extração por pdftotext -layout do PDF alojado, sem leitura de rótulos do gráfico. · Cruzado de ResearchHub content/13 Dominios · crescimento-da-despesa-liquida-2024."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
