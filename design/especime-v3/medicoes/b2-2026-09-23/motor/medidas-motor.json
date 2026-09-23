@@ -1,0 +1,62 @@
+{
+  "base": "aa35e2e72f09988a07d6706fe0a0b59feeca120d",
+  "cabeca": "ead443cd2ae83b05127e6a7774be0c0e939bc85f",
+  "linhas": {
+    "antes": 317,
+    "depois": 323,
+    "alteradas": 0,
+    "novas": [
+      "saldo-das-administracoes-publicas-2024",
+      "disparidade-salarial-entre-sexos-2023",
+      "crescimento-da-despesa-liquida-2024",
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"
+    ],
+    "novas_total": 6
+  },
+  "manifesto": {
+    "antes": 317,
+    "depois": 323,
+    "alteradas": 0,
+    "novas": [
+      "saldo-das-administracoes-publicas-2024",
+      "disparidade-salarial-entre-sexos-2023",
+      "crescimento-da-despesa-liquida-2024",
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"
+    ],
+    "novas_total": 6
+  },
+  "pedidos": [
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
+      "file": "tessi164_PT.json",
+      "timestamp_utc": "2026-09-23T15:35:40Z",
+      "http": "200",
+      "bytes": 5061,
+      "user_agent": "OEstadoDoPais/corredor",
+      "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
+      "file": "tessi164_EU27_2020.json",
+      "timestamp_utc": "2026-09-23T15:35:41Z",
+      "http": "200",
+      "bytes": 5340,
+      "user_agent": "OEstadoDoPais/corredor",
+      "sha256": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc"
+    }
+  ],
+  "pre_commit_codigo": 0,
+  "core_gate_passou": true,
+  "plantas_vistas": 35,
+  "plantas_total": 35,
+  "provas": 9,
+  "problemas": 0,
+  "reguas_ausentes": {
+    "ganho-medio-mensal-2024": "O ficheiro INE alojado tem apenas Dados[2024]. O ano anterior não está neste ficheiro.",
+    "retribuicao-minima-mensal-garantida-continente-2026": "O diploma alojado cita no preâmbulo um compromisso para o ano anterior. Não aloja a norma que fixou esse valor; o compromisso não prova aqui o valor legal aplicado."
+  }
+}
