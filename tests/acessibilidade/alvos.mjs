@@ -1017,14 +1017,22 @@ function medeNaPagina(cfg) {
   );
 
   const h1 = [...document.querySelectorAll('h1')];
+  /* O TÍTULO DA PÁGINA É O `<h1>` DO CONTEÚDO (bloco R1, 23.09.2026). A primeira
+     página de cada edição tem o `<h1>` no cabeçalho, que é o nome do projeto, e
+     aí o rótulo é a primeira coisa do `<main>`; nas outras, o rótulo tem de
+     acabar antes de o título do conteúdo começar, como nas páginas de estudo. */
+  const h1DoConteudo = [...document.querySelectorAll('main h1')];
+  const principal = document.querySelector('main');
   const rotulosTopoIA = [...document.querySelectorAll('[data-rotulo-ia="topo"] .rotulo-ia-linha')].map(linha => {
     const intervalo = document.createRange();
     intervalo.selectNodeContents(linha);
     const rects = [...intervalo.getClientRects()].filter(r => r.width > 0 && r.height > 0);
+    const primeiroDoConteudo = !!principal?.firstElementChild?.contains(linha);
     return {
       linhas: new Set(rects.map(r => Math.round(r.top))).size,
       corpo: parseFloat(getComputedStyle(linha).fontSize),
-      antesDoTitulo: h1.length === 1 && linha.getBoundingClientRect().bottom <= h1[0].getBoundingClientRect().top,
+      antesDoTitulo: h1.length === 1 && primeiroDoConteudo && (h1DoConteudo.length === 0 ||
+        linha.getBoundingClientRect().bottom <= h1DoConteudo[0].getBoundingClientRect().top),
     };
   });
   /* O MARCO DA PORTA: `<footer>` ou `<nav>` com nome, e mais nada. Um `<main>`
@@ -1634,10 +1642,15 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   );
 
   // B1: a contagem estática não vê uma divulgação partida em várias linhas.
-  const estudosIA = p.paginas.filter(pg => ['estudo', 'texto'].includes(pg.familia));
+  /* R1, 23.09.2026 (I145): o rótulo subiu ao topo de TODAS as páginas, e a H14
+     mede-o em todas as famílias e larguras desta régua, e não só nas de estudo.
+     A exigência é a mesma: uma linha só, corpo de 12 px ou mais, antes do
+     título. */
+  const estudosIA = p.paginas;
   const iaPartida = estudosIA.filter(pg => pg.rotulosTopoIA.length !== 1 || pg.rotulosTopoIA.some(r => r.linhas !== 1 || r.corpo < 12 || !r.antesDoTitulo));
   conta('H14', estudosIA.length > 0 && iaPartida.length === 0,
-    `${estudosIA.length} passagens de estudo com IA no topo: ${iaPartida.length} sem linha única, corpo de 12 px ou posição antes do título`);
+    `${estudosIA.length} passagens de todas as famílias com o rótulo de IA no topo: ${iaPartida.length} sem linha única, corpo de 12 px ou posição antes do título` +
+      (iaPartida.length ? ` (${[...new Set(iaPartida.map(pg => `${pg.chave}@${pg.largura}`))].slice(0, 6).join(', ')})` : ''));
 
   /* --- H4 · a porta de correções dentro de um marco ----------------------- */
   const portasMas = p.paginas.filter((pg) => pg.portaExiste && !pg.marcoDaPorta);

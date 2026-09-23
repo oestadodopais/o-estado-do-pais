@@ -39,7 +39,10 @@ export function verificaVozPais(raiz) {
       if (rota === '' || rota === 'en') {
         if (!leitura || texto(leitura) !== esperada) erros.push(`B1 leitura aprovada: ${rota || '/'} difere do texto da direção.`);
       }
-      const dispensados = new Set(main.querySelectorAll('[data-cartao-medida], [data-nome], [data-mapa-raiz], [data-mapa-legenda], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"]'));
+      /* O rótulo de IA do topo (bloco R1, 23.09.2026) é texto aprovado, que o
+         `gate:html` compara carácter a carácter com o oráculo; não é prosa da
+         lista fechada destas páginas. */
+      const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mapa-raiz], [data-mapa-legenda], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"]'));
       if (leitura) dispensados.add(leitura);
       for (const resumo of main.querySelectorAll('.estudo-resumo')) {
         const w = WORKS.find(w=>w.slug===resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));

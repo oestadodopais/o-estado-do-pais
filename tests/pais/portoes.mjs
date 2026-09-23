@@ -92,6 +92,19 @@ planta('feixe-estados','scripts/design-bundle.mjs',[
 ],[/dois estados pintados|não encontrei um cartão fora/]);
 /* R1, 23.09.2026 · as células novas ou mudadas do bloco, cada uma com a sua
    planta, e cada planta com a mordida que a falha esperada tem de casar. */
+/* O rótulo de IA de volta ao rodapé, numa página que não é de estudo (I145). */
+planta('r1-rotulo-no-rodape','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>r.querySelector('[data-rotulo-ia="topo"]').setAttribute('data-rotulo-ia','rodape')]
+],[/rótulo\(s\) de IA no topo; tem de ter exactamente um/,/no rodapé e tem de ter zero/]);
+/* O rótulo de IA depois do título, numa página de concelho (I145). */
+planta('r1-rotulo-depois-do-titulo','scripts/gate-html.mjs',[
+ ['municipios/mourao/index.html',r=>{const x=r.querySelector('[data-rotulo-ia="topo"]');const h=r.querySelector('main h1');const copia=x.outerHTML;x.remove();h.insertAdjacentHTML('afterend',copia);}]
+],[/não é a primeira coisa do «<main>»/,/vem depois do título da página/]);
+/* A porta da política repetida FORA do rótulo continua a contar na L1: a
+   dispensa é do destino exato e só dentro do rótulo (I145). */
+planta('r1-porta-da-politica-fora-do-rotulo','scripts/check-lugar.mjs',[
+ ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="/metodo#politica-de-ia">Método</a> <a href="/metodo#politica-de-ia">Método</a></p>')]
+],[/L1 .*ACIMA DO TETO/]);
 /* Uma sinopse da lista dos estudos com uma palavra trocada, na entrada de um
    estudo de Évora cuja leitura traz sufixos da leitura (I144). A lista passou
    a conferir cada sinopse inteira, pela conta da primeira página. */
