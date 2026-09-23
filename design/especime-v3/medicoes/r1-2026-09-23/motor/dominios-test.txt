@@ -1,0 +1,45 @@
+2026-09-23T12:03:38Z
+abac640 A 2.ª notificação de 2026 do INE entra no livro do estudo 13: três linhas datadas, e a data de publicação que atravessa
+
+DOMINIOS_TEST: 35 defeito(s) plantado(s) e visto(s) vermelho(s):
+  vermelho  o valor de Évora, alterado no ficheiro alojado
+  vermelho  o valor de Portugal, alterado no ficheiro alojado
+  vermelho  um concelho que desapareceu da resposta do INE
+  vermelho  um código geográfico que os 308 do estudo 12 não têm
+  vermelho  o nome de um concelho, diferente do que o estudo 12 leu
+  vermelho  o rótulo do INE, esvaziado
+  vermelho  o rótulo do INE, com o enchimento de uma coluna à volta
+  vermelho  uma resposta do INE com dois períodos onde se pediu um
+  vermelho  o último ano do saldo, retirado da resposta do Eurostat
+  vermelho  a bandeira «p» da disparidade, retirada da resposta
+  vermelho  os dois semestres de 2026 da retribuição mínima, retirados
+  vermelho  o rótulo do Eurostat, esvaziado
+  vermelho  o teto de 5 % que o CFP cita, apagado da sua própria frase
+  vermelho  uma linha a mais na página do parecer, que desloca a janela
+  vermelho  o valor do parecer, trocado pelo outro número do Quadro 1
+  vermelho  o valor do diploma, trocado pelo do ano anterior
+  vermelho  a página do diploma, esvaziada
+  vermelho  o filtro do nível 5 escrito como sete ALGARISMOS
+  vermelho  um excerto com uma palavra que o ficheiro alojado não tem
+  vermelho  a dívida da notificação do INE, trocada na página do destaque
+  vermelho  a dívida da notificação do INE, trocada no PDF do mesmo destaque
+  vermelho  a data que o destaque do INE imprime, trocada
+  vermelho  um parágrafo a mais à cabeça do resumo do destaque
+  vermelho  um resumo do MANIFEST.sha256, alterado
+  vermelho  um ficheiro alojado que desapareceu
+  vermelho  um excerto que não é um pedaço do excerto do motor (V3)
+  vermelho  uma expressão `check` que não dá o valor publicado (V5)
+  vermelho  uma página humana de outro conjunto com os mesmos algarismos (V15)
+  vermelho  um localizador cujos algarismos ninguém leu (V7)
+  vermelho  uma bandeira declarada sobre um excerto que não acaba nela
+  vermelho  um valor que mexeu e uma linha publicada que não o diz (V16)
+  vermelho  `--site` a apontar a árvore principal, com a worktree forçada
+  vermelho  `--site` com um caminho vazio
+  vermelho  um `site_record` absoluto, que escreve fora do sítio
+  vermelho  um `site_record` com «..», que sai do sítio
+  verde     a deteção da worktree, fora do estrago, é a do disco
+  verde     ledger.json: os bytes commitados são os que o construtor produz
+  verde     manifest.dominios.json: os bytes commitados são os que o construtor produz
+
+DOMINIOS_TEST: PASS — 35 de 35 defeito(s) vistos, 3 prova(s) verde(s), 0 problema(s), a corrida limpa verde antes e depois
+codigo 0

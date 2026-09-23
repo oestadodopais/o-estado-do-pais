@@ -1,0 +1,31 @@
+OK páginas sem estrago: todas, código 0
+OK medida rendida sem tema declarado: T2, código 1
+OK medida do país no tema errado: T3, código 1
+OK medida repetida: T4, código 1
+OK medida publicada ausente: T5, código 1
+OK mudança sem secção: M1, código 1
+OK mudança com secção inexistente: M1, código 1
+OK linha de outro lugar na página do país: A1, código 1
+OK publicação na página do país: A1, código 1
+OK mais mudanças do que o teto: A2, código 1
+OK registo sem uma das mudanças do livro: A3, código 1
+OK correção que não é uma entrada do livro: C1, código 1
+OK valor antigo igual ao novo numa correção: M3, código 1
+OK mudança de lugar sem o seu lugar: A1, código 1
+OK declaração do lugar contra a derivação: A1, código 1
+OK porta do registo apontada a outro lugar: A3, código 1
+OK título por confirmar sem a marca no registo: A4, código 1
+OK título por confirmar sem a marca na página do país: A4, código 1
+OK marca escondida por propriedade do chamador: A4, código 1
+OK texto da mudança alterado: M2, código 1
+OK ordem dos estudos trocada: E1, código 1
+OK comparação europeia sem recibo: L3, código 1
+OK sexta entrada no menu: N1, código 1
+OK mudança declarada na língua do código: M4, código 1
+OK cartão fora do valor de referência pintado de dentro: T9, código 1
+OK lista dos estudos com a ordem trocada: E2, código 1
+OK a secção por lugar de volta: E2, código 1
+OK leitura com outra data da notificação: L2, código 1
+OK ponto final sem ligação inseparável: N2, código 1
+OK frase explicativa fora da lista fechada: B1 voz, código 1
+OK leitura aprovada alterada: B1 leitura, código 1

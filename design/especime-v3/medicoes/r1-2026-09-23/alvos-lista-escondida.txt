@@ -1,0 +1,25 @@
+
+[90m  a régua dos alvos · 46 rotas × 5 larguras · dist: dist[0m
+
+  [32m✓[0m H1  [90m0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação[0m
+  [32m✓[0m H2  [90mfichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 54 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 12072 alvos medidos, 7741 deles com 44 px a 390, 39 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 33 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (9× a.src-chip «source · Estrutura de Missão Recup» · 61.9×23 de toque (caixa 61×18.6); 6× a.src-chip «fonte · INE» · 53.3×23 de toque (caixa 52.5×18.6); 4× a.src-chip «fonte · Município de Évora» · 53.3×23 de toque (caixa 52.5×18.6); 3× a.src-chip «fonte · Município de Évora» · 53.3×44.7 de toque (caixa 52.5×18.6)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 3 estão numa página de leitura, que o brief põe fora deste bloco (2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (2× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.9 de toque (caixa 528.8×45.5)) · 3100 não medido(s)[0m
+  [32m✓[0m H3  [90m7359 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 230 passagens[0m
+  [32m✓[0m H14  [90m230 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título[0m
+  [32m✓[0m H4  [90m7359 página(s) do dist/: 7341 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 18 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
+  [32m✓[0m H5  [90m20 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel[0m
+  [32m✓[0m H6  [90mprimeira página, a 1280: 22 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)[0m
+  [32m✓[0m H7  [90m40 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 40 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)[0m
+  [32m✓[0m H8  [90mcartões: 852 registo(s), 426 da edição inglesa, 422 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 1575 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
+  [32m✓[0m H9  [90m3678 página(s) inglesas lidas: 940 com um nome de diploma, 2738 sem nenhum, 1 documento(s) alojado(s) fora da conta · 946 nome(s): 943 com lang="pt-PT", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
+  [32m✓[0m H13  [90m/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308[0m
+  [32m✓[0m H15  [90mpt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão[0m
+  [32m✓[0m H10  [90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título[0m
+
+[90m  as plantas:[0m
+    [32m✓[0m lista-escondida · a lista dos resultados da busca nunca se abre
+[90m        o HTML mudou: sim · verdes antes: H15 · caíram: H15 · das nomeadas: H15[0m
+[90m
+  escrito design/especime-v3/medicoes/r1-2026-09-23/alvos-lista-escondida.json[0m
+
+[32m  todas as células verdes. todas as plantas pegaram.[0m
+

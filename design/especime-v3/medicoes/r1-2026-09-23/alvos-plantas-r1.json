@@ -1,0 +1,132 @@
+{
+  "guiao": "node tests/acessibilidade/alvos.mjs --vermelhos --so <prefixo> --json <ficheiro>",
+  "corridas": [
+    {
+      "ficheiro_bruto": "alvos-lista-escondida.json (fora do repositório: traz o caminho da máquina)",
+      "quando": "2026-09-23T12:15:41.650Z",
+      "rotas": 46,
+      "larguras": [
+        390,
+        641,
+        768,
+        1023,
+        1280
+      ]
+    },
+    {
+      "ficheiro_bruto": "alvos-sinopse-sem-classe.json (fora do repositório: traz o caminho da máquina)",
+      "quando": "2026-09-23T12:22:13.764Z",
+      "rotas": 46,
+      "larguras": [
+        390,
+        641,
+        768,
+        1023,
+        1280
+      ]
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "lista-escondida · a lista dos resultados da busca nunca se abre",
+      "celulas": [
+        "H15"
+      ],
+      "mudou": true,
+      "caiu": [
+        "H15"
+      ],
+      "nomeadas": [
+        "H15"
+      ],
+      "verdesAntes": [
+        "H15"
+      ],
+      "bom": true
+    },
+    {
+      "nome": "sinopse-sem-classe · os selos da lista dos estudos fora da prosa corrida",
+      "celulas": [
+        "H2"
+      ],
+      "mudou": true,
+      "caiu": [
+        "H2"
+      ],
+      "nomeadas": [
+        "H2"
+      ],
+      "verdesAntes": [
+        "H2"
+      ],
+      "bom": true
+    }
+  ],
+  "celulas": [
+    {
+      "nome": "H1",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H2",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H3",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H14",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H4",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H5",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H6",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H7",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H8",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H9",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H13",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H15",
+      "passa": true,
+      "corridas": 2
+    },
+    {
+      "nome": "H10",
+      "passa": true,
+      "corridas": 2
+    }
+  ]
+}

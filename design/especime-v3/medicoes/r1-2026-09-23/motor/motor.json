@@ -1,0 +1,109 @@
+{
+  "ramo": "r1-2026-09-23",
+  "base_master": "1253605",
+  "cabeca": "abac640",
+  "commits": [
+    {
+      "sha": "59c8621",
+      "assunto": "O Portal BASE cai no motor: a fonte marcada caída a 16.09.2026, e nenhum pedido sai",
+      "trailer": "Claude Opus 5",
+      "ficheiros": 9
+    },
+    {
+      "sha": "6427f4d",
+      "assunto": "A resposta do Eurostat ao pedido da dívida das empresas, guardada com endereço, hora, cliente e sha256",
+      "trailer": "Claude Opus 5",
+      "ficheiros": 2
+    },
+    {
+      "sha": "c257f67",
+      "assunto": "A nota da habitação na agenda diz o que é verdade: a ressalva não está nas páginas, e a média europeia saiu do cartão",
+      "trailer": "Claude Opus 5",
+      "ficheiros": 1
+    },
+    {
+      "sha": "abac640",
+      "assunto": "A 2.ª notificação de 2026 do INE entra no livro do estudo 13: três linhas datadas, e a data de publicação que atravessa",
+      "trailer": "Claude Opus 5.5",
+      "ficheiros": 16
+    }
+  ],
+  "commits_n": 4,
+  "commits_com_o_nome_antigo": [
+    "59c8621",
+    "6427f4d",
+    "c257f67"
+  ],
+  "commits_com_o_nome_certo": [
+    "abac640"
+  ],
+  "diff_ficheiros": 28,
+  "diff_linhas_mais": 2759,
+  "diff_linhas_menos": 309,
+  "core_gate_final": {
+    "resultado": "PASS",
+    "codigo": 0
+  },
+  "dominios_test": {
+    "resultado": "PASS",
+    "defeitos_vistos": 35,
+    "defeitos": 35
+  },
+  "dominios_build_ensaio_controlos_que_batem": 17,
+  "saude_nucleo": {
+    "primeira": [
+      5,
+      5
+    ],
+    "depois": [
+      4,
+      5
+    ],
+    "final": [
+      5,
+      5
+    ]
+  },
+  "saude_pt_public_money": {
+    "primeira": [
+      16,
+      17
+    ],
+    "depois": [
+      17,
+      17
+    ],
+    "final": [
+      17,
+      17
+    ]
+  },
+  "plantas_motor": {
+    "corridas": 4,
+    "morderam": 4,
+    "repostas": 4,
+    "passaram": 4
+  },
+  "cruzamento_dos_concelhos_sem_o_base": {
+    "codigos_da_carta_no_prr": 308,
+    "codigos_da_carta": 308,
+    "residuo": 0
+  },
+  "exportacao_das_linhas": {
+    "ensaio": [
+      3,
+      0,
+      314
+    ],
+    "escrita": [
+      0,
+      0,
+      317
+    ]
+  },
+  "exportacao_da_agenda": {
+    "itens": 5,
+    "eventos": 17,
+    "sem_data_publicada": 8
+  }
+}

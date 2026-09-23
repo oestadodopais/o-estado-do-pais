@@ -1,0 +1,13 @@
+citações conferidas na linha citada (±7): 50
+citação está no ficheiro, mas longe da linha citada: 8
+   mapa l.126 «as sete conferências L1 a L7» citada em ['scripts/gate-html.mjs:1658', 'scripts/gate-html.mjs:1522', 'scripts/gate-html.mjs:2165'] → está em ['scripts/gate-html.mjs:1558']
+   mapa l.135 «Fontes e verificação» citada em ['scripts/gate-html.mjs:2004', 'scripts/gate-html.mjs:2087', 'scripts/gate-html.mjs:2120'] → está em ['scripts/gate-html.mjs:2156']
+   mapa l.137 «Sem esta comparação, a marca seria uma dispensa: seis dos tí» citada em ['scripts/gate-html.mjs:2165', 'scripts/gate-html.mjs:2204'] → está em ['scripts/gate-html.mjs:2240']
+   mapa l.141 «algarismos fora do livro-razão» citada em ['scripts/gate-html.mjs:6918'] → está em ['scripts/gate-html.mjs:7018']
+   mapa l.144 «dentro de um marco» citada em ['scripts/gate-html.mjs:4786', 'scripts/gate-html.mjs:4838'] → está em ['scripts/gate-html.mjs:4846']
+   mapa l.146 «uma ausência nunca se desenha» citada em ['scripts/gate-html.mjs:6707'] → está em ['scripts/gate-html.mjs:6807']
+   mapa l.156 «se uma faltar, o selo dessa linha aponta para um 404» citada em ['scripts/gate-html.mjs:7480', 'scripts/gate-html.mjs:7773', 'scripts/gate-html.mjs:7809', 'scripts/gate-html.mjs:7597'] → está em ['scripts/gate-html.mjs:7909']
+   mapa l.248 «Um byte NUL no `src/lib/ledger.mjs` faz o `grep` mentir por » citada em ['DECISIONS.md:11708', 'DECISIONS.md:12614', 'scripts/check-ledger.mjs:1026', 'scripts/check-ledger.mjs:1118'] → está em ['DECISIONS.md:12633']
+citação não encontrada em nenhum dos ficheiros citados na mesma linha: 0
+linha citada para lá do fim do ficheiro: 0
+codigo 0

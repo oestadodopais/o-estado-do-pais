@@ -1,0 +1,34 @@
+2026-09-23T12:03:38Z
+abac640 A 2.ª notificação de 2026 do INE entra no livro do estudo 13: três linhas datadas, e a data de publicação que atravessa
+
+  317 linha(s), 317 no manifesto
+
+    bate   E2 · saldo das administrações públicas, 2025, % do PIB: registado '0.7', lido '0.7'
+    lido   E2 · o limiar de 3 % do PIB está na página alojada; não é linha, e fica transcrito em Technical Source/limiar-3-por-cento.md
+    bate   E4 · crescimento da despesa líquida, 2025, %: registado '6,4', lido '6,4'
+    lido   E4 · o teto entra pelo excerto da própria linha: «taxa de crescimento de 5% recomendada»
+    bate   T3 · ganho médio mensal, Portugal, 2024: registado '1 576,0', lido '1 576,0'
+    bate   T3 · ganho médio mensal, Évora, 2024: registado '1 484,5', lido '1 484,5'
+    bate   T3 · a repartição da dimensão geográfica, contada na metainformação alojada: 1 de nível 1, 3 de nível 2, 9 de nível 3, 26 de nível 4, 308 de nível 5
+    bate   T3 · os 308 códigos do 0012656 contra os 308 do 0012917 no estudo 12: 308 iguais, 0 só aqui, 0 só lá
+    bate   T3 · o nome que o INE imprime, concelho a concelho, contra o do estudo 12: 308 iguais, 0 diferentes
+    bate   E2 · saldo das administrações públicas, 2024, % do PIB: registado '0.6', lido '0.6'
+    bate   T5 · retribuição mínima, base de doze meses, 2026-S1, €: registado '1073', lido '1073'
+    bate   T4b · disparidade salarial não ajustada, 2024, %: registado '7', lido '7'
+    bate   T4b · a bandeira que o Eurostat escreve ao lado do valor de 2024: registado 'p', lido 'p'
+    lido   T4b · a bandeira da fonte é 'p' e o excerto acaba nela
+    bate   T5 · retribuição mínima mensal garantida, 2026, €: registado '920,00', lido '920,00'
+    bate   T5 · retribuição mínima, base de doze meses, Eurostat, €: registado '1073', lido '1073'
+    bate   PDE · dívida bruta das AP, 2025, % do PIB, 2.ª notificação de 2026: registado '89,2', lido '89,2'
+    bate   PDE · dívida bruta das AP, 2024, % do PIB, 2.ª notificação de 2026: registado '93,0', lido '93,0'
+    bate   PDE · saldo das AP, 2025, % do PIB, 2.ª notificação de 2026: registado '0,7', lido '0,7'
+    bate   PDE · a data de publicação que o destaque imprime: registado '2026-09-23', lido '2026-09-23'
+    lido   PDE · os três valores da notificação na página do destaque e na p. 1 do PDF, nas mesmas frases; as frases publicadas são as da página
+    lido   o rótulo da fonte: 312 de 317 linha(s) com rótulo, provado no ficheiro alojado; 5 sem, e são figuras lidas de prosa (o parágrafo do parecer, o artigo do decreto-lei, e as frases do resumo do destaque da notificação)
+
+    concelhos-2026        308 linha(s)
+    dominios-2026           9 linha(s)
+
+  Ensaio. Nada escrito; passe --write.
+
+codigo 0

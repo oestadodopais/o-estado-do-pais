@@ -1,0 +1,149 @@
+[
+  {
+    "nome": "r1-titulo-do-recibo-colado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "cola o valor à unidade"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/mourao-desemprego-registado-2025-12/index.html",
+        "antes": "146077313695ea9d1c50f190af1e629852689fd2350c1d6e2832ca93824e20cf",
+        "reposto": "146077313695ea9d1c50f190af1e629852689fd2350c1d6e2832ca93824e20cf"
+      }
+    ]
+  },
+  {
+    "nome": "r1-rotulo-no-rodape",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "rótulo\\(s\\) de IA no topo; tem de ter exactamente um",
+      "no rodapé e tem de ter zero"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c922dbd10ee97c77ee84bca22c8cdbeeff23312f655c5b8c2648aeb071047c56",
+        "reposto": "c922dbd10ee97c77ee84bca22c8cdbeeff23312f655c5b8c2648aeb071047c56"
+      }
+    ]
+  },
+  {
+    "nome": "r1-rotulo-depois-do-titulo",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "não é a primeira coisa do «<main>»",
+      "vem depois do título da página"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/mourao/index.html",
+        "antes": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2",
+        "reposto": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2"
+      }
+    ]
+  },
+  {
+    "nome": "r1-mudanca-com-valor-trocado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 mudança: campo rendido difere"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "e8abb2fb22eed87f3b814bdd2fe0bea3b43d8190d5a78c1f224b31bfd36c6018",
+        "reposto": "e8abb2fb22eed87f3b814bdd2fe0bea3b43d8190d5a78c1f224b31bfd36c6018"
+      }
+    ]
+  },
+  {
+    "nome": "r1-frescura-num-cartao-sem-atraso",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "não está numa série atrasada \\(F17\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/mourao/index.html",
+        "antes": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2",
+        "reposto": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2"
+      }
+    ]
+  },
+  {
+    "nome": "r1-frescura-que-falta",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "frase\\(s\\) da frescura; tem de ter uma \\(F17\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/mourao/index.html",
+        "antes": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2",
+        "reposto": "cc2ad7a0bf52a3a0c9f290dd7dea5ec0b84311b5489af0b60ca2acecc988abb2"
+      }
+    ]
+  },
+  {
+    "nome": "r1-porta-da-politica-fora-do-rotulo",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c922dbd10ee97c77ee84bca22c8cdbeeff23312f655c5b8c2648aeb071047c56",
+        "reposto": "c922dbd10ee97c77ee84bca22c8cdbeeff23312f655c5b8c2648aeb071047c56"
+      }
+    ]
+  },
+  {
+    "nome": "r1-sinopse-da-lista-trocada",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 sinopse lista: estudos: evora-prometido-pago-auditado-2026"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/estudos/index.html",
+        "antes": "79196097983d38a603c7c4e01c672b82096972ed3bbf6e4de84b07481be47a2b",
+        "reposto": "79196097983d38a603c7c4e01c672b82096972ed3bbf6e4de84b07481be47a2b"
+      }
+    ]
+  },
+  {
+    "nome": "r1-lista-dos-estudos-sem-um",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a régua viu 25 «linhas» em dist\\/, e o registo dos estudos diz 26",
+      "B1 cobertura: evora-prometido-pago-auditado-2026 não é alcançável de \\/estudos"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/estudos/index.html",
+        "antes": "79196097983d38a603c7c4e01c672b82096972ed3bbf6e4de84b07481be47a2b",
+        "reposto": "79196097983d38a603c7c4e01c672b82096972ed3bbf6e4de84b07481be47a2b"
+      }
+    ]
+  }
+]

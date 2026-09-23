@@ -1,0 +1,219 @@
+[
+  {
+    "nome": "páginas sem estrago",
+    "codigo": 0,
+    "celula": "todas",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nB1 país: todas as conferências a 0."
+  },
+  {
+    "nome": "medida rendida sem tema declarado",
+    "codigo": 1,
+    "celula": "T2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 34 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nT2 pt país: pib-real-per-capita-2025 sem tema na tabela.\nT2 pt temas: pib-real-per-capita-2025 sem tema na tabela.\nT2 en país: pib-real-per-capita-2025 sem tema na tabela.\nT2 en temas: pib-real-per-capita-2025 sem tema na tabela."
+  },
+  {
+    "nome": "medida do país no tema errado",
+    "codigo": 1,
+    "celula": "T3",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nT3 pt país: pib-real-per-capita-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt país: saldo-das-administracoes-publicas-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt país: crescimento-da-despesa-liquida-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt país: indice-de-divida-limite-legal no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT6 pt país: conjunto de temas diferente da tabela.\nT8 pt: porta do tema em falta."
+  },
+  {
+    "nome": "medida repetida",
+    "codigo": 1,
+    "celula": "T4",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nT4 pt temas: medida repetida pib-real-per-capita-2025."
+  },
+  {
+    "nome": "medida publicada ausente",
+    "codigo": 1,
+    "celula": "T5",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nT5 pt: faltam medidas publicadas na página dos temas."
+  },
+  {
+    "nome": "mudança sem secção",
+    "codigo": 1,
+    "celula": "M1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nM1: nomes-ine-2026-09-21 sem secção existente de DECISIONS.md."
+  },
+  {
+    "nome": "mudança com secção inexistente",
+    "codigo": 1,
+    "celula": "M1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nM1: nomes-ine-2026-09-21 sem secção existente de DECISIONS.md."
+  },
+  {
+    "nome": "linha de outro lugar na página do país",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA1: index.html: a linha correcao|estudos-evora-publicados|3 é de «evora» e a página é de «pais»."
+  },
+  {
+    "nome": "publicação na página do país",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 71 títulos de edição.\nA1: index.html: a linha publicacao|evora-2027-prometido-painel-dinheiro é de «nenhum lugar» e a página é de «pais»."
+  },
+  {
+    "nome": "mais mudanças do que o teto",
+    "codigo": 1,
+    "celula": "A2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nM2 pt: a mudança notificacao-ine-divida-2026-09-23 repete-se na página do país.\nA2: index.html: 11 mudanças, e o teto é 8."
+  },
+  {
+    "nome": "registo sem uma das mudanças do livro",
+    "codigo": 1,
+    "celula": "A3",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA3: correcoes/index.html: o registo tem 31 mudanças e o livro inteiro tem 32; a menos: correcao|estudos-evora-publicados|3."
+  },
+  {
+    "nome": "correção que não é uma entrada do livro",
+    "codigo": 1,
+    "celula": "C1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA3: correcoes/index.html: o registo tem 32 mudanças e o livro inteiro tem 32; a mais: correcao|estudos-evora-publicados|99; a menos: correcao|estudos-evora-publicados|3.\nC1: correcoes/index.html (registo): uma linha de correção não é uma entrada do livro, ou repete-se.\nM3: correcoes/index.html (registo): estudos-evora-publicados mistura correções, repete o valor ou difere da correção declarada."
+  },
+  {
+    "nome": "valor antigo igual ao novo numa correção",
+    "codigo": 1,
+    "celula": "M3",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nM3: correcoes/index.html (registo): estudos-evora-publicados mistura correções, repete o valor ou difere da correção declarada."
+  },
+  {
+    "nome": "mudança de lugar sem o seu lugar",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA1: municipios/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-aprovado-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-execucao-2026|1 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-pago-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-vencido-aprovado-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-vencido-quota-2026|1 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-aprovado-2026|3 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-execucao-2026|0 é de «evora» e a página é de «lisboa»."
+  },
+  {
+    "nome": "declaração do lugar contra a derivação",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora».\nA1: a linha estudos-evora-publicados é declarada de «portugal» e deriva de «evora».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA1: en/municipalities/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «portugal» e a página é de «evora».\nA1: municipios/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «portugal» e a página é de «evora»."
+  },
+  {
+    "nome": "porta do registo apontada a outro lugar",
+    "codigo": 1,
+    "celula": "A3",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA3: correcoes/index.html: uma linha de «portugal» escreve «Portugal» com a porta «/municipios/lisboa»; esperava-se «Portugal» e «/»."
+  },
+  {
+    "nome": "título por confirmar sem a marca no registo",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA4: en/corrections/index.html: agua-nao-faturada/en tem 0 marcador(es) de título e o arquivo declara titleUnverified=true."
+  },
+  {
+    "nome": "título por confirmar sem a marca na página do país",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA4: correcoes/index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true.\nA4: estudos/index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true.\nA4: index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true.\nA4: municipios/evora/index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true."
+  },
+  {
+    "nome": "marca escondida por propriedade do chamador",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nA4: en/studies/index.html: onde-esta-a-agua/en tem 0 marcador(es) de título e o arquivo declara titleUnverified=true."
+  },
+  {
+    "nome": "texto da mudança alterado",
+    "codigo": 1,
+    "celula": "M2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nM2 pt: a mudança notificacao-ine-divida-2026-09-23 não coincide com a declaração."
+  },
+  {
+    "nome": "ordem dos estudos trocada",
+    "codigo": 1,
+    "celula": "E1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nE1 pt: os três estudos não são os mais recentes."
+  },
+  {
+    "nome": "comparação europeia sem recibo",
+    "codigo": 1,
+    "celula": "L3",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nL3 pt: a leitura perdeu o recibo taxa-de-desemprego-2025-ue."
+  },
+  {
+    "nome": "sexta entrada no menu",
+    "codigo": 1,
+    "celula": "N1",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nN1: menu de cinco errado em index.html."
+  },
+  {
+    "nome": "mudança declarada na língua do código",
+    "codigo": 1,
+    "celula": "M4",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nM4: a mudança nomes-ine-2026-09-21 (pt) fala na língua do código: «recibos».\nM2 pt: a mudança nomes-ine-2026-09-21 não coincide com a declaração.\nA3: correcoes/index.html: a mudança declarada nomes-ine-2026-09-21 falta no registo ou não coincide com a declaração."
+  },
+  {
+    "nome": "cartão fora do valor de referência pintado de dentro",
+    "codigo": 1,
+    "celula": "T9",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nT9 pt temas: divida-publica-2025 está fora do valor de referência e o cartão não o diz pela cor da página europeia (sq-fora, est-fora)."
+  },
+  {
+    "nome": "lista dos estudos com a ordem trocada",
+    "codigo": 1,
+    "celula": "E2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nE2 pt: a lista dos estudos não é uma só, com todos, do mais recente para o mais antigo."
+  },
+  {
+    "nome": "a secção por lugar de volta",
+    "codigo": 1,
+    "celula": "E2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nE2 en: a lista dos estudos voltou a ter a secção por lugar, ou contagens."
+  },
+  {
+    "nome": "leitura com outra data da notificação",
+    "codigo": 1,
+    "celula": "L2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nL2 pt: a leitura não diz a data da notificação do INE tal como a linha a publica."
+  },
+  {
+    "nome": "ponto final sem ligação inseparável",
+    "codigo": 1,
+    "celula": "N2",
+    "passou": true,
+    "saida": "T9: 26 cartões com valor de referência na primeira página e nos temas, 8 fora e 18 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 3 mudanças declaradas, 4 listas com teto 8, 2 registos de 32 mudanças, 70 títulos de edição.\nN2: ponto final sem ligação inseparável em index.html."
+  },
+  {
+    "nome": "frase explicativa fora da lista fechada",
+    "codigo": 1,
+    "celula": "B1 voz",
+    "passou": true,
+    "saida": "B1 lista fechada país: /: «Esta página explica como se deve ler o projeto.»."
+  },
+  {
+    "nome": "leitura aprovada alterada",
+    "codigo": 1,
+    "celula": "B1 leitura",
+    "passou": true,
+    "saida": "B1 leitura aprovada: / difere do texto da direção."
+  }
+]
