@@ -578,7 +578,103 @@ M['mapa'] = {'citacoes_no_sitio': int(m_perto.group(1)) if m_perto else None, 'c
 if not m_perto or not m_longe:
     falha('conferir-mapa.txt: não li as contagens')
 
+# ------------------------------------------------ o que se repete a partir do ramo
+# (passagem de correção, achado 8 da leitura a frio). O pacote da leitura a frio
+# copia os ficheiros mudados entre a base e a cabeça (`scripts/leituras/pacote.sh`,
+# `git diff --name-only <base>..<cabeça>`). Mede-se aqui o que cada base leva das
+# duas coisas congeladas que o medir.py lê e que entraram no commit do brief.
+def levados(base_, cabeca_, prefixo):
+    lista = subprocess.run(['git', '-c', 'core.quotepath=off', 'diff', '--name-only', f'{base_}..{cabeca_}'],
+                           cwd=RAIZ, capture_output=True, text=True)
+    if lista.returncode != 0:
+        falha(f'git diff {base_}..{cabeca_}: {lista.stderr.strip()}')
+        return 0
+    return sum(1 for l in lista.stdout.splitlines() if l.startswith(prefixo))
+
+
+PAGINAS = 'design/especime-v3/medicoes/r1-2026-09-23/paginas/'
+BRIEF_JSON = 'design/observatorio/medidas/BRIEF-R1.json'
+pai_do_brief = git('rev-parse', f'{PARTIDA}^').strip()
+M['pacote'] = {
+    'base_do_ramo': PARTIDA,
+    'pai_do_commit_do_brief': pai_do_brief[:8],
+    'paginas_no_ramo': len([l for l in git('ls-tree', '--name-only', f'{CABECA_R1}:{PAGINAS}').splitlines() if l]),
+    'paginas_levadas_com_a_base_do_ramo': levados(PARTIDA, CABECA_R1, PAGINAS),
+    'brief_json_levado_com_a_base_do_ramo': levados(PARTIDA, CABECA_R1, BRIEF_JSON),
+    'paginas_levadas_com_o_pai_do_brief': levados(pai_do_brief, CABECA_R1, PAGINAS),
+    'brief_json_levado_com_o_pai_do_brief': levados(pai_do_brief, CABECA_R1, BRIEF_JSON),
+    'commit_em_que_entraram': git('log', '--diff-filter=A', '--format=%h', '--', PAGINAS + 'index.html').strip(),
+}
+# De que depende cada número, e onde se repete. As chaves nomeiam as medidas deste
+# ficheiro; nenhum número se escreve aqui.
+M['dependencias_externas'] = {
+    'dist': {
+        'o_que': 'o dist/ inteiro, construído a partir da cabeça do R1',
+        'chaves': ['rotulo.no_dist', 'titulo_do_recibo.titulos_de_linha_no_dist', 'titulo_do_recibo.colados_no_dist',
+                   'frescura.pt', 'frescura.en', 'portoes.gate_html', 'portoes.t9', 'portoes.f17', 'portoes.voz_inventario',
+                   'portoes.verify_celulas', 'l1', 'plantas_pais', 'plantas_portoes_r1', 'plantas_alvos', 'plantas_cartao'],
+        'repete_se': ('numa árvore do sítio na cabeça do R1 (o código é o de 68b7944c): npm ci, npm run build, e o medir.py; '
+                      'sem construir, os registos dos três portões dessa cabeça estão guardados em portoes/'),
+    },
+    'git_do_sitio': {
+        'o_que': 'o git do sítio, com o histórico',
+        'chaves': ['cabeca', 'commits_do_ramo', 'pesquisa.preventDefault_no_ramo_da_fila', 'agenda', 'calendario_trazido',
+                   'mudancas', 'estudos.depois_seccao_por_lugar_na_vista', 'definicoes', 'base', 'notificacao', 'leitura',
+                   'livro_razao', 'inventario', 'pacote', 'correcao'],
+        'repete_se': 'num clone com o histórico inteiro (fetch-depth: 0), por git show <cabeça>:<ficheiro>, como o guião do brief',
+    },
+    'copias_congeladas': {
+        'o_que': 'as cópias congeladas: o antes do brief e o depois do bloco',
+        'chaves': ['brief_antes', 'paginas_depois', 'habitacao', 'estudos.pt', 'estudos.en', 'cor_de_estado',
+                   'frescura.mourao_pt', 'frescura.mourao_en', 'mudanca_declarada', 'titulo_do_recibo.colados_no_recibo_de_mourao'],
+        'repete_se': ('no ramo, nesta pasta: paginas/ e o BRIEF-R1.json (o antes, commit ' + M['pacote']['commit_em_que_entraram']
+                      + ') e paginas-depois/ (o depois, presas pelo sha256 do INDICE.json); o pacote só as leva com uma base '
+                      'anterior ao commit do brief (ver pacote)'),
+    },
+    'motor': {
+        'o_que': 'o git do motor, que é privado',
+        'chaves': ['motor', 'correcao.motor'],
+        'repete_se': 'no repositório do motor, por recolher-motor.py e recolher-motor-correcao.py; as saídas ficam em motor/ e nesta pasta',
+    },
+    'navegador': {
+        'o_que': 'um navegador sobre o dist/',
+        'chaves': ['capturas', 'pesquisa'],
+        'repete_se': 'numa árvore com o dist/ e o Playwright: captar-r1.mjs e tests/acessibilidade/pesquisa.mjs',
+    },
+}
+for dep in M['dependencias_externas'].values():
+    for chave in dep['chaves']:
+        raiz_da_chave = chave.split('.')[0]
+        if raiz_da_chave not in M and raiz_da_chave != 'correcao':
+            falha(f'dependencias_externas nomeia a chave {chave!r}, que o medidas.json não tem')
+
+# ------------------------------------------------ a passagem de correção (23.09.2026)
+# Lida na cabeça em que o guião corre, e não na do R1: é o que a passagem fez.
+correcao = {'commits': [l for l in git('log', '--reverse', '--format=%h %s', f'{CABECA_R1}..HEAD').splitlines()]}
+correcao['commits_n'] = len(correcao['commits'])
+pm = js('plantas-motor-correcao.json') or {'plantas': []}
+pd = js('plantas-medir.json') or {'plantas': []}
+pr = js('plantas-portoes-r1-rotulo-dobrado.json') or []
+correcao['plantas'] = {
+    'motor': {'corridas': len(pm['plantas']), 'morderam': sum(1 for x in pm['plantas'] if x['passou']),
+              'nomes': [x['nome'] for x in pm['plantas']]},
+    'medir': {'corridas': len(pd['plantas']), 'morderam': sum(1 for x in pd['plantas'] if x['passou']),
+              'medidas_do_bloco_intactas': sum(1 for x in pd['plantas'] if x['medidas_json_do_bloco_nao_tocado'])},
+    'rotulo_dobrado': {'corridas': len(pr), 'morderam': sum(1 for x in pr if x['passou']),
+                       'repostas': sum(1 for x in pr for f in x['ficheiros'] if f['antes'] == f['reposto'])},
+}
+tres = [correcao['plantas'][k] for k in ('motor', 'medir', 'rotulo_dobrado')]
+correcao['plantas']['todas'] = sum(v['corridas'] for v in tres)
+correcao['plantas']['todas_morderam'] = sum(v['morderam'] for v in tres)
+mc = js('motor/motor-correcao.json')
+correcao['motor'] = mc
+# As mudanças declaradas na cabeça em que o guião corre, pelo MESMO leitor do R1:
+# o M4b acrescentou uma (commit 697df9af), e é por isso que o R1 se lê preso.
+correcao['mudancas_declaradas_na_cabeca'] = mudancas(git('show', 'HEAD:src/data/mudancas-do-projeto.mjs'))['declaradas']
+M['correcao'] = correcao
+
 M['falhas'] = FALHAS
+M['falhas_n'] = len(FALHAS)
 SAIDA = Path(os.environ.get('OEDP_MEDIDAS_JSON') or (AQUI / 'medidas.json'))
 SAIDA.write_text(json.dumps(M, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(f'{SAIDA.name} escrito: {len(M)} secções; {len(FALHAS)} falha(s).')
