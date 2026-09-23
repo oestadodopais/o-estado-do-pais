@@ -1,0 +1,5656 @@
+/* ============================================================
+   O ESTADO DO PAÍS — folha de estilo do sítio.
+   Três tipos, três funções, sem sobreposição (`IDENTIDADE.md` §1, v3):
+   Spectral (`--f-prosa`) na prosa e na marca, Bitter (`--f-instr`) nos valores,
+   rótulos, eixos e no que é transcrito, Spectral SC (`--f-versal`) nos
+   antetítulos editoriais e nos rótulos de secção. Bitter em caixa alta só
+   dentro dos instrumentos. Os ficheiros estão alojados aqui, em
+   `public/tipos/`, e declarados em `tokens.css`.
+
+   A cor é o estado (`IDENTIDADE.md` §2, v3): âmbar com contorno e ocre para
+   fora do limiar, cobalto para dentro, e mais nada. Os instrumentos desenham-se
+   a tinta e a cinzento; o aparelho separa-se com fios e molduras de `--g3`, e
+   não com painéis tingidos.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* A paleta e os comandos nativos seguem a preferência do sistema. */
+html {
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.6;
+  /* A PROSA LEVA ALGARISMOS ANTIGOS, e são reais: `node scripts/medir-tipos.mjs`
+     mostrou que o `onum` do Spectral funciona, ao contrário do que a sessão de
+     desenho tinha concluído medindo o par errado. `proportional-nums` é o que
+     lhe dá os antigos PROPORCIONAIS (`.OP`); pedir `oldstyle-nums` sozinho dá os
+     antigos tabulares, que numa frase corrida abrem buracos. Os tabulares
+     versais são do aparelho, e o aparelho pede-os por baixo (`.mono`,
+     `--f-instr`): nunca os dois na mesma linha. */
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 10px 16px;
+  z-index: 20;
+}
+.skip:focus {
+  left: var(--gutter);
+  top: 10px;
+}
+
+/* ------------------------------------------------------------ estrutura */
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 0;
+}
+
+/* A sobrancelha. Onde ela é também o título da secção vai num `<h2>`, para
+   que o sumário de cabeçalhos não salte de h1 para h3: o nível é do documento,
+   o desenho continua a ser o da sobrancelha. As três declarações a mais
+   (`line-height`, `text-wrap`, `margin`) são o que um `<h2>` traz e um `<span>`
+   não; num `<span>` não mudam nada, porque é o que ele já herdava. */
+/* VERSALETES EDITORIAIS, E NÃO CAIXA ALTA DE BITTER. A Emenda 5 guarda a caixa
+   alta de Bitter para DENTRO dos instrumentos; uma sobrancelha é editorial, e
+   vai em Spectral SC, cujas minúsculas SÃO as versaletes. Daí o
+   `text-transform: lowercase`: o texto entra em caixa normal e o tipo desenha-o
+   em versaletes de verdade, e não em maiúsculas encolhidas pelo navegador. */
+.eyebrow {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: inherit;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  text-wrap: wrap;
+  color: var(--muted);
+  display: block;
+  margin: 0;
+}
+
+/* Todo o aparelho: tabulares VERSAIS, e os do Bitter são reais.
+   `node scripts/medir-tipos.mjs`: «1111111» e «0000000» medem 284,438 e 448,938
+   px sem a feature e 441 px as duas com ela, a 100px. `lining-nums` é preciso
+   porque a prosa por cima pede antigos, e um valor não herda os antigos da
+   frase que o rodeia. */
+.mono {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(30px, 4.2vw, 46px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+}
+h2 {
+  font-size: clamp(23px, 2.7vw, 31px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+p {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * O AR ENTRE DUAS SECÇÕES (correções de UX, bloco A, item A8)
+ * ---------------------------------------------------------------------------
+ * Era `clamp(52px, 7vw, 86px)`, e era a causa medida do vazio que o diretor
+ * fotografou: entre a linha «308 concelhos · CAOP 2025 ■ fonte» e o primeiro
+ * cartão do painel havia uma banda de cor uniforme de 96px a 390 e de 125px a
+ * 1280 (achado D7), e na página de Évora a mesma conta empurrava os quatro
+ * primeiros valores para lá da margem inferior do primeiro ecrã.
+ *
+ * A banda não era uma soma de acidentes: era este número, mais a fila vazia que
+ * a leitura do mapa reservava. Baixa para um tecto de 44px, que é o alvo medido
+ * do item A8 — nenhuma banda de cor uniforme acima de 48px entre dois blocos de
+ * conteúdo, medida nos pixéis da captura como o leitor-utilizador a mediu.
+ *
+ * A SEPARAÇÃO NÃO SE PERDE, porque não era o ar que a fazia: `.sec-head` leva um
+ * fio por cima e 20px por baixo dele, e o painel leva o seu. O que sai é o papel
+ * em branco entre o fim de um bloco e o fio do seguinte.
+ */
+section {
+  padding-top: clamp(30px, 3.2vw, 44px);
+}
+
+.sec-head {
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  display: grid;
+  gap: 10px;
+  margin-bottom: clamp(26px, 3.4vw, 40px);
+}
+.sec-head h2:not(.eyebrow) {
+  margin-top: 2px;
+}
+.sec-sub {
+  color: var(--muted);
+  font-size: 15.5px;
+  max-width: 64ch;
+  line-height: 1.55;
+}
+
+.lede {
+  font-size: clamp(var(--t-leitura), 1.7vw, 19px);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+  max-width: 60ch;
+}
+.lede + .lede {
+  margin-top: 14px;
+}
+.lede strong {
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+   A FRASE DE HIERARQUIA DE UM ÍNDICE (bloco F1.10, §2.2 do brief, 08.09.2026)
+   ---------------------------------------------------------------------------
+   «Cada índice ganha uma frase de hierarquia»: o que é um nível do território,
+   o que é um domínio e o que é uma área de governo. É a única frase da casa que
+   estas páginas levam além da lede, e por isso lê-se com menos peso do que ela:
+   quem já sabe o que a página lista salta-a de uma vez.
+
+   É NAVEGAÇÃO E NÃO CONTEÚDO na classificação do inventário da voz: não diz
+   nada sobre o que se mede, diz como as páginas do sítio se arrumam umas dentro
+   das outras. É a mesma classe da linha vazia da busca dos concelhos.
+   --------------------------------------------------------------------------- */
+.hierarquia {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2, var(--ink));
+  max-width: 62ch;
+  margin-top: 10px;
+}
+
+/* ------------------------------------------------------------ cabeçalho */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 18px 0 0;
+}
+
+/* A NAVEGAÇÃO É EDITORIAL, E NÃO É UM INSTRUMENTO (v3, etapa 1d).
+   As maquetas desenham-na em caixa alta de Bitter; a Emenda 5 guarda a caixa
+   alta de Bitter para DENTRO dos instrumentos, e uma barra de navegação não é
+   um instrumento. Vai em versaletes de Spectral SC, com o texto em caixa baixa
+   e o tipo a desenhar as versaletes. As maquetas não ganham. */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  align-items: baseline;
+  font-family: var(--f-versal);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 0;
+}
+.nav a:hover {
+  color: var(--ink);
+}
+.nav a[aria-current='page'] {
+  color: var(--ink);
+  box-shadow: inset 0 -1.5px 0 var(--ink);
+}
+
+/* ---------------------------------------------------------------------------
+   O MENU EM DOIS PESOS (bloco F1.10, item 8.9, 08.09.2026)
+   ---------------------------------------------------------------------------
+   «In the headers … they all have the same weight visually, kind of looking the
+   same content, which makes it hard to navigate» (a ronda de leitores, 07.09).
+   Os três grupos de `src/lib/navegacao.mjs` desenham-se com dois pesos: o do
+   leitor com a tinta e o corpo da barra, os outros dois mais leves e um pouco
+   mais pequenos. Nada sai do menu: o que muda é a ordem de leitura.
+
+   OS GRUPOS SÃO `<span>` E NÃO LISTAS, e é medido: a navegação é uma caixa
+   flexível de âncoras desde a etapa 1e, e envolvê-las em `<ul>` dava a cada
+   grupo um papel de lista que o axe conta e que um leitor de ecrã anuncia três
+   vezes por página. Um `<span>` não tem papel nenhum, e a fila continua a
+   ouvir-se como uma fila só, pela ordem do documento.
+   --------------------------------------------------------------------------- */
+.nav-grupo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 18px;
+}
+.nav-principal {
+  gap: 4px 22px;
+}
+.nav-leitor a {
+  color: var(--ink);
+}
+.nav-pais a,
+.nav-casa a,
+.nav-inicio a {
+  font-size: 13px;
+}
+
+@media (min-width: 640px) {
+  /* O fio entre os grupos, a partir da largura em que os três se veem ao mesmo
+     tempo: separa sem acrescentar palavra nenhuma. */
+  .nav-pais,
+  .nav-casa {
+    padding-left: 22px;
+    box-shadow: inset 1px 0 0 var(--rule);
+  }
+}
+.nav .lang {
+  color: var(--ink);
+}
+/* ------------------------------------------------- o «Menu» do telemóvel
+
+   Existe porque a medição da etapa 1d o pediu: a 320 e a 390 os sete itens da
+   navegação ocupavam três linhas e 157,6px de barra, e o primeiro valor medido
+   da página caía para fora do primeiro ecrã. A prancha móvel
+   (`design/especime-v3/maquetas/V3Movel.dc.html`, «cabeça compacta») resolve-o
+   com «Menu» ao lado da ligação de idioma.
+
+   Sem JavaScript: o estado vive no `[open]` de um `<details>` nativo, e a lista
+   é IRMÃ dele e não sua filha, pela razão medida que está escrita no
+   `Masthead.astro`. Acima de 640px o comando desaparece e a lista renderiza-se
+   como sempre, sem depender de nada que o navegador tenha de saber esconder.
+
+   O rodapé não colapsa: é a navegação inteira, sempre à vista, e é ele a porta
+   ao Sobre que o portão conta em todas as páginas. */
+.nav-menu {
+  display: none;
+}
+.nav-menu > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  /* 44px de alvo, e aqui pode ser altura a sério: o comando é um bloco na
+     barra e não uma unidade no meio de uma frase, e por isso crescer não
+     empurra linha nenhuma. */
+  min-height: 44px;
+  min-width: 44px;
+  padding-right: 4px;
+  font-family: var(--f-versal);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--ink);
+}
+.nav-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.nav-menu > summary::before {
+  content: '';
+  width: 0;
+  height: 0;
+  flex: none;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.nav-menu[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 639.98px) {
+  .nav-menu {
+    display: block;
+    order: 1;
+  }
+  /* O COMANDO DE LÍNGUA ENTRA NO MENU ABAIXO DE 640 (bloco F1.10, item 8.9,
+     segunda passagem, 08.09.2026). A decisão do lugar de direção é «os três
+     destinos de leitor visíveis e o resto (o território, a casa, A LÍNGUA)
+     atrás de um só comando de abertura»: a fila da língua ocupava 63,7 px em
+     português e 87,3 em inglês na primeira linha da barra, e era esse espaço que
+     faltava aos três destinos para caberem ao lado do comando. Sai da barra e
+     não do sítio: com o menu aberto vive lá dentro, como as outras nove portas,
+     e a partir de 641 px volta ao sítio onde a Emenda 12 a pôs. */
+  .nav-idioma {
+    display: none;
+  }
+  .nav-menu[open] ~ .nav-idioma {
+    display: block;
+    order: 4;
+    flex-basis: 100%;
+  }
+  .nav-menu[open] ~ .nav-idioma .lang {
+    border-top: 1px solid var(--rule);
+    display: block;
+  }
+  /* ABAIXO DE 640 OS TRÊS DESTINOS DO LEITOR FICAM À VISTA, E O RESTO A UM
+     TOQUE (bloco F1.10, item 8.9). A medida do item é essa à letra: «a fila do
+     menu com os três destinos visíveis no primeiro ecrã a 390 sem mais de uma
+     linha de mobília; os nove restantes alcançáveis a um toque». Até aqui a
+     fila inteira vivia dentro do `<details>` fechado, e o concelho — que é a
+     primeira das três tarefas do leitor — custava dois toques a partir do menu.
+
+     O GRUPO DO LEITOR É UMA FILA HORIZONTAL na barra, ao lado do comando; os
+     outros dois só se desenham com o menu aberto, e aí a fila inteira passa a
+     coluna, como já passava. */
+  .nav-principal {
+    /* A SEGUIR AO COMANDO DO MENU, NA MESMA FILA (item 8.9, segunda passagem,
+       08.09.2026). A primeira redação deste bloco dava-lhe `flex-basis: 100%` e
+       uma fila própria, com a razão escrita: com o comando do menu E o de língua
+       ao lado, os três destinos não cabiam. A decisão do lugar de direção manda
+       UMA linha nas duas edições, e o que a paga é o comando de língua, que
+       passou para dentro do menu logo acima. */
+    order: 3;
+    display: flex;
+    gap: 0 10px;
+    padding-top: 0;
+  }
+  /* O CORPO DA FILA DESCE AO CHÃO DA ESCALA DO TELEMÓVEL (item 8.9). Os três
+     destinos corriam a 14 px, que é o corpo da barra do computador; a 12 px, que
+     é o chão que a regra A9 fixou para o telemóvel («num telemóvel 9,5 px não se
+     lê»), a fila portuguesa mede 345,7 px numa barra de 354 e cabe ao lado do
+     comando. Nenhum tipo muda e nenhuma palavra muda: muda o corpo por largura,
+     que é o que o item 8.15 já separou da identidade fechada. */
+  .nav-principal .nav-leitor a {
+    font-size: 12px;
+  }
+  .nav-principal .nav-leitor {
+    gap: 4px 10px;
+  }
+  .nav-principal .nav-inicio,
+  .nav-principal .nav-pais,
+  .nav-principal .nav-casa,
+  /* O COMANDO DO TEMA SÓ SE VÊ COM O MENU ABERTO. Vive dentro da navegação desde
+     o bloco A (item A7), e a navegação estava escondida abaixo de 640: com a
+     fila do leitor à vista, ele passava a ver-se sempre e custava mais uma linha
+     de 44 px na barra. */
+  .nav-principal .tema-no-menu {
+    display: none;
+  }
+  .nav-menu[open] ~ .nav-principal {
+    order: 3;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 4px;
+  }
+  .nav-menu[open] ~ .nav-principal .nav-grupo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nav-menu[open] ~ .nav-principal .tema-no-menu:not([hidden]) {
+    display: inline-flex;
+  }
+  .nav-menu[open] ~ .nav-principal a {
+    border-top: 1px solid var(--rule);
+  }
+}
+
+/* O ALVO DE TOQUE DA NAVEGAÇÃO.
+
+   O selo já sobe para 44px num apontador grosseiro (§1.43), que é o alvo que
+   as duas normas de plataforma pedem; as ligações da barra e do rodapé ficaram
+   com os cerca de 24 e 16px que a letra lhes dava. Aqui sobem. Em cursor não
+   muda coisa nenhuma: a regra inteira vive dentro de `pointer: coarse`, e as
+   duas navegações são caixas flexíveis, por isso as ligações são itens e a
+   altura mínima vale nelas.
+
+   A marca da página actual passa de um fio no fundo da caixa a um sublinhado
+   do texto: com a caixa a 44px o fio ficava a mais de dez pixels do que
+   sublinha, e uma marca que se descola do que marca deixa de marcar. */
+@media (pointer: coarse) {
+  .nav a,
+  .rodape-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .nav a[aria-current='page'] {
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+}
+
+.masthead {
+  padding: clamp(34px, 6vw, 64px) 0 clamp(26px, 3.5vw, 40px);
+  display: grid;
+  gap: 0;
+}
+.masthead-compact {
+  padding: clamp(22px, 3.5vw, 34px) 0 clamp(18px, 2.5vw, 26px);
+}
+
+.wordmark {
+  font-family: var(--f-prosa);
+  font-weight: 400;
+  font-size: clamp(34px, 7.4vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  margin: 0;
+}
+.masthead-compact .wordmark {
+  font-size: clamp(24px, 3.4vw, 34px);
+}
+.wordmark a {
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * A FRASE DE IDENTIDADE, POR BAIXO DA MARCA (Emenda 18, 25.08.2026)
+ * ---------------------------------------------------------------------------
+ * «Um observatório de Portugal.» / «An observatory of Portugal.», só na primeira
+ * página. Na letra da PROSA, porque é uma frase e não uma leitura de aparelho, e
+ * no corpo da mobília, porque é a marca que manda no cabeçalho e uma segunda voz
+ * grande por baixo dela seriam duas marcas. Uma linha, sem porta e sem
+ * algarismo.
+ *
+ * O `margin-top` é pequeno de propósito: a frase pertence à marca, e não à
+ * mobília que vem por baixo do fio. */
+.masthead-identidade {
+  margin: 6px 0 0;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------------
+ * O CAMINHO DESTA PÁGINA, POR BAIXO DA MARCA (F1.10, §2.5; medida L5)
+ * ---------------------------------------------------------------------------
+ * «Início › Concelhos › Évora», em texto com ligações. Fica no corpo da frase de
+ * identidade (12 px, prosa, `--muted`) e não no da barra, e a razão é a mesma que
+ * pôs a frase ali: o que está por baixo da marca pertence à marca, e uma segunda
+ * voz grande debaixo do nome seriam duas marcas.
+ *
+ * NA LETRA DA PROSA E NÃO NAS VERSALETES DA BARRA. A barra vai em Spectral SC com
+ * `text-transform: lowercase`, e o caminho leva nomes próprios: «Évora» em caixa
+ * baixa é o nome escrito errado. As versaletes são para a fila de etiquetas, que
+ * é o que elas são.
+ *
+ * O ALVO DE TOQUE É O DA NAVEGAÇÃO, e vive na mesma condição: dentro de
+ * `pointer: coarse`, porque é o dedo que precisa dos 44 px e num cursor a regra
+ * não muda coisa nenhuma. A fila é uma caixa flexível, e por isso a altura
+ * mínima vale nos seus itens.
+ */
+.caminho {
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+.caminho a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.caminho a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.caminho-sep {
+  color: var(--rule-strong);
+}
+/* A PÁGINA EM QUE SE ESTÁ FICA A TINTA E SEM PORTA. É a marca do lugar, e é a
+   mesma decisão do §7.10 do brief («"9 regiões" deixa de ser ligação para si
+   próprio») aplicada à mobília: uma ligação para a página que já está aberta é
+   uma porta que não abre nada. */
+.caminho-aqui {
+  color: var(--ink);
+}
+/* O nome de uma medida entra pelo componente que lhe põe a marca, e a
+   composição dele é a do caminho e não a de uma linha do índice. */
+.caminho-medida {
+  color: inherit;
+  font: inherit;
+}
+
+@media (pointer: coarse) {
+  .caminho a,
+  .caminho .caminho-aqui {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* A regra `.method-line` saiu a 21.08.2026 com a linha que ela compunha
+   (Emenda 11, DECISIONS §1.52): a linha de método deixou de se render por baixo
+   da marca, e uma regra sem elemento é uma regra que mente sobre o que a folha
+   desenha. */
+
+/* AS DUAS LEITURAS SÃO DE APARELHO, E FICAM A TINTA (v3, Emenda 1).
+   O corpo §3 da constituição visual dava-lhes cor (cobalto dentro do prazo,
+   âmbar em atraso) e chamava-lhes «a única cor do cabeçalho». A Emenda 1, que é
+   mais alta, diz que a cor só aparece onde a fonte publica um limiar formal, e
+   um prazo interno de reconferência não é um limiar publicado por fonte
+   nenhuma. Ficam a tinta, e o estado diz-se por palavras, que é o que já
+   faziam. Assinalado à direção (plano §3 i).
+
+   A caixa alta saiu: são Bitter, e a §1 guarda a caixa alta de Bitter para
+   dentro dos instrumentos. O cabeçalho não é um instrumento. */
+.masthead-furniture {
+  margin-top: 20px;
+  padding-top: 11px;
+  border-top: 1.5px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+/* O separador entre as DUAS leituras, e só entre elas: com as leituras
+   rotuladas há agora spans dentro de spans, e um seletor solto punha um ponto
+   médio dentro de cada valor. */
+.masthead-furniture > .mob-leitura:not(:first-child)::before {
+  content: '· ';
+  color: var(--rule-strong);
+}
+
+/* ---------------------------------------------------------- as duas leituras
+
+   Rótulo e valor, os dois em monoespaçada, cada leitura com a sua porta
+   (IDENTIDADE.md §3, v2). O rótulo recua para `--muted` e o valor fica em
+   `--ink`: é a diferença que faz uma leitura de aparelho ler-se como leitura
+   e não como uma frase pequena.
+
+   ---------------------------------------------------------------------------
+   AS DUAS LEITURAS PERDEM A MOLDURA, E A MOLDURA NÃO ERA DELAS (21.08.2026)
+   ---------------------------------------------------------------------------
+   A direção leu a pré-visualização n.º 1 e pediu «as duas leituras do cabeçalho
+   sem molduras». As regras desta secção nunca desenharam moldura nenhuma — e é
+   por isso que a causa vale a pena escrever-se: a classe chamava-se `.leitura`,
+   e mais abaixo nesta mesma folha (a camada «Leitura breve» de um estudo) há
+   outra `.leitura`, com `border: 1px solid var(--rule)` e `background:
+   var(--paper)`. Duas coisas diferentes com um nome só, e a segunda ganhava por
+   vir depois: medido em Chromium sem cabeça, os dois `span` da mobília davam
+   `border-top-style: solid`, `1px`, `rgb(217, 221, 216)`, sobre papel.
+
+   A saída não é apagar a moldura com uma terceira regra: é dar-lhes o nome que
+   é delas. A mobília passa a `.mob-leitura`, e a camada de leitura de um estudo
+   fica com `.leitura`, que é o nome da coisa que ela é. Um `border: 0` por cima
+   deixaria as duas a partilhar o nome, e a próxima regra de uma delas voltava a
+   cair na outra. */
+.mob-leitura {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 7px;
+}
+.mob-leitura-porta {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 7px;
+  text-decoration: none;
+}
+.mob-leitura-k {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+.mob-leitura-v {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.masthead-furniture a.mob-leitura-k:hover,
+.masthead-furniture .mob-leitura-porta:hover .mob-leitura-k {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ------------------------------- as leituras de aparelho fora do cabeçalho
+
+   F1.10, item 8.11 e §7.3 (08.09.2026). As quatro leituras saíram da mobília
+   de 7 224 páginas e foram para a página da medida e para o Método. A GRAMÁTICA
+   VISUAL É A MESMA — rótulo em `--muted`, valor em `--ink`, monoespaçada,
+   algarismos tabulares, ponto médio entre leituras —, porque é a MESMA coisa
+   noutro sítio: uma segunda maneira de desenhar uma leitura de aparelho seria
+   uma decisão de identidade que este bloco não tem.
+
+   O QUE MUDA É A MOLDURA, e muda por causa do lugar. No cabeçalho a leitura
+   vinha por baixo do nome da publicação, e o fio de cima era grosso e a tinta
+   (`1.5px solid var(--ink)`), porque separava a marca do resto. Aqui vem no pé
+   de uma secção, e o fio é o fio comum das secções (`var(--rule)`): um fio de
+   marca no meio de uma página seria a leitura a fazer-se passar por cabeçalho. */
+.leituras-de-estado {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.leituras-de-estado > .mob-leitura:not(:first-child)::before {
+  content: '· ';
+  color: var(--rule-strong);
+}
+.leituras-de-estado a.mob-leitura-k:hover,
+.leituras-de-estado .mob-leitura-porta:hover .mob-leitura-k {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* ------------------------------------------------------- o controlo do tema
+
+   Emenda 12, 21.08.2026 (`DECISIONS.md` §1.52): claro por defeito para todos, e
+   o escuro só por este controlo. Dois botões, com a palavra de cada estado e um
+   fio «·» entre eles — a mesma pontuação que separa as duas leituras nesta
+   mesma linha, e nenhuma moldura, porque o cabeçalho leva um fio e mais nada
+   (`IDENTIDADE.md` §3).
+
+   O ALVO É DE 44×44, e aqui a altura pode ser altura a sério. É a mesma
+   distinção que a etapa 1e escreveu para o comando «Menu» e que o selo não pode
+   ter: um botão de barra é um bloco e crescer não empurra linha nenhuma, ao
+   contrário de uma unidade no meio de uma frase.
+
+   `margin-left: auto` empurra-o para o fim da linha, e por isso ele não leva o
+   «·» que separa as duas leituras: o que o separa delas é o espaço.
+
+   O grupo entra `hidden` do servidor e é o script que o mostra. Uma regra de
+   navegador (`[hidden]` = `display: none`) perde para qualquer selector de
+   classe, e `display: inline-flex` é um selector de classe: sem a linha
+   seguinte, o controlo aparecia sempre, inclusive sem JavaScript, a comandar
+   coisa nenhuma. */
+/* O CONTROLO DO TEMA TEM DOIS LUGARES, UM POR LARGURA (bloco A, item A7).
+   O da mobília, por baixo da marca, é o do computador; o de dentro do menu é o
+   do telemóvel. Cada largura apaga o do outro lado: em cada uma há um comando, e
+   um só, e um `display: none` tira-o também da árvore de acessibilidade. */
+.tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
+.tema[hidden] {
+  display: none;
+}
+.tema-no-menu {
+  display: none;
+  margin-left: 0;
+}
+@media (max-width: 640px) {
+  /* A MOBÍLIA INTEIRA SAI DO TELEMÓVEL (F1.10, item 8.11, 08.09.2026). Desde
+     que as quatro leituras foram para a página da medida e para o Método, o
+     único filho desta caixa é o controlo do tema, e a regra abaixo já o
+     escondia aqui abaixo de 640 (ele vive dentro do menu). Sobrava a CAIXA: um
+     fio de 1.5px a tinta, com margem e enchimento, debaixo do nome da
+     publicação, a separar a marca de coisa nenhuma. Uma caixa que não mostra
+     nada não desenha um fio. */
+  .masthead-furniture {
+    display: none;
+  }
+  .masthead-furniture > .tema {
+    display: none;
+  }
+  /* SÓ COM O MENU ABERTO (bloco F1.10, item 8.9, 08.09.2026). O comando vive
+     dentro da navegação desde o bloco A (item A7), e a navegação estava toda
+     escondida abaixo de 640: com os três destinos do leitor à vista, ele passava
+     a ver-se sempre e custava mais uma linha de 44 px na barra. */
+  .nav-menu[open] ~ .nav-principal .tema-no-menu:not([hidden]) {
+    display: inline-flex;
+    width: 100%;
+  }
+}
+.tema-b {
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0 10px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.tema-b + .tema-b::before {
+  content: '·';
+  color: var(--rule-strong);
+  margin-right: 10px;
+  margin-left: -10px;
+}
+.tema-b[aria-pressed='true'] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tema-b:hover {
+  color: var(--ink);
+}
+.tema-b:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.masthead-compact .tema-b {
+  font-size: 9.5px;
+}
+
+/* A mobília do cabeçalho compacto é a mesma linha, mais discreta: nas páginas
+   interiores o sinal de tempo não compete com o conteúdo. */
+.masthead-compact .masthead-furniture {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-size: 9.5px;
+  color: var(--muted);
+}
+/* Verificação em atraso: a frase é mais longa e deixa de caber em versaletes
+   espaçados. Mesma regra da linha da primeira página. */
+.masthead-furniture [data-vencida='sim'],
+.leituras-de-estado [data-vencida='sim'] {
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-size: 11px;
+}
+
+/* ------------------------------------------------------------ afirmações */
+
+.claim {
+  display: inline;
+  white-space: nowrap;
+}
+.claim-com-chip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  white-space: normal;
+}
+/* O símbolo da unidade escrito ao pé do valor (§11: «26,5%», não «26,5 %»).
+   `.claim-com-chip` é um flex com 10px de intervalo entre o valor e o selo, e
+   um terceiro filho herdaria esse intervalo: o `%` ficaria a 10px do número.
+   A regra tira o intervalo e devolve-o ao selo, e vai presa a `:has()` para
+   que os selos sem sufixo fiquem exactamente como estavam, por construção.
+   Onde `:has()` não existir, o sufixo fica a 10px do valor, que é o que a
+   página já escrevia antes desta correcção. */
+.claim-com-chip:has(.claim-sufixo) {
+  column-gap: 0;
+}
+.claim-com-chip:has(.claim-sufixo) > .src-chip {
+  margin-inline-start: 10px;
+}
+/* A PALAVRA DA RESSALVA DA FONTE (decisão (d); etapa 1f).
+
+   Vive ao pé do valor, entre a unidade e o selo, e é mobília: Bitter, minúscula,
+   `--g1` (6,24:1 sobre papel), sem caixa e sem cor. Não compete com o número e
+   não se confunde com o marcador de incerteza do sítio, que é `[a verificar]` e
+   tem a sua própria classe, a sua própria página e outro significado: aquele diz
+   que falta um campo à proveniência, este diz que a FONTE marcou o valor como
+   provisório. Duas coisas diferentes, duas formas diferentes.
+
+   O invólucro deixa de ser `nowrap` quando a palavra entra, para a linha poder
+   partir ANTES dela; o valor e a unidade ficam inteiros, que é o que o `nowrap`
+   existia para garantir. */
+.claim-provisorio {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin-left: 5px;
+}
+.claim-com-provisorio {
+  white-space: normal;
+}
+.claim-com-provisorio > .claim-value,
+.claim-com-provisorio > .claim-sufixo {
+  white-space: nowrap;
+}
+
+.claim-sufixo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.claim-value {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------------------------
+ * O ALGARISMO DA MANCHETE É UM ALVO (bloco F1.7, item 7, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * O selo ao lado do número abria a linha; o número não abria nada. Quem toca no
+ * número — que é a coisa grande e a coisa que interessa — não acontecia nada, e
+ * a porta era o elemento mais pequeno do ecrã (a auditoria de 02.09: «a prova
+ * existe, está a um toque, e é a coisa mais pequena do ecrã»). Desde este bloco
+ * o valor da manchete é uma âncora para a sua própria linha, e esta é a folha
+ * dela.
+ *
+ * O ASPETO NÃO MUDA, E É A CONDIÇÃO DO ITEM. Um `<a>` traz cor e sublinhado do
+ * navegador, e as duas coisas saem: `color: inherit` porque a manchete tem a
+ * tinta da manchete, e `text-decoration: none` porque um sublinhado por baixo do
+ * número seria uma marca nova numa frase que a direção fechou. O que fica de
+ * ligação é o cursor e o anel de foco, que é o que uma porta tem de dar a quem
+ * chega pelo teclado.
+ *
+ * A ÁREA É A MESMA TÉCNICA DO SELO: um `::after` absoluto, centrado, 44 px nos
+ * dois eixos, que alarga o que se toca sem alargar o que se compõe. `100%` de
+ * largura com `min-width: 44px` porque um número longo é mais largo do que 44 e
+ * o alvo é o número inteiro, não um quadrado no meio dele.
+ */
+a.claim-value {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+a.claim-value::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  /* A ALTURA NÃO ENTRA NA LINHA DO VIZINHO (segunda passagem, 04.09.2026,
+     achado Blocking 5 da leitura a frio). `1lh` é a caixa de linha deste
+     elemento, e `min()` com 44 px diz o que a regra quer: 44 px onde a
+     entrelinha os dá, e a linha inteira e nem um píxel a mais onde não dá. Numa
+     manchete que cita duas linhas, os dois algarismos caem a uma entrelinha um do
+     outro e duas áreas de 44 px cruzavam-se: o cruzamento ia para o algarismo que
+     vem depois no documento, e um dedo por baixo do primeiro abria a linha do
+     segundo.
+
+     `1lh` E NÃO `min(44px, 1lh)`, e a diferença é a que faz a prova: a caixa de
+     linha é EXACTAMENTE o avanço entre duas linhas, de modo que as áreas
+     LADRILHAM — encostam e não se cruzam, seja qual for a entrelinha. Com um
+     tecto de 44 px a ladrilhagem parte-se onde a entrelinha é menor do que 44 (a
+     área fica maior do que o avanço e entra na linha de cima), que foi o que a
+     medição de 1023 px mostrou. A razão por extenso está em
+     `src/components/Manchete.astro`. */
+  height: 1lh;
+}
+/* E ONDE A MANCHETE CITA UMA LINHA SÓ, a área é a inteira: não há vizinho com
+   quem cruzar, e o algarismo é a única porta grande da frase. É o caso das 308
+   páginas de concelho. */
+h1[data-citadas='1'] a.claim-value::after {
+  height: 44px;
+}
+
+/* Selo de proveniência. É uma ÂNCORA para a linha do livro-razão — o Método
+   promete que o selo é a porta, e uma etiqueta que não abre nada não é um selo
+   (IDENTIDADE.md §5).
+
+   V2: a palavra «fonte» está à vista e sublinhada, e a unidade inteira
+   (quadrado, palavra e, quando falta um campo, o marcador) é a porta. O
+   sublinhado deixou de ser só ao passar: era mobília a fingir-se de mobília, e
+   a interação central do sítio não pode depender de se descobrir que ali há
+   uma ligação (IDENTIDADE.md §5.4; `design/CRITICA-codex.md`, «the door is too
+   quiet for the most important interaction on the site»).
+
+   V3 (etapa 1d). O SELO SENTA-SE NA LINHA DA PROSA. Deixa de ter caixa própria:
+   nada de fundo, nada de moldura, nada de altura mínima que empurre a
+   entrelinha. `display: inline` põe o quadrado e a palavra na linha do texto que
+   os rodeia, como a constituição visual §4 pede («ganha altura de linha inteira
+   na prosa; não é chip»). O sublinhado da palavra é o que diz que ali há uma
+   porta.
+
+   A LETRA É BITTER EM VERSALETES, e não em caixa alta: a §1 guarda a caixa alta
+   de Bitter para dentro dos instrumentos, e o selo vive tanto dentro de um
+   instrumento como no meio de uma frase. `font-variant-caps: small-caps` dá as
+   versaletes do próprio tipo, que o Bitter tem (`smcp` na `GSUB`, e medido).
+
+   O ALVO DE TOQUE NÃO MUDA A CAIXA DE LINHA, e é a razão de ser um
+   pseudo-elemento posicionado. Um `min-height` num elemento em linha ou não faz
+   nada ou empurra a linha; um `::after` absoluto e centrado alarga o que se
+   toca sem alargar o que se compõe. 44px nos dois eixos, que é o alvo que as
+   duas normas de plataforma pedem, e vale em cursor e em toque, porque quem tem
+   a mão insegura não tem só um ecrã de toque. Medido no navegador, em duas
+   páginas, e os números estão na nota da etapa. */
+.src-chip {
+  display: inline;
+  position: relative;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-variant-caps: small-caps;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  /* A palavra do selo é «fonte», em minúsculas, nas duas edições, e é assim
+     que a §5.4 a nomeia. Dentro de uma sobrancelha em maiúsculas (a linha da
+     medida do mosaico, «PERCENTAGEM, TETO LEGAL = 150 · fonte · 2024») o selo
+     herdava o `text-transform` da linha e rendia «FONTE», que é outra palavra
+     à vista do leitor. O selo declara a sua própria caixa, esteja onde
+     estiver. O HTML já escrevia «fonte»: o que mudou foi só o desenho. */
+  text-transform: none;
+  color: var(--muted);
+  white-space: nowrap;
+  text-decoration: none;
+}
+/* O quadrado é a distinção de estado que o leitor TEM de ver: cheio quando a
+   proveniência está completa, a tracejado quando falta um campo. Vai em
+   `--axis`, que na v3 é `--g2` e mede 3,47:1 sobre papel, acima dos 3:1 que a
+   1.4.11 pede a um objeto de interface. Medido em `scripts/medir-contraste.mjs`.
+
+   Em linha, o quadrado é um `inline-block` com margem à direita: a folga que a
+   caixa flexível dava com `gap` passa a ser dela. */
+.src-chip::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  vertical-align: baseline;
+  border: 1px solid var(--axis);
+  background: var(--axis);
+}
+.src-chip.is-unverified::before {
+  background: transparent;
+  border-style: dashed;
+}
+
+/* A ÁREA DE TOQUE, e mais nada. Não desenha, não muda a caixa de linha, e não
+   é a porta: a porta é a âncora inteira, e isto é só o que ela apanha. */
+a.src-chip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+/* E ONDE OS SELOS SE EMPILHAM, A ÁREA VOLTA AO TAMANHO DA UNIDADE.
+
+   Medido na página construída, em Chromium sem cabeça: dentro dos instrumentos,
+   do mosaico e dos blocos da página do município há selos a 3,1px, 18,2px e
+   22,4px uns dos outros. Duas áreas de 44px a 18px de distância sobrepõem-se por
+   26, e a de baixo, que vem depois no documento, apanha o clique da de cima:
+   **uma área sobreposta não é um alvo maior, é uma porta que abre a linha do
+   vizinho**, e para este sítio isso é pior do que um alvo pequeno.
+
+   A saída certa não é encolher a área: é dar altura à fila. As filas são a
+   primeira página (etapa 2, e o plano §13 pede exactamente isto, «o selo como o
+   maior alvo de cada fila, >= 44px») e a página do município (etapa 3).
+
+   A LISTA ERA DE SETE E PASSA A QUATRO (pós-fusão A2, ISSUES I13 e I14). Cada
+   um dos sete foi conferido contra as 322 páginas construídas, com
+   `node-html-parser` a correr `querySelectorAll` em todas elas e com
+   `a.src-chip` como controlo positivo (1034 selos em 288 páginas). Três saem por
+   não terem cliente nenhum:
+
+   · `.figura` acertava em zero elementos: a classe não existe em nenhuma página
+     construída, e no código-fonte só sobrevive `.figura-nome`. Uma excepção que
+     não tem elemento não protege nada.
+   · `.prov-vals` tem 4 elementos em duas páginas (`/municipios` e a sua edição
+     inglesa) e zero selos lá dentro: a fila que os tinha saiu da primeira página
+     em `1cac621`, e o que fica é uma linha de texto e uma porta de descarga, que
+     não é um selo. É a ISSUES I14, fechada por remoção.
+   · `.linha-verificacoes` tem 264 elementos em 264 páginas e zero selos lá
+     dentro. A regra nunca chegou a aplicar-se.
+
+   Um quarto estreita-se, e dois ficam com a medição que os prende. O relance da
+   PRIMEIRA PÁGINA passa a levar a área inteira, que é a etapa 2 a cumprir-se, e
+   é essa a correcção que este commit entrega.
+
+   `.glance` estreita-se em vez de sair, porque a classe também é do relance da
+   página do município: ali os dois selos do «de → até» quebram de linha a 390, e
+   duas áreas de 44px a 33,8px uma da outra sobrepõem-se por 10,2. Essa fila é da
+   etapa 3, e não se estraga uma página que ainda não foi arrumada para arrumar
+   outra. Fica presa a `[data-instrumento='mandatos']`, que é o instrumento dela.
+
+   `.brief-text` FICA, E É UMA EXCEPÇÃO MEDIDA, não um esquecimento. A frase da
+   leitura breve não é uma fila: é prosa corrida, e duas das seis frases levam
+   dois selos dentro da mesma frase (Península de Setúbal e Alentejo). A
+   entrelinha da frase é de 27,65px, e por isso dois selos em linhas seguidas
+   ficam sempre a 27,6px um do outro: duas áreas de 44px a essa distância
+   sobrepõem-se por 16,4 na vertical, e tocam-se sempre que as duas colunas
+   também se cruzam. Varrida a rampa de 320 a 1440 de 2 em 2, nas duas edições,
+   as bandas em que isso acontece são estas:
+
+       pt · Península de Setúbal   434 a 512
+       pt · Alentejo               534 a 632
+       en · Setúbal Peninsula      416 a 534
+       en · Alentejo               478 a 616
+
+   A 1280, a 1024 e a 390 não se tocam, e por isso a medição de uma largura só
+   não chega para fechar isto: dar-lhes a área faria uma porta que abre a linha
+   do vizinho entre os 416 e os 632. A saída para uma fila é dar-lhe altura; a
+   saída para esta seria levar a entrelinha da frase de 27,65px para 44px, que é
+   mudar a composição da leitura, e essa é uma decisão da direcção e não desta
+   folha. Até ela, o selo da frase tem a área da unidade e a porta continua a
+   abrir a linha certa.
+
+   Medido depois desta regra, em Chromium sem cabeça, nas duas edições e a 1280,
+   1024 e 390, nos seis estados de região: zero pares de áreas sobrepostas em
+   `#convergencia`. */
+/* `[data-instrumento='mandatos'] .glance a.src-chip::after` SAIU a 25.08.2026
+   (bloco B, item B9). A razão escrita aqui era que «os dois selos do "de → até"
+   quebram de linha a 390, e duas áreas de 44px a 33,8px uma da outra
+   sobrepõem-se por 10,2. Essa fila é da etapa 3, e não se estraga uma página
+   que ainda não foi arrumada para arrumar outra.» A fila foi arrumada: o par é
+   agora uma fila que quebra entre os dois grupos, com `row-gap`, e a distância
+   entre os dois selos passou a dar para as duas áreas inteiras. Medido nas duas
+   edições, a 390, 1024 e 1280: zero pares sobrepostos. */
+.brief-text a.src-chip::after,
+.mun-campos a.src-chip::after,
+.linha-bloco .deep-v a.src-chip::after {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+.src-chip-texto {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: from-font;
+  text-decoration-color: var(--axis);
+}
+a.src-chip:hover {
+  color: var(--ink);
+}
+a.src-chip:hover .src-chip-texto {
+  text-decoration-color: var(--ink);
+}
+a.src-chip:hover::before {
+  border-color: var(--ink);
+  background: var(--ink);
+}
+a.src-chip.is-unverified:hover::before {
+  background: transparent;
+}
+/* A regra que subia o selo para 44px de altura num apontador grosseiro saiu: a
+   altura passou a vir do `::after`, que vale nos dois apontadores e não mexe na
+   composição de nenhum. */
+/* O marcador dentro do selo: mais pequeno, porque ali é etiqueta e não campo. */
+.src-chip .marcador {
+  white-space: nowrap;
+  font-size: 9.5px;
+  padding: 0 4px;
+  letter-spacing: 0.01em;
+}
+/* Amostra dos dois estados, na coluna do aparelho do índice. Só o quadrado. */
+/* A amostra dos dois estados não é uma porta: leva o quadrado e mais nada, e
+   por isso não leva a folga que separa o quadrado da palavra. */
+.src-chip-amostra::before {
+  margin-right: 0;
+}
+/* A regra que escondia o texto do selo no cabeçalho (§1.37, 16.08.2026) saiu
+   aqui: o cabeçalho não tem selo nenhum desde que as contagens saíram dele
+   (§1.39), e a mobília leva números do próprio sítio, que têm porta e não
+   levam selo (IDENTIDADE.md §10). Uma regra que não governa nada é uma regra
+   que engana quem a lê. Se um valor do livro-razão voltar ao cabeçalho, a §5.5
+   diz o que fazer, e a regra volta com ele. */
+
+/* grelha de números verificados */
+/* O painel: 4 colunas, 2, 1 (IDENTIDADE.md §11, v2).
+
+   Era `auto-fit, minmax(258px, 1fr)`, que a certas larguras dá três colunas,
+   e oito cartões em três colunas fazem uma última fila com dois, que é a
+   aritmética que não fecha da §7. Quatro, dois e um dividem oito sempre. */
+.figuras {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+@media (max-width: 900px) {
+  .figuras {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .figuras {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* A célula tem uma coluna, e a coluna é a célula: `minmax(0, 1fr)`.
+
+   Sem isto a coluna implícita da grelha interna mede-se pelo conteúdo mais
+   largo, e um valor que não parte leva com ele o nome, a medida e a descrição
+   para fora da célula, onde o fundo da célula seguinte os tapa. A descrição da
+   dívida de Évora estava cortada à direita por esta razão, e não por falta de
+   espaço.
+
+   `container-type: inline-size` é o que dá ao valor a largura real da célula,
+   em `cqw`, para a regra de escala abaixo. */
+.figura {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: clamp(18px, 2.2vw, 24px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-content: start;
+  container-type: inline-size;
+}
+/* Um valor de cabeça nunca se apara.
+
+   O separador dos milhares é o espaço fino inquebrável (U+202F): «54 681 562»
+   é uma só palavra para quem parte linhas, e uma célula de quatro colunas a
+   1280px não lhe chega. Partir dentro do número seria pior do que encolhê-lo:
+   «54 681 5» numa linha e «62» na seguinte lêem-se como dois números.
+
+   Então a letra escala com o comprimento do próprio valor. `--figura-car` é o
+   número de caracteres que a linha do livro-razão publica, escrito pelo
+   gabarito a partir do valor e nunca à mão (`Claim.astro`, `escala`), e a
+   largura da célula entra por `cqw`. O factor 0,63em é o avanço medido desta
+   pilha monoespaçada com `tabular-nums`, com margem. Um valor curto fica
+   exactamente onde estava; um valor longo encolhe até caber.
+
+   A primeira declaração é a de antes, e fica: onde a divisão por uma variável
+   ou o `cqw` não forem entendidos, a célula volta ao tamanho fixo. */
+.figura-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(38px, 4.4vw, 52px);
+  font-size: clamp(24px, min(4.4vw, calc(100cqw / (var(--figura-car, 6) * 0.63))), 52px);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.figura-nome {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.figura-medida {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+/* A linha do limiar. Mono, uma linha, sem barra: o rótulo recua, o limiar e a
+   palavra ficam em tinta. A palavra é derivada de dois números que já existem
+   (`comparacaoComOLimiar`), e não é um número. */
+.figura-limiar {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.figura-limiar-k {
+  color: var(--muted);
+}
+.figura-limiar-palavra {
+  font-weight: 600;
+}
+.figura-frase {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-top: 2px;
+}
+.figura .src-chip {
+  margin-top: 4px;
+}
+
+/* ------------------------------------------------------------ instrumento */
+
+/* A peça é uma moldura cinzenta sobre o papel, e não um painel tingido com
+   sombra: Emenda 1. O estado vive no marcador, na palavra e na régua. */
+.instr {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.instr-top {
+  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.8vw, 32px) 0;
+}
+
+.layer-tag {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.layer-tag::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--rule-strong);
+  flex: none;
+}
+
+/* camada 1 — relance */
+.glance {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(16px, 2.4vw, 28px);
+  flex-wrap: wrap;
+  padding: clamp(16px, 2vw, 22px) 0 clamp(18px, 2.2vw, 24px);
+}
+/* O VALOR DO RELANCE TEM O MESMO TECTO QUE OS DA PEÇA: 56px (direção,
+   21.08.2026). Era `clamp(56px, 9vw, 88px)`, ou seja o tecto de uma peça era o
+   CHÃO deste, e a 1280 o instrumento abria com o maior algarismo da página. A
+   rampa é a mesma da peça curta — 38px a 320, 56px a 1280 —, para que o sítio
+   tenha uma escala de algarismos e não duas. */
+/* O PAR DE VALORES DO RELANCE (bloco B, item B9). Dois grupos que não quebram
+   por dentro, e uma fila que quebra entre eles: a seta viaja com o segundo
+   valor e nunca fica pendurada no fim da primeira linha. O `row-gap` é o que
+   separa as duas áreas de toque dos dois selos quando a fila quebra, e está
+   medido: sem ele os dois selos ficam a 33,8px um do outro e duas áreas de 44px
+   cruzam-se por 10,2px. */
+.glance-par {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.28em;
+  row-gap: 16px;
+}
+.glance-par-lado {
+  white-space: nowrap;
+}
+.glance-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(38px, 32px + 1.875vw, 56px);
+  font-weight: 600;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  transition: opacity 0.18s ease;
+}
+.glance-meta {
+  display: grid;
+  gap: 3px;
+  padding-bottom: 5px;
+}
+.glance-name {
+  font-size: clamp(15px, 14.3px + 0.21vw, 17px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.glance-unit {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* comandos */
+/* A FOLGA ENTRE FILAS É DE 12px E NÃO DE 8, e é uma medição (pós-fusão A2).
+   Acima de 640 os oito comandos cabem numa fila e a folga de fila não faz nada.
+   A 390 quebram em quatro, e medido: o comando tem 34px de altura, com 8px de
+   folga a fila anda de 42 em 42, e o alvo de 44px de um comando entra 2px no do
+   comando de baixo. Duas áreas sobrepostas não são um alvo maior: a de baixo
+   apanha o clique da de cima, que é a mesma coisa que a lista de excepção acima
+   diz dos selos. Com 12px a fila anda de 46 em 46 e sobra folga. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 8px;
+  align-items: center;
+  padding: 0 0 clamp(16px, 2vw, 22px);
+}
+.controls-label {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.chip {
+  font-family: var(--f-prosa);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.004em;
+  padding: 6px 13px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.chip:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.chip[aria-pressed='true'] {
+  background: var(--paper);
+  border-color: var(--ink);
+  color: var(--ink);
+  font-weight: 600;
+}
+/* A região que está a ser lida é a única que se inverte. Era o amarelo, e o
+   amarelo saiu: o estado de leitura não é um limiar publicado, e por isso
+   diz-se a tinta (`IDENTIDADE.md` §2, v3). A distinção entre escolhido e
+   escolhido-e-lido continua a ser visível: moldura de tinta contra bloco de
+   tinta, 16,39:1 contra o papel nos dois casos. */
+.chip.is-read[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.chip-plain {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+  padding: 6px 8px;
+}
+.chip-plain:hover {
+  color: var(--ink);
+  border-color: transparent;
+  text-decoration-color: var(--ink);
+}
+
+/* a régua */
+.svg-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px;
+}
+.rule-svg {
+  display: block;
+  width: 100%;
+  min-width: 660px;
+  height: auto;
+}
+.rule-svg text {
+  font-family: var(--f-prosa);
+}
+.rule-svg .tk {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rule-svg .tk-datum {
+  fill: var(--ink);
+  font-weight: 600;
+}
+.rule-svg .datum-label {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  fill: var(--ink);
+}
+.rule-svg .mk-name {
+  font-size: 12.5px;
+  fill: var(--muted);
+}
+.rule-svg .mk-val {
+  font-family: var(--f-instr);
+  font-size: 16px;
+  font-weight: 600;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rule-svg .hist-label {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  fill: var(--muted);
+}
+.rule-svg .gap-label {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rule-svg .mk {
+  cursor: pointer;
+}
+.rule-svg .mk.is-on .mk-name {
+  fill: var(--ink);
+}
+.rule-svg .mk.is-dim {
+  opacity: 0.38;
+}
+.rule-svg .mk-hit {
+  fill: transparent;
+}
+
+/* ============================================================
+   OS DESENHOS QUE AINDA ESCREVEM A COR NO GABARITO
+
+   Cinco `<rect>` e um `<circle>` estão desenhados dentro de componentes e de
+   vistas, com a cor escrita no atributo `fill` do próprio gabarito
+   (`InstrumentoConvergencia`, `InstrumentoMapa`, `MunicipioView`,
+   `AgendaView`). Esses ficheiros não são desta etapa e não foram tocados: a
+   regra da fase é que uma peça que perca um token se conserta AQUI, remapeando
+   a regra, e não abrindo a vista.
+
+   Um atributo de apresentação de SVG perde para qualquer declaração de folha de
+   estilos, e é isso que estas regras usam. Quando as etapas 2 a 4 reescreverem
+   esses desenhos, este bloco desaparece com eles.
+
+   As três barras eram amarelas, e o amarelo saiu: uma distância desenhada, uma
+   série contra o tecto legal e uma janela de publicação não são limiares
+   publicados a comparar, e por isso desenham-se a tinta e a cinzento
+   (`IDENTIDADE.md` §2, v3). As duas chapas eram do segundo papel, e passam a
+   papel: o que as separa do fundo é a moldura da peça.
+   ============================================================ */
+
+/* a distância ao limiar, na régua da convergência */
+.rule-svg [data-gap] rect {
+  fill: var(--ink);
+}
+/* a chapa por baixo do rótulo do marcador, e o anel do próprio marcador */
+.rule-svg .mk rect {
+  fill: var(--paper);
+}
+.rule-svg .mk circle {
+  stroke: var(--paper);
+}
+/* A ÁREA DE TOQUE DO MARCADOR TEM DE FICAR TRANSPARENTE, E A REGRA DE CIMA NÃO
+   CHEGAVA. `convergencia.js` desenha o `rect.mk-hit` em ÚLTIMO lugar dentro do
+   grupo do marcador, por cima do nome, do valor e do ponto. A regra de remapeio
+   `.rule-svg .mk rect { fill: var(--paper) }` (etapa 1c, `7650aed`), escrita
+   para a chapa por baixo do rótulo, apanha também este rect e ganha-lhe por
+   especificidade (0,2,1 contra 0,2,0): a área de toque pintava-se de papel e
+   tapava o marcador inteiro, no sítio no ar desde a fusão de 21.08. Medido em
+   Chromium com janela e sem cabeça (ISSUES I61): o `fill` calculado do
+   `.mk-hit` era `rgb(246, 247, 244)`. Esta regra tem a mesma especificidade
+   (0,2,1, com a classe do próprio rect) e vem DEPOIS da outra, que é o que
+   decide entre iguais. */
+.rule-svg .mk rect.mk-hit {
+  fill: transparent;
+}
+/* a chapa por baixo do rótulo do concelho aceso, no mapa */
+.map-svg [data-aceso] rect {
+  fill: var(--paper);
+}
+/* a dívida contra o tecto legal, e a série do índice, na página do município */
+.mun-distancia-svg rect,
+.mun-serie-svg rect {
+  fill: var(--ink);
+}
+
+/* camada 2 — leitura breve */
+.brief {
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+  padding: clamp(16px, 2.1vw, 22px) clamp(20px, 2.8vw, 32px);
+  display: grid;
+  gap: 9px;
+}
+.brief-text {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  letter-spacing: -0.008em;
+  max-width: 70ch;
+}
+/* A FILA DA LEGENDA NÃO GANHOU FOLGA, E DIZ-SE PORQUÊ (pós-fusão A2).
+   Medido: entre o centro do selo da última linha da frase e o centro do selo da
+   legenda há 34,1px. O da legenda já tem 44px de área; se o da frase os
+   ganhasse, as duas áreas sobrepunham-se por 9,9, e a saída seria 12px de folga
+   em cima da legenda (34,1 passa a 46,1, e sobram 2,1). Enquanto a frase for a
+   excepção medida da lista acima, essa folga não corrige nada, e uma folga que
+   não corrige nada é decoração. Fica medida aqui para o dia em que fizer falta. */
+
+/* camada 3 — fundo */
+.deep {
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.deep > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px clamp(20px, 2.8vw, 32px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.deep > summary::-webkit-details-marker {
+  display: none;
+}
+.deep > summary::before {
+  content: '';
+  width: 0;
+  height: 0;
+  flex: none;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.deep[open] > summary::before {
+  transform: rotate(90deg);
+}
+.deep > summary:hover {
+  background: var(--g3);
+}
+.deep-body {
+  padding: 4px clamp(20px, 2.8vw, 32px) clamp(22px, 2.6vw, 28px);
+  display: grid;
+  gap: 16px;
+  border-top: 1px solid var(--rule);
+}
+.deep-item {
+  display: grid;
+  gap: 4px;
+  max-width: 74ch;
+}
+.deep-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.deep-v {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+}
+.deep-v.verbatim {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  line-height: 1.75;
+  color: var(--muted);
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.prov {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.prov-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  align-items: baseline;
+  padding: 11px 13px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+@media (max-width: 640px) {
+  .prov-row {
+    grid-template-columns: 1fr;
+  }
+}
+.prov-study {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.prov-vals {
+  font-family: var(--f-instr);
+  font-size: 11.5px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* ------------------------------------------------------------ mapa */
+
+.map-grid {
+  display: grid;
+  grid-template-columns: minmax(230px, 1fr) 620px;
+  gap: clamp(20px, 3vw, 38px);
+  padding: clamp(20px, 2.8vw, 32px);
+  align-items: start;
+}
+@media (max-width: 1000px) {
+  .map-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .map-panel {
+    max-width: 620px;
+    width: 100%;
+  }
+}
+.map-panel {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+/* A calha é cinzenta, o preenchimento é tinta. */
+.cover-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(38px, 4.6vw, 52px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.cover-label {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+  max-width: 26ch;
+  line-height: 1.5;
+}
+.map-caption {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 38ch;
+}
+.map-caption b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.legend {
+  display: grid;
+  gap: 9px;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+.legend-dot i {
+  display: block;
+  border-radius: 50%;
+}
+.ld-off i {
+  width: 5px;
+  height: 5px;
+  background: var(--g2);
+}
+/* O ponto aceso era amarelo e passa a tinta: a cobertura editorial não é um
+   limiar publicado. O anel deixa de ser de tinta e passa a ser de papel, que é
+   o que separa o ponto cheio dos vazios à volta dele. */
+.ld-on i {
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  box-shadow: 0 0 0 1.5px var(--paper);
+}
+.readout {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 13px 15px;
+  min-height: 82px;
+  display: grid;
+  gap: 3px;
+  align-content: center;
+}
+.readout-name {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.readout-sub {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+.readout-hint {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.map-hint {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.map-canvas-wrap {
+  width: 100%;
+  max-width: 620px;
+  position: relative;
+  border-radius: 2px;
+}
+.map-canvas-wrap:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 6px;
+}
+.map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: manipulation;
+}
+/* O contorno é pintado por baixo do preenchimento (paint-order), o que dá o
+   anel de superfície que mantém dois pontos encostados legíveis como dois. */
+.map-svg .mun {
+  fill: var(--g2);
+  stroke: var(--paper);
+  stroke-width: 1.5;
+  paint-order: stroke;
+}
+.map-svg .mun-lit {
+  fill: var(--ink);
+  stroke: var(--paper);
+  stroke-width: 1.4;
+}
+.map-svg .mun-hit {
+  fill: transparent;
+  cursor: pointer;
+}
+.map-svg .frame {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 1.2;
+}
+.map-svg .frame-label {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+}
+.map-svg .lit-label {
+  font-family: var(--f-prosa);
+  font-size: 12.5px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.map-svg .lit-leader {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.map-svg .cursor-ring {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.map-cite {
+  padding: 0 clamp(20px, 2.8vw, 32px) clamp(20px, 2.6vw, 28px);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 96ch;
+  letter-spacing: 0.015em;
+}
+
+/* ------------------------------------------------------------ arquivo */
+
+.aviso-editorial {
+  border: 1px dashed var(--rule-strong);
+  background: var(--paper);
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 70ch;
+  margin-bottom: clamp(22px, 3vw, 32px);
+}
+
+.arquivo {
+  border-top: 1px solid var(--rule);
+}
+.arquivo-item {
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(18px, 2.4vw, 24px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 10px clamp(20px, 3vw, 36px);
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .arquivo-item {
+    grid-template-columns: 1fr;
+  }
+}
+.arquivo-titulo {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+}
+.arquivo-titulo a {
+  text-decoration: none;
+}
+.arquivo-titulo a:hover {
+  text-decoration: underline;
+}
+.arquivo-desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+  margin-top: 6px;
+}
+.arquivo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* O ESTADO DO TRABALHO, DITO UMA VEZ (bloco B, item B1). É a mesma palavra que
+   a página do trabalho põe no antetítulo, e vem da mesma leitura: sem leitura
+   escrita e sem documento, rascunho; com documento e sem leitura, «documento
+   alojado · página por escrever»; com leitura, nada, porque o trabalho está à
+   vista. */
+/* A PORTA DA LEITURA NA LINHA DO ÍNDICE (bloco F1.10, §7.4, 09.09.2026): o
+   texto de um estudo a um toque desta lista, sem passar pela página do estudo.
+   Tem a forma das portas da fila de uma edição (`.edicao-meta a`), porque é a
+   mesma porta com o mesmo nome noutro sítio. */
+.arquivo-porta {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.arquivo-porta:hover {
+  border-bottom-color: currentColor;
+}
+.arquivo-estado {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+/* AS EDIÇÕES SÃO PORTAS, e não linhas repetidas. O badge fica com a forma que
+   já tinha; o que ganha é o `href`, o alvo de fila e a sublinha ao passar. */
+.arquivo-edicoes {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+a.badge-porta {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: center;
+}
+a.badge-porta:hover {
+  border-color: var(--ink);
+  text-decoration: underline;
+}
+.arquivo-edicao-data {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.badge {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  padding: 2px 7px;
+}
+
+/* ------------------------------------------------------------ página de estudo */
+
+.estudo-blocos {
+  margin-top: clamp(28px, 4vw, 42px);
+  display: grid;
+  gap: 22px;
+}
+.estudo-accoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 2px;
+}
+/* A FRASE QUE DIZ O QUE CADA PORTA ABRE (bloco F1.10, item 8.6, 09.09.2026).
+   Vive por cima da lista das edições, uma vez. Tem a letra da prosa e não a do
+   aparelho: é uma frase que se lê, e não um rótulo que se varre. */
+.edicoes-frase {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 58ch;
+  margin: 4px 0 12px;
+}
+/* A PORTA PRINCIPAL É A DA LEITURA NO SÍTIO (bloco B, item B2). Não muda de
+   cor nem ganha caixa: ganha o peso da letra, que é o que esta casa usa para
+   dizer «esta primeiro» sem inventar um botão. */
+.estudo-accao-principal {
+  font-weight: 600;
+}
+.edicao {
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+  margin-top: 4px;
+  display: grid;
+  gap: 6px;
+}
+.edicao:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+.edicao-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: baseline;
+}
+.edicao-titulo {
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.edicao-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  align-items: baseline;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.edicao-meta a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.edicao-meta a:hover {
+  border-bottom-color: currentColor;
+}
+.estudo-descricao {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+  max-width: 62ch;
+}
+.estudo-descricao-lingua {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+/* ------------------------------------------------------------ método */
+
+.metodo-secao {
+  border-top: 1px solid var(--rule);
+  padding: clamp(24px, 3.2vw, 34px) 0;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 34px);
+  align-items: start;
+}
+@media (max-width: 780px) {
+  .metodo-secao {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+.metodo-secao h2 {
+  font-size: clamp(19px, 2vw, 23px);
+}
+.placeholder-nota {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 58ch;
+}
+.placeholder-nota b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.log-vazio {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 18px 20px;
+  display: grid;
+  gap: 8px;
+  max-width: 68ch;
+}
+.log-vazio-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.log-vazio-v {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.log-cabecalho {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr 2fr;
+  gap: 12px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .log-cabecalho {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------ 404 */
+
+.erro-404 {
+  padding: clamp(60px, 12vw, 130px) 0 clamp(50px, 8vw, 90px);
+  display: grid;
+  gap: 22px;
+  max-width: 60ch;
+}
+.erro-codigo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(56px, 9vw, 88px);
+  font-weight: 600;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.erro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------ rodapé */
+
+.rodape {
+  margin-top: clamp(56px, 7vw, 96px);
+  border-top: 1.5px solid var(--ink);
+  padding: 22px 0 60px;
+}
+.rodape-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-family: var(--f-versal);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+.rodape-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.rodape-nav a:hover {
+  color: var(--ink);
+}
+
+/* ------------------------------------------------------------ registo de correções */
+
+.log-linha {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr 2fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.log-linha:last-child {
+  border-bottom: 0;
+}
+@media (max-width: 700px) {
+  .log-linha {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+  }
+  .log-linha > div {
+    grid-column: 1 / -1;
+  }
+}
+.log-data {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+.log-valor {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--ink);
+}
+.log-valor-antigo {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.log-motivo {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 60ch;
+}
+.log-afirmacao {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 5px;
+  letter-spacing: 0.04em;
+}
+.log-afirmacao code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* ------------------------------------------------------------ método */
+
+.metodo-corpo {
+  display: grid;
+  gap: 16px;
+  max-width: 68ch;
+}
+.metodo-p {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+}
+.metodo-p strong,
+.metodo-lista strong {
+  font-weight: 600;
+}
+.metodo-lista {
+  margin: 0;
+  padding-left: 1.35em;
+  display: grid;
+  gap: 11px;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+}
+.metodo-lista li::marker {
+  color: var(--muted);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+}
+.metodo-lista-num {
+  list-style: decimal;
+}
+
+/* Marcador por resolver. Mesmo aspecto do marcador do livro-razão: quem lê
+   uma página e quem lê uma linha do livro-razão vê o mesmo sinal. */
+.marcador {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 1px 6px;
+  border: 1px solid var(--rule-strong);
+  white-space: normal;
+  letter-spacing: 0.02em;
+}
+/* A DEFINIÇÃO DO MARCADOR, AO PÉ DA PRIMEIRA OCORRÊNCIA DE CADA PÁGINA (§7.10
+   do brief F1.10, 14.09.2026). Não é uma segunda etiqueta: é prosa curta, na
+   letra do instrumento e na cor do texto secundário, a dizer o que o sinal
+   quer dizer para quem o vê pela primeira vez. `<DefinicaoDoMarcador>` rende-a
+   uma vez por página, e a régua do bloco confere que é ao pé do primeiro. */
+.marcador-definicao {
+  font-family: var(--f-instr);
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-left: 6px;
+}
+
+.marcador-gloss {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Ligação que sai do domínio. Marcada, porque sair daqui é uma mudança de
+   contexto — e o resto do sítio não faz nenhum pedido para fora. */
+.ligacao-externa {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--rule-strong);
+  overflow-wrap: anywhere;
+}
+.ligacao-externa:hover {
+  text-decoration-color: currentColor;
+}
+
+/* A caixa das correções. Fica em papel-2 com um fio à esquerda, como o registo
+   de correções logo abaixo: são a mesma conversa em dois tempos — o que se
+   pode escrever, e o que já foi corrigido. Sem cor nova (IDENTIDADE §2). */
+.caixa-correcoes {
+  display: grid;
+  gap: 10px;
+  max-width: 68ch;
+  margin-top: 4px;
+  padding: 18px 20px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+.caixa-correcoes[hidden] {
+  display: none;
+}
+.caixa-correcoes-texto {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  padding: 12px 14px;
+  width: 100%;
+  resize: vertical;
+}
+.caixa-correcoes-texto::placeholder {
+  color: var(--muted);
+}
+.caixa-correcoes-accoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+.botao-correcao {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 9px 16px;
+  cursor: pointer;
+}
+.botao-correcao:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* O endereço das correções. Vai na letra da prosa, não na monoespaçada: a
+   monoespaçada é a marca de um valor do livro-razão (IDENTIDADE §1), e um
+   endereço de correio não é uma medição. Fica sublinhado porque é uma ligação,
+   e à vista porque tem de se poder copiar quando o mailto não abre nada. */
+/* Um endereço de correio é transcrito, e o que é transcrito vai em Bitter
+   (`IDENTIDADE.md` §1, v3). É o que a porta das correções e a `<Frase>` rendem,
+   e é a única mudança de tipo que os dois componentes levam nesta etapa. */
+.ligacao-email {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+  overflow-wrap: anywhere;
+}
+.ligacao-email:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Descarga dos dados de um instrumento. Fica na camada Fundo, ao lado da
+   proveniência: quem quer os números quer também saber de onde vieram. */
+.ligacao-dados {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--rule-strong);
+}
+.ligacao-dados:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ------------------------------------------------------------ livro-razão
+
+   Disposição B do IDENTIDADE.md §3 — corpo a 68ch e coluna de aparelho a
+   300px. Não é uma quarta disposição: é a segunda das três, usada pela
+   primeira vez. O invólucro tem 1.180px; a diferença entre o corpo e o
+   invólucro é a coluna do aparelho, e por isso ela tem de fazer alguma coisa.
+   Aqui faz: os campos da ficha, o estado da proveniência e o que a página não
+   sabe.                                                                      */
+
+.linha-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+  display: grid;
+  gap: 10px;
+  max-width: 68ch;
+}
+/* O selo do valor de cabeça, na sua própria página (IDENTIDADE.md §5.3, v2).
+   Fica logo abaixo do número, com folga por cima, porque é a primeira porta do
+   recibo e não uma legenda do título. */
+.linha-selo {
+  margin-top: -2px;
+}
+/* O ESTADO DA FONTE AO PÉ DO SELO (bloco F0.11, 03.09.2026): «Sem resposta desde
+   dd.mm.aaaa», e só quando a fonte deixou de atender.
+
+   SEM COR NOVA, e a razão é constitucional: a `IDENTIDADE.md` §2 reserva a cor
+   para os limiares de uma medida, e um estado de fonte não é um limiar. O que o
+   faz ver-se é a POSIÇÃO (na cabeça, ao lado da porta para a prova) e a forma de
+   campo que o recibo já usa. A letra é a do identificador que está por baixo,
+   pela mesma razão que ele a tem: é aparelho, não é leitura, e a cabeça já tem
+   uma voz — a do número. */
+/* O ATRASO DE UMA SÉRIE AO PÉ DO SELO (bloco F1.6, 04.09.2026) tem a mesma
+   camada, a mesma posição e o mesmo desenho do estado da fonte: são dois factos
+   do mesmo tipo sobre a mesma linha, e uma segunda gramática visual para o
+   segundo era uma decisão de identidade que aquele bloco não tem. O que muda é
+   só o nome da classe, e a razão está escrita em `LinhaView.astro`: a régua do
+   estado da fonte lê a classe, e duas coisas com o mesmo nome faziam-na contar
+   um silêncio onde ele não existe. */
+.linha-selo-estado,
+.linha-selo-atraso {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.linha-selo-estado .linha-campo-k,
+.linha-selo-atraso .linha-campo-k {
+  font-size: inherit;
+}
+/* O RÓTULO DO ATRASO CORRE NA LINHA, E NÃO POR CIMA DO VALOR. `.linha-campo-k` é
+   `display: block` porque no aparelho cada rótulo vive por cima do seu campo; na
+   cabeça, a frase do atraso é UMA frase com três rótulos e três valores por
+   dentro, e em bloco ela saía em seis linhas com um rótulo em cada uma. Fica
+   escrito no relatório do bloco F1.6 que `.linha-selo-estado` tem o mesmo
+   problema pela mesma causa, e que não se conserta aqui: é o bloco F0.11 que
+   desenhou aquela linha, e mudá-la sem brief era mexer no que outro bloco
+   mediu. */
+.linha-selo-atraso .linha-campo-k {
+  display: inline;
+}
+
+/* ------------------------------------------------------------ o recibo, v2
+
+   A frase de atribuição: a mesma informação que a ficha do aparelho dá em
+   campos, dita uma vez em palavras. É a camada de leitura, e por isso cresce
+   com a escala da leitura (IDENTIDADE.md §1). */
+.linha-atribuicao {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+  max-width: 62ch;
+}
+/* A porta para a página exata do documento: é o primeiro passo da prova e
+   ganha o peso disso. */
+.linha-porta-documento {
+  margin-bottom: 16px;
+}
+
+/* O RECORTE DA LINHA IMPRESSA (bloco T2).
+
+   A imagem ocupa a largura da coluna de leitura e nunca mais do que ela: um
+   recorte tem 1000px de largura no ficheiro e a coluna tem 68ch, por isso o que
+   manda é sempre o `max-width: 100%`. A altura acompanha, porque o ficheiro não
+   declara dimensões e o formato não as guarda.
+
+   Sem cor nova (IDENTIDADE §2): o fio é `--rule`, o fundo é o mesmo papel do
+   excerto, e a legenda é a letra mono cinzenta que o resto do recibo já usa. Um
+   recorte não é um destaque, é uma prova. */
+.linha-recorte {
+  margin: 0 0 16px;
+  padding: 0;
+}
+.linha-recorte img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+.linha-recorte-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  margin-top: 7px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  color: var(--muted);
+}
+.linha-recorte-pagina {
+  letter-spacing: 0.04em;
+}
+/* A porta vive dentro da legenda quando há recorte, e o endereço cru que ela
+   leva por baixo é longo: sem isto, um ecrã de 390px ganhava rolamento lateral
+   por causa de uma cadeia que não quebra. */
+.linha-recorte-legenda a {
+  min-width: 0;
+  max-width: 100%;
+}
+.linha-pedido {
+  word-break: break-word;
+}
+/* As verificações: duas linhas, e a segunda está vazia em todas as linhas
+   publicadas. O lugar está desenhado; o que falta é o campo, não o desenho. */
+.linha-verificacoes {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 8px 18px;
+  margin: 0;
+  align-items: baseline;
+}
+.linha-verificacoes dt {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.linha-verificacoes dd {
+  margin: 0;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  color: var(--ink);
+}
+.linha-verificacoes dd a {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.linha,
+.municipio {
+  margin-top: clamp(26px, 3.4vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 68ch) 300px;
+  gap: clamp(24px, 4vw, 52px);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .linha,
+  .municipio {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
+.linha-corpo,
+.municipio-corpo {
+  display: grid;
+  gap: clamp(26px, 3.4vw, 38px);
+  min-width: 0;
+}
+/* O `min-width: 0` da coluna não chega: um item de grelha tem `min-width:
+   auto`, e por isso a largura mínima do item mais largo é a largura da pista.
+   Uma cadeia que não parte deixava de transbordar de si própria e passava a
+   levar a coluna inteira com ela, por cima do aparelho. Com isto, um bloco que
+   não parta transborda de si e mais nada, e continua visto pela medição, que é
+   contra a caixa de cada elemento e não contra a página. */
+.linha-corpo > *,
+.municipio-corpo > * {
+  min-width: 0;
+}
+
+/* É um <section>, e a regra global dá-lhes um padding de topo de página
+   inteira. Aqui são blocos dentro de uma coluna: o fio chega. */
+.linha-bloco {
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 12px;
+}
+.linha-bloco-titulo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.linha-nota {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* O valor, sozinho: a camada Relance desta página. */
+.linha-valor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-top: 4px;
+}
+.linha-valor-num {
+  font-size: clamp(40px, 5.2vw, 62px);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+.linha-valor-unidade {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.linha-id {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.linha-id code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+/* O rótulo do identificador (bloco B, item B7): a mesma forma dos rótulos do
+   aparelho, para que o campo se leia como campo. */
+.linha-id-k {
+  font-family: var(--f-versal);
+  font-variant-numeric: normal;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+/* O excerto: a prova. Levanta-se do fundo e cita-se sem aspas de enfeite —
+   as aspas que lá estiverem são as da fonte. */
+/* O excerto levantava-se do fundo com um segundo papel; agora levanta-se com o
+   fio de 3px à esquerda, que é o que a Emenda 1 deixa. */
+.linha-excerto {
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--paper);
+  border-left: 3px solid var(--rule-strong);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+/* Não há regra para o excerto que falta, e é de propósito: uma ausência nunca
+   se desenha (IDENTIDADE §6). `.linha-excerto-vazio` era um rectângulo a
+   tracejado com o marcador sozinho lá dentro, do tamanho de uma prova que não
+   existe. O que ficou é o marcador com o seu motivo, numa `.linha-nota`. */
+
+.linha-derivacao {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.linha-campo-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+
+/* O FICHEIRO ALOJADO E A CONTA SOBRE FICHEIROS (bloco T3).
+
+   Estes dois blocos escrevem o que a fonte nomeia e não o que a casa escreve:
+   nomes de ficheiro, resumos, colunas e filtros. São cadeias longas com poucos
+   sítios por onde partir, e o filtro do PRR tem 671px numa linha só. Partem
+   onde for preciso, dentro da coluna de leitura, como o endereço já parte. Sem
+   isto ficavam por dentro da largura da coluna só por sorte da cadeia.
+
+   Nada de caixa nem de cor nova (IDENTIDADE §2 e §6): é só quebra de linha. */
+.linha-alojado,
+.linha-calculado {
+  min-width: 0;
+}
+.linha-alojado-ficheiro,
+.linha-alojado-licenca,
+.linha-alojado-origem,
+.linha-calculado-lista,
+.linha-calculado-conta {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+/* O resumo curto e o corte que diz que é curto. O que se lê são os 12
+   primeiros hexadecimais, e as reticências dizem-no; o resumo inteiro está no
+   `title` do grupo e no JSON da linha. As reticências ficam FORA do elemento
+   comparado: o portão confere o campo carácter a carácter, e um carácter que a
+   linha não tem não entra lá dentro. */
+.linha-alojado-resumo {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.linha-resumo-corte {
+  color: var(--muted);
+}
+.linha-expressao,
+.linha-deriva {
+  display: grid;
+  gap: 7px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+.linha-check {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px 10px;
+  overflow-wrap: anywhere;
+}
+.linha-deriva-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+}
+.linha-deriva-ligacao {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.linha-deriva-ligacao:hover {
+  border-bottom-color: currentColor;
+}
+.linha-deriva-ligacao code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* Um campo transcrito do livro-razão. O portão confere-o carácter a carácter;
+   a letra é a mesma da prosa, porque um excerto é uma frase e não um valor. */
+.campo-valor {
+  color: inherit;
+}
+.campo-por-verificar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* ------------------------------------------------- a coluna do aparelho */
+
+.aparelho {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+  border-top: 1.5px solid var(--ink);
+  padding-top: 16px;
+  font-size: 13.5px;
+}
+.aparelho-titulo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.aparelho-ficha {
+  margin: 0;
+  display: grid;
+  gap: 15px;
+}
+.aparelho-ficha dt {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.aparelho-ficha dd {
+  margin: 3px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.aparelho-nota {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.aparelho-bloco {
+  display: grid;
+  gap: 6px;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+.aparelho-estado {
+  display: grid;
+  gap: 7px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 14px 16px;
+}
+/* Falta um campo: a mesma marca a tracejado do selo, sem cor nova. */
+.aparelho-estado-incompleto {
+  border-style: dashed;
+  border-color: var(--rule-strong);
+  background: transparent;
+}
+.aparelho-faltas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 8px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  color: var(--ink);
+}
+.aparelho-faltas code {
+  font-family: inherit;
+  background: var(--paper);
+  padding: 1px 5px;
+  border: 1px solid var(--rule);
+}
+/* ---------------------------------------------------------------------------
+ * A LEGENDA DA MARCA DA FONTE (F1.13, item 5, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * `.aparelho-selos` era a lista de dois itens da legenda antiga, cada um com o
+ * seu quadrado numa coluna de 14 px e o nome do estado na outra. A legenda passou
+ * a ser uma linha em palavras com as duas amostras DENTRO da frase, e por isso a
+ * grelha saiu: o que fica é um parágrafo de aparelho, no corpo e na cor da
+ * mobília, com as amostras a correr no meio do texto.
+ *
+ * `vertical-align` E NÃO `padding-top`: o quadrado da amostra vem do `::before`
+ * do selo, e dentro de uma linha de texto ele assenta na linha de base. Meio
+ * ponto acima é onde ele fica à altura do olho das minúsculas que o rodeiam.
+ * ------------------------------------------------------------------------- */
+.marca-legenda {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.marca-legenda .src-chip-amostra {
+  vertical-align: -0.5px;
+}
+/* A legenda fora da coluna do aparelho (a lista dos concelhos do livro-razão):
+   é a mesma linha, com o ar que a separa do que vem antes dela. */
+.marca-legenda-solta {
+  margin-top: clamp(30px, 4vw, 44px);
+}
+.aparelho-saidas {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+
+/**
+ * As portas do conjunto de dados, na coluna do aparelho do índice do
+ * livro-razão. Monoespaçada porque são nomes de formato, não prosa
+ * (IDENTIDADE.md §1: a mono é a letra da mobília e dos rótulos).
+ */
+.livro-conjunto-portas {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------- índice do livro-razão */
+
+.livro-lista {
+  display: grid;
+  border-top: 1px solid var(--rule);
+}
+/* ---------------------------------------------------------------------------
+ * `.livro-item` SAIU DAQUI, E FOI PARA `linha.css` (15.09.2026, achado 10 da
+ * leitura a frio do Codex ao F1.13)
+ * ---------------------------------------------------------------------------
+ * A regra estava escrita nas DUAS folhas, com a mesma especificidade e com
+ * `grid-template-columns` diferente (9ch aqui, 22ch em `linha.css`), e por isso
+ * quem decidia a composição era a ORDEM por que o empacotador punha as duas
+ * folhas na página. Essa ordem não está escrita em lado nenhum: era emergente do
+ * grafo de módulos, e mudava com um componente novo partilhado. O F1.13 mudou-a
+ * sem querer em 18 páginas, e a leitura a frio apanhou-o.
+ *
+ * A DECISÃO DO LUGAR DE DIREÇÃO é manter o estado novo, que é o que o índice dos
+ * números e fontes já tinha, e escrevê-lo UMA VEZ, de propósito, no sítio que
+ * serve a família que tem o elemento. Medido antes de mover: das 638 páginas que
+ * rendem um `.livro-item`, 638 carregam `linha.css` e nenhuma o dispensa. A
+ * regra inteira vive agora lá, com as propriedades que só aqui estavam, e a
+ * ordem das folhas deixou de decidir coisa nenhuma sobre ela.
+ * ------------------------------------------------------------------------- */
+.livro-item-num {
+  font-size: 17px;
+}
+.livro-item-corpo {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.livro-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+}
+.livro-item-unidade {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.livro-item-id {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+/* O NOME DA MEDIDA, ONDE A FONTE O IMPRIME (29.08.2026).
+   Ocupa o lugar do identificador e não se compõe como ele: um identificador é
+   uma cadeia técnica e vai no tipo do instrumento; um nome é uma cadeia que se
+   lê, e vai no tipo da prosa. O corpo é o mesmo da linha de baixo mais dois
+   pontos, para que o nome encabece sem gritar. `overflow-wrap` porque os
+   rótulos do INE têm 170 caracteres e uma cadeia que não parta empurra a
+   grelha. */
+.livro-item-nome {
+  display: block;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------- histórico de uma linha */
+
+.historico {
+  display: grid;
+  gap: 14px;
+}
+.historico-entrada {
+  display: grid;
+  gap: 7px;
+  border-left: 3px solid var(--rule-strong);
+  padding: 2px 0 2px 14px;
+}
+/* UMA CORREÇÃO DIZ-SE PELA FORMA, E JÁ NÃO PELA COR (`IDENTIDADE.md` §2, v3).
+   A cor da confissão saiu, com o nome que tinha e que está escrito em
+   `DECISIONS.md` §1.50: a entrada de correção distingue-se da entrada de
+   atualização pelo fio da esquerda a tinta contra o fio cinzento das outras, e
+   não por um matiz. A forma final do registo (valor antigo riscado a cinzento, valor novo
+   a tinta, a data) é da etapa 4 e espera a decisão (c) do plano; aqui muda a
+   cor e não muda a forma. */
+.historico-entrada-correcao {
+  border-left-color: var(--ink);
+}
+.historico-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+
+/* ------------------------------------------------------------ registo: dois grupos */
+
+.registo {
+  display: grid;
+  gap: 26px;
+  max-width: 68ch;
+}
+.registo-grupo {
+  display: grid;
+  gap: 10px;
+}
+
+/* Correções: a confissão. Leva o peso, e já não leva cor: o fio de tinta a
+   3px é o que a distingue de um grupo de atualizações. */
+.registo-grupo-correcoes {
+  border-left: 3px solid var(--ink);
+  padding: 4px 0 4px 18px;
+}
+.registo-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.registo-titulo {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+.registo-conta {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.registo-conta .claim-value {
+  color: inherit;
+}
+.registo-nota {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+  max-width: 58ch;
+}
+.registo-lista {
+  margin-top: 6px;
+}
+
+/* Atualizações: em surdina. Sem cor, sem caixa, uma linha cada. */
+.registo-grupo-atualizacoes {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+.registo-titulo-quieto {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.registo-nota-quieta {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.registo-linhas {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+.registo-linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--rule);
+}
+.registo-linha:last-child {
+  border-bottom: 0;
+}
+/* O «antigo → novo» de uma entrada. Era `white-space: nowrap`, e o que essa
+   linha protegia era o número: «166 639 411,36» não se parte no espaço dos
+   milhares. Não é preciso o `nowrap` para isso, porque o espaço dos milhares
+   que o sítio escreve é U+202F, que já não parte; o que o `nowrap` fazia era
+   pôr um endereço de 1.188px numa linha só, e com ele a largura mínima da
+   entrada inteira. Num item de grelha essa largura mínima é a da pista, e a
+   coluna do corpo entrava na do aparelho (§1.47). Parte onde for preciso,
+   como o endereço da agenda passou a partir (§1.43). */
+.registo-salto {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12.5px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.registo-motivo-curto {
+  flex: 1 1 22ch;
+  min-width: 0;
+}
+.registo-id {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* Etiqueta da natureza da entrada. Redundante com o grupo, de propósito: o
+   título do grupo é texto do gabarito, esta etiqueta vem do livro-razão e é
+   conferida contra ele. */
+.etiqueta-kind {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+}
+.etiqueta-correcao {
+  color: var(--ink);
+}
+
+/* =============================================================== município
+
+   A página de um município. Disposição B do IDENTIDADE.md §3 — a MESMA das
+   páginas de linha do livro-razão, e não uma quarta: por isso partilha as
+   regras da grelha em vez de as copiar (ver `.linha, .municipio` acima).
+
+   O que é próprio desta página:
+     - o mosaico do relance é a grelha `.figuras` da primeira página, sem
+       alteração, com um estado vazio desenhado (`.figura-vazia`);
+     - a distância entre a dívida e o tecto legal é desenhada com o amarelo,
+       que aqui marca a medição e mais nada (IDENTIDADE §2);
+     - a linha do tempo das administrações é um instrumento: leva as três
+       camadas e vive dentro do corpo (IDENTIDADE §4).
+   Nenhum acento novo. Nenhuma cor nova. Tudo o que distingue distingue-se com
+   fio, fundo e letra monoespaçada.                                          */
+
+.municipio-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+  display: grid;
+  gap: 12px;
+  max-width: 68ch;
+}
+.municipio-sub {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* O estado vazio de um mosaico: nenhuma fonte publica esta medida para este
+   concelho. Não há número e não há selo — um selo que não abre porta nenhuma
+   seria uma legenda, e a promessa do Método ficaria falsa (IDENTIDADE §5.1).
+   O lugar do número leva o único marcador de incerteza do sítio (§6). */
+.figura-vazia {
+  background: var(--paper);
+  border-style: dashed;
+}
+.figura-vazia .figura-num {
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--muted);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* A distância desenhada: a dívida contra o tecto legal. */
+.mun-distancia {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: clamp(16px, 2vw, 22px);
+  display: grid;
+  gap: 12px;
+}
+.mun-distancia-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.mun-distancia .tk {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9px;
+  fill: var(--muted);
+}
+.mun-distancia .mun-barra-rot,
+.mun-distancia .mun-tecto-rot {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.mun-distancia .mun-tecto-rot {
+  fill: var(--muted);
+}
+.mun-distancia-legenda {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* A NOTA DO INSTRUMENTO DOS MANDATOS (G6, 26.08.2026). Onde estava uma dobra
+   «Como esta linha do tempo é feita» ficam três parágrafos à vista, na letra e
+   na cor da legenda de qualquer instrumento desta página: os dois valores do
+   excesso com a sua frase, e as duas ressalvas de uma linha que sobreviveram às
+   secções retiradas. Nada de novo na folha: só o espaçamento do bloco e a
+   versalete do rótulo, que é a mesma dos outros rótulos de campo. */
+.mun-tempo-notas {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+}
+.mun-tempo-nota-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11.5px;
+  color: var(--ink);
+}
+
+/* A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11).
+
+   Cada mandato ocupa no desenho o tempo que ocupou. Sem acento novo: um
+   mandato não é uma medição, e por isso a banda distingue-se com fundo, fio e
+   letra monoespaçada, que é o que a §2 manda usar quando é preciso distinguir
+   sem matiz. O mandato em curso não tem fim publicado e por isso não tem aresta
+   direita: fecha a tracejado, a mesma língua com que o selo diz que falta um
+   campo (§7, o estado desenhado).                                            */
+.mun-banda {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.mun-banda-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+/* A ARESTA É O SEGMENTO. O preenchimento é a grelha, `--g3`, e sobre o papel
+   mede 1,28:1: não desenha nada, e o que separa um mandato do seguinte é a
+   aresta. Por isso ela é objeto de interface e não arrumação, e vai em
+   `--muted`, que mede 6,24:1 contra o papel e 4,88:1 contra o preenchimento em
+   claro. `--rule-strong` (= `--g2`) mediria 2,71:1 contra o preenchimento e não
+   chega aos 3:1 da 1.4.11. Medido em `scripts/medir-contraste.mjs`. */
+.mun-banda-seg {
+  fill: var(--g3);
+  stroke: var(--muted);
+  stroke-width: 1;
+}
+.mun-banda-seg.is-aberto {
+  fill: none;
+  stroke-dasharray: 3 3;
+}
+.mun-banda-lista {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  fill: var(--ink);
+}
+.mun-banda .tk {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9px;
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+}
+.mun-banda-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.mun-banda-porta {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+}
+.mun-banda-porta:hover {
+  text-decoration-color: currentColor;
+}
+
+/* A linha do tempo das administrações. */
+.mun-tempo {
+  display: grid;
+}
+.mun-mandato {
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  display: grid;
+  gap: 10px;
+}
+.mun-mandato:last-child {
+  border-bottom: 0;
+}
+.mun-mandato-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+}
+.mun-mandato-periodo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.mun-mandato-quem {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.mun-mandato-lista {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 1px 6px;
+}
+.mun-mandato-instalado {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  color: var(--muted);
+}
+.mun-campos {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 15ch minmax(0, 1fr);
+  gap: 6px 16px;
+}
+@media (max-width: 600px) {
+  .mun-campos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .mun-campos dd {
+    margin-bottom: 8px;
+  }
+}
+.mun-campos dt {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 3px;
+}
+.mun-campos dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.mun-campos dd .src-chip {
+  margin-left: 6px;
+}
+/* Um campo que a fonte não estabelece. Diz-se; não se deixa em branco. */
+.mun-campo-vazio {
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+/* Os estudos que tomaram o concelho por objecto: uma lista de TÍTULOS, e cada
+   título é a porta do seu estudo (F1.10, §1 e 8.6, 09.09.2026). As sinopses
+   saíram para `/estudos`, que é o lugar de apresentação inteira delas, e com
+   elas saiu a segunda porta de cada cartão, que era um destino repetido. */
+.mun-estudos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  border-top: 1px solid var(--rule);
+}
+.mun-estudo {
+  border-bottom: 1px solid var(--rule);
+}
+.mun-estudo a {
+  display: block;
+  padding: 14px 0;
+  text-decoration: none;
+}
+.mun-estudo-titulo {
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.mun-estudo a:hover .mun-estudo-titulo {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* A porta para o índice dos estudos, filtrado por este concelho. */
+.mun-estudos-porta {
+  margin-top: 14px;
+}
+/* A porta que devolve a lista inteira do índice dos estudos, quando o endereço
+   traz `?concelho=`. Chega escondida do servidor. */
+.arquivo-todos {
+  margin-bottom: clamp(14px, 2vw, 20px);
+}
+
+/* ------------------------------------------------ leitura de um estudo
+
+   A página de um estudo migrado ganha as três camadas do IDENTIDADE §4:
+   a medida que faz o trabalho valer a pena, a frase do que concluiu, e o
+   fundo com o método, as ressalvas e o documento. Reaproveita a mobília das
+   camadas (`.layer-tag`, `.glance`, `.deep`) — não inventa vocabulário novo. */
+
+.leitura {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  margin-top: clamp(24px, 3vw, 34px);
+}
+.leitura-topo {
+  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.8vw, 32px) clamp(18px, 2.2vw, 24px);
+  display: grid;
+  gap: 14px;
+}
+.leitura-medidas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 40px);
+}
+.leitura-medida {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+}
+.leitura-medida-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.leitura-medida-nome {
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 34ch;
+}
+.leitura-breve {
+  padding: 0 clamp(20px, 2.8vw, 32px) clamp(20px, 2.4vw, 26px);
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(18px, 2.2vw, 24px);
+}
+.leitura-frase {
+  font-size: clamp(16px, 1.6vw, 18.5px);
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+  max-width: 60ch;
+}
+
+/* Os selos dos valores desenhados dentro de um SVG. Um <a> dentro de um SVG
+   não se lê como porta; o selo fica ao lado do desenho, como no instrumento
+   n.º 1 (IDENTIDADE §5.3 — onde aparece um valor, aparece o selo). */
+.mun-distancia-selos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-top: 4px;
+}
+/* -----------------------------------------------------------------------
+   OS RÓTULOS DOS DESENHOS DO CONCELHO, COMO TEXTO POR BAIXO A 390
+   -----------------------------------------------------------------------
+   §7.10 do brief F1.10, 14.09.2026, e o penúltimo dos cinco pequenos. Os dois
+   desenhos desta página têm 720 unidades de largura e a folha dá-lhes 100 % da
+   coluna: o que o SVG escreve a 12 px chega ao leitor muito mais pequeno do que
+   isso. MEDIDO, nas duas edições, com
+   `design/especime-v3/medicoes/lugar-2026-09-04/rotulos-390.mjs`: dos seis
+   rótulos desenhados da página, quatro estão à vista, e a altura de letra com
+   que chegam ao leitor é de 5,2 px a 390 e de 7,97 px a 1 280. Os outros dois,
+   os da barra da distância, medem 0 porque a dobra que os contém abre ao toque
+   e a medição é com ela fechada.
+
+   A TROCA É DA FOLHA E NÃO DO SERVIDOR: o documento manda sempre os dois, e a
+   largura decide qual se lê. Acima de 640 lêem-se os do desenho, que é onde
+   cada número está ao pé da sua barra; a 640 ou abaixo saem os do desenho e
+   entram os da legenda, ao pé do selo de cada valor. O mesmo número visível
+   duas vezes na mesma largura seria a bifurcação que a L1 deste bloco conta. */
+.mun-legenda-e {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.mun-legenda-k,
+.mun-legenda-val {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mun-distancia .mun-barra-rot,
+  .mun-distancia .mun-tecto-rot,
+  .mun-serie-val {
+    display: none;
+  }
+  .mun-legenda-k,
+  .mun-legenda-val {
+    display: inline;
+    font-family: var(--f-instr);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: 12px;
+  }
+  .mun-legenda-k {
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .mun-legenda-val {
+    font-weight: 600;
+    color: var(--ink);
+  }
+}
+
+.mun-selo-rot {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* A série do índice contra o tecto legal. */
+.mun-serie-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  margin: 4px 0 2px;
+}
+.mun-serie-svg .tk {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  fill: var(--muted);
+}
+.mun-serie-val {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+/* Um valor sem selo dentro de uma frase corrida ficaria colado ao seguinte. */
+.deep-v .claim-com-chip,
+.figura-medida .claim-com-chip,
+.leitura-frase .claim-com-chip {
+  white-space: nowrap;
+}
+
+/* =============================================================== a porta das
+   correções. Vive no aparelho de cada tipo de página; quando a página não tem
+   coluna de aparelho, entra antes do rodapé, com um fio a separá-la do corpo. */
+.porta-correccoes {
+  display: grid;
+  gap: 6px;
+}
+/* A PORTA DO RODAPÉ VIVE DENTRO DO `<footer>` desde 04.09.2026 (bloco F1.7), e
+   por isso perde o fio e a margem que a separavam do corpo: o `<footer>` já traz
+   o seu fio de 1,5px e o seu ar por cima, e dois fios seguidos seriam uma
+   separação a dizer duas vezes a mesma coisa. O que fica é a largura de leitura
+   e o ar até à navegação, que é o irmão de baixo. */
+.porta-correccoes-rodape {
+  max-width: 68ch;
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+}
+
+/* ======================================================== índice de concelhos.
+   Uma lista de nomes e de estados. Sem números por concelho: a única medição da
+   página é a contagem, e essa entra pelo livro-razão. */
+.concelhos {
+  margin-top: clamp(28px, 3.5vw, 40px);
+  display: grid;
+  gap: clamp(20px, 2.6vw, 30px);
+}
+.concelhos-grupo-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin: 0 0 10px;
+}
+.concelhos-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2px 18px;
+}
+/* ---------------------------------------------------------------------------
+ * A FICHA DE UM CONCELHO É UM ALVO DE 44 px (bloco F1.7, item 4, 04.09.2026)
+ * ---------------------------------------------------------------------------
+ * A auditoria de 02.09 contou «344 alvos abaixo de 44 px em /municipios», e a
+ * medição deste bloco achou o número maior: a ficha media 23,2 px de caixa e
+ * 23,4 px de toque, em todas as larguras, nas duas edições, e o mesmo em
+ * `/distritos/<slug>` e em `/livro-razao/concelhos`, que partilham esta lista.
+ * Uma parede de 308 nomes onde nenhum é tocável é uma parede.
+ *
+ * 44 px EM TODAS AS LARGURAS, e não 44 abaixo de 1024 com 32 acima. A Emenda 20c
+ * deixa 32 px às linhas de nome a partir de 1024, e essas linhas de nome são as
+ * 29 do mapa da primeira página, que é onde a emenda as escreveu e onde
+ * `tests/inicio/lista.mjs` as mede. Esta lista não é essa: é o índice por onde se
+ * chega a um concelho, e o brief pede-lhe os 44 px. Dar-lhe 32 acima de 1024
+ * seria uma segunda regra a decidir a mesma coisa em dois sítios.
+ *
+ * O ALVO É A PORTA E NÃO A FILA. `align-items: center` em vez de `baseline`
+ * porque a porta passa a ter altura própria e a palavra de estado ao lado tem de
+ * ficar a meio dela; o `padding` vertical sai, porque quem dá a altura agora é o
+ * `min-height` da porta e somar os dois dava 52 px de fila sem alvo nenhum a
+ * mais. A fila cresce de 23,2 px para 44: medido em `/municipios` a 1280, a
+ * lista passa de 62 filas de 23,2 px para 62 de 44.
+ */
+.concelho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--rule);
+  min-height: 44px;
+}
+/* Uma entrada SEM página não é um alvo: não tem porta nenhuma para abrir. Fica
+   com a altura da fila, que é a da lista, e não com um alvo que não abre nada. */
+.concelho-nome {
+  font-size: 14.5px;
+  color: var(--ink);
+}
+.concelho-estado {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.concelho-com-pagina a {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  /* A PORTA ENCHE A FILA, nas duas dimensões. `min-width` também: «Ourém →» mede
+     56 px e «Lagoa →» 52,9, mas um nome curto numa edição que o encurte podia
+     ficar abaixo dos 44 px de largura, e um alvo que é 44 num sentido só é 44 no
+     papel (é a lição que a L5 de `tests/inicio/lista.mjs` já tinha escrito). */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+.concelho-com-pagina .concelho-estado {
+  color: var(--ink);
+}
+
+/* O endereço de uma linha: o rótulo que diz o que a ligação abre, e por baixo o
+   endereço tal como está guardado — os dois dentro da mesma âncora, para que o
+   portão continue a poder conferir o destino contra o campo. */
+.linha-endereco-abrir {
+  display: block;
+  font-size: 13px;
+}
+.linha-endereco-bruto {
+  display: block;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   SOBRE · MÉTODO · CORREÇÕES — a voz do sítio (16.08.2026)
+   ============================================================ */
+
+/* ------------------------------------------------------------ /sobre */
+
+/* Disposição A, com uma diferença: o texto decidido é a lede da página, e não
+   há mais nada a seguir a não ser a porta. */
+.sobre-secao {
+  padding-top: clamp(24px, 3.4vw, 40px);
+}
+/* A REGRA DOS NOMES, no Sobre (bloco P3, 16.09.2026, item 8). Não é um `lede`:
+   é a norma que a página declara depois de dizer o que a coisa é, e compõe-se
+   como a prosa do Método, que é onde as outras regras vivem. Não acrescenta
+   largura nenhuma: é a mesma coluna dos parágrafos de cima. */
+.sobre-nomes {
+  margin: 18px 0 0;
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: var(--measure);
+}
+.sobre-texto {
+  max-width: 62ch;
+}
+.sobre-porta {
+  margin-top: clamp(22px, 3vw, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+.sobre-porta a {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--rule-strong);
+  padding-bottom: 2px;
+}
+.sobre-porta a:hover {
+  border-bottom-color: var(--ink);
+}
+.sobre-porta-nota {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ------------------------------------------------------------ as regras */
+
+.regra-cabeca {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.regra-n {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 1.6em;
+}
+.regra-linha {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 4px 14px;
+  align-items: baseline;
+}
+@media (max-width: 640px) {
+  .regra-linha {
+    grid-template-columns: 1fr;
+  }
+}
+.regra-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.regra-v {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--muted);
+  max-width: 66ch;
+}
+.regra-linha-prova .regra-v {
+  color: var(--ink);
+}
+.regra-prova {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.9;
+}
+.regra-prova-nota {
+  color: var(--muted);
+}
+/* O ponto médio entre duas provas da mesma regra. Estava em `--rule-strong`,
+   que mede 1,83:1 sobre papel: separava duas leituras e não se via. Passa a
+   `--muted` (6,87:1 em claro, 6,64:1 em escuro), que é a ficha da mobília. */
+.regra-sep {
+  color: var(--muted);
+}
+.regra-portas {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.regra-portas a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.regra-portas a:hover {
+  color: var(--ink);
+}
+
+/* ---------------------------------------------- os números do próprio sítio */
+
+/*
+ * IDENTIDADE §10. Monoespaçado como todo o número que não é prosa, mas SEM
+ * selo: não é um valor do livro-razão. É sempre uma ligação, e o sublinhado
+ * é o que diz que se abre.
+ */
+.prova-valor {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  /* O fio é a porta: é ele que diz que este número abre alguma coisa, e é a
+     única marca que estes números levam, porque selo não levam (§10). Em
+     `--rule-strong` media 1,83:1 sobre papel e a porta lia-se como sublinhado
+     de enfeite; em `--muted` mede 6,87:1 em claro e 6,64:1 em escuro. É a
+     mesma correção que a v2 fez ao selo, pela mesma razão: a promessa mais
+     exposta do sítio era a mais fácil de não ver. */
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+.prova-valor:hover {
+  border-bottom-color: var(--ink);
+}
+.prova-vazio {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------ o instrumento */
+
+.mecanismo {
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(18px, 2.4vw, 26px) 0 clamp(16px, 2vw, 22px);
+}
+.mecanismo-svg {
+  display: block;
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+}
+.mecanismo-caixa {
+  fill: var(--paper);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+.mecanismo-rotulo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  fill: var(--ink);
+}
+.mecanismo-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 19px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.mecanismo-cap {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  fill: var(--muted);
+}
+.mecanismo-cap-so {
+  font-size: 10px;
+}
+.mecanismo-seta {
+  stroke: var(--rule-strong);
+  stroke-width: 1.2;
+  fill: none;
+}
+.mecanismo-seta-longa {
+  stroke-dasharray: 3 3;
+}
+.mecanismo-ponta {
+  fill: var(--rule-strong);
+}
+.mecanismo-legenda {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mecanismo-legenda-k {
+  font-weight: 700;
+  color: var(--muted);
+}
+.mecanismo-legenda a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.mecanismo-legenda a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.mecanismo-breve {
+  margin-top: 16px;
+  max-width: 60ch;
+}
+
+/* ---------------------------------------------------------------------------
+   O DIAGRAMA EM LISTA, PARA O TELEMÓVEL (F1.10, §7.9, 09.09.2026)
+   ---------------------------------------------------------------------------
+   As duas formas estão no documento e a largura escolhe qual se vê: a 780 px
+   para cima, o desenho e a sua legenda; abaixo, a lista das mesmas caixas, cada
+   uma com a sua porta lá dentro. 780 é a largura em que `.svg-scroll` deixa de
+   arrastar de lado, e por isso é onde o desenho deixa de estar cortado.
+
+   A LISTA NÃO TEM MARCA NEM RECUO: são caixas, e cada uma é um bloco com o seu
+   fio, como as do desenho. */
+.mecanismo-lista {
+  display: none;
+}
+.mecanismo-item-k {
+  font-family: var(--f-instr);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mecanismo-item-v {
+  margin-top: 4px;
+}
+.mecanismo-item-porta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 8px;
+  min-height: 44px;
+  align-content: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+.mecanismo-item-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 17px;
+  font-weight: 600;
+}
+.mecanismo-item-cap {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.mecanismo-item-porta:hover .mecanismo-item-cap {
+  color: var(--ink);
+}
+.mecanismo-item-nota {
+  margin-top: 2px;
+  font-family: var(--f-instr);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 779px) {
+  /* O DESENHO E A SUA LEGENDA SAEM, E A LISTA ENTRA. Era o desenho a arrastar-se
+     de lado dentro de uma caixa de 390 px, com uma fila de palavras soltas por
+     baixo: as portas da legenda, sem o sujeito de cada uma. */
+  /* A LEGENDA VIVE DENTRO DO `.svg-scroll` desde 09.09.2026, e some com ele:
+     a segunda regra fica escrita para o caso de ela voltar a sair de lá. */
+  .mecanismo .svg-scroll,
+  .mecanismo-legenda {
+    display: none;
+  }
+  .mecanismo-lista {
+    display: grid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .mecanismo-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+/* ------------------------------------------------------------ /estudos */
+
+.estudos-contagens {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* -------------------------------------------------------------- /agenda */
+/* Disposição A (IDENTIDADE §3): a coluna de rótulo leva o estado, o corpo leva
+   os itens. Sem acento novo: os estados são rótulos de texto em monoespaçada,
+   e o que separa um item do seguinte é fio e fundo, não matiz (§2). */
+
+.agenda-estado {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* O QUADRO DE ESTADOS, no topo (IDENTIDADE §7 e §11).
+
+   Quatro colunas, uma por estado, e a coluna vazia desenha-se como as outras:
+   um zero é um estado, não uma ausência. Cada contagem é uma porta para a
+   secção que a mostra, nesta mesma página (§10, v2). Sem acento novo: o que
+   separa as colunas é fio e fundo.                                          */
+.quadro-estados {
+  margin-top: clamp(22px, 3vw, 32px);
+  display: grid;
+  gap: 10px;
+}
+.quadro-estados-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.quadro-estados-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+@media (max-width: 700px) {
+  .quadro-estados-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.quadro-estados-col {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: clamp(14px, 1.8vw, 20px);
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  text-decoration: none;
+  color: inherit;
+}
+.quadro-estados-n {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(30px, 3.4vw, 40px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  border-bottom: 0;
+  padding-bottom: 0;
+  white-space: normal;
+}
+a.quadro-estados-col .quadro-estados-e {
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 3px;
+}
+a.quadro-estados-col:hover .quadro-estados-e {
+  text-decoration-color: var(--ink);
+}
+.quadro-estados-e {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  justify-self: start;
+}
+.quadro-estados .prova-vazio {
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.agenda-item {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+.agenda-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.agenda-item-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-family: var(--f-versal);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--muted);
+}
+.agenda-estado-marca {
+  color: var(--ink);
+}
+.agenda-titulo {
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.35;
+  max-width: 44ch;
+}
+.agenda-bloco {
+  display: grid;
+  gap: 8px;
+}
+.agenda-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-k-inline {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-nota {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+}
+.agenda-vazio,
+.agenda-vazio-inline {
+  color: var(--muted);
+}
+.agenda-criterios {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.agenda-criterio {
+  display: grid;
+  gap: 5px;
+  padding-left: 12px;
+  border-left: 2px solid var(--rule);
+}
+.agenda-criterio-tipo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-quadro {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.agenda-criterio-nota {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.agenda-linhas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+/* A porta para o documento que a nota cita. Mesma escala da nota: é aparelho
+   do critério, não uma segunda afirmação. */
+.agenda-documentos {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.agenda-sem-data {
+  font-size: 13px;
+  color: var(--muted);
+}
+.agenda-datas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.agenda-historico {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.agenda-historico-entrada {
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 12px;
+  display: grid;
+  gap: 5px;
+}
+.agenda-historico-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-historico-estados {
+  color: var(--ink);
+}
+.agenda-historico-motivo {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 64ch;
+}
+/* O EIXO DO TEMPO DO CALENDÁRIO (IDENTIDADE §11).
+
+   Um instrumento dentro de uma página não é uma quarta disposição (§3): a
+   agenda fica em A, e o eixo atravessa as duas colunas porque é essa a largura
+   que os instrumentos têm. A caixa rola por dentro, e não empurra a página
+   (§11, móvel).                                                             */
+.agenda-calendario .metodo-corpo {
+  grid-column: 2;
+}
+.agenda-eixo {
+  grid-column: 1 / -1;
+  margin-top: clamp(18px, 2.4vw, 26px);
+  display: grid;
+  gap: 12px;
+}
+@media (max-width: 780px) {
+  .agenda-calendario .metodo-corpo,
+  .agenda-eixo {
+    grid-column: 1;
+  }
+}
+.agenda-eixo-caixa {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 14px 16px;
+}
+.agenda-eixo-svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+.agenda-eixo .tk {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10px;
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+}
+.agenda-eixo .ev-d {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--ink);
+  letter-spacing: 0.02em;
+}
+.agenda-eixo-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.agenda-eixo-porta {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--ink);
+  text-underline-offset: 3px;
+  text-decoration-color: var(--muted);
+}
+.agenda-eixo-porta:hover {
+  text-decoration-color: currentColor;
+}
+
+.agenda-eventos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 18px;
+}
+.agenda-evento {
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  display: grid;
+  gap: 7px;
+}
+.agenda-evento-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-evento-data {
+  color: var(--ink);
+}
+.agenda-evento-titulo {
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 58ch;
+}
+.agenda-excerto {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--rule-strong);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+}
+.agenda-afecta a {
+  font-size: 11.5px;
+}
+
+/* ==================================================================== o móvel
+
+   `IDENTIDADE.md` §11, e é a promessa mais fácil de partir sem dar por isso:
+   uma coisa por linha; o valor, o título e o selo num só grupo visível; os
+   instrumentos rolam dentro da sua caixa e não empurram a página.
+
+   O que se segue é o que faz a última parte ser verdade. Medido, não visto: a
+   régua é o `scrollWidth` do documento com o ecrã a 390px, e os números estão
+   em `DECISIONS.md` §1.43. Uma página que rola de lado a 390 não é uma questão
+   de gosto: parte as frases ao meio contra a borda, e um leitor de telemóvel é
+   a maior parte dos leitores.                                                */
+
+/* UM ENDEREÇO NÃO É UMA PALAVRA. Um endereço de 115 caracteres numa fonte
+   monoespaçada tem 700px de largura mínima e não parte em lado nenhum: era ele
+   que fazia a agenda medir 574px de largura num ecrã de 390. Parte-se onde for
+   preciso, como a `.ligacao-externa` já parte. */
+.mono,
+.agenda-afecta,
+.agenda-documentos,
+.agenda-linhas {
+  overflow-wrap: anywhere;
+}
+
+/* O SELO NUNCA EMPURRA A PÁGINA, e na v3 isso deixou de precisar de regra: o
+   selo é um elemento em linha e parte onde a linha parte, como qualquer texto.
+   A regra `flex-wrap: wrap` que vivia aqui governava a caixa flexível que ele
+   já não é, e uma regra que não governa nada engana quem a lê. */
+
+/* AS BARRAS DE COMPOSIÇÃO SAÍRAM DA FOLHA (etapa 2l). Desenhavam o quadro das
+   três parcelas da CAOP, ao lado do mapa da primeira página, e a Emenda 17
+   mandou essa contagem para `/municipios`: nenhuma página construída rende hoje
+   um `.compo` (conferido no `dist`, com controlo positivo). Uma regra sem
+   elemento mente sobre o que a folha desenha, e é a mesma razão que tirou a
+   `.method-line` na Emenda 11. Quando `/municipios` desenhar as parcelas, a
+   etapa 3 escreve as regras que precisar. */
+
+/* ============================================================================
+ * AS CORREÇÕES DE UX DE 25.08.2026 · BLOCO A · o que é do cabeçalho e do que
+ * o dedo alcança. As três regras deste bloco que valem em todo o sítio, e não
+ * só na primeira página: a cabeça mais baixa no telemóvel (A7), o chão de 12px
+ * do texto no telemóvel (A9) e as áreas de toque (A10).
+ * ========================================================================= */
+
+/* ----------------------------------------------------------------------------
+ * A7 · A CABEÇA MAIS BAIXA NO TELEMÓVEL
+ * ----------------------------------------------------------------------------
+ * A auditoria mediu: a mobília mede 213px em todas as páginas e 259px na
+ * primeira, e o primeiro título de conteúdo aparece entre 233 e 266px, 0,35 a
+ * 0,40 ecrãs (achado D6). O que a decisão manda, abaixo de 640: a marca numa
+ * linha, as duas leituras em corpo de mobília, o comando de tema dentro do menu.
+ *
+ * A LEITURA NÃO SAI (IDENTIDADE §3: «debaixo dele, duas leituras rotuladas e
+ * ligadas»): as duas continuam lá, com o seu rótulo e a sua porta. O que encolhe
+ * é o papel à volta delas — as goteiras da marca, o ar por cima do fio da
+ * mobília e a fila que o comando do tema ocupava.
+ *
+ * AS DUAS LEITURAS NUMA LINHA SÓ NÃO CABEM A 390, e a conta está escrita para
+ * quem a quiser refazer: «Painel europeu reconferido a» mede 170px, a data 74, o
+ * rótulo «Agenda:» 47 e as contagens 129, o que com as goteiras dá 460px de
+ * texto numa coluna de 354. Ficam na mesma FILA, que é o que esta folha
+ * governa, e quebram em duas linhas onde o ecrã as obriga; encurtá-las seria
+ * escrever cópia nova, e a cópia é do diretor.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .topbar {
+    padding-top: 8px;
+  }
+  .masthead {
+    padding: 16px 0 12px;
+  }
+  .masthead-furniture {
+    margin-top: 12px;
+    padding-top: 8px;
+    gap: 4px 14px;
+  }
+  /* A frase de identidade encosta-se à marca, como no computador, e não ganha
+     ar próprio num ecrã em que cada pixel do topo custa uma linha de conteúdo. */
+  .masthead-identidade {
+    margin-top: 4px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * A9 · O CHÃO DE 12 px NO TELEMÓVEL
+ * ----------------------------------------------------------------------------
+ * A auditoria contou texto de 9,5 a 11px em toda a parte, e 10 na primeira
+ * página (achado D4). «A mobília não cresce» é regra do computador; num
+ * telemóvel 9,5px não se lê. O chão vale abaixo de 640 e mais nada muda acima:
+ * as regras estão aqui pelo nome de cada classe medida, e não por um seletor
+ * universal, porque um `*` levantaria também o que já está certo e mudaria a
+ * composição de coisas que ninguém mediu.
+ *
+ * O bloco A responde pela rota `home`; as classes desta lista que também vivem
+ * noutras rotas sobem com ela, porque a folha é uma só e uma regra por rota
+ * seria a mesma medida escrita duas vezes.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .linha-campo-k,
+  .badge,
+  .agenda-k,
+  .regra-k,
+  .mecanismo-legenda-k,
+  .mono,
+  .glance-unit,
+  .ligacao-dados,
+  .marcador {
+    font-size: 12px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * A10 · AS ÁREAS DE TOQUE, PELA TÉCNICA QUE O SELO JÁ USA
+ * ----------------------------------------------------------------------------
+ * PRIMEIRO O QUE SE MEDIU, porque o item pedia a medição antes da correção: o
+ * selo `a.src-chip` JÁ TEM 44px de área efetiva na primeira página. O
+ * leitor-utilizador mediu a caixa do elemento (52 × 14px) e não o `::after`
+ * posicionado que a etapa 1 lhe deu; medida a área efetiva, com o `::after`
+ * contado, os 22 selos da primeira página estão todos acima de 44 e nenhum se
+ * sobrepõe ao vizinho. Não se mexe neles.
+ *
+ * O QUE FALTAVA ERAM OS NÚMEROS DO PRÓPRIO SÍTIO E TRÊS PORTAS. `a.prova-valor`
+ * — os algarismos sublinhados da manchete e das portas — media 8 × 16px. Ganha a
+ * mesma técnica: um `::after` absoluto e centrado, 44px nos dois eixos, que
+ * alarga o que se toca sem alargar o que se compõe.
+ *
+ * E A REGRA DA CASA CONTRA AS ÁREAS SOBREPOSTAS FICA DE PÉ: «uma área sobreposta
+ * não é um alvo maior, é uma porta que abre a linha do vizinho». Onde duas
+ * portas pequenas se seguem numa fila — o nome, a contagem e «a página inteira»
+ * de cada porta da primeira página —, a saída é dar ALTURA à fila, e é o que a
+ * folha da primeira página faz. Aqui ficam as áreas; lá fica a altura.
+ * ------------------------------------------------------------------------- */
+.prova-valor {
+  position: relative;
+}
+a.prova-valor::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+/* O MARCADOR TAMBÉM É UMA PORTA, e faltava-lhe a área (27.08.2026).
+   `[a verificar]` passou a ser `<a class="marcador">` na correção I77 de 26.08,
+   e nasceu com a caixa do seu texto: 82,5 × 18,4px no nome do presidente
+   interino de Évora, que é o alvo que a régua B10 apanhou. A técnica é a mesma
+   do selo e do valor da prova, e pela mesma razão: a caixa não cresce, o alvo
+   cresce. */
+a.marcador {
+  position: relative;
+}
+a.marcador::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+
+/* E DENTRO DE PROSA CORRIDA, A ÁREA É A DA PRÓPRIA LINHA, que é a mesma
+   exceção que o selo já tem: uma área de 44px numa frase passa por cima da
+   porta da linha de cima, e uma área sobreposta é pior do que um alvo pequeno.
+   Medido em `/estudos`: com os 44px, o marcador da descrição de um trabalho
+   cruzava o título do trabalho de cima por 81 × 4px. A lista é a dos blocos de
+   texto corrido onde um marcador se rende, e é a mesma que a régua B10 usa. */
+.arquivo-desc a.marcador::after,
+.arquivo-meta a.marcador::after,
+.edicao-meta a.marcador::after,
+.aparelho-nota a.marcador::after,
+.metodo-p a.marcador::after,
+.deep-v a.marcador::after,
+.leitura-frase a.marcador::after,
+.texto-artigo a.marcador::after,
+.linha-excerto a.marcador::after,
+.linha-pedido a.marcador::after,
+.linha-derivacao a.marcador::after,
+.livro-item-meta a.marcador::after,
+.log-afirmacao a.marcador::after,
+.mun-campos a.marcador::after,
+.mun-distancia-legenda a.marcador::after,
+.registo-proveniencia-linhas a.marcador::after,
+.regra-v a.marcador::after,
+.agenda-nota a.marcador::after,
+.agenda-criterio a.marcador::after {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* A MOBÍLIA DO CABEÇALHO É A EXCEÇÃO MEDIDA, e é escrita como a do `.brief-text`
+   foi: as duas leituras e as duas contagens da agenda vivem em duas linhas de
+   19px, a 25px de distância uma da outra, e as áreas de 44px cruzam-se por 19px
+   na vertical e por 44 na horizontal (medido a 390, nas duas edições). Dar-lhes
+   altura de fila resolveria a sobreposição e devolveria à cabeça os 50px que o
+   item A7 acabou de lhe tirar, que é o defeito que a auditoria mandou fechar.
+   Ficam com a área da sua própria linha, e a porta continua a abrir a coisa
+   certa. */
+.masthead-furniture a.prova-valor::after {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* A PORTA DAS CORREÇÕES, NO TELEMÓVEL: duas ligações que a 390 caem em linhas
+   seguidas, a 19px uma da outra. Dar-lhes 44px de altura dentro de um parágrafo
+   corrido fazia as duas caixas cruzarem-se por 33,6px — medido —, porque uma
+   caixa de 44px numa linha de 19 transborda para a linha de baixo.
+
+   A saída é a da IDENTIDADE §11 («Móvel: uma coisa por linha»): a linha da porta
+   passa a ser uma caixa flexível que quebra, e uma quebra de caixa flexível
+   coloca a fila seguinte POR BAIXO da mais alta da anterior, em vez de a deixar
+   sobrepor-se. As duas ligações ganham a altura, e o ponto médio continua onde
+   estava — no documento e à vista.
+
+   A FAIXA VAI ATÉ 1023 E NÃO ATÉ 640 (I104, bloco F1.7, 04.09.2026). A regra
+   nasceu numa `@media (max-width: 640px)` e o buraco era esse: a 641, a 768 e a
+   1023 as duas ligações voltavam a medir 24,4 px de toque. Medido antes: 45
+   passagens de «O registo de correções →» e 46 de «The corrections log →» na
+   faixa, mais 24 do endereço de correio. A Emenda 20c diz 44 px abaixo de 1024,
+   e é essa a largura da rede: 1023 é a última que ainda não é a coluna. */
+@media (max-width: 1023px) {
+  .porta-correccoes-linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 7px;
+  }
+  .porta-correccoes-linha .ligacao-email,
+  .porta-correccoes-linha > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* OS DOIS ALVOS DA PORTA, NA COLUNA (I105, bloco F1.7, 04.09.2026). Abaixo de
+   1024 as duas ligações têm os 44 px da rede; a partir de 1024 a Emenda 20c
+   deixa 32, que é o alvo do ponteiro, e não havia regra nenhuma a dá-los: o
+   endereço media 19,6 px de toque e «O registo de correções →» 24,4. */
+@media (min-width: 1024px) {
+  .porta-correccoes-linha .ligacao-email,
+  .porta-correccoes-linha > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+  }
+}
+
+/* E o alvo da navegação do rodapé ganha também a LARGURA: `min-height` sozinho
+   deixava «Home», na edição inglesa, com 42,3px de largura. A regra vive na
+   mesma `@media (pointer: coarse)` que já lhe dá a altura, e por isso não muda
+   nada em cursor. */
+@media (pointer: coarse) {
+  .nav a,
+  .rodape-nav a {
+    min-width: 44px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * B10 · O CHÃO DE 12 px NAS ROTAS DO BLOCO B
+ * ----------------------------------------------------------------------------
+ * A A9 fez o chão na rota `home`, pelo nome de cada classe medida. Este bloco
+ * faz o mesmo para as nove rotas do bloco B — `estudos`, `estudo`, `texto`,
+ * `livro`, `linha`, `municipio`, `agenda`, `metodo`, `correcoes` —, e a lista é
+ * outra vez o que foi MEDIDO a 390 num iPhone 13 real emulado, e não o que
+ * parece pequeno: cada seletor aqui aparecia na contagem com o seu corpo ao
+ * lado. A regra vale abaixo de 640 e mais nada muda acima.
+ *
+ * A MOBÍLIA COMPACTA ERA O MAIOR GRUPO, e explica porque é que a `home` mediu
+ * zero e as outras não: `.masthead-compact .masthead-furniture` baixa a
+ * mobília para 9,5px nas páginas interiores, e a A9 não lhe tocou porque na
+ * primeira página ela não existe. São 54 ocorrências, 6 por rota.
+ *
+ * A REGRA, ESCRITA A 27.08.2026, PORQUE A LISTA TINHA UM BURACO. Ela era o que
+ * fora MEDIDO naquele dia, nas rotas medidas naquele dia, e uma lista assim
+ * envelhece por dois caminhos: uma classe nova escrita depois, e uma classe
+ * antiga que só se rende numa rota que a régua não abre. Aconteceram os dois, e
+ * estão nomeados por baixo. **A lista deixa de ser o que foi medido e passa a
+ * ser o que está declarado: toda a classe destas folhas que declare corpo
+ * abaixo de 12px, e que não seja texto de desenho, tem companhia aqui.** Quem
+ * escrever a próxima declaração pequena escreve a sua linha ao lado, e a régua
+ * B10 de `tests/linha/correcoes-b.mjs` continua a ser quem apanha o esquecimento.
+ *
+ * O QUE NÃO ENTRA, e está medido em vez de esquecido: o texto DENTRO dos
+ * desenhos (`<text>` e `<tspan>` de um `<svg>` com `viewBox`). Ali o corpo
+ * declarado está em unidades de utilizador e o que se lê é `corpo × escala`:
+ * a 390 as marcas de escala rendem-se entre 3,7px e 6,6px, e pô-las a 12px
+ * lidos obrigaria a multiplicar o corpo por dois e meio dentro de cada
+ * instrumento, o que é redesenhar as escalas do eixo da agenda, do mecanismo do
+ * Método, da banda dos mandatos e das duas séries do concelho. É desenho, e é
+ * do diretor. Fica contado na régua, ao lado do juízo.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* a mobília do cabeçalho compacto */
+  .masthead-compact .masthead-furniture {
+    font-size: 12px;
+  }
+  /* o marcador dentro do selo */
+  .src-chip .marcador,
+  .marcador-gloss,
+  .claim-provisorio {
+    font-size: 12px;
+  }
+  /* o arquivo e a página de um trabalho */
+  .log-vazio-k,
+  .edicao-meta,
+  .estudo-descricao-lingua,
+  .estudos-contagens .claim-value,
+  .layer-tag,
+  .deep-k,
+  .deep summary,
+  .details-deep summary {
+    font-size: 12px;
+  }
+  /* o livro-razão e a página de uma linha */
+  .livro-item-unidade,
+  .linha-bloco-titulo,
+  .aparelho-titulo,
+  .linha-id,
+  .linha-selo-estado,
+  .linha-selo-atraso,
+  .linha-verificacao,
+  .linha-verificacoes dt,
+  .linha-verificacoes dd,
+  .linha-verificacoes dd a {
+    font-size: 12px;
+  }
+  /* a página de um concelho */
+  .municipio-sub,
+  .mun-campos dt,
+  .mun-campos dd,
+  .mun-mandato-lista,
+  .mun-mandato-instalado,
+  .mun-selo-rot,
+  .mun-banda-porta {
+    font-size: 12px;
+  }
+  /* a agenda */
+  .agenda-k-inline,
+  .agenda-afecta,
+  .agenda-afecta a,
+  .agenda-evento-fonte,
+  .agenda-criterio-tipo,
+  .agenda-historico-tipo,
+  .quadro-estados-k,
+  .quadro-estados-e {
+    font-size: 12px;
+  }
+  /* o Método */
+  .mecanismo-legenda,
+  .mecanismo-legenda a,
+  .regra-portas,
+  .regra-portas a {
+    font-size: 12px;
+  }
+  /* AS TRÊS QUE ESCAPARAM À MEDIÇÃO, e entram a 27.08.2026 pela regra escrita
+     acima. `.mun-tempo-nota-k` nasceu com o G6 de 26.08, quando os três
+     parágrafos da nota do instrumento dos mandatos saíram da dobra que os
+     escondia: a 25.08 aquele texto não se rendia, e por isso não podia ter sido
+     medido. `.prov-study` e `.prov-vals` rendem-se em `/municipios` e em
+     `/livro-razao/concelhos`, que não são nenhuma das nove rotas desta lista. */
+  .mun-tempo-nota-k,
+  .prov-study,
+  .prov-vals {
+    font-size: 12px;
+  }
+  /* as correções */
+  .log-data,
+  .registo-id,
+  .log-afirmacao code,
+  .etiqueta-kind,
+  .botao-correcao,
+  .registo-conta,
+  .registo-conta .claim-value,
+  .registo-conta .prova-valor {
+    font-size: 12px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * B10 · OS ALVOS DE TOQUE NAS ROTAS DO BLOCO B
+ * ----------------------------------------------------------------------------
+ * A técnica é a da A10, e não se inventa uma segunda: onde o alvo está sozinho
+ * ou numa fila, dá-se-lhe ALTURA DE FILA (44px de caixa); onde ele é uma porta
+ * dentro de prosa corrida, fica com a área da sua própria linha, e a razão é a
+ * regra da casa — «uma área sobreposta não é um alvo maior, é uma porta que
+ * abre a linha do vizinho» —, escrita ao lado da medição na nota do bloco.
+ *
+ * A REGRA VALE EM TOQUE, e por isso vive em `@media (pointer: coarse)`, como a
+ * do rodapé: num rato de precisão 19px é um alvo, e alargar tudo em cursor
+ * mudaria a composição de nove rotas sem nenhum defeito medido por trás.
+ * ------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  /* o índice do arquivo: o título do trabalho, as edições e a data */
+  .arquivo-titulo a,
+  .arquivo-meta > span,
+  .arquivo-meta a,
+  /* A FICHA DE UMA EDIÇÃO FICA COM A ÁREA DA SUA LINHA, e é uma exceção medida:
+     com 44px, a caixa da porta «Ler o documento →» sobe 12px e cruza-se com o
+     selo da linha de cima por 123 × 7px. É a mesma regra do `.brief-text` — uma
+     área sobreposta é uma porta que abre a linha do vizinho. */
+  /* o concelho: a legenda da banda e as portas dos trabalhos */
+  .mun-banda-porta,
+  /* A porta de um estudo é hoje o próprio título, num `<li>` da lista (F1.10,
+     §1): o alvo é o bloco inteiro, e o `padding` já lhe dá mais do que 44 px. A
+     regra fica para o caso de a composição encolher. */
+  .mun-estudo a,
+  /* a agenda: a legenda do eixo */
+  .agenda-eixo-porta,
+  /* o livro-razão: as portas do conjunto de dados */
+  .livro-conjunto-portas a,
+  /* a página de uma linha: a porta de repetir a leitura */
+  .linha-verificacao a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* As dobras: um `<summary>` é o alvo da dobra inteira.
+     `.regra-cabeca` NÃO ENTRA, e é uma exceção medida: a dobra de uma regra do
+     Método e a linha da prova dessa regra partilham a fila da disposição A, e
+     com 44px a caixa do `<summary>` cresce 22px para dentro da linha da prova —
+     13 pares medidos. O `<summary>` já é um alvo de 354px, que é a linha toda;
+     o que lhe falta é altura, e dá-la custa uma porta que abre a do vizinho.
+     Fica com a sua altura, e a razão está aqui e na régua. */
+  .agenda-item summary,
+  .deep > summary,
+  details.deep summary {
+    min-height: 44px;
+  }
+
+  /* O marcador, onde ele está numa fila e não dentro de prosa: no índice do
+     arquivo e na cabeça de um acontecimento da agenda. Dentro de um parágrafo
+     fica com a área da sua linha, pela regra da sobreposição. */
+  .arquivo-meta .marcador,
+  .agenda-evento-cabeca .marcador {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * B10 · SEGUNDA RONDA, DEPOIS DE MEDIR
+ * ----------------------------------------------------------------------------
+ * A primeira ronda deu altura de fila; a medição a seguir mostrou duas coisas
+ * que faltavam, e as duas estão aqui com o número que as trouxe.
+ *
+ * (a) MAIS FILAS. As portas do estudo, as do aparelho, a porta da página da
+ *     série, o índice do Método e da agenda, e o botão das correções: todas
+ *     sozinhas na sua linha, todas abaixo de 44px.
+ *
+ * (b) A NEUTRALIZAÇÃO DO `::after` EM PROSA CORRIDA. Onde um selo ou um número
+ *     do sítio vive dentro de uma frase, a área de 44px sai da sua linha e cai
+ *     em cima da porta da linha de cima: medido, 25 pares no Método e 4 na
+ *     página de um trabalho. A regra da casa é a que a folha já escreve para o
+ *     `.brief-text` — «uma área sobreposta não é um alvo maior, é uma porta que
+ *     abre a linha do vizinho» —, e é também a isenção que a 2.5.8 das WCAG faz
+ *     a um alvo dentro de uma frase. Estas classes juntam-se à lista.
+ * ------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  .estudo-accoes a,
+  .aparelho-bloco p > a,
+  .estudo-blocos .log-vazio p > a,
+  .linha-pagina-serie a,
+  .metodo-sumario-lista a,
+  .botao-correcao {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  /* Uma entrada de índice curta («2025», «Method») media 31,9px de largura. */
+  .metodo-sumario-lista a {
+    min-width: 44px;
+    justify-content: flex-start;
+  }
+  /* O PONTO DO MAPA NÃO É ALVO NO TELEMÓVEL (Emenda 3: «no telemóvel os 308
+     pontos nunca são alvos»). O bloco A pôs o ponto com página dentro de um
+     `<a>` para o computador (item A5), e na página de um concelho o mapa
+     continua a render-se abaixo de 640: ali o ponto media 2,5 × 2,5px, que é
+     uma âncora que nenhum dedo acerta. Abaixo de 640 deixa de aceitar o toque,
+     e o Tab continua a chegar lá — a regra é de dedo, e um teclado não tem o
+     problema dos 44px. A porta do concelho, no telemóvel, é a da ficha do mapa,
+     que está ao lado e é uma fila. */
+  .mun-porta {
+    pointer-events: none;
+  }
+  /* Duas contagens em duas linhas seguidas, cada uma com o seu selo: a fila
+     ganha a distância que as duas áreas precisam, em vez de as deixar cruzar. */
+  .estudos-contagens {
+    row-gap: 26px;
+  }
+}
+.leitura-frase a.src-chip::after,
+.deep-v a.src-chip::after,
+.texto-artigo a.src-chip::after,
+.mun-distancia-legenda a.src-chip::after,
+.mapa-cartao-texto a.src-chip::after,
+.registo-proveniencia-linhas a.src-chip::after,
+.regra-prova a.prova-valor::after,
+.livro-grupo-k a.prova-valor::after {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ * C4 · A PESQUISA DE CONCELHO, NAS DUAS ROTAS QUE A TÊM
+ * ----------------------------------------------------------------------------
+ * A peça vivia em `inicio.css` porque só a primeira página a tinha. Desde
+ * 25.08.2026 (passo C, item C4; decisão 5 do diretor) o índice dos 308 abre com
+ * a MESMA pesquisa, e uma peça em duas rotas vive na folha que as duas carregam.
+ * Mudaram-se as declarações, sem uma mudada: o `.chipb`, a caixa, a fila de
+ * resultados, as duas palavras de cobertura, o estado vazio, o chão de 12px do
+ * item B10 e a altura de 44px de um resultado do item A4.
+ *
+ * O QUE FICOU EM `inicio.css` é o que é da primeira página: `.pesquisa-bloco`,
+ * que é o mecanismo do comando de âmbito, e as regras presas a `[data-inicio]`.
+ * ------------------------------------------------------------------------- */
+.busca-k {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.chipb {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 8px 11px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+}
+.chipb:hover {
+  border-color: var(--ink);
+}
+.chipb[aria-current='true'],
+.chipb[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+/* UM RESULTADO SEM PÁGINA NÃO É UMA PORTA, e não se pinta como uma (item C4).
+   No índice dos 308 os 307 concelhos sem página saem como `<span>`: o mesmo
+   desenho, sem o cursor de mão e sem a moldura a acender ao rato, porque não há
+   nada para abrir. Quem lê vê o nome e as duas palavras do estado, que é o que
+   a lista por distritos já lhe dá. */
+.chipb-inerte {
+  cursor: default;
+  border-style: dashed;
+  color: var(--muted);
+}
+.chipb-inerte:hover {
+  border-color: var(--rule-strong);
+}
+
+/* `hidden` GANHA A ESTAS REGRAS, e a linha existe porque a medição a pediu.
+   O atributo `hidden` vale `display: none` por regra do navegador, e uma regra
+   de navegador perde para qualquer selector de classe: `.pesquisa-item` declara
+   `display: block`, e por isso os 308 resultados apareciam todos ao mesmo tempo
+   no índice dos concelhos, que passou de 13 234px a 28 881px de altura. Na
+   primeira página o defeito não se via porque `inicio.css` traz um
+   `[hidden] { display: none !important }` para a folha inteira, e essa folha só
+   é carregada por ela. Aqui a regra é da peça, e vai onde a peça vive. */
+.pesquisa-item[hidden],
+.pesquisa-vazio[hidden] {
+  display: none;
+}
+
+.pesquisa {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* A CAIXA DA BUSCA É UMA (F1.10, §2.6, 09.09.2026), e por isso estas regras
+   deixam de ter o nome da primeira página: a mesma caixa rende-se em `/`, em
+   `/municipios`, em `/livro-razao` e em `/livro-razao/concelhos`, e as regras
+   que a desenhavam estavam escritas duas vezes, aqui e em `linha.css`, valor a
+   valor. Uma segunda cópia é uma divergência à espera de acontecer. */
+.busca {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* A CAIXA OCUPA A LARGURA QUE TEM (15.09.2026, medido pelo lugar de direção
+     na primeira página: «o campo da busca é minúsculo»). As regras da linha já
+     mandavam o campo crescer e o botão não encolher, e não tinham onde: o pai
+     desta caixa na primeira página é `.pesquisa`, que é uma coluna flexível com
+     `align-items: flex-start`, e um item assim mede o seu conteúdo. Media 220,1
+     px de linha e 100,6 px de campo a 320, a 390, a 768 e a 1 280, nas duas
+     rotas, sempre o mesmo número, porque a largura vinha do `size="4"` do
+     `<input>` e não da folha. `align-self: stretch` devolve à linha a largura da
+     coluna, e é aí que o `flex: 1 1 auto` do campo passa a ter efeito. Onde o
+     pai não é uma caixa flexível a declaração é inerte, e um formulário já
+     ocupa a linha. */
+  align-self: stretch;
+}
+.busca-linha {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  /* O TETO DA LINHA (decisão do lugar de direção, 15.09.2026, sobre a medição
+     da manhã). Com a caixa a ocupar a largura da coluna, `/municipios` a 1 280
+     dava um campo de 972,5 px: o campo a encher a linha é a decisão, uma caixa
+     de busca do tamanho de uma página não é. A linha para nas 36rem e o campo
+     continua a encher o que ela tem, e a encolher com ela abaixo do teto.
+     Fica alinhada à esquerda sem uma declaração para isso: um item de coluna
+     flexível que o `max-width` trava encosta ao princípio do eixo, que é onde
+     começa o resto da coluna. */
+  max-width: 36rem;
+}
+.busca-linha .busca-campo {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.busca-submeter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-versal);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.busca-submeter:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.busca-campo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 15px;
+  padding: 9px 11px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--ink);
+  width: min(340px, 100%);
+  min-height: 44px;
+}
+.busca-campo:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.pesquisa-res {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* UMA FILA SEM NENHUM RESULTADO À VISTA NÃO OCUPA LUGAR (F1.1, 03.09.2026).
+   Os 308 resultados estão sempre no documento e escondem-se um a um com
+   `hidden`; a `<ul>` continuava a ser um item da coluna com zero de altura, e o
+   intervalo de 10 px da peça contava-o duas vezes. Com a busca debaixo da
+   manchete isso eram 20 px do primeiro ecrã gastos por uma lista que não mostra
+   nada. `:has` pergunta pelo que está à vista, e é a mesma pergunta que o
+   `hidden` de cada item responde: nenhuma regra nova decide o que se vê. */
+.pesquisa-res:not(:has(.pesquisa-item:not([hidden]))) {
+  display: none;
+}
+.pesquisa-item {
+  display: block;
+}
+.pesquisa-cobertura {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  color: var(--muted);
+}
+.chipb[aria-pressed='true'] .pesquisa-cobertura {
+  color: var(--paper);
+}
+.pesquisa-vazio,
+.pesquisa-meta {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* O chão de 12px do item B10, e a altura de 44px de um resultado do item A4: a
+   fila de resultados é o caminho principal para o concelho no telemóvel, e cada
+   resultado é um alvo de dedo. Medido antes do item A4: 127,5 × 34,9px. */
+@media (max-width: 640px) {
+  .pesquisa-cobertura,
+  .pesquisa-vazio,
+  .pesquisa-meta {
+    font-size: 12px;
+  }
+  /* A FILA DEIXA AR POR BAIXO (bloco dos 308, P2). Cada resultado é um alvo de
+     44px, e com um concelho com página a fila tinha um resultado só: o último
+     não encostava a nada. Com os 308, a fila mostra oito, e a área de toque do
+     último passava a cruzar por 1,0px o selo da secção seguinte — medido a 390
+     pela régua A10, que é a que conta pares sobrepostos. Um par sobreposto é uma
+     porta que abre o destino do vizinho (ISSUES I13), e a saída é a mesma da
+     etapa 1d: dar espaço à fila em vez de encolher o alvo. */
+  .pesquisa-res {
+    margin-bottom: 10px;
+  }
+}
+
+/* O ALVO DE UM RESULTADO DA BUSCA VAI ATÉ 1023 (I104, bloco F1.7, 04.09.2026).
+   O corpo do texto da cobertura continua a encolher só no telemóvel, que é onde
+   ele não cabe; o ALVO não é uma questão de caber, é a rede da Emenda 20c, e
+   por isso sobe de 640 para 1023. Foi de longe o maior buraco medido: 3 696 das
+   4 042 passagens em falta na faixa eram estes resultados, em `/municipios` e em
+   `/livro-razao/concelhos`, nas duas edições e nas três larguras. */
+@media (max-width: 1023px) {
+  .pesquisa-res .chipb {
+    min-height: 44px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * A DISPOSIÇÃO B SEM CORPO (bloco dos 308, P2)
+ * ---------------------------------------------------------------------------
+ * A página de um concelho sem trabalho publicado não tem leitura breve, contas,
+ * linha do tempo, método nem trabalhos: a coluna do corpo fica sem nada, e
+ * 68ch de vazio ao lado de um cartão de 300px é uma célula vazia numa grelha
+ * (IDENTIDADE §7). A vista deixa de render essa coluna, e a grelha passa a ter
+ * uma pista só, com a largura do aparelho: o cartão localizador e as saídas
+ * seguem as oito peças, em vez de flutuarem à direita de um vão.
+ */
+.municipio-so-aparelho {
+  grid-template-columns: minmax(0, 340px);
+}
+
+/* ==============================================================================
+   O RÓTULO DE IA (01.09.2026)
+   ==============================================================================
+   Uma linha em todas as páginas construídas, no rodapé, e uma segunda no topo
+   das páginas de leitura, que são texto longo. A razão de existir é legal e
+   está escrita em `src/components/RotuloDeIA.astro`: o artigo 50.º, n.os 4 e 5
+   do Regulamento (UE) 2024/1689.
+
+   A LETRA É A DA PROSA, e não a do instrumento. É uma frase e não um rótulo de
+   aparelho: `IDENTIDADE.md` §1 dá a Spectral à prosa e a Bitter ao que é medido
+   ou transcrito, e uma frase composta em Bitter versaletes lia-se como uma
+   etiqueta de máquina. Fica em Spectral, ao corpo da mobília e não ao da
+   leitura, porque não é o conteúdo da página.
+
+   A COR É `--muted` SOBRE `--paper`, que é o par que o aparelho inteiro já usa e
+   que a régua do contraste mede em cada corrida: 6,24:1 em claro e 9,52:1 em
+   escuro, os dois acima do mínimo de 4,5:1 para texto
+   (`node scripts/medir-contraste.mjs`). A porta da política é `--ink`, que é
+   16,39:1 e 15,38:1.
+
+   SEM COR NOVA E SEM SEGUNDO PAPEL (`IDENTIDADE.md` §2): o bloco separa-se do
+   que está acima com um fio de `--rule`, que é como o resto do sítio separa. */
+.rotulo-ia {
+  display: grid;
+  gap: 6px;
+  max-width: 68ch;
+}
+
+/* No topo de cada página de estudo o rótulo vem antes do título, sem fio
+   por cima, com uma margem curta em relação ao cabeçalho. */
+.rotulo-ia-topo {
+  margin-top: 10px;
+}
+.rotulo-ia-linha {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.rotulo-ia-linha a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+}
+.rotulo-ia-linha a:hover {
+  text-decoration-color: currentColor;
+}
+/* A ficha da primeira página: o nome de quem dirige e a menção de gratuitidade.
+   É aparelho e não prosa, e por isso leva a letra do instrumento, como as duas
+   leituras da mobília do cabeçalho.
+
+   O CORPO É 12px E NÃO 11, e é uma medição e não um gosto: a primeira versão
+   deste bloco escreveu 11px, e a régua A9 de `tests/inicio/correcoes-a.mjs`
+   fechou vermelha nas duas edições com «11px span» no elemento que rendia o
+   nome do responsável editorial. O chão de 12px na rota `home` é da A9, e a
+   regra da casa escrita em B10 é que toda a
+   classe que declare corpo abaixo de 12px tem de aparecer na lista das excepções
+   de 640: em vez de a acrescentar, esta declara 12 e o problema deixa de
+   existir. O nome de quem responde não é sítio para ganhar um píxel. */
+.rotulo-ia-ficha {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* O alvo de toque da porta da política, pela mesma regra da porta das
+   correções: 44px de altura numa linha de 21 obrigava a caixa a transbordar
+   para a linha de baixo, e por isso a linha passa a caixa flexível que quebra. */
+/* A mesma subida de 640 para 1023 (I104, bloco F1.7): a rede dos 44 px é da
+   Emenda 20c e vale abaixo de 1024, não abaixo de 641. */
+@media (max-width: 1023px) {
+  .rotulo-ia-linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 6px;
+  }
+  .rotulo-ia-linha a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* B1, achado 10: a divulgação no topo ocupa uma linha às larguras medidas.
+   O alvo de 44 px cresce sem separar a frase em caixas; o texto é o do rodapé.
+   Abaixo de 390 px conserva-se a quebra natural, sem reduzir o corpo de 12 px. */
+.rotulo-ia-topo .rotulo-ia-linha {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+}
+.rotulo-ia-topo .rotulo-ia-linha a {
+  display: inline;
+  min-height: 0;
+  position: relative;
+}
+.rotulo-ia-topo .rotulo-ia-linha a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+@media (min-width: 390px) {
+  .rotulo-ia-topo .rotulo-ia-linha { white-space: nowrap; }
+}
+@media (max-width: 640px) {
+  .rotulo-ia-topo .rotulo-ia-linha { font-size: 12px; letter-spacing: 0; }
+}
+
+/* ------------------------------------------------------- a política, no Método
+   e a frase da política, no Sobre.
+
+   Nenhuma peça nova: os casos e as recusas usam as listas e as linhas rotuladas
+   que o Método já tem. O que estas regras fazem é a goma entre elas. */
+/* `.sobre-politica` PASSOU A `.sobre-projeto`, E DEIXOU DE SER CINZENTA
+   (leitura do lugar de direção às capturas do P1, 15.09.2026). A classe vestia
+   a frase da política, que era uma nota por baixo do texto do diretor; o que
+   está no lugar dela é a frase que diz o que este projeto é, e essa abre a
+   página. O corpo e a cor vêm de `.lede`, que é a classe do parágrafo seguinte:
+   dois parágrafos que se leem seguidos leem-se no mesmo tipo. O que esta regra
+   guarda é só a largura da coluna. */
+.sobre-projeto {
+  max-width: 62ch;
+}
+.politica-caso + .politica-caso {
+  margin-top: 10px;
+}
+.politica-caso strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.politica-lugares,
+.politica-recusas {
+  margin: 10px 0 0;
+  padding-left: 1.35em;
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+/* =============================================================================
+ * A MOBÍLIA NUMA LINHA NO TELEMÓVEL (F1.1, item 10; achado D6 de 25.08.2026)
+ * =============================================================================
+ * O achado, medido: «a mesma mobília em cima de todas as páginas (213 px: menu,
+ * língua, marca, "Painel europeu reconferido a", a agenda, claro · escuro); o
+ * título de cada página aparece a 0,35 ecrãs; a contagem da agenda repete-se em
+ * dezassete sítios.» A 390 px as três leituras empilhavam-se em três filas e
+ * mediam 73 px, entre a marca e a manchete.
+ *
+ * A MEDIDA DE ACEITAÇÃO É A DE CIMA DA MARCA (A11: 64 px acima do nome), e o
+ * primeiro ecrã é a de baixo (A1). Este bloco trata das duas: aperta a barra do
+ * menu e da língua, aperta o enchimento da marca, e deixa a mobília com UMA
+ * leitura no telemóvel.
+ *
+ * ---------------------------------------------------------------------------
+ * QUAL DAS TRÊS FICA, E PORQUÊ AS OUTRAS DUAS SAEM DO TELEMÓVEL
+ * ---------------------------------------------------------------------------
+ * Fica a data em que o painel europeu foi reconferido: é a leitura que governa
+ * os números que estão nesta página, e a única das três que diz alguma coisa
+ * sobre o que se está a ler.
+ *
+ * A AGENDA SAI, e é o próprio achado D6 que o pede: «a contagem da agenda
+ * repete-se em dezassete sítios». A página que ela conta está no menu.
+ *
+ * O SINAL DAS FONTES SAI, e é a leitura mais nova das três (01.09.2026): diz o
+ * estado da conferência da casa, e a regra dela vive em `/metodo#releitura`, que
+ * é para onde ela aponta e que o menu alcança.
+ *
+ * SAEM DO TELEMÓVEL E NÃO DO SÍTIO: a partir de 641 px as três voltam, com as
+ * mesmas cadeias e as mesmas portas, e em nenhuma largura alguma delas é
+ * apagada do documento. É uma decisão de largura, e está medida no relatório do
+ * bloco.
+ * ========================================================================== */
+@media (max-width: 640px) {
+  .topbar {
+    padding-top: 10px;
+    /* A GOTEIRA DA BARRA ENCOLHE COM A FILA (item 8.9, segunda passagem): os 22
+       px separavam duas filas de coisas diferentes, e agora separam o comando de
+       abertura dos três destinos dentro da mesma fila. */
+    gap: 6px 10px;
+  }
+  /* O COMANDO DE ABERTURA DESCE AO MESMO CORPO DA FILA que ele abre (item 8.9,
+     segunda passagem): eram 14 px ao lado de 12, e os 62 px que ele media
+     deixavam a fila portuguesa 1,2 px fora da barra. A 12 px mede 58,3, e a
+     altura do alvo não muda, porque ela vem do `min-height: 44px` e não da
+     letra. */
+  .nav-menu > summary {
+    font-size: 12px;
+  }
+  .masthead {
+    padding: 8px 0 10px;
+  }
+  .masthead-identidade {
+    margin-top: 2px;
+  }
+  .masthead-furniture {
+    margin-top: 6px;
+    padding-top: 6px;
+    flex-wrap: nowrap;
+    gap: 4px 12px;
+  }
+}
+
+/* ============================================================================
+ * OS ALVOS QUE FALTAVAM NA FAIXA DOS 641 AOS 1023 px
+ * ============================================================================
+ * *Segunda passagem do bloco F1.7, 04.09.2026, achado Blocking 2 da leitura a
+ * frio do Codex.* A primeira passagem tapou o buraco onde ele tinha REGRA — as
+ * cinco `@media` que davam 44 px e acabavam a 640 — e deixou de fora os alvos
+ * que nunca tiveram regra nenhuma e que só chegavam aos 44 px por acidente: uma
+ * ligação de prosa que a 390 quebra em três linhas mede 44 px de caixa, e a 768
+ * cabe numa linha e mede 29. A célula H2 calculava-os e não os punha na sua
+ * condição; o relatório dizia que os que sobravam eram todos áreas do mapa, e
+ * dos 129 só 36 eram.
+ *
+ * O QUE ENTRA AQUI É O QUE FOI MEDIDO, uma classe de cada vez, e não uma regra
+ * geral sobre `a`. Uma regra geral daria 44 px de altura a cada ligação dentro
+ * de cada frase do sítio, e a folha desta casa já mediu três vezes o que isso
+ * faz: «uma caixa de 44px numa linha de 19 transborda para a linha de baixo», e
+ * duas caixas que se cruzam são uma porta que abre o destino do vizinho. As
+ * classes abaixo são as que a régua acusou, e todas elas têm a mesma forma: uma
+ * ligação SOZINHA na sua linha, onde crescer não atropela ninguém.
+ *
+ * A técnica é a que a folha já usa nas outras sete regras de alvo: `inline-flex`
+ * com `align-items: center` cresce a caixa à volta do texto e deixa o texto onde
+ * estava. Nenhuma letra muda de corpo, de peso ou de cor.
+ */
+@media (max-width: 1023px) {
+  /* O título de um trabalho, no arquivo dos estudos: é o `<h2>` inteiro. */
+  .arquivo-titulo a,
+  /* As entradas do sumário do Método e da Agenda, uma por linha. */
+  .metodo-sumario-lista li a,
+  /* O nome de um domínio, no índice dos domínios. */
+  .dominios-nome.dominios-porta,
+  /* O endereço da fonte, na página de uma linha: o rótulo e o endereço em
+     bruto, os dois dentro da mesma âncora, que ocupa a sua própria linha. */
+  .ligacao-externa,
+  /* O endereço de uma fonte na agenda, a seguir ao rótulo «Onde está escrito». */
+  .agenda-nota a[rel='nofollow'],
+  .agenda-criterio a[rel='nofollow'] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* AS PÁGINAS DE LEITURA FICAM DE FORA DESTA LISTA, e é a única classe medida que
+   fica: `.texto-ligacao` entrou na primeira redação e saiu com a medição. Numa
+   tabela de um documento de leitura, a ligação do relatório vive na MESMA célula
+   que as duas portas «a linha desta figura» (`.texto-figura-porta-apos`), que são
+   âncoras vazias com o seu próprio alvo; dar 44 px à primeira punha o canto dela
+   por cima da segunda, e uma área sobreposta é uma porta que abre o destino do
+   vizinho. Além disso o corpo de uma página de leitura é do bloco F1.9a, e o
+   brief F1.7 diz «nada nas páginas de leitura». Fica medido e nomeado no
+   relatório, e a decisão de dar ar àquela célula é de quem for dono dela. */
+
+/* ---------------------------------------------------------------------------
+ * O SELO DE UMA MANCHETE FICA COM A SUA PRÓPRIA CAIXA
+ * ---------------------------------------------------------------------------
+ * *Segunda passagem, 04.09.2026, achado Blocking 5 da leitura a frio.* Numa
+ * manchete há duas portas para a mesma linha: o algarismo e o selo. Desde o
+ * item 7 deste bloco o algarismo tem uma área de 44 px, e o selo já tinha a
+ * dele; nas páginas de região e de domínio, a 641, 768 e 1023, a frase quebra de
+ * maneira a pôr a fila dos selos a 34 px do último número, e as duas áreas
+ * cruzam-se. O selo vem depois no documento e ganha o cruzamento.
+ *
+ * ISSO NÃO É UMA COLISÃO INOCENTE, e foi o leitor a frio que o mostrou: uma
+ * manchete cita MAIS DO QUE UMA LINHA, e o selo que rouba a área do algarismo é
+ * muitas vezes o de OUTRA linha. Um dedo que caia por baixo de «0,7» abria a
+ * dívida pública. É exactamente o que a regra da casa diz que não pode
+ * acontecer: «uma área sobreposta não é um alvo maior, é uma porta que abre a
+ * linha do vizinho».
+ *
+ * A SAÍDA É DAR O CRUZAMENTO AO ALGARISMO, e não ao selo, e a razão é qual dos
+ * dois é a coisa que se vê: o algarismo é o número grande da frase e o selo são
+ * quatro letras a 12 px. Cada linha citada continua a ter uma porta de 44 px
+ * (a sua), o selo continua a ser a porta declarada e continua a abrir-se, e o
+ * que ele perde é a área que ia buscar à linha de cima.
+ *
+ * SÓ DENTRO DE UMA MANCHETE: `.manchete-selos` é a fila que `Manchete.astro`
+ * põe no fim do `<h1>`, e não existe em mais lado nenhum. Os 22 selos da
+ * primeira página não passam por aqui (a manchete dela não tem selos: os valores
+ * dela são `a.prova-valor`, que não são linhas do livro-razão), e a célula A10 de
+ * `tests/inicio/correcoes-a.mjs`, que exige 44 px a cada `a.src-chip` da
+ * primeira página, mede exactamente esses e não muda.
+ */
+.manchete-selos a.src-chip::after {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* B1, peça 3: a barra de leitura tem cinco entradas em todas as larguras. */
+.menu-cinco { display: flex; flex-wrap: nowrap; align-items: center; gap: 0 clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
+.menu-cinco a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); text-decoration: none; white-space: nowrap; }
+.menu-cinco a[aria-current='page'], .menu-cinco a:hover { color: var(--ink); }
+.masthead-pais { border-bottom: 0; padding: clamp(24px, 4.4vw, 50px) 0 clamp(14px, 2.2vw, 22px); }
+.rotulo-ia-final { white-space: nowrap; }
+.rodape-b1 { border-top: 1.5px solid var(--ink); padding: 16px 0 40px; font-family: var(--f-versal); font-size: 13px; line-height: 1.8; letter-spacing: .04em; color: var(--muted); }
+.rodape-b1 .rodape-nav, .rodape-b1 .rotulo-ia-linha, .rodape-b1 .rotulo-ia-ficha { display: inline; margin: 0; padding: 0; border: 0; font: inherit; letter-spacing: inherit; }
+.rodape-b1 .rodape-nav { text-transform: none; }
+.rodape-b1 a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; min-height: 32px;  min-width: 44px; position: relative; z-index: 1; margin-block: 2px; }
+.rodape-b1 a::after { content: none; }
+@media (max-width: 1023px) { .rodape-b1 a { min-height: 44px; } }
+.rodape-b1 .rotulo-ia-ficha::before { content: ' · '; }
+.rodape-b1 a:hover { text-decoration: underline; }
+.sobre-portas { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.sobre-portas a { min-height: 44px; display: inline-flex; align-items: center; }
+@media (width <= 430px) {
+  .menu-cinco { gap: 0 12px; }
+  .menu-cinco a { font-size: 13.5px; letter-spacing: .03em; }
+}
+
+/* ---------------------------------------------------------------------------
+   O QUADRADO E A PALAVRA DO ESTADO (vieram de `inicio.css` no bloco R1,
+   23.09.2026, I139)
+   ---------------------------------------------------------------------------
+   O Método diz que um valor de referência se lê pela cor, «âmbar quando o valor
+   está fora dele, cobalto quando está dentro», e até 23.09.2026 só a página
+   europeia o fazia: os cartões da primeira página e dos temas diziam «acima» ou
+   «abaixo» a cinzento, e a frase do Método era falsa nessas duas páginas. As
+   regras vêm para a folha que todas as páginas ligam, sem mudar uma cor: a
+   página dos temas e a de área não ligam `inicio.css`, e uma classe cuja regra
+   não chega à página é o que a C1 do `check:css` recusa. */
+.sq {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  flex: none;
+}
+/* O contorno é sempre tinta, nos dois temas: em claro segura o âmbar (2,09:1
+   sozinho), em escuro segura o cobalto (2,16:1 sozinho). Ver a nota da etapa 1c. */
+.sq-fora {
+  background: var(--amber);
+  border: 1px solid var(--onamber);
+}
+.sq-dentro {
+  background: var(--cobalt);
+  border: 1px solid var(--ink);
+}
+.sq-sem {
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+.est-fora {
+  color: var(--ochre);
+}
+.est-dentro {
+  color: var(--cobalt-palavra);
+}
+.est-sem {
+  color: var(--muted);
+}

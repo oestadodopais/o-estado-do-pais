@@ -1,0 +1,6 @@
+Antes (0)
+K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-pt: sem defeito
+Planta (1)
+K15 · saldo-da-balanca-corrente-2025: veredicto em palavras ausente ou diferente; esperado «dentro dos valores de referência (entre −4 e 6 %)»
+Reposto (0)
+K15-cor-sem-palavra-saldo-da-balanca-corrente-2025-pt: sem defeito

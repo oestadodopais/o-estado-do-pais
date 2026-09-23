@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7372 página(s) lidas, 47 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.

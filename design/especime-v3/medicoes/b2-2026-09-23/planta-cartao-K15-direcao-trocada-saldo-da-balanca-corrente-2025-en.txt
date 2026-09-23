@@ -1,0 +1,6 @@
+Antes (0)
+K15-direcao-trocada-saldo-da-balanca-corrente-2025-en: sem defeito
+Planta (1)
+K15 · saldo-da-balanca-corrente-2025: veredicto em palavras ausente ou diferente; esperado «within the reference values (between −4 and 6 %)»
+Reposto (0)
+K15-direcao-trocada-saldo-da-balanca-corrente-2025-en: sem defeito

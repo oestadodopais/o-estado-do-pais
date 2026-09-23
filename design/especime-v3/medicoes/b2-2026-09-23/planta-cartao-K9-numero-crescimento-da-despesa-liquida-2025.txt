@@ -1,0 +1,6 @@
+Antes (0)
+K9-numero-crescimento-da-despesa-liquida-2025: sem defeito
+Planta (1)
+K9 · crescimento-da-despesa-liquida-2025: o valor de referência tem duas testemunhas e elas não batem certo. A declaração de figuras.mjs diz [5] e o motor leu «6%» na página do painel, que dá [6]
+Reposto (0)
+K9-numero-crescimento-da-despesa-liquida-2025: sem defeito

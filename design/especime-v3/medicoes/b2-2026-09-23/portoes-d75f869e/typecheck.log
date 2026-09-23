@@ -1,0 +1,55 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/data/referencias-das-medidas.mjs(24,15): error TS2339: Property 'limiar' does not exist on type '(({ claim: string; quadro: string; documento: string; nome: { pt: string; en: string; }; medida: { pt: (string | { nl: string; motivo: string; ref?: undefined; } | { nl?: undefined; motivo?: undefined; ref: string; })[]; en: (string | ... 1 more ... | { ...; })[]; }; semMediaEuropeia?: undefined; } | { ...; }) & { ....'.
+  Property 'limiar' does not exist on type '{ claim: string; quadro: string; documento: string; nome: { pt: string; en: string; }; medida: { pt: (string | { nl: string; motivo: string; ref?: undefined; } | { nl?: undefined; motivo?: undefined; ref: string; })[]; en: (string | ... 1 more ... | { ...; })[]; }; semMediaEuropeia?: undefined; } & { ...; }'.
+src/data/referencias-das-medidas.mjs(25,35): error TS2345: Argument of type '(({ claim: string; quadro: string; documento: string; nome: { pt: string; en: string; }; medida: { pt: (string | { nl: string; motivo: string; ref?: undefined; } | { nl?: undefined; motivo?: undefined; ref: string; })[]; en: (string | ... 1 more ... | { ...; })[]; }; semMediaEuropeia?: undefined; } | { ...; }) & { ....' is not assignable to parameter of type '{ limiar?: unknown; tecto?: unknown; limiarFixadoPor?: unknown; }'.
+  Type '{ claim: string; quadro: string; documento: string; nome: { pt: string; en: string; }; medida: { pt: (string | { nl: string; motivo: string; ref?: undefined; } | { nl?: undefined; motivo?: undefined; ref: string; })[]; en: (string | ... 1 more ... | { ...; })[]; }; semMediaEuropeia?: undefined; } & { ...; }' has no properties in common with type '{ limiar?: unknown; tecto?: unknown; limiarFixadoPor?: unknown; }'.
+src/data/referencias-das-medidas.mjs(27,62): error TS2339: Property 'limiar' does not exist on type '(({ claim: string; quadro: string; documento: string; nome: { pt: string; en: string; }; medida: { pt: (string | { nl: string; motivo: string; ref?: undefined; } | { nl?: undefined; motivo?: undefined; ref: string; })[]; en: (string | ... 1 more ... | { ...; })[]; }; semMediaEuropeia?: undefined; } | { ...; }) & { ....'.
+  Property 'limiar' does not exist on type '{ claim: string; quadro: string; documento: string; nome: { pt: string; en: string; }; medida: { pt: (string | { nl: string; motivo: string; ref?: undefined; } | { nl?: undefined; motivo?: undefined; ref: string; })[]; en: (string | ... 1 more ... | { ...; })[]; }; semMediaEuropeia?: undefined; } & { ...; }'.
+src/lib/prova.mjs(726,36): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(728,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'ParDeLinguas'.
+  No index signature with a parameter of type 'string' was found on type 'ParDeLinguas'.
+src/lib/prova.mjs(813,34): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(815,62): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(816,65): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(817,96): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(837,91): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(841,41): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(846,41): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(857,41): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(865,41): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(876,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(878,85): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(879,113): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(880,116): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(881,95): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(893,88): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(904,97): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(908,31): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(916,36): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(933,63): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(943,94): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(947,35): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(952,35): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(979,41): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(990,34): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(995,34): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(999,92): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1003,30): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1012,37): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1014,92): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1026,84): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1027,81): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1028,93): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1029,93): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1033,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1038,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1043,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1048,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1056,67): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1057,73): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1058,73): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1059,75): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.
+src/lib/prova.mjs(1060,73): error TS2345: Argument of type 'string' is not assignable to parameter of type '"en" | "pt"'.

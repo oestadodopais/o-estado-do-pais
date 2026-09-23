@@ -1,0 +1,231 @@
+{
+  "cabeca": "27a8f4c1ea36097eb8c29dc0316d40d5784acd13",
+  "nota": "Manifesto corrigido e cópias da cabeça anterior, conservados antes da nova construção. Os PNG são os bytes idênticos já preservados no diagnóstico; cada resumo foi conferido.",
+  "capturas": [
+    {
+      "ficheiro": "depois-pais-pt-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-pt-390.png",
+      "sha256": "d50fb034fd5c4bcefd66da5d1f17572b8405ef942cb9889d641a11f105bbba90"
+    },
+    {
+      "ficheiro": "depois-pais-pt-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-pt-768.png",
+      "sha256": "199f332491e93e12e208c93f8739c1b20e156a375c2a5341da9cb9d9876ca41a"
+    },
+    {
+      "ficheiro": "depois-pais-pt-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-pt-1024.png",
+      "sha256": "c8f0b9e025092bad0be1857971525c0080ea6ce60c46d8dc50f600801f0ff58e"
+    },
+    {
+      "ficheiro": "depois-pais-pt-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-pt-1280.png",
+      "sha256": "6d1de1580816d102eab496f4c5f315111f7ccc2ee4cfc519a4f1ab9c3279115b"
+    },
+    {
+      "ficheiro": "depois-pais-pt-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-pt-1600.png",
+      "sha256": "68fc904172b319b042aa8b765f2b32051bc6453d194733f5bacbe5e1c3cb37d5"
+    },
+    {
+      "ficheiro": "depois-pais-en-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-en-390.png",
+      "sha256": "977662d7efd01989b2a4a633e0baadd331f01ec11aded5236407d5ef1adbfbf9"
+    },
+    {
+      "ficheiro": "depois-pais-en-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-en-768.png",
+      "sha256": "996df87bceffe16e7a132498c9a7e2f79db74280350cc5e2f946ae984aa1e432"
+    },
+    {
+      "ficheiro": "depois-pais-en-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-en-1024.png",
+      "sha256": "3747e0eba8464bc9d0cf89bcd8cfa3a70f72834b90457c11ea8a662bdc5b1737"
+    },
+    {
+      "ficheiro": "depois-pais-en-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-en-1280.png",
+      "sha256": "1b899fe3bfe9fa261c083b3f4aabcbd3266654f5fbf2ca56f26ec0ea5d7d6d8e"
+    },
+    {
+      "ficheiro": "depois-pais-en-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-pais-en-1600.png",
+      "sha256": "b1f1d77db9caa9bc91aa545a7409d3397e3092059c6b8ed598267cb3ef7e94f3"
+    },
+    {
+      "ficheiro": "depois-temas-pt-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-pt-390.png",
+      "sha256": "f827a7b8de8d27849c00453eb7a9709d59fb963a97d272441a63a0ae0bc9b6f2"
+    },
+    {
+      "ficheiro": "depois-temas-pt-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-pt-768.png",
+      "sha256": "fadf782fa9b856ed4b0d7e5ebf632decbb7a2c33cbca0a8244b196c5f6c55d0e"
+    },
+    {
+      "ficheiro": "depois-temas-pt-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-pt-1024.png",
+      "sha256": "5ab89accd5663763ecfd2ed4289f12daf90b0d88970c77b1da1054b59dc1574c"
+    },
+    {
+      "ficheiro": "depois-temas-pt-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-pt-1280.png",
+      "sha256": "1d257b6f77efec2e95dde039ab9d6c665dc5e03425e114430340cbd475d8a81d"
+    },
+    {
+      "ficheiro": "depois-temas-pt-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-pt-1600.png",
+      "sha256": "2ba3acfdea7d19dded4759f3ac7592645134cb3c57deb572ee323dd445d56c00"
+    },
+    {
+      "ficheiro": "depois-temas-en-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-en-390.png",
+      "sha256": "898e1959736986971267b1aa7c56ec6db2ad626a1d6ae39a6ef653e94fe29ebf"
+    },
+    {
+      "ficheiro": "depois-temas-en-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-en-768.png",
+      "sha256": "5ed4b4add124d980d8cfb89a66eb8d1e04613f149c2b44dd4de884da6f0b5b67"
+    },
+    {
+      "ficheiro": "depois-temas-en-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-en-1024.png",
+      "sha256": "b43d5643394991488d5f872e7273129c199fe4721a579ed4f1a2d4258e91ee71"
+    },
+    {
+      "ficheiro": "depois-temas-en-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-en-1280.png",
+      "sha256": "d335377674ff561ed053130a0f77f833a041df04c0b207c71f0c5bdc2f745b2f"
+    },
+    {
+      "ficheiro": "depois-temas-en-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-temas-en-1600.png",
+      "sha256": "f8964d2d9183b6e61b80472d17b5d8a0e8794b27d84b8ccfd742e50061541643"
+    },
+    {
+      "ficheiro": "depois-europeia-pt-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-pt-390.png",
+      "sha256": "dae12d699989a7c0f47d4e7855d9a1d8b53ff20217a71bba23400350145bac86"
+    },
+    {
+      "ficheiro": "depois-europeia-pt-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-pt-768.png",
+      "sha256": "5aaa7bef1c79223c824405922cb8b9e600b5b9ba94e665acc02100b86654895f"
+    },
+    {
+      "ficheiro": "depois-europeia-pt-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-pt-1024.png",
+      "sha256": "d0c90197fcbb1a31b37b32d8ff1fffdb2137a16a942e79f683359c5f38329d95"
+    },
+    {
+      "ficheiro": "depois-europeia-pt-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-pt-1280.png",
+      "sha256": "ff61ea598c2246bd440e213d28a8b5a42b028eaab4b058101eb274fbcc340865"
+    },
+    {
+      "ficheiro": "depois-europeia-pt-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-pt-1600.png",
+      "sha256": "cf3ec00aca01153c2e3a3c7ee606fc25a9a8909f117a2cd20088ab92644225ba"
+    },
+    {
+      "ficheiro": "depois-europeia-en-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-en-390.png",
+      "sha256": "4af76b53c1909c0bc3f2f9dd50b2c8595db8b5fc295f4829fd60d351c50f8afd"
+    },
+    {
+      "ficheiro": "depois-europeia-en-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-en-768.png",
+      "sha256": "68e4cc93f72ce1226aad91f01d08f98b59870b0d3e87987fb9b54ee621c14de9"
+    },
+    {
+      "ficheiro": "depois-europeia-en-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-en-1024.png",
+      "sha256": "391762854ac88ca8a2baf452dfb8f692aa3f10cbaed9df707d112d264c0f7928"
+    },
+    {
+      "ficheiro": "depois-europeia-en-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-en-1280.png",
+      "sha256": "80e10d963138abc26bf249d396d56788ca836deda8c9f553492a872679495533"
+    },
+    {
+      "ficheiro": "depois-europeia-en-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-europeia-en-1600.png",
+      "sha256": "f6c6f417c91fff8b47e2d1bf49005b23484c870ab20260e9b3b7597257fa0f87"
+    },
+    {
+      "ficheiro": "depois-mourao-pt-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-pt-390.png",
+      "sha256": "c076a5954665f741bd4faf835880bb07db75cbf45c7abe4d30210aaac56097ee"
+    },
+    {
+      "ficheiro": "depois-mourao-pt-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-pt-768.png",
+      "sha256": "2ef35d0955db0b7d423e84054b679d3b93d5a31df2131b2f6ddcbd1f01d7b630"
+    },
+    {
+      "ficheiro": "depois-mourao-pt-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-pt-1024.png",
+      "sha256": "a0ec1257ff1a703f492c42411777329dda656a08c01dc2dcd4177442e6dcc4f8"
+    },
+    {
+      "ficheiro": "depois-mourao-pt-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-pt-1280.png",
+      "sha256": "85722397615ae2b3a6bc763f6d4bd7eb8271e89cda5840777adc8a8180ea934c"
+    },
+    {
+      "ficheiro": "depois-mourao-pt-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-pt-1600.png",
+      "sha256": "bef8fb08fcad4cca199f52a166ccf84e25431786ba6cb343ca1c09eb59c9a3e1"
+    },
+    {
+      "ficheiro": "depois-mourao-en-390.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-en-390.png",
+      "sha256": "ab51f32c61da34504da5daa052b5f4910fa4f156f651e8e6acdc5cf27107218d"
+    },
+    {
+      "ficheiro": "depois-mourao-en-768.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-en-768.png",
+      "sha256": "ba291884ab6bba297423822adaf706c609969349a489db2df1fede3c241b6cf6"
+    },
+    {
+      "ficheiro": "depois-mourao-en-1024.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-en-1024.png",
+      "sha256": "d69bb6a36b80a52a56b1c0147a67a062a4e9b8cb13fc7b8b930c8b19355bf3a6"
+    },
+    {
+      "ficheiro": "depois-mourao-en-1280.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-en-1280.png",
+      "sha256": "8446659792f7ac66396fdda98750e04629c26a23aa495a645f9d0055da33b28b"
+    },
+    {
+      "ficheiro": "depois-mourao-en-1600.png",
+      "bytes_preservados_em": "capturas-diagnostico-regex/depois-mourao-en-1600.png",
+      "sha256": "c2333ad4fdbc45353eed4fd399960a86ab92e4663e2a2405e6a387203f3e6382"
+    }
+  ],
+  "ficheiros_sha256": {
+    "capturas-depois-peca1.cabeca": "509e6864d0843376269cab7e8ccc2d083f81cb30c384c7dbf1acde3999ba041d",
+    "l1-depois.json": "7a9e6cc9e927ecb66d6ca1536ab4f98fc4272ab3aacd8667da17c1be9adea147",
+    "l1-depois-check-lugar.codigo": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "capturas-depois-peca1.json": "5a1a763dcb8e1fc58a6a90c830087dc581158cb6e41168acad4b187f67e5c06a",
+    "capturas-depois-peca1.inicio": "fd36f95da0f841eaf6658f1472bae67dc3d6ae35dc2a7dd73182b16c8a78c9a2",
+    "l1-depois-check-lugar.txt": "9d274e4f89fbcff00e659ee6533fb39c53c5f96d4f2d52736096bc32028e2d00",
+    "capturas-depois-peca1-falhas.json": "b4e61a0ae259e1b3e28dac412be90b84d17ff200cac261bd7860f46bdd565152",
+    "l1-depois-check-lugar.inicio": "8916721b790b08f2b22dec080de9b111a15d8d74fe8258c940426a64fa01300a",
+    "capturas-depois-peca1.log": "f04af140ab67302e366da8ba06ea3331cf6d3568839440d7e0080446d383fc50",
+    "l1-depois-check-lugar.fim": "8df94adfb79efe086a0007d77962bca533d994b8f394ec2599866309586416db",
+    "capturas-depois-peca1.fim": "a1b1f74caea3220abdebb1fe1fe3446f8de2203390117787b8e0b01a86be7cd9",
+    "capturas-depois-peca1.codigo": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "l1-b2.json": "eb0db0311bcf6e5836d48264bfbcd1e454e4d3e2c3d4611967feaeb48b53ebfc",
+    "paginas-depois-peca1/municipios_mourao_index.html": "b0ab8b35f8b730a4852acb84c4392b75914413d1488075c861e29c4d37a8e2fb",
+    "paginas-depois-peca1/en_themes_index.html": "464a92f601c912a704ac1390999c9eb0b1f900a52ea8fdce2737412e80040e91",
+    "paginas-depois-peca1/index.html": "967d3e2d2485cc7fd0bc0cca15f339b5bf8f78970254ee84ad704afcc222c1ff",
+    "paginas-depois-peca1/uniao-europeia_index.html": "b91a4a8d9b01f3f4170edc697199737630843a0518bad8133bab4717b936f20f",
+    "paginas-depois-peca1/en_municipalities_mourao_index.html": "00b7674a41b1835d7f680220f32a2834c6555e48304466957235ca97fbdc5b00",
+    "paginas-depois-peca1/site.css": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893",
+    "paginas-depois-peca1/en_index.html": "6b6aa8d73c101e0661a432930fe396a4ef2add31c4e582d8af41422504ddd48a",
+    "paginas-depois-peca1/INDICE.json": "e31852b948a8a3b41830da1f0c0f25fa0a697bf9e503d90217ed996d86cc530d",
+    "paginas-depois-peca1/temas_index.html": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256",
+    "paginas-depois-peca1/en_european-union_index.html": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d"
+  }
+}

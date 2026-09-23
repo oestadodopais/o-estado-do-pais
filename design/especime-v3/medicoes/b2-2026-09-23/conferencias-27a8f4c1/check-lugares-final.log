@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 check:lugares
+> node scripts/check-lugares.mjs
+
+
+[32m  lugares ✓ [0m308 concelhos, 29 distritos e ilhas, 9 regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · as 308 linhas do poder de compra declaram a base do índice · 9 chaves com tema · 4928 medida(s) rendidas em 616 página(s), todas debaixo do tema que a tabela lhes dá · as palavras da leitura e da régua recalculadas do livro-razão em todas elas
+

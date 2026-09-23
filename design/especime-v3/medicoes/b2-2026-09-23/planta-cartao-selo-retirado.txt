@@ -1,0 +1,6 @@
+Antes (0)
+selo-retirado: sem defeito
+Planta (1)
+auditaSelo: sem selo para a sua própria linha
+Reposto (0)
+selo-retirado: sem defeito

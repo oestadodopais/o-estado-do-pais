@@ -1,0 +1,24 @@
+
+> o-estado-do-pais@0.1.0 check:areas
+> node scripts/check-areas.mjs
+
+
+  [32m✓[0m A1 · cada área com peças tem página, e nenhuma outra tem
+  [32m✓[0m A2 · a porta de cada peça abre, cada medida vai com selo, e a porta legal abre
+  [32m✓[0m A3 · nenhuma área vazia, no mapa nem na página
+  [32m✓[0m A4 · uma peça em duas áreas traz a razão de cada uma
+  [32m✓[0m A5 · os nomes, e cada matéria com artigo, transcrição e razão
+  [32m✓[0m A6 · a contagem de cada área, de três pontos de observação
+  [32m✓[0m A7 · cada linha do livro-razão coberta uma vez, e só uma
+[90m
+  áreas · 9 declarada(s), 9 com peças · 18 página(s) de área construída(s)
+      financas · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      economia-e-coesao-territorial · 97 peça(s): 8 trabalho(s), 1 conjunto(s), 88 medida(s)
+      infraestruturas-e-habitacao · 4 peça(s): 0 trabalho(s), 0 conjunto(s), 4 medida(s)
+      justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)
+      educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      trabalho-solidariedade-e-seguranca-social · 23 peça(s): 2 trabalho(s), 1 conjunto(s), 20 medida(s)
+      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)
+[0m

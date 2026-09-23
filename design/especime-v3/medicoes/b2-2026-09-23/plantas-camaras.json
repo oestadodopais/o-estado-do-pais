@@ -1,0 +1,169 @@
+[
+  {
+    "nome": "contagem-na-cabeca-de-partida",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "cada-camara-numa-parcela",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "igual-ao-limite-esta-dentro",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "ausencia-publicada-nao-e-zero",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "linha-ausente-nao-e-ausencia-publicada",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "indice-repetido-fecha",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "valor-ilegivel-fecha",
+    "codigo": 0,
+    "passou": true
+  },
+  {
+    "nome": "camaras-html-limpo",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 0,
+    "mordida": null,
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nB1 país: todas as conferências a 0."
+  },
+  {
+    "nome": "camaras-camaras_acima_do_limite-trocada",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 pt: camaras_acima_do_limite: a contagem não coincide",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 pt: camaras_acima_do_limite: a contagem não coincide com as linhas do índice de dívida.\nV2 pt: o valor principal ou a unidade da contagem difere."
+  },
+  {
+    "nome": "camaras-camaras_dentro_do_limite-trocada",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 pt: camaras_dentro_do_limite: a contagem não coincide",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 pt: camaras_dentro_do_limite: a contagem não coincide com as linhas do índice de dívida.\nV2 pt: a régua difere das contagens e do limite lidos nas linhas."
+  },
+  {
+    "nome": "camaras-camaras_sem_valor-trocada",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 pt: camaras_sem_valor: a contagem não coincide",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 pt: camaras_sem_valor: a contagem não coincide com as linhas do índice de dívida.\nV2 pt: a régua difere das contagens e do limite lidos nas linhas."
+  },
+  {
+    "nome": "camaras-limite-trocado",
+    "ficheiro": "en/themes/index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 en: o limite não é o valor selado",
+    "passou": true,
+    "antes": "f6d01bf0ff85af8e7d221bec238c37ece6630fff1a471cb20a60de54206e7a25",
+    "reposto": "f6d01bf0ff85af8e7d221bec238c37ece6630fff1a471cb20a60de54206e7a25",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 en: o limite não é o valor selado da sua linha.\nV2 en: a régua difere das contagens e do limite lidos nas linhas."
+  },
+  {
+    "nome": "camaras-porta-trocada",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 pt: camaras_acima_do_limite: falta a porta",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 pt: camaras_acima_do_limite: falta a porta para os lugares."
+  },
+  {
+    "nome": "camaras-no-inicio-da-fila",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 pt: o cartão das câmaras não fecha a fila",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 pt: o cartão das câmaras não fecha a fila do tema."
+  },
+  {
+    "nome": "economia-com-cinco-cartoes",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "T7 pt: fila vazia ou demasiado longa em economia-e-financas-publicas",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nT4 pt país: medida repetida pib-real-per-capita-2025.\nT7 pt: fila vazia ou demasiado longa em economia-e-financas-publicas."
+  },
+  {
+    "nome": "habitacao-com-total-primeiro",
+    "ficheiro": "temas/index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "T10 pt temas: a habitação não abre com os inquilinos",
+    "passou": true,
+    "antes": "3cd6ee23d42b8f12fd887743e98ada2543bc621d52c9cf7d5b1354bb307dfb65",
+    "reposto": "3cd6ee23d42b8f12fd887743e98ada2543bc621d52c9cf7d5b1354bb307dfb65",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nT10 pt temas: a habitação não abre com os inquilinos a preço de mercado, seguidos do total."
+  },
+  {
+    "nome": "camaras-html-reposto",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 0,
+    "mordida": null,
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nB1 país: todas as conferências a 0."
+  },
+  {
+    "nome": "limite-legal-como-cartao-do-pais",
+    "ficheiro": "index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "V2 pt: o limite legal voltou a aparecer como uma medida do país",
+    "passou": true,
+    "antes": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "reposto": "ddd7d03c9a9badb9ff21cb48e134d5d85eb3471dff2d94fd7e393da480801ee1",
+    "saida": "T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nV2 pt: o limite legal voltou a aparecer como uma medida do país."
+  },
+  {
+    "nome": "periodo-anterior-como-cartao-dos-temas",
+    "ficheiro": "temas/index.html",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordida": "T2 pt temas: saldo-das-administracoes-publicas-2024 sem tema na tabela",
+    "passou": true,
+    "antes": "3cd6ee23d42b8f12fd887743e98ada2543bc621d52c9cf7d5b1354bb307dfb65",
+    "reposto": "3cd6ee23d42b8f12fd887743e98ada2543bc621d52c9cf7d5b1354bb307dfb65",
+    "saida": "T9: 33 cartões com valor de referência na primeira página e nos temas, 12 fora e 21 dentro, cada um com a cor do seu estado.\nB1 país: 35 medidas, 9 temas, 10 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.\nT2 pt temas: saldo-das-administracoes-publicas-2024 sem tema na tabela.\nT5 pt: faltam medidas publicadas na página dos temas.\nT9 pt temas: saldo-das-administracoes-publicas-2024 não tem valor de referência e leva cor de estado."
+  }
+]

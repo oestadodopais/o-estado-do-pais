@@ -1,0 +1,24 @@
+[
+  {
+    "nome": "b2-cartao-cor-sem-palavra",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K15 · divida-publica-2025: veredicto em palavras ausente ou diferente[^\\n]* · \\/temas\\/",
+      "K15 · divida-publica-2025: veredicto em palavras ausente ou diferente[^\\n]* · \\/en\\/european-union\\/"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256",
+        "reposto": "678586afc59095e07e33134614ec2d8547071447a24b64bc5f9e3d1a23670256"
+      },
+      {
+        "ficheiro": "dist/en/european-union/index.html",
+        "antes": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d",
+        "reposto": "8a92e8a094408ff8d842e10e32a8b71e4c0f90d1438a2ab63f474c2866cb125d"
+      }
+    ]
+  }
+]

@@ -1,0 +1,3675 @@
+{
+  "estatuto": "trabalho, não substitui as capturas finais",
+  "inicio": "2026-09-23T18:33:05.016Z",
+  "fim": "2026-09-23T18:33:10.047Z",
+  "segundos": 5.031,
+  "largura": 390,
+  "navegador": "148.0.7778.96",
+  "passou": false,
+  "falhas": [
+    "/municipios/mourao/ mourao-empresas-2024: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-divida-dgal-2024: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-prazo-medio-de-pagamento-2025-12: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-poder-de-compra-2023: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-indice-de-divida-2024: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-desemprego-registado-2025-12: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-ganho-medio-mensal-2024: ordem valor/unidade/fonte",
+    "/municipios/mourao/ mourao-populacao-2025: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-empresas-2024: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-divida-dgal-2024: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-prazo-medio-de-pagamento-2025-12: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-poder-de-compra-2023: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-indice-de-divida-2024: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-desemprego-registado-2025-12: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-ganho-medio-mensal-2024: ordem valor/unidade/fonte",
+    "/en/municipalities/mourao/ mourao-populacao-2025: ordem valor/unidade/fonte"
+  ],
+  "resultados": [
+    {
+      "familia": "pais",
+      "lingua": "pt",
+      "rota": "/",
+      "deslocamento": 0,
+      "cartoes": [
+        {
+          "id": "pib-real-per-capita-2025",
+          "contagem": false,
+          "valor": "20 600",
+          "unidade": "euros por habitante · volumes encadeados (2015)",
+          "pergunta": null,
+          "regua": "2024:20 430União Europeia:31 890",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 83.765625,
+            "y": 1579.296875,
+            "direita": 98.65625,
+            "fundo": 1603.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 104.65625,
+            "y": 1587.296875,
+            "direita": 112.328125,
+            "fundo": 1599.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "saldo-das-administracoes-publicas-2025",
+          "contagem": false,
+          "valor": "0,7",
+          "unidade": "% do PIB",
+          "pergunta": null,
+          "regua": "2024:0,6dentro do valor de referência (acima de −3 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1736.046875,
+            "direita": 56.75,
+            "fundo": 1760.046875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.75,
+            "y": 1744.046875,
+            "direita": 73.265625,
+            "fundo": 1756.046875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "crescimento-da-despesa-liquida-2025",
+          "contagem": false,
+          "valor": "6,4",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:11,9fora do valor de referência (acima de 5 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1878.015625,
+            "direita": 56.734375,
+            "fundo": 1902.015625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 1886.015625,
+            "direita": 73.25,
+            "fundo": 1898.015625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "camaras",
+          "contagem": true,
+          "valor": "10",
+          "unidade": "câmaras",
+          "pergunta": null,
+          "regua": "de 308 câmaras; 297 dentro do limite legal (150 %fonte · CICF/IPCA — Anuário Financeiro dos Municípios Portugueses); 1 sem valor publicado",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 33.109375,
+            "y": 1995.59375,
+            "direita": 48.234375,
+            "fundo": 2019.59375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 54.234375,
+            "y": 2003.59375,
+            "direita": 61.265625,
+            "fundo": 2015.59375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "contagem": false,
+          "valor": "79,6",
+          "unidade": "% da população",
+          "pergunta": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+          "regua": "2024:78,5União Europeia:76,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 2307.953125,
+            "direita": 71.640625,
+            "fundo": 2331.953125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 2315.953125,
+            "direita": 88.15625,
+            "fundo": 2327.953125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "ganho-medio-mensal-2024",
+          "contagem": false,
+          "valor": "1 576,0",
+          "unidade": "euros por mês",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 92.765625,
+            "y": 2450.921875,
+            "direita": 107.65625,
+            "fundo": 2474.921875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.65625,
+            "y": 2458.921875,
+            "direita": 121.328125,
+            "fundo": 2470.921875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "disparidade-salarial-entre-sexos-2024",
+          "contagem": false,
+          "valor": "7",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2023:8,6provisório",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 2557.90625,
+            "direita": 32.90625,
+            "fundo": 2581.90625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.5625,
+            "y": 2565.90625,
+            "direita": 124.078125,
+            "fundo": 2577.90625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "retribuicao-minima-mensal-garantida-continente-2026",
+          "contagem": false,
+          "valor": "920,00",
+          "unidade": "euros por mês",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 86.46875,
+            "y": 2675.484375,
+            "direita": 101.359375,
+            "fundo": 2699.484375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 107.359375,
+            "y": 2683.484375,
+            "direita": 115.03125,
+            "fundo": 2695.484375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "contagem": false,
+          "valor": "18,6",
+          "unidade": "%",
+          "pergunta": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+          "regua": "2024:19,7União Europeia:20,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 2871.0625,
+            "direita": 71.609375,
+            "fundo": 2895.0625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 2879.0625,
+            "direita": 88.125,
+            "fundo": 2891.0625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "contagem": false,
+          "valor": "4,86",
+          "unidade": "rácio",
+          "pergunta": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+          "regua": "2024:5,2União Europeia:4,62",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 3048.8125,
+            "direita": 71.609375,
+            "fundo": 3072.8125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 3056.8125,
+            "direita": 83.296875,
+            "fundo": 3068.8125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "contagem": false,
+          "valor": "6,1",
+          "unidade": "%",
+          "pergunta": "Que parte das pessoas dos 18 aos 24 anos completou no máximo o ensino básico e não está em estudos nem em formação?",
+          "regua": "2024:6,6União Europeia:9,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3318.5625,
+            "direita": 56.734375,
+            "fundo": 3342.5625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3326.5625,
+            "direita": 73.25,
+            "fundo": 3338.5625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "competencias-digitais-2025",
+          "contagem": false,
+          "valor": "59,15",
+          "unidade": "% dos indivíduos",
+          "pergunta": null,
+          "regua": "2023:55,97União Europeia:60,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.59375,
+            "y": 3499.71875,
+            "direita": 86.484375,
+            "fundo": 3523.71875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.484375,
+            "y": 3507.71875,
+            "direita": 103,
+            "fundo": 3519.71875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "criancas-em-creche-2025",
+          "contagem": false,
+          "valor": "57,9",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:59,4União Europeia:40,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 3617.296875,
+            "direita": 71.640625,
+            "fundo": 3641.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 3625.296875,
+            "direita": 88.15625,
+            "fundo": 3637.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "necessidades-medicas-nao-satisfeitas-2025",
+          "contagem": false,
+          "valor": "2,5",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:2,5União Europeia:2,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3844.265625,
+            "direita": 56.734375,
+            "fundo": 3868.265625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3852.265625,
+            "direita": 73.25,
+            "fundo": 3864.265625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "contagem": false,
+          "valor": "27,2",
+          "unidade": "%",
+          "pergunta": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "regua": "2024:30,3União Europeia:18,6",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 4092.03125,
+            "direita": 71.640625,
+            "fundo": 4116.03125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4100.03125,
+            "direita": 88.15625,
+            "fundo": 4112.03125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "contagem": false,
+          "valor": "6,3",
+          "unidade": "%",
+          "pergunta": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "regua": "2024:6,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 4287.171875,
+            "direita": 56.734375,
+            "fundo": 4311.171875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 4295.171875,
+            "direita": 73.25,
+            "fundo": 4307.171875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "licencas-de-construcao-2025",
+          "contagem": false,
+          "valor": "749,7",
+          "unidade": "m² por 1000 habitantes",
+          "pergunta": null,
+          "regua": "2024:654,5União Europeia:377,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.625,
+            "y": 4482.3125,
+            "direita": 86.53125,
+            "fundo": 4506.3125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.53125,
+            "y": 4490.3125,
+            "direita": 104.078125,
+            "fundo": 4502.3125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "formacao-bruta-de-capital-fixo-2025",
+          "contagem": false,
+          "valor": "20,7",
+          "unidade": "% do PIB",
+          "pergunta": null,
+          "regua": "2024:20,4União Europeia:21,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4709.28125,
+            "direita": 71.640625,
+            "fundo": 4733.28125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4717.28125,
+            "direita": 88.15625,
+            "fundo": 4729.28125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "despesa-em-id-2024",
+          "contagem": false,
+          "valor": "1,73",
+          "unidade": "% do PIB",
+          "pergunta": null,
+          "regua": "2023:1,68União Europeia:2,24",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 4958.640625,
+            "direita": 71.640625,
+            "fundo": 4982.640625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4966.640625,
+            "direita": 88.15625,
+            "fundo": 4978.640625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "independencia-da-justica-2025",
+          "contagem": false,
+          "valor": "58",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:53União Europeia:54",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 32.875,
+            "y": 5187.09375,
+            "direita": 47.765625,
+            "fundo": 5211.09375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 53.765625,
+            "y": 5195.09375,
+            "direita": 64.28125,
+            "fundo": 5207.09375,
+            "altura": 12
+          }
+        }
+      ]
+    },
+    {
+      "familia": "pais",
+      "lingua": "en",
+      "rota": "/en/",
+      "deslocamento": 0,
+      "cartoes": [
+        {
+          "id": "pib-real-per-capita-2025",
+          "contagem": false,
+          "valor": "20 600",
+          "unidade": "euro per capita · chain linked volumes (2015)",
+          "pergunta": null,
+          "regua": "2024:20 430European Union:31 890",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 83.765625,
+            "y": 1553.296875,
+            "direita": 98.65625,
+            "fundo": 1577.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 104.65625,
+            "y": 1561.296875,
+            "direita": 112.328125,
+            "fundo": 1573.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "saldo-das-administracoes-publicas-2025",
+          "contagem": false,
+          "valor": "0,7",
+          "unidade": "% of GDP",
+          "pergunta": null,
+          "regua": "2024:0,6within the reference value (above −3 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1710.046875,
+            "direita": 56.75,
+            "fundo": 1734.046875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.75,
+            "y": 1718.046875,
+            "direita": 73.265625,
+            "fundo": 1730.046875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "crescimento-da-despesa-liquida-2025",
+          "contagem": false,
+          "valor": "6,4",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:11,9outside the reference value (above 5 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1827.625,
+            "direita": 56.734375,
+            "fundo": 1851.625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 1835.625,
+            "direita": 73.25,
+            "fundo": 1847.625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "camaras",
+          "contagem": true,
+          "valor": "10",
+          "unidade": "councils",
+          "pergunta": null,
+          "regua": "of 308 councils; 297 within the legal limit (150 %source · CICF/IPCA — Anuário Financeiro dos Municípios Portugueses); 1 with no published value",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 33.109375,
+            "y": 1945.203125,
+            "direita": 48.234375,
+            "fundo": 1969.203125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 54.234375,
+            "y": 1953.203125,
+            "direita": 61.265625,
+            "fundo": 1965.203125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "contagem": false,
+          "valor": "79,6",
+          "unidade": "% of the population",
+          "pergunta": "What share of people aged 20 to 64 is employed?",
+          "regua": "2024:78,5European Union:76,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 2257.5625,
+            "direita": 71.640625,
+            "fundo": 2281.5625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 2265.5625,
+            "direita": 88.15625,
+            "fundo": 2277.5625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "ganho-medio-mensal-2024",
+          "contagem": false,
+          "valor": "1 576,0",
+          "unidade": "euros per month",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 92.765625,
+            "y": 2400.53125,
+            "direita": 107.65625,
+            "fundo": 2424.53125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.65625,
+            "y": 2408.53125,
+            "direita": 121.328125,
+            "fundo": 2420.53125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "disparidade-salarial-entre-sexos-2024",
+          "contagem": false,
+          "valor": "7",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2023:8,6provisional",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 2486.71875,
+            "direita": 32.90625,
+            "fundo": 2510.71875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 119.1875,
+            "y": 2494.71875,
+            "direita": 129.703125,
+            "fundo": 2506.71875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "retribuicao-minima-mensal-garantida-continente-2026",
+          "contagem": false,
+          "valor": "920,00",
+          "unidade": "euros per month",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 86.46875,
+            "y": 2604.296875,
+            "direita": 101.359375,
+            "fundo": 2628.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 107.359375,
+            "y": 2612.296875,
+            "direita": 115.03125,
+            "fundo": 2624.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "contagem": false,
+          "valor": "18,6",
+          "unidade": "%",
+          "pergunta": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+          "regua": "2024:19,7European Union:20,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 2799.875,
+            "direita": 71.609375,
+            "fundo": 2823.875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 2807.875,
+            "direita": 88.125,
+            "fundo": 2819.875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "contagem": false,
+          "valor": "4,86",
+          "unidade": "ratio",
+          "pergunta": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+          "regua": "2024:5,2European Union:4,62",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 2977.625,
+            "direita": 71.609375,
+            "fundo": 3001.625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 2985.625,
+            "direita": 83.296875,
+            "fundo": 2997.625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "contagem": false,
+          "valor": "6,1",
+          "unidade": "%",
+          "pergunta": "What share of people aged 18 to 24 has completed at most lower secondary education and is not in education or training?",
+          "regua": "2024:6,6European Union:9,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3264.765625,
+            "direita": 56.734375,
+            "fundo": 3288.765625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3272.765625,
+            "direita": 73.25,
+            "fundo": 3284.765625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "competencias-digitais-2025",
+          "contagem": false,
+          "valor": "59,15",
+          "unidade": "% of individuals",
+          "pergunta": null,
+          "regua": "2023:55,97European Union:60,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.59375,
+            "y": 3425.125,
+            "direita": 86.484375,
+            "fundo": 3449.125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.484375,
+            "y": 3433.125,
+            "direita": 103,
+            "fundo": 3445.125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "criancas-em-creche-2025",
+          "contagem": false,
+          "valor": "57,9",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:59,4European Union:40,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 3542.703125,
+            "direita": 71.640625,
+            "fundo": 3566.703125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 3550.703125,
+            "direita": 88.15625,
+            "fundo": 3562.703125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "necessidades-medicas-nao-satisfeitas-2025",
+          "contagem": false,
+          "valor": "2,5",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:2,5European Union:2,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3769.671875,
+            "direita": 56.734375,
+            "fundo": 3793.671875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3777.671875,
+            "direita": 73.25,
+            "fundo": 3789.671875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "contagem": false,
+          "valor": "27,2",
+          "unidade": "%",
+          "pergunta": "What share of tenants at market rent live in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "regua": "2024:30,3European Union:18,6",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 3996.640625,
+            "direita": 71.640625,
+            "fundo": 4020.640625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4004.640625,
+            "direita": 88.15625,
+            "fundo": 4016.640625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "contagem": false,
+          "valor": "6,3",
+          "unidade": "%",
+          "pergunta": "What share of people, across all tenure statuses, live in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "regua": "2024:6,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 4174.390625,
+            "direita": 56.734375,
+            "fundo": 4198.390625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 4182.390625,
+            "direita": 73.25,
+            "fundo": 4194.390625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "licencas-de-construcao-2025",
+          "contagem": false,
+          "valor": "749,7",
+          "unidade": "m² per 1000 inhabitants",
+          "pergunta": null,
+          "regua": "2024:654,5European Union:377,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.625,
+            "y": 4369.53125,
+            "direita": 86.53125,
+            "fundo": 4393.53125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.53125,
+            "y": 4377.53125,
+            "direita": 104.078125,
+            "fundo": 4389.53125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "formacao-bruta-de-capital-fixo-2025",
+          "contagem": false,
+          "valor": "20,7",
+          "unidade": "% of GDP",
+          "pergunta": null,
+          "regua": "2024:20,4European Union:21,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4596.5,
+            "direita": 71.640625,
+            "fundo": 4620.5,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4604.5,
+            "direita": 88.15625,
+            "fundo": 4616.5,
+            "altura": 12
+          }
+        },
+        {
+          "id": "despesa-em-id-2024",
+          "contagem": false,
+          "valor": "1,73",
+          "unidade": "% of GDP",
+          "pergunta": null,
+          "regua": "2023:1,68European Union:2,24",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 4845.859375,
+            "direita": 71.640625,
+            "fundo": 4869.859375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4853.859375,
+            "direita": 88.15625,
+            "fundo": 4865.859375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "independencia-da-justica-2025",
+          "contagem": false,
+          "valor": "58",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:53European Union:54",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 32.875,
+            "y": 5074.3125,
+            "direita": 47.765625,
+            "fundo": 5098.3125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 53.765625,
+            "y": 5082.3125,
+            "direita": 64.28125,
+            "fundo": 5094.3125,
+            "altura": 12
+          }
+        }
+      ]
+    },
+    {
+      "familia": "temas",
+      "lingua": "pt",
+      "rota": "/temas/",
+      "deslocamento": 0,
+      "cartoes": [
+        {
+          "id": "pib-real-per-capita-2025",
+          "contagem": false,
+          "valor": "20 600",
+          "unidade": "euros por habitante · volumes encadeados (2015)",
+          "pergunta": null,
+          "regua": "2024:20 430União Europeia:31 890",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 83.765625,
+            "y": 297.640625,
+            "direita": 98.65625,
+            "fundo": 321.640625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 104.65625,
+            "y": 305.640625,
+            "direita": 112.328125,
+            "fundo": 317.640625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "saldo-das-administracoes-publicas-2025",
+          "contagem": false,
+          "valor": "0,7",
+          "unidade": "% do PIB",
+          "pergunta": null,
+          "regua": "2024:0,6dentro do valor de referência (acima de −3 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 454.390625,
+            "direita": 56.75,
+            "fundo": 478.390625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.75,
+            "y": 462.390625,
+            "direita": 73.265625,
+            "fundo": 474.390625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "divida-publica-2025",
+          "contagem": false,
+          "valor": "89,7",
+          "unidade": "% do PIB",
+          "pergunta": "Quanto devem as administrações públicas, em percentagem do que o país produz num ano?",
+          "regua": "2024:93,5União Europeia:81,7fora do valor de referência (acima de 60 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 596.359375,
+            "direita": 71.640625,
+            "fundo": 620.359375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 604.359375,
+            "direita": 88.15625,
+            "fundo": 616.359375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "crescimento-da-despesa-liquida-2025",
+          "contagem": false,
+          "valor": "6,4",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:11,9fora do valor de referência (acima de 5 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 781.109375,
+            "direita": 56.734375,
+            "fundo": 805.109375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 789.109375,
+            "direita": 73.25,
+            "fundo": 801.109375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "contagem": false,
+          "valor": "1,4",
+          "unidade": "% do PIB (média de três anos)",
+          "pergunta": "Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás?",
+          "regua": "2024:0,3dentro dos valores de referência (entre −4 e 6 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 898.6875,
+            "direita": 56.734375,
+            "fundo": 922.6875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 906.6875,
+            "direita": 73.25,
+            "fundo": 918.6875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "contagem": false,
+          "valor": "−50,2",
+          "unidade": "% do PIB",
+          "pergunta": "Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB?",
+          "regua": "2024:−58,9fora do valor de referência (abaixo de −35 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 73.359375,
+            "y": 1083.4375,
+            "direita": 88.25,
+            "fundo": 1107.4375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 94.25,
+            "y": 1091.4375,
+            "direita": 104.765625,
+            "fundo": 1103.4375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "contagem": false,
+          "valor": "2,8",
+          "unidade": "variação em três anos, %",
+          "pergunta": "Quanto mudou em três anos a taxa de câmbio efetiva real face a outros 41 países industriais, com base nos deflatores dos índices de preços no consumidor?",
+          "regua": "2024:0,4União Europeia:11,3dentro dos valores de referência (entre −3 e 3 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1268.1875,
+            "direita": 56.734375,
+            "fundo": 1292.1875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 1276.1875,
+            "direita": 70.21875,
+            "fundo": 1288.1875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "contagem": false,
+          "valor": "8,2",
+          "unidade": "% do total OCDE e UE não-OCDE, variação em três anos",
+          "pergunta": "Quanto mudou em três anos o desempenho das exportações do país face às economias avançadas?",
+          "regua": "2024:17,1dentro do valor de referência (acima de −3 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1470.328125,
+            "direita": 56.734375,
+            "fundo": 1494.328125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 1478.328125,
+            "direita": 73.25,
+            "fundo": 1490.328125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "contagem": false,
+          "valor": "64,9",
+          "unidade": "% do PIB",
+          "pergunta": "Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB?",
+          "regua": "2024:67,1União Europeia:70,0dentro do valor de referência (abaixo de 85 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 1694.25,
+            "direita": 71.609375,
+            "fundo": 1718.25,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 1702.25,
+            "direita": 88.125,
+            "fundo": 1714.25,
+            "altura": 12
+          }
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "contagem": false,
+          "valor": "53,9",
+          "unidade": "% do PIB",
+          "pergunta": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em dívida consolidada e em percentagem do PIB?",
+          "regua": "2024:52,6União Europeia:49,3dentro do valor de referência (abaixo de 55 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 1879,
+            "direita": 71.609375,
+            "fundo": 1903,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 1887,
+            "direita": 88.125,
+            "fundo": 1899,
+            "altura": 12
+          }
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "contagem": false,
+          "valor": "3",
+          "unidade": "% do stock no final do período anterior",
+          "pergunta": "Quanto representa o fluxo de crédito consolidado às sociedades não financeiras na dívida que tinham no período anterior, excluindo o investimento direto estrangeiro das duas parcelas?",
+          "regua": "2024:2,4dentro do valor de referência (abaixo de 13 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 2063.75,
+            "direita": 32.890625,
+            "fundo": 2087.75,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 38.890625,
+            "y": 2071.75,
+            "direita": 49.40625,
+            "fundo": 2083.75,
+            "altura": 12
+          }
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "contagem": false,
+          "valor": "8,6",
+          "unidade": "% do stock no final do período anterior",
+          "pergunta": "Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem?",
+          "regua": "2024:4,1União Europeia:2,9dentro do valor de referência (abaixo de 14 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 2287.078125,
+            "direita": 56.734375,
+            "fundo": 2311.078125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 2295.078125,
+            "direita": 73.25,
+            "fundo": 2307.078125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "camaras",
+          "contagem": true,
+          "valor": "10",
+          "unidade": "câmaras",
+          "pergunta": null,
+          "regua": "de 308 câmaras; 297 dentro do limite legal (150 %fonte · CICF/IPCA — Anuário Financeiro dos Municípios Portugueses); 1 sem valor publicado",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 33.109375,
+            "y": 2510.40625,
+            "direita": 48.234375,
+            "fundo": 2534.40625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 54.234375,
+            "y": 2518.40625,
+            "direita": 61.265625,
+            "fundo": 2530.40625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "contagem": false,
+          "valor": "79,6",
+          "unidade": "% da população",
+          "pergunta": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+          "regua": "2024:78,5União Europeia:76,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 2760.46875,
+            "direita": 71.640625,
+            "fundo": 2784.46875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 2768.46875,
+            "direita": 88.15625,
+            "fundo": 2780.46875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "contagem": false,
+          "valor": "6",
+          "unidade": "% da população ativa",
+          "pergunta": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+          "regua": "2024:6,5União Europeia:6,0dentro do valor de referência (abaixo de 10 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 2903.4375,
+            "direita": 32.890625,
+            "fundo": 2927.4375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 38.890625,
+            "y": 2911.4375,
+            "direita": 49.40625,
+            "fundo": 2923.4375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "ganho-medio-mensal-2024",
+          "contagem": false,
+          "valor": "1 576,0",
+          "unidade": "euros por mês",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 92.765625,
+            "y": 3088.1875,
+            "direita": 107.65625,
+            "fundo": 3112.1875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.65625,
+            "y": 3096.1875,
+            "direita": 121.328125,
+            "fundo": 3108.1875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "disparidade-salarial-entre-sexos-2024",
+          "contagem": false,
+          "valor": "7",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2023:8,6provisório",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 3195.171875,
+            "direita": 32.90625,
+            "fundo": 3219.171875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.5625,
+            "y": 3203.171875,
+            "direita": 124.078125,
+            "fundo": 3215.171875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "retribuicao-minima-mensal-garantida-continente-2026",
+          "contagem": false,
+          "valor": "920,00",
+          "unidade": "euros por mês",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 86.46875,
+            "y": 3312.75,
+            "direita": 101.359375,
+            "fundo": 3336.75,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 107.359375,
+            "y": 3320.75,
+            "direita": 115.03125,
+            "fundo": 3332.75,
+            "altura": 12
+          }
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "contagem": false,
+          "valor": "2,2",
+          "unidade": "% da população ativa",
+          "pergunta": "Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+          "regua": "2024:2,4União Europeia:1,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3398.9375,
+            "direita": 56.734375,
+            "fundo": 3422.9375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3406.9375,
+            "direita": 73.25,
+            "fundo": 3418.9375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "jovens-nem-2025",
+          "contagem": false,
+          "valor": "8",
+          "unidade": "% da população",
+          "pergunta": "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?",
+          "regua": "2024:8,7União Europeia:11,0",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 3559.296875,
+            "direita": 32.890625,
+            "fundo": 3583.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 38.890625,
+            "y": 3567.296875,
+            "direita": 49.40625,
+            "fundo": 3579.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "disparidade-de-emprego-entre-sexos-2025",
+          "contagem": false,
+          "valor": "5,4",
+          "unidade": "% da população",
+          "pergunta": null,
+          "regua": "2024:5,7União Europeia:9,6",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3719.65625,
+            "direita": 56.734375,
+            "fundo": 3743.65625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3727.65625,
+            "direita": 73.25,
+            "fundo": 3739.65625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "contagem": false,
+          "valor": "2,6",
+          "unidade": "variação em três anos, pontos percentuais",
+          "pergunta": "Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável?",
+          "regua": "2024:3,2União Europeia:1,1dentro do valor de referência (acima de −0,2 pp)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3837.234375,
+            "direita": 56.734375,
+            "fundo": 3861.234375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3845.234375,
+            "direita": 70.21875,
+            "fundo": 3857.234375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "contagem": false,
+          "valor": "21,3",
+          "unidade": "variação em três anos, %",
+          "pergunta": "Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?",
+          "regua": "2024:17,7União Europeia:15,2fora do valor de referência (acima de 9 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4043.171875,
+            "direita": 71.609375,
+            "fundo": 4067.171875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 4051.171875,
+            "direita": 85.09375,
+            "fundo": 4063.171875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "contagem": false,
+          "valor": "18,6",
+          "unidade": "%",
+          "pergunta": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+          "regua": "2024:19,7União Europeia:20,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4275.015625,
+            "direita": 71.609375,
+            "fundo": 4299.015625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 4283.015625,
+            "direita": 88.125,
+            "fundo": 4295.015625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "contagem": false,
+          "valor": "4,86",
+          "unidade": "rácio",
+          "pergunta": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+          "regua": "2024:5,2União Europeia:4,62",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4452.765625,
+            "direita": 71.609375,
+            "fundo": 4476.765625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 4460.765625,
+            "direita": 83.296875,
+            "fundo": 4472.765625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "contagem": false,
+          "valor": "6,1",
+          "unidade": "%",
+          "pergunta": "Que parte das pessoas dos 18 aos 24 anos completou no máximo o ensino básico e não está em estudos nem em formação?",
+          "regua": "2024:6,6União Europeia:9,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 4660.21875,
+            "direita": 56.734375,
+            "fundo": 4684.21875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 4668.21875,
+            "direita": 73.25,
+            "fundo": 4680.21875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "competencias-digitais-2025",
+          "contagem": false,
+          "valor": "59,15",
+          "unidade": "% dos indivíduos",
+          "pergunta": null,
+          "regua": "2023:55,97União Europeia:60,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.59375,
+            "y": 4841.375,
+            "direita": 86.484375,
+            "fundo": 4865.375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.484375,
+            "y": 4849.375,
+            "direita": 103,
+            "fundo": 4861.375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "criancas-em-creche-2025",
+          "contagem": false,
+          "valor": "57,9",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:59,4União Europeia:40,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 4958.953125,
+            "direita": 71.640625,
+            "fundo": 4982.953125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4966.953125,
+            "direita": 88.15625,
+            "fundo": 4978.953125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "necessidades-medicas-nao-satisfeitas-2025",
+          "contagem": false,
+          "valor": "2,5",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:2,5União Europeia:2,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 5123.625,
+            "direita": 56.734375,
+            "fundo": 5147.625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 5131.625,
+            "direita": 73.25,
+            "fundo": 5143.625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "contagem": false,
+          "valor": "27,2",
+          "unidade": "%",
+          "pergunta": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "regua": "2024:30,3União Europeia:18,6",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 5309.09375,
+            "direita": 71.640625,
+            "fundo": 5333.09375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 5317.09375,
+            "direita": 88.15625,
+            "fundo": 5329.09375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "contagem": false,
+          "valor": "6,3",
+          "unidade": "%",
+          "pergunta": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+          "regua": "2024:6,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 5504.234375,
+            "direita": 56.734375,
+            "fundo": 5528.234375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 5512.234375,
+            "direita": 73.25,
+            "fundo": 5524.234375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "contagem": false,
+          "valor": "17,6",
+          "unidade": "variação anual média, %",
+          "pergunta": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+          "regua": "2024:9,1União Europeia:5,5fora do valor de referência (acima de 9 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 5699.375,
+            "direita": 71.640625,
+            "fundo": 5723.375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 5707.375,
+            "direita": 85.125,
+            "fundo": 5719.375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "licencas-de-construcao-2025",
+          "contagem": false,
+          "valor": "749,7",
+          "unidade": "m² por 1000 habitantes",
+          "pergunta": null,
+          "regua": "2024:654,5União Europeia:377,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.625,
+            "y": 5884.125,
+            "direita": 86.53125,
+            "fundo": 5908.125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.53125,
+            "y": 5892.125,
+            "direita": 104.078125,
+            "fundo": 5904.125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "formacao-bruta-de-capital-fixo-2025",
+          "contagem": false,
+          "valor": "20,7",
+          "unidade": "% do PIB",
+          "pergunta": null,
+          "regua": "2024:20,4União Europeia:21,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 6048.796875,
+            "direita": 71.640625,
+            "fundo": 6072.796875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 6056.796875,
+            "direita": 88.15625,
+            "fundo": 6068.796875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "despesa-em-id-2024",
+          "contagem": false,
+          "valor": "1,73",
+          "unidade": "% do PIB",
+          "pergunta": null,
+          "regua": "2023:1,68União Europeia:2,24",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 6229.5625,
+            "direita": 71.640625,
+            "fundo": 6253.5625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 6237.5625,
+            "direita": 88.15625,
+            "fundo": 6249.5625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "independencia-da-justica-2025",
+          "contagem": false,
+          "valor": "58",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:53União Europeia:54",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 32.875,
+            "y": 6394.234375,
+            "direita": 47.765625,
+            "fundo": 6418.234375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 53.765625,
+            "y": 6402.234375,
+            "direita": 64.28125,
+            "fundo": 6414.234375,
+            "altura": 12
+          }
+        }
+      ]
+    },
+    {
+      "familia": "temas",
+      "lingua": "en",
+      "rota": "/en/themes/",
+      "deslocamento": 0,
+      "cartoes": [
+        {
+          "id": "pib-real-per-capita-2025",
+          "contagem": false,
+          "valor": "20 600",
+          "unidade": "euro per capita · chain linked volumes (2015)",
+          "pergunta": null,
+          "regua": "2024:20 430European Union:31 890",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 83.765625,
+            "y": 297.640625,
+            "direita": 98.65625,
+            "fundo": 321.640625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 104.65625,
+            "y": 305.640625,
+            "direita": 112.328125,
+            "fundo": 317.640625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "saldo-das-administracoes-publicas-2025",
+          "contagem": false,
+          "valor": "0,7",
+          "unidade": "% of GDP",
+          "pergunta": null,
+          "regua": "2024:0,6within the reference value (above −3 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 454.390625,
+            "direita": 56.75,
+            "fundo": 478.390625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.75,
+            "y": 462.390625,
+            "direita": 73.265625,
+            "fundo": 474.390625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "divida-publica-2025",
+          "contagem": false,
+          "valor": "89,7",
+          "unidade": "% of GDP",
+          "pergunta": "How much does general government owe, as a percentage of what the country produces in a year?",
+          "regua": "2024:93,5European Union:81,7outside the reference value (above 60 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 571.96875,
+            "direita": 71.640625,
+            "fundo": 595.96875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 579.96875,
+            "direita": 88.15625,
+            "fundo": 591.96875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "crescimento-da-despesa-liquida-2025",
+          "contagem": false,
+          "valor": "6,4",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:11,9outside the reference value (above 5 %)",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 756.71875,
+            "direita": 56.734375,
+            "fundo": 780.71875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 764.71875,
+            "direita": 73.25,
+            "fundo": 776.71875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "contagem": false,
+          "valor": "1,4",
+          "unidade": "% of GDP (three-year average)",
+          "pergunta": "What is the current account balance as a percentage of GDP, on a three-year backward moving average?",
+          "regua": "2024:0,3within the reference values (between −4 and 6 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 874.296875,
+            "direita": 56.734375,
+            "fundo": 898.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 882.296875,
+            "direita": 73.25,
+            "fundo": 894.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "contagem": false,
+          "valor": "−50,2",
+          "unidade": "% of GDP",
+          "pergunta": "What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP?",
+          "regua": "2024:−58,9outside the reference value (below −35 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 73.359375,
+            "y": 1059.046875,
+            "direita": 88.25,
+            "fundo": 1083.046875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 94.25,
+            "y": 1067.046875,
+            "direita": 104.765625,
+            "fundo": 1079.046875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "contagem": false,
+          "valor": "2,8",
+          "unidade": "three-year change, %",
+          "pergunta": "How much has the real effective exchange rate relative to 41 other industrial countries, based on consumer price index deflators, changed over three years?",
+          "regua": "2024:0,4European Union:11,3within the reference values (between −3 and 3 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1261.1875,
+            "direita": 56.734375,
+            "fundo": 1285.1875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 1269.1875,
+            "direita": 66.890625,
+            "fundo": 1281.1875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "contagem": false,
+          "valor": "8,2",
+          "unidade": "% of the OECD and non-OECD EU countries total, three-year change",
+          "pergunta": "How much has the country’s export performance against advanced economies changed over three years?",
+          "regua": "2024:17,1within the reference value (above −3 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 1463.328125,
+            "direita": 56.734375,
+            "fundo": 1487.328125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 1471.328125,
+            "direita": 73.25,
+            "fundo": 1483.328125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "contagem": false,
+          "valor": "64,9",
+          "unidade": "% of GDP",
+          "pergunta": "How much do non-financial corporations owe in consolidated debt, as a percentage of GDP?",
+          "regua": "2024:67,1European Union:70,0within the reference value (below 85 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 1662.859375,
+            "direita": 71.609375,
+            "fundo": 1686.859375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 1670.859375,
+            "direita": 88.125,
+            "fundo": 1682.859375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "contagem": false,
+          "valor": "53,9",
+          "unidade": "% of GDP",
+          "pergunta": "How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP?",
+          "regua": "2024:52,6European Union:49,3within the reference value (below 55 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 1847.609375,
+            "direita": 71.609375,
+            "fundo": 1871.609375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 1855.609375,
+            "direita": 88.125,
+            "fundo": 1867.609375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "contagem": false,
+          "valor": "3",
+          "unidade": "% of the stock at the end of the previous period",
+          "pergunta": "What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts?",
+          "regua": "2024:2,4within the reference value (below 13 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 2032.359375,
+            "direita": 32.890625,
+            "fundo": 2056.359375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 38.890625,
+            "y": 2040.359375,
+            "direita": 49.40625,
+            "fundo": 2052.359375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "contagem": false,
+          "valor": "8,6",
+          "unidade": "% of the stock at the end of the previous period",
+          "pergunta": "What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?",
+          "regua": "2024:4,1European Union:2,9within the reference value (below 14 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 2231.296875,
+            "direita": 56.734375,
+            "fundo": 2255.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 2239.296875,
+            "direita": 73.25,
+            "fundo": 2251.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "camaras",
+          "contagem": true,
+          "valor": "10",
+          "unidade": "councils",
+          "pergunta": null,
+          "regua": "of 308 councils; 297 within the legal limit (150 %source · CICF/IPCA — Anuário Financeiro dos Municípios Portugueses); 1 with no published value",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 33.109375,
+            "y": 2454.625,
+            "direita": 48.234375,
+            "fundo": 2478.625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 54.234375,
+            "y": 2462.625,
+            "direita": 61.265625,
+            "fundo": 2474.625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "contagem": false,
+          "valor": "79,6",
+          "unidade": "% of the population",
+          "pergunta": "What share of people aged 20 to 64 is employed?",
+          "regua": "2024:78,5European Union:76,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 2704.6875,
+            "direita": 71.640625,
+            "fundo": 2728.6875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 2712.6875,
+            "direita": 88.15625,
+            "fundo": 2724.6875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "contagem": false,
+          "valor": "6",
+          "unidade": "% of the labour force",
+          "pergunta": "What share of the labour force aged 15 to 74 is unemployed?",
+          "regua": "2024:6,5European Union:6,0within the reference value (below 10 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 2847.65625,
+            "direita": 32.890625,
+            "fundo": 2871.65625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 38.890625,
+            "y": 2855.65625,
+            "direita": 49.40625,
+            "fundo": 2867.65625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "ganho-medio-mensal-2024",
+          "contagem": false,
+          "valor": "1 576,0",
+          "unidade": "euros per month",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 92.765625,
+            "y": 3015.015625,
+            "direita": 107.65625,
+            "fundo": 3039.015625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.65625,
+            "y": 3023.015625,
+            "direita": 121.328125,
+            "fundo": 3035.015625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "disparidade-salarial-entre-sexos-2024",
+          "contagem": false,
+          "valor": "7",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2023:8,6provisional",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 3101.203125,
+            "direita": 32.90625,
+            "fundo": 3125.203125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 119.1875,
+            "y": 3109.203125,
+            "direita": 129.703125,
+            "fundo": 3121.203125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "retribuicao-minima-mensal-garantida-continente-2026",
+          "contagem": false,
+          "valor": "920,00",
+          "unidade": "euros per month",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 86.46875,
+            "y": 3218.78125,
+            "direita": 101.359375,
+            "fundo": 3242.78125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 107.359375,
+            "y": 3226.78125,
+            "direita": 115.03125,
+            "fundo": 3238.78125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "contagem": false,
+          "valor": "2,2",
+          "unidade": "% of the labour force",
+          "pergunta": "What share of the labour force is out of work and has been actively seeking employment for at least a year?",
+          "regua": "2024:2,4European Union:1,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3304.96875,
+            "direita": 56.734375,
+            "fundo": 3328.96875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3312.96875,
+            "direita": 73.25,
+            "fundo": 3324.96875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "jovens-nem-2025",
+          "contagem": false,
+          "valor": "8",
+          "unidade": "% of the population",
+          "pergunta": "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?",
+          "regua": "2024:8,7European Union:11,0",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 18,
+            "y": 3486.125,
+            "direita": 32.890625,
+            "fundo": 3510.125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 38.890625,
+            "y": 3494.125,
+            "direita": 49.40625,
+            "fundo": 3506.125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "disparidade-de-emprego-entre-sexos-2025",
+          "contagem": false,
+          "valor": "5,4",
+          "unidade": "% of the population",
+          "pergunta": null,
+          "regua": "2024:5,7European Union:9,6",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3646.484375,
+            "direita": 56.734375,
+            "fundo": 3670.484375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3654.484375,
+            "direita": 73.25,
+            "fundo": 3666.484375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "contagem": false,
+          "valor": "2,6",
+          "unidade": "three-year change, percentage points",
+          "pergunta": "How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years?",
+          "regua": "2024:3,2European Union:1,1within the reference value (above −0,2 pp)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 3764.0625,
+            "direita": 56.734375,
+            "fundo": 3788.0625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 3772.0625,
+            "direita": 66.890625,
+            "fundo": 3784.0625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "contagem": false,
+          "valor": "21,3",
+          "unidade": "three-year change, %",
+          "pergunta": "How much has the nominal unit labour cost index, per hour worked, changed over three years?",
+          "regua": "2024:17,7European Union:15,2outside the reference value (above 9 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 3987.390625,
+            "direita": 71.609375,
+            "fundo": 4011.390625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 3995.390625,
+            "direita": 81.765625,
+            "fundo": 4007.390625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "contagem": false,
+          "valor": "18,6",
+          "unidade": "%",
+          "pergunta": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+          "regua": "2024:19,7European Union:20,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4219.234375,
+            "direita": 71.609375,
+            "fundo": 4243.234375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 4227.234375,
+            "direita": 88.125,
+            "fundo": 4239.234375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "contagem": false,
+          "valor": "4,86",
+          "unidade": "ratio",
+          "pergunta": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+          "regua": "2024:5,2European Union:4,62",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 4396.984375,
+            "direita": 71.609375,
+            "fundo": 4420.984375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.609375,
+            "y": 4404.984375,
+            "direita": 83.296875,
+            "fundo": 4416.984375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "contagem": false,
+          "valor": "6,1",
+          "unidade": "%",
+          "pergunta": "What share of people aged 18 to 24 has completed at most lower secondary education and is not in education or training?",
+          "regua": "2024:6,6European Union:9,1",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 4621.828125,
+            "direita": 56.734375,
+            "fundo": 4645.828125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 4629.828125,
+            "direita": 73.25,
+            "fundo": 4641.828125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "competencias-digitais-2025",
+          "contagem": false,
+          "valor": "59,15",
+          "unidade": "% of individuals",
+          "pergunta": null,
+          "regua": "2023:55,97European Union:60,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.59375,
+            "y": 4782.1875,
+            "direita": 86.484375,
+            "fundo": 4806.1875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.484375,
+            "y": 4790.1875,
+            "direita": 103,
+            "fundo": 4802.1875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "criancas-em-creche-2025",
+          "contagem": false,
+          "valor": "57,9",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:59,4European Union:40,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 4899.765625,
+            "direita": 71.640625,
+            "fundo": 4923.765625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 4907.765625,
+            "direita": 88.15625,
+            "fundo": 4919.765625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "necessidades-medicas-nao-satisfeitas-2025",
+          "contagem": false,
+          "valor": "2,5",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:2,5European Union:2,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 5064.4375,
+            "direita": 56.734375,
+            "fundo": 5088.4375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 5072.4375,
+            "direita": 73.25,
+            "fundo": 5084.4375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "contagem": false,
+          "valor": "27,2",
+          "unidade": "%",
+          "pergunta": "What share of tenants at market rent live in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "regua": "2024:30,3European Union:18,6",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 5229.109375,
+            "direita": 71.640625,
+            "fundo": 5253.109375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 5237.109375,
+            "direita": 88.15625,
+            "fundo": 5249.109375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "contagem": false,
+          "valor": "6,3",
+          "unidade": "%",
+          "pergunta": "What share of people, across all tenure statuses, live in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+          "regua": "2024:6,9",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 41.84375,
+            "y": 5406.859375,
+            "direita": 56.734375,
+            "fundo": 5430.859375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 62.734375,
+            "y": 5414.859375,
+            "direita": 73.25,
+            "fundo": 5426.859375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "contagem": false,
+          "valor": "17,6",
+          "unidade": "average annual change, %",
+          "pergunta": "How much have the transaction prices of homes purchased by households changed?",
+          "regua": "2024:9,1European Union:5,5outside the reference value (above 9 %)",
+          "perguntaPx": 12,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": true,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 5602,
+            "direita": 71.640625,
+            "fundo": 5626,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 5610,
+            "direita": 84.546875,
+            "fundo": 5622,
+            "altura": 12
+          }
+        },
+        {
+          "id": "licencas-de-construcao-2025",
+          "contagem": false,
+          "valor": "749,7",
+          "unidade": "m² per 1000 inhabitants",
+          "pergunta": null,
+          "regua": "2024:654,5European Union:377,5",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.625,
+            "y": 5786.75,
+            "direita": 86.53125,
+            "fundo": 5810.75,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 92.53125,
+            "y": 5794.75,
+            "direita": 104.078125,
+            "fundo": 5806.75,
+            "altura": 12
+          }
+        },
+        {
+          "id": "formacao-bruta-de-capital-fixo-2025",
+          "contagem": false,
+          "valor": "20,7",
+          "unidade": "% of GDP",
+          "pergunta": null,
+          "regua": "2024:20,4European Union:21,4",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 5951.421875,
+            "direita": 71.640625,
+            "fundo": 5975.421875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 5959.421875,
+            "direita": 88.15625,
+            "fundo": 5971.421875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "despesa-em-id-2024",
+          "contagem": false,
+          "valor": "1,73",
+          "unidade": "% of GDP",
+          "pergunta": null,
+          "regua": "2023:1,68European Union:2,24",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.734375,
+            "y": 6132.1875,
+            "direita": 71.640625,
+            "fundo": 6156.1875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 77.640625,
+            "y": 6140.1875,
+            "direita": 88.15625,
+            "fundo": 6152.1875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "independencia-da-justica-2025",
+          "contagem": false,
+          "valor": "58",
+          "unidade": "%",
+          "pergunta": null,
+          "regua": "2024:53European Union:54",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": true,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 32.875,
+            "y": 6296.859375,
+            "direita": 47.765625,
+            "fundo": 6320.859375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 53.765625,
+            "y": 6304.859375,
+            "direita": 64.28125,
+            "fundo": 6316.859375,
+            "altura": 12
+          }
+        }
+      ]
+    },
+    {
+      "familia": "europeia",
+      "lingua": "pt",
+      "rota": "/uniao-europeia/",
+      "deslocamento": 0,
+      "cartoes": []
+    },
+    {
+      "familia": "europeia",
+      "lingua": "en",
+      "rota": "/en/european-union/",
+      "deslocamento": 0,
+      "cartoes": []
+    },
+    {
+      "familia": "mourao",
+      "lingua": "pt",
+      "rota": "/municipios/mourao/",
+      "deslocamento": 0,
+      "cartoes": [
+        {
+          "id": "mourao-empresas-2024",
+          "contagem": false,
+          "valor": "353",
+          "unidade": "empresas",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 47.75,
+            "y": 580.328125,
+            "direita": 62.640625,
+            "fundo": 604.328125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 128.140625,
+            "y": 588.328125,
+            "direita": 135.8125,
+            "fundo": 600.328125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-divida-dgal-2024",
+          "contagem": false,
+          "valor": "4 307 719",
+          "unidade": "euros",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 119.828125,
+            "y": 709.296875,
+            "direita": 134.71875,
+            "fundo": 733.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 200.21875,
+            "y": 717.296875,
+            "direita": 207.890625,
+            "fundo": 729.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-prazo-medio-de-pagamento-2025-12",
+          "contagem": false,
+          "valor": "21",
+          "unidade": "dias",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 32.875,
+            "y": 838.265625,
+            "direita": 47.765625,
+            "fundo": 862.265625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 113.265625,
+            "y": 846.265625,
+            "direita": 121.65625,
+            "fundo": 858.265625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-poder-de-compra-2023",
+          "contagem": false,
+          "valor": "71,53",
+          "unidade": "índice (Portugal = 100)",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.625,
+            "y": 967.234375,
+            "direita": 86.515625,
+            "fundo": 991.234375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 152.015625,
+            "y": 975.234375,
+            "direita": 155.9375,
+            "fundo": 987.234375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-indice-de-divida-2024",
+          "contagem": false,
+          "valor": "69,1",
+          "unidade": "% (limite legal = 150)",
+          "pergunta": null,
+          "regua": "dentro do limite legal",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 1096.203125,
+            "direita": 71.609375,
+            "fundo": 1120.203125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 137.109375,
+            "y": 1104.203125,
+            "direita": 147.625,
+            "fundo": 1116.203125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-desemprego-registado-2025-12",
+          "contagem": false,
+          "valor": "175",
+          "unidade": "pessoas",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 47.765625,
+            "y": 1266.171875,
+            "direita": 62.65625,
+            "fundo": 1290.171875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 128.15625,
+            "y": 1274.171875,
+            "direita": 136.5,
+            "fundo": 1286.171875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-ganho-medio-mensal-2024",
+          "contagem": false,
+          "valor": "1 195,8",
+          "unidade": "euros por mês",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 92.734375,
+            "y": 1435.515625,
+            "direita": 107.625,
+            "fundo": 1459.515625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 173.125,
+            "y": 1443.515625,
+            "direita": 180.796875,
+            "fundo": 1455.515625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-populacao-2025",
+          "contagem": false,
+          "valor": "2 524",
+          "unidade": "pessoas",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 68.890625,
+            "y": 1635.265625,
+            "direita": 83.78125,
+            "fundo": 1659.265625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 149.28125,
+            "y": 1643.265625,
+            "direita": 157.625,
+            "fundo": 1655.265625,
+            "altura": 12
+          }
+        }
+      ]
+    },
+    {
+      "familia": "mourao",
+      "lingua": "en",
+      "rota": "/en/municipalities/mourao/",
+      "deslocamento": 0,
+      "cartoes": [
+        {
+          "id": "mourao-empresas-2024",
+          "contagem": false,
+          "valor": "353",
+          "unidade": "enterprises",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 47.75,
+            "y": 580.328125,
+            "direita": 62.640625,
+            "fundo": 604.328125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 134.671875,
+            "y": 588.328125,
+            "direita": 142.34375,
+            "fundo": 600.328125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-divida-dgal-2024",
+          "contagem": false,
+          "valor": "4 307 719",
+          "unidade": "euros",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 119.828125,
+            "y": 709.296875,
+            "direita": 134.71875,
+            "fundo": 733.296875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 206.75,
+            "y": 717.296875,
+            "direita": 214.421875,
+            "fundo": 729.296875,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-prazo-medio-de-pagamento-2025-12",
+          "contagem": false,
+          "valor": "21",
+          "unidade": "days",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 32.875,
+            "y": 838.265625,
+            "direita": 47.765625,
+            "fundo": 862.265625,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 119.796875,
+            "y": 846.265625,
+            "direita": 128.1875,
+            "fundo": 858.265625,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-poder-de-compra-2023",
+          "contagem": false,
+          "valor": "71,53",
+          "unidade": "index (Portugal = 100)",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 71.625,
+            "y": 967.234375,
+            "direita": 86.515625,
+            "fundo": 991.234375,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 158.546875,
+            "y": 975.234375,
+            "direita": 162.46875,
+            "fundo": 987.234375,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-indice-de-divida-2024",
+          "contagem": false,
+          "valor": "69,1",
+          "unidade": "% (legal cap = 150)",
+          "pergunta": null,
+          "regua": "within the legal limit",
+          "perguntaPx": null,
+          "reguaPx": 14,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 56.71875,
+            "y": 1078.8125,
+            "direita": 71.609375,
+            "fundo": 1102.8125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 143.640625,
+            "y": 1086.8125,
+            "direita": 154.15625,
+            "fundo": 1098.8125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-desemprego-registado-2025-12",
+          "contagem": false,
+          "valor": "175",
+          "unidade": "people",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 47.765625,
+            "y": 1248.78125,
+            "direita": 62.65625,
+            "fundo": 1272.78125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 134.6875,
+            "y": 1256.78125,
+            "direita": 143.03125,
+            "fundo": 1268.78125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-ganho-medio-mensal-2024",
+          "contagem": false,
+          "valor": "1 195,8",
+          "unidade": "euros per month",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 92.734375,
+            "y": 1437.3125,
+            "direita": 107.625,
+            "fundo": 1461.3125,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 179.65625,
+            "y": 1445.3125,
+            "direita": 187.328125,
+            "fundo": 1457.3125,
+            "altura": 12
+          }
+        },
+        {
+          "id": "mourao-populacao-2025",
+          "contagem": false,
+          "valor": "2 524",
+          "unidade": "people",
+          "pergunta": null,
+          "regua": null,
+          "perguntaPx": null,
+          "reguaPx": null,
+          "reguaAntesDaPergunta": null,
+          "valorAntesDaUnidade": true,
+          "unidadeAntesDoSelo": false,
+          "valorEUnidadeMesmaLinha": true,
+          "caixaValor": {
+            "x": 68.890625,
+            "y": 1619.671875,
+            "direita": 83.78125,
+            "fundo": 1643.671875,
+            "altura": 24
+          },
+          "caixaUnidade": {
+            "x": 155.8125,
+            "y": 1627.671875,
+            "direita": 164.15625,
+            "fundo": 1639.671875,
+            "altura": 12
+          }
+        }
+      ]
+    }
+  ]
+}
