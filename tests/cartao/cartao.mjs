@@ -104,6 +104,19 @@
  *        em TODA a corrida, não só na prova: uma dívida nova fecha a construção
  *        no acto de ser declarada, que é o único sítio onde alguém a lê.
  *
+ *   K14 · **a média europeia calada onde uma decisão a cala** · (bloco R1,
+ *        23.09.2026, I138) o cartão da sobrecarga do custo da habitação punha a
+ *        média da União ao lado do valor português, e sem a ressalva da Comissão
+ *        sobre o regime de ocupação a comparação lê-se ao contrário. A §1.124
+ *        mandou calá-la no cartão até o B2 mostrar a medida por regime de
+ *        ocupação. Esta célula é a catraca: conhece a medida PELO NOME, escrita
+ *        aqui e não importada, e exige três coisas. Nenhum cartão dela rende o
+ *        item da União; a declaração de `figuras.mjs` cala exactamente as medidas
+ *        desta lista, nem mais nem menos, para que um silêncio novo também
+ *        precise de uma decisão; e a linha da União continua no livro-razão, para
+ *        que o silêncio seja uma escolha e não uma ausência. O positivo
+ *        conhecido: pelo menos um cartão da medida visto no `dist/`.
+ *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
  * ---------------------------------------------------------------------------
@@ -148,6 +161,21 @@ import {
   linguaDoTituloDoDocumento,
 } from '../../src/i18n/lingua-dos-titulos.mjs';
 import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
+
+/**
+ * K14 · AS MEDIDAS CUJA MÉDIA EUROPEIA O CARTÃO CALA, e a decisão que o manda.
+ * Escrita aqui e não lida da declaração: uma régua que lesse a lista da coisa
+ * que mede não media nada. Tirar uma medida daqui, ou pôr outra, é uma decisão
+ * escrita em `DECISIONS.md`, e é por isso que a razão vai ao lado.
+ * @type {Map<string, string>}
+ */
+const MEDIA_EUROPEIA_CALADA = new Map([
+  [
+    'sobrecarga-do-custo-da-habitacao-2025',
+    '§1.124 (23.09.2026): a Comissão adverte que a sobrecarga só se lê ao lado do regime de ' +
+      'ocupação; a média da União volta ao cartão com a medida por regime de ocupação, no B2',
+  ],
+]);
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const argv = process.argv.slice(2);
@@ -330,6 +358,8 @@ function corre(dist) {
     marcador_em_portugues: 0,
     nome_noutra_lingua: 0,
     valores_de_regua_sem_marca: 0,
+    /* K14, bloco R1: os cartões de uma medida cuja média europeia está calada. */
+    cartoes_com_media_calada: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -604,6 +634,19 @@ function corre(dist) {
             erros.push(
               `K12 · ${rota} · ${id}: a régua rende «${anterior}» como período anterior, e as duas ` +
                 `linhas não declaram a mesma edição do documento e a mesma unidade`,
+            );
+          }
+        }
+
+        /* ----------------------------------------------------------- K14 */
+        if (MEDIA_EUROPEIA_CALADA.has(id)) {
+          contas.cartoes_com_media_calada++;
+          const daUniao = cartao.querySelectorAll('[data-regua="ue"]').length +
+            cartao.querySelectorAll(`[data-claim="${id}-ue"]`).length;
+          if (daUniao > 0) {
+            erros.push(
+              `K14 · ${rota} · ${id}: o cartão rende a média europeia, e a decisão que a cala ainda ` +
+                `vale: ${MEDIA_EUROPEIA_CALADA.get(id)}`,
             );
           }
         }
@@ -936,6 +979,14 @@ function montaAProva() {
       '<p class="cartao-medida-regua"><span data-regua="anterior" data-selo-em="evora-divida-dgal-2017">' +
       '<span data-claim="evora-divida-dgal-2014">40 000 000</span></span></p>' +
       '</article>' +
+      /* PLANTA 10 (K14): o cartão da sobrecarga com a média europeia de volta. */
+      '<article data-cartao-medida="sobrecarga-do-custo-da-habitacao-2025">' +
+      '<span class="cartao-medida-nome">Sobrecarga do custo da habitação</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="sobrecarga-do-custo-da-habitacao-2025">6,3</span>' +
+      chip('sobrecarga-do-custo-da-habitacao-2025') + '</p>' +
+      '<p class="cartao-medida-regua"><span data-regua="ue" data-selo-em="sobrecarga-do-custo-da-habitacao-2025">' +
+      '<span data-claim="sobrecarga-do-custo-da-habitacao-2025-ue">7,7</span></span></p>' +
+      '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
       '</body></html>',
@@ -967,6 +1018,7 @@ if (PROVA) {
     ['K10', 'marca(s) da fonte'],
     ['K11', 'rende-se sem nome'],
     ['K12', 'não declaram a mesma edição'],
+    ['K14', 'rende a média europeia'],
   ];
   for (const [celula, pedaco] of esperado) {
     const vistos = dessaCelula(celula);
@@ -1316,6 +1368,30 @@ if (!fs.existsSync(DIST)) {
 const r = corre(DIST);
 const motor = ficheirosDoMotor();
 
+/* -------------------------------------------------------------------- K14 */
+/* A declaração cala exactamente as medidas desta lista, e a linha da União de
+   cada uma continua a existir; e o positivo conhecido: pelo menos um cartão de
+   uma medida calada foi visto, ou a célula mediu coisa nenhuma. */
+{
+  const declaradas = new Set(FIGURAS.filter((f) => /** @type {any} */ (f).semMediaEuropeia).map((f) => f.claim));
+  for (const id of declaradas) {
+    if (!MEDIA_EUROPEIA_CALADA.has(id)) {
+      r.erros.push(`K14 · figuras.mjs cala a média europeia de «${id}», e nenhuma decisão escrita nesta célula o manda`);
+    }
+  }
+  for (const [id, razao] of MEDIA_EUROPEIA_CALADA) {
+    if (!declaradas.has(id)) {
+      r.erros.push(`K14 · a declaração de «${id}» deixou de calar a média europeia, e a decisão ainda vale: ${razao}`);
+    }
+    if (!hasClaim(`${id}-ue`)) {
+      r.erros.push(`K14 · a linha da União «${id}-ue» saiu do livro-razão: o silêncio no cartão deixou de ser uma escolha`);
+    }
+  }
+  if (r.contas.cartoes_com_media_calada === 0) {
+    r.erros.push('K14 · nenhum cartão de uma medida com a média europeia calada foi visto no dist/: a célula não mediu nada');
+  }
+}
+
 /* --------------------------------------------------------------------- K9 */
 /* As duas testemunhas do valor de referência, comparadas medida a medida. Não
    lê o `dist/`: lê os dois registos, que é onde o facto está. */
@@ -1391,6 +1467,7 @@ console.log(cinza(`    unidade na outra língua          ${r.contas.unidade_nout
 console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_portugues} (a exceção da IDENTIDADE §6)`));
 console.log(cinza(`    valores de régua sem marca própria                    ${r.contas.valores_de_regua_sem_marca} (a porta é a do cartão)`));
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
+console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));
 console.log(cinza(`      linhas dessas medidas, todas conferidas               ${r.contas.linhas_com_grupo_etario}`));

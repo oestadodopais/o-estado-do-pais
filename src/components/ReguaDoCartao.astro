@@ -93,8 +93,18 @@ for (const f of FIGURAS) {
   if (typeof f.claim === 'string' && !DECLARACAO.has(f.claim)) DECLARACAO.set(f.claim, f);
 }
 
-const regua = reguaDaMedida(id);
 const figura = DECLARACAO.get(id) ?? null;
+/* A MÉDIA EUROPEIA CALADA ONDE A DECLARAÇÃO A CALA (bloco R1, 23.09.2026, I138).
+   É o corte mais estreito que a medição encontrou: a média da União chega a um
+   cartão por esta régua e por mais nenhuma porta (a primeira página, os temas e
+   a página de área rendem o cartão por aqui), e a declaração da medida em
+   `figuras.mjs` diz porquê e até quando. A linha da União continua no
+   livro-razão, com a sua página, e o recibo da medida continua a listá-la no
+   enquadramento: o que sai é a comparação ao lado do número, que sem a ressalva
+   da Comissão se lê ao contrário. A célula K14 de `tests/cartao/cartao.mjs`
+   conhece a medida pelo nome e fecha a construção se a média voltar. */
+const reguaInteira = reguaDaMedida(id);
+const regua = figura?.semMediaEuropeia ? { ...reguaInteira, ue: null } : reguaInteira;
 const limiar = figura?.limiar ?? null;
 const comparacao = limiar ? comparacaoComOLimiar(getClaim(id), limiar) : null;
 const lados = ladosDoLimiar(limiar);

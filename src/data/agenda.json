@@ -3,7 +3,7 @@
   "exportado_em": null,
   "ficheiro": "agenda/agenda.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "c8c60f3838566fc5c13b8695719a292b1c534f7dd8ca562afc7419685735c3e0"
+  "sha256_origem": "57df5962329c0e32fa26849c2466b6e813d6d01c1c07af68c916142df7b6ae6d"
  },
  "formato": 1,
  "itens": [
@@ -34,8 +34,8 @@
       "sobrecarga-do-custo-da-habitacao-2025"
      ],
      "nota": {
-      "en": "The engine's availability register marks tespm140 with framework 'SocialSB'. The engine's convergence analysis identifies this indicator as a trap, for the reason the front page already gives: the Commission itself warns it must be read alongside the tenure structure, and where owner-occupation is high this measure does not see those who never bought. The site does not publish the European average of this indicator today, so the comparison with it is not made here.",
-      "pt": "O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». A análise de convergência do motor identifica este indicador como armadilha, e a razão é a que a primeira página já diz: a própria Comissão adverte que só se lê ao lado do regime de propriedade, e onde a taxa de proprietários é alta esta medida não vê quem não conseguiu comprar. O sítio não publica hoje a média europeia deste indicador, e por isso a comparação com ela não é feita aqui."
+      "en": "The engine's availability register marks tespm140 with framework 'SocialSB'. The engine's convergence analysis identifies this indicator as a trap, for this reason: the Commission itself warns it must be read alongside the tenure structure, and where owner-occupation is high this measure does not see those who never bought. That caveat is not yet on this project's pages, and it comes with the measure by tenure status. The European average of this indicator stopped being shown beside the Portuguese value on 23.09.2026, so the comparison with it is not made here.",
+      "pt": "O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». A análise de convergência do motor identifica este indicador como armadilha, e a razão é esta: a própria Comissão adverte que só se lê ao lado do regime de propriedade, e onde a taxa de proprietários é alta esta medida não vê quem não conseguiu comprar. Essa ressalva ainda não está nas páginas deste projeto, e entra com a medida por regime de ocupação. A média europeia deste indicador deixou de se mostrar ao lado do valor português a 23.09.2026, e por isso a comparação com ela não é feita aqui."
      },
      "quadro": "Painel de Indicadores Sociais (Comissão Europeia)",
      "tipo": "quadro_institucional"
