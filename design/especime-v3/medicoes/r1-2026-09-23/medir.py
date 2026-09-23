@@ -19,7 +19,21 @@ predicado, copiado do `BRIEF-R1.py` e dito ao lado.
 SAI COM CÓDIGO DIFERENTE DE 0 quando uma entrada falta, um resumo não bate, ou uma
 conferência subordinada falha, e diz quais. As saídas dos três portões na cabeça
 final entram quando existem (`portoes/`); antes disso o campo diz «por correr».
+
+A CABEÇA LÊ-SE PRESA, E NÃO `HEAD` (passagem de correção, 23.09.2026). O bloco
+mediu o sítio na cabeça `bc68892b`; o lugar de direção acrescentou commits por
+cima e a passagem de correção também, e ler `HEAD` mudava em silêncio os números
+de um relatório que descreve essa cabeça (as mudanças declaradas, por exemplo,
+passaram de 3 a 4 com o M4b). O que é do R1 lê-se em `CABECA_R1`, como o guião
+do brief lê a cabeça que a leitura de fora leu; o que é da passagem de correção
+lê-se na secção `correcao`, na cabeça em que o guião corre.
+
+AS DUAS VARIÁVEIS DE AMBIENTE, e só servem as plantas: `OEDP_FIGURAS` lê o texto
+de `figuras.mjs` de um ficheiro em vez da cabeça presa, e `OEDP_MEDIDAS_JSON`
+escreve as medidas noutro sítio, para que uma corrida com uma planta não pise o
+`medidas.json` do bloco (`plantar-medir.py`, ao lado).
 """
+import os
 import hashlib
 import html as _html
 import json
@@ -31,6 +45,8 @@ from pathlib import Path
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
 PARTIDA = 'cbe87016'
+# A cabeça do R1: a dos três portões e deste relatório (o código é o de 68b7944c).
+CABECA_R1 = 'bc68892b'
 COPIAS_DEPOIS = AQUI / 'paginas-depois'
 COPIAS_ANTES = AQUI / 'paginas'
 FALHAS = []
@@ -71,9 +87,10 @@ def sha(b):
 M = {}
 
 # ---------------------------------------------------------------- identidade
-M['cabeca'] = git('rev-parse', 'HEAD').strip()
+M['cabeca'] = git('rev-parse', CABECA_R1).strip()
+M['cabeca_da_corrida'] = git('rev-parse', 'HEAD').strip()
 M['partida'] = git('rev-parse', PARTIDA).strip()
-M['commits_do_ramo'] = [l for l in git('log', '--format=%h %s', f'{PARTIDA}..HEAD').splitlines()]
+M['commits_do_ramo'] = [l for l in git('log', '--format=%h %s', f'{PARTIDA}..{CABECA_R1}').splitlines()]
 M['commits_do_ramo_n'] = len(M['commits_do_ramo'])
 brief = json.loads(ler(RAIZ / 'design/observatorio/medidas/BRIEF-R1.json'))
 ANTES = {m['nome']: m['valor'] for m in brief['medidas']}
@@ -117,7 +134,7 @@ if M['pesquisa']['antes']:
     M['pesquisa']['antes_passam'] = sum(1 for m in M['pesquisa']['antes'] if m['passa'])
     M['pesquisa']['antes_mour_a_vista'] = sorted({m['conhecidoVisiveis'] for m in M['pesquisa']['antes']})
     M['pesquisa']['antes_frase_do_nada_a_vista'] = sum(1 for m in M['pesquisa']['antes'] if m['fraseDoNadaVisivel'])
-js_row = mostra('HEAD', 'public/js/municipios.js')
+js_row = mostra(CABECA_R1, 'public/js/municipios.js')
 # A marca do ramo da fila mudou de nome com o bloco («a fila de resultados (os
 # lugares e o livro-razão)»); o contador é o MESMO do BRIEF-R1.py
 # (pesquisa_enter_recarrega), aplicado depois da marca.
@@ -145,13 +162,13 @@ M['habitacao'] = {
     'cartoes_da_primeira_com_media_europeia': sum(1 for a in copia('index.html').split('<article')[1:] if 'União Europeia' in a),
     'antes_na_primeira': ANTES.get('cartao_da_habitacao_com_media_europeia'),
 }
-ue_yml = mostra('HEAD', 'ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml')
+ue_yml = mostra(CABECA_R1, 'ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml')
 ue_valor = re.search(r'^value: "([^"]+)"', ue_yml, re.M).group(1)
 recibo_hab = (RAIZ / 'dist/livro-razao/sobrecarga-do-custo-da-habitacao-2025/index.html').read_text(encoding='utf-8')
 texto_recibo = re.sub(r'\s+', ' ', _html.unescape(re.sub(r'<[^>]+>', ' ', recibo_hab)))
 M['habitacao']['valor_da_uniao'] = ue_valor
 M['habitacao']['recibo_portugues_mostra_a_uniao_no_enquadramento'] = bool(re.search(r'enquadramento.*?União Europeia\s+' + re.escape(ue_valor), texto_recibo))
-agenda_depois = mostra('HEAD', 'src/data/agenda.json')
+agenda_depois = mostra(CABECA_R1, 'src/data/agenda.json')
 agenda_antes = mostra(PARTIDA, 'src/data/agenda.json')
 M['agenda'] = {
     'a_primeira_pagina_ja_diz': {'antes': agenda_antes.count('a primeira página já diz'), 'depois': agenda_depois.count('a primeira página já diz')},
@@ -161,7 +178,7 @@ M['agenda'] = {
     'frase_nova_na_pagina_da_agenda': copia('agenda_index.html').count('Essa ressalva ainda não está nas páginas deste projeto'),
 }
 cal_a = json.loads(mostra(PARTIDA, 'src/data/calendario.json') or '{}')
-cal_d = json.loads(mostra('HEAD', 'src/data/calendario.json') or '{}')
+cal_d = json.loads(mostra(CABECA_R1, 'src/data/calendario.json') or '{}')
 ev_a = {e['id']: e for e in cal_a.get('eventos', [])}
 ev_d = {e['id']: e for e in cal_d.get('eventos', [])}
 novos = sorted(set(ev_d) - set(ev_a))
@@ -198,7 +215,7 @@ def mudancas(fonte):
     return {'declaradas': len(blocos), 'com_palavras_m4': len(m4), 'com_palavras_brief': len(brief_), 'quais_m4': sorted(m4)}
 
 
-M['mudancas'] = {'depois': mudancas(mostra('HEAD', 'src/data/mudancas-do-projeto.mjs')),
+M['mudancas'] = {'depois': mudancas(mostra(CABECA_R1, 'src/data/mudancas-do-projeto.mjs')),
                  'antes': mudancas(mostra(PARTIDA, 'src/data/mudancas-do-projeto.mjs')),
                  'brief_antes_declaradas': ANTES.get('mudancas_declaradas'), 'brief_antes_com_palavras': ANTES.get('mudancas_com_palavras_internas'),
                  'conhecido_positivo': bool(PALAVRAS['pt'].search('saíram dos recibos e dos cartões'))}
@@ -223,7 +240,7 @@ def lista_dos_estudos(pagina):
 
 M['estudos'] = {'pt': lista_dos_estudos(copia('estudos_index.html')), 'en': lista_dos_estudos(copia('en_studies_index.html')),
                 'antes_seccao_por_lugar_na_vista': ANTES.get('estudos_seccao_por_lugar'),
-                'depois_seccao_por_lugar_na_vista': mostra('HEAD', 'src/views/EstudosView.astro').count('id="por-lugar"')}
+                'depois_seccao_por_lugar_na_vista': mostra(CABECA_R1, 'src/views/EstudosView.astro').count('id="por-lugar"')}
 
 # ------------------------------------------------------------------- 5 · o rótulo
 def conta_rotulo(dist):
@@ -249,22 +266,44 @@ def conta_rotulo(dist):
 
 
 M['rotulo'] = {'no_dist': conta_rotulo(RAIZ / 'dist'),
-               'vistas_com_o_rotulo_no_topo': len([l for l in git('grep', '-l', 'onde="topo"', 'HEAD', '--', 'src').splitlines() if l]),
+               'vistas_com_o_rotulo_no_topo': len([l for l in git('grep', '-l', 'onde="topo"', CABECA_R1, '--', 'src').splitlines() if l]),
                'antes_vistas_com_o_rotulo_no_topo': ANTES.get('vistas_com_o_rotulo_no_topo')}
 
 # ------------------------------------------------ 6 · as duas definições, e a origem
-fig = mostra('HEAD', 'src/data/figuras.mjs')
+FIGURAS_DE_FORA = os.environ.get('OEDP_FIGURAS')
+fig = ler(FIGURAS_DE_FORA) if FIGURAS_DE_FORA else mostra(CABECA_R1, 'src/data/figuras.mjs')
 resposta = (AQUI / 'motor' / 'eurostat-tipspd30-PT-PC_GDP.json').read_bytes()
 corpo = json.loads(resposta)
 rotulo_da_resposta = corpo.get('label')
 setor = corpo.get('dimension', {}).get('sector', {}).get('category', {}).get('label', {})
-excerto = re.search(r"'eurostat-tipspd30': \{.*?excerto: '([^']+)'", fig, re.S)
+
+
+def campo_da_origem(texto, chave, campo):
+    """Um campo de cadeia de uma origem de `ORIGENS_DAS_DEFINICOES`, lido do texto.
+
+    O bloco vai de `'<chave>': {` à primeira chaveta que o fecha na sua própria
+    indentação; a cadeia lê-se com as regras de uma cadeia de aspas simples do
+    JavaScript (uma aspa ou uma barra escapadas), e desfaz-se o escape.
+    """
+    m = re.search(r"\n  '" + re.escape(chave) + r"': \{\n(.*?)\n  \},", texto, re.S)
+    if not m:
+        return None
+    c = re.search(r"\n\s*" + re.escape(campo) + r": '((?:[^'\\]|\\.)*)'", '\n' + m.group(1))
+    return re.sub(r"\\(.)", r"\1", c.group(1)) if c else None
+
+
+excerto_da_origem = campo_da_origem(fig, 'eurostat-tipspd30', 'excerto')
+url_da_origem = campo_da_origem(fig, 'eurostat-tipspd30', 'url')
 pedido = json.loads((AQUI / 'motor' / 'pedidos-tipspd30.jsonl').read_text(encoding='utf-8').splitlines()[0])
 M['definicoes'] = {
     'sigla_por_verificar': fig.count('por extenso da sigla permanece '),
     'antes_sigla_por_verificar': ANTES.get('definicoes_com_sigla_por_verificar'),
     'sociedades_nao_financeiras_nas_definicoes': fig.count('sociedades não financeiras'),
-    'origem_excerto_igual_ao_rotulo_da_resposta': bool(excerto) and excerto.group(1) == rotulo_da_resposta,
+    'origem_excerto_igual_ao_rotulo_da_resposta': (excerto_da_origem is not None and rotulo_da_resposta is not None
+                                                    and excerto_da_origem.encode('utf-8') == rotulo_da_resposta.encode('utf-8')),
+    'origem_url_igual_a_do_pedido': url_da_origem is not None and url_da_origem == pedido['url'],
+    'excerto_da_origem': excerto_da_origem,
+    'figuras_lidas_de': 'OEDP_FIGURAS (uma planta)' if FIGURAS_DE_FORA else f'{CABECA_R1}:src/data/figuras.mjs',
     'rotulo_da_resposta': rotulo_da_resposta,
     'setor_da_resposta': setor,
     'resposta_sha256': sha(resposta),
@@ -276,6 +315,17 @@ M['definicoes'] = {
 }
 if M['definicoes']['resposta_sha256'] != pedido['sha256']:
     falha('a cópia da resposta do Eurostat não tem o sha256 do pedido')
+# O EXCERTO DA ORIGEM É O RÓTULO DA RESPOSTA, BYTE A BYTE, E É UM PORTÃO (passagem
+# de correção, achado 3 da leitura a frio): até esta data a comparação era
+# escrita no ficheiro e não fazia falhar nada, e uma origem que dissesse outro
+# conceito ou outra unidade passava. E a origem aponta para o pedido cuja resposta
+# está guardada, porque o rótulo de outro pedido não prova nada sobre este.
+if not M['definicoes']['origem_excerto_igual_ao_rotulo_da_resposta']:
+    falha(f'o excerto da origem eurostat-tipspd30 ({excerto_da_origem!r}) não é, byte a byte, '
+          f'o rótulo da resposta guardada ({rotulo_da_resposta!r})')
+if not M['definicoes']['origem_url_igual_a_do_pedido']:
+    falha(f'o endereço da origem eurostat-tipspd30 ({url_da_origem!r}) não é o do pedido '
+          f'cuja resposta está guardada ({pedido["url"]!r})')
 
 # ------------------------------------------------------- 7 · o título do recibo
 RE_COLADO = re.compile(r'linha-valor-num">[^<]*</span><span class="campo-valor')   # o do BRIEF-R1.py
@@ -360,14 +410,14 @@ M['frescura'] = {'pt': frescura_no_dist(RAIZ / 'dist' / 'municipios'), 'en': fre
                  'cartoes_de_mourao_antes': ANTES.get('cartoes_do_concelho')}
 
 # ---------------------------------------------------------------- 10 · o Portal BASE
-met = mostra('HEAD', 'src/data/metodo.mjs')
+met = mostra(CABECA_R1, 'src/data/metodo.mjs')
 M['base'] = {
     'frase_antiga_no_metodo': met.count('Uma fonte, o Portal BASE'),
     'antes_frase_antiga': ANTES.get('metodo_frase_do_base'),
     'frase_nova_pt_na_pagina': copia('metodo_index.html').count('Nenhuma fonte é lida com a identidade de um navegador'),
     'frase_nova_en_na_pagina': copia('en_method_index.html').count('No source is read with the identity of a browser'),
-    'decisao': re.search(r'^### (1\.\d+) O Portal BASE caído', mostra('HEAD', 'DECISIONS.md'), re.M).group(1),
-    'amarra': re.search(r'\*\*Texto:\*\* metodo ([0-9a-f]{12})', mostra('HEAD', 'DECISIONS.md').split('### 1.126', 1)[1]).group(1),
+    'decisao': re.search(r'^### (1\.\d+) O Portal BASE caído', mostra(CABECA_R1, 'DECISIONS.md'), re.M).group(1),
+    'amarra': re.search(r'\*\*Texto:\*\* metodo ([0-9a-f]{12})', mostra(CABECA_R1, 'DECISIONS.md').split('### 1.126', 1)[1]).group(1),
 }
 
 # ------------------------------------------------ 11 e 12 · a notificação e a leitura
@@ -375,7 +425,7 @@ ids_ine = ['divida-publica-2025-notificacao-ine-2026-09', 'divida-publica-2024-n
            'saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09']
 linhas_ine = {}
 for i in ids_ine:
-    y = mostra('HEAD', f'ledger/claims/{i}.yml')
+    y = mostra(CABECA_R1, f'ledger/claims/{i}.yml')
     campo = lambda c: (re.search(rf'^{c}: "([^"]*)"', y, re.M) or [None, None])[1]
     linhas_ine[i] = {'value': campo('value'), 'unit': campo('unit'), 'published_at': campo('published_at'),
                      'reference_date': campo('reference_date'), 'source': campo('source'),
@@ -383,7 +433,7 @@ for i in ids_ine:
 M['notificacao'] = {'linhas': linhas_ine, 'linhas_n': len(linhas_ine),
                     'paginas_no_dist': sum(v['paginas_no_dist'] for v in linhas_ine.values())}
 xa = json.loads(mostra(PARTIDA, 'ledger/cruzamentos/dominios.json') or '{}').get('rows', {})
-xd = json.loads(mostra('HEAD', 'ledger/cruzamentos/dominios.json') or '{}').get('rows', {})
+xd = json.loads(mostra(CABECA_R1, 'ledger/cruzamentos/dominios.json') or '{}').get('rows', {})
 mud_x = [k for k in set(xa) & set(xd) if xa[k] != xd[k]]
 campos_x = sorted({c for k in mud_x for c in set(xa[k]) | set(xd[k]) if xa[k].get(c) != xd[k].get(c)})
 M['notificacao']['cruzamento'] = {'antes': len(xa), 'depois': len(xd), 'novas': sorted(set(xd) - set(xa)), 'mudadas': len(mud_x),
@@ -400,13 +450,13 @@ def leitura(pagina):
 
 
 M['leitura'] = {'pt': leitura(copia('index.html')), 'en': leitura(copia('en_index.html'))}
-pais_mjs = mostra('HEAD', 'src/lib/pais.mjs')
+pais_mjs = mostra(CABECA_R1, 'src/lib/pais.mjs')
 lista = re.search(r'export const LINHAS_DA_LEITURA_DO_PAIS = \[(.*?)\];', pais_mjs, re.S)
 M['leitura']['lista_fechada'] = len(re.findall(r"'([a-z0-9-]+)'", lista.group(1))) if lista else None
 lista_a = re.search(r'export const LINHAS_DA_LEITURA_DO_PAIS = \[(.*?)\];', mostra(PARTIDA, 'src/lib/pais.mjs'), re.S)
 M['leitura']['lista_fechada_antes'] = len(re.findall(r"'([a-z0-9-]+)'", lista_a.group(1))) if lista_a else None
 conta_linhas = lambda ref: len([l for l in git('ls-tree', '--name-only', f'{ref}:ledger/claims').splitlines() if l.endswith('.yml')])
-M['livro_razao'] = {'linhas_antes': conta_linhas(PARTIDA), 'linhas_depois': conta_linhas('HEAD')}
+M['livro_razao'] = {'linhas_antes': conta_linhas(PARTIDA), 'linhas_depois': conta_linhas(CABECA_R1)}
 M['mudanca_declarada'] = {
     'na_primeira_pt': copia('index.html').count('data-mudanca-id="notificacao-ine-divida-2026-09-23"'),
     'na_primeira_en': copia('en_index.html').count('data-mudanca-id="notificacao-ine-divida-2026-09-23"'),
@@ -465,7 +515,7 @@ M['l1'] = l1.get('contagens')
 M['l1']['teto'] = json.loads(ler(RAIZ / 'scripts/lugar-tetos-b1.json'))['l1_paginas']
 
 # ------------------------------------------------------------ o inventário das frases
-inv = mostra('HEAD', 'design/especime-v3/INVENTARIO-FRASES.md')
+inv = mostra(CABECA_R1, 'design/especime-v3/INVENTARIO-FRASES.md')
 linhas_inv = [[c.strip() for c in l.strip().strip('|').split('|')] for l in inv.splitlines() if l.startswith('| ') and l.count('|') >= 6]
 seccao = inv.split('## As frases do bloco R1', 1)[1] if '## As frases do bloco R1' in inv else ''
 M['inventario'] = {'r1_novas_na_seccao': sum(1 for l in seccao.splitlines() if l.startswith('| conteudo |') or l.startswith('| navegacao |')),
@@ -529,8 +579,9 @@ if not m_perto or not m_longe:
     falha('conferir-mapa.txt: não li as contagens')
 
 M['falhas'] = FALHAS
-(AQUI / 'medidas.json').write_text(json.dumps(M, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print(f'medidas.json escrito: {len(M)} secções; {len(FALHAS)} falha(s).')
+SAIDA = Path(os.environ.get('OEDP_MEDIDAS_JSON') or (AQUI / 'medidas.json'))
+SAIDA.write_text(json.dumps(M, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+print(f'{SAIDA.name} escrito: {len(M)} secções; {len(FALHAS)} falha(s).')
 for f in FALHAS:
     print('  FALHA', f)
 sys.exit(1 if FALHAS else 0)
