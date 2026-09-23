@@ -1,0 +1,132 @@
+{
+  "cabeca": "fc057d1ee1d14b8b6bfa8c098808ee76e3850143",
+  "dist_construido_de": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
+  "dist_construido_em": "2026-09-23T11:32:08.228Z",
+  "regua": "node scripts/check-lugar.mjs, com AMOSTRA=100000",
+  "contagens": {
+    "estudos": 2279,
+    "antes": 2271,
+    "entraram": 8,
+    "sairam": 0
+  },
+  "familias": {
+    "depois": {
+      "agenda": 2,
+      "correcoes": 2,
+      "distrito": 58,
+      "documento": 17,
+      "dominio": 2,
+      "dominios": 2,
+      "estudos": 2,
+      "home": 2,
+      "linha": 1546,
+      "livro": 2,
+      "livroConcelhos": 2,
+      "lugares": 2,
+      "metodo": 2,
+      "municipio": 616,
+      "regiao": 18,
+      "sobre": 2,
+      "uniaoEuropeia": 2
+    },
+    "antes": {
+      "agenda": 2,
+      "correcoes": 2,
+      "distrito": 58,
+      "documento": 17,
+      "dominio": 2,
+      "dominios": 2,
+      "home": 2,
+      "linha": 1540,
+      "livro": 2,
+      "livroConcelhos": 2,
+      "lugares": 2,
+      "metodo": 2,
+      "municipio": 616,
+      "regiao": 18,
+      "sobre": 2,
+      "uniaoEuropeia": 2
+    }
+  },
+  "entraram": [
+    {
+      "url": "/en/ledger/divida-publica-2024-notificacao-ine-2026-09",
+      "familia": "linha",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    {
+      "url": "/en/ledger/divida-publica-2025-notificacao-ine-2026-09",
+      "familia": "linha",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    {
+      "url": "/en/ledger/saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09",
+      "familia": "linha",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2
+    },
+    {
+      "url": "/en/studies",
+      "familia": "estudos",
+      "destinos": 1,
+      "exemplo": "/en/ledger/evora-prazo-medio-de-pagamento-2025",
+      "vezes": 2
+    },
+    {
+      "url": "/estudos",
+      "familia": "estudos",
+      "destinos": 1,
+      "exemplo": "/livro-razao/evora-prazo-medio-de-pagamento-2025",
+      "vezes": 2
+    },
+    {
+      "url": "/livro-razao/divida-publica-2024-notificacao-ine-2026-09",
+      "familia": "linha",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    {
+      "url": "/livro-razao/divida-publica-2025-notificacao-ine-2026-09",
+      "familia": "linha",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    },
+    {
+      "url": "/livro-razao/saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09",
+      "familia": "linha",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2
+    }
+  ],
+  "sairam": [],
+  "paginas_que_ja_contavam_e_mudaram_de_destinos": [
+    {
+      "url": "/",
+      "antes": 2,
+      "depois": 3
+    },
+    {
+      "url": "/agenda",
+      "antes": 7,
+      "depois": 8
+    },
+    {
+      "url": "/en",
+      "antes": 2,
+      "depois": 3
+    },
+    {
+      "url": "/en/agenda",
+      "antes": 7,
+      "depois": 8
+    }
+  ]
+}
