@@ -1,0 +1,18 @@
+$ python3 -m core.http_nome_test  (em core/http.py, estragado: as cinco portas deixam passar um `User-Agent` de quem chama)
+código 1
+
+
+    as 5 portas públicas do cliente              todas entregam «OEstadoDoPais/corredor»
+    um salto para outro anfitrião                os DOIS portões tomados, a cadeia no índice
+    uma falha depois de um salto                 atribuída ao anfitrião do salto, não ao de partida
+    um corpo a um byte de cada vez               PrazoEsgotado em 1.01 s, com o prazo a 1 s
+    o portão tomado por outro processo           PortaoOcupado em 0.45 s (o portão de anfitriao.teste ...)
+    uma fonte com caida_em no registo            FonteCaida antes do pedido; 0 pedidos no servidor, 1 sem a marca
+    o registo das fontes da casa                 11 entradas, 0 com a chave browser_ua; portal_base caída a 2026-09-16, recusada
+    um cliente com a identidade de um navegador  browser_ua=True e user_agent=<navegador> recusados; os nomes da casa passam
+    for_source() com um dicionário de fora       FonteForaDoRegisto e IdentidadeDeNavegadorRecusada, 0 pedidos; 1 com a fonte registada
+    o código do motor, varrido                   221 ficheiros, 0 com o nome de um navegador; o detetor vê o conhecido-positivo
+
+HTTP_NOME: FAIL — 2 problema(s)
+  x nem todas as portas recusaram um User-Agent de fora: {'get': 'PASSOU', 'post': 'PASSOU', 'head': 'PASSOU', 'condicional': 'PASSOU', 'download': 'PASSOU'}
+  x uma entrada do registo com a forma antiga da excepção reabriu uma porta: cabeçalho PASSOU, for_source recusou, pedidos no servidor 1
