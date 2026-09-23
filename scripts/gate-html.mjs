@@ -4957,22 +4957,30 @@ for (const file of ficheirosHtml(DIST)) {
       );
     }
 
-    if (noRodape.length !== 1) {
+    /* UM `topo` EM CADA PÁGINA CONSTRUÍDA, E NENHUM NO RODAPÉ (bloco R1,
+       23.09.2026, I145). Até esta data a célula contava um `rodape` por página e
+       exigia o `topo` só nas de estudo: o rótulo estava no rodapé de todas as
+       outras, a 97 a 99 % do texto de uma página comprida, e o n.º 5 do artigo
+       50.º pede a divulgação «o mais tardar no momento da primeira interação ou
+       exposição». A célula muda de forma e conserva o que protege, que é a
+       divulgação à vista em cada página: o rótulo é agora a primeira coisa do
+       conteúdo de TODAS as páginas (`Base.astro`), uma vez, e o do rodapé é
+       recusado, para que a mesma linha não volte a dizer-se duas vezes. É P,
+       proteção legal: a pergunta jurídica (se uma linha cumpre o artigo 50.º)
+       continua a ser do diretor com o advogado. */
+    if (noTopo.length !== 1) {
       err(
-        `esta página tem ${noRodape.length} rótulo(s) de IA no rodapé; tem de ter exactamente um.\n` +
-          `      <RotuloDeIA/> entra pelo rodapé (SiteFooter.astro) em todas as páginas ` +
-          `construídas. A divulgação do artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689 é de ` +
-          `cada página, à primeira exposição, e não só do Sobre.`,
+        `esta página tem ${noTopo.length} rótulo(s) de IA no topo; tem de ter exactamente um.\n` +
+          `      <RotuloDeIA onde="topo"/> entra por Base.astro, como a primeira coisa do ` +
+          `<main>, em todas as páginas construídas. A divulgação do artigo 50.º, n.º 4 do ` +
+          `Regulamento (UE) 2024/1689 é de cada página, à primeira exposição.`,
       );
     }
-
-    /* O topo de cada página de estudo protege a primeira exposição. */
-    const esperadoNoTopo = rota?.key === 'estudo' ? 1 : 0;
-    if (noTopo.length !== esperadoNoTopo) {
+    if (noRodape.length !== 0) {
       err(
-        `esta página tem ${noTopo.length} rótulo(s) de IA no topo e devia ter ${esperadoNoTopo}.\n` +
-          `      O topo é de cada página de estudo, onde o rodapé pode chegar ` +
-          `tarde para o «momento da primeira exposição» do n.º 5 do artigo 50.º.`,
+        `esta página tem ${noRodape.length} rótulo(s) de IA no rodapé e tem de ter zero.\n` +
+          `      O rótulo subiu ao topo de todas as páginas a 23.09.2026 (bloco R1); no rodapé ` +
+          `seria a mesma linha dita duas vezes na mesma página.`,
       );
     }
 
@@ -5071,19 +5079,45 @@ for (const file of ficheirosHtml(DIST)) {
      * página, que é o marco onde um leitor de ecrã procura quem responde por
      * ela.
      */
-    for (const rotulo of noRodape) {
+    /* O BLOCO DO TOPO VIVE DENTRO DO `<main>` E ANTES DO TÍTULO (bloco R1,
+       23.09.2026). É a mesma conferência de antepassado REAL que o rodapé tinha
+       (a classe e o atributo dizem onde o bloco DEVIA estar, e não onde está),
+       virada para o sítio novo: o rótulo é a primeira coisa do conteúdo, e um
+       leitor que salta para o conteúdo, ou que lê do princípio, encontra-o antes
+       do título da página. */
+    for (const rotulo of noTopo) {
       let no = rotulo.parentNode;
       let dentro = false;
       while (no && no.nodeType !== undefined) {
-        if (String(no.rawTagName ?? '').toLowerCase() === 'footer') { dentro = true; break; }
+        if (String(no.rawTagName ?? '').toLowerCase() === 'main') { dentro = true; break; }
         no = no.parentNode;
       }
       if (!dentro) {
         err(
-          `o rótulo de IA do rodapé não está dentro de um «<footer>».\n` +
+          `o rótulo de IA do topo não está dentro do «<main>».\n` +
             `      O nome da classe diz onde ele devia estar; esta conferência diz onde ele ` +
-            `está. A autoria e quem responde são o que um leitor de ecrã procura no ` +
-            `«contentinfo» da página.`,
+            `está. A divulgação é a primeira coisa do conteúdo de cada página.`,
+        );
+      }
+      /* A PRIMEIRA COISA DO CONTEÚDO, e por isso antes do título que a página
+         tenha dentro do `<main>`. A primeira página de cada edição tem o seu
+         `<h1>` no cabeçalho (é o nome do projeto), e aí a regra que vale é a
+         primeira metade: nada do conteúdo antes do rótulo. */
+      const main = rotulo.closest('main');
+      const primeiro = main?.childNodes.find((n) => n.nodeType === NodeType.ELEMENT_NODE);
+      if (main && primeiro !== rotulo) {
+        err(
+          `o rótulo de IA do topo não é a primeira coisa do «<main>»: vem depois de ` +
+            `«<${String(primeiro?.rawTagName ?? '?').toLowerCase()}>».\n` +
+            `      À primeira exposição quer dizer antes do que a página diz.`,
+        );
+      }
+      const h1 = main?.querySelector('h1');
+      if (h1 && rotulo.range && h1.range && rotulo.range[0] > h1.range[0]) {
+        err(
+          `o rótulo de IA do topo vem depois do título da página («<h1>»).\n` +
+            `      À primeira exposição quer dizer antes do que a página diz: o rótulo é a ` +
+            `primeira coisa do conteúdo.`,
         );
       }
     }
@@ -7845,8 +7879,8 @@ console.log(
     `  allowlist · ${USOS.contextos.size} motivo(s) e ${USOS.tokens.size} token(s), com os usos ` +
       `que os provam vivos: ${[...USOS.contextos].map(([k, n]) => `${k} ${n}`).join(' · ')} · ` +
       `${[...USOS.tokens].map(([k, n]) => `${k} ${n}`).join(' · ')}\n` +
-    `  rótulo de IA · ${ROTULO_DE_IA.rodape} no rodapé (de ${ficheiros - documentos} páginas fora ` +
-      `dos documentos alojados) · ${ROTULO_DE_IA.topo} no topo das páginas de estudo · ` +
+    `  rótulo de IA · ${ROTULO_DE_IA.topo} no topo (de ${ficheiros - documentos} páginas fora ` +
+      `dos documentos alojados) · ${ROTULO_DE_IA.rodape} no rodapé · ` +
       `${ROTULO_DE_IA.ficha} ficha(s) da primeira página · ${ROTULO_DE_IA.frase} frase(s) da ` +
       `política e ${ROTULO_DE_IA.projeto} do projeto, comparadas com o texto decidido`,
   ),

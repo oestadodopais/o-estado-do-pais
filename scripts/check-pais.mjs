@@ -389,7 +389,10 @@ function anda(dir) {
     const portas = doc.querySelectorAll('#nav-principal a');
     const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/about'];
     if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de cinco errado em ${path.relative(dist, abs)}.`);
-    if (doc.querySelectorAll('[data-rotulo-ia="rodape"] .rotulo-ia-final').length !== 1) erros.push(`N2: ponto final sem ligação inseparável em ${path.relative(dist,abs)}.`);
+    /* N2 lê o rótulo onde ele está desde o bloco R1 (23.09.2026): no topo de
+       cada página, e não no rodapé. O que ela protege é o mesmo, a porta e o
+       ponto final numa caixa que não quebra. */
+    if (doc.querySelectorAll('[data-rotulo-ia="topo"] .rotulo-ia-final').length !== 1) erros.push(`N2: ponto final sem ligação inseparável em ${path.relative(dist,abs)}.`);
 
     /* ---------------------------------------------------------------- A4 */
     /* UM TÍTULO POR CONFIRMAR DIZ-SE, EM TODAS AS PÁGINAS ONDE SE RENDE (a

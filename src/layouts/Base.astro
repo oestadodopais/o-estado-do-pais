@@ -21,6 +21,7 @@ import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import RotuloDeIA from '../components/RotuloDeIA.astro';
 /* `PortaDeCorreccoes` saiu daqui a 04.09.2026 (bloco F1.7): quem a rende no
    rodapé é o `SiteFooter`, para que ela caia DENTRO do `contentinfo` e não no
    vão entre o `</main>` e o `<footer>`, que não é marco nenhum. */
@@ -239,6 +240,17 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
       </slot>
 
       <main id="conteudo">
+        {/* O RÓTULO DE IA NO TOPO DE TODAS AS PÁGINAS (bloco R1, 23.09.2026, I145).
+            Vivia no rodapé de todas as páginas, a 97 a 99 % do texto de uma página
+            comprida, e no topo só das de estudo; o artigo 50.º, n.º 5 do
+            Regulamento (UE) 2024/1689 pede a divulgação «o mais tardar no momento
+            da primeira interação ou exposição», e o Método promete-a «em cada
+            página, no momento em que a página é vista». Passa a ser uma linha, a
+            primeira coisa do conteúdo de cada página, no lugar exacto onde as
+            páginas de estudo já a tinham; a vista do estudo deixou de a render,
+            para não a dizer duas vezes. O `gate:html` exige um `topo` por página
+            construída, antes do título, e zero no rodapé. */}
+        <RotuloDeIA lang={lang} path={path} onde="topo" />
         <slot />
       </main>
 

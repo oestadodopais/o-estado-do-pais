@@ -36,10 +36,16 @@
  * ---------------------------------------------------------------------------
  * AS DUAS MARCAS, E O QUE CADA UMA SUSTENTA
  * ---------------------------------------------------------------------------
- *   · `data-rotulo-ia="rodape|topo"` · o bloco. O portão conta exactamente um
- *     `rodape` por página construída, e exige o `topo` nas páginas de estudo;
+ *   · `data-rotulo-ia="topo"` · o bloco. Desde o bloco R1 (23.09.2026) é uma
+ *     linha no topo de TODAS as páginas construídas, rendida por `Base.astro`
+ *     como a primeira coisa do `<main>`, e o portão conta exactamente um `topo`
+ *     por página e zero `rodape`. O valor `rodape` continua a ser um dos dois
+ *     lugares que o portão conhece, e é por isso que ele o recusa em vez de o
+ *     ignorar;
  *   · `data-ficha-primeira-pagina` · a menção de gratuitidade do artigo 15.º,
- *     n.º 1 da Lei de Imprensa, e só na primeira página de cada edição.
+ *     n.º 1 da Lei de Imprensa, e só na primeira página de cada edição. Saiu
+ *     deste componente com o rótulo do rodapé, e vive no rodapé
+ *     (`SiteFooter.astro`), onde uma ficha técnica se procura.
  *
  * `data-rotulo-nome` ERA A TERCEIRA E SAIU (P1, itens 1 e 2, 15.09.2026). O
  * nome de quem responde saiu do rótulo e da ficha por decisão do diretor, e
@@ -51,20 +57,17 @@
  * ---------------------------------------------------------------------------
  * A PRIMEIRA PÁGINA DE CADA EDIÇÃO
  * ---------------------------------------------------------------------------
- * `naPrimeiraPagina` compara o caminho desta página com o da rota `home` da sua
- * edição, que é a mesma pergunta que o cabeçalho já faz para a frase de
- * identidade (`Masthead.astro`, `naHome`). Uma segunda maneira de perguntar a
- * mesma coisa divergiria da primeira.
+ * A pergunta «esta é a primeira página da sua edição» saiu daqui com a ficha
+ * (bloco R1, 23.09.2026), e é feita agora em `SiteFooter.astro`, da mesma
+ * maneira que o cabeçalho a faz para a frase de identidade (`Masthead.astro`,
+ * `naHome`): o caminho desta página contra o da rota `home` da sua edição.
  */
-import { ANCORA_DA_POLITICA, FICHA_DA_PRIMEIRA_PAGINA, ROTULO } from '../data/politica-ia.mjs';
-import { routePath, normalizePath } from '../lib/routes.mjs';
+import { ANCORA_DA_POLITICA, ROTULO } from '../data/politica-ia.mjs';
+import { routePath } from '../lib/routes.mjs';
 
-const { lang = 'pt', path, onde = 'rodape' } = Astro.props;
-const aqui = normalizePath(path ?? Astro.url.pathname);
-const naPrimeiraPagina = normalizePath(routePath('home', lang)) === aqui;
+const { lang = 'pt', onde = 'topo' } = Astro.props;
 
 const r = ROTULO[lang];
-const ficha = FICHA_DA_PRIMEIRA_PAGINA[lang];
 const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
 ---
 
@@ -73,16 +76,4 @@ const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
     <Fragment set:text={r.antes} /><span class="rotulo-ia-final"><a href={politica}>{r.porta}</a><Fragment set:text={r.depois} /></span>
   </p>
 
-  {
-    /* A ficha da primeira página: a menção de gratuitidade, sozinha. Não se
-       repete em mais nenhuma página, porque a lei a pede na primeira e uma
-       frase repetida em seis mil páginas é mobília. O nome de quem dirige saiu
-       desta linha a 15.09.2026, por decisão do diretor: a razão e a leitura do
-       artigo 15.º ficam escritas em `src/data/politica-ia.mjs`. */
-    naPrimeiraPagina && onde === 'rodape' && (
-      <p class="rotulo-ia-ficha" data-ficha-primeira-pagina>
-        <Fragment set:text={ficha.gratuito} />
-      </p>
-    )
-  }
 </div>

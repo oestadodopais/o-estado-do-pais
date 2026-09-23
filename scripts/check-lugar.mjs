@@ -74,6 +74,7 @@ import { WORKS } from '../src/data/studies.mjs';
    descrição pública com a frase de abertura do documento, que é transcrição
    registada. Ver `textoDaCabeca()`. */
 import { VERBATIM } from '../src/data/verbatim.mjs';
+import { ANCORA_DA_POLITICA } from '../src/data/politica-ia.mjs';
 import { temRegisto } from '../src/lib/registos.mjs';
 import { documentosDoEstudo } from '../src/lib/documentos.mjs';
 
@@ -991,6 +992,16 @@ for (const ficheiro of paginas) {
        declarado para o marcador, dentro da definição conferida do cartão. */
     if (a.matches('a.marcador') && a.closest('[data-cartao-definicao]') &&
         href === routePath('marcador', lang)) continue;
+    /* E A PORTA DO RÓTULO DE IA, pela mesma regra (bloco R1, 23.09.2026). O
+       rótulo subiu ao topo de todas as páginas e é a primeira coisa do
+       `<main>`; a sua porta para a política é obrigatória (a divulgação do
+       artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689), e na maior parte das
+       páginas de linha o recibo também liga ao Método. Contá-la como segunda
+       porta era contar a obrigação como escolha. Só se dispensa o destino EXATO
+       da política, e só dentro do rótulo: uma segunda porta para o Método
+       noutro sítio da página continua a contar. */
+    if (a.closest('[data-rotulo-ia="topo"]') &&
+        href === `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`) continue;
     /* E O MARCADOR DE UM TÍTULO POR CONFIRMAR, pela mesma regra e com o mesmo
        mecanismo (B1c, 22.09.2026). O arquivo declara `titleUnverified` em duas
        edições, e a decisão desse dia é que a marca vai a todas as páginas onde

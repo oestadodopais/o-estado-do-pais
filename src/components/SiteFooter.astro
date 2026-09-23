@@ -3,17 +3,28 @@ import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ROTAS_RODAPE, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
-import RotuloDeIA from './RotuloDeIA.astro';
+import { FICHA_DA_PRIMEIRA_PAGINA } from '../data/politica-ia.mjs';
 const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
 const outra = outraLingua ?? otherLanguagePath(aqui, lang);
+/* A FICHA DA PRIMEIRA PÁGINA FICA NO RODAPÉ, SOZINHA (bloco R1, 23.09.2026). O
+   rótulo de IA subiu ao topo de todas as páginas (`Base.astro`), e a menção de
+   gratuitidade do artigo 15.º, n.º 1 da Lei de Imprensa fica onde uma ficha
+   técnica se procura, na primeira página de cada edição e só nela. A pergunta é
+   a mesma que o cabeçalho faz para a frase de identidade: o caminho desta página
+   é o da rota `home` da sua edição. */
+const naPrimeiraPagina = normalizePath(routePath('home', lang)) === aqui;
 ---
 <footer class="rodape rodape-b1">
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {ROTAS_RODAPE.map(rota => <><a href={routePath(rota, lang)}>{s.nav[ETIQUETA_NAV[rota]]}</a>{' · '}</>)}
     <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
   </nav>{' · '}
-  <span data-porta-correccoes><a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a></span>{' · '}
-  <RotuloDeIA lang={lang} path={aqui} onde="rodape" />
+  <span data-porta-correccoes><a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a></span>
+  {naPrimeiraPagina && (
+    <p class="rotulo-ia-ficha" data-ficha-primeira-pagina>
+      <Fragment set:text={FICHA_DA_PRIMEIRA_PAGINA[lang].gratuito} />
+    </p>
+  )}
 </footer>
