@@ -3,7 +3,7 @@
   "exportado_em": null,
   "ficheiro": "indicators/calendar.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "0bd48eb97b9b3ecbbe3dfaa5a1bc5627340e7f979f76bdb6b79833ff276f75f0"
+  "sha256_origem": "9859de7cd68eeb1092035542da9f6b3f02774b826345dbc986825e8bf7b060e6"
  },
  "eventos": [
   {
@@ -187,9 +187,9 @@
    "motivo_sem_data": null,
    "nota": null,
    "origem_da_data": {
-    "acedido_em": "2026-09-01",
-    "excerto": "[verify] no Eurostat (mesma razão de E1); INE, 4 de novembro de 2026 para as Estatísticas do Emprego do 3.º trimestre de 2026",
-    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios"
+    "acedido_em": "2026-09-23",
+    "excerto": "Estatísticas do Emprego · 3.º Trimestre de 2026 · 04 de novembro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt&DESTAQUESpagenumber=4"
    },
    "precisao": "dia",
    "serie": [

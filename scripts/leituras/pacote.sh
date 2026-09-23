@@ -34,10 +34,12 @@ mv "$numeros_tmp" "$pacote/numeros-do-relatorio.txt"
 cp "$brief" "$pacote/brief.md"
 cp "$relatorio" "$pacote/relatorio-construtor.md"
 rel_relatorio=$(cd "$repo" && git ls-files --full-name "$relatorio" 2>/dev/null || true)
-git -C "$repo" diff "$base..$cabeca" -- . ':(exclude)*.png' ':(exclude)*.jpg' ':(exclude)*.webp' ${rel_relatorio:+":(exclude)$rel_relatorio"} > "$pacote/diff.patch"
-# Os caminhos leem-se linha a linha, porque há caminhos com espaços («content/12 Concelhos/…»).
+git -C "$repo" -c core.quotepath=off diff "$base..$cabeca" -- . ':(exclude)*.png' ':(exclude)*.jpg' ':(exclude)*.webp' ${rel_relatorio:+":(exclude)$rel_relatorio"} > "$pacote/diff.patch"
+# Os caminhos leem-se linha a linha, porque há caminhos com espaços («content/12 Concelhos/…»), e com
+# `core.quotepath=off` porque o git escapa os acentos por omissão («Penaliza\303\247\303\265es…») e um
+# caminho escapado não existe: a peça do estudo 11 ficou fora do pacote do M4b a 23.09.2026 por isto.
 lista="$pacote/.mudados"
-git -C "$repo" diff --name-only "$base..$cabeca" | grep -v -E '\.(png|jpg|webp)$' > "$lista"
+git -C "$repo" -c core.quotepath=off diff --name-only "$base..$cabeca" | grep -v -E '\.(png|jpg|webp)$' > "$lista"
 n=0
 while IFS= read -r f; do
   [ -z "$f" ] && continue
