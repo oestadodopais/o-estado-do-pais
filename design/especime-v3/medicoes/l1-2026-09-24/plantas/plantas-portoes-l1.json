@@ -1,0 +1,84 @@
+[
+  {
+    "nome": "l1-leitura-sem-selo-em",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951",
+        "reposto": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-de-outro-cartao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9",
+        "reposto": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-com-linha-alheia",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"divida-publica-2025\" aparece sem selo para a sua própria linha\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "259ac064762c8e43c5f62f244e7e68e4b434315c12ba76f4e3186808c03d10cb",
+        "reposto": "259ac064762c8e43c5f62f244e7e68e4b434315c12ba76f4e3186808c03d10cb"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-que-a-k17-recusa",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a K17 recusou-a em \\/: K17 · \\/ · saldo-das-administracoes-publicas-2025",
+      "FRASE DA CLASSE POR PROVAR EM \\/ · «subiu»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951",
+        "reposto": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-fora-do-cartao",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a K17 recusou-a em \\/en\\/: K17 · \\/en\\/: há uma leitura fora de um cartão",
+      "FRASE DA CLASSE POR PROVAR EM \\/en\\/ · «Union average»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9",
+        "reposto": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9"
+      }
+    ]
+  }
+]

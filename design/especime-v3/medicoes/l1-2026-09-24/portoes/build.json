@@ -1,0 +1,14 @@
+{
+  "comando": "npm run build",
+  "codigo": 0,
+  "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
+  "motor_cabeca": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
+  "inicio": "2026-09-24T08:03:19.187997+00:00",
+  "fim": "2026-09-24T08:08:19.321317+00:00",
+  "segundos": 300.1,
+  "registo": {
+    "sha256_bruto": "65fa9c988b73bd352e5a045e03b8ac818ba74c422c9df3accd53bac1b4ee05e7",
+    "sha256": "19baada9bfdcd2ff12b5fde0f7d6a483de7be66b98dfeea6a043b015486dfd48",
+    "caminhos_da_maquina_trocados": 1
+  }
+}

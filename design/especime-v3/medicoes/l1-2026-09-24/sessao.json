@@ -1,0 +1,11 @@
+{
+  "o_que_e": "O que a sessão do construtor declara e nenhum guião mede: a hora a que a sessão começou e o total de símbolos que a ferramenta reportou.",
+  "inicio_da_sessao": "2026-09-24T05:18:01.582Z",
+  "fonte_do_inicio": "o primeiro registo com hora da transcrição da sessão do construtor (a transcrição fica fora do repositório)",
+  "simbolos": {
+    "total_cumulativo": 1456342,
+    "fonte": "o contador da ferramenta: 15 000 000 símbolos no início da sessão menos os 13 543 658 que ela reportava por usar no momento de escrever este ficheiro; o que se gastou depois (a escrita do relatório e o commit das provas) não está contado",
+    "orcamento_da_sessao": 15000000,
+    "por_usar_na_escrita": 13543658
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "comando": "npm run verify",
+  "codigo": 0,
+  "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
+  "motor_cabeca": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
+  "inicio": "2026-09-24T08:09:01.045711+00:00",
+  "fim": "2026-09-24T08:17:12.019912+00:00",
+  "segundos": 491.0,
+  "registo": {
+    "sha256_bruto": "a655159367239baa1ab573ad28c0021dbc077ebaa492eeee9dc0eadc34ee501a",
+    "sha256": "efacf8250d01321a2ef0e6c16250bc4d5bb7e0107544024537e5bab47116295b",
+    "caminhos_da_maquina_trocados": 2
+  }
+}
