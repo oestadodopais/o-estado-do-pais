@@ -3248,8 +3248,10 @@ function auditaSelo(el, id, lang, err) {
      que muda é só a forma: a leitura é um invólucro que diz a que cartão
      pertence (`data-cartao-leitura`), e uma leitura sem `data-selo-em`, ou de
      outro cartão, ou com uma linha que a régua do cartão não citaria, cai no
-     erro de sempre. A planta (`tests/cartao/plantas-l1.mjs`) tira o
-     `data-selo-em` a uma leitura com um valor e exige esta mordida. */
+     erro de sempre. As plantas `l1-leitura-*` de `tests/pais/portoes.mjs` tiram
+     o `data-selo-em` a uma leitura com um valor, dão a leitura a outro cartão
+     e trocam o valor pelo de uma linha que a régua não cita, e exigem esta
+     mordida nos três casos. */
   const leitura = el.closest('[data-cartao-leitura][data-selo-em]');
   const cartaoDaLeitura = leitura?.closest('[data-cartao-medida]');
   const doCartao = cartaoDaLeitura?.getAttribute('data-cartao-medida');

@@ -564,11 +564,14 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
       }
       return false;
     };
+    /* O texto que se lê é o descodificado: uma referência de carácter como
+       `&#39;` não é um algarismo à vista, e um algarismo escrito como `&#x31;`
+       é, e tem de ter marca como qualquer outro. */
     const anda = (/** @type {any} */ n) => {
       if (n.nodeType === NodeType.TEXT_NODE) {
-        if (/\d/.test(n.rawText)) {
+        if (/\d/.test(n.text)) {
           contas.algarismos++;
-          if (!marcado(n)) falha(id, `a leitura escreve um algarismo sem marca de origem: «${curto(normal(n.rawText))}»`);
+          if (!marcado(n)) falha(id, `a leitura escreve um algarismo sem marca de origem: «${curto(normal(n.text))}»`);
         }
         return;
       }
@@ -660,6 +663,8 @@ export function plantasDaK17(dist) {
   const pagina = (estraga) => { const r = parse(temas); estraga(r); return conferirPaginaDaLeitura(r, 'pt', '/temas/ (planta)', linhas).erros; };
   const leituraDe = (/** @type {any} */ r, /** @type {string} */ id) => r.querySelector(`[data-cartao-medida="${id}"] [data-cartao-leitura]`);
   regista('um algarismo escrito à mão na leitura', pagina((r) => { leituraDe(r, saldo).insertAdjacentHTML('beforeend', ' Em 12 anos subiu.'); }),
+    'algarismo sem marca de origem');
+  regista('um algarismo escrito como referência de carácter', pagina((r) => { leituraDe(r, saldo).insertAdjacentHTML('beforeend', ' Em &#x31;&#x32; anos.'); }),
     'algarismo sem marca de origem');
   regista('o ramo trocado', pagina((r) => {
     const l = leituraDe(r, saldo);
