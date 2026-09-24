@@ -88,6 +88,7 @@ import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from '.
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
 import { temAviso } from './aviso-do-motor.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
+import { FIGURAS } from '../data/figuras.mjs';
 
 /**
  * A PASTA DOS FICHEIROS DO MOTOR, PROCURADA E NÃO COMPOSTA.
@@ -405,6 +406,27 @@ export function reguaDaMedida(id) {
       : null;
   const ue = chaves.ue && hasClaim(chaves.ue) ? { id: chaves.ue } : null;
   return { anterior: anterior && mesmaSerie(id, anterior.id) ? anterior : null, ue };
+}
+
+/**
+ * A RÉGUA QUE O CARTÃO DESENHA, e a que a leitura dele cita (bloco L1,
+ * 24.09.2026).
+ *
+ * É `reguaDaMedida()` com a média da União calada onde a declaração da medida
+ * a cala (`semMediaEuropeia`, bloco R1, I138). Estava escrita dentro de
+ * `ReguaDoCartao.astro`, e a leitura de cada medida passou a precisar da mesma
+ * resposta: a leitura só compara com as linhas que a régua do cartão cita, e
+ * duas cópias da mesma regra acabavam a dizer coisas diferentes na primeira
+ * correção. A régua e a leitura chamam esta função, e a régua rende o mesmo
+ * que rendia.
+ *
+ * @param {string} id  o identificador da linha da medida
+ * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null }}
+ */
+export function reguaDoCartao(id) {
+  const figura = FIGURAS.find((f) => f.claim === id) ?? null;
+  const inteira = reguaDaMedida(id);
+  return figura && 'semMediaEuropeia' in figura && figura.semMediaEuropeia ? { ...inteira, ue: null } : inteira;
 }
 
 /**

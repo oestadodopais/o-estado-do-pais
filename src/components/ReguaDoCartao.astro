@@ -65,26 +65,12 @@ import Claim from './Claim.astro';
 import VeredictoDaReferencia from './VeredictoDaReferencia.astro';
 import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
 import CampoDaLinha from './CampoDaLinha.astro';
-import { reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
-import { FIGURAS } from '../data/figuras.mjs';
+import { reguaDoCartao, temRegua } from '../lib/enquadramento.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 
 const { id, lang = 'pt', s } = Astro.props;
 
-/**
- * AS DECLARAÇÕES DO QUADRO, para a ressalva da média europeia.
- *
- * A referência vem da tabela única `referencias-das-medidas.mjs`, que reúne o
- * painel europeu e as referências nacionais. A declaração original da figura
- * continua a mandar na ressalva que cala a média europeia.
- */
-const DECLARACAO = new Map();
-for (const f of FIGURAS) {
-  if (typeof f.claim === 'string' && !DECLARACAO.has(f.claim)) DECLARACAO.set(f.claim, f);
-}
-
-const figura = DECLARACAO.get(id) ?? null;
 /* A MÉDIA EUROPEIA CALADA ONDE A DECLARAÇÃO A CALA (bloco R1, 23.09.2026, I138).
    É o corte mais estreito que a medição encontrou: a média da União chega a um
    cartão por esta régua e por mais nenhuma porta (a primeira página, os temas e
@@ -94,8 +80,10 @@ const figura = DECLARACAO.get(id) ?? null;
    enquadramento: o que sai é a comparação ao lado do número, que sem a ressalva
    da Comissão se lê ao contrário. A célula K14 de `tests/cartao/cartao.mjs`
    conhece a medida pelo nome e fecha a construção se a média voltar. */
-const reguaInteira = reguaDaMedida(id);
-const regua = figura?.semMediaEuropeia ? { ...reguaInteira, ue: null } : reguaInteira;
+/* A régua e a leitura do cartão (bloco L1) leem a mesma função, para citarem as
+   mesmas linhas: `reguaDoCartao()` é `reguaDaMedida()` com a média da União
+   calada onde a declaração da medida a cala. */
+const regua = reguaDoCartao(id);
 const limiar = REFERENCIAS_DAS_MEDIDAS.get(id)?.limiar ?? null;
 const estado = limiar ? estadoDaMedida(getClaim(id), limiar) : null;
 const pintado = estado === 'fora' || estado === 'dentro';
