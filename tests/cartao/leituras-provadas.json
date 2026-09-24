@@ -1192,8 +1192,8 @@
       ],
       "folhas": [
         {
-          "pt": "É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida, a despesa paga por fundos europeus nem a que sobe e desce com o desemprego, apurada pelo Conselho das Finanças Públicas.",
-          "en": "It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt, spending paid by European funds and the spending that rises and falls with unemployment, as computed by the Public Finance Council.",
+          "pt": "É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida, a despesa financiada por fundos europeus nem a que sobe e desce com o desemprego, apurada pelo Conselho das Finanças Públicas.",
+          "en": "It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt, spending financed by European funds and the spending that rises and falls with unemployment, as computed by the Public Finance Council.",
           "partes": [
             {
               "pt": "É quanto cresceu num ano a despesa pública líquida",
@@ -1235,8 +1235,8 @@
               ]
             },
             {
-              "pt": ", a despesa paga por fundos europeus",
-              "en": ", spending paid by European funds",
+              "pt": ", a despesa financiada por fundos europeus",
+              "en": ", spending financed by European funds",
               "classe": "diz",
               "apoios": [
                 {
@@ -2569,11 +2569,11 @@
         },
         {
           "pt": " anos que tem emprego.",
-          "en": " who are in employment.",
+          "en": " who are employed.",
           "partes": [
             {
               "pt": " anos que tem emprego.",
-              "en": " who are in employment.",
+              "en": " who are employed.",
               "classe": "diz",
               "apoios": [
                 {

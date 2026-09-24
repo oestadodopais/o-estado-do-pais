@@ -1,0 +1,531 @@
+{
+  "o_que_e": "Os acertos de palavras do construtor do L1 às leituras do lugar de direção, conferidos por acertos-l1.py.",
+  "fonte": {
+    "caminho": "design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs",
+    "sha256": "b98c7300d380c56c8dfbb7f282da979c35bc55d1bbf1fe90fe350979f971a757"
+  },
+  "sitio": {
+    "caminho": "src/data/leituras-das-medidas.mjs",
+    "sha256": "b0f2f0966e6c479c3e759eed4ba9de2b7265f41dddbaec000256257ee9bd3e68"
+  },
+  "auditoria": {
+    "caminho": "tests/cartao/leituras-provadas.json",
+    "sha256": "095f7ef5f6ab1539f054d34d7d334e79caa3133f571bf2a1016f8b53d1fe2e44"
+  },
+  "conferido": "a cópia do lugar de direção com estas trocas e o ficheiro do sítio são iguais sem os comentários de bloco e com os espaços juntos",
+  "acertos": [
+    {
+      "chave": "A1",
+      "medida": "pib-real-per-capita-2025",
+      "porque": "A descrição do Eurostat diz «real gross domestic product» e não diz como o valor real se calcula; a oração sobre os preços de um ano fixo não estava em origem nenhuma lida.",
+      "literais": [
+        {
+          "dono": "eurostat-tipsna40-descricao",
+          "campo": "excerto",
+          "literal": "real gross domestic product"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "por habitante, medido a preços de um ano fixo para se poder comparar entre anos.'",
+          "depois": "por habitante, em termos reais.'",
+          "vezes": 1
+        },
+        {
+          "antes": "per inhabitant, measured at the prices of a fixed year so that years can be compared.'",
+          "depois": "per inhabitant, in real terms.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A2",
+      "medida": "saldo-das-administracoes-publicas-2025",
+      "porque": "O subsetor chama-se «Administração Local» no INE; «as autarquias» nomeia-o em palavras correntes, e «as câmaras» é o nome de um órgão, não do subsetor.",
+      "literais": [
+        {
+          "dono": "ine-pde-subsetores",
+          "campo": "excerto",
+          "literal": "Administração Local"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "(o Estado, as regiões autónomas, as câmaras e a segurança social)",
+          "depois": "(o Estado, as regiões autónomas, as autarquias e a segurança social)",
+          "vezes": 3
+        },
+        {
+          "antes": "(the State, the autonomous regions, the municipalities and social security)",
+          "depois": "(the State, the autonomous regions, local authorities and social security)",
+          "vezes": 3
+        }
+      ]
+    },
+    {
+      "chave": "A3",
+      "medida": "crescimento-da-despesa-liquida-2025",
+      "porque": "Nenhuma origem lida diz que o Governo controla esta despesa: o que o CFP apura é o crescimento da despesa líquida. O compromisso é «assumido por Portugal e endossado pelo Conselho da UE», e não um compromisso com o Conselho; e o valor de referência é o do ano do cartão, numa trajetória, e não um teto igual todos os anos.",
+      "literais": [
+        {
+          "dono": "propria",
+          "campo": "excerpt",
+          "literal": "crescimento da despesa líquida"
+        },
+        {
+          "dono": "cfp-compromisso",
+          "campo": "excerto",
+          "literal": "compromisso assumido por Portugal e endossado pelo Conselho da UE"
+        },
+        {
+          "dono": "cfp-trajetoria",
+          "campo": "excerto",
+          "literal": "comprometeu-se com uma determinada trajetória de crescimento da despesa líquida"
+        },
+        {
+          "dono": "propria",
+          "campo": "excerpt",
+          "literal": "a taxa de crescimento de 5% recomendada"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É quanto cresceu num ano a despesa pública que o Governo controla: a despesa líquida, que não conta os juros da dívida,",
+          "depois": "'É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida,",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is how much the public spending the Government controls grew in a year: net expenditure, which leaves out interest on the debt,",
+          "depois": "'It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt,",
+          "vezes": 1
+        },
+        {
+          "antes": "' Portugal comprometeu-se com o Conselho da União Europeia a não a deixar crescer mais de ', { referencia: 'unico' }, ' % por ano: em ', { periodo: 'proprio' }, ' ', { estado:",
+          "depois": "' Portugal comprometeu-se, num compromisso endossado pelo Conselho da União Europeia, a não a deixar crescer mais de ', { referencia: 'unico' }, ' % em ', { periodo: 'proprio' }, ': ', { estado:",
+          "vezes": 1
+        },
+        {
+          "antes": "' Portugal committed to the Council of the European Union not to let it grow by more than ', { referencia: 'unico' }, ' % a year: in ', { periodo: 'proprio' }, ' it ', { estado:",
+          "depois": "' Portugal committed, in a commitment endorsed by the Council of the European Union, not to let it grow by more than ', { referencia: 'unico' }, ' % in ', { periodo: 'proprio' }, ': it ', { estado:",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A4",
+      "medida": "posicao-de-investimento-internacional-2025",
+      "porque": "O Banco de Portugal escreve «responsabilidade» perante o exterior («net external liability» na edição inglesa), e não dívida; a frase passa a usar a palavra dele.",
+      "literais": [
+        {
+          "dono": "bdp-pii-sinal",
+          "campo": "excerto",
+          "literal": "representando uma responsabilidade perante o exterior"
+        },
+        {
+          "dono": "bdp-pii-sinal",
+          "campo": "excertoEn",
+          "literal": "there is a net external liability"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'A dívida líquida ao exterior encolheu face a'",
+          "depois": "'A responsabilidade líquida perante o exterior encolheu face a'",
+          "vezes": 1
+        },
+        {
+          "antes": "'A dívida líquida ao exterior cresceu face a'",
+          "depois": "'A responsabilidade líquida perante o exterior cresceu face a'",
+          "vezes": 1
+        },
+        {
+          "antes": "'A dívida líquida ao exterior ficou igual à de'",
+          "depois": "'A responsabilidade líquida perante o exterior ficou igual à de'",
+          "vezes": 1
+        },
+        {
+          "antes": "'The net debt to the rest of the world shrank from'",
+          "depois": "'The net external liability shrank from'",
+          "vezes": 1
+        },
+        {
+          "antes": "'The net debt to the rest of the world grew from'",
+          "depois": "'The net external liability grew from'",
+          "vezes": 1
+        },
+        {
+          "antes": "'The net debt to the rest of the world was unchanged from'",
+          "depois": "'The net external liability was unchanged from'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A5",
+      "medida": "taxa-de-cambio-efectiva-real-2025",
+      "porque": "Nenhuma origem lida diz que uma subida quer dizer perda de competitividade: a descrição do Eurostat fala da competitividade de preços ou de custos sem dizer o sentido, os glossários procurados responderam 404, e a página do BCE lida não o diz. A oração sai.",
+      "literais": [
+        {
+          "dono": "eurostat-tipser10-descricao",
+          "campo": "excerto",
+          "literal": "price or cost competitiveness relative to its principal competitors"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "em três anos: quando sobe, o país perde competitividade; quando desce, ganha.'",
+          "depois": "em três anos.'",
+          "vezes": 1
+        },
+        {
+          "antes": "over three years: when it rises, the country loses competitiveness; when it falls, it gains.'",
+          "depois": "over three years.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A6",
+      "medida": "divida-das-empresas-2025",
+      "porque": "A descrição do Eurostat conta os títulos de dívida e os empréstimos («Debt securities (F.3) and Loans (F.4)»), e não tudo o que as empresas devem.",
+      "literais": [
+        {
+          "dono": "eurostat-tipspd30-descricao",
+          "campo": "excerto",
+          "literal": "Debt securities (F.3) and Loans (F.4)"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É tudo o que as empresas devem, fora as financeiras, '",
+          "depois": "'É o que as empresas devem em empréstimos e títulos de dívida, fora as financeiras, '",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is everything companies owe, excluding financial companies, '",
+          "depois": "'It is what companies owe in loans and debt securities, excluding financial companies, '",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A7",
+      "medida": "divida-das-familias-2025",
+      "porque": "O setor é o das famílias e das instituições sem fim lucrativo ao seu serviço, e a dívida é a de títulos e empréstimos.",
+      "literais": [
+        {
+          "dono": "eurostat-tipspd22-descricao",
+          "campo": "excerto",
+          "literal": "the stock of liabilities held by the sector Households and Non-Profit institutions serving households"
+        },
+        {
+          "dono": "eurostat-tipspd22-descricao",
+          "campo": "excerto",
+          "literal": "Debt securities (F.3) and Loans (F.4)"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É tudo o que as famílias devem, '",
+          "depois": "'É o que as famílias e as instituições sem fim lucrativo ao seu serviço devem em empréstimos e títulos de dívida, '",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is everything households owe, '",
+          "depois": "'It is what households and non-profit institutions serving them owe in loans and debt securities, '",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A8",
+      "medida": "fluxo-de-credito-as-empresas-2025",
+      "porque": "O Eurostat mede o montante líquido dos passivos contraídos no ano, e não o crédito novo recebido.",
+      "literais": [
+        {
+          "dono": "eurostat-tipspc30-descricao",
+          "campo": "excerto",
+          "literal": "the net amount of liabilities incurred during the year"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É quanto crédito novo as empresas receberam num ano, fora as financeiras",
+          "depois": "'É quanto crédito as empresas contraíram num ano, em termos líquidos, fora as financeiras",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is how much new credit companies received in a year, excluding financial companies",
+          "depois": "'It is how much credit companies took on in a year, net, excluding financial companies",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A9",
+      "medida": "fluxo-de-credito-as-familias-2025",
+      "porque": "O Eurostat mede o montante líquido dos passivos contraídos no ano pelas famílias e pelas instituições sem fim lucrativo ao seu serviço, e não o crédito novo recebido pelas famílias.",
+      "literais": [
+        {
+          "dono": "eurostat-tipspc40-descricao",
+          "campo": "excerto",
+          "literal": "the net amount of liabilities which the sectors Households and Non-Profit institutions serving households (S.14_S.15) have incurred during the year"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É quanto crédito novo as famílias receberam num ano, em percentagem",
+          "depois": "'É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, em termos líquidos, em percentagem",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is how much new credit households received in a year, as a percentage",
+          "depois": "'It is how much credit households and non-profit institutions serving them took on in a year, net, as a percentage",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A10",
+      "medida": "ganho-medio-mensal-2024",
+      "porque": "A nota do INE diz «trabalhadores por conta de outrem a tempo completo», e o conceito de ganho é o montante ilíquido pago com caráter regular pelo período normal e extraordinário; a lista de rubricas da frase anterior não estava no literal.",
+      "literais": [
+        {
+          "dono": "ine-ganho-nota",
+          "campo": "excerto",
+          "literal": "trabalhadores por conta de outrem a tempo completo"
+        },
+        {
+          "dono": "ine-ganho-conceito",
+          "campo": "excerto",
+          "literal": "pago ao trabalhador com caráter regular"
+        },
+        {
+          "dono": "ine-ganho-conceito",
+          "campo": "excerto",
+          "literal": "no período normal e extraordinário"
+        },
+        {
+          "dono": "ine-ganho-conceito",
+          "campo": "excerto",
+          "literal": "Montante ilíquido"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É o que um trabalhador por conta de outrem ganhou por mês, em média, em '",
+          "depois": "'É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em '",
+          "vezes": 1
+        },
+        {
+          "antes": "', com o salário base, as horas extraordinárias e os subsídios regulares, antes de descontos.'",
+          "depois": "', com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos.'",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is what an employee earned per month, on average, in '",
+          "depois": "'It is what a full-time employee earned per month, on average, in '",
+          "vezes": 1
+        },
+        {
+          "antes": "', including base pay, overtime and regular allowances, before deductions.'",
+          "depois": "', including what is paid on a regular basis for normal and overtime hours, before deductions.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A11",
+      "medida": "disparidade-salarial-entre-sexos-2024",
+      "porque": "A cobertura do Eurostat é a das empresas com «10 employees or more» (trabalhadores, e não pessoas ao serviço). E a primeira frase só é verdadeira com o valor positivo: passa a ramo `sinal.positivo`, sem mudar palavra, e um valor de outro sinal fecha a construção em vez de a deixar sair falsa.",
+      "literais": [
+        {
+          "dono": "eurostat-earn-grgpg2-cobertura",
+          "campo": "excerto",
+          "literal": "10 employees or more"
+        },
+        {
+          "dono": "eurostat-earn-grgpg2-definicao",
+          "campo": "excerto",
+          "literal": "the difference between average gross hourly earnings of male paid employees and of female paid employees"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "' ou mais pessoas ao serviço.', DIFERENCA, DIFERENCA_UE]",
+          "depois": "' ou mais trabalhadores.'] } }, DIFERENCA, DIFERENCA_UE]",
+          "vezes": 1
+        },
+        {
+          "antes": "pt: ['Por cada hora de trabalho,",
+          "depois": "pt: [{ sinal: { positivo: ['Por cada hora de trabalho,",
+          "vezes": 1
+        },
+        {
+          "antes": "' or more employees.', GAP, GAP_EU]",
+          "depois": "' or more employees.'] } }, GAP, GAP_EU]",
+          "vezes": 1
+        },
+        {
+          "antes": "en: ['Per hour worked,",
+          "depois": "en: [{ sinal: { positivo: ['Per hour worked,",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A12",
+      "medida": "criancas-em-creche-2025",
+      "porque": "O Eurostat põe a ama profissional nos outros tipos de cuidado, e não no cuidado formal («Other types of childcare may include care that is provided by a professional child-minder»); o exemplo sai.",
+      "literais": [
+        {
+          "dono": "eurostat-cuidado-formal",
+          "campo": "excerto",
+          "literal": "Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "' anos que está numa creche ou noutro cuidado formal, como uma ama profissional.'",
+          "depois": "' anos que está numa creche ou noutro cuidado formal.'",
+          "vezes": 1
+        },
+        {
+          "antes": "' who are in a nursery or other formal childcare, such as a professional child-minder.'",
+          "depois": "' who are in a nursery or other formal childcare.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A13",
+      "medida": "sobrecarga-do-custo-da-habitacao-2025",
+      "porque": "O regime do Eurostat é «Tenant, rent at reduced price or free» (a renda gratuita conta), e a Comissão escreve que a taxa «should be read together with the tenure structure», e não que manda lê-la por regime.",
+      "literais": [
+        {
+          "dono": "eurostat-tessi164-regimes",
+          "campo": "excerto",
+          "literal": "\"OWN_L\":\"Owner, with mortgage or loan\",\"OWN_NL\":\"Owner, no outstanding mortgage or housing loan\",\"RENT_MKT\":\"Tenant, rent at market price\",\"RENT_FR\":\"Tenant, rent at reduced price or free\""
+        },
+        {
+          "dono": "ce-swd-2026-222-habitacao",
+          "campo": "excerto",
+          "literal": "The overburden rate should be read together with the tenure structure (homeowner, tenants), that may differ across country and regions."
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "arrendada a preço de mercado ou a renda reduzida)",
+          "depois": "arrendada a preço de mercado ou a renda reduzida ou gratuita)",
+          "vezes": 1
+        },
+        {
+          "antes": "rented at market price or at a reduced rent)",
+          "depois": "rented at market price or at a reduced rent or free)",
+          "vezes": 1
+        },
+        {
+          "antes": "' Este total mistura situações muito diferentes, e a Comissão Europeia manda lê-lo por regime de ocupação.'",
+          "depois": "' Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.'",
+          "vezes": 1
+        },
+        {
+          "antes": "' This total mixes very different situations, and the European Commission says it should be read by tenure status.'",
+          "depois": "' This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A14",
+      "medida": "competencias-digitais-2025",
+      "porque": "O Eurostat escreve «activities related to internet or software use»: as competências contam o uso de programas, e não só a internet.",
+      "literais": [
+        {
+          "dono": "eurostat-tepsr_sp410-descricao",
+          "campo": "excerto",
+          "literal": "activities related to internet or software use"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "proteger-se e resolver problemas na internet.'",
+          "depois": "proteger-se e resolver problemas no uso da internet e de programas informáticos.'",
+          "vezes": 1
+        },
+        {
+          "antes": "stay safe and solve problems online.'",
+          "depois": "stay safe and solve problems when using the internet or software.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A15",
+      "medida": "formacao-bruta-de-capital-fixo-2025",
+      "porque": "O glossário do Eurostat define a formação bruta de capital fixo pelas aquisições dos produtores residentes, descontadas as cessões; nenhuma origem lida lhe chama o investimento feito no país.",
+      "literais": [
+        {
+          "dono": "eurostat-glossario-fbcf",
+          "campo": "excerto",
+          "literal": "consists of resident producers’ acquisitions, less disposals, of fixed assets during a given period"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "pt: ['É o investimento feito no país num ano em bens que duram mais de um ano,",
+          "depois": "pt: ['É o que os produtores residentes compraram num ano, descontado o que venderam, em bens que duram mais de um ano,",
+          "vezes": 1
+        },
+        {
+          "antes": "en: ['It is the investment made in the country in a year in assets that last more than a year,",
+          "depois": "en: ['It is what resident producers acquired in a year, less what they disposed of, in assets that last more than a year,",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A16",
+      "medida": "crescimento-da-despesa-liquida-2025",
+      "porque": "Pedido pelo portão da voz, com a palavra da fonte: «Despesa paga» é uma frase retirada do inventário (o cabeçalho das contas do município, que saiu com a peça 2 do B1), e a procura das retiradas morde por palavra inteira dentro de outra frase. A palavra do Conselho das Finanças Públicas é «financiada». A frase retirada fica retirada.",
+      "literais": [
+        {
+          "dono": "cfp-despesa-liquida",
+          "campo": "excerto",
+          "literal": "Despesa financiada por fundos da UE (4)"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "a despesa paga por fundos europeus nem a que sobe",
+          "depois": "a despesa financiada por fundos europeus nem a que sobe",
+          "vezes": 1
+        },
+        {
+          "antes": "spending paid by European funds and the spending",
+          "depois": "spending financed by European funds and the spending",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A17",
+      "medida": "taxa-de-emprego-2025",
+      "porque": "Pedido pelo portão da voz, com a palavra da fonte: «The share of people aged to who are in employment.» é a definição da casa que o F1.10 retirou quando a definição de cada medida passou a sair da fonte, e a leitura inglesa trazia-a de volta palavra a palavra. A palavra do glossário do Eurostat é «employed persons». A frase retirada fica retirada; a edição portuguesa não tinha a coincidência e não muda.",
+      "literais": [
+        {
+          "dono": "glossario-emprego",
+          "campo": "excerto",
+          "literal": "percentage of employed persons"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "' who are in employment.', ROSE, EU_AVERAGE]",
+          "depois": "' who are employed.', ROSE, EU_AVERAGE]",
+          "vezes": 1
+        }
+      ]
+    }
+  ]
+}
