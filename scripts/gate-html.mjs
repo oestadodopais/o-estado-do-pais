@@ -3156,6 +3156,35 @@ function temChipPara(no, alvos) {
   return false;
 }
 
+/**
+ * Uma linha que a régua do cartão de `principal` cita no lugar `qual` («anterior»
+ * ou «ue»), pela regra do B1, peça 3: a mesma edição do documento e a mesma
+ * unidade da linha principal; o período anterior é a maior linha da mesma raiz
+ * com um ano menor; o agregado da União é `<principal>-ue`, com a nota do motor
+ * que o associa à medida e o mesmo período. Escrita aqui outra vez, e não
+ * importada de `src/lib/enquadramento.mjs`: o portão não confirma a função que
+ * compõe a página. A régua e a leitura do cartão (L1) usam esta mesma regra.
+ *
+ * @param {string} principal @param {string} id @param {string|null|undefined} qual
+ */
+function linhaDaReguaDoCartao(principal, id, qual) {
+  const atual = claims.get(principal);
+  const outro = claims.get(id);
+  const serie = /^(.*)-(\d{4})$/.exec(principal);
+  const anterior = serie ? [...claims.keys()].filter(k => {
+    const m = /^(.*)-(\d{4})$/.exec(k);
+    return m && m[1] === serie[1] && Number(m[2]) < Number(serie[2]);
+  }).sort().at(-1) : null;
+  const mesmaSerie = typeof atual?.document?.edition === 'string' && atual.document.edition.length > 0 &&
+    atual.document.edition === outro?.document?.edition &&
+    typeof atual?.unit === 'string' && atual.unit.length > 0 && atual.unit === outro?.unit;
+  const agregadoDaSerie = typeof outro?.note === 'string' &&
+    outro.note.startsWith(`Agregado da União Europeia (EU27_2020) da medida «${principal}»,`);
+  return mesmaSerie && (qual === 'ue'
+    ? id === `${principal}-ue` && agregadoDaSerie && atual.reference_date === outro?.reference_date
+    : qual === 'anterior' && id === anterior);
+}
+
 function auditaSelo(el, id, lang, err) {
   /* A LINHA DAQUELE ID, NA EDIÇÃO DA PÁGINA, E SÓ NELA (bloco «A grelha da
      voz», 26.08.2026). A folga existia por uma razão só: o bloco «a mesma frase
@@ -3207,22 +3236,28 @@ function auditaSelo(el, id, lang, err) {
   const cartao = item?.closest('[data-cartao-medida]');
   const principal = cartao?.getAttribute('data-cartao-medida');
   if (principal && item.getAttribute('data-selo-em') === principal) {
-    const atual = claims.get(principal);
-    const outro = claims.get(id);
-    const serie = /^(.*)-(\d{4})$/.exec(principal);
-    const anterior = serie ? [...claims.keys()].filter(k => {
-      const m = /^(.*)-(\d{4})$/.exec(k);
-      return m && m[1] === serie[1] && Number(m[2]) < Number(serie[2]);
-    }).sort().at(-1) : null;
-    const mesmaSerie = typeof atual?.document?.edition === 'string' && atual.document.edition.length > 0 &&
-      atual.document.edition === outro?.document?.edition &&
-      typeof atual?.unit === 'string' && atual.unit.length > 0 && atual.unit === outro?.unit;
-    const agregadoDaSerie = typeof outro?.note === 'string' &&
-      outro.note.startsWith(`Agregado da União Europeia (EU27_2020) da medida «${principal}»,`);
-    const permitido = mesmaSerie && (item.getAttribute('data-regua') === 'ue'
-      ? id === `${principal}-ue` && agregadoDaSerie && atual.reference_date === outro?.reference_date
-      : item.getAttribute('data-regua') === 'anterior' && id === anterior);
+    const permitido = linhaDaReguaDoCartao(principal, id, item.getAttribute('data-regua'));
     if (permitido && temChipPara(cartao, [routePath('linha', lang, { slug: principal })])) return;
+  }
+  /* L1, 24.09.2026: A LEITURA DO CARTÃO, pela mesma regra do item da régua. A
+     leitura cita a linha do próprio cartão e, nas comparações, as mesmas linhas
+     que a régua cita (a do período anterior da mesma série e o agregado da
+     União da mesma medida); os valores rendem sem marca própria dentro do
+     invólucro `data-selo-em`, e a porta de cada um é a marca única do cartão,
+     que abre o recibo onde o bloco «O enquadramento» lista as outras duas. O
+     que muda é só a forma: a leitura é um invólucro que diz a que cartão
+     pertence (`data-cartao-leitura`), e uma leitura sem `data-selo-em`, ou de
+     outro cartão, ou com uma linha que a régua do cartão não citaria, cai no
+     erro de sempre. A planta (`tests/cartao/plantas-l1.mjs`) tira o
+     `data-selo-em` a uma leitura com um valor e exige esta mordida. */
+  const leitura = el.closest('[data-cartao-leitura][data-selo-em]');
+  const cartaoDaLeitura = leitura?.closest('[data-cartao-medida]');
+  const doCartao = cartaoDaLeitura?.getAttribute('data-cartao-medida');
+  if (doCartao && leitura.getAttribute('data-selo-em') === doCartao &&
+      leitura.getAttribute('data-cartao-leitura') === doCartao) {
+    const permitido = id === doCartao ||
+      linhaDaReguaDoCartao(doCartao, id, 'anterior') || linhaDaReguaDoCartao(doCartao, id, 'ue');
+    if (permitido && temChipPara(cartaoDaLeitura, [routePath('linha', lang, { slug: doCartao })])) return;
   }
 
 

@@ -44,9 +44,34 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   if (c.hasAttribute('data-cartao-medida')) falha('uma contagem aparece como linha publicada.');
   const ordem = c.parentNode.querySelectorAll('[data-cartao-medida], [data-cartao-camaras]');
   if (ordem[ordem.length - 1] !== c) falha('o cartão das câmaras não fecha a fila do tema.');
-  const provas = c.querySelectorAll('[data-prova]');
+  /* A LEITURA DAS CÂMARAS (bloco L1, 24.09.2026) diz as contagens por palavras,
+     com as mesmas chaves e a mesma porta comum. A ordem das quatro chaves
+     continua a ser a da linha do valor e da régua, e confere-se fora da leitura;
+     as da leitura conferem-se uma a uma contra a recontagem, como as outras, e
+     têm de ser `span` sem porta própria: a porta é a mesma, e é esta função que
+     diz ao portão de HTML que ela está lá. */
+  const leituras = c.querySelectorAll('[data-cartao-leitura]');
+  if (leituras.length > 1) falha(`o cartão das câmaras tem ${leituras.length} leituras; tem uma ou nenhuma.`);
+  const daLeitura = new Set(leituras.flatMap(l => l.querySelectorAll('[data-prova]')));
+  const provas = c.querySelectorAll('[data-prova]').filter(n => !daLeitura.has(n));
   if (JSON.stringify(provas.map(n => n.getAttribute('data-prova'))) !== JSON.stringify(Object.keys(contagens)))
     falha('as chaves da contagem das câmaras não são as declaradas, pela ordem da frase.');
+  for (const el of daLeitura) {
+    const chave = el.getAttribute('data-prova');
+    if (!(chave in contagens)) {
+      falha(`a leitura cita a chave «${chave}», que não é uma contagem das câmaras.`);
+      continue;
+    }
+    if (normal(el.textContent) !== String(contagens[chave])) falha(`${chave}: a leitura não rende a contagem recontada (${contagens[chave]}).`);
+    if (el.tagName !== 'SPAN' || el.closest('a')) falha(`${chave}: a contagem da leitura deve usar a porta comum dos lugares.`);
+  }
+  for (const l of leituras) {
+    if (l.querySelectorAll('[data-claim]').length) falha('a leitura das câmaras cita uma linha, e só diz contagens.');
+    for (const d of l.querySelectorAll('[data-de-campo="reference_date"]')) {
+      if (d.getAttribute('data-de-linha') !== datas[0].id || normal(d.textContent) !== periodo)
+        falha('o período da leitura não vem das linhas contadas.');
+    }
+  }
   const porta = lang === 'pt' ? '/lugares/' : '/en/places/';
   for (const [chave, valor] of Object.entries(contagens)) {
     const el = provas.find(n => n.getAttribute('data-prova') === chave);
