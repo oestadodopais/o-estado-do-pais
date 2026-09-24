@@ -1,0 +1,1233 @@
+{
+  "brief": "design/observatorio/BRIEF-L1-a-leitura-de-cada-medida.md",
+  "guiao": "design/observatorio/medidas/BRIEF-L1.py",
+  "cabeca_lida": "f672bd38",
+  "copias": "design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/",
+  "medidas": [
+    {
+      "nome": "cabeca_lida",
+      "valor": "f672bd38",
+      "comando": "git cat-file -e f672bd38^{commit}",
+      "conhecido_positivo": {
+        "o_que": "a cabeça existe no repositório",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cabeca_das_copias",
+      "valor": "7110ca60",
+      "comando": "cat design/especime-v3/medicoes/b2-2026-09-23/capturas-depois-peca1.cabeca (os 8 primeiros caracteres)",
+      "conhecido_positivo": {
+        "o_que": "a cabeça existe no repositório",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca",
+      "valor": 0,
+      "comando": "git diff --name-only 7110ca60 f672bd38 -- src public ledger scripts tests package.json astro.config.mjs, sem scripts/leituras/",
+      "conhecido_positivo": {
+        "o_que": "o mesmo diff entre 97e84232 e f672bd38 apanha ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_temas",
+      "valor": "a4a680a920c039931972f76378a7263f4eabe4aedb9f78f66cecd45e2b81709e",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_primeira",
+      "valor": "a370e8ae727ad04f0562edebc75d38f4c40e36232034613894a1436116621743",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_en_temas",
+      "valor": "42ed142e6ee2c20e9a133db77458bdc93eeb678e374f9f0a5b077c2b4dde2585",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/en_themes_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_en_primeira",
+      "valor": "c8fab2c6ffeeb5a621f7fc60c82c2767dc06277a160e1ac8bab0091d0b2e20d9",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/en_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nacionais_nos_temas",
+      "valor": 36,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · <article class=\"cartao-medida\"> em design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta pelo menos um cartão na cópia da primeira página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_linha_nos_temas",
+      "valor": 35,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · artigos com data-cartao-medida= na mesma cópia",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o saldo das administrações públicas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_das_camaras_nos_temas",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · artigos com data-cartao-camaras na mesma cópia",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado encontra o cartão das câmaras na cópia da primeira página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nacionais_na_edicao_inglesa",
+      "valor": 36,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · <article class=\"cartao-medida\"> em design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/en_themes_index.html",
+      "conhecido_positivo": {
+        "o_que": "as duas edições rendem o mesmo número de cartões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_na_primeira_pagina",
+      "valor": 20,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · <article class=\"cartao-medida\"> em design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta os artigos dos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_pergunta",
+      "valor": 21,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · artigos com data-cartao-definicao= em temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado vê a pergunta no cartão da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_pergunta",
+      "valor": 15,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · artigos sem data-cartao-definicao= na mesma cópia",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o saldo e a disparidade salarial, os dois exemplos do diretor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_pergunta_lista",
+      "valor": "pib-real-per-capita-2025, saldo-das-administracoes-publicas-2025, crescimento-da-despesa-liquida-2025, camaras, ganho-medio-mensal-2024, disparidade-salarial-entre-sexos-2024, retribuicao-minima-mensal-garantida-continente-2026, disparidade-de-emprego-entre-sexos-2025, competencias-digitais-2025, criancas-em-creche-2025, necessidades-medicas-nao-satisfeitas-2025, licencas-de-construcao-2025, formacao-bruta-de-capital-fixo-2025, despesa-em-id-2024, independencia-da-justica-2025",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · os identificadores desses artigos",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o cartão das câmaras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_valor_de_referencia",
+      "valor": 15,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · data-regua=\"referencia\" por artigo em temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado vê a referência no cartão da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_fora_do_valor_de_referencia",
+      "valor": 5,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · data-regua=\"referencia\" data-estado=\"fora\" por artigo",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_fora_do_valor_de_referencia_lista",
+      "valor": "divida-publica-2025, crescimento-da-despesa-liquida-2025, posicao-de-investimento-internacional-2025, custo-unitario-do-trabalho-2025, precos-da-habitacao-2025",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · os identificadores desses artigos",
+      "conhecido_positivo": {
+        "o_que": "a lista traz os preços da habitação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_dentro_do_valor_de_referencia",
+      "valor": 10,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · data-regua=\"referencia\" data-estado=\"dentro\" por artigo",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o saldo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_periodo_anterior",
+      "valor": 33,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · data-regua=\"anterior\" por artigo",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o saldo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_media_da_uniao",
+      "valor": 25,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · data-regua=\"ue\" por artigo",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_linha_sem_regua",
+      "valor": 2,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · artigos de linha sem class=\"cartao-medida-regua\"",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado vê a régua no saldo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_linha_sem_regua_lista",
+      "valor": "ganho-medio-mensal-2024, retribuicao-minima-mensal-garantida-continente-2026",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · os identificadores desses artigos",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o ganho médio mensal",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_so_com_referencia_e_sem_comparacao",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · artigos com referência e sem período anterior nem União",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado vê que o saldo tem período anterior",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_leitura",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · class=\"cartao-medida-leitura\" em temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor, com a classe da pergunta, conta as perguntas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_por_cartao_maximo",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · class=\"src-chip\" por artigo, o máximo",
+      "conhecido_positivo": {
+        "o_que": "o saldo tem uma marca",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_por_cartao_minimo",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · o mesmo, o mínimo",
+      "conhecido_positivo": {
+        "o_que": "o cartão das câmaras tem uma marca",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valores_de_linha_nas_reguas_dos_temas",
+      "valor": 59,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · data-claim= dentro de <p class=\"cartao-medida-regua\"> por artigo, somados",
+      "conhecido_positivo": {
+        "o_que": "a régua do saldo tem um valor de linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perguntas_com_algarismos",
+      "valor": 8,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · perguntas cujo texto visível tem um algarismo",
+      "conhecido_positivo": {
+        "o_que": "a pergunta da sobrecarga da habitação escreve 40",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_das_medidas",
+      "valor": [
+        {
+          "id": "pib-real-per-capita-2025",
+          "nome": "PIB real por habitante",
+          "valor": "20 600",
+          "unidade": "euros por habitante · volumes encadeados (2015)",
+          "periodo": "2025",
+          "anterior": {
+            "id": "pib-real-per-capita-2024",
+            "periodo": "2024",
+            "valor": "20 430"
+          },
+          "ue": {
+            "id": "pib-real-per-capita-2025-ue",
+            "valor": "31 890"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "saldo-das-administracoes-publicas-2025",
+          "nome": "Saldo das administrações públicas",
+          "valor": "0,7",
+          "unidade": "% do PIB",
+          "periodo": "2025",
+          "anterior": {
+            "id": "saldo-das-administracoes-publicas-2024",
+            "periodo": "2024",
+            "valor": "0,6"
+          },
+          "ue": null,
+          "referencia": "dentro do valor de referência do Pacto (acima de −3 %)",
+          "estado": "dentro",
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "divida-publica-2025",
+          "nome": "Dívida pública",
+          "valor": "89,7",
+          "unidade": "% do PIB",
+          "periodo": "2025",
+          "anterior": {
+            "id": "divida-publica-2024",
+            "periodo": "2024",
+            "valor": "93,5"
+          },
+          "ue": {
+            "id": "divida-publica-2025-ue",
+            "valor": "81,7"
+          },
+          "referencia": "fora do valor de referência (acima de 60 %)",
+          "estado": "fora",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "crescimento-da-despesa-liquida-2025",
+          "nome": "Crescimento da despesa líquida",
+          "valor": "6,4",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "crescimento-da-despesa-liquida-2024",
+            "periodo": "2024",
+            "valor": "11,9"
+          },
+          "ue": null,
+          "referencia": "fora do valor de referência do Conselho da UE (acima de 5 %)",
+          "estado": "fora",
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "saldo-da-balanca-corrente-2025",
+          "nome": "Saldo da balança corrente",
+          "valor": "1,4",
+          "unidade": "% do PIB (média de três anos)",
+          "periodo": "2025",
+          "anterior": {
+            "id": "saldo-da-balanca-corrente-2024",
+            "periodo": "2024",
+            "valor": "0,3"
+          },
+          "ue": null,
+          "referencia": "dentro dos valores de referência (entre −4 e 6 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "posicao-de-investimento-internacional-2025",
+          "nome": "Posição de investimento internacional",
+          "valor": "−50,2",
+          "unidade": "% do PIB",
+          "periodo": "2025",
+          "anterior": {
+            "id": "posicao-de-investimento-internacional-2024",
+            "periodo": "2024",
+            "valor": "−58,9"
+          },
+          "ue": null,
+          "referencia": "fora do valor de referência (abaixo de −35 %)",
+          "estado": "fora",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "taxa-de-cambio-efectiva-real-2025",
+          "nome": "Taxa de câmbio efetiva real",
+          "valor": "2,8",
+          "unidade": "variação em três anos, %",
+          "periodo": "2025",
+          "anterior": {
+            "id": "taxa-de-cambio-efectiva-real-2024",
+            "periodo": "2024",
+            "valor": "0,4"
+          },
+          "ue": {
+            "id": "taxa-de-cambio-efectiva-real-2025-ue",
+            "valor": "11,3"
+          },
+          "referencia": "dentro dos valores de referência (entre −3 e 3 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "nome": "Quota nas exportações",
+          "valor": "8,2",
+          "unidade": "% do total OCDE e UE não-OCDE, variação em três anos",
+          "periodo": "2025",
+          "anterior": {
+            "id": "desempenho-das-exportacoes-2024",
+            "periodo": "2024",
+            "valor": "17,1"
+          },
+          "ue": null,
+          "referencia": "dentro do valor de referência (acima de −3 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "divida-das-empresas-2025",
+          "nome": "Dívida das empresas",
+          "valor": "64,9",
+          "unidade": "% do PIB",
+          "periodo": "2025",
+          "anterior": {
+            "id": "divida-das-empresas-2024",
+            "periodo": "2024",
+            "valor": "67,1"
+          },
+          "ue": {
+            "id": "divida-das-empresas-2025-ue",
+            "valor": "70,0"
+          },
+          "referencia": "dentro do valor de referência (abaixo de 85 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "divida-das-familias-2025",
+          "nome": "Dívida das famílias",
+          "valor": "53,9",
+          "unidade": "% do PIB",
+          "periodo": "2025",
+          "anterior": {
+            "id": "divida-das-familias-2024",
+            "periodo": "2024",
+            "valor": "52,6"
+          },
+          "ue": {
+            "id": "divida-das-familias-2025-ue",
+            "valor": "49,3"
+          },
+          "referencia": "dentro do valor de referência (abaixo de 55 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "nome": "Fluxo de crédito às empresas",
+          "valor": "3",
+          "unidade": "% do stock no final do período anterior",
+          "periodo": "2025",
+          "anterior": {
+            "id": "fluxo-de-credito-as-empresas-2024",
+            "periodo": "2024",
+            "valor": "2,4"
+          },
+          "ue": null,
+          "referencia": "dentro do valor de referência (abaixo de 13 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "fluxo-de-credito-as-familias-2025",
+          "nome": "Fluxo de crédito às famílias",
+          "valor": "8,6",
+          "unidade": "% do stock no final do período anterior",
+          "periodo": "2025",
+          "anterior": {
+            "id": "fluxo-de-credito-as-familias-2024",
+            "periodo": "2024",
+            "valor": "4,1"
+          },
+          "ue": {
+            "id": "fluxo-de-credito-as-familias-2025-ue",
+            "valor": "2,9"
+          },
+          "referencia": "dentro do valor de referência (abaixo de 14 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "camaras",
+          "nome": "Câmaras com a dívida acima do limite legal",
+          "valor": "10",
+          "unidade": "câmaras",
+          "periodo": "2024",
+          "anterior": null,
+          "ue": null,
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": true
+        },
+        {
+          "id": "taxa-de-emprego-2025",
+          "nome": "Taxa de emprego",
+          "valor": "79,6",
+          "unidade": "% da população",
+          "periodo": "2025",
+          "anterior": {
+            "id": "taxa-de-emprego-2024",
+            "periodo": "2024",
+            "valor": "78,5"
+          },
+          "ue": {
+            "id": "taxa-de-emprego-2025-ue",
+            "valor": "76,1"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "nome": "Taxa de desemprego",
+          "valor": "6",
+          "unidade": "% da população ativa",
+          "periodo": "2025",
+          "anterior": {
+            "id": "taxa-de-desemprego-mip-2024",
+            "periodo": "2024",
+            "valor": "6,5"
+          },
+          "ue": {
+            "id": "taxa-de-desemprego-mip-2025-ue",
+            "valor": "6,0"
+          },
+          "referencia": "dentro do valor de referência (abaixo de 10 %)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "ganho-medio-mensal-2024",
+          "nome": "Ganho médio mensal",
+          "valor": "1 576,0",
+          "unidade": "euros por mês",
+          "periodo": "2024",
+          "anterior": null,
+          "ue": null,
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "disparidade-salarial-entre-sexos-2024",
+          "nome": "Disparidade salarial não ajustada entre homens e mulheres",
+          "valor": "7",
+          "unidade": "%",
+          "periodo": "2024",
+          "anterior": {
+            "id": "disparidade-salarial-entre-sexos-2023",
+            "periodo": "2023",
+            "valor": "8,6"
+          },
+          "ue": null,
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "retribuicao-minima-mensal-garantida-continente-2026",
+          "nome": "Retribuição mínima mensal garantida",
+          "valor": "920,00",
+          "unidade": "euros por mês",
+          "periodo": "2026",
+          "anterior": null,
+          "ue": null,
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "desemprego-de-longa-duracao-2025",
+          "nome": "Desemprego de longa duração",
+          "valor": "2,2",
+          "unidade": "% da população ativa",
+          "periodo": "2025",
+          "anterior": {
+            "id": "desemprego-de-longa-duracao-2024",
+            "periodo": "2024",
+            "valor": "2,4"
+          },
+          "ue": {
+            "id": "desemprego-de-longa-duracao-2025-ue",
+            "valor": "1,9"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "jovens-nem-2025",
+          "nome": "Jovens sem emprego, escola ou formação",
+          "valor": "8",
+          "unidade": "% da população",
+          "periodo": "2025",
+          "anterior": {
+            "id": "jovens-nem-2024",
+            "periodo": "2024",
+            "valor": "8,7"
+          },
+          "ue": {
+            "id": "jovens-nem-2025-ue",
+            "valor": "11,0"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "disparidade-de-emprego-entre-sexos-2025",
+          "nome": "Diferença de emprego entre homens e mulheres",
+          "valor": "5,4",
+          "unidade": "% da população",
+          "periodo": "2025",
+          "anterior": {
+            "id": "disparidade-de-emprego-entre-sexos-2024",
+            "periodo": "2024",
+            "valor": "5,7"
+          },
+          "ue": {
+            "id": "disparidade-de-emprego-entre-sexos-2025-ue",
+            "valor": "9,6"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "taxa-de-actividade-2025",
+          "nome": "Taxa de atividade",
+          "valor": "2,6",
+          "unidade": "variação em três anos, pontos percentuais",
+          "periodo": "2025",
+          "anterior": {
+            "id": "taxa-de-actividade-2024",
+            "periodo": "2024",
+            "valor": "3,2"
+          },
+          "ue": {
+            "id": "taxa-de-actividade-2025-ue",
+            "valor": "1,1"
+          },
+          "referencia": "dentro do valor de referência (acima de −0,2 pp)",
+          "estado": "dentro",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "custo-unitario-do-trabalho-2025",
+          "nome": "Custo unitário do trabalho",
+          "valor": "21,3",
+          "unidade": "variação em três anos, %",
+          "periodo": "2025",
+          "anterior": {
+            "id": "custo-unitario-do-trabalho-2024",
+            "periodo": "2024",
+            "valor": "17,7"
+          },
+          "ue": {
+            "id": "custo-unitario-do-trabalho-2025-ue",
+            "valor": "15,2"
+          },
+          "referencia": "fora do valor de referência (acima de 9 %)",
+          "estado": "fora",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "risco-de-pobreza-ou-exclusao-2025",
+          "nome": "Risco de pobreza ou exclusão social",
+          "valor": "18,6",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "risco-de-pobreza-ou-exclusao-2024",
+            "periodo": "2024",
+            "valor": "19,7"
+          },
+          "ue": {
+            "id": "risco-de-pobreza-ou-exclusao-2025-ue",
+            "valor": "20,9"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "racio-s80-s20-2025",
+          "nome": "Desigualdade de rendimento",
+          "valor": "4,86",
+          "unidade": "rácio",
+          "periodo": "2025",
+          "anterior": {
+            "id": "racio-s80-s20-2024",
+            "periodo": "2024",
+            "valor": "5,2"
+          },
+          "ue": {
+            "id": "racio-s80-s20-2025-ue",
+            "valor": "4,62"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "abandono-escolar-precoce-2025",
+          "nome": "Abandono escolar precoce",
+          "valor": "6,1",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "abandono-escolar-precoce-2024",
+            "periodo": "2024",
+            "valor": "6,6"
+          },
+          "ue": {
+            "id": "abandono-escolar-precoce-2025-ue",
+            "valor": "9,1"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "competencias-digitais-2025",
+          "nome": "Pessoas com competências digitais básicas ou superiores",
+          "valor": "59,15",
+          "unidade": "% dos indivíduos",
+          "periodo": "2025",
+          "anterior": {
+            "id": "competencias-digitais-2023",
+            "periodo": "2023",
+            "valor": "55,97"
+          },
+          "ue": {
+            "id": "competencias-digitais-2025-ue",
+            "valor": "60,4"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "criancas-em-creche-2025",
+          "nome": "Crianças em creche",
+          "valor": "57,9",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "criancas-em-creche-2024",
+            "periodo": "2024",
+            "valor": "59,4"
+          },
+          "ue": {
+            "id": "criancas-em-creche-2025-ue",
+            "valor": "40,5"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "necessidades-medicas-nao-satisfeitas-2025",
+          "nome": "Necessidades de cuidados médicos por satisfazer",
+          "valor": "2,5",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "necessidades-medicas-nao-satisfeitas-2024",
+            "periodo": "2024",
+            "valor": "2,5"
+          },
+          "ue": {
+            "id": "necessidades-medicas-nao-satisfeitas-2025-ue",
+            "valor": "2,4"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "nome": "Sobrecarga do custo da habitação, inquilinos a preço de mercado",
+          "valor": "27,2",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024",
+            "periodo": "2024",
+            "valor": "30,3"
+          },
+          "ue": {
+            "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
+            "valor": "18,6"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "sobrecarga-do-custo-da-habitacao-2025",
+          "nome": "Sobrecarga do custo da habitação",
+          "valor": "6,3",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "sobrecarga-do-custo-da-habitacao-2024",
+            "periodo": "2024",
+            "valor": "6,9"
+          },
+          "ue": null,
+          "referencia": null,
+          "estado": null,
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "precos-da-habitacao-2025",
+          "nome": "Preços da habitação",
+          "valor": "17,6",
+          "unidade": "variação anual média, %",
+          "periodo": "2025",
+          "anterior": {
+            "id": "precos-da-habitacao-2024",
+            "periodo": "2024",
+            "valor": "9,1"
+          },
+          "ue": {
+            "id": "precos-da-habitacao-2025-ue",
+            "valor": "5,5"
+          },
+          "referencia": "fora do valor de referência (acima de 9 %)",
+          "estado": "fora",
+          "pergunta": true,
+          "chave_da_prova": false
+        },
+        {
+          "id": "licencas-de-construcao-2025",
+          "nome": "Área licenciada para habitação",
+          "valor": "749,7",
+          "unidade": "m² por 1000 habitantes",
+          "periodo": "2025",
+          "anterior": {
+            "id": "licencas-de-construcao-2024",
+            "periodo": "2024",
+            "valor": "654,5"
+          },
+          "ue": {
+            "id": "licencas-de-construcao-2025-ue",
+            "valor": "377,5"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "formacao-bruta-de-capital-fixo-2025",
+          "nome": "Investimento (formação bruta de capital fixo)",
+          "valor": "20,7",
+          "unidade": "% do PIB",
+          "periodo": "2025",
+          "anterior": {
+            "id": "formacao-bruta-de-capital-fixo-2024",
+            "periodo": "2024",
+            "valor": "20,4"
+          },
+          "ue": {
+            "id": "formacao-bruta-de-capital-fixo-2025-ue",
+            "valor": "21,4"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "despesa-em-id-2024",
+          "nome": "Despesa em investigação e desenvolvimento",
+          "valor": "1,73",
+          "unidade": "% do PIB",
+          "periodo": "2024",
+          "anterior": {
+            "id": "despesa-em-id-2023",
+            "periodo": "2023",
+            "valor": "1,68"
+          },
+          "ue": {
+            "id": "despesa-em-id-2024-ue",
+            "valor": "2,24"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        },
+        {
+          "id": "independencia-da-justica-2025",
+          "nome": "Perceção de independência da justiça",
+          "valor": "58",
+          "unidade": "%",
+          "periodo": "2025",
+          "anterior": {
+            "id": "independencia-da-justica-2024",
+            "periodo": "2024",
+            "valor": "53"
+          },
+          "ue": {
+            "id": "independencia-da-justica-2025-ue",
+            "valor": "54"
+          },
+          "referencia": null,
+          "estado": null,
+          "pergunta": false,
+          "chave_da_prova": false
+        }
+      ],
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · um registo por artigo de temas_index.html, com o valor, a unidade e o período lidos de ledger/claims/<id>.yml@f672bd38 e a régua lida do artigo",
+      "conhecido_positivo": {
+        "o_que": "o registo do saldo diz 0,7 % do PIB em 2025 e o período anterior 2024",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medidas_com_valor_negativo",
+      "valor": 1,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · registos do inventário cujo valor começa por um sinal de menos",
+      "conhecido_positivo": {
+        "o_que": "a posição de investimento internacional é negativa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medidas_de_variacao",
+      "valor": 5,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · registos cuja unidade contém «variação»",
+      "conhecido_positivo": {
+        "o_que": "os preços da habitação são uma variação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_distintas",
+      "valor": 16,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · unidades distintas do inventário",
+      "conhecido_positivo": {
+        "o_que": "o conjunto traz «% do PIB»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "saldo_valor",
+      "valor": "0,7",
+      "comando": "git show f672bd38:ledger/claims/saldo-das-administracoes-publicas-2025.yml · value",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "saldo_unidade",
+      "valor": "% do PIB",
+      "comando": "git show f672bd38:ledger/claims/saldo-das-administracoes-publicas-2025.yml · unit",
+      "conhecido_positivo": {
+        "o_que": "a unidade não está vazia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "saldo_periodo",
+      "valor": "2025",
+      "comando": "git show f672bd38:ledger/claims/saldo-das-administracoes-publicas-2025.yml · reference_date",
+      "conhecido_positivo": {
+        "o_que": "o período é um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "saldo_anterior_valor",
+      "valor": "0,6",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · o valor do item data-regua=\"anterior\" do artigo",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "saldo_anterior_periodo",
+      "valor": "2024",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · o reference_date da linha do item data-regua=\"anterior\"",
+      "conhecido_positivo": {
+        "o_que": "o período é um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "disparidade_valor",
+      "valor": "7",
+      "comando": "git show f672bd38:ledger/claims/disparidade-salarial-entre-sexos-2024.yml · value",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "disparidade_unidade",
+      "valor": "%",
+      "comando": "git show f672bd38:ledger/claims/disparidade-salarial-entre-sexos-2024.yml · unit",
+      "conhecido_positivo": {
+        "o_que": "a unidade não está vazia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "disparidade_periodo",
+      "valor": "2024",
+      "comando": "git show f672bd38:ledger/claims/disparidade-salarial-entre-sexos-2024.yml · reference_date",
+      "conhecido_positivo": {
+        "o_que": "o período é um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "disparidade_anterior_valor",
+      "valor": "8,6",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · o valor do item data-regua=\"anterior\" do artigo",
+      "conhecido_positivo": {
+        "o_que": "o valor lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "disparidade_anterior_periodo",
+      "valor": "2023",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · o reference_date da linha do item data-regua=\"anterior\"",
+      "conhecido_positivo": {
+        "o_que": "o período é um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "saldo_veredicto",
+      "valor": "dentro do valor de referência do Pacto (acima de −3 %)",
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · o texto do veredicto do artigo do saldo",
+      "conhecido_positivo": {
+        "o_que": "o veredicto diz «dentro»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "referencias_da_comissao",
+      "valor": 13,
+      "comando": "grep -c \"limiarFixadoPor: 'comissao'\" na LISTA_PDM de figuras.mjs@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a dívida pública com limiar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "referencias_do_pacto",
+      "valor": 1,
+      "comando": "grep -c \"limiarFixadoPor: 'pacto'\" em referencias-das-medidas.mjs@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "a declaração é a do saldo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "referencias_do_conselho",
+      "valor": 1,
+      "comando": "grep -c \"limiarFixadoPor: 'conselho'\" em referencias-das-medidas.mjs@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "a declaração é a da despesa líquida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "referencias_declaradas",
+      "valor": 15,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · a soma das três",
+      "conhecido_positivo": {
+        "o_que": "a soma é o número de cartões com referência nas cópias",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "origens_das_definicoes_declaradas",
+      "valor": 31,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · chaves de primeiro nível de ORIGENS_DAS_DEFINICOES em figuras.mjs@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "a lista traz pdm-divida-publica",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_declaradas",
+      "valor": 22,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · chaves de primeiro nível de DEFINICOES_DAS_MEDIDAS em figuras.mjs@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perguntas_auditadas",
+      "valor": 22,
+      "comando": "git show f672bd38:tests/cartao/perguntas-provadas.json · perguntas",
+      "conhecido_positivo": {
+        "o_que": "a auditoria traz a dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedacos_auditados",
+      "valor": 72,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · pedacos por pergunta, somados",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública tem 2 pedaços",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_auditados",
+      "valor": 85,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · apoios por pedaço, somados",
+      "conhecido_positivo": {
+        "o_que": "cada pedaço tem pelo menos um apoio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "indicadores_no_ficheiro_do_motor",
+      "valor": 32,
+      "comando": "git show f672bd38:src/data/enquadramento/referencias.json · indicadores",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o saldo da balança corrente",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "indicadores_com_limiar_no_motor",
+      "valor": 13,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · com_limiar do mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "a chave existe e é um número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "indicadores_sem_limiar_no_motor",
+      "valor": 19,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · sem_limiar do mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "as duas somam os indicadores",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_do_veredicto",
+      "valor": 4,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · as chaves fora, dentro, foraBanda e dentroBanda de s.estado em strings.mjs@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "a forma «fora» existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tamanho_do_numero_px",
+      "valor": 28,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · font-size da primeira regra «.cartao-medida-num» em cartao-medida.css@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "o leitor da folha lê a regra",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tamanho_do_nome_px",
+      "valor": 16,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · font-size da primeira regra «.cartao-medida-nome» em cartao-medida.css@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "o leitor da folha lê a regra",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tamanho_da_regua_px",
+      "valor": 14,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · font-size da primeira regra «.cartao-medida-regua» em cartao-medida.css@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "o leitor da folha lê a regra",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tamanho_da_pergunta_px",
+      "valor": 12,
+      "comando": "python3 design/observatorio/medidas/BRIEF-L1.py · font-size da primeira regra «.cartao-medida-frase» em cartao-medida.css@f672bd38",
+      "conhecido_positivo": {
+        "o_que": "o leitor da folha lê a regra",
+        "encontrado": true
+      }
+    }
+  ]
+}
