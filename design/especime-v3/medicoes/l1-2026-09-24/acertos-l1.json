@@ -10,7 +10,7 @@
   },
   "auditoria": {
     "caminho": "tests/cartao/leituras-provadas.json",
-    "sha256": "095f7ef5f6ab1539f054d34d7d334e79caa3133f571bf2a1016f8b53d1fe2e44"
+    "sha256": "29b85455094f173c9ad5e5872973511054e6b0aea69115a73b3d3139047805c1"
   },
   "conferido": "a cópia do lugar de direção com estas trocas e o ficheiro do sítio são iguais sem os comentários de bloco e com os espaços juntos",
   "acertos": [
@@ -163,7 +163,7 @@
     {
       "chave": "A5",
       "medida": "taxa-de-cambio-efectiva-real-2025",
-      "porque": "Nenhuma origem lida diz que uma subida quer dizer perda de competitividade: a descrição do Eurostat fala da competitividade de preços ou de custos sem dizer o sentido, os glossários procurados responderam 404, e a página do BCE lida não o diz. A oração sai.",
+      "porque": "Nenhuma origem lida diz que uma subida quer dizer perda de competitividade: a descrição do Eurostat e o glossário da taxa de câmbio (para onde o endereço do glossário da taxa de câmbio efetiva real redireciona) falam da competitividade de preços sem dizer o sentido de uma subida, os outros dois endereços de glossário procurados responderam 404, e a página do BCE dos indicadores harmonizados de competitividade também não o diz. A oração sai.",
       "literais": [
         {
           "dono": "eurostat-tipser10-descricao",
