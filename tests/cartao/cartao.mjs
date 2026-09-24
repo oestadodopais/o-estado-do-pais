@@ -136,6 +136,25 @@
  *        literal que o campo não tem, um pedaço sem apoio, uma pergunta sem
  *        auditoria, uma origem declarada sem uso, outra linha citada, um literal
  *        curto, o selo tirado e o sha256 tirado.
+ *   K17 · **a leitura de cada medida, auditada e recontada** · bloco L1
+ *        (24.09.2026), a regra do diretor de 23.09 (I150): por baixo do número
+ *        de cada cartão nacional, uma leitura em palavras correntes. A célula vive
+ *        em `leituras.mjs`, com a auditoria em `leituras-provadas.json`, e tem
+ *        duas metades. A primeira não lê `dist/`: cada folha de cada leitura
+ *        declarada tem a sua auditoria, as partes juntas são a folha, cada parte
+ *        que diz o que a medida é apoia-se num literal que está mesmo no campo
+ *        que cita, cada conta só vive onde a máquina escolhe, cada algarismo tem
+ *        o seu literal e o motivo da pergunta da mesma medida, e nenhuma origem
+ *        declarada fica sem uso. A segunda lê as quatro páginas (o país e os
+ *        temas, nas duas edições): uma leitura por cartão, o texto igual ao do
+ *        resolvedor e ao que a célula recompõe por conta própria, com os ramos
+ *        escolhidos pela sua conta, nenhum texto de um ramo não escolhido, os
+ *        algarismos todos marcados, só as linhas do cartão e da sua régua, e
+ *        nenhuma marca da fonte. Plantas (com `--prova`): a origem tirada, a
+ *        leitura mudada sem nova leitura, um literal que o campo não tem, um
+ *        pedaço sem apoio, um algarismo sem literal, um algarismo escrito à mão,
+ *        o ramo trocado, uma linha de outra medida, um cartão sem leitura e a
+ *        leitura com a marca da fonte.
  *
  * ---------------------------------------------------------------------------
  * O POSITIVO CONHECIDO, E PORQUE ELE É METADE DA RÉGUA
@@ -164,6 +183,7 @@ import { parse } from 'node-html-parser';
 import { compararAsDuasTestemunhas, referenciaNacionalDaLinha } from './referencias.mjs';
 import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
 import { auditarPerguntas, lerAuditoriaDasPerguntas } from './perguntas.mjs';
+import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas, plantasDaK17 } from './leituras.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../../src/data/referencias-das-medidas.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES, textoDaDefinicao } from '../../src/data/figuras.mjs';
@@ -1502,6 +1522,30 @@ r.contas.valores_de_referencia_comparados = k9Comparadas;
   r.contas.origens_seladas = k16.contas.origens_seladas;
 }
 
+/* -------------------------------------------------------------------- K17 */
+/* A leitura de cada medida: a auditoria (sem `dist/`) e as quatro páginas
+   construídas. As plantas correm com `--prova`, sobre cópias em memória. */
+{
+  const auditoria = conferirAuditoriaDasLeituras();
+  r.erros.push(...auditoria.erros);
+  const rendidas = conferirLeiturasRendidas(DIST);
+  r.erros.push(...rendidas.erros);
+  r.contas.leituras_auditadas = auditoria.contas.medidas;
+  r.contas.leituras_partes = auditoria.contas.partes;
+  r.contas.leituras_apoios = auditoria.contas.apoios;
+  r.contas.leituras_algarismos_declarados = auditoria.contas.algarismos;
+  r.contas.leituras_origens = auditoria.contas.origens_das_leituras;
+  r.contas.leituras_rendidas = rendidas.contas.leituras;
+  r.contas.leituras_cartoes = rendidas.contas.cartoes;
+  r.contas.leituras_ramos_recontados = rendidas.contas.ramos;
+  if (PROVA) {
+    const plantas = plantasDaK17(DIST);
+    for (const x of plantas) if (!x.mordeu) r.erros.push(`K17 NÃO MORDEU ${x.nome}: ${x.queixa ?? 'nenhum vermelho'}`);
+    r.contas.leituras_plantas = plantas.length;
+    r.contas.leituras_plantas_mordidas = plantas.filter((x) => x.mordeu).length;
+  }
+}
+
 /* Os nomes oficiais que o recibo mostra: só os que o motor marca como a mesma
    medida. A conta escreve-se para o relatório do bloco. */
 let comNomeOficial = 0;
@@ -1567,6 +1611,14 @@ console.log(
     `    perguntas com cada pedaço apoiado (K16)               ${r.contas.perguntas_auditadas} ` +
       `(${r.contas.pedacos_auditados} pedaços, ${r.contas.apoios_das_perguntas} apoios, ` +
       `${r.contas.origens_seladas} origens seladas no motor)`,
+  ),
+);
+console.log(
+  cinza(
+    `    leituras dos cartões nacionais (K17)                 ${r.contas.leituras_rendidas} em ${r.contas.leituras_cartoes} cartões ` +
+      `(${r.contas.leituras_auditadas} declarações auditadas, ${r.contas.leituras_partes} partes, ${r.contas.leituras_apoios} apoios, ` +
+      `${r.contas.leituras_origens} origens, ${r.contas.leituras_ramos_recontados} ramos recontados` +
+      (PROVA ? `, ${r.contas.leituras_plantas_mordidas} de ${r.contas.leituras_plantas} plantas a morder)` : ')'),
   ),
 );
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));
