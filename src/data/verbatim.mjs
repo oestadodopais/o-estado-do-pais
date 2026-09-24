@@ -45,7 +45,10 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
       /** @type {unknown} */ (origem)
     );
     const onde = `\`ORIGENS_DAS_DEFINICOES['${chave}']\`, em src/data/figuras.mjs.`;
-    const lingua = chave === 'bdp-pii' ? 'pt' : 'en';
+    /* A LÍNGUA DECLARADA DA ORIGEM (bloco L1), e a regra antiga para as que não a
+       declaram: a do Banco de Portugal é portuguesa e as outras são inglesas. */
+    const declarada = /** @type {{ lingua?: string }} */ (/** @type {unknown} */ (origem)).lingua;
+    const lingua = declarada ?? (chave === 'bdp-pii' ? 'pt' : 'en');
     return [
       [`origem-${chave}-publicador`, { lang: null, origem: onde, text: o.publicador }],
       [`origem-${chave}-documento`, { lang: lingua, origem: onde, text: o.documento }],

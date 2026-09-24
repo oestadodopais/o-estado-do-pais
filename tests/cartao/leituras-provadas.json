@@ -1,0 +1,4454 @@
+{
+  "schema": 1,
+  "o_que_e": "A auditoria das leituras dos cartões nacionais, folha a folha, nas duas edições (bloco L1, item 4). Cada folha de texto de cada leitura declarada em src/data/leituras-das-medidas.mjs divide-se em partes, e cada parte tem uma classe: «diz» (diz o que a medida é, o que o seu sinal quer dizer, ou de quem é o valor de referência e o que ele é) com o literal que a apoia, num campo de uma origem declarada em ORIGENS_DAS_DEFINICOES (excerto, excertoEn, documento ou publicador) ou num campo selado da linha da própria medida (excerpt, unit, document.title, document.locator; reference_date só para dizer que o período é um ano); «conta» (as palavras de uma comparação ou de um veredicto que a máquina escolhe sobre valores selados, que não precisam de origem); «liga» (pontuação e palavras de ligação de uma lista fechada). As folhas partilhadas por várias leituras estão em «comuns»; um apoio em «linha: propria» lê-se na linha de cada medida que usa a folha. Cada algarismo declarado com «nl» tem o seu literal em «algarismos». A célula K17 do check:cartao confere que as partes juntas são cada folha, que cada literal está mesmo no campo que cita, que cada «conta» está onde a máquina escolhe, e que cada origem da lista de uma medida apoia uma parte dela. Não infere que o literal quer dizer o que a parte diz: isso é uma leitura, e é de quem a assina.",
+  "leituras": [
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-09-24",
+      "o_que": "primeira leitura, sobre as origens pedidas neste bloco e as já declaradas, com os acertos A1 a A15 às palavras fixas"
+    }
+  ],
+  "comuns": [
+    {
+      "pt": " ",
+      "en": " ",
+      "partes": [
+        {
+          "pt": " ",
+          "en": " ",
+          "classe": "liga"
+        }
+      ]
+    },
+    {
+      "pt": ".",
+      "en": ".",
+      "partes": [
+        {
+          "pt": ".",
+          "en": ".",
+          "classe": "liga"
+        }
+      ]
+    },
+    {
+      "pt": "Em ",
+      "en": "In ",
+      "partes": [
+        {
+          "pt": "Em ",
+          "en": "In ",
+          "classe": "liga"
+        }
+      ]
+    },
+    {
+      "pt": " aos ",
+      "en": " to ",
+      "partes": [
+        {
+          "pt": " aos ",
+          "en": " to ",
+          "classe": "liga"
+        }
+      ]
+    },
+    {
+      "pt": " %",
+      "en": " %",
+      "partes": [
+        {
+          "pt": " %",
+          "en": " %",
+          "classe": "liga"
+        }
+      ]
+    },
+    {
+      "pt": "Subiu face a",
+      "en": "Up from",
+      "partes": [
+        {
+          "pt": "Subiu face a",
+          "en": "Up from",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Desceu face a",
+      "en": "Down from",
+      "partes": [
+        {
+          "pt": "Desceu face a",
+          "en": "Down from",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Ficou igual a",
+      "en": "Unchanged from",
+      "partes": [
+        {
+          "pt": "Ficou igual a",
+          "en": "Unchanged from",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Está acima da média da União Europeia.",
+      "en": "Above the European Union average.",
+      "partes": [
+        {
+          "pt": "Está acima da média da União Europeia.",
+          "en": "Above the European Union average.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Está abaixo da média da União Europeia.",
+      "en": "Below the European Union average.",
+      "partes": [
+        {
+          "pt": "Está abaixo da média da União Europeia.",
+          "en": "Below the European Union average.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Está ao nível da média da União Europeia.",
+      "en": "Level with the European Union average.",
+      "partes": [
+        {
+          "pt": "Está ao nível da média da União Europeia.",
+          "en": "Level with the European Union average.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Pesa mais do que em",
+      "en": "It weighs more than in",
+      "partes": [
+        {
+          "pt": "Pesa mais do que em",
+          "en": "It weighs more than in",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Pesa menos do que em",
+      "en": "It weighs less than in",
+      "partes": [
+        {
+          "pt": "Pesa menos do que em",
+          "en": "It weighs less than in",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "Pesa o mesmo que em",
+      "en": "It weighs the same as in",
+      "partes": [
+        {
+          "pt": "Pesa o mesmo que em",
+          "en": "It weighs the same as in",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A diferença cresceu face a",
+      "en": "The gap widened from",
+      "partes": [
+        {
+          "pt": "A diferença cresceu face a",
+          "en": "The gap widened from",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A diferença encolheu face a",
+      "en": "The gap narrowed from",
+      "partes": [
+        {
+          "pt": "A diferença encolheu face a",
+          "en": "The gap narrowed from",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A diferença ficou igual à de",
+      "en": "The gap was unchanged from",
+      "partes": [
+        {
+          "pt": "A diferença ficou igual à de",
+          "en": "The gap was unchanged from",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "É maior do que na média da União Europeia.",
+      "en": "It is wider than the European Union average.",
+      "partes": [
+        {
+          "pt": "É maior do que na média da União Europeia.",
+          "en": "It is wider than the European Union average.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "É menor do que na média da União Europeia.",
+      "en": "It is narrower than the European Union average.",
+      "partes": [
+        {
+          "pt": "É menor do que na média da União Europeia.",
+          "en": "It is narrower than the European Union average.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "É igual à da média da União Europeia.",
+      "en": "It is the same as the European Union average.",
+      "partes": [
+        {
+          "pt": "É igual à da média da União Europeia.",
+          "en": "It is the same as the European Union average.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A variação é maior do que a da União Europeia.",
+      "en": "The change is larger than the European Union’s.",
+      "partes": [
+        {
+          "pt": "A variação é maior do que a da União Europeia.",
+          "en": "The change is larger than the European Union’s.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A variação é menor do que a da União Europeia.",
+      "en": "The change is smaller than the European Union’s.",
+      "partes": [
+        {
+          "pt": "A variação é menor do que a da União Europeia.",
+          "en": "The change is smaller than the European Union’s.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A variação é igual à da União Europeia.",
+      "en": "The change is the same as the European Union’s.",
+      "partes": [
+        {
+          "pt": "A variação é igual à da União Europeia.",
+          "en": "The change is the same as the European Union’s.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "acima.",
+      "en": "above it.",
+      "partes": [
+        {
+          "pt": "acima.",
+          "en": "above it.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "abaixo ou no limite.",
+      "en": "at or below it.",
+      "partes": [
+        {
+          "pt": "abaixo ou no limite.",
+          "en": "at or below it.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "no limite.",
+      "en": "at the limit.",
+      "partes": [
+        {
+          "pt": "no limite.",
+          "en": "at the limit.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "abaixo.",
+      "en": "below it.",
+      "partes": [
+        {
+          "pt": "abaixo.",
+          "en": "below it.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "abaixo desse valor.",
+      "en": "below that value.",
+      "partes": [
+        {
+          "pt": "abaixo desse valor.",
+          "en": "below that value.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "acima desse valor.",
+      "en": "above that value.",
+      "partes": [
+        {
+          "pt": "acima desse valor.",
+          "en": "above that value.",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A variação em três anos é maior do que a medida em",
+      "en": "The three-year change is larger than the one measured in",
+      "partes": [
+        {
+          "pt": "A variação em três anos",
+          "en": "The three-year change",
+          "classe": "diz",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "variação em três anos"
+            }
+          ]
+        },
+        {
+          "pt": " é maior do que a medida em",
+          "en": " is larger than the one measured in",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A variação em três anos é menor do que a medida em",
+      "en": "The three-year change is smaller than the one measured in",
+      "partes": [
+        {
+          "pt": "A variação em três anos",
+          "en": "The three-year change",
+          "classe": "diz",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "variação em três anos"
+            }
+          ]
+        },
+        {
+          "pt": " é menor do que a medida em",
+          "en": " is smaller than the one measured in",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "A variação em três anos é igual à medida em",
+      "en": "The three-year change is the same as the one measured in",
+      "partes": [
+        {
+          "pt": "A variação em três anos",
+          "en": "The three-year change",
+          "classe": "diz",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "variação em três anos"
+            }
+          ]
+        },
+        {
+          "pt": " é igual à medida em",
+          "en": " is the same as the one measured in",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": "em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+      "en": "as a percentage of GDP, the value of everything the country produces in a year.",
+      "partes": [
+        {
+          "pt": "em percentagem do PIB",
+          "en": "as a percentage of GDP",
+          "classe": "diz",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "% do PIB"
+            }
+          ]
+        },
+        {
+          "pt": ", o valor de tudo o que o país produz",
+          "en": ", the value of everything the country produces",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy"
+            }
+          ]
+        },
+        {
+          "pt": " num ano",
+          "en": " in a year",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "within a certain period of time"
+            },
+            {
+              "linha": "propria",
+              "campo": "reference_date",
+              "forma": "ano"
+            }
+          ]
+        },
+        {
+          "pt": ".",
+          "en": ".",
+          "classe": "liga"
+        }
+      ]
+    },
+    {
+      "pt": " Para a Comissão Europeia, ",
+      "en": " For the European Commission, ",
+      "partes": [
+        {
+          "pt": " Para a Comissão Europeia, ",
+          "en": " For the European Commission, ",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "painel-pdm",
+              "campo": "publicador",
+              "literal": "Comissão Europeia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pt": " é sinal de possível desequilíbrio: Portugal está ",
+      "en": " is a sign of a possible imbalance: Portugal is ",
+      "partes": [
+        {
+          "pt": " é sinal de possível desequilíbrio",
+          "en": " is a sign of a possible imbalance",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "painel-pdm",
+              "campo": "excerto",
+              "literal": "indicative thresholds, covering the major sources of macroeconomic imbalances"
+            }
+          ]
+        },
+        {
+          "pt": ": Portugal está ",
+          "en": ": Portugal is ",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": " % é sinal de possível desequilíbrio: Portugal está ",
+      "en": " % is a sign of a possible imbalance: Portugal is ",
+      "partes": [
+        {
+          "pt": " %",
+          "en": " %",
+          "classe": "liga"
+        },
+        {
+          "pt": " é sinal de possível desequilíbrio",
+          "en": " is a sign of a possible imbalance",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "painel-pdm",
+              "campo": "excerto",
+              "literal": "indicative thresholds, covering the major sources of macroeconomic imbalances"
+            }
+          ]
+        },
+        {
+          "pt": ": Portugal está ",
+          "en": ": Portugal is ",
+          "classe": "conta"
+        }
+      ]
+    },
+    {
+      "pt": " anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+      "en": " who are out of work, among those who work or are looking for work.",
+      "partes": [
+        {
+          "pt": " anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+          "en": " who are out of work, among those who work or are looking for work.",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "The unemployment rate is the number of people unemployed as a percentage of the labour force."
+            },
+            {
+              "origem": "glossario-atividade",
+              "campo": "excerto",
+              "literal": "The economically active population comprises employed and unemployed persons."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pt": " Zero quer dizer que não mudou.",
+      "en": " Zero means it did not change.",
+      "partes": [
+        {
+          "pt": " Zero quer dizer que não mudou.",
+          "en": " Zero means it did not change.",
+          "classe": "diz",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "variação em três anos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pt": " % do rendimento disponível com a habitação.",
+      "en": " % of its disposable income on housing.",
+      "partes": [
+        {
+          "pt": " % do rendimento disponível com a habitação.",
+          "en": " % of its disposable income on housing.",
+          "classe": "diz",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "represent more than 40 % of disposable income"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "medidas": [
+    {
+      "id": "pib-real-per-capita-2025",
+      "origens": [
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, em termos reais.",
+          "en": "It is the value of everything the country produced in the year, per inhabitant, in real terms.",
+          "partes": [
+            {
+              "pt": "É o valor de tudo o que o país produziu",
+              "en": "It is the value of everything the country produced",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "GDP measures the value of total final output of goods and services produced by an economy"
+                }
+              ]
+            },
+            {
+              "pt": " no ano",
+              "en": " in the year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "the average population of a specific year"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ", por habitante",
+              "en": ", per inhabitant",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "euros por habitante"
+                },
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "ratio of real gross domestic product to the average population"
+                }
+              ]
+            },
+            {
+              "pt": ", em termos reais",
+              "en": ", in real terms",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "real gross domestic product"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "saldo-das-administracoes-publicas-2025",
+      "origens": [
+        "ine-pde-subsetores",
+        "ine-pde-regional-e-local",
+        "eurostat-gfs-saldo",
+        "eurostat-gfs-pacto",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": " as administrações públicas (o Estado, as regiões autónomas, as autarquias e a segurança social) receberam mais do que gastaram: um excedente de ",
+          "en": " general government (the State, the autonomous regions, local authorities and social security) took in more than it spent: a surplus of ",
+          "partes": [
+            {
+              "pt": " as administrações públicas",
+              "en": " general government",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                }
+              ]
+            },
+            {
+              "pt": " (o Estado",
+              "en": " (the State",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Administração Central"
+                }
+              ]
+            },
+            {
+              "pt": ", as regiões autónomas",
+              "en": ", the autonomous regions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-regional-e-local",
+                  "campo": "excerto",
+                  "literal": "Administração Regional da Madeira"
+                },
+                {
+                  "origem": "ine-pde-regional-e-local",
+                  "campo": "excerto",
+                  "literal": "Administração Regional dos Açores"
+                }
+              ]
+            },
+            {
+              "pt": ", as autarquias",
+              "en": ", local authorities",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Administração Local"
+                }
+              ]
+            },
+            {
+              "pt": " e a segurança social)",
+              "en": " and social security)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Fundos de Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": " receberam mais do que gastaram",
+              "en": " took in more than it spent",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Net lending (+)"
+                }
+              ]
+            },
+            {
+              "pt": ": um excedente de ",
+              "en": ": a surplus of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "deficit/surplus"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " as administrações públicas (o Estado, as regiões autónomas, as autarquias e a segurança social) gastaram mais do que receberam: o saldo foi de ",
+          "en": " general government (the State, the autonomous regions, local authorities and social security) spent more than it took in: the balance was ",
+          "partes": [
+            {
+              "pt": " as administrações públicas",
+              "en": " general government",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                }
+              ]
+            },
+            {
+              "pt": " (o Estado",
+              "en": " (the State",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Administração Central"
+                }
+              ]
+            },
+            {
+              "pt": ", as regiões autónomas",
+              "en": ", the autonomous regions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-regional-e-local",
+                  "campo": "excerto",
+                  "literal": "Administração Regional da Madeira"
+                },
+                {
+                  "origem": "ine-pde-regional-e-local",
+                  "campo": "excerto",
+                  "literal": "Administração Regional dos Açores"
+                }
+              ]
+            },
+            {
+              "pt": ", as autarquias",
+              "en": ", local authorities",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Administração Local"
+                }
+              ]
+            },
+            {
+              "pt": " e a segurança social)",
+              "en": " and social security)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Fundos de Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": " gastaram mais do que receberam",
+              "en": " spent more than it took in",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "net borrowing (-)"
+                }
+              ]
+            },
+            {
+              "pt": ": o saldo foi de ",
+              "en": ": the balance was ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Net lending (+)/net borrowing (-)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " as administrações públicas (o Estado, as regiões autónomas, as autarquias e a segurança social) gastaram tanto quanto receberam.",
+          "en": " general government (the State, the autonomous regions, local authorities and social security) spent exactly what it took in.",
+          "partes": [
+            {
+              "pt": " as administrações públicas",
+              "en": " general government",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                }
+              ]
+            },
+            {
+              "pt": " (o Estado",
+              "en": " (the State",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Administração Central"
+                }
+              ]
+            },
+            {
+              "pt": ", as regiões autónomas",
+              "en": ", the autonomous regions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-regional-e-local",
+                  "campo": "excerto",
+                  "literal": "Administração Regional da Madeira"
+                },
+                {
+                  "origem": "ine-pde-regional-e-local",
+                  "campo": "excerto",
+                  "literal": "Administração Regional dos Açores"
+                }
+              ]
+            },
+            {
+              "pt": ", as autarquias",
+              "en": ", local authorities",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Administração Local"
+                }
+              ]
+            },
+            {
+              "pt": " e a segurança social)",
+              "en": " and social security)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-pde-subsetores",
+                  "campo": "excerto",
+                  "literal": "Fundos de Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": " gastaram tanto quanto receberam",
+              "en": " spent exactly what it took in",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " % do PIB, o valor de tudo o que o país produz num ano.",
+          "en": " % of GDP, the value of everything the country produces in a year.",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            },
+            {
+              "pt": ", o valor de tudo o que o país produz",
+              "en": ", the value of everything the country produces",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "GDP measures the value of total final output of goods and services produced by an economy"
+                }
+              ]
+            },
+            {
+              "pt": " num ano",
+              "en": " in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "within a certain period of time"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": "O saldo subiu face a",
+          "en": "The balance rose from",
+          "partes": [
+            {
+              "pt": "O saldo subiu face a",
+              "en": "The balance rose from",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "O saldo desceu face a",
+          "en": "The balance fell from",
+          "partes": [
+            {
+              "pt": "O saldo desceu face a",
+              "en": "The balance fell from",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "O saldo ficou igual ao de",
+          "en": "The balance was unchanged from",
+          "partes": [
+            {
+              "pt": "O saldo ficou igual ao de",
+              "en": "The balance was unchanged from",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " O Pacto de Estabilidade e Crescimento não deixa o défice passar de ",
+          "en": " The Stability and Growth Pact does not allow the deficit to exceed ",
+          "partes": [
+            {
+              "pt": " O Pacto de Estabilidade e Crescimento não deixa o défice passar de ",
+              "en": " The Stability and Growth Pact does not allow the deficit to exceed ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-pacto",
+                  "campo": "excerto",
+                  "literal": "Stability and Growth Pact"
+                },
+                {
+                  "origem": "eurostat-gfs-pacto",
+                  "campo": "excerto",
+                  "literal": "a Member State's government deficit may not exceed 3% of its gross domestic product (GDP)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do PIB: Portugal ",
+          "en": " % of GDP: Portugal ",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-pacto",
+                  "campo": "excerto",
+                  "literal": "of its gross domestic product (GDP)"
+                }
+              ]
+            },
+            {
+              "pt": ": Portugal ",
+              "en": ": Portugal ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "cumpre.",
+          "en": "complies.",
+          "partes": [
+            {
+              "pt": "cumpre.",
+              "en": "complies.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "não cumpre.",
+          "en": "does not comply.",
+          "partes": [
+            {
+              "pt": "não cumpre.",
+              "en": "does not comply.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "divida-publica-2025",
+      "origens": [
+        "eurostat-tipsgo10-descricao",
+        "pdm-divida-publica",
+        "painel-pdm",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É tudo o que as administrações públicas devem, ",
+          "en": "It is everything general government owes, ",
+          "partes": [
+            {
+              "pt": "É tudo o que as administrações públicas devem, ",
+              "en": "It is everything general government owes, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsgo10-descricao",
+                  "campo": "excerto",
+                  "literal": "debt means total gross debt"
+                },
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "general government sector debt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma dívida acima de ",
+          "en": "debt above ",
+          "partes": [
+            {
+              "pt": "uma dívida acima de ",
+              "en": "debt above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "general government sector debt in % of GDP with a threshold of 60%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do PIB",
+          "en": " % of GDP",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "in % of GDP"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "crescimento-da-despesa-liquida-2025",
+      "origens": [
+        "cfp-despesa-liquida",
+        "cfp-quem",
+        "cfp-compromisso",
+        "cfp-trajetoria"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida, a despesa paga por fundos europeus nem a que sobe e desce com o desemprego, apurada pelo Conselho das Finanças Públicas.",
+          "en": "It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt, spending paid by European funds and the spending that rises and falls with unemployment, as computed by the Public Finance Council.",
+          "partes": [
+            {
+              "pt": "É quanto cresceu num ano a despesa pública líquida",
+              "en": "It is how much net public expenditure grew in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "crescimento da despesa líquida"
+                },
+                {
+                  "origem": "cfp-despesa-liquida",
+                  "campo": "excerto",
+                  "literal": "Despesa Total"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ": a que não conta os juros da dívida",
+              "en": ": the expenditure that leaves out interest on the debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "cfp-despesa-liquida",
+                  "campo": "excerto",
+                  "literal": "(da qual se ex clui)"
+                },
+                {
+                  "origem": "cfp-despesa-liquida",
+                  "campo": "excerto",
+                  "literal": "Encargos com Juros (2)"
+                }
+              ]
+            },
+            {
+              "pt": ", a despesa paga por fundos europeus",
+              "en": ", spending paid by European funds",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "cfp-despesa-liquida",
+                  "campo": "excerto",
+                  "literal": "Despesa financiada por fundos da UE (4)"
+                }
+              ]
+            },
+            {
+              "pt": " nem a que sobe e desce com o desemprego",
+              "en": " and the spending that rises and falls with unemployment",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "cfp-despesa-liquida",
+                  "campo": "excerto",
+                  "literal": "Despesa cíclica com subsídio de desemprego (3)"
+                }
+              ]
+            },
+            {
+              "pt": ", apurada pelo Conselho das Finanças Públicas.",
+              "en": ", as computed by the Public Finance Council.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "O CFP apurou um crescimento da despesa líquida"
+                },
+                {
+                  "origem": "cfp-quem",
+                  "campo": "excerto",
+                  "literal": "Conselho das Finanças Públicas (CFP)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "Cresceu mais do que em",
+          "en": "It grew more than in",
+          "partes": [
+            {
+              "pt": "Cresceu mais do que em",
+              "en": "It grew more than in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "Cresceu menos do que em",
+          "en": "It grew less than in",
+          "partes": [
+            {
+              "pt": "Cresceu menos do que em",
+              "en": "It grew less than in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "Cresceu o mesmo que em",
+          "en": "It grew the same as in",
+          "partes": [
+            {
+              "pt": "Cresceu o mesmo que em",
+              "en": "It grew the same as in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " Portugal comprometeu-se, num compromisso endossado pelo Conselho da União Europeia, a não a deixar crescer mais de ",
+          "en": " Portugal committed, in a commitment endorsed by the Council of the European Union, not to let it grow by more than ",
+          "partes": [
+            {
+              "pt": " Portugal comprometeu-se, num compromisso endossado pelo Conselho da União Europeia, a não a deixar crescer mais de ",
+              "en": " Portugal committed, in a commitment endorsed by the Council of the European Union, not to let it grow by more than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "cfp-compromisso",
+                  "campo": "excerto",
+                  "literal": "compromisso assumido por Portugal e endossado pelo Conselho da UE"
+                },
+                {
+                  "origem": "cfp-trajetoria",
+                  "campo": "excerto",
+                  "literal": "comprometeu-se com uma determinada trajetória de crescimento da despesa líquida"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "a taxa de crescimento de 5% recomendada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % em ",
+          "en": " % in ",
+          "partes": [
+            {
+              "pt": " % em ",
+              "en": " % in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": ": ",
+          "en": ": it ",
+          "partes": [
+            {
+              "pt": ": ",
+              "en": ": it ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "cresceu mais do que isso.",
+          "en": "grew more than that.",
+          "partes": [
+            {
+              "pt": "cresceu mais do que isso.",
+              "en": "grew more than that.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "ficou dentro desse limite.",
+          "en": "stayed within that limit.",
+          "partes": [
+            {
+              "pt": "ficou dentro desse limite.",
+              "en": "stayed within that limit.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2025",
+      "origens": [
+        "eurostat-tipsbp10-descricao",
+        "pdm-balanca-corrente",
+        "painel-pdm",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e ",
+          "en": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and ",
+          "partes": [
+            {
+              "pt": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou",
+              "en": "It is the difference between what Portugal received from the rest of the world and what it paid to it",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp10-descricao",
+                  "campo": "excerto",
+                  "literal": "the transactions of a country with the rest of the world"
+                },
+                {
+                  "origem": "eurostat-tipsbp10-descricao",
+                  "campo": "excerto",
+                  "literal": "marked as a credit, a debit or a balance"
+                }
+              ]
+            },
+            {
+              "pt": ", em bens, serviços e rendimentos",
+              "en": ", in goods, services and income",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp10-descricao",
+                  "campo": "excerto",
+                  "literal": "in goods, services, primary income and secondary income"
+                }
+              ]
+            },
+            {
+              "pt": ", na média dos últimos três anos",
+              "en": ", averaged over the last three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-balanca-corrente",
+                  "campo": "excerto",
+                  "literal": "3-year backward moving average"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "média de três anos"
+                }
+              ]
+            },
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " Positivo quer dizer que o país recebeu mais do que pagou.",
+          "en": " Positive means the country received more than it paid.",
+          "partes": [
+            {
+              "pt": " Positivo quer dizer que o país recebeu mais do que pagou.",
+              "en": " Positive means the country received more than it paid.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp10-descricao",
+                  "campo": "excerto",
+                  "literal": "marked as a credit, a debit or a balance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Negativo quer dizer que o país pagou mais do que recebeu.",
+          "en": " Negative means the country paid more than it received.",
+          "partes": [
+            {
+              "pt": " Negativo quer dizer que o país pagou mais do que recebeu.",
+              "en": " Negative means the country paid more than it received.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp10-descricao",
+                  "campo": "excerto",
+                  "literal": "marked as a credit, a debit or a balance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Zero quer dizer que recebeu tanto quanto pagou.",
+          "en": " Zero means it received exactly what it paid.",
+          "partes": [
+            {
+              "pt": " Zero quer dizer que recebeu tanto quanto pagou.",
+              "en": " Zero means it received exactly what it paid.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp10-descricao",
+                  "campo": "excerto",
+                  "literal": "marked as a credit, a debit or a balance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Para a Comissão Europeia, um saldo abaixo de −",
+          "en": " For the European Commission, a balance below −",
+          "partes": [
+            {
+              "pt": " Para a Comissão Europeia, ",
+              "en": " For the European Commission, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "painel-pdm",
+                  "campo": "publicador",
+                  "literal": "Comissão Europeia"
+                }
+              ]
+            },
+            {
+              "pt": "um saldo abaixo de −",
+              "en": "a balance below −",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-balanca-corrente",
+                  "campo": "excerto",
+                  "literal": "with thresholds of +6% and -4%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % ou acima de ",
+          "en": " % or above ",
+          "partes": [
+            {
+              "pt": " % ou acima de ",
+              "en": " % or above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-balanca-corrente",
+                  "campo": "excerto",
+                  "literal": "with thresholds of +6% and -4%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "entre os dois.",
+          "en": "between the two.",
+          "partes": [
+            {
+              "pt": "entre os dois.",
+              "en": "between the two.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "acima.",
+          "en": "above.",
+          "partes": [
+            {
+              "pt": "acima.",
+              "en": "above.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "abaixo.",
+          "en": "below.",
+          "partes": [
+            {
+              "pt": "abaixo.",
+              "en": "below.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2025",
+      "origens": [
+        "bdp-pii",
+        "bdp-pii-sinal",
+        "pdm-posicao-de-investimento",
+        "painel-pdm",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, ",
+          "en": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, ",
+          "partes": [
+            {
+              "pt": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, ",
+              "en": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii",
+                  "campo": "excerto",
+                  "literal": "o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo"
+                },
+                {
+                  "origem": "bdp-pii",
+                  "campo": "excertoEn",
+                  "literal": "the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Negativa quer dizer que o país deve ao exterior mais do que tem lá.",
+          "en": " Negative means the country owes abroad more than it owns there.",
+          "partes": [
+            {
+              "pt": " Negativa quer dizer que o país deve ao exterior mais do que tem lá.",
+              "en": " Negative means the country owes abroad more than it owns there.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excerto",
+                  "literal": "se for negativo significa que existe uma responsabilidade líquida face ao exterior"
+                },
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excertoEn",
+                  "literal": "if it is negative, it means that there is a net external liability"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A responsabilidade líquida perante o exterior encolheu face a",
+          "en": "The net external liability shrank from",
+          "partes": [
+            {
+              "pt": "A responsabilidade líquida perante o exterior",
+              "en": "The net external liability",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excerto",
+                  "literal": "representando uma responsabilidade perante o exterior"
+                },
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excertoEn",
+                  "literal": "there is a net external liability"
+                }
+              ]
+            },
+            {
+              "pt": " encolheu face a",
+              "en": " shrank from",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A responsabilidade líquida perante o exterior cresceu face a",
+          "en": "The net external liability grew from",
+          "partes": [
+            {
+              "pt": "A responsabilidade líquida perante o exterior",
+              "en": "The net external liability",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excerto",
+                  "literal": "representando uma responsabilidade perante o exterior"
+                },
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excertoEn",
+                  "literal": "there is a net external liability"
+                }
+              ]
+            },
+            {
+              "pt": " cresceu face a",
+              "en": " grew from",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A responsabilidade líquida perante o exterior ficou igual à de",
+          "en": "The net external liability was unchanged from",
+          "partes": [
+            {
+              "pt": "A responsabilidade líquida perante o exterior",
+              "en": "The net external liability",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excerto",
+                  "literal": "representando uma responsabilidade perante o exterior"
+                },
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excertoEn",
+                  "literal": "there is a net external liability"
+                }
+              ]
+            },
+            {
+              "pt": " ficou igual à de",
+              "en": " was unchanged from",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " Positiva quer dizer que o país tem no exterior mais do que lhe deve.",
+          "en": " Positive means the country owns abroad more than it owes.",
+          "partes": [
+            {
+              "pt": " Positiva quer dizer que o país tem no exterior mais do que lhe deve.",
+              "en": " Positive means the country owns abroad more than it owes.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excerto",
+                  "literal": "Se este saldo for positivo, isso significa que o país tem um ativo líquido sobre o exterior"
+                },
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excertoEn",
+                  "literal": "If it is positive, it means that the country has a net foreign asset"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Zero quer dizer que tem no exterior tanto quanto lhe deve.",
+          "en": " Zero means it owns abroad exactly what it owes.",
+          "partes": [
+            {
+              "pt": " Zero quer dizer que tem no exterior tanto quanto lhe deve.",
+              "en": " Zero means it owns abroad exactly what it owes.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "bdp-pii-sinal",
+                  "campo": "excerto",
+                  "literal": "que pode assumir valores positivos ou negativos"
+                },
+                {
+                  "origem": "bdp-pii",
+                  "campo": "excerto",
+                  "literal": "A diferença entre os ativos financeiros e os passivos corresponde ao valor líquido"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Para a Comissão Europeia, uma posição abaixo de −",
+          "en": " For the European Commission, a position below −",
+          "partes": [
+            {
+              "pt": " Para a Comissão Europeia, ",
+              "en": " For the European Commission, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "painel-pdm",
+                  "campo": "publicador",
+                  "literal": "Comissão Europeia"
+                }
+              ]
+            },
+            {
+              "pt": "uma posição abaixo de −",
+              "en": "a position below −",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-posicao-de-investimento",
+                  "campo": "excerto",
+                  "literal": "with a threshold of -35%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do PIB é sinal de possível desequilíbrio: Portugal está ",
+          "en": " % of GDP is a sign of a possible imbalance: Portugal is ",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-posicao-de-investimento",
+                  "campo": "excerto",
+                  "literal": "as percent of GDP"
+                }
+              ]
+            },
+            {
+              "pt": " é sinal de possível desequilíbrio",
+              "en": " is a sign of a possible imbalance",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "painel-pdm",
+                  "campo": "excerto",
+                  "literal": "indicative thresholds, covering the major sources of macroeconomic imbalances"
+                }
+              ]
+            },
+            {
+              "pt": ": Portugal está ",
+              "en": ": Portugal is ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "acima ou no limite.",
+          "en": "at or above it.",
+          "partes": [
+            {
+              "pt": "acima ou no limite.",
+              "en": "at or above it.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "taxa-de-cambio-efectiva-real-2025",
+      "origens": [
+        "eurostat-tipser10-descricao",
+        "pdm-cambio-efectivo-real",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "Mede a competitividade dos preços portugueses face aos principais concorrentes, contando a inflação e as taxas de câmbio, em três anos.",
+          "en": "It measures the price competitiveness of Portugal against its main competitors, allowing for inflation and exchange rates, over three years.",
+          "partes": [
+            {
+              "pt": "Mede a competitividade dos preços portugueses face aos principais concorrentes",
+              "en": "It measures the price competitiveness of Portugal against its main competitors",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipser10-descricao",
+                  "campo": "excerto",
+                  "literal": "price or cost competitiveness relative to its principal competitors"
+                }
+              ]
+            },
+            {
+              "pt": ", contando a inflação e as taxas de câmbio",
+              "en": ", allowing for inflation and exchange rates",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipser10-descricao",
+                  "campo": "excerto",
+                  "literal": "depend not only on exchange rate movements but also on cost and price trends"
+                },
+                {
+                  "origem": "eurostat-tipser10-descricao",
+                  "campo": "excerto",
+                  "literal": "deflated by the consumer price indices"
+                }
+              ]
+            },
+            {
+              "pt": ", em três anos",
+              "en": ", over three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-cambio-efectivo-real",
+                  "campo": "excerto",
+                  "literal": "3-year percentage change"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " Para a Comissão Europeia, uma variação fora do intervalo entre −",
+          "en": " For the European Commission, a change outside the range from −",
+          "partes": [
+            {
+              "pt": " Para a Comissão Europeia, ",
+              "en": " For the European Commission, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "painel-pdm",
+                  "campo": "publicador",
+                  "literal": "Comissão Europeia"
+                }
+              ]
+            },
+            {
+              "pt": "uma variação fora do intervalo entre −",
+              "en": "a change outside the range from −",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-cambio-efectivo-real",
+                  "campo": "excerto",
+                  "literal": "with thresholds of -/+3% for euro area countries"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " e ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " e ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": "dentro do intervalo.",
+          "en": "within the range.",
+          "partes": [
+            {
+              "pt": "dentro do intervalo.",
+              "en": "within the range.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "desempenho-das-exportacoes-2025",
+      "origens": [
+        "eurostat-tipsbp60-descricao",
+        "pdm-exportacoes",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas.",
+          "en": "It is how much Portugal’s share of the exports of advanced economies changed over three years.",
+          "partes": [
+            {
+              "pt": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas.",
+              "en": "It is how much Portugal’s share of the exports of advanced economies changed over three years.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Share of exports of advanced economies"
+                },
+                {
+                  "origem": "eurostat-tipsbp60-descricao",
+                  "campo": "excerto",
+                  "literal": "developments in shares of exports of goods and services"
+                },
+                {
+                  "origem": "eurostat-tipsbp60-descricao",
+                  "campo": "excerto",
+                  "literal": "calculated as the 3 year % change"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Positiva quer dizer que Portugal ganhou quota.",
+          "en": " Positive means Portugal gained share.",
+          "partes": [
+            {
+              "pt": " Positiva quer dizer que Portugal ganhou quota.",
+              "en": " Positive means Portugal gained share.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp60-descricao",
+                  "campo": "excerto",
+                  "literal": "developments in shares of exports"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Negativa quer dizer que Portugal perdeu quota.",
+          "en": " Negative means Portugal lost share.",
+          "partes": [
+            {
+              "pt": " Negativa quer dizer que Portugal perdeu quota.",
+              "en": " Negative means Portugal lost share.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp60-descricao",
+                  "campo": "excerto",
+                  "literal": "developments in shares of exports"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Zero quer dizer que a quota não mudou.",
+          "en": " Zero means the share did not change.",
+          "partes": [
+            {
+              "pt": " Zero quer dizer que a quota não mudou.",
+              "en": " Zero means the share did not change.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp60-descricao",
+                  "campo": "excerto",
+                  "literal": "developments in shares of exports"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma perda de mais de ",
+          "en": "a loss of more than ",
+          "partes": [
+            {
+              "pt": "uma perda de mais de ",
+              "en": "a loss of more than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-exportacoes",
+                  "campo": "excerto",
+                  "literal": "with a threshold of -3%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % em três anos",
+          "en": " % over three years",
+          "partes": [
+            {
+              "pt": " % em três anos",
+              "en": " % over three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-exportacoes",
+                  "campo": "excerto",
+                  "literal": "(3-year percentage change)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "origens": [
+        "eurostat-tipspd30-descricao",
+        "eurostat-tipspd30",
+        "pdm-divida-das-empresas",
+        "painel-pdm",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que as empresas devem em empréstimos e títulos de dívida, fora as financeiras, ",
+          "en": "It is what companies owe in loans and debt securities, excluding financial companies, ",
+          "partes": [
+            {
+              "pt": "É o que as empresas devem",
+              "en": "It is what companies owe",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspd30-descricao",
+                  "campo": "excerto",
+                  "literal": "the stock of debt of the sector non-financial corporations"
+                }
+              ]
+            },
+            {
+              "pt": " em empréstimos e títulos de dívida",
+              "en": " in loans and debt securities",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspd30-descricao",
+                  "campo": "excerto",
+                  "literal": "Debt securities (F.3) and Loans (F.4)"
+                }
+              ]
+            },
+            {
+              "pt": ", fora as financeiras, ",
+              "en": ", excluding financial companies, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspd30",
+                  "campo": "excerto",
+                  "literal": "Non-financial corporations debt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma dívida acima de ",
+          "en": "debt above ",
+          "partes": [
+            {
+              "pt": "uma dívida acima de ",
+              "en": "debt above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-das-empresas",
+                  "campo": "excerto",
+                  "literal": "NFC consolidated debt in % of GDP with a threshold of 85%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do PIB",
+          "en": " % of GDP",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-das-empresas",
+                  "campo": "excerto",
+                  "literal": "in % of GDP"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "origens": [
+        "eurostat-tipspd22-descricao",
+        "glossario-npish",
+        "pdm-divida-das-familias",
+        "painel-pdm",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que as famílias e as instituições sem fim lucrativo ao seu serviço devem em empréstimos e títulos de dívida, ",
+          "en": "It is what households and non-profit institutions serving them owe in loans and debt securities, ",
+          "partes": [
+            {
+              "pt": "É o que as famílias e as instituições sem fim lucrativo ao seu serviço devem",
+              "en": "It is what households and non-profit institutions serving them owe",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspd22-descricao",
+                  "campo": "excerto",
+                  "literal": "the stock of liabilities held by the sector Households and Non-Profit institutions serving households"
+                },
+                {
+                  "origem": "glossario-npish",
+                  "campo": "excerto",
+                  "literal": "Non-profit institutions serving households"
+                }
+              ]
+            },
+            {
+              "pt": " em empréstimos e títulos de dívida, ",
+              "en": " in loans and debt securities, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspd22-descricao",
+                  "campo": "excerto",
+                  "literal": "Debt securities (F.3) and Loans (F.4)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma dívida acima de ",
+          "en": "debt above ",
+          "partes": [
+            {
+              "pt": "uma dívida acima de ",
+              "en": "debt above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-das-familias",
+                  "campo": "excerto",
+                  "literal": "household (incl. NPISH) consolidated debt in % of GDP with a threshold of 55%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do PIB",
+          "en": " % of GDP",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-das-familias",
+                  "campo": "excerto",
+                  "literal": "in % of GDP"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2025",
+      "origens": [
+        "eurostat-tipspc30-descricao",
+        "pdm-credito-as-empresas",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto crédito as empresas contraíram num ano, em termos líquidos, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior.",
+          "en": "It is how much credit companies took on in a year, net, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year.",
+          "partes": [
+            {
+              "pt": "É quanto crédito as empresas contraíram num ano",
+              "en": "It is how much credit companies took on in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc30-descricao",
+                  "campo": "excerto",
+                  "literal": "the net amount of liabilities incurred during the year"
+                }
+              ]
+            },
+            {
+              "pt": ", em termos líquidos",
+              "en": ", net",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc30-descricao",
+                  "campo": "excerto",
+                  "literal": "the net amount of liabilities"
+                }
+              ]
+            },
+            {
+              "pt": ", fora as financeiras",
+              "en": ", excluding financial companies",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc30-descricao",
+                  "campo": "excerto",
+                  "literal": "non-financial corporations sector (S.11)"
+                }
+              ]
+            },
+            {
+              "pt": " e sem contar o investimento direto estrangeiro",
+              "en": " and foreign direct investment",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc30-descricao",
+                  "campo": "excerto",
+                  "literal": "excluding foreign direct investment (FDI)"
+                }
+              ]
+            },
+            {
+              "pt": ", em percentagem da dívida que já tinham no fim do ano anterior.",
+              "en": ", as a percentage of the debt they already had at the end of the previous year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc30-descricao",
+                  "campo": "excerto",
+                  "literal": "expressed as a percentage of the corresponding stocks (excluding FDI) at the end of the previous year"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "um fluxo acima de ",
+          "en": "a flow above ",
+          "partes": [
+            {
+              "pt": "um fluxo acima de ",
+              "en": "a flow above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-credito-as-empresas",
+                  "campo": "excerto",
+                  "literal": "with a threshold of 13%"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025",
+      "origens": [
+        "eurostat-tipspc40-descricao",
+        "pdm-credito-as-familias",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, em termos líquidos, em percentagem da dívida que já tinham no fim do ano anterior.",
+          "en": "It is how much credit households and non-profit institutions serving them took on in a year, net, as a percentage of the debt they already had at the end of the previous year.",
+          "partes": [
+            {
+              "pt": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano",
+              "en": "It is how much credit households and non-profit institutions serving them took on in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc40-descricao",
+                  "campo": "excerto",
+                  "literal": "the net amount of liabilities which the sectors Households and Non-Profit institutions serving households (S.14_S.15) have incurred during the year"
+                }
+              ]
+            },
+            {
+              "pt": ", em termos líquidos",
+              "en": ", net",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc40-descricao",
+                  "campo": "excerto",
+                  "literal": "the net amount of liabilities"
+                }
+              ]
+            },
+            {
+              "pt": ", em percentagem da dívida que já tinham no fim do ano anterior.",
+              "en": ", as a percentage of the debt they already had at the end of the previous year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipspc40-descricao",
+                  "campo": "excerto",
+                  "literal": "in percentage of the related stocks at the end of the previous year"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "um fluxo acima de ",
+          "en": "a flow above ",
+          "partes": [
+            {
+              "pt": "um fluxo acima de ",
+              "en": "a flow above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-credito-as-familias",
+                  "campo": "excerto",
+                  "literal": "with a threshold of 14%"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "camaras",
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ",
+          "en": "A council above the legal limit owes more than the law allows it to owe. In ",
+          "partes": [
+            {
+              "pt": "Uma câmara acima do limite legal deve mais do que a lei lhe permite dever.",
+              "en": "A council above the legal limit owes more than the law allows it to owe.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "indice-de-divida-limite-legal",
+                  "campo": "excerpt",
+                  "literal": "Índice de divida total (Índice permitido <= 150%)"
+                },
+                {
+                  "linha": "indice-de-divida-limite-legal",
+                  "campo": "document.locator",
+                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                }
+              ]
+            },
+            {
+              "pt": " Em ",
+              "en": " In ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " eram ",
+          "en": " there were ",
+          "partes": [
+            {
+              "pt": " eram ",
+              "en": " there were ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " em ",
+          "en": " in ",
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": "; ",
+          "en": "; ",
+          "partes": [
+            {
+              "pt": "; ",
+              "en": "; ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " não tem valor publicado.",
+          "en": " has no published value.",
+          "partes": [
+            {
+              "pt": " não tem valor publicado.",
+              "en": " has no published value.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "taxa-de-emprego-2025",
+      "origens": [
+        "glossario-emprego"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas dos ",
+          "en": "It is the share of people aged ",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas dos ",
+              "en": "It is the share of people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "The employment rate is the percentage of employed persons in relation to the comparable total population."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% da população"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos que tem emprego.",
+          "en": " who are in employment.",
+          "partes": [
+            {
+              "pt": " anos que tem emprego.",
+              "en": " who are in employment.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "percentage of employed persons"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Age class: From 20 to 64 years"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "20",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "nl": "64",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 20 to 64 years"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-desemprego-mip-2025",
+      "origens": [
+        "eurostat-tipsun20-descricao",
+        "glossario-desemprego",
+        "glossario-atividade",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas dos ",
+          "en": "It is the share of people aged ",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas dos ",
+              "en": "It is the share of people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsun20-descricao",
+                  "campo": "excerto",
+                  "literal": "the number of unemployed persons as a percentage of the labour force"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% da população ativa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma taxa acima de ",
+          "en": "a rate above ",
+          "partes": [
+            {
+              "pt": "uma taxa acima de ",
+              "en": "a rate above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsun20-descricao",
+                  "campo": "excerto",
+                  "literal": "The indicative threshold of the indicator is 10%."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "nl": "74",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-desemprego-2025",
+      "origens": [
+        "glossario-desemprego",
+        "glossario-atividade"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas dos ",
+          "en": "It is the share of people aged ",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas dos ",
+              "en": "It is the share of people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-desemprego",
+                  "campo": "excerto",
+                  "literal": "the number of people unemployed as a percentage of the labour force"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% da população ativa"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "nl": "74",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ganho-medio-mensal-2024",
+      "origens": [
+        "ine-ganho-nota",
+        "ine-ganho-conceito"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em ",
+          "en": "It is what a full-time employee earned per month, on average, in ",
+          "partes": [
+            {
+              "pt": "É o que um trabalhador por conta de outrem a tempo completo",
+              "en": "It is what a full-time employee",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-ganho-nota",
+                  "campo": "excerto",
+                  "literal": "trabalhadores por conta de outrem a tempo completo"
+                }
+              ]
+            },
+            {
+              "pt": " ganhou por mês, em média",
+              "en": " earned per month, on average",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Ganho médio mensal"
+                }
+              ]
+            },
+            {
+              "pt": ", em ",
+              "en": ", in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": ", com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos.",
+          "en": ", including what is paid on a regular basis for normal and overtime hours, before deductions.",
+          "partes": [
+            {
+              "pt": ", com o que lhe é pago com caráter regular pelas horas normais e extraordinárias",
+              "en": ", including what is paid on a regular basis for normal and overtime hours",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-ganho-conceito",
+                  "campo": "excerto",
+                  "literal": "pago ao trabalhador com caráter regular"
+                },
+                {
+                  "origem": "ine-ganho-conceito",
+                  "campo": "excerto",
+                  "literal": "no período normal e extraordinário"
+                }
+              ]
+            },
+            {
+              "pt": ", antes de descontos.",
+              "en": ", before deductions.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ine-ganho-conceito",
+                  "campo": "excerto",
+                  "literal": "Montante ilíquido"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "disparidade-salarial-entre-sexos-2024",
+      "origens": [
+        "eurostat-earn-grgpg2-definicao",
+        "eurostat-earn-grgpg2-cobertura"
+      ],
+      "folhas": [
+        {
+          "pt": "Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens: a diferença foi de ",
+          "en": "Per hour worked, women earned on average less than men: the gap was ",
+          "partes": [
+            {
+              "pt": "Por cada hora de trabalho",
+              "en": "Per hour worked",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-definicao",
+                  "campo": "excerto",
+                  "literal": "average gross hourly earnings"
+                }
+              ]
+            },
+            {
+              "pt": ", as mulheres ganharam em média menos do que os homens",
+              "en": ", women earned on average less than men",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-definicao",
+                  "campo": "excerto",
+                  "literal": "the difference between average gross hourly earnings of male paid employees and of female paid employees"
+                }
+              ]
+            },
+            {
+              "pt": ": a diferença foi de ",
+              "en": ": the gap was ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-definicao",
+                  "campo": "excerto",
+                  "literal": "represents the difference between"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " do ganho dos homens, em ",
+          "en": " of men’s earnings, in ",
+          "partes": [
+            {
+              "pt": " do ganho dos homens",
+              "en": " of men’s earnings",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-definicao",
+                  "campo": "excerto",
+                  "literal": "as a percentage of average gross hourly earnings of male paid employees"
+                }
+              ]
+            },
+            {
+              "pt": ", em ",
+              "en": ", in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": ", nas empresas com ",
+          "en": ", in enterprises with ",
+          "partes": [
+            {
+              "pt": ", nas empresas com ",
+              "en": ", in enterprises with ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-cobertura",
+                  "campo": "excerto",
+                  "literal": "only enterprises with 10 employees or more"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ou mais trabalhadores.",
+          "en": " or more employees.",
+          "partes": [
+            {
+              "pt": " ou mais trabalhadores.",
+              "en": " or more employees.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-cobertura",
+                  "campo": "excerto",
+                  "literal": "10 employees or more"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "10",
+          "apoios": [
+            {
+              "origem": "eurostat-earn-grgpg2-cobertura",
+              "campo": "excerto",
+              "literal": "only enterprises with 10 employees or more"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retribuicao-minima-mensal-garantida-continente-2026",
+      "origens": [
+        "dl-139-2025-preambulo",
+        "dre-dlr-37-2023-a",
+        "dl-139-2025-ambito",
+        "dl-139-2025-vigor"
+      ],
+      "folhas": [
+        {
+          "pt": "É o salário mínimo nacional: o valor mensal mínimo que a lei garante a quem trabalha por conta de outrem, em vigor no continente em ",
+          "en": "It is the national minimum wage: the lowest monthly pay the law guarantees to employees, in force on the mainland in ",
+          "partes": [
+            {
+              "pt": "É o salário mínimo nacional",
+              "en": "It is the national minimum wage",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dl-139-2025-preambulo",
+                  "campo": "excerto",
+                  "literal": "aumento do salário mínimo"
+                },
+                {
+                  "origem": "dre-dlr-37-2023-a",
+                  "campo": "excerto",
+                  "literal": "estabelecido ao nível nacional"
+                }
+              ]
+            },
+            {
+              "pt": ": o valor mensal mínimo que a lei garante",
+              "en": ": the lowest monthly pay the law guarantees",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dl-139-2025-preambulo",
+                  "campo": "excerto",
+                  "literal": "retribuição mínima mensal garantida (RMMG)"
+                }
+              ]
+            },
+            {
+              "pt": " a quem trabalha por conta de outrem",
+              "en": " to employees",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dre-dlr-37-2023-a",
+                  "campo": "excerto",
+                  "literal": "para os trabalhadores por conta de outrem"
+                }
+              ]
+            },
+            {
+              "pt": ", em vigor no continente",
+              "en": ", in force on the mainland",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dl-139-2025-ambito",
+                  "campo": "excerto",
+                  "literal": "aplicável a todo o território continental"
+                },
+                {
+                  "origem": "dl-139-2025-vigor",
+                  "campo": "excerto",
+                  "literal": "produz efeitos no dia 1 de janeiro de 2026"
+                }
+              ]
+            },
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "desemprego-de-longa-duracao-2025",
+      "origens": [
+        "eurostat-tesem130-denominador",
+        "glossario-atividade",
+        "glossario-longa-duracao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas dos ",
+          "en": "It is the share of people aged ",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas dos ",
+              "en": "It is the share of people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tesem130-denominador",
+                  "campo": "excerto",
+                  "literal": "as a percentage of the active population of the same age"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% da população ativa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos, entre as que trabalham ou procuram trabalho, que está sem emprego e o procura há um ano ou mais.",
+          "en": ", among those who work or are looking for work, who are out of work and have been looking for a year or more.",
+          "partes": [
+            {
+              "pt": " anos, entre as que trabalham ou procuram trabalho",
+              "en": ", among those who work or are looking for work",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tesem130-denominador",
+                  "campo": "excerto",
+                  "literal": "the active population of the same age"
+                },
+                {
+                  "origem": "glossario-atividade",
+                  "campo": "excerto",
+                  "literal": "comprises employed and unemployed persons"
+                }
+              ]
+            },
+            {
+              "pt": ", que está sem emprego e o procura há um ano ou mais.",
+              "en": ", who are out of work and have been looking for a year or more.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-longa-duracao",
+                  "campo": "excerto",
+                  "literal": "out of work and have been actively seeking employment for at least a year"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "15",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem130-denominador",
+              "campo": "excerto",
+              "literal": "aged 15-74"
+            }
+          ]
+        },
+        {
+          "nl": "74",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem130-denominador",
+              "campo": "excerto",
+              "literal": "aged 15-74"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jovens-nem-2025",
+      "origens": [
+        "glossario-nem"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte dos jovens dos ",
+          "en": "It is the share of young people aged ",
+          "partes": [
+            {
+              "pt": "É a parte dos jovens dos ",
+              "en": "It is the share of young people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-nem",
+                  "campo": "excerto",
+                  "literal": "the percentage of the population of a given age group and sex"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% da população"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos que não trabalha, não estuda nem está em formação.",
+          "en": " who are not working, not studying and not in training.",
+          "partes": [
+            {
+              "pt": " anos que não trabalha, não estuda nem está em formação.",
+              "en": " who are not working, not studying and not in training.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-nem",
+                  "campo": "excerto",
+                  "literal": "who is not employed and not involved in further education or training"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 29 years"
+            }
+          ]
+        },
+        {
+          "nl": "29",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 29 years"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "origens": [
+        "eurostat-tesem060-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a diferença entre a percentagem de homens dos ",
+          "en": "It is the difference between the percentage of men aged ",
+          "partes": [
+            {
+              "pt": "É a diferença entre a percentagem de homens dos ",
+              "en": "It is the difference between the percentage of men aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tesem060-descricao",
+                  "campo": "excerto",
+                  "literal": "the difference between the employment rates of men and women"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos com emprego e a percentagem de mulheres com emprego.",
+          "en": " in employment and the percentage of women in employment.",
+          "partes": [
+            {
+              "pt": " anos com emprego e a percentagem de mulheres com emprego.",
+              "en": " in employment and the percentage of women in employment.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tesem060-descricao",
+                  "campo": "excerto",
+                  "literal": "the employment rates of men and women aged 20-64"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "aged 20-64"
+            }
+          ]
+        },
+        {
+          "nl": "64",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "aged 20-64"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-actividade-2025",
+      "origens": [
+        "glossario-atividade",
+        "pdm-taxa-de-actividade",
+        "eurostat-tipslm60-descricao",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.",
+          "en": "It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.",
+          "partes": [
+            {
+              "pt": "É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.",
+              "en": "It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-atividade",
+                  "campo": "excerto",
+                  "literal": "Activity rate is the percentage of active persons in relation to the comparable total population."
+                },
+                {
+                  "origem": "glossario-atividade",
+                  "campo": "excerto",
+                  "literal": "The economically active population comprises employed and unemployed persons."
+                },
+                {
+                  "origem": "pdm-taxa-de-actividade",
+                  "campo": "excerto",
+                  "literal": "3-year change in pps"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos, pontos percentuais"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Positiva quer dizer que a parte ativa cresceu.",
+          "en": " Positive means the active share grew.",
+          "partes": [
+            {
+              "pt": " Positiva quer dizer que a parte ativa cresceu.",
+              "en": " Positive means the active share grew.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos, pontos percentuais"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Negativa quer dizer que a parte ativa encolheu.",
+          "en": " Negative means the active share shrank.",
+          "partes": [
+            {
+              "pt": " Negativa quer dizer que a parte ativa encolheu.",
+              "en": " Negative means the active share shrank.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos, pontos percentuais"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma descida de mais de ",
+          "en": "a fall of more than ",
+          "partes": [
+            {
+              "pt": "uma descida de mais de ",
+              "en": "a fall of more than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslm60-descricao",
+                  "campo": "excerto",
+                  "literal": "with an indicative threshold of -0.2 pp"
+                },
+                {
+                  "origem": "pdm-taxa-de-actividade",
+                  "campo": "excerto",
+                  "literal": "with a threshold of -0.2%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " pontos em três anos",
+          "en": " points over three years",
+          "partes": [
+            {
+              "pt": " pontos em três anos",
+              "en": " points over three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslm60-descricao",
+                  "campo": "excerto",
+                  "literal": "The MIP Scoreboard indicator is the three-year change in percentage points"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "origens": [
+        "eurostat-tipslm10-descricao",
+        "pdm-custo-do-trabalho",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+          "en": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+          "partes": [
+            {
+              "pt": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida",
+              "en": "It is how much the cost of labour per unit produced rose over three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslm10-descricao",
+                  "campo": "excerto",
+                  "literal": "the ratio of labour cost to labour productivity"
+                },
+                {
+                  "origem": "eurostat-tipslm10-descricao",
+                  "campo": "excerto",
+                  "literal": "The MIP Scoreboard indicator is the 3-year percentage change."
+                }
+              ]
+            },
+            {
+              "pt": ": o que se paga pelo trabalho a dividir pelo que ele produz.",
+              "en": ": what is paid for labour divided by what it produces.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslm10-descricao",
+                  "campo": "excerto",
+                  "literal": "labour cost is the ratio of compensation of employees"
+                },
+                {
+                  "origem": "eurostat-tipslm10-descricao",
+                  "campo": "excerto",
+                  "literal": "labour productivity is the ratio of gross domestic product"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Negativo quer dizer que desceu.",
+          "en": " Negative means it fell.",
+          "partes": [
+            {
+              "pt": " Negativo quer dizer que desceu.",
+              "en": " Negative means it fell.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslm10-descricao",
+                  "campo": "excerto",
+                  "literal": "The MIP Scoreboard indicator is the 3-year percentage change."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "uma subida acima de ",
+          "en": "a rise above ",
+          "partes": [
+            {
+              "pt": "uma subida acima de ",
+              "en": "a rise above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-custo-do-trabalho",
+                  "campo": "excerto",
+                  "literal": "with thresholds of +9% for euro area countries"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % em três anos",
+          "en": " % over three years",
+          "partes": [
+            {
+              "pt": " % em três anos",
+              "en": " % over three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-custo-do-trabalho",
+                  "campo": "excerto",
+                  "literal": "(3-year percentage change)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "risco-de-pobreza-ou-exclusao-2025",
+      "origens": [
+        "glossario-arope",
+        "eurostat-tipslc10-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de ",
+          "en": "It is the share of the population in at least one of three situations: income below ",
+          "partes": [
+            {
+              "pt": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de ",
+              "en": "It is the share of the population in at least one of three situations: income below ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "The AROPE rate is the share of the total population which is at risk of poverty or social exclusion."
+                },
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "the sum of persons who are either at risk of poverty, or severely materially and socially deprived or living in a household with a very low work intensity"
+                },
+                {
+                  "origem": "eurostat-tipslc10-descricao",
+                  "campo": "excerto",
+                  "literal": "with an equalised disposable income below the risk-of-poverty threshold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez.",
+          "en": " % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once.",
+          "partes": [
+            {
+              "pt": " % do rendimento mediano do país",
+              "en": " % of the country’s median income",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslc10-descricao",
+                  "campo": "excerto",
+                  "literal": "of the national median equalised disposable income"
+                }
+              ]
+            },
+            {
+              "pt": ", privação material e social grave",
+              "en": ", severe material and social deprivation",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "severely materially and socially deprived"
+                }
+              ]
+            },
+            {
+              "pt": ", ou viver num agregado onde quase ninguém trabalha",
+              "en": ", or living in a household where almost no one works",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "(quasi-)jobless households"
+                }
+              ]
+            },
+            {
+              "pt": "; cada pessoa conta uma só vez.",
+              "en": "; each person counts only once.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "People are included only once"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "60",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslc10-descricao",
+              "campo": "excerto",
+              "literal": "set at 60 % of the national median"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "racio-s80-s20-2025",
+      "origens": [
+        "glossario-s80s20"
+      ],
+      "folhas": [
+        {
+          "pt": "Os ",
+          "en": "The ",
+          "partes": [
+            {
+              "pt": "Os ",
+              "en": "The ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " % da população com mais rendimento recebem, no total, ",
+          "en": " % of the population with the highest income receive, in total, ",
+          "partes": [
+            {
+              "pt": " % da população com mais rendimento recebem, no total, ",
+              "en": " % of the population with the highest income receive, in total, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "the ratio of total income received by the 20 % of the population with the highest income"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " vezes o que recebem os ",
+          "en": " times what the ",
+          "partes": [
+            {
+              "pt": " vezes o que recebem os ",
+              "en": " times what the ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "calculated as the ratio of total income"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % com menos rendimento.",
+          "en": " % with the lowest income receive.",
+          "partes": [
+            {
+              "pt": " % com menos rendimento.",
+              "en": " % with the lowest income receive.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "to that received by the 20 % of the population with the lowest income"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "the 20 % of the population with the highest income"
+            }
+          ]
+        },
+        {
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "the 20 % of the population with the lowest income"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abandono-escolar-precoce-2025",
+      "origens": [
+        "glossario-abandono"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas dos ",
+          "en": "It is the share of people aged ",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas dos ",
+              "en": "It is the share of people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-abandono",
+                  "campo": "excerto",
+                  "literal": "expressed as a percentage of the people aged 18 to 24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos que não foi além do ensino básico e já não estuda nem está em formação.",
+          "en": " who went no further than lower secondary education and are no longer studying or in training.",
+          "partes": [
+            {
+              "pt": " anos que não foi além do ensino básico e já não estuda nem está em formação.",
+              "en": " who went no further than lower secondary education and are no longer studying or in training.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-abandono",
+                  "campo": "excerto",
+                  "literal": "has completed at most lower secondary education and is not involved in further education or training"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "18",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "a person aged 18 to 24"
+            }
+          ]
+        },
+        {
+          "nl": "24",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "a person aged 18 to 24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "competencias-digitais-2025",
+      "origens": [
+        "eurostat-tepsr_sp410-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas com pelo menos competências digitais básicas: saber procurar informação, comunicar, criar conteúdos, proteger-se e resolver problemas no uso da internet e de programas informáticos.",
+          "en": "It is the share of people with at least basic digital skills: knowing how to find information, communicate, create content, stay safe and solve problems when using the internet or software.",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas com pelo menos competências digitais básicas",
+              "en": "It is the share of people with at least basic digital skills",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Individuals who have basic or above basic overall digital skills"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% dos indivíduos"
+                }
+              ]
+            },
+            {
+              "pt": ": saber procurar informação, comunicar, criar conteúdos, proteger-se e resolver problemas",
+              "en": ": knowing how to find information, communicate, create content, stay safe and solve problems",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tepsr_sp410-descricao",
+                  "campo": "excerto",
+                  "literal": "five specific areas (Information and data literacy, Communication and collaboration, Digital content creation, Safety, and Problem solving)"
+                }
+              ]
+            },
+            {
+              "pt": " no uso da internet e de programas informáticos.",
+              "en": " when using the internet or software.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tepsr_sp410-descricao",
+                  "campo": "excerto",
+                  "literal": "activities related to internet or software use"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "criancas-em-creche-2025",
+      "origens": [
+        "eurostat-tepsr_sp210-descricao",
+        "eurostat-cuidado-formal"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das crianças com menos de ",
+          "en": "It is the share of children under ",
+          "partes": [
+            {
+              "pt": "É a parte das crianças com menos de ",
+              "en": "It is the share of children under ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tepsr_sp210-descricao",
+                  "campo": "excerto",
+                  "literal": "the percentage of children (under 3 years old)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos que está numa creche ou noutro cuidado formal.",
+          "en": " who are in a nursery or other formal childcare.",
+          "partes": [
+            {
+              "pt": " anos que está numa creche ou noutro cuidado formal.",
+              "en": " who are in a nursery or other formal childcare.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tepsr_sp210-descricao",
+                  "campo": "excerto",
+                  "literal": "cared for by formal arrangements other than by the family"
+                },
+                {
+                  "origem": "eurostat-cuidado-formal",
+                  "campo": "excerto",
+                  "literal": "Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "in formal childcare"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "3",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "document.title",
+              "literal": "Children aged less than 3 years"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "necessidades-medicas-nao-satisfeitas-2025",
+      "origens": [
+        "eurostat-tespm110-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas que diz ter precisado de um médico e não o ter tido, por ser caro, por a espera ser longa ou por ficar longe.",
+          "en": "It is the share of people who say they needed medical care and did not get it, because it was too expensive, the wait too long or too far away.",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas que diz ter precisado de um médico e não o ter tido",
+              "en": "It is the share of people who say they needed medical care and did not get it",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm110-descricao",
+                  "campo": "excerto",
+                  "literal": "own assessment of whether he or she needed examination or treatment"
+                },
+                {
+                  "origem": "eurostat-tespm110-descricao",
+                  "campo": "excerto",
+                  "literal": "did not have it or did not seek it"
+                },
+                {
+                  "origem": "eurostat-tespm110-descricao",
+                  "campo": "excerto",
+                  "literal": "provided by or under direct supervision of medical doctors"
+                }
+              ]
+            },
+            {
+              "pt": ", por ser caro, por a espera ser longa ou por ficar longe.",
+              "en": ", because it was too expensive, the wait too long or too far away.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm110-descricao",
+                  "campo": "excerto",
+                  "literal": "‘Financial reasons’, ‘Waiting list’ and ‘Too far to travel’"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "origens": [
+        "eurostat-tessi164-inquilinos",
+        "glossario-sobrecarga"
+      ],
+      "folhas": [
+        {
+          "pt": "Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de ",
+          "en": "Among people living in a home rented at market price, it is the share whose household spends more than ",
+          "partes": [
+            {
+              "pt": "Entre as pessoas que vivem em casa arrendada a preço de mercado",
+              "en": "Among people living in a home rented at market price",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tessi164-inquilinos",
+                  "campo": "excerto",
+                  "literal": "Tenant, rent at market price"
+                }
+              ]
+            },
+            {
+              "pt": ", é a parte cujo agregado gasta mais de ",
+              "en": ", it is the share whose household spends more than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-sobrecarga",
+                  "campo": "excerto",
+                  "literal": "the percentage of the population living in households where the total housing costs"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "40",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "more than 40 % of disposable income"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-2025",
+      "origens": [
+        "eurostat-tespm140-populacao",
+        "eurostat-tessi164-regimes",
+        "glossario-sobrecarga",
+        "ce-swd-2026-222-habitacao"
+      ],
+      "folhas": [
+        {
+          "pt": "No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de ",
+          "en": "Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than ",
+          "partes": [
+            {
+              "pt": "No total de todos os regimes de ocupação",
+              "en": "Across all tenure statuses",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm140-populacao",
+                  "campo": "excerto",
+                  "literal": "Percentage of the population living in a household"
+                }
+              ]
+            },
+            {
+              "pt": " (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita)",
+              "en": " (owned with or without a mortgage, rented at market price or at a reduced rent or free)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tessi164-regimes",
+                  "campo": "excerto",
+                  "literal": "\"OWN_L\":\"Owner, with mortgage or loan\",\"OWN_NL\":\"Owner, no outstanding mortgage or housing loan\",\"RENT_MKT\":\"Tenant, rent at market price\",\"RENT_FR\":\"Tenant, rent at reduced price or free\""
+                }
+              ]
+            },
+            {
+              "pt": ", é a parte das pessoas cujo agregado gasta mais de ",
+              "en": ", it is the share of people whose household spends more than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-sobrecarga",
+                  "campo": "excerto",
+                  "literal": "the percentage of the population living in households where the total housing costs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+          "en": " This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.",
+          "partes": [
+            {
+              "pt": " Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+              "en": " This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ce-swd-2026-222-habitacao",
+                  "campo": "excerto",
+                  "literal": "The overburden rate should be read together with the tenure structure (homeowner, tenants), that may differ across country and regions."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "40",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "more than 40 % of disposable income"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "precos-da-habitacao-2025",
+      "origens": [
+        "eurostat-tipsho20-descricao",
+        "painel-pdm"
+      ],
+      "folhas": [
+        {
+          "pt": " os preços das casas compradas pelas famílias subiram ",
+          "en": " the prices of homes bought by households rose ",
+          "partes": [
+            {
+              "pt": " os preços das casas compradas pelas famílias subiram ",
+              "en": " the prices of homes bought by households rose ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "price changes of all residential properties purchased by households"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " os preços das casas compradas pelas famílias desceram: ",
+          "en": " the prices of homes bought by households fell: ",
+          "partes": [
+            {
+              "pt": " os preços das casas compradas pelas famílias desceram: ",
+              "en": " the prices of homes bought by households fell: ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "price changes of all residential properties purchased by households"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " em média.",
+          "en": " on average.",
+          "partes": [
+            {
+              "pt": " em média.",
+              "en": " on average.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação anual média"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " os preços das casas compradas pelas famílias não mudaram em média.",
+          "en": " the prices of homes bought by households did not change on average.",
+          "partes": [
+            {
+              "pt": " os preços das casas compradas pelas famílias não mudaram em média.",
+              "en": " the prices of homes bought by households did not change on average.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "price changes of all residential properties purchased by households"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação anual média"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a de",
+          "en": "The change is larger than in",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a de",
+              "en": "The change is larger than in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a de",
+          "en": "The change is smaller than in",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a de",
+              "en": "The change is smaller than in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à de",
+          "en": "The change is the same as in",
+          "partes": [
+            {
+              "pt": "A variação é igual à de",
+              "en": "The change is the same as in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "uma subida acima de ",
+          "en": "a rise above ",
+          "partes": [
+            {
+              "pt": "uma subida acima de ",
+              "en": "a rise above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "The indicative threshold of the indicator is 9%."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % num ano",
+          "en": " % in a year",
+          "partes": [
+            {
+              "pt": " % num ano",
+              "en": " % in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "the 1-year percentage change of the HPI"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "licencas-de-construcao-2025",
+      "origens": [
+        "eurostat-tipsho50-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É a área de habitação nova licenciada num ano, em metros quadrados por cada ",
+          "en": "It is the floor area of new housing permitted in a year, in square metres per ",
+          "partes": [
+            {
+              "pt": "É a área de habitação nova licenciada num ano",
+              "en": "It is the floor area of new housing permitted in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho50-descricao",
+                  "campo": "excerto",
+                  "literal": "granted building permits in one year"
+                },
+                {
+                  "origem": "eurostat-tipsho50-descricao",
+                  "campo": "excerto",
+                  "literal": "the creation of new residential buildings"
+                }
+              ]
+            },
+            {
+              "pt": ", em metros quadrados por cada ",
+              "en": ", in square metres per ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho50-descricao",
+                  "campo": "excerto",
+                  "literal": "expressed in square meters of usable floor area per 1000 inhabitants"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " habitantes: quanto mais alta, mais construção de casas foi autorizada.",
+          "en": " inhabitants: the higher it is, the more housing construction was authorised.",
+          "partes": [
+            {
+              "pt": " habitantes",
+              "en": " inhabitants",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "por 1000 habitantes"
+                }
+              ]
+            },
+            {
+              "pt": ": quanto mais alta, mais construção de casas foi autorizada.",
+              "en": ": the higher it is, the more housing construction was authorised.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho50-descricao",
+                  "campo": "excerto",
+                  "literal": "Builders apply for building permits and local building administrations issue them"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "1000",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "m² por 1000 habitantes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "origens": [
+        "eurostat-glossario-fbcf",
+        "eurostat-tipsna20-descricao",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que os produtores residentes compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, ",
+          "en": "It is what resident producers acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, ",
+          "partes": [
+            {
+              "pt": "É o que os produtores residentes compraram num ano, descontado o que venderam",
+              "en": "It is what resident producers acquired in a year, less what they disposed of",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-fbcf",
+                  "campo": "excerto",
+                  "literal": "consists of resident producers’ acquisitions, less disposals, of fixed assets during a given period"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ", em bens que duram mais de um ano",
+              "en": ", in assets that last more than a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-fbcf",
+                  "campo": "excerto",
+                  "literal": "used repeatedly, or continuously, for more than one year"
+                }
+              ]
+            },
+            {
+              "pt": ", como edifícios, máquinas e programas informáticos, ",
+              "en": ", such as buildings, machinery and software, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna20-descricao",
+                  "campo": "excerto",
+                  "literal": "buildings, structures, machinery and equipment, mineral exploration, computer software"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "despesa-em-id-2024",
+      "origens": [
+        "eurostat-glossario-gerd",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que se gastou no país em investigação e desenvolvimento num ano, pelas empresas, pelo Estado, pelo ensino superior e pelas instituições sem fins lucrativos, ",
+          "en": "It is what was spent in the country on research and development in a year, by companies, the State, higher education and non-profit institutions, ",
+          "partes": [
+            {
+              "pt": "É o que se gastou no país em investigação e desenvolvimento num ano",
+              "en": "It is what was spent in the country on research and development in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Gross domestic expenditure on research and development (R&D)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ", pelas empresas, pelo Estado, pelo ensino superior e pelas instituições sem fins lucrativos, ",
+              "en": ", by companies, the State, higher education and non-profit institutions, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-gerd",
+                  "campo": "excerto",
+                  "literal": "by business enterprises, higher education institutions, as well as government and private non-profit organisations"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "independencia-da-justica-2025",
+      "origens": [
+        "eurostat-sdg_16_40-descricao",
+        "eurostat-sdg_16_40-nivel"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das pessoas que, num inquérito europeu, considera a independência dos tribunais e dos juízes do seu país muito boa ou razoavelmente boa.",
+          "en": "It is the share of people who, in a European survey, rate the independence of their country’s courts and judges as very good or fairly good.",
+          "partes": [
+            {
+              "pt": "É a parte das pessoas que, num inquérito europeu,",
+              "en": "It is the share of people who, in a European survey,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-sdg_16_40-descricao",
+                  "campo": "excerto",
+                  "literal": "annual Flash Eurobarometer surveys"
+                },
+                {
+                  "origem": "eurostat-sdg_16_40-descricao",
+                  "campo": "excerto",
+                  "literal": "respondents’ perceptions"
+                }
+              ]
+            },
+            {
+              "pt": " considera a independência dos tribunais e dos juízes do seu país",
+              "en": " rate the independence of their country’s courts and judges",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-sdg_16_40-descricao",
+                  "campo": "excerto",
+                  "literal": "the perceived independence of the courts and judges in a country"
+                }
+              ]
+            },
+            {
+              "pt": " muito boa ou razoavelmente boa.",
+              "en": " as very good or fairly good.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-sdg_16_40-nivel",
+                  "campo": "excerto",
+                  "literal": "Very good or fairly good"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    }
+  ]
+}

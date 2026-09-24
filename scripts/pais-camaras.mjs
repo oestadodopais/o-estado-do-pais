@@ -9,9 +9,14 @@ import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const lerLinha = id => load(fs.readFileSync(path.join(process.cwd(), 'ledger/claims', `${id}.yml`), 'utf8'));
 const numero = v => Number(String(v).replace(/[\s\u00a0]/g, '').replace(/\u2212/g, '-').replace(',', '.'));
-export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
-  const erros = [];
-  const falha = s => erros.push(`V2 ${lang}: ${s}`);
+/**
+ * A RECONTAGEM, sozinha (bloco L1, 24.09.2026): as quatro contagens, o período
+ * comum das linhas contadas e a linha de onde ele se lê, a partir das linhas em
+ * YAML. A V2 abaixo confere o cartão contra isto, e a K17 do `check:cartao`
+ * recompõe com isto a leitura das câmaras, sem chamar o resolvedor da página.
+ * @param {(id: string) => any} [linha]
+ */
+export function recontagemDasCamaras(linha = lerLinha) {
   const limite = linha('indice-de-divida-limite-legal');
   const teto = numero(limite.value);
   const linhas = MUNICIPIOS_COM_PAGINA.map(m => linha(m.distancia.indice));
@@ -24,15 +29,24 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   };
   const datas = linhas.map(l => dataDaLinha(l));
   const periodos = new Set(datas.map(d => d.periodo));
+  const valores = linhas.map(l => numero(l.value));
+  return {
+    limite, datas, periodos,
+    contagens: {
+      camaras_acima_do_limite: valores.filter(v => Number.isFinite(v) && v > teto).length,
+      municipios_com_pagina: valores.length,
+      camaras_dentro_do_limite: valores.filter(v => Number.isFinite(v) && v <= teto).length,
+      camaras_sem_valor: valores.filter(v => !Number.isFinite(v)).length,
+    },
+  };
+}
+
+export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
+  const erros = [];
+  const falha = s => erros.push(`V2 ${lang}: ${s}`);
+  const { limite, datas, periodos, contagens } = recontagemDasCamaras(linha);
   if (periodos.size !== 1 || ![...periodos][0]) falha('as linhas não partilham um período.');
   const periodo = [...periodos][0];
-  const valores = linhas.map(l => numero(l.value));
-  const contagens = {
-    camaras_acima_do_limite: valores.filter(v => Number.isFinite(v) && v > teto).length,
-    municipios_com_pagina: valores.length,
-    camaras_dentro_do_limite: valores.filter(v => Number.isFinite(v) && v <= teto).length,
-    camaras_sem_valor: valores.filter(v => !Number.isFinite(v)).length,
-  };
   const cartoes = doc.querySelectorAll('main [data-cartao-camaras]');
   if (cartoes.length !== 1) {
     falha(`a página tem ${cartoes.length} cartões das câmaras; tem de ter um.`);
