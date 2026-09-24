@@ -1,0 +1,2010 @@
+{
+  "o_que_e": "As medidas do bloco L1, a leitura de cada medida. Cada uma com o comando e o conhecido-positivo.",
+  "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py",
+  "cabeca_da_corrida": "d831b453e82ad48df907a90b52e86c5f514073f4",
+  "falhas": [],
+  "medidas": [
+    {
+      "nome": "cartoes_pais_pt_depois",
+      "valor": 20,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_pais_pt_depois",
+      "valor": 20,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_leitura_pais_pt_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_com_mais_de_uma_leitura_pais_pt_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma segunda leitura dentro do primeiro cartão com leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_fora_de_um_cartao_pais_pt_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada, e a leitura dele fica fora",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "algarismos_soltos_nas_leituras_pais_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«12» escrito à mão numa leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_nas_leituras_pais_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma marca da fonte dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "palavra_limiar_nas_leituras_pais_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«limiar» ou «threshold» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_que_falam_do_projeto_pais_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«sítio» ou «site» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_pais_en_depois",
+      "valor": 20,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_pais_en_depois",
+      "valor": 20,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_leitura_pais_en_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_com_mais_de_uma_leitura_pais_en_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma segunda leitura dentro do primeiro cartão com leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_fora_de_um_cartao_pais_en_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada, e a leitura dele fica fora",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "algarismos_soltos_nas_leituras_pais_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«12» escrito à mão numa leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_nas_leituras_pais_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma marca da fonte dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "palavra_limiar_nas_leituras_pais_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«limiar» ou «threshold» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_que_falam_do_projeto_pais_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«sítio» ou «site» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_temas_pt_depois",
+      "valor": 36,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_temas_pt_depois",
+      "valor": 36,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_leitura_temas_pt_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_com_mais_de_uma_leitura_temas_pt_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma segunda leitura dentro do primeiro cartão com leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_fora_de_um_cartao_temas_pt_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada, e a leitura dele fica fora",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "algarismos_soltos_nas_leituras_temas_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«12» escrito à mão numa leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_nas_leituras_temas_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma marca da fonte dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "palavra_limiar_nas_leituras_temas_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«limiar» ou «threshold» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_que_falam_do_projeto_temas_pt",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«sítio» ou «site» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_temas_en_depois",
+      "valor": 36,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_temas_en_depois",
+      "valor": 36,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_leitura_temas_en_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a primeira leitura com a marca trocada",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cartoes_com_mais_de_uma_leitura_temas_en_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma segunda leitura dentro do primeiro cartão com leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_fora_de_um_cartao_temas_en_depois",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada, e a leitura dele fica fora",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "algarismos_soltos_nas_leituras_temas_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«12» escrito à mão numa leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_nas_leituras_temas_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "uma marca da fonte dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "palavra_limiar_nas_leituras_temas_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«limiar» ou «threshold» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_que_falam_do_projeto_temas_en",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "«sítio» ou «site» dentro de uma leitura",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_pais_pt_antes",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre a cópia do depois",
+        "esperado": 20,
+        "visto": 20,
+        "mordeu": true
+      },
+      "nota": "o conhecido-positivo é a cópia do depois: a conta que dá zero no antes vê as leituras quando elas existem"
+    },
+    {
+      "nome": "cartoes_pais_pt_antes",
+      "valor": 20,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_pais_en_antes",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre a cópia do depois",
+        "esperado": 20,
+        "visto": 20,
+        "mordeu": true
+      },
+      "nota": "o conhecido-positivo é a cópia do depois: a conta que dá zero no antes vê as leituras quando elas existem"
+    },
+    {
+      "nome": "cartoes_pais_en_antes",
+      "valor": 20,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_temas_pt_antes",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre a cópia do depois",
+        "esperado": 36,
+        "visto": 36,
+        "mordeu": true
+      },
+      "nota": "o conhecido-positivo é a cópia do depois: a conta que dá zero no antes vê as leituras quando elas existem"
+    },
+    {
+      "nome": "cartoes_temas_pt_antes",
+      "valor": 36,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_temas_en_antes",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre a cópia do depois",
+        "esperado": 36,
+        "visto": 36,
+        "mordeu": true
+      },
+      "nota": "o conhecido-positivo é a cópia do depois: a conta que dá zero no antes vê as leituras quando elas existem"
+    },
+    {
+      "nome": "cartoes_temas_en_antes",
+      "valor": 36,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py (o leitor de HTML próprio, sobre paginas-<estado>/)",
+      "conhecido_positivo": {
+        "planta": "o primeiro cartão com a classe trocada",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "paginas_depois_sha256",
+      "valor": {
+        "index.html": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951",
+        "en_index.html": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9",
+        "temas_index.html": "259ac064762c8e43c5f62f244e7e68e4b434315c12ba76f4e3186808c03d10cb",
+        "en_themes_index.html": "25773c028bf0c5fef11423b532b88398ad274fcbcd667a84e78e796c1a623d7c",
+        "cartao-medida.css": "71fbbdf85d814f8ed956213e401531475fb301cb5f002376d1ff9deba7821639",
+        "site.css": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
+      },
+      "comando": "paginas-depois/INDICE.json, relido byte a byte por este guião",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "paginas_depois_construidas_de",
+      "valor": "d831b453e82ad48df907a90b52e86c5f514073f4",
+      "comando": "paginas-depois/INDICE.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "visto": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "paginas_antes_construidas_de",
+      "valor": "f0779f37d71edd3bdc3d3ffd908ad18d50589863",
+      "comando": "paginas-antes/INDICE.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": "f0779f37d71edd3bdc3d3ffd908ad18d50589863",
+        "visto": "f0779f37d71edd3bdc3d3ffd908ad18d50589863",
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_a_14px",
+      "valor": 560,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma leitura a 12 px",
+        "esperado": 559,
+        "visto": 559,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_na_tinta",
+      "valor": 560,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma leitura fora da tinta",
+        "esperado": 559,
+        "visto": 559,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_a_58ch",
+      "valor": 560,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma leitura a 62ch",
+        "esperado": 559,
+        "visto": 559,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_depois_do_valor_antes_da_regua",
+      "valor": 560,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma leitura antes do valor",
+        "esperado": 559,
+        "visto": 559,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_cartoes_que_transbordam",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "um cartão que transborda",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_paginas_que_transbordam",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma página 5 px mais larga",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_paginas_que_transbordam_a_390",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "a página de 390 px 5 px mais larga",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_com_a_medida_da_pergunta",
+      "valor": 270,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma leitura a 62ch",
+        "esperado": 269,
+        "visto": 269,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_paginas",
+      "valor": 20,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "o manifesto sem a primeira captura",
+        "esperado": 19,
+        "visto": 19,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_recortes",
+      "valor": 8,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "o manifesto sem o primeiro recorte",
+        "esperado": 7,
+        "visto": 7,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_falhas",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "uma falha de aceitação plantada",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_medicoes",
+      "valor": 560,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "o manifesto sem a primeira captura",
+        "esperado": 540,
+        "visto": 540,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_com_leitura",
+      "valor": 560,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "o manifesto sem a primeira captura",
+        "esperado": 540,
+        "visto": 540,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_com_pergunta",
+      "valor": 270,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "o manifesto sem a primeira captura",
+        "esperado": 264,
+        "visto": 264,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_erros_do_navegador",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "um erro do navegador plantado",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_pedidos_externos",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "um pedido externo plantado",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_antes_paginas",
+      "valor": 20,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre o manifesto do depois estragado",
+        "esperado": 20,
+        "visto": 20,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_antes_recortes",
+      "valor": 8,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre o manifesto do depois estragado",
+        "esperado": 8,
+        "visto": 8,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_antes_com_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre o manifesto do depois estragado",
+        "esperado": 560,
+        "visto": 560,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_antes_cartoes_que_transbordam",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre o manifesto do depois estragado",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_antes_paginas_que_transbordam",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre o manifesto do depois estragado",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "alturas_das_paginas_px",
+      "valor": {
+        "antes": {
+          "pais_pt_390": 7563,
+          "pais_pt_768": 5880,
+          "pais_pt_1024": 5360,
+          "pais_pt_1280": 5308,
+          "pais_pt_1600": 5360,
+          "pais_en_390": 7574,
+          "pais_en_768": 5890,
+          "pais_en_1024": 5367,
+          "pais_en_1280": 5335,
+          "pais_en_1600": 5369,
+          "temas_pt_390": 6831,
+          "temas_pt_768": 4512,
+          "temas_pt_1024": 4231,
+          "temas_pt_1280": 4052,
+          "temas_pt_1600": 4054,
+          "temas_en_390": 6787,
+          "temas_en_768": 4469,
+          "temas_en_1024": 4171,
+          "temas_en_1280": 4009,
+          "temas_en_1600": 4000
+        },
+        "depois": {
+          "pais_pt_390": 9591,
+          "pais_pt_768": 7340,
+          "pais_pt_1024": 6802,
+          "pais_pt_1280": 6813,
+          "pais_pt_1600": 6597,
+          "pais_en_390": 9540,
+          "pais_en_768": 7337,
+          "pais_en_1024": 6735,
+          "pais_en_1280": 6682,
+          "pais_en_1600": 6590,
+          "temas_pt_390": 11056,
+          "temas_pt_768": 7130,
+          "temas_pt_1024": 6756,
+          "temas_pt_1280": 6565,
+          "temas_pt_1600": 6216,
+          "temas_en_390": 10951,
+          "temas_en_768": 7072,
+          "temas_en_1024": 6657,
+          "temas_en_1280": 6396,
+          "temas_en_1600": 6176
+        }
+      },
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json (o campo «altura», a altura do documento em px)",
+      "conhecido_positivo": {
+        "planta": "nenhuma: a leitura do antes e a do depois são a mesma função e dão valores diferentes",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_sha256",
+      "valor": {
+        "depois-pais-pt-390.png": "52f7033f0d865351b3bfecb31d25784b5005786eddccdaffc62b5f6c873ede73",
+        "depois-pais-pt-768.png": "4672e009c2ffb21423d3d4730220554ca7aeced097d38545f84339b6d40e1c35",
+        "depois-pais-pt-1024.png": "b1e8b1a75a7cdbe776edffaa88150aa7d95808b5789dcc109ad53b22e6fb18b8",
+        "depois-pais-pt-1280.png": "3c60f70bc43cbb576556de52301277aed2bd69b6058cfd96b24aeb3822a7b42e",
+        "depois-pais-pt-1600.png": "646af8ecfc6f61e48c11f6ac88497131dfb1d63b155723b6e9f6e485cd65f58b",
+        "depois-pais-en-390.png": "df3b8e503ab9414717f37b11c9f136e72c7572044107a213d9142cd0bb6e35e8",
+        "depois-pais-en-768.png": "7f69da2eb7a4ee219dd85d4cf2e5a7fe15389d83fd4a55a2cd4de3177d77ae7d",
+        "depois-pais-en-1024.png": "def2eadda090641228872a1b23d5ec4a29510aec09de21845bf46843656cb5dc",
+        "depois-pais-en-1280.png": "7e67e2b68e1b6d024c3fb3c0638076071dab880dee826ce06fded102f50d6b27",
+        "depois-pais-en-1600.png": "ee67de5edc36b1a32e8d212bd562441be382bf23961869d929594635391b2408",
+        "depois-temas-pt-390.png": "ca18309776b942a25431efa590227781fa53298aa958c8df410644994969619d",
+        "depois-temas-pt-768.png": "c2195f0883f7d6371cb95234c15718f25f8471ed9b212c23a7e43a6cf909e1d5",
+        "depois-temas-pt-1024.png": "c14dd78be8f76616dfcbbc0cf748061926f4367fd10ab49292bc3280b73ac651",
+        "depois-temas-pt-1280.png": "b0a7a3d78d4438f57821a165c076561479d80e08a1acbb9339386c2fe0dcd219",
+        "depois-temas-pt-1600.png": "972b71a6cbe201e1a465186d3c283a89fa4e1847d8c0d850c27f107546702718",
+        "depois-temas-en-390.png": "e2628db4c778baa986e28e977927d8fb2e059e6a2746ec23816d09dbdafbbee3",
+        "depois-temas-en-768.png": "0ec2baacf2e9480cced9e3b24ec6cdf46057b5352a36a66edbb706e34430bbe0",
+        "depois-temas-en-1024.png": "8e3b08a06b34bc6308631ad4f32681b4357871f033dd6b6b03720902555a029d",
+        "depois-temas-en-1280.png": "afbb9683aef95f6a19d7bb2b4c9d8ff196b14c52a5b3b520ff7b547a89d8b884",
+        "depois-temas-en-1600.png": "835fabd5b9fdcfd96d412f391f6aaef8ab3df298865bced4acb48a1626ea5875",
+        "depois-cartao-saldo-pt-390.png": "b4b2e70380834be585066010dc99f34468c1e47cd0079d1ef4b866604d0be9ca",
+        "depois-cartao-saldo-pt-1280.png": "bd6a616eba52b1ad71d65ba78f60dc8d6c0e85e644195d4fb9ef3e434ffceb29",
+        "depois-cartao-saldo-en-390.png": "dd917d3518dad63a3b32b5e259527c7d454c6ddcc2439e476a36df247bf8b8ae",
+        "depois-cartao-saldo-en-1280.png": "d6b6eab5f95af860b3fbffa36e462318d0186e6d9c90bdd4c8a0da18d74a6ceb",
+        "depois-cartao-disparidade-pt-390.png": "7ed5324738b5171947cc32b831deeb2e2d2a3a91b9eb22f5981cf36d7e0f18f7",
+        "depois-cartao-disparidade-pt-1280.png": "4e6e4ebdad3048a2f70fbf2a84b222961b053f49eb077a7b70796b6dc216b79c",
+        "depois-cartao-disparidade-en-390.png": "e1977cffe0d1fb7a7acbe0236fb14ce2246d093c2b5b41928f998d3ab8cad46e",
+        "depois-cartao-disparidade-en-1280.png": "f19d965ec944d03b75cad0157e03f22b53c32b9bd4e2ac9186cf2c5ff8e8831a"
+      },
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "capturas_depois_de",
+      "valor": "d831b453e82ad48df907a90b52e86c5f514073f4",
+      "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "visto": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_erros_da_auditoria",
+      "valor": 0,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras()",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_auditoria_medidas",
+      "valor": 37,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_folhas",
+      "valor": 791,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_partes",
+      "valor": 923,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_diz",
+      "valor": 231,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_conta",
+      "valor": 242,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_liga",
+      "valor": 450,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_apoios",
+      "valor": 325,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_algarismos",
+      "valor": 22,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_origens_das_leituras",
+      "valor": 71,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_auditoria_comuns",
+      "valor": 39,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
+      "conhecido_positivo": {
+        "planta": "a primeira parte da primeira leitura sem apoio",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      },
+      "nota": "a conta é a da célula; o conhecido-positivo é a mesma célula a recusar uma auditoria estragada"
+    },
+    {
+      "nome": "k17_erros_nas_paginas",
+      "valor": 0,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas()",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula, abaixo",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_paginas_paginas",
+      "valor": 4,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_paginas_cartoes",
+      "valor": 112,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_paginas_leituras",
+      "valor": 112,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_paginas_ramos",
+      "valor": 236,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_paginas_algarismos",
+      "valor": 254,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_paginas_linhas_citadas",
+      "valor": 140,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
+      "conhecido_positivo": {
+        "planta": "as plantas da própria célula",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_plantas",
+      "valor": 12,
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: plantasDaK17()",
+      "conhecido_positivo": {
+        "planta": "cada planta é um conhecido-positivo",
+        "esperado": 12,
+        "visto": 12,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k17_plantas_nomes",
+      "valor": [
+        "a origem tirada",
+        "a leitura mudada sem nova leitura",
+        "um literal que o campo não tem",
+        "um pedaço sem apoio",
+        "um algarismo sem literal",
+        "a declaração retirada fecha o resolvedor",
+        "um algarismo escrito à mão na leitura",
+        "um algarismo escrito como referência de carácter",
+        "o ramo trocado",
+        "uma linha de outra medida citada",
+        "um cartão sem leitura",
+        "a leitura com a marca da fonte"
+      ],
+      "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: plantasDaK17()",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "leituras_declaradas",
+      "valor": 37,
+      "comando": "Object.keys(LEITURAS_DAS_MEDIDAS), por node",
+      "conhecido_positivo": {
+        "planta": "nenhuma: as obrigatórias contam-se pela tabela das medidas",
+        "esperado": 37,
+        "visto": 37,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "algarismos_das_leituras",
+      "valor": [
+        {
+          "medida": "taxa-de-emprego-2025",
+          "nl": "20",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "medida": "taxa-de-emprego-2025",
+          "nl": "64",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "medida": "taxa-de-desemprego-mip-2025",
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "medida": "taxa-de-desemprego-mip-2025",
+          "nl": "74",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "medida": "taxa-de-desemprego-2025",
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "medida": "taxa-de-desemprego-2025",
+          "nl": "74",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "medida": "disparidade-salarial-entre-sexos-2024",
+          "nl": "10",
+          "apoios": [
+            {
+              "origem": "eurostat-earn-grgpg2-cobertura",
+              "campo": "excerto",
+              "literal": "only enterprises with 10 employees or more"
+            }
+          ]
+        },
+        {
+          "medida": "desemprego-de-longa-duracao-2025",
+          "nl": "15",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem130-denominador",
+              "campo": "excerto",
+              "literal": "aged 15-74"
+            }
+          ]
+        },
+        {
+          "medida": "desemprego-de-longa-duracao-2025",
+          "nl": "74",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem130-denominador",
+              "campo": "excerto",
+              "literal": "aged 15-74"
+            }
+          ]
+        },
+        {
+          "medida": "jovens-nem-2025",
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 29 years"
+            }
+          ]
+        },
+        {
+          "medida": "jovens-nem-2025",
+          "nl": "29",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "excerpt",
+              "literal": "From 15 to 29 years"
+            }
+          ]
+        },
+        {
+          "medida": "disparidade-de-emprego-entre-sexos-2025",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "aged 20-64"
+            }
+          ]
+        },
+        {
+          "medida": "disparidade-de-emprego-entre-sexos-2025",
+          "nl": "64",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "aged 20-64"
+            }
+          ]
+        },
+        {
+          "medida": "risco-de-pobreza-ou-exclusao-2025",
+          "nl": "60",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslc10-descricao",
+              "campo": "excerto",
+              "literal": "set at 60 % of the national median"
+            }
+          ]
+        },
+        {
+          "medida": "racio-s80-s20-2025",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "the 20 % of the population with the highest income"
+            }
+          ]
+        },
+        {
+          "medida": "racio-s80-s20-2025",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "the 20 % of the population with the lowest income"
+            }
+          ]
+        },
+        {
+          "medida": "abandono-escolar-precoce-2025",
+          "nl": "18",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "a person aged 18 to 24"
+            }
+          ]
+        },
+        {
+          "medida": "abandono-escolar-precoce-2025",
+          "nl": "24",
+          "apoios": [
+            {
+              "origem": "glossario-abandono",
+              "campo": "excerto",
+              "literal": "a person aged 18 to 24"
+            }
+          ]
+        },
+        {
+          "medida": "criancas-em-creche-2025",
+          "nl": "3",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "document.title",
+              "literal": "Children aged less than 3 years"
+            }
+          ]
+        },
+        {
+          "medida": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "nl": "40",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "more than 40 % of disposable income"
+            }
+          ]
+        },
+        {
+          "medida": "sobrecarga-do-custo-da-habitacao-2025",
+          "nl": "40",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "more than 40 % of disposable income"
+            }
+          ]
+        },
+        {
+          "medida": "licencas-de-construcao-2025",
+          "nl": "1000",
+          "apoios": [
+            {
+              "linha": "propria",
+              "campo": "unit",
+              "literal": "m² por 1000 habitantes"
+            }
+          ]
+        }
+      ],
+      "comando": "tests/cartao/leituras-provadas.json, os campos «algarismos», lidos por este guião",
+      "conhecido_positivo": {
+        "planta": "um algarismo plantado na primeira medida",
+        "esperado": 23,
+        "visto": 23,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "algarismos_das_leituras_contados",
+      "valor": 22,
+      "comando": "tests/cartao/leituras-provadas.json",
+      "conhecido_positivo": {
+        "planta": "um algarismo plantado",
+        "esperado": 23,
+        "visto": 23,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1",
+      "valor": 5,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/l1-2026-09-24/plantas node tests/pais/portoes.mjs --prefixo l1-, lido de plantas/plantas-portoes-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 5,
+        "visto": 5,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1_que_morderam",
+      "valor": 5,
+      "comando": "plantas/plantas-portoes-l1.json (passou e os ficheiros repostos byte a byte)",
+      "conhecido_positivo": {
+        "planta": "um registo com passou falso",
+        "esperado": 4,
+        "visto": 4,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1_nomes",
+      "valor": [
+        "l1-leitura-sem-selo-em",
+        "l1-leitura-de-outro-cartao",
+        "l1-leitura-com-linha-alheia",
+        "l1-leitura-que-a-k17-recusa",
+        "l1-leitura-fora-do-cartao"
+      ],
+      "comando": "plantas/plantas-portoes-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1_do_audita_selo",
+      "valor": 3,
+      "comando": "plantas/plantas-portoes-l1.json, as de comando «node scripts/gate-html.mjs»",
+      "conhecido_positivo": {
+        "planta": "uma planta a mais desse comando numa cópia",
+        "esperado": 4,
+        "visto": 4,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1_do_audita_selo_que_morderam",
+      "valor": 3,
+      "comando": "plantas/plantas-portoes-l1.json, as de comando «node scripts/gate-html.mjs»",
+      "conhecido_positivo": {
+        "planta": "um registo com passou falso",
+        "esperado": 2,
+        "visto": 2,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1_do_arame",
+      "valor": 2,
+      "comando": "plantas/plantas-portoes-l1.json, as de comando «node scripts/check-voz.mjs»",
+      "conhecido_positivo": {
+        "planta": "uma planta a mais desse comando numa cópia",
+        "esperado": 3,
+        "visto": 3,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_portoes_l1_do_arame_que_morderam",
+      "valor": 2,
+      "comando": "plantas/plantas-portoes-l1.json, as de comando «node scripts/check-voz.mjs»",
+      "conhecido_positivo": {
+        "planta": "um registo com passou falso",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_camaras",
+      "valor": 35,
+      "comando": "node tests/pais/camaras.mjs --html --json design/especime-v3/medicoes/l1-2026-09-24/plantas/camaras-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 35,
+        "visto": 35,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_camaras_que_passaram",
+      "valor": 35,
+      "comando": "plantas/camaras-l1.json",
+      "conhecido_positivo": {
+        "planta": "um registo com passou falso",
+        "esperado": 34,
+        "visto": 34,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_camaras_l1",
+      "valor": 9,
+      "comando": "plantas/camaras-l1.json, as de nome l1-*",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 9,
+        "visto": 9,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_camaras_l1_que_passaram",
+      "valor": 9,
+      "comando": "plantas/camaras-l1.json, as de nome l1-*",
+      "conhecido_positivo": {
+        "planta": "um registo com passou falso",
+        "esperado": 8,
+        "visto": 8,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "acertos",
+      "valor": 17,
+      "comando": "acertos-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 17,
+        "visto": 17,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "acertos_trocas",
+      "valor": 45,
+      "comando": "acertos-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 45,
+        "visto": 45,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "acertos_confere_codigo",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/acertos-l1.py --confere (chamado por dentro)",
+      "conhecido_positivo": {
+        "planta": "uma palavra acrescentada ao ficheiro do sítio numa cópia",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_novas",
+      "valor": 44,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/origens-l1.py --confere",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 44,
+        "visto": 44,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_conferidas",
+      "valor": 44,
+      "comando": "origens-l1.py --confere",
+      "conhecido_positivo": {
+        "planta": "nenhuma: a planta do selo e a do sha256 vivem na K16",
+        "esperado": 44,
+        "visto": 44,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_com_faltas",
+      "valor": 0,
+      "comando": "origens-l1.py --confere",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_confere_codigo",
+      "valor": 0,
+      "comando": "origens-l1.py --confere",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_com_selo_de_pedido",
+      "valor": 31,
+      "comando": "origens-l1.py (as declarações com «selo»)",
+      "conhecido_positivo": {
+        "planta": "uma declaração sem selo numa cópia",
+        "esperado": 30,
+        "visto": 30,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_alojadas",
+      "valor": 13,
+      "comando": "origens-l1.py (as declarações com «alojada»)",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 13,
+        "visto": 13,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_novas_nomes",
+      "valor": {
+        "com_selo": [
+          "bdp-pii-sinal",
+          "ce-swd-2026-222-habitacao",
+          "dre-dlr-37-2023-a",
+          "eurostat-cuidado-formal",
+          "eurostat-earn-grgpg2-cobertura",
+          "eurostat-earn-grgpg2-definicao",
+          "eurostat-glossario-fbcf",
+          "eurostat-glossario-gerd",
+          "eurostat-sdg_16_40-descricao",
+          "eurostat-sdg_16_40-nivel",
+          "eurostat-tepsr_sp210-descricao",
+          "eurostat-tepsr_sp410-descricao",
+          "eurostat-tesem060-descricao",
+          "eurostat-tespm110-descricao",
+          "eurostat-tessi164-regimes",
+          "eurostat-tipsbp10-descricao",
+          "eurostat-tipsbp60-descricao",
+          "eurostat-tipser10-descricao",
+          "eurostat-tipsgo10-descricao",
+          "eurostat-tipsho20-descricao",
+          "eurostat-tipsho50-descricao",
+          "eurostat-tipslc10-descricao",
+          "eurostat-tipslm10-descricao",
+          "eurostat-tipslm60-descricao",
+          "eurostat-tipsna20-descricao",
+          "eurostat-tipsna40-descricao",
+          "eurostat-tipspc30-descricao",
+          "eurostat-tipspc40-descricao",
+          "eurostat-tipspd22-descricao",
+          "eurostat-tipspd30-descricao",
+          "eurostat-tipsun20-descricao"
+        ],
+        "alojadas": [
+          "cfp-compromisso",
+          "cfp-despesa-liquida",
+          "cfp-quem",
+          "cfp-trajetoria",
+          "dl-139-2025-ambito",
+          "dl-139-2025-preambulo",
+          "dl-139-2025-vigor",
+          "eurostat-gfs-pacto",
+          "eurostat-gfs-saldo",
+          "ine-ganho-conceito",
+          "ine-ganho-nota",
+          "ine-pde-regional-e-local",
+          "ine-pde-subsetores"
+        ]
+      },
+      "comando": "origens-l1.py",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "pedidos_do_bloco",
+      "valor": 27,
+      "comando": "o motor: indicators/out/l1-2026-09-24/pedidos.jsonl, lido por este guião",
+      "conhecido_positivo": {
+        "planta": "uma linha a mais numa cópia",
+        "esperado": 28,
+        "visto": 28,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "pedidos_do_bloco_com_http_200",
+      "valor": 27,
+      "comando": "pedidos.jsonl, o campo «http» lido como número",
+      "conhecido_positivo": {
+        "planta": "um pedido com 404 numa cópia",
+        "esperado": 26,
+        "visto": 26,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "pedidos_do_bloco_de",
+      "valor": [
+        "2026-09-24T06:29:18Z",
+        "2026-09-24T06:29:43Z"
+      ],
+      "comando": "pedidos.jsonl, o primeiro e o último",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "ficheiros_alojados_no_estudo_13",
+      "valor": 29,
+      "comando": "git show HEAD -- «content/13 Dominios/source/MANIFEST.sha256» no motor, as linhas acrescentadas",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre o commit anterior do motor",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      },
+      "nota": "o commit anterior do motor não é deste bloco e não aloja nada no estudo 13"
+    },
+    {
+      "nome": "motor_cabeca",
+      "valor": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
+      "comando": "git rev-parse HEAD no motor",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "motor_commits_do_bloco",
+      "valor": 1,
+      "comando": "git rev-list --count 0f08171..HEAD no motor",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "achados_das_descricoes",
+      "valor": {
+        "tipser10_descricao": "The formula is: [[(REER_HICP_42)t - (REER_HICP_42)t-3] / (REER_HICP_42)t-3]*100 The indicative thresholds are +/-5% for euro area and +/-11% for non-euro area countries.",
+        "pdm_cambio_efectivo_real_declarada": "real effective exchange rates (3-year percentage change) based on HICP/CPI deflators, relative to 41 other industrial countries, with thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries.",
+        "tipsbp60_descricao": "The indicative threshold is +3%.",
+        "pdm_exportacoes_declarada": "export performance against advanced economies (3-year percentage change), with a threshold of -3%.",
+        "tipslm60_idade": {
+          "Y15-64": "From 15 to 64 years"
+        }
+      },
+      "comando": "as descrições dos pedidos selados no motor (tipser10, tipsbp60, tipslm60) e as origens pdm-* de src/data/figuras.mjs",
+      "conhecido_positivo": {
+        "planta": "a mesma procura numa descrição sem a frase",
+        "esperado": null,
+        "visto": null,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "sondas",
+      "valor": 9,
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/sonda-l1.py, lido de sondas-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 9,
+        "visto": 9,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "sondas_404",
+      "valor": 8,
+      "comando": "sondas-l1.json",
+      "conhecido_positivo": {
+        "planta": "um 200 trocado por 404 numa cópia",
+        "esperado": 9,
+        "visto": 9,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "sondas_200",
+      "valor": 1,
+      "comando": "sondas-l1.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_l1",
+      "valor": 40,
+      "comando": "as linhas «| l1 | viva |» de design/especime-v3/INVENTARIO-FRASES.md",
+      "conhecido_positivo": {
+        "planta": "uma linha a mais numa cópia",
+        "esperado": 41,
+        "visto": 41,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_l1_inglesas",
+      "valor": 20,
+      "comando": "as linhas l1 com «Ver a razão na gémea portuguesa»",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 20,
+        "visto": 20,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "excecoes_da_voz_com_o_l1",
+      "valor": 3,
+      "comando": "as linhas «| contexto |» de VOZ-MARCADORES.md que nomeiam o bloco L1",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 3,
+        "visto": 3,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_conferidas",
+      "valor": 77,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "planta": "uma referência de linha do mapa desviada cem linhas numa cópia",
+        "esperado": 76,
+        "visto": 76,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe",
+      "valor": 0,
+      "comando": "conferir-mapa.py",
+      "conhecido_positivo": {
+        "planta": "a mesma cópia desviada",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_nao_encontradas",
+      "valor": 0,
+      "comando": "conferir-mapa.py",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "portao_build",
+      "valor": {
+        "codigo": 0,
+        "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "segundos": 300.1,
+        "inicio": "2026-09-24T08:03:19.187997+00:00",
+        "fim": "2026-09-24T08:08:19.321317+00:00",
+        "caminhos_da_maquina_trocados": 1
+      },
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/correr-portao-l1.py build, lido de portoes/build.codigo e portoes/build.json",
+      "conhecido_positivo": {
+        "planta": "um ficheiro de código plantado com 1 lido pelo mesmo leitor",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "portao_verify",
+      "valor": {
+        "codigo": 0,
+        "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "segundos": 491.0,
+        "inicio": "2026-09-24T08:09:01.045711+00:00",
+        "fim": "2026-09-24T08:17:12.019912+00:00",
+        "caminhos_da_maquina_trocados": 2
+      },
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/correr-portao-l1.py verify, lido de portoes/verify.codigo e portoes/verify.json",
+      "conhecido_positivo": {
+        "planta": "um ficheiro de código plantado com 1 lido pelo mesmo leitor",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "portao_typecheck",
+      "valor": {
+        "codigo": 0,
+        "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "segundos": 0.2,
+        "inicio": "2026-09-24T08:17:27.386172+00:00",
+        "fim": "2026-09-24T08:17:27.614244+00:00",
+        "caminhos_da_maquina_trocados": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/correr-portao-l1.py typecheck, lido de portoes/typecheck.codigo e portoes/typecheck.json",
+      "conhecido_positivo": {
+        "planta": "um ficheiro de código plantado com 1 lido pelo mesmo leitor",
+        "esperado": 1,
+        "visto": 1,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "typecheck_ve_um_erro_plantado",
+      "valor": true,
+      "comando": "npx tsc -p <um tsconfig temporário que estende tsconfig.check.json e acrescenta um ficheiro com um erro de tipo>",
+      "conhecido_positivo": {
+        "planta": "um valor de texto declarado número",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "portoes_na_mesma_cabeca",
+      "valor": true,
+      "comando": "portoes/*.cabeca",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "commits_do_sitio_no_bloco",
+      "valor": 10,
+      "comando": "git log f0779f37..HEAD",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 10,
+        "visto": 10,
+        "mordeu": true
+      },
+      "nota": "conta os commits até à cabeça medida; o commit que entrega estas provas vem depois dela"
+    },
+    {
+      "nome": "commits_do_sitio",
+      "valor": [
+        "d831b453 L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória",
+        "dd30253f L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina",
+        "5a1667ab L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado",
+        "84eedc3a L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas",
+        "b63f33a4 L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos",
+        "c527ce12 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao",
+        "383445fc L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua",
+        "39d27368 L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta",
+        "607808f0 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata",
+        "bc078d3b L1: o mapa do repositório com o que a peça 1 do B2 acrescentou"
+      ],
+      "comando": "git log --format=\"%h %s\" f0779f37..HEAD",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "cabeca_medida",
+      "valor": "d831b453e82ad48df907a90b52e86c5f514073f4",
+      "comando": "git rev-parse HEAD",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "simbolos_do_construtor",
+      "valor": 1456342,
+      "comando": "sessao.json (declarado)",
+      "declarado": true,
+      "fonte": "o contador da ferramenta: 15 000 000 símbolos no início da sessão menos os 13 543 658 que ela reportava por usar no momento de escrever este ficheiro; o que se gastou depois (a escrita do relatório e o commit das provas) não está contado",
+      "conhecido_positivo": {
+        "planta": "nenhuma: não é uma medição, é o contador da ferramenta, declarado",
+        "mordeu": null
+      }
+    },
+    {
+      "nome": "tempo_de_parede_segundos",
+      "valor": 10766,
+      "comando": "do «inicio_da_sessao» de sessao.json (o primeiro registo com hora da transcrição da sessão, declarado) ao maior «fim» de portoes/*.json",
+      "conhecido_positivo": {
+        "planta": "a mesma conta com o fim de um portão atrasado uma hora numa cópia",
+        "esperado": 14366,
+        "visto": 14366,
+        "mordeu": true
+      }
+    }
+  ]
+}
