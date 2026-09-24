@@ -214,6 +214,10 @@ const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 const PECAS_PERMITIDAS = new Set([
   'cartao-medida-nome',
   'cartao-medida-valor',
+  /* L1, 24.09.2026: a leitura do que o número significa, por baixo dele. É o
+     bloco novo do bloco, e o único: o que a K17 confere (o texto, os ramos, os
+     algarismos e as linhas citadas) vive em `tests/cartao/leituras.mjs`. */
+  'cartao-medida-leitura',
   'cartao-medida-frase',
   'cartao-medida-regua',
 ]);
@@ -580,6 +584,10 @@ function corre(dist) {
           }
           for (const v of item.querySelectorAll('[data-claim]')) {
             const daRegua = v.getAttribute('data-claim');
+            /* L1: a leitura do cartão também cita a linha do próprio cartão, e a
+               porta dela é a marca única que a primeira metade desta célula já
+               conta; não é uma linha de enquadramento e o recibo não a lista. */
+            if (daRegua === id && item.hasAttribute('data-cartao-leitura')) continue;
             if (daRegua) enquadradas.push({ rota, cartao: id, linha: daRegua, lang: langPagina });
           }
         }
