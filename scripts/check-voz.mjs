@@ -74,6 +74,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
+import { conferirPaginaDaLeitura } from '../tests/cartao/leituras.mjs';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
 /* A LISTA DAS PALAVRAS PROIBIDAS VIVE NUM FICHEIRO SÓ (bloco P3, 16.09.2026,
@@ -513,6 +514,37 @@ function textoSemOrigens(html) {
   return partes.join(' ').replace(/\s+/g, ' ').trim();
 }
 
+/**
+ * AS LEITURAS DOS CARTÕES NACIONAIS SAEM DO ARAME, e só elas (bloco L1,
+ * 24.09.2026). Cada uma é a frase tipada que este arame pede à espera do F3.1:
+ * as palavras são declaradas em `src/data/leituras-das-medidas.mjs`, e cada
+ * comparação («subiu», «está acima da média da União») é um ramo que a máquina
+ * escolhe entre o valor do cartão e uma linha que a régua do mesmo cartão rende
+ * (o período anterior, o agregado da União, que é linha do livro-razão desde o
+ * P2). A K17 do `check:cartao` confere cada leitura rendida contra a declaração
+ * e reconta cada ramo pela sua própria conta sobre as linhas, e a auditoria das
+ * origens exige um literal a tudo o que não é conta. É a mesma saída que a
+ * leitura do país tem desde o B1, e com o mesmo aperto: só uma leitura dentro
+ * de um cartão (`article.cartao-medida [data-cartao-leitura]`) sai; a mesma
+ * marca fora de um cartão continua a ser medida, e o autoteste abaixo prova-o.
+ *
+ * E SÓ SAI CONFERIDA NA MESMA CORRIDA: a cadeia da construção chama este
+ * portão e não chama o `check:cartao`, e por isso o arame corre ele próprio a
+ * conferência da K17 sobre a página (`conferirPaginaDaLeitura`, de
+ * `tests/cartao/leituras.mjs`). Uma página cujas leituras a K17 não aceite
+ * fecha a construção com a queixa da K17, e as leituras dela ficam dentro do
+ * arame, que as mede como a qualquer outra prosa.
+ *
+ * @param {import('node-html-parser').HTMLElement} raiz
+ * @param {boolean} [cartoesConferidos] falso quando a K17 recusou a página
+ */
+function semLeiturasConferidas(raiz, cartoesConferidos = true) {
+  raiz.querySelector('main p[data-leitura-pais]')?.remove();
+  if (!cartoesConferidos) return raiz;
+  for (const l of raiz.querySelectorAll('main article.cartao-medida [data-cartao-leitura]')) l.remove();
+  return raiz;
+}
+
 /** As palavras da classe que mordem num texto já limpo de origens. */
 function mordidas(texto, lingua) {
   const t = texto.toLowerCase();
@@ -551,6 +583,29 @@ function mordidas(texto, lingua) {
           `${cegas.length ? `, e o texto de rascunho nem sequer contém: ${cegas.join(' · ')}` : ''}.`,
       );
     }
+    /* L1: a leitura de um cartão sai do arame, e a mesma marca fora de um cartão
+       não sai. As duas metades provam-se aqui, com os mesmos termos. */
+    const noCartao = `<html><body><main><article class="cartao-medida"><p data-cartao-leitura="x">${termos
+      .map((t) => `o valor ${t} nesta frase.`).join(' ')}</p></article></main></body></html>`;
+    const foraDoCartao = noCartao.replace('<article class="cartao-medida">', '<section>').replace('</article>', '</section>');
+    const viuNoCartao = mordidas(textoSemOrigens(semLeiturasConferidas(parse(noCartao)).toString()), lingua);
+    const viuForaDoCartao = mordidas(textoSemOrigens(semLeiturasConferidas(parse(foraDoCartao)).toString()), lingua).length;
+    const viuNoCartaoRecusado = mordidas(textoSemOrigens(semLeiturasConferidas(parse(noCartao), false).toString()), lingua).length;
+    if (viuNoCartaoRecusado !== termos.length) {
+      erros.push(
+        `o autoteste do arame da classe falhou em «${lingua}»: a leitura de um cartão que a K17 recusou isentou ` +
+          `${termos.length - viuNoCartaoRecusado} termo(s). Sem a conferência, a leitura é prosa como outra qualquer.`,
+      );
+    }
+    if (viuNoCartao.length) {
+      erros.push(`o autoteste do arame da classe falhou em «${lingua}»: ${viuNoCartao.length} termo(s) morderam dentro da leitura de um cartão, que a K17 confere.`);
+    }
+    if (viuForaDoCartao !== termos.length) {
+      erros.push(
+        `o autoteste do arame da classe falhou em «${lingua}»: a marca de leitura fora de um cartão isentou ` +
+          `${termos.length - viuForaDoCartao} termo(s). A saída do arame é da leitura de um cartão, e de mais nada.`,
+      );
+    }
     const viuDentro = mordidas(textoSemOrigens(dentro), lingua);
     if (viuDentro.length) {
       erros.push(
@@ -586,8 +641,12 @@ for (const r of ROTAS_DA_CLASSE) {
      compara cada palavra, check:pais exige as sete portas e gate:html confere
      os valores. Só este parágrafo sai do arame genérico, depois da sentinela.
      Prosa solta, mesmo com as mesmas palavras, continua a ser medida. */
-  const foraDaLeitura = parse(cru);
-  foraDaLeitura.querySelector('main p[data-leitura-pais]')?.remove();
+  /* L1: as leituras dos cartões só saem depois de a K17 as conferir aqui. */
+  const k17 = conferirPaginaDaLeitura(parse(cru), /** @type {'pt'|'en'} */ (r.lingua), r.rota);
+  for (const e of k17.erros) {
+    erros.push(`a leitura de um cartão só sai do arame da classe conferida, e a K17 recusou-a em ${r.rota}: ${e}`);
+  }
+  const foraDaLeitura = semLeiturasConferidas(parse(cru), k17.erros.length === 0);
   for (const p of mordidas(textoSemOrigens(foraDaLeitura.toString()), r.lingua)) {
     const cadeia = r.lingua === 'pt' ? p.pt : p.en;
     erros.push(

@@ -178,3 +178,29 @@ planta('b2-voz-contagem-e-prosa','scripts/check-voz.mjs',[
   r.querySelector('[data-cartao-camaras] .cartao-medida-valor').insertAdjacentHTML('beforeend',' palavras plantadas junto da contagem');
  }]
 ],[/V1 pt: painel_fora_do_limiar/,/bloco por classificar[^\n]*palavras plantadas junto da contagem/]);
+
+/* L1, 24.09.2026 · a leitura de cada medida. O `auditaSelo` do portão de HTML
+   aceita um valor dentro de uma leitura só pela regra do item da régua, e o
+   arame da classe do `check:voz` só tira uma leitura depois de a K17 a conferir
+   na mesma corrida. Cada uma destas plantas estraga a forma nova numa página
+   construída e exige a mordida de sempre. Corre-se com `--prefixo l1-` e
+   `OEDP_MEDICOES` a apontar para a pasta das plantas do bloco. */
+planta('l1-leitura-sem-selo-em','scripts/gate-html.mjs',[
+ ['index.html',r=>r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]').removeAttribute('data-selo-em')]
+],[/o valor da afirmação "saldo-das-administracoes-publicas-2025" aparece sem selo para a sua própria linha\./]);
+planta('l1-leitura-de-outro-cartao','scripts/gate-html.mjs',[
+ ['en/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]');l.setAttribute('data-selo-em','divida-publica-2025');l.setAttribute('data-cartao-leitura','divida-publica-2025');}]
+],[/o valor da afirmação "saldo-das-administracoes-publicas-2025" aparece sem selo para a sua própria linha\./]);
+planta('l1-leitura-com-linha-alheia','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>{
+  const valor=r.querySelector('[data-cartao-medida="divida-publica-2025"] .cartao-medida-quantidade [data-claim="divida-publica-2025"]').textContent;
+  const n=r.querySelector('[data-cartao-leitura="racio-s80-s20-2025"] [data-claim="racio-s80-s20-2025"]');
+  n.setAttribute('data-claim','divida-publica-2025');n.set_content(valor);
+ }]
+],[/o valor da afirmação "divida-publica-2025" aparece sem selo para a sua própria linha\./]);
+planta('l1-leitura-que-a-k17-recusa','scripts/check-voz.mjs',[
+ ['index.html',r=>{const l=r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]');l.set_content(l.innerHTML.replace('receberam mais do que gastaram','receberam muito mais do que gastaram'));}]
+],[/a K17 recusou-a em \/: K17 · \/ · saldo-das-administracoes-publicas-2025/,/FRASE DA CLASSE POR PROVAR EM \/ · «subiu»/]);
+planta('l1-leitura-fora-do-cartao','scripts/check-voz.mjs',[
+ ['en/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="taxa-de-emprego-2025"]');r.querySelector('main').insertAdjacentHTML('beforeend',l.outerHTML);}]
+],[/a K17 recusou-a em \/en\/: K17 · \/en\/: há uma leitura fora de um cartão/,/FRASE DA CLASSE POR PROVAR EM \/en\/ · «Union average»/]);
