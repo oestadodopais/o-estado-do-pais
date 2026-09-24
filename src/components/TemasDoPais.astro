@@ -12,7 +12,7 @@ const Tag = resumo ? 'h3' : 'h2';
 {temasDoPais(lang, resumo).map(tema => <section class="pais-tema" data-tema={tema.slug} id={tema.slug}>
   <Tag class="pais-tema-k" data-nome="dominios">{tema.nome}</Tag>
   <div class="pais-cartoes">
-    {tema.medidas.map(linha => <CartaoDaMedida linha={linha} lang={lang} />)}
+    {tema.medidas.map(linha => <CartaoDaMedida linha={linha} lang={lang} leitura />)}
     {tema.slug === 'economia-e-financas-publicas' && <CartaoDasCamaras lang={lang} />}
   </div>
   {resumo && <p class="pais-porta-tema"><a href={`${routePath('temas', lang)}#${tema.slug}`}><span>{r.todasAsMedidasA}</span><span data-nome="dominios">{tema.nome}</span>{r.todasAsMedidasB}</a></p>}

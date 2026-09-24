@@ -85,12 +85,17 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada, eNomeDeMedida } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
+import { leituraDaMedida } from '../lib/leitura-da-medida.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
    componente saiba o que elas são: é assim que a página de uma área lhe põe
    `data-area-peca="medida"`, que é a marca que o portão de HTML e o
    `check:areas` contam. */
-const { linha: c, lang = 'pt', ...resto } = Astro.props;
+/* `leitura` diz que este é um cartão nacional (a página do país e a dos temas,
+   bloco L1): só esses levam a leitura por baixo do número, e a leitura tem de
+   existir nas duas edições (`src/lib/leitura-da-medida.mjs` fecha a construção
+   se não existir). As outras páginas que rendem este componente não a pedem. */
+const { linha: c, lang = 'pt', leitura: comLeitura = false, ...resto } = Astro.props;
 const s = t(lang);
 
 const unidade = unidadeDaLinha(c.unit, lang);
@@ -141,6 +146,15 @@ const frase = definicao ? definicao[lang] ?? definicao.pt : null;
  * no relatório do bloco.
  */
 const nome = nomeDoCartao(c, lang);
+/* A LEITURA DO QUE O NÚMERO SIGNIFICA (bloco L1, 24.09.2026, I150). As palavras
+   são do lugar de direção, declaradas em `src/data/leituras-das-medidas.mjs`; os
+   números e os ramos são do resolvedor, escolhidos dos valores selados. Um
+   cartão nacional sem nome não é cartão, e uma leitura não se pendura numa linha
+   do livro-razão. */
+if (comLeitura && nome === null) {
+  throw new Error(`cartão nacional sem nome: a leitura de «${c.id}» não tem cartão onde viver`);
+}
+const leitura = comLeitura ? leituraDaMedida(c.id, lang) : null;
 const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
 /* O NOME DE UMA LINHA QUE NÃO SE RENDE COMO CARTÃO (bloco P3, 16.09.2026,
    item 1). A decisão do P2 fica: uma linha sem nome em degrau nenhum da escada
@@ -254,6 +268,17 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
           declarado; onde não houver, não se desenha e não se escreve a ausência por
           palavras. */}
+      {/* A LEITURA, logo a seguir à linha do valor e antes da régua (bloco L1,
+          item 2). Os valores que ela cita rendem por `<Claim>` sem marca
+          própria, dentro do invólucro `data-selo-em`, como os da régua: a porta
+          do recibo é a marca única do cartão (K10), e o portão de HTML aceita
+          um valor aqui dentro pela mesma regra do item da régua. */}
+      {leitura && (
+        <p class="cartao-medida-leitura" data-cartao-leitura={c.id} data-selo-em={c.id}>
+          <Frase partes={leitura.pedacos} lang={lang} selos={false} />
+        </p>
+      )}
+
       <ReguaDoCartao id={c.id} lang={lang} s={s} />
 
       {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
