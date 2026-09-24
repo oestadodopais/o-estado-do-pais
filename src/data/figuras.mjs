@@ -899,7 +899,8 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
       'A posição de investimento internacional, também conhecida por PII, apresenta o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo. … A diferença entre os ativos financeiros e os passivos corresponde ao valor líquido da posição de investimento internacional.',
     excertoEn:
       'The international investment position, also known as IIP, represents the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world. … The difference between the value of these assets and liabilities corresponds to the net value of the international investment position.',
-  },  /* ===========================================================================
+  },
+  /* ===========================================================================
      AS ORIGENS DA LEITURA DE CADA MEDIDA (bloco L1, 24.09.2026)
      ===========================================================================
      A leitura por baixo do número de cada cartão nacional diz o que a medida é
