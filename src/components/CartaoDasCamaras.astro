@@ -5,6 +5,8 @@
 import ValorDaProva from './ValorDaProva.astro';
 import Claim from './Claim.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
+import Frase from './Frase.astro';
+import { leituraDaMedida, LEITURA_DAS_CAMARAS } from '../lib/leitura-da-medida.mjs';
 import { prova, periodoDasCamaras } from '../lib/prova.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -17,6 +19,10 @@ const periodo = periodoDasCamaras();
 const s = t(lang).camaras;
 const limite = getClaim('indice-de-divida-limite-legal');
 const unidade = unidadeDaLinha(limite.unit, lang);
+/* L1: a leitura das câmaras diz as contagens por palavras, com as mesmas chaves
+   da prova e a mesma porta comum; não cita linha nenhuma, e por isso não leva
+   `data-selo-em` (a V2 confere as contagens e a porta, e a K17 a leitura). */
+const leitura = leituraDaMedida(LEITURA_DAS_CAMARAS, lang);
 ---
 <article class="cartao-medida" data-cartao-camaras>
   <span class="cartao-medida-nome">{s.nome}</span>
@@ -24,6 +30,7 @@ const unidade = unidadeDaLinha(limite.unit, lang);
     <span class="cartao-medida-quantidade"><span class="cartao-medida-num"><ValorDaProva chave="camaras_acima_do_limite" semPorta item={p.camaras_acima_do_limite} lang={lang} /></span>{' '}<span class="cartao-medida-unidade">{s.unidade}</span></span>
     <span class="cartao-medida-periodo">{s.periodo}<CampoDaLinha id={periodo.id} campo="reference_date" valor={periodo.periodo} lang={lang} /></span>
   </p>
+  <p class="cartao-medida-leitura" data-cartao-leitura={LEITURA_DAS_CAMARAS}><Frase partes={leitura.pedacos} lang={lang} selos={false} /></p>
   <p class="cartao-medida-regua"><span data-camaras-regua>
     {s.de}<ValorDaProva chave="municipios_com_pagina" semPorta item={p.municipios_com_pagina} lang={lang} />{s.total}<ValorDaProva chave="camaras_dentro_do_limite" semPorta item={p.camaras_dentro_do_limite} lang={lang} />{s.dentro}<Claim id={limite.id} lang={lang} as="span" sufixo={` ${unidade.texto}`} chip={true} />{s.sem}<ValorDaProva chave="camaras_sem_valor" semPorta item={p.camaras_sem_valor} lang={lang} />{s.falta}
   </span></p>

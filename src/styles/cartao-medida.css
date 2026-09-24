@@ -132,6 +132,21 @@
   color: inherit;
 }
 
+/* A LEITURA DO QUE O NÚMERO SIGNIFICA (bloco L1, 24.09.2026, item 3 do brief).
+   É prosa da casa e compõe-se como prosa: a letra do corpo a 14 px, na tinta, e
+   a medida de linha da pergunta (58ch), logo a seguir à linha do valor, porque é
+   o que o leitor precisa a seguir ao número. A régua e a pergunta ficam como
+   estão. */
+.cartao-medida-leitura {
+  margin: 2px 0 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
 /* A FRASE DO QUE A MEDIDA MEDE. É prosa, e compõe-se como prosa: a mesma letra
    do corpo, um pouco mais pequena do que o nome, com a medida de linha curta que
    uma frase de uma linha e meia pede. */

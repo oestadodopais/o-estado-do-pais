@@ -18,6 +18,10 @@
  *                                   publicou, declarado em `src/data/frescura.mjs`
  *                                   e reconferido pelo `check:formas` contra a
  *                                   origem que aquele ficheiro nomeia
+ *   { prova: 'chave', item, semPorta } — um número que o sítio diz sobre si
+ *                                   próprio, pela `ValorDaProva` (a leitura do
+ *                                   cartão das câmaras, bloco L1); o portão de
+ *                                   HTML reconta a chave por conta própria
  *   { voz: 'palavras' }           — texto corrido que a régua da voz tem de
  *                                   recolher onde quer que ele esteja. É a marca
  *                                   `data-voz` (ver `scripts/medir-defeitos.mjs`):
@@ -38,6 +42,7 @@
  */
 import Claim from './Claim.astro';
 import DataDaLinha from './DataDaLinha.astro';
+import ValorDaProva from './ValorDaProva.astro';
 import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 import { routePath } from '../lib/routes.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
@@ -70,6 +75,12 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
         da linha que ela nomeia, e o período ao ficheiro que a série nomeia. */}
     if (parte.data)
       return <DataDaLinha id={parte.data.id} campo={parte.data.campo} valor={parte.data.valor} />;
+    {/* UMA CHAVE DA PROVA DENTRO DE UMA FRASE (bloco L1, 24.09.2026). A leitura
+        do cartão das câmaras diz as suas contagens, e cada uma é a mesma chave
+        que o cartão já rende, com a mesma porta comum: o portão de HTML reconta
+        o número e a V2 confere a porta. */}
+    if (parte.prova)
+      return <ValorDaProva chave={parte.prova} item={parte.item} lang={lang} semPorta={parte.semPorta ?? false} />;
     if (parte.serie)
       return (
         <span data-nonledger="periodo-da-fonte" data-de-serie={parte.serie}>
