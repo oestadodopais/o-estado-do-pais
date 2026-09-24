@@ -160,7 +160,7 @@ medida('crescimento-da-despesa-liquida-2025', ['cfp-despesa-liquida', 'cfp-quem'
       L('excerpt', 'crescimento da despesa líquida'), O('cfp-despesa-liquida', 'Despesa Total'), ANO),
     diz(': a que não conta os juros da dívida', ': the expenditure that leaves out interest on the debt',
       O('cfp-despesa-liquida', '(da qual se ex clui)'), O('cfp-despesa-liquida', 'Encargos com Juros (2)')),
-    diz(', a despesa paga por fundos europeus', ', spending paid by European funds', O('cfp-despesa-liquida', 'Despesa financiada por fundos da UE (4)')),
+    diz(', a despesa financiada por fundos europeus', ', spending financed by European funds', O('cfp-despesa-liquida', 'Despesa financiada por fundos da UE (4)')),
     diz(' nem a que sobe e desce com o desemprego', ' and the spending that rises and falls with unemployment', O('cfp-despesa-liquida', 'Despesa cíclica com subsídio de desemprego (3)')),
     diz(', apurada pelo Conselho das Finanças Públicas.', ', as computed by the Public Finance Council.',
       L('excerpt', 'O CFP apurou um crescimento da despesa líquida'), O('cfp-quem', 'Conselho das Finanças Públicas (CFP)')),
@@ -312,7 +312,7 @@ medida('camaras', [], [
 medida('taxa-de-emprego-2025', ['glossario-emprego'], [
   inteira(diz('É a parte das pessoas dos ', 'It is the share of people aged ',
     O('glossario-emprego', 'The employment rate is the percentage of employed persons in relation to the comparable total population.'), L('unit', '% da população'))),
-  inteira(diz(' anos que tem emprego.', ' who are in employment.', O('glossario-emprego', 'percentage of employed persons'), L('excerpt', 'Age class: From 20 to 64 years'))),
+  inteira(diz(' anos que tem emprego.', ' who are employed.', O('glossario-emprego', 'percentage of employed persons'), L('excerpt', 'Age class: From 20 to 64 years'))),
 ], [ALG('20', L('excerpt', 'From 20 to 64 years')), ALG('64', L('excerpt', 'From 20 to 64 years'))]);
 
 medida('taxa-de-desemprego-mip-2025', ['eurostat-tipsun20-descricao', 'glossario-desemprego', 'glossario-atividade', 'painel-pdm'], [

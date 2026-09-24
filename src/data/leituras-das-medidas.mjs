@@ -59,11 +59,19 @@
 /*
  * LEVADO PARA AQUI A 24.09.2026 PELO CONSTRUTOR DO L1 (Claude Opus 5.5), de
  * `design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs`, com os
- * acertos que a auditoria das origens pediu e com mais nenhum. São quinze
- * (A1 a A15), e cada um está dito palavra a palavra, com o literal que o
- * manda, no relatório do bloco
- * (`design/especime-v3/medicoes/l1-2026-09-24/LEIA-ME.md`) e na auditoria
- * (`tests/cartao/leituras-provadas.json`). A maior parte troca palavras pelas
+ * acertos que a auditoria das origens pediu (A1 a A15), os dois que o portão
+ * da voz pediu (A16 e A17) e mais nenhum. Cada um está dito palavra a palavra,
+ * com o literal que o manda, no relatório do bloco
+ * (`design/especime-v3/medicoes/l1-2026-09-24/LEIA-ME.md`), no registo que o
+ * guião dos acertos escreve e confere (`acertos-l1.py` e `acertos-l1.json`, na
+ * mesma pasta) e na auditoria (`tests/cartao/leituras-provadas.json`). A16 e
+ * A17 trocam uma palavra que coincidia com uma frase que o inventário da voz
+ * tem retirada («Despesa paga», o cabeçalho das contas do município que saiu
+ * com a peça 2 do B1; «The share of people aged to who are in employment.», a
+ * definição da casa que o F1.10 trocou pela da fonte), e a palavra que entra é
+ * a do literal que a sustenta («Despesa financiada por fundos da UE», do
+ * Conselho das Finanças Públicas; «employed persons», do glossário do
+ * Eurostat). As frases retiradas ficam retiradas. A maior parte troca palavras pelas
  * do literal; três tiram uma oração que nenhuma origem lida diz (o «que o
  * Governo controla» da despesa líquida, o sentido de uma subida da taxa de
  * câmbio efetiva real, a ama profissional das creches, que o Eurostat põe fora
@@ -155,12 +163,12 @@ export const LEITURAS_DAS_MEDIDAS = {
   },
   'crescimento-da-despesa-liquida-2025': {
     pt: [
-      'É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida, a despesa paga por fundos europeus nem a que sobe e desce com o desemprego, apurada pelo Conselho das Finanças Públicas.',
+      'É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida, a despesa financiada por fundos europeus nem a que sobe e desce com o desemprego, apurada pelo Conselho das Finanças Públicas.',
       anterior('Cresceu mais do que em', 'Cresceu menos do que em', 'Cresceu o mesmo que em'),
       ' Portugal comprometeu-se, num compromisso endossado pelo Conselho da União Europeia, a não a deixar crescer mais de ', { referencia: 'unico' }, ' % em ', { periodo: 'proprio' }, ': ', { estado: { fora: ['cresceu mais do que isso.'], dentro: ['ficou dentro desse limite.'] } },
     ],
     en: [
-      'It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt, spending paid by European funds and the spending that rises and falls with unemployment, as computed by the Public Finance Council.',
+      'It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt, spending financed by European funds and the spending that rises and falls with unemployment, as computed by the Public Finance Council.',
       anterior('It grew more than in', 'It grew less than in', 'It grew the same as in'),
       ' Portugal committed, in a commitment endorsed by the Council of the European Union, not to let it grow by more than ', { referencia: 'unico' }, ' % in ', { periodo: 'proprio' }, ': it ', { estado: { fora: ['grew more than that.'], dentro: ['stayed within that limit.'] } },
     ],
@@ -250,7 +258,7 @@ export const LEITURAS_DAS_MEDIDAS = {
   /* ------------------------------------------------- 2 · Trabalho */
   'taxa-de-emprego-2025': {
     pt: ['É a parte das pessoas dos ', { nl: '20', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos que tem emprego.', SUBIU, MEDIA_UE],
-    en: ['It is the share of people aged ', { nl: '20', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' who are in employment.', ROSE, EU_AVERAGE],
+    en: ['It is the share of people aged ', { nl: '20', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' who are employed.', ROSE, EU_AVERAGE],
   },
   'taxa-de-desemprego-mip-2025': {
     pt: ['É a parte das pessoas dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '74', motivo: 'escala-de-instrumento' }, ' anos que está sem emprego, entre as que trabalham ou procuram trabalho.', SUBIU, MEDIA_UE, ...TETO_PT(['uma taxa acima de ', { referencia: 'unico' }, ' %'])],
