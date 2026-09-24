@@ -64,7 +64,7 @@ ACERTOS = [
          trocas=[(f"'A dívida líquida ao exterior {v}'", f"'A responsabilidade líquida perante o exterior {v}'", 1) for v in ['encolheu face a', 'cresceu face a', 'ficou igual à de']]
                 + [(f"'The net debt to the rest of the world {v}'", f"'The net external liability {v}'", 1) for v in ['shrank from', 'grew from', 'was unchanged from']]),
     dict(chave='A5', medida='taxa-de-cambio-efectiva-real-2025',
-         porque='Nenhuma origem lida diz que uma subida quer dizer perda de competitividade: a descrição do Eurostat fala da competitividade de preços ou de custos sem dizer o sentido, os glossários procurados responderam 404, e a página do BCE lida não o diz. A oração sai.',
+         porque='Nenhuma origem lida diz que uma subida quer dizer perda de competitividade: a descrição do Eurostat e o glossário da taxa de câmbio (para onde o endereço do glossário da taxa de câmbio efetiva real redireciona) falam da competitividade de preços sem dizer o sentido de uma subida, os outros dois endereços de glossário procurados responderam 404, e a página do BCE dos indicadores harmonizados de competitividade também não o diz. A oração sai.',
          literais=[('eurostat-tipser10-descricao', 'excerto', 'price or cost competitiveness relative to its principal competitors')],
          trocas=[("em três anos: quando sobe, o país perde competitividade; quando desce, ganha.'", "em três anos.'", 1),
                  ("over three years: when it rises, the country loses competitiveness; when it falls, it gains.'", "over three years.'", 1)]),

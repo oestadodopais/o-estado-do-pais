@@ -33,8 +33,13 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[4]
-CANDIDATOS = [os.environ.get('OEDP_MOTOR'), '/Users/nunosantos/Instruments/ResearchHub/.worktrees/l1-2026-09-24',
-              '/Users/nunosantos/Instruments/ResearchHub']
+# O motor ao lado do sítio, sem o caminho da máquina escrito aqui (o repositório
+# é público): a variável, ou a pasta `ResearchHub` vizinha da árvore principal,
+# primeiro a worktree do bloco e depois a árvore principal do motor. Da
+# worktree do sítio, a árvore principal está três pastas acima.
+_VIZINHAS = [RAIZ.parent, RAIZ.parents[3]] if len(RAIZ.parents) > 3 else [RAIZ.parent]
+CANDIDATOS = [os.environ.get('OEDP_MOTOR')] + [str(v / 'ResearchHub' / sub) for v in _VIZINHAS
+                                                for sub in ('.worktrees/l1-2026-09-24', '')]
 MOTOR = next(Path(c) for c in CANDIDATOS if c and (Path(c) / 'indicators/out/l1-2026-09-24/pedidos.jsonl').exists())
 FONTE = 'content/13 Dominios/source/'
 API = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
@@ -275,7 +280,7 @@ def main(argv):
             for k in ('url', 'lido', 'excerto', 'excertoEn', 'selo', 'alojada', 'publicador', 'documento'):
                 if d.get(k) != dd.get(k):
                     faltas.append(f'{chave}: o campo «{k}» da declaração difere do que se lê no motor')
-        print(json.dumps({'motor': str(MOTOR), 'origens': len(origens), 'conferidas': len(origens) - len({f.split(':')[0] for f in faltas}),
+        print(json.dumps({'motor': os.path.relpath(MOTOR, RAIZ), 'origens': len(origens), 'conferidas': len(origens) - len({f.split(':')[0] for f in faltas}),
                           'faltas': faltas}, ensure_ascii=False, indent=2))
         return 1 if faltas else 0
     print(json.dumps(origens, ensure_ascii=False, indent=2))

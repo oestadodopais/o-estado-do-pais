@@ -1,0 +1,113 @@
+{
+  "o_que_e": "A sonda das origens que o L1 procurou e não achou (bloco L1, item 4).",
+  "registos": [
+    {
+      "medida": "taxa-de-cambio-efectiva-real-2025",
+      "procurava": "o sentido de uma subida",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Real_effective_exchange_rate_(REER)",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Real_effective_exchange_rate_(REER)",
+      "http": 404,
+      "bytes": 63603,
+      "sha256": "02b135cd66b05fec27002f45edbf19e704d0e75402b71777c3c57d6396099424",
+      "hora_utc": "2026-09-24T07:59:17Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "taxa-de-cambio-efectiva-real-2025",
+      "procurava": "o sentido de uma subida",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Real_effective_exchange_rate",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Real_effective_exchange_rate",
+      "http": 200,
+      "bytes": 67607,
+      "sha256": "84f0d27da1f5a727bcf8b31c5a23c54cc9e158c1b2db2d87d520cdc2c4731a52",
+      "hora_utc": "2026-09-24T07:59:17Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "taxa-de-cambio-efectiva-real-2025",
+      "procurava": "o sentido de uma subida",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Effective_exchange_rate",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Effective_exchange_rate",
+      "http": 404,
+      "bytes": 63391,
+      "sha256": "def5929fa53816383e0427babbea4eeb293797883e15456254c9779d054afcb0",
+      "hora_utc": "2026-09-24T07:59:18Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "criancas-em-creche-2025",
+      "procurava": "o que é o cuidado formal",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Formal_childcare",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Formal_childcare",
+      "http": 404,
+      "bytes": 63272,
+      "sha256": "cd642b26eb9c026fe5c1f0cd4b52236dec6f80deb5820784429375ce7a289002",
+      "hora_utc": "2026-09-24T07:59:19Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "criancas-em-creche-2025",
+      "procurava": "o que é o cuidado formal",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Childcare",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Childcare",
+      "http": 404,
+      "bytes": 63153,
+      "sha256": "5a61b68830e99f5078842914cdaea2cf7380cca7a76a627e0c30029046f22973",
+      "hora_utc": "2026-09-24T07:59:20Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "criancas-em-creche-2025",
+      "procurava": "o que é o cuidado formal",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Early_childhood_education_and_care_(ECEC)",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Early_childhood_education_and_care_(ECEC)",
+      "http": 404,
+      "bytes": 63705,
+      "sha256": "eb6bf6fd2984633adfc229dff5b841eb6803d15d0294c0208050dff8e5150e53",
+      "hora_utc": "2026-09-24T07:59:22Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "saldo-das-administracoes-publicas-2025",
+      "procurava": "o que são as administrações públicas",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:General_government_(GG)_sector",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:General_government_(GG)_sector",
+      "http": 404,
+      "bytes": 63518,
+      "sha256": "77ad0e6dabc23d028e8cad8aeb9d6ba282056cafa797c1a326f40b1c1baebb98",
+      "hora_utc": "2026-09-24T07:59:22Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "pib-real-per-capita-2025",
+      "procurava": "o que é um valor real",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Chain-linked_volumes",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Chain-linked_volumes",
+      "http": 404,
+      "bytes": 63340,
+      "sha256": "76f170123fc5fc391c33a2565e021e0148ad670ef2914db7929efc159dcdf615",
+      "hora_utc": "2026-09-24T07:59:23Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "medida": "pib-real-per-capita-2025",
+      "procurava": "o que é um valor real",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Chain_linking",
+      "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Chain_linking",
+      "http": 404,
+      "bytes": 63221,
+      "sha256": "21bf3bbae0a8805234ecbb68b8303fb543457415524090811e5d85cd902cf890",
+      "hora_utc": "2026-09-24T07:59:24Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor"
+    }
+  ]
+}
