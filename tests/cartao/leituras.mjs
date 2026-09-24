@@ -45,7 +45,8 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { spawnSync } from 'node:child_process';
 import { parse, NodeType } from 'node-html-parser';
 import { load } from 'js-yaml';
 
@@ -656,6 +657,31 @@ export function plantasDaK17(dist) {
   regista('um algarismo sem literal', conferirAuditoriaDasLeituras({ auditoria: auditoriaCom((a) => {
     dela(a, 'taxa-de-emprego-2025').algarismos[0].apoios = [{ linha: 'propria', campo: 'excerpt', literal: 'Age class' }];
   }) }).erros, 'não traz o algarismo');
+  /* A DECLARAÇÃO RETIRADA FECHA A CONSTRUÇÃO (item 1 do brief): um processo
+     filho carrega o resolvedor com um gancho do carregador que tira a leitura do
+     saldo ao ficheiro das leituras, e o módulo tem de recusar carregar, que é o
+     que faz a construção fechar quando um componente o importa. O mesmo filho
+     sem o gancho tem de carregar, ou a planta não mediu nada. */
+  {
+    const resolvedor = pathToFileURL(path.join(RAIZ, 'src/lib/leitura-da-medida.mjs')).href;
+    const gancho = `export async function load(url, ctx, next) {
+      if (url.endsWith('/src/data/leituras-das-medidas.mjs')) {
+        return { format: 'module', shortCircuit: true, source:
+          "import * as m from '" + url + "?inteira'; const c = { ...m.LEITURAS_DAS_MEDIDAS };" +
+          " delete c['${saldo}']; export const LEITURAS_DAS_MEDIDAS = c;" };
+      }
+      return next(url, ctx);
+    }`;
+    const filho = (/** @type {string} */ codigo) => spawnSync(process.execPath, ['--input-type=module', '-e', codigo], { encoding: 'utf8', cwd: RAIZ });
+    const limpo = filho(`await import(${JSON.stringify(resolvedor)});`);
+    const semDeclaracao = filho(`import { register } from 'node:module';
+      register('data:text/javascript,' + encodeURIComponent(${JSON.stringify(gancho)}));
+      await import(${JSON.stringify(resolvedor)});`);
+    const saida = `${semDeclaracao.stdout}${semDeclaracao.stderr}`;
+    regista('a declaração retirada fecha o resolvedor',
+      limpo.status === 0 && semDeclaracao.status !== 0 ? saida.split('\n').filter((l) => l.includes(saldo)) : [`o filho limpo saiu com ${limpo.status} e o plantado com ${semDeclaracao.status}`],
+      'não tem leitura declarada nesta edição');
+  }
   /* A segunda metade, sobre uma cópia da página dos temas em memória. */
   const temas = fs.readFileSync(path.join(dist, 'temas/index.html'), 'utf8');
   const linhas = loadClaims();
