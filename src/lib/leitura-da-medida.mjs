@@ -382,7 +382,7 @@ export function textoDaLeitura(pedacos, lang) {
       if (typeof p === 'string') return p;
       if ('claim' in p) {
         const c = getClaim(p.claim);
-        return `${c.value}${p.sufixo ?? ''}${(c.source_flag === 'p' || (c.source_flag === '&' && c.source_flag_note === 'Dado provisório')) ? ' ' + s.prov.provisorio : ''}`;
+        return `${c.value}${p.sufixo ?? ''}${(c.source_flag === 'p' || (c.source_flag === '&' && c.source_flag_note === 'Dado provisório')) ? ' (' + s.prov.dadoProvisorio + ')' : ''}`;
       }
       if ('data' in p) return dataDaCasa(p.data.valor, lang);
       if ('prova' in p) return dataDaCasa(String(p.item.valor), lang);

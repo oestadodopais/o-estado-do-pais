@@ -2361,6 +2361,8 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
       publicador: o.publicador,
       documento: o.documento,
       url: o.url,
+      lingua: campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en'),
+      linguaExcerto: lang === 'en' && o.excertoEn ? 'en' : (campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en')),
       lido: o.lido,
       excerto: lang === 'en' && o.excertoEn ? o.excertoEn : o.excerto,
     };

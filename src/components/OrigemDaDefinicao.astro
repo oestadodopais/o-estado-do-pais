@@ -64,7 +64,8 @@ const { origens, s, lang = 'pt' } = Astro.props;
 /* A língua de cada excerto. As páginas da Comissão e do Eurostat estão em
    inglês; a do Banco de Portugal tem as duas, e a declaração escolhe. Um
    excerto sem a marca da sua língua é lido com a fonética errada. */
-const linguaDoExcerto = (o) => (o.chave === 'bdp-pii' ? (lang === 'en' ? 'en' : 'pt-PT') : 'en');
+const linguaDoDocumento = (o) => o.lingua === 'pt' ? 'pt-PT' : o.lingua;
+const linguaDoExcerto = (o) => o.linguaExcerto === 'pt' ? 'pt-PT' : o.linguaExcerto;
 
 /* A CHAVE DO EXCERTO NO REGISTO DAS TRANSCRIÇÕES. `bdp-pii` é a única origem que
    publica o mesmo texto nas duas línguas, e a declaração traz as duas: a chave
@@ -87,7 +88,7 @@ const chaveDoExcerto = (o) =>
           href={o.url}
           rel="noopener noreferrer external"
           data-verbatim={`origem-${o.chave}-documento`}
-          lang={linguaDoExcerto(o) === 'en' ? 'en' : undefined}
+          lang={linguaDoDocumento(o)}
         >
           {o.documento}
         </a>

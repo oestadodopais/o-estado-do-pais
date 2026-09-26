@@ -201,7 +201,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         {periodo && (
           <span class="cartao-medida-periodo">
             <span class="cartao-medida-em" data-voz>
-              {s.cartao.em}{' '}
+              {String(periodo).match(/^\d{4}-T[1-4]$/) ? (lang === 'en' ? 'in the' : 'no') : s.cartao.em}{' '}
             </span>
             <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
           </span>
@@ -259,7 +259,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
                 rótulo do campo é do recibo. É prosa da casa, declarada uma vez em
                 `strings.mjs` e no inventário das frases. */}
             <span class="cartao-medida-em" data-voz>
-              {s.cartao.em}{' '}
+              {String(periodo).match(/^\d{4}-T[1-4]$/) ? (lang === 'en' ? 'in the' : 'no') : s.cartao.em}{' '}
             </span>
             <CampoDaLinha id={c.id} campo="reference_date" valor={periodo} lang={lang} />
           </span>

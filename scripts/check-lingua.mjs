@@ -133,6 +133,7 @@ import {
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
 import { LINGUA_DO_RESPONSAVEL } from '../src/data/politica-ia.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
+import { conferirLinguaDasOrigens } from './lingua-das-origens.mjs';
 import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -663,6 +664,7 @@ for (const ficheiro of paginasDe(DIST)) {
   if (rota?.key === 'documento') continue;
 
   const root = parse(cru);
+  erros.push(...conferirLinguaDasOrigens(root, rota?.lang ?? 'pt').map(e => rel0 + ': ' + e));
   const html = root.querySelector('html');
   const lingua = html?.getAttribute('lang') ?? '';
   /* A edição, lida do documento e não do caminho: é o `lang` do `<html>` que o

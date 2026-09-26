@@ -597,7 +597,7 @@ const LINHAS = loadClaims();
 
 async function mediuOProvisorio() {
   for (const { edicao, area } of EDICOES) {
-    const palavra = edicao === 'pt' ? ' provisório' : ' provisional';
+    const palavra = edicao === 'pt' ? ' (dado provisório)' : ' (provisional data)';
     const outras = new Set();
     const comPalavra = new Set();
     const daBandeira = new Set();

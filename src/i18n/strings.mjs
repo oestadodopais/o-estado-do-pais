@@ -308,6 +308,7 @@ export const STRINGS = {
          da página da linha, e continua lá inteira. Esta é a palavra que viaja
          com o número para onde quer que ele vá. */
       provisorio: 'provisório',
+      dadoProvisorio: 'dado provisório',
       /* AS DATAS DE FRESCURA DIZEM-SE POR PALAVRAS (F1.10, §7.3, 09.09.2026).
          «"lido", "conferido", "reconferido" passam a rótulos por palavras
          ("lido na fonte a", "verificado a"), uma vez por lugar.» O leitor de
@@ -2940,6 +2941,7 @@ export const STRINGS = {
       selo: 'source',
       seloDaCasa: 'row',
       provisorio: 'provisional',
+      dadoProvisorio: 'provisional data',
       lido: 'Read at the source on',
       fonte: 'Published by',
       documento: 'Document',
