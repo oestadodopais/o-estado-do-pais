@@ -783,7 +783,7 @@ check:cabeca: PASS
 > o-estado-do-pais@0.1.0 check:fontes
 > node tests/linha/sem-resposta.mjs
 
-  6018 página(s) de linha lidas em /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/rp1-2026-09-26/dist, nas duas edições (3009 linha(s) × 2).
+  6018 página(s) de linha lidas em <worktree do sítio>/dist, nas duas edições (3009 linha(s) × 2).
   4 linha(s) devem mostrar o estado da fonte · 3005 não devem · 8 de proveniência incompleta, fora do mapa e com noindex.
   endereços em falha: 2 · anfitriões em falha: 1
 
@@ -1037,7 +1037,7 @@ A leitura do olho, provada contra o motor:
 > node tests/livro/indice.mjs --navegador
 
 
-  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7422 página(s) de /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/rp1-2026-09-26/dist
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7422 página(s) de <worktree do sítio>/dist
 
   [32m✓[0m I1 · o nome de uma medida não é o identificador
 [90m        20 página(s) · 484 entrada(s) · 432 com nome · 52 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 484 identificador(es) em metadado

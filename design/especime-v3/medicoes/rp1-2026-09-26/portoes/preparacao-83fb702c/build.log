@@ -157,7 +157,7 @@
 15:55:45 [types] Generated 24ms
 15:55:45 [build] output: "static"
 15:55:45 [build] mode: "static"
-15:55:45 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/rp1-2026-09-26/dist/
+15:55:45 [build] directory: <worktree do sítio>/dist/
 15:55:45 [build] Collecting build info...
 15:55:45 [build] ✓ Completed in 42ms.
 15:55:46 [build] Building static entrypoints...

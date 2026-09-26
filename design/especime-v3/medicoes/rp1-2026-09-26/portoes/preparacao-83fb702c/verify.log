@@ -783,7 +783,7 @@ check:cabeca: PASS
 > o-estado-do-pais@0.1.0 check:fontes
 > node tests/linha/sem-resposta.mjs
 
-  6000 página(s) de linha lidas em /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/rp1-2026-09-26/dist, nas duas edições (3000 linha(s) × 2).
+  6000 página(s) de linha lidas em <worktree do sítio>/dist, nas duas edições (3000 linha(s) × 2).
   4 linha(s) devem mostrar o estado da fonte · 2996 não devem · 8 de proveniência incompleta, fora do mapa e com noindex.
   endereços em falha: 2 · anfitriões em falha: 1
 
