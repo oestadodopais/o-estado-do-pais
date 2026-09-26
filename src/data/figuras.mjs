@@ -1674,6 +1674,128 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
       sha256: "73b845571b4abbc15dce54cba4145936b236a59d6c190faf71ab80440f07d5b2",
     },
   },
+  /* ===========================================================================
+     AS ORIGENS DA PASSAGEM DE CORREÇÃO DO L1 (26.09.2026)
+     ===========================================================================
+     A leitura a frio do Codex (26.09.2026, achados 7 a 14) achou oito leituras
+     cujas palavras não passavam no teste dos dois minutos: termos da
+     estatística («em termos reais», «em termos líquidos», «rendimento
+     mediano», «outro cuidado formal», «rendimento disponível», «produtores
+     residentes») ditos sem o que querem dizer. A palavra corrente que explica
+     um termo só entra com um literal de origem selada, e estas são as origens:
+     pedidas pelo cliente da casa a 26.09.2026, guardadas em
+     `indicators/out/l1-2026-09-26/` no motor com `pedidos.jsonl`, e alojadas no
+     estudo 13 com o resumo no manifesto. A última (a idade da taxa de
+     atividade, achado 15) recorta-se da resposta de `tipslm60` que o bloco já
+     tinha selado a 24.09.2026. O «outro cuidado formal» explica-se com a
+     origem que já estava declarada (`eurostat-cuidado-formal`), e por isso não
+     tem entrada nova. Recortadas por `origens-l1.py`, como as de cima. */
+  "eurostat-nama10-volumes": {
+    publicador: "Eurostat",
+    documento: "Annual national accounts (nama10) · Reference metadata",
+    url: "https://ec.europa.eu/eurostat/cache/metadata/en/nama10_esms.htm",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "Volume figures show the development of aggregates excluding inflation. They are typically derived as previous year prices but presented as chain linked volumes, indices or various growth rates.",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-md-nama10_esms.htm",
+      campo: "o texto da página, ponto 4 «Unit of measure»",
+      hora: "2026-09-26T08:30:09Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "11aa0a2b5c46d634c4a93beccde67fafb9ffd1a735675cbb0fae5da71f96b406",
+    },
+  },
+  "eurostat-glossario-inflacao": {
+    publicador: "Eurostat",
+    documento: "Statistics Explained · Glossary: Inflation",
+    url: "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Inflation",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "Inflation is an increase in the general price level of goods and services.",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-se-glossary-inflation.html",
+      campo: "o texto da página",
+      hora: "2026-09-26T08:30:09Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "b348800dd18331bc07e49c9cd0e7c8df6729346e84b64e832d7e8bb9713b0dc4",
+    },
+  },
+  "eurostat-sec2010-registo-liquido": {
+    publicador: "Eurostat",
+    documento: "European system of accounts: ESA 2010",
+    url: "https://ec.europa.eu/eurostat/documents/3859598/5925693/KS-02-13-269-EN.PDF",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "Definition: net recording of financial transactions means that acquisitions of financial assets are shown net of disposals of financial assets, and that incurrences of liabilities are shown net of repayments of liabilities.",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-esa2010-KS-02-13-269-EN.pdf",
+      campo: "a extração pdftotext (modo simples), §5.23 «Net and gross recording»",
+      hora: "2026-09-26T08:30:11Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858",
+      extracao: {"ficheiro": "indicators/out/l1-2026-09-26/eurostat-esa2010-KS-02-13-269-EN.txt", "sha256": "164126b77cddab0134a5f3a460f3454631a2f42eb75584df7cce4fc3909f7c9e", "ferramenta": "pdftotext version 26.03.0, modo simples (sem -layout)"},
+    },
+  },
+  "eurostat-glossario-mediana": {
+    publicador: "Eurostat",
+    documento: "Statistics Explained · Glossary: Median",
+    url: "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Median",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "The median is the middle value in a group of numbers ranked in order of size. The median is that value of the variate which divides the total frequency into two halves. In other words, it is the number in a range of scores that falls exactly in the middle so that 50% of the scores are above and 50% are below.",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-se-glossary-median.html",
+      campo: "o texto da página",
+      hora: "2026-09-26T08:30:13Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "5ce1efae336c89aa20388d77e461c48bedf426ec2bfaaece2ef5420ecde263b7",
+    },
+  },
+  "eurostat-glossario-rendimento-disponivel": {
+    publicador: "Eurostat",
+    documento: "Statistics Explained · Glossary: Equivalised disposable income",
+    url: "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Equivalised_disposable_income",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "The equivalised disposable income is calculated in three steps: all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits, plus any other household income; taxes and social contributions that have been paid, are deducted from this sum;",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-se-glossary-equivalised-disposable-income.html",
+      campo: "o texto da página",
+      hora: "2026-09-26T08:30:13Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "f7f7ac15b21e6ff90fba33d8030decccb6c23941995769be186d82b424034988",
+    },
+  },
+  "eurostat-glossario-residente": {
+    publicador: "Eurostat",
+    documento: "Statistics Explained · Glossary: Resident institutional unit",
+    url: "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Resident_institutional_unit",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "A resident institutional unit is an institutional unit that is resident because it has a centre of economic interest in the economic territory of a country (or a grouping like the European Union (EU) or the euro area). The sectors of an economy are composed of two main types of institutional units: households and individuals who make up a household; legal and social entities, such as corporations and quasi-corporations (e.g. branches of foreign direct investors), non-profit institutions, and the government of that economy. These institutional units must meet certain criteria to be considered resident units of the economy. Residence is a particularly important attribute of an institutional unit in the balance of payments because the identification of transactions between residents and non-residents underpins the system. Residence is also important in national accounts because the residency status of producers determines the limits of domestic production",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-se-glossary-resident-institutional-unit.html",
+      campo: "o texto da página",
+      hora: "2026-09-26T08:30:14Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "2a87b8433e092de4a3660293f5c5b10ca623e7f5597763d21928f6932b9c8c3f",
+    },
+  },
+  "eurostat-tipslm60-idade": {
+    publicador: "Eurostat",
+    documento: "Labour force participation rate",
+    url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm60?format=JSON&lang=EN&geo=PT&unit=PPCH_3Y",
+    lido: "2026-09-24",
+    lingua: "en",
+    excerto: "The labour force participation rate is the percentage of economically active population aged 15-64 on the total population of the same age.",
+    selo: {
+      motor: "indicators/out/l1-2026-09-24/eurostat-tipslm60.json",
+      campo: "extension.description",
+      hora: "2026-09-24T06:29:28Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
+    },
+  },
 });
 
 /**

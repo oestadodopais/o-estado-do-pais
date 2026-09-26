@@ -17,6 +17,12 @@ origem a origem, o sha256, a hora, o cliente e que o excerto está mesmo no camp
 (é o que o relatório do bloco cita como a releitura dos selos). Sem argumentos,
 imprime o JSON das origens.
 
+A PASSAGEM DE CORREÇÃO (26.09.2026) acrescentou as origens pedidas em
+`indicators/out/l1-2026-09-26/` e as duas testemunhas discordantes do valor de
+referência (a descrição do conjunto do Eurostat, com a data de criação, e a
+página do painel da Comissão, lida nesse dia): `--escreve-js` escreve-as também,
+e `--confere` confere-as contra a declaração de `src/data/figuras.mjs`.
+
 A NORMALIZAÇÃO DO CAMPO, escrita uma vez: o texto de um campo HTML (a descrição
 de uma resposta da API, uma página, o corpo da página do Banco de Portugal) é o
 texto sem as marcas, com as entidades desfeitas e os espaços em branco
@@ -179,6 +185,90 @@ O.append(dict(chave='eurostat-tessi164-regimes', publicador='Eurostat', document
               inicio='"OWN_L":"Owner, with mortgage or loan"', fim='"RENT_FR":"Tenant, rent at reduced price or free"', cliente='core.http.HttpClient'))
 
 
+# A PASSAGEM DE CORREÇÃO (26.09.2026): as origens das palavras correntes que a
+# leitura a frio achou por explicar (os achados 7 a 14), pedidas hoje pelo mesmo
+# cliente em `indicators/out/l1-2026-09-26/`, e a idade da taxa de atividade
+# (achado 15), recortada da resposta de `tipslm60` que o bloco já tinha selado.
+L1C = 'indicators/out/l1-2026-09-26'
+O.append(dict(chave='eurostat-nama10-volumes', publicador='Eurostat', documento='Annual national accounts (nama10) · Reference metadata', lingua='en',
+              pasta=L1C, ficheiro='eurostat-md-nama10_esms.htm', tipo='pagina', caminho=None,
+              rotulo='o texto da página, ponto 4 «Unit of measure»', inicio='Volume figures show the development of aggregates excluding inflation.',
+              fim='presented as chain linked volumes, indices or various growth rates.'))
+O.append(dict(chave='eurostat-glossario-inflacao', publicador='Eurostat', documento='Statistics Explained · Glossary: Inflation', lingua='en',
+              pasta=L1C, ficheiro='eurostat-se-glossary-inflation.html', tipo='pagina', caminho=None,
+              rotulo='o texto da página', inicio='Inflation is an increase in the general price level of goods and services.', fim=None))
+O.append(dict(chave='eurostat-sec2010-registo-liquido', publicador='Eurostat', documento='European system of accounts: ESA 2010', lingua='en',
+              pasta=L1C, ficheiro='eurostat-esa2010-KS-02-13-269-EN.pdf', tipo='texto', texto='eurostat-esa2010-KS-02-13-269-EN.txt', caminho=None,
+              rotulo='a extração pdftotext (modo simples), §5.23 «Net and gross recording»',
+              inicio='Definition: net recording of financial transactions means that', fim='shown net of repayments of liabilities.'))
+O.append(dict(chave='eurostat-glossario-mediana', publicador='Eurostat', documento='Statistics Explained · Glossary: Median', lingua='en',
+              pasta=L1C, ficheiro='eurostat-se-glossary-median.html', tipo='pagina', caminho=None,
+              rotulo='o texto da página', inicio='The median is the middle value in a group of numbers ranked in order of size.',
+              fim='50% of the scores are above and 50% are below.'))
+O.append(dict(chave='eurostat-glossario-rendimento-disponivel', publicador='Eurostat', documento='Statistics Explained · Glossary: Equivalised disposable income', lingua='en',
+              pasta=L1C, ficheiro='eurostat-se-glossary-equivalised-disposable-income.html', tipo='pagina', caminho=None,
+              rotulo='o texto da página', inicio='The equivalised disposable income is calculated in three steps:', fim='are deducted from this sum;'))
+O.append(dict(chave='eurostat-glossario-residente', publicador='Eurostat', documento='Statistics Explained · Glossary: Resident institutional unit', lingua='en',
+              pasta=L1C, ficheiro='eurostat-se-glossary-resident-institutional-unit.html', tipo='pagina', caminho=None,
+              rotulo='o texto da página', inicio='A resident institutional unit is an institutional unit that is resident because',
+              fim='the residency status of producers determines the limits of domestic production'))
+api('eurostat-tipslm60-idade', 'Labour force participation rate', 'tipslm60', 'The labour force participation rate is the percentage',
+    'on the total population of the same age.')
+
+
+# AS TESTEMUNHAS DISCORDANTES (passagem de correção, 26.09.2026, I151): o que a
+# descrição do conjunto do Eurostat diz do valor de referência, com a data de
+# criação do conjunto (a anotação CREATED da própria resposta), e o que a página
+# do painel da Comissão diz, lida hoje, com quem manda. A declaração vai ao pé
+# do valor de referência de cada medida em `src/data/figuras.mjs`
+# (`testemunhaDiscordante`), e a K9 do `check:cartao` exige-lhe as quatro coisas.
+TESTEMUNHAS = [
+    dict(medida='taxa-de-cambio-efectiva-real-2025',
+         eurostat=dict(documento='Real effective exchange rate - percentage changes, 42 trading partners', pasta='indicators/out/l1-2026-09-24',
+                       ficheiro='eurostat-tipser10.json', caminho='extension.description',
+                       inicio='The indicative thresholds are +/-5% for euro area', fim='for non-euro area countries.', limiar='+/-5%'),
+         comissao=dict(documento='Scoreboard · Macroeconomic Imbalance Procedure', pasta=L1C, ficheiro='ce-painel-pdm-scoreboard.html',
+                       rotulo='o texto da página, a lista «The headline indicators consist of the following 13 indicators and indicative thresholds»',
+                       inicio='real effective exchange rates (3-year percentage change)', fim='for non-euro area countries.', limiar='-/+3%')),
+    dict(medida='desempenho-das-exportacoes-2025',
+         eurostat=dict(documento='Share of exports of advanced economies', pasta='indicators/out/l1-2026-09-24',
+                       ficheiro='eurostat-tipsbp60.json', caminho='extension.description',
+                       inicio='The indicative threshold is +3%.', fim=None, limiar='+3%'),
+         comissao=dict(documento='Scoreboard · Macroeconomic Imbalance Procedure', pasta=L1C, ficheiro='ce-painel-pdm-scoreboard.html',
+                       rotulo='o texto da página, a lista «The headline indicators consist of the following 13 indicators and indicative thresholds»',
+                       inicio='export performance against advanced economies', fim='with a threshold of -3%.', limiar='-3%')),
+]
+
+
+def resolve_testemunha(t):
+    """A testemunha inteira, lida dos bytes selados: os dois excertos, a data de criação e a de leitura."""
+    e, c = t['eurostat'], t['comissao']
+    re_ = pedido(e['pasta'], e['ficheiro'])
+    rc = pedido(c['pasta'], c['ficheiro'])
+    for pasta, ficheiro, r in ((e['pasta'], e['ficheiro'], re_), (c['pasta'], c['ficheiro'], rc)):
+        if hashlib.sha256((MOTOR / pasta / ficheiro).read_bytes()).hexdigest() != r['sha256']:
+            raise SystemExit(f"{t['medida']}: os bytes de {ficheiro} não são os do registo do pedido")
+    ex_e = recorta(le_campo(f"{e['pasta']}/{e['ficheiro']}", 'api', e['caminho']), e['inicio'], e['fim'])
+    ex_c = recorta(le_campo(f"{c['pasta']}/{c['ficheiro']}", 'pagina', None), c['inicio'], c['fim'])
+    for ex, lim, quem in ((ex_e, e['limiar'], 'Eurostat'), (ex_c, c['limiar'], 'Comissão')):
+        if lim not in ex:
+            raise SystemExit(f"{t['medida']}: o valor «{lim}» não está no excerto da {quem}")
+    dados = json.loads((MOTOR / e['pasta'] / e['ficheiro']).read_bytes())
+    criado = [a['date'] for a in dados['extension']['annotation'] if a.get('type') == 'CREATED']
+    if len(criado) != 1:
+        raise SystemExit(f"{t['medida']}: a resposta do Eurostat não tem uma anotação CREATED, e sim {len(criado)}")
+    return t['medida'], {
+        'eurostat': {'documento': e['documento'], 'url': re_['url'], 'excerto': ex_e, 'limiar': e['limiar'], 'criado': criado[0][:10],
+                     'selo': {'motor': f"{e['pasta']}/{e['ficheiro']}", 'campo': e['caminho'],
+                              'criacao': f"extension.annotation, CREATED: {criado[0]}", 'hora': re_['timestamp_utc'],
+                              'cliente': re_.get('cliente') or CLIENTE_L1, 'sha256': re_['sha256']}},
+        'comissao': {'documento': c['documento'], 'url': rc['url'], 'excerto': ex_c, 'limiar': c['limiar'], 'lido': rc['timestamp_utc'][:10],
+                     'selo': {'motor': f"{c['pasta']}/{c['ficheiro']}", 'campo': c['rotulo'], 'hora': rc['timestamp_utc'],
+                              'cliente': rc.get('cliente') or CLIENTE_L1, 'sha256': rc['sha256']}},
+        'manda': 'comissao',
+    }
+
+
 # Ficheiros já alojados no estudo 13 (o registo é o FETCH.json e o resumo o do manifesto).
 def aloj(chave, publicador, documento, lingua, rel, tipo, rotulo, inicio, fim=None, caminho=None):
     O.append(dict(chave=chave, publicador=publicador, documento=documento, lingua=lingua, pasta=None, ficheiro=FONTE + rel,
@@ -261,16 +351,41 @@ def js(chave, d):
     return '\n'.join(linhas)
 
 
+def js_testemunha(d):
+    """A testemunha na forma de `src/data/figuras.mjs`, para ir ao pé do `limiar`."""
+    q = lambda s: json.dumps(s, ensure_ascii=False)
+    linhas = ['    testemunhaDiscordante: {']
+    for quem in ('eurostat', 'comissao'):
+        linhas.append(f'      {quem}: {{')
+        for k in ('documento', 'url', 'excerto', 'limiar', 'criado', 'lido'):
+            if k in d[quem]:
+                linhas.append(f'        {k}: {q(d[quem][k])},')
+        linhas.append('        selo: {')
+        for kk, vv in d[quem]['selo'].items():
+            linhas.append(f'          {kk}: {q(vv)},')
+        linhas.append('        },')
+        linhas.append('      },')
+    linhas.append(f"      manda: {q(d['manda'])},")
+    linhas.append('    },')
+    return '\n'.join(linhas)
+
+
 def main(argv):
     origens = dict(resolve(o) for o in O)
+    testemunhas = dict(resolve_testemunha(t) for t in TESTEMUNHAS)
     if '--escreve-js' in argv:
         alvo = Path(argv[argv.index('--escreve-js') + 1])
-        alvo.write_text('\n'.join(js(k, d) for k, d in origens.items()) + '\n', encoding='utf-8')
-        print(f'{len(origens)} origens escritas em {alvo}')
+        partes = [js(k, d) for k, d in origens.items()]
+        partes += [f'/* testemunhaDiscordante de {k} */\n' + js_testemunha(d) for k, d in testemunhas.items()]
+        alvo.write_text('\n'.join(partes) + '\n', encoding='utf-8')
+        print(f'{len(origens)} origens e {len(testemunhas)} testemunhas escritas em {alvo}')
         return 0
     if '--confere' in argv:
-        codigo = ("import('" + str(RAIZ / 'src/data/figuras.mjs') + "').then(m => console.log(JSON.stringify(m.ORIGENS_DAS_DEFINICOES)))")
-        declaradas = json.loads(subprocess.run(['node', '-e', codigo], capture_output=True, text=True, check=True, cwd=RAIZ).stdout)
+        codigo = ("Promise.all([import('" + str(RAIZ / 'src/data/figuras.mjs') + "'), import('" + str(RAIZ / 'src/data/referencias-das-medidas.mjs') + "')])"
+                  ".then(([m, r]) => console.log(JSON.stringify({ o: m.ORIGENS_DAS_DEFINICOES, t: Object.fromEntries([...r.REFERENCIAS_DAS_MEDIDAS]"
+                  ".filter(([, v]) => v.testemunhaDiscordante).map(([k, v]) => [k, v.testemunhaDiscordante])) })))")
+        lido = json.loads(subprocess.run(['node', '-e', codigo], capture_output=True, text=True, check=True, cwd=RAIZ).stdout)
+        declaradas, declaradas_t = lido['o'], lido['t']
         faltas = []
         for chave, d in origens.items():
             dd = declaradas.get(chave)
@@ -280,10 +395,20 @@ def main(argv):
             for k in ('url', 'lido', 'excerto', 'excertoEn', 'selo', 'alojada', 'publicador', 'documento'):
                 if d.get(k) != dd.get(k):
                     faltas.append(f'{chave}: o campo «{k}» da declaração difere do que se lê no motor')
-        print(json.dumps({'motor': os.path.relpath(MOTOR, RAIZ), 'origens': len(origens), 'conferidas': len(origens) - len({f.split(':')[0] for f in faltas}),
+        for medida, d in testemunhas.items():
+            dd = declaradas_t.get(medida)
+            if dd is None:
+                faltas.append(f'testemunha de {medida}: não está declarada ao pé do valor de referência')
+            elif d != dd:
+                faltas.append(f'testemunha de {medida}: a declaração difere do que se lê no motor')
+        for medida in declaradas_t:
+            if medida not in testemunhas:
+                faltas.append(f'testemunha de {medida}: está declarada e este guião não a lê no motor')
+        print(json.dumps({'motor': os.path.relpath(MOTOR, RAIZ), 'origens': len(origens), 'testemunhas': len(testemunhas),
+                          'conferidas': len(origens) + len(testemunhas) - len({f.split(':')[0] for f in faltas}),
                           'faltas': faltas}, ensure_ascii=False, indent=2))
         return 1 if faltas else 0
-    print(json.dumps(origens, ensure_ascii=False, indent=2))
+    print(json.dumps({'origens': origens, 'testemunhas': testemunhas}, ensure_ascii=False, indent=2))
     return 0
 
 

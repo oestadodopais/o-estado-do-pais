@@ -6,6 +6,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-09-24",
       "o_que": "primeira leitura, sobre as origens pedidas neste bloco e as já declaradas, com os acertos A1 a A17 às palavras fixas (A1 a A15 pedidos pela auditoria das origens, A16 e A17 pelo portão da voz)"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-09-26",
+      "o_que": "a passagem de correção depois da leitura a frio do Codex: as palavras correntes dos termos que ela achou por explicar (os achados 7 a 14), com as origens pedidas a 26.09.2026, e a idade da taxa de atividade (o achado 15), nos acertos A18 a A26; e as duas leituras reescritas pelo lugar de direção (a disparidade salarial e as câmaras), relidas parte a parte"
     }
   ],
   "comuns": [
@@ -558,36 +563,20 @@
           ]
         }
       ]
-    },
-    {
-      "pt": " % do rendimento disponível com a habitação.",
-      "en": " % of its disposable income on housing.",
-      "partes": [
-        {
-          "pt": " % do rendimento disponível com a habitação.",
-          "en": " % of its disposable income on housing.",
-          "classe": "diz",
-          "apoios": [
-            {
-              "origem": "glossario-sobrecarga",
-              "campo": "excerto",
-              "literal": "represent more than 40 % of disposable income"
-            }
-          ]
-        }
-      ]
     }
   ],
   "medidas": [
     {
       "id": "pib-real-per-capita-2025",
       "origens": [
-        "eurostat-tipsna40-descricao"
+        "eurostat-tipsna40-descricao",
+        "eurostat-nama10-volumes",
+        "eurostat-glossario-inflacao"
       ],
       "folhas": [
         {
-          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, em termos reais.",
-          "en": "It is the value of everything the country produced in the year, per inhabitant, in real terms.",
+          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços.",
+          "en": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices.",
           "partes": [
             {
               "pt": "É o valor de tudo o que o país produziu",
@@ -636,14 +625,29 @@
               ]
             },
             {
-              "pt": ", em termos reais",
-              "en": ", in real terms",
+              "pt": ", descontada a subida dos preços",
+              "en": ", excluding the rise in prices",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "eurostat-tipsna40-descricao",
                   "campo": "excerto",
                   "literal": "real gross domestic product"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "volumes encadeados"
+                },
+                {
+                  "origem": "eurostat-nama10-volumes",
+                  "campo": "excerto",
+                  "literal": "Volume figures show the development of aggregates excluding inflation."
+                },
+                {
+                  "origem": "eurostat-glossario-inflacao",
+                  "campo": "excerto",
+                  "literal": "Inflation is an increase in the general price level of goods and services."
                 }
               ]
             },
@@ -2297,13 +2301,14 @@
       "id": "fluxo-de-credito-as-empresas-2025",
       "origens": [
         "eurostat-tipspc30-descricao",
+        "eurostat-sec2010-registo-liquido",
         "pdm-credito-as-empresas",
         "painel-pdm"
       ],
       "folhas": [
         {
-          "pt": "É quanto crédito as empresas contraíram num ano, em termos líquidos, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior.",
-          "en": "It is how much credit companies took on in a year, net, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year.",
+          "pt": "É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior.",
+          "en": "It is how much credit companies took on in a year, minus what they repaid, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year.",
           "partes": [
             {
               "pt": "É quanto crédito as empresas contraíram num ano",
@@ -2318,14 +2323,19 @@
               ]
             },
             {
-              "pt": ", em termos líquidos",
-              "en": ", net",
+              "pt": ", descontado o que reembolsaram",
+              "en": ", minus what they repaid",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "eurostat-tipspc30-descricao",
                   "campo": "excerto",
                   "literal": "the net amount of liabilities"
+                },
+                {
+                  "origem": "eurostat-sec2010-registo-liquido",
+                  "campo": "excerto",
+                  "literal": "incurrences of liabilities are shown net of repayments of liabilities"
                 }
               ]
             },
@@ -2392,13 +2402,14 @@
       "id": "fluxo-de-credito-as-familias-2025",
       "origens": [
         "eurostat-tipspc40-descricao",
+        "eurostat-sec2010-registo-liquido",
         "pdm-credito-as-familias",
         "painel-pdm"
       ],
       "folhas": [
         {
-          "pt": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, em termos líquidos, em percentagem da dívida que já tinham no fim do ano anterior.",
-          "en": "It is how much credit households and non-profit institutions serving them took on in a year, net, as a percentage of the debt they already had at the end of the previous year.",
+          "pt": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, descontado o que reembolsaram, em percentagem da dívida que já tinham no fim do ano anterior.",
+          "en": "It is how much credit households and non-profit institutions serving them took on in a year, minus what they repaid, as a percentage of the debt they already had at the end of the previous year.",
           "partes": [
             {
               "pt": "É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano",
@@ -2413,14 +2424,19 @@
               ]
             },
             {
-              "pt": ", em termos líquidos",
-              "en": ", net",
+              "pt": ", descontado o que reembolsaram",
+              "en": ", minus what they repaid",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "eurostat-tipspc40-descricao",
                   "campo": "excerto",
                   "literal": "the net amount of liabilities"
+                },
+                {
+                  "origem": "eurostat-sec2010-registo-liquido",
+                  "campo": "excerto",
+                  "literal": "incurrences of liabilities are shown net of repayments of liabilities"
                 }
               ]
             },
@@ -2492,45 +2508,46 @@
           ]
         },
         {
-          "pt": " eram ",
-          "en": " there were ",
+          "pt": " o número de câmaras acima do limite era ",
+          "en": " the number of councils above the limit was ",
           "partes": [
             {
-              "pt": " eram ",
-              "en": " there were ",
-              "classe": "liga"
+              "pt": " o número de câmaras acima do limite era ",
+              "en": " the number of councils above the limit was ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "indice-de-divida-limite-legal",
+                  "campo": "excerpt",
+                  "literal": "Índice de divida total (Índice permitido <= 150%)"
+                },
+                {
+                  "linha": "indice-de-divida-limite-legal",
+                  "campo": "document.locator",
+                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                }
+              ]
             }
           ]
         },
         {
           "pt": " em ",
-          "en": " in ",
+          "en": " out of ",
           "partes": [
             {
               "pt": " em ",
-              "en": " in ",
-              "classe": "liga"
+              "en": " out of ",
+              "classe": "conta"
             }
           ]
         },
         {
-          "pt": "; ",
-          "en": "; ",
+          "pt": ", e o número sem valor publicado era ",
+          "en": ", and the number with no published value was ",
           "partes": [
             {
-              "pt": "; ",
-              "en": "; ",
-              "classe": "liga"
-            }
-          ]
-        },
-        {
-          "pt": " não tem valor publicado.",
-          "en": " has no published value.",
-          "partes": [
-            {
-              "pt": " não tem valor publicado.",
-              "en": " has no published value.",
+              "pt": ", e o número sem valor publicado era ",
+              "en": ", and the number with no published value was ",
               "classe": "conta"
             }
           ]
@@ -2830,8 +2847,8 @@
       ],
       "folhas": [
         {
-          "pt": "Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens: a diferença foi de ",
-          "en": "Per hour worked, women earned on average less than men: the gap was ",
+          "pt": "Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens, em ",
+          "en": "Per hour worked, women earned on average less than men, in ",
           "partes": [
             {
               "pt": "Por cada hora de trabalho",
@@ -2854,36 +2871,6 @@
                   "origem": "eurostat-earn-grgpg2-definicao",
                   "campo": "excerto",
                   "literal": "the difference between average gross hourly earnings of male paid employees and of female paid employees"
-                }
-              ]
-            },
-            {
-              "pt": ": a diferença foi de ",
-              "en": ": the gap was ",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "eurostat-earn-grgpg2-definicao",
-                  "campo": "excerto",
-                  "literal": "represents the difference between"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pt": " do ganho dos homens, em ",
-          "en": " of men’s earnings, in ",
-          "partes": [
-            {
-              "pt": " do ganho dos homens",
-              "en": " of men’s earnings",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "eurostat-earn-grgpg2-definicao",
-                  "campo": "excerto",
-                  "literal": "as a percentage of average gross hourly earnings of male paid employees"
                 }
               ]
             },
@@ -2913,18 +2900,35 @@
           ]
         },
         {
-          "pt": " ou mais trabalhadores.",
-          "en": " or more employees.",
+          "pt": " ou mais trabalhadores: a diferença, em percentagem do ganho dos homens, foi de ",
+          "en": " or more employees: the gap, as a percentage of men’s earnings, was ",
           "partes": [
             {
-              "pt": " ou mais trabalhadores.",
-              "en": " or more employees.",
+              "pt": " ou mais trabalhadores",
+              "en": " or more employees",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "eurostat-earn-grgpg2-cobertura",
                   "campo": "excerto",
                   "literal": "10 employees or more"
+                }
+              ]
+            },
+            {
+              "pt": ": a diferença, em percentagem do ganho dos homens, foi de ",
+              "en": ": the gap, as a percentage of men’s earnings, was ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-earn-grgpg2-definicao",
+                  "campo": "excerto",
+                  "literal": "represents the difference between"
+                },
+                {
+                  "origem": "eurostat-earn-grgpg2-definicao",
+                  "campo": "excerto",
+                  "literal": "as a percentage of average gross hourly earnings of male paid employees"
                 }
               ]
             }
@@ -3257,17 +3261,46 @@
       "origens": [
         "glossario-atividade",
         "pdm-taxa-de-actividade",
+        "eurostat-tipslm60-idade",
         "eurostat-tipslm60-descricao",
         "painel-pdm"
       ],
       "folhas": [
         {
-          "pt": "É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.",
-          "en": "It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.",
+          "pt": "É quanto mudou em três anos, em pontos percentuais, a parte da população dos ",
+          "en": "It is how much the share of the population aged ",
           "partes": [
             {
-              "pt": "É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.",
-              "en": "It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.",
+              "pt": "É quanto mudou em três anos, em pontos percentuais, a parte da população dos ",
+              "en": "It is how much the share of the population aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-taxa-de-actividade",
+                  "campo": "excerto",
+                  "literal": "3-year change in pps"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos, pontos percentuais"
+                },
+                {
+                  "origem": "eurostat-tipslm60-idade",
+                  "campo": "excerto",
+                  "literal": "the percentage of economically active population aged 15-64 on the total population of the same age"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " anos que está ativa: a trabalhar ou à procura de trabalho.",
+          "en": " that is active, working or looking for work, changed over three years, in percentage points.",
+          "partes": [
+            {
+              "pt": " anos que está ativa: a trabalhar ou à procura de trabalho.",
+              "en": " that is active, working or looking for work, changed over three years, in percentage points.",
               "classe": "diz",
               "apoios": [
                 {
@@ -3372,7 +3405,28 @@
           ]
         }
       ],
-      "algarismos": []
+      "algarismos": [
+        {
+          "nl": "15",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslm60-idade",
+              "campo": "excerto",
+              "literal": "aged 15-64"
+            }
+          ]
+        },
+        {
+          "nl": "64",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslm60-idade",
+              "campo": "excerto",
+              "literal": "aged 15-64"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "custo-unitario-do-trabalho-2025",
@@ -3483,7 +3537,8 @@
       "id": "risco-de-pobreza-ou-exclusao-2025",
       "origens": [
         "glossario-arope",
-        "eurostat-tipslc10-descricao"
+        "eurostat-tipslc10-descricao",
+        "eurostat-glossario-mediana"
       ],
       "folhas": [
         {
@@ -3515,8 +3570,8 @@
           ]
         },
         {
-          "pt": " % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez.",
-          "en": " % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once.",
+          "pt": " % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.",
+          "en": " % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.",
           "partes": [
             {
               "pt": " % do rendimento mediano do país",
@@ -3563,6 +3618,35 @@
                   "origem": "glossario-arope",
                   "campo": "excerto",
                   "literal": "People are included only once"
+                }
+              ]
+            },
+            {
+              "pt": " O rendimento mediano é o do meio",
+              "en": " The median income is the one in the middle",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-mediana",
+                  "campo": "excerto",
+                  "literal": "The median is the middle value in a group of numbers ranked in order of size."
+                }
+              ]
+            },
+            {
+              "pt": ": metade da população tem mais e metade tem menos.",
+              "en": ": half the population has more and half has less.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-mediana",
+                  "campo": "excerto",
+                  "literal": "50% of the scores are above and 50% are below."
+                },
+                {
+                  "origem": "eurostat-tipslc10-descricao",
+                  "campo": "excerto",
+                  "literal": "of the national median equalised disposable income"
                 }
               ]
             }
@@ -3825,12 +3909,12 @@
           ]
         },
         {
-          "pt": " anos que está numa creche ou noutro cuidado formal.",
-          "en": " who are in a nursery or other formal childcare.",
+          "pt": " anos que está numa creche ou noutro cuidado formal: um programa planeado por entidades públicas ou privadas reconhecidas, e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional.",
+          "en": " who are in a nursery or other formal childcare: a programme planned through public organisations or recognised private bodies, and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder.",
           "partes": [
             {
-              "pt": " anos que está numa creche ou noutro cuidado formal.",
-              "en": " who are in a nursery or other formal childcare.",
+              "pt": " anos que está numa creche ou noutro cuidado formal",
+              "en": " who are in a nursery or other formal childcare",
               "classe": "diz",
               "apoios": [
                 {
@@ -3839,14 +3923,43 @@
                   "literal": "cared for by formal arrangements other than by the family"
                 },
                 {
-                  "origem": "eurostat-cuidado-formal",
-                  "campo": "excerto",
-                  "literal": "Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies"
-                },
-                {
                   "linha": "propria",
                   "campo": "document.title",
                   "literal": "in formal childcare"
+                }
+              ]
+            },
+            {
+              "pt": ": um programa planeado por entidades públicas ou privadas reconhecidas",
+              "en": ": a programme planned through public organisations or recognised private bodies",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-cuidado-formal",
+                  "campo": "excerto",
+                  "literal": "Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies"
+                }
+              ]
+            },
+            {
+              "pt": ", e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional.",
+              "en": ", and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-cuidado-formal",
+                  "campo": "excerto",
+                  "literal": "care provided by grandparents, other household members (not parents), other relatives, friends or neighbours"
+                },
+                {
+                  "origem": "eurostat-cuidado-formal",
+                  "campo": "excerto",
+                  "literal": "Other types of childcare may include care that is provided by a professional child-minder"
+                },
+                {
+                  "origem": "eurostat-tepsr_sp210-descricao",
+                  "campo": "excerto",
+                  "literal": "other than by the family"
                 }
               ]
             }
@@ -3919,7 +4032,8 @@
       "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
       "origens": [
         "eurostat-tessi164-inquilinos",
-        "glossario-sobrecarga"
+        "glossario-sobrecarga",
+        "eurostat-glossario-rendimento-disponivel"
       ],
       "folhas": [
         {
@@ -3951,6 +4065,60 @@
               ]
             }
           ]
+        },
+        {
+          "pt": " % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+          "en": " % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+          "partes": [
+            {
+              "pt": " % do rendimento disponível com a habitação.",
+              "en": " % of its disposable income on housing.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-sobrecarga",
+                  "campo": "excerto",
+                  "literal": "represent more than 40 % of disposable income"
+                }
+              ]
+            },
+            {
+              "pt": " O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais",
+              "en": " Disposable income is what the household receives, from work, investment and social benefits",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-rendimento-disponivel",
+                  "campo": "excerto",
+                  "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits"
+                }
+              ]
+            },
+            {
+              "pt": ", depois de pagos os impostos e as contribuições sociais",
+              "en": ", after the taxes and social contributions it pays",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-rendimento-disponivel",
+                  "campo": "excerto",
+                  "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+                }
+              ]
+            },
+            {
+              "pt": "; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+              "en": "; housing allowances are deducted from both the income and the housing costs.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-sobrecarga",
+                  "campo": "excerto",
+                  "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
+                }
+              ]
+            }
+          ]
         }
       ],
       "algarismos": [
@@ -3972,6 +4140,7 @@
         "eurostat-tespm140-populacao",
         "eurostat-tessi164-regimes",
         "glossario-sobrecarga",
+        "eurostat-glossario-rendimento-disponivel",
         "ce-swd-2026-222-habitacao"
       ],
       "folhas": [
@@ -4012,6 +4181,60 @@
                   "origem": "glossario-sobrecarga",
                   "campo": "excerto",
                   "literal": "the percentage of the population living in households where the total housing costs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+          "en": " % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+          "partes": [
+            {
+              "pt": " % do rendimento disponível com a habitação.",
+              "en": " % of its disposable income on housing.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-sobrecarga",
+                  "campo": "excerto",
+                  "literal": "represent more than 40 % of disposable income"
+                }
+              ]
+            },
+            {
+              "pt": " O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais",
+              "en": " Disposable income is what the household receives, from work, investment and social benefits",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-rendimento-disponivel",
+                  "campo": "excerto",
+                  "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits"
+                }
+              ]
+            },
+            {
+              "pt": ", depois de pagos os impostos e as contribuições sociais",
+              "en": ", after the taxes and social contributions it pays",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-rendimento-disponivel",
+                  "campo": "excerto",
+                  "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+                }
+              ]
+            },
+            {
+              "pt": "; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+              "en": "; housing allowances are deducted from both the income and the housing costs.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-sobrecarga",
+                  "campo": "excerto",
+                  "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
                 }
               ]
             }
@@ -4293,18 +4516,48 @@
     {
       "id": "formacao-bruta-de-capital-fixo-2025",
       "origens": [
+        "eurostat-glossario-residente",
         "eurostat-glossario-fbcf",
         "eurostat-tipsna20-descricao",
         "eurostat-tipsna40-descricao"
       ],
       "folhas": [
         {
-          "pt": "É o que os produtores residentes compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, ",
-          "en": "It is what resident producers acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, ",
+          "pt": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, ",
+          "en": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, ",
           "partes": [
             {
-              "pt": "É o que os produtores residentes compraram num ano, descontado o que venderam",
-              "en": "It is what resident producers acquired in a year, less what they disposed of",
+              "pt": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo",
+              "en": "It is what companies, the State, households and non-profit institutions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-residente",
+                  "campo": "excerto",
+                  "literal": "households and individuals who make up a household; legal and social entities, such as corporations and quasi-corporations (e.g. branches of foreign direct investors), non-profit institutions, and the government of that economy"
+                }
+              ]
+            },
+            {
+              "pt": " que produzem no país",
+              "en": " that produce in the country",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-glossario-residente",
+                  "campo": "excerto",
+                  "literal": "resident because it has a centre of economic interest in the economic territory of a country"
+                },
+                {
+                  "origem": "eurostat-glossario-residente",
+                  "campo": "excerto",
+                  "literal": "the residency status of producers determines the limits of domestic production"
+                }
+              ]
+            },
+            {
+              "pt": " compraram num ano, descontado o que venderam",
+              "en": " acquired in a year, less what they disposed of",
               "classe": "diz",
               "apoios": [
                 {

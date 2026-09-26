@@ -2,15 +2,15 @@
   "o_que_e": "Os acertos de palavras do construtor do L1 às leituras do lugar de direção, conferidos por acertos-l1.py.",
   "fonte": {
     "caminho": "design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs",
-    "sha256": "b98c7300d380c56c8dfbb7f282da979c35bc55d1bbf1fe90fe350979f971a757"
+    "sha256": "5bc34b635e3f676cd3646ec006a837b0f4b620b884302e77684355293548c385"
   },
   "sitio": {
     "caminho": "src/data/leituras-das-medidas.mjs",
-    "sha256": "b0f2f0966e6c479c3e759eed4ba9de2b7265f41dddbaec000256257ee9bd3e68"
+    "sha256": "f729357d350b4863ada95ffa85106c6735483eeb47645a2d4017a602bcff2533"
   },
   "auditoria": {
     "caminho": "tests/cartao/leituras-provadas.json",
-    "sha256": "29b85455094f173c9ad5e5872973511054e6b0aea69115a73b3d3139047805c1"
+    "sha256": "0063910a23c09966bb9ab64d7e86294098e47bfb54730f407af521ea4bdb8548"
   },
   "conferido": "a cópia do lugar de direção com estas trocas e o ficheiro do sítio são iguais sem os comentários de bloco e com os espaços juntos",
   "acertos": [
@@ -337,7 +337,7 @@
     {
       "chave": "A11",
       "medida": "disparidade-salarial-entre-sexos-2024",
-      "porque": "A cobertura do Eurostat é a das empresas com «10 employees or more» (trabalhadores, e não pessoas ao serviço). E a primeira frase só é verdadeira com o valor positivo: passa a ramo `sinal.positivo`, sem mudar palavra, e um valor de outro sinal fecha a construção em vez de a deixar sair falsa.",
+      "porque": "A cobertura do Eurostat é a das empresas com «10 employees or more» (trabalhadores, e não pessoas ao serviço). E a primeira frase só é verdadeira com o valor positivo: passa a ramo `sinal.positivo`, sem mudar palavra, e um valor de outro sinal fecha a construção em vez de a deixar sair falsa. A 26.09.2026 o lugar de direção reescreveu a frase no seu ficheiro, para que o valor feche a oração e «provisório» feche com ele; as trocas deste acerto acompanham a frase nova e acertam o mesmo que acertavam.",
       "literais": [
         {
           "dono": "eurostat-earn-grgpg2-cobertura",
@@ -352,8 +352,13 @@
       ],
       "trocas": [
         {
-          "antes": "' ou mais pessoas ao serviço.', DIFERENCA, DIFERENCA_UE]",
-          "depois": "' ou mais trabalhadores.'] } }, DIFERENCA, DIFERENCA_UE]",
+          "antes": "' ou mais pessoas ao serviço: a diferença, em percentagem do ganho dos homens, foi de '",
+          "depois": "' ou mais trabalhadores: a diferença, em percentagem do ganho dos homens, foi de '",
+          "vezes": 1
+        },
+        {
+          "antes": "' %' }, '.', DIFERENCA, DIFERENCA_UE]",
+          "depois": "' %' }, '.'] } }, DIFERENCA, DIFERENCA_UE]",
           "vezes": 1
         },
         {
@@ -362,8 +367,8 @@
           "vezes": 1
         },
         {
-          "antes": "' or more employees.', GAP, GAP_EU]",
-          "depois": "' or more employees.'] } }, GAP, GAP_EU]",
+          "antes": "' %' }, '.', GAP, GAP_EU]",
+          "depois": "' %' }, '.'] } }, GAP, GAP_EU]",
           "vezes": 1
         },
         {
@@ -523,6 +528,287 @@
         {
           "antes": "' who are in employment.', ROSE, EU_AVERAGE]",
           "depois": "' who are employed.', ROSE, EU_AVERAGE]",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A18",
+      "medida": "pib-real-per-capita-2025",
+      "porque": "A leitura a frio (achado 7) achou «em termos reais» por explicar. A ficha de metadados que a resposta `tipsna40` nomeia diz que os volumes mostram a evolução dos agregados sem a inflação, a linha está em volumes encadeados, e o glossário do Eurostat diz que a inflação é a subida do nível geral dos preços: a leitura passa a dizer «descontada a subida dos preços».",
+      "literais": [
+        {
+          "dono": "eurostat-nama10-volumes",
+          "campo": "excerto",
+          "literal": "Volume figures show the development of aggregates excluding inflation."
+        },
+        {
+          "dono": "eurostat-glossario-inflacao",
+          "campo": "excerto",
+          "literal": "Inflation is an increase in the general price level of goods and services."
+        },
+        {
+          "dono": "propria",
+          "campo": "unit",
+          "literal": "volumes encadeados"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "por habitante, em termos reais.'",
+          "depois": "por habitante, descontada a subida dos preços.'",
+          "vezes": 1
+        },
+        {
+          "antes": "per inhabitant, in real terms.'",
+          "depois": "per inhabitant, excluding the rise in prices.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A19",
+      "medida": "fluxo-de-credito-as-empresas-2025",
+      "porque": "A leitura a frio (achado 8) achou «em termos líquidos» por explicar. O Eurostat mede o montante líquido dos passivos contraídos no ano, e o SEC 2010 publicado pelo Eurostat (§5.23) define o registo líquido: os passivos contraídos descontados dos reembolsos. A leitura passa a dizer «descontado o que reembolsaram».",
+      "literais": [
+        {
+          "dono": "eurostat-tipspc30-descricao",
+          "campo": "excerto",
+          "literal": "the net amount of liabilities"
+        },
+        {
+          "dono": "eurostat-sec2010-registo-liquido",
+          "campo": "excerto",
+          "literal": "incurrences of liabilities are shown net of repayments of liabilities"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É quanto crédito as empresas contraíram num ano, em termos líquidos, fora as financeiras",
+          "depois": "'É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is how much credit companies took on in a year, net, excluding financial companies",
+          "depois": "'It is how much credit companies took on in a year, minus what they repaid, excluding financial companies",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A20",
+      "medida": "fluxo-de-credito-as-familias-2025",
+      "porque": "A leitura a frio (achado 9) achou «em termos líquidos» por explicar, pela mesma razão do A19: o Eurostat mede o montante líquido dos passivos contraídos no ano, e o SEC 2010 (§5.23) define o líquido como os passivos contraídos descontados dos reembolsos.",
+      "literais": [
+        {
+          "dono": "eurostat-tipspc40-descricao",
+          "campo": "excerto",
+          "literal": "the net amount of liabilities"
+        },
+        {
+          "dono": "eurostat-sec2010-registo-liquido",
+          "campo": "excerto",
+          "literal": "incurrences of liabilities are shown net of repayments of liabilities"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "contraíram num ano, em termos líquidos, em percentagem",
+          "depois": "contraíram num ano, descontado o que reembolsaram, em percentagem",
+          "vezes": 1
+        },
+        {
+          "antes": "took on in a year, net, as a percentage",
+          "depois": "took on in a year, minus what they repaid, as a percentage",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A21",
+      "medida": "risco-de-pobreza-ou-exclusao-2025",
+      "porque": "A leitura a frio (achado 10) achou «rendimento mediano» por explicar. O glossário do Eurostat diz que a mediana é o valor do meio, com metade acima e metade abaixo: a leitura ganha uma frase que o diz.",
+      "literais": [
+        {
+          "dono": "eurostat-glossario-mediana",
+          "campo": "excerto",
+          "literal": "The median is the middle value in a group of numbers ranked in order of size."
+        },
+        {
+          "dono": "eurostat-glossario-mediana",
+          "campo": "excerto",
+          "literal": "50% of the scores are above and 50% are below."
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "; cada pessoa conta uma só vez.', SUBIU, MEDIA_UE]",
+          "depois": "; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.', SUBIU, MEDIA_UE]",
+          "vezes": 1
+        },
+        {
+          "antes": "; each person counts only once.', ROSE, EU_AVERAGE]",
+          "depois": "; each person counts only once. The median income is the one in the middle: half the population has more and half has less.', ROSE, EU_AVERAGE]",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A22",
+      "medida": "criancas-em-creche-2025",
+      "porque": "A leitura a frio (achado 11) achou que «outro cuidado formal» só repetia o nome da categoria. A página do Eurostat que o bloco já tinha alojado diz o que o cuidado formal é (um programa planeado por entidades públicas e privadas reconhecidas) e o que fica fora dele (o cuidado dos avós, de outros familiares, de amigos ou vizinhos, e o de uma ama profissional): a leitura diz as duas coisas com as palavras dela. A página não dá exemplos como o jardim de infância, e a leitura não os dá.",
+      "literais": [
+        {
+          "dono": "eurostat-cuidado-formal",
+          "campo": "excerto",
+          "literal": "Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies"
+        },
+        {
+          "dono": "eurostat-cuidado-formal",
+          "campo": "excerto",
+          "literal": "care provided by grandparents, other household members (not parents), other relatives, friends or neighbours"
+        },
+        {
+          "dono": "eurostat-cuidado-formal",
+          "campo": "excerto",
+          "literal": "Other types of childcare may include care that is provided by a professional child-minder"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "' anos que está numa creche ou noutro cuidado formal.'",
+          "depois": "' anos que está numa creche ou noutro cuidado formal: um programa planeado por entidades públicas ou privadas reconhecidas, e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional.'",
+          "vezes": 1
+        },
+        {
+          "antes": "' who are in a nursery or other formal childcare.'",
+          "depois": "' who are in a nursery or other formal childcare: a programme planned through public organisations or recognised private bodies, and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder.'",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A23",
+      "medida": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "porque": "A leitura a frio (achado 12) achou «rendimento disponível» por explicar. O glossário do Eurostat diz como se faz: somam-se os rendimentos do trabalho, dos investimentos e das prestações sociais, e descontam-se os impostos e as contribuições sociais pagos; e o glossário da sobrecarga diz que os custos e o rendimento contam líquidos dos apoios à habitação. A leitura ganha uma frase que diz as duas coisas.",
+      "literais": [
+        {
+          "dono": "eurostat-glossario-rendimento-disponivel",
+          "campo": "excerto",
+          "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits"
+        },
+        {
+          "dono": "eurostat-glossario-rendimento-disponivel",
+          "campo": "excerto",
+          "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+        },
+        {
+          "dono": "glossario-sobrecarga",
+          "campo": "excerto",
+          "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "' % do rendimento disponível com a habitação.', SUBIU, MEDIA_UE]",
+          "depois": "' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, MEDIA_UE]",
+          "vezes": 1
+        },
+        {
+          "antes": "' % of its disposable income on housing.', ROSE, EU_AVERAGE]",
+          "depois": "' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, EU_AVERAGE]",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A24",
+      "medida": "sobrecarga-do-custo-da-habitacao-2025",
+      "porque": "A leitura a frio (achado 13) achou o mesmo «rendimento disponível» por explicar na sobrecarga de todos os regimes; a frase é a do A23, pelas mesmas origens.",
+      "literais": [
+        {
+          "dono": "eurostat-glossario-rendimento-disponivel",
+          "campo": "excerto",
+          "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits"
+        },
+        {
+          "dono": "eurostat-glossario-rendimento-disponivel",
+          "campo": "excerto",
+          "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+        },
+        {
+          "dono": "glossario-sobrecarga",
+          "campo": "excerto",
+          "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "' % do rendimento disponível com a habitação.', SUBIU, ' Este total",
+          "depois": "' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, ' Este total",
+          "vezes": 1
+        },
+        {
+          "antes": "' % of its disposable income on housing.', ROSE, ' This total",
+          "depois": "' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, ' This total",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A25",
+      "medida": "formacao-bruta-de-capital-fixo-2025",
+      "porque": "A leitura a frio (achado 14) achou «produtores residentes» por explicar. O glossário do Eurostat da unidade institucional residente diz quem são as unidades de uma economia (as famílias, as empresas, as instituições sem fim lucrativo e o Estado), que é residente quem tem o centro de interesse económico no território do país, e que é a residência dos produtores que delimita a produção do país: a leitura diz quem são, e que produzem no país.",
+      "literais": [
+        {
+          "dono": "eurostat-glossario-residente",
+          "campo": "excerto",
+          "literal": "households and individuals who make up a household; legal and social entities, such as corporations and quasi-corporations (e.g. branches of foreign direct investors), non-profit institutions, and the government of that economy"
+        },
+        {
+          "dono": "eurostat-glossario-residente",
+          "campo": "excerto",
+          "literal": "resident because it has a centre of economic interest in the economic territory of a country"
+        },
+        {
+          "dono": "eurostat-glossario-residente",
+          "campo": "excerto",
+          "literal": "the residency status of producers determines the limits of domestic production"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "pt: ['É o que os produtores residentes compraram num ano,",
+          "depois": "pt: ['É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano,",
+          "vezes": 1
+        },
+        {
+          "antes": "en: ['It is what resident producers acquired in a year,",
+          "depois": "en: ['It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year,",
+          "vezes": 1
+        }
+      ]
+    },
+    {
+      "chave": "A26",
+      "medida": "taxa-de-actividade-2025",
+      "porque": "A leitura a frio (achado 15) achou a população sem a idade que a fonte fixa. A descrição de `tipslm60` que o bloco já tinha selado diz «economically active population aged 15-64»: a leitura escreve os dois limites, com o literal na auditoria, como as outras idades. A pergunta da medida não muda (é do B2) e continua sem a idade.",
+      "literais": [
+        {
+          "dono": "eurostat-tipslm60-idade",
+          "campo": "excerto",
+          "literal": "the percentage of economically active population aged 15-64 on the total population of the same age"
+        }
+      ],
+      "trocas": [
+        {
+          "antes": "'É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.',",
+          "depois": "'É quanto mudou em três anos, em pontos percentuais, a parte da população dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos que está ativa: a trabalhar ou à procura de trabalho.',",
+          "vezes": 1
+        },
+        {
+          "antes": "'It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.',",
+          "depois": "'It is how much the share of the population aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' that is active, working or looking for work, changed over three years, in percentage points.',",
           "vezes": 1
         }
       ]

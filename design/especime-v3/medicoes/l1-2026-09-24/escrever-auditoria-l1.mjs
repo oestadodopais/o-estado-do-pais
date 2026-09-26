@@ -95,8 +95,6 @@ const COMUNS = [
     O('glossario-desemprego', 'The unemployment rate is the number of people unemployed as a percentage of the labour force.'),
     O('glossario-atividade', 'The economically active population comprises employed and unemployed persons.'))),
   inteira(diz(' Zero quer dizer que não mudou.', ' Zero means it did not change.', L('unit', 'variação em três anos'))),
-  inteira(diz(' % do rendimento disponível com a habitação.', ' % of its disposable income on housing.',
-    O('glossario-sobrecarga', 'represent more than 40 % of disposable income'))),
 ];
 
 /* ------------------------------------------------------ as medidas */
@@ -105,12 +103,15 @@ const M = {};
 const medida = (id, origens, folhas, algarismos = []) => { M[id] = { id, origens, folhas, algarismos }; };
 const ALG = (nl, ...apoios) => ({ nl, apoios });
 
-medida('pib-real-per-capita-2025', ['eurostat-tipsna40-descricao'], [
+medida('pib-real-per-capita-2025', ['eurostat-tipsna40-descricao', 'eurostat-nama10-volumes', 'eurostat-glossario-inflacao'], [
   folha(
     diz('É o valor de tudo o que o país produziu', 'It is the value of everything the country produced', PIB),
     diz(' no ano', ' in the year', O('eurostat-tipsna40-descricao', 'the average population of a specific year'), ANO),
     diz(', por habitante', ', per inhabitant', L('unit', 'euros por habitante'), O('eurostat-tipsna40-descricao', 'ratio of real gross domestic product to the average population')),
-    diz(', em termos reais', ', in real terms', O('eurostat-tipsna40-descricao', 'real gross domestic product')),
+    diz(', descontada a subida dos preços', ', excluding the rise in prices',
+      O('eurostat-tipsna40-descricao', 'real gross domestic product'), L('unit', 'volumes encadeados'),
+      O('eurostat-nama10-volumes', 'Volume figures show the development of aggregates excluding inflation.'),
+      O('eurostat-glossario-inflacao', 'Inflation is an increase in the general price level of goods and services.')),
     liga('.', '.'),
   ),
 ]);
@@ -272,10 +273,11 @@ medida('divida-das-familias-2025', ['eurostat-tipspd22-descricao', 'glossario-np
   TETO(' % do PIB', ' % of GDP', O('pdm-divida-das-familias', 'in % of GDP')),
 ]);
 
-medida('fluxo-de-credito-as-empresas-2025', ['eurostat-tipspc30-descricao', 'pdm-credito-as-empresas', 'painel-pdm'], [
+medida('fluxo-de-credito-as-empresas-2025', ['eurostat-tipspc30-descricao', 'eurostat-sec2010-registo-liquido', 'pdm-credito-as-empresas', 'painel-pdm'], [
   folha(
     diz('É quanto crédito as empresas contraíram num ano', 'It is how much credit companies took on in a year', O('eurostat-tipspc30-descricao', 'the net amount of liabilities incurred during the year')),
-    diz(', em termos líquidos', ', net', O('eurostat-tipspc30-descricao', 'the net amount of liabilities')),
+    diz(', descontado o que reembolsaram', ', minus what they repaid', O('eurostat-tipspc30-descricao', 'the net amount of liabilities'),
+      O('eurostat-sec2010-registo-liquido', 'incurrences of liabilities are shown net of repayments of liabilities')),
     diz(', fora as financeiras', ', excluding financial companies', O('eurostat-tipspc30-descricao', 'non-financial corporations sector (S.11)')),
     diz(' e sem contar o investimento direto estrangeiro', ' and foreign direct investment', O('eurostat-tipspc30-descricao', 'excluding foreign direct investment (FDI)')),
     diz(', em percentagem da dívida que já tinham no fim do ano anterior.', ', as a percentage of the debt they already had at the end of the previous year.',
@@ -284,12 +286,13 @@ medida('fluxo-de-credito-as-empresas-2025', ['eurostat-tipspc30-descricao', 'pdm
   TETO('um fluxo acima de ', 'a flow above ', O('pdm-credito-as-empresas', 'with a threshold of 13%')),
 ]);
 
-medida('fluxo-de-credito-as-familias-2025', ['eurostat-tipspc40-descricao', 'pdm-credito-as-familias', 'painel-pdm'], [
+medida('fluxo-de-credito-as-familias-2025', ['eurostat-tipspc40-descricao', 'eurostat-sec2010-registo-liquido', 'pdm-credito-as-familias', 'painel-pdm'], [
   folha(
     diz('É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano',
       'It is how much credit households and non-profit institutions serving them took on in a year',
       O('eurostat-tipspc40-descricao', 'the net amount of liabilities which the sectors Households and Non-Profit institutions serving households (S.14_S.15) have incurred during the year')),
-    diz(', em termos líquidos', ', net', O('eurostat-tipspc40-descricao', 'the net amount of liabilities')),
+    diz(', descontado o que reembolsaram', ', minus what they repaid', O('eurostat-tipspc40-descricao', 'the net amount of liabilities'),
+      O('eurostat-sec2010-registo-liquido', 'incurrences of liabilities are shown net of repayments of liabilities')),
     diz(', em percentagem da dívida que já tinham no fim do ano anterior.', ', as a percentage of the debt they already had at the end of the previous year.',
       O('eurostat-tipspc40-descricao', 'in percentage of the related stocks at the end of the previous year')),
   ),
@@ -303,10 +306,10 @@ medida('camaras', [], [
       L('excerpt', 'Índice de divida total (Índice permitido <= 150%)', LIMITE), L('document.locator', 'LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)', LIMITE)),
     liga(' Em ', ' In '),
   ),
-  inteira(liga(' eram ', ' there were ')),
-  inteira(liga(' em ', ' in ')),
-  inteira(liga('; ', '; ')),
-  inteira(conta(' não tem valor publicado.', ' has no published value.')),
+  inteira(diz(' o número de câmaras acima do limite era ', ' the number of councils above the limit was ',
+    L('excerpt', 'Índice de divida total (Índice permitido <= 150%)', LIMITE), L('document.locator', 'LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)', LIMITE))),
+  inteira(conta(' em ', ' out of ')),
+  inteira(conta(', e o número sem valor publicado era ', ', and the number with no published value was ')),
 ]);
 
 medida('taxa-de-emprego-2025', ['glossario-emprego'], [
@@ -346,11 +349,14 @@ medida('disparidade-salarial-entre-sexos-2024', [GPG, GPG_COBERTURA], [
     diz('Por cada hora de trabalho', 'Per hour worked', O(GPG, 'average gross hourly earnings')),
     diz(', as mulheres ganharam em média menos do que os homens', ', women earned on average less than men',
       O(GPG, 'the difference between average gross hourly earnings of male paid employees and of female paid employees')),
-    diz(': a diferença foi de ', ': the gap was ', O(GPG, 'represents the difference between')),
+    liga(', em ', ', in '),
   ),
-  folha(diz(' do ganho dos homens', ' of men’s earnings', O(GPG, 'as a percentage of average gross hourly earnings of male paid employees')), liga(', em ', ', in ')),
   inteira(diz(', nas empresas com ', ', in enterprises with ', O(GPG_COBERTURA, 'only enterprises with 10 employees or more'))),
-  inteira(diz(' ou mais trabalhadores.', ' or more employees.', O(GPG_COBERTURA, '10 employees or more'))),
+  folha(
+    diz(' ou mais trabalhadores', ' or more employees', O(GPG_COBERTURA, '10 employees or more')),
+    diz(': a diferença, em percentagem do ganho dos homens, foi de ', ': the gap, as a percentage of men’s earnings, was ',
+      O(GPG, 'represents the difference between'), O(GPG, 'as a percentage of average gross hourly earnings of male paid employees')),
+  ),
 ], [ALG('10', O(GPG_COBERTURA, 'only enterprises with 10 employees or more'))]);
 
 medida('retribuicao-minima-mensal-garantida-continente-2026', ['dl-139-2025-preambulo', 'dre-dlr-37-2023-a', 'dl-139-2025-ambito', 'dl-139-2025-vigor'], [
@@ -388,9 +394,11 @@ medida('disparidade-de-emprego-entre-sexos-2025', ['eurostat-tesem060-descricao'
     O('eurostat-tesem060-descricao', 'the employment rates of men and women aged 20-64'))),
 ], [ALG('20', O('eurostat-tesem060-descricao', 'aged 20-64')), ALG('64', O('eurostat-tesem060-descricao', 'aged 20-64'))]);
 
-medida('taxa-de-actividade-2025', ['glossario-atividade', 'pdm-taxa-de-actividade', 'eurostat-tipslm60-descricao', 'painel-pdm'], [
-  inteira(diz('É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.',
-    'It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.',
+medida('taxa-de-actividade-2025', ['glossario-atividade', 'pdm-taxa-de-actividade', 'eurostat-tipslm60-idade', 'eurostat-tipslm60-descricao', 'painel-pdm'], [
+  inteira(diz('É quanto mudou em três anos, em pontos percentuais, a parte da população dos ', 'It is how much the share of the population aged ',
+    O('pdm-taxa-de-actividade', '3-year change in pps'), L('unit', 'variação em três anos, pontos percentuais'),
+    O('eurostat-tipslm60-idade', 'the percentage of economically active population aged 15-64 on the total population of the same age'))),
+  inteira(diz(' anos que está ativa: a trabalhar ou à procura de trabalho.', ' that is active, working or looking for work, changed over three years, in percentage points.',
     O('glossario-atividade', 'Activity rate is the percentage of active persons in relation to the comparable total population.'),
     O('glossario-atividade', 'The economically active population comprises employed and unemployed persons.'),
     O('pdm-taxa-de-actividade', '3-year change in pps'), L('unit', 'variação em três anos, pontos percentuais'))),
@@ -398,7 +406,7 @@ medida('taxa-de-actividade-2025', ['glossario-atividade', 'pdm-taxa-de-actividad
   inteira(diz(' Negativa quer dizer que a parte ativa encolheu.', ' Negative means the active share shrank.', L('unit', 'variação em três anos, pontos percentuais'))),
   TETO('uma descida de mais de ', 'a fall of more than ', O('eurostat-tipslm60-descricao', 'with an indicative threshold of -0.2 pp'), O('pdm-taxa-de-actividade', 'with a threshold of -0.2%')),
   TETO(' pontos em três anos', ' points over three years', O('eurostat-tipslm60-descricao', 'The MIP Scoreboard indicator is the three-year change in percentage points')),
-]);
+], [ALG('15', O('eurostat-tipslm60-idade', 'aged 15-64')), ALG('64', O('eurostat-tipslm60-idade', 'aged 15-64'))]);
 
 const NULC = 'eurostat-tipslm10-descricao';
 medida('custo-unitario-do-trabalho-2025', [NULC, 'pdm-custo-do-trabalho', 'painel-pdm'], [
@@ -413,7 +421,7 @@ medida('custo-unitario-do-trabalho-2025', [NULC, 'pdm-custo-do-trabalho', 'paine
   TETO(' % em três anos', ' % over three years', O('pdm-custo-do-trabalho', '(3-year percentage change)')),
 ]);
 
-medida('risco-de-pobreza-ou-exclusao-2025', ['glossario-arope', 'eurostat-tipslc10-descricao'], [
+medida('risco-de-pobreza-ou-exclusao-2025', ['glossario-arope', 'eurostat-tipslc10-descricao', 'eurostat-glossario-mediana'], [
   inteira(diz('É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de ',
     'It is the share of the population in at least one of three situations: income below ',
     O('glossario-arope', 'The AROPE rate is the share of the total population which is at risk of poverty or social exclusion.'),
@@ -424,6 +432,10 @@ medida('risco-de-pobreza-ou-exclusao-2025', ['glossario-arope', 'eurostat-tipslc
     diz(', privação material e social grave', ', severe material and social deprivation', O('glossario-arope', 'severely materially and socially deprived')),
     diz(', ou viver num agregado onde quase ninguém trabalha', ', or living in a household where almost no one works', O('glossario-arope', '(quasi-)jobless households')),
     diz('; cada pessoa conta uma só vez.', '; each person counts only once.', O('glossario-arope', 'People are included only once')),
+    diz(' O rendimento mediano é o do meio', ' The median income is the one in the middle',
+      O('eurostat-glossario-mediana', 'The median is the middle value in a group of numbers ranked in order of size.')),
+    diz(': metade da população tem mais e metade tem menos.', ': half the population has more and half has less.',
+      O('eurostat-glossario-mediana', '50% of the scores are above and 50% are below.'), O('eurostat-tipslc10-descricao', 'of the national median equalised disposable income')),
   ),
 ], [ALG('60', O('eurostat-tipslc10-descricao', 'set at 60 % of the national median'))]);
 
@@ -456,10 +468,17 @@ medida('competencias-digitais-2025', [DSI], [
 
 medida('criancas-em-creche-2025', ['eurostat-tepsr_sp210-descricao', 'eurostat-cuidado-formal'], [
   inteira(diz('É a parte das crianças com menos de ', 'It is the share of children under ', O('eurostat-tepsr_sp210-descricao', 'the percentage of children (under 3 years old)'))),
-  inteira(diz(' anos que está numa creche ou noutro cuidado formal.', ' who are in a nursery or other formal childcare.',
-    O('eurostat-tepsr_sp210-descricao', 'cared for by formal arrangements other than by the family'),
-    O('eurostat-cuidado-formal', 'Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies'),
-    L('document.title', 'in formal childcare'))),
+  folha(
+    diz(' anos que está numa creche ou noutro cuidado formal', ' who are in a nursery or other formal childcare',
+      O('eurostat-tepsr_sp210-descricao', 'cared for by formal arrangements other than by the family'), L('document.title', 'in formal childcare')),
+    diz(': um programa planeado por entidades públicas ou privadas reconhecidas', ': a programme planned through public organisations or recognised private bodies',
+      O('eurostat-cuidado-formal', 'Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies')),
+    diz(', e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional.',
+      ', and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder.',
+      O('eurostat-cuidado-formal', 'care provided by grandparents, other household members (not parents), other relatives, friends or neighbours'),
+      O('eurostat-cuidado-formal', 'Other types of childcare may include care that is provided by a professional child-minder'),
+      O('eurostat-tepsr_sp210-descricao', 'other than by the family')),
+  ),
 ], [ALG('3', L('document.title', 'Children aged less than 3 years'))]);
 
 const UNMET = 'eurostat-tespm110-descricao';
@@ -473,15 +492,25 @@ medida('necessidades-medicas-nao-satisfeitas-2025', [UNMET], [
   ),
 ]);
 
-medida('sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025', ['eurostat-tessi164-inquilinos', 'glossario-sobrecarga'], [
+const RENDIMENTO_DISPONIVEL = () => folha(
+  diz(' % do rendimento disponível com a habitação.', ' % of its disposable income on housing.', O('glossario-sobrecarga', 'represent more than 40 % of disposable income')),
+  diz(' O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais', ' Disposable income is what the household receives, from work, investment and social benefits',
+    O('eurostat-glossario-rendimento-disponivel', 'all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits')),
+  diz(', depois de pagos os impostos e as contribuições sociais', ', after the taxes and social contributions it pays',
+    O('eurostat-glossario-rendimento-disponivel', 'taxes and social contributions that have been paid, are deducted from this sum')),
+  diz('; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', '; housing allowances are deducted from both the income and the housing costs.',
+    O('glossario-sobrecarga', "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)")),
+);
+medida('sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025', ['eurostat-tessi164-inquilinos', 'glossario-sobrecarga', 'eurostat-glossario-rendimento-disponivel'], [
   folha(
     diz('Entre as pessoas que vivem em casa arrendada a preço de mercado', 'Among people living in a home rented at market price', O('eurostat-tessi164-inquilinos', 'Tenant, rent at market price')),
     diz(', é a parte cujo agregado gasta mais de ', ', it is the share whose household spends more than ',
       O('glossario-sobrecarga', 'the percentage of the population living in households where the total housing costs')),
   ),
+  RENDIMENTO_DISPONIVEL(),
 ], [ALG('40', O('glossario-sobrecarga', 'more than 40 % of disposable income'))]);
 
-medida('sobrecarga-do-custo-da-habitacao-2025', ['eurostat-tespm140-populacao', 'eurostat-tessi164-regimes', 'glossario-sobrecarga', 'ce-swd-2026-222-habitacao'], [
+medida('sobrecarga-do-custo-da-habitacao-2025', ['eurostat-tespm140-populacao', 'eurostat-tessi164-regimes', 'glossario-sobrecarga', 'eurostat-glossario-rendimento-disponivel', 'ce-swd-2026-222-habitacao'], [
   folha(
     diz('No total de todos os regimes de ocupação', 'Across all tenure statuses', O('eurostat-tespm140-populacao', 'Percentage of the population living in a household')),
     diz(' (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita)',
@@ -490,6 +519,7 @@ medida('sobrecarga-do-custo-da-habitacao-2025', ['eurostat-tespm140-populacao', 
     diz(', é a parte das pessoas cujo agregado gasta mais de ', ', it is the share of people whose household spends more than ',
       O('glossario-sobrecarga', 'the percentage of the population living in households where the total housing costs')),
   ),
+  RENDIMENTO_DISPONIVEL(),
   inteira(diz(' Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.',
     ' This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.',
     O('ce-swd-2026-222-habitacao', 'The overburden rate should be read together with the tenure structure (homeowner, tenants), that may differ across country and regions.'))),
@@ -523,9 +553,14 @@ medida('licencas-de-construcao-2025', [PERMITS], [
   ),
 ], [ALG('1000', L('unit', 'm² por 1000 habitantes'))]);
 
-medida('formacao-bruta-de-capital-fixo-2025', ['eurostat-glossario-fbcf', 'eurostat-tipsna20-descricao', 'eurostat-tipsna40-descricao'], [
+medida('formacao-bruta-de-capital-fixo-2025', ['eurostat-glossario-residente', 'eurostat-glossario-fbcf', 'eurostat-tipsna20-descricao', 'eurostat-tipsna40-descricao'], [
   folha(
-    diz('É o que os produtores residentes compraram num ano, descontado o que venderam', 'It is what resident producers acquired in a year, less what they disposed of',
+    diz('É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo', 'It is what companies, the State, households and non-profit institutions',
+      O('eurostat-glossario-residente', 'households and individuals who make up a household; legal and social entities, such as corporations and quasi-corporations (e.g. branches of foreign direct investors), non-profit institutions, and the government of that economy')),
+    diz(' que produzem no país', ' that produce in the country',
+      O('eurostat-glossario-residente', 'resident because it has a centre of economic interest in the economic territory of a country'),
+      O('eurostat-glossario-residente', 'the residency status of producers determines the limits of domestic production')),
+    diz(' compraram num ano, descontado o que venderam', ' acquired in a year, less what they disposed of',
       O('eurostat-glossario-fbcf', 'consists of resident producers’ acquisitions, less disposals, of fixed assets during a given period'), ANO),
     diz(', em bens que duram mais de um ano', ', in assets that last more than a year', O('eurostat-glossario-fbcf', 'used repeatedly, or continuously, for more than one year')),
     diz(', como edifícios, máquinas e programas informáticos, ', ', such as buildings, machinery and software, ',
@@ -559,6 +594,7 @@ const auditoria = {
     'A auditoria das leituras dos cartões nacionais, folha a folha, nas duas edições (bloco L1, item 4). Cada folha de texto de cada leitura declarada em src/data/leituras-das-medidas.mjs divide-se em partes, e cada parte tem uma classe: «diz» (diz o que a medida é, o que o seu sinal quer dizer, ou de quem é o valor de referência e o que ele é) com o literal que a apoia, num campo de uma origem declarada em ORIGENS_DAS_DEFINICOES (excerto, excertoEn, documento ou publicador) ou num campo selado da linha da própria medida (excerpt, unit, document.title, document.locator; reference_date só para dizer que o período é um ano); «conta» (as palavras de uma comparação ou de um veredicto que a máquina escolhe sobre valores selados, que não precisam de origem); «liga» (pontuação e palavras de ligação de uma lista fechada). As folhas partilhadas por várias leituras estão em «comuns»; um apoio em «linha: propria» lê-se na linha de cada medida que usa a folha. Cada algarismo declarado com «nl» tem o seu literal em «algarismos». A célula K17 do check:cartao confere que as partes juntas são cada folha, que cada literal está mesmo no campo que cita, que cada «conta» está onde a máquina escolhe, e que cada origem da lista de uma medida apoia uma parte dela. Não infere que o literal quer dizer o que a parte diz: isso é uma leitura, e é de quem a assina.',
   leituras: [
     { quem: 'Claude Opus 5.5', quando: '2026-09-24', o_que: 'primeira leitura, sobre as origens pedidas neste bloco e as já declaradas, com os acertos A1 a A17 às palavras fixas (A1 a A15 pedidos pela auditoria das origens, A16 e A17 pelo portão da voz)' },
+    { quem: 'Claude Opus 5.5', quando: '2026-09-26', o_que: 'a passagem de correção depois da leitura a frio do Codex: as palavras correntes dos termos que ela achou por explicar (os achados 7 a 14), com as origens pedidas a 26.09.2026, e a idade da taxa de atividade (o achado 15), nos acertos A18 a A26; e as duas leituras reescritas pelo lugar de direção (a disparidade salarial e as câmaras), relidas parte a parte' },
   ],
   comuns: COMUNS,
   medidas: Object.values(M),
