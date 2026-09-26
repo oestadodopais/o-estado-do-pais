@@ -1,0 +1,85 @@
+{
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/construcao-preparacao.log",
+      "antes": "84a0e80ad9f50ac8a39677a3a4110aa5935e35467dec1d3d99d9387acd668afe",
+      "depois": "8573c430567a7e00afce3f685c181cea78ca9b04242e5706647b4ce1c03f5caf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/RESPOSTA-codex-rp1b.md",
+      "antes": "3936b0088a391f8d9ed05b8feab3b696cfd85466a53dff7e0a9c53f931832b98",
+      "depois": "451089c9470cdcfdaabf661e18f0145cb9f57657054bd67c93d1492d518455ed"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/RESPOSTA-codex-rp1.md",
+      "antes": "37f34fff5f8db06b1338fd6b120535d8ffbef4e01feb55c43090d8574d8203df",
+      "depois": "30d74c19a70b46ef6733dabee5156bacdb808ba1e373bce006c2333dad6b79f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/construcao-antes.log",
+      "antes": "aefdf08a180619882b843d6ede3b709e58c6055b1d22fd523fb321a640b834c7",
+      "depois": "a87d6c8bee2d9ab12b66a24e96a85dd3818a240c33ceb3598b7c6e5df43055d9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/verify.log",
+      "antes": "6b206571006c295085eafb880cfa857ee19dd4be3ad24f86f68308d358f87eb6",
+      "depois": "5995144931ae540940640eb906e92759f929e86c7a52aa0032174d3843f20714"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/build.log",
+      "antes": "8710b008a0d0bbccc2acedf4fbe945a39c1a92f8eabbc362316d63fded818e19",
+      "depois": "14d775040b9999b9e31e3c3733cc7ea9aa59a6bbbfe3e2ec5e101a5fdfcced0b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1-codex.md",
+      "antes": "46f2e7b06c26fb011108a7b58972df7df6ee5b5ad004bdd52495cbf5b7940d37",
+      "depois": "ee66963c1ae594476a80a57c2e954314850a5c7c0313d774a662a165fbfdc888"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1b-codex.md",
+      "antes": "d4e01d3914b131ea49fcf1cc4c27529fbe5b258618876057c6c3b3948855a9ef",
+      "depois": "a405fe77ff211070b406652ee6aacc54ad1b9addb872678213540f90e317cb1b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/preparacao-3b3dac48/build.log",
+      "antes": "f851cd69f808e6e8cd55af88bee6aaa5313fe5906474a9d3610e05bba2624ffb",
+      "depois": "0d0a888fe8aea1637ad6b5ccdfed50549d46e00f941e3e006a6a5d972554b0fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/preparacao-83fb702c/verify.log",
+      "antes": "349f23ac8083d3d38bab5fa9af2a89485718b032e8e3dbaf39b039d7596b4be0",
+      "depois": "c7e567fabd3cf6962597258d186a66ae0d26acfbbd7be12db3a46d02792bdbab"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/preparacao-83fb702c/build.log",
+      "antes": "1e821adb702816188950ad92dbc46ce9c16b6cc5f9f6e4ba7d4dbec56fff7ba9",
+      "depois": "a5cff6a44cfbffc91d08d63503a8a2ffadf6df66d2fadcf0c86f0ca27fe9c8d3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/verify.log",
+      "antes": "d46a607b07e8936cd75c4a15bb377fedd4551a5d9aeedb1a26f73f03ae7ffc2f",
+      "depois": "c38bc441a5d11bf62b3859b9f8aaf4db6b36cfc56d4804df09ac5e7ccbe2b4f1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/build.log",
+      "antes": "3a292f27f842686f57f28169837a72db06582d83c402d8fcea0536f4c554d9ae",
+      "depois": "b75abe398ab9da27b02d31a0fb7221cb9dbe465682001fdf990455600815e9fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/preparacao/astro.log",
+      "antes": "9e46b4e1ab934b403764e40d94cf98acd896ccf589324fdca0ef1989d02e4462",
+      "depois": "97b105b07ba15b82503354c4cddfe5a85d0546989c2e8ba9790fe3cb79e3fb25"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/preparacao/plantas-portoes.log",
+      "antes": "def85814e74e674c6a67ad69f80bb17bf75370396a1361f1821807e7d0e0ea95",
+      "depois": "efdb5ef6e63b97f66f2132d77e2d829405f171a07d2ca60211a38772f5aa0262"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/tentativa-1/build.log",
+      "antes": "6013487a698e350c3e0c339d81e78964c9cbb800d72c715f356c87ce2eb46df3",
+      "depois": "a03db83a89287adb8bc3000cb24f0e3375770bed619420c94d0b3bd435435b64"
+    }
+  ],
+  "contagem": 16
+}
