@@ -74,7 +74,7 @@ import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
-import { DEFINICOES_DAS_MEDIDAS, origensDaDefinicao } from '../data/figuras.mjs';
+import { DEFINICOES_DAS_MEDIDAS, FIGURAS, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
   linguaDoTituloDoDocumento,
@@ -92,12 +92,11 @@ import '../styles/linha.css';
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
 const claim = getClaim(id);
-/* B2: esta medida nova não pertence aos painéis europeus. A origem da sua
-   pergunta fica no recibo que o cartão abre. As definições anteriores mantêm
-   o seu lugar; nenhum outro recibo recebe este bloco. A célula 8.4 confere a
-   pergunta e cada campo das origens, com a mesma regra das restantes. */
-const definicaoNova = id === 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025'
-  ? DEFINICOES_DAS_MEDIDAS['sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025']
+/* As perguntas das medidas fora dos painéis europeus têm as origens no
+   recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
+   origens; as medidas dos painéis conservam o seu lugar anterior. */
+const definicaoNova = !FIGURAS.some(f => f.claim === id)
+  ? DEFINICOES_DAS_MEDIDAS[id] ?? null
   : null;
 
 const path = caminhoDaLinha(id, lang);

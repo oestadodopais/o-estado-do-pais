@@ -238,6 +238,10 @@ const TETOS = {
      qualquer âncora extra continuam no contador, mesmo dentro do cartão.
      `tests/pais/l1-b2.mjs` planta repetição, destino alterado e portas extras
      dentro e fora dos blocos, e exige a reposição do HTML e o portão limpo. */
+  /* RP1: a composição em l1-rp1.json acrescenta apenas os recibos das linhas
+     novas, nas duas edições. Compara com a prova congelada do B2 e recusa
+     qualquer entrada fora desses recibos ou agravamento de páginas antigas.
+     O teto é lido dessa medição; a planta de portas extras continua a fechar. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
