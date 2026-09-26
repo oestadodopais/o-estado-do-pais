@@ -142,3 +142,102 @@ A janela entre o primeiro pedido registado e o fim do último portão durou 5 78
 No registo da sessão `rollout-2026-09-26T14-50-19-01a0ddfb-28f2-7522-ad5d-af8f210018d8.jsonl`, lido às `2026-09-26T15:30:51.194Z`, o modelo é `gpt-6-astra`: 34 602 194 tokens de entrada (`custo.sessao.input_tokens`), dos quais 33 881 600 em cache (`custo.sessao.cached_input_tokens`), e 134 073 de saída (`custo.sessao.output_tokens`). É a contagem cumulativa do registo, não um preço. O custo monetário não está exposto e não foi estimado.
 
 Ficam por construir apenas as medidas paradas nas fontes e descritas na tabela. O próximo passo dessas medidas é corrigir ou identificar o pedido no lugar de direção e voltar a confirmar a metainformação. Não se acrescentaram medidas municipais, gráficos, referências de cor ou valores de outras publicações. A leitura do país e o rótulo de IA ficaram intactos. Não houve publicação remota.
+
+## RP1b
+
+Entrega concluída: 4 medidas novas seladas, 12 cartões do bloco nos temas e 9 linhas novas (`rp1b.seladas`, `rp1b.total_do_bloco`, `rp1b.linhas_novas`). As 3 000 linhas que já existiam foram comparadas byte a byte: 0 alteradas (`rp1b.linhas_anteriores`, `rp1b.linhas_anteriores_alteradas`).
+
+A secção anterior é o relato histórico da primeira entrega. Os seus dados e portões mantêm-se; as cópias em `paginas-depois/` são agora as desta peça. As cópias anteriores continuam no histórico da cabeça indicada naquela secção. O antes e as capturas da primeira entrega não foram repetidos.
+
+| Item do mandato | Resultado e medida |
+|---|---|
+| Pedidos e linhas | 5 pedidos novos pelo cliente do projeto; 31 corpos do conjunto conferidos contra o registo e o alojamento (`rp1b.pedidos_novos`, `rp1b.corpos_conferidos`). O `core.gate` terminou a 0, lido de `motor-rp1b.codigo`. |
+| Réguas declaradas | 9 réguas no bloco (`rp1b.plantas.reguas`). O IHPC tem Portugal no mês anterior e a União no mesmo mês, sem cartão autónomo para a linha europeia. |
+| Medidas e perguntas | As medidas novas estão nos temas pedidos. K16: 0 erros (`rp1b.k16.erros`). A regra de `temasDoPais()` permanece igual. |
+| Leituras | 24 frases resolvidas (`rp1b.frases_resolvidas`), iguais à segunda redação fora de 6 trocas auditadas (`rp1b.acertos.acertos`). K17: 0 erros nas palavras e 0 no HTML (`rp1b.k17.erros`, `rp1b.leituras_rendidas.erros`). |
+| I153 | O espaço faz parte do texto da bandeira no valor e na leitura. As plantas colam a bandeira à unidade e são recusadas. A caixa em linha conserva a margem visual existente. |
+| Mapa | Circuito reposto e conferido por `conferir-mapa.py`; saída em `mapa-rp1b.log`. |
+| Capturas, relatório e provas | 20 capturas de página e 50 recortes, com 0 falhas (`rp1b.capturas`). Cópias congeladas e resumos conferidos por `medir-rp1.mjs`. |
+
+### As medidas e as fontes
+
+| Medida | Valor | Unidade | Período | Mês anterior | União no mesmo mês |
+|---|---|---|---|---|---|
+| `ipc-energia-em-casa-variacao-homologa` | 1,36 | % | `2026-08` | 1,12 (2026-07) | Não declarada |
+| `ipc-combustiveis-variacao-homologa` | 23,78 | % | `2026-08` | 16,58 (2026-07) | Não declarada |
+| `ipc-rendas-variacao-homologa` | 5,22 | % | `2026-08` | 5,26 (2026-07) | Não declarada |
+| `ihpc-variacao-homologa` | 3,6 | % | `2026-08` | 3,1 (2026-07) | 3,2 (2026-08) |
+
+Os valores, períodos, unidades e comparadores desta tabela são `rp1b.medidas`. O INE confirmou as categorias, a frequência mensal, «Percentagem (%)» e a escala zero. No IHPC, a resposta confirma `RCH_A`, `coicop18=TOTAL`, as geografias e o último mês publicado. A unidade percentual está descrita em `extension.description`; o excerto mantém «Annual rate of change», como a resposta o escreve. A publicação vem de `updated`.
+
+| Pedido | Hora UTC | Cliente | Sha256 |
+|---|---|---|---|
+| [`027-ine-0014647-meta.json`](https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014647&lang=PT) | `2026-09-26T16:03:37Z` | `core.http.HttpClient.condicional` | `e5d99cf6a277344f25d8feb43e2eb96cb628507e4247ce4822715b52e012345c` |
+| [`028-ine-0014647-dados.json`](https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014647&Dim1=S3A202608,S3A202607&Dim2=PT&lang=PT) | `2026-09-26T16:04:13Z` | `core.http.HttpClient.condicional` | `598399b53970e3e270ab50969f4fbdf95f8d3347491f1ffda406ab5bb9949eac` |
+| [`029-eurostat-prc_hicp_minr-rp1b.json`](https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2) | `2026-09-26T16:04:14Z` | `core.http.HttpClient.condicional` | `f2a3035b7ff23e772a3f1347a11bf01189723f074b84018b041e39e2a171dbd4` |
+| [`030-ine-0014647-minfo.html`](https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT) | `2026-09-26T16:04:14Z` | `core.http.HttpClient.condicional` | `184a4e7fccebe7360411f9dcd1f32b3fa95f706c72962ccb21e2746c68a00824` |
+| [`031-eurostat-prc_hicp_esms.html`](https://ec.europa.eu/eurostat/cache/metadata/en/prc_hicp_esms.htm) | `2026-09-26T16:04:20Z` | `core.http.HttpClient.condicional` | `cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2` |
+
+Os corpos estão em `content/13 Dominios/source/rp1/` no motor, registados em `FETCH.json` e `MANIFEST.sha256`. As perguntas e as leituras citam a página `minfo.jsp` do INE, a ficha `prc_hicp_esms` e os campos publicados nas respostas. `origens-rp1.py` confere o excerto literal e o selo de cada origem, sem apresentar uma cópia de teste como resposta autêntica.
+
+### Os acertos que restaram
+
+A única decisão de acerto foi explicitar os lubrificantes, que pertencem à categoria publicada. A troca repete-se nos ramos do sinal e nas duas edições. As médias dos últimos doze meses e as frases curtas da linha de pobreza são as da segunda redação, com as folhas da auditoria atualizadas.
+
+| Medida e edição | Antes | Depois | Literal |
+|---|---|---|---|
+| `ipc-combustiveis-variacao-homologa` · pt · `positivo` | os preços dos combustíveis para os veículos estavam | os preços dos combustíveis e dos lubrificantes para os veículos estavam | «Combustível e lubrificantes para equipamento para transporte pessoal» (`propria.excerpt`) |
+| `ipc-combustiveis-variacao-homologa` · pt · `negativo` | os preços dos combustíveis para os veículos estavam | os preços dos combustíveis e dos lubrificantes para os veículos estavam | «Combustível e lubrificantes para equipamento para transporte pessoal» (`propria.excerpt`) |
+| `ipc-combustiveis-variacao-homologa` · pt · `zero` | os preços dos combustíveis para os veículos estavam | os preços dos combustíveis e dos lubrificantes para os veículos estavam | «Combustível e lubrificantes para equipamento para transporte pessoal» (`propria.excerpt`) |
+| `ipc-combustiveis-variacao-homologa` · en · `positivo` | the prices of fuels for vehicles were | the prices of fuels and lubricants for vehicles were | «Combustível e lubrificantes para equipamento para transporte pessoal» (`propria.excerpt`) |
+| `ipc-combustiveis-variacao-homologa` · en · `negativo` | the prices of fuels for vehicles were | the prices of fuels and lubricants for vehicles were | «Combustível e lubrificantes para equipamento para transporte pessoal» (`propria.excerpt`) |
+| `ipc-combustiveis-variacao-homologa` · en · `zero` | the prices of fuels for vehicles were | the prices of fuels and lubricants for vehicles were | «Combustível e lubrificantes para equipamento para transporte pessoal» (`propria.excerpt`) |
+
+### Células, plantas e limites da conferência
+
+| Célula | Forma nova e proteção conservada |
+|---|---|
+| Réguas e portão de HTML | A declaração da União exige a mesma série, unidade e mês; o portão recompõe a associação sem chamar o resolvedor. As plantas recusam outro mês, série, unidade e a troca pela linha portuguesa anterior. |
+| K17 e voz | O resolvedor e a recomposição independente incluem o espaço. A K17 confere a bandeira no valor e na leitura, a palavra da edição e a igualdade dos conjuntos de linhas. A planta mostrou que o `check:voz` só a chamava na primeira página; passou a chamá-la também nos temas e a recusar ali a bandeira colada. |
+| M8 | Esta célula vive em `tests/inicio/areas.mjs`, não em `check:voz`. Exige agora o texto com espaço inicial e mantém a igualdade entre as linhas com ressalva e as bandeiras reconhecidas. A associação passa a reconhecer também o valor imediatamente anterior à bandeira na régua, que já era rendida mas não era contada. A medição está em `m8-rp1b.json`, e as plantas que colam ou retiram a bandeira estão em `plantas-m8-rp1b.json`. |
+| Áreas | A A6 continua a excluir as observações anteriores; as classes do IPC e o IHPC entram na exclusão declarada dos preços, e a União na exclusão dos agregados. Nenhuma matéria ministerial foi inventada. |
+| Motor, associações europeias | O teste antigo admitia uma só nota europeia. Exige agora exatamente os agregados declarados e recusa a nota numa linha de Portugal. A tentativa recusada está em `motor-rp1b-tentativa-1.log`; o commit entrou apenas depois do portão verde. |
+| Portas repetidas | A catraca continua a ser uma contagem de páginas. A composição admite apenas os recibos novos e recusa qualquer página anterior agravada. |
+
+As 20 plantas de `plantas-rp1.json` e as 2 plantas integrais de `plantas-portoes-rp1b.json` foram recusadas com a mordida esperada (`rp1b.plantas`, `rp1b.plantas_portoes`). As plantas integrais repõem os bytes e conferem o sha256.
+
+A catraca mede 2341 páginas (`rp1b.catraca_l1.contagens.estudos`), contra 2291 na prova congelada de referência, com 0 páginas anteriores agravadas. Esta comparação conserva a base histórica do B2; não chama a essa base o antes desta peça.
+
+A primeira chamada ao exportador foi feita sem o manifesto do estudo e selecionou o estudo de Évora. As diferenças de comentários e do seu registo foram repostas byte a byte antes da travessia correta, com `--manifest publisher/manifest.dominios.json`. A comparação de todas as linhas anteriores no medidor confirma a reposição. Nenhum desses ficheiros entrou num commit desta peça.
+
+### Capturas e cabeças
+
+Na I153, o navegador mediu 20 ressalvas nos recortes da remuneração. O espaço inicial ocupa no máximo 0 px (`rp1b.i153`): separa o texto acessível sem alargar a margem visual.
+
+As capturas têm prefixo `rp1b-` e cobrem as larguras 390, 768, 1 024, 1 280, 1 600 px, nas duas edições, no país e nos temas. Os recortes cobrem cada medida nova e a remuneração em todas essas larguras. `capturas-rp1b-depois.json` contém as dimensões, o texto e os resumos; `inspecao-visual-rp1b.json` identifica as imagens abertas para inspeção.
+
+As cópias congeladas incluem 4 páginas HTML e 2 folhas de estilo (`rp1b.congeladas`), presas por sha256 em `paginas-depois/INDICE.json`. Cabeça do código e das capturas: `1819395a994791fdc77bed14a17ab3df844f4d6b`. Cabeça do motor: `d3f7a619bc46184847775b93c1b1a953e2777d3f`. O último commit entrega as provas sem mudar o código medido.
+
+- Projeto: `dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória`.
+- Projeto: `0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas`.
+- Projeto: `7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas`.
+- Projeto: `1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes`.
+- Motor: `d3f7a619bc46184847775b93c1b1a953e2777d3f RP1b: selar as classes do IPC e a comparação europeia do IHPC`.
+
+| Portão | Código lido do ficheiro | Cabeça medida |
+|---|---|---|
+| `build` | 0, de `portoes/rp1b/build.codigo` | `1819395a994791fdc77bed14a17ab3df844f4d6b` |
+| `verify` | 0, de `portoes/rp1b/verify.codigo` | `1819395a994791fdc77bed14a17ab3df844f4d6b` |
+| `typecheck` | 0, de `portoes/rp1b/typecheck.codigo` | `1819395a994791fdc77bed14a17ab3df844f4d6b` |
+
+Os comandos completos correram separadamente, uma vez nesta cabeça. As conferências de preparação estão em `portoes/rp1b/preparacao/`. Os portões da primeira entrega ficaram intactos.
+
+A construção anterior terminou a 1 na cabeça `7d580742f511234ef6b80675c446966b3cfe36ab` (`rp1b.tentativa_build`), porque faltava declarar a língua dos dois rótulos publicados pelas fontes, embora a dos títulos já estivesse declarada. As línguas foram declaradas em `LINGUA_DOS_ROTULOS`, sem mudar os rótulos nem os valores. A saída recusada ficou em `portoes/rp1b/tentativa-1/`.
+
+### Custo e trabalho pendente
+
+A janela entre o primeiro pedido desta peça e o último portão durou 3 256 segundos (`rp1b.custo.segundos_da_janela`); não inclui a leitura inicial.
+
+No registo `rollout-2026-09-26T17-01-49-01a0de73-8c86-7ae2-9d60-664b8752f295.jsonl`, lido às `2026-09-26T17:00:34.867Z`, o modelo exposto é `gpt-6-astra`: 18 292 339 tokens de entrada, 17 908 864 em cache e 69 786 de saída (`rp1b.custo.sessao`). São contagens cumulativas, não um preço. O custo monetário não está exposto.
+
+Não ficaram medidas desta peça por construir. A variação real da remuneração foi retirada pelo §8 e continua fora. A leitura do país, a regra da primeira página e o rótulo de IA não foram alterados. Não houve `push` nem publicação. A leitura a frio e a aterragem pertencem ao lugar de direção.

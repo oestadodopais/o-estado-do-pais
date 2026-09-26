@@ -1,11 +1,11 @@
 {
   "referencia": "design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json",
   "referencia_cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-  "dist_construido_de": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+  "dist_construido_de": "1819395a994791fdc77bed14a17ab3df844f4d6b",
   "contagens": {
-    "estudos": 2323,
+    "estudos": 2341,
     "antes": 2291,
-    "entraram": 32,
+    "entraram": 50,
     "sairam": 0,
     "paginas_antigas_agravadas": 0,
     "outras_entradas": 0
@@ -112,6 +112,164 @@
       }
     },
     {
+      "url": "/en/ledger/ihpc-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ihpc-variacao-homologa-ue",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ihpc-variacao-homologa",
+      "familia": "linha",
+      "destinos": 3,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+              "texto": "Eurostat · definição da variação homóloga do IHPC",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+              "texto": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
       "url": "/en/ledger/ipc-alimentacao-variacao-homologa-periodo-anterior",
       "familia": "linha",
       "destinos": 2,
@@ -187,6 +345,306 @@
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ipc-combustiveis-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ipc-combustiveis-variacao-homologa",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 4,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "INE · metainformação das classes do índice de preços no consumidor",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ipc-energia-em-casa-variacao-homologa",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 4,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "INE · metainformação das classes do índice de preços no consumidor",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ipc-rendas-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/en/method": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/en/method#releitura",
+              "texto": "The re-reading rule →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/en/method#livro-razao",
+              "texto": "How this is made",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/en/ledger/ipc-rendas-variacao-homologa",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 4,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "INE · metainformação das classes do índice de preços no consumidor",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
               "cartao": null
             }
@@ -917,6 +1375,164 @@
       }
     },
     {
+      "url": "/livro-razao/ihpc-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ihpc-variacao-homologa-ue",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ihpc-variacao-homologa",
+      "familia": "linha",
+      "destinos": 3,
+      "repetidos": {
+        "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+              "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+              "texto": "Eurostat · definição da variação homóloga do IHPC",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+              "texto": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
       "url": "/livro-razao/ipc-alimentacao-variacao-homologa-periodo-anterior",
       "familia": "linha",
       "destinos": 2,
@@ -992,6 +1608,306 @@
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ipc-combustiveis-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ipc-combustiveis-variacao-homologa",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 4,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "INE · metainformação das classes do índice de preços no consumidor",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ipc-energia-em-casa-variacao-homologa",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 4,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "INE · metainformação das classes do índice de preços no consumidor",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ipc-rendas-variacao-homologa-periodo-anterior",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 3,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "/metodo": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "/metodo#releitura",
+              "texto": "A regra da releitura →",
+              "classe": "",
+              "cartao": null
+            },
+            {
+              "href": "/metodo#livro-razao",
+              "texto": "Como isto é feito",
+              "classe": "",
+              "cartao": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/livro-razao/ipc-rendas-variacao-homologa",
+      "familia": "linha",
+      "destinos": 2,
+      "repetidos": {
+        "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+          "vezes": 4,
+          "ancoras": [
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "INE · metainformação das classes do índice de preços no consumidor",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+              "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
               "cartao": null
             }

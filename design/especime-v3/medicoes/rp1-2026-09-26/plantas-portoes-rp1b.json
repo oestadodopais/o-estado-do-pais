@@ -1,0 +1,34 @@
+[
+  {
+    "nome": "rp1b-uniao-de-outra-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ihpc-variacao-homologa-periodo-anterior.*(?:régua|selo)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "bf1da0d343bf28d0421b229d82a7ba830d9e99ec81d5540e48ecb25836c315a9",
+        "reposto": "bf1da0d343bf28d0421b229d82a7ba830d9e99ec81d5540e48ecb25836c315a9"
+      }
+    ]
+  },
+  {
+    "nome": "rp1b-ressalva-colada",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ressalva sem separador"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "bf1da0d343bf28d0421b229d82a7ba830d9e99ec81d5540e48ecb25836c315a9",
+        "reposto": "bf1da0d343bf28d0421b229d82a7ba830d9e99ec81d5540e48ecb25836c315a9"
+      }
+    ]
+  }
+]

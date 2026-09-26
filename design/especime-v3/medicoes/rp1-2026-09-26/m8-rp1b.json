@@ -1,0 +1,32 @@
+{
+  "celulas": [
+    {
+      "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+      "passa": true,
+      "prova": "13 medida(s) com « provisório» para 13 linha(s) com bandeira · 0 a mais · 0 a menos"
+    },
+    {
+      "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+      "passa": true,
+      "prova": "13 medida(s) com « provisional» para 13 linha(s) com bandeira · 0 a mais · 0 a menos"
+    }
+  ],
+  "medidas": {
+    "M8·pt": {
+      "palavra": " provisório",
+      "comPalavra": 13,
+      "daBandeira": 13,
+      "outras": [],
+      "aMais": [],
+      "aMenos": []
+    },
+    "M8·en": {
+      "palavra": " provisional",
+      "comPalavra": 13,
+      "daBandeira": 13,
+      "outras": [],
+      "aMais": [],
+      "aMenos": []
+    }
+  }
+}

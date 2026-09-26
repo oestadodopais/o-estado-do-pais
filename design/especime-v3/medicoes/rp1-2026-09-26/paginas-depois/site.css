@@ -901,6 +901,9 @@ section {
    partir ANTES dela; o valor e a unidade ficam inteiros, que é o que o `nowrap`
    existia para garantir. */
 .claim-provisorio {
+  /* I153: o espaço inicial fica no texto acessível; no início da caixa
+     em linha não ocupa largura, mantendo a margem visual existente. */
+  display: inline-block;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;

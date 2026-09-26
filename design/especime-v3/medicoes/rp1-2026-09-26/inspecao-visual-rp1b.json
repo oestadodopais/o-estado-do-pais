@@ -1,0 +1,119 @@
+{
+  "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+  "hora": "2026-09-26T17:01:03.653148+00:00",
+  "metodo": "Imagens abertas com view_image, após as capturas do Chromium. A inspeção das páginas inteiras avalia a composição geral; a leitura de pormenor foi feita nos recortes.",
+  "imagens": [
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-energia-em-casa-variacao-homologa-pt-390.png",
+      "sha256": "7897b8dca17452a19332c98cbb5d7d2dc7e39fd466d732d45d6da728b566484e",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-combustiveis-variacao-homologa-pt-390.png",
+      "sha256": "48f5a7871d300da37d6e861341788f6315c661de106e7bafe95a8486f2b04a3e",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-rendas-variacao-homologa-pt-390.png",
+      "sha256": "fa81ec5d440016dcb426348f492ab9f467017a59d708e95e1b21323cb28ce21d",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ihpc-variacao-homologa-pt-390.png",
+      "sha256": "38cdf463a822bfed9325a0da1eb3f6224e28afe0ccba359035ee0fe1a580963a",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-remuneracao-bruta-mensal-media-pt-390.png",
+      "sha256": "86ce1e001f7613f133327a4afa8567a6ed5057cc67e7b12bdbf9f9add7f2cee7",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-energia-em-casa-variacao-homologa-en-390.png",
+      "sha256": "8747cc46cd99a0854c5ec338566dfe83d1a67fdd9a7c4b5a6bcc79b21e0374b3",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-combustiveis-variacao-homologa-en-390.png",
+      "sha256": "d604122c19f4372ac0572f2af1fb4cba20a6184650144023ae899371099bfef6",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-rendas-variacao-homologa-en-390.png",
+      "sha256": "78e8da126e369b12df86f4a7527686b3b506b6e14638e6aea4de1c045dbf16c8",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ihpc-variacao-homologa-en-390.png",
+      "sha256": "aad3930c7c6aff06554b87cc7af638d9d4d35d754c65ecce3ceba96889ccf25b",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-remuneracao-bruta-mensal-media-en-390.png",
+      "sha256": "b9d7606b39f9cc022231d66a38f8c9dd14c509ab168311ed0862b5031c6b9db2",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-remuneracao-bruta-mensal-media-pt-768.png",
+      "sha256": "01aee7066ee2ae15182464af6e0976234fcaad3b1566e9dab89df2a2b2da38ce",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-remuneracao-bruta-mensal-media-en-768.png",
+      "sha256": "861407804c0ff17dc8914ff1bb817b5056438b5e67373a8e5248be9828a303b4",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-energia-em-casa-variacao-homologa-pt-1024.png",
+      "sha256": "3c5b2d6aaeaf77b4a5eda92585e07c644359731dc19973a942b925c9103cbd5e",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ipc-energia-em-casa-variacao-homologa-en-1024.png",
+      "sha256": "e685c7ffcc6b5434dc667483adf4e93670a3203b35e18622f4e9cc07d9e82dcf",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ihpc-variacao-homologa-pt-1280.png",
+      "sha256": "e9ba7de1eab4a15ef5e9a36ace51663016191ea46424ca5c33332f758110343d",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-ihpc-variacao-homologa-en-1280.png",
+      "sha256": "d70d9fb94c5b53f9af0cdca7b29bbd24e32c0ff7074141a696c9a918a327cb34",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-remuneracao-bruta-mensal-media-pt-1600.png",
+      "sha256": "8ca3608d4d870661cef3a7842907da376f0d28a84a242bb8c59e223be585eb8e",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-cartao-remuneracao-bruta-mensal-media-en-1600.png",
+      "sha256": "61dfeb7ce70e77c748e52b0e47be068880ea6dc3faa042cb5f886a8b36bc6e16",
+      "observacao": "Valor, período, leitura, régua e pergunta legíveis, sem cortes ou colisões visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-pais-pt-1600.png",
+      "sha256": "ef517ae4378398d5ce209d3a520c2b41bafabd86d1704c01bee5a5c6f5e86514",
+      "observacao": "Composição geral contínua, sem sobreposições visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-pais-en-1600.png",
+      "sha256": "7d771d7de922425d152bf18aab188b2d51577d033193569e74ce7dbd8d97ce69",
+      "observacao": "Composição geral contínua, sem sobreposições visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-temas-pt-1600.png",
+      "sha256": "ee783dd113db1c1f0228f7297c16f79d7c6f05dc095254a4d9ca8020871451ff",
+      "observacao": "Composição geral contínua, sem sobreposições visíveis."
+    },
+    {
+      "ficheiro": "rp1b-depois-temas-en-1600.png",
+      "sha256": "1fd2a05cd0ace3d4fa9b34621f2e5833f0b95117e210e8e7d4b1d58a55ae2f05",
+      "observacao": "Composição geral contínua, sem sobreposições visíveis."
+    }
+  ],
+  "i153": "Nas imagens abertas da remuneração, a ressalva está separada da unidade no valor e na leitura. O captor mede o espaço inicial com largura nula, conservando a margem visual.",
+  "limite": "A medição automática cobre todas as imagens. A inspeção visual cobre apenas os ficheiros enumerados."
+}

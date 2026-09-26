@@ -82,5 +82,35 @@
     "sha256": "b974d064c0cc5a35069232a83ce9ea72fbf43460c3744335d48f9e80ceed7789",
     "literal": true,
     "pedido": true
+  },
+  {
+    "origem": "rp1-ipc-classes-homologa",
+    "sha256": "184a4e7fccebe7360411f9dcd1f32b3fa95f706c72962ccb21e2746c68a00824",
+    "literal": true,
+    "pedido": true
+  },
+  {
+    "origem": "rp1-ipc-habitacao",
+    "sha256": "e5d99cf6a277344f25d8feb43e2eb96cb628507e4247ce4822715b52e012345c",
+    "literal": true,
+    "pedido": true
+  },
+  {
+    "origem": "rp1-ihpc-comparavel",
+    "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
+    "literal": true,
+    "pedido": true
+  },
+  {
+    "origem": "rp1-ihpc-homologa",
+    "sha256": "f2a3035b7ff23e772a3f1347a11bf01189723f074b84018b041e39e2a171dbd4",
+    "literal": true,
+    "pedido": true
+  },
+  {
+    "origem": "rp1-ihpc-uniao",
+    "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
+    "literal": true,
+    "pedido": true
   }
 ]
