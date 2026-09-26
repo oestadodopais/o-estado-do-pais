@@ -176,24 +176,6 @@
         "o_que": "a lista traz a retribuição mínima",
         "encontrado": true
       }
-    },
-    {
-      "nome": "pedidos_ao_ine_no_construtor_dos_dominios",
-      "valor": 1,
-      "comando": "git -C ~/Instruments/ResearchHub show 1d10b3f:publisher/dominios_fetch.py · «json_indicador/pindica.jsp»",
-      "conhecido_positivo": {
-        "o_que": "a lista traz o pedido do ganho médio mensal (0012656)",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "leitor_de_indicador_do_ine_no_motor",
-      "valor": 1,
-      "comando": "git -C ~/Instruments/ResearchHub show 1d10b3f:publisher/dominios_readers.py · «def ine_indicator(»",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro tem o leitor das séries do Eurostat",
-        "encontrado": true
-      }
     }
   ]
 }
