@@ -1,0 +1,60 @@
+{
+ "registado_em": "2026-09-26T18:06:31+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/ihpc-variacao-homologa-ue.yml",
+   "descricao": "a linha e o diff: o valor da linha da União do IHPC trocado de 3,2 para 2,3 (o excerto da própria linha, o corpo alojado no motor e a página construída dizem 3,2; com 2,3 o ramo «A subida é maior do que a da média da União» continuaria certo, por isso o estrago só se vê na linha)",
+   "sha256_antes": "87f5711880d1568fc71dd28dd7d40a6283ce84654a915f76b48538ed8608bf57",
+   "sha256_depois": "581efdfd733dac943f3b3004a748a00a0959642678c5418ebc5a5eccacf6ff91",
+   "contexto_antes": "ção aqui parte scripts/check-cruzamento.mjs.\n\nid: \"ihpc-variacao-homologa-ue\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"3,2\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Harmoni",
+   "contexto_depois": "ção aqui parte scripts/check-cruzamento.mjs.\n\nid: \"ihpc-variacao-homologa-ue\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2,3\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Harmoni"
+  },
+  {
+   "id": "P1",
+   "ficheiro": "diff.patch",
+   "descricao": "a linha e o diff: o valor da linha da União do IHPC trocado de 3,2 para 2,3",
+   "sha256_antes": "74942a08b0ec54b30e0130015bff579b51f75838f921731d31daa758c48ace42",
+   "sha256_depois": "51de6ad7c8ea6b04a9830ae16b46de5beff8424beebefa98f4d3bf549812e7e1",
+   "contexto_antes": "qui parte scripts/check-cruzamento.mjs.\n+\n+id: \"ihpc-variacao-homologa-ue\"\n+\n+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n+value: \"3,2\"\n+unit: \"%\"\n+\n+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n+# e onde nele foi lido. Escrito pelo motor, nunca à mão.\n+name: \"Ha",
+   "contexto_depois": "qui parte scripts/check-cruzamento.mjs.\n+\n+id: \"ihpc-variacao-homologa-ue\"\n+\n+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n+value: \"2,3\"\n+unit: \"%\"\n+\n+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n+# e onde nele foi lido. Escrito pelo motor, nunca à mão.\n+name: \"Ha"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/lib/enquadramento.mjs",
+   "descricao": "a régua (só na cópia do ficheiro; o diff fica são): a linha da União do IHPC na tabela declarada passa a ser a linha portuguesa do mês anterior, pelo que a comparação «com a média da União» compararia Portugal com Portugal",
+   "sha256_antes": "79afb7d7b01a3a022d9d5f7448d504de9712fb09c506c575adb4d8c99d91d628",
+   "sha256_depois": "e60f13dbc13996013e77e3ff12769f319f05ea206d12e21f8bd4ebd339075a8c",
+   "contexto_antes": "encia: 'mes-anterior' },\n  'ipc-rendas-variacao-homologa': { anterior: 'ipc-rendas-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n  'ihpc-variacao-homologa': { anterior: 'ihpc-variacao-homologa-periodo-anterior', ue: 'ihpc-variacao-homologa-ue', cadencia: 'mes-anterior' },\n  'remuneracao-bruta-mensal-media': { anterior: 'remuneracao-bruta-mensal-media-periodo-anterior', ue: null, cadencia: 'mesmo-trim",
+   "contexto_depois": "encia: 'mes-anterior' },\n  'ipc-rendas-variacao-homologa': { anterior: 'ipc-rendas-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n  'ihpc-variacao-homologa': { anterior: 'ihpc-variacao-homologa-periodo-anterior', ue: 'ihpc-variacao-homologa-periodo-anterior', cadencia: 'mes-anterior' },\n  'remuneracao-bruta-mensal-media': { anterior: 'remuneracao-bruta-mensal-media-periodo-anterior', ue: null, cadencia: 'mesmo-trim"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: as plantas do RP1c trocadas de 25 para 27 (o plantas-rp1.json e o medidas.json contam 25)",
+   "sha256_antes": "b805285727e2400bb288decd4508decd9f8f060a340925ecee70f3219395ca7b",
+   "sha256_depois": "4f69dd81d60e227e8720e545ab9fb94ceb6ee386b2995a33704909da27c79647",
+   "contexto_antes": "rtão próprio. |\n| Origens | Confere todos os selos no alojamento, incluindo extrações. | Resumo, pedido e corpo têm de concordar, qualquer que seja a pasta. |\n\nAs 25 plantas de `plantas-rp1.json` morderam. Os controlos da publicação dentro do período passaram. `planta-origens-rp1c.json`, `plantas-m8-rp1c.json` e a saída F1 em `portoes/rp1c/build.log` guardam as ",
+   "contexto_depois": "rtão próprio. |\n| Origens | Confere todos os selos no alojamento, incluindo extrações. | Resumo, pedido e corpo têm de concordar, qualquer que seja a pasta. |\n\nAs 27 plantas de `plantas-rp1.json` morderam. Os controlos da publicação dentro do período passaram. `planta-origens-rp1c.json`, `plantas-m8-rp1c.json` e a saída F1 em `portoes/rp1c/build.log` guardam as "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/data/origens-rp1.mjs",
+   "descricao": "os dados (só na cópia do ficheiro; o diff fica são): o literal da página da Segurança Social sobre o RSI passa de «situação de pobreza extrema» a «situação de pobreza relativa», que o corpo alojado não diz e que a leitura («a quem vive em pobreza extrema») deixaria de ter apoio",
+   "sha256_antes": "16940d5a198d697a1f085cbda8b49e81f7eccd5cdc2dfc797609c0e9ad70c61e",
+   "sha256_depois": "bc812ec7c8ecf5a038f2b195fc00f45b3b810f577fa66d1b691db5665c39f43c",
+   "contexto_antes": "Facao-social%2Fapoios-respostas-sociais%2Frendimento-social-insercao\",\n    \"lido\": \"2026-09-26\",\n    \"lingua\": \"pt\",\n    \"excerto\": \"É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à",
+   "contexto_depois": "Facao-social%2Fapoios-respostas-sociais%2Frendimento-social-insercao\",\n    \"lido\": \"2026-09-26\",\n    \"lingua\": \"pt\",\n    \"excerto\": \"É um apoio para pessoas em situação de pobreza relativa e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/en/themes/index.html",
+   "descricao": "a página construída (só a edição inglesa): o ramo dos combustíveis trocado (23,78 em agosto contra 16,58 em julho é «larger», a página passa a dizer «smaller»; a edição portuguesa e a cópia congelada ficam sãs)",
+   "sha256_antes": "0305ab2ec14828ef3e931420a3b2206b02f0e156bf33d8248e5fe543126caa8e",
+   "sha256_depois": "0de897ae4529ad95c7af9cce20e1e5977fa9845ac3ce86d795a01b40d061a8bc",
+   "contexto_antes": "<span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"ipc-combustiveis-variacao-homologa\" data-de-campo=\"reference_date\">August 2026</span> the prices of fuels and lubricants for vehicles were <span class=\"claim\"><span data-claim=\"ipc-combustiveis-variacao-homologa\" class=\"claim-value\">23,78</span><span class=\"claim-sufixo\"> %</span></span> above a year earlier. The change is larger than the previous month’s.</p><p class=\"cartao-medida-regua\"><span class=\"cartao-medida-regua-item\" data-regua=\"anterior\" data-selo-em=\"ipc-combustiveis-variacao-homologa\"><span class=\"c",
+   "contexto_depois": "<span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"ipc-combustiveis-variacao-homologa\" data-de-campo=\"reference_date\">August 2026</span> the prices of fuels and lubricants for vehicles were <span class=\"claim\"><span data-claim=\"ipc-combustiveis-variacao-homologa\" class=\"claim-value\">23,78</span><span class=\"claim-sufixo\"> %</span></span> above a year earlier. The change is smaller than the previous month’s.</p><p class=\"cartao-medida-regua\"><span class=\"cartao-medida-regua-item\" data-regua=\"anterior\" data-selo-em=\"ipc-combustiveis-variacao-homologa\"><span class=\"c"
+  }
+ ]
+}

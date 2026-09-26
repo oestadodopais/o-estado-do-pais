@@ -1,0 +1,89 @@
+{
+  "brief": "design/observatorio/BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md",
+  "guiao": "design/observatorio/medidas/BRIEF-RP2.py",
+  "cabeca_lida": "334cc740",
+  "memorando": "design/observatorio/MEMO-fontes-rp2-2026-09-26.md",
+  "medidas": [
+    {
+      "nome": "valor_do_salario_minimo_no_sitio",
+      "valor": "920,00",
+      "comando": "git show 334cc740:ledger/claims/retribuicao-minima-mensal-garantida-continente-2026.yml · «value»",
+      "conhecido_positivo": {
+        "o_que": "a linha existe e tem unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_documento_alojado",
+      "valor": 288,
+      "comando": "git cat-file --batch sobre as linhas de 334cc740 · document.kind = «ficheiro»",
+      "conhecido_positivo": {
+        "o_que": "há linhas com kind «serie» no mesmo lote",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_serie_de_api",
+      "valor": 1358,
+      "comando": "git cat-file --batch sobre as linhas de 334cc740 · document.kind = «serie»",
+      "conhecido_positivo": {
+        "o_que": "há linhas com kind «ficheiro» no mesmo lote",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro",
+      "valor": 2984,
+      "comando": "git ls-tree -r --name-only 334cc740 -- ledger/claims/ · *.yml",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a linha do salário mínimo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_tabela_do_memorando",
+      "valor": 9,
+      "comando": "design/observatorio/MEMO-fontes-rp2-2026-09-26.md · as linhas da tabela «Summary» cujo primeiro campo é o número do item",
+      "conhecido_positivo": {
+        "o_que": "a tabela tem a linha do salário mínimo no continente",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_memorando_verificadas",
+      "valor": 8,
+      "comando": "as mesmas linhas · o rótulo começa por «VERIFIED»",
+      "conhecido_positivo": {
+        "o_que": "a linha do Eurostat do salário mínimo é VERIFIED",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_por_verificar_no_memorando",
+      "valor": 15,
+      "comando": "design/observatorio/MEMO-fontes-rp2-2026-09-26.md · ocorrências de «[verify]»",
+      "conhecido_positivo": {
+        "o_que": "a marca da licença do Banco de Portugal está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira_hora_de_leitura_do_memorando",
+      "valor": "16:22",
+      "comando": "design/observatorio/MEMO-fontes-rp2-2026-09-26.md · a menor hora UTC escrita",
+      "conhecido_positivo": {
+        "o_que": "há horas escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultima_hora_de_leitura_do_memorando",
+      "valor": "16:45",
+      "comando": "design/observatorio/MEMO-fontes-rp2-2026-09-26.md · a maior hora UTC escrita",
+      "conhecido_positivo": {
+        "o_que": "há horas escritas",
+        "encontrado": true
+      }
+    }
+  ]
+}
