@@ -5,7 +5,12 @@ import { FIGURAS, fixadorDoLimiar } from './figuras.mjs';
  * figuras.mjs; as duas nacionais, antes repetidas pelo domínio, vivem aqui.
  * K9 compara cada uma com a testemunha exportada pelo motor.
  */
-/** @typedef {{limiar: Limiar, limiarFixadoPor: 'comissao'|'pacto'|'conselho'|'lei'}} ReferenciaDaMedida */
+/* A TESTEMUNHA DISCORDANTE (passagem de correção do L1, 26.09.2026, I151): onde
+   uma segunda fonte diz outro valor de referência, a declaração de `figuras.mjs`
+   traz, ao pé do `limiar`, o que cada uma diz, a data de cada uma e quem manda.
+   Vai com a referência porque é aqui que a K9 do `check:cartao` lê as
+   testemunhas; não muda o valor que o cartão rende. */
+/** @typedef {{limiar: Limiar, limiarFixadoPor: 'comissao'|'pacto'|'conselho'|'lei', testemunhaDiscordante?: Record<string, any>}} ReferenciaDaMedida */
 /** @type {Map<string, ReferenciaDaMedida>} */
 export const REFERENCIAS_DAS_MEDIDAS = new Map([
   ['saldo-das-administracoes-publicas-2025', {
@@ -24,7 +29,12 @@ for (const figura of FIGURAS) {
   if (!('limiar' in figura) || !figura.limiar) continue;
   const fixador = fixadorDoLimiar(figura, 'referências dos cartões');
   if (!fixador) throw new Error(`Referência sem fixador: ${figura.claim}`);
-  REFERENCIAS_DAS_MEDIDAS.set(figura.claim, { limiar: figura.limiar, limiarFixadoPor: fixador });
+  const testemunha = 'testemunhaDiscordante' in figura ? figura.testemunhaDiscordante : undefined;
+  REFERENCIAS_DAS_MEDIDAS.set(figura.claim, {
+    limiar: figura.limiar,
+    limiarFixadoPor: fixador,
+    ...(testemunha ? { testemunhaDiscordante: testemunha } : {}),
+  });
 }
 
 /** @param {string} id */
