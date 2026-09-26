@@ -1,0 +1,47 @@
+{
+  "estado": "antes",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "cabeca_da_arvore": "38d3627894416097de26c52346c595c45a7b2884",
+  "dist_construido_de": "38d3627894416097de26c52346c595c45a7b2884",
+  "dist_construido_em": "2026-09-26T14:00:44.065Z",
+  "inicio": "2026-09-26T14:01:01.607Z",
+  "fim": "2026-09-26T14:01:17.442Z",
+  "segundos": 15.835,
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "sha256": "4dddadfc0b463649681d5ffea03b9d30a520bf30375045836e384a8bdda36928"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "sha256": "f90e134d86a7393f1bbc02b925fee6003f06860a4ccdf4b7b71ddced2d8c98ed"
+    },
+    "temas_index.html": {
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "sha256": "da912db17a7009a9eb8ba64b60be7e762b04514dc0713df351d9e6603c52ec03"
+    },
+    "en_themes_index.html": {
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "sha256": "79ba417c5c930bf4e136f857541673c927701d7ea433694ddaab908be109abc1"
+    },
+    "cartao-medida.css": {
+      "origem": "src/styles/cartao-medida.css@38d3627894416097de26c52346c595c45a7b2884",
+      "sha256": "71fbbdf85d814f8ed956213e401531475fb301cb5f002376d1ff9deba7821639"
+    },
+    "site.css": {
+      "origem": "src/styles/site.css@38d3627894416097de26c52346c595c45a7b2884",
+      "sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
+    }
+  }
+}

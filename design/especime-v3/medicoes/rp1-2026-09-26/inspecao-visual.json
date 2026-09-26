@@ -1,0 +1,42 @@
+{
+  "metodo": "Inspeção das imagens com view_image pelo construtor",
+  "observacao": "As amostras mostram a leitura entre o valor e a régua, sem sobreposições; na remuneração a unidade antecede a ressalva. As unidades longas quebram dentro do cartão.",
+  "imagens": [
+    {
+      "ficheiro": "depois-cartao-remuneracao-bruta-mensal-media-pt-390.png",
+      "sha256": "39033dea0303234c8dc1aded011493e8a64137edb2986a0a5b7460354c91aad7"
+    },
+    {
+      "ficheiro": "depois-cartao-remuneracao-bruta-mensal-media-en-1280.png",
+      "sha256": "c9517b858ca5be0a80b09c4c8976dcdf6d96bc1207d51a91e50463d73067871b"
+    },
+    {
+      "ficheiro": "depois-cartao-ipc-variacao-homologa-pt-1280.png",
+      "sha256": "dc1d132bb097c9b125d86a3372dd996e61af400fb2fd578b596726552cdf3df7"
+    },
+    {
+      "ficheiro": "depois-cartao-pensao-media-anual-2025-en-390.png",
+      "sha256": "39b896461870d0e0d2d227114ca39a31221031cf19675d131e03a6d5bcd7cd41"
+    },
+    {
+      "ficheiro": "depois-cartao-linha-de-risco-de-pobreza-2025-pt-390.png",
+      "sha256": "f8a41f2e8c8cb4a466c7ab4fe7e8d5645f01d2a8c045df470e9e591e98dd9660"
+    },
+    {
+      "ficheiro": "depois-cartao-beneficiarios-do-rsi-por-mil-2024-en-1280.png",
+      "sha256": "da8fd215e7d02d90c5c73417f0d76b021ee1cde83e90e6b6aa2beb9a62628db2"
+    },
+    {
+      "ficheiro": "depois-cartao-ipc-sem-habitacao-variacao-media-12-meses-pt-1280.png",
+      "sha256": "e8a4204607d1f2a901bb4bc16c973f29885ad9d0f2ace1459e82479ec0340da9"
+    },
+    {
+      "ficheiro": "depois-cartao-ipc-alimentacao-variacao-homologa-en-390.png",
+      "sha256": "191aeb81cab309ef4c3d33c1234dcf9fa6e73824c6c1aac858a9c84b61ebb5dd"
+    },
+    {
+      "ficheiro": "depois-cartao-ipc-variacao-media-12-meses-en-1280.png",
+      "sha256": "8dde08d5a3d121e41e66bc83f08804efb92bb461a4b658f263386d5bd1590076"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "rp1-portas-extra",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 · páginas com dois destinos iguais fora da mobília: \\d+, acima do teto"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "718c49e777ccd63cd6e24d5cb109a08a1ffa234d048ceb1d7f2552d764578768",
+        "reposto": "718c49e777ccd63cd6e24d5cb109a08a1ffa234d048ceb1d7f2552d764578768"
+      }
+    ]
+  }
+]

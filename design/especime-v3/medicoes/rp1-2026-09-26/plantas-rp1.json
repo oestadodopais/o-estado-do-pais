@@ -1,0 +1,60 @@
+{
+  "reguas": 5,
+  "plantas": [
+    {
+      "nome": "régua de outra medida",
+      "mordeu": true
+    },
+    {
+      "nome": "unidade diferente",
+      "mordeu": true
+    },
+    {
+      "nome": "salto de mês calado",
+      "mordeu": true
+    },
+    {
+      "nome": "período anterior ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "trimestre imediatamente anterior em vez do homólogo",
+      "mordeu": true
+    },
+    {
+      "nome": "data recusada: reference_date=2026-T5",
+      "mordeu": true
+    },
+    {
+      "nome": "data recusada: access_date=2026-T2",
+      "mordeu": true
+    },
+    {
+      "nome": "data recusada: published_at=2026-03-31",
+      "mordeu": true
+    },
+    {
+      "nome": "palavra de conteúdo em vez da ligação auditada",
+      "mordeu": true
+    },
+    {
+      "nome": "sufixo traduzido não pode trocar a linha",
+      "mordeu": true
+    },
+    {
+      "nome": "sufixo da unidade sem literal",
+      "mordeu": true
+    },
+    {
+      "nome": "unidade depois do provisório, pt",
+      "mordeu": true
+    },
+    {
+      "nome": "unidade depois do provisório, en",
+      "mordeu": true
+    }
+  ],
+  "datas": 8,
+  "paginas": 2,
+  "cartoes": 16
+}

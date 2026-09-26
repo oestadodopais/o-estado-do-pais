@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "rp1-fonte-da-pergunta",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a origem «rp1-ipc-homologa» não se rende na página"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/ipc-variacao-homologa/index.html",
+        "antes": "46b7bb3a8b31baacf8b968bc308451dca5d875dd3439bfa4a9c01205e9785153",
+        "reposto": "46b7bb3a8b31baacf8b968bc308451dca5d875dd3439bfa4a9c01205e9785153"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "comparacoes-nao-sao-cartoes-autonomos",
+    "codigo": 0,
+    "passou": true,
+    "saida": "{\"anteriores\":[\"saldo-das-administracoes-publicas-2024\",\"crescimento-da-despesa-liquida-2024\",\"disparidade-salarial-entre-sexos-2023\",\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024\"],\"companheiras\":[\"saldo-das-administracoes-publicas-2024\",\"crescimento-da-despesa-liquida-2024\",\"disparidade-salarial-entre-sexos-2023\",\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024\",\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"],\"autonomas\":0,\"limiteNosCartoes\":0}"
+  },
+  {
+    "nome": "comparacao-com-edition-diferente-nao-e-excluida",
+    "codigo": 0,
+    "passou": true,
+    "saida": ""
+  },
+  {
+    "nome": "comparacao-com-unit-diferente-nao-e-excluida",
+    "codigo": 0,
+    "passou": true,
+    "saida": ""
+  },
+  {
+    "nome": "medida-fora-das-declaracoes-nao-e-excluida",
+    "codigo": 0,
+    "passou": true,
+    "saida": ""
+  }
+]
