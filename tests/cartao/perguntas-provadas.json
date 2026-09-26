@@ -1404,6 +1404,130 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ipc-energia-em-casa-variacao-homologa",
+      "origens": [
+        "rp1-ipc-classes-homologa",
+        "rp1-ipc-habitacao"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram os preços da eletricidade, do gás e dos outros combustíveis usados em casa face ao mesmo mês do ano anterior?",
+        "en": "How much have the prices of electricity, gas and other fuels used at home changed since the same month a year earlier?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram os preços da eletricidade, do gás e dos outros combustíveis usados em casa face ao mesmo mês do ano anterior?",
+          "en": "How much have the prices of electricity, gas and other fuels used at home changed since the same month a year earlier?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-classes-homologa",
+              "campo": "excerto",
+              "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+            },
+            {
+              "origem": "rp1-ipc-habitacao",
+              "campo": "excerto",
+              "literal": "Habitação, água, eletricidade, gás e outros combustíveis"
+            },
+            {
+              "linha": "ipc-energia-em-casa-variacao-homologa",
+              "campo": "excerpt",
+              "literal": "Eletricidade, gás e outros combustíveis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "origens": [
+        "rp1-ipc-classes-homologa"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior?",
+        "en": "How much have fuel and lubricant prices for vehicles changed since the same month a year earlier?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior?",
+          "en": "How much have fuel and lubricant prices for vehicles changed since the same month a year earlier?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-classes-homologa",
+              "campo": "excerto",
+              "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+            },
+            {
+              "linha": "ipc-combustiveis-variacao-homologa",
+              "campo": "excerpt",
+              "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ipc-rendas-variacao-homologa",
+      "origens": [
+        "rp1-ipc-classes-homologa"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior?",
+        "en": "How much have rents actually paid for housing changed since the same month a year earlier?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior?",
+          "en": "How much have rents actually paid for housing changed since the same month a year earlier?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-classes-homologa",
+              "campo": "excerto",
+              "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+            },
+            {
+              "linha": "ipc-rendas-variacao-homologa",
+              "campo": "excerpt",
+              "literal": "Rendas efetivamente pagas pela habitação"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ihpc-variacao-homologa",
+      "origens": [
+        "rp1-ihpc-comparavel",
+        "rp1-ihpc-homologa"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "en": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+          "en": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+          "apoios": [
+            {
+              "origem": "rp1-ihpc-comparavel",
+              "campo": "excerto",
+              "literal": "The Harmonised Index of Consumer Prices ( HICP) gives comparable measures of inflation for the countries and country groups for which it is produced. It is a macroeconomic indicator that measures the change over time of the prices of consumer goods and services acquired by households."
+            },
+            {
+              "origem": "rp1-ihpc-homologa",
+              "campo": "excerto",
+              "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+            },
+            {
+              "linha": "ihpc-variacao-homologa",
+              "campo": "excerpt",
+              "literal": "Portugal"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

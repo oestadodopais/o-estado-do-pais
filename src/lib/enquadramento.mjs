@@ -238,6 +238,10 @@ export const REGUAS_DECLARADAS = /** @type {const} */ ({
   'ipc-variacao-media-12-meses': { anterior: 'ipc-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
   'ipc-alimentacao-variacao-homologa': { anterior: 'ipc-alimentacao-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
   'ipc-sem-habitacao-variacao-media-12-meses': { anterior: 'ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ipc-energia-em-casa-variacao-homologa': { anterior: 'ipc-energia-em-casa-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ipc-combustiveis-variacao-homologa': { anterior: 'ipc-combustiveis-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ipc-rendas-variacao-homologa': { anterior: 'ipc-rendas-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ihpc-variacao-homologa': { anterior: 'ihpc-variacao-homologa-periodo-anterior', ue: 'ihpc-variacao-homologa-ue', cadencia: 'mes-anterior' },
   'remuneracao-bruta-mensal-media': { anterior: 'remuneracao-bruta-mensal-media-periodo-anterior', ue: null, cadencia: 'mesmo-trimestre-ano-anterior' },
 });
 
@@ -263,6 +267,15 @@ export function conferirReguaDeclarada(id, regra, linhas = loadClaims()) {
   const distancia = regra.cadencia === 'mes-anterior' ? 1 : regra.cadencia === 'mesmo-trimestre-ano-anterior' ? 4 : null;
   if (atual === null || anterior === null || distancia === null || atual - anterior !== distancia) {
     throw new Error(`Régua declarada de ${id}: os períodos não cumprem a cadência declarada`);
+  }
+  if (regra.ue) {
+    const ue = linhas.get(regra.ue);
+    if (!ue || a.document.edition !== ue.document?.edition || a.unit !== ue.unit) {
+      throw new Error(`Régua declarada de ${id}: União de outra série ou unidade, ou linha ausente`);
+    }
+    if (ue.reference_date !== a.reference_date) {
+      throw new Error(`Régua declarada de ${id}: União de outro período`);
+    }
   }
   return { anterior: regra.anterior, ue: regra.ue };
 }

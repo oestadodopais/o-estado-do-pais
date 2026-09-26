@@ -452,7 +452,7 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
       const alvo = p.claim === 'proprio' ? id : p.claim === 'anterior' ? regua.anterior : regua.ue;
       const l = alvo ? linhas.get(alvo) : null;
       if (!l) throw new Error(`a leitura de ${id} cita a linha «${p.claim}», que a régua do cartão não rende`);
-      return `${l.value}${p.sufixo ?? ''}${(l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? provisorio : ''}`;
+      return `${l.value}${p.sufixo ?? ''}${(l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? ' ' + provisorio : ''}`;
     }
     if ('periodo' in p) {
       if (camaras) return dataDaCasaAqui(String([...(/** @type {any} */ (recontagem)).periodos][0]));
@@ -533,6 +533,24 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
   for (const cartao of cartoes) {
     const id = cartao.getAttribute('data-cartao-medida') ?? (cartao.hasAttribute('data-cartao-camaras') ? LEITURA_DAS_CAMARAS : '');
     contas.cartoes++;
+    // I153: a ressalva separa-se no texto, no valor e na leitura. A palavra
+    // continua presa à bandeira da linha que a precede, sem uma dispensa nova.
+    const comBandeira = new Set();
+    for (const valor of cartao.querySelectorAll('[data-claim]')) {
+      const l = linhas.get(valor.getAttribute('data-claim'));
+      if (l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) comBandeira.add(l.id);
+    }
+    const comPalavra = new Set();
+    for (const marca of cartao.querySelectorAll('.claim-provisorio')) {
+      const irmaos = marca.parentNode.childNodes;
+      const anteriores = irmaos.slice(0, irmaos.indexOf(marca));
+      const valor = anteriores.reverse().find(n => n.nodeType === NodeType.ELEMENT_NODE && n.hasAttribute('data-claim'));
+      const linha = valor?.getAttribute('data-claim');
+      if (linha) comPalavra.add(linha);
+      else falha(id, 'ressalva sem a linha que a precede');
+      if (marca.textContent !== ' ' + t(lang).prov.provisorio) falha(id, 'ressalva sem separador ou com palavra diferente da edição');
+    }
+    if ([...comBandeira].some(x => !comPalavra.has(x)) || [...comPalavra].some(x => !comBandeira.has(x))) falha(id, 'as linhas com bandeira e as palavras de ressalva não coincidem');
     const leituras = cartao.querySelectorAll('[data-cartao-leitura]');
     if (leituras.length !== 1) {
       falha(id, `o cartão tem ${leituras.length} leitura(s), e um cartão nacional tem uma`);

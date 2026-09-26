@@ -1,4 +1,4 @@
-/** Leituras do lugar de direção com os acertos auditados em acertos-rp1.json. */
+/** Segunda redação do lugar de direção, com os acertos auditados em acertos-rp1.json. */
 export const LEITURAS_RP1 = {
   "ipc-variacao-homologa": {
     "pt": [
@@ -126,10 +126,27 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", os preços no consumidor variaram ",
+      ", os preços no consumidor ",
       {
-        "claim": "proprio",
-        "sufixo": " %"
+        "sinal": {
+          "positivo": [
+            "subiram ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "negativo": [
+            "variaram ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "zero": [
+            "não variaram"
+          ]
+        }
       },
       " face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.",
       {
@@ -153,10 +170,27 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", consumer prices changed by ",
+      ", consumer prices ",
       {
-        "claim": "proprio",
-        "sufixo": " %"
+        "sinal": {
+          "positivo": [
+            "rose ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "negativo": [
+            "changed by ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "zero": [
+            "did not change"
+          ]
+        }
       },
       " compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls.",
       {
@@ -294,16 +328,505 @@ export const LEITURAS_RP1 = {
       }
     ]
   },
+  "ipc-energia-em-casa-variacao-homologa": {
+    "pt": [
+      {
+        "sinal": {
+          "positivo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços da eletricidade, do gás e dos outros combustíveis usados em casa estavam",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " acima dos de há um ano."
+          ],
+          "negativo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços da eletricidade, do gás e dos outros combustíveis usados em casa estavam",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " face aos de há um ano, ou seja, abaixo deles."
+          ],
+          "zero": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços da eletricidade, do gás e dos outros combustíveis usados em casa estavam",
+            " ao mesmo nível de há um ano."
+          ]
+        }
+      },
+      {
+        "compara": "anterior",
+        "maior": [
+          " ",
+          "A variação é maior do que a do mês anterior."
+        ],
+        "menor": [
+          " ",
+          "A variação é menor do que a do mês anterior."
+        ],
+        "igual": [
+          " ",
+          "A variação é igual à do mês anterior."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "sinal": {
+          "positivo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the prices of electricity, gas and other fuels used at home were",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " above a year earlier."
+          ],
+          "negativo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the prices of electricity, gas and other fuels used at home were",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " compared with a year earlier, that is, below."
+          ],
+          "zero": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the prices of electricity, gas and other fuels used at home were",
+            " at the same level as a year earlier."
+          ]
+        }
+      },
+      {
+        "compara": "anterior",
+        "maior": [
+          " ",
+          "The change is larger than the previous month’s."
+        ],
+        "menor": [
+          " ",
+          "The change is smaller than the previous month’s."
+        ],
+        "igual": [
+          " ",
+          "The change is the same as the previous month’s."
+        ]
+      }
+    ]
+  },
+  "ipc-combustiveis-variacao-homologa": {
+    "pt": [
+      {
+        "sinal": {
+          "positivo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " acima dos de há um ano."
+          ],
+          "negativo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " face aos de há um ano, ou seja, abaixo deles."
+          ],
+          "zero": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+            " ao mesmo nível de há um ano."
+          ]
+        }
+      },
+      {
+        "compara": "anterior",
+        "maior": [
+          " ",
+          "A variação é maior do que a do mês anterior."
+        ],
+        "menor": [
+          " ",
+          "A variação é menor do que a do mês anterior."
+        ],
+        "igual": [
+          " ",
+          "A variação é igual à do mês anterior."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "sinal": {
+          "positivo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the prices of fuels and lubricants for vehicles were",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " above a year earlier."
+          ],
+          "negativo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the prices of fuels and lubricants for vehicles were",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " compared with a year earlier, that is, below."
+          ],
+          "zero": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the prices of fuels and lubricants for vehicles were",
+            " at the same level as a year earlier."
+          ]
+        }
+      },
+      {
+        "compara": "anterior",
+        "maior": [
+          " ",
+          "The change is larger than the previous month’s."
+        ],
+        "menor": [
+          " ",
+          "The change is smaller than the previous month’s."
+        ],
+        "igual": [
+          " ",
+          "The change is the same as the previous month’s."
+        ]
+      }
+    ]
+  },
+  "ihpc-variacao-homologa": {
+    "pt": [
+      {
+        "sinal": {
+          "positivo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " acima dos de há um ano."
+          ],
+          "negativo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " face aos de há um ano, ou seja, abaixo deles."
+          ],
+          "zero": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,",
+            " ao mesmo nível de há um ano."
+          ]
+        }
+      },
+      {
+        "compara": "ue",
+        "maior": [
+          " ",
+          "A subida é maior do que a da média da União Europeia."
+        ],
+        "menor": [
+          " ",
+          "A subida é menor do que a da média da União Europeia."
+        ],
+        "igual": [
+          " ",
+          "A subida é igual à da média da União Europeia."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "sinal": {
+          "positivo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " above a year earlier."
+          ],
+          "negativo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " compared with a year earlier, that is, below."
+          ],
+          "zero": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,",
+            " at the same level as a year earlier."
+          ]
+        }
+      },
+      {
+        "compara": "ue",
+        "maior": [
+          " ",
+          "The rise is larger than the European Union average."
+        ],
+        "menor": [
+          " ",
+          "The rise is smaller than the European Union average."
+        ],
+        "igual": [
+          " ",
+          "The rise is the same as the European Union average."
+        ]
+      }
+    ]
+  },
+  "ipc-rendas-variacao-homologa": {
+    "pt": [
+      {
+        "sinal": {
+          "positivo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " acima dos de há um ano."
+          ],
+          "negativo": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " face aos de há um ano, ou seja, abaixo deles."
+          ],
+          "zero": [
+            "Em ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,",
+            " ao mesmo nível de há um ano."
+          ]
+        }
+      },
+      {
+        "compara": "anterior",
+        "maior": [
+          " ",
+          "A variação é maior do que a do mês anterior."
+        ],
+        "menor": [
+          " ",
+          "A variação é menor do que a do mês anterior."
+        ],
+        "igual": [
+          " ",
+          "A variação é igual à do mês anterior."
+        ]
+      }
+    ],
+    "en": [
+      {
+        "sinal": {
+          "positivo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the rents paid by tenants were, on the consumer price index measure,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " above a year earlier."
+          ],
+          "negativo": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the rents paid by tenants were, on the consumer price index measure,",
+            " ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            },
+            " compared with a year earlier, that is, below."
+          ],
+          "zero": [
+            "In ",
+            {
+              "periodo": "proprio"
+            },
+            " ",
+            "the rents paid by tenants were, on the consumer price index measure,",
+            " at the same level as a year earlier."
+          ]
+        }
+      },
+      {
+        "compara": "anterior",
+        "maior": [
+          " ",
+          "The change is larger than the previous month’s."
+        ],
+        "menor": [
+          " ",
+          "The change is smaller than the previous month’s."
+        ],
+        "igual": [
+          " ",
+          "The change is the same as the previous month’s."
+        ]
+      }
+    ]
+  },
   "ipc-sem-habitacao-variacao-media-12-meses": {
     "pt": [
       "Na média dos doze meses até ",
       {
         "periodo": "proprio"
       },
-      ", os preços no consumidor sem a habitação variaram ",
+      ", os preços no consumidor sem a habitação ",
       {
-        "claim": "proprio",
-        "sufixo": " %"
+        "sinal": {
+          "positivo": [
+            "subiram ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "negativo": [
+            "variaram ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "zero": [
+            "não variaram"
+          ]
+        }
       },
       " face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte.",
       {
@@ -327,10 +850,27 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", consumer prices excluding housing changed by ",
+      ", consumer prices excluding housing ",
       {
-        "claim": "proprio",
-        "sufixo": " %"
+        "sinal": {
+          "positivo": [
+            "rose ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "negativo": [
+            "changed by ",
+            {
+              "claim": "proprio",
+              "sufixo": " %"
+            }
+          ],
+          "zero": [
+            "did not change"
+          ]
+        }
       },
       " compared with the previous twelve months. The August value is the reference figure for updating rents in the following year.",
       {
@@ -580,16 +1120,16 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de ",
+      ", uma pessoa que vivesse sozinha estava em risco de pobreza se, no ano anterior, tivesse tido menos de ",
       {
         "claim": "proprio"
       },
-      " euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a ",
+      " euros, depois dos impostos e das contribuições sociais e contando as prestações sociais. É a linha que o Eurostat traça a ",
       {
         "nl": "60",
         "motivo": "escala-de-instrumento"
       },
-      " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos.",
+      " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família. Mediano é o do meio: metade da população tem mais e metade tem menos.",
       {
         "compara": "anterior",
         "maior": [
@@ -626,16 +1166,16 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", a person living alone was at risk of poverty with less than ",
+      ", a person living alone was at risk of poverty if, in the previous year, they had had less than ",
       {
         "claim": "proprio"
       },
-      " euros a year in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+      " euros, after taxes and social contributions and including social benefits. That is the line Eurostat draws at ",
       {
         "nl": "60",
         "motivo": "escala-de-instrumento"
       },
-      " % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less.",
+      " % of the country’s median income, adjusted for each household’s size and composition. Median means the one in the middle: half the population has more and half has less.",
       {
         "compara": "anterior",
         "maior": [

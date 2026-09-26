@@ -1,4 +1,4 @@
-/** RP1: excertos e selos conferidos por origens-rp1.py. */
+/** RP1 e RP1b: excertos e selos conferidos por origens-rp1.py. */
 export const ORIGENS_RP1 = {
   "rp1-ipc-homologa": {
     "publicador": "INE",
@@ -232,6 +232,81 @@ export const ORIGENS_RP1 = {
       "hora": "2026-09-26T13:54:49Z",
       "cliente": "core.http.HttpClient.condicional",
       "sha256": "b974d064c0cc5a35069232a83ce9ea72fbf43460c3744335d48f9e80ceed7789",
+      "campo": "texto normalizado da página"
+    }
+  },
+  "rp1-ipc-classes-homologa": {
+    "publicador": "INE",
+    "documento": "INE · metainformação das classes do índice de preços no consumidor",
+    "url": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+    "lido": "2026-09-26",
+    "lingua": "pt",
+    "excerto": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior.",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/030-ine-0014647-minfo.html",
+      "hora": "2026-09-26T16:04:14Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "184a4e7fccebe7360411f9dcd1f32b3fa95f706c72962ccb21e2746c68a00824",
+      "campo": "texto normalizado da página"
+    }
+  },
+  "rp1-ipc-habitacao": {
+    "publicador": "INE",
+    "documento": "INE · classificação do consumo individual por objetivo",
+    "url": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014647&lang=PT",
+    "lido": "2026-09-26",
+    "lingua": "pt",
+    "excerto": "Habitação, água, eletricidade, gás e outros combustíveis",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/027-ine-0014647-meta.json",
+      "hora": "2026-09-26T16:03:37Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e5d99cf6a277344f25d8feb43e2eb96cb628507e4247ce4822715b52e012345c",
+      "campo": "Dimensoes.Categoria_Dim[dim_num=3,categ_cod=04].categ_dsg"
+    }
+  },
+  "rp1-ihpc-comparavel": {
+    "publicador": "Eurostat",
+    "documento": "Eurostat · Harmonised index of consumer prices (HICP), metadados",
+    "url": "https://ec.europa.eu/eurostat/cache/metadata/en/prc_hicp_esms.htm",
+    "lido": "2026-09-26",
+    "lingua": "en",
+    "excerto": "The Harmonised Index of Consumer Prices ( HICP) gives comparable measures of inflation for the countries and country groups for which it is produced. It is a macroeconomic indicator that measures the change over time of the prices of consumer goods and services acquired by households.",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/031-eurostat-prc_hicp_esms.html",
+      "hora": "2026-09-26T16:04:20Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
+      "campo": "texto normalizado da página"
+    }
+  },
+  "rp1-ihpc-homologa": {
+    "publicador": "Eurostat",
+    "documento": "Eurostat · definição da variação homóloga do IHPC",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+    "lido": "2026-09-26",
+    "lingua": "en",
+    "excerto": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/029-eurostat-prc_hicp_minr-rp1b.json",
+      "hora": "2026-09-26T16:04:14Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "f2a3035b7ff23e772a3f1347a11bf01189723f074b84018b041e39e2a171dbd4",
+      "campo": "extension.description, texto normalizado"
+    }
+  },
+  "rp1-ihpc-uniao": {
+    "publicador": "Eurostat",
+    "documento": "Eurostat · cálculo dos agregados europeus do IHPC",
+    "url": "https://ec.europa.eu/eurostat/cache/metadata/en/prc_hicp_esms.htm",
+    "lido": "2026-09-26",
+    "lingua": "en",
+    "excerto": "The change in the headline HICP and country aggregates since December (y-1) are computed with a weighted average of the HICP sub-indices transmitted by the NSIs and the weights of the countries and of the sub-indices concerned.",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/031-eurostat-prc_hicp_esms.html",
+      "hora": "2026-09-26T16:04:20Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
       "campo": "texto normalizado da página"
     }
   }
