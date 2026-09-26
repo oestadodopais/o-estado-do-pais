@@ -31,12 +31,12 @@ export const NOMES_RP1 = {
     "en": "Average inflation over a year"
   },
   "ipc-alimentacao-variacao-homologa": {
-    "pt": "Preços dos alimentos",
-    "en": "Food prices"
+    "pt": "Preços dos alimentos e das bebidas não alcoólicas",
+    "en": "Prices of food and non-alcoholic drinks"
   },
   "ipc-alimentacao-variacao-homologa-periodo-anterior": {
-    "pt": "Preços dos alimentos",
-    "en": "Food prices"
+    "pt": "Preços dos alimentos e das bebidas não alcoólicas",
+    "en": "Prices of food and non-alcoholic drinks"
   },
   "ipc-sem-habitacao-variacao-media-12-meses": {
     "pt": "Preços sem a habitação",
@@ -55,12 +55,12 @@ export const NOMES_RP1 = {
     "en": "Average pay before deductions"
   },
   "pensao-media-anual-2025": {
-    "pt": "Pensões por pensionista no ano",
-    "en": "Pensions per pensioner over the year"
+    "pt": "Pensão média anual",
+    "en": "Average annual pension"
   },
   "pensao-media-anual-2024": {
-    "pt": "Pensões por pensionista no ano",
-    "en": "Pensions per pensioner over the year"
+    "pt": "Pensão média anual",
+    "en": "Average annual pension"
   },
   "beneficiarios-do-rsi-por-mil-2024": {
     "pt": "Pessoas que recebem o rendimento social de inserção",

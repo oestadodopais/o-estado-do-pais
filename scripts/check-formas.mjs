@@ -164,6 +164,25 @@ if (!fs.existsSync(DIST)) {
   process.exit(1);
 }
 
+/** RP1c: recompõe a preposição do período sem importar o cartão. */
+function preposicaoDoPeriodo(el, bruto, lang) {
+  const periodo = el.closest('.cartao-medida-periodo');
+  // O cartão das câmaras usa outro componente; a data dele continua na F1 abaixo.
+  if (!periodo || el.closest('[data-cartao-camaras]')) return null;
+  const trimestral = /^\d{4}-T[1-4]$/.test(String(bruto));
+  const esperado = lang === 'en' ? (trimestral ? 'in the' : 'in') : (trimestral ? 'no' : 'em');
+  return periodo.querySelector('.cartao-medida-em')?.textContent.trim() === esperado ? null : `F1 · preposição do período: esperado «${esperado}»`;
+}
+// O mesmo detetor recebe o caso íntegro e a preposição errada, nas duas edições.
+for (const lang of ['pt', 'en']) {
+  const root = parse(`<span class="cartao-medida-periodo"><span class="cartao-medida-em">${lang === 'pt' ? 'no' : 'in the'}</span><span data-nonledger="data-da-linha">${lang === 'pt' ? '2.º trimestre de 2026' : '2nd quarter of 2026'}</span></span>`);
+  const el = root.querySelector('[data-nonledger]');
+  if (preposicaoDoPeriodo(el, '2026-T2', lang)) throw Error('F1: o trimestre íntegro foi recusado');
+  root.querySelector('.cartao-medida-em').set_content(lang === 'pt' ? 'em' : 'in');
+  if (!preposicaoDoPeriodo(el, '2026-T2', lang)) throw Error('F1: a planta da preposição passou');
+}
+console.log('F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.');
+
 /** As quatro formas do §3, e mais nenhuma. */
 const FORMAS = new Set([
   'serie-do-pais',
@@ -453,7 +472,10 @@ for (const ficheiro of paginasDe(DIST)) {
       );
       continue;
     }
-    const esperado = dataDaCasa(bruto, rota?.lang === 'en' ? 'en' : 'pt');
+    const lingua = rota?.lang === 'en' ? 'en' : 'pt';
+    const preposicao = preposicaoDoPeriodo(el, bruto, lingua);
+    if (preposicao) err(`${rel}: ${preposicao}`);
+    const esperado = dataDaCasa(bruto, lingua);
     const rendido = texto(el);
     if (rendido !== esperado) {
       err(

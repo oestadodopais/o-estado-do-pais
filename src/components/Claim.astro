@@ -239,7 +239,7 @@ const estilo = escala
       {sufixo && <span class="claim-sufixo" id={sufixoId ?? undefined} set:text={sufixo} />}
       {/* RP1: a unidade marcada como campo cabe aqui, antes do provisório. */}
       <slot name="sufixo" />
-      {provisorio && <span class="claim-provisorio">{' '}{s.prov.provisorio}</span>}
+      {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
     </>
   ) : chip ? (
     <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
@@ -247,7 +247,7 @@ const estilo = escala
         {valor}
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
-      {provisorio && <span class="claim-provisorio">{' '}{s.prov.provisorio}</span>}
+      {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
       <Provenance id={id} lang={lang} />
     </span>
   ) : sufixo ? (
@@ -256,7 +256,7 @@ const estilo = escala
         {valor}
       </Tag>
       <span class="claim-sufixo" set:text={sufixo} />
-      {provisorio && <span class="claim-provisorio">{' '}{s.prov.provisorio}</span>}
+      {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
     </span>
   ) : provisorio ? (
     /* SEM INVÓLUCRO, e o portão foi quem o ensinou. `auditaSelo()` procura o
@@ -268,7 +268,7 @@ const estilo = escala
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {valor}
       </Tag>
-      <span class="claim-provisorio">{' '}{s.prov.provisorio}</span>
+      <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>
     </>
   ) : (
     <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>

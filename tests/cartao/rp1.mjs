@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
 import { REGUAS_DECLARADAS, conferirReguaDeclarada, linhasDeEnquadramento, reguaDaMedida } from '../../src/lib/enquadramento.mjs';
+import { LEITURAS_DAS_MEDIDAS } from '../../src/data/leituras-das-medidas.mjs';
+import { conferirLinguaDasOrigens } from '../../scripts/lingua-das-origens.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
-import { DOMINIOS_RP1 } from '../../src/data/medidas-rp1.mjs';
+import { DOMINIOS_RP1, NOMES_RP1 } from '../../src/data/medidas-rp1.mjs';
 import { auditarPerguntas } from './perguntas.mjs';
 import { conferirAuditoriaDasLeituras, folhasDaLeitura, conferirPaginaDaLeitura } from './leituras.mjs';
 
@@ -55,6 +57,29 @@ for (const [campo, valor] of [['reference_date','2026-T5'],['access_date','2026-
     plantas.push({nome: `data recusada: ${campo}=${valor}`,mordeu:true});
   } finally { observacao[campo] = antes; }
 }
+// RP1c: os nomes da casa não alteram os títulos transcritos das fontes.
+const nomesRP1c = {
+  'pensao-media-anual-2025': {pt:'Pensão média anual', en:'Average annual pension'},
+  'pensao-media-anual-2024': {pt:'Pensão média anual', en:'Average annual pension'},
+  'ipc-alimentacao-variacao-homologa': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic drinks'},
+  'ipc-alimentacao-variacao-homologa-periodo-anterior': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic drinks'},
+};
+for (const [id, nomes] of Object.entries(nomesRP1c)) assert.deepEqual(NOMES_RP1[id], nomes);
+const publicacoesNoPeriodo = [];
+for (const [id, data] of [[salario, '2026-04-01'], ['ipc-variacao-homologa', '2026-08-15']]) {
+  const linha = linhas.get(id), antes = linha.published_at;
+  try {
+    linha.published_at = data;
+    assert.ok(!validateLedger().errors.some(e => e.includes(`[${id}.yml]`) && e.includes('published_at')));
+    publicacoesNoPeriodo.push({id, data, aceite:true});
+  } finally { linha.published_at = antes; }
+}
+const excertoIntegro = observacao.excerpt;
+try {
+  observacao.excerpt = excertoIntegro.split('1 835 &')[0] + '1 835 &';
+  assert.ok(validateLedger().errors.some(e => e.includes(`[${salario}.yml]`) && e.includes('excerpt')));
+  plantas.push({nome:'objeto do INE cortado dentro da cadeia do valor',mordeu:true});
+} finally { observacao.excerpt = excertoIntegro; }
 const datas = [
   ['2026-08','pt','agosto de 2026'], ['2026-08','en','August 2026'],
   ['2026-T2','pt','2.º trimestre de 2026'], ['2026-T2','en','2nd quarter of 2026'],
@@ -66,10 +91,15 @@ for (const auditar of [auditarPerguntas, conferirAuditoriaDasLeituras]) assert.d
 // A classe de ligação não pode passar a dispensar conceitos.
 const { lerAuditoriaDasLeituras } = await import('./leituras.mjs');
 const auditoria = lerAuditoriaDasLeituras();
-const parte = auditoria.medidas.find(m => m.id === salario).folhas.find(f => f.pt === 'No ').partes[0];
-parte.pt = 'salário';
-assert.ok(conferirAuditoriaDasLeituras({ auditoria }).erros.some(e => /as partes juntas/.test(e)));
-plantas.push({ nome: 'palavra de conteúdo em vez da ligação auditada', mordeu: true });
+const declaracoes = structuredClone(LEITURAS_DAS_MEDIDAS);
+const folhaNegacao = auditoria.medidas.find(m => m.id === salario).folhas.find(f => f.pt === 'No ');
+folhaNegacao.en = 'There were no';
+folhaNegacao.partes[0].en = 'There were no';
+declaracoes[salario].en[0] = 'There were no';
+const errosNegacao = conferirAuditoriaDasLeituras({ auditoria, leituras: declaracoes }).erros;
+assert.ok(errosNegacao.some(e => /ligação.*«no» \(en\)/.test(e)), 'A negação inglesa passou sem literal');
+assert.ok(!errosNegacao.some(e => /as partes juntas|não tem auditoria/.test(e)), 'A planta tem de preservar a composição');
+plantas.push({ nome: 'There were no: negação inglesa sem literal, composição intacta', mordeu: true });
 recusa('sufixo traduzido não pode trocar a linha', () => folhasDaLeitura([{claim:'proprio',sufixo:' euros por mês'}],[{claim:'anterior',sufixo:' euros a month'}]), /pedaços calculados diferentes/);
 const semApoio = lerAuditoriaDasLeituras();
 semApoio.medidas.find(m=>m.id===salario).folhas.find(f=>f.pt===' euros por mês').partes[0].apoios=[];
@@ -95,7 +125,22 @@ if (!process.argv.includes('--declaracoes')) {
       const definicao=recibo.querySelectorAll(`[data-definicao="${id}"]`);
       assert.equal(definicao.length,1,id+': pergunta ausente do recibo');
       assert.ok(definicao[0].querySelectorAll('[data-def-origem]').length>0,id+': origens ausentes do recibo');
+      assert.deepEqual(conferirLinguaDasOrigens(recibo, lang), []);
+      if (id === 'ipc-variacao-homologa') {
+        for (const seletor of ['.def-origem-doc', '.def-excerto-texto']) {
+          const estrago = parse(recibo.toString());
+          estrago.querySelector('[data-def-origem="rp1-ipc-homologa"] '+seletor).setAttribute('lang','en');
+          assert.ok(conferirLinguaDasOrigens(estrago,lang).some(e=>e.includes('L10') && e.includes(seletor)));
+          plantas.push({nome:'origem portuguesa marcada como inglesa: '+lang+' '+seletor,mordeu:true});
+        }
+      }
       if (id===salario) {
+        const titulo = recibo.querySelector('h1.linha-valor');
+        const unidade = titulo.querySelector('[data-linha-campo="unit"]');
+        const marca = titulo.querySelector('.claim-provisorio');
+        assert.ok(titulo.innerHTML.indexOf(unidade.toString()) < titulo.innerHTML.indexOf(marca.toString()));
+        assert.equal(marca.textContent,lang==='pt'?' (dado provisório)':' (provisional data)');
+        assert.ok(titulo.textContent.includes(' '+unidade.textContent));
         assert.ok(unidadeAntesDaRessalva(card),'unidade antes do provisório');
         const estrago=parse(card.toString());
         const u=estrago.querySelector('[data-linha-campo="unit"]');
@@ -104,7 +149,7 @@ if (!process.argv.includes('--declaracoes')) {
         plantas.push({nome:'unidade depois do provisório, '+lang,mordeu:true});
         const marcas=card.querySelectorAll('.claim-provisorio');
         assert.equal(marcas.length,2,'valor do cartão e valor da leitura');
-        assert.ok(marcas.every(m=>m.textContent===(lang==='pt'?' provisório':' provisional')));
+        assert.ok(marcas.every(m=>m.textContent===(lang==='pt'?' (dado provisório)':' (provisional data)')));
         for (const seletor of ['.cartao-medida-valor', '[data-cartao-leitura]']) {
           const colada=parse(root.toString());
           const marca=colada.querySelector(`[data-cartao-medida="${salario}"] ${seletor} .claim-provisorio`);
@@ -116,6 +161,6 @@ if (!process.argv.includes('--declaracoes')) {
     }
   }
 }
-const resultado={reguas:Object.keys(REGUAS_DECLARADAS).length,plantas,datas:datas.length,paginas,cartoes};
+const resultado={reguas:Object.keys(REGUAS_DECLARADAS).length,plantas,nomes:nomesRP1c,publicacoes_no_periodo:publicacoesNoPeriodo,datas:datas.length,paginas,cartoes};
 if(process.argv.includes('--registo'))fs.writeFileSync('design/especime-v3/medicoes/rp1-2026-09-26/plantas-rp1.json',JSON.stringify(resultado,null,2)+'\n');
 console.log('RP1: PASS · '+JSON.stringify(resultado));

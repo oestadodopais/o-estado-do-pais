@@ -20,15 +20,17 @@ const claims=loadClaims();
 `;
 try {
   caso('comparacoes-nao-sao-cartoes-autonomos', cabeca + `
-    const {linhasDeEnquadramento,reguaDaMedida}=await import('./src/lib/enquadramento.mjs');
+    const {linhasDeEnquadramento,reguaDaMedida,REGUAS_DECLARADAS}=await import('./src/lib/enquadramento.mjs');
     const {areasComPagina}=await import('./src/lib/areas.mjs');
     const {indiceDosDominios}=await import('./src/lib/dominios.mjs');
     const {temasDoPais}=await import('./src/lib/pais.mjs');
     const principais=['saldo-das-administracoes-publicas-2025','crescimento-da-despesa-liquida-2025','disparidade-salarial-entre-sexos-2024','sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025'];
     const anteriores=principais.map(id=>reguaDaMedida(id).anterior.id);
-    const companheiras=[...anteriores,reguaDaMedida(principais.at(-1)).ue.id];
+    const declaradas=Object.values(REGUAS_DECLARADAS).flatMap(r=>[r.anterior,r.ue].filter(Boolean));
+    const companheiras=[...new Set([...anteriores,reguaDaMedida(principais.at(-1)).ue.id,...declaradas])];
     const medidas=areasComPagina().flatMap(a=>a.pecas.medidas);
-    for(const id of companheiras){assert.ok(linhasDeEnquadramento().has(id),id);assert.equal(medidas.some(m=>m.id===id),false,id);}
+    for(const id of companheiras){assert.ok(linhasDeEnquadramento().has(id),id);assert.equal(medidas.some(m=>m.id===id),false,id);
+      for(const resumo of [true,false]) assert.equal(temasDoPais('pt',resumo).flatMap(t=>t.medidas).some(m=>m.id===id),false,id);}
     assert.ok(indiceDosDominios('pt').length);
     for(const resumo of [true,false])assert.equal(temasDoPais('pt',resumo).flatMap(t=>t.medidas).some(c=>c.id==='indice-de-divida-limite-legal'),false);
     assert.ok(DOMINIO_DAS_MEDIDAS['indice-de-divida-limite-legal']);

@@ -451,3 +451,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | rp1b | 10 cadeias novas, 2 contagens atualizadas e 2 leituras que saem do inventário | por ler pelo lugar de direção antes de aterrar | As perguntas novas entram nas duas edições. A regra existente da primeira página escolhe agora as rendas no tema da habitação; entram as leituras rendidas desse cartão. As duas cadeias antigas da média sem habitação saem do inventário porque deixaram de se render na primeira página e a segunda redação mudou os seus verbos; esta peça ainda não foi publicada. K16 e K17 conservam a conferência das palavras e das origens. Os contadores vêm do HTML do livro. |
+
+## RP1c · passagem de correção, 26.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| rp1c | Doze cadeias antigas saem e doze cadeias rendidas entram | por ler pelo lugar de direção antes de aterrar | A terceira redação muda o RSI e as pensões; a nota da fonte passa a render-se entre parênteses, também na leitura da disparidade salarial; a preposição dos trimestres acompanha a forma do período. Só se substituem as declarações que deixaram de se render, sem alargar a procura nem as classes. As palavras e as origens continuam conferidas pela K17, e a preposição pela F1. |
