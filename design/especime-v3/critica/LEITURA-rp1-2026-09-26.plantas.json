@@ -1,0 +1,69 @@
+{
+ "registado_em": "2026-09-26T15:52:55+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/ipc-alimentacao-variacao-homologa.yml",
+   "descricao": "a linha e o diff: o valor da linha dos alimentos trocado de 2,14 para 2,41 (o excerto da própria linha, o corpo alojado no motor e a página construída dizem 2,14)",
+   "sha256_antes": "28da8c43895e08d1ceb41b9ad67f3e5af83d46a4526b0e9ab17fb5a7dc0d45e2",
+   "sha256_depois": "b33f1a534eb48e4dad0c4018689386e748c33963a82acb2e988ac72de55166c3",
+   "contexto_antes": " parte scripts/check-cruzamento.mjs.\n\nid: \"ipc-alimentacao-variacao-homologa\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2,14\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Índice ",
+   "contexto_depois": " parte scripts/check-cruzamento.mjs.\n\nid: \"ipc-alimentacao-variacao-homologa\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"2,41\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Índice "
+  },
+  {
+   "id": "P1",
+   "ficheiro": "diff.patch",
+   "descricao": "a linha e o diff: o valor da linha dos alimentos trocado de 2,14 para 2,41 (o excerto da própria linha, o corpo alojado no motor e a página construída dizem 2,14)",
+   "sha256_antes": "a1b01abcbf609cf2e62c9e318700d426ce23cc89b0a84a4d1974b880d3efef99",
+   "sha256_depois": "48e7ee45c9d9937a8c1d87ebacd61a234c9e89d1a2918457cf2f95b425ef6727",
+   "contexto_antes": "e scripts/check-cruzamento.mjs.\n+\n+id: \"ipc-alimentacao-variacao-homologa\"\n+\n+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n+value: \"2,14\"\n+unit: \"%\"\n+\n+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n+# e onde nele foi lido. Escrito pelo motor, nunca à mão.\n+name: \"Ín",
+   "contexto_depois": "e scripts/check-cruzamento.mjs.\n+\n+id: \"ipc-alimentacao-variacao-homologa\"\n+\n+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\n+value: \"2,41\"\n+unit: \"%\"\n+\n+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n+# e onde nele foi lido. Escrito pelo motor, nunca à mão.\n+name: \"Ín"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/lib/enquadramento.mjs",
+   "descricao": "a régua e o diff: a régua declarada dos alimentos passa a apontar para o período anterior da inflação total (outra série: dim_3=T em vez de dim_3=01; a página construída, feita da tabela sã, compara com a linha certa)",
+   "sha256_antes": "1b164d9f77eb6db68c86b09283e8d690f7051e3a7b7e6f354b210186d61847d5",
+   "sha256_depois": "804679f9c81b493c62e4216e768d7ff387a89e5066f13791e6232fb7ab2ac9d7",
+   "contexto_antes": "adencia: 'mes-anterior' },\n  'ipc-variacao-media-12-meses': { anterior: 'ipc-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n  'ipc-alimentacao-variacao-homologa': { anterior: 'ipc-alimentacao-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n  'ipc-sem-habitacao-variacao-media-12-meses': { anterior: 'ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior',",
+   "contexto_depois": "adencia: 'mes-anterior' },\n  'ipc-variacao-media-12-meses': { anterior: 'ipc-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n  'ipc-alimentacao-variacao-homologa': { anterior: 'ipc-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n  'ipc-sem-habitacao-variacao-media-12-meses': { anterior: 'ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior',"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "diff.patch",
+   "descricao": "a régua e o diff: a régua declarada dos alimentos passa a apontar para o período anterior da inflação total (outra série: dim_3=T em vez de dim_3=01; a página construída, feita da tabela sã, compara com a linha certa)",
+   "sha256_antes": "48e7ee45c9d9937a8c1d87ebacd61a234c9e89d1a2918457cf2f95b425ef6727",
+   "sha256_depois": "2dbc636eabc6f8888986b28988e95396e154f0d160247d78899cea9c061b6b21",
+   "contexto_antes": "encia: 'mes-anterior' },\n+  'ipc-variacao-media-12-meses': { anterior: 'ipc-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n+  'ipc-alimentacao-variacao-homologa': { anterior: 'ipc-alimentacao-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n+  'ipc-sem-habitacao-variacao-media-12-meses': { anterior: 'ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior'",
+   "contexto_depois": "encia: 'mes-anterior' },\n+  'ipc-variacao-media-12-meses': { anterior: 'ipc-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n+  'ipc-alimentacao-variacao-homologa': { anterior: 'ipc-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },\n+  'ipc-sem-habitacao-variacao-media-12-meses': { anterior: 'ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior'"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: a contagem das linhas novas trocada de 16 para 18 (o medidas.json diz 16, e as dezasseis linhas novas contam-se no diff)",
+   "sha256_antes": "6084adc7b305d079012b719f68b3b9f171de1094632663d8488527ce327000d1",
+   "sha256_depois": "74208a32323b65bb2f51aceee90b5a98360d67bda456fd5665f2b608dc522c3c",
+   "contexto_antes": "s (`previstas`). As paragens estão identificadas abaixo. Não se substituiu nenhuma delas por um valor de comunicado nem por uma conta do projeto.\n\nA construção acrescentou 16 linhas (`linhas_novas`). Foram comparados os bytes das 2 984 linhas anteriores (`linhas_antigas`): 0 alteradas (`linhas_antigas_alteradas`). A travessia atualizou o r",
+   "contexto_depois": "s (`previstas`). As paragens estão identificadas abaixo. Não se substituiu nenhuma delas por um valor de comunicado nem por uma conta do projeto.\n\nA construção acrescentou 18 linhas (`linhas_novas`). Foram comparados os bytes das 2 984 linhas anteriores (`linhas_antigas`): 0 alteradas (`linhas_antigas_alteradas`). A travessia atualizou o r"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "a página construída: o ramo do RSI trocado na edição portuguesa (24,22 em 2024 contra o valor de 2023 na régua é «Menos do que em», a página passa a dizer «Mais do que em»; a edição inglesa fica sã e diz «Fewer than in»)",
+   "sha256_antes": "718c49e777ccd63cd6e24d5cb109a08a1ffa234d048ceb1d7f2552d764578768",
+   "sha256_depois": "4fff83e2341399fe674002a96f2d69dc0d1fd6a90381511d9080860ff1f807d1",
+   "contexto_antes": "iam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária. Menos do que em <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"beneficiarios-do-rsi-por-mil-2023\" data-de-campo=\"reference_date\">2023</span>.</p><p c",
+   "contexto_depois": "iam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária. Mais do que em <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"beneficiarios-do-rsi-por-mil-2023\" data-de-campo=\"reference_date\">2023</span>.</p><p c"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/data/origens-rp1.mjs",
+   "descricao": "os dados: um literal de origem que o corpo alojado não traz (a metainformação do INE diz «inserção laboral, social e comunitária» e a cópia da declaração das origens passa a dizer «inserção profissional»; o diff e a auditoria K17 ficam sãos)",
+   "sha256_antes": "8d9c714f6211ad110810c221ba66c3a32c518f88ddb161a18ff8282bb97163c2",
+   "sha256_depois": "686ba077e93551947a1543946f6e4d1f4f10caa7f78e14606fc8cee3d39b7450",
+   "contexto_antes": "as e aos seus agregados familiares apoios adaptados à sua situação pessoal, que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária. PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outr",
+   "contexto_depois": "as e aos seus agregados familiares apoios adaptados à sua situação pessoal, que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção profissional, social e comunitária. PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outr"
+  }
+ ]
+}

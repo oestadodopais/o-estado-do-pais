@@ -1,11 +1,5 @@
-# RP1b
+RP1b entregue em `70f8ca74`, motor em `d3f7a61`: doze cartões, I153 corrigida, 70 capturas e todas as linhas anteriores intactas.
 
-Entregues as quatro medidas dos preços: o bloco tem doze cartões nos temas, nas duas edições. As nove linhas novas estão seladas; nenhuma das três mil linhas anteriores mudou.
+Os três portões passaram a **0** no código `1819395a`; `core.gate` também a **0**. Worktrees limpas, sem push.
 
-A I153 está corrigida no valor e na leitura. As plantas recusam a bandeira colada e a régua europeia trocada. A segunda redação foi conservada, com o único acerto de explicitar os lubrificantes, sustentado no literal da categoria do INE.
-
-`build`, `verify` e `typecheck`: código 0 na cabeça `1819395a994791fdc77bed14a17ab3df844f4d6b`. Motor em `d3f7a619bc46184847775b93c1b1a953e2777d3f`, com `core.gate` a 0.
-
-O [relatório, secção RP1b](LEIA-ME.md#rp1b), o `medidas.json`, as vinte capturas de página, os cinquenta recortes e as cópias congeladas estão na pasta desta entrega. A conferência dos números do relatório terminou sem faltas. O último commit entrega estas provas e o mapa atualizado, sem mudar o código medido.
-
-Não houve push nem publicação. A leitura a frio e a aterragem ficam para o lugar de direção.
+[Relatório](</Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/rp1-2026-09-26/design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md>) · [Pacote para leitura a frio](/tmp/oestado-rp1b-2026-09-26-1hnm98x7.tar.gz)
