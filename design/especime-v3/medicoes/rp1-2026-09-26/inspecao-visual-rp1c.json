@@ -1,0 +1,154 @@
+{
+  "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+  "metodo": "Cada uma das imagens abaixo foi aberta e inspecionada visualmente.",
+  "imagens": [
+    {
+      "ficheiro": "rp1c-depois-cartao-remuneracao-bruta-mensal-media-pt-390.png",
+      "id": "remuneracao-bruta-mensal-media",
+      "lingua": "pt",
+      "largura": 390,
+      "sha256": "fa865294df7d161a1a089d405f88adee93e3fc0510739f2e5b33757d68e7ef3d"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-remuneracao-bruta-mensal-media-pt-1280.png",
+      "id": "remuneracao-bruta-mensal-media",
+      "lingua": "pt",
+      "largura": 1280,
+      "sha256": "57de1d2597d02f6e79d0a9d60031767f988c3aafc23a89013b0f4d534cc70cb9"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-remuneracao-bruta-mensal-media-en-390.png",
+      "id": "remuneracao-bruta-mensal-media",
+      "lingua": "en",
+      "largura": 390,
+      "sha256": "b26a79cab9b67ca7027f9937904f0cb403c0d95181608705e3a4dad20384d236"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-remuneracao-bruta-mensal-media-en-1280.png",
+      "id": "remuneracao-bruta-mensal-media",
+      "lingua": "en",
+      "largura": 1280,
+      "sha256": "998dab48f6623fd7ca0147b59fdc588fef513c415d4309993bdccdca9c18adaf"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-pensao-media-anual-2025-pt-390.png",
+      "id": "pensao-media-anual-2025",
+      "lingua": "pt",
+      "largura": 390,
+      "sha256": "44b24325e4da2f106b38e39d3e4d96d867e2788ff21720e8c29cc080999c930e"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-pensao-media-anual-2025-pt-1280.png",
+      "id": "pensao-media-anual-2025",
+      "lingua": "pt",
+      "largura": 1280,
+      "sha256": "fa482bac1df0bf5051e95c8a18d4370ef41733331a178072e3ac652b1a2e4833"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-pensao-media-anual-2025-en-390.png",
+      "id": "pensao-media-anual-2025",
+      "lingua": "en",
+      "largura": 390,
+      "sha256": "399a7c017a4f4eccadcdc76d785b983ef1c8a15a20defeee8d9bfd9d8fd5d939"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-pensao-media-anual-2025-en-1280.png",
+      "id": "pensao-media-anual-2025",
+      "lingua": "en",
+      "largura": 1280,
+      "sha256": "2bd93bd435e2c2f034d56eb093956f74b26821afab273db6bc083b4a03e877cf"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-beneficiarios-do-rsi-por-mil-2024-pt-390.png",
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lingua": "pt",
+      "largura": 390,
+      "sha256": "bd44e7ed24e796ce35a5234da6f455e33181395dee1886c73f924b683f021dbf"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-beneficiarios-do-rsi-por-mil-2024-pt-1280.png",
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lingua": "pt",
+      "largura": 1280,
+      "sha256": "87bfced3ad8c15b458cedfaa8f552dba6a5f9fa0d7678d11e5e8747121f6ca98"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-beneficiarios-do-rsi-por-mil-2024-en-390.png",
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lingua": "en",
+      "largura": 390,
+      "sha256": "387244d0edbd1ef310e24b877632ae63d49371e332635cc49a3f06fed890c4e7"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-beneficiarios-do-rsi-por-mil-2024-en-1280.png",
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lingua": "en",
+      "largura": 1280,
+      "sha256": "3c16a3bb3c0d9c637740377ea5d61be6d87b32b1439d116ab9d45a4636445171"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-alimentacao-variacao-homologa-pt-390.png",
+      "id": "ipc-alimentacao-variacao-homologa",
+      "lingua": "pt",
+      "largura": 390,
+      "sha256": "a079ae9e6fd4a38acaa7016c659100aec14c7e998c761f7450080683884edbe8"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-alimentacao-variacao-homologa-pt-1280.png",
+      "id": "ipc-alimentacao-variacao-homologa",
+      "lingua": "pt",
+      "largura": 1280,
+      "sha256": "09908c062c5f912aad20721a650b783931418baab52fb842827dce7948e2480e"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-alimentacao-variacao-homologa-en-390.png",
+      "id": "ipc-alimentacao-variacao-homologa",
+      "lingua": "en",
+      "largura": 390,
+      "sha256": "441cccd1c33fab7f58bfe2d57bee84d0ca9c649eede9861602c1d2e4ac903ab3"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-alimentacao-variacao-homologa-en-1280.png",
+      "id": "ipc-alimentacao-variacao-homologa",
+      "lingua": "en",
+      "largura": 1280,
+      "sha256": "23ee8c1d5109ca672a6e23b9685a6ed18e2e65bc2c9682b736e0bf738bbf1cd1"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-variacao-homologa-pt-390.png",
+      "id": "ipc-variacao-homologa",
+      "lingua": "pt",
+      "largura": 390,
+      "sha256": "57fd83937463f0095449e07633e824b201ddcf4e43ac62f6d1e77280cb8e6d5c"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-variacao-homologa-pt-1280.png",
+      "id": "ipc-variacao-homologa",
+      "lingua": "pt",
+      "largura": 1280,
+      "sha256": "375446f54a4dd7b020886067e8ca3e58c1fce411eecfbb465a84113a38f4cc49"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-variacao-homologa-en-390.png",
+      "id": "ipc-variacao-homologa",
+      "lingua": "en",
+      "largura": 390,
+      "sha256": "5d15651b47854f9218b248a7e9af7c752067a927e7e49b881f1d002b043d74c1"
+    },
+    {
+      "ficheiro": "rp1c-depois-cartao-ipc-variacao-homologa-en-1280.png",
+      "id": "ipc-variacao-homologa",
+      "lingua": "en",
+      "largura": 1280,
+      "sha256": "5621dfc6d1f3ab7af749b4e0e7436bcce2a4176a03b007f2f67e692295f3a44b"
+    }
+  ],
+  "observacoes": [
+    "Os nomes corrigidos e as leituras estão completos nas duas edições.",
+    "A remuneração tem a nota da fonte entre parênteses no valor e na leitura, e a preposição do trimestre segue a edição.",
+    "A 1280 px, o recorte inglês da remuneração quebra a unidade e a ressalva em duas linhas; conserva a ordem, os parênteses e o texto, sem sobreposição.",
+    "O RSI mostra as idades e pobreza extrema, com as comparações no ramo correto.",
+    "Os recortes inspecionados não mostram texto cortado nem transbordo."
+  ],
+  "falhas": []
+}

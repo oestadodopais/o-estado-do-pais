@@ -9,7 +9,7 @@ A construção acrescentou 16 linhas (`linhas_novas`). Foram comparados os bytes
 | Item do mandato | Resultado e medição |
 |---|---|
 | Pedidos e linhas | 26 pedidos registados (`pedidos`), 25 lidos (`pedidos_lidos`), 1 recusado (`pedidos_recusados`). Os 26 corpos coincidem com o registo e o alojamento (`corpos_com_sha256_conferido`). |
-| Identificadores e régua | 5 réguas declaradas (`plantas.reguas`); as anuais mantêm a regra do ano. A planta troca a régua da inflação pela dos alimentos e é recusada. O teste do cartão e os controlos das áreas passam na cadeia `verify`; `enquadramento-b2.json` guarda também os casos de `tests/pais/enquadramento-b2.mjs`. |
+| Identificadores e régua | 5 réguas declaradas (`plantas.reguas`); as anuais mantêm a regra do ano. A planta troca a régua da inflação pela dos alimentos e é recusada. O teste do cartão e os controlos das áreas passam na cadeia `verify`; `enquadramento-b2.json` guardava então apenas os casos do B2. A cobertura das réguas declaradas do RP1 foi acrescentada na peça RP1c; esta prova antiga não a cobria. |
 | Declarações | 8 cartões novos nos temas (`seladas`), com nomes, perguntas e leituras nas duas edições. A primeira página continua a aplicar a seleção existente. A K16 tem 0 erros (`k16.erros`) e a K17 tem 0 erros (`k17.erros`). |
 | Leituras | 16 frases novas resolvidas a partir das linhas seladas (`frases_novas_resolvidas`), guardadas em `leituras-seladas.json`. Os acertos estão abaixo e em `acertos-rp1.json`; a prova de igualdade está em `acertos-rp1.py`. |
 | Unidades e períodos | A unidade conserva o significado publicado, incluindo o denominador das pensões. Meses e trimestres passam por `DataDaLinha`; as línguas dos novos títulos e rótulos estão declaradas. `check:formas`, `check:lingua` e `check:voz` passaram dentro de `build` e `verify`. |
@@ -241,3 +241,113 @@ A janela entre o primeiro pedido desta peça e o último portão durou 3 256 seg
 No registo `rollout-2026-09-26T17-01-49-01a0de73-8c86-7ae2-9d60-664b8752f295.jsonl`, lido às `2026-09-26T17:00:34.867Z`, o modelo exposto é `gpt-6-astra`: 18 292 339 tokens de entrada, 17 908 864 em cache e 69 786 de saída (`rp1b.custo.sessao`). São contagens cumulativas, não um preço. O custo monetário não está exposto.
 
 Não ficaram medidas desta peça por construir. A variação real da remuneração foi retirada pelo §8 e continua fora. A leitura do país, a regra da primeira página e o rótulo de IA não foram alterados. Não houve `push` nem publicação. A leitura a frio e a aterragem pertencem ao lugar de direção.
+
+## RP1c
+
+Passagem de correção concluída. As 3 009 linhas do projeto foram comparadas com a cabeça de entrada: 0 valores alterados e 0 linhas novas (`rp1c.linhas_conferidas`, `rp1c.valores_alterados`, `rp1c.linhas_novas`). Os únicos campos reexportados foram o excerto da remuneração e as notas dos períodos anteriores, discriminados em `rp1c.alteradas`.
+
+As secções anteriores descrevem entregas históricas. As provas atuais estão na chave `rp1c` de `medidas.json`; as cópias em `paginas-depois/` são desta cabeça. Os registos antigos foram expurgados de caminhos pessoais: `sanitizacao-rp1c.json` conserva os resumos antes e depois; os resumos dos registos em `medidas.json` foram recalculados, sem mudar códigos ou cabeças.
+
+| Achado | Resultado e prova |
+|---|---|
+| 1, 2, 3, 4, 12 | São as cinco plantas do pacote, todas achadas; não se transportou nenhum desses estragos para o ramo. Registo: `design/especime-v3/critica/LEITURA-rp1-2026-09-26.plantas.json`. |
+| 5 | Confirmado «subiram» e «rose» nas duas médias, em `leituras-seladas.json`. |
+| 6 | Terceira redação do RSI, com as idades sustentadas pelo INE e «pobreza extrema» pela página atual da Segurança Social. Acertos literais abaixo. |
+| 7 | Confirmadas as frases curtas e a correspondência das duas edições em `leituras-seladas.json`. |
+| 8 | Ressalva entre parênteses, com espaço acessível, no valor, na leitura e no recibo. K17 e M8 conferem a forma e recusam a bandeira colada. |
+| 9 | Expurgo de todo o bloco e das leituras a frio RP1. O medidor percorre todos os ficheiros, incluindo binários, e exerce o mesmo detetor sobre um ficheiro de ensaio fora do repositório. Não se tocaram outros blocos por esta razão. |
+| 10 | Os corpos alojados não dão o literal pedido para ligar a taxa homóloga à palavra inflação. Aplicada a alternativa prescrita «É a subida geral dos preços…», apoiada pela definição do IPC. |
+| 11 | Listas de ligação separadas por língua. «no» só na portuguesa. A planta inglesa «There were no» conserva a composição da folha e é recusada pela negação sem literal. |
+| 13 | O documento e o excerto no recibo usam a língua declarada da origem. L10, chamada por `check:lingua`, recusa a origem portuguesa marcada como inglesa nas duas edições. |
+| 14 | O recibo ordena valor, unidade e ressalva. O motor conserva o objeto JSON inteiro; as plantas recusam o corte dentro da cadeia, outro valor e outra nota. A reexportação muda o excerto da remuneração, não o valor; a V16 não exige entrada de correção. |
+| 15 | A preposição acompanha o período: «no» e «in the» nos trimestres, «em» e «in» nos restantes. A F1 recompõe-a e recusa «em 2.º trimestre» e «in 2nd quarter». |
+| 16 | Nomes corrigidos para «Pensão média anual» / «Average annual pension» e «Preços dos alimentos e das bebidas não alcoólicas» / «Prices of food and non-alcoholic drinks», incluindo as linhas anteriores. A inspeção do código encontrou uma diferença em relação à tabela do mandato: estes nomes não estão em `lingua-dos-titulos.mjs`, que declara títulos e rótulos da fonte; a K7 só proíbe «limiar» e «threshold». Não se mudou essa proteção. Os nomes são conferidos pela K1, a língua pela K4, e o ensaio RP1c fixa as quatro redações pedidas. |
+| 17 | Sem mudança nesta peça. Os excertos Eurostat montados a partir de etiquetas continuam assunto do motor, registado pelo lugar de direção. |
+| 18 | O glossário Eurostat foi pedido novamente no próprio bloco. `origens-rp1.py` confere todos os selos pelo manifesto, registo e bytes alojados, sem exceção por pasta; a planta sem ficheiro alojado é recusada. |
+| 19 | A origem dos tipos de pensão cita as categorias da dimensão do INE: «Total», «Invalidez», «Velhice», «Sobrevivência». O literal da doença profissional saiu deste apoio. |
+| 20 | `tests/pais/enquadramento-b2.mjs` percorre agora `REGUAS_DECLARADAS` e confere a ausência dos comparadores nas áreas e nos temas. O registo `enquadramento-b2.json` enumera as linhas RP1. |
+| 21 | A regra de publicação mantém-se. Os controlos aceitam publicação dentro do mês e do trimestre; a planta anterior ao período continua a falhar. As notas dos períodos anteriores explicam que `published_at` é a última atualização do quadro. |
+| 22 | A lista abaixo inclui os commits do lugar de direção e do construtor, nas três peças. O último é identificado por `HEAD`, o commit que contém esta entrega; o conferidor resolve-o no Git e exige o pai e o âmbito das alterações. |
+| 23 | O guarda procura os códigos literais «045», «0722», «041» na dimensão terceira do INE `0014663`, com conhecidos-positivos. Saíram as funções não chamadas de `medir-l1-rp1.mjs`; a referência B2 é citada abaixo. |
+
+K16: 0 erros. K17: 0 erros nas palavras e 0 no HTML. As 24 frases do bloco coincidem com a terceira redação fora dos 4 acertos abaixo; as 37 leituras anteriores estão intactas (`rp1c.acertos`).
+
+### Literais e acertos
+
+A metainformação `014-ine-0013420-minfo.html` não explicita as idades. A pesquisa no SMI devolveu conceitos relacionados; o conceito de juventude da população em idade ativa divide o intervalo entre as metades jovem e idosa. A página do INE `040-ine-idade-ativa-definicao-rp1c.html` diz literalmente «população residente em idade ativa (entre 15 e 64 anos)» e apoia os dois algarismos. Não se inferiu a idade dos beneficiários: o denominador continua a ser a população em idade ativa.
+
+A página atual do RSI carrega o conteúdo por um pedido público, selado em `038-seguranca-social-rsi-conteudo-rp1c.json`, campo `breadcrumb.description`. Os endereços antigos e a tentativa de guia que respondeu sem documento ficaram registados. O conceito do INE conserva o apoio ao programa de inserção no trabalho e na comunidade.
+
+| Medida e edição | Antes | Depois | Literal |
+|---|---|---|---|
+| `ipc-variacao-homologa` · pt |  É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram. |  É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. | «O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo.» (`rp1-ipc-metodo.excerto`) |
+| `beneficiarios-do-rsi-por-mil-2024` · pt |  anos: é o apoio da Segurança Social a quem vive em carência económica grave, com um programa de inserção no trabalho e na comunidade. |  anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade. | «É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção).» (`rp1-rsi-seguranca-social.excerto`) |
+| `ipc-variacao-homologa` · en |  That is inflation: the INE measures it on a basket of goods and services that represents what households buy. |  That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy. | «O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo.» (`rp1-ipc-metodo.excerto`) |
+| `beneficiarios-do-rsi-por-mil-2024` · en |  years old: it is Social Security’s support for people living in severe economic hardship, with a programme of integration into work and the community. |  years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community. | «É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção).» (`rp1-rsi-seguranca-social.excerto`) |
+
+As categorias da pensão são os objetos literais de `Dimensoes.Categoria_Dim` da resposta de metainformação `003-ine-0014532-meta.json`, também correspondentes às etiquetas de `009-ine-0014532-dados.json`. A nova origem `rp1-pensoes-tipos` conserva os campos, sem compor uma citação a partir de palavras dispersas.
+
+A ressalva usa «Dado provisório» da resposta do INE e «Provisional data» já declarada pelo motor, em minúsculas dentro dos parênteses. O valor mantém-se sozinho na marca `data-claim`.
+
+### Células e plantas
+
+| Célula | Forma nova | Proteção conservada |
+|---|---|---|
+| Livro e exportador | Conferem os campos do objeto JSON completo do INE. | O valor, a bandeira e a nota têm de coincidir; um excerto cortado não passa. A regra dos excertos Eurostat mantém-se. |
+| K17 | Listas de ligação por língua e ressalva entre parênteses. | Palavras com conteúdo precisam de literal; cada marca continua presa à linha e à língua certa. |
+| M8 | Exige espaço, parênteses e palavras da nota. | Igualdade entre as linhas com bandeira e as ressalvas visíveis. |
+| L10 | Lê a língua declarada da origem, no documento e no excerto. | Uma transcrição portuguesa nunca passa marcada como inglesa. |
+| F1 | Recompõe também a preposição pela forma do período. | O período continua a vir do campo da linha, sem dia inventado. |
+| Réguas B2 | Percorre também a tabela declarada. | Nenhum comparador RP1 ganha cartão próprio. |
+| Origens | Confere todos os selos no alojamento, incluindo extrações. | Resumo, pedido e corpo têm de concordar, qualquer que seja a pasta. |
+
+As 25 plantas de `plantas-rp1.json` morderam. Os controlos da publicação dentro do período passaram. `planta-origens-rp1c.json`, `plantas-m8-rp1c.json` e a saída F1 em `portoes/rp1c/build.log` guardam as restantes provas. O portão do motor, executado pelo pre-commit, terminou a 0, em `motor-rp1c.log`.
+
+O medidor encontrou 0 ficheiros com caminho pessoal ou nome do utilizador da máquina (`rp1c.caminhos`). O conhecido-positivo foi encontrado. As classes procuradas deram 0 ocorrências na dimensão indicada (`rp1c.classes_0014663`); cada código foi ainda introduzido num conjunto de ensaio e detetado.
+
+A referência da composição das portas é `design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json`, citada aqui pelo caminho para integrar o pacote de leitura. Não é o antes desta peça. `l1-rp1.json` conserva essa referência e a cabeça dela; não houve agravamento de páginas anteriores.
+
+### Capturas, commits e portões
+
+Foram guardadas 20 capturas de página e 50 recortes, nas duas edições e nas larguras 390, 768, 1 024, 1 280, 1 600 px, com 0 falhas. Os recortes com prefixo `rp1c-` cobrem remuneração, pensão, RSI, alimentos e inflação. `capturas-rp1c-depois.json` guarda as medidas e os resumos; `inspecao-visual-rp1c.json` identifica as imagens abertas.
+
+Cabeça medida do projeto: `68215ae9a73910f59eb103c16961be52bd901fae`. Cabeça do motor: `4eb2867936dd14ad2654751722e390804e68dda3`. O `INDICE.json` das páginas congeladas aponta para a mesma cabeça dos portões.
+
+- Projeto: `38d3627894416097de26c52346c595c45a7b2884 O brief do RP1, a primeira peça do tracker dos rendimentos e dos preços: treze cartões nacionais das APIs do INE e do Eurostat, com o §0 medido por guião sobre a cabeça 334cc740 e as cópias congeladas do L1, as leituras do lugar de direção na gramática do L1 ensaiadas a seco, e o guião do construtor do Codex`.
+- Projeto: `3b3dac4853565782996bc3e99f519404e3b17ea6 RP1: acrescentar os cartões confirmados pelas APIs`.
+- Projeto: `83fb702cff2ff297ea2c9024f8a854d2b56f287e RP1: completar as declarações e conservar as proteções dos portões`.
+- Projeto: `cb9571eaf7d043f8c91d9486aad34f97dee00e5d RP1: mostrar as origens das perguntas nos recibos`.
+- Projeto: `9a8b14b49166f6519f5d9be5399831fb7e9b9b44 RP1: entregar as medições, capturas e provas das oito medidas seladas`.
+- Projeto: `92c7cf66ab1c7f69d0b6db73d4b5c27b1770136a RP1: concluir a entrega com as tabelas do relatório conferidas`.
+- Projeto: `ed5371ffc6881d7daafe2b164c8d0714b2138b6e RP1: a resposta do construtor do Codex à entrega das oito medidas seladas e das cinco paradas`.
+- Projeto: `5c92e5ea3fc9acb40c917dc55d9cc0480ead569f RP1b: a correção do brief (os códigos certos das quatro medidas paradas, conferidos nas APIs do INE e do Eurostat, e a variação real retirada), a segunda redação das leituras com os acertos aceites e duas emendas do lugar de direção, e o guião do construtor do Codex`.
+- Projeto: `dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória`.
+- Projeto: `0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas`.
+- Projeto: `7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas`.
+- Projeto: `1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes`.
+- Projeto: `70f8ca74113b2ff0adbb55fc424f15686eed5a3b RP1b: entregar capturas, medições e relatório`.
+- Projeto: `42b3cadfb9806abd84ddf8235fdb50e5fdf621c2 RP1c: a leitura a frio do RP1 pelo Claude Opus 5.5 (cinco plantas em cinco, dezoito achados triados) com o registo das plantas, a terceira redação das leituras (o RSI e as pensões depois da leitura, o acerto dos lubrificantes fundido), o guião da passagem de correção para o Codex, e a resposta do construtor à peça RP1b`.
+- Projeto: `22bacd0cc4c97f60cf33cd26ecaa924adeb3dba1 RP1c: retirar caminhos da máquina dos registos do bloco`.
+- Projeto: `e222101650a85cf2ca756dc8232ce89d5a96d35c RP1c: provar a terceira redação e conservar os excertos das linhas`.
+- Projeto: `0f17a9c792271b288465fa0020f0fb2799299d4b RP1c: corrigir a ressalva, os nomes e a língua dos recibos`.
+- Projeto: `68215ae9a73910f59eb103c16961be52bd901fae RP1c: medir o expurgo e conferir a história completa da entrega`.
+- Projeto: `HEAD RP1c: entregar as provas da passagem de correção`. Este é o commit que contém as provas; o pai é a cabeça medida acima.
+- Motor: `c42dab902afa3f7f693980745e3cecd7f8cb8a2e RP1: selar observações nacionais de rendimentos e preços`.
+- Motor: `372cbe1d9b57a9cde19fdb4f1843deeadd41704e RP1: conservar literal o excerto com bandeira do INE`.
+- Motor: `6508b05849b1ea041d91e67339370a860a57f65b RP1: conservar as etiquetas no excerto provisório`.
+- Motor: `d3f7a619bc46184847775b93c1b1a953e2777d3f RP1b: selar as classes do IPC e a comparação europeia do IHPC`.
+- Motor: `4eb2867936dd14ad2654751722e390804e68dda3 RP1c: conservar os excertos completos e selar as origens das leituras`.
+
+| Portão | Código lido do ficheiro | Cabeça medida |
+|---|---|---|
+| `build` | 0, de `portoes/rp1c/build.codigo` | `68215ae9a73910f59eb103c16961be52bd901fae` |
+| `verify` | 0, de `portoes/rp1c/verify.codigo` | `68215ae9a73910f59eb103c16961be52bd901fae` |
+| `typecheck` | 0, de `portoes/rp1c/typecheck.codigo` | `68215ae9a73910f59eb103c16961be52bd901fae` |
+
+Cada portão completo correu no seu comando, uma vez nesta cabeça, com o código escrito de novo. As conferências de preparação estão na subpasta `preparacao/`. O último commit só entrega provas; `relatorio-rp1.py --verifica` confere a lista inteira contra o Git e recusa um commit de código posterior aos portões.
+
+### Custo e limites
+
+A janela medida, do primeiro pedido RP1c ao último portão, durou 2 881 segundos (`rp1c.custo.segundos_da_janela`); exclui a leitura inicial. As contagens da sessão estão em `custo-rp1c.json`, cumulativas e sem estimativa monetária.
+
+Não ficaram correções desta tabela por fazer. O achado dos excertos Eurostat fica fora desta peça, por decisão do mandato. Não houve alteração de valores, novas medidas, gráficos, mudança da regra da primeira página, da leitura do país ou do rótulo de IA. Não houve `push`.

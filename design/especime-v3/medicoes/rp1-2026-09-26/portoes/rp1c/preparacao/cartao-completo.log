@@ -1,0 +1,31 @@
+[90m  prova: 12 estragos plantados, 12 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; K13 sobre 4 medidas e 12 linhas com grupo etário, com a declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; K16 com a declaração em vigor a passar e dez plantas a morder, a primeira o defeito da leitura a frio[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7422[0m
+[90m    cartões                          5312 (2656 pt, 2656 en)[0m
+[90m    com nome                         5312 de 5312[0m
+[90m    com a frase do que medem         4442 de 5312 com frase[0m
+[90m    com régua                        834 de 5312 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             220[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          1 (a exceção da I92)[0m
+[90m    o marcador em português          4 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    352 (a porta é a do cartão)[0m
+[90m    valores de referência, as duas testemunhas comparadas  15[0m
+[90m      com a testemunha discordante declarada e inteira     2 (5 de 5 plantas a morder)[0m
+[90m    cartões com veredicto conferido (K15)                 90[0m
+[90m    cartões com a média europeia calada (K14)              6[0m
+[90m    medidas com nome oficial no recibo                    11[0m
+[90m    perguntas com cada pedaço apoiado (K16)               34 (84 pedaços, 112 apoios, 64 origens seladas no motor)[0m
+[90m    leituras dos cartões nacionais (K17)                 142 em 142 cartões (49 declarações auditadas, 1143 partes, 449 apoios, 99 origens, 284 ramos recontados, 12 de 12 plantas a morder)[0m
+[90m    medidas com grupo etário fixado na linha (K13)         4[0m
+[90m      linhas dessas medidas, todas conferidas               12[0m
+[90m      delas, na catraca declarada (I132, vazia)           0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[32m  ✓ 5312 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 4442 de 5312 com frase e 834 de 5312 com régua, e os 220 períodos anteriores da mesma série e da mesma unidade[0m
+
