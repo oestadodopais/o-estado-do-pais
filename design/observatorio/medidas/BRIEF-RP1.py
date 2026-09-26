@@ -143,18 +143,9 @@ medicao('regra_do_periodo_anterior_no_enquadramento', m.group(1) if m else None,
 sem_regua = [ident(a) for a in artigos if 'data-cartao-medida="' in a and 'class="cartao-medida-regua"' not in a]
 medicao('cartoes_de_linha_sem_regua', len(sem_regua), f'{COMANDO} · artigos de linha sem class="cartao-medida-regua"', 'a lista traz a retribuição mínima', 'retribuicao-minima-mensal-garantida-continente-2026' in sem_regua)
 
-# --- 3 · o motor: os pedidos ao INE que já existem (lido do motor quando está nesta máquina)
-if os.path.isdir(MOTOR) and existe_na_cabeca(CABECA_DO_MOTOR, cwd=MOTOR):
-    fetch = git('show', f'{CABECA_DO_MOTOR}:publisher/dominios_fetch.py', cwd=MOTOR)
-    pedidos_ine = len(re.findall(r'json_indicador/pindica\.jsp', fetch))
-    medicao('pedidos_ao_ine_no_construtor_dos_dominios', pedidos_ine, f'git -C ~/Instruments/ResearchHub show {CABECA_DO_MOTOR}:publisher/dominios_fetch.py · «json_indicador/pindica.jsp»',
-            'a lista traz o pedido do ganho médio mensal (0012656)', 'varcd=0012656' in fetch)
-    leitores = git('show', f'{CABECA_DO_MOTOR}:publisher/dominios_readers.py', cwd=MOTOR)
-    medicao('leitor_de_indicador_do_ine_no_motor', len(re.findall(r'^def ine_indicator\(', leitores, re.M)), f'git -C ~/Instruments/ResearchHub show {CABECA_DO_MOTOR}:publisher/dominios_readers.py · «def ine_indicator(»',
-            'o ficheiro tem o leitor das séries do Eurostat', bool(re.search(r'^def eurostat_series\(', leitores, re.M)))
-else:
-    for nome in ('pedidos_ao_ine_no_construtor_dos_dominios', 'leitor_de_indicador_do_ine_no_motor'):
-        medicao(nome, 'NÃO LIDO: o motor não está nesta máquina', 'git -C ~/Instruments/ResearchHub show …', 'o motor está nesta máquina', False)
+# --- 3 · o motor: deixou de se medir aqui a 26.09.2026 à noite. A corrida «portão» do ramo fechou porque o
+# guião lia o motor por `git show` e o motor não está na máquina do portão; os dois factos (o construtor dos
+# domínios já pede indicadores do INE; o motor tem um leitor de indicadores) passaram a palavras no §0.
 
 saida = {'brief': 'design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md',
          'guiao': 'design/observatorio/medidas/BRIEF-RP1.py',
