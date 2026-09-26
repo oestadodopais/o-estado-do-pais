@@ -81,6 +81,17 @@
  * valor positivo, e um valor de outro sinal passa a fechar a construção em vez
  * de a deixar sair falsa.
  *
+ * NA PASSAGEM DE CORREÇÃO DE 26.09.2026, depois da leitura a frio do Codex,
+ * entraram os acertos A18 a A26: a palavra corrente de cada termo que a leitura
+ * a frio achou por explicar (o valor real do PIB por habitante, o líquido dos
+ * dois fluxos de crédito, o rendimento mediano, o cuidado formal, o rendimento
+ * disponível das duas sobrecargas, os produtores residentes), cada uma com o
+ * literal de origem selada que a sustenta, e a idade da taxa de atividade. E
+ * duas leituras que o lugar de direção reescreveu no seu ficheiro, a da
+ * disparidade salarial (o valor fecha a oração, e «provisório» fecha com ele) e
+ * a das câmaras (a frase concorda com «o número», seja qual for a contagem),
+ * vieram para aqui sem mudar uma palavra, com o A11 de sempre na primeira.
+ *
  * QUEM LÊ ISTO É `src/lib/leitura-da-medida.mjs`, que achata cada leitura numa
  * lista plana de pedaços de `Frase.astro`, e a célula K17 do `check:cartao`
  * (`tests/cartao/leituras.mjs`), que confere a auditoria e a leitura rendida.
@@ -134,8 +145,8 @@ const PERCENTAGEM_DO_PIB_EN = 'as a percentage of GDP, the value of everything t
 export const LEITURAS_DAS_MEDIDAS = {
   /* ------------------------------------------------- 1 · Economia e finanças públicas */
   'pib-real-per-capita-2025': {
-    pt: ['É o valor de tudo o que o país produziu no ano, por habitante, em termos reais.', SUBIU, MEDIA_UE],
-    en: ['It is the value of everything the country produced in the year, per inhabitant, in real terms.', ROSE, EU_AVERAGE],
+    pt: ['É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços.', SUBIU, MEDIA_UE],
+    en: ['It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices.', ROSE, EU_AVERAGE],
   },
   'saldo-das-administracoes-publicas-2025': {
     pt: [
@@ -242,17 +253,17 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['It is what households and non-profit institutions serving them owe in loans and debt securities, ', PERCENTAGEM_DO_PIB_EN, WEIGHS, EU_AVERAGE, ...TETO_EN(['debt above ', { referencia: 'unico' }, ' % of GDP'])],
   },
   'fluxo-de-credito-as-empresas-2025': {
-    pt: ['É quanto crédito as empresas contraíram num ano, em termos líquidos, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior.', SUBIU, MEDIA_UE, ...TETO_PT(['um fluxo acima de ', { referencia: 'unico' }, ' %'])],
-    en: ['It is how much credit companies took on in a year, net, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year.', ROSE, EU_AVERAGE, ...TETO_EN(['a flow above ', { referencia: 'unico' }, ' %'])],
+    pt: ['É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior.', SUBIU, MEDIA_UE, ...TETO_PT(['um fluxo acima de ', { referencia: 'unico' }, ' %'])],
+    en: ['It is how much credit companies took on in a year, minus what they repaid, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year.', ROSE, EU_AVERAGE, ...TETO_EN(['a flow above ', { referencia: 'unico' }, ' %'])],
   },
   'fluxo-de-credito-as-familias-2025': {
-    pt: ['É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, em termos líquidos, em percentagem da dívida que já tinham no fim do ano anterior.', SUBIU, MEDIA_UE, ...TETO_PT(['um fluxo acima de ', { referencia: 'unico' }, ' %'])],
-    en: ['It is how much credit households and non-profit institutions serving them took on in a year, net, as a percentage of the debt they already had at the end of the previous year.', ROSE, EU_AVERAGE, ...TETO_EN(['a flow above ', { referencia: 'unico' }, ' %'])],
+    pt: ['É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, descontado o que reembolsaram, em percentagem da dívida que já tinham no fim do ano anterior.', SUBIU, MEDIA_UE, ...TETO_PT(['um fluxo acima de ', { referencia: 'unico' }, ' %'])],
+    en: ['It is how much credit households and non-profit institutions serving them took on in a year, minus what they repaid, as a percentage of the debt they already had at the end of the previous year.', ROSE, EU_AVERAGE, ...TETO_EN(['a flow above ', { referencia: 'unico' }, ' %'])],
   },
   /* O cartão das câmaras: uma chave da prova e não uma linha (§1.127, decisão 5). */
   camaras: {
-    pt: ['Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ', { periodo: 'proprio' }, ' eram ', { prova: 'camaras_acima_do_limite' }, ' em ', { prova: 'municipios_com_pagina' }, '; ', { prova: 'camaras_sem_valor' }, ' não tem valor publicado.'],
-    en: ['A council above the legal limit owes more than the law allows it to owe. In ', { periodo: 'proprio' }, ' there were ', { prova: 'camaras_acima_do_limite' }, ' in ', { prova: 'municipios_com_pagina' }, '; ', { prova: 'camaras_sem_valor' }, ' has no published value.'],
+    pt: ['Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ', { periodo: 'proprio' }, ' o número de câmaras acima do limite era ', { prova: 'camaras_acima_do_limite' }, ' em ', { prova: 'municipios_com_pagina' }, ', e o número sem valor publicado era ', { prova: 'camaras_sem_valor' }, '.'],
+    en: ['A council above the legal limit owes more than the law allows it to owe. In ', { periodo: 'proprio' }, ' the number of councils above the limit was ', { prova: 'camaras_acima_do_limite' }, ' out of ', { prova: 'municipios_com_pagina' }, ', and the number with no published value was ', { prova: 'camaras_sem_valor' }, '.'],
   },
 
   /* ------------------------------------------------- 2 · Trabalho */
@@ -274,8 +285,8 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['It is what a full-time employee earned per month, on average, in ', { periodo: 'proprio' }, ', including what is paid on a regular basis for normal and overtime hours, before deductions.'],
   },
   'disparidade-salarial-entre-sexos-2024': {
-    pt: [{ sinal: { positivo: ['Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens: a diferença foi de ', { claim: 'proprio', sufixo: ' %' }, ' do ganho dos homens, em ', { periodo: 'proprio' }, ', nas empresas com ', { nl: '10', motivo: 'escala-de-instrumento' }, ' ou mais trabalhadores.'] } }, DIFERENCA, DIFERENCA_UE],
-    en: [{ sinal: { positivo: ['Per hour worked, women earned on average less than men: the gap was ', { claim: 'proprio', sufixo: ' %' }, ' of men’s earnings, in ', { periodo: 'proprio' }, ', in enterprises with ', { nl: '10', motivo: 'escala-de-instrumento' }, ' or more employees.'] } }, GAP, GAP_EU],
+    pt: [{ sinal: { positivo: ['Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens, em ', { periodo: 'proprio' }, ', nas empresas com ', { nl: '10', motivo: 'escala-de-instrumento' }, ' ou mais trabalhadores: a diferença, em percentagem do ganho dos homens, foi de ', { claim: 'proprio', sufixo: ' %' }, '.'] } }, DIFERENCA, DIFERENCA_UE],
+    en: [{ sinal: { positivo: ['Per hour worked, women earned on average less than men, in ', { periodo: 'proprio' }, ', in enterprises with ', { nl: '10', motivo: 'escala-de-instrumento' }, ' or more employees: the gap, as a percentage of men’s earnings, was ', { claim: 'proprio', sufixo: ' %' }, '.'] } }, GAP, GAP_EU],
   },
   'retribuicao-minima-mensal-garantida-continente-2026': {
     pt: ['É o salário mínimo nacional: o valor mensal mínimo que a lei garante a quem trabalha por conta de outrem, em vigor no continente em ', { periodo: 'proprio' }, '.'],
@@ -295,13 +306,13 @@ export const LEITURAS_DAS_MEDIDAS = {
   },
   'taxa-de-actividade-2025': {
     pt: [
-      'É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.',
+      'É quanto mudou em três anos, em pontos percentuais, a parte da população dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos que está ativa: a trabalhar ou à procura de trabalho.',
       { sinal: { positivo: [' Positiva quer dizer que a parte ativa cresceu.'], negativo: [' Negativa quer dizer que a parte ativa encolheu.'], zero: [' Zero quer dizer que não mudou.'] } },
       VARIACAO, VARIACAO_UE,
       ...CHAO_PT(['uma descida de mais de ', { referencia: 'unico', semSinal: true }, ' pontos em três anos']),
     ],
     en: [
-      'It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.',
+      'It is how much the share of the population aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' that is active, working or looking for work, changed over three years, in percentage points.',
       { sinal: { positivo: [' Positive means the active share grew.'], negativo: [' Negative means the active share shrank.'], zero: [' Zero means it did not change.'] } },
       CHANGE, CHANGE_EU,
       ...CHAO_EN(['a fall of more than ', { referencia: 'unico', semSinal: true }, ' points over three years']),
@@ -324,8 +335,8 @@ export const LEITURAS_DAS_MEDIDAS = {
 
   /* ------------------------------------------------- 5 · Segurança social e pensões */
   'risco-de-pobreza-ou-exclusao-2025': {
-    pt: ['É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez.', SUBIU, MEDIA_UE],
-    en: ['It is the share of the population in at least one of three situations: income below ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once.', ROSE, EU_AVERAGE],
+    pt: ['É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.', SUBIU, MEDIA_UE],
+    en: ['It is the share of the population in at least one of three situations: income below ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.', ROSE, EU_AVERAGE],
   },
   'racio-s80-s20-2025': {
     pt: ['Os ', { nl: '20', motivo: 'escala-de-instrumento' }, ' % da população com mais rendimento recebem, no total, ', { claim: 'proprio' }, ' vezes o que recebem os ', { nl: '20', motivo: 'escala-de-instrumento' }, ' % com menos rendimento.', DIFERENCA, DIFERENCA_UE],
@@ -342,8 +353,8 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['It is the share of people with at least basic digital skills: knowing how to find information, communicate, create content, stay safe and solve problems when using the internet or software.', ROSE, EU_AVERAGE],
   },
   'criancas-em-creche-2025': {
-    pt: ['É a parte das crianças com menos de ', { nl: '3', motivo: 'escala-de-instrumento' }, ' anos que está numa creche ou noutro cuidado formal.', SUBIU, MEDIA_UE],
-    en: ['It is the share of children under ', { nl: '3', motivo: 'escala-de-instrumento' }, ' who are in a nursery or other formal childcare.', ROSE, EU_AVERAGE],
+    pt: ['É a parte das crianças com menos de ', { nl: '3', motivo: 'escala-de-instrumento' }, ' anos que está numa creche ou noutro cuidado formal: um programa planeado por entidades públicas ou privadas reconhecidas, e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional.', SUBIU, MEDIA_UE],
+    en: ['It is the share of children under ', { nl: '3', motivo: 'escala-de-instrumento' }, ' who are in a nursery or other formal childcare: a programme planned through public organisations or recognised private bodies, and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder.', ROSE, EU_AVERAGE],
   },
 
   /* ------------------------------------------------- 8 · Saúde */
@@ -354,12 +365,12 @@ export const LEITURAS_DAS_MEDIDAS = {
 
   /* ------------------------------------------------- 9 · Habitação */
   'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
-    pt: ['Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % do rendimento disponível com a habitação.', SUBIU, MEDIA_UE],
-    en: ['Among people living in a home rented at market price, it is the share whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing.', ROSE, EU_AVERAGE],
+    pt: ['Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, MEDIA_UE],
+    en: ['Among people living in a home rented at market price, it is the share whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, EU_AVERAGE],
   },
   'sobrecarga-do-custo-da-habitacao-2025': {
-    pt: ['No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % do rendimento disponível com a habitação.', SUBIU, ' Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.'],
-    en: ['Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing.', ROSE, ' This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.'],
+    pt: ['No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, ' Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.'],
+    en: ['Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, ' This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.'],
   },
   'precos-da-habitacao-2025': {
     pt: [
@@ -388,8 +399,8 @@ export const LEITURAS_DAS_MEDIDAS = {
 
   /* ------------------------------------------------- 10 · Investimento */
   'formacao-bruta-de-capital-fixo-2025': {
-    pt: ['É o que os produtores residentes compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, ', PERCENTAGEM_DO_PIB_PT, SUBIU, MEDIA_UE],
-    en: ['It is what resident producers acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, ', PERCENTAGEM_DO_PIB_EN, ROSE, EU_AVERAGE],
+    pt: ['É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, ', PERCENTAGEM_DO_PIB_PT, SUBIU, MEDIA_UE],
+    en: ['It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, ', PERCENTAGEM_DO_PIB_EN, ROSE, EU_AVERAGE],
   },
 
   /* ------------------------------------------------- 11 · Ciência, tecnologia e inteligência artificial */
