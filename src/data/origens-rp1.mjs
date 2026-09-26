@@ -1,4 +1,4 @@
-/** RP1 e RP1b: excertos e selos conferidos por origens-rp1.py. */
+/** RP1c: excertos e selos conferidos por origens-rp1.py. */
 export const ORIGENS_RP1 = {
   "rp1-ipc-homologa": {
     "publicador": "INE",
@@ -193,11 +193,11 @@ export const ORIGENS_RP1 = {
     "lingua": "en",
     "excerto": "in order to reflect differences in a household's size and composition, the total (net) household income is divided by the number of 'equivalent adults’, using a standard (equivalence) scale: the modified OECD scale;",
     "selo": {
-      "motor": "indicators/out/l1-2026-09-26/eurostat-se-glossary-equivalised-disposable-income.html",
-      "campo": "o texto da página",
-      "hora": "2026-09-26T08:30:13Z",
+      "motor": "indicators/out/rp1-2026-09-26/032-eurostat-rendimento-equivalente-rp1c.html",
+      "hora": "2026-09-26T17:10:34Z",
       "cliente": "core.http.HttpClient.condicional",
-      "sha256": "f7f7ac15b21e6ff90fba33d8030decccb6c23941995769be186d82b424034988"
+      "sha256": "da63d39a28812ff3f8182f87cce657be7e8155ce41c03e34eee98f5a06ddb8cb",
+      "campo": "texto normalizado da página"
     }
   },
   "rp1-remuneracao-subsidios": {
@@ -222,17 +222,17 @@ export const ORIGENS_RP1 = {
   },
   "rp1-pensoes-tipos": {
     "publicador": "INE",
-    "documento": "INE · metainformação do valor médio das pensões",
-    "url": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+    "documento": "INE · categorias da dimensão Tipo de pensão",
+    "url": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014532&lang=PT",
     "lido": "2026-09-26",
     "lingua": "pt",
-    "excerto": "PENSÃO : Prestação pecuniária mensal de atribuição continuada por morte (sobrevivência), invalidez, doença profissional e velhice.",
+    "excerto": "\"Dim_Num3_T\" : [ { \"dim_num\" : \"3\", \"cat_id\" : \"T\", \"categ_cod\" : \"T\", \"categ_dsg\" : \"Total\", \"categ_ord\" : \"10\", \"categ_nivel\" : \"1\" } ], \"Dim_Num3_1\" : [ { \"dim_num\" : \"3\", \"cat_id\" : \"1\", \"categ_cod\" : \"1\", \"categ_dsg\" : \"Invalidez\", \"categ_ord\" : \"20\", \"categ_nivel\" : \"2\" } ], \"Dim_Num3_2\" : [ { \"dim_num\" : \"3\", \"cat_id\" : \"2\", \"categ_cod\" : \"2\", \"categ_dsg\" : \"Velhice\", \"categ_ord\" : \"30\", \"categ_nivel\" : \"2\" } ], \"Dim_Num3_3\" : [ { \"dim_num\" : \"3\", \"cat_id\" : \"3\", \"categ_cod\" : \"3\", \"categ_dsg\" : \"Sobrevivência\", \"categ_ord\" : \"40\", \"categ_nivel\" : \"2\" } ]",
     "selo": {
-      "motor": "indicators/out/rp1-2026-09-26/013-ine-0014532-minfo.html",
-      "hora": "2026-09-26T13:54:49Z",
+      "motor": "indicators/out/rp1-2026-09-26/003-ine-0014532-meta.json",
+      "hora": "2026-09-26T13:53:30Z",
       "cliente": "core.http.HttpClient.condicional",
-      "sha256": "b974d064c0cc5a35069232a83ce9ea72fbf43460c3744335d48f9e80ceed7789",
-      "campo": "texto normalizado da página"
+      "sha256": "d17d198a8819d671465cb9d8ae78057a4005d127e75feb42b04234ab106fab69",
+      "campo": "Dimensoes.Categoria_Dim, categorias literais da dimensão 3"
     }
   },
   "rp1-ipc-classes-homologa": {
@@ -307,6 +307,37 @@ export const ORIGENS_RP1 = {
       "hora": "2026-09-26T16:04:20Z",
       "cliente": "core.http.HttpClient.condicional",
       "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
+      "campo": "texto normalizado da página"
+    }
+  },
+  "rp1-rsi-seguranca-social": {
+    "publicador": "Segurança Social",
+    "documento": "Segurança Social · Rendimento Social de Inserção",
+    "url": "https://www.seg-social.pt/ptss/rest/public/pssd/service?path=%2Fpssd%2Fmenu%2Facao-social%2Fapoios-respostas-sociais%2Frendimento-social-insercao",
+    "lido": "2026-09-26",
+    "lingua": "pt",
+    "excerto": "É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção).",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/038-seguranca-social-rsi-conteudo-rp1c.json",
+      "hora": "2026-09-26T17:14:29Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc",
+      "campo": "breadcrumb.description"
+    },
+    "pagina": "https://www.seg-social.pt/ptss/pssd/menu/acao-social/apoios-respostas-sociais/rendimento-social-insercao"
+  },
+  "rp1-rsi-idade": {
+    "publicador": "INE",
+    "documento": "INE · Retrato Territorial de Portugal, população em idade ativa",
+    "url": "https://www.ine.pt/ine_novidades/RTP2017/113/",
+    "lido": "2026-09-26",
+    "lingua": "pt",
+    "excerto": "população residente em idade ativa (entre 15 e 64 anos)",
+    "selo": {
+      "motor": "indicators/out/rp1-2026-09-26/040-ine-idade-ativa-definicao-rp1c.html",
+      "hora": "2026-09-26T17:16:07Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "144f956c4f069addd42d9a5b72c000d6149ab7a842d629bea930d4c87f15e127",
       "campo": "texto normalizado da página"
     }
   }

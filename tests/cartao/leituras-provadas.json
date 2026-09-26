@@ -4707,8 +4707,7 @@
       "id": "ipc-variacao-homologa",
       "origens": [
         "rp1-ipc-homologa",
-        "rp1-ipc-metodo",
-        "rp1-ipc-media"
+        "rp1-ipc-metodo"
       ],
       "folhas": [
         {
@@ -4784,23 +4783,18 @@
           ]
         },
         {
-          "pt": " É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.",
-          "en": " That is inflation: the INE measures it on a basket of goods and services that represents what households buy.",
+          "pt": " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
+          "en": " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
           "partes": [
             {
-              "pt": " É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.",
-              "en": " That is inflation: the INE measures it on a basket of goods and services that represents what households buy.",
+              "pt": " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
+              "en": " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "rp1-ipc-metodo",
                   "campo": "excerto",
                   "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
-                },
-                {
-                  "origem": "rp1-ipc-media",
-                  "campo": "excerto",
-                  "literal": "associado à taxa de inflação anual"
                 }
               ]
             }
@@ -5438,12 +5432,12 @@
           ]
         },
         {
-          "pt": " euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.",
-          "en": " euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.",
+          "pt": " euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.",
+          "en": " euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.",
           "partes": [
             {
-              "pt": " euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.",
-              "en": " euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.",
+              "pt": " euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.",
+              "en": " euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.",
               "classe": "diz",
               "apoios": [
                 {
@@ -5459,7 +5453,22 @@
                 {
                   "origem": "rp1-pensoes-tipos",
                   "campo": "excerto",
-                  "literal": "PENSÃO : Prestação pecuniária mensal de atribuição continuada por morte (sobrevivência), invalidez, doença profissional e velhice."
+                  "literal": "Total"
+                },
+                {
+                  "origem": "rp1-pensoes-tipos",
+                  "campo": "excerto",
+                  "literal": "Velhice"
+                },
+                {
+                  "origem": "rp1-pensoes-tipos",
+                  "campo": "excerto",
+                  "literal": "Invalidez"
+                },
+                {
+                  "origem": "rp1-pensoes-tipos",
+                  "campo": "excerto",
+                  "literal": "Sobrevivência"
                 },
                 {
                   "linha": "propria",
@@ -5476,45 +5485,63 @@
     {
       "id": "beneficiarios-do-rsi-por-mil-2024",
       "origens": [
-        "rp1-rsi"
+        "rp1-rsi",
+        "rp1-rsi-idade",
+        "rp1-rsi-seguranca-social"
       ],
       "folhas": [
         {
-          "pt": ", por cada mil pessoas em idade ativa, ",
-          "en": ", for every thousand people of working age, ",
+          "pt": " havia ",
+          "en": " there were ",
           "partes": [
             {
-              "pt": ", por cada mil pessoas em idade ativa, ",
-              "en": ", for every thousand people of working age, ",
+              "pt": " havia ",
+              "en": " there were ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": " pessoas a receber o rendimento social de inserção por cada mil pessoas em idade ativa, dos ",
+          "en": " people receiving social insertion income for every thousand people of working age, from ",
+          "partes": [
+            {
+              "pt": " pessoas a receber o rendimento social de inserção por cada mil pessoas em idade ativa, dos ",
+              "en": " people receiving social insertion income for every thousand people of working age, from ",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "rp1-rsi",
                   "campo": "excerto",
-                  "literal": "População média em idade ativa)*1000"
+                  "literal": "RENDIMENTO SOCIAL DE INSERÇÃO : Prestação incluída no subsistema de solidariedade e num programa de inserção, de modo a conferir às pessoas e aos seus agregados familiares apoios adaptados à sua situação pessoal, que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária. PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros). Fórmula (Beneficiárias/os do rendimento social de inserção, da segurança social/ População média em idade ativa)*1000"
+                },
+                {
+                  "origem": "rp1-rsi-idade",
+                  "campo": "excerto",
+                  "literal": "população residente em idade ativa (entre 15 e 64 anos)"
                 }
               ]
             }
           ]
         },
         {
-          "pt": " recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.",
-          "en": " received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.",
+          "pt": " anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade.",
+          "en": " years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community.",
           "partes": [
             {
-              "pt": " recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.",
-              "en": " received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.",
+              "pt": " anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade.",
+              "en": " years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community.",
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "rp1-rsi",
+                  "origem": "rp1-rsi-seguranca-social",
                   "campo": "excerto",
-                  "literal": "RENDIMENTO SOCIAL DE INSERÇÃO : Prestação incluída no subsistema de solidariedade e num programa de inserção"
+                  "literal": "É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção)."
                 },
                 {
                   "origem": "rp1-rsi",
                   "campo": "excerto",
-                  "literal": "que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária"
+                  "literal": "RENDIMENTO SOCIAL DE INSERÇÃO : Prestação incluída no subsistema de solidariedade e num programa de inserção, de modo a conferir às pessoas e aos seus agregados familiares apoios adaptados à sua situação pessoal, que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária. PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros). Fórmula (Beneficiárias/os do rendimento social de inserção, da segurança social/ População média em idade ativa)*1000"
                 }
               ]
             }
@@ -5554,7 +5581,28 @@
           ]
         }
       ],
-      "algarismos": []
+      "algarismos": [
+        {
+          "nl": "15",
+          "apoios": [
+            {
+              "origem": "rp1-rsi-idade",
+              "campo": "excerto",
+              "literal": "população residente em idade ativa (entre 15 e 64 anos)"
+            }
+          ]
+        },
+        {
+          "nl": "64",
+          "apoios": [
+            {
+              "origem": "rp1-rsi-idade",
+              "campo": "excerto",
+              "literal": "população residente em idade ativa (entre 15 e 64 anos)"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "linha-de-risco-de-pobreza-2025",

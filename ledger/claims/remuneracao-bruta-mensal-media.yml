@@ -28,7 +28,7 @@ published_at: "2026-08-14"
 reference_date: "2026-T2"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"sinal_conv\" : \"&\", \"sinal_conv_desc\" : \"Dado provisório\", \"ind_string\" : \"1 835 &"
+excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"sinal_conv\" : \"&\", \"sinal_conv_desc\" : \"Dado provisório\", \"ind_string\" : \"1 835 &\", \"valor\" : \"1835\" }"
 
 # A bandeira tal como a fonte a escreve, e o que ela quer dizer.
 source_flag: "&"

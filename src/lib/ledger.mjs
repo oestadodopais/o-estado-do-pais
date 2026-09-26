@@ -1632,9 +1632,19 @@ export function validateLedger() {
          Procurá-la em qualquer sítio da cadeia não conferia nada: um "p" existe
          dentro de "nama_10r_2gdp", e a primeira versão desta regra dava-se por
          satisfeita com ele. Uma conferência que passa sempre não é conferência. */
-      if (!new RegExp(`\\s${escapaRegex(String(c.source_flag))}$`).test(c.excerpt.trimEnd())) {
+      let bandeiraLiteral = new RegExp(`\\s${escapaRegex(String(c.source_flag))}$`).test(c.excerpt.trimEnd());
+      // RP1c: o INE publica um objeto JSON. Confere os campos sem cortar a cadeia.
+      if (c.source === 'INE' && c.source_flag === '&') {
+        try {
+          const objeto = JSON.parse(c.excerpt);
+          const normalValor = (/** @type {unknown} */ v) => String(v).replace(/[\u00a0\u202f]/g, ' ');
+          bandeiraLiteral = objeto.sinal_conv === c.source_flag && objeto.sinal_conv_desc === c.source_flag_note
+            && normalValor(objeto.ind_string) === normalValor(c.value) + ' ' + c.source_flag;
+        } catch { bandeiraLiteral = false; }
+      }
+      if (!bandeiraLiteral) {
         errors.push(
-          `${onde} declara a bandeira "${c.source_flag}" mas o "excerpt" não termina com ela. ` +
+          `${onde} declara a bandeira "${c.source_flag}" mas o "excerpt" não conserva a bandeira junto do valor. ` +
             `A fonte escreve a bandeira a seguir ao valor, separada por um espaço: transcreva-a assim.`,
         );
       }

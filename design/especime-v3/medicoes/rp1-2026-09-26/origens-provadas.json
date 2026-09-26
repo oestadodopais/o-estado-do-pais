@@ -3,114 +3,147 @@
     "origem": "rp1-ipc-homologa",
     "sha256": "4362e583c944550a1572da5737dd47eb00d432c08952a42ffe848d9f1c05266b",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ipc-media",
     "sha256": "863db25b79b4cf18777dad078d5f7d37c95d7af4e6f0cb784696ff3968a0e1d0",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ipc-metodo",
     "sha256": "b77f4bdfbbe27f960dde5194914831e4645573407799f478bc0dcc7e82e3909c",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-rendas-referencia",
     "sha256": "c3444bbbc9687ffea549d88d5b436419158648030789b811c9148b66f5435199",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-remuneracao-trabalhadores",
     "sha256": "fc9970809cc4d21fd421961a72e323b946184414d0348bce968011eee9d2cdae",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-remuneracao-bruta",
     "sha256": "fc9970809cc4d21fd421961a72e323b946184414d0348bce968011eee9d2cdae",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-pensoes-formula",
     "sha256": "b974d064c0cc5a35069232a83ce9ea72fbf43460c3744335d48f9e80ceed7789",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-pensoes-periodo",
     "sha256": "d17d198a8819d671465cb9d8ae78057a4005d127e75feb42b04234ab106fab69",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-rsi",
     "sha256": "570b07a4e928a33ecb7c888ac590804e3737c92ab8186c4aff1cc6efca3276e8",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-pobreza",
     "sha256": "d061b54fef6dbdb32861a6f6808614b91b543bc5fb92b534d984d4463960f1aa",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-pobreza-periodo",
     "sha256": "592c5e3aec0558d5dc49e26ce76a6c3be6e6f15230d448847a5065d2a4894fb3",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-rendimento-equivalente",
-    "sha256": "f7f7ac15b21e6ff90fba33d8030decccb6c23941995769be186d82b424034988",
+    "sha256": "da63d39a28812ff3f8182f87cce657be7e8155ce41c03e34eee98f5a06ddb8cb",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-remuneracao-subsidios",
     "sha256": "fc9970809cc4d21fd421961a72e323b946184414d0348bce968011eee9d2cdae",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-pensoes-tipos",
-    "sha256": "b974d064c0cc5a35069232a83ce9ea72fbf43460c3744335d48f9e80ceed7789",
+    "sha256": "d17d198a8819d671465cb9d8ae78057a4005d127e75feb42b04234ab106fab69",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ipc-classes-homologa",
     "sha256": "184a4e7fccebe7360411f9dcd1f32b3fa95f706c72962ccb21e2746c68a00824",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ipc-habitacao",
     "sha256": "e5d99cf6a277344f25d8feb43e2eb96cb628507e4247ce4822715b52e012345c",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ihpc-comparavel",
     "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ihpc-homologa",
     "sha256": "f2a3035b7ff23e772a3f1347a11bf01189723f074b84018b041e39e2a171dbd4",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
   },
   {
     "origem": "rp1-ihpc-uniao",
     "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
     "literal": true,
-    "pedido": true
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "rp1-rsi-seguranca-social",
+    "sha256": "4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "rp1-rsi-idade",
+    "sha256": "144f956c4f069addd42d9a5b72c000d6149ab7a842d629bea930d4c87f15e127",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
   }
 ]

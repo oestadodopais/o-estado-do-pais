@@ -1,0 +1,141 @@
+{
+  "fonte": "design/observatorio/leituras/LEITURAS-rp1-2026-09-26.mjs",
+  "redacao": "segunda, 26.09.2026 à tarde",
+  "publicadas": [
+    "ipc-variacao-homologa",
+    "ipc-variacao-media-12-meses",
+    "ipc-alimentacao-variacao-homologa",
+    "ipc-energia-em-casa-variacao-homologa",
+    "ipc-combustiveis-variacao-homologa",
+    "ihpc-variacao-homologa",
+    "ipc-rendas-variacao-homologa",
+    "ipc-sem-habitacao-variacao-media-12-meses",
+    "remuneracao-bruta-mensal-media",
+    "pensao-media-anual-2025",
+    "beneficiarios-do-rsi-por-mil-2024",
+    "linha-de-risco-de-pobreza-2025"
+  ],
+  "paradas": [],
+  "acertos": [
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "lang": "pt",
+      "caminho": [
+        0,
+        "sinal",
+        "positivo",
+        3
+      ],
+      "antes": "os preços dos combustíveis para os veículos estavam",
+      "depois": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "excerpt",
+          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+        }
+      ]
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "lang": "pt",
+      "caminho": [
+        0,
+        "sinal",
+        "negativo",
+        3
+      ],
+      "antes": "os preços dos combustíveis para os veículos estavam",
+      "depois": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "excerpt",
+          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+        }
+      ]
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "lang": "pt",
+      "caminho": [
+        0,
+        "sinal",
+        "zero",
+        3
+      ],
+      "antes": "os preços dos combustíveis para os veículos estavam",
+      "depois": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "excerpt",
+          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+        }
+      ]
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "lang": "en",
+      "caminho": [
+        0,
+        "sinal",
+        "positivo",
+        3
+      ],
+      "antes": "the prices of fuels for vehicles were",
+      "depois": "the prices of fuels and lubricants for vehicles were",
+      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "excerpt",
+          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+        }
+      ]
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "lang": "en",
+      "caminho": [
+        0,
+        "sinal",
+        "negativo",
+        3
+      ],
+      "antes": "the prices of fuels for vehicles were",
+      "depois": "the prices of fuels and lubricants for vehicles were",
+      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "excerpt",
+          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+        }
+      ]
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "lang": "en",
+      "caminho": [
+        0,
+        "sinal",
+        "zero",
+        3
+      ],
+      "antes": "the prices of fuels for vehicles were",
+      "depois": "the prices of fuels and lubricants for vehicles were",
+      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "excerpt",
+          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+        }
+      ]
+    }
+  ]
+}
