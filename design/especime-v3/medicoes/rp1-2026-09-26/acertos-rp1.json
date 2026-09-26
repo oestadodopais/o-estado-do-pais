@@ -390,8 +390,8 @@
         4
       ],
       "antes": " euros a year to live on, after taxes and including social benefits: that is the line Eurostat draws at ",
-      "depois": " euros a year to live on in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
-      "porque": "A fonte situa o rendimento no ano anterior e desconta também as contribuições sociais.",
+      "depois": " euros a year in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+      "porque": "A fonte situa o rendimento no ano anterior e desconta também as contribuições sociais. O portão da voz recusou a expressão «live», retirada; sai «to live on», sem mudar o conceito nem a proteção da célula.",
       "apoios": [
         {
           "origem": "rp1-pobreza-periodo",

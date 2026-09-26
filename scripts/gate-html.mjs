@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
@@ -3161,17 +3162,30 @@ function temChipPara(no, alvos) {
  * ou «ue»), pela regra do B1, peça 3: a mesma edição do documento e a mesma
  * unidade da linha principal; o período anterior é a maior linha da mesma raiz
  * com um ano menor; o agregado da União é `<principal>-ue`, com a nota do motor
- * que o associa à medida e o mesmo período. Escrita aqui outra vez, e não
- * importada de `src/lib/enquadramento.mjs`: o portão não confirma a função que
- * compõe a página. A régua e a leitura do cartão (L1) usam esta mesma regra.
+ * que o associa à medida e o mesmo período. No RP1, lê apenas a tabela declarada
+ * de `src/lib/enquadramento.mjs` e recompõe a cadência aqui: não chama a função
+ * que compõe a página. A régua e a leitura do cartão usam esta mesma regra.
  *
  * @param {string} principal @param {string} id @param {string|null|undefined} qual
  */
 function linhaDaReguaDoCartao(principal, id, qual) {
   const atual = claims.get(principal);
   const outro = claims.get(id);
+  const declarada = REGUAS_DECLARADAS[principal];
+  // RP1: lê a declaração, mas recompõe os períodos sem chamar o resolvedor.
+  let cadenciaConfere = true;
+  if (declarada) {
+    const mensal = declarada.cadencia === 'mes-anterior';
+    const formato = mensal ? /^(\d{4})-(0[1-9]|1[0-2])$/ : /^(\d{4})-T([1-4])$/;
+    const a = formato.exec(String(atual?.reference_date));
+    const b = formato.exec(String(outro?.reference_date));
+    const passos = mensal ? 12 : 4;
+    const distancia = mensal ? 1 : declarada.cadencia === 'mesmo-trimestre-ano-anterior' ? 4 : null;
+    cadenciaConfere = Boolean(a && b && distancia !== null &&
+      (Number(a[1]) - Number(b[1])) * passos + Number(a[2]) - Number(b[2]) === distancia);
+  }
   const serie = /^(.*)-(\d{4})$/.exec(principal);
-  const anterior = serie ? [...claims.keys()].filter(k => {
+  const anterior = declarada ? declarada.anterior : serie ? [...claims.keys()].filter(k => {
     const m = /^(.*)-(\d{4})$/.exec(k);
     return m && m[1] === serie[1] && Number(m[2]) < Number(serie[2]);
   }).sort().at(-1) : null;
@@ -3181,8 +3195,8 @@ function linhaDaReguaDoCartao(principal, id, qual) {
   const agregadoDaSerie = typeof outro?.note === 'string' &&
     outro.note.startsWith(`Agregado da União Europeia (EU27_2020) da medida «${principal}»,`);
   return mesmaSerie && (qual === 'ue'
-    ? id === `${principal}-ue` && agregadoDaSerie && atual.reference_date === outro?.reference_date
-    : qual === 'anterior' && id === anterior);
+    ? id === (declarada ? declarada.ue : `${principal}-ue`) && agregadoDaSerie && atual.reference_date === outro?.reference_date
+    : qual === 'anterior' && id === anterior && cadenciaConfere);
 }
 
 function auditaSelo(el, id, lang, err) {

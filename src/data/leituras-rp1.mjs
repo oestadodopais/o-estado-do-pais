@@ -630,7 +630,7 @@ export const LEITURAS_RP1 = {
       {
         "claim": "proprio"
       },
-      " euros a year to live on in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+      " euros a year in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
       {
         "nl": "60",
         "motivo": "escala-de-instrumento"

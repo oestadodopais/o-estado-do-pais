@@ -68,11 +68,11 @@ export const NOMES_RP1 = {
   },
   "linha-de-risco-de-pobreza-2025": {
     "pt": "Linha de risco de pobreza",
-    "en": "At-risk-of-poverty threshold"
+    "en": "At-risk-of-poverty line"
   },
   "linha-de-risco-de-pobreza-2024": {
     "pt": "Linha de risco de pobreza",
-    "en": "At-risk-of-poverty threshold"
+    "en": "At-risk-of-poverty line"
   }
 };
 export const PERGUNTAS_RP1 = {
