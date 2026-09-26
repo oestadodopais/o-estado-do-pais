@@ -5,15 +5,30 @@
  * (`design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs`, o cabeçalho)
  * ===========================================================================
  *
- * O CONSTRUTOR LEVA ESTAS ENTRADAS PARA `src/data/leituras-das-medidas.mjs` sem
- * lhes mudar uma palavra fixa, salvo onde a auditoria das origens (a K17) mostrar
+ * A SEGUNDA REDAÇÃO (26.09.2026 à tarde, a peça RP1b). A primeira entrega do
+ * construtor (o Codex gpt-6-astra, oito medidas seladas) trouxe vinte e duas
+ * trocas de palavras, cada uma com o seu literal, em
+ * `design/especime-v3/medicoes/rp1-2026-09-26/acertos-rp1.json`; o lugar de
+ * direção leu-as e fundiu aqui as que aceitou (as médias dos doze meses sem
+ * pressuposto de subida, a unidade dentro do valor selado da remuneração, o
+ * denominador das pensões, o RSI pelo conceito publicado, o ano do inquérito
+ * na linha de pobreza), com duas emendas suas: as médias dos doze meses ganham
+ * um ramo pelo sinal («subiram» quando o valor é positivo, «variaram» quando é
+ * negativo), e a leitura da linha de pobreza volta a frases curtas. A medida
+ * `remuneracao-bruta-mensal-media-variacao-real` sai: a API do INE não publica
+ * um indicador da variação real (as pesquisas do catálogo estão nos pedidos
+ * 022 e 023 do motor), e o projeto não a calcula neste bloco (o brief, §5).
+ *
+ * O CONSTRUTOR LEVA ESTAS ENTRADAS PARA `src/data/leituras-rp1.mjs` sem lhes
+ * mudar uma palavra fixa, salvo onde a auditoria das origens (a K17) mostrar
  * que um literal de origem diz a coisa por outras palavras; cada acerto vai no
- * relatório, palavra a palavra. As chaves são os identificadores das linhas que o
- * construtor sela: as medidas mensais e trimestrais têm identificador ESTÁVEL,
- * sem o período (o período é o `reference_date` da linha), e o período anterior é
- * a segunda linha estável que a tabela das réguas declaradas nomeia (o brief, §2,
- * item 2); as anuais seguem a convenção `<medida>-<ano>`. Onde o construtor
- * fixar outro identificador, muda a chave e diz.
+ * relatório, palavra a palavra, e `acertos-rp1.py` prova a igualdade fora dos
+ * acertos. As chaves são os identificadores das linhas seladas: as medidas
+ * mensais e trimestrais têm identificador ESTÁVEL, sem o período (o período é
+ * o `reference_date` da linha), e o período anterior é a segunda linha estável
+ * que a tabela das réguas declaradas nomeia (`…-periodo-anterior`); a linha da
+ * União do IHPC é `ihpc-variacao-homologa-ue`; as anuais seguem a convenção
+ * `<medida>-<ano>`.
  *
  * A regra do L1 fica: as palavras são do lugar de direção; os algarismos são os
  * da linha do cartão, das linhas da régua e dos `nl` com literal de origem; as
@@ -44,6 +59,9 @@ const HA_UM_ANO_EN = (o_que) => ({ sinal: {
   negativo: ['In ', { periodo: 'proprio' }, ' ', o_que, ' ', { claim: 'proprio', sufixo: ' %' }, ' compared with a year earlier, that is, below.'],
   zero: ['In ', { periodo: 'proprio' }, ' ', o_que, ' at the same level as a year earlier.'],
 } });
+/* As médias dos doze meses: o verbo pelo sinal, sem pressupor uma subida. */
+const MEDIA_PT = { sinal: { positivo: ['subiram ', { claim: 'proprio', sufixo: ' %' }], negativo: ['variaram ', { claim: 'proprio', sufixo: ' %' }], zero: ['não variaram'] } };
+const MEDIA_EN = { sinal: { positivo: ['rose ', { claim: 'proprio', sufixo: ' %' }], negativo: ['changed by ', { claim: 'proprio', sufixo: ' %' }], zero: ['did not change'] } };
 
 export const LEITURAS_RP1 = {
   /* ------------------------------------------------- 1 · Economia e finanças públicas: os preços no consumidor */
@@ -52,8 +70,8 @@ export const LEITURAS_RP1 = {
     en: [HA_UM_ANO_EN('consumer prices were, on average,'), ' That is inflation: the INE measures it on a basket of goods and services that represents what households buy.', SUBIDA_MES_EN],
   },
   'ipc-variacao-media-12-meses': {
-    pt: ['Na média dos doze meses até ', { periodo: 'proprio' }, ', os preços no consumidor subiram ', { claim: 'proprio', sufixo: ' %' }, ' face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.', SUBIDA_MES_PT],
-    en: ['On average over the twelve months to ', { periodo: 'proprio' }, ', consumer prices rose ', { claim: 'proprio', sufixo: ' %' }, ' compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls.', SUBIDA_MES_EN],
+    pt: ['Na média dos doze meses até ', { periodo: 'proprio' }, ', os preços no consumidor ', MEDIA_PT, ' face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.', SUBIDA_MES_PT],
+    en: ['On average over the twelve months to ', { periodo: 'proprio' }, ', consumer prices ', MEDIA_EN, ' compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls.', SUBIDA_MES_EN],
   },
   'ipc-alimentacao-variacao-homologa': {
     pt: [HA_UM_ANO_PT('os preços dos alimentos e das bebidas não alcoólicas estavam'), SUBIDA_MES_PT],
@@ -78,31 +96,27 @@ export const LEITURAS_RP1 = {
     en: [HA_UM_ANO_EN('the rents paid by tenants were, on the consumer price index measure,'), SUBIDA_MES_EN],
   },
   'ipc-sem-habitacao-variacao-media-12-meses': {
-    pt: ['Na média dos doze meses até ', { periodo: 'proprio' }, ', os preços no consumidor sem a habitação subiram ', { claim: 'proprio', sufixo: ' %' }, ' face aos doze meses anteriores: é o número que serve de referência para a atualização das rendas no ano seguinte.', SUBIDA_MES_PT],
-    en: ['On average over the twelve months to ', { periodo: 'proprio' }, ', consumer prices excluding housing rose ', { claim: 'proprio', sufixo: ' %' }, ' compared with the previous twelve months: that is the reference figure for updating rents in the following year.', SUBIDA_MES_EN],
+    pt: ['Na média dos doze meses até ', { periodo: 'proprio' }, ', os preços no consumidor sem a habitação ', MEDIA_PT, ' face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte.', SUBIDA_MES_PT],
+    en: ['On average over the twelve months to ', { periodo: 'proprio' }, ', consumer prices excluding housing ', MEDIA_EN, ' compared with the previous twelve months. The August value is the reference figure for updating rents in the following year.', SUBIDA_MES_EN],
   },
 
   /* ------------------------------------------------- 2 · Trabalho: a remuneração média */
   'remuneracao-bruta-mensal-media': {
-    pt: ['No ', { periodo: 'proprio' }, ', quem trabalha por conta de outrem ganhou em média ', { claim: 'proprio' }, ' euros por mês, antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem.', anteriorSemPeriodo('Mais do que no mesmo trimestre de há um ano.', 'Menos do que no mesmo trimestre de há um ano.', 'O mesmo que no mesmo trimestre de há um ano.')],
-    en: ['In the ', { periodo: 'proprio' }, ', employees earned on average ', { claim: 'proprio' }, ' euros a month, before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold.', anteriorSemPeriodo('More than in the same quarter a year earlier.', 'Less than in the same quarter a year earlier.', 'The same as in the same quarter a year earlier.')],
-  },
-  'remuneracao-bruta-mensal-media-variacao-real': {
-    pt: ['Descontada a subida dos preços, a remuneração média ', { sinal: { positivo: ['subiu ', { claim: 'proprio', sufixo: ' %' }], negativo: ['variou ', { claim: 'proprio', sufixo: ' %' }], zero: ['não variou'] } }, ' face ao mesmo trimestre de há um ano: é o INE que faz esta conta, com o índice de preços no consumidor.'],
-    en: ['With the rise in prices taken out, average pay ', { sinal: { positivo: ['rose ', { claim: 'proprio', sufixo: ' %' }], negativo: ['changed by ', { claim: 'proprio', sufixo: ' %' }], zero: ['did not change'] } }, ' compared with the same quarter a year earlier: the INE does this calculation, with the consumer price index.'],
+    pt: ['No ', { periodo: 'proprio' }, ', quem trabalha por conta de outrem ganhou em média ', { claim: 'proprio', sufixo: ' euros por mês' }, ', antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem.', anteriorSemPeriodo('Mais do que no mesmo trimestre de há um ano.', 'Menos do que no mesmo trimestre de há um ano.', 'O mesmo que no mesmo trimestre de há um ano.')],
+    en: ['In the ', { periodo: 'proprio' }, ', employees earned on average ', { claim: 'proprio', sufixo: ' euros a month' }, ', before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold.', anteriorSemPeriodo('More than in the same quarter a year earlier.', 'Less than in the same quarter a year earlier.', 'The same as in the same quarter a year earlier.')],
   },
 
   /* ------------------------------------------------- 5 · Segurança social e pensões */
   'pensao-media-anual-2025': {
-    pt: ['Em ', { periodo: 'proprio' }, ' uma pensão da Segurança Social valeu em média ', { claim: 'proprio' }, ' euros no ano inteiro, contando todas as pensões pagas, de velhice, de invalidez e de sobrevivência; é uma média entre pensões muito diferentes, e não a pensão de ninguém.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
-    en: ['In ', { periodo: 'proprio' }, ' a Social Security pension was worth on average ', { claim: 'proprio' }, ' euros over the whole year, counting all pensions paid, for old age, invalidity and survivors; it is an average of very different pensions, and nobody’s pension.', anterior('Up from', 'Down from', 'Unchanged from')],
+    pt: ['Em ', { periodo: 'proprio' }, ' o valor das pensões pagas pela Segurança Social foi, em média, de ', { claim: 'proprio' }, ' euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
+    en: ['In ', { periodo: 'proprio' }, ' the amount of pensions paid by Social Security was, on average, ', { claim: 'proprio' }, ' euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.', anterior('Up from', 'Down from', 'Unchanged from')],
   },
   'beneficiarios-do-rsi-por-mil-2024': {
-    pt: ['Em ', { periodo: 'proprio' }, ', por cada mil pessoas em idade ativa, ', { claim: 'proprio' }, ' recebiam o rendimento social de inserção, o apoio do Estado a quem não tem rendimentos que cheguem para as necessidades mínimas.', anterior('Mais do que em', 'Menos do que em', 'O mesmo que em')],
-    en: ['In ', { periodo: 'proprio' }, ', for every thousand people of working age, ', { claim: 'proprio' }, ' received the social insertion income, the State’s support for those whose income does not cover minimum needs.', anterior('More than in', 'Fewer than in', 'The same as in')],
+    pt: ['Em ', { periodo: 'proprio' }, ', por cada mil pessoas em idade ativa, ', { claim: 'proprio' }, ' recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.', anterior('Mais do que em', 'Menos do que em', 'O mesmo que em')],
+    en: ['In ', { periodo: 'proprio' }, ', for every thousand people of working age, ', { claim: 'proprio' }, ' received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.', anterior('More than in', 'Fewer than in', 'The same as in')],
   },
   'linha-de-risco-de-pobreza-2025': {
-    pt: ['Em ', { periodo: 'proprio' }, ', uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de ', { claim: 'proprio' }, ' euros por ano para viver, depois dos impostos e contando as prestações sociais: é a linha que o Eurostat traça a ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % do rendimento mediano do país, o do meio, em que metade da população tem mais e metade tem menos.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
-    en: ['In ', { periodo: 'proprio' }, ', a person living alone was at risk of poverty with less than ', { claim: 'proprio' }, ' euros a year to live on, after taxes and including social benefits: that is the line Eurostat draws at ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % of the country’s median income, the one in the middle, where half the population has more and half has less.', anterior('Up from', 'Down from', 'Unchanged from')],
+    pt: ['No inquérito de ', { periodo: 'proprio' }, ', uma pessoa que vivesse sozinha estava em risco de pobreza se, no ano anterior, tivesse tido menos de ', { claim: 'proprio' }, ' euros, depois dos impostos e das contribuições sociais e contando as prestações sociais. É a linha que o Eurostat traça a ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família. Mediano é o do meio: metade da população tem mais e metade tem menos.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
+    en: ['In the survey for ', { periodo: 'proprio' }, ', a person living alone was at risk of poverty if, in the previous year, they had had less than ', { claim: 'proprio' }, ' euros, after taxes and social contributions and including social benefits. That is the line Eurostat draws at ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % of the country’s median income, adjusted for each household’s size and composition. Median means the one in the middle: half the population has more and half has less.', anterior('Up from', 'Down from', 'Unchanged from')],
   },
 };
