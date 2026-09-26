@@ -182,6 +182,46 @@ const LISTA_PDM = [
     /* nota: «… -3%.» */
     limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
     limiarFixadoPor: 'comissao',
+    /* A TESTEMUNHA DISCORDANTE, DECLARADA E DATADA (passagem de correção do L1,
+       26.09.2026, I151). A descrição do conjunto do Eurostat traz outro valor
+       de referência, e a página do painel da Comissão, lida a 26.09.2026, traz
+       o que o cartão rende. Quem fixa e revê os valores do painel é a
+       Comissão, e por isso o cartão rende o dela; a discordância fica aqui
+       declarada, com o que cada uma diz, a data de criação do conjunto e a data
+       de leitura da página, e a K9 do `check:cartao` exige as quatro coisas e
+       quem manda. Recortada dos bytes selados por `origens-l1.py`. */
+    testemunhaDiscordante: {
+      eurostat: {
+        documento: "Share of exports of advanced economies",
+        url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+        excerto: "The indicative threshold is +3%.",
+        limiar: "+3%",
+        criado: "2014-11-13",
+        selo: {
+          motor: "indicators/out/l1-2026-09-24/eurostat-tipsbp60.json",
+          campo: "extension.description",
+          criacao: "extension.annotation, CREATED: 2014-11-13T19:19:51+0100",
+          hora: "2026-09-24T06:29:22Z",
+          cliente: "core.http.HttpClient.condicional",
+          sha256: "67e385755812e07e6e4a72d4c68be13b3fccfd7237a7afac79115aec79d44ba9",
+        },
+      },
+      comissao: {
+        documento: "Scoreboard · Macroeconomic Imbalance Procedure",
+        url: "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+        excerto: "export performance against advanced economies (3-year percentage change), with a threshold of -3%.",
+        limiar: "-3%",
+        lido: "2026-09-26",
+        selo: {
+          motor: "indicators/out/l1-2026-09-26/ce-painel-pdm-scoreboard.html",
+          campo: "o texto da página, a lista «The headline indicators consist of the following 13 indicators and indicative thresholds»",
+          hora: "2026-09-26T08:30:08Z",
+          cliente: "core.http.HttpClient.condicional",
+          sha256: "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+        },
+      },
+      manda: "comissao",
+    },
   },
   {
     claim: 'divida-das-empresas-2025',
@@ -284,6 +324,46 @@ const LISTA_PDM = [
       simbolo: '%',
     },
     limiarFixadoPor: 'comissao',
+    /* A TESTEMUNHA DISCORDANTE, DECLARADA E DATADA (passagem de correção do L1,
+       26.09.2026, I151). A descrição do conjunto do Eurostat traz outro valor
+       de referência, e a página do painel da Comissão, lida a 26.09.2026, traz
+       o que o cartão rende. Quem fixa e revê os valores do painel é a
+       Comissão, e por isso o cartão rende o dela; a discordância fica aqui
+       declarada, com o que cada uma diz, a data de criação do conjunto e a data
+       de leitura da página, e a K9 do `check:cartao` exige as quatro coisas e
+       quem manda. Recortada dos bytes selados por `origens-l1.py`. */
+    testemunhaDiscordante: {
+      eurostat: {
+        documento: "Real effective exchange rate - percentage changes, 42 trading partners",
+        url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+        excerto: "The indicative thresholds are +/-5% for euro area and +/-11% for non-euro area countries.",
+        limiar: "+/-5%",
+        criado: "2012-10-22",
+        selo: {
+          motor: "indicators/out/l1-2026-09-24/eurostat-tipser10.json",
+          campo: "extension.description",
+          criacao: "extension.annotation, CREATED: 2012-10-22T16:27:34+0200",
+          hora: "2026-09-24T06:29:21Z",
+          cliente: "core.http.HttpClient.condicional",
+          sha256: "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+        },
+      },
+      comissao: {
+        documento: "Scoreboard · Macroeconomic Imbalance Procedure",
+        url: "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+        excerto: "real effective exchange rates (3-year percentage change) based on HICP/CPI deflators, relative to 41 other industrial countries, with thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries.",
+        limiar: "-/+3%",
+        lido: "2026-09-26",
+        selo: {
+          motor: "indicators/out/l1-2026-09-26/ce-painel-pdm-scoreboard.html",
+          campo: "o texto da página, a lista «The headline indicators consist of the following 13 indicators and indicative thresholds»",
+          hora: "2026-09-26T08:30:08Z",
+          cliente: "core.http.HttpClient.condicional",
+          sha256: "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+        },
+      },
+      manda: "comissao",
+    },
   },
   {
     claim: 'taxa-de-desemprego-mip-2025',

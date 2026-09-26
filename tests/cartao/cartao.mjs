@@ -75,7 +75,16 @@
  *        o leu. São dois registos independentes do mesmo facto, e esta célula
  *        compara-os: os números e o sentido. Um facto com duas origens que não
  *        batem certo é um facto por confirmar, e o cartão não o desenha sem
- *        alguém olhar.
+ *        alguém olhar. **Desde a passagem de correção do L1 (26.09.2026, I151)**,
+ *        onde uma terceira fonte diz outra coisa (as descrições de dois conjuntos
+ *        do Eurostat), a discordância declara-se ao pé do `limiar`
+ *        (`testemunhaDiscordante`) e esta célula exige-lhe o que cada fonte diz,
+ *        a data de criação do conjunto, a data de leitura da página da Comissão e
+ *        quem manda, com os números de quem manda iguais aos da declaração
+ *        (`tests/cartao/referencias.mjs`); as duas medidas conhecem-se pelo nome,
+ *        e tirar a testemunha a uma delas fecha a construção. Plantas com
+ *        `--prova`: a discordância sem data, sem a data de leitura, sem quem
+ *        manda, a Comissão a dizer outro valor, e a discordância escondida.
  *   K11 · **um cartão sem nome não é um cartão** · o nome é a primeira das cinco
  *        coisas, e a chave da linha não vale por nome no texto de uma linha sem
  *        nome.
@@ -180,7 +189,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
-import { compararAsDuasTestemunhas, referenciaNacionalDaLinha } from './referencias.mjs';
+import {
+  compararAsDuasTestemunhas,
+  referenciaNacionalDaLinha,
+  conferirTestemunhaDiscordante,
+  conferirDiscordanciasDeclaradas,
+} from './referencias.mjs';
 import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
 import { auditarPerguntas, lerAuditoriaDasPerguntas } from './perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas, plantasDaK17 } from './leituras.mjs';
@@ -1491,6 +1505,7 @@ const motor = ficheirosDoMotor();
 /* As duas testemunhas do valor de referência, comparadas medida a medida. Não
    lê o `dist/`: lê os dois registos, que é onde o facto está. */
 let k9Comparadas = 0;
+let k9Discordantes = 0;
 const linhasK9 = loadClaims();
 for (const [id, f] of REFERENCIAS_DAS_MEDIDAS) {
   const nacional = f.limiarFixadoPor === 'pacto' || f.limiarFixadoPor === 'conselho';
@@ -1507,8 +1522,43 @@ for (const [id, f] of REFERENCIAS_DAS_MEDIDAS) {
     Boolean(f.limiar && (f.limiar.inferior || f.limiar.superior)),
   );
   if (queixa) r.erros.push(queixa);
+  /* A TESTEMUNHA DISCORDANTE, onde está declarada (passagem de correção do L1). */
+  if (f.testemunhaDiscordante) {
+    k9Discordantes++;
+    r.erros.push(...conferirTestemunhaDiscordante(id, f.testemunhaDiscordante, ladosDoLimiar(f.limiar), f.limiarFixadoPor));
+  }
 }
 r.contas.valores_de_referencia_comparados = k9Comparadas;
+r.contas.testemunhas_discordantes_conferidas = k9Discordantes;
+r.erros.push(...conferirDiscordanciasDeclaradas(REFERENCIAS_DAS_MEDIDAS));
+if (PROVA) {
+  /* AS PLANTAS DA TESTEMUNHA DISCORDANTE, em memória, sobre cópias da
+     declaração verdadeira da taxa de câmbio efetiva real. */
+  const reer = 'taxa-de-cambio-efectiva-real-2025';
+  const f = /** @type {any} */ (REFERENCIAS_DAS_MEDIDAS.get(reer));
+  /** @param {(t: any) => void} estraga */
+  const com = (estraga) => {
+    const c = structuredClone(f.testemunhaDiscordante);
+    estraga(c);
+    return conferirTestemunhaDiscordante(reer, c, ladosDoLimiar(f.limiar), f.limiarFixadoPor);
+  };
+  const escondida = new Map([...REFERENCIAS_DAS_MEDIDAS].map(([k, v]) => [k, k === reer ? { ...v, testemunhaDiscordante: undefined } : v]));
+  /** @type {[string, string[], string][]} */
+  const plantas = [
+    ['a discordância sem a data de criação do conjunto', com((t) => { delete t.eurostat.criado; }), 'não diz a data de criação'],
+    ['a discordância sem a data de leitura da Comissão', com((t) => { delete t.comissao.lido; }), 'não diz a data de leitura'],
+    ['a discordância sem quem manda', com((t) => { delete t.manda; }), 'não diz quem manda'],
+    ['a Comissão a dizer outro valor', com((t) => { t.comissao.excerto = t.comissao.excerto.replace('-/+3%', '-/+4%'); t.comissao.limiar = '-/+4%'; }), 'quem manda diz'],
+    ['a discordância escondida', conferirDiscordanciasDeclaradas(escondida), 'voltou a estar escondida'],
+  ];
+  const mordeu = (/** @type {string[]} */ queixas, /** @type {string} */ mordida) => queixas.some((x) => x.includes(mordida));
+  for (const [nome, queixas, mordida] of plantas) {
+    if (!mordeu(queixas, mordida)) r.erros.push(`K9 NÃO MORDEU ${nome}: ${queixas[0] ?? 'nenhum vermelho'}`);
+  }
+  r.contas.testemunhas_discordantes_plantas = plantas.length;
+  r.contas.testemunhas_discordantes_plantas_mordidas = plantas.filter(([, queixas, mordida]) => mordeu(queixas, mordida)).length;
+  r.contas.testemunhas_discordantes_plantas_nomes = plantas.map(([nome]) => nome);
+}
 
 /* -------------------------------------------------------------------- K16 */
 /* Cada pedaço de cada pergunta com a sua origem. Não lê o `dist/`: lê a
@@ -1603,6 +1653,12 @@ console.log(cinza(`    unidade na outra língua          ${r.contas.unidade_nout
 console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_portugues} (a exceção da IDENTIDADE §6)`));
 console.log(cinza(`    valores de régua sem marca própria                    ${r.contas.valores_de_regua_sem_marca} (a porta é a do cartão)`));
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
+console.log(
+  cinza(
+    `      com a testemunha discordante declarada e inteira     ${r.contas.testemunhas_discordantes_conferidas}` +
+      (PROVA ? ` (${r.contas.testemunhas_discordantes_plantas_mordidas} de ${r.contas.testemunhas_discordantes_plantas} plantas a morder)` : ''),
+  ),
+);
 console.log(cinza(`    cartões com veredicto conferido (K15)                 ${r.contas.cartoes_com_veredicto}`));
 console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
