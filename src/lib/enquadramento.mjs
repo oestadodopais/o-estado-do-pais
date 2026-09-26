@@ -233,7 +233,44 @@ export function anoDoIdentificador(id) {
  * @param {string} id
  * @returns {{ anterior: string|null, ue: string|null }}
  */
+export const REGUAS_DECLARADAS = /** @type {const} */ ({
+  'ipc-variacao-homologa': { anterior: 'ipc-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ipc-variacao-media-12-meses': { anterior: 'ipc-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ipc-alimentacao-variacao-homologa': { anterior: 'ipc-alimentacao-variacao-homologa-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'ipc-sem-habitacao-variacao-media-12-meses': { anterior: 'ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior', ue: null, cadencia: 'mes-anterior' },
+  'remuneracao-bruta-mensal-media': { anterior: 'remuneracao-bruta-mensal-media-periodo-anterior', ue: null, cadencia: 'mesmo-trimestre-ano-anterior' },
+});
+
+/** Confere série, unidade e distância entre períodos, também nas plantas.
+ * @param {string} id @param {{ anterior: string, ue: string|null, cadencia: string }} regra
+ * @param {Map<string, any>} [linhas]
+ */
+export function conferirReguaDeclarada(id, regra, linhas = loadClaims()) {
+  const a = linhas.get(id), b = linhas.get(regra.anterior);
+  if (!a || !b || !a.document?.edition || a.document.edition !== b.document?.edition || !a.unit || a.unit !== b.unit) {
+    throw new Error(`Régua declarada de ${id}: período anterior de outra série ou unidade, ou linha ausente`);
+  }
+  const mensal = (/** @type {string} */ p) => {
+    const m = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(p);
+    return m ? Number(m[1]) * 12 + Number(m[2]) : null;
+  };
+  const trimestral = (/** @type {string} */ p) => {
+    const m = /^(\d{4})-T([1-4])$/.exec(p);
+    return m ? Number(m[1]) * 4 + Number(m[2]) : null;
+  };
+  const ler = regra.cadencia === 'mes-anterior' ? mensal : trimestral;
+  const atual = ler(String(a.reference_date)), anterior = ler(String(b.reference_date));
+  const distancia = regra.cadencia === 'mes-anterior' ? 1 : regra.cadencia === 'mesmo-trimestre-ano-anterior' ? 4 : null;
+  if (atual === null || anterior === null || distancia === null || atual - anterior !== distancia) {
+    throw new Error(`Régua declarada de ${id}: os períodos não cumprem a cadência declarada`);
+  }
+  return { anterior: regra.anterior, ue: regra.ue };
+}
+
+/** @param {string} id @returns {{ anterior: string|null, ue: string|null }} */
 export function chavesDoEnquadramento(id) {
+  const declarada = /** @type {Record<string, {anterior: string, ue: string|null, cadencia: string}>} */ (REGUAS_DECLARADAS)[id];
+  if (declarada) return conferirReguaDeclarada(id, declarada);
   const p = anoDoIdentificador(id);
   if (!p) return { anterior: null, ue: null };
   return { anterior: periodoAnteriorNoLivro(p.raiz, p.ano), ue: `${id}-ue` };
@@ -556,7 +593,7 @@ export function linhasDeEnquadramento() {
         if (c.ue) s.add(c.ue);
       }
     }
-    for (const id of Object.keys(DOMINIO_DAS_MEDIDAS)) {
+    for (const id of new Set([...Object.keys(DOMINIO_DAS_MEDIDAS), ...Object.keys(REGUAS_DECLARADAS)])) {
       if (r?.has(id)) continue;
       const c = reguaDaMedida(id);
       if (c.anterior) s.add(c.anterior.id);

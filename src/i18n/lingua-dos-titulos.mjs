@@ -43,6 +43,14 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  /* RP1: línguas lidas nas respostas e na metainformação. */
+  "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor": 'pt',
+  "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor": 'pt',
+  "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações": 'pt',
+  "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática": 'pt',
+  "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática": 'pt',
+  "At-risk-of-poverty thresholds": 'en',
+
   'Housing cost overburden rate by tenure status - EU-SILC survey': 'en',
   /* --- os documentos portugueses ---------------------------------------- */
   'Evolução do endividamento total, por município - prestação de contas 2024': 'pt',
@@ -191,6 +199,14 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  /* RP1: línguas lidas nas respostas e na metainformação. */
+  "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor": 'pt',
+  "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor": 'pt',
+  "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações": 'pt',
+  "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática": 'pt',
+  "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática": 'pt',
+  "At-risk-of-poverty thresholds": 'en',
+
   'Housing cost overburden rate by tenure status - EU-SILC survey': 'en',
   /* --- os rótulos portugueses ------------------------------------------- */
   'PMP (N.º dias)': 'pt',

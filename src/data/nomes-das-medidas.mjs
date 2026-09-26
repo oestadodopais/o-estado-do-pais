@@ -1,3 +1,4 @@
+import { NOMES_RP1 } from './medidas-rp1.mjs';
 /**
  * ---------------------------------------------------------------------------
  * OS NOMES DO PROJETO PARA AS MEDIDAS QUE SÓ TINHAM O NOME DA FONTE
@@ -465,6 +466,7 @@ export const NOMES_DO_PROJETO = {
     pt: 'Pelouros da vereadora',
     en: 'Portfolios held by the councillor',
   },
+  ...NOMES_RP1,
 };
 
 /**

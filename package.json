@@ -46,7 +46,7 @@
     "check:css": "node scripts/check-css.mjs --prova",
     "check:fontes": "node tests/linha/sem-resposta.mjs",
     "check:indice": "node tests/livro/indice.mjs --navegador",
-    "check:cartao": "node tests/cartao/cartao.mjs --prova",
+    "check:cartao": "node tests/cartao/cartao.mjs --prova && node tests/cartao/rp1.mjs",
     "check:nomes": "node scripts/check-nomes-oficiais.mjs --prova",
     "check:palavras": "node tests/voz/palavras-proibidas.mjs --prova",
     "check:lugares": "node scripts/check-lugares.mjs",

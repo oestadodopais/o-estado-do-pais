@@ -453,7 +453,7 @@ for (const ficheiro of paginasDe(DIST)) {
       );
       continue;
     }
-    const esperado = dataDaCasa(bruto);
+    const esperado = dataDaCasa(bruto, rota?.lang === 'en' ? 'en' : 'pt');
     const rendido = texto(el);
     if (rendido !== esperado) {
       err(

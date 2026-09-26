@@ -193,7 +193,7 @@ const valor = String(claim.value).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00
 
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
 const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);
-const provisorio = claim.source_flag === 'p' && !TAGS_DE_SVG.has(String(as));
+const provisorio = (claim.source_flag === 'p' || (claim.source_flag === '&' && claim.source_flag_note === 'Dado provisório')) && !TAGS_DE_SVG.has(String(as));
 const estilo = escala
   ? [`--figura-car:${[...valor].length}`, style].filter(Boolean).join(';')
   : style;
@@ -237,6 +237,8 @@ const estilo = escala
         {valor}
       </TagDoValor>
       {sufixo && <span class="claim-sufixo" id={sufixoId ?? undefined} set:text={sufixo} />}
+      {/* RP1: a unidade marcada como campo cabe aqui, antes do provisório. */}
+      <slot name="sufixo" />
       {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
     </>
   ) : chip ? (

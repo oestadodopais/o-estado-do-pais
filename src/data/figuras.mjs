@@ -1,3 +1,5 @@
+import { ORIGENS_RP1 } from './origens-rp1.mjs';
+import { PERGUNTAS_RP1 } from './medidas-rp1.mjs';
 /**
  * ---------------------------------------------------------------------------
  * DUAS LISTAS DECLARADAS, COM O QUADRO NOMEADO POR ENTRADA (v3, etapa 2l)
@@ -1796,6 +1798,7 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
       sha256: "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
     },
   },
+  ...ORIGENS_RP1,
 });
 
 /**
@@ -2199,6 +2202,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       ' % of disposable income, also net of housing allowances?',
     ],
   },
+  ...PERGUNTAS_RP1,
 });
 
 /**

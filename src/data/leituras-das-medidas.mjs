@@ -1,3 +1,4 @@
+import { LEITURAS_RP1 } from './leituras-rp1.mjs';
 /**
  * ===========================================================================
  * A LEITURA DE CADA MEDIDA NACIONAL · as 36 leituras, escritas pelo lugar de
@@ -414,4 +415,5 @@ export const LEITURAS_DAS_MEDIDAS = {
     pt: ['É a parte das pessoas que, num inquérito europeu, considera a independência dos tribunais e dos juízes do seu país muito boa ou razoavelmente boa.', SUBIU, MEDIA_UE],
     en: ['It is the share of people who, in a European survey, rate the independence of their country’s courts and judges as very good or fairly good.', ROSE, EU_AVERAGE],
   },
+  ...LEITURAS_RP1,
 };

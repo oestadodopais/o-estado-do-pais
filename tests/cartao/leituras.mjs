@@ -70,7 +70,8 @@ const CAMPOS_DA_LINHA = new Set(['excerpt', 'unit', 'document.title', 'document.
 const LITERAL_MINIMO = 4;
 /* AS PALAVRAS DE LIGAÇÃO, uma lista fechada: uma parte «liga» é pontuação e
    estas palavras, e mais nada. Uma palavra que diga alguma coisa não é ligação. */
-const PALAVRAS_DE_LIGACAO = new Set(['em', 'in', 'aos', 'to', 'e', 'and', 'os', 'the', 'eram', 'there', 'were', 'it']);
+const PALAVRAS_DE_LIGACAO = new Set([
+  'no', /* RP1: contração de «em o», antes do período trimestral. */'em', 'in', 'aos', 'to', 'e', 'and', 'os', 'the', 'eram', 'there', 'were', 'it']);
 const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
 /** As quatro páginas da leitura: a do país e a dos temas, nas duas edições. */
 export const PAGINAS_DA_LEITURA = [
@@ -135,6 +136,16 @@ export function folhasDaLeitura(pt, en) {
     if ('nl' in a) {
       if (a.nl !== b.nl || a.motivo !== b.motivo) throw new Error(`as duas edições têm algarismos diferentes em ${c}`);
       out.push({ caminho: c, nl: a.nl, motivo: a.motivo, dentroDeRamo: ramo, antesDeRamo: false, depoisDeProva: false });
+      return;
+    }
+    /* RP1: o sufixo da unidade pode ser traduzido. Continua a ser palavra
+       fixa auditada; a identidade da linha calculada continua igual. */
+    if ('claim' in a && a.sufixo !== b.sufixo) {
+      const { sufixo: sa, ...ca } = a, { sufixo: sb, ...cb } = b;
+      if (typeof sa !== 'string' || typeof sb !== 'string' || JSON.stringify(ca) !== JSON.stringify(cb)) {
+        throw new Error(`as duas edições têm pedaços calculados diferentes em ${c}`);
+      }
+      out.push({ caminho: `${c}.sufixo`, pt: sa, en: sb, dentroDeRamo: ramo, antesDeRamo: false, depoisDeProva: false });
       return;
     }
     if (JSON.stringify(a) !== JSON.stringify(b)) throw new Error(`as duas edições têm pedaços calculados diferentes em ${c}`);
@@ -387,7 +398,16 @@ const numero = (v) => {
   return Number(s);
 };
 /** A data da casa, pela conta desta célula: um dia ISO passa a dd.mm.aaaa, e o resto fica. @param {string} v */
-const dataDaCasaAqui = (v) => {
+const dataDaCasaAqui = (v, lang = 'pt') => {
+  if (/^\d{4}-(0[1-9]|1[0-2])$/.test(v)) {
+    const [ano, mes] = v.split('-');
+    const nomes = lang === 'pt' ? 'janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro'.split(' ') : 'January February March April May June July August September October November December'.split(' ');
+    return nomes[Number(mes)-1] + (lang === 'pt' ? ' de ' : ' ') + ano;
+  }
+  if (/^\d{4}-T[1-4]$/.test(v)) {
+    const [ano, tri] = v.split('-T');
+    return lang === 'pt' ? `${tri}.º trimestre de ${ano}` : `${tri}${['st','nd','rd','th'][Number(tri)-1]} quarter of ${ano}`;
+  }
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v));
   return m ? `${m[3]}.${m[2]}.${m[1]}` : String(v);
 };
@@ -432,13 +452,13 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
       const alvo = p.claim === 'proprio' ? id : p.claim === 'anterior' ? regua.anterior : regua.ue;
       const l = alvo ? linhas.get(alvo) : null;
       if (!l) throw new Error(`a leitura de ${id} cita a linha «${p.claim}», que a régua do cartão não rende`);
-      return `${l.value}${p.sufixo ?? ''}${l.source_flag === 'p' ? provisorio : ''}`;
+      return `${l.value}${p.sufixo ?? ''}${(l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? provisorio : ''}`;
     }
     if ('periodo' in p) {
       if (camaras) return dataDaCasaAqui(String([...(/** @type {any} */ (recontagem)).periodos][0]));
       const l = p.periodo === 'proprio' ? linha : regua.anterior ? linhas.get(regua.anterior) : null;
       if (!l?.reference_date) throw new Error(`a leitura de ${id} escreve um período que a linha não publica`);
-      return dataDaCasaAqui(l.reference_date);
+      return dataDaCasaAqui(l.reference_date, lang);
     }
     if ('referencia' in p) {
       const lado = p.referencia === 'unico' ? ref : ref?.[p.referencia];

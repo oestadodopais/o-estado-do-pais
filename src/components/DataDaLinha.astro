@@ -24,16 +24,15 @@
  * uma dispensa; isto é uma origem conferida.
  *
  * NENHUM ALGARISMO NOVO. `dataDaCasa()` devolve os quatro pedaços de entrada
- * noutra ordem e com outro separador, e deixa passar sem tocar o que não é uma
- * data completa: um ano («2024») e um mês («2025-12») são o período que a fonte
- * mede, e inventar-lhes um dia seria inventar um facto.
+ * noutra ordem e com outro separador, e apresenta também os meses e trimestres
+ * declarados pelo RP1, nas duas edições. Nenhum período ganha um dia.
  *
  * O RÓTULO NÃO ESTÁ AQUI. Quem chama escreve-o («período», «lido»,
  * «conferido»), porque é quem chama que sabe qual das três datas está a mostrar.
  */
 import { dataDaCasa } from '../lib/datas.mjs';
 
-const { id, campo, valor, class: klass = '' } = Astro.props;
+const { id, campo, valor, class: klass = '', lang = Astro.url.pathname.startsWith('/en/') ? 'en' : 'pt' } = Astro.props;
 ---
 
 <span
@@ -42,5 +41,5 @@ const { id, campo, valor, class: klass = '' } = Astro.props;
   data-de-linha={id}
   data-de-campo={campo}
 >
-  {dataDaCasa(valor)}
+  {dataDaCasa(valor, lang)}
 </span>

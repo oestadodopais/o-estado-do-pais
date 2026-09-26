@@ -1173,6 +1173,237 @@
         }
       ],
       "nota_da_leitura": "A descrição do tespm140 define a percentagem da população sem a restringir a qualquer regime de ocupação. «Todos os regimes» explicita essa população geral; a resposta não tem dimensão tenure. A pergunta dos inquilinos tem a seleção RENT_MKT, distinta e literal, na sua própria origem."
+    },
+    {
+      "id": "ipc-variacao-homologa",
+      "origens": [
+        "rp1-ipc-homologa"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior?",
+        "en": "How much have consumer prices changed since the same month a year earlier?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior?",
+          "en": "How much have consumer prices changed since the same month a year earlier?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-homologa",
+              "campo": "excerto",
+              "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+            },
+            {
+              "linha": "ipc-variacao-homologa",
+              "campo": "document.title",
+              "literal": "Índice de preços no consumidor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ipc-variacao-media-12-meses",
+      "origens": [
+        "rp1-ipc-media"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudou o nível médio dos preços no consumidor nos últimos doze meses face aos doze meses anteriores?",
+        "en": "How much has the average level of consumer prices changed over the last twelve months compared with the previous twelve months?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudou o nível médio dos preços no consumidor nos últimos doze meses face aos doze meses anteriores?",
+          "en": "How much has the average level of consumer prices changed over the last twelve months compared with the previous twelve months?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-media",
+              "campo": "excerto",
+              "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+            },
+            {
+              "linha": "ipc-variacao-media-12-meses",
+              "campo": "document.title",
+              "literal": "Índice de preços no consumidor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ipc-alimentacao-variacao-homologa",
+      "origens": [
+        "rp1-ipc-homologa"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudaram os preços dos alimentos e das bebidas não alcoólicas face ao mesmo mês do ano anterior?",
+        "en": "How much have food and non-alcoholic beverage prices changed since the same month a year earlier?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudaram os preços dos alimentos e das bebidas não alcoólicas face ao mesmo mês do ano anterior?",
+          "en": "How much have food and non-alcoholic beverage prices changed since the same month a year earlier?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-homologa",
+              "campo": "excerto",
+              "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+            },
+            {
+              "linha": "ipc-alimentacao-variacao-homologa",
+              "campo": "excerpt",
+              "literal": "Produtos alimentares e bebidas não alcoólicas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ipc-sem-habitacao-variacao-media-12-meses",
+      "origens": [
+        "rp1-ipc-media"
+      ],
+      "pergunta": {
+        "pt": "Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses?",
+        "en": "How much has the average level of consumer prices excluding housing changed over the last twelve months?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses?",
+          "en": "How much has the average level of consumer prices excluding housing changed over the last twelve months?",
+          "apoios": [
+            {
+              "origem": "rp1-ipc-media",
+              "campo": "excerto",
+              "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+            },
+            {
+              "linha": "ipc-sem-habitacao-variacao-media-12-meses",
+              "campo": "excerpt",
+              "literal": "Total exceto habitação"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remuneracao-bruta-mensal-media",
+      "origens": [
+        "rp1-remuneracao-trabalhadores",
+        "rp1-remuneracao-bruta"
+      ],
+      "pergunta": {
+        "pt": "Quanto recebe por mês, em média e antes de descontos, quem trabalha por conta de outrem?",
+        "en": "How much do employees receive per month, on average and before deductions?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quanto recebe por mês, em média e antes de descontos, quem trabalha por conta de outrem?",
+          "en": "How much do employees receive per month, on average and before deductions?",
+          "apoios": [
+            {
+              "origem": "rp1-remuneracao-trabalhadores",
+              "campo": "excerto",
+              "literal": "universo de trabalhadores por conta de outrem"
+            },
+            {
+              "origem": "rp1-remuneracao-bruta",
+              "campo": "excerto",
+              "literal": "Remuneração ilíquida"
+            },
+            {
+              "linha": "remuneracao-bruta-mensal-media",
+              "campo": "document.title",
+              "literal": "Remuneração bruta mensal média por trabalhador"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pensao-media-anual-2025",
+      "origens": [
+        "rp1-pensoes-formula",
+        "rp1-pensoes-periodo"
+      ],
+      "pergunta": {
+        "pt": "Qual é o valor anual médio das pensões pagas pela Segurança Social por pensionista?",
+        "en": "What is the average annual amount of pensions paid by Social Security per pensioner?"
+      },
+      "pedacos": [
+        {
+          "pt": "Qual é o valor anual médio das pensões pagas pela Segurança Social por pensionista?",
+          "en": "What is the average annual amount of pensions paid by Social Security per pensioner?",
+          "apoios": [
+            {
+              "origem": "rp1-pensoes-formula",
+              "campo": "excerto",
+              "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+            },
+            {
+              "origem": "rp1-pensoes-periodo",
+              "campo": "excerto",
+              "literal": "A partir de janeiro de 2017, de acordo com a nova metodologia estabelecida pelo Instituto de Informática I.P., o valor médio anual das pensões tem em conta as pensões pagas pela Segurança Social ao longo do ano."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "origens": [
+        "rp1-rsi"
+      ],
+      "pergunta": {
+        "pt": "Quantas pessoas recebem o rendimento social de inserção por cada mil pessoas em idade ativa?",
+        "en": "How many people receive social insertion income for every thousand people of working age?"
+      },
+      "pedacos": [
+        {
+          "pt": "Quantas pessoas recebem o rendimento social de inserção por cada mil pessoas em idade ativa?",
+          "en": "How many people receive social insertion income for every thousand people of working age?",
+          "apoios": [
+            {
+              "origem": "rp1-rsi",
+              "campo": "excerto",
+              "literal": "(Beneficiárias/os do rendimento social de inserção, da segurança social/ População média em idade ativa)*1000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "origens": [
+        "rp1-pobreza"
+      ],
+      "pergunta": {
+        "pt": "Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?",
+        "en": "Below what annual income is a person living alone at risk of poverty?"
+      },
+      "pedacos": [
+        {
+          "pt": "Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?",
+          "en": "Below what annual income is a person living alone at risk of poverty?",
+          "apoios": [
+            {
+              "origem": "rp1-pobreza",
+              "campo": "excerto",
+              "literal": "The at-risk-of-poverty rate is the share of people with an equivalised disposable income (after social transfer) below the at-risk-of-poverty threshold , which is set at 60 % of the national median equivalised disposable income after social transfers ."
+            },
+            {
+              "linha": "linha-de-risco-de-pobreza-2025",
+              "campo": "excerpt",
+              "literal": "One adult"
+            },
+            {
+              "linha": "linha-de-risco-de-pobreza-2025",
+              "campo": "unit",
+              "literal": "€ por ano"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
