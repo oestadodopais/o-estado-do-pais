@@ -47,7 +47,7 @@ O guião prova 22 trocas nas duas edições (`acertos.acertos`) e 0 diferenças 
 Os acertos retiram pressupostos de subida nas médias dos preços, limitam a referência das rendas ao valor de agosto, colocam a unidade antes do provisório, corrigem o denominador das pensões, aproximam a explicação do RSI do conceito publicado e distinguem o ano do inquérito do ano dos rendimentos na linha de pobreza. O portão da voz pediu ainda a retirada de «to live on» da frase inglesa, porque fazia reaparecer «live», uma cadeia retirada; o sentido continua sustentado pelo mesmo literal e a célula não muda.
 
 | Medida e edição | Antes | Depois | Literal que sustenta o acerto |
-|---|---|---|
+|---|---|---|---|
 | `ipc-variacao-media-12-meses` · pt | , os preços no consumidor subiram  | , os preços no consumidor variaram  | «A variação média dos últimos doze meses compara» (`rp1-ipc-media.excerto`). Registo: `acertos-rp1.json`, entrada `0`. |
 | `ipc-variacao-media-12-meses` · en | , consumer prices rose  | , consumer prices changed by  | «A variação média dos últimos doze meses compara» (`rp1-ipc-media.excerto`). Registo: `acertos-rp1.json`, entrada `1`. |
 | `ipc-sem-habitacao-variacao-media-12-meses` · pt | , os preços no consumidor sem a habitação subiram  | , os preços no consumidor sem a habitação variaram  | «A variação média dos últimos doze meses compara» (`rp1-ipc-media.excerto`). Registo: `acertos-rp1.json`, entrada `2`. |
