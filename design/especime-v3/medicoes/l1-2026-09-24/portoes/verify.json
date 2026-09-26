@@ -1,14 +1,14 @@
 {
   "comando": "npm run verify",
   "codigo": 0,
-  "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
-  "motor_cabeca": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
-  "inicio": "2026-09-24T08:09:01.045711+00:00",
-  "fim": "2026-09-24T08:17:12.019912+00:00",
-  "segundos": 491.0,
+  "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "motor_cabeca": "1d10b3fe413340c843babafd03700bcea8fcb08b",
+  "inicio": "2026-09-26T09:13:11.377400+00:00",
+  "fim": "2026-09-26T09:21:18.271789+00:00",
+  "segundos": 486.9,
   "registo": {
-    "sha256_bruto": "a655159367239baa1ab573ad28c0021dbc077ebaa492eeee9dc0eadc34ee501a",
-    "sha256": "efacf8250d01321a2ef0e6c16250bc4d5bb7e0107544024537e5bab47116295b",
+    "sha256_bruto": "3614a63e24cc044b544fdd88a17b27051c69319b56d583acb246d1d8742faa31",
+    "sha256": "e12f1c6fd24165ed45e8a85bc727dc0a2f33e8a70dd4db84fba1139fd2fc58c9",
     "caminhos_da_maquina_trocados": 2
   }
 }

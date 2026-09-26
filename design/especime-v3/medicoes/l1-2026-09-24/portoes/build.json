@@ -1,14 +1,14 @@
 {
   "comando": "npm run build",
   "codigo": 0,
-  "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
-  "motor_cabeca": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
-  "inicio": "2026-09-24T08:03:19.187997+00:00",
-  "fim": "2026-09-24T08:08:19.321317+00:00",
-  "segundos": 300.1,
+  "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "motor_cabeca": "1d10b3fe413340c843babafd03700bcea8fcb08b",
+  "inicio": "2026-09-26T09:07:57.346272+00:00",
+  "fim": "2026-09-26T09:13:01.038118+00:00",
+  "segundos": 303.7,
   "registo": {
-    "sha256_bruto": "65fa9c988b73bd352e5a045e03b8ac818ba74c422c9df3accd53bac1b4ee05e7",
-    "sha256": "19baada9bfdcd2ff12b5fde0f7d6a483de7be66b98dfeea6a043b015486dfd48",
+    "sha256_bruto": "9d638f8871512c3a03481ef43adb43985a471761342f92c666a06b8a5fc4116a",
+    "sha256": "f7d159a9e471af66deb922f58f693f9fe5a608c99ebb4a06f4d4865b5ea502c7",
     "caminhos_da_maquina_trocados": 1
   }
 }

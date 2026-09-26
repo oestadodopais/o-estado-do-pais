@@ -4,21 +4,21 @@
   "ficheiros_json_lidos": 14,
   "ilegiveis": [],
   "conhecido_positivo": {
-    "numero": 987654321,
+    "numero": 987654323,
     "encontrado": true
   },
-  "numeros_conferidos": 140,
-  "numeros_com_ficheiro": 140,
+  "numeros_conferidos": 236,
+  "numeros_com_ficheiro": 236,
   "numeros_sem_ficheiro": 0,
   "sem_ficheiro": [],
   "apagado_antes_de_contar": {
-    "codigo": 340,
+    "codigo": 611,
     "enderecos": 0,
-    "seccoes": 1,
-    "datas": 2,
+    "seccoes": 2,
+    "datas": 12,
     "resumos": 0,
-    "ordinais": 5,
-    "identificadores": 64,
-    "anos": 0
+    "ordinais": 26,
+    "identificadores": 116,
+    "anos": 2
   }
 }

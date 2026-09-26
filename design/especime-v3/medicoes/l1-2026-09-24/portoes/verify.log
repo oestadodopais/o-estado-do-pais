@@ -27,7 +27,7 @@
 [90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
 
 
-[90m  amarra das decisões · 92 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+[90m  amarra das decisões · 93 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
   [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
 
 [90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
@@ -58,7 +58,7 @@
 [90m       10  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
 [90m           uma só fonte[0m
 
-[90m  hoje é 24.09.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+[90m  hoje é 26.09.2026; uma afirmação datada de hoje confere-se como corrente.[0m
 
   [32m✓[0m VISAO.md                                          1 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 6 avaliada(s), chão 4
 [90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
@@ -322,7 +322,7 @@
   B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
 
 [90m  portão de HTML · 7372 páginas · 2632/2984 afirmações citadas fora do livro-razão · 5968 páginas de linha · 5968 títulos de linha com o valor e a unidade separados · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo · 0 página(s) com o nome de quem responde[0m
-[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 306 · limiar-do-quadro 204 · data-da-linha 25634 · data-do-repositorio 70 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 5178 · numeracao 182 · proveniencia 14709 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 70 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
+[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 310 · limiar-do-quadro 204 · data-da-linha 25634 · data-do-repositorio 70 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 5178 · numeracao 182 · proveniencia 14709 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 70 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
   rótulo de IA · 7354 no topo (de 7354 páginas fora dos documentos alojados) · 0 no rodapé · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
 [90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
 [90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
@@ -754,7 +754,7 @@
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção d831b453e82ad48df907a90b52e86c5f514073f4; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção c1e155f021864214a2d05625afe6ad4dea60e24f; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -902,7 +902,7 @@ B1 país: todas as conferências a 0.
   B1: 28 páginas pela lista fechada; 7 temas conferidos.
 
 [32m  voz ✓ [0m65 marcadores · 14 exceções (0 de registo) · 870 frases distintas, 22774 ocorrências em 1376 rotas · autorreferência 0 · nada por classificar · divulgação 1378 ocorrência(s) nas rotas medidas · 1285 linhas do inventário com bloco (667 vivas, todas rendidas; 618 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 6674 · nomes declarados: areas 54, regioes 0, dominios 1974, figuras 170, medidas 78, projeto 674, oficial 0, concelho 4928 · palavras proibidas: 0 em 7372 página(s) da superfície (14 palavras da norma §1.3; 44 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
-[90m        16 bloco(s) do inventário por ler, e o registo di-lo:[0m
+[90m        17 bloco(s) do inventário por ler, e o registo di-lo:[0m
 [90m        · B1-peca1 · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu[0m
 [90m        · b1-peca3 · por ler pelo lugar de direção antes de aterrar[0m
@@ -915,6 +915,7 @@ B1 país: todas as conferências a 0.
 [90m        · e1-evora-2027 · por ler[0m
 [90m        · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados[0m
 [90m        · l1 · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · l1-correcao · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · lugar · por ler[0m
 [90m        · mapa · leitura a frio (design/especime-v3/critica/2026-09-08-codex-leitura-f11e-distritos.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui)[0m
 [90m        · r1 · por ler pelo lugar de direção antes de aterrar[0m
@@ -1062,11 +1063,12 @@ A leitura do olho, provada contra o motor:
 [90m    o marcador em português          4 (a exceção da IDENTIDADE §6)[0m
 [90m    valores de régua sem marca própria                    312 (a porta é a do cartão)[0m
 [90m    valores de referência, as duas testemunhas comparadas  15[0m
+[90m      com a testemunha discordante declarada e inteira     2 (5 de 5 plantas a morder)[0m
 [90m    cartões com veredicto conferido (K15)                 90[0m
 [90m    cartões com a média europeia calada (K14)              6[0m
 [90m    medidas com nome oficial no recibo                    11[0m
-[90m    perguntas com cada pedaço apoiado (K16)               22 (72 pedaços, 85 apoios, 36 origens seladas no motor)[0m
-[90m    leituras dos cartões nacionais (K17)                 112 em 112 cartões (37 declarações auditadas, 923 partes, 325 apoios, 71 origens, 236 ramos recontados, 12 de 12 plantas a morder)[0m
+[90m    perguntas com cada pedaço apoiado (K16)               22 (72 pedaços, 85 apoios, 43 origens seladas no motor)[0m
+[90m    leituras dos cartões nacionais (K17)                 112 em 112 cartões (37 declarações auditadas, 937 partes, 352 apoios, 78 origens, 236 ramos recontados, 12 de 12 plantas a morder)[0m
 [90m    medidas com grupo etário fixado na linha (K13)         4[0m
 [90m      linhas dessas medidas, todas conferidas               12[0m
 [90m      delas, na catraca declarada (I132, vazia)           0[0m
@@ -1092,7 +1094,7 @@ A leitura do olho, provada contra o motor:
 
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit d831b45 · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit c1e155f · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   375506  [32m✓[0m
@@ -1102,8 +1104,8 @@ A leitura do olho, provada contra o motor:
   05-mapa.html                      Disposições   440071  [32m✓[0m
   06-estados.html                   Componentes   371137  [32m✓[0m
   07-cartoes.html                   Componentes   286361  [32m✓[0m
-  10-pagina-primeira.html           Páginas       470132  [32m✓[0m
-  11-pagina-primeira-escuro.html    Páginas       471043  [32m✓[0m
+  10-pagina-primeira.html           Páginas       471066  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       471977  [32m✓[0m
   12-pagina-linha-livro-razao.html  Páginas       225444  [32m✓[0m
   13-pagina-livro-razao.html        Páginas       567173  [32m✓[0m
   14-pagina-municipio.html          Páginas       275742  [32m✓[0m
@@ -1116,7 +1118,7 @@ A leitura do olho, provada contra o motor:
   21-pagina-404.html                Páginas       196916  [32m✓[0m
   30-regras.html                    Fundamentos   239574  [32m✓[0m
 
-[90m  6626.4 KiB de cartões · maior cartão 553.9 KiB · tecto 596.75 KiB[0m
+[90m  6628.3 KiB de cartões · maior cartão 553.9 KiB · tecto 596.75 KiB[0m
 [90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
 [90m  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
 [90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
