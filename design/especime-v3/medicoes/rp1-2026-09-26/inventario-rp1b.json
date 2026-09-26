@@ -1,0 +1,245 @@
+{
+  "medidas": [
+    {
+      "nome": "inventario_das_medidas",
+      "valor": [
+        {
+          "id": "ipc-variacao-homologa",
+          "valor": "3,30",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,30\", \"valor\" : \"3.3\" }",
+          "anterior": {
+            "id": "ipc-variacao-homologa-periodo-anterior",
+            "valor": "3,04",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,04\", \"valor\" : \"3.04\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "ipc-variacao-media-12-meses",
+          "valor": "2,67",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,67\", \"valor\" : \"2.67\" }",
+          "anterior": {
+            "id": "ipc-variacao-media-12-meses-periodo-anterior",
+            "valor": "2,63",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,63\", \"valor\" : \"2.63\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "ipc-alimentacao-variacao-homologa",
+          "valor": "2,14",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"01\", \"dim_3_t\" : \"Produtos alimentares e bebidas não alcoólicas\", \"ind_string\" : \"2,14\", \"valor\" : \"2.14\" }",
+          "anterior": {
+            "id": "ipc-alimentacao-variacao-homologa-periodo-anterior",
+            "valor": "2,24",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"01\", \"dim_3_t\" : \"Produtos alimentares e bebidas não alcoólicas\", \"ind_string\" : \"2,24\", \"valor\" : \"2.24\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "ipc-energia-em-casa-variacao-homologa",
+          "valor": "1,36",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"045\", \"dim_3_t\" : \"Eletricidade, gás e outros combustíveis\", \"ind_string\" : \"1,36\", \"valor\" : \"1.36\" }",
+          "anterior": {
+            "id": "ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+            "valor": "1,12",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"045\", \"dim_3_t\" : \"Eletricidade, gás e outros combustíveis\", \"ind_string\" : \"1,12\", \"valor\" : \"1.12\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "ipc-combustiveis-variacao-homologa",
+          "valor": "23,78",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"0722\", \"dim_3_t\" : \"Combustível e lubrificantes para equipamento para transporte pessoal\", \"ind_string\" : \"23,78\", \"valor\" : \"23.78\" }",
+          "anterior": {
+            "id": "ipc-combustiveis-variacao-homologa-periodo-anterior",
+            "valor": "16,58",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"0722\", \"dim_3_t\" : \"Combustível e lubrificantes para equipamento para transporte pessoal\", \"ind_string\" : \"16,58\", \"valor\" : \"16.58\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "ihpc-variacao-homologa",
+          "valor": "3,6",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-17",
+          "fonte": "Eurostat",
+          "excerto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Portugal — 2026-08: 3.6",
+          "anterior": {
+            "id": "ihpc-variacao-homologa-periodo-anterior",
+            "valor": "3,1",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-17",
+            "fonte": "Eurostat",
+            "excerto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Portugal — 2026-07: 3.1"
+          },
+          "ue": {
+            "id": "ihpc-variacao-homologa-ue",
+            "valor": "3,2",
+            "unidade": "%",
+            "periodo": "2026-08",
+            "publicado": "2026-09-17",
+            "fonte": "Eurostat",
+            "excerto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — European Union - 27 countries (from 2020) — 2026-08: 3.2"
+          }
+        },
+        {
+          "id": "ipc-rendas-variacao-homologa",
+          "valor": "5,22",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"041\", \"dim_3_t\" : \"Rendas efetivamente pagas pela habitação\", \"ind_string\" : \"5,22\", \"valor\" : \"5.22\" }",
+          "anterior": {
+            "id": "ipc-rendas-variacao-homologa-periodo-anterior",
+            "valor": "5,26",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"041\", \"dim_3_t\" : \"Rendas efetivamente pagas pela habitação\", \"ind_string\" : \"5,26\", \"valor\" : \"5.26\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "ipc-sem-habitacao-variacao-media-12-meses",
+          "valor": "2,56",
+          "unidade": "%",
+          "periodo": "2026-08",
+          "publicado": "2026-09-10",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"001\", \"dim_3_t\" : \"Total exceto habitação\", \"ind_string\" : \"2,56\", \"valor\" : \"2.56\" }",
+          "anterior": {
+            "id": "ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior",
+            "valor": "2,51",
+            "unidade": "%",
+            "periodo": "2026-07",
+            "publicado": "2026-09-10",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"001\", \"dim_3_t\" : \"Total exceto habitação\", \"ind_string\" : \"2,51\", \"valor\" : \"2.51\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "remuneracao-bruta-mensal-media",
+          "valor": "1 835",
+          "unidade": "€ por mês",
+          "periodo": "2026-T2",
+          "publicado": "2026-08-14",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"sinal_conv\" : \"&\", \"sinal_conv_desc\" : \"Dado provisório\", \"ind_string\" : \"1 835 &",
+          "anterior": {
+            "id": "remuneracao-bruta-mensal-media-periodo-anterior",
+            "valor": "1 746",
+            "unidade": "€ por mês",
+            "periodo": "2025-T2",
+            "publicado": "2026-08-14",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"1 746\", \"valor\" : \"1746\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "pensao-media-anual-2025",
+          "valor": "8 066",
+          "unidade": "€ por pensionista por ano",
+          "periodo": "2025",
+          "publicado": "2026-08-28",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8 066\", \"valor\" : \"8066\" }",
+          "anterior": {
+            "id": "pensao-media-anual-2024",
+            "valor": "7 665",
+            "unidade": "€ por pensionista por ano",
+            "periodo": "2024",
+            "publicado": "2026-08-28",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"7 665\", \"valor\" : \"7665\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "beneficiarios-do-rsi-por-mil-2024",
+          "valor": "24,22",
+          "unidade": "por mil pessoas em idade ativa",
+          "periodo": "2024",
+          "publicado": "2025-10-06",
+          "fonte": "INE",
+          "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"24,22\", \"valor\" : \"24.22\" }",
+          "anterior": {
+            "id": "beneficiarios-do-rsi-por-mil-2023",
+            "valor": "26,13",
+            "unidade": "por mil pessoas em idade ativa",
+            "periodo": "2023",
+            "publicado": "2025-10-06",
+            "fonte": "INE",
+            "excerto": "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"26,13\", \"valor\" : \"26.13\" }"
+          },
+          "ue": null
+        },
+        {
+          "id": "linha-de-risco-de-pobreza-2025",
+          "valor": "8 679",
+          "unidade": "€ por ano",
+          "periodo": "2025",
+          "publicado": "2026-09-17",
+          "fonte": "Eurostat",
+          "excerto": "At-risk-of-poverty thresholds — Annual — Median equivalised income — One adult — Below 60% — Euro — Portugal — 2025: 8679",
+          "anterior": {
+            "id": "linha-de-risco-de-pobreza-2024",
+            "valor": "7 588",
+            "unidade": "€ por ano",
+            "periodo": "2024",
+            "publicado": "2026-09-17",
+            "fonte": "Eurostat",
+            "excerto": "At-risk-of-poverty thresholds — Annual — Median equivalised income — One adult — Below 60% — Euro — Portugal — 2024: 7588"
+          },
+          "ue": null
+        }
+      ]
+    }
+  ]
+}

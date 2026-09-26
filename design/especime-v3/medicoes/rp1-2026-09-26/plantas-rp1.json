@@ -1,5 +1,5 @@
 {
-  "reguas": 5,
+  "reguas": 9,
   "plantas": [
     {
       "nome": "régua de outra medida",
@@ -15,6 +15,18 @@
     },
     {
       "nome": "período anterior ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "União de outro mês",
+      "mordeu": true
+    },
+    {
+      "nome": "União de outra série",
+      "mordeu": true
+    },
+    {
+      "nome": "União de outra unidade",
       "mordeu": true
     },
     {
@@ -50,11 +62,27 @@
       "mordeu": true
     },
     {
+      "nome": "I153: bandeira colada à unidade, pt, .cartao-medida-valor",
+      "mordeu": true
+    },
+    {
+      "nome": "I153: bandeira colada à unidade, pt, [data-cartao-leitura]",
+      "mordeu": true
+    },
+    {
       "nome": "unidade depois do provisório, en",
+      "mordeu": true
+    },
+    {
+      "nome": "I153: bandeira colada à unidade, en, .cartao-medida-valor",
+      "mordeu": true
+    },
+    {
+      "nome": "I153: bandeira colada à unidade, en, [data-cartao-leitura]",
       "mordeu": true
     }
   ],
   "datas": 8,
   "paginas": 2,
-  "cartoes": 16
+  "cartoes": 24
 }

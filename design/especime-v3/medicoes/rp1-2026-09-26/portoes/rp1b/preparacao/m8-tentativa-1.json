@@ -1,0 +1,36 @@
+{
+  "celulas": [
+    {
+      "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+      "passa": false,
+      "prova": "12 medida(s) com « provisório» para 13 linha(s) com bandeira · 0 a mais · 1 a menos"
+    },
+    {
+      "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+      "passa": false,
+      "prova": "12 medida(s) com « provisional» para 13 linha(s) com bandeira · 0 a mais · 1 a menos"
+    }
+  ],
+  "medidas": {
+    "M8·pt": {
+      "palavra": " provisório",
+      "comPalavra": 12,
+      "daBandeira": 13,
+      "outras": [],
+      "aMais": [],
+      "aMenos": [
+        "disparidade-salarial-entre-sexos-2023"
+      ]
+    },
+    "M8·en": {
+      "palavra": " provisional",
+      "comPalavra": 12,
+      "daBandeira": 13,
+      "outras": [],
+      "aMais": [],
+      "aMenos": [
+        "disparidade-salarial-entre-sexos-2023"
+      ]
+    }
+  }
+}

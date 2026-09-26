@@ -4,20 +4,36 @@
     "en": "In August 2026 consumer prices were, on average, 3,30 % above a year earlier. That is inflation: the INE measures it on a basket of goods and services that represents what households buy. The change is larger than the previous month’s."
   },
   "ipc-variacao-media-12-meses": {
-    "pt": "Na média dos doze meses até agosto de 2026, os preços no consumidor variaram 2,67 % face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês. A variação é maior do que a do mês anterior.",
-    "en": "On average over the twelve months to August 2026, consumer prices changed by 2,67 % compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls. The change is larger than the previous month’s."
+    "pt": "Na média dos doze meses até agosto de 2026, os preços no consumidor subiram 2,67 % face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês. A variação é maior do que a do mês anterior.",
+    "en": "On average over the twelve months to August 2026, consumer prices rose 2,67 % compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls. The change is larger than the previous month’s."
   },
   "ipc-alimentacao-variacao-homologa": {
     "pt": "Em agosto de 2026 os preços dos alimentos e das bebidas não alcoólicas estavam 2,14 % acima dos de há um ano. A variação é menor do que a do mês anterior.",
     "en": "In August 2026 the prices of food and non-alcoholic beverages were 2,14 % above a year earlier. The change is smaller than the previous month’s."
   },
+  "ipc-energia-em-casa-variacao-homologa": {
+    "pt": "Em agosto de 2026 os preços da eletricidade, do gás e dos outros combustíveis usados em casa estavam 1,36 % acima dos de há um ano. A variação é maior do que a do mês anterior.",
+    "en": "In August 2026 the prices of electricity, gas and other fuels used at home were 1,36 % above a year earlier. The change is larger than the previous month’s."
+  },
+  "ipc-combustiveis-variacao-homologa": {
+    "pt": "Em agosto de 2026 os preços dos combustíveis e dos lubrificantes para os veículos estavam 23,78 % acima dos de há um ano. A variação é maior do que a do mês anterior.",
+    "en": "In August 2026 the prices of fuels and lubricants for vehicles were 23,78 % above a year earlier. The change is larger than the previous month’s."
+  },
+  "ihpc-variacao-homologa": {
+    "pt": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, 3,6 % acima dos de há um ano. A subida é maior do que a da média da União Europeia.",
+    "en": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, 3,6 % above a year earlier. The rise is larger than the European Union average."
+  },
+  "ipc-rendas-variacao-homologa": {
+    "pt": "Em agosto de 2026 as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, 5,22 % acima dos de há um ano. A variação é menor do que a do mês anterior.",
+    "en": "In August 2026 the rents paid by tenants were, on the consumer price index measure, 5,22 % above a year earlier. The change is smaller than the previous month’s."
+  },
   "ipc-sem-habitacao-variacao-media-12-meses": {
-    "pt": "Na média dos doze meses até agosto de 2026, os preços no consumidor sem a habitação variaram 2,56 % face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte. A variação é maior do que a do mês anterior.",
-    "en": "On average over the twelve months to August 2026, consumer prices excluding housing changed by 2,56 % compared with the previous twelve months. The August value is the reference figure for updating rents in the following year. The change is larger than the previous month’s."
+    "pt": "Na média dos doze meses até agosto de 2026, os preços no consumidor sem a habitação subiram 2,56 % face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte. A variação é maior do que a do mês anterior.",
+    "en": "On average over the twelve months to August 2026, consumer prices excluding housing rose 2,56 % compared with the previous twelve months. The August value is the reference figure for updating rents in the following year. The change is larger than the previous month’s."
   },
   "remuneracao-bruta-mensal-media": {
-    "pt": "No 2.º trimestre de 2026, quem trabalha por conta de outrem ganhou em média 1 835 euros por mêsprovisório, antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem. Mais do que no mesmo trimestre de há um ano.",
-    "en": "In the 2nd quarter of 2026, employees earned on average 1 835 euros a monthprovisional, before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold. More than in the same quarter a year earlier."
+    "pt": "No 2.º trimestre de 2026, quem trabalha por conta de outrem ganhou em média 1 835 euros por mês provisório, antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem. Mais do que no mesmo trimestre de há um ano.",
+    "en": "In the 2nd quarter of 2026, employees earned on average 1 835 euros a month provisional, before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold. More than in the same quarter a year earlier."
   },
   "pensao-media-anual-2025": {
     "pt": "Em 2025 o valor das pensões pagas pela Segurança Social foi, em média, de 8 066 euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência. Subiu face a 2024.",
@@ -28,7 +44,7 @@
     "en": "In 2024, for every thousand people of working age, 24,22 received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community. Fewer than in 2023."
   },
   "linha-de-risco-de-pobreza-2025": {
-    "pt": "No inquérito de 2025, uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de 8 679 euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a 60 % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos. Subiu face a 2024.",
-    "en": "In the survey for 2025, a person living alone was at risk of poverty with less than 8 679 euros a year in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at 60 % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less. Up from 2024."
+    "pt": "No inquérito de 2025, uma pessoa que vivesse sozinha estava em risco de pobreza se, no ano anterior, tivesse tido menos de 8 679 euros, depois dos impostos e das contribuições sociais e contando as prestações sociais. É a linha que o Eurostat traça a 60 % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família. Mediano é o do meio: metade da população tem mais e metade tem menos. Subiu face a 2024.",
+    "en": "In the survey for 2025, a person living alone was at risk of poverty if, in the previous year, they had had less than 8 679 euros, after taxes and social contributions and including social benefits. That is the line Eurostat draws at 60 % of the country’s median income, adjusted for each household’s size and composition. Median means the one in the middle: half the population has more and half has less. Up from 2024."
   }
 }
