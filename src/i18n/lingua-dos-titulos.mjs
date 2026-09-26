@@ -379,6 +379,15 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  /* RP1: códigos de série e coordenadas da API, sem língua natural. */
+  '0013420, geocod=PT': null,
+  '0014663, geocod=PT, dim_3=01': null,
+  '0014666, geocod=PT, dim_3=001': null,
+  '0014663, geocod=PT, dim_3=T': null,
+  '0014666, geocod=PT, dim_3=T': null,
+  'ilc_li01, freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT': null,
+  '0014532, geocod=PT, dim_3=T': null,
+  '0014751, geocod=PT, dim_3=T, dim_4=T': null,
   /* --- as edições escritas em português --------------------------------- */
   'dezembro de 2025': 'pt',
   /* A data impressa do destaque da 2.ª notificação de 2026 do Procedimento dos

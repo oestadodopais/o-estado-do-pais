@@ -9,6 +9,7 @@ import { spawnSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
+import { getClaim } from '../../src/lib/ledger.mjs';
 /* A pasta das provas é a do bloco que as corre: por omissão a da peça 3, que
    foi quem escreveu este ficheiro, e `OEDP_MEDICOES` manda-as para outra sem
    tocar nos registos dessa (B1c, 22.09.2026). */
@@ -204,3 +205,12 @@ planta('l1-leitura-que-a-k17-recusa','scripts/check-voz.mjs',[
 planta('l1-leitura-fora-do-cartao','scripts/check-voz.mjs',[
  ['en/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="taxa-de-emprego-2025"]');r.querySelector('main').insertAdjacentHTML('beforeend',l.outerHTML);}]
 ],[/a K17 recusou-a em \/en\/: K17 · \/en\/: há uma leitura fora de um cartão/,/FRASE DA CLASSE POR PROVAR EM \/en\/ · «Union average»/]);
+
+/* RP1: a transcrição continua certa, mas a linha é de outra medida. */
+planta('rp1-regua-de-outra-medida','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>{
+  const valor=r.querySelector('[data-cartao-medida="ipc-variacao-homologa"] [data-regua="anterior"] [data-claim]');
+  const outra='ipc-alimentacao-variacao-homologa-periodo-anterior';
+  valor.setAttribute('data-claim',outra);valor.set_content(String(getClaim(outra).value));
+ }]
+],[/ipc-alimentacao-variacao-homologa-periodo-anterior.*sem selo|o valor da afirmação "ipc-alimentacao-variacao-homologa-periodo-anterior" aparece sem selo/]);

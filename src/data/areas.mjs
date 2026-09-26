@@ -573,6 +573,11 @@ export const AREAS = [
           'O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de emprego, de formação profissional, de relações laborais e condições de trabalho, solidariedade e segurança social, bem como a coordenação das políticas sociais de apoio à família, crianças e jovens em risco, idosos e natalidade, de inclusão das pessoas com deficiência, de combate à pobreza e de promoção da inclusão social, de fortalecimento do setor cooperativo, da economia social e do voluntariado.',
         regras: [
           {
+            estudos: ['dominios-2026'],
+            id: /^remuneracao-bruta-mensal-media(?:-periodo-anterior)?$/,
+            razao: 'A remuneração bruta de quem trabalha por conta de outrem mede o que recebe pelo trabalho. É a mesma matéria do ganho médio mensal, com outro período e outra fonte estatística.',
+          },
+          {
             estudos: ['dominios-2026', 'concelhos-2026'],
             id: /(^|-)ganho-medio-mensal-\d{4}$/,
             razao:
@@ -599,6 +604,11 @@ export const AREAS = [
           'O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de emprego, de formação profissional, de relações laborais e condições de trabalho, solidariedade e segurança social, bem como a coordenação das políticas sociais de apoio à família, crianças e jovens em risco, idosos e natalidade, de inclusão das pessoas com deficiência, de combate à pobreza e de promoção da inclusão social, de fortalecimento do setor cooperativo, da economia social e do voluntariado.',
         regras: [
           {
+            estudos: ['dominios-2026'],
+            id: /^pensao-media-anual-\d{4}$/,
+            razao: 'O montante anual das pensões pagas pela Segurança Social, por pensionista, mede prestações deste sistema. O assunto é a segurança social.',
+          },
+          {
             estudos: ['penalizacoes-por-reforma-antecipada-2026'],
             id: /^(factor-sustentabilidade-|penalizacao-antecipacao-)/,
             razao:
@@ -612,6 +622,11 @@ export const AREAS = [
         citacao:
           'O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de emprego, de formação profissional, de relações laborais e condições de trabalho, solidariedade e segurança social, bem como a coordenação das políticas sociais de apoio à família, crianças e jovens em risco, idosos e natalidade, de inclusão das pessoas com deficiência, de combate à pobreza e de promoção da inclusão social, de fortalecimento do setor cooperativo, da economia social e do voluntariado.',
         regras: [
+          {
+            estudos: ['dominios-2026'],
+            id: /^(beneficiarios-do-rsi-por-mil|linha-de-risco-de-pobreza)-\d{4}$/,
+            razao: 'O RSI é uma prestação para necessidades essenciais e inserção social; a linha de risco de pobreza é a referência monetária usada para medir esse risco. As duas medidas pertencem ao combate à pobreza e à inclusão social.',
+          },
           {
             id: /^risco-de-pobreza-ou-exclusao-\d{4}$/,
             razao:
@@ -679,6 +694,11 @@ export const AREAS = [
  * motivo }`.
  */
 export const SEM_AREA = [
+  {
+    assunto: 'A variação dos preços no consumidor',
+    id: /^ipc-(?:variacao-homologa|variacao-media-12-meses|alimentacao-variacao-homologa|sem-habitacao-variacao-media-12-meses)(?:-periodo-anterior)?$/,
+    motivo: 'Estas séries medem a variação dos preços no consumidor. As matérias transcritas não nomeiam a inflação nem o nível geral dos preços. A utilização da média sem habitação como referência das rendas não a transforma numa medida dos preços da habitação. As linhas continuam nos temas nacionais; não se atribui uma matéria ministerial que a declaração não nomeia.',
+  },
   {
     /* ------------------------------------------------------------------
        O AGREGADO DA UNIÃO EUROPEIA DE UMA MEDIDA (bloco P2, 15.09.2026)

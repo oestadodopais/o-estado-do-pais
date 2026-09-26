@@ -60,6 +60,7 @@ import { parse } from 'node-html-parser';
 import { routePath, LANGS } from '../src/lib/routes.mjs';
 import { AREAS, SEM_AREA, LEI_ORGANICA } from '../src/data/areas.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
+import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { WORKS, ESTUDOS_DE_DADOS, INTERNAL_SOURCES } from '../src/data/studies.mjs';
 import { loadClaims } from '../src/lib/ledger.mjs';
 
@@ -150,6 +151,19 @@ function periodosAnterioresDoEnquadramento(claims) {
   const declaradas = new Set([...originais, ...Object.keys(DOMINIO_DAS_MEDIDAS)]);
   const fora = new Set();
   for (const id of declaradas) {
+    const regra = REGUAS_DECLARADAS[id];
+    if (regra) {
+      const a = claims.get(id), b = claims.get(regra.anterior);
+      const mes = regra.cadencia === 'mes-anterior';
+      const formato = mes ? /^(\d{4})-(0[1-9]|1[0-2])$/ : /^(\d{4})-T([1-4])$/;
+      const atual = formato.exec(a?.reference_date), anterior = formato.exec(b?.reference_date);
+      const distancia = mes ? 1 : regra.cadencia === 'mesmo-trimestre-ano-anterior' ? 4 : null;
+      if (a?.document?.edition && a.document.edition === b?.document?.edition && a.unit && a.unit === b?.unit &&
+          atual && anterior && distancia !== null &&
+          (Number(atual[1])-Number(anterior[1]))*(mes ? 12 : 4)+Number(atual[2])-Number(anterior[2]) === distancia)
+        fora.add(regra.anterior);
+      continue;
+    }
     const m = /^(.*)-(\d{4})$/.exec(id);
     if (!m) continue;
     const raiz = m[1];
@@ -778,6 +792,16 @@ const ESTRAGOS = {
     doc.querySelector('main').insertAdjacentHTML('beforeend', `<article data-area-peca="medida" data-cartao-medida="${anterior}"></article>`);
     m.paginas[chave].html = doc.toString();
     return `o período anterior "${anterior}" como cartão autónomo em ${chave}`;
+  }, (m) => {
+    const principal = 'remuneracao-bruta-mensal-media';
+    const anterior = 'remuneracao-bruta-mensal-media-periodo-anterior';
+    const e = m.entradas.find(x => x.pecas.medidas.some(p => p.id === principal));
+    if (!e) throw new Error('RP1 planta A6: falta a área da remuneração.');
+    const chave = `pt:${e.slug}`;
+    const doc = parse(m.paginas[chave].html);
+    doc.querySelector('main').insertAdjacentHTML('beforeend', `<article data-area-peca="medida" data-cartao-medida="${anterior}"></article>`);
+    m.paginas[chave].html = doc.toString();
+    return `RP1: o trimestre homólogo "${anterior}" como cartão autónomo em ${chave}`;
   }],
   /* A A7 leva DOIS estragos, porque falha de duas maneiras e as duas contam. */
   A7: [
