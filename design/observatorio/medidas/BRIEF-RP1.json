@@ -1,0 +1,199 @@
+{
+  "brief": "design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md",
+  "guiao": "design/observatorio/medidas/BRIEF-RP1.py",
+  "cabeca_lida": "334cc740",
+  "copias": "design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/",
+  "motor": "1d10b3f",
+  "medidas": [
+    {
+      "nome": "cabeca_lida",
+      "valor": "334cc740",
+      "comando": "git cat-file -e 334cc740^{commit}",
+      "conhecido_positivo": {
+        "o_que": "a cabeça existe no repositório",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cabeca_das_copias",
+      "valor": "c1e155f0",
+      "comando": "cat design/especime-v3/medicoes/l1-2026-09-24/portoes/build.cabeca (os 8 primeiros caracteres)",
+      "conhecido_positivo": {
+        "o_que": "a cabeça existe no repositório",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca",
+      "valor": 0,
+      "comando": "git diff --name-only c1e155f0 334cc740 -- src public ledger scripts tests package.json astro.config.mjs, sem scripts/leituras/",
+      "conhecido_positivo": {
+        "o_que": "o mesmo diff entre f672bd38 e 334cc740 apanha ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_temas",
+      "valor": "da912db17a7009a9eb8ba64b60be7e762b04514dc0713df351d9e6603c52ec03",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_primeira",
+      "valor": "4dddadfc0b463649681d5ffea03b9d30a520bf30375045836e384a8bdda36928",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_en_temas",
+      "valor": "79ba417c5c930bf4e136f857541673c927701d7ea433694ddaab908be109abc1",
+      "comando": "shasum -a 256 design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/en_themes_index.html",
+      "conhecido_positivo": {
+        "o_que": "o resumo é o do ficheiro lido agora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nacionais_nos_temas",
+      "valor": 36,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · <article class=\"cartao-medida\"> em design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta pelo menos um cartão na cópia da primeira página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_com_medidas",
+      "valor": 9,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · <section class=\"pais-tema\"> em temas_index.html",
+      "conhecido_positivo": {
+        "o_que": "a cópia tem secções de tema",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_por_tema",
+      "valor": {
+        "economia-e-financas-publicas": 13,
+        "trabalho": 10,
+        "seguranca-social-e-pensoes": 2,
+        "educacao": 3,
+        "saude": 1,
+        "habitacao": 4,
+        "investimento": 1,
+        "ciencia-tecnologia-e-inteligencia-artificial": 1,
+        "justica": 1
+      },
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos por <section class=\"pais-tema\">, pelo nome da secção",
+      "conhecido_positivo": {
+        "o_que": "a soma por tema é o total de cartões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_da_carta",
+      "valor": 18,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · linhas «| n |» da tabela do §2 de CARTA-DOS-CONTEUDOS.md@334cc740",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha a primeira linha da tabela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_precos_no_consumidor",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos cujo identificador contém inflacao, ipc, alimentacao, energia, combustiveis ou rendas",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado com «precos» apanha o índice de preços da habitação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_pensoes",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos cujo identificador contém pensao ou pensionista",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado com «pobreza» apanha o risco de pobreza",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_do_rsi",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos cujo identificador contém rsi ou rendimento-social",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado com «rendimento» apanha o rácio S80/S20 pelo nome do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_da_linha_de_pobreza",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos cujo identificador contém linha-de-pobreza",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado com «pobreza» apanha o risco de pobreza",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_da_remuneracao_media",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos cujo identificador contém remuneracao",
+      "conhecido_positivo": {
+        "o_que": "o mesmo predicado com «ganho» apanha o ganho médio mensal",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nacionais_com_periodo_mensal",
+      "valor": 0,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · identificadores de cartão que acabam em -aaaa-mm",
+      "conhecido_positivo": {
+        "o_que": "o mesmo padrão apanha um identificador de mentira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regra_do_periodo_anterior_no_enquadramento",
+      "valor": "/^(.*)-(\\d{4})$/",
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · a expressão de anoDoIdentificador() em enquadramento.mjs@334cc740",
+      "conhecido_positivo": {
+        "o_que": "a expressão só aceita quatro algarismos no fim",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_linha_sem_regua",
+      "valor": 2,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · artigos de linha sem class=\"cartao-medida-regua\"",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a retribuição mínima",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_ao_ine_no_construtor_dos_dominios",
+      "valor": 1,
+      "comando": "git -C ~/Instruments/ResearchHub show 1d10b3f:publisher/dominios_fetch.py · «json_indicador/pindica.jsp»",
+      "conhecido_positivo": {
+        "o_que": "a lista traz o pedido do ganho médio mensal (0012656)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leitor_de_indicador_do_ine_no_motor",
+      "valor": 1,
+      "comando": "git -C ~/Instruments/ResearchHub show 1d10b3f:publisher/dominios_readers.py · «def ine_indicator(»",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro tem o leitor das séries do Eurostat",
+        "encontrado": true
+      }
+    }
+  ]
+}
