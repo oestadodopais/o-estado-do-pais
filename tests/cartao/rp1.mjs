@@ -80,6 +80,10 @@ if (!process.argv.includes('--declaracoes')) {
       assert.equal(card.querySelectorAll('[data-cartao-leitura]').length,1);
       assert.ok(card.querySelector('[data-regua] [data-claim]'),id+': régua ausente');
       assert.ok(card.querySelector('[data-de-campo="reference_date"]'),id+': período ausente');
+      const recibo=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+      const definicao=recibo.querySelectorAll(`[data-definicao="${id}"]`);
+      assert.equal(definicao.length,1,id+': pergunta ausente do recibo');
+      assert.ok(definicao[0].querySelectorAll('[data-def-origem]').length>0,id+': origens ausentes do recibo');
       if (id===salario) {
         assert.ok(unidadeAntesDaRessalva(card),'unidade antes do provisório');
         const estrago=parse(card.toString());

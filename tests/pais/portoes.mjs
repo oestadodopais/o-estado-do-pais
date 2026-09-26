@@ -214,3 +214,9 @@ planta('rp1-regua-de-outra-medida','scripts/gate-html.mjs',[
   valor.setAttribute('data-claim',outra);valor.set_content(String(getClaim(outra).value));
  }]
 ],[/ipc-alimentacao-variacao-homologa-periodo-anterior.*sem selo|o valor da afirmação "ipc-alimentacao-variacao-homologa-periodo-anterior" aparece sem selo/]);
+planta('rp1-fonte-da-pergunta','scripts/check-lugar.mjs',[
+ ['livro-razao/ipc-variacao-homologa/index.html',r=>r.querySelector('[data-definicao] [data-def-origem]').remove()]
+],[/a origem «rp1-ipc-homologa» não se rende na página/]);
+planta('rp1-portas-extra','scripts/check-lugar.mjs',[
+ ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="/lugares/">Os lugares</a> <a href="/lugares/">Os lugares</a></p>')]
+],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
