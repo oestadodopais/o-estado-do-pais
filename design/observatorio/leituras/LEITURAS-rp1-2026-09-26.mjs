@@ -5,7 +5,13 @@
  * (`design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs`, o cabeçalho)
  * ===========================================================================
  *
- * A SEGUNDA REDAÇÃO (26.09.2026 à tarde, a peça RP1b). A primeira entrega do
+ * A TERCEIRA REDAÇÃO (26.09.2026 ao fim da tarde, a peça RP1c), depois da leitura a
+ * frio do Claude Opus 5.5 (`design/especime-v3/critica/LEITURA-rp1-2026-09-26.md`):
+ * a leitura do RSI volta a dizer a quem é o apoio e o que é a idade ativa, e a das
+ * pensões apoia os três tipos nas categorias da própria resposta do INE; o acerto
+ * dos lubrificantes da peça RP1b (a categoria do INE é «Combustível e lubrificantes»)
+ * fica fundido. A SEGUNDA
+ * REDAÇÃO (26.09.2026 à tarde, a peça RP1b) tinha dito: A primeira entrega do
  * construtor (o Codex gpt-6-astra, oito medidas seladas) trouxe vinte e duas
  * trocas de palavras, cada uma com o seu literal, em
  * `design/especime-v3/medicoes/rp1-2026-09-26/acertos-rp1.json`; o lugar de
@@ -82,8 +88,8 @@ export const LEITURAS_RP1 = {
     en: [HA_UM_ANO_EN('the prices of electricity, gas and other fuels used at home were'), SUBIDA_MES_EN],
   },
   'ipc-combustiveis-variacao-homologa': {
-    pt: [HA_UM_ANO_PT('os preços dos combustíveis para os veículos estavam'), SUBIDA_MES_PT],
-    en: [HA_UM_ANO_EN('the prices of fuels for vehicles were'), SUBIDA_MES_EN],
+    pt: [HA_UM_ANO_PT('os preços dos combustíveis e dos lubrificantes para os veículos estavam'), SUBIDA_MES_PT],
+    en: [HA_UM_ANO_EN('the prices of fuels and lubricants for vehicles were'), SUBIDA_MES_EN],
   },
   'ihpc-variacao-homologa': {
     pt: [HA_UM_ANO_PT('os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,'), uniao('A subida é maior do que a da média da União Europeia.', 'A subida é menor do que a da média da União Europeia.', 'A subida é igual à da média da União Europeia.')],
@@ -108,12 +114,12 @@ export const LEITURAS_RP1 = {
 
   /* ------------------------------------------------- 5 · Segurança social e pensões */
   'pensao-media-anual-2025': {
-    pt: ['Em ', { periodo: 'proprio' }, ' o valor das pensões pagas pela Segurança Social foi, em média, de ', { claim: 'proprio' }, ' euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
-    en: ['In ', { periodo: 'proprio' }, ' the amount of pensions paid by Social Security was, on average, ', { claim: 'proprio' }, ' euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.', anterior('Up from', 'Down from', 'Unchanged from')],
+    pt: ['Em ', { periodo: 'proprio' }, ' o valor das pensões pagas pela Segurança Social foi, em média, de ', { claim: 'proprio' }, ' euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
+    en: ['In ', { periodo: 'proprio' }, ' the amount of pensions paid by Social Security was, on average, ', { claim: 'proprio' }, ' euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.', anterior('Up from', 'Down from', 'Unchanged from')],
   },
   'beneficiarios-do-rsi-por-mil-2024': {
-    pt: ['Em ', { periodo: 'proprio' }, ', por cada mil pessoas em idade ativa, ', { claim: 'proprio' }, ' recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.', anterior('Mais do que em', 'Menos do que em', 'O mesmo que em')],
-    en: ['In ', { periodo: 'proprio' }, ', for every thousand people of working age, ', { claim: 'proprio' }, ' received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.', anterior('More than in', 'Fewer than in', 'The same as in')],
+    pt: ['Em ', { periodo: 'proprio' }, ' havia ', { claim: 'proprio' }, ' pessoas a receber o rendimento social de inserção por cada mil pessoas em idade ativa, dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos: é o apoio da Segurança Social a quem vive em carência económica grave, com um programa de inserção no trabalho e na comunidade.', anterior('Mais do que em', 'Menos do que em', 'O mesmo que em')],
+    en: ['In ', { periodo: 'proprio' }, ' there were ', { claim: 'proprio' }, ' people receiving social insertion income for every thousand people of working age, from ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' years old: it is Social Security’s support for people living in severe economic hardship, with a programme of integration into work and the community.', anterior('More than in', 'Fewer than in', 'The same as in')],
   },
   'linha-de-risco-de-pobreza-2025': {
     pt: ['No inquérito de ', { periodo: 'proprio' }, ', uma pessoa que vivesse sozinha estava em risco de pobreza se, no ano anterior, tivesse tido menos de ', { claim: 'proprio' }, ' euros, depois dos impostos e das contribuições sociais e contando as prestações sociais. É a linha que o Eurostat traça a ', { nl: '60', motivo: 'escala-de-instrumento' }, ' % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família. Mediano é o do meio: metade da população tem mais e metade tem menos.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
