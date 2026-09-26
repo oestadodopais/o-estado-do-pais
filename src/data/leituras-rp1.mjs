@@ -1,4 +1,4 @@
-/** Segunda redação do lugar de direção, com os acertos auditados em acertos-rp1.json. */
+/** Terceira redação do lugar de direção, com os acertos auditados em acertos-rp1.json. */
 export const LEITURAS_RP1 = {
   "ipc-variacao-homologa": {
     "pt": [
@@ -43,7 +43,7 @@ export const LEITURAS_RP1 = {
           ]
         }
       },
-      " É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.",
+      " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
       {
         "compara": "anterior",
         "maior": [
@@ -102,7 +102,7 @@ export const LEITURAS_RP1 = {
           ]
         }
       },
-      " That is inflation: the INE measures it on a basket of goods and services that represents what households buy.",
+      " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
       {
         "compara": "anterior",
         "maior": [
@@ -956,7 +956,7 @@ export const LEITURAS_RP1 = {
       {
         "claim": "proprio"
       },
-      " euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.",
+      " euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.",
       {
         "compara": "anterior",
         "maior": [
@@ -997,7 +997,7 @@ export const LEITURAS_RP1 = {
       {
         "claim": "proprio"
       },
-      " euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.",
+      " euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.",
       {
         "compara": "anterior",
         "maior": [
@@ -1036,11 +1036,21 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", por cada mil pessoas em idade ativa, ",
+      " havia ",
       {
         "claim": "proprio"
       },
-      " recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.",
+      " pessoas a receber o rendimento social de inserção por cada mil pessoas em idade ativa, dos ",
+      {
+        "nl": "15",
+        "motivo": "escala-de-instrumento"
+      },
+      " aos ",
+      {
+        "nl": "64",
+        "motivo": "escala-de-instrumento"
+      },
+      " anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade.",
       {
         "compara": "anterior",
         "maior": [
@@ -1077,11 +1087,21 @@ export const LEITURAS_RP1 = {
       {
         "periodo": "proprio"
       },
-      ", for every thousand people of working age, ",
+      " there were ",
       {
         "claim": "proprio"
       },
-      " received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.",
+      " people receiving social insertion income for every thousand people of working age, from ",
+      {
+        "nl": "15",
+        "motivo": "escala-de-instrumento"
+      },
+      " to ",
+      {
+        "nl": "64",
+        "motivo": "escala-de-instrumento"
+      },
+      " years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community.",
       {
         "compara": "anterior",
         "maior": [

@@ -1,7 +1,7 @@
 {
-  "redacao": "segunda",
-  "fonte_sha256": "7cd702690c6e817471a3c949894ce6d97fc7c3ffde221948138ba230adc1dc2a",
-  "acertos": 6,
+  "redacao": "terceira",
+  "fonte_sha256": "5a3b5d8ac4b9460d283f4889d4b4f9b588417f428be82cae1e3c1f720c6d92bd",
+  "acertos": 4,
   "medidas_novas": 12,
   "leituras_antigas_intactas": 37,
   "diferencas_fora_dos_acertos": 0

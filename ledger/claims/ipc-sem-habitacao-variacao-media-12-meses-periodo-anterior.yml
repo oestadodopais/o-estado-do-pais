@@ -43,7 +43,7 @@ attributed_to:
 
 study: "dominios-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] RP1. Coordenadas: 0014666, geocod=PT, dim_3=001. Período publicado: Julho de 2026. Metainformação: rp1/002-ine-0014666-meta.json. Valor e objeto literal da API alojada no estudo. Licença: INE, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior."
+note: "[note do motor] A data published_at é a data da última atualização do quadro, que a API publica por quadro e não por período. RP1. Coordenadas: 0014666, geocod=PT, dim_3=001. Período publicado: Julho de 2026. Metainformação: rp1/002-ine-0014666-meta.json. Valor e objeto literal da API alojada no estudo. Licença: INE, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

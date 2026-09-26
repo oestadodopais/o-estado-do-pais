@@ -70,8 +70,10 @@ const CAMPOS_DA_LINHA = new Set(['excerpt', 'unit', 'document.title', 'document.
 const LITERAL_MINIMO = 4;
 /* AS PALAVRAS DE LIGAÇÃO, uma lista fechada: uma parte «liga» é pontuação e
    estas palavras, e mais nada. Uma palavra que diga alguma coisa não é ligação. */
-const PALAVRAS_DE_LIGACAO = new Set([
-  'no', /* RP1: contração de «em o», antes do período trimestral. */'em', 'in', 'aos', 'to', 'e', 'and', 'os', 'the', 'eram', 'there', 'were', 'it']);
+const PALAVRAS_DE_LIGACAO = {
+  pt: new Set(['no', 'em', 'aos', 'e', 'os', 'eram', 'havia']),
+  en: new Set(['in', 'to', 'and', 'the', 'there', 'were', 'it']),
+};
 const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
 /** As quatro páginas da leitura: a do país e a dos temas, nas duas edições. */
 export const PAGINAS_DA_LEITURA = [
@@ -318,7 +320,7 @@ export function conferirAuditoriaDasLeituras({
           for (const lang of ['pt', 'en']) {
             const resto = String(p[lang] ?? '').toLowerCase().replace(PONTUACAO, ' ').trim();
             const palavras = resto ? resto.split(/\s+/) : [];
-            const fora = palavras.filter((w) => !PALAVRAS_DE_LIGACAO.has(w));
+            const fora = palavras.filter((w) => !PALAVRAS_DE_LIGACAO[lang].has(w));
             if (fora.length) falha(id, `${qualParte} está marcada como ligação e traz «${fora.join(' ')}» (${lang}), que não é uma palavra de ligação`);
           }
         } else {
@@ -430,7 +432,7 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
   const v = linha ? numero(linha.value) : null;
   const ref = camaras ? null : REFERENCIAS_DAS_MEDIDAS.get(id)?.limiar ?? null;
   const recontagem = camaras ? recontagemDasCamaras() : null;
-  const provisorio = t(lang).prov.provisorio;
+  const provisorio = ' (' + t(lang).prov.dadoProvisorio + ')';
   /** @type {{ no: string, escolha: string|null, outros: string[], escolhido: string }[]} */
   const nos = [];
   /** O valor de uma ponta da referência, com o sinal. @param {any} lado */
@@ -452,7 +454,7 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
       const alvo = p.claim === 'proprio' ? id : p.claim === 'anterior' ? regua.anterior : regua.ue;
       const l = alvo ? linhas.get(alvo) : null;
       if (!l) throw new Error(`a leitura de ${id} cita a linha «${p.claim}», que a régua do cartão não rende`);
-      return `${l.value}${p.sufixo ?? ''}${(l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? ' ' + provisorio : ''}`;
+      return `${l.value}${p.sufixo ?? ''}${(l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? provisorio : ''}`;
     }
     if ('periodo' in p) {
       if (camaras) return dataDaCasaAqui(String([...(/** @type {any} */ (recontagem)).periodos][0]));
@@ -548,7 +550,7 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
       const linha = valor?.getAttribute('data-claim');
       if (linha) comPalavra.add(linha);
       else falha(id, 'ressalva sem a linha que a precede');
-      if (marca.textContent !== ' ' + t(lang).prov.provisorio) falha(id, 'ressalva sem separador ou com palavra diferente da edição');
+      if (marca.textContent !== ' (' + t(lang).prov.dadoProvisorio + ')') falha(id, 'ressalva sem separador ou com palavra diferente da edição');
     }
     if ([...comBandeira].some(x => !comPalavra.has(x)) || [...comPalavra].some(x => !comBandeira.has(x))) falha(id, 'as linhas com bandeira e as palavras de ressalva não coincidem');
     const leituras = cartao.querySelectorAll('[data-cartao-leitura]');

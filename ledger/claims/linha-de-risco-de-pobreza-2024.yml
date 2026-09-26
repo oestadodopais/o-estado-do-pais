@@ -43,7 +43,7 @@ attributed_to:
 
 study: "dominios-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] RP1. Coordenadas: freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT, time=2024. Ano do inquérito; limiar para uma pessoa adulta. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · linha-de-risco-de-pobreza-2024."
+note: "[note do motor] A data published_at é a data da última atualização do quadro, que a API publica por quadro e não por período. RP1. Coordenadas: freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT, time=2024. Ano do inquérito; limiar para uma pessoa adulta. Licença: Eurostat, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · linha-de-risco-de-pobreza-2024."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

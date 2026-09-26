@@ -1,6 +1,6 @@
 {
   "fonte": "design/observatorio/leituras/LEITURAS-rp1-2026-09-26.mjs",
-  "redacao": "segunda, 26.09.2026 à tarde",
+  "redacao": "terceira",
   "publicadas": [
     "ipc-variacao-homologa",
     "ipc-variacao-media-12-meses",
@@ -18,122 +18,66 @@
   "paradas": [],
   "acertos": [
     {
-      "id": "ipc-combustiveis-variacao-homologa",
+      "id": "ipc-variacao-homologa",
       "lang": "pt",
       "caminho": [
-        0,
-        "sinal",
-        "positivo",
-        3
+        1
       ],
-      "antes": "os preços dos combustíveis para os veículos estavam",
-      "depois": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
-      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "antes": " É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.",
+      "depois": " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
       "apoios": [
         {
-          "linha": "propria",
-          "campo": "excerpt",
-          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+          "origem": "rp1-ipc-metodo",
+          "campo": "excerto",
+          "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
         }
       ]
     },
     {
-      "id": "ipc-combustiveis-variacao-homologa",
+      "id": "beneficiarios-do-rsi-por-mil-2024",
       "lang": "pt",
       "caminho": [
-        0,
-        "sinal",
-        "negativo",
-        3
+        8
       ],
-      "antes": "os preços dos combustíveis para os veículos estavam",
-      "depois": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
-      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "antes": " anos: é o apoio da Segurança Social a quem vive em carência económica grave, com um programa de inserção no trabalho e na comunidade.",
+      "depois": " anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade.",
       "apoios": [
         {
-          "linha": "propria",
-          "campo": "excerpt",
-          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+          "origem": "rp1-rsi-seguranca-social",
+          "campo": "excerto",
+          "literal": "É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção)."
         }
       ]
     },
     {
-      "id": "ipc-combustiveis-variacao-homologa",
-      "lang": "pt",
-      "caminho": [
-        0,
-        "sinal",
-        "zero",
-        3
-      ],
-      "antes": "os preços dos combustíveis para os veículos estavam",
-      "depois": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
-      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
-      "apoios": [
-        {
-          "linha": "propria",
-          "campo": "excerpt",
-          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
-        }
-      ]
-    },
-    {
-      "id": "ipc-combustiveis-variacao-homologa",
+      "id": "ipc-variacao-homologa",
       "lang": "en",
       "caminho": [
-        0,
-        "sinal",
-        "positivo",
-        3
+        1
       ],
-      "antes": "the prices of fuels for vehicles were",
-      "depois": "the prices of fuels and lubricants for vehicles were",
-      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "antes": " That is inflation: the INE measures it on a basket of goods and services that represents what households buy.",
+      "depois": " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
       "apoios": [
         {
-          "linha": "propria",
-          "campo": "excerpt",
-          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+          "origem": "rp1-ipc-metodo",
+          "campo": "excerto",
+          "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
         }
       ]
     },
     {
-      "id": "ipc-combustiveis-variacao-homologa",
+      "id": "beneficiarios-do-rsi-por-mil-2024",
       "lang": "en",
       "caminho": [
-        0,
-        "sinal",
-        "negativo",
-        3
+        8
       ],
-      "antes": "the prices of fuels for vehicles were",
-      "depois": "the prices of fuels and lubricants for vehicles were",
-      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
+      "antes": " years old: it is Social Security’s support for people living in severe economic hardship, with a programme of integration into work and the community.",
+      "depois": " years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community.",
       "apoios": [
         {
-          "linha": "propria",
-          "campo": "excerpt",
-          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
-        }
-      ]
-    },
-    {
-      "id": "ipc-combustiveis-variacao-homologa",
-      "lang": "en",
-      "caminho": [
-        0,
-        "sinal",
-        "zero",
-        3
-      ],
-      "antes": "the prices of fuels for vehicles were",
-      "depois": "the prices of fuels and lubricants for vehicles were",
-      "porque": "A categoria publicada inclui lubrificantes; a leitura deve conservar esse âmbito.",
-      "apoios": [
-        {
-          "linha": "propria",
-          "campo": "excerpt",
-          "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+          "origem": "rp1-rsi-seguranca-social",
+          "campo": "excerto",
+          "literal": "É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção)."
         }
       ]
     }
