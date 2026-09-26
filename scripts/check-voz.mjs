@@ -658,6 +658,16 @@ for (const r of ROTAS_DA_CLASSE) {
   }
 }
 
+/* RP1b, I153: os temas também mostram valores e leituras com ressalva.
+   A K17 guarda o texto e a igualdade das bandeiras nesta superfície; o arame
+   da classe continua a aplicar-se apenas às rotas que já declarava. */
+for (const [lingua, ficheiro, rota] of [['pt', 'temas/index.html', '/temas/'], ['en', 'en/themes/index.html', '/en/themes/']]) {
+  const caminho = path.join(DIST, ficheiro);
+  if (!fs.existsSync(caminho)) { erros.push(`K17: página dos temas ausente, ${rota}`); continue; }
+  const k17 = conferirPaginaDaLeitura(parse(fs.readFileSync(caminho, 'utf8')), /** @type {'pt'|'en'} */ (lingua), rota);
+  erros.push(...k17.erros);
+}
+
 /* ---------------------------------------------------------------------------
  * 11 · AS PALAVRAS QUE O SÍTIO NUNCA USA PARA SI (norma §1.3 e §5.4)
  * ---------------------------------------------------------------------------

@@ -13,6 +13,7 @@
  *   node tests/inicio/areas.mjs
  *   node tests/inicio/areas.mjs --json <ficheiro>
  *   node tests/inicio/areas.mjs --vermelhos
+ *   node tests/inicio/areas.mjs --celula M8 --json <ficheiro>
  *
  * O servidor toma uma porta livre (`listen(0)`), como as outras réguas da casa.
  *
@@ -85,6 +86,8 @@ const opcao = (nome) => {
 };
 const FICHEIRO_JSON = opcao('--json');
 const VERMELHOS = argv.includes('--vermelhos');
+const CELULA = opcao('--celula');
+if (CELULA && CELULA !== 'M8') throw Error('A seleção isolada admite apenas M8.');
 
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -603,10 +606,13 @@ async function mediuOProvisorio() {
       const lido = await p.evaluate(() => {
         const marcados = [];
         for (const el of document.querySelectorAll('.claim-provisorio')) {
-          const caixa = el.closest('.claim, .cartao-medida-quantidade');
+          // A régua e o modo plano do Claim também rendem a bandeira como
+          // irmã do valor. A associação é a linha que a precede no mesmo pai.
+          let valor = el.previousElementSibling;
+          while (valor && !valor.hasAttribute('data-claim')) valor = valor.previousElementSibling;
           marcados.push({
             texto: el.textContent,
-            id: caixa?.querySelector('[data-claim]')?.getAttribute('data-claim') ?? null,
+            id: valor?.getAttribute('data-claim') ?? null,
           });
         }
         return {
@@ -619,6 +625,7 @@ async function mediuOProvisorio() {
       await p.__ctx.close();
       for (const m of lido.marcados) {
         if (m.texto !== palavra) outras.add(m.texto);
+        if (!m.id) outras.add('ressalva sem linha');
         if (m.id) comPalavra.add(m.id);
       }
       for (const id of lido.citados) {
@@ -666,6 +673,12 @@ async function mediuOProvisorio() {
 const PRIMEIRA = () => `/areas/${SLUGS[0]}`;
 
 const PLANTAS = [
+  {
+    nome: 'I153: a ressalva colada ao valor na página da área',
+    celulas: ['M8'],
+    vermelhas: ['M8·pt', 'M8·en'],
+    estrago: html => html.replace(/(<span class="claim-provisorio">) /g, '$1'),
+  },
   {
     nome: 'uma área sem peças',
     celulas: ['M2'],
@@ -752,7 +765,8 @@ async function corridaInteira() {
 }
 
 if (!VERMELHOS) {
-  await corridaInteira();
+  if (CELULA === 'M8') await mediuOProvisorio();
+  else await corridaInteira();
   const falhadas = celulas.filter((c) => !c.passa);
   console.log('');
   for (const c of celulas) {
@@ -785,7 +799,9 @@ function casaComOAlvo(nomeDaCelula, alvo) {
 }
 
 let todosVermelhos = true;
+const plantasMedidas = [];
 for (const planta of PLANTAS) {
+  if (CELULA && !planta.celulas.includes(CELULA)) continue;
   celulas = [];
   ESTRAGO = planta.estrago;
   if (planta.celulas.includes('M2')) await mediuAsPecas();
@@ -811,6 +827,7 @@ for (const planta of PLANTAS) {
   }
 
   const apanhou = queixas.length === 0;
+  plantasMedidas.push({ nome: planta.nome, mordeu: apanhou, celulas: tocadas, queixas });
   if (!apanhou) todosVermelhos = false;
   console.log(
     `  ${apanhou ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}` +
@@ -820,6 +837,7 @@ for (const planta of PLANTAS) {
   for (const q of queixas) console.log(vermelho(`      ${q}`));
 }
 ESTRAGO = null;
+if (FICHEIRO_JSON && typeof FICHEIRO_JSON === 'string') fs.writeFileSync(FICHEIRO_JSON, JSON.stringify({ plantas: plantasMedidas }, null, 2) + '\n');
 console.log('');
 await nav.close();
 servidor.close();

@@ -445,3 +445,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | rp1 | Perguntas e leituras novas; contagens do livro atualizadas | por ler pelo lugar de direção antes de aterrar | Entram apenas as cadeias recolhidas nos cartões construídos. As perguntas são conferidas pela K16 e as leituras pela K17. Os contadores do índice continuam provados no HTML. A expressão inglesa «to live on» sai da leitura da linha de pobreza porque fazia reaparecer «live», uma cadeia retirada; o acerto consta de `acertos-rp1.json` e não muda a procura das retiradas. |
+
+## RP1b · preços e ressalva do provisório, 26.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| rp1b | 10 cadeias novas, 2 contagens atualizadas e 2 leituras que saem do inventário | por ler pelo lugar de direção antes de aterrar | As perguntas novas entram nas duas edições. A regra existente da primeira página escolhe agora as rendas no tema da habitação; entram as leituras rendidas desse cartão. As duas cadeias antigas da média sem habitação saem do inventário porque deixaram de se render na primeira página e a segunda redação mudou os seus verbos; esta peça ainda não foi publicada. K16 e K17 conservam a conferência das palavras e das origens. Os contadores vêm do HTML do livro. |
