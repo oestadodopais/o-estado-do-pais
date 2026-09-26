@@ -4,43 +4,43 @@
     "passou": true,
     "falhas": []
   },
-  "cabeca_da_arvore": "d831b453e82ad48df907a90b52e86c5f514073f4",
-  "dist_construido_de": "d831b453e82ad48df907a90b52e86c5f514073f4",
-  "dist_construido_em": "2026-09-24T08:06:54.621Z",
-  "inicio": "2026-09-24T08:08:33.973Z",
-  "fim": "2026-09-24T08:08:54.745Z",
-  "segundos": 20.772,
+  "cabeca_da_arvore": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "dist_construido_de": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "dist_construido_em": "2026-09-26T09:11:36.061Z",
+  "inicio": "2026-09-26T09:21:40.743Z",
+  "fim": "2026-09-26T09:22:26.662Z",
+  "segundos": 45.919,
   "copias": {
     "index.html": {
       "rota": "/",
       "familia": "pais",
       "lingua": "pt",
-      "sha256": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951"
+      "sha256": "4dddadfc0b463649681d5ffea03b9d30a520bf30375045836e384a8bdda36928"
     },
     "en_index.html": {
       "rota": "/en/",
       "familia": "pais",
       "lingua": "en",
-      "sha256": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9"
+      "sha256": "f90e134d86a7393f1bbc02b925fee6003f06860a4ccdf4b7b71ddced2d8c98ed"
     },
     "temas_index.html": {
       "rota": "/temas/",
       "familia": "temas",
       "lingua": "pt",
-      "sha256": "259ac064762c8e43c5f62f244e7e68e4b434315c12ba76f4e3186808c03d10cb"
+      "sha256": "da912db17a7009a9eb8ba64b60be7e762b04514dc0713df351d9e6603c52ec03"
     },
     "en_themes_index.html": {
       "rota": "/en/themes/",
       "familia": "temas",
       "lingua": "en",
-      "sha256": "25773c028bf0c5fef11423b532b88398ad274fcbcd667a84e78e796c1a623d7c"
+      "sha256": "79ba417c5c930bf4e136f857541673c927701d7ea433694ddaab908be109abc1"
     },
     "cartao-medida.css": {
-      "origem": "src/styles/cartao-medida.css@d831b453e82ad48df907a90b52e86c5f514073f4",
+      "origem": "src/styles/cartao-medida.css@c1e155f021864214a2d05625afe6ad4dea60e24f",
       "sha256": "71fbbdf85d814f8ed956213e401531475fb301cb5f002376d1ff9deba7821639"
     },
     "site.css": {
-      "origem": "src/styles/site.css@d831b453e82ad48df907a90b52e86c5f514073f4",
+      "origem": "src/styles/site.css@c1e155f021864214a2d05625afe6ad4dea60e24f",
       "sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
     }
   }

@@ -1,7 +1,7 @@
 {
   "o_que_e": "As medidas do bloco L1, a leitura de cada medida. Cada uma com o comando e o conhecido-positivo.",
   "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py",
-  "cabeca_da_corrida": "d831b453e82ad48df907a90b52e86c5f514073f4",
+  "cabeca_da_corrida": "c1e155f021864214a2d05625afe6ad4dea60e24f",
   "falhas": [],
   "medidas": [
     {
@@ -495,10 +495,10 @@
     {
       "nome": "paginas_depois_sha256",
       "valor": {
-        "index.html": "9a50f4fa37fd70825b5adcaa69b3b52a96a308bb33f82177d80a122269b24951",
-        "en_index.html": "eb6e2803ea7fd766b9d60dfc05fb5ba245bcac0815b29b53d161e07485d7e7d9",
-        "temas_index.html": "259ac064762c8e43c5f62f244e7e68e4b434315c12ba76f4e3186808c03d10cb",
-        "en_themes_index.html": "25773c028bf0c5fef11423b532b88398ad274fcbcd667a84e78e796c1a623d7c",
+        "index.html": "4dddadfc0b463649681d5ffea03b9d30a520bf30375045836e384a8bdda36928",
+        "en_index.html": "f90e134d86a7393f1bbc02b925fee6003f06860a4ccdf4b7b71ddced2d8c98ed",
+        "temas_index.html": "da912db17a7009a9eb8ba64b60be7e762b04514dc0713df351d9e6603c52ec03",
+        "en_themes_index.html": "79ba417c5c930bf4e136f857541673c927701d7ea433694ddaab908be109abc1",
         "cartao-medida.css": "71fbbdf85d814f8ed956213e401531475fb301cb5f002376d1ff9deba7821639",
         "site.css": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
       },
@@ -512,12 +512,12 @@
     },
     {
       "nome": "paginas_depois_construidas_de",
-      "valor": "d831b453e82ad48df907a90b52e86c5f514073f4",
+      "valor": "c1e155f021864214a2d05625afe6ad4dea60e24f",
       "comando": "paginas-depois/INDICE.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": "d831b453e82ad48df907a90b52e86c5f514073f4",
-        "visto": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "esperado": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "visto": "c1e155f021864214a2d05625afe6ad4dea60e24f",
         "mordeu": true
       }
     },
@@ -633,12 +633,12 @@
     },
     {
       "nome": "capturas_depois_recortes",
-      "valor": 8,
+      "valor": 48,
       "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
       "conhecido_positivo": {
         "planta": "o manifesto sem o primeiro recorte",
-        "esperado": 7,
-        "visto": 7,
+        "esperado": 47,
+        "visto": 47,
         "mordeu": true
       }
     },
@@ -725,8 +725,8 @@
       "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
       "conhecido_positivo": {
         "planta": "a mesma conta sobre o manifesto do depois estragado",
-        "esperado": 8,
-        "visto": 8,
+        "esperado": 48,
+        "visto": 48,
         "mordeu": true
       }
     },
@@ -789,26 +789,26 @@
           "temas_en_1600": 4000
         },
         "depois": {
-          "pais_pt_390": 9591,
-          "pais_pt_768": 7340,
-          "pais_pt_1024": 6802,
-          "pais_pt_1280": 6813,
-          "pais_pt_1600": 6597,
-          "pais_en_390": 9540,
-          "pais_en_768": 7337,
-          "pais_en_1024": 6735,
-          "pais_en_1280": 6682,
-          "pais_en_1600": 6590,
-          "temas_pt_390": 11056,
-          "temas_pt_768": 7130,
-          "temas_pt_1024": 6756,
-          "temas_pt_1280": 6565,
-          "temas_pt_1600": 6216,
-          "temas_en_390": 10951,
-          "temas_en_768": 7072,
-          "temas_en_1024": 6657,
-          "temas_en_1280": 6396,
-          "temas_en_1600": 6176
+          "pais_pt_390": 9956,
+          "pais_pt_768": 7604,
+          "pais_pt_1024": 7005,
+          "pais_pt_1280": 7056,
+          "pais_pt_1600": 6818,
+          "pais_en_390": 9824,
+          "pais_en_768": 7560,
+          "pais_en_1024": 6918,
+          "pais_en_1280": 6885,
+          "pais_en_1600": 6770,
+          "temas_pt_390": 11442,
+          "temas_pt_768": 7454,
+          "temas_pt_1024": 6979,
+          "temas_pt_1280": 6870,
+          "temas_pt_1600": 6477,
+          "temas_en_390": 11236,
+          "temas_en_768": 7336,
+          "temas_en_1024": 6840,
+          "temas_en_1280": 6622,
+          "temas_en_1600": 6356
         }
       },
       "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json (o campo «altura», a altura do documento em px)",
@@ -822,34 +822,74 @@
     {
       "nome": "capturas_depois_sha256",
       "valor": {
-        "depois-pais-pt-390.png": "52f7033f0d865351b3bfecb31d25784b5005786eddccdaffc62b5f6c873ede73",
-        "depois-pais-pt-768.png": "4672e009c2ffb21423d3d4730220554ca7aeced097d38545f84339b6d40e1c35",
-        "depois-pais-pt-1024.png": "b1e8b1a75a7cdbe776edffaa88150aa7d95808b5789dcc109ad53b22e6fb18b8",
-        "depois-pais-pt-1280.png": "3c60f70bc43cbb576556de52301277aed2bd69b6058cfd96b24aeb3822a7b42e",
-        "depois-pais-pt-1600.png": "646af8ecfc6f61e48c11f6ac88497131dfb1d63b155723b6e9f6e485cd65f58b",
-        "depois-pais-en-390.png": "df3b8e503ab9414717f37b11c9f136e72c7572044107a213d9142cd0bb6e35e8",
-        "depois-pais-en-768.png": "7f69da2eb7a4ee219dd85d4cf2e5a7fe15389d83fd4a55a2cd4de3177d77ae7d",
-        "depois-pais-en-1024.png": "def2eadda090641228872a1b23d5ec4a29510aec09de21845bf46843656cb5dc",
-        "depois-pais-en-1280.png": "7e67e2b68e1b6d024c3fb3c0638076071dab880dee826ce06fded102f50d6b27",
-        "depois-pais-en-1600.png": "ee67de5edc36b1a32e8d212bd562441be382bf23961869d929594635391b2408",
-        "depois-temas-pt-390.png": "ca18309776b942a25431efa590227781fa53298aa958c8df410644994969619d",
-        "depois-temas-pt-768.png": "c2195f0883f7d6371cb95234c15718f25f8471ed9b212c23a7e43a6cf909e1d5",
-        "depois-temas-pt-1024.png": "c14dd78be8f76616dfcbbc0cf748061926f4367fd10ab49292bc3280b73ac651",
-        "depois-temas-pt-1280.png": "b0a7a3d78d4438f57821a165c076561479d80e08a1acbb9339386c2fe0dcd219",
-        "depois-temas-pt-1600.png": "972b71a6cbe201e1a465186d3c283a89fa4e1847d8c0d850c27f107546702718",
-        "depois-temas-en-390.png": "e2628db4c778baa986e28e977927d8fb2e059e6a2746ec23816d09dbdafbbee3",
-        "depois-temas-en-768.png": "0ec2baacf2e9480cced9e3b24ec6cdf46057b5352a36a66edbb706e34430bbe0",
-        "depois-temas-en-1024.png": "8e3b08a06b34bc6308631ad4f32681b4357871f033dd6b6b03720902555a029d",
-        "depois-temas-en-1280.png": "afbb9683aef95f6a19d7bb2b4c9d8ff196b14c52a5b3b520ff7b547a89d8b884",
-        "depois-temas-en-1600.png": "835fabd5b9fdcfd96d412f391f6aaef8ab3df298865bced4acb48a1626ea5875",
+        "depois-pais-pt-390.png": "1b64f6a818acb7de693690202dbb7040583bf418c64e77f2d5c8dac63ba1838b",
+        "depois-pais-pt-768.png": "1b1c8bb3f2413f807222c61aa97ba8ff73aa025c384723b1d3a34bf46c6634e1",
+        "depois-pais-pt-1024.png": "8623e003607b6b2ad62d2f27d4478d49a059116cf40877d02ab35eae69711c3b",
+        "depois-pais-pt-1280.png": "72094a1ff3fcfd3db74ae2a3ce94b62a3e969dd0c613680afd6913a5b6ddec36",
+        "depois-pais-pt-1600.png": "ae0f17082f90867da919b25d693afce0504d2bbd2b1458ca8dca983b40f48fe3",
+        "depois-pais-en-390.png": "8f4aeb37d056523b85b3ee4cc97428cf124d316c5efd486bce1b2c08771d4577",
+        "depois-pais-en-768.png": "1f15ed52e0e3ec116815623cd5aa9d4ae9f99d897309c0bb4b50350f728d2d71",
+        "depois-pais-en-1024.png": "62030d09e01a3c3ffc71cb957d48fee5d1f3d2d5a3b7d44ec819bb91cfcd5a98",
+        "depois-pais-en-1280.png": "7c9672f4eaa8f2d84447206a5629a54b51880fbc83875582167abe8ff1c39a3f",
+        "depois-pais-en-1600.png": "baa5e1c2fb036c6937ee75b0e53fd576c2e0bc0f89b4724930c078dbeecac33b",
+        "depois-temas-pt-390.png": "26ae82da3c1e26fbbd8f0266c8a24298d7da829eefdd125654f439cebae3564f",
+        "depois-temas-pt-768.png": "607ff8d4250a4e8e0f2e5abc5dc10856e736a17a7b2f5e4cd58ac91736741e13",
+        "depois-temas-pt-1024.png": "e26340a7c8144596682c3071f824ac6f2709319c43ad3b62a352db16738f6a1a",
+        "depois-temas-pt-1280.png": "17b74f036a198af0ca73fb3151e2fadc2a51d788f8da5dfdba6f26c515597229",
+        "depois-temas-pt-1600.png": "57a75c15b80103700d5ef23902ed004106e6aa01b1014a9eb9e55a3f762a5253",
+        "depois-temas-en-390.png": "de3c884ad063609fbf30bdf59dad9c4db5dd461c6c6cec0ad789b0013c302eb6",
+        "depois-temas-en-768.png": "73e23acc48046482f63611dce0da2eed3691535229f361159271be2bbeb64cd4",
+        "depois-temas-en-1024.png": "08f4d0a6ae1557a30f4a5e87169f72f3f391cfbebe889e16b65f751e4053ad45",
+        "depois-temas-en-1280.png": "84529afce0b909b8d833e7aa255719e7a235c11f7b1b1616010bac40f40553ae",
+        "depois-temas-en-1600.png": "673a27073849eb93a402d3f22fcc1689a7feafd3f7a9ff55a3055bca89c9fa06",
         "depois-cartao-saldo-pt-390.png": "b4b2e70380834be585066010dc99f34468c1e47cd0079d1ef4b866604d0be9ca",
         "depois-cartao-saldo-pt-1280.png": "bd6a616eba52b1ad71d65ba78f60dc8d6c0e85e644195d4fb9ef3e434ffceb29",
         "depois-cartao-saldo-en-390.png": "dd917d3518dad63a3b32b5e259527c7d454c6ddcc2439e476a36df247bf8b8ae",
         "depois-cartao-saldo-en-1280.png": "d6b6eab5f95af860b3fbffa36e462318d0186e6d9c90bdd4c8a0da18d74a6ceb",
-        "depois-cartao-disparidade-pt-390.png": "7ed5324738b5171947cc32b831deeb2e2d2a3a91b9eb22f5981cf36d7e0f18f7",
-        "depois-cartao-disparidade-pt-1280.png": "4e6e4ebdad3048a2f70fbf2a84b222961b053f49eb077a7b70796b6dc216b79c",
-        "depois-cartao-disparidade-en-390.png": "e1977cffe0d1fb7a7acbe0236fb14ce2246d093c2b5b41928f998d3ab8cad46e",
-        "depois-cartao-disparidade-en-1280.png": "f19d965ec944d03b75cad0157e03f22b53c32b9bd4e2ac9186cf2c5ff8e8831a"
+        "depois-cartao-pib-pt-390.png": "bae5614c7ba8ce7d005f282cc87e41a07d921abd8e99caf7c270e4100fe84f6f",
+        "depois-cartao-pib-pt-1280.png": "77eb8a0144c263ec6b0d014c7215bdace31cd4bfb5476dee88da3c4cebcea741",
+        "depois-cartao-pib-en-390.png": "2a6e9f491e8663780b2dc1ebd025211b20ade185e71ed3c679252344d54172a6",
+        "depois-cartao-pib-en-1280.png": "e3e0ca3d479b3288aaaad055ba9e397485afa92da1c5ad640bea445cc3c09fd4",
+        "depois-cartao-fluxo-empresas-pt-390.png": "fd0cda6e2a24f3d9c68e02f1c798403fcf75ca939997120fbb77d9639231ff76",
+        "depois-cartao-fluxo-empresas-pt-1280.png": "7f108e55cc041947a5485b0f2db5d08dd4af5083836567125f27dd4042c9a744",
+        "depois-cartao-fluxo-empresas-en-390.png": "5ef02d51dc146bfcd3b0f5416b128d41c68498be1eb7478c9638d4894b10d5e4",
+        "depois-cartao-fluxo-empresas-en-1280.png": "361f306606d6654bcd98c46e476f9a523570b1da221c3b6c5926085623c0dfe8",
+        "depois-cartao-fluxo-familias-pt-390.png": "0beb8cfed9b7da3aa3b6cffa4882cfc759c9e6277ce535b14471c603f46537eb",
+        "depois-cartao-fluxo-familias-pt-1280.png": "dcf9980cab0a338734b2cbc6ffb5bbe2394efea5124083042f282c746ac46369",
+        "depois-cartao-fluxo-familias-en-390.png": "009913b986f25c18f42be770b6239e19bf4066ed635f2b9f881b03d28a7cd549",
+        "depois-cartao-fluxo-familias-en-1280.png": "5746372f0785c535a342e67e31eab2fb26636daf5cfab5ef7199d0c369eb12de",
+        "depois-cartao-pobreza-pt-390.png": "d8867ff7bebe21ae8e7a131776ea7067b8773faff5fdc41ab1474916b3e85b73",
+        "depois-cartao-pobreza-pt-1280.png": "04439bf8e9ddf8ae767a769956242ceb3a864786d8aa2f5492440956941215ba",
+        "depois-cartao-pobreza-en-390.png": "e0ff44235cc56c5be3c7994a436a5c946eb34440f1b8c2cfbe19602f3d2b4a6e",
+        "depois-cartao-pobreza-en-1280.png": "ea58bc2e808dfdd80e20eb1614c3d066c930c12830c15003313d91f2b1995d5d",
+        "depois-cartao-creches-pt-390.png": "caa26e99817b35bf1efcc110742e5229db45a8a45e234251e8d0f2e501b1eed0",
+        "depois-cartao-creches-pt-1280.png": "8cf28a395ffa79f2e4aa1e713d65745da29fce1b5f293058505e329137c543d9",
+        "depois-cartao-creches-en-390.png": "c1e4855db06007f1270a56e97fa9255bac6d044e36e6723a55ff9489e7cff1aa",
+        "depois-cartao-creches-en-1280.png": "e0efc757dea96466fb66930da1d6dfda46917b69cbed7481dc0b96817d748c99",
+        "depois-cartao-sobrecarga-inquilinos-pt-390.png": "93468e11e808060330c96a3d6278a644074359dfc7744eed00232d21e194e5ec",
+        "depois-cartao-sobrecarga-inquilinos-pt-1280.png": "e7bea0bcb1822f1c8e78ad4f8862e1f2162c13de67e2be3247e24c00503afc67",
+        "depois-cartao-sobrecarga-inquilinos-en-390.png": "7404807e3c12f24e6a3ae2a16846eda65e0118e7983e845521f9cb08df145cc7",
+        "depois-cartao-sobrecarga-inquilinos-en-1280.png": "a91acfd2bbfa498977bdc04130cac189eea43e83d338a0bc03d7863a091eb15d",
+        "depois-cartao-sobrecarga-total-pt-390.png": "b26ee393c1f8b9525e73b0204dc075be334d54d5d8b247ad5ccaeeee035a95a9",
+        "depois-cartao-sobrecarga-total-pt-1280.png": "d85aeafbe74167b741f9e3d510954397d93b8bfde243785a97bd5fa92e9e00ee",
+        "depois-cartao-sobrecarga-total-en-390.png": "e3d3f6be0e112538bf649b9d175ae9aa18d7aa6bc24d55d1b0502210dd1a5049",
+        "depois-cartao-sobrecarga-total-en-1280.png": "bbb09811df06d1a5423293f32e222d578c4a39579636e3e91580fb58ece4b119",
+        "depois-cartao-investimento-pt-390.png": "6389b483f7cf37fe6e734a6e179bfe0dc7a7ec8e593a1790e35fb990b6e35a55",
+        "depois-cartao-investimento-pt-1280.png": "502db1700ba2dfd471c0180e39230eb36b3d08ed90ed74c893dec4f1de867110",
+        "depois-cartao-investimento-en-390.png": "e5dd63d32c44ddddb6d5f0d012f7826bc8c5abb94ae47e9ee0a0ab8b8345a8c9",
+        "depois-cartao-investimento-en-1280.png": "73d007c422bdd942ca6019f12666519f31c2c8a4a5f8d1e82af22bef54fb2551",
+        "depois-cartao-atividade-pt-390.png": "c41df9197a7e17164a79831ccfaa6c1fc8e2546d0ec989b2c99936bb16a98cf9",
+        "depois-cartao-atividade-pt-1280.png": "182984109c6af1e4c6b014013ae95d41ae5b45e290b1c6f867bbc3326248794c",
+        "depois-cartao-atividade-en-390.png": "24cc9b69cca95ee29cc71367d976c792a2dc9d2f21552f9da80c6f519fc10e6e",
+        "depois-cartao-atividade-en-1280.png": "1a0c333345a8408e338c643ebfe47996ef19160ac1cb44747f57ec85837880de",
+        "depois-cartao-disparidade-pt-390.png": "86d7352f07002d9120d164e76b6b9ac0eb55c211f3bb7744c321d2f2d0dd232a",
+        "depois-cartao-disparidade-pt-1280.png": "5267e0c0f70fcccb568218fd9db6632d09fd3b5610eba6e656b660d4118fc80b",
+        "depois-cartao-disparidade-en-390.png": "5a2a73afc6aa421e16eefc518a5494b03a6a73040c474af77950bd5e7960f9dd",
+        "depois-cartao-disparidade-en-1280.png": "83b55775bfc449fc887873526f0123e618fab367c62d3446755b2b1c01203f1a",
+        "depois-cartao-camaras-pt-390.png": "443c73554b2fea7bfdfe00437d5e24b9b8a88b55aedb9bea8a2fca44a42fda81",
+        "depois-cartao-camaras-pt-1280.png": "95ff221cc5aba988e665aa1a33b7382d6510a8d8d1c859a059635f6ff57620af",
+        "depois-cartao-camaras-en-390.png": "a2ca8b107bc7ccc4ce0cff2105148a7ebf00de6d8f65d4f063b743eff530495b",
+        "depois-cartao-camaras-en-1280.png": "776e2e3729913e2d46e6916f418166ba22535d560d62010d679e298382a15c83"
       },
       "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
       "conhecido_positivo": {
@@ -861,12 +901,12 @@
     },
     {
       "nome": "capturas_depois_de",
-      "valor": "d831b453e82ad48df907a90b52e86c5f514073f4",
+      "valor": "c1e155f021864214a2d05625afe6ad4dea60e24f",
       "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": "d831b453e82ad48df907a90b52e86c5f514073f4",
-        "visto": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "esperado": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "visto": "c1e155f021864214a2d05625afe6ad4dea60e24f",
         "mordeu": true
       }
     },
@@ -895,7 +935,7 @@
     },
     {
       "nome": "k17_auditoria_folhas",
-      "valor": 791,
+      "valor": 793,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -907,7 +947,7 @@
     },
     {
       "nome": "k17_auditoria_partes",
-      "valor": 923,
+      "valor": 937,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -919,7 +959,7 @@
     },
     {
       "nome": "k17_auditoria_diz",
-      "valor": 231,
+      "valor": 244,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -931,7 +971,7 @@
     },
     {
       "nome": "k17_auditoria_conta",
-      "valor": 242,
+      "valor": 243,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -955,7 +995,7 @@
     },
     {
       "nome": "k17_auditoria_apoios",
-      "valor": 325,
+      "valor": 352,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -967,7 +1007,7 @@
     },
     {
       "nome": "k17_auditoria_algarismos",
-      "valor": 22,
+      "valor": 24,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -979,7 +1019,7 @@
     },
     {
       "nome": "k17_auditoria_origens_das_leituras",
-      "valor": 71,
+      "valor": 78,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -991,7 +1031,7 @@
     },
     {
       "nome": "k17_auditoria_comuns",
-      "valor": 39,
+      "valor": 38,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirAuditoriaDasLeituras().contas",
       "conhecido_positivo": {
         "planta": "a primeira parte da primeira leitura sem apoio",
@@ -1058,7 +1098,7 @@
     },
     {
       "nome": "k17_paginas_algarismos",
-      "valor": 254,
+      "valor": 258,
       "comando": "as funções da K17 (tests/cartao/leituras.mjs) chamadas por este guião sobre dist/: conferirLeiturasRendidas().contas",
       "conhecido_positivo": {
         "planta": "as plantas da própria célula",
@@ -1271,6 +1311,28 @@
           ]
         },
         {
+          "medida": "taxa-de-actividade-2025",
+          "nl": "15",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslm60-idade",
+              "campo": "excerto",
+              "literal": "aged 15-64"
+            }
+          ]
+        },
+        {
+          "medida": "taxa-de-actividade-2025",
+          "nl": "64",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslm60-idade",
+              "campo": "excerto",
+              "literal": "aged 15-64"
+            }
+          ]
+        },
+        {
           "medida": "risco-de-pobreza-ou-exclusao-2025",
           "nl": "60",
           "apoios": [
@@ -1373,19 +1435,19 @@
       "comando": "tests/cartao/leituras-provadas.json, os campos «algarismos», lidos por este guião",
       "conhecido_positivo": {
         "planta": "um algarismo plantado na primeira medida",
-        "esperado": 23,
-        "visto": 23,
+        "esperado": 25,
+        "visto": 25,
         "mordeu": true
       }
     },
     {
       "nome": "algarismos_das_leituras_contados",
-      "valor": 22,
+      "valor": 24,
       "comando": "tests/cartao/leituras-provadas.json",
       "conhecido_positivo": {
         "planta": "um algarismo plantado",
-        "esperado": 23,
-        "visto": 23,
+        "esperado": 25,
+        "visto": 25,
         "mordeu": true
       }
     },
@@ -1518,23 +1580,23 @@
     },
     {
       "nome": "acertos",
-      "valor": 17,
+      "valor": 26,
       "comando": "acertos-l1.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": 17,
-        "visto": 17,
+        "esperado": 26,
+        "visto": 26,
         "mordeu": true
       }
     },
     {
       "nome": "acertos_trocas",
-      "valor": 45,
+      "valor": 64,
       "comando": "acertos-l1.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": 45,
-        "visto": 45,
+        "esperado": 64,
+        "visto": 64,
         "mordeu": true
       }
     },
@@ -1551,23 +1613,34 @@
     },
     {
       "nome": "origens_novas",
-      "valor": 44,
+      "valor": 51,
       "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/origens-l1.py --confere",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": 44,
-        "visto": 44,
+        "esperado": 51,
+        "visto": 51,
         "mordeu": true
       }
     },
     {
       "nome": "origens_conferidas",
-      "valor": 44,
-      "comando": "origens-l1.py --confere",
+      "valor": 53,
+      "comando": "origens-l1.py --confere (as origens e, desde a passagem de correção, as testemunhas discordantes)",
       "conhecido_positivo": {
-        "planta": "nenhuma: a planta do selo e a do sha256 vivem na K16",
-        "esperado": 44,
-        "visto": 44,
+        "planta": "nenhuma: a planta do selo e a do sha256 vivem na K16, e as da testemunha na K9",
+        "esperado": 53,
+        "visto": 53,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "testemunhas_conferidas_contra_o_motor",
+      "valor": 2,
+      "comando": "origens-l1.py --confere, as testemunhas relidas nos bytes selados",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
         "mordeu": true
       }
     },
@@ -1595,12 +1668,12 @@
     },
     {
       "nome": "origens_com_selo_de_pedido",
-      "valor": 31,
+      "valor": 38,
       "comando": "origens-l1.py (as declarações com «selo»)",
       "conhecido_positivo": {
         "planta": "uma declaração sem selo numa cópia",
-        "esperado": 30,
-        "visto": 30,
+        "esperado": 37,
+        "visto": 37,
         "mordeu": true
       }
     },
@@ -1627,8 +1700,14 @@
           "eurostat-earn-grgpg2-definicao",
           "eurostat-glossario-fbcf",
           "eurostat-glossario-gerd",
+          "eurostat-glossario-inflacao",
+          "eurostat-glossario-mediana",
+          "eurostat-glossario-rendimento-disponivel",
+          "eurostat-glossario-residente",
+          "eurostat-nama10-volumes",
           "eurostat-sdg_16_40-descricao",
           "eurostat-sdg_16_40-nivel",
+          "eurostat-sec2010-registo-liquido",
           "eurostat-tepsr_sp210-descricao",
           "eurostat-tepsr_sp410-descricao",
           "eurostat-tesem060-descricao",
@@ -1643,6 +1722,7 @@
           "eurostat-tipslc10-descricao",
           "eurostat-tipslm10-descricao",
           "eurostat-tipslm60-descricao",
+          "eurostat-tipslm60-idade",
           "eurostat-tipsna20-descricao",
           "eurostat-tipsna40-descricao",
           "eurostat-tipspc30-descricao",
@@ -1714,18 +1794,51 @@
     {
       "nome": "ficheiros_alojados_no_estudo_13",
       "valor": 29,
-      "comando": "git show HEAD -- «content/13 Dominios/source/MANIFEST.sha256» no motor, as linhas acrescentadas",
+      "comando": "git show <o commit do motor que acrescentou indicators/out/l1-2026-09-24/pedidos.jsonl> -- «content/13 Dominios/source/MANIFEST.sha256», as linhas acrescentadas",
       "conhecido_positivo": {
-        "planta": "a mesma conta sobre o commit anterior do motor",
+        "planta": "a mesma conta sobre 0f08171, o commit do motor em que o bloco começou",
         "esperado": 0,
         "visto": 0,
         "mordeu": true
       },
-      "nota": "o commit anterior do motor não é deste bloco e não aloja nada no estudo 13"
+      "nota": "0f08171 não é deste bloco e não aloja nada no estudo 13"
+    },
+    {
+      "nome": "ficheiros_alojados_na_correcao",
+      "valor": 8,
+      "comando": "a mesma conta sobre o commit do motor que acrescentou indicators/out/l1-2026-09-26/pedidos.jsonl",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre 0f08171",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "motor_commit_do_bloco",
+      "valor": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
+      "comando": "git log --diff-filter=A -- indicators/out/l1-2026-09-24/pedidos.jsonl no motor",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "motor_commit_da_correcao",
+      "valor": "1d10b3fe413340c843babafd03700bcea8fcb08b",
+      "comando": "git log --diff-filter=A -- indicators/out/l1-2026-09-26/pedidos.jsonl no motor",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
     },
     {
       "nome": "motor_cabeca",
-      "valor": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
+      "valor": "1d10b3fe413340c843babafd03700bcea8fcb08b",
       "comando": "git rev-parse HEAD no motor",
       "conhecido_positivo": {
         "planta": "nenhuma",
@@ -1736,7 +1849,7 @@
     },
     {
       "nome": "motor_commits_do_bloco",
-      "valor": 1,
+      "valor": 2,
       "comando": "git rev-list --count 0f08171..HEAD no motor",
       "conhecido_positivo": {
         "planta": "nenhuma",
@@ -1799,23 +1912,45 @@
     },
     {
       "nome": "inventario_linhas_l1",
-      "valor": 40,
+      "valor": 24,
       "comando": "as linhas «| l1 | viva |» de design/especime-v3/INVENTARIO-FRASES.md",
       "conhecido_positivo": {
         "planta": "uma linha a mais numa cópia",
-        "esperado": 41,
-        "visto": 41,
+        "esperado": 25,
+        "visto": 25,
         "mordeu": true
       }
     },
     {
       "nome": "inventario_linhas_l1_inglesas",
-      "valor": 20,
+      "valor": 12,
       "comando": "as linhas l1 com «Ver a razão na gémea portuguesa»",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": 20,
-        "visto": 20,
+        "esperado": 12,
+        "visto": 12,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_l1_correcao",
+      "valor": 16,
+      "comando": "as linhas «| l1-correcao | viva |» de design/especime-v3/INVENTARIO-FRASES.md",
+      "conhecido_positivo": {
+        "planta": "uma linha a mais numa cópia",
+        "esperado": 17,
+        "visto": 17,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_l1_correcao_inglesas",
+      "valor": 8,
+      "comando": "as linhas l1-correcao com «Ver a razão na gémea portuguesa»",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
         "mordeu": true
       }
     },
@@ -1867,10 +2002,10 @@
       "nome": "portao_build",
       "valor": {
         "codigo": 0,
-        "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
-        "segundos": 300.1,
-        "inicio": "2026-09-24T08:03:19.187997+00:00",
-        "fim": "2026-09-24T08:08:19.321317+00:00",
+        "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "segundos": 303.7,
+        "inicio": "2026-09-26T09:07:57.346272+00:00",
+        "fim": "2026-09-26T09:13:01.038118+00:00",
         "caminhos_da_maquina_trocados": 1
       },
       "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/correr-portao-l1.py build, lido de portoes/build.codigo e portoes/build.json",
@@ -1885,10 +2020,10 @@
       "nome": "portao_verify",
       "valor": {
         "codigo": 0,
-        "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
-        "segundos": 491.0,
-        "inicio": "2026-09-24T08:09:01.045711+00:00",
-        "fim": "2026-09-24T08:17:12.019912+00:00",
+        "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "segundos": 486.9,
+        "inicio": "2026-09-26T09:13:11.377400+00:00",
+        "fim": "2026-09-26T09:21:18.271789+00:00",
         "caminhos_da_maquina_trocados": 2
       },
       "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/correr-portao-l1.py verify, lido de portoes/verify.codigo e portoes/verify.json",
@@ -1903,10 +2038,10 @@
       "nome": "portao_typecheck",
       "valor": {
         "codigo": 0,
-        "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
+        "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
         "segundos": 0.2,
-        "inicio": "2026-09-24T08:17:27.386172+00:00",
-        "fim": "2026-09-24T08:17:27.614244+00:00",
+        "inicio": "2026-09-26T09:21:29.332489+00:00",
+        "fim": "2026-09-26T09:21:29.556839+00:00",
         "caminhos_da_maquina_trocados": 0
       },
       "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/correr-portao-l1.py typecheck, lido de portoes/typecheck.codigo e portoes/typecheck.json",
@@ -1941,31 +2076,75 @@
     },
     {
       "nome": "commits_do_sitio_no_bloco",
-      "valor": 10,
-      "comando": "git log f0779f37..HEAD",
+      "valor": 16,
+      "comando": "git log <o commit do brief do L1, achado pelo assunto em main..HEAD>..HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": 10,
-        "visto": 10,
+        "esperado": 16,
+        "visto": 16,
         "mordeu": true
       },
-      "nota": "conta os commits até à cabeça medida; o commit que entrega estas provas vem depois dela"
+      "nota": "conta os commits do bloco depois do brief até à cabeça medida, incluindo os dois do lugar de direção (o ensaio a seco e a leitura a frio); o commit que entrega estas provas vem depois dela"
     },
     {
       "nome": "commits_do_sitio",
       "valor": [
-        "d831b453 L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória",
-        "dd30253f L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina",
-        "5a1667ab L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado",
-        "84eedc3a L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas",
-        "b63f33a4 L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos",
-        "c527ce12 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao",
-        "383445fc L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua",
-        "39d27368 L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta",
-        "607808f0 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata",
-        "bc078d3b L1: o mapa do repositório com o que a peça 1 do B2 acrescentou"
+        "c1e155f0 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9",
+        "839eda2f L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção",
+        "28bcdd00 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la",
+        "6584df72 L1: a leitura a frio do Codex (gpt-5.6-sol, 598 189 símbolos, cinco plantas em cinco, 28 achados) com as plantas e o prompt, e duas leituras reescritas pelo lugar de direção (a disparidade salarial fecha a oração com o valor, para que «provisório» feche com ele; as câmaras concordam com «o número», seja qual for a contagem)",
+        "5c63129d L1: o ensaio a seco das leituras entra no repositório (M31), com caminhos relativos, e corre a 0 sobre o ficheiro do lugar de direção e sobre o do sítio com os dezassete acertos",
+        "aa1e4881 L1: as provas do bloco, medidas na cabeça d831b453",
+        "02b56181 L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória",
+        "463b9067 L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina",
+        "9519e56a L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado",
+        "8043ef6c L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas",
+        "64648c65 L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos",
+        "2780b589 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao",
+        "37e73017 L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua",
+        "c0dcc05f L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta",
+        "6b1297c3 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata",
+        "074cc698 L1: o mapa do repositório com o que a peça 1 do B2 acrescentou"
       ],
-      "comando": "git log --format=\"%h %s\" f0779f37..HEAD",
+      "comando": "git log --format=\"%h %s\" <o brief>..HEAD",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "commits_da_correcao",
+      "valor": [
+        "c1e155f0 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9",
+        "839eda2f L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção",
+        "28bcdd00 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la"
+      ],
+      "comando": "git log --format=\"%h %s\" 6584df72..HEAD",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "commits_da_correcao_contados",
+      "valor": 3,
+      "comando": "git log 6584df72..HEAD",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 3,
+        "visto": 3,
+        "mordeu": true
+      },
+      "nota": "conta os commits desta passagem até à cabeça medida; o commit que entrega as provas vem depois dela"
+    },
+    {
+      "nome": "brief_depois_do_rebase",
+      "valor": "61155218d3acabc6a3c10489b56764791cdf792b",
+      "comando": "git log --grep «^O brief do L1» main..HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
         "esperado": true,
@@ -1975,7 +2154,7 @@
     },
     {
       "nome": "cabeca_medida",
-      "valor": "d831b453e82ad48df907a90b52e86c5f514073f4",
+      "valor": "c1e155f021864214a2d05625afe6ad4dea60e24f",
       "comando": "git rev-parse HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
@@ -1998,11 +2177,905 @@
     {
       "nome": "tempo_de_parede_segundos",
       "valor": 10766,
-      "comando": "do «inicio_da_sessao» de sessao.json (o primeiro registo com hora da transcrição da sessão, declarado) ao maior «fim» de portoes/*.json",
+      "comando": "git show 6584df72:design/especime-v3/medicoes/l1-2026-09-24/medidas.json (a medição de 24.09.2026)",
+      "conhecido_positivo": {
+        "planta": "nenhuma: é a medição de 24.09.2026, relida",
+        "esperado": 10766,
+        "visto": 10766,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "simbolos_da_correcao",
+      "valor": 739571,
+      "comando": "sessao.json, «correcao» (declarado)",
+      "declarado": true,
+      "fonte": "o contador da ferramenta: 15 000 000 símbolos no início da sessão menos os 14 260 429 que ela reportava por usar no momento de escrever este ficheiro; o que se gastou depois (as medições, o relatório e o commit das provas) não está contado",
+      "conhecido_positivo": {
+        "planta": "nenhuma: não é uma medição, é o contador da ferramenta, declarado",
+        "mordeu": null
+      }
+    },
+    {
+      "nome": "tempo_de_parede_da_correcao_segundos",
+      "valor": 4367,
+      "comando": "do «inicio_da_sessao» de sessao.json «correcao» (o primeiro registo com hora da transcrição desta sessão, declarado) ao maior «fim» de portoes/*.json",
       "conhecido_positivo": {
         "planta": "a mesma conta com o fim de um portão atrasado uma hora numa cópia",
-        "esperado": 14366,
-        "visto": 14366,
+        "esperado": 7967,
+        "visto": 7967,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_da_leitura_no_ramo",
+      "valor": [
+        {
+          "id": "P1",
+          "no_pacote": "src/data/leituras-das-medidas.mjs",
+          "no_ramo": "src/data/leituras-das-medidas.mjs",
+          "descricao": "a fonte e o diff: os dois ramos de PESA trocados na declaração (a página construída, feita da declaração sã, contradiz esta cópia)",
+          "ramo_e_o_antes": true,
+          "contexto_no_ramo": 1,
+          "ramo_com_a_troca_e_o_depois": true
+        },
+        {
+          "id": "P3",
+          "no_pacote": "relatorio-construtor.md",
+          "no_ramo": "design/especime-v3/medicoes/l1-2026-09-24/LEIA-ME.md",
+          "descricao": "o relatório: a contagem das origens novas trocada de 44 para 46 (o medidas.json diz 44, e a linha seguinte do relatório também)",
+          "ramo_e_o_antes": true,
+          "contexto_no_ramo": 1,
+          "ramo_com_a_troca_e_o_depois": true
+        },
+        {
+          "id": "P4",
+          "no_pacote": "built/temas/index.html",
+          "no_ramo": "design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/temas_index.html",
+          "descricao": "a página construída: o ramo da dívida pública trocado (89,7 contra 93,5 é «pesa menos», a página passa a dizer «pesa mais»)",
+          "ramo_e_o_antes": true,
+          "contexto_no_ramo": 1,
+          "ramo_com_a_troca_e_o_depois": true
+        },
+        {
+          "id": "P2",
+          "no_pacote": "tests/cartao/leituras.mjs",
+          "no_ramo": "tests/cartao/leituras.mjs",
+          "descricao": "a régua: a conferência dos algarismos da leitura rendida passa a aceitar qualquer elemento com classe, o que a torna vazia (o <p> da leitura tem classe)",
+          "ramo_e_o_antes": true,
+          "contexto_no_ramo": 1,
+          "ramo_com_a_troca_e_o_depois": true
+        },
+        {
+          "id": "P5",
+          "no_pacote": "tests/cartao/leituras-provadas.json",
+          "no_ramo": "tests/cartao/leituras-provadas.json",
+          "descricao": "os dados: um literal da auditoria que a origem não traz (a descrição do Eurostat diz «average population» e a auditoria passa a dizer «total population»)",
+          "ramo_e_o_antes": true,
+          "contexto_no_ramo": 1,
+          "ramo_com_a_troca_e_o_depois": true
+        }
+      ],
+      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
+      "conhecido_positivo": {
+        "planta": "a troca registada de cada planta, aplicada aos bytes do ramo, dá o sha256_depois",
+        "esperado": 5,
+        "visto": 5,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_da_leitura_confirmadas",
+      "valor": 5,
+      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
+      "conhecido_positivo": {
+        "planta": "o primeiro ficheiro com um byte a mais",
+        "esperado": 4,
+        "visto": 4,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_da_leitura",
+      "valor": 5,
+      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 5,
+        "visto": 5,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "plantas_da_leitura_reproduzidas",
+      "valor": 5,
+      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json (a troca registada aplicada aos bytes do ramo)",
+      "conhecido_positivo": {
+        "planta": "a troca da primeira planta aplicada a um byte a mais",
+        "esperado": 4,
+        "visto": 4,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "achados_da_leitura",
+      "valor": 28,
+      "comando": "as linhas «<n>. **» de design/especime-v3/critica/LEITURA-l1-2026-09-26.md",
+      "conhecido_positivo": {
+        "planta": "um achado a mais numa cópia",
+        "esperado": 29,
+        "visto": 29,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "achados_da_leitura_numeros",
+      "valor": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "comando": "a mesma leitura, os números dos achados pela ordem do ficheiro",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "comissao_hoje",
+      "valor": {
+        "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+        "url_final": "https://economy-finance.ec.europa.eu/economic-governance-framework/macroeconomic-imbalance-procedure/scoreboard_en",
+        "hora": "2026-09-26T08:30:08Z",
+        "http": "200",
+        "bytes": 74493,
+        "sha256_do_registo": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+        "sha256_dos_bytes": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+        "sha256_da_copia_alojada": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+        "literais": {
+          "taxa-de-cambio-efectiva-real-2025": "thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries",
+          "desempenho-das-exportacoes-2025": "with a threshold of -3%"
+        },
+        "ocorrencias": {
+          "taxa-de-cambio-efectiva-real-2025": 1,
+          "desempenho-das-exportacoes-2025": 1
+        }
+      },
+      "comando": "o motor: indicators/out/l1-2026-09-26/pedidos.jsonl, o corpo ao lado e a cópia alojada no estudo 13, lidos por este guião",
+      "conhecido_positivo": {
+        "planta": "os mesmos literais procurados numa cópia com os dois valores trocados",
+        "esperado": {
+          "taxa-de-cambio-efectiva-real-2025": 0,
+          "desempenho-das-exportacoes-2025": 0
+        },
+        "visto": {
+          "taxa-de-cambio-efectiva-real-2025": 0,
+          "desempenho-das-exportacoes-2025": 0
+        },
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "comissao_hoje_confirma",
+      "valor": true,
+      "comando": "comissao_hoje: cada literal uma vez e os três resumos iguais",
+      "conhecido_positivo": {
+        "planta": "a mesma conta sobre a cópia trocada",
+        "esperado": false,
+        "visto": false,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "pedidos_da_correcao",
+      "valor": 7,
+      "comando": "o motor: indicators/out/l1-2026-09-26/pedidos.jsonl",
+      "conhecido_positivo": {
+        "planta": "uma linha a mais numa cópia",
+        "esperado": 8,
+        "visto": 8,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "pedidos_da_correcao_com_http_200",
+      "valor": 7,
+      "comando": "pedidos.jsonl da passagem, o campo «http» lido como número",
+      "conhecido_positivo": {
+        "planta": "um pedido com 404 numa cópia",
+        "esperado": 6,
+        "visto": 6,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "pedidos_da_correcao_de",
+      "valor": [
+        "2026-09-26T08:30:08Z",
+        "2026-09-26T08:30:14Z"
+      ],
+      "comando": "pedidos.jsonl da passagem, o primeiro e o último",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_da_correcao",
+      "valor": 7,
+      "comando": "origens-l1.py (sem argumentos), as chaves da passagem de correção",
+      "conhecido_positivo": {
+        "planta": "uma chave inventada junta à lista",
+        "esperado": 7,
+        "visto": 7,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "origens_da_correcao_nomes",
+      "valor": [
+        "eurostat-nama10-volumes",
+        "eurostat-glossario-inflacao",
+        "eurostat-sec2010-registo-liquido",
+        "eurostat-glossario-mediana",
+        "eurostat-glossario-rendimento-disponivel",
+        "eurostat-glossario-residente",
+        "eurostat-tipslm60-idade"
+      ],
+      "comando": "origens-l1.py",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "testemunhas_discordantes",
+      "valor": {
+        "taxa-de-cambio-efectiva-real-2025": {
+          "eurostat": {
+            "documento": "Real effective exchange rate - percentage changes, 42 trading partners",
+            "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+            "excerto": "The indicative thresholds are +/-5% for euro area and +/-11% for non-euro area countries.",
+            "limiar": "+/-5%",
+            "criado": "2012-10-22",
+            "selo": {
+              "motor": "indicators/out/l1-2026-09-24/eurostat-tipser10.json",
+              "campo": "extension.description",
+              "criacao": "extension.annotation, CREATED: 2012-10-22T16:27:34+0200",
+              "hora": "2026-09-24T06:29:21Z",
+              "cliente": "core.http.HttpClient.condicional",
+              "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691"
+            }
+          },
+          "comissao": {
+            "documento": "Scoreboard · Macroeconomic Imbalance Procedure",
+            "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+            "excerto": "real effective exchange rates (3-year percentage change) based on HICP/CPI deflators, relative to 41 other industrial countries, with thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries.",
+            "limiar": "-/+3%",
+            "lido": "2026-09-26",
+            "selo": {
+              "motor": "indicators/out/l1-2026-09-26/ce-painel-pdm-scoreboard.html",
+              "campo": "o texto da página, a lista «The headline indicators consist of the following 13 indicators and indicative thresholds»",
+              "hora": "2026-09-26T08:30:08Z",
+              "cliente": "core.http.HttpClient.condicional",
+              "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa"
+            }
+          },
+          "manda": "comissao"
+        },
+        "desempenho-das-exportacoes-2025": {
+          "eurostat": {
+            "documento": "Share of exports of advanced economies",
+            "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+            "excerto": "The indicative threshold is +3%.",
+            "limiar": "+3%",
+            "criado": "2014-11-13",
+            "selo": {
+              "motor": "indicators/out/l1-2026-09-24/eurostat-tipsbp60.json",
+              "campo": "extension.description",
+              "criacao": "extension.annotation, CREATED: 2014-11-13T19:19:51+0100",
+              "hora": "2026-09-24T06:29:22Z",
+              "cliente": "core.http.HttpClient.condicional",
+              "sha256": "67e385755812e07e6e4a72d4c68be13b3fccfd7237a7afac79115aec79d44ba9"
+            }
+          },
+          "comissao": {
+            "documento": "Scoreboard · Macroeconomic Imbalance Procedure",
+            "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+            "excerto": "export performance against advanced economies (3-year percentage change), with a threshold of -3%.",
+            "limiar": "-3%",
+            "lido": "2026-09-26",
+            "selo": {
+              "motor": "indicators/out/l1-2026-09-26/ce-painel-pdm-scoreboard.html",
+              "campo": "o texto da página, a lista «The headline indicators consist of the following 13 indicators and indicative thresholds»",
+              "hora": "2026-09-26T08:30:08Z",
+              "cliente": "core.http.HttpClient.condicional",
+              "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa"
+            }
+          },
+          "manda": "comissao"
+        }
+      },
+      "comando": "origens-l1.py (sem argumentos), as testemunhas lidas dos bytes selados no motor",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "termos_da_correcao",
+      "valor": [
+        {
+          "chave": "A18",
+          "medida": "pib-real-per-capita-2025",
+          "porque": "A leitura a frio (achado 7) achou «em termos reais» por explicar. A ficha de metadados que a resposta `tipsna40` nomeia diz que os volumes mostram a evolução dos agregados sem a inflação, a linha está em volumes encadeados, e o glossário do Eurostat diz que a inflação é a subida do nível geral dos preços: a leitura passa a dizer «descontada a subida dos preços».",
+          "trocas": [
+            {
+              "antes": "por habitante, em termos reais.'",
+              "depois": "por habitante, descontada a subida dos preços.'",
+              "vezes": 1
+            },
+            {
+              "antes": "per inhabitant, in real terms.'",
+              "depois": "per inhabitant, excluding the rise in prices.'",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-nama10-volumes",
+              "campo": "excerto",
+              "literal": "Volume figures show the development of aggregates excluding inflation.",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-glossario-inflacao",
+              "campo": "excerto",
+              "literal": "Inflation is an increase in the general price level of goods and services.",
+              "no_campo": true
+            },
+            {
+              "dono": "propria",
+              "campo": "unit",
+              "literal": "volumes encadeados",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A19",
+          "medida": "fluxo-de-credito-as-empresas-2025",
+          "porque": "A leitura a frio (achado 8) achou «em termos líquidos» por explicar. O Eurostat mede o montante líquido dos passivos contraídos no ano, e o SEC 2010 publicado pelo Eurostat (§5.23) define o registo líquido: os passivos contraídos descontados dos reembolsos. A leitura passa a dizer «descontado o que reembolsaram».",
+          "trocas": [
+            {
+              "antes": "'É quanto crédito as empresas contraíram num ano, em termos líquidos, fora as financeiras",
+              "depois": "'É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras",
+              "vezes": 1
+            },
+            {
+              "antes": "'It is how much credit companies took on in a year, net, excluding financial companies",
+              "depois": "'It is how much credit companies took on in a year, minus what they repaid, excluding financial companies",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-tipspc30-descricao",
+              "campo": "excerto",
+              "literal": "the net amount of liabilities",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-sec2010-registo-liquido",
+              "campo": "excerto",
+              "literal": "incurrences of liabilities are shown net of repayments of liabilities",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A20",
+          "medida": "fluxo-de-credito-as-familias-2025",
+          "porque": "A leitura a frio (achado 9) achou «em termos líquidos» por explicar, pela mesma razão do A19: o Eurostat mede o montante líquido dos passivos contraídos no ano, e o SEC 2010 (§5.23) define o líquido como os passivos contraídos descontados dos reembolsos.",
+          "trocas": [
+            {
+              "antes": "contraíram num ano, em termos líquidos, em percentagem",
+              "depois": "contraíram num ano, descontado o que reembolsaram, em percentagem",
+              "vezes": 1
+            },
+            {
+              "antes": "took on in a year, net, as a percentage",
+              "depois": "took on in a year, minus what they repaid, as a percentage",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-tipspc40-descricao",
+              "campo": "excerto",
+              "literal": "the net amount of liabilities",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-sec2010-registo-liquido",
+              "campo": "excerto",
+              "literal": "incurrences of liabilities are shown net of repayments of liabilities",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A21",
+          "medida": "risco-de-pobreza-ou-exclusao-2025",
+          "porque": "A leitura a frio (achado 10) achou «rendimento mediano» por explicar. O glossário do Eurostat diz que a mediana é o valor do meio, com metade acima e metade abaixo: a leitura ganha uma frase que o diz.",
+          "trocas": [
+            {
+              "antes": "; cada pessoa conta uma só vez.', SUBIU, MEDIA_UE]",
+              "depois": "; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.', SUBIU, MEDIA_UE]",
+              "vezes": 1
+            },
+            {
+              "antes": "; each person counts only once.', ROSE, EU_AVERAGE]",
+              "depois": "; each person counts only once. The median income is the one in the middle: half the population has more and half has less.', ROSE, EU_AVERAGE]",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-glossario-mediana",
+              "campo": "excerto",
+              "literal": "The median is the middle value in a group of numbers ranked in order of size.",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-glossario-mediana",
+              "campo": "excerto",
+              "literal": "50% of the scores are above and 50% are below.",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A22",
+          "medida": "criancas-em-creche-2025",
+          "porque": "A leitura a frio (achado 11) achou que «outro cuidado formal» só repetia o nome da categoria. A página do Eurostat que o bloco já tinha alojado diz o que o cuidado formal é (um programa planeado por entidades públicas e privadas reconhecidas) e o que fica fora dele (o cuidado dos avós, de outros familiares, de amigos ou vizinhos, e o de uma ama profissional): a leitura diz as duas coisas com as palavras dela. A página não dá exemplos como o jardim de infância, e a leitura não os dá.",
+          "trocas": [
+            {
+              "antes": "' anos que está numa creche ou noutro cuidado formal.'",
+              "depois": "' anos que está numa creche ou noutro cuidado formal: um programa planeado por entidades públicas ou privadas reconhecidas, e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional.'",
+              "vezes": 1
+            },
+            {
+              "antes": "' who are in a nursery or other formal childcare.'",
+              "depois": "' who are in a nursery or other formal childcare: a programme planned through public organisations or recognised private bodies, and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder.'",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-cuidado-formal",
+              "campo": "excerto",
+              "literal": "Formal childcare is a formal education programme that is institutionalized, intentional and planned through public organizations and recognized private bodies",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-cuidado-formal",
+              "campo": "excerto",
+              "literal": "care provided by grandparents, other household members (not parents), other relatives, friends or neighbours",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-cuidado-formal",
+              "campo": "excerto",
+              "literal": "Other types of childcare may include care that is provided by a professional child-minder",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A23",
+          "medida": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "porque": "A leitura a frio (achado 12) achou «rendimento disponível» por explicar. O glossário do Eurostat diz como se faz: somam-se os rendimentos do trabalho, dos investimentos e das prestações sociais, e descontam-se os impostos e as contribuições sociais pagos; e o glossário da sobrecarga diz que os custos e o rendimento contam líquidos dos apoios à habitação. A leitura ganha uma frase que diz as duas coisas.",
+          "trocas": [
+            {
+              "antes": "' % do rendimento disponível com a habitação.', SUBIU, MEDIA_UE]",
+              "depois": "' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, MEDIA_UE]",
+              "vezes": 1
+            },
+            {
+              "antes": "' % of its disposable income on housing.', ROSE, EU_AVERAGE]",
+              "depois": "' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, EU_AVERAGE]",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "taxes and social contributions that have been paid, are deducted from this sum",
+              "no_campo": true
+            },
+            {
+              "dono": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A24",
+          "medida": "sobrecarga-do-custo-da-habitacao-2025",
+          "porque": "A leitura a frio (achado 13) achou o mesmo «rendimento disponível» por explicar na sobrecarga de todos os regimes; a frase é a do A23, pelas mesmas origens.",
+          "trocas": [
+            {
+              "antes": "' % do rendimento disponível com a habitação.', SUBIU, ' Este total",
+              "depois": "' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, ' Este total",
+              "vezes": 1
+            },
+            {
+              "antes": "' % of its disposable income on housing.', ROSE, ' This total",
+              "depois": "' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, ' This total",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "taxes and social contributions that have been paid, are deducted from this sum",
+              "no_campo": true
+            },
+            {
+              "dono": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A25",
+          "medida": "formacao-bruta-de-capital-fixo-2025",
+          "porque": "A leitura a frio (achado 14) achou «produtores residentes» por explicar. O glossário do Eurostat da unidade institucional residente diz quem são as unidades de uma economia (as famílias, as empresas, as instituições sem fim lucrativo e o Estado), que é residente quem tem o centro de interesse económico no território do país, e que é a residência dos produtores que delimita a produção do país: a leitura diz quem são, e que produzem no país.",
+          "trocas": [
+            {
+              "antes": "pt: ['É o que os produtores residentes compraram num ano,",
+              "depois": "pt: ['É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano,",
+              "vezes": 1
+            },
+            {
+              "antes": "en: ['It is what resident producers acquired in a year,",
+              "depois": "en: ['It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year,",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-glossario-residente",
+              "campo": "excerto",
+              "literal": "households and individuals who make up a household; legal and social entities, such as corporations and quasi-corporations (e.g. branches of foreign direct investors), non-profit institutions, and the government of that economy",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-glossario-residente",
+              "campo": "excerto",
+              "literal": "resident because it has a centre of economic interest in the economic territory of a country",
+              "no_campo": true
+            },
+            {
+              "dono": "eurostat-glossario-residente",
+              "campo": "excerto",
+              "literal": "the residency status of producers determines the limits of domestic production",
+              "no_campo": true
+            }
+          ]
+        },
+        {
+          "chave": "A26",
+          "medida": "taxa-de-actividade-2025",
+          "porque": "A leitura a frio (achado 15) achou a população sem a idade que a fonte fixa. A descrição de `tipslm60` que o bloco já tinha selado diz «economically active population aged 15-64»: a leitura escreve os dois limites, com o literal na auditoria, como as outras idades. A pergunta da medida não muda (é do B2) e continua sem a idade.",
+          "trocas": [
+            {
+              "antes": "'É quanto mudou em três anos, em pontos percentuais, a parte da população que está ativa: a trabalhar ou à procura de trabalho.',",
+              "depois": "'É quanto mudou em três anos, em pontos percentuais, a parte da população dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos que está ativa: a trabalhar ou à procura de trabalho.',",
+              "vezes": 1
+            },
+            {
+              "antes": "'It is how much the share of the population that is active, working or looking for work, changed over three years, in percentage points.',",
+              "depois": "'It is how much the share of the population aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' that is active, working or looking for work, changed over three years, in percentage points.',",
+              "vezes": 1
+            }
+          ],
+          "literais": [
+            {
+              "dono": "eurostat-tipslm60-idade",
+              "campo": "excerto",
+              "literal": "the percentage of economically active population aged 15-64 on the total population of the same age",
+              "no_campo": true
+            }
+          ]
+        }
+      ],
+      "comando": "acertos-l1.json (A18 a A26), e cada literal procurado no campo que cita (ORIGENS_DAS_DEFINICOES ou a linha)",
+      "conhecido_positivo": {
+        "planta": "o primeiro literal com uma palavra trocada, procurado no mesmo campo",
+        "esperado": false,
+        "visto": false,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "termos_da_correcao_literais",
+      "valor": 22,
+      "comando": "acertos-l1.json (A18 a A26), os literais",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 22,
+        "visto": 22,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "termos_da_correcao_literais_no_campo",
+      "valor": 22,
+      "comando": "os literais dos acertos A18 a A26, procurados no campo que citam",
+      "conhecido_positivo": {
+        "planta": "o mesmo total",
+        "esperado": 22,
+        "visto": 22,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "acertos_da_correcao",
+      "valor": 9,
+      "comando": "acertos-l1.json, os acertos A18 a A26",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 9,
+        "visto": 9,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k9_testemunhas_discordantes_conferidas",
+      "valor": 2,
+      "comando": "node tests/cartao/cartao.mjs --prova --json, as contas «testemunhas_discordantes_*»",
+      "conhecido_positivo": {
+        "planta": "as cinco plantas da própria célula, abaixo",
+        "esperado": 5,
+        "visto": 5,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k9_testemunhas_discordantes_plantas",
+      "valor": 5,
+      "comando": "node tests/cartao/cartao.mjs --prova --json, as contas «testemunhas_discordantes_*»",
+      "conhecido_positivo": {
+        "planta": "cada planta é um conhecido-positivo",
+        "esperado": 5,
+        "visto": 5,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k9_testemunhas_discordantes_plantas_mordidas",
+      "valor": 5,
+      "comando": "node tests/cartao/cartao.mjs --prova --json, as contas «testemunhas_discordantes_*»",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k9_testemunhas_discordantes_plantas_nomes",
+      "valor": [
+        "a discordância sem a data de criação do conjunto",
+        "a discordância sem a data de leitura da Comissão",
+        "a discordância sem quem manda",
+        "a Comissão a dizer outro valor",
+        "a discordância escondida"
+      ],
+      "comando": "node tests/cartao/cartao.mjs --prova --json, as contas «testemunhas_discordantes_*»",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "k9_valores_de_referencia_comparados",
+      "valor": 15,
+      "comando": "node tests/cartao/cartao.mjs --prova --json, contas.valores_de_referencia_comparados",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "check_cartao_prova_erros",
+      "valor": 0,
+      "comando": "node tests/cartao/cartao.mjs --prova --json, a lista «erros»",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "check_cartao_prova_codigo",
+      "valor": 0,
+      "comando": "node tests/cartao/cartao.mjs --prova --json, o código do processo",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "achado6_ficheiros_json_na_pasta",
+      "valor": 15,
+      "comando": "git archive 6584df72 da pasta do bloco, os *.json",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 15,
+        "visto": 15,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "achado6_corrida_como_o_pacote",
+      "valor": {
+        "lidos": 15,
+        "conhecido_positivo": 987654322
+      },
+      "comando": "conferir-relatorio.py sobre a pasta de 6584df72, sem --json (como o pacote.sh a corre)",
+      "conhecido_positivo": {
+        "planta": "a mesma corrida sem o conferencia-relatorio.json na cópia",
+        "esperado": {
+          "lidos": 14,
+          "conhecido_positivo": 987654321
+        },
+        "visto": {
+          "lidos": 14,
+          "conhecido_positivo": 987654321
+        },
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "achado6_corrida_como_o_construtor",
+      "valor": {
+        "lidos": 14,
+        "conhecido_positivo": 987654321
+      },
+      "comando": "conferir-relatorio.py sobre a pasta de 6584df72, com --json para o conferencia-relatorio.json da própria pasta (como o construtor o correu)",
+      "conhecido_positivo": {
+        "planta": "a corrida exclui o ficheiro para onde escreve: lê um JSON a menos e não acha 987654321 em nenhum",
+        "esperado": {
+          "lidos": 14,
+          "conhecido_positivo": 987654321
+        },
+        "visto": {
+          "lidos": 14,
+          "conhecido_positivo": 987654321
+        },
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "creches_palavras_na_pagina_alojada",
+      "valor": {
+        "nurser": 0,
+        "crèche": 0,
+        "creche": 0,
+        "day-care": 0,
+        "kindergarten": 0,
+        "pre-school": 0
+      },
+      "comando": "o texto da página do motor indicators/out/l1-2026-09-24/eurostat-se-childcare-arrangements.html, procurado sem maiúsculas",
+      "conhecido_positivo": {
+        "planta": "a mesma procura pela expressão «Formal childcare», que a página define",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "creches_formal_childcare_na_pagina",
+      "valor": 23,
+      "comando": "o mesmo texto, procurado sem maiúsculas como as outras palavras",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": true,
+        "visto": true,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "ensaio_a_seco_do_sitio_codigo",
+      "valor": 0,
+      "comando": "node design/observatorio/leituras/ensaio-a-seco.mjs src/data/leituras-das-medidas.mjs",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "ensaio_a_seco_do_sitio_por_resolver",
+      "valor": 0,
+      "comando": "node design/observatorio/leituras/ensaio-a-seco.mjs src/data/leituras-das-medidas.mjs, a última linha",
+      "conhecido_positivo": {
+        "planta": "nenhuma",
+        "esperado": 0,
+        "visto": 0,
+        "mordeu": true
+      }
+    },
+    {
+      "nome": "ensaio_a_seco_do_sitio_cartoes_com_leitura",
+      "valor": 36,
+      "comando": "node design/observatorio/leituras/ensaio-a-seco.mjs src/data/leituras-das-medidas.mjs, a última linha",
+      "conhecido_positivo": {
+        "planta": "a mesma corrida sobre uma cópia sem a leitura do PIB por habitante",
+        "esperado": 35,
+        "visto": 35,
         "mordeu": true
       }
     }

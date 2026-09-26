@@ -1,10 +1,10 @@
 {
   "comando": "npm run typecheck",
   "codigo": 0,
-  "cabeca": "d831b453e82ad48df907a90b52e86c5f514073f4",
-  "motor_cabeca": "1e3b15c5e5e20d803a4ed8fbd3d141abcd569543",
-  "inicio": "2026-09-24T08:17:27.386172+00:00",
-  "fim": "2026-09-24T08:17:27.614244+00:00",
+  "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "motor_cabeca": "1d10b3fe413340c843babafd03700bcea8fcb08b",
+  "inicio": "2026-09-26T09:21:29.332489+00:00",
+  "fim": "2026-09-26T09:21:29.556839+00:00",
   "segundos": 0.2,
   "registo": {
     "sha256_bruto": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b",

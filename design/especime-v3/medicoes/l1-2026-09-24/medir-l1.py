@@ -419,7 +419,8 @@ testemunhas_lidas = json.loads(saida2)['testemunhas']
 com_selo = sorted(k for k, d in origens.items() if 'selo' in d)
 alojadas = sorted(k for k, d in origens.items() if 'alojada' in d)
 medida('origens_novas', conf['origens'], 'python3 design/especime-v3/medicoes/l1-2026-09-24/origens-l1.py --confere', 'nenhuma', conf['origens'], len(origens))
-medida('origens_conferidas', conf['conferidas'], 'origens-l1.py --confere', 'nenhuma: a planta do selo e a do sha256 vivem na K16', conf['origens'], conf['conferidas'])
+medida('origens_conferidas', conf['conferidas'], 'origens-l1.py --confere (as origens e, desde a passagem de correção, as testemunhas discordantes)', 'nenhuma: a planta do selo e a do sha256 vivem na K16, e as da testemunha na K9', conf['origens'] + conf.get('testemunhas', 0), conf['conferidas'])
+medida('testemunhas_conferidas_contra_o_motor', conf.get('testemunhas'), 'origens-l1.py --confere, as testemunhas relidas nos bytes selados', 'nenhuma', True, True)
 medida('origens_com_faltas', len(conf['faltas']), 'origens-l1.py --confere', 'nenhuma', 0, len(conf['faltas']))
 medida('origens_confere_codigo', cod, 'origens-l1.py --confere', 'nenhuma', 0, cod)
 medida('origens_com_selo_de_pedido', len(com_selo), 'origens-l1.py (as declarações com «selo»)', 'uma declaração sem selo numa cópia', len(com_selo) - 1,
@@ -607,6 +608,14 @@ medida('plantas_da_leitura_confirmadas', sum(1 for c in confirmadas if c['ramo_e
        sum(1 for c in confirmadas if c['ramo_e_o_antes']) - 1,
        sum(1 for c in confirmadas if c['ramo_e_o_antes']) - (1 if sha(bytes_do_ramo[primeira['id']] + b' ') != primeira['sha256_antes'] else 0))
 medida('plantas_da_leitura', len(pl['plantas']), CMD_PL, 'nenhuma', len(pl['plantas']), len(pl['plantas']))
+reproduzidas = sum(1 for c in confirmadas if c['ramo_com_a_troca_e_o_depois'])
+medida('plantas_da_leitura_reproduzidas', reproduzidas, CMD_PL + ' (a troca registada aplicada aos bytes do ramo)', 'a troca da primeira planta aplicada a um byte a mais',
+       reproduzidas - 1, reproduzidas - (1 if sha((bytes_do_ramo[primeira['id']] + b' ').replace(primeira['contexto_antes'].encode(), primeira['contexto_depois'].encode(), 1)) != primeira['sha256_depois'] else 0))
+leitura_f = (RAIZ / 'design/especime-v3/critica/LEITURA-l1-2026-09-26.md').read_text(encoding='utf-8')
+numeros_dos_achados = [int(x) for x in re.findall(r'^(\d+)\. \*\*', leitura_f, re.M)]
+medida('achados_da_leitura', len(numeros_dos_achados), 'as linhas «<n>. **» de design/especime-v3/critica/LEITURA-l1-2026-09-26.md', 'um achado a mais numa cópia',
+       len(numeros_dos_achados) + 1, len(re.findall(r'^(\d+)\. \*\*', leitura_f + '\n99. **plantado**\n', re.M)))
+medida('achados_da_leitura_numeros', numeros_dos_achados, 'a mesma leitura, os números dos achados pela ordem do ficheiro', 'nenhuma', True, numeros_dos_achados == sorted(numeros_dos_achados))
 
 # 12.2 · A página do painel da Comissão, lida hoje, e os pedidos da passagem.
 ok200 = lambda lista: sum(1 for x in lista if str(x.get('http')).strip() == '200')
@@ -703,13 +712,15 @@ with tempfile.TemporaryDirectory() as t:
         r = subprocess.run(['python3', 'scripts/leituras/conferir-relatorio.py', str(pasta_r / 'LEIA-ME.md'), str(pasta_r), *extra], cwd=RAIZ, capture_output=True, text=True)
         return {'lidos': num(r'ficheiros JSON lidos: (\d+)', r.stdout), 'conhecido_positivo': num(r'o número (\d+), ausente', r.stdout)}
     como_o_pacote = corrida()
-    como_o_construtor = corrida('--json', str(Path(t) / 'saida.json'))
+    # o construtor correu-o com --json para o conferencia-relatorio.json da própria pasta, e o conferidor exclui o ficheiro para onde escreve
+    como_o_construtor = corrida('--json', str(pasta_r / 'conferencia-relatorio.json'))
     (pasta_r / 'conferencia-relatorio.json').unlink()
     sem_o_ficheiro = corrida()
 medida('achado6_ficheiros_json_na_pasta', n_json, f'git archive {RECEBIDA} da pasta do bloco, os *.json', 'nenhuma', n_json, n_json)
 medida('achado6_corrida_como_o_pacote', como_o_pacote, f'conferir-relatorio.py sobre a pasta de {RECEBIDA}, sem --json (como o pacote.sh a corre)',
        'a mesma corrida sem o conferencia-relatorio.json na cópia', {'lidos': n_json - 1, 'conhecido_positivo': 987654321}, sem_o_ficheiro)
-medida('achado6_corrida_como_o_construtor', como_o_construtor, f'conferir-relatorio.py sobre a pasta de {RECEBIDA}, com --json para fora da pasta', 'nenhuma', True, True)
+medida('achado6_corrida_como_o_construtor', como_o_construtor, f'conferir-relatorio.py sobre a pasta de {RECEBIDA}, com --json para o conferencia-relatorio.json da própria pasta (como o construtor o correu)',
+       'a corrida exclui o ficheiro para onde escreve: lê um JSON a menos e não acha 987654321 em nenhum', {'lidos': n_json - 1, 'conhecido_positivo': 987654321}, como_o_construtor)
 
 # 12.7 · A página do Eurostat das creches, que o bloco já tinha alojado, não
 # nomeia a creche nem o jardim de infância: a leitura não os dá como exemplo.
@@ -719,7 +730,7 @@ if MOTOR is not None:
     procura = {k: len(re.findall(re.escape(k), tc, re.I)) for k in ('nurser', 'crèche', 'creche', 'day-care', 'kindergarten', 'pre-school')}
     medida('creches_palavras_na_pagina_alojada', procura, 'o texto da página do motor indicators/out/l1-2026-09-24/eurostat-se-childcare-arrangements.html, procurado sem maiúsculas',
            'a mesma procura pela expressão «Formal childcare», que a página define', True, len(re.findall('Formal childcare', tc)) > 0)
-    medida('creches_formal_childcare_na_pagina', len(re.findall('Formal childcare', tc)), 'o mesmo texto', 'nenhuma', True, True)
+    medida('creches_formal_childcare_na_pagina', len(re.findall('formal childcare', tc, re.I)), 'o mesmo texto, procurado sem maiúsculas como as outras palavras', 'nenhuma', True, True)
 
 # 12.8 · O ensaio a seco do lugar de direção, corrido sobre o ficheiro do sítio.
 ENSAIO = 'design/observatorio/leituras/ensaio-a-seco.mjs'
