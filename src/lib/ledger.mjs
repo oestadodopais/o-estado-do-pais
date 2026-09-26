@@ -2500,8 +2500,9 @@ export function validateLedger() {
     for (const campo of /** @type {const} */ (['access_date', 'reference_date'])) {
       const v = c[campo];
       if (v === null || v === undefined || v === POR_VERIFICAR) continue;
-      if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(String(v))) {
-        errors.push(`${onde} "${campo}" = "${v}": use AAAA, AAAA-MM, AAAA-MM-DD ou "${POR_VERIFICAR}".`);
+      const trimestre = campo === 'reference_date' && /^\d{4}-T[1-4]$/.test(String(v));
+      if (!trimestre && !/^\d{4}(-\d{2}(-\d{2})?)?$/.test(String(v))) {
+        errors.push(`${onde} "${campo}" = "${v}": use AAAA, AAAA-MM, AAAA-MM-DD${campo === 'reference_date' ? ' ou AAAA-T1 a AAAA-T4' : ''} ou "${POR_VERIFICAR}".`);
       }
     }
 
@@ -2541,7 +2542,10 @@ export function validateLedger() {
             `${onde} "published_at" é ${v} e hoje é ${hoje}. Uma fonte não publicou no futuro.`,
           );
         }
-        const ref = String(c.reference_date ?? '');
+        const periodo = String(c.reference_date ?? '');
+        const trimestre = /^(\d{4})-T([1-4])$/.exec(periodo);
+        // O início do trimestre serve só à conferência; não é um dia publicado.
+        const ref = trimestre ? `${trimestre[1]}-${String(Number(trimestre[2]) * 3 - 2).padStart(2, '0')}` : periodo;
         if (/^\d{4}-\d{2}(-\d{2})?$/.test(ref) && v.slice(0, ref.length) < ref) {
           errors.push(
             `${onde} "published_at" é ${v} e o período de referência é ${ref}. ` +

@@ -1,0 +1,49 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "beneficiarios-do-rsi-por-mil-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "24,22"
+unit: "por mil pessoas em idade ativa"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática"
+name_source: "IndicadorDsg"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática"
+  edition: "0013420, geocod=PT"
+  locator: "Dados[\"2024\"], geocod=PT"
+  kind: "serie"
+  url: "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013420&Dim1=S7A2024,S7A2023&Dim2=PT&lang=PT"
+access_date: "2026-09-26"
+published_at: "2025-10-06"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"24,22\", \"valor\" : \"24.22\" }"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "INE"
+
+study: "dominios-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] RP1. Coordenadas: 0013420, geocod=PT. Período publicado: 2024. Metainformação: rp1/004-ine-0013420-meta.json. Valor e objeto literal da API alojada no estudo. Licença: INE, CC BY 4.0. · Cruzado de ResearchHub content/13 Dominios · beneficiarios-do-rsi-por-mil-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

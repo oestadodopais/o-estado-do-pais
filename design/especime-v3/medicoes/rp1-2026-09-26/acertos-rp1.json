@@ -1,0 +1,426 @@
+{
+  "fonte": "design/observatorio/leituras/LEITURAS-rp1-2026-09-26.mjs",
+  "publicadas": [
+    "ipc-variacao-homologa",
+    "ipc-variacao-media-12-meses",
+    "ipc-alimentacao-variacao-homologa",
+    "ipc-sem-habitacao-variacao-media-12-meses",
+    "remuneracao-bruta-mensal-media",
+    "pensao-media-anual-2025",
+    "beneficiarios-do-rsi-por-mil-2024",
+    "linha-de-risco-de-pobreza-2025"
+  ],
+  "paradas": [
+    "ipc-energia-em-casa-variacao-homologa",
+    "ipc-combustiveis-variacao-homologa",
+    "ihpc-variacao-homologa",
+    "ipc-rendas-variacao-homologa",
+    "remuneracao-bruta-mensal-media-variacao-real"
+  ],
+  "acertos": [
+    {
+      "id": "ipc-variacao-media-12-meses",
+      "lang": "pt",
+      "caminho": [
+        2
+      ],
+      "antes": ", os preços no consumidor subiram ",
+      "depois": ", os preços no consumidor variaram ",
+      "porque": "A fonte publica uma variação, que pode ter qualquer sinal.",
+      "apoios": [
+        {
+          "origem": "rp1-ipc-media",
+          "campo": "excerto",
+          "literal": "A variação média dos últimos doze meses compara"
+        }
+      ]
+    },
+    {
+      "id": "ipc-variacao-media-12-meses",
+      "lang": "en",
+      "caminho": [
+        2
+      ],
+      "antes": ", consumer prices rose ",
+      "depois": ", consumer prices changed by ",
+      "porque": "A fonte publica uma variação, que pode ter qualquer sinal.",
+      "apoios": [
+        {
+          "origem": "rp1-ipc-media",
+          "campo": "excerto",
+          "literal": "A variação média dos últimos doze meses compara"
+        }
+      ]
+    },
+    {
+      "id": "ipc-sem-habitacao-variacao-media-12-meses",
+      "lang": "pt",
+      "caminho": [
+        2
+      ],
+      "antes": ", os preços no consumidor sem a habitação subiram ",
+      "depois": ", os preços no consumidor sem a habitação variaram ",
+      "porque": "A fonte publica uma variação, que pode ter qualquer sinal.",
+      "apoios": [
+        {
+          "origem": "rp1-ipc-media",
+          "campo": "excerto",
+          "literal": "A variação média dos últimos doze meses compara"
+        }
+      ]
+    },
+    {
+      "id": "ipc-sem-habitacao-variacao-media-12-meses",
+      "lang": "en",
+      "caminho": [
+        2
+      ],
+      "antes": ", consumer prices excluding housing rose ",
+      "depois": ", consumer prices excluding housing changed by ",
+      "porque": "A fonte publica uma variação, que pode ter qualquer sinal.",
+      "apoios": [
+        {
+          "origem": "rp1-ipc-media",
+          "campo": "excerto",
+          "literal": "A variação média dos últimos doze meses compara"
+        }
+      ]
+    },
+    {
+      "id": "ipc-sem-habitacao-variacao-media-12-meses",
+      "lang": "pt",
+      "caminho": [
+        4
+      ],
+      "antes": " face aos doze meses anteriores: é o número que serve de referência para a atualização das rendas no ano seguinte.",
+      "depois": " face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte.",
+      "porque": "A referência das rendas é o valor de agosto, não o de qualquer mês.",
+      "apoios": [
+        {
+          "origem": "rp1-rendas-referencia",
+          "campo": "excerto",
+          "literal": "variação média dos últimos doze meses do IPC sem habitação, referência para a atualização de rendas no próximo ano, fixou-se em 2,6% (2,56%) em agosto."
+        }
+      ]
+    },
+    {
+      "id": "ipc-sem-habitacao-variacao-media-12-meses",
+      "lang": "en",
+      "caminho": [
+        4
+      ],
+      "antes": " compared with the previous twelve months: that is the reference figure for updating rents in the following year.",
+      "depois": " compared with the previous twelve months. The August value is the reference figure for updating rents in the following year.",
+      "porque": "A referência das rendas é o valor de agosto, não o de qualquer mês.",
+      "apoios": [
+        {
+          "origem": "rp1-rendas-referencia",
+          "campo": "excerto",
+          "literal": "variação média dos últimos doze meses do IPC sem habitação, referência para a atualização de rendas no próximo ano, fixou-se em 2,6% (2,56%) em agosto."
+        }
+      ]
+    },
+    {
+      "id": "remuneracao-bruta-mensal-media",
+      "lang": "pt",
+      "caminho": [
+        3
+      ],
+      "antes": {
+        "claim": "proprio"
+      },
+      "depois": {
+        "claim": "proprio",
+        "sufixo": " euros por mês"
+      },
+      "porque": "A unidade precede a marca de provisório da própria linha.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "unit",
+          "literal": "€ por mês"
+        }
+      ]
+    },
+    {
+      "id": "remuneracao-bruta-mensal-media",
+      "lang": "pt",
+      "caminho": [
+        4
+      ],
+      "antes": " euros por mês, antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem.",
+      "depois": ", antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem.",
+      "porque": "A unidade passou para o sufixo selado do valor.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "unit",
+          "literal": "€ por mês"
+        }
+      ]
+    },
+    {
+      "id": "remuneracao-bruta-mensal-media",
+      "lang": "en",
+      "caminho": [
+        3
+      ],
+      "antes": {
+        "claim": "proprio"
+      },
+      "depois": {
+        "claim": "proprio",
+        "sufixo": " euros a month"
+      },
+      "porque": "A unidade precede a marca de provisório da própria linha.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "unit",
+          "literal": "€ por mês"
+        }
+      ]
+    },
+    {
+      "id": "remuneracao-bruta-mensal-media",
+      "lang": "en",
+      "caminho": [
+        4
+      ],
+      "antes": " euros a month, before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold.",
+      "depois": ", before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold.",
+      "porque": "A unidade passou para o sufixo selado do valor.",
+      "apoios": [
+        {
+          "linha": "propria",
+          "campo": "unit",
+          "literal": "€ por mês"
+        }
+      ]
+    },
+    {
+      "id": "pensao-media-anual-2025",
+      "lang": "pt",
+      "caminho": [
+        2
+      ],
+      "antes": " uma pensão da Segurança Social valeu em média ",
+      "depois": " o valor das pensões pagas pela Segurança Social foi, em média, de ",
+      "porque": "A fórmula divide pelo número de pensionistas, não pelo de pensões.",
+      "apoios": [
+        {
+          "origem": "rp1-pensoes-formula",
+          "campo": "excerto",
+          "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+        }
+      ]
+    },
+    {
+      "id": "pensao-media-anual-2025",
+      "lang": "pt",
+      "caminho": [
+        4
+      ],
+      "antes": " euros no ano inteiro, contando todas as pensões pagas, de velhice, de invalidez e de sobrevivência; é uma média entre pensões muito diferentes, e não a pensão de ninguém.",
+      "depois": " euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.",
+      "porque": "O denominador é o pensionista e o período é o ano; a fonte não sustenta a afirmação sobre a pensão de ninguém.",
+      "apoios": [
+        {
+          "origem": "rp1-pensoes-formula",
+          "campo": "excerto",
+          "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+        },
+        {
+          "origem": "rp1-pensoes-periodo",
+          "campo": "excerto",
+          "literal": "A partir de janeiro de 2017, de acordo com a nova metodologia estabelecida pelo Instituto de Informática I.P., o valor médio anual das pensões tem em conta as pensões pagas pela Segurança Social ao longo do ano."
+        }
+      ]
+    },
+    {
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lang": "pt",
+      "caminho": [
+        4
+      ],
+      "antes": " recebiam o rendimento social de inserção, o apoio do Estado a quem não tem rendimentos que cheguem para as necessidades mínimas.",
+      "depois": " recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.",
+      "porque": "O conceito publicado diz necessidades essenciais e inserção; não define neste excerto o teste aos rendimentos.",
+      "apoios": [
+        {
+          "origem": "rp1-rsi",
+          "campo": "excerto",
+          "literal": "que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária"
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "caminho": [
+        0
+      ],
+      "antes": "Em ",
+      "depois": "No inquérito de ",
+      "porque": "O período da linha é o ano do inquérito; os rendimentos são os do ano anterior.",
+      "apoios": [
+        {
+          "origem": "rp1-pobreza-periodo",
+          "campo": "excerto",
+          "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "caminho": [
+        4
+      ],
+      "antes": " euros por ano para viver, depois dos impostos e contando as prestações sociais: é a linha que o Eurostat traça a ",
+      "depois": " euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a ",
+      "porque": "A fonte situa o rendimento no ano anterior e desconta também as contribuições sociais.",
+      "apoios": [
+        {
+          "origem": "rp1-pobreza-periodo",
+          "campo": "excerto",
+          "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
+        },
+        {
+          "origem": "eurostat-glossario-rendimento-disponivel",
+          "campo": "excerto",
+          "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "caminho": [
+        6
+      ],
+      "antes": " % do rendimento mediano do país, o do meio, em que metade da população tem mais e metade tem menos.",
+      "depois": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos.",
+      "porque": "O Eurostat publica rendimento equivalente; a comparação nacional ajusta a composição das famílias.",
+      "apoios": [
+        {
+          "origem": "rp1-rendimento-equivalente",
+          "campo": "excerto",
+          "literal": "in order to reflect differences in a household's size and composition"
+        }
+      ]
+    },
+    {
+      "id": "pensao-media-anual-2025",
+      "lang": "en",
+      "caminho": [
+        2
+      ],
+      "antes": " a Social Security pension was worth on average ",
+      "depois": " the amount of pensions paid by Social Security was, on average, ",
+      "porque": "A fórmula divide pelo número de pensionistas, não pelo de pensões.",
+      "apoios": [
+        {
+          "origem": "rp1-pensoes-formula",
+          "campo": "excerto",
+          "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+        }
+      ]
+    },
+    {
+      "id": "pensao-media-anual-2025",
+      "lang": "en",
+      "caminho": [
+        4
+      ],
+      "antes": " euros over the whole year, counting all pensions paid, for old age, invalidity and survivors; it is an average of very different pensions, and nobody’s pension.",
+      "depois": " euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.",
+      "porque": "O denominador é o pensionista e o período é o ano; a fonte não sustenta a afirmação sobre a pensão de ninguém.",
+      "apoios": [
+        {
+          "origem": "rp1-pensoes-formula",
+          "campo": "excerto",
+          "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+        },
+        {
+          "origem": "rp1-pensoes-periodo",
+          "campo": "excerto",
+          "literal": "A partir de janeiro de 2017, de acordo com a nova metodologia estabelecida pelo Instituto de Informática I.P., o valor médio anual das pensões tem em conta as pensões pagas pela Segurança Social ao longo do ano."
+        }
+      ]
+    },
+    {
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lang": "en",
+      "caminho": [
+        4
+      ],
+      "antes": " received the social insertion income, the State’s support for those whose income does not cover minimum needs.",
+      "depois": " received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.",
+      "porque": "O conceito publicado diz necessidades essenciais e inserção; não define neste excerto o teste aos rendimentos.",
+      "apoios": [
+        {
+          "origem": "rp1-rsi",
+          "campo": "excerto",
+          "literal": "que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária"
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "caminho": [
+        0
+      ],
+      "antes": "In ",
+      "depois": "In the survey for ",
+      "porque": "O período da linha é o ano do inquérito; os rendimentos são os do ano anterior.",
+      "apoios": [
+        {
+          "origem": "rp1-pobreza-periodo",
+          "campo": "excerto",
+          "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "caminho": [
+        4
+      ],
+      "antes": " euros a year to live on, after taxes and including social benefits: that is the line Eurostat draws at ",
+      "depois": " euros a year to live on in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+      "porque": "A fonte situa o rendimento no ano anterior e desconta também as contribuições sociais.",
+      "apoios": [
+        {
+          "origem": "rp1-pobreza-periodo",
+          "campo": "excerto",
+          "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
+        },
+        {
+          "origem": "eurostat-glossario-rendimento-disponivel",
+          "campo": "excerto",
+          "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+        }
+      ]
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "caminho": [
+        6
+      ],
+      "antes": " % of the country’s median income, the one in the middle, where half the population has more and half has less.",
+      "depois": " % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less.",
+      "porque": "O Eurostat publica rendimento equivalente; a comparação nacional ajusta a composição das famílias.",
+      "apoios": [
+        {
+          "origem": "rp1-rendimento-equivalente",
+          "campo": "excerto",
+          "literal": "in order to reflect differences in a household's size and composition"
+        }
+      ]
+    }
+  ]
+}

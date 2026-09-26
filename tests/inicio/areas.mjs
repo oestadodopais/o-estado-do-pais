@@ -603,7 +603,7 @@ async function mediuOProvisorio() {
       const lido = await p.evaluate(() => {
         const marcados = [];
         for (const el of document.querySelectorAll('.claim-provisorio')) {
-          const caixa = el.closest('.claim');
+          const caixa = el.closest('.claim, .cartao-medida-quantidade');
           marcados.push({
             texto: el.textContent.trim(),
             id: caixa?.querySelector('[data-claim]')?.getAttribute('data-claim') ?? null,
@@ -622,7 +622,8 @@ async function mediuOProvisorio() {
         if (m.id) comPalavra.add(m.id);
       }
       for (const id of lido.citados) {
-        if (LINHAS.get(id)?.source_flag === 'p') daBandeira.add(id);
+        const l = LINHAS.get(id);
+        if (l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) daBandeira.add(id);
       }
     }
     const aMais = [...comPalavra].filter((id) => !daBandeira.has(id));

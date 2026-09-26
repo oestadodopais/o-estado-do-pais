@@ -44,7 +44,7 @@ document:
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
 published_at: null               # AAAA-MM-DD — quando a FONTE publicou (ver abaixo)
-reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refere
+reference_date: "2024"           # AAAA / AAAA-MM / AAAA-T1 a AAAA-T4 / AAAA-MM-DD, a que se refere
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "[a verificar]"

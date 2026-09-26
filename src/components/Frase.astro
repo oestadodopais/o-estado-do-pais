@@ -74,7 +74,7 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
         conferidas e não dispensas: o `check:formas` vai buscar a data ao campo
         da linha que ela nomeia, e o período ao ficheiro que a série nomeia. */}
     if (parte.data)
-      return <DataDaLinha id={parte.data.id} campo={parte.data.campo} valor={parte.data.valor} />;
+      return <DataDaLinha id={parte.data.id} campo={parte.data.campo} valor={parte.data.valor} lang={lang} />;
     {/* UMA CHAVE DA PROVA DENTRO DE UMA FRASE (bloco L1, 24.09.2026). A leitura
         do cartão das câmaras diz as suas contagens, e cada uma é a mesma chave
         que o cartão já rende, com a mesma porta comum: o portão de HTML reconta

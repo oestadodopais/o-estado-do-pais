@@ -54,6 +54,11 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  /* RP1: tradução de unidades publicadas pelo INE e pelo Eurostat. */
+  '€ por mês': '€ per month',
+  '€ por ano': '€ per year',
+  '€ por pensionista por ano': '€ per pensioner per year',
+  'por mil pessoas em idade ativa': 'per thousand people of working age',
   /* 645 linhas. A casa: `concelhos.mjs`, medida «divida», Euros → Euros. */
   euros: 'euros',
   /* 620 linhas. A casa: `concelhos.mjs`, medidas «populacao» e

@@ -4702,6 +4702,882 @@
         }
       ],
       "algarismos": []
+    },
+    {
+      "id": "ipc-variacao-homologa",
+      "origens": [
+        "rp1-ipc-homologa",
+        "rp1-ipc-metodo",
+        "rp1-ipc-media"
+      ],
+      "folhas": [
+        {
+          "pt": "os preços no consumidor estavam, em média,",
+          "en": "consumer prices were, on average,",
+          "partes": [
+            {
+              "pt": "os preços no consumidor estavam, em média,",
+              "en": "consumer prices were, on average,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Índice de preços no consumidor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.",
+          "en": " That is inflation: the INE measures it on a basket of goods and services that represents what households buy.",
+          "partes": [
+            {
+              "pt": " É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.",
+              "en": " That is inflation: the INE measures it on a basket of goods and services that represents what households buy.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
+                },
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "associado à taxa de inflação anual"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "ipc-variacao-media-12-meses",
+      "origens": [
+        "rp1-ipc-media"
+      ],
+      "folhas": [
+        {
+          "pt": "Na média dos doze meses até ",
+          "en": "On average over the twelve months to ",
+          "partes": [
+            {
+              "pt": "Na média dos doze meses até ",
+              "en": "On average over the twelve months to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": ", os preços no consumidor variaram ",
+          "en": ", consumer prices changed by ",
+          "partes": [
+            {
+              "pt": ", os preços no consumidor variaram ",
+              "en": ", consumer prices changed by ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Índice de preços no consumidor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.",
+          "en": " compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls.",
+          "partes": [
+            {
+              "pt": " face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.",
+              "en": " compared with the previous twelve months: that is the average inflation of a year, which smooths out each month’s rises and falls.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                },
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "Por ser uma média móvel, esta taxa de variação é menos sensível a alterações esporádicas nos preços."
+                },
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "associado à taxa de inflação anual"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "ipc-alimentacao-variacao-homologa",
+      "origens": [
+        "rp1-ipc-homologa"
+      ],
+      "folhas": [
+        {
+          "pt": "os preços dos alimentos e das bebidas não alcoólicas estavam",
+          "en": "the prices of food and non-alcoholic beverages were",
+          "partes": [
+            {
+              "pt": "os preços dos alimentos e das bebidas não alcoólicas estavam",
+              "en": "the prices of food and non-alcoholic beverages were",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Produtos alimentares e bebidas não alcoólicas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "ipc-sem-habitacao-variacao-media-12-meses",
+      "origens": [
+        "rp1-ipc-media",
+        "rp1-rendas-referencia"
+      ],
+      "folhas": [
+        {
+          "pt": "Na média dos doze meses até ",
+          "en": "On average over the twelve months to ",
+          "partes": [
+            {
+              "pt": "Na média dos doze meses até ",
+              "en": "On average over the twelve months to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": ", os preços no consumidor sem a habitação variaram ",
+          "en": ", consumer prices excluding housing changed by ",
+          "partes": [
+            {
+              "pt": ", os preços no consumidor sem a habitação variaram ",
+              "en": ", consumer prices excluding housing changed by ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Índice de preços no consumidor"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Total exceto habitação"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte.",
+          "en": " compared with the previous twelve months. The August value is the reference figure for updating rents in the following year.",
+          "partes": [
+            {
+              "pt": " face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte.",
+              "en": " compared with the previous twelve months. The August value is the reference figure for updating rents in the following year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                },
+                {
+                  "origem": "rp1-rendas-referencia",
+                  "campo": "excerto",
+                  "literal": "variação média dos últimos doze meses do IPC sem habitação, referência para a atualização de rendas no próximo ano, fixou-se em 2,6% (2,56%) em agosto."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "remuneracao-bruta-mensal-media",
+      "origens": [
+        "rp1-remuneracao-trabalhadores",
+        "rp1-remuneracao-bruta",
+        "rp1-remuneracao-subsidios"
+      ],
+      "folhas": [
+        {
+          "pt": "No ",
+          "en": "In the ",
+          "partes": [
+            {
+              "pt": "No ",
+              "en": "In the ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "pt": ", quem trabalha por conta de outrem ganhou em média ",
+          "en": ", employees earned on average ",
+          "partes": [
+            {
+              "pt": ", quem trabalha por conta de outrem ganhou em média ",
+              "en": ", employees earned on average ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-remuneracao-trabalhadores",
+                  "campo": "excerto",
+                  "literal": "universo de trabalhadores por conta de outrem"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Remuneração bruta mensal média por trabalhador"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": ", antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem.",
+          "en": ", before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold.",
+          "partes": [
+            {
+              "pt": ", antes de descontos e contando os subsídios, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem.",
+              "en": ", before deductions and including holiday and Christmas pay, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "€ por mês"
+                },
+                {
+                  "origem": "rp1-remuneracao-bruta",
+                  "campo": "excerto",
+                  "literal": "Remuneração ilíquida"
+                },
+                {
+                  "origem": "rp1-remuneracao-subsidios",
+                  "campo": "excerto",
+                  "literal": "Nas componentes não regulares (tais como “Prémios, bónus ou subsídios de carácter não mensal”, “Subsídio de férias” e “Subsídio de Natal”)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações"
+                },
+                {
+                  "origem": "rp1-remuneracao-trabalhadores",
+                  "campo": "excerto",
+                  "literal": "aqueles com mais de um emprego são contabilizados tantas vezes quanto o número de empregos que tenham"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "Mais do que no mesmo trimestre de há um ano.",
+          "en": "More than in the same quarter a year earlier.",
+          "partes": [
+            {
+              "pt": "Mais do que no mesmo trimestre de há um ano.",
+              "en": "More than in the same quarter a year earlier.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "Menos do que no mesmo trimestre de há um ano.",
+          "en": "Less than in the same quarter a year earlier.",
+          "partes": [
+            {
+              "pt": "Menos do que no mesmo trimestre de há um ano.",
+              "en": "Less than in the same quarter a year earlier.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "O mesmo que no mesmo trimestre de há um ano.",
+          "en": "The same as in the same quarter a year earlier.",
+          "partes": [
+            {
+              "pt": "O mesmo que no mesmo trimestre de há um ano.",
+              "en": "The same as in the same quarter a year earlier.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " euros por mês",
+          "en": " euros a month",
+          "partes": [
+            {
+              "pt": " euros por mês",
+              "en": " euros a month",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "€ por mês"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "pensao-media-anual-2025",
+      "origens": [
+        "rp1-pensoes-formula",
+        "rp1-pensoes-periodo",
+        "rp1-pensoes-tipos"
+      ],
+      "folhas": [
+        {
+          "pt": " o valor das pensões pagas pela Segurança Social foi, em média, de ",
+          "en": " the amount of pensions paid by Social Security was, on average, ",
+          "partes": [
+            {
+              "pt": " o valor das pensões pagas pela Segurança Social foi, em média, de ",
+              "en": " the amount of pensions paid by Social Security was, on average, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-pensoes-formula",
+                  "campo": "excerto",
+                  "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.",
+          "en": " euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.",
+          "partes": [
+            {
+              "pt": " euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência.",
+              "en": " euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-pensoes-formula",
+                  "campo": "excerto",
+                  "literal": "Valor das pensões da segurança social/ Pensionistas da segurança social"
+                },
+                {
+                  "origem": "rp1-pensoes-periodo",
+                  "campo": "excerto",
+                  "literal": "A partir de janeiro de 2017, de acordo com a nova metodologia estabelecida pelo Instituto de Informática I.P., o valor médio anual das pensões tem em conta as pensões pagas pela Segurança Social ao longo do ano."
+                },
+                {
+                  "origem": "rp1-pensoes-tipos",
+                  "campo": "excerto",
+                  "literal": "PENSÃO : Prestação pecuniária mensal de atribuição continuada por morte (sobrevivência), invalidez, doença profissional e velhice."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "€ por pensionista por ano"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "origens": [
+        "rp1-rsi"
+      ],
+      "folhas": [
+        {
+          "pt": ", por cada mil pessoas em idade ativa, ",
+          "en": ", for every thousand people of working age, ",
+          "partes": [
+            {
+              "pt": ", por cada mil pessoas em idade ativa, ",
+              "en": ", for every thousand people of working age, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-rsi",
+                  "campo": "excerto",
+                  "literal": "População média em idade ativa)*1000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.",
+          "en": " received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.",
+          "partes": [
+            {
+              "pt": " recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária.",
+              "en": " received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-rsi",
+                  "campo": "excerto",
+                  "literal": "RENDIMENTO SOCIAL DE INSERÇÃO : Prestação incluída no subsistema de solidariedade e num programa de inserção"
+                },
+                {
+                  "origem": "rp1-rsi",
+                  "campo": "excerto",
+                  "literal": "que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "Mais do que em",
+          "en": "More than in",
+          "partes": [
+            {
+              "pt": "Mais do que em",
+              "en": "More than in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "Menos do que em",
+          "en": "Fewer than in",
+          "partes": [
+            {
+              "pt": "Menos do que em",
+              "en": "Fewer than in",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "O mesmo que em",
+          "en": "The same as in",
+          "partes": [
+            {
+              "pt": "O mesmo que em",
+              "en": "The same as in",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "linha-de-risco-de-pobreza-2025",
+      "origens": [
+        "rp1-pobreza-periodo",
+        "rp1-pobreza",
+        "eurostat-glossario-rendimento-disponivel",
+        "rp1-rendimento-equivalente",
+        "eurostat-glossario-mediana"
+      ],
+      "folhas": [
+        {
+          "pt": "No inquérito de ",
+          "en": "In the survey for ",
+          "partes": [
+            {
+              "pt": "No inquérito de ",
+              "en": "In the survey for ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-pobreza-periodo",
+                  "campo": "excerto",
+                  "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": ", uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de ",
+          "en": ", a person living alone was at risk of poverty with less than ",
+          "partes": [
+            {
+              "pt": ", uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de ",
+              "en": ", a person living alone was at risk of poverty with less than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-pobreza",
+                  "campo": "excerto",
+                  "literal": "The at-risk-of-poverty rate is the share of people with an equivalised disposable income (after social transfer) below the at-risk-of-poverty threshold , which is set at 60 % of the national median equivalised disposable income after social transfers ."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "One adult"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a ",
+          "en": " euros a year to live on in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+          "partes": [
+            {
+              "pt": " euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a ",
+              "en": " euros a year to live on in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "€ por ano"
+                },
+                {
+                  "origem": "rp1-pobreza-periodo",
+                  "campo": "excerto",
+                  "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
+                },
+                {
+                  "origem": "eurostat-glossario-rendimento-disponivel",
+                  "campo": "excerto",
+                  "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+                },
+                {
+                  "origem": "eurostat-glossario-rendimento-disponivel",
+                  "campo": "excerto",
+                  "literal": "these include income from work, investment and social benefits"
+                },
+                {
+                  "origem": "rp1-pobreza",
+                  "campo": "excerto",
+                  "literal": "which is set at 60 % of the national"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos.",
+          "en": " % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less.",
+          "partes": [
+            {
+              "pt": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos.",
+              "en": " % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-pobreza",
+                  "campo": "excerto",
+                  "literal": "national median equivalised disposable income"
+                },
+                {
+                  "origem": "rp1-rendimento-equivalente",
+                  "campo": "excerto",
+                  "literal": "in order to reflect differences in a household's size and composition, the total (net) household income is divided by the number of 'equivalent adults’, using a standard (equivalence) scale: the modified OECD scale;"
+                },
+                {
+                  "origem": "eurostat-glossario-mediana",
+                  "campo": "excerto",
+                  "literal": "50% of the scores are above and 50% are below"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "nl": "60",
+          "apoios": [
+            {
+              "origem": "rp1-pobreza",
+              "campo": "excerto",
+              "literal": "which is set at 60 % of the national"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -187,8 +187,8 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       )}
       <p class="cartao-medida-valor">
         <span class="cartao-medida-quantidade">
-        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" />{' '}
-        <CampoDaLinha
+        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" plano>
+        <CampoDaLinha slot="sufixo"
           id={c.id}
           campo="unit"
           valor={unidade.texto}
@@ -196,6 +196,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           class="cartao-medida-unidade"
           lingua={unidade.lingua}
         />
+        </Claim>
         </span>
         {periodo && (
           <span class="cartao-medida-periodo">
@@ -241,8 +242,8 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           um valor e uma marca no pai imediato. */}
       <p class="cartao-medida-valor">
         <span class="cartao-medida-quantidade">
-        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" />{' '}
-        <CampoDaLinha
+        <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" plano>
+        <CampoDaLinha slot="sufixo"
           id={c.id}
           campo="unit"
           valor={unidade.texto}
@@ -250,6 +251,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           class="cartao-medida-unidade"
           lingua={unidade.lingua}
         />
+        </Claim>
         </span>
         {periodo && (
           <span class="cartao-medida-periodo">

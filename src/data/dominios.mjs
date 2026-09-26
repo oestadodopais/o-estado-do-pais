@@ -1,3 +1,4 @@
+import { DOMINIOS_RP1 } from './medidas-rp1.mjs';
 /**
  * OS DEZOITO DOMÍNIOS DA CARTA, E AS MEDIDAS DO PRIMEIRO.
  *
@@ -865,4 +866,5 @@ export const DOMINIO_DAS_MEDIDAS = /** @type {const} */ ({
 
   /* 17 · Justiça (carta §2 e §3). */
   'independencia-da-justica-2025': 'justica',
+  ...DOMINIOS_RP1,
 });

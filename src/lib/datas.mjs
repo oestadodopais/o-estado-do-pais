@@ -13,14 +13,26 @@
  * noutra ordem e com outro separador, e o elemento que a leva continua debaixo
  * do seu motivo declarado (`data-de-referencia`, `data-de-atualizacao`).
  *
- * O QUE NÃO É UMA DATA COMPLETA PASSA COMO ESTÁ, e é de propósito: um ano
- * («2024»), um mês («2025-12») ou um período escrito à mão não são desta regra,
- * e uma função que adivinhasse o que fazer com eles inventaria dias. A conversão
- * acontece só quando os três campos existem.
+ * RP1: o mês conserva mês e ano; o trimestre conserva trimestre e ano.
+ * A língua escolhe apenas a forma escrita. O ano isolado mantém-se e uma
+ * cadeia fora das formas declaradas passa intacta, sem adivinhar uma data.
  *
  * @param {unknown} valor
+ * @param {'pt'|'en'} [lang]
  */
-export function dataDaCasa(valor) {
+export function dataDaCasa(valor, lang = 'pt') {
+  const periodo = String(valor ?? '');
+  const mes = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(periodo);
+  if (mes) {
+    const meses = lang === 'en'
+      ? ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+      : ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    return `${meses[Number(mes[2]) - 1]}${lang === 'en' ? ' ' : ' de '}${mes[1]}`;
+  }
+  const trimestre = /^(\d{4})-T([1-4])$/.exec(periodo);
+  if (trimestre) return lang === 'en'
+    ? `${trimestre[2]}${['st', 'nd', 'rd', 'th'][Number(trimestre[2]) - 1]} quarter of ${trimestre[1]}`
+    : `${trimestre[2]}.º trimestre de ${trimestre[1]}`;
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(valor ?? ''));
   return m ? `${m[3]}.${m[2]}.${m[1]}` : String(valor ?? '');
 }
