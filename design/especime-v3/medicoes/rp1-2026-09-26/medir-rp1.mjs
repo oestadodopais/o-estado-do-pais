@@ -87,6 +87,8 @@ prova(l1&&Number(l1[1])===catraca.contagens.estudos&&Number(l1[2])===catraca.con
 const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1);
 const motorCabeca=execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim();
 const custo=json(path.join(aqui,'custo-rp1b.json'));
+const tentativa=path.join(aqui,'portoes/rp1b/tentativa-1/build');
+const tentativaBuild={codigo:Number(fs.readFileSync(tentativa+'.codigo','utf8')),cabeca:fs.readFileSync(tentativa+'.cabeca','utf8').trim(),log_sha256:sha(fs.readFileSync(tentativa+'.log'))};
 const resultado={base:git('rev-parse',base),cabeca_do_codigo:cabeca,cabeca_motor:motorCabeca,
  commits_sitio:git('log','--reverse','--format=%H %s',base+'..'+cabeca).split('\n'),
  commits_motor:execFileSync('git',['log','--reverse','--format=%H %s','6508b05..HEAD'],{cwd:motor,encoding:'utf8'}).trim().split('\n'),
@@ -96,7 +98,7 @@ const resultado={base:git('rev-parse',base),cabeca_do_codigo:cabeca,cabeca_motor
  metainformacao:{nome:meta.IndicadorNome,frequencia:meta.Periodic,unidade:meta.UnidadeMedida,escala:meta.Potencia10,ultimo:meta.UltimoPeriodo,classes},
  acertos,frases_resolvidas:Object.values(ensaio).flatMap(Object.values).length,origens:json(path.join(aqui,'origens-provadas.json')).length,
  k16:{...k16.contas,erros:k16.erros.length},k17:{...k17.contas,erros:k17.erros.length},leituras_rendidas:{...rendidas.contas,erros:rendidas.erros.length},
- plantas,plantas_portoes:plantasPortoes,m8,plantas_m8:plantasM8,i153:{ressalvas_medidas:ressalvas.length,espaco_visual_max_px:Math.max(...ressalvas.map(m=>m.espaco_px)),imagens_inspecionadas:inspecao.imagens.length},catraca_l1:catraca,portoes,
+ plantas,plantas_portoes:plantasPortoes,m8,plantas_m8:plantasM8,i153:{ressalvas_medidas:ressalvas.length,espaco_visual_max_px:Math.max(...ressalvas.map(m=>m.espaco_px)),imagens_inspecionadas:inspecao.imagens.length},catraca_l1:catraca,portoes,tentativa_build:tentativaBuild,
  capturas:{cabeca:cap.dist_construido_de,paginas:cap.resultados.length,recortes:cap.recortes.length,larguras:cap.larguras,falhas:cap.aceitacao.falhas.length},
  paginas,congeladas:{html:Object.keys(indice.copias).filter(p=>p.endsWith('.html')).length,css:Object.keys(indice.copias).filter(p=>p.endsWith('.css')).length,cabeca:indice.dist_construido_de},
  custo:{inicio:novos[0].timestamp_utc,fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(novos[0].timestamp_utc))/1000),sessao:custo,euros:null},

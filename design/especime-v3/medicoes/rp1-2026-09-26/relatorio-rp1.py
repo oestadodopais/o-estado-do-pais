@@ -58,6 +58,7 @@ linhas+=['','### Células, plantas e limites da conferência','',
  '| Portão | Código lido do ficheiro | Cabeça medida |','|---|---|---|']
 for nome,p in m['portoes'].items():linhas.append(f'| `{nome}` | {p["codigo"]}, de `portoes/rp1b/{nome}.codigo` | `{p["cabeca"]}` |')
 linhas+=['','Os comandos completos correram separadamente, uma vez nesta cabeça. As conferências de preparação estão em `portoes/rp1b/preparacao/`. Os portões da primeira entrega ficaram intactos.', '',
+ f'A construção anterior terminou a {m["tentativa_build"]["codigo"]} na cabeça `{m["tentativa_build"]["cabeca"]}` (`rp1b.tentativa_build`), porque faltava declarar a língua dos dois rótulos publicados pelas fontes, embora a dos títulos já estivesse declarada. As línguas foram declaradas em `LINGUA_DOS_ROTULOS`, sem mudar os rótulos nem os valores. A saída recusada ficou em `portoes/rp1b/tentativa-1/`.', '',
  '### Custo e trabalho pendente', '',
  f'A janela entre o primeiro pedido desta peça e o último portão durou {n(m["custo"]["segundos_da_janela"])} segundos (`rp1b.custo.segundos_da_janela`); não inclui a leitura inicial.', '']
 c=m['custo']['sessao']
