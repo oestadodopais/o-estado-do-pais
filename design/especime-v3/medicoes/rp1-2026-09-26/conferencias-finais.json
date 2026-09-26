@@ -1,0 +1,58 @@
+[
+  {
+    "comando": [
+      "node",
+      "scripts/check-lugar.mjs"
+    ],
+    "codigo": 0,
+    "log": "conferencia-final-0.log"
+  },
+  {
+    "comando": [
+      "node",
+      "tests/cartao/rp1.mjs",
+      "--registo"
+    ],
+    "codigo": 0,
+    "log": "conferencia-final-1.log"
+  },
+  {
+    "comando": [
+      "node",
+      "scripts/check-areas.mjs",
+      "--vermelhos"
+    ],
+    "codigo": 0,
+    "log": "conferencia-final-2.log"
+  },
+  {
+    "comando": [
+      "node",
+      "tests/pais/enquadramento-b2.mjs",
+      "--json",
+      "design/especime-v3/medicoes/rp1-2026-09-26/enquadramento-b2.json"
+    ],
+    "codigo": 0,
+    "log": "conferencia-final-3.log"
+  },
+  {
+    "comando": [
+      "node",
+      "tests/pais/portoes.mjs",
+      "--only",
+      "rp1-fonte-da-pergunta"
+    ],
+    "codigo": 0,
+    "log": "conferencia-final-4.log"
+  },
+  {
+    "comando": [
+      "node",
+      "tests/pais/portoes.mjs",
+      "--only",
+      "rp1-portas-extra"
+    ],
+    "codigo": 0,
+    "log": "conferencia-final-5.log"
+  }
+]

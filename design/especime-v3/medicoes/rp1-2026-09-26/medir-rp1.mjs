@@ -41,7 +41,7 @@ const paragens={
 };
 const ensaio=Object.fromEntries(Object.keys(DOMINIOS_RP1).map(id=>[id,{pt:textoDaLeitura(leituraDaMedida(id,'pt').pedacos,'pt'),en:textoDaLeitura(leituraDaMedida(id,'en').pedacos,'en')} ]));
 fs.writeFileSync(path.join(aqui,'leituras-seladas.json'),JSON.stringify(ensaio,null,2)+'\n');
-const medidas=Object.keys(previstas).map(id=>({id,estado:linhas.has(id)?'selada':'parada',...(linhas.has(id)?{valor:linhas.get(id).value,unidade:linhas.get(id).unit,periodo:linhas.get(id).reference_date,tema:DOMINIOS_RP1[id]}:paragens[id])}));
+const medidas=Object.keys(previstas).map(id=>({id,estado:linhas.has(id)?'selada':'parada',...(linhas.has(id)?{valor:linhas.get(id).value,unidade:linhas.get(id).unit,periodo:linhas.get(id).reference_date,ressalva:linhas.get(id).source_flag_note??null,tema:DOMINIOS_RP1[id]}:paragens[id])}));
 if(medidas.some(m=>m.estado==='parada'&&!m.motivo))throw Error('Paragem sem motivo');
 const antigos=git('ls-tree','-r','--name-only',base,'ledger/claims').split('\n').filter(Boolean);
 const alteradas=antigos.filter(p=>!fs.existsSync(path.join(raiz,p))||!execFileSync('git',['show',base+':'+p],{cwd:raiz}).equals(fs.readFileSync(path.join(raiz,p))));
@@ -59,28 +59,41 @@ for(const estado of ['antes','depois']){
  paginas[estado]={cabeca:indice.dist_construido_de,html:copias.filter(([p])=>p.endsWith('.html')).length,css:copias.filter(([p])=>p.endsWith('.css')).length};
  for(const [familia,p]of [['pais','index.html'],['temas','temas_index.html']]){
   const root=parse(fs.readFileSync(path.join(aqui,`paginas-${estado}`,p),'utf8'));
-  paginas[estado][familia+'_cartoes']=root.querySelectorAll('[data-cartao-medida]').length;
+  paginas[estado][familia+'_cartoes']=root.querySelectorAll('article.cartao-medida').length;
  }
 }
 const portoes={};
 for(const nome of ['build','verify','typecheck']){
  const p=path.join(aqui,'portoes',nome+'.codigo');const codigo=fs.readFileSync(p,'utf8').trim();
  if(!/^\d+$/.test(codigo))throw Error('Código inválido: '+nome);
- portoes[nome]={codigo:Number(codigo),cabeca:fs.readFileSync(path.join(aqui,'portoes',nome+'.cabeca'),'utf8').trim(),fim:fs.statSync(p).mtime.toISOString()};
+ portoes[nome]={codigo:Number(codigo),cabeca:fs.readFileSync(path.join(aqui,'portoes',nome+'.cabeca'),'utf8').trim(),fim:fs.readFileSync(path.join(aqui,'portoes',nome+'.fim'),'utf8').trim(),log_sha256:sha(fs.readFileSync(path.join(aqui,'portoes',nome+'.log')))};
 }
+if(Object.values(portoes).some(p=>p.cabeca!==portoes.build.cabeca))throw Error('Portões de cabeças diferentes');
+if(capturas.depois.cabeca!==portoes.build.cabeca)throw Error('Capturas de outra cabeça');
 const acertos=json(path.join(aqui,'acertos-provados.json'));
 const k16=auditarPerguntas(),k17=conferirAuditoriaDasLeituras(),rendidas=conferirLeiturasRendidas(path.join(raiz,'dist'));
 const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1);
+const catraca=json(path.join(aqui,'l1-rp1.json'));
+const logVerify=fs.readFileSync(path.join(aqui,'portoes/verify.log'),'utf8').replace(/\x1b\[[0-9;]*m/g,'');
+const l1=logVerify.match(/L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)/);
+if(!l1||Number(l1[1])!==catraca.contagens.estudos||Number(l1[2])!==catraca.contagens.estudos)throw Error('A composição e a catraca final não coincidem');
+const plantas=json(path.join(aqui,'plantas-rp1.json'));
+const plantasPortoes=['plantas-portoes-rp1.json','plantas-portoes-rp1-fonte-da-pergunta.json','plantas-portoes-rp1-portas-extra.json'].flatMap(p=>json(path.join(aqui,p)));
+if(plantasPortoes.some(p=>!p.passou))throw Error('Planta do portão sem mordida');
+const conferenciasFinais=json(path.join(aqui,'conferencias-finais.json'));
+if(conferenciasFinais.some(p=>p.codigo!==0))throw Error('Conferência final com falha');
+const commits=(cwd,base,cabeca='HEAD')=>execFileSync('git',['log','--reverse','--format=%H %s',base+'..'+cabeca],{cwd,encoding:'utf8'}).trim().split('\n');
 const resultado={
  base,cabeca_do_codigo:portoes.build.cabeca,cabeca_motor:execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim(),
+ commits_sitio:commits(raiz,base,portoes.build.cabeca),commits_motor:commits(motor,'1d10b3fe413340c843babafd03700bcea8fcb08b'),
  previstas:medidas.length,seladas:medidas.filter(m=>m.estado==='selada').length,paradas:medidas.filter(m=>m.estado==='parada').length,
  linhas_novas:linhas.size-antigos.length,linhas_antigas:antigos.length,linhas_antigas_alteradas:alteradas.length,
  pedidos:pedidos.length,pedidos_lidos:pedidos.filter(p=>p.estado==='lido').length,pedidos_recusados:pedidos.filter(p=>p.estado==='recusado').length,
  corpos_com_sha256_conferido:pedidos.length,bytes_dos_corpos:pedidos.reduce((n,p)=>n+p.bytes,0),classes_publicadas:classes,
- medidas,capturas,paginas,portoes,acertos,origens:json(path.join(aqui,'origens-provadas.json')).length,
- plantas:json(path.join(aqui,'plantas-rp1.json')),k16:{...k16.contas,erros:k16.erros.length},k17:{...k17.contas,erros:k17.erros.length},leituras_rendidas:{...rendidas.contas,erros:rendidas.erros.length},
+ medidas,capturas,paginas,portoes,acertos,conferencias_finais:conferenciasFinais,origens:json(path.join(aqui,'origens-provadas.json')).length,
+ plantas,plantas_total:plantas.plantas.length,plantas_portoes:plantasPortoes,catraca_l1:catraca,k16:{...k16.contas,erros:k16.erros.length},k17:{...k17.contas,erros:k17.erros.length},leituras_rendidas:{...rendidas.contas,erros:rendidas.erros.length},
  frases_novas_resolvidas:Object.values(ensaio).flatMap(x=>Object.values(x)).length,
- custo:{inicio_da_janela:pedidos[0].timestamp_utc,fim_da_janela:fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(pedidos[0].timestamp_utc))/1000),tokens:null,euros:null,limite:'Tempo entre o primeiro pedido registado e o último portão. Tokens e preço desta execução não expostos.'},
+ custo:{inicio_da_janela:pedidos[0].timestamp_utc,fim_da_janela:fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(pedidos[0].timestamp_utc))/1000),sessao:json(path.join(aqui,'custo.json')),euros:null,limite:'Tempo entre o primeiro pedido registado e o último portão. Tokens lidos do registo da sessão; preço não exposto.'},
 };
 if(k16.erros.length||k17.erros.length||rendidas.erros.length)throw Error([...k16.erros,...k17.erros,...rendidas.erros].join('\n'));
 fs.writeFileSync(path.join(aqui,'medidas.json'),JSON.stringify(resultado,null,2)+'\n');

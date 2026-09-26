@@ -1,0 +1,14 @@
+{
+  "registo": "rollout-2026-09-26T14-50-19-01a0ddfb-28f2-7522-ad5d-af8f210018d8.jsonl",
+  "inicio": "2026-09-26T13:50:20.136Z",
+  "modelo": "gpt-6-astra",
+  "hora": "2026-09-26T15:30:51.194Z",
+  "input_tokens": 34602194,
+  "cached_input_tokens": 33881600,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 134073,
+  "reasoning_output_tokens": 51252,
+  "total_tokens": 34736267,
+  "euros": null,
+  "limite": "Contagem cumulativa do registo desta sessão, incluindo entradas em cache; não é uma estimativa de faturação nem inclui sessões separadas de revisão automática."
+}

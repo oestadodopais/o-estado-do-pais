@@ -1,0 +1,117 @@
+GATE  reconcile_test         ok
+GATE  attributions_test      ok
+GATE  derivations_test       ok
+GATE  canaries_test          ok
+GATE  verifier_eval_test     ok
+GATE  editions_test          ok
+GATE  assertions_test        ok
+GATE  sweep_test             ok
+GATE  prose_test             ok
+GATE  describe_test          ok
+GATE  prereg_test            ok
+GATE  deps_test              ok
+GATE  reconferencias_test    ok
+GATE  excerpts_test          ok
+GATE  http_test              ok
+GATE  gate_test              ok
+GATE  export_site_rows_test  ok
+GATE  export_agenda_test     ok
+GATE  eyetext_test           ok
+GATE  export_records_test    ok
+GATE  voz_test               ok
+GATE  export_records_site_test ok
+GATE  concelhos_test         ok
+GATE  mapa_distritos_test    ok
+GATE  dominios_test          ok
+GATE  dominios_rp1_test      ok
+GATE  provas_test            ok
+GATE  portao_exportacao_test ok
+GATE  http_nome_test         ok
+GATE  proveniencia_das_fixtures_test ok
+GATE  deps                   ok
+GATE  fixtures               ok
+GATE  paridade               ok
+GATE  nomes exportados       ok
+GATE  livros declarados      ok (13 livro(s) em 520 JSON sob content/, 1 exceção(ões) escrita(s), 0 ilegível(eis))
+GATE  dataset agua-2026-07   ok
+GATE  dataset regional-2026-08 ok
+GATE  derivations Onde Está a Água — Technical Source ok
+GATE  derivations 03 Regional Economy ok
+GATE  derivations 04 Évora Public Money ok
+GATE  derivations 06 Évora Economy ok
+GATE  derivations 07 Évora Municipal Accounts ok
+GATE  derivations 08 Évora Mandates ok
+GATE  derivations 09 Évora Pelouros ok
+GATE  derivations 10 Housing  ok
+GATE  derivations 11 Seguranca Social ok
+GATE  derivations 12 Concelhos ok
+GATE  derivations 13 Dominios ok
+GATE  derivations 14 Évora 2027 ok
+GATE  prereg 10 Housing       ok
+GATE  prereg 12 Concelhos     ok
+GATE  prereg 13 Dominios      ok
+GATE  prereg debt: 9 study(ies) with no registration — 03 Regional Economy, Onde Está a Água — Technical Source, 04 Évora Public Money, 06 Évora Economy, 07 Évora Municipal Accounts, 08 Évora Mandates, 09 Évora Pelouros, 14 Évora 2027, 11 Seguranca Social
+GATE  (not back-fillable: a registration written after collection certifies nothing)
+GATE  regional-economy-2026  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  onde-esta-a-agua-pt    ok — orphans 457/457, misattrib 4/4, undeclared 7/7
+GATE  regional-economy-2026-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  regional-economy-2026-art ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026 ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025    ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt-art ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-pt  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros         ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-html    ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-pt      ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  housing-h1-survey      ok — orphans 0/0, misattrib 0/0, undeclared 83/83
+GATE  housing-sq3            ok — orphans 0/0, misattrib 0/0, undeclared 3/3
+GATE  housing-h3-accounting  ok — orphans 0/0, misattrib 0/0, undeclared 4/4
+GATE  housing-sq7            ok — orphans 0/0, misattrib 0/0, undeclared 7/7
+GATE  concelhos-p1           ok — orphans 17/17, misattrib 18/18, undeclared 10/10
+GATE  concelhos-p3           ok — orphans 29/29, misattrib 8/8, undeclared 0/0
+GATE  concelhos-p4           ok — orphans 37/37, misattrib 52/52, undeclared 1/1
+GATE  dominios-d1            ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-pt          ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-pt-html     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-en          ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-en-html     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  penalizacoes-2026-pt-html ok — orphans 0/0, misattrib 2/2, undeclared 0/0
+GATE  seguranca-social-relatorio ok — orphans 17/17, misattrib 88/88, undeclared 0/0
+GATE  editions regional-en-pt ok
+GATE  editions regional-pt-art ok
+GATE  editions evora-en-pt   ok
+GATE  editions evora-en-html ok
+GATE  editions evora-pt-html ok
+GATE  editions evora-economy-en-html ok
+GATE  editions evora-accounts-en-pt ok
+GATE  editions evora-accounts-en-html ok
+GATE  editions evora-accounts-pt-html ok
+GATE  editions evora-economy-en-pt ok
+GATE  editions evora-economy-pt-html ok
+GATE  editions evora-economy-pt-art ok
+GATE  editions evora-mandates-md-html ok
+GATE  editions evora-mandates-en-pt ok
+GATE  editions evora-mandates-pt-html ok
+GATE  editions evora-pelouros-md-html ok
+GATE  editions evora-pelouros-en-pt ok
+GATE  editions evora-pelouros-pt-html ok
+GATE  editions evora-2027-pt-md-html ok
+GATE  editions evora-2027-en-md-html ok
+GATE  editions evora-2027-pt-en ok
+GATE: PASS
+[rp1-2026-09-26 6508b05] RP1: conservar as etiquetas no excerto provisório
+ 3 files changed, 12 insertions(+), 5 deletions(-)

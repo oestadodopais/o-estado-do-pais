@@ -1,0 +1,30 @@
+
+  [32m✓ vermelho[0m A1 · a página pt:financas apagada[90m
+      falta a página /areas/financas.[0m
+  [32m✓ vermelho[0m A2 · o selo de "crescimento-da-despesa-liquida-2025" retirado de pt:financas[90m
+      /areas/financas: a medida "crescimento-da-despesa-liquida-2025" não tem selo para /livro-razao/crescimento-da-despesa-liquida-2025.[0m
+  [32m✓ vermelho[0m A2 · a porta legal apagada de pt:financas[90m
+      /areas/financas: tem 0 porta(s) legal(is) e devia ter uma. O diploma e os números do artigo dizem-se uma vez por página.[0m
+  [32m✓ vermelho[0m A3 · uma área "atlantida" declarada, sem peça nenhuma por baixo[90m
+      a área "atlantida" está declarada e não tem peça nenhuma. Ou alguma linha do livro-razão tem por assunto uma matéria dela, ou ela não existe no sítio.[0m
+  [32m✓ vermelho[0m A4 · a medida "crescimento-da-despesa-liquida-2025" posta também em "economia-e-coesao-territorial", com a mesma matéria[90m
+      a peça "medida:crescimento-da-despesa-liquida-2025" está em 2 áreas (financas, economia-e-coesao-territorial) e duas delas dão a mesma matéria como razão.[0m
+  [32m✓ vermelho[0m A4 · o trabalho "evora-quinze-anos-cinco-mandatos" na área "economia-e-coesao-territorial" sem as linhas que o puseram ali[90m
+      a peça "trabalho:evora-quinze-anos-cinco-mandatos" está na área "economia-e-coesao-territorial" sem dizer que linhas do livro-razão a puseram ali. Uma peça inteira numa área só se justifica pelas linhas dela que são daquela matéria.[0m
+  [32m✓ vermelho[0m A5 · a razão da primeira regra de "a política financeira do Estado" ("financas") apagada[90m
+      uma regra da matéria "a política financeira do Estado" ("financas") não escreve a razão: que assunto é o das linhas dela, e porque é que esta matéria o cobre.[0m
+  [32m✓ vermelho[0m A5 · o rótulo "a política financeira do Estado" trocado por uma paráfrase em pt:financas[90m
+      /areas/financas: o rótulo "as contas das autarquias" não é a matéria "a política financeira do Estado". O rótulo de um grupo são as palavras da lei, e não uma paráfrase.[0m
+  [32m✓ vermelho[0m A5 · a marca lang="pt-PT" tirada da referência legal de en:financas[90m
+      /en/areas/financas: a referência legal "Decreto-Lei n.º 87-A/2025 · Artigo 12.º, n.º 1" não vai marcada lang="pt-PT". É o nome de um diploma português, e nas duas edições.[0m
+  [32m✓ vermelho[0m A6 · o mapa da área "financas" com uma peça a mais do que a página rende[90m
+      /areas/financas: rende 3 peça(s) e o mapa dá 4.[0m
+  [32m✓ vermelho[0m A6 · o período anterior "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024" como cartão autónomo em pt:infraestruturas-e-habitacao[90m
+      /areas/infraestruturas-e-habitacao: rende 5 peça(s) e o mapa dá 4.[0m
+  [32m✓ vermelho[0m A6 · RP1: o trimestre homólogo "remuneracao-bruta-mensal-media-periodo-anterior" como cartão autónomo em pt:trabalho-solidariedade-e-seguranca-social[90m
+      /areas/trabalho-solidariedade-e-seguranca-social: rende 28 peça(s) e o mapa dá 27.[0m
+  [32m✓ vermelho[0m A7 · uma linha "mares-territoriais-2026" no livro-razão, sem matéria e sem exclusão[90m
+      a linha mares-territoriais-2026 (estudo "quadro-institucional") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+  [32m✓ vermelho[0m A7 · a linha "crescimento-da-despesa-liquida-2025" posta também na lista das que ficam fora[90m
+      a linha crescimento-da-despesa-liquida-2025: financas · a política financeira do Estado | fora · uma exclusão que se sobrepõe a uma matéria está coberta duas vezes.[0m
+

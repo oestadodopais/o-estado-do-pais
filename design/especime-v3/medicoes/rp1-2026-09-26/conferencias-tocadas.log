@@ -1,0 +1,149 @@
+
+COMANDO node tests/cartao/cartao.mjs --prova
+[90m  prova: 12 estragos plantados, 12 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; K13 sobre 4 medidas e 12 linhas com grupo etário, com a declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; K16 com a declaração em vigor a passar e dez plantas a morder, a primeira o defeito da leitura a frio[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7404[0m
+[90m    cartões                          5296 (2648 pt, 2648 en)[0m
+[90m    com nome                         5296 de 5296[0m
+[90m    com a frase do que medem         4426 de 5296 com frase[0m
+[90m    com régua                        818 de 5296 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             204[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          1 (a exceção da I92)[0m
+[90m    o marcador em português          4 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    334 (a porta é a do cartão)[0m
+[90m    valores de referência, as duas testemunhas comparadas  15[0m
+[90m      com a testemunha discordante declarada e inteira     2 (5 de 5 plantas a morder)[0m
+[90m    cartões com veredicto conferido (K15)                 90[0m
+[90m    cartões com a média europeia calada (K14)              6[0m
+[90m    medidas com nome oficial no recibo                    11[0m
+[90m    perguntas com cada pedaço apoiado (K16)               30 (80 pedaços, 102 apoios, 57 origens seladas no motor)[0m
+[90m    leituras dos cartões nacionais (K17)                 134 em 134 cartões (45 declarações auditadas, 1052 partes, 404 apoios, 92 origens, 262 ramos recontados, 12 de 12 plantas a morder)[0m
+[90m    medidas com grupo etário fixado na linha (K13)         4[0m
+[90m      linhas dessas medidas, todas conferidas               12[0m
+[90m      delas, na catraca declarada (I132, vazia)           0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[31m  1 defeito(s):[0m
+    K7 · /en/themes/ · linha-de-risco-de-pobreza-2025: o cartão escreve «threshold», que saiu do texto do leitor
+
+
+COMANDO node tests/cartao/rp1.mjs --registo
+RP1: PASS · {"reguas":5,"plantas":[{"nome":"régua de outra medida","mordeu":true},{"nome":"unidade diferente","mordeu":true},{"nome":"salto de mês calado","mordeu":true},{"nome":"período anterior ausente","mordeu":true},{"nome":"trimestre imediatamente anterior em vez do homólogo","mordeu":true},{"nome":"data recusada: reference_date=2026-T5","mordeu":true},{"nome":"data recusada: access_date=2026-T2","mordeu":true},{"nome":"data recusada: published_at=2026-03-31","mordeu":true},{"nome":"palavra de conteúdo em vez da ligação auditada","mordeu":true},{"nome":"sufixo traduzido não pode trocar a linha","mordeu":true},{"nome":"sufixo da unidade sem literal","mordeu":true},{"nome":"unidade depois do provisório, pt","mordeu":true},{"nome":"unidade depois do provisório, en","mordeu":true}],"datas":8,"paginas":2,"cartoes":16}
+
+COMANDO node scripts/check-formas.mjs
+[32m  formas ✓[0m[90m 2 páginas de domínio · 6 desenhos (mapa-por-concelho 4 · barra-concelho-pais 2) · 25854 datas de linha conferidas · 20 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s)[0m
+
+COMANDO node scripts/check-lingua.mjs
+
+[31m  PORTÃO DA LÍNGUA · 8 problema(s)
+[0m
+[31m    · [0ma edição «0013420, geocod=PT» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «0014663, geocod=PT, dim_3=01» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «0014666, geocod=PT, dim_3=001» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «0014663, geocod=PT, dim_3=T» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «0014666, geocod=PT, dim_3=T» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «ilc_li01, freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «0014532, geocod=PT, dim_3=T» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0ma edição «0014751, geocod=PT, dim_3=T, dim_4=T» (2 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+
+
+COMANDO node scripts/check-lingua.mjs
+
+[32m  língua ✓ [0m41 unidade(s) do livro-razão: 39 traduzida(s), 2 em português com razão escrita · 2545 localizador(es), todos dentro de documento português · 80 título(s) de documento com língua declarada (42 pt, 38 en) · 26 rótulo(s) da fonte com língua declarada (20 pt, 6 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 76 edição(ões) com língua declarada (20 pt, 0 en, 56 sem língua)
+[90m        7386 página(s) lidas · unidades em «en»: 8688 (8679 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6700 de 13400 rendidos · rótulos da fonte com marca de língua: 5583 de 11166 rendidos · organismos rendidos: 16008 (8004 de língua contrária: 7668 em «en» e 336 em «pt», 8004 com a marca certa) · edições rendidas: 10668 (3778 de língua contrária: 3778 em «en» e 0 em «pt», 3778 com a marca certa, 3112 sem língua nenhuma e sem marca) · localizadores em «en»: 2545 com marca · leis em «en»: 943 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 110 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7386 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[90m        3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
+
+
+COMANDO node scripts/check-voz.mjs
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+[31m  PORTÃO DA VOZ · 38 problema(s)
+[0m
+[31m    · [0m/en/ledger: «data-nome="projeto"» sobre «At-risk-of-poverty threshold» · o texto marcado não é o nome da linha "linha-de-risco-de-pobreza-2024" nesta edição (src/data/projeto.mjs diz «At-risk-of-poverty line»). Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/ledger: «data-nome="projeto"» sobre «At-risk-of-poverty threshold» · o texto marcado não é o nome da linha "linha-de-risco-de-pobreza-2025" nesta edição (src/data/projeto.mjs diz «At-risk-of-poverty line»). Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/ledger/linha-de-risco-de-pobreza-2024: «data-nome="projeto"» sobre «At-risk-of-poverty threshold» · o texto marcado não é o nome da linha "linha-de-risco-de-pobreza-2024" nesta edição (src/data/projeto.mjs diz «At-risk-of-poverty line»). Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/ledger/linha-de-risco-de-pobreza-2025: «data-nome="projeto"» sobre «At-risk-of-poverty threshold» · o texto marcado não é o nome da linha "linha-de-risco-de-pobreza-2025" nesta edição (src/data/projeto.mjs diz «At-risk-of-poverty line»). Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0m/en/themes: «data-nome="projeto"» sobre «At-risk-of-poverty threshold» · o texto marcado não é o nome da linha "linha-de-risco-de-pobreza-2025" nesta edição (src/data/projeto.mjs diz «At-risk-of-poverty line»). Só o nome de uma entrada de um ficheiro de dados com fonte declarada pode levar esta marca.
+[31m    · [0mbloco por classificar em /: «Em , por cada mil pessoas em idade ativa, recebiam o rendimento social de inserção, um apoio da Segurança Social para satisfazer necessidades essenciais e favorecer a inserção laboral, social e comunitária. Menos do que em .»
+[31m    · [0mbloco por classificar em /: «Em o valor das pensões pagas pela Segurança Social foi, em média, de euros por pensionista no ano inteiro, contando as pensões pagas de velhice, de invalidez e de sobrevivência. Subiu face a .»
+[31m    · [0mbloco por classificar em /: «Na média dos doze meses até , os preços no consumidor sem a habitação variaram % face aos doze meses anteriores. O valor de agosto serve de referência para a atualização das rendas no ano seguinte. A variação é maior do que a do mês anterior.»
+[31m    · [0mbloco por classificar em /: «Qual é o valor anual médio das pensões pagas pela Segurança Social por pensionista?»
+[31m    · [0mbloco por classificar em /: «Quantas pessoas recebem o rendimento social de inserção por cada mil pessoas em idade ativa?»
+[31m    · [0mbloco por classificar em /: «Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses?»
+[31m    · [0mbloco por classificar em /en: «How many people receive social insertion income for every thousand people of working age?»
+[31m    · [0mbloco por classificar em /en: «How much has the average level of consumer prices excluding housing changed over the last twelve months?»
+[31m    · [0mbloco por classificar em /en: «In , for every thousand people of working age, received social insertion income, a Social Security benefit to meet essential needs and support integration into employment, society and the community. Fewer than in .»
+[31m    · [0mbloco por classificar em /en: «In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, counting old-age, invalidity and survivors’ pensions paid. Up from .»
+[31m    · [0mbloco por classificar em /en: «On average over the twelve months to , consumer prices excluding housing changed by % compared with the previous twelve months. The August value is the reference figure for updating rents in the following year. The change is larger than the previous month’s.»
+[31m    · [0mbloco por classificar em /en: «What is the average annual amount of pensions paid by Social Security per pensioner?»
+[31m    · [0mbloco por classificar em /en/ledger: «3000 claims · 330 of 3000 calculated · 2767 of 3000 municipality rows»
+[31m    · [0mbloco por classificar em /en/themes: «Below what annual income is a person living alone at risk of poverty?»
+[31m    · [0mbloco por classificar em /en/themes: «How many people receive social insertion income for every thousand people of working age?»
+[31m    · [0mbloco por classificar em /en/themes: «How much do employees receive per month, on average and before deductions?»
+[31m    · [0mbloco por classificar em /en/themes: «How much has the average level of consumer prices changed over the last twelve months compared with the previous twelve months?»
+[31m    · [0mbloco por classificar em /en/themes: «How much has the average level of consumer prices excluding housing changed over the last twelve months?»
+[31m    · [0mbloco por classificar em /en/themes: «How much have consumer prices changed since the same month a year earlier?»
+[31m    · [0mbloco por classificar em /en/themes: «How much have food and non-alcoholic beverage prices changed since the same month a year earlier?»
+[31m    · [0mbloco por classificar em /en/themes: «What is the average annual amount of pensions paid by Social Security per pensioner?»
+[31m    · [0mbloco por classificar em /livro-razao: «3000 afirmações · 330 de 3000 calculadas · 2767 de 3000 linhas de concelhos»
+[31m    · [0mbloco por classificar em /temas: «Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?»
+[31m    · [0mbloco por classificar em /temas: «Qual é o valor anual médio das pensões pagas pela Segurança Social por pensionista?»
+[31m    · [0mbloco por classificar em /temas: «Quantas pessoas recebem o rendimento social de inserção por cada mil pessoas em idade ativa?»
+[31m    · [0mbloco por classificar em /temas: «Quanto mudaram os preços dos alimentos e das bebidas não alcoólicas face ao mesmo mês do ano anterior?»
+[31m    · [0mbloco por classificar em /temas: «Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior?»
+[31m    · [0mbloco por classificar em /temas: «Quanto mudou o nível médio dos preços no consumidor nos últimos doze meses face aos doze meses anteriores?»
+[31m    · [0mbloco por classificar em /temas: «Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses?»
+[31m    · [0mbloco por classificar em /temas: «Quanto recebe por mês, em média e antes de descontos, quem trabalha por conta de outrem?»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3207: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «2984 afirmações · 330 de 2984 calculadas · 2767 de 2984 linhas de concelhos»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:3208: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «2984 claims · 330 of 2984 calculated · 2767 of 2984 municipality rows»
+[31m    · [0mdesign/especime-v3/INVENTARIO-FRASES.md:240: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+      razão da retirada: o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro
+      «live»
+
+
+COMANDO node scripts/check-areas.mjs
+
+  [32m✓[0m A1 · cada área com peças tem página, e nenhuma outra tem
+  [32m✓[0m A2 · a porta de cada peça abre, cada medida vai com selo, e a porta legal abre
+  [32m✓[0m A3 · nenhuma área vazia, no mapa nem na página
+  [32m✓[0m A4 · uma peça em duas áreas traz a razão de cada uma
+  [32m✓[0m A5 · os nomes, e cada matéria com artigo, transcrição e razão
+  [32m✓[0m A6 · a contagem de cada área, de três pontos de observação
+  [31m✗[0m A7 · cada linha do livro-razão coberta uma vez, e só uma
+      [31ma linha beneficiarios-do-rsi-por-mil-2023 (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha beneficiarios-do-rsi-por-mil-2024 (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha ipc-alimentacao-variacao-homologa-periodo-anterior (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha ipc-alimentacao-variacao-homologa (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha ipc-sem-habitacao-variacao-media-12-meses (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha ipc-variacao-homologa-periodo-anterior (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31ma linha ipc-variacao-homologa (estudo "dominios-2026") não é coberta por matéria nenhuma nem está na lista das que ficam fora. Uma linha nova precisa de um assunto declarado, não de um silêncio.[0m
+      [31m… e mais 8 linha(s) sem assunto declarado.[0m
+[90m
+  áreas · 9 declarada(s), 9 com peças · 18 página(s) de área construída(s)
+      financas · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      economia-e-coesao-territorial · 97 peça(s): 8 trabalho(s), 1 conjunto(s), 88 medida(s)
+      infraestruturas-e-habitacao · 4 peça(s): 0 trabalho(s), 0 conjunto(s), 4 medida(s)
+      justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)
+      educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+      trabalho-solidariedade-e-seguranca-social · 23 peça(s): 2 trabalho(s), 1 conjunto(s), 20 medida(s)
+      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)
+[0m

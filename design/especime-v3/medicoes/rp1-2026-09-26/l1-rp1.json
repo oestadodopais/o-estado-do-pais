@@ -1,7 +1,7 @@
 {
   "referencia": "design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json",
   "referencia_cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-  "dist_construido_de": "83fb702cff2ff297ea2c9024f8a854d2b56f287e",
+  "dist_construido_de": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
   "contagens": {
     "estudos": 2323,
     "antes": 2291,
@@ -64,12 +64,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
               "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+              "texto": "INE · conceito e fórmula dos beneficiários do rendimento social de inserção",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -158,12 +164,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -252,12 +264,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -346,12 +364,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -440,12 +464,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -628,12 +658,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
               "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+              "texto": "INE · metainformação do valor médio das pensões",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -719,7 +755,7 @@
     {
       "url": "/en/ledger/remuneracao-bruta-mensal-media",
       "familia": "linha",
-      "destinos": 2,
+      "destinos": 3,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT": {
           "vezes": 3,
@@ -740,6 +776,23 @@
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
               "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
               "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "https://smi.ine.pt/UploadFile/Download/2576": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "https://smi.ine.pt/UploadFile/Download/2576",
+              "texto": "INE · documento metodológico da remuneração bruta mensal média",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://smi.ine.pt/UploadFile/Download/2576",
+              "texto": "INE · conceito de remuneração bruta",
+              "classe": "lig def-origem-doc",
               "cartao": null
             }
           ]
@@ -816,12 +869,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
               "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+              "texto": "INE · conceito e fórmula dos beneficiários do rendimento social de inserção",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -910,12 +969,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -1004,12 +1069,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -1098,12 +1169,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -1192,12 +1269,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
               "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+              "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -1380,12 +1463,18 @@
       "destinos": 2,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT": {
-          "vezes": 3,
+          "vezes": 4,
           "ancoras": [
             {
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
               "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
               "classe": "ligacao-externa",
+              "cartao": null
+            },
+            {
+              "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+              "texto": "INE · metainformação do valor médio das pensões",
+              "classe": "lig def-origem-doc",
               "cartao": null
             },
             {
@@ -1471,7 +1560,7 @@
     {
       "url": "/livro-razao/remuneracao-bruta-mensal-media",
       "familia": "linha",
-      "destinos": 2,
+      "destinos": 3,
       "repetidos": {
         "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT": {
           "vezes": 3,
@@ -1492,6 +1581,23 @@
               "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
               "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
               "classe": "ligacao-externa",
+              "cartao": null
+            }
+          ]
+        },
+        "https://smi.ine.pt/UploadFile/Download/2576": {
+          "vezes": 2,
+          "ancoras": [
+            {
+              "href": "https://smi.ine.pt/UploadFile/Download/2576",
+              "texto": "INE · documento metodológico da remuneração bruta mensal média",
+              "classe": "lig def-origem-doc",
+              "cartao": null
+            },
+            {
+              "href": "https://smi.ine.pt/UploadFile/Download/2576",
+              "texto": "INE · conceito de remuneração bruta",
+              "classe": "lig def-origem-doc",
               "cartao": null
             }
           ]

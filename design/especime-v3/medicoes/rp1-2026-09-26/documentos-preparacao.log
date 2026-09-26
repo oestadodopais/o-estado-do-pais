@@ -1,0 +1,30 @@
+
+> o-estado-do-pais@0.1.0 check:documentos
+> node scripts/check-documentos.mjs
+
+
+[90m  portão dos documentos · 18 edição(ões) no manifesto · 18 em disco[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m  registos de conteúdo · 10 atravessado(s) · D5 correu em 9 e não corre em 1[0m
+[90m    · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate[0m
+
+  [32m✓[0m cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+

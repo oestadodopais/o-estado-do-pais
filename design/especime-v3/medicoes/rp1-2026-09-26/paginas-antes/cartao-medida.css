@@ -1,0 +1,197 @@
+/* ---------------------------------------------------------------------------
+ * O CARTÃO DE UMA MEDIDA · a folha (bloco P2, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * Cinco coisas numa pilha, pela ordem em que se leem: o nome, o valor com a
+ * unidade e o período, a régua e a pergunta. A marca da fonte
+ * (que vive dentro da linha do valor, ao lado dele, porque é lá que o portão a
+ * confere).
+ *
+ * UMA FOLHA PRÓPRIA, E É A LIÇÃO DE 15.09.2026 (§1.108, decisão 2). `.livro-item`
+ * estava escrito em duas folhas com a mesma especificidade, e quem decidia era a
+ * ordem do empacotador, que não está escrita em lado nenhum: a coluna do valor
+ * mudou de 72 para 176 px em dezoito páginas sem que ninguém o tivesse pedido. As
+ * regras do cartão vivem aqui, numa declaração só, e a página que o rende carrega
+ * esta folha.
+ *
+ * A GRELHA É A MESMA EM TODAS AS LARGURAS. O §1, item 6, do brief pede «um só
+ * gabarito para todos os cartões: o número, o título, a linha do estado, a
+ * unidade, o pé, alinhados na mesma grelha em todas as larguras». Aqui a ordem é
+ * a do documento e a grelha é uma coluna: um cartão de uma página de área é uma
+ * entrada de uma lista vertical, e a pilha alinha-se sozinha à esquerda, sem
+ * linhas de base a saltar de cartão para cartão.
+ * ------------------------------------------------------------------------- */
+
+.cartao-medida {
+  display: grid;
+  gap: 6px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * A LINHA DO LIVRO-RAZÃO COM A SUA ARITMÉTICA (achado 3, 15.09.2026)
+ * ---------------------------------------------------------------------------
+ * Uma linha sem nome em degrau nenhum não se rende como cartão: rende-se como
+ * o que ela é, uma linha do livro-razão, com o valor e a conta que a explica.
+ * A caixa é a mesma do cartão, para que uma lista não salte de altura entre
+ * uma coisa e a outra; o que muda é o que está lá dentro. */
+.linha-sem-nome {
+  display: grid;
+  gap: 6px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  min-width: 0;
+}
+
+/* A CONTA, POR PALAVRAS. Tem a forma da frase do cartão e o cinzento da prosa
+   de aparelho, porque é o que ela é: a aritmética que a linha declara, e não
+   uma frase que a casa escreveu sobre a medida. */
+.linha-sem-nome-conta {
+  margin: 0;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* O NOME ENCABEÇA, e é a primeira coisa que se lê. Compõe-se como o nome de uma
+   entrada do índice do livro-razão (o mesmo tipo de prosa, o mesmo corpo mais
+   dois pontos), porque é a mesma coisa noutra superfície, e um nome que mudasse
+   de forma ao mudar de página era o leitor a aprender duas vezes.
+
+   A LINHA DERIVADA LEVA O MESMO NOME E A MESMA COMPOSIÇÃO (bloco P3,
+   16.09.2026): é a mesma coisa na mesma altura da caixa, e dar-lhe outra forma
+   era dizer ao leitor que o nome de uma linha derivada é outra espécie de nome.
+   Não acrescenta largura nenhuma: é o mesmo bloco da mesma grelha. */
+.cartao-medida-nome,
+.linha-sem-nome-nome {
+  display: block;
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* O VALOR, A UNIDADE E O PERÍODO, NUMA LINHA. `flex-wrap` porque há unidades de
+   cinco palavras («% do stock no final do período anterior»): a linha parte
+   entre os três grupos e nunca a meio de um. `align-items: baseline` põe o
+   número grande e as duas cadeias pequenas na mesma linha de base, que é o que
+   as faz ler como uma frase e não como três campos. */
+.cartao-medida-valor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  min-width: 0;
+  margin: 0;
+}
+.cartao-medida-quantidade {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0 6px;
+  max-width: 100%;
+  min-width: 0;
+}
+.cartao-medida-quantidade > .claim-value {
+  flex: 0 0 auto;
+}
+.cartao-medida-quantidade > .cartao-medida-unidade {
+  flex: 0 1 auto;
+}
+.cartao-medida-num {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.cartao-medida-unidade,
+.cartao-medida-periodo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.cartao-medida-periodo {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 4px;
+}
+/* O período herda a cor do grupo: o `.campo-valor` do livro-razão é tinta cheia
+   e aqui é a mesma cinza da unidade, porque o período é a outra metade da mesma
+   legenda do número e não um campo à parte. */
+.cartao-medida-periodo .campo-valor,
+.cartao-medida-periodo .campo-data {
+  color: inherit;
+}
+
+/* A LEITURA DO QUE O NÚMERO SIGNIFICA (bloco L1, 24.09.2026, item 3 do brief).
+   É prosa da casa e compõe-se como prosa: a letra do corpo a 14 px, na tinta, e
+   a medida de linha da pergunta (58ch), logo a seguir à linha do valor, porque é
+   o que o leitor precisa a seguir ao número. A régua e a pergunta ficam como
+   estão. */
+.cartao-medida-leitura {
+  margin: 2px 0 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+/* A FRASE DO QUE A MEDIDA MEDE. É prosa, e compõe-se como prosa: a mesma letra
+   do corpo, um pouco mais pequena do que o nome, com a medida de linha curta que
+   uma frase de uma linha e meia pede. */
+.cartao-medida-frase {
+  margin: 2px 0 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* A RÉGUA. Uma linha, com os itens separados por um espaço largo e sem
+   pontuação a fazer de separador: cada item já diz o que é. */
+.cartao-medida-regua {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 16px;
+  margin: 2px 0 0;
+  font-family: var(--f-prosa);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 14px;
+  color: var(--ink);
+}
+.cartao-medida-regua-item {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 4px;
+  min-width: 0;
+}
+.cartao-medida-regua-k {
+  color: var(--muted);
+}
+
+/* O TELEMÓVEL NÃO ENCOLHE O QUE SE LÊ. O chão de 12 px vale aqui como vale nas
+   listas do livro-razão: abaixo de 620 px a unidade e o período mantêm
+   os 12 px, e a régua, a frase e o nome ficam como estão. */
+@media (max-width: 620px) {
+  .cartao-medida-unidade,
+  .cartao-medida-periodo {
+    font-size: 12px;
+  }
+  .cartao-medida-num {
+    font-size: 24px;
+  }
+}
