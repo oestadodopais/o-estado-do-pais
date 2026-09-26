@@ -6,9 +6,13 @@
  * o mesmo servidor local efémero, o Chromium sem cabeça, `deviceScaleFactor: 1`,
  * o tema claro, o movimento reduzido e todo o pedido que não seja da origem local
  * abortado. As páginas são as duas do mandato (a do país e a dos temas), nas duas
- * edições e nas cinco larguras; mais os dois cartões do diretor (o saldo das
- * administrações públicas e a disparidade salarial entre sexos), recortados da
- * página dos temas a 390 e a 1 280 px, nas duas edições.
+ * edições e nas cinco larguras; mais os cartões recortados da página dos temas a
+ * 390 e a 1 280 px, nas duas edições: até à passagem de correção, os dois do
+ * diretor (o saldo das administrações públicas e a disparidade salarial entre
+ * sexos); desde ela (26.09.2026), o saldo e os onze cartões cuja leitura mudou
+ * (o PIB por habitante, os dois fluxos de crédito, a pobreza, as creches, as
+ * duas sobrecargas, o investimento, a taxa de atividade, a disparidade salarial
+ * e as câmaras). O cartão das câmaras escolhe-se pelo atributo próprio dele.
  *
  * O que se mede em cada página é o que o L1 promete e pode partir: quantos
  * cartões e quantas leituras há; a ordem das peças do cartão (a linha do valor,
@@ -46,9 +50,21 @@ const paginas = [
   ['pais', 'pt', '/'], ['pais', 'en', '/en/'],
   ['temas', 'pt', '/temas/'], ['temas', 'en', '/en/themes/'],
 ];
-const CARTOES_DO_DIRETOR = [
-  ['saldo', 'saldo-das-administracoes-publicas-2025'],
-  ['disparidade', 'disparidade-salarial-entre-sexos-2024'],
+/* [nome do ficheiro, id da medida, seletor do cartão] */
+const medidaDe = (/** @type {string} */ id) => [id, `article[data-cartao-medida="${id}"]`];
+const CARTOES_RECORTADOS = [
+  ['saldo', ...medidaDe('saldo-das-administracoes-publicas-2025')],
+  ['pib', ...medidaDe('pib-real-per-capita-2025')],
+  ['fluxo-empresas', ...medidaDe('fluxo-de-credito-as-empresas-2025')],
+  ['fluxo-familias', ...medidaDe('fluxo-de-credito-as-familias-2025')],
+  ['pobreza', ...medidaDe('risco-de-pobreza-ou-exclusao-2025')],
+  ['creches', ...medidaDe('criancas-em-creche-2025')],
+  ['sobrecarga-inquilinos', ...medidaDe('sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025')],
+  ['sobrecarga-total', ...medidaDe('sobrecarga-do-custo-da-habitacao-2025')],
+  ['investimento', ...medidaDe('formacao-bruta-de-capital-fixo-2025')],
+  ['atividade', ...medidaDe('taxa-de-actividade-2025')],
+  ['disparidade', ...medidaDe('disparidade-salarial-entre-sexos-2024')],
+  ['camaras', 'camaras', 'article[data-cartao-camaras]'],
 ];
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp' };
 const servidor = http.createServer(async (pedido, resposta) => {
@@ -181,13 +197,13 @@ try {
     await contexto.close();
     console.log(`${ficheiro}: ${r.documento} × ${r.altura}; ${r.cartoes.length} cartões, ${r.cartoes.filter((c) => c.leituras === 1).length} com leitura`);
   }
-  /* OS DOIS CARTÕES DO DIRETOR, recortados da página dos temas. */
-  for (const [nome, id] of CARTOES_DO_DIRETOR) for (const [lingua, rota] of [['pt', '/temas/'], ['en', '/en/themes/']]) for (const largura of [390, 1280]) {
+  /* OS CARTÕES RECORTADOS da página dos temas. */
+  for (const [nome, id, seletor] of CARTOES_RECORTADOS) for (const [lingua, rota] of [['pt', '/temas/'], ['en', '/en/themes/']]) for (const largura of [390, 1280]) {
     const { contexto, pagina, erros } = await abre(largura);
     const resposta = await pagina.goto(origem + rota, { waitUntil: 'networkidle' });
     if (resposta?.status() !== 200) throw new Error(`${rota}: HTTP ${resposta?.status()}`);
     await pagina.evaluate(() => document.fonts.ready);
-    const cartao = pagina.locator(`article[data-cartao-medida="${id}"]`);
+    const cartao = pagina.locator(seletor);
     if (await cartao.count() !== 1) throw new Error(`${rota}: o cartão «${id}» não está uma vez`);
     const ficheiro = `${estado}-cartao-${nome}-${lingua}-${largura}.png`;
     const bytes = await cartao.screenshot({ path: path.join(pasta, ficheiro), animations: 'disabled' });
@@ -196,7 +212,7 @@ try {
       leitura: c.querySelector('.cartao-medida-leitura')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
     }));
     recortes.push({ ficheiro, id, lingua, largura, rota, ...texto, errosDoNavegador: erros, sha256: sha(bytes) });
-    if (estado === 'depois' && !texto.leitura) falhas.push(`${ficheiro}: o cartão do diretor não tem leitura`);
+    if (estado === 'depois' && !texto.leitura) falhas.push(`${ficheiro}: o cartão recortado não tem leitura`);
     await contexto.close();
     console.log(`${ficheiro}: ${texto.leitura ?? '(sem leitura)'}`);
   }

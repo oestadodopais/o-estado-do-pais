@@ -35,6 +35,12 @@ AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
 COMANDO = 'python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py'
 BASE = 'f0779f37d71edd3bdc3d3ffd908ad18d50589863'
+# A CABEÇA QUE A PASSAGEM DE CORREÇÃO RECEBEU, depois do rebase sobre `main`
+# (26.09.2026): o commit da leitura a frio do Codex, reescrito de `5a5185e0`. A
+# base antiga (`BASE`) fica para as páginas do antes, que foram construídas dela
+# a 24.09.2026, antes do rebase; a base do bloco lê-se do git pelo assunto do
+# commit do brief, porque o rebase lhe mudou o nome.
+RECEBIDA = '6584df72'
 _VIZINHAS = [RAIZ.parent, RAIZ.parents[3]] if len(RAIZ.parents) > 3 else [RAIZ.parent]
 MOTOR = next((v / 'ResearchHub/.worktrees/l1-2026-09-24' for v in _VIZINHAS if (v / 'ResearchHub/.worktrees/l1-2026-09-24').exists()), None)
 PAGINAS = [('pais', 'pt', 'index.html'), ('pais', 'en', 'en_index.html'), ('temas', 'pt', 'temas_index.html'), ('temas', 'en', 'en_themes_index.html')]
@@ -387,7 +393,7 @@ try:
         limpo = mod.main()
         with tempfile.TemporaryDirectory() as t:
             copia = Path(t) / 'leituras.mjs'
-            copia.write_text(mod.SITIO.read_text(encoding='utf-8').replace('em termos reais.', 'em termos muito reais.', 1), encoding='utf-8')
+            copia.write_text(mod.SITIO.read_text(encoding='utf-8').replace('descontada a subida dos preços.', 'descontada a subida muito dos preços.', 1), encoding='utf-8')
             original = mod.SITIO
             mod.SITIO = copia
             plantado = mod.main()
@@ -408,7 +414,8 @@ def corre_py(args):
 cod, saida = corre_py(['design/especime-v3/medicoes/l1-2026-09-24/origens-l1.py', '--confere'])
 conf = json.loads(saida)
 cod2, saida2 = corre_py(['design/especime-v3/medicoes/l1-2026-09-24/origens-l1.py'])
-origens = json.loads(saida2)
+origens = json.loads(saida2)['origens']
+testemunhas_lidas = json.loads(saida2)['testemunhas']
 com_selo = sorted(k for k, d in origens.items() if 'selo' in d)
 alojadas = sorted(k for k, d in origens.items() if 'alojada' in d)
 medida('origens_novas', conf['origens'], 'python3 design/especime-v3/medicoes/l1-2026-09-24/origens-l1.py --confere', 'nenhuma', conf['origens'], len(origens))
@@ -427,11 +434,21 @@ if MOTOR is not None:
     medida('pedidos_do_bloco_com_http_200', ok200(pedidos), 'pedidos.jsonl, o campo «http» lido como número', 'um pedido com 404 numa cópia',
            ok200(pedidos) - 1, ok200([dict(pedidos[0], http='404')] + pedidos[1:]))
     medida('pedidos_do_bloco_de', [pedidos[0]['timestamp_utc'], pedidos[-1]['timestamp_utc']], 'pedidos.jsonl, o primeiro e o último', 'nenhuma', True, True)
-    manifesto = git('show', '--format=', '--unified=0', 'HEAD', '--', 'content/13 Dominios/source/MANIFEST.sha256', cwd=MOTOR)
-    novas = [l for l in manifesto.splitlines() if l.startswith('+') and not l.startswith('+++')]
-    medida('ficheiros_alojados_no_estudo_13', len(novas), 'git show HEAD -- «content/13 Dominios/source/MANIFEST.sha256» no motor, as linhas acrescentadas',
-           'a mesma conta sobre o commit anterior do motor', 0, len([l for l in git('show', '--format=', '--unified=0', 'HEAD~1', '--', 'content/13 Dominios/source/MANIFEST.sha256', cwd=MOTOR).splitlines() if l.startswith('+') and not l.startswith('+++')]),
-           nota='o commit anterior do motor não é deste bloco e não aloja nada no estudo 13')
+    def commit_que_acrescentou(caminho):
+        return git('log', '--format=%H', '--diff-filter=A', '--', caminho, cwd=MOTOR).splitlines()[-1]
+
+    def linhas_do_manifesto(commit):
+        d = git('show', '--format=', '--unified=0', commit, '--', 'content/13 Dominios/source/MANIFEST.sha256', cwd=MOTOR)
+        return len([l for l in d.splitlines() if l.startswith('+') and not l.startswith('+++')])
+    motor_bloco = commit_que_acrescentou('indicators/out/l1-2026-09-24/pedidos.jsonl')
+    motor_correcao = commit_que_acrescentou('indicators/out/l1-2026-09-26/pedidos.jsonl')
+    medida('ficheiros_alojados_no_estudo_13', linhas_do_manifesto(motor_bloco), 'git show <o commit do motor que acrescentou indicators/out/l1-2026-09-24/pedidos.jsonl> -- «content/13 Dominios/source/MANIFEST.sha256», as linhas acrescentadas',
+           'a mesma conta sobre 0f08171, o commit do motor em que o bloco começou', 0, linhas_do_manifesto('0f08171'),
+           nota='0f08171 não é deste bloco e não aloja nada no estudo 13')
+    medida('ficheiros_alojados_na_correcao', linhas_do_manifesto(motor_correcao), 'a mesma conta sobre o commit do motor que acrescentou indicators/out/l1-2026-09-26/pedidos.jsonl',
+           'a mesma conta sobre 0f08171', 0, linhas_do_manifesto('0f08171'))
+    medida('motor_commit_do_bloco', motor_bloco, 'git log --diff-filter=A -- indicators/out/l1-2026-09-24/pedidos.jsonl no motor', 'nenhuma', True, True)
+    medida('motor_commit_da_correcao', motor_correcao, 'git log --diff-filter=A -- indicators/out/l1-2026-09-26/pedidos.jsonl no motor', 'nenhuma', True, True)
     medida('motor_cabeca', git('rev-parse', 'HEAD', cwd=MOTOR), 'git rev-parse HEAD no motor', 'nenhuma', True, True)
     medida('motor_commits_do_bloco', int(git('rev-list', '--count', '0f08171..HEAD', cwd=MOTOR)), 'git rev-list --count 0f08171..HEAD no motor', 'nenhuma', True, True)
     # Os achados que o relatório passa ao lugar de direção, lidos dos ficheiros
@@ -465,6 +482,9 @@ l1 = [l for l in inv if re.search(r'\| l1 \| viva \|', l)]
 gemeas = [l for l in l1 if 'Ver a razão na gémea portuguesa' in l]
 medida('inventario_linhas_l1', len(l1), 'as linhas «| l1 | viva |» de design/especime-v3/INVENTARIO-FRASES.md', 'uma linha a mais numa cópia', len(l1) + 1, len(l1 + [l1[0]]))
 medida('inventario_linhas_l1_inglesas', len(gemeas), 'as linhas l1 com «Ver a razão na gémea portuguesa»', 'nenhuma', len(gemeas), len(gemeas))
+l1c = [l for l in inv if re.search(r'\| l1-correcao \| viva \|', l)]
+medida('inventario_linhas_l1_correcao', len(l1c), 'as linhas «| l1-correcao | viva |» de design/especime-v3/INVENTARIO-FRASES.md', 'uma linha a mais numa cópia', len(l1c) + 1, len(l1c + [l1c[0]]))
+medida('inventario_linhas_l1_correcao_inglesas', len([l for l in l1c if 'Ver a razão na gémea portuguesa' in l]), 'as linhas l1-correcao com «Ver a razão na gémea portuguesa»', 'nenhuma', True, True)
 marc = (RAIZ / 'design/especime-v3/VOZ-MARCADORES.md').read_text(encoding='utf-8').splitlines()
 exc = [l for l in marc if l.startswith('| contexto |') and 'bloco L1' in l]
 medida('excecoes_da_voz_com_o_l1', len(exc), 'as linhas «| contexto |» de VOZ-MARCADORES.md que nomeiam o bloco L1', 'nenhuma', len(exc), len(exc))
@@ -516,10 +536,19 @@ cabecas = {n: (le_portao(n) or {}).get('cabeca') for n in ('build', 'verify', 't
 medida('portoes_na_mesma_cabeca', len(set(cabecas.values())) == 1 and None not in cabecas.values(), 'portoes/*.cabeca', 'nenhuma', True, True)
 
 # --------------------------------------------------------------- 10 · os commits
-commits = git('log', '--format=%h %s', f'{BASE}..HEAD').splitlines()
-medida('commits_do_sitio_no_bloco', len(commits), f'git log {BASE[:8]}..HEAD', 'nenhuma', len(commits), len(commits),
-       nota='conta os commits até à cabeça medida; o commit que entrega estas provas vem depois dela')
-medida('commits_do_sitio', commits, f'git log --format="%h %s" {BASE[:8]}..HEAD', 'nenhuma', True, True)
+brief = git('log', '--format=%H', '--grep', '^O brief do L1', 'main..HEAD').splitlines()
+if len(brief) != 1:
+    FALHAS.append(f'o commit do brief do L1 não é um só em main..HEAD ({len(brief)})')
+base_do_bloco = brief[0] if brief else BASE
+commits = git('log', '--format=%h %s', f'{base_do_bloco}..HEAD').splitlines()
+medida('commits_do_sitio_no_bloco', len(commits), 'git log <o commit do brief do L1, achado pelo assunto em main..HEAD>..HEAD', 'nenhuma', len(commits), len(commits),
+       nota='conta os commits do bloco depois do brief até à cabeça medida, incluindo os dois do lugar de direção (o ensaio a seco e a leitura a frio); o commit que entrega estas provas vem depois dela')
+medida('commits_do_sitio', commits, 'git log --format="%h %s" <o brief>..HEAD', 'nenhuma', True, True)
+correcao = git('log', '--format=%h %s', f'{RECEBIDA}..HEAD').splitlines()
+medida('commits_da_correcao', correcao, f'git log --format="%h %s" {RECEBIDA}..HEAD', 'nenhuma', True, True)
+medida('commits_da_correcao_contados', len(correcao), f'git log {RECEBIDA}..HEAD', 'nenhuma', len(correcao), len(correcao),
+       nota='conta os commits desta passagem até à cabeça medida; o commit que entrega as provas vem depois dela')
+medida('brief_depois_do_rebase', base_do_bloco, 'git log --grep «^O brief do L1» main..HEAD', 'nenhuma', True, True)
 medida('cabeca_medida', git('rev-parse', 'HEAD'), 'git rev-parse HEAD', 'nenhuma', True, True)
 
 # ---------------------------------------------------------------- 11 · símbolos
@@ -530,14 +559,182 @@ if sessao_f.exists():
     MEDIDAS.append({'nome': 'simbolos_do_construtor', 'valor': sessao['simbolos']['total_cumulativo'], 'comando': 'sessao.json (declarado)',
                     'declarado': True, 'fonte': sessao['simbolos']['fonte'],
                     'conhecido_positivo': {'planta': 'nenhuma: não é uma medição, é o contador da ferramenta, declarado', 'mordeu': None}})
-    fins = [datetime.fromisoformat(r['fim']) for r in (le_portao(n) for n in ('build', 'verify', 'typecheck')) if r]
-    inicio = datetime.fromisoformat(sessao['inicio_da_sessao'].replace('Z', '+00:00'))
-    parede = round((max(fins) - inicio).total_seconds()) if fins else None
-    medida('tempo_de_parede_segundos', parede, 'do «inicio_da_sessao» de sessao.json (o primeiro registo com hora da transcrição da sessão, declarado) ao maior «fim» de portoes/*.json',
-           'a mesma conta com o fim de um portão atrasado uma hora numa cópia', parede + 3600 if parede is not None else None,
-           round((max(fins) + (datetime.fromisoformat('2026-01-01T01:00:00+00:00') - datetime.fromisoformat('2026-01-01T00:00:00+00:00')) - inicio).total_seconds()) if fins else None)
+    # O TEMPO DE PAREDE DA CONSTRUÇÃO (24.09.2026) media-se contra os portões desse
+    # dia, que esta passagem voltou a correr: lê-se da medição que ficou escrita.
+    antigas = {m['nome']: m for m in json.loads(git('show', f'{RECEBIDA}:design/especime-v3/medicoes/l1-2026-09-24/medidas.json'))['medidas']}
+    medida('tempo_de_parede_segundos', antigas['tempo_de_parede_segundos']['valor'], f'git show {RECEBIDA}:design/especime-v3/medicoes/l1-2026-09-24/medidas.json (a medição de 24.09.2026)',
+           'nenhuma: é a medição de 24.09.2026, relida', antigas['tempo_de_parede_segundos']['valor'], antigas['tempo_de_parede_segundos']['valor'])
+    c = sessao.get('correcao')
+    if c:
+        MEDIDAS.append({'nome': 'simbolos_da_correcao', 'valor': c['simbolos']['total_cumulativo'], 'comando': 'sessao.json, «correcao» (declarado)',
+                        'declarado': True, 'fonte': c['simbolos']['fonte'],
+                        'conhecido_positivo': {'planta': 'nenhuma: não é uma medição, é o contador da ferramenta, declarado', 'mordeu': None}})
+        fins = [datetime.fromisoformat(r['fim']) for r in (le_portao(n) for n in ('build', 'verify', 'typecheck')) if r]
+        inicio = datetime.fromisoformat(c['inicio_da_sessao'].replace('Z', '+00:00'))
+        parede = round((max(fins) - inicio).total_seconds()) if fins else None
+        medida('tempo_de_parede_da_correcao_segundos', parede, 'do «inicio_da_sessao» de sessao.json «correcao» (o primeiro registo com hora da transcrição desta sessão, declarado) ao maior «fim» de portoes/*.json',
+               'a mesma conta com o fim de um portão atrasado uma hora numa cópia', parede + 3600 if parede is not None else None,
+               round((max(fins) + (datetime.fromisoformat('2026-01-01T01:00:00+00:00') - datetime.fromisoformat('2026-01-01T00:00:00+00:00')) - inicio).total_seconds()) if fins else None)
+    else:
+        FALHAS.append('sessao.json: não tem a secção «correcao»; o custo da passagem fica por dizer')
 else:
     FALHAS.append('sessao.json: não existe; o custo fica por dizer')
+
+# -------------------------------------------------- 12 · a passagem de correção
+# 12.1 · As plantas da leitura a frio, confirmadas no ramo que a leitura recebeu:
+# o ficheiro do ramo tem o sha256 de antes da planta, e a troca que o registo
+# guarda, aplicada a esses bytes, dá o sha256 da cópia estragada.
+pl = json.loads((RAIZ / 'design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json').read_text(encoding='utf-8'))
+NO_RAMO = {'src/data/leituras-das-medidas.mjs': 'src/data/leituras-das-medidas.mjs',
+           'relatorio-construtor.md': 'design/especime-v3/medicoes/l1-2026-09-24/LEIA-ME.md',
+           'built/temas/index.html': 'design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/temas_index.html',
+           'tests/cartao/leituras.mjs': 'tests/cartao/leituras.mjs',
+           'tests/cartao/leituras-provadas.json': 'tests/cartao/leituras-provadas.json'}
+confirmadas = []
+bytes_do_ramo = {}
+for x in pl['plantas']:
+    b = subprocess.run(['git', 'show', f"{RECEBIDA}:{NO_RAMO[x['ficheiro']]}"], cwd=RAIZ, capture_output=True, check=True).stdout
+    bytes_do_ramo[x['id']] = b
+    ca, cd = x['contexto_antes'].encode(), x['contexto_depois'].encode()
+    confirmadas.append({'id': x['id'], 'no_pacote': x['ficheiro'], 'no_ramo': NO_RAMO[x['ficheiro']], 'descricao': x['descricao'],
+                        'ramo_e_o_antes': sha(b) == x['sha256_antes'], 'contexto_no_ramo': b.count(ca),
+                        'ramo_com_a_troca_e_o_depois': b.count(ca) == 1 and sha(b.replace(ca, cd, 1)) == x['sha256_depois']})
+CMD_PL = f'git show {RECEBIDA}:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json'
+medida('plantas_da_leitura_no_ramo', confirmadas, CMD_PL, 'a troca registada de cada planta, aplicada aos bytes do ramo, dá o sha256_depois',
+       len(pl['plantas']), sum(1 for c in confirmadas if c['ramo_com_a_troca_e_o_depois']))
+primeira = pl['plantas'][0]
+medida('plantas_da_leitura_confirmadas', sum(1 for c in confirmadas if c['ramo_e_o_antes']), CMD_PL, 'o primeiro ficheiro com um byte a mais',
+       sum(1 for c in confirmadas if c['ramo_e_o_antes']) - 1,
+       sum(1 for c in confirmadas if c['ramo_e_o_antes']) - (1 if sha(bytes_do_ramo[primeira['id']] + b' ') != primeira['sha256_antes'] else 0))
+medida('plantas_da_leitura', len(pl['plantas']), CMD_PL, 'nenhuma', len(pl['plantas']), len(pl['plantas']))
+
+# 12.2 · A página do painel da Comissão, lida hoje, e os pedidos da passagem.
+ok200 = lambda lista: sum(1 for x in lista if str(x.get('http')).strip() == '200')
+if MOTOR is not None:
+    reg = [json.loads(l) for l in (MOTOR / 'indicators/out/l1-2026-09-26/pedidos.jsonl').read_text(encoding='utf-8').splitlines() if l.strip()]
+    rc = next(r for r in reg if r['file'] == 'ce-painel-pdm-scoreboard.html')
+    corpo = (MOTOR / 'indicators/out/l1-2026-09-26/ce-painel-pdm-scoreboard.html').read_bytes()
+    alojado = (MOTOR / 'content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html').read_bytes()
+    LIT = {'taxa-de-cambio-efectiva-real-2025': 'thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries',
+           'desempenho-das-exportacoes-2025': 'with a threshold of -3%'}
+    tx = corpo.decode('utf-8')
+    ocorrencias = {k: tx.count(v) for k, v in LIT.items()}
+    trocado = tx.replace('-/+3%', '-/+4%').replace('threshold of -3%', 'threshold of -4%')
+    medida('comissao_hoje', {'url': rc['url'], 'url_final': rc['url_final'], 'hora': rc['timestamp_utc'], 'http': rc['http'], 'bytes': rc['bytes'],
+                             'sha256_do_registo': rc['sha256'], 'sha256_dos_bytes': sha(corpo), 'sha256_da_copia_alojada': sha(alojado),
+                             'literais': LIT, 'ocorrencias': ocorrencias},
+           'o motor: indicators/out/l1-2026-09-26/pedidos.jsonl, o corpo ao lado e a cópia alojada no estudo 13, lidos por este guião',
+           'os mesmos literais procurados numa cópia com os dois valores trocados', {k: 0 for k in LIT}, {k: trocado.count(v) for k, v in LIT.items()})
+    medida('comissao_hoje_confirma', all(v == 1 for v in ocorrencias.values()) and sha(corpo) == rc['sha256'] == sha(alojado),
+           'comissao_hoje: cada literal uma vez e os três resumos iguais', 'a mesma conta sobre a cópia trocada', False,
+           all(v == 1 for v in {k: trocado.count(v) for k, v in LIT.items()}.values()))
+    medida('pedidos_da_correcao', len(reg), 'o motor: indicators/out/l1-2026-09-26/pedidos.jsonl', 'uma linha a mais numa cópia', len(reg) + 1, len(reg + [{}]))
+    medida('pedidos_da_correcao_com_http_200', ok200(reg), 'pedidos.jsonl da passagem, o campo «http» lido como número', 'um pedido com 404 numa cópia',
+           ok200(reg) - 1, ok200([dict(reg[0], http='404')] + reg[1:]))
+    medida('pedidos_da_correcao_de', [reg[0]['timestamp_utc'], reg[-1]['timestamp_utc']], 'pedidos.jsonl da passagem, o primeiro e o último', 'nenhuma', True, True)
+
+# 12.3 · As origens da passagem, resolvidas do motor pelo guião das origens.
+ORIGENS_DA_CORRECAO = ['eurostat-nama10-volumes', 'eurostat-glossario-inflacao', 'eurostat-sec2010-registo-liquido', 'eurostat-glossario-mediana',
+                       'eurostat-glossario-rendimento-disponivel', 'eurostat-glossario-residente', 'eurostat-tipslm60-idade']
+presentes = [k for k in ORIGENS_DA_CORRECAO if k in origens]
+medida('origens_da_correcao', len(presentes), 'origens-l1.py (sem argumentos), as chaves da passagem de correção', 'uma chave inventada junta à lista',
+       len(presentes), len([k for k in presentes + ['uma-chave-inventada'] if k in origens]))
+medida('origens_da_correcao_nomes', presentes, 'origens-l1.py', 'nenhuma', True, True)
+medida('testemunhas_discordantes', testemunhas_lidas, 'origens-l1.py (sem argumentos), as testemunhas lidas dos bytes selados no motor', 'nenhuma', True, True)
+
+# 12.4 · Cada termo dos achados 7 a 15, com os literais procurados no campo que citam.
+ac2 = json.loads((AQUI / 'acertos-l1.json').read_text(encoding='utf-8'))
+DA_CORRECAO = [f'A{n}' for n in range(18, 27)]
+decl = node("import('./src/data/figuras.mjs').then(m => console.log(JSON.stringify(m.ORIGENS_DAS_DEFINICOES)))")
+medidas_c = sorted({a['medida'] for a in ac2['acertos'] if a['chave'] in DA_CORRECAO})
+linhas_c = node("import('./src/lib/ledger.mjs').then(m => { const c = m.loadClaims(); console.log(JSON.stringify(Object.fromEntries("
+                + json.dumps(medidas_c) + ".map((id) => [id, { unit: c.get(id)?.unit, excerpt: c.get(id)?.excerpt }])))); })")
+
+
+def no_campo(medida_, l, literal=None):
+    campo = (linhas_c.get(medida_) or {}).get(l['campo']) if l['dono'] == 'propria' else (decl.get(l['dono']) or {}).get(l['campo'])
+    return isinstance(campo, str) and (literal or l['literal']) in campo
+
+
+termos = []
+for a in ac2['acertos']:
+    if a['chave'] not in DA_CORRECAO:
+        continue
+    termos.append({'chave': a['chave'], 'medida': a['medida'], 'porque': a['porque'], 'trocas': a['trocas'],
+                   'literais': [dict(l, no_campo=no_campo(a['medida'], l)) for l in a['literais']]})
+total_lit = sum(len(t['literais']) for t in termos)
+achados_lit = sum(1 for t in termos for l in t['literais'] if l['no_campo'])
+um = termos[0]['literais'][0]
+medida('termos_da_correcao', termos, 'acertos-l1.json (A18 a A26), e cada literal procurado no campo que cita (ORIGENS_DAS_DEFINICOES ou a linha)',
+       'o primeiro literal com uma palavra trocada, procurado no mesmo campo', False, no_campo(termos[0]['medida'], um, um['literal'].replace('inflation', 'deflation')))
+medida('termos_da_correcao_literais', total_lit, 'acertos-l1.json (A18 a A26), os literais', 'nenhuma', total_lit, total_lit)
+medida('termos_da_correcao_literais_no_campo', achados_lit, 'os literais dos acertos A18 a A26, procurados no campo que citam', 'o mesmo total',
+       total_lit, achados_lit)
+medida('acertos_da_correcao', len(termos), 'acertos-l1.json, os acertos A18 a A26', 'nenhuma', len(DA_CORRECAO), len(termos))
+
+# 12.5 · A K9: as testemunhas discordantes e as plantas, pela própria célula.
+rk = subprocess.run(['node', 'tests/cartao/cartao.mjs', '--prova', '--json'], cwd=RAIZ, capture_output=True, text=True)
+jk = json.loads(rk.stdout[rk.stdout.index('\n{\n') + 1:]) if '\n{\n' in rk.stdout else None
+CMD_K9 = 'node tests/cartao/cartao.mjs --prova --json, as contas «testemunhas_discordantes_*»'
+if jk is None:
+    FALHAS.append('o check:cartao não deu JSON; as contas da K9 ficam por medir')
+else:
+    kc = jk['contas']
+    medida('k9_testemunhas_discordantes_conferidas', kc.get('testemunhas_discordantes_conferidas'), CMD_K9, 'as cinco plantas da própria célula, abaixo',
+           kc.get('testemunhas_discordantes_plantas'), kc.get('testemunhas_discordantes_plantas_mordidas'))
+    medida('k9_testemunhas_discordantes_plantas', kc.get('testemunhas_discordantes_plantas'), CMD_K9, 'cada planta é um conhecido-positivo',
+           kc.get('testemunhas_discordantes_plantas'), kc.get('testemunhas_discordantes_plantas_mordidas'))
+    medida('k9_testemunhas_discordantes_plantas_mordidas', kc.get('testemunhas_discordantes_plantas_mordidas'), CMD_K9, 'nenhuma', True, True)
+    medida('k9_testemunhas_discordantes_plantas_nomes', kc.get('testemunhas_discordantes_plantas_nomes'), CMD_K9, 'nenhuma', True, True)
+    medida('k9_valores_de_referencia_comparados', kc.get('valores_de_referencia_comparados'), 'node tests/cartao/cartao.mjs --prova --json, contas.valores_de_referencia_comparados', 'nenhuma', True, True)
+    medida('check_cartao_prova_erros', len(jk['erros']), 'node tests/cartao/cartao.mjs --prova --json, a lista «erros»', 'nenhuma', 0, len(jk['erros']))
+medida('check_cartao_prova_codigo', rk.returncode, 'node tests/cartao/cartao.mjs --prova --json, o código do processo', 'nenhuma', 0, rk.returncode)
+
+# 12.6 · A segunda metade do achado 6: a corrida do pacote leu também o
+# `conferencia-relatorio.json` que a corrida do construtor escrevera e excluíra
+# de si própria, e esse ficheiro traz o conhecido-positivo 987654321.
+with tempfile.TemporaryDirectory() as t:
+    arq = subprocess.run(['git', 'archive', RECEBIDA, 'design/especime-v3/medicoes/l1-2026-09-24'], cwd=RAIZ, capture_output=True, check=True).stdout
+    subprocess.run(['tar', '-x', '-C', t], input=arq, check=True)
+    pasta_r = Path(t) / 'design/especime-v3/medicoes/l1-2026-09-24'
+    n_json = len(list(pasta_r.rglob('*.json')))
+
+    def corrida(*extra):
+        r = subprocess.run(['python3', 'scripts/leituras/conferir-relatorio.py', str(pasta_r / 'LEIA-ME.md'), str(pasta_r), *extra], cwd=RAIZ, capture_output=True, text=True)
+        return {'lidos': num(r'ficheiros JSON lidos: (\d+)', r.stdout), 'conhecido_positivo': num(r'o número (\d+), ausente', r.stdout)}
+    como_o_pacote = corrida()
+    como_o_construtor = corrida('--json', str(Path(t) / 'saida.json'))
+    (pasta_r / 'conferencia-relatorio.json').unlink()
+    sem_o_ficheiro = corrida()
+medida('achado6_ficheiros_json_na_pasta', n_json, f'git archive {RECEBIDA} da pasta do bloco, os *.json', 'nenhuma', n_json, n_json)
+medida('achado6_corrida_como_o_pacote', como_o_pacote, f'conferir-relatorio.py sobre a pasta de {RECEBIDA}, sem --json (como o pacote.sh a corre)',
+       'a mesma corrida sem o conferencia-relatorio.json na cópia', {'lidos': n_json - 1, 'conhecido_positivo': 987654321}, sem_o_ficheiro)
+medida('achado6_corrida_como_o_construtor', como_o_construtor, f'conferir-relatorio.py sobre a pasta de {RECEBIDA}, com --json para fora da pasta', 'nenhuma', True, True)
+
+# 12.7 · A página do Eurostat das creches, que o bloco já tinha alojado, não
+# nomeia a creche nem o jardim de infância: a leitura não os dá como exemplo.
+if MOTOR is not None:
+    bc = (MOTOR / 'indicators/out/l1-2026-09-24/eurostat-se-childcare-arrangements.html').read_text(encoding='utf-8')
+    tc = re.sub(r'\s+', ' ', __import__('html').unescape(re.sub(r'<[^>]+>', '', re.sub(r'(?s)<(script|style)[^>]*>.*?</\1>', ' ', bc))))
+    procura = {k: len(re.findall(re.escape(k), tc, re.I)) for k in ('nurser', 'crèche', 'creche', 'day-care', 'kindergarten', 'pre-school')}
+    medida('creches_palavras_na_pagina_alojada', procura, 'o texto da página do motor indicators/out/l1-2026-09-24/eurostat-se-childcare-arrangements.html, procurado sem maiúsculas',
+           'a mesma procura pela expressão «Formal childcare», que a página define', True, len(re.findall('Formal childcare', tc)) > 0)
+    medida('creches_formal_childcare_na_pagina', len(re.findall('Formal childcare', tc)), 'o mesmo texto', 'nenhuma', True, True)
+
+# 12.8 · O ensaio a seco do lugar de direção, corrido sobre o ficheiro do sítio.
+ENSAIO = 'design/observatorio/leituras/ensaio-a-seco.mjs'
+re_ = subprocess.run(['node', ENSAIO, 'src/data/leituras-das-medidas.mjs'], cwd=RAIZ, capture_output=True, text=True)
+ult = (re_.stdout.strip().splitlines() or [''])[-1]
+with tempfile.TemporaryDirectory() as t:
+    sem = Path(t) / 'sem-uma.mjs'
+    sem.write_text("import * as m from '" + (RAIZ / 'src/data/leituras-das-medidas.mjs').as_uri() + "'; const c = { ...m.LEITURAS_DAS_MEDIDAS }; "
+                   "delete c['pib-real-per-capita-2025']; export const LEITURAS_DAS_MEDIDAS = c;\n", encoding='utf-8')
+    re2 = subprocess.run(['node', ENSAIO, str(sem)], cwd=RAIZ, capture_output=True, text=True)
+ult2 = (re2.stdout.strip().splitlines() or [''])[-1]
+medida('ensaio_a_seco_do_sitio_codigo', re_.returncode, f'node {ENSAIO} src/data/leituras-das-medidas.mjs', 'nenhuma', 0, re_.returncode)
+medida('ensaio_a_seco_do_sitio_por_resolver', num(r'por resolver: (\d+)', ult), f'node {ENSAIO} src/data/leituras-das-medidas.mjs, a última linha', 'nenhuma', 0, num(r'por resolver: (\d+)', ult))
+medida('ensaio_a_seco_do_sitio_cartoes_com_leitura', num(r'(\d+) cartões com leitura', ult), f'node {ENSAIO} src/data/leituras-das-medidas.mjs, a última linha',
+       'a mesma corrida sobre uma cópia sem a leitura do PIB por habitante', (num(r'(\d+) cartões com leitura', ult) or 0) - 1, num(r'(\d+) cartões com leitura', ult2))
 
 saida = {
     'o_que_e': 'As medidas do bloco L1, a leitura de cada medida. Cada uma com o comando e o conhecido-positivo.',
