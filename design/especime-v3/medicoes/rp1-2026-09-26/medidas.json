@@ -267,13 +267,13 @@
       "codigo": 0,
       "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
       "fim": "2026-09-26T15:18:35.051973+00:00",
-      "log_sha256": "8710b008a0d0bbccc2acedf4fbe945a39c1a92f8eabbc362316d63fded818e19"
+      "log_sha256": "14d775040b9999b9e31e3c3733cc7ea9aa59a6bbbfe3e2ec5e101a5fdfcced0b"
     },
     "verify": {
       "codigo": 0,
       "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
       "fim": "2026-09-26T15:28:39.336600+00:00",
-      "log_sha256": "6b206571006c295085eafb880cfa857ee19dd4be3ad24f86f68308d358f87eb6"
+      "log_sha256": "5995144931ae540940640eb906e92759f929e86c7a52aa0032174d3843f20714"
     },
     "typecheck": {
       "codigo": 0,
@@ -5155,14 +5155,14 @@
         "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
         "inicio": "2026-09-26T16:43:20.881002+00:00",
         "fim": "2026-09-26T16:48:21.419840+00:00",
-        "log_sha256": "3a292f27f842686f57f28169837a72db06582d83c402d8fcea0536f4c554d9ae"
+        "log_sha256": "b75abe398ab9da27b02d31a0fb7221cb9dbe465682001fdf990455600815e9fc"
       },
       "verify": {
         "codigo": 0,
         "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
         "inicio": "2026-09-26T16:48:57.319777+00:00",
         "fim": "2026-09-26T16:57:09.358006+00:00",
-        "log_sha256": "d46a607b07e8936cd75c4a15bb377fedd4551a5d9aeedb1a26f73f03ae7ffc2f"
+        "log_sha256": "c38bc441a5d11bf62b3859b9f8aaf4db6b36cfc56d4804df09ac5e7ccbe2b4f1"
       },
       "typecheck": {
         "codigo": 0,
@@ -5254,6 +5254,3449 @@
     "motor_portao": {
       "codigo": 0,
       "log_sha256": "7d1b8e64ea7655e1e1b05bae40add9f2921560f11da244cc79467bc13c7f2b7c"
+    }
+  },
+  "rp1c": {
+    "base": "42b3cadfb9806abd84ddf8235fdb50e5fdf621c2",
+    "cabeca_do_codigo": "68215ae9a73910f59eb103c16961be52bd901fae",
+    "cabeca_motor": "4eb2867936dd14ad2654751722e390804e68dda3",
+    "commits_sitio": [
+      "38d3627894416097de26c52346c595c45a7b2884 O brief do RP1, a primeira peça do tracker dos rendimentos e dos preços: treze cartões nacionais das APIs do INE e do Eurostat, com o §0 medido por guião sobre a cabeça 334cc740 e as cópias congeladas do L1, as leituras do lugar de direção na gramática do L1 ensaiadas a seco, e o guião do construtor do Codex",
+      "3b3dac4853565782996bc3e99f519404e3b17ea6 RP1: acrescentar os cartões confirmados pelas APIs",
+      "83fb702cff2ff297ea2c9024f8a854d2b56f287e RP1: completar as declarações e conservar as proteções dos portões",
+      "cb9571eaf7d043f8c91d9486aad34f97dee00e5d RP1: mostrar as origens das perguntas nos recibos",
+      "9a8b14b49166f6519f5d9be5399831fb7e9b9b44 RP1: entregar as medições, capturas e provas das oito medidas seladas",
+      "92c7cf66ab1c7f69d0b6db73d4b5c27b1770136a RP1: concluir a entrega com as tabelas do relatório conferidas",
+      "ed5371ffc6881d7daafe2b164c8d0714b2138b6e RP1: a resposta do construtor do Codex à entrega das oito medidas seladas e das cinco paradas",
+      "5c92e5ea3fc9acb40c917dc55d9cc0480ead569f RP1b: a correção do brief (os códigos certos das quatro medidas paradas, conferidos nas APIs do INE e do Eurostat, e a variação real retirada), a segunda redação das leituras com os acertos aceites e duas emendas do lugar de direção, e o guião do construtor do Codex",
+      "dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória",
+      "0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas",
+      "7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas",
+      "1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes",
+      "70f8ca74113b2ff0adbb55fc424f15686eed5a3b RP1b: entregar capturas, medições e relatório",
+      "42b3cadfb9806abd84ddf8235fdb50e5fdf621c2 RP1c: a leitura a frio do RP1 pelo Claude Opus 5.5 (cinco plantas em cinco, dezoito achados triados) com o registo das plantas, a terceira redação das leituras (o RSI e as pensões depois da leitura, o acerto dos lubrificantes fundido), o guião da passagem de correção para o Codex, e a resposta do construtor à peça RP1b",
+      "22bacd0cc4c97f60cf33cd26ecaa924adeb3dba1 RP1c: retirar caminhos da máquina dos registos do bloco",
+      "e222101650a85cf2ca756dc8232ce89d5a96d35c RP1c: provar a terceira redação e conservar os excertos das linhas",
+      "0f17a9c792271b288465fa0020f0fb2799299d4b RP1c: corrigir a ressalva, os nomes e a língua dos recibos",
+      "68215ae9a73910f59eb103c16961be52bd901fae RP1c: medir o expurgo e conferir a história completa da entrega"
+    ],
+    "commits_motor": [
+      "c42dab902afa3f7f693980745e3cecd7f8cb8a2e RP1: selar observações nacionais de rendimentos e preços",
+      "372cbe1d9b57a9cde19fdb4f1843deeadd41704e RP1: conservar literal o excerto com bandeira do INE",
+      "6508b05849b1ea041d91e67339370a860a57f65b RP1: conservar as etiquetas no excerto provisório",
+      "d3f7a619bc46184847775b93c1b1a953e2777d3f RP1b: selar as classes do IPC e a comparação europeia do IHPC",
+      "4eb2867936dd14ad2654751722e390804e68dda3 RP1c: conservar os excertos completos e selar as origens das leituras"
+    ],
+    "entrega": {
+      "referencia": "HEAD",
+      "titulo": "RP1c: entregar as provas da passagem de correção",
+      "pai": "68215ae9a73910f59eb103c16961be52bd901fae"
+    },
+    "achados": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "plantas_do_pacote": 5,
+    "linhas_conferidas": 3009,
+    "linhas_novas": 0,
+    "valores_alterados": 0,
+    "alteradas": [
+      {
+        "id": "beneficiarios-do-rsi-por-mil-2023",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ihpc-variacao-homologa-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-combustiveis-variacao-homologa-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-variacao-homologa-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "ipc-variacao-media-12-meses-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "linha-de-risco-de-pobreza-2024",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "pensao-media-anual-2024",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "remuneracao-bruta-mensal-media-periodo-anterior",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "remuneracao-bruta-mensal-media",
+        "campos": [
+          "excerpt"
+        ]
+      }
+    ],
+    "pedidos": [
+      {
+        "nome": "eurostat-rendimento-equivalente-rp1c.html",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Equivalised_disposable_income",
+        "url_final": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Equivalised_disposable_income",
+        "timestamp_utc": "2026-09-26T17:10:34Z",
+        "http": 200,
+        "bytes": 68773,
+        "content_type": "text/html; charset=UTF-8",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "da63d39a28812ff3f8182f87cce657be7e8155ce41c03e34eee98f5a06ddb8cb",
+        "file": "032-eurostat-rendimento-equivalente-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "seguranca-social-rsi-rp1c.html",
+        "url": "https://www.seg-social.pt/rendimento-social-de-insercao",
+        "url_final": "https://www.seg-social.pt/ptss/pssd/home?r=%2Frendimento-social-de-insercao%2F&dswid=-4558",
+        "timestamp_utc": "2026-09-26T17:11:00Z",
+        "http": 200,
+        "bytes": 13001,
+        "content_type": "text/html;charset=ISO-8859-15",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "bc08f0f5bddf9d6818260e7798f6601462b258ee880413d24ab56b6e411bb496",
+        "file": "033-seguranca-social-rsi-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "seguranca-social-rsi-pagina-rp1c.html",
+        "url": "https://www.seg-social.pt/ptss/pssd/menu/acao-social/apoios-respostas-sociais/rendimento-social-insercao",
+        "url_final": "https://www.seg-social.pt/ptss/pssd/menu/acao-social/apoios-respostas-sociais/rendimento-social-insercao",
+        "timestamp_utc": "2026-09-26T17:11:31Z",
+        "http": 200,
+        "bytes": 14138,
+        "content_type": "text/html;charset=ISO-8859-15",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "185d2e0b5161dd980b5c860d301e56ea24e55823f8c9b98cd086946e8a56a52f",
+        "file": "034-seguranca-social-rsi-pagina-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "ine-conceitos-idade-ativa-rp1c.html",
+        "url": "https://smi.ine.pt/Conceito",
+        "url_final": "https://smi.ine.pt/Conceito",
+        "timestamp_utc": "2026-09-26T17:12:10Z",
+        "http": 200,
+        "bytes": 94526,
+        "content_type": "text/html; charset=utf-8",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "d51dec01b605675fcbf4575f2c5268bb85ced6a334d4cb4e337449a810e03fea",
+        "file": "035-ine-conceitos-idade-ativa-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "seguranca-social-rsi-guia-rp1c.pdf",
+        "url": "https://www.seg-social.pt/storage1/files/8001-RendimentoSocialInsercao-ZxBqBtTT7K21CYhrlUV8Tg.pdf",
+        "url_final": "https://www.seg-social.pt/storage1/files/8001-RendimentoSocialInsercao-ZxBqBtTT7K21CYhrlUV8Tg.pdf",
+        "timestamp_utc": "2026-09-26T17:12:43Z",
+        "http": 404,
+        "bytes": 32629,
+        "content_type": "text/html; charset=UTF-8",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "bedb258aa25f8eea1b39e2577d0f2f74505a8fea073ff04673fe8b00502a0625",
+        "file": "036-seguranca-social-rsi-guia-rp1c.pdf",
+        "estado": "recusado",
+        "erro": "HTTP sem corpo utilizável",
+        "tentativa": 1
+      },
+      {
+        "nome": "ine-idade-ativa-pesquisa-rp1c.html",
+        "url": "https://smi.ine.pt/Conceito?Designacao=popula%C3%A7%C3%A3o%20em%20idade%20ativa&Vigencia=Ambos",
+        "url_final": "https://smi.ine.pt/Conceito?Designacao=popula%C3%A7%C3%A3o%20em%20idade%20ativa&Vigencia=Ambos",
+        "timestamp_utc": "2026-09-26T17:13:07Z",
+        "http": 200,
+        "bytes": 70898,
+        "content_type": "text/html; charset=utf-8",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "e9cbee4a560bea5bdae74eb8d13dc5e348c76be3c1cd7685516733189627f2d9",
+        "file": "037-ine-idade-ativa-pesquisa-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "seguranca-social-rsi-conteudo-rp1c.json",
+        "url": "https://www.seg-social.pt/ptss/rest/public/pssd/service?path=%2Fpssd%2Fmenu%2Facao-social%2Fapoios-respostas-sociais%2Frendimento-social-insercao",
+        "url_final": "https://www.seg-social.pt/ptss/rest/public/pssd/service?path=%2Fpssd%2Fmenu%2Facao-social%2Fapoios-respostas-sociais%2Frendimento-social-insercao",
+        "timestamp_utc": "2026-09-26T17:14:29Z",
+        "http": 200,
+        "bytes": 44825,
+        "content_type": "application/json",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc",
+        "file": "038-seguranca-social-rsi-conteudo-rp1c.json",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "ine-conceito-idade-ativa-rp1c.html",
+        "url": "https://smi.ine.pt/Conceito/Detalhes/2454",
+        "url_final": "https://smi.ine.pt/Conceito/Detalhes/2454",
+        "timestamp_utc": "2026-09-26T17:15:29Z",
+        "http": 200,
+        "bytes": 41431,
+        "content_type": "text/html; charset=utf-8",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "faa78ffe2ecb74285d44a8d3129d8694370265bef7ccd4123dcc5b53b138c4a4",
+        "file": "039-ine-conceito-idade-ativa-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      },
+      {
+        "nome": "ine-idade-ativa-definicao-rp1c.html",
+        "url": "https://www.ine.pt/ine_novidades/RTP2017/113/",
+        "url_final": "https://www.ine.pt/ine_novidades/RTP2017/113/",
+        "timestamp_utc": "2026-09-26T17:16:07Z",
+        "http": 200,
+        "bytes": 5923,
+        "content_type": "text/html",
+        "user_agent": "OEstadoDoPais/corredor",
+        "cliente": "core.http.HttpClient.condicional",
+        "sha256": "144f956c4f069addd42d9a5b72c000d6149ab7a842d629bea930d4c87f15e127",
+        "file": "040-ine-idade-ativa-definicao-rp1c.html",
+        "estado": "lido",
+        "erro": null,
+        "tentativa": 1
+      }
+    ],
+    "corpos_conferidos": 40,
+    "pedidos_novos": 9,
+    "classes_0014663": {
+      "dimensao": 3,
+      "publicadas": [
+        "T",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "codigos_procurados": [
+        "045",
+        "0722",
+        "041"
+      ],
+      "encontradas": 0,
+      "conhecidos_positivos": [
+        {
+          "codigo": "045",
+          "encontrado": true
+        },
+        {
+          "codigo": "0722",
+          "encontrado": true
+        },
+        {
+          "codigo": "041",
+          "encontrado": true
+        }
+      ]
+    },
+    "origens": [
+      {
+        "origem": "rp1-ipc-homologa",
+        "sha256": "4362e583c944550a1572da5737dd47eb00d432c08952a42ffe848d9f1c05266b",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ipc-media",
+        "sha256": "863db25b79b4cf18777dad078d5f7d37c95d7af4e6f0cb784696ff3968a0e1d0",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ipc-metodo",
+        "sha256": "b77f4bdfbbe27f960dde5194914831e4645573407799f478bc0dcc7e82e3909c",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-rendas-referencia",
+        "sha256": "c3444bbbc9687ffea549d88d5b436419158648030789b811c9148b66f5435199",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-remuneracao-trabalhadores",
+        "sha256": "fc9970809cc4d21fd421961a72e323b946184414d0348bce968011eee9d2cdae",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-remuneracao-bruta",
+        "sha256": "fc9970809cc4d21fd421961a72e323b946184414d0348bce968011eee9d2cdae",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-pensoes-formula",
+        "sha256": "b974d064c0cc5a35069232a83ce9ea72fbf43460c3744335d48f9e80ceed7789",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-pensoes-periodo",
+        "sha256": "d17d198a8819d671465cb9d8ae78057a4005d127e75feb42b04234ab106fab69",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-rsi",
+        "sha256": "570b07a4e928a33ecb7c888ac590804e3737c92ab8186c4aff1cc6efca3276e8",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-pobreza",
+        "sha256": "d061b54fef6dbdb32861a6f6808614b91b543bc5fb92b534d984d4463960f1aa",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-pobreza-periodo",
+        "sha256": "592c5e3aec0558d5dc49e26ce76a6c3be6e6f15230d448847a5065d2a4894fb3",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-rendimento-equivalente",
+        "sha256": "da63d39a28812ff3f8182f87cce657be7e8155ce41c03e34eee98f5a06ddb8cb",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-remuneracao-subsidios",
+        "sha256": "fc9970809cc4d21fd421961a72e323b946184414d0348bce968011eee9d2cdae",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-pensoes-tipos",
+        "sha256": "d17d198a8819d671465cb9d8ae78057a4005d127e75feb42b04234ab106fab69",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ipc-classes-homologa",
+        "sha256": "184a4e7fccebe7360411f9dcd1f32b3fa95f706c72962ccb21e2746c68a00824",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ipc-habitacao",
+        "sha256": "e5d99cf6a277344f25d8feb43e2eb96cb628507e4247ce4822715b52e012345c",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ihpc-comparavel",
+        "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ihpc-homologa",
+        "sha256": "f2a3035b7ff23e772a3f1347a11bf01189723f074b84018b041e39e2a171dbd4",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-ihpc-uniao",
+        "sha256": "cc5f8cfea4d303f866fc4314f3eba82f017bba7975cc228e8bab04a15cef5dd2",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-rsi-seguranca-social",
+        "sha256": "4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      },
+      {
+        "origem": "rp1-rsi-idade",
+        "sha256": "144f956c4f069addd42d9a5b72c000d6149ab7a842d629bea930d4c87f15e127",
+        "literal": true,
+        "pedido": true,
+        "alojamento": true
+      }
+    ],
+    "acertos": {
+      "redacao": "terceira",
+      "fonte_sha256": "5a3b5d8ac4b9460d283f4889d4b4f9b588417f428be82cae1e3c1f720c6d92bd",
+      "acertos": 4,
+      "medidas_novas": 12,
+      "leituras_antigas_intactas": 37,
+      "diferencas_fora_dos_acertos": 0
+    },
+    "frases_resolvidas": 24,
+    "k16": {
+      "perguntas": 34,
+      "pedacos": 84,
+      "apoios": 112,
+      "apoios_em_origens": 96,
+      "apoios_em_linhas": 16,
+      "origens_usadas": 41,
+      "origens_seladas": 64,
+      "erros": 0
+    },
+    "k17": {
+      "medidas": 49,
+      "folhas": 996,
+      "partes": 1143,
+      "diz": 307,
+      "conta": 279,
+      "liga": 557,
+      "apoios": 449,
+      "algarismos": 27,
+      "origens_das_leituras": 99,
+      "comuns": 38,
+      "erros": 0
+    },
+    "leituras_rendidas": {
+      "paginas": 4,
+      "cartoes": 142,
+      "leituras": 142,
+      "ramos": 284,
+      "algarismos": 338,
+      "linhas_citadas": 210,
+      "erros": 0
+    },
+    "plantas": {
+      "reguas": 9,
+      "plantas": [
+        {
+          "nome": "régua de outra medida",
+          "mordeu": true
+        },
+        {
+          "nome": "unidade diferente",
+          "mordeu": true
+        },
+        {
+          "nome": "salto de mês calado",
+          "mordeu": true
+        },
+        {
+          "nome": "período anterior ausente",
+          "mordeu": true
+        },
+        {
+          "nome": "União de outro mês",
+          "mordeu": true
+        },
+        {
+          "nome": "União de outra série",
+          "mordeu": true
+        },
+        {
+          "nome": "União de outra unidade",
+          "mordeu": true
+        },
+        {
+          "nome": "trimestre imediatamente anterior em vez do homólogo",
+          "mordeu": true
+        },
+        {
+          "nome": "data recusada: reference_date=2026-T5",
+          "mordeu": true
+        },
+        {
+          "nome": "data recusada: access_date=2026-T2",
+          "mordeu": true
+        },
+        {
+          "nome": "data recusada: published_at=2026-03-31",
+          "mordeu": true
+        },
+        {
+          "nome": "objeto do INE cortado dentro da cadeia do valor",
+          "mordeu": true
+        },
+        {
+          "nome": "There were no: negação inglesa sem literal, composição intacta",
+          "mordeu": true
+        },
+        {
+          "nome": "sufixo traduzido não pode trocar a linha",
+          "mordeu": true
+        },
+        {
+          "nome": "sufixo da unidade sem literal",
+          "mordeu": true
+        },
+        {
+          "nome": "origem portuguesa marcada como inglesa: pt .def-origem-doc",
+          "mordeu": true
+        },
+        {
+          "nome": "origem portuguesa marcada como inglesa: pt .def-excerto-texto",
+          "mordeu": true
+        },
+        {
+          "nome": "unidade depois do provisório, pt",
+          "mordeu": true
+        },
+        {
+          "nome": "I153: bandeira colada à unidade, pt, .cartao-medida-valor",
+          "mordeu": true
+        },
+        {
+          "nome": "I153: bandeira colada à unidade, pt, [data-cartao-leitura]",
+          "mordeu": true
+        },
+        {
+          "nome": "origem portuguesa marcada como inglesa: en .def-origem-doc",
+          "mordeu": true
+        },
+        {
+          "nome": "origem portuguesa marcada como inglesa: en .def-excerto-texto",
+          "mordeu": true
+        },
+        {
+          "nome": "unidade depois do provisório, en",
+          "mordeu": true
+        },
+        {
+          "nome": "I153: bandeira colada à unidade, en, .cartao-medida-valor",
+          "mordeu": true
+        },
+        {
+          "nome": "I153: bandeira colada à unidade, en, [data-cartao-leitura]",
+          "mordeu": true
+        }
+      ],
+      "nomes": {
+        "pensao-media-anual-2025": {
+          "pt": "Pensão média anual",
+          "en": "Average annual pension"
+        },
+        "pensao-media-anual-2024": {
+          "pt": "Pensão média anual",
+          "en": "Average annual pension"
+        },
+        "ipc-alimentacao-variacao-homologa": {
+          "pt": "Preços dos alimentos e das bebidas não alcoólicas",
+          "en": "Prices of food and non-alcoholic drinks"
+        },
+        "ipc-alimentacao-variacao-homologa-periodo-anterior": {
+          "pt": "Preços dos alimentos e das bebidas não alcoólicas",
+          "en": "Prices of food and non-alcoholic drinks"
+        }
+      },
+      "publicacoes_no_periodo": [
+        {
+          "id": "remuneracao-bruta-mensal-media",
+          "data": "2026-04-01",
+          "aceite": true
+        },
+        {
+          "id": "ipc-variacao-homologa",
+          "data": "2026-08-15",
+          "aceite": true
+        }
+      ],
+      "datas": 8,
+      "paginas": 2,
+      "cartoes": 24
+    },
+    "planta_origens": {
+      "nome": "selo noutra pasta sem ficheiro alojado",
+      "mordeu": true,
+      "controlo_integro": true
+    },
+    "plantas_f1": {
+      "portugues": true,
+      "ingles": true
+    },
+    "m8": {
+      "celulas": [
+        {
+          "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+          "passa": true,
+          "prova": "13 medida(s) com « (dado provisório)» para 13 linha(s) com bandeira · 0 a mais · 0 a menos"
+        },
+        {
+          "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+          "passa": true,
+          "prova": "13 medida(s) com « (provisional data)» para 13 linha(s) com bandeira · 0 a mais · 0 a menos"
+        }
+      ],
+      "medidas": {
+        "M8·pt": {
+          "palavra": " (dado provisório)",
+          "comPalavra": 13,
+          "daBandeira": 13,
+          "outras": [],
+          "aMais": [],
+          "aMenos": []
+        },
+        "M8·en": {
+          "palavra": " (provisional data)",
+          "comPalavra": 13,
+          "daBandeira": 13,
+          "outras": [],
+          "aMais": [],
+          "aMenos": []
+        }
+      }
+    },
+    "plantas_m8": {
+      "plantas": [
+        {
+          "nome": "I153: a ressalva colada ao valor na página da área",
+          "mordeu": true,
+          "celulas": [
+            {
+              "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+              "passa": false,
+              "prova": "13 medida(s) com « (dado provisório)» para 13 linha(s) com bandeira · 0 a mais · 0 a menos · outra(s) palavra(s): (dado provisório)"
+            },
+            {
+              "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+              "passa": false,
+              "prova": "13 medida(s) com « (provisional data)» para 13 linha(s) com bandeira · 0 a mais · 0 a menos · outra(s) palavra(s): (provisional data)"
+            }
+          ],
+          "queixas": []
+        },
+        {
+          "nome": "a palavra do provisório apagada de uma medida que a devia ter",
+          "mordeu": true,
+          "celulas": [
+            {
+              "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+              "passa": false,
+              "prova": "12 medida(s) com « (dado provisório)» para 13 linha(s) com bandeira · 0 a mais · 1 a menos"
+            },
+            {
+              "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+              "passa": false,
+              "prova": "12 medida(s) com « (provisional data)» para 13 linha(s) com bandeira · 0 a mais · 1 a menos"
+            }
+          ],
+          "queixas": []
+        }
+      ]
+    },
+    "catraca_l1": {
+      "referencia": "design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json",
+      "referencia_cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "dist_construido_de": "68215ae9a73910f59eb103c16961be52bd901fae",
+      "contagens": {
+        "estudos": 2341,
+        "antes": 2291,
+        "entraram": 50,
+        "sairam": 0,
+        "paginas_antigas_agravadas": 0,
+        "outras_entradas": 0
+      },
+      "entraram": [
+        {
+          "url": "/en/ledger/beneficiarios-do-rsi-por-mil-2023",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/beneficiarios-do-rsi-por-mil-2024",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "INE · conceito e fórmula dos beneficiários do rendimento social de inserção",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ihpc-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ihpc-variacao-homologa-ue",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ihpc-variacao-homologa",
+          "familia": "linha",
+          "destinos": 3,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+                  "texto": "Eurostat · definição da variação homóloga do IHPC",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+                  "texto": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-alimentacao-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-alimentacao-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-combustiveis-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-combustiveis-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "INE · metainformação das classes do índice de preços no consumidor",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-energia-em-casa-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "INE · metainformação das classes do índice de preços no consumidor",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-rendas-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-rendas-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "INE · metainformação das classes do índice de preços no consumidor",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-variacao-media-12-meses-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/ipc-variacao-media-12-meses",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/linha-de-risco-de-pobreza-2024",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/linha-de-risco-de-pobreza-2025",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/pensao-media-anual-2024",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/pensao-media-anual-2025",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "INE · metainformação do valor médio das pensões",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/en/ledger/remuneracao-bruta-mensal-media",
+          "familia": "linha",
+          "destinos": 3,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "https://smi.ine.pt/UploadFile/Download/2576": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "https://smi.ine.pt/UploadFile/Download/2576",
+                  "texto": "INE · documento metodológico da remuneração bruta mensal média",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://smi.ine.pt/UploadFile/Download/2576",
+                  "texto": "INE · conceito de remuneração bruta",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                }
+              ]
+            },
+            "/en/method": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/en/method#releitura",
+                  "texto": "The re-reading rule →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/en/method#livro-razao",
+                  "texto": "How this is made",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/beneficiarios-do-rsi-por-mil-2023",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/beneficiarios-do-rsi-por-mil-2024",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "INE · conceito e fórmula dos beneficiários do rendimento social de inserção",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT",
+                  "texto": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ihpc-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ihpc-variacao-homologa-ue",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ihpc-variacao-homologa",
+          "familia": "linha",
+          "destinos": 3,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+                  "texto": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+                  "texto": "Eurostat · definição da variação homóloga do IHPC",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+                  "texto": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&geo=EU27_2020&lastTimePeriod=2",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-alimentacao-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-alimentacao-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-combustiveis-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-combustiveis-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "INE · metainformação das classes do índice de preços no consumidor",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-energia-em-casa-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "INE · metainformação das classes do índice de preços no consumidor",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-rendas-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-rendas-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "INE · metainformação das classes do índice de preços no consumidor",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014647&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-variacao-homologa-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-variacao-homologa",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, variação homóloga",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-variacao-media-12-meses-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/ipc-variacao-media-12-meses",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "INE · metainformação do índice de preços no consumidor, média dos últimos doze meses",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014666&lingua=PT",
+                  "texto": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/linha-de-risco-de-pobreza-2024",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/linha-de-risco-de-pobreza-2025",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en",
+                  "texto": "At-risk-of-poverty thresholds",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/pensao-media-anual-2024",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/pensao-media-anual-2025",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT": {
+              "vezes": 4,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "INE · metainformação do valor médio das pensões",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT",
+                  "texto": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior",
+          "familia": "linha",
+          "destinos": 2,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "url": "/livro-razao/remuneracao-bruta-mensal-media",
+          "familia": "linha",
+          "destinos": 3,
+          "repetidos": {
+            "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT": {
+              "vezes": 3,
+              "ancoras": [
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                },
+                {
+                  "href": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT",
+                  "texto": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+                  "classe": "ligacao-externa",
+                  "cartao": null
+                }
+              ]
+            },
+            "https://smi.ine.pt/UploadFile/Download/2576": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "https://smi.ine.pt/UploadFile/Download/2576",
+                  "texto": "INE · documento metodológico da remuneração bruta mensal média",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                },
+                {
+                  "href": "https://smi.ine.pt/UploadFile/Download/2576",
+                  "texto": "INE · conceito de remuneração bruta",
+                  "classe": "lig def-origem-doc",
+                  "cartao": null
+                }
+              ]
+            },
+            "/metodo": {
+              "vezes": 2,
+              "ancoras": [
+                {
+                  "href": "/metodo#releitura",
+                  "texto": "A regra da releitura →",
+                  "classe": "",
+                  "cartao": null
+                },
+                {
+                  "href": "/metodo#livro-razao",
+                  "texto": "Como isto é feito",
+                  "classe": "",
+                  "cartao": null
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "sairam": [],
+      "agravadas": [],
+      "fora": []
+    },
+    "portoes": {
+      "build": {
+        "codigo": 0,
+        "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+        "inicio": "2026-09-26T17:44:06.192716+00:00",
+        "fim": "2026-09-26T17:49:10.107504+00:00",
+        "log_sha256": "cf1badb626f11a950cb0516ca52a0e81a7842a96ef1fb95cf44add2c12fdcb77"
+      },
+      "verify": {
+        "codigo": 0,
+        "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+        "inicio": "2026-09-26T17:50:09.863901+00:00",
+        "fim": "2026-09-26T17:58:22.521944+00:00",
+        "log_sha256": "5ba48458a4af0c6fbf2230853dc4fa1e3a171fb8821a33a930bdf55e5c76b2c8"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+        "inicio": "2026-09-26T17:58:35.254669+00:00",
+        "fim": "2026-09-26T17:58:35.468295+00:00",
+        "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+      }
+    },
+    "motor_portao": {
+      "codigo": 0,
+      "log_sha256": "095d638c88d93a4c28d41aa4153764a8a2f2444d12dbfa50fad220a1472cf87b"
+    },
+    "capturas": {
+      "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+      "paginas": 20,
+      "recortes": 50,
+      "larguras": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "falhas": 0,
+      "inspecionadas": 20
+    },
+    "congeladas": {
+      "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+      "ficheiros": 6
+    },
+    "custo": {
+      "inicio": "2026-09-26T17:10:34Z",
+      "fim": "2026-09-26T17:58:35.468295+00:00",
+      "segundos_da_janela": 2881,
+      "sessao": {
+        "registo": "rollout-2026-09-26T18-08-33-01a0deb0-a401-7511-b46b-fa31190d26f9.jsonl",
+        "inicio": "2026-09-26T17:08:33.541Z",
+        "modelo": "gpt-6-astra",
+        "hora": "2026-09-26T18:01:36.318Z",
+        "input_tokens": 18753236,
+        "cached_input_tokens": 18371712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 63375,
+        "reasoning_output_tokens": 19528,
+        "total_tokens": 18816611,
+        "euros": null,
+        "limite": "Contagem cumulativa do registo desta sessão, incluindo entradas em cache; não é uma estimativa de faturação nem inclui sessões separadas de revisão automática."
+      },
+      "euros": null
+    },
+    "caminhos": {
+      "ficheiros_lidos": 498,
+      "ficheiros_com_caminho_ou_utilizador": 0,
+      "conhecido_positivo": {
+        "fora_do_repositorio": true,
+        "encontrado": true
+      },
+      "achados": []
+    },
+    "sanitizacao": {
+      "ficheiros": [
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/construcao-preparacao.log",
+          "antes": "84a0e80ad9f50ac8a39677a3a4110aa5935e35467dec1d3d99d9387acd668afe",
+          "depois": "8573c430567a7e00afce3f685c181cea78ca9b04242e5706647b4ce1c03f5caf"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/RESPOSTA-codex-rp1b.md",
+          "antes": "3936b0088a391f8d9ed05b8feab3b696cfd85466a53dff7e0a9c53f931832b98",
+          "depois": "451089c9470cdcfdaabf661e18f0145cb9f57657054bd67c93d1492d518455ed"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/RESPOSTA-codex-rp1.md",
+          "antes": "37f34fff5f8db06b1338fd6b120535d8ffbef4e01feb55c43090d8574d8203df",
+          "depois": "30d74c19a70b46ef6733dabee5156bacdb808ba1e373bce006c2333dad6b79f3"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/construcao-antes.log",
+          "antes": "aefdf08a180619882b843d6ede3b709e58c6055b1d22fd523fb321a640b834c7",
+          "depois": "a87d6c8bee2d9ab12b66a24e96a85dd3818a240c33ceb3598b7c6e5df43055d9"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/verify.log",
+          "antes": "6b206571006c295085eafb880cfa857ee19dd4be3ad24f86f68308d358f87eb6",
+          "depois": "5995144931ae540940640eb906e92759f929e86c7a52aa0032174d3843f20714"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/build.log",
+          "antes": "8710b008a0d0bbccc2acedf4fbe945a39c1a92f8eabbc362316d63fded818e19",
+          "depois": "14d775040b9999b9e31e3c3733cc7ea9aa59a6bbbfe3e2ec5e101a5fdfcced0b"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1-codex.md",
+          "antes": "46f2e7b06c26fb011108a7b58972df7df6ee5b5ad004bdd52495cbf5b7940d37",
+          "depois": "ee66963c1ae594476a80a57c2e954314850a5c7c0313d774a662a165fbfdc888"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1b-codex.md",
+          "antes": "d4e01d3914b131ea49fcf1cc4c27529fbe5b258618876057c6c3b3948855a9ef",
+          "depois": "a405fe77ff211070b406652ee6aacc54ad1b9addb872678213540f90e317cb1b"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/preparacao-3b3dac48/build.log",
+          "antes": "f851cd69f808e6e8cd55af88bee6aaa5313fe5906474a9d3610e05bba2624ffb",
+          "depois": "0d0a888fe8aea1637ad6b5ccdfed50549d46e00f941e3e006a6a5d972554b0fc"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/preparacao-83fb702c/verify.log",
+          "antes": "349f23ac8083d3d38bab5fa9af2a89485718b032e8e3dbaf39b039d7596b4be0",
+          "depois": "c7e567fabd3cf6962597258d186a66ae0d26acfbbd7be12db3a46d02792bdbab"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/preparacao-83fb702c/build.log",
+          "antes": "1e821adb702816188950ad92dbc46ce9c16b6cc5f9f6e4ba7d4dbec56fff7ba9",
+          "depois": "a5cff6a44cfbffc91d08d63503a8a2ffadf6df66d2fadcf0c86f0ca27fe9c8d3"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/verify.log",
+          "antes": "d46a607b07e8936cd75c4a15bb377fedd4551a5d9aeedb1a26f73f03ae7ffc2f",
+          "depois": "c38bc441a5d11bf62b3859b9f8aaf4db6b36cfc56d4804df09ac5e7ccbe2b4f1"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/build.log",
+          "antes": "3a292f27f842686f57f28169837a72db06582d83c402d8fcea0536f4c554d9ae",
+          "depois": "b75abe398ab9da27b02d31a0fb7221cb9dbe465682001fdf990455600815e9fc"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/preparacao/astro.log",
+          "antes": "9e46b4e1ab934b403764e40d94cf98acd896ccf589324fdca0ef1989d02e4462",
+          "depois": "97b105b07ba15b82503354c4cddfe5a85d0546989c2e8ba9790fe3cb79e3fb25"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/preparacao/plantas-portoes.log",
+          "antes": "def85814e74e674c6a67ad69f80bb17bf75370396a1361f1821807e7d0e0ea95",
+          "depois": "efdb5ef6e63b97f66f2132d77e2d829405f171a07d2ca60211a38772f5aa0262"
+        },
+        {
+          "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1b/tentativa-1/build.log",
+          "antes": "6013487a698e350c3e0c339d81e78964c9cbb800d72c715f356c87ce2eb46df3",
+          "depois": "a03db83a89287adb8bc3000cb24f0e3375770bed619420c94d0b3bd435435b64"
+        }
+      ],
+      "contagem": 16
     }
   }
 }

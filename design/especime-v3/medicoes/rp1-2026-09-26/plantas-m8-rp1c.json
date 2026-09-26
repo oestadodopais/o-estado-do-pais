@@ -1,0 +1,38 @@
+{
+  "plantas": [
+    {
+      "nome": "I153: a ressalva colada ao valor na página da área",
+      "mordeu": true,
+      "celulas": [
+        {
+          "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+          "passa": false,
+          "prova": "13 medida(s) com « (dado provisório)» para 13 linha(s) com bandeira · 0 a mais · 0 a menos · outra(s) palavra(s): (dado provisório)"
+        },
+        {
+          "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+          "passa": false,
+          "prova": "13 medida(s) com « (provisional data)» para 13 linha(s) com bandeira · 0 a mais · 0 a menos · outra(s) palavra(s): (provisional data)"
+        }
+      ],
+      "queixas": []
+    },
+    {
+      "nome": "a palavra do provisório apagada de uma medida que a devia ter",
+      "mordeu": true,
+      "celulas": [
+        {
+          "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · pt",
+          "passa": false,
+          "prova": "12 medida(s) com « (dado provisório)» para 13 linha(s) com bandeira · 0 a mais · 1 a menos"
+        },
+        {
+          "nome": "M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · en",
+          "passa": false,
+          "prova": "12 medida(s) com « (provisional data)» para 13 linha(s) com bandeira · 0 a mais · 1 a menos"
+        }
+      ],
+      "queixas": []
+    }
+  ]
+}
