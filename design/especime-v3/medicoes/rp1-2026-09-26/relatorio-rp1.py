@@ -26,7 +26,7 @@ linhas+=['','A pesquisa da variação real não prova que nenhum indicador possa
 'O brief dizia que o sítio já apresentava meses e trimestres. A leitura do código e o primeiro `ledger:check` mostraram que só os dias completos tinham transformação e que o trimestre era recusado. A extensão foi feita sem acrescentar um dia aos períodos e sem admitir trimestres em datas de leitura ou de publicação.','',
 '## Acertos às leituras','',f'O guião prova {m["acertos"]["acertos"]} trocas nas duas edições (`acertos.acertos`) e {m["acertos"]["diferencas_fora_dos_acertos"]} diferenças fora delas (`acertos.diferencas_fora_dos_acertos`). As {m["acertos"]["leituras_antigas_intactas"]} leituras anteriores continuam iguais (`acertos.leituras_antigas_intactas`). A contagem é de trocas, não de decisões editoriais: a mudança portuguesa e a inglesa ficam separadas.','',
 'Os acertos retiram pressupostos de subida nas médias dos preços, limitam a referência das rendas ao valor de agosto, colocam a unidade antes do provisório, corrigem o denominador das pensões, aproximam a explicação do RSI do conceito publicado e distinguem o ano do inquérito do ano dos rendimentos na linha de pobreza. O portão da voz pediu ainda a retirada de «to live on» da frase inglesa, porque fazia reaparecer «live», uma cadeia retirada; o sentido continua sustentado pelo mesmo literal e a célula não muda.','',
-'| Medida e edição | Antes | Depois | Literal que sustenta o acerto |','|---|---|---|']
+'| Medida e edição | Antes | Depois | Literal que sustenta o acerto |','|---|---|---|---|']
 def cel(v):return str(v).replace('|','\\|').replace('\n',' ')
 def ex(v):return json.dumps(v,ensure_ascii=False) if not isinstance(v,str) else v
 for i,x in enumerate(ac['acertos']):
