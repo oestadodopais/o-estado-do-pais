@@ -43,6 +43,8 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor": 'pt',
+  "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data": 'en',
   /* RP1: línguas lidas nas respostas e na metainformação. */
   "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor": 'pt',
   "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor": 'pt',
@@ -379,6 +381,10 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  '0014647, geocod=PT, dim_3=045': null,
+  '0014647, geocod=PT, dim_3=0722': null,
+  '0014647, geocod=PT, dim_3=041': null,
+  'prc_hicp_minr, freq=M, unit=RCH_A, coicop18=TOTAL': null,
   /* RP1: códigos de série e coordenadas da API, sem língua natural. */
   '0013420, geocod=PT': null,
   '0014663, geocod=PT, dim_3=01': null,

@@ -4867,12 +4867,12 @@
           ]
         },
         {
-          "pt": ", os preços no consumidor variaram ",
-          "en": ", consumer prices changed by ",
+          "pt": ", os preços no consumidor ",
+          "en": ", consumer prices ",
           "partes": [
             {
-              "pt": ", os preços no consumidor variaram ",
-              "en": ", consumer prices changed by ",
+              "pt": ", os preços no consumidor ",
+              "en": ", consumer prices ",
               "classe": "diz",
               "apoios": [
                 {
@@ -4942,6 +4942,60 @@
               "pt": "A variação é igual à do mês anterior.",
               "en": "The change is the same as the previous month’s.",
               "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "subiram ",
+          "en": "rose ",
+          "partes": [
+            {
+              "pt": "subiram ",
+              "en": "rose ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "variaram ",
+          "en": "changed by ",
+          "partes": [
+            {
+              "pt": "variaram ",
+              "en": "changed by ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "não variaram",
+          "en": "did not change",
+          "partes": [
+            {
+              "pt": "não variaram",
+              "en": "did not change",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
             }
           ]
         }
@@ -5088,12 +5142,12 @@
           ]
         },
         {
-          "pt": ", os preços no consumidor sem a habitação variaram ",
-          "en": ", consumer prices excluding housing changed by ",
+          "pt": ", os preços no consumidor sem a habitação ",
+          "en": ", consumer prices excluding housing ",
           "partes": [
             {
-              "pt": ", os preços no consumidor sem a habitação variaram ",
-              "en": ", consumer prices excluding housing changed by ",
+              "pt": ", os preços no consumidor sem a habitação ",
+              "en": ", consumer prices excluding housing ",
               "classe": "diz",
               "apoios": [
                 {
@@ -5163,6 +5217,60 @@
               "pt": "A variação é igual à do mês anterior.",
               "en": "The change is the same as the previous month’s.",
               "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "subiram ",
+          "en": "rose ",
+          "partes": [
+            {
+              "pt": "subiram ",
+              "en": "rose ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "variaram ",
+          "en": "changed by ",
+          "partes": [
+            {
+              "pt": "variaram ",
+              "en": "changed by ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "não variaram",
+          "en": "did not change",
+          "partes": [
+            {
+              "pt": "não variaram",
+              "en": "did not change",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-media",
+                  "campo": "excerto",
+                  "literal": "A variação média dos últimos doze meses compara o nível do índice médio de preços dos últimos doze meses com os doze meses imediatamente anteriores."
+                }
+              ]
             }
           ]
         }
@@ -5477,12 +5585,12 @@
           ]
         },
         {
-          "pt": ", uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de ",
-          "en": ", a person living alone was at risk of poverty with less than ",
+          "pt": ", uma pessoa que vivesse sozinha estava em risco de pobreza se, no ano anterior, tivesse tido menos de ",
+          "en": ", a person living alone was at risk of poverty if, in the previous year, they had had less than ",
           "partes": [
             {
-              "pt": ", uma pessoa que vivesse sozinha estava em risco de pobreza se tivesse menos de ",
-              "en": ", a person living alone was at risk of poverty with less than ",
+              "pt": ", uma pessoa que vivesse sozinha estava em risco de pobreza se, no ano anterior, tivesse tido menos de ",
+              "en": ", a person living alone was at risk of poverty if, in the previous year, they had had less than ",
               "classe": "diz",
               "apoios": [
                 {
@@ -5494,18 +5602,23 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "One adult"
+                },
+                {
+                  "origem": "rp1-pobreza-periodo",
+                  "campo": "excerto",
+                  "literal": "For all countries, the reference period for income variables in EU-SILC is the previous calendar year."
                 }
               ]
             }
           ]
         },
         {
-          "pt": " euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a ",
-          "en": " euros a year in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+          "pt": " euros, depois dos impostos e das contribuições sociais e contando as prestações sociais. É a linha que o Eurostat traça a ",
+          "en": " euros, after taxes and social contributions and including social benefits. That is the line Eurostat draws at ",
           "partes": [
             {
-              "pt": " euros por ano para viver no ano anterior, depois dos impostos e das contribuições sociais e contando as prestações sociais: é a linha que o Eurostat traça a ",
-              "en": " euros a year in the previous year, after taxes and social contributions and including social benefits: that is the line Eurostat draws at ",
+              "pt": " euros, depois dos impostos e das contribuições sociais e contando as prestações sociais. É a linha que o Eurostat traça a ",
+              "en": " euros, after taxes and social contributions and including social benefits. That is the line Eurostat draws at ",
               "classe": "diz",
               "apoios": [
                 {
@@ -5538,12 +5651,12 @@
           ]
         },
         {
-          "pt": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos.",
-          "en": " % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less.",
+          "pt": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família. Mediano é o do meio: metade da população tem mais e metade tem menos.",
+          "en": " % of the country’s median income, adjusted for each household’s size and composition. Median means the one in the middle: half the population has more and half has less.",
           "partes": [
             {
-              "pt": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família: é o do meio, em que metade da população tem mais e metade tem menos.",
-              "en": " % of the country’s median income, adjusted for each household’s size and composition: the one in the middle, where half the population has more and half has less.",
+              "pt": " % do rendimento mediano do país, ajustado ao tamanho e à composição de cada família. Mediano é o do meio: metade da população tem mais e metade tem menos.",
+              "en": " % of the country’s median income, adjusted for each household’s size and composition. Median means the one in the middle: half the population has more and half has less.",
               "classe": "diz",
               "apoios": [
                 {
@@ -5578,6 +5691,511 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ipc-energia-em-casa-variacao-homologa",
+      "origens": [
+        "rp1-ipc-classes-homologa",
+        "rp1-ipc-habitacao"
+      ],
+      "folhas": [
+        {
+          "pt": "os preços da eletricidade, do gás e dos outros combustíveis usados em casa estavam",
+          "en": "the prices of electricity, gas and other fuels used at home were",
+          "partes": [
+            {
+              "pt": "os preços da eletricidade, do gás e dos outros combustíveis usados em casa estavam",
+              "en": "the prices of electricity, gas and other fuels used at home were",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Eletricidade, gás e outros combustíveis"
+                },
+                {
+                  "origem": "rp1-ipc-habitacao",
+                  "campo": "excerto",
+                  "literal": "Habitação, água, eletricidade, gás e outros combustíveis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "ipc-combustiveis-variacao-homologa",
+      "origens": [
+        "rp1-ipc-classes-homologa"
+      ],
+      "folhas": [
+        {
+          "pt": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+          "en": "the prices of fuels and lubricants for vehicles were",
+          "partes": [
+            {
+              "pt": "os preços dos combustíveis e dos lubrificantes para os veículos estavam",
+              "en": "the prices of fuels and lubricants for vehicles were",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "ipc-rendas-variacao-homologa",
+      "origens": [
+        "rp1-ipc-classes-homologa"
+      ],
+      "folhas": [
+        {
+          "pt": "as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,",
+          "en": "the rents paid by tenants were, on the consumer price index measure,",
+          "partes": [
+            {
+              "pt": "as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,",
+              "en": "the rents paid by tenants were, on the consumer price index measure,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Rendas efetivamente pagas pela habitação"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A variação é maior do que a do mês anterior.",
+          "en": "The change is larger than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é maior do que a do mês anterior.",
+              "en": "The change is larger than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é menor do que a do mês anterior.",
+          "en": "The change is smaller than the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é menor do que a do mês anterior.",
+              "en": "The change is smaller than the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": "A variação é igual à do mês anterior.",
+          "en": "The change is the same as the previous month’s.",
+          "partes": [
+            {
+              "pt": "A variação é igual à do mês anterior.",
+              "en": "The change is the same as the previous month’s.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "ihpc-variacao-homologa",
+      "origens": [
+        "rp1-ihpc-comparavel",
+        "rp1-ihpc-homologa",
+        "rp1-ihpc-uniao"
+      ],
+      "folhas": [
+        {
+          "pt": "os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,",
+          "en": "prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,",
+          "partes": [
+            {
+              "pt": "os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,",
+              "en": "prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "The Harmonised Index of Consumer Prices ( HICP) gives comparable measures of inflation for the countries and country groups for which it is produced. It is a macroeconomic indicator that measures the change over time of the prices of consumer goods and services acquired by households."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Portugal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A subida é maior do que a da média da União Europeia.",
+          "en": "The rise is larger than the European Union average.",
+          "partes": [
+            {
+              "pt": "A subida é maior do que a da ",
+              "en": "The rise is larger than the ",
+              "classe": "conta"
+            },
+            {
+              "pt": "média da União Europeia.",
+              "en": "European Union average.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-uniao",
+                  "campo": "excerto",
+                  "literal": "The change in the headline HICP and country aggregates since December (y-1) are computed with a weighted average of the HICP sub-indices transmitted by the NSIs and the weights of the countries and of the sub-indices concerned."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A subida é menor do que a da média da União Europeia.",
+          "en": "The rise is smaller than the European Union average.",
+          "partes": [
+            {
+              "pt": "A subida é menor do que a da ",
+              "en": "The rise is smaller than the ",
+              "classe": "conta"
+            },
+            {
+              "pt": "média da União Europeia.",
+              "en": "European Union average.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-uniao",
+                  "campo": "excerto",
+                  "literal": "The change in the headline HICP and country aggregates since December (y-1) are computed with a weighted average of the HICP sub-indices transmitted by the NSIs and the weights of the countries and of the sub-indices concerned."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": "A subida é igual à da média da União Europeia.",
+          "en": "The rise is the same as the European Union average.",
+          "partes": [
+            {
+              "pt": "A subida é igual à da ",
+              "en": "The rise is the same as the ",
+              "classe": "conta"
+            },
+            {
+              "pt": "média da União Europeia.",
+              "en": "European Union average.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-uniao",
+                  "campo": "excerto",
+                  "literal": "The change in the headline HICP and country aggregates since December (y-1) are computed with a weighted average of the HICP sub-indices transmitted by the NSIs and the weights of the countries and of the sub-indices concerned."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
     }
   ]
 }

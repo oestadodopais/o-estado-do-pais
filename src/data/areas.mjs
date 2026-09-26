@@ -696,7 +696,7 @@ export const AREAS = [
 export const SEM_AREA = [
   {
     assunto: 'A variação dos preços no consumidor',
-    id: /^ipc-(?:variacao-homologa|variacao-media-12-meses|alimentacao-variacao-homologa|sem-habitacao-variacao-media-12-meses)(?:-periodo-anterior)?$/,
+    id: /^(?:ipc-(?:variacao-homologa|variacao-media-12-meses|alimentacao-variacao-homologa|energia-em-casa-variacao-homologa|combustiveis-variacao-homologa|rendas-variacao-homologa|sem-habitacao-variacao-media-12-meses)|ihpc-variacao-homologa)(?:-periodo-anterior)?$/,
     motivo: 'Estas séries medem a variação dos preços no consumidor. As matérias transcritas não nomeiam a inflação nem o nível geral dos preços. A utilização da média sem habitação como referência das rendas não a transforma numa medida dos preços da habitação. As linhas continuam nos temas nacionais; não se atribui uma matéria ministerial que a declaração não nomeia.',
   },
   {

@@ -36,9 +36,17 @@ def main():
         else:
             texto=p.read_text()
             if p.suffix=='.json':
-                d=json.loads(texto)[0]
-                assert selo['campo']=='Dimensoes.Descricao_Dim[0].nota_dsg'
-                texto=d['Dimensoes']['Descricao_Dim'][0]['nota_dsg']
+                d=json.loads(texto)
+                campo=selo['campo']
+                if campo=='extension.description, texto normalizado':
+                    texto=html.unescape(re.sub('<[^>]*>',' ',d['extension']['description']))
+                elif campo=='Dimensoes.Categoria_Dim[dim_num=3,categ_cod=04].categ_dsg':
+                    categorias=[c for grupo in d[0]['Dimensoes']['Categoria_Dim'] for itens in grupo.values() for c in itens if c['dim_num']=='3' and c['categ_cod']=='04']
+                    assert len(categorias)==1,chave
+                    texto=categorias[0]['categ_dsg']
+                else:
+                    assert campo=='Dimensoes.Descricao_Dim[0].nota_dsg'
+                    texto=d[0]['Dimensoes']['Descricao_Dim'][0]['nota_dsg']
             else:
                 texto=re.sub(r'<(script|style)\b[^>]*>.*?</\1>',' ',texto,flags=re.S|re.I)
                 texto=html.unescape(re.sub('<[^>]*>',' ',texto))

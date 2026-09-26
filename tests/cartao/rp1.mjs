@@ -7,7 +7,7 @@ import { REGUAS_DECLARADAS, conferirReguaDeclarada, linhasDeEnquadramento, regua
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 import { DOMINIOS_RP1 } from '../../src/data/medidas-rp1.mjs';
 import { auditarPerguntas } from './perguntas.mjs';
-import { conferirAuditoriaDasLeituras, folhasDaLeitura } from './leituras.mjs';
+import { conferirAuditoriaDasLeituras, folhasDaLeitura, conferirPaginaDaLeitura } from './leituras.mjs';
 
 const linhas = loadClaims();
 const plantas = [];
@@ -19,6 +19,10 @@ for (const [id, regra] of Object.entries(REGUAS_DECLARADAS)) {
   assert.equal(conferirReguaDeclarada(id, regra).anterior, regra.anterior);
   assert.equal(reguaDaMedida(id).anterior?.id, regra.anterior);
   assert.ok(linhasDeEnquadramento().has(regra.anterior));
+  if (regra.ue) {
+    assert.equal(reguaDaMedida(id).ue?.id, regra.ue);
+    assert.ok(linhasDeEnquadramento().has(regra.ue));
+  }
 }
 const id = 'ipc-variacao-homologa';
 const regra = REGUAS_DECLARADAS[id];
@@ -30,6 +34,13 @@ copia = alterada(); copia.get(regra.anterior).reference_date = '2026-06';
 recusa('salto de mês calado', () => conferirReguaDeclarada(id, regra, copia), /cadência declarada/);
 copia = alterada(); copia.delete(regra.anterior);
 recusa('período anterior ausente', () => conferirReguaDeclarada(id, regra, copia), /linha ausente/);
+const ihpc = 'ihpc-variacao-homologa', regraIHPC = REGUAS_DECLARADAS[ihpc];
+copia = alterada(); copia.get(regraIHPC.ue).reference_date = '2026-07';
+recusa('União de outro mês', () => conferirReguaDeclarada(ihpc, regraIHPC, copia), /União de outro período/);
+copia = alterada(); copia.get(regraIHPC.ue).document.edition = 'outra série';
+recusa('União de outra série', () => conferirReguaDeclarada(ihpc, regraIHPC, copia), /União de outra série ou unidade/);
+copia = alterada(); copia.get(regraIHPC.ue).unit = 'euros';
+recusa('União de outra unidade', () => conferirReguaDeclarada(ihpc, regraIHPC, copia), /União de outra série ou unidade/);
 const salario = 'remuneracao-bruta-mensal-media';
 copia = alterada(); copia.get(REGUAS_DECLARADAS[salario].anterior).reference_date = '2026-T1';
 recusa('trimestre imediatamente anterior em vez do homólogo', () => conferirReguaDeclarada(salario, REGUAS_DECLARADAS[salario], copia), /cadência declarada/);
@@ -93,7 +104,14 @@ if (!process.argv.includes('--declaracoes')) {
         plantas.push({nome:'unidade depois do provisório, '+lang,mordeu:true});
         const marcas=card.querySelectorAll('.claim-provisorio');
         assert.equal(marcas.length,2,'valor do cartão e valor da leitura');
-        assert.ok(marcas.every(m=>m.textContent===(lang==='pt'?'provisório':'provisional')));
+        assert.ok(marcas.every(m=>m.textContent===(lang==='pt'?' provisório':' provisional')));
+        for (const seletor of ['.cartao-medida-valor', '[data-cartao-leitura]']) {
+          const colada=parse(root.toString());
+          const marca=colada.querySelector(`[data-cartao-medida="${salario}"] ${seletor} .claim-provisorio`);
+          marca.set_content(marca.textContent.trim());
+          assert.ok(conferirPaginaDaLeitura(colada,lang,ficheiro).erros.some(e=>/ressalva.*separador|texto rendido difere/.test(e)), 'I153: bandeira colada aceite');
+          plantas.push({nome:'I153: bandeira colada à unidade, '+lang+', '+seletor,mordeu:true});
+        }
       }
     }
   }

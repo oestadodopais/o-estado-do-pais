@@ -594,7 +594,7 @@ const LINHAS = loadClaims();
 
 async function mediuOProvisorio() {
   for (const { edicao, area } of EDICOES) {
-    const palavra = edicao === 'pt' ? 'provisório' : 'provisional';
+    const palavra = edicao === 'pt' ? ' provisório' : ' provisional';
     const outras = new Set();
     const comPalavra = new Set();
     const daBandeira = new Set();
@@ -605,7 +605,7 @@ async function mediuOProvisorio() {
         for (const el of document.querySelectorAll('.claim-provisorio')) {
           const caixa = el.closest('.claim, .cartao-medida-quantidade');
           marcados.push({
-            texto: el.textContent.trim(),
+            texto: el.textContent,
             id: caixa?.querySelector('[data-claim]')?.getAttribute('data-claim') ?? null,
           });
         }

@@ -88,6 +88,8 @@ export const UNIDADES = {
      há inglês da fonte. */
   'pontos de índice': 'index points',
   /* 12 linhas. O símbolo não muda de língua. */
+  /* RP1b: INE, Percentagem (%); Eurostat RCH_A, percentage change,
+     conforme extension.description da resposta selada. */
   '%': '%',
   /* 11 linhas. O PIB per capita regional do Eurostat. A casa escreve «EU-27»
      na edição inglesa («with the EU-27 average», página das regiões). */

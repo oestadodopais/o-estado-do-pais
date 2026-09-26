@@ -214,6 +214,21 @@ planta('rp1-regua-de-outra-medida','scripts/gate-html.mjs',[
   valor.setAttribute('data-claim',outra);valor.set_content(String(getClaim(outra).value));
  }]
 ],[/ipc-alimentacao-variacao-homologa-periodo-anterior.*sem selo|o valor da afirmação "ipc-alimentacao-variacao-homologa-periodo-anterior" aparece sem selo/]);
+planta('rp1b-uniao-de-outra-linha','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>{
+  const cartao=r.querySelector('[data-cartao-medida="ihpc-variacao-homologa"]');
+  const anterior=cartao.querySelector('[data-regua="anterior"] [data-claim]');
+  const ue=cartao.querySelector('[data-regua="ue"] [data-claim]');
+  ue.setAttribute('data-claim',anterior.getAttribute('data-claim'));
+  ue.set_content(anterior.textContent);
+ }]
+],[/ihpc-variacao-homologa-periodo-anterior.*(?:régua|selo)/]);
+planta('rp1b-ressalva-colada','scripts/check-voz.mjs',[
+ ['temas/index.html',r=>{
+  const m=r.querySelector('[data-cartao-medida="remuneracao-bruta-mensal-media"] .cartao-medida-valor .claim-provisorio');
+  m.set_content(m.textContent.trim());
+ }]
+],[/ressalva sem separador/]);
 planta('rp1-fonte-da-pergunta','scripts/check-lugar.mjs',[
  ['livro-razao/ipc-variacao-homologa/index.html',r=>r.querySelector('[data-definicao] [data-def-origem]').remove()]
 ],[/a origem «rp1-ipc-homologa» não se rende na página/]);

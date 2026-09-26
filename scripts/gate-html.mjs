@@ -3174,7 +3174,7 @@ function linhaDaReguaDoCartao(principal, id, qual) {
   const declarada = REGUAS_DECLARADAS[principal];
   // RP1: lê a declaração, mas recompõe os períodos sem chamar o resolvedor.
   let cadenciaConfere = true;
-  if (declarada) {
+  if (declarada && qual === 'anterior') {
     const mensal = declarada.cadencia === 'mes-anterior';
     const formato = mensal ? /^(\d{4})-(0[1-9]|1[0-2])$/ : /^(\d{4})-T([1-4])$/;
     const a = formato.exec(String(atual?.reference_date));

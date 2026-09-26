@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Prova cada acerto e a igualdade das leituras restantes, incluindo as do L1."""
+import hashlib
 import copy
 import json
 import subprocess
@@ -29,7 +30,7 @@ console.log(JSON.stringify({fonte,atual,anterior}));""".replace('ANTIGO',json.du
             assert any(x.get('origem')==ap.get('origem') and x.get('linha')==ap.get('linha') and x['campo']==ap['campo'] and ap['literal'] in x['literal'] for x in apoios),(a['id'],ap)
     assert {**d['anterior'],**esperado}==d['atual'],'Alteração fora dos acertos ou das medidas autorizadas'
     assert set(registo['paradas'])==set(d['fonte'])-set(esperado)
-    resultado=dict(acertos=len(registo['acertos']),medidas_novas=len(esperado),leituras_antigas_intactas=len(d['anterior']),diferencas_fora_dos_acertos=0)
+    resultado=dict(redacao='segunda', fonte_sha256=hashlib.sha256((RAIZ/registo['fonte']).read_bytes()).hexdigest(), acertos=len(registo['acertos']),medidas_novas=len(esperado),leituras_antigas_intactas=len(d['anterior']),diferencas_fora_dos_acertos=0)
     (AQUI/'acertos-provados.json').write_text(json.dumps(resultado,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(resultado,ensure_ascii=False))
 if __name__=='__main__':main()
