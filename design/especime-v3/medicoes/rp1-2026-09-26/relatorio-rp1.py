@@ -1,70 +1,72 @@
-from pathlib import Path
+#!/usr/bin/env python3
+"""Conserva a primeira entrega e escreve ou confere a secção RP1b."""
 import json
-r=Path.cwd();a=r/'design/especime-v3/medicoes/rp1-2026-09-26'
-m=json.loads((a/'medidas.json').read_text());ac=json.loads((a/'acertos-rp1.json').read_text())
+import subprocess
+import sys
+from pathlib import Path
+AQUI=Path(__file__).resolve().parent
+RAIZ=AQUI.parents[3]
+BASE='5c92e5ea'
+m=json.loads((AQUI/'medidas.json').read_text())['rp1b']
+ac=json.loads((AQUI/'acertos-rp1.json').read_text())
+antigo=subprocess.check_output(['git','show',BASE+':design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md'],cwd=RAIZ,text=True)
 def n(v):return f'{v:,}'.replace(',',' ')
-linhas=['# RP1 · cartões dos rendimentos e dos preços','',f'Entrega parcial por confirmação das fontes: {m["seladas"]} medidas seladas (`seladas`) e {m["paradas"]} paradas (`paradas`), das {m["previstas"]} previstas (`previstas`). As paragens estão identificadas abaixo. Não se substituiu nenhuma delas por um valor de comunicado nem por uma conta do projeto.','',f'A construção acrescentou {m["linhas_novas"]} linhas (`linhas_novas`). Foram comparados os bytes das {n(m["linhas_antigas"])} linhas anteriores (`linhas_antigas`): {m["linhas_antigas_alteradas"]} alteradas (`linhas_antigas_alteradas`). A travessia atualizou o resumo do livro de origem no manifesto, porque esse livro ganhou linhas; os valores e os resumos de cada linha anterior ficaram intactos.','',
-'## Mandato e resultado','',
-'| Item do mandato | Resultado e medição |','|---|---|',
-f'| Pedidos e linhas | {m["pedidos"]} pedidos registados (`pedidos`), {m["pedidos_lidos"]} lidos (`pedidos_lidos`), {m["pedidos_recusados"]} recusado (`pedidos_recusados`). Os {m["corpos_com_sha256_conferido"]} corpos coincidem com o registo e o alojamento (`corpos_com_sha256_conferido`). |',
-f'| Identificadores e régua | {m["plantas"]["reguas"]} réguas declaradas (`plantas.reguas`); as anuais mantêm a regra do ano. A planta troca a régua da inflação pela dos alimentos e é recusada. O teste do cartão e os controlos das áreas passam na cadeia `verify`; `enquadramento-b2.json` guarda também os casos de `tests/pais/enquadramento-b2.mjs`. |',
-f'| Declarações | {m["seladas"]} cartões novos nos temas (`seladas`), com nomes, perguntas e leituras nas duas edições. A primeira página continua a aplicar a seleção existente. A K16 tem {m["k16"]["erros"]} erros (`k16.erros`) e a K17 tem {m["k17"]["erros"]} erros (`k17.erros`). |',
-f'| Leituras | {m["frases_novas_resolvidas"]} frases novas resolvidas a partir das linhas seladas (`frases_novas_resolvidas`), guardadas em `leituras-seladas.json`. Os acertos estão abaixo e em `acertos-rp1.json`; a prova de igualdade está em `acertos-rp1.py`. |',
-'| Unidades e períodos | A unidade conserva o significado publicado, incluindo o denominador das pensões. Meses e trimestres passam por `DataDaLinha`; as línguas dos novos títulos e rótulos estão declaradas. `check:formas`, `check:lingua` e `check:voz` passaram dentro de `build` e `verify`. |',
-'| Mapa do repositório | Acrescentado o circuito do bloco e corrigida a referência de linha que estava deslocada. O conferidor não encontrou citações deslocadas, ausentes ou para lá do ficheiro; saída em `mapa.log`. |',
-'| Capturas, relatório e pacote | Capturas e cópias congeladas verificadas por sha256; contagens abaixo. `medir-rp1.mjs` escreve `medidas.json`; `conferir-relatorio.py` confere os números deste relatório. |','',
-'## Cada medida prevista','',
-'| Medida | Estado | Número, unidade e período, ou razão da paragem |','|---|---|---|']
-for i,x in enumerate(m['medidas']):
- if x['estado']=='selada': texto=f'{x["valor"]} {x["unidade"]}, período `{x["periodo"]}` (`medidas[{i}].valor`, `medidas[{i}].unidade`, `medidas[{i}].periodo`).'
- if x.get('ressalva'):texto+=' '+x['ressalva']+f' (`medidas[{i}].ressalva`).'
- if x['estado']!='selada':
-  p=x['pedido'];texto=f'{x["motivo"]} (`medidas[{i}].motivo`). Pedido `{p["file"]}`, às `{p["timestamp_utc"]}`; endereço, cliente, resposta e sha256 em `pedidos.jsonl` do motor (`medidas[{i}].pedido`).'
- linhas.append(f'| `{x["id"]}` | {x["estado"]} | {texto} |')
-linhas+=['','A pesquisa da variação real não prova que nenhum indicador possa existir noutro catálogo. Prova que não foi localizado nas pesquisas guardadas. A medida ficou sem cartão e não foi calculada pelo projeto. No IHPC, a paragem é do pedido prescrito: a resposta recusa a dimensão `COICOP`; o relatório não conclui que o Eurostat deixou de publicar o IHPC.','',
-'A comparação com a União estava prevista para o IHPC e ficou parada com esse pedido. Os cartões selados usam os períodos anteriores prescritos. Os documentos metodológicos foram usados apenas para confirmar conceitos e palavras; os valores novos vieram das respostas das APIs.', '',
-'O brief dizia que o sítio já apresentava meses e trimestres. A leitura do código e o primeiro `ledger:check` mostraram que só os dias completos tinham transformação e que o trimestre era recusado. A extensão foi feita sem acrescentar um dia aos períodos e sem admitir trimestres em datas de leitura ou de publicação.','',
-'## Acertos às leituras','',f'O guião prova {m["acertos"]["acertos"]} trocas nas duas edições (`acertos.acertos`) e {m["acertos"]["diferencas_fora_dos_acertos"]} diferenças fora delas (`acertos.diferencas_fora_dos_acertos`). As {m["acertos"]["leituras_antigas_intactas"]} leituras anteriores continuam iguais (`acertos.leituras_antigas_intactas`). A contagem é de trocas, não de decisões editoriais: a mudança portuguesa e a inglesa ficam separadas.','',
-'Os acertos retiram pressupostos de subida nas médias dos preços, limitam a referência das rendas ao valor de agosto, colocam a unidade antes do provisório, corrigem o denominador das pensões, aproximam a explicação do RSI do conceito publicado e distinguem o ano do inquérito do ano dos rendimentos na linha de pobreza. O portão da voz pediu ainda a retirada de «to live on» da frase inglesa, porque fazia reaparecer «live», uma cadeia retirada; o sentido continua sustentado pelo mesmo literal e a célula não muda.','',
-'| Medida e edição | Antes | Depois | Literal que sustenta o acerto |','|---|---|---|---|']
 def cel(v):return str(v).replace('|','\\|').replace('\n',' ')
-def ex(v):return json.dumps(v,ensure_ascii=False) if not isinstance(v,str) else v
-for i,x in enumerate(ac['acertos']):
- apoios='; '.join('«'+cel(ap['literal'])+'» (`'+ap.get('origem',ap.get('linha',''))+'.'+ap['campo']+'`)' for ap in x['apoios'])
- linhas.append(f'| `{x["id"]}` · {x["lang"]} | {cel(ex(x["antes"]))} | {cel(ex(x["depois"]))} | {apoios}. Registo: `acertos-rp1.json`, entrada `{i}`. |')
-linhas+=['','## Células e plantas','',
-'A K7 também recusou o nome inglês que eu tinha acrescentado, «At-risk-of-poverty threshold». Corrigi-o para «At-risk-of-poverty line», de acordo com o vocabulário. A célula ficou intacta; o nome oficial da fonte continua no recibo.', '',
-'| Célula | O que mudou de forma | O que continua a proteger |','|---|---|---|',
-'| Datas do livro | Admite trimestre apenas em `reference_date`, e confere que a publicação não antecede o trimestre. | Um trimestre inválido, uma data de leitura trimestral e uma publicação anterior ao período são recusados. |',
-'| Réguas | Tabela explícita para o mês anterior e o trimestre homólogo. | Mesma série e unidade, período presente e cadência certa; outra medida nunca serve de comparação. |',
-'| Portão de HTML | Lê a tabela declarada e recompõe a cadência sem chamar o resolvedor dos cartões. | Recusa uma observação de outra medida, mesmo com transcrição correta; `plantas-portoes-rp1.json` guarda a mordida e os resumos da reposição do HTML. |',
-'| A6 das áreas | Recompõe os períodos declarados e exclui o trimestre homólogo como cartão próprio. | A contagem continua a vir da declaração, das linhas e do HTML; a planta acrescenta indevidamente esse cartão e a A6 recusa-o. O assunto das linhas novas fica declarado no catálogo interno; as séries do IPC ficam explicitamente fora das áreas ministeriais, mantendo os temas nacionais. |',
-'| F1 do `check:formas` | A transformação do período recebe a língua da rota. | O texto rendido continua a ser recomposto a partir do campo da linha. |',
-'| K17 | A recomposição independente conhece meses, trimestres e a bandeira do INE. O sufixo traduzido passa a folha auditada; a ligação «No» é admitida. | A identidade da linha permanece igual nas duas edições; o sufixo precisa de literal, não admite algarismos fixos e não permite trocar a linha. As palavras de conteúdo continuam a precisar de apoio. |',
-'| M8 | Reconhece `&` acompanhado da nota `Dado provisório` e encontra o valor no invólucro existente da quantidade. | O conjunto das linhas com ressalva continua a coincidir com o das bandeiras reconhecidas, na língua certa. |',
-'| Origens no recibo | A pergunta das medidas fora dos painéis europeus passa a mostrar as origens no recibo, como já acontecia com os inquilinos. | A conferência da definição e dos campos das origens fica intacta; a planta retira a origem da pergunta da inflação e exige a recusa. |',
-'| Cartão | A unidade marcada como campo passa pelo encaixe do sufixo de `Claim`, antes da ressalva. | O valor fica sozinho em `data-claim`; a unidade mantém a marca da própria linha e o selo conserva a ordem e a proximidade. A planta inverte unidade e ressalva. |','',
-f'As {m["plantas_total"]} plantas do bloco morderam (`plantas_total`); os {m["plantas"]["datas"]} casos de data passaram (`plantas.datas`). O registo integral está em `plantas-rp1.json`. As plantas existentes da K16 e K17 também correram na cadeia `verify`.','',
-f'A catraca de portas repetidas passou de {m["catraca_l1"]["contagens"]["antes"]} páginas (`catraca_l1.contagens.antes`) para {m["catraca_l1"]["contagens"]["estudos"]} (`catraca_l1.contagens.estudos`): entraram {m["catraca_l1"]["contagens"]["entraram"]} recibos de linhas novas (`catraca_l1.contagens.entraram`), com {m["catraca_l1"]["contagens"]["outras_entradas"]} entradas fora deles (`catraca_l1.contagens.outras_entradas`) e {m["catraca_l1"]["contagens"]["paginas_antigas_agravadas"]} páginas antigas agravadas (`catraca_l1.contagens.paginas_antigas_agravadas`). A composição compara com a prova congelada do B2 indicada no seu campo `referencia`, cuja cabeça fica explícita; não se apresenta essa prova histórica como a captura do antes do RP1. O teto aponta para esta medição, e a planta de portas extras continua a fechar o portão.', '',
-'## Capturas e cópias congeladas','',
-f'O antes é da cabeça `{m["capturas"]["antes"]["cabeca"]}` (`capturas.antes.cabeca`), já com o commit do brief acima da base indicada no mandato. O depois é de `{m["capturas"]["depois"]["cabeca"]}` (`capturas.depois.cabeca`).','',
-f'Foram guardadas {m["capturas"]["antes"]["paginas"]} capturas de página antes (`capturas.antes.paginas`) e {m["capturas"]["depois"]["paginas"]} depois (`capturas.depois.paginas`), nas larguras '+', '.join(n(v) for v in m['capturas']['depois']['larguras'])+' px (`capturas.depois.larguras`), nas duas edições e nas páginas do país e dos temas. O depois tem ainda '+str(m['capturas']['depois']['recortes'])+' recortes de cartões (`capturas.depois.recortes`).','',
-f'O captor encontrou {m["capturas"]["depois"]["falhas"]} falhas de aceitação (`capturas.depois.falhas`): conferiu transbordo, posição e forma da leitura, uma marca da fonte por cartão e erros do navegador. A página dos temas passou de {m["paginas"]["antes"]["temas_cartoes"]} cartões (`paginas.antes.temas_cartoes`) para {m["paginas"]["depois"]["temas_cartoes"]} (`paginas.depois.temas_cartoes`); a do país passou de {m["paginas"]["antes"]["pais_cartoes"]} (`paginas.antes.pais_cartoes`) para {m["paginas"]["depois"]["pais_cartoes"]} (`paginas.depois.pais_cartoes`), pela regra existente da cabeça de cada tema.','',
-f'As {m["paginas"]["depois"]["html"]} páginas HTML congeladas (`paginas.depois.html`) e as {m["paginas"]["depois"]["css"]} folhas de estilo (`paginas.depois.css`) estão em `paginas-depois/`, com sha256 no `INDICE.json`. Os resumos são relidos pelo guião das medições. As amostras inspecionadas visualmente estão identificadas por ficheiro e resumo em `inspecao-visual.json`.','',
-'Para o pacote de leitura a frio, incluir as cópias congeladas do bloco:','',
-'```sh','PACOTE_EXTRA="design/especime-v3/medicoes/rp1-2026-09-26/capturas design/especime-v3/medicoes/rp1-2026-09-26/paginas-antes design/especime-v3/medicoes/rp1-2026-09-26/paginas-depois design/especime-v3/medicoes/l1-2026-09-24/paginas-depois design/especime-v3/medicoes/l1-2026-09-24/portoes/build.cabeca" bash scripts/leituras/pacote.sh . 334cc740 HEAD /tmp/oedp-rp1-2026-09-26 design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md index.html temas/index.html en/index.html en/themes/index.html','```','',
-'A subpasta `motor/` do pacote conserva também o diff e os ficheiros mudados do motor, copiados da cabeça indicada no seu `INDICE.json`, com resumos dos corpos. O pacote é local e não é uma publicação.', '',
-'## Commits, cabeça e portões','',
-f'Cabeça do código do sítio: `{m["cabeca_do_codigo"]}` (`cabeca_do_codigo`). Cabeça do motor: `{m["cabeca_motor"]}` (`cabeca_motor`). O commit final de entrega acrescenta as provas desta cabeça; não altera o código que os portões mediram.','',
-'A primeira corrida completa de `build`, na cabeça anterior, parou porque o portão de HTML ainda exigia réguas anuais. O portão foi estendido com recomposição independente e uma planta que conserva a proteção. Essa tentativa e o `typecheck` dessa cabeça estão em `portoes/preparacao-3b3dac48/`; os códigos abaixo pertencem à cabeça corrigida.', '',
-*['- Sítio: `'+c+'`.' for c in m['commits_sitio']], '', *['- Motor: `'+c+'`.' for c in m['commits_motor']], '',
-'A corrida de `verify` da cabeça seguinte parou em `check:lugar`: faltavam as origens das perguntas nos novos recibos, e o teto das portas repetidas ainda não tinha a composição dos recibos acrescentados. As origens passaram a render-se; a conferência delas não foi afrouxada. O teto só mudou depois da medição página a página e da planta. Os registos dessa preparação estão em `portoes/preparacao-83fb702c/`.', '',
-'Os commits do motor passaram pelo pre-commit instalado, que executa `python3 -m core.gate`. A primeira tentativa foi recusada porque o novo teste não imprimia a contagem no formato `PASS`; a saída foi corrigida e o commit só entrou com o portão verde. As saídas completas estão nos ficheiros `motor-*.log` desta pasta.','',
-'| Portão | Código lido do ficheiro | Cabeça medida |','|---|---|---|']
-for nome,p in m['portoes'].items():linhas.append(f'| `{nome}` | {p["codigo"]} (`portoes.{nome}.codigo`, lido de `portoes/{nome}.codigo`) | `{p["cabeca"]}` |')
-linhas+=['','Cada comando correu separadamente; os ficheiros de código anteriores foram apagados antes da corrida final. As construções de preparação, destinadas às conferências tocadas pela mudança e às capturas iniciais, estão identificadas nos seus próprios registos.','',
-'## Custo e trabalho pendente','',f'A janela entre o primeiro pedido registado e o fim do último portão durou {n(m["custo"]["segundos_da_janela"])} segundos (`custo.segundos_da_janela`). Esta janela não inclui a leitura inicial do repositório.','']
+linhas=['## RP1b','',
+ f'Entrega concluída: {m["seladas"]} medidas novas seladas, {m["total_do_bloco"]} cartões do bloco nos temas e {m["linhas_novas"]} linhas novas (`rp1b.seladas`, `rp1b.total_do_bloco`, `rp1b.linhas_novas`). As {n(m["linhas_anteriores"])} linhas que já existiam foram comparadas byte a byte: {m["linhas_anteriores_alteradas"]} alteradas (`rp1b.linhas_anteriores`, `rp1b.linhas_anteriores_alteradas`).', '',
+ 'A secção anterior é o relato histórico da primeira entrega. Os seus dados e portões mantêm-se; as cópias em `paginas-depois/` são agora as desta peça. As cópias anteriores continuam no histórico da cabeça indicada naquela secção. O antes e as capturas da primeira entrega não foram repetidos.', '',
+ '| Item do mandato | Resultado e medida |','|---|---|',
+ f'| Pedidos e linhas | {m["pedidos_novos"]} pedidos novos pelo cliente do projeto; {m["corpos_conferidos"]} corpos do conjunto conferidos contra o registo e o alojamento (`rp1b.pedidos_novos`, `rp1b.corpos_conferidos`). O `core.gate` terminou a {m["motor_portao"]["codigo"]}, lido de `motor-rp1b.codigo`. |',
+ f'| Réguas declaradas | {m["plantas"]["reguas"]} réguas no bloco (`rp1b.plantas.reguas`). O IHPC tem Portugal no mês anterior e a União no mesmo mês, sem cartão autónomo para a linha europeia. |',
+ f'| Medidas e perguntas | As medidas novas estão nos temas pedidos. K16: {m["k16"]["erros"]} erros (`rp1b.k16.erros`). A regra de `temasDoPais()` permanece igual. |',
+ f'| Leituras | {m["frases_resolvidas"]} frases resolvidas (`rp1b.frases_resolvidas`), iguais à segunda redação fora de {m["acertos"]["acertos"]} trocas auditadas (`rp1b.acertos.acertos`). K17: {m["k17"]["erros"]} erros nas palavras e {m["leituras_rendidas"]["erros"]} no HTML (`rp1b.k17.erros`, `rp1b.leituras_rendidas.erros`). |',
+ '| I153 | O espaço faz parte do texto da bandeira no valor e na leitura. As plantas colam a bandeira à unidade e são recusadas. A caixa em linha conserva a margem visual existente. |',
+ '| Mapa | Circuito reposto e conferido por `conferir-mapa.py`; saída em `mapa-rp1b.log`. |',
+ f'| Capturas, relatório e provas | {m["capturas"]["paginas"]} capturas de página e {m["capturas"]["recortes"]} recortes, com {m["capturas"]["falhas"]} falhas (`rp1b.capturas`). Cópias congeladas e resumos conferidos por `medir-rp1.mjs`. |', '',
+ '### As medidas e as fontes', '',
+ '| Medida | Valor | Unidade | Período | Mês anterior | União no mesmo mês |','|---|---|---|---|---|---|']
+for x in m['medidas']:
+ linhas.append(f'| `{x["id"]}` | {x["valor"]} | {x["unidade"]} | `{x["periodo"]}` | {x["anterior"]["valor"]} ({x["anterior"]["periodo"]}) | '+(f'{x["ue"]["valor"]} ({x["ue"]["periodo"]})' if x['ue'] else 'Não declarada')+' |')
+linhas+=['','Os valores, períodos, unidades e comparadores desta tabela são `rp1b.medidas`. O INE confirmou as categorias, a frequência mensal, «Percentagem (%)» e a escala zero. No IHPC, a resposta confirma `RCH_A`, `coicop18=TOTAL`, as geografias e o último mês publicado. A unidade percentual está descrita em `extension.description`; o excerto mantém «Annual rate of change», como a resposta o escreve. A publicação vem de `updated`.','',
+ '| Pedido | Hora UTC | Cliente | Sha256 |','|---|---|---|---|']
+for p in m['pedidos']:
+ linhas.append(f'| [`{p["file"]}`]({p["url"]}) | `{p["timestamp_utc"]}` | `{p["cliente"]}` | `{p["sha256"]}` |')
+linhas+=['',
+ 'Os corpos estão em `content/13 Dominios/source/rp1/` no motor, registados em `FETCH.json` e `MANIFEST.sha256`. As perguntas e as leituras citam a página `minfo.jsp` do INE, a ficha `prc_hicp_esms` e os campos publicados nas respostas. `origens-rp1.py` confere o excerto literal e o selo de cada origem, sem apresentar uma cópia de teste como resposta autêntica.', '',
+ '### Os acertos que restaram', '',
+ 'A única decisão de acerto foi explicitar os lubrificantes, que pertencem à categoria publicada. A troca repete-se nos ramos do sinal e nas duas edições. As médias dos últimos doze meses e as frases curtas da linha de pobreza são as da segunda redação, com as folhas da auditoria atualizadas.', '',
+ '| Medida e edição | Antes | Depois | Literal |','|---|---|---|---|']
+for a in ac['acertos']:
+ linhas.append(f'| `{a["id"]}` · {a["lang"]} · `{a["caminho"][2]}` | {cel(a["antes"])} | {cel(a["depois"])} | «{cel(a["apoios"][0]["literal"])}» (`propria.excerpt`) |')
+linhas+=['','### Células, plantas e limites da conferência','',
+ '| Célula | Forma nova e proteção conservada |','|---|---|',
+ '| Réguas e portão de HTML | A declaração da União exige a mesma série, unidade e mês; o portão recompõe a associação sem chamar o resolvedor. As plantas recusam outro mês, série, unidade e a troca pela linha portuguesa anterior. |',
+ '| K17 e voz | O resolvedor e a recomposição independente incluem o espaço. A K17 confere a bandeira no valor e na leitura, a palavra da edição e a igualdade dos conjuntos de linhas. A planta mostrou que o `check:voz` só a chamava na primeira página; passou a chamá-la também nos temas e a recusar ali a bandeira colada. |',
+ '| M8 | Esta célula vive em `tests/inicio/areas.mjs`, não em `check:voz`. Exige agora o texto com espaço inicial e mantém a igualdade entre as linhas com ressalva e as bandeiras reconhecidas. A associação passa a reconhecer também o valor imediatamente anterior à bandeira na régua, que já era rendida mas não era contada. A medição está em `m8-rp1b.json`, e as plantas que colam ou retiram a bandeira estão em `plantas-m8-rp1b.json`. |',
+ '| Áreas | A A6 continua a excluir as observações anteriores; as classes do IPC e o IHPC entram na exclusão declarada dos preços, e a União na exclusão dos agregados. Nenhuma matéria ministerial foi inventada. |',
+ '| Motor, associações europeias | O teste antigo admitia uma só nota europeia. Exige agora exatamente os agregados declarados e recusa a nota numa linha de Portugal. A tentativa recusada está em `motor-rp1b-tentativa-1.log`; o commit entrou apenas depois do portão verde. |',
+ '| Portas repetidas | A catraca continua a ser uma contagem de páginas. A composição admite apenas os recibos novos e recusa qualquer página anterior agravada. |', '',
+ f'As {len(m["plantas"]["plantas"])} plantas de `plantas-rp1.json` e as {len(m["plantas_portoes"])} plantas integrais de `plantas-portoes-rp1b.json` foram recusadas com a mordida esperada (`rp1b.plantas`, `rp1b.plantas_portoes`). As plantas integrais repõem os bytes e conferem o sha256.', '',
+ f'A catraca mede {m["catraca_l1"]["contagens"]["estudos"]} páginas (`rp1b.catraca_l1.contagens.estudos`), contra {m["catraca_l1"]["contagens"]["antes"]} na prova congelada de referência, com {m["catraca_l1"]["contagens"]["paginas_antigas_agravadas"]} páginas anteriores agravadas. Esta comparação conserva a base histórica do B2; não chama a essa base o antes desta peça.', '',
+ 'A primeira chamada ao exportador foi feita sem o manifesto do estudo e selecionou o estudo de Évora. As diferenças de comentários e do seu registo foram repostas byte a byte antes da travessia correta, com `--manifest publisher/manifest.dominios.json`. A comparação de todas as linhas anteriores no medidor confirma a reposição. Nenhum desses ficheiros entrou num commit desta peça.', '',
+ '### Capturas e cabeças', '',
+ f'Na I153, o navegador mediu {m["i153"]["ressalvas_medidas"]} ressalvas nos recortes da remuneração. O espaço inicial ocupa no máximo {m["i153"]["espaco_visual_max_px"]} px (`rp1b.i153`): separa o texto acessível sem alargar a margem visual.', '',
+ 'As capturas têm prefixo `rp1b-` e cobrem as larguras '+', '.join(n(v) for v in m['capturas']['larguras'])+' px, nas duas edições, no país e nos temas. Os recortes cobrem cada medida nova e a remuneração em todas essas larguras. `capturas-rp1b-depois.json` contém as dimensões, o texto e os resumos; `inspecao-visual-rp1b.json` identifica as imagens abertas para inspeção.', '',
+ f'As cópias congeladas incluem {m["congeladas"]["html"]} páginas HTML e {m["congeladas"]["css"]} folhas de estilo (`rp1b.congeladas`), presas por sha256 em `paginas-depois/INDICE.json`. Cabeça do código e das capturas: `{m["cabeca_do_codigo"]}`. Cabeça do motor: `{m["cabeca_motor"]}`. O último commit entrega as provas sem mudar o código medido.', '',
+ *['- Projeto: `'+c+'`.' for c in m['commits_sitio']],
+ *['- Motor: `'+c+'`.' for c in m['commits_motor']], '',
+ '| Portão | Código lido do ficheiro | Cabeça medida |','|---|---|---|']
+for nome,p in m['portoes'].items():linhas.append(f'| `{nome}` | {p["codigo"]}, de `portoes/rp1b/{nome}.codigo` | `{p["cabeca"]}` |')
+linhas+=['','Os comandos completos correram separadamente, uma vez nesta cabeça. As conferências de preparação estão em `portoes/rp1b/preparacao/`. Os portões da primeira entrega ficaram intactos.', '',
+ '### Custo e trabalho pendente', '',
+ f'A janela entre o primeiro pedido desta peça e o último portão durou {n(m["custo"]["segundos_da_janela"])} segundos (`rp1b.custo.segundos_da_janela`); não inclui a leitura inicial.', '']
 c=m['custo']['sessao']
-linhas+=[f'No registo da sessão `{c["registo"]}`, lido às `{c["hora"]}`, o modelo é `{c["modelo"]}`: {n(c["input_tokens"])} tokens de entrada (`custo.sessao.input_tokens`), dos quais {n(c["cached_input_tokens"])} em cache (`custo.sessao.cached_input_tokens`), e {n(c["output_tokens"])} de saída (`custo.sessao.output_tokens`). É a contagem cumulativa do registo, não um preço. O custo monetário não está exposto e não foi estimado.','',
-'Ficam por construir apenas as medidas paradas nas fontes e descritas na tabela. O próximo passo dessas medidas é corrigir ou identificar o pedido no lugar de direção e voltar a confirmar a metainformação. Não se acrescentaram medidas municipais, gráficos, referências de cor ou valores de outras publicações. A leitura do país e o rótulo de IA ficaram intactos. Não houve publicação remota.','']
-(a/'LEIA-ME.md').write_text('\n'.join(linhas))
+linhas+=[f'No registo `{c["registo"]}`, lido às `{c["hora"]}`, o modelo exposto é `{c["modelo"]}`: {n(c["input_tokens"])} tokens de entrada, {n(c["cached_input_tokens"])} em cache e {n(c["output_tokens"])} de saída (`rp1b.custo.sessao`). São contagens cumulativas, não um preço. O custo monetário não está exposto.', '',
+ 'Não ficaram medidas desta peça por construir. A variação real da remuneração foi retirada pelo §8 e continua fora. A leitura do país, a regra da primeira página e o rótulo de IA não foram alterados. Não houve `push` nem publicação. A leitura a frio e a aterragem pertencem ao lugar de direção.', '']
+esperado=antigo.rstrip()+'\n\n'+'\n'.join(linhas)
+if '--verifica' in sys.argv:
+ assert (AQUI/'LEIA-ME.md').read_text()==esperado,'A secção RP1b não coincide com as medições e os acertos'
+ print('Relatório RP1b: secção conferida contra as medições e os literais.')
+else:
+ (AQUI/'LEIA-ME.md').write_text(esperado)
+ print('Relatório RP1b: secção escrita a partir das medições.')
