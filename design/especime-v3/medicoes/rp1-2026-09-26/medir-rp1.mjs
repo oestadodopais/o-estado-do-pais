@@ -1,4 +1,4 @@
-/** Medições do RP1, lidas dos artefactos e das saídas dos comandos. */
+/** RP1b: conserva a medição histórica e acrescenta provas da segunda entrega. */
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -7,94 +7,101 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 import { DOMINIOS_RP1 } from '../../../../src/data/medidas-rp1.mjs';
-import { LEITURAS_RP1 as previstas } from '../../../observatorio/leituras/LEITURAS-rp1-2026-09-26.mjs';
+import { REGUAS_DECLARADAS, conferirReguaDeclarada } from '../../../../src/lib/enquadramento.mjs';
 import { textoDaLeitura, leituraDaMedida } from '../../../../src/lib/leitura-da-medida.mjs';
 import { auditarPerguntas } from '../../../../tests/cartao/perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas } from '../../../../tests/cartao/leituras.mjs';
-const aqui=path.dirname(fileURLToPath(import.meta.url));
-const raiz=path.resolve(aqui,'../../../..');
-const motor=process.env.RP1_MOTOR ?? path.join(process.env.HOME,'Instruments/ResearchHub/.worktrees/rp1-2026-09-26');
-const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const aqui=path.dirname(fileURLToPath(import.meta.url)),raiz=path.resolve(aqui,'../../../..');
+const motor=process.env.RP1_MOTOR??path.join(process.env.HOME,'Instruments/ResearchHub/.worktrees/rp1-2026-09-26');
+const base='5c92e5ea';
 const git=(...args)=>execFileSync('git',args,{cwd:raiz,encoding:'utf8'}).trim();
-const base='38d3627894416097de26c52346c595c45a7b2884';
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const prova=(condicao,mensagem)=>{if(!condicao)throw Error(mensagem);};
+const historico=JSON.parse(git('show',`${base}:design/especime-v3/medicoes/rp1-2026-09-26/medidas.json`));
 const linhas=loadClaims();
+const ids=['ipc-energia-em-casa-variacao-homologa','ipc-combustiveis-variacao-homologa','ipc-rendas-variacao-homologa','ihpc-variacao-homologa'];
+const resumo=id=>{const l=linhas.get(id);prova(l,'Linha ausente: '+id);return {id,valor:l.value,unidade:l.unit,periodo:l.reference_date,publicado:l.published_at,fonte:l.source,excerto:l.excerpt};};
+const medidas=ids.map(id=>{const regra=conferirReguaDeclarada(id,REGUAS_DECLARADAS[id]);return {...resumo(id),tema:DOMINIOS_RP1[id],anterior:resumo(regra.anterior),ue:regra.ue?resumo(regra.ue):null};});
+const anteriores=git('ls-tree','-r','--name-only',base,'ledger/claims').split('\n').filter(Boolean);
+const alteradas=anteriores.filter(p=>!execFileSync('git',['show',base+':'+p],{cwd:raiz}).equals(fs.readFileSync(path.join(raiz,p))));
+prova(!alteradas.length,'Linhas anteriores alteradas: '+alteradas.join(', '));
 const pedidos=fs.readFileSync(path.join(motor,'indicators/out/rp1-2026-09-26/pedidos.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+const novos=pedidos.slice(historico.pedidos);
 for(const p of pedidos){
- const original=fs.readFileSync(path.join(motor,'indicators/out/rp1-2026-09-26',p.file));
- const alojado=fs.readFileSync(path.join(motor,'content/13 Dominios/source/rp1',p.file));
- if(sha(original)!==p.sha256||sha(alojado)!==p.sha256)throw Error('Corpo divergente: '+p.file);
- if(!p.url||!p.timestamp_utc||!p.cliente)throw Error('Pedido incompleto: '+p.file);
+ prova(p.url&&p.timestamp_utc&&p.cliente&&p.sha256,'Pedido incompleto: '+p.file);
+ for(const pasta of ['indicators/out/rp1-2026-09-26','content/13 Dominios/source/rp1'])prova(sha(fs.readFileSync(path.join(motor,pasta,p.file)))===p.sha256,'Corpo divergente: '+p.file);
 }
-const meta=json(path.join(motor,'indicators/out/rp1-2026-09-26/001-ine-0014663-meta.json'))[0];
-const classes=meta.Dimensoes.Categoria_Dim.flatMap(d=>Object.values(d).flat()).filter(d=>d.dim_num==='3').map(d=>d.categ_cod);
-for(const c of ['04.5','07.2.2','04.1'])if(classes.includes(c))throw Error('A paragem já não corresponde à resposta: '+c);
-const erro=pedidos.find(p=>p.nome==='eurostat-prc_hicp_minr.json');
-const erroIHPC=json(path.join(motor,'indicators/out/rp1-2026-09-26',erro.file));
-if(!erroIHPC.error.some(e=>e.label.includes('Dimension "COICOP" is not defined')))throw Error('Paragem do IHPC sem prova');
-const paragens={
- 'ipc-energia-em-casa-variacao-homologa':{motivo:'A metainformação não publica a classe 04.5.',pedido:pedidos[0]},
- 'ipc-combustiveis-variacao-homologa':{motivo:'A metainformação não publica a classe 07.2.2.',pedido:pedidos[0]},
- 'ipc-rendas-variacao-homologa':{motivo:'A metainformação não publica a classe 04.1.',pedido:pedidos[0]},
- 'ihpc-variacao-homologa':{motivo:erroIHPC.error[0].label,pedido:erro},
- 'remuneracao-bruta-mensal-media-variacao-real':{motivo:'Indicador da variação real não localizado nas pesquisas do catálogo; não calculado a partir do IPC.',pedido:pedidos.find(p=>p.nome==='catalogo-pesquisa-variacao-real.json')},
-};
-const ensaio=Object.fromEntries(Object.keys(DOMINIOS_RP1).map(id=>[id,{pt:textoDaLeitura(leituraDaMedida(id,'pt').pedacos,'pt'),en:textoDaLeitura(leituraDaMedida(id,'en').pedacos,'en')} ]));
+const meta=json(path.join(motor,'indicators/out/rp1-2026-09-26/027-ine-0014647-meta.json'))[0];
+const categorias=meta.Dimensoes.Categoria_Dim.flatMap(d=>Object.values(d).flat());
+const classes=['041','045','0722'].map(codigo=>categorias.find(c=>c.dim_num==='3'&&c.categ_cod===codigo));
+prova(meta.IndicadorCod==='0014647'&&meta.Periodic==='Mensal'&&meta.UnidadeMedida==='Percentagem (%)'&&meta.Potencia10==='0'&&classes.every(Boolean),'Metainformação divergente');
+const acertos=json(path.join(aqui,'acertos-provados.json'));
+const ensaio=Object.fromEntries(Object.keys(DOMINIOS_RP1).map(id=>[id,Object.fromEntries(['pt','en'].map(lang=>[lang,textoDaLeitura(leituraDaMedida(id,lang).pedacos,lang)]))]));
 fs.writeFileSync(path.join(aqui,'leituras-seladas.json'),JSON.stringify(ensaio,null,2)+'\n');
-const medidas=Object.keys(previstas).map(id=>({id,estado:linhas.has(id)?'selada':'parada',...(linhas.has(id)?{valor:linhas.get(id).value,unidade:linhas.get(id).unit,periodo:linhas.get(id).reference_date,ressalva:linhas.get(id).source_flag_note??null,tema:DOMINIOS_RP1[id]}:paragens[id])}));
-if(medidas.some(m=>m.estado==='parada'&&!m.motivo))throw Error('Paragem sem motivo');
-const antigos=git('ls-tree','-r','--name-only',base,'ledger/claims').split('\n').filter(Boolean);
-const alteradas=antigos.filter(p=>!fs.existsSync(path.join(raiz,p))||!execFileSync('git',['show',base+':'+p],{cwd:raiz}).equals(fs.readFileSync(path.join(raiz,p))));
-if(alteradas.length)throw Error('Linhas anteriores alteradas: '+alteradas.join(', '));
-const capturas={};const paginas={};
-for(const estado of ['antes','depois']){
- const registo=json(path.join(aqui,`capturas-${estado}.json`));
- for(const c of [...registo.resultados,...registo.recortes]){
-  if(sha(fs.readFileSync(path.join(aqui,'capturas',c.ficheiro)))!==c.sha256)throw Error('Captura alterada: '+c.ficheiro);
- }
- capturas[estado]={cabeca:registo.dist_construido_de,paginas:registo.resultados.length,recortes:registo.recortes.length,larguras:registo.larguras,falhas:registo.aceitacao.falhas.length};
- const indice=json(path.join(aqui,`paginas-${estado}/INDICE.json`));
- const copias=Object.entries(indice.copias);
- for(const [p,c]of copias)if(sha(fs.readFileSync(path.join(aqui,`paginas-${estado}`,p)))!==c.sha256)throw Error('Página congelada alterada: '+p);
- paginas[estado]={cabeca:indice.dist_construido_de,html:copias.filter(([p])=>p.endsWith('.html')).length,css:copias.filter(([p])=>p.endsWith('.css')).length};
- for(const [familia,p]of [['pais','index.html'],['temas','temas_index.html']]){
-  const root=parse(fs.readFileSync(path.join(aqui,`paginas-${estado}`,p),'utf8'));
-  paginas[estado][familia+'_cartoes']=root.querySelectorAll('article.cartao-medida').length;
- }
+const inventario={medidas:[{nome:'inventario_das_medidas',valor:Object.keys(DOMINIOS_RP1).map(id=>{
+ const l=resumo(id),r=REGUAS_DECLARADAS[id];
+ const anterior=r?.anterior??(id.replace(/-\d{4}$/,'')+'-'+(Number(l.periodo)-1));
+ return {...l,anterior:resumo(anterior),ue:r?.ue?resumo(r.ue):null};
+})}]};
+fs.writeFileSync(path.join(aqui,'inventario-rp1b.json'),JSON.stringify(inventario,null,2)+'\n');
+const cap=json(path.join(aqui,'capturas-rp1b-depois.json'));
+for(const c of [...cap.resultados,...cap.recortes])prova(sha(fs.readFileSync(path.join(aqui,'capturas',c.ficheiro)))===c.sha256,'Captura alterada: '+c.ficheiro);
+prova(cap.aceitacao.passou&&cap.resultados.length===20&&cap.recortes.length===50,'Capturas incompletas ou com falhas');
+const indice=json(path.join(aqui,'paginas-depois/INDICE.json'));
+for(const [p,c]of Object.entries(indice.copias))prova(sha(fs.readFileSync(path.join(aqui,'paginas-depois',p)))===c.sha256,'Cópia congelada alterada: '+p);
+const paginas={};
+for(const [familia,p]of [['pais','index.html'],['temas','temas_index.html'],['pais_en','en_index.html'],['temas_en','en_themes_index.html']]){
+ const root=parse(fs.readFileSync(path.join(aqui,'paginas-depois',p),'utf8'));
+ const cartoes=root.querySelectorAll('article[data-cartao-medida]');
+ const rp1=cartoes.filter(c=>Object.hasOwn(DOMINIOS_RP1,c.getAttribute('data-cartao-medida')));
+ paginas[familia]={cartoes:cartoes.length,rp1:rp1.length,novos:ids.filter(id=>cartoes.some(c=>c.getAttribute('data-cartao-medida')===id))};
+ if(familia.startsWith('temas'))prova(rp1.length===12,'Não estão os doze cartões: '+familia);
+ for(const c of rp1)prova(c.querySelectorAll('[data-cartao-leitura]').length===1,'Leitura ausente');
+ const salario=root.querySelector('[data-cartao-medida="remuneracao-bruta-mensal-media"]');
+ if(salario){const pt=!familia.endsWith('_en');prova(salario.querySelectorAll('.claim-provisorio').every(m=>m.textContent===(pt?' provisório':' provisional')),'I153: bandeira colada');}
 }
 const portoes={};
 for(const nome of ['build','verify','typecheck']){
- const p=path.join(aqui,'portoes',nome+'.codigo');const codigo=fs.readFileSync(p,'utf8').trim();
- if(!/^\d+$/.test(codigo))throw Error('Código inválido: '+nome);
- portoes[nome]={codigo:Number(codigo),cabeca:fs.readFileSync(path.join(aqui,'portoes',nome+'.cabeca'),'utf8').trim(),fim:fs.readFileSync(path.join(aqui,'portoes',nome+'.fim'),'utf8').trim(),log_sha256:sha(fs.readFileSync(path.join(aqui,'portoes',nome+'.log')))};
+ const prefixo=path.join(aqui,'portoes/rp1b',nome);
+ const codigo=fs.readFileSync(prefixo+'.codigo','utf8').trim();prova(/^\d+$/.test(codigo),'Código inválido');
+ portoes[nome]={codigo:Number(codigo),cabeca:fs.readFileSync(prefixo+'.cabeca','utf8').trim(),inicio:fs.readFileSync(prefixo+'.inicio','utf8').trim(),fim:fs.readFileSync(prefixo+'.fim','utf8').trim(),log_sha256:sha(fs.readFileSync(prefixo+'.log'))};
 }
-if(Object.values(portoes).some(p=>p.cabeca!==portoes.build.cabeca))throw Error('Portões de cabeças diferentes');
-if(capturas.depois.cabeca!==portoes.build.cabeca)throw Error('Capturas de outra cabeça');
-const acertos=json(path.join(aqui,'acertos-provados.json'));
+const cabeca=portoes.build.cabeca;
+prova(Object.values(portoes).every(p=>p.codigo===0&&p.cabeca===cabeca),'Portões vermelhos ou de cabeças diferentes');
+prova(cap.dist_construido_de===cabeca&&indice.dist_construido_de===cabeca,'Capturas e portões de cabeças diferentes');
 const k16=auditarPerguntas(),k17=conferirAuditoriaDasLeituras(),rendidas=conferirLeiturasRendidas(path.join(raiz,'dist'));
-const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1);
+prova(!k16.erros.length&&!k17.erros.length&&!rendidas.erros.length,[...k16.erros,...k17.erros,...rendidas.erros].join('\n'));
+const plantas=json(path.join(aqui,'plantas-rp1.json')),plantasPortoes=json(path.join(aqui,'plantas-portoes-rp1b.json'));
+prova(plantas.plantas.every(p=>p.mordeu)&&plantasPortoes.every(p=>p.passou),'Planta sem mordida');
+const m8=json(path.join(aqui,'m8-rp1b.json')),plantasM8=json(path.join(aqui,'plantas-m8-rp1b.json'));
+prova(m8.celulas.length===2&&m8.celulas.every(c=>c.passa)&&plantasM8.plantas.length===2&&plantasM8.plantas.every(p=>p.mordeu),'A M8 ou uma das suas plantas falhou');
+const ressalvas=cap.recortes.filter(c=>c.id==='remuneracao-bruta-mensal-media').flatMap(c=>c.ressalvas);
+prova(ressalvas.length===20&&ressalvas.every(m=>m.espaco_px===0&&/^ (provisório|provisional)$/.test(m.texto)),'I153: o separador falta ou alargou o espaço visual');
+const inspecao=json(path.join(aqui,'inspecao-visual-rp1b.json'));
+for(const imagem of inspecao.imagens)prova(sha(fs.readFileSync(path.join(aqui,'capturas',imagem.ficheiro)))===imagem.sha256,'Imagem inspecionada divergente');
 const catraca=json(path.join(aqui,'l1-rp1.json'));
-const logVerify=fs.readFileSync(path.join(aqui,'portoes/verify.log'),'utf8').replace(/\x1b\[[0-9;]*m/g,'');
-const l1=logVerify.match(/L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)/);
-if(!l1||Number(l1[1])!==catraca.contagens.estudos||Number(l1[2])!==catraca.contagens.estudos)throw Error('A composição e a catraca final não coincidem');
-const plantas=json(path.join(aqui,'plantas-rp1.json'));
-const plantasPortoes=['plantas-portoes-rp1.json','plantas-portoes-rp1-fonte-da-pergunta.json','plantas-portoes-rp1-portas-extra.json'].flatMap(p=>json(path.join(aqui,p)));
-if(plantasPortoes.some(p=>!p.passou))throw Error('Planta do portão sem mordida');
-const conferenciasFinais=json(path.join(aqui,'conferencias-finais.json'));
-if(conferenciasFinais.some(p=>p.codigo!==0))throw Error('Conferência final com falha');
-const commits=(cwd,base,cabeca='HEAD')=>execFileSync('git',['log','--reverse','--format=%H %s',base+'..'+cabeca],{cwd,encoding:'utf8'}).trim().split('\n');
-const resultado={
- base,cabeca_do_codigo:portoes.build.cabeca,cabeca_motor:execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim(),
- commits_sitio:commits(raiz,base,portoes.build.cabeca),commits_motor:commits(motor,'1d10b3fe413340c843babafd03700bcea8fcb08b'),
- previstas:medidas.length,seladas:medidas.filter(m=>m.estado==='selada').length,paradas:medidas.filter(m=>m.estado==='parada').length,
- linhas_novas:linhas.size-antigos.length,linhas_antigas:antigos.length,linhas_antigas_alteradas:alteradas.length,
- pedidos:pedidos.length,pedidos_lidos:pedidos.filter(p=>p.estado==='lido').length,pedidos_recusados:pedidos.filter(p=>p.estado==='recusado').length,
- corpos_com_sha256_conferido:pedidos.length,bytes_dos_corpos:pedidos.reduce((n,p)=>n+p.bytes,0),classes_publicadas:classes,
- medidas,capturas,paginas,portoes,acertos,conferencias_finais:conferenciasFinais,origens:json(path.join(aqui,'origens-provadas.json')).length,
- plantas,plantas_total:plantas.plantas.length,plantas_portoes:plantasPortoes,catraca_l1:catraca,k16:{...k16.contas,erros:k16.erros.length},k17:{...k17.contas,erros:k17.erros.length},leituras_rendidas:{...rendidas.contas,erros:rendidas.erros.length},
- frases_novas_resolvidas:Object.values(ensaio).flatMap(x=>Object.values(x)).length,
- custo:{inicio_da_janela:pedidos[0].timestamp_utc,fim_da_janela:fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(pedidos[0].timestamp_utc))/1000),sessao:json(path.join(aqui,'custo.json')),euros:null,limite:'Tempo entre o primeiro pedido registado e o último portão. Tokens lidos do registo da sessão; preço não exposto.'},
+const log=fs.readFileSync(path.join(aqui,'portoes/rp1b/verify.log'),'utf8').replace(/\x1b\[[0-9;]*m/g,'');
+const l1=log.match(/L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)/);
+prova(l1&&Number(l1[1])===catraca.contagens.estudos&&Number(l1[2])===catraca.contagens.estudos,'Catraca e medição divergentes');
+const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1);
+const motorCabeca=execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim();
+const custo=json(path.join(aqui,'custo-rp1b.json'));
+const resultado={base:git('rev-parse',base),cabeca_do_codigo:cabeca,cabeca_motor:motorCabeca,
+ commits_sitio:git('log','--reverse','--format=%H %s',base+'..'+cabeca).split('\n'),
+ commits_motor:execFileSync('git',['log','--reverse','--format=%H %s','6508b05..HEAD'],{cwd:motor,encoding:'utf8'}).trim().split('\n'),
+ medidas,seladas:medidas.length,total_do_bloco:Object.keys(DOMINIOS_RP1).length,paradas:0,
+ linhas_novas:linhas.size-anteriores.length,linhas_anteriores:anteriores.length,linhas_anteriores_alteradas:alteradas.length,
+ pedidos:novos,corpos_conferidos:pedidos.length,pedidos_novos:novos.length,
+ metainformacao:{nome:meta.IndicadorNome,frequencia:meta.Periodic,unidade:meta.UnidadeMedida,escala:meta.Potencia10,ultimo:meta.UltimoPeriodo,classes},
+ acertos,frases_resolvidas:Object.values(ensaio).flatMap(Object.values).length,origens:json(path.join(aqui,'origens-provadas.json')).length,
+ k16:{...k16.contas,erros:k16.erros.length},k17:{...k17.contas,erros:k17.erros.length},leituras_rendidas:{...rendidas.contas,erros:rendidas.erros.length},
+ plantas,plantas_portoes:plantasPortoes,m8,plantas_m8:plantasM8,i153:{ressalvas_medidas:ressalvas.length,espaco_visual_max_px:Math.max(...ressalvas.map(m=>m.espaco_px)),imagens_inspecionadas:inspecao.imagens.length},catraca_l1:catraca,portoes,
+ capturas:{cabeca:cap.dist_construido_de,paginas:cap.resultados.length,recortes:cap.recortes.length,larguras:cap.larguras,falhas:cap.aceitacao.falhas.length},
+ paginas,congeladas:{html:Object.keys(indice.copias).filter(p=>p.endsWith('.html')).length,css:Object.keys(indice.copias).filter(p=>p.endsWith('.css')).length,cabeca:indice.dist_construido_de},
+ custo:{inicio:novos[0].timestamp_utc,fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(novos[0].timestamp_utc))/1000),sessao:custo,euros:null},
+ motor_portao:{codigo:Number(fs.readFileSync(path.join(aqui,'motor-rp1b.codigo'),'utf8')),log_sha256:sha(fs.readFileSync(path.join(aqui,'motor-rp1b.log')))},
 };
-if(k16.erros.length||k17.erros.length||rendidas.erros.length)throw Error([...k16.erros,...k17.erros,...rendidas.erros].join('\n'));
-fs.writeFileSync(path.join(aqui,'medidas.json'),JSON.stringify(resultado,null,2)+'\n');
-console.log(JSON.stringify({seladas:resultado.seladas,paradas:resultado.paradas,linhas_novas:resultado.linhas_novas,portoes}));
+prova(resultado.motor_portao.codigo===0,'O core.gate não passou');
+fs.writeFileSync(path.join(aqui,'medidas.json'),JSON.stringify({...historico,rp1b:resultado},null,2)+'\n');
+console.log(JSON.stringify({seladas:resultado.seladas,total:resultado.total_do_bloco,linhas:resultado.linhas_novas,portoes}));

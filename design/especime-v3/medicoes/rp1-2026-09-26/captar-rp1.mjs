@@ -9,13 +9,15 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { DOMINIOS_RP1 } from '../../../../src/data/medidas-rp1.mjs';
 
-const estado = process.argv[2];
-if (!['antes', 'depois'].includes(estado)) throw new Error('uso: captar-rp1.mjs antes|depois [dist] [commit-esperado]');
+const rp1b = process.argv[2] === 'rp1b';
+const estado = rp1b ? 'depois' : process.argv[2];
+const prefixo = rp1b ? 'rp1b-' : '';
+if (!['antes', 'depois'].includes(estado)) throw new Error('uso: captar-rp1.mjs antes|depois|rp1b [dist] [commit-esperado]');
 const raiz = process.cwd();
 const dist = path.resolve(process.argv[3] ?? process.env.OEDP_DIST ?? 'dist');
 const bloco = path.join(raiz, 'design/especime-v3/medicoes/rp1-2026-09-26');
 const pasta = path.join(bloco, 'capturas');
-const manifesto = path.join(bloco, `capturas-${estado}.json`);
+const manifesto = path.join(bloco, `capturas-${prefixo}${estado}.json`);
 const git = (...args) => execFileSync('git', args, { cwd: raiz, encoding: 'utf8' }).trim();
 const esperado = git('rev-parse', process.argv[4] ?? 'HEAD');
 const versao = JSON.parse(await fs.readFile(path.join(dist, 'version.json'), 'utf8'));
@@ -28,7 +30,7 @@ const paginas = [
   ['temas', 'pt', '/temas/'], ['temas', 'en', '/en/themes/'],
 ];
 /* [nome do ficheiro, id da medida, seletor do cartão] */
-const CARTOES_RECORTADOS = estado === 'depois' ? Object.keys(DOMINIOS_RP1).map(id => [id, id, `article[data-cartao-medida="${id}"]`]) : [];
+const CARTOES_RECORTADOS = estado === 'depois' ? (rp1b ? ['ipc-energia-em-casa-variacao-homologa', 'ipc-combustiveis-variacao-homologa', 'ipc-rendas-variacao-homologa', 'ihpc-variacao-homologa', 'remuneracao-bruta-mensal-media'] : Object.keys(DOMINIOS_RP1)).map(id => [id, id, `article[data-cartao-medida="${id}"]`]) : [];
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp' };
 const servidor = http.createServer(async (pedido, resposta) => {
   try {
@@ -136,7 +138,7 @@ try {
     if (resposta?.status() !== 200) throw new Error(`${rota}: HTTP ${resposta?.status()}`);
     await pagina.evaluate(() => document.fonts.ready);
     const medida = await pagina.evaluate(MEDIR);
-    const ficheiro = `${estado}-${familia}-${lingua}-${largura}.png`;
+    const ficheiro = `${prefixo}${estado}-${familia}-${lingua}-${largura}.png`;
     const bytes = await pagina.screenshot({ path: path.join(pasta, ficheiro), fullPage: true, animations: 'disabled' });
     const r = { ficheiro, rota, familia, lingua, largura, ...medida, deslocamento: Math.max(medida.documento, medida.corpo) - medida.janela, pedidosExternosAbortados: externos, errosDoNavegador: erros, sha256: sha(bytes) };
     resultados.push(r);
@@ -161,21 +163,27 @@ try {
     console.log(`${ficheiro}: ${r.documento} × ${r.altura}; ${r.cartoes.length} cartões, ${r.cartoes.filter((c) => c.leituras === 1).length} com leitura`);
   }
   /* OS CARTÕES RECORTADOS da página dos temas. */
-  for (const [nome, id, seletor] of CARTOES_RECORTADOS) for (const [lingua, rota] of [['pt', '/temas/'], ['en', '/en/themes/']]) for (const largura of [390, 1280]) {
+  for (const [nome, id, seletor] of CARTOES_RECORTADOS) for (const [lingua, rota] of [['pt', '/temas/'], ['en', '/en/themes/']]) for (const largura of (rp1b ? larguras : [390, 1280])) {
     const { contexto, pagina, erros } = await abre(largura);
     const resposta = await pagina.goto(origem + rota, { waitUntil: 'networkidle' });
     if (resposta?.status() !== 200) throw new Error(`${rota}: HTTP ${resposta?.status()}`);
     await pagina.evaluate(() => document.fonts.ready);
     const cartao = pagina.locator(seletor);
     if (await cartao.count() !== 1) throw new Error(`${rota}: o cartão «${id}» não está uma vez`);
-    const ficheiro = `${estado}-cartao-${nome}-${lingua}-${largura}.png`;
+    const ficheiro = `${prefixo}${estado}-cartao-${nome}-${lingua}-${largura}.png`;
     const bytes = await cartao.screenshot({ path: path.join(pasta, ficheiro), animations: 'disabled' });
     const texto = await cartao.evaluate((c) => ({
       cartao: c.textContent.replace(/\s+/g, ' ').trim(),
       leitura: c.querySelector('.cartao-medida-leitura')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
+      ressalvas: [...c.querySelectorAll('.claim-provisorio')].map(m => {
+        const espaco = document.createRange();
+        espaco.setStart(m.firstChild, 0); espaco.setEnd(m.firstChild, 1);
+        return { texto: m.textContent, espaco_px: espaco.getBoundingClientRect().width, margem_px: parseFloat(getComputedStyle(m).marginLeft), forma: getComputedStyle(m).display };
+      }),
     }));
     recortes.push({ ficheiro, id, lingua, largura, rota, ...texto, errosDoNavegador: erros, sha256: sha(bytes) });
     if (estado === 'depois' && !texto.leitura) falhas.push(`${ficheiro}: o cartão recortado não tem leitura`);
+    if (rp1b && id === 'remuneracao-bruta-mensal-media' && (texto.ressalvas.length !== 2 || texto.ressalvas.some(m => m.texto !== (lingua === 'pt' ? ' provisório' : ' provisional') || m.espaco_px !== 0))) falhas.push(`${ficheiro}: a ressalva não separa o texto ou duplica o espaço visual`);
     await contexto.close();
     console.log(`${ficheiro}: ${texto.leitura ?? '(sem leitura)'}`);
   }
@@ -201,7 +209,7 @@ try {
     copias[nome] = { origem: `${folha}@${esperado}`, sha256: sha(css) };
   }
   const fim = new Date();
-  const comum = { estado, aceitacao: { passou: falhas.length === 0, falhas }, cabeca_da_arvore: git('rev-parse', 'HEAD'), dist_construido_de: versao.commit, dist_construido_em: versao.construido_em, inicio: inicio.toISOString(), fim: fim.toISOString(), segundos: (fim - inicio) / 1000 };
+  const comum = { estado, peca: rp1b ? 'rp1b' : 'rp1', aceitacao: { passou: falhas.length === 0, falhas }, cabeca_da_arvore: git('rev-parse', 'HEAD'), dist_construido_de: versao.commit, dist_construido_em: versao.construido_em, inicio: inicio.toISOString(), fim: fim.toISOString(), segundos: (fim - inicio) / 1000 };
   await fs.writeFile(path.join(destino, 'INDICE.json'), JSON.stringify({ ...comum, copias }, null, 2) + '\n');
   await fs.writeFile(manifesto, JSON.stringify({ ...comum, navegador: navegador.version(), larguras, resultados, recortes }, null, 2) + '\n');
   console.log(`${resultados.length} capturas de página, ${recortes.length} recortes e ${Object.keys(copias).length} cópias guardadas; ${falhas.length} falhas de aceitação, dist de ${versao.commit}.`);
