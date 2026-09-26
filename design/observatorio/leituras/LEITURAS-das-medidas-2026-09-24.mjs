@@ -211,8 +211,8 @@ export const LEITURAS_DAS_MEDIDAS = {
   },
   /* O cartão das câmaras: uma chave da prova e não uma linha (§1.127, decisão 5). */
   camaras: {
-    pt: ['Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ', { periodo: 'proprio' }, ' eram ', { prova: 'camaras_acima_do_limite' }, ' em ', { prova: 'municipios_com_pagina' }, '; ', { prova: 'camaras_sem_valor' }, ' não tem valor publicado.'],
-    en: ['A council above the legal limit owes more than the law allows it to owe. In ', { periodo: 'proprio' }, ' there were ', { prova: 'camaras_acima_do_limite' }, ' in ', { prova: 'municipios_com_pagina' }, '; ', { prova: 'camaras_sem_valor' }, ' has no published value.'],
+    pt: ['Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ', { periodo: 'proprio' }, ' o número de câmaras acima do limite era ', { prova: 'camaras_acima_do_limite' }, ' em ', { prova: 'municipios_com_pagina' }, ', e o número sem valor publicado era ', { prova: 'camaras_sem_valor' }, '.'],
+    en: ['A council above the legal limit owes more than the law allows it to owe. In ', { periodo: 'proprio' }, ' the number of councils above the limit was ', { prova: 'camaras_acima_do_limite' }, ' out of ', { prova: 'municipios_com_pagina' }, ', and the number with no published value was ', { prova: 'camaras_sem_valor' }, '.'],
   },
 
   /* ------------------------------------------------- 2 · Trabalho */
@@ -234,8 +234,8 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['It is what an employee earned per month, on average, in ', { periodo: 'proprio' }, ', including base pay, overtime and regular allowances, before deductions.'],
   },
   'disparidade-salarial-entre-sexos-2024': {
-    pt: ['Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens: a diferença foi de ', { claim: 'proprio', sufixo: ' %' }, ' do ganho dos homens, em ', { periodo: 'proprio' }, ', nas empresas com ', { nl: '10', motivo: 'escala-de-instrumento' }, ' ou mais pessoas ao serviço.', DIFERENCA, DIFERENCA_UE],
-    en: ['Per hour worked, women earned on average less than men: the gap was ', { claim: 'proprio', sufixo: ' %' }, ' of men’s earnings, in ', { periodo: 'proprio' }, ', in enterprises with ', { nl: '10', motivo: 'escala-de-instrumento' }, ' or more employees.', GAP, GAP_EU],
+    pt: ['Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens, em ', { periodo: 'proprio' }, ', nas empresas com ', { nl: '10', motivo: 'escala-de-instrumento' }, ' ou mais pessoas ao serviço: a diferença, em percentagem do ganho dos homens, foi de ', { claim: 'proprio', sufixo: ' %' }, '.', DIFERENCA, DIFERENCA_UE],
+    en: ['Per hour worked, women earned on average less than men, in ', { periodo: 'proprio' }, ', in enterprises with ', { nl: '10', motivo: 'escala-de-instrumento' }, ' or more employees: the gap, as a percentage of men’s earnings, was ', { claim: 'proprio', sufixo: ' %' }, '.', GAP, GAP_EU],
   },
   'retribuicao-minima-mensal-garantida-continente-2026': {
     pt: ['É o salário mínimo nacional: o valor mensal mínimo que a lei garante a quem trabalha por conta de outrem, em vigor no continente em ', { periodo: 'proprio' }, '.'],

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-26T07:40:43+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/cc12f053-0c7b-4cd7-b853-1013e4e9b07f/scratchpad/pacote-l1",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/leituras-das-medidas.mjs",
+   "descricao": "a fonte e o diff: os dois ramos de PESA trocados na declaração (a página construída, feita da declaração sã, contradiz esta cópia)",
+   "sha256_antes": "b0f2f0966e6c479c3e759eed4ba9de2b7265f41dddbaec000256257ee9bd3e68",
+   "sha256_depois": "734129679a944c0abf54dad5f6221d0a3e4b53df2b9c51df5a0f892575082d56",
+   "contexto_antes": "l: [' ', igual] });\n\nconst SUBIU = anterior('Subiu face a', 'Desceu face a', 'Ficou igual a');\nconst ROSE = anterior('Up from', 'Down from', 'Unchanged from');\nconst PESA = anterior('Pesa mais do que em', 'Pesa menos do que em', 'Pesa o mesmo que em');\nconst WEIGHS = anterior('It weighs more than in', 'It weighs less than in', 'It weighs the same as in');\nconst VARIACAO = anterior('A variação em três anos é m",
+   "contexto_depois": "l: [' ', igual] });\n\nconst SUBIU = anterior('Subiu face a', 'Desceu face a', 'Ficou igual a');\nconst ROSE = anterior('Up from', 'Down from', 'Unchanged from');\nconst PESA = anterior('Pesa menos do que em', 'Pesa mais do que em', 'Pesa o mesmo que em');\nconst WEIGHS = anterior('It weighs more than in', 'It weighs less than in', 'It weighs the same as in');\nconst VARIACAO = anterior('A variação em três anos é m"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: a contagem das origens novas trocada de 44 para 46 (o medidas.json diz 44, e a linha seguinte do relatório também)",
+   "sha256_antes": "4c76da531d0e76799c4dac12b46befc49495a2bf8fc509aa792db6b0d89f3e78",
+   "sha256_depois": "29cdb0db2c797c10eee5d08c5902d6e741b66b61b2d0974cdd4c02691e12bc47",
+   "contexto_antes": "a_liga`) ligam); os apoios: 325 (`k17_auditoria_apoios`); as origens usadas: 71 (`k17_auditoria_origens_das_leituras`); os erros: 0 (`k17_erros_da_auditoria`). As origens novas: 44 (`origens_novas`), conferidas contra o motor 44 (`origens_conferidas`) | feito |\n| 5 | A leitura rendida | os cartões conferidos na página do país e na dos temas, nas duas ediçõ",
+   "contexto_depois": "a_liga`) ligam); os apoios: 325 (`k17_auditoria_apoios`); as origens usadas: 71 (`k17_auditoria_origens_das_leituras`); os erros: 0 (`k17_erros_da_auditoria`). As origens novas: 46 (`origens_novas`), conferidas contra o motor 44 (`origens_conferidas`) | feito |\n| 5 | A leitura rendida | os cartões conferidos na página do país e na dos temas, nas duas ediçõ"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "a página construída: o ramo da dívida pública trocado (89,7 contra 93,5 é «pesa menos», a página passa a dizer «pesa mais»)",
+   "sha256_antes": "259ac064762c8e43c5f62f244e7e68e4b434315c12ba76f4e3186808c03d10cb",
+   "sha256_depois": "3d1abb56ffc73a11a9853e1777f5a75e5a1b0be9be0be5c989609b2097c49938",
+   "contexto_antes": "g=\"en\">Eurostat</span></span></a></p><p class=\"cartao-medida-leitura\" data-cartao-leitura=\"divida-publica-2025\" data-selo-em=\"divida-publica-2025\">É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa menos do que em <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-publica-2024\" data-de-campo=\"reference_date\">2024</span>. Está acima da média d",
+   "contexto_depois": "g=\"en\">Eurostat</span></span></a></p><p class=\"cartao-medida-leitura\" data-cartao-leitura=\"divida-publica-2025\" data-selo-em=\"divida-publica-2025\">É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. Pesa mais do que em <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"divida-publica-2024\" data-de-campo=\"reference_date\">2024</span>. Está acima da média d"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/cartao/leituras.mjs",
+   "descricao": "a régua: a conferência dos algarismos da leitura rendida passa a aceitar qualquer elemento com classe, o que a torna vazia (o <p> da leitura tem classe)",
+   "sha256_antes": "42db21ed73007603533ba56e20b191dd6f91a03e1bb0b33f2337546c8567f130",
+   "sha256_depois": "bd036b7683f31575b045578dc37dec5a5f94c0b3b820a7d3310f016769cfddd7",
+   "contexto_antes": "cado = (/** @type {any} */ n) => {\n      for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {\n        const a = p.attributes ?? {};\n        if ('data-claim' in a || 'data-nonledger' in a || 'data-prova' in a) return true;\n      }\n      return false;\n    };\n    /* O texto que se lê é o descodificado: uma referência de carácter como\n       `&#39;` não é um algarismo à vista, e um ",
+   "contexto_depois": "cado = (/** @type {any} */ n) => {\n      for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {\n        const a = p.attributes ?? {};\n        if ('data-claim' in a || 'data-nonledger' in a || 'data-prova' in a || 'class' in a) return true;\n      }\n      return false;\n    };\n    /* O texto que se lê é o descodificado: uma referência de carácter como\n       `&#39;` não é um algarismo à vista, e um "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "tests/cartao/leituras-provadas.json",
+   "descricao": "os dados: um literal da auditoria que a origem não traz (a descrição do Eurostat diz «average population» e a auditoria passa a dizer «total population»)",
+   "sha256_antes": "29b85455094f173c9ad5e5872973511054e6b0aea69115a73b3d3139047805c1",
+   "sha256_depois": "fdebb73cdf8a4f5e97bda7ae909f47f871a104a3c3723632ae570158d7cf49a6",
+   "contexto_antes": "itante\"\n                },\n                {\n                  \"origem\": \"eurostat-tipsna40-descricao\",\n                  \"campo\": \"excerto\",\n                  \"literal\": \"ratio of real gross domestic product to the average population\"\n                }\n              ]\n            },\n            {\n              \"pt\": \", em termos reais\",\n              \"en\": \", in real terms\",\n              \"c",
+   "contexto_depois": "itante\"\n                },\n                {\n                  \"origem\": \"eurostat-tipsna40-descricao\",\n                  \"campo\": \"excerto\",\n                  \"literal\": \"ratio of real gross domestic product to the total population\"\n                }\n              ]\n            },\n            {\n              \"pt\": \", em termos reais\",\n              \"en\": \", in real terms\",\n              \"c"
+  }
+ ]
+}
