@@ -1,109 +1,119 @@
-/** RP1b: conserva a medição histórica e acrescenta provas da segunda entrega. */
+/** RP1c: conserva as entregas anteriores e mede a passagem de correção. */
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { parse } from 'node-html-parser';
+import { load } from 'js-yaml';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 import { DOMINIOS_RP1 } from '../../../../src/data/medidas-rp1.mjs';
-import { REGUAS_DECLARADAS, conferirReguaDeclarada } from '../../../../src/lib/enquadramento.mjs';
 import { textoDaLeitura, leituraDaMedida } from '../../../../src/lib/leitura-da-medida.mjs';
 import { auditarPerguntas } from '../../../../tests/cartao/perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas } from '../../../../tests/cartao/leituras.mjs';
-const aqui=path.dirname(fileURLToPath(import.meta.url)),raiz=path.resolve(aqui,'../../../..');
-const motor=process.env.RP1_MOTOR??path.join(process.env.HOME,'Instruments/ResearchHub/.worktrees/rp1-2026-09-26');
-const base='5c92e5ea';
+const aqui=path.dirname(fileURLToPath(import.meta.url)), raiz=path.resolve(aqui,'../../../..');
+const motor=process.env.RP1_MOTOR??path.join(os.homedir(),'Instruments/ResearchHub/.worktrees/rp1-2026-09-26');
+const base='42b3cadf';
 const git=(...args)=>execFileSync('git',args,{cwd:raiz,encoding:'utf8'}).trim();
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const prova=(condicao,mensagem)=>{if(!condicao)throw Error(mensagem);};
-const historico=JSON.parse(git('show',`${base}:design/especime-v3/medicoes/rp1-2026-09-26/medidas.json`));
-const linhas=loadClaims();
-const ids=['ipc-energia-em-casa-variacao-homologa','ipc-combustiveis-variacao-homologa','ipc-rendas-variacao-homologa','ihpc-variacao-homologa'];
-const resumo=id=>{const l=linhas.get(id);prova(l,'Linha ausente: '+id);return {id,valor:l.value,unidade:l.unit,periodo:l.reference_date,publicado:l.published_at,fonte:l.source,excerto:l.excerpt};};
-const medidas=ids.map(id=>{const regra=conferirReguaDeclarada(id,REGUAS_DECLARADAS[id]);return {...resumo(id),tema:DOMINIOS_RP1[id],anterior:resumo(regra.anterior),ue:regra.ue?resumo(regra.ue):null};});
-const anteriores=git('ls-tree','-r','--name-only',base,'ledger/claims').split('\n').filter(Boolean);
-const alteradas=anteriores.filter(p=>!execFileSync('git',['show',base+':'+p],{cwd:raiz}).equals(fs.readFileSync(path.join(raiz,p))));
-prova(!alteradas.length,'Linhas anteriores alteradas: '+alteradas.join(', '));
-const pedidos=fs.readFileSync(path.join(motor,'indicators/out/rp1-2026-09-26/pedidos.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
-const novos=pedidos.slice(historico.pedidos);
-for(const p of pedidos){
- prova(p.url&&p.timestamp_utc&&p.cliente&&p.sha256,'Pedido incompleto: '+p.file);
- for(const pasta of ['indicators/out/rp1-2026-09-26','content/13 Dominios/source/rp1'])prova(sha(fs.readFileSync(path.join(motor,pasta,p.file)))===p.sha256,'Corpo divergente: '+p.file);
+const prova=(ok,m)=>{if(!ok)throw Error(m);};
+const ficheiros=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?ficheiros(path.join(p,e.name)):[path.join(p,e.name)]);
+// O detetor lê também binários. O caminho pessoal de ensaio só existe fora do repositório.
+const prefixoPessoal=path.join(path.parse(os.homedir()).root,'Users')+path.sep;
+const utilizador=path.basename(os.homedir()).toLowerCase();
+const deteta=p=>{const s=fs.readFileSync(p).toString('utf8').toLowerCase();return s.includes(prefixoPessoal.toLowerCase())||s.includes(utilizador);};
+function caminhos(){
+ const scratch=fs.mkdtempSync(path.join(os.tmpdir(),'rp1c-caminhos-'));
+ let conhecido=false;
+ try {const p=path.join(scratch,'ensaio.txt');fs.writeFileSync(p,path.join(os.homedir(),'Instruments/OEstadoDoPais'));conhecido=deteta(p);}
+ finally {fs.rmSync(scratch,{recursive:true,force:true});}
+ prova(conhecido,'O detetor de caminhos não viu o conhecido-positivo');
+ const critica=path.join(raiz,'design/especime-v3/critica');
+ const lista=[...ficheiros(aqui),...fs.readdirSync(critica).filter(p=>p.startsWith('LEITURA-rp1-')).map(p=>path.join(critica,p))];
+ const achados=lista.filter(deteta).map(p=>path.relative(raiz,p));
+ prova(!achados.length,'Caminho pessoal no bloco: '+achados.join(', '));
+ return {ficheiros_lidos:lista.length,ficheiros_com_caminho_ou_utilizador:achados.length,conhecido_positivo:{fora_do_repositorio:true,encontrado:conhecido},achados};
 }
-const meta=json(path.join(motor,'indicators/out/rp1-2026-09-26/027-ine-0014647-meta.json'))[0];
-const categorias=meta.Dimensoes.Categoria_Dim.flatMap(d=>Object.values(d).flat());
-const classes=['041','045','0722'].map(codigo=>categorias.find(c=>c.dim_num==='3'&&c.categ_cod===codigo));
-prova(meta.IndicadorCod==='0014647'&&meta.Periodic==='Mensal'&&meta.UnidadeMedida==='Percentagem (%)'&&meta.Potencia10==='0'&&classes.every(Boolean),'Metainformação divergente');
-const acertos=json(path.join(aqui,'acertos-provados.json'));
+if(process.argv.includes('--caminhos')){console.log(JSON.stringify(caminhos()));process.exit(0);}
+const critica=fs.readFileSync(path.join(raiz,'design/especime-v3/critica/LEITURA-rp1-2026-09-26.md'),'utf8').split('## «What is fine»')[0];
+const achados=[...critica.matchAll(/^(\d+)\. /gm)].map(m=>Number(m[1]));
+prova(achados.length===23&&achados.every((n,i)=>n===i+1),'A lista dos achados mudou');
+const plantasPacote=json(path.join(raiz,'design/especime-v3/critica/LEITURA-rp1-2026-09-26.plantas.json'));
+prova(new Set(plantasPacote.plantas.map(p=>p.id)).size===5,'O registo das cinco plantas mudou');
+const historico=json(path.join(aqui,'medidas.json'));
+// O expurgo muda os bytes dos registos antigos, conservando os códigos e as cabeças.
+for(const [peca,pasta] of [[historico,'portoes'],[historico.rp1b,'portoes/rp1b']]){
+ for(const nome of ['build','verify','typecheck'])peca.portoes[nome].log_sha256=sha(fs.readFileSync(path.join(aqui,pasta,nome+'.log')));
+}
+const linhas=loadClaims(), anteriores=git('ls-tree','-r','--name-only',base,'ledger/claims').split('\n').filter(Boolean);
+const alteradas=[];
+for(const p of anteriores){
+ const antes=load(execFileSync('git',['show',base+':'+p],{cwd:raiz,encoding:'utf8'})), agora=load(fs.readFileSync(path.join(raiz,p),'utf8'));
+ prova(antes.value===agora.value,'Valor alterado: '+p);
+ const campos=[...new Set([...Object.keys(antes),...Object.keys(agora)])].filter(k=>JSON.stringify(antes[k])!==JSON.stringify(agora[k]));
+ prova(campos.every(k=>k==='note'||(k==='excerpt'&&agora.id==='remuneracao-bruta-mensal-media')),'Campo fora do mandato: '+p);
+ if(campos.length)alteradas.push({id:agora.id,campos});
+}
+prova(linhas.size===anteriores.length,'O RP1c não acrescenta linhas');
+for(const p of ['src/lib/pais.mjs','src/lib/inicio.mjs','src/data/politica-ia.mjs','scripts/textos-aprovados.json'])prova(!git('diff',base,'--',p),'Ficheiro protegido alterado: '+p);
+const pedidos=fs.readFileSync(path.join(motor,'indicators/out/rp1-2026-09-26/pedidos.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+for(const p of pedidos)for(const pasta of ['indicators/out/rp1-2026-09-26','content/13 Dominios/source/rp1'])prova(sha(fs.readFileSync(path.join(motor,pasta,p.file)))===p.sha256,'Corpo divergente: '+p.file);
+const meta=json(path.join(motor,'indicators/out/rp1-2026-09-26/001-ine-0014663-meta.json'))[0];
+const classes=meta.Dimensoes.Categoria_Dim.flatMap(g=>Object.values(g).flat()).filter(c=>c.dim_num==='3').map(c=>c.categ_cod);
+const codigos=['045','0722','041'], proibidas=cs=>codigos.filter(c=>cs.includes(c));
+prova(!proibidas(classes).length,'Classe inesperada na dimensão 3 do 0014663');
+const plantasClasses=codigos.map(c=>({codigo:c,encontrado:proibidas([c]).includes(c)}));
+prova(plantasClasses.every(c=>c.encontrado),'O guarda das classes não vê o código publicado');
 const ensaio=Object.fromEntries(Object.keys(DOMINIOS_RP1).map(id=>[id,Object.fromEntries(['pt','en'].map(lang=>[lang,textoDaLeitura(leituraDaMedida(id,lang).pedacos,lang)]))]));
 fs.writeFileSync(path.join(aqui,'leituras-seladas.json'),JSON.stringify(ensaio,null,2)+'\n');
-const inventario={medidas:[{nome:'inventario_das_medidas',valor:Object.keys(DOMINIOS_RP1).map(id=>{
- const l=resumo(id),r=REGUAS_DECLARADAS[id];
- const anterior=r?.anterior??(id.replace(/-\d{4}$/,'')+'-'+(Number(l.periodo)-1));
- return {...l,anterior:resumo(anterior),ue:r?.ue?resumo(r.ue):null};
-})}]};
-fs.writeFileSync(path.join(aqui,'inventario-rp1b.json'),JSON.stringify(inventario,null,2)+'\n');
-const cap=json(path.join(aqui,'capturas-rp1b-depois.json'));
+for(const id of ['ipc-variacao-media-12-meses','ipc-sem-habitacao-variacao-media-12-meses'])prova(ensaio[id].pt.includes('subiram')&&ensaio[id].en.includes('rose'),'Achado 5 regressou');
+prova(!ensaio['linha-de-risco-de-pobreza-2025'].en.includes('to live on'),'Achado 7 regressou');
+const cap=json(path.join(aqui,'capturas-rp1c-depois.json'));
 for(const c of [...cap.resultados,...cap.recortes])prova(sha(fs.readFileSync(path.join(aqui,'capturas',c.ficheiro)))===c.sha256,'Captura alterada: '+c.ficheiro);
-prova(cap.aceitacao.passou&&cap.resultados.length===20&&cap.recortes.length===50,'Capturas incompletas ou com falhas');
+prova(cap.aceitacao.passou&&cap.resultados.length===20&&cap.recortes.length===50,'Capturas incompletas ou com defeito');
 const indice=json(path.join(aqui,'paginas-depois/INDICE.json'));
 for(const [p,c]of Object.entries(indice.copias))prova(sha(fs.readFileSync(path.join(aqui,'paginas-depois',p)))===c.sha256,'Cópia congelada alterada: '+p);
-const paginas={};
-for(const [familia,p]of [['pais','index.html'],['temas','temas_index.html'],['pais_en','en_index.html'],['temas_en','en_themes_index.html']]){
- const root=parse(fs.readFileSync(path.join(aqui,'paginas-depois',p),'utf8'));
- const cartoes=root.querySelectorAll('article[data-cartao-medida]');
- const rp1=cartoes.filter(c=>Object.hasOwn(DOMINIOS_RP1,c.getAttribute('data-cartao-medida')));
- paginas[familia]={cartoes:cartoes.length,rp1:rp1.length,novos:ids.filter(id=>cartoes.some(c=>c.getAttribute('data-cartao-medida')===id))};
- if(familia.startsWith('temas'))prova(rp1.length===12,'Não estão os doze cartões: '+familia);
- for(const c of rp1)prova(c.querySelectorAll('[data-cartao-leitura]').length===1,'Leitura ausente');
- const salario=root.querySelector('[data-cartao-medida="remuneracao-bruta-mensal-media"]');
- if(salario){const pt=!familia.endsWith('_en');prova(salario.querySelectorAll('.claim-provisorio').every(m=>m.textContent===(pt?' provisório':' provisional')),'I153: bandeira colada');}
-}
+const inspecao=json(path.join(aqui,'inspecao-visual-rp1c.json'));
+for(const c of inspecao.imagens)prova(sha(fs.readFileSync(path.join(aqui,'capturas',c.ficheiro)))===c.sha256,'Imagem inspecionada alterada');
 const portoes={};
 for(const nome of ['build','verify','typecheck']){
- const prefixo=path.join(aqui,'portoes/rp1b',nome);
- const codigo=fs.readFileSync(prefixo+'.codigo','utf8').trim();prova(/^\d+$/.test(codigo),'Código inválido');
- portoes[nome]={codigo:Number(codigo),cabeca:fs.readFileSync(prefixo+'.cabeca','utf8').trim(),inicio:fs.readFileSync(prefixo+'.inicio','utf8').trim(),fim:fs.readFileSync(prefixo+'.fim','utf8').trim(),log_sha256:sha(fs.readFileSync(prefixo+'.log'))};
+ const p=path.join(aqui,'portoes/rp1c',nome), ler=e=>fs.readFileSync(p+'.'+e,'utf8').trim();
+ portoes[nome]={codigo:Number(ler('codigo')),cabeca:ler('cabeca'),inicio:ler('inicio'),fim:ler('fim'),log_sha256:sha(fs.readFileSync(p+'.log'))};
 }
 const cabeca=portoes.build.cabeca;
 prova(Object.values(portoes).every(p=>p.codigo===0&&p.cabeca===cabeca),'Portões vermelhos ou de cabeças diferentes');
-prova(cap.dist_construido_de===cabeca&&indice.dist_construido_de===cabeca,'Capturas e portões de cabeças diferentes');
+prova(cap.dist_construido_de===cabeca&&indice.dist_construido_de===cabeca,'Provas de outra cabeça');
+const logBuild=fs.readFileSync(path.join(aqui,'portoes/rp1c/build.log'),'utf8');
+prova(logBuild.includes('F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas'),'Plantas F1 ausentes');
 const k16=auditarPerguntas(),k17=conferirAuditoriaDasLeituras(),rendidas=conferirLeiturasRendidas(path.join(raiz,'dist'));
 prova(!k16.erros.length&&!k17.erros.length&&!rendidas.erros.length,[...k16.erros,...k17.erros,...rendidas.erros].join('\n'));
-const plantas=json(path.join(aqui,'plantas-rp1.json')),plantasPortoes=json(path.join(aqui,'plantas-portoes-rp1b.json'));
-prova(plantas.plantas.every(p=>p.mordeu)&&plantasPortoes.every(p=>p.passou),'Planta sem mordida');
-const m8=json(path.join(aqui,'m8-rp1b.json')),plantasM8=json(path.join(aqui,'plantas-m8-rp1b.json'));
-prova(m8.celulas.length===2&&m8.celulas.every(c=>c.passa)&&plantasM8.plantas.length===2&&plantasM8.plantas.every(p=>p.mordeu),'A M8 ou uma das suas plantas falhou');
-const ressalvas=cap.recortes.filter(c=>c.id==='remuneracao-bruta-mensal-media').flatMap(c=>c.ressalvas);
-prova(ressalvas.length===20&&ressalvas.every(m=>m.espaco_px===0&&/^ (provisório|provisional)$/.test(m.texto)),'I153: o separador falta ou alargou o espaço visual');
-const inspecao=json(path.join(aqui,'inspecao-visual-rp1b.json'));
-for(const imagem of inspecao.imagens)prova(sha(fs.readFileSync(path.join(aqui,'capturas',imagem.ficheiro)))===imagem.sha256,'Imagem inspecionada divergente');
+const plantas=json(path.join(aqui,'plantas-rp1.json')),m8=json(path.join(aqui,'m8-rp1c.json')),plantasM8=json(path.join(aqui,'plantas-m8-rp1c.json'));
+prova(plantas.plantas.every(p=>p.mordeu)&&plantas.publicacoes_no_periodo.every(p=>p.aceite),'Planta sem resultado esperado');
+prova(m8.celulas.every(c=>c.passa)&&plantasM8.plantas.every(p=>p.mordeu),'M8 vermelha');
+const origens=json(path.join(aqui,'origens-provadas.json')),acertos=json(path.join(aqui,'acertos-provados.json'));
+prova(origens.every(o=>o.literal&&o.pedido&&o.alojamento)&&acertos.diferencas_fora_dos_acertos===0,'Origens ou leituras divergentes');
 const catraca=json(path.join(aqui,'l1-rp1.json'));
-const log=fs.readFileSync(path.join(aqui,'portoes/rp1b/verify.log'),'utf8').replace(/\x1b\[[0-9;]*m/g,'');
-const l1=log.match(/L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)/);
-prova(l1&&Number(l1[1])===catraca.contagens.estudos&&Number(l1[2])===catraca.contagens.estudos,'Catraca e medição divergentes');
-const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1);
-const motorCabeca=execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim();
-const custo=json(path.join(aqui,'custo-rp1b.json'));
-const tentativa=path.join(aqui,'portoes/rp1b/tentativa-1/build');
-const tentativaBuild={codigo:Number(fs.readFileSync(tentativa+'.codigo','utf8')),cabeca:fs.readFileSync(tentativa+'.cabeca','utf8').trim(),log_sha256:sha(fs.readFileSync(tentativa+'.log'))};
-const resultado={base:git('rev-parse',base),cabeca_do_codigo:cabeca,cabeca_motor:motorCabeca,
- commits_sitio:git('log','--reverse','--format=%H %s',base+'..'+cabeca).split('\n'),
- commits_motor:execFileSync('git',['log','--reverse','--format=%H %s','6508b05..HEAD'],{cwd:motor,encoding:'utf8'}).trim().split('\n'),
- medidas,seladas:medidas.length,total_do_bloco:Object.keys(DOMINIOS_RP1).length,paradas:0,
- linhas_novas:linhas.size-anteriores.length,linhas_anteriores:anteriores.length,linhas_anteriores_alteradas:alteradas.length,
- pedidos:novos,corpos_conferidos:pedidos.length,pedidos_novos:novos.length,
- metainformacao:{nome:meta.IndicadorNome,frequencia:meta.Periodic,unidade:meta.UnidadeMedida,escala:meta.Potencia10,ultimo:meta.UltimoPeriodo,classes},
- acertos,frases_resolvidas:Object.values(ensaio).flatMap(Object.values).length,origens:json(path.join(aqui,'origens-provadas.json')).length,
+prova(!catraca.contagens.paginas_antigas_agravadas&&!catraca.contagens.outras_entradas,'Catraca agravada');
+const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1),inicio=pedidos[31].timestamp_utc;
+const motorCodigo=Number(fs.readFileSync(path.join(aqui,'motor-rp1c.codigo'),'utf8'));
+prova(motorCodigo===0,'O commit do motor não passou pelo portão');
+const m={base:git('rev-parse',base),cabeca_do_codigo:cabeca,cabeca_motor:execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim(),
+ commits_sitio:git('log','--reverse','--format=%H %s','334cc740..'+cabeca).split('\n'),
+ commits_motor:execFileSync('git',['log','--reverse','--format=%H %s','1d10b3f..HEAD'],{cwd:motor,encoding:'utf8'}).trim().split('\n'),
+ entrega:{referencia:'HEAD',titulo:'RP1c: entregar as provas da passagem de correção',pai:cabeca},
+ achados,plantas_do_pacote:5,
+ linhas_conferidas:anteriores.length,linhas_novas:0,valores_alterados:0,alteradas,
+ pedidos:pedidos.slice(31),corpos_conferidos:pedidos.length,pedidos_novos:pedidos.length-31,
+ classes_0014663:{dimensao:3,publicadas:classes,codigos_procurados:codigos,encontradas:proibidas(classes).length,conhecidos_positivos:plantasClasses},
+ origens,acertos,frases_resolvidas:Object.keys(ensaio).length*2,
  k16:{...k16.contas,erros:k16.erros.length},k17:{...k17.contas,erros:k17.erros.length},leituras_rendidas:{...rendidas.contas,erros:rendidas.erros.length},
- plantas,plantas_portoes:plantasPortoes,m8,plantas_m8:plantasM8,i153:{ressalvas_medidas:ressalvas.length,espaco_visual_max_px:Math.max(...ressalvas.map(m=>m.espaco_px)),imagens_inspecionadas:inspecao.imagens.length},catraca_l1:catraca,portoes,tentativa_build:tentativaBuild,
- capturas:{cabeca:cap.dist_construido_de,paginas:cap.resultados.length,recortes:cap.recortes.length,larguras:cap.larguras,falhas:cap.aceitacao.falhas.length},
- paginas,congeladas:{html:Object.keys(indice.copias).filter(p=>p.endsWith('.html')).length,css:Object.keys(indice.copias).filter(p=>p.endsWith('.css')).length,cabeca:indice.dist_construido_de},
- custo:{inicio:novos[0].timestamp_utc,fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(novos[0].timestamp_utc))/1000),sessao:custo,euros:null},
- motor_portao:{codigo:Number(fs.readFileSync(path.join(aqui,'motor-rp1b.codigo'),'utf8')),log_sha256:sha(fs.readFileSync(path.join(aqui,'motor-rp1b.log')))},
+ plantas,planta_origens:json(path.join(aqui,'planta-origens-rp1c.json')),plantas_f1:{portugues:true,ingles:true},m8,plantas_m8:plantasM8,
+ catraca_l1:catraca,portoes,motor_portao:{codigo:motorCodigo,log_sha256:sha(fs.readFileSync(path.join(aqui,'motor-rp1c.log')))},
+ capturas:{cabeca:cap.dist_construido_de,paginas:cap.resultados.length,recortes:cap.recortes.length,larguras:cap.larguras,falhas:cap.aceitacao.falhas.length,inspecionadas:inspecao.imagens.length},
+ congeladas:{cabeca:indice.dist_construido_de,ficheiros:Object.keys(indice.copias).length},
+ custo:{inicio,fim,segundos_da_janela:Math.round((Date.parse(fim)-Date.parse(inicio))/1000),sessao:json(path.join(aqui,'custo-rp1c.json')),euros:null},
+ caminhos:caminhos(),sanitizacao:json(path.join(aqui,'sanitizacao-rp1c.json')),
 };
-prova(resultado.motor_portao.codigo===0,'O core.gate não passou');
-fs.writeFileSync(path.join(aqui,'medidas.json'),JSON.stringify({...historico,rp1b:resultado},null,2)+'\n');
-console.log(JSON.stringify({seladas:resultado.seladas,total:resultado.total_do_bloco,linhas:resultado.linhas_novas,portoes}));
+fs.writeFileSync(path.join(aqui,'medidas.json'),JSON.stringify({...historico,rp1c:m},null,2)+'\n');
+console.log(JSON.stringify({valores_alterados:m.valores_alterados,caminhos:m.caminhos,portoes}));
