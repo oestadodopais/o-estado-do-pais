@@ -1,10 +1,8 @@
 /** RP1: composição da catraca, comparada com a prova congelada do B2. */
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { spawnSync, execFileSync } from 'node:child_process';
-import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 import { matchPath, normalizePath, routePath } from '../../../../src/lib/routes.mjs';
 import { ANCORA_DA_POLITICA } from '../../../../src/data/politica-ia.mjs';
@@ -15,19 +13,6 @@ import { verificaCartaoDasCamaras } from '../../../../scripts/pais-camaras.mjs';
 const AQUI=path.dirname(fileURLToPath(import.meta.url));
 const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const paginasDe = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? paginasDe(path.join(dir, e.name)) : e.name.endsWith('.html') ? [path.join(dir, e.name)] : []).sort();
-const semCor = (s) => s.replace(/\x1b\[[0-9;]*m/g, '');
-function listaDoPortao(s) {
-  const paginas = {};
-  const texto = semCor(s);
-  const total = texto.match(/L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)/);
-  if (!total) throw new Error('A régua não imprimiu a medição L1; uma exceção antes da contagem não é uma medição.');
-  for (const l of texto.split('\n')) {
-    const m = l.match(/^\s+· (\S+) · (\d+) destinos repetidos \(ex\.: (\S+) ×(\d+)\)/);
-    if (m) paginas[m[1]] = { destinos: Number(m[2]), exemplo: m[3], vezes: Number(m[4]) };
-  }
-  if (Object.keys(paginas).length !== Number(total[1])) throw new Error(`Amostra incompleta: ${Object.keys(paginas).length} páginas para ${total[1]} contadas.`);
-  return { total: Number(total[1]), teto: Number(total[2]), paginas };
-}
 function composicao(dist, b2 = false) {
   const paginas = {}, todas = [], falhas = [], semRota = new Set(['404.html', 'en/404/index.html']);
   for (const f of paginasDe(dist)) {
@@ -87,12 +72,6 @@ function composicao(dist, b2 = false) {
   }
   return { todas, paginas, falhas };
 }
-function conferir(composicao, oficial) {
-  const ks = Object.keys(composicao.paginas).sort(), os = Object.keys(oficial.paginas).sort();
-  if (JSON.stringify(ks) !== JSON.stringify(os)) throw new Error('A composição e a L1 original não contam as mesmas páginas.');
-  for (const k of ks) if (composicao.paginas[k].destinos !== oficial.paginas[k].destinos) throw new Error(`${k}: a composição e a L1 não contam os mesmos destinos.`);
-}
-
 const referencia='design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json';
 const base=json(referencia), antes=base.composicao, depois=composicao('dist',true);
 if(depois.falhas.length)throw Error(depois.falhas.join('\n'));

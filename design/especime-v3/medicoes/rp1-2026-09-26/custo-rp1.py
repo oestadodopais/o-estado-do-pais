@@ -6,7 +6,8 @@ from pathlib import Path
 AQUI=Path(__file__).resolve().parent
 REGISTO=Path.home()/'.codex/sessions/2026/09/26/rollout-2026-09-26T14-50-19-01a0ddfb-28f2-7522-ad5d-af8f210018d8.jsonl'
 rp1b='--rp1b' in sys.argv
-if rp1b:
+rp1c='--rp1c' in sys.argv
+if rp1b or rp1c:
     candidatos=[]
     for f in (Path.home()/'.codex/sessions/2026/09/26').glob('rollout-*.jsonl'):
         with f.open() as entrada: inicio=json.loads(next(entrada))
@@ -23,5 +24,5 @@ for linha in REGISTO.open():
         ultimo=dict(hora=d['timestamp'],**p['info']['total_token_usage'])
 assert meta and ultimo and meta['payload']['cwd']==str(AQUI.parents[3])
 resultado=dict(registo=REGISTO.name,inicio=meta['timestamp'],modelo=modelo,**ultimo,euros=None,limite='Contagem cumulativa do registo desta sessão, incluindo entradas em cache; não é uma estimativa de faturação nem inclui sessões separadas de revisão automática.')
-(AQUI/('custo-rp1b.json' if rp1b else 'custo.json')).write_text(json.dumps(resultado,ensure_ascii=False,indent=2)+'\n')
+(AQUI/('custo-rp1c.json' if rp1c else 'custo-rp1b.json' if rp1b else 'custo.json')).write_text(json.dumps(resultado,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(resultado,ensure_ascii=False))
