@@ -683,6 +683,12 @@ const PRIMEIRA = () => `/areas/${SLUGS[0]}`;
 
 const PLANTAS = [
   {
+    nome: 'I158: o valor colado à unidade na página da área',
+    celulas: ['M8'],
+    vermelhas: ['M8·pt', 'M8·en'],
+    estrago: html => html.replace(/(<\/span>)\s+(<span class="campo-valor cartao-medida-unidade")/g, '$1$2'),
+  },
+  {
     nome: 'I153: a ressalva colada ao valor na página da área',
     celulas: ['M8'],
     vermelhas: ['M8·pt', 'M8·en'],
