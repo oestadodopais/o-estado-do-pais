@@ -2,6 +2,7 @@
 """Monta a entrega para leitura a frio a partir da cabeça e da construção selada."""
 import importlib.util
 import json
+import hashlib
 from pathlib import Path
 import shutil
 import subprocess
@@ -41,7 +42,11 @@ assert resultado.returncode == 0, 'A montagem falhou; a saída sanitizada ficou 
 # O guião comum exclui imagens do diff. A entrega visual é copiada pelo seu selo.
 shutil.copytree(AQUI / 'capturas', destino / AQUI.relative_to(RAIZ) / 'capturas')
 (destino / 'motor').mkdir(exist_ok=True)
-(destino / 'motor/diff.patch').write_text(m.git('diff', m.MOTOR_BASE, 'HEAD', cwd=m.MOTOR))
+diff_motor = m.git('diff', m.MOTOR_BASE, 'HEAD', cwd=m.MOTOR)
+# A linha removida de um comentário antigo continha um caminho absoluto.
+# O pacote serve para leitura: guarda o resumo integral e omite esse caminho.
+# Os ficheiros finais copiados abaixo permanecem byte a byte iguais ao Git.
+(destino / 'motor/diff-para-leitura.patch').write_text(log.publico(diff_motor))
 for f in m.git('diff', '--name-only', m.MOTOR_BASE, 'HEAD', cwd=m.MOTOR).splitlines():
     p = destino / 'motor' / f
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -55,6 +60,9 @@ assert not achados, 'O pacote contém caminhos locais.'
 prova = {'cabeca_sitio': cabeca, 'cabeca_motor': m.git('rev-parse', 'HEAD', cwd=m.MOTOR),
          'cabeca_construida': medidas['portoes']['build']['cabeca'],
          'ficheiros': len(ficheiros), 'caminhos_locais': len(achados),
+         'diff_motor': {'uso': 'leitura; o exemplo de caminho absoluto do comentário removido foi omitido',
+                        'sha256_integral': hashlib.sha256(diff_motor.encode()).hexdigest(),
+                        'expurgo_aplicado': log.publico(diff_motor) != diff_motor},
          'conteudo': {str(p.relative_to(destino)): m.sha(p) for p in ficheiros}}
 (destino / 'PACOTE.json').write_text(json.dumps(prova, ensure_ascii=False, indent=2) + '\n')
 # Só o nome portável, nunca o caminho da máquina.

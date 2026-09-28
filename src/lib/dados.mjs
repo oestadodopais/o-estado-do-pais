@@ -192,10 +192,12 @@ export function csvIndicadoresDosConcelhos() {
     linha(['concelho', 'medida', 'valor', 'unidade', 'periodo', 'fonte', 'afirmacao', 'concelho_slug']),
   ];
   for (const municipio of MUNICIPIOS_COM_PAGINA) {
-    for (const peca of pecasDoConcelho(municipio).filter((p) => !p.vazia)) {
+    for (const peca of pecasDoConcelho(municipio)) {
+      if (peca.vazia) continue;
+      if (!peca.claim) throw new Error('Uma medida apresentada não identifica a sua linha.');
       const c = getClaim(peca.claim);
       const periodo = c.reference_date ?? peca.periodo.pt.find((p) => typeof p === 'object' && 'ref' in p)?.ref;
-      const fonte = c.source ?? (c.derived_from?.length ? 'Calculado' : '');
+      const fonte = c.source ?? (Array.isArray(c.derived_from) && c.derived_from.length ? 'Calculado' : '');
       linhas.push(linha([municipio.nome.pt, peca.nome.pt, c.value, c.unit, periodo, fonte, c.id, municipio.slug]));
     }
   }
