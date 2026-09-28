@@ -40,9 +40,17 @@ export function verificaVeredictoDoPais(home, indice, lang, linha = lerLinha) {
     return erros;
   }
   const bloco = blocos[0];
-  const ordem = home.querySelectorAll('main [data-veredicto-pais], main [data-leitura-pais]');
-  if (ordem.length !== 2 || ordem[0] !== bloco || !ordem[1].hasAttribute('data-leitura-pais'))
-    falha('o veredicto não precede a leitura do país.');
+  /* A ORDEM E A CASA DO VEREDICTO (bloco PP1, 28.09.2026). Precedia a leitura do país, que saiu da
+     primeira página; passou a viver numa secção sua, depois de «O que se passa», com um título seu e a
+     porta da página europeia. O que esta parte protege é a forma, e muda com ela: a frase continua
+     recontada abaixo, número a número e nome a nome. */
+  const ordem = home.querySelectorAll('main [data-o-que-se-passa], main [data-veredicto-pais]');
+  if (ordem.length !== 2 || !ordem[0].hasAttribute('data-o-que-se-passa') || ordem[1] !== bloco)
+    falha('o veredicto não vem depois de «O que se passa».');
+  const seccao = bloco.closest('[data-veredicto-seccao]');
+  const europa = lang === 'pt' ? '/uniao-europeia' : '/en/european-union';
+  if (!seccao || !seccao.querySelector('h2') || !seccao.querySelectorAll('a').some(a => a.getAttribute('href') === europa))
+    falha('o veredicto não está na sua secção, com o título e a porta da página europeia.');
   const provas = bloco.querySelectorAll('[data-prova]');
   if (JSON.stringify(provas.map(n => n.getAttribute('data-prova'))) !== JSON.stringify(Object.keys(contagens)))
     falha('as três chaves da prova não são as declaradas, pela ordem da frase.');

@@ -12,6 +12,9 @@ import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
+import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
+import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
+import { t } from '../src/i18n/strings.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
 const texto = el => {
   const copia = parse(el.outerHTML);
@@ -31,30 +34,29 @@ export function sinopseEsperada(w, lang) {
 export function verificaVozPais(raiz) {
   const erros = [];
   for (const lang of ['pt','en']) {
-    const v = id => getClaim(id).value;
-    /* A frase da dívida com as duas leituras oficiais (bloco R1, 23.09.2026): a
-       data da notificação do INE é o `published_at` da linha, na forma da casa,
-       e o ano entre parênteses é o `reference_date` da linha de 2024. */
-    const ine = getClaim('divida-publica-2025-notificacao-ine-2026-09');
-    const quando = String(ine.published_at).split('-').reverse().join('.');
-    const ano = getClaim('divida-publica-2024-notificacao-ine-2026-09').reference_date;
-    const esperada = lang === 'pt'
-      ? `A dívida pública desceu de ${v('divida-publica-2024')} % para ${v('divida-publica-2025')} % do PIB num ano, pela notificação de abril publicada pelo Eurostat, e a segunda notificação do INE, de ${quando} e ainda provisória, revê-a para ${v('divida-publica-2025-notificacao-ine-2026-09')} % (${v('divida-publica-2024-notificacao-ine-2026-09')} % em ${ano}); continua acima da média da União Europeia, que é de ${v('divida-publica-2025-ue')} %. O desemprego está nos ${v('taxa-de-desemprego-2025')} %, a par da média europeia, e os preços das casas subiram ${v('precos-da-habitacao-2025')} % num ano, contra ${v('precos-da-habitacao-2025-ue')} % na União.`
-      : `Public debt fell from ${v('divida-publica-2024')}% to ${v('divida-publica-2025')}% of GDP in a year, by the April notification published by Eurostat, and the INE’s second notification of ${quando}, still provisional, revises it to ${v('divida-publica-2025-notificacao-ine-2026-09')}% (${v('divida-publica-2024-notificacao-ine-2026-09')}% in ${ano}); it remains above the European Union average of ${v('divida-publica-2025-ue')}%. Unemployment stands at ${v('taxa-de-desemprego-2025')}%, level with the European average, and house prices rose ${v('precos-da-habitacao-2025')}% in a year, against ${v('precos-da-habitacao-2025-ue')}% in the Union.`;
+    /* A LEITURA APROVADA SAIU COM O BLOCO PP1 (28.09.2026): a primeira página deixou de ter a frase
+       do lugar de direção com nove valores presos, e os blocos de «O que se passa» dizem o que ela dizia,
+       com condições. O que a comparação da frase inteira protegia passa aos blocos, que só saem desta
+       lista depois de a célula da primeira página os conferir, logo abaixo. */
+    const s = t(lang);
     for (const rota of lang === 'pt' ? ['', 'temas'] : ['en','en/themes']) {
       const main = parse(fs.readFileSync(path.join(raiz,'dist',rota,'index.html'),'utf8')).querySelector('main');
-      const leitura = main.querySelector('[data-leitura-pais]');
-      erros.push(...verificaCartaoDasCamaras(main.parentNode, lang));
-      if (rota === '' || rota === 'en') {
-        if (!leitura || texto(leitura) !== esperada) erros.push(`B1 leitura aprovada: ${rota || '/'} difere do texto da direção.`);
+      const primeira = rota === '' || rota === 'en';
+      /* O cartão das câmaras vive na página dos temas; a primeira página deixou de render os cartões. */
+      if (!primeira) erros.push(...verificaCartaoDasCamaras(main.parentNode, lang));
+      /* OS BLOCOS SÓ SAEM DA LISTA CONFERIDOS NA MESMA CORRIDA (bloco PP1): a célula da primeira página
+         reconta o texto, os ramos e as linhas de cada bloco; se ela recusar, os blocos ficam na lista
+         fechada e a prosa deles é medida como qualquer outra. */
+      const blocosConferidos = primeira && conferirBlocosDaPagina(main.parentNode, lang, rota || '/', { ids: idsDosBlocos(), primeira: true }).erros.length === 0;
+      if (primeira) {
         const indice = parse(fs.readFileSync(path.join(raiz, 'dist', lang === 'pt' ? 'temas' : 'en/themes', 'index.html'), 'utf8'));
         erros.push(...verificaVeredictoDoPais(main.parentNode, indice, lang));
       }
       /* O rótulo de IA do topo (bloco R1, 23.09.2026) é texto aprovado, que o
          `gate:html` compara carácter a carácter com o oráculo; não é prosa da
          lista fechada destas páginas. */
-      const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mapa-raiz], [data-mapa-legenda], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"]'));
-      if (leitura) dispensados.add(leitura);
+      const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mapa-raiz], [data-mapa-legenda], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"], [data-pesquisa-lista], [data-nonledger="data-da-linha"]'));
+      if (blocosConferidos) for (const b of main.querySelectorAll('[data-bloco]')) dispensados.add(b);
       for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
       /* A marca só sai da lista depois de a V1 conferir a frase inteira. */
       if (rota === '' || rota === 'en') for (const v of main.querySelectorAll('[data-veredicto-pais]')) dispensados.add(v);
@@ -78,6 +80,12 @@ export function verificaVozPais(raiz) {
            cadeia declarada e não prosa da casa. */
         POR_VERIFICAR,
         '·','→',
+        /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as seis
+           entradas das declarações do lugar de direção, a pesquisa dos lugares, e as três portas. */
+        s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
+        `${s.primeira.todosOsTemas} →`, `${s.nav.livro} →`, `${ROTULOS_B1[lang].mudou} →`, `${s.nav.uniaoEuropeia} →`,
+        ROTULOS_B1[lang].lugares, s.ambito.municipio, s.ambito.pesquisaSubmeter, s.ambito.pesquisaSemResultado,
+        ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang]]),
       ].map(normal));
       function anda(n) {
         if (dispensados.has(n)) return;

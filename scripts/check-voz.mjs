@@ -75,6 +75,8 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
 import { conferirPaginaDaLeitura } from '../tests/cartao/leituras.mjs';
+import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
+import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
 /* A LISTA DAS PALAVRAS PROIBIDAS VIVE NUM FICHEIRO SÓ (bloco P3, 16.09.2026,
@@ -466,15 +468,18 @@ const ROTAS_DA_CLASSE = [
        diretor fez da primeira página no ar: a frase passou a dizer o que o sítio
        é, e não as três maneiras de o percorrer. A sentinela continua a ser a
        cadeia INTEIRA, pela mesma razão. */
+    /* E MUDOU OUTRA VEZ A 28.09.2026 (bloco PP1): a leitura do país saiu da primeira página, e com ela
+       o seu começo. A sentinela passa a ser o título da secção dos blocos, «O que se passa», que é
+       prosa da casa, fixa, e rende-se na primeira página e em mais lado nenhum. */
     sentinela:
-      'A dívida pública desceu de',
+      'O que se passa',
   },
   {
     rota: '/en/',
     ficheiro: path.join('dist', 'en', 'index.html'),
     lingua: 'en',
     sentinela:
-      'Public debt fell from',
+      'What is happening',
   },
 ];
 
@@ -538,8 +543,26 @@ function textoSemOrigens(html) {
  * @param {import('node-html-parser').HTMLElement} raiz
  * @param {boolean} [cartoesConferidos] falso quando a K17 recusou a página
  */
-function semLeiturasConferidas(raiz, cartoesConferidos = true) {
-  raiz.querySelector('main p[data-leitura-pais]')?.remove();
+/*
+ * E OS BLOCOS DE «O QUE SE PASSA» SAEM DO ARAME, e só eles e só conferidos (bloco PP1, 28.09.2026).
+ * Cada bloco é a frase tipada que o arame pede: as palavras declaradas em
+ * `src/data/primeira-pagina.mjs`, auditadas parte a parte, e cada comparação («desceu», «está acima
+ * da média da União», «rose») é um ramo que a máquina escolhe ou uma palavra guardada por uma condição
+ * declarada, que tira o bloco da página quando deixa de ser verdadeira. A célula da primeira página
+ * (`tests/inicio/blocos.mjs`) reconta o texto, os ramos e as condições de cada bloco rendido, e corre
+ * aqui, na mesma corrida: uma página cujos blocos ela recuse fecha a construção com a queixa dela, e os
+ * blocos ficam dentro do arame. Um elemento com a marca de bloco que a célula não conferiu não sai.
+ *
+ * @param {import('node-html-parser').HTMLElement} raiz
+ * @param {boolean} [cartoesConferidos] falso quando a K17 recusou a página
+ * @param {boolean} [blocosConferidos] verdadeiro só quando a célula da primeira página aceitou a página
+ */
+function semLeiturasConferidas(raiz, cartoesConferidos = true, blocosConferidos = false) {
+  /* A LEITURA DO PAÍS JÁ NÃO SAI DAQUI (bloco PP1, 28.09.2026). Saía sem conferência nenhuma nesta
+     função, porque a lista fechada do país a comparava inteira; a leitura saiu da primeira página e essa
+     comparação saiu com ela. Uma leitura que volte fica dentro do arame, e o `check:pais` fecha a
+     construção (L1). */
+  if (blocosConferidos) for (const b of raiz.querySelectorAll('main [data-bloco]')) b.remove();
   if (!cartoesConferidos) return raiz;
   for (const l of raiz.querySelectorAll('main article.cartao-medida [data-cartao-leitura]')) l.remove();
   return raiz;
@@ -600,6 +623,12 @@ function mordidas(texto, lingua) {
     if (viuNoCartao.length) {
       erros.push(`o autoteste do arame da classe falhou em «${lingua}»: ${viuNoCartao.length} termo(s) morderam dentro da leitura de um cartão, que a K17 confere.`);
     }
+    /* PP1: um bloco conferido sai do arame; o mesmo bloco sem a conferência não sai. */
+    const noBloco = `<html><body><main><section data-bloco="x"><p>${termos.map((t) => `o valor ${t} nesta frase.`).join(' ')}</p></section></main></body></html>`;
+    const viuNoBlocoConferido = mordidas(textoSemOrigens(semLeiturasConferidas(parse(noBloco), true, true).toString()), lingua).length;
+    const viuNoBlocoPorConferir = mordidas(textoSemOrigens(semLeiturasConferidas(parse(noBloco), true, false).toString()), lingua).length;
+    if (viuNoBlocoConferido) erros.push(`o autoteste do arame da classe falhou em «${lingua}»: ${viuNoBlocoConferido} termo(s) morderam dentro de um bloco conferido.`);
+    if (viuNoBlocoPorConferir !== termos.length) erros.push(`o autoteste do arame da classe falhou em «${lingua}»: um bloco que a célula não conferiu isentou ${termos.length - viuNoBlocoPorConferir} termo(s).`);
     if (viuForaDoCartao !== termos.length) {
       erros.push(
         `o autoteste do arame da classe falhou em «${lingua}»: a marca de leitura fora de um cartão isentou ` +
@@ -641,12 +670,21 @@ for (const r of ROTAS_DA_CLASSE) {
      compara cada palavra, check:pais exige as sete portas e gate:html confere
      os valores. Só este parágrafo sai do arame genérico, depois da sentinela.
      Prosa solta, mesmo com as mesmas palavras, continua a ser medida. */
-  /* L1: as leituras dos cartões só saem depois de a K17 as conferir aqui. */
-  const k17 = conferirPaginaDaLeitura(parse(cru), /** @type {'pt'|'en'} */ (r.lingua), r.rota);
+  /* L1: as leituras dos cartões só saem depois de a K17 as conferir aqui. PP1: a primeira página
+     deixou de render os cartões, e o que se confere nela são os blocos, pela célula da primeira página. */
+  /* A K17 corre sempre que a página tenha um cartão OU uma leitura: uma leitura posta fora de um cartão
+     na primeira página, que já não tem cartões, tem de ter a queixa dela, além da do arame. */
+  const temCartoes = parse(cru).querySelectorAll('main article.cartao-medida, main [data-cartao-leitura]').length > 0;
+  const k17 = temCartoes ? conferirPaginaDaLeitura(parse(cru), /** @type {'pt'|'en'} */ (r.lingua), r.rota) : { erros: [] };
   for (const e of k17.erros) {
     erros.push(`a leitura de um cartão só sai do arame da classe conferida, e a K17 recusou-a em ${r.rota}: ${e}`);
   }
-  const foraDaLeitura = semLeiturasConferidas(parse(cru), k17.erros.length === 0);
+  const blocos = conferirBlocosDaPagina(parse(cru), /** @type {'pt'|'en'} */ (r.lingua), r.rota, { ids: idsDosBlocos(), primeira: true });
+  for (const e of blocos.erros) {
+    erros.push(`um bloco de «O que se passa» só sai do arame da classe conferido, e a célula da primeira página recusou-o em ${r.rota}: ${e}`);
+  }
+  if (!parse(cru).querySelectorAll('main [data-bloco]').length) erros.push(`${r.rota} não tem bloco nenhum de «O que se passa»: o arame não mediu os blocos.`);
+  const foraDaLeitura = semLeiturasConferidas(parse(cru), k17.erros.length === 0, blocos.erros.length === 0);
   for (const p of mordidas(textoSemOrigens(foraDaLeitura.toString()), r.lingua)) {
     const cadeia = r.lingua === 'pt' ? p.pt : p.en;
     erros.push(
@@ -661,11 +699,28 @@ for (const r of ROTAS_DA_CLASSE) {
 /* RP1b, I153: os temas também mostram valores e leituras com ressalva.
    A K17 guarda o texto e a igualdade das bandeiras nesta superfície; o arame
    da classe continua a aplicar-se apenas às rotas que já declarava. */
-for (const [lingua, ficheiro, rota] of [['pt', 'temas/index.html', '/temas/'], ['en', 'en/themes/index.html', '/en/themes/']]) {
+/* PP1: e as páginas das entradas, que rendem os mesmos cartões com as mesmas leituras. */
+const PAGINAS_COM_CARTOES = [['pt', 'temas/index.html', '/temas/'], ['en', 'en/themes/index.html', '/en/themes/'],
+  ...ENTRADAS.filter((e) => !('existente' in e && e.existente)).flatMap((e) => /** @type {const} */ (['pt', 'en']).map((l) => [l, `${e.rota[l].replace(/^\//, '')}index.html`, e.rota[l]]))];
+for (const [lingua, ficheiro, rota] of PAGINAS_COM_CARTOES) {
   const caminho = path.join(DIST, ficheiro);
   if (!fs.existsSync(caminho)) { erros.push(`K17: página dos temas ausente, ${rota}`); continue; }
   const k17 = conferirPaginaDaLeitura(parse(fs.readFileSync(caminho, 'utf8')), /** @type {'pt'|'en'} */ (lingua), rota);
   erros.push(...k17.erros);
+}
+/* PP1: AS PALAVRAS DOS BLOCOS DAS ENTRADAS SÓ SAEM DO INVENTÁRIO CONFERIDAS. A régua das frases tira do
+   inventário as palavras declaradas de um bloco e a lista dos números dele (`data-bloco-declarado`),
+   na primeira página e nas cinco entradas, e só aí. Na primeira página a célula dos blocos corre acima,
+   no arame da classe; nas entradas corre aqui, nas duas edições, e uma recusa dela fecha a construção
+   na mesma corrida em que o texto saiu do inventário. */
+for (const e of ENTRADAS.filter((x) => !('existente' in x && x.existente))) {
+  for (const lingua of /** @type {const} */ (['pt', 'en'])) {
+    const rota = e.rota[lingua];
+    const caminho = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
+    if (!fs.existsSync(caminho)) { erros.push(`a página da entrada ${rota} não existe na construção, e a régua das frases tira-lhe as palavras dos blocos.`); continue; }
+    const r = conferirBlocosDaPagina(parse(fs.readFileSync(caminho, 'utf8')), lingua, rota, { ids: e.blocos });
+    for (const x of r.erros) erros.push(`as palavras de um bloco só saem do inventário conferidas, e a célula dos blocos recusou-as em ${rota}: ${x}`);
+  }
 }
 
 /* ---------------------------------------------------------------------------
