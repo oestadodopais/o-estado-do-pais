@@ -463,3 +463,10 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | c1 | Duas cadeias novas e duas retiradas; rótulos do recibo e portas dos ficheiros registados em prosa | por ler pelo lugar de direção antes de aterrar | Codex gpt-6-astra, 28.09.2026: a quarta redação corrige a concordância das rendas na edição portuguesa e a expressão das pensões na inglesa. Entram apenas as cadeias recolhidas pelo `medir-defeitos.mjs --json` na construção preparatória. As duas anteriores, já publicadas no RP1, ficam retiradas com razão, em vez de desaparecerem do histórico. As cadeias curtas que continuam a render-se conservam o estado. Os novos rótulos de verificação pertencem aos recibos, fora das rotas do inventário, e ficam nomeados em prosa; a ligação à atualização fica declarada como condicional, sem afirmar uma ocorrência que esta entrega não tem. As portas dos ficheiros dos concelhos são navegação dentro de ligações. A K17 conserva a conferência integral das leituras dos temas, sem alargar a peneira da voz nem dispensar origens. |
+
+
+## C1c · passagem de correção, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1c | Seis cadeias novas e duas contagens retiradas | por ler pelo lugar de direção antes de aterrar | As cadeias novas dizem a bandeira provisória, a definição do índice municipal e a contagem efetiva de revisões de proveniência. A frase inglesa do índice evita fazer reaparecer o cabeçalho retirado «Revenue collected», conservando o sentido do literal da DGAL. As duas contagens antigas deixam de se render. Os rótulos dos recibos ficam documentados em prosa, sem alargar as rotas do inventário. As leituras do BCE e do câmbio continuam conferidas pela K17. |

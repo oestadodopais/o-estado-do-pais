@@ -43,3 +43,11 @@ export function referenciaDaMedida(id) {
   if (!declarada) throw new Error(`Referência não declarada: ${id}`);
   return declarada;
 }
+
+/** Objetivo da zona do euro, sem comparação normativa com Portugal.
+ * A régua existente transforma um limiar em veredicto. A leitura cita este
+ * objetivo por nl, com o literal auditado, como o mandato do C1c permite. */
+export const OBJETIVO_DO_IHPC = {
+  nl: '2', motivo: 'limiar-do-quadro', origem: 'c1c-bce-estrategia',
+  ambito: 'zona do euro', prazo: 'médio prazo', veredicto: false,
+};

@@ -1,3 +1,4 @@
+import { ORIGENS_C1C } from './origens-c1c.mjs';
 import { ORIGENS_RP1 } from './origens-rp1.mjs';
 import { PERGUNTAS_RP1 } from './medidas-rp1.mjs';
 /**
@@ -611,6 +612,7 @@ const LISTA_SOCIAL = [
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
+  ...ORIGENS_C1C,
   /* TRÊS ORIGENS SELADAS NO MOTOR (B2, peça 1, segunda passagem de correção,
      23.09.2026; achado 8 da leitura a frio). A pergunta do desemprego de longa
      duração dizia a população ativa como denominador, e nenhuma origem
