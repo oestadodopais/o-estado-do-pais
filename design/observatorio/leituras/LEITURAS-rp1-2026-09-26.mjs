@@ -5,7 +5,12 @@
  * (`design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs`, o cabeçalho)
  * ===========================================================================
  *
- * A QUARTA REDAÇÃO (28.09.2026, a peça C1), depois da segunda leitura a frio do Opus
+ * A QUINTA REDAÇÃO (28.09.2026, a peça C1c), depois da leitura a frio do C1 (achado 9:
+ * nenhum cartão dos preços dizia se a inflação é alta ou baixa): o cartão do IHPC ganha a
+ * referência declarada do objetivo do Banco Central Europeu (2 % a médio prazo, no conjunto
+ * da zona do euro, medido pelo IHPC), dita como o objetivo da zona do euro que é, e não como
+ * um juízo sobre Portugal; o cartão da inflação total diz que esse objetivo se mede no outro
+ * índice e remete para ele. A QUARTA REDAÇÃO (28.09.2026, a peça C1), depois da segunda leitura a frio do Opus
  * (`design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md`, achados 7 e 10): a frase da
  * inflação entra no ramo do sinal (subida, descida, ou nenhuma quando é zero), a comparação
  * do IHPC com a União fala da «variação» e não da «subida», as rendas ganham a sua própria
@@ -95,8 +100,8 @@ const MEDIA_EN = { sinal: { positivo: ['rose ', { claim: 'proprio', sufixo: ' %'
 export const LEITURAS_RP1 = {
   /* ------------------------------------------------- 1 · Economia e finanças públicas: os preços no consumidor */
   'ipc-variacao-homologa': {
-    pt: [INFLACAO_PT, SUBIDA_MES_PT],
-    en: [INFLACAO_EN, SUBIDA_MES_EN],
+    pt: [INFLACAO_PT, SUBIDA_MES_PT, ' O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia.'],
+    en: [INFLACAO_EN, SUBIDA_MES_EN, ' The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card.'],
   },
   'ipc-variacao-media-12-meses': {
     pt: ['Na média dos doze meses até ', { periodo: 'proprio' }, ', os preços no consumidor ', MEDIA_PT, ' face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.', SUBIDA_MES_PT],
@@ -115,8 +120,8 @@ export const LEITURAS_RP1 = {
     en: [HA_UM_ANO_EN('the prices of fuels and lubricants for vehicles were'), SUBIDA_MES_EN],
   },
   'ihpc-variacao-homologa': {
-    pt: [HA_UM_ANO_PT('os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,'), uniao('A variação é maior do que a da média da União Europeia.', 'A variação é menor do que a da média da União Europeia.', 'A variação é igual à da média da União Europeia.')],
-    en: [HA_UM_ANO_EN('prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,'), uniao('The change is larger than the European Union average.', 'The change is smaller than the European Union average.', 'The change is the same as the European Union average.')],
+    pt: [HA_UM_ANO_PT('os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,'), uniao('A variação é maior do que a da média da União Europeia.', 'A variação é menor do que a da média da União Europeia.', 'A variação é igual à da média da União Europeia.'), ' O Banco Central Europeu procura uma inflação de ', { referencia: 'unico' }, ' % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.'],
+    en: [HA_UM_ANO_EN('prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,'), uniao('The change is larger than the European Union average.', 'The change is smaller than the European Union average.', 'The change is the same as the European Union average.'), ' The European Central Bank aims for inflation of ', { referencia: 'unico' }, ' % over the medium term across the euro area, measured by this same index.'],
   },
 
   /* ------------------------------------------------- 9 · Habitação: as rendas e a referência da sua atualização */
