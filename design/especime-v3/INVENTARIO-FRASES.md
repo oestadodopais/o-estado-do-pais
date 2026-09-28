@@ -3174,9 +3174,7 @@ As palavras antigas «acima do valor de referência», «abaixo do valor de refe
 | conteudo | : União Europeia : fora do valor de referência (acima de %) | b2-peca1 | viva | O estado e a direção são conferidos pela K15; as contagens e as frases do país e das câmaras são conferidas pela V1, pela V2 e pelo portão de HTML. |
 | conteudo | : European Union : outside the reference value (above %) | b2-peca1 | viva | O estado e a direção são conferidos pela K15; as contagens e as frases do país e das câmaras são conferidas pela V1, pela V2 e pelo portão de HTML. |
 | conteudo | Portugal está fora de dos valores de referência da Comissão Europeia e dentro de : , , e . | b2-peca1-correcao-2 | retirada | Segunda passagem de correção do B2 (achados 9 e 10 da leitura a frio): a frase do veredicto diz o ano das linhas e separa a lista das medidas fora («Fora: …»), na forma escrita pelo lugar de direção; a V1 confere a forma nova. |
-| conteudo | Em , Portugal ficou fora de dos valores de referência da Comissão Europeia e dentro de . Fora: , , e . | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
 | conteudo | Portugal is outside of the reference values of the European Commission and within : , , and . | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achados 9 e 10 da leitura a frio). |
-| conteudo | In , Portugal was outside of the European Commission’s reference values and within . Outside: , , and . | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
 | conteudo | de câmaras; dentro do limite legal ( % ); sem valor publicado | b2-peca1 | viva | O estado e a direção são conferidos pela K15; as contagens e as frases do país e das câmaras são conferidas pela V1, pela V2 e pelo portão de HTML. |
 | conteudo | of councils; within the legal limit ( % ); with no published value | b2-peca1 | viva | O estado e a direção são conferidos pela K15; as contagens e as frases do país e das câmaras são conferidas pela V1, pela V2 e pelo portão de HTML. |
 | conteudo | câmaras cujo índice de dívida publicado é superior ao limite legal | b2-peca1-correcao-2 | retirada | Achado 14 da leitura a frio: o índice de dívida de cada câmara é calculado, e a dica diz «calculado». |
@@ -3419,7 +3417,7 @@ confere o texto dela fora das marcas. **Os cartões das entradas leem-se como na
 o mesmo componente, com as mesmas leituras, e o K17 do `check:cartao` confere-as nas duas. O que fica
 aqui é a mobília: os títulos, as datas, os nomes e as linhas das entradas, as secções, os estudos e as
 descrições. Saem quatro linhas, com a razão no seu lugar: a descrição antiga da primeira página e a
-leitura do país, nas duas edições.*
+leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da frase do veredicto** (a portuguesa e a inglesa, do bloco b2-peca1-correcao-2), que a V1 passou a conferir sozinha na primeira página: a linha contava as vírgulas da lista das medidas fora do valor de referência, e uma revisão de rotina que tirasse uma medida da lista fechava a construção (a planta do valor revisto, `design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json`). Não ficam como retiradas porque a frase continua na página e o arame da voz continua a lê-la, e uma linha retirada que se lê fecha a construção.*
 
 | classe | frase | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
@@ -3433,8 +3431,6 @@ leitura do país, nas duas edições.*
 | conteudo | The figures in this block | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | Os valores de referência da Comissão Europeia | pp1 | viva | o título da secção do veredicto, que passou a ter título seu na primeira página (§2, ponto 3, do brief do PP1); a frase do veredicto continua conferida pela V1 |
 | conteudo | The European Commission’s reference values | pp1 | viva | ver a razão na gémea portuguesa |
-| conteudo | valor de referência | pp1 | viva | o rótulo da linha do valor de referência no desenho de colunas da dívida pública (`home.numeros.limiar`), ao lado do valor de `referencias.json` com a marca `limiar-do-quadro`, na primeira página e na entrada «O Estado e a economia» |
-| conteudo | reference value | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | Places | pp1 | viva | o título da secção dos lugares na edição inglesa da primeira página (`ROTULOS_B1.lugares`); a portuguesa, «Lugares», já estava declarada |
 | navegacao | O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas: o meu dinheiro, o meu trabalho, a minha casa, a escola e a saúde, o Estado e a economia, a minha terra. | pp1 | viva | a descrição da primeira página, reescrita pelo construtor do PP1 porque a anterior dizia a leitura do país e os números por tema, que saíram da página; diz o que a página tem: o que se passa e as seis entradas, pelos nomes das declarações |
 | navegacao | What is happening in the country, told by the official figures read together, each with its source, and the ways in: my money, my work, my home, school and health, the state and the economy, my area. | pp1 | viva | ver a razão na gémea portuguesa |

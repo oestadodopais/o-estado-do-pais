@@ -182,14 +182,17 @@ planta('b2-cartao-cor-sem-palavra','tests/cartao/cartao.mjs',[
 /* B2: tirar os algarismos provados do inventário não dispensa a conferência
    deles nem pode esconder prosa acrescentada junto da contagem. */
 /* PP1: o cartão das câmaras saiu da primeira página; a prosa plantada junto de uma contagem provada
-   passa a ir para a frase do veredicto, que é a contagem provada que a primeira página tem. */
+   passa a ir para a frase do veredicto, que é a contagem provada que a primeira página tem. E a frase do
+   veredicto saiu do inventário das frases na primeira página (a linha contava as vírgulas da lista das
+   medidas fora, e uma revisão de rotina fechava a construção): quem apanha a prosa plantada é a V1, que
+   recompõe a frase inteira na mesma corrida do `check:voz`. */
 planta('b2-voz-contagem-e-prosa','scripts/check-voz.mjs',[
  ['index.html',r=>{
   const n=r.querySelector('[data-veredicto-pais] [data-prova="painel_fora_do_limiar"]');
   n.set_content(String(Number(n.textContent)+1));
   n.insertAdjacentHTML('afterend',' palavras plantadas junto da contagem');
  }]
-],[/V1 pt: painel_fora_do_limiar/,/bloco por classificar[^\n]*palavras plantadas junto da contagem/]);
+],[/V1 pt: painel_fora_do_limiar/,/V1 pt: a frase construída difere/]);
 
 /* L1, 24.09.2026 · a leitura de cada medida. O `auditaSelo` do portão de HTML
    aceita um valor dentro de uma leitura só pela regra do item da régua, e o
