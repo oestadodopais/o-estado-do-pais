@@ -7,8 +7,11 @@
  * uma marca de origem dentro de um cartão da medida é saltado como na página dos temas, porque o cartão
  * é o mesmo e o K17 do `check:cartao` confere as leituras dele nas duas.
  *
- * Estas plantas provam que a régua ainda morde onde tem de morder, e que as duas dispensas não passam
- * dos seus sítios: correm a régua inteira sobre uma construção pequena, copiada do `dist/` para uma
+ * E a frase do veredicto sai do inventário na primeira página, e só lá, porque a V1 a recompõe inteira na
+ * mesma corrida do `check:voz` e a linha dela contava as vírgulas da lista das medidas fora.
+ *
+ * Estas plantas provam que a régua ainda morde onde tem de morder, e que as dispensas não passam dos
+ * seus sítios: correm a régua inteira sobre uma construção pequena, copiada do `dist/` para uma
  * pasta temporária fora da árvore e estragada lá, e leem as frases por classificar do JSON dela.
  */
 import fs from 'node:fs';
@@ -24,6 +27,7 @@ const FORA = 'Frase plantada fora dos cartões de uma entrada, com um valor ao l
 const DENTRO = 'Frase plantada dentro de um cartão de uma entrada, com um valor ao lado.';
 const MARCADA_NO_CONCELHO = 'Frase plantada com a marca dos blocos numa página de concelho.';
 const MARCADA_NA_PRIMEIRA = 'Frase plantada com a marca dos blocos na primeira página.';
+const VEREDICTO_NO_CONCELHO = 'Frase plantada com a marca do veredicto numa página de concelho.';
 /** @param {string} frase */
 const comValor = (frase) => frase.replace('com um valor ao lado', 'com um valor <span data-claim="ipc-variacao-homologa">2,8</span> ao lado');
 
@@ -52,7 +56,7 @@ export function plantasDaReguaDasFrases(dist) {
       const comDentro = h.slice(0, j) + `<p>${comValor(DENTRO)}</p>` + h.slice(j);
       return antesDoFimDoMain(comDentro, `<p>${comValor(FORA)}</p>`);
     });
-    copia(path.join('municipios', concelho.name), (h) => antesDoFimDoMain(h, `<p data-bloco-declarado>${MARCADA_NO_CONCELHO}</p>`));
+    copia(path.join('municipios', concelho.name), (h) => antesDoFimDoMain(h, `<p data-bloco-declarado>${MARCADA_NO_CONCELHO}</p><p data-veredicto-pais>${VEREDICTO_NO_CONCELHO}</p>`));
     const saida = execFileSync(process.execPath, [path.join(RAIZ, 'scripts', 'medir-defeitos.mjs'), '--json'], {
       cwd: RAIZ, env: { ...process.env, OEDP_DIST: tmp }, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'],
     });
@@ -65,6 +69,8 @@ export function plantasDaReguaDasFrases(dist) {
     return [
       { nome: 'uma frase com um valor fora dos cartões de uma entrada fica por classificar', mordeu: naoClassificados('/o-meu-dinheiro').includes(FORA), queixa: naoClassificados('/o-meu-dinheiro').includes(FORA) ? `bloco por classificar em /o-meu-dinheiro: «${FORA}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       { nome: 'a marca dos blocos numa página de concelho não tira nada do inventário', mordeu: naoClassificados(rotaDoConcelho).includes(MARCADA_NO_CONCELHO), queixa: naoClassificados(rotaDoConcelho).includes(MARCADA_NO_CONCELHO) ? `bloco por classificar em ${rotaDoConcelho}: «${MARCADA_NO_CONCELHO}»` : `a régua leu ${lidas} rota(s) e não a viu` },
+      /* A frase do veredicto só sai do inventário na primeira página, onde a V1 a confere. */
+      { nome: 'a marca do veredicto numa página de concelho não tira nada do inventário', mordeu: naoClassificados(rotaDoConcelho).includes(VEREDICTO_NO_CONCELHO), queixa: naoClassificados(rotaDoConcelho).includes(VEREDICTO_NO_CONCELHO) ? `bloco por classificar em ${rotaDoConcelho}: «${VEREDICTO_NO_CONCELHO}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       /* Os dois controlos: a dispensa existe onde foi escrita, e só lá. */
       { nome: 'controlo: dentro de um cartão de uma entrada, a régua faz o que faz na página dos temas', mordeu: !naoClassificados('/o-meu-dinheiro').includes(DENTRO) && porRota['/o-meu-dinheiro'] !== undefined, queixa: naoClassificados('/o-meu-dinheiro').includes(DENTRO) ? 'a frase do cartão ficou por classificar' : null },
       { nome: 'controlo: a marca dos blocos na primeira página tira a frase do inventário', mordeu: !naoClassificados('/').includes(MARCADA_NA_PRIMEIRA) && porRota['/'] !== undefined, queixa: naoClassificados('/').includes(MARCADA_NA_PRIMEIRA) ? 'a frase marcada ficou por classificar' : null },

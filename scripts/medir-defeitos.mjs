@@ -646,6 +646,17 @@ const CARTAO_DOS_TEMAS = '[data-cartao-medida]';
 /** As rotas onde a marca dos blocos tira texto do inventário: as páginas onde a célula dos blocos corre. */
 const ROTAS_DOS_BLOCOS = new Set(['home', ...ROTAS_DAS_ENTRADAS]);
 /**
+ * A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA, E SÓ LÁ (bloco PP1, 28.09.2026). A linha dela
+ * no inventário era a frase com os valores e os nomes tirados, e por isso contava as vírgulas da lista
+ * das medidas fora do valor de referência («Fora: , , e .»): uma revisão de rotina que tirasse uma medida
+ * da lista mudava a linha e fechava a construção, e foi o que a planta do valor revisto numa cópia do
+ * livro mostrou (`design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json`). A frase não é prosa
+ * livre: a V1 (`scripts/pais-veredicto.mjs`) recompõe-na inteira, carácter a carácter, das contagens e
+ * dos nomes, e corre na mesma corrida do `check:voz` (pela lista fechada do país). O arame da voz
+ * continua a lê-la.
+ */
+const VEREDICTO_DO_PAIS = '[data-veredicto-pais]';
+/**
  * OS NOMES OFICIAIS, LIDOS DO FICHEIRO DO MOTOR POR CONTA DESTA RÉGUA.
  *
  * Não chama `src/lib/enquadramento.mjs`: uma régua que fosse buscar a lista à
@@ -928,6 +939,10 @@ function frasesDaCasa(root, rotaKey) {
      sufixo e o provisório de cada linha mudam com os dados, e a célula confere o texto dela fora das
      marcas. A MARCA SÓ VALE ONDE A CÉLULA CORRE, na primeira página e nas cinco entradas: noutra rota,
      o texto marcado conta-se como qualquer outro, e um bloco por classificar fecha a construção. */
+  if (rotaKey === 'home') for (const el of root.querySelectorAll(VEREDICTO_DO_PAIS)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
   if (ROTAS_DOS_BLOCOS.has(rotaKey)) for (const el of root.querySelectorAll(BLOCO_DECLARADO)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);

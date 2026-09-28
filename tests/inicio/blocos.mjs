@@ -506,6 +506,15 @@ export function conferirBlocosDaPagina(root, lang, rota, { ids, primeira = false
       const l = limiares.get(String(x.getAttribute('data-referencia')));
       if (!l || normal(x.textContent) !== l.texto) falha(id, `o valor de referência de «${x.getAttribute('data-referencia')}» é «${normal(x.textContent)}» na página e «${l?.texto ?? 'nenhum'}» em referencias.json`);
     }
+    /* O RÓTULO DA LINHA DE REFERÊNCIA DE UM DESENHO, INTEIRO (bloco PP1): a palavra de `strings.mjs`, o valor
+       de `referencias.json` e o símbolo. É mobília do desenho declarado, e sai do inventário das frases com
+       ele; o que lá fica é o que esta conta diz. */
+    for (const r of el.querySelectorAll('[data-rotulo-da-referencia]')) {
+      const ref = r.querySelector('[data-referencia]');
+      const l = limiares.get(String(ref?.getAttribute('data-referencia')));
+      const esperado = normal(`${t(lang).home.numeros.limiar} ${l?.texto ?? '⟨sem limiar⟩'} %`);
+      if (normal(r.textContent) !== esperado) falha(id, `o rótulo da linha de referência diz «${normal(r.textContent)}» e a conta desta célula dá «${esperado}»`);
+    }
     /* A LISTA «OS NÚMEROS DESTE BLOCO», COM A PORTA DE CADA NÚMERO. */
     const { ids: comValor, doDesenho } = comValorAqui(b, pecasMostradas);
     const lista = el.querySelector('[data-legenda-selos]');
@@ -689,6 +698,7 @@ export function plantasDosBlocos(dist) {
   regista('a data de «O que se passa» trocada', pagina((r) => { r.querySelector('[data-numeros-mais-recentes] [data-de-campo]').set_content('julho de 2026'); }), /a data de «O que se passa» diz «julho de 2026»/);
   regista('uma ponta da escala trocada', pagina((r) => { bloco(r, 'trabalho').querySelector('.pp-escala [data-nonledger]:last-child').set_content('90'); }, { en: true }), /as pontas da escala do painel 1 são «0 e 90»/);
   regista('um comprimento escrito com outra escala', pagina((r) => { const b = bloco(r, 'casa').querySelector('[data-barra="sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"] .pp-barra'); b.setAttribute('style', String(b.getAttribute('style')).replace(/width:[\d.]+%/, 'width:50%')); }), /a barra de sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025 está escrita com 50%/);
+  regista('uma palavra no rótulo da linha de referência', pagina((r) => { const x = bloco(r, 'estado').querySelector('[data-rotulo-da-referencia] span'); x.set_content('limite da casa'); }), /o rótulo da linha de referência diz «limite da casa 60 %»/);
   regista('a linha do valor de referência nos 50', pagina((r) => { const x = bloco(r, 'estado').querySelector('.pp-ref'); x.setAttribute('style', 'bottom:53.4759%'); }), /a linha do valor de referência está escrita em 53.4759%/);
   /* Um bloco na página cuja condição passou a falsa: o livro da célula muda na memória, a página não. */
   const outro = new Map([...loadClaims()].map(([k, v]) => [k, structuredClone(v)]));

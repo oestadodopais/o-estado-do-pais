@@ -71,8 +71,13 @@ const colunas = modelo.forma === 'colunas';
                 {painel.referencia && (
                   <>
                     <span class="pp-ref" data-linha-de-referencia={painel.referencia.linha} style={`bottom:${pctAltura(painel.referencia.fracao)}`} aria-hidden="true" />
-                    <p class="pp-ref-rotulo" style={`bottom:${pctAltura(painel.referencia.fracao)}`}>
-                      <span data-voz>{s.home.numeros.limiar}</span>{' '}
+                    {/* O RÓTULO DA LINHA DE REFERÊNCIA É MOBÍLIA DO DESENHO DECLARADO (bloco PP1): a palavra vem de
+                        `strings.mjs` e a célula dos blocos confere o rótulo inteiro, a palavra, o valor de
+                        `referencias.json` e o símbolo. Não leva `data-voz`: com ela, o inventário das frases
+                        pedia uma linha que só se rende enquanto o bloco da dívida está na página, e um bloco que
+                        sai não pode fechar a construção. */}
+                    <p class="pp-ref-rotulo" data-rotulo-da-referencia style={`bottom:${pctAltura(painel.referencia.fracao)}`}>
+                      <span>{s.home.numeros.limiar}</span>{' '}
                       <span data-nonledger="limiar-do-quadro" data-referencia={painel.referencia.linha}>{painel.referencia.nl}</span>{' %'}
                     </p>
                   </>
