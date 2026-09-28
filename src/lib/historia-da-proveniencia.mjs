@@ -24,6 +24,7 @@ export function historiaDaProveniencia(linha, campo, onde, erros) {
     .slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const forma = campo === 'access_date' ? /^\d{4}-\d{2}-\d{2}$/ : /^https?:\/\//;
   let anterior = entradas.length ? entradas[0].old_value : linha[campo];
+  /** @type {any[]} */
   const instantaneos = [];
   for (const c of entradas) {
     const rot = `${onde} história de "${campo}" a ${c.date}`;
