@@ -50,6 +50,7 @@ import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import {
   getClaim,
+  parsePtNumber,
   camposPorVerificar,
   provenienciaIncompleta,
   eDaCasa,
@@ -1467,6 +1468,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                         </>
                       )}
                     </span>{' '}
+                    {v.result === 'diverge' && parsePtNumber(v.found) !== parsePtNumber(claim.value) && (
+                      <span data-valor-em-uso>{s.livro.linha.valorEmUso}</span>
+                    )}{' '}
                     {atualizacaoDaReleitura(v) >= 0 && (
                       <a data-atualizacao-da-releitura href={`#alteracao-${atualizacaoDaReleitura(v)}`}>
                         {s.livro.linha.verAtualizacao}

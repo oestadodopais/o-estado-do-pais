@@ -487,6 +487,7 @@ let paginasDoLivro = 0;
 /* Os títulos das páginas de linha conferidos pela célula do espaço entre o valor
    e a unidade (bloco R1, 23.09.2026, I143), e os que colavam os dois. */
 let titulosDeLinhaConferidos = 0;
+let cartoesComUnidadeConferidos = 0;
 /** Valores auditados pela regra do selo, e quantos ficaram sem ele (sempre 0: falha). */
 let valoresAuditados = 0;
 let valoresSemSelo = 0;
@@ -2541,6 +2542,13 @@ const CAMPOS_DA_LINHA = new Set([
  * a entrada à posição que ela diz ser e não à ordem em que foi rendida. Os dois
  * campos escritos são a data e, numa entrada `diverge`, o valor encontrado.
  */
+function valorRelidoAqui(valor, lang) {
+  const s = String(valor ?? '').replace(/[\s\u202f]/g, '').replace('−', '-');
+  if (!/^-?\d+(?:[.,]\d+)?$/.test(s)) return String(valor ?? '');
+  const partes = s.split(/[.,]/);
+  return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? (lang === 'en' ? '.' : ',') + partes[1] : '');
+}
+
 const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
 
 /**
@@ -2601,13 +2609,13 @@ const ROTULO_DE_QUEM_RELEU = {
 const ROTULO_DO_RESULTADO = {
   pt: {
     igual: 'igual à fonte',
-    diverge: 'a fonte publica agora outro valor:',
-    inacessivel: 'não foi possível reler o número na fonte nesse dia',
+    diverge: 'a releitura encontrou:',
+    inacessivel: 'não foi possível reler o número nesse dia',
   },
   en: {
     igual: 'matches the source',
-    diverge: 'the source now publishes a different value:',
-    inacessivel: 'the number could not be read again from the source that day',
+    diverge: 'the re-read found:',
+    inacessivel: 'the number could not be re-read that day',
   },
 };
 
@@ -2742,7 +2750,7 @@ function campoDaLinha(claim, campo, lang) {
       const v = campo.match(CAMPO_DE_VERIFICACAO);
       if (v) {
         const entrada = (claim.verifications ?? [])[Number(v[1])];
-        return entrada ? (entrada[v[2]] ?? null) : null;
+        return entrada ? (v[2] === 'found' ? valorRelidoAqui(entrada.found, lang) : (entrada[v[2]] ?? null)) : null;
       }
       const k = campo.match(CAMPO_DO_CALCULO);
       if (k) {
@@ -4386,6 +4394,7 @@ for (const file of ficheirosHtml(DIST)) {
   /* C1: a I143 abrange também todos os cartões, qualquer que seja a família. */
   const separacao = conferirValorUnidade(root);
   titulosDeLinhaConferidos += separacao.contas.titulos;
+  cartoesComUnidadeConferidos += separacao.contas.cartoes;
   for (const erro of separacao.erros) err(erro);
   if (claimDaPagina) for (const erro of conferirVerificacaoLegivel(root, claimDaPagina, linguaPagina)) err(erro);
 
@@ -6336,7 +6345,7 @@ for (const file of ficheirosHtml(DIST)) {
         /* Numa divergência o rótulo leva o valor encontrado: o leitor tem de
            ver o que a fonte imprimiu, e não só que imprimiu outra coisa. */
         const esperadoResultado =
-          entrada.result === 'diverge' ? `${base} ${entrada.found}` : base;
+          entrada.result === 'diverge' ? `${base} ${valorRelidoAqui(entrada.found, lingua)}` : base;
         const lidoResultado = marcaResultado
           ? normalizeWhitespace(textoTranscrito(marcaResultado))
           : null;
@@ -8018,6 +8027,7 @@ if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
     msg: 'a célula do espaço no título do recibo não conferiu título nenhum: o seletor deixou de ver o <h1> das páginas de linha.',
   });
 }
+if (cartoesComUnidadeConferidos === 0) erros.push({ rel: '/temas', msg: 'I143/I158: a célula não conferiu cartão nenhum.' });
 if (paginasDoLivro !== LANGS.length) {
   erros.push({
     rel: routePath('livro', 'pt'),

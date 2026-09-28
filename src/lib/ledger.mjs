@@ -2473,7 +2473,7 @@ export function validateLedger() {
               `${rot}: "result" é "${v.result}". Só pode ser ` +
                 `${RESULTADOS_DA_VERIFICACAO.map((k) => `"${k}"`).join(', ')}.\n` +
                 `    "igual" = a fonte diz o mesmo. "diverge" = diz outra coisa, e "found" ` +
-                `guarda-a. "inacessivel" = a fonte não respondeu nesse dia.`,
+                `guarda-a. "inacessivel" = não foi possível reler o número nesse dia.`,
             );
           }
           if (v.result === 'diverge') {

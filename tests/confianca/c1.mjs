@@ -18,6 +18,8 @@ import { conferirPaginaDaLeitura, leituraIndependente, normal } from '../cartao/
 import { leituraDaMedida, textoDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { reguaDoCartao } from '../../src/lib/enquadramento.mjs';
+import { LEITURAS_RP1 } from '../../src/data/leituras-rp1.mjs';
+import { valorDaReleitura } from '../../src/lib/valor-da-releitura.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 
 const controlos = [];
@@ -45,21 +47,37 @@ for (const [tipo, abre, fecha] of [
   }
 }
 
+/* C1c: a célula também prova que viu o cartão e distingue a marca da unidade. */
+for (const [nome, html, mordida] of [
+  ['seletor-deixou-de-casar', '<article data-cartao-medida="ensaio"><span class="quantidade-antiga"><span data-claim="ensaio">3</span> <span data-linha-campo="unit">%</span></span></article>', 'seletor não conferiu'],
+  ['marca-com-unidade', '<span class="cartao-medida-quantidade"><span class="cartao-medida-marca">sem valor publicado</span> <span data-linha-campo="unit">dias</span></span>', 'marca sem valor publicado'],
+  ['quantidade-sem-valor', '<span class="cartao-medida-quantidade"><span data-linha-campo="unit">%</span></span>', 'faltam o valor ou a unidade'],
+]) planta('valor-unidade', nome, conferirValorUnidade(parse(html)).erros, mordida);
+controlo('valor-unidade', 'marca-sem-unidade', conferirValorUnidade(parse('<span class="cartao-medida-quantidade"><span class="cartao-medida-marca">sem valor publicado</span></span>')).erros);
+const camarasSinteticas = '<span class="cartao-medida-quantidade"><span data-prova="camaras_acima_do_limite">3</span> <span class="cartao-medida-unidade">câmaras</span></span>';
+controlo('valor-unidade', 'contagem-com-prova-v2', conferirValorUnidade(parse(camarasSinteticas)).erros);
+planta('valor-unidade', 'contagem-com-prova-v2-colada', conferirValorUnidade(parse(camarasSinteticas.replace('</span> <span', '</span><span'))).erros, 'cola o valor à unidade');
+for (const [valor, pt, en] of [['49.2', '49,2', '49.2'], ['−1234,50', '−1\u00a0234,50', '−1\u00a0234.50']]) {
+  controlo('releitura', valor, valorDaReleitura(valor, 'pt') === pt && valorDaReleitura(valor, 'en') === en ? [] : ['formatação alterou os algarismos']);
+}
+
 /* Ponto 6. Datas, valores, autores e índices abaixo pertencem apenas ao ensaio. */
 const linhaSemLeitura = { verifications: [], corrections: [] };
 const relida = { verifications: [{ date: '2026-01-01', result: 'igual', by: 'leitor-sintetico' }], corrections: [] };
 const ficheiroRelido = { verifications: [{ date: '2026-01-01', result: 'igual', by: 'corredor-diario' }], corrections: [] };
 const atualizada = {
+  value: '−50,2',
   verifications: [{ date: '2026-01-01', result: 'diverge', found: '−50,2', by: 'leitor-sintetico' }],
   corrections: [{ kind: 'atualizacao', date: '2026-01-02', old_value: '−50,1', new_value: '−50,2' }],
 };
-const semAtualizacao = { ...atualizada, corrections: [] };
+const semAtualizacao = { ...atualizada, value: '−50,1', corrections: [] };
 const semResposta = { verifications: [{ date: '2026-01-01', result: 'inacessivel', by: 'leitor-sintetico' }], corrections: [] };
 for (const lang of ['pt', 'en']) {
   const sem = lang === 'pt' ? 'Ainda sem segunda leitura.' : 'No second reading yet.';
-  const numero = lang === 'pt' ? 'Segunda leitura a' : 'Second reading on';
+  const numero = lang === 'pt' ? 'Releitura a' : 'Re-read on';
   const ficheiro = lang === 'pt' ? 'Ficheiro da fonte relido a' : 'Source file read again on';
   const vazio = `<p data-sem-segunda-leitura>${sem}</p>`;
+  const uso = `<span data-valor-em-uso>${lang === 'pt' ? 'O valor do título é o que esta página usa.' : 'This page uses the value shown in the title.'}</span>`;
   const bloco = (rotulo, porta = '', destino = '') => `<dl><dt>${rotulo}</dt><dd data-linha-verificacao="0"><time datetime="2026-01-01">01.01.2026</time>${porta}</dd></dl>${destino}`;
   const ligacao = '<a data-atualizacao-da-releitura href="#alteracao-0">Atualização sintética</a>';
   const destino = '<div id="alteracao-0"></div>';
@@ -68,7 +86,9 @@ for (const lang of ['pt', 'en']) {
   controlo('verificacao', `${lang}-numero-relido`, confere(bloco(numero), relida));
   controlo('verificacao', `${lang}-ficheiro-relido`, confere(bloco(ficheiro), ficheiroRelido));
   controlo('verificacao', `${lang}-divergencia-com-atualizacao`, confere(bloco(numero, ligacao, destino), atualizada));
-  controlo('verificacao', `${lang}-divergencia-ainda-sem-atualizacao`, confere(bloco(numero), semAtualizacao));
+  controlo('verificacao', `${lang}-divergencia-ainda-sem-atualizacao`, confere(bloco(numero, uso), semAtualizacao));
+  planta('verificacao', `${lang}-omite-valor-em-uso`, confere(bloco(numero), semAtualizacao), 'qual é o valor em uso');
+  planta('verificacao', `${lang}-inventa-diferenca-do-valor-em-uso`, confere(bloco(numero, ligacao + uso, destino), atualizada), 'qual é o valor em uso');
   controlo('verificacao', `${lang}-fonte-sem-resposta`, confere(bloco(numero), semResposta));
 
   planta('verificacao', `${lang}-nega-releitura-registada`, confere(vazio + bloco(numero), relida), 'ausência de segunda leitura');
@@ -110,6 +130,7 @@ function paginaSintetica(id, lang, resolvida, regua) {
   const partes = resolvida.pedacos.map((p) => {
     if (typeof p === 'string') return escape(p);
     if ('claim' in p) return cita(p.claim) + escape(p.sufixo ?? '');
+    if ('nl' in p) return `<span data-nonledger="${escape(p.motivo)}">${escape(p.nl)}</span>`;
     if ('data' in p) return `<span data-nonledger="data-da-linha" data-de-linha="${p.data.id}" data-de-campo="${p.data.campo}">${escape(dataDaCasa(p.data.valor, lang))}</span>`;
     throw new Error('o ensaio dos preços encontrou um tipo de pedaço que não declara');
   }).join('');
@@ -177,6 +198,45 @@ for (const lang of ['pt', 'en']) {
       'ihpc-variacao-homologa': '−0,5',
       'ihpc-variacao-homologa-periodo-anterior': '−0,8',
       'ihpc-variacao-homologa-ue': comparacao.valor,
+    });
+  }
+}
+
+/* Todos os ramos do sinal do RP1, incluindo trocas coerentes nas duas edições.
+   A palavra esperada é independente da declaração e a planta troca as duas
+   folhas juntas, que uma comparação entre edições não apanharia. */
+function nosDeSinal(p, saida = []) {
+  if (Array.isArray(p)) for (const x of p) nosDeSinal(x, saida);
+  else if (p && typeof p === 'object') {
+    if (p.sinal) saida.push(p.sinal);
+    else for (const v of Object.values(p)) nosDeSinal(v, saida);
+  }
+  return saida;
+}
+function conferirPalavraDoSinal(id, lang, sinal) {
+  const texto = textoDaLeitura(leituraDaMedida(id, lang).pedacos, lang);
+  const media = id.includes('media-12-meses');
+  const padroes = media
+    ? (lang === 'pt' ? { positivo: /subiram /, negativo: /variaram [−-]/, zero: /não variaram/ } : { positivo: /rose /, negativo: /changed by [−-]/, zero: /did not change/ })
+    : (lang === 'pt' ? { positivo: /acima d[ao]s de há um ano/, negativo: /abaixo del[ae]s/, zero: /ao mesmo nível/ } : { positivo: /above a year earlier/, negativo: /that is, below/, zero: /at the same level/ });
+  return padroes[sinal].test(texto) ? [] : ['a palavra não corresponde ao sinal selado'];
+}
+for (const [id, leitura] of Object.entries(LEITURAS_RP1)) {
+  const pt = nosDeSinal(leitura.pt), en = nosDeSinal(leitura.en);
+  if (!pt.length) continue;
+  if (pt.length !== en.length) throw new Error('as duas edições têm ramos diferentes');
+  for (const sinal of sinais) {
+    comValoresSinteticos({ [id]: sinal.valor }, () => {
+      for (const lang of ['pt', 'en']) controlo('sinais-rp1', `${id}-${lang}-${sinal.nome}`, conferirPalavraDoSinal(id, lang, sinal.nome));
+      for (let i = 0; i < pt.length; i++) {
+        const originalPt = { ...pt[i] }, originalEn = { ...en[i] };
+        const outro = sinal.nome === 'positivo' ? 'negativo' : 'positivo';
+        try {
+          [pt[i][sinal.nome], pt[i][outro]] = [pt[i][outro], pt[i][sinal.nome]];
+          [en[i][sinal.nome], en[i][outro]] = [en[i][outro], en[i][sinal.nome]];
+          for (const lang of ['pt', 'en']) planta('sinais-rp1', `${id}-${lang}-${sinal.nome}-troca-coerente`, conferirPalavraDoSinal(id, lang, sinal.nome), 'palavra não corresponde ao sinal');
+        } finally { Object.assign(pt[i], originalPt); Object.assign(en[i], originalEn); }
+      }
     });
   }
 }
