@@ -17,7 +17,7 @@
  * uma condição falsa numa cópia das declarações (o bloco sai, o sinal nomeia-o, o código é 0) e um
  * resolvedor que recusa tudo (o código é 1).
  *
- * Uso: node scripts/sinais-da-primeira-pagina.mjs [--prova]
+ * Uso: node scripts/sinais-da-primeira-pagina.mjs [--prova] [--json saída das plantas]
  */
 import fs from 'node:fs';
 import os from 'node:os';
@@ -95,5 +95,8 @@ if (process.argv.includes('--prova') && !process.env.OEDP_SINAIS_PLANTA) {
   fs.rmSync(temporaria, { recursive: true, force: true });
   for (const p of plantas) console.log(`  ${p.passou ? 'mordeu' : 'NÃO MORDEU'} · ${p.nome} (código ${p.codigo})`);
   if (plantas.some((p) => !p.passou)) codigo = 1;
+  /* `--json <ficheiro>` escreve as duas plantas, para o relatório do bloco que as mede. */
+  const j = process.argv.indexOf('--json');
+  if (j !== -1) fs.writeFileSync(process.argv[j + 1], JSON.stringify({ blocos_mostrados: mostrados.length, saidas: saidas.length, plantas }, null, 2) + '\n');
 }
 process.exitCode = codigo;

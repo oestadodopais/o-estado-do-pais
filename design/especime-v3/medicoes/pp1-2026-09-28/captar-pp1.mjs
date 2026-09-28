@@ -86,7 +86,9 @@ const MEDIR = () => {
     corpo: document.body.scrollWidth,
     altura: document.documentElement.scrollHeight,
     h1: { texto: texto(document.querySelector('h1')), caixa: caixa(document.querySelector('h1')) },
-    o_que_se_passa: caixa(document.querySelector('[data-o-que-se-passa]')),
+    /* O título da secção, e não a secção inteira: a secção tem os cinco blocos, e o que o leitor tem de
+       ler nos dois primeiros ecrãs é o título «O que se passa». */
+    o_que_se_passa: caixa(document.querySelector('[data-o-que-se-passa] h2')),
     data_dos_numeros: { texto: texto(document.querySelector('[data-numeros-mais-recentes]')), caixa: caixa(document.querySelector('[data-numeros-mais-recentes]')) },
     blocos,
     entradas: caixa(document.querySelector('[data-entradas]')),
@@ -150,12 +152,18 @@ async function fotografar(navegador, familia, lingua, rota, largura, tema) {
       if (estado === 'depois') {
         const [b1, b2] = medida.blocos;
         const dentro = (b) => b && ['titulo', 'frase', 'desenho', 'fonte'].every((k) => b[k] && b[k].fundo <= 2 * ECRA);
+        /* O §1 do brief: nos dois primeiros ecrãs, «O que se passa», a data dos números mais recentes e
+           os dois primeiros blocos inteiros. O fundo de cada parte fica escrito, em px do documento. */
         r.aceitacao = {
-          o_que_se_passa_no_primeiro_ecra: Boolean(medida.o_que_se_passa && medida.o_que_se_passa.fundo <= ECRA),
-          data_no_primeiro_ecra: Boolean(medida.data_dos_numeros.caixa && medida.data_dos_numeros.caixa.fundo <= ECRA),
+          o_que_se_passa_nos_dois_ecras: Boolean(medida.o_que_se_passa && medida.o_que_se_passa.fundo <= 2 * ECRA),
+          data_nos_dois_ecras: Boolean(medida.data_dos_numeros.caixa && medida.data_dos_numeros.caixa.fundo <= 2 * ECRA),
           primeiro_bloco_inteiro: dentro(b1),
           segundo_bloco_inteiro: dentro(b2),
+          fundo_do_titulo_px: medida.o_que_se_passa?.fundo ?? null,
+          fundo_da_data_px: medida.data_dos_numeros.caixa?.fundo ?? null,
+          fundo_da_fonte_do_primeiro_bloco_px: b1?.fonte?.fundo ?? null,
           fundo_da_fonte_do_segundo_bloco_px: b2?.fonte?.fundo ?? null,
+          limite_px: 2 * ECRA,
         };
         for (const [k, v] of Object.entries(r.aceitacao)) if (v === false) falhas.push(`${f(r)}: ${k} falhou.`);
       }
