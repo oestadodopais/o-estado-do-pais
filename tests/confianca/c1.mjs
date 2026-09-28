@@ -13,7 +13,7 @@
 import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
-import { conferirVerificacaoLegivel } from '../../scripts/verificacao-legivel.mjs';
+import { conferirVerificacaoLegivel, conferirValorDeProveniencia } from '../../scripts/verificacao-legivel.mjs';
 import { conferirPaginaDaLeitura, leituraIndependente, normal } from '../cartao/leituras.mjs';
 import { leituraDaMedida, textoDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
@@ -27,6 +27,18 @@ const plantas = [];
 const escape = (s) => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const controlo = (grupo, nome, erros, prova = {}) => controlos.push({ grupo, nome, passou: erros.length === 0, erros, ...prova });
 const planta = (grupo, nome, erros, mordida) => plantas.push({ grupo, nome, codigo: erros.length ? 1 : 0, mordida, passou: erros.some((e) => e.includes(mordida)), erros });
+
+/* A data da proveniência muda de escrita, sem ganhar outro dia ou endereço. */
+for (const lang of ['pt', 'en']) {
+  const data = { kind: 'proveniencia', field: 'access_date', old_value: '2026-09-15' };
+  const endereco = { kind: 'proveniencia', field: 'source_url', old_value: 'https://fonte.example/2026-09-15' };
+  const erros = (c, texto) => conferirValorDeProveniencia(c, 'old_value', texto).confere ? [] : ['valor de proveniência diferente do livro'];
+  controlo('proveniencia', `data-na-forma-da-casa-${lang}`, erros(data, dataDaCasa(data.old_value, lang)));
+  controlo('proveniencia', `endereco-literal-${lang}`, erros(endereco, endereco.old_value));
+  planta('proveniencia', `dia-errado-${lang}`, erros(data, '16.09.2026'), 'valor de proveniência diferente do livro');
+  planta('proveniencia', `iso-por-formatar-${lang}`, erros(data, '2026-09-15'), 'valor de proveniência diferente do livro');
+  planta('proveniencia', `endereco-com-os-mesmos-algarismos-${lang}`, erros(endereco, 'https://outra.example/2026-09-15'), 'valor de proveniência diferente do livro');
+}
 
 /* Ponto 1. O valor tem espaços internos e um sinal tipográfico num dos casos:
    só conta o separador entre o fim do valor e o início da unidade. */

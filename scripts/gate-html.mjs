@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { conferirValorUnidade } from './valor-unidade.mjs';
-import { conferirVerificacaoLegivel } from './verificacao-legivel.mjs';
+import { conferirVerificacaoLegivel, conferirValorDeProveniencia } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -5668,13 +5668,15 @@ for (const file of ficheirosHtml(DIST)) {
 
     const esperado = String(corr[campo]);
 
-    /* Um endereço é texto, não uma sequência de algarismos: numa revisão de
-       proveniência os dois valores comparam-se carácter a carácter. */
+    /* Um endereço é texto, não uma sequência de algarismos. Só access_date
+       muda para a forma da casa, reconstituída pela conferência independente;
+       os outros campos continuam comparados carácter a carácter. */
     if (corr.kind === 'proveniencia' && (campo === 'old_value' || campo === 'new_value')) {
-      if (renderizado !== normalizeWhitespace(esperado)) {
+      const valor = conferirValorDeProveniencia(corr, campo, renderizado);
+      if (!valor.confere) {
         err(
           `no registo, "${campo}" da revisão de proveniência #${n + 1} de "${id}" não é o do ` +
-            `livro-razão.\n      esperado:    ${normalizeWhitespace(esperado).slice(0, 120)}\n` +
+            `livro-razão.\n      esperado:    ${valor.esperado.slice(0, 120)}\n` +
             `      renderizado: ${renderizado.slice(0, 120)}`,
         );
       }
