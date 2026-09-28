@@ -21,7 +21,7 @@ access_date: "2026-08-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2025: 749.7"
+excerpt: "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2025: 749.7 p"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -53,3 +53,9 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT"
     result: "igual"
     by: "painel-semanal"
+
+source_flag: "p"
+
+source_flag_note: "dado provisório"
+
+source_flag_note_en: "provisional data"

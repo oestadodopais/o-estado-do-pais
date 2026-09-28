@@ -95,6 +95,9 @@ const PORTUGAL = 'portugal';
  * @returns {{ chave: string, nome: string, rota: string }}
  */
 function lugarPorChave(chave, lang) {
+  if (chave === 'uniao-europeia') {
+    return { chave, nome: lang === 'pt' ? 'União Europeia' : 'European Union', rota: routePath('temas', lang) };
+  }
   if (chave === PORTUGAL) {
     return { chave, nome: ROTULOS_B1[lang].pais, rota: routePath('home', lang) };
   }
