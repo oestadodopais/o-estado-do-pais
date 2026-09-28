@@ -56,8 +56,9 @@ planta('mapa-atribuicao','scripts/check-mapa.mjs',[
    tarde de 22.09.2026, e o registo é onde elas vivem. */
 planta('html','scripts/gate-html.mjs',[
  ['correcoes/index.html',r=>{r.querySelector('[data-publicacao-estudo]').set_content('01.01.2000');r.querySelector('[data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de correção plantada');}],
- /* PP1, 28.09.2026: a leitura do país saiu; o valor trocado passa a ser o de um bloco de «O que se passa». */
- ['en/index.html',r=>r.querySelector('[data-bloco="estado"] [data-bloco-frase] [data-claim="divida-publica-2025"]').set_content('93.5')],
+ /* PP1, 28.09.2026: a leitura do país saiu; o valor trocado passa a ser o primeiro da frase de um bloco de
+    «O que se passa» (o dos preços: a frase do bloco da dívida não traz valores, só os períodos). */
+ ['en/index.html',r=>r.querySelector('[data-bloco="precos"] [data-bloco-frase] [data-claim]').set_content('93.5')],
  ['temas/index.html',r=>{r.querySelector('[data-linha-campo="unit"]').set_content('unidade plantada');r.querySelector('[data-regua][data-selo-em]').setAttribute('data-selo-em','precos-da-habitacao-2025');}]
 ],[/B1 mudança: campo rendido difere/,/93\.5/,/unidade plantada/,/unidade de correção plantada/,/sem selo para a sua própria linha/]);
 /* A LISTA DE ROTAS DAS MUDANÇAS CONTINUA A MORDER: a marca da data de
