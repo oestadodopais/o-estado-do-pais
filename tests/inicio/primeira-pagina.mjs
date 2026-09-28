@@ -64,7 +64,8 @@ const blocosMostrados = relatorio.paginas.reduce((n, p) => n + p.blocos_mostrado
 console.log(
   `check:primeira · auditoria: ${a.contas.folhas} folhas, ${a.contas.partes} partes (${a.contas.diz} diz, ${a.contas.conta} conta, ${a.contas.liga} liga), ` +
     `${a.contas.apoios} apoios, ${a.contas.algarismos} algarismos · ${relatorio.paginas.length} páginas, ${blocosMostrados} blocos rendidos e recontados · ` +
-    `entradas: ${e.contas.cartoes_dos_temas} cartões nos temas, ${e.contas.cartoes_nas_entradas} nas entradas, ${e.contas.fora} fora por declaração` +
+    `entradas: ${e.contas.cartoes_dos_temas} cartões nos temas, ${e.contas.cartoes_nas_entradas} nas entradas, ${e.contas.fora} fora por declaração, ` +
+    `${e.contas.entradas_no_mapa_do_sitio} páginas das entradas no mapa do sítio` +
     (relatorio.plantas.length ? ` · ${relatorio.plantas.filter((x) => x.mordeu).length} de ${relatorio.plantas.length} plantas mordidas` : ''),
 );
 if (erros.length) {

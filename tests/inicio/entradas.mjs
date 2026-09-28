@@ -10,7 +10,11 @@
  *   E2 · cada cartão de uma entrada existe na página dos temas;
  *   E3 · cada entrada rende os cartões que a declaração lhe dá, pela ordem declarada, e mais nenhum;
  *   E4 · a primeira página tem as seis entradas, pela ordem declarada, cada uma com a porta da sua página,
- *        e a porta abre uma página construída.
+ *        e a porta abre uma página construída;
+ *   E5 · as dez páginas das entradas estão no mapa do sítio construído (bloco PP1b, a leitura a frio do
+ *        PP1, achado 8): o índice (`sitemap-index.xml`) e cada mapa que ele nomeia existem na construção, e
+ *        cada rota declarada de cada entrada, nas duas edições, é o endereço de uma `<url>` deles, na
+ *        origem do sítio. O conhecido-positivo é a primeira página, que tem de lá estar também.
  *
  * Um cartão conhece-se pelo primeiro `data-claim` do seu artigo (`article.cartao-medida`, e o do
  * cartão das câmaras, `article[data-cartao-camaras]`), que é a conta que o §0 do brief fez sobre a
@@ -22,6 +26,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { ENTRADAS, CARTOES_FORA_DAS_ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+import { SITE_URL } from '../../site.config.mjs';
 
 /** Os cartões de uma página, pela primeira linha de cada artigo do `<main>`. @param {any} root */
 export function cartoesDaPagina(root) {
@@ -32,15 +37,50 @@ export function cartoesDaPagina(root) {
 
 /** @param {string} dist @param {string} rota */
 const ficheiro = (dist, rota) => path.join(dist, rota.replace(/^\//, ''), 'index.html');
+/** Um caminho sem a barra do fim (a raiz fica «/»). @param {string} c */
+const semBarra = (c) => c.replace(/\/+$/, '') || '/';
+
+/**
+ * OS ENDEREÇOS DO MAPA DO SÍTIO CONSTRUÍDO (E5): o índice, cada mapa que ele nomeia, e o caminho de cada
+ * `<url>` de cada um. Um mapa nomeado que a construção não tem é um erro, e não um mapa vazio.
+ *
+ * @param {(rel: string) => string|null} lerTexto  o texto de um ficheiro da construção, ou `null`
+ */
+export function caminhosDoMapaDoSitio(lerTexto) {
+  /** @type {string[]} */
+  const erros = [];
+  /** @type {Set<string>} */
+  const caminhos = new Set();
+  const origem = new URL(SITE_URL).origin;
+  const indice = lerTexto('sitemap-index.xml');
+  if (indice === null) { erros.push('E5: a construção não tem o índice do mapa do sítio (sitemap-index.xml).'); return { erros, caminhos, mapas: 0 }; }
+  const mapas = [...indice.matchAll(/<sitemap>\s*<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  if (!mapas.length) erros.push('E5: o índice do mapa do sítio não nomeia mapa nenhum.');
+  for (const loc of mapas) {
+    const u = new URL(loc);
+    if (u.origin !== origem) erros.push(`E5: o índice nomeia um mapa fora da origem do sítio (${loc}).`);
+    const texto = lerTexto(decodeURIComponent(u.pathname).replace(/^\//, ''));
+    if (texto === null) { erros.push(`E5: o índice do mapa do sítio nomeia ${u.pathname}, que a construção não tem.`); continue; }
+    for (const m of texto.matchAll(/<url>\s*<loc>([^<]+)<\/loc>/g)) {
+      const x = new URL(m[1].trim());
+      if (x.origin !== origem) { erros.push(`E5: o mapa ${u.pathname} tem um endereço fora da origem do sítio (${m[1].trim()}).`); continue; }
+      caminhos.add(semBarra(decodeURIComponent(x.pathname)));
+    }
+  }
+  return { erros, caminhos, mapas: mapas.length };
+}
 
 /**
  * @param {string} dist
  * @param {{ ler?: (rota: string) => any }} [opcoes] `ler` deixa as plantas trocar uma página por uma cópia estragada
  */
-export function conferirEntradas(dist, { ler = (rota) => parse(fs.readFileSync(ficheiro(dist, rota), 'utf8')) } = {}) {
+export function conferirEntradas(dist, {
+  ler = (rota) => parse(fs.readFileSync(ficheiro(dist, rota), 'utf8')),
+  lerTexto = (rel) => (fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null),
+} = {}) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { edicoes: 0, cartoes_dos_temas: 0, cartoes_nas_entradas: 0, fora: 0, entradas_na_primeira: 0 };
+  const contas = { edicoes: 0, cartoes_dos_temas: 0, cartoes_nas_entradas: 0, fora: 0, entradas_na_primeira: 0, mapas_do_sitio: 0, enderecos_no_mapa_do_sitio: 0, entradas_no_mapa_do_sitio: 0 };
   const paginas = ENTRADAS.filter((e) => !('existente' in e && e.existente));
   for (const lang of /** @type {const} */ (['pt', 'en'])) {
     contas.edicoes++;
@@ -90,6 +130,18 @@ export function conferirEntradas(dist, { ler = (rota) => parse(fs.readFileSync(f
       }
     }
   }
+  /* E5 · AS DEZ PÁGINAS DAS ENTRADAS NO MAPA DO SÍTIO CONSTRUÍDO. */
+  const mapa = caminhosDoMapaDoSitio(lerTexto);
+  erros.push(...mapa.erros);
+  contas.mapas_do_sitio = mapa.mapas;
+  contas.enderecos_no_mapa_do_sitio = mapa.caminhos.size;
+  if (!mapa.caminhos.has('/')) erros.push('E5: a primeira página não está no mapa do sítio; a célula não leu o mapa.');
+  for (const e of paginas) {
+    for (const lang of /** @type {const} */ (['pt', 'en'])) {
+      if (mapa.caminhos.has(semBarra(e.rota[lang]))) contas.entradas_no_mapa_do_sitio++;
+      else erros.push(`E5 ${lang}: a página da entrada «${e.id}» (${e.rota[lang]}) não está no mapa do sítio.`);
+    }
+  }
   return { erros, contas };
 }
 
@@ -102,9 +154,13 @@ export function conferirEntradas(dist, { ler = (rota) => parse(fs.readFileSync(f
 export function plantasDasEntradas(dist) {
   const cache = new Map();
   const le = (/** @type {string} */ rota) => { if (!cache.has(rota)) cache.set(rota, fs.readFileSync(ficheiro(dist, rota), 'utf8')); return parse(cache.get(rota)); };
-  /** @param {string} nome @param {Record<string, (r: any) => void>} estragos @param {RegExp} mordida */
-  const planta = (nome, estragos, mordida) => {
-    const r = conferirEntradas(dist, { ler: (rota) => { const x = le(rota); if (estragos[rota]) estragos[rota](x); return x; } });
+  const lerTexto = (/** @type {string} */ rel) => (fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null);
+  /** @param {string} nome @param {Record<string, (r: any) => void>} estragos @param {RegExp} mordida @param {Record<string, (t: string) => string|null>} [textos] */
+  const planta = (nome, estragos, mordida, textos = {}) => {
+    const r = conferirEntradas(dist, {
+      ler: (rota) => { const x = le(rota); if (estragos[rota]) estragos[rota](x); return x; },
+      lerTexto: (rel) => { const t = lerTexto(rel); return textos[rel] && t !== null ? textos[rel](t) : t; },
+    });
     const q = r.erros.find((e) => mordida.test(e)) ?? null;
     return { nome, mordeu: q !== null, queixa: q ?? r.erros[0] ?? null };
   };
@@ -122,5 +178,12 @@ export function plantasDasEntradas(dist) {
     planta('uma entrada a mais na primeira página', {
       '/': (r) => r.querySelector('main [data-entradas] ul').insertAdjacentHTML('beforeend', '<li data-entrada="saude"><a href="/a-minha-saude/">A minha saúde</a></li>'),
     }, /^E4 pt: a primeira página tem as entradas/),
+    /* E5 (bloco PP1b): uma rota de uma entrada tirada do mapa do sítio, e o mapa que o índice nomeia em falta. */
+    planta('uma página de uma entrada em falta no mapa do sítio', {}, /^E5 en: a página da entrada «trabalho» \(\/en\/my-work\/\) não está no mapa do sítio/, {
+      'sitemap-0.xml': (t) => t.replace(/<url>\s*<loc>[^<]*\/en\/my-work<\/loc>[\s\S]*?<\/url>/, ''),
+    }),
+    planta('o mapa que o índice nomeia em falta na construção', {}, /^E5: o índice do mapa do sítio nomeia \/sitemap-1\.xml, que a construção não tem/, {
+      'sitemap-index.xml': (t) => t.replace('</sitemapindex>', `<sitemap><loc>${new URL('/sitemap-1.xml', SITE_URL).href}</loc></sitemap></sitemapindex>`),
+    }),
   ];
 }
