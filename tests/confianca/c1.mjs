@@ -13,7 +13,7 @@
 import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
-import { conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from '../../scripts/verificacao-legivel.mjs';
+import { valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from '../../scripts/verificacao-legivel.mjs';
 import { conferirPaginaDaLeitura, leituraIndependente, normal } from '../cartao/leituras.mjs';
 import { leituraDaMedida, textoDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
@@ -85,6 +85,14 @@ for (const [valor, pt, en] of [['49.2', '49,2', '49,2'], ['−1234,50', '−1\u0
   controlo('releitura', valor, valorDaReleitura(valor, 'pt') === pt && valorDaReleitura(valor, 'en') === en ? [] : ['formatação alterou os algarismos']);
 }
 
+/* A célula usada pelo HTML recusa o ponto decimal, a perda do sinal e a precisão perdida. */
+for (const lang of ['pt','en']) {
+  const esperado=valorRelidoAqui('−1234.50',lang);
+  const ver=texto=>texto===esperado?[]:['forma do valor encontrado diferente da casa'];
+  controlo('forma-encontrada',lang,ver(valorDaReleitura('−1234.50',lang)));
+  for(const [nome,texto] of [['ponto','−1\u00a0234.50'],['sinal','1\u00a0234,50'],['precisao','−1\u00a0234,5'],['separador','−1234,50']]) planta('forma-encontrada',`${lang}-${nome}`,ver(texto),'forma do valor encontrado');
+}
+
 /* Ponto 6. Datas, valores, autores e índices abaixo pertencem apenas ao ensaio. */
 const linhaSemLeitura = { verifications: [], corrections: [] };
 const relida = { verifications: [{ date: '2026-01-01', result: 'igual', by: 'leitor-sintetico' }], corrections: [] };
@@ -107,13 +115,22 @@ for (const lang of ['pt', 'en']) {
   const destino = '<div id="alteracao-0"></div>';
   const confere = (html, linha) => conferirVerificacaoLegivel(parse(html), linha, lang);
   controlo('verificacao', `${lang}-ainda-sem-segunda-leitura`, confere(vazio, linhaSemLeitura));
+  planta('verificacao', `${lang}-rotulo-vazio-em-desacordo`, confere(vazio.replace(lang === 'pt' ? 'Segunda leitura:' : 'Second reading:', numero), linhaSemLeitura), 'rótulo correspondente');
+  planta('verificacao', `${lang}-frase-vazia-em-desacordo`, confere(vazio.replace(sem, lang === 'pt' ? 'nenhuma' : 'no reading'), linhaSemLeitura), 'ausência de segunda leitura');
+  const calculada = {...linhaSemLeitura, derived_from:['origem-sintetica']};
+  const recalculo = lang === 'pt' ? 'Recalculada em cada construção a partir das suas origens' : 'Recomputed at every build from its sources';
+  controlo('verificacao', `${lang}-calculada-em-cada-construcao`, confere(vazio.replace(sem,recalculo),calculada));
+  planta('verificacao', `${lang}-calculada-diz-ainda-nenhuma`, confere(vazio,calculada), 'ausência de segunda leitura');
   controlo('verificacao', `${lang}-numero-relido`, confere(bloco(numero), relida));
   controlo('verificacao', `${lang}-ficheiro-relido`, confere(bloco(ficheiro), ficheiroRelido));
   controlo('verificacao', `${lang}-divergencia-com-atualizacao`, confere(bloco(numero, ligacao, destino), atualizada));
   controlo('verificacao', `${lang}-divergencia-ainda-sem-atualizacao`, confere(bloco(numero, uso), semAtualizacao));
   planta('verificacao', `${lang}-omite-valor-em-uso`, confere(bloco(numero), semAtualizacao), 'qual é o valor em uso');
   planta('verificacao', `${lang}-inventa-diferenca-do-valor-em-uso`, confere(bloco(numero, ligacao + uso, destino), atualizada), 'qual é o valor em uso');
-  controlo('verificacao', `${lang}-fonte-sem-resposta`, confere(bloco(lang === 'pt' ? 'Releitura tentada a' : 'Re-read attempted on', `<span data-linha-verificacao-resultado>${lang === 'pt' ? 'sem resposta a esse pedido' : 'with no answer to that request'}</span>`), semResposta));
+  controlo('verificacao', `${lang}-fonte-sem-resposta`, confere(bloco(lang === 'pt' ? 'Releitura tentada a' : 'Re-read attempted on', `<span data-linha-verificacao-resultado>${lang === 'pt' ? 'sem valor lido' : 'no value read'}</span>`), semResposta));
+  for(const frase of (lang === 'pt' ? ['sem resposta a esse pedido','não foi possível reler o número nesse dia'] : ['with no answer to that request','the number could not be re-read that day'])) {
+    planta('verificacao', `${lang}-tentativa-exagera-${frase}`, confere(bloco(lang === 'pt' ? 'Releitura tentada a' : 'Re-read attempted on', `<span data-linha-verificacao-resultado>${frase}</span>`),semResposta),'ausência de valor lido');
+  }
 
   planta('verificacao', `${lang}-nega-releitura-registada`, confere(vazio + bloco(numero), relida), 'ausência de segunda leitura');
   planta('verificacao', `${lang}-omite-ainda-sem-segunda-leitura`, confere('', linhaSemLeitura), 'ausência de segunda leitura');

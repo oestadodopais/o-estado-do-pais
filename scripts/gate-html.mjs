@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { conferirValorUnidade } from './valor-unidade.mjs';
-import { conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
+import { valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -2542,12 +2542,7 @@ const CAMPOS_DA_LINHA = new Set([
  * a entrada à posição que ela diz ser e não à ordem em que foi rendida. Os dois
  * campos escritos são a data e, numa entrada `diverge`, o valor encontrado.
  */
-function valorRelidoAqui(valor, lang) {
-  const s = String(valor ?? '').replace(/[\s\u202f]/g, '').replace('−', '-');
-  if (!/^-?\d+(?:[.,]\d+)?$/.test(s)) return String(valor ?? '');
-  const partes = s.split(/[.,]/);
-  return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? ',' + partes[1] : '');
-}
+
 
 const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
 
@@ -2610,12 +2605,12 @@ const ROTULO_DO_RESULTADO = {
   pt: {
     igual: 'igual à fonte',
     diverge: 'a releitura encontrou:',
-    inacessivel: 'sem resposta a esse pedido',
+    inacessivel: 'sem valor lido',
   },
   en: {
     igual: 'matches the source',
     diverge: 'the re-read found:',
-    inacessivel: 'with no answer to that request',
+    inacessivel: 'no value read',
   },
 };
 
