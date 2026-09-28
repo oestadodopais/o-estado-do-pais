@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T21:59:09+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "scripts/verify-depois-do-build.mjs",
+   "descricao": "o design:feixe, que escreve na árvore, volta a correr lado a lado com as outras conferências: a lista das que correm sozinhas depois do grupo fica vazia",
+   "sha256_antes": "3e4fa8127ffcab52c6514af053f48b38616f912f6e37698cc6d99a26bc7a6e4c",
+   "sha256_depois": "c2296f1ebb75e5de7a2fb792f489dc023321ea60aefe2f14749f1d35b9282ef9",
+   "contexto_antes": "ência nova que escreva na árvore entra\n   aqui quando o inventário a vir; até lá, se escrever num ficheiro que o\n   `git` segue, a célula D fecha a corrida. */\nexport const DEPOIS_DO_GRUPO = ['npm run design:feixe'];\n\n/* ------------------------------------------------------------------ a escolha */\n\n/** Os passos de uma cadeia do `package.json`, partidos em `&&`, como o §0",
+   "contexto_depois": "ência nova que escreva na árvore entra\n   aqui quando o inventário a vir; até lá, se escrever num ficheiro que o\n   `git` segue, a célula D fecha a corrida. */\nexport const DEPOIS_DO_GRUPO = [];\n\n/* ------------------------------------------------------------------ a escolha */\n\n/** Os passos de uma cadeia do `package.json`, partidos em `&&`, como o §0"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/verify-depois-do-build.mjs",
+   "descricao": "a célula D deixa de ver uma escrita reposta: só o tamanho conta, e um ficheiro escrito e reposto com os mesmos bytes passa",
+   "sha256_antes": "c2296f1ebb75e5de7a2fb792f489dc023321ea60aefe2f14749f1d35b9282ef9",
+   "sha256_depois": "a87396285b9d9a0e0238868ef4e9073149ceba2081004f12b98fe4beed2ee037",
+   "contexto_antes": "erências`);\n      else if (x.inode !== y.inode) falhas.push(`D: ${onde}${k} foi substituído por outro ficheiro durante as conferências (o inode mudou)`);\n      else if (x.escrito !== y.escrito || x.tamanho !== y.tamanho) falhas.push(`D: ${onde}${k} foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)`);\n    }\n    for (const k of b.keys()) if (!a.has(k)) fa",
+   "contexto_depois": "erências`);\n      else if (x.inode !== y.inode) falhas.push(`D: ${onde}${k} foi substituído por outro ficheiro durante as conferências (o inode mudou)`);\n      else if (x.tamanho !== y.tamanho) falhas.push(`D: ${onde}${k} foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)`);\n    }\n    for (const k of b.keys()) if (!a.has(k)) fa"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/verify-depois-do-build.mjs",
+   "descricao": "a folga do relógio da célula C passa de dois segundos a 48 horas (2000 × 60 × 60 × 24 milissegundos), e um cadeia.json de outra construção das últimas 48 horas passa como desta",
+   "sha256_antes": "a87396285b9d9a0e0238868ef4e9073149ceba2081004f12b98fe4beed2ee037",
+   "sha256_depois": "bd5b6d8a1f0c590ea4eed29dd12d9bb1b642ba83371fbb09861c36c7cf91f077",
+   "contexto_antes": "que o `Date` do Node leu um pouco antes.\n   Dois segundos cobrem-no com margem; uma prova de outra construção é mais\n   velha do que uma construção inteira. */\nconst FOLGA_DO_RELOGIO_MS = 2000;\n\n/* ------------------------------------------------------------------ o motor */\n\n/**\n * Corre os passos num fundo de `paralelo` processos. Cada passo corre c",
+   "contexto_depois": "que o `Date` do Node leu um pouco antes.\n   Dois segundos cobrem-no com margem; uma prova de outra construção é mais\n   velha do que uma construção inteira. */\nconst FOLGA_DO_RELOGIO_MS = 2000 * 60 * 60 * 24;\n\n/* ------------------------------------------------------------------ o motor */\n\n/**\n * Corre os passos num fundo de `paralelo` processos. Cada passo corre c"
+  },
+  {
+   "id": "P4",
+   "ficheiro": ".github/workflows/portao.yml",
+   "descricao": "o passo das conferências depois do build nunca fica vermelho: o seu código é engolido, e o portao passa com uma conferência a falhar",
+   "sha256_antes": "c552efc84d9fe74118ba31e8901037a57b8dec1b425444248d1dc42404316d4c",
+   "sha256_depois": "84fb084e8bf433f612940e4e717e7bc45113c6f8fdcf3dfb0e248e86ef2ff228",
+   "contexto_antes": "ira quando acaba, num grupo que se abre\n      # no registo; uma vermelha fica aberta, com a anotação de erro.\n      - name: npm run verify, sem repetir o build\n        run: npm run verify:depois-do-build\n\n      - name: npm run typecheck\n        run: npm run typecheck\n\n      # A prova: `dist/prova.json` (escrito pelo `gate:html`) e `dist/cadeia.json`\n      # (es",
+   "contexto_depois": "ira quando acaba, num grupo que se abre\n      # no registo; uma vermelha fica aberta, com a anotação de erro.\n      - name: npm run verify, sem repetir o build\n        run: npm run verify:depois-do-build || true\n\n      - name: npm run typecheck\n        run: npm run typecheck\n\n      # A prova: `dist/prova.json` (escrito pelo `gate:html`) e `dist/cadeia.json`\n      # (es"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 7,97 minutos para a primeira corrida no GitHub, contra os 8,97 das provas",
+   "sha256_antes": "9ef6ba7aa42b0dddcf466e6fc0defdaebaf9076d3420c52c60ae4dadec6c88c6",
+   "sha256_depois": "b1d8e92bb788cdc067afdd77445690cbcba566634122ec03dd6f4dc871738cc1",
+   "contexto_antes": "ça `1875866b` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 8,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s (",
+   "contexto_depois": "ça `1875866b` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 7,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s ("
+  }
+ ]
+}
