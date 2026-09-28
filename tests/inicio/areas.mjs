@@ -633,13 +633,15 @@ async function mediuOProvisorio() {
       await p.__ctx.close();
       for (const id of lido.colados) outras.add('I158: valor colado à unidade: ' + id);
       for (const m of lido.marcados) {
-        if (m.texto !== palavra) outras.add(m.texto);
+        const origem = LINHAS.get(m.id);
+        const esperada = origem?.source_flag === 'e' ? ' (' + (edicao === 'en' ? origem.source_flag_note_en : origem.source_flag_note) + ')' : palavra;
+        if (m.texto !== esperada) outras.add(m.texto);
         if (!m.id) outras.add('ressalva sem linha');
         if (m.id) comPalavra.add(m.id);
       }
       for (const id of lido.citados) {
         const l = LINHAS.get(id);
-        if (l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) daBandeira.add(id);
+        if (l?.source_flag === 'e' || l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) daBandeira.add(id);
       }
     }
     const aMais = [...comPalavra].filter((id) => !daBandeira.has(id));

@@ -455,7 +455,7 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
       const alvo = p.claim === 'proprio' ? id : p.claim === 'anterior' ? regua.anterior : regua.ue;
       const l = alvo ? linhas.get(alvo) : null;
       if (!l) throw new Error(`a leitura de ${id} cita a linha «${p.claim}», que a régua do cartão não rende`);
-      return `${l.value}${p.sufixo ?? ''}${(l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? provisorio : ''}`;
+      return `${l.value}${p.sufixo ?? ''}${l.source_flag === 'e' ? ' (' + (lang === 'en' ? l.source_flag_note_en : l.source_flag_note) + ')' : (l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? provisorio : ''}`;
     }
     if ('periodo' in p) {
       if (camaras) return dataDaCasaAqui(String([...(/** @type {any} */ (recontagem)).periodos][0]));
@@ -542,7 +542,7 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
     const comBandeira = new Set();
     for (const valor of cartao.querySelectorAll('[data-claim]')) {
       const l = linhas.get(valor.getAttribute('data-claim'));
-      if (l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) comBandeira.add(l.id);
+      if (l?.source_flag === 'e' || l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) comBandeira.add(l.id);
     }
     const comPalavra = new Set();
     for (const marca of cartao.querySelectorAll('.claim-provisorio')) {
@@ -552,7 +552,9 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
       const linha = valor?.getAttribute('data-claim');
       if (linha) comPalavra.add(linha);
       else falha(id, 'ressalva sem a linha que a precede');
-      if (marca.textContent !== ' (' + t(lang).prov.dadoProvisorio + ')') falha(id, 'ressalva sem separador ou com palavra diferente da edição');
+      const origem = linhas.get(linha);
+      const palavra = origem?.source_flag === 'e' ? (lang === 'en' ? origem.source_flag_note_en : origem.source_flag_note) : t(lang).prov.dadoProvisorio;
+      if (marca.textContent !== ' (' + palavra + ')') falha(id, 'ressalva sem separador ou com palavra diferente da edição');
     }
     if ([...comBandeira].some(x => !comPalavra.has(x)) || [...comPalavra].some(x => !comBandeira.has(x))) falha(id, 'as linhas com bandeira e as palavras de ressalva não coincidem');
     const leituras = cartao.querySelectorAll('[data-cartao-leitura]');
