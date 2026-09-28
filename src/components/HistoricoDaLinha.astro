@@ -73,7 +73,7 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="old_value"
               >
-                {e.old_value}
+                {e.kind === 'proveniencia' && ['source', 'document.title'].includes(e.field) ? <q>{e.old_value}</q> : e.old_value}
               </span>
               <span aria-hidden="true"> → </span>
               <span
@@ -82,7 +82,7 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="new_value"
               >
-                {e.new_value}
+                {e.kind === 'proveniencia' && ['source', 'document.title'].includes(e.field) ? <q>{e.new_value}</q> : e.new_value}
               </span>
             </span>
           </div>

@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { spawnSync, execFileSync } from 'node:child_process';
+import { spawnSync } from 'node:child_process';
 import { load, dump } from 'js-yaml';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
 
@@ -16,8 +16,8 @@ const plantas = [], controlos = [];
 assert.deepEqual(validateLedger().errors, []);
 controlos.push({ nome: 'livro completo com as duas histórias repostas', passou: true });
 for (const id of [uniao, dgal]) {
-  const antiga = load(execFileSync('git', ['show', `a677770f:ledger/claims/${id}.yml`], { encoding: 'utf8' }));
-  assert.deepEqual(linhas.get(id).verifications, antiga.verifications);
+  const antigas = JSON.parse(fs.readFileSync('tests/linha/historias-c1c.json', 'utf8'));
+  assert.deepEqual(linhas.get(id).verifications, antigas.linhas[id]);
   controlos.push({ nome: `${id}: lista exata de a677770f`, passou: true });
 }
 function plantar(nome, id, mudar, falha) {
