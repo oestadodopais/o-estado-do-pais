@@ -1,0 +1,15 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.screenshot: Clipped area is either empty or outside the resulting image
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+[2m  - fonts loaded[22m
+
+    at <worktree do sítio>/design/especime-v3/medicoes/c1-2026-09-28/pormenores-c1.mjs:38:28 {
+  name: 'Error'
+}
+
+Node.js v22.23.1

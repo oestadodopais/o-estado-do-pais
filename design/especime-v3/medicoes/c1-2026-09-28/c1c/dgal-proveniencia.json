@@ -1,0 +1,149 @@
+{
+  "antes": {
+    "id": "indice-de-divida-limite-legal",
+    "value": "150",
+    "unit": "%",
+    "source": "CICF/IPCA — Anuário Financeiro dos Municípios Portugueses",
+    "document": {
+      "title": "Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões",
+      "edition": "2024",
+      "locator": "p. 22, quadro «LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)»",
+      "page": 22,
+      "kind": "pdf"
+    },
+    "source_url": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+    "access_date": "2026-08-10",
+    "reference_date": "2024",
+    "excerpt": "Índice de divida total (Índice permitido <= 150%)",
+    "derivation": null,
+    "derivation_en": null,
+    "derived_from": [],
+    "check": null,
+    "attributed_to": [
+      "Anuário Financeiro dos Municípios Portugueses"
+    ],
+    "study": "concelhos-2026",
+    "note": "Cruzado de ResearchHub content/07 Évora Municipal Accounts · anuario-indice-permitido.",
+    "corrections": [],
+    "verifications": [
+      {
+        "date": "2026-09-01",
+        "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+        "result": "igual",
+        "by": "corredor-diario"
+      }
+    ]
+  },
+  "depois": {
+    "id": "indice-de-divida-limite-legal",
+    "value": "150",
+    "unit": "%",
+    "source": "Direção-Geral das Autarquias Locais (DGAL)",
+    "document": {
+      "title": "Limites de Endividamento",
+      "edition": "Lei n.º 73/2013",
+      "locator": "Artigo 52.º, n.º 1: limite da dívida total",
+      "kind": "html"
+    },
+    "source_url": "https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/",
+    "access_date": "2026-09-28",
+    "reference_date": "2024",
+    "excerpt": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores.",
+    "derivation": null,
+    "derivation_en": null,
+    "derived_from": [],
+    "check": null,
+    "attributed_to": null,
+    "study": "concelhos-2026",
+    "note": "Cruzado de ResearchHub content/07 Évora Municipal Accounts · anuario-indice-permitido.",
+    "corrections": [
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "source",
+        "old_value": "CICF/IPCA — Anuário Financeiro dos Municípios Portugueses",
+        "new_value": "Direção-Geral das Autarquias Locais (DGAL)",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "source_url",
+        "old_value": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+        "new_value": "https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "document.title",
+        "old_value": "Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões",
+        "new_value": "Limites de Endividamento",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "document.edition",
+        "old_value": "2024",
+        "new_value": "Lei n.º 73/2013",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "document.locator",
+        "old_value": "p. 22, quadro «LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)»",
+        "new_value": "Artigo 52.º, n.º 1: limite da dívida total",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "access_date",
+        "old_value": "2026-08-10",
+        "new_value": "2026-09-28",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Índice de divida total (Índice permitido <= 150%)",
+        "new_value": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores.",
+        "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+        "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+      }
+    ],
+    "verifications": [
+      {
+        "date": "2026-09-01",
+        "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+        "result": "igual",
+        "by": "corredor-diario"
+      }
+    ]
+  },
+  "origem": {
+    "publicador": "Direção-Geral das Autarquias Locais (DGAL)",
+    "documento": "Limites de Endividamento",
+    "url": "https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/",
+    "lido": "2026-09-28",
+    "excerto": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores.",
+    "selo": {
+      "motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html",
+      "campo": "texto HTML",
+      "hora": "2026-09-28T13:56:04+00:00",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818"
+    }
+  },
+  "reconferencia_reposta_de": "a677770f",
+  "depois_sha256": "d2339974060d29c9e8eb49294d9c3d4257f4ed5d9db57099984da76452a37870"
+}

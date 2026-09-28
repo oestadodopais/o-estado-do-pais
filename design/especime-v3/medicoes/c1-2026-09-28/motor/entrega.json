@@ -1,0 +1,13 @@
+{
+  "cabeca": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+  "base": "4eb2867936dd14ad2654751722e390804e68dda3",
+  "codigo_do_commit": 0,
+  "core_gate_passou": true,
+  "arvore_limpa": true,
+  "ficheiros": {
+    "core/gate.py": "a3aa0ea7d5dbb80607491611087c754ef0a1f1554851aa6f9241f20ae1192549",
+    "indicators/refresh.py": "89de77ecdaf8fe4b3266f71251f3a5c841ef52cd07024b89d4d1b7b235d0e2a6",
+    "indicators/refresh_dimensoes_test.py": "825082eb02ab00ce46387371e8025961acacf636abc433bf6e3a7114c3408b2a"
+  },
+  "mensagem": "C1: reler dimensões do Eurostat pela coordenada selada\n\nCo-Authored-By: Codex gpt-6-astra <noreply@openai.com>"
+}

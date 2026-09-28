@@ -1,0 +1,143 @@
+{
+  "cabeca": "69520d3ac921f80936191c58d69cf50f220048d5",
+  "limpa": false,
+  "diferenca_sha256": "c9f4aca8dd1b686659129f226068c22541e9c74e70fa97ae6fad91359b1c7cd1",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+      "sha256": "731f6cf326e5ca2262f17fbec69428acd48297aba45cfd9b751d826bb6282c48"
+    },
+    {
+      "ficheiro": "design/especime-v3/ISSUES.md",
+      "sha256": "02e29e4bba1fd7a5419f4412915caaa58b1118a3e6d06e424e80ba44a79ef1d7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "sha256": "d961ec3e6c1b327465745023fd79f84d74a7992901ae8c08eecaa78f7cbbee9f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/calendario-memoria.cabeca",
+      "sha256": "deb6efd7dca72ea5753eb7350594cb1b596fa2eb637be43e484d5f5960550dcd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/calendario-memoria.inicio",
+      "sha256": "0f334dae48f955264a83ce9a7a69e0e5965e11173f5803c379303d6d8d758a3a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/motor-rede-real.arvore.json",
+      "sha256": "3dab79ee25e18918da699f304dc201753e311cc5e854ca4ba03cd2796a46f5be"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/motor-rede-real.cabeca",
+      "sha256": "2e1d80e6d699832ffe6d0d491add85f7f538e9441be61fe061b8cbe301052ca5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/motor-rede-real.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/motor-rede-real.fim",
+      "sha256": "3cf9c9292c2ab9a05a0697ece9ce3cde42ee219e79ddfb5ba922590ab0191e51"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/motor-rede-real.inicio",
+      "sha256": "c51fe3128c3368f2a6d5cbd591cdc52a14aff7092ad62992e78300a532f21074"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/motor-rede-real.log",
+      "sha256": "ca91adca608b29fa7bda129e430751fe03c8efce95687b2d34991c799dc18858"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.arvore.json",
+      "sha256": "dcfdb12fc918058e88da3983dd364125e36c7ccbd4ac01ef008a1c2a0f3b7db9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.cabeca",
+      "sha256": "deb6efd7dca72ea5753eb7350594cb1b596fa2eb637be43e484d5f5960550dcd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.fim",
+      "sha256": "10e4934acae7c2b171d21a6ab31d13014bede863956d9d3c55c69e7f0ccf3739"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.inicio",
+      "sha256": "2323e831e90b0e0920ee35030b87961f798a974a2ce4e2497c2470554faaa9e6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.json",
+      "sha256": "2b6260d4dc133c6ec04dc8b0de1571ca7dac00a3d5f1e4400d8e0230b9f02df9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/plantas-confianca.log",
+      "sha256": "2b6260d4dc133c6ec04dc8b0de1571ca7dac00a3d5f1e4400d8e0230b9f02df9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.arvore.json",
+      "sha256": "c95ee7be78e94f72ab8d9eb91c2da6f3603ba9f1a142a1237b0c177ef9be611b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.cabeca",
+      "sha256": "7404955280122f53f41c2608fbfc0423283ad7550046d398e43caa8c0c4cd308"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.fim",
+      "sha256": "da7bc4024edc3b4bfa4a0f9140366e5129f8c864f92026448977be1438538a1f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.inicio",
+      "sha256": "0e9116f2c64d95babb48f2a35af0dd0408f9797a61d89fd236bcd10c2a035c18"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.json",
+      "sha256": "186a6f20f8c48ace1079f0a29b00f5b7feb9052a1f9ea00881cd1083520da0c7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/proveniencia.log",
+      "sha256": "186a6f20f8c48ace1079f0a29b00f5b7feb9052a1f9ea00881cd1083520da0c7"
+    },
+    {
+      "ficheiro": "ledger/claims/divida-das-familias-2025-ue.yml",
+      "sha256": "32af9e1edf6fdd2a6992c215a43448a2db610b9dda7c8388d4175d603138ae45"
+    },
+    {
+      "ficheiro": "scripts/gate-html.mjs",
+      "sha256": "48d18f186781f76a02929b2ced9105d2f1c0c605a43c4fe5bf4d605973ec476d"
+    },
+    {
+      "ficheiro": "scripts/verificacao-legivel.mjs",
+      "sha256": "7f45ad57a57e984161afba72307511666ace4c24af5be7d89e2fc95ef17f03b7"
+    },
+    {
+      "ficheiro": "src/components/lugar/InstrumentoDosMandatos.astro",
+      "sha256": "2c3f39ca9fb10d51ec11cf690bb06f0e121e51431b9a9d23450d200ec994d451"
+    },
+    {
+      "ficheiro": "src/i18n/strings.mjs",
+      "sha256": "2ec8914e42523117096a20716ba4f20a88ec71593d07fbbcf98bc319589716f4"
+    },
+    {
+      "ficheiro": "src/styles/site.css",
+      "sha256": "594b9d1440299684db34a80e409567582b3272e382f2ba607efb97d0f8863010"
+    },
+    {
+      "ficheiro": "src/views/LinhaView.astro",
+      "sha256": "eeda41b1cd74e14d5417b7665f7ae6bfe30831d621a730fac79050a3e05ffc24"
+    },
+    {
+      "ficheiro": "tests/confianca/c1.mjs",
+      "sha256": "626b5e7778451772676bdf0f8c43529c6e6b6334953d3168bd47474f1077116f"
+    },
+    {
+      "ficheiro": "tests/municipio/calendario.mjs",
+      "sha256": "85cd14f2257e9c2198acbef40d241b85a5751e20213714810a09c3fb1d4dc910"
+    }
+  ]
+}

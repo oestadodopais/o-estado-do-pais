@@ -1,0 +1,151 @@
+{
+  "estado": "antes",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "observacoes": [
+    "antes-pais-pt-390.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-pt-768.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-pt-1024.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-pt-1280.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-pt-1600.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-en-390.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-en-768.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-en-1024.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-en-1280.png: 22 valores sem espaço antes da unidade.",
+    "antes-pais-en-1600.png: 22 valores sem espaço antes da unidade.",
+    "antes-temas-pt-390.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-pt-768.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-pt-1024.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-pt-1280.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-pt-1600.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-en-390.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-en-768.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-en-1024.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-en-1280.png: 47 valores sem espaço antes da unidade.",
+    "antes-temas-en-1600.png: 47 valores sem espaço antes da unidade.",
+    "antes-evora-pt-390.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-pt-768.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-pt-1024.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-pt-1280.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-pt-1600.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-en-390.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-en-768.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-en-1024.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-en-1280.png: 7 valores sem espaço antes da unidade.",
+    "antes-evora-en-1600.png: 7 valores sem espaço antes da unidade."
+  ],
+  "cabeca_da_arvore": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+  "dist_construido_de": "48a5a1c181c1753036d301204884c57119bba8a5",
+  "dist_construido_em": "2026-09-28T11:40:10.288551+00:00",
+  "inicio": "2026-09-28T11:46:46.762Z",
+  "fim": "2026-09-28T11:47:36.673Z",
+  "segundos": 49.911,
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "sha256": "515240f11771a0fec308943f009c8d47d4a93aa70fb7ddad41af075b44ad5517"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "sha256": "040175d7ad2e7ada01225233a2c09fad514b1ae365a7456e4aee4901bc6f28da"
+    },
+    "temas_index.html": {
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "sha256": "cd693a1697abf53c5f7fd16fb08bf5fa24f64824b3f48709a6ce312b880be253"
+    },
+    "en_themes_index.html": {
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "sha256": "0305ab2ec14828ef3e931420a3b2206b02f0e156bf33d8248e5fe543126caa8e"
+    },
+    "lugares_index.html": {
+      "rota": "/lugares/",
+      "familia": "lugares",
+      "lingua": "pt",
+      "sha256": "39a848f796e1be1fc8bb9487e6706837a10153a16a2f72df1b3b73464f979e36"
+    },
+    "en_places_index.html": {
+      "rota": "/en/places/",
+      "familia": "lugares",
+      "lingua": "en",
+      "sha256": "583d1adb14edf9348e94118a478004297cce1365ce3b8433397789bb4a905886"
+    },
+    "municipios_evora_index.html": {
+      "rota": "/municipios/evora/",
+      "familia": "evora",
+      "lingua": "pt",
+      "sha256": "9898afccf55fe112d05372655c44aa04a43603ccd96ea7d32627ee50402e33c0"
+    },
+    "en_municipalities_evora_index.html": {
+      "rota": "/en/municipalities/evora/",
+      "familia": "evora",
+      "lingua": "en",
+      "sha256": "3100179cbc243d35414a432e4dd9af5988de206f1a110c3a700cc58222f4addc"
+    },
+    "livro-razao_ipc-variacao-homologa_index.html": {
+      "rota": "/livro-razao/ipc-variacao-homologa/",
+      "familia": "recibo-inflacao",
+      "lingua": "pt",
+      "sha256": "33316457faf36e5edd39ed8d8c91daa10ee4b51f773fd6be981054ccd425c75e"
+    },
+    "en_ledger_ipc-variacao-homologa_index.html": {
+      "rota": "/en/ledger/ipc-variacao-homologa/",
+      "familia": "recibo-inflacao",
+      "lingua": "en",
+      "sha256": "b9700dd81f16f52103690672effb4d64f02a37ad623797517a07eeaaf60ea2b9"
+    },
+    "livro-razao_divida-das-familias-2025-ue_index.html": {
+      "rota": "/livro-razao/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-familias-ue",
+      "lingua": "pt",
+      "sha256": "e64e91cbd013471c0cf32c6bd47602e87e980f9ff457baf31a74677692cf62e1"
+    },
+    "en_ledger_divida-das-familias-2025-ue_index.html": {
+      "rota": "/en/ledger/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-familias-ue",
+      "lingua": "en",
+      "sha256": "026e27ea9581120e6f08d7316e3818298978bd8c8ff3526b8d2069139d4aca95"
+    },
+    "livro-razao_pib-real-per-capita-2025_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real",
+      "lingua": "pt",
+      "sha256": "806afe3df5ca5a2d4904f27fcc03e8e9bd7c7c00f5256ed3a63097523f0057c3"
+    },
+    "en_ledger_pib-real-per-capita-2025_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real",
+      "lingua": "en",
+      "sha256": "e2b3e84e36eb4c9ab60ea1dd8a29ae8193f0142b0d9f030a77467e3d600ab761"
+    },
+    "_astro/Base.Bu8ardly.css": {
+      "origem": "/_astro/Base.Bu8ardly.css",
+      "tipo": "folha construída",
+      "sha256": "38efcbd365cf13a746e1d473886c340ca73e58a8d391abf69c0a2a95d4dfb26c"
+    },
+    "_astro/inicio.CoJligbV.css": {
+      "origem": "/_astro/inicio.CoJligbV.css",
+      "tipo": "folha construída",
+      "sha256": "a0529e5e6954447559c92c7591295b6f2fbbec7cf4aa22cca618e1e704713c1c"
+    },
+    "_astro/lugar.DQAkNk1H.css": {
+      "origem": "/_astro/lugar.DQAkNk1H.css",
+      "tipo": "folha construída",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    },
+    "_astro/linha.kwcknRfj.css": {
+      "origem": "/_astro/linha.kwcknRfj.css",
+      "tipo": "folha construída",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    }
+  }
+}

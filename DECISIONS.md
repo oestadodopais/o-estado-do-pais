@@ -12941,3 +12941,24 @@ rotas passam a ler **0**.
 
 **A prova de que funciona:** leitores comuns antes e depois de cada peça (os amigos do diretor são os primeiros); um contador de visitas que respeite a privacidade fica para decisão dele.
 
+### 1.134 O sítio que se atualiza e pensa sozinho: a decisão do diretor de 28.09.2026 sobre a atualização, a arrumação e a autonomia editorial
+
+**Afecta:** nenhum
+
+**O que muda:** o modo de trabalho do projeto: as atualizações de rotina publicam-se sem uma pessoa quando todos os portões e a CI estão verdes; a sessão de segunda-feira arranca sozinha; as corridas agendadas saem do Mac do diretor; e o lugar de direção passa a trabalhar num ciclo contínuo, acionado pelos dados e pelas notícias, em que decide o que investigar, escreve os achados e os publica pela máquina de sempre.
+
+**Data:** 28.09.2026, à tarde.
+
+**As palavras do diretor** (ditadas, transcritas como as disse): «Let's do as you propose and deploy it. And we can keep checking and if something goes off, I'll just let you know and you can correct it. We just need to make sure that things get updated, get tidy up, everything is rock solid»; e logo a seguir: «when the new data comes in, we should have a way that you can learn that the content needs updating and you can do it and run all the security systems, all the machinery, and make sure that everything is absolutely correct; but we should have these all things as automated as possible, so you get new content, you can learn about what is going on in the country and the news, and deploy new research, create new insights and analysis that you do and apply to the website, and you should be the one deciding that is useful, and pushing the limits of what we can do there».
+
+**O que o lugar de direção propôs antes e o diretor aceitou:** três camadas (as atualizações de rotina por código, sem IA, a aterrar sozinhas com os portões e a CI verdes; a sessão de segunda-feira; os estudos nunca reescritos em silêncio, com a data e a nota «há dados mais recentes»), as três perguntas respondidas que sim (uma atualização de rotina aterra sem pessoa com tudo verde; a sessão de segunda-feira arranca sozinha; as corridas saem do Mac), e agora o ciclo autónomo por cima delas.
+
+**A forma, pelo lugar de direção:**
+1. Os sinais chegam sozinhos: as corridas agendadas vigiam as fontes (os calendários de divulgação, os períodos novos nas APIs, as revisões que a reconferência semanal apanha, os estudos com números que têm dados mais recentes) e os comunicados oficiais e os títulos das notícias, que são gatilhos do que ver e nunca fontes.
+2. O lugar de direção decide o que vale a pena fazer, pelas regras escritas, e faz: atualizar um número, reescrever um bloco que deixou de ser verdade, acrescentar um achado, abrir um estudo com pré-registo. O sítio ajuda a vê-lo: a primeira página nova (o PP1) é a primeira peça feita assim, com cada bloco a declarar as condições que o tornam verdadeiro; quando os dados novos as desmentem, o bloco sai da página e deixa um sinal, e a construção nunca falha por isso.
+3. Tudo passa pela máquina de sempre: as fontes seladas, um construtor, a leitura a frio da outra família, todos os portões, a CI. Só aterra o que sai limpo; o resto espera e o diretor sabe.
+4. Os comandos ficam com o diretor: um teto semanal da subscrição (o ciclo confere o uso e para antes de gastar a reserva), um interruptor de pausa que ele liga, um registo datado do que o ciclo fez, e a palavra dele quando alguma coisa parecer errada.
+
+**A ordem:** o C1 aterrado; a primeira página nova em pré-visualização para o diretor; as corridas fora do Mac pela fase 2 do plano da fiabilidade (`design/observatorio/PLANO-fiabilidade-2026-09-02.md` §4), que já desenhava isto: a corrida diária a publicar por um ramo com o portão verde antes de avançar `main` (hoje empurra para `main` diretamente, e a proteção do sítio recusá-lo-ia), o painel semanal e o varrimento mensal levados para o GitHub, as chaves e o interruptor do diretor (o F2.2), quatro semanas verdes a conferir e a carimbar sem valores novos (o F2.3), e só depois o primeiro valor de rotina publicado sem ninguém (o F2.4, que é o que o diretor decidiu hoje); as séries; a sessão autónoma que lê os sinais e age. Cada passo é um bloco com brief, leitura a frio e portões.
+
+**O que fica com o diretor, pela §1.112:** o dinheiro e os limites da subscrição (o teto do ciclo), tudo o que sai em nome do projeto para terceiros (o ciclo não envia correio nem publica fora do sítio), a exposição legal, e as credenciais: as duas chaves de implantação das corridas e o interruptor que as arma (o F2.2), com os passos num Google Doc no Drive dele.

@@ -1,0 +1,15 @@
+{
+  "ficheiro": "indicators/refresh.py",
+  "motivo": "Exemplo de caminho temporário absoluto num comentário preexistente, removido porque o ficheiro foi escrito neste bloco.",
+  "base": "4eb2867",
+  "ocorrencias_na_base": 1,
+  "ocorrencias_antes": 1,
+  "ocorrencias_depois": 0,
+  "literal_anterior_sha256": "c90c8af3d4c6a33248e061f2a57b5cbda5449c99a36b970a95f5274995214365",
+  "ficheiro_antes_sha256": "a5fe18f6e8a6566b08a498a947db9a0f10c56b7ce222b960962bc48b15413e64",
+  "ficheiro_depois_sha256": "89de77ecdaf8fe4b3266f71251f3a5c841ef52cd07024b89d4d1b7b235d0e2a6",
+  "apenas_comentario": true,
+  "arvore_sintatica_igual": true,
+  "detetor_inalterado": true,
+  "portao_executado": false
+}

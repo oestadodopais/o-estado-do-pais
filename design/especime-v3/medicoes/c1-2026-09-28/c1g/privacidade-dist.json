@@ -1,0 +1,66 @@
+{
+  "ficheiros": 12485,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "nome-do-git-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-do-git-2",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "pasta-generica-raiz",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-root",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-runner",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-app",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-code",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    }
+  ],
+  "passou": true,
+  "origem": {
+    "ficheiro": "portoes/c1g/verify.log",
+    "sha256": "5acee78702673b2d5eda50ce48e8588cc84dfacd36caff50d5a6bec168754385",
+    "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+    "codigo": 0
+  }
+}

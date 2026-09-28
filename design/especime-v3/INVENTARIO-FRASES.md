@@ -531,8 +531,8 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 26 provenance revisions | até 2026-08-26 | viva | — |
-| conteudo | 26 revisões de proveniência | até 2026-08-26 | viva | — |
+| conteudo | 26 provenance revisions | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
+| conteudo | 26 revisões de proveniência | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
 | conteudo | A política | até 2026-08-26 | viva | — |
 | conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 | viva | — |
 | conteudo | An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed: | até 2026-08-26 | viva | — |
@@ -1820,11 +1820,11 @@ definição de bloco que a régua usa, e não datilografado.*
 | divulgacao | A leitura lê sem contexto prévio, com erros plantados que tem de encontrar. | rotulo-ia | viva | — |
 | divulgacao | A medição mede numa cópia, com código próprio, sem ver a construção. | rotulo-ia | viva | — |
 | navegacao | A política da casa | rotulo-ia | retirada | o título da secção da política dentro do Método muda com o rótulo que a abre (item 1 do brief do P1, 15.09.2026, com a emenda do diretor das 16:35 UTC): «a política da casa» era o decalque de *house policy* e «regras da casa» trocava-o por outro problema, porque em português casa é a habitação. A secção passa a chamar-se «Como a inteligência artificial escreve este sítio», que diz o que ela faz |
-| divulgacao | AI-generated text under the house policy · editorial responsibility: Nuno dos Santos | rotulo-ia | retirada | o rótulo de IA de todas as páginas construídas passa a dizer «Texto gerado por inteligência artificial, segundo o Método.» (item 1 do brief do P1, 15.09.2026). Três coisas ao mesmo tempo, e cada uma é uma leitura do diretor no ar: «política da casa» é decalque, «IA» vira «inteligência artificial» por extenso, que é a palavra da lei, e o nome de quem responde sai do rótulo. A porta passa a ser «Método», que é o nome da página onde a política vive |
+| divulgacao | AI-generated text under the house policy · editorial responsibility: o diretor | rotulo-ia | retirada | o rótulo de IA de todas as páginas construídas passa a dizer «Texto gerado por inteligência artificial, segundo o Método.» (item 1 do brief do P1, 15.09.2026). Três coisas ao mesmo tempo, e cada uma é uma leitura do diretor no ar: «política da casa» é decalque, «IA» vira «inteligência artificial» por extenso, que é a palavra da lei, e o nome de quem responde sai do rótulo. A porta passa a ser «Método», que é o nome da página onde a política vive |
 | divulgacao | Building builds the site, and checks batches at the source. | rotulo-ia | viva | — |
 | divulgacao | Direction directs the work: it writes the briefs, reviews and merges. | rotulo-ia | viva | — |
-| divulgacao | Director: Nuno dos Santos · Free of charge | rotulo-ia | retirada | a ficha da primeira página fica com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026): a palavra «Diretor» e o nome saem, por decisão do diretor («posing as a director with my name is just not right»). A leitura do artigo 15.º da Lei de Imprensa fica escrita em `src/data/politica-ia.mjs`, com a data da saída e a razão |
-| divulgacao | Diretor: Nuno dos Santos · Publicação gratuita | rotulo-ia | retirada | a ficha da primeira página fica com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026): a palavra «Diretor» e o nome saem, por decisão do diretor («posing as a director with my name is just not right»). A leitura do artigo 15.º da Lei de Imprensa fica escrita em `src/data/politica-ia.mjs`, com a data da saída e a razão |
+| divulgacao | Director: o diretor · Free of charge | rotulo-ia | retirada | a ficha da primeira página fica com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026): a palavra «Diretor» e o nome saem, por decisão do diretor («posing as a director with my name is just not right»). A leitura do artigo 15.º da Lei de Imprensa fica escrita em `src/data/politica-ia.mjs`, com a data da saída e a razão |
+| divulgacao | Diretor: o diretor · Publicação gratuita | rotulo-ia | retirada | a ficha da primeira página fica com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026): a palavra «Diretor» e o nome saem, por decisão do diretor («posing as a director with my name is just not right»). A leitura do artigo 15.º da Lei de Imprensa fica escrita em `src/data/politica-ia.mjs`, com a data da saída e a razão |
 | divulgacao | Escrito, conferido e atualizado por sistemas de IA sob uma política publicada; nenhum humano revê cada peça antes de sair; uma pessoa com nome detém a responsabilidade editorial, define as regras e as recusas, e responde. | rotulo-ia | retirada | a frase da política deixa de dizer «responsabilidade editorial» / «editorial responsibility», que é o decalque de *editorial responsibility* que o diretor apanhou a 15.09.2026, e passa a dizer o que a mesma frase dizia sem ele: uma pessoa com nome define as regras e as recusas, e responde (item 3 do brief do P1). A frase mudou de lugar ao mesmo tempo: fica no Método, e o Sobre passa a dizer o que este projeto é |
 | divulgacao | Everything the house publishes carries the AI-generated label, on every page, at the moment the page is seen. Review is done by gates and by sample, not piece by piece. | p3 | retirada | ver a razão na gémea portuguesa |
 | divulgacao | Measurement measures on a copy, with its own code, without seeing the build. | rotulo-ia | viva | — |
@@ -1837,7 +1837,7 @@ definição de bloco que a régua usa, e não datilografado.*
 | divulgacao | Reading reads with no prior context, with planted errors it has to find. | rotulo-ia | viva | — |
 | divulgacao | São os modelos Claude da Anthropic, em três lugares (a direção, a construção, a medição), e o Codex da OpenAI na leitura. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data. | rotulo-ia | viva | — |
 | divulgacao | São quatro lugares, e a verificação é sempre de outra família de modelos: | rotulo-ia | viva | — |
-| divulgacao | Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos | rotulo-ia | retirada | o rótulo de IA de todas as páginas construídas passa a dizer «Texto gerado por inteligência artificial, segundo o Método.» (item 1 do brief do P1, 15.09.2026). Três coisas ao mesmo tempo, e cada uma é uma leitura do diretor no ar: «política da casa» é decalque, «IA» vira «inteligência artificial» por extenso, que é a palavra da lei, e o nome de quem responde sai do rótulo. A porta passa a ser «Método», que é o nome da página onde a política vive |
+| divulgacao | Texto gerado por IA sob a política da casa · responsável editorial: o diretor | rotulo-ia | retirada | o rótulo de IA de todas as páginas construídas passa a dizer «Texto gerado por inteligência artificial, segundo o Método.» (item 1 do brief do P1, 15.09.2026). Três coisas ao mesmo tempo, e cada uma é uma leitura do diretor no ar: «política da casa» é decalque, «IA» vira «inteligência artificial» por extenso, que é a palavra da lei, e o nome de quem responde sai do rótulo. A porta passa a ser «Método», que é o nome da página onde a política vive |
 | divulgacao | The house does not call the AI a journalist and does not call itself journalism. | p3 | retirada | ver a razão na gémea portuguesa |
 | divulgacao | The house does not write for reach: it is measured by citations, not by visits. | p3 | retirada | ver a razão na gémea portuguesa |
 | divulgacao | The house keeps no personal data of its readers and puts none in the repository. | p3 | retirada | ver a razão na gémea portuguesa |
@@ -3294,7 +3294,7 @@ frases rendidas e não as declarações, e fica escrito no relatório do bloco.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima dos de há um ano. A variação é menor do que a do mês anterior. | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima dos de há um ano. A variação é menor do que a do mês anterior. | c1 | retirada | C1, I160: a quarta redação faz a concordância com «as rendas», «acima das de há um ano». Esta redação anterior já foi publicada no RP1 e fica como sentinela da concordância corrigida. |
 | conteudo | Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
 | conteudo | How much have rents actually paid for housing changed since the same month a year earlier? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
 | conteudo | In the rents paid by tenants were, on the consumer price index measure, % above a year earlier. The change is smaller than the previous month’s. | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
@@ -3317,7 +3317,142 @@ frases rendidas e não as declarações, e fica escrito no relatório do bloco.*
 | conteudo | no | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | (provisional data) in | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | : (provisional data) | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
-| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions. Up from . | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions. Up from . | c1 | retirada | C1, I160: a quarta redação usa «across old-age, invalidity and survivors’ pensions». Esta redação anterior já foi publicada no RP1 e fica como sentinela da expressão corrigida. |
 | conteudo | In there were people receiving social insertion income for every thousand people of working age, from to years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community. Fewer than in . | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | Per hour worked, women earned on average less than men, in , in enterprises with or more employees: the gap, as a percentage of men’s earnings, was % (provisional data) . The gap narrowed from . | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | in the | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+
+## C1 · as correções de confiança, 28.09.2026
+
+As duas leituras abaixo são as cadeias efetivamente recolhidas na construção
+preparatória pelo `medir-defeitos.mjs --json`: as rendas na primeira página
+portuguesa e a pensão na inglesa. Os valores e os períodos são origens declaradas
+e saem da recolha. As redações anteriores ficam retiradas nas secções do RP1,
+com a razão da troca, porque já foram publicadas. As cadeias curtas que continuam
+a render-se, como «no» e «in the», mantêm o seu estado.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima das de há um ano. A variação é menor do que a do mês anterior. | c1 | viva | Quarta redação do lugar de direção, com a concordância das rendas corrigida. A K17 confere o texto, os ramos e os literais da auditoria; cada valor continua a vir da sua linha. |
+| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions. Up from . | c1 | viva | Quarta redação do lugar de direção, com a expressão inglesa das pensões corrigida. A K17 confere o texto, os ramos e os literais da auditoria; cada valor continua a vir da sua linha. |
+
+As leituras da inflação e do IHPC também mudam na quarta redação, mas os cartões
+com essas leituras não pertencem à fatia da primeira página. A página dos temas
+está no inventário, mas não está em `ROTAS_COM_ORIGEM_LIDA`; os blocos das leituras
+levam origens e não são recolhidos como frases sem origem. Não se declaram aqui
+ocorrências vivas que a régua não recolheu. A K17 conserva a comparação integral
+dessas leituras, e os casos sintéticos de `tests/confianca/c1.mjs` exercem os
+sinais positivo, negativo e zero da inflação e as comparações do IHPC com taxas
+negativas.
+
+**As palavras do recibo.** A rota de cada linha não pertence a
+`ROTAS_DO_INVENTARIO`; o recibo é uma das páginas em que a regra da voz permite
+explicar a verificação. Estas cadeias ficam registadas em prosa, sem linhas com
+estado `viva` fora do âmbito da régua:
+
+- «O que foi conferido» / «What was checked» nomeia a secção. «Lido na fonte a» /
+  «Read at the source on» continua a dar a data da primeira leitura da linha.
+- «Segunda leitura a» / «Second reading on» precede a data de uma releitura do
+  número; «Ficheiro da fonte relido a» / «Source file read again on» distingue
+  a conferência do ficheiro feita pelo corredor. Uma conferência do ficheiro
+  não passa a ser apresentada como uma releitura do número.
+- «Ainda sem segunda leitura.» / «No second reading yet.» diz a ausência de
+  registo de releitura, como no recibo da inflação nesta construção.
+- «igual à fonte» / «matches the source» dá o resultado igual; «a fonte publica
+  agora outro valor:» / «the source now publishes a different value:» precede
+  o valor encontrado na divergência; «não foi possível reler o número na fonte
+  nesse dia» / «the number could not be read again from the source that day»
+  mantém a tentativa sem sucesso datada, mesmo quando uma leitura posterior
+  já conseguiu reler o número.
+- «Ver a atualização deste valor» / «See the update to this value» está
+  declarada para a ligação à atualização que corresponda ao valor encontrado.
+  Não se apresenta como uma frase rendida nesta entrega: a atualização da
+  dívida das famílias parou no circuito real da linha. As plantas da conferência
+  do recibo exigem a correspondência e o destino da ligação quando há atualização.
+
+**As portas dos ficheiros dos concelhos.** «posições dos concelhos no mapa (CSV)» /
+«municipality positions on the map (CSV)» e «medidas dos concelhos (CSV)» /
+«municipal measures (CSV)» são navegação. Na página dos lugares vivem inteiras
+dentro de ligações, que a régua exclui nos dois sentidos; a alteração fica
+documentada aqui, sem declarar frases vivas que não sejam recolhidas.
+
+**O mandato em curso.** A faixa de Évora reutiliza «em funções» / «in office»,
+já usado na ligação para o mandato. Não se introduziu uma nova redação. A F18
+confere o rótulo dentro do segmento aberto e a posição de cada dívida no
+calendário comum; a proteção da I77 sobre o nome por verificar mantém-se.
+
+## C1c · a passagem de correção de 28.09.2026
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 34 provenance revisions | c1c | retirada | A C1d repôs o limite municipal e registou os excertos; a contagem vigente está abaixo. |
+| conteudo | 34 revisões de proveniência | c1c | retirada | A C1d repôs o limite municipal e registou os excertos; a contagem vigente está abaixo. |
+| conteudo | : (dado provisório) União Europeia : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | : (provisional data) European Union : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+
+Os rótulos dos recibos do C1 ficam substituídos por «Releitura a» / «Re-read on»,
+«a releitura encontrou:» / «the re-read found:» e «não foi possível reler o
+número nesse dia» / «the number could not be re-read that day». Não se atribui
+uma razão que a entrada não guarda. Quando há diferença, «O valor do título
+é o que esta página usa.» / «This page uses the value shown in the title.»
+distingue o publicado do encontrado. A porta «Ver a atualização deste valor»
+passa a render-se no recibo da dívida das famílias da União.
+
+A frase inglesa da dívida municipal intercala o sujeito antes de «collected»
+para não fazer regressar o cabeçalho retirado «Revenue collected». Conserva a
+média da receita corrente líquida cobrada nos três anos anteriores, que o
+literal da DGAL publica. A procura das frases retiradas não muda.
+
+## C1d · segunda passagem de correção, 28.09.2026
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 44 revisões de proveniência | c1d | retirada | A C1f reconstituiu os acessos do PRR; a contagem vigente está abaixo. |
+| conteudo | 44 provenance revisions | c1d | retirada | A C1f reconstituiu os acessos do PRR; a contagem vigente está abaixo. |
+| conteudo | : União Europeia : (valor estimado) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+| conteudo | : European Union : (estimated value) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+
+Os recibos, fora das rotas do inventário, substituem a frase do C1c sobre o dia
+inteiro por «Releitura tentada a 28.09.2026, sem resposta a esse pedido» /
+«Re-read attempted on 28.09.2026, with no answer to that request». A data vem da
+entrada. A ausência
+concorda no rótulo e no texto: «Segunda leitura: ainda nenhuma» / «Second
+reading: none yet». Uma releitura anterior a uma atualização diz «confirmou o
+valor anterior:» / «confirmed the previous value:», seguido desse valor.
+
+Os nomes dos campos da história são «publicador», «endereço da fonte»,
+«documento», «edição», «local no documento», «dia da leitura» e «excerto da
+fonte»; na edição inglesa, «publisher», «source address», «document», «edition»,
+«place in the document», «reading date» e «source excerpt». Entradas do mesmo
+dia, natureza e razão partilham uma linha, mantendo cada par antigo e novo.
+O nome português citado numa história inglesa leva a língua desse nome.
+
+«valor estimado» / «estimated value» vem de `source_flag_note` e acompanha a
+observação nos mesmos lugares da marca provisória. O objetivo institucional do
+BCE tem a classe `objetivo-institucional`, com definição nas duas edições no
+livro; não recebe um veredicto nacional.
+
+## C1e · terceira passagem de correção, 28.09.2026
+
+Nos recibos, a tentativa sem valor lido substitui a frase da C1d:
+«Releitura tentada a DD.MM.AAAA, sem valor lido» / «Re-read attempted on
+DD.MM.AAAA, no value read». A data continua a ser a da entrada. O resultado
+`inacessivel` não permite afirmar que a fonte ficou sem responder.
+
+Uma linha calculada escreve, sob «Segunda leitura:» / «Second reading:»,
+«Recalculada em cada construção a partir das suas origens» / «Recomputed at
+every build from its sources». As outras linhas sem releitura conservam
+«ainda nenhuma» / «none yet».
+
+As quatro linhas retiradas que antes continham o nome do diretor são
+protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
+é lido do Git durante a corrida e não volta a ser escrito neste inventário.
+
+## C1f · os acessos do PRR reconstituídos pela história do Git
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 54 revisões de proveniência | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
+| conteudo | 54 provenance revisions | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |

@@ -1,0 +1,239 @@
+{
+  "linhas": [
+    {
+      "id": "credito-malparado-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:19+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "credito-malparado-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:19+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "quando": "2026-09-28T13:45:50+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "quando": "2026-09-28T13:45:50+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "flag": "e",
+      "valor_conservado": true,
+      "corpo_sha256": "c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:10+00:00",
+      "notas": {
+        "source_flag": "e",
+        "source_flag_note": "valor estimado",
+        "source_flag_note_en": "estimated value"
+      }
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:56+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:57+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:56+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:54+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "divida-das-familias-2025-ue",
+      "flag": "p",
+      "valor_conservado": false,
+      "corpo_sha256": "bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:55+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:54+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=EU27_2020&unit=PC_LE",
+      "quando": "2026-09-28T13:45:59+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:15+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:15+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "licencas-de-construcao-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:22+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "licencas-de-construcao-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:22+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:17+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "flag": "p",
+      "valor_conservado": true,
+      "corpo_sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:17+00:00",
+      "notas": {
+        "source_flag": "p",
+        "source_flag_note": "dado provisório",
+        "source_flag_note_en": "provisional data"
+      }
+    }
+  ],
+  "aplicadas": true
+}

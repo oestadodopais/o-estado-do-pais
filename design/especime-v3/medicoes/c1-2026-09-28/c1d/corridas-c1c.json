@@ -1,0 +1,24 @@
+[
+  {
+    "reconstituido_na": "C1d",
+    "cabeca_na_corrida": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+    "inicio": "2026-09-28T13:45:39.918807+00:00",
+    "arvore_limpa": false,
+    "codigo_em_trabalho_depois_guardado_em": "cf1082be38dda1bf044f1fbfb9b258357faeb98a",
+    "ficheiro_executado": "indicators/enquadramento.py",
+    "sha256_do_ficheiro_no_commit": "dee3b276a3a24a20f1ac4ff332d9de330902d80aba53d2bee154cf2d2c19c68b",
+    "fundamento": "Decisão do lugar de direção no mandato C1d, achado 24 da leitura a frio; os ficheiros tinham sido editados antes das corridas e foram guardados neste commit.",
+    "limite": "O registo antigo guardou só a cabeça. Este complemento não afirma um resumo integral da árvore na hora da corrida."
+  },
+  {
+    "reconstituido_na": "C1d",
+    "cabeca_na_corrida": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+    "inicio": "2026-09-28T13:52:42.051362+00:00",
+    "arvore_limpa": false,
+    "codigo_em_trabalho_depois_guardado_em": "cf1082be38dda1bf044f1fbfb9b258357faeb98a",
+    "ficheiro_executado": "indicators/refresh.py",
+    "sha256_do_ficheiro_no_commit": "d86cb732e8c9827d3b3623cc1c9947dce6c5a5f284b37899eef067d66bbf4e10",
+    "fundamento": "Decisão do lugar de direção no mandato C1d, achado 24 da leitura a frio; os ficheiros tinham sido editados antes das corridas e foram guardados neste commit.",
+    "limite": "O registo antigo guardou só a cabeça. Este complemento não afirma um resumo integral da árvore na hora da corrida."
+  }
+]

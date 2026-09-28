@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<worktree do sítio>/design/especime-v3/medicoes/c1-2026-09-28/c1d/provar-bandeiras.py", line 47, in <module>
+    assert float(linha['value'].replace(' ', '').replace('\u00a0', '').replace(',', '.')) == valor
+           ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '20\u202f430'

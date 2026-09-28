@@ -19,6 +19,9 @@
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.
+     A atualização pertence ao registo e aos temas, fora da lista do país. */
+  'divida-das-familias-2025-ue': 'uniao-europeia',
   /* A CONTAGEM DOS ESTUDOS SOBRE ÉVORA é um apuramento da casa: o campo `study`
      desta linha é `o-estado-do-pais`, que é uma origem interna e não um trabalho
      do arquivo, e por isso não declara objeto nenhum. O que a linha conta são os

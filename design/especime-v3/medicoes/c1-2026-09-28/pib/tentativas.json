@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "hora_utc": "2026-09-28T11:38:27+00:00",
+    "http": null,
+    "cliente": "core.http.HttpClient.condicional",
+    "user_agent": "OEstadoDoPais/corredor",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ficheiro": "tipsna40-PT-sem-corpo.txt",
+    "bytes": 0,
+    "erro": "ConnectionError: HTTPSConnectionPool(host='ec.europa.eu', port=443): Max retries exceeded with url: /eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT (Caused by NameResolutionError(\"HTTPSConnection(host='ec.europa.eu', port=443): Failed to resolve 'ec.europa.eu' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "hora_utc": "2026-09-28T11:39:03+00:00",
+    "http": 200,
+    "cliente": "core.http.HttpClient.condicional",
+    "user_agent": "OEstadoDoPais/corredor",
+    "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+    "ficheiro": "002-tipsna40-PT.json",
+    "bytes": 5750,
+    "erro": null
+  },
+  {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+    "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+    "hora_utc": "2026-09-28T11:39:03+00:00",
+    "http": 200,
+    "cliente": "core.http.HttpClient.condicional",
+    "user_agent": "OEstadoDoPais/corredor",
+    "sha256": "c6a30358bb6db126e00da68d4c97ac64949a425fc680d95b5974c9f9ebba0d4e",
+    "ficheiro": "003-tipsna40-PT-unidade-fixa.json",
+    "bytes": 5310,
+    "erro": null
+  },
+  {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+    "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+    "hora_utc": "2026-09-28T11:39:05+00:00",
+    "http": 200,
+    "cliente": "core.http.HttpClient.condicional",
+    "user_agent": "OEstadoDoPais/corredor",
+    "sha256": "f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178",
+    "ficheiro": "004-tipsna40-EU27_2020.json",
+    "bytes": 5788,
+    "erro": null
+  },
+  {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020&unit=CLV15_EUR_HAB",
+    "url_final": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020&unit=CLV15_EUR_HAB",
+    "hora_utc": "2026-09-28T11:39:07+00:00",
+    "http": 200,
+    "cliente": "core.http.HttpClient.condicional",
+    "user_agent": "OEstadoDoPais/corredor",
+    "sha256": "a25a60e59921b3159cc4aaadabbbfebb86b0d2f90e5c42fde7ba30b51cb29782",
+    "ficheiro": "005-tipsna40-EU27_2020-unidade-fixa.json",
+    "bytes": 5357,
+    "erro": null
+  }
+]

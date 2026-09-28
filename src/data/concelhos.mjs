@@ -179,8 +179,8 @@ export const MEDIDAS_DO_CONCELHO = [
        manda uma coisa num lugar só, e por isso a leitura não escreve a segunda. */
     limiarFixadoPor: 'lei',
     nota: {
-      pt: ['Calculado sobre duas colunas do mesmo ficheiro da Direção-Geral das Autarquias Locais. A aritmética está na linha.'],
-      en: ['Computed from two columns of the same local-government directorate file. The arithmetic is on the row.'],
+      pt: ['A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.'],
+      en: ['Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.'],
     },
   },
   /* AQUI ESTAVA A EXECUÇÃO DA RECEITA (decisão D2 do diretor, 26.08.2026;

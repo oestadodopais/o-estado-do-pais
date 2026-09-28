@@ -159,6 +159,8 @@ function lugarNoIdentificador(id) {
 /** O lugar DERIVADO, sem olhar para nenhuma tabela de lugares declarados. */
 function lugarDerivado(id) {
   const c = linha(id);
+  /* A coordenada selada, por uma via independente da tabela de lugares. */
+  if (c.source_url && new URL(c.source_url).searchParams.get('geo') === 'EU27_2020') return 'uniao-europeia';
   const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
   const doId = lugarNoIdentificador(id);
   const d = [...new Set([doEstudo, doId].filter(x => typeof x === 'string'))];
@@ -204,6 +206,7 @@ for (const [id, chave] of Object.entries(LUGAR_DECLARADO_DAS_LINHAS)) {
 }
 /** O nome e a porta de um lugar, na língua da edição, compostos aqui. */
 function nomeDoLugar(chave, lang) {
+  if (chave === 'uniao-europeia') return lang === 'pt' ? 'União Europeia' : 'European Union';
   if (chave === PAIS) return ROTULOS_B1[lang].pais;
   const r = REGIOES.find(x => x.slug === chave);
   if (r) return r.nome[lang] ?? r.nome.pt;
@@ -211,6 +214,7 @@ function nomeDoLugar(chave, lang) {
   return m ? (m.nome[lang] ?? m.nome.pt) : null;
 }
 function rotaDoLugar(chave, lang) {
+  if (chave === 'uniao-europeia') return routePath('temas', lang);
   if (chave === PAIS) return routePath('home', lang);
   if (REGIOES.some(x => x.slug === chave)) return routePath('regiao', lang, { slug: chave });
   return MUNICIPIOS_COM_PAGINA.some(x => x.slug === chave) ? routePath('municipio', lang, { slug: chave }) : null;

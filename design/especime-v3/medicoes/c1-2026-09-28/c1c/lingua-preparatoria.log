@@ -1,0 +1,9 @@
+
+[31m  PORTÃO DA LÍNGUA · 4 problema(s)
+[0m
+[31m    · [0ma declaração de língua nomeia o título «Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma declaração de língua nomeia o organismo «CICF/IPCA — Anuário Financeiro dos Municípios Portugueses», que nenhuma linha do livro-razão traz. A tabela declara o que existe.
+[31m    · [0ma edição «Lei n.º 73/2013» (1 linha(s)) não tem língua declarada em src/i18n/lingua-dos-titulos.mjs.
+      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ninguém ter olhado.
+[31m    · [0mnome de lei portuguesa sem lang="pt-PT" na edição inglesa: «Lei n.º 73/2013» (1 ocorrência(s), ex.: dist/en/ledger/indice-de-divida-limite-legal/index.html).
+

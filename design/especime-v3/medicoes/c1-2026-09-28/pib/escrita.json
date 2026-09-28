@@ -1,0 +1,161 @@
+[
+  {
+    "id": "pib-real-per-capita-2024",
+    "estado": "escrita",
+    "campos_mudados": [
+      "verifications"
+    ],
+    "source_url_antes": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "source_url_depois": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "valor_antes": "20 430",
+    "valor_depois": "20 430",
+    "verificacoes_antes": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "inacessivel",
+        "by": "painel-semanal"
+      }
+    ],
+    "verificacoes_depois": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "inacessivel",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+        "result": "igual",
+        "by": "painel-semanal"
+      }
+    ],
+    "sha256_antes": "f12ce7f7566137074afc0781d90203394d3520084bc0464a61b78977bf1ebaf0",
+    "sha256_depois": "625fc58e9b58fdfa353bc16e98a5b44aa1bc73121baab1764d066de1dedbe02f"
+  },
+  {
+    "id": "pib-real-per-capita-2025",
+    "estado": "escrita",
+    "campos_mudados": [
+      "verifications"
+    ],
+    "source_url_antes": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "source_url_depois": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+    "valor_antes": "20 600",
+    "valor_depois": "20 600",
+    "verificacoes_antes": [
+      {
+        "date": "2026-09-07",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-14",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "inacessivel",
+        "by": "painel-semanal"
+      }
+    ],
+    "verificacoes_depois": [
+      {
+        "date": "2026-09-14",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "inacessivel",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+        "result": "igual",
+        "by": "painel-semanal"
+      }
+    ],
+    "sha256_antes": "702e4de42e15a9cb63ba373e553a500a0f945c5188126230c7533e13316483b7",
+    "sha256_depois": "4fbbe927b2cc35b36d1e46f6e1b32c18b24c67827414ff816d61912bed77997b"
+  },
+  {
+    "id": "pib-real-per-capita-2025-ue",
+    "estado": "escrita",
+    "campos_mudados": [
+      "verifications"
+    ],
+    "source_url_antes": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+    "source_url_depois": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+    "valor_antes": "31 890",
+    "valor_depois": "31 890",
+    "verificacoes_antes": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+        "result": "inacessivel",
+        "by": "painel-semanal"
+      }
+    ],
+    "verificacoes_depois": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+        "result": "inacessivel",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020&unit=CLV15_EUR_HAB",
+        "result": "igual",
+        "by": "painel-semanal"
+      }
+    ],
+    "sha256_antes": "5f06bf4e01aca7c00edf64973f69b85dc646c5336fe220709dbe679782dce724",
+    "sha256_depois": "6f6ec3e073ab9cf2eda0516384ccaedfbb251f1b7a160e5fc4cba872aaf8df21"
+  }
+]

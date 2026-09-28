@@ -1,0 +1,86 @@
+{
+  "estado": "depois",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "observacoes": [],
+  "cabeca_da_arvore": "cd5557448c430a225eb58b6b257e7f11ef384818",
+  "dist_construido_de": "cd5557448c430a225eb58b6b257e7f11ef384818",
+  "dist_construido_em": "2026-09-28T20:35:20.718Z",
+  "inicio": "2026-09-28T20:37:13.537Z",
+  "fim": "2026-09-28T20:37:47.644Z",
+  "segundos": 34.107,
+  "copias": {
+    "livro-razao_evora-prr-aprovado-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "familia": "recibo-evora-prr-aprovado-2026",
+      "lingua": "pt",
+      "sha256": "be766705fe7e007d8cad81aed058925d3c8b23213373b6e2d49769a26d68d17f"
+    },
+    "en_ledger_evora-prr-aprovado-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "familia": "recibo-evora-prr-aprovado-2026",
+      "lingua": "en",
+      "sha256": "18a38eb0f1d7ed7119bab02cecb436919b738e503c9482ea88c41c78aa2b49e2"
+    },
+    "livro-razao_evora-prr-municipio-contratado_index.html": {
+      "rota": "/livro-razao/evora-prr-municipio-contratado/",
+      "familia": "recibo-evora-prr-municipio-contratado",
+      "lingua": "pt",
+      "sha256": "53f1233d0201d7b7fdcc37cb124787c748254abdaf8f38862acb711f0e33c52e"
+    },
+    "en_ledger_evora-prr-municipio-contratado_index.html": {
+      "rota": "/en/ledger/evora-prr-municipio-contratado/",
+      "familia": "recibo-evora-prr-municipio-contratado",
+      "lingua": "en",
+      "sha256": "5712a9b193f8b5cccc8ee8e138529a044ab2ad2815285b719e0974db67364d47"
+    },
+    "livro-razao_evora-prr-pago-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "familia": "recibo-evora-prr-pago-2026",
+      "lingua": "pt",
+      "sha256": "50a78586e21657a76ba2eb0ca8e7196798284d1ed595a9e61e2a6a06828f0d2e"
+    },
+    "en_ledger_evora-prr-pago-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "familia": "recibo-evora-prr-pago-2026",
+      "lingua": "en",
+      "sha256": "630d9e1c0b5bdaba3cdaf8ecbec31949a63ac4ef3b0155bb472da291595cbaa3"
+    },
+    "livro-razao_evora-prr-universidade-contratado_index.html": {
+      "rota": "/livro-razao/evora-prr-universidade-contratado/",
+      "familia": "recibo-evora-prr-universidade-contratado",
+      "lingua": "pt",
+      "sha256": "03d42c547ab3ee46e78fa570770fb9a29ea8adb8c9116ec3449afcf19a660ff4"
+    },
+    "en_ledger_evora-prr-universidade-contratado_index.html": {
+      "rota": "/en/ledger/evora-prr-universidade-contratado/",
+      "familia": "recibo-evora-prr-universidade-contratado",
+      "lingua": "en",
+      "sha256": "6a56881db82e02650d0f4966e70f16c615ffc84bd355c9e9b0fadac061e0af37"
+    },
+    "livro-razao_evora-prr-vencido-aprovado-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "familia": "recibo-evora-prr-vencido-aprovado-2026",
+      "lingua": "pt",
+      "sha256": "48d4e3070c6f4a9c37836d563edd05ff2ddd543a22162bce86039365cf139526"
+    },
+    "en_ledger_evora-prr-vencido-aprovado-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "familia": "recibo-evora-prr-vencido-aprovado-2026",
+      "lingua": "en",
+      "sha256": "11736f6e71b8ac3013c020425702d976ab5411dc8ed4e9af3a4ae977a597e616"
+    },
+    "_astro/Base.BrImN9-8.css": {
+      "origem": "/_astro/Base.BrImN9-8.css",
+      "tipo": "folha construída",
+      "sha256": "ca0f7bd0a5bf6ba6a47e26b0a5993746e7947a08c5037dad84ba6db99e218e61"
+    },
+    "_astro/linha.kwcknRfj.css": {
+      "origem": "/_astro/linha.kwcknRfj.css",
+      "tipo": "folha construída",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    }
+  }
+}

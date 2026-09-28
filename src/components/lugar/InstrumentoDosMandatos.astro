@@ -21,10 +21,8 @@
  * no estudo «Évora — Quinze Anos, Cinco Mandatos», que é composto do registo que
  * o motor escreve. É uma mudança do lado do motor, e não desta peça.
  *
- * O CÓDIGO É O QUE ESTAVA NA VISTA, sem uma linha mudada: a série do índice
- * contra o teto legal, a banda dos mandatos, os campos de cada mandato e as
- * quatro notas. Só mudou de ficheiro, para que a vista da página do lugar diga o
- * que a página é.
+ * No C1, a série do índice passa a usar o mesmo calendário dos mandatos. Os
+ * campos de cada mandato e a proteção do nome por verificar ficam neste bloco.
  */
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
@@ -89,11 +87,6 @@ const alturaDe = (v) => SERIE.base - (v / maxIndice) * (SERIE.base - SERIE.topo)
  */
 const ladoDoRotulo = (y) => (y <= SERIE.yTecto ? 'acima' : 'abaixo');
 const yDoRotulo = (y) => (ladoDoRotulo(y) === 'acima' ? y - 7 : y + 15);
-const pontosDaSerie = serieAnos.map((r, i) => ({
-  ...r,
-  x: SERIE.L + ((i + 0.5) / serieAnos.length) * (SERIE.R - SERIE.L),
-  y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
-}));
 if (temTempo) SERIE.yTecto = alturaDe(tectoIndice);
 
 /**
@@ -168,7 +161,7 @@ const indiceSeriePartes = !temTempo
  * vai na legenda).
  *
  * NADA AQUI É ESCRITO. Os anos saem de `m.tempo.eixo`, os períodos de
- * `mandato.periodo`, e a geometria é derivada dos dois. Nenhum número novo
+ * `mandato.instalado`, e a geometria é derivada dessas datas. Nenhum número novo
  * aparece na página: os que se veem já lá estavam.
  *
  * SEM ACENTO NOVO. Um mandato não é uma medição, e por isso não leva amarelo
@@ -179,19 +172,36 @@ const indiceSeriePartes = !temTempo
  * desenho e não tempo medido, e fecha-se a tracejado, que é a mesma língua com
  * que o selo diz «falta um campo».
  */
-const BANDA = { W: 720, H: 62, L: 10, R: 710, y: 8, h: 26, cauda: 96 };
+const BANDA = { W: 720, H: 74, L: 10, R: 710, y: 8, h: 38, cauda: 96 };
 /** Um período do registo, «2009–2013» ou «2025–», lido e não interpretado. */
 const anosDoPeriodo = (periodo) => {
   const [de, ate] = String(periodo).split(/[–-]/);
   return { de: Number(de), ate: ate ? Number(ate) : null };
 };
-const periodos = temTempo ? m.tempo.mandatos.map((mandato) => anosDoPeriodo(mandato.periodo)) : [];
-const anoMin = temTempo ? Math.min(...periodos.map((p) => p.de)) : null;
+const anoDaData = (data) => {
+  const ano = Number(data.slice(0, 4));
+  const inicio = Date.UTC(ano, 0, 1);
+  return ano + (Date.parse(`${data}T00:00:00Z`) - inicio) / (Date.UTC(ano + 1, 0, 1) - inicio);
+};
+/* Sem data de instalação do primeiro mandato, a banda começa no recorte do
+   eixo. Esse limite do desenho não afirma uma data de início do mandato. */
+const periodos = temTempo ? m.tempo.mandatos.map((mandato, i, todos) => ({
+  de: mandato.instalado ? anoDaData(mandato.instalado) : anosDoPeriodo(mandato.periodo).de,
+  ate: todos[i + 1]?.instalado ? anoDaData(todos[i + 1].instalado) : null,
+})) : [];
+const anoMin = temTempo ? Number(m.tempo.eixo[0]) : null;
 const anoMax = temTempo ? Math.max(...periodos.map((p) => p.ate ?? p.de)) : null;
 /* O eixo do tempo vive entre a esquerda e o início da cauda; a cauda é do
    mandato sem fim, e não representa anos nenhuns. */
 const xDoAno = (ano) =>
   BANDA.L + ((ano - anoMin) / (anoMax - anoMin)) * (BANDA.R - BANDA.L - BANDA.cauda);
+/* C1: o ano determina a posição, na mesma escala dos mandatos. Só os anos
+   declarados têm marca; nenhuma linha une observações separadas por lacunas. */
+const pontosDaSerie = serieAnos.map((r) => ({
+  ...r,
+  x: xDoAno(Number(r.ref) + 1),
+  y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
+}));
 /** A âncora de um mandato: o seu período, e mais nada. */
 const ancoraDoMandato = (periodo) => `mandato-${String(periodo).replace(/[–-]+$/, '').replace(/[–-]/g, '-')}`;
 const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
@@ -266,10 +276,10 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
               DISTÂNCIA daquele ano ao tecto; o traço fino é o valor. Eram
               barras amarelas do eixo até ao valor, com a cor no gabarito
               (ISSUES I12), e o tecto era uma linha entre elas. */}
-          <line x1={SERIE.L} y1={SERIE.base} x2={SERIE.R} y2={SERIE.base} stroke="var(--axis)" stroke-width="1" />
+          <line class="mun-serie-eixo" x1={SERIE.L} y1={SERIE.base} x2={SERIE.R} y2={SERIE.base} stroke="var(--axis)" stroke-width="1" />
           {
             pontosDaSerie.map((pt) => (
-              <>
+              <g data-serie-ponto={pt.indice} data-serie-ano={pt.ref}>
                 <rect
                   class="mun-serie-barra"
                   x={pt.x - 16}
@@ -302,7 +312,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                 <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento">
                   {pt.ref}
                 </text>
-              </>
+              </g>
             ))
           }
           {/* A referência desenha-se por cima das barras, à altura toda do
@@ -347,20 +357,30 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
               banda.map((seg) => (
                 <>
                   <rect
-                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto']}
+                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto', !seg.mandato.instalado && 'is-inicio-aberto']}
+                    data-inicio={seg.mandato.instalado ?? 'recorte-do-eixo'}
                     x={seg.x}
                     y={BANDA.y}
                     width={seg.largura}
                     height={BANDA.h}
                   />
+                  {!seg.mandato.instalado && <>
+                    <path class="mun-banda-contorno-inicio" d={`M ${seg.x} ${BANDA.y} H ${seg.x + seg.largura} V ${BANDA.y + BANDA.h} H ${seg.x}`} />
+                    <line class="mun-banda-inicio-incerto" x1={seg.x} x2={seg.x} y1={BANDA.y} y2={BANDA.y + BANDA.h} />
+                  </>}
                   <text
                     class="mun-banda-lista"
                     x={seg.x + 8}
-                    y={BANDA.y + BANDA.h / 2 + 4}
+                    y={seg.aberto ? BANDA.y + 14 : BANDA.y + BANDA.h / 2 + 4}
                     text-anchor="start"
                   >
                     {seg.mandato.lista}
                   </text>
+                  {seg.aberto && (
+                    <text class="tk mun-banda-estado" x={seg.x + 8} y={BANDA.y + 28}>
+                      {s.municipio.tempoEmFuncoes}
+                    </text>
+                  )}
                 </>
               ))
             }

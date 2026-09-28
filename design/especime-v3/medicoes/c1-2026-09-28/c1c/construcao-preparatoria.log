@@ -1,0 +1,44 @@
+15:03:28 [types] Generated 26ms
+15:03:28 [build] output: "static"
+15:03:28 [build] mode: "static"
+15:03:28 [build] directory: <worktree do sítio>/dist/
+15:03:28 [build] Collecting build info...
+15:03:28 [build] ✓ Completed in 45ms.
+15:03:29 [build] Building static entrypoints...
+15:03:29 [vite] ✓ built in 282ms
+15:03:29 [vite] ✓ built in 30ms
+15:03:29 [build] Rearranging server assets...
+
+ generating static routes 
+15:03:29   ├─ /404.html (+12ms) 
+15:03:30   ├─ /a-verificar/index.html (+9ms) 
+15:03:30   ├─ /agenda/index.html (+61ms) 
+15:03:30   ├─ /areas/financas/index.html (+32ms) 
+15:03:30   ├─ /areas/economia-e-coesao-territorial/index.html (+427ms) 
+15:03:30   ├─ /areas/infraestruturas-e-habitacao/index.html (+39ms) 
+15:03:30   ├─ /areas/justica/index.html (+19ms) 
+15:03:30   ├─ /areas/administracao-interna/index.html (+56ms) 
+15:03:30   ├─ /areas/educacao-ciencia-e-inovacao/index.html (+33ms) 
+15:03:30   ├─ /areas/saude/index.html (+18ms) 
+15:03:30   ├─ /areas/trabalho-solidariedade-e-seguranca-social/index.html (+152ms) 
+15:03:30   ├─ /areas/ambiente-e-energia/index.html (+23ms) 
+15:03:30   ├─ /areas/index.html (+22ms) 
+15:03:30   ├─ /correcoes/index.html15:03:30 [ERROR] Error: mudancas: a linha "divida-das-familias-2025-ue" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+    at file://<worktree do sítio>/dist/.prerender/chunks/mudancas_8hu1Dl39.mjs:271:21
+    at Array.map (<anonymous>)
+    at correcoesDasLinhas (file://<worktree do sítio>/dist/.prerender/chunks/mudancas_8hu1Dl39.mjs:267:82)
+    at mudancasDoRegisto (file://<worktree do sítio>/dist/.prerender/chunks/mudancas_8hu1Dl39.mjs:310:6)
+    at file://<worktree do sítio>/dist/.prerender/chunks/CorrecoesView_rTI6j060.mjs:25:19
+    at AstroComponentInstance.RegistoCorrecoes [as factory] (file://<worktree do sítio>/dist/.prerender/chunks/Base_C7ze8bEP.mjs:27:10)
+    at AstroComponentInstance.init (file://<worktree do sítio>/dist/.prerender/chunks/server_C_b4WhTs.mjs:1707:27)
+    at AstroComponentInstance.render (file://<worktree do sítio>/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
+    at Object.render (file://<worktree do sítio>/dist/.prerender/chunks/server_C_b4WhTs.mjs:2369:19)
+    at renderChild (file://<worktree do sítio>/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+15:03:30 [ERROR] [build] Caught error rendering /correcoes: Error: mudancas: a linha "divida-das-familias-2025-ue" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+mudancas: a linha "divida-das-familias-2025-ue" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+  Stack trace:
+    at file://<worktree do sítio>/dist/.prerender/chunks/mudancas_8hu1Dl39.mjs:271:21
+    at correcoesDasLinhas (file://<worktree do sítio>/dist/.prerender/chunks/mudancas_8hu1Dl39.mjs:267:82)
+    at file://<worktree do sítio>/dist/.prerender/chunks/CorrecoesView_rTI6j060.mjs:25:19
+    at AstroComponentInstance.init (file://<worktree do sítio>/dist/.prerender/chunks/server_C_b4WhTs.mjs:1707:27)
+    at Object.render (file://<worktree do sítio>/dist/.prerender/chunks/server_C_b4WhTs.mjs:2369:19)

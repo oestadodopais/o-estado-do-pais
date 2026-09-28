@@ -1,0 +1,14 @@
+  sítio: <worktree do sítio>
+  3 claims in study 'quadro-institucional'
+
+  ALARM   pib-real-per-capita-2024: structure — dimension sizes changed: {'unit': (1, 2)}
+  notice  pib-real-per-capita-2024: metadata — dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-09-28T11:00:00+0200
+  ALARM   pib-real-per-capita-2025-ue: structure — dimension sizes changed: {'unit': (1, 2)}
+  notice  pib-real-per-capita-2025-ue: metadata — dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-09-28T11:00:00+0200
+  ALARM   pib-real-per-capita-2025: structure — dimension sizes changed: {'unit': (1, 2)}
+  notice  pib-real-per-capita-2025: metadata — dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-09-28T11:00:00+0200
+  vintages: 91 linha(s) com história · 3 entrada(s) nova(s) · 138 no total
+  corrida delimitada: sem carimbo global do sítio
+  reconferências escritas: 3 igual · 0 diverge · 0 inacessível
+
+  3 alarm(s) · 3 notice(s) · heartbeat stamped 2026-09-28T13:52:47+00:00

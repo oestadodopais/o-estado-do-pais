@@ -21,7 +21,7 @@ access_date: "2026-09-15"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6"
+excerpt: "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6 p"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +33,18 @@ study: "quadro-institucional"
 note: "Período anterior da medida «divida-das-familias-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 55%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Household debt including non-profit institutions serving households, consolidated — Percentage of
+    gross domestic product (GDP) — Portugal — 2024: 52.6'
+  new_value: 'Household debt including non-profit institutions serving households, consolidated — Percentage of
+    gross domestic product (GDP) — Portugal — 2024: 52.6 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -48,3 +59,9 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
     result: "igual"
     by: "painel-semanal"
+
+source_flag: "p"
+
+source_flag_note: "dado provisório"
+
+source_flag_note_en: "provisional data"

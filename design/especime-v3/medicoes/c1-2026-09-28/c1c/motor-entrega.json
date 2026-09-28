@@ -1,0 +1,12 @@
+{
+  "cabeca": "ba47a125e68c9a87cc4bb5fae4524565bb413e7d",
+  "arvore_limpa": true,
+  "commits_c1c": [
+    "cf1082be38dda1bf044f1fbfb9b258357faeb98a C1c: ler coordenadas e bandeiras e repetir o painel sem perder a tentativa",
+    "ba47a125e68c9a87cc4bb5fae4524565bb413e7d C1c: alojar as respostas do gerador, do painel e das origens oficiais"
+  ],
+  "pre_commits": {
+    "motor-commit-codigo": 0,
+    "motor-commit-provas": 0
+  }
+}

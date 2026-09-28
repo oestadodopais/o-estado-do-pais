@@ -1,0 +1,2167 @@
+{
+  "cabeca": "6bbe1cee5f7167ba7bb317733ceef7e4b71ab413",
+  "limpa": false,
+  "diferenca_sha256": "0f093853ac5f0428c1fcfd3d757ff8096b8c22a803d28b01fccfe13ce693a241",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "sha256": "e9914c19fb26f4c91865a9482acd95339198eabdb4a77360fbdf536aa848b317"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1c/gerador-rede.arvore.json",
+      "sha256": "06a679a2d697dcce3da77d5583e0655d37d5c6da5c2ff707a162ac38833abe76"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1c/gerador.log",
+      "sha256": "221da0011cc5484f8c8afc3aeb095e74f3815de995c3d94fe164d2adedf62f49"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1c/painel.arvore.json",
+      "sha256": "0588a9a696246aa6f2c856efa8e1fc029e86aad31d97f6cf7f7cf6cc30020058"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/acertos.json",
+      "sha256": "1c5d6402c7f7de419eba7f294aa637ed1ae0be499343fb302295ee0178a16b2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditar-leituras.mjs",
+      "sha256": "50e7a1e4f9c7eec2e4d176fc5a734b6c758fcdeb6c0e40afcee9e8dda75e4814"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria-2.arvore.json",
+      "sha256": "cbb89edab72a3af8ae7672715a98d0394a9e249f2c61c73bc869a842d3679b18"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria-2.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria-2.fim",
+      "sha256": "72b481675bf01ccf5aa506c1a781211ebd67911462399171f3ffaa6f77c4ea26"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria-2.inicio",
+      "sha256": "b8409a427428ad521824c4e69fcbaa47cad3bf3d4e45dbede49c710a8ac6710e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria-2.log",
+      "sha256": "4a862a586ad83a5037589b772374988c1ff1912ba60da66629f8e072669437f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria.arvore.json",
+      "sha256": "f6094b38bf18b1425d1d6f8d899d7bdeac358a608c5ba5f6aaafbb23e2d035e9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria.cabeca",
+      "sha256": "fc98f5013ed4cf1a425d9be472abb42e60ea859d7d7f224c5f4655776640713e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria.fim",
+      "sha256": "bc51751b3c216a9dd9e7f2d34e52aba881774b191072497b7aa65fe52629a334"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria.inicio",
+      "sha256": "10e0f87e3ec9acdce38f3f16aa90e70e73d0201497d0e8310238d37ec91f4656"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/auditoria.log",
+      "sha256": "4a862a586ad83a5037589b772374988c1ff1912ba60da66629f8e072669437f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-2.arvore.json",
+      "sha256": "748506c5c4b53691a10887653fa3a2bedd3aa8f0a9ac87602dffddb97faa7ae2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-2.cabeca",
+      "sha256": "fc98f5013ed4cf1a425d9be472abb42e60ea859d7d7f224c5f4655776640713e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-2.fim",
+      "sha256": "bb0ed6ac5e9df115c82063806de53310039f235fcf4c9629f347ff89bd09f160"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-2.inicio",
+      "sha256": "980efc068fbab7f0057e8d59ce71c35d88ab2ca596a4101bd6c0d7452463e695"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-2.log",
+      "sha256": "768fc1fefb745f2f8c4576847a1995496914361f1c750873327daf7875299b2a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras-provadas.json",
+      "sha256": "0793720d85f7aaf90df7a638f0650000a87378683819dee31bf4e2acfb5fbd9f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras.arvore.json",
+      "sha256": "036a628e2f9cef404709f7d25c19d0d32a5a7a5b573df70a6782df373eaf4fbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras.cabeca",
+      "sha256": "fc98f5013ed4cf1a425d9be472abb42e60ea859d7d7f224c5f4655776640713e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras.fim",
+      "sha256": "26396ace7ed52abfa6c8d3d451622eda536e34b93d7934649851a0e1c614b59a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras.inicio",
+      "sha256": "d4e7635f7937be07430a2c4b8a3c547245ed25dd08ee4e0387ce81c98b5e249f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/bandeiras.log",
+      "sha256": "8d12ee3e16d2e0f26681fa7e0dc735ba96d86a81cae25297c81ad4fd59a6f399"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-construido.arvore.json",
+      "sha256": "45a6d68048eac8cfb692264d22ab58ec5adab3e688a3255647c5922d715f360d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-construido.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-construido.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-construido.fim",
+      "sha256": "05a6132b1f853621d18b8ededb2ced8c502fca9226977968b75a44adff1b0612"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-construido.inicio",
+      "sha256": "7cc17a2d6444ac58e73a562560d3c1041250d08f4d0470b34419a57397a8f994"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-construido.log",
+      "sha256": "f7c4ba0784bf1b8f0c3dd2553cba047cec72c23de024fce4273cf6c1d4c707ee"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-final.arvore.json",
+      "sha256": "b98de13f6680523a4f5b3014513c5f34c1cf4c432c6a5255a04db3deedaab10b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-final.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-final.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-final.fim",
+      "sha256": "1a29b1d0d76b514a0a03e78a27639beacfd3da494cbfa4b333fcc149d78359e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-final.inicio",
+      "sha256": "8c9b764adc6d20a21e728a01ee61493ac7ecf5201296be4134a74ea336cd5d51"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-final.log",
+      "sha256": "f7c4ba0784bf1b8f0c3dd2553cba047cec72c23de024fce4273cf6c1d4c707ee"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.arvore.json",
+      "sha256": "57e4adc370e2839f19411ab14126ee33038e6ad54becb107b1d50d7739c13333"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.cabeca",
+      "sha256": "722f86775d254d3d0198fa80cd5f638f65d6fcc2c3330c2d8b949122793a1956"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.fim",
+      "sha256": "7ebf19b64ae453da82f288fe507a33718d7eea5bdcc354f1dfa59d15ade64668"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.inicio",
+      "sha256": "7de5382f7177f931c1e5e654cb9658f591ea8bad02794bbdd32f59c8d845461b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.json",
+      "sha256": "81bbcf4ad9f137c08cebcbe1473bce471d2695fd6c783b78db7db0d9e06e61d7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario-memoria.log",
+      "sha256": "81bbcf4ad9f137c08cebcbe1473bce471d2695fd6c783b78db7db0d9e06e61d7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/calendario.json",
+      "sha256": "f7c4ba0784bf1b8f0c3dd2553cba047cec72c23de024fce4273cf6c1d4c707ee"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/captar.mjs",
+      "sha256": "ae2bce578dc59be1fc84138801fee4b1345c6b177aa850765e081d8cb240fb61"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas-finais.arvore.json",
+      "sha256": "bbd9374dd31e7efea1e7a359399c5ed7dcf58d92d400951651ff59e30dba0ca9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas-finais.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas-finais.inicio",
+      "sha256": "6798e626b9b6a53a3ca299fb6a7d384217c533f8c016fd9e0b8cea50d41286d8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas-finais.log",
+      "sha256": "72f4d4f23f20149bd62899af1e6f1c7752b3f3a9f30e7f84d09dcbb97056c7a6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-en-1024.png",
+      "sha256": "6bfd8014c873fb8440f0cd6272541a8aeb8ef51c65ac4d0ccbd73b4549a200ac"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-en-1280.png",
+      "sha256": "18feb1983227664f74f897320b5515893845969046da0c8e2ab85b6b6def34c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-en-1600.png",
+      "sha256": "7d6536309b84e2f282e6cd4a4315e2b37ac7c08ca85c7695c671b3aaf619b66a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-en-390.png",
+      "sha256": "4a4ed0c5387100193b239d2b19454f2b2188a68bbd02d6cd9f2d152a0dc83b43"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-en-768.png",
+      "sha256": "720b08ccaad95253e336b8bb8ac69c107ca163cc41d63d8f12bff6186767a083"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-pt-1024.png",
+      "sha256": "b00b65a62551779b878bc9b3165671fb8f8785927fe5b544c4ae05fb480bf9ca"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-pt-1280.png",
+      "sha256": "2fe1f6c4c60fc63983b6c2215df6820378c7df29798cbe350239713d367e3b43"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-pt-1600.png",
+      "sha256": "1622767e4a6eb7c733ab3de113c6c836e2b9066bdc54716243c46e8b87baa1d3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-pt-390.png",
+      "sha256": "d268809338e67a0966b21d15a0486db9a996c2ff98c23bd8ea50ccd92f159a98"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-calendario-evora-pt-768.png",
+      "sha256": "1437837f51c1b42d91c5aacb2d8c18deb80c715f8f4e21bc1299c3251b7dcfdd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-en-1024.png",
+      "sha256": "d61be34ee91cf41045c0c7db7db76296eeda1465c07c045945ef291ffd99d9a5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-en-1280.png",
+      "sha256": "2b39985d6aff0c647045d8395889aa8b247b1289c2920bbd4bd1515ef7224cba"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-en-1600.png",
+      "sha256": "a06235de9099820acf55aac9ffc5344fe845e59340559821d652795aa36a5813"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-en-390.png",
+      "sha256": "fc30480ec6f71c69c1696fd404005be653c2bf6d9363c66165f4733af028bd58"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-en-768.png",
+      "sha256": "8b0fb067178a3c828acd9f1a8409bd1e142b7356c2cbe43f7ec6401e44330050"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-pt-1024.png",
+      "sha256": "4184b3f5b316b11f003dfea7213784bf2c4ac7276c6f93bf77fd4f8d5472473d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-pt-1280.png",
+      "sha256": "bcf57d41d562cfbc112f2161d50ca22816009ce92bf2ffd75bf821c5150efdc9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-pt-1600.png",
+      "sha256": "b501328a07cfdc0b941b6be690ba9028090883c97b4d1a478b2f4d6764952d07"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-pt-390.png",
+      "sha256": "f1bb2b4357d4f38bb68e5ca2ec3cd0ff560f8a1c9f0b87e5b10ed8bb9e3e29c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-custo-unitario-do-trabalho-2025-pt-768.png",
+      "sha256": "759e30b0837c6c855cc8ae55ed900d00479b8045f94ed730344b98612406d3c9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-en-1024.png",
+      "sha256": "3eb81754ce27e47ef80eca4ebae2f4d18fba99ff4929b977e6f4058fbb5632d4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-en-1280.png",
+      "sha256": "a9a7b610c7703420bcf56b7821f1220a8ec67268d5b5f62dcd5d2b469752b0d6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-en-1600.png",
+      "sha256": "1bf99a9239f77cb0e1243c89af72d03c392af0484ca417665feab2f6eb695bd2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-en-390.png",
+      "sha256": "0ef9219e76ea2e851324626430ac3774ed20d8d82a7d05a74c084f336d5ed7e8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-en-768.png",
+      "sha256": "095ed2f12261f775fd4298853c402e06653c9f4e8b50494b7002a70edda6b7ea"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-pt-1024.png",
+      "sha256": "3aab5d7457744beab96d16d41859069379dcba39bc461ec41b03f3e3e000f4c3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-pt-1280.png",
+      "sha256": "58be0c8151bc3ceb54d5853f02a8f731a95bc96e7f58cb690f209a8bbae99c12"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-pt-1600.png",
+      "sha256": "c0f284d7a5af0e9c4835d7468f87b7921b69fd2c8176de57bfbf2c2d41e671e8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-pt-390.png",
+      "sha256": "654e1d65c3f8325962f25c1f2605da74967b90b2fa310e9ed7ab55c0253a9795"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-despesa-em-id-2024-pt-768.png",
+      "sha256": "e6027bc5821d8b1f62bfb82efb3941d861e6f1b523da9116a33a1b77c41c3246"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-en-1024.png",
+      "sha256": "bf3455c047d82322add8615bc5c65e33053fe40b09268f795d8480e6865591cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-en-1280.png",
+      "sha256": "7567a0b26c87d4d93f70698426207f650538097b5b6e82397e560922b8918781"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-en-1600.png",
+      "sha256": "71084e539a91230dbc5a097a3810ed8a314c1ad33adfcad51891789f4a393e6f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-en-390.png",
+      "sha256": "b35f1847a58b1114fe73666cff7faadea0e4521dadb51c506debb2fd968e2fc0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-en-768.png",
+      "sha256": "95985ee35d2c0249c287d32db323633b93a9d878e4097d57953ad3d6c165efdf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-pt-1024.png",
+      "sha256": "c1282c463e4613ce1b34ccc6d43d55614a9341692831151c826b8ab989d26c7e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-pt-1280.png",
+      "sha256": "5d09e08dcd3b66d047d4a19d6701b0dc90ee212d8bb79f7c6c01de4b1eafd748"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-pt-1600.png",
+      "sha256": "7eb626d79ecf3ec2d6fbb67deadcdf6805633c9e35db5ed21119421607af03ac"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-pt-390.png",
+      "sha256": "f5ff72ae78ea7ccf4b307766ee57bf8be2db515de9ec84d19fcf964204df3bf1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-empresas-2025-pt-768.png",
+      "sha256": "7f00722be34f1663323ac640520c4ddd496e9b38cf01abb52e65561d2085e6a6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-en-1024.png",
+      "sha256": "9f0d5d1fbc64593767435443e4732e17cf04091f3ed0c1f7668ef4a163affe05"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-en-1280.png",
+      "sha256": "c03e7e3a25bc006296fe204f2e40ff35b79bf9982649a199375a0b8039e9f3d2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-en-1600.png",
+      "sha256": "7d07fc6f948a0752ba7ecadabe0f3faa83d7cb907779dd999c32585695b82cb1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-en-390.png",
+      "sha256": "b899a1d3d5edfcf988361d905bded7123128d18bb0d2bce0d7593e28857a6137"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-en-768.png",
+      "sha256": "6de8ef578d479260874464d390effeac9fd3150d22379376c413fdf84e7f7483"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-pt-1024.png",
+      "sha256": "43decde7ed966d17e25e019cb2b9dff416eb431ced91929297fba6f3b8136a6c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-pt-1280.png",
+      "sha256": "9f9c873a1773448d88ff8ff9b04d481d7d10ca90452b132615d8633c33d6233e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-pt-1600.png",
+      "sha256": "e00558d4967967f2661ba7d9c6f73b1082bb4269066728c7fed4dad2ef9ae892"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-pt-390.png",
+      "sha256": "fa29e2abcc0a80b9438fe3b1a90f563be2c046ee5b81e25779447f82d368209e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-divida-das-familias-2025-pt-768.png",
+      "sha256": "99870388c819da9394786d97f526d02ae9d13c54d31ae2804618ea031db3230b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-en-1024.png",
+      "sha256": "a45c15a9c47af8b03b336e20abc636de1766a56daa9d0a72da96d95afccedf49"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-en-1280.png",
+      "sha256": "9121e3c4edb4d64b250a89335a17d41940a0246af63ed5cff382da91d5675f31"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-en-1600.png",
+      "sha256": "b6c0a99d2d541198752fb5832c25153389cdef69395aa63a8d245af8637682fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-en-390.png",
+      "sha256": "9daea3ce08367f8f31765f0bdb6351cf786fbbe554dbeb8a1ddbdc6cf4ebf169"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-en-768.png",
+      "sha256": "fb992ea811e9fa4aa5874cad46b3e4ce1cf14b63829c1632eb8cd1ac07241125"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-pt-1024.png",
+      "sha256": "1709f9ea608cbf56b6b59491413adcad4f24f6485d544009dce9e35c5d14f560"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-pt-1280.png",
+      "sha256": "fc9c825dbc87475150b843f50ec88f01779072326082e55c94dfc80347cc6f27"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-pt-1600.png",
+      "sha256": "f3fdd3f97cb3bce875a869b4cce8036f7d5b6bc4e4304fc7b230a9704f9afe05"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-pt-390.png",
+      "sha256": "3ac31f928653a8b92b7ccbbfb9c19b465b010f4b5d4e5ea6a33293a2eb9fd89d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-indice-de-divida-2024-pt-768.png",
+      "sha256": "3f23c8d7dedd24bf864f62cdcd1e2ae88fc30dd788d61fa797ba02fdbf4b6530"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-en-1024.png",
+      "sha256": "2ca2decf1453ada9b7e6200ec7d1cc638a6bdfc649a5bc7072191ed4f0260037"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-en-1280.png",
+      "sha256": "c4f1ba318337f709402e1378dd983acc87db8a16a9acc662329581d4cb6fe855"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-en-1600.png",
+      "sha256": "1171fdb404f5c51217c2a4b519e7bff2ec38d564c502f65c27d0657dcafae8b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-en-390.png",
+      "sha256": "237bbb80168e78c368f14e37b25b8b32a44f0f9f6e2901262ddf90825226179f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-en-768.png",
+      "sha256": "2f41e4b45e740ac8b1202cfe159826285f11c3dc784c2eccef7ee4abdcaaa602"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-pt-1024.png",
+      "sha256": "c1a350404d4c1cc2877656f4fd3d722fd41295b2a48c573beb5b13b98c5e6028"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-pt-1280.png",
+      "sha256": "c05f132958aa5bca1e68b8988df7c1aff0cb47b9c3f58e9614357a90b097753b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-pt-1600.png",
+      "sha256": "a830527b8d94ed1bbebef107dd25360d945401b731d91173189a67a87fb860a6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-pt-390.png",
+      "sha256": "3d0491724c79883f281ec3d1dbb360ef24136c20eb69ee59e79cc547fb0f5fe2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-evora-prazo-medio-de-pagamento-2025-12-pt-768.png",
+      "sha256": "792ecf6a23b30454ec5781cf96006e1fcc2753e57282171fef4df5e877c89b06"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-en-1024.png",
+      "sha256": "5477d01bd411fcb30037931788605c8e61f1d4b619744f0a1473552d9e06334e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-en-1280.png",
+      "sha256": "8ce39f19d6bcda353e3436b932411d9ccfec863525f4d8d768aca0801c0a3a63"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-en-1600.png",
+      "sha256": "a3f9806e9568f2a0f9177abd1ff02650eab29c381d11c523451410823c36c3b2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-en-390.png",
+      "sha256": "6fb0a2b49ee0b8e864cf91b25e94e457893bf7df958a4c9e9382d749aa9a5911"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-en-768.png",
+      "sha256": "11f8205acb890c3eb4d54ef9ba9a3c9839118ab047496b507b1d2f9b13e777db"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-pt-1024.png",
+      "sha256": "d3e368fc66f01e480b5cf14a9b5a5637142f7d19c7b4cef5ee735e6da802abe3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-pt-1280.png",
+      "sha256": "689bf961f51904f3c003e38d626941cf3284973af9170d7ee1f0ccb08eb47f2b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-pt-1600.png",
+      "sha256": "aca94e693ca34dfb9e0c69241ac5d59c5c9ee5e6b4f5ce5c9ab2f35fc2c5296b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-pt-390.png",
+      "sha256": "4868ccee7c7d50a4530b204a8109e96086cdb3bf76df8b5e9b64a7bb783c0871"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-fluxo-de-credito-as-familias-2025-pt-768.png",
+      "sha256": "3ebfae174f1e0150b9bd9c90881d9642a44fe0fdf246bdc385d44656afd19cc3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-en-1024.png",
+      "sha256": "f9308c7f45fceeb05cf1fbc952bbfc83379933d04935a94e479e64acc54a5348"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-en-1280.png",
+      "sha256": "464ef8504c6ae4c087bd902653006eaf24913cdde6df15a931be5a4a71ae988d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-en-1600.png",
+      "sha256": "8b141c944425a49ad0af2237dc5d130104b462e8531e1e3e65366d48670b19c3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-en-390.png",
+      "sha256": "93cb43a5db3f3392a4ed0ded771fdc30410d608a28347fdc278ce242e264ff36"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-en-768.png",
+      "sha256": "1f5316b273596c30d164df7ce6d0a93feabe26ff9165b00cbc087ffad7f50f3f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-pt-1024.png",
+      "sha256": "77ab0cc354520b8978d22490e0aede2f5f1ca6f37ef7a0e910f16a6a22bd852a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-pt-1280.png",
+      "sha256": "730116bf5a8d2430092e0350c1cff4563ef4c0b3eaf249b6214c3f0434b6ddad"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-pt-1600.png",
+      "sha256": "d14c0ef3da3940ca8efa3efeb8a49ad72dd348add1b496ed3ae53677efb3608d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-pt-390.png",
+      "sha256": "5d4c5bb6543f023afca586aa15bda13ddee6b7c9649258c9120597fd9b9b17eb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-formacao-bruta-de-capital-fixo-2025-pt-768.png",
+      "sha256": "ef8559e03a2c3151621c605d11c3e02a5b81b477109ac42b7f7f71035d2eeb09"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-en-1024.png",
+      "sha256": "4715902829b15696f74f32bfc0050668eb1dfe89573516b134d82202269fdb0e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-en-1280.png",
+      "sha256": "9a05be45a9bb3722954d7247517e00ef83e60799aafec58708f8c7ee9e477b64"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-en-1600.png",
+      "sha256": "e91940b9a75c4c9957500bc55f20fdc9096d1a6c9a7b941f2c0132522b98250e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-en-390.png",
+      "sha256": "155536e6f4921a3ff52cd0a533fc6c406f5ac21f7e9a7fea910edeeef7978f81"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-en-768.png",
+      "sha256": "4fdbc7fc7e1f6418d718e18dcc2db346ba75d78ae9a1a8d4a36c5b58587b05f8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-pt-1024.png",
+      "sha256": "17503409633747c3a6d3cd04c37b154b4df7a1d8a4932e5cdd21241b4dd7317e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-pt-1280.png",
+      "sha256": "80330df78f278de333abb409a1c50e5ed69b654915604219e5a4d81c7f92ea52"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-pt-1600.png",
+      "sha256": "dc18ed93f392f8dff3ca91aa6f26b08309a0f25b8ba0535de7ef61f807bbb879"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-pt-390.png",
+      "sha256": "a0c77a1dcd2df2772b978b37bf4c7e13a38cd15dd04504eaa1fb5f8a41c4ef9b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ihpc-variacao-homologa-pt-768.png",
+      "sha256": "eb3e6acaf6c4cacddf8c4f99b7253d00b020969f265f4c55b84c5f8da20dc73c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-en-1024.png",
+      "sha256": "2afb2f31f4435c13306e6dec4f9c9ef5841a831c8494791d929e0ef58166faa8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-en-1280.png",
+      "sha256": "a079dd5decbc5b82ad6321fe4b1762005ef07acce1fdc732761bc674164d7b23"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-en-1600.png",
+      "sha256": "27b17995f418566aee2a901feaaf120b6fbd244771f6a5e17258253499bf15e9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-en-390.png",
+      "sha256": "373e089901e97b57cef16052c03faec6618aed11c5c9dba890159d9f7941cd0f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-en-768.png",
+      "sha256": "c16cfcfd1396b5a18837375bcb169845d22874482c78c467762bb244077748f7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-pt-1024.png",
+      "sha256": "988366e3bb6c6ed26ff91f51b7f38cf8f9ab0530dd33f3b367e38d1b74b7d977"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-pt-1280.png",
+      "sha256": "75cd14cf51d6f5bcca9ed3b01c5f605a756cb2ab67ee1e8d48d9c017057d3baf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-pt-1600.png",
+      "sha256": "d946fedd76822bd400d0e5e55167ddeed8c361ae191c0b3a7cad92de1b82af4f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-pt-390.png",
+      "sha256": "ea794fa0f522d27b2deebbadfa05bcb1026dbc87eb7ef6bb95bf5677b8036215"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-ipc-variacao-homologa-pt-768.png",
+      "sha256": "7d36ee3c40438953710a8c64cdccb11a1c763f04b5b473a5d829e28e3550add0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-en-1024.png",
+      "sha256": "c7ce070333cf219b92167f867d79ac86d1dbe47d21a57feadf883800884c4a62"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-en-1280.png",
+      "sha256": "c90fc1f12b83bd3f415d09f3062c96f06e8236e2883e198fec86e294847b7463"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-en-1600.png",
+      "sha256": "e84e189f65700da7c61d7a0aaa51219a5ff0fa8c86916b1ed6cbd7c7bc499f56"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-en-390.png",
+      "sha256": "9ac1c9a4af62cbf8a2adedc9bc781fdb1fccdeaf430218f33a527324461175e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-en-768.png",
+      "sha256": "88cea68bc85b7f5cc756d2f6067e8ded768165c42015aad4cfc97533b9cdffa7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-pt-1024.png",
+      "sha256": "09cbb2b0b00d0563dbc403dd0684c88c8bab9f91f0d089a31055a183574c303e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-pt-1280.png",
+      "sha256": "af26e98f12f0678200798934ffe99afe130ce7884ce3595b258e08f02907683a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-pt-1600.png",
+      "sha256": "fadef69249a99e019fc670d08b620703fde321cc1e35c1fa8f34956c6e6ae1b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-pt-390.png",
+      "sha256": "02bc9aaebc81ad0a8bf97aba1c6dfaa9e46b24558996009d61a5f07074e9571b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-licencas-de-construcao-2025-pt-768.png",
+      "sha256": "ad18535d7e3697d82c92a13372fc9fcf8e2d746128d521c47e3330d9d4719e75"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-en-1024.png",
+      "sha256": "cebd091a8923c36e2a3e8608cd1434a66a8f61cc2d9ba2a28ec7ab82ef0bc247"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-en-1280.png",
+      "sha256": "6d5afee79451b739660eedda15933939f30c93b1c72428b27293c411a6b21e02"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-en-1600.png",
+      "sha256": "7e00d3d4b4593ff0a9d125241ebb5475fa159e5ac392e1a986b2aa455d3d7669"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-en-390.png",
+      "sha256": "efdbca521e17b26edf00b46e9adcf2f5599a110b0031dfce7f5ecaf43927f7e1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-en-768.png",
+      "sha256": "308e42670c5bafd711693fce8fc60096abd9d61cabb32d02fa456f04c10ef540"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-pt-1024.png",
+      "sha256": "bdafd74b765c9193fe46a427633ecc3b36ee21af07123ccaf9798aa409938fd0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-pt-1280.png",
+      "sha256": "58be0c8151bc3ceb54d5853f02a8f731a95bc96e7f58cb690f209a8bbae99c12"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-pt-1600.png",
+      "sha256": "615bbef694d1c1c8746a626f0c150247b3c6b47cbcb5ec929bc3ca1e49aedc26"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-pt-390.png",
+      "sha256": "d4cc2c8a61844820989130208b903933abc14383d7f7f6479c11afa52b86588d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pais-despesa-em-id-2024-pt-768.png",
+      "sha256": "b00055a0e046f9c521849379d47b3f5e19c12980e41841778b6eb4d12091501e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-en-1024.png",
+      "sha256": "5c66a6428241fbe18bf2350382ebf39865acfb6915af18cb7aa71b1974aa38b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-en-1280.png",
+      "sha256": "3de86a2f22a93736c9688d0621c82f92fd606648ac6f06b66eae7c9df57e26fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-en-1600.png",
+      "sha256": "b0d733cb99cba3616b9d70567c7cd7c3fa623b38e95fece35bbf4812602b1802"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-en-390.png",
+      "sha256": "f340f4b40848771a0302e796da6d74eaf753a42e0239b08f52ae568e7bc9799e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-en-768.png",
+      "sha256": "8819ed3663285b34adb65152ede52b9f5dd1a970ed9185099f67fc01937e4f3c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-pt-1024.png",
+      "sha256": "d6783d21bcf17b187e0b2b5ced7d31b5f4e9bdffce72abdf0b13a27e0348adb2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-pt-1280.png",
+      "sha256": "70cec234bda524d3b20f5616aae0f00a31f17a008df499d4dba488da428200f9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-pt-1600.png",
+      "sha256": "a4eb388ee52e6b066be6bdf01eb2b9c77b31ce681ecccb47f52601a0e80231d9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-pt-390.png",
+      "sha256": "5e65e440d98725aa62062c1e9980b2b791fd945624a473724d15698354b5e0c2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-pib-real-per-capita-2025-pt-768.png",
+      "sha256": "d159fd9a363d3f21e88dafcd6022029335cce37c80dffc7f594aefb59d2f0b00"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-en-1024.png",
+      "sha256": "dccb918018f6acbbbe9e03ad1178a18cb09cf6c1c0bf0f9bf03eb28f08007f14"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-en-1280.png",
+      "sha256": "70a21eb0a667696bd9b9bbb3056f8a2bc87f010ced78aba295b2216b10d00cd5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-en-1600.png",
+      "sha256": "e08b6777b9a406de5ffdb78d307eda880ead514d6534c32edacbf8cd511b176e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-en-390.png",
+      "sha256": "0f5b2b29d8f48d62368f57e2e135dbfc123273e58a483ca6045bb46967164463"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-en-768.png",
+      "sha256": "17731a3e2af14438a82196439b4c20689c60a4506ac93fcc07463965cdf552fa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-pt-1024.png",
+      "sha256": "f8549943e88cd6083f3d33c87e647c4e431c98067d8d0eeeff7804d87d3e7f3c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-pt-1280.png",
+      "sha256": "663f52340d5af2d39570fc28db4a12429f8118a3c71f4de5f624c11aa97bbc61"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-pt-1600.png",
+      "sha256": "fd58d5596353a10c4e779ee78d43409470a64c4cf16c43a407f35e190435351b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-pt-390.png",
+      "sha256": "1821aa53be56a56a8e503beebb4b4aea6848a72c1c2f76f64570e331863f0dfc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-cartao-taxa-de-cambio-efectiva-real-2025-pt-768.png",
+      "sha256": "4230f2a73186ee4b928dacf112d34978cbef80a33373eaf17231a53400e4ed2f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-en-1024.png",
+      "sha256": "e73ae03432ce7a7bc1dcaba05704f972829b7f08ce7a07081c66dfff4737d4b8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-en-1280.png",
+      "sha256": "607624c27ccec3f900b059df038353d5b63834ebe91bfb766a63b29b3763bebd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-en-1600.png",
+      "sha256": "fff3ea0b6e7317638e431bc51b7de9dd2c6ca70b98dd39a4aef745fecb07ca8d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-en-390.png",
+      "sha256": "2259ab849c7f13b83241147d5014444f575644a5143e7f58961acc8ce5f0687e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-en-768.png",
+      "sha256": "d21c97c9fbd2729ec63a1923f6977ff5181ba82a533e92a6533732183e9ee790"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-pt-1024.png",
+      "sha256": "012b179d05efe290ff0faef5a3928ec01cc6abcec3779a24003a4e3ea76038bf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-pt-1280.png",
+      "sha256": "8b6b06715f404d4e82d485e019846a707f7f513f9fb7ee9cd3a8ed305ede4c28"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-pt-1600.png",
+      "sha256": "d0d68adcc853ded6db1366fe77b357abffece2d6bb69faaa799aad7d4c43ec46"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-pt-390.png",
+      "sha256": "be4c5b89f7060458b3dfbfcb9b62001f109fb27ded046329c262be4fbf27fa8b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-evora-pt-768.png",
+      "sha256": "277e83512581202e15482894798ef45802964722ba4a37899c609dcb27347566"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-en-1024.png",
+      "sha256": "64d6c1b8d91f6d9f7c1c14386c4b41a46047d78d083cc31a61fe3e8a35307413"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-en-1280.png",
+      "sha256": "4a743bc69021c9a7103931e7de01bcd5c2361c2a5d626cd1c29c8a60af8e057a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-en-1600.png",
+      "sha256": "a12e3452f5bcb11ddde448b472397ac01e4c647cd888ff6d68ea5412ad51457b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-en-390.png",
+      "sha256": "1386278479909945ad8d651d2427c1efd7e8e7e937326234af40c78fd895ea2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-en-768.png",
+      "sha256": "dda3a701b3688c1a2945969301e1603e72de6198ebad8814adbf5c6478b42f97"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-pt-1024.png",
+      "sha256": "591ce22d431a830b29c388e73739269d7d04b354f1c466a9b264466fb917e872"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-pt-1280.png",
+      "sha256": "05f9d0ce7add66cb2debfad5fa0f17d2d40dbec686e3962c2cc5b61fb9a108f8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-pt-1600.png",
+      "sha256": "6e0499bc2053fee26cccc1360c3b2f7ad07e7b92c77097626b2df25547fe8076"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-pt-390.png",
+      "sha256": "559ca7f5cb14158bbd9b62fd4bd6454f295fbca15bf3bec0045b1e8757c16b3f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-pais-pt-768.png",
+      "sha256": "690dab5d3a20a25d0e8893f4c3288f2ee1dffcb9ca4c852b373fa4e5e54a0798"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-recibo-credito-malparado-2024-en-390.png",
+      "sha256": "b8840d0080f3632ef329d67352d916620600c2aabc1b5dfb9b32587d6c816504"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-recibo-credito-malparado-2024-pt-1024.png",
+      "sha256": "895ff9bdff9a42206a16fd072a7f1f7953cb06cb14959ecd57c784623e16c368"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-recibo-credito-malparado-2024-pt-1280.png",
+      "sha256": "83bcf66857713b82f06aea6f83cc2c82d367591a52edddf73f0b9fb73697265d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-recibo-credito-malparado-2024-pt-1600.png",
+      "sha256": "8e1fa74ac74a38e0baa8578bc8149647d6ce1a8d4531102c0f483699a08b5f38"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-recibo-credito-malparado-2024-pt-390.png",
+      "sha256": "fabd29cf1e91e6f7dd6772bfc7466d163e5dd6c76aea79336be232f15964e6dc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-recibo-credito-malparado-2024-pt-768.png",
+      "sha256": "dbb6b68e472fc078128c7e88c7f60d4c9c7a7474ab815f7eeef4d5a5ff98b71c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-en-1024.png",
+      "sha256": "e9673fc2bc50a0d8040f7e8bf611a9222aa6482040b4a5e9c2433432d81ffc57"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-en-1280.png",
+      "sha256": "134e085d7d4729e4b612d2af5a6fed9390471aef711542a76c7b906b408b5e35"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-en-1600.png",
+      "sha256": "e8a6de800677bd14ac8f8e5fb638ea5f9341e4fb9cae00df789ce161ca6d78e4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-en-390.png",
+      "sha256": "1a1fcda04f24d11fa3a7e345cebc983337bd279a7ae753a27b9e03f6f0cc46fe"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-en-768.png",
+      "sha256": "c409e6bb6d49834f11f91fdc16c896895edc59b4f071bc4bcb6522394949162e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-pt-1024.png",
+      "sha256": "b3e6b908f080418b0b78393a5529cd7bd8139edfb73d482efb68cf90c7398cd2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-pt-1280.png",
+      "sha256": "075910bb810e699aadcb0f51e02b99dea3a46b29eee7c042f6338f09b3b589dc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-pt-1600.png",
+      "sha256": "747364f19c05674c9c15df4a5fa4af67ef1abab2a26473341979d2ca0a1133c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-pt-390.png",
+      "sha256": "5e1a33aa2bde971978026d0804793269c0db0eb2dd513fd271a20c7b43c89bf3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/capturas/depois-temas-pt-768.png",
+      "sha256": "e733860cd5d824dc4b6035b680aee05125440c61509087bf8aa0e979ff4fcfe5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/carimbo-preparatorio.arvore.json",
+      "sha256": "5cecaf3a6091df7141c8711fd3a093a96abff1a2434e4e9052dd16ff6a6dfc87"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/carimbo-preparatorio.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/carimbo-preparatorio.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/carimbo-preparatorio.fim",
+      "sha256": "d206a828fa1cc9e662488eb75751bacbbdf3aa2eb6b1fa8bd3dbda699a8bd055"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/carimbo-preparatorio.inicio",
+      "sha256": "226d91d51b4fb82efde9d37e9e87b84d015a0fe1671f3add2b50d9501d89059a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/carimbo-preparatorio.log",
+      "sha256": "1e05c3b12223b192449b080e860d8d0ddbc574a5e43a8178fa59585c1769d03d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cartoes-preparatorios.arvore.json",
+      "sha256": "45a6d68048eac8cfb692264d22ab58ec5adab3e688a3255647c5922d715f360d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cartoes-preparatorios.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cartoes-preparatorios.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cartoes-preparatorios.fim",
+      "sha256": "2d3d958a9236ce8503966baca02cb46af2d46f1edc8b998134a0ea22f356edb7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cartoes-preparatorios.inicio",
+      "sha256": "30ef4f0b96454e02db8812520f1b04a2886ba343b0e9fe6e5d81d10f6204be51"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cartoes-preparatorios.log",
+      "sha256": "4688e26821e56d00e90b79874ffdce399a0764e68606938d504c41a74682f590"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/conferir-recibos.mjs",
+      "sha256": "c5f42cabc4060ff55581de89844c9f28ffe2ddf51b9a73ed7a402434f00ad8b4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-antes-lingua.arvore.json",
+      "sha256": "5fb4f8ac927e5b0c9f07dd6d02cb237c40877ed07f62ee487afa14a780546be4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-antes-lingua.cabeca",
+      "sha256": "54868e90fee3ab82f4e63bf49e98420012c31dcaeb2e41dcac570bd2d7f92618"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-antes-lingua.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-antes-lingua.fim",
+      "sha256": "a9f824e9593543bcb89d836a262d4314d047e779a1c3ea7b5eb21d6c1fc2fb30"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-antes-lingua.inicio",
+      "sha256": "129d43bdbe9988159e1aceaa2d9513deb461147e2cf31cad586fbda443f5a50d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-antes-lingua.log",
+      "sha256": "a20322f131bf74bf340ffc1884d7c04057ab34403d6af83cb9f278e5e152141b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-interrompida.arvore.json",
+      "sha256": "42559b9134a6940e666a22b6d7dc5a536f42252ecb6d2219c8e82ae7f46d80e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-interrompida.cabeca",
+      "sha256": "29defc063ebb734e614ba79b55a3d4c48ae35801eedab8b4eadc1ed2f6e48e5a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-interrompida.codigo",
+      "sha256": "9d9b18720961e9b4689fd763b85e7b6f36160ccd3a8a1c9ddc5103bb0f66c396"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-interrompida.fim",
+      "sha256": "adb1d0aa6205951b1a0799da8761e8f91b76d5a028fb32e352e9f52608800162"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-interrompida.inicio",
+      "sha256": "bf79396a786903b89292921f14ee205aedb49c1774868c677021841a9e458689"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-interrompida.log",
+      "sha256": "f41e01e655aa3f6de537480ceaff6f7492dadb90f6c79fff1f5833909adfef84"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-preparatoria.arvore.json",
+      "sha256": "94ab2a6fbe14014df87439974f741d5eeafa67c24b921e2f06df070273f156a9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-preparatoria.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-preparatoria.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-preparatoria.fim",
+      "sha256": "17ce983460df36e62eee8f4074220451480d05ca05cddac7b75d9546cbb2630c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-preparatoria.inicio",
+      "sha256": "f551799fe4f0df5e209bf31948ccfecc836d43c6aaa7bb8d2317185ba746cd57"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/construcao-preparatoria.log",
+      "sha256": "739433ccaa9e56dcb2ae90a2657a9e18a8f80d85f71fd399fbdf336568f0aa46"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/contagens-registo.json",
+      "sha256": "69f68dee693b9b65ba8d6b9f6ab8b9c99d0c11378c40ae2e30f68edb40381e43"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.json",
+      "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3.json",
+      "sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a.json",
+      "sha256": "892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.json",
+      "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42.json",
+      "sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1.json",
+      "sha256": "bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573.json",
+      "sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046.json",
+      "sha256": "c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795.json",
+      "sha256": "cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04.json",
+      "sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corpos-bandeiras/ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc.json",
+      "sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/corridas-c1c.json",
+      "sha256": "68d855a5878be399df7846c0c6c97680255b29b3e05f905d3fc2dc38a7561296"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cruzamento.arvore.json",
+      "sha256": "834521fa15493f7f1eba12b237e3c094c74a7af2ec5502b5eec549553c4bad8c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cruzamento.cabeca",
+      "sha256": "1867ba23dda421e3787319e4c206f875ff990a810612de15e2bb3b739c9b03ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cruzamento.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cruzamento.fim",
+      "sha256": "84d349b23f3a46e0d860a55166f2f331904968e3fab7d1c6f442cace125e79bd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cruzamento.inicio",
+      "sha256": "dad2d8035d508db1740cd0bef9a95806904c688dedd10a8a488df030666e1d35"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/cruzamento.log",
+      "sha256": "e0cc7c5b503c1e2ded9463d13a4678d27e5826e2d44722a0b68008f0d8af79ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/css-preparatorio.arvore.json",
+      "sha256": "7fe2b6283557ceba1fcb320a0fbe303c0a5a13e673a59b28ab315ead24e6dfa1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/css-preparatorio.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/css-preparatorio.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/css-preparatorio.fim",
+      "sha256": "dcc8778badb099f1dd9e56f93d467e971f31531514760ac64943351f3af06340"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/css-preparatorio.inicio",
+      "sha256": "a309252cd19b3ba821198b4e9cde61096584bb15d1c73bb4928dabd8d394c8fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/css-preparatorio.log",
+      "sha256": "d9c161c1251113167cfc47644613de37b98aa29ca888a2b2b17cc4ad89fca9e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/custo.json",
+      "sha256": "b30afea89a65e8e91bec080b8e933755e93e0ab72b911b500dbca3a761cfe3e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/custo.py",
+      "sha256": "716157b1445418e2ef9a9bd8544dbcc745011875d1f691ed8ed47fdb9330d9f0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/datas-evora.json",
+      "sha256": "c93701a4edb884512a42e1662c9e278141eb51c896f3d145fe5e4e07401bef8c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/excertos.json",
+      "sha256": "a898f623d8f48dbed3c5ed7a5f87b28d7d270431d1a52ef046d15aa7134d354e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/excertos.py",
+      "sha256": "23b0d502c7236b37dcbbe7352af8636233c0cbc4255782d15dc0f2fcf39eb61d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/fechar-relatorio.py",
+      "sha256": "c661c7d672b2a96d1ca9e290f1bf457c8616378b7395149dfe7a942cccd8ed91"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.arvore.json",
+      "sha256": "566203345ad19fb583311d9ce4ad33ecf8044b9476667183d26771349c1bd128"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.cabeca",
+      "sha256": "1867ba23dda421e3787319e4c206f875ff990a810612de15e2bb3b739c9b03ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.fim",
+      "sha256": "0b2e00bd3eebda1130a36b3dc66ff400c7db6c26334108da874f411224a7fbc8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.inicio",
+      "sha256": "63d728d3543fd992a0d3e3fdd35cab5a704d6b9c7b4a0bfc63c7b98e971bb144"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.json",
+      "sha256": "d14d51018d6ed3edb750a1ea164f4c8d21b245ec278a2c47fe8e6930cac029f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-proveniencia.log",
+      "sha256": "bcf5512b7b5f8fb1688c4c59d542a312e241d347931e7fd469d11b4c5606be2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/historia-valores.json",
+      "sha256": "5325df5f5a83be52241107422a75a2895cbac5821f1868c62861f55d1aba569c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio-2.arvore.json",
+      "sha256": "f135346dbf925fd5c09f7aca1759340ca71eafe61713e3925f0b1da6ea3b9515"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio-2.cabeca",
+      "sha256": "3e88daa6ed1c35e27fa74b6b5c55d0c1a836e9e12d2cc8ec34a11bf5b5a1e40b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio-2.fim",
+      "sha256": "b7fc0f4396795b21ce785a4df7a34db045c527839229722fd89d65202a0cf59b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio-2.inicio",
+      "sha256": "f05cf694d6cb1c68e083e069cfdade452aca28b9a9f5fd4ed83adea803acdf81"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio-2.log",
+      "sha256": "3128798456753407762b7cdad64ceeeaac5f8e943fa7f562dcfe889f0557bdc4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio.arvore.json",
+      "sha256": "45a6d68048eac8cfb692264d22ab58ec5adab3e688a3255647c5922d715f360d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio.fim",
+      "sha256": "e06416b5df5ecc849f06e89818afa2bfa75fa63b4db9d05a20716fdea351c2fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio.inicio",
+      "sha256": "abfc0505a3ed2091ec3a585dd4f7b8f99750d5a765478b9f5372103e7becdb4b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/html-preparatorio.log",
+      "sha256": "68dcbc4851210ce89793be6c673c2e8dded03a9bc89318b1d285ca6bb36a5f95"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios-2.arvore.json",
+      "sha256": "dedb52ccdff9110135fead13a816dd9701145c5906650993d3c19ed8a286d9a8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios-2.cabeca",
+      "sha256": "29defc063ebb734e614ba79b55a3d4c48ae35801eedab8b4eadc1ed2f6e48e5a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios-2.fim",
+      "sha256": "63bc92e4da8b78872688298513c47a2c567de41f1ebbf0f5dfbc7ba572b70a48"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios-2.inicio",
+      "sha256": "14deade7560aed9ebef5389bbee7a28ef8577f3bfe00de50f589820457957189"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios-2.log",
+      "sha256": "38d194da531ab72a0bbf9f980c7262150c0e744e17b93a169d6599b02cacab06"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios.arvore.json",
+      "sha256": "a32819a1e84b5a6607dd739b7315097afdeb88a59bfa3edbf9feaeceb04da145"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios.cabeca",
+      "sha256": "29defc063ebb734e614ba79b55a3d4c48ae35801eedab8b4eadc1ed2f6e48e5a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios.fim",
+      "sha256": "2d2d1b4bdea35345d31eff443e6b059d928d8cbe06224c9a638b0b6b8915c318"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios.inicio",
+      "sha256": "c65bedcfbe95122af545e56bc87ade43686addd140c1921c63e324739be2f6df"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/identificadores-preparatorios.log",
+      "sha256": "a1c43f9a269ed2780eb612054934f94145009d48d358d8d34bf74d2aa0c36a36"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/k17.json",
+      "sha256": "d000fba4da7e5054e6a922e6a2e1b2bd14e0480944a4b3d4c059beeb44150351"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/leituras-seladas.json",
+      "sha256": "59bb6fbf731568d461f405ae6a4469801942420f05271f25d8b9442e4fb3cb99"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/limite-reposto.json",
+      "sha256": "524f65621ace85bff0d63275f5dff2707880f0567aa7013b57020382262ec905"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/lingua-reposta.json",
+      "sha256": "1a311524c9d3bc9b4ba467d3c84547c364cf0530216d374ce27d0f6327f3d601"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-proveniencia.arvore.json",
+      "sha256": "62166e4dd5500679fb5dc8f4182612339f6aa7e9879f31780474685cffb19624"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-proveniencia.cabeca",
+      "sha256": "1867ba23dda421e3787319e4c206f875ff990a810612de15e2bb3b739c9b03ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-proveniencia.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-proveniencia.fim",
+      "sha256": "b7678a4c01b548cdc4f7d2378addf76d13495ca3a16b1289f224093991cd43b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-proveniencia.inicio",
+      "sha256": "179dbd17ba070b0bacd6a2ffd6b771a00620e9ced4c1c4dc28de802260e85175"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-proveniencia.log",
+      "sha256": "94bbbbeb1fc5657940884cba185e7f5591ac72f7bc9f5549c334fb5608555196"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores-2.arvore.json",
+      "sha256": "60f76cc431dc095a48948f63c34e1d19f97edcadcd428035d3c9f593127d0236"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores-2.cabeca",
+      "sha256": "8b11fd885b2188007670d39ca4b1252b2b424dba6b2c624f7c03ca0fd825e3e5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores-2.fim",
+      "sha256": "5acad4f510f2282705c140e6759b4ccad9af32f24cd5a7ad9eb9302202ed2f4a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores-2.inicio",
+      "sha256": "54389ac2983aa7dde1feeedcdb7a21c63ab4eaebea3b33460fa7f93a1bd6dd4d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores-2.log",
+      "sha256": "e9d5297757486962311443b7f3e44a903a9ebc6bbec50a46e599c3e1084ae1ae"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores.arvore.json",
+      "sha256": "78b38bf23bff651e9c59b73fbe24afb0d28419dd21584d5c563b216174f5698d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores.cabeca",
+      "sha256": "8b11fd885b2188007670d39ca4b1252b2b424dba6b2c624f7c03ca0fd825e3e5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores.fim",
+      "sha256": "4af20a289037d563ca8c4b74f42834d497355c2b80271cabb761a5bd84562e4e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores.inicio",
+      "sha256": "9640125d52a2a8f2de25bbc8e194d1f716eb6dee81edeb424f6573732a9ca836"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/livro-valores.log",
+      "sha256": "8143862e7ab044df0b709c3c039086787914c69f94901e427fbea8a5653e94d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/medidas.json",
+      "sha256": "f93fc3ff4687d6b511935ddd0496d32165e212d4cf723b202222ee98d3e86f54"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/medir.py",
+      "sha256": "c938043fdab62b2d721a48aa38d0a734af46335aaab25b836ae67c888c51537f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-commit.arvore.json",
+      "sha256": "1aa50bef142951a818c1c44e66e0b529cce61e707b67b8dd159c60a16960bfd7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-commit.cabeca",
+      "sha256": "d463d311e90f570528471e2757c597adcda792446f6e85fb1a2181b413c69bf5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-commit.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-commit.fim",
+      "sha256": "c8fa3f52d7702e1b3e63234bca1ee16d6e2fbe8509ba0f39c095ce4bb5c3b227"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-commit.inicio",
+      "sha256": "28366b0a3d8a4700b0bb260eb9695b52e7786f42f6e72160e045946013725b08"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-commit.log",
+      "sha256": "ff37e956ed6e3c72b6e41328af6b2bd0a5d0a9d88d41d627d7a8d04425eef62a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-rede-real.arvore.json",
+      "sha256": "70e8af6122155a981cb0d37640cbb062d578d431a87fc2466e775bccd94cce97"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-rede-real.cabeca",
+      "sha256": "d463d311e90f570528471e2757c597adcda792446f6e85fb1a2181b413c69bf5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-rede-real.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-rede-real.fim",
+      "sha256": "17a53cdb28bfd2d8b581c7190d9dc410991430736b765bd4b68a7e9321e0766f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-rede-real.inicio",
+      "sha256": "975b07badb02b629e66a084aece5b8219bae650537cd2c4959e4b016c2bb0b25"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/motor-rede-real.log",
+      "sha256": "1aab89b819ec93566f3d5c2a8533c6967e574bbe6bf8ec2f4cacb7960c0fa8c1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/nomes-inventario.json",
+      "sha256": "77f53de1312bfcf8bedc2e8ad7d6d95c1b940b96112a0cf82c42e48a288a8828"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/origens.json",
+      "sha256": "88e15f3fe94f95abafc17ede170e4210955b96cb4eaddfe72a79e31d4a9ced76"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/_astro/Base.D7MBbLgP.css",
+      "sha256": "2205c959a7d9d178d5d7e6a3f672298d908412d5644d7a8da99ce03eb6b35180"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/_astro/inicio.CoJligbV.css",
+      "sha256": "a0529e5e6954447559c92c7591295b6f2fbbec7cf4aa22cca618e1e704713c1c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/_astro/linha.kwcknRfj.css",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/_astro/lugar.DQAkNk1H.css",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_index.html",
+      "sha256": "1a78e2f391f66614ef09f8d90b7cfcd5c1318172f6533523f4e0fb3b08870be5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_credito-malparado-2024_index.html",
+      "sha256": "b73c5c428a08ae1df4390914db4db04308c50d559d36b8f34ab4c33d73777da5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_credito-malparado-2025_index.html",
+      "sha256": "dcb9fc46bb56516dd19245fcc958705fc5853cb8ab3eadb0f4944df79669de94"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_custo-unitario-do-trabalho-2024_index.html",
+      "sha256": "5a5678db3542410d07cfb1b4f5ebc942c30fe11c96057654c3c212f87af16c29"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_custo-unitario-do-trabalho-2025_index.html",
+      "sha256": "aa91cbf8902bc98f35394ee14ff0db930e10a5f9caf9f0242f3e52f198646ffb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_despesa-em-id-2024-ue_index.html",
+      "sha256": "7adc9639c08ba0b7e8f23e47595552da5ba94e2d6f2f2da772a0293fcebcc5b4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_divida-das-empresas-2024_index.html",
+      "sha256": "17624f97c399e61a7ae53dbe2124375f3899eed7e5b03773b641a4473da2ee3e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_divida-das-empresas-2025-ue_index.html",
+      "sha256": "a2475360fb94fafe71a0d32261a3378adfe43e1eed2d838ed68af8688dc255ee"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_divida-das-empresas-2025_index.html",
+      "sha256": "1a7967c92da733f701c67eade5aa4bd26da0922ce443a847f3b5ff10beccc8e0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_divida-das-familias-2024_index.html",
+      "sha256": "195a977ab83489c91acbf0411c2d4503ff620988dbb64301f267f4331869ab4d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_divida-das-familias-2025-ue_index.html",
+      "sha256": "c0f360a4c0aa40266947f6734f8a6198bb7149307802c93507ecff250b8e8be6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_divida-das-familias-2025_index.html",
+      "sha256": "669aef64dddb26cafb1b4c63dd568023f903ce667d8a8a03d17aa3d6bcae6786"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-indice-de-divida-2024_index.html",
+      "sha256": "7ec30260a4c6b03a95ecc0170aa1d1c15055e21a3923c7292a6d4501d7c6dc59"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-prazo-medio-de-pagamento-2025-12_index.html",
+      "sha256": "dd688b3e0daff78d47c5c9545d0c1fb6f5f61da9063cbf9ac369a89a40e97146"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-prr-aprovado-2026_index.html",
+      "sha256": "36bbfc18890866569136e90256118c86ecc56ac50c0bc1420d93eeef5c82ae21"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-prr-municipio-contratado_index.html",
+      "sha256": "dbe056c824de55d6801c0237ec9078233d9837ab29985a320fa452f0286eb44d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-prr-pago-2026_index.html",
+      "sha256": "8907b7f0fca968f0ab30c312137d229d7b55dec96876e3cb69267bb3b0b49a92"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-prr-universidade-contratado_index.html",
+      "sha256": "64b21b80892138d85bd155e0d412f722f044d86cf3f245301b4330b338b5031a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_evora-prr-vencido-aprovado-2026_index.html",
+      "sha256": "d45aeddb1229d5c990b77b8b05757a2280e10cb18ba8b0daea7fabf95aff8cc5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_fluxo-de-credito-as-familias-2025-ue_index.html",
+      "sha256": "eac854249949fe3f65131d6eecb73a83b6da0668b176e04d63e7d582b4ae13f1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_formacao-bruta-de-capital-fixo-2024_index.html",
+      "sha256": "f1168178c63676b7739d402ec7b6cd3cd830c53c6a0ea33d7282340cf44fc75f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_formacao-bruta-de-capital-fixo-2025_index.html",
+      "sha256": "8308ea1ac9590de15fd93fe9d2f012256f3ddffc696245bb022cb45a0c89864f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_ihpc-variacao-homologa_index.html",
+      "sha256": "c6fd5da2c3fcbe7df0e446716f52b408c105571a8f9304aeddd979147e4eddfc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_indice-de-divida-limite-legal_index.html",
+      "sha256": "1ce32ffa0c847ba5b3754f874783163287f44865345badda6a4721ab5ac09468"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_ipc-variacao-homologa_index.html",
+      "sha256": "f2d15a6335ac7b46ee5d378681705a9b663782d3c92da2a174f0caf0729f2b37"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_licencas-de-construcao-2024_index.html",
+      "sha256": "bcb461b4a789d082b9c5063d55f717b98a6cb0df61bc740008a089ff3e337872"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_licencas-de-construcao-2025_index.html",
+      "sha256": "e6e335cdf8d52f2a5a4fad150cd4cf5fd78e98885df3e50373355e38334cf6ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_pib-real-per-capita-2024_index.html",
+      "sha256": "edc19afc45c9c3395e8b2dad501e65acb74ed126322f843bf680f33985ce90bb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_pib-real-per-capita-2025-ue_index.html",
+      "sha256": "b02b448f9785a6187f1d4cc394430d915fc95c0c1018a7cb0a3c6da218089075"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_pib-real-per-capita-2025_index.html",
+      "sha256": "cd4594b45d60d347c4377ffb3f930b670b76de8f78ab93d4b2de667a470091ea"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_ledger_taxa-de-cambio-efectiva-real-2025_index.html",
+      "sha256": "4a97658a45d3b38c50ecb10dee3c3bfbe01ab8f10d7c85a8bfb7c1d9975597c1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_municipalities_evora_index.html",
+      "sha256": "eec87dbb3accdf5a70b332d02e8e596e0eb9e49e8314a8cce94cb9804b1f5ff5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/en_themes_index.html",
+      "sha256": "7691c00821a5124becae736e69f8e76ce5a8fa97826773c71ba6da9153ffb893"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/index.html",
+      "sha256": "f9ab39d98b8165ef14e9a7fbe3b7c0c6cac626dfd58c18d71d866daa9c40e4f1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_credito-malparado-2024_index.html",
+      "sha256": "126c2561d64a9f9ad5d7c5ad782ffc1c495a52e3c781147b82d9a5f663f4b9fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_credito-malparado-2025_index.html",
+      "sha256": "4ed030d8ce14cf740199eebbce2c5b2986501cda6a6b2bae93cedfb5df7c6a4f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_custo-unitario-do-trabalho-2024_index.html",
+      "sha256": "95df89f4296ccc6ef5b919deafe16d37a96f44825bf984ad9ffbc6d9308d88fa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_custo-unitario-do-trabalho-2025_index.html",
+      "sha256": "29c4679441e2e021c6cd90d161389e66c617852ee22a3fde6f703110c06a4c69"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_despesa-em-id-2024-ue_index.html",
+      "sha256": "e2ec42c8c7b0fc598ca3de0d2d41d5d97a6b55b2f307c9cd69fc7ea5e386f2b2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_divida-das-empresas-2024_index.html",
+      "sha256": "d18a70803ef5b704e1094ac395b0ddb8ef0262c6513de6ce4bc39b0efd5adff4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_divida-das-empresas-2025-ue_index.html",
+      "sha256": "84fb1ea4e133140c3661f3f89a34a7d3371a33a5a061c972eea2b0b53d38eeae"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_divida-das-empresas-2025_index.html",
+      "sha256": "4d3a51450542d1e664070e908bcc4c347cc39a42a72f6418281f64ea58740e6d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_divida-das-familias-2024_index.html",
+      "sha256": "4095cd15e4688d105da99cee42019e0d54e1311cb0b24874d3266a01222af0b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_divida-das-familias-2025-ue_index.html",
+      "sha256": "4244c8e193b5f808557555d7e310aa9e679655126eed7f37920a2521d5906f0c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_divida-das-familias-2025_index.html",
+      "sha256": "3556c23a0ea71a5cff8d98759a2908aebc59432bda6f1eb7ffdf867d25217133"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-indice-de-divida-2024_index.html",
+      "sha256": "01f2709af2123adc02b2186cda983f8b36efed3edfd21cfeaf30d925050d3915"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-prazo-medio-de-pagamento-2025-12_index.html",
+      "sha256": "579d827f164db4cda7f7849620fc956fe02afe6d61c4c8649100eebc8af81afc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-prr-aprovado-2026_index.html",
+      "sha256": "6689f9e852e0091b93feb521c1e792fadaa22441b4519f509780dd5e8bba01ac"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-prr-municipio-contratado_index.html",
+      "sha256": "c2ad8749fbc228a6f2460deba862a2ebf741441cd64e701e76f6d10a055d170a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-prr-pago-2026_index.html",
+      "sha256": "01fd5d0791fca8e1abb069ac4002017ba4b352e98ef44ad7fa73324146e14773"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-prr-universidade-contratado_index.html",
+      "sha256": "451230f8e8bb2383a6eea8881945cbd16aa8334258619966ece7917db1818bec"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_evora-prr-vencido-aprovado-2026_index.html",
+      "sha256": "e19d775a0a173764f0e265eb556c18b7b79f28ebe01de4681ef7909bef14905c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_fluxo-de-credito-as-familias-2025-ue_index.html",
+      "sha256": "3fd9911318dacc98d306111f1106e108b977f31586c48dfec1d838ab5deb533d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_formacao-bruta-de-capital-fixo-2024_index.html",
+      "sha256": "213bec9f7df8db3985fa019026504ef561a8b885075b5efb71ca648de17675ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_formacao-bruta-de-capital-fixo-2025_index.html",
+      "sha256": "9e4f9b95fb78cf35876e92c1defce98b77468959b6414d8e0e27005c1bf75efe"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_ihpc-variacao-homologa_index.html",
+      "sha256": "ecf575b386ad8b72a88ea22bd310f3f5cd212b3d7c5671640cf355a3c58e5106"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_indice-de-divida-limite-legal_index.html",
+      "sha256": "2de63570db0db2e335750a322376f38d94e2e5b994fa4c5df8b92969819e0748"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_ipc-variacao-homologa_index.html",
+      "sha256": "a3db5abf324bc0f883225012dcf63745330886e2aec460df953adfe3ac701b0c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_licencas-de-construcao-2024_index.html",
+      "sha256": "adb2b63e9938322ed89a749849ceba4c3b0632a065f6d346bc5c674bc86054d2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_licencas-de-construcao-2025_index.html",
+      "sha256": "76420ca324c49217fde29f4f81963906737852c785ffa40310c3c02c3a56a579"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_pib-real-per-capita-2024_index.html",
+      "sha256": "e007cd364cd1cec241a7c05765f24f74256b8638daafbb67a13c75046f7e9540"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_pib-real-per-capita-2025-ue_index.html",
+      "sha256": "dcec5b58484ad224fb43c264b0dcd9cdf597de3f50c94160343f6acdb359b670"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_pib-real-per-capita-2025_index.html",
+      "sha256": "5788e22f9c3aaee80a765a4ca9b6baa3e385aa6731e3a5ad42369b5c87eaedde"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/livro-razao_taxa-de-cambio-efectiva-real-2025_index.html",
+      "sha256": "3feb98c72c30721603c8787ce970d59c0ab2ce299eb0b7c15a11aabe8c554be7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/municipios_evora_index.html",
+      "sha256": "7a5d8608e0cc48cb8583f1d7f5ee609db33ecd9fa5a2d758fb3c0451692ab5d1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/paginas-depois/temas_index.html",
+      "sha256": "ce10a899f52b201c338904dcffb4a8bcfff0909b0d7e278e61e33ccdf4595199"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/partilha-preparatoria.arvore.json",
+      "sha256": "25ae29c7826d842d1871e5faa8363105633e6897245d876dfeacb34b39331c99"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/partilha-preparatoria.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/partilha-preparatoria.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/partilha-preparatoria.fim",
+      "sha256": "28ddc460adcbf68f5c3c50167289181f39a4e40c609bb871f129443eff7a4731"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/partilha-preparatoria.inicio",
+      "sha256": "f92b5ea3b80aa98a650c95f16b2ad6a5f64f94c46ecc2c97bd6573eaf72e7ece"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/partilha-preparatoria.log",
+      "sha256": "9dc80dd046abaa0d6eb8241a5e3a7c7397e14d3ce69fd050fc847aea3c666574"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/plantas-confianca.json",
+      "sha256": "41dccf66c6840510f540ea58e8c66cebd0c4536ffb8262e9c5231100206a4032"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/provar-bandeiras.py",
+      "sha256": "8df19367b7032ee3e62da57aa74d28d7e0ee0f78caed81722311c90f019df819"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/ramo-divida.json",
+      "sha256": "d394081aea82debd4304eb9faa13e4e1fe71f7949c81fd856cb0318fbe5b35ae"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.arvore.json",
+      "sha256": "b98de13f6680523a4f5b3014513c5f34c1cf4c432c6a5255a04db3deedaab10b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.fim",
+      "sha256": "b8c5c1852ffa22cedc2617a8f02a3f83eef91058f039d8803bc4739048d10511"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.inicio",
+      "sha256": "0dd0fe24d22532a6749bf39ad7bad380a743005fb2f3e73fc338214d42c0d45e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.json",
+      "sha256": "3fd95e09435d1cda3a942ea060a03d96036ef4d1990209669e894232da5e7e88"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-finais.log",
+      "sha256": "708cd2c1c1c9e8b4f4bce563d91b103a106b7a7154363891cb25d5d5b80545cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas-2.arvore.json",
+      "sha256": "c61bbfe78f1381d8e6b3125ab4bef1407fa077fbeee57127a2086e492a7fbf80"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas-2.cabeca",
+      "sha256": "fc98f5013ed4cf1a425d9be472abb42e60ea859d7d7f224c5f4655776640713e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas-2.fim",
+      "sha256": "5b05946990e288a8f5e257aa6ff6bf16fff269baddcef485b4c51b96e82f8cc6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas-2.inicio",
+      "sha256": "798bf8a9b40922a9edb43954eeebb597c9285c978306f5c00ada991f803c3df8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas-2.log",
+      "sha256": "41dccf66c6840510f540ea58e8c66cebd0c4536ffb8262e9c5231100206a4032"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas.arvore.json",
+      "sha256": "75c16cd5eedf0798c291d62a3ccd19652eeb900af7acf3e05c98cdf48df786c5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas.cabeca",
+      "sha256": "1867ba23dda421e3787319e4c206f875ff990a810612de15e2bb3b739c9b03ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas.fim",
+      "sha256": "f968af1612c17259dfc39263901b16664b4c630e7dc775f4934480a0624974e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas.inicio",
+      "sha256": "8141818e1ffec8fcff7e88e818ecdaed0963c08f36857ceaa22b8367443cecf2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-marcas.log",
+      "sha256": "312dc076d1f53fcc18105c3ecaca59c2f15759975fa725df89af4384306998bf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-plantas.arvore.json",
+      "sha256": "ea8c2f381fb99077821994c26bdcc1f86fc67dcae8a17e93a04d23055043b700"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-plantas.cabeca",
+      "sha256": "1867ba23dda421e3787319e4c206f875ff990a810612de15e2bb3b739c9b03ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-plantas.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-plantas.fim",
+      "sha256": "37cb244c82934f81d616bc203c420df3b061abcd3f1fa1e9bade81aee71bd4bd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-plantas.inicio",
+      "sha256": "e38f74e8df9ed2b92cc0e0b526bc54382945fcb3a14065d49b78c99bbf6cb02b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-plantas.log",
+      "sha256": "a1ae09fa79813b37b8700c6ed8e51b27e6b23813be725d3bcf850840aed6462e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios-2.arvore.json",
+      "sha256": "f3d467b5a8b9d6193b2e84a06db986de62379f284dad588f2c0b7fe42ea30625"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios-2.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios-2.fim",
+      "sha256": "b2262e1591811242a444f0f4bf24711259996b88a60fd6014de0d74ab7e9382c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios-2.inicio",
+      "sha256": "944ab3ceffacc63c36dbc03518500108a9799b343b8713e34d8305e28dd079c1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios-2.log",
+      "sha256": "708cd2c1c1c9e8b4f4bce563d91b103a106b7a7154363891cb25d5d5b80545cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios.arvore.json",
+      "sha256": "45a6d68048eac8cfb692264d22ab58ec5adab3e688a3255647c5922d715f360d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios.fim",
+      "sha256": "a0aa35549328dfb6c99e6355085399b64e33f83765d7f5bdfefb3726fe08779a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios.inicio",
+      "sha256": "dee3e5175dbd2d3f4850bc39dd0cbdc24498ee784e907daf29573e882efeacb9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/recibos-preparatorios.log",
+      "sha256": "6494db5654aa099ac0a02ce0c666377bb5413cb5870f0f6660aa2e564d50e3fd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/reconstituir-registos.py",
+      "sha256": "0e38227f160d73e859c9b27e22dc1e6b6d6282343baa5c7c581f29587b0e9ed0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/repor-limite.py",
+      "sha256": "c60964aa1ad55ff24bdeea6913291308e77149173ef0fd5cb380f5075c58e870"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/tentativas.json",
+      "sha256": "5094e8118e9852ffb55be79733f129cbdbe920c8729c9715a6c2687cadeed36b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-anterior.arvore.json",
+      "sha256": "3f22fe03150c9e2080197d9052d9aaa15a1a958ecf8b14114a97c513c52b67a2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-anterior.cabeca",
+      "sha256": "29defc063ebb734e614ba79b55a3d4c48ae35801eedab8b4eadc1ed2f6e48e5a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-anterior.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-anterior.fim",
+      "sha256": "cc0564ee604b76dd76c85e8ea78cf6f0bb502c617e5c9fbde385dd618c6fdf33"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-anterior.inicio",
+      "sha256": "b45440cfe3e2218f8f1af708237ef1350bb83b67c023294da9fd0cb2ed48769e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-anterior.log",
+      "sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-antes-lingua.arvore.json",
+      "sha256": "ade9021d85e6ad0b3063b7d992e8cb21505fc06a4f5bc21e6e3d0db5e7e743d0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-antes-lingua.cabeca",
+      "sha256": "54868e90fee3ab82f4e63bf49e98420012c31dcaeb2e41dcac570bd2d7f92618"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-antes-lingua.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-antes-lingua.fim",
+      "sha256": "28d41a94ceb13c85d927ab4459088923926274e02fcc1a165b93020f2f177af8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-antes-lingua.inicio",
+      "sha256": "43d507ceb5bd7d106f5ed983bfb5fe12718167d4cee1884ef2bf997a9f98d8a7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-antes-lingua.log",
+      "sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-primeira.arvore.json",
+      "sha256": "9d5e15d89ac5dcd2211fe42f9d8994813b06a414a5d318eda801d7300eacc44d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-primeira.cabeca",
+      "sha256": "3e88daa6ed1c35e27fa74b6b5c55d0c1a836e9e12d2cc8ec34a11bf5b5a1e40b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-primeira.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-primeira.fim",
+      "sha256": "28116156f60f5cfdde5400b7677842fefb17e7c6ca8ceaf54441aa4fdc72e032"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-primeira.inicio",
+      "sha256": "3ff469a5d9db2eb12351909950eb6ff8db13f4453f850df344ac3ab7553dc855"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/typecheck-primeira.log",
+      "sha256": "741861d075df2be7265cbc1f23972d9d6516b20a2329cca7196716c1ac8d1956"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria-2.arvore.json",
+      "sha256": "a7c7e411ff65bba662a81ea7e5764b030526599b2b75c01208cd8692fccbbdbf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria-2.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria-2.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria-2.fim",
+      "sha256": "de7f17515ae370954b04b0de7bc8163ac1a087c3a41e6beec5443e9e402a931c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria-2.inicio",
+      "sha256": "2ffc83786e23c6d6e08b14ed121f53b3a2c6655e7dcd263e6cdc55820e263344"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria-2.log",
+      "sha256": "8cd8b061e5e1accfa50949e3c09706376a8ddef93ae9c06a5b6f977fc4aee4f5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria.arvore.json",
+      "sha256": "45a6d68048eac8cfb692264d22ab58ec5adab3e688a3255647c5922d715f360d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria.cabeca",
+      "sha256": "e08eb986ec5343908d61f0c5bdeedabb8b2a45d8b04fec0edea07eff3906ec71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria.fim",
+      "sha256": "32eef2fd73ba2f83fa807472797c6de3b662d2d5fa4fc7ed2a78206d86db07ad"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria.inicio",
+      "sha256": "9f54a427cfe1e5116a24cdac1a1c1b1d686520ff936c2bb0129047d65d3dc1b4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1d/voz-preparatoria.log",
+      "sha256": "935398bf06c387d43e1be6264f0c044337f11465b7209b04188b4b41a07495fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medidas.json",
+      "sha256": "9c3f1d353c4b4f5cfbb8ccbb8119f83484935c11ba6c46e8bfbae22b352adfe6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+      "sha256": "49ba3d090350e30c52273f83181ab70807c66458391651639e2b774d9fcb8698"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/build.arvore.json",
+      "sha256": "b61cc7ea458186ee2cf7620f6a7b48f23466d02fa3fc4d837c9a66d64bedbe98"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/build.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/build.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/build.fim",
+      "sha256": "226fbad85be39327497b5aef91de71e6e8876d96fb927d84cfffe37111471d97"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/build.inicio",
+      "sha256": "0d155f4a414319c2971b09ca02cbb8200e6fbe5f0327a51d9407d843e77e3afc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/build.log",
+      "sha256": "63e121bb3cd8fc64c6baaf086b4bd2e68fee4496b931051f7ae75369b0c922db"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/typecheck.arvore.json",
+      "sha256": "e356d7f08049010be91941c5e25bc317f1b237d9a83732b31f97ef3bc4055810"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/typecheck.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/typecheck.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/typecheck.fim",
+      "sha256": "f0c647a5d26c0ec52b071b4ed2f05a988412a1d9e6e0581ce1ee9d5d86e3fef0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/typecheck.inicio",
+      "sha256": "18406a741b4451916b15902461ebcfba93c67204fa724d8022feaef6b639d8f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/typecheck.log",
+      "sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/verify.cabeca",
+      "sha256": "0224019657fb91edbcd5f08fa9d1bdccf897b80f3c868ff576a12b64ba830c86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1d/verify.inicio",
+      "sha256": "14e30328c0c6a5a5dadd5d8e539bb4d1ccb68778fb43ee59085288fae2f451f2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/registar-c1.py",
+      "sha256": "b1a838338e15139519ae8d6024a63245f10ed8dc33d74ed3bdbd3f6d7e6e2ebd"
+    }
+  ]
+}

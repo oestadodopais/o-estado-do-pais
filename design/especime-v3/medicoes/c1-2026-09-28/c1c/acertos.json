@@ -1,0 +1,49 @@
+{
+  "redacao": "quinta",
+  "acertos": [
+    {
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lang": "pt",
+      "caminho": [
+        8
+      ],
+      "antes": " anos: é o apoio da Segurança Social a quem vive em carência económica grave, com um programa de inserção no trabalho e na comunidade.",
+      "depois": " anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade.",
+      "apoios": [
+        {
+          "origem": "rp1-rsi-seguranca-social",
+          "campo": "excerto",
+          "literal": "É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção)."
+        },
+        {
+          "origem": "rp1-rsi",
+          "campo": "excerto",
+          "literal": "RENDIMENTO SOCIAL DE INSERÇÃO : Prestação incluída no subsistema de solidariedade e num programa de inserção, de modo a conferir às pessoas e aos seus agregados familiares apoios adaptados à sua situação pessoal, que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária. PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros). Fórmula (Beneficiárias/os do rendimento social de inserção, da segurança social/ População média em idade ativa)*1000"
+        }
+      ]
+    },
+    {
+      "id": "beneficiarios-do-rsi-por-mil-2024",
+      "lang": "en",
+      "caminho": [
+        8
+      ],
+      "antes": " years old: it is Social Security’s support for people living in severe economic hardship, with a programme of integration into work and the community.",
+      "depois": " years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community.",
+      "apoios": [
+        {
+          "origem": "rp1-rsi-seguranca-social",
+          "campo": "excerto",
+          "literal": "É um apoio para pessoas em situação de pobreza extrema e inclui: um apoio mensal em dinheiro para garantir as necessidades mínimas e um programa de integração social e profissional, com um plano de ações adaptado à situação da família (contrato de inserção)."
+        },
+        {
+          "origem": "rp1-rsi",
+          "campo": "excerto",
+          "literal": "RENDIMENTO SOCIAL DE INSERÇÃO : Prestação incluída no subsistema de solidariedade e num programa de inserção, de modo a conferir às pessoas e aos seus agregados familiares apoios adaptados à sua situação pessoal, que contribuam para a satisfação das suas necessidades essenciais e que favoreçam a progressiva inserção laboral, social e comunitária. PERÍODO DE REFERÊNCIA : Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros). Fórmula (Beneficiárias/os do rendimento social de inserção, da segurança social/ População média em idade ativa)*1000"
+        }
+      ]
+    }
+  ],
+  "alternativa_ihpc": "A régua existente faz um veredicto de cada limiar. Usa-se nl com literal de origem e o objetivo declarado em referencias-das-medidas.mjs.",
+  "diferencas_fora_dos_acertos": 0
+}

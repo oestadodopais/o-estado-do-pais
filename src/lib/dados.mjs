@@ -1,12 +1,16 @@
+import { atrasoDaLinha } from './frescura.mjs';
+import { dataDaCasa } from './datas.mjs';
+import { t } from '../i18n/strings.mjs';
 /**
  * Os dados por trás dos instrumentos, em ficheiro.
  *
  * O Método diz, em cópia final da direção: «Os dados por trás de cada gráfico
  * são descarregáveis.» Este módulo é o que sustenta essa frase.
  *
- * REGRA: nada aqui é uma cópia à mão. Os dois ficheiros são gerados no build a
- * partir das MESMAS origens que desenham os instrumentos — o livro-razão para a
- * régua da convergência, o módulo das coordenadas para os 308 pontos. Um
+ * REGRA: nada aqui é uma cópia à mão. Os ficheiros são gerados na construção a
+ * partir das mesmas origens que desenham os instrumentos: o livro-razão para a
+ * régua da convergência e as medidas dos concelhos, o módulo das coordenadas
+ * para os pontos do mapa. Um
  * ficheiro escrito à mão diverge no dia em que uma afirmação for corrigida; um
  * ficheiro gerado não pode divergir, e o que confere (scripts/check-dados.mjs)
  * volta a lê-lo do dist/ e compara-o com as origens, não com este módulo.
@@ -21,6 +25,8 @@
  */
 
 import { getClaim } from './ledger.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
+import { pecasDoConcelho } from './inicio.mjs';
 import { REGIOES } from '../data/regioes.mjs';
 import {
   MUNICIPIOS,
@@ -40,6 +46,7 @@ import { SITE_NAME, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 export const DADOS = {
   convergencia: '/dados/convergencia.csv',
   municipios: '/dados/municipios-308.csv',
+  indicadoresDosConcelhos: '/dados/indicadores-dos-concelhos.csv',
 };
 
 /**
@@ -79,10 +86,10 @@ function linha(campos) {
  */
 function preambulo(titulo) {
   return [
-    `# ${SITE_NAME} — ${titulo}`,
+    `# ${SITE_NAME} · ${titulo}`,
     '#',
     `# https://${SITE_HOST_DISPLAY}/metodo`,
-    '# Gerado na construção do sítio.',
+    '# Gerado na construção do projeto.',
     '# NÃO EDITAR À MÃO: a construção seguinte reescreve este ficheiro.',
   ];
 }
@@ -168,6 +175,43 @@ export function csvMunicipios() {
   return linhas.join('\n') + '\n';
 }
 
+/** As medidas dos cartões dos concelhos, geradas do livro-razão. */
+export function csvIndicadoresDosConcelhos() {
+  const linhas = [
+    ...preambulo('as medidas dos concelhos'),
+    '#',
+    '# Uma linha por concelho e por medida apresentada nos seus cartões.',
+    '# A coluna nota conserva a ressalva de atualidade apresentada no cartão.',
+    '# Uma medida sem linha no livro-razão não entra neste ficheiro.',
+    '# Os nomes dos concelhos e das medidas estão em português.',
+    '# "concelho_slug" distingue concelhos com o mesmo nome.',
+    '# "valor" e "unidade" conservam exatamente o que a linha publica,',
+    '# incluindo a vírgula decimal e as marcas de ausência da fonte.',
+    '# "periodo" é o da linha ou, nas linhas calculadas sem data própria,',
+    '# o período declarado no cartão. "fonte" diz "Calculado" quando a',
+    '# linha é um cálculo sem publicador próprio.',
+    '# "afirmacao" identifica ledger/claims/<afirmacao>.yml, onde se leem',
+    '# a fonte, o endereço, o excerto e as origens de cada cálculo.',
+    '#',
+    linha(['concelho', 'medida', 'valor', 'unidade', 'periodo', 'fonte', 'afirmacao', 'concelho_slug', 'nota']),
+  ];
+  for (const municipio of MUNICIPIOS_COM_PAGINA) {
+    for (const peca of pecasDoConcelho(municipio)) {
+      if (peca.vazia) continue;
+      if (!peca.claim) throw new Error('Uma medida apresentada não identifica a sua linha.');
+      const c = getClaim(peca.claim);
+      const periodo = c.reference_date ?? peca.periodo.pt.find((p) => typeof p === 'object' && 'ref' in p)?.ref;
+      const fonte = c.source ?? (Array.isArray(c.derived_from) && c.derived_from.length ? 'Calculado' : '');
+      const atraso = atrasoDaLinha(c);
+      const [ano, mes] = (atraso?.periodoDaFonte ?? '').split('-');
+      const nota = atraso && c.reference_date && atraso.periodoDaFonte > c.reference_date
+        ? `${t('pt').cartao.fonteJaPublicou} ${t('pt').cartao.meses[Number(mes) - 1]} de ${ano}; ${t('pt').cartao.lidoA} ${dataDaCasa(atraso.origem.lidoEm)}` : '';
+      linhas.push(linha([municipio.nome.pt, peca.nome.pt, c.value, c.unit, periodo, fonte, c.id, municipio.slug, nota]));
+    }
+  }
+  return linhas.join('\n') + '\n';
+}
+
 /**
  * Separa um CSV nas linhas de comentário, no cabeçalho e nos dados.
  * Usado por quem confere o dist/ — que lê o ficheiro construído, não este
@@ -187,7 +231,7 @@ export function lerCsv(texto) {
   };
 }
 
-/** Um leitor de CSV suficiente para o que estes dois ficheiros usam. @param {string} l */
+/** Um leitor de CSV suficiente para os campos destes ficheiros. @param {string} l */
 function partirLinha(l) {
   const out = [];
   let atual = '';

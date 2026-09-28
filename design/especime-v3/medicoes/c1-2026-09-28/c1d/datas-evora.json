@@ -1,0 +1,30 @@
+{
+  "ficheiro": "studies-src/evora-quinze-anos-cinco-mandatos/pt.html",
+  "sha256": "ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a",
+  "literal": "Duas coisas que esta tabela regista e uma tabela de eleições não consegue. Em primeiro lugar, o mandato de 2013 não correu até ao fim com o presidente eleito em 2009: renunciou com efeitos a 2013-05-01, cerca de cinco meses antes do fim do mandato, e o vice-presidente assumiu como presidente interino até o novo executivo ser instalado a 2013-10-18 — a mesma pessoa encabeçou depois a lista do PS na eleição de setembro. Em segundo lugar, são as datas de instalação, e não as das eleições, que marcam o início efetivo dos mandatos: 2013-10-18, 2017-10-20, 2021-10-15 e 2025-10-31.",
+  "dados": [
+    {
+      "periodo": "2009–2013",
+      "instalado": null
+    },
+    {
+      "periodo": "2013–2017",
+      "instalado": "2013-10-18"
+    },
+    {
+      "periodo": "2017–2021",
+      "instalado": "2017-10-20"
+    },
+    {
+      "periodo": "2021–2025",
+      "instalado": "2021-10-15"
+    },
+    {
+      "periodo": "2025–",
+      "instalado": "2025-10-31"
+    }
+  ],
+  "instalacoes_com_data": 4,
+  "instalacoes_sem_data": 1,
+  "questao_aberta": "I169"
+}

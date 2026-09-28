@@ -80,6 +80,15 @@ contexts:
     why: >-
       Marcas da escala de um instrumento: os números do eixo são a régua, não a
       medição. O valor medido em cima da régua vem sempre do livro-razão.
+  - id: objetivo-institucional
+    why: >-
+      Objetivo declarado por uma instituição para o âmbito e o prazo que ela
+      nomeia. O número tem origem e literal selados na leitura. Não é uma
+      observação de Portugal nem produz, por si, um veredicto sobre Portugal.
+    why_en: >-
+      An objective declared by an institution for its stated scope and horizon.
+      The number has a sealed source and literal in the reading. It is not an
+      observation about Portugal and does not itself produce a verdict on Portugal.
   - id: limiar-do-quadro
     why: >-
       Limiar publicado por um quadro institucional. É a regra contra a qual a

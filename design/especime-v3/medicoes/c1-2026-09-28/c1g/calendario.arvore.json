@@ -1,0 +1,103 @@
+{
+  "cabeca": "c6eb9ef0d54dd74b14ffdbf6ad4610041941f14a",
+  "limpa": false,
+  "diferenca_sha256": "42e27ceb2f75ab72860694766d17603e3537dfbb061e11371a347c23bf11ef25",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.inicio",
+      "sha256": "30c129e84f3499e267b5d6b7817da9ed0c7c52cb09b6d42c7f9fbc580d0007bd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.arvore.json",
+      "sha256": "3720811c765955d3db134163cf4954922b1e33dfd424680f7ac2d75178d7d58a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.fim",
+      "sha256": "2add07cc8956be833208b61cc1e5be0870ae55bb3ef591a73cc42654290a6b62"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.inicio",
+      "sha256": "d7ea373262c2657f29749761c71c26941f4b8a58c0da8c137be7e50e753a3328"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.json",
+      "sha256": "7ec41c21486f707570db1d73cb8fcdc007fbb0c8a2b951f4599f0b0100c7c6fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.log",
+      "sha256": "7ec41c21486f707570db1d73cb8fcdc007fbb0c8a2b951f4599f0b0100c7c6fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.arvore.json",
+      "sha256": "a2756de5bb60b31f3daebfef2f545282e1b57a881c720ff2d90422228a73e430"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.fim",
+      "sha256": "d3e0ac045e8d3db4c6d540020ab80db905cd382d4ad3bd392053cfc99c2c7f26"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.inicio",
+      "sha256": "3ca55df1451e203ebcbb6dd49a869ef576be358e0defed2981b7e48bd51c0ebd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.json",
+      "sha256": "912ecc5e8229ba79b7c42fe4486c8fa757579faeeabc8ee0bf884eee12e88a70"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.log",
+      "sha256": "912ecc5e8229ba79b7c42fe4486c8fa757579faeeabc8ee0bf884eee12e88a70"
+    },
+    {
+      "ficheiro": "scripts/gate-html.mjs",
+      "sha256": "e36da89581f9af398171247487103c65dc63c5b4192d227cc0c3e33300477d2d"
+    },
+    {
+      "ficheiro": "scripts/verificacao-legivel.mjs",
+      "sha256": "3e3f4f7a68bd31944ae4e8ab9b2bc1057239b3cef9fc4c9f611bb9010975c540"
+    },
+    {
+      "ficheiro": "src/components/lugar/InstrumentoDosMandatos.astro",
+      "sha256": "1ae7726fd7ab33a2831388a45a36380def8fb2d3086ff88afe597a3c19d21160"
+    },
+    {
+      "ficheiro": "src/styles/site.css",
+      "sha256": "1a796d389183611de374ad93f05a71bb7d7129e23a86e4103d3779076b4e59d5"
+    },
+    {
+      "ficheiro": "src/views/LinhaView.astro",
+      "sha256": "8e193c4c3484a0f6adc305abb466cefbcf362b2595a50bf13372983c51c5eae2"
+    },
+    {
+      "ficheiro": "tests/confianca/c1.mjs",
+      "sha256": "12861a953eb94102a4d800ba446b55f9f89437270da9d3167d6a4ee49ec4dbf3"
+    },
+    {
+      "ficheiro": "tests/linha/cadeias-proveniencia.mjs",
+      "sha256": "17f66ebb3354dd46aeb2815f69e09aa70f4f227390dea8436de13b7799b7f749"
+    },
+    {
+      "ficheiro": "tests/municipio/calendario.mjs",
+      "sha256": "e571cb9c95fa00e47754de883511f04e5db90ea02017486661d0f483b3e61418"
+    }
+  ]
+}

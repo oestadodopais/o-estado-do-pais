@@ -1,0 +1,95 @@
+{
+  "cabeca": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+  "limpa": false,
+  "diferenca_sha256": "38757439117f42a02d645d2e8a5c36dcd35f7ad2efd50b4dfef5b63ccb62828b",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.arvore.json",
+      "sha256": "46c7a567ac48a38d07046fe4e91e69d6e018ecd8cf82b34021596d8df87e05e1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.fim",
+      "sha256": "0ded51d48462eed553c54ecb930c6dd9849020857f4a55b5d9bf12944b370d10"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.inicio",
+      "sha256": "dbbf34bfcfb0db3f272c293472f1973765c58d0b3085de0a8e97a81f663cdfa0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.log",
+      "sha256": "69083d50dc40e0cced1f6e266ef38d20929b7a8570f30268096b5800f4a24fa6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.inicio",
+      "sha256": "e3af30fbdab843f6d6845acd9e9f40e350cc3f01bbd958a6676ac8d49382adbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/acessos-git.json",
+      "sha256": "5f5afc520d8ecfec0816f1b8cfb896c34b303ba100eb21fd09f5d2a360b223af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/conferir-acessos.py",
+      "sha256": "1fec2fe8ed38a5706b1c06bc2dd24a07b76d621da97a9b0897fda0c1ed41863e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.arvore.json",
+      "sha256": "2ab79cf652006e5d552151f50b1e19027b4f044c1a47e691c49f5c4a04ad45af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.fim",
+      "sha256": "6868d240fb7a1d5f2f5adf9b79a313fb5d6303549d5bcdba5a61681f540af15e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.inicio",
+      "sha256": "3024886c26a89b4c332145c04807898bbda9d70b15d97d6af529d9dd92cf7c7e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.log",
+      "sha256": "5f5afc520d8ecfec0816f1b8cfb896c34b303ba100eb21fd09f5d2a360b223af"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-aprovado-2026.yml",
+      "sha256": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-municipio-contratado.yml",
+      "sha256": "20403da0996f959c61b5418345df9cb25ae252b862810bb422819aade1522a31"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-pago-2026.yml",
+      "sha256": "312d45ea45e38577776c497643cbcf4e8441531fe887aa6e78ed54b059254ff0"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-universidade-contratado.yml",
+      "sha256": "319ce292e6490cc8bb853ce5742797c085d41f2d37ca2fef3278d0e2d3212f15"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-vencido-aprovado-2026.yml",
+      "sha256": "12ce22206463a1ab9729d5a0400fed901f43ddee5b1f61848d80f27be6f02da2"
+    },
+    {
+      "ficheiro": "ledger/cruzamentos/evora.json",
+      "sha256": "2170d7874b70cd8f1ea0f02b5ad15ecba2ee6c7301838440690948e6de6297fa"
+    }
+  ]
+}

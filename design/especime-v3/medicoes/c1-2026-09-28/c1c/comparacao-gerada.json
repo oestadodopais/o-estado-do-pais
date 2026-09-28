@@ -1,0 +1,1105 @@
+{
+  "linhas": [
+    {
+      "id": "abandono-escolar-precoce-2024",
+      "valor_sitio": "6,6",
+      "valor_gerado": "6,6",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Early leavers from education and training by labour status — Percentage — Portugal — 2024: 6.6",
+          "gerado": "Early leavers from education and training by labour status — Labour force and employment status: Population — Age class: From 18 to 24 years — Percentage — Portugal — 2024: 6.6"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "abandono-escolar-precoce-2025-ue",
+      "valor_sitio": "9,1",
+      "valor_gerado": "9,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Early leavers from education and training by labour status — Percentage — European Union - 27 countries (from 2020) — 2025: 9.1",
+          "gerado": "Early leavers from education and training by labour status — Labour force and employment status: Population — Age class: From 18 to 24 years — Percentage — European Union - 27 countries (from 2020) — 2025: 9.1"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "competencias-digitais-2023",
+      "valor_sitio": "55,97",
+      "valor_gerado": "55,97",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Individuals who have basic or above basic overall digital skills by sex — Percentage of individuals — Portugal — 2023: 55.97",
+          "gerado": "Individuals who have basic or above basic overall digital skills by sex — Individual type: All individuals — Information society indicator: Individuals with basic or above basic overall digital skills (all five component indicators are at basic or above basic level) — Percentage of individuals — Portugal — 2023: 55.97"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "competencias-digitais-2025-ue",
+      "valor_sitio": "60,4",
+      "valor_gerado": "60,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Individuals who have basic or above basic overall digital skills by sex — Percentage of individuals — European Union - 27 countries (from 2020) — 2025: 60.4",
+          "gerado": "Individuals who have basic or above basic overall digital skills by sex — Individual type: All individuals — Information society indicator: Individuals with basic or above basic overall digital skills (all five component indicators are at basic or above basic level) — Percentage of individuals — European Union - 27 countries (from 2020) — 2025: 60.4"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "credito-malparado-2024",
+      "valor_sitio": "2,4",
+      "valor_gerado": "2,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2024: 2.4",
+          "gerado": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2024: 2.4 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "criancas-em-creche-2024",
+      "valor_sitio": "59,4",
+      "valor_gerado": "59,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Children aged less than 3 years in formal childcare — Percentage — Portugal — 2024: 59.4",
+          "gerado": "Children aged less than 3 years in formal childcare — Duration: 1 hour or over — Age class: Less than 3 years — Percentage — Portugal — 2024: 59.4"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "criancas-em-creche-2025-ue",
+      "valor_sitio": "40,5",
+      "valor_gerado": "40,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Children aged less than 3 years in formal childcare — Percentage — European Union - 27 countries (from 2020) — 2025: 40.5",
+          "gerado": "Children aged less than 3 years in formal childcare — Duration: 1 hour or over — Age class: Less than 3 years — Percentage — European Union - 27 countries (from 2020) — 2025: 40.5"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "valor_sitio": "17,7",
+      "valor_gerado": "17,7",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7",
+          "gerado": "Nominal unit labour cost per hour worked — National accounts indicator (ESA 2010): Nominal unit labour cost based on hours worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025-ue",
+      "valor_sitio": "15,2",
+      "valor_gerado": "15,2",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — European Union - 27 countries (from 2020) — 2025: 15.2",
+          "gerado": "Nominal unit labour cost per hour worked — National accounts indicator (ESA 2010): Nominal unit labour cost based on hours worked — Percentage change (t/t-3) — European Union - 27 countries (from 2020) — 2025: 15.2"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "desempenho-das-exportacoes-2024",
+      "valor_sitio": "17,1",
+      "valor_gerado": "17,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1",
+          "gerado": "Share of exports of advanced economies — Balance of payments item: Goods and services — Stock or flow: Credit — Geopolitical entity (partner): Rest of the world — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "desemprego-de-longa-duracao-2024",
+      "valor_sitio": "2,4",
+      "valor_gerado": "2,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Long-term unemployment rate by sex — Percentage of population in the labour force — Portugal — 2024: 2.4",
+          "gerado": "Long-term unemployment rate by sex — Employment indicator: Long-term unemployment — Age class: From 15 to 74 years — Percentage of population in the labour force — Portugal — 2024: 2.4"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "desemprego-de-longa-duracao-2025-ue",
+      "valor_sitio": "1,9",
+      "valor_gerado": "1,9",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Long-term unemployment rate by sex — Percentage of population in the labour force — European Union - 27 countries (from 2020) — 2025: 1.9",
+          "gerado": "Long-term unemployment rate by sex — Employment indicator: Long-term unemployment — Age class: From 15 to 74 years — Percentage of population in the labour force — European Union - 27 countries (from 2020) — 2025: 1.9"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "despesa-em-id-2023",
+      "valor_sitio": "1,68",
+      "valor_gerado": "1,68",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "valor_sitio": "2,24",
+      "valor_gerado": "2,24",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24",
+          "gerado": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "e"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "valor estimado"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "estimated value"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "disparidade-de-emprego-entre-sexos-2024",
+      "valor_sitio": "5,7",
+      "valor_gerado": "5,7",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Gender employment gap — Percentage of total population — Portugal — 2024: 5.7",
+          "gerado": "Gender employment gap — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Portugal — 2024: 5.7"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "disparidade-de-emprego-entre-sexos-2025-ue",
+      "valor_sitio": "9,6",
+      "valor_gerado": "9,6",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Gender employment gap — Percentage of total population — European Union - 27 countries (from 2020) — 2025: 9.6",
+          "gerado": "Gender employment gap — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — European Union - 27 countries (from 2020) — 2025: 9.6"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "valor_sitio": "67,1",
+      "valor_gerado": "67,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1",
+          "gerado": "Non-financial corporations debt, consolidated - % of GDP — Consolidated/Non consolidated: Consolidated — Sector: Non-financial corporations — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "valor_sitio": "70,0",
+      "valor_gerado": "70",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "value": {
+          "sitio": "70,0",
+          "gerado": "70"
+        },
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0",
+          "gerado": "Non-financial corporations debt, consolidated - % of GDP — Consolidated/Non consolidated: Consolidated — Sector: Non-financial corporations — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "valor_sitio": "52,6",
+      "valor_gerado": "52,6",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6",
+          "gerado": "Household debt including non-profit institutions serving households, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "divida-das-familias-2025-ue",
+      "valor_sitio": "49,3",
+      "valor_gerado": "49,2",
+      "valor_numerico_diferente": true,
+      "campos_diferentes": {
+        "value": {
+          "sitio": "49,3",
+          "gerado": "49,2"
+        },
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 49.3",
+          "gerado": "Household debt including non-profit institutions serving households, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 49.2 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": true
+    },
+    {
+      "id": "divida-publica-2024",
+      "valor_sitio": "93,5",
+      "valor_gerado": "93,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: 93.5",
+          "gerado": "General government gross debt (EDP concept), consolidated - annual data — National accounts indicator (ESA 2010): Government consolidated gross debt — Sector: General government — Percentage of gross domestic product (GDP) — Portugal — 2024: 93.5"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "divida-publica-2025-ue",
+      "valor_sitio": "81,7",
+      "valor_gerado": "81,7",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7",
+          "gerado": "General government gross debt (EDP concept), consolidated - annual data — National accounts indicator (ESA 2010): Government consolidated gross debt — Sector: General government — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "fluxo-de-credito-as-empresas-2024",
+      "valor_sitio": "2,4",
+      "valor_gerado": "2,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.4",
+          "gerado": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Non-financial corporations — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans, excluding foreign direct investments — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.4"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2024",
+      "valor_sitio": "4,1",
+      "valor_gerado": "4,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.1",
+          "gerado": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — National accounts indicator (ESA 2010): Securities other than shares, loans — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.1"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "valor_sitio": "2,9",
+      "valor_gerado": "2,9",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9",
+          "gerado": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — National accounts indicator (ESA 2010): Securities other than shares, loans — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "valor_sitio": "20,4",
+      "valor_gerado": "20,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4",
+          "gerado": "Gross fixed capital formation at current prices — National accounts indicator (ESA 2010): Gross fixed capital formation — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025-ue",
+      "valor_sitio": "21,4",
+      "valor_gerado": "21,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 21.4",
+          "gerado": "Gross fixed capital formation at current prices — National accounts indicator (ESA 2010): Gross fixed capital formation — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 21.4"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "independencia-da-justica-2024",
+      "valor_sitio": "53",
+      "valor_gerado": "53",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Perceived independence of the justice system — Percentage — Portugal — 2024: 53",
+          "gerado": "Perceived independence of the justice system — Level of perception: Very good or fairly good — Percentage — Portugal — 2024: 53"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "independencia-da-justica-2025-ue",
+      "valor_sitio": "54",
+      "valor_gerado": "54",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Perceived independence of the justice system — Percentage — European Union - 27 countries (from 2020) — 2025: 54",
+          "gerado": "Perceived independence of the justice system — Level of perception: Very good or fairly good — Percentage — European Union - 27 countries (from 2020) — 2025: 54"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "indice-de-percepcao-da-corrupcao-2024",
+      "valor_sitio": "57",
+      "valor_gerado": "57",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "indice-de-percepcao-da-corrupcao-2025-ue",
+      "valor_sitio": "62",
+      "valor_gerado": "62",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "jovens-nem-2024",
+      "valor_sitio": "8,7",
+      "valor_gerado": "8,7",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "note": {
+          "sitio": "Período anterior da medida «jovens-nem-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. O título que o catálogo do Eurostat dá a este quadro diz «aged 15-24» e a dimensão `age` da resposta ao endereço em source_url diz «From 15 to 29 years»: a série é dos 15 aos 29. As duas leituras são de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+          "gerado": "Período anterior da medida «jovens-nem-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "jovens-nem-2025-ue",
+      "valor_sitio": "11,0",
+      "valor_gerado": "11",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "value": {
+          "sitio": "11,0",
+          "gerado": "11"
+        },
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "note": {
+          "sitio": "Agregado da União Europeia (EU27_2020) da medida «jovens-nem-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. O título que o catálogo do Eurostat dá a este quadro diz «aged 15-24» e a dimensão `age` da resposta ao endereço em source_url diz «From 15 to 29 years»: a série é dos 15 aos 29. As duas leituras são de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+          "gerado": "Agregado da União Europeia (EU27_2020) da medida «jovens-nem-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "licencas-de-construcao-2024",
+      "valor_sitio": "654,5",
+      "valor_gerado": "654,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2024: 654.5",
+          "gerado": "Residential building permits - annual data — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Business trend indicator: Building permits - m2 of useful floor area — Statistical Classification of Products by Activity (CPA 2.1): Residential buildings — Square metres per 1000 inhabitants — Portugal — 2024: 654.5 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "licencas-de-construcao-2025-ue",
+      "valor_sitio": "377,5",
+      "valor_gerado": "377,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.5",
+          "gerado": "Residential building permits - annual data — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Business trend indicator: Building permits - m2 of useful floor area — Statistical Classification of Products by Activity (CPA 2.1): Residential buildings — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.5"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "necessidades-medicas-nao-satisfeitas-2024",
+      "valor_sitio": "2,5",
+      "valor_gerado": "2,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Self-reported unmet need for medical care by sex — Percentage — Portugal — 2024: 2.5",
+          "gerado": "Self-reported unmet need for medical care by sex — Reason: Too expensive or too far or waiting list — Age class: 16 years or over — Percentage — Portugal — 2024: 2.5"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "necessidades-medicas-nao-satisfeitas-2025-ue",
+      "valor_sitio": "2,4",
+      "valor_gerado": "2,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Self-reported unmet need for medical care by sex — Percentage — European Union - 27 countries (from 2020) — 2025: 2.4",
+          "gerado": "Self-reported unmet need for medical care by sex — Reason: Too expensive or too far or waiting list — Age class: 16 years or over — Percentage — European Union - 27 countries (from 2020) — 2025: 2.4"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "valor_sitio": "20 430",
+      "valor_gerado": "20 430",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430",
+          "gerado": "Real GDP per capita — National accounts indicator (ESA 2010): Gross domestic product at market prices — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p"
+        },
+        "source_flag": {
+          "sitio": null,
+          "gerado": "p"
+        },
+        "source_flag_note": {
+          "sitio": null,
+          "gerado": "dado provisório"
+        },
+        "source_flag_note_en": {
+          "sitio": null,
+          "gerado": "provisional data"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "valor_sitio": "31 890",
+      "valor_gerado": "31 890",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890",
+          "gerado": "Real GDP per capita — National accounts indicator (ESA 2010): Gross domestic product at market prices — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2024",
+      "valor_sitio": "−58,9",
+      "valor_gerado": "−58,9",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9",
+          "gerado": "Net international investment position - annual data — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Balance of payments item: Financial account — Sector (ESA 2010): Total economy — Counterpart sector (ESA 2010): Total economy — Stock or flow: Net positions at the end of period — Geopolitical entity (partner): Rest of the world — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "precos-da-habitacao-2024",
+      "valor_sitio": "9,1",
+      "valor_gerado": "9,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "precos-da-habitacao-2025-ue",
+      "valor_sitio": "5,5",
+      "valor_gerado": "5,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "racio-s80-s20-2024",
+      "valor_sitio": "5,2",
+      "valor_gerado": "5,2",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "racio-s80-s20-2025-ue",
+      "valor_sitio": "4,62",
+      "valor_gerado": "4,62",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "risco-de-pobreza-ou-exclusao-2024",
+      "valor_sitio": "19,7",
+      "valor_gerado": "19,7",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "risco-de-pobreza-ou-exclusao-2025-ue",
+      "valor_sitio": "20,9",
+      "valor_gerado": "20,9",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2024",
+      "valor_sitio": "0,3",
+      "valor_gerado": "0,3",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3",
+          "gerado": "Current account balance - 3 year average — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Balance of payments item: Current account — Stock or flow: Balance — Geopolitical entity (partner): Rest of the world — Percentage of GDP - three-year average — Portugal — 2024: 0.3"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-2024",
+      "valor_sitio": "6,9",
+      "valor_gerado": "6,9",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
+      "valor_sitio": "7,7",
+      "valor_gerado": "7,7",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-actividade-2024",
+      "valor_sitio": "3,2",
+      "valor_gerado": "3,2",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Labour force participation rate — Percentage point change (t-(t-3)) — Portugal — 2024: 3.2",
+          "gerado": "Labour force participation rate — Age class: From 15 to 64 years — Percentage point change (t-(t-3)) — Portugal — 2024: 3.2"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-actividade-2025-ue",
+      "valor_sitio": "1,1",
+      "valor_gerado": "1,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        },
+        "excerpt": {
+          "sitio": "Labour force participation rate — Percentage point change (t-(t-3)) — European Union - 27 countries (from 2020) — 2025: 1.1",
+          "gerado": "Labour force participation rate — Age class: From 15 to 64 years — Percentage point change (t-(t-3)) — European Union - 27 countries (from 2020) — 2025: 1.1"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-cambio-efectiva-real-2024",
+      "valor_sitio": "0,4",
+      "valor_gerado": "0,4",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-cambio-efectiva-real-2025-ue",
+      "valor_sitio": "11,3",
+      "valor_gerado": "11,3",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-desemprego-2024",
+      "valor_sitio": "6,5",
+      "valor_gerado": "6,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-desemprego-2025-ue",
+      "valor_sitio": "6,0",
+      "valor_gerado": "6",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "value": {
+          "sitio": "6,0",
+          "gerado": "6"
+        },
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-desemprego-mip-2024",
+      "valor_sitio": "6,5",
+      "valor_gerado": "6,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-desemprego-mip-2025-ue",
+      "valor_sitio": "6,0",
+      "valor_gerado": "6",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "value": {
+          "sitio": "6,0",
+          "gerado": "6"
+        },
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-emprego-2024",
+      "valor_sitio": "78,5",
+      "valor_gerado": "78,5",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    },
+    {
+      "id": "taxa-de-emprego-2025-ue",
+      "valor_sitio": "76,1",
+      "valor_gerado": "76,1",
+      "valor_numerico_diferente": false,
+      "campos_diferentes": {
+        "access_date": {
+          "sitio": "2026-09-15",
+          "gerado": "2026-09-28"
+        }
+      },
+      "aplicar_valor": false
+    }
+  ],
+  "ausencias": [
+    {
+      "indicador": "tipsbp10",
+      "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+    },
+    {
+      "indicador": "tipsii10",
+      "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+    },
+    {
+      "indicador": "tipsbp60",
+      "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+    },
+    {
+      "indicador": "tipspc30",
+      "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+    },
+    {
+      "indicador": "tipsbd10",
+      "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+    }
+  ]
+}
