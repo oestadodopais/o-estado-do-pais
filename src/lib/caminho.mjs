@@ -60,6 +60,16 @@ import { dominioDoSlug } from '../data/dominios.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { getClaim } from './ledger.mjs';
 import { nomeDaMedida } from './nomes.mjs';
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
+
+/** A chave de rota de cada entrada, e o identificador dela nas declarações (bloco PP1). */
+export const ENTRADA_DA_ROTA = /** @type {const} */ ({
+  entradaDinheiro: 'dinheiro',
+  entradaTrabalho: 'trabalho',
+  entradaCasa: 'casa',
+  entradaEscolaESaude: 'escola-e-saude',
+  entradaEstado: 'estado',
+});
 
 /**
  * AS DUAS FAMÍLIAS DE TRANSCRIÇÃO (§3 do brief). A mesma lista está em
@@ -88,6 +98,12 @@ export const PAI_DA_ROTA = {
   marcador: 'home',
   agenda: 'home',
   uniaoEuropeia: 'home',
+  /* As cinco entradas por pergunta da vida (bloco PP1, 28.09.2026) nascem da primeira página. */
+  entradaDinheiro: 'home',
+  entradaTrabalho: 'home',
+  entradaCasa: 'home',
+  entradaEscolaESaude: 'home',
+  entradaEstado: 'home',
   estudos: 'home',
   estudo: 'estudos',
   /* B1, peça 2: a escada do território passa pela página dos lugares, que é a
@@ -161,6 +177,9 @@ function etiquetaDaRota(chave, lang) {
     livroConcelhos: s.nav.municipios,
     marcador: s.marcador.h1,
   };
+  /* O nome de uma entrada é o da declaração do lugar de direção, que é o `<h1>` da página. */
+  const entrada = ENTRADAS.find((e) => e.id === ENTRADA_DA_ROTA[/** @type {keyof typeof ENTRADA_DA_ROTA} */ (chave)]);
+  if (entrada) return entrada.nome[lang];
   return porChave[chave] ?? null;
 }
 
