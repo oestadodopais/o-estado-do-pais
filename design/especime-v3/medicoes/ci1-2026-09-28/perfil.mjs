@@ -73,14 +73,14 @@ console.log('\nPOR FICHEIRO (tempo próprio)');
 for (const l of ordena(porFicheiro).slice(0, top)) console.log(linha(l));
 console.log('\nPOR FUNÇÃO (tempo próprio)');
 for (const l of ordena(proprio).slice(0, top)) console.log(linha(l));
-console.log('\nPOR FUNÇÃO (tempo inclusivo, só funções do sítio)');
-for (const l of ordena(inclusivo).filter(([k]) => /· (src|scripts|astro\.config)/.test(k)).slice(0, top)) console.log(linha(l));
+console.log('\nPOR FUNÇÃO (tempo inclusivo, só funções do sítio, com os pedaços que o Astro empacota em dist/.prerender)');
+for (const l of ordena(inclusivo).filter(([k]) => /· (src|scripts|tests|astro\.config|dist\/\.prerender)/.test(k)).slice(0, top)) console.log(linha(l));
 if (saida) {
   fs.writeFileSync(saida, JSON.stringify({
     total_ms: total,
     amostras: samples.length,
     por_ficheiro: ordena(porFicheiro).slice(0, 60),
     proprio: ordena(proprio).slice(0, 60),
-    inclusivo_do_sitio: ordena(inclusivo).filter(([k]) => /· (src|scripts|astro\.config)/.test(k)).slice(0, 80),
+    inclusivo_do_sitio: ordena(inclusivo).filter(([k]) => /· (src|scripts|tests|astro\.config|dist\/\.prerender)/.test(k)).slice(0, 80),
   }, null, 1) + '\n');
 }

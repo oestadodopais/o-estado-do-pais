@@ -1,0 +1,380 @@
+{
+ "conhecido_positivo": {
+  "corrida": "36412381787",
+  "build_s": 703,
+  "verify_s": 883,
+  "astro_s": 500.7,
+  "minutos_da_corrida": 27.8
+ },
+ "corridas": [
+  {
+   "corrida": "36412381787",
+   "cabeca": "17758ec7680e14cc8b1da58b14ec5ac348f54670",
+   "ramo": "main",
+   "evento": "push",
+   "conclusao": "success",
+   "inicio": "2026-09-28T10:53:41Z",
+   "fim": "2026-09-28T11:21:29Z",
+   "minutos_da_corrida": 27.8,
+   "trabalhos": [
+    {
+     "nome": "portao",
+     "conclusao": "success",
+     "minutos": 27.75,
+     "passos": [
+      {
+       "nome": "Set up job",
+       "conclusao": "success",
+       "segundos": 1
+      },
+      {
+       "nome": "A árvore",
+       "conclusao": "success",
+       "segundos": 34
+      },
+      {
+       "nome": "O Node",
+       "conclusao": "success",
+       "segundos": 8
+      },
+      {
+       "nome": "npm ci",
+       "conclusao": "success",
+       "segundos": 4
+      },
+      {
+       "nome": "O Chromium do Playwright",
+       "conclusao": "success",
+       "segundos": 25
+      },
+      {
+       "nome": "npm run build",
+       "conclusao": "success",
+       "segundos": 703
+      },
+      {
+       "nome": "npm run verify",
+       "conclusao": "success",
+       "segundos": 883
+      },
+      {
+       "nome": "npm run typecheck",
+       "conclusao": "success",
+       "segundos": 0
+      },
+      {
+       "nome": "Os dois ficheiros da prova existem",
+       "conclusao": "success",
+       "segundos": 0
+      },
+      {
+       "nome": "A prova desta corrida",
+       "conclusao": "success",
+       "segundos": 2
+      },
+      {
+       "nome": "Post O Node",
+       "conclusao": "success",
+       "segundos": 0
+      },
+      {
+       "nome": "Post A árvore",
+       "conclusao": "success",
+       "segundos": 0
+      },
+      {
+       "nome": "Complete job",
+       "conclusao": "success",
+       "segundos": 0
+      }
+     ],
+     "guioes_do_npm": [
+      {
+       "nome": "build",
+       "inicio": "2026-09-28T10:54:57.7684580Z",
+       "segundos": 0.1
+      },
+      {
+       "nome": "mapa:unidades",
+       "inicio": "2026-09-28T10:54:57.8671129Z",
+       "segundos": 0.2
+      },
+      {
+       "nome": "ledger:check",
+       "inicio": "2026-09-28T10:54:58.0259978Z",
+       "segundos": 0.6
+      },
+      {
+       "nome": "check:registo",
+       "inicio": "2026-09-28T10:54:58.6372799Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "check:cruzamento",
+       "inicio": "2026-09-28T10:54:59.1388889Z",
+       "segundos": 0.7
+      },
+      {
+       "nome": "check:documentos",
+       "inicio": "2026-09-28T10:54:59.8488687Z",
+       "segundos": 503.1
+      },
+      {
+       "nome": "stamp:version",
+       "inicio": "2026-09-28T11:03:22.9291546Z",
+       "segundos": 0.1
+      },
+      {
+       "nome": "cartoes",
+       "inicio": "2026-09-28T11:03:23.0700402Z",
+       "segundos": 20.3
+      },
+      {
+       "nome": "gate:html",
+       "inicio": "2026-09-28T11:03:43.3429748Z",
+       "segundos": 84.9
+      },
+      {
+       "nome": "check:datas",
+       "inicio": "2026-09-28T11:05:08.2399141Z",
+       "segundos": 2
+      },
+      {
+       "nome": "check:cadeia",
+       "inicio": "2026-09-28T11:05:10.2465469Z",
+       "segundos": 0.4
+      },
+      {
+       "nome": "check:dados",
+       "inicio": "2026-09-28T11:05:10.6675609Z",
+       "segundos": 1.8
+      },
+      {
+       "nome": "check:mapa",
+       "inicio": "2026-09-28T11:05:12.4423816Z",
+       "segundos": 0.6
+      },
+      {
+       "nome": "check:regioes",
+       "inicio": "2026-09-28T11:05:13.0919958Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "check:areas",
+       "inicio": "2026-09-28T11:05:13.5847469Z",
+       "segundos": 0.8
+      },
+      {
+       "nome": "check:formas",
+       "inicio": "2026-09-28T11:05:14.4135862Z",
+       "segundos": 9
+      },
+      {
+       "nome": "check:lugares",
+       "inicio": "2026-09-28T11:05:23.4064061Z",
+       "segundos": 2.4
+      },
+      {
+       "nome": "check:pais",
+       "inicio": "2026-09-28T11:05:25.7898507Z",
+       "segundos": 7.7
+      },
+      {
+       "nome": "check:voz",
+       "inicio": "2026-09-28T11:05:33.4433717Z",
+       "segundos": 54.2
+      },
+      {
+       "nome": "check:nomes",
+       "inicio": "2026-09-28T11:06:27.6434189Z",
+       "segundos": 3.3
+      },
+      {
+       "nome": "check:lingua",
+       "inicio": "2026-09-28T11:06:30.8955847Z",
+       "segundos": 10.2
+      },
+      {
+       "nome": "verify",
+       "inicio": "2026-09-28T11:06:41.1051566Z",
+       "segundos": 0.1
+      },
+      {
+       "nome": "ledger:check",
+       "inicio": "2026-09-28T11:06:41.2035672Z",
+       "segundos": 0.6
+      },
+      {
+       "nome": "check:registo",
+       "inicio": "2026-09-28T11:06:41.8071245Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "check:cruzamento",
+       "inicio": "2026-09-28T11:06:42.3183841Z",
+       "segundos": 0.8
+      },
+      {
+       "nome": "check:documentos",
+       "inicio": "2026-09-28T11:06:43.0712271Z",
+       "segundos": 0.2
+      },
+      {
+       "nome": "check:briefs",
+       "inicio": "2026-09-28T11:06:43.2669099Z",
+       "segundos": 1.8
+      },
+      {
+       "nome": "gate:html",
+       "inicio": "2026-09-28T11:06:45.0555497Z",
+       "segundos": 85
+      },
+      {
+       "nome": "check:css",
+       "inicio": "2026-09-28T11:08:10.0437033Z",
+       "segundos": 9.1
+      },
+      {
+       "nome": "check:datas",
+       "inicio": "2026-09-28T11:08:19.1195923Z",
+       "segundos": 2
+      },
+      {
+       "nome": "check:moldura",
+       "inicio": "2026-09-28T11:08:21.1356525Z",
+       "segundos": 152.5
+      },
+      {
+       "nome": "check:alvos",
+       "inicio": "2026-09-28T11:10:53.6407535Z",
+       "segundos": 266.8
+      },
+      {
+       "nome": "check:cabeca",
+       "inicio": "2026-09-28T11:15:20.4222710Z",
+       "segundos": 11.8
+      },
+      {
+       "nome": "check:fontes",
+       "inicio": "2026-09-28T11:15:32.2550406Z",
+       "segundos": 1.3
+      },
+      {
+       "nome": "check:cadeia",
+       "inicio": "2026-09-28T11:15:33.5756406Z",
+       "segundos": 0.4
+      },
+      {
+       "nome": "check:dados",
+       "inicio": "2026-09-28T11:15:34.0046480Z",
+       "segundos": 1.7
+      },
+      {
+       "nome": "mapa:unidades",
+       "inicio": "2026-09-28T11:15:35.7283018Z",
+       "segundos": 0.2
+      },
+      {
+       "nome": "check:mapa",
+       "inicio": "2026-09-28T11:15:35.8790536Z",
+       "segundos": 0.7
+      },
+      {
+       "nome": "check:regioes",
+       "inicio": "2026-09-28T11:15:36.5316131Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "check:areas",
+       "inicio": "2026-09-28T11:15:37.0307065Z",
+       "segundos": 0.8
+      },
+      {
+       "nome": "check:formas",
+       "inicio": "2026-09-28T11:15:37.8550080Z",
+       "segundos": 9
+      },
+      {
+       "nome": "check:alcance",
+       "inicio": "2026-09-28T11:15:46.9013484Z",
+       "segundos": 6
+      },
+      {
+       "nome": "check:lugares",
+       "inicio": "2026-09-28T11:15:52.8637207Z",
+       "segundos": 2.4
+      },
+      {
+       "nome": "check:pais",
+       "inicio": "2026-09-28T11:15:55.2658505Z",
+       "segundos": 7.7
+      },
+      {
+       "nome": "check:voz",
+       "inicio": "2026-09-28T11:16:02.9190526Z",
+       "segundos": 53.4
+      },
+      {
+       "nome": "check:lingua",
+       "inicio": "2026-09-28T11:16:56.3295403Z",
+       "segundos": 10.3
+      },
+      {
+       "nome": "check:lugar",
+       "inicio": "2026-09-28T11:17:06.5948272Z",
+       "segundos": 45.8
+      },
+      {
+       "nome": "provar:eyetext",
+       "inicio": "2026-09-28T11:17:52.4223309Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "provar:guardas",
+       "inicio": "2026-09-28T11:17:52.9216065Z",
+       "segundos": 0.2
+      },
+      {
+       "nome": "check:mortos",
+       "inicio": "2026-09-28T11:17:53.0790972Z",
+       "segundos": 2.5
+      },
+      {
+       "nome": "check:indice",
+       "inicio": "2026-09-28T11:17:55.5897953Z",
+       "segundos": 20.1
+      },
+      {
+       "nome": "check:cartao",
+       "inicio": "2026-09-28T11:18:15.6507245Z",
+       "segundos": 13.1
+      },
+      {
+       "nome": "check:nomes",
+       "inicio": "2026-09-28T11:18:28.7813819Z",
+       "segundos": 3.3
+      },
+      {
+       "nome": "check:palavras",
+       "inicio": "2026-09-28T11:18:32.0479743Z",
+       "segundos": 169.4
+      },
+      {
+       "nome": "design:feixe",
+       "inicio": "2026-09-28T11:21:21.4427806Z",
+       "segundos": 2.1
+      },
+      {
+       "nome": "typecheck",
+       "inicio": "2026-09-28T11:21:23.5235479Z",
+       "segundos": 5.5
+      }
+     ],
+     "astro_build_segundos": 500.7,
+     "conferencias_lado_a_lado": [],
+     "celulas": []
+    }
+   ]
+  }
+ ]
+}

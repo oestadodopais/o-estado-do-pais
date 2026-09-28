@@ -1,0 +1,200 @@
+{
+ "comando": "npm run verify",
+ "inicio": "2026-09-28T18:52:29.092Z",
+ "fim": "2026-09-28T19:00:20.457Z",
+ "segundos": 471.365,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": [
+   "15933   0.0 /bin/zsh -c source <casa>/…/snapshot-zsh-1790227142569-j4binn.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin un",
+   "15949   0.0 node tests/pais/portoes.mjs --lista html,r1-mudanca-com-valor-trocado,b2-contagens-das-camaras,b2-voz-contagem-e-prosa,l1-leitura-sem-selo-em,l1-leitura-de-outro-cartao,l1-leitura-que-a-k1",
+   "27834 101.4 <casa>/…/node scripts/gate-html.mjs"
+  ]
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": [
+  {
+   "nome": "verify",
+   "inicio": "2026-09-28T18:52:29.164Z",
+   "segundos": 0.07
+  },
+  {
+   "nome": "ledger:check",
+   "inicio": "2026-09-28T18:52:29.234Z",
+   "segundos": 0.385
+  },
+  {
+   "nome": "check:registo",
+   "inicio": "2026-09-28T18:52:29.619Z",
+   "segundos": 0.276
+  },
+  {
+   "nome": "check:cruzamento",
+   "inicio": "2026-09-28T18:52:29.895Z",
+   "segundos": 0.372
+  },
+  {
+   "nome": "check:documentos",
+   "inicio": "2026-09-28T18:52:30.267Z",
+   "segundos": 0.13
+  },
+  {
+   "nome": "check:briefs",
+   "inicio": "2026-09-28T18:52:30.397Z",
+   "segundos": 2.936
+  },
+  {
+   "nome": "gate:html",
+   "inicio": "2026-09-28T18:52:33.333Z",
+   "segundos": 12.077
+  },
+  {
+   "nome": "check:css",
+   "inicio": "2026-09-28T18:52:45.410Z",
+   "segundos": 3.644
+  },
+  {
+   "nome": "check:datas",
+   "inicio": "2026-09-28T18:52:49.054Z",
+   "segundos": 1.077
+  },
+  {
+   "nome": "check:moldura",
+   "inicio": "2026-09-28T18:52:50.131Z",
+   "segundos": 97.113
+  },
+  {
+   "nome": "check:alvos",
+   "inicio": "2026-09-28T18:54:27.244Z",
+   "segundos": 195.429
+  },
+  {
+   "nome": "check:cabeca",
+   "inicio": "2026-09-28T18:57:42.673Z",
+   "segundos": 3.69
+  },
+  {
+   "nome": "check:fontes",
+   "inicio": "2026-09-28T18:57:46.363Z",
+   "segundos": 1.644
+  },
+  {
+   "nome": "check:cadeia",
+   "inicio": "2026-09-28T18:57:48.007Z",
+   "segundos": 0.212
+  },
+  {
+   "nome": "check:dados",
+   "inicio": "2026-09-28T18:57:48.219Z",
+   "segundos": 1.574
+  },
+  {
+   "nome": "mapa:unidades",
+   "inicio": "2026-09-28T18:57:49.793Z",
+   "segundos": 0.114
+  },
+  {
+   "nome": "check:mapa",
+   "inicio": "2026-09-28T18:57:49.907Z",
+   "segundos": 0.323
+  },
+  {
+   "nome": "check:regioes",
+   "inicio": "2026-09-28T18:57:50.230Z",
+   "segundos": 0.26
+  },
+  {
+   "nome": "check:areas",
+   "inicio": "2026-09-28T18:57:50.490Z",
+   "segundos": 0.403
+  },
+  {
+   "nome": "check:formas",
+   "inicio": "2026-09-28T18:57:50.893Z",
+   "segundos": 3.487
+  },
+  {
+   "nome": "check:alcance",
+   "inicio": "2026-09-28T18:57:54.380Z",
+   "segundos": 2.323
+  },
+  {
+   "nome": "check:lugares",
+   "inicio": "2026-09-28T18:57:56.703Z",
+   "segundos": 0.487
+  },
+  {
+   "nome": "check:pais",
+   "inicio": "2026-09-28T18:57:57.190Z",
+   "segundos": 3.063
+  },
+  {
+   "nome": "check:voz",
+   "inicio": "2026-09-28T18:58:00.253Z",
+   "segundos": 23.405
+  },
+  {
+   "nome": "check:lingua",
+   "inicio": "2026-09-28T18:58:23.658Z",
+   "segundos": 4.138
+  },
+  {
+   "nome": "check:lugar",
+   "inicio": "2026-09-28T18:58:27.796Z",
+   "segundos": 18.123
+  },
+  {
+   "nome": "provar:eyetext",
+   "inicio": "2026-09-28T18:58:45.919Z",
+   "segundos": 0.243
+  },
+  {
+   "nome": "provar:guardas",
+   "inicio": "2026-09-28T18:58:46.162Z",
+   "segundos": 0.124
+  },
+  {
+   "nome": "check:mortos",
+   "inicio": "2026-09-28T18:58:46.286Z",
+   "segundos": 1.636
+  },
+  {
+   "nome": "check:indice",
+   "inicio": "2026-09-28T18:58:47.922Z",
+   "segundos": 10.267
+  },
+  {
+   "nome": "check:cartao",
+   "inicio": "2026-09-28T18:58:58.189Z",
+   "segundos": 4.208
+  },
+  {
+   "nome": "check:nomes",
+   "inicio": "2026-09-28T18:59:02.397Z",
+   "segundos": 2.071
+  },
+  {
+   "nome": "check:palavras",
+   "inicio": "2026-09-28T18:59:04.468Z",
+   "segundos": 74.704
+  },
+  {
+   "nome": "design:feixe",
+   "inicio": "2026-09-28T19:00:19.172Z",
+   "segundos": 1.285
+  }
+ ]
+}

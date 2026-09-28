@@ -1,0 +1,30 @@
+{
+ "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <rascunho>/ci1-construtor/inventario.json",
+ "inicio": "2026-09-28T18:42:55.865Z",
+ "fim": "2026-09-28T18:50:27.193Z",
+ "segundos": 451.328,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": [
+   "83010   0.0 /bin/zsh -c source <casa>/…/snapshot-zsh-1790227142569-j4binn.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin un",
+   "83015   0.0 npm run build",
+   "83042   0.0 sh -c npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cart",
+   "83213  99.9 node <casa>/…/astro build"
+  ]
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": []
+}

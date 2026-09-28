@@ -54,7 +54,13 @@ trocas.sort((a, b) => b[0].length - a[0].length);
 const limpa = (s) => {
   let r = s.replace(/\x1b\[[0-9;]*[A-Za-z]/g, '');
   for (const [de, para] of trocas) r = r.split(de).join(para);
-  return r;
+  /* O rascunho de uma sessão vive numa pasta temporária cujo nome achata o
+     caminho do projeto e traz o número do utilizador: sai inteiro. */
+  return r
+    .replace(/<tmp>\/claude-\d+\/[^/\s"']+\/[^/\s"']+\/scratchpad/g, '<rascunho>')
+    /* Um caminho debaixo da casa (o de outro projeto ou de outra árvore, num
+       processo vizinho) fica só com o último componente. */
+    .replace(/<casa>\/[^\s"']+/g, (m) => `<casa>/…/${m.replace(/\/+$/, '').split('/').pop()}`);
 };
 
 /** Os processos de construção ou de conferência que já corriam, sem este. */

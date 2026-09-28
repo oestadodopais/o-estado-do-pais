@@ -1,0 +1,538 @@
+{
+ "cabeca": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb",
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10
+ },
+ "conhecido_positivo": {
+  "o_que": "o check:cabeca abre um servidor, um Chromium e uma pasta oedp-cabeca-",
+  "visto": {
+   "servidores": [
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    },
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    }
+   ],
+   "processos": {
+    "sh": 1,
+    "chromium": 2,
+    "node": 1
+   },
+   "chromium": 2,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 141,
+   "pastas_temporarias_criadas": [
+    "oedp-cabeca-XXXXXX",
+    "playwright-artifacts-XXXXXX",
+    "playwright_chromiumdev_profile-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_41_31_389Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_42_55_943Z-debug-0.log"
+   ],
+   "escritas_fora": []
+  }
+ },
+ "conferencias": [
+  {
+   "passo": "npm run check:briefs",
+   "codigo": 0,
+   "segundos": 2.927,
+   "memoria_max_mib": 84,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_42_09_426Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_43_01_133Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:css",
+   "codigo": 0,
+   "segundos": 3.633,
+   "memoria_max_mib": 163,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 11,
+   "pastas_temporarias_criadas": [
+    "oedp-css-prova-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_42_10_251Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_43_05_341Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:moldura",
+   "codigo": 0,
+   "segundos": 97.101,
+   "memoria_max_mib": 360,
+   "servidores": [
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    }
+   ],
+   "processos": {
+    "sh": 1,
+    "chromium": 1
+   },
+   "chromium": 1,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 67,
+   "pastas_temporarias_criadas": [
+    "playwright-artifacts-XXXXXX",
+    "playwright_chromiumdev_profile-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_42_10_440Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_43_10_189Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:alvos",
+   "codigo": 0,
+   "segundos": 198.179,
+   "memoria_max_mib": 333,
+   "servidores": [
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    }
+   ],
+   "processos": {
+    "sh": 1,
+    "chromium": 1
+   },
+   "chromium": 1,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 68,
+   "pastas_temporarias_criadas": [
+    "playwright-artifacts-XXXXXX",
+    "playwright_chromiumdev_profile-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_42_12_594Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_44_48_593Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:cabeca",
+   "codigo": 0,
+   "segundos": 3.979,
+   "memoria_max_mib": 1243,
+   "servidores": [
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    },
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    }
+   ],
+   "processos": {
+    "sh": 1,
+    "chromium": 2,
+    "node": 1
+   },
+   "chromium": 2,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 141,
+   "pastas_temporarias_criadas": [
+    "oedp-cabeca-XXXXXX",
+    "playwright-artifacts-XXXXXX",
+    "playwright_chromiumdev_profile-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_42_55_943Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_08_955Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:fontes",
+   "codigo": 0,
+   "segundos": 1.018,
+   "memoria_max_mib": 121,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_43_01_133Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_14_243Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run mapa:unidades -- --verifica",
+   "codigo": 0,
+   "segundos": 0.125,
+   "memoria_max_mib": 64,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_43_05_341Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_16_526Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:alcance",
+   "codigo": 0,
+   "segundos": 2.458,
+   "memoria_max_mib": 294,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_43_10_189Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_17_941Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:lugar",
+   "codigo": 0,
+   "segundos": 19.287,
+   "memoria_max_mib": 235,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_44_48_593Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_21_666Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run provar:eyetext",
+   "codigo": 0,
+   "segundos": 0.289,
+   "memoria_max_mib": 123,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_46_43_108Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_42_353Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run provar:guardas",
+   "codigo": 0,
+   "segundos": 0.15,
+   "memoria_max_mib": 66,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_46_43_221Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_43_979Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:mortos",
+   "codigo": 0,
+   "segundos": 1.744,
+   "memoria_max_mib": 117,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 27,
+   "pastas_temporarias_criadas": [
+    "oedp-mortos-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_46_44_794Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_45_457Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:indice",
+   "codigo": 0,
+   "segundos": 10.877,
+   "memoria_max_mib": 1946,
+   "servidores": [
+    {
+     "porta": 0,
+     "anfitriao": "127.0.0.1"
+    }
+   ],
+   "processos": {
+    "sh": 1,
+    "git": 18,
+    "chromium": 1
+   },
+   "chromium": 1,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 67,
+   "pastas_temporarias_criadas": [
+    "playwright-artifacts-XXXXXX",
+    "playwright_chromiumdev_profile-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_46_45_082Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_48_48_539Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:cartao",
+   "codigo": 0,
+   "segundos": 4.193,
+   "memoria_max_mib": 243,
+   "servidores": [],
+   "processos": {
+    "sh": 1,
+    "node": 2
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 27,
+   "pastas_temporarias_criadas": [
+    "oedp-cartao-XXXXXX",
+    "oedp-cartao-glosas-XXXXXX",
+    "oedp-cartao-nome-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_46_45_436Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_49_00_698Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run check:palavras",
+   "codigo": 0,
+   "segundos": 77.604,
+   "memoria_max_mib": 181,
+   "servidores": [],
+   "processos": {
+    "sh": 1,
+    "cp": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [],
+   "escritas_em_tmp": 20069,
+   "pastas_temporarias_criadas": [
+    "oedp-palavras-XXXXXX"
+   ],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_48_08_955Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_49_06_161Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  },
+  {
+   "passo": "npm run design:feixe",
+   "codigo": 0,
+   "segundos": 1.395,
+   "memoria_max_mib": 188,
+   "servidores": [],
+   "processos": {
+    "sh": 1
+   },
+   "chromium": 0,
+   "escritas_em_dist": [],
+   "escritas_na_raiz": [
+    "design-system",
+    "design-system/01-cor.html",
+    "design-system/02-tipo.html",
+    "design-system/03-selo-e-marcador.html",
+    "design-system/04-regua.html",
+    "design-system/05-mapa.html",
+    "design-system/06-estados.html",
+    "design-system/07-cartoes.html",
+    "design-system/10-pagina-primeira.html",
+    "design-system/11-pagina-primeira-escuro.html",
+    "design-system/12-pagina-linha-livro-razao.html",
+    "design-system/13-pagina-livro-razao.html",
+    "design-system/14-pagina-municipio.html",
+    "design-system/15-pagina-lugares.html",
+    "design-system/16-pagina-metodo.html",
+    "design-system/17-pagina-agenda.html",
+    "design-system/18-pagina-estudos.html",
+    "design-system/19-pagina-sobre.html",
+    "design-system/20-pagina-correcoes.html",
+    "design-system/21-pagina-404.html",
+    "design-system/30-regras.html",
+    "design-system/README.md",
+    "design-system/tipos",
+    "design-system/tipos/bitter",
+    "design-system/tipos/bitter/Bitter[wght].woff2",
+    "design-system/tipos/bitter/OFL.txt",
+    "design-system/tipos/spectral",
+    "design-system/tipos/spectral-sc",
+    "design-system/tipos/spectral-sc/OFL.txt",
+    "design-system/tipos/spectral-sc/SpectralSC-Regular.woff2",
+    "design-system/tipos/spectral-sc/SpectralSC-SemiBold.woff2",
+    "design-system/tipos/spectral/OFL.txt",
+    "design-system/tipos/spectral/Spectral-Bold.woff2",
+    "design-system/tipos/spectral/Spectral-Italic.woff2",
+    "design-system/tipos/spectral/Spectral-Medium.woff2",
+    "design-system/tipos/spectral/Spectral-Regular.woff2",
+    "design-system/tipos/spectral/Spectral-SemiBold.woff2"
+   ],
+   "escritas_em_tmp": 0,
+   "pastas_temporarias_criadas": [],
+   "escritas_na_casa": [
+    "<casa>/…/.npm",
+    "<casa>/…/_logs",
+    "<casa>/…/2026-09-28T18_48_14_243Z-debug-0.log",
+    "<casa>/…/2026-09-28T18_50_25_128Z-debug-0.log"
+   ],
+   "escritas_fora": [],
+   "dist_mudou": [],
+   "git_antes_e_nao_depois": [],
+   "git_depois_e_nao_antes": []
+  }
+ ]
+}

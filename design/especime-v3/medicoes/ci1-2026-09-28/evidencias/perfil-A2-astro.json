@@ -1,0 +1,554 @@
+{
+ "total_ms": 229740.70899999776,
+ "amostras": 155149,
+ "por_ficheiro": [
+  [
+   "dist/.prerender/chunks/politica-ia_BoLLo6pg.mjs",
+   123928.15100000007
+  ],
+  [
+   "dist/.prerender/chunks/Base_wT_n3MFG.mjs",
+   72608.48699999978
+  ],
+  [
+   "<v8>",
+   10559.009999999971
+  ],
+  [
+   "dist/.prerender/chunks/LinhaView_B05T7C6x.mjs",
+   7451.621000000008
+  ],
+  [
+   "dist/.prerender/chunks/Provenance_D7KMIebA.mjs",
+   2070.4309999999996
+  ],
+  [
+   "dist/.prerender/chunks/Claim_R6CdO_Qa.mjs",
+   2065.873999999997
+  ],
+  [
+   "<node>",
+   1667.997999999998
+  ],
+  [
+   "dist/.prerender/chunks/server_C_b4WhTs.mjs",
+   1605.4539999999977
+  ],
+  [
+   "dist/.prerender/chunks/nomes_DF4swc4p.mjs",
+   1487.1329999999996
+  ],
+  [
+   "dist/.prerender/chunks/ItemDoLivro_CFlD6V5d.mjs",
+   1275.5070000000007
+  ],
+  [
+   "dist/.prerender/chunks/ledger_NKncJxyC.mjs",
+   1168.3299999999997
+  ],
+  [
+   "dist/.prerender/prerender-entry.Xv9PAv3i.mjs",
+   791.964
+  ],
+  [
+   "dist/.prerender/chunks/routes_BYKkJt9n.mjs",
+   587.0000000000001
+  ],
+  [
+   "<node_modules>/js-yaml/dist",
+   332.58199999999994
+  ],
+  [
+   "dist/.prerender/chunks/agenda_CYbqquyw.mjs",
+   325.20599999999985
+  ],
+  [
+   "<node_modules>/astro/dist",
+   313.26
+  ],
+  [
+   "dist/.prerender/chunks/MunicipioView_D9rT736G.mjs",
+   260.876
+  ],
+  [
+   "dist/.prerender/chunks/LivroConcelhoView_kv67aUpI.mjs",
+   209.87800000000001
+  ],
+  [
+   "src/lib/routes.mjs",
+   179.667
+  ],
+  [
+   "dist/.prerender/chunks/conjunto_CFge2eoP.mjs",
+   138.082
+  ],
+  [
+   "dist/.prerender/chunks/CartaoDaMedida_BECftShN.mjs",
+   80.833
+  ],
+  [
+   "<node_modules>/html-escaper/esm",
+   78.74699999999999
+  ],
+  [
+   "<node_modules>/rolldown/dist",
+   66.417
+  ],
+  [
+   "<node_modules>/@astrojs/compiler-rs",
+   42.001000000000005
+  ],
+  [
+   "<node_modules>/vite/dist",
+   40.957
+  ],
+  [
+   "<node_modules>/@astrojs/sitemap",
+   34.917
+  ],
+  [
+   "dist/.prerender/chunks/mudancas_SlKoJcAf.mjs",
+   26.207
+  ],
+  [
+   "dist/.prerender/chunks/documentos_C9eJgb2v.mjs",
+   23
+  ],
+  [
+   "dist/.prerender/chunks/EstudoView_RNX3mpjZ.mjs",
+   21.792
+  ],
+  [
+   "dist/.prerender/chunks/studies_BrNSfqVP.mjs",
+   20.831999999999997
+  ],
+  [
+   "<node_modules>/zod/v4",
+   19.916
+  ],
+  [
+   "<node_modules>/sitemap/dist",
+   18.082
+  ],
+  [
+   "dist/.prerender/chunks/DistritoView_BroL2B2Z.mjs",
+   18
+  ],
+  [
+   "<node_modules>/lightningcss/node",
+   14.791
+  ],
+  [
+   "<node_modules>/esbuild/lib",
+   13.833
+  ],
+  [
+   "<node_modules>/postcss/lib",
+   13.584
+  ],
+  [
+   "<node_modules>/clsx/dist",
+   13.334
+  ],
+  [
+   "<node_modules>/@astrojs/internal-helpers",
+   12.166
+  ],
+  [
+   "astro.config.mjs",
+   10.749
+  ],
+  [
+   "dist/.prerender/chunks/site.config_wznnS0vd.mjs",
+   10.541
+  ],
+  [
+   "dist/.prerender/chunks/Frase_BcwcC7k_.mjs",
+   9.375
+  ],
+  [
+   "dist/.prerender/chunks/LugarDoNome_D8pwPYpW.mjs",
+   7.5
+  ],
+  [
+   "src/lib/ledger.mjs",
+   6.042
+  ],
+  [
+   "dist/.prerender/chunks/RegiaoView_0yrK2Ngq.mjs",
+   5.958
+  ],
+  [
+   "dist/.prerender/chunks/dominios_DsXHFKqK.mjs",
+   5.665000000000001
+  ],
+  [
+   "dist/.prerender/chunks/_slug__hiZqI7Au.mjs",
+   5.5
+  ],
+  [
+   "dist/.prerender/chunks/indice-da-busca_DucJEl9m.mjs",
+   5.125
+  ],
+  [
+   "<node_modules>/css-tree/lib",
+   4.541
+  ],
+  [
+   "dist/.prerender/chunks/HomeView_BIY9clSr.mjs",
+   4.5
+  ],
+  [
+   "<node_modules>/csso/node_modules",
+   4.499
+  ],
+  [
+   "<node_modules>/fontkitten/dist",
+   4.4590000000000005
+  ],
+  [
+   "dist/.prerender/chunks/MetodoView_DS5kho0d.mjs",
+   4.459
+  ],
+  [
+   "dist/.prerender/chunks/LivroConcelhosView_d1WqHT2y.mjs",
+   4.458
+  ],
+  [
+   "dist/.prerender/chunks/TemasDoPais_icHofM9y.mjs",
+   4.334
+  ],
+  [
+   "dist/.prerender/chunks/_slug__BjEwxana.mjs",
+   4
+  ],
+  [
+   "<node_modules>/property-information/lib",
+   3.041
+  ],
+  [
+   "dist/.prerender/chunks/AreaView_D2zv1pTl.mjs",
+   3.041
+  ],
+  [
+   "dist/.prerender/chunks/LugaresView_c8k3DP9H.mjs",
+   3
+  ],
+  [
+   "dist/.prerender/chunks/pais_Wen1Mwt3.mjs",
+   2.834
+  ],
+  [
+   "<node_modules>/picomatch/lib",
+   2.708
+  ]
+ ],
+ "proprio": [
+  [
+   "fn · dist/.prerender/chunks/Base_wT_n3MFG.mjs:21",
+   49687.47299999979
+  ],
+  [
+   "chaves · dist/.prerender/chunks/politica-ia_BoLLo6pg.mjs:2037",
+   49414.44399999998
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/politica-ia_BoLLo6pg.mjs:2055",
+   31968.039000000022
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/politica-ia_BoLLo6pg.mjs:2054",
+   31508.14700000002
+  ],
+  [
+   "t · dist/.prerender/chunks/politica-ia_BoLLo6pg.mjs:2060",
+   9563.129000000006
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/LinhaView_B05T7C6x.mjs:33",
+   4891.781000000014
+  ],
+  [
+   "caminhoDaPagina · dist/.prerender/chunks/Base_wT_n3MFG.mjs:5457",
+   4744.82800000001
+  ],
+  [
+   "(garbage collector) · <v8>:0",
+   4153.79199999999
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Base_wT_n3MFG.mjs:5605",
+   3002.417999999992
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Base_wT_n3MFG.mjs:5490",
+   2967.9669999999965
+  ],
+  [
+   "(idle) · <v8>:0",
+   2570.8309999999924
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Base_wT_n3MFG.mjs:4752",
+   2533.243999999999
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/LinhaView_B05T7C6x.mjs:18",
+   2450.339999999994
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Base_wT_n3MFG.mjs:5557",
+   2292.244999999994
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Base_wT_n3MFG.mjs:5581",
+   2261.0069999999955
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Provenance_D7KMIebA.mjs:8",
+   2068.8889999999997
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Claim_R6CdO_Qa.mjs:8",
+   2056.874999999997
+  ],
+  [
+   "assertKeyParity · dist/.prerender/chunks/politica-ia_BoLLo6pg.mjs:2051",
+   1465.9329999999995
+  ],
+  [
+   "descricaoDaLinha · dist/.prerender/chunks/Base_wT_n3MFG.mjs:321",
+   1447.0539999999999
+  ],
+  [
+   "etiquetaDaRota · dist/.prerender/chunks/Base_wT_n3MFG.mjs:5342",
+   1305.125000000001
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/ItemDoLivro_CFlD6V5d.mjs:9",
+   1275.5070000000007
+  ],
+  [
+   "tituloDaLinha · dist/.prerender/chunks/Base_wT_n3MFG.mjs:307",
+   1014.705000000001
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/ledger_NKncJxyC.mjs:649",
+   857.4989999999996
+  ],
+  [
+   "periodoAnteriorNoLivro · dist/.prerender/chunks/nomes_DF4swc4p.mjs:2861",
+   717.55
+  ],
+  [
+   "rmdir · <v8>:0",
+   451.368
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/Base_wT_n3MFG.mjs:4544",
+   392.92100000000005
+  ],
+  [
+   "parse · <v8>:0",
+   392.54
+  ],
+  [
+   "readFileUtf8 · <v8>:0",
+   390.76
+  ],
+  [
+   "unlink · <v8>:0",
+   388.458
+  ],
+  [
+   "(program) · <v8>:0",
+   352.21499999999975
+  ],
+  [
+   "leJson · dist/.prerender/chunks/agenda_CYbqquyw.mjs:44",
+   318.9149999999998
+  ],
+  [
+   "linhasCruzadas · dist/.prerender/chunks/Base_wT_n3MFG.mjs:3834",
+   298.95899999999995
+  ],
+  [
+   "readFileSync · <node>:433",
+   257.001
+  ],
+  [
+   "normalizePath · dist/.prerender/chunks/routes_BYKkJt9n.mjs:365",
+   243.045
+  ],
+  [
+   "reguaDaMedida · dist/.prerender/chunks/nomes_DF4swc4p.mjs:2968",
+   240.752
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/MunicipioView_D9rT736G.mjs:560",
+   235.209
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/LivroConcelhoView_kv67aUpI.mjs:11",
+   208.336
+  ],
+  [
+   "readdir · <v8>:0",
+   201.04500000000002
+  ],
+  [
+   "padraoDe · dist/.prerender/chunks/routes_BYKkJt9n.mjs:399",
+   195.956
+  ],
+  [
+   "ModuleWrap · <v8>:0",
+   189.789
+  ],
+  [
+   "lstat · <v8>:0",
+   166.043
+  ],
+  [
+   "existsSync · <v8>:0",
+   165.543
+  ],
+  [
+   "read · <v8>:0",
+   160.497
+  ],
+  [
+   "allClaims · dist/.prerender/chunks/ledger_NKncJxyC.mjs:648",
+   158.169
+  ],
+  [
+   "renderChild · dist/.prerender/chunks/server_C_b4WhTs.mjs:1609",
+   154.45700000000002
+  ],
+  [
+   "(anónima) · dist/.prerender/chunks/nomes_DF4swc4p.mjs:2481",
+   142.667
+  ],
+  [
+   "createAstro · dist/.prerender/prerender-entry.Xv9PAv3i.mjs:5302",
+   139.959
+  ],
+  [
+   "encodeUtf8String · <v8>:0",
+   121.99799999999999
+  ],
+  [
+   "isHTMLString · dist/.prerender/chunks/server_C_b4WhTs.mjs:567",
+   118.83299999999998
+  ],
+  [
+   "matchPath · dist/.prerender/chunks/routes_BYKkJt9n.mjs:408",
+   112.37299999999999
+  ],
+  [
+   "pecasDaArea · dist/.prerender/chunks/Base_wT_n3MFG.mjs:2578",
+   109.792
+  ],
+  [
+   "materiaDaLinha · dist/.prerender/chunks/Base_wT_n3MFG.mjs:2546",
+   109.416
+  ],
+  [
+   "toAttributeString · dist/.prerender/chunks/server_C_b4WhTs.mjs:1067",
+   109.333
+  ],
+  [
+   "render · dist/.prerender/chunks/server_C_b4WhTs.mjs:1257",
+   108.794
+  ],
+  [
+   "stringifyChunk · dist/.prerender/chunks/server_C_b4WhTs.mjs:1529",
+   103.66900000000001
+  ],
+  [
+   "parseNode · <node_modules>/js-yaml/dist:2049",
+   93.54
+  ],
+  [
+   "chavesDoEnquadramento · dist/.prerender/chunks/nomes_DF4swc4p.mjs:2831",
+   87.70800000000001
+  ],
+  [
+   "jsonDaLinha · dist/.prerender/chunks/conjunto_CFge2eoP.mjs:234",
+   85.70499999999998
+  ],
+  [
+   "readDoubleQuotedScalar · <node_modules>/js-yaml/dist:1705",
+   84.001
+  ],
+  [
+   "encode · <node>:351",
+   81.374
+  ]
+ ],
+ "inclusivo_do_sitio": [
+  [
+   "getClaim · src/lib/ledger.mjs:967",
+   228.417
+  ],
+  [
+   "unidade · src/data/leituras.mjs:32",
+   228.417
+  ],
+  [
+   "(anónima) · src/data/leituras.mjs:1",
+   228.417
+  ],
+  [
+   "loadClaims · src/lib/ledger.mjs:926",
+   226.917
+  ],
+  [
+   "matchPath · src/lib/routes.mjs:352",
+   185.04100000000003
+  ],
+  [
+   "serialize · astro.config.mjs:97",
+   155.5
+  ],
+  [
+   "filter · astro.config.mjs:62",
+   109.29
+  ],
+  [
+   "alternatesFor · src/lib/routes.mjs:386",
+   106.169
+  ],
+  [
+   "padraoDe · src/lib/routes.mjs:341",
+   83.87400000000001
+  ],
+  [
+   "normalizePath · src/lib/routes.mjs:291",
+   77.625
+  ],
+  [
+   "(anónima) · astro.config.mjs:144",
+   36.124
+  ],
+  [
+   "pathFromUrl · src/lib/routes.mjs:303",
+   11.917
+  ],
+  [
+   "provenienciaIncompleta · src/lib/ledger.mjs:753",
+   4.542
+  ],
+  [
+   "camposPorVerificar · src/lib/ledger.mjs:728",
+   1.542
+  ],
+  [
+   "routePath · src/lib/routes.mjs:318",
+   1.083
+  ],
+  [
+   "(anónima) · src/lib/routes.mjs:389",
+   1.083
+  ]
+ ]
+}
