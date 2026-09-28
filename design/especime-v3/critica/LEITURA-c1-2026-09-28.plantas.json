@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T12:46:59+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/dados/indicadores-dos-concelhos.csv",
+   "descricao": "o ficheiro novo dos concelhos: o poder de compra de Évora trocado de 111,47 para 114,17 (a linha evora-poder-de-compra-2023 diz 111,47, e a célula C7 diz conferir cada valor do ficheiro contra a sua linha)",
+   "sha256_antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+   "sha256_depois": "d5532b47331df1a8be189269b56326e4f2a753736aa0af7245c792a531f7db45",
+   "contexto_antes": "ada cálculo.\n#\nconcelho,medida,valor,unidade,periodo,fonte,afirmacao,concelho_slug\nÉvora,População residente,58 567,pessoas,2025,INE,evora-populacao-2025,evora\nÉvora,Poder de compra por habitante,\"111,47\",índice (Portugal = 100),2023,INE,evora-poder-de-compra-2023,evora\nÉvora,Desemprego registado,1 409,pessoas,2025-12,Instituto do Emprego e Formação Profissional",
+   "contexto_depois": "ada cálculo.\n#\nconcelho,medida,valor,unidade,periodo,fonte,afirmacao,concelho_slug\nÉvora,População residente,58 567,pessoas,2025,INE,evora-populacao-2025,evora\nÉvora,Poder de compra por habitante,\"114,17\",índice (Portugal = 100),2023,INE,evora-poder-de-compra-2023,evora\nÉvora,Desemprego registado,1 409,pessoas,2025-12,Instituto do Emprego e Formação Profissional"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/valor-unidade.mjs",
+   "descricao": "a célula nova (só na cópia; o diff fica são): a expressão que exige um espaço entre o valor e a unidade passa a aceitar a cadeia vazia (\\s* em vez de \\s), o que torna a conferência vazia para o caso colado",
+   "sha256_antes": "29e3ee4790875ce5547451b394f9150842fe7c7924b52c36fdc492d8bed99369",
+   "sha256_depois": "3a9b1a86e93c9948aad8608b556bbb2a31365f4e22e982bb22923b3b50f405e8",
+   "contexto_antes": "   const fim = inicio + valor.textContent.length;\n    const inicioUnidade = texto.indexOf(unidade.textContent, fim);\n    if (inicio < 0 || inicioUnidade < 0 || !/\\s/.test(texto.slice(fim, inicioUnidade))) {\n      erros.push(`I143/I158: ${tipo === 'titulos' ? 'o título' : 'o cartão'} cola o valor à unidade (${valor.getAttribute('data-claim')})`);\n    }\n  }\n  ret",
+   "contexto_depois": "   const fim = inicio + valor.textContent.length;\n    const inicioUnidade = texto.indexOf(unidade.textContent, fim);\n    if (inicio < 0 || inicioUnidade < 0 || !/\\s*/.test(texto.slice(fim, inicioUnidade))) {\n      erros.push(`I143/I158: ${tipo === 'titulos' ? 'o título' : 'o cartão'} cola o valor à unidade (${valor.getAttribute('data-claim')})`);\n    }\n  }\n  ret"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: as linhas do ficheiro dos concelhos trocadas de 2 464 para 2 446 (o dados-concelhos.json e o ficheiro construído contam 2 464)",
+   "sha256_antes": "ff77e20a11c8081b4bbd1a7e1c7b5e9c723785da163339ece5ca9cc667ade5b4",
+   "sha256_depois": "167ba02477a56d625518081cd78367ab386fd6dde457e0d6ebd16af13e4a24bd",
+   "contexto_antes": "cadores-dos-concelhos.csv` oferece as medidas dos cartões, geradas do livro-razão com valor, unidade, período, fonte e identificador. | `dados-concelhos.json`: 2 464 linhas, 308 concelhos, 8 medidas e 308 linhas calculadas. A C7 confere o ficheiro contra as linhas e recusa as 4 plantas. Cada reposição recupera o resumo anterior e ",
+   "contexto_depois": "cadores-dos-concelhos.csv` oferece as medidas dos cartões, geradas do livro-razão com valor, unidade, período, fonte e identificador. | `dados-concelhos.json`: 2 446 linhas, 308 concelhos, 8 medidas e 308 linhas calculadas. A C7 confere o ficheiro contra as linhas e recusa as 4 plantas. Cada reposição recupera o resumo anterior e "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "a página construída: o cartão da inflação volta a colar o valor à unidade (o relatório diz 0 valores colados nas capturas finais)",
+   "sha256_antes": "cd720f6ea8e4eb7d640bc009ecf4020620e45c85d9db6ca5a58d20d453fc572d",
+   "sha256_depois": "ea6c6a0b219b438ffeadad61424edc65513573939d672c1f885da5aab3c309c4",
+   "contexto_antes": "dida-nome\" data-nome=\"projeto\" data-de-linha=\"ipc-variacao-homologa\">Inflação</span><p class=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"ipc-variacao-homologa\" class=\"claim-value cartao-medida-num\">3,30</span> <span class=\"campo-valor cartao-medida-unidade\" lang=\"pt-PT\" data-linha-claim=\"ipc-variacao-homologa\" data-linha-campo=\"unit\">%</span></span><span class=\"cartao-medida-periodo\"><span class=\"cartao-medida-em\"",
+   "contexto_depois": "dida-nome\" data-nome=\"projeto\" data-de-linha=\"ipc-variacao-homologa\">Inflação</span><p class=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"ipc-variacao-homologa\" class=\"claim-value cartao-medida-num\">3,30</span><span class=\"campo-valor cartao-medida-unidade\" lang=\"pt-PT\" data-linha-claim=\"ipc-variacao-homologa\" data-linha-campo=\"unit\">%</span></span><span class=\"cartao-medida-periodo\"><span class=\"cartao-medida-em\""
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/data/leituras-rp1.mjs",
+   "descricao": "as leituras (só na cópia; o diff fica são): o ramo positivo da inflação passa a dizer «É a descida geral dos preços», o que o valor positivo contradiz",
+   "sha256_antes": "575b67f0a0933b6e27c80f7993c3cd7cbda02b5ec143f532257a7d6f1d039644",
+   "sha256_depois": "ffad3217d2a088207e7059f2719f2b2c10ad74ce552e261205cbfe3a2bc70561",
+   "contexto_antes": "         \" \",\n            {\n              \"claim\": \"proprio\",\n              \"sufixo\": \" %\"\n            },\n            \" acima dos de há um ano.\",\n            \" É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.\"\n          ],\n          \"negativo\": [\n            \"Em \",\n            {\n ",
+   "contexto_depois": "         \" \",\n            {\n              \"claim\": \"proprio\",\n              \"sufixo\": \" %\"\n            },\n            \" acima dos de há um ano.\",\n            \" É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.\"\n          ],\n          \"negativo\": [\n            \"Em \",\n            {\n "
+  }
+ ]
+}
