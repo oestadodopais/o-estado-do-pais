@@ -3958,9 +3958,41 @@ export function assertKeyParity() {
   return true;
 }
 
+/**
+ * A PARIDADE CONFERE-SE UMA VEZ POR PROCESSO, E A ÁRVORE FICA CONGELADA A
+ * SEGUIR (bloco CI1, 28.09.2026).
+ *
+ * `t()` corria `assertKeyParity()` em cada chamada, e cada componente de cada
+ * página chama `t()`. A comparação das duas árvores (as chaves achatadas,
+ * ordenadas e procuradas com `includes`) custava perto de um milissegundo por
+ * chamada, medido pelo bloco CI1, e somava-se na maior parte do tempo de cada
+ * uma das 7 404 páginas da construção.
+ *
+ * O que a guarda confere é este ficheiro: as duas árvores são um literal deste
+ * módulo, e ele não importa nada. Confere-se por isso na primeira chamada de
+ * cada processo, antes de a primeira página se render, com a mesma mensagem, e
+ * uma construção com as duas línguas divergentes continua a fechar ali. Depois
+ * da conferência a árvore fica congelada, em profundidade, para a resposta da
+ * guarda não poder envelhecer: uma escrita que acrescentasse, tirasse ou
+ * trocasse uma cadeia a meio da construção atira, em vez de passar calada, o
+ * que a conferência a cada chamada também não fazia para os valores.
+ */
+let paridadeConferida = false;
+
+/** Congela um objeto e tudo o que ele contém. @param {unknown} o */
+function congela(o) {
+  if (o === null || typeof o !== 'object' || Object.isFrozen(o)) return;
+  Object.freeze(o);
+  for (const v of Object.values(o)) congela(v);
+}
+
 /** @param {Lingua} lang */
 export function t(lang) {
-  assertKeyParity();
+  if (!paridadeConferida) {
+    assertKeyParity();
+    congela(STRINGS);
+    paridadeConferida = true;
+  }
   const s = STRINGS[lang];
   if (!s) throw new Error(`i18n: língua desconhecida "${lang}"`);
   return s;
