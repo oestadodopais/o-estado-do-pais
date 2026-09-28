@@ -10,7 +10,7 @@
  *
  * O que confere, e contra o quê:
  *
- *   1. os dois ficheiros existem em dist/, no endereço que as páginas usam;
+ *   1. os ficheiros existem em dist/, no endereço que as páginas usam;
  *   2. `municipios-308.csv` tem uma linha por município, e essa contagem bate
  *      certo com o LIVRO-RAZÃO (não com o módulo de onde o ficheiro foi
  *      gerado): 308 no total, e a repartição por Continente, Açores e Madeira;
@@ -25,6 +25,10 @@
  *      linha publica, e os bytes construídos dão o resumo que ela declara. É a
  *      terceira perna da porta estreita do `excerpt: null` (DECISIONS §1.47,
  *      T3): o validador prende os bytes, e a conta faz-se aqui.
+ *   7. C7: cada medida dos cartões dos concelhos tem uma linha no novo CSV,
+ *      com o valor e os restantes campos conferidos diretamente no YAML.
+ *      A planta corre em tests/dados/concelhos.mjs. `--celula C7` permite
+ *      conferir só este ficheiro, também sobre uma cópia em `OEDP_DIST`.
  *
  * Repare-se no que NÃO é feito: o ficheiro construído não é comparado com uma
  * segunda chamada ao gerador. Isso seria uma tautologia. É lido do disco e
@@ -49,10 +53,11 @@ import { LICENCA, CONJUNTO } from '../src/data/licenca.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../src/data/caop-centroids.mjs';
 import { routePath } from '../src/lib/routes.mjs';
+import { CSV_DOS_CONCELHOS, confereIndicadoresDosConcelhos } from './dados-concelhos.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
-const DIST = path.join(ROOT, 'dist');
+const DIST = process.env.OEDP_DIST ?? path.join(ROOT, 'dist');
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -77,6 +82,18 @@ function leDoDist(rota) {
     return null;
   }
   return fs.readFileSync(ficheiro, 'utf8');
+}
+
+/* C7 usa uma leitura independente do gerador, tanto aqui como nas plantas. */
+const brutoIndicadores = leDoDist(CSV_DOS_CONCELHOS);
+const indicadoresConferidos = brutoIndicadores === null ? null : confereIndicadoresDosConcelhos(brutoIndicadores);
+if (indicadoresConferidos) erros.push(...indicadoresConferidos.erros);
+if (process.argv.includes('--celula')) {
+  const celula = process.argv[process.argv.indexOf('--celula') + 1];
+  if (celula !== 'C7') err(`célula desconhecida: ${celula}.`);
+  for (const e of erros) console.error(e);
+  if (!erros.length) console.log(`C7: ${indicadoresConferidos.linhas} linhas de ${indicadoresConferidos.concelhos} concelhos, conferidas no livro-razão.`);
+  process.exit(erros.length ? 1 : 0);
 }
 
 /* ---------------------------------------------------------- os municípios */
@@ -344,6 +361,7 @@ for (const [rota, onde] of ligacoes) {
 const PORTA_DOS_DADOS = {
   convergencia: 'livro',
   municipios: 'lugares',
+  indicadoresDosConcelhos: 'lugares',
 };
 
 /** O ficheiro construído de uma rota. `/` é `index.html`; o resto é `<rota>/index.html`. */
@@ -625,6 +643,7 @@ if (!LICENCA) {
 
 console.log('');
 console.log(cinza(`  dados descarregáveis · ${Object.keys(DADOS).length} ficheiros · ${ligacoes.size} endereços ligados`));
+if (indicadoresConferidos) console.log(cinza(`  C7 · ${indicadoresConferidos.linhas} medidas de ${indicadoresConferidos.concelhos} concelhos conferidas no livro-razão`));
 console.log(cinza(`  ficheiros alojados · ${alojadas.length} linha(s) com document.hosted · ${recontadas} recontada(s)`));
 console.log(
   cinza(

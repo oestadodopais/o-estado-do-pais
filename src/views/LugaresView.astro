@@ -122,8 +122,17 @@ const distritos = distritosDaCarta();
       índice antigo. */}
   <p class="rodape-nav lugares-dados">
     <a class="ligacao-dados" href={DADOS.municipios} download>{s.municipios.dadosLink} ↓</a>
+    <a class="ligacao-dados" href={DADOS.indicadoresDosConcelhos} download>{s.municipios.medidasLink} ↓</a>
   </p>
 
   <script src="/js/municipios.js" defer is:inline></script>
   <script src="/js/mapa-unidades.js" defer is:inline></script>
 </Base>
+
+<style>
+  .lugares-dados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+</style>
