@@ -1,0 +1,76 @@
+{
+  "o_que_e": "A composição da L1 do check:lugar antes e depois do bloco PP1: cada cabeça medida com a sua própria régua, sobre a sua própria construção, com a amostra aberta.",
+  "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/medir-l1-pp1.mjs <árvore da cabeça de partida>",
+  "cabeca_antes": "1cbdb8c44045a5053cba33562f5044e02975bc47",
+  "cabeca_depois": "3585635ac5841b965a91b202e9385ae740b45a12",
+  "contagens": {
+    "estudos": 2349,
+    "antes": 2341,
+    "entraram": 8,
+    "sairam": 0,
+    "paginas_antigas_agravadas": 2,
+    "outras_entradas": 0
+  },
+  "permitidas": [
+    "/",
+    "/en",
+    "/o-meu-dinheiro",
+    "/en/my-money",
+    "/o-meu-trabalho",
+    "/en/my-work",
+    "/a-minha-casa",
+    "/en/my-home",
+    "/a-escola-e-a-saude",
+    "/en/school-and-health",
+    "/o-estado-e-a-economia",
+    "/en/state-and-economy"
+  ],
+  "entraram": [
+    {
+      "url": "/a-minha-casa",
+      "destinos": 5,
+      "exemplo": "/livro-razao/precos-da-habitacao-2025 ×3"
+    },
+    {
+      "url": "/en/my-home",
+      "destinos": 5,
+      "exemplo": "/en/ledger/precos-da-habitacao-2025 ×3"
+    },
+    {
+      "url": "/en/my-money",
+      "destinos": 9,
+      "exemplo": "/en/ledger/ipc-combustiveis-variacao-homologa ×3"
+    },
+    {
+      "url": "/en/my-work",
+      "destinos": 5,
+      "exemplo": "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior ×2"
+    },
+    {
+      "url": "/en/state-and-economy",
+      "destinos": 2,
+      "exemplo": "/en/ledger/divida-publica-2025-notificacao-ine-2026-09 ×2"
+    },
+    {
+      "url": "/o-estado-e-a-economia",
+      "destinos": 2,
+      "exemplo": "/livro-razao/divida-publica-2025-notificacao-ine-2026-09 ×2"
+    },
+    {
+      "url": "/o-meu-dinheiro",
+      "destinos": 9,
+      "exemplo": "/livro-razao/ipc-combustiveis-variacao-homologa ×3"
+    },
+    {
+      "url": "/o-meu-trabalho",
+      "destinos": 5,
+      "exemplo": "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior ×2"
+    }
+  ],
+  "sairam": [],
+  "agravadas": [
+    "/en",
+    "/"
+  ],
+  "fora": []
+}

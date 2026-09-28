@@ -24,8 +24,9 @@
  * medida para o mesmo algarismo; cada origem que a auditoria lista para uma
  * medida apoia alguma parte dela; e nenhuma origem declarada fica sem uso.
  *
- * A SEGUNDA METADE LÊ AS QUATRO PÁGINAS CONSTRUÍDAS (a do país e a dos temas,
- * nas duas edições): cada cartão nacional tem exatamente uma leitura, da sua
+ * A SEGUNDA METADE LÊ AS PÁGINAS CONSTRUÍDAS ONDE OS CARTÕES NACIONAIS SE RENDEM (a dos
+ * temas e, desde o bloco PP1, as cinco das entradas, nas duas edições; eram a do país e a
+ * dos temas): cada cartão nacional tem exatamente uma leitura, da sua
  * medida; o texto rendido é, carácter a carácter, o que o resolvedor dá para
  * aquela medida naquela edição; o texto rendido é também o que ESTA CÉLULA
  * recompõe por conta própria, com os ramos escolhidos por uma conta sua (o
@@ -58,6 +59,7 @@ import { leituraDaMedida, textoDaLeitura, medidasComLeitura, errosDaDeclaracao, 
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { recontagemDasCamaras } from '../../scripts/pais-camaras.mjs';
+import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
@@ -76,9 +78,12 @@ const PALAVRAS_DE_LIGACAO = {
   en: new Set(['in', 'to', 'and', 'the', 'there', 'were', 'it']),
 };
 const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
-/** As quatro páginas da leitura: a do país e a dos temas, nas duas edições. */
+/** As páginas da leitura: a dos temas e, desde o bloco PP1 (28.09.2026), as cinco das entradas, nas
+ *  duas edições. A primeira página deixou de render os cartões (o resumo dos temas saiu dela); as
+ *  entradas rendem-nos com o mesmo componente e as mesmas leituras, e a K17 lê-os onde eles estão. */
 export const PAGINAS_DA_LEITURA = [
-  ['index.html', 'pt'], ['temas/index.html', 'pt'], ['en/index.html', 'en'], ['en/themes/index.html', 'en'],
+  ['temas/index.html', 'pt'], ['en/themes/index.html', 'en'],
+  ...ENTRADAS.filter((e) => !('existente' in e && e.existente)).flatMap((e) => /** @type {const} */ (['pt', 'en']).map((l) => [`${e.rota[l].replace(/^\//, '')}index.html`, l])),
 ];
 
 /** @param {string} [ficheiro] */
@@ -638,7 +643,7 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
 }
 
 /**
- * A SEGUNDA METADE, sobre o `dist/`: as quatro páginas.
+ * A SEGUNDA METADE, sobre o `dist/`: as páginas onde os cartões nacionais se rendem.
  * @param {string} dist
  */
 export function conferirLeiturasRendidas(dist) {

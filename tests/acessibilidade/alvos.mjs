@@ -160,6 +160,9 @@ const LARGURAS = [390, 641, 768, 1023, 1280];
 const FAMILIAS = [
   ['home', null],
   ['temas', null],
+  /* AS PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) são uma família nova, com a mesma vista para as
+     cinco; mede-se a que tem mais cartões e mais secções, «O meu dinheiro», nas duas edições. */
+  ['entradaDinheiro', null],
   ['lugares', null],
   ['municipio', { slug: 'evora' }],
   /* O ÍNDICE DOS DISTRITOS SAIU DA LISTA COM A PÁGINA (B1, peça 2, 21.09.2026):
@@ -235,7 +238,9 @@ for (const [chave, params, rotaDaFamilia = chave] of FAMILIAS) {
  * São os quatro que o brief F1.7 nomeia na medida H12.
  * @type {{ nome: string, celulas: string[], faz: (html: string, rota: string) => string }[]}
  */
-const estragoB1 = html => html.replace('id="nav-principal"', 'id="nav-principal" aria-expanded="true"').replace('</head>', '<style>@media (min-width:641px){.pais-porta-tema a{min-height:20px!important;height:20px!important;line-height:20px!important;font-size:10px!important;padding:0!important}.pais-porta-tema a::after{content:none!important}}</style></head>');
+/* PP1, 28.09.2026: as portas dos temas saíram da primeira página com os cartões; as portas que ela tem
+   agora são as das seis entradas (`.pp-entrada`), e é nelas que o estrago as encolhe. */
+const estragoB1 = html => html.replace('id="nav-principal"', 'id="nav-principal" aria-expanded="true"').replace('</head>', '<style>@media (min-width:641px){.pp-entrada{min-height:20px!important;height:20px!important;line-height:20px!important;font-size:10px!important;padding:0!important;overflow:hidden!important}.pp-entrada::after{content:none!important}}</style></head>');
 const ESTRAGOS = [
   { nome: 'b1 · portas pequenas e aria-expanded sem comando', celulas: ['H2','H6','H10'], faz: estragoB1, noDisco: (s, f) => f === path.join(DIST, 'index.html') ? estragoB1(s) : s },
   {
@@ -317,6 +322,14 @@ const ESTRAGOS = [
     celulas: ['H2'],
     amostra: '/estudos/',
     faz: (html) => html.replaceAll('class="arquivo-desc estudo-resumo"', 'class="arquivo-desc"'),
+  },
+  {
+    /* PP1, 28.09.2026: os selos das frases e das peças dos blocos fora da prosa corrida. Sem a classe,
+       os selos voltam a contar como caixas, e a H2 cai: é a classe que os dispensa, e só ela. */
+    nome: 'bloco-sem-classe · os selos das frases dos blocos fora da prosa corrida',
+    celulas: ['H2'],
+    amostra: '/',
+    faz: (html) => html.replaceAll('class="pp-frase"', 'class="pp-x"').replaceAll('class="pp-peca"', 'class="pp-y"').replaceAll('class="pp-caixa-texto"', 'class="pp-z"'),
   },
   {
     /* A LISTA ESCONDIDA (H15, bloco R1). O estrago é o defeito que a leitura de
@@ -843,7 +856,10 @@ function medeNaPagina(cfg) {
    */
   const eI105 = (el) =>
     el.matches(
-      '.rodape-b1 .ligacao-email,.pais-porta-lugares,.pais-porta-tema a,.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig',
+      '.rodape-b1 .ligacao-email,.pais-porta-lugares,.pais-porta-tema a,.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig,' +
+        /* PP1: as portas da primeira página nova (as seis entradas, a da página europeia e as três do
+           fim) e a das páginas das entradas, que são a mobília que as portas dos temas eram. */
+        'a.pp-entrada,.pp-veredicto .regra-portas > a,.pp-portas .regra-portas > a,.entrada-portas > a',
     );
 
   const eTexto = (el) => {
@@ -908,7 +924,11 @@ function medeNaPagina(cfg) {
            seu selo em prosa corrida, como na página do lugar e na primeira
            página. O estrago «sinopse-sem-classe» prova que é a classe que os
            dispensa, e só ela. */
-        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .estudos-lista .estudo-resumo'),
+        /* PP1, 28.09.2026: as frases e as peças dos blocos de «O que se passa» são a prosa corrida que
+           ficou no lugar da leitura do país, com os selos dos seus números ao lado de cada valor; entram
+           pela mesma razão da leitura (I127), e o estrago «bloco-sem-classe» prova que é a classe que os
+           dispensa. A porta não se perde: cada número está também na lista «Os números deste bloco». */
+        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto'),
         ok: ok44,
         ok32,
         ok44,

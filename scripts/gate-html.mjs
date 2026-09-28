@@ -3087,6 +3087,13 @@ const ROTULO_DO_REGISTO_PREVIO = {
 const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
 
 /**
+ * AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026), pela chave da rota. Escritas aqui, e não lidas
+ * da vista, como as outras listas deste portão; a tabela das rotas confere que existem.
+ */
+const ROTAS_DAS_ENTRADAS = ['entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado'];
+for (const chave of ROTAS_DAS_ENTRADAS) routePath(/** @type {any} */ (chave), 'pt');
+
+/**
  * E a frase da entrada que NÃO é uma transição: sai de um estado e chega ao
  * mesmo. Uma `alteracao` de mesmo estado regista uma decisão sem mover o item,
  * e escrita com a seta («Em curso → Em curso») anunciava uma mudança que não
@@ -5827,8 +5834,20 @@ for (const file of ficheirosHtml(DIST)) {
       el.closest?.('[data-cartao-medida][data-medida-chave]')?.getAttribute('data-cartao-medida') === id;
     // Mesma guarda estreita da peça 2: só o campo de unidade do próprio
     // cartão, nas duas páginas novas. auditaSelo continua ativo.
-    const unidadeDeCartaoDoPais = ['home', 'temas'].includes(rota?.key) && campo === 'unit' &&
+    /* PP1 (28.09.2026): as cinco páginas das entradas rendem os mesmos cartões da página dos temas,
+       com a mesma unidade; entram na mesma porta, e só nela. */
+    const unidadeDeCartaoDoPais = ['home', 'temas', ...ROTAS_DAS_ENTRADAS].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-cartao-medida]')?.getAttribute('data-cartao-medida') === id;
+    /* PP1 (28.09.2026): OS DOIS CAMPOS DE LINHA DE UM BLOCO DE «O QUE SE PASSA». A linha da fonte de
+       cada bloco é calculada das linhas que ele mostra (o §2, ponto 2, do brief), e o publicador é o
+       campo `source` de uma delas; a lista «Os números deste bloco» dá o nome de cada número, e uma linha
+       sem nome da casa (o agregado da União sem nome, a notificação do INE) é nomeada pela escada do
+       cartão, que rende o título do documento como campo. A porta é estreita como as outras: só estes
+       campos, só dentro de um bloco, na primeira página e nas entradas, e cada um continua comparado
+       carácter a carácter com a linha; `auditaSelo()` continua a correr nestas páginas. */
+    const campoDeBloco = ['home', ...ROTAS_DAS_ENTRADAS].includes(rota?.key) && el.closest('[data-bloco]') !== null && (
+      (campo === 'source' && el.closest('[data-bloco-fonte]') !== null) ||
+      (['document.title', 'name'].includes(String(campo)) && el.closest('[data-bloco-numero]') !== null));
     // Uma unidade do registo é conferida contra a linha da própria entrada,
     // cujo recibo é obrigatório na conferência imediatamente acima.
     // B1c, 22.09.2026: a mesma forma, nas duas rotas onde as linhas de correção
@@ -5838,7 +5857,7 @@ for (const file of ficheirosHtml(DIST)) {
     // continua a trocar a unidade de uma entrada pela de outra linha.
     const unidadeDeCorrecaoDoPais = ['home', 'correcoes'].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais) {
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !campoDeBloco) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +

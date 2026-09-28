@@ -56,7 +56,10 @@ import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DIST = path.join(RAIZ, 'dist');
+/* `OEDP_DIST` aponta outra construção (bloco PP1, 28.09.2026): as plantas da régua das frases
+   (`tests/inicio/regua-das-frases.mjs`) correm-na sobre uma construção pequena, copiada e estragada fora
+   da árvore. Sem a variável, é o `dist/` da árvore, como sempre. */
+const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 
 const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -421,6 +424,13 @@ const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo', 'linha']);
  */
 const ROTAS_COM_ORIGEM_LIDA = new Set([
   'home',
+  /* AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) entram com elas, pela regra desta lista: são
+     rotas novas, e as suas frases são classificadas no commit em que a página nasce. */
+  'entradaDinheiro',
+  'entradaTrabalho',
+  'entradaCasa',
+  'entradaEscolaESaude',
+  'entradaEstado',
   /* AS DUAS ROTAS DOS DOMÍNIOS ENTRAM COM ELAS (bloco F1.2, 03.09.2026), pela
      regra que esta lista já tinha: «uma rota por bloco que a reconstrua». São
      rotas NOVAS, e as suas frases são classificadas no mesmo commit em que a
@@ -434,6 +444,10 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
   'home', 'temas',
+  /* As cinco páginas das entradas por pergunta da vida (bloco PP1, 28.09.2026) entram no commit em que
+     nascem, que é a regra desta lista. São páginas do leitor como a dos temas: a Emenda 15 governa-as, e
+     a sua autorreferência vai a zero. */
+  'entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado',
   /* «Portugal na União Europeia» entra no commit em que a sua página nasce, que
      é a regra desta lista (bloco F1.10, item 8.16, 08.09.2026). É uma página do
      leitor como as outras: a Emenda 15 governa-a e a sua autorreferência vai a
@@ -614,6 +628,23 @@ const NOME_DECLARADO = '[data-nome]';
  * nenhuma, porque não afirma nada sobre o texto: aponta para ele.
  */
 const VOZ_DECLARADA = '[data-voz]';
+/** As palavras declaradas de um bloco de «O que se passa» (bloco PP1): ver `frasesDaCasa`. */
+const BLOCO_DECLARADO = '[data-bloco-declarado]';
+/**
+ * AS CINCO PÁGINAS DAS ENTRADAS E O CARTÃO QUE ELAS PARTILHAM COM A PÁGINA DOS TEMAS (bloco PP1,
+ * 28.09.2026). As entradas estão em `ROTAS_COM_ORIGEM_LIDA`, pela regra da lista, e o que elas
+ * escrevem fora dos cartões (os títulos, a linha, as secções, os estudos, a lista dos números de um
+ * bloco) é lido com as marcas retiradas. Dentro de um cartão da medida, a régua faz o que faz na
+ * página dos temas, que não está naquela lista: o cartão é o mesmo componente, com as mesmas
+ * leituras, e quem confere as leituras dele, parte a parte, é o K17 do `check:cartao`, que corre sobre
+ * a página dos temas e sobre as dez páginas das entradas. Ler um cartão numa entrada e não na página
+ * dos temas pedia uma linha do inventário por ramo de cada leitura, e uma atualização dos dados fechava
+ * a construção. Ver `frasesDaCasa`.
+ */
+const ROTAS_DAS_ENTRADAS = new Set(['entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado']);
+const CARTAO_DOS_TEMAS = '[data-cartao-medida]';
+/** As rotas onde a marca dos blocos tira texto do inventário: as páginas onde a célula dos blocos corre. */
+const ROTAS_DOS_BLOCOS = new Set(['home', ...ROTAS_DAS_ENTRADAS]);
 /**
  * OS NOMES OFICIAIS, LIDOS DO FICHEIRO DO MOTOR POR CONTA DESTA RÉGUA.
  *
@@ -886,6 +917,21 @@ function frasesDaCasa(root, rotaKey) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
+  /* AS PALAVRAS DECLARADAS DOS BLOCOS DE «O QUE SE PASSA» NÃO ENTRAM NO INVENTÁRIO (bloco PP1,
+     28.09.2026). São as palavras do lugar de direção em `src/data/primeira-pagina.mjs`, auditadas parte
+     a parte, e mudam com os ramos e com as condições: uma linha do inventário por ramo rendido faria uma
+     atualização dos dados fechar a construção, que é o que o §5.2 do brief proíbe. Quem as confere é a
+     célula da primeira página (`tests/inicio/blocos.mjs`), que o `check:voz` corre na mesma corrida
+     sobre a primeira página e que o `check:pais` corre na construção; a varredura do tripwire da voz
+     (`frasesDaVoz`) continua a lê-las, e a mobília à volta delas (a data, a fonte, o título da lista
+     dos números) continua aqui, no inventário. A LISTA DOS NÚMEROS de um bloco também leva a marca: o
+     sufixo e o provisório de cada linha mudam com os dados, e a célula confere o texto dela fora das
+     marcas. A MARCA SÓ VALE ONDE A CÉLULA CORRE, na primeira página e nas cinco entradas: noutra rota,
+     o texto marcado conta-se como qualquer outro, e um bloco por classificar fecha a construção. */
+  if (ROTAS_DOS_BLOCOS.has(rotaKey)) for (const el of root.querySelectorAll(BLOCO_DECLARADO)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
   for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
     if (el.querySelector(BLOCOS_DA_VOZ)) continue;
     if (marcados.has(el)) continue;
@@ -922,6 +968,10 @@ function frasesDaCasa(root, rotaKey) {
        classificadas, e até lá o que ela esconde está contado no relatório do
        F0.9 e não muda de número por acidente. */
     if (temOrigem && !leOrigem) continue;
+    /* Um bloco com origem dentro de um cartão da medida, numa página das entradas, é saltado como na
+       página dos temas (bloco PP1, 28.09.2026): ver a razão ao lado de `ROTAS_DAS_ENTRADAS`. Fora dos
+       cartões, a entrada lê as origens como qualquer rota da lista. */
+    if (temOrigem && ROTAS_DAS_ENTRADAS.has(rotaKey) && el.closest(CARTAO_DOS_TEMAS)) continue;
     const t = temOrigem ? norm(textoForaDasOrigens(el, marcados)) : norm(texto(el));
     if (!t) continue;
     /* --------------------------------------------------------------------
