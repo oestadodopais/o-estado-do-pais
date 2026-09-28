@@ -33,7 +33,16 @@ study: "quadro-institucional"
 note: "Período anterior da medida «pib-real-per-capita-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430'
+  new_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 

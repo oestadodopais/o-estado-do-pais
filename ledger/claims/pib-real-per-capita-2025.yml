@@ -33,7 +33,16 @@ study: "quadro-institucional"
 note: "Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600'
+  new_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
