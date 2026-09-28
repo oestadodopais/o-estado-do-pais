@@ -22,12 +22,23 @@
  * vistos, e o carimbo trocado não pode contar como diferença. Se não forem, o
  * guião sai com 2 antes de comparar o que interessa.
  *
- * Uso: node comparar-dist.mjs <dist-antes> <dist-depois> [--json <ficheiro>]
+ * OS MANIFESTOS (passagem CI1b, 28.09.2026, achado 8 da leitura a frio). Uma
+ * construção cabe num manifesto: o caminho e o sha256 de cada ficheiro, e os
+ * dois ficheiros do carimbo por inteiro, num JSON comprimido. O guião compara
+ * tanto duas pastas como dois manifestos (ou uma de cada), pela mesma função,
+ * e é assim que outra pessoa refaz a conta sem esta máquina: os manifestos das
+ * construções comparadas ficam nas provas do bloco. Ao ler um manifesto, o
+ * guião confere que o sha256 de cada ficheiro do carimbo guardado é o que o
+ * próprio manifesto diz dele, e recusa um manifesto que não bata consigo.
+ *
+ * Uso: node comparar-dist.mjs <dist ou manifesto antes> <dist ou manifesto depois> [--json <ficheiro>]
+ *      node comparar-dist.mjs --manifesto <dist> <saida.json.gz>
  */
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import zlib from 'node:zlib';
 
 export const CARIMBO = { 'version.json': ['commit', 'ref', 'construido_em'], 'prova.json': ['commit', 'construido_em'] };
 
@@ -51,9 +62,51 @@ export function resumos(raiz) {
 }
 
 /** @param {string} a @param {string} b */
+/**
+ * O manifesto de uma construção: o caminho e o sha256 de cada ficheiro, e os
+ * ficheiros do carimbo por inteiro.
+ * @param {string} dist
+ */
+export function manifestoDe(dist) {
+  const r = resumos(dist);
+  const carimbo = {};
+  for (const k of Object.keys(CARIMBO)) if (r.has(k)) carimbo[k] = fs.readFileSync(path.join(dist, k), 'utf8');
+  const versao = carimbo['version.json'] ? JSON.parse(carimbo['version.json']) : {};
+  return {
+    formato: 1,
+    o_que: 'o manifesto de uma construção do sítio: o caminho e o sha256 de cada ficheiro de dist/, e os ficheiros do carimbo por inteiro (bloco CI1)',
+    commit: versao.commit ?? null,
+    construido_em: versao.construido_em ?? null,
+    ficheiros: [...r.entries()].sort((x, y) => (x[0] < y[0] ? -1 : 1)),
+    carimbo,
+  };
+}
+
+/** Lê um manifesto guardado e confere que o carimbo guardado é o que ele diz. @param {string} f */
+export function leManifesto(f) {
+  const m = JSON.parse(zlib.gunzipSync(fs.readFileSync(f)).toString('utf8'));
+  const r = new Map(m.ficheiros);
+  for (const [k, texto] of Object.entries(m.carimbo ?? {})) {
+    const h = crypto.createHash('sha256').update(Buffer.from(texto, 'utf8')).digest('hex');
+    if (r.get(k) !== h) throw new Error(`o manifesto ${path.basename(f)} não bate consigo: o ${k} guardado tem outro sha256`);
+  }
+  return m;
+}
+
+/** Uma construção, de uma pasta ou de um manifesto: os resumos e o texto do carimbo. @param {string} x */
+function construcao(x) {
+  if (fs.statSync(x).isDirectory()) {
+    return { resumos: resumos(x), carimbo: (k) => fs.readFileSync(path.join(x, k), 'utf8') };
+  }
+  const m = leManifesto(x);
+  return { resumos: new Map(m.ficheiros), carimbo: (k) => m.carimbo[k] };
+}
+
 export function compara(a, b) {
-  const ra = resumos(a);
-  const rb = resumos(b);
+  const ca = construcao(a);
+  const cb = construcao(b);
+  const ra = ca.resumos;
+  const rb = cb.resumos;
   const soAntes = [...ra.keys()].filter((k) => !rb.has(k)).sort();
   const soDepois = [...rb.keys()].filter((k) => !ra.has(k)).sort();
   const diferentes = [];
@@ -65,8 +118,8 @@ export function compara(a, b) {
       diferentes.push(k);
       continue;
     }
-    const ja = JSON.parse(fs.readFileSync(path.join(a, k), 'utf8'));
-    const jb = JSON.parse(fs.readFileSync(path.join(b, k), 'utf8'));
+    const ja = JSON.parse(ca.carimbo(k));
+    const jb = JSON.parse(cb.carimbo(k));
     for (const c of campos) {
       if (JSON.stringify(ja[c]) !== JSON.stringify(jb[c])) carimbo.push({ ficheiro: k, campo: c, antes: ja[c] ?? null, depois: jb[c] ?? null });
       delete ja[c];
@@ -78,10 +131,10 @@ export function compara(a, b) {
   return { ficheiros_antes: ra.size, ficheiros_depois: rb.size, soAntes, soDepois, diferentes, carimbo };
 }
 
-/** O dia UTC da construção, lido do carimbo. */
-function diaDe(dist) {
+/** O dia UTC da construção, lido do carimbo, numa pasta ou num manifesto. */
+function diaDe(x) {
   try {
-    return String(JSON.parse(fs.readFileSync(path.join(dist, 'version.json'), 'utf8')).construido_em).slice(0, 10);
+    return String(JSON.parse(construcao(x).carimbo('version.json')).construido_em).slice(0, 10);
   } catch {
     return null;
   }
@@ -111,7 +164,24 @@ function conhecidoPositivo() {
     fs.writeFileSync(path.join(b, 'version.json'), JSON.stringify({ commit: 'b', ref: 'r', env: 'OUTRO', construido_em: '2026-09-28T11:00:00Z' }));
     const r2 = compara(a, b);
     const ok2 = r2.diferentes.includes('version.json (fora do carimbo)');
-    return { ok: ok && ok2, visto: { byte_trocado: r.diferentes, so_antes: r.soAntes, so_depois: r.soDepois, carimbo: r.carimbo.length, fora_do_carimbo: r2.diferentes } };
+    /* E pelos manifestos: a mesma conta, lida de dois manifestos guardados, dá o mesmo. */
+    const ma = path.join(base, 'a.manifesto.json.gz');
+    const mb = path.join(base, 'b.manifesto.json.gz');
+    fs.writeFileSync(ma, zlib.gzipSync(JSON.stringify(manifestoDe(a))));
+    fs.writeFileSync(mb, zlib.gzipSync(JSON.stringify(manifestoDe(b))));
+    const r3 = compara(ma, mb);
+    const ok3 = JSON.stringify(r3) === JSON.stringify(r2);
+    /* E um manifesto que não bate consigo é recusado. */
+    const estragado = JSON.parse(zlib.gunzipSync(fs.readFileSync(mb)).toString('utf8'));
+    estragado.carimbo['version.json'] = estragado.carimbo['version.json'].replace('OUTRO', 'OUTRA');
+    fs.writeFileSync(mb, zlib.gzipSync(JSON.stringify(estragado)));
+    let recusado = false;
+    try {
+      compara(ma, mb);
+    } catch (e) {
+      recusado = /não bate consigo/.test(String(e.message));
+    }
+    return { ok: ok && ok2 && ok3 && recusado, visto: { byte_trocado: r.diferentes, so_antes: r.soAntes, so_depois: r.soDepois, carimbo: r.carimbo.length, fora_do_carimbo: r2.diferentes, pelos_manifestos_igual: ok3, manifesto_incoerente_recusado: recusado } };
   } finally {
     fs.rmSync(base, { recursive: true, force: true });
   }
@@ -120,11 +190,24 @@ function conhecidoPositivo() {
 const principal = path.resolve(process.argv[1] ?? '') === path.resolve(new URL(import.meta.url).pathname);
 if (principal) {
   const args = process.argv.slice(2);
+  if (args[0] === '--manifesto') {
+    const [, dist, destino] = args;
+    if (!dist || !destino) {
+      console.error('uso: node comparar-dist.mjs --manifesto <dist> <saida.json.gz>');
+      process.exit(2);
+    }
+    const m = manifestoDe(dist);
+    const bytes = zlib.gzipSync(Buffer.from(JSON.stringify(m) + '\n'), { level: 9 });
+    fs.writeFileSync(destino, bytes);
+    leManifesto(destino);
+    console.log(`manifesto de ${m.ficheiros.length} ficheiros (commit ${m.commit}, ${m.construido_em}) · ${bytes.length} bytes · sha256 ${crypto.createHash('sha256').update(bytes).digest('hex')}`);
+    process.exit(0);
+  }
   const j = args.indexOf('--json');
   const saida = j >= 0 ? args[j + 1] : null;
-  const [antes, depois] = args.filter((x, i) => x !== '--json' && i !== j + 1);
+  const [antes, depois] = args.filter((x, i) => j < 0 || (i !== j && i !== j + 1));
   if (!antes || !depois) {
-    console.error('uso: node comparar-dist.mjs <dist-antes> <dist-depois> [--json <ficheiro>]');
+    console.error('uso: node comparar-dist.mjs <dist ou manifesto antes> <dist ou manifesto depois> [--json <ficheiro>]');
     process.exit(2);
   }
   const cp = conhecidoPositivo();
@@ -151,7 +234,7 @@ if (principal) {
     carimbo: r.carimbo,
   };
   if (saida) fs.writeFileSync(saida, JSON.stringify(relatorio, null, 1) + '\n');
-  console.log(`conhecido-positivo: visto (um byte trocado, um ficheiro a mais, um a menos, um campo fora do carimbo)`);
+  console.log(`conhecido-positivo: visto (um byte trocado, um ficheiro a mais, um a menos, um campo fora do carimbo, a mesma conta pelos manifestos, e um manifesto que não bate consigo recusado)`);
   console.log(`dia UTC das duas construções: ${dias.antes}`);
   console.log(`ficheiros: ${r.ficheiros_antes} antes, ${r.ficheiros_depois} depois`);
   console.log(`diferenças fora do carimbo: ${diferencas}`);
