@@ -1,6 +1,6 @@
 # C1 · as correções de confiança
 
-Esta primeira parte regista a entrega inicial do C1. As secções «C1c», «C1d» e «C1e» substituem-na onde dizem outra coisa, incluindo a atualização da dívida das famílias da União e as frases dos recibos. As cabeças e os resultados abaixo pertencem a cada entrega datada.
+Esta primeira parte regista a entrega inicial do C1. As secções «C1c», «C1d», «C1e» e «C1f» substituem-na onde dizem outra coisa, incluindo a atualização da dívida das famílias da União e as frases dos recibos. As cabeças e os resultados abaixo pertencem a cada entrega datada.
 
 Entrega parcial: o ponto 3 está parado porque a linha da dívida das famílias da União não pertence ao circuito que o brief manda atualizar. A prova está em `circuito-divida.json`. O valor selado permanece 49,3 e a divergência para 49,2 permanece visível no recibo. Não se inventou uma travessia nem uma `atualizacao` para uma linha que não está no livro de origem indicado.
 
@@ -749,3 +749,128 @@ da sessão indica-o fora do ramo.
 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | C1e: tipar a lista percorrida pela história da proveniência |
 
 Motor C1e: `68318e0da2036cc29e4704fa1bb8a96dee246095`. Os commits anteriores do motor estão nas secções anteriores e na lista integral de `medidas.json`. Nenhum envio para o remoto.
+
+## C1f
+
+A passagem C1f está concluída. Os três portões passaram na mesma cabeça de código, com as cinco histórias reconstituídas e as capturas pedidas.
+
+A decisão de 28.09.2026 resolveu a paragem da C1e pela prova que faltava:
+a história do Git. A guarda de proveniência mantém-se sem qualquer alteração.
+Esta secção substitui a indicação da C1e de que a retoma teria de passar por
+uma decisão ainda pendente. A direção autorizou a reconstituição deste lado,
+com a aceitação prevista no livro para as linhas cruzadas.
+
+**A prova de cada acesso.** O controlo `c1f/conferir-acessos.py` lê os objetos
+do Git até à cabeça recebida, `cb43b2fcec9e67815894a07ceb95c2cba1b589e4`.
+Para cada mudança, lê o ficheiro no commit e no seu pai, a data do commit e o
+diff do campo. Confere a data do instantâneo na mensagem com os ficheiros
+identificados no documento dessa versão. As datas das razões usam a forma ISO
+que as entradas anteriores do PRR já usavam. A prova integral está em
+`c1f/acessos-git.json`, incluindo os resumos completos dos commits.
+
+| Linha | Acesso inicial no Git | Mudança no commit `8371e097`, de 18.08.2026 | Mudança no commit `8b7d9157`, de 20.08.2026 | Circuito |
+| --- | --- | --- | --- | --- |
+| `evora-prr-aprovado-2026` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-municipio-contratado` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-pago-2026` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-universidade-contratado` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-vencido-aprovado-2026` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+
+Há dez entradas novas, duas por linha. A criação do ficheiro mostra o primeiro
+acesso, não uma mudança, e por isso não recebeu uma entrada inventada.
+As listas antigas conservam todas as entradas, a sua ordem e os seus bytes.
+As entradas reconstituídas foram acrescentadas no fim; a guarda e o recibo
+ordenam a história pelas datas. O acesso atual, os valores, os endereços e as
+releituras mantêm-se. O inventário passa a registar 54 revisões de proveniência.
+
+As cinco linhas são cruzadas. Cada uma passou por
+`node scripts/check-cruzamento.mjs --accept-correction <id>`, pela forma
+«Corrigir uma linha cruzada» de `ledger/README.md`. Os cinco códigos estão nos
+ficheiros `c1f/aceitar-*.codigo`. O registo `ledger/cruzamentos/evora.json`
+guarda os resumos anteriores e novos e a contagem aumentada. Linhas e registo
+entraram no mesmo commit. Não se editou o motor nem se afirmou ter feito uma
+nova exportação. A medição confere também que nenhum outro campo do registo
+mudou.
+
+**Plantas e limites.** O controlo que lê o Git tem dez plantas, duas por linha:
+numa cópia em memória, troca a data da primeira entrada reconstituída por
+19.08.2026; noutra, troca o acesso antigo por 05.08.2026. Cada planta tem de
+produzir uma única falha, precisamente no campo trocado. As mensagens estão
+em `c1f/acessos-git.json`. Este controlo do bloco não substitui a guarda geral
+do livro: prova a correspondência destas entradas com os commits históricos.
+A conferência isolada do livro e a da travessia deram zero, registados em
+`c1f/livro.codigo` e `c1f/cruzamento.codigo`.
+
+**Cabeças.** O código medido é `cd5557448c430a225eb58b6b257e7f11ef384818`.
+O motor permanece em `68318e0da2036cc29e4704fa1bb8a96dee246095`, com árvore limpa
+conferida na medição, sem alterações nesta passagem. A lista integral dos
+commits do sítio e do motor está em `medidas.json`, na secção C1f. A tabela
+seguinte continua a lista da C1e, ligando a sua cabeça à entrega e à retoma.
+
+| Cabeça | Assunto |
+| --- | --- |
+| `9514cc6eea58426d39ef54d7085f9372a68c6cf2` | C1e: entrega das provas e da paragem, filho da cabeça de código registada acima |
+| `cb43b2fcec9e67815894a07ceb95c2cba1b589e4` | C1f: decisão da direção e guião da retoma pela história do Git |
+| `ffea781d22aec3cc80b7db14c825394627f8ecf1` | C1f: reconstituir pelo Git os acessos das cinco linhas do PRR |
+| `cd5557448c430a225eb58b6b257e7f11ef384818` | C1f: registar para leitura as duas contagens do inventário |
+
+O último commit da C1f contém esta versão do relatório, as provas e
+`RESPOSTA-codex-c1f.md`; é filho direto da cabeça de código e entrega apenas
+provas. O seu resumo será indicado fora do ramo, porque não pode ser escrito
+nos seus próprios bytes. Nenhum envio para o remoto.
+
+**A primeira corrida.** A construção da primeira cabeça parou no portão da
+voz: faltava a entrada C1f em `REVISOES-DO-INVENTARIO.md`, exigida para as duas
+contagens novas. Foi uma omissão do construtor. A entrada foi acrescentada
+como «por ler pelo lugar de direção antes de aterrar», que é o estado previsto
+pelo registo durante a construção. Não se declarou uma leitura que não
+aconteceu. A conferência isolada da voz passou depois desse acerto.
+`c1f/primeira-corrida/` conserva o código, a saída e o estado da árvore;
+`c1f/tentativas.json` identifica a falha e distingue-a dos portões finais.
+
+**Capturas e privacidade.** `c1f/capturas-depois.json` regista 50 capturas dos
+cinco recibos do PRR, nas edições portuguesa e inglesa, a 390, 768, 1024,
+1280 e 1600 px. Todas foram servidas pela construção da cabeça final e têm
+as duas razões reconstituídas, conferidas literalmente. O deslocamento
+horizontal máximo é zero. `c1f/paginas-depois/INDICE.json` sela as dez páginas e
+as duas folhas de estilo servidas. Uma amostra estreita portuguesa e outra
+larga inglesa foram também inspecionadas visualmente, registadas em
+`c1f/inspecao-visual.json`. A matriz desta passagem é a dos cinco recibos que
+o guião C1f pede; não se apresenta como nova captura dos restantes recibos
+listados na paragem da C1e.
+
+A guarda da C1e sobre `dist/` correu nesta construção: 12 485 ficheiros,
+zero caminhos ou nomes encontrados e oito plantas detetadas, incluindo os
+nomes lidos do Git numa cópia de página em memória. A prova está em
+`c1f/privacidade-dist.json`, extraída da saída do portão com o resumo desse
+ficheiro. Pelo mesmo processo, `c1f/proveniencia.json` conserva os oito
+controlos, as 29 plantas e zero erros do livro. `c1f/extrair-portao.py` torna
+esta extração reproduzível; não faz uma segunda corrida.
+
+A medição do bloco em `c1f/medidas.json` compara as 3 009 linhas, confirma as
+cinco listas aumentadas e nenhum valor alterado. Também confere o bloco, os
+ficheiros tocados do sítio e os ficheiros tocados do motor, com
+conhecidos-positivos para caminhos, o intérprete fora do repositório, o nome
+dentro de um anfitrião e os nomes dos autores lidos do Git. Os nomes e os
+caminhos usados nas plantas ficam apenas em memória. A medição terminou com
+zero caminhos ou nomes encontrados e os dez conhecidos-positivos detetados.
+
+**Custo.** `c1f/custo.json` separa esta retoma pelo pedido que a lançou e pelos
+contadores acumulados do runtime. Indica o instante de corte, sem estimar um
+preço nem incluir o fecho posterior ou revisões automáticas.
+
+**Portões finais e fecho.** Antes de cada comando foi corrido
+`pgrep -fl "astro build|npm run verify"`. O último portão aguardou a corrida
+de outro construtor. As conferências estão em `c1f/concorrencia-*.json`.
+Cada comando tem o seu código acabado de escrever, lido para a tabela:
+
+| Comando | Código lido | Cabeça | Ficheiro |
+| --- | --- | --- | --- |
+| `npm run build` | 0 | `cd5557448c430a225eb58b6b257e7f11ef384818` | `portoes/c1f/build.codigo` |
+| `npm run verify` | 0 | `cd5557448c430a225eb58b6b257e7f11ef384818` | `portoes/c1f/verify.codigo` |
+| `npm run typecheck` | 0 | `cd5557448c430a225eb58b6b257e7f11ef384818` | `portoes/c1f/typecheck.codigo` |
+
+Os estados da árvore do sítio e as horas de cada corrida acompanham os
+códigos. A árvore do motor está medida em `c1f/medidas.json`, limpa e na mesma
+cabeça recebida. `c1f/relatorio.json` guarda a conferência deste relatório,
+com zero números sem ficheiro e o conhecido-positivo detetado.

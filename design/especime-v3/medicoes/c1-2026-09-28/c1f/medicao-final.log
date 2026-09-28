@@ -1,0 +1,53 @@
+{
+  "linhas_conferidas": 3009,
+  "linhas_alteradas": [
+    "evora-prr-aprovado-2026",
+    "evora-prr-municipio-contratado",
+    "evora-prr-pago-2026",
+    "evora-prr-universidade-contratado",
+    "evora-prr-vencido-aprovado-2026"
+  ],
+  "valores_alterados": [],
+  "revisoes_de_proveniencia": 54,
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+      "inicio": "2026-09-28T20:31:50.952131+00:00",
+      "fim": "2026-09-28T20:37:03.350758+00:00"
+    },
+    "verify": {
+      "codigo": 0,
+      "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+      "inicio": "2026-09-28T20:37:08.163244+00:00",
+      "fim": "2026-09-28T20:45:45.104243+00:00"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+      "inicio": "2026-09-28T20:51:11.487012+00:00",
+      "fim": "2026-09-28T20:51:11.920630+00:00"
+    }
+  },
+  "caminhos": {
+    "ficheiros": 2662,
+    "quantidade": 0,
+    "achados": [],
+    "conhecidos_positivos": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "anfitrioes": 1,
+    "nomes_lidos_do_git": 2
+  },
+  "aceitacao_integral": true,
+  "erros_da_medicao": []
+}
