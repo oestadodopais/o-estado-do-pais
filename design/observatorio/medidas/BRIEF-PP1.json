@@ -1,0 +1,205 @@
+{
+  "brief": "design/observatorio/BRIEF-PP1-a-primeira-pagina-de-um-leitor-comum.md",
+  "guiao": "design/observatorio/medidas/BRIEF-PP1.py",
+  "cabeca_lida": "2613664f",
+  "medidas": [
+    {
+      "nome": "cartoes_na_primeira_pagina",
+      "valor": 23,
+      "comando": "git show 2613664f:design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/index.html · a secção pais-temas, os article com data-claim",
+      "conhecido_positivo": {
+        "o_que": "o cartão da taxa de emprego está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_na_primeira_pagina",
+      "valor": 9,
+      "comando": "a mesma secção · os h3",
+      "conhecido_positivo": {
+        "o_que": "a Habitação é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapas_na_primeira_pagina",
+      "valor": 1,
+      "comando": "o div pais-mapa · os svg",
+      "conhecido_positivo": {
+        "o_que": "o svg é o mapa dos distritos e das ilhas, com uma área por unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "numeros_no_mapa",
+      "valor": 0,
+      "comando": "o div pais-mapa · os data-claim",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra data-claim no texto ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mudancas_na_primeira_pagina",
+      "valor": 4,
+      "comando": "a lista ol.pais-mudou · os li",
+      "conhecido_positivo": {
+        "o_que": "uma das mudanças é a de 23.09.2026",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_antes_do_primeiro_titulo",
+      "valor": 126,
+      "comando": "o div pais-texto, que abre a página antes do primeiro h2 · as palavras do texto",
+      "conhecido_positivo": {
+        "o_que": "o texto fala da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "numeros_antes_do_primeiro_titulo",
+      "valor": 8,
+      "comando": "o mesmo div · as linhas distintas nos data-claim",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública de 2025 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valores_fixos_da_leitura_do_pais",
+      "valor": 9,
+      "comando": "git show 2613664f:src/components/inicio/LeituraDoPais.astro · as entradas de const esperados",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública de 2025 está presa em 89,7",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leitura_do_pais_para_a_construcao",
+      "valor": true,
+      "comando": "o mesmo ficheiro · um throw quando um valor preso muda",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro lê as linhas do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_declarados",
+      "valor": 5,
+      "comando": "git show 2613664f:design/observatorio/leituras/BLOCOS-primeira-pagina-2026-09-28.mjs · os blocos de primeiro nível",
+      "conhecido_positivo": {
+        "o_que": "um deles é o da casa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_blocos",
+      "valor": 30,
+      "comando": "o mesmo ficheiro · os identificadores de linha nos pedaços, nas condições e nos desenhos",
+      "conhecido_positivo": {
+        "o_que": "os combustíveis estão entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_blocos_no_livro",
+      "valor": 30,
+      "comando": "git ls-tree 2613664f -- ledger/claims/ · as linhas dos blocos que lá estão",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor diz ausente uma linha que não existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "condicoes_dos_blocos",
+      "valor": 18,
+      "comando": "o mesmo ficheiro · as condições de comparação dos blocos e das peças",
+      "conhecido_positivo": {
+        "o_que": "uma delas compara os combustíveis com as rendas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "condicoes_verdadeiras",
+      "valor": 18,
+      "comando": "as mesmas condições · avaliadas com os valores das linhas em 2613664f e os limiares de src/data/enquadramento/referencias.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo avaliador diz falsa a condição invertida das rendas acima dos combustíveis",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "condicoes_do_mesmo_periodo",
+      "valor": 8,
+      "comando": "o mesmo ficheiro · as condições mesmo_periodo",
+      "conhecido_positivo": {
+        "o_que": "a dos preços junta cinco linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "condicoes_do_mesmo_periodo_verdadeiras",
+      "valor": 8,
+      "comando": "as mesmas · os períodos de referência das linhas em 2613664f",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê dois períodos num grupo que mistura um ano e um mês",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_declaradas",
+      "valor": 6,
+      "comando": "o mesmo ficheiro · as entradas de primeiro nível",
+      "conhecido_positivo": {
+        "o_que": "uma delas é a dos lugares, que já existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nas_entradas",
+      "valor": 47,
+      "comando": "as mesmas entradas · os identificadores das listas cartoes",
+      "conhecido_positivo": {
+        "o_que": "a pensão média está na do dinheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_repetidos_nas_entradas",
+      "valor": 0,
+      "comando": "as mesmas listas · as ocorrências a mais",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma repetição numa lista com um nome duas vezes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "artigos_da_pagina_dos_temas",
+      "valor": 48,
+      "comando": "git show 2613664f:design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/temas_index.html · os article com data-claim, pela primeira linha de cada um",
+      "conhecido_positivo": {
+        "o_que": "a página tem o cartão das necessidades médicas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_fora_das_entradas",
+      "valor": 1,
+      "comando": "os cartões da página dos temas que nenhuma entrada leva",
+      "conhecido_positivo": {
+        "o_que": "o índice da dívida do município é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_das_entradas_fora_dos_temas",
+      "valor": 0,
+      "comando": "os cartões das entradas que a página dos temas não tem",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê um cartão inventado fora dos temas",
+        "encontrado": true
+      }
+    }
+  ]
+}
