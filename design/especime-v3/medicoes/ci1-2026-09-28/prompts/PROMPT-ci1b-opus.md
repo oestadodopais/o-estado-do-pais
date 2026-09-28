@@ -1,0 +1,14 @@
+*A passagem de correção CI1b, mandada pelo lugar de direção (Claude Fable 5.1) ao construtor do Opus a 28.09.2026 às 20:20 UTC, na mesma sessão do construtor, depois da leitura a frio do Codex. Copiada à letra, com o caminho da worktree trocado pelo nome do ramo.*
+
+Passagem de correção CI1b, pelo lugar de direção (Claude Fable 5.1), na mesma worktree do ramo `ci1-2026-09-28` (a cabeça é agora `26971885`: acrescentei a leitura a frio do Codex gpt-5.6-sol em `design/especime-v3/critica/LEITURA-ci1-2026-09-28.md`, com o registo das plantas). As regras de sempre: caminhos explícitos, nenhum `push`, uma construção de cada vez (outros construtores na máquina: `pgrep -fl "astro build|npm run verify"` antes de cada corrida inteira), os trailers do Opus, nenhum caminho da máquina, a resposta curta num ficheiro teu no último commit.
+
+A triagem: os achados 1, 2, 3, 4 e 10 são as cinco plantas (não se corrigem). O achado 5 é meu: medi a primeira corrida no GitHub (a 36475236795, no ramo: 8,8 minutos de passos, contra 27,7; o `build` 1,5 minutos, o passo novo 4,0, a árvore 2,8, variável do lado do GitHub), e faço eu a segunda e a planta vermelha depois desta passagem; o relatório diz os números da primeira com a origem. Faz o resto:
+
+1. **O paralelo sem interferência provada** (achado 6): o `design:feixe`, que escreve `design-system/`, corre sozinho depois do grupo paralelo, a não ser que proves com leituras registadas que nenhuma outra conferência lê essa pasta; o inventário passa a registar também as leituras (ou o relatório diz exatamente o que não regista e porque isso chega), e a célula D ou uma célula nova diz o que protege quanto a ficheiros escritos e repostos a meio.
+2. **A célula C prova a cabeça do `cadeia.json`** (achado 7): pelo que o ficheiro traz (um commit, um resumo, ou a hora de escrita dentro da corrida), com uma planta de um `cadeia.json` velho que morde.
+3. **A prova byte a byte reproduz-se** (achado 8): os manifestos caminho→sha256 das construções comparadas ficam nas provas (comprimidos se for preciso), com o guião que os compara, para outra pessoa refazer a conta sem a máquina.
+4. **A paridade prova-se numa construção real** (achado 9): uma planta numa cópia com uma chave só numa língua faz o `astro build` falhar antes da primeira página, registada uma vez como prova (não precisa de entrar na cadeia).
+5. **O relatório** (achado 11): a frase das 0 linhas diferentes diz o que se normalizou antes de comparar; e (achado 12) o guião da planta na cadeia real repõe os ficheiros num `trap`, mesmo se interrompido.
+6. Põe em dia o mapa do repositório (§3 e §5) e uma linha M no registo das melhorias (a M38: a guarda de paridade a cada chamada era 53,9 % da construção, com a medida antes e depois).
+
+Depois, os três portões na cabeça final, cada um no seu comando com o código em `portoes/ci1b/`, o relatório com a secção CI1b e o `medidas.json`. Respondes com a cabeça final e o que ficou por fazer.
