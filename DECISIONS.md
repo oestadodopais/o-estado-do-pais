@@ -12914,3 +12914,30 @@ rotas passam a ler **0**.
 **O custo do dia.** Os construtores do Codex: 896 659 símbolos (o RP1, 1 h 48), 493 377 (o RP1b, 1 h 05) e 457 106 (o RP1c, 56 min), na subscrição do Codex, que fechou o dia a 8 % da semana (o plano «prolite», reposto de manhã pelo diretor). Na subscrição do Claude: as duas leituras a frio do Opus (575 525 e 601 954 símbolos), o mapa das séries (356 589) e o reconhecimento das fontes do RP2 (336 707), mais o lugar de direção; a linha de estado às 19:51 UTC dizia a semana a 94 % (repõe a 28.09 às 10:00 UTC) e a janela de cinco horas a 4 %. O diretor tinha dito às 17:00 que o orçamento não travava, e às 19:00, com o seu mostrador a 99 %, «OK if we can, let's finish».
 
 **Onde está tudo:** o brief do RP1 com o §8, `design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md`; as leituras, `design/observatorio/leituras/LEITURAS-rp1-2026-09-26.mjs` (a terceira redação, com o cabeçalho a dizer as três); as medições, `design/especime-v3/medicoes/rp1-2026-09-26/` (o `LEIA-ME.md` com as três secções, os três guiões do Codex, as três respostas, o `medidas.json`); as duas leituras a frio, `design/especime-v3/critica/LEITURA-rp1-2026-09-26.md` e `LEITURA-rp1bc-2026-09-26.md`, com os registos das plantas; os briefs do RP2 e do RP3 e o memorando das fontes, `design/observatorio/`; os dois memorandos do brainstorm e a síntese no Drive do diretor (§1.131).
+
+### 1.133 O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+
+**Afecta:** nenhum
+
+**O que muda:** o público primeiro do sítio (a frase do §6 da visão que o desenhava para as citações), a ordem do plano (a proposta do lugar de direção abaixo, com os passos pesados à espera do sim do diretor), e o trabalho contínuo do lugar de direção (procurar nos dados as relações que se podem ler juntas e desenhá-las).
+
+**Data:** 28.09.2026, de manhã.
+
+**As palavras do diretor** (ditadas, transcritas como as disse): «the web page and the website it's for a normal reader first, friendly, and then if someone with some expertise want to dig in within our data they should have layers to do so, but the first contact with the web page should be something that is actually insightful and brings real content to the readers that is absolutely based on the data and the content we have»; «the idea is for you to take the initiative to keep searching the content we have, the data we have, and finding those points, things can relate and can be trusted, track to each other, and they can be put together; find the visual ways to present them instead of just numbers, because just numbers gets really abstract and it's hard to follow»; «the idea is to have a constant update live, or as much as we can»; «this is the problem my friends that were reading the page found out, that it's just too much, too difficult to make sense out of it».
+
+**O que o lugar de direção leu antes de propor:** as duas avaliações de fora de 27.09.2026 no Desktop do diretor, a do Codex gpt-6-astra («Full Assessment and Improvement Plan») e a do Claude Opus 5.5 («avaliação de fora e o que os leitores precisam»), que dizem o mesmo por outras palavras: o sítio é uma lista muito bem fundamentada de números soltos, sem camada onde os números se encontram, e a camada 5 da visão (a síntese) está vazia. O lugar de direção deu-lhes razão e assumiu a deriva: o diretor pôs duas vezes o produto antes dos portões (15.08 e 15.09), e o trabalho continuou a ir para a maquinaria e para mais cartões soltos.
+
+**A decisão do diretor:** o sítio é para o leitor comum primeiro; a primeira coisa que se lê diz alguma coisa, feita só dos números que a casa tem; quem sabe mais tem camadas por baixo; o lugar de direção procura por iniciativa própria as relações que se podem ler juntas e confiar, e desenha-as; o que se mostra atualiza-se o mais perto possível do vivo. A leitura dos amigos do diretor («too much, too difficult») conta como a primeira leitura de leitores comuns.
+
+**A proposta do lugar de direção, por esta ordem** (os passos 2 a 4 são pesados e esperam o sim do diretor a esta ordem, pela regra 13 da conta):
+1. Acabar o que está a meio: o painel de 28.09 aterrado; as correções pequenas das I158 a I162 e as da primeira fase da avaliação do Codex (o ficheiro dos concelhos que só traz coordenadas, as duas faixas do tempo de Évora sem o mesmo calendário, a palavra da verificação, «justo» sem critério no estudo das penalizações).
+2. As séries no motor e no livro (o RP3), porque nenhum desenho honesto existe sem elas.
+3. A primeira página de uma pergunta: «Os salários acompanharam os preços?», com a linha do salário real, quem fica atrás da média e os limites, feita como forma que se repete.
+4. A primeira página nova: «O que se passa» à cabeça (três a cinco achados datados, uma frase e um desenho cada, que se atualizam sozinhos quando os dados chegam, com as palavras escritas uma vez com ramos, como as leituras dos cartões), depois as entradas por pergunta da vida («O meu dinheiro», «A minha casa», «A minha saúde», «A minha terra», «O Estado»), e só depois os temas estatísticos para quem investiga.
+5. Em paralelo, sem séries: o mapa da primeira página passa a levar dados (uma medida por concelho) em vez de só os contornos.
+6. Depois, uma pergunta de cada vez: a casa contra os rendimentos, a energia contra Espanha e a União, a saúde.
+
+**O que para:** maquinaria de conferência nova além da que os desenhos pedem; documentos de governo novos; estudos novos de Évora antes de a experiência nacional funcionar.
+
+**A prova de que funciona:** leitores comuns antes e depois de cada peça (os amigos do diretor são os primeiros); um contador de visitas que respeite a privacidade fica para decisão dele.
+
