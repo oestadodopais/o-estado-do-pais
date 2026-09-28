@@ -1,6 +1,6 @@
 # C1 · as correções de confiança
 
-Esta primeira parte regista a entrega inicial do C1. As secções «C1c» e «C1d» substituem-na onde dizem outra coisa, incluindo a atualização da dívida das famílias da União e as frases dos recibos. As cabeças e os resultados abaixo pertencem a cada entrega datada.
+Esta primeira parte regista a entrega inicial do C1. As secções «C1c», «C1d» e «C1e» substituem-na onde dizem outra coisa, incluindo a atualização da dívida das famílias da União e as frases dos recibos. As cabeças e os resultados abaixo pertencem a cada entrega datada.
 
 Entrega parcial: o ponto 3 está parado porque a linha da dívida das famílias da União não pertence ao circuito que o brief manda atualizar. A prova está em `circuito-divida.json`. O valor selado permanece 49,3 e a divergência para 49,2 permanece visível no recibo. Não se inventou uma travessia nem uma `atualizacao` para uma linha que não está no livro de origem indicado.
 
@@ -459,8 +459,8 @@ proveniência do acesso da C1c. A C1d não mudou nenhum valor do livro.
 | 7. Objetivo do BCE, achado 11 | Tem a classe própria `objetivo-institucional`, definida nas duas edições. O cartão não usa a classe do painel macroeconómico nem dá um veredicto nacional. | `ledger/allowlist.yml`, `c1d/k17.json` e a conferência do cartão em `c1d/recibos-finais.json`. |
 | 8. Competitividade, achado 21 | A origem passou a citar uma frase inteira e contígua do discurso alojado. A frase do Eurostat sustenta o sinal; a do BCE sustenta a ligação entre preços relativos e competitividade. | `c1d/origens.json`, `c1d/medidas.json` em `literais`, K17; resumo do corpo conservado. |
 | 9. PRR, achado 19 | As cinco linhas conservam as entradas corretas de instantâneos. A regra documenta esse caso estreito, confere todas as cadeias e anuncia cada instantâneo aceite. Não há dispensa silenciosa. | Lista abaixo; `ledger/README.md`, `c1d/historia-proveniencia.json`, com plantas de outro conjunto, razão sem identificação e cadeia contraditória sem releitura anterior. |
-| 10. História legível, achado 17 | Os campos têm nomes correntes. Mesmo dia, natureza e razões formam uma linha, preservando todos os campos e âncoras. Os nomes portugueses citados levam `lang` na edição inglesa. A norma diz quando o acesso acompanha a atualização. | `c1d/plantas-confianca.json`, `c1d/recibos-finais.json`, recibos PRR nas capturas e regra escrita no livro. |
-| 11. Forma do encontrado, achado 14 | O valor encontrado usa a mesma vírgula decimal e o mesmo separador de milhares do valor selado, nas duas edições. | Plantas da forma numérica e recibo europeu: «49,2» em ambas as edições. |
+| 10. História legível, achado 17 | Os campos têm nomes correntes. Mesmo dia, natureza e razões formam uma linha, preservando todos os campos e âncoras. A norma diz quando o acesso acompanha a atualização. A C1e retira a alegação de prova do `lang` dos nomes portugueses: não ficou nenhum caso real nem planta dessa regra. | `c1d/plantas-confianca.json`, `c1d/recibos-finais.json`, recibos PRR nas capturas e regra escrita no livro. |
+| 11. Forma do encontrado, achado 14 | O valor encontrado usa a mesma vírgula decimal e o mesmo separador de milhares do valor selado, nas duas edições. | Controlos da forma numérica, sem plantas na C1d, e recibo europeu: «49,2» em ambas as edições. |
 | 12. Calendário, achado 16 | Os quatro inícios selados usam o dia de instalação. A dívida do fim de 2024 fica antes da instalação de outubro seguinte. O início sem data do primeiro mandato fica aberto na I169; o limite esquerdo é um recorte do eixo e a F18 não o prende a uma instalação inventada. | `c1d/datas-evora.json`, `c1d/calendario.json`, planta da faixa coerentemente deslocada para janeiro e capturas do calendário. |
 | 13. Caminhos e nomes, achados 22 e 23 | O interpretador saiu do registo antigo. O detetor cobre caminhos absolutos fora do repositório, o anfitrião e os nomes lidos em memória do Git. As quatro referências nominais do inventário dizem «o diretor». | `c1d/medidas.json` em `caminhos`, com conhecidos-positivos e controlo negativo das ligações relativas do BCE. Nenhum nome usado como amostra foi copiado para a prova. |
 | 14. Relatório e registos, achados 20, 24 e 25 | A primeira parte ficou identificada como histórica. O ramo com a União em 49,2 está dito abaixo. As contagens batem com o livro. As corridas novas guardam a árvore; as antigas têm complemento explicitamente reconstituído. Custos separados e corpos de todas as marcas entregues. | `c1d/ramo-divida.json`, `contagens-registo.json`, `corridas-c1c.json`, `custo.json`, `bandeiras-provadas.json` e `corpos-bandeiras/`. |
@@ -478,7 +478,9 @@ proveniência do acesso da C1c. A C1d não mudou nenhum valor do livro.
 A exceção não aceita outro conjunto, uma data posterior à entrada, um nome de
 ficheiro sem a data, um documento que não seja ficheiro com cálculo sobre os
 ficheiros, nem uma razão que omita o endereço do instantâneo. Os restantes
-endereços continuam sujeitos à cadeia normal. As plantas guardam a falha exata.
+endereços continuam sujeitos à cadeia normal. Na C1d havia apenas as plantas
+de outro conjunto, razão sem endereço e cadeia contraditória. A C1e acrescenta
+as condições que faltavam; a alegação anterior de cobertura completa estava errada.
 
 **Números, origens e marcas.**
 A comparação com a base C1d conferiu 3 009 linhas: nenhum
@@ -620,3 +622,130 @@ A C1d fecha o mandato com a I150 fora desta passagem, a migração de fonte na
 I168 e a data inicial em falta na I169. O assunto dos sinais negativos da
 primeira leitura continua aberto como já estava. Nenhuma mudança foi enviada
 para o remoto.
+
+## C1e
+
+**Entrega parcial, com a história do PRR parada.** A nova guarda encontrou
+16 entradas de proveniência anteriores ao acesso em vigor,
+nas cinco linhas do PRR. Não há história tipada que prove os acessos anteriores.
+Nenhuma dessas entradas foi alterada e a guarda não foi dispensada. Os restantes
+acertos estão implementados e têm as provas isoladas abaixo; a construção e as
+capturas finais ficam dependentes desta paragem. A aceitação integral não está
+satisfeita.
+
+Esta secção substitui a C1d onde a terceira leitura a frio a corrigiu. Os achados
+1, 2, 3, 4 e 6 correspondem às cinco plantas do pacote, registadas em
+`design/especime-v3/critica/LEITURA-c1d-2026-09-28.plantas.json`; não foram
+corrigidas como se fossem defeitos do ramo. O achado 6 revelou também a falta
+real da conferência de todos os campos. O achado 7 fica na nova I170, para um
+bloco próprio do cimo dos recibos. O achado 14 pertence ao guião do pacote do
+lugar de direção.
+
+| Ponto da triagem | Trabalho e limite | Prova |
+| --- | --- | --- |
+| 1, achado 5 | As duas edições dizem «Releitura tentada a DD.MM.AAAA, sem valor lido» / «Re-read attempted on DD.MM.AAAA, no value read». As células e o inventário seguem. | `c1e/plantas-confianca.json`: redação do pedido sem resposta e afirmação sobre o dia inteiro recusadas nas duas línguas. Capturas pendentes. |
+| 2, achado 6 | Todas as cadeias de proveniência são percorridas, incluindo os campos do documento e o excerto. Continuidade, campo final e acesso em vigor são conferidos. A regra não interpreta a data escrita na razão. A aplicação encontrou a paragem do PRR, detalhada abaixo. | `c1e/proveniencia.json`, `c1e/paragem-prr.json`, `ledger/README.md`; o livro sai com erro. |
+| 3, achado 8 | As plantas prometidas estão discriminadas abaixo. A alegação de prova do `lang` nos nomes portugueses da história inglesa sai do relatório: não há caso real nem planta dessa regra. O mecanismo existente não é apresentado como provado. | `c1e/plantas-confianca.json`, `c1e/proveniencia.json`; erratas na secção C1d. |
+| 4, achado 9 | As calculadas dizem «Recalculada em cada construção a partir das suas origens» / «Recomputed at every build from its sources». | Controlo e planta de «ainda nenhuma» nas duas edições em `c1e/plantas-confianca.json`. Capturas pendentes. |
+| 5, achado 10 | O transporte sem causa classificada volta ao vigia. O corte durante o corpo e o `URLError` sem causa ficam sem rede quando o vigia falha. O comentário enumera as falhas que se repetem; recusa de ligação e erro de certificado não se repetem neste circuito. | `c1e/motor-rede-real.json`: 16 controlos; servidor real com corte depois da linha de estado, três tentativas e corrida parcial sem escrita falsa. `c1e/motor-commit.log`: `GATE: PASS`, código 0. |
+| 6, achado 11 | O mesmo detetor lê os nomes do Git e confere os ficheiros de `dist/`, com plantas em cópias de páginas só em memória. Esta é a guarda das quatro frases retiradas do inventário. Integra `build` e `verify`. | `c1e/privacidade-dist-anterior.json`: 12 485 ficheiros, 0 achados, conhecidos-positivos detetados. A cabeça das páginas é a anterior, declarada abaixo. |
+| 7, achado 12 | O início sem data leva a classe própria de limite aberto, com a mesma regra de traço descontínuo do fim em aberto. A I169 continua aberta para a data. | `c1e/calendario-memoria.json`: planta que retira essa marca nas duas edições. Captura real pendente. |
+| 8, achado 13 | A razão inglesa do acesso da União escreve «49,3». | Comparação integral das linhas em `c1e/medidas.json`: só essa razão mudou. Nenhum valor nem endereço mudou. A travessia isolada passou, código lido de `c1e/cruzamento.codigo`. |
+
+**A paragem, por linha.** O acesso atual é 20.08.2026 e nenhuma das cinco
+linhas traz uma entrada `proveniencia` sobre `access_date`. O registo tipado
+não sustenta os acessos anteriores. Não se deduz um dia de acesso da data de um
+instantâneo, da razão ou da data de uma correção. A correção da história exige
+prova e decisão pelo circuito do motor, sem apagar as entradas existentes.
+
+| Linha | Entradas que a guarda recusa |
+| --- | --- |
+| `evora-prr-aprovado-2026` | `source_url` de 2026-08-15; `source_url` de 2026-08-18; `source_url` de 2026-08-18 |
+| `evora-prr-municipio-contratado` | `source_url` de 2026-08-15; `source_url` de 2026-08-18; `source_url` de 2026-08-18 |
+| `evora-prr-pago-2026` | `source_url` de 2026-08-15; `source_url` de 2026-08-18; `source_url` de 2026-08-18 |
+| `evora-prr-universidade-contratado` | `source_url` de 2026-08-15; `source_url` de 2026-08-18; `source_url` de 2026-08-18; `excerpt` de 2026-08-18 |
+| `evora-prr-vencido-aprovado-2026` | `source_url` de 2026-08-15; `source_url` de 2026-08-18; `source_url` de 2026-08-18 |
+
+**Plantas que existem.** A conferência de proveniência tem 8
+controlos e 29 plantas. Para cada campo há uma cadeia
+coerente e plantas de continuidade quebrada, último valor diferente e entrada
+anterior ao primeiro acesso. Para os instantâneos há plantas separadas de:
+documento sem classe ficheiro; lista de ficheiros vazia; endereço novo diferente
+do vigente; recurso de outro conjunto; recurso posterior à entrada; nome do
+ficheiro sem a data; razão portuguesa sem endereço; razão inglesa sem endereço.
+As razões são mantidas coerentes nas plantas que mudam o endereço, para não
+confundir as condições.
+
+A conferência de confiança tem 97 controlos e
+127 plantas detetadas. A C1e acrescenta plantas da forma
+do encontrado (ponto decimal, sinal, precisão e separador de milhares), das duas
+redações excessivas da tentativa, do rótulo e da frase vazios em desacordo e da
+calculada apresentada como sem releitura. Todas correm nas duas edições. O
+calendário tem sete plantas por edição, incluindo o início sem data desenhado
+como fechado. A planta dos nomes lê os nomes do Git e injeta-os numa cópia em
+memória de uma página construída. Os nomes não são escritos nos artefactos.
+
+**Cabeças e portões.** A cabeça de código do sítio é `2d063f9af1e707a4e8657a0e664bdce88eece4b6`; a do motor é
+`68318e0da2036cc29e4704fa1bb8a96dee246095`. A árvore que o portão do motor leu está em
+`c1e/motor-commit.arvore.json`, com os resumos dos ficheiros ainda por guardar
+nesse instante. A medição compara esses bytes com o commit final do motor.
+Nenhum ficheiro protegido do motor mudou.
+
+Antes de cada portão inteiro foi corrido `pgrep -fl "astro build|npm run verify"`.
+As corridas aguardaram os portões dos outros construtores. Cada comando do sítio
+ficou registado separadamente, com código acabado de escrever:
+
+| Comando | Código lido | Cabeça | Ficheiro |
+| --- | --- | --- | --- |
+| `npm run build` | 1 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | `portoes/c1e/build.codigo` |
+| `npm run verify` | 1 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | `portoes/c1e/verify.codigo` |
+| `npm run typecheck` | 0 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | `portoes/c1e/typecheck.codigo` |
+
+`build` e `verify` param no livro, pela falta de prova dos acessos anteriores do
+PRR. Não chegaram às restantes células. O portão não foi contornado para
+construir páginas. `typecheck` correu de forma independente. A primeira corrida, conservada em
+`c1e/primeira-corrida/`, encontrou quatro parâmetros sem tipo na função
+alargada. A anotação da lista foi corrigida; os dados e a guarda não mudaram.
+`c1e/tentativas.json` distingue esses códigos dos finais.
+
+**Capturas.** Não há capturas novas a apresentar como finais. `dist/` conserva
+`6bbe1cee5f7167ba7bb317733ceef7e4b71ab413`, uma construção anterior à C1e. A guarda nova
+de privacidade foi exercida sobre essa construção e as suas cópias plantadas;
+isso prova o detetor, não a apresentação das alterações da C1e.
+`c1e/medidas.json`, em `capturas.recibos_a_captar`, enumera os
+337 recibos cujo conteúdo muda. Depois de
+resolvida a paragem, faltam a construção válida, as capturas nas duas edições e
+nas cinco larguras e a captura da faixa de Évora. As plantas em memória não
+substituem essas capturas.
+
+**Custo e privacidade.** `c1e/custo.json` separa a passagem pelo pedido de
+lançamento e pelos contadores acumulados do runtime. O corte é o instante
+escrito no ficheiro; não inclui o fecho posterior, revisões automáticas ou um
+preço que não foi exposto. `c1e/medidas.json` mede os ficheiros atuais do bloco,
+os ficheiros do construtor e os ficheiros tocados do motor: zero caminhos ou
+nomes, com conhecidos-positivos de caminhos, intérprete fora do repositório,
+anfitrião e nomes lidos do Git. `c1e/relatorio.json` é a conferência dos números
+deste relatório, com o seu próprio conhecido-positivo. A preparação detetou
+um caminho absoluto da shell no guião de espera. Esse guião passou a usar
+apenas o nome da shell; o detetor não mudou. A ocorrência está registada em
+`c1e/privacidade-preparacao.json`.
+
+**Commits.** A tabela anterior conserva todos os commits até à cabeça de código
+da C1d. Os seguintes ligam essa cabeça à entrega da C1d, à leitura da direção e
+à C1e. O último commit da C1e é o que contém esta versão do relatório e
+`RESPOSTA-codex-c1e.md`, filho direto da cabeça de código acima; entrega apenas
+as provas. O seu próprio resumo não pode ser escrito nos seus bytes. A resposta
+da sessão indica-o fora do ramo.
+
+| Cabeça | Assunto |
+| --- | --- |
+| `5cb9023f14143eddc381bd4305bfed83f2817d7f` | C1d: entregar os portões, as capturas, o relatório e a resposta do construtor |
+| `5c862efb38055965618a9d29f26ac12a25ac99eb` | C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas |
+| `69520d3ac921f80936191c58d69cf50f220048d5` | C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR |
+| `4653316e42feb4f50c314001ee26b1389caca08f` | C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo |
+| `abc6743a172e4e05f385b289b0a5f6309ef196af` | C1e: desenhar o início sem data como limite em aberto |
+| `d65f2bb74dd8edbded0dc5364779903b19a14667` | C1e: conferir nomes do Git e caminhos nas páginas construídas |
+| `ab47e595d283ecb9e8b8795cebf8a6e0cbdceede` | C1e: isolar as condições de endereço nas plantas dos instantâneos |
+| `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | C1e: tipar a lista percorrida pela história da proveniência |
+
+Motor C1e: `68318e0da2036cc29e4704fa1bb8a96dee246095`. Os commits anteriores do motor estão nas secções anteriores e na lista integral de `medidas.json`. Nenhum envio para o remoto.
