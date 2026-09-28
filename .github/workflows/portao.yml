@@ -23,9 +23,11 @@
 # lentas (os alvos, as palavras e a moldura, 9,7 minutos) corriam em série.
 # Agora, depois do `build`, corre `scripts/verify-depois-do-build.mjs`: lê as
 # duas cadeias do `package.json`, corre os passos do `verify` que o `build` não
-# correu, lado a lado, e fecha com a célula U (cada passo do `verify` é um
-# passo do `build` ou correu ali e saiu com 0), a D (nenhuma conferência mexeu
-# no `dist/` que as outras liam) e a C (o `dist/` é desta cabeça). Nenhuma
+# correu, lado a lado (as que escrevem na árvore depois, sozinhas), e fecha com
+# a célula U (cada passo do `verify` é um passo do `build` ou correu ali e saiu
+# com 0), a D (nenhuma conferência escreveu, nem que fosse para repor, num
+# ficheiro do `dist/` ou da árvore que as outras liam) e a C (o `dist/` e os
+# dois ficheiros de prova são desta cabeça e desta construção). Nenhuma
 # conferência sai, nenhuma se salta, e nenhum resultado passa de uma corrida
 # para outra. O `npm run verify` que se corre à mão não muda.
 #
@@ -138,9 +140,12 @@ jobs:
       # do `verify` que são passos do `build`: o `build` correu-os aqui, sobre
       # este `dist/`, e parou no primeiro que caísse. O guião começa pelas suas
       # próprias plantas (uma conferência nova só no `verify` corre; uma
-      # tirada da escolha, uma vermelha, uma que mexa no `dist/` e um `dist/` de
-      # outra cabeça fecham a corrida) e só depois lança as conferências, tantas
-      # ao mesmo tempo quantos os núcleos do anfitrião, as mais lentas primeiro.
+      # tirada da escolha, uma vermelha, uma que escreva no `dist/` ou num
+      # ficheiro da árvore, mesmo repondo os bytes, e um `dist/` ou um ficheiro
+      # de prova de outra construção fecham a corrida; uma que escreva na
+      # árvore corre sozinha depois do grupo) e só depois lança as conferências,
+      # tantas ao mesmo tempo quantos os núcleos do anfitrião, as mais lentas
+      # primeiro, e o `design:feixe`, que refaz `design-system/`, no fim.
       # Cada uma escreve a sua saída inteira quando acaba, num grupo que se abre
       # no registo; uma vermelha fica aberta, com a anotação de erro.
       - name: npm run verify, sem repetir o build
