@@ -161,7 +161,7 @@ const indiceSeriePartes = !temTempo
  * vai na legenda).
  *
  * NADA AQUI É ESCRITO. Os anos saem de `m.tempo.eixo`, os períodos de
- * `mandato.periodo`, e a geometria é derivada dos dois. Nenhum número novo
+ * `mandato.instalado`, e a geometria é derivada dessas datas. Nenhum número novo
  * aparece na página: os que se veem já lá estavam.
  *
  * SEM ACENTO NOVO. Um mandato não é uma medição, e por isso não leva amarelo
@@ -178,8 +178,18 @@ const anosDoPeriodo = (periodo) => {
   const [de, ate] = String(periodo).split(/[–-]/);
   return { de: Number(de), ate: ate ? Number(ate) : null };
 };
-const periodos = temTempo ? m.tempo.mandatos.map((mandato) => anosDoPeriodo(mandato.periodo)) : [];
-const anoMin = temTempo ? Math.min(...periodos.map((p) => p.de)) : null;
+const anoDaData = (data) => {
+  const ano = Number(data.slice(0, 4));
+  const inicio = Date.UTC(ano, 0, 1);
+  return ano + (Date.parse(`${data}T00:00:00Z`) - inicio) / (Date.UTC(ano + 1, 0, 1) - inicio);
+};
+/* Sem data de instalação do primeiro mandato, a banda começa no recorte do
+   eixo. Esse limite do desenho não afirma uma data de início do mandato. */
+const periodos = temTempo ? m.tempo.mandatos.map((mandato, i, todos) => ({
+  de: mandato.instalado ? anoDaData(mandato.instalado) : anosDoPeriodo(mandato.periodo).de,
+  ate: todos[i + 1]?.instalado ? anoDaData(todos[i + 1].instalado) : null,
+})) : [];
+const anoMin = temTempo ? Number(m.tempo.eixo[0]) : null;
 const anoMax = temTempo ? Math.max(...periodos.map((p) => p.ate ?? p.de)) : null;
 /* O eixo do tempo vive entre a esquerda e o início da cauda; a cauda é do
    mandato sem fim, e não representa anos nenhuns. */
@@ -348,6 +358,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                 <>
                   <rect
                     class:list={['mun-banda-seg', seg.aberto && 'is-aberto']}
+                    data-inicio={seg.mandato.instalado ?? 'recorte-do-eixo'}
                     x={seg.x}
                     y={BANDA.y}
                     width={seg.largura}
