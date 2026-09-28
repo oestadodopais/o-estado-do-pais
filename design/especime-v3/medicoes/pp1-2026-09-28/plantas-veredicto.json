@@ -6,8 +6,8 @@
     "codigo": 0,
     "mordida": null,
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 país: todas as conferências a 0."
   },
   {
@@ -17,8 +17,8 @@
     "codigo": 1,
     "mordida": "V1 pt: painel_fora_do_limiar: a frase não rende a contagem recontada",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: painel_fora_do_limiar: a frase não rende a contagem recontada (4).\nV1 pt: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -28,8 +28,8 @@
     "codigo": 1,
     "mordida": "V1 en: painel_fora_do_limiar: a frase não rende a contagem recontada",
     "passou": true,
-    "antes": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
-    "reposto": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
+    "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+    "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 en: painel_fora_do_limiar: a frase não rende a contagem recontada (4).\nV1 en: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -39,8 +39,8 @@
     "codigo": 1,
     "mordida": "V1 pt: as três chaves da prova",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: as três chaves da prova não são as declaradas, pela ordem da frase.\nV1 pt: painel_fora_do_limiar: a frase não rende a contagem recontada (4).\nV1 pt: painel_com_limiar: a frase não rende a contagem recontada (13)."
   },
   {
@@ -50,8 +50,8 @@
     "codigo": 1,
     "mordida": "V1 pt: a lista das medidas fora, ou a sua ordem",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: a lista das medidas fora, ou a sua ordem, difere da leitura do livro.\nV1 pt: divida-publica-2025: o nome ou a porta difere da declaração.\nV1 pt: posicao-de-investimento-internacional-2025: o nome ou a porta difere da declaração.\nV1 pt: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -61,8 +61,8 @@
     "codigo": 1,
     "mordida": "V1 en: divida-publica-2025: o nome ou a porta",
     "passou": true,
-    "antes": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
-    "reposto": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
+    "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+    "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 en: divida-publica-2025: o nome ou a porta difere da declaração."
   },
   {
@@ -83,8 +83,8 @@
     "codigo": 1,
     "mordida": "V1 pt: a frase construída difere",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -94,8 +94,8 @@
     "codigo": 1,
     "mordida": "V1 pt: a frase construída difere",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -105,8 +105,8 @@
     "codigo": 1,
     "mordida": "V1 pt: a frase construída difere",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -116,8 +116,8 @@
     "codigo": 1,
     "mordida": "V1 en: a frase construída difere",
     "passou": true,
-    "antes": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
-    "reposto": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
+    "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+    "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 en: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -127,8 +127,8 @@
     "codigo": 1,
     "mordida": "V1 en: a frase construída difere",
     "passou": true,
-    "antes": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
-    "reposto": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
+    "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+    "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 en: a frase construída difere das contagens e dos nomes recontados."
   },
   {
@@ -138,8 +138,8 @@
     "codigo": 1,
     "mordida": "V1 pt: o veredicto não vem depois de «O que se passa»",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: o veredicto não vem depois de «O que se passa».\nV1 pt: o veredicto não está na sua secção, com o título e a porta da página europeia."
   },
   {
@@ -149,8 +149,8 @@
     "codigo": 1,
     "mordida": "V1 en: o veredicto não está na sua secção",
     "passou": true,
-    "antes": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
-    "reposto": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160",
+    "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+    "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 en: o veredicto não está na sua secção, com o título e a porta da página europeia."
   },
   {
@@ -160,8 +160,8 @@
     "codigo": 1,
     "mordida": "V1 pt: o veredicto não está na sua secção, com o título e a porta da página europeia",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV1 pt: o veredicto não está na sua secção, com o título e a porta da página europeia."
   },
   {
@@ -171,8 +171,8 @@
     "codigo": 0,
     "mordida": null,
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 país: todas as conferências a 0."
   }
 ]

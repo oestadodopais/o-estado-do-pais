@@ -5,13 +5,13 @@
     "falhas": []
   },
   "observacoes": [],
-  "cabeca_da_arvore": "15342ef669f5895e12a7e024f2e0f8ee48b2e600",
-  "dist_construido_de": "b4d929027436eedc7ca8053902c242e50b78d988",
-  "construido_em": "2026-09-28T18:01:15.409Z",
+  "cabeca_da_arvore": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+  "dist_construido_de": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+  "construido_em": "2026-09-28T20:49:36.153Z",
   "pasta_das_capturas": "design/especime-v3/medicoes/pp1-2026-09-28/capturas",
   "pasta_das_paginas": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois",
-  "inicio": "2026-09-28T18:03:01.828Z",
-  "fim": "2026-09-28T18:03:58.358Z",
+  "inicio": "2026-09-28T20:51:22.163Z",
+  "fim": "2026-09-28T20:52:18.879Z",
   "segundos": 57,
   "larguras": [
     390,
@@ -26,13 +26,13 @@
       "rota": "/",
       "familia": "pais",
       "lingua": "pt",
-      "sha256": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388"
+      "sha256": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
     },
     "en_index.html": {
       "rota": "/en/",
       "familia": "pais",
       "lingua": "en",
-      "sha256": "9917106c55ca3cf04d911dd9a7043c40c68b024a69d9a87e1e1e1e5a565ff160"
+      "sha256": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb"
     },
     "o-meu-dinheiro_index.html": {
       "rota": "/o-meu-dinheiro/",
@@ -86,13 +86,13 @@
       "rota": "/o-estado-e-a-economia/",
       "familia": "entrada-estado",
       "lingua": "pt",
-      "sha256": "951baf837ed61a17a31c355b5a2ef7fd909b402588fa8346ecfd57d1e8d3c3d4"
+      "sha256": "e9910ee1db505c3e7ba5038c680c2e25f0377a90f1708fb2bfa069889feba643"
     },
     "en_state-and-economy_index.html": {
       "rota": "/en/state-and-economy/",
       "familia": "entrada-estado",
       "lingua": "en",
-      "sha256": "e96c2b5aaa795c76436bf4053d2ee18f6bc44c4b5e3e62db01ce2843a1d7c818"
+      "sha256": "a1bdec9b7ad7a885b4305f286abe32f9b8ee7811dc9b4a1c7c62c9f0c43d6be7"
     },
     "_astro/Base.Bu8ardly.css": {
       "origem": "/_astro/Base.Bu8ardly.css",

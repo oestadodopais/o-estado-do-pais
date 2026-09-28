@@ -11,6 +11,11 @@
       "nome": "um resolvedor que recusa tudo",
       "passou": true,
       "codigo": 1
+    },
+    {
+      "nome": "o passo da cadeia do build com um resolvedor que recusa tudo",
+      "passou": true,
+      "codigo": 1
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "o_que_e": "As medidas do relatório do bloco PP1, escritas por este guião.",
   "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/medidas.mjs 1cbdb8c4",
-  "cabeca": "931873d1a56461b6b08c13c7c4b8f4384d696a32",
-  "dist_construido_de": "ae8951901d0d9abcb0e5302b8205660ee1228f96",
+  "cabeca": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+  "dist_construido_de": "56c7ed7ba5de90338edf990140f1929095dd39f1",
   "medidas": [
     {
       "nome": "cartoes_na_primeira_pagina_antes",
@@ -377,6 +377,74 @@
       }
     },
     {
+      "nome": "capturas_refeitas_com_outros_bytes",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 12dc8fbf · resultados[].sha256",
+      "conhecido_positivo": {
+        "o_que": "as duas listas têm as mesmas capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_congeladas_com_outros_bytes",
+      "valor": [
+        "index.html",
+        "en_index.html",
+        "o-estado-e-a-economia_index.html",
+        "en_state-and-economy_index.html"
+      ],
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 12dc8fbf · copias[].sha256 das páginas",
+      "conhecido_positivo": {
+        "o_que": "o manifesto antigo tem as mesmas páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_depois_construidas_de",
+      "valor": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · dist_construido_de",
+      "conhecido_positivo": {
+        "o_que": "as capturas de antes são de outra cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_cabeca",
+      "valor": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/build.cabeca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões é a das capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_build_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o portão correu na cabeça dos outros dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_verify_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o portão correu na cabeça dos outros dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_typecheck_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o portão correu na cabeça dos outros dois",
+        "encontrado": true
+      }
+    },
+    {
       "nome": "capturas_depois_com_deslocamento",
       "valor": 0,
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados com deslocamento > 0",
@@ -426,7 +494,7 @@
     },
     {
       "nome": "plantas_da_primeira_pagina_corridas",
-      "valor": 36,
+      "valor": 38,
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json",
       "conhecido_positivo": {
         "o_que": "o registo tem pelo menos uma planta",
@@ -435,7 +503,7 @@
     },
     {
       "nome": "plantas_da_primeira_pagina_mordidas",
-      "valor": 36,
+      "valor": 38,
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json · as que morderam como esperado",
       "conhecido_positivo": {
         "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
@@ -462,7 +530,7 @@
     },
     {
       "nome": "plantas_dos_sinais_corridas",
-      "valor": 2,
+      "valor": 3,
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-sinais.json",
       "conhecido_positivo": {
         "o_que": "o registo tem pelo menos uma planta",
@@ -471,8 +539,26 @@
     },
     {
       "nome": "plantas_dos_sinais_mordidas",
-      "valor": 2,
+      "valor": 3,
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-sinais.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_pesquisa_da_primeira_corridas",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_pesquisa_da_primeira_mordidas",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · as que morderam como esperado",
       "conhecido_positivo": {
         "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
         "encontrado": true
@@ -629,6 +715,83 @@
       }
     },
     {
+      "nome": "pesquisa_com_guiao_passagens",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · com_guiao",
+      "conhecido_positivo": {
+        "o_que": "as duas edições em duas larguras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_com_guiao_a_cumprir",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · com_guiao[].passa",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê a planta da ligação partida a falhar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_sem_guiao_pt",
+      "valor": {
+        "aterra": "/lugares?concelho=mourao",
+        "estado": 200,
+        "portas_de_distrito_a_vista": 29,
+        "porta_do_distrito": "/distritos/evora",
+        "porta_do_concelho_a_vista": 2,
+        "resultados_a_vista": 0
+      },
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · sem_guiao[pt]",
+      "conhecido_positivo": {
+        "o_que": "a planta do formulário sem destino dá 404 pelo mesmo caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_sem_guiao_en",
+      "valor": {
+        "aterra": "/en/places?concelho=mourao",
+        "estado": 200,
+        "portas_de_distrito_a_vista": 29,
+        "porta_do_distrito": "/en/districts/evora",
+        "porta_do_concelho_a_vista": 2,
+        "resultados_a_vista": 0
+      },
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · sem_guiao[en]",
+      "conhecido_positivo": {
+        "o_que": "a planta do formulário sem destino dá 404 pelo mesmo caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_no_mapa_do_sitio",
+      "valor": 10,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json · entradas.entradas_no_mapa_do_sitio",
+      "conhecido_positivo": {
+        "o_que": "a planta de uma rota em falta no mapa mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapas_do_sitio_lidos",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json · entradas.mapas_do_sitio",
+      "conhecido_positivo": {
+        "o_que": "a planta de um mapa nomeado em falta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cadeia_do_build_tem_os_sinais",
+      "valor": true,
+      "comando": "package.json · scripts.build, os passos",
+      "conhecido_positivo": {
+        "o_que": "a mesma leitura não acha o passo na cadeia do typecheck",
+        "encontrado": true
+      }
+    },
+    {
       "nome": "celulas_da_porta",
       "valor": 204,
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-porta.json",
@@ -756,7 +919,7 @@
     },
     {
       "nome": "ficheiros_do_ramo_lidos",
-      "valor": 226,
+      "valor": 266,
       "comando": "git diff --name-only 1cbdb8c4..HEAD, e git status --porcelain --untracked-files=all",
       "conhecido_positivo": {
         "o_que": "os ficheiros lidos incluem o relatório do bloco",
@@ -792,7 +955,7 @@
     },
     {
       "nome": "linhas_acrescentadas",
-      "valor": 5008,
+      "valor": 5618,
       "comando": "o mesmo diff · as linhas acrescentadas",
       "conhecido_positivo": {
         "o_que": "o diff leu linhas",
