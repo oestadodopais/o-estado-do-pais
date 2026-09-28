@@ -881,6 +881,23 @@ corrections:
     reason_en: "The 2025 RASARP was revised; the September version corrects the national value."
 ```
 
+### A história prende o número publicado (C1d, 28.09.2026)
+
+O `ledger:check`, chamado tanto por `build` como por `verify`, exige que
+`value` seja o `new_value` da última `correcao` ou `atualizacao`, na forma
+numérica da casa. Cada `old_value` tem de ser o valor anterior da cadeia.
+As entradas ficam por ordem cronológica; no mesmo dia vale a ordem da lista.
+
+`ledger/historias-valores.json` sela as entradas já publicadas. É a memória
+independente que permite recusar a retirada da primeira atualização, mesmo
+quando a lista restante fica vazia. O registo não fornece números às páginas.
+Uma entrada nova entra primeiro na linha e depois acrescenta-se ao registo com
+`node scripts/selar-historia-valores.mjs <id>`. Esse comando só aceita uma lista
+maior, conserva cada entrada anterior e confere a cadeia e o valor final.
+O comando e a linha entram no mesmo commit; não existe uma opção para apagar
+história. As plantas exercem o validador da construção com valor alterado,
+atualização retirada e valor anterior inventado.
+
 ### `reason` e `reason_en`: o motivo nas duas línguas
 
 O motivo é a única parte do registo que é prosa da casa, e o sítio publica-se
