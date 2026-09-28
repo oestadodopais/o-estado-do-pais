@@ -14,6 +14,21 @@
 # casa (os três portões a 0 em cada commit) continua a ser da casa: a CI garante
 # que o que chega a `main` foi conferido, não que cada passo do caminho o foi.
 #
+# CADA CONFERÊNCIA UMA VEZ, AS LENTAS LADO A LADO (bloco CI1, 28.09.2026, pela
+# pergunta do diretor desse dia). Até aqui a corrida fazia o `npm run build` e
+# depois o `npm run verify` inteiro, e 17 dos 33 passos do `verify` eram
+# exatamente os mesmos comandos que o `build` acabara de correr sobre o mesmo
+# `dist/`: na corrida de `main` de 28.09.2026 (a 36412381787) eram 3,0 minutos
+# a conferir outra vez o que já estava conferido, e as três conferências mais
+# lentas (os alvos, as palavras e a moldura, 9,7 minutos) corriam em série.
+# Agora, depois do `build`, corre `scripts/verify-depois-do-build.mjs`: lê as
+# duas cadeias do `package.json`, corre os passos do `verify` que o `build` não
+# correu, lado a lado, e fecha com a célula U (cada passo do `verify` é um
+# passo do `build` ou correu ali e saiu com 0), a D (nenhuma conferência mexeu
+# no `dist/` que as outras liam) e a C (o `dist/` é desta cabeça). Nenhuma
+# conferência sai, nenhuma se salta, e nenhum resultado passa de uma corrida
+# para outra. O `npm run verify` que se corre à mão não muda.
+#
 # O trabalho chama-se `portao` de propósito: é esse o nome do contexto que o
 # diretor exige em `main` nas definições do repositório (Settings → Branches →
 # Require status checks to pass → `portao`). Mudar o identificador do trabalho
@@ -117,16 +132,30 @@ jobs:
       - name: npm run build
         run: npm run build
 
-      - name: npm run verify
-        run: npm run verify
+      # O `verify` SEM REPETIR O QUE O `build` JÁ CORREU (bloco CI1). Este passo
+      # só corre se o `build` passou (o `if: success()` por omissão de cada
+      # passo), e é isso que deixa a célula U contar como conferidos os passos
+      # do `verify` que são passos do `build`: o `build` correu-os aqui, sobre
+      # este `dist/`, e parou no primeiro que caísse. O guião começa pelas suas
+      # próprias plantas (uma conferência nova só no `verify` corre; uma
+      # tirada da escolha, uma vermelha, uma que mexa no `dist/` e um `dist/` de
+      # outra cabeça fecham a corrida) e só depois lança as conferências, tantas
+      # ao mesmo tempo quantos os núcleos do anfitrião, as mais lentas primeiro.
+      # Cada uma escreve a sua saída inteira quando acaba, num grupo que se abre
+      # no registo; uma vermelha fica aberta, com a anotação de erro.
+      - name: npm run verify, sem repetir o build
+        run: npm run verify:depois-do-build
 
       - name: npm run typecheck
         run: npm run typecheck
 
       # A prova: `dist/prova.json` (escrito pelo `gate:html`) e `dist/cadeia.json`
-      # (escrito pelo `check:cadeia`). Os dois são reescritos pelo `verify`, que
-      # torna a correr esses dois portões, de modo que o que sobe é o estado
-      # depois dos três portões, que é o estado que interessa.
+      # (escrito pelo `check:cadeia`). Desde o bloco CI1 os dois são os que o
+      # `build` escreveu, porque o `verify` desta corrida já não torna a correr
+      # esses dois portões sobre o mesmo `dist/`; a célula D do passo anterior
+      # prova que nenhuma conferência lhes mexeu, e a C que são desta cabeça. O
+      # que sobe continua a ser o estado de uma corrida em que os três portões
+      # passaram, porque este passo só corre depois deles.
       #
       # Este passo existe porque o `if-no-files-found: error` do passo seguinte
       # só falha quando NENHUM dos caminhos casa: com um ficheiro presente e o
