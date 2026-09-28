@@ -3402,7 +3402,8 @@ a.badge-porta:hover {
   stroke: var(--muted);
   stroke-width: 1;
 }
-.mun-banda-seg.is-aberto {
+.mun-banda-seg.is-aberto,
+.mun-banda-seg.is-inicio-aberto {
   fill: none;
   stroke-dasharray: 3 3;
 }
