@@ -13,9 +13,17 @@
  * A CONSTRUÇÃO SÓ FALHA SE A PRIMEIRA PÁGINA MOSTRAR MENOS DE TRÊS BLOCOS: cinco histórias mudadas de
  * uma vez é mais provavelmente uma avaria do resolvedor do que o país.
  *
- * `--prova` corre as duas plantas do brief, cada uma num processo filho, sem tocar em ficheiro nenhum:
- * uma condição falsa numa cópia das declarações (o bloco sai, o sinal nomeia-o, o código é 0) e um
- * resolvedor que recusa tudo (o código é 1).
+ * CORRE NA CADEIA DO `build`, E NÃO SÓ NA DO `verify` (bloco PP1b, 28.09.2026; a leitura a frio do PP1,
+ * achado 6). A Vercel corre `npm run build` e mais nada: com o guião só no `verify`, a construção de
+ * produção podia sair com zero, um ou dois blocos sem sinal e sem o mínimo. O passo `npm run sinais` vai
+ * no fim da cadeia do `build`, depois da construção, e escreve o ficheiro dos sinais em qualquer
+ * construção; a terceira planta confere que a cadeia o tem e que ele a fecha.
+ *
+ * `--prova` corre as plantas, cada uma num processo filho, sem tocar em ficheiro nenhum: uma condição
+ * falsa numa cópia das declarações (o bloco sai, o sinal nomeia-o, o código é 0); um resolvedor que
+ * recusa tudo (o código é 1); e o passo da cadeia do `build`, corrido como a cadeia o corre
+ * (`npm run sinais`), com o mesmo resolvedor que recusa tudo: sai com 1, e a cadeia, que é de `&&`, para
+ * nele. A mesma planta confere que a cadeia do `build` tem o passo, depois do `astro build`.
  *
  * Uso: node scripts/sinais-da-primeira-pagina.mjs [--prova] [--json saída das plantas]
  */
@@ -91,6 +99,23 @@ if (process.argv.includes('--prova') && !process.env.OEDP_SINAIS_PLANTA) {
     nome: 'um resolvedor que recusa tudo',
     passou: recusa.status === 1 && /a primeira página mostra 0 blocos, e o mínimo é 3/.test(recusa.stderr),
     codigo: recusa.status,
+  });
+  /* 3 · O PASSO DA CADEIA DO `build` (bloco PP1b): a cadeia tem `npm run sinais` depois do `astro build`,
+     e o passo, corrido como a cadeia o corre e com o resolvedor que recusa tudo (o mesmo gancho, carregado
+     por `NODE_OPTIONS` em todos os processos do passo), sai com 1. `OEDP_SINAIS_PLANTA` impede o passo de
+     correr as plantas outra vez. */
+  const pacote = JSON.parse(fs.readFileSync(path.join(RAIZ, 'package.json'), 'utf8'));
+  const passos = String(pacote.scripts?.build ?? '').split('&&').map((x) => x.trim());
+  const naCadeia = passos.indexOf('astro build') >= 0 && passos.lastIndexOf('npm run sinais') > passos.indexOf('astro build');
+  const registo = `import { register } from 'node:module'; register('data:text/javascript,' + encodeURIComponent(${JSON.stringify(gancho)}));`;
+  const passo = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['run', '-s', 'sinais'], {
+    encoding: 'utf8', cwd: RAIZ,
+    env: { ...process.env, OEDP_SINAIS: path.join(temporaria, 'sinais-do-passo.json'), OEDP_SINAIS_PLANTA: '1', NODE_OPTIONS: `${process.env.NODE_OPTIONS ?? ''} --import=data:text/javascript,${encodeURIComponent(registo)}`.trim() },
+  });
+  plantas.push({
+    nome: 'o passo da cadeia do build com um resolvedor que recusa tudo',
+    passou: naCadeia && passo.status === 1 && /a primeira página mostra 0 blocos, e o mínimo é 3/.test(`${passo.stdout}${passo.stderr}`),
+    codigo: passo.status,
   });
   fs.rmSync(temporaria, { recursive: true, force: true });
   for (const p of plantas) console.log(`  ${p.passou ? 'mordeu' : 'NÃO MORDEU'} · ${p.nome} (código ${p.codigo})`);

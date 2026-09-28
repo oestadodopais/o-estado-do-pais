@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua",
+    "build": "npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run sinais",
     "preview": "astro preview",
     "astro": "astro",
     "ledger:check": "node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs",
@@ -51,7 +51,7 @@
     "check:palavras": "node tests/voz/palavras-proibidas.mjs --prova",
     "check:lugares": "node scripts/check-lugares.mjs",
     "check:pais": "node scripts/check-pais.mjs",
-    "check:primeira": "node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova",
+    "check:primeira": "node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/pesquisa-da-primeira.mjs --prova",
     "sinais": "node scripts/sinais-da-primeira-pagina.mjs --prova"
   },
   "dependencies": {
