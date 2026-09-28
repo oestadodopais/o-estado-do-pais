@@ -36,7 +36,7 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
   ) : (
     <div class="historico">
       {entradas.map((e) => (
-        <div class:list={['historico-entrada', e.kind === 'correcao' && 'historico-entrada-correcao']}>
+        <div id={`alteracao-${e.n}`} class:list={['historico-entrada', e.kind === 'correcao' && 'historico-entrada-correcao']}>
           <div class="historico-cabeca">
             <span
               class="log-data"

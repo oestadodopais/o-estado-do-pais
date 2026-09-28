@@ -32,11 +32,11 @@ export const NOMES_RP1 = {
   },
   "ipc-alimentacao-variacao-homologa": {
     "pt": "Preços dos alimentos e das bebidas não alcoólicas",
-    "en": "Prices of food and non-alcoholic drinks"
+    "en": "Prices of food and non-alcoholic beverages"
   },
   "ipc-alimentacao-variacao-homologa-periodo-anterior": {
     "pt": "Preços dos alimentos e das bebidas não alcoólicas",
-    "en": "Prices of food and non-alcoholic drinks"
+    "en": "Prices of food and non-alcoholic beverages"
   },
   "ipc-sem-habitacao-variacao-media-12-meses": {
     "pt": "Preços sem a habitação",

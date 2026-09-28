@@ -123,6 +123,8 @@ const {
   as = 'span',
   escala = false,
   sufixo = '',
+  // C1: a unidade do cartão conserva um separador no texto da página.
+  separarUnidade = false,
   style,
   ...rest
 } = Astro.props;
@@ -238,6 +240,7 @@ const estilo = escala
       </TagDoValor>
       {sufixo && <span class="claim-sufixo" id={sufixoId ?? undefined} set:text={sufixo} />}
       {/* RP1: a unidade marcada como campo cabe aqui, antes do provisório. */}
+      {separarUnidade && ' '}
       <slot name="sufixo" />
       {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
     </>

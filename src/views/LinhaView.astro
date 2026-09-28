@@ -295,6 +295,13 @@ const recorteAlt = recorte
  * linha: é por ele que o portão a vai buscar, e não pela ordem em que aparece.
  */
 const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS);
+/* C1: a divergência leva à atualização que regista o mesmo valor encontrado. */
+const numeroDaReleitura = (v) => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
+const atualizacaoDaReleitura = (v) => v.result === 'diverge'
+  ? (claim.corrections ?? []).findIndex(e => e.kind === 'atualizacao' && e.date >= v.date
+      && numeroDaReleitura(e.new_value) === numeroDaReleitura(v.found))
+  : -1;
+
 
 /**
  * O estado da fonte desta linha: desde quando é que o endereço não responde.
@@ -1417,9 +1424,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           {
             verificacoes.length === 0 ? (
               <>
-                <dt>{s.livro.linha.reconferidoK}</dt>
+                <dt>{s.livro.linha.segundaLeituraK}</dt>
                 <dd>
-                  <Marcador lang={lang} />{' '}
+                  <span data-sem-segunda-leitura>{s.livro.linha.semSegundaLeitura}</span>{' '}
                   <a href={`${routePath('metodo', lang)}#releitura`}>
                     {s.livro.linha.releituraPorta} →
                   </a>
@@ -1428,7 +1435,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             ) : (
               verificacoes.map((v) => (
                 <>
-                  <dt>{s.livro.linha.reconferidoK}</dt>
+                  <dt>{v.by === 'corredor-diario' ? s.livro.linha.ficheiroRelidoK : s.livro.linha.segundaLeituraK}</dt>
                   {/* Os atributos crus vão a par dos rótulos: o portão compara
                       os primeiros com o livro-razão e os segundos com a sua
                       própria cópia da tabela de rótulos. */}
@@ -1461,6 +1468,11 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                         </>
                       )}
                     </span>{' '}
+                    {atualizacaoDaReleitura(v) >= 0 && (
+                      <a data-atualizacao-da-releitura href={`#alteracao-${atualizacaoDaReleitura(v)}`}>
+                        {s.livro.linha.verAtualizacao}
+                      </a>
+                    )}
                     {/* O QUE FOI LIDO, quando não foi a fonte viva (Major 9).
                         Uma conferência contra `web.archive.org` prova que os
                         bytes da CÓPIA continuam a dar o resumo que a linha

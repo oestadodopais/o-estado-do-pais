@@ -615,14 +615,23 @@ async function mediuOProvisorio() {
             id: valor?.getAttribute('data-claim') ?? null,
           });
         }
+        const colados = [...document.querySelectorAll('.cartao-medida-quantidade')].filter(el => {
+          const valor = el.querySelector('[data-claim]'), unidade = el.querySelector('[data-linha-campo="unit"]');
+          if (!valor || !unidade) return false;
+          const fim = el.textContent.indexOf(valor.textContent) + valor.textContent.length;
+          const inicio = el.textContent.indexOf(unidade.textContent, fim);
+          return inicio < 0 || !/\s/.test(el.textContent.slice(fim, inicio));
+        }).map(el => el.querySelector('[data-claim]').getAttribute('data-claim'));
         return {
           marcados,
+          colados,
           citados: [...document.querySelectorAll('[data-claim]')].map((el) =>
             el.getAttribute('data-claim'),
           ),
         };
       });
       await p.__ctx.close();
+      for (const id of lido.colados) outras.add('I158: valor colado à unidade: ' + id);
       for (const m of lido.marcados) {
         if (m.texto !== palavra) outras.add(m.texto);
         if (!m.id) outras.add('ressalva sem linha');
