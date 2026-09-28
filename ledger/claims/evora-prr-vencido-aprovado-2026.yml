@@ -100,6 +100,20 @@ corrections:
     new_value: "102 624 703,85"
     reason: "O publicador do PRR substitui o ficheiro e não arquiva o anterior. Esta soma foi refeita sobre o instantâneo de 2026-08-19 (listagem-de-entidades-prr-20260819.xlsx e listagem-de-projetos-prr-20260819.xlsx); a anterior era sobre o instantâneo de 2026-08-17 (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx). O valor antigo não estava errado quando foi publicado: media outro instantâneo, e esse já não é servido."
     reason_en: "The PRR publisher replaces the file and archives nothing. This sum was recomputed over the 2026-08-19 snapshot (listagem-de-entidades-prr-20260819.xlsx and listagem-de-projetos-prr-20260819.xlsx); the previous one was over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx and listagem-de-projetos-prr-20260817.xlsx). The old value was not wrong when it was published: it measured a different snapshot, and that one is no longer served."
+  - date: "2026-08-18"
+    kind: "proveniencia"
+    field: "access_date"
+    old_value: "2026-08-04"
+    new_value: "2026-08-18"
+    reason: "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava."
+    reason_en: "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+  - date: "2026-08-20"
+    kind: "proveniencia"
+    field: "access_date"
+    old_value: "2026-08-18"
+    new_value: "2026-08-20"
+    reason: "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava."
+    reason_en: "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
 
 # Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
