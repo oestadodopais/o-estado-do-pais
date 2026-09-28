@@ -1,0 +1,263 @@
+{
+  "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "limpa": false,
+  "diferenca_sha256": "de08d96ffc97dce3a0228e7c5b60393e5c5ff201b39efffba421cd4c90e8d05a",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/custo.json",
+      "sha256": "6356ffb004bc9325e2be019bfd3d4864b391d7fa14fc756945a48c51ea18a0d1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.arvore.json",
+      "sha256": "a92226a32303a638c6a5c6c879bc3c868d7a15fcab398e0fcf81d52ee028edb4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.cabeca",
+      "sha256": "8635e7c610d8e0812bca88fac128b214113e35aabefc7a296e36d804d0b287af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.fim",
+      "sha256": "ee57b84211e8e78364dd7b317742b23ca780d68f95bbafd25245d6a5f4ed9124"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.inicio",
+      "sha256": "33c64fa77fa886abedf8b9943d01cc7a53ba84530b0f53dc9bc67986c07a82e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.json",
+      "sha256": "6fbeb1b5a6942db77bc2ba217317f539fdc4b526ede96fc09abaf5f1237c4811"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.log",
+      "sha256": "6fbeb1b5a6942db77bc2ba217317f539fdc4b526ede96fc09abaf5f1237c4811"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/afinar-prr.py",
+      "sha256": "3b3e74e85626f24b02384c36470efb7f4db62e94587aa510e0a25755b76b2345"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/amostra.json",
+      "sha256": "1c1be5b164e681a3cc6953690ead087e99ba044a10d87d7c4e50d755319b7b79"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.arvore.json",
+      "sha256": "8ca2349ab1d196089f4f165f8a57f56c976f94aa6b492da6b5b33da23f925ddd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.fim",
+      "sha256": "e5e2faaf09603c36d8d24c6100edc71af106fdd63c7450e7d6721b89d9848dcc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.inicio",
+      "sha256": "30c129e84f3499e267b5d6b7817da9ed0c7c52cb09b6d42c7f9fbc580d0007bd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.json",
+      "sha256": "74dacbc5e881e7ef21688fe3511bb2dce901b25889f5f464d0965b4a79effee0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.log",
+      "sha256": "74dacbc5e881e7ef21688fe3511bb2dce901b25889f5f464d0965b4a79effee0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.mjs",
+      "sha256": "1e271dea740d2ab94bc26eba2edcf1f9081a370e3d197d8dce8c9d8ffebd6fb3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/concorrencia-build.json",
+      "sha256": "126baa38b01f669c8e7b779116571f15f7a7637ab4eaca0ec3bd406715459e84"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/concorrencia-verify.json",
+      "sha256": "1dfb8fa508b8a3b4064c3d2c0ea6421344971b10e314b5710d3846506e704e6f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-concorrencia.py",
+      "sha256": "acb587ac18760ea2a8ac255812d685dccdc497056ecb3e11a28f8e93c6d85d07"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.arvore.json",
+      "sha256": "3720811c765955d3db134163cf4954922b1e33dfd424680f7ac2d75178d7d58a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.fim",
+      "sha256": "2add07cc8956be833208b61cc1e5be0870ae55bb3ef591a73cc42654290a6b62"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.inicio",
+      "sha256": "d7ea373262c2657f29749761c71c26941f4b8a58c0da8c137be7e50e753a3328"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.json",
+      "sha256": "7ec41c21486f707570db1d73cb8fcdc007fbb0c8a2b951f4599f0b0100c7c6fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.log",
+      "sha256": "7ec41c21486f707570db1d73cb8fcdc007fbb0c8a2b951f4599f0b0100c7c6fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/correr-quando-livre.py",
+      "sha256": "25b16b82a8ecbf1536c9d35e2e7292686c54c5bda4d70ccf9b83e30564629786"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.arvore.json",
+      "sha256": "5e926b106cd28e3988af1221d506fdb5ac3b56b736846190675a7001984e627f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.cabeca",
+      "sha256": "8635e7c610d8e0812bca88fac128b214113e35aabefc7a296e36d804d0b287af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.fim",
+      "sha256": "c5ebc228dffbc7652b8e2a1a4a42eca32d61fe7cd07bf82fec3b5160cd6de64a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.inicio",
+      "sha256": "a73a7f0c6bb035f37aa5bcd830f821ecb230307a12f9e8ff6ffdaf55f29795a1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.log",
+      "sha256": "e0cc7c5b503c1e2ded9463d13a4678d27e5826e2d44722a0b68008f0d8af79ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.arvore.json",
+      "sha256": "76b783c2dddf28e06999171665d219bd5b358bf47016abff88c0f63aa4112cba"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.cabeca",
+      "sha256": "47e7d785ad21a0f9a8b13128af9de61bc9119221c9f0b05694809161b2f11615"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.fim",
+      "sha256": "327bcc0f812bf1195d2943fee99d905e5b67ed506755e5dae008a12af774d47a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.inicio",
+      "sha256": "8664c008c2044efe973f3b40f67d5259d62ed1f21d3c94bec2dd5342d4f5c621"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.log",
+      "sha256": "b59a629c81df2f2818e672f366ae25b4aaeb0a18eb4482062b6412c6d816bc83"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/concorrencia-build.json",
+      "sha256": "8c475f7c48fc9873d35f3c49eaed87d846252ff6d32f1d97ef68b4756d567a3a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.arvore.json",
+      "sha256": "a2756de5bb60b31f3daebfef2f545282e1b57a881c720ff2d90422228a73e430"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.fim",
+      "sha256": "d3e0ac045e8d3db4c6d540020ab80db905cd382d4ad3bd392053cfc99c2c7f26"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.inicio",
+      "sha256": "3ca55df1451e203ebcbb6dd49a869ef576be358e0defed2981b7e48bd51c0ebd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.json",
+      "sha256": "912ecc5e8229ba79b7c42fe4486c8fa757579faeeabc8ee0bf884eee12e88a70"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.log",
+      "sha256": "912ecc5e8229ba79b7c42fe4486c8fa757579faeeabc8ee0bf884eee12e88a70"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/prr.json",
+      "sha256": "60635b145f8255ed5705affea1792064c2cf0084426cd477320fc2b15f8bc5cf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.arvore.json",
+      "sha256": "50f1a7772ed7efc3483f47703260e3384ded32163f1abb9af4f92ccc8ed708e6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.cabeca",
+      "sha256": "47e7d785ad21a0f9a8b13128af9de61bc9119221c9f0b05694809161b2f11615"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.fim",
+      "sha256": "c6bdaa0df57ccb04cde8dd79d686667534d99727beb5409f02195b915141068f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.inicio",
+      "sha256": "599cd2440f9d3b8f08c5c08b226f4db806c9021d1380663e244b8be07708f882"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.log",
+      "sha256": "bcf5512b7b5f8fb1688c4c59d542a312e241d347931e7fd469d11b4c5606be2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.arvore.json",
+      "sha256": "8eaf0fe7fc6c441a07558f440f00fda7925c5e6847b8da9c5bd0b135a0ed6be9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.fim",
+      "sha256": "09f740bae26125d20134588e4c0fa36f532f95a53a2af24e3ae196803a263a71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.inicio",
+      "sha256": "481eb2a16c9dc1ed1aeeecc6106aa093dc90497b0d1331f59905fd5263de466c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.log",
+      "sha256": "7cff32ecd3e9d36b0441cd6cf679a7ffb5cb5f9cd8cea6c786166c19cc00c3af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.inicio",
+      "sha256": "23d950d8c8a5c84192c941b11805192968b1886c25d394515a0bc23576d96dac"
+    }
+  ]
+}

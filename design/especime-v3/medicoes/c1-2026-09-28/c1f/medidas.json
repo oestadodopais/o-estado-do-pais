@@ -941,6 +941,8 @@
       "anos": 3
     }
   },
-  "aceitacao_integral": true,
-  "erros_da_medicao": []
+  "aceitacao_integral": false,
+  "erros_da_medicao": [],
+  "aceitacao_integral_declarada_na_entrega": true,
+  "retificacao_C1g": "A C1f captou os cinco recibos do PRR; faltava a amostra dos recibos alterados pela C1e, agora pedida na C1g."
 }

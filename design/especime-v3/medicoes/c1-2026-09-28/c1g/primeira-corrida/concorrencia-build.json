@@ -1,0 +1,7 @@
+{
+  "quando": "2026-09-28T21:47:20.340091+00:00",
+  "comando": "pgrep -fl \"astro build|npm run verify\"",
+  "processos_ativos": [],
+  "invólucros_de_shell": 0,
+  "livre": true
+}

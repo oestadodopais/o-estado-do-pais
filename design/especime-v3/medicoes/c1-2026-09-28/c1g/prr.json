@@ -1,0 +1,46 @@
+{
+  "linhas": [
+    {
+      "id": "evora-prr-aprovado-2026",
+      "valor_intacto": true,
+      "corrections_at_export": 6,
+      "corrections_after": 8,
+      "sha256_antes": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5",
+      "sha256_depois": "5f0a9ddca10c80797d177fdc7377f14720f1f6d9884b4dd62a8f76097679c034"
+    },
+    {
+      "id": "evora-prr-municipio-contratado",
+      "valor_intacto": true,
+      "corrections_at_export": 5,
+      "corrections_after": 7,
+      "sha256_antes": "20403da0996f959c61b5418345df9cb25ae252b862810bb422819aade1522a31",
+      "sha256_depois": "30f1326a5a55f633ce17350f2d76c511091ef863fc094a3892cc9434f27aadf8"
+    },
+    {
+      "id": "evora-prr-pago-2026",
+      "valor_intacto": true,
+      "corrections_at_export": 6,
+      "corrections_after": 8,
+      "sha256_antes": "312d45ea45e38577776c497643cbcf4e8441531fe887aa6e78ed54b059254ff0",
+      "sha256_depois": "67ea8e045b7d5e69d9e2e20abb954db53b1b31921ea8814f76d12d1dbc4b9904"
+    },
+    {
+      "id": "evora-prr-universidade-contratado",
+      "valor_intacto": true,
+      "corrections_at_export": 5,
+      "corrections_after": 7,
+      "sha256_antes": "319ce292e6490cc8bb853ce5742797c085d41f2d37ca2fef3278d0e2d3212f15",
+      "sha256_depois": "9c36404b234152d1f3a99c00831ca2ceb428d881597a6816e016da5f4fe8b590"
+    },
+    {
+      "id": "evora-prr-vencido-aprovado-2026",
+      "valor_intacto": true,
+      "corrections_at_export": 6,
+      "corrections_after": 8,
+      "sha256_antes": "12ce22206463a1ab9729d5a0400fed901f43ddee5b1f61848d80f27be6f02da2",
+      "sha256_depois": "ace0b49f9792e9c4d8845cab477d2ab64a8d077eea75ea4d7b405a9b6d69a047"
+    }
+  ],
+  "entradas_acrescentadas": 0,
+  "razoes_afinadas": 20
+}

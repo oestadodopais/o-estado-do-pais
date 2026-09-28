@@ -36,5 +36,8 @@
   "limites": [
     "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
     "Sem preço exposto. Não inclui revisões automáticas nem o fecho posterior a esta leitura. Sem subagentes."
-  ]
+  ],
+  "segundos": 1630.282,
+  "duracao_de": "pedido",
+  "duracao_ate": "ultima_leitura.hora"
 }
