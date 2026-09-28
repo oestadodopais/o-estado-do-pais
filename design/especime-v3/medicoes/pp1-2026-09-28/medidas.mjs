@@ -121,6 +121,21 @@ for (const l of ['pt', 'en']) {
   }
 }
 medida('capturas_depois', capDepois.resultados.length, `${PASTA}/capturas-depois.json · resultados`, 'o manifesto diz a aceitação passada', capDepois.aceitacao?.passou === true);
+/* PP1b (a leitura a frio, achado 10): as capturas e as páginas congeladas são da construção da cabeça que
+   os portões medem. As duas cabeças leem-se dos ficheiros, e o conhecido-positivo é a de antes, que não é. */
+const cabecaDosPortoes = ler(`${PASTA}/portoes/pp1b/build.cabeca`).trim();
+/* O que as capturas refeitas mudaram contra as do PP1 (as do commit 12dc8fbf): as imagens e as páginas congeladas, pelo sha256. */
+const capPP1 = JSON.parse(git('show', `12dc8fbf:${PASTA}/capturas-depois.json`));
+const shaDe = (/** @type {any} */ c) => new Map(c.resultados.map((/** @type {any} */ r) => [r.ficheiro, r.sha256]));
+const imagensAntes = shaDe(capPP1), imagensAgora = shaDe(capDepois);
+medida('capturas_refeitas_com_outros_bytes', [...imagensAgora].filter(([f, h]) => imagensAntes.get(f) !== h).length, `${PASTA}/capturas-depois.json contra o do commit 12dc8fbf · resultados[].sha256`, 'as duas listas têm as mesmas capturas', imagensAntes.size === imagensAgora.size && [...imagensAgora.keys()].every((f) => imagensAntes.has(f)));
+const paginasMudadas = Object.entries(capDepois.copias).filter(([n, c]) => /** @type {any} */ (c).rota && capPP1.copias[n]?.sha256 !== /** @type {any} */ (c).sha256).map(([n]) => n);
+medida('paginas_congeladas_com_outros_bytes', paginasMudadas, `${PASTA}/capturas-depois.json contra o do commit 12dc8fbf · copias[].sha256 das páginas`, 'o manifesto antigo tem as mesmas páginas', Object.keys(capDepois.copias).filter((n) => /** @type {any} */ (capDepois.copias[n]).rota).every((n) => n in capPP1.copias));
+medida('capturas_depois_construidas_de', capDepois.dist_construido_de, `${PASTA}/capturas-depois.json · dist_construido_de`, 'as capturas de antes são de outra cabeça', capAntes.dist_construido_de !== capDepois.dist_construido_de);
+medida('portoes_pp1b_cabeca', cabecaDosPortoes, `${PASTA}/portoes/pp1b/build.cabeca`, 'a cabeça dos portões é a das capturas', cabecaDosPortoes === capDepois.dist_construido_de);
+for (const g of ['build', 'verify', 'typecheck']) {
+  medida(`portoes_pp1b_${g}_codigo`, Number(ler(`${PASTA}/portoes/pp1b/${g}.codigo`).trim()), `${PASTA}/portoes/pp1b/${g}.codigo`, `o portão correu na cabeça dos outros dois`, ler(`${PASTA}/portoes/pp1b/${g}.cabeca`).trim() === cabecaDosPortoes);
+}
 medida('capturas_depois_com_deslocamento', capDepois.resultados.filter((/** @type {any} */ r) => r.deslocamento > 0).length, `${PASTA}/capturas-depois.json · resultados com deslocamento > 0`, 'o manifesto de antes mediu o deslocamento de cada captura', capAntes.resultados.every((/** @type {any} */ r) => typeof r.deslocamento === 'number'));
 
 /* 4 · O INVENTÁRIO DAS FRASES. */
@@ -143,6 +158,7 @@ for (const [nome, f, lista, passou] of /** @type {[string, string, (j: any) => a
   ['plantas_da_primeira_pagina', 'plantas-primeira-pagina.json', (j) => j.plantas, (x) => x.mordeu],
   ['plantas_da_geometria', 'plantas-geometria.json', (j) => j.plantas, (x) => x.mordeu],
   ['plantas_dos_sinais', 'plantas-sinais.json', (j) => j.plantas, (x) => x.passou],
+  ['plantas_da_pesquisa_da_primeira', 'plantas-pesquisa.json', (j) => j.plantas, (x) => x.mordeu],
   ['plantas_da_porta', 'plantas-porta.json', (j) => j.filter((/** @type {any} */ x) => /^planta-|^reposicao-/.test(x.id)), (x) => x.passou],
   ['plantas_do_pais', 'plantas-pais.json', (j) => j, (x) => x.passou],
   ['plantas_do_veredicto', 'plantas-veredicto.json', (j) => j, (x) => x.passou],
@@ -162,6 +178,17 @@ const alvos = (process.env.OEDP_ALVOS_JSON ?? '').split(',').filter(Boolean).fla
 medida('plantas_dos_alvos_corridas', alvos.length, 'node tests/acessibilidade/alvos.mjs --vermelhos --so <estrago> --json <ficheiro fora da árvore>, para «b1» e «bloco-sem-classe»', 'o registo tem as duas plantas do bloco', alvos.some((/** @type {any} */ x) => String(x.nome).startsWith('bloco-sem-classe')) && alvos.some((/** @type {any} */ x) => String(x.nome).startsWith('b1')));
 medida('plantas_dos_alvos_mordidas', alvos.filter((/** @type {any} */ x) => x.bom).length, 'os mesmos registos · bom (o HTML mudou e caíram as células nomeadas)', 'o mesmo contador vê uma que não caiu numa lista de prova', [{ bom: false }].filter((x) => x.bom).length === 0);
 for (const x of alvos) medida(`planta_dos_alvos_${String(x.nome).split(' ')[0]}`, x.caiu, 'os mesmos registos · as células que caíram', `a planta nomeia ${x.celulas.join(', ')}`, x.nomeadas?.length === x.celulas.length);
+/* PP1b: a pesquisa da primeira página (com e sem guião) e as entradas no mapa do sítio. */
+const pesquisa = json(`${PASTA}/plantas-pesquisa.json`);
+medida('pesquisa_com_guiao_passagens', pesquisa.com_guiao.length, `${PASTA}/plantas-pesquisa.json · com_guiao`, 'as duas edições em duas larguras', new Set(pesquisa.com_guiao.map((/** @type {any} */ m) => `${m.lang}@${m.largura}`)).size === pesquisa.com_guiao.length);
+medida('pesquisa_com_guiao_a_cumprir', pesquisa.com_guiao.filter((/** @type {any} */ m) => m.passa).length, `${PASTA}/plantas-pesquisa.json · com_guiao[].passa`, 'o mesmo contador vê a planta da ligação partida a falhar', pesquisa.plantas.some((/** @type {any} */ x) => /ligação do campo/.test(x.nome) && x.mordeu));
+for (const sg of pesquisa.sem_guiao) {
+  medida(`pesquisa_sem_guiao_${sg.lang}`, { aterra: sg.aterra, estado: sg.estado, portas_de_distrito_a_vista: sg.portasDeDistritoAVista, porta_do_distrito: sg.portaDoDistrito, porta_do_concelho_a_vista: sg.portaDoConcelhoAVista, resultados_a_vista: sg.resultadosAVista }, `${PASTA}/plantas-pesquisa.json · sem_guiao[${sg.lang}]`, 'a planta do formulário sem destino dá 404 pelo mesmo caminho', pesquisa.plantas.some((/** @type {any} */ x) => /sem destino/.test(x.nome) && x.mordeu));
+}
+const primeiraReg = json(`${PASTA}/plantas-primeira-pagina.json`);
+medida('entradas_no_mapa_do_sitio', primeiraReg.entradas.entradas_no_mapa_do_sitio, `${PASTA}/plantas-primeira-pagina.json · entradas.entradas_no_mapa_do_sitio`, 'a planta de uma rota em falta no mapa mordeu', primeiraReg.plantas.some((/** @type {any} */ x) => /em falta no mapa do sítio/.test(x.nome) && x.mordeu));
+medida('mapas_do_sitio_lidos', primeiraReg.entradas.mapas_do_sitio, `${PASTA}/plantas-primeira-pagina.json · entradas.mapas_do_sitio`, 'a planta de um mapa nomeado em falta mordeu', primeiraReg.plantas.some((/** @type {any} */ x) => /o mapa que o índice nomeia/.test(x.nome) && x.mordeu));
+medida('cadeia_do_build_tem_os_sinais', JSON.parse(ler('package.json')).scripts.build.split('&&').map((/** @type {string} */ x) => x.trim()).includes('npm run sinais'), 'package.json · scripts.build, os passos', 'a mesma leitura não acha o passo na cadeia do typecheck', !JSON.parse(ler('package.json')).scripts.typecheck.split('&&').map((/** @type {string} */ x) => x.trim()).includes('npm run sinais'));
 const porta = json(`${PASTA}/plantas-porta.json`);
 medida('celulas_da_porta', porta.length, `${PASTA}/plantas-porta.json`, 'a célula P1 da edição portuguesa está lá', porta.some((/** @type {any} */ x) => x.id === 'P1.pt'));
 medida('celulas_da_porta_verdes', porta.filter((/** @type {any} */ x) => x.passou).length, `${PASTA}/plantas-porta.json · passou`, 'o mesmo contador conta as falhadas numa lista de prova', [{ passou: false }].filter((x) => x.passou).length === 0);

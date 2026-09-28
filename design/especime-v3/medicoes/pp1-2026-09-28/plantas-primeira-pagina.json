@@ -174,7 +174,10 @@
     "cartoes_dos_temas": 96,
     "cartoes_nas_entradas": 94,
     "fora": 2,
-    "entradas_na_primeira": 12
+    "entradas_na_primeira": 12,
+    "mapas_do_sitio": 1,
+    "enderecos_no_mapa_do_sitio": 7382,
+    "entradas_no_mapa_do_sitio": 10
   },
   "plantas": [
     {
@@ -331,6 +334,16 @@
       "nome": "uma entrada a mais na primeira página",
       "mordeu": true,
       "queixa": "E4 pt: a primeira página tem as entradas «dinheiro, trabalho, casa, escola-e-saude, estado, terra, saude» e a declaração «dinheiro, trabalho, casa, escola-e-saude, estado, terra»."
+    },
+    {
+      "nome": "uma página de uma entrada em falta no mapa do sítio",
+      "mordeu": true,
+      "queixa": "E5 en: a página da entrada «trabalho» (/en/my-work/) não está no mapa do sítio."
+    },
+    {
+      "nome": "o mapa que o índice nomeia em falta na construção",
+      "mordeu": true,
+      "queixa": "E5: o índice do mapa do sítio nomeia /sitemap-1.xml, que a construção não tem."
     },
     {
       "nome": "uma frase com um valor fora dos cartões de uma entrada fica por classificar",

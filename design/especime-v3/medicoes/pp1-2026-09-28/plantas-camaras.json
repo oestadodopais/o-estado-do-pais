@@ -51,8 +51,8 @@
     "codigo": 0,
     "mordida": null,
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 país: todas as conferências a 0."
   },
   {
@@ -183,8 +183,8 @@
     "codigo": 1,
     "mordida": "T0 pt: a primeira página voltou a render cartões das medidas",
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nT0 pt: a primeira página voltou a render cartões das medidas."
   },
   {
@@ -304,8 +304,8 @@
     "codigo": 0,
     "mordida": null,
     "passou": true,
-    "antes": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
-    "reposto": "2639111c74ce3768ba430a98f035fad9ff332182d1d42c996d17280d4519f388",
+    "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+    "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
     "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 país: todas as conferências a 0."
   },
   {
