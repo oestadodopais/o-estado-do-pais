@@ -21,7 +21,7 @@ access_date: "2026-08-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2025: 21.3"
+excerpt: "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2025: 21.3 p"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -53,3 +53,9 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y"
     result: "igual"
     by: "painel-semanal"
+
+source_flag: "p"
+
+source_flag_note: "dado provisório"
+
+source_flag_note_en: "provisional data"

@@ -89,7 +89,7 @@ export const LINGUA_DOS_TITULOS = {
   'Empresas (N.º) × CAE divisão × forma jurídica': 'pt',
   'VAB (€) das empresas × CAE divisão': 'pt',
   'RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal': 'pt',
-  'Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões': 'pt',
+  'Limites de Endividamento': 'pt',
   /* Os documentos do primeiro domínio da primeira vaga (estudo 13 do motor). */
   'Ganho médio mensal (€) por Localização geográfica (NUTS - 2024); Anual - MTSSS/GEP, Quadros de pessoal':
     'pt',
@@ -313,7 +313,6 @@ export const LINGUA_DAS_FONTES = {
   'Direção-Geral do Território (DGT)': 'pt',
   'Marques, Cruz & Associados': 'pt',
   ERSAR: 'pt',
-  'CICF/IPCA — Anuário Financeiro dos Municípios Portugueses': 'pt',
   PORDATA: 'pt',
   'Conselho das Finanças Públicas': 'pt',
   'Diário da República': 'pt',
@@ -384,6 +383,7 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  'Lei n.º 73/2013': 'pt',
   '0014647, geocod=PT, dim_3=045': null,
   '0014647, geocod=PT, dim_3=0722': null,
   '0014647, geocod=PT, dim_3=041': null,
