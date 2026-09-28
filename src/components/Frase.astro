@@ -10,6 +10,9 @@
  *                                   ao valor e antes do selo (§11).
  *   { ref: '2024' }               — ano ou período de referência dos dados
  *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
+ *   { referencia: 'id', nl, motivo } · o valor de referência da linha `id`, com o
+ *                                   motivo do registo; a célula da primeira página
+ *                                   relê-o em `referencias.json` (bloco PP1)
  *   { data: { id, campo, valor } }— uma das datas de uma linha do livro-razão,
  *                                   escrita na forma da casa e reconferida pelo
  *                                   `check:formas` contra aquele campo daquela
@@ -98,6 +101,11 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
     if (parte.verbatim)
       return <span data-verbatim={parte.verbatim}>{VERBATIM[parte.verbatim].text}</span>;
     if (parte.voz) return <span data-voz set:text={parte.voz} />;
+    {/* O VALOR DE REFERÊNCIA DE UMA LINHA (bloco PP1, 28.09.2026). É o `{ nl }` do limiar, com o
+        motivo do registo, e leva o identificador da linha cujo limiar é: a célula da primeira
+        página (`tests/inicio/blocos.mjs`) relê o limiar em `referencias.json` e compara-o. */}
+    if (parte.referencia)
+      return <span data-nonledger={parte.motivo} data-referencia={parte.referencia}>{parte.nl}</span>;
     if (parte.forte) return <strong set:text={parte.forte} />;
     if (parte.email)
       return (

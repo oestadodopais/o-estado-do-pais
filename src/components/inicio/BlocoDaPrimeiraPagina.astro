@@ -1,0 +1,87 @@
+---
+/**
+ * UM BLOCO DE «O QUE SE PASSA» (bloco PP1, 28.09.2026).
+ *
+ * Rende o que `blocoResolvido()` devolve e mais nada: um bloco cujas condições deixaram de ser
+ * verdadeiras não se rende (o guião dos sinais di-lo ao lugar de direção), e uma peça também não.
+ * A ordem é a da maqueta que o diretor viu, com as respostas do brief (§5.3): o título, a frase, o
+ * desenho, a ressalva (que em todos os blocos fala da medida desenhada, e por isso vem logo a seguir
+ * ao desenho), as peças, a linha da fonte e a lista «Os números deste bloco».
+ *
+ *   · CADA NÚMERO DE UMA FRASE ABRE O SEU RECIBO: é um `<Claim>` com o selo ao lado (`Frase` com
+ *     `selos`), a regra do `IDENTIDADE.md` §5.3 e o que o `auditaSelo()` do portão exige;
+ *   · CADA NÚMERO DE UM DESENHO está na lista «Os números deste bloco», com a porta do recibo. A
+ *     lista é a legenda dos selos do instrumento (`data-legenda-selos`, dentro do
+ *     `data-instrumento` do bloco): é aí que o portão procura a porta de um valor desenhado;
+ *   · A LINHA DA FONTE É CALCULADA: o publicador de cada linha cujo valor se vê, com os períodos
+ *     dela, cada publicador um campo da sua linha (`CampoDaLinha`) e cada período a data da linha
+ *     (`DataDaLinha`), conferidos pelos portões. Os separadores são da folha, e não texto: uma
+ *     atualização que acrescente um publicador não muda uma cadeia da casa.
+ *
+ * AS PALAVRAS DECLARADAS levam `data-bloco-declarado`: saem do inventário das frases, porque mudam
+ * com os ramos e com as condições e uma atualização dos dados não pode fechar a construção (o §5.2
+ * do brief). Quem as confere é a célula da primeira página (`tests/inicio/blocos.mjs`), que o
+ * `check:voz` corre na mesma corrida antes de as tirar do arame da classe por provar, e o detetor da
+ * autorreferência continua a lê-las.
+ */
+import Frase from '../Frase.astro';
+import Claim from '../Claim.astro';
+import CampoDaLinha from '../CampoDaLinha.astro';
+import DataDaLinha from '../DataDaLinha.astro';
+import NomeDaMedida from '../NomeDaMedida.astro';
+import DesenhoDoBloco from './DesenhoDoBloco.astro';
+import { blocoResolvido } from '../../lib/primeira-pagina.mjs';
+import { getClaim } from '../../lib/ledger.mjs';
+import { t } from '../../i18n/strings.mjs';
+
+const { id, lang = 'pt', nivel = 'h3' } = Astro.props;
+const s = t(lang);
+const b = blocoResolvido(id, lang);
+const Titulo = nivel;
+const idDoTitulo = `bloco-${id}-t`;
+---
+
+{b.mostra && (
+  <section class="pp-bloco" data-bloco={b.id} data-instrumento={`bloco-${b.id}`} aria-labelledby={idDoTitulo}>
+    <Titulo class="pp-titulo" id={idDoTitulo} data-bloco-titulo data-bloco-declarado><Frase partes={b.titulo} lang={lang} /></Titulo>
+    <p class="pp-frase" data-bloco-frase data-bloco-declarado><Frase partes={b.frase} lang={lang} selos /></p>
+    {b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
+    <div class="pp-notas">
+    <p class="pp-ressalva" data-bloco-ressalva data-bloco-declarado><Frase partes={b.ressalva} lang={lang} /></p>
+    {b.pecas.filter((p) => p.mostra).map((p) => p.caixa ? (
+      <aside class="pp-caixa" data-bloco-peca={p.id} aria-labelledby={`bloco-${b.id}-${p.id}-t`}>
+        {p.titulo && <p class="pp-caixa-t" id={`bloco-${b.id}-${p.id}-t`} data-bloco-declarado><Frase partes={p.titulo} lang={lang} /></p>}
+        <p class="pp-caixa-texto" data-bloco-declarado><Frase partes={p.pedacos} lang={lang} selos /></p>
+      </aside>
+    ) : (
+      <p class="pp-peca" data-bloco-peca={p.id} data-bloco-declarado><Frase partes={p.pedacos} lang={lang} selos /></p>
+    ))}
+    <p class="pp-fonte" data-bloco-fonte>
+      <span class="pp-fonte-k" data-voz>{s.primeira.fonte}</span>
+      {b.fonte.map((g) => (
+        <span class="pp-fonte-item">
+          <CampoDaLinha id={g.linha} campo="source" valor={String(getClaim(g.linha).source)} lang={lang} class="pp-fonte-publicador" />
+          {g.periodos.map((p) => (
+            <span class="pp-fonte-periodo"><DataDaLinha id={p.linha} campo="reference_date" valor={p.valor} lang={lang} /></span>
+          ))}
+        </span>
+      ))}
+    </p>
+    <details class="pp-numeros" data-legenda-selos>
+      <summary>{s.primeira.numerosDoBloco}</summary>
+      <ul class="pp-numeros-lista">
+        {b.numeros.map((n) => (
+          <li class="pp-numero" data-bloco-numero={n.linha}>
+            <span class="pp-numero-nome">
+              <NomeDaMedida linha={getClaim(n.nome.linha)} lang={lang} escada="cartao" class="pp-numero-medida" />
+              {n.nome.qualificador === 'ue' && <span class="pp-numero-onde" data-voz>{s.cartao.uniaoEuropeia}</span>}
+            </span>
+            <span class="pp-numero-valor"><Claim id={n.linha} lang={lang} chip sufixo={n.sufixo} /></span>
+            <span class="pp-numero-periodo"><DataDaLinha id={n.linha} campo="reference_date" valor={String(getClaim(n.linha).reference_date)} lang={lang} /></span>
+          </li>
+        ))}
+      </ul>
+    </details>
+    </div>
+  </section>
+)}

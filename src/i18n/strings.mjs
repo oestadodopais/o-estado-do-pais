@@ -1714,6 +1714,21 @@ export const STRINGS = {
       metaTitle: 'Temas · O Estado do País',
       metaDescription: 'Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo.',
     },
+    /* A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026; a decisão do diretor de
+       28.09.2026, `DECISIONS.md` §1.133). As palavras dos cinco blocos e das seis entradas são do
+       lugar de direção e vivem em `src/data/primeira-pagina.mjs`; aqui fica a mobília à volta
+       delas, declarada uma vez e no inventário das frases. */
+    primeira: {
+      oQueSePassa: 'O que se passa',
+      numerosMaisRecentes: 'Os números mais recentes são de ',
+      porOndeComecar: 'Por onde começar',
+      numerosDoBloco: 'Os números deste bloco',
+      fonte: 'Fonte',
+      veredicto: 'Os valores de referência da Comissão Europeia',
+      todosOsTemas: 'Todos os temas',
+      estudos: 'Estudos',
+      metaCauda: ' · O Estado do País',
+    },
     camaras: {
       nome: 'Câmaras com a dívida acima do limite legal',
       unidade: 'câmaras',
@@ -1736,9 +1751,10 @@ export const STRINGS = {
         fecha: '.',
       },
       metaTitle: 'O Estado do País',
-      // B1: a descrição acompanha a leitura, os temas, o mapa e os estudos.
+      /* PP1: a descrição acompanha a página nova, os blocos de «O que se passa» e as entradas.
+         Não nomeia os blocos, que saem sozinhos quando os números deixam de lhes dar razão. */
       metaDescription:
-        'A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes.',
+        'O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas para o dinheiro, o trabalho, a habitação, a escola e a saúde, o Estado e a economia, e os lugares.',
 
       numeros: {
         /* A linha do valor de referência de um cartão (IDENTIDADE.md §11). A
@@ -3438,6 +3454,18 @@ export const STRINGS = {
       metaTitle: 'Themes · O Estado do País',
       metaDescription: "All the country's measures, by theme, each with its value, its source and its receipt.",
     },
+    /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */
+    primeira: {
+      oQueSePassa: 'What is happening',
+      numerosMaisRecentes: 'The most recent figures are for ',
+      porOndeComecar: 'Where to start',
+      numerosDoBloco: 'The figures in this block',
+      fonte: 'Source',
+      veredicto: 'The European Commission’s reference values',
+      todosOsTemas: 'All themes',
+      estudos: 'Studies',
+      metaCauda: ' · O Estado do País',
+    },
     camaras: {
       nome: 'Councils with debt above the legal limit',
       unidade: 'councils',
@@ -3460,7 +3488,7 @@ export const STRINGS = {
       },
       metaTitle: 'O Estado do País',
       metaDescription:
-        "The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies.",
+        'What is happening in the country, told by the official figures read together, each with its source, and the ways in to money, work, housing, school and health, the state and the economy, and places.',
 
       numeros: {
         /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */

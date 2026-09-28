@@ -11,14 +11,15 @@ export const MEDIDA_REUNIDA = { 'taxa-de-desemprego-2025': 'taxa-de-desemprego-m
 export const CITADAS_NA_LEITURA = ['divida-publica-2025', 'taxa-de-desemprego-mip-2025', 'precos-da-habitacao-2025'];
 
 /**
- * AS LINHAS QUE A LEITURA DO PAÍS CITA (B1c, 22.09.2026; nove desde o R1, 23.09.2026).
+ * AS LINHAS DO PAÍS QUE NÃO SÃO CARTÕES (B1c, 22.09.2026; nove desde o R1, 23.09.2026).
  *
- * `CITADAS_NA_LEITURA` é outra coisa: são as três que não voltam a abrir a fila
- * dos cartões. Esta é a lista inteira, e existe porque o âmbito da página do
- * país é a tabela da carta MAIS o que a leitura cita, e isso tem de estar
- * escrito num sítio só. `LeituraDoPais.astro` confere-a contra os valores
- * aprovados, e o `check:pais` lê-a da página construída: são três leituras
- * independentes da mesma lista.
+ * Nasceu como a lista das linhas que a leitura do país citava. A leitura saiu da primeira
+ * página com o bloco PP1 (28.09.2026), e a lista fica por uma razão medida nesse bloco: o
+ * registo das correções (`/correcoes`) dá a cada correção o lugar da sua linha, e é por esta
+ * lista, somada à tabela das medidas do país, que uma correção de uma destas nove linhas se
+ * escreve «Portugal» com a porta da página do país (`src/lib/mudancas.mjs`, e a mesma lista
+ * escrita outra vez no `check:pais`, que é a régua). `CITADAS_NA_LEITURA`, acima, é outra
+ * coisa: as três que o resumo dos temas não repetia.
  */
 export const LINHAS_DA_LEITURA_DO_PAIS = [
   'divida-publica-2024',
