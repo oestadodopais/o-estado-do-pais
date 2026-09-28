@@ -1,0 +1,2042 @@
+{
+  "schema": 1,
+  "o_que_e": "A auditoria das palavras dos cinco blocos de «O que se passa», folha a folha, nas duas edições (bloco PP1, item 1). Cada folha de palavras fixas de `src/data/primeira-pagina.mjs` divide-se em partes, e cada parte tem uma classe: «diz» (diz o que uma medida é, o que um grupo é, ou de quem é o valor de referência e o que ele é) com o literal que a apoia, num campo de uma origem declarada em ORIGENS_DAS_DEFINICOES (excerto, excertoEn, documento ou publicador) ou num campo selado de uma linha que o bloco nomeia (excerpt, unit, document.title, document.locator); «conta» (as palavras de uma comparação que a máquina decide: dentro de um ramo que os valores escolhem, ou guardadas pelas condições declaradas do bloco ou da peça que `guarda` indexa); «liga» (pontuação e as palavras da lista fechada da célula). Cada algarismo declarado com «nl» tem o seu literal em «algarismos». A célula da primeira página (`tests/inicio/blocos.mjs`) confere que as partes juntas são cada folha, que cada literal está mesmo no campo que cita, que cada guarda existe e é uma comparação, e que cada origem da lista de um bloco apoia uma parte dele. Não infere que o literal quer dizer o que a parte diz: isso é uma leitura, e é de quem a assina.",
+  "leituras": [
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-09-28",
+      "o_que": "primeira leitura, construtor do PP1, sobre as origens já declaradas e os campos das linhas que os blocos nomeiam; nenhuma origem nova; a auditoria não recusou palavra nenhuma; as quatro trocas de «casa» por «habitação» (A1 a A4 de ACERTOS_DAS_PALAVRAS) vêm da célula 11 da voz"
+    }
+  ],
+  "blocos": [
+    {
+      "id": "precos",
+      "origens": [
+        "rp1-ipc-metodo",
+        "rp1-ipc-classes-homologa",
+        "rp1-ihpc-comparavel"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo",
+          "pt": "Os preços: os combustíveis sobem mais do que o resto",
+          "en": "Prices: fuel is rising faster than the rest",
+          "partes": [
+            {
+              "pt": "Os preços:",
+              "en": "Prices:",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal"
+                }
+              ]
+            },
+            {
+              "pt": " os combustíveis",
+              "en": " fuel",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "ipc-combustiveis-variacao-homologa",
+                  "campo": "excerpt",
+                  "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+                }
+              ]
+            },
+            {
+              "pt": " sobem mais do que o resto",
+              "en": " is rising faster than the rest",
+              "classe": "conta",
+              "guarda": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[0]",
+          "pt": "Em ",
+          "en": "In ",
+          "partes": [
+            {
+              "pt": "Em ",
+              "en": "In ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[2]",
+          "pt": ", os combustíveis estavam ",
+          "en": ", fuel was ",
+          "partes": [
+            {
+              "pt": ", os combustíveis",
+              "en": ", fuel",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "ipc-combustiveis-variacao-homologa",
+                  "campo": "excerpt",
+                  "literal": "Combustível e lubrificantes para equipamento para transporte pessoal"
+                }
+              ]
+            },
+            {
+              "pt": " estavam ",
+              "en": " was ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[4]",
+          "pt": " mais caros do que um ano antes. Os preços no seu conjunto subiram ",
+          "en": " more expensive than a year earlier. Prices as a whole rose ",
+          "partes": [
+            {
+              "pt": " mais caros",
+              "en": " more expensive",
+              "classe": "conta",
+              "guarda": [
+                4,
+                5
+              ]
+            },
+            {
+              "pt": " do que um ano antes.",
+              "en": " than a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-classes-homologa",
+                  "campo": "excerto",
+                  "literal": "A variação homóloga compara o nível da variável entre o mês corrente e o mesmo mês do ano anterior."
+                }
+              ]
+            },
+            {
+              "pt": " Os preços no seu conjunto",
+              "en": " Prices as a whole",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "ipc-variacao-homologa",
+                  "campo": "excerpt",
+                  "literal": "\"dim_3_t\" : \"Total\""
+                },
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal"
+                }
+              ]
+            },
+            {
+              "pt": " subiram ",
+              "en": " rose ",
+              "classe": "conta",
+              "guarda": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[6]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.uniao[0]",
+          "pt": "Na medida harmonizada que compara os países da União, os preços subiram ",
+          "en": "On the harmonised measure that compares the countries of the Union, prices rose ",
+          "partes": [
+            {
+              "pt": "Na medida harmonizada que compara os países da União,",
+              "en": "On the harmonised measure that compares the countries of the Union,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "gives comparable measures of inflation for the countries and country groups for which it is produced"
+                }
+              ]
+            },
+            {
+              "pt": " os preços",
+              "en": " prices",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "measures the change over time of the prices of consumer goods and services acquired by households"
+                }
+              ]
+            },
+            {
+              "pt": " subiram ",
+              "en": " rose ",
+              "classe": "conta",
+              "guarda": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.uniao[2]",
+          "pt": " em Portugal e ",
+          "en": " in Portugal and ",
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            },
+            {
+              "pt": "Portugal",
+              "en": "Portugal",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "ihpc-variacao-homologa",
+                  "campo": "excerpt",
+                  "literal": "— Portugal —"
+                }
+              ]
+            },
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.uniao[4]",
+          "pt": " na União.",
+          "en": " in the Union.",
+          "partes": [
+            {
+              "pt": " na União.",
+              "en": " in the Union.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "ihpc-variacao-homologa-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva",
+          "pt": "Os preços no seu conjunto medem-se num cabaz de bens e serviços que representa o que as famílias compram.",
+          "en": "Prices as a whole are measured on a basket of goods and services that represents what households buy.",
+          "partes": [
+            {
+              "pt": "Os preços no seu conjunto medem-se num cabaz de bens e serviços que representa o que as famílias compram.",
+              "en": "Prices as a whole are measured on a basket of goods and services that represents what households buy.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "casa",
+      "origens": [
+        "eurostat-tespm140-populacao",
+        "eurostat-tessi164-inquilinos",
+        "glossario-hpi",
+        "eurostat-tipsho20-descricao",
+        "painel-pdm",
+        "rp1-rendas-referencia",
+        "ce-swd-2026-222-habitacao"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo",
+          "pt": "A habitação: a média engana quem arrenda",
+          "en": "Housing: the average hides the renters",
+          "partes": [
+            {
+              "pt": "A habitação:",
+              "en": "Housing:",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "sobrecarga-do-custo-da-habitacao-2025",
+                  "campo": "excerpt",
+                  "literal": "Housing cost overburden rate"
+                }
+              ]
+            },
+            {
+              "pt": " a média engana quem arrenda",
+              "en": " the average hides the renters",
+              "classe": "conta",
+              "guarda": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[0]",
+          "pt": "Em Portugal, a parte das pessoas que gastam mais de ",
+          "en": "In Portugal, the share of people spending more than ",
+          "partes": [
+            {
+              "pt": "Em Portugal,",
+              "en": "In Portugal,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "sobrecarga-do-custo-da-habitacao-2025",
+                  "campo": "excerpt",
+                  "literal": "— Portugal —"
+                }
+              ]
+            },
+            {
+              "pt": " a parte das pessoas que gastam mais de ",
+              "en": " the share of people spending more than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm140-populacao",
+                  "campo": "excerto",
+                  "literal": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[2]",
+          "pt": " % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.",
+          "en": " % of their disposable income on housing is smaller than in the Union. Among people renting at market price, it is larger.",
+          "partes": [
+            {
+              "pt": " % do rendimento disponível com a habitação",
+              "en": " % of their disposable income on housing",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm140-populacao",
+                  "campo": "excerto",
+                  "literal": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income"
+                }
+              ]
+            },
+            {
+              "pt": " é menor do que na União.",
+              "en": " is smaller than in the Union.",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            },
+            {
+              "pt": " Entre quem arrenda a preço de mercado,",
+              "en": " Among people renting at market price,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tessi164-inquilinos",
+                  "campo": "excerto",
+                  "literal": "Tenant, rent at market price"
+                }
+              ]
+            },
+            {
+              "pt": " é maior.",
+              "en": " it is larger.",
+              "classe": "conta",
+              "guarda": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.legenda[0]",
+          "pt": "% das pessoas, ",
+          "en": "% of people, ",
+          "partes": [
+            {
+              "pt": "% das pessoas, ",
+              "en": "% of people, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm140-populacao",
+                  "campo": "excerto",
+                  "literal": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[0].titulo",
+          "pt": "Todas as pessoas",
+          "en": "All people",
+          "partes": [
+            {
+              "pt": "Todas as pessoas",
+              "en": "All people",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tespm140-populacao",
+                  "campo": "excerto",
+                  "literal": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo",
+          "pt": "Quem arrenda a preço de mercado",
+          "en": "Renting at market price",
+          "partes": [
+            {
+              "pt": "Quem arrenda a preço de mercado",
+              "en": "Renting at market price",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tessi164-inquilinos",
+                  "campo": "excerto",
+                  "literal": "Tenant, rent at market price"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.precos-das-casas[0]",
+          "pt": "Os preços das casas subiram ",
+          "en": "House prices rose ",
+          "partes": [
+            {
+              "pt": "Os preços das casas",
+              "en": "House prices",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-hpi",
+                  "campo": "excerto",
+                  "literal": "an index that measures the changes in the transaction prices of dwellings purchased by households"
+                }
+              ]
+            },
+            {
+              "pt": " subiram ",
+              "en": " rose ",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.precos-das-casas[2]",
+          "pt": " em ",
+          "en": " in ",
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.precos-das-casas[4]",
+          "pt": ", na média do ano, contra ",
+          "en": ", on the year’s average, against ",
+          "partes": [
+            {
+              "pt": ", na média do ano,",
+              "en": ", on the year’s average,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "precos-da-habitacao-2025",
+                  "campo": "excerpt",
+                  "literal": "Annual average rate of change"
+                }
+              ]
+            },
+            {
+              "pt": " contra ",
+              "en": " against ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.precos-das-casas[6]",
+          "pt": " na União. Para a Comissão Europeia, uma subida acima de ",
+          "en": " in the Union. For the European Commission, a rise above ",
+          "partes": [
+            {
+              "pt": " na União.",
+              "en": " in the Union.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "precos-da-habitacao-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            },
+            {
+              "pt": " Para a Comissão Europeia, uma subida acima de ",
+              "en": " For the European Commission, a rise above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "The MIP Scoreboard indicator is expressed as the 1-year percentage change of the HPI. The indicative threshold of the indicator is 9%."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.precos-das-casas[8]",
+          "pt": " % num ano é sinal de possível desequilíbrio.",
+          "en": " % in a year is a sign of a possible imbalance.",
+          "partes": [
+            {
+              "pt": " % num ano",
+              "en": " % in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "expressed as the 1-year percentage change of the HPI"
+                }
+              ]
+            },
+            {
+              "pt": " é sinal de possível desequilíbrio.",
+              "en": " is a sign of a possible imbalance.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "painel-pdm",
+                  "campo": "excerto",
+                  "literal": "indicative thresholds, covering the major sources of macroeconomic imbalances"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.rendas[0]",
+          "pt": "A referência para a atualização das rendas no próximo ano ficou em ",
+          "en": "The reference for updating rents next year stood at ",
+          "partes": [
+            {
+              "pt": "A referência para a atualização das rendas no próximo ano ficou em ",
+              "en": "The reference for updating rents next year stood at ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-rendas-referencia",
+                  "campo": "excerto",
+                  "literal": "referência para a atualização de rendas no próximo ano, fixou-se em"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.rendas[2]",
+          "pt": ": é a variação média de doze meses dos preços sem a habitação, em ",
+          "en": ": it is the twelve-month average change in prices excluding housing, in ",
+          "partes": [
+            {
+              "pt": ": é a variação média de doze meses dos preços sem a habitação, em ",
+              "en": ": it is the twelve-month average change in prices excluding housing, in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-rendas-referencia",
+                  "campo": "excerto",
+                  "literal": "variação média dos últimos doze meses do IPC sem habitação"
+                },
+                {
+                  "linha": "ipc-sem-habitacao-variacao-media-12-meses",
+                  "campo": "excerpt",
+                  "literal": "\"dim_3_t\" : \"Total exceto habitação\""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.rendas[4]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.rendas.titulo",
+          "pt": "As rendas no próximo ano",
+          "en": "Rents next year",
+          "partes": [
+            {
+              "pt": "As rendas no próximo ano",
+              "en": "Rents next year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-rendas-referencia",
+                  "campo": "excerto",
+                  "literal": "referência para a atualização de rendas no próximo ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva",
+          "pt": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+          "en": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+          "partes": [
+            {
+              "pt": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+              "en": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "ce-swd-2026-222-habitacao",
+                  "campo": "excerto",
+                  "literal": "The overburden rate should be read together with the tenure structure (homeowner, tenants), that may differ across country and regions."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "caminho": "frase[1]",
+          "nl": "40",
+          "apoios": [
+            {
+              "origem": "eurostat-tespm140-populacao",
+              "campo": "excerto",
+              "literal": "Percentage of the population living in a household where total housing costs (net of housing allowances) represent more than 40% of the total disposable household income"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trabalho",
+      "origens": [
+        "glossario-emprego",
+        "glossario-desemprego",
+        "glossario-longa-duracao",
+        "eurostat-tipsun20-descricao",
+        "rp1-remuneracao-bruta",
+        "rp1-remuneracao-trabalhadores"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo",
+          "pt": "O trabalho: mais emprego, e mais desemprego de longa duração",
+          "en": "Work: more employment, and more long-term unemployment",
+          "partes": [
+            {
+              "pt": "O trabalho:",
+              "en": "Work:",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "The employment rate is the percentage of employed persons"
+                }
+              ]
+            },
+            {
+              "pt": " mais emprego,",
+              "en": " more employment,",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            },
+            {
+              "pt": " e",
+              "en": " and",
+              "classe": "liga"
+            },
+            {
+              "pt": " mais",
+              "en": " more",
+              "classe": "conta",
+              "guarda": [
+                2
+              ]
+            },
+            {
+              "pt": " desemprego de longa duração",
+              "en": " long-term unemployment",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-longa-duracao",
+                  "campo": "excerto",
+                  "literal": "Long-term unemployment refers to the number of people who are out of work and have been actively seeking employment for at least a year."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[0]",
+          "pt": "Em ",
+          "en": "In ",
+          "partes": [
+            {
+              "pt": "Em ",
+              "en": "In ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[2]",
+          "pt": ", a parte das pessoas dos ",
+          "en": ", the share of people aged ",
+          "partes": [
+            {
+              "pt": ", a parte das pessoas dos ",
+              "en": ", the share of people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "taxa-de-emprego-2025",
+                  "campo": "excerpt",
+                  "literal": "Percentage of total population"
+                },
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "the percentage of employed persons in relation to the comparable total population"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[4]",
+          "pt": " aos ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " aos ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[6]",
+          "pt": " anos com emprego era maior em Portugal do que na União, e o desemprego ",
+          "en": " in work was larger in Portugal than in the Union, and unemployment ",
+          "partes": [
+            {
+              "pt": " anos com emprego",
+              "en": " in work",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "taxa-de-emprego-2025",
+                  "campo": "excerpt",
+                  "literal": "Age class: From 20 to 64 years"
+                },
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "employed persons"
+                }
+              ]
+            },
+            {
+              "pt": " era maior em Portugal do que na União,",
+              "en": " was larger in Portugal than in the Union,",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            },
+            {
+              "pt": " e o desemprego ",
+              "en": " and unemployment ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-desemprego",
+                  "campo": "excerto",
+                  "literal": "The unemployment rate is the number of people unemployed as a percentage of the labour force."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[7].menor[0]",
+          "pt": "era mais baixo",
+          "en": "was lower",
+          "partes": [
+            {
+              "pt": "era mais baixo",
+              "en": "was lower",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[7].maior[0]",
+          "pt": "era mais alto",
+          "en": "was higher",
+          "partes": [
+            {
+              "pt": "era mais alto",
+              "en": "was higher",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[7].igual[0]",
+          "pt": "era o mesmo",
+          "en": "was the same",
+          "partes": [
+            {
+              "pt": "era o mesmo",
+              "en": "was the same",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[8]",
+          "pt": ". Mas era maior a parte de quem procura trabalho há um ano ou mais.",
+          "en": ". But the share of people who had been looking for work for a year or more was larger.",
+          "partes": [
+            {
+              "pt": ". Mas",
+              "en": ". But",
+              "classe": "liga"
+            },
+            {
+              "pt": " era maior",
+              "en": "",
+              "classe": "conta",
+              "guarda": [
+                2
+              ]
+            },
+            {
+              "pt": " a parte de quem procura trabalho há um ano ou mais.",
+              "en": " the share of people who had been looking for work for a year or more",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-longa-duracao",
+                  "campo": "excerto",
+                  "literal": "out of work and have been actively seeking employment for at least a year"
+                }
+              ]
+            },
+            {
+              "pt": "",
+              "en": " was larger.",
+              "classe": "conta",
+              "guarda": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[0].titulo[0]",
+          "pt": "Com emprego, dos ",
+          "en": "In work, aged ",
+          "partes": [
+            {
+              "pt": "Com emprego, dos ",
+              "en": "In work, aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "employed persons"
+                },
+                {
+                  "linha": "taxa-de-emprego-2025",
+                  "campo": "excerpt",
+                  "literal": "Age class: From 20 to 64 years"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[0].titulo[2]",
+          "pt": " aos ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " aos ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[0].titulo[4]",
+          "pt": " anos",
+          "en": "",
+          "partes": [
+            {
+              "pt": " anos",
+              "en": "",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "taxa-de-emprego-2025",
+                  "campo": "excerpt",
+                  "literal": "Age class: From 20 to 64 years"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[1].titulo",
+          "pt": "Desemprego",
+          "en": "Unemployment",
+          "partes": [
+            {
+              "pt": "Desemprego",
+              "en": "Unemployment",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-desemprego",
+                  "campo": "excerto",
+                  "literal": "The unemployment rate is the number of people unemployed as a percentage of the labour force."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[2].titulo",
+          "pt": "Desemprego de longa duração",
+          "en": "Long-term unemployment",
+          "partes": [
+            {
+              "pt": "Desemprego de longa duração",
+              "en": "Long-term unemployment",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-longa-duracao",
+                  "campo": "excerto",
+                  "literal": "Long-term unemployment refers to the number of people who are out of work"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[0]",
+          "pt": "A remuneração média antes de descontos de quem trabalha por conta de outrem passou de ",
+          "en": "Average pay before deductions for employees went from ",
+          "partes": [
+            {
+              "pt": "A remuneração média antes de descontos",
+              "en": "Average pay before deductions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "remuneracao-bruta-mensal-media",
+                  "campo": "document.title",
+                  "literal": "Remuneração bruta mensal média por trabalhador"
+                },
+                {
+                  "origem": "rp1-remuneracao-bruta",
+                  "campo": "excerto",
+                  "literal": "Remuneração ilíquida"
+                }
+              ]
+            },
+            {
+              "pt": " de quem trabalha por conta de outrem",
+              "en": " for employees",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-remuneracao-trabalhadores",
+                  "campo": "excerto",
+                  "literal": "universo de trabalhadores por conta de outrem"
+                }
+              ]
+            },
+            {
+              "pt": " passou de ",
+              "en": " went from ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[1].sufixo",
+          "pt": " euros por mês",
+          "en": " euros a month",
+          "partes": [
+            {
+              "pt": " euros por mês",
+              "en": " euros a month",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "remuneracao-bruta-mensal-media",
+                  "campo": "unit",
+                  "literal": "€ por mês"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[2]",
+          "pt": " no ",
+          "en": " in the ",
+          "partes": [
+            {
+              "pt": " no ",
+              "en": " in the ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[4]",
+          "pt": " para ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[5].sufixo",
+          "pt": " euros por mês",
+          "en": " euros a month",
+          "partes": [
+            {
+              "pt": " euros por mês",
+              "en": " euros a month",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "remuneracao-bruta-mensal-media",
+                  "campo": "unit",
+                  "literal": "€ por mês"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[6]",
+          "pt": " no ",
+          "en": " in the ",
+          "partes": [
+            {
+              "pt": " no ",
+              "en": " in the ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.salario[8]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[0]",
+          "pt": "O emprego conta-se entre as pessoas dos ",
+          "en": "Employment is counted among people aged ",
+          "partes": [
+            {
+              "pt": "O emprego conta-se entre as pessoas dos ",
+              "en": "Employment is counted among people aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-emprego",
+                  "campo": "excerto",
+                  "literal": "the percentage of employed persons in relation to the comparable total population"
+                },
+                {
+                  "linha": "taxa-de-emprego-2025",
+                  "campo": "excerpt",
+                  "literal": "Age class: From 20 to 64 years"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[2]",
+          "pt": " aos ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " aos ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[4]",
+          "pt": " anos; o desemprego, entre as que trabalham ou procuram trabalho, dos ",
+          "en": "; unemployment, among those working or looking for work, aged ",
+          "partes": [
+            {
+              "pt": " anos; o desemprego, entre as que trabalham ou procuram trabalho, dos ",
+              "en": "; unemployment, among those working or looking for work, aged ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsun20-descricao",
+                  "campo": "excerto",
+                  "literal": "The labour force is the total number of people employed and unemployed."
+                },
+                {
+                  "linha": "taxa-de-desemprego-mip-2025",
+                  "campo": "excerpt",
+                  "literal": "Age class: From 15 to 74 years"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[6]",
+          "pt": " aos ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " aos ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[8]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "caminho": "frase[3]",
+          "nl": "20",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[5]",
+          "nl": "64",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[0].titulo[1]",
+          "nl": "20",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.pares[0].titulo[3]",
+          "nl": "64",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[1]",
+          "nl": "20",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[3]",
+          "nl": "64",
+          "apoios": [
+            {
+              "linha": "taxa-de-emprego-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 20 to 64 years"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[5]",
+          "nl": "15",
+          "apoios": [
+            {
+              "linha": "taxa-de-desemprego-mip-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[7]",
+          "nl": "74",
+          "apoios": [
+            {
+              "linha": "taxa-de-desemprego-mip-2025",
+              "campo": "excerpt",
+              "literal": "Age class: From 15 to 74 years"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado",
+      "origens": [
+        "pdm-divida-publica",
+        "painel-pdm",
+        "eurostat-tipsgo10-descricao",
+        "eurostat-tipsna40-descricao"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo",
+          "pt": "As contas do Estado",
+          "en": "The state’s accounts",
+          "partes": [
+            {
+              "pt": "As contas do Estado",
+              "en": "The state’s accounts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025",
+                  "campo": "document.title",
+                  "literal": "General government gross debt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[0]",
+          "pt": "A dívida pública ",
+          "en": "Public debt ",
+          "partes": [
+            {
+              "pt": "A dívida pública ",
+              "en": "Public debt ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "general government sector debt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[1].menor[0]",
+          "pt": "desceu",
+          "en": "fell",
+          "partes": [
+            {
+              "pt": "desceu",
+              "en": "fell",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[1].maior[0]",
+          "pt": "subiu",
+          "en": "rose",
+          "partes": [
+            {
+              "pt": "subiu",
+              "en": "rose",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[1].igual[0]",
+          "pt": "não mudou",
+          "en": "did not change",
+          "partes": [
+            {
+              "pt": "não mudou",
+              "en": "did not change",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[2]",
+          "pt": " de ",
+          "en": " from ",
+          "partes": [
+            {
+              "pt": " de ",
+              "en": " from ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[4]",
+          "pt": " para ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[6]",
+          "pt": " e está acima da média da União. Para a Comissão Europeia, uma dívida acima de ",
+          "en": " and is above the Union average. For the European Commission, debt above ",
+          "partes": [
+            {
+              "pt": " e está acima da média da União.",
+              "en": " and is above the Union average.",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            },
+            {
+              "pt": " Para a Comissão Europeia, uma dívida acima de ",
+              "en": " For the European Commission, debt above ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "general government sector debt in % of GDP with a threshold of 60%."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[8]",
+          "pt": " % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.",
+          "en": " % of GDP is a sign of a possible imbalance, and Portugal’s is above it.",
+          "partes": [
+            {
+              "pt": " % do PIB",
+              "en": " % of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "in % of GDP"
+                }
+              ]
+            },
+            {
+              "pt": " é sinal de possível desequilíbrio,",
+              "en": " is a sign of a possible imbalance,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "painel-pdm",
+                  "campo": "excerto",
+                  "literal": "indicative thresholds, covering the major sources of macroeconomic imbalances"
+                }
+              ]
+            },
+            {
+              "pt": " e a de Portugal está acima.",
+              "en": " and Portugal’s is above it.",
+              "classe": "conta",
+              "guarda": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.legenda[0]",
+          "pt": "% do PIB",
+          "en": "% of GDP",
+          "partes": [
+            {
+              "pt": "% do PIB",
+              "en": "% of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[0].titulo",
+          "pt": "Portugal",
+          "en": "Portugal",
+          "partes": [
+            {
+              "pt": "Portugal",
+              "en": "Portugal",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025",
+                  "campo": "excerpt",
+                  "literal": "— Portugal —"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo",
+          "pt": "A União",
+          "en": "The Union",
+          "partes": [
+            {
+              "pt": "A União",
+              "en": "The Union",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.revisao-do-ine[0]",
+          "pt": "A notificação do INE de ",
+          "en": "INE’s notification of ",
+          "partes": [
+            {
+              "pt": "A notificação do INE de ",
+              "en": "INE’s notification of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-notificacao-ine-2026-09",
+                  "campo": "document.title",
+                  "literal": "Procedimento dos Défices Excessivos 2ª Notificação"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.revisao-do-ine[2]",
+          "pt": " já revê a dívida de ",
+          "en": " already revises the ",
+          "partes": [
+            {
+              "pt": " já revê",
+              "en": " already revises",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            },
+            {
+              "pt": " a dívida de ",
+              "en": " the ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-notificacao-ine-2026-09",
+                  "campo": "excerpt",
+                  "literal": "A dívida bruta das AP"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.revisao-do-ine[4]",
+          "pt": " para ",
+          "en": " debt to ",
+          "partes": [
+            {
+              "pt": "",
+              "en": " debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-notificacao-ine-2026-09",
+                  "campo": "excerpt",
+                  "literal": "A dívida bruta das AP"
+                }
+              ]
+            },
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "pecas.revisao-do-ine[6]",
+          "pt": " do PIB.",
+          "en": " of GDP.",
+          "partes": [
+            {
+              "pt": " do PIB.",
+              "en": " of GDP.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-notificacao-ine-2026-09",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva",
+          "pt": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "en": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+          "partes": [
+            {
+              "pt": "É tudo o que as administrações públicas devem,",
+              "en": "It is everything general government owes,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsgo10-descricao",
+                  "campo": "excerto",
+                  "literal": "debt means total gross debt"
+                },
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "general government sector debt"
+                }
+              ]
+            },
+            {
+              "pt": " em percentagem do PIB,",
+              "en": " as a percentage of GDP,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pdm-divida-publica",
+                  "campo": "excerto",
+                  "literal": "in % of GDP"
+                }
+              ]
+            },
+            {
+              "pt": " o valor de tudo o que o país produz num ano.",
+              "en": " the value of everything the country produces in a year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "GDP measures the value of total final output of goods and services produced by an economy within a certain period of time."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
+    },
+    {
+      "id": "pobreza",
+      "origens": [
+        "glossario-arope",
+        "glossario-s80s20",
+        "eurostat-tipslc10-descricao",
+        "eurostat-glossario-mediana"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo",
+          "pt": "Pobreza e desigualdade não são a mesma coisa",
+          "en": "Poverty and inequality are not the same thing",
+          "partes": [
+            {
+              "pt": "Pobreza",
+              "en": "Poverty",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "At risk of poverty or social exclusion"
+                }
+              ]
+            },
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "liga"
+            },
+            {
+              "pt": "desigualdade",
+              "en": "inequality",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "a measure of the inequality of income distribution"
+                }
+              ]
+            },
+            {
+              "pt": " não são a mesma coisa",
+              "en": " are not the same thing",
+              "classe": "conta",
+              "guarda": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[0]",
+          "pt": "Em ",
+          "en": "In ",
+          "partes": [
+            {
+              "pt": "Em ",
+              "en": "In ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[2]",
+          "pt": ", a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União. Mas os ",
+          "en": ", the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union. But the ",
+          "partes": [
+            {
+              "pt": ", a parte das pessoas em risco de pobreza ou exclusão social",
+              "en": ", the share of people at risk of poverty or social exclusion",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "The AROPE rate is the share of the total population which is at risk of poverty or social exclusion."
+                }
+              ]
+            },
+            {
+              "pt": " era menor em Portugal do que na União.",
+              "en": " was smaller in Portugal than in the Union.",
+              "classe": "conta",
+              "guarda": [
+                1
+              ]
+            },
+            {
+              "pt": " Mas os ",
+              "en": " But the ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[4]",
+          "pt": " % com mais rendimento recebiam ",
+          "en": " % with the highest income received ",
+          "partes": [
+            {
+              "pt": " % com mais rendimento recebiam ",
+              "en": " % with the highest income received ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[6]",
+          "pt": " vezes o que recebiam os ",
+          "en": " times what the ",
+          "partes": [
+            {
+              "pt": " vezes o que recebiam os ",
+              "en": " times what the ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "frase[8]",
+          "pt": " % com menos, contra ",
+          "en": " % with the lowest income received, against ",
+          "partes": [
+            {
+              "pt": " % com menos,",
+              "en": " % with the lowest income received,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+                }
+              ]
+            },
+            {
+              "pt": " contra ",
+              "en": " against ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "frase[10]",
+          "pt": " na União.",
+          "en": " in the Union.",
+          "partes": [
+            {
+              "pt": " na União.",
+              "en": " in the Union.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "racio-s80-s20-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[0].titulo",
+          "pt": "Em risco de pobreza ou exclusão social, % das pessoas",
+          "en": "At risk of poverty or social exclusion, % of people",
+          "partes": [
+            {
+              "pt": "Em risco de pobreza ou exclusão social, % das pessoas",
+              "en": "At risk of poverty or social exclusion, % of people",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "The AROPE rate is the share of the total population which is at risk of poverty or social exclusion."
+                },
+                {
+                  "linha": "risco-de-pobreza-ou-exclusao-2025",
+                  "campo": "excerpt",
+                  "literal": "Percentage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo[0]",
+          "pt": "Quantas vezes o rendimento dos ",
+          "en": "How many times the income of the top ",
+          "partes": [
+            {
+              "pt": "Quantas vezes o rendimento dos ",
+              "en": "How many times the income of the top ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo[2]",
+          "pt": " % de cima é o dos ",
+          "en": " % is that of the bottom ",
+          "partes": [
+            {
+              "pt": " % de cima é o dos ",
+              "en": " % is that of the bottom ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo[4]",
+          "pt": " % de baixo",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " % de baixo",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-s80s20",
+                  "campo": "excerto",
+                  "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[0]",
+          "pt": "O risco de pobreza mede-se contra o rendimento de cada país: é ter menos de ",
+          "en": "The risk of poverty is measured against each country’s own income: it means having less than ",
+          "partes": [
+            {
+              "pt": "O risco de pobreza mede-se contra o rendimento de cada país: é ter menos de ",
+              "en": "The risk of poverty is measured against each country’s own income: it means having less than ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslc10-descricao",
+                  "campo": "excerto",
+                  "literal": "At risk-of-poverty are persons with an equalised disposable income below the risk-of-poverty threshold, which is set at 60 % of the national median equalised disposable income"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[2]",
+          "pt": " % do rendimento mediano, o do meio.",
+          "en": " % of the median income, the one in the middle.",
+          "partes": [
+            {
+              "pt": " % do rendimento mediano, o do meio.",
+              "en": " % of the median income, the one in the middle.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipslc10-descricao",
+                  "campo": "excerto",
+                  "literal": "national median equalised disposable income"
+                },
+                {
+                  "origem": "eurostat-glossario-mediana",
+                  "campo": "excerto",
+                  "literal": "The median is the middle value in a group of numbers ranked in order of size."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": [
+        {
+          "caminho": "frase[3]",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+            }
+          ]
+        },
+        {
+          "caminho": "frase[7]",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo[1]",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+            }
+          ]
+        },
+        {
+          "caminho": "desenho.paineis[1].titulo[3]",
+          "nl": "20",
+          "apoios": [
+            {
+              "origem": "glossario-s80s20",
+              "campo": "excerto",
+              "literal": "It is calculated as the ratio of total income received by the 20 % of the population with the highest income (the top quintile) to that received by the 20 % of the population with the lowest income (the bottom quintile)."
+            }
+          ]
+        },
+        {
+          "caminho": "ressalva[1]",
+          "nl": "60",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslc10-descricao",
+              "campo": "excerto",
+              "literal": "which is set at 60 % of the national median"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
