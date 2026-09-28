@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { conferirValorUnidade } from './valor-unidade.mjs';
+import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -485,6 +487,7 @@ let paginasDoLivro = 0;
 /* Os títulos das páginas de linha conferidos pela célula do espaço entre o valor
    e a unidade (bloco R1, 23.09.2026, I143), e os que colavam os dois. */
 let titulosDeLinhaConferidos = 0;
+let cartoesComUnidadeConferidos = 0;
 /** Valores auditados pela regra do selo, e quantos ficaram sem ele (sempre 0: falha). */
 let valoresAuditados = 0;
 let valoresSemSelo = 0;
@@ -2539,6 +2542,8 @@ const CAMPOS_DA_LINHA = new Set([
  * a entrada à posição que ela diz ser e não à ordem em que foi rendida. Os dois
  * campos escritos são a data e, numa entrada `diverge`, o valor encontrado.
  */
+
+
 const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
 
 /**
@@ -2580,8 +2585,8 @@ const RESUMO_CURTO_GATE = 12;
 const ROTULO_DE_QUEM_RELEU = {
   pt: {
     'leitura-independente': 'leitura independente',
-    'painel-semanal': 'reconferência semanal do painel',
-    'revisao-cruzada': 'revisão cruzada',
+    'painel-semanal': 'comparação semanal com a fonte',
+    'revisao-cruzada': 'comparação numa segunda revisão',
     /* O corredor diário confere o FICHEIRO da fonte, não o valor: o rótulo
        di-lo, para que uma reconferência dele não se leia como uma releitura do
        número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. Esta tabela é a
@@ -2590,22 +2595,22 @@ const ROTULO_DE_QUEM_RELEU = {
   },
   en: {
     'leitura-independente': 'independent reading',
-    'painel-semanal': 'weekly panel re-check',
-    'revisao-cruzada': 'cross-family review',
+    'painel-semanal': 'weekly comparison with the source',
+    'revisao-cruzada': 'comparison in a second review',
     'corredor-diario': 'daily check of the source file',
   },
 };
 
 const ROTULO_DO_RESULTADO = {
   pt: {
-    igual: 'o mesmo valor',
-    diverge: 'valor diferente:',
-    inacessivel: 'fonte inacessível nesse dia',
+    igual: 'igual à fonte',
+    diverge: 'a releitura encontrou:',
+    inacessivel: 'sem valor lido',
   },
   en: {
-    igual: 'the same value',
-    diverge: 'a different value:',
-    inacessivel: 'source unreachable that day',
+    igual: 'matches the source',
+    diverge: 'the re-read found:',
+    inacessivel: 'no value read',
   },
 };
 
@@ -2740,7 +2745,7 @@ function campoDaLinha(claim, campo, lang) {
       const v = campo.match(CAMPO_DE_VERIFICACAO);
       if (v) {
         const entrada = (claim.verifications ?? [])[Number(v[1])];
-        return entrada ? (entrada[v[2]] ?? null) : null;
+        return entrada ? (v[2] === 'found' ? valorRelidoAqui(entrada.found, lang) : (entrada[v[2]] ?? null)) : null;
       }
       const k = campo.match(CAMPO_DO_CALCULO);
       if (k) {
@@ -4380,31 +4385,13 @@ for (const file of ficheirosHtml(DIST)) {
     } else {
       linhasConstruidas.add(`${rota.lang}:${claimDaPagina.id}`);
     }
-    /* O VALOR E A UNIDADE DO TÍTULO, SEPARADOS NO TEXTO DA PÁGINA (bloco R1,
-       23.09.2026, I143). A leitura de fora ouviu «175pessoas»: o `<h1>` juntava
-       o valor e a unidade sem nada no meio, e a folha separava-os com o `gap`
-       de um `flex`, que um leitor de ecrã e quem copia o título não veem. O que
-       se exige é texto: entre o fim do valor e o começo da unidade, dentro do
-       título, pelo menos um espaço. Não se compara o valor com a linha aqui
-       (isso é a regra do `data-claim`); compara-se o que há ENTRE os dois. */
-    const titulo = root.querySelector('h1.linha-valor');
-    const valorDoTitulo = titulo?.querySelector('[data-claim]');
-    const unidadeDoTitulo = titulo?.querySelector('[data-linha-campo="unit"]');
-    if (titulo && valorDoTitulo && unidadeDoTitulo) {
-      titulosDeLinhaConferidos++;
-      const todo = decodeEntities(textoDe(titulo, { separador: '' }));
-      const valor = decodeEntities(textoDe(valorDoTitulo, { separador: '' }));
-      const unidade = decodeEntities(textoDe(unidadeDoTitulo, { separador: '' }));
-      const fimDoValor = todo.indexOf(valor) + valor.length;
-      const inicioDaUnidade = todo.indexOf(unidade, fimDoValor);
-      if (todo.indexOf(valor) < 0 || inicioDaUnidade < 0 || !/\s/.test(todo.slice(fimDoValor, inicioDaUnidade))) {
-        err(
-          `o título desta página de linha cola o valor à unidade: «${todo.trim()}». Um leitor de ` +
-            `ecrã lê uma palavra só; escreva um espaço entre os dois (bloco R1, I143).`,
-        );
-      }
-    }
   }
+  /* C1: a I143 abrange também todos os cartões, qualquer que seja a família. */
+  const separacao = conferirValorUnidade(root);
+  titulosDeLinhaConferidos += separacao.contas.titulos;
+  cartoesComUnidadeConferidos += separacao.contas.cartoes;
+  for (const erro of separacao.erros) err(erro);
+  if (claimDaPagina) for (const erro of [...conferirVerificacaoLegivel(root, claimDaPagina, linguaPagina), ...conferirHistoricoLegivel(root, claimDaPagina)]) err(erro);
 
   /* O endereço diz de que língua é a página; o <html lang> tem de concordar.
      Sem isto, uma edição inglesa construída com as palavras portuguesas passava
@@ -5584,10 +5571,11 @@ for (const file of ficheirosHtml(DIST)) {
   };
   for (const el of body.querySelectorAll('[data-correcao-claim]')) {
     const id = el.getAttribute('data-correcao-claim');
-    const n = Number(el.getAttribute('data-correcao-n'));
+    const indices = String(el.getAttribute('data-correcao-grupo') ?? el.getAttribute('data-correcao-n')).split(' ').map(Number);
     const campo = el.getAttribute('data-correcao-campo');
     aRemover.push(el);
 
+    for (const n of indices) {
     const modo = CAMPOS_CORRECAO[campo];
     if (!modo) {
       err(
@@ -5674,15 +5662,18 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    const esperado = String(corr[campo]);
+    const nomesDoCampo = { pt: { source: 'publicador', source_url: 'endereço da fonte', 'document.title': 'documento', 'document.edition': 'edição', 'document.locator': 'local no documento', access_date: 'dia da leitura', excerpt: 'excerto da fonte' }, en: { source: 'publisher', source_url: 'source address', 'document.title': 'document', 'document.edition': 'edition', 'document.locator': 'place in the document', access_date: 'reading date', excerpt: 'source excerpt' } };
+    const esperado = campo === 'field' ? nomesDoCampo[linguaPagina]?.[corr.field] : String(corr[campo]);
 
-    /* Um endereço é texto, não uma sequência de algarismos: numa revisão de
-       proveniência os dois valores comparam-se carácter a carácter. */
+    /* Um endereço é texto, não uma sequência de algarismos. Só access_date
+       muda para a forma da casa, reconstituída pela conferência independente;
+       os outros campos continuam comparados carácter a carácter. */
     if (corr.kind === 'proveniencia' && (campo === 'old_value' || campo === 'new_value')) {
-      if (renderizado !== normalizeWhitespace(esperado)) {
+      const valor = conferirValorDeProveniencia(corr, campo, renderizado);
+      if (!valor.confere) {
         err(
           `no registo, "${campo}" da revisão de proveniência #${n + 1} de "${id}" não é o do ` +
-            `livro-razão.\n      esperado:    ${normalizeWhitespace(esperado).slice(0, 120)}\n` +
+            `livro-razão.\n      esperado:    ${valor.esperado.slice(0, 120)}\n` +
             `      renderizado: ${renderizado.slice(0, 120)}`,
         );
       }
@@ -5719,6 +5710,8 @@ for (const file of ficheirosHtml(DIST)) {
       );
     }
   }
+
+  } // Cada campo comum foi conferido contra todas as entradas do grupo.
 
   /**
    * -------------------------------------------------------------------------
@@ -5902,7 +5895,8 @@ for (const file of ficheirosHtml(DIST)) {
     const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
       ? normalizeWhitespace(decodeEntities(textoDe(el)))
       : textoTranscrito(el);
-    if (renderizado !== normalizeWhitespace(String(esperado))) {
+    const relido = conferirCampoRelido(el, claim, linguaPagina);
+    if (relido ? !relido.confere : renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +
           `      no livro-razão: ${normalizeWhitespace(String(esperado)).slice(0, 150)}\n` +
@@ -6349,11 +6343,12 @@ for (const file of ficheirosHtml(DIST)) {
           );
         }
         const marcaResultado = el.querySelector('[data-linha-verificacao-resultado]');
-        const base = ROTULO_DO_RESULTADO[lingua][entrada.result];
+        const posterior = entrada.result === 'igual' ? (claimDaPagina.corrections ?? []).map((c,i) => ({...c,i})).filter(c => ['atualizacao','correcao'].includes(c.kind) && c.date > entrada.date).sort((a,b) => a.date.localeCompare(b.date) || a.i-b.i)[0] : null;
+        const base = posterior ? (lingua === 'en' ? 'confirmed the previous value: ' : 'confirmou o valor anterior: ') + posterior.old_value : ROTULO_DO_RESULTADO[lingua][entrada.result];
         /* Numa divergência o rótulo leva o valor encontrado: o leitor tem de
            ver o que a fonte imprimiu, e não só que imprimiu outra coisa. */
         const esperadoResultado =
-          entrada.result === 'diverge' ? `${base} ${entrada.found}` : base;
+          entrada.result === 'diverge' ? `${base} ${valorRelidoAqui(entrada.found, lingua)}` : base;
         const lidoResultado = marcaResultado
           ? normalizeWhitespace(textoTranscrito(marcaResultado))
           : null;
@@ -8035,6 +8030,7 @@ if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
     msg: 'a célula do espaço no título do recibo não conferiu título nenhum: o seletor deixou de ver o <h1> das páginas de linha.',
   });
 }
+if (cartoesComUnidadeConferidos === 0) erros.push({ rel: '/temas', msg: 'I143/I158: a célula não conferiu cartão nenhum.' });
 if (paginasDoLivro !== LANGS.length) {
   erros.push({
     rel: routePath('livro', 'pt'),

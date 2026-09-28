@@ -457,3 +457,28 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | rp1c | Doze cadeias antigas saem e doze cadeias rendidas entram | por ler pelo lugar de direção antes de aterrar | A terceira redação muda o RSI e as pensões; a nota da fonte passa a render-se entre parênteses, também na leitura da disparidade salarial; a preposição dos trimestres acompanha a forma do período. Só se substituem as declarações que deixaram de se render, sem alargar a procura nem as classes. As palavras e as origens continuam conferidas pela K17, e a preposição pela F1. |
+
+## C1 · as correções de confiança, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1 | Duas cadeias novas e duas retiradas; rótulos do recibo e portas dos ficheiros registados em prosa | por ler pelo lugar de direção antes de aterrar | Codex gpt-6-astra, 28.09.2026: a quarta redação corrige a concordância das rendas na edição portuguesa e a expressão das pensões na inglesa. Entram apenas as cadeias recolhidas pelo `medir-defeitos.mjs --json` na construção preparatória. As duas anteriores, já publicadas no RP1, ficam retiradas com razão, em vez de desaparecerem do histórico. As cadeias curtas que continuam a render-se conservam o estado. Os novos rótulos de verificação pertencem aos recibos, fora das rotas do inventário, e ficam nomeados em prosa; a ligação à atualização fica declarada como condicional, sem afirmar uma ocorrência que esta entrega não tem. As portas dos ficheiros dos concelhos são navegação dentro de ligações. A K17 conserva a conferência integral das leituras dos temas, sem alargar a peneira da voz nem dispensar origens. |
+
+
+## C1c · passagem de correção, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1c | Seis cadeias novas e duas contagens retiradas | por ler pelo lugar de direção antes de aterrar | As cadeias novas dizem a bandeira provisória, a definição do índice municipal e a contagem efetiva de revisões de proveniência. A frase inglesa do índice evita fazer reaparecer o cabeçalho retirado «Revenue collected», conservando o sentido do literal da DGAL. As duas contagens antigas deixam de se render. A retoma inclui a proveniência do acesso europeu na contagem efetiva. Os rótulos dos recibos ficam documentados em prosa, sem alargar as rotas do inventário. As leituras do BCE e do câmbio continuam conferidas pela K17. |
+
+## C1d · segunda passagem de correção, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1d | Contagens atualizadas, marca estimada e frases dos recibos | por ler pelo lugar de direção antes de aterrar | Codex gpt-6-astra aplica os achados de `design/especime-v3/critica/LEITURA-c1c-2026-09-28.md`: retira as contagens substituídas, declara a marca estimada nas superfícies onde já se mostra a provisória e regista em prosa os rótulos dos recibos, fora das rotas do inventário. A prova das cadeias vivas e das retiradas continua no portão da voz, sem mudar as rotas ou alargar a peneira. |
+
+## C1f · os acessos do PRR reconstituídos, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1f | Duas contagens novas e duas retiradas | por ler pelo lugar de direção antes de aterrar | A reconstituição dos acessos acrescenta dez entradas de proveniência, provadas pelos diffs do Git. As duas contagens do inventário passam de 44 a 54; as anteriores ficam retiradas com a razão. A classe das frases e as rotas do portão da voz mantêm-se. |

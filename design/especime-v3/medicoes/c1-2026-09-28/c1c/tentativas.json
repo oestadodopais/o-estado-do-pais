@@ -1,0 +1,67 @@
+[
+  {
+    "pasta": "tentativa-7a97bfbe",
+    "portoes": {
+      "build": {
+        "codigo": 1,
+        "cabeca": "7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6",
+        "inicio": "2026-09-28T15:08:14.398569+00:00",
+        "fim": "2026-09-28T15:13:24.595526+00:00"
+      }
+    },
+    "nomes_de_lei_sem_lingua": 1
+  },
+  {
+    "pasta": "tentativa-7aeb6e54",
+    "portoes": {
+      "build": {
+        "codigo": 0,
+        "cabeca": "7aeb6e543b5dc8611e39cccdbae0795acd28fdef",
+        "inicio": "2026-09-28T15:14:35.684335+00:00",
+        "fim": "2026-09-28T15:19:50.624482+00:00"
+      },
+      "verify": {
+        "codigo": 1,
+        "cabeca": "7aeb6e543b5dc8611e39cccdbae0795acd28fdef",
+        "inicio": "2026-09-28T15:20:03.413232+00:00",
+        "fim": "2026-09-28T15:27:00.408956+00:00"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "cabeca": "7aeb6e543b5dc8611e39cccdbae0795acd28fdef",
+        "inicio": "2026-09-28T15:14:26.487112+00:00",
+        "fim": "2026-09-28T15:14:26.762978+00:00"
+      }
+    },
+    "datas_iso_por_formatar": 8
+  },
+  {
+    "pasta": "tentativa-93f0477b",
+    "portoes": {
+      "build": {
+        "codigo": 1,
+        "cabeca": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+        "inicio": "2026-09-28T14:32:55.150303+00:00",
+        "fim": "2026-09-28T14:32:56.433824+00:00"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "cabeca": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+        "inicio": "2026-09-28T14:39:43.917882+00:00",
+        "fim": "2026-09-28T14:39:44.196406+00:00"
+      }
+    }
+  },
+  {
+    "pasta": "tentativa-aa8f6ff1",
+    "portoes": {
+      "build": {
+        "codigo": 1,
+        "cabeca": "aa8f6ff13575af523d68d3263b0a190a4cb1d87d",
+        "inicio": "2026-09-28T15:01:50.990748+00:00",
+        "fim": "2026-09-28T15:06:22.808510+00:00"
+      }
+    },
+    "travessoes_em_nomes_transcritos": 4
+  }
+]

@@ -1,0 +1,22 @@
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 3009 afirmações[0m
+
+[31m  O LIVRO-RAZÃO NÃO PASSA — 10 erro(s):[0m
+
+    [31m✗[0m [evora-prr-aprovado-2026.yml] história de "source_url" a 2026-08-18: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-aprovado-2026.yml] história de "source_url" a 2026-08-20: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-municipio-contratado.yml] história de "source_url" a 2026-08-18: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-municipio-contratado.yml] história de "source_url" a 2026-08-20: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-pago-2026.yml] história de "source_url" a 2026-08-18: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-pago-2026.yml] história de "source_url" a 2026-08-20: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-universidade-contratado.yml] história de "source_url" a 2026-08-18: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-universidade-contratado.yml] história de "source_url" a 2026-08-20: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-vencido-aprovado-2026.yml] história de "source_url" a 2026-08-18: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+    [31m✗[0m [evora-prr-vencido-aprovado-2026.yml] história de "source_url" a 2026-08-20: cadeia contraditória; "old_value" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1.
+
+  Nada é construído enquanto isto não estiver resolvido.
+  Um campo que não se conhece escreve-se "[a verificar]". Nunca se inventa um valor plausível.
+

@@ -45,12 +45,12 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
-import Marcador from '../components/Marcador.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import {
   getClaim,
+  parsePtNumber,
   camposPorVerificar,
   provenienciaIncompleta,
   eDaCasa,
@@ -295,6 +295,14 @@ const recorteAlt = recorte
  * linha: é por ele que o portão a vai buscar, e não pela ordem em que aparece.
  */
 const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS);
+const mudancaPosterior = (v) => v.result === 'igual' ? (claim.corrections ?? []).map((c, n) => ({ ...c, n })).filter(c => ['atualizacao', 'correcao'].includes(c.kind) && c.date > v.date).sort((a,b) => a.date.localeCompare(b.date) || a.n-b.n)[0] : null;
+/* C1: a divergência leva à atualização que regista o mesmo valor encontrado. */
+const numeroDaReleitura = (v) => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
+const atualizacaoDaReleitura = (v) => v.result === 'diverge'
+  ? (claim.corrections ?? []).findIndex(e => e.kind === 'atualizacao' && e.date >= v.date
+      && numeroDaReleitura(e.new_value) === numeroDaReleitura(v.found))
+  : -1;
+
 
 /**
  * O estado da fonte desta linha: desde quando é que o endereço não responde.
@@ -1417,9 +1425,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           {
             verificacoes.length === 0 ? (
               <>
-                <dt>{s.livro.linha.reconferidoK}</dt>
+                <dt>{s.livro.linha.segundaLeituraVaziaK}</dt>
                 <dd>
-                  <Marcador lang={lang} />{' '}
+                  <span data-sem-segunda-leitura>{derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
                   <a href={`${routePath('metodo', lang)}#releitura`}>
                     {s.livro.linha.releituraPorta} →
                   </a>
@@ -1428,7 +1436,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             ) : (
               verificacoes.map((v) => (
                 <>
-                  <dt>{s.livro.linha.reconferidoK}</dt>
+                  <dt>{v.result === 'inacessivel' ? s.livro.linha.tentativaDeLeituraK : v.by === 'corredor-diario' ? s.livro.linha.ficheiroRelidoK : s.livro.linha.segundaLeituraK}</dt>
                   {/* Os atributos crus vão a par dos rótulos: o portão compara
                       os primeiros com o livro-razão e os segundos com a sua
                       própria cópia da tabela de rótulos. */}
@@ -1444,11 +1452,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                       valor={v.date}
                       lang={lang}
                     />
-                    {' · '}
-                    <span data-linha-verificacao-por>{s.livro.linha.verificacaoPor[v.by]}</span>
-                    {' · '}
+                    {', '}
                     <span data-linha-verificacao-resultado>
-                      {s.livro.linha.verificacaoResultado[v.result]}
+                      {mudancaPosterior(v) ? <>{s.livro.linha.confirmouAnterior}{' '}<span data-valor-anterior-confirmado data-correcao-claim={id} data-correcao-n={String(mudancaPosterior(v).n)} data-correcao-campo="old_value">{mudancaPosterior(v).old_value}</span></> : s.livro.linha.verificacaoResultado[v.result]}
                       {v.result === 'diverge' && (
                         <>
                           {' '}
@@ -1460,7 +1466,16 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                           />
                         </>
                       )}
-                    </span>{' '}
+                    </span>{' · '}
+                    <span data-linha-verificacao-por>{s.livro.linha.verificacaoPor[v.by]}</span>{' '}
+                    {v.result === 'diverge' && parsePtNumber(v.found) !== parsePtNumber(claim.value) && (
+                      <span data-valor-em-uso>{s.livro.linha.valorEmUso}</span>
+                    )}{' '}
+                    {atualizacaoDaReleitura(v) >= 0 && (
+                      <a data-atualizacao-da-releitura href={`#alteracao-${atualizacaoDaReleitura(v)}`}>
+                        {s.livro.linha.verAtualizacao}
+                      </a>
+                    )}
                     {/* O QUE FOI LIDO, quando não foi a fonte viva (Major 9).
                         Uma conferência contra `web.archive.org` prova que os
                         bytes da CÓPIA continuam a dar o resumo que a linha

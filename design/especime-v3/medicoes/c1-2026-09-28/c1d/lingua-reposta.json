@@ -1,0 +1,12 @@
+{
+  "ficheiro": "src/i18n/lingua-dos-titulos.mjs",
+  "base": "a677770f",
+  "identico": true,
+  "sha256": "1a4b14931237275cd7e80e2996e90e3e6b64ffe8d822c9f3c595f0f181c07cde",
+  "campos": [
+    "document.title",
+    "source",
+    "document.edition"
+  ],
+  "linha_inteira_inalterada_neste_acerto": true
+}

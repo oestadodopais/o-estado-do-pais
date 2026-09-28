@@ -5,7 +5,17 @@
  * (`design/observatorio/leituras/LEITURAS-das-medidas-2026-09-24.mjs`, o cabeçalho)
  * ===========================================================================
  *
- * A TERCEIRA REDAÇÃO (26.09.2026 ao fim da tarde, a peça RP1c), depois da leitura a
+ * A QUINTA REDAÇÃO (28.09.2026, a peça C1c), depois da leitura a frio do C1 (achado 9:
+ * nenhum cartão dos preços dizia se a inflação é alta ou baixa): o cartão do IHPC ganha a
+ * referência declarada do objetivo do Banco Central Europeu (2 % a médio prazo, no conjunto
+ * da zona do euro, medido pelo IHPC), dita como o objetivo da zona do euro que é, e não como
+ * um juízo sobre Portugal; o cartão da inflação total diz que esse objetivo se mede no outro
+ * índice e remete para ele. A QUARTA REDAÇÃO (28.09.2026, a peça C1), depois da segunda leitura a frio do Opus
+ * (`design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md`, achados 7 e 10): a frase da
+ * inflação entra no ramo do sinal (subida, descida, ou nenhuma quando é zero), a comparação
+ * do IHPC com a União fala da «variação» e não da «subida», as rendas ganham a sua própria
+ * concordância («acima das de há um ano»), e a pensão em inglês diz «across». A TERCEIRA
+ * REDAÇÃO (26.09.2026 ao fim da tarde, a peça RP1c), depois da leitura a
  * frio do Claude Opus 5.5 (`design/especime-v3/critica/LEITURA-rp1-2026-09-26.md`):
  * a leitura do RSI volta a dizer a quem é o apoio e o que é a idade ativa, e a das
  * pensões apoia os três tipos nas categorias da própria resposta do INE; o acerto
@@ -65,6 +75,24 @@ const HA_UM_ANO_EN = (o_que) => ({ sinal: {
   negativo: ['In ', { periodo: 'proprio' }, ' ', o_que, ' ', { claim: 'proprio', sufixo: ' %' }, ' compared with a year earlier, that is, below.'],
   zero: ['In ', { periodo: 'proprio' }, ' ', o_que, ' at the same level as a year earlier.'],
 } });
+/* A inflação: a frase que diz o que é entra em cada ramo do sinal, porque uma inflação
+   negativa é uma descida e não uma subida (a I159). */
+const INFLACAO_PT = { sinal: {
+  positivo: ['Em ', { periodo: 'proprio' }, ' ', 'os preços no consumidor estavam, em média,', ' ', { claim: 'proprio', sufixo: ' %' }, ' acima dos de há um ano.', ' É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.'],
+  negativo: ['Em ', { periodo: 'proprio' }, ' ', 'os preços no consumidor estavam, em média,', ' ', { claim: 'proprio', sufixo: ' %' }, ' face aos de há um ano, ou seja, abaixo deles.', ' É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.'],
+  zero: ['Em ', { periodo: 'proprio' }, ' ', 'os preços no consumidor estavam, em média,', ' ao mesmo nível de há um ano.', ' O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram.'],
+} };
+const INFLACAO_EN = { sinal: {
+  positivo: ['In ', { periodo: 'proprio' }, ' ', 'consumer prices were, on average,', ' ', { claim: 'proprio', sufixo: ' %' }, ' above a year earlier.', ' That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.'],
+  negativo: ['In ', { periodo: 'proprio' }, ' ', 'consumer prices were, on average,', ' ', { claim: 'proprio', sufixo: ' %' }, ' compared with a year earlier, that is, below.', ' That is the general fall in prices, which the INE measures on a basket of goods and services that represents what households buy.'],
+  zero: ['In ', { periodo: 'proprio' }, ' ', 'consumer prices were, on average,', ' at the same level as a year earlier.', ' The INE measures them on a basket of goods and services that represents what households buy.'],
+} };
+/* As rendas: a concordância no feminino (a I160). */
+const HA_UM_ANO_PT_F = (o_que) => ({ sinal: {
+  positivo: ['Em ', { periodo: 'proprio' }, ' ', o_que, ' ', { claim: 'proprio', sufixo: ' %' }, ' acima das de há um ano.'],
+  negativo: ['Em ', { periodo: 'proprio' }, ' ', o_que, ' ', { claim: 'proprio', sufixo: ' %' }, ' face às de há um ano, ou seja, abaixo delas.'],
+  zero: ['Em ', { periodo: 'proprio' }, ' ', o_que, ' ao mesmo nível das de há um ano.'],
+} });
 /* As médias dos doze meses: o verbo pelo sinal, sem pressupor uma subida. */
 const MEDIA_PT = { sinal: { positivo: ['subiram ', { claim: 'proprio', sufixo: ' %' }], negativo: ['variaram ', { claim: 'proprio', sufixo: ' %' }], zero: ['não variaram'] } };
 const MEDIA_EN = { sinal: { positivo: ['rose ', { claim: 'proprio', sufixo: ' %' }], negativo: ['changed by ', { claim: 'proprio', sufixo: ' %' }], zero: ['did not change'] } };
@@ -72,8 +100,8 @@ const MEDIA_EN = { sinal: { positivo: ['rose ', { claim: 'proprio', sufixo: ' %'
 export const LEITURAS_RP1 = {
   /* ------------------------------------------------- 1 · Economia e finanças públicas: os preços no consumidor */
   'ipc-variacao-homologa': {
-    pt: [HA_UM_ANO_PT('os preços no consumidor estavam, em média,'), ' É a inflação: o INE mede-a num cabaz de bens e serviços que representa o que as famílias compram.', SUBIDA_MES_PT],
-    en: [HA_UM_ANO_EN('consumer prices were, on average,'), ' That is inflation: the INE measures it on a basket of goods and services that represents what households buy.', SUBIDA_MES_EN],
+    pt: [INFLACAO_PT, SUBIDA_MES_PT, ' O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia.'],
+    en: [INFLACAO_EN, SUBIDA_MES_EN, ' The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card.'],
   },
   'ipc-variacao-media-12-meses': {
     pt: ['Na média dos doze meses até ', { periodo: 'proprio' }, ', os preços no consumidor ', MEDIA_PT, ' face aos doze meses anteriores: é a inflação média de um ano, que amortece as subidas e descidas de cada mês.', SUBIDA_MES_PT],
@@ -92,13 +120,13 @@ export const LEITURAS_RP1 = {
     en: [HA_UM_ANO_EN('the prices of fuels and lubricants for vehicles were'), SUBIDA_MES_EN],
   },
   'ihpc-variacao-homologa': {
-    pt: [HA_UM_ANO_PT('os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,'), uniao('A subida é maior do que a da média da União Europeia.', 'A subida é menor do que a da média da União Europeia.', 'A subida é igual à da média da União Europeia.')],
-    en: [HA_UM_ANO_EN('prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,'), uniao('The rise is larger than the European Union average.', 'The rise is smaller than the European Union average.', 'The rise is the same as the European Union average.')],
+    pt: [HA_UM_ANO_PT('os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia,'), uniao('A variação é maior do que a da média da União Europeia.', 'A variação é menor do que a da média da União Europeia.', 'A variação é igual à da média da União Europeia.'), ' O Banco Central Europeu procura uma inflação de ', { referencia: 'unico' }, ' % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.'],
+    en: [HA_UM_ANO_EN('prices in Portugal were, on the harmonised measure used to compare the countries of the European Union,'), uniao('The change is larger than the European Union average.', 'The change is smaller than the European Union average.', 'The change is the same as the European Union average.'), ' The European Central Bank aims for inflation of ', { referencia: 'unico' }, ' % over the medium term across the euro area, measured by this same index.'],
   },
 
   /* ------------------------------------------------- 9 · Habitação: as rendas e a referência da sua atualização */
   'ipc-rendas-variacao-homologa': {
-    pt: [HA_UM_ANO_PT('as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,'), SUBIDA_MES_PT],
+    pt: [HA_UM_ANO_PT_F('as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,'), SUBIDA_MES_PT],
     en: [HA_UM_ANO_EN('the rents paid by tenants were, on the consumer price index measure,'), SUBIDA_MES_EN],
   },
   'ipc-sem-habitacao-variacao-media-12-meses': {
@@ -115,7 +143,7 @@ export const LEITURAS_RP1 = {
   /* ------------------------------------------------- 5 · Segurança social e pensões */
   'pensao-media-anual-2025': {
     pt: ['Em ', { periodo: 'proprio' }, ' o valor das pensões pagas pela Segurança Social foi, em média, de ', { claim: 'proprio' }, ' euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.', anterior('Subiu face a', 'Desceu face a', 'Ficou igual a')],
-    en: ['In ', { periodo: 'proprio' }, ' the amount of pensions paid by Social Security was, on average, ', { claim: 'proprio' }, ' euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.', anterior('Up from', 'Down from', 'Unchanged from')],
+    en: ['In ', { periodo: 'proprio' }, ' the amount of pensions paid by Social Security was, on average, ', { claim: 'proprio' }, ' euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions.', anterior('Up from', 'Down from', 'Unchanged from')],
   },
   'beneficiarios-do-rsi-por-mil-2024': {
     pt: ['Em ', { periodo: 'proprio' }, ' havia ', { claim: 'proprio' }, ' pessoas a receber o rendimento social de inserção por cada mil pessoas em idade ativa, dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos: é o apoio da Segurança Social a quem vive em carência económica grave, com um programa de inserção no trabalho e na comunidade.', anterior('Mais do que em', 'Menos do que em', 'O mesmo que em')],

@@ -615,22 +615,33 @@ async function mediuOProvisorio() {
             id: valor?.getAttribute('data-claim') ?? null,
           });
         }
+        const colados = [...document.querySelectorAll('.cartao-medida-quantidade')].filter(el => {
+          const valor = el.querySelector('[data-claim]'), unidade = el.querySelector('[data-linha-campo="unit"]');
+          if (!valor || !unidade) return false;
+          const fim = el.textContent.indexOf(valor.textContent) + valor.textContent.length;
+          const inicio = el.textContent.indexOf(unidade.textContent, fim);
+          return inicio < 0 || !/\s/.test(el.textContent.slice(fim, inicio));
+        }).map(el => el.querySelector('[data-claim]').getAttribute('data-claim'));
         return {
           marcados,
+          colados,
           citados: [...document.querySelectorAll('[data-claim]')].map((el) =>
             el.getAttribute('data-claim'),
           ),
         };
       });
       await p.__ctx.close();
+      for (const id of lido.colados) outras.add('I158: valor colado à unidade: ' + id);
       for (const m of lido.marcados) {
-        if (m.texto !== palavra) outras.add(m.texto);
+        const origem = LINHAS.get(m.id);
+        const esperada = origem?.source_flag === 'e' ? ' (' + (edicao === 'en' ? origem.source_flag_note_en : origem.source_flag_note) + ')' : palavra;
+        if (m.texto !== esperada) outras.add(m.texto);
         if (!m.id) outras.add('ressalva sem linha');
         if (m.id) comPalavra.add(m.id);
       }
       for (const id of lido.citados) {
         const l = LINHAS.get(id);
-        if (l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) daBandeira.add(id);
+        if (l?.source_flag === 'e' || l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório')) daBandeira.add(id);
       }
     }
     const aMais = [...comPalavra].filter((id) => !daBandeira.has(id));
@@ -673,6 +684,12 @@ async function mediuOProvisorio() {
 const PRIMEIRA = () => `/areas/${SLUGS[0]}`;
 
 const PLANTAS = [
+  {
+    nome: 'I158: o valor colado à unidade na página da área',
+    celulas: ['M8'],
+    vermelhas: ['M8·pt', 'M8·en'],
+    estrago: html => html.replace(/(<\/span>)\s+(<span class="campo-valor cartao-medida-unidade")/g, '$1$2'),
+  },
   {
     nome: 'I153: a ressalva colada ao valor na página da área',
     celulas: ['M8'],

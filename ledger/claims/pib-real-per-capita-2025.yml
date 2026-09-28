@@ -21,7 +21,7 @@ access_date: "2026-08-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600"
+excerpt: "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,14 +33,19 @@ study: "quadro-institucional"
 note: "Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600'
+  new_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
-  - date: "2026-09-07"
-    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
-    result: "igual"
-    by: "painel-semanal"
   - date: "2026-09-14"
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
     result: "igual"
@@ -53,3 +58,12 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
     result: "inacessivel"
     by: "painel-semanal"
+  - date: "2026-09-28"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
+    result: "igual"
+    by: "painel-semanal"
+source_flag: "p"
+
+source_flag_note: "dado provisório"
+
+source_flag_note_en: "provisional data"

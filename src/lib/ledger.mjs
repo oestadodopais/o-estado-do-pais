@@ -19,6 +19,8 @@ import { load } from 'js-yaml';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
+import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
+import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
 import {
   Decimal,
   REGRA_DO_ROUND,
@@ -1425,6 +1427,7 @@ function ausente(v) {
  */
 export function validateLedger() {
   const claims = loadClaims();
+  const historiasSeladas = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'ledger', 'historias-valores.json'), 'utf8'));
   // As expressões `check` também podem contar o próprio registo de correções.
   const env = { ...COUNTS, ...contagensDoRegisto(claims) };
   const errors = [];
@@ -2371,6 +2374,21 @@ export function validateLedger() {
       });
     }
 
+    if (Array.isArray(c.corrections)) conferirHistoriaDoValor(c, historiasSeladas[id], onde, errors);
+
+    const acessos = historiaDaProveniencia(c, 'access_date', onde, errors);
+    /** @type {string[]} */
+    const errosDeEndereco = [];
+    const enderecos = historiaDaProveniencia(c, 'source_url', onde, errosDeEndereco);
+    errors.push(...errosDeEndereco);
+    for (const campo of CAMPOS_DE_PROVENIENCIA) {
+      if (campo !== 'access_date' && campo !== 'source_url') historiaDaProveniencia(c, campo, onde, errors);
+    }
+    for (const instantaneo of enderecos.instantaneos) {
+      warnings.push(`${onde} história do endereço: a ${instantaneo.date}, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.`);
+    }
+
+
     /* 6b — as reconferências independentes.
        Opcional: uma linha sem entradas é uma linha que ainda não foi relida, e
        a página di-lo com o marcador. O que não é opcional é a forma de uma
@@ -2434,12 +2452,16 @@ export function validateLedger() {
                     `no futuro não aconteceu.`,
                 );
               }
-              if (/^\d{4}-\d{2}-\d{2}$/.test(String(c.access_date ?? '')) &&
-                  String(v.date) < String(c.access_date)) {
+              const acesso = acessos.em(String(v.date));
+              if (/^\d{4}-\d{2}-\d{2}$/.test(acesso) && String(v.date) < acesso) {
                 errors.push(
-                  `${rot}: "date" é ${v.date} e a linha foi lida a ${c.access_date}. Uma ` +
+                  `${rot}: "date" é ${v.date} e o acesso em vigor nesse dia é ${acesso}. Uma ` +
                     `releitura é depois da leitura.`,
                 );
+              }
+              if (enderecos.temMudancaPosterior(String(v.date)) &&
+                  v.path !== enderecos.em(String(v.date))) {
+                errors.push(`${rot}: "path" não é o endereço em vigor a ${v.date}: ${enderecos.em(String(v.date))}.`);
               }
               if (anterior !== null && String(v.date) < anterior) {
                 errors.push(
@@ -2473,7 +2495,7 @@ export function validateLedger() {
               `${rot}: "result" é "${v.result}". Só pode ser ` +
                 `${RESULTADOS_DA_VERIFICACAO.map((k) => `"${k}"`).join(', ')}.\n` +
                 `    "igual" = a fonte diz o mesmo. "diverge" = diz outra coisa, e "found" ` +
-                `guarda-a. "inacessivel" = a fonte não respondeu nesse dia.`,
+                `guarda-a. "inacessivel" = não foi possível reler o número nesse dia.`,
             );
           }
           if (v.result === 'diverge') {

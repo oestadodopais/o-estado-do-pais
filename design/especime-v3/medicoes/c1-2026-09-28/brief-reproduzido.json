@@ -1,0 +1,124 @@
+{
+  "brief": "design/observatorio/BRIEF-C1-as-correcoes-de-confianca.md",
+  "guiao": "design/observatorio/medidas/BRIEF-C1.py",
+  "cabeca_lida": "a677770f",
+  "medidas": [
+    {
+      "nome": "cartoes_na_pagina_dos_temas",
+      "valor": 47,
+      "comando": "git show a677770f:design/especime-v3/medicoes/rp1-2026-09-26/paginas-depois/temas_index.html · ocorrências de data-cartao-medida",
+      "conhecido_positivo": {
+        "o_que": "a página tem o cartão da inflação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valores_colados_a_unidade",
+      "valor": 47,
+      "comando": "a mesma página · o valor do cartão fecha e a unidade abre sem espaço entre elas",
+      "conhecido_positivo": {
+        "o_que": "o valor da inflação está entre os colados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valores_separados_da_unidade",
+      "valor": 0,
+      "comando": "a mesma página · o valor e a unidade com espaço entre eles",
+      "conhecido_positivo": {
+        "o_que": "o detetor do separado vê um caso construído",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frases_fixas_da_subida",
+      "valor": 2,
+      "comando": "git show a677770f:src/data/leituras-rp1.mjs · «É a subida geral dos preços» e «That is the general rise in prices»",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro declara as leituras do RP1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ramos_da_uniao_com_subida",
+      "valor": 6,
+      "comando": "o mesmo ficheiro · «A subida é » e «The rise is »",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro tem a leitura do IHPC",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rendas_com_dos_de_ha_um_ano",
+      "valor": 1,
+      "comando": "git show a677770f:design/especime-v3/medicoes/rp1-2026-09-26/leituras-seladas.json · a frase portuguesa das rendas · «acima dos de há um ano»",
+      "conhecido_positivo": {
+        "o_que": "a frase das rendas existe e fala das rendas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_selado_da_divida_das_familias_ue",
+      "valor": "49,3",
+      "comando": "git show a677770f:ledger/claims/divida-das-familias-2025-ue.yml · value",
+      "conhecido_positivo": {
+        "o_que": "a linha é do conjunto tipspd22",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultima_releitura_da_divida_das_familias_ue",
+      "valor": "diverge",
+      "comando": "a mesma linha · o último result da lista das reconferências",
+      "conhecido_positivo": {
+        "o_que": "a lista tem reconferências",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_revisto_segundo_o_painel",
+      "valor": "49,2",
+      "comando": "git log -1 --format=%B 17758ec7 · «de A para B % do PIB»",
+      "conhecido_positivo": {
+        "o_que": "o commit é o do painel de 28.09",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_pib_por_habitante",
+      "valor": 3,
+      "comando": "git ls-tree a677770f -- ledger/claims/ · pib-real-per-capita-AAAA(-ue).yml",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a linha de 2025",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_pib_com_releitura_inacessivel",
+      "valor": 3,
+      "comando": "as mesmas linhas · o último result é «inacessivel»",
+      "conhecido_positivo": {
+        "o_que": "há linhas do PIB com reconferências",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "colunas_do_csv_dos_concelhos",
+      "valor": 5,
+      "comando": "git show a677770f:src/lib/dados.mjs · csvMunicipios(), a linha do cabeçalho",
+      "conhecido_positivo": {
+        "o_que": "a primeira coluna é o concelho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "colunas_com_um_indicador",
+      "valor": 0,
+      "comando": "as mesmas colunas · as que não são o nome, o distrito, a região ou as coordenadas",
+      "conhecido_positivo": {
+        "o_que": "o cabeçalho traz as coordenadas",
+        "encontrado": true
+      }
+    }
+  ]
+}

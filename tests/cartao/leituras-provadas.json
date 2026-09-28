@@ -11,6 +11,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-09-26",
       "o_que": "a passagem de correção depois da leitura a frio do Codex: as palavras correntes dos termos que ela achou por explicar (os achados 7 a 14), com as origens pedidas a 26.09.2026, e a idade da taxa de atividade (o achado 15), nos acertos A18 a A26; e as duas leituras reescritas pelo lugar de direção (a disparidade salarial e as câmaras), relidas parte a parte"
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-09-28",
+      "o_que": "C1c: objetivo do BCE no IHPC, remissão na inflação, sentido da taxa de câmbio e regra da dívida municipal na DGAL."
     }
   ],
   "comuns": [
@@ -1863,7 +1868,9 @@
       "origens": [
         "eurostat-tipser10-descricao",
         "pdm-cambio-efectivo-real",
-        "painel-pdm"
+        "painel-pdm",
+        "c1c-eurostat-sinal-cambio",
+        "c1c-bce-competitividade"
       ],
       "folhas": [
         {
@@ -1972,6 +1979,29 @@
               "pt": "dentro do intervalo.",
               "en": "within the range.",
               "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " Uma subida é uma apreciação: os preços de Portugal sobem face aos dos parceiros e perde-se competitividade de preços.",
+          "en": " A rise is an appreciation: prices in Portugal increase relative to those of its partners and price competitiveness falls.",
+          "partes": [
+            {
+              "pt": " Uma subida é uma apreciação: os preços de Portugal sobem face aos dos parceiros e perde-se competitividade de preços.",
+              "en": " A rise is an appreciation: prices in Portugal increase relative to those of its partners and price competitiveness falls.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-eurostat-sinal-cambio",
+                  "campo": "excerto",
+                  "literal": "A positive value means real appreciation."
+                },
+                {
+                  "origem": "c1c-bce-competitividade",
+                  "campo": "excerto",
+                  "literal": "I have shown that the price competitiveness of the euro area has deteriorated mainly because producer prices there have moved unfavourably relative to those of key trading partners – especially in Asia, and in China in particular."
+                }
+              ]
             }
           ]
         }
@@ -2477,7 +2507,9 @@
     },
     {
       "id": "camaras",
-      "origens": [],
+      "origens": [
+        "c1c-dgal-limites"
+      ],
       "folhas": [
         {
           "pt": "Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ",
@@ -2489,14 +2521,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "excerpt",
-                  "literal": "Índice de divida total (Índice permitido <= 150%)"
-                },
-                {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "document.locator",
-                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores."
                 }
               ]
             },
@@ -2517,14 +2544,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "excerpt",
-                  "literal": "Índice de divida total (Índice permitido <= 150%)"
-                },
-                {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "document.locator",
-                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores."
                 }
               ]
             }
@@ -4707,7 +4729,8 @@
       "id": "ipc-variacao-homologa",
       "origens": [
         "rp1-ipc-homologa",
-        "rp1-ipc-metodo"
+        "rp1-ipc-metodo",
+        "c1c-bce-estrategia"
       ],
       "folhas": [
         {
@@ -4783,24 +4806,6 @@
           ]
         },
         {
-          "pt": " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
-          "en": " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
-          "partes": [
-            {
-              "pt": " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
-              "en": " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "rp1-ipc-metodo",
-                  "campo": "excerto",
-                  "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
-                }
-              ]
-            }
-          ]
-        },
-        {
           "pt": "A variação é maior do que a do mês anterior.",
           "en": "The change is larger than the previous month’s.",
           "partes": [
@@ -4830,6 +4835,88 @@
               "pt": "A variação é igual à do mês anterior.",
               "en": "The change is the same as the previous month’s.",
               "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
+          "en": " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
+          "partes": [
+            {
+              "pt": " É a subida",
+              "en": " That is the general rise",
+              "classe": "conta"
+            },
+            {
+              "pt": " geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
+              "en": " in prices, which the INE measures on a basket of goods and services that represents what households buy.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
+          "en": " That is the general fall in prices, which the INE measures on a basket of goods and services that represents what households buy.",
+          "partes": [
+            {
+              "pt": " É a descida",
+              "en": " That is the general fall",
+              "classe": "conta"
+            },
+            {
+              "pt": " geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
+              "en": " in prices, which the INE measures on a basket of goods and services that represents what households buy.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram.",
+          "en": " The INE measures them on a basket of goods and services that represents what households buy.",
+          "partes": [
+            {
+              "pt": " O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram.",
+              "en": " The INE measures them on a basket of goods and services that represents what households buy.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia.",
+          "en": " The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card.",
+          "partes": [
+            {
+              "pt": " O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia.",
+              "en": " The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-bce-estrategia",
+                  "campo": "excerto",
+                  "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+                }
+              ]
             }
           ]
         }
@@ -5433,11 +5520,11 @@
         },
         {
           "pt": " euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.",
-          "en": " euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.",
+          "en": " euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions.",
           "partes": [
             {
               "pt": " euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência.",
-              "en": " euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.",
+              "en": " euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions.",
               "classe": "diz",
               "apoios": [
                 {
@@ -5999,11 +6086,11 @@
           ]
         },
         {
-          "pt": " acima dos de há um ano.",
+          "pt": " acima das de há um ano.",
           "en": " above a year earlier.",
           "partes": [
             {
-              "pt": " acima dos de há um ano.",
+              "pt": " acima das de há um ano.",
               "en": " above a year earlier.",
               "classe": "diz",
               "apoios": [
@@ -6017,11 +6104,11 @@
           ]
         },
         {
-          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "pt": " face às de há um ano, ou seja, abaixo delas.",
           "en": " compared with a year earlier, that is, below.",
           "partes": [
             {
-              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "pt": " face às de há um ano, ou seja, abaixo delas.",
               "en": " compared with a year earlier, that is, below.",
               "classe": "diz",
               "apoios": [
@@ -6035,11 +6122,11 @@
           ]
         },
         {
-          "pt": " ao mesmo nível de há um ano.",
+          "pt": " ao mesmo nível das de há um ano.",
           "en": " at the same level as a year earlier.",
           "partes": [
             {
-              "pt": " ao mesmo nível de há um ano.",
+              "pt": " ao mesmo nível das de há um ano.",
               "en": " at the same level as a year earlier.",
               "classe": "diz",
               "apoios": [
@@ -6093,7 +6180,9 @@
       "origens": [
         "rp1-ihpc-comparavel",
         "rp1-ihpc-homologa",
-        "rp1-ihpc-uniao"
+        "rp1-ihpc-uniao",
+        "c1c-bce-estrategia",
+        "c1c-bce-ambito"
       ],
       "folhas": [
         {
@@ -6174,12 +6263,12 @@
           ]
         },
         {
-          "pt": "A subida é maior do que a da média da União Europeia.",
-          "en": "The rise is larger than the European Union average.",
+          "pt": "A variação é maior do que a da média da União Europeia.",
+          "en": "The change is larger than the European Union average.",
           "partes": [
             {
-              "pt": "A subida é maior do que a da ",
-              "en": "The rise is larger than the ",
+              "pt": "A variação é maior do que a da ",
+              "en": "The change is larger than the ",
               "classe": "conta"
             },
             {
@@ -6197,12 +6286,12 @@
           ]
         },
         {
-          "pt": "A subida é menor do que a da média da União Europeia.",
-          "en": "The rise is smaller than the European Union average.",
+          "pt": "A variação é menor do que a da média da União Europeia.",
+          "en": "The change is smaller than the European Union average.",
           "partes": [
             {
-              "pt": "A subida é menor do que a da ",
-              "en": "The rise is smaller than the ",
+              "pt": "A variação é menor do que a da ",
+              "en": "The change is smaller than the ",
               "classe": "conta"
             },
             {
@@ -6220,12 +6309,12 @@
           ]
         },
         {
-          "pt": "A subida é igual à da média da União Europeia.",
-          "en": "The rise is the same as the European Union average.",
+          "pt": "A variação é igual à da média da União Europeia.",
+          "en": "The change is the same as the European Union average.",
           "partes": [
             {
-              "pt": "A subida é igual à da ",
-              "en": "The rise is the same as the ",
+              "pt": "A variação é igual à da ",
+              "en": "The change is the same as the ",
               "classe": "conta"
             },
             {
@@ -6237,13 +6326,65 @@
                   "origem": "rp1-ihpc-uniao",
                   "campo": "excerto",
                   "literal": "The change in the headline HICP and country aggregates since December (y-1) are computed with a weighted average of the HICP sub-indices transmitted by the NSIs and the weights of the countries and of the sub-indices concerned."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " O Banco Central Europeu procura uma inflação de ",
+          "en": " The European Central Bank aims for inflation of ",
+          "partes": [
+            {
+              "pt": " O Banco Central Europeu procura uma inflação de ",
+              "en": " The European Central Bank aims for inflation of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-bce-estrategia",
+                  "campo": "excerto",
+                  "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.",
+          "en": " % over the medium term across the euro area, measured by this same index.",
+          "partes": [
+            {
+              "pt": " % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.",
+              "en": " % over the medium term across the euro area, measured by this same index.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-bce-estrategia",
+                  "campo": "excerto",
+                  "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+                },
+                {
+                  "origem": "c1c-bce-ambito",
+                  "campo": "excerto",
+                  "literal": "The primary objective of the ECB is to maintain price stability in the euro area."
                 }
               ]
             }
           ]
         }
       ],
-      "algarismos": []
+      "algarismos": [
+        {
+          "nl": "2",
+          "apoios": [
+            {
+              "origem": "c1c-bce-estrategia",
+              "campo": "excerto",
+              "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,62 @@
+{
+  "origem": "endpoint sem construção",
+  "erros": [],
+  "linhas": 2464,
+  "concelhos": 308,
+  "medidas": 8,
+  "calculadas": 308,
+  "limpa": {
+    "codigo": 0,
+    "saida": "C7: 2464 linhas de 308 concelhos, conferidas no livro-razão."
+  },
+  "plantas": [
+    {
+      "nome": "valor-trocado-no-csv",
+      "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+      "comando": "node scripts/check-dados.mjs --celula C7",
+      "codigo": 1,
+      "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 1 (evora-populacao-2025): valor difere da linha ou da declaração do cartão.",
+      "mordida": "C7 .*valor difere da linha",
+      "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "codigo_reposicao": 0,
+      "passou": true
+    },
+    {
+      "nome": "unidade-trocada-no-csv",
+      "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+      "comando": "node scripts/check-dados.mjs --celula C7",
+      "codigo": 1,
+      "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 1 (evora-populacao-2025): unidade difere da linha ou da declaração do cartão.",
+      "mordida": "C7 .*unidade difere da linha",
+      "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "codigo_reposicao": 0,
+      "passou": true
+    },
+    {
+      "nome": "medida-omitida-no-csv",
+      "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+      "comando": "node scripts/check-dados.mjs --celula C7",
+      "codigo": 1,
+      "saida": "C7 /dados/indicadores-dos-concelhos.csv: 2463 linhas no ficheiro e 2464 cartões com linha declarada.\nC7 /dados/indicadores-dos-concelhos.csv: falta o concelho e a medida [\"evora\",\"População residente\"].",
+      "mordida": "C7 .*falta o concelho e a medida",
+      "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "codigo_reposicao": 0,
+      "passou": true
+    },
+    {
+      "nome": "medida-repetida-no-csv",
+      "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+      "comando": "node scripts/check-dados.mjs --celula C7",
+      "codigo": 1,
+      "saida": "C7 /dados/indicadores-dos-concelhos.csv: 2465 linhas no ficheiro e 2464 cartões com linha declarada.\nC7 /dados/indicadores-dos-concelhos.csv: registo 2: concelho e medida repetidos.",
+      "mordida": "C7 .*concelho e medida repetidos",
+      "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+      "codigo_reposicao": 0,
+      "passou": true
+    }
+  ]
+}

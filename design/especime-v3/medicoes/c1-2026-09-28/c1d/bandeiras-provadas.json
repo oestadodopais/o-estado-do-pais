@@ -1,0 +1,1076 @@
+{
+  "origem": "Corpos alojados pelo cliente da casa na C1c; cópias integrais e recortes na coordenada selada.",
+  "linhas": [
+    {
+      "id": "credito-malparado-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=PT",
+      "lido": "2026-09-28T13:46:19+00:00",
+      "corpo": "corpos-bandeiras/c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573.json",
+      "sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        12
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 10
+      },
+      "posicao": 10,
+      "pedaco_do_corpo": {
+        "value": {
+          "10": 2.4
+        },
+        "status": {
+          "10": "p"
+        }
+      },
+      "valor_selado": "2,4",
+      "marca": "p"
+    },
+    {
+      "id": "credito-malparado-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=PT",
+      "lido": "2026-09-28T13:46:19+00:00",
+      "corpo": "corpos-bandeiras/c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573.json",
+      "sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        12
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 11
+      },
+      "posicao": 11,
+      "pedaco_do_corpo": {
+        "value": {
+          "11": 2.1
+        },
+        "status": {
+          "11": "p"
+        }
+      },
+      "valor_selado": "2,1",
+      "marca": "p"
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "lido": "2026-09-28T13:45:50+00:00",
+      "corpo": "corpos-bandeiras/513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3.json",
+      "sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+      "id_dimensoes": [
+        "freq",
+        "na_item",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "na_item": "NULC_HW",
+        "unit": "PCH_3Y",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "na_item": "Nominal unit labour cost based on hours worked",
+        "unit": "Percentage change (t/t-3)",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "na_item": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 29
+      },
+      "posicao": 29,
+      "pedaco_do_corpo": {
+        "value": {
+          "29": 17.7
+        },
+        "status": {
+          "29": "p"
+        }
+      },
+      "valor_selado": "17,7",
+      "marca": "p"
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "lido": "2026-09-28T13:45:50+00:00",
+      "corpo": "corpos-bandeiras/513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3.json",
+      "sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+      "id_dimensoes": [
+        "freq",
+        "na_item",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "na_item": "NULC_HW",
+        "unit": "PCH_3Y",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "na_item": "Nominal unit labour cost based on hours worked",
+        "unit": "Percentage change (t/t-3)",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "na_item": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 21.3
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "21,3",
+      "marca": "p"
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "lido": "2026-09-28T13:46:10+00:00",
+      "corpo": "corpos-bandeiras/c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046.json",
+      "sha256": "c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046",
+      "id_dimensoes": [
+        "freq",
+        "sectperf",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        30
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "sectperf": "TOTAL",
+        "unit": "PC_GDP",
+        "geo": "EU27_2020",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "sectperf": "All sectors",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "geo": "European Union - 27 countries (from 2020)",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "sectperf": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 29
+      },
+      "posicao": 29,
+      "pedaco_do_corpo": {
+        "value": {
+          "29": 2.24
+        },
+        "status": {
+          "29": "e"
+        }
+      },
+      "valor_selado": "2,24",
+      "marca": "e"
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "lido": "2026-09-28T13:45:56+00:00",
+      "corpo": "corpos-bandeiras/ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc.json",
+      "sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "co_nco",
+        "sector",
+        "finpos",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC_GDP",
+        "co_nco": "CO",
+        "sector": "S11",
+        "finpos": "LIAB",
+        "na_item": "F3_F4",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "co_nco": "Consolidated",
+        "sector": "Non-financial corporations",
+        "finpos": "Liabilities",
+        "na_item": "Securities other than shares, loans",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "na_item": 0,
+        "geo": 0,
+        "time": 29
+      },
+      "posicao": 29,
+      "pedaco_do_corpo": {
+        "value": {
+          "29": 67.1
+        },
+        "status": {
+          "29": "p"
+        }
+      },
+      "valor_selado": "67,1",
+      "marca": "p"
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "lido": "2026-09-28T13:45:57+00:00",
+      "corpo": "corpos-bandeiras/892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a.json",
+      "sha256": "892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "co_nco",
+        "sector",
+        "finpos",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC_GDP",
+        "co_nco": "CO",
+        "sector": "S11",
+        "finpos": "LIAB",
+        "na_item": "F3_F4",
+        "geo": "EU27_2020",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "co_nco": "Consolidated",
+        "sector": "Non-financial corporations",
+        "finpos": "Liabilities",
+        "na_item": "Securities other than shares, loans",
+        "geo": "European Union - 27 countries (from 2020)",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "na_item": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 70.0
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "70,0",
+      "marca": "p"
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "lido": "2026-09-28T13:45:56+00:00",
+      "corpo": "corpos-bandeiras/ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc.json",
+      "sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "co_nco",
+        "sector",
+        "finpos",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC_GDP",
+        "co_nco": "CO",
+        "sector": "S11",
+        "finpos": "LIAB",
+        "na_item": "F3_F4",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "co_nco": "Consolidated",
+        "sector": "Non-financial corporations",
+        "finpos": "Liabilities",
+        "na_item": "Securities other than shares, loans",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "na_item": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 64.9
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "64,9",
+      "marca": "p"
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "lido": "2026-09-28T13:45:54+00:00",
+      "corpo": "corpos-bandeiras/d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04.json",
+      "sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "co_nco",
+        "sector",
+        "finpos",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC_GDP",
+        "co_nco": "CO",
+        "sector": "S14_S15",
+        "finpos": "LIAB",
+        "na_item": "F3_F4",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "co_nco": "Consolidated",
+        "sector": "Households; non-profit institutions serving households",
+        "finpos": "Liabilities",
+        "na_item": "Securities other than shares, loans",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "na_item": 0,
+        "geo": 0,
+        "time": 29
+      },
+      "posicao": 29,
+      "pedaco_do_corpo": {
+        "value": {
+          "29": 52.6
+        },
+        "status": {
+          "29": "p"
+        }
+      },
+      "valor_selado": "52,6",
+      "marca": "p"
+    },
+    {
+      "id": "divida-das-familias-2025-ue",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "lido": "2026-09-28T13:45:55+00:00",
+      "corpo": "corpos-bandeiras/bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1.json",
+      "sha256": "bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "co_nco",
+        "sector",
+        "finpos",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC_GDP",
+        "co_nco": "CO",
+        "sector": "S14_S15",
+        "finpos": "LIAB",
+        "na_item": "F3_F4",
+        "geo": "EU27_2020",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "co_nco": "Consolidated",
+        "sector": "Households; non-profit institutions serving households",
+        "finpos": "Liabilities",
+        "na_item": "Securities other than shares, loans",
+        "geo": "European Union - 27 countries (from 2020)",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "na_item": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 49.2
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "49,2",
+      "marca": "p"
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "lido": "2026-09-28T13:45:54+00:00",
+      "corpo": "corpos-bandeiras/d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04.json",
+      "sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "co_nco",
+        "sector",
+        "finpos",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "PC_GDP",
+        "co_nco": "CO",
+        "sector": "S14_S15",
+        "finpos": "LIAB",
+        "na_item": "F3_F4",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "co_nco": "Consolidated",
+        "sector": "Households; non-profit institutions serving households",
+        "finpos": "Liabilities",
+        "na_item": "Securities other than shares, loans",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "na_item": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 53.9
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "53,9",
+      "marca": "p"
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=EU27_2020&unit=PC_LE",
+      "lido": "2026-09-28T13:45:59+00:00",
+      "corpo": "corpos-bandeiras/cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795.json",
+      "sha256": "cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795",
+      "id_dimensoes": [
+        "freq",
+        "na_item",
+        "co_nco",
+        "sector",
+        "finpos",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "na_item": "F3_F4",
+        "co_nco": "CO",
+        "sector": "S14_S15",
+        "finpos": "LIAB",
+        "unit": "PC_LE",
+        "geo": "EU27_2020",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "na_item": "Securities other than shares, loans",
+        "co_nco": "Consolidated",
+        "sector": "Households; non-profit institutions serving households",
+        "finpos": "Liabilities",
+        "unit": "Percentage of stocks (closing balance sheet)",
+        "geo": "European Union - 27 countries (from 2020)",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "na_item": 0,
+        "co_nco": 0,
+        "sector": 0,
+        "finpos": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 2.9
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "2,9",
+      "marca": "p"
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "lido": "2026-09-28T13:46:15+00:00",
+      "corpo": "corpos-bandeiras/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.json",
+      "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+      "id_dimensoes": [
+        "freq",
+        "na_item",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "na_item": "P51G",
+        "unit": "PC_GDP",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "na_item": "Gross fixed capital formation",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "na_item": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 29
+      },
+      "posicao": 29,
+      "pedaco_do_corpo": {
+        "value": {
+          "29": 20.4
+        },
+        "status": {
+          "29": "p"
+        }
+      },
+      "valor_selado": "20,4",
+      "marca": "p"
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "lido": "2026-09-28T13:46:15+00:00",
+      "corpo": "corpos-bandeiras/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.json",
+      "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+      "id_dimensoes": [
+        "freq",
+        "na_item",
+        "unit",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "na_item": "P51G",
+        "unit": "PC_GDP",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "na_item": "Gross fixed capital formation",
+        "unit": "Percentage of gross domestic product (GDP)",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "na_item": 0,
+        "unit": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 30,
+      "pedaco_do_corpo": {
+        "value": {
+          "30": 20.7
+        },
+        "status": {
+          "30": "p"
+        }
+      },
+      "valor_selado": "20,7",
+      "marca": "p"
+    },
+    {
+      "id": "licencas-de-construcao-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT",
+      "lido": "2026-09-28T13:46:22+00:00",
+      "corpo": "corpos-bandeiras/9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42.json",
+      "sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42",
+      "id_dimensoes": [
+        "freq",
+        "s_adj",
+        "unit",
+        "indic_bt",
+        "cpa2_1",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        21
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "s_adj": "NSA",
+        "unit": "M2_THAB",
+        "indic_bt": "BPRM_SQM",
+        "cpa2_1": "CPA_F41001",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "s_adj": "Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data)",
+        "unit": "Square metres per 1000 inhabitants",
+        "indic_bt": "Building permits - m2 of useful floor area",
+        "cpa2_1": "Residential buildings",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "s_adj": 0,
+        "unit": 0,
+        "indic_bt": 0,
+        "cpa2_1": 0,
+        "geo": 0,
+        "time": 19
+      },
+      "posicao": 19,
+      "pedaco_do_corpo": {
+        "value": {
+          "19": 654.5
+        },
+        "status": {
+          "19": "p"
+        }
+      },
+      "valor_selado": "654,5",
+      "marca": "p"
+    },
+    {
+      "id": "licencas-de-construcao-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT",
+      "lido": "2026-09-28T13:46:22+00:00",
+      "corpo": "corpos-bandeiras/9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42.json",
+      "sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42",
+      "id_dimensoes": [
+        "freq",
+        "s_adj",
+        "unit",
+        "indic_bt",
+        "cpa2_1",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        21
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "s_adj": "NSA",
+        "unit": "M2_THAB",
+        "indic_bt": "BPRM_SQM",
+        "cpa2_1": "CPA_F41001",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "s_adj": "Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data)",
+        "unit": "Square metres per 1000 inhabitants",
+        "indic_bt": "Building permits - m2 of useful floor area",
+        "cpa2_1": "Residential buildings",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "s_adj": 0,
+        "unit": 0,
+        "indic_bt": 0,
+        "cpa2_1": 0,
+        "geo": 0,
+        "time": 20
+      },
+      "posicao": 20,
+      "pedaco_do_corpo": {
+        "value": {
+          "20": 749.7
+        },
+        "status": {
+          "20": "p"
+        }
+      },
+      "valor_selado": "749,7",
+      "marca": "p"
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "lido": "2026-09-28T13:46:17+00:00",
+      "corpo": "corpos-bandeiras/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.json",
+      "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        2,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "CLV15_EUR_HAB",
+        "na_item": "B1GQ",
+        "geo": "PT",
+        "time": "2024"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "na_item": "Gross domestic product at market prices",
+        "geo": "Portugal",
+        "time": "2024"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 1,
+        "na_item": 0,
+        "geo": 0,
+        "time": 29
+      },
+      "posicao": 60,
+      "pedaco_do_corpo": {
+        "value": {
+          "60": 20430
+        },
+        "status": {
+          "60": "p"
+        }
+      },
+      "valor_selado": "20 430",
+      "marca": "p"
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "lido": "2026-09-28T13:46:17+00:00",
+      "corpo": "corpos-bandeiras/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.json",
+      "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "id_dimensoes": [
+        "freq",
+        "unit",
+        "na_item",
+        "geo",
+        "time"
+      ],
+      "size": [
+        1,
+        2,
+        1,
+        1,
+        31
+      ],
+      "coordenada_selada": {
+        "freq": "A",
+        "unit": "CLV15_EUR_HAB",
+        "na_item": "B1GQ",
+        "geo": "PT",
+        "time": "2025"
+      },
+      "etiquetas": {
+        "freq": "Annual",
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "na_item": "Gross domestic product at market prices",
+        "geo": "Portugal",
+        "time": "2025"
+      },
+      "indices": {
+        "freq": 0,
+        "unit": 1,
+        "na_item": 0,
+        "geo": 0,
+        "time": 30
+      },
+      "posicao": 61,
+      "pedaco_do_corpo": {
+        "value": {
+          "61": 20600
+        },
+        "status": {
+          "61": "p"
+        }
+      },
+      "valor_selado": "20 600",
+      "marca": "p"
+    }
+  ],
+  "quantidade": 18,
+  "corpos_distintos": 11
+}

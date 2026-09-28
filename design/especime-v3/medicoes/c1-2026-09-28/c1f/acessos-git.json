@@ -1,0 +1,358 @@
+{
+  "base_da_reconstituicao": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+  "linhas": [
+    {
+      "id": "evora-prr-aprovado-2026",
+      "eventos_git": [
+        {
+          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "date": "2026-08-15",
+          "old_value": null,
+          "new_value": "2026-08-04"
+        },
+        {
+          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "date": "2026-08-18",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "snapshot_date": "2026-08-17",
+          "diff_access_date": [
+            "-access_date: \"2026-08-04\"",
+            "+access_date: \"2026-08-18\""
+          ]
+        },
+        {
+          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "date": "2026-08-20",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "snapshot_date": "2026-08-19",
+          "diff_access_date": [
+            "-access_date: \"2026-08-18\"",
+            "+access_date: \"2026-08-20\""
+          ]
+        }
+      ],
+      "entradas": [
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+        }
+      ],
+      "erros": []
+    },
+    {
+      "id": "evora-prr-municipio-contratado",
+      "eventos_git": [
+        {
+          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "date": "2026-08-15",
+          "old_value": null,
+          "new_value": "2026-08-04"
+        },
+        {
+          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "date": "2026-08-18",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "snapshot_date": "2026-08-17",
+          "diff_access_date": [
+            "-access_date: \"2026-08-04\"",
+            "+access_date: \"2026-08-18\""
+          ]
+        },
+        {
+          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "date": "2026-08-20",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "snapshot_date": "2026-08-19",
+          "diff_access_date": [
+            "-access_date: \"2026-08-18\"",
+            "+access_date: \"2026-08-20\""
+          ]
+        }
+      ],
+      "entradas": [
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+        }
+      ],
+      "erros": []
+    },
+    {
+      "id": "evora-prr-pago-2026",
+      "eventos_git": [
+        {
+          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "date": "2026-08-15",
+          "old_value": null,
+          "new_value": "2026-08-04"
+        },
+        {
+          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "date": "2026-08-18",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "snapshot_date": "2026-08-17",
+          "diff_access_date": [
+            "-access_date: \"2026-08-04\"",
+            "+access_date: \"2026-08-18\""
+          ]
+        },
+        {
+          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "date": "2026-08-20",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "snapshot_date": "2026-08-19",
+          "diff_access_date": [
+            "-access_date: \"2026-08-18\"",
+            "+access_date: \"2026-08-20\""
+          ]
+        }
+      ],
+      "entradas": [
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+        }
+      ],
+      "erros": []
+    },
+    {
+      "id": "evora-prr-universidade-contratado",
+      "eventos_git": [
+        {
+          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "date": "2026-08-15",
+          "old_value": null,
+          "new_value": "2026-08-04"
+        },
+        {
+          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "date": "2026-08-18",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "snapshot_date": "2026-08-17",
+          "diff_access_date": [
+            "-access_date: \"2026-08-04\"",
+            "+access_date: \"2026-08-18\""
+          ]
+        },
+        {
+          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "date": "2026-08-20",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "snapshot_date": "2026-08-19",
+          "diff_access_date": [
+            "-access_date: \"2026-08-18\"",
+            "+access_date: \"2026-08-20\""
+          ]
+        }
+      ],
+      "entradas": [
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+        }
+      ],
+      "erros": []
+    },
+    {
+      "id": "evora-prr-vencido-aprovado-2026",
+      "eventos_git": [
+        {
+          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "date": "2026-08-15",
+          "old_value": null,
+          "new_value": "2026-08-04"
+        },
+        {
+          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "date": "2026-08-18",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "snapshot_date": "2026-08-17",
+          "diff_access_date": [
+            "-access_date: \"2026-08-04\"",
+            "+access_date: \"2026-08-18\""
+          ]
+        },
+        {
+          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "date": "2026-08-20",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "snapshot_date": "2026-08-19",
+          "diff_access_date": [
+            "-access_date: \"2026-08-18\"",
+            "+access_date: \"2026-08-20\""
+          ]
+        }
+      ],
+      "entradas": [
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-04",
+          "new_value": "2026-08-18",
+          "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "proveniencia",
+          "field": "access_date",
+          "old_value": "2026-08-18",
+          "new_value": "2026-08-20",
+          "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+        }
+      ],
+      "erros": []
+    }
+  ],
+  "plantas": [
+    {
+      "id": "evora-prr-aprovado-2026",
+      "campo_trocado": "date",
+      "falhas": [
+        "evora-prr-aprovado-2026: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-aprovado-2026",
+      "campo_trocado": "old_value",
+      "falhas": [
+        "evora-prr-aprovado-2026: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-municipio-contratado",
+      "campo_trocado": "date",
+      "falhas": [
+        "evora-prr-municipio-contratado: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-municipio-contratado",
+      "campo_trocado": "old_value",
+      "falhas": [
+        "evora-prr-municipio-contratado: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-pago-2026",
+      "campo_trocado": "date",
+      "falhas": [
+        "evora-prr-pago-2026: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-pago-2026",
+      "campo_trocado": "old_value",
+      "falhas": [
+        "evora-prr-pago-2026: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-universidade-contratado",
+      "campo_trocado": "date",
+      "falhas": [
+        "evora-prr-universidade-contratado: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-universidade-contratado",
+      "campo_trocado": "old_value",
+      "falhas": [
+        "evora-prr-universidade-contratado: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-vencido-aprovado-2026",
+      "campo_trocado": "date",
+      "falhas": [
+        "evora-prr-vencido-aprovado-2026: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+      ],
+      "mordeu": true
+    },
+    {
+      "id": "evora-prr-vencido-aprovado-2026",
+      "campo_trocado": "old_value",
+      "falhas": [
+        "evora-prr-vencido-aprovado-2026: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+      ],
+      "mordeu": true
+    }
+  ],
+  "erros": []
+}

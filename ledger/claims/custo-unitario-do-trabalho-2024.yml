@@ -21,7 +21,7 @@ access_date: "2026-09-15"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7"
+excerpt: "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +33,16 @@ study: "quadro-institucional"
 note: "Período anterior da medida «custo-unitario-do-trabalho-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: +9% (EA). Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7'
+  new_value: 'Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -48,3 +57,9 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y"
     result: "igual"
     by: "painel-semanal"
+
+source_flag: "p"
+
+source_flag_note: "dado provisório"
+
+source_flag_note_en: "provisional data"

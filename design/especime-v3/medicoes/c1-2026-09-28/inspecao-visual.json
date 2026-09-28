@@ -1,0 +1,61 @@
+{
+  "metodo": "Inspeção visual das imagens abertas pela ferramenta de imagem. A matriz completa e a medição geométrica estão nos manifestos de capturas; esta lista não pretende representar inspeção visual de todas as páginas.",
+  "registado_em": "2026-09-28T12:38:56.144013+00:00",
+  "imagens": [
+    {
+      "ficheiro": "capturas/pormenor-antes-calendario-pt-390.png",
+      "sha256": "d9864b07a3dffd700d9e2ddb2ca00808017558cf84b27ca5babc0bc97b8d8bae",
+      "observacao": "Os pontos ocupam posições equidistantes e o último mandato não apresenta o rótulo visível no depois."
+    },
+    {
+      "ficheiro": "capturas/pormenor-depois-calendario-pt-390.png",
+      "sha256": "5fc3f36156b0ccbfeb09527eed53024065b265490a2328d79b5d128bb552aee7",
+      "observacao": "As posições dos pontos acompanham o calendário. O último mandato apresenta o rótulo em curso."
+    },
+    {
+      "ficheiro": "capturas/pormenor-depois-calendario-en-1280.png",
+      "sha256": "5cb569e93b0f3ff0eb17a718bab2666cb439eb131b35db38144452386b123657",
+      "observacao": "Os anos das observações partilham a escala da faixa. O último mandato apresenta in office; os intervalos sem observação não têm linha de ligação."
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-pib-en-1280.png",
+      "sha256": "1e65da7b6d48e1d4a2dc5ab8234eb3b5fb46ed41b73e11db7a115b85efdad2e0",
+      "observacao": "O recibo apresentava source unreachable that day e o título VERIFICATIONS."
+    },
+    {
+      "ficheiro": "capturas/pormenor-depois-pib-en-1280.png",
+      "sha256": "aeb4dd20d712b339485d1ace4ba98066b38704ee2039693a27612f724151e408",
+      "observacao": "O título é WHAT WAS CHECKED. A releitura igual e a tentativa sem releitura aparecem como registos separados; a dificuldade já não afirma ausência de resposta da fonte."
+    },
+    {
+      "ficheiro": "capturas/pormenor-depois-divida-ue-pt-390.png",
+      "sha256": "dd4dfa303b5fc6d343a23a5cedbdf17bc2f46aa92883c46e1bbb87a1c8177519",
+      "observacao": "A divergência para 49.2 permanece visível. O texto da segunda leitura cabe na largura estreita e não há ligação para uma atualização inexistente."
+    },
+    {
+      "ficheiro": "capturas/depois-cartao-inflacao-pt-390.png",
+      "sha256": "57fd83937463f0095449e07633e824b201ddcf4e43ac62f6d1e77280cb8e6d5c",
+      "observacao": "Valor e unidade separados visualmente. A leitura identifica a subida geral dos preços e a comparação com o mês anterior."
+    },
+    {
+      "ficheiro": "capturas/depois-cartao-rendas-pt-390.png",
+      "sha256": "eaea0590ac13b5e134542613a56aca10cf6b54fd681c11db8da2667461378fd8",
+      "observacao": "A frase usa acima das de há um ano. O valor, a unidade e a leitura cabem no cartão."
+    },
+    {
+      "ficheiro": "capturas/depois-cartao-alimentos-en-390.png",
+      "sha256": "2f30c315984b1d4db0d78bc9a1528af489371e73ca7adf76f1a68b9df282d226",
+      "observacao": "O título inglês inclui beverages. A leitura e a pergunta ficam integralmente dentro do cartão."
+    },
+    {
+      "ficheiro": "capturas/depois-lugares-pt-390.png",
+      "sha256": "6420aed9ca60482d89bba4ef2e09092fc2207473cf8179f837b576128c1c3499",
+      "observacao": "As ligações POSIÇÕES DOS CONCELHOS NO MAPA (CSV) e MEDIDAS DOS CONCELHOS (CSV) surgem separadas, sem sobreposição."
+    },
+    {
+      "ficheiro": "capturas/depois-recibo-inflacao-pt-390.png",
+      "sha256": "b8905d2dfdf4243dacd3403867dcf73034a93195762678ae8a0a05ff77c635e8",
+      "observacao": "O título mantém valor e unidade separados. O recibo declara Ainda sem segunda leitura e conserva a ligação à regra da releitura."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "cabeca": "1e77ce06b0053acbcab73c6650ab52983a61c44f",
+  "limpa": false,
+  "diferenca_sha256": "76a079f6a58c20e9710e8c525ea3388f4faef5255248843a585bdd0b31098e20",
+  "ficheiros": [
+    {
+      "ficheiro": "core/gate.py",
+      "sha256": "f1eba4644678b33c75a5b36e45f705c0bd9633e1141b4fc8a38a3332309310b3"
+    },
+    {
+      "ficheiro": "core/http.py",
+      "sha256": "8d76f0106954dcfb11bc1e1a5fccf917d158b8e1eb8ee20f78ef8de8f598d678"
+    },
+    {
+      "ficheiro": "indicators/refresh.py",
+      "sha256": "0b9024bc25d5a61848b2cda150a0eb5a0ef030499217c01463f69fb23bc5bf15"
+    },
+    {
+      "ficheiro": "indicators/refresh_rede_real_test.py",
+      "sha256": "68d91964fad4653889fa244c7e55439574725a202b55d8720750369314d6387e"
+    }
+  ]
+}

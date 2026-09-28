@@ -1,0 +1,28 @@
+{
+  "origem": "a677770f",
+  "linhas": {
+    "divida-das-familias-2025-ue": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "49.2"
+      }
+    ],
+    "indice-de-divida-limite-legal": [
+      {
+        "date": "2026-09-01",
+        "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+        "result": "igual",
+        "by": "corredor-diario"
+      }
+    ]
+  }
+}

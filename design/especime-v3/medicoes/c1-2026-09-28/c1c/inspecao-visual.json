@@ -1,0 +1,94 @@
+{
+  "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+  "paginas_captadas": 270,
+  "recortes": 140,
+  "copias_congeladas": 57,
+  "recibos": 25,
+  "edicoes": 2,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "falhas_automaticas": 0,
+  "observacoes_automaticas": 0,
+  "imagens_inspecionadas": 18,
+  "amostra_visual": [
+    {
+      "ficheiro": "depois-cartao-pib-real-per-capita-2025-pt-390.png",
+      "sha256": "5e65e440d98725aa62062c1e9980b2b791fd945624a473724d15698354b5e0c2"
+    },
+    {
+      "ficheiro": "depois-cartao-ihpc-variacao-homologa-en-390.png",
+      "sha256": "155536e6f4921a3ff52cd0a533fc6c406f5ac21f7e9a7fea910edeeef7978f81"
+    },
+    {
+      "ficheiro": "depois-cartao-taxa-de-cambio-efectiva-real-2025-pt-1600.png",
+      "sha256": "fd58d5596353a10c4e779ee78d43409470a64c4cf16c43a407f35e190435351b"
+    },
+    {
+      "ficheiro": "depois-cartao-evora-indice-de-divida-2024-en-390.png",
+      "sha256": "9daea3ce08367f8f31765f0bdb6351cf786fbbe554dbeb8a1ddbdc6cf4ebf169"
+    },
+    {
+      "ficheiro": "depois-cartao-pib-real-per-capita-2025-en-1600.png",
+      "sha256": "b0d733cb99cba3616b9d70567c7cd7c3fa623b38e95fece35bbf4812602b1802"
+    },
+    {
+      "ficheiro": "depois-cartao-ipc-variacao-homologa-pt-390.png",
+      "sha256": "ea794fa0f522d27b2deebbadfa05bcb1026dbc87eb7ef6bb95bf5677b8036215"
+    },
+    {
+      "ficheiro": "depois-cartao-ihpc-variacao-homologa-pt-1600.png",
+      "sha256": "dc18ed93f392f8dff3ca91aa6f26b08309a0f25b8ba0535de7ef61f807bbb879"
+    },
+    {
+      "ficheiro": "depois-cartao-taxa-de-cambio-efectiva-real-2025-en-390.png",
+      "sha256": "0f5b2b29d8f48d62368f57e2e135dbfc123273e58a483ca6045bb46967164463"
+    },
+    {
+      "ficheiro": "depois-cartao-evora-indice-de-divida-2024-pt-1600.png",
+      "sha256": "f3fdd3f97cb3bce875a869b4cce8036f7d5b6bc4e4304fc7b230a9704f9afe05"
+    },
+    {
+      "ficheiro": "depois-calendario-evora-pt-390.png",
+      "sha256": "3fcd6c1381123ef7d4d196481333f2ecd62ae50b141739f85a090fc2998e5667"
+    },
+    {
+      "ficheiro": "depois-recibo-divida-das-familias-2025-ue-pt-390.png",
+      "sha256": "5ba6a409219db44e9dd4fbb288f0e8ca87996c7fe41bd17c43956f912ce9047f"
+    },
+    {
+      "ficheiro": "depois-recibo-divida-das-familias-2025-ue-en-1600.png",
+      "sha256": "b17ff93355e5595a61c7aa9f4aa6ebc72b842297af814b27d9a047485a3e3384"
+    },
+    {
+      "ficheiro": "depois-recibo-indice-de-divida-limite-legal-pt-1600.png",
+      "sha256": "f60015f9f3f7f853bb997ab3b21676170a0cc55d0eb443204b76a7e6a8581baf"
+    },
+    {
+      "ficheiro": "depois-recibo-pib-real-per-capita-2025-pt-390.png",
+      "sha256": "7583e78eaf5c8959f4e16882b896942af72ede15d3c4f0bba37ea66aa8ce37d3"
+    },
+    {
+      "ficheiro": "depois-recibo-pib-real-per-capita-2025-en-1600.png",
+      "sha256": "bc7427cefcc29f94672d39c707bda031a62636cbc603ee43bcc314b5efdb7aeb"
+    },
+    {
+      "ficheiro": "depois-recibo-indice-de-divida-limite-legal-en-390.png",
+      "sha256": "bcc21a34b415e88756fc7826248f09ba325cba1c40dfeda268de777652c0c0de"
+    },
+    {
+      "ficheiro": "depois-cartao-evora-prazo-medio-de-pagamento-2025-12-pt-390.png",
+      "sha256": "3d0491724c79883f281ec3d1dbb360ef24136c20eb69ee59e79cc547fb0f5fe2"
+    },
+    {
+      "ficheiro": "depois-cartao-evora-prazo-medio-de-pagamento-2025-12-en-1600.png",
+      "sha256": "1171fdb404f5c51217c2a4b519e7bff2ec38d564c502f65c27d0657dcafae8b5"
+    }
+  ],
+  "resultado_visual": "Na amostra aberta, texto legível e sem cortes ou sobreposições observados. Confirmados a bandeira do PIB, o objetivo do BCE sem veredicto no IHPC, a remissão do IPC para o IHPC, o sentido do câmbio, o denominador municipal, a marca sem unidade, as duas releituras europeias, a atualização e a história de acesso, a releitura antiga da DGAL e a frase genérica da tentativa inacessível do PIB.",
+  "limite_visual": "A inspeção visual foi uma amostra, não a abertura de todas as imagens. O recorte do calendário inclui o instrumento inteiro e é muito alto; a posição exata dos pontos é conferida pela F18. A matriz completa, os resumos e as condições automáticas estão em capturas-depois.json."
+}

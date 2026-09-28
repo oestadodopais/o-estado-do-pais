@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "linha anterior lê a segunda unidade: unit,geo,time",
+    "passou": true
+  },
+  {
+    "nome": "bandeira da mesma célula: unit,geo,time",
+    "passou": true
+  },
+  {
+    "nome": "a União resolve a unidade selada: unit,geo,time",
+    "passou": true
+  },
+  {
+    "nome": "linha anterior lê a segunda unidade: time,unit,geo",
+    "passou": true
+  },
+  {
+    "nome": "bandeira da mesma célula: time,unit,geo",
+    "passou": true
+  },
+  {
+    "nome": "a União resolve a unidade selada: time,unit,geo",
+    "passou": true
+  },
+  {
+    "nome": "o leitor comum lê o cubo resolvido",
+    "passou": true
+  },
+  {
+    "nome": "cubo ambíguo recusado antes da leitura do tempo",
+    "passou": true
+  },
+  {
+    "nome": "lacuna não se preenche com a outra unidade",
+    "passou": true
+  },
+  {
+    "nome": "planta da primeira unidade morde a asserção do valor",
+    "passou": true
+  }
+]

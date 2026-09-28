@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T20:59:07+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/evora-prr-aprovado-2026.yml",
+   "descricao": "a primeira entrada reconstituída do acesso diz que o acesso antigo era 2026-08-03, e o Git (8371e097) mostra 2026-08-04",
+   "sha256_antes": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5",
+   "sha256_depois": "39579ffd00a217525887d7b341ce467b84fd2f04a02f57e03a87480c4ab20a58",
+   "contexto_antes": "it was published: it measured a different snapshot, and that one is no longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança",
+   "contexto_depois": "it was published: it measured a different snapshot, and that one is no longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-03\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/lib/historia-da-proveniencia.mjs",
+   "descricao": "a recusa de uma entrada anterior ao acesso em vigor volta a aplicar-se só às entradas sobre o acesso, e as do excerto e do endereço deixam de ser conferidas",
+   "sha256_antes": "2bea2a08a2ef787601a0c6b1c8385107b1edb4a40ff9fe45e319eb40b1a93852",
+   "sha256_depois": "809d919820e96b0be32f18ebd3de1b421d7f55512415e65a196c8ebc0aa29a29",
+   "contexto_antes": " 'access_date' && (c.old_value > c.date || c.new_value > c.date)) {\n      erros.push(`${rot}: o acesso não pode ser posterior à mudança que o declara.`);\n    }\n    if (acessos && String(c.date) < acessos.em(c.date)) {\n      erros.push(`${rot}: a entrada é anterior ao acesso em vigor (${acessos.em(c.date)}).`);\n    }\n    anterior = c.new_value;\n  }\n  if (entradas.length && an",
+   "contexto_depois": " 'access_date' && (c.old_value > c.date || c.new_value > c.date)) {\n      erros.push(`${rot}: o acesso não pode ser posterior à mudança que o declara.`);\n    }\n    if (acessos && campo === 'access_date' && String(c.date) < acessos.em(c.date)) {\n      erros.push(`${rot}: a entrada é anterior ao acesso em vigor (${acessos.em(c.date)}).`);\n    }\n    anterior = c.new_value;\n  }\n  if (entradas.length && an"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/livro-razao/pib-real-per-capita-2025/index.html",
+   "descricao": "o recibo português do PIB volta a dizer «sem resposta a esse pedido», quando a fonte respondeu com uma unidade ambígua",
+   "sha256_antes": "6c30c9bb18a808a454bf8b5c1f1c08a026a211aa3b64a8183217df2f128331e1",
+   "sha256_depois": "842a1ba1e44e70cb2cce9cd21eae3ada2cde5fbbc51c3ecb288928fce50dd164",
+   "contexto_antes": "nledger=\"data-da-linha\" data-de-linha=\"pib-real-per-capita-2025\" data-de-campo=\"verifications.2.date\">28.09.2026</span>, <span data-linha-verificacao-resultado>sem valor lido</span> · <span data-linha-verificacao-por>comparação semanal com a fonte</span>  </dd></dl></section><section class=\"linha-bloco\" aria-labelledby=\"historico\"><",
+   "contexto_depois": "nledger=\"data-da-linha\" data-de-linha=\"pib-real-per-capita-2025\" data-de-campo=\"verifications.2.date\">28.09.2026</span>, <span data-linha-verificacao-resultado>sem resposta a esse pedido</span> · <span data-linha-verificacao-por>comparação semanal com a fonte</span>  </dd></dl></section><section class=\"linha-bloco\" aria-labelledby=\"historico\"><"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a frase inglesa das linhas calculadas volta a dizer que não houve segunda leitura, ao contrário da portuguesa",
+   "sha256_antes": "2ec8914e42523117096a20716ba4f20a88ec71593d07fbbcf98bc319589716f4",
+   "sha256_depois": "b5ec160c139ba7daaec68cb21f4900e0faa298b50e73d13043f7c025bd0f1ac6",
+   "contexto_antes": "ccess_date\": \"reading date\", \"excerpt\": \"source excerpt\"},\n        ficheiroRelidoK: 'Source file read again on',\n        semSegundaLeitura: 'none yet',\n        segundaLeituraCalculada: 'Recomputed at every build from its sources',\n        verAtualizacao: 'See the update to this value',\n        valorEmUso: 'This page uses the value shown in the title.',\n        reconferidoK: 'Verified on'",
+   "contexto_depois": "ccess_date\": \"reading date\", \"excerpt\": \"source excerpt\"},\n        ficheiroRelidoK: 'Source file read again on',\n        semSegundaLeitura: 'none yet',\n        segundaLeituraCalculada: 'No second reading yet',\n        verAtualizacao: 'See the update to this value',\n        valorEmUso: 'This page uses the value shown in the title.',\n        reconferidoK: 'Verified on'"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz doze entradas novas, duas por linha, nas cinco linhas do PRR",
+   "sha256_antes": "7f182c98bb4598ad397b4fecbf7b2658aed974da36072cc37747e4699bdffbfa",
+   "sha256_depois": "9e39c83a19df93fc3c1e25e159000d4f93975cc713da920d67b5b6f6cb382079",
+   "contexto_antes": "` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |\n\nHá dez entradas novas, duas por linha. A criação do ficheiro mostra o primeiro\nacesso, não uma mudança, e por isso não recebeu uma entrada inventada.\nAs listas antigas conservam todas as entradas, a",
+   "contexto_depois": "` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |\n\nHá doze entradas novas, duas por linha. A criação do ficheiro mostra o primeiro\nacesso, não uma mudança, e por isso não recebeu uma entrada inventada.\nAs listas antigas conservam todas as entradas, a"
+  }
+ ]
+}

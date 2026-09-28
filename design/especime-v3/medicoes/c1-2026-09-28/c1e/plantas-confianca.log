@@ -1,0 +1,2094 @@
+{
+  "natureza": "Casos sintéticos em memória. Os valores e as frases deste ensaio não são observações publicadas.",
+  "contagens": {
+    "controlos": 97,
+    "controlos_integros": 97,
+    "plantas": 127,
+    "plantas_mordidas": 127
+  },
+  "controlos": [
+    {
+      "grupo": "proveniencia",
+      "nome": "data-na-forma-da-casa-pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-literal-pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "data-na-forma-da-casa-en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-literal-en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "historico",
+      "nome": "grupo-inteiro",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-20 600-normal",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 0,
+        "cartoes": 1
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-20 600-fixo",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 0,
+        "cartoes": 1
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-−50,2-normal",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 0,
+        "cartoes": 1
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-−50,2-fixo",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 0,
+        "cartoes": 1
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-20 600-normal",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 1,
+        "cartoes": 0
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-20 600-fixo",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 1,
+        "cartoes": 0
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-−50,2-normal",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 1,
+        "cartoes": 0
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-−50,2-fixo",
+      "passou": true,
+      "erros": [],
+      "contas": {
+        "titulos": 1,
+        "cartoes": 0
+      }
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "marca-sem-unidade",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "contagem-com-prova-v2",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "releitura",
+      "nome": "49.2",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "releitura",
+      "nome": "−1234,50",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-ainda-sem-segunda-leitura",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-calculada-em-cada-construcao",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-numero-relido",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-ficheiro-relido",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-divergencia-com-atualizacao",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-divergencia-ainda-sem-atualizacao",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-fonte-sem-resposta",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-ainda-sem-segunda-leitura",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-calculada-em-cada-construcao",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-numero-relido",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-ficheiro-relido",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-divergencia-com-atualizacao",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-divergencia-ainda-sem-atualizacao",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-fonte-sem-resposta",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "releitura-anterior",
+      "nome": "pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "releitura-anterior",
+      "nome": "en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "valor-estimado",
+      "nome": "pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "valor-estimado",
+      "nome": "en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ipc-variacao-homologa-negativo",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ipc-variacao-homologa": "−0,5",
+        "ipc-variacao-homologa-periodo-anterior": "0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-anterior",
+          "escolha": "menor"
+        }
+      ],
+      "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, −0,5 % face aos de há um ano, ou seja, abaixo deles. É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. A variação é menor do que a do mês anterior. O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ipc-variacao-homologa-zero",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ipc-variacao-homologa": "0",
+        "ipc-variacao-homologa-periodo-anterior": "0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "zero"
+        },
+        {
+          "no": "compara-anterior",
+          "escolha": "menor"
+        }
+      ],
+      "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, ao mesmo nível de há um ano. O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram. A variação é menor do que a do mês anterior. O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ipc-variacao-homologa-positivo",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ipc-variacao-homologa": "0,5",
+        "ipc-variacao-homologa-periodo-anterior": "0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "positivo"
+        },
+        {
+          "no": "compara-anterior",
+          "escolha": "maior"
+        }
+      ],
+      "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, 0,5 % acima dos de há um ano. É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. A variação é maior do que a do mês anterior. O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ihpc-variacao-homologa-taxas-negativas-maior",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ihpc-variacao-homologa": "−0,5",
+        "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+        "ihpc-variacao-homologa-ue": "−1,0"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-ue",
+          "escolha": "maior"
+        }
+      ],
+      "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ihpc-variacao-homologa-taxas-negativas-menor",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ihpc-variacao-homologa": "−0,5",
+        "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+        "ihpc-variacao-homologa-ue": "−0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-ue",
+          "escolha": "menor"
+        }
+      ],
+      "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é menor do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ihpc-variacao-homologa-taxas-negativas-igual",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ihpc-variacao-homologa": "−0,5",
+        "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+        "ihpc-variacao-homologa-ue": "−0,5"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-ue",
+          "escolha": "igual"
+        }
+      ],
+      "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é igual à da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ipc-variacao-homologa-negativo",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ipc-variacao-homologa": "−0,5",
+        "ipc-variacao-homologa-periodo-anterior": "0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-anterior",
+          "escolha": "menor"
+        }
+      ],
+      "texto_sintetico": "In August 2026 consumer prices were, on average, −0,5 % compared with a year earlier, that is, below. That is the general fall in prices, which the INE measures on a basket of goods and services that represents what households buy. The change is smaller than the previous month’s. The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ipc-variacao-homologa-zero",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ipc-variacao-homologa": "0",
+        "ipc-variacao-homologa-periodo-anterior": "0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "zero"
+        },
+        {
+          "no": "compara-anterior",
+          "escolha": "menor"
+        }
+      ],
+      "texto_sintetico": "In August 2026 consumer prices were, on average, at the same level as a year earlier. The INE measures them on a basket of goods and services that represents what households buy. The change is smaller than the previous month’s. The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ipc-variacao-homologa-positivo",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ipc-variacao-homologa": "0,5",
+        "ipc-variacao-homologa-periodo-anterior": "0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "positivo"
+        },
+        {
+          "no": "compara-anterior",
+          "escolha": "maior"
+        }
+      ],
+      "texto_sintetico": "In August 2026 consumer prices were, on average, 0,5 % above a year earlier. That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy. The change is larger than the previous month’s. The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ihpc-variacao-homologa-taxas-negativas-maior",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ihpc-variacao-homologa": "−0,5",
+        "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+        "ihpc-variacao-homologa-ue": "−1,0"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-ue",
+          "escolha": "maior"
+        }
+      ],
+      "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is larger than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ihpc-variacao-homologa-taxas-negativas-menor",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ihpc-variacao-homologa": "−0,5",
+        "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+        "ihpc-variacao-homologa-ue": "−0,2"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-ue",
+          "escolha": "menor"
+        }
+      ],
+      "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is smaller than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index."
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ihpc-variacao-homologa-taxas-negativas-igual",
+      "passou": true,
+      "erros": [],
+      "valores_sinteticos": {
+        "ihpc-variacao-homologa": "−0,5",
+        "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+        "ihpc-variacao-homologa-ue": "−0,5"
+      },
+      "ramos": [
+        {
+          "no": "sinal",
+          "escolha": "negativo"
+        },
+        {
+          "no": "compara-ue",
+          "escolha": "igual"
+        }
+      ],
+      "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is the same as the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index."
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-en-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-negativo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-zero",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-positivo",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-positivo",
+      "passou": true,
+      "erros": []
+    }
+  ],
+  "plantas": [
+    {
+      "grupo": "proveniencia",
+      "nome": "dia-errado-pt",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "iso-por-formatar-pt",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-com-os-mesmos-algarismos-pt",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "dia-errado-en",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "iso-por-formatar-en",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-com-os-mesmos-algarismos-en",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "historico",
+      "nome": "entrada-retirada-do-grupo",
+      "codigo": 1,
+      "mordida": "perdeu ou misturou entradas",
+      "passou": true,
+      "erros": [
+        "C1d: o grupo da história perdeu ou misturou entradas",
+        "C1d: a história não mostra cada entrada uma vez"
+      ]
+    },
+    {
+      "grupo": "historico",
+      "nome": "valor-antigo-retirado",
+      "codigo": 1,
+      "mordida": "perdeu um campo",
+      "passou": true,
+      "erros": [
+        "C1d: a história perdeu um campo de uma entrada agrupada"
+      ]
+    },
+    {
+      "grupo": "historico",
+      "nome": "motivo-duplicado",
+      "codigo": 1,
+      "mordida": "uma só data, natureza e razão",
+      "passou": true,
+      "erros": [
+        "C1d: o grupo não partilha uma só data, natureza e razão"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-20 600-normal-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-20 600-fixo-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-−50,2-normal-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "cartao-−50,2-fixo-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-20 600-normal-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-20 600-fixo-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-−50,2-normal-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "titulo-−50,2-fixo-colado",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "seletor-deixou-de-casar",
+      "codigo": 1,
+      "mordida": "seletor não conferiu",
+      "passou": true,
+      "erros": [
+        "I143/I158: o seletor não conferiu todos os cartões declarados"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "marca-com-unidade",
+      "codigo": 1,
+      "mordida": "marca sem valor publicado",
+      "passou": true,
+      "erros": [
+        "I143/I158: uma marca sem valor publicado traz valor ou unidade"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "quantidade-sem-valor",
+      "codigo": 1,
+      "mordida": "faltam o valor ou a unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: faltam o valor ou a unidade na quantidade"
+      ]
+    },
+    {
+      "grupo": "valor-unidade",
+      "nome": "contagem-com-prova-v2-colada",
+      "codigo": 1,
+      "mordida": "cola o valor à unidade",
+      "passou": true,
+      "erros": [
+        "I143/I158: o cartão cola o valor à unidade (undefined)"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "pt-ponto",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "pt-sinal",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "pt-precisao",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "pt-separador",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "en-ponto",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "en-sinal",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "en-precisao",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "forma-encontrada",
+      "nome": "en-separador",
+      "codigo": 1,
+      "mordida": "forma do valor encontrado",
+      "passou": true,
+      "erros": [
+        "forma do valor encontrado diferente da casa"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-rotulo-vazio-em-desacordo",
+      "codigo": 1,
+      "mordida": "rótulo correspondente",
+      "passou": true,
+      "erros": [
+        "C1d: a ausência de releitura não tem o rótulo correspondente"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-frase-vazia-em-desacordo",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-calculada-diz-ainda-nenhuma",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-omite-valor-em-uso",
+      "codigo": 1,
+      "mordida": "qual é o valor em uso",
+      "passou": true,
+      "erros": [
+        "C1c: a divergência não diz corretamente qual é o valor em uso"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-inventa-diferenca-do-valor-em-uso",
+      "codigo": 1,
+      "mordida": "qual é o valor em uso",
+      "passou": true,
+      "erros": [
+        "C1c: a divergência não diz corretamente qual é o valor em uso"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-tentativa-exagera-sem resposta a esse pedido",
+      "codigo": 1,
+      "mordida": "ausência de valor lido",
+      "passou": true,
+      "erros": [
+        "C1e: a tentativa afirma mais do que a ausência de valor lido"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-tentativa-exagera-não foi possível reler o número nesse dia",
+      "codigo": 1,
+      "mordida": "ausência de valor lido",
+      "passou": true,
+      "erros": [
+        "C1e: a tentativa afirma mais do que a ausência de valor lido"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-nega-releitura-registada",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-omite-ainda-sem-segunda-leitura",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-inventa-segunda-leitura",
+      "codigo": 1,
+      "mordida": "segunda leitura sem entrada",
+      "passou": true,
+      "erros": [
+        "C1: segunda leitura sem entrada no registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-ficheiro-apresentado-como-numero",
+      "codigo": 1,
+      "mordida": "não distingue a leitura do número",
+      "passou": true,
+      "erros": [
+        "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-numero-apresentado-como-ficheiro",
+      "codigo": 1,
+      "mordida": "não distingue a leitura do número",
+      "passou": true,
+      "erros": [
+        "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-falsa-atualizacao",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1c: a divergência não diz corretamente qual é o valor em uso",
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-atualizacao-sem-porta",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-atualizacao-com-porta-errada",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-atualizacao-sem-destino",
+      "codigo": 1,
+      "mordida": "atualização sem destino",
+      "passou": true,
+      "erros": [
+        "C1: atualização sem destino na história"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-correcao-apresentada-como-atualizacao",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "pt-atualizacao-de-outro-valor",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-rotulo-vazio-em-desacordo",
+      "codigo": 1,
+      "mordida": "rótulo correspondente",
+      "passou": true,
+      "erros": [
+        "C1d: a ausência de releitura não tem o rótulo correspondente"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-frase-vazia-em-desacordo",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-calculada-diz-ainda-nenhuma",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-omite-valor-em-uso",
+      "codigo": 1,
+      "mordida": "qual é o valor em uso",
+      "passou": true,
+      "erros": [
+        "C1c: a divergência não diz corretamente qual é o valor em uso"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-inventa-diferenca-do-valor-em-uso",
+      "codigo": 1,
+      "mordida": "qual é o valor em uso",
+      "passou": true,
+      "erros": [
+        "C1c: a divergência não diz corretamente qual é o valor em uso"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-tentativa-exagera-with no answer to that request",
+      "codigo": 1,
+      "mordida": "ausência de valor lido",
+      "passou": true,
+      "erros": [
+        "C1e: a tentativa afirma mais do que a ausência de valor lido"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-tentativa-exagera-the number could not be re-read that day",
+      "codigo": 1,
+      "mordida": "ausência de valor lido",
+      "passou": true,
+      "erros": [
+        "C1e: a tentativa afirma mais do que a ausência de valor lido"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-nega-releitura-registada",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-omite-ainda-sem-segunda-leitura",
+      "codigo": 1,
+      "mordida": "ausência de segunda leitura",
+      "passou": true,
+      "erros": [
+        "C1: a ausência de segunda leitura não corresponde ao registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-inventa-segunda-leitura",
+      "codigo": 1,
+      "mordida": "segunda leitura sem entrada",
+      "passou": true,
+      "erros": [
+        "C1: segunda leitura sem entrada no registo"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-ficheiro-apresentado-como-numero",
+      "codigo": 1,
+      "mordida": "não distingue a leitura do número",
+      "passou": true,
+      "erros": [
+        "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-numero-apresentado-como-ficheiro",
+      "codigo": 1,
+      "mordida": "não distingue a leitura do número",
+      "passou": true,
+      "erros": [
+        "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-falsa-atualizacao",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1c: a divergência não diz corretamente qual é o valor em uso",
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-atualizacao-sem-porta",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-atualizacao-com-porta-errada",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-atualizacao-sem-destino",
+      "codigo": 1,
+      "mordida": "atualização sem destino",
+      "passou": true,
+      "erros": [
+        "C1: atualização sem destino na história"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-correcao-apresentada-como-atualizacao",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "verificacao",
+      "nome": "en-atualizacao-de-outro-valor",
+      "codigo": 1,
+      "mordida": "não aponta para a atualização",
+      "passou": true,
+      "erros": [
+        "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+      ]
+    },
+    {
+      "grupo": "releitura-anterior",
+      "nome": "pt-confirma-o-valor-atual",
+      "codigo": 1,
+      "mordida": "valor anterior que confirmou",
+      "passou": true,
+      "erros": [
+        "C1d: a releitura não identifica o valor anterior que confirmou"
+      ]
+    },
+    {
+      "grupo": "releitura-anterior",
+      "nome": "pt-omite-o-valor-anterior",
+      "codigo": 1,
+      "mordida": "valor anterior que confirmou",
+      "passou": true,
+      "erros": [
+        "C1d: a releitura não identifica o valor anterior que confirmou"
+      ]
+    },
+    {
+      "grupo": "releitura-anterior",
+      "nome": "en-confirma-o-valor-atual",
+      "codigo": 1,
+      "mordida": "valor anterior que confirmou",
+      "passou": true,
+      "erros": [
+        "C1d: a releitura não identifica o valor anterior que confirmou"
+      ]
+    },
+    {
+      "grupo": "releitura-anterior",
+      "nome": "en-omite-o-valor-anterior",
+      "codigo": 1,
+      "mordida": "valor anterior que confirmou",
+      "passou": true,
+      "erros": [
+        "C1d: a releitura não identifica o valor anterior que confirmou"
+      ]
+    },
+    {
+      "grupo": "valor-estimado",
+      "nome": "pt-marca-omitida",
+      "codigo": 1,
+      "mordida": "bandeira",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-estimativa · despesa-em-id-2024: as linhas com bandeira e as palavras de ressalva não coincidem"
+      ]
+    },
+    {
+      "grupo": "valor-estimado",
+      "nome": "en-marca-omitida",
+      "codigo": 1,
+      "mordida": "bandeira",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-estimativa · despesa-em-id-2024: as linhas com bandeira e as palavras de ressalva não coincidem"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ipc-variacao-homologa-negativo-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ipc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços no consumidor estavam, em méd…» contra «Em agosto de 2026 os preços no consumidor estavam, em méd…»",
+        "K17 · /ensaio-sintetico · ipc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços no consumidor estavam, em méd…» contra «Em agosto de 2026 os preços no consumidor estavam, em méd…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ihpc-variacao-homologa-taxas-negativas-maior-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ihpc-variacao-homologa-taxas-negativas-menor-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "pt-ihpc-variacao-homologa-taxas-negativas-igual-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ipc-variacao-homologa-negativo-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ipc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 consumer prices were, on average, −0,5 % c…» contra «In August 2026 consumer prices were, on average, −0,5 % c…»",
+        "K17 · /ensaio-sintetico · ipc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 consumer prices were, on average, −0,5 % c…» contra «In August 2026 consumer prices were, on average, −0,5 % c…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ihpc-variacao-homologa-taxas-negativas-maior-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ihpc-variacao-homologa-taxas-negativas-menor-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+      ]
+    },
+    {
+      "grupo": "leituras",
+      "nome": "en-ihpc-variacao-homologa-taxas-negativas-igual-frase-positiva-fixa",
+      "codigo": 1,
+      "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+      "passou": true,
+      "erros": [
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+        "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-homologa-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-variacao-media-12-meses-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-alimentacao-variacao-homologa-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-energia-em-casa-variacao-homologa-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-combustiveis-variacao-homologa-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ihpc-variacao-homologa-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-rendas-variacao-homologa-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-negativo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-zero-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    },
+    {
+      "grupo": "sinais-rp1",
+      "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-positivo-troca-coerente",
+      "codigo": 1,
+      "mordida": "palavra não corresponde ao sinal",
+      "passou": true,
+      "erros": [
+        "a palavra não corresponde ao sinal selado"
+      ]
+    }
+  ]
+}

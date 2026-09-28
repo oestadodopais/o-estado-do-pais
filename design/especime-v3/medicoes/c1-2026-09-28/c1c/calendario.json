@@ -1,0 +1,160 @@
+{
+  "celula": "F18",
+  "modo": "páginas construídas",
+  "paginas": [
+    {
+      "rota": "/municipios/evora",
+      "erros": [],
+      "pontos": [
+        {
+          "id": "evora-indice-de-divida-2014",
+          "ano": 2014,
+          "x": 0.3284722222222222,
+          "esperado": 0.3284722222222222
+        },
+        {
+          "id": "evora-indice-de-divida-2017",
+          "ano": 2017,
+          "x": 0.4857638888888889,
+          "esperado": 0.4857638888888889
+        },
+        {
+          "id": "evora-indice-de-divida-2021",
+          "ano": 2021,
+          "x": 0.6954861111111111,
+          "esperado": 0.695486111111111
+        },
+        {
+          "id": "evora-indice-de-divida-2024",
+          "ano": 2024,
+          "x": 0.8527777777777777,
+          "esperado": 0.8527777777777777
+        }
+      ],
+      "plantas": [
+        {
+          "nome": "ponto-fora-do-ano",
+          "codigo": 1,
+          "mordida": "ponto fora do seu ano",
+          "passou": true,
+          "erros": [
+            "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+          ]
+        },
+        {
+          "nome": "ponto-no-inicio-do-ano",
+          "codigo": 1,
+          "mordida": "ponto fora do seu ano",
+          "passou": true,
+          "erros": [
+            "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+          ]
+        },
+        {
+          "nome": "uniao-sobre-lacuna",
+          "codigo": 1,
+          "mordida": "ano sem valor",
+          "passou": true,
+          "erros": [
+            "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+          ]
+        },
+        {
+          "nome": "ponto-sem-valor",
+          "codigo": 1,
+          "mordida": "ano sem valor",
+          "passou": true,
+          "erros": [
+            "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+          ]
+        },
+        {
+          "nome": "mandato-sem-rotulo",
+          "codigo": 1,
+          "mordida": "não tem o seu rótulo",
+          "passou": true,
+          "erros": [
+            "F18: o mandato em curso não tem o seu rótulo."
+          ]
+        }
+      ]
+    },
+    {
+      "rota": "/en/municipalities/evora",
+      "erros": [],
+      "pontos": [
+        {
+          "id": "evora-indice-de-divida-2014",
+          "ano": 2014,
+          "x": 0.3284722222222222,
+          "esperado": 0.3284722222222222
+        },
+        {
+          "id": "evora-indice-de-divida-2017",
+          "ano": 2017,
+          "x": 0.4857638888888889,
+          "esperado": 0.4857638888888889
+        },
+        {
+          "id": "evora-indice-de-divida-2021",
+          "ano": 2021,
+          "x": 0.6954861111111111,
+          "esperado": 0.695486111111111
+        },
+        {
+          "id": "evora-indice-de-divida-2024",
+          "ano": 2024,
+          "x": 0.8527777777777777,
+          "esperado": 0.8527777777777777
+        }
+      ],
+      "plantas": [
+        {
+          "nome": "ponto-fora-do-ano",
+          "codigo": 1,
+          "mordida": "ponto fora do seu ano",
+          "passou": true,
+          "erros": [
+            "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+          ]
+        },
+        {
+          "nome": "ponto-no-inicio-do-ano",
+          "codigo": 1,
+          "mordida": "ponto fora do seu ano",
+          "passou": true,
+          "erros": [
+            "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+          ]
+        },
+        {
+          "nome": "uniao-sobre-lacuna",
+          "codigo": 1,
+          "mordida": "ano sem valor",
+          "passou": true,
+          "erros": [
+            "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+          ]
+        },
+        {
+          "nome": "ponto-sem-valor",
+          "codigo": 1,
+          "mordida": "ano sem valor",
+          "passou": true,
+          "erros": [
+            "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+          ]
+        },
+        {
+          "nome": "mandato-sem-rotulo",
+          "codigo": 1,
+          "mordida": "não tem o seu rótulo",
+          "passou": true,
+          "erros": [
+            "F18: o mandato em curso não tem o seu rótulo."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "estado": "depois",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "observacoes": [],
+  "cabeca_da_arvore": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+  "dist_construido_de": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+  "dist_construido_em": "2026-09-28T12:23:17.064Z",
+  "inicio": "2026-09-28T12:34:23.756Z",
+  "fim": "2026-09-28T12:35:14.616Z",
+  "segundos": 50.86,
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "sha256": "cca4c3c6d771ef1b1c2a7ff2c8bc56b20ec93a86905731445284ef6a35689817"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "sha256": "6224d0309c8cda7a38086f209c5e0062ed9f2a9b754652d0d3d7adc9e8193803"
+    },
+    "temas_index.html": {
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "sha256": "cd720f6ea8e4eb7d640bc009ecf4020620e45c85d9db6ca5a58d20d453fc572d"
+    },
+    "en_themes_index.html": {
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "sha256": "1a8be1fba3c83f1ed0bcd8d055b9792c1936360db72f6db36d09afb4abab2a0d"
+    },
+    "lugares_index.html": {
+      "rota": "/lugares/",
+      "familia": "lugares",
+      "lingua": "pt",
+      "sha256": "0f1d4fe7a2fcd84e1ed261e604ba614b01c24c70818fbeac5ee072a5d158930f"
+    },
+    "en_places_index.html": {
+      "rota": "/en/places/",
+      "familia": "lugares",
+      "lingua": "en",
+      "sha256": "5c3aa8d9474d995457cdef7a87cdc99832af2b674646e813f1751752fe7b815d"
+    },
+    "municipios_evora_index.html": {
+      "rota": "/municipios/evora/",
+      "familia": "evora",
+      "lingua": "pt",
+      "sha256": "9d4852e58818f1c83ee7438e693c96786a4a9b0f4979ad4ea42144d8aab46002"
+    },
+    "en_municipalities_evora_index.html": {
+      "rota": "/en/municipalities/evora/",
+      "familia": "evora",
+      "lingua": "en",
+      "sha256": "1a137f29bf055dfb5443a3b17ecb3ea45b515759df1e588974585324d0fbd884"
+    },
+    "livro-razao_ipc-variacao-homologa_index.html": {
+      "rota": "/livro-razao/ipc-variacao-homologa/",
+      "familia": "recibo-inflacao",
+      "lingua": "pt",
+      "sha256": "429e9e859572c048c5df25d64712a0172ace016bb0b3f6c581aed1f2f1acacb4"
+    },
+    "en_ledger_ipc-variacao-homologa_index.html": {
+      "rota": "/en/ledger/ipc-variacao-homologa/",
+      "familia": "recibo-inflacao",
+      "lingua": "en",
+      "sha256": "22e49042f96a1e5652b3b18529dabce2f6ce64177c432febf0dfb7583fefe74e"
+    },
+    "livro-razao_divida-das-familias-2025-ue_index.html": {
+      "rota": "/livro-razao/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-familias-ue",
+      "lingua": "pt",
+      "sha256": "968a30845960bdd57206b54f2661e76162ed3343cb708b2427843bc60782d406"
+    },
+    "en_ledger_divida-das-familias-2025-ue_index.html": {
+      "rota": "/en/ledger/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-familias-ue",
+      "lingua": "en",
+      "sha256": "aa6671f9b9942c2d18c869450c93c2fd7368442e1acfda75db6bc94e544846f2"
+    },
+    "livro-razao_pib-real-per-capita-2025_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real",
+      "lingua": "pt",
+      "sha256": "173fa9b2be400f47bc6387159e51a7ddd6392e7e977aa0c29bb591b965e7637a"
+    },
+    "en_ledger_pib-real-per-capita-2025_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real",
+      "lingua": "en",
+      "sha256": "1d2692ac399330e2c36c3045f4fc5865d81bb62a214ef8e36f9d2097b6cb4b7b"
+    },
+    "_astro/Base.Bu8ardly.css": {
+      "origem": "/_astro/Base.Bu8ardly.css",
+      "tipo": "folha construída",
+      "sha256": "38efcbd365cf13a746e1d473886c340ca73e58a8d391abf69c0a2a95d4dfb26c"
+    },
+    "_astro/inicio.CoJligbV.css": {
+      "origem": "/_astro/inicio.CoJligbV.css",
+      "tipo": "folha construída",
+      "sha256": "a0529e5e6954447559c92c7591295b6f2fbbec7cf4aa22cca618e1e704713c1c"
+    },
+    "_astro/lugar.DQAkNk1H.css": {
+      "origem": "/_astro/lugar.DQAkNk1H.css",
+      "tipo": "folha construída",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    },
+    "_astro/linha.kwcknRfj.css": {
+      "origem": "/_astro/linha.kwcknRfj.css",
+      "tipo": "folha construída",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    }
+  }
+}

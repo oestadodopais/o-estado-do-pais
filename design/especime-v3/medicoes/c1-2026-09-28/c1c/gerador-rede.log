@@ -1,0 +1,67 @@
+  escrita  saldo-da-balanca-corrente-2024                        0,3  PT
+  ausência tipsbp10                                       EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o pe
+  escrita  posicao-de-investimento-internacional-2024          −58,9  PT
+  ausência tipsii10                                       EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o pe
+  escrita  taxa-de-cambio-efectiva-real-2024                     0,4  PT
+  escrita  taxa-de-cambio-efectiva-real-2025-ue                 11,3  EU27_2020
+  escrita  desempenho-das-exportacoes-2024                      17,1  PT
+  ausência tipsbp60                                       EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o pe
+  escrita  custo-unitario-do-trabalho-2024                      17,7  PT
+  escrita  custo-unitario-do-trabalho-2025-ue                   15,2  EU27_2020
+  escrita  divida-publica-2024                                  93,5  PT
+  escrita  divida-publica-2025-ue                               81,7  EU27_2020
+  escrita  divida-das-familias-2024                             52,6  PT
+  escrita  divida-das-familias-2025-ue                          49,2  EU27_2020
+  escrita  divida-das-empresas-2024                             67,1  PT
+  escrita  divida-das-empresas-2025-ue                            70  EU27_2020
+  escrita  fluxo-de-credito-as-familias-2024                     4,1  PT
+  escrita  fluxo-de-credito-as-familias-2025-ue                  2,9  EU27_2020
+  escrita  fluxo-de-credito-as-empresas-2024                     2,4  PT
+  ausência tipspc30                                       EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o pe
+  escrita  precos-da-habitacao-2024                              9,1  PT
+  escrita  precos-da-habitacao-2025-ue                           5,5  EU27_2020
+  escrita  taxa-de-desemprego-mip-2024                           6,5  PT
+  escrita  taxa-de-desemprego-mip-2025-ue                          6  EU27_2020
+  escrita  taxa-de-actividade-2024                               3,2  PT
+  escrita  taxa-de-actividade-2025-ue                            1,1  EU27_2020
+  escrita  despesa-em-id-2023                                   1,68  PT
+  escrita  despesa-em-id-2024-ue                                2,24  EU27_2020
+  escrita  risco-de-pobreza-ou-exclusao-2024                    19,7  PT
+  escrita  risco-de-pobreza-ou-exclusao-2025-ue                 20,9  EU27_2020
+  escrita  jovens-nem-2024                                       8,7  PT
+  escrita  jovens-nem-2025-ue                                     11  EU27_2020
+  escrita  formacao-bruta-de-capital-fixo-2024                  20,4  PT
+  escrita  formacao-bruta-de-capital-fixo-2025-ue               21,4  EU27_2020
+  escrita  pib-real-per-capita-2024                           20 430  PT
+  escrita  pib-real-per-capita-2025-ue                        31 890  EU27_2020
+  escrita  credito-malparado-2024                                2,4  PT
+  ausência tipsbd10                                       EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o pe
+  escrita  licencas-de-construcao-2024                         654,5  PT
+  escrita  licencas-de-construcao-2025-ue                      377,5  EU27_2020
+  escrita  abandono-escolar-precoce-2024                         6,6  PT
+  escrita  abandono-escolar-precoce-2025-ue                      9,1  EU27_2020
+  escrita  taxa-de-emprego-2024                                 78,5  PT
+  escrita  taxa-de-emprego-2025-ue                              76,1  EU27_2020
+  escrita  taxa-de-desemprego-2024                               6,5  PT
+  escrita  taxa-de-desemprego-2025-ue                              6  EU27_2020
+  escrita  desemprego-de-longa-duracao-2024                      2,4  PT
+  escrita  desemprego-de-longa-duracao-2025-ue                   1,9  EU27_2020
+  escrita  disparidade-de-emprego-entre-sexos-2024               5,7  PT
+  escrita  disparidade-de-emprego-entre-sexos-2025-ue            9,6  EU27_2020
+  escrita  racio-s80-s20-2024                                    5,2  PT
+  escrita  racio-s80-s20-2025-ue                                4,62  EU27_2020
+  escrita  sobrecarga-do-custo-da-habitacao-2024                 6,9  PT
+  escrita  sobrecarga-do-custo-da-habitacao-2025-ue              7,7  EU27_2020
+  escrita  criancas-em-creche-2024                              59,4  PT
+  escrita  criancas-em-creche-2025-ue                           40,5  EU27_2020
+  escrita  competencias-digitais-2023                          55,97  PT
+  escrita  competencias-digitais-2025-ue                        60,4  EU27_2020
+  escrita  necessidades-medicas-nao-satisfeitas-2024             2,5  PT
+  escrita  necessidades-medicas-nao-satisfeitas-2025-ue          2,4  EU27_2020
+  escrita  independencia-da-justica-2024                          53  PT
+  escrita  independencia-da-justica-2025-ue                       54  EU27_2020
+  escrita  indice-de-percepcao-da-corrupcao-2024                  57  PT
+  escrita  indice-de-percepcao-da-corrupcao-2025-ue               62  EU27_2020
+  referencias.json: 13 com limiar, 19 sem
+
+  59 linha(s) escrita(s) · 5 ausência(s) · 70 pedido(s)

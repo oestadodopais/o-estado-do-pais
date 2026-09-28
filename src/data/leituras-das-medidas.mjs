@@ -222,11 +222,13 @@ export const LEITURAS_DAS_MEDIDAS = {
   'taxa-de-cambio-efectiva-real-2025': {
     pt: [
       'Mede a competitividade dos preços portugueses face aos principais concorrentes, contando a inflação e as taxas de câmbio, em três anos.',
+      ' Uma subida é uma apreciação: os preços de Portugal sobem face aos dos parceiros e perde-se competitividade de preços.',
       VARIACAO, VARIACAO_UE,
       ' Para a Comissão Europeia, uma variação fora do intervalo entre −', { referencia: 'inferior', semSinal: true }, ' e ', { referencia: 'superior', semSinal: true }, ' % é sinal de possível desequilíbrio: Portugal está ', { comparacao: { entre: ['dentro do intervalo.'], acima: ['acima.'], abaixo: ['abaixo.'], igual: ['no limite.'] } },
     ],
     en: [
       'It measures the price competitiveness of Portugal against its main competitors, allowing for inflation and exchange rates, over three years.',
+      ' A rise is an appreciation: prices in Portugal increase relative to those of its partners and price competitiveness falls.',
       CHANGE, CHANGE_EU,
       ' For the European Commission, a change outside the range from −', { referencia: 'inferior', semSinal: true }, ' to ', { referencia: 'superior', semSinal: true }, ' % is a sign of a possible imbalance: Portugal is ', { comparacao: { entre: ['within the range.'], acima: ['above it.'], abaixo: ['below it.'], igual: ['at the limit.'] } },
     ],
