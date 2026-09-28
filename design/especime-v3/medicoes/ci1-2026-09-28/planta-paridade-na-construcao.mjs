@@ -11,9 +11,12 @@
  *   o controlo  a cópia intacta constrói, e escreve as páginas;
  *   a planta    a mesma cópia, com uma chave só na edição portuguesa de
  *               `src/i18n/strings.mjs`, tem de fechar com código diferente de
- *               0, com a mensagem da guarda e a chave nomeada, antes de a
- *               primeira página se escrever: nenhuma linha de página na saída
- *               do Astro e nenhum ficheiro `.html` na pasta de saída.
+ *               0, com a mensagem da guarda e a chave nomeada, na primeira
+ *               página, antes de a escrever: nenhuma página acabada na saída
+ *               do Astro (o Astro escreve a linha de uma rota quando a começa,
+ *               e o tempo dela quando a acaba), o erro na primeira rota que o
+ *               controlo construiu, e nenhum ficheiro `.html` na pasta de
+ *               saída.
  *
  * Não toca na árvore do sítio: tudo acontece na cópia, que se apaga no fim.
  * Uso, da raiz do sítio: node <este ficheiro> <saida.json>
@@ -61,7 +64,11 @@ function constroi(rotulo) {
   });
   const texto = `${r.stdout ?? ''}\n${r.stderr ?? ''}`;
   const rotas = texto.match(/[├└]─ \/\S+[^\n]*/g) ?? [];
+  const erro = /Caught error rendering (\S+?):/.exec(texto);
   return {
+    paginas_acabadas: rotas.filter((l) => /\(\+[\d.]+m?s\)/.test(l)).length,
+    erro_ao_renderizar: erro ? erro[1] : null,
+    primeira_rota: rotas.length ? rotas[0].replace(/^[├└]─ /, '').split(' ')[0] : null,
     primeiras_linhas_de_rota: rotas.slice(0, 3).map((l) => l.replace(copia, '<copia>')),
     linhas_da_guarda: texto.split('\n').filter((l) => /i18n:|só em pt|só em en/.test(l)).slice(0, 4).map((l) => l.replace(copia, '<copia>').trim()),
     rotulo,
@@ -103,10 +110,14 @@ try {
     controlo,
     planta,
   };
+  /* A primeira rota do controlo, sem a extensão, é a rota em que a planta tem de fechar. */
+  const primeiraDoControlo = String(controlo.primeira_rota ?? '').replace(/(\/index)?\.html$/, '') || null;
+  resultado.primeira_rota_do_controlo = controlo.primeira_rota;
   resultado.mordeu =
     controlo.codigo === 0 && controlo.paginas_html_escritas > 0 &&
     planta.codigo !== 0 && planta.mensagem_da_guarda && planta.chave_nomeada &&
-    planta.linhas_de_pagina === 0 && planta.paginas_html_escritas === 0;
+    planta.paginas_acabadas === 0 && planta.paginas_html_escritas === 0 &&
+    planta.erro_ao_renderizar !== null && planta.erro_ao_renderizar === primeiraDoControlo;
 } finally {
   fs.rmSync(base, { recursive: true, force: true });
 }

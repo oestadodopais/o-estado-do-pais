@@ -1,0 +1,208 @@
+{
+ "comando": "npm run verify",
+ "inicio": "2026-09-28T21:20:29.467Z",
+ "fim": "2026-09-28T21:28:20.914Z",
+ "segundos": 471.447,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": [
+   "36471   3.7 node tests/acessibilidade/alvos.mjs --vermelhos --so b1 --json <rascunho>/q2/alvos-b1.json",
+   "36509   6.5 <casa>/…/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-fo",
+   "36510   1.4 <casa>/…/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=SAAAAAAAAAAgAAAEAAA",
+   "36511   1.0 <casa>/…/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --use-angle=swiftshader-webgl --use-gl=a",
+   "43467  16.1 <casa>/…/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb "
+  ]
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": [
+   "48481   1.0 node tests/acessibilidade/alvos.mjs --vermelhos --so bloco-sem-classe --json <rascunho>/q2/alvos-bloco.json",
+   "48482   0.4 <casa>/…/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-fo",
+   "48483   0.1 <casa>/…/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=SAAAAAAAAAAgAAAEAAA",
+   "48484   0.0 <casa>/…/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --use-angle=swiftshader-webgl --use-gl=a",
+   "55157   0.0 <casa>/…/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb "
+  ]
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": [
+  {
+   "nome": "verify",
+   "inicio": "2026-09-28T21:20:29.538Z",
+   "segundos": 0.071
+  },
+  {
+   "nome": "ledger:check",
+   "inicio": "2026-09-28T21:20:29.609Z",
+   "segundos": 0.328
+  },
+  {
+   "nome": "check:registo",
+   "inicio": "2026-09-28T21:20:29.937Z",
+   "segundos": 0.273
+  },
+  {
+   "nome": "check:cruzamento",
+   "inicio": "2026-09-28T21:20:30.210Z",
+   "segundos": 0.35
+  },
+  {
+   "nome": "check:documentos",
+   "inicio": "2026-09-28T21:20:30.560Z",
+   "segundos": 0.129
+  },
+  {
+   "nome": "check:briefs",
+   "inicio": "2026-09-28T21:20:30.689Z",
+   "segundos": 2.928
+  },
+  {
+   "nome": "gate:html",
+   "inicio": "2026-09-28T21:20:33.617Z",
+   "segundos": 11.511
+  },
+  {
+   "nome": "check:css",
+   "inicio": "2026-09-28T21:20:45.128Z",
+   "segundos": 3.654
+  },
+  {
+   "nome": "check:datas",
+   "inicio": "2026-09-28T21:20:48.782Z",
+   "segundos": 1.031
+  },
+  {
+   "nome": "check:moldura",
+   "inicio": "2026-09-28T21:20:49.813Z",
+   "segundos": 96.313
+  },
+  {
+   "nome": "check:alvos",
+   "inicio": "2026-09-28T21:22:26.126Z",
+   "segundos": 198.494
+  },
+  {
+   "nome": "check:cabeca",
+   "inicio": "2026-09-28T21:25:44.620Z",
+   "segundos": 3.475
+  },
+  {
+   "nome": "check:fontes",
+   "inicio": "2026-09-28T21:25:48.095Z",
+   "segundos": 0.913
+  },
+  {
+   "nome": "check:cadeia",
+   "inicio": "2026-09-28T21:25:49.008Z",
+   "segundos": 0.197
+  },
+  {
+   "nome": "check:dados",
+   "inicio": "2026-09-28T21:25:49.205Z",
+   "segundos": 1.23
+  },
+  {
+   "nome": "mapa:unidades",
+   "inicio": "2026-09-28T21:25:50.435Z",
+   "segundos": 0.118
+  },
+  {
+   "nome": "check:mapa",
+   "inicio": "2026-09-28T21:25:50.553Z",
+   "segundos": 0.318
+  },
+  {
+   "nome": "check:regioes",
+   "inicio": "2026-09-28T21:25:50.871Z",
+   "segundos": 0.265
+  },
+  {
+   "nome": "check:areas",
+   "inicio": "2026-09-28T21:25:51.136Z",
+   "segundos": 0.404
+  },
+  {
+   "nome": "check:formas",
+   "inicio": "2026-09-28T21:25:51.540Z",
+   "segundos": 3.408
+  },
+  {
+   "nome": "check:alcance",
+   "inicio": "2026-09-28T21:25:54.948Z",
+   "segundos": 2.319
+  },
+  {
+   "nome": "check:lugares",
+   "inicio": "2026-09-28T21:25:57.267Z",
+   "segundos": 0.468
+  },
+  {
+   "nome": "check:pais",
+   "inicio": "2026-09-28T21:25:57.735Z",
+   "segundos": 3.305
+  },
+  {
+   "nome": "check:voz",
+   "inicio": "2026-09-28T21:26:01.040Z",
+   "segundos": 23.056
+  },
+  {
+   "nome": "check:lingua",
+   "inicio": "2026-09-28T21:26:24.096Z",
+   "segundos": 4.201
+  },
+  {
+   "nome": "check:lugar",
+   "inicio": "2026-09-28T21:26:28.297Z",
+   "segundos": 18.31
+  },
+  {
+   "nome": "provar:eyetext",
+   "inicio": "2026-09-28T21:26:46.607Z",
+   "segundos": 0.236
+  },
+  {
+   "nome": "provar:guardas",
+   "inicio": "2026-09-28T21:26:46.843Z",
+   "segundos": 0.12
+  },
+  {
+   "nome": "check:mortos",
+   "inicio": "2026-09-28T21:26:46.963Z",
+   "segundos": 1.606
+  },
+  {
+   "nome": "check:indice",
+   "inicio": "2026-09-28T21:26:48.569Z",
+   "segundos": 9.524
+  },
+  {
+   "nome": "check:cartao",
+   "inicio": "2026-09-28T21:26:58.093Z",
+   "segundos": 4.207
+  },
+  {
+   "nome": "check:nomes",
+   "inicio": "2026-09-28T21:27:02.300Z",
+   "segundos": 2.051
+  },
+  {
+   "nome": "check:palavras",
+   "inicio": "2026-09-28T21:27:04.351Z",
+   "segundos": 75.292
+  },
+  {
+   "nome": "design:feixe",
+   "inicio": "2026-09-28T21:28:19.643Z",
+   "segundos": 1.271
+  }
+ ]
+}
