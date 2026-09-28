@@ -20,6 +20,7 @@ import { load } from 'js-yaml';
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
 import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
 import { historiaDaProveniencia } from './historia-da-proveniencia.mjs';
+import { conferirHistoriaDoValor } from './historia-do-valor.mjs';
 import {
   Decimal,
   REGRA_DO_ROUND,
@@ -1426,6 +1427,7 @@ function ausente(v) {
  */
 export function validateLedger() {
   const claims = loadClaims();
+  const historiasSeladas = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'ledger', 'historias-valores.json'), 'utf8'));
   // As expressões `check` também podem contar o próprio registo de correções.
   const env = { ...COUNTS, ...contagensDoRegisto(claims) };
   const errors = [];
@@ -2372,14 +2374,20 @@ export function validateLedger() {
       });
     }
 
+    if (Array.isArray(c.corrections)) conferirHistoriaDoValor(c, historiasSeladas[id], onde, errors);
+
     const acessos = historiaDaProveniencia(c, 'access_date', onde, errors);
     /** @type {string[]} */
     const errosDeEndereco = [];
     const enderecos = historiaDaProveniencia(c, 'source_url', onde, errosDeEndereco);
-    if (Array.isArray(c.verifications) && c.verifications.some((v) =>
-      eVerificacao(v) && enderecos.temMudancaPosterior(v.date))) {
-      errors.push(...errosDeEndereco);
+    errors.push(...errosDeEndereco);
+    for (const campo of CAMPOS_DE_PROVENIENCIA) {
+      if (campo !== 'access_date' && campo !== 'source_url') historiaDaProveniencia(c, campo, onde, errors);
     }
+    for (const instantaneo of enderecos.instantaneos) {
+      warnings.push(`${onde} história do endereço: a ${instantaneo.date}, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.`);
+    }
+
 
     /* 6b — as reconferências independentes.
        Opcional: uma linha sem entradas é uma linha que ainda não foi relida, e

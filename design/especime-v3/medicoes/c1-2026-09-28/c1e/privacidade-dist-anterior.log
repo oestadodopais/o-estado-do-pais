@@ -1,0 +1,44 @@
+{
+  "ficheiros": 12485,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "nome-do-git-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-do-git-2",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-6",
+      "mordeu": true
+    }
+  ],
+  "passou": true
+}

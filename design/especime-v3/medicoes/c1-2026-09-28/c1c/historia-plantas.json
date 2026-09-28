@@ -1,0 +1,62 @@
+{
+  "controlos": [
+    {
+      "nome": "livro completo com as duas histórias repostas",
+      "passou": true
+    },
+    {
+      "nome": "divida-das-familias-2025-ue: lista exata de a677770f",
+      "passou": true
+    },
+    {
+      "nome": "indice-de-divida-limite-legal: lista exata de a677770f",
+      "passou": true
+    },
+    {
+      "nome": "cadeia com dois acessos coerentes",
+      "passou": true
+    },
+    {
+      "nome": "o dia da mudança usa o acesso novo",
+      "passou": true
+    },
+    {
+      "nome": "travessia real com a lista completa",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "antes do acesso atual sem história",
+      "mordeu": true,
+      "falha": "[divida-das-familias-2025-ue.yml] verificação #1: \"date\" é 2026-09-21 e o acesso em vigor nesse dia é 2026-09-28. Uma releitura é depois da leitura."
+    },
+    {
+      "nome": "endereço antigo errado",
+      "mordeu": true,
+      "falha": "[indice-de-divida-limite-legal.yml] verificação #1: \"path\" não é o endereço em vigor a 2026-09-01: https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22."
+    },
+    {
+      "nome": "antes do primeiro acesso da história",
+      "mordeu": true,
+      "falha": "[divida-das-familias-2025-ue.yml] verificação #1: \"date\" é 2026-09-14 e o acesso em vigor nesse dia é 2026-09-15. Uma releitura é depois da leitura."
+    },
+    {
+      "nome": "cadeia contraditória",
+      "mordeu": true,
+      "falha": "[divida-das-familias-2025-ue.yml] história de \"access_date\" a 2026-09-28: cadeia contraditória; \"old_value\" é 2026-09-19, mas antes vigorava 2026-09-20."
+    },
+    {
+      "nome": "lista que encolhe na travessia real",
+      "mordeu": true,
+      "codigo": 1,
+      "falha": "[evora.json] indice-de-divida-limite-legal: a linha tem 0 reconferência(s) e o registo diz 1. A lista encolheu: uma reconferência escrita não se apaga."
+    }
+  ],
+  "contagens": {
+    "controlos": 6,
+    "plantas": 5,
+    "controlos_integros": 6,
+    "plantas_mordidas": 5
+  }
+}

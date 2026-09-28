@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T16:00:46+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/divida-das-familias-2025-ue/index.html",
+   "descricao": "o recibo português da dívida das famílias da União mostra no título o valor antigo 49,3, embora a linha diga 49,2 depois da atualização",
+   "sha256_antes": "62754002c3b0e968f82c53683cc268f2361d9832bb9d7abb3c795ccc9fd3822d",
+   "sha256_depois": "136060fcd90a25504ceeb602962cb1ea0202d6b1161b81014f029afef3b40970",
+   "contexto_antes": "pan></p></div><div class=\"linha-cabeca\"><span class=\"eyebrow\">Linha do livro-razão</span><h1 class=\"linha-valor\"><span data-claim=\"divida-das-familias-2025-ue\" class=\"claim-value linha-valor-num\">49,2</span> <span class=\"campo-valor linha-valor-unidade\" lang=\"pt-PT\" data-linha-claim=\"divida-das-familias-2025-ue\" data-linha-campo=\"unit\">% do PIB</span><span class=\"c",
+   "contexto_depois": "pan></p></div><div class=\"linha-cabeca\"><span class=\"eyebrow\">Linha do livro-razão</span><h1 class=\"linha-valor\"><span data-claim=\"divida-das-familias-2025-ue\" class=\"claim-value linha-valor-num\">49,3</span> <span class=\"campo-valor linha-valor-unidade\" lang=\"pt-PT\" data-linha-claim=\"divida-das-familias-2025-ue\" data-linha-campo=\"unit\">% do PIB</span><span class=\"c"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/lib/historia-da-proveniencia.mjs",
+   "descricao": "a guarda da data impossível na história do acesso passa a exigir que as duas datas sejam posteriores à mudança, em vez de uma delas: um acesso declarado depois da mudança que o declara passa quando só uma das datas o é",
+   "sha256_antes": "1603f047531ed2f1ecb40a441b51b4e4ad44f3b644d088254bd113bcf8f0cd34",
+   "sha256_depois": "3507ab65b11e6a035c8d72d2e75b9ef0797b0d1305e82b751c8da817e4dcc604",
+   "contexto_antes": "or) {\n      erros.push(`${rot}: cadeia contraditória; \"old_value\" é ${c.old_value}, mas antes vigorava ${anterior}.`);\n    }\n    if (campo === 'access_date' && (c.old_value > c.date || c.new_value > c.date)) {\n      erros.push(`${rot}: o acesso não pode ser posterior à mudança que o declara.`);\n    }\n    anterior = c.new_value;\n  }\n  if (entradas.length && anterio",
+   "contexto_depois": "or) {\n      erros.push(`${rot}: cadeia contraditória; \"old_value\" é ${c.old_value}, mas antes vigorava ${anterior}.`);\n    }\n    if (campo === 'access_date' && (c.old_value > c.date && c.new_value > c.date)) {\n      erros.push(`${rot}: o acesso não pode ser posterior à mudança que o declara.`);\n    }\n    anterior = c.new_value;\n  }\n  if (entradas.length && anterio"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "o objetivo do Banco Central Europeu no cartão português do IHPC passa de 2 para 2,5 %, contra a origem selada",
+   "sha256_antes": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4",
+   "sha256_depois": "fd7916ec6f61b1c3d3c46c37a4ec2ef74466a576e655c89460c1fe6a01c9855c",
+   "contexto_antes": "\"claim-sufixo\"> %</span></span> acima dos de há um ano. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de <span data-nonledger=\"limiar-do-quadro\">2</span> % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.</p><p class=\"cartao-medida-regua\"><span class=\"cartao-medida-regua-item\" data-regua=\"anterior\" data-",
+   "contexto_depois": "\"claim-sufixo\"> %</span></span> acima dos de há um ano. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de <span data-nonledger=\"limiar-do-quadro\">2,5</span> % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.</p><p class=\"cartao-medida-regua\"><span class=\"cartao-medida-regua-item\" data-regua=\"anterior\" data-"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "ledger/claims/indice-de-divida-limite-legal.yml",
+   "descricao": "o excerpto da linha do limite legal diz 1,25 vezes a média da receita, contra o 1,5 do cartão e do último new_value da história do excerpto",
+   "sha256_antes": "d2339974060d29c9e8eb49294d9c3d4257f4ed5d9db57099984da76452a37870",
+   "sha256_depois": "33dcd63e63eabfb4a9f449a52ac685c60b1cced1dcda3ae597a3c075a7ace92b",
+   "contexto_antes": " html\nsource_url: https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/\naccess_date: '2026-09-28'\nreference_date: '2024'\nexcerpt: A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores.\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: null\nattributed_to: nu",
+   "contexto_depois": " html\nsource_url: https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/\naccess_date: '2026-09-28'\nreference_date: '2024'\nexcerpt: A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,25 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores.\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: null\nattributed_to: nu"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório conta 16 bandeiras p e uma e (17), contra as 18 bandeiras acrescentadas que a tabela do mesmo relatório e o bandeiras.json dizem",
+   "sha256_antes": "e8a247e2a838fef1b78ecde81ccfabf37d622f75b6c438da084d9f108ace0452",
+   "sha256_depois": "71e8799cf54dc67faa517d06560d79394aecdea32b47d7a0b6dd64258787f4a4",
+   "contexto_antes": " foi\nestendido à bandeira da mesma observação. A conferência do livro passou sem\nalargar os campos da entrada `proveniencia` nem inventar uma mudança numérica.\nHá 17 bandeiras `p` e uma `e`; esta última é «valor estimado» na despesa em I&D\nda União. A aplicação e os resumos dos corpos estão em `c1c/bandeiras.json`.\n\nNa primeira passagem foram reti",
+   "contexto_depois": " foi\nestendido à bandeira da mesma observação. A conferência do livro passou sem\nalargar os campos da entrada `proveniencia` nem inventar uma mudança numérica.\nHá 16 bandeiras `p` e uma `e`; esta última é «valor estimado» na despesa em I&D\nda União. A aplicação e os resumos dos corpos estão em `c1c/bandeiras.json`.\n\nNa primeira passagem foram reti"
+  }
+ ]
+}

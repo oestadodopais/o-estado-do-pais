@@ -19,7 +19,7 @@ export const ORIGENS_C1C = {
     "documento": "Europe and the world economy",
     "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260522~f0f11a5f05.en.html",
     "lido": "2026-09-28",
-    "excerto": "relative prices and export market shares … increase = worsening price competitiveness",
+    "excerto": "I have shown that the price competitiveness of the euro area has deteriorated mainly because producer prices there have moved unfavourably relative to those of key trading partners – especially in Asia, and in China in particular.",
     "selo": {
       "motor": "indicators/out/c1c-2026-09-28/bce-competitividade-discurso.html",
       "campo": "texto HTML",

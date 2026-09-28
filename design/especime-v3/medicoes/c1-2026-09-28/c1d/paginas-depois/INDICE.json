@@ -1,0 +1,432 @@
+{
+  "estado": "depois",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "observacoes": [],
+  "cabeca_da_arvore": "6bbe1cee5f7167ba7bb317733ceef7e4b71ab413",
+  "dist_construido_de": "6bbe1cee5f7167ba7bb317733ceef7e4b71ab413",
+  "dist_construido_em": "2026-09-28T18:23:40.946Z",
+  "inicio": "2026-09-28T18:26:38.037Z",
+  "fim": "2026-09-28T18:30:15.041Z",
+  "segundos": 217.004,
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "sha256": "f9ab39d98b8165ef14e9a7fbe3b7c0c6cac626dfd58c18d71d866daa9c40e4f1"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "sha256": "1a78e2f391f66614ef09f8d90b7cfcd5c1318172f6533523f4e0fb3b08870be5"
+    },
+    "temas_index.html": {
+      "rota": "/temas/",
+      "familia": "temas",
+      "lingua": "pt",
+      "sha256": "ce10a899f52b201c338904dcffb4a8bcfff0909b0d7e278e61e33ccdf4595199"
+    },
+    "en_themes_index.html": {
+      "rota": "/en/themes/",
+      "familia": "temas",
+      "lingua": "en",
+      "sha256": "7691c00821a5124becae736e69f8e76ce5a8fa97826773c71ba6da9153ffb893"
+    },
+    "municipios_evora_index.html": {
+      "rota": "/municipios/evora/",
+      "familia": "evora",
+      "lingua": "pt",
+      "sha256": "7a5d8608e0cc48cb8583f1d7f5ee609db33ecd9fa5a2d758fb3c0451692ab5d1"
+    },
+    "en_municipalities_evora_index.html": {
+      "rota": "/en/municipalities/evora/",
+      "familia": "evora",
+      "lingua": "en",
+      "sha256": "eec87dbb3accdf5a70b332d02e8e596e0eb9e49e8314a8cce94cb9804b1f5ff5"
+    },
+    "livro-razao_credito-malparado-2024_index.html": {
+      "rota": "/livro-razao/credito-malparado-2024/",
+      "familia": "recibo-credito-malparado-2024",
+      "lingua": "pt",
+      "sha256": "126c2561d64a9f9ad5d7c5ad782ffc1c495a52e3c781147b82d9a5f663f4b9fb"
+    },
+    "en_ledger_credito-malparado-2024_index.html": {
+      "rota": "/en/ledger/credito-malparado-2024/",
+      "familia": "recibo-credito-malparado-2024",
+      "lingua": "en",
+      "sha256": "b73c5c428a08ae1df4390914db4db04308c50d559d36b8f34ab4c33d73777da5"
+    },
+    "livro-razao_credito-malparado-2025_index.html": {
+      "rota": "/livro-razao/credito-malparado-2025/",
+      "familia": "recibo-credito-malparado-2025",
+      "lingua": "pt",
+      "sha256": "4ed030d8ce14cf740199eebbce2c5b2986501cda6a6b2bae93cedfb5df7c6a4f"
+    },
+    "en_ledger_credito-malparado-2025_index.html": {
+      "rota": "/en/ledger/credito-malparado-2025/",
+      "familia": "recibo-credito-malparado-2025",
+      "lingua": "en",
+      "sha256": "dcb9fc46bb56516dd19245fcc958705fc5853cb8ab3eadb0f4944df79669de94"
+    },
+    "livro-razao_custo-unitario-do-trabalho-2024_index.html": {
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2024/",
+      "familia": "recibo-custo-unitario-do-trabalho-2024",
+      "lingua": "pt",
+      "sha256": "95df89f4296ccc6ef5b919deafe16d37a96f44825bf984ad9ffbc6d9308d88fa"
+    },
+    "en_ledger_custo-unitario-do-trabalho-2024_index.html": {
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2024/",
+      "familia": "recibo-custo-unitario-do-trabalho-2024",
+      "lingua": "en",
+      "sha256": "5a5678db3542410d07cfb1b4f5ebc942c30fe11c96057654c3c212f87af16c29"
+    },
+    "livro-razao_custo-unitario-do-trabalho-2025_index.html": {
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2025/",
+      "familia": "recibo-custo-unitario-do-trabalho-2025",
+      "lingua": "pt",
+      "sha256": "29c4679441e2e021c6cd90d161389e66c617852ee22a3fde6f703110c06a4c69"
+    },
+    "en_ledger_custo-unitario-do-trabalho-2025_index.html": {
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2025/",
+      "familia": "recibo-custo-unitario-do-trabalho-2025",
+      "lingua": "en",
+      "sha256": "aa91cbf8902bc98f35394ee14ff0db930e10a5f9caf9f0242f3e52f198646ffb"
+    },
+    "livro-razao_despesa-em-id-2024-ue_index.html": {
+      "rota": "/livro-razao/despesa-em-id-2024-ue/",
+      "familia": "recibo-despesa-em-id-2024-ue",
+      "lingua": "pt",
+      "sha256": "e2ec42c8c7b0fc598ca3de0d2d41d5d97a6b55b2f307c9cd69fc7ea5e386f2b2"
+    },
+    "en_ledger_despesa-em-id-2024-ue_index.html": {
+      "rota": "/en/ledger/despesa-em-id-2024-ue/",
+      "familia": "recibo-despesa-em-id-2024-ue",
+      "lingua": "en",
+      "sha256": "7adc9639c08ba0b7e8f23e47595552da5ba94e2d6f2f2da772a0293fcebcc5b4"
+    },
+    "livro-razao_divida-das-empresas-2024_index.html": {
+      "rota": "/livro-razao/divida-das-empresas-2024/",
+      "familia": "recibo-divida-das-empresas-2024",
+      "lingua": "pt",
+      "sha256": "d18a70803ef5b704e1094ac395b0ddb8ef0262c6513de6ce4bc39b0efd5adff4"
+    },
+    "en_ledger_divida-das-empresas-2024_index.html": {
+      "rota": "/en/ledger/divida-das-empresas-2024/",
+      "familia": "recibo-divida-das-empresas-2024",
+      "lingua": "en",
+      "sha256": "17624f97c399e61a7ae53dbe2124375f3899eed7e5b03773b641a4473da2ee3e"
+    },
+    "livro-razao_divida-das-empresas-2025_index.html": {
+      "rota": "/livro-razao/divida-das-empresas-2025/",
+      "familia": "recibo-divida-das-empresas-2025",
+      "lingua": "pt",
+      "sha256": "4d3a51450542d1e664070e908bcc4c347cc39a42a72f6418281f64ea58740e6d"
+    },
+    "en_ledger_divida-das-empresas-2025_index.html": {
+      "rota": "/en/ledger/divida-das-empresas-2025/",
+      "familia": "recibo-divida-das-empresas-2025",
+      "lingua": "en",
+      "sha256": "1a7967c92da733f701c67eade5aa4bd26da0922ce443a847f3b5ff10beccc8e0"
+    },
+    "livro-razao_divida-das-empresas-2025-ue_index.html": {
+      "rota": "/livro-razao/divida-das-empresas-2025-ue/",
+      "familia": "recibo-divida-das-empresas-2025-ue",
+      "lingua": "pt",
+      "sha256": "84fb1ea4e133140c3661f3f89a34a7d3371a33a5a061c972eea2b0b53d38eeae"
+    },
+    "en_ledger_divida-das-empresas-2025-ue_index.html": {
+      "rota": "/en/ledger/divida-das-empresas-2025-ue/",
+      "familia": "recibo-divida-das-empresas-2025-ue",
+      "lingua": "en",
+      "sha256": "a2475360fb94fafe71a0d32261a3378adfe43e1eed2d838ed68af8688dc255ee"
+    },
+    "livro-razao_divida-das-familias-2024_index.html": {
+      "rota": "/livro-razao/divida-das-familias-2024/",
+      "familia": "recibo-divida-das-familias-2024",
+      "lingua": "pt",
+      "sha256": "4095cd15e4688d105da99cee42019e0d54e1311cb0b24874d3266a01222af0b6"
+    },
+    "en_ledger_divida-das-familias-2024_index.html": {
+      "rota": "/en/ledger/divida-das-familias-2024/",
+      "familia": "recibo-divida-das-familias-2024",
+      "lingua": "en",
+      "sha256": "195a977ab83489c91acbf0411c2d4503ff620988dbb64301f267f4331869ab4d"
+    },
+    "livro-razao_divida-das-familias-2025_index.html": {
+      "rota": "/livro-razao/divida-das-familias-2025/",
+      "familia": "recibo-divida-das-familias-2025",
+      "lingua": "pt",
+      "sha256": "3556c23a0ea71a5cff8d98759a2908aebc59432bda6f1eb7ffdf867d25217133"
+    },
+    "en_ledger_divida-das-familias-2025_index.html": {
+      "rota": "/en/ledger/divida-das-familias-2025/",
+      "familia": "recibo-divida-das-familias-2025",
+      "lingua": "en",
+      "sha256": "669aef64dddb26cafb1b4c63dd568023f903ce667d8a8a03d17aa3d6bcae6786"
+    },
+    "livro-razao_divida-das-familias-2025-ue_index.html": {
+      "rota": "/livro-razao/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-das-familias-2025-ue",
+      "lingua": "pt",
+      "sha256": "4244c8e193b5f808557555d7e310aa9e679655126eed7f37920a2521d5906f0c"
+    },
+    "en_ledger_divida-das-familias-2025-ue_index.html": {
+      "rota": "/en/ledger/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-das-familias-2025-ue",
+      "lingua": "en",
+      "sha256": "c0f360a4c0aa40266947f6734f8a6198bb7149307802c93507ecff250b8e8be6"
+    },
+    "livro-razao_evora-indice-de-divida-2024_index.html": {
+      "rota": "/livro-razao/evora-indice-de-divida-2024/",
+      "familia": "recibo-evora-indice-de-divida-2024",
+      "lingua": "pt",
+      "sha256": "01f2709af2123adc02b2186cda983f8b36efed3edfd21cfeaf30d925050d3915"
+    },
+    "en_ledger_evora-indice-de-divida-2024_index.html": {
+      "rota": "/en/ledger/evora-indice-de-divida-2024/",
+      "familia": "recibo-evora-indice-de-divida-2024",
+      "lingua": "en",
+      "sha256": "7ec30260a4c6b03a95ecc0170aa1d1c15055e21a3923c7292a6d4501d7c6dc59"
+    },
+    "livro-razao_evora-prazo-medio-de-pagamento-2025-12_index.html": {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025-12/",
+      "familia": "recibo-evora-prazo-medio-de-pagamento-2025-12",
+      "lingua": "pt",
+      "sha256": "579d827f164db4cda7f7849620fc956fe02afe6d61c4c8649100eebc8af81afc"
+    },
+    "en_ledger_evora-prazo-medio-de-pagamento-2025-12_index.html": {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025-12/",
+      "familia": "recibo-evora-prazo-medio-de-pagamento-2025-12",
+      "lingua": "en",
+      "sha256": "dd688b3e0daff78d47c5c9545d0c1fb6f5f61da9063cbf9ac369a89a40e97146"
+    },
+    "livro-razao_evora-prr-aprovado-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "familia": "recibo-evora-prr-aprovado-2026",
+      "lingua": "pt",
+      "sha256": "6689f9e852e0091b93feb521c1e792fadaa22441b4519f509780dd5e8bba01ac"
+    },
+    "en_ledger_evora-prr-aprovado-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "familia": "recibo-evora-prr-aprovado-2026",
+      "lingua": "en",
+      "sha256": "36bbfc18890866569136e90256118c86ecc56ac50c0bc1420d93eeef5c82ae21"
+    },
+    "livro-razao_evora-prr-municipio-contratado_index.html": {
+      "rota": "/livro-razao/evora-prr-municipio-contratado/",
+      "familia": "recibo-evora-prr-municipio-contratado",
+      "lingua": "pt",
+      "sha256": "c2ad8749fbc228a6f2460deba862a2ebf741441cd64e701e76f6d10a055d170a"
+    },
+    "en_ledger_evora-prr-municipio-contratado_index.html": {
+      "rota": "/en/ledger/evora-prr-municipio-contratado/",
+      "familia": "recibo-evora-prr-municipio-contratado",
+      "lingua": "en",
+      "sha256": "dbe056c824de55d6801c0237ec9078233d9837ab29985a320fa452f0286eb44d"
+    },
+    "livro-razao_evora-prr-pago-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "familia": "recibo-evora-prr-pago-2026",
+      "lingua": "pt",
+      "sha256": "01fd5d0791fca8e1abb069ac4002017ba4b352e98ef44ad7fa73324146e14773"
+    },
+    "en_ledger_evora-prr-pago-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "familia": "recibo-evora-prr-pago-2026",
+      "lingua": "en",
+      "sha256": "8907b7f0fca968f0ab30c312137d229d7b55dec96876e3cb69267bb3b0b49a92"
+    },
+    "livro-razao_evora-prr-universidade-contratado_index.html": {
+      "rota": "/livro-razao/evora-prr-universidade-contratado/",
+      "familia": "recibo-evora-prr-universidade-contratado",
+      "lingua": "pt",
+      "sha256": "451230f8e8bb2383a6eea8881945cbd16aa8334258619966ece7917db1818bec"
+    },
+    "en_ledger_evora-prr-universidade-contratado_index.html": {
+      "rota": "/en/ledger/evora-prr-universidade-contratado/",
+      "familia": "recibo-evora-prr-universidade-contratado",
+      "lingua": "en",
+      "sha256": "64b21b80892138d85bd155e0d412f722f044d86cf3f245301b4330b338b5031a"
+    },
+    "livro-razao_evora-prr-vencido-aprovado-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "familia": "recibo-evora-prr-vencido-aprovado-2026",
+      "lingua": "pt",
+      "sha256": "e19d775a0a173764f0e265eb556c18b7b79f28ebe01de4681ef7909bef14905c"
+    },
+    "en_ledger_evora-prr-vencido-aprovado-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "familia": "recibo-evora-prr-vencido-aprovado-2026",
+      "lingua": "en",
+      "sha256": "d45aeddb1229d5c990b77b8b05757a2280e10cb18ba8b0daea7fabf95aff8cc5"
+    },
+    "livro-razao_fluxo-de-credito-as-familias-2025-ue_index.html": {
+      "rota": "/livro-razao/fluxo-de-credito-as-familias-2025-ue/",
+      "familia": "recibo-fluxo-de-credito-as-familias-2025-ue",
+      "lingua": "pt",
+      "sha256": "3fd9911318dacc98d306111f1106e108b977f31586c48dfec1d838ab5deb533d"
+    },
+    "en_ledger_fluxo-de-credito-as-familias-2025-ue_index.html": {
+      "rota": "/en/ledger/fluxo-de-credito-as-familias-2025-ue/",
+      "familia": "recibo-fluxo-de-credito-as-familias-2025-ue",
+      "lingua": "en",
+      "sha256": "eac854249949fe3f65131d6eecb73a83b6da0668b176e04d63e7d582b4ae13f1"
+    },
+    "livro-razao_formacao-bruta-de-capital-fixo-2024_index.html": {
+      "rota": "/livro-razao/formacao-bruta-de-capital-fixo-2024/",
+      "familia": "recibo-formacao-bruta-de-capital-fixo-2024",
+      "lingua": "pt",
+      "sha256": "213bec9f7df8db3985fa019026504ef561a8b885075b5efb71ca648de17675ff"
+    },
+    "en_ledger_formacao-bruta-de-capital-fixo-2024_index.html": {
+      "rota": "/en/ledger/formacao-bruta-de-capital-fixo-2024/",
+      "familia": "recibo-formacao-bruta-de-capital-fixo-2024",
+      "lingua": "en",
+      "sha256": "f1168178c63676b7739d402ec7b6cd3cd830c53c6a0ea33d7282340cf44fc75f"
+    },
+    "livro-razao_formacao-bruta-de-capital-fixo-2025_index.html": {
+      "rota": "/livro-razao/formacao-bruta-de-capital-fixo-2025/",
+      "familia": "recibo-formacao-bruta-de-capital-fixo-2025",
+      "lingua": "pt",
+      "sha256": "9e4f9b95fb78cf35876e92c1defce98b77468959b6414d8e0e27005c1bf75efe"
+    },
+    "en_ledger_formacao-bruta-de-capital-fixo-2025_index.html": {
+      "rota": "/en/ledger/formacao-bruta-de-capital-fixo-2025/",
+      "familia": "recibo-formacao-bruta-de-capital-fixo-2025",
+      "lingua": "en",
+      "sha256": "8308ea1ac9590de15fd93fe9d2f012256f3ddffc696245bb022cb45a0c89864f"
+    },
+    "livro-razao_ihpc-variacao-homologa_index.html": {
+      "rota": "/livro-razao/ihpc-variacao-homologa/",
+      "familia": "recibo-ihpc-variacao-homologa",
+      "lingua": "pt",
+      "sha256": "ecf575b386ad8b72a88ea22bd310f3f5cd212b3d7c5671640cf355a3c58e5106"
+    },
+    "en_ledger_ihpc-variacao-homologa_index.html": {
+      "rota": "/en/ledger/ihpc-variacao-homologa/",
+      "familia": "recibo-ihpc-variacao-homologa",
+      "lingua": "en",
+      "sha256": "c6fd5da2c3fcbe7df0e446716f52b408c105571a8f9304aeddd979147e4eddfc"
+    },
+    "livro-razao_indice-de-divida-limite-legal_index.html": {
+      "rota": "/livro-razao/indice-de-divida-limite-legal/",
+      "familia": "recibo-indice-de-divida-limite-legal",
+      "lingua": "pt",
+      "sha256": "2de63570db0db2e335750a322376f38d94e2e5b994fa4c5df8b92969819e0748"
+    },
+    "en_ledger_indice-de-divida-limite-legal_index.html": {
+      "rota": "/en/ledger/indice-de-divida-limite-legal/",
+      "familia": "recibo-indice-de-divida-limite-legal",
+      "lingua": "en",
+      "sha256": "1ce32ffa0c847ba5b3754f874783163287f44865345badda6a4721ab5ac09468"
+    },
+    "livro-razao_ipc-variacao-homologa_index.html": {
+      "rota": "/livro-razao/ipc-variacao-homologa/",
+      "familia": "recibo-ipc-variacao-homologa",
+      "lingua": "pt",
+      "sha256": "a3db5abf324bc0f883225012dcf63745330886e2aec460df953adfe3ac701b0c"
+    },
+    "en_ledger_ipc-variacao-homologa_index.html": {
+      "rota": "/en/ledger/ipc-variacao-homologa/",
+      "familia": "recibo-ipc-variacao-homologa",
+      "lingua": "en",
+      "sha256": "f2d15a6335ac7b46ee5d378681705a9b663782d3c92da2a174f0caf0729f2b37"
+    },
+    "livro-razao_licencas-de-construcao-2024_index.html": {
+      "rota": "/livro-razao/licencas-de-construcao-2024/",
+      "familia": "recibo-licencas-de-construcao-2024",
+      "lingua": "pt",
+      "sha256": "adb2b63e9938322ed89a749849ceba4c3b0632a065f6d346bc5c674bc86054d2"
+    },
+    "en_ledger_licencas-de-construcao-2024_index.html": {
+      "rota": "/en/ledger/licencas-de-construcao-2024/",
+      "familia": "recibo-licencas-de-construcao-2024",
+      "lingua": "en",
+      "sha256": "bcb461b4a789d082b9c5063d55f717b98a6cb0df61bc740008a089ff3e337872"
+    },
+    "livro-razao_licencas-de-construcao-2025_index.html": {
+      "rota": "/livro-razao/licencas-de-construcao-2025/",
+      "familia": "recibo-licencas-de-construcao-2025",
+      "lingua": "pt",
+      "sha256": "76420ca324c49217fde29f4f81963906737852c785ffa40310c3c02c3a56a579"
+    },
+    "en_ledger_licencas-de-construcao-2025_index.html": {
+      "rota": "/en/ledger/licencas-de-construcao-2025/",
+      "familia": "recibo-licencas-de-construcao-2025",
+      "lingua": "en",
+      "sha256": "e6e335cdf8d52f2a5a4fad150cd4cf5fd78e98885df3e50373355e38334cf6ff"
+    },
+    "livro-razao_pib-real-per-capita-2024_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2024/",
+      "familia": "recibo-pib-real-per-capita-2024",
+      "lingua": "pt",
+      "sha256": "e007cd364cd1cec241a7c05765f24f74256b8638daafbb67a13c75046f7e9540"
+    },
+    "en_ledger_pib-real-per-capita-2024_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2024/",
+      "familia": "recibo-pib-real-per-capita-2024",
+      "lingua": "en",
+      "sha256": "edc19afc45c9c3395e8b2dad501e65acb74ed126322f843bf680f33985ce90bb"
+    },
+    "livro-razao_pib-real-per-capita-2025_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real-per-capita-2025",
+      "lingua": "pt",
+      "sha256": "5788e22f9c3aaee80a765a4ca9b6baa3e385aa6731e3a5ad42369b5c87eaedde"
+    },
+    "en_ledger_pib-real-per-capita-2025_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real-per-capita-2025",
+      "lingua": "en",
+      "sha256": "cd4594b45d60d347c4377ffb3f930b670b76de8f78ab93d4b2de667a470091ea"
+    },
+    "livro-razao_pib-real-per-capita-2025-ue_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2025-ue/",
+      "familia": "recibo-pib-real-per-capita-2025-ue",
+      "lingua": "pt",
+      "sha256": "dcec5b58484ad224fb43c264b0dcd9cdf597de3f50c94160343f6acdb359b670"
+    },
+    "en_ledger_pib-real-per-capita-2025-ue_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2025-ue/",
+      "familia": "recibo-pib-real-per-capita-2025-ue",
+      "lingua": "en",
+      "sha256": "b02b448f9785a6187f1d4cc394430d915fc95c0c1018a7cb0a3c6da218089075"
+    },
+    "livro-razao_taxa-de-cambio-efectiva-real-2025_index.html": {
+      "rota": "/livro-razao/taxa-de-cambio-efectiva-real-2025/",
+      "familia": "recibo-taxa-de-cambio-efectiva-real-2025",
+      "lingua": "pt",
+      "sha256": "3feb98c72c30721603c8787ce970d59c0ab2ce299eb0b7c15a11aabe8c554be7"
+    },
+    "en_ledger_taxa-de-cambio-efectiva-real-2025_index.html": {
+      "rota": "/en/ledger/taxa-de-cambio-efectiva-real-2025/",
+      "familia": "recibo-taxa-de-cambio-efectiva-real-2025",
+      "lingua": "en",
+      "sha256": "4a97658a45d3b38c50ecb10dee3c3bfbe01ab8f10d7c85a8bfb7c1d9975597c1"
+    },
+    "_astro/Base.D7MBbLgP.css": {
+      "origem": "/_astro/Base.D7MBbLgP.css",
+      "tipo": "folha construída",
+      "sha256": "2205c959a7d9d178d5d7e6a3f672298d908412d5644d7a8da99ce03eb6b35180"
+    },
+    "_astro/inicio.CoJligbV.css": {
+      "origem": "/_astro/inicio.CoJligbV.css",
+      "tipo": "folha construída",
+      "sha256": "a0529e5e6954447559c92c7591295b6f2fbbec7cf4aa22cca618e1e704713c1c"
+    },
+    "_astro/lugar.DQAkNk1H.css": {
+      "origem": "/_astro/lugar.DQAkNk1H.css",
+      "tipo": "folha construída",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    },
+    "_astro/linha.kwcknRfj.css": {
+      "origem": "/_astro/linha.kwcknRfj.css",
+      "tipo": "folha construída",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    }
+  }
+}

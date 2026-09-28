@@ -33,7 +33,18 @@ study: "quadro-institucional"
 note: "Período anterior da medida «divida-das-empresas-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 85%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP)
+    — Portugal — 2024: 67.1'
+  new_value: 'Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP)
+    — Portugal — 2024: 67.1 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 

@@ -1,0 +1,34 @@
+{
+  "cabeca_codigo": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "capturas": {
+    "recibos_do_universo": 337,
+    "recibos_captados": 11,
+    "recibos_nao_captados": 326,
+    "imagens_dos_recibos": 110,
+    "imagens_da_faixa": 10,
+    "imagens": 120,
+    "copias": 27,
+    "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+    "aceitacao": {
+      "passou": true,
+      "falhas": []
+    }
+  },
+  "privacidade_da_passagem": {
+    "ficheiros": 275,
+    "quantidade": 0,
+    "achados": [],
+    "conhecidos_positivos": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "aceitacao_integral": true,
+  "erros_da_medicao": []
+}

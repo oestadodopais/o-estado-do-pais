@@ -1,0 +1,49 @@
+{
+  "sessao": {
+    "id": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+    "inicio": "2026-09-28T13:40:25.035Z"
+  },
+  "inicio_da_retoma": "2026-09-28T14:49:44.571Z",
+  "modelos_expostos": [
+    "gpt-6-astra"
+  ],
+  "antes_da_retoma": {
+    "hora": "2026-09-28T14:44:38.921Z",
+    "cumulativos": {
+      "input_tokens": 19189362,
+      "cached_input_tokens": 18612608,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 100531,
+      "reasoning_output_tokens": 41655,
+      "total_tokens": 19289893
+    }
+  },
+  "ultima_leitura": {
+    "hora": "2026-09-28T15:53:51.375Z",
+    "cumulativos": {
+      "input_tokens": 37464269,
+      "cached_input_tokens": 36593920,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 180498,
+      "reasoning_output_tokens": 88484,
+      "total_tokens": 37644767
+    }
+  },
+  "custo_da_retoma": {
+    "input_tokens": 18274907,
+    "cached_input_tokens": 17981312,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 79967,
+    "reasoning_output_tokens": 46829,
+    "total_tokens": 18354874
+  },
+  "segundos_ate_ultima_leitura": 3846.804,
+  "registado_em": "2026-09-28T15:54:25.221065+00:00",
+  "unidade": "tokens expostos pelo runtime",
+  "limites": [
+    "Só esta retoma, desde o pedido de autorização. A primeira passagem do C1c fica no cumulativo anterior, separado.",
+    "A entrada em cache já está incluída na entrada; o raciocínio já está incluído na saída.",
+    "Não inclui revisões automáticas nem estima preço. Não houve agentes nesta retoma.",
+    "É uma leitura até à hora declarada; a sessão continua a consumir depois dela."
+  ]
+}

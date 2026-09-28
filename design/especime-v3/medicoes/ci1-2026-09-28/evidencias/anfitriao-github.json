@@ -1,0 +1,20 @@
+{
+ "o_que": "as máquinas do GitHub para o rótulo ubuntu-24.04, lidas na documentação; o repositório do sítio é público (CLAUDE.md do projeto), e é a linha dos públicos que conta",
+ "endereco": "https://docs.github.com/en/actions/reference/runners/github-hosted-runners",
+ "hora": "2026-09-28T19:26:16Z",
+ "cliente": "curl -sSL (o texto tirado do HTML com as etiquetas apagadas)",
+ "http": 200,
+ "sha256_da_resposta": "be412950c47b8f36dd8d52f1552446a44c57bc306055563e260ea3b0ab5b3e55",
+ "publico": {
+  "linha": "Linux 4 16 GB 14 GB x64 ubuntu-latest , ubuntu-24.04 , ubuntu-22.04 , ubuntu-26.04",
+  "nucleos": 4,
+  "memoria_gb": 16,
+  "disco_gb": 14
+ },
+ "privado": {
+  "linha": "Linux 2 8 GB 14 GB x64 ubuntu-latest , ubuntu-24.04 , ubuntu-22.04 , ubuntu-26.04",
+  "nucleos": 2,
+  "memoria_gb": 8,
+  "disco_gb": 14
+ }
+}

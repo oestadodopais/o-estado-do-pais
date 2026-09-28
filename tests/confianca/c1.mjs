@@ -13,7 +13,7 @@
 import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
-import { conferirVerificacaoLegivel, conferirValorDeProveniencia } from '../../scripts/verificacao-legivel.mjs';
+import { conferirCampoRelido, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from '../../scripts/verificacao-legivel.mjs';
 import { conferirPaginaDaLeitura, leituraIndependente, normal } from '../cartao/leituras.mjs';
 import { leituraDaMedida, textoDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
@@ -38,6 +38,18 @@ for (const lang of ['pt', 'en']) {
   planta('proveniencia', `dia-errado-${lang}`, erros(data, '16.09.2026'), 'valor de proveniência diferente do livro');
   planta('proveniencia', `iso-por-formatar-${lang}`, erros(data, '2026-09-15'), 'valor de proveniência diferente do livro');
   planta('proveniencia', `endereco-com-os-mesmos-algarismos-${lang}`, erros(endereco, 'https://outra.example/2026-09-15'), 'valor de proveniência diferente do livro');
+}
+
+/* C1d: a apresentação agrupada conserva as entradas e cada par antigo/novo. */
+{
+  const corr = { date: '2026-09-28', kind: 'proveniencia', reason: 'Motivo sintético.', reason_en: 'Synthetic reason.' };
+  const linha = { corrections: [{...corr, field:'excerpt'}, {...corr, field:'access_date'}] };
+  const html = `<div class="historico-entrada">${['date','kind','reason'].map(c => `<span data-correcao-grupo="0 1" data-correcao-campo="${c}">texto</span>`).join('')}${[0,1].map(n => ['field','old_value','new_value'].map(c => `<span data-correcao-n="${n}" data-correcao-campo="${c}">texto</span>`).join('')).join('')}</div>`;
+  const ver = h => conferirHistoricoLegivel(parse(h), linha);
+  controlo('historico', 'grupo-inteiro', ver(html));
+  planta('historico', 'entrada-retirada-do-grupo', ver(html.replaceAll('0 1','0')), 'perdeu ou misturou entradas');
+  planta('historico', 'valor-antigo-retirado', ver(html.replace('data-correcao-n="1" data-correcao-campo="old_value"','data-retirado="1"')), 'perdeu um campo');
+  planta('historico', 'motivo-duplicado', ver(html.replace('</div>', '<span data-correcao-grupo="0 1" data-correcao-campo="reason">texto</span></div>')), 'uma só data, natureza e razão');
 }
 
 /* Ponto 1. O valor tem espaços internos e um sinal tipográfico num dos casos:
@@ -69,8 +81,20 @@ controlo('valor-unidade', 'marca-sem-unidade', conferirValorUnidade(parse('<span
 const camarasSinteticas = '<span class="cartao-medida-quantidade"><span data-prova="camaras_acima_do_limite">3</span> <span class="cartao-medida-unidade">câmaras</span></span>';
 controlo('valor-unidade', 'contagem-com-prova-v2', conferirValorUnidade(parse(camarasSinteticas)).erros);
 planta('valor-unidade', 'contagem-com-prova-v2-colada', conferirValorUnidade(parse(camarasSinteticas.replace('</span> <span', '</span><span'))).erros, 'cola o valor à unidade');
-for (const [valor, pt, en] of [['49.2', '49,2', '49.2'], ['−1234,50', '−1\u00a0234,50', '−1\u00a0234.50']]) {
+for (const [valor, pt, en] of [['49.2', '49,2', '49,2'], ['−1234,50', '−1\u00a0234,50', '−1\u00a0234,50']]) {
   controlo('releitura', valor, valorDaReleitura(valor, 'pt') === pt && valorDaReleitura(valor, 'en') === en ? [] : ['formatação alterou os algarismos']);
+}
+
+/* A célula usada pelo HTML recusa o ponto decimal, a perda do sinal e a precisão perdida. */
+for (const lang of ['pt','en']) {
+  const linha = {verifications:[{found:'−1234.50'}]};
+  const ver = texto => {
+    const pagina = parse(`<html lang="${lang}"><span data-linha-claim="ensaio" data-linha-campo="verifications.0.found">${texto}</span></html>`);
+    const r = conferirCampoRelido(pagina.querySelector('[data-linha-campo]'), linha, lang);
+    return r?.confere ? [] : ['forma do valor encontrado diferente da casa'];
+  };
+  controlo('forma-encontrada',lang,ver(valorDaReleitura('−1234.50',lang)));
+  for(const [nome,texto] of [['ponto','−1\u00a0234.50'],['sinal','1\u00a0234,50'],['precisao','−1\u00a0234,5'],['separador','−1234,50']]) planta('forma-encontrada',`${lang}-${nome}`,ver(texto),'forma do valor encontrado');
 }
 
 /* Ponto 6. Datas, valores, autores e índices abaixo pertencem apenas ao ensaio. */
@@ -85,23 +109,35 @@ const atualizada = {
 const semAtualizacao = { ...atualizada, value: '−50,1', corrections: [] };
 const semResposta = { verifications: [{ date: '2026-01-01', result: 'inacessivel', by: 'leitor-sintetico' }], corrections: [] };
 for (const lang of ['pt', 'en']) {
-  const sem = lang === 'pt' ? 'Ainda sem segunda leitura.' : 'No second reading yet.';
+  const sem = lang === 'pt' ? 'ainda nenhuma' : 'none yet';
   const numero = lang === 'pt' ? 'Releitura a' : 'Re-read on';
   const ficheiro = lang === 'pt' ? 'Ficheiro da fonte relido a' : 'Source file read again on';
-  const vazio = `<p data-sem-segunda-leitura>${sem}</p>`;
+  const vazio = `<dl><dt>${lang === 'pt' ? 'Segunda leitura:' : 'Second reading:'}</dt><dd><span data-sem-segunda-leitura>${sem}</span></dd></dl>`;
   const uso = `<span data-valor-em-uso>${lang === 'pt' ? 'O valor do título é o que esta página usa.' : 'This page uses the value shown in the title.'}</span>`;
   const bloco = (rotulo, porta = '', destino = '') => `<dl><dt>${rotulo}</dt><dd data-linha-verificacao="0"><time datetime="2026-01-01">01.01.2026</time>${porta}</dd></dl>${destino}`;
   const ligacao = '<a data-atualizacao-da-releitura href="#alteracao-0">Atualização sintética</a>';
   const destino = '<div id="alteracao-0"></div>';
   const confere = (html, linha) => conferirVerificacaoLegivel(parse(html), linha, lang);
   controlo('verificacao', `${lang}-ainda-sem-segunda-leitura`, confere(vazio, linhaSemLeitura));
+  planta('verificacao', `${lang}-rotulo-vazio-em-desacordo`, confere(vazio.replace(lang === 'pt' ? 'Segunda leitura:' : 'Second reading:', numero), linhaSemLeitura), 'rótulo correspondente');
+  planta('verificacao', `${lang}-frase-vazia-em-desacordo`, confere(vazio.replace(sem, lang === 'pt' ? 'nenhuma' : 'no reading'), linhaSemLeitura), 'ausência de segunda leitura');
+  const calculada = {...linhaSemLeitura, derived_from:['origem-sintetica'], check:'origem-sintetica * 2'};
+  const recalculo = lang === 'pt' ? 'Recalculada em cada construção a partir das suas origens' : 'Recomputed at every build from its sources';
+  controlo('verificacao', `${lang}-calculada-em-cada-construcao`, confere(vazio.replace(sem,recalculo),calculada));
+  const semExpressao = {...calculada, check:null};
+  controlo('verificacao', `${lang}-derivada-sem-expressao`, confere(vazio,semExpressao));
+  planta('verificacao', `${lang}-promete-recalculo-sem-expressao`, confere(vazio.replace(sem,recalculo),semExpressao), 'ausência de segunda leitura');
+  planta('verificacao', `${lang}-calculada-diz-ainda-nenhuma`, confere(vazio,calculada), 'ausência de segunda leitura');
   controlo('verificacao', `${lang}-numero-relido`, confere(bloco(numero), relida));
   controlo('verificacao', `${lang}-ficheiro-relido`, confere(bloco(ficheiro), ficheiroRelido));
   controlo('verificacao', `${lang}-divergencia-com-atualizacao`, confere(bloco(numero, ligacao, destino), atualizada));
   controlo('verificacao', `${lang}-divergencia-ainda-sem-atualizacao`, confere(bloco(numero, uso), semAtualizacao));
   planta('verificacao', `${lang}-omite-valor-em-uso`, confere(bloco(numero), semAtualizacao), 'qual é o valor em uso');
   planta('verificacao', `${lang}-inventa-diferenca-do-valor-em-uso`, confere(bloco(numero, ligacao + uso, destino), atualizada), 'qual é o valor em uso');
-  controlo('verificacao', `${lang}-fonte-sem-resposta`, confere(bloco(numero), semResposta));
+  controlo('verificacao', `${lang}-fonte-sem-resposta`, confere(bloco(lang === 'pt' ? 'Releitura tentada a' : 'Re-read attempted on', `<span data-linha-verificacao-resultado>${lang === 'pt' ? 'sem valor lido' : 'no value read'}</span>`), semResposta));
+  for(const frase of (lang === 'pt' ? ['sem resposta a esse pedido','não foi possível reler o número nesse dia'] : ['with no answer to that request','the number could not be re-read that day'])) {
+    planta('verificacao', `${lang}-tentativa-exagera-${frase}`, confere(bloco(lang === 'pt' ? 'Releitura tentada a' : 'Re-read attempted on', `<span data-linha-verificacao-resultado>${frase}</span>`),semResposta),'ausência de valor lido');
+  }
 
   planta('verificacao', `${lang}-nega-releitura-registada`, confere(vazio + bloco(numero), relida), 'ausência de segunda leitura');
   planta('verificacao', `${lang}-omite-ainda-sem-segunda-leitura`, confere('', linhaSemLeitura), 'ausência de segunda leitura');
@@ -118,6 +154,16 @@ for (const lang of ['pt', 'en']) {
   planta('verificacao', `${lang}-atualizacao-de-outro-valor`, confere(bloco(numero, ligacao, destino), {
     ...atualizada, corrections: [{ ...atualizada.corrections[0], new_value: '−50,3' }],
   }), 'não aponta para a atualização');
+}
+
+/* C1d: uma releitura antiga identifica o valor de então e a tentativa fica no seu pedido. */
+for (const lang of ['pt', 'en']) {
+  const linha = { value: '49,2', verifications: [{date:'2026-09-21',result:'igual',by:'painel-semanal'}], corrections: [{kind:'atualizacao',date:'2026-09-28',old_value:'49,3',new_value:'49,2'}] };
+  const rotulo = lang === 'pt' ? 'Releitura a' : 'Re-read on';
+  const html = `<dl><dt>${rotulo}</dt><dd data-linha-verificacao="0"><span data-valor-anterior-confirmado>49,3</span></dd></dl>`;
+  controlo('releitura-anterior', lang, conferirVerificacaoLegivel(parse(html),linha,lang));
+  planta('releitura-anterior', `${lang}-confirma-o-valor-atual`, conferirVerificacaoLegivel(parse(html.replace('49,3','49,2')),linha,lang), 'valor anterior que confirmou');
+  planta('releitura-anterior', `${lang}-omite-o-valor-anterior`, conferirVerificacaoLegivel(parse(html.replace('data-valor-anterior-confirmado','data-omitido')),linha,lang), 'valor anterior que confirmou');
 }
 
 /* Ponto 2. Usa o livro carregado apenas como molde de identidades e períodos.
@@ -138,10 +184,14 @@ function comValoresSinteticos(valores, executar) {
 }
 
 function paginaSintetica(id, lang, resolvida, regua) {
-  const cita = (alvo) => `<span data-claim="${alvo}">${escape(linhas.get(alvo).value)}</span>`;
+  const cita = (alvo, sufixo = '') => {
+    const l = linhas.get(alvo);
+    const nota = l.source_flag === 'e' ? (lang === 'en' ? l.source_flag_note_en : l.source_flag_note) : l.source_flag === 'p' ? (lang === 'en' ? 'provisional data' : 'dado provisório') : '';
+    return `<span data-claim="${alvo}">${escape(l.value)}</span>${escape(sufixo)}${nota ? `<span class="claim-provisorio"> (${escape(nota)})</span>` : ''}`;
+  };
   const partes = resolvida.pedacos.map((p) => {
     if (typeof p === 'string') return escape(p);
-    if ('claim' in p) return cita(p.claim) + escape(p.sufixo ?? '');
+    if ('claim' in p) return cita(p.claim, p.sufixo ?? '');
     if ('nl' in p) return `<span data-nonledger="${escape(p.motivo)}">${escape(p.nl)}</span>`;
     if ('data' in p) return `<span data-nonledger="data-da-linha" data-de-linha="${p.data.id}" data-de-campo="${p.data.campo}">${escape(dataDaCasa(p.data.valor, lang))}</span>`;
     throw new Error('o ensaio dos preços encontrou um tipo de pedaço que não declara');
@@ -151,6 +201,16 @@ function paginaSintetica(id, lang, resolvida, regua) {
     <p data-cartao-leitura="${id}" data-selo-em="${id}">${partes}</p>
     ${Object.entries(regua).filter(([, alvo]) => alvo).map(([tipo, alvo]) => `<span data-regua="${tipo}">${cita(alvo)}</span>`).join('')}
     </article></main>`);
+}
+
+for (const lang of ['pt','en']) {
+  const id = 'despesa-em-id-2024';
+  const reguaCompleta = reguaDoCartao(id);
+  const regua = { anterior: reguaCompleta.anterior?.id ?? null, ue: reguaCompleta.ue?.id ?? null };
+  const pagina = paginaSintetica(id, lang, leituraDaMedida(id, lang), regua);
+  controlo('valor-estimado', lang, conferirPaginaDaLeitura(pagina, lang, '/ensaio-estimativa', linhas).erros);
+  for (const marca of pagina.querySelectorAll('.claim-provisorio')) marca.remove();
+  planta('valor-estimado', `${lang}-marca-omitida`, conferirPaginaDaLeitura(pagina, lang, '/ensaio-estimativa', linhas).erros, 'bandeira');
 }
 
 const sinais = [

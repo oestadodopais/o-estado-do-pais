@@ -33,7 +33,18 @@ study: "quadro-institucional"
 note: "Agregado da União Europeia (EU27_2020) da medida «fluxo-de-credito-as-familias-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 14%. O limiar aplica-se a cada Estado-Membro, não ao agregado. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Household including non-profit institutions serving households (NPISH) credit flow, consolidated —
+    Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9'
+  new_value: 'Household including non-profit institutions serving households (NPISH) credit flow, consolidated —
+    Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 

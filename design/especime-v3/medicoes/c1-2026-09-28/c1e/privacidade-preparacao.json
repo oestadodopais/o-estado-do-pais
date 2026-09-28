@@ -1,0 +1,6 @@
+{
+  "achados": 1,
+  "ficheiro": "c1e/conferir-concorrencia.py",
+  "causa": "O seletor dos processos usava o caminho absoluto genérico da shell.",
+  "correcao": "O seletor passou a usar apenas o nome da shell; o caminho foi retirado do guião, sem mudar o detetor."
+}

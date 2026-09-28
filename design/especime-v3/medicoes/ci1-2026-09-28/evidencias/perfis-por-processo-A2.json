@@ -1,0 +1,225 @@
+{
+ "o_que": "cada processo Node da construção perfilada (build-A2), o tempo amostrado e o tempo próprio das funções da paridade (chaves, assertKeyParity, t) de src/i18n/strings.mjs",
+ "processos": [
+  {
+   "processo": "npm",
+   "total_s": 323.69,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "astro",
+   "total_s": 229.74,
+   "paridade_s": 123.92
+  },
+  {
+   "processo": "npm",
+   "total_s": 38.03,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/gate-html.mjs",
+   "total_s": 37.89,
+   "paridade_s": 14.5
+  },
+  {
+   "processo": "npm",
+   "total_s": 23.83,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/voz-b1.mjs",
+   "total_s": 23.74,
+   "paridade_s": 0.28
+  },
+  {
+   "processo": "scripts/medir-defeitos.mjs",
+   "total_s": 19.81,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 12.32,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/cartoes.mjs",
+   "total_s": 12.16,
+   "paridade_s": 0.51
+  },
+  {
+   "processo": "npm",
+   "total_s": 4.19,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-lingua.mjs",
+   "total_s": 4.1,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 3.51,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-formas.mjs",
+   "total_s": 3.42,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 3.11,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-pais.mjs",
+   "total_s": 3.02,
+   "paridade_s": 0.01
+  },
+  {
+   "processo": "npm",
+   "total_s": 2.01,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-nomes-oficiais.mjs",
+   "total_s": 1.91,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 1.44,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-dados.mjs",
+   "total_s": 1.35,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 1.09,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 1.09,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-datas.mjs",
+   "total_s": 1.0,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-lugares.mjs",
+   "total_s": 1.0,
+   "paridade_s": 0.58
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.4,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.4,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.36,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.33,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-ledger.mjs",
+   "total_s": 0.31,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-areas.mjs",
+   "total_s": 0.31,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.29,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-cruzamento.mjs",
+   "total_s": 0.28,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.27,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-mapa.mjs",
+   "total_s": 0.24,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.22,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-registo.mjs",
+   "total_s": 0.2,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-regioes.mjs",
+   "total_s": 0.18,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.15,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-cadeia.mjs",
+   "total_s": 0.14,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.12,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "npm",
+   "total_s": 0.12,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/check-documentos.mjs",
+   "total_s": 0.04,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/mapa-unidades.mjs",
+   "total_s": 0.03,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "scripts/stamp-version.mjs",
+   "total_s": 0.03,
+   "paridade_s": 0.0
+  },
+  {
+   "processo": "?",
+   "total_s": 0.02,
+   "paridade_s": 0.0
+  }
+ ]
+}

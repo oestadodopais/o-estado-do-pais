@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T19:53:52+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a primeira chamada de t() congela a árvore e marca a paridade como conferida sem nunca a conferir",
+   "sha256_antes": "8af8ff723fdf8abc598a70badf68c006e43560b39948045407eea72f77227446",
+   "sha256_depois": "04555a58cd9c47617688c530b8ed27c400134ec277251554ae10228d802f7562",
+   "contexto_antes": "eturn;\n  Object.freeze(o);\n  for (const v of Object.values(o)) congela(v);\n}\n\n/** @param {Lingua} lang */\nexport function t(lang) {\n  if (!paridadeConferida) {\n    assertKeyParity();\n    congela(STRINGS);\n    paridadeConferida = true;\n  }\n  const s = STRINGS[lang];\n  if (!s) throw new Error(`i18n: língua desconhecida \"${lang}\"`);\n  return s;\n}\n",
+   "contexto_depois": "eturn;\n  Object.freeze(o);\n  for (const v of Object.values(o)) congela(v);\n}\n\n/** @param {Lingua} lang */\nexport function t(lang) {\n  if (!paridadeConferida) {\n    congela(STRINGS);\n    paridadeConferida = true;\n  }\n  const s = STRINGS[lang];\n  if (!s) throw new Error(`i18n: língua desconhecida \"${lang}\"`);\n  return s;\n}\n"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/verify-depois-do-build.mjs",
+   "descricao": "a célula U conta uma conferência que correu e saiu vermelha como corrida aqui, e deixa de a recusar",
+   "sha256_antes": "932c469cab6381b6155dfee8ed91c567a0b656c5391189da9a212875c2f0631e",
+   "sha256_depois": "ab8946dc3f84dae7553de0d3f81fd4c8f7a1758cb1cf1ae344a872c785e8380e",
+   "contexto_antes": "t(corridos.filter((c) => c.codigo !== 0).map((c) => c.passo));\n  let doBuild = 0;\n  let daqui = 0;\n  for (const p of verify) {\n    if (build.has(p)) doBuild++;\n    else if (verdes.has(p)) daqui++;\n    else if (vermelhos.has(p)) falhas.push(`U: «${p}» correu e não saiu com 0`);\n    else falhas.push(`U: «${p}» está no verify, não é um passo do build e não correu aqui`);\n  }\n  return { ok: falhas.len",
+   "contexto_depois": "t(corridos.filter((c) => c.codigo !== 0).map((c) => c.passo));\n  let doBuild = 0;\n  let daqui = 0;\n  for (const p of verify) {\n    if (build.has(p)) doBuild++;\n    else if (verdes.has(p) || vermelhos.has(p)) daqui++;\n    else if (false) falhas.push(`U: «${p}» correu e não saiu com 0`);\n    else falhas.push(`U: «${p}» está no verify, não é um passo do build e não correu aqui`);\n  }\n  return { ok: falhas.len"
+  },
+  {
+   "id": "P3",
+   "ficheiro": ".github/workflows/portao.yml",
+   "descricao": "o trabalho da corrida passa a chamar-se portao-rapido, e a verificação obrigatória de main, que se chama portao, deixa de ser dada",
+   "sha256_antes": "5378dc537c5b3e27f2b397b37c87af968fcf0899217503742e941c545f53a581",
+   "sha256_depois": "8e0fba16ebc80973010aa646fff51f22a624403edfb97242b1e1b9b5eede4b8c",
+   "contexto_antes": "ria é sempre a do resumo que se vai fundir.\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  portao:\n    # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a\n    # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem\n    # (`Imag",
+   "contexto_depois": "ria é sempre a do resumo que se vai fundir.\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  portao-rapido:\n    # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a\n    # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem\n    # (`Imag"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 12 848 ficheiros de dist/ na célula D, contra os 12 484 das provas",
+   "sha256_antes": "30b6ef7365e78c7d162278117bcedf728e7f44b558b7fcb34f889c34ed65ee1e",
+   "sha256_depois": "acdfb282add3e021e77d08f65d8f49158dac4d66d5ec48cf04e46e8fee2b86c9",
+   "contexto_antes": "vez, sobre o mesmo `dist/` que o `build` fez | a célula U: dos 33 passos do `verify`, 17 correu-os o `build` e 16 correram no guião e saíram com 0; a célula D: os 12 484 ficheiros de `dist/` (`dist_ficheiros`) com os mesmos bytes antes e depois das conferências; a célula C: o `dist/`, o `prova.json` e o `cadeia.json` são da cabeça da árvore | `evidencias/verify-depoi",
+   "contexto_depois": "vez, sobre o mesmo `dist/` que o `build` fez | a célula U: dos 33 passos do `verify`, 17 correu-os o `build` e 16 correram no guião e saíram com 0; a célula D: os 12 848 ficheiros de `dist/` (`dist_ficheiros`) com os mesmos bytes antes e depois das conferências; a célula C: o `dist/`, o `prova.json` e o `cadeia.json` são da cabeça da árvore | `evidencias/verify-depoi"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "package.json",
+   "descricao": "a cadeia do verify perde a conferência da voz, e a célula U, que lê a cadeia do mesmo ficheiro, não o vê",
+   "sha256_antes": "c8f71744f421a7d047e321f70f42eb339bf12fb87fd1cfca194e4f7e8bc26c05",
+   "sha256_depois": "9dc4524d0644d0d6a293e3d8f526ab815d26a8568bf8c73548d41a639cf32390",
+   "contexto_antes": "n check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:nomes && npm run c",
+   "contexto_depois": "n check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:nomes && npm run c"
+  }
+ ]
+}

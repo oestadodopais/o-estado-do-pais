@@ -1,0 +1,211 @@
+{
+  "cabeca": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+  "limpa": false,
+  "diferenca_sha256": "b8741354458bf4f51894b1695232b2d4d875b76a70dcdb5c7d91f8e3413c989b",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+      "sha256": "a4095529b3df93a8e1da82d11523ff85125378c29eca6441418afad369f18a67"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.arvore.json",
+      "sha256": "46c7a567ac48a38d07046fe4e91e69d6e018ecd8cf82b34021596d8df87e05e1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.fim",
+      "sha256": "0ded51d48462eed553c54ecb930c6dd9849020857f4a55b5d9bf12944b370d10"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.inicio",
+      "sha256": "dbbf34bfcfb0db3f272c293472f1973765c58d0b3085de0a8e97a81f663cdfa0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-aprovado-2026.log",
+      "sha256": "69083d50dc40e0cced1f6e266ef38d20929b7a8570f30268096b5800f4a24fa6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.arvore.json",
+      "sha256": "5da4e0a04591292bcdf382eac8d66f8e07e279faf32ac2b8457c541ae9decc9d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.fim",
+      "sha256": "f78a325b37adbc2a86065e5bc5dcbd8b81b03da4e867cdc4f983640229559695"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.inicio",
+      "sha256": "e3af30fbdab843f6d6845acd9e9f40e350cc3f01bbd958a6676ac8d49382adbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-municipio-contratado.log",
+      "sha256": "44a8a32edebffd912f79520272facef0c6b3e432203fdab38cef4c92b86a7c65"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-pago-2026.arvore.json",
+      "sha256": "9ca2c6af78cb948f7c3bf7353b6891dcc2a54bec8224cf2d0e0dd974fc13374c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-pago-2026.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-pago-2026.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-pago-2026.fim",
+      "sha256": "998d27130b7ce1ef59c9237e24d280091f6afa22b9f8853ce40f83f649231ecb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-pago-2026.inicio",
+      "sha256": "e1abf4c12e45ee08d1f7b6cbdbf68f04dc54400833e9ffb7984bbc29ebb926c3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-pago-2026.log",
+      "sha256": "4d7f48067c11241ca5b2085c5d403d1ae6eb9f28aaa1bbcf0ce6b18f544e3f86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-universidade-contratado.arvore.json",
+      "sha256": "537a8bb956749d4cb9e86a730a58f56fa0faaf8bb75c84289fb173ea32cdd166"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-universidade-contratado.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-universidade-contratado.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-universidade-contratado.fim",
+      "sha256": "bddc3948fbd501e14ecc8527c186034f8250ddcb7eeb87980b48183f0163c040"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-universidade-contratado.inicio",
+      "sha256": "3045bc0ee6ef9a9f2303dceffb21540ad55a9541a8306a1190999f4120099b01"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-universidade-contratado.log",
+      "sha256": "cdf0ee1e6ceb81c5740f63a857e438a2e89c3b79c45fd4f1bd403a3e998a506f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-vencido-aprovado-2026.arvore.json",
+      "sha256": "f421a19c17eeb19ea7fac9d6a148af00fb00468811a42b01ed6985fe15433e31"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-vencido-aprovado-2026.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-vencido-aprovado-2026.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-vencido-aprovado-2026.fim",
+      "sha256": "f662c35eb3d9b79e2b7e7d529e5d99986efb6d11a30f6ea5ad7f5b1cd1be5d5f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-vencido-aprovado-2026.inicio",
+      "sha256": "591bcc82f7dd3a904046a08b525d624b0390c322e1a410c22124f02898688f26"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/aceitar-evora-prr-vencido-aprovado-2026.log",
+      "sha256": "470f1cca7f6ab0293a783b8b1e931683d372e38a01f8b6568ddee71ecbf1b939"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/acessos-git.json",
+      "sha256": "5f5afc520d8ecfec0816f1b8cfb896c34b303ba100eb21fd09f5d2a360b223af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/conferir-acessos.py",
+      "sha256": "1fec2fe8ed38a5706b1c06bc2dd24a07b76d621da97a9b0897fda0c1ed41863e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/conferir-concorrencia.py",
+      "sha256": "acb587ac18760ea2a8ac255812d685dccdc497056ecb3e11a28f8e93c6d85d07"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/correr-quando-livre.py",
+      "sha256": "3ffe81f59bb0c1c6f53774e9985e39660ccfeb2409fb367ca0a6389b8b91916a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/cruzamento.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/cruzamento.inicio",
+      "sha256": "854fc65e99086d9edee80c186c6e74d4f996b4634136c9029e5bf3a5df33d798"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/livro.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/livro.inicio",
+      "sha256": "89a74633f0096e05807a6d301ff167a27d4e9c4fd99050140bef6d979fd93b65"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.arvore.json",
+      "sha256": "2ab79cf652006e5d552151f50b1e19027b4f044c1a47e691c49f5c4a04ad45af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.fim",
+      "sha256": "6868d240fb7a1d5f2f5adf9b79a313fb5d6303549d5bcdba5a61681f540af15e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.inicio",
+      "sha256": "3024886c26a89b4c332145c04807898bbda9d70b15d97d6af529d9dd92cf7c7e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.log",
+      "sha256": "5f5afc520d8ecfec0816f1b8cfb896c34b303ba100eb21fd09f5d2a360b223af"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-aprovado-2026.yml",
+      "sha256": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-municipio-contratado.yml",
+      "sha256": "20403da0996f959c61b5418345df9cb25ae252b862810bb422819aade1522a31"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-pago-2026.yml",
+      "sha256": "312d45ea45e38577776c497643cbcf4e8441531fe887aa6e78ed54b059254ff0"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-universidade-contratado.yml",
+      "sha256": "319ce292e6490cc8bb853ce5742797c085d41f2d37ca2fef3278d0e2d3212f15"
+    },
+    {
+      "ficheiro": "ledger/claims/evora-prr-vencido-aprovado-2026.yml",
+      "sha256": "12ce22206463a1ab9729d5a0400fed901f43ddee5b1f61848d80f27be6f02da2"
+    },
+    {
+      "ficheiro": "ledger/cruzamentos/evora.json",
+      "sha256": "d734848640362d115b3e420e3581ecf624809f942e0ae5946a29fec4e5fd6419"
+    }
+  ]
+}

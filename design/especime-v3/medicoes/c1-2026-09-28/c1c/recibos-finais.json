@@ -1,0 +1,157 @@
+{
+  "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+  "casos": [
+    {
+      "id": "divida-das-familias-2025-ue",
+      "lingua": "pt",
+      "datas": [
+        "28.09.2026",
+        "21.09.2026"
+      ],
+      "resultados": [
+        "diverge",
+        "igual"
+      ],
+      "texto": "O que foi conferidoLido na fonte a28.09.2026Releitura a28.09.2026 · comparação semanal com a fonte · a releitura encontrou: 49,2 Ver a atualização deste valorReleitura a21.09.2026 · comparação semanal com a fonte · igual à fonte",
+      "passou": true
+    },
+    {
+      "id": "indice-de-divida-limite-legal",
+      "lingua": "pt",
+      "datas": [
+        "01.09.2026"
+      ],
+      "resultados": [
+        "igual"
+      ],
+      "texto": "O que foi conferidoLido na fonte a28.09.2026Ficheiro da fonte relido a01.09.2026 · conferência diária do ficheiro da fonte · igual à fonte Repetir a leitura →",
+      "passou": true
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "lingua": "pt",
+      "datas": [
+        "28.09.2026",
+        "28.09.2026"
+      ],
+      "resultados": [
+        "igual",
+        "inacessivel"
+      ],
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026 · comparação semanal com a fonte · igual à fonte Releitura a28.09.2026 · comparação semanal com a fonte · não foi possível reler o número nesse dia",
+      "passou": true
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "lingua": "pt",
+      "datas": [
+        "28.09.2026",
+        "28.09.2026"
+      ],
+      "resultados": [
+        "igual",
+        "inacessivel"
+      ],
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026 · comparação semanal com a fonte · igual à fonte Releitura a28.09.2026 · comparação semanal com a fonte · não foi possível reler o número nesse dia",
+      "passou": true
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "lingua": "pt",
+      "datas": [
+        "28.09.2026",
+        "28.09.2026"
+      ],
+      "resultados": [
+        "igual",
+        "inacessivel"
+      ],
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026 · comparação semanal com a fonte · igual à fonte Releitura a28.09.2026 · comparação semanal com a fonte · não foi possível reler o número nesse dia",
+      "passou": true
+    },
+    {
+      "id": "cartoes-pib-e-ihpc",
+      "lingua": "pt",
+      "bandeira": "PIB real por habitante20 600 euros por habitante · volumes encadeados (2015) (dado provisório)em 2025fonte · EurostatÉ o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços. Subiu face a 2024. Está abaixo da média da União Europeia.2024:20 430 (dado provisório)União Europeia:31 890",
+      "objetivo_sem_veredicto": "Inflação na comparação europeia3,6 %em agosto de 2026fonte · EurostatEm agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, 3,6 % acima dos de há um ano. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.julho de 2026:3,1União Europeia:3,2Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+      "passou": true
+    },
+    {
+      "id": "divida-das-familias-2025-ue",
+      "lingua": "en",
+      "datas": [
+        "28.09.2026",
+        "21.09.2026"
+      ],
+      "resultados": [
+        "diverge",
+        "igual"
+      ],
+      "texto": "What was checkedRead at the source on28.09.2026Re-read on28.09.2026 · weekly comparison with the source · the re-read found: 49.2 See the update to this valueRe-read on21.09.2026 · weekly comparison with the source · matches the source",
+      "passou": true
+    },
+    {
+      "id": "indice-de-divida-limite-legal",
+      "lingua": "en",
+      "datas": [
+        "01.09.2026"
+      ],
+      "resultados": [
+        "igual"
+      ],
+      "texto": "What was checkedRead at the source on28.09.2026Source file read again on01.09.2026 · daily check of the source file · matches the source Repeat the reading →",
+      "passou": true
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "lingua": "en",
+      "datas": [
+        "28.09.2026",
+        "28.09.2026"
+      ],
+      "resultados": [
+        "igual",
+        "inacessivel"
+      ],
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026 · weekly comparison with the source · matches the source Re-read on28.09.2026 · weekly comparison with the source · the number could not be re-read that day",
+      "passou": true
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "lingua": "en",
+      "datas": [
+        "28.09.2026",
+        "28.09.2026"
+      ],
+      "resultados": [
+        "igual",
+        "inacessivel"
+      ],
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026 · weekly comparison with the source · matches the source Re-read on28.09.2026 · weekly comparison with the source · the number could not be re-read that day",
+      "passou": true
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "lingua": "en",
+      "datas": [
+        "28.09.2026",
+        "28.09.2026"
+      ],
+      "resultados": [
+        "igual",
+        "inacessivel"
+      ],
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026 · weekly comparison with the source · matches the source Re-read on28.09.2026 · weekly comparison with the source · the number could not be re-read that day",
+      "passou": true
+    },
+    {
+      "id": "cartoes-pib-e-ihpc",
+      "lingua": "en",
+      "bandeira": "Real GDP per capita20 600 euro per capita · chain linked volumes (2015) (provisional data)in 2025source · EurostatIt is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices. Up from 2024. Below the European Union average.2024:20 430 (provisional data)European Union:31 890",
+      "objetivo_sem_veredicto": "Inflation in the European comparison3,6 %in August 2026source · EurostatIn August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, 3,6 % above a year earlier. The change is larger than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index.July 2026:3,1European Union:3,2How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+      "passou": true
+    }
+  ],
+  "contagem": 12,
+  "erros": []
+}

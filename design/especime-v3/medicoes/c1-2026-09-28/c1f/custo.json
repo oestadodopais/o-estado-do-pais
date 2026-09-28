@@ -1,0 +1,43 @@
+{
+  "sessao": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+  "pedido": "2026-09-28T20:18:40.575Z",
+  "registado_em": "2026-09-28T20:46:18.104382+00:00",
+  "antes": {
+    "hora": "2026-09-28T20:16:01.915Z",
+    "cumulativos": {
+      "input_tokens": 91458678,
+      "cached_input_tokens": 89803264,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 372926,
+      "reasoning_output_tokens": 172831,
+      "total_tokens": 91831604
+    }
+  },
+  "ultima_leitura": {
+    "hora": "2026-09-28T20:45:50.857Z",
+    "cumulativos": {
+      "input_tokens": 98810665,
+      "cached_input_tokens": 96925952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 405222,
+      "reasoning_output_tokens": 187104,
+      "total_tokens": 99215887
+    }
+  },
+  "c1f": {
+    "input_tokens": 7351987,
+    "cached_input_tokens": 7122688,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 32296,
+    "reasoning_output_tokens": 14273,
+    "total_tokens": 7384283
+  },
+  "unidade": "tokens expostos pelo runtime",
+  "limites": [
+    "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
+    "Sem preço exposto. Não inclui revisões automáticas nem o fecho posterior a esta leitura. Sem subagentes."
+  ],
+  "segundos": 1630.282,
+  "duracao_de": "pedido",
+  "duracao_ate": "ultima_leitura.hora"
+}

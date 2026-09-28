@@ -1,0 +1,138 @@
+{
+ "cabeca": "7b63369e9d7ccc71f0f71f9609d364a2fbb5a933",
+ "paralelo": 4,
+ "segundos": 201.192,
+ "ok": true,
+ "plantas": [
+  {
+   "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência nova só no verify corre sozinha",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência tirada da escolha fecha a célula U",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que escreve no dist/ fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "um dist/ de outra cabeça fecha a célula C",
+   "mordeu": true
+  },
+  {
+   "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+   "mordeu": true
+  }
+ ],
+ "corridos": [
+  {
+   "passo": "npm run check:alvos",
+   "codigo": 0,
+   "segundos": 199.446
+  },
+  {
+   "passo": "npm run check:palavras",
+   "codigo": 0,
+   "segundos": 102.231
+  },
+  {
+   "passo": "npm run check:moldura",
+   "codigo": 0,
+   "segundos": 99.577
+  },
+  {
+   "passo": "npm run check:lugar",
+   "codigo": 0,
+   "segundos": 22.476
+  },
+  {
+   "passo": "npm run check:indice",
+   "codigo": 0,
+   "segundos": 12.586
+  },
+  {
+   "passo": "npm run check:cartao",
+   "codigo": 0,
+   "segundos": 6.691
+  },
+  {
+   "passo": "npm run check:cabeca",
+   "codigo": 0,
+   "segundos": 4.596
+  },
+  {
+   "passo": "npm run check:css",
+   "codigo": 0,
+   "segundos": 5.995
+  },
+  {
+   "passo": "npm run check:alcance",
+   "codigo": 0,
+   "segundos": 3.985
+  },
+  {
+   "passo": "npm run check:briefs",
+   "codigo": 0,
+   "segundos": 4.332
+  },
+  {
+   "passo": "npm run check:fontes",
+   "codigo": 0,
+   "segundos": 1.317
+  },
+  {
+   "passo": "npm run mapa:unidades -- --verifica",
+   "codigo": 0,
+   "segundos": 0.15
+  },
+  {
+   "passo": "npm run provar:eyetext",
+   "codigo": 0,
+   "segundos": 0.374
+  },
+  {
+   "passo": "npm run provar:guardas",
+   "codigo": 0,
+   "segundos": 0.177
+  },
+  {
+   "passo": "npm run check:mortos",
+   "codigo": 0,
+   "segundos": 2.244
+  },
+  {
+   "passo": "npm run design:feixe",
+   "codigo": 0,
+   "segundos": 2.077
+  }
+ ],
+ "celulas": {
+  "U": {
+   "ok": true,
+   "falhas": [],
+   "passos_do_verify": 33,
+   "cobertos_pelo_build": 17,
+   "corridos_aqui": 16
+  },
+  "D": {
+   "ok": true,
+   "falhas": [],
+   "ficheiros": 12484,
+   "diferencas": 0
+  },
+  "C": {
+   "ok": true,
+   "falhas": [],
+   "cabeca": "7b63369e9d7ccc71f0f71f9609d364a2fbb5a933"
+  }
+ }
+}

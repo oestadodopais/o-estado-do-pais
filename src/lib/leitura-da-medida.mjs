@@ -1,3 +1,4 @@
+import { notaDaBandeira } from './bandeira-da-fonte.mjs';
 /**
  * ===========================================================================
  * A LEITURA DE UMA MEDIDA · o resolvedor (bloco L1, 24.09.2026)
@@ -52,7 +53,6 @@ import { reguaDoCartao } from './enquadramento.mjs';
 import { estadoDaMedida } from './estado.mjs';
 import { prova, periodoDasCamaras } from './prova.mjs';
 import { dataDaCasa } from './datas.mjs';
-import { t } from '../i18n/strings.mjs';
 
 /** A chave do cartão das câmaras, que é uma contagem da prova e não uma linha. */
 export const LEITURA_DAS_CAMARAS = 'camaras';
@@ -376,13 +376,12 @@ export function leituraDaMedida(id, lang) {
  * @param {PedacoDaFrase[]} pedacos @param {'pt'|'en'} lang
  */
 export function textoDaLeitura(pedacos, lang) {
-  const s = t(lang);
   return pedacos
     .map((p) => {
       if (typeof p === 'string') return p;
       if ('claim' in p) {
         const c = getClaim(p.claim);
-        return `${c.value}${p.sufixo ?? ''}${(c.source_flag === 'p' || (c.source_flag === '&' && c.source_flag_note === 'Dado provisório')) ? ' (' + s.prov.dadoProvisorio + ')' : ''}`;
+        return `${c.value}${p.sufixo ?? ''}${notaDaBandeira(c, lang) ? ' (' + notaDaBandeira(c, lang) + ')' : ''}`;
       }
       if ('data' in p) return dataDaCasa(p.data.valor, lang);
       if ('prova' in p) return dataDaCasa(String(p.item.valor), lang);

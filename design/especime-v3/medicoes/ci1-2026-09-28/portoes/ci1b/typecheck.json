@@ -1,0 +1,43 @@
+{
+ "comando": "npm run typecheck",
+ "inicio": "2026-09-28T21:28:20.985Z",
+ "fim": "2026-09-28T21:28:21.248Z",
+ "segundos": 0.263,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": [
+   "48481   1.0 node tests/acessibilidade/alvos.mjs --vermelhos --so bloco-sem-classe --json <rascunho>/q2/alvos-bloco.json",
+   "48482   0.4 <casa>/…/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-fo",
+   "48483   0.1 <casa>/…/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=SAAAAAAAAAAgAAAEAAA",
+   "48484   0.0 <casa>/…/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --use-angle=swiftshader-webgl --use-gl=a",
+   "55157   0.0 <casa>/…/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb "
+  ]
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": [
+   "48481   3.4 node tests/acessibilidade/alvos.mjs --vermelhos --so bloco-sem-classe --json <rascunho>/q2/alvos-bloco.json",
+   "48482   1.4 <casa>/…/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-fo",
+   "48483   0.6 <casa>/…/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-angle=swiftshader-webgl --enable-unsafe-swiftshader --gpu-preferences=SAAAAAAAAAAgAAAEAAA",
+   "48484   0.4 <casa>/…/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --use-angle=swiftshader-webgl --use-gl=a",
+   "55157   7.0 <casa>/…/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb "
+  ]
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": [
+  {
+   "nome": "typecheck",
+   "inicio": "2026-09-28T21:28:21.059Z",
+   "segundos": 0.189
+  }
+ ]
+}
