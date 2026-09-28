@@ -2165,10 +2165,11 @@ export const STRINGS = {
          vez): a data de leitura era dita três vezes na mesma página, e fica
          uma, no bloco das verificações («Lido na fonte a»). */
         verificacoesK: 'O que foi conferido',
-        segundaLeituraK: 'Segunda leitura a',
+        segundaLeituraK: 'Releitura a',
         ficheiroRelidoK: 'Ficheiro da fonte relido a',
         semSegundaLeitura: 'Ainda sem segunda leitura.',
         verAtualizacao: 'Ver a atualização deste valor',
+        valorEmUso: 'O valor do título é o que esta página usa.',
         /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
          data da última entrada de `verifications` desta linha, o mesmo campo que
          a terceira data de uma medida rende com esta mesma palavra desde a quarta
@@ -2299,8 +2300,8 @@ export const STRINGS = {
         },
         verificacaoResultado: {
           igual: 'igual à fonte',
-          diverge: 'a fonte publica agora outro valor:',
-          inacessivel: 'não foi possível reler o número na fonte nesse dia',
+          diverge: 'a releitura encontrou:',
+          inacessivel: 'não foi possível reler o número nesse dia',
         },
         verificacaoPorta: 'Repetir a leitura',
       },
@@ -3691,10 +3692,11 @@ export const STRINGS = {
         publicadoPagina: 'p.',
         /* Ver a razão na edição portuguesa. */
         verificacoesK: 'What was checked',
-        segundaLeituraK: 'Second reading on',
+        segundaLeituraK: 'Re-read on',
         ficheiroRelidoK: 'Source file read again on',
         semSegundaLeitura: 'No second reading yet.',
         verAtualizacao: 'See the update to this value',
+        valorEmUso: 'This page uses the value shown in the title.',
         reconferidoK: 'Verified on',
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
@@ -3723,8 +3725,8 @@ export const STRINGS = {
         },
         verificacaoResultado: {
           igual: 'matches the source',
-          diverge: 'the source now publishes a different value:',
-          inacessivel: 'the number could not be read again from the source that day',
+          diverge: 'the re-read found:',
+          inacessivel: 'the number could not be re-read that day',
         },
         verificacaoPorta: 'Repeat the reading',
       },

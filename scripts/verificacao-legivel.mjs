@@ -11,6 +11,12 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
   for (const el of root.querySelectorAll('[data-linha-verificacao]')) {
     const v = linha.verifications?.[Number(el.getAttribute('data-linha-verificacao'))];
     if (!v) { erros.push('C1: segunda leitura sem entrada no registo'); continue; }
+    const uso = el.querySelectorAll('[data-valor-em-uso]');
+    const diferente = v.result === 'diverge' && n(v.found) !== n(linha.value);
+    const fraseUso = lang === 'en' ? 'This page uses the value shown in the title.' : 'O valor do título é o que esta página usa.';
+    if (diferente ? uso.length !== 1 || uso[0]?.textContent !== fraseUso : uso.length !== 0) {
+      erros.push('C1c: a divergência não diz corretamente qual é o valor em uso');
+    }
     const atualizacao = v.result === 'diverge' ? (linha.corrections ?? []).findIndex(c =>
       c.kind === 'atualizacao' && c.date >= v.date && n(c.new_value) === n(v.found)) : -1;
     const portas = el.querySelectorAll('[data-atualizacao-da-releitura]');
@@ -20,7 +26,7 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
     if (atualizacao >= 0 && !root.querySelector(`#alteracao-${atualizacao}`)) erros.push('C1: atualização sem destino na história');
     const esperado = v.by === 'corredor-diario'
       ? (lang === 'en' ? 'Source file read again on' : 'Ficheiro da fonte relido a')
-      : (lang === 'en' ? 'Second reading on' : 'Segunda leitura a');
+      : (lang === 'en' ? 'Re-read on' : 'Releitura a');
     if (el.previousElementSibling?.textContent !== esperado) erros.push('C1: o recibo não distingue a leitura do número da leitura do ficheiro');
   }
   return erros;
