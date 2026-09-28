@@ -16795,5 +16795,951 @@
     "aceitacao_integral": false,
     "paragem": "16 entradas de proveniência anteriores ao acesso em vigor nas cinco linhas do PRR",
     "erros_da_medicao": []
+  },
+  "C1f": {
+    "registado_em": "2026-09-28T20:52:38.469222+00:00",
+    "base": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+    "cabeca_sitio": "cd5557448c430a225eb58b6b257e7f11ef384818",
+    "motor": {
+      "cabeca": "68318e0da2036cc29e4704fa1bb8a96dee246095",
+      "limpa": true,
+      "diferenca_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ficheiros_alterados": []
+    },
+    "commits": {
+      "sitio": [
+        {
+          "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+          "assunto": "C1: alinhar a dívida de Évora com o calendário dos mandatos"
+        },
+        {
+          "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+          "assunto": "C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos"
+        },
+        {
+          "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+          "assunto": "C1: separar valores e explicar as leituras e as conferências"
+        },
+        {
+          "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+          "assunto": "C1: registar as três releituras iguais do PIB real por habitante"
+        },
+        {
+          "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+          "assunto": "C1: separar também as unidades nos cartões dos concelhos"
+        },
+        {
+          "hash": "8656f66f838c31ec0ad63d58204df2edb5f90e91",
+          "assunto": "C1: fixar as palavras e preparar a medição da entrega"
+        },
+        {
+          "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+          "assunto": "C1: fechar os tipos do CSV e retirar a importação sem uso"
+        },
+        {
+          "hash": "6c16c719f7bbc5164182ea5c62a51b656bf4fd43",
+          "assunto": "C1: entregar as provas das correções de confiança"
+        },
+        {
+          "hash": "04ef76eb4ff04ac6110012934b76f9b7d0536b34",
+          "assunto": "C1: a resposta do construtor do Codex"
+        },
+        {
+          "hash": "533fea9d40720e72c009e2aeb0d0ba72ad0d1feb",
+          "assunto": "Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor"
+        },
+        {
+          "hash": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
+          "assunto": "C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento"
+        },
+        {
+          "hash": "7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18",
+          "assunto": "C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal"
+        },
+        {
+          "hash": "0a9213f5798acd2ceae2bcb66b8163eccd26e00c",
+          "assunto": "C1c: dizer cada releitura e distinguir o valor encontrado do publicado"
+        },
+        {
+          "hash": "feeb59754996ead2a31dff609a9a0000e99d5816",
+          "assunto": "C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio"
+        },
+        {
+          "hash": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+          "assunto": "C1c: conservar a nota no ficheiro e situar a dívida no fim do ano"
+        },
+        {
+          "hash": "8d7ddbdba2e5ca98f5745dd144250e0b4c95d875",
+          "assunto": "C1c: entregar as provas e a paragem na história da fonte legal"
+        },
+        {
+          "hash": "e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e",
+          "assunto": "C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex"
+        },
+        {
+          "hash": "aa8f6ff13575af523d68d3263b0a190a4cb1d87d",
+          "assunto": "C1c: validar as releituras pela proveniência em vigor e repor a história"
+        },
+        {
+          "hash": "7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6",
+          "assunto": "C1c: citar os nomes antigos e tornar a planta independente do histórico Git"
+        },
+        {
+          "hash": "7aeb6e543b5dc8611e39cccdbae0795acd28fdef",
+          "assunto": "C1c: marcar a língua da edição também na história da proveniência"
+        },
+        {
+          "hash": "3362a4c0df19410129eaadce534fc3fd8a528318",
+          "assunto": "C1c: escrever as datas históricas na forma da casa e conferir a mesma data"
+        },
+        {
+          "hash": "6f59ad006b7755ea623adedc8f3a1a30f9d2291e",
+          "assunto": "C1c: entregar as provas da retoma e fechar a correção da história"
+        },
+        {
+          "hash": "a02c705c5b99c0f397c4cc784f7b5b3a5403d020",
+          "assunto": "Os registos de 28.09 à tarde: a §1.134 (a decisão do diretor sobre a atualização, a arrumação e a autonomia editorial, com a forma do ciclo, a ordem pela fase 2 do plano da fiabilidade e o que fica com ele), as I158 a I162 fechadas pelo C1 e as I163 a I167 abertas ou fechadas, as M35 a M37, e as quatro linhas novas do diretor (as chaves e o interruptor das corridas, o teto e a pausa do ciclo, a pré-visualização da primeira página, as calculadoras)"
+        },
+        {
+          "hash": "7b4328906d938bd6eeecb8f1e1fc18c1b809e964",
+          "assunto": "C1d: a segunda leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e vinte achados reais), com o registo das plantas, e o guião da passagem de correção C1d: o painel do motor volta a distinguir esta máquina da fonte, o livro prende o valor à última atualização, os excertos com a marca da fonte levam a sua entrada, o limite legal volta à forma cruzada do motor, e o recibo diz o que cada releitura confirmou"
+        },
+        {
+          "hash": "057c6db8456d71134eef328cb1135c7f0fcadce7",
+          "assunto": "C1d: prender o valor publicado à história e recusar a retirada da atualização"
+        },
+        {
+          "hash": "2f79c2f2c237731514707b972e09173193563245",
+          "assunto": "C1d: registar as marcas dos excertos e repor a origem do limite municipal"
+        },
+        {
+          "hash": "760ed6f7bb3d665c429d0f8c865a5671b91a38d9",
+          "assunto": "C1d: declarar os instantâneos do PRR e conferir toda a cadeia de endereços"
+        },
+        {
+          "hash": "03c689bc88cf9313dcf7fd5efdbb9a3d146ffa36",
+          "assunto": "C1d: começar os mandatos nas instalações seladas e declarar a data em falta"
+        },
+        {
+          "hash": "d25330a5bc095beabfaaa92c219ad3a2540cf1c1",
+          "assunto": "C1d: distinguir o objetivo institucional e citar uma frase inteira sobre competitividade"
+        },
+        {
+          "hash": "966e843589cc9bc4bfafc63425f9a678becdc312",
+          "assunto": "C1d: mostrar a estimativa e dizer o que cada releitura confirmou"
+        },
+        {
+          "hash": "6c794fe2edf0eda51f5309ea2c8ff2ed4d13b4dd",
+          "assunto": "C1d: conferir as frases estimadas no HTML e retirar o exemplo de caminho pessoal"
+        },
+        {
+          "hash": "e75de25f7c02a194c680261ab7b561f5139d7218",
+          "assunto": "C1d: declarar o tipo da lista de instantâneos aceite pela história"
+        },
+        {
+          "hash": "ea0f467d8ac8d1cd872fec9052f139d7917db558",
+          "assunto": "C1d: retirar as traduções que a nota comum da fonte tornou desnecessárias"
+        },
+        {
+          "hash": "6bbe1cee5f7167ba7bb317733ceef7e4b71ab413",
+          "assunto": "C1d: repor as declarações de língua da fonte do limite municipal"
+        },
+        {
+          "hash": "5cb9023f14143eddc381bd4305bfed83f2817d7f",
+          "assunto": "C1d: entregar os portões, as capturas, o relatório e a resposta do construtor"
+        },
+        {
+          "hash": "5c862efb38055965618a9d29f26ac12a25ac99eb",
+          "assunto": "C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas"
+        },
+        {
+          "hash": "69520d3ac921f80936191c58d69cf50f220048d5",
+          "assunto": "C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR"
+        },
+        {
+          "hash": "4653316e42feb4f50c314001ee26b1389caca08f",
+          "assunto": "C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo"
+        },
+        {
+          "hash": "abc6743a172e4e05f385b289b0a5f6309ef196af",
+          "assunto": "C1e: desenhar o início sem data como limite em aberto"
+        },
+        {
+          "hash": "d65f2bb74dd8edbded0dc5364779903b19a14667",
+          "assunto": "C1e: conferir nomes do Git e caminhos nas páginas construídas"
+        },
+        {
+          "hash": "ab47e595d283ecb9e8b8795cebf8a6e0cbdceede",
+          "assunto": "C1e: isolar as condições de endereço nas plantas dos instantâneos"
+        },
+        {
+          "hash": "2d063f9af1e707a4e8657a0e664bdce88eece4b6",
+          "assunto": "C1e: tipar a lista percorrida pela história da proveniência"
+        },
+        {
+          "hash": "9514cc6eea58426d39ef54d7085f9372a68c6cf2",
+          "assunto": "C1e: entregar as provas e registar a paragem da história do PRR"
+        },
+        {
+          "hash": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+          "assunto": "C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma"
+        },
+        {
+          "hash": "ffea781d22aec3cc80b7db14c825394627f8ecf1",
+          "assunto": "C1f: reconstituir pelo Git os acessos das cinco linhas do PRR"
+        },
+        {
+          "hash": "cd5557448c430a225eb58b6b257e7f11ef384818",
+          "assunto": "C1f: registar para leitura as duas contagens do inventário"
+        }
+      ],
+      "motor": [
+        {
+          "hash": "a75ef1197e968d933906ae363fe1fea3c140c31d",
+          "assunto": "Painel semanal de 28.09: as quatro saídas da corrida das 08:30 UTC, 91 afirmações reconferidas, 4 alarmes, 19 avisos"
+        },
+        {
+          "hash": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+          "assunto": "C1: reler dimensões do Eurostat pela coordenada selada"
+        },
+        {
+          "hash": "cf1082be38dda1bf044f1fbfb9b258357faeb98a",
+          "assunto": "C1c: ler coordenadas e bandeiras e repetir o painel sem perder a tentativa"
+        },
+        {
+          "hash": "ba47a125e68c9a87cc4bb5fae4524565bb413e7d",
+          "assunto": "C1c: alojar as respostas do gerador, do painel e das origens oficiais"
+        },
+        {
+          "hash": "1e77ce06b0053acbcab73c6650ab52983a61c44f",
+          "assunto": "C1: juntar ao ramo o painel semanal de 28.09 (as quatro saídas da corrida das 08:30 UTC) antes da aterragem, sem reescrever os commits que o relatório do sítio cita"
+        },
+        {
+          "hash": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+          "assunto": "C1d: conservar a causa da falha de rede e provar as tentativas pelo cliente real"
+        },
+        {
+          "hash": "68318e0da2036cc29e4704fa1bb8a96dee246095",
+          "assunto": "C1e: consultar o vigia quando o transporte não tem causa classificada"
+        }
+      ]
+    },
+    "linhas_conferidas": 3009,
+    "linhas_alteradas": [
+      "evora-prr-aprovado-2026",
+      "evora-prr-municipio-contratado",
+      "evora-prr-pago-2026",
+      "evora-prr-universidade-contratado",
+      "evora-prr-vencido-aprovado-2026"
+    ],
+    "valores_alterados": [],
+    "revisoes_de_proveniencia": 54,
+    "entradas_reconstituidas": 10,
+    "acessos": {
+      "base_da_reconstituicao": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+      "linhas": [
+        {
+          "id": "evora-prr-aprovado-2026",
+          "eventos_git": [
+            {
+              "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+              "date": "2026-08-15",
+              "old_value": null,
+              "new_value": "2026-08-04"
+            },
+            {
+              "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+              "date": "2026-08-18",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "snapshot_date": "2026-08-17",
+              "diff_access_date": [
+                "-access_date: \"2026-08-04\"",
+                "+access_date: \"2026-08-18\""
+              ]
+            },
+            {
+              "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+              "date": "2026-08-20",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "snapshot_date": "2026-08-19",
+              "diff_access_date": [
+                "-access_date: \"2026-08-18\"",
+                "+access_date: \"2026-08-20\""
+              ]
+            }
+          ],
+          "entradas": [
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+            }
+          ],
+          "erros": []
+        },
+        {
+          "id": "evora-prr-municipio-contratado",
+          "eventos_git": [
+            {
+              "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+              "date": "2026-08-15",
+              "old_value": null,
+              "new_value": "2026-08-04"
+            },
+            {
+              "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+              "date": "2026-08-18",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "snapshot_date": "2026-08-17",
+              "diff_access_date": [
+                "-access_date: \"2026-08-04\"",
+                "+access_date: \"2026-08-18\""
+              ]
+            },
+            {
+              "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+              "date": "2026-08-20",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "snapshot_date": "2026-08-19",
+              "diff_access_date": [
+                "-access_date: \"2026-08-18\"",
+                "+access_date: \"2026-08-20\""
+              ]
+            }
+          ],
+          "entradas": [
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+            }
+          ],
+          "erros": []
+        },
+        {
+          "id": "evora-prr-pago-2026",
+          "eventos_git": [
+            {
+              "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+              "date": "2026-08-15",
+              "old_value": null,
+              "new_value": "2026-08-04"
+            },
+            {
+              "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+              "date": "2026-08-18",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "snapshot_date": "2026-08-17",
+              "diff_access_date": [
+                "-access_date: \"2026-08-04\"",
+                "+access_date: \"2026-08-18\""
+              ]
+            },
+            {
+              "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+              "date": "2026-08-20",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "snapshot_date": "2026-08-19",
+              "diff_access_date": [
+                "-access_date: \"2026-08-18\"",
+                "+access_date: \"2026-08-20\""
+              ]
+            }
+          ],
+          "entradas": [
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+            }
+          ],
+          "erros": []
+        },
+        {
+          "id": "evora-prr-universidade-contratado",
+          "eventos_git": [
+            {
+              "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+              "date": "2026-08-15",
+              "old_value": null,
+              "new_value": "2026-08-04"
+            },
+            {
+              "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+              "date": "2026-08-18",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "snapshot_date": "2026-08-17",
+              "diff_access_date": [
+                "-access_date: \"2026-08-04\"",
+                "+access_date: \"2026-08-18\""
+              ]
+            },
+            {
+              "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+              "date": "2026-08-20",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "snapshot_date": "2026-08-19",
+              "diff_access_date": [
+                "-access_date: \"2026-08-18\"",
+                "+access_date: \"2026-08-20\""
+              ]
+            }
+          ],
+          "entradas": [
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+            }
+          ],
+          "erros": []
+        },
+        {
+          "id": "evora-prr-vencido-aprovado-2026",
+          "eventos_git": [
+            {
+              "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+              "date": "2026-08-15",
+              "old_value": null,
+              "new_value": "2026-08-04"
+            },
+            {
+              "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+              "date": "2026-08-18",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "snapshot_date": "2026-08-17",
+              "diff_access_date": [
+                "-access_date: \"2026-08-04\"",
+                "+access_date: \"2026-08-18\""
+              ]
+            },
+            {
+              "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+              "date": "2026-08-20",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "snapshot_date": "2026-08-19",
+              "diff_access_date": [
+                "-access_date: \"2026-08-18\"",
+                "+access_date: \"2026-08-20\""
+              ]
+            }
+          ],
+          "entradas": [
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-04",
+              "new_value": "2026-08-18",
+              "reason": "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "access_date",
+              "old_value": "2026-08-18",
+              "new_value": "2026-08-20",
+              "reason": "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava.",
+              "reason_en": "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+            }
+          ],
+          "erros": []
+        }
+      ],
+      "plantas": [
+        {
+          "id": "evora-prr-aprovado-2026",
+          "campo_trocado": "date",
+          "falhas": [
+            "evora-prr-aprovado-2026: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-aprovado-2026",
+          "campo_trocado": "old_value",
+          "falhas": [
+            "evora-prr-aprovado-2026: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-municipio-contratado",
+          "campo_trocado": "date",
+          "falhas": [
+            "evora-prr-municipio-contratado: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-municipio-contratado",
+          "campo_trocado": "old_value",
+          "falhas": [
+            "evora-prr-municipio-contratado: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-pago-2026",
+          "campo_trocado": "date",
+          "falhas": [
+            "evora-prr-pago-2026: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-pago-2026",
+          "campo_trocado": "old_value",
+          "falhas": [
+            "evora-prr-pago-2026: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-universidade-contratado",
+          "campo_trocado": "date",
+          "falhas": [
+            "evora-prr-universidade-contratado: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-universidade-contratado",
+          "campo_trocado": "old_value",
+          "falhas": [
+            "evora-prr-universidade-contratado: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-vencido-aprovado-2026",
+          "campo_trocado": "date",
+          "falhas": [
+            "evora-prr-vencido-aprovado-2026: entrada 1, date não coincide com a mudança provada pelo Git: esperado 2026-08-18; recebido 2026-08-19."
+          ],
+          "mordeu": true
+        },
+        {
+          "id": "evora-prr-vencido-aprovado-2026",
+          "campo_trocado": "old_value",
+          "falhas": [
+            "evora-prr-vencido-aprovado-2026: entrada 1, old_value não coincide com a mudança provada pelo Git: esperado 2026-08-04; recebido 2026-08-05."
+          ],
+          "mordeu": true
+        }
+      ],
+      "erros": []
+    },
+    "portoes": {
+      "build": {
+        "codigo": 0,
+        "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+        "inicio": "2026-09-28T20:31:50.952131+00:00",
+        "fim": "2026-09-28T20:37:03.350758+00:00"
+      },
+      "verify": {
+        "codigo": 0,
+        "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+        "inicio": "2026-09-28T20:37:08.163244+00:00",
+        "fim": "2026-09-28T20:45:45.104243+00:00"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+        "inicio": "2026-09-28T20:51:11.487012+00:00",
+        "fim": "2026-09-28T20:51:11.920630+00:00"
+      }
+    },
+    "capturas": {
+      "dist_construido_de": "cd5557448c430a225eb58b6b257e7f11ef384818",
+      "larguras": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "idsDeRecibos": [
+        "evora-prr-aprovado-2026",
+        "evora-prr-municipio-contratado",
+        "evora-prr-pago-2026",
+        "evora-prr-universidade-contratado",
+        "evora-prr-vencido-aprovado-2026"
+      ],
+      "aceitacao": {
+        "passou": true,
+        "falhas": []
+      },
+      "quantidade": 50,
+      "copias": 12,
+      "edicoes": [
+        "pt",
+        "en"
+      ]
+    },
+    "caminhos": {
+      "ficheiros": 2662,
+      "quantidade": 0,
+      "achados": [],
+      "conhecidos_positivos": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "anfitrioes": 1,
+      "nomes_lidos_do_git": 2
+    },
+    "privacidade_dist": {
+      "ficheiros": 12485,
+      "quantidade": 0,
+      "achados": [],
+      "plantas": [
+        {
+          "id": "nome-do-git-1",
+          "pagina_base": "404.html",
+          "mordeu": true,
+          "falha": "nome pessoal ou caminho local na página construída"
+        },
+        {
+          "id": "nome-do-git-2",
+          "pagina_base": "404.html",
+          "mordeu": true,
+          "falha": "nome pessoal ou caminho local na página construída"
+        },
+        {
+          "id": "caminho-1",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-2",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-3",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-4",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-5",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-6",
+          "mordeu": true
+        }
+      ],
+      "passou": true,
+      "origem": {
+        "ficheiro": "portoes/c1f/build.log",
+        "sha256": "ad3c064356f1f3bccefd5e06419774a1b9a79ab9408e4a84cb09acadfa1f5d2b",
+        "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+        "codigo": 0
+      }
+    },
+    "proveniencia": {
+      "controlos": [
+        {
+          "nome": "cadeia de source",
+          "passou": true
+        },
+        {
+          "nome": "cadeia de source_url",
+          "passou": true
+        },
+        {
+          "nome": "cadeia de document.title",
+          "passou": true
+        },
+        {
+          "nome": "cadeia de document.edition",
+          "passou": true
+        },
+        {
+          "nome": "cadeia de document.locator",
+          "passou": true
+        },
+        {
+          "nome": "cadeia de access_date",
+          "passou": true
+        },
+        {
+          "nome": "cadeia de excerpt",
+          "passou": true
+        },
+        {
+          "nome": "instantâneo com as cinco condições",
+          "passou": true
+        }
+      ],
+      "plantas": [
+        {
+          "nome": "source: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source\": o último \"new_value\" é Depois, mas a linha declara Atual."
+        },
+        {
+          "nome": "source: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+        },
+        {
+          "nome": "source: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+        },
+        {
+          "nome": "source_url: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\": o último \"new_value\" é https://fonte.invalid/b, mas a linha declara https://fonte.invalid/c."
+        },
+        {
+          "nome": "source_url: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-03: cadeia contraditória; \"old_value\" é https://fonte.invalid/a, mas antes vigorava https://fonte.invalid/b."
+        },
+        {
+          "nome": "source_url: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+        },
+        {
+          "nome": "document.title: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.title\": o último \"new_value\" é Depois, mas a linha declara Atual."
+        },
+        {
+          "nome": "document.title: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.title\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+        },
+        {
+          "nome": "document.title: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.title\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+        },
+        {
+          "nome": "document.edition: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.edition\": o último \"new_value\" é Depois, mas a linha declara Atual."
+        },
+        {
+          "nome": "document.edition: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.edition\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+        },
+        {
+          "nome": "document.edition: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.edition\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+        },
+        {
+          "nome": "document.locator: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.locator\": o último \"new_value\" é Depois, mas a linha declara Atual."
+        },
+        {
+          "nome": "document.locator: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.locator\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+        },
+        {
+          "nome": "document.locator: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"document.locator\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+        },
+        {
+          "nome": "access_date: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"access_date\": o último \"new_value\" é 2026-08-02, mas a linha declara 2026-08-03."
+        },
+        {
+          "nome": "access_date: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"access_date\" a 2026-08-03: cadeia contraditória; \"old_value\" é 2026-08-01, mas antes vigorava 2026-08-02."
+        },
+        {
+          "nome": "access_date: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"access_date\" a 2026-07-31: o acesso não pode ser posterior à mudança que o declara."
+        },
+        {
+          "nome": "excerpt: último valor diferente da linha",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"excerpt\": o último \"new_value\" é Depois, mas a linha declara Atual."
+        },
+        {
+          "nome": "excerpt: continuidade quebrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"excerpt\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+        },
+        {
+          "nome": "excerpt: antes do primeiro acesso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"excerpt\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+        },
+        {
+          "nome": "documento sem classe ficheiro",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        },
+        {
+          "nome": "documento sem lista de ficheiros",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        },
+        {
+          "nome": "endereço novo diferente do vigente",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        },
+        {
+          "nome": "recurso de outro conjunto",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        },
+        {
+          "nome": "recurso posterior à entrada",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-16: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3."
+        },
+        {
+          "nome": "ficheiro sem a data do recurso",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        },
+        {
+          "nome": "razão portuguesa sem endereço",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        },
+        {
+          "nome": "razão inglesa sem endereço",
+          "mordeu": true,
+          "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+        }
+      ],
+      "contagens": {
+        "controlos": 8,
+        "plantas": 29
+      },
+      "erros_do_livro": [],
+      "avisos_do_livro": [
+        "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+      ],
+      "origem": {
+        "ficheiro": "portoes/c1f/build.log",
+        "sha256": "ad3c064356f1f3bccefd5e06419774a1b9a79ab9408e4a84cb09acadfa1f5d2b",
+        "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+        "codigo": 0
+      }
+    },
+    "relatorio": {
+      "relatorio": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "pasta": "design/especime-v3/medicoes/c1-2026-09-28",
+      "ficheiros_json_lidos": 208,
+      "ilegiveis": [],
+      "conhecido_positivo": {
+        "numero": 987654326,
+        "encontrado": true
+      },
+      "numeros_conferidos": 256,
+      "numeros_com_ficheiro": 256,
+      "numeros_sem_ficheiro": 0,
+      "sem_ficheiro": [],
+      "apagado_antes_de_contar": {
+        "codigo": 601,
+        "enderecos": 0,
+        "seccoes": 1,
+        "datas": 78,
+        "resumos": 0,
+        "ordinais": 37,
+        "identificadores": 201,
+        "anos": 3
+      }
+    },
+    "aceitacao_integral": true,
+    "erros_da_medicao": []
   }
 }
