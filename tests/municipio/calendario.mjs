@@ -149,7 +149,7 @@ export function conferirCalendario(root, municipio, lang, linhas) {
       falha('o segmento de um mandato está fora da data de instalação selada.');
     }
     if (Boolean(seg?.classList.contains('is-aberto')) !== (periodo.ate === null)) falha('o estado do mandato em curso perdeu a sua marca.');
-    if (Boolean(seg?.classList.contains('is-inicio-aberto')) !== (periodo.de === null)) falha('o início sem data perdeu o traço de limite em aberto.');
+    if (Boolean(seg?.classList.contains('is-inicio-aberto')) !== (periodo.de === null) || (periodo.de === null && (!banda.querySelector('.mun-banda-inicio-incerto') || !banda.querySelector('.mun-banda-contorno-inicio')))) falha('o início sem data perdeu o traço de limite em aberto.');
   });
   const abertos = intervalos.filter((p) => p.ate === null);
   const estados = banda.querySelectorAll('.mun-banda-estado');
@@ -170,6 +170,8 @@ export function conferirCalendario(root, municipio, lang, linhas) {
 /** Cada estrago corre na mesma célula; o documento recebido não é alterado. */
 export function plantasDoCalendario(root, municipio, lang, linhas) {
   const casos = [
+    ['inicio-sem-aresta-propria', 'início sem data perdeu o traço', (r) => r.querySelector('.mun-banda-inicio-incerto').remove()],
+    ['fim-conhecido-sem-contorno', 'início sem data perdeu o traço', (r) => r.querySelector('.mun-banda-contorno-inicio').remove()],
     ['inicio-sem-data-com-aresta-fechada', 'início sem data perdeu o traço', (r) => r.querySelector('.is-inicio-aberto').classList.remove('is-inicio-aberto')],
     ['mandato-no-inicio-do-ano', 'fora da data de instalação selada', (r) => {
       const marcas = r.querySelectorAll('.mun-banda-svg text[data-nonledger="escala-de-instrumento"]');
@@ -221,6 +223,7 @@ function provaEmMemoria(m, lang, linhas) {
     </svg><svg class="mun-banda-svg" viewBox="0 0 720 74">
     ${eixo.map((ano) => `<text data-nonledger="escala-de-instrumento" x="${x(ano)}">${ano}</text>`).join('')}
     ${periodos(m).map(({ de, ate }) => `<rect class="mun-banda-seg${ate === null ? ' is-aberto' : ''}${de === null ? ' is-inicio-aberto' : ''}" x="${x(de ?? eixo[0])}" width="${(ate === null ? 710 : x(ate)) - x(de ?? eixo[0])}"/>`).join('')}
+    <path class="mun-banda-contorno-inicio"/><line class="mun-banda-inicio-incerto"/>
     <text class="mun-banda-estado" x="${x(periodos(m).at(-1).de) + 8}">${t(lang).municipio.tempoEmFuncoes}</text></svg></div>`;
   const root = parse(html);
   return { ...conferirCalendario(root, m, lang, linhas), plantas: plantasDoCalendario(root, m, lang, linhas) };

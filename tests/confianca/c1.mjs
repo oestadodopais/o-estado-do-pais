@@ -13,7 +13,7 @@
 import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
-import { valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from '../../scripts/verificacao-legivel.mjs';
+import { conferirCampoRelido, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from '../../scripts/verificacao-legivel.mjs';
 import { conferirPaginaDaLeitura, leituraIndependente, normal } from '../cartao/leituras.mjs';
 import { leituraDaMedida, textoDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
@@ -87,8 +87,12 @@ for (const [valor, pt, en] of [['49.2', '49,2', '49,2'], ['−1234,50', '−1\u0
 
 /* A célula usada pelo HTML recusa o ponto decimal, a perda do sinal e a precisão perdida. */
 for (const lang of ['pt','en']) {
-  const esperado=valorRelidoAqui('−1234.50',lang);
-  const ver=texto=>texto===esperado?[]:['forma do valor encontrado diferente da casa'];
+  const linha = {verifications:[{found:'−1234.50'}]};
+  const ver = texto => {
+    const pagina = parse(`<html lang="${lang}"><span data-linha-claim="ensaio" data-linha-campo="verifications.0.found">${texto}</span></html>`);
+    const r = conferirCampoRelido(pagina.querySelector('[data-linha-campo]'), linha, lang);
+    return r?.confere ? [] : ['forma do valor encontrado diferente da casa'];
+  };
   controlo('forma-encontrada',lang,ver(valorDaReleitura('−1234.50',lang)));
   for(const [nome,texto] of [['ponto','−1\u00a0234.50'],['sinal','1\u00a0234,50'],['precisao','−1\u00a0234,5'],['separador','−1234,50']]) planta('forma-encontrada',`${lang}-${nome}`,ver(texto),'forma do valor encontrado');
 }
@@ -117,9 +121,12 @@ for (const lang of ['pt', 'en']) {
   controlo('verificacao', `${lang}-ainda-sem-segunda-leitura`, confere(vazio, linhaSemLeitura));
   planta('verificacao', `${lang}-rotulo-vazio-em-desacordo`, confere(vazio.replace(lang === 'pt' ? 'Segunda leitura:' : 'Second reading:', numero), linhaSemLeitura), 'rótulo correspondente');
   planta('verificacao', `${lang}-frase-vazia-em-desacordo`, confere(vazio.replace(sem, lang === 'pt' ? 'nenhuma' : 'no reading'), linhaSemLeitura), 'ausência de segunda leitura');
-  const calculada = {...linhaSemLeitura, derived_from:['origem-sintetica']};
+  const calculada = {...linhaSemLeitura, derived_from:['origem-sintetica'], check:'origem-sintetica * 2'};
   const recalculo = lang === 'pt' ? 'Recalculada em cada construção a partir das suas origens' : 'Recomputed at every build from its sources';
   controlo('verificacao', `${lang}-calculada-em-cada-construcao`, confere(vazio.replace(sem,recalculo),calculada));
+  const semExpressao = {...calculada, check:null};
+  controlo('verificacao', `${lang}-derivada-sem-expressao`, confere(vazio,semExpressao));
+  planta('verificacao', `${lang}-promete-recalculo-sem-expressao`, confere(vazio.replace(sem,recalculo),semExpressao), 'ausência de segunda leitura');
   planta('verificacao', `${lang}-calculada-diz-ainda-nenhuma`, confere(vazio,calculada), 'ausência de segunda leitura');
   controlo('verificacao', `${lang}-numero-relido`, confere(bloco(numero), relida));
   controlo('verificacao', `${lang}-ficheiro-relido`, confere(bloco(ficheiro), ficheiroRelido));

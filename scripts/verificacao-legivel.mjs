@@ -5,6 +5,16 @@ export function valorRelidoAqui(valor, lang) {
   return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? ',' + partes[1] : '');
 }
 
+/** A comparação do campo encontrado, partilhada pelo portão e pelas plantas de página. */
+export function conferirCampoRelido(el, linha, lang) {
+  const m = /^verifications\.(\d+)\.found$/.exec(el.getAttribute('data-linha-campo') ?? '');
+  if (!m) return null;
+  const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
+  const esperado = normal(valorRelidoAqui(linha.verifications?.[Number(m[1])]?.found, lang));
+  const renderizado = normal(el.textContent);
+  return { esperado, renderizado, confere: renderizado === esperado };
+}
+
 /** A cópia independente da forma da data. Os restantes campos continuam literais. */
 export function conferirValorDeProveniencia(correcao, campo, renderizado) {
   const normal = s => String(s).replace(/\s+/g, ' ').trim();
@@ -52,7 +62,7 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
   const erros = [];
   const n = v => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
   const vazio = root.querySelectorAll('[data-sem-segunda-leitura]');
-  const calculada = (linha.derived_from ?? []).length > 0;
+  const calculada = (linha.derived_from ?? []).length > 0 && typeof linha.check === 'string' && linha.check.trim().length > 0;
   const sem = calculada
     ? (lang === 'en' ? 'Recomputed at every build from its sources' : 'Recalculada em cada construção a partir das suas origens')
     : (lang === 'en' ? 'none yet' : 'ainda nenhuma');

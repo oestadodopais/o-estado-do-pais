@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { conferirValorUnidade } from './valor-unidade.mjs';
-import { valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
+import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -5895,7 +5895,8 @@ for (const file of ficheirosHtml(DIST)) {
     const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
       ? normalizeWhitespace(decodeEntities(textoDe(el)))
       : textoTranscrito(el);
-    if (renderizado !== normalizeWhitespace(String(esperado))) {
+    const relido = conferirCampoRelido(el, claim, linguaPagina);
+    if (relido ? !relido.confere : renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +
           `      no livro-razão: ${normalizeWhitespace(String(esperado)).slice(0, 150)}\n` +

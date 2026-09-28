@@ -1427,7 +1427,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               <>
                 <dt>{s.livro.linha.segundaLeituraVaziaK}</dt>
                 <dd>
-                  <span data-sem-segunda-leitura>{derivada ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
+                  <span data-sem-segunda-leitura>{derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
                   <a href={`${routePath('metodo', lang)}#releitura`}>
                     {s.livro.linha.releituraPorta} →
                   </a>
