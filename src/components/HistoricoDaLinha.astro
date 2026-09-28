@@ -17,6 +17,7 @@ import { dataDaCasa } from '../lib/datas.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
+import { linguaDaEdicao } from '../i18n/lingua-dos-titulos.mjs';
 
 const { claim, lang = 'pt' } = Astro.props;
 const s = t(lang);
@@ -69,6 +70,7 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
             <span class="registo-salto">
               <span
                 class="log-valor log-valor-antigo"
+                lang={e.field === 'document.edition' ? linguaDaEdicao(e.old_value, lang) : undefined}
                 data-correcao-claim={claim.id}
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="old_value"
@@ -78,6 +80,7 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
               <span aria-hidden="true"> → </span>
               <span
                 class="log-valor"
+                lang={e.field === 'document.edition' ? linguaDaEdicao(e.new_value, lang) : undefined}
                 data-correcao-claim={claim.id}
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="new_value"
