@@ -50,7 +50,7 @@ corrections:
   reason: O valor novo foi lido a 28.09.2026, na reconferência que viu a revisão;
     a leitura anterior, de 15.09.2026, é a do valor 49,3.
   reason_en: The new value was read on 28.09.2026, in the check that caught the revision;
-    the earlier reading, of 15.09.2026, is that of the value 49.3.
+    the earlier reading, of 15.09.2026, is that of the value 49,3.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 

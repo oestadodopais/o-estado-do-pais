@@ -2172,6 +2172,7 @@ export const STRINGS = {
         camposHistorico: {"source": "publicador", "source_url": "endereço da fonte", "document.title": "documento", "document.edition": "edição", "document.locator": "local no documento", "access_date": "dia da leitura", "excerpt": "excerto da fonte"},
         ficheiroRelidoK: 'Ficheiro da fonte relido a',
         semSegundaLeitura: 'ainda nenhuma',
+        segundaLeituraCalculada: 'Recalculada em cada construção a partir das suas origens',
         verAtualizacao: 'Ver a atualização deste valor',
         valorEmUso: 'O valor do título é o que esta página usa.',
         /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
@@ -2305,7 +2306,7 @@ export const STRINGS = {
         verificacaoResultado: {
           igual: 'igual à fonte',
           diverge: 'a releitura encontrou:',
-          inacessivel: 'sem resposta a esse pedido',
+          inacessivel: 'sem valor lido',
         },
         verificacaoPorta: 'Repetir a leitura',
       },
@@ -3703,6 +3704,7 @@ export const STRINGS = {
         camposHistorico: {"source": "publisher", "source_url": "source address", "document.title": "document", "document.edition": "edition", "document.locator": "place in the document", "access_date": "reading date", "excerpt": "source excerpt"},
         ficheiroRelidoK: 'Source file read again on',
         semSegundaLeitura: 'none yet',
+        segundaLeituraCalculada: 'Recomputed at every build from its sources',
         verAtualizacao: 'See the update to this value',
         valorEmUso: 'This page uses the value shown in the title.',
         reconferidoK: 'Verified on',
@@ -3734,7 +3736,7 @@ export const STRINGS = {
         verificacaoResultado: {
           igual: 'matches the source',
           diverge: 'the re-read found:',
-          inacessivel: 'with no answer to that request',
+          inacessivel: 'no value read',
         },
         verificacaoPorta: 'Repeat the reading',
       },

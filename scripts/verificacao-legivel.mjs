@@ -1,3 +1,10 @@
+export function valorRelidoAqui(valor, lang) {
+  const s = String(valor ?? '').replace(/[\s\u202f]/g, '').replace('−', '-');
+  if (!/^-?\d+(?:[.,]\d+)?$/.test(s)) return String(valor ?? '');
+  const partes = s.split(/[.,]/);
+  return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? ',' + partes[1] : '');
+}
+
 /** A cópia independente da forma da data. Os restantes campos continuam literais. */
 export function conferirValorDeProveniencia(correcao, campo, renderizado) {
   const normal = s => String(s).replace(/\s+/g, ' ').trim();
@@ -45,7 +52,10 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
   const erros = [];
   const n = v => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
   const vazio = root.querySelectorAll('[data-sem-segunda-leitura]');
-  const sem = lang === 'en' ? 'none yet' : 'ainda nenhuma';
+  const calculada = (linha.derived_from ?? []).length > 0;
+  const sem = calculada
+    ? (lang === 'en' ? 'Recomputed at every build from its sources' : 'Recalculada em cada construção a partir das suas origens')
+    : (lang === 'en' ? 'none yet' : 'ainda nenhuma');
   const tem = (linha.verifications ?? []).length > 0;
   if (tem ? vazio.length !== 0 : vazio.length !== 1 || vazio[0]?.textContent !== sem) {
     erros.push('C1: a ausência de segunda leitura não corresponde ao registo');
@@ -70,7 +80,7 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
     const posterior = v.result === 'igual' ? (linha.corrections ?? []).map((c, i) => ({...c, i})).filter(c => ['atualizacao','correcao'].includes(c.kind) && c.date > v.date).sort((a,b) => a.date.localeCompare(b.date) || a.i-b.i)[0] : null;
     const anterior = el.querySelectorAll('[data-valor-anterior-confirmado]');
     if (posterior ? anterior.length !== 1 || n(anterior[0].textContent) !== n(posterior.old_value) : anterior.length !== 0) erros.push('C1d: a releitura não identifica o valor anterior que confirmou');
-    if (v.result === 'inacessivel' && el.querySelector('[data-linha-verificacao-resultado]')?.textContent !== (lang === 'en' ? 'with no answer to that request' : 'sem resposta a esse pedido')) erros.push('C1d: a tentativa sem resposta faz uma afirmação sobre o dia inteiro');
+    if (v.result === 'inacessivel' && el.querySelector('[data-linha-verificacao-resultado]')?.textContent !== (lang === 'en' ? 'no value read' : 'sem valor lido')) erros.push('C1e: a tentativa afirma mais do que a ausência de valor lido');
     const esperado = v.result === 'inacessivel' ? (lang === 'en' ? 'Re-read attempted on' : 'Releitura tentada a') : v.by === 'corredor-diario'
       ? (lang === 'en' ? 'Source file read again on' : 'Ficheiro da fonte relido a')
       : (lang === 'en' ? 'Re-read on' : 'Releitura a');

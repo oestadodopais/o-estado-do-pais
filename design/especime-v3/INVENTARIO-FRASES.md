@@ -3433,3 +3433,19 @@ O nome português citado numa história inglesa leva a língua desse nome.
 observação nos mesmos lugares da marca provisória. O objetivo institucional do
 BCE tem a classe `objetivo-institucional`, com definição nas duas edições no
 livro; não recebe um veredicto nacional.
+
+## C1e · terceira passagem de correção, 28.09.2026
+
+Nos recibos, a tentativa sem valor lido substitui a frase da C1d:
+«Releitura tentada a DD.MM.AAAA, sem valor lido» / «Re-read attempted on
+DD.MM.AAAA, no value read». A data continua a ser a da entrada. O resultado
+`inacessivel` não permite afirmar que a fonte ficou sem responder.
+
+Uma linha calculada escreve, sob «Segunda leitura:» / «Second reading:»,
+«Recalculada em cada construção a partir das suas origens» / «Recomputed at
+every build from its sources». As outras linhas sem releitura conservam
+«ainda nenhuma» / «none yet».
+
+As quatro linhas retiradas que antes continham o nome do diretor são
+protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
+é lido do Git durante a corrida e não volta a ser escrito neste inventário.
