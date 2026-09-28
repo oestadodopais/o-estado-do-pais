@@ -1,0 +1,21 @@
+/** Acrescenta entradas ao registo da história; nunca substitui as já seladas. */
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { loadClaims } from '../src/lib/ledger.mjs';
+import { entradasDoValor, assinaturaDoValor, conferirHistoriaDoValor } from '../src/lib/historia-do-valor.mjs';
+const [id, ...resto] = process.argv.slice(2);
+assert.ok(id && !resto.length, 'Uso: node scripts/selar-historia-valores.mjs <id>');
+const ficheiro = 'ledger/historias-valores.json';
+const registo = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
+const linha = loadClaims().get(id);
+assert.ok(linha, 'A linha tem de existir.');
+const entradas = entradasDoValor(linha).map(assinaturaDoValor);
+const anteriores = registo[id] ?? [];
+assert.ok(entradas.length > anteriores.length, 'A lista tem de crescer.');
+assert.deepEqual(entradas.slice(0, anteriores.length), anteriores, 'As entradas seladas não se retiram nem reescrevem.');
+const erros = [];
+conferirHistoriaDoValor(linha, entradas, `[${id}]`, erros);
+assert.deepEqual(erros, []);
+registo[id] = entradas;
+fs.writeFileSync(ficheiro, JSON.stringify(registo, null, 2)+'\n');
+console.log(`${id}: ${anteriores.length} entradas anteriores conservadas; ${entradas.length} seladas.`);

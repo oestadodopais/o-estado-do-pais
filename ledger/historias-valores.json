@@ -1,0 +1,122 @@
+{
+  "divida-das-familias-2025-ue": [
+    {
+      "date": "2026-09-28",
+      "kind": "atualizacao",
+      "old_value": "49,3",
+      "new_value": "49,2"
+    }
+  ],
+  "estudos-evora-publicados": [
+    {
+      "date": "2026-08-12",
+      "kind": "correcao",
+      "old_value": "4",
+      "new_value": "3"
+    },
+    {
+      "date": "2026-08-12",
+      "kind": "atualizacao",
+      "old_value": "3",
+      "new_value": "4"
+    },
+    {
+      "date": "2026-08-15",
+      "kind": "atualizacao",
+      "old_value": "4",
+      "new_value": "5"
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "atualizacao",
+      "old_value": "5",
+      "new_value": "6"
+    }
+  ],
+  "evora-prr-aprovado-2026": [
+    {
+      "date": "2026-08-18",
+      "kind": "atualizacao",
+      "old_value": "166 639 411,36",
+      "new_value": "167 366 755,84"
+    },
+    {
+      "date": "2026-08-20",
+      "kind": "atualizacao",
+      "old_value": "167 366 755,84",
+      "new_value": "167 372 755,84"
+    }
+  ],
+  "evora-prr-execucao-2026": [
+    {
+      "date": "2026-08-18",
+      "kind": "atualizacao",
+      "old_value": "50,36",
+      "new_value": "50,61"
+    },
+    {
+      "date": "2026-08-20",
+      "kind": "atualizacao",
+      "old_value": "50,61",
+      "new_value": "51,95"
+    }
+  ],
+  "evora-prr-pago-2026": [
+    {
+      "date": "2026-08-18",
+      "kind": "atualizacao",
+      "old_value": "83 912 476,83",
+      "new_value": "84 699 317,63"
+    },
+    {
+      "date": "2026-08-20",
+      "kind": "atualizacao",
+      "old_value": "84 699 317,63",
+      "new_value": "86 944 668,69"
+    }
+  ],
+  "evora-prr-vencido-aprovado-2026": [
+    {
+      "date": "2026-08-18",
+      "kind": "atualizacao",
+      "old_value": "102 711 703,85",
+      "new_value": "102 618 703,85"
+    },
+    {
+      "date": "2026-08-20",
+      "kind": "atualizacao",
+      "old_value": "102 618 703,85",
+      "new_value": "102 624 703,85"
+    }
+  ],
+  "evora-prr-vencido-quota-2026": [
+    {
+      "date": "2026-08-18",
+      "kind": "atualizacao",
+      "old_value": "61,64",
+      "new_value": "61,31"
+    },
+    {
+      "date": "2026-08-20",
+      "kind": "atualizacao",
+      "old_value": "61,31",
+      "new_value": "61,32"
+    }
+  ],
+  "pib-pc-alentejo-2000": [
+    {
+      "date": "2026-08-13",
+      "kind": "correcao",
+      "old_value": "78,3",
+      "new_value": "78"
+    }
+  ],
+  "pib-pc-alentejo-2024": [
+    {
+      "date": "2026-08-13",
+      "kind": "correcao",
+      "old_value": "77,2",
+      "new_value": "77"
+    }
+  ]
+}
