@@ -3409,8 +3409,8 @@ literal da DGAL publica. A procura das frases retiradas não muda.
 
 | classe | frase | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 44 revisões de proveniência | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
-| conteudo | 44 provenance revisions | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+| conteudo | 44 revisões de proveniência | c1d | retirada | A C1f reconstituiu os acessos do PRR; a contagem vigente está abaixo. |
+| conteudo | 44 provenance revisions | c1d | retirada | A C1f reconstituiu os acessos do PRR; a contagem vigente está abaixo. |
 | conteudo | : União Europeia : (valor estimado) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
 | conteudo | : European Union : (estimated value) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
 
@@ -3449,3 +3449,10 @@ every build from its sources». As outras linhas sem releitura conservam
 As quatro linhas retiradas que antes continham o nome do diretor são
 protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
 é lido do Git durante a corrida e não volta a ser escrito neste inventário.
+
+## C1f · os acessos do PRR reconstituídos pela história do Git
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 54 revisões de proveniência | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
+| conteudo | 54 provenance revisions | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
