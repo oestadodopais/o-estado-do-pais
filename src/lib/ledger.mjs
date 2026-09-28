@@ -2380,10 +2380,11 @@ export function validateLedger() {
     /** @type {string[]} */
     const errosDeEndereco = [];
     const enderecos = historiaDaProveniencia(c, 'source_url', onde, errosDeEndereco);
-    if (Array.isArray(c.verifications) && c.verifications.some((v) =>
-      eVerificacao(v) && enderecos.temMudancaPosterior(v.date))) {
-      errors.push(...errosDeEndereco);
+    errors.push(...errosDeEndereco);
+    for (const instantaneo of enderecos.instantaneos) {
+      warnings.push(`${onde} história do endereço: a ${instantaneo.date}, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.`);
     }
+
 
     /* 6b — as reconferências independentes.
        Opcional: uma linha sem entradas é uma linha que ainda não foi relida, e
