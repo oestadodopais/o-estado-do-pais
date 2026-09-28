@@ -46,7 +46,7 @@
  */
 
 const PC = ' %';
-/** Um algarismo da definição de uma medida, com o motivo das leituras dos cartões. */
+/** Um algarismo da definição de uma medida, com o motivo das leituras dos cartões. @param {string} n */
 const nl = (n) => ({ nl: n, motivo: 'escala-de-instrumento' });
 
 /**

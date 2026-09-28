@@ -228,7 +228,7 @@ function resolver(partes, onde, linhas, comValor) {
     }
     if (chave === 'periodo' || chave === 'publicado') {
       const campo = chave === 'periodo' ? 'reference_date' : 'published_at';
-      const valor = /** @type {Record<string, unknown>} */ (linha(o[chave]))[campo];
+      const valor = /** @type {Record<string, unknown>} */ (/** @type {unknown} */ (linha(o[chave])))[campo];
       if (typeof valor !== 'string' || valor === '') throw new LinhaAusente(`${o[chave]} · ${campo}`);
       linhas.add(o[chave]);
       out.push({ data: { id: o[chave], campo, valor } });
@@ -444,7 +444,11 @@ export function blocoResolvido(id, lang) {
   /** @type {Set<string>} */
   const comValor = new Set();
   /** @type {PedacoDoBloco[]} */
-  let titulo = [], frase = [], ressalva = [];
+  let titulo = [];
+  /** @type {PedacoDoBloco[]} */
+  let frase = [];
+  /** @type {PedacoDoBloco[]} */
+  let ressalva = [];
   /** @type {ModeloDoDesenho|null} */
   let desenho = null;
   try {
