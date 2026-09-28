@@ -476,3 +476,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | c1d | Contagens atualizadas, marca estimada e frases dos recibos | por ler pelo lugar de direção antes de aterrar | Codex gpt-6-astra aplica os achados de `design/especime-v3/critica/LEITURA-c1c-2026-09-28.md`: retira as contagens substituídas, declara a marca estimada nas superfícies onde já se mostra a provisória e regista em prosa os rótulos dos recibos, fora das rotas do inventário. A prova das cadeias vivas e das retiradas continua no portão da voz, sem mudar as rotas ou alargar a peneira. |
+
+## C1f · os acessos do PRR reconstituídos, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1f | Duas contagens novas e duas retiradas | por ler pelo lugar de direção antes de aterrar | A reconstituição dos acessos acrescenta dez entradas de proveniência, provadas pelos diffs do Git. As duas contagens do inventário passam de 44 a 54; as anteriores ficam retiradas com a razão. A classe das frases e as rotas do portão da voz mantêm-se. |
