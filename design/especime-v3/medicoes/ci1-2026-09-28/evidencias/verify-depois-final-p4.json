@@ -18,7 +18,7 @@
  "vizinhos_ao_acabar": {
   "lido": true,
   "processos": [
-   "787   0.0 /Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python <casa>/…/executar.py --raiz <casa>/…/f22b-2026-09-28 --saida <tmp>/f22b-provas/site-verify -- np",
+   "787   0.0 <python> <casa>/…/executar.py --raiz <casa>/…/f22b-2026-09-28 --saida <tmp>/f22b-provas/site-verify -- np",
    "791   0.0 npm run verify",
    "8669   1.6 node tests/acessibilidade/alvos.mjs",
    "8671   0.8 <casa>/…/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-for",
