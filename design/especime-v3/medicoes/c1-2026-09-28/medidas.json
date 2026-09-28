@@ -2310,9 +2310,777 @@
     "ponto_3": "parado por divergência entre o brief e o circuito real"
   },
   "C1c": {
+    "recibos_finais": {
+      "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+      "casos": [
+        {
+          "id": "divida-das-familias-2025-ue",
+          "lingua": "pt",
+          "datas": [
+            "28.09.2026",
+            "21.09.2026"
+          ],
+          "resultados": [
+            "diverge",
+            "igual"
+          ],
+          "texto": "O que foi conferidoLido na fonte a28.09.2026Releitura a28.09.2026 · comparação semanal com a fonte · a releitura encontrou: 49,2 Ver a atualização deste valorReleitura a21.09.2026 · comparação semanal com a fonte · igual à fonte",
+          "passou": true
+        },
+        {
+          "id": "indice-de-divida-limite-legal",
+          "lingua": "pt",
+          "datas": [
+            "01.09.2026"
+          ],
+          "resultados": [
+            "igual"
+          ],
+          "texto": "O que foi conferidoLido na fonte a28.09.2026Ficheiro da fonte relido a01.09.2026 · conferência diária do ficheiro da fonte · igual à fonte Repetir a leitura →",
+          "passou": true
+        },
+        {
+          "id": "pib-real-per-capita-2024",
+          "lingua": "pt",
+          "datas": [
+            "28.09.2026",
+            "28.09.2026"
+          ],
+          "resultados": [
+            "igual",
+            "inacessivel"
+          ],
+          "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026 · comparação semanal com a fonte · igual à fonte Releitura a28.09.2026 · comparação semanal com a fonte · não foi possível reler o número nesse dia",
+          "passou": true
+        },
+        {
+          "id": "pib-real-per-capita-2025",
+          "lingua": "pt",
+          "datas": [
+            "28.09.2026",
+            "28.09.2026"
+          ],
+          "resultados": [
+            "igual",
+            "inacessivel"
+          ],
+          "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026 · comparação semanal com a fonte · igual à fonte Releitura a28.09.2026 · comparação semanal com a fonte · não foi possível reler o número nesse dia",
+          "passou": true
+        },
+        {
+          "id": "pib-real-per-capita-2025-ue",
+          "lingua": "pt",
+          "datas": [
+            "28.09.2026",
+            "28.09.2026"
+          ],
+          "resultados": [
+            "igual",
+            "inacessivel"
+          ],
+          "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026 · comparação semanal com a fonte · igual à fonte Releitura a28.09.2026 · comparação semanal com a fonte · não foi possível reler o número nesse dia",
+          "passou": true
+        },
+        {
+          "id": "cartoes-pib-e-ihpc",
+          "lingua": "pt",
+          "bandeira": "PIB real por habitante20 600 euros por habitante · volumes encadeados (2015) (dado provisório)em 2025fonte · EurostatÉ o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços. Subiu face a 2024. Está abaixo da média da União Europeia.2024:20 430 (dado provisório)União Europeia:31 890",
+          "objetivo_sem_veredicto": "Inflação na comparação europeia3,6 %em agosto de 2026fonte · EurostatEm agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, 3,6 % acima dos de há um ano. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.julho de 2026:3,1União Europeia:3,2Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+          "passou": true
+        },
+        {
+          "id": "divida-das-familias-2025-ue",
+          "lingua": "en",
+          "datas": [
+            "28.09.2026",
+            "21.09.2026"
+          ],
+          "resultados": [
+            "diverge",
+            "igual"
+          ],
+          "texto": "What was checkedRead at the source on28.09.2026Re-read on28.09.2026 · weekly comparison with the source · the re-read found: 49.2 See the update to this valueRe-read on21.09.2026 · weekly comparison with the source · matches the source",
+          "passou": true
+        },
+        {
+          "id": "indice-de-divida-limite-legal",
+          "lingua": "en",
+          "datas": [
+            "01.09.2026"
+          ],
+          "resultados": [
+            "igual"
+          ],
+          "texto": "What was checkedRead at the source on28.09.2026Source file read again on01.09.2026 · daily check of the source file · matches the source Repeat the reading →",
+          "passou": true
+        },
+        {
+          "id": "pib-real-per-capita-2024",
+          "lingua": "en",
+          "datas": [
+            "28.09.2026",
+            "28.09.2026"
+          ],
+          "resultados": [
+            "igual",
+            "inacessivel"
+          ],
+          "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026 · weekly comparison with the source · matches the source Re-read on28.09.2026 · weekly comparison with the source · the number could not be re-read that day",
+          "passou": true
+        },
+        {
+          "id": "pib-real-per-capita-2025",
+          "lingua": "en",
+          "datas": [
+            "28.09.2026",
+            "28.09.2026"
+          ],
+          "resultados": [
+            "igual",
+            "inacessivel"
+          ],
+          "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026 · weekly comparison with the source · matches the source Re-read on28.09.2026 · weekly comparison with the source · the number could not be re-read that day",
+          "passou": true
+        },
+        {
+          "id": "pib-real-per-capita-2025-ue",
+          "lingua": "en",
+          "datas": [
+            "28.09.2026",
+            "28.09.2026"
+          ],
+          "resultados": [
+            "igual",
+            "inacessivel"
+          ],
+          "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026 · weekly comparison with the source · matches the source Re-read on28.09.2026 · weekly comparison with the source · the number could not be re-read that day",
+          "passou": true
+        },
+        {
+          "id": "cartoes-pib-e-ihpc",
+          "lingua": "en",
+          "bandeira": "Real GDP per capita20 600 euro per capita · chain linked volumes (2015) (provisional data)in 2025source · EurostatIt is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices. Up from 2024. Below the European Union average.2024:20 430 (provisional data)European Union:31 890",
+          "objetivo_sem_veredicto": "Inflation in the European comparison3,6 %in August 2026source · EurostatIn August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, 3,6 % above a year earlier. The change is larger than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index.July 2026:3,1European Union:3,2How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+          "passou": true
+        }
+      ],
+      "contagem": 12,
+      "erros": []
+    },
+    "custo_retoma": {
+      "sessao": {
+        "id": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+        "inicio": "2026-09-28T13:40:25.035Z"
+      },
+      "inicio_da_retoma": "2026-09-28T14:49:44.571Z",
+      "modelos_expostos": [
+        "gpt-6-astra"
+      ],
+      "antes_da_retoma": {
+        "hora": "2026-09-28T14:44:38.921Z",
+        "cumulativos": {
+          "input_tokens": 19189362,
+          "cached_input_tokens": 18612608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 100531,
+          "reasoning_output_tokens": 41655,
+          "total_tokens": 19289893
+        }
+      },
+      "ultima_leitura": {
+        "hora": "2026-09-28T15:53:51.375Z",
+        "cumulativos": {
+          "input_tokens": 37464269,
+          "cached_input_tokens": 36593920,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 180498,
+          "reasoning_output_tokens": 88484,
+          "total_tokens": 37644767
+        }
+      },
+      "custo_da_retoma": {
+        "input_tokens": 18274907,
+        "cached_input_tokens": 17981312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 79967,
+        "reasoning_output_tokens": 46829,
+        "total_tokens": 18354874
+      },
+      "segundos_ate_ultima_leitura": 3846.804,
+      "registado_em": "2026-09-28T15:54:25.221065+00:00",
+      "unidade": "tokens expostos pelo runtime",
+      "limites": [
+        "Só esta retoma, desde o pedido de autorização. A primeira passagem do C1c fica no cumulativo anterior, separado.",
+        "A entrada em cache já está incluída na entrada; o raciocínio já está incluído na saída.",
+        "Não inclui revisões automáticas nem estima preço. Não houve agentes nesta retoma.",
+        "É uma leitura até à hora declarada; a sessão continua a consumir depois dela."
+      ]
+    },
+    "contagens_registo": {
+      "correcao": 3,
+      "atualizacao": 14,
+      "proveniencia": 34
+    },
+    "historia": [
+      {
+        "id": "divida-das-familias-2025-ue",
+        "lista_igual_a_a677770f": true,
+        "verifications": [
+          {
+            "date": "2026-09-21",
+            "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+            "result": "igual",
+            "by": "painel-semanal"
+          },
+          {
+            "date": "2026-09-28",
+            "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+            "result": "diverge",
+            "by": "painel-semanal",
+            "found": "49.2"
+          }
+        ],
+        "acessos": [
+          {
+            "date": "2026-09-28",
+            "kind": "proveniencia",
+            "field": "access_date",
+            "old_value": "2026-09-15",
+            "new_value": "2026-09-28",
+            "reason": "O valor novo foi lido a 28.09.2026, na reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 49,3.",
+            "reason_en": "The new value was read on 28.09.2026, in the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 49.3."
+          }
+        ]
+      },
+      {
+        "id": "indice-de-divida-limite-legal",
+        "lista_igual_a_a677770f": true,
+        "verifications": [
+          {
+            "date": "2026-09-01",
+            "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+            "result": "igual",
+            "by": "corredor-diario"
+          }
+        ],
+        "acessos": [
+          {
+            "date": "2026-09-28",
+            "kind": "proveniencia",
+            "field": "access_date",
+            "old_value": "2026-08-10",
+            "new_value": "2026-09-28",
+            "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+            "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+          }
+        ]
+      }
+    ],
+    "enderecos_antes": {
+      "cabeca": "e38d5f8b",
+      "linhas_lidas": 3009,
+      "linhas_com_endereco_diferente": 18,
+      "linhas_sem_historia_explicativa": 18,
+      "verificacoes_sem_historia_explicativa": 19,
+      "regra_aplicada": "Só as reconferências anteriores a uma mudança tipada de source_url são comparadas com o endereço em vigor nesse dia. As restantes não são obrigadas a coincidir com o endereço atual: existem pedidos de releitura diferentes sem uma mudança de proveniência registada. Esta medição não infere que tenham mudado a origem da linha.",
+      "linhas": [
+        {
+          "id": "alentejo-central-poder-de-compra-2023",
+          "source_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT&Dim2=1C4",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=759871921&att_display=n&att_download=y",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-desemprego-registado-2013",
+          "source_url": "https://www.iefp.pt/documents/10181/283855/SIE+-+Desemprego+registado+por+concelhos+dezembro+2013.ods/3618526f-6c6b-4f55-b1c9-3dd4195e1a18",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.iefp.pt/documents/10181/283855/SIE+-+Desemprego+registado+por+concelhos+dezembro+2013.pdf/bc2198f3-f017-498f-8b28-527773348d76",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-desemprego-registado-2024",
+          "source_url": "https://www.iefp.pt/documents/10181/12563215/SIE+-+Desemprego+registado+por+concelhos+dezembro+2024.ods/fa4f152d-a6df-4058-9303-9ad626c35d86",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.iefp.pt/documents/10181/12563215/SIE+-+Desemprego+registado+por+concelhos+dezembro+2024.pdf/52db05d1-25dd-4891-b893-9eeab0614036",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-divida-total-2025",
+          "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=139",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-empresas-2024",
+          "source_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014063&Dim1=S7A2024&lang=PT&Dim2=1C40705",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014061&Dim1=S7A2024&Dim2=1C40705&Dim3=T&lang=PT",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-execucao-da-receita-2025",
+          "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=111",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-limite-divida-2025",
+          "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=140",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-pagamentos-em-atraso-2025",
+          "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-poder-de-compra-2023",
+          "source_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT&Dim2=1C40705",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=759871921&att_display=n&att_download=y",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-populacao-2025",
+          "source_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012918&Dim1=S7A2021%2CS7A2024%2CS7A2025&lang=PT&Dim2=1C40705",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012917&Dim1=S7A2025&Dim2=1C40705&Dim3=T&Dim4=T&lang=PT",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prazo-medio-de-pagamento-2023",
+          "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prazo-medio-de-pagamento-2025",
+          "source_url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prr-aprovado-2026",
+          "source_url": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "historia_tipificada": [
+            {
+              "date": "2026-08-15",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+              "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+              "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+              "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            }
+          ],
+          "verificacoes": [
+            {
+              "date": "2026-09-03",
+              "path": "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prr-municipio-contratado",
+          "source_url": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "historia_tipificada": [
+            {
+              "date": "2026-08-15",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+              "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+              "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+              "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            }
+          ],
+          "verificacoes": [
+            {
+              "date": "2026-09-03",
+              "path": "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prr-pago-2026",
+          "source_url": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "historia_tipificada": [
+            {
+              "date": "2026-08-15",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+              "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+              "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+              "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            }
+          ],
+          "verificacoes": [
+            {
+              "date": "2026-09-03",
+              "path": "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prr-universidade-contratado",
+          "source_url": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "historia_tipificada": [
+            {
+              "date": "2026-08-15",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+              "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+              "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+              "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            }
+          ],
+          "verificacoes": [
+            {
+              "date": "2026-09-03",
+              "path": "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-prr-vencido-aprovado-2026",
+          "source_url": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "historia_tipificada": [
+            {
+              "date": "2026-08-15",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+              "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+              "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+              "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+            },
+            {
+              "date": "2026-08-18",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            },
+            {
+              "date": "2026-08-20",
+              "kind": "proveniencia",
+              "field": "source_url",
+              "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+              "reason": "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+              "reason_en": "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+            }
+          ],
+          "verificacoes": [
+            {
+              "date": "2026-09-03",
+              "path": "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+              "explicado": false
+            },
+            {
+              "date": "2026-09-03",
+              "path": "https://web.archive.org/web/20260820111437/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx",
+              "explicado": false
+            }
+          ]
+        },
+        {
+          "id": "evora-vab-empresarial-2024",
+          "source_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013863&Dim1=S7A2023%2CS7A2024&lang=PT&Dim2=1C40705",
+          "historia_tipificada": [],
+          "verificacoes": [
+            {
+              "date": "2026-08-15",
+              "path": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013863&Dim1=S7A2024&Dim2=1C40705&Dim3=TOT&lang=PT",
+              "explicado": false
+            }
+          ]
+        }
+      ]
+    },
+    "plantas_historia": {
+      "controlos": [
+        {
+          "nome": "livro completo com as duas histórias repostas",
+          "passou": true
+        },
+        {
+          "nome": "divida-das-familias-2025-ue: lista exata de a677770f",
+          "passou": true
+        },
+        {
+          "nome": "indice-de-divida-limite-legal: lista exata de a677770f",
+          "passou": true
+        },
+        {
+          "nome": "cadeia com dois acessos coerentes",
+          "passou": true
+        },
+        {
+          "nome": "o dia da mudança usa o acesso novo",
+          "passou": true
+        },
+        {
+          "nome": "travessia real com a lista completa",
+          "passou": true
+        }
+      ],
+      "plantas": [
+        {
+          "nome": "antes do acesso atual sem história",
+          "mordeu": true,
+          "falha": "[divida-das-familias-2025-ue.yml] verificação #1: \"date\" é 2026-09-21 e o acesso em vigor nesse dia é 2026-09-28. Uma releitura é depois da leitura."
+        },
+        {
+          "nome": "endereço antigo errado",
+          "mordeu": true,
+          "falha": "[indice-de-divida-limite-legal.yml] verificação #1: \"path\" não é o endereço em vigor a 2026-09-01: https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22."
+        },
+        {
+          "nome": "antes do primeiro acesso da história",
+          "mordeu": true,
+          "falha": "[divida-das-familias-2025-ue.yml] verificação #1: \"date\" é 2026-09-14 e o acesso em vigor nesse dia é 2026-09-15. Uma releitura é depois da leitura."
+        },
+        {
+          "nome": "cadeia contraditória",
+          "mordeu": true,
+          "falha": "[divida-das-familias-2025-ue.yml] história de \"access_date\" a 2026-09-28: cadeia contraditória; \"old_value\" é 2026-09-19, mas antes vigorava 2026-09-20."
+        },
+        {
+          "nome": "lista que encolhe na travessia real",
+          "mordeu": true,
+          "codigo": 1,
+          "falha": "[evora.json] indice-de-divida-limite-legal: a linha tem 0 reconferência(s) e o registo diz 1. A lista encolheu: uma reconferência escrita não se apaga."
+        }
+      ],
+      "contagens": {
+        "controlos": 6,
+        "plantas": 5,
+        "controlos_integros": 6,
+        "plantas_mordidas": 5
+      }
+    },
+    "relatorio": {
+      "relatorio": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "pasta": "design/especime-v3/medicoes/c1-2026-09-28",
+      "ficheiros_json_lidos": 64,
+      "ilegiveis": [],
+      "conhecido_positivo": {
+        "numero": 987654322,
+        "encontrado": true
+      },
+      "numeros_conferidos": 159,
+      "numeros_com_ficheiro": 159,
+      "numeros_sem_ficheiro": 0,
+      "sem_ficheiro": [],
+      "apagado_antes_de_contar": {
+        "codigo": 333,
+        "enderecos": 0,
+        "seccoes": 0,
+        "datas": 13,
+        "resumos": 0,
+        "ordinais": 9,
+        "identificadores": 77,
+        "anos": 2
+      }
+    },
     "base": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
     "base_motor": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
-    "cabeca_sitio": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+    "cabeca_sitio": "3362a4c0df19410129eaadce534fc3fd8a528318",
     "cabeca_motor": "ba47a125e68c9a87cc4bb5fae4524565bb413e7d",
     "commits": {
       "sitio": [
@@ -2375,6 +3143,30 @@
         {
           "hash": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
           "assunto": "C1c: conservar a nota no ficheiro e situar a dívida no fim do ano"
+        },
+        {
+          "hash": "8d7ddbdba2e5ca98f5745dd144250e0b4c95d875",
+          "assunto": "C1c: entregar as provas e a paragem na história da fonte legal"
+        },
+        {
+          "hash": "e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e",
+          "assunto": "C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex"
+        },
+        {
+          "hash": "aa8f6ff13575af523d68d3263b0a190a4cb1d87d",
+          "assunto": "C1c: validar as releituras pela proveniência em vigor e repor a história"
+        },
+        {
+          "hash": "7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6",
+          "assunto": "C1c: citar os nomes antigos e tornar a planta independente do histórico Git"
+        },
+        {
+          "hash": "7aeb6e543b5dc8611e39cccdbae0795acd28fdef",
+          "assunto": "C1c: marcar a língua da edição também na história da proveniência"
+        },
+        {
+          "hash": "3362a4c0df19410129eaadce534fc3fd8a528318",
+          "assunto": "C1c: escrever as datas históricas na forma da casa e conferir a mesma data"
         }
       ],
       "motor": [
@@ -4168,7 +4960,7 @@
     ],
     "protegidos_motor_alterados": [],
     "caminhos": {
-      "ficheiros": 913,
+      "ficheiros": 1486,
       "quantidade": 0,
       "achados": [],
       "conhecidos_positivos": [
@@ -4185,16 +4977,22 @@
     },
     "portoes": {
       "build": {
-        "codigo": 1,
-        "cabeca": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
-        "inicio": "2026-09-28T14:32:55.150303+00:00",
-        "fim": "2026-09-28T14:32:56.433824+00:00"
+        "codigo": 0,
+        "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+        "inicio": "2026-09-28T15:31:33.937947+00:00",
+        "fim": "2026-09-28T15:36:45.003338+00:00"
+      },
+      "verify": {
+        "codigo": 0,
+        "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+        "inicio": "2026-09-28T15:37:48.467671+00:00",
+        "fim": "2026-09-28T15:46:10.847526+00:00"
       },
       "typecheck": {
         "codigo": 0,
-        "cabeca": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
-        "inicio": "2026-09-28T14:39:43.917882+00:00",
-        "fim": "2026-09-28T14:39:44.196406+00:00"
+        "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+        "inicio": "2026-09-28T15:31:24.190666+00:00",
+        "fim": "2026-09-28T15:31:24.402857+00:00"
       }
     },
     "provas": {
@@ -4243,12 +5041,36 @@
       "plantas-confianca": {
         "natureza": "Casos sintéticos em memória. Os valores e as frases deste ensaio não são observações publicadas.",
         "contagens": {
-          "controlos": 84,
-          "controlos_integros": 84,
-          "plantas": 94,
-          "plantas_mordidas": 94
+          "controlos": 88,
+          "controlos_integros": 88,
+          "plantas": 100,
+          "plantas_mordidas": 100
         },
         "controlos": [
+          {
+            "grupo": "proveniencia",
+            "nome": "data-na-forma-da-casa-pt",
+            "passou": true,
+            "erros": []
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "endereco-literal-pt",
+            "passou": true,
+            "erros": []
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "data-na-forma-da-casa-en",
+            "passou": true,
+            "erros": []
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "endereco-literal-en",
+            "passou": true,
+            "erros": []
+          },
           {
             "grupo": "valor-unidade",
             "nome": "cartao-20 600-normal",
@@ -4973,6 +5795,66 @@
           }
         ],
         "plantas": [
+          {
+            "grupo": "proveniencia",
+            "nome": "dia-errado-pt",
+            "codigo": 1,
+            "mordida": "valor de proveniência diferente do livro",
+            "passou": true,
+            "erros": [
+              "valor de proveniência diferente do livro"
+            ]
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "iso-por-formatar-pt",
+            "codigo": 1,
+            "mordida": "valor de proveniência diferente do livro",
+            "passou": true,
+            "erros": [
+              "valor de proveniência diferente do livro"
+            ]
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "endereco-com-os-mesmos-algarismos-pt",
+            "codigo": 1,
+            "mordida": "valor de proveniência diferente do livro",
+            "passou": true,
+            "erros": [
+              "valor de proveniência diferente do livro"
+            ]
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "dia-errado-en",
+            "codigo": 1,
+            "mordida": "valor de proveniência diferente do livro",
+            "passou": true,
+            "erros": [
+              "valor de proveniência diferente do livro"
+            ]
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "iso-por-formatar-en",
+            "codigo": 1,
+            "mordida": "valor de proveniência diferente do livro",
+            "passou": true,
+            "erros": [
+              "valor de proveniência diferente do livro"
+            ]
+          },
+          {
+            "grupo": "proveniencia",
+            "nome": "endereco-com-os-mesmos-algarismos-en",
+            "codigo": 1,
+            "mordida": "valor de proveniência diferente do livro",
+            "passou": true,
+            "erros": [
+              "valor de proveniência diferente do livro"
+            ]
+          },
           {
             "grupo": "valor-unidade",
             "nome": "cartao-20 600-normal-colado",
@@ -6175,9 +7057,60 @@
         ]
       }
     },
-    "capturas": null,
-    "erros": [
-      "O portão build não está a zero."
-    ]
+    "capturas": {
+      "dist_construido_de": "3362a4c0df19410129eaadce534fc3fd8a528318",
+      "larguras": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "idsDeRecibos": [
+        "credito-malparado-2024",
+        "credito-malparado-2025",
+        "custo-unitario-do-trabalho-2024",
+        "custo-unitario-do-trabalho-2025",
+        "despesa-em-id-2024-ue",
+        "divida-das-empresas-2024",
+        "divida-das-empresas-2025",
+        "divida-das-empresas-2025-ue",
+        "divida-das-familias-2024",
+        "divida-das-familias-2025",
+        "divida-das-familias-2025-ue",
+        "evora-indice-de-divida-2024",
+        "evora-prazo-medio-de-pagamento-2025-12",
+        "fluxo-de-credito-as-familias-2025-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "ihpc-variacao-homologa",
+        "indice-de-divida-limite-legal",
+        "ipc-variacao-homologa",
+        "licencas-de-construcao-2024",
+        "licencas-de-construcao-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "pib-real-per-capita-2025-ue",
+        "taxa-de-cambio-efectiva-real-2025"
+      ],
+      "cartoes": [
+        "pib-real-per-capita-2025",
+        "taxa-de-cambio-efectiva-real-2025",
+        "divida-das-empresas-2025",
+        "divida-das-familias-2025",
+        "fluxo-de-credito-as-familias-2025",
+        "ipc-variacao-homologa",
+        "ihpc-variacao-homologa",
+        "custo-unitario-do-trabalho-2025",
+        "licencas-de-construcao-2025",
+        "formacao-bruta-de-capital-fixo-2025",
+        "despesa-em-id-2024"
+      ],
+      "aceitacao": {
+        "passou": true,
+        "falhas": []
+      }
+    },
+    "erros": []
   }
 }

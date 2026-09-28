@@ -181,6 +181,13 @@ try {
         recortes.push({ ficheiro: nomeDoRecorte, rota, id, nome, lingua, largura,
           medida: medida.cartoes.find((c) => c.id === id), sha256: sha(imagem) });
       }
+      if (familia === 'evora') {
+        const calendario = pagina.locator('[data-instrumento="mandatos"]');
+        if (await calendario.count() !== 1) throw new Error('O calendário de Évora não aparece uma vez.');
+        const nome = `${estado}-calendario-evora-${lingua}-${largura}.png`;
+        const bytes = await calendario.screenshot({ path: path.join(pasta, nome), animations: 'disabled' });
+        recortes.push({ ficheiro: nome, rota, id: 'calendario-evora', lingua, largura, medida: medida.calendario, sha256: sha(bytes) });
+      }
       console.log(`${ficheiro}: ${r.documento} × ${r.altura}, ${r.valores_colados_a_unidade} valores colados à unidade.`);
     } finally { await contexto.close(); }
   }

@@ -1,0 +1,34 @@
+{
+  "origem": "a677770f",
+  "razao": "A aceitação anterior selou uma linha cuja lista tinha encolhido. Repete-se a revisão de proveniência sobre a lista completa, por decisão da retoma. A contagem de reconferências não muda.",
+  "aceitacao_anterior_errada": {
+    "corrections_at_export": 7,
+    "exported_at": "2026-09-04",
+    "exported_row_sha256": "3d4fa064111148f401b75e0fdb8a86f1b138840b59608039f0efb93195942ab8",
+    "exporter": "ResearchHub/publisher/export_site_rows.py",
+    "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
+    "rh_id": "anuario-indice-permitido",
+    "rh_ledger_sha256": "17afc85af647c4436cbe34f3ad46ec96db0b4e7f8abe1d8f78efa3ea5e88bbdd",
+    "rh_study": "07 Évora Municipal Accounts",
+    "verifications_at_export": 1,
+    "site_corrections": [
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "sha256_antes": "3dee0095acc323cf498d08f7fc8b4fcbb11c300c62ffd692091ff1ed136a4eee",
+        "sha256_depois": "3d4fa064111148f401b75e0fdb8a86f1b138840b59608039f0efb93195942ab8"
+      }
+    ]
+  },
+  "antes_da_proveniencia": {
+    "corrections_at_export": 0,
+    "exported_at": "2026-09-04",
+    "exported_row_sha256": "3dee0095acc323cf498d08f7fc8b4fcbb11c300c62ffd692091ff1ed136a4eee",
+    "exporter": "ResearchHub/publisher/export_site_rows.py",
+    "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
+    "rh_id": "anuario-indice-permitido",
+    "rh_ledger_sha256": "17afc85af647c4436cbe34f3ad46ec96db0b4e7f8abe1d8f78efa3ea5e88bbdd",
+    "rh_study": "07 Évora Municipal Accounts",
+    "verifications_at_export": 1
+  }
+}
