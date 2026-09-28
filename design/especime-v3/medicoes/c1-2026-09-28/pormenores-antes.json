@@ -1,0 +1,101 @@
+{
+  "fase": "antes",
+  "imagens": [
+    {
+      "ficheiro": "capturas/pormenor-antes-calendario-pt-390.png",
+      "rota": "/municipios/evora/",
+      "seletor": "[data-instrumento=\"mandatos\"] > .instr-top",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "d9864b07a3dffd700d9e2ddb2ca00808017558cf84b27ca5babc0bc97b8d8bae"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-pib-pt-390.png",
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "07947ec38bb8152ef9602bc8b82fea989fe74c8309379c7d08d3b06a24868a1c"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-divida-ue-pt-390.png",
+      "rota": "/livro-razao/divida-das-familias-2025-ue/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "dea28959398695988c1d8b27b81c3032cf0b59ec9511d292fab5bbbb28102ede"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-calendario-pt-1280.png",
+      "rota": "/municipios/evora/",
+      "seletor": "[data-instrumento=\"mandatos\"] > .instr-top",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "8571b37f72579ffd2be8fe83ce87e5405bd9271ce18dff50810d0eba92c05814"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-pib-pt-1280.png",
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "9f4178253e7176b15956f5b6a95793cfe390db08d63a6c07fdff52cd0eb51e6d"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-divida-ue-pt-1280.png",
+      "rota": "/livro-razao/divida-das-familias-2025-ue/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "b2d4780ac0e0294590efe0fd967c817c42c070ed6e6c4af9d8d269974db98e91"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-calendario-en-390.png",
+      "rota": "/en/municipalities/evora/",
+      "seletor": "[data-instrumento=\"mandatos\"] > .instr-top",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "0ea620b03f6621b7340959f5dea8c703556e5242723ff79df2b3286e8559901a"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-pib-en-390.png",
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "b7deb463e31c1f4fa271ea4cee95ad57fa6b0437fe345c91a34a36e427fe1fb1"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-divida-ue-en-390.png",
+      "rota": "/en/ledger/divida-das-familias-2025-ue/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "0184a1f8de76f352ce637b0af4345816b855534cdef0deafe959718a33c2f4a2"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-calendario-en-1280.png",
+      "rota": "/en/municipalities/evora/",
+      "seletor": "[data-instrumento=\"mandatos\"] > .instr-top",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "b26d5a2abc0d3e4886a742fce2d8465ba9364586158148aa213e7209a674ba35"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-pib-en-1280.png",
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "1e65da7b6d48e1d4a2dc5ab8234eb3b5fb46ed41b73e11db7a115b85efdad2e0"
+    },
+    {
+      "ficheiro": "capturas/pormenor-antes-divida-ue-en-1280.png",
+      "rota": "/en/ledger/divida-das-familias-2025-ue/",
+      "seletor": "[aria-labelledby=\"verificacoes\"]",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "c00edeafebbb484f8aa8127b8abf73ae20fe2a740e1ba1179b9a038911af3032"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "redacao": "quarta",
+  "acertos": 2,
+  "diferencas_fora_dos_acertos": 0,
+  "leituras_anteriores_intactas": 37,
+  "k17": {
+    "erros": [],
+    "contas": {
+      "medidas": 49,
+      "folhas": 998,
+      "partes": 1147,
+      "diz": 309,
+      "conta": 281,
+      "liga": 557,
+      "apoios": 451,
+      "algarismos": 27,
+      "origens_das_leituras": 99,
+      "comuns": 38
+    }
+  }
+}

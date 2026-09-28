@@ -1,0 +1,135 @@
+{
+  "registado_em": "2026-09-28T12:38:56.213176+00:00",
+  "ambito": "sessão raiz e três agentes construtores do C1",
+  "unidade": "tokens cumulativos expostos pelo runtime",
+  "limites": [
+    "As revisões automáticas estão excluídas.",
+    "A entrada em cache está incluída na entrada total; não se soma uma segunda vez.",
+    "A saída de raciocínio está incluída na saída; não se soma uma segunda vez.",
+    "As sessões ativas podem continuar a acumular tokens depois desta leitura.",
+    "Não se estima um preço nem o consumo restante da subscrição."
+  ],
+  "provas_do_leitor": {
+    "cumulativos_nao_somados_entre_eventos": true,
+    "conteudo_e_cwd_excluidos": true,
+    "modelo_nao_inferido": true
+  },
+  "sessoes": [
+    {
+      "ficheiro": "rollout-2026-09-28T12-29-20-01a0e7c6-cbd3-7743-9d24-e6f02bb482c2.jsonl",
+      "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+      "id_pai": null,
+      "inicio": "2026-09-28T11:29:20.610Z",
+      "modelos_expostos": [
+        "gpt-6-astra"
+      ],
+      "primeiro_token_count": "2026-09-28T11:29:31.458Z",
+      "ultimo_token_count": "2026-09-28T12:38:28.116Z",
+      "cumulativos": {
+        "input_tokens": 28122696,
+        "cached_input_tokens": 27637120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 83888,
+        "reasoning_output_tokens": 38069,
+        "total_tokens": 28206584
+      }
+    },
+    {
+      "ficheiro": "rollout-2026-09-28T12-32-23-01a0e7c9-9549-7fe0-9ee6-52fbfb2bd675.jsonl",
+      "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+      "id_pai": null,
+      "inicio": "2026-09-28T11:32:23.020Z",
+      "modelos_expostos": [
+        "gpt-6-astra"
+      ],
+      "primeiro_token_count": "2026-09-28T11:32:29.535Z",
+      "ultimo_token_count": "2026-09-28T12:03:17.177Z",
+      "cumulativos": {
+        "input_tokens": 7867833,
+        "cached_input_tokens": 7660928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 30475,
+        "reasoning_output_tokens": 7214,
+        "total_tokens": 7898308
+      }
+    },
+    {
+      "ficheiro": "rollout-2026-09-28T12-32-31-01a0e7c9-b5a6-7323-a1e6-3d2dfaaa5a9d.jsonl",
+      "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+      "id_pai": null,
+      "inicio": "2026-09-28T11:32:31.286Z",
+      "modelos_expostos": [
+        "gpt-6-astra"
+      ],
+      "primeiro_token_count": "2026-09-28T11:32:37.223Z",
+      "ultimo_token_count": "2026-09-28T12:12:07.202Z",
+      "cumulativos": {
+        "input_tokens": 9785954,
+        "cached_input_tokens": 9514496,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 39330,
+        "reasoning_output_tokens": 6272,
+        "total_tokens": 9825284
+      }
+    },
+    {
+      "ficheiro": "rollout-2026-09-28T12-32-42-01a0e7c9-e01f-7272-9561-29cbb8f61f21.jsonl",
+      "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+      "id_pai": null,
+      "inicio": "2026-09-28T11:32:42.167Z",
+      "modelos_expostos": [
+        "gpt-6-astra"
+      ],
+      "primeiro_token_count": "2026-09-28T11:32:54.003Z",
+      "ultimo_token_count": "2026-09-28T11:58:17.199Z",
+      "cumulativos": {
+        "input_tokens": 5689522,
+        "cached_input_tokens": 5554688,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 21743,
+        "reasoning_output_tokens": 6321,
+        "total_tokens": 5711265
+      }
+    }
+  ],
+  "soma_das_sessoes": {
+    "input_tokens": 51466005,
+    "cached_input_tokens": 50367232,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 175436,
+    "reasoning_output_tokens": 57876,
+    "total_tokens": 51641441
+  },
+  "relogio": {
+    "inicio_sessao": "2026-09-28T11:29:20.610Z",
+    "fim_dos_portoes": "2026-09-28T12:33:20.583029+00:00",
+    "medido_ate": "2026-09-28T12:33:20.583029+00:00",
+    "criterio_do_fim": "último dos três portões na mesma cabeça",
+    "segundos": 3839.973029,
+    "portoes_presentes": [
+      {
+        "nome": "build",
+        "inicio": "2026-09-28T12:19:39.348771+00:00",
+        "fim": "2026-09-28T12:24:44.484406+00:00",
+        "codigo": 0,
+        "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d"
+      },
+      {
+        "nome": "verify",
+        "inicio": "2026-09-28T12:25:04.433018+00:00",
+        "fim": "2026-09-28T12:33:20.583029+00:00",
+        "codigo": 0,
+        "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d"
+      },
+      {
+        "nome": "typecheck",
+        "inicio": "2026-09-28T12:19:33.074979+00:00",
+        "fim": "2026-09-28T12:19:33.236474+00:00",
+        "codigo": 0,
+        "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d"
+      }
+    ],
+    "portoes_completos": true,
+    "portoes_a_zero": true
+  }
+}

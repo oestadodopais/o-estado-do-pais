@@ -1,0 +1,9 @@
+{
+  "mapa": "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+  "conferidor": "scripts/leituras/conferir-mapa.py",
+  "citacoes_conferidas": 77,
+  "citacoes_desfasadas": 0,
+  "citacoes_nao_encontradas": 0,
+  "referencias_fora_do_ficheiro": 0,
+  "saida": "citações conferidas na linha citada (±7): 77\ncitação está no ficheiro, mas longe da linha citada: 0\ncitação não encontrada em nenhum dos ficheiros citados na mesma linha: 0\nlinha citada para lá do fim do ficheiro: 0\n"
+}
