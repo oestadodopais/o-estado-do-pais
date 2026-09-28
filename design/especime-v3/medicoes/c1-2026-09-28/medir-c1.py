@@ -25,11 +25,21 @@ def ler(nome):
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
-def proibidos():
-    return [str(Path.home()).encode(), Path.home().name.lower().encode(),
-            str(Path.home().parent).encode() + b'/',
-            (('/private' + '/' + 'var/folders') + '/').encode(),
-            (('/private' + '/tmp') + '/').encode(), ('/' + 'tmp/').encode()]
+def proibidos(pasta=None):
+    pasta = Path.home() if pasta is None else Path(pasta)
+    caminhos = []
+    for p in (pasta, pasta.parent):
+        if p != Path(p.anchor):
+            caminhos.append((str(p).rstrip('/') + '/').encode())
+    # Um nome genérico não é identidade pessoal. O nome isolado só entra
+    # quando coincide com um nome pessoal que a história do Git identifica.
+    nome = re.sub(r'[^a-z0-9]', '', pasta.name.lower())
+    pessoais = {re.sub(r'[^a-z0-9]', '', n.decode().lower()) for n in nomes_dos_autores()}
+    if len(nome) >= 6 and nome in pessoais:
+        caminhos.append(pasta.name.lower().encode())
+    return caminhos + [
+        (('/private' + '/' + 'var/folders') + '/').encode(),
+        (('/private' + '/tmp') + '/').encode(), ('/' + 'tmp/').encode()]
 
 # Caminhos absolutos do sistema, também fora da pasta pessoal e do repositório.
 ABSOLUTO = re.compile(rb'(?<![A-Za-z0-9:/])/(?:opt|usr|Library|Applications|System|Volumes|var|private|etc|bin|sbin|home|root|Users|tmp)/[^\s"<>`\x1b]+')
@@ -51,7 +61,9 @@ def tem_caminho(b):
     # logs ou código, nem nomes pessoais dentro do atributo.
     sem_navegacao = re.sub(rb"(?:href|src)=([\"'])/" + rb"home/(?:html|shared|sitedir|data-protection|search)/[^\"']+\1", b'<ligacao relativa da origem>', b)
     anfitriao = re.search(rb'\b[a-z0-9_-]*(?:macbook|imac|mac-mini|macmini)[a-z0-9_.-]*\.local\b', b, re.I)
-    return bool(anfitriao or ABSOLUTO.search(sem_navegacao)) or any(x.lower() in b.lower() for x in proibidos()+list(nomes_dos_autores()))
+    return (bool(anfitriao or ABSOLUTO.search(sem_navegacao))
+            or any(x.lower() in (sem_navegacao if x.startswith(b'/') else b).lower() for x in proibidos())
+            or any(x.lower() in b.lower() for x in nomes_dos_autores()))
 
 def medir_caminhos():
     erros, total, historia = [], 0, 0
