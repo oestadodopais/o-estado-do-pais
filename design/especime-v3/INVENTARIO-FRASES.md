@@ -3411,13 +3411,13 @@ literal da DGAL publica. A procura das frases retiradas não muda.
 | --- | --- | --- | --- | --- |
 | conteudo | 44 revisões de proveniência | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
 | conteudo | 44 provenance revisions | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
-| conteudo | : (valor estimado) União Europeia : | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
-| conteudo | : (estimated value) European Union : | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+| conteudo | : União Europeia : (valor estimado) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+| conteudo | : European Union : (estimated value) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
 
 Os recibos, fora das rotas do inventário, substituem a frase do C1c sobre o dia
 inteiro por «Releitura tentada a 28.09.2026, sem resposta a esse pedido» /
 «Re-read attempted on 28.09.2026, with no answer to that request». A data vem da
-entrada, e uma razão guardada continua a ser dita por palavras. A ausência
+entrada. A ausência
 concorda no rótulo e no texto: «Segunda leitura: ainda nenhuma» / «Second
 reading: none yet». Uma releitura anterior a uma atualização diz «confirmou o
 valor anterior:» / «confirmed the previous value:», seguido desse valor.
