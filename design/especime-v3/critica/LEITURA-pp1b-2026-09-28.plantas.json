@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T21:41:21+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "package.json",
+   "descricao": "a cadeia do build perde o passo dos sinais, e com ele o mínimo de três blocos na construção de produção",
+   "sha256_antes": "06677703e901a459efa6a21c686aa1d65774787659e91ef6ad1a93e1e0a03634",
+   "sha256_depois": "0a72c6cb3e11216de6e3ca2d25d6a431a55d39ecabecb50138d28d0175a328ab",
+   "contexto_antes": " npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run sinais\",\n    \"preview\": \"astro preview\",\n    \"astro\": \"astro\",\n    \"ledger:check\": \"node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs\",\n  ",
+   "contexto_depois": " npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua\",\n    \"preview\": \"astro preview\",\n    \"astro\": \"astro\",\n    \"ledger:check\": \"node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs\",\n  "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/inicio/pesquisa-da-primeira.mjs",
+   "descricao": "a célula da pesquisa dá por boa qualquer resposta ao Enter sem guião, porque o estado passa a ser sempre 200",
+   "sha256_antes": "1dc44a6ed3ab57dc5e692f4ac882d91f6740638f0c39a7a69399142558047d69",
+   "sha256_depois": "33939511351972d0f871be88452b8df82c497a0e97360cde99be96d91a84c8e1",
+   "contexto_antes": "0 }).catch(() => null),\n      campo.press('Enter'),\n    ]);\n    const url = new URL(pagina.url());\n    r.aterra = `${semBarra(url.pathname)}${url.search}`;\n    r.estado = resposta?.status() ?? null;\n    r.aterraNosLugares = semBarra(url.pathname) === lugares && url.searchParams.get('concelho') === ESCRITAS.unico;\n    /* As portas de distrito à vista na pág",
+   "contexto_depois": "0 }).catch(() => null),\n      campo.press('Enter'),\n    ]);\n    const url = new URL(pagina.url());\n    r.aterra = `${semBarra(url.pathname)}${url.search}`;\n    r.estado = 200;\n    r.aterraNosLugares = semBarra(url.pathname) === lugares && url.searchParams.get('concelho') === ESCRITAS.unico;\n    /* As portas de distrito à vista na pág"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/index.html",
+   "descricao": "o formulário da pesquisa da primeira página portuguesa manda o Enter sem guião para /lugar/, que não existe",
+   "sha256_antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+   "sha256_depois": "5830342388dbef49459fe0e2551fcb7d28d1197da2007250a5c6ffe88ac969b9",
+   "contexto_antes": "ec-k\" id=\"lugares-k\">Lugares</h2><div class=\"pp-lugares-grelha\"><div class=\"pesquisa-bloco pp-pesquisa\" data-pesquisa-bloco><div class=\"pesquisa\" id=\"pesquisa\"><form class=\"busca\" action=\"/lugares/\" method=\"get\" role=\"search\" data-porta-concelho=\"true\"><label class=\"busca-k vh\" for=\"pesquisa-concelho\"><span data-voz>Concelho</span></label><span class=\"busca-linha\"><input class=\"busca-campo\" id=\"pesquisa-concel",
+   "contexto_depois": "ec-k\" id=\"lugares-k\">Lugares</h2><div class=\"pp-lugares-grelha\"><div class=\"pesquisa-bloco pp-pesquisa\" data-pesquisa-bloco><div class=\"pesquisa\" id=\"pesquisa\"><form class=\"busca\" action=\"/lugar/\" method=\"get\" role=\"search\" data-porta-concelho=\"true\"><label class=\"busca-k vh\" for=\"pesquisa-concelho\"><span data-voz>Concelho</span></label><span class=\"busca-linha\"><input class=\"busca-campo\" id=\"pesquisa-concel"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório conta 39 plantas mordidas no check:primeira, contra as 38 das provas",
+   "sha256_antes": "fb9491931ed585f53742de87cde854e0c1b3866202071562fbf44756be82fc33",
+   "sha256_depois": "bc0f2f428c059af7dd0b6b88b27f868ed52fefd609c106e8d98542a85992b723",
+   "contexto_antes": " 10, em 1 mapa. As 2 plantas mordem: uma rota tirada do mapa, e um mapa nomeado pelo índice que a construção não tem (`plantas-primeira-pagina.json`, agora com 38 plantas).\n- **As capturas e as páginas congeladas da cabeça dos portões (achado 10).** As 84 capturas e as páginas congeladas foram refeitas na construção da cabeça `5",
+   "contexto_depois": " 10, em 1 mapa. As 2 plantas mordem: uma rota tirada do mapa, e um mapa nomeado pelo índice que a construção não tem (`plantas-primeira-pagina.json`, agora com 39 plantas).\n- **As capturas e as páginas congeladas da cabeça dos portões (achado 10).** As 84 capturas e as páginas congeladas foram refeitas na construção da cabeça `5"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/sitemap-0.xml",
+   "descricao": "o mapa do sítio perde a página portuguesa «O meu trabalho»: o endereço dela passa a outro que não existe",
+   "sha256_antes": "81b8fc4b1dff3bb7f4e3a71c0031e51a04da9723c4afe884a93f259faeba2b4d",
+   "sha256_depois": "cdfe65dc2f2143d97e3ced1a33eed7cdc4c258230d8c39daddef8e93692b9220",
+   "contexto_antes": "ps://xn--oestadodopas-2fb.pt/en/my-money/\"/><xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://xn--oestadodopas-2fb.pt/o-meu-dinheiro/\"/></url><url><loc>https://xn--oestadodopas-2fb.pt/o-meu-trabalho</loc><xhtml:link rel=\"alternate\" hreflang=\"pt-PT\" href=\"https://xn--oestadodopas-2fb.pt/o-meu-trabalho/\"/><xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://xn-",
+   "contexto_depois": "ps://xn--oestadodopas-2fb.pt/en/my-money/\"/><xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://xn--oestadodopas-2fb.pt/o-meu-dinheiro/\"/></url><url><loc>https://xn--oestadodopas-2fb.pt/o-meu-trabalho-antigo</loc><xhtml:link rel=\"alternate\" hreflang=\"pt-PT\" href=\"https://xn--oestadodopas-2fb.pt/o-meu-trabalho/\"/><xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://xn-"
+  }
+ ]
+}
