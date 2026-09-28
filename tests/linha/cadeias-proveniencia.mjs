@@ -29,7 +29,7 @@ const casos=[
  ['documento sem lista de ficheiros',c=>{c.document.computed_over.files=[];}],
  ['endereço novo diferente do vigente',c=>{const e=entrada(c);e.new_value='https://dados.gov.pt/datasets/outro';e.old_value=e.old_value.replace(/\/s\/resources\/[^/]+\//,'/s/resources/outro/');e.reason=e.reason_en=e.old_value;}],
  ['recurso de outro conjunto',c=>{const e=entrada(c);e.old_value=e.old_value.replace('/s/resources/dataset-','/s/resources/outro-');e.reason=e.reason_en=e.old_value;}],
- ['recurso posterior à entrada',c=>{const e=entrada(c);e.date='2026-08-16';}],
+ ['recurso posterior à entrada',c=>{const e=entrada(c);e.old_value=e.old_value.replaceAll('20260817','20260819');e.reason=e.reason_en=e.old_value;}],
  ['ficheiro sem a data do recurso',c=>{const e=entrada(c);e.old_value=e.old_value.slice(0,e.old_value.lastIndexOf('/')+1)+'listagem.xlsx';e.reason=e.reason_en=e.old_value;}],
  ['razão portuguesa sem endereço',c=>{entrada(c).reason='O mesmo conjunto.';}],
  ['razão inglesa sem endereço',c=>{entrada(c).reason_en='The same dataset.';}],
