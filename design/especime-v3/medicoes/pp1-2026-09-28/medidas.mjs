@@ -33,36 +33,43 @@ const medidas = [];
 /** @param {string} nome @param {unknown} valor @param {string} comando @param {string} o_que @param {boolean} encontrado */
 const medida = (nome, valor, comando, o_que, encontrado) => medidas.push({ nome, valor, comando, conhecido_positivo: { o_que, encontrado: Boolean(encontrado) } });
 
-/* 1 · A PRIMEIRA PÁGINA, ANTES E DEPOIS. O antes é a página congelada da cabeça de partida; o depois é
-   a construção desta cabeça. Os mesmos detetores nas duas. */
+/* 1 · A PRIMEIRA PÁGINA, ANTES E DEPOIS. O antes é a página congelada da cabeça de partida; o depois é a
+   página congelada pelo captor depois (`paginas-depois/`, com o sha256 de cada uma no manifesto das
+   capturas). Os mesmos detetores nas duas. */
+const congelada = (/** @type {string} */ rota) => `${PASTA}/paginas-depois/${rota.replace(/^\//, '').replace(/\/$/, '').replaceAll('/', '_')}${rota === '/' ? '' : '_'}index.html`;
 const antesPt = doc(`${PASTA}/paginas-antes/index.html`);
-const depoisPt = doc('dist/index.html');
-const depoisEn = doc('dist/en/index.html');
+const depoisPt = doc(congelada('/'));
+const depoisEn = doc(congelada('/en/'));
 const cartoes = (/** @type {any} */ r) => r.querySelectorAll('main [data-cartao-medida], main [data-cartao-camaras]').length;
 const brief = json('design/observatorio/medidas/BRIEF-PP1.json').medidas;
 const doBrief = (/** @type {string} */ n) => brief.find((/** @type {any} */ m) => m.nome === n)?.valor;
 medida('cartoes_na_primeira_pagina_antes', cartoes(antesPt), `${PASTA}/paginas-antes/index.html · main [data-cartao-medida], main [data-cartao-camaras]`,
   'o mesmo detetor conta na página de antes os cartões que o §0 do brief contou (cartoes_na_primeira_pagina)', cartoes(antesPt) === doBrief('cartoes_na_primeira_pagina'));
-medida('cartoes_na_primeira_pagina_depois', cartoes(depoisPt), 'dist/index.html · o mesmo seletor', 'o mesmo detetor conta os cartões da página de antes', cartoes(antesPt) > 0);
+medida('cartoes_na_primeira_pagina_depois', cartoes(depoisPt), `${PASTA}/paginas-depois/index.html · o mesmo seletor`, 'o mesmo detetor conta os cartões da página de antes', cartoes(antesPt) > 0);
 const temas = (/** @type {any} */ r) => r.querySelectorAll('main [data-tema]').length;
 medida('temas_na_primeira_pagina_antes', temas(antesPt), `${PASTA}/paginas-antes/index.html · main [data-tema]`, 'o §0 do brief contou os mesmos temas (temas_na_primeira_pagina)', temas(antesPt) === doBrief('temas_na_primeira_pagina'));
-medida('temas_na_primeira_pagina_depois', temas(depoisPt), 'dist/index.html · main [data-tema]', 'o mesmo detetor vê os temas da página de antes', temas(antesPt) > 0);
+medida('temas_na_primeira_pagina_depois', temas(depoisPt), `${PASTA}/paginas-depois/index.html · main [data-tema]`, 'o mesmo detetor vê os temas da página de antes', temas(antesPt) > 0);
 const leitura = (/** @type {any} */ r) => r.querySelectorAll('main [data-leitura-pais]').length;
 medida('leitura_do_pais_na_primeira_pagina_antes', leitura(antesPt), `${PASTA}/paginas-antes/index.html · main [data-leitura-pais]`, 'a página de antes tem a leitura', leitura(antesPt) === 1);
-medida('leitura_do_pais_na_primeira_pagina_depois', leitura(depoisPt), 'dist/index.html · main [data-leitura-pais]', 'o mesmo detetor vê a leitura na página de antes', leitura(antesPt) === 1);
+medida('leitura_do_pais_na_primeira_pagina_depois', leitura(depoisPt), `${PASTA}/paginas-depois/index.html · main [data-leitura-pais]`, 'o mesmo detetor vê a leitura na página de antes', leitura(antesPt) === 1);
 const mudancas = (/** @type {any} */ r) => r.querySelectorAll('main [data-mudou-ambito] li').length;
 medida('mudancas_na_primeira_pagina_antes', mudancas(antesPt), `${PASTA}/paginas-antes/index.html · main [data-mudou-ambito] li`, 'o §0 do brief contou as mesmas mudanças (mudancas_na_primeira_pagina)', mudancas(antesPt) === doBrief('mudancas_na_primeira_pagina'));
-medida('mudancas_na_primeira_pagina_depois', mudancas(depoisPt), 'dist/index.html · o mesmo seletor', 'o mesmo detetor vê as mudanças da página de antes', mudancas(antesPt) > 0);
+medida('mudancas_na_primeira_pagina_depois', mudancas(depoisPt), `${PASTA}/paginas-depois/index.html · o mesmo seletor`, 'o mesmo detetor vê as mudanças da página de antes', mudancas(antesPt) > 0);
 const valoresPresos = git('ls-tree', '--name-only', 'HEAD', '--', 'src/components/inicio/LeituraDoPais.astro');
 medida('componente_da_leitura_do_pais_na_cabeca', valoresPresos === '' ? 0 : 1, 'git ls-tree --name-only HEAD -- src/components/inicio/LeituraDoPais.astro',
   'o mesmo comando encontra o componente na cabeça de partida', git('ls-tree', '--name-only', PARTIDA, '--', 'src/components/inicio/LeituraDoPais.astro') !== '');
+/* A lista das linhas da leitura sai com ela, salvo se outra página a usar (o §2, ponto 3, do brief): quem
+   a importa, pela árvore da cabeça. */
+const usamALista = git('grep', '-l', 'LINHAS_DA_LEITURA_DO_PAIS', 'HEAD', '--', 'src').split('\n').filter(Boolean).map((l) => l.replace(/^HEAD:/, ''));
+medida('ficheiros_que_usam_as_linhas_da_leitura_do_pais', usamALista, 'git grep -l LINHAS_DA_LEITURA_DO_PAIS HEAD -- src',
+  'o mesmo comando encontra a lista no componente da leitura na cabeça de partida', git('grep', '-l', 'LINHAS_DA_LEITURA_DO_PAIS', PARTIDA, '--', 'src/components/inicio/LeituraDoPais.astro') !== '');
 const blocos = (/** @type {any} */ r) => r.querySelectorAll('main [data-o-que-se-passa] [data-bloco]').length;
 const sintetico = parse('<main><section data-o-que-se-passa><section data-bloco="a"></section><section data-bloco="b"></section></section></main>');
-medida('blocos_na_primeira_pagina_pt', blocos(depoisPt), 'dist/index.html · main [data-o-que-se-passa] [data-bloco]', 'o mesmo detetor conta dois blocos numa página de prova com dois', blocos(sintetico) === 2);
-medida('blocos_na_primeira_pagina_en', blocos(depoisEn), 'dist/en/index.html · o mesmo seletor', 'o mesmo detetor conta dois blocos numa página de prova com dois', blocos(sintetico) === 2);
+medida('blocos_na_primeira_pagina_pt', blocos(depoisPt), `${PASTA}/paginas-depois/index.html · main [data-o-que-se-passa] [data-bloco]`, 'o mesmo detetor conta dois blocos numa página de prova com dois', blocos(sintetico) === 2);
+medida('blocos_na_primeira_pagina_en', blocos(depoisEn), `${PASTA}/paginas-depois/en_index.html · o mesmo seletor`, 'o mesmo detetor conta dois blocos numa página de prova com dois', blocos(sintetico) === 2);
 const entradas = (/** @type {any} */ r) => r.querySelectorAll('main [data-entradas] li[data-entrada]').length;
-medida('entradas_na_primeira_pagina_pt', entradas(depoisPt), 'dist/index.html · main [data-entradas] li[data-entrada]', 'as declarações têm as mesmas entradas', entradas(depoisPt) === ENTRADAS.length);
-medida('entradas_na_primeira_pagina_en', entradas(depoisEn), 'dist/en/index.html · o mesmo seletor', 'as declarações têm as mesmas entradas', entradas(depoisEn) === ENTRADAS.length);
+medida('entradas_na_primeira_pagina_pt', entradas(depoisPt), `${PASTA}/paginas-depois/index.html · main [data-entradas] li[data-entrada]`, 'as declarações têm as mesmas entradas', entradas(depoisPt) === ENTRADAS.length);
+medida('entradas_na_primeira_pagina_en', entradas(depoisEn), `${PASTA}/paginas-depois/en_index.html · o mesmo seletor`, 'as declarações têm as mesmas entradas', entradas(depoisEn) === ENTRADAS.length);
 /* As palavras antes do primeiro título, pela regra do §0 (o texto que abre a página antes do primeiro
    h2), sem o rótulo de inteligência artificial, que é a divulgação que a lei põe no topo de cada página. */
 function antesDoPrimeiroTitulo(/** @type {any} */ r) {
@@ -79,7 +86,7 @@ function antesDoPrimeiroTitulo(/** @type {any} */ r) {
   anda(main);
   return normal(partes.join(' ')).split(' ').filter((w) => /\w/.test(w)).length;
 }
-medida('palavras_antes_do_primeiro_titulo_depois', antesDoPrimeiroTitulo(depoisPt), 'dist/index.html · o texto de main antes do primeiro h2, sem o rótulo de IA',
+medida('palavras_antes_do_primeiro_titulo_depois', antesDoPrimeiroTitulo(depoisPt), `${PASTA}/paginas-depois/index.html · o texto de main antes do primeiro h2, sem o rótulo de IA`,
   'o mesmo detetor conta as palavras antes do primeiro título na página de antes', antesDoPrimeiroTitulo(antesPt) > 0);
 medida('palavras_antes_do_primeiro_titulo_antes', antesDoPrimeiroTitulo(antesPt), `${PASTA}/paginas-antes/index.html · o mesmo detetor`,
   'a página de antes abre com a leitura do país antes do primeiro título', antesDoPrimeiroTitulo(antesPt) > 0);
@@ -88,17 +95,17 @@ medida('palavras_antes_do_primeiro_titulo_antes', antesDoPrimeiroTitulo(antesPt)
 const novas = ENTRADAS.filter((e) => !('existente' in e && e.existente));
 const paginasDasEntradas = novas.flatMap((e) => [e.rota.pt, e.rota.en]).filter((r) => fs.existsSync(path.join(DIST, r.replace(/^\//, ''), 'index.html')));
 medida('paginas_das_entradas_construidas', paginasDasEntradas.length, 'dist/<rota de cada entrada>/index.html, nas duas edições', 'as declarações têm cinco entradas novas, nas duas edições', novas.length * 2 === paginasDasEntradas.length);
-const cartoesDe = (/** @type {string} */ rota) => doc(`dist/${rota.replace(/^\//, '')}index.html`).querySelectorAll('main article.cartao-medida[data-cartao-medida], main article[data-cartao-camaras]').map((a) => a.getAttribute('data-cartao-medida') ?? 'camaras');
+const cartoesDe = (/** @type {string} */ rota) => doc(rota === '/temas/' ? 'dist/temas/index.html' : congelada(rota)).querySelectorAll('main article.cartao-medida[data-cartao-medida], main article[data-cartao-camaras]').map((a) => a.getAttribute('data-cartao-medida') ?? 'camaras');
 const dosTemas = cartoesDe('/temas/');
 const nasEntradas = novas.flatMap((e) => cartoesDe(e.rota.pt));
 medida('cartoes_da_pagina_dos_temas', dosTemas.length, 'dist/temas/index.html · main article.cartao-medida[data-cartao-medida], main article[data-cartao-camaras]', 'a taxa de emprego é um deles', dosTemas.includes('taxa-de-emprego-2025'));
-medida('cartoes_nas_paginas_das_entradas', nasEntradas.length, 'o mesmo seletor nas cinco páginas das entradas, edição portuguesa', 'a pensão média está numa delas', nasEntradas.includes('pensao-media-anual-2025'));
+medida('cartoes_nas_paginas_das_entradas', nasEntradas.length, 'o mesmo seletor nas cinco páginas das entradas congeladas em paginas-depois/, edição portuguesa', 'a pensão média está numa delas', nasEntradas.includes('pensao-media-anual-2025'));
 medida('cartoes_repetidos_nas_entradas', nasEntradas.length - new Set(nasEntradas).size, 'as mesmas contas · as ocorrências a mais', 'o mesmo contador vê uma repetição numa lista com um nome duas vezes', ['a', 'b', 'a'].length - new Set(['a', 'b', 'a']).size === 1);
 const foraDasEntradas = dosTemas.filter((c) => !nasEntradas.includes(c));
 medida('cartoes_dos_temas_fora_das_entradas', foraDasEntradas.length, 'os cartões da página dos temas que nenhuma entrada rende', 'o fora declarado é o índice da dívida', foraDasEntradas.every((c) => c in CARTOES_FORA_DAS_ENTRADAS || c === 'camaras'));
 for (const e of novas) {
-  const n = doc(`dist/${e.rota.pt.replace(/^\//, '')}index.html`).querySelectorAll('#estudos-da-entrada [data-estudo]').length;
-  medida(`estudos_da_entrada_${e.id}`, n, `dist${e.rota.pt}index.html · #estudos-da-entrada [data-estudo]`, 'a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor', depoisPt.querySelectorAll('#trabalhos [data-estudo]').length > 0);
+  const n = doc(congelada(e.rota.pt)).querySelectorAll('#estudos-da-entrada [data-estudo]').length;
+  medida(`estudos_da_entrada_${e.id}`, n, `${congelada(e.rota.pt)} · #estudos-da-entrada [data-estudo]`, 'a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor', depoisPt.querySelectorAll('#trabalhos [data-estudo]').length > 0);
 }
 
 /* 3 · O TESTE DE ACEITAÇÃO E AS ALTURAS, DOS MANIFESTOS DAS CAPTURAS. */
@@ -158,12 +165,16 @@ medida('valor_revisto_bloco_blocos_mostrados', revisto.bloco.sinais.blocos_mostr
 
 /* 6 · O QUE NENHUM FICHEIRO DO RAMO PODE TER: um caminho da máquina ou o nome do utilizador dela, e um
    travessão em prosa nova. O detetor corre primeiro sobre uma linha de prova que tem cada coisa. */
-const ficheiros = git('diff', '--name-only', `${PARTIDA}..HEAD`).split('\n').filter(Boolean).filter((f) => fs.existsSync(path.join(RAIZ, f)));
+/* Os ficheiros do ramo: os que o diff da cabeça nomeia, mais os que estão na árvore e ainda não entraram
+   num commit (este guião corre antes do commit que traz o relatório, e o relatório também se lê). */
+const porCommitar = git('status', '--porcelain', '--untracked-files=all').split('\n').filter(Boolean).map((l) => l.slice(3).trim()).filter((f) => !f.startsWith('dist/'));
+const ficheiros = [...new Set([...git('diff', '--name-only', `${PARTIDA}..HEAD`).split('\n').filter(Boolean), ...porCommitar])].filter((f) => fs.existsSync(path.join(RAIZ, f)) && fs.statSync(path.join(RAIZ, f)).isFile());
 const utilizador = os.userInfo().username;
 const MAQUINA = [new RegExp(`/(?:Users|home)/${utilizador.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`), new RegExp(`\\b${utilizador.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`), /\/private\/(?:tmp|var)\//, /\/var\/folders\//];
 const temMaquina = (/** @type {string} */ t) => MAQUINA.some((re) => re.test(t));
 const comMaquina = ficheiros.filter((f) => !/\.png$/.test(f) && temMaquina(fs.readFileSync(path.join(RAIZ, f), 'utf8')));
-medida('ficheiros_do_ramo_lidos', ficheiros.length, `git diff --name-only ${PARTIDA}..HEAD`, 'o ramo tem o relatório do bloco', ficheiros.some((f) => f.endsWith('medir-l1-pp1.mjs')));
+medida('ficheiros_do_ramo_lidos', ficheiros.length, `git diff --name-only ${PARTIDA}..HEAD, e git status --porcelain --untracked-files=all`, 'os ficheiros lidos incluem o relatório do bloco', ficheiros.some((f) => f.endsWith(`${PASTA}/LEIA-ME.md`)));
+medida('ficheiros_do_ramo_com_caminho_da_maquina_lista', comMaquina, 'os mesmos · os nomes dos que têm', 'a lista é a do detetor abaixo', true);
 medida('ficheiros_do_ramo_com_caminho_da_maquina', comMaquina.length, 'os mesmos ficheiros (sem as imagens) · o diretório do utilizador, o nome do utilizador e as pastas temporárias do sistema',
   'o detetor apanha uma linha de prova com o diretório do utilizador', temMaquina(`/${'Users'}/${utilizador}/exemplo`));
 const acrescentadas = git('diff', '-U0', `${PARTIDA}..HEAD`, '--', '*.md', '*.mjs', '*.astro', '*.css', '*.py').split('\n').filter((l) => l.startsWith('+') && !l.startsWith('+++'));

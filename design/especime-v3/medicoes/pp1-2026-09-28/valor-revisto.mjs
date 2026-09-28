@@ -8,8 +8,8 @@
  * as duas coisas, cada uma numa cópia da árvore extraída com `git archive` para uma pasta temporária
  * fora do repositório, com a mesma revisão de uma linha do livro:
  *
- *   · na cabeça de partida, a construção do Astro para (é o conhecido-positivo: a planta morde onde a
- *     página prendia o valor);
+ *   · na cabeça de partida, a construção para no Astro, com a frase da leitura do país (é o
+ *     conhecido-positivo: a planta morde onde a página prendia o valor);
  *   · na cabeça do bloco, a construção inteira passa (`npm run build`, com todos os portões da cadeia),
  *     a peça que o valor revisto deixa de sustentar sai da página, e o guião dos sinais nomeia-a.
  *
@@ -56,6 +56,13 @@ function corre(dir, args) {
   const r = spawnSync(args[0], args.slice(1), { cwd: dir, encoding: 'utf8', maxBuffer: 1024 * 1024 * 1024, env: { ...process.env, FORCE_COLOR: '0' } });
   return { codigo: r.status, segundos: Math.round((Date.now() - t0) / 1000), saida: `${r.stdout ?? ''}${r.stderr ?? ''}` };
 }
+/** As últimas linhas de uma saída, sem os caminhos da máquina: a cópia, a árvore, a pasta temporária e a casa do utilizador. @param {string} saida @param {string} dir */
+function cauda(saida, dir) {
+  const troca = [[dir, '<cópia>'], [fs.realpathSync(dir), '<cópia>'], [RAIZ, '<worktree do sítio>'], [os.tmpdir(), '<tmp>'], [os.homedir(), '~']];
+  let t = saida;
+  for (const [de, para] of troca) t = t.split(de).join(para);
+  return t.replace(/\x1b\[[0-9;]*m/g, '').split('\n').filter((l) => l.trim()).slice(-25);
+}
 const registo = {
   o_que_e: 'Um valor revisto numa cópia do livro-razão, construído na cabeça de partida e na cabeça do bloco PP1.',
   comando: 'node design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.mjs <cabeça de partida> <cabeça do bloco>',
@@ -66,9 +73,9 @@ const registo = {
 {
   const dir = copia(partida);
   try {
-    const r = corre(dir, [process.execPath, 'node_modules/astro/astro.js', 'build']);
+    const r = corre(dir, ['npm', 'run', 'build']);
     const erro = /B1 leitura do país: [^\n;]+mudou[^\n]*/.exec(r.saida)?.[0] ?? null;
-    registo.partida = { cabeca: git('rev-parse', partida), comando: 'astro build', codigo: r.codigo, segundos: r.segundos, erro, mordeu: r.codigo !== 0 && erro !== null && erro.includes(LINHA) };
+    registo.partida = { cabeca: git('rev-parse', partida), comando: 'npm run build', codigo: r.codigo, segundos: r.segundos, erro, mordeu: r.codigo !== 0 && erro !== null && erro.includes(LINHA), cauda: r.codigo === 0 ? [] : cauda(r.saida, dir) };
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
 /* 2 · A CABEÇA DO BLOCO: a cadeia inteira da construção, e depois os sinais e a página. */
@@ -79,17 +86,19 @@ const registo = {
     const s = corre(dir, [process.execPath, 'scripts/sinais-da-primeira-pagina.mjs']);
     const sinais = fs.existsSync(path.join(dir, '.sinais', 'primeira-pagina.json')) ? JSON.parse(fs.readFileSync(path.join(dir, '.sinais', 'primeira-pagina.json'), 'utf8')) : null;
     const pt = fs.existsSync(path.join(dir, 'dist', 'index.html')) ? fs.readFileSync(path.join(dir, 'dist', 'index.html'), 'utf8') : '';
+    const casa = fs.existsSync(path.join(dir, 'dist', 'a-minha-casa', 'index.html')) ? fs.readFileSync(path.join(dir, 'dist', 'a-minha-casa', 'index.html'), 'utf8') : '';
     const falhou = r.codigo === 0 ? null : (r.saida.match(/> o-estado-do-pais@[^\n]*\n> ([^\n]+)/g) ?? []).slice(-1)[0] ?? null;
     registo.bloco = {
-      cabeca: git('rev-parse', doBloco), comando: 'npm run build', codigo: r.codigo, segundos: r.segundos, ultimo_passo_se_falhou: falhou,
+      cabeca: git('rev-parse', doBloco), comando: 'npm run build', codigo: r.codigo, segundos: r.segundos, ultimo_passo_se_falhou: falhou, cauda: r.codigo === 0 ? [] : cauda(r.saida, dir),
       sinais: { comando: 'node scripts/sinais-da-primeira-pagina.mjs', codigo: s.codigo, blocos_mostrados: sinais?.blocos_mostrados ?? null, saidas: sinais?.saidas ?? null },
       primeira_pagina: {
         blocos: (pt.match(/data-bloco="[a-z-]+"/g) ?? []).length,
         peca_dos_precos_das_casas_presente: pt.includes('data-bloco-peca="precos-das-casas"'),
-        valor_da_planta_na_pagina: pt.includes(`>${DEPOIS.valor}<`),
       },
+      /* O valor revisto chega ao cartão da entrada da casa, com o seu recibo. */
+      valor_da_planta_no_cartao_da_entrada_da_casa: casa.includes(`data-claim="${LINHA}"`) && casa.includes(`>${DEPOIS.valor}<`),
     };
-    registo.bloco.passou = r.codigo === 0 && s.codigo === 0 && Boolean(sinais?.saidas?.some((/** @type {any} */ x) => x.bloco === 'casa' && x.peca === 'precos-das-casas')) && !registo.bloco.primeira_pagina.peca_dos_precos_das_casas_presente;
+    registo.bloco.passou = r.codigo === 0 && s.codigo === 0 && Boolean(sinais?.saidas?.some((/** @type {any} */ x) => x.bloco === 'casa' && x.peca === 'precos-das-casas')) && !registo.bloco.primeira_pagina.peca_dos_precos_das_casas_presente && registo.bloco.valor_da_planta_no_cartao_da_entrada_da_casa;
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
 fs.writeFileSync(path.join(AQUI, 'valor-revisto.json'), JSON.stringify(registo, null, 2) + '\n');
