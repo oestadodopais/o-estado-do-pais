@@ -357,7 +357,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
               banda.map((seg) => (
                 <>
                   <rect
-                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto']}
+                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto', !seg.mandato.instalado && 'is-inicio-aberto']}
                     data-inicio={seg.mandato.instalado ?? 'recorte-do-eixo'}
                     x={seg.x}
                     y={BANDA.y}
