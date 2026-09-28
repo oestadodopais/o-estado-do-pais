@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { conferirValorUnidade } from './valor-unidade.mjs';
-import { conferirVerificacaoLegivel, conferirValorDeProveniencia } from './verificacao-legivel.mjs';
+import { conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -2546,7 +2546,7 @@ function valorRelidoAqui(valor, lang) {
   const s = String(valor ?? '').replace(/[\s\u202f]/g, '').replace('−', '-');
   if (!/^-?\d+(?:[.,]\d+)?$/.test(s)) return String(valor ?? '');
   const partes = s.split(/[.,]/);
-  return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? (lang === 'en' ? '.' : ',') + partes[1] : '');
+  return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? ',' + partes[1] : '');
 }
 
 const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
@@ -2610,12 +2610,12 @@ const ROTULO_DO_RESULTADO = {
   pt: {
     igual: 'igual à fonte',
     diverge: 'a releitura encontrou:',
-    inacessivel: 'não foi possível reler o número nesse dia',
+    inacessivel: 'sem resposta a esse pedido',
   },
   en: {
     igual: 'matches the source',
     diverge: 'the re-read found:',
-    inacessivel: 'the number could not be re-read that day',
+    inacessivel: 'with no answer to that request',
   },
 };
 
@@ -4396,7 +4396,7 @@ for (const file of ficheirosHtml(DIST)) {
   titulosDeLinhaConferidos += separacao.contas.titulos;
   cartoesComUnidadeConferidos += separacao.contas.cartoes;
   for (const erro of separacao.erros) err(erro);
-  if (claimDaPagina) for (const erro of conferirVerificacaoLegivel(root, claimDaPagina, linguaPagina)) err(erro);
+  if (claimDaPagina) for (const erro of [...conferirVerificacaoLegivel(root, claimDaPagina, linguaPagina), ...conferirHistoricoLegivel(root, claimDaPagina)]) err(erro);
 
   /* O endereço diz de que língua é a página; o <html lang> tem de concordar.
      Sem isto, uma edição inglesa construída com as palavras portuguesas passava
@@ -5576,10 +5576,11 @@ for (const file of ficheirosHtml(DIST)) {
   };
   for (const el of body.querySelectorAll('[data-correcao-claim]')) {
     const id = el.getAttribute('data-correcao-claim');
-    const n = Number(el.getAttribute('data-correcao-n'));
+    const indices = String(el.getAttribute('data-correcao-grupo') ?? el.getAttribute('data-correcao-n')).split(' ').map(Number);
     const campo = el.getAttribute('data-correcao-campo');
     aRemover.push(el);
 
+    for (const n of indices) {
     const modo = CAMPOS_CORRECAO[campo];
     if (!modo) {
       err(
@@ -5666,7 +5667,8 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    const esperado = String(corr[campo]);
+    const nomesDoCampo = { pt: { source: 'publicador', source_url: 'endereço da fonte', 'document.title': 'documento', 'document.edition': 'edição', 'document.locator': 'local no documento', access_date: 'dia da leitura', excerpt: 'excerto da fonte' }, en: { source: 'publisher', source_url: 'source address', 'document.title': 'document', 'document.edition': 'edition', 'document.locator': 'place in the document', access_date: 'reading date', excerpt: 'source excerpt' } };
+    const esperado = campo === 'field' ? nomesDoCampo[linguaPagina]?.[corr.field] : String(corr[campo]);
 
     /* Um endereço é texto, não uma sequência de algarismos. Só access_date
        muda para a forma da casa, reconstituída pela conferência independente;
@@ -5713,6 +5715,8 @@ for (const file of ficheirosHtml(DIST)) {
       );
     }
   }
+
+  } // Cada campo comum foi conferido contra todas as entradas do grupo.
 
   /**
    * -------------------------------------------------------------------------
@@ -6343,7 +6347,8 @@ for (const file of ficheirosHtml(DIST)) {
           );
         }
         const marcaResultado = el.querySelector('[data-linha-verificacao-resultado]');
-        const base = ROTULO_DO_RESULTADO[lingua][entrada.result];
+        const posterior = entrada.result === 'igual' ? (claimDaPagina.corrections ?? []).map((c,i) => ({...c,i})).filter(c => ['atualizacao','correcao'].includes(c.kind) && c.date > entrada.date).sort((a,b) => a.date.localeCompare(b.date) || a.i-b.i)[0] : null;
+        const base = posterior ? (lingua === 'en' ? 'confirmed the previous value: ' : 'confirmou o valor anterior: ') + posterior.old_value : ROTULO_DO_RESULTADO[lingua][entrada.result];
         /* Numa divergência o rótulo leva o valor encontrado: o leitor tem de
            ver o que a fonte imprimiu, e não só que imprimiu outra coisa. */
         const esperadoResultado =

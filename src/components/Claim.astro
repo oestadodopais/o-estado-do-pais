@@ -63,6 +63,9 @@
  *     `span` não é a nota da fonte: a nota continua a ser o campo
  *     `source_flag_note` da página da linha, e o selo continua a ser a porta.
  *
+ * C1d: a mesma forma mostra a marca e com source_flag_note, nas duas edições.
+ * A classe antiga conserva o desenho comum das duas ressalvas.
+ *
  * A ORDEM É: valor, unidade colada, palavra, selo. A ressalva prende-se ao
  * valor, e a porta fecha a unidade.
  *
@@ -80,6 +83,7 @@
  * (`InstrumentoConvergencia.astro`), e o que fazer com eles é da cadeira: está
  * na nota da etapa e em ISSUES.
  */
+import { notaDaBandeira } from '../lib/bandeira-da-fonte.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import Provenance from './Provenance.astro';
@@ -195,7 +199,8 @@ const valor = String(claim.value).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00
 
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
 const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);
-const provisorio = (claim.source_flag === 'p' || (claim.source_flag === '&' && claim.source_flag_note === 'Dado provisório')) && !TAGS_DE_SVG.has(String(as));
+const notaDaFonte = notaDaBandeira(claim, lang);
+const provisorio = Boolean(notaDaFonte) && !TAGS_DE_SVG.has(String(as));
 const estilo = escala
   ? [`--figura-car:${[...valor].length}`, style].filter(Boolean).join(';')
   : style;
@@ -242,7 +247,7 @@ const estilo = escala
       {/* RP1: a unidade marcada como campo cabe aqui, antes do provisório. */}
       {separarUnidade && ' '}
       <slot name="sufixo" />
-      {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
+      {provisorio && <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>}
     </>
   ) : chip ? (
     <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
@@ -250,7 +255,7 @@ const estilo = escala
         {valor}
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
-      {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
+      {provisorio && <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>}
       <Provenance id={id} lang={lang} />
     </span>
   ) : sufixo ? (
@@ -259,7 +264,7 @@ const estilo = escala
         {valor}
       </Tag>
       <span class="claim-sufixo" set:text={sufixo} />
-      {provisorio && <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>}
+      {provisorio && <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>}
     </span>
   ) : provisorio ? (
     /* SEM INVÓLUCRO, e o portão foi quem o ensinou. `auditaSelo()` procura o
@@ -271,7 +276,7 @@ const estilo = escala
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {valor}
       </Tag>
-      <span class="claim-provisorio">{' ('}{s.prov.dadoProvisorio}{')'}</span>
+      <span class="claim-provisorio">{' ('}{notaDaFonte}{')'}</span>
     </>
   ) : (
     <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>

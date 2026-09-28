@@ -3120,6 +3120,10 @@ a.badge-porta:hover {
 .historico-entrada-correcao {
   border-left-color: var(--ink);
 }
+.historico-cabeca .registo-salto {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .historico-cabeca {
   display: flex;
   flex-wrap: wrap;

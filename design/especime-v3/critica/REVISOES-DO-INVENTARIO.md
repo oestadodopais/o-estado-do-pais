@@ -470,3 +470,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | c1c | Seis cadeias novas e duas contagens retiradas | por ler pelo lugar de direção antes de aterrar | As cadeias novas dizem a bandeira provisória, a definição do índice municipal e a contagem efetiva de revisões de proveniência. A frase inglesa do índice evita fazer reaparecer o cabeçalho retirado «Revenue collected», conservando o sentido do literal da DGAL. As duas contagens antigas deixam de se render. A retoma inclui a proveniência do acesso europeu na contagem efetiva. Os rótulos dos recibos ficam documentados em prosa, sem alargar as rotas do inventário. As leituras do BCE e do câmbio continuam conferidas pela K17. |
+
+## C1d · segunda passagem de correção, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1d | Contagens atualizadas, marca estimada e frases dos recibos | por ler pelo lugar de direção antes de aterrar | Codex gpt-6-astra aplica os achados de `design/especime-v3/critica/LEITURA-c1c-2026-09-28.md`: retira as contagens substituídas, declara a marca estimada nas superfícies onde já se mostra a provisória e regista em prosa os rótulos dos recibos, fora das rotas do inventário. A prova das cadeias vivas e das retiradas continua no portão da voz, sem mudar as rotas ou alargar a peneira. |

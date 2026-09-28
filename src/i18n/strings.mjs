@@ -2166,8 +2166,12 @@ export const STRINGS = {
          uma, no bloco das verificações («Lido na fonte a»). */
         verificacoesK: 'O que foi conferido',
         segundaLeituraK: 'Releitura a',
+        tentativaDeLeituraK: 'Releitura tentada a',
+        segundaLeituraVaziaK: 'Segunda leitura:',
+        confirmouAnterior: 'confirmou o valor anterior:',
+        camposHistorico: {"source": "publicador", "source_url": "endereço da fonte", "document.title": "documento", "document.edition": "edição", "document.locator": "local no documento", "access_date": "dia da leitura", "excerpt": "excerto da fonte"},
         ficheiroRelidoK: 'Ficheiro da fonte relido a',
-        semSegundaLeitura: 'Ainda sem segunda leitura.',
+        semSegundaLeitura: 'ainda nenhuma',
         verAtualizacao: 'Ver a atualização deste valor',
         valorEmUso: 'O valor do título é o que esta página usa.',
         /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
@@ -2301,7 +2305,7 @@ export const STRINGS = {
         verificacaoResultado: {
           igual: 'igual à fonte',
           diverge: 'a releitura encontrou:',
-          inacessivel: 'não foi possível reler o número nesse dia',
+          inacessivel: 'sem resposta a esse pedido',
         },
         verificacaoPorta: 'Repetir a leitura',
       },
@@ -3693,8 +3697,12 @@ export const STRINGS = {
         /* Ver a razão na edição portuguesa. */
         verificacoesK: 'What was checked',
         segundaLeituraK: 'Re-read on',
+        tentativaDeLeituraK: 'Re-read attempted on',
+        segundaLeituraVaziaK: 'Second reading:',
+        confirmouAnterior: 'confirmed the previous value:',
+        camposHistorico: {"source": "publisher", "source_url": "source address", "document.title": "document", "document.edition": "edition", "document.locator": "place in the document", "access_date": "reading date", "excerpt": "source excerpt"},
         ficheiroRelidoK: 'Source file read again on',
-        semSegundaLeitura: 'No second reading yet.',
+        semSegundaLeitura: 'none yet',
         verAtualizacao: 'See the update to this value',
         valorEmUso: 'This page uses the value shown in the title.',
         reconferidoK: 'Verified on',
@@ -3726,7 +3734,7 @@ export const STRINGS = {
         verificacaoResultado: {
           igual: 'matches the source',
           diverge: 'the re-read found:',
-          inacessivel: 'the number could not be re-read that day',
+          inacessivel: 'with no answer to that request',
         },
         verificacaoPorta: 'Repeat the reading',
       },
