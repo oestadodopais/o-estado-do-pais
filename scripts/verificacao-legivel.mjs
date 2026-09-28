@@ -1,3 +1,14 @@
+/** A cópia independente da forma da data. Os restantes campos continuam literais. */
+export function conferirValorDeProveniencia(correcao, campo, renderizado) {
+  const normal = s => String(s).replace(/\s+/g, ' ').trim();
+  let esperado = normal(correcao[campo]);
+  if (correcao.kind === 'proveniencia' && correcao.field === 'access_date') {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(esperado);
+    if (m) esperado = `${m[3]}.${m[2]}.${m[1]}`;
+  }
+  return { esperado, confere: renderizado === esperado };
+}
+
 /** C1: ausência de segunda leitura e porta da atualização, lidas do registo. */
 export function conferirVerificacaoLegivel(root, linha, lang) {
   const erros = [];
