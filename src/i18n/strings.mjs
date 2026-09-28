@@ -1325,12 +1325,11 @@ export const STRINGS = {
       parcelaAcores: 'Açores',
       parcelaMadeira: 'Madeira',
       parcelaTotal: 'Total',
-      /* A porta do CSV dos 308, que sai da primeira página e assenta aqui, que é
-         a página que os lista (ISSUES I34). As palavras da porta são as de
-         `home.dadosLink`, sem uma mudada; o rótulo nomeia o que a coisa é, e não
-         o que a casa fez com ela (Emenda 15). */
+      /* C1: as posições para desenhar o mapa e as medidas dos concelhos são
+         ficheiros diferentes. Cada porta nomeia o conteúdo que oferece. */
       dadosK: 'A lista em ficheiro',
-      dadosLink: 'descarregar os dados (CSV)',
+      dadosLink: 'posições dos concelhos no mapa (CSV)',
+      medidasLink: 'medidas dos concelhos (CSV)',
     },
 
     /**
@@ -2165,7 +2164,11 @@ export const STRINGS = {
       /* RETIRADA A 09.09.2026 (decisão 17 da releitura do leitor de primeira
          vez): a data de leitura era dita três vezes na mesma página, e fica
          uma, no bloco das verificações («Lido na fonte a»). */
-        verificacoesK: 'Verificações',
+        verificacoesK: 'O que foi conferido',
+        segundaLeituraK: 'Segunda leitura a',
+        ficheiroRelidoK: 'Ficheiro da fonte relido a',
+        semSegundaLeitura: 'Ainda sem segunda leitura.',
+        verAtualizacao: 'Ver a atualização deste valor',
         /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
          data da última entrada de `verifications` desta linha, o mesmo campo que
          a terceira data de uma medida rende com esta mesma palavra desde a quarta
@@ -2287,17 +2290,17 @@ export const STRINGS = {
            lesse esta tabela, confirmava a tabela e não o livro-razão. */
         verificacaoPor: {
           'leitura-independente': 'leitura independente',
-          'painel-semanal': 'reconferência semanal do painel',
-          'revisao-cruzada': 'revisão cruzada',
+          'painel-semanal': 'comparação semanal com a fonte',
+          'revisao-cruzada': 'comparação numa segunda revisão',
           /* O corredor confere o FICHEIRO, não o valor: o rótulo di-lo, para
              que uma reconferência dele não se leia como uma releitura do
              número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. */
           'corredor-diario': 'conferência diária do ficheiro da fonte',
         },
         verificacaoResultado: {
-          igual: 'o mesmo valor',
-          diverge: 'valor diferente:',
-          inacessivel: 'fonte inacessível nesse dia',
+          igual: 'igual à fonte',
+          diverge: 'a fonte publica agora outro valor:',
+          inacessivel: 'não foi possível reler o número na fonte nesse dia',
         },
         verificacaoPorta: 'Repetir a leitura',
       },
@@ -3310,7 +3313,8 @@ export const STRINGS = {
       parcelaMadeira: 'Madeira',
       parcelaTotal: 'Total',
       dadosK: 'The list as a file',
-      dadosLink: 'download the data (CSV)',
+      dadosLink: 'municipality positions on the map (CSV)',
+      medidasLink: 'municipal measures (CSV)',
     },
 
     /* A gémea inglesa das 29 unidades (Emenda 20, 27.08.2026). «districts and
@@ -3686,7 +3690,11 @@ export const STRINGS = {
         publicadoEm: 'in',
         publicadoPagina: 'p.',
         /* Ver a razão na edição portuguesa. */
-        verificacoesK: 'Verifications',
+        verificacoesK: 'What was checked',
+        segundaLeituraK: 'Second reading on',
+        ficheiroRelidoK: 'Source file read again on',
+        semSegundaLeitura: 'No second reading yet.',
+        verAtualizacao: 'See the update to this value',
         reconferidoK: 'Verified on',
         releituraPorta: 'The re-reading rule',
         publicadoEmK: 'Published by the source on',
@@ -3709,14 +3717,14 @@ export const STRINGS = {
         contraCopiaArquivadaK: 'against the archived copy of',
         verificacaoPor: {
           'leitura-independente': 'independent reading',
-          'painel-semanal': 'weekly panel re-check',
-          'revisao-cruzada': 'cross-family review',
+          'painel-semanal': 'weekly comparison with the source',
+          'revisao-cruzada': 'comparison in a second review',
           'corredor-diario': 'daily check of the source file',
         },
         verificacaoResultado: {
-          igual: 'the same value',
-          diverge: 'a different value:',
-          inacessivel: 'source unreachable that day',
+          igual: 'matches the source',
+          diverge: 'the source now publishes a different value:',
+          inacessivel: 'the number could not be read again from the source that day',
         },
         verificacaoPorta: 'Repeat the reading',
       },
