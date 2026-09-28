@@ -1,0 +1,26 @@
+{
+  "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "imagens": [
+    {
+      "ficheiro": "depois-recibo-pib-real-per-capita-2025-pt-390.png",
+      "observacao": "A tentativa sem valor lido é legível e cabe na coluna estreita."
+    },
+    {
+      "ficheiro": "depois-recibo-evora-prr-execucao-2026-en-1024.png",
+      "observacao": "A segunda leitura declara o recálculo e a expressão está exposta."
+    },
+    {
+      "ficheiro": "depois-recibo-divida-das-familias-2025-ue-en-768.png",
+      "observacao": "A releitura antiga confirma 49,3; a atual encontra 49,2. A razão inglesa usa a vírgula."
+    },
+    {
+      "ficheiro": "depois-faixa-evora-pt-390.png",
+      "observacao": "O início desconhecido tem traço descontínuo; o fim conhecido mantém o contorno contínuo."
+    },
+    {
+      "ficheiro": "depois-faixa-evora-en-1600.png",
+      "observacao": "O tracejado do primeiro mandato está só na aresta inicial; o mandato em funções conserva o fim aberto."
+    }
+  ],
+  "falhas": []
+}

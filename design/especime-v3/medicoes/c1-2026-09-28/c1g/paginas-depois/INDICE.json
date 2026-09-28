@@ -1,0 +1,175 @@
+{
+  "estado": "depois",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "observacoes": [],
+  "cabeca_da_arvore": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "dist_construido_de": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "dist_construido_em": "2026-09-28T21:52:19.281Z",
+  "inicio": "2026-09-28T21:54:41.812Z",
+  "fim": "2026-09-28T21:55:56.400Z",
+  "segundos": 74.588,
+  "copias": {
+    "livro-razao_factor-sustentabilidade-2026_index.html": {
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "familia": "recibo-factor-sustentabilidade-2026",
+      "lingua": "pt",
+      "sha256": "3854e2f41b55518d1018993c9f51d1c36b56181082f8e244063da52b969c807c"
+    },
+    "en_ledger_factor-sustentabilidade-2026_index.html": {
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "familia": "recibo-factor-sustentabilidade-2026",
+      "lingua": "en",
+      "sha256": "c44a2ce80eb8f23b93ba7233d491728e7073434736f01bfafaad1e4ef30cd7a4"
+    },
+    "livro-razao_penalizacao-antecipacao-um-ano-com-factor-2026_index.html": {
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-com-factor-2026/",
+      "familia": "recibo-penalizacao-antecipacao-um-ano-com-factor-2026",
+      "lingua": "pt",
+      "sha256": "608b23c6aef8006069b2eaa57248aa8b2633a64b57875d239f4863bf2dc952c1"
+    },
+    "en_ledger_penalizacao-antecipacao-um-ano-com-factor-2026_index.html": {
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-com-factor-2026/",
+      "familia": "recibo-penalizacao-antecipacao-um-ano-com-factor-2026",
+      "lingua": "en",
+      "sha256": "b23fbdcd2b795dc6d8fa8ed1258c8926076e2a485a8d835da1868c1ae0d7d1af"
+    },
+    "livro-razao_penalizacao-antecipacao-um-ano-neutra_index.html": {
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "familia": "recibo-penalizacao-antecipacao-um-ano-neutra",
+      "lingua": "pt",
+      "sha256": "5e3ad85c242f1aa1551b9544940cc15cfd74cf06c0c8791d1753d33b0a85100e"
+    },
+    "en_ledger_penalizacao-antecipacao-um-ano-neutra_index.html": {
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "familia": "recibo-penalizacao-antecipacao-um-ano-neutra",
+      "lingua": "en",
+      "sha256": "1e75e8d36fa596c510e564b459477ccb74d3d14b34d1369d58c5086ea66c8303"
+    },
+    "livro-razao_penalizacao-antecipacao-um-ano-sem-factor-2026_index.html": {
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-sem-factor-2026/",
+      "familia": "recibo-penalizacao-antecipacao-um-ano-sem-factor-2026",
+      "lingua": "pt",
+      "sha256": "ddf999df70485cbef7823e453bc457e8a1738327d1452ca3905a8d295a6e0141"
+    },
+    "en_ledger_penalizacao-antecipacao-um-ano-sem-factor-2026_index.html": {
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-sem-factor-2026/",
+      "familia": "recibo-penalizacao-antecipacao-um-ano-sem-factor-2026",
+      "lingua": "en",
+      "sha256": "f13a5b9c6227e98e3f2ef822b7e773803d3d4e35c7251d27a165bb3a5f4a7355"
+    },
+    "livro-razao_pib-real-per-capita-2024_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2024/",
+      "familia": "recibo-pib-real-per-capita-2024",
+      "lingua": "pt",
+      "sha256": "35040af3cc64172a8c47fab16c72028051b05103937ed5224de19693d441a81e"
+    },
+    "en_ledger_pib-real-per-capita-2024_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2024/",
+      "familia": "recibo-pib-real-per-capita-2024",
+      "lingua": "en",
+      "sha256": "471e37b94537bd684489ac26ca3229dc3a315fb8d0fe5cc7eb6c6db28925ac6c"
+    },
+    "livro-razao_pib-real-per-capita-2025-ue_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2025-ue/",
+      "familia": "recibo-pib-real-per-capita-2025-ue",
+      "lingua": "pt",
+      "sha256": "d20d4f4ec68c5a22e01ae5b919fd7792cb76bbd665ab25f477bd4abde036e841"
+    },
+    "en_ledger_pib-real-per-capita-2025-ue_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2025-ue/",
+      "familia": "recibo-pib-real-per-capita-2025-ue",
+      "lingua": "en",
+      "sha256": "106aaddcade60a9b76296453af6a3ff541c70a7e2fccbfa8eeb9e96214507d57"
+    },
+    "livro-razao_pib-real-per-capita-2025_index.html": {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real-per-capita-2025",
+      "lingua": "pt",
+      "sha256": "52f6b9556f40361e2c51c4d58152c0b6c2a74b538ec2017bc8809dfe5894f474"
+    },
+    "en_ledger_pib-real-per-capita-2025_index.html": {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "familia": "recibo-pib-real-per-capita-2025",
+      "lingua": "en",
+      "sha256": "d99888e458a92751b31cde906cbab337a8c8792696619a862f869801e329efee"
+    },
+    "livro-razao_evora-indice-de-divida-2024_index.html": {
+      "rota": "/livro-razao/evora-indice-de-divida-2024/",
+      "familia": "recibo-evora-indice-de-divida-2024",
+      "lingua": "pt",
+      "sha256": "d1420c2d0d7c058e59a296e670bcc3d6856391df4fb8209e0b7b36b3ab51ba86"
+    },
+    "en_ledger_evora-indice-de-divida-2024_index.html": {
+      "rota": "/en/ledger/evora-indice-de-divida-2024/",
+      "familia": "recibo-evora-indice-de-divida-2024",
+      "lingua": "en",
+      "sha256": "1e31be6207f6ac83603e23ee35fa63f099993991295aa72641acb255106da246"
+    },
+    "livro-razao_distancia-portugal-ue27-2024_index.html": {
+      "rota": "/livro-razao/distancia-portugal-ue27-2024/",
+      "familia": "recibo-distancia-portugal-ue27-2024",
+      "lingua": "pt",
+      "sha256": "4cae14c0dc455edfc48c481e3285c93eccaa2b3783da68ed91f619c7ff7803a7"
+    },
+    "en_ledger_distancia-portugal-ue27-2024_index.html": {
+      "rota": "/en/ledger/distancia-portugal-ue27-2024/",
+      "familia": "recibo-distancia-portugal-ue27-2024",
+      "lingua": "en",
+      "sha256": "93db5dc7d14c2121b48961f344e7a9e94c8f02a2b5e04b12f8d1eef8adad8776"
+    },
+    "livro-razao_evora-prr-execucao-2026_index.html": {
+      "rota": "/livro-razao/evora-prr-execucao-2026/",
+      "familia": "recibo-evora-prr-execucao-2026",
+      "lingua": "pt",
+      "sha256": "c064a66da552899392b663b0a062b0a992a993ac1d87efc1c9119bc9c341d6df"
+    },
+    "en_ledger_evora-prr-execucao-2026_index.html": {
+      "rota": "/en/ledger/evora-prr-execucao-2026/",
+      "familia": "recibo-evora-prr-execucao-2026",
+      "lingua": "en",
+      "sha256": "c14e4502199b55dce3ed8f4e9b33cdca2a78bbf055e7b88c62bd99766b93b093"
+    },
+    "livro-razao_divida-das-familias-2025-ue_index.html": {
+      "rota": "/livro-razao/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-das-familias-2025-ue",
+      "lingua": "pt",
+      "sha256": "1a47059162aecc045a46b7aeaea7f84231b4414fc2cf8c883866735dfdbb9170"
+    },
+    "en_ledger_divida-das-familias-2025-ue_index.html": {
+      "rota": "/en/ledger/divida-das-familias-2025-ue/",
+      "familia": "recibo-divida-das-familias-2025-ue",
+      "lingua": "en",
+      "sha256": "46cd523e2f75e8a5bad3f44bff1a6da8ed7e70155b002a7b579fdccbe03d9201"
+    },
+    "municipios_evora_index.html": {
+      "rota": "/municipios/evora/",
+      "familia": "faixa-evora",
+      "lingua": "pt",
+      "sha256": "323691181444ec2495d32c59c0b631cf2c2870885d5103123fd0e909a7a69e50"
+    },
+    "en_municipalities_evora_index.html": {
+      "rota": "/en/municipalities/evora/",
+      "familia": "faixa-evora",
+      "lingua": "en",
+      "sha256": "a4f98aed1c1092ee8b1a0d715248d434d55cc9315ba1f02620a1b749bd1e4c0f"
+    },
+    "_astro/Base.BMDRfXGM.css": {
+      "origem": "/_astro/Base.BMDRfXGM.css",
+      "tipo": "folha construída",
+      "sha256": "6fbb0f4950c8b52e3141283bd278dd8ce1218b11a79a9598b8ef2ce644d18d64"
+    },
+    "_astro/linha.kwcknRfj.css": {
+      "origem": "/_astro/linha.kwcknRfj.css",
+      "tipo": "folha construída",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    },
+    "_astro/lugar.DQAkNk1H.css": {
+      "origem": "/_astro/lugar.DQAkNk1H.css",
+      "tipo": "folha construída",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    }
+  }
+}

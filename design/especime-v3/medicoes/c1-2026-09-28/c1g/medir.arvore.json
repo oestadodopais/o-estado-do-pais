@@ -1,0 +1,1019 @@
+{
+  "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "limpa": false,
+  "diferenca_sha256": "a5adcbbbb017688c44ea44682d51463bea75792fe82adbf67910215219df2dc7",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "sha256": "76040d3d02c815b1ff7b642c700ae19d506d861a95cfb699c1585ddd87f069ea"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/RESPOSTA-codex-c1g.md",
+      "sha256": "5bb544a123ea2cf65ee6dc0a0276027fb5b4781aec1874ba652884b90b5afa55"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1e/custo.json",
+      "sha256": "6356ffb004bc9325e2be019bfd3d4864b391d7fa14fc756945a48c51ea18a0d1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/custo.json",
+      "sha256": "a3ee801ff8818b3282773914f60fb1b472516dde83de478c8109292e095e3c6e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/medidas.json",
+      "sha256": "aa161bf3d5eb29d2db4a61fe7f4fdc1f7254fcbf11a38e8cfb7c2e6a2ebcfa3b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.arvore.json",
+      "sha256": "a92226a32303a638c6a5c6c879bc3c868d7a15fcab398e0fcf81d52ee028edb4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.cabeca",
+      "sha256": "8635e7c610d8e0812bca88fac128b214113e35aabefc7a296e36d804d0b287af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.fim",
+      "sha256": "ee57b84211e8e78364dd7b317742b23ca780d68f95bbafd25245d6a5f4ed9124"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.inicio",
+      "sha256": "33c64fa77fa886abedf8b9943d01cc7a53ba84530b0f53dc9bc67986c07a82e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.json",
+      "sha256": "6fbeb1b5a6942db77bc2ba217317f539fdc4b526ede96fc09abaf5f1237c4811"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/acessos.log",
+      "sha256": "6fbeb1b5a6942db77bc2ba217317f539fdc4b526ede96fc09abaf5f1237c4811"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/afinar-prr.py",
+      "sha256": "3b3e74e85626f24b02384c36470efb7f4db62e94587aa510e0a25755b76b2345"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/amostra.json",
+      "sha256": "78a2bc8e533e2624c8df5eb541651157fe663032c48fab605d890f4202ee0c73"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.arvore.json",
+      "sha256": "8ca2349ab1d196089f4f165f8a57f56c976f94aa6b492da6b5b33da23f925ddd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.fim",
+      "sha256": "e5e2faaf09603c36d8d24c6100edc71af106fdd63c7450e7d6721b89d9848dcc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.inicio",
+      "sha256": "30c129e84f3499e267b5d6b7817da9ed0c7c52cb09b6d42c7f9fbc580d0007bd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.json",
+      "sha256": "74dacbc5e881e7ef21688fe3511bb2dce901b25889f5f464d0965b4a79effee0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/calendario.log",
+      "sha256": "74dacbc5e881e7ef21688fe3511bb2dce901b25889f5f464d0965b4a79effee0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.arvore.json",
+      "sha256": "03ce7c00a6251cd06531d3ab35f6d46be6575ddcc78defd9255b81053dbccd55"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.fim",
+      "sha256": "379c6c5d76deeac7559e80b21032976e9ae36208c3cdd8dc399d877d650fa140"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.inicio",
+      "sha256": "4b91c2cae51ce2948e3c60380fa51a3999f127acfee3b5bd8c6473da4c2f23ad"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.log",
+      "sha256": "77fcf83de8a1af01e9df9c973f3991daf29f98621f50dec67279f24e96984c18"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/captar.mjs",
+      "sha256": "1e271dea740d2ab94bc26eba2edcf1f9081a370e3d197d8dce8c9d8ffebd6fb3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas-depois.json",
+      "sha256": "eb47750ed6eadb50f6aa03350bfe51e5320ee33c99d1a332c54c3b7b6ecd348e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-en-1024.png",
+      "sha256": "ff683d70d9c3e7d9b8f051cb440221d0d12bfe21b27ead3974c0f75f84867ea6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-en-1280.png",
+      "sha256": "28af10188fb4321af684b5664857db469ba243083016983595b971a1d6c866c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-en-1600.png",
+      "sha256": "968c7503c9525a28b24de782f674f305446a6515c7c004d60ae2ce7c8f2332b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-en-390.png",
+      "sha256": "b9f02a5ba17462f1f27ba363d14c82c53ceeee918491f15cf07d0de7abe3e508"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-en-768.png",
+      "sha256": "39474a65be830f311faaeea8ff850bbf080e8f28e58d71c1330536cf2127fbe5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-pt-1024.png",
+      "sha256": "b2a9056e0b07082f1412fd777ac4e64455f9d5580ef085a70f485e7d68ae577e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-pt-1280.png",
+      "sha256": "6ebe0cc58939a9e9f8ed196122c274678caaece52f24783d2598f8338a37f456"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-pt-1600.png",
+      "sha256": "1f33f2a104d137fef1808209e3b2f3da0a04e2a5914c625d04017c4aa147d98e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-pt-390.png",
+      "sha256": "b958babdb4a39587157e6ace40de1170df01effe3a0c69fd8920840d2ac4c6c7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-faixa-evora-pt-768.png",
+      "sha256": "caaaafd237d03f6b5c030099a78868d32da68163697431b49f5f16a4cbf624be"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-en-1024.png",
+      "sha256": "ac7971689aca3935b01c3c13ee0bc005ad06a450cc6982618ba48dea4b437ed0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-en-1280.png",
+      "sha256": "4eff979c4339221b735e41ad6c69d2b6793858aa6f585dda62a60f37231e4333"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-en-1600.png",
+      "sha256": "b1cc8db748bf05a436b3c03c3f7ef7ae9d08aa1395242602921176780e218051"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-en-390.png",
+      "sha256": "bb27afdc5577a17b89616a9590bd805846be8249caf17cd88764d86ebcc5a18b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-en-768.png",
+      "sha256": "1d826737066ee8b8a59e1c33304164eadf7b5f13a0e77ee04d77c5667f882f3a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-pt-1024.png",
+      "sha256": "d662643538e3f1f1d9ca064ef591690ec572fd31784df4be6f8a55d298dbd0e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-pt-1280.png",
+      "sha256": "daf7870ac3fa4f694eb2178461c7aa942e43a24a6069ae6add16670a987cd949"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-pt-1600.png",
+      "sha256": "616a5bcbb0cfdb5c7affb28e6a30c11eb3f5f06b1b23a9e1bb140bf55f27ce68"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-pt-390.png",
+      "sha256": "0f0c59762786a91cb19d3c42fc5b526484448909ef4ec6867c6eebbf47012433"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-distancia-portugal-ue27-2024-pt-768.png",
+      "sha256": "f6e09f92f3fc9dd3d90d6133cb42a4966d1254d47810343fa5f8ce8f9c31e6a3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-en-1024.png",
+      "sha256": "74e19ce5cf53addda9b41dac5951467e818d5b65f59d869b3ab5561cdc64371f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-en-1280.png",
+      "sha256": "889891342384d6961fec728e9103f3e2808e5e669e38e4c5b9e54744ca40cc00"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-en-1600.png",
+      "sha256": "73dd693ab9a39d5b61cbd740240ddfb765918abbf47694ec2ca23391ef7af5f6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-en-390.png",
+      "sha256": "d7496d1409ef6c1e52d9f63b88fec9c5e26c098063c049fd7b522201f17ecaf4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-en-768.png",
+      "sha256": "94b99063b012bba63de51f7f7a8008723a7a57a8190b9d460b5b9afba54233e8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-pt-1024.png",
+      "sha256": "7f649cf71a407f65629678b868aad0ad88d776864b5ac0d7f113f73875025b97"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-pt-1280.png",
+      "sha256": "32018263934322823efe9b7ea61c4e2dcae1c7f6ba05f672fc604c1a1d774354"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-pt-1600.png",
+      "sha256": "741b26eb6d738c8251b75c37be646da9f7a6ade78b9ac98bf75171eef8868d9e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-pt-390.png",
+      "sha256": "7499f77a5bd0c38e20eb3928a157ac140e829aa12f406e5199a905bb09dc0dc0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-divida-das-familias-2025-ue-pt-768.png",
+      "sha256": "11767b5048883d2fd584cc549d9980f7ebc900284198bf31395a972dce245f7b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-en-1024.png",
+      "sha256": "704a52e2da32a92955d212cfc5e657d2fcb0b9e3a613d67edb35021ba93669cf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-en-1280.png",
+      "sha256": "0b5872915a15627cd27ec8b7deebed99a2c234bd5c52c90db8beec1240a9a4d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-en-1600.png",
+      "sha256": "1e19efa6fc5582b11a321201062dbb1044849f9c1ffa822cfa3bc89d0fa78c6a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-en-390.png",
+      "sha256": "43cdb48c21c7767ea23f5409d87310c7759bec676860bd9261628fd069861b8d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-en-768.png",
+      "sha256": "5e50c93dff7ad576ccdcfb5ec743356ff37926fbfb73757ac7acc10bf6fc5f4a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-pt-1024.png",
+      "sha256": "7add28a2312179af4b3cde18d626ca8ad7b41fc5f5fda29e01f23d08b733912e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-pt-1280.png",
+      "sha256": "48f6e86af46ca57e0b367aaf605a4f8f720e006f7c0aea67bc6735fedb9f6b07"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-pt-1600.png",
+      "sha256": "d85596463930018f8fc5ae5d8739de86fc61368f890b3516a031b1af3b0dbc3e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-pt-390.png",
+      "sha256": "81d11432254cdeae0c0e1c23101fcbfd70a5bbe54ba5386e6dbe3c081940361e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-indice-de-divida-2024-pt-768.png",
+      "sha256": "4740f881cb65590ada64ac1d920a236f1651a0f07147e34024833999c7b8a490"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-en-1024.png",
+      "sha256": "d8d5fbdfbb03b4a8a3d9e7b5c8ceaf8e3fca9fba1508f5564004448004682859"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-en-1280.png",
+      "sha256": "fdcbf86b680b3a8d99bbffb531c47fe95dea34b20a793a26525ee45345034a8e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-en-1600.png",
+      "sha256": "708ad0f4a684e43d89e9a2482428054b580606d4a10fa5ee74be71cf2996817f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-en-390.png",
+      "sha256": "7f6f176074ba6ced61a1fa0bb230c5a858f0b6dc3511fb5cd481f9723a1fe2ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-en-768.png",
+      "sha256": "ae973d76e235a908edc2b0b7bd86c84573cc85b1516010ffc5b4f095a26f2e1e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-pt-1024.png",
+      "sha256": "3fa85bd8d97cd243a7e1f3cc2200edf10f4fa9a916e1afe4a7e845f61aa034bd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-pt-1280.png",
+      "sha256": "ea94a64f6f1e757c0c17f0808e25857596f0ed5ca9d06b85743c66ff5abd198b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-pt-1600.png",
+      "sha256": "631c360321c86b36292b63abf46a9c4c5e2fb6f8b1162c8303cb8c929f5bb0d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-pt-390.png",
+      "sha256": "9a7afdc2e6a6f6656adb0dd7dc119e167e92a8e3e5467f937cf57c7a9abf1767"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-evora-prr-execucao-2026-pt-768.png",
+      "sha256": "e3587591458bd6f2b277fa624e5519a5caf64cf685ef4c53e53861681ddb846a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-en-1024.png",
+      "sha256": "69a17af82e98c4be2428e3b23d71ce1cd6194b6f6bed406d036b08ff4686557a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-en-1280.png",
+      "sha256": "67cc7e862b7fd608231cb940b177e9a9462478bb8f58020cfa57423a2a7c03f8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-en-1600.png",
+      "sha256": "1186e1fef0f06e940f3029b3a84c299e9af96e7b8bd910a6c42fdb482e3e7e57"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-en-390.png",
+      "sha256": "63290ce69d8c6565cea771640af0356f31157ba59fc6aa21b3d6c639af12d1f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-en-768.png",
+      "sha256": "e0796946f6b81dc13dbc621ca2d3ffc13ad665b7f565eedb0be85ee2413d1374"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-pt-1024.png",
+      "sha256": "7215c08e4aaa98626db5c67a8a1ccb76007205bd7282953ad14fbf42b36656d0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-pt-1280.png",
+      "sha256": "3ed8dd9c9c9dc7fdc6a53652c47a2bc6de5b9a28ac5e00ba59ce2083f9b9bc6d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-pt-1600.png",
+      "sha256": "8a7a7959346ff4d465f6ed2dbf5738c49f271b0ababf6e82e040cfd758c7b7ee"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-pt-390.png",
+      "sha256": "cf6e83bcd1b141807bbaeab48b7eb56ba9726260ee0fdaf26b88aa945516059f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-factor-sustentabilidade-2026-pt-768.png",
+      "sha256": "ecf63954b242a58e5c0a31035d0a65bd4543315a57d5a24a829a64a209af36a3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-en-1024.png",
+      "sha256": "d4970127256d662dddbb0bfed7b1e8786439473867fd862004ed48c538aeb8ac"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-en-1280.png",
+      "sha256": "c90f76340d34f7b0b2cd4eddd3ef88a87060311faff79cc69146ded889d7e845"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-en-1600.png",
+      "sha256": "f491e3bba63c50b871beb98efe3f846d6ba4fbce36f36e4af7fbc2d2be747471"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-en-390.png",
+      "sha256": "4270ab4e2ded03473aebc0f662d799a7aaeecab137f5fcaa328cf58d5f0c5d6e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-en-768.png",
+      "sha256": "48cf8c1dd0cdd3f603d52eeb815e6179c67ee5ee05b234397d8a4734b0179afa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-pt-1024.png",
+      "sha256": "8e286c1f38567983371f0408392b5a13c74ba039cc90a10e50672ae809a9da85"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-pt-1280.png",
+      "sha256": "084a08193c773ab328246dd57816439c2240997651b79099e731c634b4a58408"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-pt-1600.png",
+      "sha256": "e5987643c0d05b3e9b38d7febe12cb5427309fc0aafa1117b4e7b3ef64f28b99"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-pt-390.png",
+      "sha256": "d0bba0a5a3eb47c0d2a9d2086a59346bfcf4ce9fb748baf325cc8518164e6431"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-com-factor-2026-pt-768.png",
+      "sha256": "1aeff3ad580d2caf1c8c0ca57f88b78131b35ae07c4e1b3891fec97e981845c3"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-en-1024.png",
+      "sha256": "17343de19a1dacec21dcbdd54462726bf95b951c702e8be9b8afc4406b1df20d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-en-1280.png",
+      "sha256": "75dcb0686f4d4fddd49eea4a8313a9b445d1835137423cdc846c1064755a47c1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-en-1600.png",
+      "sha256": "9c80970ff83e20339f4b4f56ac4659c14b8fdbfe679f359c441557a846be435a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-en-390.png",
+      "sha256": "4e842962b41af2b5e4dcbcbf0af8be4f3cc191cc27e39ca6d8a9aaf85c567349"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-en-768.png",
+      "sha256": "040d76be4a022c2ed87e62694f1901c8c781e519e64192441b3d5a9f49897123"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-pt-1024.png",
+      "sha256": "ac5b333b857fb1ebcb45d90c335c925655056b434f75ef11c78ef58d7b8adbbe"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-pt-1280.png",
+      "sha256": "40be2a633b4093a2e1607c2adf3bd942bd3d0d7563ed6d9694ff9ee4add36cf7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-pt-1600.png",
+      "sha256": "45929c0f8c861c055450a702f2e258a343f325147f1de35acaa57065bad60b64"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-pt-390.png",
+      "sha256": "1477f45afb38cdffdbe252f44effa2d55b089e89bcde3b6f259a6ebc4fb27901"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-neutra-pt-768.png",
+      "sha256": "227f784edded4d3b97dcfe41061a3d80d6f0718dd5187bbd21f8f2ed743ac122"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-en-1024.png",
+      "sha256": "c6b3129d104147d165033e5b5e7eba1d0510cceaed8afb6c0fa1909691873a00"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-en-1280.png",
+      "sha256": "57fdefbbbfc65c853274b5dd312ecba854c3585bfd8f776e8bdc60e189e0d047"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-en-1600.png",
+      "sha256": "eeb1f1eea22c9dbd6067156029ff58dda40eeb89f01dbc02d798fa59684bcf0f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-en-390.png",
+      "sha256": "8883b79c3db1bca213078fc620ccd56f0b4bcf84ba1484ea35e7d61614b793f1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-en-768.png",
+      "sha256": "c00b544fd2aaa0b6bee07e3682e1f692de8a43ee91999f63a92e3cd52699f1f1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-pt-1024.png",
+      "sha256": "4a7b78773f7dc6fdf5cfa2a1d5ce9a0f30e8139d345fc7c9ecad020e848ec548"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-pt-1280.png",
+      "sha256": "6d35ed943d794a03e9105b11a0188e5cac579f9f9d13525ea55197cb3767bef1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-pt-1600.png",
+      "sha256": "4073a7b1e92d4e224326284fa2a89de92dd1aeb5c83f744b83ebe06a04ab1b42"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-pt-390.png",
+      "sha256": "d2b561814e5a7aeb518bb64cd4e3160865331516429c34242e201359587c27b2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-penalizacao-antecipacao-um-ano-sem-factor-2026-pt-768.png",
+      "sha256": "cf84d5549f3cbce945c5da1df37fc14a9d316d725a1c8e4bd3fb592aee4e5c00"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-en-1024.png",
+      "sha256": "0380d03c54b98f06997d8de3a6fead65d7fbff04c230a682aa247987adac770e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-en-1280.png",
+      "sha256": "2ab0c16783f8da19363d8186ee9b09ff05faa2d2f22ac066e5cdac4896fbe6b4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-en-1600.png",
+      "sha256": "eb2ae8493b65ba93e239675eca8606c028d03581a52bfef5b9384259eb1641a5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-en-390.png",
+      "sha256": "d9d6c0dc269350841b4f8cfc0c7f78d6f2bc26e79abaff4f451d2eef702f8fb8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-en-768.png",
+      "sha256": "baad3236e1ed905c1fba43a31fbf88e3717111fcdb01df2f292e14cb2c662149"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-pt-1024.png",
+      "sha256": "b33c87fbd122a2f3ec3019b2eccd49f2853318e5f33aa138bcced989714ad68a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-pt-1280.png",
+      "sha256": "654100e8b6d3356ffd737e9ee9216ac4d1989082881ecfd636a1f51c0a2f953e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-pt-1600.png",
+      "sha256": "177ef754405ce1b6452299a3e97d954e6139e8cd05a0454561c82b94108f4c8a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-pt-390.png",
+      "sha256": "85a2774f6e8bfa3db8de9b3cb45ea78a331da8bb8e9fda4b9213435970c93256"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2024-pt-768.png",
+      "sha256": "129681204882ffd5d2a26a2a36cf6a60dc12869dfc419c6640f8548fd36e319a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-en-1024.png",
+      "sha256": "d276446bf8f0dc9ddf4a63f9ccc4e23d365a6633cc23d840d75ed0c594a5bda9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-en-1280.png",
+      "sha256": "221d7be13fbad6e1f19f33d229787e3997ea180b01a1f37decf432beafccbbe7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-en-1600.png",
+      "sha256": "8f1860fc7c440d628c0b8e478c21f0d7f6bf2ca3764628908e501791d918f07b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-en-390.png",
+      "sha256": "159704234ec691384d98a8949363937cfb0a3de120e7d397f9738b8a169366cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-en-768.png",
+      "sha256": "8f025da8c8acd0bb12f95fbd521a9ca905474ea33d97ba09db51c3fd6b0bbabc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-pt-1024.png",
+      "sha256": "727cc6ef4d60d4af86496801fbdc57d068d3fbc1004f20b22a7cf906ab9efb53"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-pt-1280.png",
+      "sha256": "90f2e1335b98df5f57326231e53450ed003f01d6d097502b860e33bd414bfe34"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-pt-1600.png",
+      "sha256": "5276fa5bc26117a45b7a366de4487a69733eda194abe8efd4625f6a568a095d6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-pt-390.png",
+      "sha256": "2353e7360b7c66ab7035ed79cb9b064b0fd6060dd272b49ac0ce99ca1ce7e074"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-pt-768.png",
+      "sha256": "7faf08d0bf275d4ff173fec09d1a2327eda4dbcbcca2be20c2e5dfe469009c88"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-en-1024.png",
+      "sha256": "a7a0a2d5abe43760d52cdb0ffe3378fddcda046ab160fb35fb93b90ecb1797b8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-en-1280.png",
+      "sha256": "0c6e7ad3dc894e4f541e0155670e218d1e878823cfc5803b8ed299b7d9989f44"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-en-1600.png",
+      "sha256": "4dc6d574421620dbb03595824742a3a6218cd815dcc9b9311c44b2b428fc31e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-en-390.png",
+      "sha256": "8e8999a048662bf28791d4569a03c63f1aec93761e9b3a6f1554a811e98bab33"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-en-768.png",
+      "sha256": "0fb0bef05437d91ff1eb605d7909239ce7cae2c3ade3e9b2a321f841ed178d0e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-pt-1024.png",
+      "sha256": "3300f63441b32fffe3be6100c19d6b2ff6c6caab096606727fed5bf8860a698d"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-pt-1280.png",
+      "sha256": "311a5b4af9c2ee641a8311e2bc387ec577a8794fc58562306bf3ddeceed832e2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-pt-1600.png",
+      "sha256": "3b85cd38f2b30240601674713748073248296bda077cb37d645c63429590b8ba"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-pt-390.png",
+      "sha256": "b8ff9c25aa728f20d835d7efe30f0675e1c86a6a82586fa0bdf3ecc2b306c69c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/capturas/depois-recibo-pib-real-per-capita-2025-ue-pt-768.png",
+      "sha256": "b9ed5a41190ccc8219a44bbe95ab4b60c36fa97b1ba829bf1bb6a1a1a5b77473"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/concorrencia-build.json",
+      "sha256": "126baa38b01f669c8e7b779116571f15f7a7637ab4eaca0ec3bd406715459e84"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/concorrencia-typecheck.json",
+      "sha256": "3cc11f12d9b9a22531aaddce72a9dc76e3fedd4d711a95c30f4e0673c113c000"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/concorrencia-verify.json",
+      "sha256": "1dfb8fa508b8a3b4064c3d2c0ea6421344971b10e314b5710d3846506e704e6f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-concorrencia.py",
+      "sha256": "acb587ac18760ea2a8ac255812d685dccdc497056ecb3e11a28f8e93c6d85d07"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-relatorio.arvore.json",
+      "sha256": "f9a695bffa13c47866ef20147c0b8018cb4f218bd8eebe681513b1576e2807df"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-relatorio.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-relatorio.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-relatorio.fim",
+      "sha256": "82ff9b5c2959b466780a8ed9e593d152e651a0037621bf3b4f92a2f660cbfa71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-relatorio.inicio",
+      "sha256": "b8c72cbeadddec40a570dfa3266b31e330134f622e561448012c2f5fd96850bb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/conferir-relatorio.log",
+      "sha256": "6b52bc6349cf9be9a43486a055eb9725f0fd942732e7c35fb0dfef3ce78d45bc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.arvore.json",
+      "sha256": "3720811c765955d3db134163cf4954922b1e33dfd424680f7ac2d75178d7d58a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.fim",
+      "sha256": "2add07cc8956be833208b61cc1e5be0870ae55bb3ef591a73cc42654290a6b62"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.inicio",
+      "sha256": "d7ea373262c2657f29749761c71c26941f4b8a58c0da8c137be7e50e753a3328"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.json",
+      "sha256": "7ec41c21486f707570db1d73cb8fcdc007fbb0c8a2b951f4599f0b0100c7c6fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/confianca.log",
+      "sha256": "7ec41c21486f707570db1d73cb8fcdc007fbb0c8a2b951f4599f0b0100c7c6fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/correr-quando-livre.py",
+      "sha256": "25b16b82a8ecbf1536c9d35e2e7292686c54c5bda4d70ccf9b83e30564629786"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.arvore.json",
+      "sha256": "5e926b106cd28e3988af1221d506fdb5ac3b56b736846190675a7001984e627f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.cabeca",
+      "sha256": "8635e7c610d8e0812bca88fac128b214113e35aabefc7a296e36d804d0b287af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.fim",
+      "sha256": "c5ebc228dffbc7652b8e2a1a4a42eca32d61fe7cd07bf82fec3b5160cd6de64a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.inicio",
+      "sha256": "a73a7f0c6bb035f37aa5bcd830f821ecb230307a12f9e8ff6ffdaf55f29795a1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/cruzamento.log",
+      "sha256": "e0cc7c5b503c1e2ded9463d13a4678d27e5826e2d44722a0b68008f0d8af79ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/extrair-portao.py",
+      "sha256": "d2be73bce97c94270011a3ec1acc09ddcb1a3d0e5cb55c9a1468d144a8565e35"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/inspecao-visual.json",
+      "sha256": "7140f4de6f5ba3d1382548b26ce21767c69a80435d8049d17b746ad50ed8c23b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medidas.json",
+      "sha256": "514c6481ef757df0de18e9f13d12f78a8fabcbb1914d6fb6cb0a3e328ccd9daf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.arvore.json",
+      "sha256": "ea7a975fb36c44cc34c62446a182d948f5d41d9ac0d9853c8542d3bffe8802dc"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.fim",
+      "sha256": "81b67833a514298661ad8ca9b42f0905cafd648a5cee231ceb0dff10057038e2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.inicio",
+      "sha256": "6ff2b6cf3fed446ce6116c0103e7e884c29a4322a7b54fded26e1a8c46ef6c1b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.log",
+      "sha256": "9343ae0c912be3df072366a961600035bc7c26ee1605c42fda7602324a026632"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.py",
+      "sha256": "6e3c5e18eeb1bbc9f540f85c676d7c5d7af4ccb6f0304517f9a8895000b3050a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/INDICE.json",
+      "sha256": "314172829c83b2637289224a024ed6b53ecce9be28fa786118e26c22e0331306"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/_astro/Base.BMDRfXGM.css",
+      "sha256": "6fbb0f4950c8b52e3141283bd278dd8ce1218b11a79a9598b8ef2ce644d18d64"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/_astro/linha.kwcknRfj.css",
+      "sha256": "63b241241ff4dfad66526d87d3702dfd93145ef3d6769582ba619d4646321ed8"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/_astro/lugar.DQAkNk1H.css",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_distancia-portugal-ue27-2024_index.html",
+      "sha256": "93db5dc7d14c2121b48961f344e7a9e94c8f02a2b5e04b12f8d1eef8adad8776"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_divida-das-familias-2025-ue_index.html",
+      "sha256": "46cd523e2f75e8a5bad3f44bff1a6da8ed7e70155b002a7b579fdccbe03d9201"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_evora-indice-de-divida-2024_index.html",
+      "sha256": "1e31be6207f6ac83603e23ee35fa63f099993991295aa72641acb255106da246"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_evora-prr-execucao-2026_index.html",
+      "sha256": "c14e4502199b55dce3ed8f4e9b33cdca2a78bbf055e7b88c62bd99766b93b093"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_factor-sustentabilidade-2026_index.html",
+      "sha256": "c44a2ce80eb8f23b93ba7233d491728e7073434736f01bfafaad1e4ef30cd7a4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_penalizacao-antecipacao-um-ano-com-factor-2026_index.html",
+      "sha256": "b23fbdcd2b795dc6d8fa8ed1258c8926076e2a485a8d835da1868c1ae0d7d1af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_penalizacao-antecipacao-um-ano-neutra_index.html",
+      "sha256": "1e75e8d36fa596c510e564b459477ccb74d3d14b34d1369d58c5086ea66c8303"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_penalizacao-antecipacao-um-ano-sem-factor-2026_index.html",
+      "sha256": "f13a5b9c6227e98e3f2ef822b7e773803d3d4e35c7251d27a165bb3a5f4a7355"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_pib-real-per-capita-2024_index.html",
+      "sha256": "471e37b94537bd684489ac26ca3229dc3a315fb8d0fe5cc7eb6c6db28925ac6c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_pib-real-per-capita-2025-ue_index.html",
+      "sha256": "106aaddcade60a9b76296453af6a3ff541c70a7e2fccbfa8eeb9e96214507d57"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_ledger_pib-real-per-capita-2025_index.html",
+      "sha256": "d99888e458a92751b31cde906cbab337a8c8792696619a862f869801e329efee"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/en_municipalities_evora_index.html",
+      "sha256": "a4f98aed1c1092ee8b1a0d715248d434d55cc9315ba1f02620a1b749bd1e4c0f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_distancia-portugal-ue27-2024_index.html",
+      "sha256": "4cae14c0dc455edfc48c481e3285c93eccaa2b3783da68ed91f619c7ff7803a7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_divida-das-familias-2025-ue_index.html",
+      "sha256": "1a47059162aecc045a46b7aeaea7f84231b4414fc2cf8c883866735dfdbb9170"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_evora-indice-de-divida-2024_index.html",
+      "sha256": "d1420c2d0d7c058e59a296e670bcc3d6856391df4fb8209e0b7b36b3ab51ba86"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_evora-prr-execucao-2026_index.html",
+      "sha256": "c064a66da552899392b663b0a062b0a992a993ac1d87efc1c9119bc9c341d6df"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_factor-sustentabilidade-2026_index.html",
+      "sha256": "3854e2f41b55518d1018993c9f51d1c36b56181082f8e244063da52b969c807c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_penalizacao-antecipacao-um-ano-com-factor-2026_index.html",
+      "sha256": "608b23c6aef8006069b2eaa57248aa8b2633a64b57875d239f4863bf2dc952c1"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_penalizacao-antecipacao-um-ano-neutra_index.html",
+      "sha256": "5e3ad85c242f1aa1551b9544940cc15cfd74cf06c0c8791d1753d33b0a85100e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_penalizacao-antecipacao-um-ano-sem-factor-2026_index.html",
+      "sha256": "ddf999df70485cbef7823e453bc457e8a1738327d1452ca3905a8d295a6e0141"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_pib-real-per-capita-2024_index.html",
+      "sha256": "35040af3cc64172a8c47fab16c72028051b05103937ed5224de19693d441a81e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_pib-real-per-capita-2025-ue_index.html",
+      "sha256": "d20d4f4ec68c5a22e01ae5b919fd7792cb76bbd665ab25f477bd4abde036e841"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/livro-razao_pib-real-per-capita-2025_index.html",
+      "sha256": "52f6b9556f40361e2c51c4d58152c0b6c2a74b538ec2017bc8809dfe5894f474"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/paginas-depois/municipios_evora_index.html",
+      "sha256": "323691181444ec2495d32c59c0b631cf2c2870885d5103123fd0e909a7a69e50"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.arvore.json",
+      "sha256": "76b783c2dddf28e06999171665d219bd5b358bf47016abff88c0f63aa4112cba"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.cabeca",
+      "sha256": "47e7d785ad21a0f9a8b13128af9de61bc9119221c9f0b05694809161b2f11615"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.codigo",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.fim",
+      "sha256": "327bcc0f812bf1195d2943fee99d905e5b67ed506755e5dae008a12af774d47a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.inicio",
+      "sha256": "8664c008c2044efe973f3b40f67d5259d62ed1f21d3c94bec2dd5342d4f5c621"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/build.log",
+      "sha256": "b59a629c81df2f2818e672f366ae25b4aaeb0a18eb4482062b6412c6d816bc83"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/primeira-corrida/concorrencia-build.json",
+      "sha256": "8c475f7c48fc9873d35f3c49eaed87d846252ff6d32f1d97ef68b4756d567a3a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/privacidade-dist.json",
+      "sha256": "ae3ccf565894ce7b83562e186049cdb45091c018367a81a0a455407b40d175b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.arvore.json",
+      "sha256": "a2756de5bb60b31f3daebfef2f545282e1b57a881c720ff2d90422228a73e430"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.cabeca",
+      "sha256": "ad7ba29ee5b9a5109773b42de892058420d2b38f23e5e8103abce8782513ec32"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.fim",
+      "sha256": "d3e0ac045e8d3db4c6d540020ab80db905cd382d4ad3bd392053cfc99c2c7f26"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.inicio",
+      "sha256": "3ca55df1451e203ebcbb6dd49a869ef576be358e0defed2981b7e48bd51c0ebd"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.json",
+      "sha256": "912ecc5e8229ba79b7c42fe4486c8fa757579faeeabc8ee0bf884eee12e88a70"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/proveniencia.log",
+      "sha256": "912ecc5e8229ba79b7c42fe4486c8fa757579faeeabc8ee0bf884eee12e88a70"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/prr.json",
+      "sha256": "60635b145f8255ed5705affea1792064c2cf0084426cd477320fc2b15f8bc5cf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/relatorio.json",
+      "sha256": "79200d80dca63746a59fdf5095bc57bd93fdff05103ed2dc5bd4b7aba921bc61"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.arvore.json",
+      "sha256": "50f1a7772ed7efc3483f47703260e3384ded32163f1abb9af4f92ccc8ed708e6"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.cabeca",
+      "sha256": "47e7d785ad21a0f9a8b13128af9de61bc9119221c9f0b05694809161b2f11615"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.fim",
+      "sha256": "c6bdaa0df57ccb04cde8dd79d686667534d99727beb5409f02195b915141068f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.inicio",
+      "sha256": "599cd2440f9d3b8f08c5c08b226f4db806c9021d1380663e244b8be07708f882"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/travessia-isolada.log",
+      "sha256": "bcf5512b7b5f8fb1688c4c59d542a312e241d347931e7fd469d11b4c5606be2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medidas.json",
+      "sha256": "08c89c92cd0c1465d2c8b26f06ce650c74a86efaf6b260f45d7ffdd50e8dad1f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.arvore.json",
+      "sha256": "8eaf0fe7fc6c441a07558f440f00fda7925c5e6847b8da9c5bd0b135a0ed6be9"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.fim",
+      "sha256": "09f740bae26125d20134588e4c0fa36f532f95a53a2af24e3ae196803a263a71"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.inicio",
+      "sha256": "481eb2a16c9dc1ed1aeeecc6106aa093dc90497b0d1331f59905fd5263de466c"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/build.log",
+      "sha256": "7cff32ecd3e9d36b0441cd6cf679a7ffb5cb5f9cd8cea6c786166c19cc00c3af"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/typecheck.arvore.json",
+      "sha256": "e8a9bf47f1c055cd6c7e49765036e5bb7c7b4f9e9ad4574308db70c8762e9f38"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/typecheck.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/typecheck.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/typecheck.fim",
+      "sha256": "a6f0e62a20d0592d04fb81dd7ea75e7a2d535b81293e559da11ab711b8dc4c95"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/typecheck.inicio",
+      "sha256": "31852a8fdc97841fc12e2b4a2816465733dd28249b3bd929891fdda1c8a85bdb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/typecheck.log",
+      "sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.arvore.json",
+      "sha256": "05d2382b43e9398c0c950cd5c0b7c59709f86ca036b557826d49ac978c968ee0"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.cabeca",
+      "sha256": "5962e9d56fc43b6716d7284f353174228241866bc098fda00370157cf5d2325a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.codigo",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.fim",
+      "sha256": "7753ddeffe94ead2e857f1def28da24a5fd1fe2dae1b9b0c605712be10848ec7"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.inicio",
+      "sha256": "23d950d8c8a5c84192c941b11805192968b1886c25d394515a0bc23576d96dac"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/portoes/c1g/verify.log",
+      "sha256": "5acee78702673b2d5eda50ce48e8588cc84dfacd36caff50d5a6bec168754385"
+    }
+  ]
+}
