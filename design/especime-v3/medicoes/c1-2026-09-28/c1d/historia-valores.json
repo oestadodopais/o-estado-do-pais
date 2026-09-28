@@ -1,0 +1,39 @@
+{
+  "controlos": 2,
+  "plantas": [
+    {
+      "nome": "valor editado depois da atualização",
+      "falha": "\"value\" é 49,4, mas o último \"new_value\" é 49,2.",
+      "erros": [
+        "[divida-das-familias-2025-ue.yml] história do valor: \"value\" é 49,4, mas o último \"new_value\" é 49,2."
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "atualização retirada",
+      "falha": "uma entrada selada foi retirada ou alterada.",
+      "erros": [
+        "[divida-das-familias-2025-ue.yml] história do valor: uma entrada selada foi retirada ou alterada.",
+        "[divida-das-familias-2025-ue.yml] história do valor: a lista tem 0 entradas e o registo sela 1."
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "valor anterior inventado",
+      "falha": "\"old_value\" é 49,1, mas antes vigorava 49,3.",
+      "erros": [
+        "[divida-das-familias-2025-ue.yml] história do valor: uma entrada selada foi retirada ou alterada.",
+        "[divida-das-familias-2025-ue.yml] história do valor: \"old_value\" é 49,1, mas antes vigorava 49,3."
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "valor fora da forma da casa",
+      "falha": "\"value\" é 49.2, mas o último \"new_value\" é 49,2.",
+      "erros": [
+        "[divida-das-familias-2025-ue.yml] história do valor: \"value\" é 49.2, mas o último \"new_value\" é 49,2."
+      ],
+      "mordeu": true
+    }
+  ]
+}

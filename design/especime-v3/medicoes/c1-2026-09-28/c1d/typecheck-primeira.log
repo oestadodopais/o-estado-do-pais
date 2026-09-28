@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/historia-da-proveniencia.mjs(27,9): error TS7034: Variable 'instantaneos' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/lib/historia-da-proveniencia.mjs(59,61): error TS7005: Variable 'instantaneos' implicitly has an 'any[]' type.

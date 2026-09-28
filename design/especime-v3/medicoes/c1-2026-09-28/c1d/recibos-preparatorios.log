@@ -1,0 +1,17 @@
+58 casos; 4 falhas.
+marca-estimada-temas/index.html: The expression evaluated to a falsy value:
+
+  assert(observacoes.length>=2)
+
+marca-estimada-index.html: The expression evaluated to a falsy value:
+
+  assert(observacoes.length>=2)
+
+marca-estimada-en/themes/index.html: The expression evaluated to a falsy value:
+
+  assert(observacoes.length>=2)
+
+marca-estimada-en/index.html: The expression evaluated to a falsy value:
+
+  assert(observacoes.length>=2)
+

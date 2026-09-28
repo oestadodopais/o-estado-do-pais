@@ -1,0 +1,77 @@
+{
+  "sessao": {
+    "id": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+    "inicio": "2026-09-28T13:40:25.035Z"
+  },
+  "registado_em": "2026-09-28T18:36:34.502477+00:00",
+  "modelos_expostos": [
+    "gpt-6-astra"
+  ],
+  "fronteiras": {
+    "retoma_c1c": {
+      "pedido": "2026-09-28T14:49:44.571Z",
+      "cumulativo_anterior": {
+        "hora": "2026-09-28T14:44:38.921Z",
+        "cumulativos": {
+          "input_tokens": 19189362,
+          "cached_input_tokens": 18612608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 100531,
+          "reasoning_output_tokens": 41655,
+          "total_tokens": 19289893
+        }
+      }
+    },
+    "c1d": {
+      "pedido": "2026-09-28T17:12:45.533Z",
+      "cumulativo_anterior": {
+        "hora": "2026-09-28T15:58:46.901Z",
+        "cumulativos": {
+          "input_tokens": 38601853,
+          "cached_input_tokens": 37712640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 188288,
+          "reasoning_output_tokens": 90350,
+          "total_tokens": 38790141
+        }
+      }
+    }
+  },
+  "ultima_leitura": {
+    "hora": "2026-09-28T18:36:01.712Z",
+    "cumulativos": {
+      "input_tokens": 73084719,
+      "cached_input_tokens": 71631360,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 305191,
+      "reasoning_output_tokens": 140248,
+      "total_tokens": 73389910
+    }
+  },
+  "passagem_c1c_ate_paragem": {
+    "simbolos": 677285,
+    "origem": "Registo do lançamento, declarado pelo lugar de direção no mandato C1d. Não é uma conversão dos tokens do runtime."
+  },
+  "retoma_c1c": {
+    "input_tokens": 19412491,
+    "cached_input_tokens": 19100032,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 87757,
+    "reasoning_output_tokens": 48695,
+    "total_tokens": 19500248
+  },
+  "passagem_c1d": {
+    "input_tokens": 34482866,
+    "cached_input_tokens": 33918720,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 116903,
+    "reasoning_output_tokens": 49898,
+    "total_tokens": 34599769
+  },
+  "unidade_retoma_e_c1d": "tokens expostos pelo runtime",
+  "limites": [
+    "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
+    "Preço não exposto. Não inclui revisões automáticas. Sem agentes na C1d.",
+    "A leitura termina na hora indicada; o fecho posterior ainda consome."
+  ]
+}
