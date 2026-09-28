@@ -1,0 +1,16 @@
+{
+  "blocos_mostrados": 5,
+  "saidas": 0,
+  "plantas": [
+    {
+      "nome": "uma condição falsa numa cópia das declarações",
+      "passou": true,
+      "codigo": 0
+    },
+    {
+      "nome": "um resolvedor que recusa tudo",
+      "passou": true,
+      "codigo": 1
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "o_que_e": "A cópia das declarações contra as do lugar de direção, campo a campo: as diferenças, o acerto que explica cada uma, e as chaves que a cópia tem a mais ou a menos.",
+  "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/acertos-pp1.mjs",
+  "blocos": {
+    "direcao": 5,
+    "copia": 5
+  },
+  "entradas": {
+    "direcao": 6,
+    "copia": 6
+  },
+  "diferencas": 4,
+  "diferencas_sem_acerto": 0,
+  "acertos_declarados": 4,
+  "acertos_nao_usados": [],
+  "chaves_novas_fora_da_forma": [],
+  "chaves_em_falta": [],
+  "lista": [
+    {
+      "caminho": "BLOCOS[1].titulo.pt",
+      "direcao": "A casa: a média engana quem arrenda",
+      "copia": "A habitação: a média engana quem arrenda",
+      "acerto": "A1"
+    },
+    {
+      "caminho": "BLOCOS[1].frase.pt",
+      "direcao": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a casa é menor do que na União. Entre quem arrenda a preço de mercado, é maior.",
+      "copia": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.",
+      "acerto": "A2"
+    },
+    {
+      "caminho": "ENTRADAS[2].linha.pt",
+      "direcao": "O peso da casa, as rendas e os preços.",
+      "copia": "O peso da habitação, as rendas e os preços.",
+      "acerto": "A3"
+    },
+    {
+      "caminho": "ENTRADAS[2].seccoes[0].nome.pt",
+      "direcao": "O peso da casa",
+      "copia": "O peso da habitação",
+      "acerto": "A4"
+    }
+  ]
+}
