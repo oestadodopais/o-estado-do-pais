@@ -48,15 +48,22 @@ const semBarra = (s) => String(s ?? '').replace(/\/+$/, '');
 /**
  * Os cinco passos numa edição, sobre uma página já aberta num contexto novo.
  *
+ * A ROTA É UMA OPÇÃO DESDE O BLOCO PP1 (28.09.2026, a leitura a frio, achado 7): a primeira página passou
+ * a ter a mesma pesquisa (`Pesquisa.astro`, com o formulário para a página dos lugares), e a célula da
+ * primeira página (`tests/inicio/pesquisa-da-primeira.mjs`) corre estes mesmos cinco passos nela. Por
+ * omissão continua a ser a página dos lugares, que é o que a H15 mede. `preparar` recebe o contexto do
+ * navegador antes de a página abrir, e é por onde uma planta troca o que o servidor entrega.
+ *
  * @param {import('playwright').Browser} nav
  * @param {string} base  a origem do servidor local (`http://127.0.0.1:<porta>`)
  * @param {'pt'|'en'} lang
  * @param {number} largura
+ * @param {{ rota?: string, preparar?: ((contexto: import('playwright').BrowserContext) => Promise<void>)|null }} [opcoes]
  */
-export async function medePesquisa(nav, base, lang, largura = 390) {
-  const rota = routePath('lugares', lang);
+export async function medePesquisa(nav, base, lang, largura = 390, { rota = routePath('lugares', lang), preparar = null } = {}) {
   const destino = semBarra(routePath('municipio', lang, { slug: ALVO }));
   const contexto = await nav.newContext({ viewport: { width: largura, height: 900 } });
+  if (preparar) await preparar(contexto);
   const pagina = await contexto.newPage();
   const espera = (ms) => pagina.evaluate((t) => new Promise((r) => setTimeout(r, t)), ms);
   /** As ligações de resultado que o leitor vê agora, com o destino e a chave de cada uma. */
