@@ -42,12 +42,25 @@ corrections:
     de 19.09.2026 a 26.09.2026); a reconferência semanal de 28.09.2026 viu a revisão.
   reason_en: Eurostat revised the EU value on 26.09.2026 (the dataset stamp moved
     from 19.09.2026 to 26.09.2026); the weekly check of 28.09.2026 caught the revision.
+- date: '2026-09-28'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-09-28'
+  reason: O valor novo foi lido a 28.09.2026, na reconferência que viu a revisão;
+    a leitura anterior, de 15.09.2026, é a do valor 49,3.
+  reason_en: The new value was read on 28.09.2026, in the check that caught the revision;
+    the earlier reading, of 15.09.2026, is that of the value 49.3.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.
 verifications:
+  - date: "2026-09-21"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
+    result: "igual"
+    by: "painel-semanal"
   - date: "2026-09-28"
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
     result: "diverge"

@@ -107,12 +107,25 @@ verifications:
     a linha declara a página e o endereço é um PDF;
 15. uma entrada de `verifications` não trouxer `date` (AAAA-MM-DD), `path`,
     `result` e `by`, ou trouxer uma chave que não é nenhuma destas nem `found`;
-    a data for posterior ao dia da construção (UTC) ou anterior a
-    `access_date`; o `path` não começar por `http://` ou `https://`; `result`
+    a data for posterior ao dia da construção (UTC) ou anterior ao acesso em
+    vigor nesse dia, reconstituído pelas entradas `proveniencia` sobre
+    `access_date` (antes da data de cada mudança vale `old_value`, a partir
+    dela vale `new_value`; sem história vale o `access_date` atual); a cadeia
+    dessa história for contraditória, trouxer datas ou
+    valores inválidos, não terminar no campo atual, ou declarar um acesso
+    posterior à mudança; uma reconferência anterior a uma mudança tipada de
+    `source_url` trouxer um `path` diferente do endereço então em vigor, ou
+    a história de endereços necessária a essa comparação for inválida,
+    contraditória ou não terminar no endereço atual; o
+    `path` não começar por `http://` ou `https://`; `result`
     ou `by` estiverem fora dos três valores de cada um; faltar `found` numa
     entrada `diverge`, ou existir numa que não seja; a lista não estiver por
     ordem cronológica crescente; duas entradas repetirem (`date`, `path`, `by`,
-    `result`); ou a linha não tiver `source_url`;
+    `result`); ou a linha não tiver `source_url`. Assim, mudar a proveniência
+    não obriga a apagar releituras anteriores nem permite reler antes de ler.
+    A comparação do endereço limita-se às releituras anteriores a mudanças
+    tipadas: o levantamento do C1c encontrou pedidos com endereço diferente
+    do atual sem história que explique essa diferença;
 16. `document.crop` trouxer uma chave que não seja `asset`, `sha256` ou `page`;
     o `asset` não for exactamente `recortes/<id>.webp`; não houver ficheiro em
     `public/<asset>`; o `sha256` não for 64 hexadecimais ou não for o resumo dos
