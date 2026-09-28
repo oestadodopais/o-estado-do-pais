@@ -50,10 +50,12 @@ def reconstruir(id):
     entradas = []
     for e in eventos[1:]:
         antigo, novo, instantaneo, commit = e['old_value'], e['new_value'], e['snapshot_date'], e['commit'][:8]
+        data_casa = lambda d: '.'.join(reversed(d.split('-')))
+        a, n, i = map(data_casa, (antigo, novo, instantaneo))
         entradas.append({'date': e['date'], 'kind': 'proveniencia', 'field': 'access_date',
                          'old_value': antigo, 'new_value': novo,
-                         'reason': f'O acesso passou de {antigo} a {novo} com o instantâneo do PRR de {instantaneo}; a entrada reconstitui pela história do Git ({commit}) a mudança que a linha não registava.',
-                         'reason_en': f'The access moved from {antigo} to {novo} with the PRR snapshot of {instantaneo}; the entry rebuilds from the Git history ({commit}) the change the row had not recorded.'})
+                         'reason': f'O acesso passou de {a} a {n} com o instantâneo do PRR de {i}; a entrada reconstitui pela história pública do repositório (o commit {commit}) a mudança que a linha não registava.',
+                         'reason_en': f'The access moved from {a} to {n} with the PRR snapshot of {i}; the entry rebuilds from the public repository history (commit {commit}) the change the row had not recorded.'})
     return eventos, entradas
 
 def conferir(id, linha, esperado):

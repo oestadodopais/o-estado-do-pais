@@ -97,15 +97,15 @@ corrections:
     field: "access_date"
     old_value: "2026-08-04"
     new_value: "2026-08-18"
-    reason: "O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança que a linha não registava."
-    reason_en: "The access moved from 2026-08-04 to 2026-08-18 with the PRR snapshot of 2026-08-17; the entry rebuilds from the Git history (8371e097) the change the row had not recorded."
+    reason: "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava."
+    reason_en: "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
   - date: "2026-08-20"
     kind: "proveniencia"
     field: "access_date"
     old_value: "2026-08-18"
     new_value: "2026-08-20"
-    reason: "O acesso passou de 2026-08-18 a 2026-08-20 com o instantâneo do PRR de 2026-08-19; a entrada reconstitui pela história do Git (8b7d9157) a mudança que a linha não registava."
-    reason_en: "The access moved from 2026-08-18 to 2026-08-20 with the PRR snapshot of 2026-08-19; the entry rebuilds from the Git history (8b7d9157) the change the row had not recorded."
+    reason: "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava."
+    reason_en: "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
 
 # Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:
