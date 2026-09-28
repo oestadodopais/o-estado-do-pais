@@ -146,6 +146,7 @@ import {
   numeralPorExtenso,
 } from '../src/data/figuras.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
+import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -412,6 +413,9 @@ const contas = {
   /* F17, bloco R1: os cartões de concelho numa série atrasada, e as frases certas. */
   frescura_esperada: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
   frescura_nos_cartoes: /** @type {Record<string, number>} */ ({ pt: 0, en: 0 }),
+  calendarios_dos_mandatos: 0,
+  pontos_no_calendario: 0,
+  plantas_do_calendario: 0,
 };
 
 /* Os rótulos das duas medidas dos 308 que a F7 conta, lidos da declaração e não
@@ -453,6 +457,27 @@ for (const ficheiro of paginasDe(DIST)) {
   const root = parse(fs.readFileSync(ficheiro, 'utf8'));
   const rel = path.relative(RAIZ, ficheiro);
   contas.paginas++;
+
+  /* F18, C1: o ano de cada dívida ocupa a sua posição no calendário comum.
+     A célula independente relê as origens da conta e prova as lacunas com
+     estragos em memória. A I77 continua a proteger o nome por verificar. */
+  if (rota?.key === 'municipio' || root.querySelector('[data-instrumento="mandatos"]')) {
+    const municipio = rota?.key === 'municipio'
+      ? MUNICIPIOS_COM_PAGINA.find((m) => m.slug === rota.params.slug)
+      : null;
+    const resultado = conferirCalendario(root, municipio, rota?.lang ?? 'pt', claims);
+    for (const erro of resultado.erros) err(`${rel}: ${erro}`);
+    if (municipio?.tempo) {
+      contas.calendarios_dos_mandatos++;
+      contas.pontos_no_calendario += resultado.pontos.length;
+      if (!resultado.erros.length) {
+        for (const planta of plantasDoCalendario(root, municipio, rota.lang, claims)) {
+          contas.plantas_do_calendario++;
+          if (!planta.passou) err(`${rel}: F18: a planta ${planta.nome} não mordeu.`);
+        }
+      }
+    }
+  }
 
   /* ------------------------------------------------------------------ F1 --- */
   for (const el of root.querySelectorAll('[data-nonledger="data-da-linha"]')) {
@@ -820,6 +845,12 @@ for (const ficheiro of paginasDe(DIST)) {
     if (t.includes(ROTULO_GANHO[lang])) contas.concelhos_com_ganho[lang]++;
     if (t.includes(ROTULO_POPULACAO[lang])) contas.concelhos_com_populacao[lang]++;
   }
+}
+
+/* F18: a ausência das duas páginas não pode passar por um calendário certo. */
+const calendariosEsperados = MUNICIPIOS_COM_PAGINA.filter((m) => m.tempo).length * LANGS.length;
+if (contas.calendarios_dos_mandatos !== calendariosEsperados) {
+  err(`F18: calendários conferidos ${contas.calendarios_dos_mandatos}; esperados ${calendariosEsperados}.`);
 }
 
 /* ========================================================================== */
@@ -1219,6 +1250,7 @@ console.log(
         ` · atraso: ${SERIES_ATRASADAS.length} série(s), ${idsAtrasados.size} linha(s),` +
         ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)` +
         ` · frescura nos cartões de concelho: ${contas.frescura_nos_cartoes.pt} pt e ${contas.frescura_nos_cartoes.en} en, de ${contas.frescura_esperada.pt} e ${contas.frescura_esperada.en} cartões numa série atrasada (F17)` +
-        ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)`,
+        ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)` +
+        ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas`,
     ),
 );
