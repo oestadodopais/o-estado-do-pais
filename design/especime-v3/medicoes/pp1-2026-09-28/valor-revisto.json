@@ -1,0 +1,129 @@
+{
+  "o_que_e": "Um valor revisto numa cópia do livro-razão, construído na cabeça de partida e na cabeça do bloco PP1, com duas revisões.",
+  "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.mjs <cabeça de partida> <cabeça do bloco>",
+  "linha": "precos-da-habitacao-2025",
+  "valor_publicado": "17,6",
+  "revisoes": {
+    "A": {
+      "valor": "12,4",
+      "excerto": "2025: 12.4\""
+    },
+    "B": {
+      "valor": "4,9",
+      "excerto": "2025: 4.9\""
+    }
+  },
+  "partida": {
+    "cabeca": "1cbdb8c44045a5053cba33562f5044e02975bc47",
+    "revisao": "A",
+    "comando": "npm run build",
+    "codigo": 1,
+    "segundos": 123,
+    "passo": "node scripts/check-documentos.mjs",
+    "erro": "B1 leitura do país: precos-da-habitacao-2025 mudou; parar a frase e comunicar à direção.",
+    "mordeu": true,
+    "cauda": [
+      "20:13:14   ├─ /en/studies/alentejo-algarve/index.html (+7ms) ",
+      "20:13:14   ├─ /en/studies/evolucao-de-portugal-desde-1981/index.html (+8ms) ",
+      "20:13:14   ├─ /en/studies/penalizacoes-por-reforma-antecipada-2026/index.html (+8ms) ",
+      "20:13:14   ├─ /en/studies/index.html (+49ms) ",
+      "20:13:14   ├─ /en/themes/index.html (+390ms) ",
+      "20:13:14   ├─ /en/to-verify/index.html (+9ms) ",
+      "20:13:14   ├─ /en/index.html20:13:14 [ERROR] Error: B1 leitura do país: precos-da-habitacao-2025 mudou; parar a frase e comunicar à direção.",
+      "    at file://<cópia>/dist/.prerender/chunks/HomeView_DoCiw9qe.mjs:39:95",
+      "    at AstroComponentInstance.LeituraDoPais [as factory] (file://<cópia>/dist/.prerender/chunks/Base_DtJZ7POe.mjs:27:10)",
+      "    at AstroComponentInstance.init (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1707:27)",
+      "    at AstroComponentInstance.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1714:28)",
+      "    at Object.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:2369:19)",
+      "    at renderChild (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1626:44)",
+      "    at RenderTemplateResult.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1265:19)",
+      "    at renderChild (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1626:44)",
+      "    at Object.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1333:9)",
+      "    at renderChild (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1626:44)",
+      "20:13:14 [ERROR] [build] Caught error rendering /en: Error: B1 leitura do país: precos-da-habitacao-2025 mudou; parar a frase e comunicar à direção.",
+      "B1 leitura do país: precos-da-habitacao-2025 mudou; parar a frase e comunicar à direção.",
+      "  Stack trace:",
+      "    at file://<cópia>/dist/.prerender/chunks/HomeView_DoCiw9qe.mjs:39:95",
+      "    at AstroComponentInstance.init (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1707:27)",
+      "    at Object.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:2369:19)",
+      "    at RenderTemplateResult.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1265:19)",
+      "    at Object.render (file://<cópia>/dist/.prerender/chunks/server_CRq-AiDA.mjs:1333:9)"
+    ]
+  },
+  "bloco_A": {
+    "cabeca": "931873d1a56461b6b08c13c7c4b8f4384d696a32",
+    "revisao": "A",
+    "comando": "npm run build",
+    "codigo": 0,
+    "segundos": 324,
+    "passo": "node scripts/check-lingua.mjs",
+    "cauda": [],
+    "sinais": {
+      "comando": "node scripts/sinais-da-primeira-pagina.mjs",
+      "codigo": 0,
+      "blocos_mostrados": 5,
+      "saidas": []
+    },
+    "primeira_pagina": {
+      "blocos": 5,
+      "peca_dos_precos_das_casas_presente": true
+    },
+    "valor_da_planta_no_cartao_da_entrada_da_casa": true,
+    "passou": true
+  },
+  "bloco_B": {
+    "cabeca": "931873d1a56461b6b08c13c7c4b8f4384d696a32",
+    "revisao": "B",
+    "comando": "npm run build",
+    "codigo": 1,
+    "segundos": 315,
+    "passo": "node scripts/check-voz.mjs",
+    "cauda": [
+      "      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)",
+      "      trabalho-solidariedade-e-seguranca-social · 27 peça(s): 2 trabalho(s), 1 conjunto(s), 24 medida(s)",
+      "      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)",
+      "> o-estado-do-pais@0.1.0 check:formas",
+      "> node scripts/check-formas.mjs",
+      "F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.",
+      "  formas ✓ 2 páginas de domínio · 26 desenhos (paineis 8 · mapa-por-concelho 4 · barra-concelho-pais 2 · barras 4 · pares 4 · colunas 4) · 26452 datas de linha conferidas · 20 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s) · calendário: 2 páginas, 8 pontos e 10 plantas",
+      "> o-estado-do-pais@0.1.0 check:lugares",
+      "> node scripts/check-lugares.mjs",
+      "  lugares ✓ 308 concelhos, 29 distritos e ilhas, 9 regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · as 308 linhas do poder de compra declaram a base do índice · 9 chaves com tema · 4928 medida(s) rendidas em 616 página(s), todas debaixo do tema que a tabela lhes dá · as palavras da leitura e da régua recalculadas do livro-razão em todas elas",
+      "> o-estado-do-pais@0.1.0 check:pais",
+      "> node scripts/check-pais.mjs",
+      "T9: 60 cartões com valor de referência nos temas e nas entradas, 16 fora e 44 dentro, cada um com a cor do seu estado.",
+      "B1 país: 47 medidas, 9 temas, 7414 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.",
+      "B1 país: todas as conferências a 0.",
+      "> o-estado-do-pais@0.1.0 check:voz",
+      "> node scripts/check-voz.mjs",
+      "  B1: 28 páginas pela lista fechada; 7 temas conferidos.",
+      "  PORTÃO DA VOZ · 4 problema(s)",
+      "    · bloco por classificar em /en/european-union: «Portugal breaches 3 reference values of the Macroeconomic Imbalance Procedure and meets 10 .»",
+      "    · bloco por classificar em /uniao-europeia: «Portugal falha 3 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 10 .»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:2892: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 .»",
+      "    · design/especime-v3/INVENTARIO-FRASES.md:2893: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.",
+      "      «Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9 .»"
+    ],
+    "sinais": {
+      "comando": "node scripts/sinais-da-primeira-pagina.mjs",
+      "codigo": 0,
+      "blocos_mostrados": 5,
+      "saidas": [
+        {
+          "bloco": "casa",
+          "peca": "precos-das-casas",
+          "porque": [
+            "condição falsa: precos-da-habitacao-2025 (4,9) > precos-da-habitacao-2025-ue (5,5)"
+          ]
+        }
+      ]
+    },
+    "primeira_pagina": {
+      "blocos": 5,
+      "peca_dos_precos_das_casas_presente": false
+    },
+    "valor_da_planta_no_cartao_da_entrada_da_casa": true,
+    "a_peca_saiu_com_o_sinal": true
+  }
+}

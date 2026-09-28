@@ -1,0 +1,31 @@
+{
+  "testemunha": "design/observatorio/leituras/ensaio-blocos-primeira-pagina.mjs",
+  "resolvedor": "src/lib/primeira-pagina.mjs",
+  "linhas_comparadas": 44,
+  "iguais": 40,
+  "diferencas_esperadas_vistas": 4,
+  "diferencas_esperadas": [
+    {
+      "de": "1 835 euros por mês no",
+      "para": "1 835 euros por mês (dado provisório) no",
+      "razao": "D1"
+    },
+    {
+      "de": "1 835 euros a month in the",
+      "para": "1 835 euros a month (provisional data) in the",
+      "razao": "D1"
+    },
+    {
+      "de": "A casa: a média engana quem arrenda",
+      "para": "A habitação: a média engana quem arrenda",
+      "razao": "A1"
+    },
+    {
+      "de": "% do rendimento disponível com a casa é menor do que na União.",
+      "para": "% do rendimento disponível com a habitação é menor do que na União.",
+      "razao": "A2"
+    }
+  ],
+  "diferencas_por_explicar": [],
+  "esperadas_por_ver": []
+}

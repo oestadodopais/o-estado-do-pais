@@ -128,6 +128,15 @@ const inventario = ler('design/especime-v3/INVENTARIO-FRASES.md').split('\n').ma
 medida('inventario_linhas_pp1_vivas', inventario.filter((c) => c[3] === 'viva').length, 'design/especime-v3/INVENTARIO-FRASES.md · as linhas com o bloco pp1 e o estado viva', 'a linha «O que se passa» é uma delas', inventario.some((c) => c[1] === 'O que se passa'));
 medida('inventario_linhas_pp1_retiradas', inventario.filter((c) => c[3] === 'retirada').length, 'o mesmo ficheiro · as linhas com o bloco pp1 e o estado retirada', 'a descrição antiga da primeira página é uma delas', inventario.some((c) => c[3] === 'retirada' && c[1].startsWith('A leitura do país e os números oficiais por tema')));
 
+/* As linhas que saíram do ficheiro: as que a cabeça de partida tinha, pelo texto, e esta árvore não tem. */
+const linhasDoInventario = (/** @type {string} */ t) => new Set(t.split('\n').map((l) => l.split(' | ')).filter((c) => c.length === 5 && c[0].startsWith('| ')).map((c) => c[1]));
+const antesDoInventario = linhasDoInventario(git('show', `${PARTIDA}:design/especime-v3/INVENTARIO-FRASES.md`));
+const agoraDoInventario = linhasDoInventario(ler('design/especime-v3/INVENTARIO-FRASES.md'));
+const sairam = [...antesDoInventario].filter((t) => !agoraDoInventario.has(t));
+medida('inventario_linhas_que_sairam_do_ficheiro', sairam.length, `git show ${PARTIDA}:design/especime-v3/INVENTARIO-FRASES.md contra a árvore · os textos das linhas que já não estão`,
+  'a linha da frase do veredicto estava na cabeça de partida', [...antesDoInventario].some((t) => t.startsWith('Em , Portugal ficou fora de')));
+medida('inventario_linhas_que_sairam_do_ficheiro_textos', sairam, 'os mesmos textos', 'a lista é a do contador acima', true);
+
 /* 5 · AS PLANTAS E AS MEDIÇÕES DESTA PASTA. */
 const plantas = (/** @type {string} */ f, /** @type {(j: any) => any[]} */ lista) => { const j = json(`${PASTA}/${f}`); return lista(j); };
 for (const [nome, f, lista, passou] of /** @type {[string, string, (j: any) => any[], (x: any) => boolean][]} */ ([
@@ -159,9 +168,11 @@ medida('celulas_da_porta_verdes', porta.filter((/** @type {any} */ x) => x.passo
 const l1 = json(`${PASTA}/l1-pp1.json`);
 for (const [k, v] of Object.entries(l1.contagens)) medida(`l1_${k}`, v, `${PASTA}/l1-pp1.json · contagens.${k}`, 'a composição leu as duas cabeças', Boolean(l1.cabeca_antes && l1.cabeca_depois));
 const revisto = json(`${PASTA}/valor-revisto.json`);
-medida('valor_revisto_partida_codigo', revisto.partida.codigo, `${PASTA}/valor-revisto.json · partida.codigo`, 'na cabeça de partida a construção parou com a frase da leitura', revisto.partida.mordeu === true);
-medida('valor_revisto_bloco_codigo', revisto.bloco.codigo, `${PASTA}/valor-revisto.json · bloco.codigo`, 'na cabeça do bloco a peça saiu e o sinal nomeia-a', revisto.bloco.passou === true);
-medida('valor_revisto_bloco_blocos_mostrados', revisto.bloco.sinais.blocos_mostrados, `${PASTA}/valor-revisto.json · bloco.sinais.blocos_mostrados`, 'o registo dos sinais foi escrito', Array.isArray(revisto.bloco.sinais.saidas));
+medida('valor_revisto_partida_codigo', revisto.partida.codigo, `${PASTA}/valor-revisto.json · partida.codigo (revisão A)`, 'na cabeça de partida a construção parou com a frase da leitura', revisto.partida.mordeu === true);
+medida('valor_revisto_bloco_A_codigo', revisto.bloco_A.codigo, `${PASTA}/valor-revisto.json · bloco_A.codigo`, 'na cabeça do bloco a revisão A chega ao cartão da entrada da casa', revisto.bloco_A.valor_da_planta_no_cartao_da_entrada_da_casa === true);
+medida('valor_revisto_bloco_A_blocos_mostrados', revisto.bloco_A.sinais.blocos_mostrados, `${PASTA}/valor-revisto.json · bloco_A.sinais.blocos_mostrados`, 'o registo dos sinais foi escrito', Array.isArray(revisto.bloco_A.sinais.saidas));
+medida('valor_revisto_bloco_B_codigo', revisto.bloco_B.codigo, `${PASTA}/valor-revisto.json · bloco_B.codigo, e o passo em bloco_B.passo`, 'na revisão B a peça saiu e o sinal nomeia-a', revisto.bloco_B.a_peca_saiu_com_o_sinal === true);
+medida('valor_revisto_bloco_B_saidas', revisto.bloco_B.sinais.saidas?.length, `${PASTA}/valor-revisto.json · bloco_B.sinais.saidas`, 'a saída é a peça dos preços das casas', revisto.bloco_B.sinais.saidas?.some((/** @type {any} */ x) => x.peca === 'precos-das-casas'));
 
 /* 6 · O QUE NENHUM FICHEIRO DO RAMO PODE TER: um caminho da máquina ou o nome do utilizador dela, e um
    travessão em prosa nova. O detetor corre primeiro sobre uma linha de prova que tem cada coisa. */
@@ -182,6 +193,15 @@ const TRAVESSAO = /[—–]/;
 medida('linhas_acrescentadas_com_travessao', acrescentadas.filter((l) => TRAVESSAO.test(l)).length, `git diff -U0 ${PARTIDA}..HEAD nos ficheiros de prosa e de código · as linhas acrescentadas com um travessão`,
   'o detetor apanha uma linha de prova com um travessão', TRAVESSAO.test('uma frase — com travessão'));
 medida('linhas_acrescentadas', acrescentadas.length, 'o mesmo diff · as linhas acrescentadas', 'o diff leu linhas', acrescentadas.length > 0);
+/* Cada linha com travessão, pela sua classe: um literal de um excerto do livro-razão, copiado como a fonte
+   o escreve (a regra da casa), ou o detetor de travessões e as plantas que o provam. Outra classe seria
+   prosa nova com travessão, e tem de ser zero. */
+const comTravessao = acrescentadas.filter((l) => TRAVESSAO.test(l));
+const classe = (/** @type {string} */ l) => (/L\('[a-z0-9-]+', 'excerpt', '[^']*[\u2014\u2013][^']*'\)/.test(l) ? 'literal_do_excerpt' : /TRAVESSAO|travessão|\[\u2014\u2013\]/.test(l) ? 'detetor_ou_planta' : 'prosa');
+const porClasse = { literal_do_excerpt: 0, detetor_ou_planta: 0, prosa: 0 };
+for (const l of comTravessao) porClasse[/** @type {'literal_do_excerpt'|'detetor_ou_planta'|'prosa'} */ (classe(l))]++;
+medida('linhas_acrescentadas_com_travessao_por_classe', porClasse, 'as mesmas linhas · pela classe: um literal L(linha, \'excerpt\', …) da auditoria, o detetor e as suas plantas, ou prosa',
+  'o classificador diz prosa a uma frase com travessão', classe('+ uma frase \u2014 de prosa') === 'prosa');
 
 const saida = { o_que_e: 'As medidas do relatório do bloco PP1, escritas por este guião.', comando: `node ${PASTA}/medidas.mjs ${PARTIDA}`, cabeca: git('rev-parse', 'HEAD'), dist_construido_de: JSON.parse(ler('dist/version.json')).commit, medidas };
 fs.writeFileSync(path.join(AQUI, 'medidas.json'), JSON.stringify(saida, null, 2) + '\n');
