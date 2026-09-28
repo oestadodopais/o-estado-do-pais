@@ -76,7 +76,7 @@ O Estado do País é um observatório de Portugal escrito, conferido e atualizad
 - Não é jornalismo no sentido legal: o título é regulado em Portugal (`[verify]` o alcance exato; a ERC remeteu o caso Conta Lá à CCPJ pela apresentação de conteúdos), e a casa não chama jornalista à IA; é um observatório com estudos, que faz o que o jornalismo faz de melhor sem usar a palavra.
 - Não é um portal de estatísticas: a PORDATA existe; a casa é a camada de proveniência, leitura e análise por cima dos dados públicos.
 - Não é opinião: as conclusões vêm da evidência, com a regra que as produziu; a evidência equilibrada diz-se como tal.
-- Não escreve para o alcance: mede-se por citações, não por visitas.
+- Não escreve para o alcance a qualquer preço, mas escreve para o leitor comum primeiro (a decisão do diretor de 28.09.2026, §1.133): a primeira coisa que se lê tem de dizer alguma coisa a quem não conhece o assunto, com as relações entre os números e desenhos em vez de números soltos, e quem quer escavar tem as camadas de baixo (a questão, os dados, o recibo). Mede-se por leitores que percebem e usam o que leram, antes e depois de cada peça; as citações contam para quem investiga.
 
 ## 7 · Como esta visão se mantém
 
