@@ -70,7 +70,7 @@ try {
     fs.symlinkSync(path.join(raiz, e), path.join(tmp, e));
   }
   fs.mkdirSync(path.join(tmp, 'scripts'));
-  fs.copyFileSync('scripts/check-cruzamento.mjs', path.join(tmp, 'scripts/check-cruzamento.mjs'));
+  for (const f of ['check-cruzamento.mjs', 'contagem-do-cruzamento.mjs']) fs.copyFileSync(`scripts/${f}`, path.join(tmp, 'scripts', f));
   fs.mkdirSync(path.join(tmp, 'ledger'));
   for (const e of fs.readdirSync('ledger')) {
     if (e === 'claims') continue;
@@ -83,7 +83,8 @@ try {
     else fs.symlinkSync(path.join(raiz, 'ledger/claims', f), path.join(tmp, 'ledger/claims', f));
   }
   const correr = () => spawnSync(process.execPath, ['scripts/check-cruzamento.mjs'], { cwd: tmp, encoding: 'utf8' });
-  assert.equal(correr().status, 0);
+  const limpa = correr();
+  assert.equal(limpa.status, 0, limpa.stderr);
   controlos.push({ nome: 'travessia real com a lista completa', passou: true });
   const p = path.join(tmp, 'ledger/claims', `${dgal}.yml`);
   const linha = load(fs.readFileSync(p, 'utf8'));
