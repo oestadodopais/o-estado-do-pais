@@ -3294,7 +3294,7 @@ frases rendidas e não as declarações, e fica escrito no relatório do bloco.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima dos de há um ano. A variação é menor do que a do mês anterior. | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima dos de há um ano. A variação é menor do que a do mês anterior. | c1 | retirada | C1, I160: a quarta redação faz a concordância com «as rendas», «acima das de há um ano». Esta redação anterior já foi publicada no RP1 e fica como sentinela da concordância corrigida. |
 | conteudo | Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
 | conteudo | How much have rents actually paid for housing changed since the same month a year earlier? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
 | conteudo | In the rents paid by tenants were, on the consumer price index measure, % above a year earlier. The change is smaller than the previous month’s. | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
@@ -3317,7 +3317,66 @@ frases rendidas e não as declarações, e fica escrito no relatório do bloco.*
 | conteudo | no | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | (provisional data) in | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | : (provisional data) | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
-| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions. Up from . | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions. Up from . | c1 | retirada | C1, I160: a quarta redação usa «across old-age, invalidity and survivors’ pensions». Esta redação anterior já foi publicada no RP1 e fica como sentinela da expressão corrigida. |
 | conteudo | In there were people receiving social insertion income for every thousand people of working age, from to years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community. Fewer than in . | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | Per hour worked, women earned on average less than men, in , in enterprises with or more employees: the gap, as a percentage of men’s earnings, was % (provisional data) . The gap narrowed from . | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
 | conteudo | in the | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+
+## C1 · as correções de confiança, 28.09.2026
+
+As duas leituras abaixo são as cadeias efetivamente recolhidas na construção
+preparatória pelo `medir-defeitos.mjs --json`: as rendas na primeira página
+portuguesa e a pensão na inglesa. Os valores e os períodos são origens declaradas
+e saem da recolha. As redações anteriores ficam retiradas nas secções do RP1,
+com a razão da troca, porque já foram publicadas. As cadeias curtas que continuam
+a render-se, como «no» e «in the», mantêm o seu estado.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima das de há um ano. A variação é menor do que a do mês anterior. | c1 | viva | Quarta redação do lugar de direção, com a concordância das rendas corrigida. A K17 confere o texto, os ramos e os literais da auditoria; cada valor continua a vir da sua linha. |
+| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions. Up from . | c1 | viva | Quarta redação do lugar de direção, com a expressão inglesa das pensões corrigida. A K17 confere o texto, os ramos e os literais da auditoria; cada valor continua a vir da sua linha. |
+
+As leituras da inflação e do IHPC também mudam na quarta redação, mas os cartões
+com essas leituras não pertencem à fatia da primeira página. A página dos temas
+está no inventário, mas não está em `ROTAS_COM_ORIGEM_LIDA`; os blocos das leituras
+levam origens e não são recolhidos como frases sem origem. Não se declaram aqui
+ocorrências vivas que a régua não recolheu. A K17 conserva a comparação integral
+dessas leituras, e os casos sintéticos de `tests/confianca/c1.mjs` exercem os
+sinais positivo, negativo e zero da inflação e as comparações do IHPC com taxas
+negativas.
+
+**As palavras do recibo.** A rota de cada linha não pertence a
+`ROTAS_DO_INVENTARIO`; o recibo é uma das páginas em que a regra da voz permite
+explicar a verificação. Estas cadeias ficam registadas em prosa, sem linhas com
+estado `viva` fora do âmbito da régua:
+
+- «O que foi conferido» / «What was checked» nomeia a secção. «Lido na fonte a» /
+  «Read at the source on» continua a dar a data da primeira leitura da linha.
+- «Segunda leitura a» / «Second reading on» precede a data de uma releitura do
+  número; «Ficheiro da fonte relido a» / «Source file read again on» distingue
+  a conferência do ficheiro feita pelo corredor. Uma conferência do ficheiro
+  não passa a ser apresentada como uma releitura do número.
+- «Ainda sem segunda leitura.» / «No second reading yet.» diz a ausência de
+  registo de releitura, como no recibo da inflação nesta construção.
+- «igual à fonte» / «matches the source» dá o resultado igual; «a fonte publica
+  agora outro valor:» / «the source now publishes a different value:» precede
+  o valor encontrado na divergência; «não foi possível reler o número na fonte
+  nesse dia» / «the number could not be read again from the source that day»
+  mantém a tentativa sem sucesso datada, mesmo quando uma leitura posterior
+  já conseguiu reler o número.
+- «Ver a atualização deste valor» / «See the update to this value» está
+  declarada para a ligação à atualização que corresponda ao valor encontrado.
+  Não se apresenta como uma frase rendida nesta entrega: a atualização da
+  dívida das famílias parou no circuito real da linha. As plantas da conferência
+  do recibo exigem a correspondência e o destino da ligação quando há atualização.
+
+**As portas dos ficheiros dos concelhos.** «posições dos concelhos no mapa (CSV)» /
+«municipality positions on the map (CSV)» e «medidas dos concelhos (CSV)» /
+«municipal measures (CSV)» são navegação. Na página dos lugares vivem inteiras
+dentro de ligações, que a régua exclui nos dois sentidos; a alteração fica
+documentada aqui, sem declarar frases vivas que não sejam recolhidas.
+
+**O mandato em curso.** A faixa de Évora reutiliza «em funções» / «in office»,
+já usado na ligação para o mandato. Não se introduziu uma nova redação. A F18
+confere o rótulo dentro do segmento aberto e a posição de cada dívida no
+calendário comum; a proteção da I77 sobre o nome por verificar mantém-se.
