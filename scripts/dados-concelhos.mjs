@@ -1,3 +1,5 @@
+import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
+import { t } from '../src/i18n/strings.mjs';
 /** C7: os valores descarregáveis dos concelhos, conferidos diretamente no YAML.
  * A seleção lê a declaração dos cartões e não chama o gerador do CSV nem
  * `pecasDoConcelho()`. O leitor do CSV também é independente do gerador. */
@@ -7,7 +9,7 @@ import { load } from 'js-yaml';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 
 export const CSV_DOS_CONCELHOS = '/dados/indicadores-dos-concelhos.csv';
-const COLUNAS = ['concelho', 'medida', 'valor', 'unidade', 'periodo', 'fonte', 'afirmacao', 'concelho_slug'];
+const COLUNAS = ['concelho', 'medida', 'valor', 'unidade', 'periodo', 'fonte', 'afirmacao', 'concelho_slug', 'nota'];
 const leLinha = (id) => load(fs.readFileSync(path.join(process.cwd(), 'ledger/claims', `${id}.yml`), 'utf8'));
 
 /** Leitura independente de aspas, vírgulas e mudanças de linha de um CSV. */
@@ -53,8 +55,11 @@ export function confereIndicadoresDosConcelhos(texto, linha = leLinha) {
       if (periodo === null || periodo === undefined || periodo === '') falha(`${c.id}: período ausente ou ambíguo.`);
       const chave = JSON.stringify([m.slug, medida.nome.pt]);
       if (esperadas.has(chave)) falha(`${m.nome.pt}: medida repetida na declaração.`);
+      const atraso = SERIES_ATRASADAS.find((a) => a.fonte === c.source && a.documento === c.document?.title && a.periodoDaCasa === c.reference_date && a.periodoDaFonte > c.reference_date);
+      const [ano, mes] = (atraso?.periodoDaFonte ?? '').split('-');
+      const nota = atraso ? `${t('pt').cartao.fonteJaPublicou} ${t('pt').cartao.meses[Number(mes) - 1]} de ${ano}; ${t('pt').cartao.lidoA} ${atraso.origem.lidoEm.split('-').reverse().join('.')}` : '';
       esperadas.set(chave, [m.nome.pt, medida.nome.pt, c.value, c.unit, periodo,
-        c.source ?? (Array.isArray(c.derived_from) && c.derived_from.length ? 'Calculado' : ''), c.id, m.slug].map((v) => String(v ?? '')));
+        c.source ?? (Array.isArray(c.derived_from) && c.derived_from.length ? 'Calculado' : ''), c.id, m.slug, nota].map((v) => String(v ?? '')));
     }
   }
   if (dados.length !== esperadas.size) falha(`${dados.length} linhas no ficheiro e ${esperadas.size} cartões com linha declarada.`);
