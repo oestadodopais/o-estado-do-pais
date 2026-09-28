@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T20:16:00+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/index.html",
+   "descricao": "no desenho português da habitação, o valor escrito na barra dos inquilinos a preço de mercado passa de 27,2 a 22,7, contra a linha",
+   "sha256_antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+   "sha256_depois": "726c76266111c454001847f25f5876c38c8fecef8786d16bc3d8ec4652447d43",
+   "contexto_antes": "span><span class=\"pp-traco\"><span class=\"pp-barra\" data-fracao=\"1\" style=\"margin-left:0%;width:72%\"></span><svg class=\"pp-valor\" height=\"20\"><text x=\"6\" y=\"15\"><tspan data-claim=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025\" class=\"claim-value\">27,2</tspan></text></svg></span></li><li class=\"pp-fila pp-ue\" data-barra=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"><span class=\"pp-rotulo\"><span data-v",
+   "contexto_depois": "span><span class=\"pp-traco\"><span class=\"pp-barra\" data-fracao=\"1\" style=\"margin-left:0%;width:72%\"></span><svg class=\"pp-valor\" height=\"20\"><text x=\"6\" y=\"15\"><tspan data-claim=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025\" class=\"claim-value\">22,7</tspan></text></svg></span></li><li class=\"pp-fila pp-ue\" data-barra=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"><span class=\"pp-rotulo\"><span data-v"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/lib/primeira-pagina.mjs",
+   "descricao": "o resolvedor aceita um empate numa condição «maior do que»: uma condição estrita passa com os dois valores iguais",
+   "sha256_antes": "6ee730b11fc8419296345a87e10643ee3102859bfdc5be96747a82ab87690a93",
+   "sha256_depois": "58b9710e1861b00a4ef787cb593a0f15f8582a6fc7b80115ea93571aad3ae893",
+   "contexto_antes": "${linha(c.a).value}) ${c.op} ${nomeB}`;\n      if (a === null || b === null) return { ok: false, texto: `${texto}: um dos números não se lê` };\n      const ok = c.op === '>' ? a > b : c.op === '<' ? a < b : c.op === '=' ? a === b : c.op === '!=' ? a !== b : null;\n      if (ok === null) throw defeito('uma condição', `o operador «${c.op}» não ",
+   "contexto_depois": "${linha(c.a).value}) ${c.op} ${nomeB}`;\n      if (a === null || b === null) return { ok: false, texto: `${texto}: um dos números não se lê` };\n      const ok = c.op === '>' ? a >= b : c.op === '<' ? a < b : c.op === '=' ? a === b : c.op === '!=' ? a !== b : null;\n      if (ok === null) throw defeito('uma condição', `o operador «${c.op}» não "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/index.html",
+   "descricao": "a frase portuguesa da dívida escreve o limiar da Comissão como 50 % do PIB, contra os 60 % da referência",
+   "sha256_antes": "726c76266111c454001847f25f5876c38c8fecef8786d16bc3d8ec4652447d43",
+   "sha256_depois": "fb61e84cb012dda211aaefe807c7f8cd470682f0ff95f89a975e77bb080d0304",
+   "contexto_antes": "ata-de-campo=\"reference_date\">2025</span> e está acima da média da União. Para a Comissão Europeia, uma dívida acima de <span data-nonledger=\"limiar-do-quadro\" data-referencia=\"divida-publica-2025\">60</span> % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.</p><figure class=\"pp-desenho pp-desenho-colunas\" data-bloco-desenho data-bloco-declarado data-fo",
+   "contexto_depois": "ata-de-campo=\"reference_date\">2025</span> e está acima da média da União. Para a Comissão Europeia, uma dívida acima de <span data-nonledger=\"limiar-do-quadro\" data-referencia=\"divida-publica-2025\">50</span> % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.</p><figure class=\"pp-desenho pp-desenho-colunas\" data-bloco-desenho data-bloco-declarado data-fo"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/data/primeira-pagina.mjs",
+   "descricao": "a frase portuguesa da habitação diz que a parte das pessoas sobrecarregadas é maior do que na União, contra os valores (6,3 contra 7,7) e a condição do bloco",
+   "sha256_antes": "21fd870dab007066ee789c35d9794b1926a98a8b5e781b8fef8c63ebc2052008",
+   "sha256_depois": "0a6964f2cc91cbcc17faefc10a1c7609383f4fdb303838bcb3e92cca7c364b23",
+   "contexto_antes": "ngana quem arrenda', en: 'Housing: the average hides the renters' },\n    frase: {\n      pt: ['Em Portugal, a parte das pessoas que gastam mais de ', nl('40'), ' % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.'],\n      en: ['In Portugal, the share of people spending more than ', nl('40'), ' % of their disposable income on housing is small",
+   "contexto_depois": "ngana quem arrenda', en: 'Housing: the average hides the renters' },\n    frase: {\n      pt: ['Em Portugal, a parte das pessoas que gastam mais de ', nl('40'), ' % do rendimento disponível com a habitação é maior do que na União. Entre quem arrenda a preço de mercado, é maior.'],\n      en: ['In Portugal, the share of people spending more than ', nl('40'), ' % of their disposable income on housing is small"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que a primeira página a 390 px passou a 5 803 px de altura, contra os 6 803 das medidas",
+   "sha256_antes": "aab1da9d08c82d3cdfa2b6c9607f40f2cafe3e39bb0040a33e0704809e0961e5",
+   "sha256_depois": "278aa3a7f0fa1eeb5f1d1a73976a86b2516680af4c9155fd9d9ae882362efe68",
+   "contexto_antes": "98 px, contra o limite de 1 688 px (2 ecrãs de 844 px); na inglesa, as duas fontes acabam a 781 e a 1 552 px. A página tinha 10 812 px de altura a 390 px e tem 6 803 (a inglesa, 10 679 e 6 748).\n\nA primeira página tinha 23 cartões, 9 temas, a leitura do país e 4 mudanças; tem 0 de cada, e 5 blocos e 6 entradas nas duas ediç",
+   "contexto_depois": "98 px, contra o limite de 1 688 px (2 ecrãs de 844 px); na inglesa, as duas fontes acabam a 781 e a 1 552 px. A página tinha 10 812 px de altura a 390 px e tem 5 803 (a inglesa, 10 679 e 6 748).\n\nA primeira página tinha 23 cartões, 9 temas, a leitura do país e 4 mudanças; tem 0 de cada, e 5 blocos e 6 entradas nas duas ediç"
+  }
+ ]
+}
