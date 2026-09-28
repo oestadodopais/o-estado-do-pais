@@ -129,6 +129,12 @@ for (const [f, nome, cabs] of [['comparar-A1-A2.json', 'diferencas_controlo', 'A
   medicao(nome, d?.diferencas, `node ${M}/comparar-dist.mjs <dist ${cabs.split(' e ')[0]}> <dist ${cabs.split(' e ')[1]}> · ${f}`,
     'um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar', d?.conhecido_positivo?.ok);
 }
+{
+  const d = le('comparar-A1-final.json');
+  medicao('diferencas_final', d?.diferencas, `node ${M}/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build> · comparar-A1-final.json`,
+    'um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar', d?.conhecido_positivo?.ok);
+  medicao('dist_ficheiros_final', d?.ficheiros_depois, `${M}/evidencias/comparar-A1-final.json · ficheiros_depois`, 'os ficheiros das duas construções contados um a um', d?.ficheiros_antes === d?.ficheiros_depois);
+}
 const b1 = le('comparar-A1-B1.json');
 medicao('dist_ficheiros', b1?.ficheiros_depois, `${M}/evidencias/comparar-A1-B1.json · ficheiros_depois`, 'os ficheiros das duas construções contados um a um', b1?.ficheiros_antes === b1?.ficheiros_depois);
 medicao('carimbo_campos_depois', b1?.carimbo?.length, `${M}/evidencias/comparar-A1-B1.json · carimbo`, 'o commit e o construido_em de version.json e prova.json', (b1?.carimbo ?? []).every((c) => ['commit', 'construido_em'].includes(c.campo)));
@@ -140,6 +146,9 @@ for (const [f, nome, n] of [['verify-depois-B1-p4.resultado.json', 'verify_depoi
   const d = le(f);
   medicao(nome, r1(d?.segundos), `node scripts/verify-depois-do-build.mjs --paralelo ${n} --json <f>`, 'as sete plantas morderam e as três células passaram', d?.ok === true && (d?.plantas ?? []).every((p) => p.mordeu));
 }
+const fin = le('verify-depois-final-p4.resultado.json');
+medicao('verify_depois_do_build_final_s', r1(fin?.segundos), 'node scripts/verify-depois-do-build.mjs --paralelo 4 --json <f>, na cabeça dos portões, sobre o dist/ do portão build',
+  'as sete plantas morderam, as três células passaram e a cabeça é a dos portões', fin?.ok === true && (fin?.plantas ?? []).every((p) => p.mordeu) && fin?.celulas?.C?.cabeca === fin?.cabeca);
 const alvosP4 = p4?.corridos?.find((c) => c.passo === 'npm run check:alvos');
 medicao('alvos_no_p4_s', r1(alvosP4?.segundos), 'o mesmo, com --paralelo 4 · a linha de npm run check:alvos', 'o check:alvos correu e saiu com 0', alvosP4?.codigo === 0);
 const inv = le('inventario.json');
@@ -184,6 +193,14 @@ const real = le('planta-cadeia-real.json');
 medicao('planta_cadeia_real_mordeu', real?.mordeu, `sh ${M}/planta-na-cadeia-real.sh <saida.json>`, 'o package.json e o dist/index.html repostos com o sha256 de antes', real?.package_json_reposto && real?.index_reposto);
 medicao('planta_cadeia_real_vermelhas', real?.vermelhos?.length, 'o mesmo · as conferências que saíram diferente de 0', 'o check:palavras entre elas', (real?.vermelhos ?? []).includes('npm run check:palavras'));
 
+/* ---------------------------------------------------------------- o anfitrião */
+const anf = le('anfitriao-github.json');
+for (const k of ['nucleos', 'memoria_gb']) {
+  medicao(`anfitriao_${k}`, anf?.publico?.[k], `curl -sSL ${anf?.endereco ?? ''} · a linha dos repositórios públicos (${anf?.hora ?? ''}, sha256 ${anf?.sha256_da_resposta ?? ''})`,
+    'a linha dos repositórios privados, lida da mesma página, tem outros números', anf?.privado?.nucleos !== undefined && anf?.privado?.nucleos !== anf?.publico?.nucleos);
+}
+medicao('plantas_novas_da_paridade', le('plantas-guardas.json')?.plantas_novas?.length, `${M}/evidencias/plantas-guardas.json · plantas_novas`, 'a diferença dos casos antes e depois é a mesma', (le('plantas-guardas.json')?.casos_depois ?? 0) - (le('plantas-guardas.json')?.casos_na_cabeca_de_partida ?? 0) === le('plantas-guardas.json')?.plantas_novas?.length);
+
 /* ---------------------------------------------------------------- o check:alvos */
 const al = le('alvos-esperas.json');
 for (const k of ['passagens', 'rotas_do_axe', 'networkidle_ms', 'espera_fixa_ms_por_passagem', 'espera_minima_s']) {
@@ -206,6 +223,7 @@ for (const g of ['build', 'verify', 'typecheck']) {
   medicao(`portao_${g}_codigo`, codigo, `node ${M}/cronometro.mjs ${M}/portoes/${g} -- npm run ${g}`, 'o ficheiro .codigo escrito depois de o processo acabar', codigo !== null);
   medicao(`portao_${g}_s`, r1(resumo?.segundos), `o mesmo · ${M}/portoes/${g}.json`, 'o ficheiro .codigo escrito depois de o processo acabar', codigo !== null);
 }
+medicao('portao_build_astro_s', r1(portoes.build?.resumo?.astro_build?.segundos), `${M}/portoes/build.json · astro_build`, 'as 7 404 páginas do Astro no registo do portão', portoes.build?.resumo?.paginas_do_astro === 7404);
 
 /* ---------------------------------------------------------------- o custo */
 const inicio = le('inicio-do-bloco.json')?.inicio ?? null;
