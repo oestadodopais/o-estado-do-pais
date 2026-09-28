@@ -235,6 +235,7 @@ const MOTIVOS_DO_DOMINIO = new Set([
   'data-da-linha',
   MOTIVO_DE_ESCALA,
   'limiar-do-quadro',
+  'objetivo-institucional',
   'ambito-da-medida',
   MOTIVO_DE_AUSENCIA,
   'proveniencia',
