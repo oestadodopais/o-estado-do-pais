@@ -1,0 +1,196 @@
+{
+ "comando": "npm run verify",
+ "inicio": "2026-09-28T19:31:21.699Z",
+ "fim": "2026-09-28T19:39:14.697Z",
+ "segundos": 472.998,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": []
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": [
+  {
+   "nome": "verify",
+   "inicio": "2026-09-28T19:31:21.768Z",
+   "segundos": 0.069
+  },
+  {
+   "nome": "ledger:check",
+   "inicio": "2026-09-28T19:31:21.837Z",
+   "segundos": 0.428
+  },
+  {
+   "nome": "check:registo",
+   "inicio": "2026-09-28T19:31:22.265Z",
+   "segundos": 0.273
+  },
+  {
+   "nome": "check:cruzamento",
+   "inicio": "2026-09-28T19:31:22.538Z",
+   "segundos": 0.358
+  },
+  {
+   "nome": "check:documentos",
+   "inicio": "2026-09-28T19:31:22.896Z",
+   "segundos": 0.131
+  },
+  {
+   "nome": "check:briefs",
+   "inicio": "2026-09-28T19:31:23.027Z",
+   "segundos": 2.982
+  },
+  {
+   "nome": "gate:html",
+   "inicio": "2026-09-28T19:31:26.009Z",
+   "segundos": 12.113
+  },
+  {
+   "nome": "check:css",
+   "inicio": "2026-09-28T19:31:38.122Z",
+   "segundos": 3.567
+  },
+  {
+   "nome": "check:datas",
+   "inicio": "2026-09-28T19:31:41.689Z",
+   "segundos": 1
+  },
+  {
+   "nome": "check:moldura",
+   "inicio": "2026-09-28T19:31:42.689Z",
+   "segundos": 97.693
+  },
+  {
+   "nome": "check:alvos",
+   "inicio": "2026-09-28T19:33:20.382Z",
+   "segundos": 196.698
+  },
+  {
+   "nome": "check:cabeca",
+   "inicio": "2026-09-28T19:36:37.080Z",
+   "segundos": 3.763
+  },
+  {
+   "nome": "check:fontes",
+   "inicio": "2026-09-28T19:36:40.843Z",
+   "segundos": 1.644
+  },
+  {
+   "nome": "check:cadeia",
+   "inicio": "2026-09-28T19:36:42.487Z",
+   "segundos": 0.209
+  },
+  {
+   "nome": "check:dados",
+   "inicio": "2026-09-28T19:36:42.696Z",
+   "segundos": 1.596
+  },
+  {
+   "nome": "mapa:unidades",
+   "inicio": "2026-09-28T19:36:44.292Z",
+   "segundos": 0.116
+  },
+  {
+   "nome": "check:mapa",
+   "inicio": "2026-09-28T19:36:44.408Z",
+   "segundos": 0.318
+  },
+  {
+   "nome": "check:regioes",
+   "inicio": "2026-09-28T19:36:44.726Z",
+   "segundos": 0.258
+  },
+  {
+   "nome": "check:areas",
+   "inicio": "2026-09-28T19:36:44.984Z",
+   "segundos": 0.398
+  },
+  {
+   "nome": "check:formas",
+   "inicio": "2026-09-28T19:36:45.382Z",
+   "segundos": 3.341
+  },
+  {
+   "nome": "check:alcance",
+   "inicio": "2026-09-28T19:36:48.723Z",
+   "segundos": 2.206
+  },
+  {
+   "nome": "check:lugares",
+   "inicio": "2026-09-28T19:36:50.929Z",
+   "segundos": 0.474
+  },
+  {
+   "nome": "check:pais",
+   "inicio": "2026-09-28T19:36:51.403Z",
+   "segundos": 2.992
+  },
+  {
+   "nome": "check:voz",
+   "inicio": "2026-09-28T19:36:54.395Z",
+   "segundos": 22.313
+  },
+  {
+   "nome": "check:lingua",
+   "inicio": "2026-09-28T19:37:16.708Z",
+   "segundos": 4.116
+  },
+  {
+   "nome": "check:lugar",
+   "inicio": "2026-09-28T19:37:20.824Z",
+   "segundos": 17.967
+  },
+  {
+   "nome": "provar:eyetext",
+   "inicio": "2026-09-28T19:37:38.791Z",
+   "segundos": 0.242
+  },
+  {
+   "nome": "provar:guardas",
+   "inicio": "2026-09-28T19:37:39.033Z",
+   "segundos": 0.124
+  },
+  {
+   "nome": "check:mortos",
+   "inicio": "2026-09-28T19:37:39.157Z",
+   "segundos": 1.603
+  },
+  {
+   "nome": "check:indice",
+   "inicio": "2026-09-28T19:37:40.760Z",
+   "segundos": 10.628
+  },
+  {
+   "nome": "check:cartao",
+   "inicio": "2026-09-28T19:37:51.388Z",
+   "segundos": 4.166
+  },
+  {
+   "nome": "check:nomes",
+   "inicio": "2026-09-28T19:37:55.554Z",
+   "segundos": 2.032
+  },
+  {
+   "nome": "check:palavras",
+   "inicio": "2026-09-28T19:37:57.586Z",
+   "segundos": 75.796
+  },
+  {
+   "nome": "design:feixe",
+   "inicio": "2026-09-28T19:39:13.382Z",
+   "segundos": 1.315
+  }
+ ]
+}

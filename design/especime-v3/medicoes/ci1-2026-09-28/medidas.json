@@ -1,0 +1,817 @@
+{
+  "bloco": "CI1",
+  "guiao": "design/especime-v3/medicoes/ci1-2026-09-28/medir-ci1.mjs",
+  "medidas": [
+    {
+      "nome": "passos_do_build",
+      "valor": 21,
+      "comando": "OEDP_MEDIDAS_JSON=<ficheiro> python3 design/observatorio/medidas/BRIEF-CI1.py (git show a677770f:package.json · scripts.build partido em &&)",
+      "conhecido_positivo": {
+        "o_que": "a cadeia do build tem a construção do Astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_do_verify",
+      "valor": 33,
+      "comando": "OEDP_MEDIDAS_JSON=<ficheiro> python3 design/observatorio/medidas/BRIEF-CI1.py (o mesmo ficheiro · scripts.verify partido em &&)",
+      "conhecido_positivo": {
+        "o_que": "a cadeia do verify tem a conferência das palavras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_repetidos",
+      "valor": 17,
+      "comando": "OEDP_MEDIDAS_JSON=<ficheiro> python3 design/observatorio/medidas/BRIEF-CI1.py (os passos do verify que são exatamente um passo do build)",
+      "conhecido_positivo": {
+        "o_que": "a conferência do HTML é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_corridos_pelo_guiao",
+      "valor": 16,
+      "comando": "node scripts/verify-depois-do-build.mjs --paralelo 4 --json <f> · celulas.U.corridos_aqui",
+      "conhecido_positivo": {
+        "o_que": "a célula U leu os 33 passos do verify e 17 corridos pelo build",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_corrida_min",
+      "valor": 27.8,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · run_started_at a updated_at",
+      "conhecido_positivo": {
+        "o_que": "na corrida de referência, o passo do build, o do verify e a construção do Astro lidos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_trabalho_min",
+      "valor": 27.75,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · o trabalho portao, started_at a completed_at",
+      "conhecido_positivo": {
+        "o_que": "na corrida de referência, o passo do build, o do verify e a construção do Astro lidos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_preparacao_s",
+      "valor": 72,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · os passos antes do build (a máquina, a árvore, o Node, o npm ci, o Chromium)",
+      "conhecido_positivo": {
+        "o_que": "na corrida de referência, o passo do build, o do verify e a construção do Astro lidos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_build_s",
+      "valor": 703,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · o passo npm run build",
+      "conhecido_positivo": {
+        "o_que": "na corrida de referência, o passo do build, o do verify e a construção do Astro lidos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_verify_s",
+      "valor": 883,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · o passo npm run verify",
+      "conhecido_positivo": {
+        "o_que": "na corrida de referência, o passo do build, o do verify e a construção do Astro lidos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_astro_s",
+      "valor": 500.7,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · de «generating static routes» a «[build] Complete!»",
+      "conhecido_positivo": {
+        "o_que": "na corrida de referência, o passo do build, o do verify e a construção do Astro lidos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_repetidas_no_verify_s",
+      "valor": 179.3,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · as marcas do npm depois da marca verify, só as 17 que o build já correra com o mesmo comando",
+      "conhecido_positivo": {
+        "o_que": "as 17 conferências repetidas encontradas no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_so_do_verify_s",
+      "valor": 703.2,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · as marcas do npm depois da marca verify, as 16 que o build não corre",
+      "conhecido_positivo": {
+        "o_que": "as 16 conferências só do verify encontradas no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_alvos_s",
+      "valor": 266.8,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · a marca de check:alvos até à seguinte, no verify",
+      "conhecido_positivo": {
+        "o_que": "a marca de check:alvos no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_palavras_s",
+      "valor": 169.4,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · a marca de check:palavras até à seguinte, no verify",
+      "conhecido_positivo": {
+        "o_que": "a marca de check:palavras no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_moldura_s",
+      "valor": 152.5,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · a marca de check:moldura até à seguinte, no verify",
+      "conhecido_positivo": {
+        "o_que": "a marca de check:moldura no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ci_antes_tres_lentas_s",
+      "valor": 588.7,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/tempos-da-corrida.mjs 36412381787 · a soma das três",
+      "conhecido_positivo": {
+        "o_que": "as três marcas no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_antes_s",
+      "valor": 320,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_antes_astro_s",
+      "valor": 225.6,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · astro_build",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_antes_gate_html_s",
+      "valor": 37.5,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · o passo gate:html",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_antes_check_voz_s",
+      "valor": 23.5,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · o passo check:voz",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_antes_cartoes_s",
+      "valor": 12.3,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · o passo cartoes",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_perfilada_s",
+      "valor": 323.7,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_perfilada_astro_s",
+      "valor": 228.7,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · astro_build",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_perfilada_gate_html_s",
+      "valor": 38,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo gate:html",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_perfilada_check_voz_s",
+      "valor": 23.9,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo check:voz",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_perfilada_cartoes_s",
+      "valor": 12.4,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo cartoes",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_depois_s",
+      "valor": 73.1,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_depois_astro_s",
+      "valor": 9.5,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · astro_build",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_depois_gate_html_s",
+      "valor": 12.1,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · o passo gate:html",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_depois_check_voz_s",
+      "valor": 22,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · o passo check:voz",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_depois_cartoes_s",
+      "valor": 11.1,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · o passo cartoes",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_do_astro",
+      "valor": 7404,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/build-B1.json · paginas_do_astro",
+      "conhecido_positivo": {
+        "o_que": "a linha «[build] N page(s) built» do Astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perfil_astro_s",
+      "valor": 229.7,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/perfil.mjs <rascunho>/perfil-A2/<o perfil do astro build>.cpuprofile · total amostrado",
+      "conhecido_positivo": {
+        "o_que": "as funções chaves e assertKeyParity de src/i18n/strings.mjs aparecem no pedaço onde o Vite o empacotou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perfil_paridade_s",
+      "valor": 123.9,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/perfil.mjs <rascunho>/perfil-A2/<o perfil do astro build>.cpuprofile · tempo próprio no pedaço de strings.mjs",
+      "conhecido_positivo": {
+        "o_que": "as funções chaves e assertKeyParity de src/i18n/strings.mjs aparecem no pedaço onde o Vite o empacotou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perfil_paridade_pct",
+      "valor": 53.9,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/perfil.mjs <rascunho>/perfil-A2/<o perfil do astro build>.cpuprofile · a razão das duas",
+      "conhecido_positivo": {
+        "o_que": "as funções chaves e assertKeyParity de src/i18n/strings.mjs aparecem no pedaço onde o Vite o empacotou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perfil_gate_html_s",
+      "valor": 37.89,
+      "comando": "node <rascunho>/perfis-por-processo.mjs <rascunho>/perfil-A2 · scripts/gate-html.mjs",
+      "conhecido_positivo": {
+        "o_que": "o perfil do gate:html achado entre os 44 da construção perfilada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perfil_gate_html_paridade_s",
+      "valor": 14.5,
+      "comando": "o mesmo · o tempo próprio de chaves, assertKeyParity e t",
+      "conhecido_positivo": {
+        "o_que": "o perfil do gate:html achado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferencas_controlo",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1> <dist A2, as duas em 1c1952c9> · comparar-A1-A2.json",
+      "conhecido_positivo": {
+        "o_que": "um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferencas_depois",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 1c1952c9> <dist B1 em 27b13b92> · comparar-A1-B1.json",
+      "conhecido_positivo": {
+        "o_que": "um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferencas_final",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build> · comparar-A1-final.json",
+      "conhecido_positivo": {
+        "o_que": "um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dist_ficheiros_final",
+      "valor": 12484,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/comparar-A1-final.json · ficheiros_depois",
+      "conhecido_positivo": {
+        "o_que": "os ficheiros das duas construções contados um a um",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dist_ficheiros",
+      "valor": 12484,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/comparar-A1-B1.json · ficheiros_depois",
+      "conhecido_positivo": {
+        "o_que": "os ficheiros das duas construções contados um a um",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "carimbo_campos_depois",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/comparar-A1-B1.json · carimbo",
+      "conhecido_positivo": {
+        "o_que": "o commit e o construido_em de version.json e prova.json",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_inteiro_depois_s",
+      "valor": 471.4,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run verify (na cabeça 27b13b92, sobre o dist/ de B1)",
+      "conhecido_positivo": {
+        "o_que": "o código 0 e 33 marcas do npm além da do verify",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_depois_do_build_p4_s",
+      "valor": 200.2,
+      "comando": "node scripts/verify-depois-do-build.mjs --paralelo 4 --json <f>",
+      "conhecido_positivo": {
+        "o_que": "as sete plantas morderam e as três células passaram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_depois_do_build_p10_s",
+      "valor": 205.4,
+      "comando": "node scripts/verify-depois-do-build.mjs --paralelo 10 --json <f>",
+      "conhecido_positivo": {
+        "o_que": "as sete plantas morderam e as três células passaram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_depois_do_build_final_s",
+      "valor": 201.2,
+      "comando": "node scripts/verify-depois-do-build.mjs --paralelo 4 --json <f>, na cabeça dos portões, sobre o dist/ do portão build",
+      "conhecido_positivo": {
+        "o_que": "as sete plantas morderam, as três células passaram e a cabeça é a dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_no_p4_s",
+      "valor": 198.1,
+      "comando": "o mesmo, com --paralelo 4 · a linha de npm run check:alvos",
+      "conhecido_positivo": {
+        "o_que": "o check:alvos correu e saiu com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_sozinho_s",
+      "valor": 198.2,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · check:alvos, corrido sozinho",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "so_do_verify_em_serie_s",
+      "valor": 425,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · a soma das 16, cada uma sozinha",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_e_verify_inteiro_depois_s",
+      "valor": 544.5,
+      "comando": "build_depois_s mais verify_inteiro_depois_s: a corrida como era, com o código de hoje",
+      "conhecido_positivo": {
+        "o_que": "as duas medições lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_e_guiao_depois_s",
+      "valor": 273.4,
+      "comando": "build_depois_s mais verify_depois_do_build_p4_s: a corrida como fica",
+      "conhecido_positivo": {
+        "o_que": "as duas medições lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "repetidas_iguais",
+      "valor": 17,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-repetidas.mjs <build-B1.log> <verify-inteiro-B1.log>",
+      "conhecido_positivo": {
+        "o_que": "uma linha trocada numa cópia é vista como diferença",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "repetidas_total",
+      "valor": 17,
+      "comando": "o mesmo · as conferências do verify que são passos do build",
+      "conhecido_positivo": {
+        "o_que": "uma linha trocada é vista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "repetidas_linhas_diferentes_sem_normalizar",
+      "valor": 0,
+      "comando": "o mesmo · sem apagar horas nem durações",
+      "conhecido_positivo": {
+        "o_que": "uma linha trocada é vista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_e_cadeia_iguais_depois_do_verify",
+      "valor": true,
+      "comando": "shasum -a 256 dist/prova.json dist/cadeia.json, antes e depois do npm run verify inteiro",
+      "conhecido_positivo": {
+        "o_que": "os dois resumos lidos antes e depois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_inventariadas",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json>",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_com_servidor",
+      "valor": 4,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · servidores",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "servidores_com_porta_fixa",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · as portas pedidas que não são 0",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_com_chromium",
+      "valor": 4,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · processos do Chromium lançados",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_que_escrevem_em_dist",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · escritas em dist/ e sha256 de dist/ antes e depois",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_que_escrevem_na_arvore",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · escritas na raiz fora de dist/ (só o design:feixe, em design-system/)",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_que_mudam_o_git",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · git status --porcelain --ignored antes e depois",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "memoria_max_mib",
+      "valor": 1946,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <saida.json> · /usr/bin/time -l, a maior (check:indice)",
+      "conhecido_positivo": {
+        "o_que": "a sonda viu o servidor, o Chromium e a pasta temporária do check:cabeca antes de inventariar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_guiao_mordidas",
+      "valor": 7,
+      "comando": "node scripts/verify-depois-do-build.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "a cadeia sintética limpa passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_guiao_total",
+      "valor": 7,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a cadeia sintética limpa passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contraprovas_das_celulas",
+      "valor": 3,
+      "comando": "numa cópia do guião, a U, a D e a C a dizerem sempre ok, e a prova corrida",
+      "conhecido_positivo": {
+        "o_que": "cada cópia estragada fechou com 1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guardas_casos_antes",
+      "valor": 129,
+      "comando": "git show 1c1952c9:scripts/provar-guardas.mjs, corrido em scripts/",
+      "conhecido_positivo": {
+        "o_que": "a linha «guardas · N conferência(s)» na saída",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guardas_casos_depois",
+      "valor": 134,
+      "comando": "node scripts/provar-guardas.mjs",
+      "conhecido_positivo": {
+        "o_que": "a linha «guardas · N conferência(s)» na saída",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contraprovas_da_paridade",
+      "valor": 2,
+      "comando": "src/i18n/strings.mjs estragado no sítio (sem a conferência; sem congelar), o provar:guardas corrido, e os bytes repostos",
+      "conhecido_positivo": {
+        "o_que": "os bytes repostos têm o sha256 de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "planta_cadeia_real_mordeu",
+      "valor": true,
+      "comando": "sh design/especime-v3/medicoes/ci1-2026-09-28/planta-na-cadeia-real.sh <saida.json>",
+      "conhecido_positivo": {
+        "o_que": "o package.json e o dist/index.html repostos com o sha256 de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "planta_cadeia_real_vermelhas",
+      "valor": 2,
+      "comando": "o mesmo · as conferências que saíram diferente de 0",
+      "conhecido_positivo": {
+        "o_que": "o check:palavras entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "anfitriao_nucleos",
+      "valor": 4,
+      "comando": "curl -sSL https://docs.github.com/en/actions/reference/runners/github-hosted-runners · a linha dos repositórios públicos (2026-09-28T19:26:16Z, sha256 be412950c47b8f36dd8d52f1552446a44c57bc306055563e260ea3b0ab5b3e55)",
+      "conhecido_positivo": {
+        "o_que": "a linha dos repositórios privados, lida da mesma página, tem outros números",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "anfitriao_memoria_gb",
+      "valor": 16,
+      "comando": "curl -sSL https://docs.github.com/en/actions/reference/runners/github-hosted-runners · a linha dos repositórios públicos (2026-09-28T19:26:16Z, sha256 be412950c47b8f36dd8d52f1552446a44c57bc306055563e260ea3b0ab5b3e55)",
+      "conhecido_positivo": {
+        "o_que": "a linha dos repositórios privados, lida da mesma página, tem outros números",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_novas_da_paridade",
+      "valor": 5,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/plantas-guardas.json · plantas_novas",
+      "conhecido_positivo": {
+        "o_que": "a diferença dos casos antes e depois é a mesma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_passagens",
+      "valor": 230,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/alvos-esperas.json · passagens (o registo do verify inteiro, tests/acessibilidade/alvos.mjs e os tipos do Playwright 1.60.0)",
+      "conhecido_positivo": {
+        "o_que": "a frase do networkidle achada nos tipos do Playwright instalado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_rotas_do_axe",
+      "valor": 46,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/alvos-esperas.json · rotas_do_axe (o registo do verify inteiro, tests/acessibilidade/alvos.mjs e os tipos do Playwright 1.60.0)",
+      "conhecido_positivo": {
+        "o_que": "a frase do networkidle achada nos tipos do Playwright instalado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_networkidle_ms",
+      "valor": 500,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/alvos-esperas.json · networkidle_ms (o registo do verify inteiro, tests/acessibilidade/alvos.mjs e os tipos do Playwright 1.60.0)",
+      "conhecido_positivo": {
+        "o_que": "a frase do networkidle achada nos tipos do Playwright instalado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_espera_fixa_ms_por_passagem",
+      "valor": 120,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/alvos-esperas.json · espera_fixa_ms_por_passagem (o registo do verify inteiro, tests/acessibilidade/alvos.mjs e os tipos do Playwright 1.60.0)",
+      "conhecido_positivo": {
+        "o_que": "a frase do networkidle achada nos tipos do Playwright instalado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_espera_minima_s",
+      "valor": 142.6,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/alvos-esperas.json · espera_minima_s (o registo do verify inteiro, tests/acessibilidade/alvos.mjs e os tipos do Playwright 1.60.0)",
+      "conhecido_positivo": {
+        "o_que": "a frase do networkidle achada nos tipos do Playwright instalado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build_codigo",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs design/especime-v3/medicoes/ci1-2026-09-28/portoes/build -- npm run build",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro .codigo escrito depois de o processo acabar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build_s",
+      "valor": 75.6,
+      "comando": "o mesmo · design/especime-v3/medicoes/ci1-2026-09-28/portoes/build.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro .codigo escrito depois de o processo acabar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_verify_codigo",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs design/especime-v3/medicoes/ci1-2026-09-28/portoes/verify -- npm run verify",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro .codigo escrito depois de o processo acabar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_verify_s",
+      "valor": 473,
+      "comando": "o mesmo · design/especime-v3/medicoes/ci1-2026-09-28/portoes/verify.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro .codigo escrito depois de o processo acabar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_typecheck_codigo",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs design/especime-v3/medicoes/ci1-2026-09-28/portoes/typecheck -- npm run typecheck",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro .codigo escrito depois de o processo acabar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_typecheck_s",
+      "valor": 0.3,
+      "comando": "o mesmo · design/especime-v3/medicoes/ci1-2026-09-28/portoes/typecheck.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro .codigo escrito depois de o processo acabar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build_astro_s",
+      "valor": 10,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/portoes/build.json · astro_build",
+      "conhecido_positivo": {
+        "o_que": "as 7 404 páginas do Astro no registo do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tempo_de_parede_ate_aos_portoes_min",
+      "valor": 121.8,
+      "comando": "design/especime-v3/medicoes/ci1-2026-09-28/evidencias/inicio-do-bloco.json · inicio, até ao fim do typecheck em design/especime-v3/medicoes/ci1-2026-09-28/portoes/typecheck.json",
+      "conhecido_positivo": {
+        "o_que": "as duas horas lidas",
+        "encontrado": true
+      }
+    }
+  ],
+  "previsoes": [
+    {
+      "nome": "previsao_ci_depois_min",
+      "valor": 8.3,
+      "formula": "(ci_antes_preparacao_s + build_depois_s × ci_antes_build_s ÷ build_antes_s + ci_antes_alvos_s) ÷ 60",
+      "o_que_nao_conta": "a disputa dos 4 núcleos do anfitrião pelas conferências lado a lado nos primeiros minutos, e o que a correção da paridade tira ao check:alvos no anfitrião; medem-na as duas corridas do lugar de direção",
+      "prova_da_formula": {
+        "o_que": "a mesma forma (preparação, build e verify) refaz o trabalho da corrida de referência",
+        "refeito_min": 27.6,
+        "medido_min": 27.75
+      }
+    },
+    {
+      "nome": "metade_da_corrida_de_referencia_min",
+      "valor": 13.9,
+      "formula": "ci_antes_trabalho_min ÷ 2"
+    }
+  ],
+  "faltas": []
+}
