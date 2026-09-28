@@ -20,7 +20,9 @@ function eInstantaneoDoMesmoConjunto(c, anterior, linha) {
  */
 export function historiaDaProveniencia(linha, campo, onde, erros) {
   const atual = campo.split('.').reduce((valor, chave) => valor?.[chave], linha);
-  const entradas = (Array.isArray(linha.corrections) ? linha.corrections : [])
+  /** @type {any[]} */
+  const historia = Array.isArray(linha.corrections) ? linha.corrections : [];
+  const entradas = historia
     .filter((c) => c && c.kind === 'proveniencia' && c.field === campo)
     .slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const forma = campo === 'access_date' ? /^\d{4}-\d{2}-\d{2}$/ : campo === 'source_url' ? /^https?:\/\// : /\S/;
