@@ -115,8 +115,8 @@ verifications:
     valores inválidos, não terminar no campo atual, ou declarar um acesso
     posterior à mudança; uma reconferência anterior a uma mudança tipada de
     `source_url` trouxer um `path` diferente do endereço então em vigor, ou
-    a história de endereços necessária a essa comparação for inválida,
-    contraditória ou não terminar no endereço atual; o
+    a história de endereços for inválida, contraditória ou não terminar no
+    endereço atual, mesmo quando não há reconferência anterior; o
     `path` não começar por `http://` ou `https://`; `result`
     ou `by` estiverem fora dos três valores de cada um; faltar `found` numa
     entrada `diverge`, ou existir numa que não seja; a lista não estiver por
@@ -951,6 +951,25 @@ muitas de cada vez — nove no dia em que duas fontes mudaram de sítio — e po
 a par das confissões afogavam-nas. O registo mostra as linhas que as trazem,
 cada uma com o caminho para a sua história. É a mesma regra em cascata que já
 vale para as recontagens derivadas, um nível acima.
+
+**Instantâneos datados que conservam o endereço do conjunto (C1d).**
+As entradas do PRR de 18.08 e 20.08 registam o ficheiro datado que foi lido e
+reafirmam o mesmo endereço estável. Não dizem que esse endereço deixou de vigorar.
+O caso é aceite apenas em documentos `ficheiro` com `computed_over.files`,
+quando `new_value` é o endereço que já vigorava, `old_value` é um recurso datado
+do mesmo conjunto de `dados.gov.pt`, a data do recurso não é posterior à entrada,
+o nome do ficheiro leva essa data e ambas as razões identificam o endereço lido.
+O validador anuncia cada caso. Outro conjunto, outra data ou a falta dessas
+provas volta a ser uma cadeia contraditória. Todas as outras cadeias são
+conferidas sempre, mesmo sem reconferências anteriores; não há uma dispensa
+por ausência de releitura. O recurso datado não muda o endereço em vigor.
+
+**O acesso que acompanha uma atualização.** Pela decisão do lugar de direção
+de 28.09.2026, uma `proveniencia` sobre `access_date` acompanha a `atualizacao`
+quando o valor novo foi lido noutro dia. A atualização descreve a mudança do
+número; a proveniência descreve o acesso e conserva a prova da leitura anterior.
+A entrada de proveniência não muda o número por si. As duas entradas não se
+substituem e não apagam as reconferências feitas sobre o valor anterior.
 
 #### O que **não** se regista: as afinações do ponteiro
 
