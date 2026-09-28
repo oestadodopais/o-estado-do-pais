@@ -782,7 +782,7 @@
     "indice-de-divida-limite-legal": {
       "corrections_at_export": 7,
       "exported_at": "2026-09-04",
-      "exported_row_sha256": "3d4fa064111148f401b75e0fdb8a86f1b138840b59608039f0efb93195942ab8",
+      "exported_row_sha256": "d2339974060d29c9e8eb49294d9c3d4257f4ed5d9db57099984da76452a37870",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
       "rh_id": "anuario-indice-permitido",
@@ -794,7 +794,7 @@
           "date": "2026-09-28",
           "kind": "proveniencia",
           "sha256_antes": "3dee0095acc323cf498d08f7fc8b4fcbb11c300c62ffd692091ff1ed136a4eee",
-          "sha256_depois": "3d4fa064111148f401b75e0fdb8a86f1b138840b59608039f0efb93195942ab8"
+          "sha256_depois": "d2339974060d29c9e8eb49294d9c3d4257f4ed5d9db57099984da76452a37870"
         }
       ]
     },

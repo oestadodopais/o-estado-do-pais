@@ -3385,8 +3385,8 @@ calendário comum; a proteção da I77 sobre o nome por verificar mantém-se.
 
 | classe | frase | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 33 provenance revisions | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
-| conteudo | 33 revisões de proveniência | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | 34 provenance revisions | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | 34 revisões de proveniência | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
 | conteudo | : (dado provisório) União Europeia : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
 | conteudo | : (provisional data) European Union : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
 | conteudo | A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |

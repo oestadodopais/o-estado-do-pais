@@ -69,4 +69,8 @@ corrections:
   new_value: A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores.
   reason: A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.
   reason_en: The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed.
-verifications: []
+verifications:
+  - date: "2026-09-01"
+    path: "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22"
+    result: "igual"
+    by: "corredor-diario"
