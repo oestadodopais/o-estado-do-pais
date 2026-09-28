@@ -1,0 +1,19 @@
+{
+  "comandos": [
+    {
+      "comando": "python3 -m indicators.refresh_dimensoes_test",
+      "codigo": 0,
+      "conferencias": 14
+    },
+    {
+      "comando": "python3 -m indicators.refresh --prova-vigia",
+      "codigo": 0,
+      "conferencias": 65
+    }
+  ],
+  "caminhos_da_maquina": {
+    "ficheiros": 11,
+    "ocorrencias": 0,
+    "conhecido_positivo": true
+  }
+}

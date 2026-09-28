@@ -1,0 +1,46 @@
+{
+  "razao": "As três caches derivadas não existem numa worktree nova; a nota do .gitignore manda regenerá-las ou copiá-las da árvore principal.",
+  "ficheiros": [
+    {
+      "ficheiro": "content/07 Évora Municipal Accounts/Technical Source/snippets.json",
+      "origem": "árvore principal do motor",
+      "sha256": "9b76dae46e934866bfe925e3d7687a23b3d72a44a95cfbcd3833816f8f3d504a",
+      "bytes": 802359,
+      "recortes": 48,
+      "copia_identica": true,
+      "livro_identico": true,
+      "ignorado_pelo_git": true,
+      "imagens_integrais": true,
+      "caminhos_da_maquina": 0
+    },
+    {
+      "ficheiro": "content/08 Évora Mandates/Technical Source/snippets.json",
+      "origem": "árvore principal do motor",
+      "sha256": "b85d828e623224ecb73cb5c56e0a9cfd26b919305d481b9776e80525931e6d82",
+      "bytes": 480877,
+      "recortes": 62,
+      "copia_identica": true,
+      "livro_identico": true,
+      "ignorado_pelo_git": true,
+      "imagens_integrais": true,
+      "caminhos_da_maquina": 0
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/snippets.json",
+      "origem": "árvore principal do motor",
+      "sha256": "cc4fb3b33c4ff33aa00f009485d408b50f32c5e25120b05bdff2bbcdded6f654",
+      "bytes": 426063,
+      "recortes": 60,
+      "copia_identica": true,
+      "livro_identico": true,
+      "ignorado_pelo_git": true,
+      "imagens_integrais": true,
+      "caminhos_da_maquina": 0
+    }
+  ],
+  "total_copias": 3,
+  "recortes_conferidos": 170,
+  "conhecido_positivo_caminhos": true,
+  "git_status_conservado": true,
+  "portao_executado": false
+}

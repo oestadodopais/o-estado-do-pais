@@ -1,0 +1,2312 @@
+{
+  "gerado_em": "2026-09-28T12:40:30.816838+00:00",
+  "base_sitio": "48a5a1c181c1753036d301204884c57119bba8a5",
+  "cabeca_sitio": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+  "base_motor": "4eb2867936dd14ad2654751722e390804e68dda3",
+  "cabeca_motor": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+  "commits": {
+    "sitio": [
+      {
+        "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+        "assunto": "C1: alinhar a dívida de Évora com o calendário dos mandatos"
+      },
+      {
+        "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+        "assunto": "C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos"
+      },
+      {
+        "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+        "assunto": "C1: separar valores e explicar as leituras e as conferências"
+      },
+      {
+        "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+        "assunto": "C1: registar as três releituras iguais do PIB real por habitante"
+      },
+      {
+        "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+        "assunto": "C1: separar também as unidades nos cartões dos concelhos"
+      },
+      {
+        "hash": "8656f66f838c31ec0ad63d58204df2edb5f90e91",
+        "assunto": "C1: fixar as palavras e preparar a medição da entrega"
+      },
+      {
+        "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+        "assunto": "C1: fechar os tipos do CSV e retirar a importação sem uso"
+      }
+    ],
+    "motor": [
+      {
+        "hash": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+        "assunto": "C1: reler dimensões do Eurostat pela coordenada selada"
+      }
+    ]
+  },
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "inicio": "2026-09-28T12:19:39.348771+00:00",
+      "fim": "2026-09-28T12:24:44.484406+00:00",
+      "segundos": 305.135635
+    },
+    "verify": {
+      "codigo": 0,
+      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "inicio": "2026-09-28T12:25:04.433018+00:00",
+      "fim": "2026-09-28T12:33:20.583029+00:00",
+      "segundos": 496.150011
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "inicio": "2026-09-28T12:19:33.074979+00:00",
+      "fim": "2026-09-28T12:19:33.236474+00:00",
+      "segundos": 0.161495
+    }
+  },
+  "espaco_visual": {
+    "comparacoes": [
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "pt",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "pt",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "pt",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "pt",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "pt",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "pt",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "pt",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "pt",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "pt",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "pt",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "pt",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "pt",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "pt",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "pt",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "pt",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "en",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "en",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "en",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "en",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "en",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "en",
+        "largura": 390,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "en",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "en",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "en",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "en",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "en",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "en",
+        "largura": 768,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "en",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "en",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "en",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "en",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "en",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "en",
+        "largura": 1024,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "en",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "en",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "en",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "en",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "en",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "en",
+        "largura": 1280,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-variacao-homologa",
+        "lingua": "en",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ihpc-variacao-homologa",
+        "lingua": "en",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-rendas-variacao-homologa",
+        "lingua": "en",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "pensao-media-anual-2025",
+        "lingua": "en",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "ipc-alimentacao-variacao-homologa",
+        "lingua": "en",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      },
+      {
+        "id": "divida-das-familias-2025",
+        "lingua": "en",
+        "largura": 1600,
+        "antes_px": 6,
+        "depois_px": 6,
+        "diferenca_px": 0
+      }
+    ],
+    "quantidade": 60,
+    "maior_diferenca_px": 0
+  },
+  "linhas": {
+    "conferidas": 3009,
+    "valores_ou_fontes_alterados": [],
+    "novas": []
+  },
+  "provas": {
+    "acertos-provados": {
+      "redacao": "quarta",
+      "acertos": 2,
+      "diferencas_fora_dos_acertos": 0,
+      "leituras_anteriores_intactas": 37,
+      "k17": {
+        "erros": [],
+        "contas": {
+          "medidas": 49,
+          "folhas": 998,
+          "partes": 1147,
+          "diz": 309,
+          "conta": 281,
+          "liga": 557,
+          "apoios": 451,
+          "algarismos": 27,
+          "origens_das_leituras": 99,
+          "comuns": 38
+        }
+      }
+    },
+    "plantas-confianca": {
+      "natureza": "Casos sintéticos em memória. Os valores e as frases deste ensaio não são observações publicadas.",
+      "contagens": {
+        "controlos": 32,
+        "controlos_integros": 32,
+        "plantas": 38,
+        "plantas_mordidas": 38
+      },
+      "controlos": [
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-ainda-sem-segunda-leitura",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-numero-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-ficheiro-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-divergencia-com-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-divergencia-ainda-sem-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-fonte-sem-resposta",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-ainda-sem-segunda-leitura",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-numero-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-ficheiro-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-divergencia-com-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-divergencia-ainda-sem-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-fonte-sem-resposta",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-negativo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "−0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, −0,5 % face aos de há um ano, ou seja, abaixo deles. É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. A variação é menor do que a do mês anterior."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-zero",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "zero"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, ao mesmo nível de há um ano. O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram. A variação é menor do que a do mês anterior."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-positivo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "positivo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, 0,5 % acima dos de há um ano. É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. A variação é maior do que a do mês anterior."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-maior",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−1,0"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é maior do que a da média da União Europeia."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-menor",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é menor do que a da média da União Europeia."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-igual",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,5"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "igual"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é igual à da média da União Europeia."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-negativo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "−0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "In August 2026 consumer prices were, on average, −0,5 % compared with a year earlier, that is, below. That is the general fall in prices, which the INE measures on a basket of goods and services that represents what households buy. The change is smaller than the previous month’s."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-zero",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "zero"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "In August 2026 consumer prices were, on average, at the same level as a year earlier. The INE measures them on a basket of goods and services that represents what households buy. The change is smaller than the previous month’s."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-positivo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "positivo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "In August 2026 consumer prices were, on average, 0,5 % above a year earlier. That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy. The change is larger than the previous month’s."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-maior",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−1,0"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is larger than the European Union average."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-menor",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is smaller than the European Union average."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-igual",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,5"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "igual"
+            }
+          ],
+          "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is the same as the European Union average."
+        }
+      ],
+      "plantas": [
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-nega-releitura-registada",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-omite-ainda-sem-segunda-leitura",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-inventa-segunda-leitura",
+          "codigo": 1,
+          "mordida": "segunda leitura sem entrada",
+          "passou": true,
+          "erros": [
+            "C1: segunda leitura sem entrada no registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-ficheiro-apresentado-como-numero",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-numero-apresentado-como-ficheiro",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-falsa-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-sem-porta",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-com-porta-errada",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-sem-destino",
+          "codigo": 1,
+          "mordida": "atualização sem destino",
+          "passou": true,
+          "erros": [
+            "C1: atualização sem destino na história"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-correcao-apresentada-como-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-de-outro-valor",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-nega-releitura-registada",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-omite-ainda-sem-segunda-leitura",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-inventa-segunda-leitura",
+          "codigo": 1,
+          "mordida": "segunda leitura sem entrada",
+          "passou": true,
+          "erros": [
+            "C1: segunda leitura sem entrada no registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-ficheiro-apresentado-como-numero",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-numero-apresentado-como-ficheiro",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-falsa-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-sem-porta",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-com-porta-errada",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-sem-destino",
+          "codigo": 1,
+          "mordida": "atualização sem destino",
+          "passou": true,
+          "erros": [
+            "C1: atualização sem destino na história"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-correcao-apresentada-como-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-de-outro-valor",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-negativo-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços no consumidor estavam, em méd…» contra «Em agosto de 2026 os preços no consumidor estavam, em méd…»",
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços no consumidor estavam, em méd…» contra «Em agosto de 2026 os preços no consumidor estavam, em méd…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-maior-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-menor-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-igual-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-negativo-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 consumer prices were, on average, −0,5 % c…» contra «In August 2026 consumer prices were, on average, −0,5 % c…»",
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 consumer prices were, on average, −0,5 % c…» contra «In August 2026 consumer prices were, on average, −0,5 % c…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-maior-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-menor-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-igual-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+          ]
+        }
+      ]
+    },
+    "dados-concelhos": {
+      "origem": "dist/",
+      "erros": [],
+      "linhas": 2464,
+      "concelhos": 308,
+      "medidas": 8,
+      "calculadas": 308,
+      "limpa": {
+        "codigo": 0,
+        "saida": "C7: 2464 linhas de 308 concelhos, conferidas no livro-razão."
+      },
+      "plantas": [
+        {
+          "nome": "valor-trocado-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 1 (evora-populacao-2025): valor difere da linha ou da declaração do cartão.",
+          "mordida": "C7 .*valor difere da linha",
+          "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "unidade-trocada-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 1 (evora-populacao-2025): unidade difere da linha ou da declaração do cartão.",
+          "mordida": "C7 .*unidade difere da linha",
+          "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "medida-omitida-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: 2463 linhas no ficheiro e 2464 cartões com linha declarada.\nC7 /dados/indicadores-dos-concelhos.csv: falta o concelho e a medida [\"evora\",\"População residente\"].",
+          "mordida": "C7 .*falta o concelho e a medida",
+          "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "medida-repetida-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: 2465 linhas no ficheiro e 2464 cartões com linha declarada.\nC7 /dados/indicadores-dos-concelhos.csv: registo 2: concelho e medida repetidos.",
+          "mordida": "C7 .*concelho e medida repetidos",
+          "antes": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "reposto": "e06430ca7eab9808bd0f83b44af37fdb9debc8b13764802f6c3d6f7520ffbd80",
+          "codigo_reposicao": 0,
+          "passou": true
+        }
+      ]
+    },
+    "calendario": {
+      "celula": "F18",
+      "modo": "páginas construídas",
+      "paginas": [
+        {
+          "rota": "/municipios/evora",
+          "erros": [],
+          "pontos": [
+            {
+              "id": "evora-indice-de-divida-2014",
+              "ano": 2014,
+              "x": 0.2760416666666667,
+              "esperado": 0.2760416666666667
+            },
+            {
+              "id": "evora-indice-de-divida-2017",
+              "ano": 2017,
+              "x": 0.43333333333333335,
+              "esperado": 0.43333333333333335
+            },
+            {
+              "id": "evora-indice-de-divida-2021",
+              "ano": 2021,
+              "x": 0.6430555555555556,
+              "esperado": 0.6430555555555555
+            },
+            {
+              "id": "evora-indice-de-divida-2024",
+              "ano": 2024,
+              "x": 0.8003472222222222,
+              "esperado": 0.8003472222222222
+            }
+          ],
+          "plantas": [
+            {
+              "nome": "ponto-fora-do-ano",
+              "codigo": 1,
+              "mordida": "ponto fora do seu ano",
+              "passou": true,
+              "erros": [
+                "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+              ]
+            },
+            {
+              "nome": "uniao-sobre-lacuna",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "ponto-sem-valor",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "mandato-sem-rotulo",
+              "codigo": 1,
+              "mordida": "não tem o seu rótulo",
+              "passou": true,
+              "erros": [
+                "F18: o mandato em curso não tem o seu rótulo."
+              ]
+            }
+          ]
+        },
+        {
+          "rota": "/en/municipalities/evora",
+          "erros": [],
+          "pontos": [
+            {
+              "id": "evora-indice-de-divida-2014",
+              "ano": 2014,
+              "x": 0.2760416666666667,
+              "esperado": 0.2760416666666667
+            },
+            {
+              "id": "evora-indice-de-divida-2017",
+              "ano": 2017,
+              "x": 0.43333333333333335,
+              "esperado": 0.43333333333333335
+            },
+            {
+              "id": "evora-indice-de-divida-2021",
+              "ano": 2021,
+              "x": 0.6430555555555556,
+              "esperado": 0.6430555555555555
+            },
+            {
+              "id": "evora-indice-de-divida-2024",
+              "ano": 2024,
+              "x": 0.8003472222222222,
+              "esperado": 0.8003472222222222
+            }
+          ],
+          "plantas": [
+            {
+              "nome": "ponto-fora-do-ano",
+              "codigo": 1,
+              "mordida": "ponto fora do seu ano",
+              "passou": true,
+              "erros": [
+                "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+              ]
+            },
+            {
+              "nome": "uniao-sobre-lacuna",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "ponto-sem-valor",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "mandato-sem-rotulo",
+              "codigo": 1,
+              "mordida": "não tem o seu rótulo",
+              "passou": true,
+              "erros": [
+                "F18: o mandato em curso não tem o seu rótulo."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "circuito-divida": {
+      "guiao": "design/especime-v3/medicoes/c1-2026-09-28/provar-circuito-divida.py",
+      "cabeca_base": "a677770fe4ca9d909be55ebb5e87458108747382",
+      "cabeca_lida_do_sitio": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+      "cabeca_lida_do_motor": "4eb2867936dd14ad2654751722e390804e68dda3",
+      "sem_pedidos_de_rede": true,
+      "linha": "divida-das-familias-2025-ue",
+      "conclusao": "A linha pertence ao quadro institucional e foi gerada pelo enquadramento. Não tem entrada na travessia nem no livro do estudo 13; o caminho pedido no ponto 3 do brief não é o circuito desta linha.",
+      "circuitos": [
+        {
+          "ficheiro": "ledger/cruzamentos/agenda.json",
+          "elementos_de_identificacao_lidos": 67,
+          "leitor": "campos textuais do JSON inteiro",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": false
+          }
+        },
+        {
+          "ficheiro": "ledger/cruzamentos/concelhos.json",
+          "elementos_de_identificacao_lidos": 7398,
+          "leitor": "campos textuais do JSON inteiro",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": false
+          }
+        },
+        {
+          "ficheiro": "ledger/cruzamentos/dominios.json",
+          "elementos_de_identificacao_lidos": 1067,
+          "leitor": "campos textuais do JSON inteiro",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": true
+          }
+        },
+        {
+          "ficheiro": "ledger/cruzamentos/evora.json",
+          "elementos_de_identificacao_lidos": 333,
+          "leitor": "campos textuais do JSON inteiro",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": false
+          }
+        },
+        {
+          "ficheiro": "ledger/cruzamentos/paridade.json",
+          "elementos_de_identificacao_lidos": 23,
+          "leitor": "campos textuais do JSON inteiro",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": false
+          }
+        },
+        {
+          "ficheiro": "ledger/cruzamentos/regioes.json",
+          "elementos_de_identificacao_lidos": 55,
+          "leitor": "campos textuais do JSON inteiro",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": false
+          }
+        },
+        {
+          "ficheiro": "~/Instruments/ResearchHub/publisher/manifest.dominios.json",
+          "elementos_de_identificacao_lidos": 348,
+          "leitor": "identificadores de rows",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": true
+          }
+        },
+        {
+          "ficheiro": "~/Instruments/ResearchHub/content/13 Dominios/ledger.json",
+          "elementos_de_identificacao_lidos": 348,
+          "leitor": "identificadores de claims",
+          "alvo_encontrado": false,
+          "controlo_no_ficheiro": {
+            "id": "ipc-variacao-homologa",
+            "encontrado": true
+          }
+        }
+      ],
+      "conhecido_positivo": {
+        "id": "ipc-variacao-homologa",
+        "encontrado": true,
+        "ficheiros": [
+          "ledger/cruzamentos/dominios.json",
+          "~/Instruments/ResearchHub/publisher/manifest.dominios.json",
+          "~/Instruments/ResearchHub/content/13 Dominios/ledger.json"
+        ]
+      },
+      "contagens": {
+        "registos_de_travessia_lidos": 6,
+        "ocorrencias_da_linha_nos_circuitos": 0,
+        "pontos_do_conhecido_positivo": 3,
+        "campos_historicos_alterados": 0
+      },
+      "proveniencia_real": {
+        "gerador": "~/Instruments/ResearchHub/indicators/enquadramento.py",
+        "funcao": "linha_da_uniao",
+        "linha_da_funcao": 225,
+        "declaracao_do_estudo": "~/Instruments/ResearchHub/indicators/generate_claims.py",
+        "study": "quadro-institucional",
+        "artefacto_original": "~/Instruments/ResearchHub/indicators/out/enquadramento-2026-09-15/claims/divida-das-familias-2025-ue.yml",
+        "sha256_artefacto_original": "89f0ae418b659487e7bab4ecef621011b0b98182615d472ca29136874fdfbe08",
+        "resumo_original": "~/Instruments/ResearchHub/indicators/out/enquadramento-2026-09-15/resumo.json",
+        "entrada_do_resumo": {
+          "id": "divida-das-familias-2025-ue",
+          "valor": "49,3",
+          "periodo": "2025",
+          "geo": "EU27_2020",
+          "unidade": "% do PIB",
+          "endereco": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+          "familia": "uniao"
+        },
+        "provas": {
+          "cabecalho_nomeia_o_gerador": true,
+          "gerador_importa_STUDY": true,
+          "funcao_da_uniao_passa_STUDY": true,
+          "funcao_nomeia_o_gerador": true,
+          "estudo_e_o_da_linha": true,
+          "id_deriva_do_conjunto_e_periodo": true,
+          "resumo_regista_a_linha_uma_vez": true,
+          "campos_originais_iguais": true
+        }
+      },
+      "corpo_do_mesmo_conjunto_no_estudo_13": {
+        "ficheiro": "~/Instruments/ResearchHub/content/13 Dominios/source/eurostat/tipspd22.json",
+        "geografias": [
+          "PT"
+        ],
+        "funcao_declarada": "L1 · origem da leitura de divida-das-familias-2025. Metainformação, sem linhas",
+        "pedido": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+        "lido_a": "2026-09-24T06:29:23Z",
+        "sha256": "e044653d1721480e272f79d899d457d08f87183ecac1238a968133d329340d7f",
+        "selos_conferidos": true,
+        "registo": "~/Instruments/ResearchHub/content/13 Dominios/source/FETCH.json",
+        "manifesto": "~/Instruments/ResearchHub/content/13 Dominios/source/MANIFEST.sha256",
+        "conclusao": "O corpo alojado serve de metainformação para a leitura nacional. Traz Portugal e não traz a União Europeia."
+      },
+      "comparacao_antes_atual": {
+        "ficheiro": "ledger/claims/divida-das-familias-2025-ue.yml",
+        "sha256_antes": "ec483eebff38bd3049f65d6f2fb1494b35760dc6e7cf87fcc40aae3a01f80ce8",
+        "sha256_atual": "ec483eebff38bd3049f65d6f2fb1494b35760dc6e7cf87fcc40aae3a01f80ce8",
+        "bytes_iguais": true,
+        "campos": {
+          "value": {
+            "antes": "49,3",
+            "atual": "49,3",
+            "igual": true
+          },
+          "source_url": {
+            "antes": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+            "atual": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+            "igual": true
+          },
+          "study": {
+            "antes": "quadro-institucional",
+            "atual": "quadro-institucional",
+            "igual": true
+          }
+        },
+        "atualizacoes_atuais": 0,
+        "ultima_releitura_registada": {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+          "result": "diverge",
+          "by": "painel-semanal",
+          "found": "49.2"
+        }
+      }
+    },
+    "custo-c1": {
+      "registado_em": "2026-09-28T12:38:56.213176+00:00",
+      "ambito": "sessão raiz e três agentes construtores do C1",
+      "unidade": "tokens cumulativos expostos pelo runtime",
+      "limites": [
+        "As revisões automáticas estão excluídas.",
+        "A entrada em cache está incluída na entrada total; não se soma uma segunda vez.",
+        "A saída de raciocínio está incluída na saída; não se soma uma segunda vez.",
+        "As sessões ativas podem continuar a acumular tokens depois desta leitura.",
+        "Não se estima um preço nem o consumo restante da subscrição."
+      ],
+      "provas_do_leitor": {
+        "cumulativos_nao_somados_entre_eventos": true,
+        "conteudo_e_cwd_excluidos": true,
+        "modelo_nao_inferido": true
+      },
+      "sessoes": [
+        {
+          "ficheiro": "rollout-2026-09-28T12-29-20-01a0e7c6-cbd3-7743-9d24-e6f02bb482c2.jsonl",
+          "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+          "id_pai": null,
+          "inicio": "2026-09-28T11:29:20.610Z",
+          "modelos_expostos": [
+            "gpt-6-astra"
+          ],
+          "primeiro_token_count": "2026-09-28T11:29:31.458Z",
+          "ultimo_token_count": "2026-09-28T12:38:28.116Z",
+          "cumulativos": {
+            "input_tokens": 28122696,
+            "cached_input_tokens": 27637120,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 83888,
+            "reasoning_output_tokens": 38069,
+            "total_tokens": 28206584
+          }
+        },
+        {
+          "ficheiro": "rollout-2026-09-28T12-32-23-01a0e7c9-9549-7fe0-9ee6-52fbfb2bd675.jsonl",
+          "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+          "id_pai": null,
+          "inicio": "2026-09-28T11:32:23.020Z",
+          "modelos_expostos": [
+            "gpt-6-astra"
+          ],
+          "primeiro_token_count": "2026-09-28T11:32:29.535Z",
+          "ultimo_token_count": "2026-09-28T12:03:17.177Z",
+          "cumulativos": {
+            "input_tokens": 7867833,
+            "cached_input_tokens": 7660928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 30475,
+            "reasoning_output_tokens": 7214,
+            "total_tokens": 7898308
+          }
+        },
+        {
+          "ficheiro": "rollout-2026-09-28T12-32-31-01a0e7c9-b5a6-7323-a1e6-3d2dfaaa5a9d.jsonl",
+          "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+          "id_pai": null,
+          "inicio": "2026-09-28T11:32:31.286Z",
+          "modelos_expostos": [
+            "gpt-6-astra"
+          ],
+          "primeiro_token_count": "2026-09-28T11:32:37.223Z",
+          "ultimo_token_count": "2026-09-28T12:12:07.202Z",
+          "cumulativos": {
+            "input_tokens": 9785954,
+            "cached_input_tokens": 9514496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 39330,
+            "reasoning_output_tokens": 6272,
+            "total_tokens": 9825284
+          }
+        },
+        {
+          "ficheiro": "rollout-2026-09-28T12-32-42-01a0e7c9-e01f-7272-9561-29cbb8f61f21.jsonl",
+          "id": "01a0e7c6-cbd3-7743-9d24-e6f02bb482c2",
+          "id_pai": null,
+          "inicio": "2026-09-28T11:32:42.167Z",
+          "modelos_expostos": [
+            "gpt-6-astra"
+          ],
+          "primeiro_token_count": "2026-09-28T11:32:54.003Z",
+          "ultimo_token_count": "2026-09-28T11:58:17.199Z",
+          "cumulativos": {
+            "input_tokens": 5689522,
+            "cached_input_tokens": 5554688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 21743,
+            "reasoning_output_tokens": 6321,
+            "total_tokens": 5711265
+          }
+        }
+      ],
+      "soma_das_sessoes": {
+        "input_tokens": 51466005,
+        "cached_input_tokens": 50367232,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 175436,
+        "reasoning_output_tokens": 57876,
+        "total_tokens": 51641441
+      },
+      "relogio": {
+        "inicio_sessao": "2026-09-28T11:29:20.610Z",
+        "fim_dos_portoes": "2026-09-28T12:33:20.583029+00:00",
+        "medido_ate": "2026-09-28T12:33:20.583029+00:00",
+        "criterio_do_fim": "último dos três portões na mesma cabeça",
+        "segundos": 3839.973029,
+        "portoes_presentes": [
+          {
+            "nome": "build",
+            "inicio": "2026-09-28T12:19:39.348771+00:00",
+            "fim": "2026-09-28T12:24:44.484406+00:00",
+            "codigo": 0,
+            "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d"
+          },
+          {
+            "nome": "verify",
+            "inicio": "2026-09-28T12:25:04.433018+00:00",
+            "fim": "2026-09-28T12:33:20.583029+00:00",
+            "codigo": 0,
+            "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d"
+          },
+          {
+            "nome": "typecheck",
+            "inicio": "2026-09-28T12:19:33.074979+00:00",
+            "fim": "2026-09-28T12:19:33.236474+00:00",
+            "codigo": 0,
+            "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d"
+          }
+        ],
+        "portoes_completos": true,
+        "portoes_a_zero": true
+      }
+    }
+  },
+  "caminhos": {
+    "ficheiros": 577,
+    "versoes_no_historico": 49,
+    "achados": [],
+    "quantidade": 0,
+    "conhecido_positivo": true,
+    "classes_detetadas": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "capturas": {
+    "antes": {
+      "cabeca": "48a5a1c181c1753036d301204884c57119bba8a5",
+      "paginas": 70,
+      "recortes": 60,
+      "larguras": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "edicoes": [
+        "en",
+        "pt"
+      ],
+      "copias": 18,
+      "falhas": [],
+      "valores_colados": 760,
+      "transbordos": 0,
+      "resumos_errados": []
+    },
+    "depois": {
+      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "paginas": 70,
+      "recortes": 60,
+      "larguras": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "edicoes": [
+        "en",
+        "pt"
+      ],
+      "copias": 18,
+      "falhas": [],
+      "valores_colados": 0,
+      "transbordos": 0,
+      "resumos_errados": []
+    }
+  },
+  "pib": {
+    "inicio_utc": "2026-09-28T11:42:25+00:00",
+    "fim_utc": "2026-09-28T11:42:25+00:00",
+    "modo": "corpos guardados",
+    "linhas": [
+      {
+        "id": "pib-real-per-capita-2024",
+        "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "pedido_fixo": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+        "valor_selado": "20 430",
+        "unidade_selada": "euros por habitante · volumes encadeados (2015)",
+        "excerto_selado": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430",
+        "estado": {
+          "period": "2024",
+          "value": 20430,
+          "unit": "Chain linked volumes (2015), euro per capita",
+          "ultimo_periodo": "2025",
+          "label": "Real GDP per capita",
+          "updated": "2026-09-28T11:00:00+0200",
+          "coordenadas": {
+            "freq": "A",
+            "unit": "CLV15_EUR_HAB",
+            "na_item": "B1GQ",
+            "geo": "PT"
+          },
+          "shape": {
+            "freq": 1,
+            "unit": 2,
+            "na_item": 1,
+            "geo": 1,
+            "time": 31
+          },
+          "dims": [
+            "freq",
+            "geo",
+            "na_item",
+            "time",
+            "unit"
+          ]
+        },
+        "estado_fixo": {
+          "period": "2024",
+          "value": 20430,
+          "unit": "Chain linked volumes (2015), euro per capita",
+          "ultimo_periodo": "2025",
+          "label": "Real GDP per capita",
+          "updated": "2026-09-28T11:00:00+0200",
+          "coordenadas": {
+            "freq": "A",
+            "unit": "CLV15_EUR_HAB",
+            "na_item": "B1GQ",
+            "geo": "PT"
+          },
+          "shape": {
+            "freq": 1,
+            "unit": 1,
+            "na_item": 1,
+            "geo": 1,
+            "time": 31
+          },
+          "dims": [
+            "freq",
+            "geo",
+            "na_item",
+            "time",
+            "unit"
+          ]
+        },
+        "existencia_sem_coordenada": "AMBIGUOUS: unit(2)",
+        "existencia_com_coordenada": null,
+        "resultado": "igual",
+        "verificacao": {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        "canarias_do_pedido_historico": [
+          {
+            "canaria": "structure",
+            "gravidade": "alarm",
+            "mensagem": "dimension sizes changed: {'unit': (1, 2)}"
+          },
+          {
+            "canaria": "metadata",
+            "gravidade": "notice",
+            "mensagem": "dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-09-28T11:00:00+0200"
+          }
+        ],
+        "corpo": "002-tipsna40-PT.json",
+        "corpo_fixo": "003-tipsna40-PT-unidade-fixa.json",
+        "source_url_conservado": true
+      },
+      {
+        "id": "pib-real-per-capita-2025",
+        "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "pedido_fixo": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+        "valor_selado": "20 600",
+        "unidade_selada": "euros por habitante · volumes encadeados (2015)",
+        "excerto_selado": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600",
+        "estado": {
+          "period": "2025",
+          "value": 20600,
+          "unit": "Chain linked volumes (2015), euro per capita",
+          "ultimo_periodo": "2025",
+          "label": "Real GDP per capita",
+          "updated": "2026-09-28T11:00:00+0200",
+          "coordenadas": {
+            "freq": "A",
+            "unit": "CLV15_EUR_HAB",
+            "na_item": "B1GQ",
+            "geo": "PT"
+          },
+          "shape": {
+            "freq": 1,
+            "unit": 2,
+            "na_item": 1,
+            "geo": 1,
+            "time": 31
+          },
+          "dims": [
+            "freq",
+            "geo",
+            "na_item",
+            "time",
+            "unit"
+          ]
+        },
+        "estado_fixo": {
+          "period": "2025",
+          "value": 20600,
+          "unit": "Chain linked volumes (2015), euro per capita",
+          "ultimo_periodo": "2025",
+          "label": "Real GDP per capita",
+          "updated": "2026-09-28T11:00:00+0200",
+          "coordenadas": {
+            "freq": "A",
+            "unit": "CLV15_EUR_HAB",
+            "na_item": "B1GQ",
+            "geo": "PT"
+          },
+          "shape": {
+            "freq": 1,
+            "unit": 1,
+            "na_item": 1,
+            "geo": 1,
+            "time": 31
+          },
+          "dims": [
+            "freq",
+            "geo",
+            "na_item",
+            "time",
+            "unit"
+          ]
+        },
+        "existencia_sem_coordenada": "AMBIGUOUS: unit(2)",
+        "existencia_com_coordenada": null,
+        "resultado": "igual",
+        "verificacao": {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        "canarias_do_pedido_historico": [
+          {
+            "canaria": "structure",
+            "gravidade": "alarm",
+            "mensagem": "dimension sizes changed: {'unit': (1, 2)}"
+          },
+          {
+            "canaria": "metadata",
+            "gravidade": "notice",
+            "mensagem": "dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-09-28T11:00:00+0200"
+          }
+        ],
+        "corpo": "002-tipsna40-PT.json",
+        "corpo_fixo": "003-tipsna40-PT-unidade-fixa.json",
+        "source_url_conservado": true
+      },
+      {
+        "id": "pib-real-per-capita-2025-ue",
+        "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+        "pedido_fixo": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020&unit=CLV15_EUR_HAB",
+        "valor_selado": "31 890",
+        "unidade_selada": "euros por habitante · volumes encadeados (2015)",
+        "excerto_selado": "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890",
+        "estado": {
+          "period": "2025",
+          "value": 31890,
+          "unit": "Chain linked volumes (2015), euro per capita",
+          "ultimo_periodo": "2025",
+          "label": "Real GDP per capita",
+          "updated": "2026-09-28T11:00:00+0200",
+          "coordenadas": {
+            "freq": "A",
+            "unit": "CLV15_EUR_HAB",
+            "na_item": "B1GQ",
+            "geo": "EU27_2020"
+          },
+          "shape": {
+            "freq": 1,
+            "unit": 2,
+            "na_item": 1,
+            "geo": 1,
+            "time": 31
+          },
+          "dims": [
+            "freq",
+            "geo",
+            "na_item",
+            "time",
+            "unit"
+          ]
+        },
+        "estado_fixo": {
+          "period": "2025",
+          "value": 31890,
+          "unit": "Chain linked volumes (2015), euro per capita",
+          "ultimo_periodo": "2025",
+          "label": "Real GDP per capita",
+          "updated": "2026-09-28T11:00:00+0200",
+          "coordenadas": {
+            "freq": "A",
+            "unit": "CLV15_EUR_HAB",
+            "na_item": "B1GQ",
+            "geo": "EU27_2020"
+          },
+          "shape": {
+            "freq": 1,
+            "unit": 1,
+            "na_item": 1,
+            "geo": 1,
+            "time": 31
+          },
+          "dims": [
+            "freq",
+            "geo",
+            "na_item",
+            "time",
+            "unit"
+          ]
+        },
+        "existencia_sem_coordenada": "AMBIGUOUS: unit(2)",
+        "existencia_com_coordenada": null,
+        "resultado": "igual",
+        "verificacao": {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020&unit=CLV15_EUR_HAB",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        "canarias_do_pedido_historico": [
+          {
+            "canaria": "structure",
+            "gravidade": "alarm",
+            "mensagem": "dimension sizes changed: {'unit': (1, 2)}"
+          },
+          {
+            "canaria": "metadata",
+            "gravidade": "notice",
+            "mensagem": "dataset updated stamp: 2026-09-18T23:00:00+0200 -> 2026-09-28T11:00:00+0200"
+          }
+        ],
+        "corpo": "004-tipsna40-EU27_2020.json",
+        "corpo_fixo": "005-tipsna40-EU27_2020-unidade-fixa.json",
+        "source_url_conservado": true
+      }
+    ],
+    "plantas": [
+      {
+        "nome": "excerto resolve unidade fora da primeira posição: unit,geo,time",
+        "passou": true
+      },
+      {
+        "nome": "período selado conservado: unit,geo,time",
+        "passou": true
+      },
+      {
+        "nome": "excerto resolve unidade fora da primeira posição: time,unit,geo",
+        "passou": true
+      },
+      {
+        "nome": "período selado conservado: time,unit,geo",
+        "passou": true
+      },
+      {
+        "nome": "dimensão sem coordenada continua recusada",
+        "passou": true
+      },
+      {
+        "nome": "parte de uma etiqueta não escolhe uma categoria",
+        "passou": true
+      },
+      {
+        "nome": "duas etiquetas seladas continuam ambíguas",
+        "passou": true
+      },
+      {
+        "nome": "pedido que contradiz o excerto é recusado",
+        "passou": true
+      },
+      {
+        "nome": "coordenada explícita no pedido resolve",
+        "passou": true
+      },
+      {
+        "nome": "coordenada inexistente é recusada",
+        "passou": true
+      },
+      {
+        "nome": "ausência na unidade selada não lê a outra unidade",
+        "passou": true
+      },
+      {
+        "nome": "índices e valores em lista conservam a coordenada",
+        "passou": true
+      },
+      {
+        "nome": "outra dimensão ambígua é recusada",
+        "passou": true
+      },
+      {
+        "nome": "a linha e o endereço histórico conservam-se",
+        "passou": true
+      }
+    ],
+    "ficheiros_protegidos_conservados": 13,
+    "linhas_conservadas": 3,
+    "pedidos": 4,
+    "iguais": 3,
+    "divergentes": 0,
+    "ambiguidades": 0,
+    "parada_antes_de_atualizacao": false
+  },
+  "protegidos_motor_alterados": [],
+  "validacao": {
+    "erros": [],
+    "ponto_3": "parado por divergência entre o brief e o circuito real"
+  }
+}

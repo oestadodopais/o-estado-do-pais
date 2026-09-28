@@ -1,0 +1,45 @@
+{
+  "commits_antes_da_entrega": [
+    {
+      "arvore": "sítio",
+      "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "sítio",
+      "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "sítio",
+      "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "sítio",
+      "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "sítio",
+      "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "sítio",
+      "hash": "8656f66f838c31ec0ad63d58204df2edb5f90e91",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "motor",
+      "hash": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+      "trailers_corretos": true
+    },
+    {
+      "arvore": "sítio",
+      "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "trailers_corretos": true
+    }
+  ],
+  "quantidade": 8
+}

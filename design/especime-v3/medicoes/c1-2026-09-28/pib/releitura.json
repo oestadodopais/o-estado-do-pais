@@ -1,0 +1,300 @@
+{
+  "inicio_utc": "2026-09-28T11:39:03+00:00",
+  "fim_utc": "2026-09-28T11:39:09+00:00",
+  "modo": "rede",
+  "linhas": [
+    {
+      "id": "pib-real-per-capita-2024",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "pedido_fixo": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+      "valor_selado": "20 430",
+      "unidade_selada": "euros por habitante · volumes encadeados (2015)",
+      "excerto_selado": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430",
+      "estado": {
+        "period": "2024",
+        "value": 20430,
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "ultimo_periodo": "2025",
+        "label": "Real GDP per capita",
+        "updated": "2026-09-28T11:00:00+0200",
+        "coordenadas": {
+          "freq": "A",
+          "unit": "CLV15_EUR_HAB",
+          "na_item": "B1GQ",
+          "geo": "PT"
+        },
+        "shape": {
+          "freq": 1,
+          "unit": 2,
+          "na_item": 1,
+          "geo": 1,
+          "time": 31
+        },
+        "dims": [
+          "freq",
+          "geo",
+          "na_item",
+          "time",
+          "unit"
+        ]
+      },
+      "estado_fixo": {
+        "period": "2024",
+        "value": 20430,
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "ultimo_periodo": "2025",
+        "label": "Real GDP per capita",
+        "updated": "2026-09-28T11:00:00+0200",
+        "coordenadas": {
+          "freq": "A",
+          "unit": "CLV15_EUR_HAB",
+          "na_item": "B1GQ",
+          "geo": "PT"
+        },
+        "shape": {
+          "freq": 1,
+          "unit": 1,
+          "na_item": 1,
+          "geo": 1,
+          "time": 31
+        },
+        "dims": [
+          "freq",
+          "geo",
+          "na_item",
+          "time",
+          "unit"
+        ]
+      },
+      "existencia_sem_coordenada": "AMBIGUOUS: unit(2)",
+      "existencia_com_coordenada": null,
+      "resultado": "igual",
+      "verificacao": {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      "corpo": "002-tipsna40-PT.json",
+      "corpo_fixo": "003-tipsna40-PT-unidade-fixa.json",
+      "source_url_conservado": true
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "pedido_fixo": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT&unit=CLV15_EUR_HAB",
+      "valor_selado": "20 600",
+      "unidade_selada": "euros por habitante · volumes encadeados (2015)",
+      "excerto_selado": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600",
+      "estado": {
+        "period": "2025",
+        "value": 20600,
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "ultimo_periodo": "2025",
+        "label": "Real GDP per capita",
+        "updated": "2026-09-28T11:00:00+0200",
+        "coordenadas": {
+          "freq": "A",
+          "unit": "CLV15_EUR_HAB",
+          "na_item": "B1GQ",
+          "geo": "PT"
+        },
+        "shape": {
+          "freq": 1,
+          "unit": 2,
+          "na_item": 1,
+          "geo": 1,
+          "time": 31
+        },
+        "dims": [
+          "freq",
+          "geo",
+          "na_item",
+          "time",
+          "unit"
+        ]
+      },
+      "estado_fixo": {
+        "period": "2025",
+        "value": 20600,
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "ultimo_periodo": "2025",
+        "label": "Real GDP per capita",
+        "updated": "2026-09-28T11:00:00+0200",
+        "coordenadas": {
+          "freq": "A",
+          "unit": "CLV15_EUR_HAB",
+          "na_item": "B1GQ",
+          "geo": "PT"
+        },
+        "shape": {
+          "freq": 1,
+          "unit": 1,
+          "na_item": 1,
+          "geo": 1,
+          "time": 31
+        },
+        "dims": [
+          "freq",
+          "geo",
+          "na_item",
+          "time",
+          "unit"
+        ]
+      },
+      "existencia_sem_coordenada": "AMBIGUOUS: unit(2)",
+      "existencia_com_coordenada": null,
+      "resultado": "igual",
+      "verificacao": {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      "corpo": "002-tipsna40-PT.json",
+      "corpo_fixo": "003-tipsna40-PT-unidade-fixa.json",
+      "source_url_conservado": true
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+      "pedido_fixo": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020&unit=CLV15_EUR_HAB",
+      "valor_selado": "31 890",
+      "unidade_selada": "euros por habitante · volumes encadeados (2015)",
+      "excerto_selado": "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890",
+      "estado": {
+        "period": "2025",
+        "value": 31890,
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "ultimo_periodo": "2025",
+        "label": "Real GDP per capita",
+        "updated": "2026-09-28T11:00:00+0200",
+        "coordenadas": {
+          "freq": "A",
+          "unit": "CLV15_EUR_HAB",
+          "na_item": "B1GQ",
+          "geo": "EU27_2020"
+        },
+        "shape": {
+          "freq": 1,
+          "unit": 2,
+          "na_item": 1,
+          "geo": 1,
+          "time": 31
+        },
+        "dims": [
+          "freq",
+          "geo",
+          "na_item",
+          "time",
+          "unit"
+        ]
+      },
+      "estado_fixo": {
+        "period": "2025",
+        "value": 31890,
+        "unit": "Chain linked volumes (2015), euro per capita",
+        "ultimo_periodo": "2025",
+        "label": "Real GDP per capita",
+        "updated": "2026-09-28T11:00:00+0200",
+        "coordenadas": {
+          "freq": "A",
+          "unit": "CLV15_EUR_HAB",
+          "na_item": "B1GQ",
+          "geo": "EU27_2020"
+        },
+        "shape": {
+          "freq": 1,
+          "unit": 1,
+          "na_item": 1,
+          "geo": 1,
+          "time": 31
+        },
+        "dims": [
+          "freq",
+          "geo",
+          "na_item",
+          "time",
+          "unit"
+        ]
+      },
+      "existencia_sem_coordenada": "AMBIGUOUS: unit(2)",
+      "existencia_com_coordenada": null,
+      "resultado": "igual",
+      "verificacao": {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      "corpo": "004-tipsna40-EU27_2020.json",
+      "corpo_fixo": "005-tipsna40-EU27_2020-unidade-fixa.json",
+      "source_url_conservado": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "excerto resolve unidade fora da primeira posição: unit,geo,time",
+      "passou": true
+    },
+    {
+      "nome": "período selado conservado: unit,geo,time",
+      "passou": true
+    },
+    {
+      "nome": "excerto resolve unidade fora da primeira posição: time,unit,geo",
+      "passou": true
+    },
+    {
+      "nome": "período selado conservado: time,unit,geo",
+      "passou": true
+    },
+    {
+      "nome": "dimensão sem coordenada continua recusada",
+      "passou": true
+    },
+    {
+      "nome": "parte de uma etiqueta não escolhe uma categoria",
+      "passou": true
+    },
+    {
+      "nome": "duas etiquetas seladas continuam ambíguas",
+      "passou": true
+    },
+    {
+      "nome": "pedido que contradiz o excerto é recusado",
+      "passou": true
+    },
+    {
+      "nome": "coordenada explícita no pedido resolve",
+      "passou": true
+    },
+    {
+      "nome": "coordenada inexistente é recusada",
+      "passou": true
+    },
+    {
+      "nome": "ausência na unidade selada não lê a outra unidade",
+      "passou": true
+    },
+    {
+      "nome": "índices e valores em lista conservam a coordenada",
+      "passou": true
+    },
+    {
+      "nome": "outra dimensão ambígua é recusada",
+      "passou": true
+    },
+    {
+      "nome": "a linha e o endereço histórico conservam-se",
+      "passou": true
+    }
+  ],
+  "ficheiros_protegidos_conservados": 13,
+  "linhas_conservadas": 3,
+  "pedidos": 4,
+  "iguais": 3,
+  "divergentes": 0,
+  "ambiguidades": 0,
+  "parada_antes_de_atualizacao": false
+}
