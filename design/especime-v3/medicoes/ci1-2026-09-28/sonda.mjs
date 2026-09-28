@@ -8,7 +8,17 @@
  *   servidor  cada `listen` de um servidor de rede, com o endereço e a porta
  *             pedidos (0 é uma porta efémera, dada pelo sistema);
  *   processo  cada processo lançado pelo `child_process`, com o comando (é
- *             assim que o Playwright abre o Chromium).
+ *             assim que o Playwright abre o Chromium);
+ *   inicio    o arranque de cada processo Node, para o inventário saber de
+ *             quais faltam as leituras;
+ *   leituras  no fim de cada processo, uma linha só com os caminhos que ele
+ *             leu (`le`: o conteúdo de um ficheiro, a listagem de uma pasta,
+ *             um ficheiro aberto para ler) e os que consultou (`consulta`: o
+ *             estado, a existência ou o acesso), cada caminho uma vez (passagem
+ *             CI1b, 28.09.2026, achado 6 da leitura a frio). Não vê o que o
+ *             Node lê para carregar módulos (`import`), nem o que lê um
+ *             processo que não é Node; um processo morto por um sinal não
+ *             chega a escrever a sua linha, e o inventário conta-os.
  *
  * Não muda o que a conferência faz: cada função embrulhada chama a original
  * com os mesmos argumentos e devolve o que ela devolver. Não vê o que um
@@ -63,11 +73,50 @@ for (const nome of ['openSync', 'open', 'createWriteStream']) {
     return original.apply(this, args);
   };
 }
+/* AS LEITURAS, juntas em memória e escritas uma vez, no fim do processo. */
+const lidos = new Set();
+const consultados = new Set();
+const leFlags = (f) => f === undefined || f === null || (typeof f === 'string' ? /r/.test(f) && !/[wa]/.test(f) : typeof f === 'number' ? (f & (fs.constants.O_WRONLY | fs.constants.O_RDWR)) === 0 : false);
+for (const [nome, conjunto] of [
+  ['readFileSync', lidos], ['readFile', lidos], ['readdirSync', lidos], ['readdir', lidos], ['opendirSync', lidos], ['opendir', lidos],
+  ['createReadStream', lidos], ['readlinkSync', lidos], ['readlink', lidos],
+  ['statSync', consultados], ['lstatSync', consultados], ['stat', consultados], ['lstat', consultados],
+  ['existsSync', consultados], ['exists', consultados], ['accessSync', consultados], ['access', consultados], ['realpathSync', consultados],
+]) {
+  const original = fs[nome];
+  if (typeof original !== 'function') continue;
+  fs[nome] = function (...args) {
+    if (!aRegistar && (typeof args[0] === 'string' || args[0] instanceof URL || Buffer.isBuffer(args[0]))) conjunto.add(caminho(args[0]));
+    return original.apply(this, args);
+  };
+  for (const k of Reflect.ownKeys(original)) if (!['length', 'name', 'prototype'].includes(String(k))) fs[nome][k] = original[k];
+}
+for (const nome of ['openSync', 'open']) {
+  const embrulhado = fs[nome];
+  fs[nome] = function (...args) {
+    if (!aRegistar && leFlags(args[1]) && typeof args[0] !== 'number') lidos.add(caminho(args[0]));
+    return embrulhado.apply(this, args);
+  };
+}
+regista('inicio', {});
+process.on('exit', () => {
+  regista('leituras', { le: [...lidos], consulta: [...consultados] });
+});
+
 const P = fs.promises;
+for (const [nome, conjunto] of [['readFile', lidos], ['readdir', lidos], ['opendir', lidos], ['readlink', lidos], ['stat', consultados], ['lstat', consultados], ['access', consultados], ['realpath', consultados]]) {
+  const original = P[nome];
+  if (typeof original !== 'function') continue;
+  P[nome] = function (...args) {
+    if (typeof args[0] === 'string' || args[0] instanceof URL || Buffer.isBuffer(args[0])) conjunto.add(caminho(args[0]));
+    return original.apply(this, args);
+  };
+}
 for (const nome of ['writeFile', 'appendFile', 'mkdir', 'rm', 'rmdir', 'unlink', 'rename', 'copyFile', 'cp', 'mkdtemp', 'symlink', 'link', 'truncate', 'open']) {
   const original = P[nome];
   if (typeof original !== 'function') continue;
   P[nome] = async function (...args) {
+    if (nome === 'open' && leFlags(args[1])) lidos.add(caminho(args[0]));
     if (nome === 'open' && !escreveFlags(args[1])) return original.apply(this, args);
     const r = await original.apply(this, args);
     regista('escrita', { fn: `promises.${nome}`, caminho: caminho(args[0]), destino: ['rename', 'copyFile', 'cp', 'symlink', 'link'].includes(nome) ? caminho(args[1]) : undefined, criado: nome === 'mkdtemp' && typeof r === 'string' ? r : undefined });
