@@ -61,10 +61,14 @@ function tempos(id) {
     const guioes = marcas.map((x, i) => ({ nome: x.m[1], inicio: x.t, segundos: +seg(x.t, marcas[i + 1]?.t ?? tr.completed_at).toFixed(1) }));
     const ini = ls.find((l) => /generating static routes/.test(l.texto));
     const fim = ls.find((l) => /\[build\] Complete!/.test(l.texto));
+    /* O GitHub escreve o `::group::` e o `::error::` do guião como `##[group]` e
+       `##[error]`; uma vermelha sai duas vezes (a anotação e a linha), e conta uma. */
+    const vistas = new Set();
     const conferencias = ls
-      .map((l) => /^(?:::group::|::error::)?([✓✗]) (.+?) · ([\d.]+) s · código (\d+)/.exec(l.texto))
+      .map((l) => /^(?:::group::|::error::|##\[group\]|##\[error\])?([✓✗]) (.+?) · ([\d.]+) s · código (\d+)/.exec(l.texto))
       .filter(Boolean)
-      .map((m) => ({ passo: m[2], segundos: Number(m[3]), codigo: Number(m[4]) }));
+      .map((m) => ({ passo: m[2], segundos: Number(m[3]), codigo: Number(m[4]) }))
+      .filter((c) => !vistas.has(c.passo) && vistas.add(c.passo));
     const celulas = ls.map((l) => /^\s*([UDC]) ([✓✗]) (.*)$/.exec(l.texto)).filter(Boolean).map((m) => ({ celula: m[1], ok: m[2] === '✓', texto: m[3] }));
     saida.trabalhos.push({
       nome: tr.name,
