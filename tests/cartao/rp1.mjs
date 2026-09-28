@@ -1,3 +1,4 @@
+import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
 /** RP1: as réguas recusam outra série e a data conserva o período publicado. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -61,8 +62,8 @@ for (const [campo, valor] of [['reference_date','2026-T5'],['access_date','2026-
 const nomesRP1c = {
   'pensao-media-anual-2025': {pt:'Pensão média anual', en:'Average annual pension'},
   'pensao-media-anual-2024': {pt:'Pensão média anual', en:'Average annual pension'},
-  'ipc-alimentacao-variacao-homologa': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic drinks'},
-  'ipc-alimentacao-variacao-homologa-periodo-anterior': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic drinks'},
+  'ipc-alimentacao-variacao-homologa': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic beverages'},
+  'ipc-alimentacao-variacao-homologa-periodo-anterior': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic beverages'},
 };
 for (const [id, nomes] of Object.entries(nomesRP1c)) assert.deepEqual(NOMES_RP1[id], nomes);
 const publicacoesNoPeriodo = [];
@@ -118,6 +119,7 @@ if (!process.argv.includes('--declaracoes')) {
     for (const id of Object.keys(DOMINIOS_RP1)) {
       const card = root.querySelector(`[data-cartao-medida="${id}"]`);
       assert.ok(card, `${ficheiro}: cartão ausente ${id}`);cartoes++;
+      assert.deepEqual(conferirValorUnidade(card).erros, [], id + ': valor separado da unidade');
       assert.equal(card.querySelectorAll('[data-cartao-leitura]').length,1);
       assert.ok(card.querySelector('[data-regua] [data-claim]'),id+': régua ausente');
       assert.ok(card.querySelector('[data-de-campo="reference_date"]'),id+': período ausente');

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { conferirValorUnidade } from './valor-unidade.mjs';
+import { conferirVerificacaoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -2580,8 +2582,8 @@ const RESUMO_CURTO_GATE = 12;
 const ROTULO_DE_QUEM_RELEU = {
   pt: {
     'leitura-independente': 'leitura independente',
-    'painel-semanal': 'reconferência semanal do painel',
-    'revisao-cruzada': 'revisão cruzada',
+    'painel-semanal': 'comparação semanal com a fonte',
+    'revisao-cruzada': 'comparação numa segunda revisão',
     /* O corredor diário confere o FICHEIRO da fonte, não o valor: o rótulo
        di-lo, para que uma reconferência dele não se leia como uma releitura do
        número. Ver AUTORES_DA_VERIFICACAO em src/lib/ledger.mjs. Esta tabela é a
@@ -2590,22 +2592,22 @@ const ROTULO_DE_QUEM_RELEU = {
   },
   en: {
     'leitura-independente': 'independent reading',
-    'painel-semanal': 'weekly panel re-check',
-    'revisao-cruzada': 'cross-family review',
+    'painel-semanal': 'weekly comparison with the source',
+    'revisao-cruzada': 'comparison in a second review',
     'corredor-diario': 'daily check of the source file',
   },
 };
 
 const ROTULO_DO_RESULTADO = {
   pt: {
-    igual: 'o mesmo valor',
-    diverge: 'valor diferente:',
-    inacessivel: 'fonte inacessível nesse dia',
+    igual: 'igual à fonte',
+    diverge: 'a fonte publica agora outro valor:',
+    inacessivel: 'não foi possível reler o número na fonte nesse dia',
   },
   en: {
-    igual: 'the same value',
-    diverge: 'a different value:',
-    inacessivel: 'source unreachable that day',
+    igual: 'matches the source',
+    diverge: 'the source now publishes a different value:',
+    inacessivel: 'the number could not be read again from the source that day',
   },
 };
 
@@ -4380,31 +4382,12 @@ for (const file of ficheirosHtml(DIST)) {
     } else {
       linhasConstruidas.add(`${rota.lang}:${claimDaPagina.id}`);
     }
-    /* O VALOR E A UNIDADE DO TÍTULO, SEPARADOS NO TEXTO DA PÁGINA (bloco R1,
-       23.09.2026, I143). A leitura de fora ouviu «175pessoas»: o `<h1>` juntava
-       o valor e a unidade sem nada no meio, e a folha separava-os com o `gap`
-       de um `flex`, que um leitor de ecrã e quem copia o título não veem. O que
-       se exige é texto: entre o fim do valor e o começo da unidade, dentro do
-       título, pelo menos um espaço. Não se compara o valor com a linha aqui
-       (isso é a regra do `data-claim`); compara-se o que há ENTRE os dois. */
-    const titulo = root.querySelector('h1.linha-valor');
-    const valorDoTitulo = titulo?.querySelector('[data-claim]');
-    const unidadeDoTitulo = titulo?.querySelector('[data-linha-campo="unit"]');
-    if (titulo && valorDoTitulo && unidadeDoTitulo) {
-      titulosDeLinhaConferidos++;
-      const todo = decodeEntities(textoDe(titulo, { separador: '' }));
-      const valor = decodeEntities(textoDe(valorDoTitulo, { separador: '' }));
-      const unidade = decodeEntities(textoDe(unidadeDoTitulo, { separador: '' }));
-      const fimDoValor = todo.indexOf(valor) + valor.length;
-      const inicioDaUnidade = todo.indexOf(unidade, fimDoValor);
-      if (todo.indexOf(valor) < 0 || inicioDaUnidade < 0 || !/\s/.test(todo.slice(fimDoValor, inicioDaUnidade))) {
-        err(
-          `o título desta página de linha cola o valor à unidade: «${todo.trim()}». Um leitor de ` +
-            `ecrã lê uma palavra só; escreva um espaço entre os dois (bloco R1, I143).`,
-        );
-      }
-    }
   }
+  /* C1: a I143 abrange também todos os cartões, qualquer que seja a família. */
+  const separacao = conferirValorUnidade(root);
+  titulosDeLinhaConferidos += separacao.contas.titulos;
+  for (const erro of separacao.erros) err(erro);
+  if (claimDaPagina) for (const erro of conferirVerificacaoLegivel(root, claimDaPagina, linguaPagina)) err(erro);
 
   /* O endereço diz de que língua é a página; o <html lang> tem de concordar.
      Sem isto, uma edição inglesa construída com as palavras portuguesas passava

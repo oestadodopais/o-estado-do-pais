@@ -1,4 +1,4 @@
-/** Terceira redação do lugar de direção, com os acertos auditados em acertos-rp1.json. */
+/** C1: quarta redação do lugar de direção, com os acertos literais do RSI. */
 export const LEITURAS_RP1 = {
   "ipc-variacao-homologa": {
     "pt": [
@@ -16,7 +16,8 @@ export const LEITURAS_RP1 = {
               "claim": "proprio",
               "sufixo": " %"
             },
-            " acima dos de há um ano."
+            " acima dos de há um ano.",
+            " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram."
           ],
           "negativo": [
             "Em ",
@@ -30,7 +31,8 @@ export const LEITURAS_RP1 = {
               "claim": "proprio",
               "sufixo": " %"
             },
-            " face aos de há um ano, ou seja, abaixo deles."
+            " face aos de há um ano, ou seja, abaixo deles.",
+            " É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram."
           ],
           "zero": [
             "Em ",
@@ -39,11 +41,11 @@ export const LEITURAS_RP1 = {
             },
             " ",
             "os preços no consumidor estavam, em média,",
-            " ao mesmo nível de há um ano."
+            " ao mesmo nível de há um ano.",
+            " O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram."
           ]
         }
       },
-      " É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram.",
       {
         "compara": "anterior",
         "maior": [
@@ -75,7 +77,8 @@ export const LEITURAS_RP1 = {
               "claim": "proprio",
               "sufixo": " %"
             },
-            " above a year earlier."
+            " above a year earlier.",
+            " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy."
           ],
           "negativo": [
             "In ",
@@ -89,7 +92,8 @@ export const LEITURAS_RP1 = {
               "claim": "proprio",
               "sufixo": " %"
             },
-            " compared with a year earlier, that is, below."
+            " compared with a year earlier, that is, below.",
+            " That is the general fall in prices, which the INE measures on a basket of goods and services that represents what households buy."
           ],
           "zero": [
             "In ",
@@ -98,11 +102,11 @@ export const LEITURAS_RP1 = {
             },
             " ",
             "consumer prices were, on average,",
-            " at the same level as a year earlier."
+            " at the same level as a year earlier.",
+            " The INE measures them on a basket of goods and services that represents what households buy."
           ]
         }
       },
-      " That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy.",
       {
         "compara": "anterior",
         "maior": [
@@ -611,15 +615,15 @@ export const LEITURAS_RP1 = {
         "compara": "ue",
         "maior": [
           " ",
-          "A subida é maior do que a da média da União Europeia."
+          "A variação é maior do que a da média da União Europeia."
         ],
         "menor": [
           " ",
-          "A subida é menor do que a da média da União Europeia."
+          "A variação é menor do que a da média da União Europeia."
         ],
         "igual": [
           " ",
-          "A subida é igual à da média da União Europeia."
+          "A variação é igual à da média da União Europeia."
         ]
       }
     ],
@@ -669,15 +673,15 @@ export const LEITURAS_RP1 = {
         "compara": "ue",
         "maior": [
           " ",
-          "The rise is larger than the European Union average."
+          "The change is larger than the European Union average."
         ],
         "menor": [
           " ",
-          "The rise is smaller than the European Union average."
+          "The change is smaller than the European Union average."
         ],
         "igual": [
           " ",
-          "The rise is the same as the European Union average."
+          "The change is the same as the European Union average."
         ]
       }
     ]
@@ -698,7 +702,7 @@ export const LEITURAS_RP1 = {
               "claim": "proprio",
               "sufixo": " %"
             },
-            " acima dos de há um ano."
+            " acima das de há um ano."
           ],
           "negativo": [
             "Em ",
@@ -712,7 +716,7 @@ export const LEITURAS_RP1 = {
               "claim": "proprio",
               "sufixo": " %"
             },
-            " face aos de há um ano, ou seja, abaixo deles."
+            " face às de há um ano, ou seja, abaixo delas."
           ],
           "zero": [
             "Em ",
@@ -721,7 +725,7 @@ export const LEITURAS_RP1 = {
             },
             " ",
             "as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor,",
-            " ao mesmo nível de há um ano."
+            " ao mesmo nível das de há um ano."
           ]
         }
       },
@@ -997,7 +1001,7 @@ export const LEITURAS_RP1 = {
       {
         "claim": "proprio"
       },
-      " euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions.",
+      " euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions.",
       {
         "compara": "anterior",
         "maior": [

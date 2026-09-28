@@ -43,6 +43,7 @@
  * leitura que a leitura a frio relê. O que a célula garante é que a leitura não
  * fica para trás sem que a construção feche.
  */
+import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -127,7 +128,7 @@ export function folhasDaLeitura(pt, en) {
     }
     const ka = Object.keys(a).sort().join(','), kb = Object.keys(b ?? {}).sort().join(',');
     if (ka !== kb) throw new Error(`as duas edições têm pedaços diferentes em ${c} (${ka} / ${kb})`);
-    if ('sinal' in a) { for (const r of Object.keys(a.sinal)) anda(a.sinal[r], b.sinal[r], `${c}.sinal.${r}`, ramo); return; }
+    if ('sinal' in a) { for (const r of Object.keys(a.sinal)) anda(a.sinal[r], b.sinal[r], `${c}.sinal.${r}`, true); return; }
     if ('estado' in a) { for (const r of Object.keys(a.estado)) anda(a.estado[r], b.estado[r], `${c}.estado.${r}`, true); return; }
     if ('comparacao' in a) { for (const r of Object.keys(a.comparacao)) anda(a.comparacao[r], b.comparacao[r], `${c}.comparacao.${r}`, true); return; }
     if ('compara' in a) {
@@ -526,6 +527,7 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
   const contas = { cartoes: 0, leituras: 0, ramos: 0, algarismos: 0, linhas_citadas: 0 };
   /** @param {string} id @param {string} m */
   const falha = (id, m) => erros.push(`K17 · ${rota} · ${id}: ${m}`);
+  erros.push(...conferirValorUnidade(root).erros.map(e => `K17 · ${rota} · ${e}`));
   const cartoes = root.querySelectorAll('main article.cartao-medida');
   const todas = root.querySelectorAll('[data-cartao-leitura]');
   if (cartoes.length === 0) erros.push(`K17 · ${rota}: a página não tem cartão nenhum; a célula não mediu nada`);
