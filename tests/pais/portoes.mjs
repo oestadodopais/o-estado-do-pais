@@ -22,9 +22,14 @@ const apenas=indice===-1 ? null : process.argv[indice+1];
    dele, `plantas-portoes-r1.json` (bloco R1, 23.09.2026). */
 const indicePrefixo=process.argv.indexOf('--prefixo');
 const prefixo=indicePrefixo===-1 ? null : process.argv[indicePrefixo+1];
+/* `--lista a,b,c` corre só as plantas nomeadas, numa corrida, e escreve-as em `plantas-portoes-lista.json`
+   (bloco PP1, 28.09.2026: as plantas que o bloco mudou de sítio e as suas, de uma vez). */
+const indiceLista=process.argv.indexOf('--lista');
+const lista=indiceLista===-1 ? null : new Set(process.argv[indiceLista+1].split(','));
 function planta(nome,script,alteracoes,mordidas) {
  if(apenas && nome!==apenas)return;
  if(prefixo && !nome.startsWith(prefixo))return;
+ if(lista && !lista.has(nome))return;
  const originais=new Map(alteracoes.map(([f])=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
  let r;
  try {
@@ -36,7 +41,7 @@ function planta(nome,script,alteracoes,mordidas) {
  const ficheiros=[...originais].map(([f,s])=>({ficheiro:`dist/${f}`,antes:sha(s),reposto:sha(fs.readFileSync(path.join('dist',f)))}));
  const passou=r.status===1&&mordidas.every(re=>re.test(saida))&&ficheiros.every(f=>f.antes===f.reposto);
  const registo={nome,comando:`node ${script}`,codigo:r.status,mordidas:mordidas.map(re=>re.source),passou,ficheiros};registos.push(registo);
- fs.writeFileSync(path.join(pasta,apenas ? `plantas-portoes-${apenas}.json` : prefixo ? `plantas-portoes-${prefixo.replace(/-$/,'')}.json` : 'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
+ fs.writeFileSync(path.join(pasta,apenas ? `plantas-portoes-${apenas}.json` : prefixo ? `plantas-portoes-${prefixo.replace(/-$/,'')}.json` : lista ? 'plantas-portoes-lista.json' : 'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
  console.log(`${passou?'OK':'FALHA'} ${nome}: código ${r.status}`);
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
 }
@@ -51,7 +56,8 @@ planta('mapa-atribuicao','scripts/check-mapa.mjs',[
    tarde de 22.09.2026, e o registo é onde elas vivem. */
 planta('html','scripts/gate-html.mjs',[
  ['correcoes/index.html',r=>{r.querySelector('[data-publicacao-estudo]').set_content('01.01.2000');r.querySelector('[data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de correção plantada');}],
- ['en/index.html',r=>r.querySelector('[data-leitura-pais] [data-claim="divida-publica-2024"]').set_content('93.5')],
+ /* PP1, 28.09.2026: a leitura do país saiu; o valor trocado passa a ser o de um bloco de «O que se passa». */
+ ['en/index.html',r=>r.querySelector('[data-bloco="estado"] [data-bloco-frase] [data-claim="divida-publica-2025"]').set_content('93.5')],
  ['temas/index.html',r=>{r.querySelector('[data-linha-campo="unit"]').set_content('unidade plantada');r.querySelector('[data-regua][data-selo-em]').setAttribute('data-selo-em','precos-da-habitacao-2025');}]
 ],[/B1 mudança: campo rendido difere/,/93\.5/,/unidade plantada/,/unidade de correção plantada/,/sem selo para a sua própria linha/]);
 /* A LISTA DE ROTAS DAS MUDANÇAS CONTINUA A MORDER: a marca da data de
@@ -106,8 +112,9 @@ planta('r1-rotulo-depois-do-titulo','scripts/gate-html.mjs',[
  ['municipios/mourao/index.html',r=>{const x=r.querySelector('[data-rotulo-ia="topo"]');const h=r.querySelector('main h1');const copia=x.outerHTML;x.remove();h.insertAdjacentHTML('afterend',copia);}]
 ],[/não é a primeira coisa do «<main>»/,/vem depois do título da página/]);
 /* Uma mudança declarada com um valor que não é o da linha (I147). */
+/* PP1: a lista das mudanças saiu da primeira página; a mudança declarada vive no registo. */
 planta('r1-mudanca-com-valor-trocado','scripts/gate-html.mjs',[
- ['index.html',r=>r.querySelector('[data-mudanca-id="notificacao-ine-divida-2026-09-23"] [data-claim]').set_content('89,3')]
+ ['correcoes/index.html',r=>r.querySelector('[data-mudanca-id="notificacao-ine-divida-2026-09-23"] [data-claim]').set_content('89,3')]
 ],[/B1 mudança: campo rendido difere/]);
 /* A frase da frescura num cartão cuja linha não está atrasada, e a que falta no
    que está (I146). */
@@ -144,8 +151,9 @@ planta('r1-rotulo-dobrado','scripts/gate-html.mjs',[
 ],[/temas\/index\.html[\s\S]*esta página tem 2 rótulo\(s\) de IA no topo; tem de ter exactamente um/]);
 
 /* B2: as três contagens são recusadas pelo portão que as reconta do livro. */
+/* PP1: o cartão das câmaras saiu da primeira página com os cartões, e vive na página dos temas. */
 planta('b2-contagens-das-camaras','scripts/gate-html.mjs',[
- ['index.html',r=>{for(const chave of ['camaras_acima_do_limite','camaras_dentro_do_limite','camaras_sem_valor']){const n=r.querySelector(`[data-cartao-camaras] [data-prova="${chave}"]`);n.set_content(String(Number(n.textContent)+1));}}]
+ ['temas/index.html',r=>{for(const chave of ['camaras_acima_do_limite','camaras_dentro_do_limite','camaras_sem_valor']){const n=r.querySelector(`[data-cartao-camaras] [data-prova="${chave}"]`);n.set_content(String(Number(n.textContent)+1));}}]
 ],[/o número da prova "camaras_acima_do_limite" foi renderizado/,/o número da prova "camaras_dentro_do_limite" foi renderizado/,/o número da prova "camaras_sem_valor" foi renderizado/]);
 
 /* B2: a integração do invólucro valor + unidade passa pelo auditaSelo real.
@@ -172,11 +180,13 @@ planta('b2-cartao-cor-sem-palavra','tests/cartao/cartao.mjs',[
 
 /* B2: tirar os algarismos provados do inventário não dispensa a conferência
    deles nem pode esconder prosa acrescentada junto da contagem. */
+/* PP1: o cartão das câmaras saiu da primeira página; a prosa plantada junto de uma contagem provada
+   passa a ir para a frase do veredicto, que é a contagem provada que a primeira página tem. */
 planta('b2-voz-contagem-e-prosa','scripts/check-voz.mjs',[
  ['index.html',r=>{
   const n=r.querySelector('[data-veredicto-pais] [data-prova="painel_fora_do_limiar"]');
   n.set_content(String(Number(n.textContent)+1));
-  r.querySelector('[data-cartao-camaras] .cartao-medida-valor').insertAdjacentHTML('beforeend',' palavras plantadas junto da contagem');
+  n.insertAdjacentHTML('afterend',' palavras plantadas junto da contagem');
  }]
 ],[/V1 pt: painel_fora_do_limiar/,/bloco por classificar[^\n]*palavras plantadas junto da contagem/]);
 
@@ -186,11 +196,12 @@ planta('b2-voz-contagem-e-prosa','scripts/check-voz.mjs',[
    na mesma corrida. Cada uma destas plantas estraga a forma nova numa página
    construída e exige a mordida de sempre. Corre-se com `--prefixo l1-` e
    `OEDP_MEDICOES` a apontar para a pasta das plantas do bloco. */
+/* PP1: as leituras dos cartões saíram da primeira página e vivem na página dos temas e nas entradas. */
 planta('l1-leitura-sem-selo-em','scripts/gate-html.mjs',[
- ['index.html',r=>r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]').removeAttribute('data-selo-em')]
+ ['temas/index.html',r=>r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]').removeAttribute('data-selo-em')]
 ],[/o valor da afirmação "saldo-das-administracoes-publicas-2025" aparece sem selo para a sua própria linha\./]);
 planta('l1-leitura-de-outro-cartao','scripts/gate-html.mjs',[
- ['en/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]');l.setAttribute('data-selo-em','divida-publica-2025');l.setAttribute('data-cartao-leitura','divida-publica-2025');}]
+ ['en/themes/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]');l.setAttribute('data-selo-em','divida-publica-2025');l.setAttribute('data-cartao-leitura','divida-publica-2025');}]
 ],[/o valor da afirmação "saldo-das-administracoes-publicas-2025" aparece sem selo para a sua própria linha\./]);
 planta('l1-leitura-com-linha-alheia','scripts/gate-html.mjs',[
  ['temas/index.html',r=>{
@@ -199,11 +210,14 @@ planta('l1-leitura-com-linha-alheia','scripts/gate-html.mjs',[
   n.setAttribute('data-claim','divida-publica-2025');n.set_content(valor);
  }]
 ],[/o valor da afirmação "divida-publica-2025" aparece sem selo para a sua própria linha\./]);
+/* PP1: a primeira página deixou de ter cartões. A leitura que a K17 recusa passa a ser a de uma
+   entrada, onde o `check:voz` corre a K17; a que sai do cartão para a primeira página continua a ser
+   medida pelo arame, e a K17 corre sobre a primeira página sempre que lá houver uma leitura. */
 planta('l1-leitura-que-a-k17-recusa','scripts/check-voz.mjs',[
- ['index.html',r=>{const l=r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]');l.set_content(l.innerHTML.replace('receberam mais do que gastaram','receberam muito mais do que gastaram'));}]
-],[/a K17 recusou-a em \/: K17 · \/ · saldo-das-administracoes-publicas-2025/,/FRASE DA CLASSE POR PROVAR EM \/ · «subiu»/]);
+ ['o-estado-e-a-economia/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="saldo-das-administracoes-publicas-2025"]');l.set_content(l.innerHTML.replace('receberam mais do que gastaram','receberam muito mais do que gastaram'));}]
+],[/K17 · \/o-estado-e-a-economia\/? · saldo-das-administracoes-publicas-2025/]);
 planta('l1-leitura-fora-do-cartao','scripts/check-voz.mjs',[
- ['en/index.html',r=>{const l=r.querySelector('[data-cartao-leitura="taxa-de-emprego-2025"]');r.querySelector('main').insertAdjacentHTML('beforeend',l.outerHTML);}]
+ ['en/index.html',r=>{const l=parse(fs.readFileSync(path.join('dist','en/themes/index.html'),'utf8')).querySelector('[data-cartao-leitura="taxa-de-emprego-2025"]');r.querySelector('main').insertAdjacentHTML('beforeend',l.outerHTML);}]
 ],[/a K17 recusou-a em \/en\/: K17 · \/en\/: há uma leitura fora de um cartão/,/FRASE DA CLASSE POR PROVAR EM \/en\/ · «Union average»/]);
 
 /* RP1: a transcrição continua certa, mas a linha é de outra medida. */
@@ -235,3 +249,39 @@ planta('rp1-fonte-da-pergunta','scripts/check-lugar.mjs',[
 planta('rp1-portas-extra','scripts/check-lugar.mjs',[
  ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="/lugares/">Os lugares</a> <a href="/lugares/">Os lugares</a></p>')]
 ],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
+
+/* PP1, 28.09.2026 · os portões que mudaram de forma com a primeira página de um leitor comum. Correm
+   com `--prefixo pp1-` e `OEDP_MEDICOES` a apontar para a pasta das medições do bloco. */
+/* A porta estreita dos campos de linha de um bloco: só dentro de um bloco, só na primeira página e nas
+   entradas, e cada campo comparado com a linha. Um campo da fonte fora do bloco, o mesmo campo numa
+   página de outra rota, uma fonte trocada e um nome da lista trocado fecham a construção. */
+planta('pp1-campos-de-linha-dos-blocos','scripts/gate-html.mjs',[
+ ['index.html',r=>{
+  const f=r.querySelector('[data-bloco-fonte] [data-linha-campo="source"]');
+  r.querySelector('main').insertAdjacentHTML('beforeend',`<p class="pp1-planta-fora">${f.outerHTML}</p>`);
+  r.querySelector('[data-bloco-numero="divida-publica-2025-notificacao-ine-2026-09"] [data-linha-campo="document.title"]').set_content('Outro documento');
+ }],
+ ['en/index.html',r=>r.querySelector('[data-bloco-fonte] [data-linha-campo="source"]').set_content('Banco de Portugal')],
+],[/numa página que não é do livro-razão/,/o campo "document\.title" de "divida-publica-2025-notificacao-ine-2026-09" não foi transcrito fielmente/,/o campo "source" de "[^"]+" não foi transcrito fielmente[\s\S]*?renderizado: +Banco de Portugal/]);
+/* O mesmo campo, com a mesma marca de bloco, numa página que não é a primeira nem uma entrada. */
+planta('pp1-campo-de-bloco-noutra-rota','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>{
+  const f=parse(fs.readFileSync(path.join('dist','index.html'),'utf8')).querySelector('[data-bloco-fonte] [data-linha-campo="source"]');
+  r.querySelector('main').insertAdjacentHTML('beforeend',`<section data-bloco="planta"><p data-bloco-fonte>${f.outerHTML}</p></section>`);
+ }],
+],[/numa página que não é do livro-razão/]);
+/* A data de um estudo numa entrada: as edições esperadas recontam-se dos dados, e uma entrada que perca
+   o estudo fecha a construção. */
+planta('pp1-estudo-tirado-de-uma-entrada','scripts/check-datas.mjs',[
+ ['o-estado-e-a-economia/index.html',r=>r.querySelector('#estudos-da-entrada [data-estudo-edicao]').remove()]
+],[/\/o-estado-e-a-economia: declara 1 edição\(ões\) de estudo e os dados dizem 2/]);
+/* A lista fechada das formas: um bloco com um nome de forma que não é nenhum dos oito. */
+planta('pp1-forma-de-bloco-desconhecida','scripts/check-formas.mjs',[
+ ['index.html',r=>r.querySelector('[data-bloco-desenho]').setAttribute('data-forma','barras-empilhadas')]
+],[/a forma gráfica "barras-empilhadas" não é uma das 8 admitidas/]);
+/* A exceção do vocabulário cresceu com as formas do trabalho de quem lê («O meu trabalho», «O custo do
+   trabalho», «O trabalho: mais emprego»). A palavra no sentido de um estudo, na mesma página, continua a
+   contar: a exceção é por cadeia, e não por página. */
+planta('pp1-trabalho-como-nome-de-estudo','scripts/check-lugar.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>O trabalho deste projeto sobre a água.</p>')]
+],[/L3 .*ACIMA DO TETO/]);
