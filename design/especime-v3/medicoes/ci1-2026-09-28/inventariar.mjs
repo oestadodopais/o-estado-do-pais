@@ -96,7 +96,8 @@ function normaliza(p) {
     const primeira = partes[0]?.startsWith('.') ? partes[0] : '…';
     return partes.length === 1 ? `<casa>/${partes[0].startsWith('.') ? partes[0] : `…/${partes[0]}`}` : `<casa>/${primeira}/…/${partes[partes.length - 1]}`;
   }
-  return `<fora>/${abs.split(path.sep).slice(1, 3).join('/')}`;
+  /* Fora da raiz, das pastas temporárias e da casa, só o nome do ficheiro (o npm procura um `package.json` em cada pasta acima da raiz). */
+  return `<fora>/…/${path.basename(abs)}`;
 }
 /** A zona de um caminho normalizado, para as contagens. */
 function zona(n) {

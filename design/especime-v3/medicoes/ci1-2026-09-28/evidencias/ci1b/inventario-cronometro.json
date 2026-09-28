@@ -1,0 +1,25 @@
+{
+ "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/inventariar.mjs <rascunho>/ci1-construtor/ci1b/inventario.json",
+ "inicio": "2026-09-28T21:39:06.346Z",
+ "fim": "2026-09-28T21:48:08.892Z",
+ "segundos": 542.546,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": []
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": []
+}

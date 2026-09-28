@@ -294,7 +294,9 @@ const cpPc = pc1?.controlo?.codigo === 0 && pc1?.controlo?.paginas_html_escritas
 medicao('ci1b_paridade_controlo_paginas', pc1?.controlo?.paginas_html_escritas, `node ${M}/planta-paridade-na-construcao.mjs <saida.json> · controlo`, oQuePc, cpPc);
 medicao('ci1b_paridade_planta_codigo', pc1?.planta?.codigo, 'o mesmo · planta', oQuePc, cpPc);
 medicao('ci1b_paridade_planta_paginas', pc1?.planta?.paginas_html_escritas, 'o mesmo · planta, os ficheiros .html escritos', oQuePc, cpPc);
-medicao('ci1b_paridade_planta_linhas_de_pagina', pc1?.planta?.linhas_de_pagina, 'o mesmo · planta, as linhas de página na saída do Astro', oQuePc, cpPc);
+medicao('ci1b_paridade_planta_paginas_acabadas', pc1?.planta?.paginas_acabadas, 'o mesmo · planta, as rotas que o Astro deu por acabadas (a linha com o tempo)', oQuePc, cpPc);
+medicao('ci1b_paridade_planta_erro_na_primeira_rota', pc1?.planta?.erro_ao_renderizar !== null && pc1?.planta?.erro_ao_renderizar === String(pc1?.primeira_rota_do_controlo ?? '').replace(/(\/index)?\.html$/, ''), 'o mesmo · planta, «Caught error rendering» na primeira rota do controlo', oQuePc, cpPc);
+medicao('ci1b_paridade_mordeu', pc1?.mordeu, 'o mesmo', oQuePc, cpPc);
 medicao('ci1b_paridade_planta_mensagem', pc1?.planta?.mensagem_da_guarda && pc1?.planta?.chave_nomeada, 'o mesmo · a mensagem da guarda e a chave nomeada', oQuePc, cpPc);
 
 /* O inventário da passagem, com as leituras. */
@@ -318,6 +320,12 @@ medicao('ci1b_conferencias_que_leem_dist', conf1b.filter((c) => (c.leituras_por_
 const fin1b = le1b('verify-depois-final.resultado.json');
 medicao('ci1b_verify_depois_do_build_s', r1(fin1b?.segundos), 'node scripts/verify-depois-do-build.mjs --paralelo 4 --json <f>, na cabeça dos portões da passagem, sobre o dist/ do portão build dela',
   'as doze plantas morderam, as três células passaram e a cabeça é a dos portões', fin1b?.ok === true && (fin1b?.plantas ?? []).length === 12 && (fin1b?.plantas ?? []).every((x) => x.mordeu));
+for (const [nome, f] of [['ci1b_prova_escrita_depois_do_carimbo_s', 'prova.json'], ['ci1b_cadeia_escrita_depois_do_carimbo_s', 'cadeia.json']]) {
+  const carimbo = Date.parse(String(fin1b?.celulas?.C?.carimbo ?? ''));
+  const escrito = Date.parse(String(fin1b?.celulas?.C?.escritos?.[f] ?? ''));
+  medicao(nome, Number.isNaN(carimbo) || Number.isNaN(escrito) ? null : r1((escrito - carimbo) / 1000), `o mesmo · celulas.C.escritos['${f}'] menos celulas.C.carimbo`,
+    'a célula C escreveu as duas horas', !Number.isNaN(carimbo) && !Number.isNaN(escrito));
+}
 medicao('ci1b_ficheiros_da_arvore_conferidos', fin1b?.celulas?.D?.ficheiros_da_arvore, 'o mesmo · celulas.D.ficheiros_da_arvore', 'a célula D leu a lista do git', typeof fin1b?.celulas?.D?.ficheiros_da_arvore === 'number');
 medicao('ci1b_feixe_depois_do_grupo', (() => {
   const feixe = fin1b?.corridos?.find((c) => c.passo === 'npm run design:feixe');
@@ -339,6 +347,18 @@ for (const g of ['build', 'verify', 'typecheck']) {
   }
   medicao(`ci1b_portao_${g}_codigo`, codigo, `node ${M}/cronometro.mjs ${M}/portoes/ci1b/${g} -- npm run ${g}`, 'o ficheiro .codigo escrito depois de o processo acabar', codigo !== null);
   medicao(`ci1b_portao_${g}_s`, r1(resumo?.segundos), `o mesmo · ${M}/portoes/ci1b/${g}.json`, 'o ficheiro .codigo escrito depois de o processo acabar', codigo !== null);
+}
+
+{
+  const ini = le1b('inicio-da-passagem.json')?.inicio ?? null;
+  let fim = null;
+  try {
+    fim = JSON.parse(fs.readFileSync(path.join(AQUI, 'portoes', 'ci1b', 'typecheck.json'), 'utf8')).fim;
+  } catch {
+    fim = null;
+  }
+  medicao('ci1b_tempo_de_parede_ate_aos_portoes_min', ini && fim ? r1((Date.parse(fim) - Date.parse(ini)) / 60000) : null,
+    `${M}/evidencias/ci1b/inicio-da-passagem.json · inicio, até ao fim do typecheck em ${M}/portoes/ci1b/typecheck.json`, 'as duas horas lidas', Boolean(ini && fim));
 }
 
 /* ---------------------------------------------------------------- a previsão */

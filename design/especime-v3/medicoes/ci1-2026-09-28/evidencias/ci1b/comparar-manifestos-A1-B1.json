@@ -1,0 +1,56 @@
+{
+ "conhecido_positivo": {
+  "ok": true,
+  "visto": {
+   "byte_trocado": [
+    "x/index.html"
+   ],
+   "so_antes": [
+    "so-antes.txt"
+   ],
+   "so_depois": [
+    "so-depois.txt"
+   ],
+   "carimbo": 2,
+   "fora_do_carimbo": [
+    "version.json (fora do carimbo)",
+    "x/index.html"
+   ],
+   "pelos_manifestos_igual": true,
+   "manifesto_incoerente_recusado": true
+  }
+ },
+ "dia_utc": "2026-09-28",
+ "ficheiros_antes": 12484,
+ "ficheiros_depois": 12484,
+ "so_antes": [],
+ "so_depois": [],
+ "diferentes": [],
+ "diferencas": 0,
+ "carimbo": [
+  {
+   "ficheiro": "prova.json",
+   "campo": "commit",
+   "antes": "1c1952c949d53907ac8bf879f47f00d48131ec76",
+   "depois": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb"
+  },
+  {
+   "ficheiro": "prova.json",
+   "campo": "construido_em",
+   "antes": "2026-09-28T17:54:04.422Z",
+   "depois": "2026-09-28T18:25:37.191Z"
+  },
+  {
+   "ficheiro": "version.json",
+   "campo": "commit",
+   "antes": "1c1952c949d53907ac8bf879f47f00d48131ec76",
+   "depois": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb"
+  },
+  {
+   "ficheiro": "version.json",
+   "campo": "construido_em",
+   "antes": "2026-09-28T17:54:04.422Z",
+   "depois": "2026-09-28T18:25:37.191Z"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+{
+ "o_que": "a hora de nascimento da pasta do rascunho em que a passagem CI1b começou (a primeira coisa que o construtor criou depois da mensagem do lugar de direção), lida com stat -f %SB em UTC; é o início da passagem para o custo em tempo de parede",
+ "inicio": "2026-09-28T20:26:09Z",
+ "comando": "TZ=UTC stat -f \"%SB %N\" -t \"%Y-%m-%dT%H:%M:%SZ\" <rascunho>/ci1-construtor/ci1b"
+}
