@@ -165,7 +165,7 @@ medicao('build_e_guiao_depois_s', r1((bB1?.segundos ?? NaN) + (p4?.segundos ?? N
 const rep = le('repetidas-B1.json');
 medicao('repetidas_iguais', rep?.iguais, `node ${M}/comparar-repetidas.mjs <build-B1.log> <verify-inteiro-B1.log>`, 'uma linha trocada numa cópia é vista como diferença', rep?.conhecido_positivo === 'uma linha trocada é vista');
 medicao('repetidas_total', rep?.repetidas, 'o mesmo · as conferências do verify que são passos do build', 'uma linha trocada é vista', rep?.conhecido_positivo === 'uma linha trocada é vista');
-medicao('repetidas_linhas_diferentes_sem_normalizar', rep?.linhas_diferentes_sem_normalizar, 'o mesmo · sem apagar horas nem durações', 'uma linha trocada é vista', rep?.conhecido_positivo === 'uma linha trocada é vista');
+medicao('repetidas_linhas_diferentes_ci1', rep?.linhas_diferentes_sem_normalizar, 'o mesmo, na primeira entrega · tirados a hora, os segundos e o canal que o cronómetro põe à frente de cada linha, e as linhas em branco (a primeira redação chamava-lhe, mal, «sem normalizar nada»; a passagem CI1b refê-la)', 'uma linha trocada é vista', rep?.conhecido_positivo === 'uma linha trocada é vista');
 const pc = le('prova-cadeia-verify.json');
 medicao('prova_e_cadeia_iguais_depois_do_verify', pc?.iguais, 'shasum -a 256 dist/prova.json dist/cadeia.json, antes e depois do npm run verify inteiro', 'os dois resumos lidos antes e depois', Object.keys(pc?.antes ?? {}).length === 2);
 
@@ -230,6 +230,116 @@ const inicio = le('inicio-do-bloco.json')?.inicio ?? null;
 const fim = portoes.typecheck?.resumo?.fim ?? null;
 medicao('tempo_de_parede_ate_aos_portoes_min', inicio && fim ? r1((Date.parse(fim) - Date.parse(inicio)) / 60000) : null,
   `${M}/evidencias/inicio-do-bloco.json · inicio, até ao fim do typecheck em ${M}/portoes/typecheck.json`, 'as duas horas lidas', Boolean(inicio && fim));
+
+/* ================================================================ a passagem CI1b */
+/** Uma prova da passagem, em `evidencias/ci1b/`. @param {string} f */
+const le1b = (f) => le(path.join('ci1b', f));
+/* A primeira corrida no GitHub com o CI1 (medida pelo lugar de direção, lida aqui na API). */
+const c1 = le1b('corrida-36475236795.json');
+const c1c = c1?.corridas?.[0];
+const c1t = c1c?.trabalhos?.[0];
+const c1p = (n) => c1t?.passos?.find((x) => x.nome === n)?.segundos ?? null;
+const c1k = (n) => c1t?.conferencias_lado_a_lado?.find((x) => x.passo === n)?.segundos ?? null;
+const T1 = `node ${M}/tempos-da-corrida.mjs 36475236795`;
+const cpC1 = Boolean(c1?.conhecido_positivo?.build_s > 600 && c1c?.cabeca);
+const oQueC1 = 'a corrida de referência, a 36412381787, lida primeiro pelo mesmo guião';
+medicao('ci1b_corrida1_min', c1c?.minutos_da_corrida, `${T1} · run_started_at a updated_at`, oQueC1, cpC1);
+medicao('ci1b_corrida1_trabalho_min', c1t?.minutos, `${T1} · o trabalho portao`, oQueC1, cpC1);
+medicao('ci1b_corrida1_passos_s', c1t ? c1t.passos.reduce((a, x) => a + (x.segundos ?? 0), 0) : null, `${T1} · a soma dos passos`, oQueC1, cpC1);
+medicao('ci1b_corrida1_arvore_s', c1p('A árvore'), `${T1} · o passo da árvore`, oQueC1, cpC1);
+medicao('ci1b_corrida1_build_s', c1p('npm run build'), `${T1} · o passo do build`, oQueC1, cpC1);
+medicao('ci1b_corrida1_astro_s', c1t?.astro_build_segundos, `${T1} · a construção do Astro`, oQueC1, cpC1);
+medicao('ci1b_corrida1_passo_novo_s', c1p('npm run verify, sem repetir o build'), `${T1} · o passo novo`, oQueC1, cpC1);
+for (const [nome, g] of [['ci1b_corrida1_alvos_s', 'npm run check:alvos'], ['ci1b_corrida1_moldura_s', 'npm run check:moldura'], ['ci1b_corrida1_palavras_s', 'npm run check:palavras']]) {
+  medicao(nome, c1k(g), `${T1} · a linha de ${g} no passo novo (##[group] no registo do GitHub)`, oQueC1, cpC1 && c1k(g) !== null);
+}
+medicao('ci1b_corrida1_celulas_verdes', c1t?.celulas?.filter((k) => k.ok).length ?? null, `${T1} · as linhas U, D e C do passo novo`, oQueC1, cpC1);
+medicao('ci1b_corrida1_conferencias', c1t?.conferencias_lado_a_lado?.length ?? null, `${T1} · as conferências do passo novo`, oQueC1, cpC1);
+
+/* As plantas do guião na passagem, e as contraprovas. */
+const pv1b = le1b('plantas-verify-depois.json');
+medicao('ci1b_plantas_mordidas', pv1b?.mordidas, 'node scripts/verify-depois-do-build.mjs --prova', 'a cadeia sintética limpa passa', pv1b?.plantas?.[0]?.mordeu);
+medicao('ci1b_plantas_total', pv1b?.total, 'o mesmo', 'a cadeia sintética limpa passa', pv1b?.plantas?.[0]?.mordeu);
+medicao('ci1b_contraprovas_apanhadas', pv1b?.contraprova?.apanhados, 'numa cópia do guião, cada proteção desligada, e a prova corrida', 'cada cópia estragada fechou com 1', (pv1b?.contraprova?.estragos ?? []).every((e) => e.codigo === 1));
+medicao('ci1b_contraprovas_total', pv1b?.contraprovas_total, 'o mesmo', 'cada cópia estragada fechou com 1', (pv1b?.contraprova?.estragos ?? []).every((e) => e.codigo === 1));
+
+/* A prova byte a byte refeita a partir dos manifestos guardados. */
+const oQueMan = 'a mesma conta, feita por pastas e por manifestos, dá o mesmo, e um manifesto que não bate consigo é recusado';
+for (const x of ['A2', 'B1', 'final', 'final-ci1b']) {
+  const d = le1b(`comparar-manifestos-A1-${x}.json`);
+  medicao(`ci1b_manifestos_A1_${x.replace('-', '_')}_diferencas`, d?.diferencas, `node ${M}/comparar-dist.mjs ${M}/evidencias/manifestos/A1.manifesto.json.gz ${M}/evidencias/manifestos/${x}.manifesto.json.gz`,
+    oQueMan, d?.conhecido_positivo?.ok && d?.conhecido_positivo?.visto?.pelos_manifestos_igual && d?.conhecido_positivo?.visto?.manifesto_incoerente_recusado);
+}
+{
+  const n = fs.existsSync(path.join(E, 'manifestos')) ? fs.readdirSync(path.join(E, 'manifestos')).filter((f) => f.endsWith('.manifesto.json.gz')).length : null;
+  medicao('ci1b_manifestos_guardados', n, `ls ${M}/evidencias/manifestos/*.manifesto.json.gz`, 'o manifesto da construção de partida está lá', fs.existsSync(path.join(E, 'manifestos', 'A1.manifesto.json.gz')));
+}
+
+/* As repetidas, na conta crua. */
+const rep1b = le1b('repetidas-B1.json');
+medicao('ci1b_repetidas_linhas_comparadas_crua', rep1b?.conta_crua?.linhas_comparadas, `node ${M}/comparar-repetidas.mjs <build-B1.log> <verify-inteiro-B1.log> · conta_crua`, 'uma linha trocada é vista', rep1b?.conhecido_positivo === 'uma linha trocada é vista');
+medicao('ci1b_repetidas_linhas_diferentes_crua', rep1b?.conta_crua?.linhas_diferentes, 'o mesmo · tirados só a hora e os segundos do cronómetro e a linha em branco do anúncio do npm', 'uma linha trocada é vista', rep1b?.conhecido_positivo === 'uma linha trocada é vista');
+medicao('ci1b_repetidas_iguais', rep1b?.iguais, 'o mesmo · o veredicto por conferência', 'uma linha trocada é vista', rep1b?.conhecido_positivo === 'uma linha trocada é vista');
+
+/* A planta na cadeia real, interrompida a meio. */
+const pi = le1b('planta-interrompida.json');
+medicao('ci1b_planta_interrompida_reposta', pi?.repostos, `python3 ${M}/planta-interrompida.py <saida.json>`, 'o passo estava plantado no package.json, a frase na página e as conferências lançadas antes do sinal',
+  pi?.plantado_no_package_json_antes_do_sinal && pi?.frase_plantada_na_pagina_antes_do_sinal && pi?.conferencias_lancadas_antes_do_sinal);
+medicao('ci1b_planta_interrompida_mordeu', pi?.mordeu, 'o mesmo', 'o mesmo', pi?.plantado_no_package_json_antes_do_sinal);
+
+/* A paridade numa construção real. */
+const pc1 = le1b('paridade-na-construcao.json');
+const oQuePc = 'a cópia intacta constrói e escreve as páginas';
+const cpPc = pc1?.controlo?.codigo === 0 && pc1?.controlo?.paginas_html_escritas > 0;
+medicao('ci1b_paridade_controlo_paginas', pc1?.controlo?.paginas_html_escritas, `node ${M}/planta-paridade-na-construcao.mjs <saida.json> · controlo`, oQuePc, cpPc);
+medicao('ci1b_paridade_planta_codigo', pc1?.planta?.codigo, 'o mesmo · planta', oQuePc, cpPc);
+medicao('ci1b_paridade_planta_paginas', pc1?.planta?.paginas_html_escritas, 'o mesmo · planta, os ficheiros .html escritos', oQuePc, cpPc);
+medicao('ci1b_paridade_planta_linhas_de_pagina', pc1?.planta?.linhas_de_pagina, 'o mesmo · planta, as linhas de página na saída do Astro', oQuePc, cpPc);
+medicao('ci1b_paridade_planta_mensagem', pc1?.planta?.mensagem_da_guarda && pc1?.planta?.chave_nomeada, 'o mesmo · a mensagem da guarda e a chave nomeada', oQuePc, cpPc);
+
+/* O inventário da passagem, com as leituras. */
+const inv1b = le1b('inventario.json');
+const conf1b = inv1b?.conferencias ?? [];
+const I1b = `node ${M}/inventariar.mjs <saida.json>`;
+const cpInv1b = Boolean(inv1b?.conhecido_positivo?.visto?.servidores?.length >= 1 && inv1b?.conhecido_positivo?.visto?.chromium >= 1 && (inv1b?.conhecido_positivo?.visto?.leituras_por_zona?.['dist/'] ?? 0) > 0);
+const oQueInv1b = 'a sonda viu o servidor, o Chromium, a pasta temporária e as leituras de dist/ do check:cabeca antes de inventariar';
+medicao('ci1b_conferencias_inventariadas', conf1b.length, I1b, oQueInv1b, cpInv1b);
+medicao('ci1b_pares_com_contacto', inv1b?.cruzamento?.pares_com_contacto, `${I1b} · cruzamento`, oQueInv1b, cpInv1b);
+medicao('ci1b_leitores_de_design_system', inv1b?.cruzamento?.leitores_de_design_system?.length, `${I1b} · cruzamento, fora o próprio design:feixe`, oQueInv1b, cpInv1b);
+medicao('ci1b_processos_node', conf1b.reduce((a, c) => a + (c.processos_node ?? 0), 0), `${I1b} · os processos Node de todas as conferências`, oQueInv1b, cpInv1b);
+medicao('ci1b_processos_node_sem_leituras', inv1b?.cruzamento?.processos_node_sem_leituras, `${I1b} · os que não escreveram a linha das leituras`, oQueInv1b, cpInv1b);
+medicao('ci1b_guioes_python_lidos', inv1b?.cruzamento?.python?.guioes_lidos, `${I1b} · os guiões python do check:briefs, lidos no código`, 'o mesmo detetor acha design-system em scripts/design-bundle.mjs', inv1b?.cruzamento?.python?.conhecido_positivo?.encontrado);
+medicao('ci1b_guioes_python_que_nomeiam_design_system', inv1b?.cruzamento?.python?.que_nomeiam_design_system?.length, 'o mesmo', 'o mesmo detetor acha design-system em scripts/design-bundle.mjs', inv1b?.cruzamento?.python?.conhecido_positivo?.encontrado);
+medicao('ci1b_conferencias_que_escrevem_em_dist', conf1b.filter((c) => c.escritas_em_dist.length > 0 || c.dist_mudou.length > 0).length, `${I1b} · escritas em dist/ e sha256 de dist/ antes e depois`, oQueInv1b, cpInv1b);
+medicao('ci1b_conferencias_que_escrevem_na_arvore', conf1b.filter((c) => c.escritas_na_raiz.length > 0).length, `${I1b} · escritas na raiz fora de dist/`, oQueInv1b, cpInv1b);
+medicao('ci1b_conferencias_que_leem_dist', conf1b.filter((c) => (c.leituras_por_zona?.['dist/'] ?? 0) > 0).length, `${I1b} · leituras de dist/`, oQueInv1b, cpInv1b);
+
+/* O verify depois do build na cabeça da passagem, e a prova byte a byte da construção dela. */
+const fin1b = le1b('verify-depois-final.resultado.json');
+medicao('ci1b_verify_depois_do_build_s', r1(fin1b?.segundos), 'node scripts/verify-depois-do-build.mjs --paralelo 4 --json <f>, na cabeça dos portões da passagem, sobre o dist/ do portão build dela',
+  'as doze plantas morderam, as três células passaram e a cabeça é a dos portões', fin1b?.ok === true && (fin1b?.plantas ?? []).length === 12 && (fin1b?.plantas ?? []).every((x) => x.mordeu));
+medicao('ci1b_ficheiros_da_arvore_conferidos', fin1b?.celulas?.D?.ficheiros_da_arvore, 'o mesmo · celulas.D.ficheiros_da_arvore', 'a célula D leu a lista do git', typeof fin1b?.celulas?.D?.ficheiros_da_arvore === 'number');
+medicao('ci1b_feixe_depois_do_grupo', (() => {
+  const feixe = fin1b?.corridos?.find((c) => c.passo === 'npm run design:feixe');
+  const fim = Math.max(...(fin1b?.corridos ?? []).filter((c) => c.fase === 'grupo').map((c) => c.fim_s));
+  return feixe ? feixe.fase === 'depois' && feixe.inicio_s >= fim : null;
+})(), 'o mesmo · o design:feixe começou depois de a última do grupo acabar', 'as horas de cada passo no registo', (fin1b?.corridos ?? []).every((c) => typeof c.inicio_s === 'number'));
+const cmpFinal1b = le1b('comparar-A1-final-ci1b.json');
+medicao('ci1b_diferencas_final', cmpFinal1b?.diferencas, `node ${M}/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build da passagem>`, 'um byte trocado, um ficheiro a mais e um a menos, e a mesma conta pelos manifestos', cmpFinal1b?.conhecido_positivo?.ok);
+
+/* Os portões da passagem. */
+for (const g of ['build', 'verify', 'typecheck']) {
+  let codigo = null;
+  let resumo = null;
+  try {
+    codigo = Number(fs.readFileSync(path.join(AQUI, 'portoes', 'ci1b', `${g}.codigo`), 'utf8').trim());
+    resumo = JSON.parse(fs.readFileSync(path.join(AQUI, 'portoes', 'ci1b', `${g}.json`), 'utf8'));
+  } catch (e) {
+    faltas.push(`portoes/ci1b/${g}: ${e.code ?? 'ilegível'}`);
+  }
+  medicao(`ci1b_portao_${g}_codigo`, codigo, `node ${M}/cronometro.mjs ${M}/portoes/ci1b/${g} -- npm run ${g}`, 'o ficheiro .codigo escrito depois de o processo acabar', codigo !== null);
+  medicao(`ci1b_portao_${g}_s`, r1(resumo?.segundos), `o mesmo · ${M}/portoes/ci1b/${g}.json`, 'o ficheiro .codigo escrito depois de o processo acabar', codigo !== null);
+}
 
 /* ---------------------------------------------------------------- a previsão */
 const v = (n) => medidas.find((m) => m.nome === n)?.valor;

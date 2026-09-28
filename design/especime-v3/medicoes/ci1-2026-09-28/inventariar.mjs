@@ -34,6 +34,11 @@
  * Chromium e uma pasta temporária, e lê páginas de `dist/`; se a sonda não vir
  * os quatro, o inventário sai com 2 antes de escrever o que quer que seja.
  *
+ * Os caminhos da casa reduzem-se à primeira pasta, quando é das escondidas das
+ * ferramentas, e ao nome do ficheiro, para nenhum levar a disposição da
+ * máquina; o cruzamento faz-se sobre esses caminhos reduzidos, que são os que
+ * ficam guardados, e juntar caminhos só pode criar contactos a mais.
+ *
  * Uso: node inventariar.mjs <saida.json>   (escreve também <saida>.leituras.json.gz)
  */
 import fs from 'node:fs';
@@ -82,13 +87,21 @@ function normaliza(p) {
   const abs = path.isAbsolute(p) ? path.normalize(p) : path.resolve(RAIZ, p);
   for (const r of RAIZES) if (abs === r || abs.startsWith(r + path.sep)) return path.relative(r, abs) || '.';
   for (const t of TMPS.sort((a, b) => b.length - a.length)) if (abs === t || abs.startsWith(t + path.sep)) return `<tmp>/${path.relative(t, abs)}`;
-  if (abs === CASA || abs.startsWith(CASA + path.sep)) return `<casa>/${path.relative(CASA, abs)}`;
+  /* NA CASA, SÓ O QUE NÃO DIZ NADA DA MÁQUINA: a primeira pasta quando é das
+     escondidas das ferramentas (`.npm`, `.nvm`) e o nome do ficheiro. Juntar
+     caminhos diferentes numa chave só pode criar um contacto a mais no
+     cruzamento, nunca esconder um que exista. */
+  if (abs === CASA || abs.startsWith(CASA + path.sep)) {
+    const partes = path.relative(CASA, abs).split(path.sep);
+    const primeira = partes[0]?.startsWith('.') ? partes[0] : '…';
+    return partes.length === 1 ? `<casa>/${partes[0].startsWith('.') ? partes[0] : `…/${partes[0]}`}` : `<casa>/${primeira}/…/${partes[partes.length - 1]}`;
+  }
   return `<fora>/${abs.split(path.sep).slice(1, 3).join('/')}`;
 }
 /** A zona de um caminho normalizado, para as contagens. */
 function zona(n) {
   if (n.startsWith('<tmp>/')) return '<tmp>';
-  if (n.startsWith('<casa>/')) return n.startsWith('<casa>/.npm/') ? '<casa>/.npm' : '<casa>';
+  if (n.startsWith('<casa>/')) return n.startsWith('<casa>/.npm/') || n === '<casa>/.npm' ? '<casa>/.npm' : '<casa>';
   if (n.startsWith('<fora>/')) return '<fora>';
   if (n === '.' || !n.includes('/')) return '(raiz)';
   return `${n.split('/')[0]}/`;

@@ -60,7 +60,10 @@ function constroi(rotulo) {
     maxBuffer: 256 * 2 ** 20,
   });
   const texto = `${r.stdout ?? ''}\n${r.stderr ?? ''}`;
+  const rotas = texto.match(/[├└]─ \/\S+[^\n]*/g) ?? [];
   return {
+    primeiras_linhas_de_rota: rotas.slice(0, 3).map((l) => l.replace(copia, '<copia>')),
+    linhas_da_guarda: texto.split('\n').filter((l) => /i18n:|só em pt|só em en/.test(l)).slice(0, 4).map((l) => l.replace(copia, '<copia>').trim()),
     rotulo,
     codigo: r.status,
     segundos: (Date.now() - t0) / 1000,
