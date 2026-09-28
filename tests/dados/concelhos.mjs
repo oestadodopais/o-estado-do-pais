@@ -63,7 +63,13 @@ try {
     linhas[primeira] = linhas[primeira].replace(campos[3], 'UNIDADE-TROCADA');
     return linhas.join('\n');
   }, /C7 .*unidade difere da linha/);
-  planta('medida-omitida-no-csv', (linhas) => {
+  planta('nota-de-atualidade-omitida', (linhas) => {
+    const i = linhas.findIndex((l) => l.includes('a fonte já publicou'));
+    assert.ok(i >= 0);
+    linhas[i] = linhas[i].replace(/a fonte já publicou[^\n]*/, '');
+    return linhas.join('\n');
+  }, /C7 .*nota difere da linha/);
+  planta('medida-omitida-no-csv' , (linhas) => {
     linhas.splice(primeira, 1); return linhas.join('\n');
   }, /C7 .*falta o concelho e a medida/);
   planta('medida-repetida-no-csv', (linhas) => {

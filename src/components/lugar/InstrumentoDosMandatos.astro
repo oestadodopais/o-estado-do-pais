@@ -189,7 +189,7 @@ const xDoAno = (ano) =>
    declarados têm marca; nenhuma linha une observações separadas por lacunas. */
 const pontosDaSerie = serieAnos.map((r) => ({
   ...r,
-  x: xDoAno(Number(r.ref)),
+  x: xDoAno(Number(r.ref) + 1),
   y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
 }));
 /** A âncora de um mandato: o seu período, e mais nada. */

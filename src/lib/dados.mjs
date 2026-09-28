@@ -1,3 +1,6 @@
+import { atrasoDaLinha } from './frescura.mjs';
+import { dataDaCasa } from './datas.mjs';
+import { t } from '../i18n/strings.mjs';
 /**
  * Os dados por trás dos instrumentos, em ficheiro.
  *
@@ -178,6 +181,7 @@ export function csvIndicadoresDosConcelhos() {
     ...preambulo('as medidas dos concelhos'),
     '#',
     '# Uma linha por concelho e por medida apresentada nos seus cartões.',
+    '# A coluna nota conserva a ressalva de atualidade apresentada no cartão.',
     '# Uma medida sem linha no livro-razão não entra neste ficheiro.',
     '# Os nomes dos concelhos e das medidas estão em português.',
     '# "concelho_slug" distingue concelhos com o mesmo nome.',
@@ -189,7 +193,7 @@ export function csvIndicadoresDosConcelhos() {
     '# "afirmacao" identifica ledger/claims/<afirmacao>.yml, onde se leem',
     '# a fonte, o endereço, o excerto e as origens de cada cálculo.',
     '#',
-    linha(['concelho', 'medida', 'valor', 'unidade', 'periodo', 'fonte', 'afirmacao', 'concelho_slug']),
+    linha(['concelho', 'medida', 'valor', 'unidade', 'periodo', 'fonte', 'afirmacao', 'concelho_slug', 'nota']),
   ];
   for (const municipio of MUNICIPIOS_COM_PAGINA) {
     for (const peca of pecasDoConcelho(municipio)) {
@@ -198,7 +202,11 @@ export function csvIndicadoresDosConcelhos() {
       const c = getClaim(peca.claim);
       const periodo = c.reference_date ?? peca.periodo.pt.find((p) => typeof p === 'object' && 'ref' in p)?.ref;
       const fonte = c.source ?? (Array.isArray(c.derived_from) && c.derived_from.length ? 'Calculado' : '');
-      linhas.push(linha([municipio.nome.pt, peca.nome.pt, c.value, c.unit, periodo, fonte, c.id, municipio.slug]));
+      const atraso = atrasoDaLinha(c);
+      const [ano, mes] = (atraso?.periodoDaFonte ?? '').split('-');
+      const nota = atraso && c.reference_date && atraso.periodoDaFonte > c.reference_date
+        ? `${t('pt').cartao.fonteJaPublicou} ${t('pt').cartao.meses[Number(mes) - 1]} de ${ano}; ${t('pt').cartao.lidoA} ${dataDaCasa(atraso.origem.lidoEm)}` : '';
+      linhas.push(linha([municipio.nome.pt, peca.nome.pt, c.value, c.unit, periodo, fonte, c.id, municipio.slug, nota]));
     }
   }
   return linhas.join('\n') + '\n';

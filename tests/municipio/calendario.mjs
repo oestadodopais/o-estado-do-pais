@@ -107,10 +107,10 @@ export function conferirCalendario(root, municipio, lang, linhas) {
     if (valor?.getAttribute('data-claim') !== observacao.indice || texto(rotulo) !== String(ano)) {
       falha(`${observacao.indice}: o valor ou o rótulo pertence a outro ano.`);
     }
-    if (centros.some((x) => !perto(x, xEsperado(ano)))) {
+    if (centros.some((x) => !perto(x, xEsperado(ano + 1)))) {
       falha(`${observacao.indice}: ponto fora do seu ano (${ano}).`);
     }
-    pontos.push({ id: observacao.indice, ano, x: centros[1], esperado: xEsperado(ano) });
+    pontos.push({ id: observacao.indice, ano, x: centros[1], esperado: xEsperado(ano + 1) });
   }
   const graficos = serie.querySelectorAll('line, rect, circle, ellipse, path, polyline, polygon, use, image');
   for (const el of graficos) {
@@ -166,7 +166,15 @@ export function plantasDoCalendario(root, municipio, lang, linhas) {
       el.setAttribute('x1', String(numero(el, 'x1') + 30));
       el.setAttribute('x2', String(numero(el, 'x2') + 30));
     }],
-    ['uniao-sobre-lacuna', 'ano sem valor', (r) => r.querySelector('.mun-serie-svg').insertAdjacentHTML('beforeend', '<path d="M 10 30 L 610 70"/>')],
+    ['ponto-no-inicio-do-ano', 'ponto fora do seu ano', (r) => {
+      const banda = r.querySelectorAll('.mun-banda-svg text[data-nonledger="escala-de-instrumento"]');
+      const passo = (numero(banda.at(-1), 'x') - numero(banda[0], 'x')) / (Number(texto(banda.at(-1))) - Number(texto(banda[0])));
+      const grupo = r.querySelector('[data-serie-ponto]');
+      for (const el of grupo.querySelectorAll('[x], [x1]')) {
+        for (const atributo of ['x', 'x1', 'x2']) if (el.hasAttribute(atributo)) el.setAttribute(atributo, String(numero(el, atributo) - passo));
+      }
+    }],
+    ['uniao-sobre-lacuna' , 'ano sem valor', (r) => r.querySelector('.mun-serie-svg').insertAdjacentHTML('beforeend', '<path d="M 10 30 L 610 70"/>')],
     ['ponto-sem-valor', 'ano sem valor', (r) => r.querySelector('.mun-serie-svg').insertAdjacentHTML('beforeend', '<circle cx="200" cy="70" r="3"/>')],
     ['mandato-sem-rotulo', 'não tem o seu rótulo', (r) => r.querySelector('.mun-banda-estado').remove()],
   ];
@@ -190,7 +198,7 @@ function provaEmMemoria(m, lang, linhas) {
   const html = `<div data-instrumento="mandatos"><svg class="mun-serie-svg" viewBox="0 0 720 132">
     <line class="mun-serie-eixo" x1="10" x2="710" y1="104" y2="104"/>
     <line class="mun-serie-ref" x1="10" x2="710" y1="50" y2="50"/>
-    ${observacoes.map((r) => `<g data-serie-ponto="${r.indice}" data-serie-ano="${r.ref}"><rect class="mun-serie-barra" x="${x(Number(r.ref)) - 16}" width="32"/><line class="mun-serie-valor" x1="${x(Number(r.ref)) - 20}" x2="${x(Number(r.ref)) + 20}" y1="60" y2="60"/><text data-claim="${r.indice}" x="${x(Number(r.ref))}"/><text data-nonledger="escala-de-instrumento" x="${x(Number(r.ref))}">${r.ref}</text></g>`).join('')}
+    ${observacoes.map((r) => `<g data-serie-ponto="${r.indice}" data-serie-ano="${r.ref}"><rect class="mun-serie-barra" x="${x(Number(r.ref) + 1) - 16}" width="32"/><line class="mun-serie-valor" x1="${x(Number(r.ref) + 1) - 20}" x2="${x(Number(r.ref) + 1) + 20}" y1="60" y2="60"/><text data-claim="${r.indice}" x="${x(Number(r.ref) + 1)}"/><text data-nonledger="escala-de-instrumento" x="${x(Number(r.ref) + 1)}">${r.ref}</text></g>`).join('')}
     </svg><svg class="mun-banda-svg" viewBox="0 0 720 74">
     ${eixo.map((ano) => `<text data-nonledger="escala-de-instrumento" x="${x(ano)}">${ano}</text>`).join('')}
     ${periodos(m).map(({ de, ate }) => `<rect class="mun-banda-seg${ate === null ? ' is-aberto' : ''}" x="${x(de)}" width="${(ate === null ? 710 : x(ate)) - x(de)}"/>`).join('')}
