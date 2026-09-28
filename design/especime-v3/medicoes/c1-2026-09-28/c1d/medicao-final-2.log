@@ -1,0 +1,27 @@
+{
+  "linhas": 3009,
+  "caminhos": {
+    "ficheiros": 2359,
+    "quantidade": 0,
+    "achados": [],
+    "conhecidos_positivos": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "anfitrioes_antigos": 1,
+    "nomes_lidos_do_git": 2,
+    "interpretador_fora_do_repositorio_detetado": true,
+    "conhecido_negativo_navegacao_web": true,
+    "ambito": "Ficheiros atuais do construtor desde o C1, pasta integral das provas, inventário, questões, registo das revisões e ficheiros tocados do motor. Exclui documentos da direção que o construtor não editou. Não reescreve commits antigos.",
+    "excecoes": "Dois nomes portáveis de intérpretes e atributos de navegação relativa do BCE nos diretórios declarados. Nomes pessoais e caminhos locais continuam conferidos dentro dos atributos."
+  },
+  "erros": []
+}

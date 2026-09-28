@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 import subprocess
 import tempfile
+from functools import lru_cache
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
@@ -27,12 +28,30 @@ def sha(p):
 def proibidos():
     return [str(Path.home()).encode(), Path.home().name.lower().encode(),
             str(Path.home().parent).encode() + b'/',
-            (('/private' + '/var/folders') + '/').encode(),
+            (('/private' + '/' + 'var/folders') + '/').encode(),
             (('/private' + '/tmp') + '/').encode(), ('/' + 'tmp/').encode()]
 
+# Caminhos absolutos do sistema, também fora da pasta pessoal e do repositório.
+ABSOLUTO = re.compile(rb'(?<![A-Za-z0-9:/])/(?:opt|usr|Library|Applications|System|Volumes|var|private|etc|bin|sbin|home|root|Users|tmp)/[^\s"<>`\x1b]+')
+
+@lru_cache(maxsize=1)
+def nomes_dos_autores():
+    nomes = git('log', '--format=%an', f'{BASE}..HEAD').splitlines()
+    # Os nomes retirados do inventário vêm do Git, nunca de uma lista pessoal.
+    inventario = git('show', f'{BASE}:design/especime-v3/INVENTARIO-FRASES.md')
+    nomes.extend(re.findall(r'(?:responsável editorial:|editorial responsibility:|Diretor:|Director:) ([^|·\n]+)', inventario))
+    return tuple(sorted({n.strip().encode() for n in nomes if n.strip() and
+                         not any(x in n.lower() for x in ('codex', 'claude', 'bot', 'openai'))}))
+
 def tem_caminho(b):
+    # Estes dois nomes de intérpretes são portáveis, não caminhos desta máquina.
+    b = b.replace(('/' + 'usr/bin/env').encode(), b'<interprete portavel>').replace(('/' + 'bin/sh').encode(), b'<interprete portavel>')
+    # São ligações relativas da navegação do BCE nos corpos alojados. A
+    # exceção só abrange estes atributos e diretórios, não caminhos em prosa,
+    # logs ou código, nem nomes pessoais dentro do atributo.
+    sem_navegacao = re.sub(rb"(?:href|src)=([\"'])/" + rb"home/(?:html|shared|sitedir|data-protection|search)/[^\"']+\1", b'<ligacao relativa da origem>', b)
     anfitriao = re.search(rb'\b[a-z0-9_-]*(?:macbook|imac|mac-mini|macmini)[a-z0-9_.-]*\.local\b', b, re.I)
-    return bool(anfitriao) or any(x.lower() in b.lower() for x in proibidos())
+    return bool(anfitriao or ABSOLUTO.search(sem_navegacao)) or any(x.lower() in b.lower() for x in proibidos()+list(nomes_dos_autores()))
 
 def medir_caminhos():
     erros, total, historia = [], 0, 0

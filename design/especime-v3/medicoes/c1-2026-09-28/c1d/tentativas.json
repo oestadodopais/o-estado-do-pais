@@ -1,0 +1,60 @@
+{
+  "corridas": [
+    {
+      "corrida": "livro-valores",
+      "codigo": 1,
+      "cabeca": "7b4328906d938bd6eeecb8f1e1fc18c1b809e964",
+      "razao_e_resolucao": "O ensaio aritmético isolado usa uma pasta temporária sem o novo registo. A guarda passou a ler o registo selado da raiz do sítio; o livro e as plantas passaram depois."
+    },
+    {
+      "corrida": "bandeiras",
+      "codigo": 1,
+      "cabeca": "03c689bc88cf9313dcf7fd5efdbb9a3d146ffa36",
+      "razao_e_resolucao": "O guião de prova não retirava o espaço fino dos milhares. Foi corrigida a leitura da forma numérica; os valores dos corpos e do livro não mudaram."
+    },
+    {
+      "corrida": "html-preparatorio",
+      "codigo": 1,
+      "cabeca": "966e843589cc9bc4bfafc63425f9a678becdc312",
+      "razao_e_resolucao": "A construção Astro isolada ainda não tinha gerado os cartões de partilha. Depois do passo cartoes, o mesmo portão passou sem alterar a conferência."
+    },
+    {
+      "corrida": "recibos-preparatorios",
+      "codigo": 1,
+      "cabeca": "966e843589cc9bc4bfafc63425f9a678becdc312",
+      "razao_e_resolucao": "O ensaio esperava duas ocorrências numéricas europeias no cartão de I&D. A leitura é comparativa sem repetir o número; a única ocorrência é na régua. A prova passou a exigir essa ocorrência e a sua marca."
+    },
+    {
+      "corrida": "voz-preparatoria",
+      "codigo": 1,
+      "cabeca": "966e843589cc9bc4bfafc63425f9a678becdc312",
+      "razao_e_resolucao": "A frase estimada foi inicialmente declarada no inventário com a ordem inversa à que o HTML rende. Foi substituída pela cadeia efetiva; a procura das frases ficou igual."
+    },
+    {
+      "corrida": "typecheck-primeira",
+      "codigo": 1,
+      "cabeca": "6c794fe2edf0eda51f5309ea2c8ff2ed4d13b4dd",
+      "razao_e_resolucao": "A lista de instantâneos precisava de tipo explícito. Foi acrescentada apenas a anotação, num commit próprio; o código final está em portoes/c1d/typecheck.codigo."
+    },
+    {
+      "corrida": "identificadores-preparatorios",
+      "codigo": 1,
+      "cabeca": "e75de25f7c02a194c680261ab7b561f5139d7218",
+      "razao_e_resolucao": "A marca da fonte passou para uma função comum e deixou uma variável de tradução sem uso. Foram retiradas a variável e a importação, incluindo o mesmo resíduo no Claim; a conferência isolada passou depois."
+    },
+    {
+      "corrida": "construcao-interrompida",
+      "codigo": 143,
+      "cabeca": "e75de25f7c02a194c680261ab7b561f5139d7218",
+      "razao_e_resolucao": "O construtor interrompeu apenas o seu processo Astro depois de a conferência estática encontrar a variável sem uso. O código 143 não é uma recusa do livro; a corrida completa será feita na nova cabeça."
+    },
+    {
+      "corrida": "construcao-antes-lingua",
+      "codigo": 1,
+      "cabeca": "ea0f467d8ac8d1cd872fec9052f139d7917db558",
+      "razao_e_resolucao": "A reposição autorizada da linha do anuário precisava também das declarações de língua anteriores. O portão apontou as três declarações em falta ou desfasadas e o localizador sem marca. O ficheiro das declarações voltou exatamente a a677770f, sem alterar a fonte, o valor ou a guarda."
+    }
+  ],
+  "quantidade": 9,
+  "limite": "Estas falhas de preparação são conservadas. Não são códigos dos portões finais nem plantas que se esperasse ver falhar."
+}

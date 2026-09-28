@@ -1,0 +1,46 @@
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs
+
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<caminho local omitido>
+    at Object.readFileSync (node:fs:440:20)
+    at Module.validateLedger (file://<worktree do sítio>/src/lib/ledger.mjs:1430:42)
+    at [eval]:1:139 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<caminho local omitido>
+}
+
+Node.js v22.23.1
+
+[90m  aritmética · 65 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+
+[31m  A ARITMÉTICA DAS DUAS CASAS NÃO É A MESMA · 1 erro(s):[0m
+
+    [31m✗[0m o livro-razão de mentira não chegou a ser lido: Command failed: <caminho local omitido> -e import("file://<worktree do sítio>/src/lib/ledger.mjs").then((L) => { const r = L.validateLedger(); process.stdout.write(JSON.stringify(r.errors)); });
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<caminho local omitido>
+    at Object.readFileSync (node:fs:440:20)
+    at Module.validateLedger (file://<worktree do sítio>/src/lib/ledger.mjs:1430:42)
+    at [eval]:1:139 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<caminho local omitido>
+}
+
+Node.js v22.23.1
+
+        Sem isto, os doze estragos plantados não foram vistos, e a linha verde de baixo não valeria nada.
+
+  As regras estão em src/lib/decimal.mjs e em core/derivations.py, e a especificação
+  em ledger/derivacoes-paridade.json. Mudar uma sem a outra é o defeito.
+

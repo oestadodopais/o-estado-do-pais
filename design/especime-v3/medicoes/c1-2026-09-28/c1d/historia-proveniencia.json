@@ -1,0 +1,117 @@
+{
+  "controlos": [
+    {
+      "nome": "livro completo com as duas histórias repostas",
+      "passou": true
+    },
+    {
+      "nome": "divida-das-familias-2025-ue: lista exata de a677770f",
+      "passou": true
+    },
+    {
+      "nome": "indice-de-divida-limite-legal: lista exata de a677770f",
+      "passou": true
+    },
+    {
+      "nome": "cadeia com dois acessos coerentes",
+      "passou": true
+    },
+    {
+      "nome": "o dia da mudança usa o acesso novo",
+      "passou": true
+    },
+    {
+      "nome": "travessia real com a lista completa",
+      "passou": true
+    },
+    {
+      "nome": "evora-prr-aprovado-2026: dois instantâneos do mesmo conjunto anunciados",
+      "passou": true,
+      "avisos": [
+        "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+      ]
+    },
+    {
+      "nome": "evora-prr-municipio-contratado: dois instantâneos do mesmo conjunto anunciados",
+      "passou": true,
+      "avisos": [
+        "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+      ]
+    },
+    {
+      "nome": "evora-prr-pago-2026: dois instantâneos do mesmo conjunto anunciados",
+      "passou": true,
+      "avisos": [
+        "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+      ]
+    },
+    {
+      "nome": "evora-prr-universidade-contratado: dois instantâneos do mesmo conjunto anunciados",
+      "passou": true,
+      "avisos": [
+        "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+      ]
+    },
+    {
+      "nome": "evora-prr-vencido-aprovado-2026: dois instantâneos do mesmo conjunto anunciados",
+      "passou": true,
+      "avisos": [
+        "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+        "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+      ]
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "antes do acesso atual sem história",
+      "mordeu": true,
+      "falha": "[divida-das-familias-2025-ue.yml] verificação #1: \"date\" é 2026-09-21 e o acesso em vigor nesse dia é 2026-09-28. Uma releitura é depois da leitura."
+    },
+    {
+      "nome": "endereço antigo errado",
+      "mordeu": true,
+      "falha": "[indice-de-divida-limite-legal.yml] verificação #1: \"path\" não é o endereço em vigor a 2026-09-01: https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22."
+    },
+    {
+      "nome": "antes do primeiro acesso da história",
+      "mordeu": true,
+      "falha": "[divida-das-familias-2025-ue.yml] verificação #1: \"date\" é 2026-09-14 e o acesso em vigor nesse dia é 2026-09-15. Uma releitura é depois da leitura."
+    },
+    {
+      "nome": "cadeia contraditória",
+      "mordeu": true,
+      "falha": "[divida-das-familias-2025-ue.yml] história de \"access_date\" a 2026-09-28: cadeia contraditória; \"old_value\" é 2026-09-19, mas antes vigorava 2026-09-20."
+    },
+    {
+      "nome": "lista que encolhe na travessia real",
+      "mordeu": true,
+      "codigo": 1,
+      "falha": "[evora.json] indice-de-divida-limite-legal: a linha tem 0 reconferência(s) e o registo diz 1. A lista encolheu: uma reconferência escrita não se apaga."
+    },
+    {
+      "nome": "instantâneo de outro conjunto",
+      "mordeu": true,
+      "falha": "[evora-prr-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-exemplo/listagem-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "instantâneo sem identificação na razão",
+      "mordeu": true,
+      "falha": "[evora-prr-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "cadeia contraditória sem releitura anterior",
+      "mordeu": true,
+      "falha": "[evora-prr-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3, mas antes vigorava https://fonte.invalid/errado."
+    }
+  ],
+  "contagens": {
+    "controlos": 11,
+    "plantas": 8,
+    "controlos_integros": 11,
+    "plantas_mordidas": 8
+  }
+}

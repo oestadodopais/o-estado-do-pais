@@ -1,0 +1,27 @@
+{
+  "id": "indice-de-divida-limite-legal",
+  "origem": "a677770f",
+  "linha_sha256": "3dee0095acc323cf498d08f7fc8b4fcbb11c300c62ffd692091ff1ed136a4eee",
+  "valor_conservado": "150",
+  "acesso": "2026-08-10",
+  "verifications": [
+    {
+      "date": "2026-09-01",
+      "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+      "result": "igual",
+      "by": "corredor-diario"
+    }
+  ],
+  "corrections": [],
+  "cruzamento": {
+    "corrections_at_export": 0,
+    "exported_at": "2026-09-04",
+    "exported_row_sha256": "3dee0095acc323cf498d08f7fc8b4fcbb11c300c62ffd692091ff1ed136a4eee",
+    "exporter": "ResearchHub/publisher/export_site_rows.py",
+    "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
+    "rh_id": "anuario-indice-permitido",
+    "rh_ledger_sha256": "17afc85af647c4436cbe34f3ad46ec96db0b4e7f8abe1d8f78efa3ea5e88bbdd",
+    "rh_study": "07 Évora Municipal Accounts",
+    "verifications_at_export": 1
+  }
+}
