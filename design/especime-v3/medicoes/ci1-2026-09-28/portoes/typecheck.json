@@ -1,0 +1,31 @@
+{
+ "comando": "npm run typecheck",
+ "inicio": "2026-09-28T19:39:23.083Z",
+ "fim": "2026-09-28T19:39:23.340Z",
+ "segundos": 0.257,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": []
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": [
+  {
+   "nome": "typecheck",
+   "inicio": "2026-09-28T19:39:23.154Z",
+   "segundos": 0.186
+  }
+ ]
+}

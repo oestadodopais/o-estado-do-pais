@@ -1,0 +1,135 @@
+{
+ "comando": "npm run build",
+ "inicio": "2026-09-28T19:24:18.518Z",
+ "fim": "2026-09-28T19:25:34.087Z",
+ "segundos": 75.569,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": []
+ },
+ "astro_build": {
+  "inicio": "2026-09-28T19:24:20.869Z",
+  "fim": "2026-09-28T19:24:30.898Z",
+  "segundos": 10.029
+ },
+ "paginas_do_astro": 7404,
+ "passos": [
+  {
+   "nome": "build",
+   "inicio": "2026-09-28T19:24:18.590Z",
+   "segundos": 0.069
+  },
+  {
+   "nome": "mapa:unidades",
+   "inicio": "2026-09-28T19:24:18.659Z",
+   "segundos": 0.121
+  },
+  {
+   "nome": "ledger:check",
+   "inicio": "2026-09-28T19:24:18.780Z",
+   "segundos": 0.438
+  },
+  {
+   "nome": "check:registo",
+   "inicio": "2026-09-28T19:24:19.218Z",
+   "segundos": 0.274
+  },
+  {
+   "nome": "check:cruzamento",
+   "inicio": "2026-09-28T19:24:19.492Z",
+   "segundos": 0.365
+  },
+  {
+   "nome": "check:documentos",
+   "inicio": "2026-09-28T19:24:19.857Z",
+   "segundos": 11.135
+  },
+  {
+   "nome": "stamp:version",
+   "inicio": "2026-09-28T19:24:30.992Z",
+   "segundos": 0.114
+  },
+  {
+   "nome": "cartoes",
+   "inicio": "2026-09-28T19:24:31.106Z",
+   "segundos": 11.035
+  },
+  {
+   "nome": "gate:html",
+   "inicio": "2026-09-28T19:24:42.141Z",
+   "segundos": 12.422
+  },
+  {
+   "nome": "check:datas",
+   "inicio": "2026-09-28T19:24:54.563Z",
+   "segundos": 1.227
+  },
+  {
+   "nome": "check:cadeia",
+   "inicio": "2026-09-28T19:24:55.790Z",
+   "segundos": 0.261
+  },
+  {
+   "nome": "check:dados",
+   "inicio": "2026-09-28T19:24:56.051Z",
+   "segundos": 1.43
+  },
+  {
+   "nome": "check:mapa",
+   "inicio": "2026-09-28T19:24:57.481Z",
+   "segundos": 0.328
+  },
+  {
+   "nome": "check:regioes",
+   "inicio": "2026-09-28T19:24:57.809Z",
+   "segundos": 0.267
+  },
+  {
+   "nome": "check:areas",
+   "inicio": "2026-09-28T19:24:58.076Z",
+   "segundos": 0.414
+  },
+  {
+   "nome": "check:formas",
+   "inicio": "2026-09-28T19:24:58.490Z",
+   "segundos": 3.666
+  },
+  {
+   "nome": "check:lugares",
+   "inicio": "2026-09-28T19:25:02.156Z",
+   "segundos": 0.483
+  },
+  {
+   "nome": "check:pais",
+   "inicio": "2026-09-28T19:25:02.639Z",
+   "segundos": 3.095
+  },
+  {
+   "nome": "check:voz",
+   "inicio": "2026-09-28T19:25:05.734Z",
+   "segundos": 22.455
+  },
+  {
+   "nome": "check:nomes",
+   "inicio": "2026-09-28T19:25:28.189Z",
+   "segundos": 1.971
+  },
+  {
+   "nome": "check:lingua",
+   "inicio": "2026-09-28T19:25:30.160Z",
+   "segundos": 3.927
+  }
+ ]
+}

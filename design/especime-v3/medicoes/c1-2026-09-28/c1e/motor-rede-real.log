@@ -1,0 +1,78 @@
+[
+  {
+    "nome": "O cliente conserva a causa tipada da ligação cortada",
+    "passou": true
+  },
+  {
+    "nome": "A ligação cortada recebe três tentativas e é sem rede",
+    "passou": true,
+    "tentativas": 3
+  },
+  {
+    "nome": "O nome inexistente passa pelo cliente real e é sem rede",
+    "passou": true,
+    "tentativas": 3
+  },
+  {
+    "nome": "HTTP 503 continua a ser uma resposta da fonte",
+    "passou": true,
+    "pedidos": 1
+  },
+  {
+    "nome": "304 sem validadores diz que falta o corpo, sem se dizer erro HTTP",
+    "passou": true
+  },
+  {
+    "nome": "A terceira tentativa pode recuperar",
+    "passou": true,
+    "tentativas": 3
+  },
+  {
+    "nome": "Um tempo esgotado volta a perguntar à rede que continua acessível",
+    "passou": true,
+    "tentativas": 3
+  },
+  {
+    "nome": "O corte depois da linha de estado pergunta ao vigia: False",
+    "passou": true,
+    "tentativas": 3
+  },
+  {
+    "nome": "URLError sem causa pergunta ao vigia: False",
+    "passou": true
+  },
+  {
+    "nome": "O corte depois da linha de estado pergunta ao vigia: True",
+    "passou": true,
+    "tentativas": 3
+  },
+  {
+    "nome": "URLError sem causa pergunta ao vigia: True",
+    "passou": true
+  },
+  {
+    "nome": "A recusa de ligação não é transporte por classificar",
+    "passou": true
+  },
+  {
+    "nome": "A corrida real para sem carimbo nem inacessível: /corte",
+    "passou": true,
+    "codigo": 4
+  },
+  {
+    "nome": "A corrida real para sem carimbo nem inacessível: /dns",
+    "passou": true,
+    "codigo": 4
+  },
+  {
+    "nome": "A corrida real para sem carimbo nem inacessível: /corte-corpo",
+    "passou": true,
+    "codigo": 4
+  },
+  {
+    "nome": "O DNS real antes da corrida dá SEM_REDE sem escrita",
+    "passou": true,
+    "codigo": 3
+  }
+]
+PASS 16 conferências pelo cliente real

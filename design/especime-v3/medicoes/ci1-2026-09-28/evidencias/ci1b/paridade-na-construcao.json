@@ -1,0 +1,50 @@
+{
+ "o_que": "o astro build numa cópia da árvore da cabeça: intacta constrói; com uma chave só na edição portuguesa de src/i18n/strings.mjs fecha com a mensagem da guarda, antes de a primeira página se escrever",
+ "cabeca": "b485ae52490920f9a46630a967177f546cd21f5c",
+ "comando": "git archive HEAD numa pasta temporária, node_modules clonado, node node_modules/astro/bin/astro.mjs build",
+ "sha256_de_strings_intacto": "8af8ff723fdf8abc598a70badf68c006e43560b39948045407eea72f77227446",
+ "sha256_de_strings_plantado": "e7dd1dd610b10496e8c152e5ae9967b728c92cce79aae99f2036ee4800f91193",
+ "controlo": {
+  "paginas_acabadas": 10438,
+  "erro_ao_renderizar": null,
+  "primeira_rota": "/404.html",
+  "primeiras_linhas_de_rota": [
+   "├─ /404.html (+7ms) ",
+   "├─ /a-verificar/index.html (+2ms) ",
+   "├─ /agenda/index.html (+31ms) "
+  ],
+  "linhas_da_guarda": [],
+  "rotulo": "controlo",
+  "codigo": 0,
+  "segundos": 10.366,
+  "linhas_de_pagina": 10438,
+  "paginas_html_escritas": 7422,
+  "mensagem_da_guarda": false,
+  "chave_nomeada": false,
+  "gerou_rotas": true
+ },
+ "planta": {
+  "paginas_acabadas": 0,
+  "erro_ao_renderizar": "/404",
+  "primeira_rota": "/404.html",
+  "primeiras_linhas_de_rota": [
+   "├─ /404.html"
+  ],
+  "linhas_da_guarda": [
+   "22:38:55 [ERROR] Error: i18n: as duas línguas não têm as mesmas chaves.",
+   "só em pt: plantaDoCi1b",
+   "22:38:55 [ERROR] [build] Caught error rendering /404: Error: i18n: as duas línguas não têm as mesmas chaves.",
+   "só em pt: plantaDoCi1b"
+  ],
+  "rotulo": "planta",
+  "codigo": 1,
+  "segundos": 1.339,
+  "linhas_de_pagina": 1,
+  "paginas_html_escritas": 0,
+  "mensagem_da_guarda": true,
+  "chave_nomeada": true,
+  "gerou_rotas": true
+ },
+ "primeira_rota_do_controlo": "/404.html",
+ "mordeu": true
+}

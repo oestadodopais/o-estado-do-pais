@@ -87,6 +87,20 @@ corrections:
     new_value: "NIF 504828576 \"Município de Évora\" \"contratado_neste_concelho\": 12069012.6"
     reason: "O excerto transcreve a linha lida no registo de entidades do PRR. No instantâneo de 2026-08-19 o publicador escreve o nome da entidade «Município de Évora», onde no de 2026-08-17 escrevia «MUNICÍPIO DE ÉVORA». O valor não muda: a grafia é da fonte, e o excerto transcreve o que a fonte escreve."
     reason_en: "The excerpt transcribes the line read in the PRR entities register. In the 2026-08-19 snapshot the publisher writes the entity's name «Município de Évora», where in the 2026-08-17 one it wrote «MUNICÍPIO DE ÉVORA». The value does not change: the spelling is the source's, and the excerpt transcribes what the source writes."
+  - date: "2026-08-18"
+    kind: "proveniencia"
+    field: "access_date"
+    old_value: "2026-08-04"
+    new_value: "2026-08-18"
+    reason: "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava."
+    reason_en: "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+  - date: "2026-08-20"
+    kind: "proveniencia"
+    field: "access_date"
+    old_value: "2026-08-18"
+    new_value: "2026-08-20"
+    reason: "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava."
+    reason_en: "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
 
 # Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:

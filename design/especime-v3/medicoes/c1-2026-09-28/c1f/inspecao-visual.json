@@ -1,0 +1,16 @@
+{
+  "quando": "2026-09-28T20:38:22.109595+00:00",
+  "cabeca": "cd5557448c430a225eb58b6b257e7f11ef384818",
+  "capturas_vistas": [
+    {
+      "ficheiro": "capturas/depois-recibo-evora-prr-aprovado-2026-pt-390.png",
+      "sha256": "36aad9070b5ecaa5e30db4b6d2144a1b070c9d0b0adcc197bf1921a83ad408f1"
+    },
+    {
+      "ficheiro": "capturas/depois-recibo-evora-prr-universidade-contratado-en-1280.png",
+      "sha256": "01eddc6e4a32ce46a62ccb06c5857d3177bf301d3aa474c73905950d9bc09c35"
+    }
+  ],
+  "observacao": "Inspeção visual de uma captura estreita portuguesa e de uma larga inglesa: as entradas de acesso aparecem no histórico, o texto cabe nas colunas e não se observam sobreposições. A matriz completa tem conferência automática das razões e do transbordo.",
+  "defeitos_observados": []
+}

@@ -33,7 +33,16 @@ study: "quadro-institucional"
 note: "Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: +9% (EA). Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 21.3. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-09-28'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2025: 21.3'
+  new_value: 'Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2025: 21.3 p'
+  reason: O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026;
+    o valor não mudou.
+  reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
+    the value has not changed.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:

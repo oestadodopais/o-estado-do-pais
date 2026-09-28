@@ -1,0 +1,405 @@
+{
+  "cabeca": "6bbe1cee5f7167ba7bb317733ceef7e4b71ab413",
+  "casos": [
+    {
+      "nome": "credito-malparado-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "credito-malparado-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "custo-unitario-do-trabalho-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "custo-unitario-do-trabalho-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "despesa-em-id-2024-ue-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-empresas-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-empresas-2025-ue-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-empresas-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-familias-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-familias-2025-ue-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a28.09.2026Releitura a28.09.2026, a releitura encontrou: 49,2 · comparação semanal com a fonte Ver a atualização deste valorReleitura a21.09.2026, confirmou o valor anterior: 49,3 · comparação semanal com a fonte",
+      "grupos": 2,
+      "entradas": 2
+    },
+    {
+      "nome": "divida-das-familias-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "fluxo-de-credito-as-familias-2025-ue-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "formacao-bruta-de-capital-fixo-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "formacao-bruta-de-capital-fixo-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "licencas-de-construcao-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "licencas-de-construcao-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura a21.09.2026, igual à fonte · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "pib-real-per-capita-2024-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura tentada a28.09.2026, sem resposta a esse pedido · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "pib-real-per-capita-2025-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a12.08.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura tentada a28.09.2026, sem resposta a esse pedido · comparação semanal com a fonte",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "evora-prr-aprovado-2026-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a20.08.2026Ficheiro da fonte relido a03.09.2026, igual à fonte · conferência diária do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →",
+      "grupos": 6,
+      "entradas": 6
+    },
+    {
+      "nome": "evora-prr-municipio-contratado-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a20.08.2026Ficheiro da fonte relido a03.09.2026, igual à fonte · conferência diária do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →",
+      "grupos": 5,
+      "entradas": 5
+    },
+    {
+      "nome": "evora-prr-pago-2026-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a20.08.2026Ficheiro da fonte relido a03.09.2026, igual à fonte · conferência diária do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →",
+      "grupos": 6,
+      "entradas": 6
+    },
+    {
+      "nome": "evora-prr-universidade-contratado-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a20.08.2026Ficheiro da fonte relido a03.09.2026, igual à fonte · conferência diária do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →",
+      "grupos": 5,
+      "entradas": 5
+    },
+    {
+      "nome": "evora-prr-vencido-aprovado-2026-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a20.08.2026Ficheiro da fonte relido a03.09.2026, igual à fonte · conferência diária do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →Ficheiro da fonte relido a03.09.2026, igual à fonte · conferência diária do ficheiro da fonte contra a cópia arquivada de 20.08.2026 Repetir a leitura →",
+      "grupos": 6,
+      "entradas": 6
+    },
+    {
+      "nome": "pib-real-per-capita-2025-ue-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a15.09.2026Releitura a28.09.2026, igual à fonte · comparação semanal com a fonte Releitura tentada a28.09.2026, sem resposta a esse pedido · comparação semanal com a fonte",
+      "grupos": 0,
+      "entradas": 0
+    },
+    {
+      "nome": "indice-de-divida-limite-legal-pt",
+      "passou": true,
+      "texto": "O que foi conferidoLido na fonte a10.08.2026Ficheiro da fonte relido a01.09.2026, igual à fonte · conferência diária do ficheiro da fonte",
+      "grupos": 0,
+      "entradas": 0
+    },
+    {
+      "nome": "ipc-variacao-homologa-pt",
+      "passou": true,
+      "texto": "O que foi conferidoPublicado pela fonte a10.09.2026Lido na fonte a26.09.2026Segunda leitura:ainda nenhuma A regra da releitura →",
+      "grupos": 0,
+      "entradas": 0
+    },
+    {
+      "nome": "marca-estimada-temas/index.html",
+      "passou": true,
+      "observacoes": 1,
+      "texto": "Despesa em investigação e desenvolvimento1,73 % do PIBem 2024fonte · EurostatÉ o que se gastou no país em investigação e desenvolvimento num ano, pelas empresas, pelo Estado, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a 2023. Está abaixo da média da União Europeia.2023:1,68União Europeia:2,24 (valor estimado)"
+    },
+    {
+      "nome": "marca-estimada-index.html",
+      "passou": true,
+      "observacoes": 1,
+      "texto": "Despesa em investigação e desenvolvimento1,73 % do PIBem 2024fonte · EurostatÉ o que se gastou no país em investigação e desenvolvimento num ano, pelas empresas, pelo Estado, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a 2023. Está abaixo da média da União Europeia.2023:1,68União Europeia:2,24 (valor estimado)"
+    },
+    {
+      "nome": "objetivo-institucional-pt",
+      "passou": true,
+      "texto": "Inflação na comparação europeia3,6 %em agosto de 2026fonte · EurostatEm agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, 3,6 % acima dos de há um ano. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.julho de 2026:3,1União Europeia:3,2Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?"
+    },
+    {
+      "nome": "credito-malparado-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "credito-malparado-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "custo-unitario-do-trabalho-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "custo-unitario-do-trabalho-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "despesa-em-id-2024-ue-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-empresas-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-empresas-2025-ue-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-empresas-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-familias-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "divida-das-familias-2025-ue-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on28.09.2026Re-read on28.09.2026, the re-read found: 49,2 · weekly comparison with the source See the update to this valueRe-read on21.09.2026, confirmed the previous value: 49,3 · weekly comparison with the source",
+      "grupos": 2,
+      "entradas": 2
+    },
+    {
+      "nome": "divida-das-familias-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "fluxo-de-credito-as-familias-2025-ue-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "formacao-bruta-de-capital-fixo-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "formacao-bruta-de-capital-fixo-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "licencas-de-construcao-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "licencas-de-construcao-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read on21.09.2026, matches the source · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "pib-real-per-capita-2024-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read attempted on28.09.2026, with no answer to that request · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "pib-real-per-capita-2025-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on12.08.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read attempted on28.09.2026, with no answer to that request · weekly comparison with the source",
+      "grupos": 1,
+      "entradas": 1
+    },
+    {
+      "nome": "evora-prr-aprovado-2026-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on20.08.2026Source file read again on03.09.2026, matches the source · daily check of the source file against the archived copy of 20.08.2026 Repeat the reading →",
+      "grupos": 6,
+      "entradas": 6
+    },
+    {
+      "nome": "evora-prr-municipio-contratado-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on20.08.2026Source file read again on03.09.2026, matches the source · daily check of the source file against the archived copy of 20.08.2026 Repeat the reading →",
+      "grupos": 5,
+      "entradas": 5
+    },
+    {
+      "nome": "evora-prr-pago-2026-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on20.08.2026Source file read again on03.09.2026, matches the source · daily check of the source file against the archived copy of 20.08.2026 Repeat the reading →",
+      "grupos": 6,
+      "entradas": 6
+    },
+    {
+      "nome": "evora-prr-universidade-contratado-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on20.08.2026Source file read again on03.09.2026, matches the source · daily check of the source file against the archived copy of 20.08.2026 Repeat the reading →",
+      "grupos": 5,
+      "entradas": 5
+    },
+    {
+      "nome": "evora-prr-vencido-aprovado-2026-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on20.08.2026Source file read again on03.09.2026, matches the source · daily check of the source file against the archived copy of 20.08.2026 Repeat the reading →Source file read again on03.09.2026, matches the source · daily check of the source file against the archived copy of 20.08.2026 Repeat the reading →",
+      "grupos": 6,
+      "entradas": 6
+    },
+    {
+      "nome": "pib-real-per-capita-2025-ue-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on15.09.2026Re-read on28.09.2026, matches the source · weekly comparison with the source Re-read attempted on28.09.2026, with no answer to that request · weekly comparison with the source",
+      "grupos": 0,
+      "entradas": 0
+    },
+    {
+      "nome": "indice-de-divida-limite-legal-en",
+      "passou": true,
+      "texto": "What was checkedRead at the source on10.08.2026Source file read again on01.09.2026, matches the source · daily check of the source file",
+      "grupos": 0,
+      "entradas": 0
+    },
+    {
+      "nome": "ipc-variacao-homologa-en",
+      "passou": true,
+      "texto": "What was checkedPublished by the source on10.09.2026Read at the source on26.09.2026Second reading:none yet The re-reading rule →",
+      "grupos": 0,
+      "entradas": 0
+    },
+    {
+      "nome": "marca-estimada-en/themes/index.html",
+      "passou": true,
+      "observacoes": 1,
+      "texto": "Spending on research and development1,73 % of GDPin 2024source · EurostatIt is what was spent in the country on research and development in a year, by companies, the State, higher education and non-profit institutions, as a percentage of GDP, the value of everything the country produces in a year. Up from 2023. Below the European Union average.2023:1,68European Union:2,24 (estimated value)"
+    },
+    {
+      "nome": "marca-estimada-en/index.html",
+      "passou": true,
+      "observacoes": 1,
+      "texto": "Spending on research and development1,73 % of GDPin 2024source · EurostatIt is what was spent in the country on research and development in a year, by companies, the State, higher education and non-profit institutions, as a percentage of GDP, the value of everything the country produces in a year. Up from 2023. Below the European Union average.2023:1,68European Union:2,24 (estimated value)"
+    },
+    {
+      "nome": "objetivo-institucional-en",
+      "passou": true,
+      "texto": "Inflation in the European comparison3,6 %in August 2026source · EurostatIn August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, 3,6 % above a year earlier. The change is larger than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index.July 2026:3,1European Union:3,2How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?"
+    }
+  ],
+  "contagem": 58,
+  "erros": []
+}

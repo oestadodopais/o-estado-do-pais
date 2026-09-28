@@ -1,0 +1,18 @@
+{
+ "codigo_da_corrida": 1,
+ "passo_novo_correu": true,
+ "passo_novo_codigo": 0,
+ "palavras_codigo": 1,
+ "U_nomeia_palavras": true,
+ "D_ok": true,
+ "C_ok": true,
+ "vermelhos": [
+  "npm run check:alvos",
+  "npm run check:palavras"
+ ],
+ "package_json_reposto": true,
+ "index_reposto": true,
+ "sha256_package_json": "c8f71744f421a7d047e321f70f42eb339bf12fb87fd1cfca194e4f7e8bc26c05",
+ "sha256_index": "515240f11771a0fec308943f009c8d47d4a93aa70fb7ddad41af075b44ad5517",
+ "mordeu": true
+}

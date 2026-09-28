@@ -1,0 +1,15 @@
+{
+  "cabeca": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+  "limpa": false,
+  "diferenca_sha256": "9a4786f6189af742ec6ced69b603ac0c03fd45c51a622b4c3d23259f397fec03",
+  "ficheiros": [
+    {
+      "ficheiro": "indicators/refresh.py",
+      "sha256": "4f345a7c5ae56aa4d549d93c89889d7a457791a87399216b5cd1e1a5c2a962ea"
+    },
+    {
+      "ficheiro": "indicators/refresh_rede_real_test.py",
+      "sha256": "9b7e3e19d9f1f123288a552a1c9b8b65069013996b1c2ddbbd279200b8f0cec6"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "ensaio_inicial": {
+    "codigo": 1,
+    "linhas": [
+      "evora-prr-aprovado-2026.yml",
+      "evora-prr-municipio-contratado.yml",
+      "evora-prr-pago-2026.yml",
+      "evora-prr-universidade-contratado.yml",
+      "evora-prr-vencido-aprovado-2026.yml"
+    ],
+    "quantidade": 5,
+    "razao": "O primeiro ensaio aplicou a coerência da história de endereços também a linhas sem releituras anteriores a uma mudança tipada. Esse âmbito excedia a decisão. A implementação final só confere a cadeia de endereços quando a regra aprovada a usa. As histórias de acesso são sempre conferidas."
+  },
+  "final": {
+    "livro_codigo": 0,
+    "plantas_codigo": 0
+  }
+}

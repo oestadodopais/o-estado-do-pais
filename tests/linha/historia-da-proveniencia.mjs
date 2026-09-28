@@ -36,7 +36,12 @@ plantar('antes do acesso atual sem história', uniao,
   c => { c.corrections = c.corrections.filter(x => x.field !== 'access_date'); },
   `${rot}: "date" é 2026-09-21 e o acesso em vigor nesse dia é 2026-09-28. Uma releitura é depois da leitura.`);
 plantar('endereço antigo errado', dgal,
-  c => { c.verifications[0].path = c.source_url; },
+  c => {
+    const antigo = c.source_url;
+    c.source_url = 'https://fonte.invalid/novo';
+    c.corrections.push({ date: '2026-09-28', kind: 'proveniencia', field: 'source_url', old_value: antigo, new_value: c.source_url, reason: 'Ensaio de endereço.', reason_en: 'Address test.' });
+    c.verifications[0].path = c.source_url;
+  },
   `[${dgal}.yml] verificação #1: "path" não é o endereço em vigor a 2026-09-01: https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22.`);
 plantar('antes do primeiro acesso da história', uniao,
   c => { c.verifications[0].date = '2026-09-14'; },
@@ -65,7 +70,7 @@ try {
     fs.symlinkSync(path.join(raiz, e), path.join(tmp, e));
   }
   fs.mkdirSync(path.join(tmp, 'scripts'));
-  fs.copyFileSync('scripts/check-cruzamento.mjs', path.join(tmp, 'scripts/check-cruzamento.mjs'));
+  for (const f of ['check-cruzamento.mjs', 'contagem-do-cruzamento.mjs']) fs.copyFileSync(`scripts/${f}`, path.join(tmp, 'scripts', f));
   fs.mkdirSync(path.join(tmp, 'ledger'));
   for (const e of fs.readdirSync('ledger')) {
     if (e === 'claims') continue;
@@ -78,7 +83,8 @@ try {
     else fs.symlinkSync(path.join(raiz, 'ledger/claims', f), path.join(tmp, 'ledger/claims', f));
   }
   const correr = () => spawnSync(process.execPath, ['scripts/check-cruzamento.mjs'], { cwd: tmp, encoding: 'utf8' });
-  assert.equal(correr().status, 0);
+  const limpa = correr();
+  assert.equal(limpa.status, 0, limpa.stderr);
   controlos.push({ nome: 'travessia real com a lista completa', passou: true });
   const p = path.join(tmp, 'ledger/claims', `${dgal}.yml`);
   const linha = load(fs.readFileSync(p, 'utf8'));
@@ -95,6 +101,29 @@ try {
   assert.ok((r.stdout + r.stderr).includes(falha), r.stdout + r.stderr);
   plantas.push({ nome: 'lista que encolhe na travessia real', mordeu: true, codigo: r.status, falha });
 } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+// C1d: as cadeias dos instantâneos são explícitas e conferidas mesmo sem releitura anterior.
+const idsPrr = [...linhas.values()].filter(c => c.document?.kind === 'ficheiro' &&
+  (c.corrections ?? []).some(x => x.kind === 'proveniencia' && x.field === 'source_url' && String(x.old_value).includes('/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817'))).map(c => c.id);
+assert.equal(idsPrr.length, 5);
+for (const id of idsPrr) {
+  const avisos = validateLedger().warnings.filter(x => x.startsWith(`[${id}.yml] história do endereço:`));
+  assert.equal(avisos.length, 2);
+  controlos.push({ nome: `${id}: dois instantâneos do mesmo conjunto anunciados`, passou: true, avisos });
+}
+const prr = idsPrr[0];
+const antesPrr = linhas.get(prr);
+for (const [nome, mudar] of [
+  ['instantâneo de outro conjunto', c => { c.corrections.find(x => x.old_value?.includes('/20260817-')).old_value = 'https://dados.gov.pt/s/resources/outro/20260817-203527-exemplo/listagem-20260817.xlsx'; }],
+  ['instantâneo sem identificação na razão', c => { c.corrections.find(x => x.old_value?.includes('/20260817-')).reason = 'O mesmo conjunto.'; }],
+  ['cadeia contraditória sem releitura anterior', c => { c.corrections.find(x => x.field === 'source_url').new_value = 'https://fonte.invalid/errado'; }],
+]) {
+  const copia = structuredClone(antesPrr); mudar(copia); linhas.set(prr, copia);
+  try {
+    const erros = validateLedger().errors;
+    assert.ok(erros.some(x => x.includes('cadeia contraditória')), nome);
+    plantas.push({ nome, mordeu: true, falha: erros.find(x => x.includes('cadeia contraditória')) });
+  } finally { linhas.set(prr, antesPrr); }
+}
 const resultado = { controlos, plantas, contagens: { controlos: controlos.length, plantas: plantas.length, controlos_integros: controlos.filter(x => x.passou).length, plantas_mordidas: plantas.filter(x => x.mordeu).length } };
 const i = process.argv.indexOf('--json');
 if (i >= 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify(resultado, null, 2) + '\n');

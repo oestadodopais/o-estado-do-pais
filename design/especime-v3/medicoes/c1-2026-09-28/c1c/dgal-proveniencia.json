@@ -121,7 +121,14 @@
         "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
       }
     ],
-    "verifications": []
+    "verifications": [
+      {
+        "date": "2026-09-01",
+        "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+        "result": "igual",
+        "by": "corredor-diario"
+      }
+    ]
   },
   "origem": {
     "publicador": "Direção-Geral das Autarquias Locais (DGAL)",
@@ -136,5 +143,7 @@
       "cliente": "core.http.HttpClient.condicional",
       "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818"
     }
-  }
+  },
+  "reconferencia_reposta_de": "a677770f",
+  "depois_sha256": "d2339974060d29c9e8eb49294d9c3d4257f4ed5d9db57099984da76452a37870"
 }

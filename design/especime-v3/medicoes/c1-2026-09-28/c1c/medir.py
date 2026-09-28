@@ -72,9 +72,11 @@ def mede(motor, final):
 
     nomes = git('ls-tree', '-r', '--name-only', BASE, '--', 'ledger/claims').splitlines()
     mudancas = []
+    contagens_registo = {k:0 for k in ('correcao','atualizacao','proveniencia')}
     for nome in nomes:
         a = yaml.safe_load(git('show', f'{BASE}:{nome}'))
         b = yaml.safe_load((SITIO/nome).read_text())
+        for entrada in b.get('corrections',[]): contagens_registo[entrada['kind']] += 1
         for campo in ('value', 'source_url'):
             if a.get(campo) != b.get(campo): mudancas.append({'id': a['id'], 'campo': campo, 'antes': a.get(campo), 'depois': b.get(campo)})
     exige({(x['id'],x['campo']) for x in mudancas} == {(ALVO,'value'),('indice-de-divida-limite-legal','source_url')}, 'Mudança de valor ou endereço fora do mandato.')
@@ -83,6 +85,19 @@ def mede(motor, final):
     exige(linha['value']=='49,2' and linha['access_date']=='2026-09-28', 'A dívida da União não tem o valor e acesso autorizados.')
     c = [c for c in linha['corrections'] if c['kind']=='atualizacao']
     exige(len(c)==1 and c[0]['old_value']=='49,3' and c[0]['new_value']=='49,2', 'Falta a atualização tipada da dívida.')
+    historias = []
+    for id in (ALVO, 'indice-de-divida-limite-legal'):
+        atual = yaml.safe_load((SITIO/'ledger/claims'/f'{id}.yml').read_text())
+        anterior = yaml.safe_load(git('show', f'a677770f:ledger/claims/{id}.yml'))
+        iguais = atual['verifications'] == anterior['verifications']
+        exige(iguais, f'A história de {id} não é a de a677770f.')
+        acessos = [c for c in atual['corrections'] if c.get('kind')=='proveniencia' and c.get('field')=='access_date']
+        exige(len(acessos)==1 and acessos[0]['old_value']==anterior['access_date'] and acessos[0]['new_value']==atual['access_date'], f'Falta a história do acesso de {id}.')
+        historias.append({'id':id,'lista_igual_a_a677770f':iguais,'verifications':atual['verifications'],'acessos':acessos})
+    enderecos = ler(AQUI/'enderecos-antes.json')
+    plantas_historia = ler(AQUI/'historia-plantas.json')
+    exige(all(p['mordeu'] and p['falha'] for p in plantas_historia['plantas']) and len(plantas_historia['plantas'])==5, 'Falta uma das cinco plantas da retoma.')
+    exige(all(p['passou'] for p in plantas_historia['controlos']), 'Um controlo da história falhou.')
     geradas = ler(AQUI/'comparacao-gerada.json')
     exige(sum(x['valor_numerico_diferente'] for x in geradas['linhas'])==1, 'O gerador encontrou outra revisão numérica.')
 
@@ -147,7 +162,14 @@ def mede(motor, final):
     exige(not provas.get('k17',{}).get('erros'), 'A K17 recusou as origens.')
     conf = provas['plantas-confianca']['contagens']
     exige(conf['plantas']==conf['plantas_mordidas'] and conf['controlos']==conf['controlos_integros'], 'As plantas de confiança falharam.')
-    return {'base':BASE,'base_motor':BASE_MOTOR,'cabeca_sitio':git('rev-parse','HEAD'),'cabeca_motor':git('rev-parse','HEAD',repo=motor),
+    recibos_finais = ler(AQUI/'recibos-finais.json') if (AQUI/'recibos-finais.json').exists() else None
+    custo_retoma = ler(AQUI/'custo-retoma.json') if (AQUI/'custo-retoma.json').exists() else None
+    if final:
+        exige(recibos_finais is not None and not recibos_finais['erros'] and all(c['passou'] for c in recibos_finais['casos']) and recibos_finais['cabeca']==portoes.get('build',{}).get('cabeca'), 'Falta a conferência dos recibos finais.')
+        exige(custo_retoma is not None and custo_retoma['custo_da_retoma']['total_tokens']>0, 'Falta medir o custo desta retoma.')
+    relatorio = ler(AQUI/'relatorio.json') if (AQUI/'relatorio.json').exists() else None
+    if final: exige(relatorio is not None and relatorio['numeros_sem_ficheiro']==0 and relatorio['conhecido_positivo']['encontrado'], 'Falta a conferência do relatório a zero.')
+    return {'recibos_finais':recibos_finais,'custo_retoma':custo_retoma,'contagens_registo':contagens_registo,'historia':historias,'enderecos_antes':enderecos,'plantas_historia':plantas_historia,'relatorio':relatorio,'base':BASE,'base_motor':BASE_MOTOR,'cabeca_sitio':git('rev-parse','HEAD'),'cabeca_motor':git('rev-parse','HEAD',repo=motor),
             'commits':{'sitio':commits(SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),'motor':commits(motor,'4eb2867936dd14ad2654751722e390804e68dda3')},
             'linhas_conferidas':len(nomes),'mudancas_de_valor_ou_endereco':mudancas,'geradas':geradas,'pib':pib,'pedidos':pedidos,'literais':literais,
             'protegidos_motor_alterados':protegidos,'caminhos':caminhos,'portoes':portoes,'provas':provas,

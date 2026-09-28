@@ -6,5 +6,5 @@ export function valorDaReleitura(valor, lang) {
   if (!/^-?\d+(?:[.,]\d+)?$/.test(limpo)) return original;
   const [inteiro, decimais] = limpo.replace(',', '.').split('.');
   const agrupado = inteiro.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−');
-  return agrupado + (decimais === undefined ? '' : (lang === 'en' ? '.' : ',') + decimais);
+  return agrupado + (decimais === undefined ? '' : ',' + decimais);
 }

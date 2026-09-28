@@ -1,0 +1,131 @@
+{
+ "conhecido_positivo": "uma linha trocada é vista",
+ "repetidas": 17,
+ "iguais": 17,
+ "conta_crua": {
+  "o_que_se_tira_antes_de_comparar": "a hora ISO e os segundos decorridos que o cronómetro põe à frente de cada linha, e a linha em branco que o npm escreve antes de anunciar o passo seguinte; o canal (saída normal ou de erro), as linhas em branco das conferências e o texto comparam-se como estão",
+  "linhas_comparadas": 659,
+  "linhas_diferentes": 0
+ },
+ "conferencias": [
+  {
+   "conferencia": "ledger:check",
+   "linhas_no_build": 20,
+   "linhas_no_verify": 20,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:registo",
+   "linhas_no_build": 58,
+   "linhas_no_verify": 58,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:cruzamento",
+   "linhas_no_build": 13,
+   "linhas_no_verify": 13,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:documentos",
+   "linhas_no_build": 24,
+   "linhas_no_verify": 24,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "gate:html",
+   "linhas_no_build": 371,
+   "linhas_no_verify": 371,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:datas",
+   "linhas_no_build": 3,
+   "linhas_no_verify": 3,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:cadeia",
+   "linhas_no_build": 22,
+   "linhas_no_verify": 22,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:dados",
+   "linhas_no_build": 5,
+   "linhas_no_verify": 5,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:mapa",
+   "linhas_no_build": 11,
+   "linhas_no_verify": 11,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:regioes",
+   "linhas_no_build": 7,
+   "linhas_no_verify": 7,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:areas",
+   "linhas_no_build": 18,
+   "linhas_no_verify": 18,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:formas",
+   "linhas_no_build": 3,
+   "linhas_no_verify": 3,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:lugares",
+   "linhas_no_build": 2,
+   "linhas_no_verify": 2,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:pais",
+   "linhas_no_build": 4,
+   "linhas_no_verify": 4,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:voz",
+   "linhas_no_build": 26,
+   "linhas_no_verify": 26,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:lingua",
+   "linhas_no_build": 4,
+   "linhas_no_verify": 4,
+   "iguais": true,
+   "diferencas": []
+  },
+  {
+   "conferencia": "check:nomes",
+   "linhas_no_build": 3,
+   "linhas_no_verify": 3,
+   "iguais": true,
+   "diferencas": []
+  }
+ ]
+}

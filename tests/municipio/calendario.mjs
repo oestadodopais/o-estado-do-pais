@@ -24,9 +24,16 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const perto = (a, b) => Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) < 0.001;
 const numero = (el, atributo) => el?.hasAttribute(atributo) ? Number(el.getAttribute(atributo)) : NaN;
 const texto = (el) => el?.text.trim() ?? '';
-const periodos = (m) => m.tempo.mandatos.map((mandato) => {
-  const [de, ate] = mandato.periodo.split(/[–-]/);
-  return { de: Number(de), ate: ate ? Number(ate) : null };
+const dataNoEixo = (iso) => {
+  const data = new Date(iso);
+  const ano = data.getUTCFullYear();
+  const primeiroDia = new Date(`${ano}-01-01`);
+  const ultimoDia = new Date(`${ano + 1}-01-01`);
+  return ano + (data.getTime() - primeiroDia.getTime()) / (ultimoDia.getTime() - primeiroDia.getTime());
+};
+const periodos = (m) => m.tempo.mandatos.map((mandato, i, todos) => {
+  return { de: mandato.instalado ? dataNoEixo(mandato.instalado) : null,
+    ate: todos[i + 1]?.instalado ? dataNoEixo(todos[i + 1].instalado) : null };
 });
 
 export function conferirCalendario(root, municipio, lang, linhas) {
@@ -137,11 +144,12 @@ export function conferirCalendario(root, municipio, lang, linhas) {
   if (segmentos.length !== intervalos.length) falha('faltam segmentos de mandatos.');
   intervalos.forEach((periodo, i) => {
     const seg = segmentos[i];
-    if (!perto(normalB(numero(seg, 'x')), xEsperado(periodo.de)) ||
+    if (periodo.de !== null && !perto(normalB(numero(seg, 'x')), xEsperado(periodo.de)) ||
       periodo.ate !== null && !perto(normalB(numero(seg, 'x') + numero(seg, 'width')), xEsperado(periodo.ate))) {
-      falha('o segmento de um mandato está fora do seu período.');
+      falha('o segmento de um mandato está fora da data de instalação selada.');
     }
     if (Boolean(seg?.classList.contains('is-aberto')) !== (periodo.ate === null)) falha('o estado do mandato em curso perdeu a sua marca.');
+    if (Boolean(seg?.classList.contains('is-inicio-aberto')) !== (periodo.de === null) || (periodo.de === null && (!banda.querySelector('.mun-banda-inicio-incerto') || !banda.querySelector('.mun-banda-contorno-inicio')))) falha('o início sem data perdeu o traço de limite em aberto.');
   });
   const abertos = intervalos.filter((p) => p.ate === null);
   const estados = banda.querySelectorAll('.mun-banda-estado');
@@ -155,12 +163,25 @@ export function conferirCalendario(root, municipio, lang, linhas) {
       falha('o rótulo do mandato em curso está fora do seu segmento.');
     }
   });
-  return { erros, pontos };
+  return { erros, pontos, instalacoes: municipio.tempo.mandatos.map(m => ({ periodo: m.periodo, instalado: m.instalado })),
+    inicio_sem_data: 'O primeiro limite é o recorte do eixo. A F18 não o prende a uma instalação sem data selada.' };
 }
 
 /** Cada estrago corre na mesma célula; o documento recebido não é alterado. */
 export function plantasDoCalendario(root, municipio, lang, linhas) {
   const casos = [
+    ['inicio-sem-aresta-propria', 'início sem data perdeu o traço', (r) => r.querySelector('.mun-banda-inicio-incerto').remove()],
+    ['fim-conhecido-sem-contorno', 'início sem data perdeu o traço', (r) => r.querySelector('.mun-banda-contorno-inicio').remove()],
+    ['inicio-sem-data-com-aresta-fechada', 'início sem data perdeu o traço', (r) => r.querySelector('.is-inicio-aberto').classList.remove('is-inicio-aberto')],
+    ['mandato-no-inicio-do-ano', 'fora da data de instalação selada', (r) => {
+      const marcas = r.querySelectorAll('.mun-banda-svg text[data-nonledger="escala-de-instrumento"]');
+      const x = numero(marcas.at(-1), 'x');
+      const segmentos = r.querySelectorAll('.mun-banda-seg');
+      const anterior = segmentos.at(-2), atual = segmentos.at(-1);
+      anterior.setAttribute('width', String(x - numero(anterior, 'x')));
+      atual.setAttribute('width', String(numero(atual, 'x') + numero(atual, 'width') - x));
+      atual.setAttribute('x', String(x));
+    }],
     ['ponto-fora-do-ano', 'ponto fora do seu ano', (r) => {
       const el = r.querySelector('.mun-serie-valor');
       el.setAttribute('x1', String(numero(el, 'x1') + 30));
@@ -201,8 +222,9 @@ function provaEmMemoria(m, lang, linhas) {
     ${observacoes.map((r) => `<g data-serie-ponto="${r.indice}" data-serie-ano="${r.ref}"><rect class="mun-serie-barra" x="${x(Number(r.ref) + 1) - 16}" width="32"/><line class="mun-serie-valor" x1="${x(Number(r.ref) + 1) - 20}" x2="${x(Number(r.ref) + 1) + 20}" y1="60" y2="60"/><text data-claim="${r.indice}" x="${x(Number(r.ref) + 1)}"/><text data-nonledger="escala-de-instrumento" x="${x(Number(r.ref) + 1)}">${r.ref}</text></g>`).join('')}
     </svg><svg class="mun-banda-svg" viewBox="0 0 720 74">
     ${eixo.map((ano) => `<text data-nonledger="escala-de-instrumento" x="${x(ano)}">${ano}</text>`).join('')}
-    ${periodos(m).map(({ de, ate }) => `<rect class="mun-banda-seg${ate === null ? ' is-aberto' : ''}" x="${x(de)}" width="${(ate === null ? 710 : x(ate)) - x(de)}"/>`).join('')}
-    <text class="mun-banda-estado" x="${x(eixo.at(-1)) + 8}">${t(lang).municipio.tempoEmFuncoes}</text></svg></div>`;
+    ${periodos(m).map(({ de, ate }) => `<rect class="mun-banda-seg${ate === null ? ' is-aberto' : ''}${de === null ? ' is-inicio-aberto' : ''}" x="${x(de ?? eixo[0])}" width="${(ate === null ? 710 : x(ate)) - x(de ?? eixo[0])}"/>`).join('')}
+    <path class="mun-banda-contorno-inicio"/><line class="mun-banda-inicio-incerto"/>
+    <text class="mun-banda-estado" x="${x(periodos(m).at(-1).de) + 8}">${t(lang).municipio.tempoEmFuncoes}</text></svg></div>`;
   const root = parse(html);
   return { ...conferirCalendario(root, m, lang, linhas), plantas: plantasDoCalendario(root, m, lang, linhas) };
 }

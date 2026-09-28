@@ -115,8 +115,8 @@ verifications:
     valores inválidos, não terminar no campo atual, ou declarar um acesso
     posterior à mudança; uma reconferência anterior a uma mudança tipada de
     `source_url` trouxer um `path` diferente do endereço então em vigor, ou
-    a história de endereços necessária a essa comparação for inválida,
-    contraditória ou não terminar no endereço atual; o
+    a história de endereços for inválida, contraditória ou não terminar no
+    endereço atual, mesmo quando não há reconferência anterior; o
     `path` não começar por `http://` ou `https://`; `result`
     ou `by` estiverem fora dos três valores de cada um; faltar `found` numa
     entrada `diverge`, ou existir numa que não seja; a lista não estiver por
@@ -793,7 +793,7 @@ cada linha:
 | `corrections_at_export` | quantas correcções a linha tinha quando atravessou |
 | `crop_sha256` | o resumo do recorte que atravessou com ela, quando há recorte |
 | `exported_at` | quando estes bytes mudaram pela última vez |
-| `site_corrections` | as correcções feitas deste lado e aceites, com o resumo antes e depois |
+| `site_corrections` | as edições aceites deste lado, com a data da edição, os resumos e as contagens `corrections_before` e `corrections_after` |
 
 `scripts/check-cruzamento.mjs` corre em cada build, **sem rede e sem o motor
 presente** — o construtor é remoto e o motor não existe lá — e exige três coisas:
@@ -853,7 +853,14 @@ pára o build. Há dois caminhos, e nenhum é silencioso:
    **crescido** e que o `value` publicado seja o `new_value` da correcção mais
    recente. Sem as duas, recusa — de outro modo seria uma maneira de fazer passar
    qualquer edição por correcção. O registo guarda o resumo antigo e o novo, e
-   nada é apagado.
+   nada é apagado. A data desta aceitação é a da edição no sítio, não a data
+   histórica de uma entrada reconstituída. `exported_at` acompanha essa edição;
+   `corrections_at_export` conserva a contagem da última travessia. Enquanto os
+   bytes forem os da última aceitação local, a contagem exigida é o seu
+   `corrections_after`. Uma reexportação volta a declarar a contagem que
+   atravessou, conservando a história das aceitações. Uma afinação autorizada
+   apenas das razões mantém iguais as contagens antes e depois e regista os
+   dois resumos, sem simular entradas acrescentadas.
 
 **Uma correcção continua sempre possível.** O que deixa de ser possível é uma
 alteração sem rasto.
@@ -880,6 +887,23 @@ corrections:
     reason: "O RASARP 2025 foi revisto; a versão de Setembro corrige o valor nacional."
     reason_en: "The 2025 RASARP was revised; the September version corrects the national value."
 ```
+
+### A história prende o número publicado (C1d, 28.09.2026)
+
+O `ledger:check`, chamado tanto por `build` como por `verify`, exige que
+`value` seja o `new_value` da última `correcao` ou `atualizacao`, na forma
+numérica da casa. Cada `old_value` tem de ser o valor anterior da cadeia.
+As entradas ficam por ordem cronológica; no mesmo dia vale a ordem da lista.
+
+`ledger/historias-valores.json` sela as entradas já publicadas. É a memória
+independente que permite recusar a retirada da primeira atualização, mesmo
+quando a lista restante fica vazia. O registo não fornece números às páginas.
+Uma entrada nova entra primeiro na linha e depois acrescenta-se ao registo com
+`node scripts/selar-historia-valores.mjs <id>`. Esse comando só aceita uma lista
+maior, conserva cada entrada anterior e confere a cadeia e o valor final.
+O comando e a linha entram no mesmo commit; não existe uma opção para apagar
+história. As plantas exercem o validador da construção com valor alterado,
+atualização retirada e valor anterior inventado.
 
 ### `reason` e `reason_en`: o motivo nas duas línguas
 
@@ -934,6 +958,36 @@ muitas de cada vez — nove no dia em que duas fontes mudaram de sítio — e po
 a par das confissões afogavam-nas. O registo mostra as linhas que as trazem,
 cada uma com o caminho para a sua história. É a mesma regra em cascata que já
 vale para as recontagens derivadas, um nível acima.
+
+**Instantâneos datados que conservam o endereço do conjunto (C1d).**
+As entradas do PRR de 18.08 e 20.08 registam o ficheiro datado que foi lido e
+reafirmam o mesmo endereço estável. Não dizem que esse endereço deixou de vigorar.
+O caso é aceite apenas em documentos `ficheiro` com `computed_over.files`,
+quando `new_value` é o endereço que já vigorava, `old_value` é um recurso datado
+do mesmo conjunto de `dados.gov.pt`, a data do recurso não é posterior à entrada,
+o nome do ficheiro leva essa data e ambas as razões identificam o endereço lido.
+O validador anuncia cada caso. Outro conjunto, outra data ou a falta dessas
+provas volta a ser uma cadeia contraditória. Todas as outras cadeias são
+conferidas sempre, mesmo sem reconferências anteriores; não há uma dispensa
+por ausência de releitura. O recurso datado não muda o endereço em vigor.
+
+**O acesso que acompanha uma atualização.** Pela decisão do lugar de direção
+de 28.09.2026, uma `proveniencia` sobre `access_date` acompanha a `atualizacao`
+quando o valor novo foi lido noutro dia. A atualização descreve a mudança do
+número; a proveniência descreve o acesso e conserva a prova da leitura anterior.
+A entrada de proveniência não muda o número por si. As duas entradas não se
+substituem e não apagam as reconferências feitas sobre o valor anterior.
+
+**A cadeia de cada campo (C1e).** O livro percorre todas as entradas tipadas de
+`source`, `source_url`, `access_date`, `document.title`, `document.edition`,
+`document.locator` e `excerpt`. A partir da segunda entrada, cada `old_value` tem de ser o valor anterior e
+o último `new_value` tem de ser o campo atual da linha. Nenhuma entrada pode
+ser anterior ao acesso em vigor nesse dia. A exceção dos instantâneos acima
+aplica-se apenas a `source_url`. A máquina não interpreta a razão para conferir
+se a data da entrada é a data que a prosa diz: essa concordância continua a
+precisar de leitura humana. O primeiro `old_value` de cada cadeia é tomado
+como ponto de partida e não é conferido por esta guarda. Precisa de prova
+externa à cadeia, como os objetos históricos do repositório usados na C1f.
 
 #### O que **não** se regista: as afinações do ponteiro
 

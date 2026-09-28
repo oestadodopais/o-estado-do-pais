@@ -1,0 +1,13 @@
+{
+  "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+  "linhas_antes": [
+    1823,
+    1826,
+    1827,
+    1840
+  ],
+  "quantidade_antes": 4,
+  "linhas_depois": [],
+  "quantidade_depois": 0,
+  "regra": "Nomes lidos do Git em memória; as amostras não são escritas no ficheiro."
+}

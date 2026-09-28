@@ -1,0 +1,245 @@
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs
+
+{
+  "controlos": [
+    {
+      "nome": "cadeia de source",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de source_url",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.title",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.edition",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.locator",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de access_date",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de excerpt",
+      "passou": true
+    },
+    {
+      "nome": "instantâneo com as cinco condições",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "source: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "source: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "source: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "source_url: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\": o último \"new_value\" é https://fonte.invalid/b, mas a linha declara https://fonte.invalid/c."
+    },
+    {
+      "nome": "source_url: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-03: cadeia contraditória; \"old_value\" é https://fonte.invalid/a, mas antes vigorava https://fonte.invalid/b."
+    },
+    {
+      "nome": "source_url: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.title: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.title: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.title: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.edition: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.edition: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.edition: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.locator: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.locator: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.locator: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "access_date: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\": o último \"new_value\" é 2026-08-02, mas a linha declara 2026-08-03."
+    },
+    {
+      "nome": "access_date: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-08-03: cadeia contraditória; \"old_value\" é 2026-08-01, mas antes vigorava 2026-08-02."
+    },
+    {
+      "nome": "access_date: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-07-31: o acesso não pode ser posterior à mudança que o declara."
+    },
+    {
+      "nome": "excerpt: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "excerpt: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "excerpt: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "documento sem classe ficheiro",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "documento sem lista de ficheiros",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "endereço novo diferente do vigente",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso de outro conjunto",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso posterior à entrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-16: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3."
+    },
+    {
+      "nome": "ficheiro sem a data do recurso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão portuguesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão inglesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    }
+  ],
+  "contagens": {
+    "controlos": 8,
+    "plantas": 29
+  },
+  "erros_do_livro": [],
+  "avisos_do_livro": [
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+  ]
+}
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 3009 afirmações[0m
+
+[33m  10 aviso(s):[0m
+    [33m·[0m [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+
+  [32m✓[0m 3009 afirmações válidas · 330 derivadas · 334 com aritmética reavaliada no build · 1896 com o rótulo da fonte
+  [32m✓[0m 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+[33m  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"[0m
+[90m    agua-nao-faturada-portugal-2024 → source_url, excerpt[0m
+[90m    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+
+[90m  amarra das decisões · 97 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+  [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+[90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
+  [32m✓[0m os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+{"controlos":11,"plantas":8,"controlos_integros":11,"plantas_mordidas":8}
+História do valor: 2 controlos e 4 plantas.

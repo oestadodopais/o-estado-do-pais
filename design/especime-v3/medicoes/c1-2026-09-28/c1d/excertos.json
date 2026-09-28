@@ -1,0 +1,243 @@
+{
+  "entradas": 17,
+  "linhas": [
+    {
+      "id": "credito-malparado-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2024: 2.4",
+        "new_value": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2024: 2.4 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "2,4",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "credito-malparado-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2025: 2.1",
+        "new_value": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2025: 2.1 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "2,1",
+      "access_date_conservado": "2026-08-12"
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7",
+        "new_value": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "17,7",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2025: 21.3",
+        "new_value": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2025: 21.3 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "21,3",
+      "access_date_conservado": "2026-08-12"
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24",
+        "new_value": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "2,24",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "divida-das-empresas-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1",
+        "new_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "67,1",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "divida-das-empresas-2025-ue",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0",
+        "new_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "70,0",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "divida-das-empresas-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2025: 64.9",
+        "new_value": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2025: 64.9 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "64,9",
+      "access_date_conservado": "2026-08-12"
+    },
+    {
+      "id": "divida-das-familias-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6",
+        "new_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "52,6",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "divida-das-familias-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2025: 53.9",
+        "new_value": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2025: 53.9 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "53,9",
+      "access_date_conservado": "2026-08-12"
+    },
+    {
+      "id": "fluxo-de-credito-as-familias-2025-ue",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9",
+        "new_value": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "2,9",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4",
+        "new_value": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "20,4",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2025: 20.7",
+        "new_value": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2025: 20.7 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "20,7",
+      "access_date_conservado": "2026-08-12"
+    },
+    {
+      "id": "licencas-de-construcao-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2024: 654.5",
+        "new_value": "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2024: 654.5 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "654,5",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "licencas-de-construcao-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2025: 749.7",
+        "new_value": "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2025: 749.7 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "749,7",
+      "access_date_conservado": "2026-08-12"
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430",
+        "new_value": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "20 430",
+      "access_date_conservado": "2026-09-15"
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "entrada": {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "excerpt",
+        "old_value": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600",
+        "new_value": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p",
+        "reason": "O excerto passa a levar a marca de estado que a fonte imprime na mesma observação, lida a 28.09.2026; o valor não mudou.",
+        "reason_en": "The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026; the value has not changed."
+      },
+      "value": "20 600",
+      "access_date_conservado": "2026-08-12"
+    }
+  ]
+}
