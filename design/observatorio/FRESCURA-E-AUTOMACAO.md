@@ -2,6 +2,53 @@
 
 *Escrito a 01.09.2026 pelo lugar de direção (Claude Fable 5); entrega B do prompt de 30.08. Duas coisas estão decididas pelo diretor a 30.08.2026 e não se voltam a perguntar: o corredor diário corre numa ação agendada no repositório do motor, com Python e Node, sem segredos porque as fontes são públicas; e um valor novo de rotina, no mesmo formato e com todos os portões verdes, publica-se e fica registado em «O que mudou», enquanto o resto pára e avisa. O arquivo de versões parte da «Nota · o arquivo de versões das fontes · desenho proposto (31.08)», no Desktop do diretor, e adota-a. O que aqui é medido diz-se medido; o que é proposta diz-se proposta; o que está por confirmar leva `[verify]`. Sem travessões na prosa.*
 
+## Estado de execução a 28.09.2026 · F2.2b
+
+O desenho de setembro distingue-se agora da autorização em vigor (§1.134 de
+`DECISIONS.md`). As corridas estão preparadas para armar; esta construção não
+publica os ramos, não despacha corridas e não altera interruptores. O relatório
+é [F2.2b](../especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md).
+
+| Corrida | Hora UTC | Interruptor | Estado preparado |
+|---|---|---|---|
+| corredor | todos os dias, 06:10 | `CORREDOR_ARMADO` | ramo datado, guarda do diff, portão público do mesmo SHA antes de `main` |
+| painel | segunda-feira, 08:30 | `PAINEL_ARMADO` | leitura sobre clone, até duas retomas dos anfitriões calados, relatório e quatro saídas em artefacto |
+| varrimento | dia 1, 09:00 | `VARRIMENTO_ARMADO` | clone por parâmetro, leitores, relatório e issue de achados; sem commits |
+| vigia | todos os dias, 15:10 | o de cada corrida | ausência, falha ou carimbo em falta abre aviso; cada cadência é independente |
+
+Sem o respetivo interruptor, o agendamento fica dormente. Os despachos manuais
+são ensaios e não empurram commits. Os segredos `CHAVE_SITIO` e `CHAVE_ARQUIVO`
+continuam a ser tarefa do diretor. A prova local usa dublês do GitHub e das
+fontes; os ensaios despachados continuam por fazer depois da publicação dos ramos.
+
+O commit do sítio publica-se primeiro num ramo datado. A guarda aceita apenas
+reconferências acrescentadas e os campos fechados do estado da verificação e das
+fontes. Recusa alterações de valor, excerto, endereço, história anterior e ficheiros
+fora do âmbito. A API pública é consultada no máximo uma vez por minuto durante
+uma hora. Só a conclusão verde do `portao.yml`, para o mesmo SHA, ramo e evento
+`push`, deixa esse mesmo commit avançar para `main`, sem o refazer nem forçar.
+A guarda repete-se contra a cabeça atual de `main`. Uma recusa conserva o ramo e
+abre issue com a razão e a ligação ao portão; uma falha dos portões locais também
+continua a fechar `main`.
+
+No painel, silêncio não é «inacessível»: só os anfitriões calados passam a outro
+trabalho. Um erro HTTP recebido continua a ser resposta. Uma corrida parcial
+conserva as linhas não lidas e não substitui o carimbo global. A revisão de uma
+fonte abre issue e deixa o valor publicado intacto, à espera da `atualizacao`.
+As quatro saídas do motor só entram em `master` quando correspondem ao registo
+da corrida e o portão do motor passa sobre esses bytes. O vigia exige a identidade
+da corrida no carimbo do painel e do varrimento; um ensaio não cobre uma ausência
+agendada. Os artefactos do painel duram 30 dias e os do varrimento 45 dias.
+
+A política de valores novos continua fechada até ao F2.4, depois das quatro semanas
+do F2.3. Os dois agentes do portátil ficam ativos durante a transição. O guião
+`indicators/reformar_agentes.py` só os arquiva e descarrega mediante aplicação
+expressa e prova de duas corridas reais verdes de cada fluxo. O construtor exerce
+apenas o modo de ensaio, sobre definições construídas para a prova.
+
+Os passos históricos abaixo descrevem o desenho original. Onde falam em publicar
+valores novos ou em empurrar diretamente para `main`, aplica-se esta restrição.
+
 ## 1 · As três datas, e o que o sítio pode dizer sem inventar
 
 Uma medida tem três datas, e o sítio separa-as sempre: **o período de referência** (a que se refere o número: 2025, junho de 2026, o ano letivo 2023/24), **a data em que a fonte o publicou** (o carimbo do publicador: `DataUltimoAtualizacao` no INE, `updated` no Eurostat, a data da nota ou do ficheiro), e **a data em que a casa conferiu a fonte** (o `verificado_em` da linha). A confusão entre as três é a maneira mais comum de um sítio parecer fresco sem o ser.
@@ -10,7 +57,7 @@ Com as três datas o sítio pode dizer, todos os dias e sem inventar: no cabeça
 
 ## 2 · O que existe hoje (lido no motor e no `launchctl` a 01.09.2026)
 
-- **A corrida semanal.** `indicators/refresh.py` no motor, lançada por `com.nunosantos.oedp-indicadores` (`~/Library/LaunchAgents/`, `StartCalendarInterval` segunda-feira às 09:30 na hora da máquina; a corrida de 31.08 registou `heartbeat stamped 2026-08-31T08:30:12+00:00`). Refaz a leitura das 32 afirmações do estudo `quadro-institucional` (os dois quadros da União, pela API do Eurostat), corre cinco canários (valor, estrutura, metainformação, existência, limiar), acrescenta à história de vintages (`indicators/vintages.json`, só se acrescenta, provado antes de escrever), carimba `heartbeat.json`, escreve `refresh_report.json`, e escreve no repositório do sítio: uma linha de verificação em cada uma das 32 linhas (`by: "painel-semanal"`) e o carimbo `verificadoEm` em `src/data/verificacao.mjs`. **Não faz commit**: uma sessão revê e faz o commit (a 31.08 fê-lo esta sessão, `3198666`, depois de construir e correr os portões). Os caminhos do sítio estão escritos no programa (`CLAIMS` e `SITE_STATE` apontam a `~/Instruments/OEstadoDoPais`, linhas 80 e 86): o corredor tem de os receber por parâmetro. O segundo comando do agente é o interruptor de homem morto: `refresh.py --check-heartbeat` sai com erro quando a última corrida boa é mais velha do que `MAX_AGE_DAYS`.
+- **A corrida semanal.** `indicators/refresh.py` no motor, lançada por o agente local do painel (na pasta dos agentes, `StartCalendarInterval` segunda-feira às 09:30 na hora da máquina; a corrida de 31.08 registou `heartbeat stamped 2026-08-31T08:30:12+00:00`). Refaz a leitura das 32 afirmações do estudo `quadro-institucional` (os dois quadros da União, pela API do Eurostat), corre cinco canários (valor, estrutura, metainformação, existência, limiar), acrescenta à história de vintages (`indicators/vintages.json`, só se acrescenta, provado antes de escrever), carimba `heartbeat.json`, escreve `refresh_report.json`, e escreve no repositório do sítio: uma linha de verificação em cada uma das 32 linhas (`by: "painel-semanal"`) e o carimbo `verificadoEm` em `src/data/verificacao.mjs`. **Não faz commit**: uma sessão revê e faz o commit (a 31.08 fê-lo esta sessão, `3198666`, depois de construir e correr os portões). Os caminhos do sítio estão escritos no programa (`CLAIMS` e `SITE_STATE` apontam a a cópia pessoal do sítio, linhas 80 e 86): o corredor tem de os receber por parâmetro. O segundo comando do agente é o interruptor de homem morto: `refresh.py --check-heartbeat` sai com erro quando a última corrida boa é mais velha do que `MAX_AGE_DAYS`.
 - **A releitura dos concelhos.** `releitura_concelhos.py` no motor, o ciclo de releitura das linhas dos 308 concelhos, corrido uma vez a 28.08 sem alarmes; não está agendado `[verify]` no motor antes de o corredor o absorver.
 - **O calendário.** `indicators/calendar.json` e `upcoming.py`, que alimentam a página `/agenda` do sítio.
 - **Os portões do sítio.** `npm run build` (a cadeia inteira, 3 minutos e 38 segundos medidos hoje), `npm run verify`, `npm run typecheck`, e depois do lançamento `npm run verify:deploy` (nunca mais de um pedido por minuto ao sítio).
@@ -35,8 +82,8 @@ Cada passo é um portão: se falha, a corrida pára ali, nada se publica, e o es
 3. **Compara e arquiva.** Um `304`, ou um `200` com o sha256 igual ao guardado (o caso dos servidores sem validadores), deixa a linha conferida (`verificado_em` avança, o valor não se toca, o índice ganha uma linha de conferência sem ficheiro novo). Se o sha256 mudou, guarda a versão nova no arquivo (§5), com a linha de índice, antes de qualquer leitura. O arquivo nunca guarda o mesmo ficheiro duas vezes.
 4. **Relê.** Corre o leitor do motor sobre o ficheiro novo e os cinco canários. Classifica: o mesmo valor com carimbo novo (aviso, publica-se a conferência); um período novo da mesma medida no mesmo formato (valor de rotina: publica-se); o carimbo e o valor a mudarem na mesma corrida (revisão da fonte: pára, uma frase só, como o motor já faz); a estrutura, as unidades ou as dimensões diferentes (pára); o leitor não reconhece o ficheiro (pára); **a fonte não responde** (um estado e não uma falha, emenda de 08.09.2026 com o bloco F2.1b: a linha fica «sem resposta desde dd.mm» com quem observou, a corrida continua e diz-se parcial pelo nome, e os leitores da fase 2 recebem do corredor a lista dos anfitriões que a fase 1 declarou calados e escrevem o estado sem um segundo pedido nem uma segunda espera); **a série desapareceu**, isto é, o índice do publicador já não nomeia o ficheiro, ou o endereço respondeu outra coisa que não o ficheiro (pára). Até 07.09.2026 os dois casos eram um só veredicto do leitor dos concelhos, e as corridas de 05 e 06.09 ficaram vermelhas com o INE calado por isso.
 5. **Escreve.** `verificado_em` em todas as linhas conferidas; os valores novos de rotina nas linhas, com a verificação e a data de publicação da fonte; a história de vintages; o estado de cada fonte; a entrada do dia em «O que mudou». O carimbo do cabeçalho do sítio conta as linhas cujo endereço foi lido, e ao lado as que a corrida se propôs ler, as que ficaram sem resposta, as que responderam com erro e os anfitriões calados (a decisão do carimbo de 07.09.2026, `DECISIONS.md` §1.101; as ausências escritas pelo disjuntor contam como silêncio observado nessa corrida).
-6. **Portões do sítio.** `npm run build`, `npm run verify`, `npm run typecheck` sobre o sítio com as mudanças. Vermelho: pára, nada se empurra, o relatório diz porquê.
-7. **Publica.** Um commit no sítio com caminhos explícitos (as linhas tocadas, o carimbo, a página «O que mudou»), assinado como código («Corredor diário», sem modelo, porque não há modelo), e o `push` para `main`, que é o que faz o Vercel lançar. Nunca `git add -A`.
+6. **Portões do sítio.** `npm run build`, `npm run verify`, `npm run typecheck` sobre o sítio com as mudanças. Vermelho: o candidato fica no ramo e `main` não avança; o relatório e a issue dizem porquê.
+7. **Publica.** Um commit com caminhos explícitos, limitado às reconferências e ao estado permitido. O ramo datado recebe primeiro esse commit e dispara o portão público do sítio. A guarda e o verde desse mesmo SHA são necessários para avançar `main`. Um valor novo, um excerto ou um endereço alterado não atravessam esta via. Nunca `git add -A`.
 8. **Confere o lançamento.** Espera pelo lançamento e corre `verify:deploy`, nunca mais de um pedido por minuto ao sítio (a lição de 26.08: um pedido a cada dez segundos fez a mitigação do Vercel bloquear o próprio endereço da casa). Vermelho: aviso.
 9. **Carimba e vigia.** `heartbeat.json`; um segundo fluxo agendado, à tarde, corre `--check-heartbeat` e falha alto se a corrida da manhã não carimbou. A ausência de corrida tem de aparecer como falha, nunca como nada.
 
