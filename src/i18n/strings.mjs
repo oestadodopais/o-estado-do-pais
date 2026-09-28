@@ -1754,7 +1754,7 @@ export const STRINGS = {
       /* PP1: a descrição acompanha a página nova, os blocos de «O que se passa» e as entradas.
          Não nomeia os blocos, que saem sozinhos quando os números deixam de lhes dar razão. */
       metaDescription:
-        'O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas para o dinheiro, o trabalho, a habitação, a escola e a saúde, o Estado e a economia, e os lugares.',
+        'O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas: o meu dinheiro, o meu trabalho, a minha casa, a escola e a saúde, o Estado e a economia, a minha terra.',
 
       numeros: {
         /* A linha do valor de referência de um cartão (IDENTIDADE.md §11). A
@@ -3488,7 +3488,7 @@ export const STRINGS = {
       },
       metaTitle: 'O Estado do País',
       metaDescription:
-        'What is happening in the country, told by the official figures read together, each with its source, and the ways in to money, work, housing, school and health, the state and the economy, and places.',
+        'What is happening in the country, told by the official figures read together, each with its source, and the ways in: my money, my work, my home, school and health, the state and the economy, my area.',
 
       numeros: {
         /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */

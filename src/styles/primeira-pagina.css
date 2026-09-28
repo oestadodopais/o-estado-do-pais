@@ -317,7 +317,7 @@
 .pp-veredicto .pais-leitura { font-size: clamp(18px, 1.9vw, 22px); }
 .pp-portas { margin-top: clamp(26px, 3.4vw, 40px); display: flex; flex-wrap: wrap; gap: 0 28px; }
 .pp-portas .regra-portas { margin-top: 0; }
-.pp-portas .regra-portas a, .entrada-portas a { display: inline-flex; align-items: center; min-height: 44px; }
+.pp-portas .regra-portas a, .pp-veredicto .regra-portas a, .entrada-portas a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* ── as páginas das entradas ─────────────────────────────────── */
 
