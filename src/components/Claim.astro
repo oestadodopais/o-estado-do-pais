@@ -85,7 +85,6 @@
  */
 import { notaDaBandeira } from '../lib/bandeira-da-fonte.mjs';
 import { getClaim } from '../lib/ledger.mjs';
-import { t } from '../i18n/strings.mjs';
 import Provenance from './Provenance.astro';
 
 const {
@@ -158,7 +157,6 @@ if (!lang) {
 }
 
 const claim = getClaim(id);
-const s = t(lang);
 const Tag = as;
 /* A etiqueta do VALOR, que é a única que a porta muda, e só no modo plano. */
 const TagDoValor = porta && plano && !chip ? 'a' : Tag;

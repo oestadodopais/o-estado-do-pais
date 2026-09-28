@@ -53,7 +53,6 @@ import { reguaDoCartao } from './enquadramento.mjs';
 import { estadoDaMedida } from './estado.mjs';
 import { prova, periodoDasCamaras } from './prova.mjs';
 import { dataDaCasa } from './datas.mjs';
-import { t } from '../i18n/strings.mjs';
 
 /** A chave do cartão das câmaras, que é uma contagem da prova e não uma linha. */
 export const LEITURA_DAS_CAMARAS = 'camaras';
@@ -377,7 +376,6 @@ export function leituraDaMedida(id, lang) {
  * @param {PedacoDaFrase[]} pedacos @param {'pt'|'en'} lang
  */
 export function textoDaLeitura(pedacos, lang) {
-  const s = t(lang);
   return pedacos
     .map((p) => {
       if (typeof p === 'string') return p;
