@@ -971,6 +971,15 @@ número; a proveniência descreve o acesso e conserva a prova da leitura anterio
 A entrada de proveniência não muda o número por si. As duas entradas não se
 substituem e não apagam as reconferências feitas sobre o valor anterior.
 
+**A cadeia de cada campo (C1e).** O livro percorre todas as entradas tipadas de
+`source`, `source_url`, `access_date`, `document.title`, `document.edition`,
+`document.locator` e `excerpt`. Cada `old_value` tem de ser o valor anterior e
+o último `new_value` tem de ser o campo atual da linha. Nenhuma entrada pode
+ser anterior ao acesso em vigor nesse dia. A exceção dos instantâneos acima
+aplica-se apenas a `source_url`. A máquina não interpreta a razão para conferir
+se a data da entrada é a data que a prosa diz: essa concordância continua a
+precisar de leitura humana.
+
 #### O que **não** se regista: as afinações do ponteiro
 
 Nem toda a alteração a um campo de proveniência é um acontecimento. Uma
