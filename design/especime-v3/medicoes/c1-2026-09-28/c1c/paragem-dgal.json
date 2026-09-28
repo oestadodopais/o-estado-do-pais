@@ -1,5 +1,5 @@
 {
-  "estado": "aguarda decisão; a guarda não foi alterada",
+  "estado": "resolvida pela decisão de retoma de 28.09.2026",
   "bloqueio": {
     "travessia": "A lista de reconferências da linha legal encolheu de 1 para 0.",
     "livro": "Uma releitura anterior ao access_date atual é recusada."
@@ -29,5 +29,10 @@
     "releitura anterior ao acesso antigo",
     "cadeia de proveniência quebrada",
     "data de revisão anterior à releitura"
-  ]
+  ],
+  "decisao": "prompts/PROMPT-c1c-retoma-codex.md",
+  "cabeca_da_correcao": "aa8f6ff1",
+  "plantas_executadas": "c1c/historia-plantas.json",
+  "acrescento_uniao": "A reconferência de 21.09.2026 também foi reposta; o acesso anterior está provado pela nova entrada proveniencia sobre access_date.",
+  "cabeca_final_do_codigo": "3362a4c0df19410129eaadce534fc3fd8a528318"
 }

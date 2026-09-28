@@ -136,9 +136,9 @@ O pacote de leitura é montado por `pacote-c1.py` após este commit de entrega, 
 
 Esta secção regista a passagem de correção de 28.09.2026. As secções anteriores
 são o registo da primeira entrega do C1, incluindo a paragem que então houve.
-A cabeça preparada do código do sítio é `93f0477b`. Os portões completos e as
-capturas desta passagem ainda estão por fechar; os resultados finais serão
-lidos dos ficheiros em `portoes/c1c/` e `c1c/`.
+A cabeça preparada da retoma é `3362a4c0`. Os resultados finais são lidos
+dos ficheiros em `portoes/c1c/` e `c1c/`. O fecho das medições encontra-se
+no fim desta secção.
 
 A reconferência pelo gerador encontrou **49,2** para a dívida das famílias da
 União em 2025. A linha passou de 49,3 para 49,2, com acesso a 28.09.2026 e a
@@ -150,14 +150,14 @@ numérica nem uma normalização da escrita dos outros valores.
 | Achado | Tratamento | Prova |
 | --- | --- | --- |
 | 1, 2, 3, 4, 11 | São as cinco plantas do pacote, todas achadas. Não se corrigem como defeitos do sítio. | `design/especime-v3/critica/LEITURA-c1-2026-09-28.plantas.json`, P1 a P5. |
-| Ponto 3 do brief; 19 | O gerador resolve todas as dimensões seladas antes de ler a observação. O valor da União foi atualizado pelo circuito do estudo `quadro-institucional`. | `c1c/gerador-plantas.json`, `c1c/atualizacao-divida.json`, `c1c/comparacao-gerada.json`; `c1c/livro-final-do-codigo.codigo` a 0. |
-| 5 | Foram acrescentadas 18 bandeiras omitidas, incluindo as do PIB real por habitante de 2024 e 2025. O gerador lê `status` na mesma coordenada de `value`. Os outros valores ficaram intactos. | `c1c/bandeiras.json`; linhas do livro; capturas dos cartões e recibos por executar. |
+| Ponto 3 do brief; 19 | O gerador resolve todas as dimensões seladas antes de ler a observação. O valor da União foi atualizado pelo circuito do estudo `quadro-institucional`. | `c1c/gerador-plantas.json`, `c1c/atualizacao-divida.json`, `c1c/comparacao-gerada.json`; `portoes/c1c/build.codigo` a 0, incluindo a conferência do livro. |
+| 5 | Foram acrescentadas 18 bandeiras omitidas, incluindo as do PIB real por habitante de 2024 e 2025. O gerador lê `status` na mesma coordenada de `value`. Os outros valores ficaram intactos. | `c1c/bandeiras.json`; linhas do livro; `c1c/capturas-depois.json` e `c1c/recibos-finais.json`. |
 | 6, 7 | Saíram as três entradas escritas pelo guião manual. O painel normal escreveu três `igual` e conservou a tentativa inacessível do mesmo dia. O recibo não inventa a causa de uma tentativa que só guarda o resultado. | `c1c/pib-retiradas.json`, `c1c/painel.log` e a corrida alojada no motor. |
-| 8 | O recibo europeu mostra a atualização, a última releitura e a ligação entre ambas. Os valores encontrados seguem a pontuação da edição. Quando diferem do selado, o recibo identifica o valor do título como o usado. | Linha `divida-das-familias-2025-ue`; `c1c/plantas-confianca.json`; capturas por executar. |
+| 8 | O recibo europeu mostra a atualização, a última releitura e a ligação entre ambas. Os valores encontrados seguem a pontuação da edição. Quando diferem do selado, o recibo identifica o valor do título como o usado. | Linha `divida-das-familias-2025-ue`; `c1c/plantas-confianca.json`; `c1c/capturas-depois.json` e `c1c/recibos-finais.json`. |
 | 9 | A quinta redação distingue o IPC do IHPC. O objetivo de 2 % a médio prazo pertence à zona do euro, sem veredicto sobre Portugal. | `c1c/origens.json`, `c1c/leituras-seladas.json`, `c1c/acertos.json` e `c1c/k17.json`. |
-| 10 | O índice municipal explica a média de receita que serve de denominador e a regra de uma vez e meia. O limite de 150 continua na unidade. A linha legal cita a DGAL, com sete campos de proveniência revistos. O câmbio explica apreciação e perda de competitividade de preços. | `c1c/dgal-proveniencia.json`; literais alojados e K17; capturas dos dois cartões pendentes. |
-| 12 | A marca «sem valor publicado» deixou de levar unidade. | Planta `marca-com-unidade` e controlo da marca sem unidade; captura de Évora pendente. |
-| 13 | Cada releitura do número diz «Releitura a» / «Re-read on», seguida da data, sem ordinal. | Plantas executadas; capturas dos recibos pendentes. |
+| 10 | O índice municipal explica a média de receita que serve de denominador e a regra de uma vez e meia. O limite de 150 continua na unidade. A linha legal cita a DGAL, com sete campos de proveniência revistos. O câmbio explica apreciação e perda de competitividade de preços. | `c1c/dgal-proveniencia.json`; literais alojados e K17; capturas dos dois cartões em `c1c/capturas-depois.json`. |
+| 12 | A marca «sem valor publicado» deixou de levar unidade. | Planta `marca-com-unidade` e controlo da marca sem unidade; capturas de Évora em `c1c/capturas-depois.json`. |
+| 13 | Cada releitura do número diz «Releitura a» / «Re-read on», seguida da data, sem ordinal. | Plantas executadas; capturas dos recibos e conferência final em `c1c/recibos-finais.json`. |
 | 14 | Fica aberto o problema semântico da comparação com sinais negativos. Esta passagem não o muda. | Mandato e achado 14 da leitura a frio. |
 | 15 | O ficheiro dos concelhos ganhou `nota`, com a ressalva de atualidade onde existe. | C7 em `c1c/dados-concelhos.json`, incluindo a planta que apaga a nota. |
 | 16 | Cada observação de dívida fica no fim do seu ano. | F18 em `c1c/calendario.json`, incluindo a planta que recua os pontos para o início. |
@@ -199,11 +199,14 @@ alargar os campos da entrada `proveniencia` nem inventar uma mudança numérica.
 Há 17 bandeiras `p` e uma `e`; esta última é «valor estimado» na despesa em I&D
 da União. A aplicação e os resumos dos corpos estão em `c1c/bandeiras.json`.
 
-O validador exige que uma releitura não seja anterior ao acesso da linha.
-Por isso, a verificação de 21.09 da dívida europeia e a verificação anterior da
-linha legal foram conservadas nas provas do antes, respetivamente em
-`c1c/atualizacao-divida.json` e `c1c/dgal-proveniencia.json`, e saíram das listas
-atuais depois dos novos acessos. O validador não foi enfraquecido. As três
+Na primeira passagem foram retiradas a reconferência de 21.09 da dívida
+europeia e a de 01.09 da linha legal, para satisfazer a comparação com o acesso
+atual. **As duas retiradas foram erradas.** Guardá-las só nas provas do antes
+não conservava a história na linha. A decisão da retoma mandou repor ambas,
+iguais a `a677770f`, e validar o acesso em vigor no dia de cada releitura pela
+história tipada. A União ganhou a prova que faltava: a entrada `proveniencia`
+sobre `access_date`, de 15.09.2026 para 28.09.2026, com as razões exatas da
+direção. Entrou pelo mesmo guião de aplicação da atualização. As três
 listas do PIB conservam a tentativa inacessível de 28.09, que o mandato
 identifica como a das 08:30. As entradas do livro guardam o dia, não a hora;
 não se acrescentou uma hora que elas não contêm.
@@ -244,8 +247,8 @@ página. Não se acrescentou uma medida, uma série, um gráfico ou uma página.
 **Cabeças e entrega.** A primeira cabeça medida foi `3885a4e6`; a entrega das
 provas foi `6c16c719`; seguiram-se a resposta `04ef76eb`, `533fea9d` e
 `b7f352ce`, que é a base desta passagem. Esta sequência substitui o antigo
-«HEAD» ambíguo. A lista completa do ramo e as cabeças finais são acrescentadas
-na conclusão das medições do C1c.
+«HEAD» ambíguo. A lista completa do ramo, abaixo, liga também a entrega da paragem
+`8d7ddbdb`, a decisão `e38d5f8b` e os commits da retoma.
 
 
 **Paragem medida na primeira corrida completa.** O `build` de `93f0477b`
@@ -256,21 +259,58 @@ fonte. A retirada tinha sido feita para cumprir a outra guarda, que recusa
 uma releitura anterior ao acesso atual. Não se enfraqueceu nenhuma das duas.
 Os ficheiros da recusa ficam em `portoes/c1c/tentativa-93f0477b/`.
 
-Foi pedida uma decisão ao utilizador para conservar a entrada antiga e
-reconstituir o acesso a que ela pertence pela história tipada da proveniência,
-com plantas contra a falta da prova, o endereço errado, a data impossível e
-a cadeia contraditória. A decisão está pendente. `c1c/paragem-dgal.json`
-regista o caso e a proposta. Enquanto isto não se resolver, não se afirma que
-os três portões passaram, que a travessia foi fechada ou que a aceitação
-integral do C1c está satisfeita.
+A decisão foi autorizada em `e38d5f8b`, no guião
+`prompts/PROMPT-c1c-retoma-codex.md`. A regra 15 passou a reconstituir o acesso
+pelas entradas `proveniencia` sobre `access_date`. O acesso anterior vale antes
+da data da mudança; o novo vale a partir dela. Sem história, vale o acesso
+atual. A cadeia tem de ser coerente e terminar no campo atual.
 
+Antes de alterar a regra, `c1c/enderecos-antes.py` mediu 3 009 linhas na cabeça
+`e38d5f8b`. Encontrou 18 linhas com 19 reconferências de endereço diferente do
+atual sem história explicativa. Ficam fora da nova comparação de endereços,
+como a decisão autoriza: são pedidos distintos sem prova de uma mudança da
+origem da linha. O levantamento não inventa a razão de cada diferença.
+A regra compara o endereço apenas nas releituras anteriores a uma mudança
+tipada de `source_url`. A lista integral está em `c1c/enderecos-antes.json`.
 
-**Estado na paragem.** O `typecheck` completo passou a 0 em `93f0477b`,
-independentemente da travessia. O `verify` completo não foi corrido: encontra a
-mesma guarda antes das conferências de apresentação. Não há capturas finais
-C1c nem se substituíram as capturas anteriores por imagens de uma construção
-recusada. O captor está preparado para 25 recibos, nas duas edições e nas cinco
-larguras, mais os cartões afetados. Estas partes continuam por concluir.
+As cinco plantas da retoma mordem, cada uma com a mensagem exata em
+`c1c/historia-plantas.json`: falta da história de acesso, endereço antigo errado,
+data anterior ao primeiro acesso, cadeia contraditória e lista que encolhe.
+Os seis controlos passam. A última planta corre a travessia real numa cópia
+isolada e mantém a contagem anterior mesmo com os bytes da lista truncada
+aceites. A guarda da travessia não foi alterada. A aceitação da proveniência
+DGAL foi repetida sobre a lista completa; o recibo da aceitação errada fica
+em `c1c/travessia-repetida.json`.
+
+O primeiro ensaio da regra aplicava a cadeia de endereços também a releituras
+posteriores a todas as mudanças. Encontrou cinco linhas do PRR fora do âmbito
+aprovado. Corrigiu-se esse âmbito antes de confirmar o código; não se alteraram
+essas linhas. `c1c/retoma-diagnosticos.json` conserva o ensaio e os controlos.
+O acesso continua a ser conferido em todas as linhas.
+
+O `build` de `aa8f6ff1` passou o livro e a travessia, mas o HTML recusou quatro
+travessões nos nomes antigos da proveniência DGAL. Os nomes foram marcados
+como citações, sem mudar os seus caracteres nem a conferência literal.
+Essa tentativa fica em `portoes/c1c/tentativa-aa8f6ff1/`. A planta também deixou
+de exigir um commit antigo em tempo de execução: as duas listas verificadas
+ficam na amostra do teste, e a medição da entrega volta a compará-las com o Git.
+
+O `build` de `7a97bfbe` chegou ao último portão, o da língua, que recusou
+uma ocorrência do nome «Lei n.º 73/2013» sem marca portuguesa no histórico
+inglês. O recibo passou a usar a língua já declarada para a edição, sem
+reescrever a fonte. A tentativa está em `portoes/c1c/tentativa-7a97bfbe/`.
+
+Em `7aeb6e54`, o `build` e o `typecheck` passaram a 0. O `verify` recusou
+oito datas ISO visíveis nos valores antigo e novo de `access_date`, nas duas
+linhas e nas duas edições. O recibo passou a escrevê-las em DD.MM.AAAA; a
+conferência recompõe a mesma data por uma via independente. As plantas
+recusam um dia errado, ISO por formatar e a troca de endereço com os mesmos
+algarismos. Os outros campos de proveniência continuam literais. A tentativa
+está em `portoes/c1c/tentativa-7aeb6e54/`.
+
+Na paragem inicial, o `typecheck` passou a 0 em `93f0477b`, o `verify` não foi
+corrido e ainda não havia capturas finais. Esses resultados históricos ficam
+em `portoes/c1c/tentativa-93f0477b/` e não são os códigos da entrega final.
 
 A medição preparatória leu 3 009 linhas e só encontrou as duas mudanças de
 campo autorizadas: o valor da dívida europeia e o endereço da linha legal.
@@ -299,11 +339,18 @@ corrida em `medidas.json`, secção `C1c`.
 | `0a9213f5798acd2ceae2bcb66b8163eccd26e00c` | C1c: dizer cada releitura e distinguir o valor encontrado do publicado |
 | `feeb59754996ead2a31dff609a9a0000e99d5816` | C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio |
 | `93f0477b213fb58ac113291bfbaaad3de1bed2ed` | C1c: conservar a nota no ficheiro e situar a dívida no fim do ano |
+| `8d7ddbdba2e5ca98f5745dd144250e0b4c95d875` | C1c: entregar as provas e a paragem na história da fonte legal |
+| `e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e` | C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex |
+| `aa8f6ff13575af523d68d3263b0a190a4cb1d87d` | C1c: validar as releituras pela proveniência em vigor e repor a história |
+| `7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6` | C1c: citar os nomes antigos e tornar a planta independente do histórico Git |
+| `7aeb6e543b5dc8611e39cccdbae0795acd28fdef` | C1c: marcar a língua da edição também na história da proveniência |
+| `3362a4c0df19410129eaadce534fc3fd8a528318` | C1c: escrever as datas históricas na forma da casa e conferir a mesma data |
 
-O commit que contém este relatório é a entrega das provas da paragem, filho
-direto de `93f0477b213fb58ac113291bfbaaad3de1bed2ed`, e só muda a pasta das
-medições do C1. Não é apresentado como uma entrega aprovada pelo `build`.
-O seu identificador será dado na resposta da sessão, depois de existir.
+O último commit, que contém este relatório e `RESPOSTA-codex-c1c.md`, entrega
+as provas como filho direto de `3362a4c0df19410129eaadce534fc3fd8a528318`.
+O seu hash não pode estar escrito dentro do próprio commit; esta relação
+identifica-o sem uma cabeça inventada. Só muda a pasta das medições do C1.
+A resposta da sessão dá o hash depois de ele existir, sem reescrever o ficheiro.
 
 **Todos os commits do ramo do motor.**
 
@@ -316,3 +363,75 @@ O seu identificador será dado na resposta da sessão, depois de existir.
 O motor ficou limpo em `ba47a125e68c9a87cc4bb5fae4524565bb413e7d`.
 Os dois commits C1c passaram o pre-commit completo. A prova está em
 `c1c/motor-entrega.json` e nos dois registos `c1c/motor-commit-*.log`.
+
+
+**Fecho da retoma.** Os três portões completos terminaram a 0 na mesma cabeça
+`3362a4c0df19410129eaadce534fc3fd8a528318`. Cada um correu no seu comando,
+um de cada vez. A tabela seguinte foi preenchida a partir dos ficheiros
+`.codigo`, `.cabeca`, `.inicio` e `.fim` acabados de escrever em `portoes/c1c/`;
+não usa o código de uma tentativa anterior.
+
+| Portão | Código lido | Cabeça | Início UTC | Fim UTC |
+| --- | --- | --- | --- | --- |
+| `build` | 0 | `3362a4c0` | `2026-09-28T15:31:33.937947+00:00` | `2026-09-28T15:36:45.003338+00:00` |
+| `verify` | 0 | `3362a4c0` | `2026-09-28T15:37:48.467671+00:00` | `2026-09-28T15:46:10.847526+00:00` |
+| `typecheck` | 0 | `3362a4c0` | `2026-09-28T15:31:24.190666+00:00` | `2026-09-28T15:31:24.402857+00:00` |
+
+O livro passou com as duas listas intactas e a nova história do acesso europeu.
+Os recibos finais passaram os 12 casos independentes em
+`c1c/recibos-finais.json`: a União apresenta as releituras de 28.09 e 21.09;
+a linha legal tem apenas a releitura real de 01.09. Não se inventou uma segunda
+releitura da DGAL. As datas históricas de acesso aparecem na forma da casa nas
+duas edições, e a data subjacente continua conferida.
+
+As capturas finais são desta mesma cabeça. Foram captadas 270 páginas e
+140 recortes, com 57 cópias congeladas de HTML e CSS. A matriz inclui
+25 recibos nas duas edições e nas cinco larguras: 390, 768, 1024, 1280 e
+1600 px. Inclui também os cartões afetados, o índice de dívida, o câmbio e
+a página de Évora. O captor registou zero falhas e zero observações.
+Os resumos dos bytes, a matriz e as medidas estão em `c1c/capturas-depois.json`;
+as cópias estão em `c1c/paginas-depois/INDICE.json`.
+
+Foram abertas e inspecionadas 18 imagens, identificadas por nome e resumo em
+`c1c/inspecao-visual.json`. Nessa amostra não foram observados cortes ou
+sobreposições. A inspeção visual não se apresenta como abertura de todas as
+imagens. O recorte do calendário inclui o instrumento inteiro; a geometria dos
+pontos é conferida pela F18, nas duas edições, com as plantas do início do ano
+e das lacunas a morder.
+
+A conferência de confiança fechou com 88 controlos íntegros e 100 plantas
+mordidas. A K17 terminou com zero erros nas origens; a C7 conferiu também a nota
+do ficheiro dos concelhos; a F18 terminou sem erros. As provas isoladas e a
+corrida completa ficam juntas, sem substituir umas pelas outras.
+
+A medição final estende `medidas.json`, secção `C1c`, e é reproduzível com
+`c1c/medir.py`. Confere os corpos alojados, os literais, as listas restauradas,
+a única alteração de valor, a proveniência DGAL, a matriz e os resumos das
+capturas, a cabeça dos portões e os ficheiros protegidos do motor. O zero de
+caminhos da máquina foi medido com sete conhecidos-positivos, incluindo o nome
+no anfitrião antigo, lido em memória do Git. O âmbito e a contagem dos ficheiros
+lidos estão em `C1c.caminhos`; nenhuma amostra proibida foi copiada para a prova.
+A conferência do relatório terminou com zero números sem ficheiro e com o
+conhecido-positivo encontrado, em `c1c/relatorio.json`; o código efetivo está
+em `c1c/conferir-relatorio.codigo`.
+
+**Custo desta retoma, separado da primeira passagem.**
+O modelo exposto foi `gpt-6-astra`. O contador foi lido na sessão
+`01a0e83e-ccb1-79a0-bcf3-bab909951eb3`, desde a mensagem de autorização às
+`2026-09-28T14:49:44.571Z` até à última leitura de uso às
+`2026-09-28T15:53:51.375Z`. A diferença dos cumulativos foi de
+18 274 907 tokens de entrada, dos quais 17 981 312 já em cache,
+e 79 967 de saída, dos quais 46 829 de raciocínio.
+O total exposto foi 18 354 874 tokens. A cache está incluída na entrada
+e o raciocínio na saída, não foram somados outra vez. O intervalo até à leitura
+foi 3846,804 segundos. Os cumulativos, a fronteira e o método estão
+em `c1c/custo-retoma.json` e `c1c/custo-retoma.py`.
+
+Este custo não inclui revisões automáticas, não estima um preço e não inclui
+agentes, que não foram usados nesta retoma. É uma leitura até à hora declarada;
+o fecho e a resposta consomem depois dela. A primeira passagem permanece
+separada no cumulativo anterior e nas suas provas, sem uma nova soma.
+
+A passagem C1c fica concluída dentro do mandato. O achado 14 mantém-se aberto
+por decisão expressa, sem mudança nesta passagem. Não houve envio para o remoto.
+O último commit entrega só as provas e esta resposta escrita pelo construtor.

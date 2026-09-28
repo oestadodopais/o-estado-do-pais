@@ -64,9 +64,24 @@
         "new_value": "49,2",
         "reason": "O Eurostat reviu o valor da União a 26.09.2026 (o carimbo do conjunto passou de 19.09.2026 a 26.09.2026); a reconferência semanal de 28.09.2026 viu a revisão.",
         "reason_en": "Eurostat revised the EU value on 26.09.2026 (the dataset stamp moved from 19.09.2026 to 26.09.2026); the weekly check of 28.09.2026 caught the revision."
+      },
+      {
+        "date": "2026-09-28",
+        "kind": "proveniencia",
+        "field": "access_date",
+        "old_value": "2026-09-15",
+        "new_value": "2026-09-28",
+        "reason": "O valor novo foi lido a 28.09.2026, na reconferência que viu a revisão; a leitura anterior, de 15.09.2026, é a do valor 49,3.",
+        "reason_en": "The new value was read on 28.09.2026, in the check that caught the revision; the earlier reading, of 15.09.2026, is that of the value 49.3."
       }
     ],
     "verifications": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
       {
         "date": "2026-09-28",
         "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
@@ -80,8 +95,9 @@
     "source_flag_note_en": "provisional data"
   },
   "antes_sha256": "ec483eebff38bd3049f65d6f2fb1494b35760dc6e7cf87fcc40aae3a01f80ce8",
-  "depois_sha256": "dda450699152d12ab276c8be1f046e01c770227f9dac67847033368084de5f01",
-  "verificacoes_anteriores_ao_novo_acesso": [
+  "depois_sha256": "8cc777acc8accfc0d81c393707e86ea1b2d0726055137552068e26660161b68f",
+  "verificacoes_repostas_de": "a677770f",
+  "verificacoes_anteriores_ao_novo_acesso_conservadas": [
     {
       "date": "2026-09-21",
       "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",

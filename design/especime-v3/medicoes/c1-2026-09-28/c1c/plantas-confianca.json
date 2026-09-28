@@ -1,12 +1,36 @@
 {
   "natureza": "Casos sintéticos em memória. Os valores e as frases deste ensaio não são observações publicadas.",
   "contagens": {
-    "controlos": 84,
-    "controlos_integros": 84,
-    "plantas": 94,
-    "plantas_mordidas": 94
+    "controlos": 88,
+    "controlos_integros": 88,
+    "plantas": 100,
+    "plantas_mordidas": 100
   },
   "controlos": [
+    {
+      "grupo": "proveniencia",
+      "nome": "data-na-forma-da-casa-pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-literal-pt",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "data-na-forma-da-casa-en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-literal-en",
+      "passou": true,
+      "erros": []
+    },
     {
       "grupo": "valor-unidade",
       "nome": "cartao-20 600-normal",
@@ -731,6 +755,66 @@
     }
   ],
   "plantas": [
+    {
+      "grupo": "proveniencia",
+      "nome": "dia-errado-pt",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "iso-por-formatar-pt",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-com-os-mesmos-algarismos-pt",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "dia-errado-en",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "iso-por-formatar-en",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
+    {
+      "grupo": "proveniencia",
+      "nome": "endereco-com-os-mesmos-algarismos-en",
+      "codigo": 1,
+      "mordida": "valor de proveniência diferente do livro",
+      "passou": true,
+      "erros": [
+        "valor de proveniência diferente do livro"
+      ]
+    },
     {
       "grupo": "valor-unidade",
       "nome": "cartao-20 600-normal-colado",
