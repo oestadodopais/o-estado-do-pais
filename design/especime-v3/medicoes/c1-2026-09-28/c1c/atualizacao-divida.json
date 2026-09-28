@@ -1,0 +1,118 @@
+{
+  "antes": {
+    "id": "divida-das-familias-2025-ue",
+    "value": "49,3",
+    "unit": "% do PIB",
+    "source": "Eurostat",
+    "document": {
+      "title": "Household debt including non-profit institutions serving households, consolidated",
+      "edition": "tipspd22",
+      "kind": "serie",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/tipspd22/default/table?lang=en"
+    },
+    "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+    "access_date": "2026-09-15",
+    "reference_date": "2025",
+    "excerpt": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 49.3",
+    "derivation": null,
+    "derived_from": [],
+    "check": null,
+    "study": "quadro-institucional",
+    "note": "Agregado da União Europeia (EU27_2020) da medida «divida-das-familias-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 55%. O limiar aplica-se a cada Estado-Membro, não ao agregado. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor.",
+    "corrections": [],
+    "verifications": [
+      {
+        "date": "2026-09-21",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "igual",
+        "by": "painel-semanal"
+      },
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "49.2"
+      }
+    ]
+  },
+  "depois": {
+    "id": "divida-das-familias-2025-ue",
+    "value": "49,2",
+    "unit": "% do PIB",
+    "source": "Eurostat",
+    "document": {
+      "title": "Household debt including non-profit institutions serving households, consolidated",
+      "edition": "tipspd22",
+      "kind": "serie",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/tipspd22/default/table?lang=en"
+    },
+    "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+    "access_date": "2026-09-28",
+    "reference_date": "2025",
+    "excerpt": "Household debt including non-profit institutions serving households, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 49.2 p",
+    "derivation": null,
+    "derived_from": [],
+    "check": null,
+    "study": "quadro-institucional",
+    "note": "Agregado da União Europeia (EU27_2020) da medida «divida-das-familias-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 55%. O limiar aplica-se a cada Estado-Membro, não ao agregado. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor.",
+    "corrections": [
+      {
+        "date": "2026-09-28",
+        "kind": "atualizacao",
+        "old_value": "49,3",
+        "new_value": "49,2",
+        "reason": "O Eurostat reviu o valor da União a 26.09.2026 (o carimbo do conjunto passou de 19.09.2026 a 26.09.2026); a reconferência semanal de 28.09.2026 viu a revisão.",
+        "reason_en": "Eurostat revised the EU value on 26.09.2026 (the dataset stamp moved from 19.09.2026 to 26.09.2026); the weekly check of 28.09.2026 caught the revision."
+      }
+    ],
+    "verifications": [
+      {
+        "date": "2026-09-28",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "49.2"
+      }
+    ],
+    "source_flag": "p",
+    "source_flag_note": "dado provisório",
+    "source_flag_note_en": "provisional data"
+  },
+  "antes_sha256": "ec483eebff38bd3049f65d6f2fb1494b35760dc6e7cf87fcc40aae3a01f80ce8",
+  "depois_sha256": "dda450699152d12ab276c8be1f046e01c770227f9dac67847033368084de5f01",
+  "verificacoes_anteriores_ao_novo_acesso": [
+    {
+      "date": "2026-09-21",
+      "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "result": "igual",
+      "by": "painel-semanal"
+    }
+  ],
+  "corpo": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+    "quando": "2026-09-28T13:45:55+00:00",
+    "http": "200",
+    "bytes": 6632,
+    "segundos": 1.0,
+    "sha256": "bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1",
+    "ficheiro": "corpos/bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1.txt",
+    "cliente": "core.http.HttpClient.get",
+    "user_agent": "OEstadoDoPais/corredor"
+  },
+  "plantas": [
+    {
+      "nome": "sem entrada",
+      "mordeu": true
+    },
+    {
+      "nome": "valor antigo errado",
+      "mordeu": true
+    },
+    {
+      "nome": "valor novo errado",
+      "mordeu": true
+    }
+  ],
+  "aplicada": true
+}

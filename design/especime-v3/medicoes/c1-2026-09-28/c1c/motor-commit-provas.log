@@ -1,0 +1,272 @@
+GATE  reconcile_test         ok
+GATE  attributions_test      ok
+GATE  derivations_test       ok
+GATE  canaries_test          ok
+GATE  verifier_eval_test     ok
+GATE  editions_test          ok
+GATE  assertions_test        ok
+GATE  sweep_test             ok
+GATE  prose_test             ok
+GATE  describe_test          ok
+GATE  prereg_test            ok
+GATE  deps_test              ok
+GATE  reconferencias_test    ok
+GATE  excerpts_test          ok
+GATE  http_test              ok
+GATE  gate_test              ok
+GATE  export_site_rows_test  ok
+GATE  export_agenda_test     ok
+GATE  eyetext_test           ok
+GATE  export_records_test    ok
+GATE  voz_test               ok
+GATE  export_records_site_test ok
+GATE  concelhos_test         ok
+GATE  mapa_distritos_test    ok
+GATE  dominios_test          ok
+GATE  dominios_rp1_test      ok
+GATE  provas_test            ok
+GATE  refresh_dimensoes_test ok
+GATE  enquadramento_coordenadas_test ok
+GATE  refresh_c1c_test       ok
+GATE  portao_exportacao_test ok
+GATE  http_nome_test         ok
+GATE  proveniencia_das_fixtures_test ok
+GATE  deps                   ok
+GATE  fixtures               ok
+GATE  paridade               ok
+GATE  nomes exportados       ok
+GATE  livros declarados      ok (13 livro(s) em 524 JSON sob content/, 1 exceção(ões) escrita(s), 0 ilegível(eis))
+GATE  dataset agua-2026-07   ok
+GATE  dataset regional-2026-08 ok
+GATE  derivations Onde Está a Água — Technical Source ok
+GATE  derivations 03 Regional Economy ok
+GATE  derivations 04 Évora Public Money ok
+GATE  derivations 06 Évora Economy ok
+GATE  derivations 07 Évora Municipal Accounts ok
+GATE  derivations 08 Évora Mandates ok
+GATE  derivations 09 Évora Pelouros ok
+GATE  derivations 10 Housing  ok
+GATE  derivations 11 Seguranca Social ok
+GATE  derivations 12 Concelhos ok
+GATE  derivations 13 Dominios ok
+GATE  derivations 14 Évora 2027 ok
+GATE  prereg 10 Housing       ok
+GATE  prereg 12 Concelhos     ok
+GATE  prereg 13 Dominios      ok
+GATE  prereg debt: 9 study(ies) with no registration — 03 Regional Economy, Onde Está a Água — Technical Source, 04 Évora Public Money, 06 Évora Economy, 07 Évora Municipal Accounts, 08 Évora Mandates, 09 Évora Pelouros, 14 Évora 2027, 11 Seguranca Social
+GATE  (not back-fillable: a registration written after collection certifies nothing)
+GATE  regional-economy-2026  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  onde-esta-a-agua-pt    ok — orphans 457/457, misattrib 4/4, undeclared 7/7
+GATE  regional-economy-2026-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  regional-economy-2026-art ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026 ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025    ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt-art ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-pt  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros         ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-html    ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-pt      ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  housing-h1-survey      ok — orphans 0/0, misattrib 0/0, undeclared 83/83
+GATE  housing-sq3            ok — orphans 0/0, misattrib 0/0, undeclared 3/3
+GATE  housing-h3-accounting  ok — orphans 0/0, misattrib 0/0, undeclared 4/4
+GATE  housing-sq7            ok — orphans 0/0, misattrib 0/0, undeclared 7/7
+GATE  concelhos-p1           ok — orphans 17/17, misattrib 18/18, undeclared 10/10
+GATE  concelhos-p3           ok — orphans 29/29, misattrib 8/8, undeclared 0/0
+GATE  concelhos-p4           ok — orphans 37/37, misattrib 52/52, undeclared 1/1
+GATE  dominios-d1            ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-pt          ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-pt-html     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-en          ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-en-html     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  penalizacoes-2026-pt-html ok — orphans 0/0, misattrib 2/2, undeclared 0/0
+GATE  seguranca-social-relatorio ok — orphans 17/17, misattrib 88/88, undeclared 0/0
+GATE  editions regional-en-pt ok
+GATE  editions regional-pt-art ok
+GATE  editions evora-en-pt   ok
+GATE  editions evora-en-html ok
+GATE  editions evora-pt-html ok
+GATE  editions evora-economy-en-html ok
+GATE  editions evora-accounts-en-pt ok
+GATE  editions evora-accounts-en-html ok
+GATE  editions evora-accounts-pt-html ok
+GATE  editions evora-economy-en-pt ok
+GATE  editions evora-economy-pt-html ok
+GATE  editions evora-economy-pt-art ok
+GATE  editions evora-mandates-md-html ok
+GATE  editions evora-mandates-en-pt ok
+GATE  editions evora-mandates-pt-html ok
+GATE  editions evora-pelouros-md-html ok
+GATE  editions evora-pelouros-en-pt ok
+GATE  editions evora-pelouros-pt-html ok
+GATE  editions evora-2027-pt-md-html ok
+GATE  editions evora-2027-en-md-html ok
+GATE  editions evora-2027-pt-en ok
+GATE: PASS
+[c1-2026-09-28 ba47a12] C1c: alojar as respostas do gerador, do painel e das origens oficiais
+ 152 files changed, 10835 insertions(+)
+ create mode 100644 indicators/out/c1c-2026-09-28/LEIA-ME.md
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-competitividade-discurso.html
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-competitividade-discurso.txt
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-competitividade.html
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-declaracao.html
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-declaracao.txt
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-estrategia.html
+ create mode 100644 indicators/out/c1c-2026-09-28/bce-estrategia.txt
+ create mode 100644 indicators/out/c1c-2026-09-28/dgal-limites-canonico.html
+ create mode 100644 indicators/out/c1c-2026-09-28/dgal-limites-canonico.txt
+ create mode 100644 indicators/out/c1c-2026-09-28/dgal-limites.html
+ create mode 100644 indicators/out/c1c-2026-09-28/pedidos.jsonl
+ create mode 100644 indicators/out/c1c-2026-09-28/pedir.py
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/abandono-escolar-precoce-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/abandono-escolar-precoce-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/competencias-digitais-2023.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/competencias-digitais-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/credito-malparado-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/criancas-em-creche-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/criancas-em-creche-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/custo-unitario-do-trabalho-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/custo-unitario-do-trabalho-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/desempenho-das-exportacoes-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/desemprego-de-longa-duracao-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/desemprego-de-longa-duracao-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/despesa-em-id-2023.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/despesa-em-id-2024-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/disparidade-de-emprego-entre-sexos-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/disparidade-de-emprego-entre-sexos-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/divida-das-empresas-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/divida-das-empresas-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/divida-das-familias-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/divida-das-familias-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/divida-publica-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/divida-publica-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/fluxo-de-credito-as-empresas-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/fluxo-de-credito-as-familias-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/fluxo-de-credito-as-familias-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/formacao-bruta-de-capital-fixo-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/formacao-bruta-de-capital-fixo-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/independencia-da-justica-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/independencia-da-justica-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/indice-de-percepcao-da-corrupcao-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/indice-de-percepcao-da-corrupcao-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/jovens-nem-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/jovens-nem-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/licencas-de-construcao-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/licencas-de-construcao-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/necessidades-medicas-nao-satisfeitas-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/necessidades-medicas-nao-satisfeitas-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/pib-real-per-capita-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/pib-real-per-capita-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/posicao-de-investimento-internacional-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/precos-da-habitacao-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/precos-da-habitacao-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/racio-s80-s20-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/racio-s80-s20-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/risco-de-pobreza-ou-exclusao-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/risco-de-pobreza-ou-exclusao-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/saldo-da-balanca-corrente-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/sobrecarga-do-custo-da-habitacao-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-actividade-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-actividade-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-cambio-efectiva-real-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-cambio-efectiva-real-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-desemprego-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-desemprego-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-desemprego-mip-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-desemprego-mip-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-emprego-2024.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/claims/taxa-de-emprego-2025-ue.yml
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/01799dc5028090371687257eaa6ade304ab439bd13aec9831ca1b7b882641fe9.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/05db115f7b6e1bff9586bfa7a6a810f8d83284ddfcdfc29c883a83ab50b3615d.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/07aa6f112f5f04c776f7cce1c04e7123b74d8c6621c8c3b157f4a4c5f9c29846.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/07ddd2788ebf14a6deb0792efbd264af0c9509878f66f29bdce66171a46be799.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/16f446e45bcd4b8b2be7e14ff2226e2b379b6b983cb14c5364498961754b9470.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/1ee01e285540d5ea5fb425ce35776cef24fdd64d17e0f3e55ac477ac13cbd245.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/28a148a41e1f6a0a26bf4e59ee259c0b057e9e54d2c60c2a468f74536ce406af.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/2ae955047f653678e0f3a64f75da5cb55643137165277b141d991a40ea21d55e.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/2c13c47f6d8912947be17cf554d38452d66952c0be4ebe35078a2a5c60f809e1.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/2f0fe0af7ba5b7144d5fb2018389d942ceae377a583502805a0f9368eea2acbe.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/32c88e43f8738849b753cd07fb3c4dd296eb71f889d6adabd19c9d37f7caa15a.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/395675752504ad9a2f7160dcf2845889b63668341825b8601406e78b125cd264.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/3dafd91342d2d2a39d10a6a3e02e6d2a658413dccea054f9ba3bdb204dfe3dfd.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/3e2a4afab60a0359b052c4f47cb46b2267b1b584d11b4ae5cb1162dfce4da9ed.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/4018132bf99e91314a42c17b9331eb513d292d797db66c2c963468a09ebcbe51.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/43ed5fc06918e7f98697a3cea082a4c534daabd32d95fa485557539ded3c4dc5.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/48cfa2ac7265a92a96a05e9e320431295e3dedaa044cf009711a8e45909d2465.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/66d5f7cf9b7607e488f16837b46a19f3da204e5aff24837b4c137a7a089bc98c.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/67e385755812e07e6e4a72d4c68be13b3fccfd7237a7afac79115aec79d44ba9.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/6d4537e42271fab20126215b95395f9083c8166b25fc8a02c2ca2193cb193d51.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/72d44cd6f15295f80f3495efe152fc42b574530789f8511292fc8524edc34dbc.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/76cbe32ae4e2f246489afa0ff62d5d0bbef21077bf691bbda4ed6450013843c5.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/812cc871920694b8331c56c87b14ac3b943e7cafec8fcdbe689e6599ec777850.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/891b61075ccc80161d6d8c72b4365ff550bf1dc59bbef54ff291d04739bf9f36.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/9885b4405a6486abd99166ad517016873a281f83b8bc9f948e464c8fd40d0176.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/9c5f0b3d921753e399c788896bc68d166163712ea275b122392aa87612316849.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/a8c7259b37dd8ecbc115948eaf3fd1077419a4afabb02ec2ec70d13a64380270.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/d5e25837bfff20a0a9915ce285dadf5fdaa430476e11fb4f879dac3e6666bfce.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/d65ce548150b2bf1aaf8179e5bafe868705a304c27337c6759286646dc29ef75.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/e4417ea28ef535c38e29a2c0d8a2fbdbdf3dc6b9db80b59ff0d56f204733ca97.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/e9900d35e5cdaf0155957611244681d686f78d7a07f71eb25379179fd78d0a3f.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/ea5b943c0f8d25bc158c2df4e8fbf0dd3c8070eb723b9f484b3d5d3bceaef8d9.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/ec45ef99ebb406d507b77f49e48d7de9cc6cab2ceca2f6db383e5509bc5f705b.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/ec75305526e384a5e1d199bc9d93cf1ea88c2505b6fe3921b16d6264f172c06a.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/ec7f7572980b8eff5ff6b5890e172df3be0a2460595ff0eb7be27604c33d8e6a.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/eee6ea0243db15a29fb43cb53301413877f2ba781d35303052b586d0eefa7295.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/f1163e2ce6c6f1f97b771a1f969e1463d86cc366c7c18f06bb8e968616b6e69e.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/f2b3e624a80b4e0f3ccd5f4572338cb10d1e351cab9cad8d3803248022f96cb0.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/corpos/ffd6a1e179dfb3c7f2428d4f4ba0a49d3048a1abd9bd5b8412c88a7687f377f6.txt
+ create mode 100644 indicators/out/enquadramento-2026-09-28/pedidos.jsonl
+ create mode 100644 indicators/out/enquadramento-2026-09-28/referencias.json
+ create mode 100644 indicators/out/enquadramento-2026-09-28/resumo.json
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def.bin
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.bin
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/canary_baseline.json
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178.bin
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/heartbeat.json
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/pedidos.jsonl
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/refresh_report.json
+ create mode 100644 indicators/out/releitura-c1c-2026-09-28/vintages.json

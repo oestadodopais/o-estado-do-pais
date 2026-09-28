@@ -4,6 +4,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import tempfile
@@ -30,7 +31,8 @@ def proibidos():
             (('/private' + '/tmp') + '/').encode(), ('/' + 'tmp/').encode()]
 
 def tem_caminho(b):
-    return any(x.lower() in b.lower() for x in proibidos())
+    anfitriao = re.search(rb'\b[a-z0-9_-]*(?:macbook|imac|mac-mini|macmini)[a-z0-9_.-]*\.local\b', b, re.I)
+    return bool(anfitriao) or any(x.lower() in b.lower() for x in proibidos())
 
 def medir_caminhos():
     erros, total, historia = [], 0, 0

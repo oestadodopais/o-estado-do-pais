@@ -1,0 +1,3871 @@
+{
+  "base": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
+  "base_motor": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+  "cabeca_sitio": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+  "cabeca_motor": "ba47a125e68c9a87cc4bb5fae4524565bb413e7d",
+  "commits": {
+    "sitio": [
+      {
+        "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+        "assunto": "C1: alinhar a dívida de Évora com o calendário dos mandatos"
+      },
+      {
+        "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+        "assunto": "C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos"
+      },
+      {
+        "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+        "assunto": "C1: separar valores e explicar as leituras e as conferências"
+      },
+      {
+        "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+        "assunto": "C1: registar as três releituras iguais do PIB real por habitante"
+      },
+      {
+        "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+        "assunto": "C1: separar também as unidades nos cartões dos concelhos"
+      },
+      {
+        "hash": "8656f66f838c31ec0ad63d58204df2edb5f90e91",
+        "assunto": "C1: fixar as palavras e preparar a medição da entrega"
+      },
+      {
+        "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+        "assunto": "C1: fechar os tipos do CSV e retirar a importação sem uso"
+      },
+      {
+        "hash": "6c16c719f7bbc5164182ea5c62a51b656bf4fd43",
+        "assunto": "C1: entregar as provas das correções de confiança"
+      },
+      {
+        "hash": "04ef76eb4ff04ac6110012934b76f9b7d0536b34",
+        "assunto": "C1: a resposta do construtor do Codex"
+      },
+      {
+        "hash": "533fea9d40720e72c009e2aeb0d0ba72ad0d1feb",
+        "assunto": "Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor"
+      },
+      {
+        "hash": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
+        "assunto": "C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento"
+      },
+      {
+        "hash": "7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18",
+        "assunto": "C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal"
+      },
+      {
+        "hash": "0a9213f5798acd2ceae2bcb66b8163eccd26e00c",
+        "assunto": "C1c: dizer cada releitura e distinguir o valor encontrado do publicado"
+      },
+      {
+        "hash": "feeb59754996ead2a31dff609a9a0000e99d5816",
+        "assunto": "C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio"
+      },
+      {
+        "hash": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+        "assunto": "C1c: conservar a nota no ficheiro e situar a dívida no fim do ano"
+      }
+    ],
+    "motor": [
+      {
+        "hash": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
+        "assunto": "C1: reler dimensões do Eurostat pela coordenada selada"
+      },
+      {
+        "hash": "cf1082be38dda1bf044f1fbfb9b258357faeb98a",
+        "assunto": "C1c: ler coordenadas e bandeiras e repetir o painel sem perder a tentativa"
+      },
+      {
+        "hash": "ba47a125e68c9a87cc4bb5fae4524565bb413e7d",
+        "assunto": "C1c: alojar as respostas do gerador, do painel e das origens oficiais"
+      }
+    ]
+  },
+  "linhas_conferidas": 3009,
+  "mudancas_de_valor_ou_endereco": [
+    {
+      "id": "divida-das-familias-2025-ue",
+      "campo": "value",
+      "antes": "49,3",
+      "depois": "49,2"
+    },
+    {
+      "id": "indice-de-divida-limite-legal",
+      "campo": "source_url",
+      "antes": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+      "depois": "https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/"
+    }
+  ],
+  "geradas": {
+    "linhas": [
+      {
+        "id": "abandono-escolar-precoce-2024",
+        "valor_sitio": "6,6",
+        "valor_gerado": "6,6",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Early leavers from education and training by labour status — Percentage — Portugal — 2024: 6.6",
+            "gerado": "Early leavers from education and training by labour status — Labour force and employment status: Population — Age class: From 18 to 24 years — Percentage — Portugal — 2024: 6.6"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "abandono-escolar-precoce-2025-ue",
+        "valor_sitio": "9,1",
+        "valor_gerado": "9,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Early leavers from education and training by labour status — Percentage — European Union - 27 countries (from 2020) — 2025: 9.1",
+            "gerado": "Early leavers from education and training by labour status — Labour force and employment status: Population — Age class: From 18 to 24 years — Percentage — European Union - 27 countries (from 2020) — 2025: 9.1"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "competencias-digitais-2023",
+        "valor_sitio": "55,97",
+        "valor_gerado": "55,97",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Individuals who have basic or above basic overall digital skills by sex — Percentage of individuals — Portugal — 2023: 55.97",
+            "gerado": "Individuals who have basic or above basic overall digital skills by sex — Individual type: All individuals — Information society indicator: Individuals with basic or above basic overall digital skills (all five component indicators are at basic or above basic level) — Percentage of individuals — Portugal — 2023: 55.97"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "competencias-digitais-2025-ue",
+        "valor_sitio": "60,4",
+        "valor_gerado": "60,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Individuals who have basic or above basic overall digital skills by sex — Percentage of individuals — European Union - 27 countries (from 2020) — 2025: 60.4",
+            "gerado": "Individuals who have basic or above basic overall digital skills by sex — Individual type: All individuals — Information society indicator: Individuals with basic or above basic overall digital skills (all five component indicators are at basic or above basic level) — Percentage of individuals — European Union - 27 countries (from 2020) — 2025: 60.4"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "credito-malparado-2024",
+        "valor_sitio": "2,4",
+        "valor_gerado": "2,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2024: 2.4",
+            "gerado": "Gross non-performing loans, domestic and foreign entities - % of gross loans — Percentage — Portugal — 2024: 2.4 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "criancas-em-creche-2024",
+        "valor_sitio": "59,4",
+        "valor_gerado": "59,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Children aged less than 3 years in formal childcare — Percentage — Portugal — 2024: 59.4",
+            "gerado": "Children aged less than 3 years in formal childcare — Duration: 1 hour or over — Age class: Less than 3 years — Percentage — Portugal — 2024: 59.4"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "criancas-em-creche-2025-ue",
+        "valor_sitio": "40,5",
+        "valor_gerado": "40,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Children aged less than 3 years in formal childcare — Percentage — European Union - 27 countries (from 2020) — 2025: 40.5",
+            "gerado": "Children aged less than 3 years in formal childcare — Duration: 1 hour or over — Age class: Less than 3 years — Percentage — European Union - 27 countries (from 2020) — 2025: 40.5"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "custo-unitario-do-trabalho-2024",
+        "valor_sitio": "17,7",
+        "valor_gerado": "17,7",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7",
+            "gerado": "Nominal unit labour cost per hour worked — National accounts indicator (ESA 2010): Nominal unit labour cost based on hours worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "custo-unitario-do-trabalho-2025-ue",
+        "valor_sitio": "15,2",
+        "valor_gerado": "15,2",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — European Union - 27 countries (from 2020) — 2025: 15.2",
+            "gerado": "Nominal unit labour cost per hour worked — National accounts indicator (ESA 2010): Nominal unit labour cost based on hours worked — Percentage change (t/t-3) — European Union - 27 countries (from 2020) — 2025: 15.2"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "desempenho-das-exportacoes-2024",
+        "valor_sitio": "17,1",
+        "valor_gerado": "17,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1",
+            "gerado": "Share of exports of advanced economies — Balance of payments item: Goods and services — Stock or flow: Credit — Geopolitical entity (partner): Rest of the world — Percentage of OECD and non-OECD EU countries total - 3-year change — Portugal — 2024: 17.1"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "desemprego-de-longa-duracao-2024",
+        "valor_sitio": "2,4",
+        "valor_gerado": "2,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Long-term unemployment rate by sex — Percentage of population in the labour force — Portugal — 2024: 2.4",
+            "gerado": "Long-term unemployment rate by sex — Employment indicator: Long-term unemployment — Age class: From 15 to 74 years — Percentage of population in the labour force — Portugal — 2024: 2.4"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "desemprego-de-longa-duracao-2025-ue",
+        "valor_sitio": "1,9",
+        "valor_gerado": "1,9",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Long-term unemployment rate by sex — Percentage of population in the labour force — European Union - 27 countries (from 2020) — 2025: 1.9",
+            "gerado": "Long-term unemployment rate by sex — Employment indicator: Long-term unemployment — Age class: From 15 to 74 years — Percentage of population in the labour force — European Union - 27 countries (from 2020) — 2025: 1.9"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "despesa-em-id-2023",
+        "valor_sitio": "1,68",
+        "valor_gerado": "1,68",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "despesa-em-id-2024-ue",
+        "valor_sitio": "2,24",
+        "valor_gerado": "2,24",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24",
+            "gerado": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "e"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "valor estimado"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "estimated value"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "disparidade-de-emprego-entre-sexos-2024",
+        "valor_sitio": "5,7",
+        "valor_gerado": "5,7",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Gender employment gap — Percentage of total population — Portugal — 2024: 5.7",
+            "gerado": "Gender employment gap — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Portugal — 2024: 5.7"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "disparidade-de-emprego-entre-sexos-2025-ue",
+        "valor_sitio": "9,6",
+        "valor_gerado": "9,6",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Gender employment gap — Percentage of total population — European Union - 27 countries (from 2020) — 2025: 9.6",
+            "gerado": "Gender employment gap — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — European Union - 27 countries (from 2020) — 2025: 9.6"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "divida-das-empresas-2024",
+        "valor_sitio": "67,1",
+        "valor_gerado": "67,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1",
+            "gerado": "Non-financial corporations debt, consolidated - % of GDP — Consolidated/Non consolidated: Consolidated — Sector: Non-financial corporations — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — Portugal — 2024: 67.1 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "divida-das-empresas-2025-ue",
+        "valor_sitio": "70,0",
+        "valor_gerado": "70",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "value": {
+            "sitio": "70,0",
+            "gerado": "70"
+          },
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Non-financial corporations debt, consolidated - % of GDP — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0",
+            "gerado": "Non-financial corporations debt, consolidated - % of GDP — Consolidated/Non consolidated: Consolidated — Sector: Non-financial corporations — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 70.0 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "divida-das-familias-2024",
+        "valor_sitio": "52,6",
+        "valor_gerado": "52,6",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6",
+            "gerado": "Household debt including non-profit institutions serving households, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — Portugal — 2024: 52.6 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "divida-das-familias-2025-ue",
+        "valor_sitio": "49,3",
+        "valor_gerado": "49,2",
+        "valor_numerico_diferente": true,
+        "campos_diferentes": {
+          "value": {
+            "sitio": "49,3",
+            "gerado": "49,2"
+          },
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Household debt including non-profit institutions serving households, consolidated — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 49.3",
+            "gerado": "Household debt including non-profit institutions serving households, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 49.2 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": true
+      },
+      {
+        "id": "divida-publica-2024",
+        "valor_sitio": "93,5",
+        "valor_gerado": "93,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: 93.5",
+            "gerado": "General government gross debt (EDP concept), consolidated - annual data — National accounts indicator (ESA 2010): Government consolidated gross debt — Sector: General government — Percentage of gross domestic product (GDP) — Portugal — 2024: 93.5"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "divida-publica-2025-ue",
+        "valor_sitio": "81,7",
+        "valor_gerado": "81,7",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7",
+            "gerado": "General government gross debt (EDP concept), consolidated - annual data — National accounts indicator (ESA 2010): Government consolidated gross debt — Sector: General government — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "fluxo-de-credito-as-empresas-2024",
+        "valor_sitio": "2,4",
+        "valor_gerado": "2,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.4",
+            "gerado": "Non-financial corporations excluding foreign direct investments credit flow, consolidated — Consolidated/Non consolidated: Consolidated — Sector: Non-financial corporations — Financial position: Liabilities — National accounts indicator (ESA 2010): Securities other than shares, loans, excluding foreign direct investments — Percentage of stocks (closing balance sheet) — Portugal — 2024: 2.4"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "fluxo-de-credito-as-familias-2024",
+        "valor_sitio": "4,1",
+        "valor_gerado": "4,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.1",
+            "gerado": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — National accounts indicator (ESA 2010): Securities other than shares, loans — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — Percentage of stocks (closing balance sheet) — Portugal — 2024: 4.1"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "fluxo-de-credito-as-familias-2025-ue",
+        "valor_sitio": "2,9",
+        "valor_gerado": "2,9",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9",
+            "gerado": "Household including non-profit institutions serving households (NPISH) credit flow, consolidated — National accounts indicator (ESA 2010): Securities other than shares, loans — Consolidated/Non consolidated: Consolidated — Sector: Households; non-profit institutions serving households — Financial position: Liabilities — Percentage of stocks (closing balance sheet) — European Union - 27 countries (from 2020) — 2025: 2.9 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "valor_sitio": "20,4",
+        "valor_gerado": "20,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4",
+            "gerado": "Gross fixed capital formation at current prices — National accounts indicator (ESA 2010): Gross fixed capital formation — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "formacao-bruta-de-capital-fixo-2025-ue",
+        "valor_sitio": "21,4",
+        "valor_gerado": "21,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 21.4",
+            "gerado": "Gross fixed capital formation at current prices — National accounts indicator (ESA 2010): Gross fixed capital formation — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 21.4"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "independencia-da-justica-2024",
+        "valor_sitio": "53",
+        "valor_gerado": "53",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Perceived independence of the justice system — Percentage — Portugal — 2024: 53",
+            "gerado": "Perceived independence of the justice system — Level of perception: Very good or fairly good — Percentage — Portugal — 2024: 53"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "independencia-da-justica-2025-ue",
+        "valor_sitio": "54",
+        "valor_gerado": "54",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Perceived independence of the justice system — Percentage — European Union - 27 countries (from 2020) — 2025: 54",
+            "gerado": "Perceived independence of the justice system — Level of perception: Very good or fairly good — Percentage — European Union - 27 countries (from 2020) — 2025: 54"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "indice-de-percepcao-da-corrupcao-2024",
+        "valor_sitio": "57",
+        "valor_gerado": "57",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "indice-de-percepcao-da-corrupcao-2025-ue",
+        "valor_sitio": "62",
+        "valor_gerado": "62",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "jovens-nem-2024",
+        "valor_sitio": "8,7",
+        "valor_gerado": "8,7",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "note": {
+            "sitio": "Período anterior da medida «jovens-nem-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. O título que o catálogo do Eurostat dá a este quadro diz «aged 15-24» e a dimensão `age` da resposta ao endereço em source_url diz «From 15 to 29 years»: a série é dos 15 aos 29. As duas leituras são de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+            "gerado": "Período anterior da medida «jovens-nem-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "jovens-nem-2025-ue",
+        "valor_sitio": "11,0",
+        "valor_gerado": "11",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "value": {
+            "sitio": "11,0",
+            "gerado": "11"
+          },
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "note": {
+            "sitio": "Agregado da União Europeia (EU27_2020) da medida «jovens-nem-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. O título que o catálogo do Eurostat dá a este quadro diz «aged 15-24» e a dimensão `age` da resposta ao endereço em source_url diz «From 15 to 29 years»: a série é dos 15 aos 29. As duas leituras são de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou.",
+            "gerado": "Agregado da União Europeia (EU27_2020) da medida «jovens-nem-2025», no mesmo período e na mesma unidade, pelo mesmo pedido com outra geografia. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "licencas-de-construcao-2024",
+        "valor_sitio": "654,5",
+        "valor_gerado": "654,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Residential building permits - annual data — Square metres per 1000 inhabitants — Portugal — 2024: 654.5",
+            "gerado": "Residential building permits - annual data — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Business trend indicator: Building permits - m2 of useful floor area — Statistical Classification of Products by Activity (CPA 2.1): Residential buildings — Square metres per 1000 inhabitants — Portugal — 2024: 654.5 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "licencas-de-construcao-2025-ue",
+        "valor_sitio": "377,5",
+        "valor_gerado": "377,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Residential building permits - annual data — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.5",
+            "gerado": "Residential building permits - annual data — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Business trend indicator: Building permits - m2 of useful floor area — Statistical Classification of Products by Activity (CPA 2.1): Residential buildings — Square metres per 1000 inhabitants — European Union - 27 countries (from 2020) — 2025: 377.5"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "necessidades-medicas-nao-satisfeitas-2024",
+        "valor_sitio": "2,5",
+        "valor_gerado": "2,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Self-reported unmet need for medical care by sex — Percentage — Portugal — 2024: 2.5",
+            "gerado": "Self-reported unmet need for medical care by sex — Reason: Too expensive or too far or waiting list — Age class: 16 years or over — Percentage — Portugal — 2024: 2.5"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "necessidades-medicas-nao-satisfeitas-2025-ue",
+        "valor_sitio": "2,4",
+        "valor_gerado": "2,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Self-reported unmet need for medical care by sex — Percentage — European Union - 27 countries (from 2020) — 2025: 2.4",
+            "gerado": "Self-reported unmet need for medical care by sex — Reason: Too expensive or too far or waiting list — Age class: 16 years or over — Percentage — European Union - 27 countries (from 2020) — 2025: 2.4"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "pib-real-per-capita-2024",
+        "valor_sitio": "20 430",
+        "valor_gerado": "20 430",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430",
+            "gerado": "Real GDP per capita — National accounts indicator (ESA 2010): Gross domestic product at market prices — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p"
+          },
+          "source_flag": {
+            "sitio": null,
+            "gerado": "p"
+          },
+          "source_flag_note": {
+            "sitio": null,
+            "gerado": "dado provisório"
+          },
+          "source_flag_note_en": {
+            "sitio": null,
+            "gerado": "provisional data"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "pib-real-per-capita-2025-ue",
+        "valor_sitio": "31 890",
+        "valor_gerado": "31 890",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Real GDP per capita — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890",
+            "gerado": "Real GDP per capita — National accounts indicator (ESA 2010): Gross domestic product at market prices — Chain linked volumes (2015), euro per capita — European Union - 27 countries (from 2020) — 2025: 31890"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "posicao-de-investimento-internacional-2024",
+        "valor_sitio": "−58,9",
+        "valor_gerado": "−58,9",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9",
+            "gerado": "Net international investment position - annual data — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Balance of payments item: Financial account — Sector (ESA 2010): Total economy — Counterpart sector (ESA 2010): Total economy — Stock or flow: Net positions at the end of period — Geopolitical entity (partner): Rest of the world — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "precos-da-habitacao-2024",
+        "valor_sitio": "9,1",
+        "valor_gerado": "9,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "precos-da-habitacao-2025-ue",
+        "valor_sitio": "5,5",
+        "valor_gerado": "5,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "racio-s80-s20-2024",
+        "valor_sitio": "5,2",
+        "valor_gerado": "5,2",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "racio-s80-s20-2025-ue",
+        "valor_sitio": "4,62",
+        "valor_gerado": "4,62",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "risco-de-pobreza-ou-exclusao-2024",
+        "valor_sitio": "19,7",
+        "valor_gerado": "19,7",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "risco-de-pobreza-ou-exclusao-2025-ue",
+        "valor_sitio": "20,9",
+        "valor_gerado": "20,9",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "saldo-da-balanca-corrente-2024",
+        "valor_sitio": "0,3",
+        "valor_gerado": "0,3",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3",
+            "gerado": "Current account balance - 3 year average — Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data) — Balance of payments item: Current account — Stock or flow: Balance — Geopolitical entity (partner): Rest of the world — Percentage of GDP - three-year average — Portugal — 2024: 0.3"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "sobrecarga-do-custo-da-habitacao-2024",
+        "valor_sitio": "6,9",
+        "valor_gerado": "6,9",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "sobrecarga-do-custo-da-habitacao-2025-ue",
+        "valor_sitio": "7,7",
+        "valor_gerado": "7,7",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-actividade-2024",
+        "valor_sitio": "3,2",
+        "valor_gerado": "3,2",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Labour force participation rate — Percentage point change (t-(t-3)) — Portugal — 2024: 3.2",
+            "gerado": "Labour force participation rate — Age class: From 15 to 64 years — Percentage point change (t-(t-3)) — Portugal — 2024: 3.2"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-actividade-2025-ue",
+        "valor_sitio": "1,1",
+        "valor_gerado": "1,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          },
+          "excerpt": {
+            "sitio": "Labour force participation rate — Percentage point change (t-(t-3)) — European Union - 27 countries (from 2020) — 2025: 1.1",
+            "gerado": "Labour force participation rate — Age class: From 15 to 64 years — Percentage point change (t-(t-3)) — European Union - 27 countries (from 2020) — 2025: 1.1"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-cambio-efectiva-real-2024",
+        "valor_sitio": "0,4",
+        "valor_gerado": "0,4",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-cambio-efectiva-real-2025-ue",
+        "valor_sitio": "11,3",
+        "valor_gerado": "11,3",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-desemprego-2024",
+        "valor_sitio": "6,5",
+        "valor_gerado": "6,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-desemprego-2025-ue",
+        "valor_sitio": "6,0",
+        "valor_gerado": "6",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "value": {
+            "sitio": "6,0",
+            "gerado": "6"
+          },
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2024",
+        "valor_sitio": "6,5",
+        "valor_gerado": "6,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2025-ue",
+        "valor_sitio": "6,0",
+        "valor_gerado": "6",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "value": {
+            "sitio": "6,0",
+            "gerado": "6"
+          },
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-emprego-2024",
+        "valor_sitio": "78,5",
+        "valor_gerado": "78,5",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      },
+      {
+        "id": "taxa-de-emprego-2025-ue",
+        "valor_sitio": "76,1",
+        "valor_gerado": "76,1",
+        "valor_numerico_diferente": false,
+        "campos_diferentes": {
+          "access_date": {
+            "sitio": "2026-09-15",
+            "gerado": "2026-09-28"
+          }
+        },
+        "aplicar_valor": false
+      }
+    ],
+    "ausencias": [
+      {
+        "indicador": "tipsbp10",
+        "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+      },
+      {
+        "indicador": "tipsii10",
+        "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+      },
+      {
+        "indicador": "tipsbp60",
+        "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+      },
+      {
+        "indicador": "tipspc30",
+        "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+      },
+      {
+        "indicador": "tipsbd10",
+        "porque": "EU27_2020: o período 2025 está na resposta e não tem valor; EA20: o período 2025 está na resposta e não tem valor"
+      }
+    ]
+  },
+  "pib": [
+    {
+      "id": "pib-real-per-capita-2024",
+      "verifications": [
+        {
+          "date": "2026-09-21",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "inacessivel",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "igual",
+          "by": "painel-semanal"
+        }
+      ]
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "verifications": [
+        {
+          "date": "2026-09-14",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-21",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "inacessivel",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+          "result": "igual",
+          "by": "painel-semanal"
+        }
+      ]
+    },
+    {
+      "id": "pib-real-per-capita-2025-ue",
+      "verifications": [
+        {
+          "date": "2026-09-21",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+          "result": "igual",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+          "result": "inacessivel",
+          "by": "painel-semanal"
+        },
+        {
+          "date": "2026-09-28",
+          "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+          "result": "igual",
+          "by": "painel-semanal"
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST",
+      "http": "200",
+      "sha256": "7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP_3Y&partner=WRL_REST",
+      "http": "200",
+      "sha256": "66d5f7cf9b7607e488f16837b46a19f3da204e5aff24837b4c137a7a089bc98c",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=EA20&unit=PC_GDP_3Y&partner=WRL_REST",
+      "http": "200",
+      "sha256": "f2b3e624a80b4e0f3ccd5f4572338cb10d1e351cab9cad8d3803248022f96cb0",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST",
+      "http": "200",
+      "sha256": "9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP&partner=WRL_REST",
+      "http": "200",
+      "sha256": "05db115f7b6e1bff9586bfa7a6a810f8d83284ddfcdfc29c883a83ab50b3615d",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=EA20&unit=PC_GDP&partner=WRL_REST",
+      "http": "200",
+      "sha256": "9885b4405a6486abd99166ad517016873a281f83b8bc9f948e464c8fd40d0176",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "http": "200",
+      "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=EU27_2020&unit=PCH_3Y",
+      "http": "200",
+      "sha256": "48cfa2ac7265a92a96a05e9e320431295e3dedaa044cf009711a8e45909d2465",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+      "http": "200",
+      "sha256": "67e385755812e07e6e4a72d4c68be13b3fccfd7237a7afac79115aec79d44ba9",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=EU27_2020&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+      "http": "200",
+      "sha256": "812cc871920694b8331c56c87b14ac3b943e7cafec8fcdbe689e6599ec777850",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=EA20&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+      "http": "200",
+      "sha256": "32c88e43f8738849b753cd07fb3c4dd296eb71f889d6adabd19c9d37f7caa15a",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "http": "200",
+      "sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=EU27_2020&unit=PCH_3Y",
+      "http": "200",
+      "sha256": "07aa6f112f5f04c776f7cce1c04e7123b74d8c6621c8c3b157f4a4c5f9c29846",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "http": "200",
+      "sha256": "f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "http": "200",
+      "sha256": "f1163e2ce6c6f1f97b771a1f969e1463d86cc366c7c18f06bb8e968616b6e69e",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "http": "200",
+      "sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "http": "200",
+      "sha256": "bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "http": "200",
+      "sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "http": "200",
+      "sha256": "892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=PT&unit=PC_LE",
+      "http": "200",
+      "sha256": "ec75305526e384a5e1d199bc9d93cf1ea88c2505b6fe3921b16d6264f172c06a",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=EU27_2020&unit=PC_LE",
+      "http": "200",
+      "sha256": "cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=PT&unit=PC_LE",
+      "http": "200",
+      "sha256": "76cbe32ae4e2f246489afa0ff62d5d0bbef21077bf691bbda4ed6450013843c5",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=EU27_2020&unit=PC_LE",
+      "http": "200",
+      "sha256": "43ed5fc06918e7f98697a3cea082a4c534daabd32d95fa485557539ded3c4dc5",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=EA20&unit=PC_LE",
+      "http": "200",
+      "sha256": "ec45ef99ebb406d507b77f49e48d7de9cc6cab2ceca2f6db383e5509bc5f705b",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=PT&unit=RCH_A_AVG",
+      "http": "200",
+      "sha256": "2f0fe0af7ba5b7144d5fb2018389d942ceae377a583502805a0f9368eea2acbe",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=EU27_2020&unit=RCH_A_AVG",
+      "http": "200",
+      "sha256": "4018132bf99e91314a42c17b9331eb513d292d797db66c2c963468a09ebcbe51",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=PT&age=Y15-74",
+      "http": "200",
+      "sha256": "6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=EU27_2020&age=Y15-74",
+      "http": "200",
+      "sha256": "6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm60?format=JSON&lang=EN&geo=PT&unit=PPCH_3Y",
+      "http": "200",
+      "sha256": "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm60?format=JSON&lang=EN&geo=EU27_2020&unit=PPCH_3Y",
+      "http": "200",
+      "sha256": "395675752504ad9a2f7160dcf2845889b63668341825b8601406e78b125cd264",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "http": "200",
+      "sha256": "2ae955047f653678e0f3a64f75da5cb55643137165277b141d991a40ea21d55e",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "http": "200",
+      "sha256": "c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=PT&unit=PC",
+      "http": "200",
+      "sha256": "72d44cd6f15295f80f3495efe152fc42b574530789f8511292fc8524edc34dbc",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=EU27_2020&unit=PC",
+      "http": "200",
+      "sha256": "891b61075ccc80161d6d8c72b4365ff550bf1dc59bbef54ff291d04739bf9f36",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+      "http": "200",
+      "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=EU27_2020&unit=PC_POP",
+      "http": "200",
+      "sha256": "c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "http": "200",
+      "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "http": "200",
+      "sha256": "2c13c47f6d8912947be17cf554d38452d66952c0be4ebe35078a2a5c60f809e1",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "http": "200",
+      "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+      "http": "200",
+      "sha256": "f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=PT",
+      "http": "200",
+      "sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=EU27_2020",
+      "http": "200",
+      "sha256": "6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=EA20",
+      "http": "200",
+      "sha256": "6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT",
+      "http": "200",
+      "sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=EU27_2020",
+      "http": "200",
+      "sha256": "ea5b943c0f8d25bc158c2df4e8fbf0dd3c8070eb723b9f484b3d5d3bceaef8d9",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=PT&sex=T&wstatus=POP",
+      "http": "200",
+      "sha256": "eee6ea0243db15a29fb43cb53301413877f2ba781d35303052b586d0eefa7295",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=EU27_2020&sex=T&wstatus=POP",
+      "http": "200",
+      "sha256": "ffd6a1e179dfb3c7f2428d4f4ba0a49d3048a1abd9bd5b8412c88a7687f377f6",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=PT&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "http": "200",
+      "sha256": "f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "http": "200",
+      "sha256": "2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_a?format=JSON&lang=EN&geo=PT&age=Y15-74&sex=T&unit=PC_ACT",
+      "http": "200",
+      "sha256": "06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_a?format=JSON&lang=EN&geo=EU27_2020&age=Y15-74&sex=T&unit=PC_ACT",
+      "http": "200",
+      "sha256": "b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+      "http": "200",
+      "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "http": "200",
+      "sha256": "e4417ea28ef535c38e29a2c0d8a2fbdbdf3dc6b9db80b59ff0d56f204733ca97",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem060?format=JSON&lang=EN&geo=PT",
+      "http": "200",
+      "sha256": "8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem060?format=JSON&lang=EN&geo=EU27_2020",
+      "http": "200",
+      "sha256": "1ee01e285540d5ea5fb425ce35776cef24fdd64d17e0f3e55ac477ac13cbd245",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T",
+      "http": "200",
+      "sha256": "e9900d35e5cdaf0155957611244681d686f78d7a07f71eb25379179fd78d0a3f",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "http": "200",
+      "sha256": "d5e25837bfff20a0a9915ce285dadf5fdaa430476e11fb4f879dac3e6666bfce",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+      "http": "200",
+      "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "http": "200",
+      "sha256": "ec7f7572980b8eff5ff6b5890e172df3be0a2460595ff0eb7be27604c33d8e6a",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp210?format=JSON&lang=EN&geo=PT",
+      "http": "200",
+      "sha256": "01799dc5028090371687257eaa6ade304ab439bd13aec9831ca1b7b882641fe9",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp210?format=JSON&lang=EN&geo=EU27_2020",
+      "http": "200",
+      "sha256": "07ddd2788ebf14a6deb0792efbd264af0c9509878f66f29bdce66171a46be799",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp410?format=JSON&lang=EN&geo=PT&ind_type=IND_TOTAL",
+      "http": "200",
+      "sha256": "28a148a41e1f6a0a26bf4e59ee259c0b057e9e54d2c60c2a468f74536ce406af",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp410?format=JSON&lang=EN&geo=EU27_2020&ind_type=IND_TOTAL",
+      "http": "200",
+      "sha256": "d65ce548150b2bf1aaf8179e5bafe868705a304c27337c6759286646dc29ef75",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm110?format=JSON&lang=EN&geo=PT&sex=T",
+      "http": "200",
+      "sha256": "6d4537e42271fab20126215b95395f9083c8166b25fc8a02c2ca2193cb193d51",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm110?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "http": "200",
+      "sha256": "a8c7259b37dd8ecbc115948eaf3fd1077419a4afabb02ec2ec70d13a64380270",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_40?format=JSON&lang=EN&geo=PT&lev_perc=VG_FG",
+      "http": "200",
+      "sha256": "3dafd91342d2d2a39d10a6a3e02e6d2a658413dccea054f9ba3bdb204dfe3dfd",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_40?format=JSON&lang=EN&geo=EU27_2020&lev_perc=VG_FG",
+      "http": "200",
+      "sha256": "16f446e45bcd4b8b2be7e14ff2226e2b379b6b983cb14c5364498961754b9470",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_50?format=JSON&lang=EN&geo=PT",
+      "http": "200",
+      "sha256": "3e2a4afab60a0359b052c4f47cb46b2267b1b584d11b4ae5cb1162dfce4da9ed",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_50?format=JSON&lang=EN&geo=EU27_2020",
+      "http": "200",
+      "sha256": "9c5f0b3d921753e399c788896bc68d166163712ea275b122392aa87612316849",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "enquadramento-2026-09-28",
+      "url": "https://economy-finance.ec.europa.eu/economic-governance-framework/macroeconomic-imbalance-procedure/scoreboard_en",
+      "http": "200",
+      "sha256": "3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "releitura-c1c-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "http": 200,
+      "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "releitura-c1c-2026-09-28",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+      "http": 200,
+      "sha256": "f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "releitura-c1c-2026-09-28",
+      "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+      "http": 200,
+      "sha256": "3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "c1c-2026-09-28",
+      "url": "https://www.ecb.europa.eu/mopo/strategy/html/index.en.html",
+      "http": 200,
+      "sha256": "c42942e894a4a134cec91d7e71a6f7dacf2addea354d98a5b20610a7e1ec22e0",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "c1c-2026-09-28",
+      "url": "https://www.portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/",
+      "http": null,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "c1c-2026-09-28",
+      "url": "https://data.ecb.europa.eu/main-figures/ecb-interest-rates-and-exchange-rates/harmonised-competitiveness-indicators",
+      "http": 404,
+      "sha256": "c73906a5a6d32354279718a2a99755a1850763ae13680d5f03e7e96a3fea142f",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "c1c-2026-09-28",
+      "url": "https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/",
+      "http": 200,
+      "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "c1c-2026-09-28",
+      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260522~f0f11a5f05.en.html",
+      "http": 200,
+      "sha256": "4bf850e2ece146ef67a04485cb07085fb2911ce8dbc6fa0f84ccf477e06739eb",
+      "corpo_integro": true
+    },
+    {
+      "pasta": "c1c-2026-09-28",
+      "url": "https://www.ecb.europa.eu/mopo/strategy/strategy-review/ecb.strategyreview202506_strategy_statement.en.html",
+      "http": 200,
+      "sha256": "64fc82b498decb3b2b7ef2a604a4dfb3f48e84e49fc62c47abf9a073ff11c84e",
+      "corpo_integro": true
+    }
+  ],
+  "literais": [
+    {
+      "id": "c1c-bce-estrategia",
+      "literal_no_corpo": true
+    },
+    {
+      "id": "c1c-bce-competitividade",
+      "literal_no_corpo": true
+    },
+    {
+      "id": "c1c-dgal-limites",
+      "literal_no_corpo": true
+    },
+    {
+      "id": "c1c-eurostat-sinal-cambio",
+      "literal_no_corpo": true
+    },
+    {
+      "id": "c1c-bce-ambito",
+      "literal_no_corpo": true
+    }
+  ],
+  "protegidos_motor_alterados": [],
+  "caminhos": {
+    "ficheiros": 913,
+    "quantidade": 0,
+    "achados": [],
+    "conhecidos_positivos": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "anfitrioes_antigos_exercitados": 1,
+    "ambito": "Ficheiros atuais escritos pelo construtor no C1 e C1c, pasta integral das provas e ficheiros do motor tocados desde a base do C1. Não inclui a leitura a frio nem outros documentos da direção, que esta passagem não escreveu. O histórico anterior conserva o defeito do achado 24."
+  },
+  "portoes": {
+    "build": {
+      "codigo": 1,
+      "cabeca": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+      "inicio": "2026-09-28T14:32:55.150303+00:00",
+      "fim": "2026-09-28T14:32:56.433824+00:00"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+      "inicio": "2026-09-28T14:39:43.917882+00:00",
+      "fim": "2026-09-28T14:39:44.196406+00:00"
+    }
+  },
+  "provas": {
+    "gerador-plantas": [
+      {
+        "nome": "linha anterior lê a segunda unidade: unit,geo,time",
+        "passou": true
+      },
+      {
+        "nome": "bandeira da mesma célula: unit,geo,time",
+        "passou": true
+      },
+      {
+        "nome": "a União resolve a unidade selada: unit,geo,time",
+        "passou": true
+      },
+      {
+        "nome": "linha anterior lê a segunda unidade: time,unit,geo",
+        "passou": true
+      },
+      {
+        "nome": "bandeira da mesma célula: time,unit,geo",
+        "passou": true
+      },
+      {
+        "nome": "a União resolve a unidade selada: time,unit,geo",
+        "passou": true
+      },
+      {
+        "nome": "o leitor comum lê o cubo resolvido",
+        "passou": true
+      },
+      {
+        "nome": "cubo ambíguo recusado antes da leitura do tempo",
+        "passou": true
+      },
+      {
+        "nome": "lacuna não se preenche com a outra unidade",
+        "passou": true
+      },
+      {
+        "nome": "planta da primeira unidade morde a asserção do valor",
+        "passou": true
+      }
+    ],
+    "plantas-confianca": {
+      "natureza": "Casos sintéticos em memória. Os valores e as frases deste ensaio não são observações publicadas.",
+      "contagens": {
+        "controlos": 84,
+        "controlos_integros": 84,
+        "plantas": 94,
+        "plantas_mordidas": 94
+      },
+      "controlos": [
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 0,
+            "cartoes": 1
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-normal",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-fixo",
+          "passou": true,
+          "erros": [],
+          "contas": {
+            "titulos": 1,
+            "cartoes": 0
+          }
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "marca-sem-unidade",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "contagem-com-prova-v2",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "releitura",
+          "nome": "49.2",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "releitura",
+          "nome": "−1234,50",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-ainda-sem-segunda-leitura",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-numero-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-ficheiro-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-divergencia-com-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-divergencia-ainda-sem-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-fonte-sem-resposta",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-ainda-sem-segunda-leitura",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-numero-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-ficheiro-relido",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-divergencia-com-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-divergencia-ainda-sem-atualizacao",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-fonte-sem-resposta",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-negativo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "−0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, −0,5 % face aos de há um ano, ou seja, abaixo deles. É a descida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. A variação é menor do que a do mês anterior. O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-zero",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "zero"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, ao mesmo nível de há um ano. O INE mede-os num cabaz de bens e serviços que representa o que as famílias compram. A variação é menor do que a do mês anterior. O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-positivo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "positivo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços no consumidor estavam, em média, 0,5 % acima dos de há um ano. É a subida geral dos preços, que o INE mede num cabaz de bens e serviços que representa o que as famílias compram. A variação é maior do que a do mês anterior. O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-maior",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−1,0"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é maior do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-menor",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é menor do que a da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-igual",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,5"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "igual"
+            }
+          ],
+          "texto_sintetico": "Em agosto de 2026 os preços em Portugal estavam, na medida harmonizada que serve para comparar os países da União Europeia, −0,5 % face aos de há um ano, ou seja, abaixo deles. A variação é igual à da média da União Europeia. O Banco Central Europeu procura uma inflação de 2 % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-negativo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "−0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "In August 2026 consumer prices were, on average, −0,5 % compared with a year earlier, that is, below. That is the general fall in prices, which the INE measures on a basket of goods and services that represents what households buy. The change is smaller than the previous month’s. The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-zero",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "zero"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "In August 2026 consumer prices were, on average, at the same level as a year earlier. The INE measures them on a basket of goods and services that represents what households buy. The change is smaller than the previous month’s. The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-positivo",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ipc-variacao-homologa": "0,5",
+            "ipc-variacao-homologa-periodo-anterior": "0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "positivo"
+            },
+            {
+              "no": "compara-anterior",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "In August 2026 consumer prices were, on average, 0,5 % above a year earlier. That is the general rise in prices, which the INE measures on a basket of goods and services that represents what households buy. The change is larger than the previous month’s. The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-maior",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−1,0"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "maior"
+            }
+          ],
+          "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is larger than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-menor",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,2"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "menor"
+            }
+          ],
+          "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is smaller than the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index."
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-igual",
+          "passou": true,
+          "erros": [],
+          "valores_sinteticos": {
+            "ihpc-variacao-homologa": "−0,5",
+            "ihpc-variacao-homologa-periodo-anterior": "−0,8",
+            "ihpc-variacao-homologa-ue": "−0,5"
+          },
+          "ramos": [
+            {
+              "no": "sinal",
+              "escolha": "negativo"
+            },
+            {
+              "no": "compara-ue",
+              "escolha": "igual"
+            }
+          ],
+          "texto_sintetico": "In August 2026 prices in Portugal were, on the harmonised measure used to compare the countries of the European Union, −0,5 % compared with a year earlier, that is, below. The change is the same as the European Union average. The European Central Bank aims for inflation of 2 % over the medium term across the euro area, measured by this same index."
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-en-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-negativo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-zero",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-positivo",
+          "passou": true,
+          "erros": []
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-positivo",
+          "passou": true,
+          "erros": []
+        }
+      ],
+      "plantas": [
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-20 600-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "cartao-−50,2-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-20 600-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-normal-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "titulo-−50,2-fixo-colado",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o título cola o valor à unidade (caso-sintetico)"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "seletor-deixou-de-casar",
+          "codigo": 1,
+          "mordida": "seletor não conferiu",
+          "passou": true,
+          "erros": [
+            "I143/I158: o seletor não conferiu todos os cartões declarados"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "marca-com-unidade",
+          "codigo": 1,
+          "mordida": "marca sem valor publicado",
+          "passou": true,
+          "erros": [
+            "I143/I158: uma marca sem valor publicado traz valor ou unidade"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "quantidade-sem-valor",
+          "codigo": 1,
+          "mordida": "faltam o valor ou a unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: faltam o valor ou a unidade na quantidade"
+          ]
+        },
+        {
+          "grupo": "valor-unidade",
+          "nome": "contagem-com-prova-v2-colada",
+          "codigo": 1,
+          "mordida": "cola o valor à unidade",
+          "passou": true,
+          "erros": [
+            "I143/I158: o cartão cola o valor à unidade (undefined)"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-omite-valor-em-uso",
+          "codigo": 1,
+          "mordida": "qual é o valor em uso",
+          "passou": true,
+          "erros": [
+            "C1c: a divergência não diz corretamente qual é o valor em uso"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-inventa-diferenca-do-valor-em-uso",
+          "codigo": 1,
+          "mordida": "qual é o valor em uso",
+          "passou": true,
+          "erros": [
+            "C1c: a divergência não diz corretamente qual é o valor em uso"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-nega-releitura-registada",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-omite-ainda-sem-segunda-leitura",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-inventa-segunda-leitura",
+          "codigo": 1,
+          "mordida": "segunda leitura sem entrada",
+          "passou": true,
+          "erros": [
+            "C1: segunda leitura sem entrada no registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-ficheiro-apresentado-como-numero",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-numero-apresentado-como-ficheiro",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-falsa-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1c: a divergência não diz corretamente qual é o valor em uso",
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-sem-porta",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-com-porta-errada",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-sem-destino",
+          "codigo": 1,
+          "mordida": "atualização sem destino",
+          "passou": true,
+          "erros": [
+            "C1: atualização sem destino na história"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-correcao-apresentada-como-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "pt-atualizacao-de-outro-valor",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-omite-valor-em-uso",
+          "codigo": 1,
+          "mordida": "qual é o valor em uso",
+          "passou": true,
+          "erros": [
+            "C1c: a divergência não diz corretamente qual é o valor em uso"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-inventa-diferenca-do-valor-em-uso",
+          "codigo": 1,
+          "mordida": "qual é o valor em uso",
+          "passou": true,
+          "erros": [
+            "C1c: a divergência não diz corretamente qual é o valor em uso"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-nega-releitura-registada",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-omite-ainda-sem-segunda-leitura",
+          "codigo": 1,
+          "mordida": "ausência de segunda leitura",
+          "passou": true,
+          "erros": [
+            "C1: a ausência de segunda leitura não corresponde ao registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-inventa-segunda-leitura",
+          "codigo": 1,
+          "mordida": "segunda leitura sem entrada",
+          "passou": true,
+          "erros": [
+            "C1: segunda leitura sem entrada no registo"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-ficheiro-apresentado-como-numero",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-numero-apresentado-como-ficheiro",
+          "codigo": 1,
+          "mordida": "não distingue a leitura do número",
+          "passou": true,
+          "erros": [
+            "C1: o recibo não distingue a leitura do número da leitura do ficheiro"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-falsa-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1c: a divergência não diz corretamente qual é o valor em uso",
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-sem-porta",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-com-porta-errada",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-sem-destino",
+          "codigo": 1,
+          "mordida": "atualização sem destino",
+          "passou": true,
+          "erros": [
+            "C1: atualização sem destino na história"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-correcao-apresentada-como-atualizacao",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "verificacao",
+          "nome": "en-atualizacao-de-outro-valor",
+          "codigo": 1,
+          "mordida": "não aponta para a atualização",
+          "passou": true,
+          "erros": [
+            "C1: a segunda leitura não aponta para a atualização do valor encontrado"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ipc-variacao-homologa-negativo-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços no consumidor estavam, em méd…» contra «Em agosto de 2026 os preços no consumidor estavam, em méd…»",
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços no consumidor estavam, em méd…» contra «Em agosto de 2026 os preços no consumidor estavam, em méd…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-maior-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-menor-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "pt-ihpc-variacao-homologa-taxas-negativas-igual-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «Em agosto de 2026 os preços em Portugal estavam, na medid…» contra «Em agosto de 2026 os preços em Portugal estavam, na medid…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ipc-variacao-homologa-negativo-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 consumer prices were, on average, −0,5 % c…» contra «In August 2026 consumer prices were, on average, −0,5 % c…»",
+            "K17 · /ensaio-sintetico · ipc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 consumer prices were, on average, −0,5 % c…» contra «In August 2026 consumer prices were, on average, −0,5 % c…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-maior-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-menor-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+          ]
+        },
+        {
+          "grupo": "leituras",
+          "nome": "en-ihpc-variacao-homologa-taxas-negativas-igual-frase-positiva-fixa",
+          "codigo": 1,
+          "mordida": "os ramos ou os valores rendidos não são os que a conta desta célula manda",
+          "passou": true,
+          "erros": [
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: o texto rendido difere do que o resolvedor dá: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»",
+            "K17 · /ensaio-sintetico · ihpc-variacao-homologa: os ramos ou os valores rendidos não são os que a conta desta célula manda: «In August 2026 prices in Portugal were, on the harmonised…» contra «In August 2026 prices in Portugal were, on the harmonised…»"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-homologa-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-variacao-media-12-meses-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-alimentacao-variacao-homologa-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-energia-em-casa-variacao-homologa-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-combustiveis-variacao-homologa-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ihpc-variacao-homologa-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-rendas-variacao-homologa-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-negativo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-zero-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-pt-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        },
+        {
+          "grupo": "sinais-rp1",
+          "nome": "ipc-sem-habitacao-variacao-media-12-meses-en-positivo-troca-coerente",
+          "codigo": 1,
+          "mordida": "palavra não corresponde ao sinal",
+          "passou": true,
+          "erros": [
+            "a palavra não corresponde ao sinal selado"
+          ]
+        }
+      ]
+    },
+    "k17": {
+      "erros": [],
+      "contas": {
+        "medidas": 49,
+        "folhas": 1002,
+        "partes": 1151,
+        "diz": 313,
+        "conta": 281,
+        "liga": 557,
+        "apoios": 456,
+        "algarismos": 28,
+        "origens_das_leituras": 104,
+        "comuns": 38
+      }
+    },
+    "dados-concelhos": {
+      "origem": "dist/",
+      "erros": [],
+      "linhas": 2464,
+      "concelhos": 308,
+      "medidas": 8,
+      "calculadas": 308,
+      "limpa": {
+        "codigo": 0,
+        "saida": "C7: 2464 linhas de 308 concelhos, conferidas no livro-razão."
+      },
+      "plantas": [
+        {
+          "nome": "valor-trocado-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 1 (evora-populacao-2025): valor difere da linha ou da declaração do cartão.",
+          "mordida": "C7 .*valor difere da linha",
+          "antes": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "reposto": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "unidade-trocada-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 1 (evora-populacao-2025): unidade difere da linha ou da declaração do cartão.",
+          "mordida": "C7 .*unidade difere da linha",
+          "antes": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "reposto": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "nota-de-atualidade-omitida",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: registo 3 (evora-desemprego-registado-2025-12): nota difere da linha ou da declaração do cartão.",
+          "mordida": "C7 .*nota difere da linha",
+          "antes": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "reposto": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "medida-omitida-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: 2463 linhas no ficheiro e 2464 cartões com linha declarada.\nC7 /dados/indicadores-dos-concelhos.csv: falta o concelho e a medida [\"evora\",\"População residente\"].",
+          "mordida": "C7 .*falta o concelho e a medida",
+          "antes": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "reposto": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "codigo_reposicao": 0,
+          "passou": true
+        },
+        {
+          "nome": "medida-repetida-no-csv",
+          "ficheiro": "dist/dados/indicadores-dos-concelhos.csv",
+          "comando": "node scripts/check-dados.mjs --celula C7",
+          "codigo": 1,
+          "saida": "C7 /dados/indicadores-dos-concelhos.csv: 2465 linhas no ficheiro e 2464 cartões com linha declarada.\nC7 /dados/indicadores-dos-concelhos.csv: registo 2: concelho e medida repetidos.",
+          "mordida": "C7 .*concelho e medida repetidos",
+          "antes": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "reposto": "26b92873e689ed7984f17a3216ba796a3e77500a754e2845e353c3dd001d33e2",
+          "codigo_reposicao": 0,
+          "passou": true
+        }
+      ]
+    },
+    "calendario": {
+      "celula": "F18",
+      "modo": "páginas construídas",
+      "paginas": [
+        {
+          "rota": "/municipios/evora",
+          "erros": [],
+          "pontos": [
+            {
+              "id": "evora-indice-de-divida-2014",
+              "ano": 2014,
+              "x": 0.3284722222222222,
+              "esperado": 0.3284722222222222
+            },
+            {
+              "id": "evora-indice-de-divida-2017",
+              "ano": 2017,
+              "x": 0.4857638888888889,
+              "esperado": 0.4857638888888889
+            },
+            {
+              "id": "evora-indice-de-divida-2021",
+              "ano": 2021,
+              "x": 0.6954861111111111,
+              "esperado": 0.695486111111111
+            },
+            {
+              "id": "evora-indice-de-divida-2024",
+              "ano": 2024,
+              "x": 0.8527777777777777,
+              "esperado": 0.8527777777777777
+            }
+          ],
+          "plantas": [
+            {
+              "nome": "ponto-fora-do-ano",
+              "codigo": 1,
+              "mordida": "ponto fora do seu ano",
+              "passou": true,
+              "erros": [
+                "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+              ]
+            },
+            {
+              "nome": "ponto-no-inicio-do-ano",
+              "codigo": 1,
+              "mordida": "ponto fora do seu ano",
+              "passou": true,
+              "erros": [
+                "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+              ]
+            },
+            {
+              "nome": "uniao-sobre-lacuna",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "ponto-sem-valor",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "mandato-sem-rotulo",
+              "codigo": 1,
+              "mordida": "não tem o seu rótulo",
+              "passou": true,
+              "erros": [
+                "F18: o mandato em curso não tem o seu rótulo."
+              ]
+            }
+          ]
+        },
+        {
+          "rota": "/en/municipalities/evora",
+          "erros": [],
+          "pontos": [
+            {
+              "id": "evora-indice-de-divida-2014",
+              "ano": 2014,
+              "x": 0.3284722222222222,
+              "esperado": 0.3284722222222222
+            },
+            {
+              "id": "evora-indice-de-divida-2017",
+              "ano": 2017,
+              "x": 0.4857638888888889,
+              "esperado": 0.4857638888888889
+            },
+            {
+              "id": "evora-indice-de-divida-2021",
+              "ano": 2021,
+              "x": 0.6954861111111111,
+              "esperado": 0.695486111111111
+            },
+            {
+              "id": "evora-indice-de-divida-2024",
+              "ano": 2024,
+              "x": 0.8527777777777777,
+              "esperado": 0.8527777777777777
+            }
+          ],
+          "plantas": [
+            {
+              "nome": "ponto-fora-do-ano",
+              "codigo": 1,
+              "mordida": "ponto fora do seu ano",
+              "passou": true,
+              "erros": [
+                "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+              ]
+            },
+            {
+              "nome": "ponto-no-inicio-do-ano",
+              "codigo": 1,
+              "mordida": "ponto fora do seu ano",
+              "passou": true,
+              "erros": [
+                "F18: evora-indice-de-divida-2014: ponto fora do seu ano (2014)."
+              ]
+            },
+            {
+              "nome": "uniao-sobre-lacuna",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "ponto-sem-valor",
+              "codigo": 1,
+              "mordida": "ano sem valor",
+              "passou": true,
+              "erros": [
+                "F18: um ano sem valor tem um ponto ou uma linha que o atravessa."
+              ]
+            },
+            {
+              "nome": "mandato-sem-rotulo",
+              "codigo": 1,
+              "mordida": "não tem o seu rótulo",
+              "passou": true,
+              "erros": [
+                "F18: o mandato em curso não tem o seu rótulo."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "capturas": null,
+  "erros": [
+    "O portão build não está a zero."
+  ]
+}

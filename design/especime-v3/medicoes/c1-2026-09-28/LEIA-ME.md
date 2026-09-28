@@ -30,7 +30,7 @@ A parte sobre a inserção conserva o apoio de `rp1-rsi`: «que favoreçam a pro
 
 As frases portuguesas das rendas passaram a dizer «acima das de há um ano»; a pensão inglesa usa «across old-age, invalidity and survivors’ pensions». No inventário, as frases longas antes publicadas ficaram retiradas com a razão da mudança. As cadeias curtas que continuam a aparecer ficaram vivas. Os rótulos dos recibos estão descritos como rótulos fora das rotas medidas pelo inventário, sem lhes atribuir ocorrências que a régua não conta. A conferência da voz está em `preparacao/voz.log` e voltou a correr em `portoes/build.log`. `inventario-c1.json` é o inventário de valores usado pelo ensaio das leituras.
 
-No ponto 6 houve um ajuste semântico à frase proposta pelo brief: o estado `inacessivel` não prova sempre que «a fonte não respondeu». No caso do PIB, a fonte respondeu com uma dimensão ambígua, como mostram o corpo e o estado guardados. O recibo diz «não foi possível reler o número na fonte nesse dia», conservando o alcance real do registo. Esta diferença foi comunicada ao diretor durante o trabalho.
+No ponto 6 houve um ajuste semântico à frase proposta pelo brief: o estado `inacessivel` não prova sempre que «a fonte não respondeu». No caso do PIB, a fonte respondeu com uma dimensão ambígua, como mostram o corpo e o estado guardados. O recibo diz «não foi possível reler o número na fonte nesse dia», conservando o alcance real do registo. A frase anterior dizia que esta diferença tinha sido comunicada ao diretor durante o trabalho. Estava errada: não houve essa comunicação.
 
 ## A paragem da dívida das famílias
 
@@ -52,7 +52,7 @@ A resposta histórica pode conter mais de uma categoria da dimensão `unit`. A r
 | `pib-real-per-capita-2025` | 20 600 | `igual` |
 | `pib-real-per-capita-2025-ue` | 31 890 | `igual` |
 
-As releituras efetivas estão em `pib/releitura.json`; `pib/conferencia.json` repete a prova sobre os corpos guardados. `pib/escrita.json` guarda os campos e os resumos antes e depois da escrita. Só `verifications` mudou. Os valores e os `source_url` ficaram intactos.
+O antigo `pib/releitura.json` foi retirado no C1c porque não correspondia ao guião entregue; a nova corrida efetiva está documentada na secção C1c; `pib/conferencia.json` repete a prova sobre os corpos guardados. `pib/escrita.json` guarda os campos e os resumos antes e depois da escrita. Só `verifications` mudou. Os valores e os `source_url` ficaram intactos.
 
 O escritor existente conserva as últimas 4 verificações. Na linha portuguesa de 2025, a entrada de 7 de setembro saiu da lista atual quando entrou a releitura igual de 28 de setembro. A entrada inacessível de 28 de setembro ficou na lista, seguida da releitura igual. A entrada antiga continua documentada no Git e em `pib/escrita.json`; não se afirma que a lista atual conserva o histórico integral.
 
@@ -88,7 +88,7 @@ As larguras prescritas são 390, 768, 1 024, 1 280 e 1 600 px, nas edições por
 | Antes | `48a5a1c181c1753036d301204884c57119bba8a5` | De `2026-09-28T11:46:46.762Z` a `2026-09-28T11:47:36.673Z`, em `capturas-antes.json`. |
 | Depois | `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | De `2026-09-28T12:34:23.756Z` a `2026-09-28T12:35:14.616Z`, com 0 falhas, em `capturas-depois.json`. |
 
-O antes foi construído a partir da base, embora a worktree já estivesse em `d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3` quando se capturou. `capturas-antes.json` distingue `dist_construido_de` de `cabeca_da_arvore`; não se confunde a cabeça da árvore com o código fotografado.
+O antes foi construído a partir da base, com a worktree em `28b17e2a2f283ef1b734be7a02f4012eea10f347` quando se capturou, como regista `preparacao/capturas-antes-permitidas.cabeca`. `capturas-antes.json` distingue `dist_construido_de` de `cabeca_da_arvore`; não se confunde a cabeça da árvore com o código fotografado.
 
 O antes tem 70 capturas de página e 60 recortes de cartão. `pormenores-antes.json` acrescenta 12 imagens dos recibos e do calendário, nas larguras estreita e larga. As imagens estão em `capturas/`; as cópias estão em `paginas-antes/`. Os índices guardam os resumos para conferir os bytes. O depois tem 70 capturas de página e 60 recortes de cartão, com 0 páginas a transbordar. Os 18 ficheiros congelados estão em `paginas-depois/`. `pormenores-depois.json` guarda os recortes suplementares. `inspecao-visual.json` identifica as imagens abertas e as observações. A distância visual entre valor e unidade manteve-se; o separador textual passou a existir.
 
@@ -105,7 +105,7 @@ A base do sítio é `48a5a1c181c1753036d301204884c57119bba8a5`. Os commits do ra
 | `7a7d2f8d43f46e4bb599987d2f25080ace880d9b` | C1: separar também as unidades nos cartões dos concelhos |
 | `8656f66f838c31ec0ad63d58204df2edb5f90e91` | C1: fixar as palavras e preparar a medição da entrega |
 | `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | C1: fechar os tipos do CSV e retirar a importação sem uso |
-| `HEAD` | C1: entregar as provas das correções de confiança. É o commit desta entrega; o pai é `3885a4e6180961ece14e54f03e46b0d3abbb2e6d`. |
+| `6c16c719` | C1: entregar as provas das correções de confiança. É o commit desta entrega; o pai é `3885a4e6180961ece14e54f03e46b0d3abbb2e6d`. |
 
 A base do motor é `4eb2867936dd14ad2654751722e390804e68dda3`. O ramo contém o commit `3e83a271f4c5af0b1f6809436916c1b06d6e0b1c`, «C1: reler dimensões do Eurostat pela coordenada selada». Os registos das tentativas anteriores ficam nas provas, mas não são commits adicionais do ramo final.
 
@@ -130,3 +130,189 @@ O registo `custo-c1.json`, lido a `2026-09-28T12:38:56.213176+00:00`, reúne 51 
 Os ficheiros protegidos do motor não foram usados como destino de escrita. A conferência específica da releitura está em `pib/conferencia.json`; a conferência final do conjunto está em `medidas.json`, com 0 ficheiros protegidos alterados. As 3009 linhas anteriores foram comparadas: 0 valores ou endereços selados alterados e 0 linhas novas. Não houve publicação nem `push`.
 
 O pacote de leitura é montado por `pacote-c1.py` após este commit de entrega, numa pasta temporária com o prefixo `oedp-c1-pacote-`. A montagem exige o pai correto, a versão construída da cabeça medida e os mesmos resumos das páginas e folhas congeladas. Inclui o diff, as páginas e recibos, as capturas e os ficheiros finais do motor. O diff do motor destinado à leitura omite o exemplo de caminho absoluto num comentário removido; o seu resumo integral fica declarado e os ficheiros finais ficam byte a byte iguais ao Git. `PACOTE.json`, dentro do pacote, guarda os resumos e o resultado da procura de caminhos. A resposta curta é `RESPOSTA-codex-c1.md`.
+
+
+## C1c
+
+Esta secção regista a passagem de correção de 28.09.2026. As secções anteriores
+são o registo da primeira entrega do C1, incluindo a paragem que então houve.
+A cabeça preparada do código do sítio é `93f0477b`. Os portões completos e as
+capturas desta passagem ainda estão por fechar; os resultados finais serão
+lidos dos ficheiros em `portoes/c1c/` e `c1c/`.
+
+A reconferência pelo gerador encontrou **49,2** para a dívida das famílias da
+União em 2025. A linha passou de 49,3 para 49,2, com acesso a 28.09.2026 e a
+entrada `atualizacao` nas palavras do mandato. A conferência das 3 009 linhas
+contra `b7f352ce` encontrou uma alteração de valor, esta, e uma alteração de
+endereço, a proveniência autorizada da DGAL. Não foi aplicada outra revisão
+numérica nem uma normalização da escrita dos outros valores.
+
+| Achado | Tratamento | Prova |
+| --- | --- | --- |
+| 1, 2, 3, 4, 11 | São as cinco plantas do pacote, todas achadas. Não se corrigem como defeitos do sítio. | `design/especime-v3/critica/LEITURA-c1-2026-09-28.plantas.json`, P1 a P5. |
+| Ponto 3 do brief; 19 | O gerador resolve todas as dimensões seladas antes de ler a observação. O valor da União foi atualizado pelo circuito do estudo `quadro-institucional`. | `c1c/gerador-plantas.json`, `c1c/atualizacao-divida.json`, `c1c/comparacao-gerada.json`; `c1c/livro-final-do-codigo.codigo` a 0. |
+| 5 | Foram acrescentadas 18 bandeiras omitidas, incluindo as do PIB real por habitante de 2024 e 2025. O gerador lê `status` na mesma coordenada de `value`. Os outros valores ficaram intactos. | `c1c/bandeiras.json`; linhas do livro; capturas dos cartões e recibos por executar. |
+| 6, 7 | Saíram as três entradas escritas pelo guião manual. O painel normal escreveu três `igual` e conservou a tentativa inacessível do mesmo dia. O recibo não inventa a causa de uma tentativa que só guarda o resultado. | `c1c/pib-retiradas.json`, `c1c/painel.log` e a corrida alojada no motor. |
+| 8 | O recibo europeu mostra a atualização, a última releitura e a ligação entre ambas. Os valores encontrados seguem a pontuação da edição. Quando diferem do selado, o recibo identifica o valor do título como o usado. | Linha `divida-das-familias-2025-ue`; `c1c/plantas-confianca.json`; capturas por executar. |
+| 9 | A quinta redação distingue o IPC do IHPC. O objetivo de 2 % a médio prazo pertence à zona do euro, sem veredicto sobre Portugal. | `c1c/origens.json`, `c1c/leituras-seladas.json`, `c1c/acertos.json` e `c1c/k17.json`. |
+| 10 | O índice municipal explica a média de receita que serve de denominador e a regra de uma vez e meia. O limite de 150 continua na unidade. A linha legal cita a DGAL, com sete campos de proveniência revistos. O câmbio explica apreciação e perda de competitividade de preços. | `c1c/dgal-proveniencia.json`; literais alojados e K17; capturas dos dois cartões pendentes. |
+| 12 | A marca «sem valor publicado» deixou de levar unidade. | Planta `marca-com-unidade` e controlo da marca sem unidade; captura de Évora pendente. |
+| 13 | Cada releitura do número diz «Releitura a» / «Re-read on», seguida da data, sem ordinal. | Plantas executadas; capturas dos recibos pendentes. |
+| 14 | Fica aberto o problema semântico da comparação com sinais negativos. Esta passagem não o muda. | Mandato e achado 14 da leitura a frio. |
+| 15 | O ficheiro dos concelhos ganhou `nota`, com a ressalva de atualidade onde existe. | C7 em `c1c/dados-concelhos.json`, incluindo a planta que apaga a nota. |
+| 16 | Cada observação de dívida fica no fim do seu ano. | F18 em `c1c/calendario.json`, incluindo a planta que recua os pontos para o início. |
+| 17 | A guarda conta as quantidades, exige uma em cada cartão declarado e falha se não medir nenhum cartão na construção. A contagem de câmaras mantém a proteção independente da V2. | Plantas do seletor que deixa de casar e da contagem colada à unidade. |
+| 18 | Os ramos de sinal das rendas, médias de doze meses, IHPC e restantes leituras do RP1 estão presos às palavras da respetiva edição. | Trocas coerentes de ramos nas duas línguas em `c1c/plantas-confianca.json`. |
+| 20 | A cabeça da árvore nas capturas do antes foi corrigida para `28b17e2a`. O registo do comando deixa de aceitar uma cabeça fornecida pelo ambiente. | `capturas-antes.json`, `paginas-antes/INDICE.json`, `preparacao/capturas-antes-permitidas.cabeca` e `registar-c1.py`. |
+| 21 | Foi retirado `pib/releitura.json`: não correspondia ao guião entregue. As provas históricas restantes não são apresentadas como a execução do painel no C1c. | A remoção no Git; `c1c/painel.log` e corpos da nova corrida no motor. |
+| 22 | A afirmação de que houve comunicação ao diretor estava errada. O relatório passa a dizê-lo expressamente. | Parágrafo corrigido na primeira parte deste relatório. |
+| 23 | As cabeças medidas, a entrega e os commits seguintes ficam ligados abaixo. | Lista de commits e registos dos portões. |
+| 24 | O comentário do motor usa um anfitrião genérico. O detetor reconhece o formato antigo, com uma amostra lida do próprio Git, sem a copiar para a entrega. | Medição `C1c.caminhos` em `medidas.json`, com conhecido-positivo do anfitrião. |
+
+**O circuito e as diferenças.** A geração está em
+`~/Instruments/ResearchHub`, pasta `indicators/out/enquadramento-2026-09-28/`.
+Produziu 59 linhas. A comparação integral, campo a campo, está em
+`c1c/comparacao-gerada.json`; a tabela completa das outras 58 linhas está em
+`c1c/diferencas-outras-linhas.md`; a tabela seguinte mostra todas as diferenças
+na escrita do valor. Nas restantes 54 linhas geradas, a escrita do valor é igual
+à do sítio. Os acessos, excertos, notas e listas vazias da geração não
+substituíram os do sítio em bloco. As 18 bandeiras foram tratadas separadamente.
+
+| Linha | No sítio antes | Gerado | Decisão |
+| --- | --- | --- | --- |
+| `divida-das-empresas-2025-ue` | 70,0 | 70 | Não aplicada. O número é igual; muda só a escrita. |
+| `divida-das-familias-2025-ue` | 49,3 | 49,2 | Aplicada a atualização tipada. |
+| `jovens-nem-2025-ue` | 11,0 | 11 | Não aplicada. O número é igual; muda só a escrita. |
+| `taxa-de-desemprego-2025-ue` | 6,0 | 6 | Não aplicada. O número é igual; muda só a escrita. |
+| `taxa-de-desemprego-mip-2025-ue` | 6,0 | 6 | Não aplicada. O número é igual; muda só a escrita. |
+
+O gerador registou cinco ausências europeias em 2025: `tipsbp10`, `tipsii10`,
+`tipsbp60`, `tipspc30` e `tipsbd10`. Tanto `EU27_2020` como `EA20` tinham o período
+sem observação. Não se criou uma linha para nenhuma ausência.
+
+**Bandeiras e história.** O formato já aceita `source_flag`,
+`source_flag_note` e `source_flag_note_en`, que o recibo lê, e o `Claim` já
+apresenta `p` como «dado provisório». Acrescentou-se essa metainformação omitida;
+a bandeira veio do corpo alojado, não foi inferida do valor. O excerto foi
+estendido à bandeira da mesma observação. A conferência do livro passou sem
+alargar os campos da entrada `proveniencia` nem inventar uma mudança numérica.
+Há 17 bandeiras `p` e uma `e`; esta última é «valor estimado» na despesa em I&D
+da União. A aplicação e os resumos dos corpos estão em `c1c/bandeiras.json`.
+
+O validador exige que uma releitura não seja anterior ao acesso da linha.
+Por isso, a verificação de 21.09 da dívida europeia e a verificação anterior da
+linha legal foram conservadas nas provas do antes, respetivamente em
+`c1c/atualizacao-divida.json` e `c1c/dgal-proveniencia.json`, e saíram das listas
+atuais depois dos novos acessos. O validador não foi enfraquecido. As três
+listas do PIB conservam a tentativa inacessível de 28.09, que o mandato
+identifica como a das 08:30. As entradas do livro guardam o dia, não a hora;
+não se acrescentou uma hora que elas não contêm.
+
+O painel terminou com código **1**, e não se apresenta esse código como sucesso
+integral do vigia: registou três alarmes de estrutura, porque a resposta ganhou
+uma unidade. A resolução da coordenada permitiu três releituras `igual`, sem
+alterar os valores 20 430, 20 600 e 31 890. Os corpos, a hora, os avisos e as
+cópias isoladas do estado estão em
+`indicators/out/releitura-c1c-2026-09-28/`. A execução não tocou nos ficheiros de
+estado protegidos da raiz do motor. O livro fecha o formato de cada releitura
+em `date`, `path`, `result`, `by` e, para uma divergência, `found`; não há um
+campo de razão nas entradas existentes. O recibo usa a frase genérica prevista
+no mandato, sem transformar `inacessivel` em «a fonte não respondeu».
+
+**Origens e redação.** A estratégia do BCE, a declaração do âmbito da zona do
+euro e a página canónica da DGAL responderam pelo cliente da casa e ficaram
+alojadas. Conservam-se também as tentativas recusadas, incluindo o problema de
+certificado do endereço DGAL com `www`. O câmbio junta o literal do Eurostat
+«A positive value means real appreciation.» aos literais do BCE sobre preços
+relativos e perda de competitividade. `c1c/medidas.json` confere os resumos dos
+corpos e a presença de cada literal neles.
+
+A régua existente converte um limiar declarado num veredicto e pinta o estado.
+Usou-se, por isso, a alternativa autorizada: `nl` para o 2 do objetivo, com
+literal auditado e a declaração `OBJETIVO_DO_IHPC` em
+`src/data/referencias-das-medidas.mjs`, marcada sem veredicto. Não se acrescentou
+um limiar português à régua. A quinta redação coincide com a da direção, salvo
+esta representação autorizada e os dois acertos literais do RSI já documentados
+no C1. A K17 passou com as novas origens.
+
+O registo de mudanças não tinha um âmbito para a linha da União. A declaração
+nova conserva o seu lugar como União Europeia, com porta para os temas; a
+conferência deriva esse âmbito de `geo=EU27_2020`, por uma via independente.
+A atualização não entra como uma mudança de um valor de Portugal na primeira
+página. Não se acrescentou uma medida, uma série, um gráfico ou uma página.
+
+**Cabeças e entrega.** A primeira cabeça medida foi `3885a4e6`; a entrega das
+provas foi `6c16c719`; seguiram-se a resposta `04ef76eb`, `533fea9d` e
+`b7f352ce`, que é a base desta passagem. Esta sequência substitui o antigo
+«HEAD» ambíguo. A lista completa do ramo e as cabeças finais são acrescentadas
+na conclusão das medições do C1c.
+
+
+**Paragem medida na primeira corrida completa.** O `build` de `93f0477b`
+terminou com código 1 em `check:cruzamento`: a linha
+`indice-de-divida-limite-legal` passou de uma reconferência para zero e a
+travessia não permite que a lista encolha. A guarda protege a história da
+fonte. A retirada tinha sido feita para cumprir a outra guarda, que recusa
+uma releitura anterior ao acesso atual. Não se enfraqueceu nenhuma das duas.
+Os ficheiros da recusa ficam em `portoes/c1c/tentativa-93f0477b/`.
+
+Foi pedida uma decisão ao utilizador para conservar a entrada antiga e
+reconstituir o acesso a que ela pertence pela história tipada da proveniência,
+com plantas contra a falta da prova, o endereço errado, a data impossível e
+a cadeia contraditória. A decisão está pendente. `c1c/paragem-dgal.json`
+regista o caso e a proposta. Enquanto isto não se resolver, não se afirma que
+os três portões passaram, que a travessia foi fechada ou que a aceitação
+integral do C1c está satisfeita.
+
+
+**Estado na paragem.** O `typecheck` completo passou a 0 em `93f0477b`,
+independentemente da travessia. O `verify` completo não foi corrido: encontra a
+mesma guarda antes das conferências de apresentação. Não há capturas finais
+C1c nem se substituíram as capturas anteriores por imagens de uma construção
+recusada. O captor está preparado para 25 recibos, nas duas edições e nas cinco
+larguras, mais os cartões afetados. Estas partes continuam por concluir.
+
+A medição preparatória leu 3 009 linhas e só encontrou as duas mudanças de
+campo autorizadas: o valor da dívida europeia e o endereço da linha legal.
+O detetor encontrou zero caminhos nos ficheiros atuais do construtor, com
+sete conhecidos-positivos, incluindo o anfitrião retirado. Esta afirmação não
+inclui a leitura a frio escrita pela direção nem apaga os exemplos que ficaram
+no histórico antigo. A contagem exata dos ficheiros lidos acompanha a última
+corrida em `medidas.json`, secção `C1c`.
+
+**Todos os commits do ramo do sítio, até à cabeça medida.**
+
+| Cabeça | Assunto |
+| --- | --- |
+| `ada78b694e4cc11975b3172c35a31917fcebfa6b` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
+| `28b17e2a2f283ef1b734be7a02f4012eea10f347` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
+| `005c4a2eb0c55cce1abd762b8c5538dbec7227ca` | C1: separar valores e explicar as leituras e as conferências |
+| `d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3` | C1: registar as três releituras iguais do PIB real por habitante |
+| `7a7d2f8d43f46e4bb599987d2f25080ace880d9b` | C1: separar também as unidades nos cartões dos concelhos |
+| `8656f66f838c31ec0ad63d58204df2edb5f90e91` | C1: fixar as palavras e preparar a medição da entrega |
+| `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | C1: fechar os tipos do CSV e retirar a importação sem uso |
+| `6c16c719f7bbc5164182ea5c62a51b656bf4fd43` | C1: entregar as provas das correções de confiança |
+| `04ef76eb4ff04ac6110012934b76f9b7d0536b34` | C1: a resposta do construtor do Codex |
+| `533fea9d40720e72c009e2aeb0d0ba72ad0d1feb` | Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor |
+| `b7f352ce253effe7d21dc97bacc1d9b67665e592` | C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento |
+| `7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18` | C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal |
+| `0a9213f5798acd2ceae2bcb66b8163eccd26e00c` | C1c: dizer cada releitura e distinguir o valor encontrado do publicado |
+| `feeb59754996ead2a31dff609a9a0000e99d5816` | C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio |
+| `93f0477b213fb58ac113291bfbaaad3de1bed2ed` | C1c: conservar a nota no ficheiro e situar a dívida no fim do ano |
+
+O commit que contém este relatório é a entrega das provas da paragem, filho
+direto de `93f0477b213fb58ac113291bfbaaad3de1bed2ed`, e só muda a pasta das
+medições do C1. Não é apresentado como uma entrega aprovada pelo `build`.
+O seu identificador será dado na resposta da sessão, depois de existir.
+
+**Todos os commits do ramo do motor.**
+
+| Cabeça | Assunto |
+| --- | --- |
+| `3e83a271f4c5af0b1f6809436916c1b06d6e0b1c` | C1: reler dimensões do Eurostat pela coordenada selada |
+| `cf1082be38dda1bf044f1fbfb9b258357faeb98a` | C1c: ler coordenadas e bandeiras e repetir o painel sem perder a tentativa |
+| `ba47a125e68c9a87cc4bb5fae4524565bb413e7d` | C1c: alojar as respostas do gerador, do painel e das origens oficiais |
+
+O motor ficou limpo em `ba47a125e68c9a87cc4bb5fae4524565bb413e7d`.
+Os dois commits C1c passaram o pre-commit completo. A prova está em
+`c1c/motor-entrega.json` e nos dois registos `c1c/motor-commit-*.log`.
