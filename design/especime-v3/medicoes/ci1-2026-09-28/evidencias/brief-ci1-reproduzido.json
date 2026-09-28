@@ -1,0 +1,43 @@
+{
+  "brief": "design/observatorio/BRIEF-CI1-o-portao-em-metade-do-tempo.md",
+  "guiao": "design/observatorio/medidas/BRIEF-CI1.py",
+  "cabeca_lida": "a677770f",
+  "medidas": [
+    {
+      "nome": "passos_do_build",
+      "valor": 21,
+      "comando": "git show a677770f:package.json · scripts.build partido em &&",
+      "conhecido_positivo": {
+        "o_que": "a cadeia do build tem a construção do Astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_do_verify",
+      "valor": 33,
+      "comando": "o mesmo ficheiro · scripts.verify partido em &&",
+      "conhecido_positivo": {
+        "o_que": "a cadeia do verify tem a conferência das palavras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_repetidos",
+      "valor": 17,
+      "comando": "os passos do verify que são exatamente um passo do build",
+      "conhecido_positivo": {
+        "o_que": "a conferência do HTML é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "trabalhos_da_corrida",
+      "valor": 1,
+      "comando": "git show a677770f:.github/workflows/portao.yml · as chaves de dois espaços debaixo de jobs:",
+      "conhecido_positivo": {
+        "o_que": "o trabalho chama-se portao, o nome que a proteção de main exige",
+        "encontrado": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "o_que": "o que o check:alvos navega e espera, lido no registo do npm run verify inteiro (build-B1) e no código da conferência, e o que o Playwright instalado diz do networkidle",
+ "rotas_do_axe": 46,
+ "passagens": 230,
+ "larguras": [
+  390,
+  641,
+  768,
+  1023,
+  1280
+ ],
+ "espera_fixa_ms_por_passagem": 120,
+ "networkidle_ms": 500,
+ "networkidle_texto": "'networkidle'` - **DISCOURAGED** wait until there are no network connections for at least `500` ms",
+ "playwright": "1.60.0",
+ "fontes": {
+  "registo": "evidencias/verify-inteiro-B1.json (o cronómetro) e o registo do mesmo comando",
+  "codigo": "tests/acessibilidade/alvos.mjs",
+  "tipos": "node_modules/playwright-core/types/types.d.ts"
+ },
+ "espera_minima_s": 142.6
+}
