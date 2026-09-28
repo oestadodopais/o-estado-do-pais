@@ -1,0 +1,70 @@
+{
+  "brief": "design/observatorio/BRIEF-F22b-as-corridas-prontas-a-armar.md",
+  "guiao": "design/observatorio/medidas/BRIEF-F22b.py",
+  "cabeca_lida": "a677770f",
+  "medidas": [
+    {
+      "nome": "portao_corre_em_qualquer_ramo",
+      "valor": true,
+      "comando": "git show a677770f:.github/workflows/portao.yml · o bloco on: tem push e não tem branches",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê um filtro de ramos num bloco construído",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro",
+      "valor": 3009,
+      "comando": "git ls-tree a677770f -- ledger/claims/ · os .yml",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a linha da inflação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_carimbo_do_painel",
+      "valor": 91,
+      "comando": "as mesmas linhas · pelo menos uma reconferência com by: painel-semanal",
+      "conhecido_positivo": {
+        "o_que": "a linha da União da dívida das famílias é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_carimbo_do_corredor",
+      "valor": 2545,
+      "comando": "as mesmas linhas · pelo menos uma reconferência com by: corredor-diario",
+      "conhecido_positivo": {
+        "o_que": "a linha do limite legal da dívida dos municípios é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_do_painel_semanal",
+      "valor": 6,
+      "comando": "git log --format='%h %s' a677770f · os assuntos que começam por «Painel semanal de»",
+      "conhecido_positivo": {
+        "o_que": "o de 28.09 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_do_painel_de_28_09",
+      "valor": 93,
+      "comando": "git show --name-only 17758ec7 · os ficheiros do commit",
+      "conhecido_positivo": {
+        "o_que": "o estado da verificação é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_mudadas_pelo_painel_de_28_09",
+      "valor": 91,
+      "comando": "os mesmos ficheiros · os de ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha da União da dívida das famílias é um deles",
+        "encontrado": true
+      }
+    }
+  ]
+}
