@@ -34,6 +34,14 @@ def medir(dist, prova):
             plantada = conferir([('pagina-construida.html', copia)])
             r['plantas'].append({'id':f'nome-do-git-{i+1}', 'pagina_base':str(pagina.relative_to(dist)),
                                 'mordeu':plantada['quantidade']==1, 'falha':'nome pessoal ou caminho local na página construída'})
+        from unittest.mock import patch
+        # A mesma página pode conter URL, seletor CSS e palavras de código.
+        inocuo = b'<style>:root { color: red }</style><a href="https://example.org">root runner app</a>'
+        for nome in ('', 'root', 'runner', 'app', 'code'):
+            pasta = Path('/') / nome
+            with patch.object(detetor.Path, 'home', return_value=pasta):
+                r['plantas'].append({'id': 'pasta-generica-' + (nome or 'raiz'),
+                                    'mordeu': not detetor.tem_caminho(inocuo)})
         for i, caminho in enumerate(detetor.proibidos()):
             r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html',corpo+b'<p>'+caminho+b'</p>')])['quantidade']==1})
     r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas'])
