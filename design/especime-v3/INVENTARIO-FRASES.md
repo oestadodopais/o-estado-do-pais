@@ -531,8 +531,8 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 26 provenance revisions | até 2026-08-26 | viva | — |
-| conteudo | 26 revisões de proveniência | até 2026-08-26 | viva | — |
+| conteudo | 26 provenance revisions | c1c | retirada | A revisão da proveniência do limite legal acrescentou sete entradas; a contagem passou a 33. |
+| conteudo | 26 revisões de proveniência | c1c | retirada | A revisão da proveniência do limite legal acrescentou sete entradas; a contagem passou a 33. |
 | conteudo | A política | até 2026-08-26 | viva | — |
 | conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 | viva | — |
 | conteudo | An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed: | até 2026-08-26 | viva | — |
@@ -3380,3 +3380,27 @@ documentada aqui, sem declarar frases vivas que não sejam recolhidas.
 já usado na ligação para o mandato. Não se introduziu uma nova redação. A F18
 confere o rótulo dentro do segmento aberto e a posição de cada dívida no
 calendário comum; a proteção da I77 sobre o nome por verificar mantém-se.
+
+## C1c · a passagem de correção de 28.09.2026
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 33 provenance revisions | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | 33 revisões de proveniência | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | : (dado provisório) União Europeia : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | : (provisional data) European Union : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+
+Os rótulos dos recibos do C1 ficam substituídos por «Releitura a» / «Re-read on»,
+«a releitura encontrou:» / «the re-read found:» e «não foi possível reler o
+número nesse dia» / «the number could not be re-read that day». Não se atribui
+uma razão que a entrada não guarda. Quando há diferença, «O valor do título
+é o que esta página usa.» / «This page uses the value shown in the title.»
+distingue o publicado do encontrado. A porta «Ver a atualização deste valor»
+passa a render-se no recibo da dívida das famílias da União.
+
+A frase inglesa da dívida municipal intercala o sujeito antes de «collected»
+para não fazer regressar o cabeçalho retirado «Revenue collected». Conserva a
+média da receita corrente líquida cobrada nos três anos anteriores, que o
+literal da DGAL publica. A procura das frases retiradas não muda.

@@ -11,6 +11,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-09-26",
       "o_que": "a passagem de correção depois da leitura a frio do Codex: as palavras correntes dos termos que ela achou por explicar (os achados 7 a 14), com as origens pedidas a 26.09.2026, e a idade da taxa de atividade (o achado 15), nos acertos A18 a A26; e as duas leituras reescritas pelo lugar de direção (a disparidade salarial e as câmaras), relidas parte a parte"
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-09-28",
+      "o_que": "C1c: objetivo do BCE no IHPC, remissão na inflação, sentido da taxa de câmbio e regra da dívida municipal na DGAL."
     }
   ],
   "comuns": [
@@ -1863,7 +1868,9 @@
       "origens": [
         "eurostat-tipser10-descricao",
         "pdm-cambio-efectivo-real",
-        "painel-pdm"
+        "painel-pdm",
+        "c1c-eurostat-sinal-cambio",
+        "c1c-bce-competitividade"
       ],
       "folhas": [
         {
@@ -1972,6 +1979,29 @@
               "pt": "dentro do intervalo.",
               "en": "within the range.",
               "classe": "conta"
+            }
+          ]
+        },
+        {
+          "pt": " Uma subida é uma apreciação: os preços de Portugal sobem face aos dos parceiros e perde-se competitividade de preços.",
+          "en": " A rise is an appreciation: prices in Portugal increase relative to those of its partners and price competitiveness falls.",
+          "partes": [
+            {
+              "pt": " Uma subida é uma apreciação: os preços de Portugal sobem face aos dos parceiros e perde-se competitividade de preços.",
+              "en": " A rise is an appreciation: prices in Portugal increase relative to those of its partners and price competitiveness falls.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-eurostat-sinal-cambio",
+                  "campo": "excerto",
+                  "literal": "A positive value means real appreciation."
+                },
+                {
+                  "origem": "c1c-bce-competitividade",
+                  "campo": "excerto",
+                  "literal": "relative prices and export market shares … increase = worsening price competitiveness"
+                }
+              ]
             }
           ]
         }
@@ -2477,7 +2507,9 @@
     },
     {
       "id": "camaras",
-      "origens": [],
+      "origens": [
+        "c1c-dgal-limites"
+      ],
       "folhas": [
         {
           "pt": "Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em ",
@@ -2489,14 +2521,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "excerpt",
-                  "literal": "Índice de divida total (Índice permitido <= 150%)"
-                },
-                {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "document.locator",
-                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores."
                 }
               ]
             },
@@ -2517,14 +2544,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "excerpt",
-                  "literal": "Índice de divida total (Índice permitido <= 150%)"
-                },
-                {
-                  "linha": "indice-de-divida-limite-legal",
-                  "campo": "document.locator",
-                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município, incluindo a das entidades previstas no artigo 54.º, não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores."
                 }
               ]
             }
@@ -4707,7 +4729,8 @@
       "id": "ipc-variacao-homologa",
       "origens": [
         "rp1-ipc-homologa",
-        "rp1-ipc-metodo"
+        "rp1-ipc-metodo",
+        "c1c-bce-estrategia"
       ],
       "folhas": [
         {
@@ -4874,6 +4897,24 @@
                   "origem": "rp1-ipc-metodo",
                   "campo": "excerto",
                   "literal": "O Índice de Preços no Consumidor (IPC) é um indicador que tem por finalidade medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal. O IPC não é, assim, um indicador de níveis de preços, mas sim um indicador de síntese sobre a variação dos preços no consumidor ao longo do tempo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia.",
+          "en": " The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card.",
+          "partes": [
+            {
+              "pt": " O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia.",
+              "en": " The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-bce-estrategia",
+                  "campo": "excerto",
+                  "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
                 }
               ]
             }
@@ -6139,7 +6180,9 @@
       "origens": [
         "rp1-ihpc-comparavel",
         "rp1-ihpc-homologa",
-        "rp1-ihpc-uniao"
+        "rp1-ihpc-uniao",
+        "c1c-bce-estrategia",
+        "c1c-bce-ambito"
       ],
       "folhas": [
         {
@@ -6287,9 +6330,61 @@
               ]
             }
           ]
+        },
+        {
+          "pt": " O Banco Central Europeu procura uma inflação de ",
+          "en": " The European Central Bank aims for inflation of ",
+          "partes": [
+            {
+              "pt": " O Banco Central Europeu procura uma inflação de ",
+              "en": " The European Central Bank aims for inflation of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-bce-estrategia",
+                  "campo": "excerto",
+                  "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.",
+          "en": " % over the medium term across the euro area, measured by this same index.",
+          "partes": [
+            {
+              "pt": " % a médio prazo no conjunto da zona do euro, medida por este mesmo índice.",
+              "en": " % over the medium term across the euro area, measured by this same index.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-bce-estrategia",
+                  "campo": "excerto",
+                  "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+                },
+                {
+                  "origem": "c1c-bce-ambito",
+                  "campo": "excerto",
+                  "literal": "The primary objective of the ECB is to maintain price stability in the euro area."
+                }
+              ]
+            }
+          ]
         }
       ],
-      "algarismos": []
+      "algarismos": [
+        {
+          "nl": "2",
+          "apoios": [
+            {
+              "origem": "c1c-bce-estrategia",
+              "campo": "excerto",
+              "literal": "2% inflation over the medium term. Inflation is measured by the Harmonised Index of Consumer Prices (HICP)."
+            }
+          ]
+        }
+      ]
     }
   ]
 }

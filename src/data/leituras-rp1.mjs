@@ -1,4 +1,5 @@
-/** C1: quarta redação do lugar de direção, com os acertos literais do RSI. */
+/** Quinta redação. Acertos literais do RSI e alternativa sem veredicto do C1c. */
+import { OBJETIVO_DO_IHPC } from './referencias-das-medidas.mjs';
 export const LEITURAS_RP1 = {
   "ipc-variacao-homologa": {
     "pt": [
@@ -60,7 +61,8 @@ export const LEITURAS_RP1 = {
           " ",
           "A variação é igual à do mês anterior."
         ]
-      }
+      },
+      " O objetivo de inflação do Banco Central Europeu mede-se noutro índice, o harmonizado, e está no cartão da inflação na comparação europeia."
     ],
     "en": [
       {
@@ -121,7 +123,8 @@ export const LEITURAS_RP1 = {
           " ",
           "The change is the same as the previous month’s."
         ]
-      }
+      },
+      " The European Central Bank’s inflation target is measured on another index, the harmonised one, shown on the European comparison card."
     ]
   },
   "ipc-variacao-media-12-meses": {
@@ -625,7 +628,10 @@ export const LEITURAS_RP1 = {
           " ",
           "A variação é igual à da média da União Europeia."
         ]
-      }
+      },
+      " O Banco Central Europeu procura uma inflação de ",
+      { nl: OBJETIVO_DO_IHPC.nl, motivo: OBJETIVO_DO_IHPC.motivo },
+      " % a médio prazo no conjunto da zona do euro, medida por este mesmo índice."
     ],
     "en": [
       {
@@ -683,7 +689,10 @@ export const LEITURAS_RP1 = {
           " ",
           "The change is the same as the European Union average."
         ]
-      }
+      },
+      " The European Central Bank aims for inflation of ",
+      { nl: OBJETIVO_DO_IHPC.nl, motivo: OBJETIVO_DO_IHPC.motivo },
+      " % over the medium term across the euro area, measured by this same index."
     ]
   },
   "ipc-rendas-variacao-homologa": {

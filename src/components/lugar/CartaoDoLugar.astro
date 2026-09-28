@@ -68,7 +68,7 @@ function primeiraFrase(partes) {
   return saida.length ? saida : null;
 }
 
-const frase = tile.derivada ? null : primeiraFrase(tile.nota?.[lang] ?? null);
+const frase = tile.derivada && tile.chave !== 'indice' ? null : primeiraFrase(tile.nota?.[lang] ?? null);
 /* A RÉGUA É A PALAVRA DO ESTADO, e só existe onde há teto publicado e valor
    para comparar: é a do índice de dívida contra o limite legal, e quem a
    calcula é `pecasDoConcelho()`, com a linha do teto. */
@@ -112,14 +112,14 @@ const periodoDaFonte = (() => {
         <Claim id={tile.claim} lang={lang} as="span" class="cartao-medida-num" />
       )
     }
-    {' '}<CampoDaLinha
+    {!marca && <>{' '}<CampoDaLinha
       id={tile.claim}
       campo="unit"
       valor={unidade.texto}
       lang={lang}
       class="cartao-medida-unidade"
       lingua={unidade.lingua}
-    />
+    /></>}
     </span>
     <span class="cartao-medida-periodo">
       {' · '}
