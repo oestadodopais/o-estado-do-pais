@@ -470,3 +470,10 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | c1c | Seis cadeias novas e duas contagens retiradas | por ler pelo lugar de direção antes de aterrar | As cadeias novas dizem a bandeira provisória, a definição do índice municipal e a contagem efetiva de revisões de proveniência. A frase inglesa do índice evita fazer reaparecer o cabeçalho retirado «Revenue collected», conservando o sentido do literal da DGAL. As duas contagens antigas deixam de se render. A retoma inclui a proveniência do acesso europeu na contagem efetiva. Os rótulos dos recibos ficam documentados em prosa, sem alargar as rotas do inventário. As leituras do BCE e do câmbio continuam conferidas pela K17. |
+
+
+## PP1 · a primeira página de um leitor comum, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| pp1 | 77 cadeias novas e 4 retiradas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do PP1: a mobília da primeira página nova e das cinco páginas das entradas, nas duas edições (os títulos, a data de «O que se passa», as entradas, as secções, os estudos, as descrições); saem a descrição antiga da primeira página e a leitura do país. As palavras dos blocos e a lista dos números deles ficam fora da tabela com a marca `data-bloco-declarado`, conferidas por `tests/inicio/blocos.mjs`; a régua das frases muda de forma em `scripts/medir-defeitos.mjs`, com as plantas em `tests/inicio/regua-das-frases.mjs`. |

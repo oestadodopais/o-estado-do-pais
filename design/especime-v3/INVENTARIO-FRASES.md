@@ -3077,8 +3077,8 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 
 | classe | frase | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes. | b1-peca3-correcao2 | viva | descrição da primeira página ditada pelo lugar de direção; D1 confere a frase e o portão de HTML reconfere a contagem da Carta. |
-| navegacao | The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies. | b1-peca3-correcao2 | viva | edição inglesa da descrição ditada. |
+| navegacao | A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes. | pp1 | retirada | a descrição da primeira página saiu com o bloco PP1 (28.09.2026): a leitura do país e os números por tema deixaram de estar na primeira página, e a descrição passou a dizer o que se passa e as seis entradas (linha nova na secção do PP1). Estava ditada pelo lugar de direção no B1 |
+| navegacao | The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies. | pp1 | retirada | edição inglesa da descrição retirada; ver a razão na gémea portuguesa (bloco PP1, 28.09.2026) |
 | navegacao | Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo. | b1-peca3-correcao2 | viva | descrição da página dos temas ditada pelo lugar de direção e conferida pela D1. |
 | navegacao | All the country's measures, by theme, each with its value, its source and its receipt. | b1-peca3-correcao2 | viva | edição inglesa da descrição ditada. |
 
@@ -3098,8 +3098,8 @@ regime de ocupação. As retiradas estão no seu lugar no ficheiro, com a razão
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A dívida pública desceu de % para % do PIB num ano, pela notificação de abril publicada pelo Eurostat, e a segunda notificação do INE, de e ainda provisória, revê-a para % ( % em ); continua acima da média da União Europeia, que é de % . O desemprego está nos % , a par da média europeia , e os preços das casas subiram % num ano, contra % na União. | r1 | viva | a frase do lugar de direção de 23.09.2026 (bloco R1, I147, §1.124): as duas leituras oficiais da dívida, a do quadro do Eurostat, que é a notificação de abril, e a segunda notificação do INE, provisória. Os valores são linhas seladas; a data da notificação é o campo `published_at` da linha do INE e o ano entre parênteses é o `reference_date` da linha de 2024, e saem da contagem pela mesma razão. `scripts/voz-pais.mjs` confere a frase inteira, carácter a carácter, contra o texto da direção |
-| conteudo | Public debt fell from % to % of GDP in a year, by the April notification published by Eurostat, and the INE’s second notification of , still provisional, revises it to % ( % in ); it remains above the European Union average of % . Unemployment stands at % , level with the European average , and house prices rose % in a year, against % in the Union. | r1 | viva | ver a razão na gémea portuguesa (bloco R1, I147, 23.09.2026) |
+| conteudo | A dívida pública desceu de % para % do PIB num ano, pela notificação de abril publicada pelo Eurostat, e a segunda notificação do INE, de e ainda provisória, revê-a para % ( % em ); continua acima da média da União Europeia, que é de % . O desemprego está nos % , a par da média europeia , e os preços das casas subiram % num ano, contra % na União. | pp1 | retirada | a leitura do país saiu da primeira página com o bloco PP1 (28.09.2026, §1.133): prendia nove valores e fechava a construção quando um mudava; o que ela dizia está nos blocos de «O que se passa», com condições em vez de valores presos, e as palavras dos blocos são conferidas pela célula dos blocos (`tests/inicio/blocos.mjs`). Se a frase voltar, a construção fecha |
+| conteudo | Public debt fell from % to % of GDP in a year, by the April notification published by Eurostat, and the INE’s second notification of , still provisional, revises it to % ( % in ); it remains above the European Union average of % . Unemployment stands at % , level with the European average , and house prices rose % in a year, against % in the Union. | pp1 | retirada | edição inglesa da leitura do país retirada; ver a razão na gémea portuguesa (bloco PP1, 28.09.2026) |
 | conteudo | a fonte já publicou | r1 | viva | a frescura ao pé do período, nos cartões de um concelho cuja fonte já publicou um período mais recente do que o da linha (bloco R1, 23.09.2026, I146). O período da fonte e a data em que se leu saem de `src/data/frescura.mjs` com marca própria, pela mesma conta que o recibo faz, e o `check:formas` (F17) confere que a frase só se rende quando a fonte tem um período mais recente, e que se rende sempre que tem. «lido a», que vem a seguir, já estava declarado pelo bloco da frescura de 04.09.2026 |
 | conteudo | the source has already published | r1 | viva | ver a razão na gémea portuguesa (bloco R1, I146, 23.09.2026) |
 | conteudo | Consolidated debt of non-financial corporations, as a percentage of GDP. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
@@ -3404,3 +3404,99 @@ A frase inglesa da dívida municipal intercala o sujeito antes de «collected»
 para não fazer regressar o cabeçalho retirado «Revenue collected». Conserva a
 média da receita corrente líquida cobrada nos três anos anteriores, que o
 literal da DGAL publica. A procura das frases retiradas não muda.
+
+## PP1 · a primeira página de um leitor comum (28.09.2026)
+
+*A primeira página passou a ser «O que se passa» em cinco blocos, as seis entradas, os lugares, os
+estudos recentes e o veredicto com título seu, e nasceram as cinco páginas das entradas (`/o-meu-dinheiro`,
+`/o-meu-trabalho`, `/a-minha-casa`, `/a-escola-e-a-saude`, `/o-estado-e-a-economia` e as gémeas
+inglesas). **As palavras dos blocos não entram nesta tabela**: são do lugar de direção, em
+`src/data/primeira-pagina.mjs`, mudam com os ramos e com as condições, e levam a marca
+`data-bloco-declarado`, que a régua das frases honra só na primeira página e nas entradas, onde a
+célula dos blocos (`tests/inicio/blocos.mjs`) as reconta na mesma corrida. A lista «Os números deste
+bloco» leva a mesma marca, porque o sufixo e o provisório de cada linha mudam com os dados, e a célula
+confere o texto dela fora das marcas. **Os cartões das entradas leem-se como na página dos temas**: são
+o mesmo componente, com as mesmas leituras, e o K17 do `check:cartao` confere-as nas duas. O que fica
+aqui é a mobília: os títulos, as datas, os nomes e as linhas das entradas, as secções, os estudos e as
+descrições. Saem quatro linhas, com a razão no seu lugar: a descrição antiga da primeira página e a
+leitura do país, nas duas edições.*
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | O que se passa | pp1 | viva | o título da secção dos blocos da primeira página, declarado em `strings.mjs` (`primeira.oQueSePassa`) |
+| conteudo | What is happening | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os números mais recentes são de | pp1 | viva | o rótulo da data de «O que se passa»: a data é o período de referência mais recente das linhas dos blocos mostrados, pelo fim do período, com a marca `data-da-linha`, e a célula dos blocos reconta-a |
+| conteudo | The most recent figures are for | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | Por onde começar | pp1 | viva | o título da lista das seis entradas da primeira página; os nomes e as linhas das entradas vivem dentro das ligações |
+| navegacao | Where to start | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os números deste bloco | pp1 | viva | o título da dobra de cada bloco com os números que ele mostra, cada um com o seu recibo e o seu período; o texto das linhas da lista sai do inventário com a marca dos blocos e a célula dos blocos confere-o fora das marcas |
+| conteudo | The figures in this block | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os valores de referência da Comissão Europeia | pp1 | viva | o título da secção do veredicto, que passou a ter título seu na primeira página (§2, ponto 3, do brief do PP1); a frase do veredicto continua conferida pela V1 |
+| conteudo | The European Commission’s reference values | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | valor de referência | pp1 | viva | o rótulo da linha do valor de referência no desenho de colunas da dívida pública (`home.numeros.limiar`), ao lado do valor de `referencias.json` com a marca `limiar-do-quadro`, na primeira página e na entrada «O Estado e a economia» |
+| conteudo | reference value | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Places | pp1 | viva | o título da secção dos lugares na edição inglesa da primeira página (`ROTULOS_B1.lugares`); a portuguesa, «Lugares», já estava declarada |
+| navegacao | O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas: o meu dinheiro, o meu trabalho, a minha casa, a escola e a saúde, o Estado e a economia, a minha terra. | pp1 | viva | a descrição da primeira página, reescrita pelo construtor do PP1 porque a anterior dizia a leitura do país e os números por tema, que saíram da página; diz o que a página tem: o que se passa e as seis entradas, pelos nomes das declarações |
+| navegacao | What is happening in the country, told by the official figures read together, each with its source, and the ways in: my money, my work, my home, school and health, the state and the economy, my area. | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | O meu dinheiro | pp1 | viva | o nome de uma entrada (o `<h1>` da sua página), das declarações do lugar de direção em `src/data/primeira-pagina.mjs` |
+| navegacao | My money | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | O meu trabalho | pp1 | viva | o nome de uma entrada, das declarações |
+| navegacao | My work | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | A minha casa | pp1 | viva | o nome de uma entrada, das declarações; é o nome da pergunta do leitor («a minha casa»), e não a casa a falar de si |
+| navegacao | My home | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | A escola e a saúde | pp1 | viva | o nome de uma entrada, das declarações |
+| navegacao | School and health | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | O Estado e a economia | pp1 | viva | o nome de uma entrada, das declarações |
+| navegacao | The state and the economy | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | Os preços, os salários, as pensões e os apoios. | pp1 | viva | a linha de uma entrada, das declarações; é também a descrição da página dela |
+| navegacao | Prices, pay, pensions and benefits. | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | O emprego, o desemprego e os jovens. | pp1 | viva | a linha de uma entrada, das declarações, e a descrição da página dela |
+| navegacao | Employment, unemployment and young people. | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | O peso da habitação, as rendas e os preços. | pp1 | viva | a linha de uma entrada, das declarações (com o acerto A3 do PP1, «casa» por «habitação»), e a descrição da página dela |
+| navegacao | The cost of housing, rents and prices. | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | O abandono escolar, a creche e o acesso aos cuidados. | pp1 | viva | a linha de uma entrada, das declarações, e a descrição da página dela |
+| navegacao | Early school leaving, childcare and access to care. | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | <nome>, childcare and access to care. | pp1 | viva | a descrição inglesa da página «School and health» como a régua a conta: o nome do cartão do abandono escolar, «Early school leaving», é um nome declarado (`data-nome`) da mesma página, e a régua põe `<nome>` no lugar dele na descrição, pela regra das descrições das páginas de área |
+| navegacao | A dívida, o défice, o crescimento e as contas com o exterior. | pp1 | viva | a linha de uma entrada, das declarações, e a descrição da página dela |
+| navegacao | Debt, the deficit, growth and the external accounts. | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os preços | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Prices | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O salário | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Pay | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As pensões e os apoios | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Pensions and benefits | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A pobreza e a desigualdade | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Poverty and inequality | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As dívidas e o crédito das famílias | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Household debt and credit | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O emprego e o desemprego | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Employment and unemployment | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O custo do trabalho | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | The cost of labour | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os jovens e as diferenças entre homens e mulheres | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Young people and the gaps between men and women | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O peso da habitação | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações (com o acerto A4 do PP1, «casa» por «habitação») |
+| conteudo | The cost of housing | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As rendas | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Rents | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os preços e a construção | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Prices and building | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A escola | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | School | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A saúde | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Health | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As contas do Estado | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | The state’s accounts | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O crescimento e o investimento | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Growth and investment | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As contas com o exterior | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | The external accounts | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As empresas | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Companies | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A justiça | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Justice | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Portugal Economia e finanças públicas publicado a | pp1 | viva | texto composto de um estudo do país e da sua data, na lista dos estudos da entrada «O Estado e a economia» (a mesma composição da lista dos estudos recentes, `EstudoDaLista`) |
+| conteudo | Portugal Economy and public finances published on | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Portugal Investimento publicado a | pp1 | viva | texto composto de um estudo do país e da sua data, na lista dos estudos da entrada «O Estado e a economia» |
+| conteudo | Portugal Investment published on | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | (em inglês) | pp1 | viva | a língua de um estudo que só tem edição inglesa, na lista dos estudos da entrada «O Estado e a economia» (`ROTULOS_B1.outraLingua`); a gémea «(in Portuguese)» já estava declarada |
