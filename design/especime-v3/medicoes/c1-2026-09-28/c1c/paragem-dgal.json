@@ -1,0 +1,33 @@
+{
+  "estado": "aguarda decisão; a guarda não foi alterada",
+  "bloqueio": {
+    "travessia": "A lista de reconferências da linha legal encolheu de 1 para 0.",
+    "livro": "Uma releitura anterior ao access_date atual é recusada."
+  },
+  "cabeca_recusada": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+  "entrada_a_conservar": {
+    "date": "2026-09-01",
+    "path": "https://www.occ.pt/sites/default/files/public/2025-11/Anu%C3%A1rio%202024_OCC.pdf#page=22",
+    "result": "igual",
+    "by": "corredor-diario"
+  },
+  "acesso_antigo": "2026-08-10",
+  "acesso_novo": "2026-09-28",
+  "correcao_que_prova_o_acesso": {
+    "date": "2026-09-28",
+    "kind": "proveniencia",
+    "field": "access_date",
+    "old_value": "2026-08-10",
+    "new_value": "2026-09-28",
+    "reason": "A regra passa a citar a página oficial da DGAL sobre os limites de endividamento dos municípios. O limite de 150 % corresponde a 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores; o valor não mudou.",
+    "reason_en": "The rule now cites the official DGAL page on municipal debt limits. The 150% limit equals 1.5 times the average net current revenue collected in the previous three years; the value has not changed."
+  },
+  "proposta": "Conservar a reconferência e permitir a data anterior apenas quando a história tipada de proveniência reconstitui o acesso e o endereço anteriores. Manter a recusa sem essa prova, com endereço errado, com data anterior a todos os acessos ou com cadeia contraditória.",
+  "plantas_previstas": [
+    "sem entrada de proveniência do acesso",
+    "endereço anterior errado",
+    "releitura anterior ao acesso antigo",
+    "cadeia de proveniência quebrada",
+    "data de revisão anterior à releitura"
+  ]
+}

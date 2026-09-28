@@ -20,6 +20,7 @@ def publico(texto):
         texto = texto.replace(origem, destino)
     for prefixo in (str(Path.home().parent), tempfile.gettempdir(), '/private' + '/tmp', '/' + 'tmp'):
         texto = re.sub(re.escape(prefixo) + r'/[^\s"<>`\x1b]+', '<caminho local omitido>', texto)
+    texto = re.sub(r'\b[a-z0-9_-]*(?:macbook|imac|mac-mini|macmini)[a-z0-9_.-]*\.local\b', '<anfitrião local>', texto, flags=re.I)
     return re.sub(re.escape(Path.home().name), '<utilizador local>', texto, flags=re.I)
 
 
@@ -30,7 +31,7 @@ def main():
     p = AQUI / nome
     p.parent.mkdir(parents=True, exist_ok=True)
     agora = lambda: datetime.datetime.now(datetime.timezone.utc).isoformat()
-    cabeca = os.environ.get('C1_CABECA') or subprocess.check_output(
+    cabeca = subprocess.check_output(
         ['git', 'rev-parse', 'HEAD'], cwd=cwd, text=True).strip()
     for ext, valor in [('cabeca', cabeca), ('inicio', agora())]:
         Path(str(p) + '.' + ext).write_text(valor + '\n')
