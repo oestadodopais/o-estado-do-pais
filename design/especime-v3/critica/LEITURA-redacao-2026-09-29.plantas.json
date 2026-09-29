@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T07:55:40+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "a forma curta do nome passa a ser o primeiro e o segundo nome, e não o primeiro e o último: a forma que estava no ar deixa de ser procurada",
+   "sha256_antes": "c65e47374d9a25c35142c47b2d9846730676f6d3e309c6b0a8f9a2be63544bcf",
+   "sha256_depois": "30f0f5d9dc602e4d42ddc8faf38b7d083775851107132ad8848ecbe62f4df013",
+   "contexto_antes": "tor contar. */\nconst PARTES_DO_NOME = String(NOME_DE_QUEM_RESPONDE).split(/\\s+/).filter(Boolean);\nconst FORMAS_DO_NOME = [\n  ...new Set([NOME_DE_QUEM_RESPONDE, `${PARTES_DO_NOME[0]} ${PARTES_DO_NOME[PARTES_DO_NOME.length - 1]}`]),\n];\nconst veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));\nlet paginasComONome = 0;\n\nconst RESTANTES ",
+   "contexto_depois": "tor contar. */\nconst PARTES_DO_NOME = String(NOME_DE_QUEM_RESPONDE).split(/\\s+/).filter(Boolean);\nconst FORMAS_DO_NOME = [\n  ...new Set([NOME_DE_QUEM_RESPONDE, `${PARTES_DO_NOME[0]} ${PARTES_DO_NOME[1]}`]),\n];\nconst veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));\nlet paginasComONome = 0;\n\nconst RESTANTES "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "o conhecido-positivo só confere a primeira forma do nome, e a segunda pode deixar de ser vista sem que a construção feche",
+   "sha256_antes": "30f0f5d9dc602e4d42ddc8faf38b7d083775851107132ad8848ecbe62f4df013",
+   "sha256_depois": "722521fd683db776e4db5b97f9e9e582d5f279e4e2ee948e5328076c30686d47",
+   "contexto_antes": "ome nenhum, ou diz o mesmo nos dois lugares.`,\n    });\n  }\n  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero, uma vez por forma do nome. */\n  for (const forma of FORMAS_DO_NOME) {\n    if (!veONome(`<p data-prova>${forma}</p>`)) {\n      erros.push({\n        rel: 'scripts/gate-html.mjs',\n        msg:\n          `o detetor do nome de quem responde não encontrou uma das formas do nome numa l",
+   "contexto_depois": "ome nenhum, ou diz o mesmo nos dois lugares.`,\n    });\n  }\n  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero, uma vez por forma do nome. */\n  for (const forma of FORMAS_DO_NOME.slice(0, 1)) {\n    if (!veONome(`<p data-prova>${forma}</p>`)) {\n      erros.push({\n        rel: 'scripts/gate-html.mjs',\n        msg:\n          `o detetor do nome de quem responde não encontrou uma das formas do nome numa l"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "studies-src/manifest.yml",
+   "descricao": "o resumo normalizado declarado para o documento inglês do Alentejo e do Algarve troca dois algarismos",
+   "sha256_antes": "68191dab489852ee00f14068af6e4d786014af4e40781570dbc18f0efb25d357",
+   "sha256_depois": "c3607e701f6d1dda3f34bbb8dfc3fd334147e45505012de2b3d0cfcd9bbfd56e",
+   "contexto_antes": "es_raw: 79500\n    bytes_runtime_removed: 17141\n    bytes_normalized: 62359\n    sha256_raw: 54e2eacf1cff9fb866059603a9534dba605cf4f1288cad996b3c47e50c5b4010\n    sha256_normalized: 86a853ed1b8edbb307ec7c3165d038e31cea86875a469554f0bb4e3fb8a4e4f7\n  - slug: evolucao-de-portugal-desde-1981\n    lang: pt\n    title: \"Evolução de Portugal desde 1981\"\n    artifact_url: https://claude.ai/code/artifact/193481f2-",
+   "contexto_depois": "es_raw: 79500\n    bytes_runtime_removed: 17141\n    bytes_normalized: 62359\n    sha256_raw: 54e2eacf1cff9fb866059603a9534dba605cf4f1288cad996b3c47e50c5b4010\n    sha256_normalized: 86a853ed1b8edbb307ec7c3165d038e31cea86875a469554f0bb4e3fb8a4e7f4\n  - slug: evolucao-de-portugal-desde-1981\n    lang: pt\n    title: \"Evolução de Portugal desde 1981\"\n    artifact_url: https://claude.ai/code/artifact/193481f2-"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "design/especime-v3/medicoes/redacao-2026-09-29/auditoria.json",
+   "descricao": "a auditoria diz 246 ficheiros de texto mudados, contra os 264 da redação",
+   "sha256_antes": "9e37a50f608747d0cb8311064e2fd27cfe1188fa15e18e91a6bbe302ba8605a8",
+   "sha256_depois": "5d64e4e90933ce58e1e4616dbc4f55a12994d061eb01b8996d0b4389a61af21d",
+   "contexto_antes": "_do_nome_completo\": 121,\n  \"correio_pessoal\": 1,\n  \"familia\": 0,\n  \"lugar\": 0,\n  \"trabalho\": 0,\n  \"ficheiros_com_o_nome_de_utilizador\": 205\n },\n \"redacao\": {\n  \"ficheiros_de_texto_mudados\": 264,\n  \"trocas\": {\n   \"nome_dos_santos\": 117,\n   \"primeiro_e_ultimo_nome\": 3,\n   \"primeiro_nome_sozinho_e_outras_formas\": 32,\n   \"correio\": 1,\n   \"nome_de_utilizad",
+   "contexto_depois": "_do_nome_completo\": 121,\n  \"correio_pessoal\": 1,\n  \"familia\": 0,\n  \"lugar\": 0,\n  \"trabalho\": 0,\n  \"ficheiros_com_o_nome_de_utilizador\": 205\n },\n \"redacao\": {\n  \"ficheiros_de_texto_mudados\": 246,\n  \"trocas\": {\n   \"nome_dos_santos\": 117,\n   \"primeiro_e_ultimo_nome\": 3,\n   \"primeiro_nome_sozinho_e_outras_formas\": 32,\n   \"correio\": 1,\n   \"nome_de_utilizad"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que o gitleaks leu 1 438 commits do sítio, contra os 1 483 da auditoria",
+   "sha256_antes": "8839fb4cd8b4d831ebc094b3e6b5c5e975afc08baff995ec04ac48e908184b3d",
+   "sha256_depois": "0f65f9b52f6d7ce318ee6756638971a6cf92e6e579ba508385c98fe62fdb9e48",
+   "contexto_antes": "le via (dois segredos falsos num repositório de ensaio, um deles já apagado da árvore, os dois achados) e leu com ele a história inteira dos dois repositórios, 1 483 commits do sítio e 498 do motor: nenhum segredo do projeto; os candidatos eram etiquetas de dados públicos do Eurostat, uma frase de um relatório, ligações de painéis públicos ",
+   "contexto_depois": "le via (dois segredos falsos num repositório de ensaio, um deles já apagado da árvore, os dois achados) e leu com ele a história inteira dos dois repositórios, 1 438 commits do sítio e 498 do motor: nenhum segredo do projeto; os candidatos eram etiquetas de dados públicos do Eurostat, uma frase de um relatório, ligações de painéis públicos "
+  }
+ ]
+}
