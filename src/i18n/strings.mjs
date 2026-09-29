@@ -2105,6 +2105,34 @@ export const STRINGS = {
       conjuntoAmbito:
         'A licença cobre o conjunto: a estrutura, os valores deste projeto, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou.',
 
+      /* O RECIBO DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026): os países da União
+         numa tabela, com a fonte e a proveniência como os recibos das linhas. Os
+         nomes dos países não estão aqui: vêm da tabela de autoridade do Serviço
+         das Publicações (`src/data/paises-da-uniao.json`). */
+      serie: {
+        eyebrow: 'Série do livro-razão',
+        nosPaises: 'nos países da União',
+        metaSufixo: 'os países da União',
+        periodoK: 'Período',
+        pontosK: 'Os países e a União',
+        paisK: 'País',
+        valorK: 'Valor',
+        marcaK: 'Marca da fonte',
+        pedidoK: 'O pedido',
+        paginaDaFonteK: 'A página da série na fonte',
+        literalK: 'O que a resposta escreve',
+        lidoK: 'Lido a',
+        publicadoK: 'Atualizado pela fonte a',
+        gemeasK: 'As linhas que o cartão mostra',
+        linhaDePortugal: 'A linha de Portugal',
+        linhaDaUniao: 'A linha da União',
+        nomesK: 'Os nomes dos países',
+        nomesFrase: 'Os nomes dos países são os da tabela de autoridade dos países do Serviço das Publicações da União Europeia, lida a',
+        nomesPorta: 'A tabela',
+        estudoK: 'Estudo',
+        noutraEdicao: 'Esta série na edição inglesa',
+        outraEdicaoK: 'Noutra edição',
+      },
       linha: {
         eyebrow: 'Linha do livro-razão',
         aparelhoK: 'Proveniência',
@@ -3684,6 +3712,31 @@ export const STRINGS = {
       conjuntoAmbito:
         'The licence covers the dataset: its structure, this project’s values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms.',
 
+      /** Ver a razão na edição portuguesa (bloco UE1, 29.09.2026). */
+      serie: {
+        eyebrow: 'Ledger series',
+        nosPaises: 'in the EU countries',
+        metaSufixo: 'the EU countries',
+        periodoK: 'Period',
+        pontosK: 'The countries and the Union',
+        paisK: 'Country',
+        valorK: 'Value',
+        marcaK: 'Source mark',
+        pedidoK: 'The request',
+        paginaDaFonteK: 'The series page at the source',
+        literalK: 'What the response says',
+        lidoK: 'Read on',
+        publicadoK: 'Updated by the source on',
+        gemeasK: 'The lines the card shows',
+        linhaDePortugal: 'The line for Portugal',
+        linhaDaUniao: 'The line for the Union',
+        nomesK: 'The country names',
+        nomesFrase: 'The country names are those of the countries authority table of the Publications Office of the European Union, read on',
+        nomesPorta: 'The table',
+        estudoK: 'Study',
+        noutraEdicao: 'This series in the Portuguese edition',
+        outraEdicaoK: 'In the other edition',
+      },
       linha: {
         eyebrow: 'Ledger row',
         aparelhoK: 'Provenance',

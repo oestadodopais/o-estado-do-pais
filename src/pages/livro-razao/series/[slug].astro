@@ -1,0 +1,15 @@
+---
+/**
+ * Uma página por linha de série do livro-razão (bloco UE1, 29.09.2026), nas
+ * duas edições e da mesma construção. Os caminhos saem das próprias séries.
+ */
+import SerieView from '../../../views/SerieView.astro';
+import { allSeries } from '../../../lib/series.mjs';
+
+export function getStaticPaths() {
+  return allSeries().map((s) => ({ params: { slug: s.id } }));
+}
+
+const { slug } = Astro.params;
+---
+<SerieView lang="pt" id={slug} />

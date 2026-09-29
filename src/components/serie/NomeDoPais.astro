@@ -1,0 +1,16 @@
+---
+/**
+ * O NOME DE UM PAÍS DA UNIÃO (bloco UE1, 29.09.2026).
+ *
+ * Lido da tabela de autoridade dos países do Serviço das Publicações
+ * (`src/data/paises-da-uniao.json`), na língua da página, e de mais lado nenhum:
+ * nenhum nome de país se escreve à mão. O elemento sai com `data-pais` e o
+ * código, e o portão de HTML confere o texto contra a tabela, carácter a
+ * carácter.
+ */
+import { nomeDoPais } from '../../lib/series.mjs';
+
+const { geo, lang, class: klass = '' } = Astro.props;
+if (!lang) throw new Error(`<NomeDoPais geo="${geo}"> sem "lang": o nome muda com a língua da página.`);
+---
+<span class:list={['nome-do-pais', klass]} data-pais={geo}>{nomeDoPais(geo, lang)}</span>

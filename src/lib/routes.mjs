@@ -294,6 +294,17 @@ export const ROUTES = {
   },
   linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
   /**
+   * UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026): o recibo de uma série de
+   * `ledger/series/`, com os pontos numa tabela. Tem a sua rota, e não a de uma
+   * linha, porque uma série não é uma afirmação: as contagens do livro-razão, a
+   * dívida de proveniência e os invariantes de «uma página por linha» contam
+   * afirmações, e uma série no meio delas mudava-lhes o número. Dois segmentos
+   * depois de `/livro-razao/`, como `livroConcelho`, para não colidir com
+   * `linha`. Sem cartão de partilha próprio: `cartaoDaPagina()` dá-lhe o da
+   * primeira página, como a qualquer rota sem cartão.
+   */
+  serie: { pt: '/livro-razao/series/:slug', en: '/en/ledger/series/:slug' },
+  /**
    * A página do marcador. IDENTIDADE §6 promete «uma página que o explica» e
    * ela não existia; a explicação vivia numa oração do Método.
    */
