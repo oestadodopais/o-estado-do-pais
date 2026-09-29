@@ -14,12 +14,23 @@
  *   F19c · a posição de cada marca é a que o valor dá, com quatro casas, e os
  *          rótulos de Portugal e da União estão na posição das suas marcas;
  *   F19d · as pontas nomeiam o país mais baixo e o mais alto (todos, num
- *          empate), com o valor e a marca da fonte quando o ponto a tem;
+ *          empate), com o valor; quando o ponto leva marca da fonte, a ponta
+ *          di-la pelas palavras declaradas dessa marca, entre parênteses a seguir
+ *          ao valor, e nunca pela letra crua (a passagem UE1b); o texto da ponta
+ *          é, carácter a carácter, os nomes, o valor e a ressalva;
  *   F19e · a frase é, carácter a carácter, a recomposição das palavras declaradas
  *          com os pontos, os nomes da tabela, a contagem, o lugar e o período, no
  *          ramo que os valores mandam (com ou sem empate); e as marcas dela dizem
  *          os pontos e os países certos, pela ordem;
  *   F19f · a porta abre o recibo da série, na edição da página.
+ *
+ * E, uma vez por corrida e sem página (`conferirPalavrasDaFaixa`, UE1b):
+ *
+ *   F19g · o ordinal inglês (o acerto F4): para cada lugar de 1 a 27, o número
+ *          com o sufixo que a regra dos portões escolhe entre as palavras
+ *          declaradas é o da tabela escrita à mão (`ORDINAIS_INGLESES`);
+ *   F19h · as ressalvas: cada marca que um ponto de uma série leva tem palavras
+ *          declaradas nas duas edições, e nenhuma é a própria letra.
  *
  * O que ela NÃO confere, porque outro portão já o faz: que o texto de cada
  * `data-ponto` é o valor do ponto e que o nome de cada `data-pais` é o da tabela
@@ -27,7 +38,14 @@
  */
 import { parse } from 'node-html-parser';
 
-import { contaDaFaixa, posicaoNaFaixa, serieDaLinhaDoPortao, AGREGADO } from '../../scripts/series-do-portao.mjs';
+import {
+  contaDaFaixa,
+  posicaoNaFaixa,
+  serieDaLinhaDoPortao,
+  sufixoOrdinalDoPortao,
+  ORDINAIS_INGLESES,
+  AGREGADO,
+} from '../../scripts/series-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../../src/data/faixa-da-uniao.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
@@ -61,6 +79,7 @@ export function fraseEsperada(serie, lang, paises) {
         if ('paises' in p) return lista(papeis[p.paises]);
         if ('pais' in p) return nome(p.pais);
         if ('lugar' in p) return String(c.lugar);
+        if ('ordinal' in p) return sufixoOrdinalDoPortao(c.lugar, palavras.ordinal);
         if ('aPar' in p) return c.aPar.length ? compoe(c.aPar.length === 1 ? palavras.aPar.um : palavras.aPar.varios) : '';
         throw new Error('um pedaço da frase que a célula não conhece');
       })
@@ -76,7 +95,12 @@ export function fraseEsperada(serie, lang, paises) {
  */
 export function conferirFaixas(root, lang, rota, { series, paises }) {
   const erros = [];
-  const contas = { faixas: 0, marcas: 0, frases: 0, empates: 0 };
+  const contas = { faixas: 0, marcas: 0, frases: 0, empates: 0, ressalvas: 0 };
+  const palavras = PALAVRAS_DA_FAIXA[lang];
+  const nomeDe = (geo) => {
+    const p = paises.get(geo);
+    return p ? (lang === 'en' ? p.en : p.pt) : `(${geo} sem nome na tabela)`;
+  };
   const erro = (celula, id, msg) => erros.push(`${celula} · ${rota} · ${id}: ${msg}`);
 
   for (const faixa of root.querySelectorAll('[data-faixa-ue]')) {
@@ -147,9 +171,29 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
       if (nomeados.join(',') !== geos.join(',')) erro('F19d', id, `a ponta «${papel}» nomeia ${nomeados.join(', ') || 'ninguém'} e o ${papel === 'baixo' ? 'mais baixo' : 'mais alto'} é ${geos.join(', ')}`);
       const valores = ponta.querySelectorAll('[data-ponto]').map((e) => e.getAttribute('data-ponto'));
       if (valores.join(',') !== `${serie.id}#${geos[0]}`) erro('F19d', id, `a ponta «${papel}» escreve o valor de ${valores.join(', ') || 'nenhum ponto'}`);
+      /* A ressalva da fonte (UE1b): as palavras declaradas da marca do ponto,
+         e nunca a letra crua. */
       const ponto = serie.pontos.find((p) => p.geo === geos[0]);
-      const bandeira = ponta.querySelector('[data-ponto-bandeira]');
-      if (Boolean(ponto?.bandeira) !== Boolean(bandeira)) erro('F19d', id, `a ponta «${papel}» ${ponto?.bandeira ? 'não mostra a marca da fonte que o ponto leva' : 'mostra uma marca que o ponto não leva'}`);
+      const marca = ponto?.bandeira ? String(ponto.bandeira) : null;
+      const palavrasDaMarca = marca ? palavras.ressalvas?.[marca] ?? null : null;
+      const ressalvas = ponta.querySelectorAll('[data-faixa-ressalva]');
+      if (ponta.querySelector('[data-ponto-bandeira]')) erro('F19d', id, `a ponta «${papel}» mostra a letra crua da marca da fonte; a faixa di-la por palavras`);
+      if (!marca) {
+        if (ressalvas.length) erro('F19d', id, `a ponta «${papel}» mostra uma ressalva e o ponto de ${geos[0]} não leva marca da fonte`);
+      } else if (ressalvas.length !== 1) {
+        erro('F19d', id, `a ponta «${papel}» tem ${ressalvas.length} ressalva(s) e o ponto de ${geos[0]} leva a marca «${marca}»`);
+      } else if (ressalvas[0].getAttribute('data-faixa-ressalva') !== `${serie.id}#${geos[0]}` || ressalvas[0].getAttribute('data-bandeira') !== marca) {
+        erro('F19d', id, `a ressalva da ponta «${papel}» diz ser da marca «${ressalvas[0].getAttribute('data-bandeira')}» de «${ressalvas[0].getAttribute('data-faixa-ressalva')}», e o ponto de ${geos[0]} leva «${marca}»`);
+      } else if (!palavrasDaMarca) {
+        erro('F19d', id, `a marca «${marca}» do ponto de ${geos[0]} não tem palavras declaradas (${lang})`);
+      } else if (norm(ressalvas[0].text) !== `(${palavrasDaMarca})`) {
+        erro('F19d', id, `a ressalva da ponta «${papel}» diz «${norm(ressalvas[0].text)}» e as palavras declaradas da marca «${marca}» são «(${palavrasDaMarca})»`);
+      } else {
+        contas.ressalvas++;
+      }
+      const valorDaPonta = String(ponto?.valor ?? '').replace(/(?<=\d)[   ](?=\d)/g, ' ');
+      const textoEsperado = norm(`${geos.map(nomeDe).join(', ')} ${valorDaPonta}${palavrasDaMarca ? ` (${palavrasDaMarca})` : ''}`);
+      if (norm(ponta.text) !== textoEsperado) erro('F19d', id, `a ponta «${papel}» diz «${norm(ponta.text)}» e a recomposição dá «${textoEsperado}»`);
     }
     /* F19e · a frase */
     const frase = faixa.querySelector('[data-faixa-frase]');
@@ -189,6 +233,80 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
     if (!porta || porta.getAttribute('href') !== destino) erro('F19f', id, `a porta da faixa abre «${porta?.getAttribute('href') ?? 'nada'}» e o recibo da série é «${destino}»`);
   }
   return { erros, contas };
+}
+
+/**
+ * F19g · F19h · AS PALAVRAS DA FAIXA, conferidas uma vez por corrida e sem
+ * página (a passagem UE1b, 29.09.2026).
+ *
+ * @param {Map<string, any>} series as séries, pelo leitor dos portões
+ * @param {typeof PALAVRAS_DA_FAIXA} [palavras] as palavras declaradas (as plantas passam uma cópia estragada)
+ * @param {typeof sufixoOrdinalDoPortao} [regra] a regra do ordinal (uma planta passa uma regra estragada)
+ */
+export function conferirPalavrasDaFaixa(series, palavras = PALAVRAS_DA_FAIXA, regra = sufixoOrdinalDoPortao) {
+  const erros = [];
+  const contas = { ordinais: 0, marcas: 0 };
+  ORDINAIS_INGLESES.forEach((esperado, i) => {
+    const n = i + 1;
+    let dito;
+    try {
+      dito = `${n}${regra(n, palavras.en?.ordinal)}`;
+    } catch (e) {
+      dito = `(${e.message})`;
+    }
+    contas.ordinais++;
+    if (dito !== esperado) erros.push(`F19g · o lugar ${n} diz-se «${dito}» na edição inglesa e o ordinal é «${esperado}»`);
+  });
+  const marcas = new Set();
+  for (const serie of series.values()) for (const p of serie.pontos ?? []) if (p.bandeira) marcas.add(String(p.bandeira));
+  for (const marca of [...marcas].sort()) {
+    for (const lang of ['pt', 'en']) {
+      contas.marcas++;
+      const dito = palavras[lang]?.ressalvas?.[marca];
+      if (!dito || !String(dito).trim()) erros.push(`F19h · a marca «${marca}», que um ponto de uma série leva, não tem palavras declaradas na edição «${lang}»`);
+      else if (String(dito).trim() === marca) erros.push(`F19h · as palavras declaradas da marca «${marca}» na edição «${lang}» são a própria letra`);
+    }
+  }
+  return { erros, contas };
+}
+
+/**
+ * AS PLANTAS DAS PALAVRAS (F19g, F19h): uma de cada sufixo do ordinal, a regra
+ * sem a exceção dos 11 a 13, e três das ressalvas. Cada uma tem de morder com a
+ * sua célula, e as palavras intactas têm de passar.
+ *
+ * @param {Map<string, any>} series
+ */
+export function plantasDasPalavrasDaFaixa(series) {
+  const resultados = [];
+  const copia = () => JSON.parse(JSON.stringify(PALAVRAS_DA_FAIXA));
+  const planta = (nome, celula, palavras, regra = sufixoOrdinalDoPortao, seriesDaPlanta = series) => {
+    const { erros } = conferirPalavrasDaFaixa(seriesDaPlanta, palavras, regra);
+    resultados.push({ nome, passou: erros.some((e) => e.startsWith(`${celula} ·`)), porque: erros[0] ?? 'nenhum erro' });
+  };
+  for (const [sufixo, outro] of [['st', 'th'], ['nd', 'th'], ['rd', 'th'], ['th', 'st']]) {
+    const p = copia();
+    p.en.ordinal[sufixo] = outro;
+    planta(`o sufixo «${sufixo}» declarado como «${outro}»`, 'F19g', p);
+  }
+  planta('a regra do ordinal sem a exceção dos 11 a 13', 'F19g', copia(), (n, s) =>
+    n % 10 === 1 ? s.st : n % 10 === 2 ? s.nd : n % 10 === 3 ? s.rd : s.th,
+  );
+  const semD = copia();
+  delete semD.en.ressalvas.d;
+  planta('a marca «d» sem palavras na edição inglesa', 'F19h', semD);
+  const letra = copia();
+  letra.pt.ressalvas.p = 'p';
+  planta('as palavras de «p» trocadas pela própria letra', 'F19h', letra);
+  const seriesComZ = new Map([...series].map(([k, v]) => [k, JSON.parse(JSON.stringify(v))]));
+  const primeira = [...seriesComZ.values()][0];
+  if (primeira?.pontos?.length) {
+    primeira.pontos[0].bandeira = 'z';
+    planta('um ponto com uma marca que não está declarada', 'F19h', copia(), sufixoOrdinalDoPortao, seriesComZ);
+  } else {
+    resultados.push({ nome: 'um ponto com uma marca que não está declarada', passou: false, porque: 'não há série onde plantar' });
+  }
+  return resultados;
 }
 
 /**
@@ -238,6 +356,40 @@ export function plantasDaFaixa(html, lang, rota, ctx) {
     const f = [...r.querySelectorAll('[data-faixa-frase]')].find((x) => x.querySelectorAll('[data-pais]').length === 3);
     if (!f) return false;
     f.set_content(f.innerHTML.replace(/\.\s*$/, lang === 'en' ? ', level with another country with the same value.' : ', a par de outro país com o mesmo valor.'));
+    return true;
+  });
+  /* UE1b: o ordinal inglês e as ressalvas das pontas. As do ordinal só existem
+     na edição inglesa, e procuram os lugares que as dez séries rendem hoje
+     (o 2.º dos preços da habitação e o 12.º da taxa de emprego). */
+  if (lang === 'en') {
+    const trocaSufixo = (r, lugar, de, para) => {
+      const f = [...r.querySelectorAll('[data-faixa-frase]')].find((x) => x.querySelector('[data-ponto-lugar]')?.text.trim() === String(lugar));
+      if (!f) return false;
+      const antes = f.innerHTML;
+      f.set_content(antes.replace(new RegExp(`(data-ponto-lugar="[^"]+">${lugar}</span>)${de}`), `$1${para}`));
+      return f.innerHTML !== antes;
+    };
+    planta('o sufixo de «2nd» trocado por «th»', 'F19e', (r) => trocaSufixo(r, 2, 'nd', 'th'));
+    planta('o «12th» pela regra sem a exceção dos 11 a 13 («12nd»)', 'F19e', (r) => trocaSufixo(r, 12, 'th', 'nd'));
+  }
+  planta('a ressalva de uma ponta trocada pela letra crua', 'F19d', (r) => {
+    const x = r.querySelector('[data-faixa-ressalva]');
+    if (!x) return false;
+    x.replaceWith(`<span class="faixa-ue-bandeira" data-ponto-bandeira="${x.getAttribute('data-faixa-ressalva')}">${x.getAttribute('data-bandeira')}</span>`);
+    return true;
+  });
+  planta('a ressalva de uma ponta com as palavras de outra marca', 'F19d', (r) => {
+    const x = r.querySelector('[data-faixa-ressalva]');
+    if (!x) return false;
+    const marca = x.getAttribute('data-bandeira');
+    const outra = Object.keys(PALAVRAS_DA_FAIXA[lang].ressalvas).find((k) => k !== marca);
+    x.set_content(` (${PALAVRAS_DA_FAIXA[lang].ressalvas[outra]})`);
+    return true;
+  });
+  planta('a ressalva tirada de uma ponta com marca', 'F19d', (r) => {
+    const x = r.querySelector('[data-faixa-ressalva]');
+    if (!x) return false;
+    x.remove();
     return true;
   });
   planta('a porta para outra série', 'F19f', (r) => {

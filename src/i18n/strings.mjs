@@ -2118,6 +2118,12 @@ export const STRINGS = {
         paisK: 'País',
         valorK: 'Valor',
         marcaK: 'Marca da fonte',
+        /* O QUE QUER DIZER CADA MARCA (a passagem UE1b, 29.09.2026): ao lado da
+           tabela, cada marca que aparece nela, com as palavras com que a faixa do
+           cartão a diz e a definição que a própria resposta do Eurostat traz. */
+        marcasK: 'O que quer dizer cada marca',
+        naResposta: 'na resposta do Eurostat,',
+        marcasFrase: 'A definição é a da resposta do Eurostat, tal como ela a escreve.',
         pedidoK: 'O pedido',
         paginaDaFonteK: 'A página da série na fonte',
         literalK: 'O que a resposta escreve',
@@ -3722,6 +3728,9 @@ export const STRINGS = {
         paisK: 'Country',
         valorK: 'Value',
         marcaK: 'Source mark',
+        marcasK: 'What each mark means',
+        naResposta: 'in Eurostat’s response,',
+        marcasFrase: 'The definition is the one in Eurostat’s response, as the response writes it.',
         pedidoK: 'The request',
         paginaDaFonteK: 'The series page at the source',
         literalK: 'What the response says',

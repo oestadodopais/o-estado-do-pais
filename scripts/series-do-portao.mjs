@@ -17,7 +17,11 @@
  *   · o mais baixo e o mais alto são os países com o menor e o maior valor, e
  *     um empate num dos extremos nomeia os dois, pela ordem da série;
  *   · a posição de uma marca na faixa é (valor − mínimo) ÷ (máximo − mínimo),
- *     escrita em percentagem com quatro casas, como o desenho a escreve.
+ *     escrita em percentagem com quatro casas, como o desenho a escreve;
+ *   · o sufixo do ordinal inglês de um lugar (a passagem UE1b, o acerto F4) é o
+ *     de `ORDINAIS_INGLESES`, escritos um a um e não calculados: a regra dos
+ *     portões (`sufixoOrdinalDoPortao`) escolhe entre as palavras declaradas, e
+ *     a F19 e a K18 conferem a escolha contra esta tabela para os 27 lugares.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -95,6 +99,37 @@ export function contaDaFaixa(serie) {
     aPar: paises.filter((p) => p.geo !== 'PT' && p.n === pt.n).map((p) => p.geo),
     paises,
   };
+}
+
+/**
+ * OS 27 ORDINAIS INGLESES, escritos à mão e um a um, de propósito: são a
+ * resposta conhecida contra a qual a regra se confere, e uma tabela calculada
+ * pela mesma regra confirmava-se a si própria. São 27 porque a União tem 27
+ * países e o lugar de Portugal vai de 1 a 27.
+ */
+export const ORDINAIS_INGLESES = Object.freeze([
+  '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th',
+  '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th',
+  '21st', '22nd', '23rd', '24th', '25th', '26th', '27th',
+]);
+
+/**
+ * O sufixo do ordinal inglês de um lugar, pela regra dos portões: `st`, `nd` e
+ * `rd` para os números acabados em 1, 2 e 3, `th` para os outros e para os
+ * acabados em 11, 12 e 13. Escolhe entre as palavras declaradas e não as
+ * escreve.
+ *
+ * @param {number} n
+ * @param {{ st: string, nd: string, rd: string, th: string }} sufixos
+ */
+export function sufixoOrdinalDoPortao(n, sufixos) {
+  if (!Number.isInteger(n) || n < 1) throw new Error(`o lugar ${n} não é um inteiro positivo`);
+  if (!sufixos) throw new Error('a língua não declara os sufixos do ordinal');
+  if ([11, 12, 13].includes(n % 100)) return sufixos.th;
+  if (n % 10 === 1) return sufixos.st;
+  if (n % 10 === 2) return sufixos.nd;
+  if (n % 10 === 3) return sufixos.rd;
+  return sufixos.th;
 }
 
 /** A série de países de uma linha portuguesa, pelo campo da série. */

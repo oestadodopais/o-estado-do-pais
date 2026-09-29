@@ -17,6 +17,10 @@
  *   · a posição de uma marca é (valor − mínimo) ÷ (máximo − mínimo), em
  *     percentagem com quatro casas.
  * Os valores comparam-se como números (`parsePtNumber`).
+ *
+ * A PASSAGEM UE1b (29.09.2026): o ordinal inglês do lugar (`sufixoOrdinal`, o
+ * acerto F4) e as ressalvas da fonte nas pontas, pelas palavras declaradas; uma
+ * marca sem palavras fecha a construção aqui, com o nome da marca.
  */
 
 import { parsePtNumber } from './ledger.mjs';
@@ -39,6 +43,21 @@ import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 function posicao(v, min, max) {
   if (!(max > min)) throw new Error('faixa da União: o mais alto e o mais baixo são o mesmo valor, e a faixa não tem largura');
   return Number((Math.min(1, Math.max(0, (v - min) / (max - min))) * 100).toFixed(4));
+}
+
+/**
+ * O sufixo do ordinal inglês de um lugar (o acerto F4): `st`, `nd` e `rd` para
+ * os números acabados em 1, 2 e 3, `th` para os outros e para os acabados em
+ * 11, 12 e 13. As palavras são as declaradas; a regra é a do inglês.
+ *
+ * @param {number} n
+ * @param {{ st: string, nd: string, rd: string, th: string } | undefined} sufixos
+ */
+function sufixoOrdinal(n, sufixos) {
+  if (!sufixos) throw new Error('faixa da União: a frase pede um ordinal e a língua não declara os sufixos');
+  const dezena = n % 100;
+  if (dezena >= 11 && dezena <= 13) return sufixos.th;
+  return [sufixos.th, sufixos.st, sufixos.nd, sufixos.rd][n % 10] ?? sufixos.th;
 }
 
 /** Como se ancora um rótulo: pela ponta mais perto, quando está junto a uma. @param {number} p */
@@ -94,6 +113,7 @@ export function faixaDaMedida(idDaLinha, lang) {
       if ('paises' in p) return lista(papeis[p.paises]);
       if ('pais' in p) return [{ pais: p.pais }];
       if ('lugar' in p) return [{ lugar }];
+      if ('ordinal' in p) return [sufixoOrdinal(lugar, palavras.ordinal)];
       if ('aPar' in p) {
         if (!papeis.aPar.length) return [];
         return resolve(papeis.aPar.length === 1 ? palavras.aPar.um : palavras.aPar.varios);
@@ -110,6 +130,22 @@ export function faixaDaMedida(idDaLinha, lang) {
     else pedacos.push(p);
   }
 
+  /* Uma ponta: o país, a marca que a fonte põe ao ponto, e as palavras
+     declaradas dessa marca, que é o que a faixa mostra (UE1b). */
+  /** @param {string} geo */
+  const ponta = (geo) => {
+    const bandeira = paises.find((p) => p.geo === geo)?.bandeira ?? null;
+    if (!bandeira) return { geo, bandeira: null, ressalva: null };
+    const ressalva = palavras.ressalvas[bandeira];
+    if (!ressalva) {
+      throw new Error(
+        `faixa da União: o ponto de ${geo} em «${serie.id}» leva a marca «${bandeira}», que não tem palavras ` +
+          `declaradas em src/data/faixa-da-uniao.mjs (${lang}). Nenhuma letra crua chega a uma página.`,
+      );
+    }
+    return { geo, bandeira, ressalva };
+  };
+
   const esquerdaPt = posicao(pt.n, min, max);
   const esquerdaUe = posicao(nUe, min, max);
   return {
@@ -124,8 +160,8 @@ export function faixaDaMedida(idDaLinha, lang) {
       uniao: { esquerda: esquerdaUe, ancora: ancora(esquerdaUe) },
     },
     pontas: {
-      baixo: papeis.baixo.map((geo) => ({ geo, bandeira: paises.find((p) => p.geo === geo)?.bandeira ?? null })),
-      alto: papeis.alto.map((geo) => ({ geo, bandeira: paises.find((p) => p.geo === geo)?.bandeira ?? null })),
+      baixo: papeis.baixo.map((geo) => ponta(geo)),
+      alto: papeis.alto.map((geo) => ponta(geo)),
     },
     porta: routePath('serie', lang, { slug: serie.id }),
     palavras: { uniao: palavras.uniao, porta: palavras.porta },

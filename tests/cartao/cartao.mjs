@@ -232,7 +232,7 @@ import {
 } from '../../src/i18n/lingua-dos-titulos.mjs';
 import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../../scripts/series-do-portao.mjs';
-import { conferirFaixas, plantasDaFaixa } from './faixa.mjs';
+import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa } from './faixa.mjs';
 
 /**
  * K14 · AS MEDIDAS CUJA MÉDIA EUROPEIA O CARTÃO CALA, e a decisão que o manda.
@@ -373,6 +373,10 @@ function corre(dist) {
     cartoes_com_faixa: 0,
     faixas_k18: 0,
     plantas_k18: 0,
+    /* UE1b: as ressalvas das pontas, e as palavras da faixa (F19g, F19h). */
+    ressalvas_k18: 0,
+    ordinais_k18: 0,
+    plantas_das_palavras_k18: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -402,6 +406,7 @@ function corre(dist) {
         const k18 = conferirFaixas(root, langPagina, rota, { series: SERIES_DA_K18, paises: PAISES_DA_K18 });
         for (const e of k18.erros) erros.push(`K18 · ${e}`);
         contas.faixas_k18 += k18.contas.faixas;
+        contas.ressalvas_k18 += k18.contas.ressalvas;
         if (PROVA && /^\/(en\/themes|temas)\/$/.test(rota) && !k18.erros.length) {
           for (const planta of plantasDaFaixa(html, langPagina, rota, { series: SERIES_DA_K18, paises: PAISES_DA_K18 })) {
             contas.plantas_k18++;
@@ -743,6 +748,20 @@ function corre(dist) {
     }
   }
   contas.valores_de_regua_sem_marca = enquadradas.length;
+
+  /* ------------------------------------------------------------------- K18 */
+  /* UE1b: as palavras da faixa, uma vez por corrida e sem página (o ordinal
+     inglês contra a tabela escrita dos 27, as palavras de cada marca que um
+     ponto leva), a mesma função da F19; as plantas correm com `--prova`. */
+  const palavrasK18 = conferirPalavrasDaFaixa(SERIES_DA_K18);
+  for (const e of palavrasK18.erros) erros.push(`K18 · ${e}`);
+  contas.ordinais_k18 = palavrasK18.contas.ordinais;
+  if (PROVA && SERIES_DA_K18.size && !palavrasK18.erros.length) {
+    for (const planta of plantasDasPalavrasDaFaixa(SERIES_DA_K18)) {
+      contas.plantas_das_palavras_k18++;
+      if (!planta.passou) erros.push(`K18 · a planta «${planta.nome}» não mordeu (${planta.porque})`);
+    }
+  }
 
   /* ------------------------------------------------------------------- K13 */
   /* Não lê `dist/`: compara a declaração da definição com a linha do
@@ -1719,6 +1738,7 @@ console.log(cinza(`    cartões com veredicto conferido (K15)                 ${
 console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
 console.log(cinza(`    cartões com a faixa da União (K1, K18)                 ${r.contas.cartoes_com_faixa}`));
 console.log(cinza(`    faixas refeitas dos pontos (K18)                       ${r.contas.faixas_k18}${PROVA ? ` · ${r.contas.plantas_k18} planta(s) a morder` : ''}`));
+console.log(cinza(`    ressalvas nas pontas e ordinais (K18, UE1b)            ${r.contas.ressalvas_k18} · ${r.contas.ordinais_k18}${PROVA ? ` · ${r.contas.plantas_das_palavras_k18} planta(s) das palavras a morder` : ''}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(
   cinza(

@@ -16,6 +16,8 @@
     {"id": "F2", "lingua": "en", "ramo": "um", "de": "level with {país}", "para": ", level with another country with the same value ({país})",
      "porque": "a mesma forma na edição inglesa"},
     {"id": "F2", "lingua": "en", "ramo": "varios", "de": "level with {país}", "para": ", level with other countries with the same value ({país})",
-     "porque": "a mesma forma na edição inglesa"}
+     "porque": "a mesma forma na edição inglesa"},
+    {"id": "F4", "lingua": "en", "de": "ranks {n} from the highest", "para": "ranks {n}{ordinal} from the highest",
+     "porque": "a decisão do lugar de direção na passagem UE1b (29.09.2026): na edição inglesa o lugar diz-se com o ordinal («ranks 15th from the highest»); os sufixos são palavras declaradas e a regra que escolhe um é a do inglês"}
   ]
 }
