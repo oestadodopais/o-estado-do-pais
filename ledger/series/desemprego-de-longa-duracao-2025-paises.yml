@@ -1,0 +1,163 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "desemprego-de-longa-duracao-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Long-term unemployment rate by sex"
+name_source: "label"
+unit: "% da população ativa"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Long-term unemployment rate by sex"
+  edition: "tesem130, freq=A, indic_em=LTU, age=Y15-74, sex=T, unit=PC_ACT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tesem130/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T"
+access_date: "2026-09-29"
+published_at: "2026-09-10"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Long-term unemployment rate by sex — Percentage of population in the labour force — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "desemprego-de-longa-duracao-2025-ue"
+linha_de_portugal: "desemprego-de-longa-duracao-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "d": "definition differs (see metadata)"
+  "u": "low reliability"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "2,0"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Belgium — 2025: 2.0"
+    bandeira: null
+  - geo: "BG"
+    valor: "1,5"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Bulgaria — 2025: 1.5"
+    bandeira: null
+  - geo: "CZ"
+    valor: "0,8"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Czechia — 2025: 0.8"
+    bandeira: null
+  - geo: "DK"
+    valor: "0,9"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Denmark — 2025: 0.9"
+    bandeira: null
+  - geo: "DE"
+    valor: "1,1"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Germany — 2025: 1.1"
+    bandeira: null
+  - geo: "EE"
+    valor: "1,8"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Estonia — 2025: 1.8"
+    bandeira: null
+  - geo: "IE"
+    valor: "1,1"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Ireland — 2025: 1.1"
+    bandeira: null
+  - geo: "EL"
+    valor: "5,0"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Greece — 2025: 5.0"
+    bandeira: null
+  - geo: "ES"
+    valor: "3,4"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Spain — 2025: 3.4 d"
+    bandeira: "d"
+  - geo: "FR"
+    valor: "1,8"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — France — 2025: 1.8 d"
+    bandeira: "d"
+  - geo: "HR"
+    valor: "1,8"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Croatia — 2025: 1.8"
+    bandeira: null
+  - geo: "IT"
+    valor: "3,1"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Italy — 2025: 3.1"
+    bandeira: null
+  - geo: "CY"
+    valor: "0,9"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Cyprus — 2025: 0.9"
+    bandeira: null
+  - geo: "LV"
+    valor: "2,3"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Latvia — 2025: 2.3"
+    bandeira: null
+  - geo: "LT"
+    valor: "2,5"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Lithuania — 2025: 2.5"
+    bandeira: null
+  - geo: "LU"
+    valor: "2,0"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Luxembourg — 2025: 2.0 u"
+    bandeira: "u"
+  - geo: "HU"
+    valor: "1,5"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Hungary — 2025: 1.5"
+    bandeira: null
+  - geo: "MT"
+    valor: "0,6"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Malta — 2025: 0.6"
+    bandeira: null
+  - geo: "NL"
+    valor: "0,5"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Netherlands — 2025: 0.5"
+    bandeira: null
+  - geo: "AT"
+    valor: "1,3"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Austria — 2025: 1.3"
+    bandeira: null
+  - geo: "PL"
+    valor: "0,8"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Poland — 2025: 0.8"
+    bandeira: null
+  - geo: "PT"
+    valor: "2,2"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Portugal — 2025: 2.2"
+    bandeira: null
+  - geo: "RO"
+    valor: "2,1"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Romania — 2025: 2.1"
+    bandeira: null
+  - geo: "SI"
+    valor: "1,1"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Slovenia — 2025: 1.1"
+    bandeira: null
+  - geo: "SK"
+    valor: "3,4"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Slovakia — 2025: 3.4"
+    bandeira: null
+  - geo: "FI"
+    valor: "2,4"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Finland — 2025: 2.4"
+    bandeira: null
+  - geo: "SE"
+    valor: "1,8"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — Sweden — 2025: 1.8"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "1,9"
+    excerto: "Long-term unemployment rate by sex — Percentage of population in the labour force — European Union - 27 countries (from 2020) — 2025: 1.9"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «desemprego-de-longa-duracao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «desemprego-de-longa-duracao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, indic_em=LTU, age=Y15-74, sex=T, unit=PC_ACT, time=2025. Corpo alojado: ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json (sha256 894d93f0368f930c…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

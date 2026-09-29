@@ -1,0 +1,162 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "taxa-de-desemprego-mip-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Unemployment rate - annual data"
+name_source: "label"
+unit: "% da população ativa"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Unemployment rate - annual data"
+  edition: "tipsun20, freq=A, sex=T, age=Y15-74, unit=PC_ACT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipsun20/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&age=Y15-74"
+access_date: "2026-09-29"
+published_at: "2026-09-10"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "taxa-de-desemprego-mip-2025-ue"
+linha_de_portugal: "taxa-de-desemprego-mip-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "d": "definition differs (see metadata)"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "6,2"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Belgium — 2025: 6.2"
+    bandeira: null
+  - geo: "BG"
+    valor: "3,5"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Bulgaria — 2025: 3.5"
+    bandeira: null
+  - geo: "CZ"
+    valor: "2,8"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Czechia — 2025: 2.8"
+    bandeira: null
+  - geo: "DK"
+    valor: "6,4"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Denmark — 2025: 6.4"
+    bandeira: null
+  - geo: "DE"
+    valor: "3,8"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Germany — 2025: 3.8"
+    bandeira: null
+  - geo: "EE"
+    valor: "7,5"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Estonia — 2025: 7.5"
+    bandeira: null
+  - geo: "IE"
+    valor: "4,7"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Ireland — 2025: 4.7"
+    bandeira: null
+  - geo: "EL"
+    valor: "8,9"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Greece — 2025: 8.9"
+    bandeira: null
+  - geo: "ES"
+    valor: "10,5"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Spain — 2025: 10.5 d"
+    bandeira: "d"
+  - geo: "FR"
+    valor: "7,7"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — France — 2025: 7.7 d"
+    bandeira: "d"
+  - geo: "HR"
+    valor: "4,9"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Croatia — 2025: 4.9"
+    bandeira: null
+  - geo: "IT"
+    valor: "6,1"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Italy — 2025: 6.1"
+    bandeira: null
+  - geo: "CY"
+    valor: "4,4"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Cyprus — 2025: 4.4"
+    bandeira: null
+  - geo: "LV"
+    valor: "6,9"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Latvia — 2025: 6.9"
+    bandeira: null
+  - geo: "LT"
+    valor: "6,9"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Lithuania — 2025: 6.9"
+    bandeira: null
+  - geo: "LU"
+    valor: "6,5"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Luxembourg — 2025: 6.5"
+    bandeira: null
+  - geo: "HU"
+    valor: "4,4"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Hungary — 2025: 4.4"
+    bandeira: null
+  - geo: "MT"
+    valor: "3,1"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Malta — 2025: 3.1"
+    bandeira: null
+  - geo: "NL"
+    valor: "3,9"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Netherlands — 2025: 3.9"
+    bandeira: null
+  - geo: "AT"
+    valor: "5,7"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Austria — 2025: 5.7"
+    bandeira: null
+  - geo: "PL"
+    valor: "3,1"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Poland — 2025: 3.1"
+    bandeira: null
+  - geo: "PT"
+    valor: "6,0"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Portugal — 2025: 6.0"
+    bandeira: null
+  - geo: "RO"
+    valor: "6,1"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Romania — 2025: 6.1"
+    bandeira: null
+  - geo: "SI"
+    valor: "3,9"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Slovenia — 2025: 3.9"
+    bandeira: null
+  - geo: "SK"
+    valor: "5,4"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Slovakia — 2025: 5.4"
+    bandeira: null
+  - geo: "FI"
+    valor: "9,7"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Finland — 2025: 9.7"
+    bandeira: null
+  - geo: "SE"
+    valor: "8,8"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — Sweden — 2025: 8.8"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "6,0"
+    excerto: "Unemployment rate - annual data — Age class: From 15 to 74 years — Percentage of population in the labour force — European Union - 27 countries (from 2020) — 2025: 6.0"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «taxa-de-desemprego-mip-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «taxa-de-desemprego-mip-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, sex=T, age=Y15-74, unit=PC_ACT, time=2025. Corpo alojado: ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json (sha256 9d13cee1e7c5e117…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []
