@@ -15,11 +15,13 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
   validateLedger,
   allClaims,
+  loadClaims,
   camposPorVerificar,
   evaluateCheck,
   parsePtDecimal,
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
+import { lerSeries, validateSeries, paisesDaUniao, SERIES_DIR } from '../src/lib/series.mjs';
 import { Decimal } from '../src/lib/decimal.mjs';
 import { REGRAS, ABERTURA, LEITURA_BREVE, FECHO } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
@@ -524,6 +526,133 @@ if (porVerificar.length) {
     ),
   );
 }
+console.log('');
+
+/* ===========================================================================
+ * AS LINHAS DE SÉRIE (bloco UE1, 29.09.2026)
+ * ===========================================================================
+ *
+ * `ledger/series/*.yml` são linhas do livro-razão com vários pontos dentro, e a
+ * construção não passa sem elas conferidas pelas regras S1 a S8 de
+ * `ledger/series/README.md`, que vivem numa função só (`validateSeries()`, em
+ * `src/lib/series.mjs`). As gémeas comparam-se como números.
+ *
+ * O ZERO SÓ CONTA DEPOIS DE CADA REGRA TER MORDIDO (regra 14 da casa). Antes de
+ * conferir as séries a sério, cada regra recebe um estrago plantado NUMA CÓPIA
+ * EM MEMÓRIA das séries verdadeiras (ou das linhas de que elas são gémeas), e
+ * tem de o recusar com a sua própria queixa: um país em falta, um país
+ * repetido, um valor fora do seu excerto, o período de uma gémea diferente, a
+ * União a divergir da sua linha, Portugal a divergir da sua. A regra do nome
+ * do ficheiro, que é do carregador, planta-se numa pasta temporária. Nenhuma
+ * planta toca no que a construção publica.
+ */
+const errosDasSeries = [];
+let plantasDasSeries = 0;
+const leitura = lerSeries();
+const linhasDoLivro = loadClaims();
+let tabelaDosPaises = null;
+try {
+  tabelaDosPaises = paisesDaUniao();
+} catch (err) {
+  errosDasSeries.push(`a tabela dos nomes dos países não se lê: ${err.message}`);
+}
+for (const e of leitura.erros) errosDasSeries.push(e);
+if (!leitura.ficheiros) {
+  errosDasSeries.push(
+    `não há séries em ${path.relative(RAIZ_, SERIES_DIR)}: a pasta vazia é um zero que não prova nada, ` +
+      `e as dez séries do UE1 atravessaram do motor.`,
+  );
+}
+if (tabelaDosPaises && leitura.series.size) {
+  /** Uma cópia das séries, com UMA série mexida. */
+  const copiaDasSeries = (id, mexer) => {
+    const m = new Map([...leitura.series].map(([k, v]) => [k, structuredClone(v)]));
+    mexer(m.get(id));
+    return m;
+  };
+  /** Uma cópia das linhas do livro, com UMA linha mexida. */
+  const copiaDasLinhas = (id, mexer) => {
+    const m = new Map(linhasDoLivro);
+    const linha = structuredClone(m.get(id));
+    mexer(linha);
+    m.set(id, linha);
+    return m;
+  };
+  const alvo = 'divida-publica-2025-paises';
+  const plantas = [
+    { regra: 'S1', nome: 'uma chave que não pertence à forma', espera: 'S1: campo desconhecido',
+      series: copiaDasSeries(alvo, (s) => { s.nota_solta = 'x'; }) },
+    { regra: 'S2', nome: 'a linha da União de outra medida', espera: 'S2: a linha da União',
+      series: copiaDasSeries(alvo, (s) => { s.linha_da_uniao = 'divida-das-familias-2025-ue'; }) },
+    { regra: 'S3', nome: 'um país em falta', espera: 'S3: país em falta: MT',
+      series: copiaDasSeries(alvo, (s) => { s.pontos = s.pontos.filter((p) => p.geo !== 'MT'); }) },
+    { regra: 'S3', nome: 'um país repetido', espera: 'S3: país repetido: BE',
+      series: copiaDasSeries(alvo, (s) => { s.pontos[1] = structuredClone(s.pontos[0]); }) },
+    { regra: 'S4', nome: 'um valor fora do seu excerto', espera: 'S4: o valor de BE',
+      series: copiaDasSeries(alvo, (s) => { s.pontos[0].valor = '107,8'; }) },
+    { regra: 'S5', nome: 'o período de uma gémea diferente', espera: 'S5: o período da série',
+      claims: copiaDasLinhas('divida-publica-2025', (l) => { l.reference_date = '2024'; }) },
+    { regra: 'S6', nome: 'o ponto da União a divergir da linha -ue', espera: 'S6: o ponto EU27_2020',
+      claims: copiaDasLinhas('divida-publica-2025-ue', (l) => { l.value = '81,8'; }) },
+    { regra: 'S6', nome: 'o ponto de Portugal a divergir da linha portuguesa', espera: 'S6: o ponto PT',
+      claims: copiaDasLinhas('divida-publica-2025', (l) => { l.value = '89,8'; }) },
+    { regra: 'S7', nome: 'um documento que não é uma série', espera: 'S7: document.kind',
+      series: copiaDasSeries(alvo, (s) => { s.document.kind = 'pdf'; }) },
+    { regra: 'S8', nome: 'uma correção sem os seus campos', espera: 'S8: uma correção não traz',
+      series: copiaDasSeries(alvo, (s) => { s.corrections = [{ geo: 'BE' }]; }) },
+  ];
+  for (const p of plantas) {
+    const r = validateSeries({
+      series: p.series ?? leitura.series,
+      claims: p.claims ?? linhasDoLivro,
+      paises: tabelaDosPaises,
+    });
+    plantasDasSeries++;
+    if (!r.errors.some((e) => e.includes(p.espera))) {
+      errosDasSeries.push(
+        `a planta da regra ${p.regra} («${p.nome}») não mordeu: esperava-se «${p.espera}» e a ` +
+          `validação deu ${r.errors.length ? `«${r.errors[0]}»` : 'zero erros'}. A régua das séries ` +
+          `deixou de valer.`,
+      );
+    }
+  }
+  /* A regra do nome do ficheiro é do carregador: planta-se numa pasta temporária. */
+  const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-prova-series-'));
+  try {
+    const um = [...leitura.series.values()][0];
+    fs.copyFileSync(path.join(SERIES_DIR, um.__file), path.join(pasta, 'outro-nome-paises.yml'));
+    plantasDasSeries++;
+    if (!lerSeries(pasta).erros.some((e) => e.includes('S1: o id é'))) {
+      errosDasSeries.push('a planta do nome do ficheiro (S1) não mordeu: o carregador aceitou um ficheiro cujo nome não é o id.');
+    }
+  } finally {
+    fs.rmSync(pasta, { recursive: true, force: true });
+  }
+  /* E agora, a sério. */
+  const r = validateSeries({ series: leitura.series, claims: linhasDoLivro, paises: tabelaDosPaises });
+  errosDasSeries.push(...r.errors);
+  console.log(
+    cinza(
+      `  séries · ${r.stats.series} série(s) de ${r.stats.pontos} ponto(s), ${r.stats.marcas} com marca da fonte ` +
+        `· ${plantasDasSeries} planta(s), uma ou mais por regra, vistas a morder`,
+    ),
+  );
+}
+if (errosDasSeries.length) {
+  console.log('');
+  console.error(vermelho(`  AS LINHAS DE SÉRIE NÃO PASSAM · ${errosDasSeries.length} erro(s):`));
+  console.error('');
+  for (const e of errosDasSeries) console.error('    ' + vermelho('✗') + ' ' + e);
+  console.error('');
+  console.error('  Uma série corrige-se no motor e volta a atravessar: o sítio não a escreve à mão.');
+  console.error('');
+  process.exit(1);
+}
+console.log(
+  '  ' +
+    verde('✓') +
+    ' cada série tem os 27 países e a União, cada valor dentro do seu excerto, e as gémeas batem como números.',
+);
 console.log('');
 
 /* ===========================================================================
