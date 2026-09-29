@@ -14,10 +14,13 @@
  *   F19c · a posição de cada marca é a que o valor dá, com quatro casas, e os
  *          rótulos de Portugal e da União estão na posição das suas marcas;
  *   F19d · as pontas nomeiam o país mais baixo e o mais alto (todos, num
- *          empate), com o valor; quando o ponto leva marca da fonte, a ponta
- *          di-la pelas palavras declaradas dessa marca, entre parênteses a seguir
- *          ao valor, e nunca pela letra crua (a passagem UE1b); o texto da ponta
- *          é, carácter a carácter, os nomes, o valor e a ressalva;
+ *          empate), cada um com o seu valor; quando um ponto leva marca da
+ *          fonte, a ponta di-la pelas palavras declaradas dessa marca, entre
+ *          parênteses a seguir ao valor desse país, e nunca pela letra crua (a
+ *          passagem UE1b); num empate, todos os países da ponta, e não só o
+ *          primeiro (a passagem UE1c, o achado 5 da leitura a frio); o texto da
+ *          ponta é, carácter a carácter, cada país com o seu valor e a sua
+ *          ressalva, com as palavras da lista entre eles;
  *   F19e · a frase é, carácter a carácter, a recomposição das palavras declaradas
  *          com os pontos, os nomes da tabela, a contagem, o lugar e o período, no
  *          ramo que os valores mandam (com ou sem empate); e as marcas dela dizem
@@ -88,6 +91,150 @@ export function fraseEsperada(serie, lang, paises) {
 }
 
 /**
+ * F19d · UMA PONTA DA FAIXA, conferida país a país (a passagem UE1c).
+ *
+ * `geos` são os países do extremo, pela ordem da série (um só sem empate). Cada
+ * um tem de estar nomeado, com o seu valor, e com a sua ressalva quando o seu
+ * ponto leva marca da fonte, e sem ressalva quando não leva; nenhuma letra crua,
+ * nenhuma ressalva de outro ponto; e o texto da ponta é a recomposição, com as
+ * palavras da lista declaradas entre os países.
+ *
+ * @param {import('node-html-parser').HTMLElement} ponta
+ * @param {{ papel: string, geos: string[], serie: any, lang: 'pt'|'en', paises: Map<string, any> }} ctx
+ * @returns {{ erros: string[], ressalvas: number }}
+ */
+export function conferirPonta(ponta, { papel, geos, serie, lang, paises }) {
+  const erros = [];
+  let ressalvas = 0;
+  const palavras = PALAVRAS_DA_FAIXA[lang];
+  const nomeDe = (geo) => {
+    const p = paises.get(geo);
+    return p ? (lang === 'en' ? p.en : p.pt) : `(${geo} sem nome na tabela)`;
+  };
+  const extremo = papel === 'baixo' ? 'mais baixo' : 'mais alto';
+  const nomeados = ponta.querySelectorAll('[data-pais]').map((e) => e.getAttribute('data-pais'));
+  if (nomeados.join(',') !== geos.join(',')) erros.push(`a ponta «${papel}» nomeia ${nomeados.join(', ') || 'ninguém'} e o ${extremo} é ${geos.join(', ')}`);
+  const valores = ponta.querySelectorAll('[data-ponto]').map((e) => e.getAttribute('data-ponto'));
+  const valoresEsperados = geos.map((g) => `${serie.id}#${g}`);
+  if (valores.join(',') !== valoresEsperados.join(',')) {
+    erros.push(`a ponta «${papel}» escreve os valores de ${valores.join(', ') || 'nenhum ponto'}, e são os de ${valoresEsperados.join(', ')}`);
+  }
+  if (ponta.querySelector('[data-ponto-bandeira]')) erros.push(`a ponta «${papel}» mostra a letra crua da marca da fonte; a faixa di-la por palavras`);
+  const todas = ponta.querySelectorAll('[data-faixa-ressalva]');
+  const partes = [];
+  geos.forEach((geo, i) => {
+    const ponto = serie.pontos.find((p) => p.geo === geo);
+    const marca = ponto?.bandeira ? String(ponto.bandeira) : null;
+    const dita = marca ? palavras.ressalvas?.[marca] ?? null : null;
+    const desta = todas.filter((r) => r.getAttribute('data-faixa-ressalva') === `${serie.id}#${geo}`);
+    if (!marca) {
+      if (desta.length) erros.push(`a ponta «${papel}» mostra uma ressalva para ${geo}, cujo ponto não leva marca da fonte`);
+    } else if (desta.length !== 1) {
+      erros.push(`a ponta «${papel}» tem ${desta.length} ressalva(s) para ${geo}, e o ponto de ${geo} leva a marca «${marca}»`);
+    } else if (desta[0].getAttribute('data-bandeira') !== marca) {
+      erros.push(`a ressalva de ${geo} na ponta «${papel}» diz ser da marca «${desta[0].getAttribute('data-bandeira')}», e o ponto leva «${marca}»`);
+    } else if (!dita) {
+      erros.push(`a marca «${marca}» do ponto de ${geo} não tem palavras declaradas (${lang})`);
+    } else if (norm(desta[0].text) !== `(${dita})`) {
+      erros.push(`a ressalva de ${geo} na ponta «${papel}» diz «${norm(desta[0].text)}» e as palavras declaradas da marca «${marca}» são «(${dita})»`);
+    } else {
+      ressalvas++;
+    }
+    const valor = String(ponto?.valor ?? '').replace(/(?<=\d)[ \u2009\u202f](?=\d)/g, ' ');
+    const entre = i === 0 ? '' : i === geos.length - 1 ? palavras.lista.ultimo : palavras.lista.entre;
+    partes.push(`${entre}${nomeDe(geo)} ${valor}${dita ? ` (${dita})` : ''}`);
+  });
+  const alheias = todas.filter((r) => !geos.some((g) => r.getAttribute('data-faixa-ressalva') === `${serie.id}#${g}`));
+  if (alheias.length) erros.push(`a ponta «${papel}» tem ressalvas de pontos que não são dela: ${alheias.map((r) => r.getAttribute('data-faixa-ressalva')).join(', ')}`);
+  const textoEsperado = norm(partes.join(''));
+  if (norm(ponta.text) !== textoEsperado) erros.push(`a ponta «${papel}» diz «${norm(ponta.text)}» e a recomposição dá «${textoEsperado}»`);
+  return { erros, ressalvas };
+}
+
+/**
+ * AS PLANTAS DOS EMPATES (a passagem UE1c, o achado 5). Nenhuma das dez séries
+ * tem hoje um extremo empatado, e por isso as plantas fazem um em memória: numa
+ * cópia de uma série, um segundo país passa a ter o valor do mais alto, e as
+ * marcas da fonte ficam só num dos dois. A ponta escreve-se aqui, em memória,
+ * de duas maneiras: a certa, que a F19d tem de deixar passar (o controlo), e a
+ * estragada, que tem de morder com a queixa do país certo. Uma planta só passa
+ * se as duas coisas acontecerem.
+ *
+ * @param {Map<string, any>} series
+ * @param {Map<string, any>} paises
+ * @param {'pt'|'en'} lang
+ */
+export function plantasDosEmpates(series, paises, lang) {
+  const resultados = [];
+  const palavras = PALAVRAS_DA_FAIXA[lang];
+  const base = [...series.values()].find((s) => {
+    try {
+      return contaDaFaixa(s).alto.length === 1;
+    } catch {
+      return false;
+    }
+  });
+  if (!base) return [{ nome: 'os empates', passou: false, porque: 'não há série onde fazer um empate' }];
+  /** A série com o mais alto empatado com o país seguinte, e as marcas dadas. */
+  const comEmpate = (marcas) => {
+    const s = JSON.parse(JSON.stringify(base));
+    const c = contaDaFaixa(s);
+    const topo = c.alto[0];
+    const outro = s.pontos.find((p) => p.geo !== topo && p.geo !== 'PT' && p.geo !== AGREGADO);
+    outro.valor = s.pontos.find((p) => p.geo === topo).valor;
+    const geos = contaDaFaixa(s).alto;
+    geos.forEach((g, i) => { s.pontos.find((p) => p.geo === g).bandeira = marcas[i] ?? null; });
+    return { s, geos };
+  };
+  const nome = (g) => {
+    const p = paises.get(g);
+    return lang === 'en' ? p.en : p.pt;
+  };
+  /** A ponta como o componente a escreve: cada país com o seu valor e a sua ressalva. */
+  const certa = (s, geos, { ressalvaEm = null } = {}) =>
+    geos
+      .map((g, i) => {
+        const ponto = s.pontos.find((p) => p.geo === g);
+        const marca = ponto.bandeira;
+        const com = ressalvaEm ? ressalvaEm.includes(g) : Boolean(marca);
+        const m = marca ?? 'p';
+        const entre = i === 0 ? '' : i === geos.length - 1 ? palavras.lista.ultimo : palavras.lista.entre;
+        const r = com ? `<span class="faixa-ue-ressalva" data-faixa-ressalva="${s.id}#${g}" data-bandeira="${m}"> (${palavras.ressalvas[m]})</span>` : '';
+        return `${entre}<span class="nome-do-pais" data-pais="${g}">${nome(g)}</span> <span class="ponto-da-serie faixa-ue-valor" data-ponto="${s.id}#${g}">${ponto.valor}</span>${r}`;
+      })
+      .join('');
+  /** A ponta como o componente do UE1b a escrevia: os nomes, e o valor e a ressalva do primeiro. */
+  const antiga = (s, geos) => {
+    const primeiro = s.pontos.find((p) => p.geo === geos[0]);
+    const r = primeiro.bandeira ? `<span class="faixa-ue-ressalva" data-faixa-ressalva="${s.id}#${geos[0]}" data-bandeira="${primeiro.bandeira}"> (${palavras.ressalvas[primeiro.bandeira]})</span>` : '';
+    return `${geos.map((g) => `<span class="nome-do-pais" data-pais="${g}">${nome(g)}</span>`).join(', ')} <span class="ponto-da-serie faixa-ue-valor" data-ponto="${s.id}#${geos[0]}">${primeiro.valor}</span>${r}`;
+  };
+  const ponta = (html) => parse(`<span class="faixa-ue-ponta faixa-ue-ponta-alto" data-faixa-ponta="alto">${html}</span>`).querySelector('[data-faixa-ponta]');
+  const planta = (nome, s, geos, estragada, morde) => {
+    const controlo = conferirPonta(ponta(certa(s, geos)), { papel: 'alto', geos, serie: s, lang, paises });
+    const r = conferirPonta(ponta(estragada), { papel: 'alto', geos, serie: s, lang, paises });
+    const mordeu = r.erros.some(morde);
+    resultados.push({
+      nome, passou: controlo.erros.length === 0 && mordeu,
+      porque: controlo.erros.length ? `o controlo não passou: ${controlo.erros[0]}` : (r.erros[0] ?? 'nenhum erro'),
+    });
+  };
+  {
+    const { s, geos } = comEmpate([null, 'p']);
+    planta('a marca só no segundo país empatado, e a ponta sem ela', s, geos, antiga(s, geos), (e) => e.includes(`0 ressalva(s) para ${geos[1]}`));
+  }
+  {
+    const { s, geos } = comEmpate(['p', null]);
+    planta('a marca só no primeiro país empatado, e a ponta a pô-la nos dois', s, geos, certa(s, geos, { ressalvaEm: geos }), (e) => e.includes(`uma ressalva para ${geos[1]}, cujo ponto não leva marca`));
+  }
+  {
+    const { s, geos } = comEmpate([null, null]);
+    planta('um empate com o valor só do primeiro país', s, geos, antiga(s, geos), (e) => e.includes('escreve os valores de'));
+  }
+  return resultados;
+}
+
+/**
  * @param {import('node-html-parser').HTMLElement} root
  * @param {'pt'|'en'} lang
  * @param {string} rota
@@ -96,11 +243,6 @@ export function fraseEsperada(serie, lang, paises) {
 export function conferirFaixas(root, lang, rota, { series, paises }) {
   const erros = [];
   const contas = { faixas: 0, marcas: 0, frases: 0, empates: 0, ressalvas: 0 };
-  const palavras = PALAVRAS_DA_FAIXA[lang];
-  const nomeDe = (geo) => {
-    const p = paises.get(geo);
-    return p ? (lang === 'en' ? p.en : p.pt) : `(${geo} sem nome na tabela)`;
-  };
   const erro = (celula, id, msg) => erros.push(`${celula} · ${rota} · ${id}: ${msg}`);
 
   for (const faixa of root.querySelectorAll('[data-faixa-ue]')) {
@@ -159,41 +301,17 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
       if (!r || esquerdaDe(r) !== esperado) erro('F19c', id, `o rótulo de «${papel}» não está na posição da sua marca (${esperado} %)`);
       if (geo && r && r.querySelector('[data-pais]')?.getAttribute('data-pais') !== geo) erro('F19c', id, `o rótulo de «${papel}» não nomeia ${geo}`);
     }
-    /* F19d · as pontas */
+    /* F19d · as pontas: todos os países de cada ponta, cada um com o seu valor e
+       a sua ressalva (UE1c), pela função que as plantas dos empates também chamam. */
     for (const papel of ['baixo', 'alto']) {
       const ponta = faixa.querySelector(`[data-faixa-ponta="${papel}"]`);
-      const geos = c[papel];
       if (!ponta) {
         erro('F19d', id, `falta a ponta «${papel}»`);
         continue;
       }
-      const nomeados = ponta.querySelectorAll('[data-pais]').map((e) => e.getAttribute('data-pais'));
-      if (nomeados.join(',') !== geos.join(',')) erro('F19d', id, `a ponta «${papel}» nomeia ${nomeados.join(', ') || 'ninguém'} e o ${papel === 'baixo' ? 'mais baixo' : 'mais alto'} é ${geos.join(', ')}`);
-      const valores = ponta.querySelectorAll('[data-ponto]').map((e) => e.getAttribute('data-ponto'));
-      if (valores.join(',') !== `${serie.id}#${geos[0]}`) erro('F19d', id, `a ponta «${papel}» escreve o valor de ${valores.join(', ') || 'nenhum ponto'}`);
-      /* A ressalva da fonte (UE1b): as palavras declaradas da marca do ponto,
-         e nunca a letra crua. */
-      const ponto = serie.pontos.find((p) => p.geo === geos[0]);
-      const marca = ponto?.bandeira ? String(ponto.bandeira) : null;
-      const palavrasDaMarca = marca ? palavras.ressalvas?.[marca] ?? null : null;
-      const ressalvas = ponta.querySelectorAll('[data-faixa-ressalva]');
-      if (ponta.querySelector('[data-ponto-bandeira]')) erro('F19d', id, `a ponta «${papel}» mostra a letra crua da marca da fonte; a faixa di-la por palavras`);
-      if (!marca) {
-        if (ressalvas.length) erro('F19d', id, `a ponta «${papel}» mostra uma ressalva e o ponto de ${geos[0]} não leva marca da fonte`);
-      } else if (ressalvas.length !== 1) {
-        erro('F19d', id, `a ponta «${papel}» tem ${ressalvas.length} ressalva(s) e o ponto de ${geos[0]} leva a marca «${marca}»`);
-      } else if (ressalvas[0].getAttribute('data-faixa-ressalva') !== `${serie.id}#${geos[0]}` || ressalvas[0].getAttribute('data-bandeira') !== marca) {
-        erro('F19d', id, `a ressalva da ponta «${papel}» diz ser da marca «${ressalvas[0].getAttribute('data-bandeira')}» de «${ressalvas[0].getAttribute('data-faixa-ressalva')}», e o ponto de ${geos[0]} leva «${marca}»`);
-      } else if (!palavrasDaMarca) {
-        erro('F19d', id, `a marca «${marca}» do ponto de ${geos[0]} não tem palavras declaradas (${lang})`);
-      } else if (norm(ressalvas[0].text) !== `(${palavrasDaMarca})`) {
-        erro('F19d', id, `a ressalva da ponta «${papel}» diz «${norm(ressalvas[0].text)}» e as palavras declaradas da marca «${marca}» são «(${palavrasDaMarca})»`);
-      } else {
-        contas.ressalvas++;
-      }
-      const valorDaPonta = String(ponto?.valor ?? '').replace(/(?<=\d)[   ](?=\d)/g, ' ');
-      const textoEsperado = norm(`${geos.map(nomeDe).join(', ')} ${valorDaPonta}${palavrasDaMarca ? ` (${palavrasDaMarca})` : ''}`);
-      if (norm(ponta.text) !== textoEsperado) erro('F19d', id, `a ponta «${papel}» diz «${norm(ponta.text)}» e a recomposição dá «${textoEsperado}»`);
+      const r = conferirPonta(ponta, { papel, geos: c[papel], serie, lang, paises });
+      for (const m of r.erros) erro('F19d', id, m);
+      contas.ressalvas += r.ressalvas;
     }
     /* F19e · a frase */
     const frase = faixa.querySelector('[data-faixa-frase]');

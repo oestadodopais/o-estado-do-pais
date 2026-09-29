@@ -32,6 +32,13 @@
  * classe é própria (`faixa-ue-ressalva`) e partilha a regra de estilo de
  * `.claim-provisorio`: as células dos cartões leem `.claim-provisorio` como a
  * ressalva de um `data-claim`, e esta é de um ponto de série.
+ *
+ * UM EXTREMO EMPATADO (a passagem UE1c, o achado 5 da leitura a frio). Cada
+ * país da ponta leva o seu nome, o seu valor e a sua ressalva, pela ordem da
+ * série, com as palavras da lista entre eles («Chipre 3,0 e Malta 3,0 (dado
+ * provisório)»); uma ponta sem empate é o mesmo laço com um país só. A F19d
+ * confere todos os países da ponta, e uma planta com a marca só no segundo
+ * país empatado tem de morder.
  */
 import PontoDaSerie from './serie/PontoDaSerie.astro';
 import NomeDoPais from './serie/NomeDoPais.astro';
@@ -75,16 +82,16 @@ const f = faixaDaMedida(id, lang);
       <p class="faixa-ue-pontas">
         {['baixo', 'alto'].map((papel) => (
           <span class:list={['faixa-ue-ponta', `faixa-ue-ponta-${papel}`]} data-faixa-ponta={papel}>
-            {f.pontas[papel].map((p, i) => (
+            {f.pontas[papel].map((p, i, todos) => (
               <>
-                {i > 0 && ', '}
-                <NomeDoPais geo={p.geo} lang={lang} />
+                {i > 0 && (i === todos.length - 1 ? f.palavras.lista.ultimo : f.palavras.lista.entre)}
+                <NomeDoPais geo={p.geo} lang={lang} />{' '}
+                <PontoDaSerie serie={f.serie} geo={p.geo} class="faixa-ue-valor" />
+                {p.ressalva && (
+                  <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${p.geo}`} data-bandeira={p.bandeira}>{' ('}{p.ressalva}{')'}</span>
+                )}
               </>
-            ))}{' '}
-            <PontoDaSerie serie={f.serie} geo={f.pontas[papel][0].geo} class="faixa-ue-valor" />
-            {f.pontas[papel][0].ressalva && (
-              <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${f.pontas[papel][0].geo}`} data-bandeira={f.pontas[papel][0].bandeira}>{' ('}{f.pontas[papel][0].ressalva}{')'}</span>
-            )}
+            ))}
           </span>
         ))}
       </p>
