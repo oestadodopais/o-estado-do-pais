@@ -126,7 +126,7 @@ GATE: FAIL — 1 problem(s); commit blocked
     a travessia contra a cópia versionada: <repositorio>/publisher/fixtures/site-min
   EXPORT_SITE_ROWS_TEST · a cópia versionada: PASS — 115 checks
     as caches de recortes de 3 vertical(is) estão por gerar nesta cópia de trabalho (07 Évora Municipal Accounts, 08 Évora Mandates, 09 Évora Pelouros): essas leem-se da cópia versionada, e as outras 0 desta máquina (nenhuma). Correr o `make_snippets.py` de cada uma, ou copiá-las da árvore principal, repõe a leitura das caches desta máquina.
-    a travessia contra o sítio vivo, com 3 de 3 cache(s) de recortes da cópia: <pasta-pessoal>/Instruments/OEstadoDoPais/.claude/worktrees/f22b-2026-09-28
+    a travessia contra o sítio vivo, com 3 de 3 cache(s) de recortes da cópia: <sitio>
   EXPORT_SITE_ROWS_TEST · o sítio vivo, com 3 de 3 cache(s) de recortes da cópia: FAIL — 2 problem(s)
    - `--write --site <uma cópia do sítio>` saiu a 1 e não a 0. Disse:
         worktree acabada de criar ou um clone limpo não o têm.

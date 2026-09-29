@@ -1,0 +1,8 @@
+{
+  "base": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546",
+  "comando": "comparação dos bytes do §2 de FRESCURA-E-AUTOMACAO.md com git show da base; leitura da linha M41",
+  "frescura_secao_2_igual": true,
+  "sha256_antes": "e48d0b56e7b3a77f47d511ff54b465b456a3b9614b34d5a6f2eab00981c6e8d2",
+  "sha256_depois": "e48d0b56e7b3a77f47d511ff54b465b456a3b9614b34d5a6f2eab00981c6e8d2",
+  "linha_f22b": "M41"
+}

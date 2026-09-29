@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.github.com/en/rest/about-the-rest-api/api-versions",
+  "leitura_fornecida_pelo_mandato": {
+    "instante": "2026-09-29T21:03:00Z",
+    "http": 200,
+    "excertos": [
+      "2026-03-10 (latest)",
+      "Requests without the X-GitHub-Api-Version header will default to use the 2022-11-28 version.",
+      "If you specify an API version that is no longer supported, you will receive a 410 Gone response."
+    ]
+  },
+  "conferencia_do_construtor": {
+    "data": "2026-09-29",
+    "metodo": "web.open",
+    "resultado": "A tabela mantém 2026-03-10 e 2022-11-28; o texto mantém a omissão e o estado 410. A tabela recebida não traz a palavra latest."
+  }
+}

@@ -20,6 +20,22 @@ def ler(p):
     return json.loads(p.read_text(encoding="utf-8"))
 
 
+def caminhos_pessoais(conteudo):
+    texto = conteudo.decode("utf-8", "replace")
+    return bool(re.search(r"/(?:Users|home)/[^/\s]+/|" + "~" + r"/[^\s]+|<pasta-pessoal>" + r"/[^\s]+", texto)
+                or str(Path.home()) in texto or Path.home().name in texto)
+
+
+def conferir_pacote(pasta):
+    ficheiros = [p for p in pasta.rglob("*") if p.is_file()]
+    if not ficheiros:
+        raise SystemExit("O pacote não tem ficheiros")
+    maus = [str(p.relative_to(pasta)) for p in ficheiros if caminhos_pessoais(p.read_bytes())]
+    if maus:
+        raise SystemExit("Caminhos pessoais em: " + ", ".join(maus))
+    return len(ficheiros)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--motor", required=True, type=Path)
@@ -51,10 +67,6 @@ def main():
     if len(cabecas_sitio) != 1:
         raise SystemExit("Os três portões não correram na mesma cabeça do sítio")
     cabeca_sitio = cabecas_sitio.pop()
-    pacote = str(saida.relative_to(sitio)) + "/"
-    posteriores = git(sitio, "diff", "--name-only", cabeca_sitio, "HEAD").splitlines()
-    if any(not nome.startswith(pacote) for nome in posteriores):
-        raise SystemExit("Há mudanças fora do pacote de prova depois da cabeça conferida")
     alterados = git(a.motor, "diff", "--name-only", BASE_MOTOR, "HEAD").splitlines()
     proibidos = [x for x in alterados if (
         x.startswith("indicators/") and x.count("/") == 1 and x.endswith(".json"))
@@ -76,7 +88,7 @@ def main():
         "bases": {"motor": BASE_MOTOR, "sitio": BASE_SITIO},
         "cabecas_lidas": {"motor": git(a.motor, "rev-parse", "HEAD"), "sitio": git(sitio, "rev-parse", "HEAD")},
         "cabeca_dos_tres_portoes_do_sitio": cabeca_sitio,
-        "mudancas_posteriores_aos_portoes": posteriores,
+        "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
         "commits_motor": git(a.motor, "log", "--reverse", "--format=%H %s", f"{BASE_MOTOR}..HEAD").splitlines(),
         "commits_sitio_anteriores_ao_relatorio": git(sitio, "log", "--reverse", "--format=%H %s", f"{BASE_SITIO}..HEAD").splitlines(),
         "commit_do_relatorio": "o commit que contém LEIA-ME.md, RESPOSTA-construtor-f22b.md e este medidas.json",
@@ -89,12 +101,46 @@ def main():
         "caches_locais_repostas": ler(a.provas / "caches.json"),
         "custo_observado": ler(a.provas / "custo.json"),
         "custo_da_retoma": ler(a.provas / "custo-retoma.json"),
-        "efeitos_externos_da_construcao": {"push": 0, "despachos": 0, "interruptores_alterados": 0, "agentes_reais_alterados": 0},
+        "declaracoes": {"origem": "declaração do construtor, não medição", "efeitos_externos_da_construcao": {"push": 0, "despachos": 0, "interruptores_alterados": 0, "agentes_reais_alterados": 0}, "conferencia_externa": "O lugar de direção mede os interruptores e os despachos na aterragem."},
         "por_fazer": ["publicação dos ramos", "ensaios despachados no GitHub", "chaves e interruptores pelo diretor", "duas corridas reais verdes de cada rotina antes da reforma dos agentes"]}
+    f22c = saida / "provas/f22c"
+    if (f22c / "core-final.codigo").exists():
+        execucoes_c = {}
+        for pasta in (f22c, saida / "portoes/f22c"):
+            for ficheiro in sorted(pasta.glob("*.codigo")):
+                base = ficheiro.with_suffix("")
+                registo = ler(base.with_suffix(".json"))
+                codigo = int(ficheiro.read_text())
+                if codigo != registo["codigo"]:
+                    raise SystemExit("Código incoerente: " + ficheiro.name)
+                registo["codigo_lido_de"] = str(ficheiro.relative_to(saida))
+                registo["sha256_saida"] = hashlib.sha256(base.with_suffix(".log").read_bytes()).hexdigest()
+                if base.with_suffix(".cabeca").exists():
+                    if base.with_suffix(".cabeca").read_text().strip() != registo["cabeca"]:
+                        raise SystemExit("Cabeça incoerente: " + ficheiro.name)
+                execucoes_c[base.name] = registo
+        if execucoes_c["core-final"]["cabeca"] != git(a.motor, "rev-parse", "HEAD"):
+            raise SystemExit("O portão final não é da cabeça do motor")
+        cabecas_c = {execucoes_c[n]["cabeca"] for n in ("build", "verify", "typecheck")}
+        if len(cabecas_c) != 1:
+            raise SystemExit("Os portões F2.2c não têm a mesma cabeça")
+        dados["f22c"] = {"execucoes": execucoes_c,
+            "plantas_rotinas": ler(f22c / "plantas-detalhe.json"),
+            "plantas_adicionais": ler(f22c / "plantas-f22c-detalhe.json"),
+            "custo": ler(f22c / "custo.json"),
+            "cabeca_dos_portoes_do_sitio": cabecas_c.pop(),
+            "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."}
     texto = json.dumps(dados, ensure_ascii=False, indent=2) + "\n"
-    if str(Path.home()) in texto or Path.home().name in texto:
-        raise SystemExit("A prova contém uma identificação local")
+    # O conhecido-positivo exerce o mesmo detetor que percorre o pacote inteiro.
+    positivo = "/" + "Users/" + "pessoa/" + "projeto/prova.log"
+    if not caminhos_pessoais(positivo.encode()):
+        raise SystemExit("O detetor não viu o caminho pessoal plantado")
+    if caminhos_pessoais(texto.encode()):
+        raise SystemExit("As medidas contêm uma identificação local")
     (saida / "medidas.json").write_text(texto, encoding="utf-8")
+    vistos = conferir_pacote(saida)
+    dados["varrimento_do_pacote"] = {"ficheiros_lidos": vistos, "caminhos_pessoais": 0, "conhecido_positivo": True}
+    (saida / "medidas.json").write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"F2.2b: {dados['plantas']['provas']} plantas, {len(execucoes)} execuções com código lido de ficheiro")
 
 
