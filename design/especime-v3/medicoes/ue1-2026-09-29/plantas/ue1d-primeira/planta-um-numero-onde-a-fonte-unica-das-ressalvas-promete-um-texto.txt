@@ -1,0 +1,5 @@
+# um número onde a fonte única das ressalvas promete um texto
+# comando: node_modules/.bin/tsc -p tsconfig.check.json
+# código: 1
+
+src/data/ressalvas-da-uniao.mjs(45,14): error TS2322: Type 'number' is not assignable to type 'string'.

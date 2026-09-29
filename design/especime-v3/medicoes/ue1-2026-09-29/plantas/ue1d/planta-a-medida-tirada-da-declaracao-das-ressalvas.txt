@@ -1,0 +1,9 @@
+# a medida tirada da declaração das ressalvas
+# comando: node tests/cartao/cartao.mjs --prova
+# código: 1
+
+
+  A PROVA DA RÉGUA DO CARTÃO FALHOU
+
+    o controlo da K14 deu 2 vermelho(s): K14 · /areas/y/ · sobrecarga-do-custo-da-habitacao-2025: o cartão mostra a União e a declaração não tem o texto da ressalva desta medida: §1.140 (29.09.2026): a média da União voltou ao cartão, e a Comissão adverte que o total só se lê com a estrutura por regime de ocupação; onde a União aparece, a ressalva aparece
+

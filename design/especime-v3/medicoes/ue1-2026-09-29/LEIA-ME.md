@@ -1,6 +1,6 @@
 # UE1 · onde Portugal fica entre os 27 · o relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório tem três partes. A do UE1, até «O que ficou por fazer»: o build, o verify e o typecheck correram na cabeça do código `33ed14a0`, e o commit das provas dela é `0f75298f`. A da passagem de correção UE1b: os portões correram na cabeça do código `c9859d31`, e o commit das provas dela é `a4f59f21`. A da passagem UE1c, no fim, depois da leitura a frio do Codex: os portões correram na cabeça do código `982d6446`, e o último commit do ramo é o das provas dela, que só acrescenta e muda ficheiros nesta pasta e na das capturas. O sítio: o ramo `ue1-2026-09-29`. O motor: o ramo `ue1-2026-09-29` do ResearchHub, cabeça `e394307`, que a UE1b não mudou. Cada número deste relatório está num JSON desta pasta (`medidas.json`, escrito por `medir-ue1.mjs`, `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`, e `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`, que leem os manifestos ao lado, cada medida com o comando e um conhecido-positivo), e o relatório passa o `conferir-relatorio.py`.*
+*Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório tem 4 partes. A do UE1, até «O que ficou por fazer»: o build, o verify e o typecheck correram na cabeça do código `33ed14a0`, e o commit das provas dela é `0f75298f`. A da passagem de correção UE1b: os portões correram na cabeça do código `c9859d31`, e o commit das provas dela é `a4f59f21`. A da passagem UE1c, depois da leitura a frio do Codex: os portões correram na cabeça do código `982d6446`, e o commit das provas dela é `42a368a3`. A da passagem UE1d, no fim, com a decisão da §1.140: os portões correram na cabeça do código `99b9f73a`, e o último commit do ramo é o das provas dela, que só acrescenta e muda ficheiros nesta pasta e na das capturas. O sítio: o ramo `ue1-2026-09-29`. O motor: o ramo `ue1-2026-09-29` do ResearchHub, cabeça `e394307`, que as passagens UE1b, UE1c e UE1d não mudaram. Cada número deste relatório está num JSON desta pasta (`medidas.json`, escrito por `medir-ue1.mjs`, `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`, `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`, e `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`, que leem os manifestos ao lado, cada medida com o comando e um conhecido-positivo), e o relatório passa o `conferir-relatorio.py`.*
 
 ## O que o leitor vê
 
@@ -245,4 +245,90 @@ Do commit da leitura a frio (20:07:33 UTC) ao fim dos portões da passagem (20:5
 - A decisão sobre a média da União no cartão da sobrecarga no total, acima: a §1.124 contra a faixa do UE1.
 - A frase do que a medida conta para o índice harmonizado de preços, o rácio S80/S20 e os preços da habitação, se o lugar de direção a quiser escrever sem o valor de Portugal.
 - O guião dos acertos do L1, velho desde o RP1.
+- Das passagens anteriores continuam: as palavras das marcas `ep`, `d`, `b` e `u` como proposta, a ressalva na frase da faixa, `tests/` fora do typecheck e do `check:mortos`, e o brief do RP3 depois da aterragem.
+
+## UE1d · a média da União de volta ao cartão da sobrecarga no total, com a ressalva, e a definição declarada no recibo de cada série
+
+*Pedida pelo lugar de direção a 29.09.2026, com a decisão que entra na §1.140: a condição da §1.124 cumpriu-se, e a proteção muda de forma. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `99b9f73a`, e as medidas estão em `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`.*
+
+### O que o leitor vê agora
+
+- **O cartão da sobrecarga do custo da habitação no total**, na página dos temas, na da entrada da casa e na da área das infraestruturas e da habitação, em português e em inglês, mostra outra vez a média da União na régua (a União com 7,7, ao lado dos 6,3 de Portugal), e a leitura acaba na comparação em palavras: «Está abaixo da média da União Europeia.» e «Below the European Union average.». Por baixo da régua e da faixa, num bloco próprio, a ressalva da Comissão: «Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.»
+- **Os recibos dessa medida dizem a mesma ressalva**: o da linha, no bloco «O enquadramento», por baixo da linha da União; e o da série, por baixo da definição. A primeira página continua a dizê-la no bloco da casa, agora lida da mesma fonte.
+- **O recibo de cada uma das 10 séries** diz, por baixo do título, a definição declarada da medida, a mesma que o cartão mostra nas páginas dos painéis; o índice harmonizado de preços no consumidor, o rácio S80/S20 e os preços da habitação, que na UE1c ficaram sem frase, têm-na agora.
+
+### O mandato da passagem, ponto a ponto
+
+| ponto | o que | o que se fez | a medida |
+|---|---|---|---|
+| ponto 1a | A média da União volta ao cartão | a declaração `semMediaEuropeia` saiu de `figuras.mjs`; `reguaDoCartao()` é agora `reguaDaMedida()`, e a régua e a leitura voltam a citar a linha da União; a leitura da medida ganhou a comparação (`MEDIA_UE` e `EU_AVERAGE`, as folhas comuns da auditoria) e perdeu a frase da ressalva, que passou a um bloco próprio | 0 entradas de `FIGURAS` com a média calada; na página dos temas, 10 das 10 leituras dizem a comparação com a União em português e 10 em inglês; a K17 recompõe as leituras de 190 cartões |
+| ponto 1b | Nunca sem a ressalva | a fonte única `src/data/ressalvas-da-uniao.mjs`, com o texto do bloco `casa` trazido sem mudar uma letra; o bloco `casa` lê-a (o mesmo objeto), e o cartão, o recibo da linha e o recibo da série também | num varrimento de todo o `dist/`, com código próprio: 6 cartões da medida com a União, 6 com a ressalva e 0 sem ela; 14 páginas levam a linha da União desta medida, com a classe de cada uma em `medidas-ue1d.json`; 4 recibos com a União e a ressalva; 2 primeiras páginas com ela; 0 ressalvas de outra medida |
+| ponto 1c | A K14 muda de forma e não de proteção | a lista das medidas (hoje esta) escrita no teste, com a decisão ao lado; a célula exige a ressalva, com o texto da fonte na língua da página, em cada cartão da lista que mostre a régua da União, a linha da União ou a faixa, e em cada recibo da linha com a União no enquadramento e em cada recibo da série; a declaração tem de ter exactamente as medidas da lista, e a linha da União tem de existir; a K1 admite o bloco da ressalva num cartão só nas medidas da lista, e uma vez; os conhecidos-positivos são pelo menos um cartão e um recibo vistos com a União e com a ressalva; as 2 plantas da prova, um cartão com a União sem a ressalva e um recibo da série sem ela, com o controlo a passar; e, depois da primeira corrida das plantas da passagem (abaixo), o construtor da prova lê a ressalva declarada sem rebentar quando a declaração não a tem | a K14 vê 6 cartões e 4 recibos com a União e a ressalva; a prova do `check:cartao` planta 14 estragos e vê 14; nas plantas da passagem, as da ressalva mordem todas (abaixo) |
+| ponto 1d | Os comentários que davam a §1.124 como a razão do silêncio | dizem agora o que vale, com a data e a §1.140, em `figuras.mjs`, `tests/cartao/cartao.mjs`, `ReguaDoCartao.astro`, `enquadramento.mjs`, `leitura-da-medida.mjs` e `leituras-das-medidas.mjs`; `src/data/areas.mjs` cita a §1.124 pela notificação do INE e não pelo silêncio, e ficou | 9 ficheiros de `src/`, `tests/` e `scripts/` citam a §1.124; os 4 que não citam também a §1.140 citam-na por outras decisões dessa entrada (a notificação do INE e «o que é interativo prova-se a interagir»), e os outros contam a história com a §1.140 ao lado |
+| ponto 2 | A definição declarada no recibo de cada série | o `SerieView.astro` lê `DEFINICOES_DAS_MEDIDAS` e rende-a pelo mesmo `Frase.astro` do cartão, com os selos; o portão de HTML refá-la da declaração (as cadeias e os algarismos declarados) e confere-a carácter a carácter em cada recibo, e exige-a nos 20; `definicaoDaMedida()` e a regra do corte saíram | 20 dos 20 recibos com a definição igual à declaração, refeita por `medir-ue1d.mjs` com código próprio; o portão de HTML conta 20; 0 chamadas de `definicaoDaMedida(` no código; as definições das 10 medidas têm todas a origem declarada (10) |
+| ponto 3 | «doze páginas» passa a «dez páginas» | o comando da medida `letras_cruas_nas_faixas`, em `medir-ue1b.mjs` e em `medidas-ue1b.json` | 1 campo mudado no JSON, esse comando; o valor continua 0 |
+| ponto 4 | O `acertos-l1.py` | fora desta passagem, e não lhe mexi | 0 ficheiros mudados na pasta dele |
+
+### O que decidi, e o lugar de direção pode trocar num ficheiro só
+
+- **Onde o cartão mostra a União.** A ressalva entra no cartão quando a régua cita a linha da União ou quando o cartão tem a faixa (`CartaoDaMedida.astro`). Na página da área das infraestruturas e da habitação o cartão tem a régua e não tem faixa nem leitura, e leva a ressalva na mesma. Um cartão da medida com a ressalva e sem a União à vista seria uma ressalva a mais: há 0.
+- **As palavras inglesas da ressalva no cartão mudaram**, porque a fonte única é a do bloco `casa`. A frase que fechava a leitura inglesa do cartão dizia «read together with the tenure structure»; a do bloco `casa`, que o cartão diz agora, diz «read together with the breakdown by tenure status». A portuguesa era a mesma no bloco `casa` e na leitura antiga, e continua.
+- **As páginas que levam a linha da União desta medida e não são comparações ficaram sem a ressalva**, e a K14 não as conta: o recibo da própria linha da União, em português e em inglês, que só tem o valor da União e a sua prova, sem Portugal ao lado; e o índice do livro-razão, em português e em inglês, que lista as linhas. A primeira página tem a ressalva, da mesma fonte, e quem a confere é o `check:primeira`, pela auditoria das palavras da primeira página, e não a K14. As contagens por classe estão em `medidas-ue1d.json` (`paginas_com_a_linha_da_uniao_por_classe`). Se o lugar de direção quiser a ressalva também no recibo da própria linha da União, é uma linha na `LinhaView.astro` e uma rota na K14.
+- **A origem da definição não se rende no recibo da série**: 0 dos 20 recibos têm a peça da origem (o documento, o excerto e a data de leitura). O ponto 2 pedia a definição, e não a origem, e não a pus. O recibo da linha rende a definição com a origem (`OrigemDaDefinicao`) só nas medidas fora dos painéis, que são 2 das 10 (o índice harmonizado e os inquilinos a preço de mercado), e o detetor acha-a lá. Se o lugar de direção a quiser no recibo da série, é a mesma peça.
+- **A K17 passou a contar as origens da auditoria da primeira página.** A origem da ressalva (`ce-swd-2026-222-habitacao`) deixou de apoiar uma folha da leitura do cartão e ficou a apoiar só o bloco `casa`; a regra «nenhuma origem declarada sem uso» dava-a por órfã. Conta agora as origens de `tests/inicio/blocos-provados.json` como usadas, e 2 plantas novas provam que a regra ainda morde: uma origem declarada que nada apoia, e a origem da ressalva sem a auditoria da primeira página (a K17 vê as suas 14 de 14).
+
+### Achados da passagem
+
+1. **Corri a construção do estado do segundo commit ao mesmo tempo que o build do F2.2c do Codex, noutra worktree.** Antes dessa construção, o `pgrep` mostrou os processos do build dele, e o meu comando seguiu para o `npm run build` sem esperar, porque o `pgrep` só escrevia e não travava. É uma falta à regra «uma construção de cada vez». A árvore e o `dist/` dele são outros que os meus, e a construção do estado passou; o que se partilhou foi a máquina. Os portões da passagem correram por `portao-ue1d.sh`, que espera enquanto houver outra construção: o build da primeira corrida esperou pelo verify do Codex (`portoes/ue1d-de17f63e/espera.log`).
+2. **Parei a primeira tentativa dos portões por um diagnóstico errado.** Julguei que ela esperava por si própria, porque a linha de comando dela tinha os nomes dos portões por extenso; o manual do `pgrep` do macOS diz que ele não conta os seus antepassados, e o que ela via era o verify do Codex. Parei-a antes de correr portão nenhum, e o guião que a substituiu espera da mesma maneira, um portão por comando. O comentário do guião dizia o diagnóstico errado e corrigi-o depois das 3 corridas na cabeça `de17f63e`, com 0 linhas de código mudadas (o sha256 do que correu e o do ramo estão em `portoes/ue1d-de17f63e/guiao-dos-portoes.json`); a corrida final dos portões já correu com o guião corrigido.
+3. **O `conferir-mapa.py` sai sempre com 0**, haja ou não citações perdidas: é um guião de leitura, e a prova dele são as contas que escreve. O `entre-commits-ue1c.json` guardou só o código do mapa da UE1c; li agora o registo dessa corrida, com 135 citações no sítio e 0 perdidas, e o `entre-commits-ue1d.json` guarda as contas.
+4. **A planta da declaração rebentava a prova do `check:cartao`.** Na primeira corrida das plantas da passagem, na cabeça `de17f63e`, a planta que tira a medida da declaração das ressalvas fechou a construção, mas com um TypeError no construtor da prova (`montaAProva`, que lia o texto da ressalva sem conferir que ele existia), antes de a K14 poder dizer a razão: 7 das 8 plantas morderam com a queixa esperada (`plantas-ue1d-primeira.json`, com as saídas em `plantas/ue1d-primeira/`). O quarto commit de código, `99b9f73a`, lê o texto sem rebentar: com a prova, o controlo da K14 dá vermelho com «a declaração não tem o texto da ressalva desta medida»; sem ela, a conferência da declaração diz «exige a ressalva e a declaração não a tem». Os portões correram outra vez, na cabeça nova, e a segunda corrida das plantas tem as 8 a morder.
+5. **No estado completo, antes de o partir em 2 commits, 2 conferências falharam**, e ficam em `entre-commits-ue1d.json` com o que as resolveu: o build, pelo `check:voz`, com 6 blocos por classificar (a ressalva nova, nas páginas que a rendem) e 2 linhas vivas do inventário que já não se rendiam (a leitura antiga); e o `check:cartao`, pela K17, com 1 origem declarada sem apoio.
+
+### As plantas da passagem
+
+Em `plantas-ue1d.json`, com as saídas em `plantas/ue1d/`, na cabeça `99b9f73a`: 8 plantas (5 da ressalva, 2 da definição e 1 do typecheck), 8 mordidas com a queixa esperada, 8 repostas pelo sha256, e as 3 corridas limpas a seguir, 3 a 0.
+
+| grupo | a planta | o portão que morde |
+|---|---|---|
+| ressalva | a ressalva tirada do cartão da página portuguesa dos temas | `check:cartao`, a K14 |
+| ressalva | a ressalva tirada do recibo inglês da série | `check:cartao`, a K14 |
+| ressalva | a ressalva tirada do recibo português da linha | `check:cartao`, a K14 |
+| ressalva | a ressalva posta no cartão da dívida, que não está na lista | `check:cartao`, a K1 |
+| ressalva | a medida tirada da declaração das ressalvas | `check:cartao`, a K14 |
+| definição | uma palavra mudada na definição do recibo dos preços da habitação | `gate:html` |
+| definição | a definição tirada do recibo inglês do índice harmonizado | `gate:html` |
+| tipos | um número onde a fonte única das ressalvas promete um texto | `typecheck` (o conhecido-positivo do typecheck, que corre em menos de um segundo e não escreve nada quando passa) |
+
+E, dentro dos portões a cada corrida, as plantas da prova do `check:cartao` e as da K17.
+
+### O que não mudou
+
+Entre o commit das provas da UE1c (`42a368a3`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 linhas das definições das medidas e das suas origens, 0 no brief, 0 no guião da aterragem e 0 na pasta do `acertos-l1.py`; e 0 commits no motor. Mudaram 20 ficheiros, com os nomes em `medidas-ue1d.json`.
+
+### As capturas
+
+Em `design/especime-v3/capturas/ue1-2026-09-29/ue1d/` e `capturas-ue1d.json`, nas 5 larguras, em português e em inglês: o cartão da sobrecarga no total nas 3 páginas onde aparece (30 capturas), o bloco «O enquadramento» do seu recibo da linha (10), e a cabeça do recibo de cada uma das 10 séries, com a definição (100); 140 capturas, com 0 problemas (a União e a ressalva com o texto da fonte em cada cartão e recibo da linha, a definição em cada recibo, a ressalva só no da sobrecarga no total, e nenhuma página a transbordar), as 6 plantas dos detetores, todas vistas, e 0 pedidos para fora.
+
+### Os portões e os commits da passagem
+
+Na cabeça `99b9f73a`, cada um no seu comando, pelo `portao-ue1d.sh`, com o código num ficheiro acabado de escrever em `portoes/ue1d/`: `npm run build` a 0 em 180 segundos, `npm run verify` a 0 em 797 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1d/caminhos-trocados.json`). Os 3 portões olharam antes de correr. A primeira corrida dos 3, na cabeça `de17f63e`, antes do quarto commit, deu 0, 0 e 0 (`portoes/ue1d-de17f63e/`); as 2 corridas esperaram ao todo 435 segundos por outra construção, todos no build da primeira, pelo verify do Codex.
+
+Os 4 commits de código, cada um depois das conferências que tocou (10, todas a 0, em `entre-commits-ue1d.json`):
+
+- `530d5edc` a média da União de volta ao cartão da sobrecarga no total, com a ressalva de uma fonte única, a K14 na forma nova e a K17 a contar as origens da primeira página (o estado sem a definição dos recibos construído à parte antes do commit);
+- `165650cf` a definição declarada da medida no recibo de cada série;
+- `de17f63e` o mapa do repositório (o `conferir-mapa.py` dá 138 citações no sítio, 0 longe e 0 por encontrar; antes da emenda dava 5 por encontrar, as linhas que a passagem mudou);
+- `99b9f73a` o construtor da prova do `check:cartao` sem rebentar quando a declaração não tem a ressalva (antes dele, o `check:cartao` limpo a 0, as 2 plantas da declaração a morder com a queixa, e o mapa sem citações perdidas);
+- e o commit das provas da passagem, o último.
+
+### O custo da passagem
+
+Do commit das provas da UE1c ao fim dos portões da passagem, 5 912 segundos. Os símbolos, lidos à mão do contador que o ambiente mostra ao agente (`custo-ue1d.json`): 2 349 730 na sessão ao fecho da passagem e 589 451 na passagem; o total que a ferramenta reporta ao lugar de direção é o que conta.
+
+### O que ficou por fazer
+
+- A entrada `ue1d` das revisões do inventário das frases está «por ler pelo lugar de direção antes de aterrar».
+- A ressalva no recibo da própria linha da União e a origem da definição no recibo da série, se o lugar de direção as quiser (acima).
+- O `acertos-l1.py`, que sai com 1 desde o RP1, é uma questão nova do lugar de direção.
 - Das passagens anteriores continuam: as palavras das marcas `ep`, `d`, `b` e `u` como proposta, a ressalva na frase da faixa, `tests/` fora do typecheck e do `check:mortos`, e o brief do RP3 depois da aterragem.

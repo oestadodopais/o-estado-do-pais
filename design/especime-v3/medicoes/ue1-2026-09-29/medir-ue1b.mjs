@@ -81,7 +81,7 @@ let letrasCruas = 0;
 let letrasNoControlo = 0;
 for (const p of PAGINAS) letrasCruas += pagina(`${p}/index.html`).querySelectorAll('[data-faixa-ue] [data-ponto-bandeira]').length;
 letrasNoControlo = pagina('livro-razao/series/precos-da-habitacao-2025-paises/index.html').querySelectorAll('[data-ponto-bandeira]').length;
-medida('letras_cruas_nas_faixas', letrasCruas, 'as marcas data-ponto-bandeira dentro das faixas das doze páginas que as levam', 'o mesmo detetor vê as letras da tabela do recibo dos preços da habitação', letrasNoControlo > 0);
+medida('letras_cruas_nas_faixas', letrasCruas, 'as marcas data-ponto-bandeira dentro das faixas das dez páginas que as levam', 'o mesmo detetor vê as letras da tabela do recibo dos preços da habitação', letrasNoControlo > 0);
 const recibos = ['livro-razao/series', 'en/ledger/series'].flatMap((d) => fs.readdirSync(path.join(RAIZ, 'dist', d)).map((x) => `${d}/${x}/index.html`));
 const comLegenda = recibos.filter((r) => pagina(r).querySelector('[data-serie-marcas]'));
 const entradas = comLegenda.reduce((n, r) => n + pagina(r).querySelectorAll('[data-serie-marcas] [data-serie-marca]').length, 0);

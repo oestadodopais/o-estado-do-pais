@@ -1,0 +1,16 @@
+# a medida tirada da declaração das ressalvas
+# comando: node tests/cartao/cartao.mjs --prova
+# código: 1
+
+file://<worktree do sítio>/tests/cartao/cartao.mjs:1154
+  const ressalva = RESSALVAS_DA_UNIAO['sobrecarga-do-custo-da-habitacao-2025'].pt;
+                                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'pt')
+    at montaAProva (file://<worktree do sítio>/tests/cartao/cartao.mjs:1154:80)
+    at file://<worktree do sítio>/tests/cartao/cartao.mjs:1180:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

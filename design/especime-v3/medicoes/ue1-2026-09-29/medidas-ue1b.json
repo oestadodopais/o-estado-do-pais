@@ -288,7 +288,7 @@
     {
       "nome": "letras_cruas_nas_faixas",
       "valor": 0,
-      "comando": "as marcas data-ponto-bandeira dentro das faixas das doze páginas que as levam",
+      "comando": "as marcas data-ponto-bandeira dentro das faixas das dez páginas que as levam",
       "conhecido_positivo": {
         "o_que": "o mesmo detetor vê as letras da tabela do recibo dos preços da habitação",
         "encontrado": true

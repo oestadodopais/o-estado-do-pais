@@ -1,0 +1,196 @@
+{
+  "bloco": "UE1d",
+  "commits": [
+    {
+      "commit": "530d5edc",
+      "o_que": "a média da União de volta ao cartão da sobrecarga do custo da habitação no total, com a ressalva da Comissão de uma fonte única no cartão e nos recibos, a K14 na forma nova e a K17 a contar as origens da auditoria da primeira página (o estado sem a definição declarada nos recibos das séries, construído à parte)",
+      "corridas": [
+        {
+          "comando": "npm run build",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:cartao",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:primeira",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:alvos",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:lugar",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run typecheck",
+          "codigo": 0
+        }
+      ]
+    },
+    {
+      "commit": "165650cf",
+      "o_que": "a definição declarada da medida nos recibos das dez séries, conferida pelo portão de HTML, sem a regra do corte",
+      "corridas": [
+        {
+          "comando": "npm run build",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run typecheck",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:lugar",
+          "codigo": 0
+        }
+      ]
+    },
+    {
+      "commit": "99b9f73a",
+      "o_que": "o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem (a planta da declaração, que fechava a construção com um TypeError)",
+      "corridas": [
+        {
+          "comando": "npm run check:cartao",
+          "codigo": 0
+        }
+      ]
+    }
+  ],
+  "plantas_antes_do_commit": [
+    {
+      "commit": "99b9f73a",
+      "planta": "a medida tirada da declaração das ressalvas, com --prova",
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 1,
+      "queixa": true
+    },
+    {
+      "commit": "99b9f73a",
+      "planta": "a medida tirada da declaração das ressalvas, sem --prova",
+      "comando": "node tests/cartao/cartao.mjs",
+      "codigo": 1,
+      "queixa": true
+    }
+  ],
+  "mapa": {
+    "commit": "de17f63e",
+    "o_que": "o mapa do repositório",
+    "corrida": {
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "codigo": 0,
+      "contas": {
+        "conferidas_na_linha_citada": 138,
+        "no_ficheiro_mas_longe": 0,
+        "nao_encontradas": 0,
+        "para_la_do_fim": 0
+      }
+    },
+    "antes_da_emenda": {
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "codigo": 0,
+      "contas": {
+        "conferidas_na_linha_citada": 130,
+        "no_ficheiro_mas_longe": 0,
+        "nao_encontradas": 5,
+        "para_la_do_fim": 0
+      }
+    },
+    "nota": "o guião sai sempre com 0; a prova são as contas"
+  },
+  "mapa_do_commit_99b9f73a": {
+    "commit": "99b9f73a",
+    "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+    "codigo": 0,
+    "contas": {
+      "conferidas_na_linha_citada": 138,
+      "no_ficheiro_mas_longe": 0,
+      "nao_encontradas": 0,
+      "para_la_do_fim": 0
+    }
+  },
+  "ue1c_mapa": {
+    "o_que": "a corrida do mapa antes do commit 982d6446 da UE1c, lida agora do registo",
+    "contas": {
+      "conferidas_na_linha_citada": 135,
+      "no_ficheiro_mas_longe": 0,
+      "nao_encontradas": 0,
+      "para_la_do_fim": 0
+    }
+  },
+  "estado_completo": {
+    "o_que": "o estado completo da passagem, antes de o partir nos dois commits",
+    "corridas": [
+      {
+        "comando": "npm run build",
+        "codigo": 1,
+        "queixas": {
+          "blocos_por_classificar": 6,
+          "linhas_vivas_que_nao_se_rendem": 2
+        },
+        "resolvido_por": "as linhas da ressalva e da leitura nova no inventário das frases, com a entrada ue1d nas revisões, e as duas linhas da leitura antiga fora"
+      },
+      {
+        "comando": "npm run check:voz",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:cartao",
+        "codigo": 1,
+        "queixas": {
+          "origem_declarada_sem_apoio": 1
+        },
+        "resolvido_por": "a K17 passa a contar as origens da auditoria dos blocos da primeira página, com duas plantas novas"
+      },
+      {
+        "comando": "npm run check:cartao",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:nomes",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:lingua",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run sinais",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:alvos",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:lugar",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:primeira",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run check:mortos",
+        "codigo": 0
+      },
+      {
+        "comando": "npm run typecheck",
+        "codigo": 0
+      }
+    ]
+  },
+  "corridas": 10,
+  "corridas_a_zero": 10,
+  "mapa_sem_citacoes_perdidas": true,
+  "conhecido_positivo": {
+    "o_que": "um código que não existe lê-se como nulo e não como zero; e o mapa antes da emenda tem citações perdidas",
+    "codigo_inexistente_nulo": true,
+    "mapa_antes_com_perdidas": true
+  },
+  "mapa_do_commit_99b9f73a_sem_citacoes_perdidas": true,
+  "plantas_antes_do_commit_que_morderam": 2
+}
