@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T22:50:44+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/en/my-home/index.html",
+   "descricao": "o cartão inglês da sobrecarga no total mostra a média da União sem a ressalva da Comissão",
+   "sha256_antes": "ac62122ef8b8fabd506b8f88e361c713de26833f74fccb70774ad8ef606fa0b2",
+   "sha256_depois": "0be136edee5582f4025aa96f30666898a37ed62beeadd3bf3b12de6e42cbda34",
+   "contexto_antes": "/span>th from the highest.</p><p class=\"faixa-ue-porta\"><a href=\"/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises\">All the countries</a></p></div><p class=\"cartao-medida-ressalva\" data-ressalva-da-uniao=\"sobrecarga-do-custo-da-habitacao-2025\">This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.</p><p class=\"cartao-medida-frase\" data-cartao-definicao=\"sobrecarga-do-custo-da-habitacao-2025\">What share of people, across all tenure statuses, are in households",
+   "contexto_depois": "/span>th from the highest.</p><p class=\"faixa-ue-porta\"><a href=\"/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises\">All the countries</a></p></div><p class=\"cartao-medida-frase\" data-cartao-definicao=\"sobrecarga-do-custo-da-habitacao-2025\">What share of people, across all tenure statuses, are in households"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/cartao/cartao.mjs",
+   "descricao": "a K14 deixa de conferir o recibo inglês da série: a ressalva pode faltar lá sem a construção fechar",
+   "sha256_antes": "12b0d845e31c10267c8c7e84e340aaeee3a9fd9cc3a92d95ea60f5eda2ce9f6e",
+   "sha256_depois": "884e2c0996dcc4128ca423bbab4e31f71744e3fe8195a2c83190cfd9b83a0775",
+   "contexto_antes": "RIES_DA_K18, idK14);\n        const daLinha = rota === `/livro-razao/${idK14}/` || rota === `/en/ledger/${idK14}/`;\n        const daSerie = Boolean(serieK14) && (rota === `/livro-razao/series/${serieK14.id}/` || rota === `/en/ledger/series/${serieK14.id}/`);\n        if (!daLinha && !daSerie) continue;\n        const mostraUniao = daSerie || root.querySelectorAll(`#enquadramento [data-claim=\"${idK14}-ue\"]`).length >",
+   "contexto_depois": "RIES_DA_K18, idK14);\n        const daLinha = rota === `/livro-razao/${idK14}/` || rota === `/en/ledger/${idK14}/`;\n        const daSerie = Boolean(serieK14) && rota === `/livro-razao/series/${serieK14.id}/`;\n        if (!daLinha && !daSerie) continue;\n        const mostraUniao = daSerie || root.querySelectorAll(`#enquadramento [data-claim=\"${idK14}-ue\"]`).length >"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "a definição declarada do rácio S80/S20 fala do décimo com mais rendimento contra o quinto com menos",
+   "sha256_antes": "43a7dd9b17c913506726d6a0e003ab30235b35d44ca650c234c1136301df07d5",
+   "sha256_depois": "4145bf69adc5b8aed4442521a57af1c5152a60180a9fc8a27ca43adc5076bb67",
+   "contexto_antes": "ing each person only once?',\n    ],\n  },\n  'racio-s80-s20-2025': {\n    origens: ['glossario-s80s20'],\n    pt: [\n      'Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?',\n    ],\n    en: [\n      'How many times greater is the total income of the fifth of the population with the highest income than ",
+   "contexto_depois": "ing each person only once?',\n    ],\n  },\n  'racio-s80-s20-2025': {\n    origens: ['glossario-s80s20'],\n    pt: [\n      'Quantas vezes é maior o rendimento total do décimo da população com mais rendimento do que o do quinto com menos?',\n    ],\n    en: [\n      'How many times greater is the total income of the fifth of the population with the highest income than "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "tests/cartao/faixa.mjs",
+   "descricao": "num extremo empatado, a conferência da ponta só vê a ressalva e o nome do primeiro país",
+   "sha256_antes": "d161c9c11daaef5cc948106009ed8a8f96eda83ffe0560525a9de1662f6eb440",
+   "sha256_depois": "1083e3f0d752da0bb423e7a1b7c0c6b148803a61a56c623a725b4347a9c9228a",
+   "contexto_antes": "}» mostra a letra crua da marca da fonte; a faixa di-la por palavras`);\n  const todas = ponta.querySelectorAll('[data-faixa-ressalva]');\n  const partes = [];\n  geos.forEach((geo, i) => {\n    const ponto = serie.pontos.find((p) => p.geo === geo);\n    const marca = ponto?.bandeira ? String(ponto.bandeira) : null;\n    const dita = marca ? palavras",
+   "contexto_depois": "}» mostra a letra crua da marca da fonte; a faixa di-la por palavras`);\n  const todas = ponta.querySelectorAll('[data-faixa-ressalva]');\n  const partes = [];\n  geos.slice(0, 1).forEach((geo, i) => {\n    const ponto = serie.pontos.find((p) => p.geo === geo);\n    const marca = ponto?.bandeira ? String(ponto.bandeira) : null;\n    const dita = marca ? palavras"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 150 capturas contra as 140 das provas",
+   "sha256_antes": "019783265877ae3402ca850ee9eec51b7dcaf42ab78adffa3f2731fd37086c92",
+   "sha256_depois": "00626336af6bb9c0987bac95c5be7cabc6090b17b3e83acfe503587e89c7fa6d",
+   "contexto_antes": "ginas onde aparece (30 capturas), o bloco «O enquadramento» do seu recibo da linha (10), e a cabeça do recibo de cada uma das 10 séries, com a definição (100); 140 capturas, com 0 problemas (a União e a ressalva com o texto da fonte em cada cartão e recibo da linha, a definição em cada recibo, a ressalva só no da sobrecarga no total, e nenhuma pág",
+   "contexto_depois": "ginas onde aparece (30 capturas), o bloco «O enquadramento» do seu recibo da linha (10), e a cabeça do recibo de cada uma das 10 séries, com a definição (100); 150 capturas, com 0 problemas (a União e a ressalva com o texto da fonte em cada cartão e recibo da linha, a definição em cada recibo, a ressalva só no da sobrecarga no total, e nenhuma pág"
+  }
+ ]
+}
