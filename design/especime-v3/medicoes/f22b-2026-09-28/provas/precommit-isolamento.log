@@ -1,0 +1,225 @@
+GATE  reconcile_test         ok
+GATE  attributions_test      ok
+GATE  derivations_test       ok
+GATE  canaries_test          ok
+GATE  verifier_eval_test     ok
+GATE  editions_test          ok
+GATE  assertions_test        ok
+GATE  sweep_test             ok
+GATE  prose_test             ok
+GATE  describe_test          ok
+GATE  prereg_test            ok
+GATE  deps_test              ok
+GATE  reconferencias_test    ok
+GATE  excerpts_test          ok
+GATE  http_test              ok
+GATE  gate_test              ok
+GATE  export_site_rows_test  ok
+GATE  export_agenda_test     ok
+GATE  eyetext_test           ok
+GATE  export_records_test    ok
+GATE  voz_test               ok
+GATE  export_records_site_test ok
+GATE  concelhos_test         ok
+GATE  mapa_distritos_test    ok
+GATE  dominios_test          ok
+GATE  dominios_rp1_test      ok
+GATE  provas_test            ok
+GATE  refresh_dimensoes_test ok
+GATE  enquadramento_coordenadas_test ok
+GATE  refresh_c1c_test       ok
+GATE  refresh_rede_real_test ok
+GATE  rotinas_test           FAIL
+GATE  portao_exportacao_test ok
+GATE  http_nome_test         ok
+GATE  proveniencia_das_fixtures_test ok
+GATE  deps                   ok
+GATE  fixtures               ok
+GATE  paridade               ok
+GATE  nomes exportados       ok
+GATE  livros declarados      ok (13 livro(s) em 524 JSON sob content/, 1 exceção(ões) escrita(s), 0 ilegível(eis))
+GATE  dataset agua-2026-07   ok
+GATE  dataset regional-2026-08 ok
+GATE  derivations Onde Está a Água — Technical Source ok
+GATE  derivations 03 Regional Economy ok
+GATE  derivations 04 Évora Public Money ok
+GATE  derivations 06 Évora Economy ok
+GATE  derivations 07 Évora Municipal Accounts ok
+GATE  derivations 08 Évora Mandates ok
+GATE  derivations 09 Évora Pelouros ok
+GATE  derivations 10 Housing  ok
+GATE  derivations 11 Seguranca Social ok
+GATE  derivations 12 Concelhos ok
+GATE  derivations 13 Dominios ok
+GATE  derivations 14 Évora 2027 ok
+GATE  prereg 10 Housing       ok
+GATE  prereg 12 Concelhos     ok
+GATE  prereg 13 Dominios      ok
+GATE  prereg debt: 9 study(ies) with no registration — 03 Regional Economy, Onde Está a Água — Technical Source, 04 Évora Public Money, 06 Évora Economy, 07 Évora Municipal Accounts, 08 Évora Mandates, 09 Évora Pelouros, 14 Évora 2027, 11 Seguranca Social
+GATE  (not back-fillable: a registration written after collection certifies nothing)
+GATE  regional-economy-2026  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  onde-esta-a-agua-pt    ok — orphans 457/457, misattrib 4/4, undeclared 7/7
+GATE  regional-economy-2026-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  regional-economy-2026-art ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026 ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-money-audit-2026-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025    ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-pt ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-accounts-2025-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-economy-2026-pt-art ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-pt  ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-mandates-15y-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros         ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-html    ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-pt      ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-pelouros-pt-html ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  housing-h1-survey      ok — orphans 0/0, misattrib 0/0, undeclared 83/83
+GATE  housing-sq3            ok — orphans 0/0, misattrib 0/0, undeclared 3/3
+GATE  housing-h3-accounting  ok — orphans 0/0, misattrib 0/0, undeclared 4/4
+GATE  housing-sq7            ok — orphans 0/0, misattrib 0/0, undeclared 7/7
+GATE  concelhos-p1           ok — orphans 17/17, misattrib 18/18, undeclared 10/10
+GATE  concelhos-p3           ok — orphans 29/29, misattrib 8/8, undeclared 0/0
+GATE  concelhos-p4           ok — orphans 37/37, misattrib 52/52, undeclared 1/1
+GATE  dominios-d1            ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-pt          ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-pt-html     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-en          ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  evora-2027-en-html     ok — orphans 0/0, misattrib 0/0, undeclared 0/0
+GATE  penalizacoes-2026-pt-html ok — orphans 0/0, misattrib 2/2, undeclared 0/0
+GATE  seguranca-social-relatorio ok — orphans 17/17, misattrib 88/88, undeclared 0/0
+GATE  editions regional-en-pt ok
+GATE  editions regional-pt-art ok
+GATE  editions evora-en-pt   ok
+GATE  editions evora-en-html ok
+GATE  editions evora-pt-html ok
+GATE  editions evora-economy-en-html ok
+GATE  editions evora-accounts-en-pt ok
+GATE  editions evora-accounts-en-html ok
+GATE  editions evora-accounts-pt-html ok
+GATE  editions evora-economy-en-pt ok
+GATE  editions evora-economy-pt-html ok
+GATE  editions evora-economy-pt-art ok
+GATE  editions evora-mandates-md-html ok
+GATE  editions evora-mandates-en-pt ok
+GATE  editions evora-mandates-pt-html ok
+GATE  editions evora-pelouros-md-html ok
+GATE  editions evora-pelouros-en-pt ok
+GATE  editions evora-pelouros-pt-html ok
+GATE  editions evora-2027-pt-md-html ok
+GATE  editions evora-2027-en-md-html ok
+GATE  editions evora-2027-pt-en ok
+
+GATE: FAIL — 1 problem(s); commit blocked
+ - rotinas_test FAILED:
+
+  --------------------------------------------------------------------
+  rotinas_test FAILED:
+  # Painel semanal
+  
+  Corrida: 123
+  Estado: parcial, sem carimbo global
+  Linhas lidas: 1 de 2
+  Anfitriões por retomar: calado.invalid
+  
+  # Painel semanal
+  
+  Corrida: 123
+  Estado: parcial, sem carimbo global
+  Linhas lidas: 1 de 2
+  Anfitriões por retomar: calado.invalid
+  
+  # Painel semanal
+  
+  Corrida: 123
+  Estado: parcial, sem carimbo global
+  Linhas lidas: 1 de 2
+  Anfitriões por retomar: calado.invalid
+  
+  # Painel semanal
+  
+  Corrida: 123
+  Estado: inteira
+  Linhas lidas: 2 de 2
+  Anfitriões por retomar: nenhum
+  
+  # Painel semanal
+  
+  Corrida: 123
+  Estado: inteira
+  Linhas lidas: 2 de 2
+  Anfitriões por retomar: nenhum
+  
+  # Painel semanal
+  
+  Corrida: 123
+  Estado: inteira
+  Linhas lidas: 2 de 2
+  Anfitriões por retomar: nenhum
+  
+  * a: value: revisão da fonte: carimbo antigo -> novo, valor 10.0 -> 11.0  kind=atualizacao (a fonte foi revista)
+  * b: value: revisão da fonte: carimbo antigo -> novo, valor 10.0 -> 11.0  kind=atualizacao (a fonte foi revista)
+  Ensaio: copiaria e conferiria a definição de painel; descarregaria o agente e conservaria a definição no arquivo.
+  Ensaio: copiaria e conferiria a definição de varrimento; descarregaria o agente e conservaria a definição no arquivo.
+  Sem alterações. A aplicação exige as provas de duas corridas reais verdes de cada fluxo.
+  painel: dormente, sem pedidos nem avisos
+  test_acrescento_sem_poda (__main__.Plantas.test_acrescento_sem_poda) ... ok
+  test_api_cadencia_teto_e_vermelho (__main__.Plantas.test_api_cadencia_teto_e_vermelho) ... ok
+  test_api_exige_o_commit_e_o_fluxo (__main__.Plantas.test_api_exige_o_commit_e_o_fluxo) ... ok
+  test_cadencia_mensal_com_folga (__main__.Plantas.test_cadencia_mensal_com_folga) ... ok
+  test_comentario_editorial_conservado (__main__.Plantas.test_comentario_editorial_conservado) ... ok
+  test_data_autor_path_campos_recusados (__main__.Plantas.test_data_autor_path_campos_recusados) ... ok
+  test_decisoes_exige_site_e_aceita_ambiente (__main__.Plantas.test_decisoes_exige_site_e_aceita_ambiente) ... ok
+  test_diff_real_recusa_outro_ficheiro (__main__.Plantas.test_diff_real_recusa_outro_ficheiro) ... ok
+  test_diff_recusado_nao_publica (__main__.Plantas.test_diff_recusado_nao_publica) ... ok
+  test_estados_so_dados (__main__.Plantas.test_estados_so_dados) ... ok
+  test_fluxos_transportam_a_recusa_local (__main__.Plantas.test_fluxos_transportam_a_recusa_local) ... ok
+  test_main_avancou_fica_no_ramo (__main__.Plantas.test_main_avancou_fica_no_ramo) ... ok
+  test_painel_calado_persistente_nao_escreve_inacessivel (__main__.Plantas.test_painel_calado_persistente_nao_escreve_inacessivel) ... ok
+  test_painel_calado_retoma_so_o_anfitriao (__main__.Plantas.test_painel_calado_retoma_so_o_anfitriao) ... ok
+  test_painel_ensaio_inteiro_quatro_saidas (__main__.Plantas.test_painel_ensaio_inteiro_quatro_saidas) ... ok
+  test_painel_revisao_abre_issue_e_conserva_valor (__main__.Plantas.test_painel_revisao_abre_issue_e_conserva_valor) ... ok
+  test_poda_e_reescrita_recusadas (__main__.Plantas.test_poda_e_reescrita_recusadas) ... ok
+  test_portao_do_motor_vermelho_nao_commita (__main__.Plantas.test_portao_do_motor_vermelho_nao_commita) ... ok
+  test_portao_local_vermelho_conserva_ramo (__main__.Plantas.test_portao_local_vermelho_conserva_ramo) ... ok
+  test_portao_vermelho_retém_main_e_abre_issue (__main__.Plantas.test_portao_vermelho_retém_main_e_abre_issue) ... ok
+  test_reforma_recusa_ensaio_e_exige_duas_corridas (__main__.Plantas.test_reforma_recusa_ensaio_e_exige_duas_corridas) ... ok
+  test_reforma_so_ensaio_com_definicoes_sinteticas (__main__.Plantas.test_reforma_so_ensaio_com_definicoes_sinteticas) ... ok
+  test_relatorio_ilegivel_abre_issue (__main__.Plantas.test_relatorio_ilegivel_abre_issue) ... ok
+  test_retomadas_so_quando_calados (__main__.Plantas.test_retomadas_so_quando_calados) ... ok
+  test_segunda_sem_corrida_abre_issue (__main__.Plantas.test_segunda_sem_corrida_abre_issue) ... ok
+  test_sem_segredos_nos_ensaios_e_cron (__main__.Plantas.test_sem_segredos_nos_ensaios_e_cron) ... ok
+  test_silencio_do_leitor_e_http_sao_distintos (__main__.Plantas.test_silencio_do_leitor_e_http_sao_distintos) ... ok
+  test_transporte_do_patch_para_outro_runner (__main__.Plantas.test_transporte_do_patch_para_outro_runner) ... ERROR
+  test_valor_excerto_endereco_rejeitados (__main__.Plantas.test_valor_excerto_endereco_rejeitados) ... ok
+  test_varrimento_achado_abre_issue (__main__.Plantas.test_varrimento_achado_abre_issue) ... ok
+  test_varrimento_leitor_falhado_nao_carimba (__main__.Plantas.test_varrimento_leitor_falhado_nao_carimba) ... ok
+  test_verde_publica_exatamente_o_sha_conferido (__main__.Plantas.test_verde_publica_exatamente_o_sha_conferido) ... ok
+  test_vigia_dormente_nao_pede (__main__.Plantas.test_vigia_dormente_nao_pede) ... ok
+  test_vigia_recusa_ensaio_vermelho_incompleto (__main__.Plantas.test_vigia_recusa_ensaio_vermelho_incompleto) ... ok
+  
+  ======================================================================
+  ERROR: test_transporte_do_patch_para_outro_runner (__main__.Plantas.test_transporte_do_patch_para_outro_runner)
+  ----------------------------------------------------------------------
+  Traceback (most recent call last):
+    File "<repositorio>/indicators/rotinas_test.py", line 173, in test_transporte_do_patch_para_outro_runner
+      p.git(segundo, "update-index", "--refresh")
+      ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "<repositorio>/indicators/publicar_rotina.py", line 35, in git
+      raise Recusa(f"git {args[0]} recusou a operação (código {r.returncode})")
+  indicators.publicar_rotina.Recusa: git update-index recusou a operação (código 1)
+  
+  ----------------------------------------------------------------------
+  Ran 34 tests in 0.340s
+  
+  FAILED (errors=1)
+
+An unrunnable or red gate is not evidence of a clean commit (rule 14).

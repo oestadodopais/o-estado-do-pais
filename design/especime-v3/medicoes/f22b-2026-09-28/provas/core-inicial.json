@@ -1,0 +1,8 @@
+{
+  "comando": "python3 -m core.gate",
+  "cabeca": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+  "inicio": "2026-09-28T19:11:16.274179+00:00",
+  "fim": "2026-09-28T19:14:45.672273+00:00",
+  "segundos": 209.396,
+  "codigo": 1
+}
