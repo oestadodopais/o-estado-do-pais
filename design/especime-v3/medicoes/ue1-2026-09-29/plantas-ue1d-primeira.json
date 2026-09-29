@@ -1,0 +1,139 @@
+{
+  "bloco": "UE1d",
+  "cabeca": "de17f63e86a1754e0cf2667bb04c9a1fa34696e9",
+  "construcao": "de17f63e86a1754e0cf2667bb04c9a1fa34696e9",
+  "plantas": 8,
+  "mordidas": 7,
+  "repostas_com_o_mesmo_sha256": 8,
+  "plantas_por_grupo": {
+    "ressalva": 5,
+    "definicao": 2,
+    "tipos": 1
+  },
+  "corridas_limpas": 3,
+  "corridas_limpas_a_zero": 3,
+  "resultados": [
+    {
+      "grupo": "ressalva",
+      "nome": "a ressalva tirada do cartão da sobrecarga na página portuguesa dos temas",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 1,
+      "mordida": "/K14 · \\/temas\\/ · sobrecarga-do-custo-da-habitacao-2025: o cartão mostra a União e sem a ressalva da Comissão/",
+      "passou": true,
+      "antes": "49ea0fcac9c99b5c3be8e0757d29dda781f3b5d35e072a19fa4f71b0ff8d78b0",
+      "reposto": "49ea0fcac9c99b5c3be8e0757d29dda781f3b5d35e072a19fa4f71b0ff8d78b0",
+      "segundos": 7.9,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-a-ressalva-tirada-do-cartao-da-sobrecarga-na-pagina-portuguesa-dos-temas.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a ressalva tirada do recibo inglês da série",
+      "ficheiro": "dist/en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises/index.html",
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 1,
+      "mordida": "/K14 · \\/en\\/ledger\\/series\\/sobrecarga-do-custo-da-habitacao-2025-paises\\/ · sobrecarga-do-custo-da-habitacao-2025: o recibo mostra a União e sem a ressalva da Comissão/",
+      "passou": true,
+      "antes": "49555d070d4e13b67d2b3948781fba14fc2d7ba9a0e08d790605c77474f47676",
+      "reposto": "49555d070d4e13b67d2b3948781fba14fc2d7ba9a0e08d790605c77474f47676",
+      "segundos": 9.8,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-a-ressalva-tirada-do-recibo-ingles-da-serie.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a ressalva tirada do recibo português da linha",
+      "ficheiro": "dist/livro-razao/sobrecarga-do-custo-da-habitacao-2025/index.html",
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 1,
+      "mordida": "/K14 · \\/livro-razao\\/sobrecarga-do-custo-da-habitacao-2025\\/ · sobrecarga-do-custo-da-habitacao-2025: o recibo mostra a União e sem a ressalva da Comissão/",
+      "passou": true,
+      "antes": "e47368bd85fa44dce8fc710a00ba404c6eb12b28b04e912a88b3bbf986ceeb82",
+      "reposto": "e47368bd85fa44dce8fc710a00ba404c6eb12b28b04e912a88b3bbf986ceeb82",
+      "segundos": 9.4,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-a-ressalva-tirada-do-recibo-portugues-da-linha.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a ressalva posta no cartão da dívida, que não está na lista",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 1,
+      "mordida": "/K1 · \\/temas\\/ · divida-publica-2025: o cartão tem a ressalva da comparação com a União e a medida não está na lista da K14/",
+      "passou": true,
+      "antes": "49ea0fcac9c99b5c3be8e0757d29dda781f3b5d35e072a19fa4f71b0ff8d78b0",
+      "reposto": "49ea0fcac9c99b5c3be8e0757d29dda781f3b5d35e072a19fa4f71b0ff8d78b0",
+      "segundos": 9.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-a-ressalva-posta-no-cartao-da-divida-que-nao-esta-na-lista.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a medida tirada da declaração das ressalvas",
+      "ficheiro": "src/data/ressalvas-da-uniao.mjs",
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 1,
+      "mordida": "/K14 · a medida «sobrecarga-do-custo-da-habitacao-2025» exige a ressalva e a declaração não a tem/",
+      "passou": false,
+      "antes": "fa8e6859f28a9daf4763f2ba39ae302e022918116099f2d3dedcbd09592e9c2f",
+      "reposto": "fa8e6859f28a9daf4763f2ba39ae302e022918116099f2d3dedcbd09592e9c2f",
+      "segundos": 0.5,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-a-medida-tirada-da-declaracao-das-ressalvas.txt"
+    },
+    {
+      "grupo": "definicao",
+      "nome": "uma palavra mudada na definição do recibo dos preços da habitação",
+      "ficheiro": "dist/livro-razao/series/precos-da-habitacao-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1d: o recibo da série «precos-da-habitacao-2025-paises» diz «[^»]*» e a definição declarada é/",
+      "passou": true,
+      "antes": "832c21863d77297a366df1c028d2c5fd35b944622fedaaab520ba4cd63e3ffbb",
+      "reposto": "832c21863d77297a366df1c028d2c5fd35b944622fedaaab520ba4cd63e3ffbb",
+      "segundos": 25.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-uma-palavra-mudada-na-definicao-do-recibo-dos-precos-da-habitacao.txt"
+    },
+    {
+      "grupo": "definicao",
+      "nome": "a definição tirada do recibo inglês do índice harmonizado",
+      "ficheiro": "dist/en/ledger/series/ihpc-variacao-homologa-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1d: o recibo da série «ihpc-variacao-homologa-paises» tem 0 definição\\(ões\\) da medida/",
+      "passou": true,
+      "antes": "72e50c066c0566fb10110c845cb7b584b441be42ab4181582110faf8f1d4b997",
+      "reposto": "72e50c066c0566fb10110c845cb7b584b441be42ab4181582110faf8f1d4b997",
+      "segundos": 27.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-a-definicao-tirada-do-recibo-ingles-do-indice-harmonizado.txt"
+    },
+    {
+      "grupo": "tipos",
+      "nome": "um número onde a fonte única das ressalvas promete um texto",
+      "ficheiro": "src/data/ressalvas-da-uniao.mjs",
+      "comando": "node_modules/.bin/tsc -p tsconfig.check.json",
+      "codigo": 1,
+      "mordida": "/src\\/data\\/ressalvas-da-uniao\\.mjs\\(\\d+,\\d+\\): error TS2322/",
+      "passou": true,
+      "antes": "fa8e6859f28a9daf4763f2ba39ae302e022918116099f2d3dedcbd09592e9c2f",
+      "reposto": "fa8e6859f28a9daf4763f2ba39ae302e022918116099f2d3dedcbd09592e9c2f",
+      "segundos": 0.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/planta-um-numero-onde-a-fonte-unica-das-ressalvas-promete-um-texto.txt"
+    }
+  ],
+  "limpas": [
+    {
+      "comando": "node tests/cartao/cartao.mjs --prova",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/limpa-cartao.txt"
+    },
+    {
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/limpa-gate-html.txt"
+    },
+    {
+      "comando": "node_modules/.bin/tsc -p tsconfig.check.json",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1d-primeira/limpa-tsconfig.check.txt"
+    }
+  ],
+  "_": "A primeira corrida das plantas da UE1d, na cabeça de17f63e: a planta da declaração das ressalvas fechou o check:cartao com um TypeError no construtor da prova (tests/cartao/cartao.mjs, montaAProva) e não com a queixa da K14, e por isso o guião a deu por falhada. As saídas estão em plantas/ue1d-primeira/. A correção e a segunda corrida estão em plantas-ue1d.json."
+}

@@ -1,0 +1,40 @@
+# a ressalva tirada do recibo inglês da série
+# comando: node tests/cartao/cartao.mjs --prova
+# código: 1
+
+  prova: 14 estragos plantados, 14 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; K13 sobre 4 medidas e 12 linhas com grupo etário, com a declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; K16 com a declaração em vigor a passar e dez plantas a morder, a primeira o defeito da leitura a frio
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+    páginas lidas                    7452
+    cartões                          5362 (2681 pt, 2681 en)
+    com nome                         5362 de 5362
+    com a frase do que medem         5106 de 5362 com frase
+    com régua                        884 de 5362 com régua
+    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)
+    itens «período anterior», pares conferidos             270
+    «Governo Constitucional»         1 pt · 1 en
+    legenda da marca                 2 página(s)
+    nome na língua da fonte          0 (com a marca «lang»)
+    unidade na outra língua          1 (a exceção da I92)
+    o marcador em português          4 (a exceção da IDENTIDADE §6)
+    valores de régua sem marca própria                    434 (a porta é a do cartão)
+    valores de referência, as duas testemunhas comparadas  15
+      com a testemunha discordante declarada e inteira     2 (5 de 5 plantas a morder)
+    cartões com veredicto conferido (K15)                 116
+    a União com a ressalva (K14): cartões e recibos        6 · 3
+    cartões com a faixa da União (K1, K18)                 40
+    faixas refeitas dos pontos (K18)                       40 · 20 planta(s) a morder
+    ressalvas nas pontas e ordinais (K18, UE1b)            8 · 27 · 8 planta(s) das palavras a morder
+    empates num extremo, em memória (K18, UE1c)            6 planta(s) a morder
+    medidas com nome oficial no recibo                    11
+    perguntas com cada pedaço apoiado (K16)               34 (84 pedaços, 112 apoios, 69 origens seladas no motor)
+    leituras dos cartões nacionais (K17)                 190 em 190 cartões (49 declarações auditadas, 1156 partes, 455 apoios, 103 origens, 416 ramos recontados, 14 de 14 plantas a morder)
+    medidas com grupo etário fixado na linha (K13)         4
+      linhas dessas medidas, todas conferidas               12
+      delas, na catraca declarada (I132, vazia)           0
+    ficheiros do motor               referencias.json sim · nomes.json sim
+
+  1 defeito(s):
+    K14 · /en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises/ · sobrecarga-do-custo-da-habitacao-2025: o recibo mostra a União e sem a ressalva da Comissão (0 marca(s) «data-ressalva-da-uniao»): §1.140 (29.09.2026): a média da União voltou ao cartão, e a Comissão adverte que o total só se lê com a estrutura por regime de ocupação; onde a União aparece, a ressalva aparece
+
