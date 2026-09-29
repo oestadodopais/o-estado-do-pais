@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T22:11:31+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/indicators/publicar_rotina.py",
+   "descricao": "a guarda volta a correr depois do push do ramo datado: um candidato recusado chega ao repositório público antes da recusa",
+   "sha256_antes": "ba5775ccf868e579cc0b19b2f71070ba45333bd321db93c839706eb9f4ebb749",
+   "sha256_depois": "ff2fb9be25ed469db9087aef999bf150977cfa2fee19090edb29fb4281b17d01",
+   "contexto_antes": "       artefacto.write_text(executar_git(site, \"diff\", \"--binary\", \"--full-index\", base, candidato) + \"\\n\")\n        prova[\"artefacto\"] = artefacto.name\n        conferir(site, base, candidato, dia)\n        executar_git(site, \"push\", \"origin\", f\"{candidato}:refs/heads/{ramo}\")\n        prova[\"ramo_publicado\"] = True\n        prova[\"portao\"] = f\"https://github.com/{REPOSITORIO}/actions/workflows/portao.yml?query=branch%3A{urllib.parse.q",
+   "contexto_depois": "       artefacto.write_text(executar_git(site, \"diff\", \"--binary\", \"--full-index\", base, candidato) + \"\\n\")\n        prova[\"artefacto\"] = artefacto.name\n        executar_git(site, \"push\", \"origin\", f\"{candidato}:refs/heads/{ramo}\")\n        conferir(site, base, candidato, dia)\n        prova[\"ramo_publicado\"] = True\n        prova[\"portao\"] = f\"https://github.com/{REPOSITORIO}/actions/workflows/portao.yml?query=branch%3A{urllib.parse.q"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/indicators/vigia_rotinas.py",
+   "descricao": "o vigia procura a conclusão «cancelled» em vez de «skipped»: uma corrida devida dormente volta a abrir um alarme",
+   "sha256_antes": "007d6d4524e66632afd79777cab043cba6d9144d1a1baae5b8d4b49e76cb18c4",
+   "sha256_depois": "fd6978fff4864018fe380e53a0b409715d6f37718a368d2de5ef3f7c0ec65f17",
+   "contexto_antes": "s.stdout)[\"jobs\"] if j[\"name\"] == tipo]\n        if len(reais) != 1:\n            raise Recusa(\"não foi possível identificar o trabalho real da corrida\")\n        if reais[0][\"conclusion\"] == \"skipped\":\n            print(f\"{tipo}: a corrida de {devida(tipo, agora).date()} correu dormente; à espera da próxima\")\n            return 0\n        with tempfile.Tempora",
+   "contexto_depois": "s.stdout)[\"jobs\"] if j[\"name\"] == tipo]\n        if len(reais) != 1:\n            raise Recusa(\"não foi possível identificar o trabalho real da corrida\")\n        if reais[0][\"conclusion\"] == \"cancelled\":\n            print(f\"{tipo}: a corrida de {devida(tipo, agora).date()} correu dormente; à espera da próxima\")\n            return 0\n        with tempfile.Tempora"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/indicators/rotinas_f22c_test.py",
+   "descricao": "a planta das conclusões do portão deixa de dar ao esperar_portao a conclusão «cancelled», que o mandato nomeia",
+   "sha256_antes": "72880b6e1b5897b94b8e5d6917dd1f9d11428ae93429254df8d0806261abf2cb",
+   "sha256_depois": "bea3b8527ce6fd8d186de00db8e5f771cb66b8b8da1e18adcbd4ad28612fac33",
+   "contexto_antes": "    return p.esperar_portao(\"a\" * 40, \"rotina/prova\", pedir, dormir, lambda: t[0], teto)\n\n    def test_portao_conclusoes_da_api(self):\n        for conclusao in (\"success\", \"failure\", \"cancelled\", \"timed_out\", \"skipped\",\n                          \"action_required\", \"startup_failure\", \"neutral\", \"stale\"):\n            with self.subTest(conclusao=conclusao):\n                corrid",
+   "contexto_depois": "    return p.esperar_portao(\"a\" * 40, \"rotina/prova\", pedir, dormir, lambda: t[0], teto)\n\n    def test_portao_conclusoes_da_api(self):\n        for conclusao in (\"success\", \"failure\", \"timed_out\", \"skipped\",\n                          \"action_required\", \"startup_failure\", \"neutral\", \"stale\"):\n            with self.subTest(conclusao=conclusao):\n                corrid"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/sweeps/monthly.sh",
+   "descricao": "o varrimento do portátil sem argumentos volta a perder o --quiet do core.describe",
+   "sha256_antes": "ebba8b418867e8a2b34568a6749be7480c63c78c170d65061c463361ed4bb5d2",
+   "sha256_depois": "f66ef76370de3183bc031cce7687f685293953ec57668db2644e0ec94f0d922a",
+   "contexto_antes": "3 -m core.sweep --write\n  python3 -m core.health_check\n  python3 -m servers.pt_public_money.health_check\n  python3 -m servers.pt_tribunal_contas.health_check\n  python3 -m core.describe --quiet\n  python3 \"content/08 Évora Mandates/Technical Source/watch_next_events.py\"\n  watch_status=$?\n  python3 sweeps/decisoes.py\n  python3 indicators/upcoming.py\n  c",
+   "contexto_depois": "3 -m core.sweep --write\n  python3 -m core.health_check\n  python3 -m servers.pt_public_money.health_check\n  python3 -m servers.pt_tribunal_contas.health_check\n  python3 -m core.describe\n  python3 \"content/08 Évora Mandates/Technical Source/watch_next_events.py\"\n  watch_status=$?\n  python3 sweeps/decisoes.py\n  python3 indicators/upcoming.py\n  c"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 41 plantas das rotinas contra as 39 das provas",
+   "sha256_antes": "1753eacf4a4c9b4a30485156be40e4c49fef06401a25b518aece44a748a6b2b9",
+   "sha256_depois": "e20e9b063403fee736d484192e5063d38b149070fb8edbac0598e3134ae0d0a4",
+   "contexto_antes": "` e\n`plantas-detalhe.json` nomeiam as plantas das rotinas; `plantas-f22c.log` e\n`plantas-f22c-detalhe.json` nomeiam as adicionais e a cabeça dos estados reais.\nPassaram 39 plantas das rotinas e 25 adicionais. `fluxo.log` guarda as 94\nconferências dos YAML, contadas também em `fecho.json`. `isolamento` guarda o comando e as\nvariáveis artificiais que exercem a separaç",
+   "contexto_depois": "` e\n`plantas-detalhe.json` nomeiam as plantas das rotinas; `plantas-f22c.log` e\n`plantas-f22c-detalhe.json` nomeiam as adicionais e a cabeça dos estados reais.\nPassaram 41 plantas das rotinas e 25 adicionais. `fluxo.log` guarda as 94\nconferências dos YAML, contadas também em `fecho.json`. `isolamento` guarda o comando e as\nvariáveis artificiais que exercem a separaç"
+  }
+ ]
+}
