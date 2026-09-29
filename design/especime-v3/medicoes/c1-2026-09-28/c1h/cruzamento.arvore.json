@@ -1,0 +1,35 @@
+{
+  "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+  "limpa": false,
+  "diferenca_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/captar.mjs",
+      "sha256": "39f1c85a9d0b1db6c75e80952bb756ce7c42d579452c6dd6e5c9620e7c4d9325"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/conferir-concorrencia.py",
+      "sha256": "acb587ac18760ea2a8ac255812d685dccdc497056ecb3e11a28f8e93c6d85d07"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/correr-quando-livre.py",
+      "sha256": "40674f3f11f5785ddf563162ad5cc435ba9d6ff6aa5e255ad22140cd97b0f5bf"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/cruzamento.cabeca",
+      "sha256": "a1b73fe2248aea89312751904f56321b1b0c5dbd7a0c6d8464d73b949bd1f5e4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/cruzamento.inicio",
+      "sha256": "9b0ab543558d70ba4bb165c7d45f202a3877bc26e3646b910d9840ccc0a38664"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/extrair-portao.py",
+      "sha256": "26db16774057755f47f158d4a591e63dc2e8159b42568355d38d0839dde7a487"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1h/privacidade-isolada.json",
+      "sha256": "0c05b5778bc65bc4a73f5e4477ec5fcafb48706b58c4ec98fbc190cc2f70678e"
+    }
+  ]
+}
