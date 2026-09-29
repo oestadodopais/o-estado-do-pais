@@ -1,0 +1,8 @@
+{
+  "comando": "python3 -m indicators.refresh_rede_real_test",
+  "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+  "inicio": "2026-09-29T21:11:56.809037+00:00",
+  "fim": "2026-09-29T21:12:25.415406+00:00",
+  "segundos": 28.606,
+  "codigo": 0
+}

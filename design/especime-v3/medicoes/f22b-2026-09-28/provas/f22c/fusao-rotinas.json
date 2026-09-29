@@ -1,0 +1,8 @@
+{
+  "comando": "python3 -m indicators.rotinas_test",
+  "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+  "inicio": "2026-09-29T21:11:30.017901+00:00",
+  "fim": "2026-09-29T21:11:31.175609+00:00",
+  "segundos": 1.158,
+  "codigo": 0
+}

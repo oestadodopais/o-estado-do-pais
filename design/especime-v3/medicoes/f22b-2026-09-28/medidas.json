@@ -1,13 +1,13 @@
 {
   "bloco": "F2.2b",
-  "medido_em": "2026-09-29T21:31:13.606151+00:00",
+  "medido_em": "2026-09-29T22:05:11.892866+00:00",
   "bases": {
     "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
     "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
   },
   "cabecas_lidas": {
-    "motor": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
-    "sitio": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546"
+    "motor": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+    "sitio": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc"
   },
   "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
   "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
@@ -15,7 +15,9 @@
     "6432b88b000cdcdc47a08a8721bafac8f7ab023a Prepara a publicação guardada e as rotinas transportáveis",
     "5335e129b3167c93d1822c8af7cecbb909922877 Liga os fluxos dormentes às guardas e às plantas do F2.2b",
     "68318e0da2036cc29e4704fa1bb8a96dee246095 C1e: consultar o vigia quando o transporte não tem causa classificada",
-    "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1 F2.2c: juntar master conservando a classificação do transporte e a retoma"
+    "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1 F2.2c: juntar master conservando a classificação do transporte e a retoma",
+    "e7dbae267919aa6e9eb0345d25a085f50e4c5a72 F2.2c: corrigir as guardas e conservar as rotinas com plantas nas entradas reais",
+    "1a67dea9a4e479c00f4fe4c8d645364a3a943446 F2.2c: documentar as rotinas corrigidas e registar execução e custo"
   ],
   "commits_sitio_anteriores_ao_relatorio": [
     "2613664f73f178197ea869e9031ac6ba9f2bb0f9 PP1: as declarações do lugar de direção para a primeira página de um leitor comum (os cinco blocos de «O que se passa», com as palavras, as condições que os tornam verdadeiros e os desenhos, e as seis entradas com os cartões que cada uma agrupa) e o ensaio a seco que as rende nas duas edições, a testemunha independente contra o resolvedor do construtor (M31)",
@@ -99,7 +101,8 @@
     "8e66b60180312c7e6ca7fa8cf997700cd55c8bba §1.139: o guião da aterragem passa para o repositório (scripts/aterrar.sh: confere antes de mexer, para no primeiro passo que falhar, tem ensaio, não escreve caminhos da máquina), com as provas do ensaio; o registo da aterragem de 29.09 às 12:03 UTC; a M40; e a regra que o diretor junta para o autorizar",
     "77d9e4076eb8098a45e6ca0cd3c27964d54a9301 Regista as provas e a resposta do F2.2b",
     "22510cd9119ae01a9bca8a75c4382654cbf7e0b2 F2.2b: juntar main ao ramo antes da passagem de correção (C1, PP1, CI1, a redação de 29.09 e o guião da aterragem), pelo lugar de direção: no registo das melhorias, as linhas M37 a M40 de main e a linha do F2.2b renumerada M41, dentro da tabela; no §2 da frescura, a forma de main da linha datada (a redação de 29.09, em português certo), que substitui a do construtor",
-    "fb1dd0dd442684221a5e4aceae3b8ac5491d5546 F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)"
+    "fb1dd0dd442684221a5e4aceae3b8ac5491d5546 F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)",
+    "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc F2.2c: corrigir a ordem da publicação e a natureza das medidas"
   ],
   "commit_do_relatorio": "o commit que contém LEIA-ME.md, RESPOSTA-construtor-f22b.md e este medidas.json",
   "alteracoes_protegidas": [],
@@ -410,8 +413,370 @@
     "chaves e interruptores pelo diretor",
     "duas corridas reais verdes de cada rotina antes da reforma dos agentes"
   ],
+  "f22c": {
+    "execucoes": {
+      "brief": {
+        "comando": "python3 <sitio>/design/observatorio/medidas/BRIEF-F22b.py",
+        "ambiente_declarado": {
+          "OEDP_MEDIDAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief-reproduzido.json"
+        },
+        "cabeca": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546",
+        "inicio": "2026-09-29T21:29:34.238247+00:00",
+        "fim": "2026-09-29T21:30:29.509905+00:00",
+        "segundos": 55.271,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/brief.codigo",
+        "sha256_saida": "ffe31c46ca8b3d13dd4a99e413746e1819c914fbd312cb7a4c8670b99091932b"
+      },
+      "commit-correcoes": {
+        "comando": "git -C <motor> commit -m F2.2c: corrigir as guardas e conservar as rotinas com plantas nas entradas reais -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+        "inicio": "2026-09-29T21:28:15.341477+00:00",
+        "fim": "2026-09-29T21:35:48.578416+00:00",
+        "segundos": 453.236,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/commit-correcoes.codigo",
+        "sha256_saida": "7ce5647a1b4baf41885516e26dbe71d1be6e271be357a3e1410eb1b1b901e310"
+      },
+      "commit-fusao": {
+        "comando": "git -C <motor> commit -m F2.2c: juntar master conservando a classificação do transporte e a retoma -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+        "inicio": "2026-09-29T21:13:32.217583+00:00",
+        "fim": "2026-09-29T21:20:22.851503+00:00",
+        "segundos": 410.629,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/commit-fusao.codigo",
+        "sha256_saida": "6d3e8ff2f56aa7e42b8b43d86e44d7d9a081f73570936490f2fe7c5a3d564a66"
+      },
+      "commit-provas": {
+        "comando": "git -C <motor> commit -m F2.2c: documentar as rotinas corrigidas e registar execução e custo -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+        "inicio": "2026-09-29T21:37:04.357040+00:00",
+        "fim": "2026-09-29T21:44:45.521771+00:00",
+        "segundos": 461.164,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/commit-provas.codigo",
+        "sha256_saida": "0cc0abd15d665a8bfadd1fac6beaa789ed615b96f778c46b5a1e7f3d5fa70296"
+      },
+      "conferencia-relatorio-inicial": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-relatorio-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T22:04:20.960522+00:00",
+        "fim": "2026-09-29T22:04:21.079798+00:00",
+        "segundos": 0.119,
+        "codigo": 1,
+        "codigo_lido_de": "provas/f22c/conferencia-relatorio-inicial.codigo",
+        "sha256_saida": "00512c21ad39ed7d9d54fda4128fc4dcfa68a07aa9a91b7c638e7f6ecf86abd7"
+      },
+      "conferencia-relatorio": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-relatorio-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T22:05:08.478218+00:00",
+        "fim": "2026-09-29T22:05:08.571281+00:00",
+        "segundos": 0.093,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/conferencia-relatorio.codigo",
+        "sha256_saida": "a871a52347b267c9275af4cfd26d82c055cd3db5579bb5f611f27e5ee7474f20"
+      },
+      "conferencia-resposta": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22c.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-resposta-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T22:04:20.138773+00:00",
+        "fim": "2026-09-29T22:04:20.245131+00:00",
+        "segundos": 0.106,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/conferencia-resposta.codigo",
+        "sha256_saida": "95cbfeb29ad86e1d7232031d387e8b55f05b96cc459361a5d3910b71a2d8a83c"
+      },
+      "core-final": {
+        "comando": "python3 -m core.gate",
+        "ambiente_declarado": {},
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "inicio": "2026-09-29T21:45:12.137347+00:00",
+        "fim": "2026-09-29T21:52:17.708455+00:00",
+        "segundos": 425.57,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/core-final.codigo",
+        "sha256_saida": "91a85a9428b967e3e34e2380e3bdfd925ef06be9bfa18bdc5ee979bbc55935d2"
+      },
+      "fluxo": {
+        "comando": "python3 <motor>/indicators/provar_fluxo.py",
+        "ambiente_declarado": {},
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "inicio": "2026-09-29T21:45:18.265351+00:00",
+        "fim": "2026-09-29T21:45:22.944312+00:00",
+        "segundos": 4.679,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/fluxo.codigo",
+        "sha256_saida": "d7b419ecdfdd4c96e0bc0a7507d498df062385bfdf48adf7ff7ec943878593db"
+      },
+      "fusao-fluxo": {
+        "comando": "python3 <repositorio>/indicators/provar_fluxo.py",
+        "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+        "inicio": "2026-09-29T21:11:31.250174+00:00",
+        "fim": "2026-09-29T21:11:35.470779+00:00",
+        "segundos": 4.22,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/fusao-fluxo.codigo",
+        "sha256_saida": "b0d3057f167e01e56a431cfce75cf9ccc28500a01ea8166f28cc5a29534c69db"
+      },
+      "fusao-rede-local": {
+        "comando": "python3 -m indicators.refresh_rede_real_test",
+        "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+        "inicio": "2026-09-29T21:11:56.809037+00:00",
+        "fim": "2026-09-29T21:12:25.415406+00:00",
+        "segundos": 28.606,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/fusao-rede-local.codigo",
+        "sha256_saida": "ca91adca608b29fa7bda129e430751fe03c8efce95687b2d34991c799dc18858"
+      },
+      "fusao-rede": {
+        "comando": "python3 -m indicators.refresh_rede_real_test",
+        "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+        "inicio": "2026-09-29T21:11:29.170252+00:00",
+        "fim": "2026-09-29T21:11:29.845594+00:00",
+        "segundos": 0.675,
+        "codigo": 1,
+        "codigo_lido_de": "provas/f22c/fusao-rede.codigo",
+        "sha256_saida": "e49443ed4e1d9e7e3cc5aa4626c34d402f6c14abe787c5f5755efb5cb8251292"
+      },
+      "fusao-rotinas": {
+        "comando": "python3 -m indicators.rotinas_test",
+        "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+        "inicio": "2026-09-29T21:11:30.017901+00:00",
+        "fim": "2026-09-29T21:11:31.175609+00:00",
+        "segundos": 1.158,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/fusao-rotinas.codigo",
+        "sha256_saida": "cdf7a7231e136e6bd9c0640a65af2ac23b76ef1d05e8c92c3bdccdd9827d7187"
+      },
+      "isolamento": {
+        "comando": "python3 -m unittest indicators.rotinas_test.Plantas indicators.rotinas_f22c_test.PlantasF22c -v",
+        "ambiente_declarado": {
+          "GIT_DIR": "inexistente",
+          "GIT_WORK_TREE": "inexistente",
+          "GIT_INDEX_FILE": "inexistente"
+        },
+        "cabeca": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+        "inicio": "2026-09-29T21:38:07.655240+00:00",
+        "fim": "2026-09-29T21:38:11.616044+00:00",
+        "segundos": 3.96,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/isolamento.codigo",
+        "sha256_saida": "01a4beb61e3c7d23d8ce215716c836cbb3a22a37b177ccf7678b2aabe4d4b5c1"
+      },
+      "medidor-planta": {
+        "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T21:35:13.527964+00:00",
+        "fim": "2026-09-29T21:35:13.681444+00:00",
+        "segundos": 0.153,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/medidor-planta.codigo",
+        "sha256_saida": "d6f8f93ca7bbd9620aa372c0e1dfa529555dc85112825b6d3566d4bbfe7ea338"
+      },
+      "plantas-f22c": {
+        "comando": "python3 -m indicators.rotinas_f22c_test --site <sitio>",
+        "ambiente_declarado": {
+          "F22C_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/plantas-f22c-detalhe.json"
+        },
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "inicio": "2026-09-29T21:45:18.270277+00:00",
+        "fim": "2026-09-29T21:45:21.033800+00:00",
+        "segundos": 2.763,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/plantas-f22c.codigo",
+        "sha256_saida": "2c0bddd7707fbaa3ff1d881d1fc97a94f07c48b2ae83adc50b6074dd64bf1831"
+      },
+      "plantas": {
+        "comando": "python3 -m indicators.rotinas_test",
+        "ambiente_declarado": {
+          "F22B_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/plantas-detalhe.json"
+        },
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "inicio": "2026-09-29T21:45:17.663344+00:00",
+        "fim": "2026-09-29T21:45:18.792093+00:00",
+        "segundos": 1.129,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/plantas.codigo",
+        "sha256_saida": "918764e77c4cf573fc87a19bddfa9a0897ac25d6d2e3d647565def7c9c94924f"
+      },
+      "trabalho-f22c": {
+        "comando": "python3 -m indicators.rotinas_f22c_test --site <sitio>",
+        "ambiente_declarado": {},
+        "cabeca": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+        "inicio": "2026-09-29T21:25:59.622260+00:00",
+        "fim": "2026-09-29T21:26:03.371056+00:00",
+        "segundos": 3.748,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/trabalho-f22c.codigo",
+        "sha256_saida": "a1d8111a5dd714b9716482e5fffefdeb24c7d80d9f4adadba7d5414f0153d9ec"
+      },
+      "trabalho-fluxo": {
+        "comando": "python3 <motor>/indicators/provar_fluxo.py",
+        "ambiente_declarado": {},
+        "cabeca": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+        "inicio": "2026-09-29T21:25:59.618270+00:00",
+        "fim": "2026-09-29T21:26:04.874515+00:00",
+        "segundos": 5.256,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/trabalho-fluxo.codigo",
+        "sha256_saida": "d7b419ecdfdd4c96e0bc0a7507d498df062385bfdf48adf7ff7ec943878593db"
+      },
+      "trabalho-rotinas": {
+        "comando": "python3 -m indicators.rotinas_test",
+        "ambiente_declarado": {},
+        "cabeca": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+        "inicio": "2026-09-29T21:25:59.618271+00:00",
+        "fim": "2026-09-29T21:26:01.171855+00:00",
+        "segundos": 1.553,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22c/trabalho-rotinas.codigo",
+        "sha256_saida": "2561f3a49b206973fd4a43503605c525d39cb9d3edf75490603baa8e07995e11"
+      },
+      "build": {
+        "comando": "npm run build",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T21:38:14.466043+00:00",
+        "fim": "2026-09-29T21:42:06.163860+00:00",
+        "segundos": 231.698,
+        "codigo": 0,
+        "codigo_lido_de": "portoes/f22c/build.codigo",
+        "sha256_saida": "43786f7f919cb8192ba436adecfe4858adc1237b253a980daf72e7926da566de"
+      },
+      "typecheck": {
+        "comando": "npm run typecheck",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T22:00:36.865475+00:00",
+        "fim": "2026-09-29T22:00:37.693676+00:00",
+        "segundos": 0.828,
+        "codigo": 0,
+        "codigo_lido_de": "portoes/f22c/typecheck.codigo",
+        "sha256_saida": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+      },
+      "verify": {
+        "comando": "npm run verify",
+        "ambiente_declarado": {},
+        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "inicio": "2026-09-29T21:43:32.177392+00:00",
+        "fim": "2026-09-29T21:57:41.914627+00:00",
+        "segundos": 849.736,
+        "codigo": 0,
+        "codigo_lido_de": "portoes/f22c/verify.codigo",
+        "sha256_saida": "43272e99326c7a53489e012778a8c6f61045a363593bfc5fa9cce19c17a7f082"
+      }
+    },
+    "plantas_rotinas": {
+      "provas": 39,
+      "falhas": 0,
+      "erros": 0,
+      "passou": true,
+      "nomes": [
+        "test_api_cadencia_teto_e_vermelho",
+        "test_api_exige_o_commit_e_o_fluxo",
+        "test_cadencia_mensal_com_folga",
+        "test_comentario_editorial_conservado",
+        "test_data_autor_path_campos_recusados",
+        "test_decisoes_exige_site_e_aceita_ambiente",
+        "test_diff_real_recusa_outro_ficheiro",
+        "test_diff_recusado_nao_publica",
+        "test_estados_so_dados",
+        "test_fluxos_transportam_a_recusa_local",
+        "test_limiar_503_avisa_sem_retoma_e_carimba",
+        "test_limiar_sem_numeros_avisa_e_carimba",
+        "test_limiar_sem_resposta_retoma_sem_bloquear_carimbo",
+        "test_main_avancou_fica_no_ramo",
+        "test_painel_calado_persistente_nao_escreve_inacessivel",
+        "test_painel_calado_retoma_so_o_anfitriao",
+        "test_painel_ensaio_inteiro_quatro_saidas",
+        "test_painel_revisao_abre_issue_e_conserva_valor",
+        "test_poda_a_mais_e_reordenacao_recusadas",
+        "test_poda_e_reescrita_recusadas",
+        "test_portao_do_motor_vermelho_nao_commita",
+        "test_portao_local_vermelho_conserva_ramo",
+        "test_portao_vermelho_retém_main_e_abre_issue",
+        "test_quatro_reconferencias_mais_nova_podadas",
+        "test_reforma_recusa_ensaio_e_exige_duas_corridas",
+        "test_reforma_so_ensaio_com_definicoes_sinteticas",
+        "test_relatorio_ilegivel_abre_issue",
+        "test_retomadas_so_quando_calados",
+        "test_segunda_sem_corrida_abre_issue",
+        "test_seis_reconferencias_mais_nova_podadas",
+        "test_sem_segredos_nos_ensaios_e_cron",
+        "test_silencio_do_leitor_e_http_sao_distintos",
+        "test_transporte_do_patch_para_outro_runner",
+        "test_valor_excerto_endereco_rejeitados",
+        "test_varrimento_achado_abre_issue",
+        "test_varrimento_leitor_falhado_nao_carimba",
+        "test_verde_publica_exatamente_o_sha_conferido",
+        "test_vigia_dormente_nao_pede",
+        "test_vigia_recusa_ensaio_vermelho_incompleto"
+      ]
+    },
+    "plantas_adicionais": {
+      "provas": 25,
+      "falhas": 0,
+      "erros": 0,
+      "passou": true,
+      "sitio_real_cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "nomes": [
+        "test_api_cabecalho_da_versao",
+        "test_api_erro_permanente_para_logo_com_causa",
+        "test_api_limite_e_servidor_repetem_ate_teto_com_causa",
+        "test_api_rede_repete_e_conserva_ultimo_erro",
+        "test_diff_criacao_remocao_e_modo_recusados",
+        "test_entradas_principais_recusam_despacho_e_modo_nao_real",
+        "test_fluxos_passam_modo_e_guardam_diff_privado",
+        "test_fontes_dados_aceites_e_valores_novos_exportacao_recusados",
+        "test_mensal_portatil_calendario_falhou",
+        "test_mensal_portatil_codigo_das_publicacoes",
+        "test_mensal_portatil_verde",
+        "test_mensal_runner_conserva_bandeiras",
+        "test_portao_conclusoes_da_api",
+        "test_reforma_main_ensaio_no_lugar_de_real",
+        "test_reforma_main_identificadores_repetidos",
+        "test_reforma_main_sem_provas",
+        "test_reforma_main_uma_corrida",
+        "test_reforma_main_verde_arquiva_antes_de_apagar",
+        "test_valor_recusado_antes_do_push_fica_no_artefacto_privado",
+        "test_vigia_corrida_devida_dormente",
+        "test_vigia_corrida_em_falta",
+        "test_vigia_corrida_verde_com_carimbo",
+        "test_vigia_despacho_desarmado_corre_nas_duas_rotinas",
+        "test_vigia_falha_repetida_dois_dias_uma_issue",
+        "estados_reais_do_sitio"
+      ]
+    },
+    "custo": {
+      "origem": "event_msg/token_count da sessão indicada",
+      "inicio": "2026-09-29T21:08:52.877Z",
+      "instante_do_contador": "2026-09-29T22:02:04.021Z",
+      "modelo_exposto": "gpt-6-astra",
+      "simbolos": {
+        "input_tokens": 21005236,
+        "cached_input_tokens": 20722560,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 74201,
+        "reasoning_output_tokens": 30442,
+        "total_tokens": 21079437
+      },
+      "segundos": 3191.144,
+      "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido."
+    },
+    "cabeca_dos_portoes_do_sitio": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+    "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."
+  },
   "varrimento_do_pacote": {
-    "ficheiros_lidos": 67,
+    "ficheiros_lidos": 165,
     "caminhos_pessoais": 0,
     "conhecido_positivo": true
   }

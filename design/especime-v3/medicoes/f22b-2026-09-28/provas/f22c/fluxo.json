@@ -1,0 +1,9 @@
+{
+  "comando": "python3 <motor>/indicators/provar_fluxo.py",
+  "ambiente_declarado": {},
+  "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+  "inicio": "2026-09-29T21:45:18.265351+00:00",
+  "fim": "2026-09-29T21:45:22.944312+00:00",
+  "segundos": 4.679,
+  "codigo": 0
+}

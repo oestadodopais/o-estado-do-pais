@@ -1,0 +1,175 @@
+test_api_cadencia_teto_e_vermelho (indicators.rotinas_test.Plantas.test_api_cadencia_teto_e_vermelho) ... ok
+test_api_exige_o_commit_e_o_fluxo (indicators.rotinas_test.Plantas.test_api_exige_o_commit_e_o_fluxo) ... ok
+test_cadencia_mensal_com_folga (indicators.rotinas_test.Plantas.test_cadencia_mensal_com_folga) ... ok
+test_comentario_editorial_conservado (indicators.rotinas_test.Plantas.test_comentario_editorial_conservado) ... ok
+test_data_autor_path_campos_recusados (indicators.rotinas_test.Plantas.test_data_autor_path_campos_recusados) ... ok
+test_decisoes_exige_site_e_aceita_ambiente (indicators.rotinas_test.Plantas.test_decisoes_exige_site_e_aceita_ambiente) ... ok
+test_diff_real_recusa_outro_ficheiro (indicators.rotinas_test.Plantas.test_diff_real_recusa_outro_ficheiro) ... ok
+test_diff_recusado_nao_publica (indicators.rotinas_test.Plantas.test_diff_recusado_nao_publica) ... ok
+test_estados_so_dados (indicators.rotinas_test.Plantas.test_estados_so_dados) ... ok
+test_fluxos_transportam_a_recusa_local (indicators.rotinas_test.Plantas.test_fluxos_transportam_a_recusa_local) ... ok
+test_limiar_503_avisa_sem_retoma_e_carimba (indicators.rotinas_test.Plantas.test_limiar_503_avisa_sem_retoma_e_carimba) ... <caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 503: 'indisponível'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_limiar_sem_numeros_avisa_e_carimba (indicators.rotinas_test.Plantas.test_limiar_sem_numeros_avisa_e_carimba) ... ok
+test_limiar_sem_resposta_retoma_sem_bloquear_carimbo (indicators.rotinas_test.Plantas.test_limiar_sem_resposta_retoma_sem_bloquear_carimbo) ... ok
+test_main_avancou_fica_no_ramo (indicators.rotinas_test.Plantas.test_main_avancou_fica_no_ramo) ... ok
+test_painel_calado_persistente_nao_escreve_inacessivel (indicators.rotinas_test.Plantas.test_painel_calado_persistente_nao_escreve_inacessivel) ... ok
+test_painel_calado_retoma_so_o_anfitriao (indicators.rotinas_test.Plantas.test_painel_calado_retoma_so_o_anfitriao) ... ok
+test_painel_ensaio_inteiro_quatro_saidas (indicators.rotinas_test.Plantas.test_painel_ensaio_inteiro_quatro_saidas) ... ok
+test_painel_revisao_abre_issue_e_conserva_valor (indicators.rotinas_test.Plantas.test_painel_revisao_abre_issue_e_conserva_valor) ... ok
+test_poda_a_mais_e_reordenacao_recusadas (indicators.rotinas_test.Plantas.test_poda_a_mais_e_reordenacao_recusadas) ... ok
+test_poda_e_reescrita_recusadas (indicators.rotinas_test.Plantas.test_poda_e_reescrita_recusadas) ... ok
+test_portao_do_motor_vermelho_nao_commita (indicators.rotinas_test.Plantas.test_portao_do_motor_vermelho_nao_commita) ... ok
+test_portao_local_vermelho_conserva_ramo (indicators.rotinas_test.Plantas.test_portao_local_vermelho_conserva_ramo) ... ok
+test_portao_vermelho_retém_main_e_abre_issue (indicators.rotinas_test.Plantas.test_portao_vermelho_retém_main_e_abre_issue) ... ok
+test_quatro_reconferencias_mais_nova_podadas (indicators.rotinas_test.Plantas.test_quatro_reconferencias_mais_nova_podadas) ... ok
+test_reforma_recusa_ensaio_e_exige_duas_corridas (indicators.rotinas_test.Plantas.test_reforma_recusa_ensaio_e_exige_duas_corridas) ... ok
+test_reforma_so_ensaio_com_definicoes_sinteticas (indicators.rotinas_test.Plantas.test_reforma_so_ensaio_com_definicoes_sinteticas) ... ok
+test_relatorio_ilegivel_abre_issue (indicators.rotinas_test.Plantas.test_relatorio_ilegivel_abre_issue) ... ok
+test_retomadas_so_quando_calados (indicators.rotinas_test.Plantas.test_retomadas_so_quando_calados) ... ok
+test_segunda_sem_corrida_abre_issue (indicators.rotinas_test.Plantas.test_segunda_sem_corrida_abre_issue) ... ok
+test_seis_reconferencias_mais_nova_podadas (indicators.rotinas_test.Plantas.test_seis_reconferencias_mais_nova_podadas) ... ok
+test_sem_segredos_nos_ensaios_e_cron (indicators.rotinas_test.Plantas.test_sem_segredos_nos_ensaios_e_cron) ... ok
+test_silencio_do_leitor_e_http_sao_distintos (indicators.rotinas_test.Plantas.test_silencio_do_leitor_e_http_sao_distintos) ... ok
+test_transporte_do_patch_para_outro_runner (indicators.rotinas_test.Plantas.test_transporte_do_patch_para_outro_runner) ... ok
+test_valor_excerto_endereco_rejeitados (indicators.rotinas_test.Plantas.test_valor_excerto_endereco_rejeitados) ... ok
+test_varrimento_achado_abre_issue (indicators.rotinas_test.Plantas.test_varrimento_achado_abre_issue) ... ok
+test_varrimento_leitor_falhado_nao_carimba (indicators.rotinas_test.Plantas.test_varrimento_leitor_falhado_nao_carimba) ... ok
+test_verde_publica_exatamente_o_sha_conferido (indicators.rotinas_test.Plantas.test_verde_publica_exatamente_o_sha_conferido) ... ok
+test_vigia_dormente_nao_pede (indicators.rotinas_test.Plantas.test_vigia_dormente_nao_pede) ... ok
+test_vigia_recusa_ensaio_vermelho_incompleto (indicators.rotinas_test.Plantas.test_vigia_recusa_ensaio_vermelho_incompleto) ... ok
+test_api_cabecalho_da_versao (indicators.rotinas_f22c_test.PlantasF22c.test_api_cabecalho_da_versao) ... ok
+test_api_erro_permanente_para_logo_com_causa (indicators.rotinas_f22c_test.PlantasF22c.test_api_erro_permanente_para_logo_com_causa) ... <caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 400: 'pedido recusado'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 401: 'pedido recusado'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 404: 'pedido recusado'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 410: 'pedido recusado'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 403: 'pedido recusado'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_api_limite_e_servidor_repetem_ate_teto_com_causa (indicators.rotinas_f22c_test.PlantasF22c.test_api_limite_e_servidor_repetem_ate_teto_com_causa) ... <caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 403: 'rate limit'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 429: 'rate limit'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 500: 'serviço indisponível'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+<caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 503: 'serviço indisponível'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_api_rede_repete_e_conserva_ultimo_erro (indicators.rotinas_f22c_test.PlantasF22c.test_api_rede_repete_e_conserva_ultimo_erro) ... ok
+test_diff_criacao_remocao_e_modo_recusados (indicators.rotinas_f22c_test.PlantasF22c.test_diff_criacao_remocao_e_modo_recusados) ... ok
+test_entradas_principais_recusam_despacho_e_modo_nao_real (indicators.rotinas_f22c_test.PlantasF22c.test_entradas_principais_recusam_despacho_e_modo_nao_real) ... ok
+test_fluxos_passam_modo_e_guardam_diff_privado (indicators.rotinas_f22c_test.PlantasF22c.test_fluxos_passam_modo_e_guardam_diff_privado) ... <caminho-local> ResourceWarning: Implicitly cleaning up <HTTPError 404: 'ausente'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_fontes_dados_aceites_e_valores_novos_exportacao_recusados (indicators.rotinas_f22c_test.PlantasF22c.test_fontes_dados_aceites_e_valores_novos_exportacao_recusados) ... ok
+test_mensal_portatil_calendario_falhou (indicators.rotinas_f22c_test.PlantasF22c.test_mensal_portatil_calendario_falhou) ... ok
+test_mensal_portatil_codigo_das_publicacoes (indicators.rotinas_f22c_test.PlantasF22c.test_mensal_portatil_codigo_das_publicacoes) ... ok
+test_mensal_portatil_verde (indicators.rotinas_f22c_test.PlantasF22c.test_mensal_portatil_verde) ... ok
+test_mensal_runner_conserva_bandeiras (indicators.rotinas_f22c_test.PlantasF22c.test_mensal_runner_conserva_bandeiras) ... ok
+test_portao_conclusoes_da_api (indicators.rotinas_f22c_test.PlantasF22c.test_portao_conclusoes_da_api) ... ok
+test_reforma_main_ensaio_no_lugar_de_real (indicators.rotinas_f22c_test.PlantasF22c.test_reforma_main_ensaio_no_lugar_de_real) ... ok
+test_reforma_main_identificadores_repetidos (indicators.rotinas_f22c_test.PlantasF22c.test_reforma_main_identificadores_repetidos) ... ok
+test_reforma_main_sem_provas (indicators.rotinas_f22c_test.PlantasF22c.test_reforma_main_sem_provas) ... usage: python3 -m unittest [-h] --agentes AGENTES --arquivo ARQUIVO [--ensaio]
+                           [--aplicar] [--provas PROVAS]
+python3 -m unittest: error: a aplicação exige --provas com os identificadores das corridas
+ok
+test_reforma_main_uma_corrida (indicators.rotinas_f22c_test.PlantasF22c.test_reforma_main_uma_corrida) ... ok
+test_reforma_main_verde_arquiva_antes_de_apagar (indicators.rotinas_f22c_test.PlantasF22c.test_reforma_main_verde_arquiva_antes_de_apagar) ... ok
+test_valor_recusado_antes_do_push_fica_no_artefacto_privado (indicators.rotinas_f22c_test.PlantasF22c.test_valor_recusado_antes_do_push_fica_no_artefacto_privado) ... ok
+test_vigia_corrida_devida_dormente (indicators.rotinas_f22c_test.PlantasF22c.test_vigia_corrida_devida_dormente) ... ok
+test_vigia_corrida_em_falta (indicators.rotinas_f22c_test.PlantasF22c.test_vigia_corrida_em_falta) ... ok
+test_vigia_corrida_verde_com_carimbo (indicators.rotinas_f22c_test.PlantasF22c.test_vigia_corrida_verde_com_carimbo) ... ok
+test_vigia_despacho_desarmado_corre_nas_duas_rotinas (indicators.rotinas_f22c_test.PlantasF22c.test_vigia_despacho_desarmado_corre_nas_duas_rotinas) ... ok
+test_vigia_falha_repetida_dois_dias_uma_issue (indicators.rotinas_f22c_test.PlantasF22c.test_vigia_falha_repetida_dois_dias_uma_issue) ... ok
+
+----------------------------------------------------------------------
+Ran 63 tests in 3.654s
+
+OK
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: nenhum
+
+* limiar: threshold: o limiar respondeu com HTTP 503
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: nenhum
+
+* limiar: threshold: a página do limiar não tem números; conferir a estrutura da página
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: economy-finance.ec.europa.eu
+
+* limiar: threshold: limiar sem resposta neste runner: URLError: <urlopen error sem resposta>
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: nenhum
+
+* limiar: threshold: limiar sem resposta neste runner: URLError: <urlopen error sem resposta>
+# Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões por retomar: calado.invalid
+
+# Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões por retomar: calado.invalid
+
+# Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões por retomar: calado.invalid
+
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: nenhum
+
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: nenhum
+
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões por retomar: nenhum
+
+* a: value: revisão da fonte: carimbo antigo -> novo, valor 10.0 -> 11.0  kind=atualizacao (a fonte foi revista)
+* b: value: revisão da fonte: carimbo antigo -> novo, valor 10.0 -> 11.0  kind=atualizacao (a fonte foi revista)
+Ensaio: copiaria e conferiria a definição de painel; descarregaria o agente e conservaria a definição no arquivo.
+Ensaio: copiaria e conferiria a definição de varrimento; descarregaria o agente e conservaria a definição no arquivo.
+Sem alterações. A aplicação exige as provas de duas corridas reais verdes de cada fluxo.
+painel: dormente, sem pedidos nem avisos
+painel: descarregado, definição conservada no arquivo
+varrimento: descarregado, definição conservada no arquivo

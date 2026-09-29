@@ -1,0 +1,9 @@
+{
+  "comando": "npm run typecheck",
+  "ambiente_declarado": {},
+  "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+  "inicio": "2026-09-29T22:00:36.865475+00:00",
+  "fim": "2026-09-29T22:00:37.693676+00:00",
+  "segundos": 0.828,
+  "codigo": 0
+}

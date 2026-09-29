@@ -1,0 +1,8 @@
+{
+  "comando": "python3 <repositorio>/indicators/provar_fluxo.py",
+  "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+  "inicio": "2026-09-29T21:11:31.250174+00:00",
+  "fim": "2026-09-29T21:11:35.470779+00:00",
+  "segundos": 4.22,
+  "codigo": 0
+}

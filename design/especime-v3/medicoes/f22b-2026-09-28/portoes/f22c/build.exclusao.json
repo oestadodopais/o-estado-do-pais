@@ -1,0 +1,184 @@
+[
+  {
+    "instante": "2026-09-29T21:34:13.801533+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:34:28.854628+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:34:43.892065+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:34:58.926195+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:35:13.967350+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:35:29.015036+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:35:44.040874+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:35:59.081570+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:36:14.116155+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:36:29.179886+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:36:44.210430+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:36:59.243273+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:37:14.289410+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:37:29.339799+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:37:44.377701+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:37:59.402510+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 0,
+    "processos": [
+      {
+        "pid": 14390,
+        "classe": "astro build"
+      }
+    ]
+  },
+  {
+    "instante": "2026-09-29T21:38:14.450652+00:00",
+    "comando": "pgrep -fl 'astro build|npm run verify|npm run build'",
+    "codigo": 1,
+    "processos": []
+  }
+]

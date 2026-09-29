@@ -1,0 +1,24 @@
+{
+  "relatorio": "design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22c.md",
+  "pasta": "design/especime-v3/medicoes/f22b-2026-09-28",
+  "ficheiros_json_lidos": 54,
+  "ilegiveis": [],
+  "conhecido_positivo": {
+    "numero": 987654323,
+    "encontrado": true
+  },
+  "numeros_conferidos": 9,
+  "numeros_com_ficheiro": 9,
+  "numeros_sem_ficheiro": 0,
+  "sem_ficheiro": [],
+  "apagado_antes_de_contar": {
+    "codigo": 15,
+    "enderecos": 0,
+    "seccoes": 0,
+    "datas": 0,
+    "resumos": 0,
+    "ordinais": 0,
+    "identificadores": 1,
+    "anos": 0
+  }
+}

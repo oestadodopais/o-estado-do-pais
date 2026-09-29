@@ -1,0 +1,16 @@
+{
+  "origem": "event_msg/token_count da sessão indicada",
+  "inicio": "2026-09-29T21:08:52.877Z",
+  "instante_do_contador": "2026-09-29T21:37:05.378Z",
+  "modelo_exposto": "gpt-6-astra",
+  "simbolos": {
+    "input_tokens": 8303174,
+    "cached_input_tokens": 8102528,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 44710,
+    "reasoning_output_tokens": 10798,
+    "total_tokens": 8347884
+  },
+  "segundos": 1692.501,
+  "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido."
+}
