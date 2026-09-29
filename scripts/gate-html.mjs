@@ -7,30 +7,27 @@ import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
-import { LEITURAS_DAS_MEDIDAS } from '../src/data/leituras-das-medidas.mjs';
-
 /**
- * O QUE UMA MEDIDA CONTA, PELA REGRA DOS PORTÕES (a passagem UE1c, 29.09.2026).
- * O princípio da leitura declarada do cartão, enquanto for palavras fixas e
- * algarismos declarados (`nl`), até ao primeiro pedaço calculado, cortado no
- * último ponto final; `null` quando a leitura abre com o valor de Portugal. É a
- * mesma regra que `definicaoDaMedida()` segue no sítio, escrita aqui outra vez
- * para que o portão não se confirme com o código da página.
+ * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
+ * pelo lugar de direção). As palavras e os algarismos declarados (`nl`) da
+ * definição da medida em `DEFINICOES_DAS_MEDIDAS` (`src/data/figuras.mjs`), que
+ * vem citada da Comissão ou do Eurostat, juntos pela ordem; `null` quando a
+ * medida não a tem ou a definição traz um pedaço que não é palavra nem algarismo
+ * declarado, e aí o recibo não se confere por texto e o portão di-lo.
  *
  * @param {string} id @param {'pt'|'en'} lang
  * @returns {string|null}
  */
 function definicaoDoPortao(id, lang) {
-  const partes = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id]?.[lang];
+  const partes = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id]?.[lang];
   if (!Array.isArray(partes)) return null;
   let texto = '';
   for (const p of partes) {
     if (typeof p === 'string') texto += p;
-    else if (p && typeof p === 'object' && !Array.isArray(p) && 'nl' in p && Object.keys(p).every((k) => k === 'nl' || k === 'motivo')) texto += String(p.nl);
-    else break;
+    else if (p && typeof p === 'object' && !Array.isArray(p) && 'nl' in p) texto += String(p.nl);
+    else return null;
   }
-  const fim = texto.lastIndexOf('.');
-  return fim === -1 ? null : normalizeWhitespace(texto.slice(0, fim + 1));
+  return normalizeWhitespace(texto);
 }
 /**
  * Portão (a) e (c): varrimento do HTML construído.
@@ -111,7 +108,7 @@ import {
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
+import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
@@ -526,8 +523,8 @@ const seriesConstruidas = new Set();
    legendas das marcas dos recibos das séries, vistas. */
 const portasDasSeriesVistas = new Set();
 const UE1B = { portas: 0, legendas: 0, marcasNasLegendas: 0 };
-/* UE1c: as frases do que cada medida conta, nos recibos das séries. */
-const UE1C = { definicoes: 0, semDefinicao: 0 };
+/* UE1c e UE1d: a definição declarada de cada medida, nos recibos das séries. */
+const UE1D = { definicoes: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 let ficheiros = 0;
 let documentos = 0;
@@ -4463,23 +4460,21 @@ for (const file of ficheirosHtml(DIST)) {
          com a série, carácter a carácter. */
       const sid = rota.params.slug;
       const serie = SERIES_DO_PORTAO.get(sid);
-      /* UE1c (29.09.2026, os achados 9 e 10 da leitura a frio): o que a medida
-         conta, por baixo do título, com a frase da leitura do cartão, recomposta
-         aqui pela regra dos portões; uma leitura que abre com o valor de Portugal
-         não tem essa frase, e o recibo não a pode ter. */
+      /* O QUE A MEDIDA CONTA (a passagem UE1c, os achados 9 e 10 da leitura a
+         frio; na forma da UE1d, 29.09.2026): por baixo do título, a definição
+         declarada da medida, carácter a carácter, em cada um dos vinte recibos. */
       {
         const linguaDoRecibo = rota.lang === 'en' ? 'en' : 'pt';
         const esperada = definicaoDoPortao(String(serie.linha_de_portugal), linguaDoRecibo);
         const frases = root.querySelectorAll('[data-serie-o-que-conta]');
         if (esperada === null) {
-          if (frases.length) err(`UE1c: o recibo da série «${sid}» diz o que a medida conta, e a leitura do cartão não abre com essa frase: o recibo não a inventa.`);
-          else UE1C.semDefinicao++;
+          err(`UE1d: a medida «${serie.linha_de_portugal}» da série «${sid}» não tem uma definição declarada que o portão leia em DEFINICOES_DAS_MEDIDAS.`);
         } else if (frases.length !== 1 || frases[0].getAttribute('data-serie-o-que-conta') !== sid) {
-          err(`UE1c: o recibo da série «${sid}» tem ${frases.length} frase(s) do que a medida conta, e tem de ter uma, a do cartão.`);
+          err(`UE1d: o recibo da série «${sid}» tem ${frases.length} definição(ões) da medida, e tem de ter uma, a declarada.`);
         } else if (textoTranscrito(frases[0]) !== esperada) {
-          err(`UE1c: o recibo da série «${sid}» diz «${textoTranscrito(frases[0]).slice(0, 90)}» e a leitura do cartão diz «${esperada.slice(0, 90)}».`);
+          err(`UE1d: o recibo da série «${sid}» diz «${textoTranscrito(frases[0]).slice(0, 90)}» e a definição declarada é «${esperada.slice(0, 90)}».`);
         } else {
-          UE1C.definicoes++;
+          UE1D.definicoes++;
         }
       }
       const naTabela = [...new Set(root.querySelectorAll('[data-serie-tabela] [data-ponto-bandeira]').map((e) => textoTranscrito(e)))];
@@ -8305,13 +8300,9 @@ for (const [id] of SERIES_DO_PORTAO) {
     }
   }
 }
-/* UE1c: as frases do que a medida conta, as que a regra dá, nas duas edições. */
-{
-  let esperadas = 0;
-  for (const s of SERIES_DO_PORTAO.values()) for (const lang of LANGS) if (definicaoDoPortao(String(s.linha_de_portugal), /** @type {'pt'|'en'} */ (lang)) !== null) esperadas++;
-  if (UE1C.definicoes !== esperadas) {
-    erros.push({ rel: 'ledger/series', msg: `UE1c: os recibos das séries têm ${UE1C.definicoes} frase(s) do que a medida conta, e a regra dá ${esperadas}.` });
-  }
+/* UE1d: a definição declarada em cada um dos recibos das séries, nas duas edições. */
+if (UE1D.definicoes !== LANGS.length * SERIES_DO_PORTAO.size) {
+  erros.push({ rel: 'ledger/series', msg: `UE1d: os recibos das séries têm ${UE1D.definicoes} definição(ões) declarada(s), e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
 }
 /* UE1b: a porta de cada série, nas duas edições, no recibo da linha portuguesa. */
 for (const [id] of SERIES_DO_PORTAO) {
@@ -8358,7 +8349,7 @@ console.log(
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
       ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
-      ` · UE1c: ${UE1C.definicoes} frase(s) do que a medida conta nos recibos das séries, ${UE1C.semDefinicao} recibo(s) sem ela`,
+      ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries`,
   ),
 );
 console.log(
