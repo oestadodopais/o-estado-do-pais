@@ -250,6 +250,20 @@ export const PERGUNTAS_RP1 = {
     ],
     "en": [
       "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?"
-    ]
+    ],
+    /* A FORMA DO RECIBO DA SÉRIE (a §1.140 do lugar de direção; a passagem UE1e, 30.09.2026). O recibo
+       da série é a tabela dos 27 países, e a pergunta do cartão diz «em Portugal»: por cima da tabela, o
+       número de cada outro país lia-se como se fosse sobre Portugal. Esta forma é a pergunta do cartão sem
+       o lugar, sem mais nenhuma palavra mudada, com as mesmas origens. O `SerieView.astro` usa-a onde ela
+       existe, e a do cartão onde não existe; o portão de HTML confere que ela é a do cartão sem o lugar, e
+       que a definição de nenhum recibo de série nomeia Portugal. */
+    "serie": {
+      "pt": [
+        "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?"
+      ],
+      "en": [
+        "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?"
+      ]
+    }
   }
 };

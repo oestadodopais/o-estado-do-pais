@@ -35,6 +35,14 @@
  * dos painéis (`Frase.astro`, com os selos). As dez séries têm-na, nos vinte
  * recibos, e o portão de HTML confere-a contra a declaração e exige-a em todos.
  *
+ * A FORMA DO RECIBO DA SÉRIE (a §1.140; a passagem UE1e, 30.09.2026). O recibo
+ * é a tabela dos 27 países, e uma definição que diga «em Portugal» faz o número
+ * de cada outro país ler-se como se fosse sobre Portugal. Onde a declaração tem
+ * uma forma para o recibo da série (`serie`, a pergunta do cartão sem o lugar),
+ * é essa que se rende aqui; onde não tem, é a do cartão. O portão de HTML
+ * confere cada recibo contra a forma que ele deve usar, e que a definição de
+ * nenhum recibo de série nomeia Portugal.
+ *
  * A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, 29.09.2026). O recibo de uma
  * série mostra sempre a União, e por isso leva a ressalva da Comissão onde a
  * medida a declara (`src/data/ressalvas-da-uniao.mjs`); a K14 do
@@ -66,9 +74,10 @@ const s = t(lang);
 const serie = getSerie(id);
 const linhaPt = getClaim(String(serie.linha_de_portugal));
 const linhaUe = getClaim(String(serie.linha_da_uniao));
-const definicaoDeclarada = /** @type {Record<string, { pt: readonly unknown[], en: readonly unknown[] }>} */ (DEFINICOES_DAS_MEDIDAS)[String(serie.linha_de_portugal)];
+const definicaoDeclarada = /** @type {Record<string, { pt: readonly unknown[], en: readonly unknown[], serie?: { pt: readonly unknown[], en: readonly unknown[] } }>} */ (DEFINICOES_DAS_MEDIDAS)[String(serie.linha_de_portugal)];
 if (!definicaoDeclarada) throw new Error(`série «${id}»: a medida «${serie.linha_de_portugal}» não tem definição declarada em DEFINICOES_DAS_MEDIDAS.`);
-const definicao = definicaoDeclarada[lang];
+/* A forma do recibo da série, onde a declaração a tem; a do cartão, onde não tem (UE1e). */
+const definicao = (definicaoDeclarada.serie ?? definicaoDeclarada)[lang];
 const ressalva = ressalvaDaUniao(String(serie.linha_de_portugal), lang);
 const pontos = pontosDaSerie(serie);
 const documento = /** @type {Record<string, string>} */ (serie.document);
