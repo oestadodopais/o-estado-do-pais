@@ -1,0 +1,2258 @@
+{
+  "bloco": "UE1b",
+  "construcao": {
+    "commit": "c9859d31e53784899a189d9b0d7dbac36a9257f3",
+    "ref": "ue1-2026-09-29",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-29T18:09:00.850Z"
+  },
+  "cabeca_esperada": "c9859d31e53784899a189d9b0d7dbac36a9257f3",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 70,
+  "capturas_por_tipo": {
+    "cartao": 30,
+    "recibo-de-serie": 20,
+    "recibo-de-linha": 20
+  },
+  "plantas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "o rótulo de Portugal no lugar do da União",
+      "visto": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "a legenda por cima da tabela",
+      "visto": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "o rótulo de Portugal no lugar do da União",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "a legenda por cima da tabela",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    }
+  ],
+  "plantas_vistas": 6,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-pt-390.png",
+      "sha256": "0932fcf4c0eb9273ca96abe6673d45266decf4ffea9b4dc3c4dab5107eeefb3b",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 196.625,
+          "largura": 354,
+          "altura": 506.5,
+          "direita": 372,
+          "fundo": 703.125
+        },
+        "faixa": {
+          "x": 18,
+          "y": 461.171875,
+          "largura": 354,
+          "altura": 182.171875,
+          "direita": 372,
+          "fundo": 643.34375
+        },
+        "marcas": 28,
+        "pontas": "Finlândia −2,3Hungria 18,3 (dado provisório)",
+        "ressalvas": [
+          "(dado provisório)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-pt-390.png",
+      "sha256": "0422316d9ee260d119cf482f2c84112edd1041adcfb0996bf00c0b349c159ffb",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 196.609375,
+          "largura": 354,
+          "altura": 506.5,
+          "direita": 372,
+          "fundo": 703.109375
+        },
+        "faixa": {
+          "x": 18,
+          "y": 461.15625,
+          "largura": 354,
+          "altura": 182.171875,
+          "direita": 372,
+          "fundo": 643.328125
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 2,8Espanha 10,5 (definição diferente)",
+        "ressalvas": [
+          "(definição diferente)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 2,8 (Chéquia) e o mais alto 10,5 (Espanha); a média da União é 6,0. Portugal (6,0) está em 14.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-pt-390.png",
+      "sha256": "0501396936784cc93d64145b45c80b91ce5ef5533a8c242543014abbb2d909bf",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 169.671875,
+          "largura": 354,
+          "altura": 560.390625,
+          "direita": 372,
+          "fundo": 730.0625
+        },
+        "faixa": {
+          "x": 18,
+          "y": 450.421875,
+          "largura": 354,
+          "altura": 202.46875,
+          "direita": 372,
+          "fundo": 652.890625
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 11,5Bulgária 29,0",
+        "ressalvas": [],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-pt-390.png",
+      "sha256": "699a2e7ea9634115a9a6cfd53aacecac053e62bbd43060e52b97797997695b88",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "tabela": {
+          "x": 18,
+          "y": 46.375,
+          "largura": 354,
+          "altura": 1015,
+          "direita": 372,
+          "fundo": 1061.375
+        },
+        "legenda": {
+          "x": 18,
+          "y": 1079.375,
+          "largura": 354,
+          "altura": 171.53125,
+          "direita": 372,
+          "fundo": 1250.90625
+        },
+        "ao_lado": false,
+        "por_baixo": true,
+        "sobreposta": false,
+        "entradas": [
+          "epvalor estimado e provisório; na resposta do Eurostat, «estimated, provisional»",
+          "pdado provisório; na resposta do Eurostat, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-pt-390.png",
+      "sha256": "18f0ac7fea318ca64b42dc25bacd34c3bb7be3195d36152effda6a9a8fbd15b0",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "tabela": {
+          "x": 18,
+          "y": 46.203125,
+          "largura": 354,
+          "altura": 1015,
+          "direita": 372,
+          "fundo": 1061.203125
+        },
+        "legenda": {
+          "x": 18,
+          "y": 1079.203125,
+          "largura": 354,
+          "altura": 171.53125,
+          "direita": 372,
+          "fundo": 1250.734375
+        },
+        "ao_lado": false,
+        "por_baixo": true,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinição diferente; na resposta do Eurostat, «definition differs (see metadata)»",
+          "ufiabilidade reduzida; na resposta do Eurostat, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-pt-390.png",
+      "sha256": "7e623a1a0390103fd3706d5afc0fb1fc4c12d41c2718a2eeee555ad8496281ea",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "enquadramento": "O enquadramentoPeríodo anterior9,1fonte · Eurostat · 2024União Europeia5,5fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-pt-390.png",
+      "sha256": "ead66a54d8628f0d10c9597dea55c936fb938af64955357583015b63e5c8ad8e",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "enquadramento": "O enquadramentoPeríodo anterior19,7fonte · Eurostat · 2024União Europeia20,9fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-pt-768.png",
+      "sha256": "ee8661fd61d28f52171f842735d6b39fb4a23503ac39366cf38b7f226d423c14",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 195.171875,
+          "largura": 343.296875,
+          "altura": 510.109375,
+          "direita": 374.015625,
+          "fundo": 705.28125
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 463.328125,
+          "largura": 343.296875,
+          "altura": 182.171875,
+          "direita": 374.015625,
+          "fundo": 645.5
+        },
+        "marcas": 28,
+        "pontas": "Finlândia −2,3Hungria 18,3 (dado provisório)",
+        "ressalvas": [
+          "(dado provisório)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-pt-768.png",
+      "sha256": "759681dc8ad9f8a6cc7cb142425690487941c021461ce4d681759ad8f4207ce3",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 393.96875,
+          "y": 194.515625,
+          "largura": 343.3125,
+          "altura": 510.109375,
+          "direita": 737.28125,
+          "fundo": 704.625
+        },
+        "faixa": {
+          "x": 393.96875,
+          "y": 462.671875,
+          "largura": 343.3125,
+          "altura": 182.171875,
+          "direita": 737.28125,
+          "fundo": 644.84375
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 2,8Espanha 10,5 (definição diferente)",
+        "ressalvas": [
+          "(definição diferente)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 2,8 (Chéquia) e o mais alto 10,5 (Espanha); a média da União é 6,0. Portugal (6,0) está em 14.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-pt-768.png",
+      "sha256": "f24855835011840306164906e5dee2a3648268e22a878360155e8583851ed1d0",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 167.671875,
+          "largura": 343.296875,
+          "altura": 564,
+          "direita": 374.015625,
+          "fundo": 731.671875
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 452.03125,
+          "largura": 343.296875,
+          "altura": 202.46875,
+          "direita": 374.015625,
+          "fundo": 654.5
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 11,5Bulgária 29,0",
+        "ressalvas": [],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-pt-768.png",
+      "sha256": "e083978e61bb18430066dbd6841cae3e62191d06d3a2074bf937f33649edf89d",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "tabela": {
+          "x": 30.71875,
+          "y": 46.171875,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 315.171875,
+          "fundo": 1061.171875
+        },
+        "legenda": {
+          "x": 347.171875,
+          "y": 46.171875,
+          "largura": 390.109375,
+          "altura": 152.6875,
+          "direita": 737.28125,
+          "fundo": 198.859375
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epvalor estimado e provisório; na resposta do Eurostat, «estimated, provisional»",
+          "pdado provisório; na resposta do Eurostat, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-pt-768.png",
+      "sha256": "09c37f66be9b2fde9922d3866d50bb4b50a5bbc110b976593dba4a0005408071",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "tabela": {
+          "x": 30.71875,
+          "y": 45.484375,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 315.171875,
+          "fundo": 1060.484375
+        },
+        "legenda": {
+          "x": 347.171875,
+          "y": 45.484375,
+          "largura": 390.109375,
+          "altura": 152.6875,
+          "direita": 737.28125,
+          "fundo": 198.171875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinição diferente; na resposta do Eurostat, «definition differs (see metadata)»",
+          "ufiabilidade reduzida; na resposta do Eurostat, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-pt-768.png",
+      "sha256": "5ea0e8450050a3e67bc59f98d5d13c9f07d21cce5c4bcf47308339c11ff8441f",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "enquadramento": "O enquadramentoPeríodo anterior9,1fonte · Eurostat · 2024União Europeia5,5fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-pt-768.png",
+      "sha256": "60587374575a7e5de7e71c869da29ca4e93a74f99f88a86bcc3f94d63cdac982",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "enquadramento": "O enquadramentoPeríodo anterior19,7fonte · Eurostat · 2024União Europeia20,9fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-pt-1024.png",
+      "sha256": "419bdbe8536513d5a63786e5850a43c9df8c394154d3612925275bb97ae5041b",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 686.75,
+          "y": 90.15625,
+          "largura": 296.28125,
+          "altura": 720.5625,
+          "direita": 983.03125,
+          "fundo": 810.71875
+        },
+        "faixa": {
+          "x": 686.75,
+          "y": 399.796875,
+          "largura": 296.28125,
+          "altura": 202.46875,
+          "direita": 983.03125,
+          "fundo": 602.265625
+        },
+        "marcas": 28,
+        "pontas": "Finlândia −2,3Hungria 18,3 (dado provisório)",
+        "ressalvas": [
+          "(dado provisório)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-pt-1024.png",
+      "sha256": "b5f60e07c0cd349c37e6e916718a0ccfd0214aef7f2b5b91cf7d3feb287f52a1",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 363.84375,
+          "y": 166.78125,
+          "largura": 296.296875,
+          "altura": 565.703125,
+          "direita": 660.140625,
+          "fundo": 732.484375
+        },
+        "faixa": {
+          "x": 363.84375,
+          "y": 470.234375,
+          "largura": 296.296875,
+          "altura": 202.46875,
+          "direita": 660.140625,
+          "fundo": 672.703125
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 2,8Espanha 10,5 (definição diferente)",
+        "ressalvas": [
+          "(definição diferente)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 2,8 (Chéquia) e o mais alto 10,5 (Espanha); a média da União é 6,0. Portugal (6,0) está em 14.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-pt-1024.png",
+      "sha256": "bc312d3ba20e099185073954929429965ad9ccd3584e8a6e5ea04c36a74f442e",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 40.953125,
+          "y": 138.84375,
+          "largura": 296.28125,
+          "altura": 621.984375,
+          "direita": 337.234375,
+          "fundo": 760.828125
+        },
+        "faixa": {
+          "x": 40.953125,
+          "y": 443.5,
+          "largura": 296.28125,
+          "altura": 222.765625,
+          "direita": 337.234375,
+          "fundo": 666.265625
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 11,5Bulgária 29,0",
+        "ressalvas": [],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-pt-1024.png",
+      "sha256": "7b11679eca3e20afe45b6e7a7005ed387132fdd4ad7e8c88f0a106169f2cc0ae",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "tabela": {
+          "x": 40.953125,
+          "y": 46.078125,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 325.40625,
+          "fundo": 1061.078125
+        },
+        "legenda": {
+          "x": 357.40625,
+          "y": 46.078125,
+          "largura": 227.546875,
+          "altura": 215.03125,
+          "direita": 584.953125,
+          "fundo": 261.109375
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epvalor estimado e provisório; na resposta do Eurostat, «estimated, provisional»",
+          "pdado provisório; na resposta do Eurostat, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-pt-1024.png",
+      "sha256": "1e08438e7f77af4b93bb79db1f4bd83526da1f4ea9e2e918318a64e176fb0691",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "tabela": {
+          "x": 40.953125,
+          "y": 46.078125,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 325.40625,
+          "fundo": 1061.078125
+        },
+        "legenda": {
+          "x": 357.40625,
+          "y": 46.078125,
+          "largura": 227.546875,
+          "altura": 236.78125,
+          "direita": 584.953125,
+          "fundo": 282.859375
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinição diferente; na resposta do Eurostat, «definition differs (see metadata)»",
+          "ufiabilidade reduzida; na resposta do Eurostat, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-pt-1024.png",
+      "sha256": "a87154540c6b4faae6f27e05ca5e077a5a99741aae94b893cf6b088690f09557",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "enquadramento": "O enquadramentoPeríodo anterior9,1fonte · Eurostat · 2024União Europeia5,5fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-pt-1024.png",
+      "sha256": "da26c711d422a43fdcacb932b48d2935f9109817a27a048b79f2f28762ce5ddc",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "enquadramento": "O enquadramentoPeríodo anterior19,7fonte · Eurostat · 2024União Europeia20,9fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-pt-1280.png",
+      "sha256": "093a81f1a5fcce513ecfa5bd289aa4e7324fdb0a42bd936cd893bdfcf1613dee",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 656.625,
+          "y": 40.8125,
+          "largura": 248.046875,
+          "altura": 819.140625,
+          "direita": 904.671875,
+          "fundo": 859.953125
+        },
+        "faixa": {
+          "x": 656.625,
+          "y": 408.140625,
+          "largura": 248.046875,
+          "altura": 224.65625,
+          "direita": 904.671875,
+          "fundo": 632.796875
+        },
+        "marcas": 28,
+        "pontas": "Finlândia −2,3Hungria 18,3 (dado provisório)",
+        "ressalvas": [
+          "(dado provisório)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-pt-1280.png",
+      "sha256": "748cc1c166c24ad01ddf171c792d074645755aec91939819ff67fde23b9ebe5d",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 375.3125,
+          "y": 123.734375,
+          "largura": 248.046875,
+          "altura": 651.765625,
+          "direita": 623.359375,
+          "fundo": 775.5
+        },
+        "faixa": {
+          "x": 375.3125,
+          "y": 491.0625,
+          "largura": 248.046875,
+          "altura": 224.65625,
+          "direita": 623.359375,
+          "fundo": 715.71875
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 2,8Espanha 10,5 (definição diferente)",
+        "ressalvas": [
+          "(definição diferente)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 2,8 (Chéquia) e o mais alto 10,5 (Espanha); a média da União é 6,0. Portugal (6,0) está em 14.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-pt-1280.png",
+      "sha256": "2756e3243f1dba09ab6e900291d2ef009f30774331c75855363225de93ea5b65",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 94,
+          "y": 79.75,
+          "largura": 248.046875,
+          "altura": 741.359375,
+          "direita": 342.046875,
+          "fundo": 821.109375
+        },
+        "faixa": {
+          "x": 94,
+          "y": 466.09375,
+          "largura": 248.046875,
+          "altura": 243.0625,
+          "direita": 342.046875,
+          "fundo": 709.15625
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 11,5Bulgária 29,0",
+        "ressalvas": [],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-pt-1280.png",
+      "sha256": "9ac710eb70e6a0792a34d91e31c985560b57b507ebf62f63b722cf704817e9b4",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "tabela": {
+          "x": 94,
+          "y": 46.140625,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 378.453125,
+          "fundo": 1061.140625
+        },
+        "legenda": {
+          "x": 410.453125,
+          "y": 46.140625,
+          "largura": 227.546875,
+          "altura": 215.03125,
+          "direita": 638,
+          "fundo": 261.171875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epvalor estimado e provisório; na resposta do Eurostat, «estimated, provisional»",
+          "pdado provisório; na resposta do Eurostat, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-pt-1280.png",
+      "sha256": "55848f192e851d658578d5c8151df52370f274b5c97f7337cc49a330e06e26e7",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "tabela": {
+          "x": 94,
+          "y": 46.140625,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 378.453125,
+          "fundo": 1061.140625
+        },
+        "legenda": {
+          "x": 410.453125,
+          "y": 46.140625,
+          "largura": 227.546875,
+          "altura": 236.78125,
+          "direita": 638,
+          "fundo": 282.921875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinição diferente; na resposta do Eurostat, «definition differs (see metadata)»",
+          "ufiabilidade reduzida; na resposta do Eurostat, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-pt-1280.png",
+      "sha256": "0c5e11b419e8b8b01dcad72dc1d69586b1dfcd6d32f9dc766248ceb73b1e95ff",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "enquadramento": "O enquadramentoPeríodo anterior9,1fonte · Eurostat · 2024União Europeia5,5fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-pt-1280.png",
+      "sha256": "4734da41673f2adb6d3b594bdbd2433005b03de5829d406ee8457609aa0d0416",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "enquadramento": "O enquadramentoPeríodo anterior19,7fonte · Eurostat · 2024União Europeia20,9fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-pt-1600.png",
+      "sha256": "a648462993938cb4e71b458c498bf6ab75f30ef1805b1417a5f50637fde9f618",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 1004.65625,
+          "y": 110.109375,
+          "largura": 341.34375,
+          "altura": 679.96875,
+          "direita": 1346,
+          "fundo": 790.078125
+        },
+        "faixa": {
+          "x": 1004.65625,
+          "y": 378.265625,
+          "largura": 341.34375,
+          "altura": 182.171875,
+          "direita": 1346,
+          "fundo": 560.4375
+        },
+        "marcas": 28,
+        "pontas": "Finlândia −2,3Hungria 18,3 (dado provisório)",
+        "ressalvas": [
+          "(dado provisório)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-pt-1600.png",
+      "sha256": "623b7dc211c59f433d886ee9ee03fdc6132805caa711ff4fc02b66dcda4a84c3",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 629.328125,
+          "y": 194.59375,
+          "largura": 341.328125,
+          "altura": 510.109375,
+          "direita": 970.65625,
+          "fundo": 704.703125
+        },
+        "faixa": {
+          "x": 629.328125,
+          "y": 462.75,
+          "largura": 341.328125,
+          "altura": 182.171875,
+          "direita": 970.65625,
+          "fundo": 644.921875
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 2,8Espanha 10,5 (definição diferente)",
+        "ressalvas": [
+          "(definição diferente)"
+        ],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 2,8 (Chéquia) e o mais alto 10,5 (Espanha); a média da União é 6,0. Portugal (6,0) está em 14.º lugar, do mais alto para o mais baixo.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-pt-1600.png",
+      "sha256": "f50f1a2952501d95a2f9449b1e01b911f2bfd5d9644495b0a9cd0bd4ea711087",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 254,
+          "y": 168.359375,
+          "largura": 341.328125,
+          "altura": 564,
+          "direita": 595.328125,
+          "fundo": 732.359375
+        },
+        "faixa": {
+          "x": 254,
+          "y": 452.71875,
+          "largura": 341.328125,
+          "altura": 202.46875,
+          "direita": 595.328125,
+          "fundo": 655.1875
+        },
+        "marcas": 28,
+        "pontas": "Chéquia 11,5Bulgária 29,0",
+        "ressalvas": [],
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-pt-1600.png",
+      "sha256": "9ac710eb70e6a0792a34d91e31c985560b57b507ebf62f63b722cf704817e9b4",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "tabela": {
+          "x": 254,
+          "y": 46.140625,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 538.453125,
+          "fundo": 1061.140625
+        },
+        "legenda": {
+          "x": 570.453125,
+          "y": 46.140625,
+          "largura": 227.546875,
+          "altura": 215.03125,
+          "direita": 798,
+          "fundo": 261.171875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epvalor estimado e provisório; na resposta do Eurostat, «estimated, provisional»",
+          "pdado provisório; na resposta do Eurostat, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-pt-1600.png",
+      "sha256": "55848f192e851d658578d5c8151df52370f274b5c97f7337cc49a330e06e26e7",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "tabela": {
+          "x": 254,
+          "y": 46.140625,
+          "largura": 284.453125,
+          "altura": 1015,
+          "direita": 538.453125,
+          "fundo": 1061.140625
+        },
+        "legenda": {
+          "x": 570.453125,
+          "y": 46.140625,
+          "largura": 227.546875,
+          "altura": 236.78125,
+          "direita": 798,
+          "fundo": 282.921875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinição diferente; na resposta do Eurostat, «definition differs (see metadata)»",
+          "ufiabilidade reduzida; na resposta do Eurostat, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-pt-1600.png",
+      "sha256": "0c5e11b419e8b8b01dcad72dc1d69586b1dfcd6d32f9dc766248ceb73b1e95ff",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "enquadramento": "O enquadramentoPeríodo anterior9,1fonte · Eurostat · 2024União Europeia5,5fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-pt-1600.png",
+      "sha256": "4734da41673f2adb6d3b594bdbd2433005b03de5829d406ee8457609aa0d0416",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "enquadramento": "O enquadramentoPeríodo anterior19,7fonte · Eurostat · 2024União Europeia20,9fonte · EurostatPaíses da UniãoTodos os países",
+        "porta": {
+          "texto": "Todos os países",
+          "href": "/livro-razao/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-en-390.png",
+      "sha256": "6b3a4f5a9c9f9a296a01a759214292bbeeff22138b7b5c6ceaf6e96e4b3d7dfb",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 207.171875,
+          "largura": 354,
+          "altura": 486.203125,
+          "direita": 372,
+          "fundo": 693.375
+        },
+        "faixa": {
+          "x": 18,
+          "y": 451.421875,
+          "largura": 354,
+          "altura": 182.171875,
+          "direita": 372,
+          "fundo": 633.59375
+        },
+        "marcas": 28,
+        "pontas": "Finland −2,3Hungary 18,3 (provisional data)",
+        "ressalvas": [
+          "(provisional data)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2nd from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-en-390.png",
+      "sha256": "0527608ae8abbafacbf1fe57c7cd9b21c14095dc4e81bafa2f21d5875fee1122",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 205.625,
+          "largura": 354,
+          "altura": 489.109375,
+          "direita": 372,
+          "fundo": 694.734375
+        },
+        "faixa": {
+          "x": 18,
+          "y": 470.171875,
+          "largura": 354,
+          "altura": 182.171875,
+          "direita": 372,
+          "fundo": 652.34375
+        },
+        "marcas": 28,
+        "pontas": "Czechia 2,8Spain 10,5 (definition differs)",
+        "ressalvas": [
+          "(definition differs)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 2,8 (Czechia) and the highest is 10,5 (Spain); the EU average is 6,0. Portugal (6,0) ranks 14th from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-en-390.png",
+      "sha256": "6bfca497673a9c8861ab8ebdab3926e4ac3e0616a7fa2e6fe5b8c874bd5ae3f0",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 179.5,
+          "largura": 354,
+          "altura": 540.09375,
+          "direita": 372,
+          "fundo": 719.59375
+        },
+        "faixa": {
+          "x": 18,
+          "y": 439.953125,
+          "largura": 354,
+          "altura": 202.46875,
+          "direita": 372,
+          "fundo": 642.421875
+        },
+        "marcas": 28,
+        "pontas": "Czechia 11,5Bulgaria 29,0",
+        "ressalvas": [],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15th from the highest, level with other countries with the same value (Austria and Sweden).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-en-390.png",
+      "sha256": "5b083b6ca5c9ec2a5b5149b2fdcaeff5f9fe5362178172686ea323d5075814ea",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "tabela": {
+          "x": 18,
+          "y": 46.375,
+          "largura": 354,
+          "altura": 1015,
+          "direita": 372,
+          "fundo": 1061.375
+        },
+        "legenda": {
+          "x": 18,
+          "y": 1079.375,
+          "largura": 354,
+          "altura": 171.53125,
+          "direita": 372,
+          "fundo": 1250.90625
+        },
+        "ao_lado": false,
+        "por_baixo": true,
+        "sobreposta": false,
+        "entradas": [
+          "epestimated and provisional value; in Eurostat’s response, «estimated, provisional»",
+          "pprovisional data; in Eurostat’s response, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-en-390.png",
+      "sha256": "5991914d7389b8fa46a2be715be3d478e4f2a1effb72af318d3564f2eced6956",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "tabela": {
+          "x": 18,
+          "y": 46.015625,
+          "largura": 354,
+          "altura": 1015,
+          "direita": 372,
+          "fundo": 1061.015625
+        },
+        "legenda": {
+          "x": 18,
+          "y": 1079.015625,
+          "largura": 354,
+          "altura": 171.53125,
+          "direita": 372,
+          "fundo": 1250.546875
+        },
+        "ao_lado": false,
+        "por_baixo": true,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinition differs; in Eurostat’s response, «definition differs (see metadata)»",
+          "ulow reliability; in Eurostat’s response, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-en-390.png",
+      "sha256": "b1c3e1376640be6cf899e4e07aaf937a585ae64dc72ee553d782d46f33b90711",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "enquadramento": "The comparisonsPrevious period9,1source · Eurostat · 2024European Union5,5source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-en-390.png",
+      "sha256": "913b0e76fbfe4d18527703eeeb56da081a83182ef165d863da6f407735188ec5",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "enquadramento": "The comparisonsPrevious period19,7source · Eurostat · 2024European Union20,9source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-en-768.png",
+      "sha256": "5b996e12ee3300bc0f5d614b7d0f6fb6068c4e25a3d4c303163c96f249cb6f01",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 205.484375,
+          "largura": 343.296875,
+          "altura": 489.8125,
+          "direita": 374.015625,
+          "fundo": 695.296875
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 453.34375,
+          "largura": 343.296875,
+          "altura": 182.171875,
+          "direita": 374.015625,
+          "fundo": 635.515625
+        },
+        "marcas": 28,
+        "pontas": "Finland −2,3Hungary 18,3 (provisional data)",
+        "ressalvas": [
+          "(provisional data)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2nd from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-en-768.png",
+      "sha256": "f6b5ba5db1af51c883d6bb6995fad15888360e825b6d0ffc87e5f55b137e43dc",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 393.96875,
+          "y": 203.609375,
+          "largura": 343.3125,
+          "altura": 492.71875,
+          "direita": 737.28125,
+          "fundo": 696.328125
+        },
+        "faixa": {
+          "x": 393.96875,
+          "y": 471.765625,
+          "largura": 343.3125,
+          "altura": 182.171875,
+          "direita": 737.28125,
+          "fundo": 653.9375
+        },
+        "marcas": 28,
+        "pontas": "Czechia 2,8Spain 10,5 (definition differs)",
+        "ressalvas": [
+          "(definition differs)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 2,8 (Czechia) and the highest is 10,5 (Spain); the EU average is 6,0. Portugal (6,0) ranks 14th from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-en-768.png",
+      "sha256": "39ef72478cf0d508b3cb72246eaf45e682a4153f0f868747890706a4a2e67c58",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 168.171875,
+          "largura": 343.296875,
+          "altura": 564,
+          "direita": 374.015625,
+          "fundo": 732.171875
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 452.53125,
+          "largura": 343.296875,
+          "altura": 202.46875,
+          "direita": 374.015625,
+          "fundo": 655
+        },
+        "marcas": 28,
+        "pontas": "Czechia 11,5Bulgaria 29,0",
+        "ressalvas": [],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15th from the highest, level with other countries with the same value (Austria and Sweden).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-en-768.png",
+      "sha256": "cfe50e77317f81db4442211faf938849805052c52c4ab055e274d012340d4c1e",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "tabela": {
+          "x": 30.71875,
+          "y": 46.171875,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 310.328125,
+          "fundo": 1061.171875
+        },
+        "legenda": {
+          "x": 342.328125,
+          "y": 46.171875,
+          "largura": 394.953125,
+          "altura": 171.53125,
+          "direita": 737.28125,
+          "fundo": 217.703125
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epestimated and provisional value; in Eurostat’s response, «estimated, provisional»",
+          "pprovisional data; in Eurostat’s response, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-en-768.png",
+      "sha256": "7076db6a26ab00cb5dfa012fa34748cb359fddc1039b2b7d77d8626154226c2c",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "tabela": {
+          "x": 30.71875,
+          "y": 45.484375,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 310.328125,
+          "fundo": 1060.484375
+        },
+        "legenda": {
+          "x": 342.328125,
+          "y": 45.484375,
+          "largura": 394.953125,
+          "altura": 171.53125,
+          "direita": 737.28125,
+          "fundo": 217.015625
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinition differs; in Eurostat’s response, «definition differs (see metadata)»",
+          "ulow reliability; in Eurostat’s response, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-en-768.png",
+      "sha256": "59240014d8d5a1e3a6a315c26a546f4cf191634ac4b3cf71923088c55775c2ad",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "enquadramento": "The comparisonsPrevious period9,1source · Eurostat · 2024European Union5,5source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-en-768.png",
+      "sha256": "4c044d3a321d044b4533d7bbbedb42e3ba66c7c0882bd253ac53f46777c7e8bc",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "enquadramento": "The comparisonsPrevious period19,7source · Eurostat · 2024European Union20,9source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-en-1024.png",
+      "sha256": "4946fd442b1f9391f04de65491f72ca61f0eac0c7a22b35dd62e0b8a2515a21d",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 686.75,
+          "y": 108.78125,
+          "largura": 296.28125,
+          "altura": 682.875,
+          "direita": 983.03125,
+          "fundo": 791.65625
+        },
+        "faixa": {
+          "x": 686.75,
+          "y": 398.125,
+          "largura": 296.28125,
+          "altura": 182.171875,
+          "direita": 983.03125,
+          "fundo": 580.296875
+        },
+        "marcas": 28,
+        "pontas": "Finland −2,3Hungary 18,3 (provisional data)",
+        "ressalvas": [
+          "(provisional data)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2nd from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-en-1024.png",
+      "sha256": "9e0078ab00ee69287ae9f848fd5b9ad8dbc66a923f5f48dcc21b12fc2994f10b",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 363.84375,
+          "y": 194.671875,
+          "largura": 296.296875,
+          "altura": 510.109375,
+          "direita": 660.140625,
+          "fundo": 704.78125
+        },
+        "faixa": {
+          "x": 363.84375,
+          "y": 462.828125,
+          "largura": 296.296875,
+          "altura": 182.171875,
+          "direita": 660.140625,
+          "fundo": 645
+        },
+        "marcas": 28,
+        "pontas": "Czechia 2,8Spain 10,5 (definition differs)",
+        "ressalvas": [
+          "(definition differs)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 2,8 (Czechia) and the highest is 10,5 (Spain); the EU average is 6,0. Portugal (6,0) ranks 14th from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-en-1024.png",
+      "sha256": "32876677b0bb562ff6840441aa070bb4dde2264ad814b4cdc7c1cabe193f0c4a",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 40.953125,
+          "y": 139.265625,
+          "largura": 296.28125,
+          "altura": 621.984375,
+          "direita": 337.234375,
+          "fundo": 761.25
+        },
+        "faixa": {
+          "x": 40.953125,
+          "y": 443.921875,
+          "largura": 296.28125,
+          "altura": 222.765625,
+          "direita": 337.234375,
+          "fundo": 666.6875
+        },
+        "marcas": 28,
+        "pontas": "Czechia 11,5Bulgaria 29,0",
+        "ressalvas": [],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15th from the highest, level with other countries with the same value (Austria and Sweden).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-en-1024.png",
+      "sha256": "5a17afbcf02b3e9ad900b015798300e9500bf29aa713081be8d45343881d4f0f",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "tabela": {
+          "x": 40.953125,
+          "y": 46.390625,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 320.5625,
+          "fundo": 1061.390625
+        },
+        "legenda": {
+          "x": 352.5625,
+          "y": 46.390625,
+          "largura": 232.390625,
+          "altura": 236.78125,
+          "direita": 584.953125,
+          "fundo": 283.171875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epestimated and provisional value; in Eurostat’s response, «estimated, provisional»",
+          "pprovisional data; in Eurostat’s response, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-en-1024.png",
+      "sha256": "324194154ecff4e810fab2de74571d754e5052259b69cb893b56dbf711dd6cb2",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "tabela": {
+          "x": 40.953125,
+          "y": 46.078125,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 320.5625,
+          "fundo": 1061.078125
+        },
+        "legenda": {
+          "x": 352.5625,
+          "y": 46.078125,
+          "largura": 232.390625,
+          "altura": 215.03125,
+          "direita": 584.953125,
+          "fundo": 261.109375
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinition differs; in Eurostat’s response, «definition differs (see metadata)»",
+          "ulow reliability; in Eurostat’s response, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-en-1024.png",
+      "sha256": "95fabe09aac08b98f66ef64e61ab3c82b4947e899c8a7d05608baaa9565d6b26",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "enquadramento": "The comparisonsPrevious period9,1source · Eurostat · 2024European Union5,5source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-en-1024.png",
+      "sha256": "7ac9d07bc4fe9f9baaac50dc06d315a75783a933bf3ec42b960bdcc7cf6c5e85",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "enquadramento": "The comparisonsPrevious period19,7source · Eurostat · 2024European Union20,9source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-en-1280.png",
+      "sha256": "1200a4906d962cf09b2fbae739f981f35211431bf9a2255fbb0f5ab37bf2bacc",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 656.625,
+          "y": 69.890625,
+          "largura": 248.046875,
+          "altura": 761.15625,
+          "direita": 904.671875,
+          "fundo": 831.046875
+        },
+        "faixa": {
+          "x": 656.625,
+          "y": 414.828125,
+          "largura": 248.046875,
+          "altura": 224.65625,
+          "direita": 904.671875,
+          "fundo": 639.484375
+        },
+        "marcas": 28,
+        "pontas": "Finland −2,3Hungary 18,3 (provisional data)",
+        "ressalvas": [
+          "(provisional data)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2nd from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-en-1280.png",
+      "sha256": "97b867bd8ba11f603c89a933f2d41fd4e3ec12acab013de162b40795a46e5daf",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 375.3125,
+          "y": 145.984375,
+          "largura": 248.046875,
+          "altura": 607.1875,
+          "direita": 623.359375,
+          "fundo": 753.171875
+        },
+        "faixa": {
+          "x": 375.3125,
+          "y": 490.921875,
+          "largura": 248.046875,
+          "altura": 202.46875,
+          "direita": 623.359375,
+          "fundo": 693.390625
+        },
+        "marcas": 28,
+        "pontas": "Czechia 2,8Spain 10,5 (definition differs)",
+        "ressalvas": [
+          "(definition differs)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 2,8 (Czechia) and the highest is 10,5 (Spain); the EU average is 6,0. Portugal (6,0) ranks 14th from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-en-1280.png",
+      "sha256": "55f2c637b69e2a597d7371d9223d6545dfa58485102dde1a45a21d6e72caae39",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 94,
+          "y": 89.515625,
+          "largura": 248.046875,
+          "altura": 721.0625,
+          "direita": 342.046875,
+          "fundo": 810.578125
+        },
+        "faixa": {
+          "x": 94,
+          "y": 455.5625,
+          "largura": 248.046875,
+          "altura": 243.0625,
+          "direita": 342.046875,
+          "fundo": 698.625
+        },
+        "marcas": 28,
+        "pontas": "Czechia 11,5Bulgaria 29,0",
+        "ressalvas": [],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15th from the highest, level with other countries with the same value (Austria and Sweden).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-en-1280.png",
+      "sha256": "9856dfff7a0fbad501396ab4cd2243cfc7ca97960682d339db3e24d29e47d88e",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "tabela": {
+          "x": 94,
+          "y": 45.453125,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 373.609375,
+          "fundo": 1060.453125
+        },
+        "legenda": {
+          "x": 405.609375,
+          "y": 45.453125,
+          "largura": 232.390625,
+          "altura": 236.78125,
+          "direita": 638,
+          "fundo": 282.234375
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epestimated and provisional value; in Eurostat’s response, «estimated, provisional»",
+          "pprovisional data; in Eurostat’s response, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-en-1280.png",
+      "sha256": "21529a1ecac7e6037fc707c5ceeedc1477b51c1e19e3810d079389b0d2c7f0d2",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "tabela": {
+          "x": 94,
+          "y": 46.140625,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 373.609375,
+          "fundo": 1061.140625
+        },
+        "legenda": {
+          "x": 405.609375,
+          "y": 46.140625,
+          "largura": 232.390625,
+          "altura": 215.03125,
+          "direita": 638,
+          "fundo": 261.171875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinition differs; in Eurostat’s response, «definition differs (see metadata)»",
+          "ulow reliability; in Eurostat’s response, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-en-1280.png",
+      "sha256": "eb9c4756661d9faf8b7acc5e968648f2db1e39481958afbd86ec4865b90de7ce",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "enquadramento": "The comparisonsPrevious period9,1source · Eurostat · 2024European Union5,5source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-en-1280.png",
+      "sha256": "ea8496c560c5f812ce983390c2e53f749124e32877bbc84dc65a6235fb152281",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "enquadramento": "The comparisonsPrevious period19,7source · Eurostat · 2024European Union20,9source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-habitacao-en-1600.png",
+      "sha256": "bd308d9fb9a16b4436e4fad5d9b96d25f6443f83e34d09d8f2764f517ad8c1c2",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 1004.65625,
+          "y": 128.71875,
+          "largura": 341.34375,
+          "altura": 642.28125,
+          "direita": 1346,
+          "fundo": 771
+        },
+        "faixa": {
+          "x": 1004.65625,
+          "y": 397.765625,
+          "largura": 341.34375,
+          "altura": 182.171875,
+          "direita": 1346,
+          "fundo": 579.9375
+        },
+        "marcas": 28,
+        "pontas": "Finland −2,3Hungary 18,3 (provisional data)",
+        "ressalvas": [
+          "(provisional data)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2nd from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-desemprego-en-1600.png",
+      "sha256": "58b46a54bffe89a79a57ec21f24c64955501f1b6dc297f1b8c3ffcd4284b8274",
+      "tipo": "cartao",
+      "linha": "taxa-de-desemprego-mip-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 629.328125,
+          "y": 203.296875,
+          "largura": 341.328125,
+          "altura": 492.71875,
+          "direita": 970.65625,
+          "fundo": 696.015625
+        },
+        "faixa": {
+          "x": 629.328125,
+          "y": 471.453125,
+          "largura": 341.328125,
+          "altura": 182.171875,
+          "direita": 970.65625,
+          "fundo": 653.625
+        },
+        "marcas": 28,
+        "pontas": "Czechia 2,8Spain 10,5 (definition differs)",
+        "ressalvas": [
+          "(definition differs)"
+        ],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 2,8 (Czechia) and the highest is 10,5 (Spain); the EU average is 6,0. Portugal (6,0) ranks 14th from the highest.",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/cartao-pobreza-en-1600.png",
+      "sha256": "cc2ff441360f7fcfb0091e91e7c0ae1c80d3bc856c4fae22179bb12e51c5e61a",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 254,
+          "y": 168.0625,
+          "largura": 341.328125,
+          "altura": 564,
+          "direita": 595.328125,
+          "fundo": 732.0625
+        },
+        "faixa": {
+          "x": 254,
+          "y": 452.421875,
+          "largura": 341.328125,
+          "altura": 202.46875,
+          "direita": 595.328125,
+          "fundo": 654.890625
+        },
+        "marcas": 28,
+        "pontas": "Czechia 11,5Bulgaria 29,0",
+        "ressalvas": [],
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15th from the highest, level with other countries with the same value (Austria and Sweden).",
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-habitacao-en-1600.png",
+      "sha256": "9856dfff7a0fbad501396ab4cd2243cfc7ca97960682d339db3e24d29e47d88e",
+      "tipo": "recibo-de-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "tabela": {
+          "x": 254,
+          "y": 45.453125,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 533.609375,
+          "fundo": 1060.453125
+        },
+        "legenda": {
+          "x": 565.609375,
+          "y": 45.453125,
+          "largura": 232.390625,
+          "altura": 236.78125,
+          "direita": 798,
+          "fundo": 282.234375
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "epestimated and provisional value; in Eurostat’s response, «estimated, provisional»",
+          "pprovisional data; in Eurostat’s response, «provisional»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/serie-longa-duracao-en-1600.png",
+      "sha256": "21529a1ecac7e6037fc707c5ceeedc1477b51c1e19e3810d079389b0d2c7f0d2",
+      "tipo": "recibo-de-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "tabela": {
+          "x": 254,
+          "y": 46.140625,
+          "largura": 279.609375,
+          "altura": 1015,
+          "direita": 533.609375,
+          "fundo": 1061.140625
+        },
+        "legenda": {
+          "x": 565.609375,
+          "y": 46.140625,
+          "largura": 232.390625,
+          "altura": 215.03125,
+          "direita": 798,
+          "fundo": 261.171875
+        },
+        "ao_lado": true,
+        "por_baixo": false,
+        "sobreposta": false,
+        "entradas": [
+          "ddefinition differs; in Eurostat’s response, «definition differs (see metadata)»",
+          "ulow reliability; in Eurostat’s response, «low reliability»"
+        ],
+        "linhas_da_tabela": 28
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-habitacao-en-1600.png",
+      "sha256": "eb9c4756661d9faf8b7acc5e968648f2db1e39481958afbd86ec4865b90de7ce",
+      "tipo": "recibo-de-linha",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "enquadramento": "The comparisonsPrevious period9,1source · Eurostat · 2024European Union5,5source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/precos-da-habitacao-2025-paises",
+          "serie": "precos-da-habitacao-2025-paises",
+          "visivel": true
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1b/linha-pobreza-en-1600.png",
+      "sha256": "ea8496c560c5f812ce983390c2e53f749124e32877bbc84dc65a6235fb152281",
+      "tipo": "recibo-de-linha",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "enquadramento": "The comparisonsPrevious period19,7source · Eurostat · 2024European Union20,9source · EurostatEU countriesAll the countries",
+        "porta": {
+          "texto": "All the countries",
+          "href": "/en/ledger/series/risco-de-pobreza-ou-exclusao-2025-paises",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "visivel": true
+        }
+      }
+    }
+  ]
+}

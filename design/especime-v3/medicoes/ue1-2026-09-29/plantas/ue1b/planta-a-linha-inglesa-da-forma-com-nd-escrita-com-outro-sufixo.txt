@@ -1,0 +1,11 @@
+# a linha inglesa da forma com «nd» escrita com outro sufixo
+# comando: node scripts/check-voz.mjs
+# código: 1
+
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+  PORTÃO DA VOZ · 1 problema(s)
+
+    · design/especime-v3/INVENTARIO-FRASES.md:3566: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «Among the EU countries in , the lowest value is ( ) and the highest is ( ); the EU average is . ( ) ranks rd f»
+

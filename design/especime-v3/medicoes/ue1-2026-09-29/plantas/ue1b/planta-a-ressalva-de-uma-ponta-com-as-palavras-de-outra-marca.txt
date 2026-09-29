@@ -1,0 +1,12 @@
+# a ressalva de uma ponta com as palavras de outra marca
+# comando: node scripts/check-formas.mjs
+# código: 1
+
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+
+  PORTÃO DAS FORMAS · 3 problema(s):
+
+  · dist/en/themes/index.html: F19d · /en/themes/index.html · taxa-de-desemprego-mip-2025: a ressalva da ponta «alto» diz «(provisional data)» e as palavras declaradas da marca «d» são «(definition differs)»
+  · dist/en/themes/index.html: F19d · /en/themes/index.html · taxa-de-desemprego-mip-2025: a ponta «alto» diz «Spain 10,5 (provisional data)» e a recomposição dá «Spain 10,5 (definition differs)»
+  · F19: as páginas dos temas mostram 3 ressalva(s) nas pontas e as séries têm 2 ponta(s) com marca; esperavam-se 4, uma por ponta e por edição.
+

@@ -1,0 +1,8 @@
+{
+  "o_que_e": "Os registos dos portões da passagem UE1b com os caminhos da máquina trocados por marcas (<worktree do sítio>, <pasta temporária>, <pasta pessoal>, <utilizador>), para que nenhum ficheiro do ramo leve um caminho da máquina. Os códigos, as cabeças e as horas não se tocam.",
+  "trocas": {
+    "build.log": 1,
+    "verify.log": 2,
+    "typecheck.log": 0
+  }
+}
