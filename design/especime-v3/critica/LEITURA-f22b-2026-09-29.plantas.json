@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T20:19:39+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/.github/workflows/painel.yml",
+   "descricao": "o painel semanal corre a sério sempre que o interruptor não diz «nao»: sem a variável, arma-se sozinho",
+   "sha256_antes": "d7bd4fa13167b07197a14221826981b55de601f7f43d43b95701c1f5b68e856f",
+   "sha256_depois": "5d8a507179e7af82f64f80e47b5bfab1ebfac126e1a71ae21263b4b7be23ec82",
+   "contexto_antes": "vars.PAINEL_ARMADO }}\n          MOTIVO: ${{ inputs.motivo }}\n        run: |\n          set -euo pipefail\n          if [ \"$EVENTO\" = schedule ]; then\n            if [ \"${ARMADO:-}\" = sim ]; then modo=real; else modo=dormente; fi\n          elif [ \"$EVENTO\" = workflow_dispatch ] && [ -n \"${MOTIVO:-}\" ]; then\n            modo=ensaio\n          else\n            exit 1\n          fi\n         ",
+   "contexto_depois": "vars.PAINEL_ARMADO }}\n          MOTIVO: ${{ inputs.motivo }}\n        run: |\n          set -euo pipefail\n          if [ \"$EVENTO\" = schedule ]; then\n            if [ \"${ARMADO:-}\" != nao ]; then modo=real; else modo=dormente; fi\n          elif [ \"$EVENTO\" = workflow_dispatch ] && [ -n \"${MOTIVO:-}\" ]; then\n            modo=ensaio\n          else\n            exit 1\n          fi\n         "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/indicators/publicar_rotina.py",
+   "descricao": "a espera pela verificação «portão» aceita qualquer conclusão que não seja «failure»: uma corrida cancelada ou sem tempo conta como verde",
+   "sha256_antes": "a2845b406e35c031a82c6428706b8901295349e61db4e73af2c7a48491921a8d",
+   "sha256_depois": "c4bafb82997213643b7713466352db2bcf9a82a9cf6a026925474b5e2d909880",
+   "contexto_antes": "s, key=lambda x: (x[\"id\"], x.get(\"run_attempt\", 1)))\n                ligacao = c[\"html_url\"]\n                if c[\"status\"] == \"completed\":\n                    return c[\"conclusion\"] == \"success\", ligacao, c[\"conclusion\"]\n        except (OSError, ValueError, KeyError, TypeError):\n            # Uma API calada não é um portão verde. Continua dentro do teto.\n            pass\n    re",
+   "contexto_depois": "s, key=lambda x: (x[\"id\"], x.get(\"run_attempt\", 1)))\n                ligacao = c[\"html_url\"]\n                if c[\"status\"] == \"completed\":\n                    return c[\"conclusion\"] != \"failure\", ligacao, c[\"conclusion\"]\n        except (OSError, ValueError, KeyError, TypeError):\n            # Uma API calada não é um portão verde. Continua dentro do teto.\n            pass\n    re"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/sweeps/decisoes.py",
+   "descricao": "o varrimento volta a ter um caminho por omissão na pasta pessoal quando não recebe --site nem OEDP_SITE",
+   "sha256_antes": "19cd6ee6f86ad84e8959f7c72821d6e3489cec2289b8abbf125290d5a11fb9ee",
+   "sha256_depois": "966a2d4f09e572d20df3f0e6330c50055ccef3a78ca4311740964cf007c30331",
+   "contexto_antes": "e decision that governs it.\")\n\n\ndef main(argv: list[str]) -> int:\n    p = argparse.ArgumentParser(description=\"Confere as decisões sem escrever no sítio.\")\n    p.add_argument(\"--site\", default=os.environ.get(\"OEDP_SITE\"))\n    a = p.parse_args(argv)\n    if not a.site or not a.site.strip():\n        p.error(\"--site ou OEDP_SITE é obrigatório; não há caminho por omissão\")\n    site =",
+   "contexto_depois": "e decision that governs it.\")\n\n\ndef main(argv: list[str]) -> int:\n    p = argparse.ArgumentParser(description=\"Confere as decisões sem escrever no sítio.\")\n    p.add_argument(\"--site\", default=os.environ.get(\"OEDP_SITE\") or os.path.expanduser(\"~/Instruments/OEstadoDoPais\"))\n    a = p.parse_args(argv)\n    if not a.site or not a.site.strip():\n        p.error(\"--site ou OEDP_SITE é obrigatório; não há caminho por omissão\")\n    site ="
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/indicators/reformar_agentes.py",
+   "descricao": "a reforma dos agentes lê as provas das corridas e já não confere que houve duas corridas reais verdes de cada fluxo",
+   "sha256_antes": "ec4dee2a595f792f702c4a6a93d9fcd3a71daa79626957cd25c4cc507b845989",
+   "sha256_depois": "97f493dac60922223c0cbf0e6379177a85dca4ade4ca90a9a4c0e1c3d129f2ad",
+   "contexto_antes": " corridas reais verdes de cada fluxo.\")\n        return 0\n    if not a.provas:\n        p.error(\"a aplicação exige --provas com os identificadores das corridas\")\n    provar_corridas(json.loads(a.provas.read_text()), \"oestadodopais/motor\")\n    a.arquivo.mkdir(parents=True, exist_ok=True)\n    for tipo, origem, destino, label in passos:\n        shutil.copy2(origem, destino)\n        if origem.read_by",
+   "contexto_depois": " corridas reais verdes de cada fluxo.\")\n        return 0\n    if not a.provas:\n        p.error(\"a aplicação exige --provas com os identificadores das corridas\")\n    json.loads(a.provas.read_text())\n    a.arquivo.mkdir(parents=True, exist_ok=True)\n    for tipo, origem, destino, label in passos:\n        shutil.copy2(origem, destino)\n        if origem.read_by"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 96 conferências do provar_fluxo.py, contra as 94 das provas",
+   "sha256_antes": "e9452cfa960967b44fb538df7e8db6046f65f5c256f93073c25a25ec1dd23c9f",
+   "sha256_depois": "7bf127c45773e6d645f61d13d0f572a4d36ca49935ff25846b8aca38777a1d57",
+   "contexto_antes": "dos quais 91 linhas. Os sete conhecidos positivos\nforam encontrados. A cópia da medida fica em `provas/brief.json`.\n\nAs 34 plantas de `indicators.rotinas_test` e as 94 conferências de\n`indicators/provar_fluxo.py` passaram. Os nomes de todas as plantas estão em\n`medidas.json`. GitHub, fontes e lançamento são substituídos onde há efeito\nextern",
+   "contexto_depois": "dos quais 91 linhas. Os sete conhecidos positivos\nforam encontrados. A cópia da medida fica em `provas/brief.json`.\n\nAs 34 plantas de `indicators.rotinas_test` e as 96 conferências de\n`indicators/provar_fluxo.py` passaram. Os nomes de todas as plantas estão em\n`medidas.json`. GitHub, fontes e lançamento são substituídos onde há efeito\nextern"
+  }
+ ]
+}
