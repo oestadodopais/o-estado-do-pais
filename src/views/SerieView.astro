@@ -27,13 +27,13 @@
  * de HTML compara aqui pela marca `data-serie-campo`). Uma marca da tabela sem
  * definição, ou uma definição sem marca na tabela, fecha a construção.
  *
- * O QUE A MEDIDA CONTA (a passagem UE1c, 29.09.2026, os achados 9 e 10 da
- * leitura a frio do UE1). Por baixo do título, a frase com que o cartão da
- * medida diz o que ela conta, tirada da leitura do cartão por
- * `definicaoDaMedida()` e rendida pelo mesmo `Frase.astro`, sem ser escrita de
- * novo. Uma medida cuja leitura abre com o valor de Portugal não tem essa frase,
- * e o recibo não a inventa. O portão de HTML confere a frase contra a
- * declaração da leitura, e a presença contra a regra.
+ * O QUE A MEDIDA CONTA (a passagem UE1c, os achados 9 e 10 da leitura a frio
+ * do UE1; na forma da passagem UE1d, 29.09.2026, pelo lugar de direção). Por
+ * baixo do título, a definição declarada da medida
+ * (`DEFINICOES_DAS_MEDIDAS`, em `src/data/figuras.mjs`), que vem citada da
+ * Comissão ou do Eurostat, pela mesma peça com que o cartão a mostra nas páginas
+ * dos painéis (`Frase.astro`, com os selos). As dez séries têm-na, nos vinte
+ * recibos, e o portão de HTML confere-a contra a declaração e exige-a em todos.
  *
  * A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, 29.09.2026). O recibo de uma
  * série mostra sempre a União, e por isso leva a ressalva da Comissão onde a
@@ -49,7 +49,7 @@ import DataDaSerie from '../components/serie/DataDaSerie.astro';
 import { getClaim } from '../lib/ledger.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import Frase from '../components/Frase.astro';
-import { definicaoDaMedida } from '../lib/leitura-da-medida.mjs';
+import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { getSerie, pontosDaSerie, paisesDaUniao, fonteDaTabelaDosPaises, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
 import { nomeDoCartao } from '../lib/nomes.mjs';
@@ -66,7 +66,9 @@ const s = t(lang);
 const serie = getSerie(id);
 const linhaPt = getClaim(String(serie.linha_de_portugal));
 const linhaUe = getClaim(String(serie.linha_da_uniao));
-const definicao = definicaoDaMedida(String(serie.linha_de_portugal), lang);
+const definicaoDeclarada = /** @type {Record<string, { pt: readonly unknown[], en: readonly unknown[] }>} */ (DEFINICOES_DAS_MEDIDAS)[String(serie.linha_de_portugal)];
+if (!definicaoDeclarada) throw new Error(`série «${id}»: a medida «${serie.linha_de_portugal}» não tem definição declarada em DEFINICOES_DAS_MEDIDAS.`);
+const definicao = definicaoDeclarada[lang];
 const ressalva = ressalvaDaUniao(String(serie.linha_de_portugal), lang);
 const pontos = pontosDaSerie(serie);
 const documento = /** @type {Record<string, string>} */ (serie.document);
@@ -106,13 +108,9 @@ const descricao = `${s.livro.serie.eyebrow} · ${nome.texto} ${s.livro.serie.nos
       <NomeDaMedida linha={linhaPt} lang={lang} escada="cartao" class="serie-titulo-nome" />{' '}
       <span data-voz>{s.livro.serie.nosPaises}</span>
     </h1>
-    {
-      definicao && (
-        <p class="serie-o-que-conta" data-serie-o-que-conta={id}>
-          <Frase partes={definicao} lang={lang} selos={false} />
-        </p>
-      )
-    }
+    <p class="serie-o-que-conta" data-serie-o-que-conta={id}>
+      <Frase partes={definicao} lang={lang} selos={true} />
+    </p>
     {
       ressalva && (
         <p class="serie-ressalva" data-ressalva-da-uniao={String(serie.linha_de_portugal)}>{ressalva}</p>
