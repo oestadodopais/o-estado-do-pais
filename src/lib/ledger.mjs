@@ -2381,6 +2381,9 @@ export function validateLedger() {
     const errosDeEndereco = [];
     const enderecos = historiaDaProveniencia(c, 'source_url', onde, errosDeEndereco);
     errors.push(...errosDeEndereco);
+    for (const campo of CAMPOS_DE_PROVENIENCIA) {
+      if (campo !== 'access_date' && campo !== 'source_url') historiaDaProveniencia(c, campo, onde, errors);
+    }
     for (const instantaneo of enderecos.instantaneos) {
       warnings.push(`${onde} história do endereço: a ${instantaneo.date}, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.`);
     }

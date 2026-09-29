@@ -1,0 +1,157 @@
+/* O Estado do País · maqueta da primeira página nova (v1), 28.09.2026.
+   Só as regras novas desta página. Tudo o resto vem de estilos/base.css, a folha do sítio,
+   e cada cor, tipo e espaço daqui lê as fichas dela: --paper, --ink, --g1, --g2, --g3,
+   --rule, --rule-strong, --muted, --axis, --amber, --focus, --f-prosa, --f-instr, --f-versal.
+   A cor (âmbar) aparece numa só regra: a linha do valor de referência de 60 % no bloco 4. */
+
+/* ── os cinco blocos ─────────────────────────────────────────────── */
+
+.pp-blocos{margin-top:clamp(8px,1.4vw,18px);border-top:1.5px solid var(--ink)}
+.pp-bloco{padding:clamp(20px,2.8vw,34px) 0 clamp(30px,4vw,50px);min-width:0}
+.pp-bloco+.pp-bloco{border-top:1px solid var(--rule)}
+
+.pp-titulo{font-family:var(--f-versal);font-size:15px;font-weight:600;line-height:1.35;letter-spacing:.05em;text-transform:lowercase;color:var(--ink);margin:0}
+
+.pp-frase{font-family:var(--f-prosa);font-size:clamp(20px,calc(15px + 1.05vw),25px);font-weight:400;line-height:1.34;letter-spacing:-.006em;color:var(--ink);max-width:31em;margin:9px 0 0;text-wrap:pretty}
+
+/* um valor do livro-razão: Bitter, algarismos versais tabulares, nunca partido */
+.pp-v{font-family:var(--f-instr);font-weight:600;font-variant-numeric:tabular-nums lining-nums;letter-spacing:-.01em;white-space:nowrap;color:var(--ink)}
+
+.pp-lado{margin-top:clamp(18px,2.4vw,24px);min-width:0}
+.pp-desenho{margin:0;min-width:0}
+.pp-legenda{font-family:var(--f-prosa);font-size:14px;line-height:1.45;font-variant-numeric:lining-nums proportional-nums;color:var(--muted);margin:0 0 12px;max-width:40ch}
+.pp-periodo{font-family:var(--f-instr);font-size:12.5px;line-height:1.3;font-variant-numeric:tabular-nums lining-nums;letter-spacing:.02em;color:var(--muted);margin:0 0 10px}
+
+/* ── barras: a mesma origem (o fio de tinta à esquerda) e a mesma escala (--max) ── */
+
+.pp-barra{flex:none;display:block;height:12px;width:calc((100% - var(--reserva)) * var(--v) / var(--max));background:var(--g2)}
+.pp-traco{display:flex;align-items:center;gap:7px;min-width:0}
+.pp-traco .pp-v{font-size:15px;line-height:1.2}
+.pp-rotulo{font-family:var(--f-instr);font-size:13.5px;line-height:1.3;color:var(--muted);min-width:0}
+
+/* bloco 1: uma medida, cinco grupos; a tinta nos dois de que a frase fala */
+.pp-barras{list-style:none;margin:0;padding:0;display:grid;row-gap:10px;--reserva:76px}
+.pp-barras>li{display:grid;grid-template-columns:minmax(0,1fr);row-gap:3px;min-width:0}
+.pp-barras>li.is-forte .pp-rotulo{color:var(--ink)}
+.pp-barras>li.is-forte .pp-barra{background:var(--ink)}
+.pp-barras>li:not(.is-forte) .pp-v{color:var(--muted)}
+.pp-barras>li.is-conjunto .pp-rotulo{font-weight:600}
+.pp-barras>li.pp-separador{height:0;border-top:1px solid var(--rule-strong);margin:3px 0 1px}
+
+/* blocos 2, 3 e 5: pares Portugal e União; Portugal a tinta, a União a cinzento */
+.pp-paineis{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.pp-painel{min-width:0}
+.pp-painel-t{font-family:var(--f-prosa);font-size:15.5px;font-weight:600;line-height:1.3;letter-spacing:-.005em;font-variant-numeric:lining-nums proportional-nums;color:var(--ink);margin:0 0 7px;text-wrap:balance}
+.pp-pares{list-style:none;margin:0;padding:0;display:grid;--reserva:62px}
+.pp-pares>li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);align-items:stretch;column-gap:10px;min-width:0}
+.pp-pares .pp-rotulo{font-size:13px;align-self:center}
+.pp-pares .pp-traco{border-left:1px solid var(--ink);padding:3px 0}
+.pp-pt .pp-rotulo{color:var(--ink)}
+.pp-pt .pp-barra{background:var(--ink)}
+.pp-ue .pp-rotulo,.pp-ue .pp-v{color:var(--muted)}
+.pp-ue .pp-barra{background:var(--g2)}
+
+/* bloco 5: «quantas vezes» contado em unidades, um bloco por vez que cabe */
+.pp-vezes .pp-pt{--c:var(--ink)}
+.pp-vezes .pp-ue{--c:var(--g2)}
+.pp-vezes .pp-barra{background:repeating-linear-gradient(to right,var(--c) 0 calc(100% / var(--v) - 2px),transparent calc(100% / var(--v) - 2px) calc(100% / var(--v)))}
+
+/* bloco 3: o emprego tem a sua escala; o desemprego e o de longa duração partilham outra (a mesma unidade,
+   % da população ativa), e a proximidade junta-os */
+.pp-paineis-tres{row-gap:12px}
+.pp-paineis-tres>.pp-painel:first-child{margin-bottom:10px}
+
+/* bloco 3: a segunda leitura, por baixo e separada */
+.pp-salario{font-family:var(--f-prosa);font-size:16px;line-height:1.55;color:var(--ink);max-width:36em;margin:22px 0 0;padding-top:15px;border-top:1px solid var(--rule)}
+
+/* ── bloco 4: colunas, dois painéis que não se ligam, a mesma escala ── */
+
+.pp-colunas{--h:172px;--topo:22px;--cw:34px;--cg:10px;max-width:36rem}
+.pp-colunas-paineis{display:flex;align-items:stretch;min-width:0}
+.pp-coluna-painel{display:flex;flex-direction:column;min-width:0;flex:1 1 0}
+.pp-coluna-painel.pp-com-referencia{flex:2.3 1 0}
+.pp-coluna-painel+.pp-coluna-painel{border-left:1px solid var(--rule);margin-left:14px;padding-left:14px}
+.pp-coluna-painel .pp-painel-t{flex:1 0 auto;margin-bottom:10px}
+.pp-plot{position:relative;height:var(--h);margin-bottom:26px;display:grid;grid-template-columns:repeat(var(--cols),var(--cw));column-gap:var(--cg);align-items:end;justify-content:start;border-bottom:1px solid var(--ink)}
+.pp-com-referencia .pp-plot{grid-template-columns:minmax(0,1fr) repeat(var(--cols),var(--cw))}
+.pp-col{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px;height:100%;min-width:0}
+/* o ano lê-se primeiro (vem antes no documento) e desenha-se por baixo da base */
+.pp-col-ano{position:absolute;top:calc(100% + 7px);left:-6px;right:-6px;font-family:var(--f-instr);font-size:12.5px;line-height:1.2;font-variant-numeric:tabular-nums lining-nums;color:var(--muted);text-align:center}
+.pp-col .pp-v{font-size:15px;line-height:1}
+.pp-col-barra{display:block;width:100%;height:calc((var(--h) - var(--topo)) * var(--v) / var(--max));background:var(--g2)}
+.pp-col.pp-pt .pp-col-barra{background:var(--ink)}
+.pp-col.pp-ue .pp-v{color:var(--muted)}
+
+/* a linha do valor de referência: âmbar com contorno de tinta, como o marcador do sítio (IDENTIDADE §2) */
+.pp-ref{position:absolute;left:0;right:0;bottom:calc((var(--h) - var(--topo)) * var(--r) / var(--max) - 2.5px);height:5px;background:var(--amber);border-block:1px solid var(--ink);z-index:1;pointer-events:none}
+.pp-ref-rotulo{grid-column:1;grid-row:1;align-self:end;margin:0 10px calc((var(--h) - var(--topo)) * var(--r) / var(--max) + 7px) 0;font-family:var(--f-instr);font-size:12px;line-height:1.35;letter-spacing:.01em;color:var(--ink)}
+.pp-junto{white-space:nowrap}
+
+/* ── o aparelho de cada bloco: a linha pequena, a ressalva, a caixa, o selo ── */
+
+.pp-notas{margin-top:16px;display:grid;gap:9px;align-content:start;min-width:0}
+.pp-linha{font-family:var(--f-prosa);font-size:15px;line-height:1.5;color:var(--ink);max-width:38em}
+.pp-ressalva{font-family:var(--f-prosa);font-size:14.5px;line-height:1.5;color:var(--muted);max-width:38em}
+.pp-caixa{border:1px solid var(--rule);border-top:1.5px solid var(--ink);padding:12px 14px 14px;max-width:38em}
+.pp-caixa p{font-family:var(--f-prosa);font-size:14.5px;line-height:1.52;color:var(--ink)}
+.pp-caixa strong{font-weight:600}
+.pp-fonte{margin:0}
+.pp-selo{display:inline-flex;align-items:center;min-height:32px;font-family:var(--f-instr);font-size:12px;letter-spacing:.02em;color:var(--muted);text-decoration:none}
+.pp-selo::before{content:"";flex:none;width:7px;height:7px;margin-right:6px;background:var(--axis);border:1px solid var(--axis)}
+.pp-selo-k{font-variant-caps:small-caps;letter-spacing:.06em;text-decoration:underline;text-decoration-color:var(--axis);text-underline-offset:3px;margin-right:.3em}
+.pp-selo:hover{color:var(--ink)}
+.pp-selo:hover .pp-selo-k{text-decoration-color:var(--ink)}
+
+/* ── por baixo dos cinco blocos ──────────────────────────────────── */
+
+.pp-entradas{margin-top:clamp(12px,2vw,24px);border-top:1.5px solid var(--ink)}
+.pp-entradas ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr)}
+.pp-entradas li{border-bottom:1px solid var(--rule);min-width:0}
+.pp-entrada{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:1px;align-items:center;padding:12px 0 13px;color:var(--ink);text-decoration:none}
+.pp-entrada-nome{grid-column:1;font-family:var(--f-prosa);font-size:20px;font-weight:500;line-height:1.25;letter-spacing:-.01em}
+.pp-entrada-linha{grid-column:1;font-family:var(--f-prosa);font-size:15px;line-height:1.4;color:var(--muted)}
+.pp-entrada::after{content:"→";grid-column:2;grid-row:1 / span 2;font-family:var(--f-prosa);font-size:19px;color:var(--muted)}
+
+.pp-procura{margin-top:clamp(30px,4.4vw,52px);display:grid;gap:9px;max-width:36rem}
+.pp-procura-k{font-family:var(--f-prosa);font-size:20px;font-weight:500;line-height:1.25;letter-spacing:-.01em;color:var(--ink)}
+.pp-procura-linha{position:relative}
+.pp-procura-campo{box-sizing:border-box;display:block;width:100%;min-height:48px;margin:0;padding:10px 46px 10px 14px;font-family:var(--f-instr);font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--rule-strong);border-radius:0;appearance:none}
+.pp-procura-campo:focus{outline:2px solid var(--focus);outline-offset:2px}
+.pp-lupa{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+
+.pp-explorar{margin:clamp(24px,3.4vw,38px) 0 0;font-family:var(--f-prosa);font-size:18px;line-height:1.4}
+.pp-explorar a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:4px;text-decoration-thickness:1px}
+.pp-explorar a::after{content:"→";display:inline-block;margin-left:.4em;text-decoration:none}
+
+/* ── a partir de 640px: rótulos à esquerda, painéis lado a lado ─── */
+
+@media (width>=640px){
+  .pp-barras{row-gap:0;--reserva:78px}
+  .pp-barras>li{grid-template-columns:13.5rem minmax(0,1fr);column-gap:12px;align-items:stretch}
+  .pp-barras>li .pp-rotulo{align-self:center}
+  .pp-barras .pp-traco{border-left:1px solid var(--ink);padding:6px 0}
+  .pp-barras>li.pp-separador{margin:6px 0}
+  .pp-paineis-dois{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto;column-gap:clamp(22px,3vw,34px);row-gap:0}
+  /* os títulos dos dois painéis partilham a altura, e as barras ficam na mesma linha */
+  .pp-paineis-dois>.pp-painel{display:grid;grid-row:span 2;grid-template-rows:subgrid}
+  .pp-paineis-dois .pp-painel-t{align-self:end}
+  .pp-colunas{--h:200px;--cw:46px;--cg:14px}
+}
+
+/* ── a partir de 1024px: a frase à esquerda, o desenho à direita ─── */
+
+@media (width>=1024px){
+  .pp-bloco{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:clamp(40px,4.6vw,68px);grid-template-areas:"titulo titulo" "frase lado" "notas lado";grid-template-rows:auto auto 1fr;align-items:start}
+  .pp-titulo{grid-area:titulo}
+  .pp-frase{grid-area:frase;margin-top:12px}
+  .pp-lado{grid-area:lado;margin-top:16px}
+  .pp-notas{grid-area:notas;margin-top:20px}
+  .pp-barra{height:14px}
+  .pp-colunas{--h:220px;--cw:54px;--cg:16px}
+  .pp-ref-rotulo{font-size:12.5px}
+  .pp-entradas ul{grid-template-columns:repeat(5,minmax(0,1fr));column-gap:clamp(18px,2.2vw,30px)}
+  .pp-entradas li{border-bottom:0}
+  .pp-entrada{grid-template-columns:minmax(0,1fr);align-items:start;padding:16px 0 4px;row-gap:4px}
+  .pp-entrada::after{content:none}
+  .pp-entrada-nome::after{content:"\00a0→";color:var(--muted)}
+}

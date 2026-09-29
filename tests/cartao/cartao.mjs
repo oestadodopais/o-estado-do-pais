@@ -154,8 +154,9 @@
  *        que diz o que a medida é apoia-se num literal que está mesmo no campo
  *        que cita, cada conta só vive onde a máquina escolhe, cada algarismo tem
  *        o seu literal e o motivo da pergunta da mesma medida, e nenhuma origem
- *        declarada fica sem uso. A segunda lê as quatro páginas (o país e os
- *        temas, nas duas edições): uma leitura por cartão, o texto igual ao do
+ *        declarada fica sem uso. A segunda lê as páginas onde os cartões se
+ *        rendem (os temas e, desde o bloco PP1, as cinco entradas, nas duas
+ *        edições): uma leitura por cartão, o texto igual ao do
  *        resolvedor e ao que a célula recompõe por conta própria, com os ramos
  *        escolhidos pela sua conta, nenhum texto de um ramo não escolhido, os
  *        algarismos todos marcados, só as linhas do cartão e da sua régua, e
@@ -1573,8 +1574,8 @@ if (PROVA) {
 }
 
 /* -------------------------------------------------------------------- K17 */
-/* A leitura de cada medida: a auditoria (sem `dist/`) e as quatro páginas
-   construídas. As plantas correm com `--prova`, sobre cópias em memória. */
+/* A leitura de cada medida: a auditoria (sem `dist/`) e as páginas construídas
+   onde os cartões se rendem. As plantas correm com `--prova`, sobre cópias em memória. */
 {
   const auditoria = conferirAuditoriaDasLeituras();
   r.erros.push(...auditoria.erros);

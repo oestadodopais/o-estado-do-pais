@@ -10,9 +10,12 @@ import { spawnSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const temporaria = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-veredicto-'));
+/* PP1, 28.09.2026: e as dez páginas das entradas, que o `check:pais` passou a ler (a T9 e os blocos). */
 const rotas = ['index.html', 'en/index.html', 'temas/index.html', 'en/themes/index.html',
   'correcoes/index.html', 'en/corrections/index.html', 'municipios/evora/index.html',
-  'en/municipalities/evora/index.html', 'estudos/index.html', 'en/studies/index.html'];
+  'en/municipalities/evora/index.html', 'estudos/index.html', 'en/studies/index.html',
+  ...['o-meu-dinheiro', 'o-meu-trabalho', 'a-minha-casa', 'a-escola-e-a-saude', 'o-estado-e-a-economia',
+    'en/my-money', 'en/my-work', 'en/my-home', 'en/school-and-health', 'en/state-and-economy'].map(r => `${r}/index.html`)];
 const originais = new Map(rotas.map(f => [f, fs.readFileSync(path.join(dist, f), 'utf8')]));
 const sha = s => createHash('sha256').update(s).digest('hex');
 const resultados = [];
@@ -86,12 +89,23 @@ try {
       p.set_content(p.innerHTML.replace(lang === 'pt' ? '. Fora: ' : '. Outside: ', ': '));
     }, new RegExp(`V1 ${lang}: a frase construída difere`));
   }
-  planta('veredicto-depois-da-leitura', 'index.html', r => {
+  /* PP1: a leitura saiu, e o veredicto passou a viver numa secção sua, depois de «O que se passa», com
+     o título e a porta da página europeia. As três plantas da ordem e da casa dele. */
+  planta('veredicto-antes-de-o-que-se-passa', 'index.html', r => {
     const p = r.querySelector('[data-veredicto-pais]');
     const copia = p.outerHTML;
     p.remove();
-    r.querySelector('[data-leitura-pais]').insertAdjacentHTML('afterend', copia);
-  }, /V1 pt: o veredicto não precede a leitura/);
+    r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('beforebegin', copia);
+  }, /V1 pt: o veredicto não vem depois de «O que se passa»/);
+  planta('veredicto-fora-da-sua-seccao', 'en/index.html', r => {
+    const p = r.querySelector('[data-veredicto-pais]');
+    const copia = p.outerHTML;
+    p.remove();
+    r.querySelector('[data-veredicto-seccao]').insertAdjacentHTML('afterend', copia);
+  }, /V1 en: o veredicto não está na sua secção/);
+  planta('veredicto-sem-a-porta-europeia', 'index.html', r => {
+    r.querySelector('[data-veredicto-seccao] a[href="/uniao-europeia"]').remove();
+  }, /V1 pt: o veredicto não está na sua secção, com o título e a porta da página europeia/);
   planta('veredicto-reposto', 'index.html', null, null);
 } finally {
   fs.rmSync(temporaria, { recursive: true, force: true });

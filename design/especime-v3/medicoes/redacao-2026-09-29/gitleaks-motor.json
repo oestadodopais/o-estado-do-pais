@@ -1,0 +1,15 @@
+{
+ "repositorio": "o motor (privado): só o resumo, sem caminhos nem commits",
+ "commits_lidos": 498,
+ "achados": 39,
+ "por_regra": {
+  "generic-api-key": 34,
+  "grafana-api-key": 5
+ },
+ "por_pasta_de_topo": {
+  "indicators": 25,
+  "content": 14
+ },
+ "natureza": "páginas de fontes guardadas (ligações de painéis públicos do Power BI e de outras entidades) e campos de dados chamados «key»; nenhum segredo do projeto",
+ "relatorio_completo": "no scratchpad da sessão do lugar de direção, fora de qualquer repositório"
+}

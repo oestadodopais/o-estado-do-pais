@@ -1,0 +1,4 @@
+[90mcheck-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.[0m
+[31mcheck-datas: 2 falha(s).[0m
+  [31m·[0m /: a página imprime «01.01.2000» como data de repositório e src/data/datas-de-publicacao.json não a declara em edição nenhuma. É exactamente a forma do defeito de 04.09: uma data que saiu do ambiente da construção e não do facto medido.
+  [31m·[0m /: a edição evora-2027-prometido-painel-dinheiro/pt imprime «01.01.2000» e src/data/datas-de-publicacao.json diz que evora-2027-prometido-painel-dinheiro (pt) entrou a 16.09.2026 (commit 7a12f9fe). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.

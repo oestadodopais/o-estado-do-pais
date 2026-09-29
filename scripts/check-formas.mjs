@@ -147,6 +147,7 @@ import {
 } from '../src/data/figuras.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
+import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -185,12 +186,22 @@ for (const lang of ['pt', 'en']) {
 console.log('F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.');
 
 /** As quatro formas do §3, e mais nenhuma. */
-const FORMAS = new Set([
+const FORMAS_DOS_DOMINIOS = [
   'serie-do-pais',
   'faixa-entre-27',
   'barra-concelho-pais',
   'mapa-por-concelho',
-]);
+];
+/* E AS QUATRO FORMAS DOS BLOCOS DE «O QUE SE PASSA» (bloco PP1, 28.09.2026; o §2, ponto 2, do brief:
+   «as quatro formas declaradas (`barras`, `paineis`, `pares`, `colunas`)»). A lista continua fechada: um
+   nome que não seja destes oito fecha a construção, e a F2 e a F9 continuam a exigir, dentro do `<svg>`
+   de cada uma, que cada algarismo seja uma linha ou a marca da escala de um instrumento. A lista lê-se
+   da declaração do resolvedor, e não se escreve aqui outra vez: as duas não podem divergir. */
+const FORMAS = new Set([...FORMAS_DOS_DOMINIOS, ...FORMAS_DOS_BLOCOS]);
+/* O conhecido-positivo da lista fechada: o mesmo teste recusa um nome que não é nenhum dos oito. */
+if (FORMAS.has('barras-empilhadas') || !FORMAS.has('colunas') || FORMAS.size !== 8) {
+  throw new Error('check:formas: a lista das formas não é a das quatro dos domínios e das quatro dos blocos.');
+}
 
 /** O que um desenho estático não pode ter lá dentro. */
 const PROIBIDOS_NUM_DESENHO = ['script', 'animate', 'animatetransform', 'animatemotion', 'set', 'foreignobject'];
@@ -636,8 +647,8 @@ for (const ficheiro of paginasDe(DIST)) {
     contas.formas_por_nome[nome] = (contas.formas_por_nome[nome] ?? 0) + 1;
     if (!FORMAS.has(nome)) {
       err(
-        `${rel}: a forma gráfica "${nome}" não é uma das quatro admitidas ` +
-          `(${[...FORMAS].join(', ')}). O §3 do brief da forma dos domínios fecha a lista.`,
+        `${rel}: a forma gráfica "${nome}" não é uma das ${FORMAS.size} admitidas ` +
+          `(${[...FORMAS].join(', ')}). O §3 do brief da forma dos domínios e o §2 do brief do PP1 fecham a lista.`,
       );
     }
     for (const proibido of PROIBIDOS_NUM_DESENHO) {

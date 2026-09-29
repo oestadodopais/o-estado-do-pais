@@ -1,0 +1,387 @@
+{
+ "conhecido_positivo": {
+  "corrida": "36412381787",
+  "build_s": 703,
+  "verify_s": 883,
+  "astro_s": 500.7,
+  "minutos_da_corrida": 27.8
+ },
+ "corridas": [
+  {
+   "corrida": "36489295961",
+   "cabeca": "01177aeaa1b894933aaee8ad49eaea7b36877f59",
+   "ramo": "ci1-planta-vermelha-2026-09-28",
+   "evento": "push",
+   "conclusao": "failure",
+   "inicio": "2026-09-28T21:55:53Z",
+   "fim": "2026-09-28T22:05:35Z",
+   "minutos_da_corrida": 9.7,
+   "trabalhos": [
+    {
+     "nome": "portao",
+     "conclusao": "failure",
+     "minutos": 9.63,
+     "passos": [
+      {
+       "nome": "Set up job",
+       "conclusao": "success",
+       "segundos": 0
+      },
+      {
+       "nome": "A árvore",
+       "conclusao": "success",
+       "segundos": 26
+      },
+      {
+       "nome": "O Node",
+       "conclusao": "success",
+       "segundos": 6
+      },
+      {
+       "nome": "npm ci",
+       "conclusao": "success",
+       "segundos": 4
+      },
+      {
+       "nome": "O Chromium do Playwright",
+       "conclusao": "success",
+       "segundos": 25
+      },
+      {
+       "nome": "npm run build",
+       "conclusao": "success",
+       "segundos": 170
+      },
+      {
+       "nome": "npm run verify, sem repetir o build",
+       "conclusao": "failure",
+       "segundos": 344
+      },
+      {
+       "nome": "npm run typecheck",
+       "conclusao": "skipped",
+       "segundos": 0
+      },
+      {
+       "nome": "Os dois ficheiros da prova existem",
+       "conclusao": "skipped",
+       "segundos": 0
+      },
+      {
+       "nome": "A prova desta corrida",
+       "conclusao": "skipped",
+       "segundos": 0
+      },
+      {
+       "nome": "Post O Node",
+       "conclusao": "skipped",
+       "segundos": 0
+      },
+      {
+       "nome": "Post A árvore",
+       "conclusao": "success",
+       "segundos": 1
+      },
+      {
+       "nome": "Complete job",
+       "conclusao": "success",
+       "segundos": 0
+      }
+     ],
+     "guioes_do_npm": [
+      {
+       "nome": "build",
+       "inicio": "2026-09-28T21:56:59.7193091Z",
+       "segundos": 0.1
+      },
+      {
+       "nome": "mapa:unidades",
+       "inicio": "2026-09-28T21:56:59.8191841Z",
+       "segundos": 0.2
+      },
+      {
+       "nome": "ledger:check",
+       "inicio": "2026-09-28T21:56:59.9785585Z",
+       "segundos": 0.6
+      },
+      {
+       "nome": "check:registo",
+       "inicio": "2026-09-28T21:57:00.6091035Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "check:cruzamento",
+       "inicio": "2026-09-28T21:57:01.1220820Z",
+       "segundos": 0.7
+      },
+      {
+       "nome": "check:documentos",
+       "inicio": "2026-09-28T21:57:01.8482824Z",
+       "segundos": 26
+      },
+      {
+       "nome": "stamp:version",
+       "inicio": "2026-09-28T21:57:27.8190341Z",
+       "segundos": 0.1
+      },
+      {
+       "nome": "cartoes",
+       "inicio": "2026-09-28T21:57:27.9591417Z",
+       "segundos": 19.1
+      },
+      {
+       "nome": "gate:html",
+       "inicio": "2026-09-28T21:57:47.0340007Z",
+       "segundos": 30.1
+      },
+      {
+       "nome": "check:datas",
+       "inicio": "2026-09-28T21:58:17.1474122Z",
+       "segundos": 2.1
+      },
+      {
+       "nome": "check:cadeia",
+       "inicio": "2026-09-28T21:58:19.2095132Z",
+       "segundos": 0.4
+      },
+      {
+       "nome": "check:dados",
+       "inicio": "2026-09-28T21:58:19.6390559Z",
+       "segundos": 1.7
+      },
+      {
+       "nome": "check:mapa",
+       "inicio": "2026-09-28T21:58:21.3775078Z",
+       "segundos": 0.6
+      },
+      {
+       "nome": "check:regioes",
+       "inicio": "2026-09-28T21:58:22.0146762Z",
+       "segundos": 0.5
+      },
+      {
+       "nome": "check:areas",
+       "inicio": "2026-09-28T21:58:22.5189502Z",
+       "segundos": 0.8
+      },
+      {
+       "nome": "check:formas",
+       "inicio": "2026-09-28T21:58:23.3367563Z",
+       "segundos": 9.1
+      },
+      {
+       "nome": "check:lugares",
+       "inicio": "2026-09-28T21:58:32.3986187Z",
+       "segundos": 1.1
+      },
+      {
+       "nome": "check:pais",
+       "inicio": "2026-09-28T21:58:33.5363129Z",
+       "segundos": 7.7
+      },
+      {
+       "nome": "check:voz",
+       "inicio": "2026-09-28T21:58:41.2212808Z",
+       "segundos": 54.4
+      },
+      {
+       "nome": "check:nomes",
+       "inicio": "2026-09-28T21:59:35.6533825Z",
+       "segundos": 3.2
+      },
+      {
+       "nome": "check:lingua",
+       "inicio": "2026-09-28T21:59:38.8393585Z",
+       "segundos": 10.3
+      },
+      {
+       "nome": "verify:depois-do-build",
+       "inicio": "2026-09-28T21:59:49.1860252Z",
+       "segundos": 85.7
+      },
+      {
+       "nome": "check:lugar",
+       "inicio": "2026-09-28T22:01:14.8853870Z",
+       "segundos": 33.2
+      },
+      {
+       "nome": "check:indice",
+       "inicio": "2026-09-28T22:01:48.0898633Z",
+       "segundos": 17
+      },
+      {
+       "nome": "check:cartao",
+       "inicio": "2026-09-28T22:02:05.0675133Z",
+       "segundos": 23.7
+      },
+      {
+       "nome": "check:cabeca",
+       "inicio": "2026-09-28T22:02:28.7823236Z",
+       "segundos": 0.2
+      },
+      {
+       "nome": "check:css",
+       "inicio": "2026-09-28T22:02:28.9764799Z",
+       "segundos": 11.8
+      },
+      {
+       "nome": "check:alcance",
+       "inicio": "2026-09-28T22:02:40.7654605Z",
+       "segundos": 3.6
+      },
+      {
+       "nome": "check:briefs",
+       "inicio": "2026-09-28T22:02:44.3927258Z",
+       "segundos": 2
+      },
+      {
+       "nome": "check:fontes",
+       "inicio": "2026-09-28T22:02:46.3926629Z",
+       "segundos": 0.3
+      },
+      {
+       "nome": "mapa:unidades",
+       "inicio": "2026-09-28T22:02:46.6610323Z",
+       "segundos": 1.1
+      },
+      {
+       "nome": "provar:eyetext",
+       "inicio": "2026-09-28T22:02:47.7329037Z",
+       "segundos": 0.4
+      },
+      {
+       "nome": "provar:guardas",
+       "inicio": "2026-09-28T22:02:48.0951070Z",
+       "segundos": 4.3
+      },
+      {
+       "nome": "check:mortos",
+       "inicio": "2026-09-28T22:02:52.4254059Z",
+       "segundos": 48.2
+      },
+      {
+       "nome": "check:moldura",
+       "inicio": "2026-09-28T22:03:40.6162765Z",
+       "segundos": 37.5
+      },
+      {
+       "nome": "check:palavras",
+       "inicio": "2026-09-28T22:04:18.0690516Z",
+       "segundos": 73
+      },
+      {
+       "nome": "check:alvos",
+       "inicio": "2026-09-28T22:05:31.0467376Z",
+       "segundos": 2.1
+      },
+      {
+       "nome": "design:feixe",
+       "inicio": "2026-09-28T22:05:33.1635421Z",
+       "segundos": 1.8
+      }
+     ],
+     "astro_build_segundos": 23.5,
+     "conferencias_lado_a_lado": [
+      {
+       "passo": "npm run check:lugar",
+       "segundos": 84.2,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:indice",
+       "segundos": 33.2,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:cartao",
+       "segundos": 17,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:cabeca",
+       "segundos": 23.7,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:css",
+       "segundos": 0.2,
+       "codigo": 1
+      },
+      {
+       "passo": "npm run check:alcance",
+       "segundos": 11.8,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:briefs",
+       "segundos": 3.6,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:fontes",
+       "segundos": 2,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run mapa:unidades -- --verifica",
+       "segundos": 0.3,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run provar:eyetext",
+       "segundos": 1.1,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run provar:guardas",
+       "segundos": 0.4,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:mortos",
+       "segundos": 4.3,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:moldura",
+       "segundos": 229.9,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:palavras",
+       "segundos": 267.3,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run check:alvos",
+       "segundos": 340.3,
+       "codigo": 0
+      },
+      {
+       "passo": "npm run design:feixe",
+       "segundos": 2.1,
+       "codigo": 0
+      }
+     ],
+     "celulas": [
+      {
+       "celula": "U",
+       "ok": false,
+       "texto": "33 passos no verify: 17 corridos pelo build, 15 corridos aqui e verdes"
+      },
+      {
+       "celula": "D",
+       "ok": true,
+       "texto": "nenhuma escrita durante as conferências nos 12484 ficheiros do dist/ (bytes, hora de escrita e inode) nem nos 8249 ficheiros que o git segue (hora de escrita, inode e tamanho)"
+      },
+      {
+       "celula": "C",
+       "ok": true,
+       "texto": "a construção é da cabeça 01177aeaa1b894933aaee8ad49eaea7b36877f59, carimbada a 2026-09-28T21:57:27.854Z; prova.json escrito a 2026-09-28T21:58:16.994Z, cadeia.json a 2026-09-28T21:58:19.480Z"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

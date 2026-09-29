@@ -40,6 +40,7 @@ import { numeralPorExtenso, fixadorDoLimiar, FIXADORES_DO_LIMIAR, FIGURAS_PDM, F
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 import { eDatasDePublicacao, eDataDeEdicao } from '../src/lib/datas-do-repositorio.mjs';
+import fs from 'node:fs';
 
 /** @param {string} s */
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -866,6 +867,65 @@ caso(
   true,
   CAMPOS_DA_VERIFICACAO.length === 4,
   'date, path, result e by.',
+);
+
+/* ------------------------------------------ a paridade das duas línguas */
+
+/* A PARIDADE DAS CHAVES CONFERE-SE UMA VEZ POR PROCESSO (bloco CI1, 28.09.2026).
+   `t()` de `src/i18n/strings.mjs` conferia a paridade das duas árvores em cada
+   chamada, e passou a conferi-la na primeira chamada de cada processo e a
+   congelar a árvore a seguir. A guarda é a mesma e tem de morder na mesma.
+   O texto do módulo lê-se do ficheiro e a cópia importa-se da memória, por um
+   endereço `data:` (o módulo não importa nada, por isso carrega-se inteiro
+   assim): nada se escreve no disco. A cópia com uma chave plantada só na
+   edição portuguesa TEM de fechar na primeira chamada, a dizer a chave; a
+   cópia intacta TEM de passar; e depois da primeira chamada a árvore TEM de
+   recusar uma chave nova e uma cadeia trocada, para a conferência feita uma
+   vez não poder envelhecer a meio de uma construção. */
+const FONTE_DAS_CADEIAS = fs.readFileSync(new URL('../src/i18n/strings.mjs', import.meta.url), 'utf8');
+const ABERTURA_DO_PT = 'export const STRINGS = {\n  pt: {\n';
+/** @param {string} texto */
+const cadeiasDaMemoria = (texto) =>
+  import(`data:text/javascript;base64,${Buffer.from(texto, 'utf8').toString('base64')}`);
+caso(
+  't/abertura-da-arvore',
+  true,
+  FONTE_DAS_CADEIAS.split(ABERTURA_DO_PT).length === 2,
+  'a planta entra logo a seguir à abertura da edição portuguesa, e essa abertura existe uma vez.',
+);
+const comPlanta = await cadeiasDaMemoria(
+  FONTE_DAS_CADEIAS.replace(ABERTURA_DO_PT, `${ABERTURA_DO_PT}    plantaDoCi1: 'só numa língua',\n`),
+);
+atira(
+  't/paridade-divergente',
+  () => comPlanta.t('pt'),
+  'só em pt: plantaDoCi1',
+  'uma chave que só existe numa língua fecha a construção na primeira chamada de t().',
+);
+const intacta = await cadeiasDaMemoria(FONTE_DAS_CADEIAS);
+let intactaPassou = true;
+try {
+  intacta.t('pt');
+  intacta.t('en');
+} catch {
+  intactaPassou = false;
+}
+caso('t/paridade-igual', true, intactaPassou, 'as duas árvores do repositório têm as mesmas chaves.');
+atira(
+  't/arvore-congelada-chave-nova',
+  () => {
+    intacta.STRINGS.pt.plantaDoCi1 = 'x';
+  },
+  'not extensible',
+  'depois da primeira chamada, uma chave nova é recusada: a paridade conferida uma vez não envelhece.',
+);
+atira(
+  't/arvore-congelada-cadeia-trocada',
+  () => {
+    intacta.STRINGS.en.lang = 'x';
+  },
+  'read only',
+  'e uma cadeia trocada a meio da construção também, o que a conferência a cada chamada não via.',
 );
 
 /* ------------------------------------------------------------------- o fim */

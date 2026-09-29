@@ -1,0 +1,19 @@
+{
+  "cabeca": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+  "limpa": false,
+  "diferenca_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/conferir-acessos.py",
+      "sha256": "1fec2fe8ed38a5706b1c06bc2dd24a07b76d621da97a9b0897fda0c1ed41863e"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.cabeca",
+      "sha256": "75cb91d7af15f50c430abdf6518fdfe061d5f83613fecd822b10833d6b5c62c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1f/reconstituicao.inicio",
+      "sha256": "3024886c26a89b4c332145c04807898bbda9d70b15d97d6af529d9dd92cf7c7e"
+    }
+  ]
+}

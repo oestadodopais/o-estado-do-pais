@@ -45,3 +45,10 @@ __pycache__/
 # (`git ls-files '.claude*'` a zero), portanto isto não desliga o seguimento de
 # coisa nenhuma: fecha a porta antes de alguém lá pôr alguma coisa.
 .claude/
+
+# OS SINAIS DA PRIMEIRA PÁGINA (bloco PP1, 28.09.2026). O `npm run verify` corre
+# `scripts/sinais-da-primeira-pagina.mjs`, que escreve aqui cada bloco e cada peça de
+# «O que se passa» que as condições tiraram da página, e porquê, para o lugar de
+# direção os reescrever. É o estado da construção, e não do repositório: fica fora do
+# Git e fora de `dist/`.
+.sinais/

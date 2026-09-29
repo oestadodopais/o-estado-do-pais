@@ -54,6 +54,8 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
 import { WORKS } from '../src/data/studies.mjs';
+import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
+import { DOMINIO_DAS_MEDIDAS } from '../src/data/dominios.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -348,7 +350,37 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
   orfas(rota, doc, presasAqui);
 }
 
+/* AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) têm os estudos do país sobre os seus temas, com
+   a data de publicação de cada um. Quantas edições se esperam reconta-se aqui, dos dados e não da vista:
+   cada tema pertence à entrada que tem mais cartões dele (num empate, a primeira declarada), e uma
+   entrada leva os estudos do país (sem lugar declarado) desses temas. */
+const EDICOES_DAS_ENTRADAS = new Map();
+{
+  const donos = new Map();
+  for (const e of ENTRADAS) for (const id of e.seccoes.flatMap((x) => x.cartoes)) {
+    const tema = DOMINIO_DAS_MEDIDAS[id];
+    if (!tema) continue;
+    if (!donos.has(tema)) donos.set(tema, new Map());
+    donos.get(tema).set(e.id, (donos.get(tema).get(e.id) ?? 0) + 1);
+  }
+  for (const e of ENTRADAS) {
+    if ('existente' in e && e.existente) continue;
+    const temas = [...donos].filter(([, m]) => {
+      let dona = null, mais = -1;
+      for (const x of ENTRADAS) { const n = m.get(x.id) ?? 0; if (n > mais) { mais = n; dona = x.id; } }
+      return dona === e.id;
+    }).map(([t]) => t);
+    const n = WORKS.filter((w) => typeof w.subject !== 'string' && temas.includes(w.tema)).length;
+    for (const lang of ['pt', 'en']) EDICOES_DAS_ENTRADAS.set(e.rota[lang].replace(/\/$/, ''), n);
+  }
+}
+
 for (const { rota, doc, slug } of paraPrender) {
+  if (EDICOES_DAS_ENTRADAS.has(rota)) {
+    paginasPrendidas++;
+    prendeEdicoesB1(rota, doc, null, EDICOES_DAS_ENTRADAS.get(rota));
+    continue;
+  }
   if (['/', '/en'].includes(rota)) {
     paginasPrendidas++;
     prendeEdicoesB1(rota, doc, null, Math.min(3, WORKS.length));

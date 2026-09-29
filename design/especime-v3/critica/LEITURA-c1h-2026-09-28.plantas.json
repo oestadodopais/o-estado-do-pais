@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T06:03:43+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "o nome da pasta pessoal só volta a entrar com dezasseis caracteres ou mais: o de uma pessoa com um nome mais curto deixa de ser procurado",
+   "sha256_antes": "c7f605a800a0e263e19506c763cbd8094d3939a4205f3be18ab3ce83f473dd66",
+   "sha256_depois": "ecfbb2d8694546f02c4187d90960f3b58df0930f4fe55dbdfea0bf0502d9219a",
+   "contexto_antes": "ncode())\n    if pasta.parent not in PASTAS_GENERICAS:\n        caminhos.append((str(pasta.parent).rstrip('/') + '/').encode())\n    nome = pasta.name.lower()\n    if len(nome) >= 6 and nome not in CONTAS_GENERICAS:\n        caminhos.append(nome.encode())\n    return caminhos + [\n        (('/private' + '/' + 'var/folders') + '/').encode(),\n        (('/private' + '/tmp') + '/",
+   "contexto_depois": "ncode())\n    if pasta.parent not in PASTAS_GENERICAS:\n        caminhos.append((str(pasta.parent).rstrip('/') + '/').encode())\n    nome = pasta.name.lower()\n    if len(nome) >= 16 and nome not in CONTAS_GENERICAS:\n        caminhos.append(nome.encode())\n    return caminhos + [\n        (('/private' + '/' + 'var/folders') + '/').encode(),\n        (('/private' + '/tmp') + '/"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "a pasta /home deixa de ser genérica: num anfitrião do GitHub, qualquer /home/ numa ligação volta a ser cadeia proibida",
+   "sha256_antes": "ecfbb2d8694546f02c4187d90960f3b58df0930f4fe55dbdfea0bf0502d9219a",
+   "sha256_depois": "a8a3cbf3ac433504a3100119cace5a4f7c7d6cff11abba8cf8280dcf58f2eb31",
+   "contexto_antes": " execução do GitHub, não uma identidade pessoal.\nCONTAS_GENERICAS = frozenset({'runner'})\n# A raiz e os diretórios comuns de contas não identificam uma pessoa.\nPASTAS_GENERICAS = frozenset(Path('/') / n for n in ('', 'Users', 'home'))\n\ndef proibidos(pasta=None):\n    pasta = Path.home() if pasta is None else Path(pasta)\n    caminhos = []\n    if pasta != Path(pasta.anchor):\n        caminhos.ap",
+   "contexto_depois": " execução do GitHub, não uma identidade pessoal.\nCONTAS_GENERICAS = frozenset({'runner'})\n# A raiz e os diretórios comuns de contas não identificam uma pessoa.\nPASTAS_GENERICAS = frozenset(Path('/') / n for n in ('', 'Users'))\n\ndef proibidos(pasta=None):\n    pasta = Path.home() if pasta is None else Path(pasta)\n    caminhos = []\n    if pasta != Path(pasta.anchor):\n        caminhos.ap"
+  },
+  {
+   "id": "P3",
+   "ficheiro": ".github/workflows/portao.yml",
+   "descricao": "a corrida «portão» obtém uma cópia rasa do repositório, e a conferência da privacidade fica sem a história de que depende",
+   "sha256_antes": "0838b413c2cdc84ca7bd9e4be07a44e1a5db52499a7862eb6748818accb986de",
+   "sha256_depois": "f5f0947557a0cba9ad70523ab423025a4094417a637f8c9533434bac4c701fec",
+   "contexto_antes": "ha visível quando alguém a\n      # tirar.\n      - name: A árvore\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n        with:\n          fetch-depth: 0\n\n      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node\n      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e ",
+   "contexto_depois": "ha visível quando alguém a\n      # tirar.\n      - name: A árvore\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n        with:\n          fetch-depth: 1\n\n      # `node-version-file: .nvmrc` para haver um só lugar onde a versão do Node\n      # se escreve. O `engines` do `package.json` diz o mínimo (>=22.12.0) e "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/en/ledger/evora-prr-aprovado-2026/index.html",
+   "descricao": "o recibo inglês do aprovado volta a escrever a data de 04.08.2026 na forma ISO na razão da primeira entrada reconstituída, contra a linha",
+   "sha256_antes": "a5257bc830807510096e0c7433aa95f8b024266c51ad8d7b98a755fa56bb8bc2",
+   "sha256_depois": "f7d0d530a7d29ae08faefb3196877e7f25a966ff36f91462a55a41a704fe5c2f",
+   "contexto_antes": "/span></span></div><p class=\"log-motivo\" data-correcao-claim=\"evora-prr-aprovado-2026\" data-correcao-n=\"6\" data-correcao-grupo=\"6\" data-correcao-campo=\"reason\">The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded.</p></div><div",
+   "contexto_depois": "/span></span></div><p class=\"log-motivo\" data-correcao-claim=\"evora-prr-aprovado-2026\" data-correcao-n=\"6\" data-correcao-grupo=\"6\" data-correcao-campo=\"reason\">The access moved from 2026-08-04 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded.</p></div><div"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 4 116 980 símbolos para a C1h, contra os 4 166 980 do custo guardado",
+   "sha256_antes": "0691068ae304053a43c05812d83d1225c9f9e6a987470aa11c822cb616ebdd00",
+   "sha256_depois": "eb4f8ace10f94bad152a970cc734eb39d18f56563d21c6b9afd3b06de888fbf2",
+   "contexto_antes": "declaração de aceitação integral da C1g foi retificada no texto e nas medições, conservando o valor declarado na entrega e a razão da retificação.\n\n**Custos.** A C1h regista 4 166 980 símbolos (tokens expostos pelo runtime) e 982,530 segundos, em `c1h/custo.json`. A C1g regista 7 781 991 símbolos (tokens expostos pelo runtime) e 1 611,263 segundos, e",
+   "contexto_depois": "declaração de aceitação integral da C1g foi retificada no texto e nas medições, conservando o valor declarado na entrega e a razão da retificação.\n\n**Custos.** A C1h regista 4 116 980 símbolos (tokens expostos pelo runtime) e 982,530 segundos, em `c1h/custo.json`. A C1g regista 7 781 991 símbolos (tokens expostos pelo runtime) e 1 611,263 segundos, e"
+  }
+ ]
+}

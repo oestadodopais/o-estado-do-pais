@@ -1,0 +1,979 @@
+{
+  "o_que_e": "As medidas do relatório do bloco PP1, escritas por este guião.",
+  "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/medidas.mjs 1cbdb8c4",
+  "cabeca": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+  "dist_construido_de": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+  "medidas": [
+    {
+      "nome": "cartoes_na_primeira_pagina_antes",
+      "valor": 23,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-antes/index.html · main [data-cartao-medida], main [data-cartao-camaras]",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta na página de antes os cartões que o §0 do brief contou (cartoes_na_primeira_pagina)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_na_primeira_pagina_depois",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · o mesmo seletor",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta os cartões da página de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_na_primeira_pagina_antes",
+      "valor": 9,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-antes/index.html · main [data-tema]",
+      "conhecido_positivo": {
+        "o_que": "o §0 do brief contou os mesmos temas (temas_na_primeira_pagina)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_na_primeira_pagina_depois",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · main [data-tema]",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê os temas da página de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leitura_do_pais_na_primeira_pagina_antes",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-antes/index.html · main [data-leitura-pais]",
+      "conhecido_positivo": {
+        "o_que": "a página de antes tem a leitura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leitura_do_pais_na_primeira_pagina_depois",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · main [data-leitura-pais]",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê a leitura na página de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mudancas_na_primeira_pagina_antes",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-antes/index.html · main [data-mudou-ambito] li",
+      "conhecido_positivo": {
+        "o_que": "o §0 do brief contou as mesmas mudanças (mudancas_na_primeira_pagina)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mudancas_na_primeira_pagina_depois",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · o mesmo seletor",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê as mudanças da página de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "componente_da_leitura_do_pais_na_cabeca",
+      "valor": 0,
+      "comando": "git ls-tree --name-only HEAD -- src/components/inicio/LeituraDoPais.astro",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando encontra o componente na cabeça de partida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_que_usam_as_linhas_da_leitura_do_pais",
+      "valor": [
+        "src/lib/mudancas.mjs",
+        "src/lib/pais.mjs"
+      ],
+      "comando": "git grep -l LINHAS_DA_LEITURA_DO_PAIS HEAD -- src",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando encontra a lista no componente da leitura na cabeça de partida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_na_primeira_pagina_pt",
+      "valor": 5,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · main [data-o-que-se-passa] [data-bloco]",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta dois blocos numa página de prova com dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_na_primeira_pagina_en",
+      "valor": 5,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/en_index.html · o mesmo seletor",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta dois blocos numa página de prova com dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_na_primeira_pagina_pt",
+      "valor": 6,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · main [data-entradas] li[data-entrada]",
+      "conhecido_positivo": {
+        "o_que": "as declarações têm as mesmas entradas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_na_primeira_pagina_en",
+      "valor": 6,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/en_index.html · o mesmo seletor",
+      "conhecido_positivo": {
+        "o_que": "as declarações têm as mesmas entradas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_antes_do_primeiro_titulo_depois",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/index.html · o texto de main antes do primeiro h2, sem o rótulo de IA",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta as palavras antes do primeiro título na página de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_antes_do_primeiro_titulo_antes",
+      "valor": 221,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-antes/index.html · o mesmo detetor",
+      "conhecido_positivo": {
+        "o_que": "a página de antes abre com a leitura do país antes do primeiro título",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_das_entradas_construidas",
+      "valor": 10,
+      "comando": "dist/<rota de cada entrada>/index.html, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "as declarações têm cinco entradas novas, nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_da_pagina_dos_temas",
+      "valor": 48,
+      "comando": "dist/temas/index.html · main article.cartao-medida[data-cartao-medida], main article[data-cartao-camaras]",
+      "conhecido_positivo": {
+        "o_que": "a taxa de emprego é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nas_paginas_das_entradas",
+      "valor": 47,
+      "comando": "o mesmo seletor nas cinco páginas das entradas congeladas em paginas-depois/, edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "a pensão média está numa delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_repetidos_nas_entradas",
+      "valor": 0,
+      "comando": "as mesmas contas · as ocorrências a mais",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma repetição numa lista com um nome duas vezes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_dos_temas_fora_das_entradas",
+      "valor": 1,
+      "comando": "os cartões da página dos temas que nenhuma entrada rende",
+      "conhecido_positivo": {
+        "o_que": "o fora declarado é o índice da dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_da_entrada_dinheiro",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/o-meu-dinheiro_index.html · #estudos-da-entrada [data-estudo]",
+      "conhecido_positivo": {
+        "o_que": "a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_da_entrada_trabalho",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/o-meu-trabalho_index.html · #estudos-da-entrada [data-estudo]",
+      "conhecido_positivo": {
+        "o_que": "a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_da_entrada_casa",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/a-minha-casa_index.html · #estudos-da-entrada [data-estudo]",
+      "conhecido_positivo": {
+        "o_que": "a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_da_entrada_escola-e-saude",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/a-escola-e-a-saude_index.html · #estudos-da-entrada [data-estudo]",
+      "conhecido_positivo": {
+        "o_que": "a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_da_entrada_estado",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-depois/o-estado-e-a-economia_index.html · #estudos-da-entrada [data-estudo]",
+      "conhecido_positivo": {
+        "o_que": "a lista dos estudos recentes da primeira página tem estudos pelo mesmo seletor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_primeira_pagina_390_pt_antes",
+      "valor": 10812,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-antes.json · resultados[pais, pt, 390, claro].altura",
+      "conhecido_positivo": {
+        "o_que": "o manifesto de antes tem a captura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_primeira_pagina_390_pt_depois",
+      "valor": 6803,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · o mesmo campo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto de depois tem a captura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_pt_fundo_do_titulo_px",
+      "valor": 224,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, pt, 390, claro].aceitacao.fundo_do_titulo_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_pt_fundo_da_data_px",
+      "valor": 246,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, pt, 390, claro].aceitacao.fundo_da_data_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_pt_fundo_da_fonte_do_primeiro_bloco_px",
+      "valor": 806,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, pt, 390, claro].aceitacao.fundo_da_fonte_do_primeiro_bloco_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_pt_fundo_da_fonte_do_segundo_bloco_px",
+      "valor": 1598,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, pt, 390, claro].aceitacao.fundo_da_fonte_do_segundo_bloco_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_pt_limite_px",
+      "valor": 1688,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, pt, 390, claro].aceitacao.limite_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_primeira_pagina_390_en_antes",
+      "valor": 10679,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-antes.json · resultados[pais, en, 390, claro].altura",
+      "conhecido_positivo": {
+        "o_que": "o manifesto de antes tem a captura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_primeira_pagina_390_en_depois",
+      "valor": 6748,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · o mesmo campo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto de depois tem a captura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_en_fundo_do_titulo_px",
+      "valor": 224,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, en, 390, claro].aceitacao.fundo_do_titulo_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_en_fundo_da_data_px",
+      "valor": 246,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, en, 390, claro].aceitacao.fundo_da_data_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_en_fundo_da_fonte_do_primeiro_bloco_px",
+      "valor": 781,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, en, 390, claro].aceitacao.fundo_da_fonte_do_primeiro_bloco_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_en_fundo_da_fonte_do_segundo_bloco_px",
+      "valor": 1552,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, en, 390, claro].aceitacao.fundo_da_fonte_do_segundo_bloco_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aceitacao_390_en_limite_px",
+      "valor": 1688,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados[pais, en, 390, claro].aceitacao.limite_px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo manifesto diz o segundo bloco inteiro nos dois ecrãs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_depois",
+      "valor": 84,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados",
+      "conhecido_positivo": {
+        "o_que": "o manifesto diz a aceitação passada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_refeitas_com_outros_bytes",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 12dc8fbf · resultados[].sha256",
+      "conhecido_positivo": {
+        "o_que": "as duas listas têm as mesmas capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_congeladas_com_outros_bytes",
+      "valor": [
+        "index.html",
+        "en_index.html",
+        "o-estado-e-a-economia_index.html",
+        "en_state-and-economy_index.html"
+      ],
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 12dc8fbf · copias[].sha256 das páginas",
+      "conhecido_positivo": {
+        "o_que": "o manifesto antigo tem as mesmas páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_depois_construidas_de",
+      "valor": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · dist_construido_de",
+      "conhecido_positivo": {
+        "o_que": "as capturas de antes são de outra cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_cabeca",
+      "valor": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/build.cabeca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões é a das capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_build_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o portão correu na cabeça dos outros dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_verify_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o portão correu na cabeça dos outros dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_pp1b_typecheck_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o portão correu na cabeça dos outros dois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_depois_com_deslocamento",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · resultados com deslocamento > 0",
+      "conhecido_positivo": {
+        "o_que": "o manifesto de antes mediu o deslocamento de cada captura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_pp1_vivas",
+      "valor": 75,
+      "comando": "design/especime-v3/INVENTARIO-FRASES.md · as linhas com o bloco pp1 e o estado viva",
+      "conhecido_positivo": {
+        "o_que": "a linha «O que se passa» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_pp1_retiradas",
+      "valor": 4,
+      "comando": "o mesmo ficheiro · as linhas com o bloco pp1 e o estado retirada",
+      "conhecido_positivo": {
+        "o_que": "a descrição antiga da primeira página é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_que_sairam_do_ficheiro",
+      "valor": 2,
+      "comando": "git show 1cbdb8c4:design/especime-v3/INVENTARIO-FRASES.md contra a árvore · os textos das linhas que já não estão",
+      "conhecido_positivo": {
+        "o_que": "a linha da frase do veredicto estava na cabeça de partida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_linhas_que_sairam_do_ficheiro_textos",
+      "valor": [
+        "Em , Portugal ficou fora de dos valores de referência da Comissão Europeia e dentro de . Fora: , , e .",
+        "In , Portugal was outside of the European Commission’s reference values and within . Outside: , , and ."
+      ],
+      "comando": "os mesmos textos",
+      "conhecido_positivo": {
+        "o_que": "a lista é a do contador acima",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_primeira_pagina_corridas",
+      "valor": 38,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_primeira_pagina_mordidas",
+      "valor": 38,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_geometria_corridas",
+      "valor": 14,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-geometria.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_geometria_mordidas",
+      "valor": 14,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-geometria.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_sinais_corridas",
+      "valor": 3,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-sinais.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_sinais_mordidas",
+      "valor": 3,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-sinais.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_pesquisa_da_primeira_corridas",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_pesquisa_da_primeira_mordidas",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_porta_corridas",
+      "valor": 12,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-porta.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_porta_mordidas",
+      "valor": 12,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-porta.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_pais_corridas",
+      "valor": 31,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pais.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_pais_mordidas",
+      "valor": 31,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pais.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_veredicto_corridas",
+      "valor": 16,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-veredicto.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_veredicto_mordidas",
+      "valor": 16,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-veredicto.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_camaras_corridas",
+      "valor": 35,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-camaras.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_camaras_mordidas",
+      "valor": 35,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-camaras.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_l1_b2_corridas",
+      "valor": 8,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-l1-b2.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_l1_b2_mordidas",
+      "valor": 8,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-l1-b2.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes_corridas",
+      "valor": 18,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-portoes-lista.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem pelo menos uma planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes_mordidas",
+      "valor": 18,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-portoes-lista.json · as que morderam como esperado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não mordeu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_alvos_corridas",
+      "valor": 2,
+      "comando": "node tests/acessibilidade/alvos.mjs --vermelhos --so <estrago> --json <ficheiro fora da árvore>, para «b1» e «bloco-sem-classe»",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as duas plantas do bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_alvos_mordidas",
+      "valor": 2,
+      "comando": "os mesmos registos · bom (o HTML mudou e caíram as células nomeadas)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma que não caiu numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "planta_dos_alvos_b1",
+      "valor": [
+        "H2",
+        "H6",
+        "H10"
+      ],
+      "comando": "os mesmos registos · as células que caíram",
+      "conhecido_positivo": {
+        "o_que": "a planta nomeia H2, H6, H10",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "planta_dos_alvos_bloco-sem-classe",
+      "valor": [
+        "H2"
+      ],
+      "comando": "os mesmos registos · as células que caíram",
+      "conhecido_positivo": {
+        "o_que": "a planta nomeia H2",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_com_guiao_passagens",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · com_guiao",
+      "conhecido_positivo": {
+        "o_que": "as duas edições em duas larguras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_com_guiao_a_cumprir",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · com_guiao[].passa",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê a planta da ligação partida a falhar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_sem_guiao_pt",
+      "valor": {
+        "aterra": "/lugares?concelho=mourao",
+        "estado": 200,
+        "portas_de_distrito_a_vista": 29,
+        "porta_do_distrito": "/distritos/evora",
+        "porta_do_concelho_a_vista": 2,
+        "resultados_a_vista": 0
+      },
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · sem_guiao[pt]",
+      "conhecido_positivo": {
+        "o_que": "a planta do formulário sem destino dá 404 pelo mesmo caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisa_sem_guiao_en",
+      "valor": {
+        "aterra": "/en/places?concelho=mourao",
+        "estado": 200,
+        "portas_de_distrito_a_vista": 29,
+        "porta_do_distrito": "/en/districts/evora",
+        "porta_do_concelho_a_vista": 2,
+        "resultados_a_vista": 0
+      },
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-pesquisa.json · sem_guiao[en]",
+      "conhecido_positivo": {
+        "o_que": "a planta do formulário sem destino dá 404 pelo mesmo caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_no_mapa_do_sitio",
+      "valor": 10,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json · entradas.entradas_no_mapa_do_sitio",
+      "conhecido_positivo": {
+        "o_que": "a planta de uma rota em falta no mapa mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapas_do_sitio_lidos",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-primeira-pagina.json · entradas.mapas_do_sitio",
+      "conhecido_positivo": {
+        "o_que": "a planta de um mapa nomeado em falta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cadeia_do_build_tem_os_sinais",
+      "valor": true,
+      "comando": "package.json · scripts.build, os passos",
+      "conhecido_positivo": {
+        "o_que": "a mesma leitura não acha o passo na cadeia do typecheck",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_da_porta",
+      "valor": 204,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-porta.json",
+      "conhecido_positivo": {
+        "o_que": "a célula P1 da edição portuguesa está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_da_porta_verdes",
+      "valor": 204,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/plantas-porta.json · passou",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador conta as falhadas numa lista de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_estudos",
+      "valor": 2349,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.estudos",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_antes",
+      "valor": 2341,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.antes",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_entraram",
+      "valor": 8,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.entraram",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_sairam",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.sairam",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_refeitas_agravadas",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.paginas_refeitas_agravadas",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_antigas_agravadas",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.paginas_antigas_agravadas",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_outras_entradas",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json · contagens.outras_entradas",
+      "conhecido_positivo": {
+        "o_que": "a composição leu as duas cabeças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_revisto_partida_codigo",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json · partida.codigo (revisão A)",
+      "conhecido_positivo": {
+        "o_que": "na cabeça de partida a construção parou com a frase da leitura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_revisto_bloco_A_codigo",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json · bloco_A.codigo",
+      "conhecido_positivo": {
+        "o_que": "na cabeça do bloco a revisão A chega ao cartão da entrada da casa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_revisto_bloco_A_blocos_mostrados",
+      "valor": 5,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json · bloco_A.sinais.blocos_mostrados",
+      "conhecido_positivo": {
+        "o_que": "o registo dos sinais foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_revisto_bloco_B_codigo",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json · bloco_B.codigo, e o passo em bloco_B.passo",
+      "conhecido_positivo": {
+        "o_que": "na revisão B a peça saiu e o sinal nomeia-a",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_revisto_bloco_B_saidas",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json · bloco_B.sinais.saidas",
+      "conhecido_positivo": {
+        "o_que": "a saída é a peça dos preços das casas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_do_ramo_lidos",
+      "valor": 266,
+      "comando": "git diff --name-only 1cbdb8c4..HEAD, e git status --porcelain --untracked-files=all",
+      "conhecido_positivo": {
+        "o_que": "os ficheiros lidos incluem o relatório do bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_do_ramo_com_caminho_da_maquina_lista",
+      "valor": [],
+      "comando": "os mesmos · os nomes dos que têm",
+      "conhecido_positivo": {
+        "o_que": "a lista é a do detetor abaixo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_do_ramo_com_caminho_da_maquina",
+      "valor": 0,
+      "comando": "os mesmos ficheiros (sem as imagens) · o diretório do utilizador, o nome do utilizador e as pastas temporárias do sistema",
+      "conhecido_positivo": {
+        "o_que": "o detetor apanha uma linha de prova com o diretório do utilizador",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_acrescentadas_com_travessao",
+      "valor": 8,
+      "comando": "git diff -U0 1cbdb8c4..HEAD nos ficheiros de prosa e de código · as linhas acrescentadas com um travessão",
+      "conhecido_positivo": {
+        "o_que": "o detetor apanha uma linha de prova com um travessão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_acrescentadas",
+      "valor": 5618,
+      "comando": "o mesmo diff · as linhas acrescentadas",
+      "conhecido_positivo": {
+        "o_que": "o diff leu linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_acrescentadas_com_travessao_por_classe",
+      "valor": {
+        "literal_do_excerpt": 3,
+        "detetor_ou_planta": 5,
+        "prosa": 0
+      },
+      "comando": "as mesmas linhas · pela classe: um literal L(linha, 'excerpt', …) da auditoria, o detetor e as suas plantas, ou prosa",
+      "conhecido_positivo": {
+        "o_que": "o classificador diz prosa a uma frase com travessão",
+        "encontrado": true
+      }
+    }
+  ]
+}

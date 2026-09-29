@@ -261,25 +261,11 @@ export function mudancasDoRegisto(lang) {
 
 /* ----------------------------------------------------------------- os âmbitos */
 
-/**
- * O ÂMBITO DA PÁGINA DO PAÍS: as correções das linhas do país e as mudanças
- * declaradas do projeto.
- *
- * AS PUBLICAÇÕES SAÍRAM DAQUI a 22.09.2026, pela leitura do lugar de direção
- * sobre a primeira passagem deste bloco. Entravam «de qualquer lugar», e o
- * resultado medido era sete das oito linhas a dizer «Estudo publicado · …»,
- * três delas os mesmos três estudos que a secção «Estudos recentes», logo
- * acima, já mostra — que é, reduzida, a repetição que o diretor apontou na
- * lista de trinta. A notícia de um estudo é essa secção; a lista de todos é a
- * página dos estudos; e o registo continua a guardar cada publicação com a sua
- * data. O que fica aqui é o que mudou NO PAÍS: hoje uma linha, a mudança
- * declarada de 21.09. Uma linha honesta vale mais do que sete repetidas.
- *
- * @param {MudancaDoRegisto} m
- */
-function noAmbitoDoPais(m) {
-  return m.tipo === 'projeto' || (m.tipo === 'correcao' && m.lugar.chave === PORTUGAL);
-}
+/* O ÂMBITO DA PÁGINA DO PAÍS SAIU COM A LISTA DA PRIMEIRA PÁGINA (bloco PP1, 28.09.2026). A
+   primeira página de um leitor comum deixou de mostrar «O que mudou» e passou a ter a porta para o
+   registo, que tem todas as mudanças; a função que escolhia as oito do país saiu com a lista. O
+   lugar de cada linha continua a ler-se aqui (`chaveDoLugarDaLinha`), porque é o registo que o
+   escreve ao pé de cada correção. */
 
 /**
  * O ÂMBITO DE UMA PÁGINA DE LUGAR: as mudanças das suas próprias linhas.
@@ -295,15 +281,6 @@ function noAmbitoDoPais(m) {
  */
 function noAmbitoDoLugar(m, chave) {
   return m.tipo === 'correcao' && m.lugar.chave === chave;
-}
-
-/**
- * As mudanças da página do país, já com o teto.
- *
- * @param {'pt'|'en'} lang
- */
-export function mudancasDoPais(lang) {
-  return mudancasDoRegisto(lang).filter(noAmbitoDoPais).slice(0, TETO_DAS_MUDANCAS);
 }
 
 /**

@@ -1,0 +1,44 @@
+{
+ "conhecido_positivo": {
+  "ok": true,
+  "visto": {
+   "byte_trocado": [
+    "x/index.html"
+   ],
+   "so_antes": [
+    "so-antes.txt"
+   ],
+   "so_depois": [
+    "so-depois.txt"
+   ],
+   "carimbo": 2,
+   "fora_do_carimbo": [
+    "version.json (fora do carimbo)",
+    "x/index.html"
+   ],
+   "pelos_manifestos_igual": true,
+   "manifesto_incoerente_recusado": true
+  }
+ },
+ "dia_utc": "2026-09-28",
+ "ficheiros_antes": 12484,
+ "ficheiros_depois": 12484,
+ "so_antes": [],
+ "so_depois": [],
+ "diferentes": [],
+ "diferencas": 0,
+ "carimbo": [
+  {
+   "ficheiro": "prova.json",
+   "campo": "construido_em",
+   "antes": "2026-09-28T17:54:04.422Z",
+   "depois": "2026-09-28T18:17:20.022Z"
+  },
+  {
+   "ficheiro": "version.json",
+   "campo": "construido_em",
+   "antes": "2026-09-28T17:54:04.422Z",
+   "depois": "2026-09-28T18:17:20.022Z"
+  }
+ ]
+}

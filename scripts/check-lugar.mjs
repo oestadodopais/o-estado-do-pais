@@ -242,6 +242,15 @@ const TETOS = {
      novas, nas duas edições. Compara com a prova congelada do B2 e recusa
      qualquer entrada fora desses recibos ou agravamento de páginas antigas.
      O teto é lido dessa medição; a planta de portas extras continua a fechar. */
+  /* PP1 (28.09.2026): SOBE DE 2 341 PARA 2 349, e a razão é medida e inteira. A composição em
+     `design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json` corre a régua de cada cabeça sobre a
+     construção dela, com a amostra aberta, e compara: entraram oito páginas e não saiu nenhuma, e as
+     oito são páginas das entradas, que nasceram com o bloco. Cada bloco de «O que se passa» tem a lista
+     «Os números deste bloco», com uma linha por número e a porta do recibo (o §2, ponto 2, do brief), e
+     um número que a frase ou uma peça já cita abre o mesmo recibo duas vezes; nas entradas, a mesma
+     linha pode ainda abrir o recibo no cartão dela. A primeira página já estava na conta e fica com mais
+     destinos repetidos pela mesma razão; nenhuma página que o bloco não refez ganhou um. As plantas de
+     portas extra continuam a fechar. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
@@ -548,10 +557,17 @@ const EXCECOES_DO_VOCABULARIO = [
        definição do desemprego de longa duração e a do risco de pobreza, tal
        como o Eurostat as escreve; «trabalho de quem não escreveu a linha» e
        «dirige o trabalho» são a palavra no sentido de LABOR, no Método e na
-       política de IA. */
+       política de IA.
+
+       CRESCE A 28.09.2026, com o bloco PP1: as entradas da primeira página são perguntas da vida de
+       quem lê, e a do emprego chama-se «O meu trabalho» (o nome da entrada, o título da página dela e a
+       descrição da primeira página, que diz as seis entradas); a secção do custo do trabalho dessa
+       entrada chama-se «O custo do trabalho»; e o bloco do emprego de «O que se passa» abre com «O
+       trabalho:». As três são das declarações do lugar de direção (`src/data/primeira-pagina.mjs`), e
+       nenhuma nomeia um estudo: é o trabalho de quem lê. */
     conta: 'trabalho',
     porque: '«trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo',
-    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho/,
+    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho|[Oo] meu trabalho|O custo do trabalho|O trabalho: mais emprego/,
   },
   {
     /* «indicador» A NOMEAR O CAMPO DA FONTE, e não a medida da casa (Major 5,

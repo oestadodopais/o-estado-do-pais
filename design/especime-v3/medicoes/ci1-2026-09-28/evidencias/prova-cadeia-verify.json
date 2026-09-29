@@ -1,0 +1,12 @@
+{
+ "o_que": "o sha256 de dist/prova.json e dist/cadeia.json (escritos pelo gate:html e pelo check:cadeia do build) antes e depois de o npm run verify inteiro os tornar a escrever",
+ "antes": {
+  "dist/prova.json": "d0b101e0b477090aa0b8b289faa1a0429095f4b2e77e0b017c7234a8f7b75982",
+  "dist/cadeia.json": "b37df0214b790ae08cc767846d68d21234358a1be8bb5d38582f97fb0dcdc255"
+ },
+ "depois": {
+  "dist/prova.json": "d0b101e0b477090aa0b8b289faa1a0429095f4b2e77e0b017c7234a8f7b75982",
+  "dist/cadeia.json": "b37df0214b790ae08cc767846d68d21234358a1be8bb5d38582f97fb0dcdc255"
+ },
+ "iguais": true
+}

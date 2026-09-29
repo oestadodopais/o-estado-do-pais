@@ -1,0 +1,322 @@
+[
+  {
+    "nome": "mapa-atribuicao",
+    "comando": "node scripts/check-mapa.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R6"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  },
+  {
+    "nome": "html",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 mudança: campo rendido difere",
+      "93\\.5",
+      "unidade plantada",
+      "unidade de correção plantada",
+      "sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/correcoes/index.html",
+        "antes": "a45ef94632d69caa9999637c938525cb8cfc57035741f5078a3df547b3a95eba",
+        "reposto": "a45ef94632d69caa9999637c938525cb8cfc57035741f5078a3df547b3a95eba"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+        "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb"
+      },
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4",
+        "reposto": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4"
+      }
+    ]
+  },
+  {
+    "nome": "datas",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "data|1b"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  },
+  {
+    "nome": "lugar",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO",
+      "L4 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      },
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4",
+        "reposto": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4"
+      }
+    ]
+  },
+  {
+    "nome": "voz",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 lista fechada país",
+      "FRASE DA CLASSE POR PROVAR"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  },
+  {
+    "nome": "feixe-porta",
+    "comando": "node scripts/design-bundle.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "perdeu a porta dos lugares"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  },
+  {
+    "nome": "r1-mudanca-com-valor-trocado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "B1 mudança: campo rendido difere"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/correcoes/index.html",
+        "antes": "a45ef94632d69caa9999637c938525cb8cfc57035741f5078a3df547b3a95eba",
+        "reposto": "a45ef94632d69caa9999637c938525cb8cfc57035741f5078a3df547b3a95eba"
+      }
+    ]
+  },
+  {
+    "nome": "b2-contagens-das-camaras",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o número da prova \"camaras_acima_do_limite\" foi renderizado",
+      "o número da prova \"camaras_dentro_do_limite\" foi renderizado",
+      "o número da prova \"camaras_sem_valor\" foi renderizado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4",
+        "reposto": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4"
+      }
+    ]
+  },
+  {
+    "nome": "b2-voz-contagem-e-prosa",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "V1 pt: painel_fora_do_limiar",
+      "V1 pt: a frase construída difere"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-sem-selo-em",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4",
+        "reposto": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-de-outro-cartao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/themes/index.html",
+        "antes": "acb58e05b76859d7eb9a041d6af5691af3c6b04eccb56dc9b07ea888281be9e0",
+        "reposto": "acb58e05b76859d7eb9a041d6af5691af3c6b04eccb56dc9b07ea888281be9e0"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-que-a-k17-recusa",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K17 · \\/o-estado-e-a-economia\\/? · saldo-das-administracoes-publicas-2025"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/o-estado-e-a-economia/index.html",
+        "antes": "e9910ee1db505c3e7ba5038c680c2e25f0377a90f1708fb2bfa069889feba643",
+        "reposto": "e9910ee1db505c3e7ba5038c680c2e25f0377a90f1708fb2bfa069889feba643"
+      }
+    ]
+  },
+  {
+    "nome": "l1-leitura-fora-do-cartao",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a K17 recusou-a em \\/en\\/: K17 · \\/en\\/: há uma leitura fora de um cartão",
+      "FRASE DA CLASSE POR PROVAR EM \\/en\\/ · «Union average»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+        "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb"
+      }
+    ]
+  },
+  {
+    "nome": "pp1-campos-de-linha-dos-blocos",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "numa página que não é do livro-razão",
+      "o campo \"document\\.title\" de \"divida-publica-2025-notificacao-ine-2026-09\" não foi transcrito fielmente",
+      "o campo \"source\" de \"[^\"]+\" não foi transcrito fielmente[\\s\\S]*?renderizado: +Banco de Portugal"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb",
+        "reposto": "64b9a2d23a6054502f81a479ab0f022859483519baa4a99bff75c82f0d899ccb"
+      }
+    ]
+  },
+  {
+    "nome": "pp1-campo-de-bloco-noutra-rota",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "numa página que não é do livro-razão"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4",
+        "reposto": "c2009ce95bf4a56e7cc15e6d2cb0488f8fe4318115cb8baad08aff3b4ca6e1f4"
+      }
+    ]
+  },
+  {
+    "nome": "pp1-estudo-tirado-de-uma-entrada",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "\\/o-estado-e-a-economia: declara 1 edição\\(ões\\) de estudo e os dados dizem 2"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/o-estado-e-a-economia/index.html",
+        "antes": "e9910ee1db505c3e7ba5038c680c2e25f0377a90f1708fb2bfa069889feba643",
+        "reposto": "e9910ee1db505c3e7ba5038c680c2e25f0377a90f1708fb2bfa069889feba643"
+      }
+    ]
+  },
+  {
+    "nome": "pp1-forma-de-bloco-desconhecida",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a forma gráfica \"barras-empilhadas\" não é uma das 8 admitidas"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  },
+  {
+    "nome": "pp1-trabalho-como-nome-de-estudo",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5",
+        "reposto": "dd6e728c13f989f538ad61fb215e445f0b5bc94542c0d2634743110cbab4bae5"
+      }
+    ]
+  }
+]

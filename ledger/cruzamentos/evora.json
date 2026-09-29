@@ -669,14 +669,33 @@
     },
     "evora-prr-aprovado-2026": {
       "corrections_at_export": 6,
-      "exported_at": "2026-09-04",
-      "exported_row_sha256": "8d96d10bc9033ad7ef9abd893598e39ae4237a531fe5be4804eea73c7f7af1cd",
+      "exported_at": "2026-09-28",
+      "exported_row_sha256": "5f0a9ddca10c80797d177fdc7377f14720f1f6d9884b4dd62a8f76097679c034",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "01160246c3448fe569258ca2e6fd1675d270a7583a54f24d7d9ead10e94e9046",
       "rh_id": "prr-approved-evora",
       "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
       "rh_study": "04 Évora Public Money",
-      "verifications_at_export": 1
+      "verifications_at_export": 1,
+      "site_corrections": [
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "sha256_antes": "8d96d10bc9033ad7ef9abd893598e39ae4237a531fe5be4804eea73c7f7af1cd",
+          "sha256_depois": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5",
+          "corrections_before": 6,
+          "corrections_after": 8
+        },
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "corrections_before": 8,
+          "corrections_after": 8,
+          "sha256_antes": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5",
+          "sha256_depois": "5f0a9ddca10c80797d177fdc7377f14720f1f6d9884b4dd62a8f76097679c034",
+          "reason": "Afinação autorizada das datas e das palavras das razões na C1g; nenhuma entrada acrescentada."
+        }
+      ]
     },
     "evora-prr-execucao-2026": {
       "corrections_at_export": 2,
@@ -691,47 +710,123 @@
     },
     "evora-prr-municipio-contratado": {
       "corrections_at_export": 5,
-      "exported_at": "2026-09-04",
-      "exported_row_sha256": "fccb7629ba2b62d4ec7151744954314c13d5ca03dc33d25bab427e1a188c19fd",
+      "exported_at": "2026-09-28",
+      "exported_row_sha256": "30f1326a5a55f633ce17350f2d76c511091ef863fc094a3892cc9434f27aadf8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a690c6f03853f6d1fe6cd6b96c9c88cf0e0299b8648248d0d11cc93b4ce3bd98",
       "rh_id": "fin-municipio-contracted",
       "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
       "rh_study": "04 Évora Public Money",
-      "verifications_at_export": 1
+      "verifications_at_export": 1,
+      "site_corrections": [
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "sha256_antes": "fccb7629ba2b62d4ec7151744954314c13d5ca03dc33d25bab427e1a188c19fd",
+          "sha256_depois": "20403da0996f959c61b5418345df9cb25ae252b862810bb422819aade1522a31",
+          "corrections_before": 5,
+          "corrections_after": 7
+        },
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "corrections_before": 7,
+          "corrections_after": 7,
+          "sha256_antes": "20403da0996f959c61b5418345df9cb25ae252b862810bb422819aade1522a31",
+          "sha256_depois": "30f1326a5a55f633ce17350f2d76c511091ef863fc094a3892cc9434f27aadf8",
+          "reason": "Afinação autorizada das datas e das palavras das razões na C1g; nenhuma entrada acrescentada."
+        }
+      ]
     },
     "evora-prr-pago-2026": {
       "corrections_at_export": 6,
-      "exported_at": "2026-09-04",
-      "exported_row_sha256": "03740f407176bf7cdc8b96bd54a57c9f7244026274e37464f6d7a2a2736be51d",
+      "exported_at": "2026-09-28",
+      "exported_row_sha256": "67ea8e045b7d5e69d9e2e20abb954db53b1b31921ea8814f76d12d1dbc4b9904",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "68793652fb00dba08c26a2aa2b56ee5807bc7da7cdfa65ad7e15479dac13959e",
       "rh_id": "prr-paid-evora",
       "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
       "rh_study": "04 Évora Public Money",
-      "verifications_at_export": 1
+      "verifications_at_export": 1,
+      "site_corrections": [
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "sha256_antes": "03740f407176bf7cdc8b96bd54a57c9f7244026274e37464f6d7a2a2736be51d",
+          "sha256_depois": "312d45ea45e38577776c497643cbcf4e8441531fe887aa6e78ed54b059254ff0",
+          "corrections_before": 6,
+          "corrections_after": 8
+        },
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "corrections_before": 8,
+          "corrections_after": 8,
+          "sha256_antes": "312d45ea45e38577776c497643cbcf4e8441531fe887aa6e78ed54b059254ff0",
+          "sha256_depois": "67ea8e045b7d5e69d9e2e20abb954db53b1b31921ea8814f76d12d1dbc4b9904",
+          "reason": "Afinação autorizada das datas e das palavras das razões na C1g; nenhuma entrada acrescentada."
+        }
+      ]
     },
     "evora-prr-universidade-contratado": {
       "corrections_at_export": 5,
-      "exported_at": "2026-09-04",
-      "exported_row_sha256": "4c02f555f0d96f0146b2f3f58b52d81b80e0d86ccf7e3bc017dbb1565a124f1b",
+      "exported_at": "2026-09-28",
+      "exported_row_sha256": "9c36404b234152d1f3a99c00831ca2ceb428d881597a6816e016da5f4fe8b590",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d4b1427a026900ee4b4cdb7941be56a3830088b76f91a35f0e1f11015294d7cb",
       "rh_id": "fin-uevora-contracted",
       "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
       "rh_study": "04 Évora Public Money",
-      "verifications_at_export": 1
+      "verifications_at_export": 1,
+      "site_corrections": [
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "sha256_antes": "4c02f555f0d96f0146b2f3f58b52d81b80e0d86ccf7e3bc017dbb1565a124f1b",
+          "sha256_depois": "319ce292e6490cc8bb853ce5742797c085d41f2d37ca2fef3278d0e2d3212f15",
+          "corrections_before": 5,
+          "corrections_after": 7
+        },
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "corrections_before": 7,
+          "corrections_after": 7,
+          "sha256_antes": "319ce292e6490cc8bb853ce5742797c085d41f2d37ca2fef3278d0e2d3212f15",
+          "sha256_depois": "9c36404b234152d1f3a99c00831ca2ceb428d881597a6816e016da5f4fe8b590",
+          "reason": "Afinação autorizada das datas e das palavras das razões na C1g; nenhuma entrada acrescentada."
+        }
+      ]
     },
     "evora-prr-vencido-aprovado-2026": {
       "corrections_at_export": 6,
-      "exported_at": "2026-09-04",
-      "exported_row_sha256": "30f2d68f9e4fa1de4d6d35be09605b2727b05e6e2f397d0cb3fd7e8eac8fb559",
+      "exported_at": "2026-09-28",
+      "exported_row_sha256": "ace0b49f9792e9c4d8845cab477d2ab64a8d077eea75ea4d7b405a9b6d69a047",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5b4d5634258e73011125ffacc0dae25402f13392668d4befafe8d4688df03197",
       "rh_id": "prr-overdue-approved",
       "rh_ledger_sha256": "427490664461bb130f9ac992ad9d12b02dcd810e134558cd30e093a726d51a64",
       "rh_study": "04 Évora Public Money",
-      "verifications_at_export": 2
+      "verifications_at_export": 2,
+      "site_corrections": [
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "sha256_antes": "30f2d68f9e4fa1de4d6d35be09605b2727b05e6e2f397d0cb3fd7e8eac8fb559",
+          "sha256_depois": "12ce22206463a1ab9729d5a0400fed901f43ddee5b1f61848d80f27be6f02da2",
+          "corrections_before": 6,
+          "corrections_after": 8
+        },
+        {
+          "date": "2026-09-28",
+          "kind": "proveniencia",
+          "corrections_before": 8,
+          "corrections_after": 8,
+          "sha256_antes": "12ce22206463a1ab9729d5a0400fed901f43ddee5b1f61848d80f27be6f02da2",
+          "sha256_depois": "ace0b49f9792e9c4d8845cab477d2ab64a8d077eea75ea4d7b405a9b6d69a047",
+          "reason": "Afinação autorizada das datas e das palavras das razões na C1g; nenhuma entrada acrescentada."
+        }
+      ]
     },
     "evora-prr-vencido-quota-2026": {
       "corrections_at_export": 2,

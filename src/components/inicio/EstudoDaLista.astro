@@ -1,0 +1,22 @@
+---
+/**
+ * UM ESTUDO NUMA LISTA CURTA: os estudos recentes da primeira página e os estudos de uma entrada
+ * (bloco PP1, 28.09.2026). É a marcação que a primeira página já rendia, tirada para um sítio só:
+ * o título com a língua da edição, o lugar, o tema, a data de publicação declarada e a sinopse com
+ * os selos. A `A4` do `check:pais` confere o título de cada `[data-estudo-edicao]` contra o arquivo.
+ */
+import Frase from '../Frase.astro';
+import TituloDeTrabalho from '../TituloDeTrabalho.astro';
+import { dataDaCasa } from '../../lib/datas.mjs';
+import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
+
+const { e, lang = 'pt' } = Astro.props;
+const r = ROTULOS_B1[lang];
+---
+<article class="estudo-item pais-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
+  <h3 class="estudo-item-titulo"><a href={e.rota}><TituloDeTrabalho edicao={e.edicao} lang={lang} /></a>
+    {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
+  </h3>
+  <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></span></p>
+  <p class="estudo-resumo lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}><Frase partes={e.resumo} lang={lang} selos /></p>
+</article>

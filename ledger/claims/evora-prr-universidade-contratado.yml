@@ -87,6 +87,20 @@ corrections:
     new_value: "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1"
     reason: "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre»."
     reason_en: "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+  - date: "2026-08-18"
+    kind: "proveniencia"
+    field: "access_date"
+    old_value: "2026-08-04"
+    new_value: "2026-08-18"
+    reason: "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava."
+    reason_en: "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+  - date: "2026-08-20"
+    kind: "proveniencia"
+    field: "access_date"
+    old_value: "2026-08-18"
+    new_value: "2026-08-20"
+    reason: "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava."
+    reason_en: "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
 
 # Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
 verifications:

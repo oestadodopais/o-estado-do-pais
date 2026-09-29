@@ -1,0 +1,10 @@
+{
+  "primeira_cabeca": "ab47e595d283ecb9e8b8795cebf8a6e0cbdceede",
+  "codigos": {
+    "build": 1,
+    "verify": 1,
+    "typecheck": 1
+  },
+  "razao": "O typecheck encontrou quatro parâmetros sem tipo na função alargada. A lista recebeu a anotação; a guarda e os dados não mudaram. Build e verify já recusavam as dezasseis entradas do PRR. Os três registos desta primeira cabeça ficam conservados.",
+  "erros_de_tipo": 4
+}

@@ -1,0 +1,34 @@
+{
+  "tentativas": [
+    "factor-sustentabilidade-2026",
+    "penalizacao-antecipacao-um-ano-com-factor-2026",
+    "penalizacao-antecipacao-um-ano-neutra",
+    "penalizacao-antecipacao-um-ano-sem-factor-2026",
+    "pib-real-per-capita-2024",
+    "pib-real-per-capita-2025-ue",
+    "pib-real-per-capita-2025"
+  ],
+  "calculadas": [
+    "evora-indice-de-divida-2024",
+    "distancia-portugal-ue27-2024",
+    "evora-prr-execucao-2026"
+  ],
+  "uniao": "divida-das-familias-2025-ue",
+  "universo_c1e": 337,
+  "recibos_distintos": 11,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "edicoes": [
+    "pt",
+    "en"
+  ],
+  "recibos_nao_captados": 326,
+  "imagens": 120,
+  "imagens_dos_recibos": 110,
+  "imagens_da_faixa": 10
+}

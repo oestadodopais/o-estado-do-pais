@@ -1,0 +1,17 @@
+{
+ "o_que": "a planta na cadeia real interrompida com um INT ao grupo de processos, depois de o passo estar plantado no package.json, a frase em dist/index.html e as conferências lançadas; os dois ficheiros têm de voltar aos bytes de antes",
+ "plantado_no_package_json_antes_do_sinal": true,
+ "frase_plantada_na_pagina_antes_do_sinal": true,
+ "conferencias_lancadas_antes_do_sinal": true,
+ "codigo_de_saida_da_planta": 130,
+ "antes": {
+  "package.json": "c8f71744f421a7d047e321f70f42eb339bf12fb87fd1cfca194e4f7e8bc26c05",
+  "dist/index.html": "515240f11771a0fec308943f009c8d47d4a93aa70fb7ddad41af075b44ad5517"
+ },
+ "depois": {
+  "package.json": "c8f71744f421a7d047e321f70f42eb339bf12fb87fd1cfca194e4f7e8bc26c05",
+  "dist/index.html": "515240f11771a0fec308943f009c8d47d4a93aa70fb7ddad41af075b44ad5517"
+ },
+ "repostos": true,
+ "mordeu": true
+}

@@ -1,0 +1,126 @@
+{
+ "comando": "node scripts/verify-depois-do-build.mjs --prova",
+ "codigo": 0,
+ "plantas": [
+  {
+   "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência nova só no verify corre sozinha",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência tirada da escolha fecha a célula U",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que escreve no dist/ fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "um dist/ de outra cabeça fecha a célula C",
+   "mordeu": true
+  },
+  {
+   "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "um cadeia.json de outra construção fecha a célula C",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
+   "mordeu": true
+  }
+ ],
+ "mordidas": 12,
+ "total": 12,
+ "contraprova": {
+  "o_que": "numa cópia de scripts/verify-depois-do-build.mjs, cada proteção desligada; a prova tem de fechar com 1 e nomear a planta dessa proteção",
+  "estragos": [
+   {
+    "estrago": "U-sempre-ok",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência tirada da escolha fecha a célula U",
+     "uma conferência vermelha fecha a corrida, e as outras acabam",
+     "um passo vazio na cadeia não passa despercebido à contagem"
+    ]
+   },
+   {
+    "estrago": "D-sempre-ok",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência que escreve no dist/ fecha a célula D",
+     "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+     "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+     "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D"
+    ]
+   },
+   {
+    "estrago": "D-sem-inode",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D"
+    ]
+   },
+   {
+    "estrago": "D-sem-hora-de-escrita",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+     "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D"
+    ]
+   },
+   {
+    "estrago": "D-sem-arvore",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D"
+    ]
+   },
+   {
+    "estrago": "C-sempre-ok",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "um dist/ de outra cabeça fecha a célula C",
+     "um cadeia.json de outra construção fecha a célula C"
+    ]
+   },
+   {
+    "estrago": "C-sem-hora-de-escrita",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "um cadeia.json de outra construção fecha a célula C"
+    ]
+   },
+   {
+    "estrago": "feixe-no-grupo",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência que escreve na árvore corre sozinha, depois do grupo"
+    ]
+   }
+  ],
+  "apanhados": 8
+ },
+ "contraprovas_total": 8
+}

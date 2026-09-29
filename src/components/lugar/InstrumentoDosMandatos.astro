@@ -357,13 +357,17 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
               banda.map((seg) => (
                 <>
                   <rect
-                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto']}
+                    class:list={['mun-banda-seg', seg.aberto && 'is-aberto', !seg.mandato.instalado && 'is-inicio-aberto']}
                     data-inicio={seg.mandato.instalado ?? 'recorte-do-eixo'}
                     x={seg.x}
                     y={BANDA.y}
                     width={seg.largura}
                     height={BANDA.h}
                   />
+                  {!seg.mandato.instalado && <>
+                    <path class="mun-banda-contorno-inicio" d={`M ${seg.x} ${BANDA.y} H ${seg.x + seg.largura} V ${BANDA.y + BANDA.h} H ${seg.x}`} />
+                    <line class="mun-banda-inicio-incerto" x1={seg.x} x2={seg.x} y1={BANDA.y} y2={BANDA.y + BANDA.h} />
+                  </>}
                   <text
                     class="mun-banda-lista"
                     x={seg.x + 8}
