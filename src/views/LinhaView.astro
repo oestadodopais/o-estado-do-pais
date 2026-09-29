@@ -70,6 +70,8 @@ import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
 import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
+import { serieDaLinha } from '../lib/series.mjs';
+import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
@@ -126,6 +128,10 @@ const nomes = nomeOficial(id);
    sua porta, para que a proveniência continue a um toque. */
 const enquadramento = reguaDaMedida(id);
 const temEnquadramento = temRegua(enquadramento);
+/* A SÉRIE DE PAÍSES DESTA LINHA, quando ela é a linha portuguesa de uma (a
+   passagem UE1b, 29.09.2026): o enquadramento abre o recibo dela, com as
+   palavras da porta da faixa do cartão. */
+const serieDosPaises = serieDaLinha(id);
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
    juízo. A nota ao lado di-lo por palavras.
@@ -1309,6 +1315,19 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   <dt>{s.livro.linha.enquadramentoUe}</dt>
                   <dd>
                     <Claim id={enquadramento.ue.id} lang={lang} as="span" chip={true} />
+                  </dd>
+                </>
+              )}
+              {/* UE1b: a porta para a série dos países da União, na linha
+                  portuguesa de uma medida que a tem. A mesma porta da faixa do
+                  cartão, com as mesmas palavras; o portão de HTML confere que
+                  está nos recibos das dez linhas, nas duas edições, e em mais
+                  nenhum. */}
+              {serieDosPaises && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoPaises}</dt>
+                  <dd>
+                    <a href={routePath('serie', lang, { slug: String(serieDosPaises.id) })} data-porta-da-serie={String(serieDosPaises.id)}>{PALAVRAS_DA_FAIXA[lang].porta}</a>
                   </dd>
                 </>
               )}
