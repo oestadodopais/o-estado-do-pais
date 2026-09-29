@@ -1,0 +1,95 @@
+# python3 scripts/leituras/decisoes-em-vigor.py --intervalo aba0a48b..9d696d3c
+# código: 0
+
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:121 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:220 (perto do diff)
+§1.19 · Os estudos migram para dois sítios, não um
+    scripts/gate-html.mjs:1192
+    scripts/gate-html.mjs:5236
+    scripts/gate-html.mjs:8774
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    scripts/gate-html.mjs:141
+    scripts/gate-html.mjs:146
+    scripts/gate-html.mjs:2712
+    scripts/gate-html.mjs:2868
+    scripts/gate-html.mjs:3542
+    scripts/gate-html.mjs:3746
+    scripts/gate-html.mjs:3760
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:56
+    scripts/gate-html.mjs:2591
+    scripts/gate-html.mjs:855
+    scripts/gate-html.mjs:878
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    scripts/gate-html.mjs:3203
+    scripts/gate-html.mjs:3312
+    scripts/gate-html.mjs:3985
+    scripts/gate-html.mjs:7063
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    scripts/gate-html.mjs:5066
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    scripts/gate-html.mjs:4941
+    scripts/gate-html.mjs:7943
+    scripts/gate-html.mjs:8642
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    scripts/gate-html.mjs:267
+    scripts/gate-html.mjs:359
+    scripts/gate-html.mjs:3849
+    scripts/gate-html.mjs:77 (perto do diff)
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    scripts/gate-html.mjs:3004
+    scripts/gate-html.mjs:3047
+§1.42 · Segunda revisão cruzada do bloco V
+    scripts/gate-html.mjs:3026
+    scripts/gate-html.mjs:3047
+    scripts/gate-html.mjs:3418
+    scripts/gate-html.mjs:7354
+§1.44 · A revisão cruzada da identidade v2
+    scripts/gate-html.mjs:870
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    scripts/gate-html.mjs:879
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    scripts/gate-html.mjs:3961
+    scripts/gate-html.mjs:84 (perto do diff)
+    scripts/gate-html.mjs:8642
+§1.68 · As páginas dos 308 concelhos
+    scripts/gate-html.mjs:4748
+    scripts/gate-html.mjs:92
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    scripts/gate-html.mjs:1593
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:197 (perto do diff)
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    scripts/gate-html.mjs:5841
+    scripts/gate-html.mjs:6735
+    scripts/gate-html.mjs:7957
+    scripts/gate-html.mjs:851
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    scripts/gate-html.mjs:4133
+    scripts/gate-html.mjs:4189
+    scripts/gate-html.mjs:4330
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    scripts/gate-html.mjs:4134
+    scripts/gate-html.mjs:4189
+    scripts/gate-html.mjs:4330
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:123 (perto do diff)
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:120 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:103 (perto do diff)
+    scripts/gate-html.mjs:4155
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:199 (perto do diff)
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    scripts/gate-html.mjs:227
+§1.140 · sem título em DECISIONS.md
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:379 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:380 (perto do diff)
+    scripts/gate-html.mjs:18 (perto do diff)
+    scripts/gate-html.mjs:40 (perto do diff)
+    src/data/medidas-rp1.mjs:254 (perto do diff)
+    src/views/SerieView.astro:38 (perto do diff)
+    src/views/SerieView.astro:46 (perto do diff)
+25 decisão(ões) citada(s) em 4 ficheiro(s)

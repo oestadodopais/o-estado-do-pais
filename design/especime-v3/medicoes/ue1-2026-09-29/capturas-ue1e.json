@@ -1,0 +1,315 @@
+{
+  "bloco": "UE1e",
+  "construcao": {
+    "commit": "9d696d3cdda09325a24f9a6c8883118e0808e731",
+    "ref": "ue1-2026-09-29",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-29T23:27:05.003Z"
+  },
+  "cabeca_esperada": "9d696d3cdda09325a24f9a6c8883118e0808e731",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 20,
+  "capturas_por_tipo": {
+    "cabeca": 10,
+    "janela": 10
+  },
+  "plantas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "o lugar posto de volta na definição",
+      "visto": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "o lugar posto de volta na definição",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    }
+  ],
+  "plantas_vistas": 4,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-pt-390.png",
+      "sha256": "41c13f5284e48d0a6e9e2e388aa6af0b7a9cbb4e7356e82eb04a4e1717614a54",
+      "tipo": "cabeca",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-pt-390.png",
+      "sha256": "e35acd7b8afa8d6301850a66c87df3c962c06694e72a0a86d3cfedd7c81e1bd2",
+      "tipo": "janela",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-pt-768.png",
+      "sha256": "fd57401e1f520fe2881dcbc72a7fa82ba31ed1efa1c78534e5f448cad21e16d6",
+      "tipo": "cabeca",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-pt-768.png",
+      "sha256": "e9f76bc28f81b2df428330cae533cd579fc02a90ae2996fc50983d12dfe7b4e2",
+      "tipo": "janela",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-pt-1024.png",
+      "sha256": "2a9ab0c95a5cf67b29819cc3dcd3709446db8a827edb645a95cf4e7abdfb7d52",
+      "tipo": "cabeca",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-pt-1024.png",
+      "sha256": "390c47c25f6e4dc4624ccf99a3f9041b704ade4c63bd3f9e9b9beab261f44041",
+      "tipo": "janela",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-pt-1280.png",
+      "sha256": "6b5e8840a79877d03ca006ecd45efcdd9eecaeafba61a480c60f7bc0b6cd7b24",
+      "tipo": "cabeca",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-pt-1280.png",
+      "sha256": "43a68dd7b375528c96c490de781559581b3b76f867482c4936014bb879294ddc",
+      "tipo": "janela",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-pt-1600.png",
+      "sha256": "6b5e8840a79877d03ca006ecd45efcdd9eecaeafba61a480c60f7bc0b6cd7b24",
+      "tipo": "cabeca",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-pt-1600.png",
+      "sha256": "350138dfbbf32c6ecb205c110afebe8f5b61dd3a0efe3f043f4c5b8d1385e92f",
+      "tipo": "janela",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-en-390.png",
+      "sha256": "8097accdb5b0f33f463a4d7d249ee08e816372671483daa2513a684e6267ed29",
+      "tipo": "cabeca",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-en-390.png",
+      "sha256": "82b007f25095e1e245a52bf8f1d2ecc15c6a42eb6fbbdf5a0f6d5367f628981e",
+      "tipo": "janela",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-en-768.png",
+      "sha256": "e172232e144d93908361b3bb5bd145aaaae1b8ea155a7189def6b0b6ff106dc3",
+      "tipo": "cabeca",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-en-768.png",
+      "sha256": "2c0997d2caf3bedd44b36f1dfa7b70a8261b74f757e9863f3a255fb7979f7bf6",
+      "tipo": "janela",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-en-1024.png",
+      "sha256": "af30f8033ed82f4606e8cec92574662d5bc84c40064c78b9be2e88fa50fc831f",
+      "tipo": "cabeca",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-en-1024.png",
+      "sha256": "6ee47396f7b1b11e93b750cb9cd95df788cbe8e7ef6eb1b51b4ca7970637f186",
+      "tipo": "janela",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-en-1280.png",
+      "sha256": "800d63ef46e2b01bf6cf041538f79e8928507fcf763c47f8a85bc226a8cbb977",
+      "tipo": "cabeca",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-en-1280.png",
+      "sha256": "94772b660f413d53b9da989d5ea9e85bbd77c4c756761ec39473467f45492552",
+      "tipo": "janela",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-cabeca-en-1600.png",
+      "sha256": "800d63ef46e2b01bf6cf041538f79e8928507fcf763c47f8a85bc226a8cbb977",
+      "tipo": "cabeca",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1e/ihpc-variacao-homologa-paises-janela-en-1600.png",
+      "sha256": "a928c4a781fe7c4be911fe8c315f01769b8be3f68dff86f3ff4298aae1134eb7",
+      "tipo": "janela",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "tabela": true
+      }
+    }
+  ]
+}
