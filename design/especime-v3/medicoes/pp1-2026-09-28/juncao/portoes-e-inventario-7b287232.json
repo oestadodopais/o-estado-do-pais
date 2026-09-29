@@ -1,0 +1,30 @@
+{
+ "cabeca": "7b28723266f87747248d989010fed631c84c57ba",
+ "nota": "Os três portões e o inventário das conferências na cabeça da junção do CI1 com o C1 no ramo do PP1, corridos pelo lugar de direção antes da aterragem; o inventário é a regra do CI1 para uma conferência nova que entre no verify (o check:primeira do PP1).",
+ "build": {
+  "codigo": 0,
+  "inicio": "2026-09-28T22:25:46Z",
+  "fim": "2026-09-28T22:27:04Z"
+ },
+ "verify": {
+  "codigo": 0,
+  "inicio": "2026-09-28T22:27:04Z",
+  "fim": "2026-09-28T22:35:53Z"
+ },
+ "typecheck": {
+  "codigo": 0,
+  "inicio": "2026-09-28T22:35:53Z",
+  "fim": "2026-09-28T22:35:53Z"
+ },
+ "inventario": {
+  "codigo": 0,
+  "inicio": "22:35:53",
+  "fim": "22:45:51"
+ },
+ "cruzamento": {
+  "conferencias": 18,
+  "pares_com_contacto": 0,
+  "leitores_de_design_system": [],
+  "processos_node_sem_leituras": 0
+ }
+}
