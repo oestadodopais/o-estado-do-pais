@@ -13045,3 +13045,17 @@ rotas passam a ler **0**.
 3. **O correio dos autores**: 1 542 commits públicos têm como autor o correio pessoal do diretor; os commits seguintes podem usar o endereço privado que o GitHub dá a cada conta, o que é uma definição da conta dele e da configuração do Git deste repositório.
 4. **O motor** é privado e ainda traz o nome de utilizador nos seus ficheiros.
 5. **As dependências da construção** trazem quatro avisos (dois moderados, dois altos), a tratar num bloco de manutenção com a comparação byte a byte do sítio construído (a I176).
+
+### 1.139 A aterragem de 29.09.2026 e o guião da aterragem no repositório
+
+**Afecta:** nenhum
+
+**O que muda:** `scripts/aterrar.sh`, o guião que avança `main` para um ramo verde e o publica, avança o motor, vigia a Vercel, corre o `verify:deploy` e vigia a corrida de `main`; até aqui vivia no scratchpad de cada sessão.
+
+**Data:** 29.09.2026.
+
+**A aterragem das §1.135 a §1.138.** A verificação das permissões do Claude Code recusou ao lugar de direção o guião da aterragem duas vezes nesse dia, a segunda com a razão «Production Deploy», e o lugar de direção não a contornou. O diretor perguntou porque esperava o lugar de direção pela palavra dele numa decisão que é do lugar de direção; a decisão estava tomada, e o que faltava era só a permissão, que é dele. Correu o guião à mão às 12:03 UTC: `main` avançou de `17758ec7` para `9802d0d0` e o motor de `a75ef11` para `68318e0`; a Vercel publicou às 12:10; o `verify:deploy` passou com 0; e a corrida de `main` (a 36565646300) acabou verde às 12:14. O lugar de direção conferiu no ar as duas primeiras páginas e a página do estudo do Alentejo e do Algarve sem o nome, e apagou os quatro ramos fundidos, no sítio e no GitHub, e as suas worktrees, sem forçar nenhum.
+
+**O guião no repositório.** Confere antes de mexer (a árvore principal em `main` e sem mudanças por registar; a cabeça pedida; `main` e `origin/main` dentro do ramo; a verificação «portao» verde nessa cabeça, lida no GitHub; o `master` e o `origin/master` do motor dentro do ramo do motor) e para no primeiro passo que falhar, com um código por passo. Não escreve nenhum caminho da máquina, e tem um modo de ensaio que só confere. Provado antes de entrar: o ensaio na cabeça no ar passa; uma cabeça errada para com o código 15; um commit por cima de `main` que nunca foi ao GitHub para com o 18; um ramo que não contém `main` para com o 16; um ramo do motor que não contém o `master` para com o 24; e a leitura da verificação dá «failure» no commit da planta vermelha do CI1.
+
+**O que fica ao diretor.** Uma regra nas definições do Claude Code que autorize só este guião, `Bash(zsh scripts/aterrar.sh:*)`, no `.claude/settings.local.json` do projeto (que o Git não segue) ou pelo comando `/permissions`. Com ela, as aterragens de rotina que ele decidiu a 28.09 (§1.134) deixam de precisar dele. A aterragem deste guião ainda é dele, porque o guião só chega a `main` por ela.
