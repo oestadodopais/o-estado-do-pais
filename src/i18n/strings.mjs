@@ -1714,6 +1714,21 @@ export const STRINGS = {
       metaTitle: 'Temas · O Estado do País',
       metaDescription: 'Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo.',
     },
+    /* A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026; a decisão do diretor de
+       28.09.2026, `DECISIONS.md` §1.133). As palavras dos cinco blocos e das seis entradas são do
+       lugar de direção e vivem em `src/data/primeira-pagina.mjs`; aqui fica a mobília à volta
+       delas, declarada uma vez e no inventário das frases. */
+    primeira: {
+      oQueSePassa: 'O que se passa',
+      numerosMaisRecentes: 'Os números mais recentes são de ',
+      porOndeComecar: 'Por onde começar',
+      numerosDoBloco: 'Os números deste bloco',
+      fonte: 'Fonte',
+      veredicto: 'Os valores de referência da Comissão Europeia',
+      todosOsTemas: 'Todos os temas',
+      estudos: 'Estudos',
+      metaCauda: ' · O Estado do País',
+    },
     camaras: {
       nome: 'Câmaras com a dívida acima do limite legal',
       unidade: 'câmaras',
@@ -1736,9 +1751,10 @@ export const STRINGS = {
         fecha: '.',
       },
       metaTitle: 'O Estado do País',
-      // B1: a descrição acompanha a leitura, os temas, o mapa e os estudos.
+      /* PP1: a descrição acompanha a página nova, os blocos de «O que se passa» e as entradas.
+         Não nomeia os blocos, que saem sozinhos quando os números deixam de lhes dar razão. */
       metaDescription:
-        'A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes.',
+        'O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas: o meu dinheiro, o meu trabalho, a minha casa, a escola e a saúde, o Estado e a economia, a minha terra.',
 
       numeros: {
         /* A linha do valor de referência de um cartão (IDENTIDADE.md §11). A
@@ -2172,6 +2188,7 @@ export const STRINGS = {
         camposHistorico: {"source": "publicador", "source_url": "endereço da fonte", "document.title": "documento", "document.edition": "edição", "document.locator": "local no documento", "access_date": "dia da leitura", "excerpt": "excerto da fonte"},
         ficheiroRelidoK: 'Ficheiro da fonte relido a',
         semSegundaLeitura: 'ainda nenhuma',
+        segundaLeituraCalculada: 'Recalculada em cada construção a partir das suas origens',
         verAtualizacao: 'Ver a atualização deste valor',
         valorEmUso: 'O valor do título é o que esta página usa.',
         /* «VERIFICADO A» E NÃO «RECONFERIDO A» (F1.10, §7.3, 09.09.2026). É a
@@ -2305,7 +2322,7 @@ export const STRINGS = {
         verificacaoResultado: {
           igual: 'igual à fonte',
           diverge: 'a releitura encontrou:',
-          inacessivel: 'sem resposta a esse pedido',
+          inacessivel: 'sem valor lido',
         },
         verificacaoPorta: 'Repetir a leitura',
       },
@@ -3442,6 +3459,18 @@ export const STRINGS = {
       metaTitle: 'Themes · O Estado do País',
       metaDescription: "All the country's measures, by theme, each with its value, its source and its receipt.",
     },
+    /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */
+    primeira: {
+      oQueSePassa: 'What is happening',
+      numerosMaisRecentes: 'The most recent figures are for ',
+      porOndeComecar: 'Where to start',
+      numerosDoBloco: 'The figures in this block',
+      fonte: 'Source',
+      veredicto: 'The European Commission’s reference values',
+      todosOsTemas: 'All themes',
+      estudos: 'Studies',
+      metaCauda: ' · O Estado do País',
+    },
     camaras: {
       nome: 'Councils with debt above the legal limit',
       unidade: 'councils',
@@ -3464,7 +3493,7 @@ export const STRINGS = {
       },
       metaTitle: 'O Estado do País',
       metaDescription:
-        "The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies.",
+        'What is happening in the country, told by the official figures read together, each with its source, and the ways in: my money, my work, my home, school and health, the state and the economy, my area.',
 
       numeros: {
         /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */
@@ -3703,6 +3732,7 @@ export const STRINGS = {
         camposHistorico: {"source": "publisher", "source_url": "source address", "document.title": "document", "document.edition": "edition", "document.locator": "place in the document", "access_date": "reading date", "excerpt": "source excerpt"},
         ficheiroRelidoK: 'Source file read again on',
         semSegundaLeitura: 'none yet',
+        segundaLeituraCalculada: 'Recomputed at every build from its sources',
         verAtualizacao: 'See the update to this value',
         valorEmUso: 'This page uses the value shown in the title.',
         reconferidoK: 'Verified on',
@@ -3734,7 +3764,7 @@ export const STRINGS = {
         verificacaoResultado: {
           igual: 'matches the source',
           diverge: 'the re-read found:',
-          inacessivel: 'with no answer to that request',
+          inacessivel: 'no value read',
         },
         verificacaoPorta: 'Repeat the reading',
       },
@@ -3976,9 +4006,41 @@ export function assertKeyParity() {
   return true;
 }
 
+/**
+ * A PARIDADE CONFERE-SE UMA VEZ POR PROCESSO, E A ÁRVORE FICA CONGELADA A
+ * SEGUIR (bloco CI1, 28.09.2026).
+ *
+ * `t()` corria `assertKeyParity()` em cada chamada, e cada componente de cada
+ * página chama `t()`. A comparação das duas árvores (as chaves achatadas,
+ * ordenadas e procuradas com `includes`) custava perto de um milissegundo por
+ * chamada, medido pelo bloco CI1, e somava-se na maior parte do tempo de cada
+ * uma das 7 404 páginas da construção.
+ *
+ * O que a guarda confere é este ficheiro: as duas árvores são um literal deste
+ * módulo, e ele não importa nada. Confere-se por isso na primeira chamada de
+ * cada processo, antes de a primeira página se render, com a mesma mensagem, e
+ * uma construção com as duas línguas divergentes continua a fechar ali. Depois
+ * da conferência a árvore fica congelada, em profundidade, para a resposta da
+ * guarda não poder envelhecer: uma escrita que acrescentasse, tirasse ou
+ * trocasse uma cadeia a meio da construção atira, em vez de passar calada, o
+ * que a conferência a cada chamada também não fazia para os valores.
+ */
+let paridadeConferida = false;
+
+/** Congela um objeto e tudo o que ele contém. @param {unknown} o */
+function congela(o) {
+  if (o === null || typeof o !== 'object' || Object.isFrozen(o)) return;
+  Object.freeze(o);
+  for (const v of Object.values(o)) congela(v);
+}
+
 /** @param {Lingua} lang */
 export function t(lang) {
-  assertKeyParity();
+  if (!paridadeConferida) {
+    assertKeyParity();
+    congela(STRINGS);
+    paridadeConferida = true;
+  }
   const s = STRINGS[lang];
   if (!s) throw new Error(`i18n: língua desconhecida "${lang}"`);
   return s;

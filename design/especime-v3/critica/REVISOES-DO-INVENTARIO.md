@@ -476,3 +476,16 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | c1d | Contagens atualizadas, marca estimada e frases dos recibos | por ler pelo lugar de direção antes de aterrar | Codex gpt-6-astra aplica os achados de `design/especime-v3/critica/LEITURA-c1c-2026-09-28.md`: retira as contagens substituídas, declara a marca estimada nas superfícies onde já se mostra a provisória e regista em prosa os rótulos dos recibos, fora das rotas do inventário. A prova das cadeias vivas e das retiradas continua no portão da voz, sem mudar as rotas ou alargar a peneira. |
+
+## C1f · os acessos do PRR reconstituídos, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c1f | Duas contagens novas e duas retiradas | por ler pelo lugar de direção antes de aterrar | A reconstituição dos acessos acrescenta dez entradas de proveniência, provadas pelos diffs do Git. As duas contagens do inventário passam de 44 a 54; as anteriores ficam retiradas com a razão. A classe das frases e as rotas do portão da voz mantêm-se. |
+
+
+## PP1 · a primeira página de um leitor comum, 28.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| pp1 | 75 cadeias novas, 4 retiradas e 2 que saem do ficheiro | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do PP1: a mobília da primeira página nova e das cinco páginas das entradas, nas duas edições (os títulos, a data de «O que se passa», as entradas, as secções, os estudos, as descrições); ficam retiradas a descrição antiga da primeira página e a leitura do país; saem do ficheiro as duas linhas da frase do veredicto, que a V1 confere inteira na primeira página e cuja linha contava as vírgulas da lista das medidas fora (uma revisão de rotina fechava a construção). As palavras dos blocos e a lista dos números deles ficam fora da tabela com a marca `data-bloco-declarado`, conferidas por `tests/inicio/blocos.mjs`; a régua das frases muda de forma em `scripts/medir-defeitos.mjs`, com as plantas em `tests/inicio/regua-das-frases.mjs`. |

@@ -39,14 +39,14 @@ As leituras a frio de 23.09 em `design/especime-v3/critica/` (`LEITURA-DE-FORA-2
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
-### O sítio (`/Users/nunosantos/Instruments/OEstadoDoPais`)
+### O sítio (`/Users/UTILIZADOR/Instruments/OEstadoDoPais`)
 - `main`: 4b99dea3 · 2026-09-23T15:09:22+01:00 · Os registos do R1: a §1.126 completa, as questões I137 a I147 fechadas, as melhorias M25 a M27, a leitura a frio, o construtor que   (`git log -1 main`)
 - `origin/main`: 4b99dea3 · 2026-09-23T15:09:22+01:00 · Os registos do R1: a §1.126 completa, as questões I137 a I147 fechadas, as melhorias M25 a M27, a leitura a frio, o construtor que   (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
 - ramos locais: `main 4b99dea3`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/OEstadoDoPais 4b99dea3 [main]`
+- worktree: `/Users/UTILIZADOR/Instruments/OEstadoDoPais 4b99dea3 [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 35876038798 · `4b99dea3` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-09-23T14:41:30Z · atualizada 2026-09-23T14:41:52Z
@@ -61,14 +61,14 @@ As leituras a frio de 23.09 em `design/especime-v3/critica/` (`LEITURA-DE-FORA-2
 - igual a `origin/main` (`4b99dea3`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`/Users/nunosantos/Instruments/ResearchHub`)
+### O motor (`/Users/UTILIZADOR/Instruments/ResearchHub`)
 - `master`: b66c0fd · 2026-09-23T14:47:01+01:00 · As oito buscas dos estudos 03 a 06 que se disfarçavam de navegador passam ao nome da casa, e o portão varre o código todo  (`git log -1 master`)
 - `origin/master`: b66c0fd · 2026-09-23T14:47:01+01:00 · As oito buscas dos estudos 03 a 06 que se disfarçavam de navegador passam ao nome da casa, e o portão varre o código todo  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 5 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `master b66c0fd`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/ResearchHub b66c0fd [master]`
+- worktree: `/Users/UTILIZADOR/Instruments/ResearchHub b66c0fd [master]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 23.09.2026 15:06 UTC):

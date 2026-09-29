@@ -7,7 +7,7 @@ ficheiro. Li apenas a Emenda 20 de `design/especime-v3/direcao.md`, `mapa/manife
 nem os briefs deles. O "depois" é a construção congelada em `dist/`, servida localmente em
 `http://127.0.0.1:4771`. O "antes" é `https://xn--oestadodopas-2fb.pt`, com um punhado de pedidos
 espaçados por 1,2 segundos ou mais (nunca em ciclo). Playwright da árvore principal
-(`NODE_PATH=/Users/nunosantos/Instruments/OEstadoDoPais/node_modules`), `devices["iPhone 13"]`
+(`NODE_PATH=/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules`), `devices["iPhone 13"]`
 (390×664) e 1280×800. Não corrigi nada, não commitei, não usei `git checkout`, `git stash` nem
 qualquer comando que mudasse a árvore de trabalho.
 

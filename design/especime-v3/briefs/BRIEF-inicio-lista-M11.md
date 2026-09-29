@@ -10,7 +10,7 @@ O bloco mudou a primeira página nas duas edições: os 29 nomes das unidades do
 
 ## 1 · As medições
 
-Nas duas edições, às sete larguras 320, 360, 390, 430, 768, 1024 e 1280 (as quatro primeiras como telemóvel, `deviceScaleFactor` 3, 3, 3 e 3; as outras a 2), com o Chromium do Playwright do repositório principal (`/Users/nunosantos/Instruments/OEstadoDoPais/node_modules/playwright`, só para importar; não corras nada de lá):
+Nas duas edições, às sete larguras 320, 360, 390, 430, 768, 1024 e 1280 (as quatro primeiras como telemóvel, `deviceScaleFactor` 3, 3, 3 e 3; as outras a 2), com o Chromium do Playwright do repositório principal (`/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules/playwright`, só para importar; não corras nada de lá):
 
 1. **A altura da página**, antes e depois, e a diferença. O construtor diz, em pt: 320 8 314 → 7 697; 390 8 034 → 7 339; 1024 4 991 → 3 901; 1280 4 791 → 4 003.
 2. **A grelha da cabeça a 1280** (`.cabeca-grelha`): altura antes e depois (o construtor diz 1 552,1 → 736,5 px); o papel vazio na coluna esquerda por baixo da manchete antes (ele diz 1 260,4 px) e o que a lista ocupa depois (ele diz 418,8 px); a lista fica ao lado do mapa (a caixa da lista dentro da altura do mapa, ou não; mede os dois).

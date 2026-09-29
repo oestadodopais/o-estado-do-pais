@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { conferirValorUnidade } from './valor-unidade.mjs';
-import { conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
+import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -184,7 +184,16 @@ const TEXTOS_APROVADOS = JSON.parse(
  * medido e não um zero de um detetor calado.
  */
 const NOME_DE_QUEM_RESPONDE = TEXTOS_APROVADOS.responsavel;
-const veONome = (texto) => typeof texto === 'string' && texto.includes(NOME_DE_QUEM_RESPONDE);
+/* AS FORMAS DO NOME (29.09.2026, §1.138). O detetor procurava só a forma inteira
+   do oráculo, e um documento alojado que dizia «for» seguido do primeiro e do
+   último nome passou pelas duas exigências e esteve no ar desde agosto. Procuram-se
+   agora as duas formas, a inteira e a do primeiro e do último nome, e cada uma
+   passa pelo conhecido-positivo antes de o detetor contar. */
+const PARTES_DO_NOME = String(NOME_DE_QUEM_RESPONDE).split(/\s+/).filter(Boolean);
+const FORMAS_DO_NOME = [
+  ...new Set([NOME_DE_QUEM_RESPONDE, `${PARTES_DO_NOME[0]} ${PARTES_DO_NOME[PARTES_DO_NOME.length - 1]}`]),
+];
+const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));
 let paginasComONome = 0;
 
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
@@ -2542,12 +2551,7 @@ const CAMPOS_DA_LINHA = new Set([
  * a entrada à posição que ela diz ser e não à ordem em que foi rendida. Os dois
  * campos escritos são a data e, numa entrada `diverge`, o valor encontrado.
  */
-function valorRelidoAqui(valor, lang) {
-  const s = String(valor ?? '').replace(/[\s\u202f]/g, '').replace('−', '-');
-  if (!/^-?\d+(?:[.,]\d+)?$/.test(s)) return String(valor ?? '');
-  const partes = s.split(/[.,]/);
-  return partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0').replace('-', '−') + (partes.length === 2 ? ',' + partes[1] : '');
-}
+
 
 const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
 
@@ -2610,12 +2614,12 @@ const ROTULO_DO_RESULTADO = {
   pt: {
     igual: 'igual à fonte',
     diverge: 'a releitura encontrou:',
-    inacessivel: 'sem resposta a esse pedido',
+    inacessivel: 'sem valor lido',
   },
   en: {
     igual: 'matches the source',
     diverge: 'the re-read found:',
-    inacessivel: 'with no answer to that request',
+    inacessivel: 'no value read',
   },
 };
 
@@ -3085,6 +3089,13 @@ const ROTULO_DO_REGISTO_PREVIO = {
 };
 
 const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
+
+/**
+ * AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026), pela chave da rota. Escritas aqui, e não lidas
+ * da vista, como as outras listas deste portão; a tabela das rotas confere que existem.
+ */
+const ROTAS_DAS_ENTRADAS = ['entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado'];
+for (const chave of ROTAS_DAS_ENTRADAS) routePath(/** @type {any} */ (chave), 'pt');
 
 /**
  * E a frase da entrada que NÃO é uma transição: sai de um estado e chega ao
@@ -4116,14 +4127,16 @@ const cartoesUsados = new Set();
         `ainda imprime ${JSON.stringify(nome)}: o sítio não diz nome nenhum, ou diz o mesmo nos dois lugares.`,
     });
   }
-  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero. */
-  if (!veONome(`<p data-prova>${nome}</p>`)) {
-    erros.push({
-      rel: 'scripts/gate-html.mjs',
-      msg:
-        `o detetor do nome de quem responde não encontrou ${JSON.stringify(nome)} numa linha ` +
-        `escrita com ele: enquanto não vir, os zeros que ele conta não valem nada.`,
-    });
+  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero, uma vez por forma do nome. */
+  for (const forma of FORMAS_DO_NOME) {
+    if (!veONome(`<p data-prova>${forma}</p>`)) {
+      erros.push({
+        rel: 'scripts/gate-html.mjs',
+        msg:
+          `o detetor do nome de quem responde não encontrou uma das formas do nome numa linha ` +
+          `escrita com ela: enquanto não vir, os zeros que ele conta não valem nada.`,
+      });
+    }
   }
 
   /* O nome não existe em ficheiro nenhum de `src/` e de `public/`. */
@@ -5831,8 +5844,20 @@ for (const file of ficheirosHtml(DIST)) {
       el.closest?.('[data-cartao-medida][data-medida-chave]')?.getAttribute('data-cartao-medida') === id;
     // Mesma guarda estreita da peça 2: só o campo de unidade do próprio
     // cartão, nas duas páginas novas. auditaSelo continua ativo.
-    const unidadeDeCartaoDoPais = ['home', 'temas'].includes(rota?.key) && campo === 'unit' &&
+    /* PP1 (28.09.2026): as cinco páginas das entradas rendem os mesmos cartões da página dos temas,
+       com a mesma unidade; entram na mesma porta, e só nela. */
+    const unidadeDeCartaoDoPais = ['home', 'temas', ...ROTAS_DAS_ENTRADAS].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-cartao-medida]')?.getAttribute('data-cartao-medida') === id;
+    /* PP1 (28.09.2026): OS DOIS CAMPOS DE LINHA DE UM BLOCO DE «O QUE SE PASSA». A linha da fonte de
+       cada bloco é calculada das linhas que ele mostra (o §2, ponto 2, do brief), e o publicador é o
+       campo `source` de uma delas; a lista «Os números deste bloco» dá o nome de cada número, e uma linha
+       sem nome da casa (o agregado da União sem nome, a notificação do INE) é nomeada pela escada do
+       cartão, que rende o título do documento como campo. A porta é estreita como as outras: só estes
+       campos, só dentro de um bloco, na primeira página e nas entradas, e cada um continua comparado
+       carácter a carácter com a linha; `auditaSelo()` continua a correr nestas páginas. */
+    const campoDeBloco = ['home', ...ROTAS_DAS_ENTRADAS].includes(rota?.key) && el.closest('[data-bloco]') !== null && (
+      (campo === 'source' && el.closest('[data-bloco-fonte]') !== null) ||
+      (['document.title', 'name'].includes(String(campo)) && el.closest('[data-bloco-numero]') !== null));
     // Uma unidade do registo é conferida contra a linha da própria entrada,
     // cujo recibo é obrigatório na conferência imediatamente acima.
     // B1c, 22.09.2026: a mesma forma, nas duas rotas onde as linhas de correção
@@ -5842,7 +5867,7 @@ for (const file of ficheirosHtml(DIST)) {
     // continua a trocar a unidade de uma entrada pela de outra linha.
     const unidadeDeCorrecaoDoPais = ['home', 'correcoes'].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais) {
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !campoDeBloco) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
@@ -5900,7 +5925,8 @@ for (const file of ficheirosHtml(DIST)) {
     const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
       ? normalizeWhitespace(decodeEntities(textoDe(el)))
       : textoTranscrito(el);
-    if (renderizado !== normalizeWhitespace(String(esperado))) {
+    const relido = conferirCampoRelido(el, claim, linguaPagina);
+    if (relido ? !relido.confere : renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +
           `      no livro-razão: ${normalizeWhitespace(String(esperado)).slice(0, 150)}\n` +

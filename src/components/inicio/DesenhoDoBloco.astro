@@ -1,0 +1,149 @@
+---
+/**
+ * O DESENHO DE UM BLOCO DE «O QUE SE PASSA» (bloco PP1, 28.09.2026).
+ *
+ * As quatro formas que o brief declara, e mais nenhuma: `barras` (uma medida, vários grupos, uma
+ * escala), `paineis` e `pares` (Portugal e a União, painel a painel), e `colunas` (Portugal e a
+ * União em painéis que não se ligam, com a linha do valor de referência só no de Portugal). O modelo
+ * vem de `src/lib/primeira-pagina.mjs`, que fez as contas: aqui não se calcula nenhuma posição.
+ *
+ * AS REGRAS DA MAQUETA QUE O DIRETOR VIU FICAM:
+ *   · Portugal a tinta, a União a cinzento, e o nome escrito ao lado de cada barra, para a
+ *     comparação nunca depender de uma legenda de cores;
+ *   · a cor só na linha de um limiar, o âmbar com contorno de tinta (`IDENTIDADE.md` §2), e só no
+ *     painel de Portugal; o rótulo dela fica a tinta;
+ *   · os números a Bitter, com os algarismos do `<Claim>`, e as pontas de uma escala escrita marcadas
+ *     `data-nonledger="escala-de-instrumento"`;
+ *   · as barras do rácio cortadas em unidades.
+ *
+ * CADA NÚMERO DESENHADO É UM `<Claim as="tspan">` DENTRO DE UM `<svg>`, E NÃO É UMA LIGAÇÃO: os
+ * alvos de toque apanhariam o vizinho. A porta de cada um vive na lista «Os números deste bloco»,
+ * por baixo do bloco, marcada `data-legenda-selos`, que é a convenção do §1.34 que o `auditaSelo()`
+ * do portão de HTML já aplica a um valor desenhado. O comprimento de cada barra escreve-se em
+ * percentagem da sua faixa (e a altura de cada coluna em percentagem da sua área), e a célula da
+ * geometria (`tests/inicio/geometria.mjs`) mede-o na página desenhada.
+ */
+import Claim from '../Claim.astro';
+import Frase from '../Frase.astro';
+import NomeDaMedida from '../NomeDaMedida.astro';
+import DataDaLinha from '../DataDaLinha.astro';
+import { getClaim } from '../../lib/ledger.mjs';
+import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
+import { t } from '../../i18n/strings.mjs';
+
+const { modelo, lang = 'pt', bloco } = Astro.props;
+const s = t(lang);
+/* A FAIXA DE UMA BARRA: a parte da largura que a escala ocupa, e o resto fica para o valor escrito
+   na ponta. É uma constante do desenho, a mesma em todas as barras, e a célula da geometria só pede
+   que as barras de uma escala partilhem a proporção. */
+const FAIXA = 72;
+/** @param {number} f */
+const pct = (f) => `${Number((f * FAIXA).toFixed(4))}%`;
+/** @param {number} f */
+const pctAltura = (f) => `${Number((f * 100).toFixed(4))}%`;
+const colunas = modelo.forma === 'colunas';
+---
+
+<figure
+  class:list={['pp-desenho', `pp-desenho-${modelo.forma}`]}
+  data-bloco-desenho
+  data-bloco-declarado
+  data-forma={modelo.forma}
+>
+  {modelo.legenda && (
+    <figcaption class="pp-legenda"><Frase partes={modelo.legenda} lang={lang} /></figcaption>
+  )}
+  <div class:list={['pp-paineis', `pp-paineis-${modelo.paineis.length}`]}>
+    {modelo.paineis.map((painel) => {
+      const escala = modelo.escalas[painel.escala];
+      return (
+        <div
+          class:list={['pp-painel', colunas && 'pp-painel-colunas', painel.referencia && 'pp-com-referencia']}
+          data-painel={painel.id}
+          data-escala={`${bloco}:${painel.escala}`}
+        >
+          {painel.titulo && (
+            <p class="pp-painel-t"><Frase partes={painel.titulo} lang={lang} /></p>
+          )}
+          {colunas ? (
+            <>
+              <div class="pp-plot" style={`--pp-colunas:${painel.barras.length}`}>
+                {painel.referencia && (
+                  <>
+                    <span class="pp-ref" data-linha-de-referencia={painel.referencia.linha} style={`bottom:${pctAltura(painel.referencia.fracao)}`} aria-hidden="true" />
+                    {/* O RÓTULO DA LINHA DE REFERÊNCIA É MOBÍLIA DO DESENHO DECLARADO (bloco PP1): a palavra vem de
+                        `strings.mjs` e a célula dos blocos confere o rótulo inteiro, a palavra, o valor de
+                        `referencias.json` e o símbolo. Não leva `data-voz`: com ela, o inventário das frases
+                        pedia uma linha que só se rende enquanto o bloco da dívida está na página, e um bloco que
+                        sai não pode fechar a construção. */}
+                    <p class="pp-ref-rotulo" data-rotulo-da-referencia style={`bottom:${pctAltura(painel.referencia.fracao)}`}>
+                      <span>{s.home.numeros.limiar}</span>{' '}
+                      <span data-nonledger="limiar-do-quadro" data-referencia={painel.referencia.linha}>{painel.referencia.nl}</span>{' %'}
+                    </p>
+                  </>
+                )}
+                {painel.barras.map((barra) => (
+                  <div class:list={['pp-col', `pp-${barra.papel}`]} data-barra={barra.linha}>
+                    <span
+                      class="pp-col-barra"
+                      data-fracao={barra.fracao}
+                      style={`bottom:${pctAltura(Math.min(barra.fracao, barra.inicio))};height:${pctAltura(Math.abs(barra.fracao - barra.inicio))}`}
+                    />
+                    <svg class="pp-col-valor" width="100%" height="20" style={`bottom:${pctAltura(Math.max(barra.fracao, barra.inicio))}`}>
+                      <text x="50%" y="15" text-anchor="middle"><Claim id={barra.linha} lang={lang} as="tspan" /></text>
+                    </svg>
+                  </div>
+                ))}
+              </div>
+              <div class="pp-col-periodos" style={`--pp-colunas:${painel.barras.length}`}>
+                {painel.barras.map((barra) => (
+                  <span class="pp-col-periodo">
+                    <DataDaLinha id={barra.linha} campo="reference_date" valor={String(getClaim(barra.linha).reference_date)} lang={lang} />
+                  </span>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <ol class="pp-filas">
+                {painel.barras.map((barra) => {
+                  const esquerda = Math.min(barra.fracao, barra.inicio);
+                  const largura = Math.abs(barra.fracao - barra.inicio);
+                  return (
+                    <li class:list={['pp-fila', `pp-${barra.papel}`, barra.forte && 'is-forte']} data-barra={barra.linha}>
+                      <span class="pp-rotulo">
+                        {barra.rotulo.tipo === 'nome' ? (
+                          <NomeDaMedida linha={getClaim(barra.rotulo.linha)} lang={lang} escada="cartao" class="pp-rotulo-nome" />
+                        ) : barra.rotulo.tipo === 'pais' ? (
+                          <span data-lugar>{ROTULOS_B1[lang].pais}</span>
+                        ) : (
+                          <span data-voz>{s.cartao.uniaoEuropeia}</span>
+                        )}
+                      </span>
+                      <span class="pp-traco">
+                        <span
+                          class:list={['pp-barra', escala.unidades && 'pp-barra-unidades']}
+                          data-fracao={barra.fracao}
+                          style={`margin-left:${pct(esquerda)};width:${pct(largura)}${escala.unidades ? `;--pp-unidades:${barra.valor}` : ''}`}
+                        />
+                        <svg class="pp-valor" height="20">
+                          <text x="6" y="15"><Claim id={barra.linha} lang={lang} as="tspan" />{modelo.sufixo && <tspan class="pp-unidade">{modelo.sufixo}</tspan>}</text>
+                        </svg>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+              {escala.pontas && (
+                <p class="pp-escala">
+                  <span class="pp-escala-ponta" data-nonledger="escala-de-instrumento" style={`left:${pct((0 - escala.min) / (escala.max - escala.min))}`}>{escala.pontas[0]}</span>
+                  <span class="pp-escala-ponta" data-nonledger="escala-de-instrumento" style={`left:${pct(1)}`}>{escala.pontas[1]}</span>
+                </p>
+              )}
+            </>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</figure>

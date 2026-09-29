@@ -10,8 +10,8 @@ Não lês nenhum brief da construção, nenhuma nota, nenhum `DECISIONS.md`: só
 
 ## 1 · O que lês
 
-* O formato do registo: `/Users/nunosantos/Instruments/ResearchHub/publisher/REGISTOS.md` (as secções «A forma do registo», «A leitura do olho», «Cada algarismo como referência»). É o contrato do formato; lê-o inteiro.
-* Os registos: `/Users/nunosantos/Instruments/OEstadoDoPais/registos/<slug>/<lang>.record.json` e `registos/manifest.json`, para as três edições do exemplar:
+* O formato do registo: `/Users/UTILIZADOR/Instruments/ResearchHub/publisher/REGISTOS.md` (as secções «A forma do registo», «A leitura do olho», «Cada algarismo como referência»). É o contrato do formato; lê-o inteiro.
+* Os registos: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/registos/<slug>/<lang>.record.json` e `registos/manifest.json`, para as três edições do exemplar:
   * `evora-prometido-pago-auditado-2026/pt` e `/en`
   * `evora-quinze-anos-cinco-mandatos/pt`
 * As páginas construídas: `dist/estudos/evora-prometido-pago-auditado-2026/texto/index.html`, `dist/en/studies/evora-prometido-pago-auditado-2026/text/index.html`, `dist/estudos/evora-quinze-anos-cinco-mandatos/texto/index.html`.
@@ -48,4 +48,4 @@ Escreve um só programa (Node ou Python, o que preferires; se usares um analisad
 
 ## 4 · O relatório
 
-Um ficheiro Markdown em `/Users/nunosantos/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.md` (a pasta existe) com: o caminho do teu programa (guarda-o em `design/especime-v3/medicoes/parte3-M1-sonnet.mjs` ou `.py`, ao lado, para poder ser corrido outra vez), a tabela das doze medições por edição (esperado, lido, discordâncias), a lista completa das discordâncias com coordenada e os dois textos, **as tuas próprias falsas alarmes** com a causa quando as encontrares (uma discordância que investigaste e vem do teu leitor e não da página: diz isso, não a apagues), e o custo em símbolos desta corrida como o vires. Nada é «ok» sem o número ao lado. Não corriges nada no sítio; não commitas; não tocas em nenhum ficheiro fora da pasta `medicoes/`.
+Um ficheiro Markdown em `/Users/UTILIZADOR/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.md` (a pasta existe) com: o caminho do teu programa (guarda-o em `design/especime-v3/medicoes/parte3-M1-sonnet.mjs` ou `.py`, ao lado, para poder ser corrido outra vez), a tabela das doze medições por edição (esperado, lido, discordâncias), a lista completa das discordâncias com coordenada e os dois textos, **as tuas próprias falsas alarmes** com a causa quando as encontrares (uma discordância que investigaste e vem do teu leitor e não da página: diz isso, não a apagues), e o custo em símbolos desta corrida como o vires. Nada é «ok» sem o número ao lado. Não corriges nada no sítio; não commitas; não tocas em nenhum ficheiro fora da pasta `medicoes/`.

@@ -1,0 +1,219 @@
+[
+  {
+    "nome": "páginas sem estrago",
+    "codigo": 0,
+    "celula": "todas",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 país: todas as conferências a 0."
+  },
+  {
+    "nome": "medida rendida sem tema declarado",
+    "codigo": 1,
+    "celula": "T2",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 46 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nT2 pt temas: pib-real-per-capita-2025 sem tema na tabela.\nT2 en temas: pib-real-per-capita-2025 sem tema na tabela."
+  },
+  {
+    "nome": "medida do país no tema errado",
+    "codigo": 1,
+    "celula": "T3",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nV2 pt: o cartão das câmaras não está no tema da economia e finanças públicas.\nT3 pt temas: pib-real-per-capita-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: saldo-das-administracoes-publicas-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: divida-publica-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: crescimento-da-despesa-liquida-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: saldo-da-balanca-corrente-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: posicao-de-investimento-internacional-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: taxa-de-cambio-efectiva-real-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: desempenho-das-exportacoes-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: divida-das-empresas-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: divida-das-familias-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: fluxo-de-credito-as-empresas-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: fluxo-de-credito-as-familias-2025 no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: ipc-variacao-homologa no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: ipc-variacao-media-12-meses no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: ipc-alimentacao-variacao-homologa no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: ipc-energia-em-casa-variacao-homologa no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: ipc-combustiveis-variacao-homologa no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT3 pt temas: ihpc-variacao-homologa no tema trabalho, a tabela dá-lhe economia-e-financas-publicas.\nT6 pt temas: conjunto de temas diferente da tabela.\nT8 pt: âncora de tema em falta."
+  },
+  {
+    "nome": "medida repetida",
+    "codigo": 1,
+    "celula": "T4",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nT4 pt temas: medida repetida pib-real-per-capita-2025."
+  },
+  {
+    "nome": "medida publicada ausente",
+    "codigo": 1,
+    "celula": "T5",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nT5 pt: faltam medidas publicadas na página dos temas."
+  },
+  {
+    "nome": "mudança sem secção",
+    "codigo": 1,
+    "celula": "M1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nM1: nomes-ine-2026-09-21 sem secção existente de DECISIONS.md."
+  },
+  {
+    "nome": "mudança com secção inexistente",
+    "codigo": 1,
+    "celula": "M1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nM1: nomes-ine-2026-09-21 sem secção existente de DECISIONS.md."
+  },
+  {
+    "nome": "lista das mudanças de volta à primeira página",
+    "codigo": 1,
+    "celula": "C2",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 3 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nC2 pt: a lista das mudanças voltou à primeira página; a porta «O que mudou» leva ao registo."
+  },
+  {
+    "nome": "publicação na lista de um lugar",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 77 títulos de edição.\nA2: municipios/evora/index.html: 9 mudanças, e o teto é 8.\nA1: municipios/evora/index.html: a linha publicacao|evora-2027-prometido-painel-dinheiro é de «nenhum lugar» e a página é de «evora».\nA2: municipios/evora/index.html: as mudanças não estão da mais recente para a mais antiga."
+  },
+  {
+    "nome": "mais mudanças do que o teto",
+    "codigo": 1,
+    "celula": "A2",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA2: municipios/evora/index.html: 17 mudanças, e o teto é 8.\nC1: municipios/evora/index.html (evora): uma linha de correção não é uma entrada do livro, ou repete-se."
+  },
+  {
+    "nome": "registo sem uma das mudanças do livro",
+    "codigo": 1,
+    "celula": "A3",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA3: correcoes/index.html: o registo tem 33 mudanças e o livro inteiro tem 34; a menos: correcao|divida-das-familias-2025-ue|0."
+  },
+  {
+    "nome": "correção que não é uma entrada do livro",
+    "codigo": 1,
+    "celula": "C1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA3: correcoes/index.html: o registo tem 34 mudanças e o livro inteiro tem 34; a mais: correcao|divida-das-familias-2025-ue|99; a menos: correcao|divida-das-familias-2025-ue|0.\nC1: correcoes/index.html (registo): uma linha de correção não é uma entrada do livro, ou repete-se.\nM3: correcoes/index.html (registo): divida-das-familias-2025-ue mistura correções, repete o valor ou difere da correção declarada."
+  },
+  {
+    "nome": "valor antigo igual ao novo numa correção",
+    "codigo": 1,
+    "celula": "M3",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nM3: correcoes/index.html (registo): divida-das-familias-2025-ue mistura correções, repete o valor ou difere da correção declarada."
+  },
+  {
+    "nome": "mudança de lugar sem o seu lugar",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA1: municipios/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-aprovado-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-execucao-2026|1 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-pago-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-vencido-aprovado-2026|5 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-vencido-quota-2026|1 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-aprovado-2026|3 é de «evora» e a página é de «lisboa».\nA1: municipios/evora/index.html: a linha correcao|evora-prr-execucao-2026|0 é de «evora» e a página é de «lisboa»."
+  },
+  {
+    "nome": "declaração do lugar contra a derivação",
+    "codigo": 1,
+    "celula": "A1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA1: estudos-evora-publicados é declarado de «portugal» e deriva de «evora».\nA1: a linha estudos-evora-publicados é declarada de «portugal» e deriva de «evora».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: correcoes/index.html: uma linha de «portugal» escreve «Évora» com a porta «/municipios/evora»; esperava-se «Portugal» e «/».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA3: en/corrections/index.html: uma linha de «portugal» escreve «Évora» com a porta «/en/municipalities/evora»; esperava-se «Portugal» e «/en».\nA1: en/municipalities/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «portugal» e a página é de «evora».\nA1: municipios/evora/index.html: a linha correcao|estudos-evora-publicados|3 é de «portugal» e a página é de «evora»."
+  },
+  {
+    "nome": "porta do registo apontada a outro lugar",
+    "codigo": 1,
+    "celula": "A3",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA3: correcoes/index.html: uma linha de «uniao-europeia» escreve «União Europeia» com a porta «/municipios/lisboa»; esperava-se «União Europeia» e «/temas/»."
+  },
+  {
+    "nome": "título por confirmar sem a marca no registo",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA4: en/corrections/index.html: agua-nao-faturada/en tem 0 marcador(es) de título e o arquivo declara titleUnverified=true."
+  },
+  {
+    "nome": "título por confirmar sem a marca na página do país",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA4: correcoes/index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true.\nA4: estudos/index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true.\nA4: index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true.\nA4: municipios/evora/index.html: evora-2027-prometido-painel-dinheiro/pt tem 0 marcador(es) de título e o arquivo declara titleUnverified=true."
+  },
+  {
+    "nome": "marca escondida por propriedade do chamador",
+    "codigo": 1,
+    "celula": "A4",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA4: en/studies/index.html: onde-esta-a-agua/en tem 0 marcador(es) de título e o arquivo declara titleUnverified=true."
+  },
+  {
+    "nome": "texto da mudança alterado",
+    "codigo": 1,
+    "celula": "A3",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nA3: correcoes/index.html: a mudança declarada multiplo-penalizacoes-2026-09-23 falta no registo ou não coincide com a declaração."
+  },
+  {
+    "nome": "ordem dos estudos trocada",
+    "codigo": 1,
+    "celula": "E1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nE1 pt: os três estudos não são os mais recentes."
+  },
+  {
+    "nome": "número de um bloco sem recibo",
+    "codigo": 1,
+    "celula": "B1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 pt: PP1 · / · trabalho: a linha da lista de taxa-de-emprego-2025 está sem a porta do recibo (/livro-razao/taxa-de-emprego-2025)"
+  },
+  {
+    "nome": "sexta entrada no menu",
+    "codigo": 1,
+    "celula": "N1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nN1: menu de cinco errado em index.html."
+  },
+  {
+    "nome": "mudança declarada na língua do código",
+    "codigo": 1,
+    "celula": "M4",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nM4: a mudança nomes-ine-2026-09-21 (pt) fala na língua do código: «recibos».\nA3: correcoes/index.html: a mudança declarada nomes-ine-2026-09-21 falta no registo ou não coincide com a declaração."
+  },
+  {
+    "nome": "cartão fora do valor de referência pintado de dentro",
+    "codigo": 1,
+    "celula": "T9",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nT9 pt temas: divida-publica-2025 está fora do valor de referência e o cartão não o diz pela cor da página europeia (sq-fora, est-fora)."
+  },
+  {
+    "nome": "lista dos estudos com a ordem trocada",
+    "codigo": 1,
+    "celula": "E2",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nE2 pt: a lista dos estudos não é uma só, com todos, do mais recente para o mais antigo."
+  },
+  {
+    "nome": "a secção por lugar de volta",
+    "codigo": 1,
+    "celula": "E2",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nE2 en: a lista dos estudos voltou a ter a secção por lugar, ou contagens."
+  },
+  {
+    "nome": "bloco com outra data da notificação",
+    "codigo": 1,
+    "celula": "B1",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nB1 pt: PP1 · / · estado: o texto rendido da peça revisao-do-ine difere do que o resolvedor dá: «A notificação do INE de 24.09.2026 já revê a dívida de 20…» contra «A notificação do INE de 23.09.2026 já revê a dívida de 20…»\nB1 pt: PP1 · / · estado: o texto rendido da peça revisao-do-ine difere do que a conta desta célula dá: «A notificação do INE de 24.09.2026 já revê a dívida de 20…» contra «A notificação do INE de 23.09.2026 já revê a dívida de 20…»"
+  },
+  {
+    "nome": "ponto final sem ligação inseparável",
+    "codigo": 1,
+    "celula": "N2",
+    "passou": true,
+    "saida": "T9: 60 cartões com valor de referência nos temas e nas entradas, 20 fora e 40 dentro, cada um com a cor do seu estado.\nB1 país: 47 medidas, 9 temas, 20 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 34 mudanças, 76 títulos de edição.\nN2: ponto final sem ligação inseparável em index.html."
+  },
+  {
+    "nome": "frase explicativa fora da lista fechada",
+    "codigo": 1,
+    "celula": "B1 voz",
+    "passou": true,
+    "saida": "B1 lista fechada país: /: «Esta página explica como se deve ler o projeto.»."
+  },
+  {
+    "nome": "frase de um bloco alterada",
+    "codigo": 1,
+    "celula": "B1 voz",
+    "passou": true,
+    "saida": "B1 lista fechada país: /: «Os preços: os combustíveis sobem mais do que o resto».\nB1 lista fechada país: /: «Em».\nB1 lista fechada país: /: «, os combustíveis estavam».\nB1 lista fechada país: /: «23,78».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «mais caros do que um ano antes. Os preços no seu conjunto subiram».\nB1 lista fechada país: /: «3,30».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «.».\nB1 lista fechada país: /: «23,78».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «5,22».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «2,14».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «1,36».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «3,30».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «Os preços no seu conjunto medem-se num cabaz de bens e serviços que representa o que as famílias compram.».\nB1 lista fechada país: /: «Na medida harmonizada que compara os países da União, os preços subiram».\nB1 lista fechada país: /: «3,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «em Portugal e».\nB1 lista fechada país: /: «3,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «na União.».\nB1 lista fechada país: /: «Fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «Os números deste bloco».\nB1 lista fechada país: /: «23,78».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «3,30».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «5,22».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «2,14».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «1,36».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «3,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «3,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «A habitação: a média engana quem arrenda».\nB1 lista fechada país: /: «Em Portugal, a parte das pessoas que gastam mais de».\nB1 lista fechada país: /: «40».\nB1 lista fechada país: /: «% do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.».\nB1 lista fechada país: /: «% das pessoas,».\nB1 lista fechada país: /: «Todas as pessoas».\nB1 lista fechada país: /: «6,3».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «7,7».\nB1 lista fechada país: /: «Quem arrenda a preço de mercado».\nB1 lista fechada país: /: «27,2».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «18,6».\nB1 lista fechada país: /: «Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.».\nB1 lista fechada país: /: «Os preços das casas subiram».\nB1 lista fechada país: /: «17,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «em».\nB1 lista fechada país: /: «, na média do ano, contra».\nB1 lista fechada país: /: «5,5».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «na União. Para a Comissão Europeia, uma subida acima de».\nB1 lista fechada país: /: «9».\nB1 lista fechada país: /: «% num ano é sinal de possível desequilíbrio.».\nB1 lista fechada país: /: «As rendas no próximo ano».\nB1 lista fechada país: /: «A referência para a atualização das rendas no próximo ano ficou em».\nB1 lista fechada país: /: «2,56».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «: é a variação média de doze meses dos preços sem a habitação, em».\nB1 lista fechada país: /: «.».\nB1 lista fechada país: /: «Fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «Os números deste bloco».\nB1 lista fechada país: /: «6,3».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «7,7».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «27,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «18,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «17,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «5,5».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «2,56».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «O trabalho: mais emprego, e mais desemprego de longa duração».\nB1 lista fechada país: /: «Em».\nB1 lista fechada país: /: «, a parte das pessoas dos».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «aos».\nB1 lista fechada país: /: «64».\nB1 lista fechada país: /: «anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo. Mas era maior a parte de quem procura trabalho há um ano ou mais.».\nB1 lista fechada país: /: «Com emprego, dos».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «aos».\nB1 lista fechada país: /: «64».\nB1 lista fechada país: /: «anos».\nB1 lista fechada país: /: «79,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «76,1».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «0».\nB1 lista fechada país: /: «100».\nB1 lista fechada país: /: «Desemprego».\nB1 lista fechada país: /: «6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «6,0».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «0».\nB1 lista fechada país: /: «10».\nB1 lista fechada país: /: «Desemprego de longa duração».\nB1 lista fechada país: /: «2,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «1,9».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «0».\nB1 lista fechada país: /: «10».\nB1 lista fechada país: /: «O emprego conta-se entre as pessoas dos».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «aos».\nB1 lista fechada país: /: «64».\nB1 lista fechada país: /: «anos; o desemprego, entre as que trabalham ou procuram trabalho, dos».\nB1 lista fechada país: /: «15».\nB1 lista fechada país: /: «aos».\nB1 lista fechada país: /: «74».\nB1 lista fechada país: /: «.».\nB1 lista fechada país: /: «A remuneração média antes de descontos de quem trabalha por conta de outrem passou de».\nB1 lista fechada país: /: «1 746».\nB1 lista fechada país: /: «euros por mês».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «no».\nB1 lista fechada país: /: «para».\nB1 lista fechada país: /: «1 835».\nB1 lista fechada país: /: «euros por mês».\nB1 lista fechada país: /: «(dado provisório)».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «no».\nB1 lista fechada país: /: «.».\nB1 lista fechada país: /: «Fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «Os números deste bloco».\nB1 lista fechada país: /: «79,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «76,1».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «6,0».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «2,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «1,9».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «1 746».\nB1 lista fechada país: /: «euros por mês».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «1 835».\nB1 lista fechada país: /: «euros por mês».\nB1 lista fechada país: /: «(dado provisório)».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «As contas do Estado».\nB1 lista fechada país: /: «A dívida pública desceu de».\nB1 lista fechada país: /: «para».\nB1 lista fechada país: /: «e está acima da média da União. Para a Comissão Europeia, uma dívida acima de».\nB1 lista fechada país: /: «60».\nB1 lista fechada país: /: «% do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.».\nB1 lista fechada país: /: «% do PIB».\nB1 lista fechada país: /: «valor de referência».\nB1 lista fechada país: /: «60».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «93,5».\nB1 lista fechada país: /: «89,7».\nB1 lista fechada país: /: «A União».\nB1 lista fechada país: /: «81,7».\nB1 lista fechada país: /: «É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.».\nB1 lista fechada país: /: «A notificação do INE de».\nB1 lista fechada país: /: «já revê a dívida de».\nB1 lista fechada país: /: «para».\nB1 lista fechada país: /: «89,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «do PIB.».\nB1 lista fechada país: /: «Fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «Os números deste bloco».\nB1 lista fechada país: /: «93,5».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «89,7».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «81,7».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «Procedimento dos Défices Excessivos 2ª Notificação».\nB1 lista fechada país: /: «89,2».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «INE».\nB1 lista fechada país: /: «Pobreza e desigualdade não são a mesma coisa».\nB1 lista fechada país: /: «Em».\nB1 lista fechada país: /: «, a parte das pessoas em risco de pobreza ou exclusão social era bem menor em Portugal do que na União. Mas os».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «% com mais rendimento recebiam».\nB1 lista fechada país: /: «4,86».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «vezes o que recebiam os».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «% com menos, contra».\nB1 lista fechada país: /: «4,62».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «na União.».\nB1 lista fechada país: /: «Em risco de pobreza ou exclusão social, % das pessoas».\nB1 lista fechada país: /: «18,6».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «20,9».\nB1 lista fechada país: /: «0».\nB1 lista fechada país: /: «25».\nB1 lista fechada país: /: «Quantas vezes o rendimento dos».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «% de cima é o dos».\nB1 lista fechada país: /: «20».\nB1 lista fechada país: /: «% de baixo».\nB1 lista fechada país: /: «4,86».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «4,62».\nB1 lista fechada país: /: «O risco de pobreza mede-se contra o rendimento de cada país: é ter menos de».\nB1 lista fechada país: /: «60».\nB1 lista fechada país: /: «% do rendimento mediano, o do meio.».\nB1 lista fechada país: /: «Fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «Os números deste bloco».\nB1 lista fechada país: /: «4,86».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «4,62».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «18,6».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat».\nB1 lista fechada país: /: «União Europeia».\nB1 lista fechada país: /: «20,9».\nB1 lista fechada país: /: «%».\nB1 lista fechada país: /: «fonte».\nB1 lista fechada país: /: «Eurostat»."
+  }
+]

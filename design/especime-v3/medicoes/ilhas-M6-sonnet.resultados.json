@@ -1,9 +1,9 @@
 {
   "geradoEm": "2026-08-28T00:45:48.254Z",
-  "REPO": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/wt-medidor",
+  "REPO": "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/wt-medidor",
   "BASE_URL": "http://127.0.0.1:4801",
   "pdfAcores": {
-    "fonte": "/Users/nunosantos/Instruments/ResearchHub/content/12 Concelhos/source/acores/desemprego-registado-2025-12.pdf",
+    "fonte": "/Users/UTILIZADOR/Instruments/ResearchHub/content/12 Concelhos/source/acores/desemprego-registado-2025-12.pdf",
     "tabela": "CONCELHOS",
     "linhas": [
       {
@@ -191,7 +191,7 @@
     "soma_homens_mais_mulheres_bate": true
   },
   "pdfMadeira": {
-    "fonte": "/Users/nunosantos/Instruments/ResearchHub/content/12 Concelhos/source/madeira/boletim-concelhos-2025-12.pdf",
+    "fonte": "/Users/UTILIZADOR/Instruments/ResearchHub/content/12 Concelhos/source/madeira/boletim-concelhos-2025-12.pdf",
     "tabela": "QUADRO III",
     "pagina": 3,
     "linhas": [

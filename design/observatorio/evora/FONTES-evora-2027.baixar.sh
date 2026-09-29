@@ -1,7 +1,7 @@
 #!/bin/bash
 # Descarrega um endereço e regista: código HTTP, tamanho, data de leitura (UTC), sha256.
 # Uso: baixar.sh <url> <nome-do-ficheiro>
-BASE="/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/evora-2027"
+BASE="/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/evora-2027"
 DEST="$BASE/fontes"
 REG="$BASE/registo-descargas.tsv"
 URL="$1"; NOME="$2"

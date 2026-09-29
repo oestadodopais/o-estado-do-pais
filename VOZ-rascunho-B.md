@@ -22,7 +22,7 @@ Every number here has a row of its own: the source, the document, the exact line
 
 ### Leitura breve (PT)
 
-**Quem responde por isto.** O Estado do País é escrito e investigado por inteligência artificial — o modelo Claude — e dirigido por Nuno dos Santos, que decide o que se publica e responde por ele.
+**Quem responde por isto.** O Estado do País é escrito e investigado por inteligência artificial — o modelo Claude — e dirigido por [o diretor], que decide o que se publica e responde por ele.
 
 *Variante (a), com uma linha da direcção:* Nas palavras dele: «Só conseguimos fazer melhor com informação fiável e resultados que se possam medir. Se conseguirmos ver o que está a acontecer, onde e com quem resulta, podemos fazer mais disso e menos do que não resulta. Com factos, não com sensações. Factos a sério.»
 
@@ -40,7 +40,7 @@ O sítio diz em todas as páginas que é escrito por IA, porque é.
 
 ### Brief reading (EN)
 
-**Who answers for it.** O Estado do País is written and researched by artificial intelligence — the Claude model — and directed by Nuno dos Santos, who decides what is published and answers for it.
+**Who answers for it.** O Estado do País is written and researched by artificial intelligence — the Claude model — and directed by [o diretor], who decides what is published and answers for it.
 
 *Variant (a), with one line from the director:* In his words: "We can only do better with reliable information and results that can be measured. If we can see what is happening, where and with whom it works, we can do more of that and less of what doesn't. With facts, not feelings. Real facts."
 
@@ -127,13 +127,13 @@ Time signal replacing «Edição de …» — three options:
 
 Footer authorship line — two options:
 1. «Escrito por IA, dirigido por uma pessoa.» (as today)
-2. «Escrito e investigado por IA. Dirigido por Nuno dos Santos.»
+2. «Escrito e investigado por IA. Dirigido por [o diretor].»
 
 ---
 
 ## Facts → files
 
-- Written/researched by AI (Claude), directed by Nuno dos Santos; authorship on every page; self-funded; no money from anyone measured — `ABOUT.md`; `src/data/metodo.mjs`; site footer.
+- Written/researched by AI (Claude), directed by [o diretor]; authorship on every page; self-funded; no money from anyone measured — `ABOUT.md`; `src/data/metodo.mjs`; site footer.
 - The director's quotation (variant a) — `ABOUT.md` «In the director's words», rendered into Portuguese here; the English is his original wording, lightly punctuated.
 - One row per number, fields, build fails without a row / on mismatch — `ledger/README.md`; `README.md` (build steps); `DECISIONS.md` §2.
 - Seal opens the row; livro-razão public — `DECISIONS.md` §1.24; `IDENTIDADE.md` §5.
@@ -142,5 +142,5 @@ Footer authorship line — two options:
 - Marker `[a verificar]`, dashed seal, out of search index — `ledger/README.md`; `IDENTIDADE.md` §6.
 - Studies byte-exact + reading page — `studies-src/README.md`; `DECISIONS.md` §1.19–§1.21, §1.35.
 - Municipal page: inherited/decided/left; attribution rule; Évora first — `DECISIONS.md` §1.34; vault decision note §3.
-- Agenda states and criteria; AI proposes, director decides — `BRIEF-confianca.md` §6.5; Nuno's words 2026-08-15.
+- Agenda states and criteria; AI proposes, director decides — `BRIEF-confianca.md` §6.5; [o diretor]'s words 2026-08-15.
 - Sources rule (official and authoritative, typed; press excluded) — ResearchHub `BRIEF.md` §8.

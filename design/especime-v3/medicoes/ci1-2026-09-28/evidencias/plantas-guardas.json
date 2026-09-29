@@ -1,0 +1,36 @@
+{
+ "comando": "node scripts/provar-guardas.mjs",
+ "casos_na_cabeca_de_partida": 129,
+ "codigo_na_cabeca_de_partida": 0,
+ "casos_depois": 134,
+ "codigo_depois": 0,
+ "plantas_novas": [
+  "t/abertura-da-arvore",
+  "t/paridade-divergente",
+  "t/paridade-igual",
+  "t/arvore-congelada-chave-nova",
+  "t/arvore-congelada-cadeia-trocada"
+ ],
+ "contraprova": {
+  "o_que": "src/i18n/strings.mjs estragado no sítio (o t() sem a conferência; o t() sem congelar), o provar:guardas corrido, e os bytes repostos",
+  "estragos": [
+   {
+    "estrago": "sem-conferencia",
+    "codigo": 1,
+    "casos_que_falharam": [
+     "t/paridade-divergente"
+    ]
+   },
+   {
+    "estrago": "sem-congelar",
+    "codigo": 1,
+    "casos_que_falharam": [
+     "t/arvore-congelada-chave-nova",
+     "t/arvore-congelada-cadeia-trocada"
+    ]
+   }
+  ],
+  "sha256_reposto": "8af8ff723fdf8abc598a70badf68c006e43560b39948045407eea72f77227446",
+  "reposto_igual": true
+ }
+}

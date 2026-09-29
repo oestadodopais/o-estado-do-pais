@@ -1,0 +1,8 @@
+{
+  "o_que_e": "Os registos dos portões da passagem PP1b com o caminho da árvore trocado por <worktree do sítio>, para que nenhum ficheiro do ramo leve um caminho da máquina. Os códigos não se tocam.",
+  "trocas": {
+    "build.log": 1,
+    "typecheck.log": 0,
+    "verify.log": 2
+  }
+}

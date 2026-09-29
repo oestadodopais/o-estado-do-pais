@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T18:46:32+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "o cartão português da despesa em I&D perde a marca «(valor estimado)» no valor da União, que a passagem diz mostrar",
+   "sha256_antes": "ce10a899f52b201c338904dcffb4a8bcfff0909b0d7e278e61e33ccdf4595199",
+   "sha256_depois": "67ee6f0a922ab07c6c760db9b477e67dcb032170f60cfd7f749c6541ed72b260",
+   "contexto_antes": "ss=\"cartao-medida-regua-item\" data-regua=\"ue\" data-selo-em=\"despesa-em-id-2024\"><span class=\"cartao-medida-regua-k\"><span data-voz>União Europeia</span>:</span><span data-claim=\"despesa-em-id-2024-ue\" class=\"claim-value\">2,24</span><span class=\"claim-provisorio\"> (valor estimado)</span></span></p></article></div></section><section class=\"pais-tema\" data-tema=\"justica\" id=\"justica\"><h2 class=\"pais-tema-k\" data-nome=\"dominios\">Justiça</h2><div c",
+   "contexto_depois": "ss=\"cartao-medida-regua-item\" data-regua=\"ue\" data-selo-em=\"despesa-em-id-2024\"><span class=\"cartao-medida-regua-k\"><span data-voz>União Europeia</span>:</span><span data-claim=\"despesa-em-id-2024-ue\" class=\"claim-value\">2,24</span></span></p></article></div></section><section class=\"pais-tema\" data-tema=\"justica\" id=\"justica\"><h2 class=\"pais-tema-k\" data-nome=\"dominios\">Justiça</h2><div c"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/indicators/refresh.py",
+   "descricao": "a guarda da rede do painel reconhece uma falha de nome pela classe errada (socket.herror em vez de socket.gaierror): uma falha de DNS desta máquina volta a ser lida como falha da fonte",
+   "sha256_antes": "0b9024bc25d5a61848b2cda150a0eb5a0ef030499217c01463f69fb23bc5bf15",
+   "sha256_depois": "035c64015589429ee11b043e9754eb9acb661e7764e5d5500de9708331a74472",
+   "contexto_antes": "nce` aqui não é arrumação: é a regra.\n    \"\"\"\n    if isinstance(err, urllib.error.HTTPError):\n        return None\n    for causa in causas_do_erro(err):\n        if isinstance(causa, socket.gaierror):\n            return f\"o nome não resolve ({causa})\"\n        if isinstance(causa, (ConnectionResetError, ConnectionAbortedError)):\n            return f\"a ligação",
+   "contexto_depois": "nce` aqui não é arrumação: é a regra.\n    \"\"\"\n    if isinstance(err, urllib.error.HTTPError):\n        return None\n    for causa in causas_do_erro(err):\n        if isinstance(causa, socket.herror):\n            return f\"o nome não resolve ({causa})\"\n        if isinstance(causa, (ConnectionResetError, ConnectionAbortedError)):\n            return f\"a ligação"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/historia-do-valor.mjs",
+   "descricao": "a trava do valor à última atualização só confere linhas com mais de uma entrada: a linha da União, com uma só atualização, pode ter o valor mudado sem que o livro o recuse",
+   "sha256_antes": "fdb902d56ccc4477ddeb13e1ee070c6e09bea65d8b256418c77f59861160f111",
+   "sha256_depois": "bf0b3f270ba9965915394dd2abced79a320743a5720007e4651d6e7f1cf64dd4",
+   "contexto_antes": "nterior)) {\n      erros.push(`${onde} história do valor: \"old_value\" é ${c.old_value}, mas antes vigorava ${anterior}.`);\n    }\n    anterior = c.new_value;\n  }\n  if (entradas.length && (numeroDaCasa(linha.value) === null || numeroDaCasa(linha.value) !== numeroDaCasa(anterior))) {\n    erros.push(`${onde} história do valor: \"value\" é ${linha.value}, mas o último \"new_value\" é ${a",
+   "contexto_depois": "nterior)) {\n      erros.push(`${onde} história do valor: \"old_value\" é ${c.old_value}, mas antes vigorava ${anterior}.`);\n    }\n    anterior = c.new_value;\n  }\n  if (entradas.length > 1 && (numeroDaCasa(linha.value) === null || numeroDaCasa(linha.value) !== numeroDaCasa(anterior))) {\n    erros.push(`${onde} história do valor: \"value\" é ${linha.value}, mas o último \"new_value\" é ${a"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "ledger/claims/pib-real-per-capita-2025.yml",
+   "descricao": "a entrada do excerto com a marca da fonte fica datada de 12.08.2026, um dia em que ninguém leu a marca, em vez de 28.09.2026",
+   "sha256_antes": "6158cb1fc757e8dc523ec0c417302ef4427043d7f6238c19b4903513f9d35754",
+   "sha256_depois": "8e6a5a92c90679dab022b15409ed578e053b97f7d5ab08871c0fe95646fd3722",
+   "contexto_antes": " da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor.\"\n\n# Correcções datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n- date: '2026-09-28'\n  kind: proveniencia\n  field: excerpt\n  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600'\n  new_value: 'Real GDP per capita — Chain linked vol",
+   "contexto_depois": " da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor.\"\n\n# Correcções datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n- date: '2026-08-12'\n  kind: proveniencia\n  field: excerpt\n  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600'\n  new_value: 'Real GDP per capita — Chain linked vol"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/livro-razao/divida-das-familias-2025-ue/index.html",
+   "descricao": "o recibo português diz que a releitura de 21.09 confirmou o valor publicado, quando confirmou o valor anterior",
+   "sha256_antes": "4244c8e193b5f808557555d7e310aa9e679655126eed7f37920a2521d5906f0c",
+   "sha256_depois": "2fe2e246777a9116be62da86ba3e9e6529b10f4ba7a8d6eef467a1b32988df44",
+   "contexto_antes": "dger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2025-ue\" data-de-campo=\"verifications.0.date\">21.09.2026</span>, <span data-linha-verificacao-resultado>confirmou o valor anterior: <span data-valor-anterior-confirmado data-correcao-claim=\"divida-das-familias-2025-ue\" data-correcao-n=\"0\" data-correcao-campo=\"old_value\">49,3</span></span> ",
+   "contexto_depois": "dger=\"data-da-linha\" data-de-linha=\"divida-das-familias-2025-ue\" data-de-campo=\"verifications.0.date\">21.09.2026</span>, <span data-linha-verificacao-resultado>confirmou o valor publicado: <span data-valor-anterior-confirmado data-correcao-claim=\"divida-das-familias-2025-ue\" data-correcao-n=\"0\" data-correcao-campo=\"old_value\">49,3</span></span> "
+  }
+ ]
+}

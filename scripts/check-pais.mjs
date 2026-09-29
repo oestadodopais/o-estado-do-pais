@@ -17,6 +17,8 @@ import { routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
+import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
+import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const erros = [];
@@ -121,6 +123,10 @@ const objetoDoEstudo = new Map(WORKS.filter(w => typeof w.subject === 'string').
    escrevem: é a lista da régua, e não a da página. */
 /* Nove desde o bloco R1 (23.09.2026): as duas leituras da 2.ª notificação do INE
    entraram na frase da dívida. */
+/* A LEITURA SAIU DA PRIMEIRA PÁGINA COM O BLOCO PP1 (28.09.2026), e a L2 e a L3 com ela. A lista fica,
+   porque é por ela que esta régua deriva o lugar de uma correção destas linhas (o país), pela mesma
+   conta que `src/lib/mudancas.mjs` faz com `LINHAS_DA_LEITURA_DO_PAIS`: uma correção da dívida de 2024
+   continua a ser do país, e o registo continua a dizê-lo. */
 const LINHAS_DA_LEITURA = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-notificacao-ine-2026-09','divida-publica-2024-notificacao-ine-2026-09','divida-publica-2025-ue','taxa-de-desemprego-2025','taxa-de-desemprego-2025-ue','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
 const linhasDoPais = new Set([...Object.keys(DOMINIO_DAS_MEDIDAS), ...LINHAS_DA_LEITURA]);
 /* -------------------------------------------------- o lugar, por duas vias
@@ -262,21 +268,19 @@ for (const lang of ['pt', 'en']) {
         erros.push(`D1 ${lang} ${nome}: ${seletor} difere da declaração.`);
     }
   }
-  const leitura = home.querySelector('main [data-leitura-pais]');
-  /* L2 · as linhas que a leitura cita, pela ordem da frase. Oito desde o bloco R1
-     (23.09.2026): as duas leituras da 2.ª notificação do INE a seguir às duas do
-     quadro do Eurostat. E a data da notificação, do campo `published_at` da linha
-     do INE, na forma da casa. */
-  const citadas = ['divida-publica-2024','divida-publica-2025','divida-publica-2025-notificacao-ine-2026-09','divida-publica-2024-notificacao-ine-2026-09','divida-publica-2025-ue','taxa-de-desemprego-2025','precos-da-habitacao-2025','precos-da-habitacao-2025-ue'];
-  if (JSON.stringify(leitura?.querySelectorAll('[data-claim]').map(n=>n.getAttribute('data-claim'))) !== JSON.stringify(citadas)) erros.push(`L2 ${lang}: a leitura não cita as oito linhas aprovadas, pela ordem da frase.`);
-  const dataDaNotificacao = leitura?.querySelector('[data-de-linha="divida-publica-2025-notificacao-ine-2026-09"][data-de-campo="published_at"]');
-  if (!dataDaNotificacao || normal(dataDaNotificacao.textContent) !== data(linha('divida-publica-2025-notificacao-ine-2026-09').published_at))
-    erros.push(`L2 ${lang}: a leitura não diz a data da notificação do INE tal como a linha a publica.`);
-  for (const id of [...citadas,'taxa-de-desemprego-2025-ue']) {
-    const href = `${lang === 'pt' ? '/livro-razao' : '/en/ledger'}/${id}`;
-    if (!leitura?.querySelector(`a.src-chip[href="${href}"]`)) erros.push(`L3 ${lang}: a leitura perdeu o recibo ${id}.`);
-  }
-  for (const [nome, doc, resumo] of [['país', home, true], ['temas', indice, false]]) {
+  /* L1 A L3 SAÍRAM COM A LEITURA DO PAÍS (bloco PP1, 28.09.2026). A leitura prendia nove valores e
+     fechava a construção quando um mudava; o que ela dizia está nos blocos de «O que se passa», com
+     condições em vez de valores presos. O que as três células protegiam passa aos blocos: cada número
+     da prosa abre a sua linha (o portão de HTML exige o selo ao lado), e o texto, os ramos, as linhas
+     citadas, o valor de referência e a lista dos números de cada bloco são recontados pela célula da
+     primeira página (`tests/inicio/blocos.mjs`), aqui chamada na mesma corrida da construção. */
+  if (home.querySelector('main [data-leitura-pais]')) erros.push(`L1 ${lang}: a leitura do país voltou à primeira página.`);
+  for (const e of conferirBlocosDaPagina(home, lang, lang === 'pt' ? '/' : '/en/', { ids: idsDosBlocos(), primeira: true }).erros) erros.push(`B1 ${lang}: ${e}`);
+  /* O RESUMO DOS TEMAS SAIU DA PRIMEIRA PÁGINA (bloco PP1): os cartões vivem na página dos temas e nas
+     páginas das entradas. As células T correm na página dos temas, e a primeira página não os rende. */
+  if (home.querySelectorAll('main [data-cartao-medida], main [data-cartao-camaras]').length)
+    erros.push(`T0 ${lang}: a primeira página voltou a render cartões das medidas.`);
+  for (const [nome, doc, resumo] of [['temas', indice, false]]) {
     erros.push(...verificaCartaoDasCamaras(doc, lang, linha));
     const cards = doc.querySelectorAll('main [data-cartao-medida]');
     const vistos = new Set();
@@ -327,7 +331,10 @@ for (const lang of ['pt', 'en']) {
     if (inf !== null && v < inf) return 'fora';
     return 'dentro';
   };
-  for (const [nome, doc] of [['país', home], ['temas', indice]]) {
+  /* T9 CORRE ONDE OS CARTÕES SE RENDEM: a página dos temas e, desde o bloco PP1, as cinco páginas das
+     entradas, que desenham os mesmos cartões com o mesmo componente. */
+  const paginasDasEntradas = ENTRADAS.filter(e => !('existente' in e && e.existente)).map(e => [`entrada ${e.id}`, le(e.rota[lang].replace(/^\/|\/$/g, ''))]);
+  for (const [nome, doc] of [['temas', indice], ...paginasDasEntradas]) {
     for (const c of doc.querySelectorAll('main [data-cartao-medida]')) {
       const id = c.getAttribute('data-cartao-medida');
       const f = REFERENCIAS_DAS_MEDIDAS.get(id);
@@ -345,8 +352,6 @@ for (const lang of ['pt', 'en']) {
         erros.push(`T9 ${lang} ${nome}: ${id} está ${estado} do valor de referência e o cartão não o diz pela cor da página europeia (sq-${estado}, est-${estado}).`);
     }
   }
-  for (const id of ['divida-publica-2025','taxa-de-desemprego-mip-2025','precos-da-habitacao-2025'])
-    if (home.querySelector(`main [data-cartao-medida="${id}"]`)) erros.push(`L1 ${lang}: uma medida da leitura abre a sua fila.`);
   const recentes = WORKS.map((w,i) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
     return { slug: w.slug, i, data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
@@ -393,8 +398,9 @@ for (const lang of ['pt', 'en']) {
      saíram dela, passaram a correr sobre TODAS as listas medidas — a do país, a
      de cada lugar e o registo inteiro —, em `confereCorrecoes()`, mais abaixo.
      Nenhuma linha de correção do sítio fica fora delas. */
-  const mudaramEm = home.querySelectorAll('.pais-mudou time').map(e=>e.getAttribute('datetime'));
-  if (mudaramEm.some((d,i)=>i>0 && d > mudaramEm[i-1])) erros.push(`C2 ${lang}: as mudanças não estão da mais recente para a mais antiga.`);
+  /* C2 SAIU COM A LISTA DA PRIMEIRA PÁGINA (bloco PP1): a ordem de cada lista que fica (a de cada lugar
+     e o registo) é conferida pela A2 e pela A3, mais abaixo. */
+  if (home.querySelector('main [data-mudou-ambito]')) erros.push(`C2 ${lang}: a lista das mudanças voltou à primeira página; a porta «O que mudou» leva ao registo.`);
 }
 /**
  * A C1 E A M3, SOBRE QUALQUER LISTA DE MUDANÇAS.
@@ -577,7 +583,7 @@ if (registosMedidos !== 2) erros.push(`A3: ${registosMedidos} registos medidos, 
 /* O conhecido-positivo da T9: cartões com referência vistos, e os dois estados. */
 if (!estadosVistos.cartoes || !estadosVistos.fora || !estadosVistos.dentro)
   erros.push(`T9: ${estadosVistos.cartoes} cartões com referência vistos (${estadosVistos.fora} fora, ${estadosVistos.dentro} dentro); a célula tem de ver os dois estados.`);
-console.log(`T9: ${estadosVistos.cartoes} cartões com valor de referência na primeira página e nos temas, ${estadosVistos.fora} fora e ${estadosVistos.dentro} dentro, cada um com a cor do seu estado.`);
+console.log(`T9: ${estadosVistos.cartoes} cartões com valor de referência nos temas e nas entradas, ${estadosVistos.fora} fora e ${estadosVistos.dentro} dentro, cada um com a cor do seu estado.`);
 console.log(`B1 país: ${reunidas.length} medidas, ${new Set(Object.values(DOMINIO_DAS_MEDIDAS)).size} temas, ${paginas} menus, ${MUDANCAS_DO_PROJETO.length} mudanças declaradas, ${listasMedidas} listas com teto ${TETO}, ${registosMedidos} registos de ${chavesDoRegisto.size} mudanças, ${titulosMedidos} títulos de edição.`);
 if (erros.length) { console.error(erros.join('\n')); process.exitCode = 1; }
 else console.log('B1 país: todas as conferências a 0.');

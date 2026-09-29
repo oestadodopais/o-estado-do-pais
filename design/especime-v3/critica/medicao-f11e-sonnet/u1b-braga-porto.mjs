@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import { abrePagina, BASE, medirAlvosNoNavegador, pontosEmEcraNoNavegador, mediana } from './lib.mjs';
 
-const RAIZ = '/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
+const RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 
 async function medirUnidadeCrescida(slugUnidade, width) {

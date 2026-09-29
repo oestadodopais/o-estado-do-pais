@@ -1,10 +1,10 @@
 
 ═══ preparação ═══
-  antes  (main, http://localhost:4612) <- /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-antes-mapa
-  depois (ramo, http://localhost:4611) <- /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-mapa-depois
-  porto 4611 livre. a iniciar: python3 -m http.server 4611  (cwd=/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-mapa-depois)
+  antes  (main, http://localhost:4612) <- /private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-antes-mapa
+  depois (ramo, http://localhost:4611) <- /private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-mapa-depois
+  porto 4611 livre. a iniciar: python3 -m http.server 4611  (cwd=/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-mapa-depois)
   servidor pronto em http://localhost:4611
-  porto 4612 livre. a iniciar: python3 -m http.server 4612  (cwd=/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-antes-mapa)
+  porto 4612 livre. a iniciar: python3 -m http.server 4612  (cwd=/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-antes-mapa)
   servidor pronto em http://localhost:4612
 
 ═══ 1 · O mapa não cresce ═══

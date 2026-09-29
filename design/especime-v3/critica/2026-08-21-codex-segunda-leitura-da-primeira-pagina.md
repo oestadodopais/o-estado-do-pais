@@ -182,7 +182,7 @@ The eight threshold occurrences are particularly consequential: colour is permit
 
 **Where:** the build prints row-backed distances such as `−18 pontos`, `23`, `22`, `29`, `45`, and `74`. Examples appear in [estados/estado_densidade_leitura.txt:228](estados/estado_densidade_leitura.txt:228) and the regional state dumps.
 
-[direcao.md:84](/private/tmp/claude-501/-Users/nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/codex-inicio/leitura/docs/direcao.md:84), and the acceptance wording in this review, say no printed numeric distance in phase 1. However, [PLANO-extractos.md:15](/private/tmp/claude-501/-Users/nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/codex-inicio/leitura/docs/PLANO-extractos.md:15) explicitly clarifies that row-backed regional distances may render.
+[direcao.md:84](/private/tmp/claude-501/-Users/UTILIZADOR/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/codex-inicio/leitura/docs/direcao.md:84), and the acceptance wording in this review, say no printed numeric distance in phase 1. However, [PLANO-extractos.md:15](/private/tmp/claude-501/-Users/UTILIZADOR/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/codex-inicio/leitura/docs/PLANO-extractos.md:15) explicitly clarifies that row-backed regional distances may render.
 
 **Why it matters:** this cannot be decided from the files because the two binding descriptions disagree. The numbers are row-backed, so they satisfy the later plan clarification, but they fail the literal Emenda/acceptance requirement. The director would be asked to resolve his own rule while viewing the page.
 

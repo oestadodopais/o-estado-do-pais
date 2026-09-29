@@ -1,0 +1,29 @@
+{
+ "comando": "node scripts/verify-depois-do-build.mjs --json <rascunho>/ci1-construtor/medicoes/depois-B1-p10.resultado.json",
+ "inicio": "2026-09-28T18:35:51.807Z",
+ "fim": "2026-09-28T18:39:17.280Z",
+ "segundos": 205.473,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": [
+   "61965   0.0 npm run build",
+   "61987   0.0 sh -c npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cart",
+   "62413 101.2 node <tmp>/oedp-valor-revisto-bbFgaf/node_modules/.bin/astro build"
+  ]
+ },
+ "astro_build": null,
+ "paginas_do_astro": null,
+ "passos": []
+}

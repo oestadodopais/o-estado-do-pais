@@ -9,11 +9,11 @@ Cada comando no seu, e o código de saída lido do ficheiro em que ele o
 escreveu (`npm run <portao> > log 2>&1 ; echo $? > exit`), e nunca de memória:
 
   npm run build  ->  0
-      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-build.exit
+      o ficheiro: /private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-build.exit
   npm run verify  ->  0
-      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-verify.exit
+      o ficheiro: /private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-verify.exit
   npm run typecheck  ->  0
-      o ficheiro: /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-typecheck.exit
+      o ficheiro: /private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/k-typecheck.exit
 
 A primeira redação do bloco, sobre a cabeça 1e8058c0, deu os mesmos três zeros.
 

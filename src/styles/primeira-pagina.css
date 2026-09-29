@@ -1,0 +1,366 @@
+/* ============================================================
+   A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026)
+
+   Os cinco blocos de «O que se passa», os seus desenhos, as seis entradas e as páginas das
+   entradas. É a folha da maqueta que o diretor viu (`design/especime-v3/medicoes/pp1-2026-09-28/
+   maqueta/estilos/primeira-pagina.css`), trazida para a marcação do sítio, e cada cor, tipo e
+   espaço lê as fichas de `tokens.css`: o papel, a tinta, os três cinzentos, o âmbar e o seu
+   contorno. A cor aparece numa regra só, a linha do valor de referência (`IDENTIDADE.md` §2).
+   ============================================================ */
+
+/* ── «O que se passa» ─────────────────────────────────────────── */
+
+.pp-o-que-se-passa { margin-top: clamp(4px, 1vw, 12px); }
+.pp-o-que-se-passa-k {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: lowercase;
+  color: var(--ink);
+  margin: 0;
+}
+.pp-data {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.pp-blocos { margin-top: 12px; border-top: 1.5px solid var(--ink); }
+.pp-blocos-entrada { margin-top: 20px; }
+.pp-bloco { padding: 14px 0 20px; min-width: 0; }
+.pp-bloco + .pp-bloco { border-top: 1px solid var(--rule); }
+
+.pp-titulo {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: .05em;
+  text-transform: lowercase;
+  color: var(--ink);
+  margin: 0;
+}
+.pp-frase {
+  font-family: var(--f-prosa);
+  font-size: clamp(19px, calc(15px + 1.05vw), 25px);
+  font-weight: 400;
+  line-height: 1.34;
+  letter-spacing: -.006em;
+  color: var(--ink);
+  max-width: 31em;
+  margin: 7px 0 0;
+  text-wrap: pretty;
+}
+/* Um valor de uma frase: Bitter, algarismos versais tabulares, nunca partido, com o selo ao lado. */
+.pp-frase .claim-com-chip, .pp-peca .claim-com-chip, .pp-caixa .claim-com-chip {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  white-space: nowrap;
+}
+.pp-frase .claim-value, .pp-frase .claim-sufixo,
+.pp-peca .claim-value, .pp-peca .claim-sufixo,
+.pp-caixa .claim-value, .pp-caixa .claim-sufixo {
+  font-family: var(--f-instr);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.pp-frase .claim-sufixo, .pp-peca .claim-sufixo, .pp-caixa .claim-sufixo { white-space: pre; }
+.pp-frase .src-chip, .pp-peca .src-chip, .pp-caixa .src-chip { margin-inline-start: 4px; }
+
+/* ── os desenhos ─────────────────────────────────────────────── */
+
+.pp-desenho { margin: 14px 0 0; min-width: 0; }
+.pp-legenda {
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  font-variant-numeric: lining-nums proportional-nums;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.pp-paineis { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.pp-painel { min-width: 0; }
+.pp-painel-t {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  font-variant-numeric: lining-nums proportional-nums;
+  color: var(--ink);
+  margin: 0 0 6px;
+  text-wrap: balance;
+}
+
+/* As filas: o nome por cima da barra no telemóvel, ao lado a partir de 640 px. */
+.pp-filas { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 4px; }
+.pp-fila { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 1px; min-width: 0; margin: 0; }
+.pp-rotulo { font-family: var(--f-instr); font-size: 12.5px; line-height: 1.3; color: var(--muted); min-width: 0; }
+.pp-rotulo .pp-rotulo-nome { font: inherit; color: inherit; }
+.pp-traco { display: flex; align-items: center; min-width: 0; height: 20px; border-left: 1px solid var(--ink); }
+.pp-barra { flex: none; display: block; height: 11px; background: var(--g2); }
+.pp-valor { flex: 1 1 0; min-width: 0; height: 20px; overflow: visible; }
+.pp-valor text {
+  font-family: var(--f-instr);
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  fill: var(--muted);
+}
+.pp-fila.is-forte .pp-rotulo, .pp-pt .pp-rotulo { color: var(--ink); }
+.pp-fila.is-forte .pp-barra, .pp-pt .pp-barra { background: var(--ink); }
+.pp-fila.is-forte .pp-valor text, .pp-pt .pp-valor text { fill: var(--ink); }
+.pp-ue .pp-barra { background: var(--g2); }
+.pp-total { margin-top: 3px; padding-top: 5px; border-top: 1px solid var(--rule-strong); }
+.pp-total .pp-rotulo { font-weight: 600; }
+/* Nos pares, Portugal e a União têm nomes curtos: ficam ao lado da barra em todas as larguras. */
+.pp-desenho-pares .pp-fila, .pp-desenho-paineis .pp-fila { grid-template-columns: 6.6rem minmax(0, 1fr); column-gap: 8px; align-items: center; }
+.pp-desenho-pares .pp-escala, .pp-desenho-paineis .pp-escala { margin-left: calc(6.6rem + 8px); }
+.pp-desenho-pares .pp-filas, .pp-desenho-paineis .pp-filas { row-gap: 2px; }
+/* O rácio cortado em unidades: um corte de papel no fim de cada unidade. A regra é mais forte do
+   que a da barra de Portugal (que pinta a barra inteira), para os cortes se verem nas duas. */
+.pp-painel .pp-fila .pp-barra.pp-barra-unidades {
+  background: repeating-linear-gradient(to right, var(--c) 0 calc(100% / var(--pp-unidades) - 2px), transparent calc(100% / var(--pp-unidades) - 2px) calc(100% / var(--pp-unidades)));
+}
+.pp-painel .pp-pt .pp-barra.pp-barra-unidades { --c: var(--ink); }
+.pp-painel .pp-ue .pp-barra.pp-barra-unidades { --c: var(--g2); }
+/* As pontas de uma escala escrita, por baixo da faixa, no sítio do seu valor. */
+.pp-escala { position: relative; height: 16px; margin: 2px 0 0; border-left: 1px solid transparent; }
+.pp-escala-ponta {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-family: var(--f-instr);
+  font-size: 11.5px;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+}
+.pp-escala-ponta:first-child { transform: none; }
+
+/* As colunas: dois painéis que não se ligam, a mesma escala, uma área de altura fixa. */
+.pp-desenho-colunas { max-width: 34rem; }
+.pp-desenho-colunas .pp-paineis { display: flex; align-items: stretch; gap: 0; }
+.pp-painel-colunas { display: flex; flex-direction: column; flex: 1 1 0; min-width: 0; }
+.pp-painel-colunas.pp-com-referencia { flex: 2.2 1 0; }
+.pp-painel-colunas + .pp-painel-colunas { border-left: 1px solid var(--rule); margin-left: 14px; padding-left: 14px; }
+.pp-painel-colunas .pp-painel-t { flex: 1 0 auto; }
+.pp-plot {
+  --pp-altura: 170px;
+  position: relative;
+  height: var(--pp-altura);
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(var(--pp-colunas), 40px);
+  column-gap: 10px;
+  justify-content: end;
+  border-bottom: 1px solid var(--ink);
+}
+.pp-col { position: relative; height: 100%; min-width: 0; }
+.pp-col-barra { position: absolute; left: 0; right: 0; display: block; background: var(--g2); }
+.pp-col.pp-pt .pp-col-barra { background: var(--ink); }
+.pp-col-valor { position: absolute; left: -12px; width: calc(100% + 24px); height: 20px; margin-bottom: 4px; overflow: visible; }
+.pp-col-valor text {
+  font-family: var(--f-instr);
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  fill: var(--ink);
+}
+.pp-col.pp-ue .pp-col-valor text { fill: var(--muted); }
+.pp-col-periodos {
+  display: grid;
+  grid-template-columns: repeat(var(--pp-colunas), 40px);
+  column-gap: 10px;
+  justify-content: end;
+  margin-top: 5px;
+}
+.pp-col-periodo {
+  font-family: var(--f-instr);
+  font-size: 12.5px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+/* A linha do valor de referência: âmbar com contorno de tinta, como o marcador do sítio. */
+.pp-ref {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5px;
+  margin-bottom: -2.5px;
+  background: var(--amber);
+  border-block: 1px solid var(--onamber);
+  z-index: 1;
+  pointer-events: none;
+}
+.pp-ref-rotulo {
+  position: absolute;
+  left: 0;
+  margin: 0 0 7px;
+  max-width: calc(100% - 110px);
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--ink);
+  z-index: 2;
+}
+
+/* ── o aparelho de cada bloco ────────────────────────────────── */
+
+.pp-peca {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 38em;
+  margin: 12px 0 0;
+}
+.pp-caixa {
+  border: 1px solid var(--rule);
+  border-top: 1.5px solid var(--ink);
+  padding: 8px 12px 10px;
+  max-width: 38em;
+  margin: 12px 0 0;
+}
+.pp-caixa-t { font-family: var(--f-prosa); font-size: 15px; font-weight: 600; line-height: 1.35; margin: 0 0 4px; }
+.pp-caixa-texto { font-family: var(--f-prosa); font-size: 14.5px; line-height: 1.45; margin: 0; }
+.pp-ressalva {
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 38em;
+  margin: 10px 0 0;
+}
+.pp-fonte {
+  font-family: var(--f-instr);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+.pp-fonte-k::after { content: ': '; }
+.pp-fonte-item + .pp-fonte-item::before { content: ' · '; }
+.pp-fonte-publicador::after { content: ', '; }
+.pp-fonte-periodo + .pp-fonte-periodo::before { content: ', '; }
+
+.pp-numeros { margin: 6px 0 0; font-family: var(--f-instr); font-size: 13px; color: var(--muted); }
+.pp-numeros > summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  cursor: pointer;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+.pp-numeros[open] > summary { color: var(--ink); }
+.pp-numeros-lista { list-style: none; margin: 0 0 4px; padding: 0; border-top: 1px solid var(--rule); }
+.pp-numero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 12px;
+  row-gap: 1px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.pp-numero-nome { grid-column: 1 / -1; color: var(--ink); min-width: 0; }
+.pp-numero-onde::before { content: ' · '; color: var(--muted); }
+.pp-numero-valor .claim-value, .pp-numero-valor .claim-sufixo { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; }
+.pp-numero-valor .claim-sufixo { white-space: pre; }
+.pp-numero-valor .claim-com-chip { display: inline-flex; flex-wrap: nowrap; gap: 0; white-space: nowrap; align-items: baseline; }
+.pp-numero-valor .src-chip { margin-inline-start: 6px; }
+.pp-numero-periodo { color: var(--muted); text-align: right; white-space: nowrap; }
+
+/* ── «Por onde começar», os lugares e as portas ──────────────── */
+
+.pp-sec-k {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: lowercase;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.pp-entradas { margin-top: clamp(22px, 3vw, 40px); padding-top: 18px; border-top: 1.5px solid var(--ink); }
+.pp-entradas-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); }
+.pp-entradas-lista li { border-bottom: 1px solid var(--rule); min-width: 0; }
+.pp-entrada {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 12px;
+  row-gap: 1px;
+  align-items: center;
+  padding: 11px 0 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.pp-entrada-nome { grid-column: 1; font-family: var(--f-prosa); font-size: 20px; font-weight: 500; line-height: 1.25; letter-spacing: -.01em; }
+.pp-entrada-linha { grid-column: 1; font-family: var(--f-prosa); font-size: 15px; line-height: 1.4; color: var(--muted); }
+.pp-entrada::after { content: '→'; grid-column: 2; grid-row: 1 / span 2; font-family: var(--f-prosa); font-size: 19px; color: var(--muted); }
+.pp-entrada:hover .pp-entrada-nome { text-decoration: underline; text-underline-offset: 4px; }
+
+.pp-lugares { margin-top: clamp(30px, 4vw, 52px); padding-top: 18px; border-top: 1px solid var(--rule); }
+.pp-lugares-grelha { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.pp-mapa .mapa-tela { width: 100%; max-width: 360px; }
+
+.pp-veredicto .pais-leitura { font-size: clamp(18px, 1.9vw, 22px); }
+.pp-portas { margin-top: clamp(26px, 3.4vw, 40px); display: flex; flex-wrap: wrap; gap: 0 28px; }
+.pp-portas .regra-portas { margin-top: 0; }
+.pp-portas .regra-portas a, .pp-veredicto .regra-portas a, .entrada-portas a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ── as páginas das entradas ─────────────────────────────────── */
+
+.entrada-titulo { font-family: var(--f-prosa); font-size: clamp(28px, 4.4vw, 42px); font-weight: 400; line-height: 1.15; margin: 4px 0 6px; }
+.entrada-linha { font-family: var(--f-prosa); font-size: clamp(17px, 1.6vw, 19px); line-height: 1.45; color: var(--muted); max-width: 36em; margin: 0; }
+.entrada-seccao { margin-top: clamp(26px, 3.4vw, 42px); }
+.entrada-seccao-k { color: var(--ink); }
+.entrada-portas { margin-top: clamp(26px, 3.4vw, 40px); }
+
+/* ── a partir de 640 px: os nomes ao lado das barras, os painéis lado a lado ── */
+
+@media (width >= 640px) {
+  .pp-desenho-barras .pp-filas { row-gap: 0; }
+  .pp-desenho-barras .pp-fila { grid-template-columns: 13.5rem minmax(0, 1fr); column-gap: 12px; align-items: center; }
+  .pp-desenho-barras .pp-traco { height: 30px; }
+  .pp-desenho-barras .pp-escala { margin-left: calc(13.5rem + 12px); }
+  .pp-desenho-pares .pp-fila, .pp-desenho-paineis .pp-fila { grid-template-columns: 7.5rem minmax(0, 1fr); column-gap: 10px; align-items: center; }
+  .pp-desenho-pares .pp-escala, .pp-desenho-paineis .pp-escala { margin-left: calc(7.5rem + 10px); }
+  .pp-desenho-paineis .pp-paineis-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(22px, 3vw, 34px); row-gap: 0; }
+  .pp-desenho-paineis .pp-paineis-2 > .pp-painel { display: grid; grid-row: span 3; grid-template-rows: subgrid; }
+  .pp-desenho-paineis .pp-paineis-2 .pp-painel-t { align-self: end; }
+  .pp-entradas-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(20px, 3vw, 34px); }
+  .pp-plot { --pp-altura: 200px; grid-template-columns: repeat(var(--pp-colunas), 48px); column-gap: 14px; }
+  .pp-col-periodos { grid-template-columns: repeat(var(--pp-colunas), 48px); column-gap: 14px; }
+}
+
+/* ── a partir de 1 024 px: a frase à esquerda, o desenho à direita ── */
+
+@media (width >= 1024px) {
+  .pp-bloco {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: clamp(40px, 4.6vw, 68px);
+    grid-template-areas: "titulo titulo" "frase desenho" "notas desenho";
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+  }
+  .pp-titulo { grid-area: titulo; }
+  .pp-frase { grid-area: frase; margin-top: 10px; }
+  .pp-desenho { grid-area: desenho; margin-top: 14px; }
+  .pp-notas { grid-area: notas; }
+  .pp-entradas-lista { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pp-lugares-grelha { grid-template-columns: minmax(0, 1fr) 360px; column-gap: clamp(24px, 3vw, 48px); align-items: start; }
+  .pp-plot { --pp-altura: 220px; grid-template-columns: repeat(var(--pp-colunas), 54px); column-gap: 16px; }
+  .pp-col-periodos { grid-template-columns: repeat(var(--pp-colunas), 54px); column-gap: 16px; }
+}

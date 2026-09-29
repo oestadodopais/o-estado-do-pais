@@ -1,0 +1,5 @@
+# A planta da página antiga no dist/ (29.09.2026): o gate:html com o detetor alargado, código 1
+  o nome de quem responde · 0 ficheiro(s) com o nome em 307 lido(s) de src/ e public/
+  portão de HTML · 7432 páginas · 2659/3009 afirmações citadas fora do livro-razão · 6018 páginas de linha · 6018 títulos de linha com o valor e a unidade separados · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo · 1 página(s) com o nome de quem responde
+  O PORTÃO DE HTML FECHOU — 3 erro(s):
+    ✗ esta página rende o nome de quem responde, e desde 15.09.2026 (§1.108, §1.109) nenhuma página do sítio o diz. Se o nome tiver de voltar, volta por decisão escrita em `DECISIONS.md`, e esta célula muda com ela.

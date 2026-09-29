@@ -28,7 +28,7 @@
 
 - **The English approved policy sentence is corrupted in the supplied source.**
 
-  File: [fonte/src/data/politica-ia.mjs:163](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:163>)
+  File: [fonte/src/data/politica-ia.mjs:163](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:163>)
 
   Quoted text: `responsibility, sets the rules and refusals, and answers for it.`
 
@@ -38,19 +38,19 @@
 
 - **The Portuguese front-page sample has the wrong approved label.**
 
-  File: [paginas/pt-inicio.html:1](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/paginas/pt-inicio.html:1>)
+  File: [paginas/pt-inicio.html:1](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/paginas/pt-inicio.html:1>)
 
-  Quoted text: `Texto gerado por IA sobre a política da casa · responsável editorial: Nuno dos Santos`
+  Quoted text: `Texto gerado por IA sobre a política da casa · responsável editorial: [o diretor]`
 
   `sobre` replaces the approved `sob`. This is a character-for-character failure.
 
-  Correct value: `Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos`
+  Correct value: `Texto gerado por IA sob a política da casa · responsável editorial: [o diretor]`
 
   This page could not have passed the supplied gate in its current form, so the sample and the report’s claimed green build cannot represent the same output.
 
 - **The “character-for-character” gate uses the mutable rendering source as its oracle.**
 
-  Files: [gate-html.mjs:4044](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4044>), [gate-html.mjs:4171](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4171>)
+  Files: [gate-html.mjs:4044](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4044>), [gate-html.mjs:4171](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4171>)
 
   Quoted code: `const esperado = textoDoRotulo(linguaPagina);` and `const esperada = FRASE_DA_POLITICA[declarada];`
 
@@ -62,7 +62,7 @@
 
 - **The top-label rule checks only a marker count, not the label.**
 
-  File: [gate-html.mjs:4107](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4107>)
+  File: [gate-html.mjs:4107](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4107>)
 
   Quoted code: `const esperadoNoTopo = rota?.key === 'texto' ? 1 : 0;`
 
@@ -72,7 +72,7 @@
 
 - **A page can have no perceivable label and still pass the all-page gate.**
 
-  File: [gate-html.mjs:4074](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4074>)
+  File: [gate-html.mjs:4074](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4074>)
 
   Quoted checks: `hidden`, `aria-hidden="true"`, and `class="vh"`.
 
@@ -84,7 +84,7 @@
 
 - **Most new public strings are absent from the voice inventory.**
 
-  Files: [INVENTARIO-FRASES.md:1600](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/INVENTARIO-FRASES.md:1600>), [politica-ia.mjs:155](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:155>)
+  Files: [INVENTARIO-FRASES.md:1600](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/INVENTARIO-FRASES.md:1600>), [politica-ia.mjs:155](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:155>)
 
   Quoted inventory claim: `Quatro cadeias novas`
 
@@ -99,9 +99,9 @@
 
 - **The four added inventory entries are misclassified as navigation.**
 
-  File: [INVENTARIO-FRASES.md:1639](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/INVENTARIO-FRASES.md:1639>)
+  File: [INVENTARIO-FRASES.md:1639](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/INVENTARIO-FRASES.md:1639>)
 
-  Quoted entries include: `navegacao | Director: Nuno dos Santos · Free publication` and `navegacao | Texto gerado por IA sob a política da casa...`
+  Quoted entries include: `navegacao | Director: [o diretor] · Free publication` and `navegacao | Texto gerado por IA sob a política da casa...`
 
   The director/free line contains no link or command at all. The AI label describes authorship, policy, and editorial responsibility, which the inventory’s own definition places under `autorreferencia`. A legal obligation does not turn disclosure into navigation.
 
@@ -109,7 +109,7 @@
 
 - **Several new policy strings argue for trust instead of merely stating the policy.**
 
-  File: [politica-ia.mjs:189](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:189>)
+  File: [politica-ia.mjs:189](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:189>)
 
   Exact examples:
 
@@ -128,7 +128,7 @@
 
 - **The English gratuitity wording is ambiguous and not the requested “free of charge” statement.**
 
-  Files: [politica-ia.mjs:147](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:147>), [paginas/en-inicio.html:1](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/paginas/en-inicio.html:1>)
+  Files: [politica-ia.mjs:147](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:147>), [paginas/en-inicio.html:1](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/paginas/en-inicio.html:1>)
 
   Quoted text: `Free publication`
 
@@ -138,7 +138,7 @@
 
 - **The “no new number” claim is literally false, and the claimed count of model names is wrong.**
 
-  Files: [politica-ia.mjs:274](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:274>), [relatorio-construtor.md:125](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:125>)
+  Files: [politica-ia.mjs:274](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:274>), [relatorio-construtor.md:125](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:125>)
 
   Report quote: `as cadeias novas não trazem um único algarismo, e os três nomes de modelo...`
 
@@ -153,7 +153,7 @@
 
 - **The browser plant runner does not test what its comments and report claim.**
 
-  File: [tests/inicio/rotulo.mjs:619](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/tests/inicio/rotulo.mjs:619>)
+  File: [tests/inicio/rotulo.mjs:619](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/tests/inicio/rotulo.mjs:619>)
 
   Quoted code: `if (planta.celulas.includes(chave)) await CORRIDAS[chave]();`
 
@@ -168,7 +168,7 @@
 
 - **The language checks can pass individual unmarked or wrong-language disclosures.**
 
-  Files: [check-lingua.mjs:802](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/check-lingua.mjs:802>), [gate-html.mjs:4171](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4171>)
+  Files: [check-lingua.mjs:802](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/check-lingua.mjs:802>), [gate-html.mjs:4171](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4171>)
 
   The label gate does not require exactly one `data-rotulo-nome` inside every label. On one English page, the name can remain as plain text without `lang="pt-PT"` and still satisfy the flattened exact text; L9 sees no marked name on that page but its site-wide positive minimum remains non-zero.
 
@@ -178,7 +178,7 @@
 
 - **The schema.org change is unsupported by evidence present in the folder.**
 
-  Files: [politica-ia.mjs:67](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:67>), [relatorio-construtor.md:326](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:326>)
+  Files: [politica-ia.mjs:67](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:67>), [relatorio-construtor.md:326](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:326>)
 
   Quoted claim: ``digitalSourceType` with `TrainedAlgorithmicMediaDigitalSource`, lidos na fonte em schema.org`
 
@@ -188,7 +188,7 @@
 
 - **The supplied report contains an impossible and externally altered page count.**
 
-  Files: [relatorio-construtor.md:10](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:10>), [fonte/design/especime-v3/medicoes/rotulo-construtor.md:10](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/medicoes/rotulo-construtor.md:10>)
+  Files: [relatorio-construtor.md:10](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:10>), [fonte/design/especime-v3/medicoes/rotulo-construtor.md:10](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/medicoes/rotulo-construtor.md:10>)
 
   Quoted text: `6 950 das 6 590 páginas construídas`
 
@@ -198,7 +198,7 @@
 
 - **Most measured results in the report have no supporting artefact in this folder.**
 
-  File: [relatorio-construtor.md:113](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:113>)
+  File: [relatorio-construtor.md:113](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/relatorio-construtor.md:113>)
 
   Unsupported result groups include:
 
@@ -214,13 +214,13 @@
 
 - **The gate does not enforce which words form the policy link.**
 
-  File: [gate-html.mjs:4062](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4062>)
+  File: [gate-html.mjs:4062](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/scripts/gate-html.mjs:4062>)
 
   It verifies that some link in the label has the correct destination. Because it separately compares only flattened text, another part of the sentence could be linked while `a política da casa` or `the house policy` remains plain text. The supplied samples wrap the correct words, but the rule does not enforce that requirement.
 
 - **Several English policy phrases are unnatural even apart from the voice defect.**
 
-  File: [politica-ia.mjs:194](</private/tmp/claude-501/-Users-nunosantos/Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:194>)
+  File: [politica-ia.mjs:194](</private/tmp/claude-501/-Users-UTILIZADOR/Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/data/politica-ia.mjs:194>)
 
   Quoted text includes `pretend to a review`, `measures blind`, and `reads cold`.
 
@@ -228,7 +228,7 @@
 
 - **The report’s `648 pages` is arithmetically plausible but not demonstrated.**
 
-  Files: [EstudoView.astro:138](</private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/views/EstudoView.astro:138>), [MunicipioView.astro:181](</private/tmp/claude-501/-Users-nunosantos/Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/views/MunicipioView.astro:181>), [TextoView.astro:130](</private/tmp/claude-501/-Users-nunosantos/Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/views/TextoView.astro:130>)
+  Files: [EstudoView.astro:138](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/views/EstudoView.astro:138>), [MunicipioView.astro:181](</private/tmp/claude-501/-Users-UTILIZADOR/Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/views/MunicipioView.astro:181>), [TextoView.astro:130](</private/tmp/claude-501/-Users-UTILIZADOR/Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/src/views/TextoView.astro:130>)
 
   The property was added to three `Article` views, and the municipality and reading samples show it. The complete route population needed to prove `648` is absent.
 
@@ -239,7 +239,7 @@
 - I inspected all nine sampled pages. They contain nine footer labels plus one study-reading top label. Apart from the Portuguese home’s `sobre`/`sob` defect, their label text, policy-link destination and linked words are correct. All English label/director-name occurrences carry `lang="pt-PT"`; Portuguese occurrences correctly inherit `pt-PT` without a redundant mark.
 - The four rendered policy paragraphs in `/sobre`, `/metodo`, `/en/about`, and `/en/method` match the approved copy. This conflicts with the damaged English source, confirming that the samples were not built from the supplied source state.
 - The study-reading sample places its top label before the document body.
-- The two home samples contain `Nuno dos Santos`; their language marks are correct. The Portuguese gratuitity wording is `Publicação gratuita`.
+- The two home samples contain `[o diretor]`; their language marks are correct. The Portuguese gratuitity wording is `Publicação gratuita`.
 - The inventory’s after-counts of `586` classified rows and `510` live rows are directly countable, and `diff.patch` adds four rows, supporting `582 → 586` and `506 → 510`. This does not support the separate `701 → 705` runtime voice count.
 - No diff path touches `ledger/`, the site name, masthead, marks, font files, or font definitions. The new CSS assigns existing typography variables to the new elements but does not change the typeface system.
 - I performed static checks only. The package does not contain the complete project, dependencies, `dist/`, or measurement outputs needed to run or reproduce the reported build and browser results. No network was used.

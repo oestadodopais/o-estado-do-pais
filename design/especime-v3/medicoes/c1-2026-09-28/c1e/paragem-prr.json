@@ -1,0 +1,213 @@
+{
+  "cabeca_da_direcao": "5c862efb38055965618a9d29f26ac12a25ac99eb",
+  "linhas": [
+    {
+      "id": "evora-prr-aprovado-2026",
+      "access_date": "2026-08-20",
+      "historias_de_acesso": [],
+      "entradas_anteriores": [
+        {
+          "date": "2026-08-15",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+          "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+          "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+          "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+          "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+        }
+      ],
+      "erros": [
+        "[evora-prr-aprovado-2026.yml] história de \"source_url\" a 2026-08-15: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20)."
+      ]
+    },
+    {
+      "id": "evora-prr-municipio-contratado",
+      "access_date": "2026-08-20",
+      "historias_de_acesso": [],
+      "entradas_anteriores": [
+        {
+          "date": "2026-08-15",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+          "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+          "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+          "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+          "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+        }
+      ],
+      "erros": [
+        "[evora-prr-municipio-contratado.yml] história de \"source_url\" a 2026-08-15: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-municipio-contratado.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-municipio-contratado.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20)."
+      ]
+    },
+    {
+      "id": "evora-prr-pago-2026",
+      "access_date": "2026-08-20",
+      "historias_de_acesso": [],
+      "entradas_anteriores": [
+        {
+          "date": "2026-08-15",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+          "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+          "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+          "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+          "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+        }
+      ],
+      "erros": [
+        "[evora-prr-pago-2026.yml] história de \"source_url\" a 2026-08-15: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-pago-2026.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-pago-2026.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20)."
+      ]
+    },
+    {
+      "id": "evora-prr-universidade-contratado",
+      "access_date": "2026-08-20",
+      "historias_de_acesso": [],
+      "entradas_anteriores": [
+        {
+          "date": "2026-08-15",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+          "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+          "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+          "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+          "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "excerpt",
+          "old_value": "NIF 501201920 \"Universidade de Évora\" \"contratado_neste_concelho\": 38596975.81",
+          "new_value": "NIF 501201920 \"UNIVERSIDADE DE ÉVORA\" \"contratado_neste_concelho\": 38596975.81",
+          "reason": "O excerto transcreve a linha lida no registo de entidades do PRR. No instantâneo de 2026-08-17 o publicador escreve o nome da entidade em maiúsculas, «UNIVERSIDADE DE ÉVORA», onde no de 2026-08-03 escrevia «Universidade de Évora». O valor não muda: a grafia é da fonte, e o excerto transcreve o que a fonte escreve.",
+          "reason_en": "The excerpt transcribes the line read in the PRR entities register. In the 2026-08-17 snapshot the publisher writes the entity's name in capitals, «UNIVERSIDADE DE ÉVORA», where in the 2026-08-03 one it wrote «Universidade de Évora». The value does not change: the spelling is the source's, and the excerpt transcribes what the source writes."
+        }
+      ],
+      "erros": [
+        "[evora-prr-universidade-contratado.yml] história de \"source_url\" a 2026-08-15: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-universidade-contratado.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-universidade-contratado.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-universidade-contratado.yml] história de \"excerpt\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20)."
+      ]
+    },
+    {
+      "id": "evora-prr-vencido-aprovado-2026",
+      "access_date": "2026-08-20",
+      "historias_de_acesso": [],
+      "entradas_anteriores": [
+        {
+          "date": "2026-08-15",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx",
+          "new_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "reason": "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido: o que o endereço novo serve é um instantâneo posterior.",
+          "reason_en": "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served: what the new address serves is a later snapshot."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda.",
+          "reason_en": "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+        },
+        {
+          "date": "2026-08-18",
+          "kind": "proveniencia",
+          "field": "source_url",
+          "old_value": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx",
+          "new_value": "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1",
+          "reason": "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre».",
+          "reason_en": "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+        }
+      ],
+      "erros": [
+        "[evora-prr-vencido-aprovado-2026.yml] história de \"source_url\" a 2026-08-15: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-vencido-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20).",
+        "[evora-prr-vencido-aprovado-2026.yml] história de \"source_url\" a 2026-08-18: a entrada é anterior ao acesso em vigor (2026-08-20)."
+      ]
+    }
+  ],
+  "linhas_afetadas": 5,
+  "entradas_anteriores": 16,
+  "decisao": "Ponto parado. Não alterar a história ou os acessos sem prova. A guarda mantém a falha."
+}

@@ -793,7 +793,7 @@ cada linha:
 | `corrections_at_export` | quantas correcções a linha tinha quando atravessou |
 | `crop_sha256` | o resumo do recorte que atravessou com ela, quando há recorte |
 | `exported_at` | quando estes bytes mudaram pela última vez |
-| `site_corrections` | as correcções feitas deste lado e aceites, com o resumo antes e depois |
+| `site_corrections` | as edições aceites deste lado, com a data da edição, os resumos e as contagens `corrections_before` e `corrections_after` |
 
 `scripts/check-cruzamento.mjs` corre em cada build, **sem rede e sem o motor
 presente** — o construtor é remoto e o motor não existe lá — e exige três coisas:
@@ -853,7 +853,14 @@ pára o build. Há dois caminhos, e nenhum é silencioso:
    **crescido** e que o `value` publicado seja o `new_value` da correcção mais
    recente. Sem as duas, recusa — de outro modo seria uma maneira de fazer passar
    qualquer edição por correcção. O registo guarda o resumo antigo e o novo, e
-   nada é apagado.
+   nada é apagado. A data desta aceitação é a da edição no sítio, não a data
+   histórica de uma entrada reconstituída. `exported_at` acompanha essa edição;
+   `corrections_at_export` conserva a contagem da última travessia. Enquanto os
+   bytes forem os da última aceitação local, a contagem exigida é o seu
+   `corrections_after`. Uma reexportação volta a declarar a contagem que
+   atravessou, conservando a história das aceitações. Uma afinação autorizada
+   apenas das razões mantém iguais as contagens antes e depois e regista os
+   dois resumos, sem simular entradas acrescentadas.
 
 **Uma correcção continua sempre possível.** O que deixa de ser possível é uma
 alteração sem rasto.
@@ -970,6 +977,17 @@ quando o valor novo foi lido noutro dia. A atualização descreve a mudança do
 número; a proveniência descreve o acesso e conserva a prova da leitura anterior.
 A entrada de proveniência não muda o número por si. As duas entradas não se
 substituem e não apagam as reconferências feitas sobre o valor anterior.
+
+**A cadeia de cada campo (C1e).** O livro percorre todas as entradas tipadas de
+`source`, `source_url`, `access_date`, `document.title`, `document.edition`,
+`document.locator` e `excerpt`. A partir da segunda entrada, cada `old_value` tem de ser o valor anterior e
+o último `new_value` tem de ser o campo atual da linha. Nenhuma entrada pode
+ser anterior ao acesso em vigor nesse dia. A exceção dos instantâneos acima
+aplica-se apenas a `source_url`. A máquina não interpreta a razão para conferir
+se a data da entrada é a data que a prosa diz: essa concordância continua a
+precisar de leitura humana. O primeiro `old_value` de cada cadeia é tomado
+como ponto de partida e não é conferido por esta guarda. Precisa de prova
+externa à cadeia, como os objetos históricos do repositório usados na C1f.
 
 #### O que **não** se regista: as afinações do ponteiro
 

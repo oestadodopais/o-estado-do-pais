@@ -79,6 +79,7 @@
  * próprio, que é o que o comentário acima diz do modo offline.
  */
 
+import { correcoesNoRegisto } from './contagem-do-cruzamento.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -352,7 +353,7 @@ function aceitarCorreccao(id) {
     }
     const bytes = fs.readFileSync(caminho);
     const linha = load(bytes.toString('utf8'));
-    const antes = Number(entrada.corrections_at_export ?? 0);
+    const antes = correcoesNoRegisto(entrada);
     const agora = Array.isArray(linha.corrections) ? linha.corrections.length : 0;
     if (agora <= antes) {
       erros.push(
@@ -377,14 +378,16 @@ function aceitarCorreccao(id) {
     const novo = sha256(bytes);
     const historia = Array.isArray(entrada.site_corrections) ? entrada.site_corrections : [];
     historia.push({
-      date: String(ultima.date),
+      date: new Date().toISOString().slice(0, 10),
+      corrections_before: antes,
+      corrections_after: agora,
       kind: String(ultima.kind),
       sha256_antes: entrada.exported_row_sha256,
       sha256_depois: novo,
     });
     entrada.site_corrections = historia;
     entrada.exported_row_sha256 = novo;
-    entrada.corrections_at_export = agora;
+    entrada.exported_at = historia.at(-1).date;
     fs.writeFileSync(
       reg.caminho,
       JSON.stringify(reg.dados, null, 2).replace(/\n?$/, '\n'),
@@ -846,10 +849,10 @@ function main(argv) {
         porEstudo.set(linha.study, (porEstudo.get(linha.study) ?? 0) + 1);
       }
       const nCorr = Array.isArray(linha?.corrections) ? linha.corrections.length : 0;
-      if (nCorr !== Number(entrada.corrections_at_export ?? 0)) {
+      if (nCorr !== correcoesNoRegisto(entrada)) {
         erros.push(
           `${onde}: a linha tem ${nCorr} correcção(ões) e o registo diz ` +
-            `${entrada.corrections_at_export}. Corra --accept-correction ${id}.`,
+            `${correcoesNoRegisto(entrada)}. Corra --accept-correction ${id}.`,
         );
       }
       /* O recorte: os bytes em public/recortes/ contra o resumo do registo. É a

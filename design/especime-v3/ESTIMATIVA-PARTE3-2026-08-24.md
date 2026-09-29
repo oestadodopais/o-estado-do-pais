@@ -455,7 +455,7 @@ Três coisas mudam na página do estudo, todas pequenas: a porta nova para a lei
 
 **O Método**, regra 9, «A intervenção humana» (`metodo.mjs:533` e `:538`):
 
-> «A direção é de **Nuno dos Santos**, que escolhe o que se publica e responde por ele; não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá.»
+> «A direção é de **[o diretor]**, que escolhe o que se publica e responde por ele; não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá.»
 
 E a regra 8, «O que se mede a seguir» (`metodo.mjs:475`): «A inteligência artificial propõe o que medir, a partir de critérios declarados (…). A direção decide.»
 

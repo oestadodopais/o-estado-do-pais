@@ -1,0 +1,95 @@
+Verificação da maqueta da primeira página nova (v1)
+
+Pedido e livro-razão: 27 linhas na lista, 27 nomeadas no pedido; valores conferidos contra ledger/claims na worktree c1-2026-09-28.
+Valor de referência: 60 % (divida-publica-2025, src/data/enquadramento/referencias.json).
+
+A 390 px, tema claro: 29 números com data-linha (27 linhas distintas de 27), anos 2024, 2025, 2026, 2027 (10 ocorrências), números das palavras fixas 6 de 6, valor de referência 1.
+  desenho · precos: 5 barras, 11.690 px por unidade
+  desenho · casa: 4 barras, 7.743 px por unidade
+  desenho · emprego: 2 barras, 2.646 px por unidade
+  desenho · desemprego: 4 barras, 35.102 px por unidade
+  desenho · divida: 3 barras, 1.613 px por unidade
+  desenho · pobreza: 2 barras, 10.077 px por unidade
+  desenho · s80s20: 2 barras, 43.335 px por unidade
+  desenho · referência: a linha a 96.8 px da base, os 60 a 96.8 px
+  sem falhas
+
+A 1280 px, tema claro: 29 números com data-linha (27 linhas distintas de 27), anos 2024, 2025, 2026, 2027 (10 ocorrências), números das palavras fixas 6 de 6, valor de referência 1.
+  desenho · precos: 5 barras, 10.788 px por unidade
+  desenho · casa: 4 barras, 4.462 px por unidade
+  desenho · emprego: 2 barras, 5.278 px por unidade
+  desenho · desemprego: 4 barras, 70.023 px por unidade
+  desenho · divida: 3 barras, 2.129 px por unidade
+  desenho · pobreza: 2 barras, 5.807 px por unidade
+  desenho · s80s20: 2 barras, 24.974 px por unidade
+  desenho · referência: a linha a 127.7 px da base, os 60 a 127.7 px
+  sem falhas
+
+A 390 px, tema escuro: 29 números com data-linha (27 linhas distintas de 27), anos 2024, 2025, 2026, 2027 (10 ocorrências), números das palavras fixas 6 de 6, valor de referência 1.
+  desenho · precos: 5 barras, 11.690 px por unidade
+  desenho · casa: 4 barras, 7.743 px por unidade
+  desenho · emprego: 2 barras, 2.646 px por unidade
+  desenho · desemprego: 4 barras, 35.102 px por unidade
+  desenho · divida: 3 barras, 1.613 px por unidade
+  desenho · pobreza: 2 barras, 10.077 px por unidade
+  desenho · s80s20: 2 barras, 43.335 px por unidade
+  desenho · referência: a linha a 96.8 px da base, os 60 a 96.8 px
+  sem falhas
+
+A 1280 px, tema escuro: 29 números com data-linha (27 linhas distintas de 27), anos 2024, 2025, 2026, 2027 (10 ocorrências), números das palavras fixas 6 de 6, valor de referência 1.
+  desenho · precos: 5 barras, 10.788 px por unidade
+  desenho · casa: 4 barras, 4.462 px por unidade
+  desenho · emprego: 2 barras, 5.278 px por unidade
+  desenho · desemprego: 4 barras, 70.023 px por unidade
+  desenho · divida: 3 barras, 2.129 px por unidade
+  desenho · pobreza: 2 barras, 5.807 px por unidade
+  desenho · s80s20: 2 barras, 24.974 px por unidade
+  desenho · referência: a linha a 127.7 px da base, os 60 a 127.7 px
+  sem falhas
+
+Linhas e quantas vezes cada uma aparece (a 390 px):
+   2 × 23,78  ipc-combustiveis-variacao-homologa  (livro: «23,78», 2026-08)
+   1 × 5,22   ipc-rendas-variacao-homologa  (livro: «5,22», 2026-08)
+   1 × 2,14   ipc-alimentacao-variacao-homologa  (livro: «2,14», 2026-08)
+   1 × 1,36   ipc-energia-em-casa-variacao-homologa  (livro: «1,36», 2026-08)
+   2 × 3,30   ipc-variacao-homologa  (livro: «3,30», 2026-08)
+   1 × 3,6    ihpc-variacao-homologa  (livro: «3,6», 2026-08)
+   1 × 3,2    ihpc-variacao-homologa-ue  (livro: «3,2», 2026-08)
+   1 × 6,3    sobrecarga-do-custo-da-habitacao-2025  (livro: «6,3», 2025)
+   1 × 7,7    sobrecarga-do-custo-da-habitacao-2025-ue  (livro: «7,7», 2025)
+   1 × 27,2   sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025  (livro: «27,2», 2025)
+   1 × 18,6   sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue  (livro: «18,6», 2025)
+   1 × 2,56   ipc-sem-habitacao-variacao-media-12-meses  (livro: «2,56», 2026-08)
+   1 × 79,6   taxa-de-emprego-2025  (livro: «79,6», 2025)
+   1 × 76,1   taxa-de-emprego-2025-ue  (livro: «76,1», 2025)
+   1 × 6      taxa-de-desemprego-2025  (livro: «6», 2025)
+   1 × 6,0    taxa-de-desemprego-2025-ue  (livro: «6,0», 2025)
+   1 × 2,2    desemprego-de-longa-duracao-2025  (livro: «2,2», 2025)
+   1 × 1,9    desemprego-de-longa-duracao-2025-ue  (livro: «1,9», 2025)
+   1 × 1 746  remuneracao-bruta-mensal-media-periodo-anterior  (livro: «1 746», 2025-T2)
+   1 × 1 835  remuneracao-bruta-mensal-media  (livro: «1 835», 2026-T2)
+   1 × 93,0   divida-publica-2024-notificacao-ine-2026-09  (livro: «93,0», 2024)
+   1 × 89,2   divida-publica-2025-notificacao-ine-2026-09  (livro: «89,2», 2025)
+   1 × 81,7   divida-publica-2025-ue  (livro: «81,7», 2025)
+   1 × 18,6   risco-de-pobreza-ou-exclusao-2025  (livro: «18,6», 2025)
+   1 × 20,9   risco-de-pobreza-ou-exclusao-2025-ue  (livro: «20,9», 2025)
+   1 × 4,86   racio-s80-s20-2025  (livro: «4,86», 2025)
+   1 × 4,62   racio-s80-s20-2025-ue  (livro: «4,62», 2025)
+
+Plantas (cada uma tem de produzir a falha exata que lhe corresponde):
+  apanhada · um número solto na ressalva → [numeros] número sem origem «12» em «Um grupo que sobe 12 % muito não é o que mais pesa no total.»
+  apanhada · um valor trocado no gráfico dos preços → [numeros] o elemento com data-linha="ipc-combustiveis-variacao-homologa" mostra «23,87»; o pedido e o livro-razão dizem «23,78»
+  apanhada · o identificador de outra linha nas rendas → [numeros] o elemento com data-linha="ipc-alimentacao-variacao-homologa" mostra «5,22»; o pedido e o livro-razão dizem «2,14»
+  apanhada · uma linha do pedido retirada da página → [numeros] a linha racio-s80-s20-2025-ue (4,62) não aparece na página
+  apanhada · um número das palavras fixas mudado → [numeros] número sem origem «45» em «% de pessoas cuja casa custa mais de 45 % do rendimento, 2025»
+  apanhada · a unidade dentro do elemento do valor → [numeros] o elemento com data-linha="ihpc-variacao-homologa" mostra «3,6 %»; o pedido e o livro-razão dizem «3,6»
+  apanhada · um travessão numa frase → [palavras] travessão: «stado A dívida pública desceu — mas continua acima da média d»
+  apanhada · um painel da casa com outro máximo de escala → [desenho] a escala «casa» tem máximos 27.2 e 20; o maior número é 27.2
+  apanhada · um painel da casa mais estreito (a mesma escala escrita, outra desenhada) → [desenho] na escala «casa», sobrecarga-do-custo-da-habitacao-2025 mede 48.77 px; na escala dos outros mediria 13.11 px
+  apanhada · uma barra dos preços deslocada da origem → [desenho] as barras de ipc-combustiveis-variacao-homologa, ipc-rendas-variacao-homologa, ipc-alimentacao-variacao-homologa, ipc-energia-em-casa-variacao-homologa, ipc-variacao-homologa não partem da mesma origem
+  apanhada · a linha de referência nos 50 em vez dos 60 → [desenho] a linha de referência está a 80.6 px da base; os 60 da escala estão a 96.8 px
+  apanhada · a linha de referência a entrar no painel da União → [desenho] a linha do valor de referência entra no painel da União, onde a Comissão não aplica o limiar
+  apanhada · uma cor numa coluna que não é a referência → [cor] rgb(31, 78, 140) em span.pp-col-barra
+  apanhada · o âmbar fora da linha, no rótulo da referência → [cor] âmbar fora da linha de referência, em p.pp-ref-rotulo
+
+VERDE: 0 falhas na página e nas fontes; 14 de 14 plantas apanhadas.

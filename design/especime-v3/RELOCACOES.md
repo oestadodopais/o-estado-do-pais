@@ -32,7 +32,7 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 | «Total 308 · [a verificar]» da ficha do mapa | o marcador saiu das linhas da CAOP a 18.08; a contagem rende com o selo cheio |
 | «Publicação: 2026-08-12» nas linhas de estudo cuja data é `null` | rende `[a verificar]`, nunca a data `updated` (etapa 4e) |
 | «61,44%» com o símbolo dentro do valor | o símbolo fica fora do elemento (regra do `data-claim`) |
-| A paráfrase do Sobre e «A direção é de Nuno dos Santos» no rodapé; o colofão «Maqueta v3 · protótipo · tipos substitutos»; «Protótipo: um toque num bloco muda só a densidade dele» | rodapé só navegação (15.08); estados de protótipo são recusados pelo portão |
+| A paráfrase do Sobre e «A direção é de [o diretor]» no rodapé; o colofão «Maqueta v3 · protótipo · tipos substitutos»; «Protótipo: um toque num bloco muda só a densidade dele» | rodapé só navegação (15.08); estados de protótipo são recusados pelo portão |
 | O quadrado de cobalto do sinal de tempo no cabeçalho | Emenda 1: cor só para limiares publicados |
 
 ## Texto novo (sem rota de origem; entra pelas cadeias, PT e EN no mesmo commit; revisão de voz antes da fusão)

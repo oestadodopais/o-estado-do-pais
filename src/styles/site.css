@@ -3406,6 +3406,14 @@ a.badge-porta:hover {
   fill: none;
   stroke-dasharray: 3 3;
 }
+/* Só a aresta sem data é tracejada; o fim selado conserva a linha contínua. */
+.mun-banda-seg.is-inicio-aberto { stroke: none; }
+.mun-banda-contorno-inicio, .mun-banda-inicio-incerto {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1;
+}
+.mun-banda-inicio-incerto { stroke-dasharray: 3 3; }
 .mun-banda-lista {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;

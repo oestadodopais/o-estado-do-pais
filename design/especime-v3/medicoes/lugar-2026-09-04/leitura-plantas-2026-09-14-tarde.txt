@@ -35,4 +35,4 @@
   [32m✓[0m a linha do estado vazio à vista com uma leitura aberta  [90mverde antes: sim · html mudou: sim · vermelho depois: J13.pt.chromium=vermelho, J13.pt.webkit=vermelho, J13.en.chromium=vermelho, J13.en.webkit=vermelho[0m
   [32m✓[0m um valor selado dentro do índice dos domínios  [90mverde antes: sim · html mudou: sim · vermelho depois: J5.pt=vermelho[0m
 
-  leitura [32m✓[0m 26 de 26 célula(s) · plantas [32m✓[0m[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m
+  leitura [32m✓[0m 26 de 26 célula(s) · plantas [32m✓[0m[90m  /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m

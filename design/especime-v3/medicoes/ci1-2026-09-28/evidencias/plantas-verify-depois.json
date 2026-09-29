@@ -1,0 +1,65 @@
+{
+ "comando": "node scripts/verify-depois-do-build.mjs --prova",
+ "codigo": 0,
+ "plantas": [
+  {
+   "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência nova só no verify corre sozinha",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência tirada da escolha fecha a célula U",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+   "mordeu": true
+  },
+  {
+   "planta": "uma conferência que escreve no dist/ fecha a célula D",
+   "mordeu": true
+  },
+  {
+   "planta": "um dist/ de outra cabeça fecha a célula C",
+   "mordeu": true
+  },
+  {
+   "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+   "mordeu": true
+  }
+ ],
+ "mordidas": 7,
+ "total": 7,
+ "contraprova": {
+  "o_que": "numa cópia do guião, cada célula passa a dizer sempre ok; a prova tem de fechar com 1 e nomear a planta dessa célula",
+  "estragos": [
+   {
+    "celula_estragada": "U",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência tirada da escolha fecha a célula U",
+     "uma conferência vermelha fecha a corrida, e as outras acabam",
+     "um passo vazio na cadeia não passa despercebido à contagem"
+    ]
+   },
+   {
+    "celula_estragada": "D",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "uma conferência que escreve no dist/ fecha a célula D"
+    ]
+   },
+   {
+    "celula_estragada": "C",
+    "codigo": 1,
+    "plantas_que_falharam": [
+     "um dist/ de outra cabeça fecha a célula C"
+    ]
+   }
+  ],
+  "apanhados": 3
+ }
+}

@@ -13,17 +13,22 @@ function eInstantaneoDoMesmoConjunto(c, anterior, linha) {
 }
 
 /**
- * @param {{corrections?: unknown, access_date?: unknown, source_url?: unknown, document?: unknown}} linha
- * @param {'access_date' | 'source_url'} campo
+ * @param {any} linha
+ * @param {string} campo
  * @param {string} onde
  * @param {string[]} erros
  */
 export function historiaDaProveniencia(linha, campo, onde, erros) {
-  const entradas = (Array.isArray(linha.corrections) ? linha.corrections : [])
+  const atual = campo.split('.').reduce((valor, chave) => valor?.[chave], linha);
+  /** @type {any[]} */
+  const historia = Array.isArray(linha.corrections) ? linha.corrections : [];
+  const entradas = historia
     .filter((c) => c && c.kind === 'proveniencia' && c.field === campo)
     .slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
-  const forma = campo === 'access_date' ? /^\d{4}-\d{2}-\d{2}$/ : /^https?:\/\//;
-  let anterior = entradas.length ? entradas[0].old_value : linha[campo];
+  const forma = campo === 'access_date' ? /^\d{4}-\d{2}-\d{2}$/ : campo === 'source_url' ? /^https?:\/\// : /\S/;
+  let anterior = entradas.length ? entradas[0].old_value : atual;
+  const acessos = campo !== 'access_date' && entradas.length
+    ? historiaDaProveniencia(linha, 'access_date', onde, []) : null;
   /** @type {any[]} */
   const instantaneos = [];
   for (const c of entradas) {
@@ -40,16 +45,19 @@ export function historiaDaProveniencia(linha, campo, onde, erros) {
     if (campo === 'access_date' && (c.old_value > c.date || c.new_value > c.date)) {
       erros.push(`${rot}: o acesso não pode ser posterior à mudança que o declara.`);
     }
+    if (acessos && String(c.date) < acessos.em(c.date)) {
+      erros.push(`${rot}: a entrada é anterior ao acesso em vigor (${acessos.em(c.date)}).`);
+    }
     anterior = c.new_value;
   }
-  if (entradas.length && anterior !== linha[campo]) {
-    erros.push(`${onde} história de "${campo}": o último "new_value" é ${anterior}, mas a linha declara ${linha[campo]}.`);
+  if (entradas.length && anterior !== atual) {
+    erros.push(`${onde} história de "${campo}": o último "new_value" é ${anterior}, mas a linha declara ${atual}.`);
   }
   return {
     instantaneos,
     /** @param {string} dia */
     em(dia) {
-      let valor = entradas.length ? entradas[0].old_value : linha[campo];
+      let valor = entradas.length ? entradas[0].old_value : atual;
       for (const c of entradas) if (String(c.date) <= dia) valor = c.new_value;
       return String(valor ?? '');
     },

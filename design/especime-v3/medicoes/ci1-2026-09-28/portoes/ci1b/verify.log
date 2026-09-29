@@ -1,0 +1,1175 @@
+2026-09-28T21:20:29.538Z +0.071s   
+2026-09-28T21:20:29.538Z +0.071s   > o-estado-do-pais@0.1.0 verify
+2026-09-28T21:20:29.538Z +0.071s   > npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:nomes && npm run check:palavras && npm run design:feixe
+2026-09-28T21:20:29.538Z +0.071s   
+2026-09-28T21:20:29.609Z +0.142s   
+2026-09-28T21:20:29.609Z +0.142s   > o-estado-do-pais@0.1.0 ledger:check
+2026-09-28T21:20:29.609Z +0.142s   > node scripts/check-ledger.mjs
+2026-09-28T21:20:29.609Z +0.142s   
+2026-09-28T21:20:29.681Z +0.214s   
+2026-09-28T21:20:29.682Z +0.215s     aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira
+2026-09-28T21:20:29.682Z +0.215s     ✓ os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+2026-09-28T21:20:29.845Z +0.378s   
+2026-09-28T21:20:29.845Z +0.378s     livro-razão · 3009 afirmações
+2026-09-28T21:20:29.855Z +0.388s   
+2026-09-28T21:20:29.855Z +0.388s     ✓ 3009 afirmações válidas · 330 derivadas · 334 com aritmética reavaliada no build · 1896 com o rótulo da fonte
+2026-09-28T21:20:29.855Z +0.388s     ✓ 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+2026-09-28T21:20:29.855Z +0.388s   
+2026-09-28T21:20:29.855Z +0.388s     Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"
+2026-09-28T21:20:29.855Z +0.388s       agua-nao-faturada-portugal-2024 → source_url, excerpt
+2026-09-28T21:20:29.855Z +0.388s       avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition
+2026-09-28T21:20:29.855Z +0.388s       avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition
+2026-09-28T21:20:29.855Z +0.388s       ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition
+2026-09-28T21:20:29.855Z +0.388s       evora-prr-aprovado-2026 → excerpt
+2026-09-28T21:20:29.855Z +0.388s       evora-prr-pago-2026 → excerpt
+2026-09-28T21:20:29.855Z +0.388s       evora-prr-vencido-aprovado-2026 → excerpt
+2026-09-28T21:20:29.855Z +0.388s       saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition
+2026-09-28T21:20:29.855Z +0.388s       Isto não impede o build. Impede que se diga que o livro-razão está fechado.
+2026-09-28T21:20:29.855Z +0.388s   
+2026-09-28T21:20:29.865Z +0.398s   
+2026-09-28T21:20:29.865Z +0.398s     amarra das decisões · 96 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»
+2026-09-28T21:20:29.865Z +0.398s     ✓ cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+2026-09-28T21:20:29.865Z +0.398s   
+2026-09-28T21:20:29.865Z +0.398s     bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)
+2026-09-28T21:20:29.866Z +0.399s     ✓ os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+2026-09-28T21:20:29.866Z +0.399s   
+2026-09-28T21:20:29.937Z +0.470s   
+2026-09-28T21:20:29.937Z +0.470s   > o-estado-do-pais@0.1.0 check:registo
+2026-09-28T21:20:29.937Z +0.470s   > node scripts/check-registo.mjs
+2026-09-28T21:20:29.937Z +0.470s   
+2026-09-28T21:20:30.141Z +0.674s   
+2026-09-28T21:20:30.141Z +0.674s     registo · os números dos documentos que governam, contra a fonte
+2026-09-28T21:20:30.141Z +0.674s   
+2026-09-28T21:20:30.141Z +0.674s     os factos, medidos:
+2026-09-28T21:20:30.141Z +0.674s        3009  linhas do livro-razão                                ledger/claims/*.yml
+2026-09-28T21:20:30.141Z +0.674s              2.ª medição: loadClaims().size · subconjunto: as que o painel semanal reconfere = 91
+2026-09-28T21:20:30.141Z +0.674s         308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA
+2026-09-28T21:20:30.141Z +0.674s              2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`
+2026-09-28T21:20:30.141Z +0.674s          13  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS
+2026-09-28T21:20:30.141Z +0.674s              uma só fonte · linha `estudos-publicados`
+2026-09-28T21:20:30.141Z +0.674s          18  edições do arquivo                                   src/data/studies.mjs · EDITIONS
+2026-09-28T21:20:30.141Z +0.674s              uma só fonte · linha `edicoes-publicadas`
+2026-09-28T21:20:30.141Z +0.674s          18  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml
+2026-09-28T21:20:30.141Z +0.674s              2.ª medição: studies-src/manifest.yml · edicoes
+2026-09-28T21:20:30.141Z +0.674s           3  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'
+2026-09-28T21:20:30.141Z +0.674s              uma só fonte · linha `correcoes-publicadas`
+2026-09-28T21:20:30.141Z +0.674s          21  passos da construção                                 package.json · scripts.build
+2026-09-28T21:20:30.141Z +0.674s              uma só fonte
+2026-09-28T21:20:30.141Z +0.674s          10  páginas de leitura (edições com registo de conteúdo) registos/manifest.json
+2026-09-28T21:20:30.141Z +0.674s              uma só fonte
+2026-09-28T21:20:30.141Z +0.674s   
+2026-09-28T21:20:30.141Z +0.674s     hoje é 28.09.2026; uma afirmação datada de hoje confere-se como corrente.
+2026-09-28T21:20:30.141Z +0.674s   
+2026-09-28T21:20:30.141Z +0.674s     ✓ VISAO.md                                          2 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 7 avaliada(s), chão 4
+2026-09-28T21:20:30.141Z +0.674s         VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026
+2026-09-28T21:20:30.141Z +0.674s         VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         VISAO.md:35 «2 975 linhas» saltada pela forma (i) · 22.09.2026
+2026-09-28T21:20:30.141Z +0.674s         VISAO.md:38 «treze estudos» saltada pela forma (i) · 22.09.2026
+2026-09-28T21:20:30.141Z +0.674s         VISAO.md:38 «doze estudos» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s     ✓ README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+2026-09-28T21:20:30.141Z +0.674s         README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026
+2026-09-28T21:20:30.141Z +0.674s         README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026
+2026-09-28T21:20:30.141Z +0.674s         README.md:42 «132 linhas» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026
+2026-09-28T21:20:30.141Z +0.674s         README.md:263 «dezoito documentos» saltada pela forma (i) · 16.09.2026
+2026-09-28T21:20:30.141Z +0.674s         README.md:265 «dezasseis documentos» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         README.md:265 «dezasseis edições do arquivo» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         README.md:266 «doze trabalhos» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         README.md:342 «2 916 linhas» saltada pela forma (i) · 02.09.2026
+2026-09-28T21:20:30.141Z +0.674s         README.md:342 «132 linhas» saltada pela forma (iii-a)
+2026-09-28T21:20:30.141Z +0.674s         README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida
+2026-09-28T21:20:30.141Z +0.674s         README.md:61 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s         README.md:89 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s         README.md:93 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s         README.md:97 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s         README.md:157 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s         README.md:162 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.141Z +0.674s         README.md:194 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.142Z +0.675s         README.md:248 «oito edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.142Z +0.675s         README.md:325 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.142Z +0.675s         README.md:350 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.142Z +0.675s     ✓ design/especime-v3/PENDENTES-DO-DIRETOR.md        2 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 4 avaliada(s), chão 3
+2026-09-28T21:20:30.142Z +0.675s         design/especime-v3/PENDENTES-DO-DIRETOR.md:9 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026
+2026-09-28T21:20:30.142Z +0.675s         design/especime-v3/PENDENTES-DO-DIRETOR.md:21 «uma edição» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.142Z +0.675s         design/especime-v3/PENDENTES-DO-DIRETOR.md:26 «duas edições» não conferida: «edições» diz o arquivo (18) e as páginas de leitura (10); o facto escreve-se com o composto.
+2026-09-28T21:20:30.142Z +0.675s     ✓ CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+2026-09-28T21:20:30.142Z +0.675s     ✓ design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+2026-09-28T21:20:30.142Z +0.675s         design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026
+2026-09-28T21:20:30.142Z +0.675s   
+2026-09-28T21:20:30.142Z +0.675s     ✓ 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 9 afirmação(ões) corrente(s) conferida(s) · 17 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+2026-09-28T21:20:30.142Z +0.675s           5 documento(s) lidos · 38 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).
+2026-09-28T21:20:30.142Z +0.675s   
+2026-09-28T21:20:30.210Z +0.743s   
+2026-09-28T21:20:30.210Z +0.743s   > o-estado-do-pais@0.1.0 check:cruzamento
+2026-09-28T21:20:30.210Z +0.743s   > node scripts/check-cruzamento.mjs
+2026-09-28T21:20:30.210Z +0.743s   
+2026-09-28T21:20:30.490Z +1.023s   
+2026-09-28T21:20:30.491Z +1.024s     cruzamentos · 2884 linha(s) de origem externa em 4 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)
+2026-09-28T21:20:30.491Z +1.024s     rótulos da fonte · 1896 de 3009 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)
+2026-09-28T21:20:30.491Z +1.024s     cruzamentos · 3 ficheiro(s) inteiro(s) em 2 registo(s) · 5 item(ns) da agenda reconferidos
+2026-09-28T21:20:30.491Z +1.024s       avaliacao-economica-regional-de-portugal-2026: 8
+2026-09-28T21:20:30.491Z +1.024s       concelhos-2026: 2767
+2026-09-28T21:20:30.491Z +1.024s       dominios-2026: 40
+2026-09-28T21:20:30.491Z +1.024s       evora-economia-investidores-portas-abertas-2026: 8
+2026-09-28T21:20:30.491Z +1.024s       evora-orcamentado-pago-devido-2025: 27
+2026-09-28T21:20:30.491Z +1.024s       evora-os-pelouros-quem-os-teve-o-que-fizeram: 7
+2026-09-28T21:20:30.491Z +1.024s       evora-prometido-pago-auditado-2026: 7
+2026-09-28T21:20:30.491Z +1.024s       evora-quinze-anos-cinco-mandatos: 20
+2026-09-28T21:20:30.491Z +1.024s   
+2026-09-28T21:20:30.491Z +1.024s     ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou.
+2026-09-28T21:20:30.491Z +1.024s   
+2026-09-28T21:20:30.560Z +1.093s   
+2026-09-28T21:20:30.560Z +1.093s   > o-estado-do-pais@0.1.0 check:documentos
+2026-09-28T21:20:30.560Z +1.093s   > node scripts/check-documentos.mjs
+2026-09-28T21:20:30.560Z +1.093s   
+2026-09-28T21:20:30.615Z +1.148s   
+2026-09-28T21:20:30.615Z +1.148s     portão dos documentos · 18 edição(ões) no manifesto · 18 em disco
+2026-09-28T21:20:30.615Z +1.148s       · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019
+2026-09-28T21:20:30.615Z +1.148s       · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5
+2026-09-28T21:20:30.615Z +1.148s       · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303
+2026-09-28T21:20:30.615Z +1.148s       · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303
+2026-09-28T21:20:30.616Z +1.149s       · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022
+2026-09-28T21:20:30.616Z +1.149s       · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84
+2026-09-28T21:20:30.616Z +1.149s       · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84
+2026-09-28T21:20:30.616Z +1.149s       · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2
+2026-09-28T21:20:30.616Z +1.149s       · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b
+2026-09-28T21:20:30.616Z +1.149s       · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b
+2026-09-28T21:20:30.616Z +1.149s     registos de conteúdo · 10 atravessado(s) · D5 correu em 9 e não corre em 1
+2026-09-28T21:20:30.616Z +1.149s       · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)
+2026-09-28T21:20:30.616Z +1.149s       · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s       · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate
+2026-09-28T21:20:30.616Z +1.149s   
+2026-09-28T21:20:30.616Z +1.149s     ✓ cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+2026-09-28T21:20:30.616Z +1.149s   
+2026-09-28T21:20:30.689Z +1.222s   
+2026-09-28T21:20:30.689Z +1.222s   > o-estado-do-pais@0.1.0 check:briefs
+2026-09-28T21:20:30.689Z +1.222s   > python3 scripts/check-briefs.py
+2026-09-28T21:20:30.689Z +1.222s   
+2026-09-28T21:20:33.538Z +4.071s     portão dos briefs · 45 brief(s) em design/observatorio/ · 9 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md (medidas/BRIEF-B2.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-CI1-o-portao-em-metade-do-tempo.md (medidas/BRIEF-CI1.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-L1-a-leitura-de-cada-medida.md (medidas/BRIEF-L1.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-M4b-o-livro-razao-do-11-reparado-e-declarado.md (medidas/BRIEF-M4b.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md (medidas/BRIEF-R1.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-RP1-rendimentos-e-precos-os-cartoes.md (medidas/BRIEF-RP1.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md (medidas/BRIEF-RP2.json)
+2026-09-28T21:20:33.538Z +4.071s       conferido: BRIEF-RP3-as-series-no-motor-e-no-livro.md (medidas/BRIEF-RP3.json)
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «35» a `cartoes_nacionais_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `temas_com_medidas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «18» a `temas_da_carta`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «13» a `cartoes_com_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «13» a `cartoes_com_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «13» a `cartoes_com_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «19» a `cartoes_na_primeira_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_com_referencia_na_primeira_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «24» a `cartoes_com_media_da_uniao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «29» a `cartoes_com_periodo_anterior`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «6» a `cartoes_sem_regua`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «20» a `cartoes_com_definicao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «34» a `cartoes_com_a_marca_entre_o_valor_e_a_unidade`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «5» a `cartoes_com_precisao_mista`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `formas_do_euro_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «3» a `precisoes_do_euro_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartao_do_limite_legal_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «150» a `limite_legal`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «308» a `concelhos_no_ficheiro`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «10» a `camaras_acima_do_limite`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «297» a `camaras_dentro_do_limite`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `camaras_sem_valor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «21» a `medidas_na_faixa_europeia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «4» a `fora_do_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `dentro_do_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «8» a `sem_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `posicao_na_faixa_europeia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «21» a `medidas_na_faixa_europeia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `posicao_na_faixa_europeia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «8» a `mourao_cartoes`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `mourao_cartoes_com_regua`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «34» a `nome_do_projeto_a_390`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «68» a `nome_do_projeto_a_1280`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «30» a `titulo_a_390`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «46» a `titulo_a_1280`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «10» a `ligacoes_no_rodape`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `dominios_com_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `areas_de_governo_com_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «17» a `ficheiros_que_dependem_das_rotas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «6,3» a `sobrecarga_pt_2025`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «6,9» a `sobrecarga_pt_2024`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «7,7» a `sobrecarga_ue_2025`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `sobrecarga_sem_media_europeia_declarada`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «27,2» a `inquilinos_a_preco_de_mercado_pt`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «18,6» a `inquilinos_a_preco_de_mercado_ue`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «3,0» a `proprietarios_com_credito_pt`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «5,0» a `proprietarios_com_credito_ue`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1,3» a `proprietarios_sem_credito_pt`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «3,8» a `proprietarios_sem_credito_ue`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2,8» a `inquilinos_a_renda_reduzida_ou_gratuita_pt`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9,2» a `inquilinos_a_renda_reduzida_ou_gratuita_ue`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «21» a `passos_do_build`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «33» a `passos_do_verify`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «17» a `passos_repetidos`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `trabalhos_da_corrida`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «36» a `cartoes_nacionais_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «35» a `cartoes_de_linha_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartoes_das_camaras_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «36» a `cartoes_nacionais_na_edicao_inglesa`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «20» a `cartoes_na_primeira_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «21» a `cartoes_com_pergunta`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «15» a `cartoes_sem_pergunta`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «8» a `perguntas_com_algarismos`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «15» a `cartoes_com_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «5» a `cartoes_fora_do_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «10» a `cartoes_dentro_do_valor_de_referencia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «15» a `referencias_declaradas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «13» a `referencias_da_comissao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `referencias_do_pacto`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `referencias_do_pacto`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «4» a `formas_do_veredicto`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «33» a `cartoes_com_periodo_anterior`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «25» a `cartoes_com_media_da_uniao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `cartoes_de_linha_sem_regua`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_so_com_referencia_e_sem_comparacao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «59» a `valores_de_linha_nas_reguas_dos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_com_leitura`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «36» a `cartoes_nacionais_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `medidas_com_valor_negativo`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «5» a `inventario_das_medidas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «16» a `unidades_distintas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0,7» a `saldo_valor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0,6» a `saldo_anterior_valor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «7» a `disparidade_valor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «8,6» a `disparidade_anterior_valor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «22» a `definicoes_declaradas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «31» a `origens_das_definicoes_declaradas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «22» a `definicoes_declaradas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «72» a `pedacos_auditados`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «85» a `apoios_auditados`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «32» a `indicadores_no_ficheiro_do_motor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «13» a `indicadores_com_limiar_no_motor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «19» a `indicadores_sem_limiar_no_motor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «28» a `tamanho_do_numero_px`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «16» a `tamanho_do_nome_px`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «14» a `tamanho_da_regua_px`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «12» a `tamanho_da_pergunta_px`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «55» a `linhas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «28» a `linhas_recusadas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `valor_de_texto`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «7» a `sem_valor_no_excerto`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «20» a `source_type_invalido`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «10» a `derived`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «149» a `numeros_html`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «41» a `casados_html`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «89» a `orfaos_html`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `erradas_html`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «654» a `numeros_relatorio`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «154» a `casados_relatorio`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «328» a `orfaos_relatorio`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «95» a `erradas_relatorio`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «40» a `desvios_do_par`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «38» a `briefs_ate_22_09_2026`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «35» a `briefs_com_seccao_de_medicoes`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `briefs_com_guiao_de_medicoes`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `briefs_conferidos_pelo_portao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «33» a `briefs_isentos_por_data`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «3» a `briefs_isentos_por_nomeacao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `ocorrencias_do_nome_de_quem_responde_em_src_e_public`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `exportacoes_de_politica_ia_com_o_nome_de_quem_responde`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `pesquisa_lista_nasce_escondida`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `pesquisa_lista_nunca_se_mostra`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `pesquisa_enter_recarrega`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «39» a `cor_de_estado_na_pagina_europeia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `metodo_frase_da_cor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `ficheiros_com_a_ressalva_fora_da_agenda`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartao_da_habitacao_com_media_europeia`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `mudancas_declaradas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `mudancas_com_palavras_internas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `estudos_seccao_por_lugar`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `definicoes_com_sigla_por_verificar`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `vistas_com_o_rotulo_no_topo`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `recibo_valor_e_unidade_colados`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «8» a `cartoes_do_concelho`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartoes_do_concelho_com_regua`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `metodo_frase_do_base`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «89,2» a `ine_divida_2025`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «93,0» a `ine_divida_2024`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0,7» a `ine_saldo_2025`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «36» a `cartoes_nacionais_nos_temas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `temas_com_medidas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «18» a `temas_da_carta`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «13» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «10» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «3» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «4» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1» a `cartoes_por_tema`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_de_precos_no_consumidor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_de_precos_no_consumidor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_de_precos_no_consumidor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_de_precos_no_consumidor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_de_precos_no_consumidor`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «0» a `cartoes_nacionais_com_periodo_mensal`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2» a `cartoes_de_linha_sem_regua`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «920,00» a `valor_do_salario_minimo_no_sitio`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2 984» a `linhas_do_livro`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «288» a `linhas_de_documento_alojado`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «1 358» a `linhas_de_serie_de_api`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «9» a `linhas_da_tabela_do_memorando`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «8» a `linhas_do_memorando_verificadas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «15» a `marcas_por_verificar_no_memorando`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2 984» a `linhas_do_livro`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «303,7» a `segundos_do_build`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «7 354» a `paginas_construidas`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «486,9» a `segundos_do_verify`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «45» a `grupos_com_varios_periodos`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «28» a `grupos_que_misturam_uniao`
+2026-09-28T21:20:33.538Z +4.071s         §0 liga «2 655» a `linhas_lidas_para_os_grupos`
+2026-09-28T21:20:33.538Z +4.071s       isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+2026-09-28T21:20:33.538Z +4.071s       isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+2026-09-28T21:20:33.538Z +4.071s       isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+2026-09-28T21:20:33.538Z +4.071s       chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
+2026-09-28T21:20:33.538Z +4.071s       apagado antes de contar no §0: codigo 272, enderecos 0, seccoes 15, datas 16, resumos 0, ordinais 1, identificadores 15, anos 3
+2026-09-28T21:20:33.538Z +4.071s     ✓ 180 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.
+2026-09-28T21:20:33.617Z +4.150s   
+2026-09-28T21:20:33.617Z +4.150s   > o-estado-do-pais@0.1.0 gate:html
+2026-09-28T21:20:33.617Z +4.150s   > node scripts/gate-html.mjs
+2026-09-28T21:20:33.617Z +4.150s   
+2026-09-28T21:20:33.923Z +4.456s     o nome de quem responde · 0 ficheiro(s) com o nome em 285 lido(s) de src/ e public/
+2026-09-28T21:20:38.287Z +8.820s     B1 leitura evora-orcamentado-pago-devido-2025/en: sem leitura, o registo não começa por In brief.
+2026-09-28T21:20:38.306Z +8.839s     B1 leitura evora-prometido-pago-auditado-2026/en: sem leitura, o registo não começa por In brief.
+2026-09-28T21:20:38.448Z +8.981s     B1 leitura avaliacao-economica-regional-de-portugal-2026/pt: sem leitura, o registo não começa por Em resumo.
+2026-09-28T21:20:38.502Z +9.035s     B1 leitura evora-economia-investidores-portas-abertas-2026/pt: sem leitura, o registo não começa por Em resumo.
+2026-09-28T21:20:38.541Z +9.074s     B1 leitura evora-orcamentado-pago-devido-2025/pt: sem leitura, o registo não começa por Em resumo.
+2026-09-28T21:20:38.588Z +9.121s     B1 leitura evora-os-pelouros-quem-os-teve-o-que-fizeram/pt: sem leitura, o registo não começa por Em resumo.
+2026-09-28T21:20:38.608Z +9.141s     B1 leitura evora-prometido-pago-auditado-2026/pt: sem leitura, o registo não começa por Em resumo.
+2026-09-28T21:20:38.667Z +9.200s     B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
+2026-09-28T21:20:45.041Z +15.574s   
+2026-09-28T21:20:45.041Z +15.574s     portão de HTML · 7422 páginas · 2657/3009 afirmações citadas fora do livro-razão · 6018 páginas de linha · 6018 títulos de linha com o valor e a unidade separados · 18 documento(s) de estudo, conferidos contra a origem · 10 página(s) de leitura, conferidas contra o seu registo de conteúdo · 0 página(s) com o nome de quem responde
+2026-09-28T21:20:45.041Z +15.574s     allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 204 · escala-de-instrumento 320 · limiar-do-quadro 204 · data-da-linha 26092 · data-do-repositorio 70 · ambito-da-medida 4 · periodo-da-fonte 1112 · data-de-referencia 5178 · numeracao 182 · proveniencia 14823 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 102 · identificador-tecnico 4 · fonte-da-carta 64 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 24
+2026-09-28T21:20:45.041Z +15.574s     rótulo de IA · 7404 no topo (de 7404 páginas fora dos documentos alojados) · 0 no rodapé · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido
+2026-09-28T21:20:45.041Z +15.574s     ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»
+2026-09-28T21:20:45.044Z +15.577s     factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa
+2026-09-28T21:20:45.044Z +15.577s     as duas edições · 24 peça(s) de página de leitura com os mesmos ids pela mesma ordem
+2026-09-28T21:20:45.044Z +15.577s   
+2026-09-28T21:20:45.044Z +15.577s     352 aviso(s):
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "abrantes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "agueda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "aguiar-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alandroal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "albergaria-a-velha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "albufeira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alcacer-do-sal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alcanena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alcobaca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alcochete-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alcoutim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alenquer-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alfandega-da-fe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alijo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "aljezur-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "aljezur-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "aljustrel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "aljustrel-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "almada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "almada-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "almeida-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "almeirim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "almodovar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alpiarca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alter-do-chao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alvaiazere-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "alvito-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "amadora-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "amarante-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "amares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "anadia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "angra-do-heroismo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ansiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "arcos-de-valdevez-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "arganil-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "armamar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "arouca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "arraiolos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "arronches-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "arruda-dos-vinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "aveiro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "avis-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "azambuja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "baiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "barcelos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "barrancos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "barreiro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "batalha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "batalha-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "beja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "belmonte-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "benavente-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "bombarral-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "borba-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "boticas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "braga-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "braganca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cabeceiras-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cadaval-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "caldas-da-rainha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "calheta-de-sao-jorge-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "calheta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "camara-de-lobos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "caminha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "campo-maior-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cantanhede-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "carrazeda-de-ansiaes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "carregal-do-sal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cartaxo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cascais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castanheira-de-pera-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castelo-branco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castelo-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castelo-de-vide-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castro-daire-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castro-marim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "castro-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "celorico-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "celorico-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "chamusca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "chaves-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cinfaes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "coimbra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "condeixa-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "constancia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "coruche-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "corvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "covilha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "crato-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "credito-malparado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "credito-malparado-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "cuba-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "edicoes-publicadas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "elvas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "entroncamento-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "espinho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "esposende-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "estarreja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "estremoz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "estudos-publicados" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-desemprego-registado-2013" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-desemprego-registado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-despesa-paga-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-divergencia-municipio-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-divida-total-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-execucao-da-receita-2021" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-execucao-da-receita-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-limite-divida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-margem-endividamento-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-orcamento-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-populacao-2021" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-receita-cobrada-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "evora-vab-empresarial-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "factor-sustentabilidade-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "fafe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "faro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "felgueiras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ferreira-do-alentejo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ferreira-do-zezere-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "figueira-da-foz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "figueira-de-castelo-rodrigo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "figueiro-dos-vinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "fornos-de-algodres-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "freixo-de-espada-a-cinta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "fronteira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "funchal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "fundao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "gaviao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "gois-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "golega-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "gondomar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "gouveia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "grandola-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "guarda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "guimaraes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "horta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "idanha-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ilhavo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "indice-de-percepcao-da-corrupcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "indice-de-percepcao-da-corrupcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lagoa-faro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lagoa-ilha-de-sao-miguel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lagos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lajes-das-flores-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lajes-do-pico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lamego-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "leiria-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lisboa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "loule-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "loures-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lourinha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lousa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "lousada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "macao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "macedo-de-cavaleiros-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "machico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "madalena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mafra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "maia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mangualde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "manteigas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "marco-de-canaveses-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "marinha-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "marvao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "matosinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mealhada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "meda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "melgaco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mertola-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mesao-frio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "miranda-do-corvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "miranda-do-douro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mirandela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mogadouro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "moimenta-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "moimenta-da-beira-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "moita-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "moncao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "monchique-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mondim-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "monforte-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "montalegre-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "montemor-o-novo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "montemor-o-velho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "montijo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mora-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mortagua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "moura-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "mourao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "murca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "murtosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "nazare-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "nelas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "nisa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "nordeste-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "obidos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "odemira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "odivelas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "oeiras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "oleiros-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "olhao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "oliveira-de-azemeis-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "oliveira-de-frades-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "oliveira-do-bairro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "oliveira-do-hospital-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ourem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ourique-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ovar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "pacos-de-ferreira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "palmela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "pampilhosa-da-serra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "paredes-de-coura-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "paredes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "pedrogao-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "pedrogao-grande-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penacova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penafiel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penalva-do-castelo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penamacor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penedono-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penedono-indice-de-divida-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penedono-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penedono-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "penela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "peniche-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "peso-da-regua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "pinhel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "pombal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ponta-delgada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ponta-do-sol-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ponte-da-barca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ponte-de-lima-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ponte-de-sor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "portalegre-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "portel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "portimao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "porto-de-mos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "porto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "porto-moniz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "porto-santo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "povoa-de-lanhoso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "povoa-de-varzim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "povoacao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "praia-da-vitoria-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "proenca-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "redondo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "reguengos-de-monsaraz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "resende-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "retribuicao-minima-mensal-doze-meses-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ribeira-brava-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ribeira-de-pena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "ribeira-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "rio-maior-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sabrosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sabugal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "saldo-natural-portugal-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "salvaterra-de-magos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santa-comba-dao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santa-cruz-da-graciosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santa-cruz-das-flores-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santa-cruz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santa-maria-da-feira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santa-marta-de-penaguiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santana-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santarem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santiago-do-cacem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "santo-tirso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sao-bras-de-alportel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sao-joao-da-madeira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sao-joao-da-pesqueira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sao-pedro-do-sul-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sao-roque-do-pico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sao-vicente-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sardoal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "satao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "seia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "seixal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sernancelhe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "serpa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "serta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sesimbra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "setubal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sever-do-vouga-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "silves-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sines-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sintra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sobral-de-monte-agraco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sobrecarga-do-custo-da-habitacao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "soure-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "sousel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "tabua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "tabuaco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "tarouca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "tavira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "taxa-de-desemprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "taxa-de-desemprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "terras-de-bouro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "tomar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.044Z +15.577s       · a afirmação "tondela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "torre-de-moncorvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "torres-novas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "torres-vedras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "trancoso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "trancoso-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "trofa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vagos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vale-de-cambra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "valenca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "valongo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "valpacos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "velas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vendas-novas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "viana-do-alentejo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "viana-do-castelo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vidigueira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vieira-do-minho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-de-rei-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-do-bispo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-do-conde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-do-porto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-flor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-franca-de-xira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-franca-do-campo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-da-barquinha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-de-cerveira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-de-famalicao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-de-foz-coa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-de-gaia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-nova-de-poiares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-pouca-de-aguiar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-real-de-santo-antonio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-real-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-velha-de-rodao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vila-vicosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vimioso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vinhais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "viseu-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s       · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+2026-09-28T21:20:45.045Z +15.578s   
+2026-09-28T21:20:45.045Z +15.578s     ✓ nenhum algarismo sem proveniência nas páginas construídas.
+2026-09-28T21:20:45.045Z +15.578s       prova · 92 chaves reconferidas pelo portão · 184 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 240995 ligações internas (0 relativas, 22205 âncoras) · 44 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 976 cartões de partilha (5556 valores recalculados, 976 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json
+2026-09-28T21:20:45.045Z +15.578s   
+2026-09-28T21:20:45.128Z +15.661s   
+2026-09-28T21:20:45.128Z +15.661s   > o-estado-do-pais@0.1.0 check:css
+2026-09-28T21:20:45.128Z +15.661s   > node scripts/check-css.mjs --prova
+2026-09-28T21:20:45.128Z +15.661s   
+2026-09-28T21:20:45.162Z +15.695s     folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.
+2026-09-28T21:20:48.708Z +19.241s   
+2026-09-28T21:20:48.709Z +19.242s     folhas ✓ 7404 página(s) · 7 folha(s) construída(s) com 763 classe(s) estilizada(s) · 644 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 23948 fronteira(s) sem espaço no HTML, 0 coladas
+2026-09-28T21:20:48.709Z +19.242s           C2, das 23948 fronteiras: 3565 entre duas caixas (duas caixas não fazem uma palavra) · 20383 entre duas peças de texto, das quais 20383 a folha desta página separa com um «gap», uma margem ou um «display»
+2026-09-28T21:20:48.709Z +19.242s           C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.
+2026-09-28T21:20:48.709Z +19.242s           18 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.
+2026-09-28T21:20:48.709Z +19.242s   
+2026-09-28T21:20:48.782Z +19.315s   
+2026-09-28T21:20:48.782Z +19.315s   > o-estado-do-pais@0.1.0 check:datas
+2026-09-28T21:20:48.782Z +19.315s   > node scripts/check-datas.mjs
+2026-09-28T21:20:48.782Z +19.315s   
+2026-09-28T21:20:49.736Z +20.269s   check-datas: história completa · 18 edição(ões) do ficheiro refeitas do `git`.
+2026-09-28T21:20:49.736Z +20.269s   check-datas · 18 edição(ões) datadas, 70 data(s) impressa(s) em 32 página(s), 70 laço(s) data-edição em 646 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
+2026-09-28T21:20:49.813Z +20.346s   
+2026-09-28T21:20:49.813Z +20.346s   > o-estado-do-pais@0.1.0 check:moldura
+2026-09-28T21:20:49.813Z +20.346s   > node tests/documentos/moldura.mjs
+2026-09-28T21:20:49.813Z +20.346s   
+2026-09-28T21:20:50.085Z +20.618s   
+2026-09-28T21:20:50.085Z +20.618s     a régua da moldura · 18 documentos × 2 temas × 2 larguras (390, 1280 px)
+2026-09-28T21:20:50.085Z +20.618s   
+2026-09-28T21:22:26.038Z +116.571s     ✓ C1  0 nó(s) graves em 72 passagens · nenhuma
+2026-09-28T21:22:26.038Z +116.571s     ✓ C2  filetes: 44896 medidos, 0 abaixo de 3:1 (o pior 3.23:1) · texto próprio das células: 39964 medidos, 0 abaixo de 4,5:1 (o pior 7.57:1)
+2026-09-28T21:22:26.038Z +116.571s     ✓ C3  326 caixa(s) que se deslocam · 0 sem teclado · 0 sem nome · 0 sem marco · 0 nome(s) repetido(s)
+2026-09-28T21:22:26.038Z +116.571s     ✓ C4  72 passagens · 0 sem <main> a um · 0 sem <h1> visível a um · 0 com a moldura errada ou a faixa lá dentro
+2026-09-28T21:22:26.038Z +116.571s     ✓ C5  4 cor(es) distintas nos filetes da moldura · 0 fora da paleta da casa
+2026-09-28T21:22:26.038Z +116.571s     ✓ C6  18 de 18 verdes · 18 de 18 plantas apanhadas
+2026-09-28T21:22:26.038Z +116.571s   
+2026-09-28T21:22:26.038Z +116.571s     o axe, regra a regra (as dezasseis páginas nos dois temas):
+2026-09-28T21:22:26.038Z +116.571s           72  region [moderate]
+2026-09-28T21:22:26.038Z +116.571s            8  heading-order [moderate]
+2026-09-28T21:22:26.038Z +116.571s            0  region [moderate] · em tabela
+2026-09-28T21:22:26.038Z +116.571s            0  heading-order [moderate] · em tabela
+2026-09-28T21:22:26.038Z +116.571s   
+2026-09-28T21:22:26.038Z +116.571s     o que a moldura NÃO corrige, contado:
+2026-09-28T21:22:26.038Z +116.571s       · texto dentro de tabela que não é da célula e mede abaixo de 4,5:1: 0 nó(s)
+2026-09-28T21:22:26.053Z +116.586s   
+2026-09-28T21:22:26.053Z +116.586s     todas as células verdes.
+2026-09-28T21:22:26.053Z +116.586s   
+2026-09-28T21:22:26.126Z +116.659s   
+2026-09-28T21:22:26.126Z +116.659s   > o-estado-do-pais@0.1.0 check:alvos
+2026-09-28T21:22:26.126Z +116.659s   > node tests/acessibilidade/alvos.mjs
+2026-09-28T21:22:26.126Z +116.659s   
+2026-09-28T21:25:44.537Z +315.070s   
+2026-09-28T21:25:44.537Z +315.070s     a régua dos alvos · 46 rotas × 5 larguras · dist: dist
+2026-09-28T21:25:44.537Z +315.070s   
+2026-09-28T21:25:44.537Z +315.070s     ✓ H1  0 nó(s) em violação (0 graves) em 46 rotas × 2 larguras · nenhuma violação
+2026-09-28T21:25:44.537Z +315.070s     ✓ H2  fichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 54 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 12438 alvos medidos, 8044 deles com 44 px a 390, 40 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 34 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (8× a.src-chip «source · Estrutura de Missão Recup» · 61.9×44.7 de toque (caixa 61×18.6); 6× a.src-chip «fonte · INE» · 53.3×23 de toque (caixa 52.5×18.6); 5× a.src-chip «source · Município de Évora» · 61.9×23 de toque (caixa 61×18.6); 4× a.src-chip «fonte · Município de Évora» · 53.3×23 de toque (caixa 52.5×18.6)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 3 estão numa página de leitura, que o brief põe fora deste bloco (2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×17.9 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (2× a «Alert Mechanism Report and Macroec» · 88×23.4 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.9 de toque (caixa 528.8×45.5)) · 3129 não medido(s)
+2026-09-28T21:25:44.537Z +315.070s     ✓ H3  7421 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 230 passagens
+2026-09-28T21:25:44.537Z +315.070s     ✓ H14  230 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título
+2026-09-28T21:25:44.537Z +315.070s     ✓ H4  7421 página(s) do dist/: 7403 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 18 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>
+2026-09-28T21:25:44.537Z +315.070s     ✓ H5  20 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel
+2026-09-28T21:25:44.537Z +315.070s     ✓ H6  primeira página, a 1280: 24 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)
+2026-09-28T21:25:44.537Z +315.070s     ✓ H7  40 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 40 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)
+2026-09-28T21:25:44.537Z +315.070s     ✓ H8  cartões: 976 registo(s), 488 da edição inglesa, 484 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 1805 unidade(s) rendida(s), 0 diferentes do que a tabela manda
+2026-09-28T21:25:44.537Z +315.070s     ✓ H9  3709 página(s) inglesas lidas: 940 com um nome de diploma, 2769 sem nenhum, 1 documento(s) alojado(s) fora da conta · 946 nome(s): 943 com lang="pt-PT", 3 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca
+2026-09-28T21:25:44.537Z +315.070s     ✓ H13  /lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308) · dentro da lista agrupada: 308
+2026-09-28T21:25:44.537Z +315.070s     ✓ H15  pt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão
+2026-09-28T21:25:44.537Z +315.070s     ✓ H10  aria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título
+2026-09-28T21:25:44.549Z +315.082s   
+2026-09-28T21:25:44.549Z +315.082s     todas as células verdes.
+2026-09-28T21:25:44.549Z +315.082s   
+2026-09-28T21:25:44.620Z +315.153s   
+2026-09-28T21:25:44.620Z +315.153s   > o-estado-do-pais@0.1.0 check:cabeca
+2026-09-28T21:25:44.620Z +315.153s   > node tests/inicio/hierarquia-b2.mjs
+2026-09-28T21:25:44.620Z +315.153s   
+2026-09-28T21:25:47.997Z +318.530s   check:cabeca C1; construção b485ae52490920f9a46630a967177f546cd21f5c; 110 cabeças; 4 mordidas; 10 reposições
+2026-09-28T21:25:47.997Z +318.530s   check:cabeca: PASS
+2026-09-28T21:25:48.095Z +318.628s   
+2026-09-28T21:25:48.095Z +318.628s   > o-estado-do-pais@0.1.0 check:fontes
+2026-09-28T21:25:48.095Z +318.628s   > node tests/linha/sem-resposta.mjs
+2026-09-28T21:25:48.095Z +318.628s   
+2026-09-28T21:25:48.940Z +319.473s     6018 página(s) de linha lidas em <raiz>/dist, nas duas edições (3009 linha(s) × 2).
+2026-09-28T21:25:48.940Z +319.473s     4 linha(s) devem mostrar o estado da fonte · 3005 não devem · 8 de proveniência incompleta, fora do mapa e com noindex.
+2026-09-28T21:25:48.940Z +319.473s     endereços em falha: 2 · anfitriões em falha: 1
+2026-09-28T21:25:48.940Z +319.473s   
+2026-09-28T21:25:48.940Z +319.473s   FONTES: PASS — 18054 conferências (o estado e a sua ausência em cada página das duas edições, e o mapa do sítio)
+2026-09-28T21:25:49.008Z +319.541s   
+2026-09-28T21:25:49.008Z +319.541s   > o-estado-do-pais@0.1.0 check:cadeia
+2026-09-28T21:25:49.008Z +319.541s   > node scripts/check-cadeia.mjs
+2026-09-28T21:25:49.008Z +319.541s   
+2026-09-28T21:25:49.116Z +319.649s   
+2026-09-28T21:25:49.116Z +319.649s     03 pt · 53 blocos · 411 algarismos · 0 completas · 411 do motor · 0 por resolver · 0 com resumo de origem · 411 com motivo
+2026-09-28T21:25:49.116Z +319.649s     14 en · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo
+2026-09-28T21:25:49.116Z +319.649s     14 pt · 130 blocos · 190 algarismos · 0 completas · 190 do motor · 0 por resolver · 0 com resumo de origem · 190 com motivo
+2026-09-28T21:25:49.116Z +319.649s     06 pt · 49 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver · 0 com resumo de origem · 171 com motivo
+2026-09-28T21:25:49.116Z +319.649s     07 en · 87 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo
+2026-09-28T21:25:49.116Z +319.649s     07 pt · 88 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver · 12 com resumo de origem · 182 com motivo
+2026-09-28T21:25:49.116Z +319.649s     09 pt · 138 blocos · 296 algarismos · 10 completas · 286 do motor · 0 por resolver · 208 com resumo de origem · 88 com motivo
+2026-09-28T21:25:49.116Z +319.649s     04 en · 95 blocos · 324 algarismos · 11 completas · 313 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo
+2026-09-28T21:25:49.116Z +319.649s     04 pt · 95 blocos · 324 algarismos · 12 completas · 312 do motor · 0 por resolver · 0 com resumo de origem · 324 com motivo
+2026-09-28T21:25:49.116Z +319.649s     08 pt · 173 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo
+2026-09-28T21:25:49.116Z +319.649s   
+2026-09-28T21:25:49.116Z +319.649s     as oito chaves da prova, contadas aqui:
+2026-09-28T21:25:49.116Z +319.649s       registos_edicoes                   10
+2026-09-28T21:25:49.116Z +319.649s       registos_blocos                  1038
+2026-09-28T21:25:49.116Z +319.649s       registos_algarismos              2976
+2026-09-28T21:25:49.116Z +319.649s       registos_resolvidos              2976
+2026-09-28T21:25:49.116Z +319.649s       registos_por_resolver               0
+2026-09-28T21:25:49.116Z +319.649s       registos_com_linha_do_sitio       196
+2026-09-28T21:25:49.116Z +319.649s       registos_com_resumo_de_origem     510
+2026-09-28T21:25:49.116Z +319.649s       registos_sem_resumo_de_origem    2466
+2026-09-28T21:25:49.116Z +319.649s   
+2026-09-28T21:25:49.116Z +319.649s     das 196 figuras com linha do sítio, 77 imprimem o valor que a linha guarda e 119 imprimem outra cadeia. Não é erro: é a medição que decidiu esta página (plano §0.3).
+2026-09-28T21:25:49.116Z +319.649s   
+2026-09-28T21:25:49.116Z +319.649s     ✓ cada algarismo das páginas de leitura chega ao fim da sua cadeia: 196 até ao selo, 2780 conferidos na transcrição, sem recibo do sítio.
+2026-09-28T21:25:49.116Z +319.649s   
+2026-09-28T21:25:49.205Z +319.738s   
+2026-09-28T21:25:49.205Z +319.738s   > o-estado-do-pais@0.1.0 check:dados
+2026-09-28T21:25:49.205Z +319.738s   > node scripts/check-dados.mjs
+2026-09-28T21:25:49.205Z +319.738s   
+2026-09-28T21:25:50.359Z +320.892s   
+2026-09-28T21:25:50.359Z +320.892s     dados descarregáveis · 2 ficheiros · 5 endereços ligados
+2026-09-28T21:25:50.359Z +320.892s     ficheiros alojados · 3 linha(s) com document.hosted · 3 recontada(s)
+2026-09-28T21:25:50.359Z +320.892s     conjunto de dados · 3009 registos no CSV · 1896 com o rótulo da fonte · 3009 ficheiros de linha · licença CC BY 4.0 · 3011 endereço(s) ligado(s)
+2026-09-28T21:25:50.359Z +320.892s   
+2026-09-28T21:25:50.359Z +320.892s     ✓ os ficheiros existem, batem certo com as origens e estão ligados nas duas edições.
+2026-09-28T21:25:50.359Z +320.892s   
+2026-09-28T21:25:50.435Z +320.968s   
+2026-09-28T21:25:50.435Z +320.968s   > o-estado-do-pais@0.1.0 mapa:unidades
+2026-09-28T21:25:50.435Z +320.968s   > node scripts/mapa-unidades.mjs --verifica
+2026-09-28T21:25:50.435Z +320.968s   
+2026-09-28T21:25:50.475Z +321.008s     ✓ mapa das unidades · 29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · conferidos
+2026-09-28T21:25:50.553Z +321.086s   
+2026-09-28T21:25:50.553Z +321.086s   > o-estado-do-pais@0.1.0 check:mapa
+2026-09-28T21:25:50.553Z +321.086s   > node scripts/check-mapa.mjs
+2026-09-28T21:25:50.553Z +321.086s   
+2026-09-28T21:25:50.802Z +321.335s   
+2026-09-28T21:25:50.802Z +321.335s     ✓ R1 · os resumos de mapa/ batem com o manifesto
+2026-09-28T21:25:50.802Z +321.335s     ✓ R2 · a junção: 308 concelhos, uma vez cada, com os slugs da Carta
+2026-09-28T21:25:50.802Z +321.335s     ✓ R3 · cada página de distrito com tantas ligações quantos concelhos
+2026-09-28T21:25:50.802Z +321.335s     ✓ R4 · a primeira página com 29 ligações de área
+2026-09-28T21:25:50.802Z +321.335s     ✓ R5 · nenhuma ligação debaixo de role="img"
+2026-09-28T21:25:50.802Z +321.335s     ✓ R6 · a atribuição da DGT onde o mapa está
+2026-09-28T21:25:50.802Z +321.335s     ✓ R7 · a colação portuguesa nos artefactos e nas listas construídas
+2026-09-28T21:25:50.802Z +321.335s     ✓ R8 · os 29 ficheiros do segundo nível são os artefactos
+2026-09-28T21:25:50.802Z +321.335s     ✓ R9 · as páginas que o mapa promete estão todas construídas
+2026-09-28T21:25:50.803Z +321.336s   
+2026-09-28T21:25:50.803Z +321.336s     mapa · 30 ficheiros conferidos · 29 unidades · 308 concelhos, uma vez cada · 680 páginas prometidas e construídas (58 de unidade e 616 de concelho, nas duas edições)
+2026-09-28T21:25:50.803Z +321.336s   
+2026-09-28T21:25:50.871Z +321.404s   
+2026-09-28T21:25:50.871Z +321.404s   > o-estado-do-pais@0.1.0 check:regioes
+2026-09-28T21:25:50.871Z +321.404s   > node scripts/check-regioes.mjs
+2026-09-28T21:25:50.871Z +321.404s   
+2026-09-28T21:25:51.063Z +321.596s   
+2026-09-28T21:25:51.063Z +321.596s     ✓ R1 · cada região com linhas tem página, e nenhuma outra tem
+2026-09-28T21:25:51.063Z +321.596s     ✓ R2 · cada página de região cita as suas linhas, com selo
+2026-09-28T21:25:51.063Z +321.596s     ✓ R3 · a régua imprime só valores com linha, e um por leitura
+2026-09-28T21:25:51.063Z +321.596s     ✓ R4 · a neutralidade: um só estilo de barra, e o contorno da página
+2026-09-28T21:25:51.063Z +321.596s     ✓ R5 · as duas contagens, de três pontos de observação
+2026-09-28T21:25:51.063Z +321.596s   
+2026-09-28T21:25:51.063Z +321.596s     regiões · 9 declarada(s), 9 com linhas · 18 página(s) de região construída(s) · 10 leitura(s) na régua
+2026-09-28T21:25:51.063Z +321.596s   
+2026-09-28T21:25:51.136Z +321.669s   
+2026-09-28T21:25:51.136Z +321.669s   > o-estado-do-pais@0.1.0 check:areas
+2026-09-28T21:25:51.136Z +321.669s   > node scripts/check-areas.mjs
+2026-09-28T21:25:51.136Z +321.669s   
+2026-09-28T21:25:51.473Z +322.006s   
+2026-09-28T21:25:51.473Z +322.006s     ✓ A1 · cada área com peças tem página, e nenhuma outra tem
+2026-09-28T21:25:51.473Z +322.006s     ✓ A2 · a porta de cada peça abre, cada medida vai com selo, e a porta legal abre
+2026-09-28T21:25:51.473Z +322.006s     ✓ A3 · nenhuma área vazia, no mapa nem na página
+2026-09-28T21:25:51.473Z +322.006s     ✓ A4 · uma peça em duas áreas traz a razão de cada uma
+2026-09-28T21:25:51.473Z +322.006s     ✓ A5 · os nomes, e cada matéria com artigo, transcrição e razão
+2026-09-28T21:25:51.473Z +322.006s     ✓ A6 · a contagem de cada área, de três pontos de observação
+2026-09-28T21:25:51.473Z +322.006s     ✓ A7 · cada linha do livro-razão coberta uma vez, e só uma
+2026-09-28T21:25:51.473Z +322.006s   
+2026-09-28T21:25:51.473Z +322.006s     áreas · 9 declarada(s), 9 com peças · 18 página(s) de área construída(s)
+2026-09-28T21:25:51.473Z +322.006s         financas · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         economia-e-coesao-territorial · 97 peça(s): 8 trabalho(s), 1 conjunto(s), 88 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         infraestruturas-e-habitacao · 4 peça(s): 0 trabalho(s), 0 conjunto(s), 4 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         trabalho-solidariedade-e-seguranca-social · 27 peça(s): 2 trabalho(s), 1 conjunto(s), 24 medida(s)
+2026-09-28T21:25:51.473Z +322.006s         ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)
+2026-09-28T21:25:51.473Z +322.006s   
+2026-09-28T21:25:51.540Z +322.073s   
+2026-09-28T21:25:51.540Z +322.073s   > o-estado-do-pais@0.1.0 check:formas
+2026-09-28T21:25:51.540Z +322.073s   > node scripts/check-formas.mjs
+2026-09-28T21:25:51.540Z +322.073s   
+2026-09-28T21:25:51.709Z +322.242s   F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+2026-09-28T21:25:54.875Z +325.408s     formas ✓ 2 páginas de domínio · 6 desenhos (mapa-por-concelho 4 · barra-concelho-pais 2) · 26092 datas de linha conferidas · 20 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s)
+2026-09-28T21:25:54.948Z +325.481s   
+2026-09-28T21:25:54.948Z +325.481s   > o-estado-do-pais@0.1.0 check:alcance
+2026-09-28T21:25:54.948Z +325.481s   > node tests/dominio/alcance.mjs
+2026-09-28T21:25:54.948Z +325.481s   
+2026-09-28T21:25:55.163Z +325.696s     0 porta(s) · 1 página(s) nova(s) · 638 linhas citadas · 317 das 348 da §1.90
+2026-09-28T21:25:55.450Z +325.983s     1 porta(s) · 949 página(s) nova(s) · 2702 linhas citadas · 348 das 348 da §1.90
+2026-09-28T21:25:56.430Z +326.963s     2 porta(s) · 3701 página(s) nova(s) · 3009 linhas citadas · 348 das 348 da §1.90
+2026-09-28T21:25:57.192Z +327.725s     3 porta(s) · 2763 página(s) nova(s) · 3009 linhas citadas · 348 das 348 da §1.90
+2026-09-28T21:25:57.192Z +327.725s   
+2026-09-28T21:25:57.192Z +327.725s     as 348 linhas da §1.90 alcançam-se a partir de /dominios/economia-e-financas-publicas em 3 porta(s)
+2026-09-28T21:25:57.192Z +327.725s   
+2026-09-28T21:25:57.267Z +327.800s   
+2026-09-28T21:25:57.267Z +327.800s   > o-estado-do-pais@0.1.0 check:lugares
+2026-09-28T21:25:57.267Z +327.800s   > node scripts/check-lugares.mjs
+2026-09-28T21:25:57.267Z +327.800s   
+2026-09-28T21:25:57.665Z +328.198s   
+2026-09-28T21:25:57.665Z +328.198s     lugares ✓ 308 concelhos, 29 distritos e ilhas, 9 regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · as 308 linhas do poder de compra declaram a base do índice · 9 chaves com tema · 4928 medida(s) rendidas em 616 página(s), todas debaixo do tema que a tabela lhes dá · as palavras da leitura e da régua recalculadas do livro-razão em todas elas
+2026-09-28T21:25:57.665Z +328.198s   
+2026-09-28T21:25:57.735Z +328.268s   
+2026-09-28T21:25:57.735Z +328.268s   > o-estado-do-pais@0.1.0 check:pais
+2026-09-28T21:25:57.735Z +328.268s   > node scripts/check-pais.mjs
+2026-09-28T21:25:57.735Z +328.268s   
+2026-09-28T21:26:00.960Z +331.493s   T9: 34 cartões com valor de referência na primeira página e nos temas, 12 fora e 22 dentro, cada um com a cor do seu estado.
+2026-09-28T21:26:00.960Z +331.493s   B1 país: 47 medidas, 9 temas, 7404 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 33 mudanças, 70 títulos de edição.
+2026-09-28T21:26:00.960Z +331.493s   B1 país: todas as conferências a 0.
+2026-09-28T21:26:01.040Z +331.573s   
+2026-09-28T21:26:01.040Z +331.573s   > o-estado-do-pais@0.1.0 check:voz
+2026-09-28T21:26:01.040Z +331.573s   > node scripts/check-voz.mjs
+2026-09-28T21:26:01.040Z +331.573s   
+2026-09-28T21:26:20.910Z +351.443s     B1: 28 páginas pela lista fechada; 7 temas conferidos.
+2026-09-28T21:26:24.023Z +354.556s   
+2026-09-28T21:26:24.024Z +354.557s     voz ✓ 65 marcadores · 14 exceções (0 de registo) · 922 frases distintas, 22852 ocorrências em 1376 rotas · autorreferência 0 · nada por classificar · divulgação 1378 ocorrência(s) nas rotas medidas · 1315 linhas do inventário com bloco (697 vivas, todas rendidas; 618 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 6724 · nomes declarados: areas 54, regioes 0, dominios 1974, figuras 170, medidas 78, projeto 812, oficial 0, concelho 4928 · palavras proibidas: 0 em 7422 página(s) da superfície (14 palavras da norma §1.3; 44 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+2026-09-28T21:26:24.024Z +354.557s           20 bloco(s) do inventário por ler, e o registo di-lo:
+2026-09-28T21:26:24.024Z +354.557s           · B1-peca1 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu
+2026-09-28T21:26:24.024Z +354.557s           · b1-peca3 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · b1-peca3-correcao · por ler
+2026-09-28T21:26:24.024Z +354.557s           · b1-peca3-correcao2 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · b1c · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · b2-peca1 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · b2-peca1-correcao-2 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · cartao · por ler
+2026-09-28T21:26:24.024Z +354.557s           · e1-evora-2027 · por ler
+2026-09-28T21:26:24.024Z +354.557s           · frescura · leitura a frio (design/especime-v3/critica/2026-09-04-codex-leitura-f16-frescura.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui), Codex `gpt-5.6-sol`, 04.09.2026, cinco plantas de três classes (5 de 5 vistas), doze achados
+2026-09-28T21:26:24.024Z +354.557s           · l1 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · l1-correcao · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · lugar · por ler
+2026-09-28T21:26:24.024Z +354.557s           · mapa · leitura a frio (design/especime-v3/critica/2026-09-08-codex-leitura-f11e-distritos.md, que o lugar de direção guarda na árvore principal e não neste ramo, e por isso esta coluna não o nomeia entre plicas: a conferência do portão exige que um ficheiro nomeado assim exista aqui)
+2026-09-28T21:26:24.024Z +354.557s           · r1 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · rotulo-ia · na árvore principal, fora deste ramo
+2026-09-28T21:26:24.024Z +354.557s           · rp1 · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · rp1b · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           · rp1c · por ler pelo lugar de direção antes de aterrar
+2026-09-28T21:26:24.024Z +354.557s           1 exceção(ões) por exercer, e o ficheiro di-lo:
+2026-09-28T21:26:24.024Z +354.557s           · «planned completion date has passed with no completion recorded»
+2026-09-28T21:26:24.024Z +354.557s   
+2026-09-28T21:26:24.096Z +354.629s   
+2026-09-28T21:26:24.096Z +354.629s   > o-estado-do-pais@0.1.0 check:lingua
+2026-09-28T21:26:24.096Z +354.629s   > node scripts/check-lingua.mjs
+2026-09-28T21:26:24.096Z +354.629s   
+2026-09-28T21:26:28.226Z +358.759s   
+2026-09-28T21:26:28.226Z +358.759s     língua ✓ 41 unidade(s) do livro-razão: 39 traduzida(s), 2 em português com razão escrita · 2551 localizador(es), todos dentro de documento português · 82 título(s) de documento com língua declarada (43 pt, 39 en) · 28 rótulo(s) da fonte com língua declarada (21 pt, 7 en) · 18 organismo(s) com língua declarada (17 pt, 1 en) · 80 edição(ões) com língua declarada (20 pt, 0 en, 60 sem língua)
+2026-09-28T21:26:28.226Z +358.759s           7404 página(s) lidas · unidades em «en»: 8714 (8705 traduzidas, 9 em português, todas com marca) · títulos com marca de língua: 6718 de 13436 rendidos · rótulos da fonte com marca de língua: 5592 de 11184 rendidos · organismos rendidos: 16062 (8031 de língua contrária: 7686 em «en» e 345 em «pt», 8031 com a marca certa) · edições rendidas: 10704 (3778 de língua contrária: 3778 em «en» e 0 em «pt», 3778 com a marca certa, 3148 sem língua nenhuma e sem marca) · localizadores em «en»: 2551 com marca · leis em «en»: 943 com marca, 3 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 110 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7404 linha(s) na língua da página · atributos repetidos: nenhum
+2026-09-28T21:26:28.226Z +358.759s           3 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.
+2026-09-28T21:26:28.226Z +358.759s   
+2026-09-28T21:26:28.297Z +358.830s   
+2026-09-28T21:26:28.297Z +358.830s   > o-estado-do-pais@0.1.0 check:lugar
+2026-09-28T21:26:28.297Z +358.830s   > node scripts/check-lugar.mjs
+2026-09-28T21:26:28.297Z +358.830s   
+2026-09-28T21:26:46.513Z +377.046s     8.4, o que a régua leu: 72 definições (esperadas 72) · 102 origens (esperadas 102)
+2026-09-28T21:26:46.513Z +377.046s     item 5, o que a régua leu no Método: pt «selo» ×6 · en «seal» ×6 (chão 1 por edição; a rota do Método está fora da conta da L3, pela medida P9 do brief)
+2026-09-28T21:26:46.513Z +377.046s     item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
+2026-09-28T21:26:46.535Z +377.068s     §7.4 e 8.6, o que os dados dizem: estudo 26 · texto 10 · indice 2 · edicoes 26 · linhas 26
+2026-09-28T21:26:46.535Z +377.068s   check:lugar · 7422 páginas em dist/
+2026-09-28T21:26:46.535Z +377.068s     L1 · páginas com dois destinos iguais fora da mobília         2341  (teto 2341) ok
+2026-09-28T21:26:46.535Z +377.068s         · /agenda · 8 destinos repetidos (ex.: /agenda ×4)
+2026-09-28T21:26:46.535Z +377.068s         · /correcoes · 9 destinos repetidos (ex.: / ×10)
+2026-09-28T21:26:46.535Z +377.068s         · /distritos/aveiro · 20 destinos repetidos (ex.: /municipios/agueda ×2)
+2026-09-28T21:26:46.535Z +377.068s         · /distritos/beja · 15 destinos repetidos (ex.: /municipios/aljustrel ×2)
+2026-09-28T21:26:46.535Z +377.068s         · /distritos/braga · 15 destinos repetidos (ex.: /municipios/amares ×2)
+2026-09-28T21:26:46.535Z +377.068s         · /distritos/braganca · 13 destinos repetidos (ex.: /municipios/alfandega-da-fe ×2)
+2026-09-28T21:26:46.535Z +377.068s     L2 · segundas listas dos concelhos                               0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     L2 · réguas da convergência fora de /regioes                     0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     L2 · sinopses de estudo fora de /estudos                         0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     L3 · palavras fora do vocabulário fechado                        0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     L4 · frases de definição e de hierarquia em falta                0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     L5 · páginas sem caminho no cabeçalho                            0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     L6 · selos que não dizem o publicador                            0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.5 · «limiar» sozinho                                           0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.8 · «livro-razão» nos menus e nos títulos                      0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.13 · valores selados na secção dos domínios de /               0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.14 · «Relance» e «Leitura breve» nas páginas do leitor         0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.17 · pontos dos 308 na página de um concelho                   0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.17 · páginas de concelho sem o mapa da sua unidade             0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.11 · leituras de aparelho no cabeçalho                         0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     8.4 · definições de painel fora da declaração                    0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     §7.10 · «[a verificar]» sem definição ao pé do primeiro          0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok
+2026-09-28T21:26:46.535Z +377.068s     §7.4 e 8.6, o que a régua leu: estudo 26 · texto 10 · indice 2 · edicoes 26 · linhas 26
+2026-09-28T21:26:46.535Z +377.068s     as exceções, e quantas vezes cada uma foi precisa:
+2026-09-28T21:26:46.535Z +377.068s         · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
+2026-09-28T21:26:46.535Z +377.068s         · «trabalho»    12 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+2026-09-28T21:26:46.535Z +377.068s         · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+2026-09-28T21:26:46.535Z +377.068s   check:lugar · verde.
+2026-09-28T21:26:46.607Z +377.140s   
+2026-09-28T21:26:46.607Z +377.140s   > o-estado-do-pais@0.1.0 provar:eyetext
+2026-09-28T21:26:46.607Z +377.140s   > node scripts/provar-eyetext.mjs
+2026-09-28T21:26:46.607Z +377.140s   
+2026-09-28T21:26:46.760Z +377.293s   
+2026-09-28T21:26:46.760Z +377.293s   A leitura do olho, provada contra o motor:
+2026-09-28T21:26:46.761Z +377.294s     evora-2027-prometido-painel-dinheiro/en           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     evora-2027-prometido-painel-dinheiro/pt           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·   49 no registo ·   83 unidades iguais · 21 isentas em 16 bloco(s) editado(s) · 4 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     evora-orcamentado-pago-devido-2025/en              94 blocos lidos ·   87 no registo ·  179 unidades iguais · 30 isentas em 27 bloco(s) editado(s) · 7 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  179 unidades iguais · 31 isentas em 28 bloco(s) editado(s) · 7 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+2026-09-28T21:26:46.761Z +377.294s     juntas apertadas na 07 pt                          20 · 0 imprimem um espaço
+2026-09-28T21:26:46.761Z +377.294s   
+2026-09-28T21:26:46.761Z +377.294s     7 edições · 841 blocos lidos · 4415 unidades · 4219 iguais carácter a carácter · 196 isentas
+2026-09-28T21:26:46.761Z +377.294s     375 operações da passagem de voz: 174 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+2026-09-28T21:26:46.761Z +377.294s   
+2026-09-28T21:26:46.761Z +377.294s   EYETEXT: PASSA — 605 conferências
+2026-09-28T21:26:46.843Z +377.376s   
+2026-09-28T21:26:46.843Z +377.376s   > o-estado-do-pais@0.1.0 provar:guardas
+2026-09-28T21:26:46.843Z +377.376s   > node scripts/provar-guardas.mjs
+2026-09-28T21:26:46.843Z +377.376s   
+2026-09-28T21:26:46.894Z +377.427s   
+2026-09-28T21:26:46.894Z +377.427s     guardas · 134 conferência(s) sobre os guardas de execução do bloco F0.4
+2026-09-28T21:26:46.894Z +377.427s     ✓ cada guarda recusa o que promete recusar e aceita o que promete aceitar.
+2026-09-28T21:26:46.894Z +377.427s   
+2026-09-28T21:26:46.963Z +377.496s   
+2026-09-28T21:26:46.963Z +377.496s   > o-estado-do-pais@0.1.0 check:mortos
+2026-09-28T21:26:46.963Z +377.496s   > node scripts/check-mortos.mjs --prova
+2026-09-28T21:26:46.963Z +377.496s   
+2026-09-28T21:26:46.993Z +377.526s     prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, num directório temporário.
+2026-09-28T21:26:48.481Z +379.014s   
+2026-09-28T21:26:48.481Z +379.014s     ✓ identificadores · 253 ficheiro(s) lidos, nenhuma declaração morta
+2026-09-28T21:26:48.481Z +379.014s   
+2026-09-28T21:26:48.569Z +379.102s   
+2026-09-28T21:26:48.569Z +379.102s   > o-estado-do-pais@0.1.0 check:indice
+2026-09-28T21:26:48.569Z +379.102s   > node tests/livro/indice.mjs --navegador
+2026-09-28T21:26:48.569Z +379.102s   
+2026-09-28T21:26:57.951Z +388.484s   
+2026-09-28T21:26:57.951Z +388.484s     A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7422 página(s) de <raiz>/dist
+2026-09-28T21:26:57.951Z +388.484s   
+2026-09-28T21:26:57.951Z +388.484s     ✓ I1 · o nome de uma medida não é o identificador
+2026-09-28T21:26:57.951Z +388.484s           20 página(s) · 484 entrada(s) · 432 com nome · 52 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 484 identificador(es) em metadado
+2026-09-28T21:26:57.951Z +388.484s           a escada no índice do livro-razão, por edição (242 linhas): 144 pelo nome do cartão · 3 pelo rótulo da fonte · 69 pelo TÍTULO DO DOCUMENTO, que é o nome do papel e não o da medida · 26 sem nome
+2026-09-28T21:26:57.951Z +388.484s           1896 rótulo(s) do livro-razão inteiro com um localizador de uma das 4 formas conhecidas
+2026-09-28T21:26:57.951Z +388.484s     ✓ I2 · as datas ISO à vista
+2026-09-28T21:26:57.951Z +388.484s           0 data(s) ISO como valor · 0 em prosa por marcar · 922 dentro de texto transcrito (a casa não edita o que transcreve) · 305 em documentos alojados e páginas de leitura (fora do âmbito do brief §2)
+2026-09-28T21:26:57.951Z +388.484s     ✓ I3 · a busca do índice é um formulário, e cobre o livro-razão inteiro
+2026-09-28T21:26:57.951Z +388.484s           2 índice(s) com um campo de busca dentro de um <form method="get"> · 6018 entrada(s) nos dois ficheiros do índice da busca, contra 3009 linhas do livro-razão em cada
+2026-09-28T21:26:57.951Z +388.484s     ✓ I4 · a palavra retirada não está no rótulo da contagem
+2026-09-28T21:26:57.951Z +388.484s           0 ocorrência(s) no rótulo da contagem das áreas · 15 noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)
+2026-09-28T21:26:57.951Z +388.484s     ✓ I5 · as contagens do índice com denominador
+2026-09-28T21:26:57.951Z +388.484s           as duas parcelas dizem de que total saem, nas duas edições
+2026-09-28T21:26:57.951Z +388.484s     ✓ I6 · o marcador com um destino só
+2026-09-28T21:26:57.951Z +388.484s           427 ligação(ões) em «pt» e 438 em «en», uma página cada · 72 marcador(es) dentro de um selo (excepção da Emenda 2)
+2026-09-28T21:26:57.951Z +388.484s     ✓ I8 · a página de uma unidade da Carta
+2026-09-28T21:26:57.951Z +388.484s           58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada
+2026-09-28T21:26:57.951Z +388.484s     ✓ I9 · as datas dos trabalhos, e o marcador que resta
+2026-09-28T21:26:57.951Z +388.484s           26 linha(s) de trabalho · 2 marcador(es) ao todo, 2 linha(s) com um e nenhuma com dois · 18 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 18 de 18 linha(s) de src/data/datas-de-publicacao.json refeitas do git
+2026-09-28T21:26:57.951Z +388.484s     ✓ I10 · nenhum número novo
+2026-09-28T21:26:57.951Z +388.484s           3009 linha(s) citada(s) em 20798 ocorrência(s) · 19 motivo(s) declarado(s)
+2026-09-28T21:26:57.951Z +388.484s     ✓ I3b · a busca filtra o livro-razão inteiro, no navegador
+2026-09-28T21:26:57.951Z +388.484s           /livro-razao: 242 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0
+2026-09-28T21:26:57.951Z +388.484s     ✓ I7 · sem transbordo a 390 nas páginas de linha
+2026-09-28T21:26:57.951Z +388.484s           1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)
+2026-09-28T21:26:57.951Z +388.484s     ✓ I11 · o espaço entre o número e a palavra, a 390
+2026-09-28T21:26:57.951Z +388.484s           /: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s) · /en/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 4.19px · com o defeito plantado, 1 de 1 apanhada(s)
+2026-09-28T21:26:57.951Z +388.484s   
+2026-09-28T21:26:58.093Z +388.626s   
+2026-09-28T21:26:58.093Z +388.626s   > o-estado-do-pais@0.1.0 check:cartao
+2026-09-28T21:26:58.093Z +388.626s   > node tests/cartao/cartao.mjs --prova && node tests/cartao/rp1.mjs
+2026-09-28T21:26:58.093Z +388.626s   
+2026-09-28T21:26:58.315Z +388.848s     prova: 12 estragos plantados, 12 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; K13 sobre 4 medidas e 12 linhas com grupo etário, com a declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; K16 com a declaração em vigor a passar e dez plantas a morder, a primeira o defeito da leitura a frio
+2026-09-28T21:27:01.616Z +392.149s   
+2026-09-28T21:27:01.617Z +392.150s     A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+2026-09-28T21:27:01.617Z +392.150s   
+2026-09-28T21:27:01.617Z +392.150s       páginas lidas                    7422
+2026-09-28T21:27:01.617Z +392.150s       cartões                          5312 (2656 pt, 2656 en)
+2026-09-28T21:27:01.617Z +392.150s       com nome                         5312 de 5312
+2026-09-28T21:27:01.617Z +392.150s       com a frase do que medem         4442 de 5312 com frase
+2026-09-28T21:27:01.617Z +392.150s       com régua                        834 de 5312 com régua
+2026-09-28T21:27:01.617Z +392.150s       linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)
+2026-09-28T21:27:01.617Z +392.150s       itens «período anterior», pares conferidos             220
+2026-09-28T21:27:01.617Z +392.150s       «Governo Constitucional»         1 pt · 1 en
+2026-09-28T21:27:01.617Z +392.150s       legenda da marca                 2 página(s)
+2026-09-28T21:27:01.617Z +392.150s       nome na língua da fonte          0 (com a marca «lang»)
+2026-09-28T21:27:01.617Z +392.150s       unidade na outra língua          1 (a exceção da I92)
+2026-09-28T21:27:01.617Z +392.150s       o marcador em português          4 (a exceção da IDENTIDADE §6)
+2026-09-28T21:27:01.617Z +392.150s       valores de régua sem marca própria                    352 (a porta é a do cartão)
+2026-09-28T21:27:01.617Z +392.150s       valores de referência, as duas testemunhas comparadas  15
+2026-09-28T21:27:01.617Z +392.150s         com a testemunha discordante declarada e inteira     2 (5 de 5 plantas a morder)
+2026-09-28T21:27:01.617Z +392.150s       cartões com veredicto conferido (K15)                 90
+2026-09-28T21:27:01.617Z +392.150s       cartões com a média europeia calada (K14)              6
+2026-09-28T21:27:01.617Z +392.150s       medidas com nome oficial no recibo                    11
+2026-09-28T21:27:01.617Z +392.150s       perguntas com cada pedaço apoiado (K16)               34 (84 pedaços, 112 apoios, 64 origens seladas no motor)
+2026-09-28T21:27:01.617Z +392.150s       leituras dos cartões nacionais (K17)                 142 em 142 cartões (49 declarações auditadas, 1143 partes, 449 apoios, 99 origens, 284 ramos recontados, 12 de 12 plantas a morder)
+2026-09-28T21:27:01.617Z +392.150s       medidas com grupo etário fixado na linha (K13)         4
+2026-09-28T21:27:01.617Z +392.150s         linhas dessas medidas, todas conferidas               12
+2026-09-28T21:27:01.617Z +392.150s         delas, na catraca declarada (I132, vazia)           0
+2026-09-28T21:27:01.617Z +392.150s       ficheiros do motor               referencias.json sim · nomes.json sim
+2026-09-28T21:27:01.617Z +392.150s   
+2026-09-28T21:27:01.617Z +392.150s     ✓ 5312 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 4442 de 5312 com frase e 834 de 5312 com régua, e os 220 períodos anteriores da mesma série e da mesma unidade
+2026-09-28T21:27:01.617Z +392.150s   
+2026-09-28T21:27:02.220Z +392.753s   RP1: PASS · {"reguas":9,"plantas":[{"nome":"régua de outra medida","mordeu":true},{"nome":"unidade diferente","mordeu":true},{"nome":"salto de mês calado","mordeu":true},{"nome":"período anterior ausente","mordeu":true},{"nome":"União de outro mês","mordeu":true},{"nome":"União de outra série","mordeu":true},{"nome":"União de outra unidade","mordeu":true},{"nome":"trimestre imediatamente anterior em vez do homólogo","mordeu":true},{"nome":"data recusada: reference_date=2026-T5","mordeu":true},{"nome":"data recusada: access_date=2026-T2","mordeu":true},{"nome":"data recusada: published_at=2026-03-31","mordeu":true},{"nome":"objeto do INE cortado dentro da cadeia do valor","mordeu":true},{"nome":"There were no: negação inglesa sem literal, composição intacta","mordeu":true},{"nome":"sufixo traduzido não pode trocar a linha","mordeu":true},{"nome":"sufixo da unidade sem literal","mordeu":true},{"nome":"origem portuguesa marcada como inglesa: pt .def-origem-doc","mordeu":true},{"nome":"origem portuguesa marcada como inglesa: pt .def-excerto-texto","mordeu":true},{"nome":"unidade depois do provisório, pt","mordeu":true},{"nome":"I153: bandeira colada à unidade, pt, .cartao-medida-valor","mordeu":true},{"nome":"I153: bandeira colada à unidade, pt, [data-cartao-leitura]","mordeu":true},{"nome":"origem portuguesa marcada como inglesa: en .def-origem-doc","mordeu":true},{"nome":"origem portuguesa marcada como inglesa: en .def-excerto-texto","mordeu":true},{"nome":"unidade depois do provisório, en","mordeu":true},{"nome":"I153: bandeira colada à unidade, en, .cartao-medida-valor","mordeu":true},{"nome":"I153: bandeira colada à unidade, en, [data-cartao-leitura]","mordeu":true}],"nomes":{"pensao-media-anual-2025":{"pt":"Pensão média anual","en":"Average annual pension"},"pensao-media-anual-2024":{"pt":"Pensão média anual","en":"Average annual pension"},"ipc-alimentacao-variacao-homologa":{"pt":"Preços dos alimentos e das bebidas não alcoólicas","en":"Prices of food and non-alcoholic drinks"},"ipc-alimentacao-variacao-homologa-periodo-anterior":{"pt":"Preços dos alimentos e das bebidas não alcoólicas","en":"Prices of food and non-alcoholic drinks"}},"publicacoes_no_periodo":[{"id":"remuneracao-bruta-mensal-media","data":"2026-04-01","aceite":true},{"id":"ipc-variacao-homologa","data":"2026-08-15","aceite":true}],"datas":8,"paginas":2,"cartoes":24}
+2026-09-28T21:27:02.300Z +392.833s   
+2026-09-28T21:27:02.300Z +392.833s   > o-estado-do-pais@0.1.0 check:nomes
+2026-09-28T21:27:02.300Z +392.833s   > node scripts/check-nomes-oficiais.mjs --prova
+2026-09-28T21:27:02.300Z +392.833s   
+2026-09-28T21:27:04.279Z +394.812s   
+2026-09-28T21:27:04.279Z +394.812s     nomes oficiais · 7422 página(s) lidas, 47 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19
+2026-09-28T21:27:04.279Z +394.812s     ✓ nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+2026-09-28T21:27:04.351Z +394.884s   
+2026-09-28T21:27:04.351Z +394.884s   > o-estado-do-pais@0.1.0 check:palavras
+2026-09-28T21:27:04.351Z +394.884s   > node tests/voz/palavras-proibidas.mjs --prova
+2026-09-28T21:27:04.351Z +394.884s   
+2026-09-28T21:28:19.568Z +470.101s     palavras ✓ 20 de 20 plantas vistas (14 palavras, 6 buracos da superfície) · 7422 página(s) medidas em repouso, 0 achados · 44 página(s) com a superfície estreitada por rota declarada
+2026-09-28T21:28:19.643Z +470.176s   
+2026-09-28T21:28:19.643Z +470.176s   > o-estado-do-pais@0.1.0 design:feixe
+2026-09-28T21:28:19.643Z +470.176s   > node scripts/design-bundle.mjs
+2026-09-28T21:28:19.643Z +470.176s   
+2026-09-28T21:28:20.899Z +471.432s   
+2026-09-28T21:28:20.899Z +471.432s     O feixe de cartões do sistema de desenho
+2026-09-28T21:28:20.899Z +471.432s     design-system/ · de dist/ no commit b485ae5 · 20 cartões, 11 ficheiros de letra e um README
+2026-09-28T21:28:20.899Z +471.432s   
+2026-09-28T21:28:20.899Z +471.432s     ficheiro                          grupo          bytes  ok
+2026-09-28T21:28:20.899Z +471.432s     01-cor.html                       Fundamentos   375679  ✓
+2026-09-28T21:28:20.899Z +471.432s     02-tipo.html                      Fundamentos   371827  ✓
+2026-09-28T21:28:20.899Z +471.432s     03-selo-e-marcador.html           Componentes   409553  ✓
+2026-09-28T21:28:20.899Z +471.432s     04-regua.html                     Disposições   373748  ✓
+2026-09-28T21:28:20.899Z +471.432s     05-mapa.html                      Disposições   440244  ✓
+2026-09-28T21:28:20.899Z +471.432s     06-estados.html                   Componentes   371318  ✓
+2026-09-28T21:28:20.899Z +471.432s     07-cartoes.html                   Componentes   286722  ✓
+2026-09-28T21:28:20.899Z +471.432s     10-pagina-primeira.html           Páginas       478663  ✓
+2026-09-28T21:28:20.899Z +471.432s     11-pagina-primeira-escuro.html    Páginas       479574  ✓
+2026-09-28T21:28:20.899Z +471.432s     12-pagina-linha-livro-razao.html  Páginas       225617  ✓
+2026-09-28T21:28:20.899Z +471.432s     13-pagina-livro-razao.html        Páginas       607743  ✓
+2026-09-28T21:28:20.899Z +471.432s     14-pagina-municipio.html          Páginas       275915  ✓
+2026-09-28T21:28:20.899Z +471.432s     15-pagina-lugares.html            Páginas       482103  ✓
+2026-09-28T21:28:20.899Z +471.432s     16-pagina-metodo.html             Páginas       255614  ✓
+2026-09-28T21:28:20.899Z +471.432s     17-pagina-agenda.html             Páginas       292359  ✓
+2026-09-28T21:28:20.899Z +471.432s     18-pagina-estudos.html            Páginas       216397  ✓
+2026-09-28T21:28:20.899Z +471.432s     19-pagina-sobre.html              Páginas       198354  ✓
+2026-09-28T21:28:20.899Z +471.432s     20-pagina-correcoes.html          Páginas       267977  ✓
+2026-09-28T21:28:20.899Z +471.432s     21-pagina-404.html                Páginas       197089  ✓
+2026-09-28T21:28:20.899Z +471.432s     30-regras.html                    Fundamentos   239747  ✓
+2026-09-28T21:28:20.899Z +471.432s   
+2026-09-28T21:28:20.899Z +471.432s     6685.8 KiB de cartões · maior cartão 593.5 KiB · tecto 596.75 KiB
+2026-09-28T21:28:20.899Z +471.432s     11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto
+2026-09-28T21:28:20.899Z +471.432s     ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)
+2026-09-28T21:28:20.899Z +471.432s     nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida
+2026-09-28T21:28:20.899Z +471.432s   
+2026-09-28T21:28:20.899Z +471.432s     7422 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.
+2026-09-28T21:28:20.899Z +471.432s     ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.
+2026-09-28T21:28:20.899Z +471.432s   

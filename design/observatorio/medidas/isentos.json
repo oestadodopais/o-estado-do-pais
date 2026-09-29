@@ -146,12 +146,12 @@
     {
       "brief": "design/observatorio/BRIEF-P1-o-rodape-e-a-primeira-pagina.md",
       "isento_por": "data",
-      "sha256": "b9fa7d69741eefbf89e197d9bbc8e948eadc2ff9e0e210b63b4ada31fc4adc01"
+      "sha256": "fa9dd8e230e7116cc749fced9eb5573272f3cf97940ea61da1c64ee5ffd57132"
     },
     {
       "brief": "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md",
       "isento_por": "data",
-      "sha256": "87af10a9fe78b675ad17f4e4132e3f3338772893af9272aaac617572fd378924"
+      "sha256": "601863038b3207f150b7c5eccf63ee383a89276a878cdcd0b2910ccf82710ff6"
     },
     {
       "brief": "design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md",

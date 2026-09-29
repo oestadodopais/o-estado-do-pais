@@ -37,14 +37,14 @@ O dinheiro, a exposição legal, o que sai em nome do projeto para terceiros, os
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
-### O sítio (`/Users/nunosantos/Instruments/OEstadoDoPais`)
+### O sítio (`/Users/UTILIZADOR/Instruments/OEstadoDoPais`)
 - `main`: d3481ba9 · 2026-09-22T17:35:01+01:00 · A §1.122 com o campo «Afecta» na forma que a amarra das decisões exige  (`git log -1 main`)
 - `origin/main`: d3481ba9 · 2026-09-22T17:35:01+01:00 · A §1.122 com o campo «Afecta» na forma que a amarra das decisões exige  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
 - ramos locais: `main d3481ba9`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/OEstadoDoPais d3481ba9 [main]`
+- worktree: `/Users/UTILIZADOR/Instruments/OEstadoDoPais d3481ba9 [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 35759367080 · `d3481ba9` · main · portão · **completed / success** · criada 2026-09-22T17:14:20Z · atualizada 2026-09-22T17:33:54Z  (lida outra vez ao fechar)
@@ -59,14 +59,14 @@ O dinheiro, a exposição legal, o que sai em nome do projeto para terceiros, os
 - igual a `origin/main` (`d3481ba9`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`/Users/nunosantos/Instruments/ResearchHub`)
+### O motor (`/Users/UTILIZADOR/Instruments/ResearchHub`)
 - `master`: e60aba6 · 2026-09-22T16:59:48+01:00 · Cada numero do relatorio tem casa, e o conferidor le as duas formas  (`git log -1 master`)
 - `origin/master`: e60aba6 · 2026-09-22T16:59:48+01:00 · Cada numero do relatorio tem casa, e o conferidor le as duas formas  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 4 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `master e60aba6`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/ResearchHub e60aba6 [master]`
+- worktree: `/Users/UTILIZADOR/Instruments/ResearchHub e60aba6 [master]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 22.09.2026 17:29 UTC):

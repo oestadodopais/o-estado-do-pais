@@ -299,7 +299,7 @@ python3 -m indicators.refresh --check-por-commitar   # EXIT=1
 python3 -m indicators.refresh --check-por-commitar   # EXIT=0
 ```
 
-**A linha para o `launchd`, que não se editou** (é a máquina do diretor). O plist já chama `--check-heartbeat`, e a guarda entra por aí sem uma linha nova: não é preciso mexer-lhe. Se o diretor a quiser separada, para a distinguir no log, a linha a acrescentar ao `ProgramArguments` de `~/Library/LaunchAgents/com.nunosantos.oedp-indicadores.plist`, a seguir ao `--check-heartbeat`, é:
+**A linha para o `launchd`, que não se editou** (é a máquina do diretor). O plist já chama `--check-heartbeat`, e a guarda entra por aí sem uma linha nova: não é preciso mexer-lhe. Se o diretor a quiser separada, para a distinguir no log, a linha a acrescentar ao `ProgramArguments` de `~/Library/LaunchAgents/com.UTILIZADOR.oedp-indicadores.plist`, a seguir ao `--check-heartbeat`, é:
 
 ```
 ; echo "== por commitar =="; python3 refresh.py --check-por-commitar

@@ -45,9 +45,9 @@ from pathlib import Path
 # 0. Caminhos
 # ---------------------------------------------------------------------------
 
-REPO = Path("/Users/nunosantos/Instruments/OEstadoDoPais")
+REPO = Path("/Users/UTILIZADOR/Instruments/OEstadoDoPais")
 DEFAULT_DIST = Path(
-    "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/"
+    "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/"
     "96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-p4"
 )
 REGISTOS = REPO / "registos"

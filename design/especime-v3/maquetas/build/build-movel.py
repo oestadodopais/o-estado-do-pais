@@ -148,7 +148,7 @@ BODY = f'''<div class="pg" style="width: 390px; box-sizing: border-box; min-heig
 
   <!-- rodapé -->
   <div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--g3); padding-top: 12px;">
-    <p class="prosa" style="font-size: 13px;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+    <p class="prosa" style="font-size: 13px;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de [o diretor].</p>
     <div class="meta">Maqueta v3 · telemóvel 390 · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · os substitutos Google não têm versaletes (smcp) nem algarismos antigos (onum); Bitter tem algarismos tabulares (tnum) · valores publicados a 2026-08-18</div>
   </div>
 </div>'''

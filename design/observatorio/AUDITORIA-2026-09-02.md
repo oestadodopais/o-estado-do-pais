@@ -110,7 +110,7 @@ Medido no telemóvel de referência (390 × 844) e na janela real de um iPhone 1
 - `public/js/inicio.js`: cerca de 195 das 900 linhas são inalcançáveis (o subsistema dos 308 pontos, anterior à Emenda 20); os guiões servem-se sem minificar, 64 % de comentários.
 - Sem Content-Security-Policy; o HSTS sem `includeSubDomains`; há um só guião em linha em todo o sítio, byte a byte igual, por isso uma CSP cabe num hash.
 - 12 identificadores mortos (os dois conhecidos e mais dez); `published_at` declarado, validado e a 0 de 2 916; a `allowlist` com uma exceção órfã; `ledger/README.md:747` a dizer «as 70 linhas de Évora» quando são 2 850; `attributed_to` a repetir `source` em 98 % das linhas preenchidas.
-- 243 MB de capturas de desenho num repositório público de 1,1 GB; 36 linhas com `/Users/nunosantos/`.
+- 243 MB de capturas de desenho num repositório público de 1,1 GB; 36 linhas com `/Users/UTILIZADOR/`.
 - Acrescentar uma família de páginas custou 23 ficheiros e 2 194 linhas (`/areas`), sem guia nem gerador.
 
 **A construção.** 303 s locais, dos quais `astro build` 233 s. As páginas de linha do livro-razão são 72 % do tempo de renderização (5 834 páginas a cerca de 28 ms cada); os 2 916 JSON por linha custam 0,1 s no total. `build.concurrency` medido a zero (217,7 s contra 220,4 s). As alavancas reais: correr os oito portões pós-construção em paralelo (menos 23 s), aligeirar `LinhaView.astro` (1 179 linhas, até menos 38 s), e a decisão do diretor sobre as 3 226 páginas inglesas de linha (menos 78 s, 26 %). Não tirar os portões do Vercel: são 23 % da construção e são a garantia da casa.

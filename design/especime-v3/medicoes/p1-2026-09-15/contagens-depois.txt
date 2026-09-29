@@ -10,7 +10,7 @@
   item 1 · «the house policy»                       0 ocorrência(s) em     0 página(s)
   item 1 · «regras da casa»                         1 ocorrência(s) em     1 página(s)  [/metodo×1]
   item 1 · «the house rules»                        0 ocorrência(s) em     0 página(s)
-  item 1 · «Nuno dos Santos»                        2 ocorrência(s) em     2 página(s)  [/en/method×1, /metodo×1]
+  item 1 · «[o diretor]»                        2 ocorrência(s) em     2 página(s)  [/en/method×1, /metodo×1]
   item 2 · «Diretor:»                               0 ocorrência(s) em     0 página(s)
   item 2 · «Director:»                              0 ocorrência(s) em     0 página(s)
   item 2 · «Publicação gratuita»                    1 ocorrência(s) em     1 página(s)  [/×1]

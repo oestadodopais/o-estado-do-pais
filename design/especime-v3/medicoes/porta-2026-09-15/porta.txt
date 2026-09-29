@@ -63,4 +63,4 @@
   ✓ o selo de volta dentro da manchete do domínio  verde antes: sim · html mudou: sim · vermelho depois: A16.pt=vermelho, A16.en=vermelho
   ✗ a mobília do menu em duas filas  verde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde
 
-  porta ✓ 40 de 40 célula(s) · plantas ✗  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist
+  porta ✓ 40 de 40 célula(s) · plantas ✗  /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist

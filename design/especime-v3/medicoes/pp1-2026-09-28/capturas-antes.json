@@ -1,0 +1,553 @@
+{
+  "estado": "antes",
+  "aceitacao": {
+    "passou": true,
+    "falhas": []
+  },
+  "observacoes": [],
+  "cabeca_da_arvore": "1cbdb8c44045a5053cba33562f5044e02975bc47",
+  "dist_construido_de": "1cbdb8c44045a5053cba33562f5044e02975bc47",
+  "construido_em": "2026-09-28T16:07:29.691Z",
+  "pasta_das_capturas": "design/especime-v3/medicoes/pp1-2026-09-28/capturas",
+  "pasta_das_paginas": "design/especime-v3/medicoes/pp1-2026-09-28/paginas-antes",
+  "inicio": "2026-09-28T16:10:26.703Z",
+  "fim": "2026-09-28T16:10:37.949Z",
+  "segundos": 11,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "ecra_390": 844,
+  "copias": {
+    "index.html": {
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "sha256": "66f8335bcaa5a3cc544e93254d5101059d44c3a8c5d1bdbe4fd417263462185c"
+    },
+    "en_index.html": {
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "sha256": "902e6627376f379080ea4434c28b875b614b5fe28d2f30ef15054a7aba3e8df7"
+    },
+    "_astro/Base.Bu8ardly.css": {
+      "origem": "/_astro/Base.Bu8ardly.css",
+      "tipo": "folha construída",
+      "sha256": "38efcbd365cf13a746e1d473886c340ca73e58a8d391abf69c0a2a95d4dfb26c"
+    },
+    "_astro/inicio.CoJligbV.css": {
+      "origem": "/_astro/inicio.CoJligbV.css",
+      "tipo": "folha construída",
+      "sha256": "a0529e5e6954447559c92c7591295b6f2fbbec7cf4aa22cca618e1e704713c1c"
+    },
+    "_astro/lugar.DQAkNk1H.css": {
+      "origem": "/_astro/lugar.DQAkNk1H.css",
+      "tipo": "folha construída",
+      "sha256": "71c21c966ff5be751bb2faee1b2a0e7accb0d286d5ff71b04ed3e160d77163c2"
+    }
+  },
+  "resultados": [
+    {
+      "ficheiro": "antes-pais-pt-390.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 390,
+      "tema": "light",
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 10812,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 69,
+          "fundo": 104,
+          "x": 18,
+          "largura": 354,
+          "altura": 35
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "49c93bda4df464b06c46fe81ef79144f98fe48021f2d7ed51227ec0482f9dfe7",
+      "ecras": [
+        {
+          "ficheiro": "antes-pais-pt-390-primeiro-ecra.png",
+          "altura": 844,
+          "sha256": "6db5ece8441a7117f68bd533426d4b818e9399c51fe7279d0ebe58240a7d75d6"
+        },
+        {
+          "ficheiro": "antes-pais-pt-390-dois-ecras.png",
+          "altura": 1688,
+          "sha256": "d36f7f871f209df926582143fa0bfeb4be4981affa07e7937dac6a8f8f88cb1b"
+        }
+      ]
+    },
+    {
+      "ficheiro": "antes-pais-pt-768.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 768,
+      "tema": "light",
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7941,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 79,
+          "fundo": 138,
+          "x": 31,
+          "largura": 707,
+          "altura": 59
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "1750354e60c63f84f3b1aa229b21420e44e075c2bf748a10cb092e012b097a7a",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-pt-1024.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1024,
+      "tema": "light",
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 7679,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 90,
+          "fundo": 161,
+          "x": 41,
+          "largura": 942,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "a409d69b2a68fefc45fa345170090d1513e8235e41d906230b2d56bdaad4a8fd",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-pt-1280.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1280,
+      "tema": "light",
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 7123,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 95,
+          "fundo": 166,
+          "x": 94,
+          "largura": 1092,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "1fd9b71977adacbf52b465d5ca3cb15309141715ec551ed0332ceb92bc5827ac",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-pt-1600.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1600,
+      "tema": "light",
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 7427,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 95,
+          "fundo": 166,
+          "x": 254,
+          "largura": 1092,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "6661c958aec9a8a1000a03189a18137fc42583bffde62bd022f0e303b5f131e6",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-pt-390-escuro.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 390,
+      "tema": "dark",
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 10812,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 69,
+          "fundo": 104,
+          "x": 18,
+          "largura": 354,
+          "altura": 35
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "17fe9ecff51801448e171e6d4b65c16f099da6bcc05158cfbe71e5af2a2eab1c",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-pt-1280-escuro.png",
+      "rota": "/",
+      "familia": "pais",
+      "lingua": "pt",
+      "largura": 1280,
+      "tema": "dark",
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 7123,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 95,
+          "fundo": 166,
+          "x": 94,
+          "largura": 1092,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "c76b53dac3738f3ebf703ee309931fa79c5f6be90fdfbf4f52db2235673046fe",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-en-390.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 390,
+      "tema": "light",
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 10679,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 69,
+          "fundo": 104,
+          "x": 18,
+          "largura": 354,
+          "altura": 35
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "199094f8d27d5292cb33ae20c6cba521b2ad1201be6eea9566e36d65201e86fd",
+      "ecras": [
+        {
+          "ficheiro": "antes-pais-en-390-primeiro-ecra.png",
+          "altura": 844,
+          "sha256": "583f0a1bcd4dab59dfe21cf6dd08b62a13517c9e63897738da7b7d019eaf1cf2"
+        },
+        {
+          "ficheiro": "antes-pais-en-390-dois-ecras.png",
+          "altura": 1688,
+          "sha256": "208263bc2cffabdfe4bd187d37eebbb319bfd8d74e43b974d36cb22bf4adf0e2"
+        }
+      ]
+    },
+    {
+      "ficheiro": "antes-pais-en-768.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 768,
+      "tema": "light",
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 7917,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 79,
+          "fundo": 138,
+          "x": 31,
+          "largura": 707,
+          "altura": 59
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "11e0f0c7d22e57a5739d921468a0b3111ede917b165a7842f178cae97a4094c4",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-en-1024.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 1024,
+      "tema": "light",
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 7551,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 90,
+          "fundo": 161,
+          "x": 41,
+          "largura": 942,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "90a38871b2fefbaf72704dd8cf8bf738492d545d797a1220e13e74a605fa8e29",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-en-1280.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 1280,
+      "tema": "light",
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6949,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 95,
+          "fundo": 166,
+          "x": 94,
+          "largura": 1092,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "f5ab6e571e89b39111a650735739f74c9eeaa419da58c05d6a6b91b34a66b10f",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-en-1600.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 1600,
+      "tema": "light",
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 7359,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 95,
+          "fundo": 166,
+          "x": 254,
+          "largura": 1092,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "b7915210eca027688695a7c509363b938b183aaec9e0fb6b8c536a5d9f79fb1e",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-en-390-escuro.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 390,
+      "tema": "dark",
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 10679,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 69,
+          "fundo": 104,
+          "x": 18,
+          "largura": 354,
+          "altura": 35
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "062025fc320c888ef27cfcbd39934bac6406d88036af66d7d5ff4bb48bd90dd0",
+      "ecras": []
+    },
+    {
+      "ficheiro": "antes-pais-en-1280-escuro.png",
+      "rota": "/en/",
+      "familia": "pais",
+      "lingua": "en",
+      "largura": 1280,
+      "tema": "dark",
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6949,
+      "h1": {
+        "texto": "O Estado do País",
+        "caixa": {
+          "y": 95,
+          "fundo": 166,
+          "x": 94,
+          "largura": 1092,
+          "altura": 71
+        }
+      },
+      "o_que_se_passa": null,
+      "data_dos_numeros": {
+        "texto": null,
+        "caixa": null
+      },
+      "blocos": [],
+      "entradas": null,
+      "deslocamento": 0,
+      "pedidosExternosAbortados": [],
+      "errosDoNavegador": [],
+      "sha256": "f5e815ebee3d9bb6fee97322ce2333b17f935471d78737e20f2432f202d5d5b0",
+      "ecras": []
+    }
+  ]
+}

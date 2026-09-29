@@ -1,0 +1,140 @@
+{
+ "comando": "npm run build",
+ "inicio": "2026-09-28T18:25:25.368Z",
+ "fim": "2026-09-28T18:26:38.503Z",
+ "segundos": 73.135,
+ "codigo": 0,
+ "maquina": {
+  "processador": "Apple M4",
+  "nucleos": 10,
+  "memoria_gib": 16,
+  "sistema": "Darwin 25.6.0",
+  "node": "v22.23.1"
+ },
+ "vizinhos_ao_comecar": {
+  "lido": true,
+  "processos": []
+ },
+ "vizinhos_ao_acabar": {
+  "lido": true,
+  "processos": [
+   "47932  15.2 <casa>/…/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disabl",
+   "47933  10.1 <casa>/…/chrome-headless-shell --type=gpu-process --no-sandbox --disable-breakpad --headless --use-a",
+   "47934   5.6 <casa>/…/chrome-headless-shell --type=utility --utility-sub-type=network.mojom.NetworkService --lang",
+   "47935  22.4 <casa>/…/chrome-headless-shell --type=renderer --headless=old --no-sandbox --disable-back-forward-ca"
+  ]
+ },
+ "astro_build": {
+  "inicio": "2026-09-28T18:25:27.585Z",
+  "fim": "2026-09-28T18:25:37.054Z",
+  "segundos": 9.469
+ },
+ "paginas_do_astro": 7404,
+ "passos": [
+  {
+   "nome": "build",
+   "inicio": "2026-09-28T18:25:25.442Z",
+   "segundos": 0.071
+  },
+  {
+   "nome": "mapa:unidades",
+   "inicio": "2026-09-28T18:25:25.513Z",
+   "segundos": 0.115
+  },
+  {
+   "nome": "ledger:check",
+   "inicio": "2026-09-28T18:25:25.628Z",
+   "segundos": 0.416
+  },
+  {
+   "nome": "check:registo",
+   "inicio": "2026-09-28T18:25:26.044Z",
+   "segundos": 0.272
+  },
+  {
+   "nome": "check:cruzamento",
+   "inicio": "2026-09-28T18:25:26.316Z",
+   "segundos": 0.355
+  },
+  {
+   "nome": "check:documentos",
+   "inicio": "2026-09-28T18:25:26.671Z",
+   "segundos": 10.481
+  },
+  {
+   "nome": "stamp:version",
+   "inicio": "2026-09-28T18:25:37.152Z",
+   "segundos": 0.114
+  },
+  {
+   "nome": "cartoes",
+   "inicio": "2026-09-28T18:25:37.266Z",
+   "segundos": 11.081
+  },
+  {
+   "nome": "gate:html",
+   "inicio": "2026-09-28T18:25:48.347Z",
+   "segundos": 12.085
+  },
+  {
+   "nome": "check:datas",
+   "inicio": "2026-09-28T18:26:00.432Z",
+   "segundos": 1.03
+  },
+  {
+   "nome": "check:cadeia",
+   "inicio": "2026-09-28T18:26:01.462Z",
+   "segundos": 0.193
+  },
+  {
+   "nome": "check:dados",
+   "inicio": "2026-09-28T18:26:01.655Z",
+   "segundos": 1.215
+  },
+  {
+   "nome": "check:mapa",
+   "inicio": "2026-09-28T18:26:02.870Z",
+   "segundos": 0.313
+  },
+  {
+   "nome": "check:regioes",
+   "inicio": "2026-09-28T18:26:03.183Z",
+   "segundos": 0.251
+  },
+  {
+   "nome": "check:areas",
+   "inicio": "2026-09-28T18:26:03.434Z",
+   "segundos": 0.381
+  },
+  {
+   "nome": "check:formas",
+   "inicio": "2026-09-28T18:26:03.815Z",
+   "segundos": 3.31
+  },
+  {
+   "nome": "check:lugares",
+   "inicio": "2026-09-28T18:26:07.125Z",
+   "segundos": 0.47
+  },
+  {
+   "nome": "check:pais",
+   "inicio": "2026-09-28T18:26:07.595Z",
+   "segundos": 2.933
+  },
+  {
+   "nome": "check:voz",
+   "inicio": "2026-09-28T18:26:10.528Z",
+   "segundos": 22.043
+  },
+  {
+   "nome": "check:nomes",
+   "inicio": "2026-09-28T18:26:32.571Z",
+   "segundos": 1.973
+  },
+  {
+   "nome": "check:lingua",
+   "inicio": "2026-09-28T18:26:34.544Z",
+   "segundos": 3.959
+  }
+ ]
+}

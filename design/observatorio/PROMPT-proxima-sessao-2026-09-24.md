@@ -35,15 +35,15 @@ No ramo `l1-2026-09-24` do sítio: o brief (`design/observatorio/BRIEF-L1-a-leit
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
-### O sítio (`/Users/nunosantos/Instruments/OEstadoDoPais`)
+### O sítio (`/Users/UTILIZADOR/Instruments/OEstadoDoPais`)
 - `main`: 1415e0c3 · 2026-09-24T09:26:59+01:00 · Os registos de 24.09: a §1.130 (o brief do L1, a gramática com ramos, o ensaio a seco, o construtor Opus 5.5 e o bloco que não ater  (`git log -1 main`)
 - `origin/main`: 1415e0c3 · 2026-09-24T09:26:59+01:00 · Os registos de 24.09: a §1.130 (o brief do L1, a gramática com ramos, o ensaio a seco, o construtor Opus 5.5 e o bloco que não ater  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
 - ramos locais: `l1-2026-09-24 a45dfa3c`, `main 1415e0c3`  (`git branch`)
 - ramos no remoto: `l1-2026-09-24`, `main`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/OEstadoDoPais 1415e0c3 [main]`
-- worktree: `/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/l1-2026-09-24 a45dfa3c [l1-2026-09-24]`
+- worktree: `/Users/UTILIZADOR/Instruments/OEstadoDoPais 1415e0c3 [main]`
+- worktree: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/l1-2026-09-24 a45dfa3c [l1-2026-09-24]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 35979504769 · `1415e0c3` · main · portão · **completed / success** · criada 2026-09-24T09:09:17Z · atualizada 2026-09-24T09:31:23Z
@@ -58,15 +58,15 @@ No ramo `l1-2026-09-24` do sítio: o brief (`design/observatorio/BRIEF-L1-a-leit
 - igual a `origin/main` (`1415e0c3`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`/Users/nunosantos/Instruments/ResearchHub`)
+### O motor (`/Users/UTILIZADOR/Instruments/ResearchHub`)
 - `master`: 0f08171 · 2026-09-23T22:38:32+01:00 · B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa  (`git log -1 master`)
 - `origin/master`: 0f08171 · 2026-09-23T22:38:32+01:00 · B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 5 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `l1-2026-09-24 1e3b15c`, `master 0f08171`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/ResearchHub 0f08171 [master]`
-- worktree: `/Users/nunosantos/Instruments/ResearchHub/.worktrees/l1-2026-09-24 1e3b15c [l1-2026-09-24]`
+- worktree: `/Users/UTILIZADOR/Instruments/ResearchHub 0f08171 [master]`
+- worktree: `/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/l1-2026-09-24 1e3b15c [l1-2026-09-24]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 24.09.2026 09:51 UTC):

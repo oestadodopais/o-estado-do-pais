@@ -61,7 +61,9 @@ try {
   });
   if (process.argv.includes('--html')) {
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(),'oedp-camaras-'));
-    const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html','correcoes/index.html','en/corrections/index.html','municipios/evora/index.html','en/municipalities/evora/index.html','estudos/index.html','en/studies/index.html'];
+    /* PP1, 28.09.2026: e as dez páginas das entradas, que o `check:pais` passou a ler. */
+    const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html','correcoes/index.html','en/corrections/index.html','municipios/evora/index.html','en/municipalities/evora/index.html','estudos/index.html','en/studies/index.html',
+      ...['o-meu-dinheiro','o-meu-trabalho','a-minha-casa','a-escola-e-a-saude','o-estado-e-a-economia','en/my-money','en/my-work','en/my-home','en/school-and-health','en/state-and-economy'].map(r=>`${r}/index.html`)];
     const dist=process.env.OEDP_DIST ?? 'dist';
     const originais=new Map(rotas.map(f=>[f,fs.readFileSync(path.join(dist,f),'utf8')]));
     const sha=s=>createHash('sha256').update(s).digest('hex');
@@ -79,42 +81,47 @@ try {
       assert.ok(passou,`${nome}: ${saida}`);console.log(`OK ${nome}`);
     }
     try {
+      /* PP1, 28.09.2026: O CARTÃO DAS CÂMARAS VIVE NA PÁGINA DOS TEMAS, e as plantas que o estragavam na
+         primeira página passam a estragá-lo lá, com as mesmas mordidas da V2. */
       planta('camaras-html-limpo','index.html',null,null);
-      for(const chave of Object.keys(base)) planta(`camaras-${chave}-trocada`,'index.html',r=>{
+      for(const chave of Object.keys(base)) planta(`camaras-${chave}-trocada`,'temas/index.html',r=>{
         const el=daLinha(r,`[data-prova="${chave}"]`);el.set_content(String(Number(el.textContent)+1));
       },new RegExp(`V2 pt: ${chave}: a contagem não coincide`));
       planta('camaras-limite-trocado','en/themes/index.html',r=>r.querySelector('[data-cartao-camaras] [data-claim]').set_content('151'),/V2 en: o limite não é o valor selado/);
-      planta('camaras-porta-trocada','index.html',r=>r.querySelector('[data-cartao-camaras] .pais-porta-tema a').setAttribute('href','/temas/'),/V2 pt: a porta final/);
-      planta('camaras-periodo-trocado','index.html',r=>daLinha(r,'[data-de-campo="reference_date"]').set_content('2023'),/V2 pt: o período não vem das linhas/);
-      planta('camaras-unidade-trocada','en/index.html',r=>r.querySelector('[data-cartao-camaras] .cartao-medida-unidade').set_content('municipalities'),/V2 en: o valor principal ou a unidade da contagem difere/);
+      planta('camaras-porta-trocada','temas/index.html',r=>r.querySelector('[data-cartao-camaras] .pais-porta-tema a').setAttribute('href','/temas/'),/V2 pt: a porta final/);
+      planta('camaras-periodo-trocado','temas/index.html',r=>daLinha(r,'[data-de-campo="reference_date"]').set_content('2023'),/V2 pt: o período não vem das linhas/);
+      planta('camaras-unidade-trocada','en/themes/index.html',r=>r.querySelector('[data-cartao-camaras] .cartao-medida-unidade').set_content('municipalities'),/V2 en: o valor principal ou a unidade da contagem difere/);
       planta('camaras-periodo-sem-palavra','temas/index.html',r=>{const n=r.querySelector('[data-cartao-camaras] .cartao-medida-periodo');n.set_content(n.querySelector('[data-de-campo]').outerHTML);},/V2 pt: o período escrito difere/);
-      planta('camaras-contagem-com-porta','index.html',r=>{const n=daLinha(r,'[data-prova]'); n.replaceWith(`<a data-prova="${n.getAttribute('data-prova')}" href="/lugares/">${n.textContent}</a>`);},/V2 pt: camaras_acima_do_limite: a contagem deve usar a porta comum/);
-      planta('camaras-nome-como-titulo','index.html',r=>{const n=r.querySelector('[data-cartao-camaras] .cartao-medida-nome'); n.replaceWith(`<h3 class="cartao-medida-nome">${n.textContent}</h3>`);},/V2 pt: o nome do cartão deve ser um span/);
-      planta('camaras-no-inicio-da-fila','index.html',r=>{
+      planta('camaras-contagem-com-porta','temas/index.html',r=>{const n=daLinha(r,'[data-prova]'); n.replaceWith(`<a data-prova="${n.getAttribute('data-prova')}" href="/lugares/">${n.textContent}</a>`);},/V2 pt: camaras_acima_do_limite: a contagem deve usar a porta comum/);
+      planta('camaras-nome-como-titulo','temas/index.html',r=>{const n=r.querySelector('[data-cartao-camaras] .cartao-medida-nome'); n.replaceWith(`<h3 class="cartao-medida-nome">${n.textContent}</h3>`);},/V2 pt: o nome do cartão deve ser um span/);
+      planta('camaras-no-inicio-da-fila','temas/index.html',r=>{
         const c=r.querySelector('[data-cartao-camaras]');const s=c.outerHTML;const pai=c.parentNode;c.remove();pai.insertAdjacentHTML('afterbegin',s);
       },/V2 pt: o cartão das câmaras não fecha a fila/);
-      planta('economia-com-cinco-cartoes','index.html',r=>{
-        const c=r.querySelector('[data-tema="economia-e-financas-publicas"] [data-cartao-medida]');c.insertAdjacentHTML('afterend',c.outerHTML);
-      },/T7 pt: fila vazia ou demasiado longa em economia-e-financas-publicas/);
+      /* PP1: a primeira página deixou de ter o resumo dos temas, e a T7 deixou de ter lá uma fila para
+         medir; a T0 fecha a construção se um cartão voltar à primeira página. */
+      planta('cartao-de-volta-a-primeira-pagina','index.html',r=>{
+        const c=parse(fs.readFileSync(path.join(tmp,'temas/index.html'),'utf8')).querySelector('[data-tema="economia-e-financas-publicas"] [data-cartao-medida]');
+        r.querySelector('main').insertAdjacentHTML('beforeend',c.outerHTML);
+      },/T0 pt: a primeira página voltou a render cartões das medidas/);
       planta('habitacao-com-total-primeiro','temas/index.html',r=>{
         const cs=r.querySelectorAll('[data-tema="habitacao"] [data-cartao-medida]');const s=cs[0].outerHTML;cs[0].replaceWith(cs[1].outerHTML);cs[1].replaceWith(s);
       },/T10 pt temas: a habitação não abre com os inquilinos/);
       /* L1: a leitura das câmaras. */
-      for(const chave of ['camaras_acima_do_limite','municipios_com_pagina','camaras_sem_valor']) planta(`l1-camaras-leitura-${chave}-trocada`,'index.html',r=>{
+      for(const chave of ['camaras_acima_do_limite','municipios_com_pagina','camaras_sem_valor']) planta(`l1-camaras-leitura-${chave}-trocada`,'temas/index.html',r=>{
         const el=daLeitura(r,`[data-prova="${chave}"]`);el.set_content(String(Number(el.textContent)+1));
       },new RegExp(`V2 pt: ${chave}: a leitura não rende a contagem recontada`));
       planta('l1-camaras-leitura-trocada-en','en/themes/index.html',r=>{
         const el=daLeitura(r,'[data-prova="camaras_acima_do_limite"]');el.set_content(String(Number(el.textContent)-1));
       },/V2 en: camaras_acima_do_limite: a leitura não rende a contagem recontada/);
       planta('l1-camaras-leitura-periodo-trocado','temas/index.html',r=>daLeitura(r,'[data-de-campo="reference_date"]').set_content('2023'),/V2 pt: o período da leitura não vem das linhas contadas/);
-      planta('l1-camaras-leitura-com-porta','en/index.html',r=>{const n=daLeitura(r,'[data-prova]'); n.replaceWith(`<a data-prova="${n.getAttribute('data-prova')}" href="/en/places/">${n.textContent}</a>`);},/V2 en: camaras_acima_do_limite: a contagem da leitura deve usar a porta comum/);
-      planta('l1-camaras-leitura-com-linha','index.html',r=>{
+      planta('l1-camaras-leitura-com-porta','en/themes/index.html',r=>{const n=daLeitura(r,'[data-prova]'); n.replaceWith(`<a data-prova="${n.getAttribute('data-prova')}" href="/en/places/">${n.textContent}</a>`);},/V2 en: camaras_acima_do_limite: a contagem da leitura deve usar a porta comum/);
+      planta('l1-camaras-leitura-com-linha','temas/index.html',r=>{
         const n=daLeitura(r,'[data-prova="camaras_sem_valor"]');n.insertAdjacentHTML('afterend',` <span data-claim="indice-de-divida-limite-legal">${teto}</span>`);
       },/V2 pt: a leitura das câmaras cita uma linha, e só diz contagens/);
-      planta('l1-camaras-leitura-chave-alheia','index.html',r=>daLeitura(r,'[data-prova="camaras_sem_valor"]').setAttribute('data-prova','municipios_total'),/V2 pt: a leitura cita a chave «municipios_total», que não é uma contagem das câmaras/);
-      planta('l1-camaras-duas-leituras','index.html',r=>{const l=r.querySelector('[data-cartao-camaras] [data-cartao-leitura]');l.insertAdjacentHTML('afterend',l.outerHTML);},/V2 pt: o cartão das câmaras tem 2 leituras; tem uma ou nenhuma/);
+      planta('l1-camaras-leitura-chave-alheia','temas/index.html',r=>daLeitura(r,'[data-prova="camaras_sem_valor"]').setAttribute('data-prova','municipios_total'),/V2 pt: a leitura cita a chave «municipios_total», que não é uma contagem das câmaras/);
+      planta('l1-camaras-duas-leituras','temas/index.html',r=>{const l=r.querySelector('[data-cartao-camaras] [data-cartao-leitura]');l.insertAdjacentHTML('afterend',l.outerHTML);},/V2 pt: o cartão das câmaras tem 2 leituras; tem uma ou nenhuma/);
       planta('camaras-html-reposto','index.html',null,null);
-      planta('limite-legal-como-cartao-do-pais','index.html',r=>{
+      planta('limite-legal-como-cartao-do-pais','temas/index.html',r=>{
         const c=r.querySelector('[data-tema="economia-e-financas-publicas"] [data-cartao-medida]');
         c.setAttribute('data-cartao-medida','indice-de-divida-limite-legal');
       },/V2 pt: o limite legal voltou a aparecer como uma medida do país/);

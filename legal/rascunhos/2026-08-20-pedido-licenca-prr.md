@@ -12,7 +12,7 @@ Crisóstomo, 11, 1000-177 Lisboa; o conjunto em dados.gov.pt não lista ponto de
 contacto)
 **De:** `[verify]` (a direção decide se vai do endereço das correções,
 `correcoes@oestadodopais.pt`, ou de outro)
-**CC:** nunopdsantos@gmail.com
+**CC:** [o correio do diretor]
 **Assunto:** Licença do conjunto de dados «Dataset Estrutura de Missão PRR -
 Entidades» (dados.gov.pt)
 
@@ -49,6 +49,6 @@ Até termos a vossa resposta, não redistribuímos nenhum ficheiro.
 
 Com os melhores cumprimentos,
 
-Nuno dos Santos
+[o diretor]
 Diretor, O Estado do País
 oestadodopaís.pt

@@ -527,7 +527,7 @@ field.
 ## 6. Reviewer's decisions — Claude Fable 5 in seat, 2026-08-15
 
 Read in full. Approved for implementation with the decisions and amendments below.
-Nuno approved the block and delegated its judgment calls; every decision here is
+[o diretor] approved the block and delegated its judgment calls; every decision here is
 reversible before the merge to `main`, and he sees the preview first.
 
 **On the four director questions (§5)**
@@ -589,7 +589,7 @@ reversible before the merge to `main`, and he sees the preview first.
     reading pages, `data-nonledger` uses, allowlist tokens); then verification
     (blind re-fetch of the Relance values by a Sonnet agent that never saw the rows;
     context-starved cross-family review — Codex — of the branch), then the preview
-    URL to Nuno, then merge on his word.
+    URL to [o diretor], then merge on his word.
 
 ---
 

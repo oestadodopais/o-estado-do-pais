@@ -32,7 +32,7 @@ human**, who sets scope, approves method, can reject or alter any study, and
 holds editorial responsibility. AI authorship is disclosed on every page. This is
 central to several questions below.
 
-**Who runs it.** Nuno dos Santos, Portuguese national. Sole operator and named director. `[CONFIRM: how much personal
+**Who runs it.** [o diretor], Portuguese national. Sole operator and named director. `[CONFIRM: how much personal
 detail you want disclosed in this brief]`
 
 **Technical.** Static site (Astro) hosted on Vercel; canonical domain

@@ -6,7 +6,7 @@
  * As medidas de aceitação dos dez itens do brief que são CONTAGENS sobre o
  * `dist/` inteiro, contadas por código e não escritas à mão. É o que responde
  * pelas linhas da tabela do §1 do relatório: «o rótulo novo em 100 % das páginas
- * construídas», «"política da casa" a 0 em todo o `dist/`», «"Nuno dos Santos" a
+ * construídas», «"política da casa" a 0 em todo o `dist/`», «"[o diretor]" a
  * 0», «"Diretor:" a 0», «"limiar" a 0 no texto visível».
  *
  * CORRE-SE DUAS VEZES, sobre as duas construções, e o relatório imprime os dois
@@ -85,7 +85,7 @@ const CADEIAS = [
   { item: 1, onde: 'vista', chave: '«the house policy»', agulha: 'the house policy' },
   { item: 1, onde: 'vista', chave: '«regras da casa»', agulha: 'regras da casa' },
   { item: 1, onde: 'vista', chave: '«the house rules»', agulha: 'the house rules' },
-  { item: 1, onde: 'vista', chave: '«Nuno dos Santos»', agulha: 'Nuno dos Santos' },
+  { item: 1, onde: 'vista', chave: '«[o diretor]»', agulha: '[o diretor]' },
   { item: 2, onde: 'vista', chave: '«Diretor:»', agulha: 'Diretor:' },
   { item: 2, onde: 'vista', chave: '«Director:»', agulha: 'Director:' },
   { item: 2, onde: 'vista', chave: '«Publicação gratuita»', agulha: 'Publicação gratuita' },

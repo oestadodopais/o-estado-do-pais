@@ -1,25 +1,42 @@
 ---
-/** B1, peça 3: a leitura, o mapa, os temas, os estudos e as mudanças. */
+/**
+ * A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026; a decisão do diretor de
+ * 28.09.2026, `DECISIONS.md` §1.133: o leitor comum primeiro).
+ *
+ * A ordem é a do brief (§2, ponto 3): o rótulo de inteligência artificial, como hoje (vem do
+ * `Base`); «O que se passa», com a data dos números mais recentes e os cinco blocos pela ordem
+ * declarada; «Por onde começar», com as seis entradas; a pesquisa dos lugares e, ao lado, o mapa,
+ * que desce do topo para aqui como porta dos lugares; «Estudos recentes», como hoje; o veredicto dos
+ * valores de referência da Comissão Europeia, com um título seu e a porta da página da União; e as
+ * portas «Todos os temas», «Números e fontes» e «O que mudou».
+ *
+ * SAÍRAM DAQUI, e cada coisa tem outro lugar: a leitura do país (`LeituraDoPais.astro`, que prendia
+ * nove valores e fechava a construção quando um mudava; o que ela dizia está nos blocos da habitação,
+ * do trabalho e do Estado, com condições em vez de valores presos), o resumo dos temas (a página dos
+ * temas e as entradas levam os cartões) e a lista das mudanças (o registo, em `/correcoes`, que a
+ * porta «O que mudou» abre).
+ *
+ * A DATA DE «O QUE SE PASSA» é o período de referência mais recente, pelo fim do período, das linhas
+ * que os blocos mostrados usam, escrito como o sítio escreve os períodos. A data de publicação não
+ * serve: a maior parte das linhas do Eurostat não a tem.
+ */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
-import LeituraDoPais from '../components/inicio/LeituraDoPais.astro';
+import BlocoDaPrimeiraPagina from '../components/inicio/BlocoDaPrimeiraPagina.astro';
+import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
+import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
-import TemasDoPais from '../components/TemasDoPais.astro';
-import Frase from '../components/Frase.astro';
-import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
-import Provenance from '../components/Provenance.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
+import DataDaLinha from '../components/DataDaLinha.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
-import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
+import { concelhos as concelhosDaCarta, ledeDoPainel } from '../lib/inicio.mjs';
 import { FIGURAS_PDM } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { prova } from '../lib/prova.mjs';
 import { estudosRecentes } from '../lib/pais.mjs';
-import { mudancasDoPais } from '../lib/mudancas.mjs';
-import { dataDaCasa } from '../lib/datas.mjs';
-import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { idsDosBlocos, blocosDaPagina, periodoDosNumerosMaisRecentes, entradasDaPrimeiraPagina } from '../lib/primeira-pagina.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -27,12 +44,12 @@ import '../styles/inicio.css';
 import '../styles/estudos-b1.css';
 import '../styles/lugar.css';
 import '../styles/pais.css';
+import '../styles/primeira-pagina.css';
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const r = ROTULOS_B1[lang];
 const path = routePath('home', lang);
 const recentes = estudosRecentes(lang).slice(0, 3);
-const mudou = mudancasDoPais(lang);
 const p = prova(lang);
 const medidasDoPainel = FIGURAS_PDM.map(f => {
   const linha = getClaim(f.claim);
@@ -42,57 +59,80 @@ const lede = ledeDoPainel(medidasDoPainel, s.inicio.cabeca.ledePais, lang);
 const v = s.home.veredicto;
 const periodos = new Set(medidasDoPainel.map(m => m.linha.reference_date));
 if (!lede?.ano || periodos.size !== 1 || !periodos.has(lede.ano)) throw new Error('B2 veredicto: as linhas não partilham um período.');
+/* Os blocos resolvem-se aqui só para a data de «O que se passa»; cada um rende-se no seu
+   componente, que pergunta ao mesmo resolvedor. */
+const ids = idsDosBlocos();
+const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
+const entradas = entradasDaPrimeiraPagina(lang);
+const cs = concelhosDaCarta();
+const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null);
 ---
 <Base lang={lang} path={path} title={s.home.metaTitle} description={s.home.metaDescription}>
   <Masthead slot="masthead" lang={lang} path={path} />
-  <div class="pais-cabeca">
-    <div class="pais-texto">
-      <p class="pais-leitura pais-veredicto" data-veredicto-pais>
-        {v.ano}<CampoDaLinha id={medidasDoPainel[0].claim} campo="reference_date" valor={lede.ano} lang={lang} />{v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={`${routePath('temas', lang)}#m-${m.claim}`}>{m.nome}</a></>)}</span></>}{v.fecha}
-      </p>
-      <LeituraDoPais lang={lang} />
+
+  <section class="pp-o-que-se-passa" data-o-que-se-passa aria-labelledby="o-que-se-passa-k">
+    <h2 class="pp-o-que-se-passa-k" id="o-que-se-passa-k">{s.primeira.oQueSePassa}</h2>
+    {recente && (
+      <p class="pp-data" data-numeros-mais-recentes>{s.primeira.numerosMaisRecentes}<DataDaLinha id={recente.linha} campo="reference_date" valor={recente.periodo} lang={lang} /></p>
+    )}
+    <div class="pp-blocos">
+      {ids.map((id) => <BlocoDaPrimeiraPagina id={id} lang={lang} nivel="h3" />)}
     </div>
-    <div class="pais-mapa">
-      <MapaRespira s={s} lang={lang} concelhos={concelhos()} portaLugares />
-      <LegendaDoMapa />
-    </div>
-  </div>
-  <section class="pais-temas" aria-labelledby="temas-k">
-    <div class="sec-head"><h2 class="eyebrow" id="temas-k">{r.temas}</h2></div>
-    <TemasDoPais lang={lang} resumo />
   </section>
+
+  <section class="pp-entradas" data-entradas aria-labelledby="entradas-k">
+    <h2 class="pp-sec-k" id="entradas-k">{s.primeira.porOndeComecar}</h2>
+    <ul class="pp-entradas-lista">
+      {entradas.map((e) => (
+        <li data-entrada={e.id}>
+          <a class="pp-entrada" href={e.rota}>
+            <span class="pp-entrada-nome">{e.nome}</span>
+            <span class="pp-entrada-linha">{e.linha}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {/* A PESQUISA DOS LUGARES E, AO LADO, O MAPA (o §2, ponto 3, do brief). É a mesma pesquisa da
+      página dos lugares (`Pesquisa.astro` e `CampoDeBusca.astro`): um formulário que leva a
+      `/lugares/` sem guião, e a fila dos resultados fechada do servidor, que o guião dessa página
+      acende. O mapa é o da primeira página de antes, com a porta dos lugares, até ao passo 5 da
+      ordem (o mapa com uma medida por concelho). */}
+  <section class="pp-lugares" aria-labelledby="lugares-k">
+    <h2 class="pp-sec-k" id="lugares-k">{r.lugares}</h2>
+    <div class="pp-lugares-grelha">
+      <div class="pesquisa-bloco pp-pesquisa" data-pesquisa-bloco>
+        <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={routePath('lugares', lang)} resultadosOcultos={true} />
+      </div>
+      <div class="pais-mapa pp-mapa">
+        <MapaRespira s={s} lang={lang} concelhos={cs} portaLugares />
+        <LegendaDoMapa />
+      </div>
+    </div>
+  </section>
+
   <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
     <div class="sec-head"><h2 class="eyebrow" id="estudos-k">{r.estudosRecentes}</h2></div>
-    {recentes.map(e => <article class="estudo-item pais-estudo" data-estudo={e.work.slug} data-estudo-edicao={`${e.work.slug}/${e.edicao.lang}`}>
-      <h3 class="estudo-item-titulo"><a href={e.rota}><TituloDeTrabalho edicao={e.edicao} lang={lang} /></a>
-        {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
-      </h3>
-      <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></span></p>
-      <p class="estudo-resumo lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}><Frase partes={e.resumo} lang={lang} selos /></p>
-    </article>)}
+    {recentes.map((e) => <EstudoDaLista e={e} lang={lang} />)}
   </section>
-  {/* O QUE MUDOU, NO SEU LUGAR (B1c, 22.09.2026). Esta página mostrava trinta
-      mudanças, dezasseis delas correções de linhas de Évora e do Alentejo. Fica
-      com o que mudou NO PAÍS: as correções das linhas do país e as mudanças
-      declaradas do projeto, no máximo oito, da mais recente para a mais antiga.
-      As publicações saíram na passagem da tarde desse dia: a notícia de um
-      estudo é a secção «Estudos recentes», logo acima, e repeti-la aqui era
-      dizer duas vezes a mesma coisa na mesma página. O âmbito e o teto estão em
-      `src/lib/mudancas.mjs`; o que não cabe, e o que saiu, está no registo, e a
-      porta por baixo leva lá. */}
-  <section class="pais-sec" aria-labelledby="mudou-k">
-    <div class="sec-head"><h2 class="eyebrow" id="mudou-k">{r.mudou}</h2></div>
-    <ol class="pais-mudou" data-mudou-ambito="pais">
-      {mudou.map(e => <li data-mudanca={e.tipo} data-mudanca-id={e.tipo === 'projeto' ? e.id : undefined} data-correcao-entrada={e.tipo === 'correcao' ? e.claim : undefined}>
-        {e.tipo === 'projeto' ? <><time datetime={e.data} data-mudanca-campo="data">{dataDaCasa(e.data)}</time><p data-mudanca-campo="texto"><Frase partes={Array.isArray(e.texto[lang]) ? e.texto[lang] : [e.texto[lang]]} lang={lang} selos={true} /></p></> : e.tipo === 'publicacao' ? <><time datetime={e.data} data-publicacao-estudo={`${e.estudo.work.slug}/${e.estudo.edicao.lang}`}>{dataDaCasa(e.data)}</time><p><span>{r.estudoPublicado}</span>{' · '}<TituloDeTrabalho titulo={e.estudo.edicao.title} lang={lang} /></p></> : <>
-          <time datetime={e.data} data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="date">{dataDaCasa(e.data)}</time>
-          <p>{e.nome?.fonte && <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>{e.nome.texto}</span>}
-            <span class="lugar-mudou-par"><s data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">{e.antes}</s>{' → '}<span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="new_value">{e.depois}</span>{' '}{e.unidade && <CampoDaLinha id={e.claim} campo="unit" valor={unidadeDaLinha(e.unidade, lang).texto} lang={lang} lingua={unidadeDaLinha(e.unidade, lang).lingua} />}<Provenance id={e.claim} lang={lang} /></span>
-          </p>
-        </>}
-      </li>)}
-    </ol>
-    <p class="regra-portas"><a href={routePath('correcoes', lang)}>{r.todasAsMudancas} →</a></p>
+
+  {/* O VEREDICTO DOS VALORES DE REFERÊNCIA DA COMISSÃO EUROPEIA: o parágrafo calculado de antes
+      (B2), com um título seu e a porta da página da União. A V1 do `check:pais` reconta-o. */}
+  <section class="pais-sec pp-veredicto" data-veredicto-seccao aria-labelledby="veredicto-k">
+    <div class="sec-head"><h2 class="eyebrow" id="veredicto-k">{s.primeira.veredicto}</h2></div>
+    <p class="pais-leitura pais-veredicto" data-veredicto-pais>
+      {v.ano}<CampoDaLinha id={medidasDoPainel[0].claim} campo="reference_date" valor={lede.ano} lang={lang} />{v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={`${routePath('temas', lang)}#m-${m.claim}`}>{m.nome}</a></>)}</span></>}{v.fecha}
+    </p>
+    <p class="regra-portas"><a href={routePath('uniaoEuropeia', lang)}>{s.nav.uniaoEuropeia} →</a></p>
   </section>
+
+  <div class="pp-portas" data-portas-da-primeira>
+    <p class="regra-portas"><a href={routePath('temas', lang)}>{s.primeira.todosOsTemas} →</a></p>
+    <p class="regra-portas"><a href={routePath('livro', lang)}>{s.nav.livro} →</a></p>
+    <p class="regra-portas"><a href={routePath('correcoes', lang)}>{r.mudou} →</a></p>
+  </div>
+
+  <script src="/js/municipios.js" defer is:inline></script>
   <script src="/js/mapa-unidades.js" defer is:inline></script>
 </Base>

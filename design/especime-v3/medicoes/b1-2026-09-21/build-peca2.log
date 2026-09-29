@@ -158,7 +158,7 @@
 17:22:30 [types] Generated 26ms
 17:22:30 [build] output: "static"
 17:22:30 [build] mode: "static"
-17:22:30 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca2-2026-09-21/dist/
+17:22:30 [build] directory: /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca2-2026-09-21/dist/
 17:22:30 [build] Collecting build info...
 17:22:30 [build] ✓ Completed in 48ms.
 17:22:32 [build] Building static entrypoints...

@@ -10,7 +10,7 @@ Modelo: Claude Sonnet 5. Data: 01.09.2026. Tempo gasto: cerca de 45 minutos de s
 
 ## 0 · Como medi
 
-Servi `antes/` em `127.0.0.1:4381` e `depois/` em `127.0.0.1:4382` com `python3 -m http.server`, cada um a partir da sua pasta. Medi com Playwright (Chromium 148.0.7778.96, instalado em `/Users/nunosantos/Instruments/OEstadoDoPais/node_modules`) a 390×844 e 1280×800, nas seis páginas do brief, nas duas edições. Sem rede fora de `localhost`: o programa só abre `http://127.0.0.1:4381` e `http://127.0.0.1:4382`.
+Servi `antes/` em `127.0.0.1:4381` e `depois/` em `127.0.0.1:4382` com `python3 -m http.server`, cada um a partir da sua pasta. Medi com Playwright (Chromium 148.0.7778.96, instalado em `/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules`) a 390×844 e 1280×800, nas seis páginas do brief, nas duas edições. Sem rede fora de `localhost`: o programa só abre `http://127.0.0.1:4381` e `http://127.0.0.1:4382`.
 
 **A marca do selo que usei.** Segui IDENTIDADE.md §5 e §8: "Todo o `.src-chip` é uma âncora, ao pé do valor e com o `href` da linha daquele valor." Usei `.src-chip` como o selo e `[data-claim]` como o número que ele sela (a etiqueta do selo é `data-selo-etiqueta`, não a li). Para a célula 3, o primeiro `.src-chip` em ordem do DOM inclui um caso que não é o selo de uma medida do "Relance" (a legenda do mapa, ver célula 3); reporto os dois números com o método de cada um.
 

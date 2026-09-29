@@ -1,4 +1,4 @@
-None of the three directions completes the core promise. The printed crop and independent re-check do not exist, so tests 1 and 3 remain partial in every rationale. Test 8 is also unresolved: A reports 28 front-page values, B refuses to confirm the required 32, and C reports 35, while [acceptance-tests.md](/private/tmp/claude-501/-Users-nunosantos/ece03c34-2a58-438b-bccf-9c7ad9936a64/scratchpad/design-critique/acceptance-tests.md) requires 32 of 32. Those are not cosmetic discrepancies. They mean the designs cannot yet prove that every displayed value has its own door.
+None of the three directions completes the core promise. The printed crop and independent re-check do not exist, so tests 1 and 3 remain partial in every rationale. Test 8 is also unresolved: A reports 28 front-page values, B refuses to confirm the required 32, and C reports 35, while [acceptance-tests.md](/private/tmp/claude-501/-Users-UTILIZADOR/ece03c34-2a58-438b-bccf-9c7ad9936a64/scratchpad/design-critique/acceptance-tests.md) requires 32 of 32. Those are not cosmetic discrepancies. They mean the designs cannot yet prove that every displayed value has its own door.
 
 ## 1. Best route to easy confirmation
 
@@ -46,7 +46,7 @@ For the audience rule, A has the soundest compromise. C optimises reading one pa
 
 Calling `EXEMPLO` or `PROTÓTIPO` temporary does not make the rendered states compliant. If these are design-review annotations, they should live outside the candidate interface. Inside it, they become a second public language for “this evidence is not here”.
 
-C is not merely a visual direction under the current [IDENTIDADE.md](/private/tmp/claude-501/-Users-nunosantos/ece03c34-2a58-438b-bccf-9c7ad9936a64/scratchpad/design-critique/IDENTIDADE.md). Its [rationale](/private/tmp/claude-501/-Users-nunosantos/ece03c34-2a58-438b-bccf-9c7ad9936a64/scratchpad/design-critique/racional-c.md) explicitly proposes changing the constitution. It therefore cannot be selected as compliant without a separate identity decision.
+C is not merely a visual direction under the current [IDENTIDADE.md](/private/tmp/claude-501/-Users-UTILIZADOR/ece03c34-2a58-438b-bccf-9c7ad9936a64/scratchpad/design-critique/IDENTIDADE.md). Its [rationale](/private/tmp/claude-501/-Users-UTILIZADOR/ece03c34-2a58-438b-bccf-9c7ad9936a64/scratchpad/design-critique/racional-c.md) explicitly proposes changing the constitution. It therefore cannot be selected as compliant without a separate identity decision.
 
 ## 4. Craft and reader cost
 

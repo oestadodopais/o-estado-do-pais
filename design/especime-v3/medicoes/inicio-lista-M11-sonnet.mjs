@@ -13,7 +13,7 @@ import {
   colhe, medeQuadradoInscrito, carregaPontos, pontoDaUnidade, novaPagina, vaiA, arrancaServidor,
   pontoDeEcra, medePar,
 } from './nucleo.mjs';
-import { chromium } from '/Users/nunosantos/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs';
+import { chromium } from '/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs';
 
 const SECOES = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const correTudo = SECOES.length === 0;

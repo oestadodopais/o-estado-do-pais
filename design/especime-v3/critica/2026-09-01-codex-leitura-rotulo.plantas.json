@@ -8,8 +8,8 @@
    "descricao": "primeira página pt: «sob» trocado por «sobre» no rótulo (desvio ao texto aprovado)",
    "sha256_antes": "418bfb294018336e0c416ec344b07da01a0dfe1c38b95110580457f746b479ac",
    "sha256_depois": "d25e5a4bc715dc59e67134737a3f9680f61d5cf4bf032d28cdadd420a76c8d45",
-   "contexto_antes": "\"rotulo-ia rotulo-ia-rodape\" data-rotulo-ia=\"rodape\"><p class=\"rotulo-ia-linha\">Texto gerado por IA sob <a href=\"/metodo#politica-de-ia\">a política da casa</a> · responsável editorial: <span data-rotulo-nome>Nuno dos Santos</span></p><",
-   "contexto_depois": "\"rotulo-ia rotulo-ia-rodape\" data-rotulo-ia=\"rodape\"><p class=\"rotulo-ia-linha\">Texto gerado por IA sobre <a href=\"/metodo#politica-de-ia\">a política da casa</a> · responsável editorial: <span data-rotulo-nome>Nuno dos Santos</span></p><"
+   "contexto_antes": "\"rotulo-ia rotulo-ia-rodape\" data-rotulo-ia=\"rodape\"><p class=\"rotulo-ia-linha\">Texto gerado por IA sob <a href=\"/metodo#politica-de-ia\">a política da casa</a> · responsável editorial: <span data-rotulo-nome>[o diretor]</span></p><",
+   "contexto_depois": "\"rotulo-ia rotulo-ia-rodape\" data-rotulo-ia=\"rodape\"><p class=\"rotulo-ia-linha\">Texto gerado por IA sobre <a href=\"/metodo#politica-de-ia\">a política da casa</a> · responsável editorial: <span data-rotulo-nome>[o diretor]</span></p><"
   },
   {
    "id": "PR2",

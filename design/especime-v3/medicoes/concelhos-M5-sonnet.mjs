@@ -22,10 +22,10 @@ import { load as yamlLoad } from "js-yaml";
 import { chromium } from "playwright";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = "/Users/nunosantos/Instruments/OEstadoDoPais";
+const REPO = "/Users/UTILIZADOR/Instruments/OEstadoDoPais";
 const BASE = "http://127.0.0.1:4731";
 const SCRATCH =
-  "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad";
+  "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad";
 const WORK = path.join(SCRATCH, "work");
 const LEDGER_DIR = path.join(REPO, "ledger", "claims");
 const DIST_DIR = path.join(SCRATCH, "dist-concelhos");

@@ -16,7 +16,7 @@
 - Nenhum valor, nenhuma contagem e nenhum texto governado mudou; uma chave EN mudou (`estudos.documentoFaixa`).
 
 ## 3. O que fica aberto
-- **Segunda-feira 24.08, 09:30:** o refresco do painel (launchd `com.nunosantos.oedp-indicadores`) escreve `src/data/verificacao.mjs` na árvore de trabalho e **não constrói, não comete, não empurra**; a sessão seguinte revê o diff, comete, empurra e corre `verify:deploy`.
+- **Segunda-feira 24.08, 09:30:** o refresco do painel (launchd `com.UTILIZADOR.oedp-indicadores`) escreve `src/data/verificacao.mjs` na árvore de trabalho e **não constrói, não comete, não empurra**; a sessão seguinte revê o diff, comete, empurra e corre `verify:deploy`.
 - **Sessão do motor** (prompt no Desktop do diretor): C2 (a ilha duplicada do estudo 09), C3 (o «e» numa `reason_en`), B2 plan-gated (o registo de conteúdo dos estudos e a passagem de voz, com o diff ao diretor antes de fixar).
 - **Da direção, fase da voz:** I62 (três frases da casa no instrumento dos mandatos de Évora que a régua não vê; régua e corte); as frases de moldura (86 distintas contra ≤ 12) depois da página de leitura da habitação; as duas notas de forma (o «provisório» colado ao selo na Leitura breve do instrumento; a porta de regresso da faixa a dobrar a 1280).
 - **ISSUES abertos:** I57, I58, I60 (motor), I62, I63 (motor), e os itens de forma anteriores (I28, I30, I31, I36, I37, I41, I47 a I51, I55).

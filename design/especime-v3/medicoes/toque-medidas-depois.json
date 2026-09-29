@@ -1,6 +1,6 @@
 {
   "sobre": "toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9c34bbb0",
-  "dist": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/toque-2026-09-04/dist",
+  "dist": "/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/toque-2026-09-04/dist",
   "medido": "2026-09-07T17:20:30.094Z",
   "comando": "node scripts/medir-toque.mjs dist design/especime-v3/medicoes/toque-medidas-depois.json --sobre=toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9c34bbb0",
   "medidas": {

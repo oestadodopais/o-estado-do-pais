@@ -1,0 +1,5 @@
+{
+ "o_que": "a hora de nascimento do primeiro ficheiro que o construtor do CI1 escreveu no rascunho da sessão (a reprodução do §0 do brief, brief-ci1-reproduzido.json), lida com stat -f %SB em UTC; é o início do bloco para o custo em tempo de parede",
+ "inicio": "2026-09-28T17:37:38Z",
+ "comando": "TZ=UTC stat -f \"%SB %N\" -t \"%Y-%m-%dT%H:%M:%SZ\" <rascunho>/ci1-construtor/brief-ci1-reproduzido.json"
+}
