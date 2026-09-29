@@ -1,0 +1,9 @@
+{
+  "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-relatorio-detalhe.json",
+  "ambiente_declarado": {},
+  "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+  "inicio": "2026-09-29T22:04:20.960522+00:00",
+  "fim": "2026-09-29T22:04:21.079798+00:00",
+  "segundos": 0.119,
+  "codigo": 1
+}

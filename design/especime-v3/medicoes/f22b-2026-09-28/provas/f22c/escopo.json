@@ -1,0 +1,59 @@
+{
+  "instante": "2026-09-29T21:49:46.992408+00:00",
+  "comandos": [
+    "git -C <motor> diff --name-only 5335e12 HEAD",
+    "git -C <sitio> diff --name-only fb1dd0dd HEAD",
+    "git -C <motor> status --porcelain"
+  ],
+  "motor_cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+  "sitio_cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+  "motor_mudancas": [
+    ".github/README.md",
+    ".github/actions/corredor-retomar/action.yml",
+    ".github/workflows/corredor.yml",
+    ".github/workflows/painel.yml",
+    ".github/workflows/vigia.yml",
+    "core/gate.py",
+    "indicators/aviso_rotina.py",
+    "indicators/out/f22c-2026-09-29/custo.py",
+    "indicators/out/f22c-2026-09-29/executar.py",
+    "indicators/painel.py",
+    "indicators/provar_fluxo.py",
+    "indicators/publicar_rotina.py",
+    "indicators/reformar_agentes.py",
+    "indicators/refresh.py",
+    "indicators/refresh_rede_real_test.py",
+    "indicators/rotinas_f22c_test.py",
+    "indicators/rotinas_test.py",
+    "indicators/varrimento.py",
+    "indicators/vigia_rotinas.py",
+    "sweeps/monthly.sh"
+  ],
+  "sitio_mudancas": [
+    "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+    "design/especime-v3/medicoes/f22b-2026-09-28/medidas.json",
+    "design/especime-v3/medicoes/f22b-2026-09-28/medir.py",
+    "design/especime-v3/medicoes/f22b-2026-09-28/prompts/PROMPT-f22b-construtor.md",
+    "design/especime-v3/medicoes/f22b-2026-09-28/prompts/PROMPT-f22c-construtor.md",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/core-inicial.log",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/api-versoes.json",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief-reproduzido.json",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief.cabeca",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief.codigo",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief.json",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief.log",
+    "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/escopo-documentos.json",
+    "design/observatorio/FRESCURA-E-AUTOMACAO.md",
+    "design/observatorio/PLANO-fiabilidade-2026-09-02.md"
+  ],
+  "protegidos_mudados": [],
+  "planta_do_detetor_de_protegidos": true,
+  "motor_limpo": true,
+  "formas_de_credencial": {
+    "ficheiros_lidos": 135,
+    "encontradas": 0,
+    "conhecido_positivo": true
+  },
+  "limite": "O varrimento de formas não prova ausência de qualquer segredo. A comparação da cabeça dos portões com o commit final do pacote cabe ao lugar de direção na aterragem."
+}

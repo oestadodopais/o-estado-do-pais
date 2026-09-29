@@ -1,0 +1,13 @@
+{
+  "comando": "python3 -m unittest indicators.rotinas_test.Plantas indicators.rotinas_f22c_test.PlantasF22c -v",
+  "ambiente_declarado": {
+    "GIT_DIR": "inexistente",
+    "GIT_WORK_TREE": "inexistente",
+    "GIT_INDEX_FILE": "inexistente"
+  },
+  "cabeca": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+  "inicio": "2026-09-29T21:38:07.655240+00:00",
+  "fim": "2026-09-29T21:38:11.616044+00:00",
+  "segundos": 3.96,
+  "codigo": 0
+}

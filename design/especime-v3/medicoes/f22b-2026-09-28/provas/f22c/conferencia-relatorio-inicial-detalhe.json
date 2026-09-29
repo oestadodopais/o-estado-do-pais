@@ -1,0 +1,53 @@
+{
+  "relatorio": "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+  "pasta": "design/especime-v3/medicoes/f22b-2026-09-28",
+  "ficheiros_json_lidos": 56,
+  "ilegiveis": [],
+  "conhecido_positivo": {
+    "numero": 987654324,
+    "encontrado": true
+  },
+  "numeros_conferidos": 30,
+  "numeros_com_ficheiro": 26,
+  "numeros_sem_ficheiro": 4,
+  "sem_ficheiro": [
+    {
+      "bruto": "3",
+      "forma": "3",
+      "valor": 3.0,
+      "linha": 34,
+      "contexto": "| 3 | `main --aplicar` prova as corridas antes de qualquer chamada a `launchctl`. | Sem provas, só uma corrida, identificadores repetidos e ensaio em vez de rea"
+    },
+    {
+      "bruto": "4",
+      "forma": "4",
+      "valor": 4.0,
+      "linha": 35,
+      "contexto": "| 4 | `fetch`, guarda contra `main`, ramo datado, portão, segunda guarda e avanço do mesmo SHA. | Uma mudança de valor é recusada antes de qualquer `push`; o di"
+    },
+    {
+      "bruto": "5",
+      "forma": "5",
+      "valor": 5.0,
+      "linha": 36,
+      "contexto": "| 5 | O vigia lê os trabalhos da corrida e reconhece o trabalho real `skipped`. O título do alarme inclui rotina e data devida. | Corrida dormente e verde com c"
+    },
+    {
+      "bruto": "10",
+      "forma": "10",
+      "valor": 10.0,
+      "linha": 41,
+      "contexto": "| 10 | As guardas em falta têm plantas nas funções e nas entradas principais. | `fontes.mjs`, valores novos, exportação adicional, ficheiro criado, apagado e mo"
+    }
+  ],
+  "apagado_antes_de_contar": {
+    "codigo": 86,
+    "enderecos": 0,
+    "seccoes": 3,
+    "datas": 2,
+    "resumos": 0,
+    "ordinais": 0,
+    "identificadores": 7,
+    "anos": 0
+  }
+}

@@ -1,0 +1,98 @@
+
+    em ensaio nada empurra e as chaves nem se escrevem   9 de 9 passo(s) guardados pelo modo
+    o modo decide-se num trabalho próprio, antes de tudo o trabalho `corredor` depende do trabalho `modo`
+    um corredor dormente não corre trabalho nenhum       needs.modo.outputs.modo != 'dormente'
+    desarmado + schedule: dormente e VERDE               código 0, modo=dormente
+    desarmado + dispatch em ensaio: CORRE                código 0, modo=ensaio
+    armado + schedule: corre em real                     código 0, modo=real
+    armado + dispatch em ensaio: corre em ensaio         código 0, modo=ensaio
+    um real despachado à mão, armado: RECUSADO           código 1, é só do schedule
+    um real despachado à mão, desarmado: RECUSADO        código 1, é só do schedule
+    o dormente escreve a razão no registo                «corredor desarmado: nada corre hoje»
+    o vigia agendado e desarmado: dormente               código 0, dormente=sim
+    o vigia agendado e armado: vigia                     código 0, dormente=nao
+    o vigia despachado à mão, desarmado: dormente        código 0, dormente=sim
+    nem a vigia nem a issue correm com o corredor dormente steps.armado.outputs.dormente != 'sim' · failure() && steps.armado.outputs.dormente != 'sim'
+    real sem os segredos pára com uma frase              código 1, «::error::o modo real precisa de CHAVE_SITIO e de CHAVE_ARQUIVO, e »
+    real com só um dos dois segredos pára na mesma       código 1
+    real com os dois segredos passa o guarda             o guarda não falou
+    o estado de saída do corredor é o do passo           o guião apanha o código pelo PIPESTATUS e sai com ele
+    o arquivo empurra ANTES do sítio                     passo 14 antes do passo 19
+    o portão do arquivo corre antes dos portões do sítio passo 16 antes do passo 18
+    o arquivo empurra-se ENTRE a fase 1 e os leitores    fase 1 (passo 12) · push (passo 14) · leitores (passo 15) · portão (passo 16)
+    a fase 1 não corre leitores e a fase 2 não pede às fontes --sem-leitores na fase 1; --so-leitores --painel --concelhos na fase 2
+    os corpos de uma corrida que parou sobem em qualquer modo failure() && steps.corrida.outcome != 'skipped' · 3 dias · com .recuperacao/
+    a cobertura exige-se em real e relata-se em ensaio   exigir em real, relatar no resto
+    uma corrida à mão tem de dizer o motivo              entrada obrigatória, e escrita no registo do trabalho
+    os corpos do ensaio só a pedido, e por três dias     por omissão «nao» · 3 dias
+    o corredor instala do lock, e o pip está preso       requirements.lock.txt, com o pip preso como no portao.yml
+    as chaves de anfitrião não se aprendem da própria ligação gh api meta --jq .ssh_keys, por HTTPS com certificado conferido
+    o relatório e o índice sobem sempre, sem os corpos   ['relatorio/', 'arquivo/indice.jsonl'] · 14 dias
+    os corpos do arquivo sobem SÓ em ensaio e SÓ a pedido arquivo/sha256/ · 3 dias
+    a issue abre por falha OU por linhas por rever       failure() || needs.corredor.result == 'failure' || needs.retoma.result == 'fai
+    nenhum push leva --force nem +                       3 `git push`, todos normais
+    toda a ação de terceiros fixada por SHA              24 uso(s), 4 distinto(s)
+    as permissões do corredor são as mínimas             {'contents': 'read', 'issues': 'write'}
+    as permissões do vigia são as mínimas                {'contents': 'read', 'actions': 'read', 'issues': 'write'}
+    só a corrida da manhã está agendada                  ['10 6 * * *']
+    a do meio-dia está apagada, com a linha e a razão no ficheiro a linha por descomentar e a condição para o fazer, escritas
+    a máquina das duas velocidades continua de pé        a da manhã pede a todas as fontes; o meio-dia religa-se num cron
+    o modo por omissão é ensaio                          por omissão 'ensaio'
+    sem entrada nenhuma (schedule) o modo PEDIDO é real  e o efectivo ainda tem de passar as duas condições acima
+    os portões correm antes do push, e sem pipe          passo 18 antes do passo 19
+    a conferência do lançamento é semanal e não diária   às segundas, e só na corrida que empurra o sítio
+    nenhuma espera cega, e nunca mais de um pedido por minuto ao sítio esperas do passo: [60] s · um pedido por volta do laço
+    o sondar do lançamento não dorme depois da última tentativa 7 esperas de 60 s + 8 pedidos de <= 30 s = <= 660 s, ou seja 11 min
+    o sondar do lançamento leva o nome da casa           o alvo é o sítio da própria casa, e não chega lá anónimo
+    «dependências do sítio» só em real, e só na corrida da manhã needs.modo.outputs.modo == 'real' && steps.qual.outputs.so_devidas == ''
+    «portões do sítio» só em real, e só na corrida da manhã needs.modo.outputs.modo == 'real' && steps.qual.outputs.so_devidas == ''
+    o clone do arquivo é raso e não materializa o LFS    GIT_LFS_SKIP_SMUDGE=1 e --depth 50 no clone de `real`
+    o poppler instala-se antes da corrida, e prova-se que corre passo 7 antes do passo 12
+    o vigia não pede «a última corrida verde»            a escolha é a regra de indicators/vigia.py
+    o vigia pede só as corridas AGENDADAS                --event schedule no gh run list
+    o vigia descarrega o artefacto DA corrida escolhida  o id vem da escolha, não da última
+    um carimbo ausente é falha e não uma nota            a frase que passava por prudência saiu
+    o motivo escreve-se antes de qualquer saída, em todos os modos os quatro caminhos do trabalho `modo` imprimem o motivo
+    os três trabalhos preparam-se pela mesma ação composta checkout no lugar por omissão, e ./.github/actions/corredor-preparar
+    os três lêem o modo EFECTIVO do trabalho `modo`      1 forma(s) distinta(s): ${{ needs.modo.outputs.modo }}
+    a preparação tem os oito passos, por esta ordem      8 passo(s): ['O IP de saída deste runner', 'Python', 'Node']…
+    as únicas ações locais são as duas da casa           corredor-preparar, corredor-retomar
+    a retoma só nasce de uma saída da corrida principal  always() && needs.corredor.result != 'cancelled' && needs.modo.outputs.modo !=
+    a retoma-2 só nasce de uma saída da retoma           always() && needs.retoma.result != 'cancelled' && needs.modo.outputs.modo != '
+    a lista dos calados sai do relatório e nunca de um `if:` `corredor.py --calados-do-relatorio relatorio/corredor_report.json`
+    o tecto das retomas é o número de trabalhos de retoma RETOMAS_MAXIMAS=2, 2 trabalho(s), com a sonda citada
+    cada retoma sobe os seus artefactos com o sufixo dela 3 artefacto(s) · sufixos ['-retoma', '-retoma-2']
+    a retoma empurra com as mesmas condições da corrida principal 2 linha(s) de `git add` no arquivo e 1 no sítio, iguais às da corrida principal
+    a retoma empurra com as mesmas chaves da corrida principal as duas chaves de implantação, e nenhum push com --force
+    a retoma pede a sério: não herda `--simular-calado`  só `--so-anfitrioes` nos guiões da retoma
+    simular_calado num real agendado: RECUSADO           código 1, só de ensaio
+    simular_calado num ensaio: aceite e limpo            código 0, simular_calado=www.ine.pt
+    simular_calado com um espaço: RECUSADO               código 1, nomes de anfitrião
+    sem a caixa, a saída fica vazia                      código 0, simular_calado=
+    o passo lê os calados do relatório da corrida        dois anfitriões, pela ordem em que se calaram
+    uma corrida sem calados não abre a retoma            saída vazia, e o `if:` da retoma dá falso: 0 trabalhos a mais
+    um relatório em falta é uma falha, e não «ninguém»   código 1
+    a issue não abre com o corredor dormente nem com o modo recusado só corre quando o trabalho `modo` decidiu ensaio ou real
+    a retoma corre mesmo se o corredor falhar depois da fase 1 always() && needs.corredor.result != 'cancelled' && needs.modo.outputs.modo !=
+    a retoma2 corre mesmo se o retoma falhar depois da fase 1 always() && needs.retoma.result != 'cancelled' && needs.modo.outputs.modo != '
+    a retoma tem as duas fases da corrida principal      fase 1 `--sem-leitores` · fase 2 `--so-leitores --concelhos`, com a lista desta retoma
+    o painel não corre na retoma, e a razão está escrita as 32 linhas do painel não são do anfitrião que se calou
+    a fase 2 da retoma não carimba o cabeçalho do sítio  `--so-anfitrioes` nas duas fases: o bloco CONFERENCIA volta byte a byte
+    a retoma corre os seus portões antes de empurrar no sítio portão do arquivo (4) e os três do sítio (6) antes do push (7)
+    o resumo corre depois dos três e sempre              needs ['corredor', 'modo', 'retoma', 'retoma2']
+    o resumo descarrega os artefactos dos três, um a um pelo nome um `-n` por artefacto: sem nome vinham também os corpos (~180 MB)
+    o resumo sai como ficheiro, como artefacto e no resumo da corrida `corredor-<run>-resumo.md` no artefacto e no $GITHUB_STEP_SUMMARY
+    o resumo pede `actions: read` e mais nada de novo    {'contents': 'read', 'actions': 'read', 'issues': 'write'}
+    o resumo: a noite boa: não houve retoma              não houve retoma: a fase 1 não deixou anfitrião nenhum sem r…
+    o resumo: a retoma alcançou, e o resumo diz o que ela leu a retoma no runner 20.29.188.148 alcançou-o às 06:22 UTC e l…
+    o resumo: a retoma-2 alcançou                        a retoma-2 no runner 40.116.73.182 alcançou-o às 06:31 UTC…
+    o resumo: nem a retoma nem a retoma-2                o estado destas fontes fica «sem resposta desde»…
+    o resumo: um relatório que não se soube ler não é uma noite boa a corrida não conseguiu ler quem se calou: não tem o campo…
+    só um endereço IP entra no relatório como IP do runner 7 eco(s) de fixture: os dois IPs entram, os outros 5 ficam vazios e a corrida segue
+    a sonda mede o pedido inteiro e o primeiro byte, com o nome de cada um `primeiro byte %{time_starttransfer}s · pedido inteiro %{time_total}s`
+    o `nc` das duas portas leva relógio                  as duas portas no mesmo laço, com o tempo impresso
+    as caixas da sonda conferem-se antes de qualquer pedido o primeiro passo: o anfitrião, os dois `https://`, e o mesmo anfitrião
+    a sonda diz o que «não escreve nada» quer dizer      o repositório, e os registos que mostram os factos da rede de propósito
+
+FLUXOS: PASS — 94 conferência(s). O que isto NÃO prova está no topo do ficheiro: uma corrida verde no GitHub precisa do ramo empurrado.
+

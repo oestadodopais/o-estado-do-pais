@@ -1,0 +1,38 @@
+{
+  "portoes": [
+    {
+      "nome": "motor",
+      "comando": "python3 -m core.gate",
+      "codigo": 0,
+      "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+      "segundos": 425.57,
+      "ficheiro": "provas/f22c/core-final.codigo"
+    },
+    {
+      "nome": "build",
+      "comando": "npm run build",
+      "codigo": 0,
+      "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "segundos": 231.698,
+      "ficheiro": "portoes/f22c/build.codigo"
+    },
+    {
+      "nome": "verify",
+      "comando": "npm run verify",
+      "codigo": 0,
+      "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "segundos": 849.736,
+      "ficheiro": "portoes/f22c/verify.codigo"
+    },
+    {
+      "nome": "typecheck",
+      "comando": "npm run typecheck",
+      "codigo": 0,
+      "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "segundos": 0.828,
+      "ficheiro": "portoes/f22c/typecheck.codigo"
+    }
+  ],
+  "conferencias_do_fluxo": 94,
+  "origem_da_contagem": "provas/f22c/fluxo.log"
+}

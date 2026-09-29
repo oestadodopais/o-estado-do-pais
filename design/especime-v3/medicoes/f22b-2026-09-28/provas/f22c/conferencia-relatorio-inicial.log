@@ -1,0 +1,12 @@
+relatório: design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md
+pasta das medições: design/especime-v3/medicoes/f22b-2026-09-28
+ficheiros JSON lidos: 56
+conhecido-positivo (o número 987654324, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 30
+números com ficheiro: 26
+números sem ficheiro: 4
+   l.34 «3» em «| 3 | `main --aplicar` prova as corridas antes de qualquer chamada a `launchctl`. | Sem provas, só uma corrida, identificadores repetidos e ensaio em vez de rea»
+   l.35 «4» em «| 4 | `fetch`, guarda contra `main`, ramo datado, portão, segunda guarda e avanço do mesmo SHA. | Uma mudança de valor é recusada antes de qualquer `push`; o di»
+   l.36 «5» em «| 5 | O vigia lê os trabalhos da corrida e reconhece o trabalho real `skipped`. O título do alarme inclui rotina e data devida. | Corrida dormente e verde com c»
+   l.41 «10» em «| 10 | As guardas em falta têm plantas nas funções e nas entradas principais. | `fontes.mjs`, valores novos, exportação adicional, ficheiro criado, apagado e mo»
+apagado antes de contar: codigo 86, enderecos 0, seccoes 3, datas 2, resumos 0, ordinais 0, identificadores 7, anos 0
