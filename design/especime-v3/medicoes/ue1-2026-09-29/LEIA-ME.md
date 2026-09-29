@@ -1,6 +1,6 @@
 # UE1 · onde Portugal fica entre os 27 · o relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório tem 4 partes. A do UE1, até «O que ficou por fazer»: o build, o verify e o typecheck correram na cabeça do código `33ed14a0`, e o commit das provas dela é `0f75298f`. A da passagem de correção UE1b: os portões correram na cabeça do código `c9859d31`, e o commit das provas dela é `a4f59f21`. A da passagem UE1c, depois da leitura a frio do Codex: os portões correram na cabeça do código `982d6446`, e o commit das provas dela é `42a368a3`. A da passagem UE1d, no fim, com a decisão da §1.140: os portões correram na cabeça do código `99b9f73a`, e o último commit do ramo é o das provas dela, que só acrescenta e muda ficheiros nesta pasta e na das capturas. O sítio: o ramo `ue1-2026-09-29`. O motor: o ramo `ue1-2026-09-29` do ResearchHub, cabeça `e394307`, que as passagens UE1b, UE1c e UE1d não mudaram. Cada número deste relatório está num JSON desta pasta (`medidas.json`, escrito por `medir-ue1.mjs`, `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`, `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`, e `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`, que leem os manifestos ao lado, cada medida com o comando e um conhecido-positivo), e o relatório passa o `conferir-relatorio.py`.*
+*Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório tem 5 partes. A do UE1, até «O que ficou por fazer»: o build, o verify e o typecheck correram na cabeça do código `33ed14a0`, e o commit das provas dela é `0f75298f`. A da passagem de correção UE1b: os portões correram na cabeça do código `c9859d31`, e o commit das provas dela é `a4f59f21`. A da passagem UE1c, depois da leitura a frio do Codex: os portões correram na cabeça do código `982d6446`, e o commit das provas dela é `42a368a3`. A da passagem UE1d, com a decisão da §1.140: os portões correram na cabeça do código `99b9f73a`, e o commit das provas dela é `ff046536`. A da passagem UE1e, no fim, depois da releitura a frio do Codex: os portões correram na cabeça do código `9d696d3c`, por cima do commit do lugar de direção `aba0a48b`, e o último commit do ramo é o das provas dela, que só acrescenta e muda ficheiros nesta pasta e na das capturas. O sítio: o ramo `ue1-2026-09-29`. O motor: o ramo `ue1-2026-09-29` do ResearchHub, cabeça `e394307`, que as passagens UE1b, UE1c, UE1d e UE1e não mudaram. Cada número deste relatório está num JSON desta pasta (`medidas.json`, escrito por `medir-ue1.mjs`, `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`, `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`, `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`, e `medidas-ue1e.json`, escrito por `medir-ue1e.mjs`, que leem os manifestos ao lado, cada medida com o comando e um conhecido-positivo), e o relatório passa o `conferir-relatorio.py`.*
 
 ## O que o leitor vê
 
@@ -332,3 +332,70 @@ Do commit das provas da UE1c ao fim dos portões da passagem, 5 912 segundos. Os
 - A ressalva no recibo da própria linha da União e a origem da definição no recibo da série, se o lugar de direção as quiser (acima).
 - O `acertos-l1.py`, que sai com 1 desde o RP1, é uma questão nova do lugar de direção.
 - Das passagens anteriores continuam: as palavras das marcas `ep`, `d`, `b` e `u` como proposta, a ressalva na frase da faixa, `tests/` fora do typecheck e do `check:mortos`, e o brief do RP3 depois da aterragem.
+
+## UE1e · a definição do índice harmonizado no recibo da série, sem «em Portugal»
+
+*Pedida pelo lugar de direção a 30.09.2026, depois da releitura a frio do Codex, que achou as 5 plantas e um defeito real: o recibo da série do índice harmonizado de preços no consumidor mostrava a definição do cartão, que diz «em Portugal» («in Portugal» na edição inglesa), por cima da tabela dos 27 países. Construída por cima do commit do lugar de direção `aba0a48b`. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `9d696d3c`, e as medidas estão em `medidas-ue1e.json`, escrito por `medir-ue1e.mjs`.*
+
+### O que o leitor vê agora
+
+O recibo da série do índice harmonizado, em português e em inglês, diz por baixo do título «Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?» e «How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?», por cima da tabela dos 27 países. O cartão do índice harmonizado continua a dizer «em Portugal», porque o número dele é o de Portugal: 4 dos 4 cartões dele no `dist/` dizem a pergunta do cartão.
+
+### O mandato da passagem, ponto a ponto
+
+| ponto | o que | o que se fez | a medida |
+|---|---|---|---|
+| ponto 1 | A forma para o recibo da série | na entrada `ihpc-variacao-homologa` de `DEFINICOES_DAS_MEDIDAS`, que vive em `src/data/medidas-rp1.mjs` e entra na declaração por `PERGUNTAS_RP1`, a forma `serie`, ao lado da do cartão, com as mesmas origens e o comentário que diz porquê, com a §1.140 | a forma é igual, carácter a carácter, ao texto do pedido, em português e em inglês, e é a pergunta do cartão sem o lugar em português e em inglês (`forma_igual_ao_pedido_pt`, `forma_igual_ao_pedido_en`, `forma_e_o_cartao_sem_o_lugar_pt` e `forma_e_o_cartao_sem_o_lugar_en`, em `medidas-ue1e.json`); das 34 definições declaradas, 1 nomeia Portugal na pergunta do cartão, a do índice harmonizado, em português e em inglês, como o lugar de direção contou |
+| ponto 2 | O recibo usa essa forma, e o portão confere-o | o `SerieView.astro` rende a forma do recibo da série onde a declaração a tem, e a do cartão onde não tem; o portão de HTML lê a definição pela mesma regra (`definicaoDoPortao`, com a forma) e confere cada recibo contra a forma que ele deve usar | 20 dos 20 recibos com a definição da forma que devem usar, refeita por `medir-ue1e.mjs` com código próprio, 2 deles com a forma do recibo da série; o portão conta 20 definições e 2 recibos com a forma do recibo da série |
+| ponto 3 | Nenhuma definição de recibo de série nomeia Portugal | uma regra nova no portão de HTML: a definição que cada recibo rende, e a que a declaração lhe manda render, não nomeia Portugal, em português e em inglês; e uma conferência da declaração: cada forma do recibo da série é a pergunta do cartão sem o lugar, sem mais nenhuma palavra mudada, e não nomeia Portugal | o portão vê 20 recibos sem Portugal na definição, no build e no verify; 0 definições que o nomeiam, contadas por `medir-ue1e.mjs`, cujo detetor vê «Portugal» na célula do nome do país da tabela de cada recibo; nas plantas, as 3 da regra nova mordem, e o controlo passa |
+
+### O que decidi, e o lugar de direção pode trocar numa linha
+
+- **A regra conta também os gentílicos.** «Nomeia Portugal» é o nome, em português e em inglês, e «português», «portuguesa», «portugueses», «portuguesas» e «Portuguese», que dizem o mesmo por outras palavras e dariam o mesmo defeito por cima da tabela (`NOMEIA_PORTUGAL`, em `scripts/gate-html.mjs`). Hoje nenhuma definição declarada usa um gentílico, e uma planta prova que a regra o apanha.
+- **A forma do recibo da série só existe onde a pergunta do cartão diz o lugar.** O portão recusa uma forma onde a pergunta do cartão não diz o lugar, e uma forma que não seja a do cartão sem « em Portugal» ou « in Portugal»: assim a forma nova fica presa à pergunta que a K16 audita pedaço a pedaço, sem precisar de uma auditoria própria, e uma mudança numa das formas sem a outra fecha a construção.
+- **A forma não declara origens próprias**: as da entrada servem a forma do cartão e a do recibo da série, como o lugar de direção pediu.
+
+### Achados da passagem
+
+1. **O detetor da espera conta os meus próprios comandos à espera.** No ensaio da espera, antes dos portões, viu 4 processos: 2 `npm run verify`, do Codex, e 2 `npm run build`, que eram os meus comandos de conferência à espera, com o `npm run build` nos argumentos (o `pgrep` dessa hora mostrava-os com o caminho do guião de espera). O detetor conta a mais: pode esperar sem precisar, e não deixa correr uma construção ao lado de outra. A construção antes do commit do código esperou 420 segundos pelo verify do Codex; os portões finais não esperaram (0 segundos).
+2. **O `decisoes-em-vigor.py` do lugar de direção (a M42) correu antes de construir**, sobre os ficheiros que a passagem ia tocar, e outra vez sobre o intervalo da passagem, com a saída em `decisoes-em-vigor-ue1e.txt`: 25 decisões citadas nos 4 ficheiros que a passagem mudou, 9 delas perto de um pedaço mudado. Li cada uma: a §1.40 e a §1.64 estão no cabeçalho do portão de HTML, sobre outras marcas, e ficaram a menos de 40 linhas das linhas novas; as do mapa estão nas linhas cujas citações se remapearam; e a §1.140 é a decisão que a UE1d e esta passagem cumprem, ainda sem título em `DECISIONS.md`. Nenhuma decisão escrita ficou em choque com a passagem.
+3. **O detetor do nome de Portugal lê fronteiras de palavra**, e por isso só vê o nome com um espaço ou uma pontuação à volta. Numa definição, que é prosa, é sempre assim, e as plantas mordem. Mas o texto da tabela inteira, como o leitor de HTML o junta, cola cada nome aos valores à volta (na tabela portuguesa da dívida, «59,7Portugal89,7»), e aí o detetor não vê o nome: 0 das 20 tabelas, lidas assim; lida a célula do nome do país, vê-o nas 20. A regra só lê a definição, e fica assim; o limite fica dito.
+
+### As plantas da passagem
+
+Em `plantas-ue1e.json`, com as saídas em `plantas/ue1e/`, na cabeça `9d696d3c`: 5 plantas (3 da regra nova e 2 da forma que cada recibo deve usar), 5 mordidas com a queixa esperada, 5 repostas pelo sha256, e a corrida limpa a seguir, o controlo, a 0 (1 de 1).
+
+| grupo | a planta | o portão que morde |
+|---|---|---|
+| a regra nova | o lugar posto de volta na definição do recibo português do índice harmonizado | `gate:html`, «nomeia Portugal («Portugal»)» |
+| a regra nova | o nome posto na definição do recibo inglês da dívida, que usa a forma do cartão | `gate:html`, «nomeia Portugal («Portugal»)» |
+| a regra nova | um gentílico posto na definição do recibo português dos preços da habitação | `gate:html`, «nomeia Portugal («portuguesas»)» |
+| a forma | a forma do recibo da série tirada da declaração | `gate:html`: o recibo diz a forma nova e a declarada passa a ser a do cartão |
+| a forma | uma palavra mudada na forma do recibo da série | `gate:html`: a forma não é a pergunta do cartão sem o lugar |
+
+### O que não mudou
+
+Entre o commit do lugar de direção (`aba0a48b`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 na auditoria das perguntas, 0 nas leituras dos cartões e na sua auditoria, 0 no inventário das frases, 0 no brief, 0 na pasta do `acertos-l1.py` e 0 no guião da aterragem; e 0 commits no motor. Mudaram 4 ficheiros, com os nomes em `medidas-ue1e.json`.
+
+### As capturas
+
+Em `design/especime-v3/capturas/ue1-2026-09-29/ue1e/` e `capturas-ue1e.json`, os 2 recibos da série do índice harmonizado, nas 5 larguras, em português e em inglês: a cabeça do recibo (10 capturas) e o que a janela mostra ao abrir a página, com a definição por cima do princípio da tabela (10); 20 capturas, com 0 problemas (a definição é a forma do recibo da série, carácter a carácter, não nomeia Portugal, a tabela está lá, e nenhuma página transborda), as 4 plantas dos detetores, todas vistas, e 0 pedidos para fora.
+
+### Os portões e os commits da passagem
+
+Na cabeça `9d696d3c`, cada um no seu comando, pelo `portao-ue1e.sh` (o da UE1d com a pasta nova), com o código num ficheiro acabado de escrever em `portoes/ue1e/`: `npm run build` a 0 em 81 segundos, `npm run verify` a 0 em 531 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1e/caminhos-trocados.json`). Os 3 portões olharam antes de correr, e esperaram ao todo 0 segundos por outra construção.
+
+Os 2 commits de código, cada um depois das conferências que tocou (4, todas a 0, em `entre-commits-ue1e.json`, e o mapa pelas suas contas):
+
+- `a4c202be` a forma do recibo da série, o recibo a usá-la e as 2 regras do portão de HTML;
+- `9d696d3c` o mapa do repositório: a forma do recibo da série na entrada do que a medida conta, e as citações que as linhas novas do portão deslocaram, remapeadas (o `conferir-mapa.py` dá 141 citações no sítio, 0 longe e 0 por encontrar; antes da emenda dava 14 longe da linha citada);
+- e o commit das provas da passagem, o último.
+
+### O custo da passagem
+
+Do commit do lugar de direção ao fim dos portões da passagem, 2 647 segundos. Os símbolos, lidos à mão do contador que o ambiente mostra ao agente (`custo-ue1e.json`): 2 517 527 na sessão ao fecho da passagem e 167 797 na passagem; o total que a ferramenta reporta ao lugar de direção é o que conta.
+
+### O que ficou por fazer
+
+- A §1.140 não tem ainda título em `DECISIONS.md` (o `decisoes-em-vigor.py` di-lo «sem título»).
+- Das passagens anteriores continuam: a ressalva no recibo da própria linha da União e a origem da definição no recibo da série, se o lugar de direção as quiser; o `acertos-l1.py` (a I178); as palavras das marcas `ep`, `d`, `b` e `u` como proposta, a ressalva na frase da faixa, `tests/` fora do typecheck e do `check:mortos`, e o brief do RP3 depois da aterragem.
