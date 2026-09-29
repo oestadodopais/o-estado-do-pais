@@ -1,0 +1,15 @@
+{
+  "inicio_sessao": "2026-09-28T18:48:49.664Z",
+  "ultima_medicao": "2026-09-28T19:48:02.322Z",
+  "segundos_ate_medicao": 3552.658,
+  "simbolos": {
+    "input_tokens": 15742780,
+    "cached_input_tokens": 15150336,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 87834,
+    "reasoning_output_tokens": 24637,
+    "total_tokens": 15830614
+  },
+  "fonte": "contador cumulativo token_count da sessão de construção",
+  "limite": "fotografia antes do commit do relatório; não inclui a resposta final"
+}

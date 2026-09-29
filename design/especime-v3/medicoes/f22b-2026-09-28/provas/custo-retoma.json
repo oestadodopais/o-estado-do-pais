@@ -1,0 +1,34 @@
+{
+  "primeiro_evento_da_retoma": "2026-09-29T19:46:50.923Z",
+  "ultima_medicao": "2026-09-29T20:10:49.328Z",
+  "segundos_ate_medicao": 1438.405,
+  "contador_anterior_a_retoma": {
+    "instante": "2026-09-28T19:55:27.415Z",
+    "simbolos": {
+      "input_tokens": 17676626,
+      "cached_input_tokens": 17072512,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 96378,
+      "reasoning_output_tokens": 29551,
+      "total_tokens": 17773004
+    }
+  },
+  "simbolos_cumulativos": {
+    "input_tokens": 26238673,
+    "cached_input_tokens": 25434880,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 122034,
+    "reasoning_output_tokens": 46587,
+    "total_tokens": 26360707
+  },
+  "acrescimo_na_retoma": {
+    "input_tokens": 8562047,
+    "cached_input_tokens": 8362368,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 25656,
+    "reasoning_output_tokens": 17036,
+    "total_tokens": 8587703
+  },
+  "fonte": "eventos token_count da mesma sessão",
+  "limite": "fotografia durante o fecho; não inclui os atos posteriores nem a resposta final"
+}

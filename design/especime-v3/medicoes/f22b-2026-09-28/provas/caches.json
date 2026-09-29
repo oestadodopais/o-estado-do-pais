@@ -1,0 +1,20 @@
+[
+  {
+    "ficheiro": "content/07 Évora Municipal Accounts/Technical Source/snippets.json",
+    "sha256": "9b76dae46e934866bfe925e3d7687a23b3d72a44a95cfbcd3833816f8f3d504a",
+    "origem": "cache derivada da árvore principal",
+    "igual": true
+  },
+  {
+    "ficheiro": "content/08 Évora Mandates/Technical Source/snippets.json",
+    "sha256": "b85d828e623224ecb73cb5c56e0a9cfd26b919305d481b9776e80525931e6d82",
+    "origem": "cache derivada da árvore principal",
+    "igual": true
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/snippets.json",
+    "sha256": "cc4fb3b33c4ff33aa00f009485d408b50f32c5e25120b05bdff2bbcdded6f654",
+    "origem": "cache derivada da árvore principal",
+    "igual": true
+  }
+]

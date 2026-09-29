@@ -1,0 +1,326 @@
+{
+  "bloco": "F2.2b",
+  "medido_em": "2026-09-29T20:12:54.232621+00:00",
+  "bases": {
+    "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+    "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
+  },
+  "cabecas_lidas": {
+    "motor": "5335e129b3167c93d1822c8af7cecbb909922877",
+    "sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0"
+  },
+  "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+  "mudancas_posteriores_aos_portoes": [],
+  "commits_motor": [
+    "6432b88b000cdcdc47a08a8721bafac8f7ab023a Prepara a publicação guardada e as rotinas transportáveis",
+    "5335e129b3167c93d1822c8af7cecbb909922877 Liga os fluxos dormentes às guardas e às plantas do F2.2b"
+  ],
+  "commits_sitio_anteriores_ao_relatorio": [
+    "01362b78a810795ee6870b8a6f439c39b9fe25e0 Documenta as três corridas prontas a armar e a transição do portátil"
+  ],
+  "commit_do_relatorio": "o commit que contém LEIA-ME.md, RESPOSTA-construtor-f22b.md e este medidas.json",
+  "alteracoes_protegidas": [],
+  "brief_reproduzido": {
+    "brief": "design/observatorio/BRIEF-F22b-as-corridas-prontas-a-armar.md",
+    "guiao": "design/observatorio/medidas/BRIEF-F22b.py",
+    "cabeca_lida": "a677770f",
+    "medidas": [
+      {
+        "nome": "portao_corre_em_qualquer_ramo",
+        "valor": true,
+        "comando": "git show a677770f:.github/workflows/portao.yml · o bloco on: tem push e não tem branches",
+        "conhecido_positivo": {
+          "o_que": "o mesmo detetor vê um filtro de ramos num bloco construído",
+          "encontrado": true
+        }
+      },
+      {
+        "nome": "linhas_do_livro",
+        "valor": 3009,
+        "comando": "git ls-tree a677770f -- ledger/claims/ · os .yml",
+        "conhecido_positivo": {
+          "o_que": "a lista traz a linha da inflação",
+          "encontrado": true
+        }
+      },
+      {
+        "nome": "linhas_com_carimbo_do_painel",
+        "valor": 91,
+        "comando": "as mesmas linhas · pelo menos uma reconferência com by: painel-semanal",
+        "conhecido_positivo": {
+          "o_que": "a linha da União da dívida das famílias é uma delas",
+          "encontrado": true
+        }
+      },
+      {
+        "nome": "linhas_com_carimbo_do_corredor",
+        "valor": 2545,
+        "comando": "as mesmas linhas · pelo menos uma reconferência com by: corredor-diario",
+        "conhecido_positivo": {
+          "o_que": "a linha do limite legal da dívida dos municípios é uma delas",
+          "encontrado": true
+        }
+      },
+      {
+        "nome": "commits_do_painel_semanal",
+        "valor": 6,
+        "comando": "git log --format='%h %s' a677770f · os assuntos que começam por «Painel semanal de»",
+        "conhecido_positivo": {
+          "o_que": "o de 28.09 é um deles",
+          "encontrado": true
+        }
+      },
+      {
+        "nome": "ficheiros_do_painel_de_28_09",
+        "valor": 93,
+        "comando": "git show --name-only 17758ec7 · os ficheiros do commit",
+        "conhecido_positivo": {
+          "o_que": "o estado da verificação é um deles",
+          "encontrado": true
+        }
+      },
+      {
+        "nome": "linhas_mudadas_pelo_painel_de_28_09",
+        "valor": 91,
+        "comando": "os mesmos ficheiros · os de ledger/claims/",
+        "conhecido_positivo": {
+          "o_que": "a linha da União da dívida das famílias é um deles",
+          "encontrado": true
+        }
+      }
+    ]
+  },
+  "plantas": {
+    "provas": 34,
+    "falhas": 0,
+    "erros": 0,
+    "passou": true,
+    "nomes": [
+      "test_acrescento_sem_poda",
+      "test_api_cadencia_teto_e_vermelho",
+      "test_api_exige_o_commit_e_o_fluxo",
+      "test_cadencia_mensal_com_folga",
+      "test_comentario_editorial_conservado",
+      "test_data_autor_path_campos_recusados",
+      "test_decisoes_exige_site_e_aceita_ambiente",
+      "test_diff_real_recusa_outro_ficheiro",
+      "test_diff_recusado_nao_publica",
+      "test_estados_so_dados",
+      "test_fluxos_transportam_a_recusa_local",
+      "test_main_avancou_fica_no_ramo",
+      "test_painel_calado_persistente_nao_escreve_inacessivel",
+      "test_painel_calado_retoma_so_o_anfitriao",
+      "test_painel_ensaio_inteiro_quatro_saidas",
+      "test_painel_revisao_abre_issue_e_conserva_valor",
+      "test_poda_e_reescrita_recusadas",
+      "test_portao_do_motor_vermelho_nao_commita",
+      "test_portao_local_vermelho_conserva_ramo",
+      "test_portao_vermelho_retém_main_e_abre_issue",
+      "test_reforma_recusa_ensaio_e_exige_duas_corridas",
+      "test_reforma_so_ensaio_com_definicoes_sinteticas",
+      "test_relatorio_ilegivel_abre_issue",
+      "test_retomadas_so_quando_calados",
+      "test_segunda_sem_corrida_abre_issue",
+      "test_sem_segredos_nos_ensaios_e_cron",
+      "test_silencio_do_leitor_e_http_sao_distintos",
+      "test_transporte_do_patch_para_outro_runner",
+      "test_valor_excerto_endereco_rejeitados",
+      "test_varrimento_achado_abre_issue",
+      "test_varrimento_leitor_falhado_nao_carimba",
+      "test_verde_publica_exatamente_o_sha_conferido",
+      "test_vigia_dormente_nao_pede",
+      "test_vigia_recusa_ensaio_vermelho_incompleto"
+    ]
+  },
+  "conferencias_do_fluxo": 94,
+  "limites_da_publicacao_segundos": {
+    "INTERVALO": 60,
+    "TETO": 3600
+  },
+  "execucoes": {
+    "core-inicial": {
+      "comando": "python3 -m core.gate",
+      "cabeca": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+      "inicio": "2026-09-28T19:11:16.274179+00:00",
+      "fim": "2026-09-28T19:14:45.672273+00:00",
+      "segundos": 209.396,
+      "codigo": 1,
+      "codigo_lido_de": "provas/core-inicial.codigo",
+      "sha256_saida": "a42bfa7c892624ab1b67ad270914cbf96a5a8ed868da14d86663c745c6a4803c"
+    },
+    "precommit-isolamento": {
+      "comando": "git -C <repositorio> commit -m Prepara a publicação guardada e as rotinas transportáveis -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+      "cabeca": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+      "inicio": "2026-09-28T19:27:21.808474+00:00",
+      "fim": "2026-09-28T19:30:47.929232+00:00",
+      "segundos": 206.12,
+      "codigo": 1,
+      "codigo_lido_de": "provas/precommit-isolamento.codigo",
+      "sha256_saida": "e3acde50721079e9d367d04f7cc7edafd9f78d54479a20286d89f87fccc011b8"
+    },
+    "commit-motor-1": {
+      "comando": "git -C <repositorio> commit -m Prepara a publicação guardada e as rotinas transportáveis -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+      "cabeca": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+      "inicio": "2026-09-28T19:33:17.320674+00:00",
+      "fim": "2026-09-28T19:36:43.772146+00:00",
+      "segundos": 206.451,
+      "codigo": 0,
+      "codigo_lido_de": "provas/commit-motor-1.codigo",
+      "sha256_saida": "19a698c28dd70e18b3ce3c825f79f5c188c8f1eb8338471665d1f24c967efe54"
+    },
+    "commit-motor-2": {
+      "comando": "git -C <repositorio> commit -m Liga os fluxos dormentes às guardas e às plantas do F2.2b -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+      "cabeca": "6432b88b000cdcdc47a08a8721bafac8f7ab023a",
+      "inicio": "2026-09-28T19:37:16.881738+00:00",
+      "fim": "2026-09-28T19:40:54.894956+00:00",
+      "segundos": 218.013,
+      "codigo": 0,
+      "codigo_lido_de": "provas/commit-motor-2.codigo",
+      "sha256_saida": "d11b33042aaa7095ea9e2a68847f0a91a1b14b7c59d36d295cbd57922679e4a0"
+    },
+    "core-final": {
+      "comando": "python3 -m core.gate",
+      "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+      "inicio": "2026-09-28T19:42:09.485738+00:00",
+      "fim": "2026-09-28T19:45:38.700821+00:00",
+      "segundos": 209.215,
+      "codigo": 0,
+      "codigo_lido_de": "provas/core-final.codigo",
+      "sha256_saida": "53ea9e7bc95414dce4d451db10c01a846eae33b18d0f998f25c4824631754d5b"
+    },
+    "plantas": {
+      "comando": "python3 -m indicators.rotinas_test",
+      "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+      "inicio": "2026-09-28T19:42:10.714218+00:00",
+      "fim": "2026-09-28T19:42:11.466592+00:00",
+      "segundos": 0.752,
+      "codigo": 0,
+      "codigo_lido_de": "provas/plantas.codigo",
+      "sha256_saida": "34ed3ac01199768a337636d32456975520f45cf367ed49b2fa0f6bafb427c49e"
+    },
+    "fluxo": {
+      "comando": "python3 indicators/provar_fluxo.py",
+      "cabeca": "5335e129b3167c93d1822c8af7cecbb909922877",
+      "inicio": "2026-09-28T19:42:10.706528+00:00",
+      "fim": "2026-09-28T19:42:13.295323+00:00",
+      "segundos": 2.589,
+      "codigo": 0,
+      "codigo_lido_de": "provas/fluxo.codigo",
+      "sha256_saida": "b0d3057f167e01e56a431cfce75cf9ccc28500a01ea8166f28cc5a29534c69db"
+    },
+    "site-build": {
+      "comando": "npm run build",
+      "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+      "inicio": "2026-09-29T19:48:24.284325+00:00",
+      "fim": "2026-09-29T19:59:31.748732+00:00",
+      "segundos": 667.472,
+      "codigo": 0,
+      "codigo_lido_de": "portoes/build.codigo",
+      "cabeca_lida_de": "portoes/build.cabeca",
+      "sha256_saida": "4ce2a9ac825fc8e7febff4e135be766a0e25a0994365539b36edaf894482aa06"
+    },
+    "site-verify": {
+      "comando": "npm run verify",
+      "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+      "inicio": "2026-09-29T19:59:37.590626+00:00",
+      "fim": "2026-09-29T20:11:23.873455+00:00",
+      "segundos": 706.278,
+      "codigo": 0,
+      "codigo_lido_de": "portoes/verify.codigo",
+      "cabeca_lida_de": "portoes/verify.cabeca",
+      "sha256_saida": "ada9c997fd4141cc137bde85b8e08ffbd6ab7a990122a210ec8d8c3cdac01c7f"
+    },
+    "site-typecheck": {
+      "comando": "npm run typecheck",
+      "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+      "inicio": "2026-09-29T20:11:24.047803+00:00",
+      "fim": "2026-09-29T20:11:24.834187+00:00",
+      "segundos": 0.784,
+      "codigo": 0,
+      "codigo_lido_de": "portoes/typecheck.codigo",
+      "cabeca_lida_de": "portoes/typecheck.cabeca",
+      "sha256_saida": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    }
+  },
+  "caches_locais_repostas": [
+    {
+      "ficheiro": "content/07 Évora Municipal Accounts/Technical Source/snippets.json",
+      "sha256": "9b76dae46e934866bfe925e3d7687a23b3d72a44a95cfbcd3833816f8f3d504a",
+      "origem": "cache derivada da árvore principal",
+      "igual": true
+    },
+    {
+      "ficheiro": "content/08 Évora Mandates/Technical Source/snippets.json",
+      "sha256": "b85d828e623224ecb73cb5c56e0a9cfd26b919305d481b9776e80525931e6d82",
+      "origem": "cache derivada da árvore principal",
+      "igual": true
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/snippets.json",
+      "sha256": "cc4fb3b33c4ff33aa00f009485d408b50f32c5e25120b05bdff2bbcdded6f654",
+      "origem": "cache derivada da árvore principal",
+      "igual": true
+    }
+  ],
+  "custo_observado": {
+    "inicio_sessao": "2026-09-28T18:48:49.664Z",
+    "ultima_medicao": "2026-09-28T19:48:02.322Z",
+    "segundos_ate_medicao": 3552.658,
+    "simbolos": {
+      "input_tokens": 15742780,
+      "cached_input_tokens": 15150336,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 87834,
+      "reasoning_output_tokens": 24637,
+      "total_tokens": 15830614
+    },
+    "fonte": "contador cumulativo token_count da sessão de construção",
+    "limite": "fotografia antes do commit do relatório; não inclui a resposta final"
+  },
+  "custo_da_retoma": {
+    "primeiro_evento_da_retoma": "2026-09-29T19:46:50.923Z",
+    "ultima_medicao": "2026-09-29T20:10:49.328Z",
+    "segundos_ate_medicao": 1438.405,
+    "contador_anterior_a_retoma": {
+      "instante": "2026-09-28T19:55:27.415Z",
+      "simbolos": {
+        "input_tokens": 17676626,
+        "cached_input_tokens": 17072512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 96378,
+        "reasoning_output_tokens": 29551,
+        "total_tokens": 17773004
+      }
+    },
+    "simbolos_cumulativos": {
+      "input_tokens": 26238673,
+      "cached_input_tokens": 25434880,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 122034,
+      "reasoning_output_tokens": 46587,
+      "total_tokens": 26360707
+    },
+    "acrescimo_na_retoma": {
+      "input_tokens": 8562047,
+      "cached_input_tokens": 8362368,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 25656,
+      "reasoning_output_tokens": 17036,
+      "total_tokens": 8587703
+    },
+    "fonte": "eventos token_count da mesma sessão",
+    "limite": "fotografia durante o fecho; não inclui os atos posteriores nem a resposta final"
+  },
+  "efeitos_externos_da_construcao": {
+    "push": 0,
+    "despachos": 0,
+    "interruptores_alterados": 0,
+    "agentes_reais_alterados": 0
+  },
+  "por_fazer": [
+    "publicação dos ramos",
+    "ensaios despachados no GitHub",
+    "chaves e interruptores pelo diretor",
+    "duas corridas reais verdes de cada rotina antes da reforma dos agentes"
+  ]
+}

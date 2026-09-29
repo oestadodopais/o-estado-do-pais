@@ -1,0 +1,8 @@
+{
+  "comando": "python3 scripts/leituras/conferir-relatorio.py design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md design/especime-v3/medicoes/f22b-2026-09-28 --json design/especime-v3/medicoes/f22b-2026-09-28/relatorio-conferencia.json",
+  "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+  "inicio": "2026-09-29T20:13:16.930409+00:00",
+  "fim": "2026-09-29T20:13:17.063083+00:00",
+  "segundos": 0.132,
+  "codigo": 0
+}
