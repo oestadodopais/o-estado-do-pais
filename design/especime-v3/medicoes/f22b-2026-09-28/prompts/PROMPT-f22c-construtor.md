@@ -106,7 +106,7 @@ Os fluxos que chamam `publicar()` (o corredor e a retoma) ganham o passo que gua
 - O `medidas.json` não apresenta constantes como medidas. Os quatro zeros dos efeitos externos passam a uma secção `declaracoes`, dita como declaração do construtor. O lugar de direção mede à parte, na aterragem, os interruptores e as corridas despachadas.
 - Cada afirmação do relatório que o pacote não prova ganha o comando e a saída, ou sai do relatório. São elas: o §0 reproduzido (com o código e a hora); a conferência de que nenhuma outra construção corria antes de cada portão; os ensaios de isolamento (o comando e o ambiente, sem valores secretos); e a reparação do `core.bare` e das opções locais do git.
 - O `medir.py` deixa de afirmar a conferência das mudanças posteriores aos portões. Fá-la o lugar de direção na aterragem, entre a cabeça dos portões e a final.
-- O `core-inicial.log`, e qualquer registo do pacote com a disposição de pastas da máquina (`<pasta-pessoal>/...`), passam às marcas dos outros (`<worktree do sítio>`, `<worktree do motor>`).
+- O `core-inicial.log`, e qualquer registo do pacote com a disposição de pastas da máquina (`<caminho-local>`), passam às marcas dos outros (`<worktree do sítio>`, `<worktree do motor>`).
 - O `medir.py` procura caminhos pessoais em todos os ficheiros do pacote, com um conhecido-positivo.
 
 A linha do F2.2b no registo das melhorias é agora a M41, renumerada pelo lugar de direção. Se lhe mexeres, fica M41. O §2 da frescura ficou na forma de `main`, e não lhe mexes.

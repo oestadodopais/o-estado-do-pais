@@ -2,7 +2,7 @@
 
 *Escrito a 01.09.2026 pelo lugar de direção (Claude Fable 5); entrega B do prompt de 30.08. Duas coisas estão decididas pelo diretor a 30.08.2026 e não se voltam a perguntar: o corredor diário corre numa ação agendada no repositório do motor, com Python e Node, sem segredos porque as fontes são públicas; e um valor novo de rotina, no mesmo formato e com todos os portões verdes, publica-se e fica registado em «O que mudou», enquanto o resto pára e avisa. O arquivo de versões parte da «Nota · o arquivo de versões das fontes · desenho proposto (31.08)», no Desktop do diretor, e adota-a. O que aqui é medido diz-se medido; o que é proposta diz-se proposta; o que está por confirmar leva `[verify]`. Sem travessões na prosa.*
 
-## Estado de execução a 28.09.2026 · F2.2b
+## Estado de execução a 29.09.2026 · F2.2b, corrigido pelo F2.2c
 
 O desenho de setembro distingue-se agora da autorização em vigor (§1.134 de
 `DECISIONS.md`). As corridas estão preparadas para armar; esta construção não
@@ -11,40 +11,40 @@ publica os ramos, não despacha corridas e não altera interruptores. O relatór
 
 | Corrida | Hora UTC | Interruptor | Estado preparado |
 |---|---|---|---|
-| corredor | todos os dias, 06:10 | `CORREDOR_ARMADO` | ramo datado, guarda do diff, portão público do mesmo SHA antes de `main` |
+| corredor | todos os dias, 06:10 | `CORREDOR_ARMADO` | guarda antes de publicar, ramo datado e portão público do mesmo SHA antes de `main` |
 | painel | segunda-feira, 08:30 | `PAINEL_ARMADO` | leitura sobre clone, até duas retomas dos anfitriões calados, relatório e quatro saídas em artefacto |
 | varrimento | dia 1, 09:00 | `VARRIMENTO_ARMADO` | clone por parâmetro, leitores, relatório e issue de achados; sem commits |
 | vigia | todos os dias, 15:10 | o de cada corrida | ausência, falha ou carimbo em falta abre aviso; cada cadência é independente |
 
 Sem o respetivo interruptor, o agendamento fica dormente. Os despachos manuais
-são ensaios e não empurram commits. Os segredos `CHAVE_SITIO` e `CHAVE_ARQUIVO`
+do corredor, painel e varrimento são ensaios e não empurram commits. O despacho manual do vigia corre sempre, mesmo desarmado. Os segredos `CHAVE_SITIO` e `CHAVE_ARQUIVO`
 continuam a ser tarefa do diretor. A prova local usa dublês do GitHub e das
 fontes; os ensaios despachados continuam por fazer depois da publicação dos ramos.
 
-O commit do sítio publica-se primeiro num ramo datado. A guarda aceita apenas
-reconferências acrescentadas e os campos fechados do estado da verificação e das
-fontes. Recusa alterações de valor, excerto, endereço, história anterior e ficheiros
-fora do âmbito. A API pública é consultada no máximo uma vez por minuto durante
-uma hora. Só a conclusão verde do `portao.yml`, para o mesmo SHA, ramo e evento
-`push`, deixa esse mesmo commit avançar para `main`, sem o refazer nem forçar.
-A guarda repete-se contra a cabeça atual de `main`. Uma recusa conserva o ramo e
-abre issue com a razão e a ligação ao portão; uma falha dos portões locais também
-continua a fechar `main`.
+O candidato passa primeiro pela guarda contra `main`, depois de `fetch`, antes
+de qualquer `push` para o sítio público. Só aceita reconferências acrescentadas
+com a poda exata das mais velhas até às últimas quatro, e os campos fechados do
+estado da verificação e das fontes. Uma recusa fica em diff no artefacto da
+corrida privada do motor, com issue que diz a causa e liga essa corrida.
+Se passar, publica o ramo datado e espera o portão. A API pública é consultada
+no máximo uma vez por minuto durante uma hora. Só `success` no `portao.yml`,
+para o mesmo SHA, ramo e evento `push`, permite repetir a guarda contra o `main`
+do momento e avançar esse SHA, sem o refazer nem forçar. Um portão vermelho
+conserva o ramo e abre issue; uma falha local também fecha `main`.
 
 No painel, silêncio não é «inacessível»: só os anfitriões calados passam a outro
-trabalho. Um erro HTTP recebido continua a ser resposta. Uma corrida parcial
+trabalho. Um erro HTTP recebido continua a ser resposta. No limiar, o erro HTTP ou a página sem números chegam à issue com a causa; só o silêncio pede retoma. O limiar não impede o carimbo das linhas nem o global quando todas as linhas foram lidas. Uma corrida parcial
 conserva as linhas não lidas e não substitui o carimbo global. A revisão de uma
 fonte abre issue e deixa o valor publicado intacto, à espera da `atualizacao`.
 As quatro saídas do motor só entram em `master` quando correspondem ao registo
 da corrida e o portão do motor passa sobre esses bytes. O vigia exige a identidade
 da corrida no carimbo do painel e do varrimento; um ensaio não cobre uma ausência
-agendada. Os artefactos do painel duram 30 dias e os do varrimento 45 dias.
+agendada. O vigia reconhece a corrida dormente pelo trabalho real `skipped` e espera a próxima. Só abre uma issue por rotina e data devida, procurando antes o mesmo título aberto. Os artefactos do painel duram 30 dias e os do varrimento 45 dias.
 
 A política de valores novos continua fechada até ao F2.4, depois das quatro semanas
 do F2.3. Os dois agentes do portátil ficam ativos durante a transição. O guião
 `indicators/reformar_agentes.py` só os arquiva e descarrega mediante aplicação
-expressa e prova de duas corridas reais verdes de cada fluxo. O construtor exerce
-apenas o modo de ensaio, sobre definições construídas para a prova.
+expressa e prova de duas corridas reais verdes de cada fluxo. As plantas exercem também `--aplicar`, apenas sobre definições sintéticas e com `launchctl` substituído por um dublê. O varrimento sem argumentos conserva os passos, bandeiras, relatório e código de saída do portátil até à reforma.
 
 Os passos históricos abaixo descrevem o desenho original. Onde falam em publicar
 valores novos ou em empurrar diretamente para `main`, aplica-se esta restrição.
@@ -83,7 +83,7 @@ Cada passo é um portão: se falha, a corrida pára ali, nada se publica, e o es
 4. **Relê.** Corre o leitor do motor sobre o ficheiro novo e os cinco canários. Classifica: o mesmo valor com carimbo novo (aviso, publica-se a conferência); um período novo da mesma medida no mesmo formato (valor de rotina: publica-se); o carimbo e o valor a mudarem na mesma corrida (revisão da fonte: pára, uma frase só, como o motor já faz); a estrutura, as unidades ou as dimensões diferentes (pára); o leitor não reconhece o ficheiro (pára); **a fonte não responde** (um estado e não uma falha, emenda de 08.09.2026 com o bloco F2.1b: a linha fica «sem resposta desde dd.mm» com quem observou, a corrida continua e diz-se parcial pelo nome, e os leitores da fase 2 recebem do corredor a lista dos anfitriões que a fase 1 declarou calados e escrevem o estado sem um segundo pedido nem uma segunda espera); **a série desapareceu**, isto é, o índice do publicador já não nomeia o ficheiro, ou o endereço respondeu outra coisa que não o ficheiro (pára). Até 07.09.2026 os dois casos eram um só veredicto do leitor dos concelhos, e as corridas de 05 e 06.09 ficaram vermelhas com o INE calado por isso.
 5. **Escreve.** `verificado_em` em todas as linhas conferidas; os valores novos de rotina nas linhas, com a verificação e a data de publicação da fonte; a história de vintages; o estado de cada fonte; a entrada do dia em «O que mudou». O carimbo do cabeçalho do sítio conta as linhas cujo endereço foi lido, e ao lado as que a corrida se propôs ler, as que ficaram sem resposta, as que responderam com erro e os anfitriões calados (a decisão do carimbo de 07.09.2026, `DECISIONS.md` §1.101; as ausências escritas pelo disjuntor contam como silêncio observado nessa corrida).
 6. **Portões do sítio.** `npm run build`, `npm run verify`, `npm run typecheck` sobre o sítio com as mudanças. Vermelho: o candidato fica no ramo e `main` não avança; o relatório e a issue dizem porquê.
-7. **Publica.** Um commit com caminhos explícitos, limitado às reconferências e ao estado permitido. O ramo datado recebe primeiro esse commit e dispara o portão público do sítio. A guarda e o verde desse mesmo SHA são necessários para avançar `main`. Um valor novo, um excerto ou um endereço alterado não atravessam esta via. Nunca `git add -A`.
+7. **Publica.** Um commit com caminhos explícitos, limitado às reconferências e ao estado permitido. Depois de `fetch`, a guarda contra `main` corre antes de qualquer `push`. Se recusar, o diff fica só no artefacto privado do motor e a issue liga a corrida. Se aceitar, o ramo datado recebe o commit e dispara o portão público; o verde e uma segunda guarda são necessários para avançar esse mesmo SHA para `main`. Um valor novo, um excerto ou um endereço alterado não atravessam esta via. Nunca `git add -A`.
 8. **Confere o lançamento.** Espera pelo lançamento e corre `verify:deploy`, nunca mais de um pedido por minuto ao sítio (a lição de 26.08: um pedido a cada dez segundos fez a mitigação do Vercel bloquear o próprio endereço da casa). Vermelho: aviso.
 9. **Carimba e vigia.** `heartbeat.json`; um segundo fluxo agendado, à tarde, corre `--check-heartbeat` e falha alto se a corrida da manhã não carimbou. A ausência de corrida tem de aparecer como falha, nunca como nada.
 

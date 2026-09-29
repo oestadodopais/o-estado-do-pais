@@ -1,22 +1,105 @@
 {
   "bloco": "F2.2b",
-  "medido_em": "2026-09-29T20:12:54.232621+00:00",
+  "medido_em": "2026-09-29T21:31:13.606151+00:00",
   "bases": {
     "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
     "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
   },
   "cabecas_lidas": {
-    "motor": "5335e129b3167c93d1822c8af7cecbb909922877",
-    "sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0"
+    "motor": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+    "sitio": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546"
   },
   "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
-  "mudancas_posteriores_aos_portoes": [],
+  "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
   "commits_motor": [
     "6432b88b000cdcdc47a08a8721bafac8f7ab023a Prepara a publicação guardada e as rotinas transportáveis",
-    "5335e129b3167c93d1822c8af7cecbb909922877 Liga os fluxos dormentes às guardas e às plantas do F2.2b"
+    "5335e129b3167c93d1822c8af7cecbb909922877 Liga os fluxos dormentes às guardas e às plantas do F2.2b",
+    "68318e0da2036cc29e4704fa1bb8a96dee246095 C1e: consultar o vigia quando o transporte não tem causa classificada",
+    "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1 F2.2c: juntar master conservando a classificação do transporte e a retoma"
   ],
   "commits_sitio_anteriores_ao_relatorio": [
-    "01362b78a810795ee6870b8a6f439c39b9fe25e0 Documenta as três corridas prontas a armar e a transição do portátil"
+    "2613664f73f178197ea869e9031ac6ba9f2bb0f9 PP1: as declarações do lugar de direção para a primeira página de um leitor comum (os cinco blocos de «O que se passa», com as palavras, as condições que os tornam verdadeiros e os desenhos, e as seis entradas com os cartões que cada uma agrupa) e o ensaio a seco que as rende nas duas edições, a testemunha independente contra o resolvedor do construtor (M31)",
+    "1cbdb8c44045a5053cba33562f5044e02975bc47 O brief do PP1, a primeira página de um leitor comum (o passo 4 da ordem da §1.133, na forma que não precisa das séries): os cinco blocos de «O que se passa» com condições em vez de valores presos, os seus desenhos, as seis entradas por pergunta da vida, os sinais para o lugar de direção e as células que mudam de forma; com o §0 medido por guião na cabeça 2613664f, o guião do construtor e a maqueta que o diretor viu",
+    "db58de3e892625ff91bb8f77bdaddd2506660f8f PP1: as declarações dos blocos e das entradas no sítio, o resolvedor sem Astro, a auditoria das palavras e a comparação com a testemunha",
+    "30b663ffa62ca67ce2d351559305fdb9cac44ac7 PP1: a primeira página de um leitor comum e as cinco páginas das entradas",
+    "3585635ac5841b965a91b202e9385ae740b45a12 PP1: o captor do bloco e as capturas antes, da construção da cabeça de partida 1cbdb8c4",
+    "1c1952c949d53907ac8bf879f47f00d48131ec76 O brief do CI1, a corrida «portão» em metade do tempo sem uma conferência a menos (cada conferência uma vez, as lentas lado a lado, a construção do Astro mais depressa com o mesmo resultado byte a byte), pela pergunta do diretor de 28.09; com o §0 medido por guião na cabeça a677770f, os tempos lidos na API do GitHub e o guião do construtor",
+    "b47a12d76c24218cb9656cab147a5efaf2266ec8 PP1: a lista dos números de cada bloco com a marca das palavras conferidas, a língua do publicador na linha da fonte, a descrição da primeira página pelos nomes das entradas e a porta do veredicto com 44 px",
+    "3015857125337a001e5f24e508f8298c6646ab09 PP1: a célula dos blocos e das entradas, a geometria dos desenhos, os sinais e as plantas da régua das frases",
+    "238bd172a9d308d8ffbb67ca02c3405fd6f608d8 PP1: o inventário das frases e as exceções da voz com a primeira página nova e as cinco entradas",
+    "4d733a89a7754264a8db507783371ebd1668bf16 PP1: os portões que mudam de forma com a primeira página e as cinco entradas, cada um a conservar o que protege",
+    "d04d63b6e090cb519f8be5b2e2b375aaabd6c836 PP1: as plantas dos portões que mudaram de forma, no sítio onde as coisas vivem agora",
+    "b4d929027436eedc7ca8053902c242e50b78d988 PP1: os guiões das medidas do relatório, do valor revisto numa cópia do livro e das capturas depois",
+    "15342ef669f5895e12a7e024f2e0f8ee48b2e600 PP1: os tipos do resolvedor e das declarações, que o typecheck pedia",
+    "85a719b28c5f7a1cac33cd19072b96db563fffac CI1: as ferramentas de medição do bloco (o cronómetro, a prova byte a byte, a sonda do que cada conferência abre, o inventário, o leitor dos perfis de CPU e os tempos de uma corrida lidos na API do GitHub), cada uma com o seu conhecido-positivo",
+    "790e255b719eb63645b1ad09ea357d63c6698cfd CI1, mandato 1 e 2: o verify depois do build, que corre lado a lado as conferências do verify que o build não correu com o mesmo comando, lidas das duas cadeias do package.json, e fecha com as células U (a união é o verify inteiro), D (nenhuma conferência mexeu no dist/) e C (o dist/ é desta cabeça), depois de sete plantas numa cadeia sintética; o npm run verify à mão não muda",
+    "96bbb7f147db4f5f99b84905fecd8221cb82bf9b CI1: a corrida «portão» corre, depois do build, o verify sem repetir o build, no mesmo trabalho portao (a verificação que a proteção de main exige), com os comentários da razão e da prova postos em dia",
+    "27b13b92199b7917ce5bba6d01dfcf471dd70cbb CI1, mandato 3: a paridade das duas línguas confere-se na primeira chamada de t() de cada processo e a árvore das cadeias fica congelada a seguir, em vez de se conferir em cada chamada (53,9 % da construção do Astro, medido no perfil de CPU); cinco plantas novas no provar:guardas provam que a guarda ainda fecha uma chave só numa língua e que a árvore recusa escritas depois da primeira chamada",
+    "ae8951901d0d9abcb0e5302b8205660ee1228f96 PP1: a planta do valor trocado no portão de HTML aponta ao primeiro valor da frase de um bloco que tem valores",
+    "bd1f46dfe33142deb9f71df8b48a287b776ef973 PP1: a frase do veredicto e o rótulo da linha de referência deixam de prender os dados no inventário das frases",
+    "931873d1a56461b6b08c13c7c4b8f4384d696a32 PP1: a planta do valor revisto constrói as duas cabeças pela cadeia inteira e guarda a cauda da saída sem caminhos da máquina, e as medidas leem as páginas congeladas",
+    "7b63369e9d7ccc71f0f71f9609d364a2fbb5a933 CI1: as provas do bloco (as construções antes e depois com as condições da máquina, a prova byte a byte e o controlo do determinismo, o perfil de CPU, o verify inteiro contra o verify sem repetir o build, as 17 conferências repetidas a dizerem o mesmo nas duas corridas, o inventário do que cada conferência abre, as plantas e as contraprovas, a planta na cadeia real, as esperas do check:alvos e a corrida de referência lida na API), o guião que escreve o medidas.json, e o cronómetro a trocar também o rascunho e os caminhos debaixo da casa",
+    "12dc8fbfa2062f24728c9877fefa822a7793ecd4 PP1: o relatório do construtor, as medições, as capturas depois e o mapa dos construtores posto em dia",
+    "5c862efb38055965618a9d29f26ac12a25ac99eb C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas",
+    "69520d3ac921f80936191c58d69cf50f220048d5 C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR",
+    "01362b78a810795ee6870b8a6f439c39b9fe25e0 Documenta as três corridas prontas a armar e a transição do portátil",
+    "4653316e42feb4f50c314001ee26b1389caca08f C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo",
+    "abc6743a172e4e05f385b289b0a5f6309ef196af C1e: desenhar o início sem data como limite em aberto",
+    "d65f2bb74dd8edbded0dc5364779903b19a14667 C1e: conferir nomes do Git e caminhos nas páginas construídas",
+    "ab47e595d283ecb9e8b8795cebf8a6e0cbdceede C1e: isolar as condições de endereço nas plantas dos instantâneos",
+    "01b3883c005ae5aca1efec488c969a726cc68145 CI1: os três portões a 0 na cabeça 7b63369e (build, verify e typecheck, cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar), o dist/ do portão igual byte a byte ao da cabeça de partida, o passo novo da corrida verde na mesma cabeça, o medidas.json com 88 medições lidas, o relatório do bloco e a resposta curta do construtor",
+    "1875866b79e7fbad1f4da66549a20f18dbd5cef7 CI1: o caminho do interpretador da máquina sai de uma prova do bloco, trocado por <python>, como na C1d",
+    "18137b6d2ff9ebb3b998170e0bb965fd8a9aff22 PP1: os códigos dos três portões na cabeça do relatório e a resposta curta do construtor",
+    "2d063f9af1e707a4e8657a0e664bdce88eece4b6 C1e: tipar a lista percorrida pela história da proveniência",
+    "9514cc6eea58426d39ef54d7085f9372a68c6cf2 C1e: entregar as provas e registar a paragem da história do PRR",
+    "cb43b2fcec9e67815894a07ceb95c2cba1b589e4 C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma",
+    "26971885959ab2fb0177e27d979e7b81c5bcc3c8 CI1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e sete achados reais) com o registo das plantas; a primeira corrida medida no GitHub, 8,8 minutos contra 27,7",
+    "ffea781d22aec3cc80b7db14c825394627f8ecf1 C1f: reconstituir pelo Git os acessos das cinco linhas do PRR",
+    "cd5557448c430a225eb58b6b257e7f11ef384818 C1f: registar para leitura as duas contagens do inventário",
+    "5dd1d2d1bb126862b3d5bd7f8bf42b4eb36a2a2d CI1b: o verify depois do build corre o design:feixe, que refaz design-system/, sozinho depois do grupo; a célula D passa a ver também uma escrita reposta (a hora de escrita e o inode de cada ficheiro do dist/, e dos ficheiros que o git segue, além dos bytes), e diz o que não vê; a célula C prova a construção do prova.json e do cadeia.json pela hora de escrita contra o carimbo; doze plantas, e os comentários da corrida postos em dia (achados 6 e 7 da leitura a frio)",
+    "8c51a5197a71600aa352c40275d7f83de9d6f918 CI1b: as ferramentas de medição da passagem: a sonda regista as leituras e o inventário cruza o que cada conferência escreve com o que as outras leem (achado 6); a prova byte a byte escreve e compara manifestos guardáveis, e um defeito antigo dos argumentos sem --json sai (achado 8); a conta crua das repetidas diz o que tira antes de comparar e passa a comparar o canal e as linhas em branco (achado 11); a planta na cadeia real repõe os ficheiros num trap, com a prova da interrupção (achado 12); e a planta da paridade numa construção real (achado 9)",
+    "2986a98df8a01b151d05735f3c90452aff445e32 PP1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e quatro achados reais do bloco) com o registo das plantas",
+    "a7a4ac403a1b4ecb8b33e40a08e982db407c7cd3 CI1b: o mapa do repositório posto em dia (o §1 com a paridade das línguas uma vez por processo, o §3 com a corrida «portão» e o verify depois do build, o §5 com os tempos medidos por portão, duas armadilhas no §7; o conferir-mapa acha as 84 citações), a M38 no registo das melhorias (a guarda da paridade a cada chamada era 53,9 % da construção do Astro), e os tempos de uma corrida a lerem as linhas que o GitHub escreve como ##[group]",
+    "7e0f62409b8d662c1acc5d4fedea0c19104026a7 CI1b: o mapa aponta o inventário da passagem, que regista também as leituras",
+    "71d35e8b65a9326b43f3a60d5bb784fdf7f0d17d PP1b: a pesquisa da primeira página provada a interagir, nas duas edições, com e sem guião",
+    "434d7ae7213554aa5c131c63e7942f6b542f19ca PP1b: as dez páginas das entradas conferidas no mapa do sítio construído",
+    "1a461ad66aeee0e496944d6a7699487f8f5cbc90 PP1b: o mínimo de três blocos também na cadeia do build, e a pesquisa da primeira página no check:primeira",
+    "56c7ed7ba5de90338edf990140f1929095dd39f1 PP1b: o mapa dos construtores com os sinais na cadeia do build, a pesquisa da primeira página e as entradas no mapa do sítio",
+    "eec9dc69a4cbf2f283c9ec3ff95b5ced36276b72 C1f: entregar as provas dos acessos, os portões e os recibos",
+    "b485ae52490920f9a46630a967177f546cd21f5c CI1b: o inventário reduz os caminhos da casa ao que não diz nada da máquina (e o cruzamento faz-se sobre eles, o que só pode juntar caminhos); a planta da paridade guarda as primeiras linhas de rota e as da guarda; e o guião das medidas lê as provas da passagem",
+    "b0a4abe5b374d23894874190bf269d216f256cee PP1b: as capturas e as páginas congeladas da cabeça dos portões, os três portões da passagem, o relatório com a secção PP1b e a resposta curta",
+    "40f7684c21eb4742a6597eb0405a8f3516effec0 C1g: a quarta leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco; a conferência da privacidade na construção de produção dependia da máquina e da história do Git), com o registo das plantas, e o guião da passagem C1g, a última antes da aterragem",
+    "c6eb9ef0d54dd74b14ffdbf6ad4610041941f14a C1g: reservar a privacidade ao verify e excluir nomes genéricos de pasta",
+    "c576cc5f8fa0f5da3e385ee140877ab595d3f247 C1g: conferir o valor na página e limitar as frases e o tracejado ao que os dados sabem",
+    "fc83b7331703bc405ef03cc5268202e75f05023b C1g: afinar as razões do PRR e registar a data e as contagens da edição local",
+    "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f C1g: levar a dependência da contagem para a cópia isolada da travessia",
+    "078186dff44285aa6839e031857621165c923534 CI1b: os três portões a 0 na cabeça b485ae52 (em portoes/ci1b/, cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar), a construção do portão igual byte a byte à de partida, os cinco manifestos das construções comparadas, o inventário com as leituras (0 pares com contacto), a paridade numa construção real, a planta interrompida reposta, a primeira corrida no GitHub lida na API, o medidas.json com 144 medições lidas, a secção CI1b do relatório com as frases da primeira entrega corrigidas, e a resposta curta da passagem",
+    "b83a7866fbb895933d75ccf25c29a0f9a135342f PP1b: a releitura a frio do Codex (gpt-5.6-sol), com as cinco plantas achadas, e a triagem do lugar de direção no cabeçalho",
+    "6711f190459b8b2b8562db762de882184dd57b01 CI1b: o mandato da passagem de correção, à letra, no registo do bloco",
+    "f321d50aa8463b91675e6aec161a5452d96a69ba C1g: entregar as capturas finais, os portões e a retificação do relatório",
+    "40e5760c4784981c88276837b5acf46f2b2fe317 CI1: a segunda corrida medida no GitHub (a 36489174336, na cabeça 078186df: 9,9 minutos, as três células verdes) e a planta vermelha num ramo para deitar fora (a 36489295961: o check:css a falhar de propósito no grupo fecha a célula U e deixa o portao vermelho), lidas na API com o guião do bloco; o ramo da planta foi apagado",
+    "41451479cb7cf8e08d25d711468d04a3173f8338 CI1b: a releitura a frio do Codex (gpt-5.6-sol), com as cinco plantas achadas, a conta da terceira acertada no registo, e a triagem do lugar de direção no cabeçalho",
+    "50c799669071b504fe08663ce767b8fb77e4d402 CI1: juntar ao ramo o C1 antes da aterragem (o ramo c1-2026-09-28 em f321d50a): o verify do C1, com a conferência da privacidade, e o passo novo do CI1; as linhas M35 a M37 do C1 antes da M38 do CI1",
+    "7b28723266f87747248d989010fed631c84c57ba PP1: juntar ao ramo o CI1 com o C1 antes da aterragem (o ramo ci1-2026-09-28 em 50c79966): o verify com as três conferências novas (a privacidade do C1, a primeira página e os sinais do PP1) e o passo do CI1; no inventário e nas revisões, as secções do C1 antes da do PP1",
+    "9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8 C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h",
+    "fe2ff91f16914f89cacde1228d188e360bde9b5a PP1: os três portões e o inventário das conferências na cabeça da junção com o CI1 e o C1 (7b287232), pelo lugar de direção: o check:primeira, conferência nova do verify, entra no grupo lado a lado com 0 pares com contacto em 18 conferências",
+    "ed5093914109ed20a968e0303fbf26a6fd81c5c1 C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos",
+    "168d9093cf151ef94a6b749dd64012c3a8695b26 C1h: entregar as capturas do PRR, os custos e as provas da guarda corrigida",
+    "220861c087694c7212b907a9055b8df86d4615ed PP1: juntar ao ramo a passagem C1h do C1 (o ramo c1-2026-09-28 em 168d9093: a guarda da pasta pessoal reposta, as capturas do PRR e os custos), para os três blocos aterrarem na mesma avançada de main",
+    "0e083396b9444d680b4e90ec1c0b698aee2cd2c5 Os registos de 28 e 29.09: a §1.135 (o C1, lido a frio seis vezes), a §1.136 (a primeira página de um leitor comum) e a §1.137 (a corrida «portão» em um terço do tempo); a sexta leitura a frio do C1 com as plantas; a I169 e a I170 alargadas, e as I171 a I174 abertas; a M37 medida; e as linhas do diretor (a primeira página no ar, o nome de utilizador na história pública)",
+    "8ec02519b651fe9a8d09a5d1bd415b731fa4d966 A cópia do prompt da sessão seguinte (depois de 29.09.2026, de manhã), com o estado lido por estado.py: a aterragem dos três blocos à espera do diretor, e a ordem do que se faz a seguir",
+    "cec84d3cdda1f11a3d74b513429c3ed76533629d Os registos de 29.09: a I174 abria de novo a I157 (o nome de utilizador da máquina na árvore pública, à espera da decisão do diretor desde 26.09); a I157 fica com a recontagem, a I174 só com a lista das contas genéricas do detetor, e a linha duplicada do diretor sai",
+    "7df97fd90353da1571925eec9c5e7b9717d93b46 Redação a pedido do diretor (29.09.2026): o nome de utilizador da máquina, o nome do diretor e o seu correio saem da árvore pública, em 264 ficheiros de texto, pelo guião do lugar de direção; fica só o oráculo do portão (scripts/textos-aprovados.json), que o gate:html e o check:lingua leem para exigir que o nome não chegue a página nenhuma",
+    "5448c76ad058ba93985eb92ba1352760483bc278 §1.138: o detetor do nome procura as duas formas (a inteira e a do primeiro e do último nome), com um conhecido-positivo por forma; o documento alojado do Alentejo e do Algarve em inglês redigido e declarado no manifesto; a auditoria dos segredos e dos dados pessoais, só com contagens; a I157 fechada na árvore, as I175 e I176 abertas, a M39, e o que fica ao diretor",
+    "7914c1dea6de5e01fde0270b077b2d76d9818985 A cópia do prompt da sessão seguinte posta em dia com a §1.138 (a redação e a auditoria de 29.09) e o estado lido de novo",
+    "eb03e4f9a44158e4ebdcc1e1e990025664d421cd §1.138: a frase do diretor sobre a história do Git deixa de dizer um número de linhas do livro-razão que o check:registo lia como a contagem de todas (a forma nova nomeia as linhas do PRR de Évora sem número); a contagem dos 205 ficheiros entra na auditoria",
+    "c53e8d8d81143b6e11be70a42f6499910e73627a §1.138: os resumos dos dois briefs isentos que a redação mudou (o P1 e o P2, que nomeavam o diretor) postos em dia pelo check-briefs.py --escrever-isentos, num diff que só troca esses dois resumos",
+    "1d7fb91cfeb8df4e73126fb19c13f388b7433711 §1.138: a leitura a frio do Codex (cinco plantas em cinco) e a triagem; o nome do ministro da Defesa Nacional reposto na lista do Governo (o único terceiro que a redação atingira); a atribuição do documento alojado do Alentejo e do Algarve reduzida a «Prepared by Claude (claude-fable-5)», com os resumos e as medidas novas no manifesto; as provas da auditoria (os relatórios do gitleaks com os valores redigidos, o do motor só em resumo, o conhecido-positivo e a planta da página antiga); a I177 aberta",
+    "9802d0d01d8f0ff83f21dd694c7adb01e280afe9 A cópia do prompt da sessão seguinte com a I177",
+    "8e66b60180312c7e6ca7fa8cf997700cd55c8bba §1.139: o guião da aterragem passa para o repositório (scripts/aterrar.sh: confere antes de mexer, para no primeiro passo que falhar, tem ensaio, não escreve caminhos da máquina), com as provas do ensaio; o registo da aterragem de 29.09 às 12:03 UTC; a M40; e a regra que o diretor junta para o autorizar",
+    "77d9e4076eb8098a45e6ca0cd3c27964d54a9301 Regista as provas e a resposta do F2.2b",
+    "22510cd9119ae01a9bca8a75c4382654cbf7e0b2 F2.2b: juntar main ao ramo antes da passagem de correção (C1, PP1, CI1, a redação de 29.09 e o guião da aterragem), pelo lugar de direção: no registo das melhorias, as linhas M37 a M40 de main e a linha do F2.2b renumerada M41, dentro da tabela; no §2 da frescura, a forma de main da linha datada (a redação de 29.09, em português certo), que substitui a do construtor",
+    "fb1dd0dd442684221a5e4aceae3b8ac5491d5546 F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)"
   ],
   "commit_do_relatorio": "o commit que contém LEIA-ME.md, RESPOSTA-construtor-f22b.md e este medidas.json",
   "alteracoes_protegidas": [],
@@ -146,7 +229,7 @@
       "segundos": 209.396,
       "codigo": 1,
       "codigo_lido_de": "provas/core-inicial.codigo",
-      "sha256_saida": "a42bfa7c892624ab1b67ad270914cbf96a5a8ed868da14d86663c745c6a4803c"
+      "sha256_saida": "f9bf4551e8673063bc45fc1af53eabedd0bf05efc9b8f5be9a7d1f07a949b6b1"
     },
     "precommit-isolamento": {
       "comando": "git -C <repositorio> commit -m Prepara a publicação guardada e as rotinas transportáveis -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
@@ -311,16 +394,25 @@
     "fonte": "eventos token_count da mesma sessão",
     "limite": "fotografia durante o fecho; não inclui os atos posteriores nem a resposta final"
   },
-  "efeitos_externos_da_construcao": {
-    "push": 0,
-    "despachos": 0,
-    "interruptores_alterados": 0,
-    "agentes_reais_alterados": 0
+  "declaracoes": {
+    "origem": "declaração do construtor, não medição",
+    "efeitos_externos_da_construcao": {
+      "push": 0,
+      "despachos": 0,
+      "interruptores_alterados": 0,
+      "agentes_reais_alterados": 0
+    },
+    "conferencia_externa": "O lugar de direção mede os interruptores e os despachos na aterragem."
   },
   "por_fazer": [
     "publicação dos ramos",
     "ensaios despachados no GitHub",
     "chaves e interruptores pelo diretor",
     "duas corridas reais verdes de cada rotina antes da reforma dos agentes"
-  ]
+  ],
+  "varrimento_do_pacote": {
+    "ficheiros_lidos": 67,
+    "caminhos_pessoais": 0,
+    "conhecido_positivo": true
+  }
 }
