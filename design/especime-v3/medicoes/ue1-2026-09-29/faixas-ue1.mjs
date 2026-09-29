@@ -24,7 +24,10 @@
  * Serve `dist/` por um servidor local efémero, recusa todo o pedido que não seja da origem local e
  * confere que a construção é da cabeça. Escreve `faixas-ue1.json`, sem caminhos da máquina.
  *
- * Uso (da raiz do sítio): node design/especime-v3/medicoes/ue1-2026-09-29/faixas-ue1.mjs
+ * Uso (da raiz do sítio): node design/especime-v3/medicoes/ue1-2026-09-29/faixas-ue1.mjs [manifesto]
+ *
+ * O manifesto é `faixas-ue1.json` por omissão; a passagem UE1b (29.09.2026) corre-o outra vez com
+ * `faixas-ue1b.json`, porque as pontas passaram a levar as ressalvas da fonte por extenso.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -35,6 +38,8 @@ import { chromium } from 'playwright';
 const raiz = process.cwd();
 const dist = path.resolve('dist');
 const pasta = 'design/especime-v3/medicoes/ue1-2026-09-29';
+const manifestoDeSaida = process.argv[2] ?? 'faixas-ue1.json';
+if (!/^faixas-ue1b?\.json$/.test(manifestoDeSaida)) throw new Error(`o manifesto é faixas-ue1.json ou faixas-ue1b.json, e não «${manifestoDeSaida}»`);
 const esperado = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: raiz, encoding: 'utf8' }).trim();
 const versao = JSON.parse(await fs.readFile(path.join(dist, 'version.json'), 'utf8'));
 if (versao.commit !== esperado) throw new Error(`A construção declara ${versao.commit}; esperava ${esperado}.`);
@@ -166,7 +171,7 @@ const problemas = resultados.flatMap((r) => {
 const medicoes = resultados.flatMap((r) => r.faixas.map((f) => ({ ...f, lang: r.lang, largura: r.largura, pagina: r.pagina })));
 const porEdicao = Object.fromEntries(['pt', 'en'].map((l) => [l, [...new Set(medicoes.filter((m) => m.lang === l).map((m) => m.serie))].sort()]));
 const manifesto = {
-  bloco: 'UE1', construcao: versao, cabeca_esperada: esperado, larguras, paginas,
+  bloco: manifestoDeSaida === 'faixas-ue1b.json' ? 'UE1b' : 'UE1', construcao: versao, cabeca_esperada: esperado, larguras, paginas,
   paginas_medidas: resultados.length,
   medicoes_de_faixa: medicoes.length,
   series_com_faixa_por_edicao: Object.fromEntries(Object.entries(porEdicao).map(([l, s]) => [l, s.length])),
@@ -176,7 +181,7 @@ const manifesto = {
   pedidos_recusados_para_fora: recusados.length,
   problemas, resultados,
 };
-await fs.writeFile(path.join(raiz, pasta, 'faixas-ue1.json'), JSON.stringify(manifesto, null, 2) + '\n');
+await fs.writeFile(path.join(raiz, pasta, manifestoDeSaida), JSON.stringify(manifesto, null, 2) + '\n');
 console.log(`UE1 faixas: ${medicoes.length} medições em ${resultados.length} páginas, ${problemas.length} problema(s); plantas vistas ${manifesto.plantas_vistas} de ${plantas.length}; ${recusados.length} pedido(s) para fora recusados`);
 for (const p of problemas) console.log(`  · ${p}`);
 process.exit(problemas.length || manifesto.plantas_vistas !== plantas.length ? 1 : 0);

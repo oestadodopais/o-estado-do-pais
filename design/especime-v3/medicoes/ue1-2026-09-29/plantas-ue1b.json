@@ -1,0 +1,263 @@
+{
+  "bloco": "UE1b",
+  "cabeca": "c9859d31e53784899a189d9b0d7dbac36a9257f3",
+  "construcao": "c9859d31e53784899a189d9b0d7dbac36a9257f3",
+  "plantas": 17,
+  "mordidas": 17,
+  "repostas_com_o_mesmo_sha256": 17,
+  "plantas_por_grupo": {
+    "ordinal": 6,
+    "ressalva": 3,
+    "legenda": 3,
+    "porta": 3,
+    "palavras": 1,
+    "inventario": 1
+  },
+  "corridas_limpas": 4,
+  "corridas_limpas_a_zero": 4,
+  "resultados": [
+    {
+      "grupo": "ordinal",
+      "nome": "o sufixo «st» declarado como «th»",
+      "ficheiro": "src/data/faixa-da-uniao.mjs",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19g · o lugar 1 diz-se «1th» na edição inglesa e o ordinal é «1st»/",
+      "passou": true,
+      "antes": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "reposto": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "segundos": 8.9,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-sufixo-st-declarado-como-th.txt"
+    },
+    {
+      "grupo": "ordinal",
+      "nome": "o sufixo «nd» declarado como «th»",
+      "ficheiro": "src/data/faixa-da-uniao.mjs",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19g · o lugar 2 diz-se «2th» na edição inglesa e o ordinal é «2nd»/",
+      "passou": true,
+      "antes": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "reposto": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "segundos": 9.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-sufixo-nd-declarado-como-th.txt"
+    },
+    {
+      "grupo": "ordinal",
+      "nome": "o sufixo «rd» declarado como «th»",
+      "ficheiro": "src/data/faixa-da-uniao.mjs",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19g · o lugar 3 diz-se «3th» na edição inglesa e o ordinal é «3rd»/",
+      "passou": true,
+      "antes": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "reposto": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "segundos": 8.1,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-sufixo-rd-declarado-como-th.txt"
+    },
+    {
+      "grupo": "ordinal",
+      "nome": "o sufixo «th» declarado como «st»",
+      "ficheiro": "src/data/faixa-da-uniao.mjs",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19g · o lugar 4 diz-se «4st» na edição inglesa e o ordinal é «4th»/",
+      "passou": true,
+      "antes": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "reposto": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "segundos": 10.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-sufixo-th-declarado-como-st.txt"
+    },
+    {
+      "grupo": "ordinal",
+      "nome": "o «2nd» da página trocado por «2th»",
+      "ficheiro": "dist/en/themes/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19e · \\/en\\/themes\\/index\\.html · precos-da-habitacao-2025: a frase diz «[^»]*ranks 2th from the highest\\.» e a recomposição dá «[^»]*ranks 2nd from the highest\\.»/",
+      "passou": true,
+      "antes": "a3b00972ff054bdb7191ca031d8d77699cc58ba74fb2563c70aa078579d52650",
+      "reposto": "a3b00972ff054bdb7191ca031d8d77699cc58ba74fb2563c70aa078579d52650",
+      "segundos": 8.5,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-2nd-da-pagina-trocado-por-2th.txt"
+    },
+    {
+      "grupo": "ordinal",
+      "nome": "o «12th» da página pela regra sem a exceção dos 11 a 13 («12nd»)",
+      "ficheiro": "dist/en/themes/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19e · \\/en\\/themes\\/index\\.html · taxa-de-emprego-2025: a frase diz «[^»]*ranks 12nd from the highest\\.» e a recomposição dá «[^»]*ranks 12th from the highest\\.»/",
+      "passou": true,
+      "antes": "a3b00972ff054bdb7191ca031d8d77699cc58ba74fb2563c70aa078579d52650",
+      "reposto": "a3b00972ff054bdb7191ca031d8d77699cc58ba74fb2563c70aa078579d52650",
+      "segundos": 7.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-12th-da-pagina-pela-regra-sem-a-excecao-dos-11-a-13-12nd.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a ressalva de uma ponta trocada pela letra crua",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19d · \\/temas\\/index\\.html · precos-da-habitacao-2025: a ponta «alto» mostra a letra crua da marca da fonte/",
+      "passou": true,
+      "antes": "ad906a8e2b08b7b30910059972850f0b221f8a141da31c801b7dcbfc0b458aa3",
+      "reposto": "ad906a8e2b08b7b30910059972850f0b221f8a141da31c801b7dcbfc0b458aa3",
+      "segundos": 8.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-ressalva-de-uma-ponta-trocada-pela-letra-crua.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a ressalva de uma ponta com as palavras de outra marca",
+      "ficheiro": "dist/en/themes/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19d · \\/en\\/themes\\/index\\.html · taxa-de-desemprego-mip-2025: a ressalva da ponta «alto» diz «\\(provisional data\\)» e as palavras declaradas da marca «d» são «\\(definition differs\\)»/",
+      "passou": true,
+      "antes": "a3b00972ff054bdb7191ca031d8d77699cc58ba74fb2563c70aa078579d52650",
+      "reposto": "a3b00972ff054bdb7191ca031d8d77699cc58ba74fb2563c70aa078579d52650",
+      "segundos": 7.6,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-ressalva-de-uma-ponta-com-as-palavras-de-outra-marca.txt"
+    },
+    {
+      "grupo": "ressalva",
+      "nome": "a marca «d» sem palavras na declaração inglesa",
+      "ficheiro": "src/data/faixa-da-uniao.mjs",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19h · a marca «d», que um ponto de uma série leva, não tem palavras declaradas na edição «en»/",
+      "passou": true,
+      "antes": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "reposto": "86a32ef2d2964342be49ebbb6dafa19a4fa0d386bfd9478770b3213a6de9fb04",
+      "segundos": 10,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-marca-d-sem-palavras-na-declaracao-inglesa.txt"
+    },
+    {
+      "grupo": "legenda",
+      "nome": "a definição de uma marca trocada na legenda",
+      "ficheiro": "dist/livro-razao/series/precos-da-habitacao-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o campo «bandeiras\\.p» da série «precos-da-habitacao-2025-paises» foi renderizado como «preliminary» e a série diz «provisional»/",
+      "passou": true,
+      "antes": "4b5c16def6d8ff00d1e16519168593d098de1acc2535fa0440cd32dd0ae8a6f9",
+      "reposto": "4b5c16def6d8ff00d1e16519168593d098de1acc2535fa0440cd32dd0ae8a6f9",
+      "segundos": 34.4,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-definicao-de-uma-marca-trocada-na-legenda.txt"
+    },
+    {
+      "grupo": "legenda",
+      "nome": "uma marca tirada da legenda",
+      "ficheiro": "dist/livro-razao/series/precos-da-habitacao-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/a legenda do recibo da série «precos-da-habitacao-2025-paises» diz as marcas p; a tabela mostra/",
+      "passou": true,
+      "antes": "4b5c16def6d8ff00d1e16519168593d098de1acc2535fa0440cd32dd0ae8a6f9",
+      "reposto": "4b5c16def6d8ff00d1e16519168593d098de1acc2535fa0440cd32dd0ae8a6f9",
+      "segundos": 59.6,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-uma-marca-tirada-da-legenda.txt"
+    },
+    {
+      "grupo": "legenda",
+      "nome": "as palavras de uma marca trocadas na legenda",
+      "ficheiro": "dist/livro-razao/series/precos-da-habitacao-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/as palavras da marca «p» são «dado definitivo» e as declaradas são «dado provisório»/",
+      "passou": true,
+      "antes": "4b5c16def6d8ff00d1e16519168593d098de1acc2535fa0440cd32dd0ae8a6f9",
+      "reposto": "4b5c16def6d8ff00d1e16519168593d098de1acc2535fa0440cd32dd0ae8a6f9",
+      "segundos": 32.6,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-as-palavras-de-uma-marca-trocadas-na-legenda.txt"
+    },
+    {
+      "grupo": "porta",
+      "nome": "a porta tirada do recibo da linha portuguesa",
+      "ficheiro": "dist/livro-razao/precos-da-habitacao-2025/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o recibo da linha «precos-da-habitacao-2025» tem 0 porta\\(s\\) para uma série, e tem de ter uma/",
+      "passou": true,
+      "antes": "9680c76c5f03980cdb7c0bf483da317defcc6a0d54cb975b83838192bac74027",
+      "reposto": "9680c76c5f03980cdb7c0bf483da317defcc6a0d54cb975b83838192bac74027",
+      "segundos": 25.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-porta-tirada-do-recibo-da-linha-portuguesa.txt"
+    },
+    {
+      "grupo": "porta",
+      "nome": "a porta para outra série",
+      "ficheiro": "dist/en/ledger/precos-da-habitacao-2025/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o recibo da linha «precos-da-habitacao-2025» tem 1 porta\\(s\\) para uma série, e tem de ter uma, no bloco «O enquadramento», para «\\/en\\/ledger\\/series\\/precos-da-habitacao-2025-paises»/",
+      "passou": true,
+      "antes": "583afb68e209d452784f73dc69c74bdfab7a20e238544b8b195a25248bdd3965",
+      "reposto": "583afb68e209d452784f73dc69c74bdfab7a20e238544b8b195a25248bdd3965",
+      "segundos": 34.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-porta-para-outra-serie.txt"
+    },
+    {
+      "grupo": "porta",
+      "nome": "uma porta no recibo de uma linha sem série",
+      "ficheiro": "dist/livro-razao/precos-da-habitacao-2024/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o recibo da linha «precos-da-habitacao-2024» tem uma porta para a série «precos-da-habitacao-2025-paises», e a linha não é a portuguesa de série nenhuma/",
+      "passou": true,
+      "antes": "9f62757e426c201bfd743b8d1bdb92220339c5c48cfa01a9b256470b09064c9d",
+      "reposto": "9f62757e426c201bfd743b8d1bdb92220339c5c48cfa01a9b256470b09064c9d",
+      "segundos": 32.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-uma-porta-no-recibo-de-uma-linha-sem-serie.txt"
+    },
+    {
+      "grupo": "palavras",
+      "nome": "o acerto F4 tirado do registo dos acertos",
+      "ficheiro": "design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.json",
+      "comando": "python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py",
+      "codigo": 1,
+      "mordida": "/DIFERE  en · sem empate/",
+      "passou": true,
+      "antes": "cc65f30c7c73ee13be1fe53e1651b2452f371f10e33494151fcb37e96f4c3403",
+      "reposto": "cc65f30c7c73ee13be1fe53e1651b2452f371f10e33494151fcb37e96f4c3403",
+      "segundos": 0.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-o-acerto-f4-tirado-do-registo-dos-acertos.txt"
+    },
+    {
+      "grupo": "inventario",
+      "nome": "a linha inglesa da forma com «nd» escrita com outro sufixo",
+      "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 1,
+      "mordida": "/linha «viva» que não se rende em rota nenhuma/",
+      "passou": true,
+      "antes": "fe7f6761e1e5c03ef4bdf082e37c86b6397bf098d61c728d2b3fafeabfc9e3f2",
+      "reposto": "fe7f6761e1e5c03ef4bdf082e37c86b6397bf098d61c728d2b3fafeabfc9e3f2",
+      "segundos": 51,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/planta-a-linha-inglesa-da-forma-com-nd-escrita-com-outro-sufixo.txt"
+    }
+  ],
+  "limpas": [
+    {
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/limpa-check-formas.txt"
+    },
+    {
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/limpa-gate-html.txt"
+    },
+    {
+      "comando": "python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/limpa-acertos-ue1.txt"
+    },
+    {
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1b/limpa-check-voz.txt"
+    }
+  ]
+}
