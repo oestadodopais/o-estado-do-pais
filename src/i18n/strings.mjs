@@ -2294,6 +2294,10 @@ export const STRINGS = {
         enquadramentoK: 'O enquadramento',
         enquadramentoAnterior: 'Período anterior',
         enquadramentoUe: 'União Europeia',
+        /* A PORTA PARA A SÉRIE (a passagem UE1b, 29.09.2026): no recibo da linha
+           portuguesa de uma medida com série de países, a ligação para o recibo
+           da série, com as palavras da porta da faixa do cartão. */
+        enquadramentoPaises: 'Países da União',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
            não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
@@ -3809,6 +3813,7 @@ export const STRINGS = {
         enquadramentoK: 'The comparisons',
         enquadramentoAnterior: 'Previous period',
         enquadramentoUe: 'European Union',
+        enquadramentoPaises: 'EU countries',
         semRespostaK: 'No answer since',
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',

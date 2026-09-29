@@ -5,7 +5,7 @@ import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
-import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
 /**
  * Portão (a) e (c): varrimento do HTML construído.
@@ -497,8 +497,10 @@ const idsUsados = new Set();
 const linhasConstruidas = new Set();
 /** UE1: as páginas de série construídas, por «língua:id», e as origens das séries conferidas. */
 const seriesConstruidas = new Set();
-/* UE1b: as legendas das marcas dos recibos das séries, vistas. */
-const UE1B = { legendas: 0, marcasNasLegendas: 0 };
+/* UE1b: as portas dos recibos das linhas portuguesas para as suas séries, e as
+   legendas das marcas dos recibos das séries, vistas. */
+const portasDasSeriesVistas = new Set();
+const UE1B = { portas: 0, legendas: 0, marcasNasLegendas: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 let ficheiros = 0;
 let documentos = 0;
@@ -4464,6 +4466,30 @@ for (const file of ficheirosHtml(DIST)) {
       }
     }
   }
+  /* UE1b (29.09.2026): a porta do recibo da linha portuguesa para a sua série, e
+     só ela. O recibo de cada linha que é a portuguesa de uma série de países tem
+     uma porta, dentro do bloco «O enquadramento», para o recibo da série na
+     edição da página; nenhuma outra página tem uma. */
+  {
+    const portas = root.querySelectorAll('[data-porta-da-serie]');
+    if (rota?.key === 'linha' && claimDaPagina) {
+      const serieDaPagina = serieDaLinhaDoPortao(SERIES_DO_PORTAO, claimDaPagina.id);
+      if (serieDaPagina) {
+        const destino = routePath('serie', rota.lang, { slug: serieDaPagina.id });
+        const certa = portas.filter((a) => a.getAttribute('data-porta-da-serie') === serieDaPagina.id && a.getAttribute('href') === destino && a.closest('#enquadramento'));
+        if (portas.length !== 1 || certa.length !== 1) {
+          err(`UE1b: o recibo da linha «${claimDaPagina.id}» tem ${portas.length} porta(s) para uma série, e tem de ter uma, no bloco «O enquadramento», para «${destino}».`);
+        } else {
+          portasDasSeriesVistas.add(`${rota.lang}:${serieDaPagina.id}`);
+          UE1B.portas++;
+        }
+      } else if (portas.length) {
+        err(`UE1b: o recibo da linha «${claimDaPagina.id}» tem uma porta para a série «${portas[0].getAttribute('data-porta-da-serie')}», e a linha não é a portuguesa de série nenhuma.`);
+      }
+    } else if (portas.length) {
+      err(`UE1b: esta página tem ${portas.length} porta(s) «data-porta-da-serie», que só o recibo da linha portuguesa de uma série leva.`);
+    }
+  }
   /* C1: a I143 abrange também todos os cartões, qualquer que seja a família. */
   const separacao = conferirValorUnidade(root);
   titulosDeLinhaConferidos += separacao.contas.titulos;
@@ -8233,6 +8259,17 @@ for (const [id] of SERIES_DO_PORTAO) {
     }
   }
 }
+/* UE1b: a porta de cada série, nas duas edições, no recibo da linha portuguesa. */
+for (const [id] of SERIES_DO_PORTAO) {
+  for (const lang of LANGS) {
+    if (!portasDasSeriesVistas.has(`${lang}:${id}`)) {
+      erros.push({
+        rel: routePath('serie', lang, { slug: id }),
+        msg: `UE1b: o recibo da linha portuguesa da série "${id}" não abre a série na edição "${lang}".`,
+      });
+    }
+  }
+}
 if (SERIES_DO_PORTAO.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
   erros.push({ rel: 'ledger/series', msg: 'UE1: há séries e nenhuma página rendeu um ponto ou um nome de país: o detetor não viu nada.' });
 }
@@ -8266,7 +8303,7 @@ console.log(
       ` · séries: ${seriesConstruidas.size} página(s), ${ORIGENS_DAS_SERIES.pontos} ponto(s), ` +
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
-      ` · UE1b: ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)`,
+      ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)`,
   ),
 );
 console.log(
