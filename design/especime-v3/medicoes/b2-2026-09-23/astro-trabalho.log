@@ -1,7 +1,7 @@
 19:15:29 [types] Generated 28ms
 19:15:29 [build] output: "static"
 19:15:29 [build] mode: "static"
-19:15:29 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/
+19:15:29 [build] directory: /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/
 19:15:29 [build] Collecting build info...
 19:15:29 [build] ✓ Completed in 46ms.
 19:15:30 [build] Building static entrypoints...
@@ -59,21 +59,21 @@
 19:15:32   ├─ /distritos/viseu/index.html (+18ms) 
 19:15:32   ├─ /dominios/economia-e-financas-publicas/index.html (+1.19s) 
 19:15:34   ├─ /dominios/index.html19:15:34 [ERROR] Error: dominios: 5 medida(s) declarada(s) sem domínio em DOMINIO_DAS_MEDIDAS: indice-de-divida-limite-legal, crescimento-da-despesa-liquida-2024, saldo-das-administracoes-publicas-2024, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024, disparidade-salarial-entre-sexos-2023. A contagem da primeira página é um índice do que já existe, e uma medida sem domínio é uma medida que ela não conta.
-    at indiceDosDominios (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/dominios_BVx-7veO.mjs:355:35)
-    at file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/DominiosView_CviybzHq.mjs:15:17
-    at AstroComponentInstance.DominiosLista [as factory] (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/Base_CHWG5w9-.mjs:26:10)
-    at AstroComponentInstance.init (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1707:27)
-    at AstroComponentInstance.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
-    at Object.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:2369:19)
-    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
-    at RenderTemplateResult.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1265:19)
-    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
-    at Object.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1333:9)
+    at indiceDosDominios (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/dominios_BVx-7veO.mjs:355:35)
+    at file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/DominiosView_CviybzHq.mjs:15:17
+    at AstroComponentInstance.DominiosLista [as factory] (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/Base_CHWG5w9-.mjs:26:10)
+    at AstroComponentInstance.init (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1707:27)
+    at AstroComponentInstance.render (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
+    at Object.render (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:2369:19)
+    at renderChild (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at RenderTemplateResult.render (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1265:19)
+    at renderChild (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at Object.render (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1333:9)
 19:15:34 [ERROR] [build] Caught error rendering /dominios: Error: dominios: 5 medida(s) declarada(s) sem domínio em DOMINIO_DAS_MEDIDAS: indice-de-divida-limite-legal, crescimento-da-despesa-liquida-2024, saldo-das-administracoes-publicas-2024, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024, disparidade-salarial-entre-sexos-2023. A contagem da primeira página é um índice do que já existe, e uma medida sem domínio é uma medida que ela não conta.
 dominios: 5 medida(s) declarada(s) sem domínio em DOMINIO_DAS_MEDIDAS: indice-de-divida-limite-legal, crescimento-da-despesa-liquida-2024, saldo-das-administracoes-publicas-2024, sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2024, disparidade-salarial-entre-sexos-2023. A contagem da primeira página é um índice do que já existe, e uma medida sem domínio é uma medida que ela não conta.
   Stack trace:
-    at indiceDosDominios (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/dominios_BVx-7veO.mjs:355:35)
-    at AstroComponentInstance.DominiosLista [as factory] (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/Base_CHWG5w9-.mjs:26:10)
-    at AstroComponentInstance.render (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
-    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
-    at renderChild (file:///Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at indiceDosDominios (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/dominios_BVx-7veO.mjs:355:35)
+    at AstroComponentInstance.DominiosLista [as factory] (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/Base_CHWG5w9-.mjs:26:10)
+    at AstroComponentInstance.render (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1714:28)
+    at renderChild (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)
+    at renderChild (file:///Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/dist/.prerender/chunks/server_C_b4WhTs.mjs:1626:44)

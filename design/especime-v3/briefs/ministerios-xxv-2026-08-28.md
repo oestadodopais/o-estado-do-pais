@@ -8,7 +8,7 @@ Lidos a 28.08.2026 em https://www.portugal.gov.pt/pt/gc25/governo/composicao (p�
 4. Ministro da Economia e da Coesão Territorial · Manuel Castro Almeida
 5. Ministro Adjunto e da Reforma do Estado · Gonçalo Matias
 6. Ministro dos Assuntos Parlamentares · Carlos Abreu Amorim
-7. Ministro da Defesa Nacional · Nuno Melo
+7. Ministro da Defesa Nacional · [o diretor] Melo
 8. Ministro das Infraestruturas e Habitação · Miguel Pinto Luz
 9. Ministra da Justiça · Rita Alarcão Júdice
 10. Ministro da Administração Interna · Luís Neves

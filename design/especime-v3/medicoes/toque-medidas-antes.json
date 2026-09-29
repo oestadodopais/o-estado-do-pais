@@ -1,8 +1,8 @@
 {
   "sobre": "origin/main em 9c34bbb0, a primeira página sem o F1.1c",
-  "dist": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/base-9c34bbb0/dist",
+  "dist": "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/base-9c34bbb0/dist",
   "medido": "2026-09-07T16:51:43.969Z",
-  "comando": "node scripts/medir-toque.mjs /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/base-9c34bbb0/dist design/especime-v3/medicoes/toque-medidas-antes.json --sobre=origin/main em 9c34bbb0, a primeira página sem o F1.1c",
+  "comando": "node scripts/medir-toque.mjs /private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/2dfb8705-5d0f-4a6b-a4d0-2fffddb17dfc/scratchpad/base-9c34bbb0/dist design/especime-v3/medicoes/toque-medidas-antes.json --sobre=origin/main em 9c34bbb0, a primeira página sem o F1.1c",
   "medidas": {
     "chromium.pt.com-guiao.repouso": {
       "altura": 4638,

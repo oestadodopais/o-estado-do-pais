@@ -24,7 +24,7 @@ const CLAIMS_DIR = path.join(REPO, 'ledger', 'claims');
 const DADOS_DIR = path.join(REPO, 'dist', 'dados');
 const PORT = process.env.MEDIDOR_PORT || '4801';
 const BASE_URL = `http://127.0.0.1:${PORT}`;
-const RH = '/Users/nunosantos/Instruments/ResearchHub/content/12 Concelhos/source';
+const RH = '/Users/UTILIZADOR/Instruments/ResearchHub/content/12 Concelhos/source';
 const ACORES_PDF = path.join(RH, 'acores', 'desemprego-registado-2025-12.pdf');
 const MADEIRA_PDF = path.join(RH, 'madeira', 'boletim-concelhos-2025-12.pdf');
 

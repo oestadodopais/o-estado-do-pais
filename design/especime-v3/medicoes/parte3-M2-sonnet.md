@@ -3,7 +3,7 @@
 Corrido a 24.08.2026 contra `BRIEF-parte3-M2.md` e `BRIEF-parte3-M1.md` (lido inteiro, como o M2 manda). Programa: [`parte3-M2-sonnet.py`](./parte3-M2-sonnet.py) (1553 linhas, Python 3.14, só biblioteca padrão — `html.parser` como tokenizador; `json`/`re`/`difflib`/`collections` para o resto). Nada foi importado de `src/`, `scripts/` nem do `node_modules` do sítio. É o meu programa da M1 (`parte3-M1-sonnet.py`, também meu) alargado às oito edições e às quinze medições, com a medição 6 **reescrita** para a regra que mudou (§1b) — não uma cópia com parâmetros novos.
 
 **Override de caminho** (dado pela direção, não uma escolha minha): as páginas construídas não são `dist/` do repositório, mas a cópia congelada em
-`/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-p4/`, com os mesmos caminhos relativos, e `dist/prova.json`/`dist/cadeia.json` lidos na raiz dessa cópia. **Verificado**: `prova.json` declara `"commit": "180148c03e86e089da31ea483ec166d91a457fab"`, que bate com o commit `180148c` que a tarefa nomeou. Os registos, o registo de travessia e o formato foram lidos dos caminhos que os briefs dão, dentro do repositório real.
+`/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-p4/`, com os mesmos caminhos relativos, e `dist/prova.json`/`dist/cadeia.json` lidos na raiz dessa cópia. **Verificado**: `prova.json` declara `"commit": "180148c03e86e089da31ea483ec166d91a457fab"`, que bate com o commit `180148c` que a tarefa nomeou. Os registos, o registo de travessia e o formato foram lidos dos caminhos que os briefs dão, dentro do repositório real.
 
 Não li nenhum brief além dos dois nomeados, nenhuma nota, nem `DECISIONS.md` — só `BRIEF-parte3-M2.md`, `BRIEF-parte3-M1.md` inteiro, `ResearchHub/publisher/REGISTOS.md` inteiro, os oito pares `registos/<slug>/<lang>.record.json` + `registos/manifest.json`, `ledger/cruzamentos/evora.json`, as oito páginas construídas, as duas edições arquivadas do 04 (pt/en, só para a medição 9), `dist/prova.json` e `dist/cadeia.json`.
 
@@ -507,6 +507,6 @@ Duas figuras sem linha do sítio (`16` e `2018`) dentro da mesma ligação (`tex
 
 ## 9 · Ficheiros
 
-* Programa: `/Users/nunosantos/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M2-sonnet.py` — corre com `python3 parte3-M2-sonnet.py [--dist PATH] [--json OUT.json] [--no-selftest]`; sem `--dist`, usa a cópia congelada (`dist-p4`, commit `180148c`); sem `--no-selftest`, corre sempre as 17 provas de mutação primeiro e para sem medir se alguma falhar.
-* Este relatório: `/Users/nunosantos/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M2-sonnet.md`.
+* Programa: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M2-sonnet.py` — corre com `python3 parte3-M2-sonnet.py [--dist PATH] [--json OUT.json] [--no-selftest]`; sem `--dist`, usa a cópia congelada (`dist-p4`, commit `180148c`); sem `--no-selftest`, corre sempre as 17 provas de mutação primeiro e para sem medir se alguma falhar.
+* Este relatório: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M2-sonnet.md`.
 * Nada foi escrito, corrigido nem commitado fora da pasta `design/especime-v3/medicoes/`; nada foi lido fora do que os dois briefs listam (mais o formato do registo e os próprios ficheiros de dados que eles apontam).

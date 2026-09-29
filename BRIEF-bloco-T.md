@@ -400,7 +400,7 @@ Duas extensões, nenhum portão novo:
   nesse ficheiro tal e qual (extensão de `scripts/check-ledger.mjs`, secção da
   amarra); planta: uma palavra trocada na citação da §5 fecha.
 
-## 3. O que Nuno ainda decide, e o bloco não decide por ele
+## 3. O que [o diretor] ainda decide, e o bloco não decide por ele
 
 A licença do conjunto de dados; a ortografia (o silêncio mantém o Acordo); as
 decisões de desenho revogáveis da §4.1 (as fronteiras `--rule-strong`, a caixa

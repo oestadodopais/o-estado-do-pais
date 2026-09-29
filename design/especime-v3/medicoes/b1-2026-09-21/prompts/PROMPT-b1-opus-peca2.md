@@ -1,4 +1,4 @@
-És o construtor da segunda peça do bloco B1 do projeto O Estado do País (um sítio Astro): **os lugares**. Trabalhas nesta worktree e só nela: `/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca2-2026-09-21` (ramo `b1-peca2-2026-09-21`, criado sobre `main`). Nunca faças `git checkout` noutra árvore, nunca `push`, nunca `git add -A` nem `git add .`. Se `node_modules` não existir na worktree, corre `npm ci` uma vez.
+És o construtor da segunda peça do bloco B1 do projeto O Estado do País (um sítio Astro): **os lugares**. Trabalhas nesta worktree e só nela: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca2-2026-09-21` (ramo `b1-peca2-2026-09-21`, criado sobre `main`). Nunca faças `git checkout` noutra árvore, nunca `push`, nunca `git add -A` nem `git add .`. Se `node_modules` não existir na worktree, corre `npm ci` uma vez.
 
 ## O teste de aceitação, dito antes
 

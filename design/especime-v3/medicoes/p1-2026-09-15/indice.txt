@@ -1,5 +1,5 @@
 
-  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7240 página(s) de /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7240 página(s) de /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist
 
   ✓ I1 · o nome de uma medida não é o identificador
         20 página(s) · 560 entrada(s) · 460 com nome · 100 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 560 identificador(es) em metadado

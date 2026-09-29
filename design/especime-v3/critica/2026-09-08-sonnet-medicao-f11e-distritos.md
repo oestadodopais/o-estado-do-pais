@@ -17,7 +17,7 @@ Esta medição não leu nem correu as réguas do construtor (`tests/inicio/mapa-
 - Servidor: `npx astro preview --port 4390 --host 127.0.0.1` sobre o `dist/` dessa worktree (saída estática, `trailingSlash: 'ignore'`).
 - Chromium: o do Playwright já instalado no repositório — `npx playwright --version` → 1.60.0; o navegador reportou-se como Chromium 148.0.7778.96 (`browser.version()`).
 - Fontes: `document.fonts.status` = `loaded`, `document.fonts.check()` verdadeiro para as três famílias declaradas em `src/styles/tokens.css` (`Spectral`, `Bitter`, `Spectral SC`) — ver U5.
-- Código da medição: `/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/03b60307-0dde-431e-a47a-48f0a93dfe6c/scratchpad/medicao-f11e/` (`lib.mjs` e um ficheiro por medida); os resultados brutos ficaram ao lado, em `*-resultado.json`.
+- Código da medição: `/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/03b60307-0dde-431e-a47a-48f0a93dfe6c/scratchpad/medicao-f11e/` (`lib.mjs` e um ficheiro por medida); os resultados brutos ficaram ao lado, em `*-resultado.json`.
 
 ## Método do alvo (U1): o ponto usado e o quadrado
 

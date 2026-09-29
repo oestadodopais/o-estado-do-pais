@@ -1,6 +1,6 @@
 A passagem de correção da peça 2 do B1 (os lugares), na mesma worktree e no mesmo ramo: a leitura a frio do Codex e a leitura de editor do lugar de direção estão triadas abaixo, e é só isto que se faz.
 
-És o mesmo construtor, na mesma worktree (`/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca2-2026-09-21`, ramo `b1-peca2-2026-09-21`, cabeça `39540e08`). As regras são as de sempre (caminhos explícitos, nunca `push`, nunca tocar fora da worktree, nenhum número à mão, prosa sem travessões, o vocabulário do §6, a regra de paragem). Uma coisa muda nos trailers: a sessão ganhou endereço, e os commits desta passagem levam `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd`.
+És o mesmo construtor, na mesma worktree (`/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b1-peca2-2026-09-21`, ramo `b1-peca2-2026-09-21`, cabeça `39540e08`). As regras são as de sempre (caminhos explícitos, nunca `push`, nunca tocar fora da worktree, nenhum número à mão, prosa sem travessões, o vocabulário do §6, a regra de paragem). Uma coisa muda nos trailers: a sessão ganhou endereço, e os commits desta passagem levam `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd`.
 
 A tua construção foi boa: uma corrida só, sem paragens por contradição entre o brief e os dados, as três paragens certas nos três portões que protegem uma pessoa, um número e uma fonte, e um relatório que diz o que ficou sem porta. O que se segue é o que dois leitores viram.
 
@@ -10,7 +10,7 @@ A tua construção foi boa: uma corrida só, sem paragens por contradição entr
 
 ## 1 · O que se corrige (cada ponto no seu commit)
 
-Lê primeiro as duas leituras inteiras: a do Codex em `/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/leitura-peca2/leitura-a-frio-peca2.md` e a do lugar de direção em `…/scratchpad/leitura-peca2/achados-do-lugar-de-direcao.md` (mesma pasta). Os achados 1 (no sintoma), 2, 4 e 5 do Codex são plantas minhas nas cópias do pacote: nada a corrigir neles. A causa que o achado 1 propõe está errada e já foi conferida: `m.distancia.tecto` é `indice-de-divida-limite-legal`, e as dez câmaras fora do limite dizem «fora» nas páginas reais.
+Lê primeiro as duas leituras inteiras: a do Codex em `/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/leitura-peca2/leitura-a-frio-peca2.md` e a do lugar de direção em `…/scratchpad/leitura-peca2/achados-do-lugar-de-direcao.md` (mesma pasta). Os achados 1 (no sintoma), 2, 4 e 5 do Codex são plantas minhas nas cópias do pacote: nada a corrigir neles. A causa que o achado 1 propõe está errada e já foi conferida: `m.distancia.tecto` é `indice-de-divida-limite-legal`, e as dez câmaras fora do limite dizem «fora» nas páginas reais.
 
 | # | de quem | o que se faz | a célula e a planta |
 |---|---|---|---|
@@ -31,7 +31,7 @@ Lê primeiro as duas leituras inteiras: a do Codex em `/private/tmp/claude-501/-
 
 ## 2 · As capturas, os portões e o relatório
 
-- As oito capturas «antes» já estão tiradas, de `main` (`97d2cbc`), pelo lugar de direção: copia de `/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/antes-peca2/` os oito `antes-*.png` para `design/especime-v3/capturas/b1-2026-09-21/` e `capturas-antes-peca2.json` e `captar-antes-peca2.mjs` para `design/especime-v3/medicoes/b1-2026-09-21/`.
+- As oito capturas «antes» já estão tiradas, de `main` (`97d2cbc`), pelo lugar de direção: copia de `/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/e52c0f39-ab9c-4e0f-b9db-11d420f316ed/scratchpad/antes-peca2/` os oito `antes-*.png` para `design/especime-v3/capturas/b1-2026-09-21/` e `capturas-antes-peca2.json` e `captar-antes-peca2.mjs` para `design/especime-v3/medicoes/b1-2026-09-21/`.
 - As capturas «depois» refazem-se para as oito páginas, com as mesmas medidas.
 - **Os portões inteiros uma vez, no fim**, cada um no seu comando com o código de saída num ficheiro, como fizeste. Entre commits só as conferências que a mudança toca. O relatório e os ficheiros dos códigos vão num último commit que não toca em código; o lugar de direção volta a correr os três portões na cabeça que aterrar, por isso não precisas de os repetir depois desse commit.
 - O `LEIA-ME-peca2.md` ganha a secção «A passagem de correção»: a tabela C1 a C12 com o que ficou feito, a célula e a planta de cada uma; os conflitos do rebase e como se resolveram; os códigos dos portões na cabeça final do código, com as horas; o que ficou por fazer e porquê.

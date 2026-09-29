@@ -10,7 +10,7 @@ O Estado do País mede Portugal — o país, as suas regiões e os seus municíp
 
 Cada número que aqui aparece tem uma linha própria: a fonte, o documento, a frase exacta de onde saiu e o dia em que foi lido. O selo ao lado de cada número abre essa linha. Não é preciso acreditar em nós.
 
-**Quem responde por isto.** O Estado do País é escrito e investigado por inteligência artificial — o modelo Claude — e dirigido por Nuno dos Santos, que decide o que se publica e responde por ele.
+**Quem responde por isto.** O Estado do País é escrito e investigado por inteligência artificial — o modelo Claude — e dirigido por [o diretor], que decide o que se publica e responde por ele.
 
 *Variante (a), com uma linha da direcção:* Nas palavras dele: «Só conseguimos fazer melhor com informação fiável e resultados que se possam medir. Se conseguirmos ver o que está a acontecer, onde e com quem resulta, podemos fazer mais disso e menos do que não resulta. Com factos, não com sensações. Factos a sério.»
 
@@ -62,7 +62,7 @@ Começou pelos indicadores com que as instituições europeias avaliam Portugal,
 
 ### Leitura breve
 
-**Quem o faz.** A investigação, a escrita e a verificação são feitas por modelos de inteligência artificial — Claude, da Anthropic. A direção é de Nuno dos Santos, que escolhe os temas, fixa as regras deste método e responde, em última instância, pelo que aqui se publica. Cada página di-lo no rodapé; não há excepções. [3]
+**Quem o faz.** A investigação, a escrita e a verificação são feitas por modelos de inteligência artificial — Claude, da Anthropic. A direção é de [o diretor], que escolhe os temas, fixa as regras deste método e responde, em última instância, pelo que aqui se publica. Cada página di-lo no rodapé; não há excepções. [3]
 
 **O que se mede a seguir.** A inteligência artificial propõe o que medir e escreve porquê, a partir de critérios declarados: o que os quadros institucionais — o painel de desequilíbrios macroeconómicos, o painel social europeu — apontam como problema de Portugal; o que as fontes oficiais publicam a seguir; e o que os leitores pedem ou corrigem. A direção decide. A lista está publicada em «O que se mede agora», com o estado de cada tema e a data em que entrou. [5] [7]
 
@@ -96,11 +96,11 @@ Começou pelos indicadores com que as instituições europeias avaliam Portugal,
 
 #### «Quem responde» — variante (a): o director nomeado, com uma linha sua
 
-**Quem responde.** A investigação, a escrita e a verificação são feitas por modelos de inteligência artificial — Claude, da Anthropic. A direção é de Nuno dos Santos, que escolhe os temas, fixa as regras deste método e responde, em última instância, pelo que aqui se publica. A autoria vai no rodapé de todas as páginas. Nas suas palavras: «Só podemos fazer melhor com informação fiável e com resultados que se possam medir. […] Assente em factos, não em sensações.» E, sobre o projecto: «Não sei se vamos consegui-lo.» [25] [26]
+**Quem responde.** A investigação, a escrita e a verificação são feitas por modelos de inteligência artificial — Claude, da Anthropic. A direção é de [o diretor], que escolhe os temas, fixa as regras deste método e responde, em última instância, pelo que aqui se publica. A autoria vai no rodapé de todas as páginas. Nas suas palavras: «Só podemos fazer melhor com informação fiável e com resultados que se possam medir. […] Assente em factos, não em sensações.» E, sobre o projecto: «Não sei se vamos consegui-lo.» [25] [26]
 
 #### «Quem responde» — variante (b): o director nomeado pelo papel
 
-**Quem responde.** A investigação, a escrita e a verificação são feitas por modelos de inteligência artificial — Claude, da Anthropic. A direção é de Nuno dos Santos, que escolhe os temas, fixa as regras deste método e responde, em última instância, pelo que aqui se publica. A autoria vai no rodapé de todas as páginas. [3]
+**Quem responde.** A investigação, a escrita e a verificação são feitas por modelos de inteligência artificial — Claude, da Anthropic. A direção é de [o diretor], que escolhe os temas, fixa as regras deste método e responde, em última instância, pelo que aqui se publica. A autoria vai no rodapé de todas as páginas. [3]
 
 *Tudo o resto do Fundo é idêntico nas duas variantes.*
 
@@ -193,7 +193,7 @@ Time signal replacing «Edição de …» — three options:
 
 Footer authorship line — two options:
 1. «Escrito por IA, dirigido por uma pessoa.» (as today)
-2. «Escrito e investigado por IA. Dirigido por Nuno dos Santos.»
+2. «Escrito e investigado por IA. Dirigido por [o diretor].»
 
 ---
 
@@ -425,7 +425,7 @@ Every number here has a row of its own: the source, the document, the exact line
 
 ---
 
-**Who answers for it.** O Estado do País is written and researched by artificial intelligence — the Claude model — and directed by Nuno dos Santos, who decides what is published and answers for it.
+**Who answers for it.** O Estado do País is written and researched by artificial intelligence — the Claude model — and directed by [o diretor], who decides what is published and answers for it.
 
 *Variant (a), with one line from the director:* In his words: "We can only do better with reliable information and results that can be measured. If we can see what is happening, where and with whom it works, we can do more of that and less of what doesn't. With facts, not feelings. Real facts."
 
@@ -479,7 +479,7 @@ It began with the indicators the European institutions use to assess Portugal, a
 
 ### The short read
 
-**Who makes it.** The research, the writing and the verification are done by artificial intelligence models — Claude, by Anthropic. It is directed by Nuno dos Santos, who chooses the subjects, sets the rules of this method, and answers, ultimately, for what is published here. Every page says so in the footer, without exception. [3]
+**Who makes it.** The research, the writing and the verification are done by artificial intelligence models — Claude, by Anthropic. It is directed by [o diretor], who chooses the subjects, sets the rules of this method, and answers, ultimately, for what is published here. Every page says so in the footer, without exception. [3]
 
 **What gets measured next.** The AI proposes what to measure and writes down why, from stated criteria: what the institutional frameworks — the macroeconomic imbalance scoreboard, the European social scoreboard — flag as Portugal's problems; what the official sources publish next; and what readers ask for or correct. The director decides. The list is published as "What is being measured now", with each subject's state and the date it entered. [5] [7]
 
@@ -513,11 +513,11 @@ It began with the indicators the European institutions use to assess Portugal, a
 
 #### "Who answers" — variant (a): the director named, with a line of his own
 
-**Who answers.** The research, the writing and the verification are done by artificial intelligence models — Claude, by Anthropic. It is directed by Nuno dos Santos, who chooses the subjects, sets the rules of this method and answers, ultimately, for what is published here. The authorship is in the footer of every page. In his own words: "We can only do better and improve with reliable information and measurable outcomes and assessments. […] Supported by facts, not feelings or vibes." And, on the project itself: "I don't know if we will achieve it." [25] [26]
+**Who answers.** The research, the writing and the verification are done by artificial intelligence models — Claude, by Anthropic. It is directed by [o diretor], who chooses the subjects, sets the rules of this method and answers, ultimately, for what is published here. The authorship is in the footer of every page. In his own words: "We can only do better and improve with reliable information and measurable outcomes and assessments. […] Supported by facts, not feelings or vibes." And, on the project itself: "I don't know if we will achieve it." [25] [26]
 
 #### "Who answers" — variant (b): the director named by role only
 
-**Who answers.** The research, the writing and the verification are done by artificial intelligence models — Claude, by Anthropic. It is directed by Nuno dos Santos, who chooses the subjects, sets the rules of this method and answers, ultimately, for what is published here. The authorship is in the footer of every page. [3]
+**Who answers.** The research, the writing and the verification are done by artificial intelligence models — Claude, by Anthropic. It is directed by [o diretor], who chooses the subjects, sets the rules of this method and answers, ultimately, for what is published here. The authorship is in the footer of every page. [3]
 
 *Everything else in the deep layer is identical across the two variants.*
 

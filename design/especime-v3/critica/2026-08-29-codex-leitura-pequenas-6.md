@@ -27,9 +27,9 @@
 
 1. Exact name mismatch:
 
-   `evora-divida-inicio-mandato-reexpressa` / “Dívida Total no Fim do Mandato” / [area-economia.html](/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas6/pacote/paginas/area-economia.html)
+   `evora-divida-inicio-mandato-reexpressa` / “Dívida Total no Fim do Mandato” / [area-economia.html](/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas6/pacote/paginas/area-economia.html)
 
-   versus “Dívida Total no Início do Mandato” / [en-area-economia.html](/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas6/pacote/paginas/en-area-economia.html).
+   versus “Dívida Total no Início do Mandato” / [en-area-economia.html](/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas6/pacote/paginas/en-area-economia.html).
 
    I could not determine from this package which string the source prints.
 
@@ -39,7 +39,7 @@
 
 1. Missing language mark on the English Economia page:
 
-   `evora-divida-total-2017` / “DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2)” lacks `lang="pt-PT"` in [en-area-economia.html](/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas6/pacote/paginas/en-area-economia.html). The four English GDP names correctly have no language mark.
+   `evora-divida-total-2017` / “DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2)” lacks `lang="pt-PT"` in [en-area-economia.html](/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas6/pacote/paginas/en-area-economia.html). The four English GDP names correctly have no language mark.
 
 2. Rule 15 voice violations remain on reader pages:
 

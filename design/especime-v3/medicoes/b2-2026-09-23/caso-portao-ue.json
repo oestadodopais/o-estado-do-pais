@@ -5,7 +5,7 @@
   "cabeca_observada": "d75f869ee4b453f98d85bdc03cbc97358225f24a",
   "cabeca_motor": "ead443cd2ae83b05127e6a7774be0c0e939bc85f",
   "portao": {
-    "ficheiro": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/scripts/gate-html.mjs",
+    "ficheiro": "/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/scripts/gate-html.mjs",
     "sha256": "56c7cd069952b2a1c11a9a2b9ba598d69de3fca97269171b7dc969106bde57a3",
     "funcao": "auditaSelo",
     "linha_inicio": 3216,
@@ -25,14 +25,14 @@
       "agregadoDaSerie"
     ],
     "protege": "A associação da linha da União ao recibo da medida principal. A fonte do cartão só serve à régua se a nota selada declarar essa associação, e se coincidirem a edição, a unidade e o período.",
-    "log": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/design/especime-v3/medicoes/b2-2026-09-23/portoes-d75f869e/build.log",
+    "log": "/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/design/especime-v3/medicoes/b2-2026-09-23/portoes-d75f869e/build.log",
     "sha256_log": "f266c07b6c7bbe6de6684998b1ea3251f1fc3de9bff6ab0219b7526bcf437f93",
     "codigo": 1,
     "fecho": "O PORTÃO DE HTML FECHOU — 4 erro(s):\n\n  en/index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.\n\n  en/themes/index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.\n\n  index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista.\n\n  temas/index.html\n    ✗ o valor da afirmação \"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" aparece sem selo para a sua própria linha.\n      esperava-se <a class=\"src-chip\" href=\"/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\"> dentro do mesmo elemento que embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n      Use <Claim id=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue\" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do número que está à vista."
   },
   "linhas": {
     "pt": {
-      "ficheiro": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.yml",
+      "ficheiro": "/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.yml",
       "sha256": "37447737f7517ff276cb18ef016f7cc0e9b887fbae67bf39405ee5d6164401be",
       "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
       "value": "27,2",
@@ -51,7 +51,7 @@
       "excerpt": "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Portugal — 2025: 27.2"
     },
     "ue": {
-      "ficheiro": "/Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+      "ficheiro": "/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/b2-peca1-2026-09-23/ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
       "sha256": "a75fa4793dddbfae97d22c4ce0487c190f756c65e960215e7cb70a27958f0d79",
       "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue",
       "value": "18,6",
@@ -72,10 +72,10 @@
   },
   "respostas": {
     "pt": {
-      "alojado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/eurostat/tessi164_PT.json",
-      "guardado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/tessi164_PT.json",
+      "alojado": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/eurostat/tessi164_PT.json",
+      "guardado": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/tessi164_PT.json",
       "pedido": {
-        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/pedidos.jsonl",
+        "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/pedidos.jsonl",
         "entrada": {
           "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=PT",
           "file": "tessi164_PT.json",
@@ -87,7 +87,7 @@
         }
       },
       "fetch": {
-        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/FETCH.json",
+        "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/FETCH.json",
         "entrada": {
           "bytes": 5061,
           "content_type": "application/json",
@@ -102,7 +102,7 @@
         }
       },
       "manifesto": {
-        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/MANIFEST.sha256",
+        "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/MANIFEST.sha256",
         "linha": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358  eurostat/tessi164_PT.json"
       },
       "sha256": "974a6804f1f150cda0af2f2937e3f0dfcc042ea744bc1a160e4359b9ed635358",
@@ -189,10 +189,10 @@
       }
     },
     "ue": {
-      "alojado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/eurostat/tessi164_EU27_2020.json",
-      "guardado": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/tessi164_EU27_2020.json",
+      "alojado": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/eurostat/tessi164_EU27_2020.json",
+      "guardado": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/tessi164_EU27_2020.json",
       "pedido": {
-        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/pedidos.jsonl",
+        "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/indicators/out/b2-2026-09-23/pedidos.jsonl",
         "entrada": {
           "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=EU27_2020",
           "file": "tessi164_EU27_2020.json",
@@ -204,7 +204,7 @@
         }
       },
       "fetch": {
-        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/FETCH.json",
+        "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/FETCH.json",
         "entrada": {
           "bytes": 5340,
           "content_type": "application/json",
@@ -219,7 +219,7 @@
         }
       },
       "manifesto": {
-        "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/MANIFEST.sha256",
+        "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/content/13 Dominios/source/MANIFEST.sha256",
         "linha": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc  eurostat/tessi164_EU27_2020.json"
       },
       "sha256": "4d47881e72d0505661662c2e286c4e9b6a83b71a7ac31ec41e1fdfc0432e63cc",
@@ -313,7 +313,7 @@
     "mesmas_etiquetas_exceto_geo": true
   },
   "escritor_das_notas": {
-    "ficheiro": "/Users/nunosantos/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/publisher/dominios_build.py",
+    "ficheiro": "/Users/UTILIZADOR/Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23/publisher/dominios_build.py",
     "sha256": "93ea12ff01b3fd182cfbc9c58b90d2dcc54cc29e2d6b62749d08c77defcaeacf",
     "linha_inicio": 757,
     "linha_fim": 790,

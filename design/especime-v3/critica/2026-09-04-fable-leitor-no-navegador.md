@@ -8,7 +8,7 @@
 
 **Method, stated plainly.** Chrome refused to shrink the window below ~700 px wide or above 806 px tall, so the site was rendered inside a same-origin iframe of exactly 390 × 844 (phone pass) and 1 280 × 800 (desktop pass), with real clicks and typed text; media queries responded to the iframe viewport, so layout is faithful. Not exercised: touch swipes, hover states, dark mode. 27 page loads in total (14 phone, 13 desktop), always ≥ 60 s apart; two full passes with three tasks plus five wander pages each do not fit in fifteen loads. Text extraction was sometimes blocked by the tool; quotes below come from screenshots and the DOM. Labels: [verified] = checked in the DOM/href; [observed] = seen in a screenshot; [unverified] = not checked.
 
-Screenshots (104 files): `/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/shots/` (named `phone-NN-…jpg`, `desktop-NN-…jpg`; key files cited inline).
+Screenshots (104 files): `/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/78714fcd-9d7a-49ae-92d0-914347b16683/scratchpad/shots/` (named `phone-NN-…jpg`, `desktop-NN-…jpg`; key files cited inline).
 
 ---
 
@@ -97,6 +97,6 @@ Also worth doing: the concelho page's "PROVENIÊNCIA" heading over navigation li
 - One tap from a home card to the measure block, which answers what / threshold / period / read date / publisher in five lines.
 - The ledger line's "CAMPO DEVOLVIDO" verbatim quote, the "PEDIDO" URL, "Esta linha nunca foi corrigida nem atualizada.", and "ACESSO AOS DADOS: Esta linha em JSON → · O conjunto inteiro: CSV · JSON".
 - No horizontal page overflow on the phone on any page visited; page titles in the tab are specific ("Évora · o município, medido · O Estado do País").
-- The footer on every page: "ENCONTROU UM ERRO? correcoes@oestadodopais.pt · O registo de correções →" and "Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos".
+- The footer on every page: "ENCONTROU UM ERRO? correcoes@oestadodopais.pt · O registo de correções →" and "Texto gerado por IA sob a política da casa · responsável editorial: [o diretor]".
 - The study text: section counters "1/14", the four-number table with chips, "SUBIR ↑"; on desktop the side panel and the reading column width.
 - Desktop ledger line: two columns keep "PROVENIÊNCIA" in view beside the proof.

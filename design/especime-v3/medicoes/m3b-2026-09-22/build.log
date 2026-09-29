@@ -158,7 +158,7 @@
 09:11:28 [types] Generated 26ms
 09:11:28 [build] output: "static"
 09:11:28 [build] mode: "static"
-09:11:28 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/nomes-no-sitio-2026-09-22/dist/
+09:11:28 [build] directory: /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/nomes-no-sitio-2026-09-22/dist/
 09:11:28 [build] Collecting build info...
 09:11:28 [build] ✓ Completed in 48ms.
 09:11:29 [build] Building static entrypoints...

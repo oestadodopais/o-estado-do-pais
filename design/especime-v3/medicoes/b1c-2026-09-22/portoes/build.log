@@ -156,7 +156,7 @@
 12:06:56 [types] Generated 25ms
 12:06:56 [build] output: "static"
 12:06:56 [build] mode: "static"
-12:06:56 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/oquemudou-2026-09-22/dist/
+12:06:56 [build] directory: /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/oquemudou-2026-09-22/dist/
 12:06:56 [build] Collecting build info...
 12:06:56 [build] ✓ Completed in 49ms.
 12:06:57 [build] Building static entrypoints...

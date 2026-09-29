@@ -199,7 +199,7 @@ Os dois números batem certo, o que é a prova de que o rótulo usa os pares da
 casa e não uma cor sua. **O corpo não desceu abaixo do mínimo da casa**, e isso
 custou uma correção medida: a primeira versão escreveu a ficha da primeira
 página a 11px, e a régua A9 de `tests/inicio/correcoes-a.mjs` fechou vermelha
-nas duas edições com «11px span. "Nuno dos Santos"». O chão de 12px na rota
+nas duas edições com «11px span. "[o diretor]"». O chão de 12px na rota
 `home` é dessa régua, e a regra escrita em B10 de `site.css` diz que toda a
 classe abaixo de 12px tem de aparecer na lista das excepções de 640: em vez de
 acrescentar uma excepção, a ficha passou a declarar 12px.
@@ -277,10 +277,10 @@ Os oito da primeira passagem:
 | uma palavra trocada no texto aprovado | a mesma | «o rótulo de IA não é o texto aprovado» |
 | a porta a abrir o Método sem a âncora | a mesma | «não tem a porta para a política ("/metodo#politica-de-ia")» |
 | o rótulo escondido com `aria-hidden` | a mesma | «está escondido por aria-hidden="true" […] o n.º 5 do artigo 50.º pede-o "de forma clara e percetível"» |
-| o nome de quem responde trocado | a mesma | «um "data-rotulo-nome" diz "Outra Pessoa" e o responsável editorial é "Nuno dos Santos"» |
+| o nome de quem responde trocado | a mesma | «um "data-rotulo-nome" diz "Outra Pessoa" e o responsável editorial é "[o diretor]"» |
 | a ficha injectada fora da primeira página | uma página de linha inglesa | «esta página tem 1 ficha(s) da primeira página e devia ter 0» |
 | a frase da política reescrita | `/sobre` | «a frase da política não é o texto aprovado» |
-| o nome do responsável trocado no ficheiro de dados | `src/data/politica-ia.mjs` | «o responsável editorial é "Nuno Santos" e nenhuma das dez regras do Método imprime esse nome» |
+| o nome do responsável trocado no ficheiro de dados | `src/data/politica-ia.mjs` | «o responsável editorial é "[o diretor]" e nenhuma das dez regras do Método imprime esse nome» |
 
 E os doze da segunda, que são os que a leitura a frio obrigou a poder existir:
 
@@ -306,7 +306,7 @@ original antes de qualquer construção.
 
 O nome de quem responde é um nome português nas duas edições, e vale-lhe a regra
 da §1.82 aplicada a um nome de pessoa: **um nome não se traduz, e diz em que
-língua está**. Sem marca, uma página inglesa manda um leitor de ecrã ler «Nuno
+língua está**. Sem marca, uma página inglesa manda um leitor de ecrã ler «[o diretor]
 dos Santos» com fonética inglesa, e é o nome de quem responde pela publicação.
 A conferência é **nos dois sentidos**, como L4d e L4e: numa página portuguesa o
 nome está na língua da página e não leva marca própria; numa página inglesa leva

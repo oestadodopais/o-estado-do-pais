@@ -3,7 +3,7 @@
 Corrido a 24.08.2026 contra o `BRIEF-parte3-M1.md`. Programa: [`parte3-M1-sonnet.py`](./parte3-M1-sonnet.py) (906 linhas, Python 3, só biblioteca padrão — `html.parser` como tokenizador, `json`/`re`/`difflib`/`collections` para o resto). Nada foi importado de `src/`, `scripts/` nem do `node_modules` do sítio; a árvore, o percurso e a leitura de texto são código escrito de raiz para esta corrida. **Verificado**: `python3 parte3-M1-sonnet.py` corre sem argumentos (usa por omissão a cópia congelada abaixo) e reproduz byte a byte o mesmo JSON em duas corridas separadas.
 
 **Override de caminho** (dado pelo lugar de direção, não uma escolha minha): as páginas construídas lidas não são `dist/` do repositório — outro construtor estava a reconstruí-lo durante esta medição — mas a cópia congelada do mesmo build (commit `7626a2a`) em
-`/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-p2/`, com os mesmos caminhos relativos. Os registos, o registo de travessia e o formato foram lidos dos caminhos que o brief deu, dentro do repositório real.
+`/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-p2/`, com os mesmos caminhos relativos. Os registos, o registo de travessia e o formato foram lidos dos caminhos que o brief deu, dentro do repositório real.
 
 Não li nenhum outro brief, nenhuma nota, nem `DECISIONS.md` — só `BRIEF-parte3-M1.md`, `ResearchHub/publisher/REGISTOS.md` inteiro, os três pares `registos/<slug>/<lang>.record.json` + `registos/manifest.json`, `ledger/cruzamentos/evora.json`, e as páginas construídas listadas no brief.
 
@@ -218,6 +218,6 @@ Duas coisas que não são falsas alarmes mas que registo por transparência, por
 
 ## 9 · Ficheiros
 
-* Programa: `/Users/nunosantos/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.py` — corre com `python3 parte3-M1-sonnet.py [--dist PATH] [--json OUT.json]`; sem `--dist`, usa a cópia congelada acima.
-* Este relatório: `/Users/nunosantos/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.md`.
+* Programa: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.py` — corre com `python3 parte3-M1-sonnet.py [--dist PATH] [--json OUT.json]`; sem `--dist`, usa a cópia congelada acima.
+* Este relatório: `/Users/UTILIZADOR/Instruments/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.md`.
 * Nada foi escrito, corrigido nem commitado fora da pasta `design/especime-v3/medicoes/`.

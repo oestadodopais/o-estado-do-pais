@@ -33,14 +33,14 @@ A peça 1: `design/especime-v3/medicoes/b2-2026-09-23/` (o relatório `LEIA-ME-p
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
-### O sítio (`/Users/nunosantos/Instruments/OEstadoDoPais`)
+### O sítio (`/Users/UTILIZADOR/Instruments/OEstadoDoPais`)
 - `main`: f672bd38 · 2026-09-23T23:49:10+01:00 · Os registos da peça 1 do B2: a §1.129 (o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio d  (`git log -1 main`)
 - `origin/main`: f672bd38 · 2026-09-23T23:49:10+01:00 · Os registos da peça 1 do B2: a §1.129 (o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio d  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
 - ramos locais: `main f672bd38`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/OEstadoDoPais f672bd38 [main]`
+- worktree: `/Users/UTILIZADOR/Instruments/OEstadoDoPais f672bd38 [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 35934023469 · `f672bd38` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-09-23T23:31:29Z · atualizada 2026-09-23T23:31:33Z
@@ -55,14 +55,14 @@ A peça 1: `design/especime-v3/medicoes/b2-2026-09-23/` (o relatório `LEIA-ME-p
 - igual a `origin/main` (`f672bd38`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`/Users/nunosantos/Instruments/ResearchHub`)
+### O motor (`/Users/UTILIZADOR/Instruments/ResearchHub`)
 - `master`: 0f08171 · 2026-09-23T22:38:32+01:00 · B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa  (`git log -1 master`)
 - `origin/master`: 0f08171 · 2026-09-23T22:38:32+01:00 · B2: as três respostas do Eurostat que selam pedaços de três perguntas do sítio, pedidas pelo cliente da casa  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 5 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `master 0f08171`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `/Users/nunosantos/Instruments/ResearchHub 0f08171 [master]`
+- worktree: `/Users/UTILIZADOR/Instruments/ResearchHub 0f08171 [master]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 23.09.2026 23:54 UTC):

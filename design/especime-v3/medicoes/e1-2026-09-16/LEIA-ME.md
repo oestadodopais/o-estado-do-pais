@@ -24,7 +24,7 @@ Correram da árvore principal do motor (`~/Instruments/ResearchHub`, em `master`
 **O ensaio** (`python3 publisher/export_records_site.py`, código 0):
 
 ```
-  travessia dos registos de conteúdo · motor 7b64e8eaeade · destino /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
+  travessia dos registos de conteúdo · motor 7b64e8eaeade · destino /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
 
   03 pt  → avaliacao-economica-regional-de-portugal-2026/pt    blocos  53 · refs 411 · edicao-html            · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja
   14 en  → evora-2027-prometido-painel-dinheiro/en             blocos 119 · refs 182 · edicao-html            · o D5 corre e bate
@@ -51,8 +51,8 @@ Correram da árvore principal do motor (`~/Instruments/ResearchHub`, em `master`
 **O `--write`** (`python3 publisher/export_records_site.py --write`, código 0) imprimiu as mesmas linhas e, no fim:
 
 ```
-  Escritos 20 ficheiro(s) em /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
-  Registo de travessia em /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos/manifest.json
+  Escritos 20 ficheiro(s) em /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
+  Registo de travessia em /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos/manifest.json
 ```
 
 Os vinte ficheiros são as dez edições × dois (o registo e as operações da passagem de voz); dezasseis deles foram reescritos com os mesmos bytes que já lá estavam, e os quatro novos são os do 14, que são dois por edição. **O `git status` do motor depois da corrida é o mesmo de antes:** `sweeps/state.json` modificado e `.maintenance-locks/`, `publisher/recortes/manifest.regioes.json` e `sweeps/sweep-2026-09-01.md` por confirmar, todos de outras corridas e nenhum deste estudo. O exportador só lê do motor.
@@ -64,7 +64,7 @@ Os vinte ficheiros são as dez edições × dois (o registo e as operações da 
 Mesma forma, mesma variável, mesmo destino conferido no ensaio antes da escrita. **O ensaio** (código 0) e o **`--write`** (código 0) imprimiram:
 
 ```
-  travessia dos registos de conteúdo · motor b99e2254052c · destino /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
+  travessia dos registos de conteúdo · motor b99e2254052c · destino /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/e1-2026-09-16/registos
 
   14 en  → evora-2027-prometido-painel-dinheiro/en             blocos 119 · refs 182 · edicao-html            · o D5 corre e bate
   14 pt  → evora-2027-prometido-painel-dinheiro/pt             blocos 119 · refs 182 · edicao-html            · o D5 corre e bate

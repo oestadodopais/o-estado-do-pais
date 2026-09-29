@@ -8,7 +8,7 @@
 // mapa/pais.json, mapa/distritos/*.json, e o BRIEF-mapa-distritos-M3.md.
 //
 // Corre com:
-//   NODE_PATH=/Users/nunosantos/Instruments/OEstadoDoPais/node_modules node design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs
+//   NODE_PATH=/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules node design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs
 // a partir da raiz da cópia (o git worktree), com o dist/ servido em AFTER_BASE.
 
 import { chromium, devices } from 'playwright';

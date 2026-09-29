@@ -15,7 +15,7 @@ import { chromium, webkit, devices } from 'playwright';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 
-const SCRATCH = '/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/m3';
+const SCRATCH = '/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/m3';
 if (!existsSync(SCRATCH)) mkdirSync(SCRATCH, { recursive: true });
 
 const BUILDS = {

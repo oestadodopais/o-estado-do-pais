@@ -156,7 +156,7 @@
 11:16:55 [types] Generated 28ms
 11:16:55 [build] output: "static"
 11:16:55 [build] mode: "static"
-11:16:55 [build] directory: /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/jovens-nem-2026-09-22/dist/
+11:16:55 [build] directory: /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/jovens-nem-2026-09-22/dist/
 11:16:55 [build] Collecting build info...
 11:16:55 [build] ✓ Completed in 52ms.
 11:16:56 [build] Building static entrypoints...

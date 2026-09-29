@@ -10,7 +10,7 @@ O que se procura não é o gosto: é o que impede, confunde ou cansa um leitor, 
 
 ## 1 · O sítio, e como o percorrer
 
-O sítio é `https://xn--oestadodopas-2fb.pt` (o domínio acentuado `oestadodopaís.pt`). Percorre-o **no ar**, como um utilizador, com o Playwright que está em `node_modules` do repositório (`/Users/nunosantos/Instruments/OEstadoDoPais`; corre o Node a partir daí para o encontrar). Dois aparelhos:
+O sítio é `https://xn--oestadodopas-2fb.pt` (o domínio acentuado `oestadodopaís.pt`). Percorre-o **no ar**, como um utilizador, com o Playwright que está em `node_modules` do repositório (`/Users/UTILIZADOR/Instruments/OEstadoDoPais`; corre o Node a partir daí para o encontrar). Dois aparelhos:
 
 * **telemóvel:** `devices["iPhone 13"]` (390 × 664, toque, `deviceScaleFactor` 3; guarda as capturas a escala 2 e em JPEG de qualidade 70, para não pesarem);
 * **computador:** 1280 × 800, rato e teclado.
@@ -58,7 +58,7 @@ Em cada página e largura, com o teu próprio código (é a única parte em que 
 4. **O que funciona bem**, em poucas linhas, porque uma auditoria só de defeitos deixa apagar o que não devia.
 5. O custo em símbolos como o vires.
 
-As capturas ficam em `/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/ux-auditoria/` (cria a pasta), com nomes que digam a página, a largura e o estado (`inicio-390-relance.jpg`, `inicio-390-cima.jpg`, `evora-1280-inteira.jpg`), e o relatório cita cada uma pelo nome. O lugar de direção escolhe depois as que entram no repositório. **Não escrevas capturas dentro do repositório.**
+As capturas ficam em `/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/ux-auditoria/` (cria a pasta), com nomes que digam a página, a largura e o estado (`inicio-390-relance.jpg`, `inicio-390-cima.jpg`, `evora-1280-inteira.jpg`), e o relatório cita cada uma pelo nome. O lugar de direção escolhe depois as que entram no repositório. **Não escrevas capturas dentro do repositório.**
 
 ## 5 · Regras
 

@@ -6,7 +6,7 @@
 
 ## 0 · O que o diretor viu, e o que isso diz
 
-Ele leu o rodapé («Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos · Diretor: Nuno dos Santos · Publicação gratuita»), a primeira página nova (as portas «Todos os concelhos →», a linha do domínio com cinco medidas «e mais cinco», «Escreva o nome do concelho, ou toque no mapa», «Passe o rato por um distrito ou por uma ilha», «Trabalho · incluído em Economia e finanças públicas», os cartões «308 concelhos», «12 estudos · 16 edições», «4 em curso · 0 a seguir»), e uma página de área, onde um cartão diz, por esta ordem: «17,6 · fonte · Eurostat · Preços da habitação · precos-da-habitacao-2025 · variação anual média, % · Dados de 2025 · Publicado por Eurostat · Documento House price index, nominal - annual data · Lido na fonte a 12.08.2026», debaixo de «área do XXV Governo Constitucional» e por cima de «Ao pé de cada número, a marca da fonte: fonte, excerto e data conferidos · um campo por confirmar».
+Ele leu o rodapé («Texto gerado por IA sob a política da casa · responsável editorial: [o diretor] · Diretor: [o diretor] · Publicação gratuita»), a primeira página nova (as portas «Todos os concelhos →», a linha do domínio com cinco medidas «e mais cinco», «Escreva o nome do concelho, ou toque no mapa», «Passe o rato por um distrito ou por uma ilha», «Trabalho · incluído em Economia e finanças públicas», os cartões «308 concelhos», «12 estudos · 16 edições», «4 em curso · 0 a seguir»), e uma página de área, onde um cartão diz, por esta ordem: «17,6 · fonte · Eurostat · Preços da habitação · precos-da-habitacao-2025 · variação anual média, % · Dados de 2025 · Publicado por Eurostat · Documento House price index, nominal - annual data · Lido na fonte a 12.08.2026», debaixo de «área do XXV Governo Constitucional» e por cima de «Ao pé de cada número, a marca da fonte: fonte, excerto e data conferidos · um campo por confirmar».
 
 O que ele disse cabe em quatro frases, e as quatro estão certas:
 
@@ -41,8 +41,8 @@ Cinco regras, para entrar na política da autonomia e nos briefs de todos os blo
 
 | hoje | proposta | porquê |
 |---|---|---|
-| «Texto gerado por IA sob a política da casa · responsável editorial: Nuno dos Santos» | «Texto gerado por inteligência artificial, segundo o Método.» (a porta é «Método» e abre a secção do Método onde a política da IA vive; emendado às 16:35 UTC de 15.09: «regras da casa» também não serve, porque «casa» é a habitação) | o rótulo é a escolha do projeto (a via B: rotular tudo) e a palavra da lei é «gerado»; o nome de uma pessoa não é exigido pelo rótulo |
-| «Diretor: Nuno dos Santos · Publicação gratuita» (só na primeira página) | fica como está até à hora do advogado, e só na primeira página | é a linha do artigo 15.º da Lei de Imprensa («o nome do director e … a menção da sua gratuitidade»), não uma descrição do diretor: é a palavra que todos os jornais usam na ficha técnica. Se o advogado disser que o sítio não é uma publicação periódica, a linha sai; se disser que é, a palavra é esta |
+| «Texto gerado por IA sob a política da casa · responsável editorial: [o diretor]» | «Texto gerado por inteligência artificial, segundo o Método.» (a porta é «Método» e abre a secção do Método onde a política da IA vive; emendado às 16:35 UTC de 15.09: «regras da casa» também não serve, porque «casa» é a habitação) | o rótulo é a escolha do projeto (a via B: rotular tudo) e a palavra da lei é «gerado»; o nome de uma pessoa não é exigido pelo rótulo |
+| «Diretor: [o diretor] · Publicação gratuita» (só na primeira página) | fica como está até à hora do advogado, e só na primeira página | é a linha do artigo 15.º da Lei de Imprensa («o nome do director e … a menção da sua gratuitidade»), não uma descrição do diretor: é a palavra que todos os jornais usam na ficha técnica. Se o advogado disser que o sítio não é uma publicação periódica, a linha sai; se disser que é, a palavra é esta |
 | «responsável editorial» | sai | dizia o mesmo que a linha do diretor, com uma palavra que não é a dele |
 | o nome dele nas páginas todas | em página nenhuma (decisão dele, 16:05 e 16:35 UTC de 15.09); o «Sobre» descreve o projeto em vez de o nomear: «O Estado do País é um projeto pessoal e independente: explora a possibilidade de um observatório sobre o país feito com inteligência artificial.» | «it's not about my name»; se um dia a lei exigir um nome, isso é um facto a estabelecer com o advogado, não uma descrição dele |
 
@@ -120,7 +120,7 @@ Cada bloco tem o brief, o construtor (Opus), a leitura de língua (§5), a leitu
 
 ## 6 · O que só o diretor decide
 
-1. **O rodapé:** a linha do rótulo como no §2.1, e a linha legal «Diretor: Nuno dos Santos · Publicação gratuita» só na primeira página até à hora do advogado (recomendação), ou o nome fora de todas as páginas já, aceitando o risco do artigo 15.º até o advogado responder.
+1. **O rodapé:** a linha do rótulo como no §2.1, e a linha legal «Diretor: [o diretor] · Publicação gratuita» só na primeira página até à hora do advogado (recomendação), ou o nome fora de todas as páginas já, aceitando o risco do artigo 15.º até o advogado responder.
 2. **Os domínios na primeira página:** uma linha «Economia, finanças públicas e trabalho» (recomendação) ou duas.
 3. **As portas:** com os dois números (308, 12) ou só com os nomes.
 4. **A ordem:** P1, P2, P3, P4 (recomendação), com o F1.13 a ficar no ramo até P1 o levar. O piloto de Évora começa depois de P2.

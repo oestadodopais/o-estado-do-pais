@@ -1,5 +1,5 @@
 
-  AS CONTAGENS DO P1 · ../../../../../../../private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/dist-antes
+  AS CONTAGENS DO P1 · ../../../../../../../private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/p1/dist-antes
   7240 página(s) construída(s) · 7240 com um rótulo de IA
 
   item 1 · rótulo novo · pt                         0 ocorrência(s) em     0 página(s)
@@ -10,7 +10,7 @@
   item 1 · «the house policy»                    3618 ocorrência(s) em  3616 página(s)  [/en/404×1, /en/about×1, /en/agenda×1, /en/areas/administracao-interna×1, …]
   item 1 · «regras da casa»                         1 ocorrência(s) em     1 página(s)  [/metodo×1]
   item 1 · «the house rules»                        0 ocorrência(s) em     0 página(s)
-  item 1 · «Nuno dos Santos»                     7251 ocorrência(s) em  7239 página(s)  [/404.html×1, /a-verificar×1, /agenda×1, /areas/administracao-interna×1, …]
+  item 1 · «[o diretor]»                     7251 ocorrência(s) em  7239 página(s)  [/404.html×1, /a-verificar×1, /agenda×1, /areas/administracao-interna×1, …]
   item 2 · «Diretor:»                               1 ocorrência(s) em     1 página(s)  [/×1]
   item 2 · «Director:»                              1 ocorrência(s) em     1 página(s)  [/en×1]
   item 2 · «Publicação gratuita»                    1 ocorrência(s) em     1 página(s)  [/×1]

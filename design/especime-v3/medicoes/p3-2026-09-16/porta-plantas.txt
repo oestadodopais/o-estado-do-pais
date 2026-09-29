@@ -78,4 +78,4 @@
   [32m✓[0m o selo de volta dentro da manchete do domínio  [90mverde antes: sim · html mudou: sim · vermelho depois: A16.pt=vermelho, A16.en=vermelho[0m
   [32m✓[0m a mobília a empurrar o nome para baixo do teto  [90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=vermelho, A11.en=vermelho[0m
 
-  porta [32m✓[0m 52 de 52 célula(s) · plantas [32m✓[0m[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/p3-2026-09-16/dist[0m
+  porta [32m✓[0m 52 de 52 célula(s) · plantas [32m✓[0m[90m  /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/p3-2026-09-16/dist[0m

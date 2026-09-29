@@ -1,6 +1,6 @@
 {
  "registado_em": "2026-09-15T21:57:42+00:00",
- "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-p1p2",
+ "copia": "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/acc3ef93-a6d6-4c30-b8d4-b7a5132dcfe5/scratchpad/pacote-p1p2",
  "plantas": [
   {
    "id": "W1",
@@ -26,8 +26,8 @@
    "descricao": "a régua da porta diz 51 de 52 e o relatório diz 52 de 52",
    "sha256_antes": "b0f79decdde7dcf9732e8a2d1b63ccb898cfb39df3ebf39f4c25ca64d5dd2009",
    "sha256_depois": "3ed452d02c2e11ed5022d0f4d8c7a9e61bbcbebc20de9811df3fd753481627b3",
-   "contexto_antes": "[0m\n  \u001b[31m✗\u001b[0m a mobília do menu em duas filas  \u001b[90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde\u001b[0m\n\n  porta \u001b[32m✓\u001b[0m 52 de 52 célula(s) · plantas \u001b[31m✗\u001b[0m\u001b[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist\u001b[0m\n",
-   "contexto_depois": "[0m\n  \u001b[31m✗\u001b[0m a mobília do menu em duas filas  \u001b[90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde\u001b[0m\n\n  porta \u001b[32m✓\u001b[0m 51 de 52 célula(s) · plantas \u001b[31m✗\u001b[0m\u001b[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist\u001b[0m\n"
+   "contexto_antes": "[0m\n  \u001b[31m✗\u001b[0m a mobília do menu em duas filas  \u001b[90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde\u001b[0m\n\n  porta \u001b[32m✓\u001b[0m 52 de 52 célula(s) · plantas \u001b[31m✗\u001b[0m\u001b[90m  /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist\u001b[0m\n",
+   "contexto_depois": "[0m\n  \u001b[31m✗\u001b[0m a mobília do menu em duas filas  \u001b[90mverde antes: sim · html mudou: sim · vermelho depois: A11.pt=verde, A11.en=verde\u001b[0m\n\n  porta \u001b[32m✓\u001b[0m 51 de 52 célula(s) · plantas \u001b[31m✗\u001b[0m\u001b[90m  /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/porta-2026-09-15/dist\u001b[0m\n"
   },
   {
    "id": "W4",

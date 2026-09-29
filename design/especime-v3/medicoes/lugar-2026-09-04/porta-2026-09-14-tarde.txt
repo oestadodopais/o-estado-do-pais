@@ -33,4 +33,4 @@
   [32m✓[0m A16.en  [90mo nome acessível do <h1> das quatro camadas em en, em Chromium e WebKit: pais 2 valor(es)/2 selo(s) · dominio 2 valor(es)/2 selo(s) · regiao 2 valor(es)/2 selo(s) · concelho 1 valor(es)/1 selo(s) · nome igual à frase nos dois motores, cada valor com a sua porta ao pé dele[0m
   [32m✓[0m A17.en  [90mo «n de N» das faixas das quatro camadas em en: pais 1..5 de 5 · dominio 1..10 de 10 · regiao  · concelho 1..8 de 8[0m
 
-  porta [32m✓[0m 34 de 34 célula(s)[90m  /Users/nunosantos/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m
+  porta [32m✓[0m 34 de 34 célula(s)[90m  /Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/lugar-2026-09-04/dist[0m

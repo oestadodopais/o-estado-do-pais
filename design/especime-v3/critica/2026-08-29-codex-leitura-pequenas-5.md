@@ -29,7 +29,7 @@ I could not write `REPORT.md` because the workspace is read-only.
 
 ## Blocking
 
-- [dados/unidades.mjs](/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas5/pacote/dados/unidades.mjs) maps `dias` to `hours`. Both its comment and preamble say “Days”; these are different units. The ledger index prints `days` for `evora-prazo-medio-de-pagamento-2023` and `-2025`, while the municipality page prints `Days`. Thus the pages are correct but inconsistent with the current dictionary.
+- [dados/unidades.mjs](/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/codex-pequenas5/pacote/dados/unidades.mjs) maps `dias` to `hours`. Both its comment and preamble say “Days”; these are different units. The ledger index prints `days` for `evora-prazo-medio-de-pagamento-2023` and `-2025`, while the municipality page prints `Days`. Thus the pages are correct but inconsistent with the current dictionary.
 
 - `divida-publica-2025` prints `% of GNP` on `en-area-financas.html`, but `% of GDP` on `en-ledger-index.html`, matching the dictionary. GDP and GNP are not interchangeable. These are the only three English ledger-unit cells not matching dictionary output: this GNP cell and the two `days` cells above.
 
