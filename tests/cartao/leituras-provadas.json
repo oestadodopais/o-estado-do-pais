@@ -16,6 +16,11 @@
       "quem": "Codex gpt-6-astra",
       "quando": "2026-09-28",
       "o_que": "C1c: objetivo do BCE no IHPC, remissão na inflação, sentido da taxa de câmbio e regra da dívida municipal na DGAL."
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-09-29",
+      "o_que": "a passagem UE1d, pela §1.140 do lugar de direção: a leitura da sobrecarga do custo da habitação no total ganha a comparação com a média da União (as folhas comuns de MEDIA_UE e EU_AVERAGE, da classe «conta») e perde a frase da ressalva da Comissão, que o cartão diz num bloco próprio, lido da fonte única src/data/ressalvas-da-uniao.mjs; sai a folha dessa frase e a origem ce-swd-2026-222-habitacao da lista da medida, que só essa folha usava (a primeira página continua a prendê-la ao literal em tests/inicio/blocos-provados.json)"
     }
   ],
   "comuns": [
@@ -4162,8 +4167,7 @@
         "eurostat-tespm140-populacao",
         "eurostat-tessi164-regimes",
         "glossario-sobrecarga",
-        "eurostat-glossario-rendimento-disponivel",
-        "ce-swd-2026-222-habitacao"
+        "eurostat-glossario-rendimento-disponivel"
       ],
       "folhas": [
         {
@@ -4257,24 +4261,6 @@
                   "origem": "glossario-sobrecarga",
                   "campo": "excerto",
                   "literal": "the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances)"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pt": " Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
-          "en": " This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.",
-          "partes": [
-            {
-              "pt": " Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
-              "en": " This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "ce-swd-2026-222-habitacao",
-                  "campo": "excerto",
-                  "literal": "The overburden rate should be read together with the tenure structure (homeowner, tenants), that may differ across country and regions."
                 }
               ]
             }

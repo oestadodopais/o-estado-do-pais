@@ -24,7 +24,9 @@
  *        a faixa da União (`cartao-medida-faixa`), uma vez, num cartão cuja linha
  *        tem série de países em `ledger/series/`. Num cartão sem série a faixa é
  *        um bloco a mais e a K1 recusa-a como recusa um campo de recibo; a planta
- *        põe-na num desses cartões.
+ *        põe-na num desses cartões. **Desde a UE1d (29.09.2026, §1.140) há a
+ *        ressalva da comparação com a União** (`cartao-medida-ressalva`), uma
+ *        vez, só num cartão de uma medida que a lista da K14 nomeia.
  *   K18 · **a faixa da União refeita dos pontos** · a mesma célula que a F19 do
  *        `check:formas` corre na construção (`tests/cartao/faixa.mjs`): a faixa em
  *        cada cartão nacional com série, o desenho com uma marca por país na
@@ -122,19 +124,24 @@
  *        em TODA a corrida, não só na prova: uma dívida nova fecha a construção
  *        no acto de ser declarada, que é o único sítio onde alguém a lê.
  *
- *   K14 · **a média europeia calada onde uma decisão a cala** · (bloco R1,
- *        23.09.2026, I138) o cartão da sobrecarga do custo da habitação punha a
- *        média da União ao lado do valor português, e sem a ressalva da Comissão
- *        sobre o regime de ocupação a comparação lê-se ao contrário. A §1.124
- *        mandou calá-la no cartão até o B2 mostrar a medida por regime de
- *        ocupação. Esta célula é a catraca: conhece a medida PELO NOME, escrita
- *        aqui e não importada, e exige três coisas. Nenhum cartão dela rende o
- *        item da União; a declaração de `figuras.mjs` cala exactamente as medidas
- *        desta lista, nem mais nem menos, para que um silêncio novo também
- *        precise de uma decisão; e a linha da União continua no livro-razão, para
- *        que o silêncio seja uma escolha e não uma ausência. O positivo
- *        conhecido: pelo menos um cartão da medida visto no `dist/`.
- *
+ *   K14 · **a comparação com a União só com a ressalva** · (a §1.140 do lugar
+ *        de direção, 29.09.2026, a passagem UE1d; antes, desde o bloco R1 de
+ *        23.09.2026, I138, a §1.124 calava a média da União no cartão da
+ *        sobrecarga do custo da habitação até o B2 mostrar a medida por regime
+ *        de ocupação, e a K14 era a catraca desse silêncio). A condição da §1.124
+ *        cumpriu-se, a média da União voltou ao cartão, e a proteção mudou de
+ *        forma e não de propósito: a comparação lê-se ao contrário sem a
+ *        ressalva da Comissão, e por isso a K14 conhece PELO NOME, escrita aqui e
+ *        não importada, cada medida cuja comparação com a União a exige (hoje
+ *        uma) e exige a ressalva, com o texto da fonte única
+ *        (`src/data/ressalvas-da-uniao.mjs`), em cada cartão e em cada recibo
+ *        dessa medida no `dist/`, nas duas edições, que mostre a União: a régua,
+ *        a faixa, o enquadramento do recibo da linha e o recibo da série. A
+ *        declaração tem as ressalvas exactamente destas medidas, nem mais nem
+ *        menos. O positivo conhecido é pelo menos um cartão e um recibo vistos
+ *        com a União e com a ressalva; as plantas são um cartão com a União sem
+ *        ela e um recibo da série sem ela, e o controlo, um cartão e um recibo
+ *        certos, passa.
  *   K15 · **a palavra do veredicto e a cor que a repete** · B2: uma conta
  *        independente lê cada referência e o valor selado, e exige a frase
  *        completa, a direção, os limites e as classes do estado. A faixa
@@ -233,19 +240,37 @@ import {
 import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../../scripts/series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from './faixa.mjs';
+import { RESSALVAS_DA_UNIAO } from '../../src/data/ressalvas-da-uniao.mjs';
 
 /**
- * K14 · AS MEDIDAS CUJA MÉDIA EUROPEIA O CARTÃO CALA, e a decisão que o manda.
- * Escrita aqui e não lida da declaração: uma régua que lesse a lista da coisa
- * que mede não media nada. Tirar uma medida daqui, ou pôr outra, é uma decisão
- * escrita em `DECISIONS.md`, e é por isso que a razão vai ao lado.
+ * K14 · A RESSALVA NUM CARTÃO OU NUM RECIBO: uma e uma só marca
+ * `data-ressalva-da-uniao` da medida, com o texto da fonte única na língua da
+ * página. Devolve o que falta, ou `null`.
+ * @param {any} onde @param {string} id @param {'pt'|'en'} lang
+ * @returns {string|null}
+ */
+function conferirRessalva(onde, id, lang) {
+  const marcas = onde.querySelectorAll(`[data-ressalva-da-uniao="${id}"]`);
+  const esperado = /** @type {Record<string, { pt: string, en: string }>} */ (RESSALVAS_DA_UNIAO)[id]?.[lang] ?? null;
+  if (marcas.length !== 1) return `sem a ressalva da Comissão (${marcas.length} marca(s) «data-ressalva-da-uniao»)`;
+  const dito = String(marcas[0].text ?? '').replace(/\s+/g, ' ').trim();
+  if (esperado === null) return 'a declaração não tem o texto da ressalva desta medida';
+  if (dito !== esperado) return `a ressalva diz «${dito.slice(0, 80)}» e a declarada é «${esperado.slice(0, 80)}»`;
+  return null;
+}
+
+/**
+ * K14 · AS MEDIDAS CUJA COMPARAÇÃO COM A UNIÃO EXIGE A RESSALVA, e a decisão que o
+ * manda. Escrita aqui e não lida da declaração: uma régua que lesse a lista da
+ * coisa que mede não media nada. Tirar uma medida daqui, ou pôr outra, é uma
+ * decisão escrita em `DECISIONS.md`, e é por isso que a razão vai ao lado.
  * @type {Map<string, string>}
  */
-const MEDIA_EUROPEIA_CALADA = new Map([
+const RESSALVA_COM_A_UNIAO = new Map([
   [
     'sobrecarga-do-custo-da-habitacao-2025',
-    '§1.124 (23.09.2026): a Comissão adverte que a sobrecarga só se lê ao lado do regime de ' +
-      'ocupação; a média da União volta ao cartão com a medida por regime de ocupação, no B2',
+    '§1.140 (29.09.2026): a média da União voltou ao cartão, e a Comissão adverte que o total só se ' +
+      'lê com a estrutura por regime de ocupação; onde a União aparece, a ressalva aparece',
   ],
 ]);
 
@@ -271,6 +296,9 @@ const PECAS_PERMITIDAS = new Set([
   /* UE1, 29.09.2026: a faixa da União, só num cartão cuja linha tem série de
      países, e uma vez (a K1 confere as duas coisas abaixo). */
   'cartao-medida-faixa',
+  /* UE1d, 29.09.2026 (§1.140): a ressalva da comparação com a União, só num
+     cartão de uma medida que a lista da K14 nomeia, e uma vez. */
+  'cartao-medida-ressalva',
 ]);
 /** As séries de países e a tabela dos nomes, pelo leitor próprio dos portões (K1, K18). */
 const SERIES_DA_K18 = lerSeriesDoPortao();
@@ -366,8 +394,11 @@ function corre(dist) {
     marcador_em_portugues: 0,
     nome_noutra_lingua: 0,
     valores_de_regua_sem_marca: 0,
-    /* K14, bloco R1: os cartões de uma medida cuja média europeia está calada. */
-    cartoes_com_media_calada: 0,
+    /* K14, UE1d (§1.140): os cartões das medidas cuja comparação com a União
+       exige a ressalva, e os cartões e os recibos vistos com a União e com ela. */
+    cartoes_da_k14: 0,
+    cartoes_com_uniao_e_ressalva: 0,
+    recibos_com_uniao_e_ressalva: 0,
     cartoes_com_veredicto: 0,
     /* UE1: os cartões com a faixa da União, e o que a K18 conferiu nelas. */
     cartoes_com_faixa: 0,
@@ -437,6 +468,21 @@ function corre(dist) {
           if (x) citadas.add(x);
         }
         recibos.set(rota.replace(/\/$/, ''), citadas);
+      }
+
+      /* K14 · OS RECIBOS DAS MEDIDAS DA LISTA QUE MOSTRAM A UNIÃO (UE1d, §1.140):
+         o recibo da linha, quando o enquadramento traz a linha da União, e o
+         recibo da série, que traz sempre o ponto da União. */
+      for (const [idK14, razao] of RESSALVA_COM_A_UNIAO) {
+        const serieK14 = serieDaLinhaDoPortao(SERIES_DA_K18, idK14);
+        const daLinha = rota === `/livro-razao/${idK14}/` || rota === `/en/ledger/${idK14}/`;
+        const daSerie = Boolean(serieK14) && (rota === `/livro-razao/series/${serieK14.id}/` || rota === `/en/ledger/series/${serieK14.id}/`);
+        if (!daLinha && !daSerie) continue;
+        const mostraUniao = daSerie || root.querySelectorAll(`#enquadramento [data-claim="${idK14}-ue"]`).length > 0;
+        if (!mostraUniao) continue;
+        const r14 = conferirRessalva(root, idK14, langPagina);
+        if (r14) erros.push(`K14 · ${rota} · ${idK14}: o recibo mostra a União e ${r14}: ${razao}`);
+        else contas.recibos_com_uniao_e_ressalva++;
       }
 
       /* K15: a conta independente exige palavra, direção, referência e cor.
@@ -516,6 +562,12 @@ function corre(dist) {
         }
         if (faixasNoCartao > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${faixasNoCartao} faixas da União`);
         if (faixasNoCartao) contas.cartoes_com_faixa++;
+        /* UE1d: a ressalva da comparação com a União só nas medidas da K14, e uma vez. */
+        const ressalvasNoCartao = classes.filter((c) => c === 'cartao-medida-ressalva').length;
+        if (ressalvasNoCartao && !RESSALVA_COM_A_UNIAO.has(id)) {
+          erros.push(`K1 · ${rota} · ${id}: o cartão tem a ressalva da comparação com a União e a medida não está na lista da K14`);
+        }
+        if (ressalvasNoCartao > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${ressalvasNoCartao} ressalvas da comparação com a União`);
         /* ----------------------------------------------------------- K11 */
         /* UM CARTÃO SEM NOME FECHA A CONSTRUÇÃO (achado 3 da leitura a frio de
            15.09.2026: «The card gate can pass cards missing mandatory content,
@@ -705,15 +757,16 @@ function corre(dist) {
         }
 
         /* ----------------------------------------------------------- K14 */
-        if (MEDIA_EUROPEIA_CALADA.has(id)) {
-          contas.cartoes_com_media_calada++;
-          const daUniao = cartao.querySelectorAll('[data-regua="ue"]').length +
-            cartao.querySelectorAll(`[data-claim="${id}-ue"]`).length;
-          if (daUniao > 0) {
-            erros.push(
-              `K14 · ${rota} · ${id}: o cartão rende a média europeia, e a decisão que a cala ainda ` +
-                `vale: ${MEDIA_EUROPEIA_CALADA.get(id)}`,
-            );
+        if (RESSALVA_COM_A_UNIAO.has(id)) {
+          contas.cartoes_da_k14++;
+          const mostraUniao =
+            cartao.querySelectorAll('[data-regua="ue"]').length +
+              cartao.querySelectorAll(`[data-claim="${id}-ue"]`).length +
+              cartao.querySelectorAll('[data-faixa-ue]').length > 0;
+          if (mostraUniao) {
+            const r14 = conferirRessalva(cartao, id, langPagina);
+            if (r14) erros.push(`K14 · ${rota} · ${id}: o cartão mostra a União e ${r14}: ${RESSALVA_COM_A_UNIAO.get(id)}`);
+            else contas.cartoes_com_uniao_e_ressalva++;
           }
         }
 
@@ -1066,7 +1119,8 @@ function montaAProva() {
       '<p class="cartao-medida-regua"><span data-regua="anterior" data-selo-em="evora-divida-dgal-2017">' +
       '<span data-claim="evora-divida-dgal-2014">40 000 000</span></span></p>' +
       '</article>' +
-      /* PLANTA 10 (K14): o cartão da sobrecarga com a média europeia de volta. */
+      /* PLANTA 10 (K14, UE1d): o cartão da sobrecarga com a média europeia e sem a
+         ressalva da Comissão. */
       '<article data-cartao-medida="sobrecarga-do-custo-da-habitacao-2025">' +
       '<span class="cartao-medida-nome">Sobrecarga do custo da habitação</span>' +
       '<p class="cartao-medida-valor"><span data-claim="sobrecarga-do-custo-da-habitacao-2025">6,3</span>' +
@@ -1083,6 +1137,40 @@ function montaAProva() {
       '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
+      '</body></html>',
+  );
+  /* PLANTA 12 (K14, UE1d): o recibo da série da sobrecarga sem a ressalva. */
+  fs.mkdirSync(path.join(dir, 'livro-razao', 'series', 'sobrecarga-do-custo-da-habitacao-2025-paises'), { recursive: true });
+  fs.writeFileSync(
+    path.join(dir, 'livro-razao', 'series', 'sobrecarga-do-custo-da-habitacao-2025-paises', 'index.html'),
+    '<!doctype html><html lang="pt"><head><title>x</title></head><body>' +
+      '<h1>Sobrecarga do custo da habitação nos países da União</h1>' +
+      '<table data-serie-tabela="sobrecarga-do-custo-da-habitacao-2025-paises"><tbody>' +
+      '<tr data-serie-ponto="sobrecarga-do-custo-da-habitacao-2025-paises#EU27_2020"><th>União Europeia</th><td>7,7</td></tr>' +
+      '</tbody></table></body></html>',
+  );
+  /* O CONTROLO DA K14 (UE1d): um cartão e um recibo da linha certos, com a União e
+     com a ressalva, que não podem dar vermelho. */
+  const ressalva = RESSALVAS_DA_UNIAO['sobrecarga-do-custo-da-habitacao-2025'].pt;
+  fs.mkdirSync(path.join(dir, 'areas', 'y'), { recursive: true });
+  fs.writeFileSync(
+    path.join(dir, 'areas', 'y', 'index.html'),
+    '<!doctype html><html lang="pt"><head><title>y</title></head><body>' +
+      '<article data-cartao-medida="sobrecarga-do-custo-da-habitacao-2025">' +
+      '<span class="cartao-medida-nome">Sobrecarga do custo da habitação</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="sobrecarga-do-custo-da-habitacao-2025">6,3</span>' +
+      chip('sobrecarga-do-custo-da-habitacao-2025') + '</p>' +
+      '<p class="cartao-medida-regua"><span data-regua="ue" data-selo-em="sobrecarga-do-custo-da-habitacao-2025">' +
+      '<span data-claim="sobrecarga-do-custo-da-habitacao-2025-ue">7,7</span></span></p>' +
+      `<p class="cartao-medida-ressalva" data-ressalva-da-uniao="sobrecarga-do-custo-da-habitacao-2025">${ressalva}</p>` +
+      '</article></body></html>',
+  );
+  fs.mkdirSync(path.join(dir, 'livro-razao', 'sobrecarga-do-custo-da-habitacao-2025'), { recursive: true });
+  fs.writeFileSync(
+    path.join(dir, 'livro-razao', 'sobrecarga-do-custo-da-habitacao-2025', 'index.html'),
+    '<!doctype html><html lang="pt"><head><title>z</title></head><body>' +
+      '<section id="enquadramento"><dl><dt>União Europeia</dt><dd><span data-claim="sobrecarga-do-custo-da-habitacao-2025-ue">7,7</span></dd></dl>' +
+      `<p class="linha-nota" data-ressalva-da-uniao="sobrecarga-do-custo-da-habitacao-2025">${ressalva}</p></section>` +
       '</body></html>',
   );
   return dir;
@@ -1112,7 +1200,8 @@ if (PROVA) {
     ['K10', 'marca(s) da fonte'],
     ['K11', 'rende-se sem nome'],
     ['K12', 'não declaram a mesma edição'],
-    ['K14', 'rende a média europeia'],
+    ['K14', 'o cartão mostra a União e sem a ressalva'],
+    ['K14', 'o recibo mostra a União e sem a ressalva'],
     ['K1', 'a faixa da União e a linha não tem série'],
   ];
   for (const [celula, pedaco] of esperado) {
@@ -1124,6 +1213,11 @@ if (PROVA) {
     if (!vistos.some((e) => e.includes(pedaco))) {
       falhas.push(`${celula} mordeu noutra coisa: ${vistos[0]}`);
     }
+  }
+  /* O CONTROLO DA K14 (UE1d): o cartão e o recibo certos não podem dar vermelho. */
+  const noControloK14 = r.erros.filter((e) => e.startsWith('K14 · /areas/y/') || e.startsWith('K14 · /livro-razao/sobrecarga-do-custo-da-habitacao-2025/'));
+  if (noControloK14.length > 0) {
+    falhas.push(`o controlo da K14 deu ${noControloK14.length} vermelho(s): ${noControloK14[0]}`);
   }
   /* O CARTÃO SÃO NÃO PODE DAR VERMELHO, e é a outra metade da prova: uma régua
      que grite por tudo também diz sempre alguma coisa. */
@@ -1561,26 +1655,30 @@ const r = corre(DIST);
 const motor = ficheirosDoMotor();
 
 /* -------------------------------------------------------------------- K14 */
-/* A declaração cala exactamente as medidas desta lista, e a linha da União de
-   cada uma continua a existir; e o positivo conhecido: pelo menos um cartão de
-   uma medida calada foi visto, ou a célula mediu coisa nenhuma. */
+/* A declaração tem as ressalvas exactamente das medidas desta lista, e a linha da
+   União de cada uma continua a existir; e o positivo conhecido: pelo menos um
+   cartão e um recibo de uma medida da lista vistos com a União e com a ressalva,
+   ou a célula mediu coisa nenhuma (UE1d, §1.140). */
 {
-  const declaradas = new Set(FIGURAS.filter((f) => /** @type {any} */ (f).semMediaEuropeia).map((f) => f.claim));
+  const declaradas = new Set(Object.keys(RESSALVAS_DA_UNIAO));
   for (const id of declaradas) {
-    if (!MEDIA_EUROPEIA_CALADA.has(id)) {
-      r.erros.push(`K14 · figuras.mjs cala a média europeia de «${id}», e nenhuma decisão escrita nesta célula o manda`);
+    if (!RESSALVA_COM_A_UNIAO.has(id)) {
+      r.erros.push(`K14 · ressalvas-da-uniao.mjs tem a ressalva de «${id}», e nenhuma decisão escrita nesta célula a pede`);
     }
   }
-  for (const [id, razao] of MEDIA_EUROPEIA_CALADA) {
+  for (const [id, razao] of RESSALVA_COM_A_UNIAO) {
     if (!declaradas.has(id)) {
-      r.erros.push(`K14 · a declaração de «${id}» deixou de calar a média europeia, e a decisão ainda vale: ${razao}`);
+      r.erros.push(`K14 · a medida «${id}» exige a ressalva e a declaração não a tem: ${razao}`);
     }
     if (!hasClaim(`${id}-ue`)) {
-      r.erros.push(`K14 · a linha da União «${id}-ue» saiu do livro-razão: o silêncio no cartão deixou de ser uma escolha`);
+      r.erros.push(`K14 · a linha da União «${id}-ue» saiu do livro-razão: a comparação que a ressalva acompanha deixou de existir`);
     }
   }
-  if (r.contas.cartoes_com_media_calada === 0) {
-    r.erros.push('K14 · nenhum cartão de uma medida com a média europeia calada foi visto no dist/: a célula não mediu nada');
+  if (r.contas.cartoes_com_uniao_e_ressalva === 0) {
+    r.erros.push('K14 · nenhum cartão de uma medida da lista foi visto com a União e com a ressalva no dist/: a célula não mediu nada');
+  }
+  if (r.contas.recibos_com_uniao_e_ressalva === 0) {
+    r.erros.push('K14 · nenhum recibo de uma medida da lista foi visto com a União e com a ressalva no dist/: a célula não mediu nada');
   }
 }
 
@@ -1743,7 +1841,7 @@ console.log(
   ),
 );
 console.log(cinza(`    cartões com veredicto conferido (K15)                 ${r.contas.cartoes_com_veredicto}`));
-console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
+console.log(cinza(`    a União com a ressalva (K14): cartões e recibos        ${r.contas.cartoes_com_uniao_e_ressalva} · ${r.contas.recibos_com_uniao_e_ressalva}`));
 console.log(cinza(`    cartões com a faixa da União (K1, K18)                 ${r.contas.cartoes_com_faixa}`));
 console.log(cinza(`    faixas refeitas dos pontos (K18)                       ${r.contas.faixas_k18}${PROVA ? ` · ${r.contas.plantas_k18} planta(s) a morder` : ''}`));
 console.log(cinza(`    ressalvas nas pontas e ordinais (K18, UE1b)            ${r.contas.ressalvas_k18} · ${r.contas.ordinais_k18}${PROVA ? ` · ${r.contas.plantas_das_palavras_k18} planta(s) das palavras a morder` : ''}`));

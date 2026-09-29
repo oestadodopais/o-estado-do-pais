@@ -15,9 +15,9 @@ import { notaDaBandeira } from './bandeira-da-fonte.mjs';
  * medida numa lista plana de pedaços de `Frase.astro`, a partir de
  *
  *   · a linha do cartão (o valor, o período), pelo livro-razão;
- *   · a régua do cartão (`reguaDoCartao()`, que cala a média da União onde a
- *     declaração a cala, como a `ReguaDoCartao` faz), para o período anterior
- *     e a União;
+ *   · a régua do cartão (`reguaDoCartao()`, a mesma que a `ReguaDoCartao` usa;
+ *     calava a média da União onde a declaração a calava, até à §1.140 de
+ *     29.09.2026), para o período anterior e a União;
  *   · a referência declarada (`REFERENCIAS_DAS_MEDIDAS`), `estadoDaMedida()` e
  *     `comparacaoComOLimiar()`, para os veredictos;
  *   · as chaves da prova (`prova(lang)`) e `periodoDasCamaras()`, para o cartão

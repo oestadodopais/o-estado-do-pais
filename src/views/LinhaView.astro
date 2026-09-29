@@ -71,6 +71,7 @@ import { dataDaCasa } from '../lib/datas.mjs';
 import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
 import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
+import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
@@ -132,6 +133,9 @@ const temEnquadramento = temRegua(enquadramento);
    passagem UE1b, 29.09.2026): o enquadramento abre o recibo dela, com as
    palavras da porta da faixa do cartão. */
 const serieDosPaises = serieDaLinha(id);
+/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026):
+   onde a medida a declara e o enquadramento mostra a União, vai no mesmo bloco. */
+const ressalvaDaComparacao = enquadramento?.ue ? ressalvaDaUniao(id, lang) : null;
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
    juízo. A nota ao lado di-lo por palavras.
@@ -1332,6 +1336,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                 </>
               )}
             </dl>
+            {/* UE1d: a ressalva da Comissão, onde a comparação com a União a pede. */}
+            {ressalvaDaComparacao && (
+              <p class="linha-nota" data-ressalva-da-uniao={id}>{ressalvaDaComparacao}</p>
+            )}
           </section>
         )
       }

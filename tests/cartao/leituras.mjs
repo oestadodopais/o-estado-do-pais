@@ -91,6 +91,31 @@ export function lerAuditoriaDasLeituras(ficheiro = AUDITORIA_DAS_LEITURAS) {
   return JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
 }
 
+/**
+ * A AUDITORIA DAS PALAVRAS DA PRIMEIRA PÁGINA (`tests/inicio/blocos-provados.json`),
+ * lida aqui só para saber que origens ela cita (a passagem UE1d, 29.09.2026, pela
+ * §1.140). A ressalva da comparação com a União vive numa fonte só, que a
+ * primeira página e os cartões leem, e é essa auditoria que a prende ao literal
+ * da Comissão: a origem dela conta como usada.
+ */
+export function lerAuditoriaDosBlocos() {
+  return JSON.parse(fs.readFileSync(path.join(RAIZ, 'tests', 'inicio', 'blocos-provados.json'), 'utf8'));
+}
+
+/** As chaves das origens que uma auditoria cita, em qualquer apoio. @param {unknown} a */
+function origensCitadas(a) {
+  const out = new Set();
+  const anda = (x) => {
+    if (Array.isArray(x)) x.forEach(anda);
+    else if (x && typeof x === 'object') {
+      if (typeof x.origem === 'string') out.add(x.origem);
+      Object.values(x).forEach(anda);
+    }
+  };
+  anda(a);
+  return out;
+}
+
 /** @param {string} s */
 const curto = (s) => (s.length > 60 ? `${s.slice(0, 57)}…` : s);
 /** Os espaços todos (os inquebráveis, o fino e o dos milhares) colapsados num só. @param {string} s */
@@ -192,6 +217,7 @@ export function conferirAuditoriaDasLeituras({
   linhas = loadClaims(),
   perguntas = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS),
   paineis = /** @type {Record<string, any>} */ (DEFINICAO_DOS_PAINEIS),
+  blocos = lerAuditoriaDosBlocos(),
 } = {}) {
   /** @type {string[]} */
   const erros = [];
@@ -371,13 +397,17 @@ export function conferirAuditoriaDasLeituras({
   contas.comuns = comunsUsadas.size;
   contas.origens_das_leituras = origensDasLeituras.size;
 
-  /* NENHUMA ORIGEM DECLARADA SEM USO: cada uma apoia uma pergunta, um painel ou
-     uma leitura. Uma origem que não apoia nada é uma citação de enfeite. */
+  /* NENHUMA ORIGEM DECLARADA SEM USO: cada uma apoia uma pergunta, um painel, uma
+     leitura ou, desde a UE1d (29.09.2026, §1.140), uma parte da auditoria das
+     palavras da primeira página, que é onde se prende a ressalva da comparação
+     com a União que os cartões também dizem. Uma origem que não apoia nada é uma
+     citação de enfeite. */
   const usadas = new Set(origensDasLeituras);
   for (const d of Object.values(perguntas)) for (const o of d?.origens ?? []) usadas.add(o);
   for (const d of Object.values(paineis)) for (const o of d?.origens ?? []) usadas.add(o);
+  for (const o of origensCitadas(blocos)) usadas.add(o);
   for (const chave of Object.keys(origens)) {
-    if (!usadas.has(chave)) erros.push(`K17 · origem «${chave}»: está declarada e não apoia pergunta, painel ou leitura nenhuma`);
+    if (!usadas.has(chave)) erros.push(`K17 · origem «${chave}»: está declarada e não apoia pergunta, painel, leitura ou bloco da primeira página nenhum`);
   }
   /* AS ORIGENS ALOJADAS: a mesma forma do selo, com o ficheiro no estudo 13. */
   for (const [chave, o] of Object.entries(origens)) {
@@ -697,6 +727,15 @@ export function plantasDaK17(dist) {
   const mudada = structuredClone(leituras);
   mudada[saldo].pt = JSON.parse(JSON.stringify(mudada[saldo].pt).replace('não deixa o défice passar de', 'proíbe um défice acima de'));
   regista('a leitura mudada sem nova leitura', conferirAuditoriaDasLeituras({ leituras: mudada }).erros, 'não tem auditoria');
+  /* UE1d: a origem que nada apoia continua a fechar a construção, e a da ressalva
+     da comparação com a União só conta como usada enquanto a auditoria da
+     primeira página a citar. */
+  const qualquer = Object.values(origens)[0];
+  regista('uma origem declarada que nada apoia', conferirAuditoriaDasLeituras({ origens: { ...origens, 'uma-origem-plantada': qualquer } }).erros,
+    'origem «uma-origem-plantada»: está declarada e não apoia');
+  const blocosSemRessalva = JSON.parse(JSON.stringify(lerAuditoriaDosBlocos()).replaceAll('"ce-swd-2026-222-habitacao"', '"outra-origem"'));
+  regista('a origem da ressalva sem a auditoria da primeira página', conferirAuditoriaDasLeituras({ blocos: blocosSemRessalva }).erros,
+    'origem «ce-swd-2026-222-habitacao»: está declarada e não apoia');
   regista('um literal que o campo não tem', conferirAuditoriaDasLeituras({ auditoria: auditoriaCom((a) => {
     dela(a, 'crescimento-da-despesa-liquida-2025').folhas[0].partes[0].apoios[1].literal = 'Despesa Total controlada pelo Governo';
   }) }).erros, 'que não está no campo');
