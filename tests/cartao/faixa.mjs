@@ -27,7 +27,7 @@
  */
 import { parse } from 'node-html-parser';
 
-import { contaDaFaixa, numeroDoPortao, posicaoNaFaixa, serieDaLinhaDoPortao, AGREGADO } from '../../scripts/series-do-portao.mjs';
+import { contaDaFaixa, posicaoNaFaixa, serieDaLinhaDoPortao, AGREGADO } from '../../scripts/series-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../../src/data/faixa-da-uniao.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
