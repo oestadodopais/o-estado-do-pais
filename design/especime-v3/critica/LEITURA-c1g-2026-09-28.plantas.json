@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-28T22:09:20+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "package.json",
+   "descricao": "a conferência da privacidade volta ao fim da cadeia do build, e com ela a dependência da máquina e da história do Git na construção da Vercel",
+   "sha256_antes": "fe433071ccdeac92358b0663fb1d07600306a9da132f272dacea129a053d30c8",
+   "sha256_depois": "c7c5091b901d4bd08832191c0126671839eb4838ddc6a85e2a1b9e96d4ea669f",
+   "contexto_antes": "npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua\",\n    \"preview\": \"astro preview\",\n    \"astro\": \"astro\",\n    \"ledger:check\": \"node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-provenie",
+   "contexto_depois": "npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:privacidade\",\n    \"preview\": \"astro preview\",\n    \"astro\": \"astro\",\n    \"ledger:check\": \"node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-provenie"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "ledger/claims/evora-prr-aprovado-2026.yml",
+   "descricao": "a razão portuguesa da primeira entrada reconstituída do aprovado volta a escrever a data antiga na forma ISO",
+   "sha256_antes": "5f0a9ddca10c80797d177fdc7377f14720f1f6d9884b4dd62a8f76097679c034",
+   "sha256_depois": "5343e14c017b68c11c537fc8d3743d8540d0c1fe3a4ab1b7bfc3933b3003d90d",
+   "contexto_antes": "o longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.\"\n  ",
+   "contexto_depois": "o longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.\"\n  "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/livro-razao/evora-prr-aprovado-2026/index.html",
+   "descricao": "o recibo português do aprovado cita um commit que não existe (8371e079 em vez de 8371e097)",
+   "sha256_antes": "6cb1c747c785f6d0bd8715b86095e4b76725a503e79bd0e441e5df17012098fd",
+   "sha256_depois": "e5da48604e143a591ae3d96c495fc64ccc67f5321adc2377302996f0e5bbdced",
+   "contexto_antes": "reason\">O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.</p></div><div id=\"alteracao-0\" class=\"historico-entrada\"><div class=\"historico-cabeca\"><span class=\"log-data\" data-correc",
+   "contexto_depois": "reason\">O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e079) a mudança que a linha não registava.</p></div><div id=\"alteracao-0\" class=\"historico-entrada\"><div class=\"historico-cabeca\"><span class=\"log-data\" data-correc"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "scripts/check-privacidade.py",
+   "descricao": "as plantas das pastas genéricas deixam de poder falhar: mordem sempre, seja qual for o detetor",
+   "sha256_antes": "e625ab06db8fef68e15a1da69727a57f9c48f82da3613ade5ffaeeae8a50378c",
+   "sha256_depois": "156cead2a0bb8c479d06e5a2d2a32fc5cee16c9390f4388bc10b60da527828e8",
+   "contexto_antes": "detetor.Path, 'home', return_value=pasta):\n                r['plantas'].append({'id': 'pasta-generica-' + (nome or 'raiz'),\n                                    'mordeu': not detetor.tem_caminho(inocuo)})\n        for i, caminho in enumerate(detetor.proibidos()):\n            r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html",
+   "contexto_depois": "detetor.Path, 'home', return_value=pasta):\n                r['plantas'].append({'id': 'pasta-generica-' + (nome or 'raiz'),\n                                    'mordeu': True})\n        for i, caminho in enumerate(detetor.proibidos()):\n            r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que se captaram 12 dos 337 recibos, contra os 11 da amostra",
+   "sha256_antes": "76040d3d02c815b1ff7b642c700ae19d506d861a95cfb699c1585ddd87f069ea",
+   "sha256_depois": "7611e34c8f0d69c7d4dca4815d05bf1cf205d618ad7f03f2d025d676b24d4fd2",
+   "contexto_antes": "ra que o primeiro `old_value` é o ponto de partida da cadeia, não uma prova histórica; neste PRR, essa prova vem do controlo do Git.\n\n**A amostra e o limite.** Captaram-se 11 dos 337 recibos que a C1e identificou, não os restantes 326. São 110 imagens dos recibos, nas duas edições e a 390, 768, 1024, 1280 e 1600 px, mais dez imagens da faixa de Évo",
+   "contexto_depois": "ra que o primeiro `old_value` é o ponto de partida da cadeia, não uma prova histórica; neste PRR, essa prova vem do controlo do Git.\n\n**A amostra e o limite.** Captaram-se 12 dos 337 recibos que a C1e identificou, não os restantes 326. São 110 imagens dos recibos, nas duas edições e a 390, 768, 1024, 1280 e 1600 px, mais dez imagens da faixa de Évo"
+  }
+ ]
+}
