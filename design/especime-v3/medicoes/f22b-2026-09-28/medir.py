@@ -22,6 +22,9 @@ def ler(p):
 
 def caminhos_pessoais(conteudo):
     texto = conteudo.decode("utf-8", "replace")
+    # O exemplo com reticências do mandato não identifica uma pasta. Só esta
+    # marca completa é excluída; uma continuação com um caminho continua a contar.
+    texto = re.sub("<pasta-pessoal>" + r"/\.{3}(?![./\w-])", "", texto)
     return bool(re.search(r"/(?:Users|home)/[^/\s]+/|" + "~" + r"/[^\s]+|<pasta-pessoal>" + r"/[^\s]+", texto)
                 or str(Path.home()) in texto or Path.home().name in texto)
 
@@ -91,7 +94,10 @@ def main():
         "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
         "commits_motor": git(a.motor, "log", "--reverse", "--format=%H %s", f"{BASE_MOTOR}..HEAD").splitlines(),
         "commits_sitio_anteriores_ao_relatorio": git(sitio, "log", "--reverse", "--format=%H %s", f"{BASE_SITIO}..HEAD").splitlines(),
-        "commit_do_relatorio": "o commit que contém LEIA-ME.md, RESPOSTA-construtor-f22b.md e este medidas.json",
+        "commits_dos_relatorios": {
+            "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
+            "f22c": "cb1600b6e147f2bdc05f73396404f344b3495c2b",
+            "f22d": "o último commit desta passagem, que contém a revisão de LEIA-ME.md e medidas.json, as provas F2.2d e RESPOSTA-construtor-f22d.md; o SHA é dado fora do ramo"},
         "alteracoes_protegidas": proibidos,
         "brief_reproduzido": ler(a.provas / "brief.json"),
         "plantas": ler(a.provas / "plantas-detalhe.json"),
@@ -119,8 +125,8 @@ def main():
                     if base.with_suffix(".cabeca").read_text().strip() != registo["cabeca"]:
                         raise SystemExit("Cabeça incoerente: " + ficheiro.name)
                 execucoes_c[base.name] = registo
-        if execucoes_c["core-final"]["cabeca"] != git(a.motor, "rev-parse", "HEAD"):
-            raise SystemExit("O portão final não é da cabeça do motor")
+        # O portão F2.2c é histórico depois da F2.2d, mas continua na ascendência.
+        git(a.motor, "merge-base", "--is-ancestor", execucoes_c["core-final"]["cabeca"], "HEAD")
         cabecas_c = {execucoes_c[n]["cabeca"] for n in ("build", "verify", "typecheck")}
         if len(cabecas_c) != 1:
             raise SystemExit("Os portões F2.2c não têm a mesma cabeça")
@@ -130,6 +136,44 @@ def main():
             "custo": ler(f22c / "custo.json"),
             "cabeca_dos_portoes_do_sitio": cabecas_c.pop(),
             "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."}
+    f22d = saida / "provas/f22d"
+    if f22d.exists():
+        execucoes_d = {}
+        for pasta in (f22d, saida / "portoes/f22d"):
+            for ficheiro in sorted(pasta.glob("*.codigo")):
+                base = ficheiro.with_suffix("")
+                registo = ler(base.with_suffix(".json"))
+                codigo = int(ficheiro.read_text())
+                if codigo != registo["codigo"]:
+                    raise SystemExit("Código incoerente: " + ficheiro.name)
+                if base.with_suffix(".cabeca").read_text().strip() != registo["cabeca"]:
+                    raise SystemExit("Cabeça incoerente: " + ficheiro.name)
+                estado = registo["codigo_executado"]
+                if base.with_suffix(".arvore").read_text().strip() != estado["arvore"]:
+                    raise SystemExit("Árvore incoerente: " + ficheiro.name)
+                registo["codigo_lido_de"] = str(ficheiro.relative_to(saida))
+                registo["sha256_saida"] = hashlib.sha256(base.with_suffix(".log").read_bytes()).hexdigest()
+                execucoes_d[base.name] = registo
+        dados["f22d"] = {"execucoes": execucoes_d,
+            "custo": ler(f22d / "custo.json"),
+            "custo_do_bloco": ler(f22d / "custo-bloco.json"),
+            "prompt_reposto": ler(f22d / "prompt-reposto.json"),
+            "excecao_do_detetor": "Só o exemplo com reticências do mandato é excluído; não identifica uma pasta.",
+            "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."}
+        for nome in ("plantas-detalhe", "plantas-f22c-detalhe", "clone-detalhe"):
+            if (f22d / (nome + ".json")).exists():
+                dados["f22d"][nome] = ler(f22d / (nome + ".json"))
+        if "core-final" in execucoes_d:
+            final = execucoes_d["core-final"]
+            if final["cabeca"] != git(a.motor, "rev-parse", "HEAD"):
+                raise SystemExit("O portão F2.2d não correu na cabeça final do motor")
+            if final["codigo_executado"]["arvore"] != git(a.motor, "rev-parse", "HEAD^{tree}"):
+                raise SystemExit("A árvore do portão final do motor não é a do commit")
+        if all(n in execucoes_d for n in ("build", "verify", "typecheck")):
+            cabecas_d = {execucoes_d[n]["cabeca"] for n in ("build", "verify", "typecheck")}
+            if len(cabecas_d) != 1:
+                raise SystemExit("Os portões F2.2d não têm a mesma cabeça")
+            dados["f22d"]["cabeca_dos_portoes_do_sitio"] = cabecas_d.pop()
     texto = json.dumps(dados, ensure_ascii=False, indent=2) + "\n"
     # O conhecido-positivo exerce o mesmo detetor que percorre o pacote inteiro.
     positivo = "/" + "Users/" + "pessoa/" + "projeto/prova.log"
@@ -141,7 +185,7 @@ def main():
     vistos = conferir_pacote(saida)
     dados["varrimento_do_pacote"] = {"ficheiros_lidos": vistos, "caminhos_pessoais": 0, "conhecido_positivo": True}
     (saida / "medidas.json").write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"F2.2b: {dados['plantas']['provas']} plantas, {len(execucoes)} execuções com código lido de ficheiro")
+    print("F2.2b: provas históricas e passagens agregadas; códigos, árvores e varrimento do pacote conferidos")
 
 
 if __name__ == "__main__":

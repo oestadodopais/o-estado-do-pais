@@ -1,0 +1,20 @@
+{
+  "registos_retificados": [
+    "provas/f22c/fusao-rede",
+    "provas/f22c/fusao-rede-local",
+    "provas/f22c/fusao-rotinas",
+    "provas/f22c/fusao-fluxo",
+    "provas/f22c/commit-fusao",
+    "provas/f22c/trabalho-f22c",
+    "provas/f22c/trabalho-fluxo",
+    "provas/f22c/trabalho-rotinas",
+    "provas/f22c/commit-correcoes",
+    "provas/f22c/commit-provas",
+    "provas/f22c/isolamento",
+    "provas/commit-motor-1",
+    "provas/commit-motor-2",
+    "provas/core-inicial",
+    "provas/precommit-isolamento"
+  ],
+  "limite": "As cabeças antigas eram bases Git. As árvores históricas não foram fotografadas; as referências posteriores são explicitamente reconstituídas. As execuções F2.2d guardam a árvore antes de correr."
+}

@@ -1,0 +1,26 @@
+{
+  "comando": "git -C <motor> commit -m F2.2d: separar o limiar e provar a retoma e o código executado -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+  "ambiente_declarado": {},
+  "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+  "codigo_executado": {
+    "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+    "arvore": "b809749daf503b7292c77e149ebf1f096703a71e",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      ".github/README.md",
+      "indicators/out/f22c-2026-09-29/custo.py",
+      "indicators/out/f22c-2026-09-29/executar.py",
+      "indicators/out/f22d-2026-09-29/provar_execucao.py",
+      "indicators/painel.py",
+      "indicators/publicar_rotina.py",
+      "indicators/refresh.py",
+      "indicators/rotinas_test.py",
+      "sweeps/monthly.sh"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:03:19.026183+00:00",
+  "fim": "2026-09-29T23:06:48.861590+00:00",
+  "segundos": 209.818,
+  "codigo": 1
+}

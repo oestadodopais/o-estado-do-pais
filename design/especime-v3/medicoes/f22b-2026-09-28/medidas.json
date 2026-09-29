@@ -1,13 +1,13 @@
 {
   "bloco": "F2.2b",
-  "medido_em": "2026-09-29T22:05:11.892866+00:00",
+  "medido_em": "2026-09-29T23:11:58.062836+00:00",
   "bases": {
     "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
     "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
   },
   "cabecas_lidas": {
     "motor": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
-    "sitio": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc"
+    "sitio": "df1c262242dc94f5b6aef8d8e01f9e554209baf2"
   },
   "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
   "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
@@ -102,9 +102,15 @@
     "77d9e4076eb8098a45e6ca0cd3c27964d54a9301 Regista as provas e a resposta do F2.2b",
     "22510cd9119ae01a9bca8a75c4382654cbf7e0b2 F2.2b: juntar main ao ramo antes da passagem de correção (C1, PP1, CI1, a redação de 29.09 e o guião da aterragem), pelo lugar de direção: no registo das melhorias, as linhas M37 a M40 de main e a linha do F2.2b renumerada M41, dentro da tabela; no §2 da frescura, a forma de main da linha datada (a redação de 29.09, em português certo), que substitui a do construtor",
     "fb1dd0dd442684221a5e4aceae3b8ac5491d5546 F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)",
-    "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc F2.2c: corrigir a ordem da publicação e a natureza das medidas"
+    "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc F2.2c: corrigir a ordem da publicação e a natureza das medidas",
+    "cb1600b6e147f2bdc05f73396404f344b3495c2b F2.2c: registar as provas finais e a resposta do construtor",
+    "df1c262242dc94f5b6aef8d8e01f9e554209baf2 F2.2d: a releitura a frio da F2.2c pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o mandato da passagem F2.2d do Codex (as plantas do varrimento sem depender de um master local, que o portão do motor no GitHub não tem; o relatório de volta ao bloco inteiro; a recusa e o TLS num runner ditos e provados pela I116; o limiar à parte das linhas e com as mensagens do portátil de volta; e as plantas e as provas que faltavam)"
   ],
-  "commit_do_relatorio": "o commit que contém LEIA-ME.md, RESPOSTA-construtor-f22b.md e este medidas.json",
+  "commits_dos_relatorios": {
+    "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
+    "f22c": "cb1600b6e147f2bdc05f73396404f344b3495c2b",
+    "f22d": "o último commit desta passagem, que contém a revisão de LEIA-ME.md e medidas.json, as provas F2.2d e RESPOSTA-construtor-f22d.md; o SHA é dado fora do ramo"
+  },
   "alteracoes_protegidas": [],
   "brief_reproduzido": {
     "brief": "design/observatorio/BRIEF-F22b-as-corridas-prontas-a-armar.md",
@@ -231,6 +237,13 @@
       "fim": "2026-09-28T19:14:45.672273+00:00",
       "segundos": 209.396,
       "codigo": 1,
+      "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+      "codigo_executado": {
+        "tipo": "arvore_de_trabalho_por_registar",
+        "cabeca_base": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+        "arvore_fotografada_na_execucao": null,
+        "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução."
+      },
       "codigo_lido_de": "provas/core-inicial.codigo",
       "sha256_saida": "f9bf4551e8673063bc45fc1af53eabedd0bf05efc9b8f5be9a7d1f07a949b6b1"
     },
@@ -241,6 +254,13 @@
       "fim": "2026-09-28T19:30:47.929232+00:00",
       "segundos": 206.12,
       "codigo": 1,
+      "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+      "codigo_executado": {
+        "tipo": "arvore_de_trabalho_por_registar",
+        "cabeca_base": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+        "arvore_fotografada_na_execucao": null,
+        "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução."
+      },
       "codigo_lido_de": "provas/precommit-isolamento.codigo",
       "sha256_saida": "e3acde50721079e9d367d04f7cc7edafd9f78d54479a20286d89f87fccc011b8"
     },
@@ -251,6 +271,17 @@
       "fim": "2026-09-28T19:36:43.772146+00:00",
       "segundos": 206.451,
       "codigo": 0,
+      "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+      "codigo_executado": {
+        "tipo": "arvore_de_trabalho_por_registar",
+        "cabeca_base": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
+        "arvore_fotografada_na_execucao": null,
+        "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+        "referencia_posterior": {
+          "commit": "6432b88b000cdcdc47a08a8721bafac8f7ab023a",
+          "arvore": "faf3f7b3e509e8408918fd9ab41f37dccefa5461"
+        }
+      },
       "codigo_lido_de": "provas/commit-motor-1.codigo",
       "sha256_saida": "19a698c28dd70e18b3ce3c825f79f5c188c8f1eb8338471665d1f24c967efe54"
     },
@@ -261,6 +292,17 @@
       "fim": "2026-09-28T19:40:54.894956+00:00",
       "segundos": 218.013,
       "codigo": 0,
+      "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+      "codigo_executado": {
+        "tipo": "arvore_de_trabalho_por_registar",
+        "cabeca_base": "6432b88b000cdcdc47a08a8721bafac8f7ab023a",
+        "arvore_fotografada_na_execucao": null,
+        "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+        "referencia_posterior": {
+          "commit": "5335e129b3167c93d1822c8af7cecbb909922877",
+          "arvore": "8b3e86ec860ad9d6e5a7978454fc1de3a099dbb9"
+        }
+      },
       "codigo_lido_de": "provas/commit-motor-2.codigo",
       "sha256_saida": "d11b33042aaa7095ea9e2a68847f0a91a1b14b7c59d36d295cbd57922679e4a0"
     },
@@ -436,6 +478,17 @@
         "fim": "2026-09-29T21:35:48.578416+00:00",
         "segundos": 453.236,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "arvore_de_trabalho_por_registar",
+          "cabeca_base": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+            "arvore": "c8e488becdc6c4422d40476b630145d9f03921a2"
+          }
+        },
         "codigo_lido_de": "provas/f22c/commit-correcoes.codigo",
         "sha256_saida": "7ce5647a1b4baf41885516e26dbe71d1be6e271be357a3e1410eb1b1b901e310"
       },
@@ -447,6 +500,21 @@
         "fim": "2026-09-29T21:20:22.851503+00:00",
         "segundos": 410.629,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "juncao_por_registar",
+          "cabeca_base": "5335e129b3167c93d1822c8af7cecbb909922877",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+            "arvore": "da8537c5b9d23a78590377bd7500fbdf555e5f60"
+          },
+          "pais_da_juncao": [
+            "5335e129b3167c93d1822c8af7cecbb909922877",
+            "68318e0da2036cc29e4704fa1bb8a96dee246095"
+          ]
+        },
         "codigo_lido_de": "provas/f22c/commit-fusao.codigo",
         "sha256_saida": "6d3e8ff2f56aa7e42b8b43d86e44d7d9a081f73570936490f2fe7c5a3d564a66"
       },
@@ -458,6 +526,17 @@
         "fim": "2026-09-29T21:44:45.521771+00:00",
         "segundos": 461.164,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "arvore_de_trabalho_por_registar",
+          "cabeca_base": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+            "arvore": "407f78b3b55e88727fe489045277d8952a624e62"
+          }
+        },
         "codigo_lido_de": "provas/f22c/commit-provas.codigo",
         "sha256_saida": "0cc0abd15d665a8bfadd1fac6beaa789ed615b96f778c46b5a1e7f3d5fa70296"
       },
@@ -523,6 +602,21 @@
         "fim": "2026-09-29T21:11:35.470779+00:00",
         "segundos": 4.22,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "juncao_por_registar",
+          "cabeca_base": "5335e129b3167c93d1822c8af7cecbb909922877",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+            "arvore": "da8537c5b9d23a78590377bd7500fbdf555e5f60"
+          },
+          "pais_da_juncao": [
+            "5335e129b3167c93d1822c8af7cecbb909922877",
+            "68318e0da2036cc29e4704fa1bb8a96dee246095"
+          ]
+        },
         "codigo_lido_de": "provas/f22c/fusao-fluxo.codigo",
         "sha256_saida": "b0d3057f167e01e56a431cfce75cf9ccc28500a01ea8166f28cc5a29534c69db"
       },
@@ -533,6 +627,21 @@
         "fim": "2026-09-29T21:12:25.415406+00:00",
         "segundos": 28.606,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "juncao_por_registar",
+          "cabeca_base": "5335e129b3167c93d1822c8af7cecbb909922877",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+            "arvore": "da8537c5b9d23a78590377bd7500fbdf555e5f60"
+          },
+          "pais_da_juncao": [
+            "5335e129b3167c93d1822c8af7cecbb909922877",
+            "68318e0da2036cc29e4704fa1bb8a96dee246095"
+          ]
+        },
         "codigo_lido_de": "provas/f22c/fusao-rede-local.codigo",
         "sha256_saida": "ca91adca608b29fa7bda129e430751fe03c8efce95687b2d34991c799dc18858"
       },
@@ -543,6 +652,21 @@
         "fim": "2026-09-29T21:11:29.845594+00:00",
         "segundos": 0.675,
         "codigo": 1,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "juncao_por_registar",
+          "cabeca_base": "5335e129b3167c93d1822c8af7cecbb909922877",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+            "arvore": "da8537c5b9d23a78590377bd7500fbdf555e5f60"
+          },
+          "pais_da_juncao": [
+            "5335e129b3167c93d1822c8af7cecbb909922877",
+            "68318e0da2036cc29e4704fa1bb8a96dee246095"
+          ]
+        },
         "codigo_lido_de": "provas/f22c/fusao-rede.codigo",
         "sha256_saida": "e49443ed4e1d9e7e3cc5aa4626c34d402f6c14abe787c5f5755efb5cb8251292"
       },
@@ -553,6 +677,21 @@
         "fim": "2026-09-29T21:11:31.175609+00:00",
         "segundos": 1.158,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "juncao_por_registar",
+          "cabeca_base": "5335e129b3167c93d1822c8af7cecbb909922877",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+            "arvore": "da8537c5b9d23a78590377bd7500fbdf555e5f60"
+          },
+          "pais_da_juncao": [
+            "5335e129b3167c93d1822c8af7cecbb909922877",
+            "68318e0da2036cc29e4704fa1bb8a96dee246095"
+          ]
+        },
         "codigo_lido_de": "provas/f22c/fusao-rotinas.codigo",
         "sha256_saida": "cdf7a7231e136e6bd9c0640a65af2ac23b76ef1d05e8c92c3bdccdd9827d7187"
       },
@@ -568,6 +707,17 @@
         "fim": "2026-09-29T21:38:11.616044+00:00",
         "segundos": 3.96,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "arvore_de_trabalho_por_registar",
+          "cabeca_base": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+            "arvore": "407f78b3b55e88727fe489045277d8952a624e62"
+          }
+        },
         "codigo_lido_de": "provas/f22c/isolamento.codigo",
         "sha256_saida": "01a4beb61e3c7d23d8ce215716c836cbb3a22a37b177ccf7678b2aabe4d4b5c1"
       },
@@ -616,6 +766,17 @@
         "fim": "2026-09-29T21:26:03.371056+00:00",
         "segundos": 3.748,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "arvore_de_trabalho_por_registar",
+          "cabeca_base": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+            "arvore": "c8e488becdc6c4422d40476b630145d9f03921a2"
+          }
+        },
         "codigo_lido_de": "provas/f22c/trabalho-f22c.codigo",
         "sha256_saida": "a1d8111a5dd714b9716482e5fffefdeb24c7d80d9f4adadba7d5414f0153d9ec"
       },
@@ -627,6 +788,17 @@
         "fim": "2026-09-29T21:26:04.874515+00:00",
         "segundos": 5.256,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "arvore_de_trabalho_por_registar",
+          "cabeca_base": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+            "arvore": "c8e488becdc6c4422d40476b630145d9f03921a2"
+          }
+        },
         "codigo_lido_de": "provas/f22c/trabalho-fluxo.codigo",
         "sha256_saida": "d7b419ecdfdd4c96e0bc0a7507d498df062385bfdf48adf7ff7ec943878593db"
       },
@@ -638,6 +810,17 @@
         "fim": "2026-09-29T21:26:01.171855+00:00",
         "segundos": 1.553,
         "codigo": 0,
+        "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+        "codigo_executado": {
+          "tipo": "arvore_de_trabalho_por_registar",
+          "cabeca_base": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+          "arvore_fotografada_na_execucao": null,
+          "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+          "referencia_posterior": {
+            "commit": "e7dbae267919aa6e9eb0345d25a085f50e4c5a72",
+            "arvore": "c8e488becdc6c4422d40476b630145d9f03921a2"
+          }
+        },
         "codigo_lido_de": "provas/f22c/trabalho-rotinas.codigo",
         "sha256_saida": "2561f3a49b206973fd4a43503605c525d39cb9d3edf75490603baa8e07995e11"
       },
@@ -775,8 +958,417 @@
     "cabeca_dos_portoes_do_sitio": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
     "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."
   },
+  "f22d": {
+    "execucoes": {
+      "commit-limiar": {
+        "comando": "git -C <motor> commit -m F2.2d: separar o limiar e provar a retoma e o código executado -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "codigo_executado": {
+          "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+          "arvore": "b809749daf503b7292c77e149ebf1f096703a71e",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            ".github/README.md",
+            "indicators/out/f22c-2026-09-29/custo.py",
+            "indicators/out/f22c-2026-09-29/executar.py",
+            "indicators/out/f22d-2026-09-29/provar_execucao.py",
+            "indicators/painel.py",
+            "indicators/publicar_rotina.py",
+            "indicators/refresh.py",
+            "indicators/rotinas_test.py",
+            "sweeps/monthly.sh"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:03:19.026183+00:00",
+        "fim": "2026-09-29T23:06:48.861590+00:00",
+        "segundos": 209.818,
+        "codigo": 1,
+        "codigo_lido_de": "provas/f22d/commit-limiar.codigo",
+        "sha256_saida": "0e82688c0254feda1754aabd136c9e2dd267943c316177062fa6aad3a969605f"
+      },
+      "corredor": {
+        "comando": "python3 indicators/corredor.py --provar",
+        "ambiente_declarado": {},
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "codigo_executado": {
+          "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+          "arvore": "a1413a80c54b0035e0b7ba0a16c0632c50c9ee8a",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/out/f22c-2026-09-29/custo.py",
+            "indicators/out/f22c-2026-09-29/executar.py",
+            "indicators/painel.py",
+            "indicators/publicar_rotina.py",
+            "indicators/refresh.py",
+            "indicators/rotinas_test.py",
+            "sweeps/monthly.sh"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T22:57:51.338036+00:00",
+        "fim": "2026-09-29T22:58:05.420424+00:00",
+        "segundos": 14.082,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/corredor.codigo",
+        "sha256_saida": "210183e2f84c2a6feb46354aeeb47c5cf568f4fe887a8dfe88381ca427b793d2"
+      },
+      "medidor-planta": {
+        "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
+        "ambiente_declarado": {},
+        "cabeca": "df1c262242dc94f5b6aef8d8e01f9e554209baf2",
+        "codigo_executado": {
+          "cabeca_base": "df1c262242dc94f5b6aef8d8e01f9e554209baf2",
+          "arvore": "9e8bb1e604295ebe27e8d1f82a4ea4ccd228ee11",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "design/especime-v3/medicoes/f22b-2026-09-28/medir.py",
+            "design/especime-v3/medicoes/f22b-2026-09-28/prompts/PROMPT-f22c-construtor.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/commit-motor-1.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/commit-motor-2.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/core-inicial.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/commit-correcoes.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/commit-fusao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/commit-provas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/fusao-fluxo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/fusao-rede-local.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/fusao-rede.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/fusao-rotinas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/isolamento.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/trabalho-f22c.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/trabalho-fluxo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/trabalho-rotinas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/api-versoes.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/commit-limiar.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/corredor.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/corredor.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/corredor.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/corredor.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/corredor.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/custo-bloco.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/custo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/prompt-reposto.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/registos-historicos.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/precommit-isolamento.json"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:06:04.028175+00:00",
+        "fim": "2026-09-29T23:06:04.063455+00:00",
+        "segundos": 0.035,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/medidor-planta.codigo",
+        "sha256_saida": "dfb9843320e08227b571758cbaa21831bc601ea9c358c6fd00ad873068b351a2"
+      },
+      "registro-planta": {
+        "comando": "python3 -B <motor>/indicators/out/f22d-2026-09-29/provar_execucao.py",
+        "ambiente_declarado": {},
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "codigo_executado": {
+          "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+          "arvore": "2fcbe2f03db09f512bcca974e5855ec6e7b7cdbe",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            ".github/README.md",
+            "indicators/out/f22c-2026-09-29/custo.py",
+            "indicators/out/f22c-2026-09-29/executar.py",
+            "indicators/out/f22d-2026-09-29/custo_bloco.py",
+            "indicators/out/f22d-2026-09-29/provar_execucao.py",
+            "indicators/painel.py",
+            "indicators/publicar_rotina.py",
+            "indicators/refresh.py",
+            "indicators/rotinas_test.py",
+            "sweeps/monthly.sh"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:06:03.915503+00:00",
+        "fim": "2026-09-29T23:06:04.107379+00:00",
+        "segundos": 0.192,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/registro-planta.codigo",
+        "sha256_saida": "b342542e93dfff45f5340e67961f4a6b388076671240e96680abc1b41f70c00c"
+      },
+      "trabalho-rotinas": {
+        "comando": "python3 -m indicators.rotinas_test",
+        "ambiente_declarado": {
+          "F22B_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas-detalhe.json"
+        },
+        "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+        "codigo_executado": {
+          "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+          "arvore": "2fcbe2f03db09f512bcca974e5855ec6e7b7cdbe",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            ".github/README.md",
+            "indicators/out/f22c-2026-09-29/custo.py",
+            "indicators/out/f22c-2026-09-29/executar.py",
+            "indicators/out/f22d-2026-09-29/custo_bloco.py",
+            "indicators/out/f22d-2026-09-29/provar_execucao.py",
+            "indicators/painel.py",
+            "indicators/publicar_rotina.py",
+            "indicators/refresh.py",
+            "indicators/rotinas_test.py",
+            "sweeps/monthly.sh"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:06:01.383335+00:00",
+        "fim": "2026-09-29T23:06:01.940661+00:00",
+        "segundos": 0.557,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/trabalho-rotinas.codigo",
+        "sha256_saida": "2b5b8329d93062c07be6b06024712f5056750b6cbe9199fe285a9aceedfa07e5"
+      }
+    },
+    "custo": {
+      "origem": "event_msg/token_count da sessão indicada",
+      "inicio": "2026-09-29T21:08:52.877Z",
+      "instante_do_contador": "2026-09-29T23:05:05.704Z",
+      "modelo_exposto": "gpt-6-astra",
+      "simbolos": {
+        "input_tokens": 25796983,
+        "cached_input_tokens": 25380608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 112124,
+        "reasoning_output_tokens": 44146,
+        "total_tokens": 25909107
+      },
+      "segundos": 1013.109,
+      "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido.",
+      "inicio_passagem": "2026-09-29T22:48:12.595Z",
+      "contador_anterior": {
+        "instante": "2026-09-29T22:07:11.475Z",
+        "simbolos": {
+          "input_tokens": 21666506,
+          "cached_input_tokens": 21352064,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 82169,
+          "reasoning_output_tokens": 31828,
+          "total_tokens": 21748675
+        }
+      },
+      "acrescimo_na_passagem": {
+        "input_tokens": 4130477,
+        "cached_input_tokens": 4028544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29955,
+        "reasoning_output_tokens": 12318,
+        "total_tokens": 4160432
+      }
+    },
+    "custo_do_bloco": {
+      "origem": "Contadores token_count das sessões; fronteiras das retomas registadas nas provas.",
+      "segmentos": {
+        "construcao": {
+          "inicio": "2026-09-28T18:48:49.664Z",
+          "contador_anterior": null,
+          "contador_final": {
+            "instante": "2026-09-28T19:55:27.415Z",
+            "simbolos": {
+              "input_tokens": 17676626,
+              "cached_input_tokens": 17072512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 96378,
+              "reasoning_output_tokens": 29551,
+              "total_tokens": 17773004
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 17676626,
+            "cached_input_tokens": 17072512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 96378,
+            "reasoning_output_tokens": 29551,
+            "total_tokens": 17773004
+          },
+          "segundos": 3997.751
+        },
+        "retoma": {
+          "inicio": "2026-09-29T19:46:50.923Z",
+          "contador_anterior": {
+            "instante": "2026-09-28T19:55:27.415Z",
+            "simbolos": {
+              "input_tokens": 17676626,
+              "cached_input_tokens": 17072512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 96378,
+              "reasoning_output_tokens": 29551,
+              "total_tokens": 17773004
+            }
+          },
+          "contador_final": {
+            "instante": "2026-09-29T20:17:42.680Z",
+            "simbolos": {
+              "input_tokens": 28115814,
+              "cached_input_tokens": 27284864,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 131313,
+              "reasoning_output_tokens": 50438,
+              "total_tokens": 28247127
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 10439188,
+            "cached_input_tokens": 10212352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34935,
+            "reasoning_output_tokens": 20887,
+            "total_tokens": 10474123
+          },
+          "segundos": 1851.757
+        },
+        "f22c": {
+          "inicio": "2026-09-29T21:08:52.877Z",
+          "contador_anterior": null,
+          "contador_final": {
+            "instante": "2026-09-29T22:07:11.475Z",
+            "simbolos": {
+              "input_tokens": 21666506,
+              "cached_input_tokens": 21352064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82169,
+              "reasoning_output_tokens": 31828,
+              "total_tokens": 21748675
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 21666506,
+            "cached_input_tokens": 21352064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 82169,
+            "reasoning_output_tokens": 31828,
+            "total_tokens": 21748675
+          },
+          "segundos": 3498.598
+        },
+        "f22d": {
+          "inicio": "2026-09-29T22:48:12.595Z",
+          "contador_anterior": {
+            "instante": "2026-09-29T22:07:11.475Z",
+            "simbolos": {
+              "input_tokens": 21666506,
+              "cached_input_tokens": 21352064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82169,
+              "reasoning_output_tokens": 31828,
+              "total_tokens": 21748675
+            }
+          },
+          "contador_final": {
+            "instante": "2026-09-29T23:05:05.704Z",
+            "simbolos": {
+              "input_tokens": 25796983,
+              "cached_input_tokens": 25380608,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 112124,
+              "reasoning_output_tokens": 44146,
+              "total_tokens": 25909107
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 4130477,
+            "cached_input_tokens": 4028544,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 29955,
+            "reasoning_output_tokens": 12318,
+            "total_tokens": 4160432
+          },
+          "segundos": 1013.109
+        }
+      },
+      "total_simbolos": 54156234,
+      "total_segundos_dos_segmentos": 10361.215,
+      "fotografias_historicas": {
+        "construcao": {
+          "inicio_sessao": "2026-09-28T18:48:49.664Z",
+          "ultima_medicao": "2026-09-28T19:48:02.322Z",
+          "segundos_ate_medicao": 3552.658,
+          "simbolos": {
+            "input_tokens": 15742780,
+            "cached_input_tokens": 15150336,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 87834,
+            "reasoning_output_tokens": 24637,
+            "total_tokens": 15830614
+          },
+          "fonte": "contador cumulativo token_count da sessão de construção",
+          "limite": "fotografia antes do commit do relatório; não inclui a resposta final"
+        },
+        "retoma": {
+          "primeiro_evento_da_retoma": "2026-09-29T19:46:50.923Z",
+          "ultima_medicao": "2026-09-29T20:10:49.328Z",
+          "segundos_ate_medicao": 1438.405,
+          "contador_anterior_a_retoma": {
+            "instante": "2026-09-28T19:55:27.415Z",
+            "simbolos": {
+              "input_tokens": 17676626,
+              "cached_input_tokens": 17072512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 96378,
+              "reasoning_output_tokens": 29551,
+              "total_tokens": 17773004
+            }
+          },
+          "simbolos_cumulativos": {
+            "input_tokens": 26238673,
+            "cached_input_tokens": 25434880,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 122034,
+            "reasoning_output_tokens": 46587,
+            "total_tokens": 26360707
+          },
+          "acrescimo_na_retoma": {
+            "input_tokens": 8562047,
+            "cached_input_tokens": 8362368,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 25656,
+            "reasoning_output_tokens": 17036,
+            "total_tokens": 8587703
+          },
+          "fonte": "eventos token_count da mesma sessão",
+          "limite": "fotografia durante o fecho; não inclui os atos posteriores nem a resposta final"
+        },
+        "f22c": {
+          "origem": "event_msg/token_count da sessão indicada",
+          "inicio": "2026-09-29T21:08:52.877Z",
+          "instante_do_contador": "2026-09-29T22:02:04.021Z",
+          "modelo_exposto": "gpt-6-astra",
+          "simbolos": {
+            "input_tokens": 21005236,
+            "cached_input_tokens": 20722560,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 74201,
+            "reasoning_output_tokens": 30442,
+            "total_tokens": 21079437
+          },
+          "segundos": 3191.144,
+          "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido."
+        }
+      },
+      "limite": "Inclui o fecho dos segmentos anteriores às retomas. A F2.2d termina na fotografia do seu contador, antes do último commit e da resposta. Símbolos incluem cache; segundos são tempo decorrido, sem os intervalos entre passagens; não há medição monetária."
+    },
+    "prompt_reposto": {
+      "fonte": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546",
+      "ficheiro": "prompts/PROMPT-f22c-construtor.md",
+      "sha256_fonte": "fa7d458ea26b986f90d3c171f39881149e3f2c2ef9e3c411b1830f97d0cfb835",
+      "sha256_reposto": "fa7d458ea26b986f90d3c171f39881149e3f2c2ef9e3c411b1830f97d0cfb835",
+      "bytes_iguais": true,
+      "excecao_do_detetor": "O exemplo <pasta-pessoal>/... não é um caminho; as continuações e os caminhos reais continuam detetados."
+    },
+    "excecao_do_detetor": "Só o exemplo com reticências do mandato é excluído; não identifica uma pasta.",
+    "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."
+  },
   "varrimento_do_pacote": {
-    "ficheiros_lidos": 165,
+    "ficheiros_lidos": 198,
     "caminhos_pessoais": 0,
     "conhecido_positivo": true
   }
