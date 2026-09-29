@@ -1,0 +1,163 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "risco-de-pobreza-ou-exclusao-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "People at risk of poverty or social exclusion"
+name_source: "label"
+unit: "%"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "People at risk of poverty or social exclusion"
+  edition: "tipslc10, freq=A, sex=T, unit=PC, age=TOTAL"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipslc10/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC"
+access_date: "2026-09-29"
+published_at: "2026-09-17"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "People at risk of poverty or social exclusion — Percentage — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "risco-de-pobreza-ou-exclusao-2025-ue"
+linha_de_portugal: "risco-de-pobreza-ou-exclusao-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "b": "break in time series"
+  "p": "provisional"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "16,5"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Belgium — 2025: 16.5"
+    bandeira: null
+  - geo: "BG"
+    valor: "29,0"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Bulgaria — 2025: 29.0"
+    bandeira: null
+  - geo: "CZ"
+    valor: "11,5"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Czechia — 2025: 11.5"
+    bandeira: null
+  - geo: "DK"
+    valor: "17,9"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Denmark — 2025: 17.9"
+    bandeira: null
+  - geo: "DE"
+    valor: "21,2"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Germany — 2025: 21.2"
+    bandeira: null
+  - geo: "EE"
+    valor: "21,8"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Estonia — 2025: 21.8"
+    bandeira: null
+  - geo: "IE"
+    valor: "18,8"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Ireland — 2025: 18.8"
+    bandeira: null
+  - geo: "EL"
+    valor: "27,5"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Greece — 2025: 27.5"
+    bandeira: null
+  - geo: "ES"
+    valor: "25,7"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Spain — 2025: 25.7"
+    bandeira: null
+  - geo: "FR"
+    valor: "20,8"
+    excerto: "People at risk of poverty or social exclusion — Percentage — France — 2025: 20.8"
+    bandeira: null
+  - geo: "HR"
+    valor: "20,7"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Croatia — 2025: 20.7"
+    bandeira: null
+  - geo: "IT"
+    valor: "22,6"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Italy — 2025: 22.6"
+    bandeira: null
+  - geo: "CY"
+    valor: "17,1"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Cyprus — 2025: 17.1"
+    bandeira: null
+  - geo: "LV"
+    valor: "24,7"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Latvia — 2025: 24.7"
+    bandeira: null
+  - geo: "LT"
+    valor: "26,3"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Lithuania — 2025: 26.3 p"
+    bandeira: "p"
+  - geo: "LU"
+    valor: "18,2"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Luxembourg — 2025: 18.2 b"
+    bandeira: "b"
+  - geo: "HU"
+    valor: "19,5"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Hungary — 2025: 19.5"
+    bandeira: null
+  - geo: "MT"
+    valor: "19,4"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Malta — 2025: 19.4"
+    bandeira: null
+  - geo: "NL"
+    valor: "15,8"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Netherlands — 2025: 15.8"
+    bandeira: null
+  - geo: "AT"
+    valor: "18,6"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Austria — 2025: 18.6"
+    bandeira: null
+  - geo: "PL"
+    valor: "15,0"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Poland — 2025: 15.0"
+    bandeira: null
+  - geo: "PT"
+    valor: "18,6"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Portugal — 2025: 18.6"
+    bandeira: null
+  - geo: "RO"
+    valor: "27,4"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Romania — 2025: 27.4"
+    bandeira: null
+  - geo: "SI"
+    valor: "15,5"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Slovenia — 2025: 15.5"
+    bandeira: null
+  - geo: "SK"
+    valor: "16,7"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Slovakia — 2025: 16.7"
+    bandeira: null
+  - geo: "FI"
+    valor: "17,2"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Finland — 2025: 17.2"
+    bandeira: null
+  - geo: "SE"
+    valor: "18,6"
+    excerto: "People at risk of poverty or social exclusion — Percentage — Sweden — 2025: 18.6"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "20,9"
+    excerto: "People at risk of poverty or social exclusion — Percentage — European Union - 27 countries (from 2020) — 2025: 20.9"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «risco-de-pobreza-ou-exclusao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «risco-de-pobreza-ou-exclusao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, sex=T, unit=PC, age=TOTAL, time=2025. Corpo alojado: ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json (sha256 8317a25579e34824…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

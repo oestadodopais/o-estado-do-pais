@@ -1,0 +1,163 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "racio-s80-s20-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Income quintile share ratio (S80/S20) by sex"
+name_source: "label"
+unit: "rácio"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Income quintile share ratio (S80/S20) by sex"
+  edition: "tessi180, freq=A, age=TOTAL, sex=T, unit=RAT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tessi180/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T"
+access_date: "2026-09-29"
+published_at: "2026-09-17"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Income quintile share ratio (S80/S20) by sex — Ratio — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "racio-s80-s20-2025-ue"
+linha_de_portugal: "racio-s80-s20-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "b": "break in time series"
+  "p": "provisional"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "3,25"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Belgium — 2025: 3.25"
+    bandeira: null
+  - geo: "BG"
+    valor: "6,94"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Bulgaria — 2025: 6.94"
+    bandeira: null
+  - geo: "CZ"
+    valor: "3,34"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Czechia — 2025: 3.34"
+    bandeira: null
+  - geo: "DK"
+    valor: "4,12"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Denmark — 2025: 4.12"
+    bandeira: null
+  - geo: "DE"
+    valor: "4,68"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Germany — 2025: 4.68"
+    bandeira: null
+  - geo: "EE"
+    valor: "5,07"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Estonia — 2025: 5.07"
+    bandeira: null
+  - geo: "IE"
+    valor: "3,89"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Ireland — 2025: 3.89"
+    bandeira: null
+  - geo: "EL"
+    valor: "5,17"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Greece — 2025: 5.17"
+    bandeira: null
+  - geo: "ES"
+    valor: "5,24"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Spain — 2025: 5.24"
+    bandeira: null
+  - geo: "FR"
+    valor: "4,74"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — France — 2025: 4.74"
+    bandeira: null
+  - geo: "HR"
+    valor: "4,78"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Croatia — 2025: 4.78"
+    bandeira: null
+  - geo: "IT"
+    valor: "5,13"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Italy — 2025: 5.13"
+    bandeira: null
+  - geo: "CY"
+    valor: "4,60"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Cyprus — 2025: 4.60"
+    bandeira: null
+  - geo: "LV"
+    valor: "6,68"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Latvia — 2025: 6.68"
+    bandeira: null
+  - geo: "LT"
+    valor: "6,54"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Lithuania — 2025: 6.54 p"
+    bandeira: "p"
+  - geo: "LU"
+    valor: "4,60"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Luxembourg — 2025: 4.60 b"
+    bandeira: "b"
+  - geo: "HU"
+    valor: "4,68"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Hungary — 2025: 4.68"
+    bandeira: null
+  - geo: "MT"
+    valor: "4,49"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Malta — 2025: 4.49"
+    bandeira: null
+  - geo: "NL"
+    valor: "3,76"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Netherlands — 2025: 3.76"
+    bandeira: null
+  - geo: "AT"
+    valor: "4,25"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Austria — 2025: 4.25"
+    bandeira: null
+  - geo: "PL"
+    valor: "3,63"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Poland — 2025: 3.63"
+    bandeira: null
+  - geo: "PT"
+    valor: "4,86"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Portugal — 2025: 4.86"
+    bandeira: null
+  - geo: "RO"
+    valor: "4,37"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Romania — 2025: 4.37"
+    bandeira: null
+  - geo: "SI"
+    valor: "3,55"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Slovenia — 2025: 3.55"
+    bandeira: null
+  - geo: "SK"
+    valor: "3,27"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Slovakia — 2025: 3.27"
+    bandeira: null
+  - geo: "FI"
+    valor: "3,93"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Finland — 2025: 3.93"
+    bandeira: null
+  - geo: "SE"
+    valor: "4,58"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — Sweden — 2025: 4.58"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "4,62"
+    excerto: "Income quintile share ratio (S80/S20) by sex — Ratio — European Union - 27 countries (from 2020) — 2025: 4.62"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «racio-s80-s20-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «racio-s80-s20-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, age=TOTAL, sex=T, unit=RAT, time=2025. Corpo alojado: ue1/032-eurostat-racio-s80-s20-2025-paises.json (sha256 3d829dff83723da5…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []
