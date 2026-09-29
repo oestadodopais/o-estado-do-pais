@@ -3,8 +3,9 @@
 
 Lê as duas frases e as palavras do empate no §3, ponto 5, do brief UE1; aplica-lhes as trocas de
 acertos-ue1.json; rende a declaração src/data/faixa-da-uniao.mjs com os mesmos lugares ({conta},
-{período}, {valor}, {país}, {n}) e compara as seis formas (duas línguas, três ramos: sem empate, empate
-com um país, empate com vários). Escreve acertos-ue1-resultado.json ao lado e sai com 1 se alguma
+{período}, {valor}, {país}, {n} e, desde a passagem UE1b, {ordinal} para o sufixo do ordinal inglês, o
+acerto F4) e compara as seis formas (duas línguas, três ramos: sem empate, empate com um país, empate
+com vários). Escreve acertos-ue1-resultado.json ao lado e sai com 1 se alguma
 forma diferir. Não lê a rede nem o motor. Corre a partir da raiz do sítio.
 """
 import json
@@ -50,6 +51,8 @@ def rende(partes, lingua, ramo):
             out += "Portugal"
         elif "lugar" in p:
             out += "{n}"
+        elif "ordinal" in p:
+            out += "{ordinal}"
         elif "aPar" in p:
             out += rende(palavras[lingua]["aPar"][ramo], lingua, ramo) if ramo else ""
     return out

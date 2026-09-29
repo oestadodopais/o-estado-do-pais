@@ -17,6 +17,15 @@
  * A ORDEM DOS PONTOS É A DA SÉRIE: a protocolar da tabela dos nomes, e a União
  * no fim. Não se ordena por valor, porque o recibo é a prova do que a fonte
  * publica, e a ordem por valor é a da faixa do cartão.
+ *
+ * O QUE QUER DIZER CADA MARCA (a passagem UE1b, 29.09.2026). A tabela mostra a
+ * letra que a fonte põe ao ponto, tal como a resposta a escreve; ao lado dela,
+ * cada marca que aparece na tabela diz-se uma vez, com as palavras com que a
+ * faixa do cartão a mostra (`PALAVRAS_DA_FAIXA`) e com a definição que a própria
+ * resposta do Eurostat traz (o campo `bandeiras` da série, que o motor tira de
+ * `extension.status.label` e confere contra o corpo alojado, VS2, e que o portão
+ * de HTML compara aqui pela marca `data-serie-campo`). Uma marca da tabela sem
+ * definição, ou uma definição sem marca na tabela, fecha a construção.
  */
 import Base from '../layouts/Base.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
@@ -25,6 +34,7 @@ import NomeDoPais from '../components/serie/NomeDoPais.astro';
 import CampoDaSerie from '../components/serie/CampoDaSerie.astro';
 import DataDaSerie from '../components/serie/DataDaSerie.astro';
 import { getClaim } from '../lib/ledger.mjs';
+import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import { getSerie, pontosDaSerie, paisesDaUniao, fonteDaTabelaDosPaises, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
 import { nomeDoCartao } from '../lib/nomes.mjs';
 import { routePath, LANGS } from '../lib/routes.mjs';
@@ -43,6 +53,17 @@ const linhaUe = getClaim(String(serie.linha_da_uniao));
 const pontos = pontosDaSerie(serie);
 const documento = /** @type {Record<string, string>} */ (serie.document);
 const bandeiras = /** @type {Record<string, string>} */ (serie.bandeiras ?? {});
+/* AS MARCAS DA TABELA, pela ordem em que aparecem nela, e cada uma com a sua
+   definição e as suas palavras: o que falta fecha a construção aqui. */
+const marcasNaTabela = [...new Set(pontos.map((p) => (p.bandeira ? String(p.bandeira) : '')).filter(Boolean))];
+const palavrasDasMarcas = PALAVRAS_DA_FAIXA[lang].ressalvas;
+for (const marca of marcasNaTabela) {
+  if (!bandeiras[marca]) throw new Error(`série «${id}»: a marca «${marca}» está na tabela e a série não traz a definição dela.`);
+  if (!palavrasDasMarcas[marca]) throw new Error(`série «${id}»: a marca «${marca}» não tem palavras declaradas em src/data/faixa-da-uniao.mjs (${lang}).`);
+}
+for (const marca of Object.keys(bandeiras)) {
+  if (!marcasNaTabela.includes(marca)) throw new Error(`série «${id}»: a definição da marca «${marca}» não tem marca nenhuma na tabela.`);
+}
 const unidade = unidadeDaLinha(serie.unit, lang);
 const nome = nomeDoCartao(linhaPt, lang);
 if (!nome) throw new Error(`série «${id}»: a linha portuguesa não tem nome de cartão.`);
@@ -91,6 +112,7 @@ const descricao = `${s.livro.serie.eyebrow} · ${nome.texto} ${s.livro.serie.nos
 
       <section class="linha-bloco serie-pontos" aria-labelledby="pontos">
         <h2 class="linha-bloco-titulo" id="pontos">{s.livro.serie.pontosK}</h2>
+        <div class:list={['serie-pontos-corpo', marcasNaTabela.length > 0 && 'serie-pontos-com-marcas']}>
         <table class="serie-tabela" data-serie-tabela={id}>
           <thead>
             <tr>
@@ -110,18 +132,35 @@ const descricao = `${s.livro.serie.eyebrow} · ${nome.texto} ${s.livro.serie.nos
                   </th>
                   <td class="serie-num"><PontoDaSerie serie={id} geo={geo} /></td>
                   <td class="serie-marca">
-                    {marca && (
-                      <>
-                        <span data-ponto-bandeira={`${id}#${geo}`}>{marca}</span>{' '}
-                        <CampoDaSerie serie={id} campo={`bandeiras.${marca}`} valor={bandeiras[marca]} lingua={lang === 'pt' ? 'en' : null} class="serie-marca-rotulo" />
-                      </>
-                    )}
+                    {marca && <span data-ponto-bandeira={`${id}#${geo}`}>{marca}</span>}
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        {
+          marcasNaTabela.length > 0 && (
+            <div class="serie-marcas" data-serie-marcas={id}>
+              <h3 class="serie-marcas-titulo">{s.livro.serie.marcasK}</h3>
+              <dl class="serie-marcas-lista">
+                {marcasNaTabela.map((marca) => (
+                  <div class="serie-marca-entrada">
+                    <dt>
+                      <span data-serie-marca={`${id}#${marca}`}>{marca}</span>
+                    </dt>
+                    <dd>
+                      <span class="serie-marca-palavras" data-serie-marca-palavras={`${id}#${marca}`}>{palavrasDasMarcas[marca]}</span>
+                      {'; '}{s.livro.serie.naResposta}{' «'}<CampoDaSerie serie={id} campo={`bandeiras.${marca}`} valor={bandeiras[marca]} lingua={lang === 'pt' ? 'en' : null} class="serie-marca-rotulo" />{'»'}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="serie-marcas-nota">{s.livro.serie.marcasFrase}</p>
+            </div>
+          )
+        }
+        </div>
       </section>
 
       <section class="linha-bloco serie-prova" aria-labelledby="prova-k" id="prova">

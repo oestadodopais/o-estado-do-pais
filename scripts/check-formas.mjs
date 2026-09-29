@@ -148,8 +148,8 @@ import {
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
-import { lerSeriesDoPortao, lerPaisesDoPortao } from './series-do-portao.mjs';
-import { conferirFaixas, plantasDaFaixa } from '../tests/cartao/faixa.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
+import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa } from '../tests/cartao/faixa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -422,6 +422,11 @@ const contas = {
   frases_das_faixas: 0,
   empates_nas_faixas: 0,
   plantas_das_faixas: 0,
+  ressalvas_nas_pontas: 0,
+  ressalvas_nos_temas: 0,
+  ordinais_conferidos: 0,
+  marcas_com_palavras: 0,
+  plantas_das_palavras: 0,
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
@@ -496,8 +501,10 @@ for (const ficheiro of paginasDe(DIST)) {
     contas.marcas_das_faixas += f19.contas.marcas;
     contas.frases_das_faixas += f19.contas.frases;
     contas.empates_nas_faixas += f19.contas.empates;
+    contas.ressalvas_nas_pontas += f19.contas.ressalvas;
     if (rota?.key === 'temas') {
       contas.faixas_nos_temas += f19.contas.faixas;
+      contas.ressalvas_nos_temas += f19.contas.ressalvas;
       if (!f19.erros.length) {
         for (const planta of plantasDaFaixa(html, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO })) {
           contas.plantas_das_faixas++;
@@ -1305,6 +1312,36 @@ if (SERIES_DO_PORTAO.size && contas.plantas_das_faixas === 0) {
   err('F19: nenhuma planta da faixa correu: a célula não provou que morde.');
 }
 
+/* F19g · F19h (UE1b, 29.09.2026): as palavras da faixa, uma vez por corrida e
+   sem página (o ordinal inglês contra a tabela escrita dos 27, e as palavras de
+   cada marca que um ponto leva), com as suas plantas. E o conhecido-positivo das
+   ressalvas: cada ponta cujo ponto leva marca mostra-a nas duas páginas dos
+   temas, e o número esperado sai das séries e não de uma contagem à mão. */
+if (SERIES_DO_PORTAO.size) {
+  const palavrasDaFaixa = conferirPalavrasDaFaixa(SERIES_DO_PORTAO);
+  for (const e of palavrasDaFaixa.erros) err(`src/data/faixa-da-uniao.mjs: ${e}`);
+  contas.ordinais_conferidos = palavrasDaFaixa.contas.ordinais;
+  contas.marcas_com_palavras = palavrasDaFaixa.contas.marcas;
+  if (!palavrasDaFaixa.erros.length) {
+    for (const planta of plantasDasPalavrasDaFaixa(SERIES_DO_PORTAO)) {
+      contas.plantas_das_palavras++;
+      if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
+    }
+  }
+  let pontasComMarca = 0;
+  for (const serie of SERIES_DO_PORTAO.values()) {
+    try {
+      const c = contaDaFaixa(serie);
+      for (const geo of [c.baixo[0], c.alto[0]]) if (serie.pontos.find((p) => p.geo === geo)?.bandeira) pontasComMarca++;
+    } catch {
+      /* a série que não se reconta já fechou a F19 acima */
+    }
+  }
+  if (contas.ressalvas_nos_temas !== 2 * pontasComMarca) {
+    err(`F19: as páginas dos temas mostram ${contas.ressalvas_nos_temas} ressalva(s) nas pontas e as séries têm ${pontasComMarca} ponta(s) com marca; esperavam-se ${2 * pontasComMarca}, uma por ponta e por edição.`);
+  }
+}
+
 /* ========================================================================== */
 
 if (erros.length > 0) {
@@ -1332,7 +1369,9 @@ console.log(
         ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)` +
         ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas` +
         ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos temas, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
-        `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder` +
+        `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder, ` +
+        `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos temas), ${contas.ordinais_conferidos} ordinais e ` +
+        `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder` +
         ` · ${contas.datas_de_serie} data(s) de série`,
     ),
 );

@@ -6,6 +6,7 @@ import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
+import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
 /**
  * Portão (a) e (c): varrimento do HTML construído.
  *
@@ -496,6 +497,8 @@ const idsUsados = new Set();
 const linhasConstruidas = new Set();
 /** UE1: as páginas de série construídas, por «língua:id», e as origens das séries conferidas. */
 const seriesConstruidas = new Set();
+/* UE1b: as legendas das marcas dos recibos das séries, vistas. */
+const UE1B = { legendas: 0, marcasNasLegendas: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 let ficheiros = 0;
 let documentos = 0;
@@ -4424,6 +4427,41 @@ for (const file of ficheirosHtml(DIST)) {
       err(`há uma página de série para "${rota.params.slug}", que não é nenhuma série de ledger/series/.`);
     } else {
       seriesConstruidas.add(`${rota.lang}:${rota.params.slug}`);
+      /* UE1b (29.09.2026): o que quer dizer cada marca, ao lado da tabela. As
+         marcas da legenda são as da tabela, nem mais nem menos, e as da série;
+         as palavras de cada uma são as declaradas da faixa; a definição vai por
+         `data-serie-campo="bandeiras.<marca>"`, que o laço das origens compara
+         com a série, carácter a carácter. */
+      const sid = rota.params.slug;
+      const serie = SERIES_DO_PORTAO.get(sid);
+      const naTabela = [...new Set(root.querySelectorAll('[data-serie-tabela] [data-ponto-bandeira]').map((e) => textoTranscrito(e)))];
+      const naSerie = Object.keys(serie.bandeiras ?? {});
+      const legenda = root.querySelectorAll(`[data-serie-marcas="${sid}"]`);
+      const entradas = legenda.length === 1 ? legenda[0].querySelectorAll('[data-serie-marca]') : [];
+      const naLegenda = entradas.map((e) => String(e.getAttribute('data-serie-marca') ?? '').split('#')[1]);
+      const mesmas = (a, b) => [...a].sort().join(',') === [...b].sort().join(',');
+      if (naTabela.length === 0) {
+        if (legenda.length) err(`UE1b: o recibo da série «${sid}» tem legenda das marcas e a tabela não tem marca nenhuma.`);
+      } else if (legenda.length !== 1) {
+        err(`UE1b: o recibo da série «${sid}» tem ${legenda.length} legenda(s) das marcas e a tabela mostra ${naTabela.join(', ')}; tem de ter uma, ao lado da tabela.`);
+      } else if (!mesmas(naLegenda, naTabela) || !mesmas(naLegenda, naSerie) || new Set(naLegenda).size !== naLegenda.length) {
+        err(`UE1b: a legenda do recibo da série «${sid}» diz as marcas ${naLegenda.join(', ') || 'nenhuma'}; a tabela mostra ${naTabela.join(', ')} e a série define ${naSerie.join(', ')}.`);
+      } else {
+        UE1B.legendas++;
+        const lingua = rota.lang === 'en' ? 'en' : 'pt';
+        for (const e of entradas) {
+          const marca = String(e.getAttribute('data-serie-marca')).split('#')[1];
+          const entrada = e.closest('.serie-marca-entrada');
+          const palavras = entrada?.querySelector(`[data-serie-marca-palavras="${sid}#${marca}"]`);
+          const definicao = entrada?.querySelector(`[data-serie][data-serie-campo="bandeiras.${marca}"]`);
+          if (textoTranscrito(e) !== marca) err(`UE1b: a legenda do recibo da série «${sid}» escreve a marca «${textoTranscrito(e)}» onde diz «${marca}».`);
+          if (!palavras || textoTranscrito(palavras) !== PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca]) {
+            err(`UE1b: na legenda do recibo da série «${sid}», as palavras da marca «${marca}» são «${palavras ? textoTranscrito(palavras) : 'nenhumas'}» e as declaradas são «${PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca] ?? 'nenhumas'}».`);
+          }
+          if (!definicao || definicao.getAttribute('data-serie') !== sid) err(`UE1b: na legenda do recibo da série «${sid}», a marca «${marca}» não tem a definição da série.`);
+          UE1B.marcasNasLegendas++;
+        }
+      }
     }
   }
   /* C1: a I143 abrange também todos os cartões, qualquer que seja a família. */
@@ -8227,7 +8265,8 @@ console.log(
       ` · ${paginasComONome} página(s) com o nome de quem responde` +
       ` · séries: ${seriesConstruidas.size} página(s), ${ORIGENS_DAS_SERIES.pontos} ponto(s), ` +
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
-      `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos`,
+      `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
+      ` · UE1b: ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)`,
   ),
 );
 console.log(

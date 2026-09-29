@@ -65,6 +65,68 @@
   color: var(--g1);
 }
 
+/* O QUE QUER DIZER CADA MARCA (a passagem UE1b, 29.09.2026): ao lado da tabela
+   a partir dos 768 px, por baixo dela nos ecrãs estreitos. A tabela fica da
+   largura do seu conteúdo quando tem a legenda ao lado, para as duas caberem na
+   coluna do corpo. Sem cor, como a tabela. */
+.serie-pontos-corpo {
+  display: grid;
+  gap: 18px 32px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .serie-pontos-com-marcas {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+  .serie-pontos-com-marcas .serie-tabela {
+    width: auto;
+  }
+}
+
+.serie-marcas {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.serie-marcas-titulo {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--g1);
+  margin: 0 0 8px;
+}
+
+.serie-marcas-lista {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.serie-marca-entrada {
+  display: grid;
+  grid-template-columns: 2.25em minmax(0, 1fr);
+  gap: 0 8px;
+}
+
+.serie-marcas-lista dt {
+  font-family: var(--f-instr);
+  font-weight: 600;
+}
+
+.serie-marcas-lista dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.serie-marcas-nota {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
 .serie-pedido {
   overflow-wrap: anywhere;
 }
