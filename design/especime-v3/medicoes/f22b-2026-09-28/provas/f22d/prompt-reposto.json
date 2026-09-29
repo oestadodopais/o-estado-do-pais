@@ -1,0 +1,8 @@
+{
+  "fonte": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546",
+  "ficheiro": "prompts/PROMPT-f22c-construtor.md",
+  "sha256_fonte": "fa7d458ea26b986f90d3c171f39881149e3f2c2ef9e3c411b1830f97d0cfb835",
+  "sha256_reposto": "fa7d458ea26b986f90d3c171f39881149e3f2c2ef9e3c411b1830f97d0cfb835",
+  "bytes_iguais": true,
+  "excecao_do_detetor": "O exemplo <pasta-pessoal>/... não é um caminho; as continuações e os caminhos reais continuam detetados."
+}

@@ -1,0 +1,29 @@
+{
+  "comando": "python3 -m indicators.rotinas_test",
+  "ambiente_declarado": {
+    "F22B_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/trabalho-rotinas-detalhe.json"
+  },
+  "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+  "codigo_executado": {
+    "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+    "arvore": "2fcbe2f03db09f512bcca974e5855ec6e7b7cdbe",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      ".github/README.md",
+      "indicators/out/f22c-2026-09-29/custo.py",
+      "indicators/out/f22c-2026-09-29/executar.py",
+      "indicators/out/f22d-2026-09-29/custo_bloco.py",
+      "indicators/out/f22d-2026-09-29/provar_execucao.py",
+      "indicators/painel.py",
+      "indicators/publicar_rotina.py",
+      "indicators/refresh.py",
+      "indicators/rotinas_test.py",
+      "sweeps/monthly.sh"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:06:01.383335+00:00",
+  "fim": "2026-09-29T23:06:01.940661+00:00",
+  "segundos": 0.557,
+  "codigo": 0
+}

@@ -9,9 +9,10 @@
       "If you specify an API version that is no longer supported, you will receive a 410 Gone response."
     ]
   },
-  "conferencia_do_construtor": {
+  "leitura_do_construtor_na_f22c": {
     "data": "2026-09-29",
     "metodo": "web.open",
-    "resultado": "A tabela mantém 2026-03-10 e 2022-11-28; o texto mantém a omissão e o estado 410. A tabela recebida não traz a palavra latest."
+    "resultado": "A tabela mantém 2026-03-10 e 2022-11-28; o texto mantém a omissão e o estado 410. A tabela recebida não traz a palavra latest.",
+    "limite": "A F2.2c não guardou a hora nem o estado HTTP desta leitura. A leitura própria com hora, estado e excerto está em provas/f22d/api-versoes.json e não é confirmação da leitura fornecida pela direção."
   }
 }

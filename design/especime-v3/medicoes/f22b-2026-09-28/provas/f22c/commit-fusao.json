@@ -5,5 +5,20 @@
   "inicio": "2026-09-29T21:13:32.217583+00:00",
   "fim": "2026-09-29T21:20:22.851503+00:00",
   "segundos": 410.629,
-  "codigo": 0
+  "codigo": 0,
+  "papel_da_cabeca": "Base Git antes do comando; não identifica sozinha o código que correu.",
+  "codigo_executado": {
+    "tipo": "juncao_por_registar",
+    "cabeca_base": "5335e129b3167c93d1822c8af7cecbb909922877",
+    "arvore_fotografada_na_execucao": null,
+    "limite": "A execução histórica não guardou a árvore. A referência posterior permite ler o código consolidado, mas não se apresenta como fotografia feita durante a execução.",
+    "referencia_posterior": {
+      "commit": "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1",
+      "arvore": "da8537c5b9d23a78590377bd7500fbdf555e5f60"
+    },
+    "pais_da_juncao": [
+      "5335e129b3167c93d1822c8af7cecbb909922877",
+      "68318e0da2036cc29e4704fa1bb8a96dee246095"
+    ]
+  }
 }

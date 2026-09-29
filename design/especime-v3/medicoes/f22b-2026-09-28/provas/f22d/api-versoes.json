@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.github.com/en/rest/about-the-rest-api/api-versions",
+  "leitura_do_construtor": {
+    "inicio": "2026-09-29T22:54:12.038567+00:00",
+    "fim": "2026-09-29T22:54:12.327465+00:00",
+    "metodo": "curl com validação TLS",
+    "http": 200,
+    "excerto_da_tabela": "API version End of support date 2026-03-10 Not yet scheduled 2022-11-28 March 10, 2028",
+    "latest_no_excerto": false
+  },
+  "leitura_fornecida_pela_direcao": {
+    "instante": "2026-09-29T21:03:00Z",
+    "http": 200,
+    "excerto": "2026-03-10 (latest)"
+  },
+  "limite": "Leituras distintas. A do construtor não confirma a palavra latest da leitura fornecida pela direção."
+}

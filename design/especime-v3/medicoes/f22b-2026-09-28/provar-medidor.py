@@ -9,6 +9,9 @@ spec.loader.exec_module(medir)
 positivo = b"/" + b"Users/" + b"pessoa/projeto/prova.log"
 assert medir.caminhos_pessoais(positivo)
 assert not medir.caminhos_pessoais(b"<motor>/indicators/prova.py")
+assert not medir.caminhos_pessoais(b"o exemplo (`<pasta-pessoal>/...`) do mandato")
+assert medir.caminhos_pessoais(b"<pasta-pessoal>" + b"/projeto/prova.log")
+assert medir.caminhos_pessoais(b"<pasta-pessoal>" + b"/.../projeto/prova.log")
 with tempfile.TemporaryDirectory() as tmp:
     pasta = Path(tmp)
     (pasta / "limpo.txt").write_text("Prova sem caminho pessoal.\n")
@@ -23,4 +26,4 @@ with tempfile.TemporaryDirectory() as tmp:
         raise AssertionError("O varrimento não viu a planta no ficheiro binário")
     alvo.write_bytes(b"\x00conteudo limpo")
     assert medir.conferir_pacote(pasta) == 2
-print("PASS 4 conferências do detetor e do varrimento integral")
+print("PASS 7 conferências do detetor e do varrimento integral")

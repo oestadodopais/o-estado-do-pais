@@ -1,0 +1,24 @@
+{
+  "comando": "python3 indicators/corredor.py --provar",
+  "ambiente_declarado": {},
+  "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+  "codigo_executado": {
+    "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+    "arvore": "a1413a80c54b0035e0b7ba0a16c0632c50c9ee8a",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      "indicators/out/f22c-2026-09-29/custo.py",
+      "indicators/out/f22c-2026-09-29/executar.py",
+      "indicators/painel.py",
+      "indicators/publicar_rotina.py",
+      "indicators/refresh.py",
+      "indicators/rotinas_test.py",
+      "sweeps/monthly.sh"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T22:57:51.338036+00:00",
+  "fim": "2026-09-29T22:58:05.420424+00:00",
+  "segundos": 14.082,
+  "codigo": 0
+}

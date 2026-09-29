@@ -1,0 +1,191 @@
+{
+  "origem": "Contadores token_count das sessões; fronteiras das retomas registadas nas provas.",
+  "segmentos": {
+    "construcao": {
+      "inicio": "2026-09-28T18:48:49.664Z",
+      "contador_anterior": null,
+      "contador_final": {
+        "instante": "2026-09-28T19:55:27.415Z",
+        "simbolos": {
+          "input_tokens": 17676626,
+          "cached_input_tokens": 17072512,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 96378,
+          "reasoning_output_tokens": 29551,
+          "total_tokens": 17773004
+        }
+      },
+      "simbolos_do_segmento": {
+        "input_tokens": 17676626,
+        "cached_input_tokens": 17072512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 96378,
+        "reasoning_output_tokens": 29551,
+        "total_tokens": 17773004
+      },
+      "segundos": 3997.751
+    },
+    "retoma": {
+      "inicio": "2026-09-29T19:46:50.923Z",
+      "contador_anterior": {
+        "instante": "2026-09-28T19:55:27.415Z",
+        "simbolos": {
+          "input_tokens": 17676626,
+          "cached_input_tokens": 17072512,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 96378,
+          "reasoning_output_tokens": 29551,
+          "total_tokens": 17773004
+        }
+      },
+      "contador_final": {
+        "instante": "2026-09-29T20:17:42.680Z",
+        "simbolos": {
+          "input_tokens": 28115814,
+          "cached_input_tokens": 27284864,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 131313,
+          "reasoning_output_tokens": 50438,
+          "total_tokens": 28247127
+        }
+      },
+      "simbolos_do_segmento": {
+        "input_tokens": 10439188,
+        "cached_input_tokens": 10212352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 34935,
+        "reasoning_output_tokens": 20887,
+        "total_tokens": 10474123
+      },
+      "segundos": 1851.757
+    },
+    "f22c": {
+      "inicio": "2026-09-29T21:08:52.877Z",
+      "contador_anterior": null,
+      "contador_final": {
+        "instante": "2026-09-29T22:07:11.475Z",
+        "simbolos": {
+          "input_tokens": 21666506,
+          "cached_input_tokens": 21352064,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 82169,
+          "reasoning_output_tokens": 31828,
+          "total_tokens": 21748675
+        }
+      },
+      "simbolos_do_segmento": {
+        "input_tokens": 21666506,
+        "cached_input_tokens": 21352064,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 82169,
+        "reasoning_output_tokens": 31828,
+        "total_tokens": 21748675
+      },
+      "segundos": 3498.598
+    },
+    "f22d": {
+      "inicio": "2026-09-29T22:48:12.595Z",
+      "contador_anterior": {
+        "instante": "2026-09-29T22:07:11.475Z",
+        "simbolos": {
+          "input_tokens": 21666506,
+          "cached_input_tokens": 21352064,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 82169,
+          "reasoning_output_tokens": 31828,
+          "total_tokens": 21748675
+        }
+      },
+      "contador_final": {
+        "instante": "2026-09-29T23:05:05.704Z",
+        "simbolos": {
+          "input_tokens": 25796983,
+          "cached_input_tokens": 25380608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 112124,
+          "reasoning_output_tokens": 44146,
+          "total_tokens": 25909107
+        }
+      },
+      "simbolos_do_segmento": {
+        "input_tokens": 4130477,
+        "cached_input_tokens": 4028544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29955,
+        "reasoning_output_tokens": 12318,
+        "total_tokens": 4160432
+      },
+      "segundos": 1013.109
+    }
+  },
+  "total_simbolos": 54156234,
+  "total_segundos_dos_segmentos": 10361.215,
+  "fotografias_historicas": {
+    "construcao": {
+      "inicio_sessao": "2026-09-28T18:48:49.664Z",
+      "ultima_medicao": "2026-09-28T19:48:02.322Z",
+      "segundos_ate_medicao": 3552.658,
+      "simbolos": {
+        "input_tokens": 15742780,
+        "cached_input_tokens": 15150336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 87834,
+        "reasoning_output_tokens": 24637,
+        "total_tokens": 15830614
+      },
+      "fonte": "contador cumulativo token_count da sessão de construção",
+      "limite": "fotografia antes do commit do relatório; não inclui a resposta final"
+    },
+    "retoma": {
+      "primeiro_evento_da_retoma": "2026-09-29T19:46:50.923Z",
+      "ultima_medicao": "2026-09-29T20:10:49.328Z",
+      "segundos_ate_medicao": 1438.405,
+      "contador_anterior_a_retoma": {
+        "instante": "2026-09-28T19:55:27.415Z",
+        "simbolos": {
+          "input_tokens": 17676626,
+          "cached_input_tokens": 17072512,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 96378,
+          "reasoning_output_tokens": 29551,
+          "total_tokens": 17773004
+        }
+      },
+      "simbolos_cumulativos": {
+        "input_tokens": 26238673,
+        "cached_input_tokens": 25434880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 122034,
+        "reasoning_output_tokens": 46587,
+        "total_tokens": 26360707
+      },
+      "acrescimo_na_retoma": {
+        "input_tokens": 8562047,
+        "cached_input_tokens": 8362368,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 25656,
+        "reasoning_output_tokens": 17036,
+        "total_tokens": 8587703
+      },
+      "fonte": "eventos token_count da mesma sessão",
+      "limite": "fotografia durante o fecho; não inclui os atos posteriores nem a resposta final"
+    },
+    "f22c": {
+      "origem": "event_msg/token_count da sessão indicada",
+      "inicio": "2026-09-29T21:08:52.877Z",
+      "instante_do_contador": "2026-09-29T22:02:04.021Z",
+      "modelo_exposto": "gpt-6-astra",
+      "simbolos": {
+        "input_tokens": 21005236,
+        "cached_input_tokens": 20722560,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 74201,
+        "reasoning_output_tokens": 30442,
+        "total_tokens": 21079437
+      },
+      "segundos": 3191.144,
+      "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido."
+    }
+  },
+  "limite": "Inclui o fecho dos segmentos anteriores às retomas. A F2.2d termina na fotografia do seu contador, antes do último commit e da resposta. Símbolos incluem cache; segundos são tempo decorrido, sem os intervalos entre passagens; não há medição monetária."
+}
