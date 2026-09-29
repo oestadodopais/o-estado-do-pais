@@ -25,18 +25,21 @@ def ler(nome):
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
+# «runner» é a conta genérica de execução do GitHub, não uma identidade pessoal.
+CONTAS_GENERICAS = frozenset({'runner'})
+# A raiz e os diretórios comuns de contas não identificam uma pessoa.
+PASTAS_GENERICAS = frozenset(Path('/') / n for n in ('', 'Users', 'home'))
+
 def proibidos(pasta=None):
     pasta = Path.home() if pasta is None else Path(pasta)
     caminhos = []
-    for p in (pasta, pasta.parent):
-        if p != Path(p.anchor):
-            caminhos.append((str(p).rstrip('/') + '/').encode())
-    # Um nome genérico não é identidade pessoal. O nome isolado só entra
-    # quando coincide com um nome pessoal que a história do Git identifica.
-    nome = re.sub(r'[^a-z0-9]', '', pasta.name.lower())
-    pessoais = {re.sub(r'[^a-z0-9]', '', n.decode().lower()) for n in nomes_dos_autores()}
-    if len(nome) >= 6 and nome in pessoais:
-        caminhos.append(pasta.name.lower().encode())
+    if pasta != Path(pasta.anchor):
+        caminhos.append((str(pasta).rstrip('/') + '/').encode())
+    if pasta.parent not in PASTAS_GENERICAS:
+        caminhos.append((str(pasta.parent).rstrip('/') + '/').encode())
+    nome = pasta.name.lower()
+    if len(nome) >= 6 and nome not in CONTAS_GENERICAS:
+        caminhos.append(nome.encode())
     return caminhos + [
         (('/private' + '/' + 'var/folders') + '/').encode(),
         (('/private' + '/tmp') + '/').encode(), ('/' + 'tmp/').encode()]
