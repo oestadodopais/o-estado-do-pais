@@ -1,0 +1,1073 @@
+{
+  "bloco": "UE1c",
+  "construcao": {
+    "commit": "982d6446bdc1c312bef02228587da89b36839463",
+    "ref": "ue1-2026-09-29",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-29T20:35:35.648Z"
+  },
+  "cabeca_esperada": "982d6446bdc1c312bef02228587da89b36839463",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "recibos_lidos_por_edicao": 10,
+  "recibos_com_frase": 14,
+  "recibos_sem_frase": [
+    "pt:ihpc-variacao-homologa-paises",
+    "pt:precos-da-habitacao-2025-paises",
+    "pt:racio-s80-s20-2025-paises",
+    "en:ihpc-variacao-homologa-paises",
+    "en:precos-da-habitacao-2025-paises",
+    "en:racio-s80-s20-2025-paises"
+  ],
+  "capturas": 70,
+  "plantas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "a frase alargada para lá da sua caixa",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "a frase alargada para lá da sua caixa",
+      "visto": true
+    }
+  ],
+  "plantas_vistas": 4,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-pt-390.png",
+      "sha256": "5928ae05fcbd320106892d2c31b1bcc1748004b182839d2f6aec0f69ec2864ea",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos, entre as que trabalham ou procuram trabalho, que está sem emprego e o procura há um ano ou mais.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-pt-390.png",
+      "sha256": "6e62cae01553ef2367c5aa3bd783f038bb1bb90d059687af6e417cce424c8ddb",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-pt-390.png",
+      "sha256": "78b45c2907ff91e072006db1341ae9b9d912ce8b41e89c83a1f185e93e858fca",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-pt-390.png",
+      "sha256": "638e2611d0bf074f895eef2b4e60c561117055e6beaf646ccd650388534bb832",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-390.png",
+      "sha256": "8cd9936ca4aafe57aca3a4f7d83835d08bd0510f058e01e6a2795e8cc8f9cbf6",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-pt-390.png",
+      "sha256": "2cb73dd5ad12ee0692f6ea4f2195d9a5dd58ad1e119782f2db32388b4c2a48f9",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-pt-390.png",
+      "sha256": "ba50a9ed6fc75e3d86bd8e51ecebc4c9845df0e1c2679365ccdf8f36ba765d60",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "É a parte das pessoas dos 20 aos 64 anos que tem emprego.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-pt-768.png",
+      "sha256": "60bb7c4ffdf88b10d86d8d4b850ff96ccd32324b89c16068abeb7645aaeb2049",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos, entre as que trabalham ou procuram trabalho, que está sem emprego e o procura há um ano ou mais.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-pt-768.png",
+      "sha256": "4725e1cf83d9154cc607c93c865546271ee13166a8c62548f85d4bf94bce21bb",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-pt-768.png",
+      "sha256": "f855063d0736af799ecc27aa3f22e1f0eafb0cfa1fc6ef0d034b9f2cf07e305d",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-pt-768.png",
+      "sha256": "0fce38eed73bca9eceeb47ad93b58b1310edb17fc66b07be7e0212646a2a17b6",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-768.png",
+      "sha256": "5bb6a7de2280030c91d5c7e740507ea35d249799b33cc9fd9c6576086741f579",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-pt-768.png",
+      "sha256": "359f1db2285b5814841739757c543192d62e3870fb29df83a4f406b47b677f33",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-pt-768.png",
+      "sha256": "48a7c9aeb55cac54a6df86aa70f839ba690df1207297ca56aebfee3cfe84eae4",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "É a parte das pessoas dos 20 aos 64 anos que tem emprego.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-pt-1024.png",
+      "sha256": "31fad050eec3783641f89f7cc0f2b60450d45bbe48e831580bf99e790ab30299",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos, entre as que trabalham ou procuram trabalho, que está sem emprego e o procura há um ano ou mais.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-pt-1024.png",
+      "sha256": "7cda4c32a20c398992fdcae86691e6b1eec5b29be4d26e84b3d6566d08a01ca2",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-pt-1024.png",
+      "sha256": "16b2cd6e04f6f669e255d859a9ae1ba7f7c1bdfc22eb01cadbcc0101f57ab099",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-pt-1024.png",
+      "sha256": "78c0bb9ebb1673b14434960ff81e7ba4efea551e07af6115b51640e70c8a3212",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-1024.png",
+      "sha256": "10db32c1a5e935be75a1c9a5d0e269d270112129f5cda2959b7ae88facc25a81",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-pt-1024.png",
+      "sha256": "a7396d8ce82e5253d1ef9e97d58c9fc0ce25b4cfae19a1cad9a62728a24fb582",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-pt-1024.png",
+      "sha256": "12d82d419165b412b721e1a270e577f55341aadf85c914db87e76361e0b0bf1d",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "É a parte das pessoas dos 20 aos 64 anos que tem emprego.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-pt-1280.png",
+      "sha256": "4c4b255dfc735b266bc734859a027f3190ae52c81c8208634f3a6cd191d44f09",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos, entre as que trabalham ou procuram trabalho, que está sem emprego e o procura há um ano ou mais.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-pt-1280.png",
+      "sha256": "b39a1092d72c451ba33e190f95cc0e7bf0ec9666a826b028c82aa0cf20ec4cb7",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-pt-1280.png",
+      "sha256": "61ce8e58fa79f573f2d54cfa32653d17c77c6f0677cad8f688b0700596d1501e",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-pt-1280.png",
+      "sha256": "1dbbfd97aa2aff5609d24a9dc99b886324ed2e5635553eb0fb396e4c174ceeef",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-1280.png",
+      "sha256": "80cc37fd1dc8c5b20f554892454586cd2ebe555737ff3b521ecdb2990862dc40",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-pt-1280.png",
+      "sha256": "b7aa3042ffb7ac18e37c6662c5b9664ae7456cb8be962fcfcc00932e3b5d5323",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-pt-1280.png",
+      "sha256": "f9b417b97d349b358a809eae592b1e2d63fa84afc12d72f260523dbba03b9069",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "É a parte das pessoas dos 20 aos 64 anos que tem emprego.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-pt-1600.png",
+      "sha256": "4c4b255dfc735b266bc734859a027f3190ae52c81c8208634f3a6cd191d44f09",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos, entre as que trabalham ou procuram trabalho, que está sem emprego e o procura há um ano ou mais.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-pt-1600.png",
+      "sha256": "b39a1092d72c451ba33e190f95cc0e7bf0ec9666a826b028c82aa0cf20ec4cb7",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-pt-1600.png",
+      "sha256": "61ce8e58fa79f573f2d54cfa32653d17c77c6f0677cad8f688b0700596d1501e",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-pt-1600.png",
+      "sha256": "1dbbfd97aa2aff5609d24a9dc99b886324ed2e5635553eb0fb396e4c174ceeef",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-1600.png",
+      "sha256": "80cc37fd1dc8c5b20f554892454586cd2ebe555737ff3b521ecdb2990862dc40",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de 40 % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-pt-1600.png",
+      "sha256": "b7aa3042ffb7ac18e37c6662c5b9664ae7456cb8be962fcfcc00932e3b5d5323",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "É a parte das pessoas dos 15 aos 74 anos que está sem emprego, entre as que trabalham ou procuram trabalho.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-pt-1600.png",
+      "sha256": "f9b417b97d349b358a809eae592b1e2d63fa84afc12d72f260523dbba03b9069",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "É a parte das pessoas dos 20 aos 64 anos que tem emprego.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-en-390.png",
+      "sha256": "09f1539da35a0cd406c7e6c5b5f814d234c497e93fea5d2babe3f15ba674a801",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "It is the share of people aged 15 to 74, among those who work or are looking for work, who are out of work and have been looking for a year or more.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-en-390.png",
+      "sha256": "62c158188223866be9b2c5b3ce4044ff283d53bb32c82cba02588692b2271b5e",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-en-390.png",
+      "sha256": "15222b749b72a8711b825c8e049a4aa074a297e9d71bbce091b233234ab8a69b",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "It is the share of the population in at least one of three situations: income below 60 % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-en-390.png",
+      "sha256": "4bf73cb5ced5c82614ed3c1d07c5258778f7ae2b4bdb7261aaaa011e39f01915",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-390.png",
+      "sha256": "c132c7a877ab1fecfd9b3e1661b625c7fbb4e28e7b5aa7dea4c9026b2895319a",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "Among people living in a home rented at market price, it is the share whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-en-390.png",
+      "sha256": "f76703e8a336f9842ef3e2d800cf8e9b282cdc2f2957b4c558b90ee68d342ec5",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "It is the share of people aged 15 to 74 who are out of work, among those who work or are looking for work.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-en-390.png",
+      "sha256": "dca07986ad79bb6936ecc82640acd411b6f8202522d67310d19b434bc7f8fb74",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "frase": "It is the share of people aged 20 to 64 who are employed.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-en-768.png",
+      "sha256": "57d5186753e8f103beb15ddc9b499f62a8a799ebc6e72b338493b4699d3fbab4",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "It is the share of people aged 15 to 74, among those who work or are looking for work, who are out of work and have been looking for a year or more.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-en-768.png",
+      "sha256": "630401abc62cd31b289763fe47d453e36f966bc1c5741a91f85789b0c28e6355",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-en-768.png",
+      "sha256": "ad6dcfbb08363a64dcc407130beb2dc5bfc89b3b19b7c73e4802d59b01239d8f",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "It is the share of the population in at least one of three situations: income below 60 % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-en-768.png",
+      "sha256": "1f5524340ce2a6b4c5b2ea02244a95eab2a9c9ccfb00c4516b79da7c4020f730",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-768.png",
+      "sha256": "5a378f0c47639f25b929763722f393f5bb7912dd3b653c7b3a0c98fc023704e1",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "Among people living in a home rented at market price, it is the share whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-en-768.png",
+      "sha256": "bcb84e102209c350e8d76dfac2fcf301ca32c41d1207a75b788294d6d027fb3b",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "It is the share of people aged 15 to 74 who are out of work, among those who work or are looking for work.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-en-768.png",
+      "sha256": "892a0c752d35ac52fe2cda3c20b215547fbce90c72b093912e3495eb19e0e2df",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "frase": "It is the share of people aged 20 to 64 who are employed.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-en-1024.png",
+      "sha256": "fa99c1d5b956d525b65545a597981787bf2f521f5ba5893f06019b66640f1a8e",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "It is the share of people aged 15 to 74, among those who work or are looking for work, who are out of work and have been looking for a year or more.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-en-1024.png",
+      "sha256": "b1cb52b16079e3a757d201a2d92de7b73a1bc04ff8b62f3ec3e7bcf270b2ae1d",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-en-1024.png",
+      "sha256": "09956382ef35ca91162370f207d4eb887f1b8db5d6cc85121a48c60683725366",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "It is the share of the population in at least one of three situations: income below 60 % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-en-1024.png",
+      "sha256": "c1545743c4d5861836bb7701779762ad82efe9b18c3b6d73976cc6577f45c739",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-1024.png",
+      "sha256": "008a7ffe1d3cdcc764d5c50e8b156919622520ee8f347133cde98301832b285d",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "Among people living in a home rented at market price, it is the share whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-en-1024.png",
+      "sha256": "91cd4304833d06acf687c380ea9c620b29a72259572153d9232fbda65bdff9fc",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "It is the share of people aged 15 to 74 who are out of work, among those who work or are looking for work.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-en-1024.png",
+      "sha256": "789251a8a8f0e900bf4da64eb0a112cc5e489c02e105f4b41b4e8bda960fb9c7",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "frase": "It is the share of people aged 20 to 64 who are employed.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-en-1280.png",
+      "sha256": "eec79a03696dc5f5d1a73f4affcfeb383cd5acd35b53786a465fe207a6e59df8",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "It is the share of people aged 15 to 74, among those who work or are looking for work, who are out of work and have been looking for a year or more.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-en-1280.png",
+      "sha256": "29f11149dc13e56df63d5c3b69baeb8456529382bf6edfd6e229d577b3fa1456",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-en-1280.png",
+      "sha256": "6e03da7b8cdc6828cb22cf9240b7cec2058457cc53737dbde50da9f72f1be36c",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "It is the share of the population in at least one of three situations: income below 60 % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-en-1280.png",
+      "sha256": "a41c1580e6bad9538e7770fab2719290176e1904adb8325c6c179e7f8134bf67",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-1280.png",
+      "sha256": "00e23115ce3c7c13d50320cd03843e0f2225c97d366cbebc88acaed0fa5a8413",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "Among people living in a home rented at market price, it is the share whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-en-1280.png",
+      "sha256": "0d546f38e4158d75f4f42d9d068dbdcf894abae54333e04e5dc2f0bf60b82814",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "It is the share of people aged 15 to 74 who are out of work, among those who work or are looking for work.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-en-1280.png",
+      "sha256": "0df3b522d5a39faef8954f0f96ead22106397b3edd0b83e5787941bc7dce1735",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "frase": "It is the share of people aged 20 to 64 who are employed.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/desemprego-de-longa-duracao-2025-paises-en-1600.png",
+      "sha256": "eec79a03696dc5f5d1a73f4affcfeb383cd5acd35b53786a465fe207a6e59df8",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "It is the share of people aged 15 to 74, among those who work or are looking for work, who are out of work and have been looking for a year or more.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/divida-publica-2025-paises-en-1600.png",
+      "sha256": "29f11149dc13e56df63d5c3b69baeb8456529382bf6edfd6e229d577b3fa1456",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/risco-de-pobreza-ou-exclusao-2025-paises-en-1600.png",
+      "sha256": "6e03da7b8cdc6828cb22cf9240b7cec2058457cc53737dbde50da9f72f1be36c",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "It is the share of the population in at least one of three situations: income below 60 % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-2025-paises-en-1600.png",
+      "sha256": "a41c1580e6bad9538e7770fab2719290176e1904adb8325c6c179e7f8134bf67",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-1600.png",
+      "sha256": "00e23115ce3c7c13d50320cd03843e0f2225c97d366cbebc88acaed0fa5a8413",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "Among people living in a home rented at market price, it is the share whose household spends more than 40 % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-desemprego-mip-2025-paises-en-1600.png",
+      "sha256": "0d546f38e4158d75f4f42d9d068dbdcf894abae54333e04e5dc2f0bf60b82814",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "It is the share of people aged 15 to 74 who are out of work, among those who work or are looking for work.",
+        "frase_transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1c/taxa-de-emprego-2025-paises-en-1600.png",
+      "sha256": "0df3b522d5a39faef8954f0f96ead22106397b3edd0b83e5787941bc7dce1735",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "frase": "It is the share of people aged 20 to 64 who are employed.",
+        "frase_transborda": false
+      }
+    }
+  ],
+  "presencas": [
+    {
+      "lang": "pt",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "pt",
+      "serie": "divida-publica-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "pt",
+      "serie": "ihpc-variacao-homologa-paises",
+      "com_frase": false
+    },
+    {
+      "lang": "pt",
+      "serie": "precos-da-habitacao-2025-paises",
+      "com_frase": false
+    },
+    {
+      "lang": "pt",
+      "serie": "racio-s80-s20-2025-paises",
+      "com_frase": false
+    },
+    {
+      "lang": "pt",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "pt",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "pt",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "pt",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "pt",
+      "serie": "taxa-de-emprego-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "divida-publica-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "ihpc-variacao-homologa-paises",
+      "com_frase": false
+    },
+    {
+      "lang": "en",
+      "serie": "precos-da-habitacao-2025-paises",
+      "com_frase": false
+    },
+    {
+      "lang": "en",
+      "serie": "racio-s80-s20-2025-paises",
+      "com_frase": false
+    },
+    {
+      "lang": "en",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "com_frase": true
+    },
+    {
+      "lang": "en",
+      "serie": "taxa-de-emprego-2025-paises",
+      "com_frase": true
+    }
+  ]
+}
