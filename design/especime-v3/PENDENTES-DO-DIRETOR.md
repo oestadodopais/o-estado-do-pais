@@ -44,7 +44,6 @@
 | 28.09.2026 | **O teto semanal do ciclo autónomo e o interruptor de pausa** (§1.134): o lugar de direção propõe o que já vale para as sessões (um quinto de cada semana de reserva, e o ciclo parado quando o uso passar os quatro quintos) e um interruptor que é uma variável do repositório do motor que ele liga e desliga | o dinheiro e os limites da subscrição são dele | o bloco AUT2, a sessão autónoma |
 | 28.09.2026 | **Ver a primeira página nova no ar**, em `oestadodopaís.pt` desde a aterragem do PP1 a 29.09.2026, no telemóvel, e passá-la aos amigos que acharam a anterior «too much», com as perguntas de sempre: o que procuraram, se encontraram, o que custou a ler | o diretor é o leitor | a iteração sobre o que ele disser |
 | 28.09.2026 | **As calculadoras do leitor** (o memorando do Codex de 28.09: a renda do próximo ano a partir da renda de hoje; o salário real a partir do salário de há um ano): o leitor escreve um número seu, que o navegador usa e não envia a lado nenhum | um formulário com um número pessoal precisa do «sim» dele | as calculadoras, depois do PP1 |
-| 29.09.2026 | **O nome de utilizador da máquina na história pública do repositório** (a I174): a árvore redige-se sem ele, pelo lugar de direção; a história só se limpa reescrevendo-a e forçando um push, o que a casa nunca faz sem o «sim» dele | a exposição legal e os pushes forçados são dele | nada: a redação da árvore segue sem esperar |
 
 ## Feitas
 
