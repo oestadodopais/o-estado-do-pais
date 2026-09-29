@@ -1,0 +1,15 @@
+{
+  "instante": "2026-09-29T23:53:36.742715+00:00",
+  "fase": "Antes do último commit das provas; não substitui a conferência da aterragem.",
+  "motor_cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+  "motor_ficheiros_do_ultimo_commit": [
+    "indicators/fixtures/monthly-68318e0.md",
+    "indicators/fixtures/monthly-68318e0.sh",
+    "indicators/rotinas_f22c_test.py"
+  ],
+  "sitio_cabeca_lida": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+  "sitio_cabeca_dos_portoes": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "mudancas_do_sitio_fora_do_pacote": [],
+  "prompt_igual_a_fb1dd0dd": true,
+  "decisao_dos_portoes": "Conservar os três portões verdes do sítio: a retoma só altera as provas, conforme o mandato final."
+}

@@ -1,0 +1,39 @@
+{
+  "origem": {
+    "commit": "68318e0da2036cc29e4704fa1bb8a96dee246095",
+    "ficheiro": "sweeps/monthly.sh",
+    "sha256": "45336f7489b6f36bf6062c6c88aadad4bc847729f32be1465314753335f814fc",
+    "reproduzir_sha256": "git show 68318e0:sweeps/monthly.sh | shasum -a 256"
+  },
+  "copia": {
+    "ficheiro": "monthly-68318e0.sh",
+    "sha256": "d99ce84230204fdf55a80eae748897197f42c54a8375cc7dcdcb5f7b904dfa33",
+    "reproduzir_sha256": "shasum -a 256 indicators/fixtures/monthly-68318e0.sh"
+  },
+  "substituicoes": [
+    {
+      "linha": 3,
+      "mudanca": "Só o nome do utilizador no rótulo do agente passa a <utilizador>.",
+      "resultado": "# com.<utilizador>.researchhub-sweep (1st of the month, 09:00), and runnable by"
+    },
+    {
+      "linha": 23,
+      "mudanca": "Só o caminho do portátil no cd passa a <motor>.",
+      "resultado": "cd \"<motor>\" || exit 1"
+    }
+  ],
+  "conferencia": {
+    "linhas_alteradas": [
+      3,
+      23
+    ],
+    "restantes_bytes_iguais": true,
+    "linhas_python3_e_echo_iguais_byte_a_byte": true
+  },
+  "uso": "Referência fixa das plantas do portátil, sem depender de master local; não é um guião para executar.",
+  "ficheiro_no_motor": "indicators/fixtures/monthly-68318e0.sh",
+  "conferido_em": "2026-09-29T23:42:36.864562+00:00",
+  "codigo": 0,
+  "estado": "Referência fixa guardada e ligada às plantas; só as duas substituições autorizadas foram feitas.",
+  "proveniencia_no_motor": "indicators/fixtures/monthly-68318e0.md"
+}

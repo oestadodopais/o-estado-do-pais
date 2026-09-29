@@ -9,6 +9,7 @@ test_fontes_dados_aceites_e_valores_novos_exportacao_recusados (__main__.Plantas
 test_mensal_portatil_calendario_falhou (__main__.PlantasF22c.test_mensal_portatil_calendario_falhou) ... ok
 test_mensal_portatil_codigo_das_publicacoes (__main__.PlantasF22c.test_mensal_portatil_codigo_das_publicacoes) ... ok
 test_mensal_portatil_verde (__main__.PlantasF22c.test_mensal_portatil_verde) ... ok
+test_mensal_referencia_fixa_confere_sha_e_recusa_alteracao (__main__.PlantasF22c.test_mensal_referencia_fixa_confere_sha_e_recusa_alteracao) ... ok
 test_mensal_runner_conserva_bandeiras (__main__.PlantasF22c.test_mensal_runner_conserva_bandeiras) ... ok
 test_portao_conclusoes_da_api (__main__.PlantasF22c.test_portao_conclusoes_da_api) ... ok
 test_reforma_main_ensaio_no_lugar_de_real (__main__.PlantasF22c.test_reforma_main_ensaio_no_lugar_de_real) ... ok
@@ -30,9 +31,9 @@ unittest.case.FunctionTestCase (reais)
 os dois estados reais do sítio passam o leitor e a guarda ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 1.052s
+Ran 26 tests in 0.988s
 
 OK
 painel: descarregado, definição conservada no arquivo
 varrimento: descarregado, definição conservada no arquivo
-PASS 25 conferências F2.2c
+PASS 26 conferências F2.2c

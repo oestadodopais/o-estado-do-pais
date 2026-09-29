@@ -1,9 +1,9 @@
 {
-  "provas": 25,
+  "provas": 26,
   "falhas": 0,
   "erros": 0,
   "passou": true,
-  "sitio_real_cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "sitio_real_cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
   "nomes": [
     "test_api_cabecalho_da_versao",
     "test_api_erro_permanente_para_logo_com_causa",
@@ -16,6 +16,7 @@
     "test_mensal_portatil_calendario_falhou",
     "test_mensal_portatil_codigo_das_publicacoes",
     "test_mensal_portatil_verde",
+    "test_mensal_referencia_fixa_confere_sha_e_recusa_alteracao",
     "test_mensal_runner_conserva_bandeiras",
     "test_portao_conclusoes_da_api",
     "test_reforma_main_ensaio_no_lugar_de_real",

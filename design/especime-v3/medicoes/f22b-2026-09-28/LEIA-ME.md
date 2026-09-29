@@ -1,8 +1,10 @@
 # F2.2b · as corridas prontas a armar, com F2.2c e F2.2d
 
-A F2.2d está parcial: o clone raso continua vermelho e o bloco não está pronto
-a aterrar. Falta resolver a referência fixa do ponto `1`, sem copiar a identificação
-pessoal do guião antigo.
+A F2.2d está concluída no âmbito do mandato. O clone raso sem `master` local
+e o portão da cabeça final do motor passaram. A referência fixa conserva os comandos, cabeçalhos, ordem e regra de
+saída do guião de `68318e0`. Só o nome do utilizador no rótulo do agente e o caminho
+do portátil foram trocados pelas marcas autorizadas. As provas de fecho estão
+na secção F2.2d.
 
 O bloco prepara a publicação dos ramos e os ensaios no GitHub. Os efeitos
 externos nulos são declarações do construtor, não medições pela API. Não houve
@@ -94,19 +96,26 @@ Os commits do bloco, incluindo as junções e as leituras que o dirigiram, são:
 | Sítio | `cb1600b6e147f2bdc05f73396404f344b3495c2b` | Provas, relatório e resposta da F2.2c. |
 | Sítio | `df1c262242dc94f5b6aef8d8e01f9e554209baf2` | Releitura, triagem e mandato da F2.2d. |
 
-O primeiro commit desta passagem no motor é `f8a20fb2d20f89bec387acff2271c4b1672be034`
-e o dos documentos no sítio é `f97d7d60d3611f011cbaef26fc05cff92c9ac7a1`.
-O provador do clone raso está no motor em `7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8`,
-a cabeça final desta entrega parcial. O último commit do sítio contém as provas
-finais e `RESPOSTA-construtor-f22d.md`; o seu SHA é comunicado fora do ramo. O inventário completo,
-incluindo os antepassados recebidos pela junção de `main`, fica em `medidas.json`.
+Os commits já registados da F2.2d são:
+
+| Repositório | Commit | Conteúdo |
+|---|---|---|
+| Motor | `f8a20fb2d20f89bec387acff2271c4b1672be034` | Limiar, compatibilidade do portátil, plantas e proveniência das execuções. |
+| Motor | `7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8` | Provador do clone raso sem `master` local. |
+| Motor | `7c43b0746f8c43d9ace5cfdcb4d71a79927a6813` | Referência fixa expurgada, proveniência, SHA-256 e plantas independentes de `master`. |
+| Sítio | `f97d7d60d3611f011cbaef26fc05cff92c9ac7a1` | Relatório do bloco, prompt reposto e proveniência das provas. |
+| Sítio | `ad4722fa92bafcacf7b99d3da56363f3b58dcbed` | Provas e resposta da entrega parcial, com a paragem na referência pessoal. |
+
+O inventário completo, incluindo os antepassados recebidos pela junção de
+`main`, fica em `medidas.json`. O último commit do sítio contém as provas de
+fecho e `RESPOSTA-construtor-f22d.md`; o seu SHA é comunicado fora do ramo.
 O SHA do último commit das provas resolve-se pelo histórico da resposta da sua
 passagem e é comunicado fora do ramo: um commit não contém o seu próprio SHA.
 
 ## Os portões do bloco
 
 As provas históricas conservam a cabeça que cada processo leu. Os portões da
-F2.2d serão os de fecho desta passagem; os anteriores não os substituem.
+F2.2d são os de fecho desta passagem; os anteriores não os substituem.
 
 | Passagem | Comando | Código lido | Segundos | Ficheiro |
 |---|---|---:|---:|---|
@@ -126,7 +135,8 @@ foi testado em `1a67dea9a4e479c00f4fe4c8d645364a3a943446`, o sítio em
 do sítio ficam ao lado dos códigos. A F2.2c tem um `.exclusao.json` por portão,
 com o último `pgrep` sem outra construção antes de iniciar. Não se atribui essa
 prova às corridas históricas que não a guardaram. Os portões da F2.2d conservam
-a mesma regra de exclusão. A comparação posterior entre a cabeça dos portões
+a mesma regra de exclusão. Nesta retoma só mudou o pacote de provas do sítio;
+os três portões já verdes conservam-se, conforme a condição do mandato final. A comparação posterior entre a cabeça dos portões
 e o último commit das provas cabe à direção na aterragem.
 
 ## O custo do bloco inteiro
@@ -143,15 +153,16 @@ própria diferença, sem voltar a contar a F2.2c.
 | construcao | 17773004 | 17773004 | 3997,751 |
 | retoma | 10474123 | 28247127 | 1851,757 |
 | f22c | 21748675 | 21748675 | 3498,598 |
-| f22d | 9555939 | 31304614 | 2323,98 |
+| f22d | 13670876 | 35419551 | 3929,194 |
 
-Total observado: 59551741 símbolos e 11672,086 segundos dos segmentos.
+Total observado: 63666678 símbolos e 13277,3 segundos dos segmentos.
 <!-- custo-bloco-fim -->
 
 Os contadores, as fronteiras e as fotografias anteriores estão em
 `provas/f22d/custo-bloco.json`; o contador desta passagem está em
 `provas/f22d/custo.json`. Os símbolos incluem as releituras em cache. Os segundos
 são tempo decorrido, sem os intervalos entre passagens, e não tempo de CPU.
+A F2.2d inclui a pausa antes da decisão sobre as marcas da referência fixa.
 A fotografia desta passagem antecede o último commit e a resposta final.
 Não foi medido custo monetário nem de execução no GitHub.
 
@@ -174,7 +185,7 @@ os interruptores e os despachos na aterragem.
 | `5` | O vigia lê os trabalhos da corrida e reconhece o trabalho real `skipped`. O título do alarme inclui rotina e data devida. | Corrida dormente e verde com carimbo: sem issue. Falta e falha: uma issue. A repetição no dia seguinte procura o título aberto e não abre outra, nas duas rotinas. |
 | `6` | O despacho manual do vigia corre sempre; só o agendamento respeita o interruptor. | O provador do fluxo exerce o corredor desarmado; as plantas exercem as duas rotinas desarmadas com despacho. |
 | `7` | Só o silêncio do limiar pede retoma. O limiar não decide o carimbo das linhas nem a completude das leituras. | HTTP `503` e página sem números chegam à issue com causa, sem retoma, com as linhas e o carimbo global escritos. Silêncio mantém o carimbo e repete só o limiar na tentativa seguinte. As saídas passam a sua guarda. |
-| `8` | A chamada mensal sem argumentos conserva os passos, as bandeiras, o relatório e a regra de saída do portátil. | Na F2.2c, os comandos eram comparados com um `master` local; a dependência é o ponto por corrigir na F2.2d. O calendário falhado determina a saída; caso contrário, determina-a o vigia das publicações. `OEDP_SITE` e repositório irmão são exercidos. O runner conserva `--write`, `--quiet` e a sua regra de saída própria. |
+| `8` | A chamada mensal sem argumentos conserva os passos, as bandeiras, o relatório e a regra de saída do portátil. | Na F2.2c, os comandos eram comparados com um `master` local; a F2.2d elimina essa dependência com a referência fixa de `68318e0`, expurgada e conferida por SHA-256. O calendário falhado determina a saída; caso contrário, determina-a o vigia das publicações. `OEDP_SITE` e repositório irmão são exercidos. O runner conserva `--write`, `--quiet` e a sua regra de saída própria. |
 | `9` | O modo decidido chega pelo ambiente à publicação no corredor e na retoma. | Os YAML são lidos pelas plantas; a atribuição fixa na linha de comando é recusada. |
 | `10` | As guardas em falta têm plantas nas funções e nas entradas principais. | `fontes.mjs`, valores novos, exportação adicional, ficheiro criado, apagado e modo alterado; `main` de publicação e fecho com despacho ou modo não real; `OEDP_SITE` aceite com código verde num sítio sintético. Os dois estados reais da cabeça do sítio passam `dados_js` e um diff plausível passa `guardar_diff`. |
 | `11` | Declarações separadas de medidas; caminhos pessoais removidos de todo o pacote; nenhuma conferência posterior aos portões atribuída ao medidor. | §0 reproduzido com comando, ambiente declarado, código e hora. Exclusão de construções registada antes de cada portão. Isolamento com variáveis Git inválidas, comando e ambiente sem segredos. O detetor tem conhecido-positivo e planta num ficheiro binário aninhado. A comparação entre a cabeça dos portões e a final cabe à direção na aterragem. |
@@ -203,17 +214,18 @@ Esta passagem mantém o âmbito do mandato e não altera páginas do sítio.
 
 | Ponto | Correção e prova |
 |---|---|
-| `1` | O clone raso reproduziu o defeito: sem `master` local, as plantas falham com código 1. A cópia fixa continua por fechar: o original contém uma identificação pessoal e uma pasta do portátil, contrariando a regra de privacidade. `referencia-pendente.json` guarda os dois resumos e prova que as linhas Python e os cabeçalhos da proposta não mudariam. |
-| `2` | Os cinco cabeçalhos e a descoberta da pasta sem Git estão corrigidos. A planta compara a sequência de chamadas Python e de cabeçalhos, incluindo o calendário falhado, e recusa uma chamada a Git. Passou no pre-commit, mas a referência ainda depende de `master`, pendência do ponto anterior. |
+| `1` | A referência fixa está em `indicators/fixtures/monthly-68318e0.sh`, com a proveniência ao lado. O teste confere o SHA-256 e recusa uma cópia alterada. `referencia-fixa.json` confere as duas substituições autorizadas e os restantes bytes contra `68318e0`. O defeito fica documentado em `clone-antes`; o controlo corrigido fica em `clone`. |
+| `2` | Os cinco cabeçalhos e a descoberta da pasta sem Git estão corrigidos. A planta compara o texto e a ordem das linhas `python3` e `echo` com a referência fixa, e a sequência efetivamente emitida, incluindo o calendário falhado. Um dublê recusa qualquer chamada a Git. Exercita a saída do calendário falhado, a das publicações e o controlo verde. |
 | `3` | A tabela dos pontos do brief, as plantas, os commits, os portões e os contadores dos quatro segmentos voltaram a este relatório. |
 | `4` | A regra da I116 fica dita no código. As plantas oferecem recusa de ligação e TLS às linhas e ao limiar, e distinguem deliberadamente o portátil do runner. |
 | `5` | O silêncio do limiar tem campo próprio; uma linha no mesmo anfitrião continua a carimbar. A retoma retira o aviso de silêncio e conserva os alarmes de revisão. As mensagens do portátil e o comentário da I115 foram repostos a partir de `68318e0`. |
 | `6` | A quinta reconferência sem poda é recusada. A célula `13` foi executada pelo `corredor.py --provar`, com código 0 em `provas/f22d/corredor.codigo`. A API tem leituras atribuídas separadamente. Os novos registos identificam a árvore, e os antigos explicitam o que não registaram. |
 | `7` | O prompt F2.2c foi reposto byte a byte de `fb1dd0dd`. O detetor exclui apenas o exemplo `<pasta-pessoal>/...`, que não é um caminho, e continua a recusar caminhos reais e continuações desse exemplo. Os prompts da direção não voltam a ser editados. |
 
-Na cabeça registada passaram 47 plantas das rotinas, 25 adicionais e 94
+Nesta passagem passaram 47 plantas das rotinas, 26 adicionais e 94
 conferências dos fluxos: `provas/f22d/plantas`, `plantas-f22c` e `fluxo`, com
-nomes e resultados nos JSON de detalhe e nas saídas. A corrida de trabalho
+nomes e resultados nos JSON de detalhe e nas saídas. Cada registo identifica
+a cabeça e a árvore da sua execução. A corrida de trabalho
 anterior permanece em `trabalho-rotinas`. A conferência do novo registo da
 árvore está em `registro-planta`, a do detetor em `medidor-planta`. A prova
 `prompt-reposto.json` confere os bytes e os resumos do prompt original e reposto.
@@ -225,10 +237,10 @@ recebeu a tabela com `2026-03-10` entre as versões suportadas, sem «latest».
 São leituras distintas. A segunda não confirma o excerto da primeira. O endereço,
 a hora e o excerto estão em `provas/f22d/api-versoes.json`; o cabeçalho mantém-se.
 
-### Portões e paragem desta passagem
+### Portões e fecho desta passagem
 
 Os códigos foram lidos depois de os processos acabarem. O motor foi testado na
-cabeça `7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8`; o sítio em
+cabeça `7c43b0746f8c43d9ace5cfdcb4d71a79927a6813`; o sítio em
 `f97d7d60d3611f011cbaef26fc05cff92c9ac7a1`, antes do commit final das provas.
 Os registos da árvore distinguem o commit limpo do motor das árvores do sítio,
 que continham os ficheiros de prova em construção. O medidor não atribui o
@@ -236,7 +248,7 @@ commit futuro das provas aos comandos já executados.
 
 | Comando | Código lido | Segundos | Ficheiro |
 |---|---:|---:|---|
-| `python3 -m core.gate` | 0 | 213,203 | `provas/f22d/core-final.codigo` |
+| `python3 -m core.gate` | 0 | 209,994 | `provas/f22d/core-final.codigo` |
 | `npm run build` | 0 | 79,571 | `portoes/f22d/build.codigo` |
 | `npm run verify` | 0 | 541,615 | `portoes/f22d/verify.codigo` |
 | `npm run typecheck` | 0 | 0,245 | `portoes/f22d/typecheck.codigo` |
@@ -247,19 +259,40 @@ que comparava o alias da pasta temporária com a sua forma física; a comparaç�
 foi corrigida, e os commits posteriores passaram. A tentativa recusada permanece
 em `provas/f22d/commit-limiar`, com código 1.
 
-O verde local não substitui a prova do clone raso. `clone-antes.codigo` contém
-1: o clone é raso, não tem `master` local e as plantas do portátil falham ao
-pedir essa referência. A passagem para no ponto `1`: a referência exata contém
-uma identificação pessoal, e o mandato exige «nenhum segredo, caminho da máquina
-ou nome do utilizador em ficheiro nenhum». A proposta de `referencia-pendente.json`
-expurga apenas as linhas do identificador e da pasta do portátil; conserva as
-chamadas Python e os cinco cabeçalhos e regista os resumos original e expurgado.
-A cópia fixa, a troca da leitura das plantas e o controlo verde do clone ficam
-por fazer. O ponto `2` fica com a ligação à referência fixa dependente dessa decisão.
+A prova vermelha anterior conserva-se em `clone-antes.codigo`: o clone raso
+sem `master` local falhava ao pedir essa referência. A cópia fixa já não faz
+essa consulta. O controlo depois da correção deu código 0 com 25 plantas em `clone.codigo`,
+na cabeça `7c43b0746f8c43d9ace5cfdcb4d71a79927a6813`, com a cabeça,
+a árvore, a condição de clone raso e a ausência de `master` em `clone-detalhe.json`.
+
+O SHA-256 do original é
+`45336f7489b6f36bf6062c6c88aadad4bc847729f32be1465314753335f814fc`;
+o da cópia expurgada é
+`d99ce84230204fdf55a80eae748897197f42c54a8375cc7dcdcb5f7b904dfa33`.
+A proveniência ao lado da cópia guarda o comando
+`git show 68318e0:sweeps/monthly.sh | shasum -a 256` e as linhas substituídas.
+No rótulo do agente, só o nome passa a `<utilizador>`; no `cd`, só o caminho
+passa a `<motor>`. As outras linhas, incluindo as chamadas Python, os cabeçalhos
+e a regra de saída, conferem byte a byte. A primeira proposta, não aplicada,
+fica identificada como histórica em `referencia-proposta-historica.json`.
+
+O pre-commit `precommit-referencia-interrompido` foi interrompido antes do commit
+para mover os novos metadados para `indicators/fixtures/`, fora dos JSON protegidos
+da raiz. O registo conserva o código de terminação; `precommit-referencia` é a
+repetição completa. A tentativa `precommit-referencia-json` foi recusada pelo
+portão das respostas HTTP: os metadados de código Git estavam em JSON na pasta
+dessas respostas. A proveniência passou para Markdown, ao lado do guião, com
+os dois resumos e as linhas trocadas. O teste específico continua a conferir
+a cópia e a recusar bytes alterados; o portão das respostas não mudou. Os
+caminhos protegidos não entram no diff dos commits.
 
 As árvores exatas das execuções históricas não guardadas não são recuperáveis
 com certeza a partir deste pacote. Os registos dizem essa limitação; as novas
 execuções guardam a árvore antes de correr. Não se fabricou prova retroativa.
+
+Não há pendências locais desta passagem. `fecho.json` reúne os códigos lidos,
+a referência fixa e o controlo verde do clone. `ambito-retoma.json` regista
+que esta retoma só mudou as provas do sítio, antes do último commit.
 
 ### Fora desta passagem
 
