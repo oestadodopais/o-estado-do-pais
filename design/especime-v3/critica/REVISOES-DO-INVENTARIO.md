@@ -489,3 +489,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | pp1 | 75 cadeias novas, 4 retiradas e 2 que saem do ficheiro | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do PP1: a mobília da primeira página nova e das cinco páginas das entradas, nas duas edições (os títulos, a data de «O que se passa», as entradas, as secções, os estudos, as descrições); ficam retiradas a descrição antiga da primeira página e a leitura do país; saem do ficheiro as duas linhas da frase do veredicto, que a V1 confere inteira na primeira página e cuja linha contava as vírgulas da lista das medidas fora (uma revisão de rotina fechava a construção). As palavras dos blocos e a lista dos números deles ficam fora da tabela com a marca `data-bloco-declarado`, conferidas por `tests/inicio/blocos.mjs`; a régua das frases muda de forma em `scripts/medir-defeitos.mjs`, com as plantas em `tests/inicio/regua-das-frases.mjs`. |
+
+## UE1 · onde Portugal fica entre os 27, 29.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ue1 | 6 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do UE1: o rótulo da marca da média da União no desenho da faixa, nas duas edições, e a frase do lugar de Portugal entre os 27 nos dois ramos que se rendem hoje (sem empate; e o empate com dois países, na pobreza ou exclusão de 2025), nas duas edições, na forma em que a régua da voz os recolhe. As palavras são do lugar de direção, declaradas em `src/data/faixa-da-uniao.mjs` com os acertos F1 a F3, ditos no relatório do bloco e conferidos por `acertos-ue1.py`; a F19 do `check:formas` e a K18 do `check:cartao` recompõem a frase inteira; as origens novas (`data-ponto`, `data-pais` e as outras) entram em `ORIGEM_DECLARADA` de `scripts/medir-defeitos.mjs`. |

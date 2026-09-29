@@ -148,7 +148,8 @@ import {
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
-import { lerSeriesDoPortao } from './series-do-portao.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao } from './series-do-portao.mjs';
+import { conferirFaixas, plantasDaFaixa } from '../tests/cartao/faixa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -265,6 +266,7 @@ const MOTIVOS_DO_DOMINIO = new Set([
 const claims = loadClaims();
 /** UE1: as linhas de série, pelo leitor próprio dos portões (F1 e F19). */
 const SERIES_DO_PORTAO = lerSeriesDoPortao();
+const PAISES_DO_PORTAO = lerPaisesDoPortao();
 
 /** @param {string} dir */
 function paginasDe(dir) {
@@ -413,6 +415,13 @@ const contas = {
   paginas_de_dominio: 0,
   datas_de_linha: 0,
   datas_de_serie: 0,
+  /* F19, UE1: as faixas da União e as suas plantas. */
+  faixas: 0,
+  faixas_nos_temas: 0,
+  marcas_das_faixas: 0,
+  frases_das_faixas: 0,
+  empates_nas_faixas: 0,
+  plantas_das_faixas: 0,
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
@@ -470,9 +479,33 @@ for (const ficheiro of paginasDe(DIST)) {
   const caminho = '/' + path.relative(DIST, ficheiro).split(path.sep).join('/');
   const rota = matchPath(caminho.replace(/index\.html$/, ''));
   if (rota?.key === 'documento') continue;
-  const root = parse(fs.readFileSync(ficheiro, 'utf8'));
+  const html = fs.readFileSync(ficheiro, 'utf8');
+  const root = parse(html);
   const rel = path.relative(RAIZ, ficheiro);
   contas.paginas++;
+
+  /* F19, UE1 (29.09.2026): a faixa da União em cada cartão nacional das medidas
+     com série de países, refeita dos pontos (`tests/cartao/faixa.mjs`, que a K18
+     do `check:cartao` também chama). Nas duas páginas dos temas correm também as
+     plantas em memória, e cada uma tem de morder. */
+  if (html.includes('data-cartao-medida') || html.includes('data-faixa-ue')) {
+    const lingua = rota?.lang === 'en' ? 'en' : 'pt';
+    const f19 = conferirFaixas(root, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO });
+    for (const e of f19.erros) err(`${rel}: ${e}`);
+    contas.faixas += f19.contas.faixas;
+    contas.marcas_das_faixas += f19.contas.marcas;
+    contas.frases_das_faixas += f19.contas.frases;
+    contas.empates_nas_faixas += f19.contas.empates;
+    if (rota?.key === 'temas') {
+      contas.faixas_nos_temas += f19.contas.faixas;
+      if (!f19.erros.length) {
+        for (const planta of plantasDaFaixa(html, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO })) {
+          contas.plantas_das_faixas++;
+          if (!planta.passou) err(`${rel}: F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
+        }
+      }
+    }
+  }
 
   /* F18, C1: o ano de cada dívida ocupa a sua posição no calendário comum.
      A célula independente relê as origens da conta e prova as lacunas com
@@ -1262,6 +1295,16 @@ if (dominios.length > 0 && contas.formas > 0) {
   }
 }
 
+/* F19 · o conhecido-positivo: cada série de países tem a sua faixa nas duas
+   páginas dos temas, e as plantas correram. Zero faixas com séries no livro é
+   um detetor que não viu nada. */
+if (SERIES_DO_PORTAO.size && contas.faixas_nos_temas !== 2 * SERIES_DO_PORTAO.size) {
+  err(`F19: as páginas dos temas rendem ${contas.faixas_nos_temas} faixa(s) da União e há ${SERIES_DO_PORTAO.size} série(s) de países; esperavam-se ${2 * SERIES_DO_PORTAO.size}, uma por série e por edição.`);
+}
+if (SERIES_DO_PORTAO.size && contas.plantas_das_faixas === 0) {
+  err('F19: nenhuma planta da faixa correu: a célula não provou que morde.');
+}
+
 /* ========================================================================== */
 
 if (erros.length > 0) {
@@ -1287,6 +1330,9 @@ console.log(
         ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)` +
         ` · frescura nos cartões de concelho: ${contas.frescura_nos_cartoes.pt} pt e ${contas.frescura_nos_cartoes.en} en, de ${contas.frescura_esperada.pt} e ${contas.frescura_esperada.en} cartões numa série atrasada (F17)` +
         ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)` +
-        ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas`,
+        ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas` +
+        ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos temas, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
+        `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder` +
+        ` · ${contas.datas_de_serie} data(s) de série`,
     ),
 );

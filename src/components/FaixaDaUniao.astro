@@ -1,0 +1,108 @@
+---
+/**
+ * A FAIXA DA UNIÃO NUM CARTÃO (bloco UE1, 29.09.2026): onde Portugal fica entre os 27.
+ *
+ * Por baixo do número de Portugal, uma linha do valor mais baixo ao mais alto dos
+ * 27 países da União no mesmo período, com uma marca por país, a de Portugal
+ * maior e a tinta, a da média da União como um traço, o país mais baixo e o mais
+ * alto nomeados com o valor, e a frase do lugar de Portugal. O modelo vem de
+ * `src/lib/faixa-da-uniao.mjs`, que fez as contas: aqui não se calcula nada.
+ *
+ * SEM COR (IDENTIDADE §2): uma posição num ordenamento não é um limiar
+ * publicado, diz-se por palavras e a tinta. Portugal distingue-se pelo tamanho
+ * da marca e pelo rótulo; a União, pela forma.
+ *
+ * O DESENHO VAI `aria-hidden`: a frase diz tudo o que ele mostra, com os valores,
+ * os nomes e o lugar, e um leitor de ecrã lê-a. Não há algarismos no desenho: as
+ * pontas escrevem-se por baixo dele, em texto.
+ *
+ * CADA ALGARISMO TEM ORIGEM NUM PONTO DA SÉRIE: os valores por `PontoDaSerie`
+ * (`data-ponto`), a contagem dos países e o lugar por marcas que o portão de HTML
+ * reconta dos pontos, o período pelo motivo `data-da-linha` da série. Os nomes
+ * dos países vêm da tabela de autoridade (`NomeDoPais`). A posição de cada marca
+ * escreve-se em percentagem, e a F19 do `check:formas` refá-la a partir do valor.
+ * A porta dos valores é a ligação para o recibo da série, no fim da faixa.
+ */
+import PontoDaSerie from './serie/PontoDaSerie.astro';
+import NomeDoPais from './serie/NomeDoPais.astro';
+import DataDaSerie from './serie/DataDaSerie.astro';
+import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
+
+const { id, lang } = Astro.props;
+const f = faixaDaMedida(id, lang);
+---
+
+{
+  f && (
+    <div class="cartao-medida-faixa" data-faixa-ue={f.serie}>
+      <div class="faixa-ue-desenho" aria-hidden="true" data-faixa-desenho={f.serie}>
+        <span
+          class="faixa-ue-rotulo faixa-ue-rotulo-portugal"
+          data-faixa-rotulo="portugal"
+          data-ancora={f.rotulos.portugal.ancora}
+          style={`left:${f.rotulos.portugal.esquerda}%`}
+        >
+          <NomeDoPais geo="PT" lang={lang} />
+        </span>
+        <span class="faixa-ue-eixo">
+          {f.marcas.map((m) => (
+            <span
+              class:list={['faixa-ue-marca', `faixa-ue-${m.papel}`]}
+              data-faixa-marca={`${f.serie}#${m.geo}`}
+              style={`left:${m.esquerda}%`}
+            />
+          ))}
+        </span>
+        <span
+          class="faixa-ue-rotulo faixa-ue-rotulo-uniao"
+          data-faixa-rotulo="uniao"
+          data-ancora={f.rotulos.uniao.ancora}
+          style={`left:${f.rotulos.uniao.esquerda}%`}
+        >
+          <span data-voz>{f.palavras.uniao}</span>
+        </span>
+      </div>
+      <p class="faixa-ue-pontas">
+        {['baixo', 'alto'].map((papel) => (
+          <span class:list={['faixa-ue-ponta', `faixa-ue-ponta-${papel}`]} data-faixa-ponta={papel}>
+            {f.pontas[papel].map((p, i) => (
+              <>
+                {i > 0 && ', '}
+                <NomeDoPais geo={p.geo} lang={lang} />
+              </>
+            ))}{' '}
+            <PontoDaSerie serie={f.serie} geo={f.pontas[papel][0].geo} class="faixa-ue-valor" />
+            {f.pontas[papel][0].bandeira && (
+              <>
+                {' '}
+                <span class="faixa-ue-bandeira" data-ponto-bandeira={`${f.serie}#${f.pontas[papel][0].geo}`}>
+                  {f.pontas[papel][0].bandeira}
+                </span>
+              </>
+            )}
+          </span>
+        ))}
+      </p>
+      <p class="faixa-ue-frase" data-faixa-frase={f.serie}>
+        {f.pedacos.map((p) =>
+          typeof p === 'string' ? (
+            p
+          ) : 'ponto' in p ? (
+            <PontoDaSerie serie={f.serie} geo={p.ponto} class="faixa-ue-valor" />
+          ) : 'pais' in p ? (
+            <NomeDoPais geo={p.pais} lang={lang} />
+          ) : 'conta' in p ? (
+            <span class="faixa-ue-conta" data-ponto-conta={f.serie}>{p.conta}</span>
+          ) : 'lugar' in p ? (
+            <span class="faixa-ue-lugar" data-ponto-lugar={f.serie}>{p.lugar}</span>
+          ) : (
+            <DataDaSerie serie={f.serie} campo="periodo" valor={p.periodo} lang={lang} />
+          ),
+        )}
+      </p>
+      <p class="faixa-ue-porta">
+        <a href={f.porta}>{f.palavras.porta}</a>
+      </p>
+    </div>
+  )
+}

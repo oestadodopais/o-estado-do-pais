@@ -3548,3 +3548,20 @@ leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da fra
 | conteudo | Portugal Investimento publicado a | pp1 | viva | texto composto de um estudo do país e da sua data, na lista dos estudos da entrada «O Estado e a economia» |
 | conteudo | Portugal Investment published on | pp1 | viva | ver a razão na gémea portuguesa |
 | navegacao | (em inglês) | pp1 | viva | a língua de um estudo que só tem edição inglesa, na lista dos estudos da entrada «O Estado e a economia» (`ROTULOS_B1.outraLingua`); a gémea «(in Portuguese)» já estava declarada |
+
+## UE1 · onde Portugal fica entre os 27 (29.09.2026)
+
+*A faixa da União nos cartões nacionais das dez medidas que os blocos da primeira página comparam com a União, na página dos temas
+e nas das entradas, nas duas edições. Entram o rótulo da marca da União no desenho e a frase do lugar de Portugal, na forma em que a
+régua da voz a recolhe (sem os valores, os nomes dos países, a contagem, o lugar e o período, que são origens conferidas), um ramo
+por linha e só os ramos que se rendem. A porta «Todos os países» vive dentro de uma ligação e não é uma frase. O recibo de cada série
+(`/livro-razao/series/<id>`) não é uma rota inventariada, como o recibo de uma linha.*
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | média da União | ue1 | viva | o rótulo da marca da média da União no desenho da faixa da União (bloco UE1, 29.09.2026), declarado em `src/data/faixa-da-uniao.mjs`; a marca e a posição dela são refeitas do valor pela F19 do `check:formas` |
+| conteudo | EU average | ue1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Entre os países da União, em , o valor mais baixo é ( ) e o mais alto ( ); a média da União é . ( ) está em .º lugar, do mais alto para o mais baixo. | ue1 | viva | a frase do lugar de Portugal entre os 27, por baixo da faixa da União de um cartão nacional (bloco UE1, 29.09.2026). As palavras são do lugar de direção (o §3, ponto 5, do `BRIEF-UE1-onde-portugal-fica-entre-os-27.md`), declaradas em `src/data/faixa-da-uniao.mjs` com os acertos F1 a F3 (conferidos por `acertos-ue1.py`, na pasta das medições do bloco); a contagem dos países, o período, os valores, os nomes e o lugar saem da série como origens conferidas pelo portão de HTML, e a F19 do `check:formas` e a K18 do `check:cartao` recompõem a frase inteira. É o ramo sem empate, que nove das dez medidas rendem hoje. |
+| conteudo | Among the EU countries in , the lowest value is ( ) and the highest is ( ); the EU average is . ( ) ranks from the highest. | ue1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Entre os países da União, em , o valor mais baixo é ( ) e o mais alto ( ); a média da União é . ( ) está em .º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor ( e ). | ue1 | viva | a frase do lugar de Portugal entre os 27, por baixo da faixa da União de um cartão nacional (bloco UE1, 29.09.2026). As palavras são do lugar de direção (o §3, ponto 5, do `BRIEF-UE1-onde-portugal-fica-entre-os-27.md`), declaradas em `src/data/faixa-da-uniao.mjs` com os acertos F1 a F3 (conferidos por `acertos-ue1.py`, na pasta das medições do bloco); a contagem dos países, o período, os valores, os nomes e o lugar saem da série como origens conferidas pelo portão de HTML, e a F19 do `check:formas` e a K18 do `check:cartao` recompõem a frase inteira. É o ramo do empate com dois países, que a pobreza ou exclusão de 2025 rende hoje (Portugal, a Áustria e a Suécia têm o mesmo valor). O ramo de um país só («a par de outro país com o mesmo valor») está declarado e não se rende hoje: entra aqui quando se render. |
+| conteudo | Among the EU countries in , the lowest value is ( ) and the highest is ( ); the EU average is . ( ) ranks from the highest, level with other countries with the same value ( and ). | ue1 | viva | ver a razão na gémea portuguesa |
