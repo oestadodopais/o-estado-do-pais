@@ -232,7 +232,7 @@ import {
 } from '../../src/i18n/lingua-dos-titulos.mjs';
 import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../../scripts/series-do-portao.mjs';
-import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa } from './faixa.mjs';
+import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from './faixa.mjs';
 
 /**
  * K14 · AS MEDIDAS CUJA MÉDIA EUROPEIA O CARTÃO CALA, e a decisão que o manda.
@@ -377,6 +377,7 @@ function corre(dist) {
     ressalvas_k18: 0,
     ordinais_k18: 0,
     plantas_das_palavras_k18: 0,
+    plantas_dos_empates_k18: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -760,6 +761,13 @@ function corre(dist) {
     for (const planta of plantasDasPalavrasDaFaixa(SERIES_DA_K18)) {
       contas.plantas_das_palavras_k18++;
       if (!planta.passou) erros.push(`K18 · a planta «${planta.nome}» não mordeu (${planta.porque})`);
+    }
+    /* UE1c: os empates num extremo, em memória. */
+    for (const lingua of /** @type {const} */ (['pt', 'en'])) {
+      for (const planta of plantasDosEmpates(SERIES_DA_K18, PAISES_DA_K18, lingua)) {
+        contas.plantas_dos_empates_k18++;
+        if (!planta.passou) erros.push(`K18 · a planta «${planta.nome}» (${lingua}) não mordeu (${planta.porque})`);
+      }
     }
   }
 
@@ -1739,6 +1747,7 @@ console.log(cinza(`    cartões com a média europeia calada (K14)              
 console.log(cinza(`    cartões com a faixa da União (K1, K18)                 ${r.contas.cartoes_com_faixa}`));
 console.log(cinza(`    faixas refeitas dos pontos (K18)                       ${r.contas.faixas_k18}${PROVA ? ` · ${r.contas.plantas_k18} planta(s) a morder` : ''}`));
 console.log(cinza(`    ressalvas nas pontas e ordinais (K18, UE1b)            ${r.contas.ressalvas_k18} · ${r.contas.ordinais_k18}${PROVA ? ` · ${r.contas.plantas_das_palavras_k18} planta(s) das palavras a morder` : ''}`));
+console.log(cinza(`    empates num extremo, em memória (K18, UE1c)            ${PROVA ? `${r.contas.plantas_dos_empates_k18} planta(s) a morder` : 'sem --prova'}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(
   cinza(

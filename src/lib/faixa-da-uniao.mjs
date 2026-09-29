@@ -21,6 +21,11 @@
  * A PASSAGEM UE1b (29.09.2026): o ordinal inglês do lugar (`sufixoOrdinal`, o
  * acerto F4) e as ressalvas da fonte nas pontas, pelas palavras declaradas; uma
  * marca sem palavras fecha a construção aqui, com o nome da marca.
+ *
+ * A PASSAGEM UE1c (29.09.2026, o achado 5 da leitura a frio): num extremo
+ * empatado, cada país da ponta leva o seu valor e a sua ressalva, e não só o
+ * primeiro; as palavras da lista (`lista`) vão com a faixa para o componente as
+ * pôr entre eles.
  */
 
 import { parsePtNumber } from './ledger.mjs';
@@ -164,6 +169,6 @@ export function faixaDaMedida(idDaLinha, lang) {
       alto: papeis.alto.map((geo) => ponta(geo)),
     },
     porta: routePath('serie', lang, { slug: serie.id }),
-    palavras: { uniao: palavras.uniao, porta: palavras.porta },
+    palavras: { uniao: palavras.uniao, porta: palavras.porta, lista: palavras.lista },
   };
 }

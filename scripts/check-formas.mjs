@@ -149,7 +149,7 @@ import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
-import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa } from '../tests/cartao/faixa.mjs';
+import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from '../tests/cartao/faixa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -427,6 +427,7 @@ const contas = {
   ordinais_conferidos: 0,
   marcas_com_palavras: 0,
   plantas_das_palavras: 0,
+  plantas_dos_empates: 0,
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
@@ -1328,6 +1329,14 @@ if (SERIES_DO_PORTAO.size) {
       if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
     }
   }
+  /* UE1c (o achado 5): os empates num extremo, feitos em memória, com a marca só
+     num dos países empatados; cada planta tem de morder e o seu controlo passar. */
+  for (const lingua of ['pt', 'en']) {
+    for (const planta of plantasDosEmpates(SERIES_DO_PORTAO, PAISES_DO_PORTAO, lingua)) {
+      contas.plantas_dos_empates++;
+      if (!planta.passou) err(`F19: a planta «${planta.nome}» (${lingua}) não mordeu (${planta.porque}).`);
+    }
+  }
   let pontasComMarca = 0;
   for (const serie of SERIES_DO_PORTAO.values()) {
     try {
@@ -1371,7 +1380,8 @@ console.log(
         ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos temas, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
         `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder, ` +
         `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos temas), ${contas.ordinais_conferidos} ordinais e ` +
-        `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder` +
+        `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder, ` +
+        `${contas.plantas_dos_empates} plantas dos empates a morder` +
         ` · ${contas.datas_de_serie} data(s) de série`,
     ),
 );
