@@ -179,22 +179,23 @@ edicoes:
     sha256_raw: 38b1eea0526e900f097cd8df36b6710524a4a5f8b6feca82c51b8a2dcce979e7
     sha256_normalized: e84c4047bca3f6782566052dbd42bc98e720d2ab615b96bd5e7063b1cc51ccb9
   # Redigido a 2026-09-29, a pedido do diretor (DECISIONS.md §1.138): a linha
-  # «Prepared by … for …» deste documento nomeava-o, e o nome saiu dos dois
-  # ficheiros, o bruto e o normalizado, com o mesmo número de bytes. Os dois
-  # resumos são agora os dos bytes redigidos, e o normalizado reproduz-se do
-  # bruto com scripts/normalize-study.mjs; os bytes que o anfitrião serviu a
-  # 2026-08-12 ficam na história do Git, no commit cec84d3c.
+  # «Prepared by … for …» deste documento nomeava-o, e passou a dizer só
+  # «Prepared by Claude (claude-fable-5)», nos dois ficheiros, o bruto e o
+  # normalizado. Os dois resumos e as medidas são agora os dos bytes redigidos,
+  # e o normalizado reproduz-se do bruto com scripts/normalize-study.mjs; os
+  # bytes que o anfitrião serviu a 2026-08-12 ficam na história do Git, no
+  # commit cec84d3c.
   - slug: alentejo-algarve
     lang: en
     title: "Alentejo & Algarve — Economy, Society, Strategy"
     artifact_url: https://claude.ai/code/artifact/bc6cb6de-4fa7-4b1f-a67c-733e02f8966a
     raw_file: _raw/alentejo-algarve.en.html
     fetched_utc: 2026-08-12T13:55:28Z
-    bytes_raw: 79500
+    bytes_raw: 79484
     bytes_runtime_removed: 17141
-    bytes_normalized: 62359
-    sha256_raw: 54e2eacf1cff9fb866059603a9534dba605cf4f1288cad996b3c47e50c5b4010
-    sha256_normalized: 86a853ed1b8edbb307ec7c3165d038e31cea86875a469554f0bb4e3fb8a4e4f7
+    bytes_normalized: 62343
+    sha256_raw: 9761a549e7f88c88af4bc93b29168b37d40ff5cb1f71e8d8f2e3e144279aad90
+    sha256_normalized: 836d148abee1612413fc2bd7f5728b5777e8eb563e4258a304c1493d92cbb2e0
   - slug: evolucao-de-portugal-desde-1981
     lang: pt
     title: "Evolução de Portugal desde 1981"

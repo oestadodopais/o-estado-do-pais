@@ -1,0 +1,38 @@
+[
+ {
+  "RuleID": "github-pat",
+  "Description": "Uncovered a GitHub Personal Access Token, potentially leading to unauthorized repository access and sensitive content exposure.",
+  "StartLine": 1,
+  "EndLine": 1,
+  "StartColumn": 16,
+  "EndColumn": 55,
+  "Match": "REDACTED",
+  "Secret": "REDACTED",
+  "File": "config.js",
+  "SymlinkFile": "",
+  "Commit": "b09b279e2020ea74e220c7773c3200fae77af3a3",
+  "Entropy": 4.553056,
+  "Date": "2026-09-29T07:29:06Z",
+  "Message": "planta",
+  "Tags": [],
+  "Fingerprint": "b09b279e2020ea74e220c7773c3200fae77af3a3:config.js:github-pat:1"
+ },
+ {
+  "RuleID": "aws-access-token",
+  "Description": "Identified a pattern that may indicate AWS credentials, risking unauthorized cloud resource access and data breaches on AWS platforms.",
+  "StartLine": 2,
+  "EndLine": 2,
+  "StartColumn": 22,
+  "EndColumn": 41,
+  "Match": "REDACTED",
+  "Secret": "REDACTED",
+  "File": "config.js",
+  "SymlinkFile": "",
+  "Commit": "b09b279e2020ea74e220c7773c3200fae77af3a3",
+  "Entropy": 3.6841838,
+  "Date": "2026-09-29T07:29:06Z",
+  "Message": "planta",
+  "Tags": [],
+  "Fingerprint": "b09b279e2020ea74e220c7773c3200fae77af3a3:config.js:aws-access-token:2"
+ }
+]
