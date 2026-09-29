@@ -20,6 +20,17 @@
  *        só tem, ao primeiro nível, os blocos permitidos: o nome, a linha do
  *        valor, a frase e a régua. Um bloco a mais é um campo de recibo a
  *        voltar, e é assim que ele volta: alguém acrescenta uma linha.
+ *        **Desde o UE1 (29.09.2026) há uma sexta coisa, e só onde ela é devida**:
+ *        a faixa da União (`cartao-medida-faixa`), uma vez, num cartão cuja linha
+ *        tem série de países em `ledger/series/`. Num cartão sem série a faixa é
+ *        um bloco a mais e a K1 recusa-a como recusa um campo de recibo; a planta
+ *        põe-na num desses cartões.
+ *   K18 · **a faixa da União refeita dos pontos** · a mesma célula que a F19 do
+ *        `check:formas` corre na construção (`tests/cartao/faixa.mjs`): a faixa em
+ *        cada cartão nacional com série, o desenho com uma marca por país na
+ *        posição que o valor dá, as pontas, a frase recomposta das palavras
+ *        declaradas e a porta para o recibo da série. Com `--prova`, as plantas
+ *        dela correm sobre as páginas dos temas.
  *   K2 · **os rótulos do recibo a 0** · nenhum cartão escreve «Publicado por»,
  *        «Documento», «Lido na fonte a» ou «Dados de», nem os ingleses. As
  *        cadeias saem de `strings.mjs` e não de uma lista escrita aqui: um
@@ -220,6 +231,8 @@ import {
   linguaDoTituloDoDocumento,
 } from '../../src/i18n/lingua-dos-titulos.mjs';
 import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../../scripts/series-do-portao.mjs';
+import { conferirFaixas, plantasDaFaixa } from './faixa.mjs';
 
 /**
  * K14 · AS MEDIDAS CUJA MÉDIA EUROPEIA O CARTÃO CALA, e a decisão que o manda.
@@ -255,7 +268,13 @@ const PECAS_PERMITIDAS = new Set([
   'cartao-medida-leitura',
   'cartao-medida-frase',
   'cartao-medida-regua',
+  /* UE1, 29.09.2026: a faixa da União, só num cartão cuja linha tem série de
+     países, e uma vez (a K1 confere as duas coisas abaixo). */
+  'cartao-medida-faixa',
 ]);
+/** As séries de países e a tabela dos nomes, pelo leitor próprio dos portões (K1, K18). */
+const SERIES_DA_K18 = lerSeriesDoPortao();
+const PAISES_DA_K18 = lerPaisesDoPortao();
 
 /**
  * Os rótulos de recibo que um cartão não pode escrever, nas duas edições.
@@ -350,6 +369,10 @@ function corre(dist) {
     /* K14, bloco R1: os cartões de uma medida cuja média europeia está calada. */
     cartoes_com_media_calada: 0,
     cartoes_com_veredicto: 0,
+    /* UE1: os cartões com a faixa da União, e o que a K18 conferiu nelas. */
+    cartoes_com_faixa: 0,
+    faixas_k18: 0,
+    plantas_k18: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -370,6 +393,22 @@ function corre(dist) {
       const langPagina = (root.querySelector('html')?.getAttribute('lang') ?? 'pt').startsWith('en')
         ? 'en'
         : 'pt';
+
+      /* K18 · a faixa da União, refeita dos pontos (UE1, 29.09.2026). A mesma
+         célula da F19 do `check:formas`; as plantas correm com `--prova`, sobre as
+         páginas dos temas. */
+      const html = fs.readFileSync(f, 'utf8');
+      if (html.includes('data-cartao-medida') || html.includes('data-faixa-ue')) {
+        const k18 = conferirFaixas(root, langPagina, rota, { series: SERIES_DA_K18, paises: PAISES_DA_K18 });
+        for (const e of k18.erros) erros.push(`K18 · ${e}`);
+        contas.faixas_k18 += k18.contas.faixas;
+        if (PROVA && /^\/(en\/themes|temas)\/$/.test(rota) && !k18.erros.length) {
+          for (const planta of plantasDaFaixa(html, langPagina, rota, { series: SERIES_DA_K18, paises: PAISES_DA_K18 })) {
+            contas.plantas_k18++;
+            if (!planta.passou) erros.push(`K18 · ${rota}: a planta «${planta.nome}» não mordeu (${planta.porque})`);
+          }
+        }
+      }
 
       /* K8 · a linha do tipo e a legenda da marca. */
       const texto = root.text;
@@ -463,6 +502,14 @@ function corre(dist) {
         if (!classes.includes('cartao-medida-valor')) {
           erros.push(`K1 · ${rota} · ${id}: o cartão não tem a linha do valor`);
         }
+        /* UE1: a faixa da União é a sexta coisa só num cartão com série de países,
+           e uma vez. Noutro cartão é um bloco a mais, como qualquer outro. */
+        const faixasNoCartao = classes.filter((c) => c === 'cartao-medida-faixa').length;
+        if (faixasNoCartao && !serieDaLinhaDoPortao(SERIES_DA_K18, id)) {
+          erros.push(`K1 · ${rota} · ${id}: o cartão tem a faixa da União e a linha não tem série de países em ledger/series/`);
+        }
+        if (faixasNoCartao > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${faixasNoCartao} faixas da União`);
+        if (faixasNoCartao) contas.cartoes_com_faixa++;
         /* ----------------------------------------------------------- K11 */
         /* UM CARTÃO SEM NOME FECHA A CONSTRUÇÃO (achado 3 da leitura a frio de
            15.09.2026: «The card gate can pass cards missing mandatory content,
@@ -1000,6 +1047,13 @@ function montaAProva() {
       '<p class="cartao-medida-regua"><span data-regua="ue" data-selo-em="sobrecarga-do-custo-da-habitacao-2025">' +
       '<span data-claim="sobrecarga-do-custo-da-habitacao-2025-ue">7,7</span></span></p>' +
       '</article>' +
+      /* PLANTA 11 (K1, UE1): a faixa da União num cartão cuja linha não tem série
+         de países. É um bloco a mais, e a K1 recusa-o. */
+      '<article data-cartao-medida="formacao-bruta-de-capital-fixo-2025">' +
+      '<span class="cartao-medida-nome">Formação bruta de capital fixo</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="formacao-bruta-de-capital-fixo-2025">19,8</span>' + chip('formacao-bruta-de-capital-fixo-2025') + '</p>' +
+      '<div class="cartao-medida-faixa" data-faixa-ue="divida-publica-2025-paises"></div>' +
+      '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
       '</body></html>',
@@ -1032,6 +1086,7 @@ if (PROVA) {
     ['K11', 'rende-se sem nome'],
     ['K12', 'não declaram a mesma edição'],
     ['K14', 'rende a média europeia'],
+    ['K1', 'a faixa da União e a linha não tem série'],
   ];
   for (const [celula, pedaco] of esperado) {
     const vistos = dessaCelula(celula);
@@ -1662,6 +1717,8 @@ console.log(
 );
 console.log(cinza(`    cartões com veredicto conferido (K15)                 ${r.contas.cartoes_com_veredicto}`));
 console.log(cinza(`    cartões com a média europeia calada (K14)              ${r.contas.cartoes_com_media_calada}`));
+console.log(cinza(`    cartões com a faixa da União (K1, K18)                 ${r.contas.cartoes_com_faixa}`));
+console.log(cinza(`    faixas refeitas dos pontos (K18)                       ${r.contas.faixas_k18}${PROVA ? ` · ${r.contas.plantas_k18} planta(s) a morder` : ''}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(
   cinza(

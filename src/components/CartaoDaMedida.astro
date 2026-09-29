@@ -80,6 +80,7 @@ import CampoDaLinha from './CampoDaLinha.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
 import Frase from './Frase.astro';
 import ReguaDoCartao from './ReguaDoCartao.astro';
+import FaixaDaUniao from './FaixaDaUniao.astro';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
@@ -282,6 +283,13 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       )}
 
       <ReguaDoCartao id={c.id} lang={lang} s={s} />
+
+      {/* A FAIXA DA UNIÃO (bloco UE1, 29.09.2026): onde Portugal fica entre os
+          27, por baixo do número e da régua, só nos cartões nacionais (os que
+          levam a leitura: a página dos temas e as das entradas) e só nas medidas
+          que têm série de países em `ledger/series/`. Onde não há série, não se
+          desenha nada. */}
+      {comLeitura && <FaixaDaUniao id={c.id} lang={lang} />}
 
       {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
       {frase && (
