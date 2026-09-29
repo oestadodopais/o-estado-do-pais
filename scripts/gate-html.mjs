@@ -15,11 +15,17 @@ import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
  * medida não a tem ou a definição traz um pedaço que não é palavra nem algarismo
  * declarado, e aí o recibo não se confere por texto e o portão di-lo.
  *
- * @param {string} id @param {'pt'|'en'} lang
+ * A FORMA DO RECIBO DA SÉRIE (a passagem UE1e, 30.09.2026, pela §1.140): com
+ * `forma` igual a `'serie'`, lê a forma que a declaração tem para o recibo da
+ * série (`serie`, a pergunta do cartão sem o lugar) onde ela existe, e a do
+ * cartão onde não existe, que é a regra do `SerieView.astro`.
+ *
+ * @param {string} id @param {'pt'|'en'} lang @param {'cartao'|'serie'} [forma]
  * @returns {string|null}
  */
-function definicaoDoPortao(id, lang) {
-  const partes = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id]?.[lang];
+function definicaoDoPortao(id, lang, forma = 'cartao') {
+  const entrada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id];
+  const partes = (forma === 'serie' && entrada?.serie ? entrada.serie : entrada)?.[lang];
   if (!Array.isArray(partes)) return null;
   let texto = '';
   for (const p of partes) {
@@ -29,6 +35,16 @@ function definicaoDoPortao(id, lang) {
   }
   return normalizeWhitespace(texto);
 }
+/**
+ * O QUE NOMEIA PORTUGAL NA DEFINIÇÃO DE UM RECIBO DE SÉRIE (a passagem UE1e,
+ * 30.09.2026, pela §1.140). O recibo é a tabela dos 27 países, e uma definição
+ * que nomeie Portugal faz o número de cada outro país ler-se como se fosse sobre
+ * Portugal. O nome, nas duas edições, e os gentílicos, que o dizem por outras
+ * palavras («português», «portuguesa», «Portuguese»).
+ */
+const NOMEIA_PORTUGAL = /\bPortugal\b|\bportugu[eê]s(?:es)?\b|\bportuguesas?\b|\bPortuguese\b/i;
+/** A pergunta do cartão sem o lugar: sem « em Portugal» ou « in Portugal», uma vez. @param {string} t */
+const semOLugar = (t) => t.replace(/ (?:em|in) Portugal\b/, '');
 /**
  * Portão (a) e (c): varrimento do HTML construído.
  *
@@ -525,6 +541,9 @@ const portasDasSeriesVistas = new Set();
 const UE1B = { portas: 0, legendas: 0, marcasNasLegendas: 0 };
 /* UE1c e UE1d: a definição declarada de cada medida, nos recibos das séries. */
 const UE1D = { definicoes: 0 };
+/* UE1e: os recibos das séries sem Portugal na definição, os que usam a forma do
+   recibo da série, e as formas declaradas. */
+const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 let ficheiros = 0;
 let documentos = 0;
@@ -4465,16 +4484,28 @@ for (const file of ficheirosHtml(DIST)) {
          declarada da medida, carácter a carácter, em cada um dos vinte recibos. */
       {
         const linguaDoRecibo = rota.lang === 'en' ? 'en' : 'pt';
-        const esperada = definicaoDoPortao(String(serie.linha_de_portugal), linguaDoRecibo);
+        const medidaDaSerie = String(serie.linha_de_portugal);
+        /* UE1e: a forma do recibo da série, onde a declaração a tem, e a do cartão onde não tem. */
+        const temForma = Boolean(/** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[medidaDaSerie]?.serie);
+        const esperada = definicaoDoPortao(medidaDaSerie, linguaDoRecibo, 'serie');
         const frases = root.querySelectorAll('[data-serie-o-que-conta]');
         if (esperada === null) {
           err(`UE1d: a medida «${serie.linha_de_portugal}» da série «${sid}» não tem uma definição declarada que o portão leia em DEFINICOES_DAS_MEDIDAS.`);
         } else if (frases.length !== 1 || frases[0].getAttribute('data-serie-o-que-conta') !== sid) {
           err(`UE1d: o recibo da série «${sid}» tem ${frases.length} definição(ões) da medida, e tem de ter uma, a declarada.`);
         } else if (textoTranscrito(frases[0]) !== esperada) {
-          err(`UE1d: o recibo da série «${sid}» diz «${textoTranscrito(frases[0]).slice(0, 90)}» e a definição declarada é «${esperada.slice(0, 90)}».`);
+          err(`UE1d: o recibo da série «${sid}» diz «${textoTranscrito(frases[0]).slice(0, 90)}» e a definição declarada${temForma ? ' para o recibo da série' : ''} é «${esperada.slice(0, 90)}».`);
         } else {
           UE1D.definicoes++;
+          if (temForma) UE1E.formaDaSerie++;
+        }
+        /* UE1e: a definição de nenhum recibo de série nomeia Portugal, nem a que
+           se rende nem a que a declaração manda render. */
+        const nomeia = [...frases.map((f) => textoTranscrito(f)), esperada ?? ''].find((t) => NOMEIA_PORTUGAL.test(t));
+        if (nomeia !== undefined) {
+          err(`UE1e: a definição do recibo da série «${sid}» nomeia Portugal («${String(nomeia.match(NOMEIA_PORTUGAL)?.[0])}»), e o recibo é a tabela dos 27 países: o número de cada outro país lia-se como se fosse sobre Portugal.`);
+        } else if (frases.length === 1) {
+          UE1E.semPortugal++;
         }
       }
       const naTabela = [...new Set(root.querySelectorAll('[data-serie-tabela] [data-ponto-bandeira]').map((e) => textoTranscrito(e)))];
@@ -8304,6 +8335,32 @@ for (const [id] of SERIES_DO_PORTAO) {
 if (UE1D.definicoes !== LANGS.length * SERIES_DO_PORTAO.size) {
   erros.push({ rel: 'ledger/series', msg: `UE1d: os recibos das séries têm ${UE1D.definicoes} definição(ões) declarada(s), e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
 }
+/* UE1e: cada forma do recibo da série é a pergunta do cartão sem o lugar, sem
+   mais nenhuma palavra mudada, e não nomeia Portugal; e os vinte recibos foram
+   vistos, cada um, sem Portugal na definição. */
+for (const [idDaForma, d] of Object.entries(/** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS))) {
+  if (!d?.serie) continue;
+  UE1E.formasDeclaradas++;
+  for (const lang of /** @type {const} */ (['pt', 'en'])) {
+    const doCartao = definicaoDoPortao(idDaForma, lang, 'cartao');
+    const daSerie = definicaoDoPortao(idDaForma, lang, 'serie');
+    if (doCartao === null || daSerie === null) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a pergunta de «${idDaForma}» (${lang}) não se lê como texto, no cartão ou na forma do recibo da série.` });
+      continue;
+    }
+    if (semOLugar(doCartao) === doCartao) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a pergunta do cartão de «${idDaForma}» (${lang}) não diz o lugar, e a forma do recibo da série é a do cartão sem o lugar: não tem razão de existir.` });
+    } else if (daSerie !== semOLugar(doCartao)) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a forma do recibo da série de «${idDaForma}» (${lang}) não é a pergunta do cartão sem o lugar: diz «${daSerie.slice(0, 90)}» e a do cartão sem o lugar é «${semOLugar(doCartao).slice(0, 90)}».` });
+    }
+    if (NOMEIA_PORTUGAL.test(daSerie)) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a forma do recibo da série de «${idDaForma}» (${lang}) nomeia Portugal.` });
+    }
+  }
+}
+if (UE1E.semPortugal !== LANGS.length * SERIES_DO_PORTAO.size) {
+  erros.push({ rel: 'ledger/series', msg: `UE1e: ${UE1E.semPortugal} recibo(s) das séries vistos sem Portugal na definição, e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
+}
 /* UE1b: a porta de cada série, nas duas edições, no recibo da linha portuguesa. */
 for (const [id] of SERIES_DO_PORTAO) {
   for (const lang of LANGS) {
@@ -8349,7 +8406,8 @@ console.log(
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
       ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
-      ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries`,
+      ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries` +
+      ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))`,
   ),
 );
 console.log(
