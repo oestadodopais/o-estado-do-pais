@@ -40,11 +40,11 @@
 
   File: [paginas/pt-inicio.html:1](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/paginas/pt-inicio.html:1>)
 
-  Quoted text: `Texto gerado por IA sobre a política da casa · responsável editorial: o financiador`
+  Quoted text: `Texto gerado por IA sobre a política da casa · responsável editorial: [o diretor]`
 
   `sobre` replaces the approved `sob`. This is a character-for-character failure.
 
-  Correct value: `Texto gerado por IA sob a política da casa · responsável editorial: o financiador`
+  Correct value: `Texto gerado por IA sob a política da casa · responsável editorial: [o diretor]`
 
   This page could not have passed the supplied gate in its current form, so the sample and the report’s claimed green build cannot represent the same output.
 
@@ -101,7 +101,7 @@
 
   File: [INVENTARIO-FRASES.md:1639](</private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/49c81441-fc1b-4f84-9507-33f9f897a43b/scratchpad/codex-rotulo/pacote/fonte/design/especime-v3/INVENTARIO-FRASES.md:1639>)
 
-  Quoted entries include: `navegacao | Director: o financiador · Free publication` and `navegacao | Texto gerado por IA sob a política da casa...`
+  Quoted entries include: `navegacao | Director: [o diretor] · Free publication` and `navegacao | Texto gerado por IA sob a política da casa...`
 
   The director/free line contains no link or command at all. The AI label describes authorship, policy, and editorial responsibility, which the inventory’s own definition places under `autorreferencia`. A legal obligation does not turn disclosure into navigation.
 
@@ -239,7 +239,7 @@
 - I inspected all nine sampled pages. They contain nine footer labels plus one study-reading top label. Apart from the Portuguese home’s `sobre`/`sob` defect, their label text, policy-link destination and linked words are correct. All English label/director-name occurrences carry `lang="pt-PT"`; Portuguese occurrences correctly inherit `pt-PT` without a redundant mark.
 - The four rendered policy paragraphs in `/sobre`, `/metodo`, `/en/about`, and `/en/method` match the approved copy. This conflicts with the damaged English source, confirming that the samples were not built from the supplied source state.
 - The study-reading sample places its top label before the document body.
-- The two home samples contain `o financiador`; their language marks are correct. The Portuguese gratuitity wording is `Publicação gratuita`.
+- The two home samples contain `[o diretor]`; their language marks are correct. The Portuguese gratuitity wording is `Publicação gratuita`.
 - The inventory’s after-counts of `586` classified rows and `510` live rows are directly countable, and `diff.patch` adds four rows, supporting `582 → 586` and `506 → 510`. This does not support the separate `701 → 705` runtime voice count.
 - No diff path touches `ledger/`, the site name, masthead, marks, font files, or font definitions. The new CSS assigns existing typography variables to the new elements but does not change the typeface system.
 - I performed static checks only. The package does not contain the complete project, dependencies, `dist/`, or measurement outputs needed to run or reproduce the reported build and browser results. No network was used.

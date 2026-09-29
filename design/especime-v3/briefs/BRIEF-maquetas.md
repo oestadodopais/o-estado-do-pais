@@ -96,7 +96,7 @@ Palavras de estado com limiar: «▲ ACIMA DO LIMIAR 60 · +29,7» (dívida), «
 
 **4.8 Porta de correções (todas as páginas, palavras exatas).** Rótulo «ENCONTROU UM ERRO» e o texto: «Escreva para correcoes@oestadodopais.pt. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.» + «O registo de correções →».
 
-**4.9 Rodapé.** Navegação: Início · Municípios · Estudos · Livro-razão · Agenda · Método · Correções · Sobre · English (Bitter 12px maiúsculas), filete 1px `--ink` por cima; e a linha de autoria em Spectral 15px: «Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de o financiador.» + a linha da maqueta (§3).
+**4.9 Rodapé.** Navegação: Início · Municípios · Estudos · Livro-razão · Agenda · Método · Correções · Sobre · English (Bitter 12px maiúsculas), filete 1px `--ink` por cima; e a linha de autoria em Spectral 15px: «Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de [o diretor].» + a linha da maqueta (§3).
 
 ## 5 · Conteúdo verificado (copiar tal e qual)
 

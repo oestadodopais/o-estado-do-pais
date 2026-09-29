@@ -1,6 +1,6 @@
 # O Estado do País · the structure and the vocabulary (17.09.2026)
 
-*Written by the direction seat (Claude Fable 5.1) on 17.09.2026 at Nuno's request, after his reading of the live site on 16.09 and 17.09: pages that explain themselves, several doors to the same thing, two names for the same subject, studies scattered from the places they are about, words translated from English. This decides the surface of the site: what each page is for, how the pages connect, and which words the site uses. It does not touch the foundations: the ledger with every number traced to its source, the receipts, the checks, the motor, the studies' ledgers, the data of the 308 municipalities, the map. Facts about the site as it is today are marked [F]; the seat's proposals [P]; what Nuno decides [D].*
+*Written by the direction seat (Claude Fable 5.1) on 17.09.2026 at [o diretor]'s request, after his reading of the live site on 16.09 and 17.09: pages that explain themselves, several doors to the same thing, two names for the same subject, studies scattered from the places they are about, words translated from English. This decides the surface of the site: what each page is for, how the pages connect, and which words the site uses. It does not touch the foundations: the ledger with every number traced to its source, the receipts, the checks, the motor, the studies' ledgers, the data of the 308 municipalities, the map. Facts about the site as it is today are marked [F]; the seat's proposals [P]; what [o diretor] decides [D].*
 
 ## 0 · What is wrong today, in five lines
 
@@ -39,7 +39,7 @@ A study is a page with: the title; the project's reading (the opening: «Em resu
 2. **One door per thing.** One link to a study, one to a place, one to a theme. No box that lists doors. No link whose text explains what it opens.
 3. **The vocabulary is the site's, in European Portuguese, and use is checked in context.** Not a list of banned words: a list of things and the word for each, with where the word belongs (§6). "Casa" is housing; the project is «O Estado do País» or «este projeto». "Sítio" is a place; a web page is «página» and the whole is «o projeto». The check flags a word used outside its place, not the word.
 
-## 6 · The vocabulary [P, for Nuno to correct]
+## 6 · The vocabulary [P, for [o diretor] to correct]
 
 | the thing | the word on the site | where it belongs, and where not |
 |---|---|---|
@@ -73,10 +73,10 @@ The typography (the two type families, the sizes, the black rule under the name)
 1. **B1 · The four pages that set the grammar:** the country page (the front page), the place page (Évora as the sample, then all 308 by the same template), the study page (Évora 2027), the studies list. The menu of five. The grey cell gone. Two weeks of the three go here, because everything else follows the grammar these four fix.
 2. **B2 · The themes:** the eighteen theme pages replace the domínios and the áreas de governo; the European comparison folds in.
 3. **B3 · The line:** regions and districts by the same grammar; the search; the map as the door.
-4. **B4 · The older studies:** their openings written by the seat and approved by Nuno; the paragraphs about the project's own method cut from their texts; the two contradictions between studies corrected.
+4. **B4 · The older studies:** their openings written by the seat and approved by [o diretor]; the paragraphs about the project's own method cut from their texts; the two contradictions between studies corrected.
 5. **B5 · Sobre, Método, the vocabulary check and the editor's read:** Sobre and Método consolidated so that the project explains itself once; the vocabulary check in the build; and on every block from B1 on, a reader from another family whose only question is whether an editor of a Portuguese daily would print the page as it is.
 
-## 9 · What Nuno decides [D]
+## 9 · What [o diretor] decides [D]
 
 1. The menu of five and its words: Portugal · Lugares · Temas · Estudos · Sobre.
 2. «Temas» as the reader's word for the eighteen subjects, and the áreas de governo gone as pages.
