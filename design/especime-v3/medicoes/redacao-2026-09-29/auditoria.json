@@ -35,7 +35,8 @@
   "correio_pessoal": 1,
   "familia": 0,
   "lugar": 0,
-  "trabalho": 0
+  "trabalho": 0,
+  "ficheiros_com_o_nome_de_utilizador": 205
  },
  "redacao": {
   "ficheiros_de_texto_mudados": 264,
