@@ -367,6 +367,55 @@ export function leituraDaMedida(id, lang) {
 }
 
 /**
+ * O QUE UMA MEDIDA CONTA, NAS PALAVRAS DA LEITURA DO CARTÃO (a passagem UE1c,
+ * 29.09.2026, os achados 9 e 10 da leitura a frio do UE1).
+ *
+ * É a primeira parte da leitura declarada, enquanto for só palavras fixas e
+ * algarismos declarados (`nl`), até ao primeiro pedaço calculado, e cortada no
+ * último ponto final dessa parte: a frase (ou as frases) com que o cartão diz o
+ * que a medida conta, antes de dizer o que o valor de Portugal faz. O recibo da
+ * série reusa-a tal como está e não a escreve de novo.
+ *
+ * Uma leitura que abre com o valor de Portugal (uma linha, um período, um ramo
+ * pelo sinal) não tem essa frase sem o valor, e devolve `null`: o recibo da
+ * série não a inventa, e o relatório da passagem diz quais são.
+ *
+ * @param {string} id  o identificador da linha do cartão
+ * @param {'pt'|'en'} lang
+ * @returns {PedacoDaFrase[] | null}
+ */
+export function definicaoDaMedida(id, lang) {
+  const partes = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id]?.[lang];
+  if (!Array.isArray(partes)) return null;
+  /** @type {PedacoDaFrase[]} */
+  const prefixo = [];
+  for (const p of partes) {
+    if (typeof p === 'string') prefixo.push(p);
+    else if (p && typeof p === 'object' && !Array.isArray(p) && Object.keys(p).every((k) => k === 'nl' || k === 'motivo') && 'nl' in p) {
+      prefixo.push({ nl: String(p.nl), motivo: String(p.motivo) });
+    } else break;
+  }
+  /* O corte no último ponto final: uma definição acaba numa frase inteira. */
+  for (let i = prefixo.length - 1; i >= 0; i--) {
+    const p = prefixo[i];
+    if (typeof p !== 'string') continue;
+    const fim = p.lastIndexOf('.');
+    if (fim === -1) continue;
+    /** @type {PedacoDaFrase[]} */
+    const corte = [...prefixo.slice(0, i), p.slice(0, fim + 1)];
+    /** @type {PedacoDaFrase[]} */
+    const pedacos = [];
+    for (const x of corte) {
+      const ultimo = pedacos[pedacos.length - 1];
+      if (typeof x === 'string' && typeof ultimo === 'string') pedacos[pedacos.length - 1] = ultimo + x;
+      else pedacos.push(x);
+    }
+    return pedacos.length ? pedacos : null;
+  }
+  return null;
+}
+
+/**
  * O texto de uma leitura resolvida, como a página o rende: o valor de uma linha
  * como `<Claim>` o escreve (o valor da linha, o sufixo colado e, onde a linha
  * traz a bandeira `p`, a palavra «provisório»), as datas pela forma da casa, e

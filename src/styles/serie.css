@@ -13,6 +13,17 @@
   margin: 6px 0 10px;
 }
 
+/* O QUE A MEDIDA CONTA (a passagem UE1c, 29.09.2026): a frase da leitura do
+   cartão, por baixo do título, na letra do texto corrido. */
+.serie-o-que-conta {
+  font-family: var(--f-prosa);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 62ch;
+  margin: 0 0 12px;
+}
+
 .serie-periodo {
   font-family: var(--f-instr);
   font-size: 15px;
