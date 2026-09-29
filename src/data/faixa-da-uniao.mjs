@@ -18,9 +18,13 @@
  *   { aPar: true }         o ramo do empate, quando outro país tem o valor de Portugal
  *
  * OS ACERTOS, e são os únicos (o guião `acertos-ue1.py`, na pasta das medições do
- * bloco, lê as palavras do brief, aplica-lhes estes e mais nenhum, e compara com
- * esta declaração):
+ * bloco, lê as palavras do brief, aplica-lhes os de `acertos-ue1.json` e mais
+ * nenhum, e compara com esta declaração nas duas línguas e nos três ramos):
  *
+ *   F0 · «Entre os 27 países» passa a «Entre os {conta} países» (e «Among the 27
+ *        EU countries» a «Among the {conta} EU countries»): o 27 é o número de
+ *        países com valor na série, recontado dos pontos, porque um algarismo nas
+ *        palavras fixas não tem origem que o portão de HTML aceite;
  *   F1 · «o valor mais baixo é o de {país} ({valor}) e o mais alto o de {país}
  *        ({valor})» passa a «o valor mais baixo é {valor} ({país}) e o mais alto
  *        {valor} ({país})». Em português de Portugal um nome de país leva quase
