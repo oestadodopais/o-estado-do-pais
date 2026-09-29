@@ -178,6 +178,12 @@ edicoes:
     bytes_normalized: 31142
     sha256_raw: 38b1eea0526e900f097cd8df36b6710524a4a5f8b6feca82c51b8a2dcce979e7
     sha256_normalized: e84c4047bca3f6782566052dbd42bc98e720d2ab615b96bd5e7063b1cc51ccb9
+  # Redigido a 2026-09-29, a pedido do diretor (DECISIONS.md §1.138): a linha
+  # «Prepared by … for …» deste documento nomeava-o, e o nome saiu dos dois
+  # ficheiros, o bruto e o normalizado, com o mesmo número de bytes. Os dois
+  # resumos são agora os dos bytes redigidos, e o normalizado reproduz-se do
+  # bruto com scripts/normalize-study.mjs; os bytes que o anfitrião serviu a
+  # 2026-08-12 ficam na história do Git, no commit cec84d3c.
   - slug: alentejo-algarve
     lang: en
     title: "Alentejo & Algarve — Economy, Society, Strategy"
@@ -187,8 +193,8 @@ edicoes:
     bytes_raw: 79500
     bytes_runtime_removed: 17141
     bytes_normalized: 62359
-    sha256_raw: 35795896484648cfe75029c2d184fbb24df3f1438623aeb546072ad8ae32d67b
-    sha256_normalized: b47ca16649931f4a3ff6a1360ae2f1079efa53b6d5ad9ce3a893cd639b6cf17a
+    sha256_raw: 54e2eacf1cff9fb866059603a9534dba605cf4f1288cad996b3c47e50c5b4010
+    sha256_normalized: 86a853ed1b8edbb307ec7c3165d038e31cea86875a469554f0bb4e3fb8a4e4f7
   - slug: evolucao-de-portugal-desde-1981
     lang: pt
     title: "Evolução de Portugal desde 1981"

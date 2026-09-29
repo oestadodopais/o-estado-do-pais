@@ -13022,3 +13022,26 @@ rotas passam a ler **0**.
 3. **Uma conferência nova que entre no `verify` corre o inventário** antes de entrar no grupo, porque uma escrita numa pasta ignorada escapa à célula D.
 
 **A aterragem.** Os três blocos aterram juntos, na mesma avançada de `main`: a cabeça que os junta, `220861c0` no ramo do PP1, passou os três portões a 0 às 06:28 UTC de 29.09 e a corrida «portão» verde (a 36531474220, 7,4 minutos), e o motor avança com o ramo do C1 (`68318e0`); estes registos seguem por cima dela, com os seus portões e a sua corrida. A avançada de `main` e do motor, o lançamento e o `verify:deploy` escrevem-se no registo seguinte, porque um registo não pode dizer a sua própria aterragem.
+
+### 1.138 O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+
+**Afecta:** nenhum
+
+**O que muda:** 264 ficheiros de texto do repositório público deixam de trazer o nome de utilizador da máquina do diretor, o nome dele e o seu correio; o documento alojado do estudo do Alentejo e do Algarve, na edição inglesa, deixa de o nomear, com os dois resumos novos declarados no manifesto; e o `gate:html` passa a procurar as duas formas do nome, a inteira e a do primeiro e do último nome, com um conhecido-positivo para cada uma.
+
+**Data:** 29.09.2026.
+
+**O pedido.** O diretor pediu nessa manhã que o nome de utilizador saísse «from everywhere» e que se garantisse que o código não revela nada que outros possam usar «in a less good way».
+
+**A auditoria.** O lugar de direção instalou o `gitleaks` 8.30.1, provou primeiro que ele via (dois segredos falsos num repositório de ensaio, um deles já apagado da árvore, os dois achados) e leu com ele a história inteira dos dois repositórios, 1 483 commits do sítio e 498 do motor: nenhum segredo do projeto; os candidatos eram etiquetas de dados públicos do Eurostat, uma frase de um relatório, ligações de painéis públicos embebidos em páginas de fontes guardadas e campos de dados chamados «key». Nenhum ficheiro de credenciais é seguido pelo Git. Na árvore havia o nome de utilizador (375 ocorrências em 205 ficheiros), formas do nome completo (121) e o correio pessoal (1, num rascunho legal); nada da família, do lugar ou do trabalho dele. As contagens estão em `design/especime-v3/medicoes/redacao-2026-09-29/auditoria.json`, sem nenhum dos termos.
+
+**A fuga que estava no ar.** A página `/en/studies/alentejo-algarve/document/` dizia, desde o alojamento do documento a 12.08.2026, «Prepared by Claude (claude-fable-5) for» seguido do primeiro e do último nome do diretor. O detetor do `gate:html` procurava só a forma inteira do oráculo, e na cabeça `220861c0` contou 0 páginas com o nome com essa página no `dist/`.
+
+**O que se fez.** Um guião do lugar de direção redigiu os 264 ficheiros e conferiu, ao escrever cada um, que o novo é exatamente a redação do antigo, byte a byte; o documento alojado reproduz-se do bruto redigido pelo `normalize-study.mjs`. O detetor procura agora as duas formas; a construção redigida passa com 0 páginas com o nome, e a planta da página antiga no `dist/` fecha o `gate:html` com 1 página.
+
+**O que fica, e de quem é.**
+1. **O oráculo do portão** (`scripts/textos-aprovados.json`) guarda a forma inteira do nome, porque é ela que deixa o portão exigir que o nome não chegue a página nenhuma; tirá-la da árvore pública exige lê-la de um lugar privado, um segredo no GitHub e uma variável na Vercel, que só o diretor cria (a I175).
+2. **A história do Git** guarda tudo o que a árvore deixou. Limpá-la é reescrevê-la e forçar um push, e muda o resumo de todos os commits, que os registos e cinco linhas do livro-razão citam como prova (a história dos acessos do PRR cita os commits `8371e097` e `8b7d9157`): é decisão do diretor, com esse custo à vista.
+3. **O correio dos autores**: 1 542 commits públicos têm como autor o correio pessoal do diretor; os commits seguintes podem usar o endereço privado que o GitHub dá a cada conta, o que é uma definição da conta dele e da configuração do Git deste repositório.
+4. **O motor** é privado e ainda traz o nome de utilizador nos seus ficheiros.
+5. **As dependências da construção** trazem quatro avisos (dois moderados, dois altos), a tratar num bloco de manutenção com a comparação byte a byte do sítio construído (a I176).

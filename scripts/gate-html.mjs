@@ -184,7 +184,16 @@ const TEXTOS_APROVADOS = JSON.parse(
  * medido e não um zero de um detetor calado.
  */
 const NOME_DE_QUEM_RESPONDE = TEXTOS_APROVADOS.responsavel;
-const veONome = (texto) => typeof texto === 'string' && texto.includes(NOME_DE_QUEM_RESPONDE);
+/* AS FORMAS DO NOME (29.09.2026, §1.138). O detetor procurava só a forma inteira
+   do oráculo, e um documento alojado que dizia «for» seguido do primeiro e do
+   último nome passou pelas duas exigências e esteve no ar desde agosto. Procuram-se
+   agora as duas formas, a inteira e a do primeiro e do último nome, e cada uma
+   passa pelo conhecido-positivo antes de o detetor contar. */
+const PARTES_DO_NOME = String(NOME_DE_QUEM_RESPONDE).split(/\s+/).filter(Boolean);
+const FORMAS_DO_NOME = [
+  ...new Set([NOME_DE_QUEM_RESPONDE, `${PARTES_DO_NOME[0]} ${PARTES_DO_NOME[PARTES_DO_NOME.length - 1]}`]),
+];
+const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));
 let paginasComONome = 0;
 
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
@@ -4118,14 +4127,16 @@ const cartoesUsados = new Set();
         `ainda imprime ${JSON.stringify(nome)}: o sítio não diz nome nenhum, ou diz o mesmo nos dois lugares.`,
     });
   }
-  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero. */
-  if (!veONome(`<p data-prova>${nome}</p>`)) {
-    erros.push({
-      rel: 'scripts/gate-html.mjs',
-      msg:
-        `o detetor do nome de quem responde não encontrou ${JSON.stringify(nome)} numa linha ` +
-        `escrita com ele: enquanto não vir, os zeros que ele conta não valem nada.`,
-    });
+  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero, uma vez por forma do nome. */
+  for (const forma of FORMAS_DO_NOME) {
+    if (!veONome(`<p data-prova>${forma}</p>`)) {
+      erros.push({
+        rel: 'scripts/gate-html.mjs',
+        msg:
+          `o detetor do nome de quem responde não encontrou uma das formas do nome numa linha ` +
+          `escrita com ela: enquanto não vir, os zeros que ele conta não valem nada.`,
+      });
+    }
   }
 
   /* O nome não existe em ficheiro nenhum de `src/` e de `public/`. */
