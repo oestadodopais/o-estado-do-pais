@@ -59,6 +59,7 @@ import { areaDoSlug } from './areas.mjs';
 import { dominioDoSlug } from '../data/dominios.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { getClaim } from './ledger.mjs';
+import { getSerie, hasSerie } from './series.mjs';
 import { nomeDaMedida } from './nomes.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
@@ -140,6 +141,10 @@ export const PAI_DA_ROTA = {
      e é a sua página; o índice é a porta comum de todas elas, incluindo as 2 416
      dos concelhos, cujo endereço é o mesmo `/livro-razao/<id>`. */
   linha: 'livro',
+  /* A PÁGINA DE UMA SÉRIE (bloco UE1, 29.09.2026) É FILHA DO ÍNDICE, como a de
+     uma linha: é o livro-razão a guardar os pontos de uma medida, e a folha do
+     caminho é o nome dessa medida, pela mesma escada. */
+  serie: 'livro',
 };
 
 /**
@@ -239,6 +244,14 @@ export function folhaDoCaminho(chave, params, lang) {
          degraus dá texto, o caminho acaba no índice: promover o identificador da
          linha a nome dela seria escrever no cabeçalho o nome da máquina, que é
          exactamente o que o F1.4 tirou da página. */
+      return nomeDaMedida(c, lang) === null ? null : { tipo: 'medida', linha: c };
+    }
+    case 'serie': {
+      /* A folha de uma série é o nome da medida de que ela é o corte entre
+         países: a linha portuguesa que a série nomeia, pela mesma escada. */
+      const serie = slug && hasSerie(slug) ? getSerie(slug) : null;
+      const c = serie ? getClaim(String(serie.linha_de_portugal)) : null;
+      if (!c) return null;
       return nomeDaMedida(c, lang) === null ? null : { tipo: 'medida', linha: c };
     }
     default:
