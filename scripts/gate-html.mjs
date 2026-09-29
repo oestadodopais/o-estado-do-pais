@@ -7,6 +7,31 @@ import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
+import { LEITURAS_DAS_MEDIDAS } from '../src/data/leituras-das-medidas.mjs';
+
+/**
+ * O QUE UMA MEDIDA CONTA, PELA REGRA DOS PORTÕES (a passagem UE1c, 29.09.2026).
+ * O princípio da leitura declarada do cartão, enquanto for palavras fixas e
+ * algarismos declarados (`nl`), até ao primeiro pedaço calculado, cortado no
+ * último ponto final; `null` quando a leitura abre com o valor de Portugal. É a
+ * mesma regra que `definicaoDaMedida()` segue no sítio, escrita aqui outra vez
+ * para que o portão não se confirme com o código da página.
+ *
+ * @param {string} id @param {'pt'|'en'} lang
+ * @returns {string|null}
+ */
+function definicaoDoPortao(id, lang) {
+  const partes = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id]?.[lang];
+  if (!Array.isArray(partes)) return null;
+  let texto = '';
+  for (const p of partes) {
+    if (typeof p === 'string') texto += p;
+    else if (p && typeof p === 'object' && !Array.isArray(p) && 'nl' in p && Object.keys(p).every((k) => k === 'nl' || k === 'motivo')) texto += String(p.nl);
+    else break;
+  }
+  const fim = texto.lastIndexOf('.');
+  return fim === -1 ? null : normalizeWhitespace(texto.slice(0, fim + 1));
+}
 /**
  * Portão (a) e (c): varrimento do HTML construído.
  *
@@ -501,6 +526,8 @@ const seriesConstruidas = new Set();
    legendas das marcas dos recibos das séries, vistas. */
 const portasDasSeriesVistas = new Set();
 const UE1B = { portas: 0, legendas: 0, marcasNasLegendas: 0 };
+/* UE1c: as frases do que cada medida conta, nos recibos das séries. */
+const UE1C = { definicoes: 0, semDefinicao: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 let ficheiros = 0;
 let documentos = 0;
@@ -4436,6 +4463,25 @@ for (const file of ficheirosHtml(DIST)) {
          com a série, carácter a carácter. */
       const sid = rota.params.slug;
       const serie = SERIES_DO_PORTAO.get(sid);
+      /* UE1c (29.09.2026, os achados 9 e 10 da leitura a frio): o que a medida
+         conta, por baixo do título, com a frase da leitura do cartão, recomposta
+         aqui pela regra dos portões; uma leitura que abre com o valor de Portugal
+         não tem essa frase, e o recibo não a pode ter. */
+      {
+        const linguaDoRecibo = rota.lang === 'en' ? 'en' : 'pt';
+        const esperada = definicaoDoPortao(String(serie.linha_de_portugal), linguaDoRecibo);
+        const frases = root.querySelectorAll('[data-serie-o-que-conta]');
+        if (esperada === null) {
+          if (frases.length) err(`UE1c: o recibo da série «${sid}» diz o que a medida conta, e a leitura do cartão não abre com essa frase: o recibo não a inventa.`);
+          else UE1C.semDefinicao++;
+        } else if (frases.length !== 1 || frases[0].getAttribute('data-serie-o-que-conta') !== sid) {
+          err(`UE1c: o recibo da série «${sid}» tem ${frases.length} frase(s) do que a medida conta, e tem de ter uma, a do cartão.`);
+        } else if (textoTranscrito(frases[0]) !== esperada) {
+          err(`UE1c: o recibo da série «${sid}» diz «${textoTranscrito(frases[0]).slice(0, 90)}» e a leitura do cartão diz «${esperada.slice(0, 90)}».`);
+        } else {
+          UE1C.definicoes++;
+        }
+      }
       const naTabela = [...new Set(root.querySelectorAll('[data-serie-tabela] [data-ponto-bandeira]').map((e) => textoTranscrito(e)))];
       const naSerie = Object.keys(serie.bandeiras ?? {});
       const legenda = root.querySelectorAll(`[data-serie-marcas="${sid}"]`);
@@ -8259,6 +8305,14 @@ for (const [id] of SERIES_DO_PORTAO) {
     }
   }
 }
+/* UE1c: as frases do que a medida conta, as que a regra dá, nas duas edições. */
+{
+  let esperadas = 0;
+  for (const s of SERIES_DO_PORTAO.values()) for (const lang of LANGS) if (definicaoDoPortao(String(s.linha_de_portugal), /** @type {'pt'|'en'} */ (lang)) !== null) esperadas++;
+  if (UE1C.definicoes !== esperadas) {
+    erros.push({ rel: 'ledger/series', msg: `UE1c: os recibos das séries têm ${UE1C.definicoes} frase(s) do que a medida conta, e a regra dá ${esperadas}.` });
+  }
+}
 /* UE1b: a porta de cada série, nas duas edições, no recibo da linha portuguesa. */
 for (const [id] of SERIES_DO_PORTAO) {
   for (const lang of LANGS) {
@@ -8303,7 +8357,8 @@ console.log(
       ` · séries: ${seriesConstruidas.size} página(s), ${ORIGENS_DAS_SERIES.pontos} ponto(s), ` +
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
-      ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)`,
+      ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
+      ` · UE1c: ${UE1C.definicoes} frase(s) do que a medida conta nos recibos das séries, ${UE1C.semDefinicao} recibo(s) sem ela`,
   ),
 );
 console.log(
