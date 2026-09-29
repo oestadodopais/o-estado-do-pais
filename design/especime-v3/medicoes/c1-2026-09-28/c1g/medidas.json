@@ -364,6 +364,8 @@
       "anos": 3
     }
   },
-  "aceitacao_integral": true,
-  "erros_da_medicao": []
+  "aceitacao_integral": false,
+  "erros_da_medicao": [],
+  "aceitacao_integral_declarada_na_entrega": true,
+  "retificacao_C1h": "Faltavam as capturas dos cinco recibos do PRR cujas razões mudaram na C1g. A C1h entrega essa matriz."
 }
