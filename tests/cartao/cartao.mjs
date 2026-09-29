@@ -1151,7 +1151,11 @@ function montaAProva() {
   );
   /* O CONTROLO DA K14 (UE1d): um cartão e um recibo da linha certos, com a União e
      com a ressalva, que não podem dar vermelho. */
-  const ressalva = RESSALVAS_DA_UNIAO['sobrecarga-do-custo-da-habitacao-2025'].pt;
+  /* Sem a ressalva na declaração, o controlo leva um bloco vazio e dá vermelho
+     com a razão («a declaração não tem o texto da ressalva desta medida»), e a
+     prova diz porquê em vez de o guião rebentar: a planta da declaração das
+     plantas da UE1d fechava a construção com um TypeError nesta linha. */
+  const ressalva = RESSALVAS_DA_UNIAO['sobrecarga-do-custo-da-habitacao-2025']?.pt ?? '';
   fs.mkdirSync(path.join(dir, 'areas', 'y'), { recursive: true });
   fs.writeFileSync(
     path.join(dir, 'areas', 'y', 'index.html'),
