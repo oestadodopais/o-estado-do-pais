@@ -1,0 +1,6 @@
+# python3 publisher/export_series.py --site <worktree do sítio>
+# em <worktree do motor>
+# código: 0
+
+  10 série(s) conferida(s), tabela dos nomes conferida
+EXPORT_SERIES: PASS · 10 séries, 280 pontos

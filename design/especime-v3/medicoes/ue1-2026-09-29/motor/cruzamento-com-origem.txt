@@ -1,0 +1,20 @@
+# node scripts/check-cruzamento.mjs --with-origin
+# em <worktree do sítio>
+# código: 0
+
+
+  cruzamentos · 2884 linha(s) de origem externa em 4 registo(s) · 2884 conferida(s) contra o motor · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)
+  rótulos da fonte · 1896 de 3009 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)
+  séries · 10 linha(s) de série em 1 registo(s) · 10 conferida(s) contra o motor · 4 planta(s) vista(s)
+  cruzamentos · 4 ficheiro(s) inteiro(s) em 3 registo(s) · 4 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos
+    avaliacao-economica-regional-de-portugal-2026: 8
+    concelhos-2026: 2767
+    dominios-2026: 40
+    evora-economia-investidores-portas-abertas-2026: 8
+    evora-orcamentado-pago-devido-2025: 27
+    evora-os-pelouros-quem-os-teve-o-que-fizeram: 7
+    evora-prometido-pago-auditado-2026: 7
+    evora-quinze-anos-cinco-mandatos: 20
+
+  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.
+
