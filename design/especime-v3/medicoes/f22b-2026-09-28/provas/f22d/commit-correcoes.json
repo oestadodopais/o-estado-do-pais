@@ -1,0 +1,28 @@
+{
+  "comando": "git -C <motor> commit -m F2.2d: corrigir o limiar, conservar o portátil e identificar as provas -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+  "ambiente_declarado": {},
+  "cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+  "codigo_executado": {
+    "cabeca_base": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
+    "arvore": "3eadea89970657d143e54cd18fb221c2bce28707",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      ".github/README.md",
+      "indicators/out/f22c-2026-09-29/custo.py",
+      "indicators/out/f22c-2026-09-29/executar.py",
+      "indicators/out/f22d-2026-09-29/custo_bloco.py",
+      "indicators/out/f22d-2026-09-29/provar_execucao.py",
+      "indicators/painel.py",
+      "indicators/publicar_rotina.py",
+      "indicators/refresh.py",
+      "indicators/rotinas_f22c_test.py",
+      "indicators/rotinas_test.py",
+      "sweeps/monthly.sh"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:11:26.870723+00:00",
+  "fim": "2026-09-29T23:14:59.670337+00:00",
+  "segundos": 212.798,
+  "codigo": 0
+}

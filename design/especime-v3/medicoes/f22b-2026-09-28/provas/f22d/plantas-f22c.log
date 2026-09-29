@@ -1,0 +1,38 @@
+test_api_cabecalho_da_versao (__main__.PlantasF22c.test_api_cabecalho_da_versao) ... ok
+test_api_erro_permanente_para_logo_com_causa (__main__.PlantasF22c.test_api_erro_permanente_para_logo_com_causa) ... ok
+test_api_limite_e_servidor_repetem_ate_teto_com_causa (__main__.PlantasF22c.test_api_limite_e_servidor_repetem_ate_teto_com_causa) ... ok
+test_api_rede_repete_e_conserva_ultimo_erro (__main__.PlantasF22c.test_api_rede_repete_e_conserva_ultimo_erro) ... ok
+test_diff_criacao_remocao_e_modo_recusados (__main__.PlantasF22c.test_diff_criacao_remocao_e_modo_recusados) ... ok
+test_entradas_principais_recusam_despacho_e_modo_nao_real (__main__.PlantasF22c.test_entradas_principais_recusam_despacho_e_modo_nao_real) ... ok
+test_fluxos_passam_modo_e_guardam_diff_privado (__main__.PlantasF22c.test_fluxos_passam_modo_e_guardam_diff_privado) ... ok
+test_fontes_dados_aceites_e_valores_novos_exportacao_recusados (__main__.PlantasF22c.test_fontes_dados_aceites_e_valores_novos_exportacao_recusados) ... ok
+test_mensal_portatil_calendario_falhou (__main__.PlantasF22c.test_mensal_portatil_calendario_falhou) ... ok
+test_mensal_portatil_codigo_das_publicacoes (__main__.PlantasF22c.test_mensal_portatil_codigo_das_publicacoes) ... ok
+test_mensal_portatil_verde (__main__.PlantasF22c.test_mensal_portatil_verde) ... ok
+test_mensal_runner_conserva_bandeiras (__main__.PlantasF22c.test_mensal_runner_conserva_bandeiras) ... ok
+test_portao_conclusoes_da_api (__main__.PlantasF22c.test_portao_conclusoes_da_api) ... ok
+test_reforma_main_ensaio_no_lugar_de_real (__main__.PlantasF22c.test_reforma_main_ensaio_no_lugar_de_real) ... ok
+test_reforma_main_identificadores_repetidos (__main__.PlantasF22c.test_reforma_main_identificadores_repetidos) ... ok
+test_reforma_main_sem_provas (__main__.PlantasF22c.test_reforma_main_sem_provas) ... usage: python3 -m indicators.rotinas_f22c_test [-h] --agentes AGENTES
+                                               --arquivo ARQUIVO [--ensaio]
+                                               [--aplicar] [--provas PROVAS]
+python3 -m indicators.rotinas_f22c_test: error: a aplicação exige --provas com os identificadores das corridas
+ok
+test_reforma_main_uma_corrida (__main__.PlantasF22c.test_reforma_main_uma_corrida) ... ok
+test_reforma_main_verde_arquiva_antes_de_apagar (__main__.PlantasF22c.test_reforma_main_verde_arquiva_antes_de_apagar) ... ok
+test_valor_recusado_antes_do_push_fica_no_artefacto_privado (__main__.PlantasF22c.test_valor_recusado_antes_do_push_fica_no_artefacto_privado) ... ok
+test_vigia_corrida_devida_dormente (__main__.PlantasF22c.test_vigia_corrida_devida_dormente) ... ok
+test_vigia_corrida_em_falta (__main__.PlantasF22c.test_vigia_corrida_em_falta) ... ok
+test_vigia_corrida_verde_com_carimbo (__main__.PlantasF22c.test_vigia_corrida_verde_com_carimbo) ... ok
+test_vigia_despacho_desarmado_corre_nas_duas_rotinas (__main__.PlantasF22c.test_vigia_despacho_desarmado_corre_nas_duas_rotinas) ... ok
+test_vigia_falha_repetida_dois_dias_uma_issue (__main__.PlantasF22c.test_vigia_falha_repetida_dois_dias_uma_issue) ... ok
+unittest.case.FunctionTestCase (reais)
+os dois estados reais do sítio passam o leitor e a guarda ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.052s
+
+OK
+painel: descarregado, definição conservada no arquivo
+varrimento: descarregado, definição conservada no arquivo
+PASS 25 conferências F2.2c

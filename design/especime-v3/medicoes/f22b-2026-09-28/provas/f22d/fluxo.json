@@ -1,0 +1,16 @@
+{
+  "comando": "python3 indicators/provar_fluxo.py",
+  "ambiente_declarado": {},
+  "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+  "codigo_executado": {
+    "cabeca_base": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+    "arvore": "17172b54353956318a27b8f5e2c27d30c21881de",
+    "tipo": "commit",
+    "alterados": [],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:23:19.763572+00:00",
+  "fim": "2026-09-29T23:23:21.771420+00:00",
+  "segundos": 2.008,
+  "codigo": 0
+}

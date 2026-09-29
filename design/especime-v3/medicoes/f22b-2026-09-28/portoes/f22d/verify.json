@@ -1,0 +1,29 @@
+{
+  "comando": "npm run verify",
+  "ambiente_declarado": {},
+  "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "codigo_executado": {
+    "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+    "arvore": "dabe41f0552694c9c587406c0b3a05585f05800b",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/build.arvore",
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/build.cabeca",
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/build.codigo",
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/build.exclusao.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/build.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/build.log",
+      "design/especime-v3/medicoes/f22b-2026-09-28/portoes/f22d/verify.exclusao.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/commit-correcoes.arvore",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/commit-correcoes.cabeca",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/commit-correcoes.codigo",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/commit-correcoes.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/commit-correcoes.log"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:15:15.792740+00:00",
+  "fim": "2026-09-29T23:24:17.412722+00:00",
+  "segundos": 541.615,
+  "codigo": 0
+}

@@ -1,0 +1,16 @@
+{
+  "origem_commit": "68318e0da2036cc29e4704fa1bb8a96dee246095",
+  "origem_ficheiro": "sweeps/monthly.sh",
+  "sha256_original": "45336f7489b6f36bf6062c6c88aadad4bc847729f32be1465314753335f814fc",
+  "sha256_candidato_expurgado": "de032e12a79b50107bcf45f1136398c01bfdb91fb98f59cca8d57e0dd94b9560",
+  "linhas_a_expurgar": [
+    3,
+    23
+  ],
+  "linhas_python_e_echo_iguais": true,
+  "proposta": [
+    "Substituir o identificador pessoal do comentário por <agente-do-portatil>.",
+    "Substituir a pasta do portátil no cd por <motor-do-portatil>."
+  ],
+  "estado": "A cópia ainda não foi guardada. A escolha entre a cópia exata e a regra de privacidade está pendente; o clone raso continua vermelho."
+}

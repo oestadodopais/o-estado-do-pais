@@ -1,0 +1,48 @@
+{
+  "estado": "parcial, não pronto a aterrar",
+  "motor_cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+  "sitio_cabeca_dos_portoes": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "portoes_locais": [
+    {
+      "comando": "python3 -m core.gate",
+      "codigo": 0,
+      "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+      "segundos": 213.203,
+      "ficheiro": "provas/f22d/core-final.codigo"
+    },
+    {
+      "comando": "npm run build",
+      "codigo": 0,
+      "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+      "segundos": 79.571,
+      "ficheiro": "portoes/f22d/build.codigo"
+    },
+    {
+      "comando": "npm run verify",
+      "codigo": 0,
+      "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+      "segundos": 541.615,
+      "ficheiro": "portoes/f22d/verify.codigo"
+    },
+    {
+      "comando": "npm run typecheck",
+      "codigo": 0,
+      "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+      "segundos": 0.245,
+      "ficheiro": "portoes/f22d/typecheck.codigo"
+    }
+  ],
+  "clone_raso": {
+    "comando_do_clone": "git clone --depth 1 --branch f22b-2026-09-28 file://<motor> <temporario>",
+    "comando_da_prova": "python3 -m indicators.rotinas_f22c_test",
+    "cabeca_do_clone": "f8a20fb2d20f89bec387acff2271c4b1672be034",
+    "arvore_do_clone": "3eadea89970657d143e54cd18fb221c2bce28707",
+    "raso": true,
+    "master_local": false,
+    "codigo": 1
+  },
+  "pendencias": [
+    "Ponto 1: guardar a referência fixa sem identificação pessoal, ligar as plantas a essa referência e obter o controlo verde no clone raso. A cópia exata de 68318e0 contém o identificador pessoal do agente e a pasta do portátil, em conflito com a regra do mandato."
+  ],
+  "limite_das_arvores_historicas": "Não foram fotografadas; os registos indicam as bases e referências posteriores sem as apresentar como fotografias da execução."
+}

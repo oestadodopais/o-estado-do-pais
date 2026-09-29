@@ -1,0 +1,18 @@
+{
+  "comando": "python3 <motor>/indicators/out/f22d-2026-09-29/clone_raso.py --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone-antes-detalhe.json",
+  "ambiente_declarado": {},
+  "cabeca": "f8a20fb2d20f89bec387acff2271c4b1672be034",
+  "codigo_executado": {
+    "cabeca_base": "f8a20fb2d20f89bec387acff2271c4b1672be034",
+    "arvore": "17172b54353956318a27b8f5e2c27d30c21881de",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      "indicators/out/f22d-2026-09-29/clone_raso.py"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:16:39.914731+00:00",
+  "fim": "2026-09-29T23:16:41.613816+00:00",
+  "segundos": 1.699,
+  "codigo": 1
+}
