@@ -148,6 +148,7 @@ import {
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
+import { lerSeriesDoPortao } from './series-do-portao.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -262,6 +263,8 @@ const MOTIVOS_DO_DOMINIO = new Set([
 ]);
 
 const claims = loadClaims();
+/** UE1: as linhas de série, pelo leitor próprio dos portões (F1 e F19). */
+const SERIES_DO_PORTAO = lerSeriesDoPortao();
 
 /** @param {string} dir */
 function paginasDe(dir) {
@@ -409,6 +412,7 @@ const contas = {
   paginas: 0,
   paginas_de_dominio: 0,
   datas_de_linha: 0,
+  datas_de_serie: 0,
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
@@ -494,6 +498,26 @@ for (const ficheiro of paginasDe(DIST)) {
   /* ------------------------------------------------------------------ F1 --- */
   for (const el of root.querySelectorAll('[data-nonledger="data-da-linha"]')) {
     contas.datas_de_linha++;
+    /* UMA DATA DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026): o mesmo motivo, e
+       em vez da linha diz a série (`data-linha-de-serie`). O campo vai-se buscar
+       ao ficheiro da série, pelo leitor próprio dos portões, e recompõe-se pela
+       mesma regra. */
+    if (el.hasAttribute('data-linha-de-serie')) {
+      const sid = el.getAttribute('data-linha-de-serie') ?? '';
+      const campo = el.getAttribute('data-de-campo') ?? '';
+      const serie = SERIES_DO_PORTAO.get(sid);
+      const bruto = serie && ['periodo', 'access_date', 'published_at'].includes(campo) ? serie[campo] : null;
+      if (typeof bruto !== 'string') {
+        err(`${rel}: uma data diz vir do campo "${campo}" da série "${sid}", e a série não o tem.`);
+        continue;
+      }
+      contas.datas_de_serie++;
+      const esperado = dataDaCasa(bruto, rota?.lang === 'en' ? 'en' : 'pt');
+      if (texto(el) !== esperado) {
+        err(`${rel}: a data do campo "${campo}" da série "${sid}" não é a da série.\n      na série: ${bruto} · na forma da casa: ${esperado}\n      renderizado: ${texto(el)}`);
+      }
+      continue;
+    }
     const id = el.getAttribute('data-de-linha') ?? '';
     const campo = el.getAttribute('data-de-campo') ?? '';
     const linha = claims.get(id);

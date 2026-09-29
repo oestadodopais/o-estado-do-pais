@@ -1,0 +1,75 @@
+/* O RECIBO DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026).
+ *
+ * A disposição é a do recibo de uma linha (`linha.css`); esta folha acrescenta a
+ * tabela dos pontos e a cabeça da série. Sem cor: a IDENTIDADE §2 guarda a cor
+ * para um valor de referência publicado, e uma série de países não tem nenhum.
+ * Portugal distingue-se pelo peso da letra, e a União por um fio. */
+
+.serie-titulo {
+  font-family: var(--f-prosa);
+  font-weight: 500;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.15;
+  margin: 6px 0 10px;
+}
+
+.serie-periodo {
+  font-family: var(--f-instr);
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.serie-tabela {
+  width: 100%;
+  max-width: 34rem;
+  border-collapse: collapse;
+  font-family: var(--f-instr);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.serie-tabela th,
+.serie-tabela td {
+  text-align: left;
+  padding: 5px 12px 5px 0;
+  border-bottom: 1px solid var(--g3);
+  vertical-align: baseline;
+}
+
+.serie-tabela thead th {
+  font-weight: 500;
+  color: var(--g1);
+  border-bottom-color: var(--g2);
+}
+
+.serie-tabela tbody th {
+  font-weight: 400;
+}
+
+.serie-tabela .serie-num {
+  text-align: right;
+}
+
+.serie-tabela .serie-portugal th,
+.serie-tabela .serie-portugal td {
+  font-weight: 700;
+}
+
+.serie-tabela .serie-uniao th,
+.serie-tabela .serie-uniao td {
+  border-top: 1px solid var(--g2);
+}
+
+.serie-marca-rotulo {
+  color: var(--g1);
+}
+
+.serie-pedido {
+  overflow-wrap: anywhere;
+}
+
+.serie-prova p,
+.serie-nomes p {
+  overflow-wrap: anywhere;
+}

@@ -220,7 +220,13 @@ const ORIGEM_DECLARADA =
   '[data-veredicto-pais] [data-prova],[data-cartao-camaras] [data-prova],' +
   /* B1: texto e data das mudanças, comparados com a declaração por check:pais
      e gate:html. Uma marca que não corresponda à entrada não passa. */
-  '[data-mudanca-campo],[data-publicacao-estudo]';
+  '[data-mudanca-campo],[data-publicacao-estudo],' +
+  /* UE1 (29.09.2026): as origens das linhas de série, cada uma comparada pelo
+     portão de HTML contra o ficheiro da série ou a tabela dos nomes: o valor de
+     um ponto, a sua marca da fonte, o nome de um país, um campo da série, a
+     contagem dos países, o lugar de Portugal e o dia da tabela. */
+  '[data-ponto],[data-ponto-bandeira],[data-pais],[data-serie-campo],[data-ponto-conta],' +
+  '[data-ponto-lugar],[data-tabela-dos-paises]';
 
 /* O seletor com antepassado é lido a partir do documento. Quando o próprio
    bloco é esse antepassado, querySelector nele não o inclui no âmbito da

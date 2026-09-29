@@ -1,0 +1,12 @@
+---
+/**
+ * UM CAMPO DE TEXTO DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026).
+ *
+ * O `CampoDaLinha` de uma série: o elemento sai com `data-serie` e
+ * `data-serie-campo`, e o portão de HTML compara o texto com o campo do ficheiro
+ * da série carácter a carácter (a unidade, pela tabela das unidades na língua
+ * da página, como a de uma linha). Um campo noutra língua leva a marca `lang`.
+ */
+const { serie, campo, valor, lingua = null, class: klass = '', as: Tag = 'span' } = Astro.props;
+---
+<Tag class:list={['campo-da-serie', klass]} data-serie={serie} data-serie-campo={campo} lang={lingua ?? undefined}>{valor}</Tag>
