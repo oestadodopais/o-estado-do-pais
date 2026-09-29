@@ -13041,7 +13041,7 @@ rotas passam a ler **0**.
 
 **O que fica, e de quem é.**
 1. **O oráculo do portão** (`scripts/textos-aprovados.json`) guarda a forma inteira do nome, porque é ela que deixa o portão exigir que o nome não chegue a página nenhuma; tirá-la da árvore pública exige lê-la de um lugar privado, um segredo no GitHub e uma variável na Vercel, que só o diretor cria (a I175).
-2. **A história do Git** guarda tudo o que a árvore deixou. Limpá-la é reescrevê-la e forçar um push, e muda o resumo de todos os commits, que os registos e cinco linhas do livro-razão citam como prova (a história dos acessos do PRR cita os commits `8371e097` e `8b7d9157`): é decisão do diretor, com esse custo à vista.
+2. **A história do Git** guarda tudo o que a árvore deixou. Limpá-la é reescrevê-la e forçar um push, e muda o resumo de todos os commits que os registos citam como prova, entre eles a história dos acessos das linhas do PRR de Évora (os commits `8371e097` e `8b7d9157`): é decisão do diretor, com esse custo à vista.
 3. **O correio dos autores**: 1 542 commits públicos têm como autor o correio pessoal do diretor; os commits seguintes podem usar o endereço privado que o GitHub dá a cada conta, o que é uma definição da conta dele e da configuração do Git deste repositório.
 4. **O motor** é privado e ainda traz o nome de utilizador nos seus ficheiros.
 5. **As dependências da construção** trazem quatro avisos (dois moderados, dois altos), a tratar num bloco de manutenção com a comparação byte a byte do sítio construído (a I176).
