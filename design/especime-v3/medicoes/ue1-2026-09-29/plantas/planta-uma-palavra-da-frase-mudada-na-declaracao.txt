@@ -1,0 +1,14 @@
+# uma palavra da frase mudada na declaração
+# comando: python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py
+# código: 1
+
+  DIFERE  pt · sem empate
+  DIFERE  pt · um
+  DIFERE  pt · varios
+  igual   en · sem empate
+  igual   en · um
+  igual   en · varios
+ACERTOS_UE1: FAIL · 3 de 6 formas iguais, 8 acertos
+  x (pt, sem empate): a declaração difere do brief com os acertos
+  x (pt, um): a declaração difere do brief com os acertos
+  x (pt, varios): a declaração difere do brief com os acertos

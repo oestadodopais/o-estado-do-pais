@@ -1,0 +1,41 @@
+{
+  "bloco": "UE1",
+  "medidas": {
+    "pedidos": {
+      "valor": 37,
+      "comando": "as linhas de indicators/out/ue1-2026-09-29/pedidos.jsonl, no motor",
+      "o_que": "o primeiro é o RDF da Áustria",
+      "encontrado": true
+    },
+    "pedidos_lidos": {
+      "valor": 37,
+      "comando": "o mesmo, os de estado «lido»",
+      "o_que": "o da dívida pública está entre eles",
+      "encontrado": true
+    },
+    "pedidos_ao_servico_das_publicacoes": {
+      "valor": 27,
+      "comando": "o mesmo, pelo anfitrião",
+      "o_que": "o anfitrião aparece",
+      "encontrado": true
+    },
+    "pedidos_ao_eurostat": {
+      "valor": 10,
+      "comando": "o mesmo, pelo anfitrião",
+      "o_que": "o anfitrião aparece",
+      "encontrado": true
+    },
+    "segundos_do_primeiro_ao_ultimo_pedido": {
+      "valor": 5,
+      "comando": "a diferença entre a primeira e a última timestamp_utc do registo",
+      "o_que": "as horas leram-se",
+      "encontrado": true
+    },
+    "espera_com_o_cliente_partilhado": {
+      "valor": 2.0,
+      "comando": "cliente() do pedir.py corrigido, duas chamadas seguidas ao regulador do mesmo anfitrião, em segundos",
+      "o_que": "o mesmo cliente volta nas duas chamadas",
+      "encontrado": true
+    }
+  }
+}

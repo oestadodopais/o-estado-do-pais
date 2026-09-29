@@ -1,0 +1,18 @@
+# python3 publisher/export_series.py --site <worktree do sítio> --write
+# em <worktree do motor>
+# código: 0
+
+  10 série(s) conferida(s), tabela dos nomes conferida
+  escrito ledger/series/desemprego-de-longa-duracao-2025-paises.yml
+  escrito ledger/series/divida-publica-2025-paises.yml
+  escrito ledger/series/ihpc-variacao-homologa-paises.yml
+  escrito ledger/series/precos-da-habitacao-2025-paises.yml
+  escrito ledger/series/racio-s80-s20-2025-paises.yml
+  escrito ledger/series/risco-de-pobreza-ou-exclusao-2025-paises.yml
+  escrito ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises.yml
+  escrito ledger/series/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.yml
+  escrito ledger/series/taxa-de-desemprego-mip-2025-paises.yml
+  escrito ledger/series/taxa-de-emprego-2025-paises.yml
+  escrito src/data/paises-da-uniao.json
+  escrito ledger/cruzamentos/series.json
+EXPORT_SERIES: PASS · 10 séries, 280 pontos

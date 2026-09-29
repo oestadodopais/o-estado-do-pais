@@ -1,0 +1,35 @@
+{
+  "_": "O custo do bloco UE1. As horas leem-se de ficheiros; os símbolos são a leitura, à mão, do contador que o ambiente mostra ao agente (o total da sessão menos o que resta), e o total que a ferramenta reporta ao lugar de direção é o que conta.",
+  "medidas": {
+    "primeiro_pedido": {
+      "valor": "2026-09-29T14:11:43Z",
+      "comando": "a primeira linha de indicators/out/ue1-2026-09-29/pedidos.jsonl, no motor (commit da6df0b)",
+      "o_que": "o registo tem 37 pedidos",
+      "encontrado": true
+    },
+    "fim_dos_portoes": {
+      "valor": "2026-09-29T16:16:29Z",
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/typecheck.fim",
+      "o_que": "o ficheiro existe e é uma hora UTC",
+      "encontrado": true
+    },
+    "segundos_do_primeiro_pedido_ao_fim_dos_portoes": {
+      "valor": 7486,
+      "comando": "a diferença entre as duas horas acima",
+      "o_que": "as duas horas leram-se",
+      "encontrado": true
+    },
+    "simbolos_da_sessao_ate_aqui": {
+      "valor": 951859,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 14 048 141 (o que restava, lido à mão antes de escrever este ficheiro)",
+      "o_que": "o contador desceu durante o bloco",
+      "encontrado": true
+    },
+    "simbolos_da_sessao_no_fecho": {
+      "valor": 1219541,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 13 780 459 (o que restava, lido à mão antes do último commit, depois do relatório)",
+      "o_que": "é maior do que a leitura ao fim dos portões (951 859)",
+      "encontrado": true
+    }
+  }
+}

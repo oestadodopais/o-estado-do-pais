@@ -1,0 +1,23 @@
+# uma série escrita à mão, sem travessia
+# comando: node scripts/check-cruzamento.mjs
+# código: 1
+
+
+  cruzamentos · 2884 linha(s) de origem externa em 4 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)
+  rótulos da fonte · 1896 de 3009 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)
+  séries · 10 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)
+  cruzamentos · 4 ficheiro(s) inteiro(s) em 3 registo(s) · 5 item(ns) da agenda reconferidos
+    avaliacao-economica-regional-de-portugal-2026: 8
+    concelhos-2026: 2767
+    dominios-2026: 40
+    evora-economia-investidores-portas-abertas-2026: 8
+    evora-orcamentado-pago-devido-2025: 27
+    evora-os-pelouros-quem-os-teve-o-que-fizeram: 7
+    evora-prometido-pago-auditado-2026: 7
+    evora-quinze-anos-cinco-mandatos: 20
+
+  A TRAVESSIA NÃO CONFERE — 1 erro(s):
+
+    ✗ 1 série(s) em ledger/series/ que nenhum registo de travessia nomeia: uma-serie-a-mao-paises.
+        Uma linha de série é gerada pelo motor e atravessa; não se escreve neste repositório.
+

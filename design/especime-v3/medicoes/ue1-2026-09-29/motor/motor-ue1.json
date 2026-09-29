@@ -1,0 +1,77 @@
+{
+  "bloco": "UE1",
+  "medidas": {
+    "cabeca": {
+      "valor": "e394307",
+      "comando": "git rev-parse HEAD, no motor",
+      "o_que": "é um commit",
+      "encontrado": true
+    },
+    "suite_codigo": {
+      "valor": 0,
+      "comando": "python3 -m publisher.series_paises_test",
+      "o_que": "a suíte diz quantas conferências fez",
+      "encontrado": true
+    },
+    "suite_conferencias": {
+      "valor": 27,
+      "comando": "o mesmo",
+      "o_que": "a linha PASS existe",
+      "encontrado": true
+    },
+    "suite_plantas": {
+      "valor": 12,
+      "comando": "o mesmo, as plantas que morderam",
+      "o_que": "a planta «um ponto trocado» está entre elas",
+      "encontrado": true
+    },
+    "gerador_codigo": {
+      "valor": 0,
+      "comando": "python3 publisher/series_paises.py --site <worktree do sítio>",
+      "o_que": "a linha PASS existe",
+      "encontrado": true
+    },
+    "gerador_pontos": {
+      "valor": 280,
+      "comando": "o mesmo",
+      "o_que": "a série da pobreza diz «a par de AT, SE»",
+      "encontrado": true
+    },
+    "travessia_seca_codigo": {
+      "valor": 0,
+      "comando": "python3 publisher/export_series.py --site <worktree do sítio>",
+      "o_que": "a linha PASS existe",
+      "encontrado": true
+    },
+    "travessia_escrita_codigo": {
+      "valor": 0,
+      "comando": "python3 publisher/export_series.py --site <worktree do sítio> --write",
+      "o_que": "a travessia escreveu os doze ficheiros",
+      "encontrado": true
+    },
+    "travessia_ficheiros_mudados_no_sitio": {
+      "valor": 0,
+      "comando": "git status --porcelain sobre o que a travessia escreve, depois de a escrever outra vez",
+      "o_que": "o mesmo git status vê um ficheiro plantado na pasta das séries",
+      "encontrado": true
+    },
+    "cruzamento_com_origem_codigo": {
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> node scripts/check-cruzamento.mjs --with-origin",
+      "o_que": "a linha das séries existe",
+      "encontrado": true
+    },
+    "cruzamento_series_contra_o_motor": {
+      "valor": 10,
+      "comando": "o mesmo",
+      "o_que": "a linha das séries existe",
+      "encontrado": true
+    },
+    "core_gate_codigo": {
+      "valor": 0,
+      "comando": "python3 -m core.gate, no motor",
+      "o_que": "a suíte do bloco está no portão",
+      "encontrado": true
+    }
+  }
+}

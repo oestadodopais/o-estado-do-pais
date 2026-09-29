@@ -1,0 +1,9 @@
+# um-tipo-desconhecido-em-tests-cartao-faixa
+# ficheiro: tests/cartao/faixa.mjs, linha 254
+# comando: npm run typecheck
+# código: 0
+
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+

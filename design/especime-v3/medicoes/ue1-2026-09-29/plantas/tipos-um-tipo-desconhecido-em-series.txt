@@ -1,0 +1,10 @@
+# um-tipo-desconhecido-em-series
+# ficheiro: src/lib/series.mjs, linha 70
+# comando: npm run typecheck
+# código: 1
+
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/series.mjs(70,19): error TS2304: Cannot find name 'TipoQueNaoExiste'.

@@ -1,0 +1,25 @@
+# uma série editada à mão
+# comando: node scripts/check-cruzamento.mjs
+# código: 1
+
+
+  cruzamentos · 2884 linha(s) de origem externa em 4 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)
+  rótulos da fonte · 1896 de 3009 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)
+  séries · 10 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)
+  cruzamentos · 4 ficheiro(s) inteiro(s) em 3 registo(s) · 5 item(ns) da agenda reconferidos
+    avaliacao-economica-regional-de-portugal-2026: 8
+    concelhos-2026: 2767
+    dominios-2026: 40
+    evora-economia-investidores-portas-abertas-2026: 8
+    evora-orcamentado-pago-devido-2025: 27
+    evora-os-pelouros-quem-os-teve-o-que-fizeram: 7
+    evora-prometido-pago-auditado-2026: 7
+    evora-quinze-anos-cinco-mandatos: 20
+
+  A TRAVESSIA NÃO CONFERE — 1 erro(s):
+
+    ✗ [series.json] divida-publica-2025-paises: os bytes em disco já não são os que atravessaram.
+        registo: c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3
+        disco:   37f6a3af4efd63b934981fa48b96ef2f74bb90ae81ac678c618132cb3a6bda4a
+        Uma série não se edita à mão: corrige-se no motor e volta a atravessar (ResearchHub/publisher/export_series.py --write).
+
