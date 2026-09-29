@@ -23,6 +23,8 @@ Cada pedido é o da linha da União com os 27 países no lugar da União, e as m
 | `taxa-de-desemprego-mip-2025` | 2025 | 27 | 6,0 | 6,0 | 14.º | CZ, 2,8 | ES, 10,5 | 2 |
 | `taxa-de-emprego-2025` | 2025 | 27 | 76,1 | 79,6 | 12.º | IT, 67,6 | MT, 83,6 | 2 |
 
+*Nota do lugar de direção, 29.09.2026: a coluna do lugar de Portugal foi calculada ordenando os países sem tratar os empates. Pela regra do §3 do mandato (o lugar é 1 mais o número de países com valor maior), Portugal é 15.º na pobreza ou exclusão, a par da Áustria e da Suécia, que têm o mesmo 18,6; o construtor mediu-o e seguiu a regra, e nas outras nove medidas o lugar coincide.*
+
 ## 2 · O teste de aceitação, dito antes
 
 Feito quer dizer: no cartão de cada uma das dez medidas, nas duas edições e nas cinco larguras, o leitor vê, por baixo do número de Portugal, uma faixa com os 27 países da União no mesmo período: o país mais baixo e o mais alto, com o nome e o valor, a média da União, e Portugal marcado, com a frase do seu lugar. Cada algarismo da faixa resolve num ponto de uma linha de série do livro-razão, gerada pelo motor e com o seu recibo; o ponto da União e o de Portugal são, como números, as linhas que o cartão já mostra; um ponto com marca da fonte mostra-a; e os portões falham se um algarismo da faixa não resolver, se faltar um país, se uma posição não sair do valor ou se o ponto da União ou o de Portugal divergir da linha do cartão, cada caso com uma planta que morde.
