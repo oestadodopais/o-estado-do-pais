@@ -1,0 +1,26 @@
+[
+  {
+    "tipo": "máquina da prova",
+    "casa_inteira": true,
+    "nome_isolado": true,
+    "pasta_mae": false,
+    "cadeias_de_pastas_temporarias": 3,
+    "total_de_cadeias": 5
+  },
+  {
+    "tipo": "casa pessoal portável",
+    "casa_inteira": true,
+    "nome_isolado": true,
+    "pasta_mae": false,
+    "cadeias_de_pastas_temporarias": 3,
+    "total_de_cadeias": 5
+  },
+  {
+    "tipo": "conta genérica do GitHub simulada",
+    "casa_inteira": true,
+    "nome_isolado": false,
+    "pasta_mae": false,
+    "cadeias_de_pastas_temporarias": 3,
+    "total_de_cadeias": 4
+  }
+]

@@ -884,7 +884,7 @@ Esta passagem responde à quarta leitura a frio. Os achados 1, 2, 3, 4 e 10 são
 | 1. Privacidade fora da construção de produção, achado 7 | `build` deixou de chamar o detetor. `verify` conserva-o. A raiz e os nomes genéricos de pasta não viram palavras proibidas. | `package.json`, `scripts/check-privacidade.py`, `c1g/privacidade-dist.json`. |
 | 2. Razões das dez entradas, achado 5 | As datas seguem a forma `04.08.2026`; o texto identifica a história pública do repositório e o commit. Valores, datas tipadas e releituras intactos. | `c1g/prr.json` e `c1g/acessos.json`. |
 | 3. Plantas que dependem da guarda, achados 8 e 9 | As oito formas erradas do valor encontrado passam pela mesma comparação usada no HTML. A planta do recurso posterior conserva a entrada em 18.08 e usa o recurso de 19.08. | `c1g/confianca.json` e `c1g/proveniencia.json`. |
-| 4. Acertos pequenos, achados 11 a 17 | Só o início desconhecido recebe tracejado. Só uma expressão reavaliável recebe a frase do recálculo. O README explicita o limite do primeiro valor antigo. O cruzamento guarda a data da edição e as contagens distintas. I170, assuntos dos commits e custos corrigidos. | `c1g/calendario.json`, `c1g/capturas-depois.json`, `c1g/cruzamento.codigo`, `ledger/README.md`, `c1e/custo.json`, `c1f/custo.json`. |
+| 4. Acertos pequenos, achados 11 a 17 | Só o início desconhecido recebe tracejado. Só uma expressão reavaliável recebe a frase do recálculo. O README explicita o limite do primeiro valor antigo. O cruzamento guarda a data da edição e as contagens distintas. I170, assuntos dos commits e custos corrigidos. | `c1g/calendario.json`, `c1g/capturas-depois.json`, `c1h/cruzamento.codigo`, `ledger/README.md`, `c1e/custo.json`, `c1f/custo.json`. |
 | 5. Capturas e aceitação, achado 6 | A amostra autorizada cobre as sete tentativas sem valor lido, a dívida das famílias da União, três linhas calculadas e a faixa de Évora. | `c1g/amostra.json`, `c1g/capturas-depois.json`, `c1g/paginas-depois/INDICE.json` e `c1g/inspecao-visual.json`. |
 
 **Onde corre a privacidade.** A prova desta entrega corre no `verify` local de `<worktree do sítio>`, com a história inteira. A corrida «portão» do GitHub está configurada para obter a história inteira (`fetch-depth: 0`) e executar `verify`. A construção de produção da Vercel, que chama `build`, já não depende do Python, do nome da pasta pessoal ou dessa história para a conferência de privacidade. Não se executou uma corrida remota nesta passagem. As plantas de pasta genérica simulam a raiz e os nomes `root`, `runner`, `app` e `code`; a guarda dos nomes pessoais continua a lê-los do Git, apenas em memória.
@@ -897,7 +897,7 @@ O registo de Évora passou a datar a edição local de 28.09.2026. `corrections_
 
 **A amostra e o limite.** Captaram-se 11 dos 337 recibos que a C1e identificou, não os restantes 326. São 110 imagens dos recibos, nas duas edições e a 390, 768, 1024, 1280 e 1600 px, mais dez imagens da faixa de Évora: 120 imagens. As três linhas calculadas escolhidas são `evora-indice-de-divida-2024`, `distancia-portugal-ue27-2024` e `evora-prr-execucao-2026`. A matriz completa está em `c1g/amostra.json`. Todas as capturas são da cabeça de código abaixo, sem deslocamento horizontal nem falhas de aceitação. As páginas e folhas servidas ficaram seladas; cinco imagens foram inspecionadas visualmente. A aceitação integral desta entrega usa a amostra expressamente autorizada para a C1g. A declaração excessiva da C1f foi corrigida no texto e nas medições, conservando o valor originalmente declarado e a razão da retificação.
 
-**Custos e assuntos.** As secções C1e e C1f passam a dizer os símbolos e os segundos, calculados entre cada pedido e o instante da última leitura dos seus contadores. Não se extrapola o fecho posterior nem um preço. Os assuntos das tabelas foram lidos literalmente dos objetos do sítio e do motor. O motor não foi alterado nesta passagem.
+**Custos e assuntos.** As secções C1e e C1f passam a dizer os símbolos e os segundos, calculados entre cada pedido e o instante da última leitura dos seus contadores. Não se extrapola o fecho posterior nem um preço. Os assuntos das tabelas foram lidos literalmente dos objetos do sítio e do motor. O motor não foi alterado nesta passagem. O custo da própria C1g, reconstituído nesta retoma em `c1g/custo.json`, é 7 781 991 símbolos (tokens expostos pelo runtime) e 1 611,263 segundos.
 
 **A primeira corrida.** O primeiro `build` desta passagem terminou com código 1 porque o teste isolado da travessia copiava o seu guião sem o novo módulo das contagens. A travessia real já tinha passado. A preparação do teste passou a copiar os dois ficheiros; a guarda não mudou. A corrida falhada fica em `c1g/primeira-corrida/`, e a prova isolada corrigida em `c1g/travessia-isolada.codigo`.
 
@@ -909,7 +909,7 @@ O registo de Évora passou a datar a edição local de 28.09.2026. `corrections_
 | `npm run verify` | 0 | `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | `portoes/c1g/verify.codigo` |
 | `npm run typecheck` | 0 | `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | `portoes/c1g/typecheck.codigo` |
 
-O `verify` conferiu 12 485 ficheiros construídos, encontrou 0 caminhos ou nomes e passou as 12 plantas de privacidade. A prova em `c1g/privacidade-dist.json` foi extraída dessa corrida, sem a repetir. `c1g/medidas.json` confere os ficheiros da passagem e os conhecidos-positivos. `c1g/relatorio.json` guarda a conferência do relatório, terminada com zero faltas e o conhecido-positivo detetado. A medição da passagem encontrou zero caminhos ou nomes, com os conhecidos-positivos detetados, e confirmou a matriz completa das capturas. A aceitação integral da C1g está cumprida.
+O `verify` conferiu 12 485 ficheiros construídos, encontrou 0 caminhos ou nomes e passou as 12 plantas de privacidade. A prova em `c1g/privacidade-dist.json` foi extraída dessa corrida, sem a repetir. `c1g/medidas.json` confere os ficheiros da passagem e os conhecidos-positivos. `c1g/relatorio.json` guarda a conferência do relatório, terminada com zero faltas e o conhecido-positivo detetado. A medição da passagem encontrou zero caminhos ou nomes, com os conhecidos-positivos detetados, e confirmou a matriz completa das capturas. A C1g entregou os portões e as capturas da amostra descrita. A aceitação integral então declarada excedia essas capturas: faltavam os cinco recibos do PRR com as razões revistas, entregues na C1h.
 
 **Commits.** A tabela continua a lista da C1f. Os assuntos são os que o Git guarda.
 
@@ -923,3 +923,46 @@ O `verify` conferiu 12 485 ficheiros construídos, encontrou 0 caminhos ou nomes
 | `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | C1g: levar a dependência da contagem para a cópia isolada da travessia |
 
 O último commit entrega apenas as provas, esta secção, `medidas.json` e a resposta curta `RESPOSTA-codex-c1g.md`; é filho direto da cabeça de código. O seu resumo será indicado fora do ramo, porque não pode constar dos seus próprios bytes. Nenhum envio para o remoto.
+
+## C1h
+
+A C1h corrige a guarda da pasta pessoal e entrega as capturas que faltavam dos cinco recibos do PRR. Os achados 1, 2, 3 e 4 são plantas do pacote e não pedem mudanças. Os achados 5 e 10 ficam na I170, os 11 e 12 na I169 e o 7 na I173, nos registos do lugar de direção. Não se alteraram valores, razões ou registos do livro nesta passagem.
+
+| Mandato | Resultado e prova |
+| --- | --- |
+| 1. Guarda da pasta pessoal, achados 6 e 8 | O nome isolado com pelo menos seis caracteres volta a entrar, independentemente do Git. A lista declarada exclui `runner`, por ser uma conta genérica de execução. A pasta inteira mantém-se; a pasta-mãe genérica sai. `c1h/privacidade-isolada.json`, `c1h/ambientes.json` e a prova do `verify` em `c1h/privacidade-dist.json`. |
+| 2. Capturas do PRR, achado 9 | A matriz pedida é a dos cinco recibos, nas duas edições e cinco larguras. `c1h/capturas-depois.json` e `c1h/paginas-depois/INDICE.json` guardam as imagens e os bytes servidos da cabeça final. |
+| 3. Custos, achado 13 | `c1h/custo.py` lê o contador da mesma sessão e as horas dos pedidos; os resultados ficam em `c1g/custo.json` e `c1h/custo.json`. Os totais e os limites estão abaixo. |
+| 4. Travessia isolada, achado 14 | `c1h/cruzamento.codigo`: código 0. `c1h/cruzamento-registo.json` confronta os bytes da corrida com os do registo comprometido. A tabela da C1g foi corrigida para citar esta prova. |
+
+**Que cadeias ficam proibidas.** Na máquina desta prova, entram a casa inteira, o nome da pasta pessoal isolado e as três cadeias de pastas temporárias já guardadas. Não entra a pasta-mãe genérica. A casa pessoal portável simulada tem os mesmos tipos de cadeias. Na simulação da conta genérica do GitHub, entram a casa inteira e as três cadeias temporárias; não entram o nome isolado nem a pasta-mãe genérica. Os nomes pessoais lidos do Git e a regra dos caminhos absolutos mantêm-se em todos os casos. Nenhum nome pessoal nem caminho concreto da máquina foi escrito nas provas.
+
+A lista das pastas-mãe genéricas é a raiz, o diretório comum de contas do macOS e o diretório comum de contas do Linux. Os nomes de conta com menos de seis caracteres continuam excluídos como palavras isoladas. A conta genérica declarada é `runner`; a sua pasta completa continua protegida. As plantas usam a função real `tem_caminho()`: nome da casa real em memória, nome pessoal inventado, ligação com o segmento `home` na simulação do GitHub e os casos genéricos anteriores. Numa máquina cuja própria conta seja curta ou genérica, o caso da casa real confere essa exclusão e declara-a na prova; nesta máquina, a planta é positiva e apanhou o nome. A casa inventada mantém sempre a prova positiva de um nome pessoal independente do Git.
+
+A privacidade continua só no `verify`, local e na corrida «portão» configurada com a história inteira. Não se fez uma corrida remota. O `build` de produção continua sem esta dependência.
+
+**Registo comprometido.** A corrida isolada foi feita em `ed5093914109ed20a968e0303fbf26a6fd81c5c1`. O registo não tinha edição local no estado guardado no início da corrida. O resumo SHA-256 do ficheiro coincide com o do objeto desse commit: `69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46`. A prova anterior citada na C1g tinha lido uma árvore diferente; fica conservada como histórica, sem a apresentar como esta corrida.
+
+**Capturas e aceitação.** A aceitação visual desta passagem cobre apenas os cinco recibos do PRR cujas razões mudaram na C1g: `evora-prr-aprovado-2026`, `evora-prr-municipio-contratado`, `evora-prr-pago-2026`, `evora-prr-universidade-contratado` e `evora-prr-vencido-aprovado-2026`. São 50 capturas, nas duas edições e cinco larguras, 390, 768, 1024, 1280 e 1600 px, todas aceites pelo captor, com zero deslocamento horizontal. Duas imagens foram inspecionadas visualmente, registadas em `c1h/inspecao-visual.json`. O captor do bloco confere literalmente as razões com a prova da C1g e sela as páginas e as folhas de estilo servidas. A declaração de aceitação integral da C1g foi retificada no texto e nas medições, conservando o valor declarado na entrega e a razão da retificação.
+
+**Custos.** A C1h regista 4 166 980 símbolos (tokens expostos pelo runtime) e 982,530 segundos, em `c1h/custo.json`. A C1g regista 7 781 991 símbolos (tokens expostos pelo runtime) e 1 611,263 segundos, em `c1g/custo.json`. A duração mede do pedido ao instante do contador usado, sem estimar preço. Entrada em cache está incluída na entrada; raciocínio está incluído na saída. Não se somam duas vezes. O contador da C1g termina na última leitura anterior ao pedido da C1h. O da C1h não inclui o fecho posterior ao corte que o ficheiro declara. Não houve subagentes.
+
+**Portões e cabeças.** A cabeça de código é `ed5093914109ed20a968e0303fbf26a6fd81c5c1`. Antes de cada corrida inteira, o guião confere `pgrep -fl "astro build|npm run verify"`; cada comando guarda o seu código acabado de escrever e o estado da árvore em `portoes/c1h/`. Os três códigos foram lidos dos ficheiros depois de os comandos terminarem:
+
+| Comando | Código lido | Cabeça | Ficheiro |
+| --- | --- | --- | --- |
+| `npm run build` | 0 | `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | `portoes/c1h/build.codigo` |
+| `npm run verify` | 0 | `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | `portoes/c1h/verify.codigo` |
+| `npm run typecheck` | 0 | `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | `portoes/c1h/typecheck.codigo` |
+
+O `verify` conferiu 12 485 ficheiros construídos, encontrou zero caminhos ou nomes e passou as 15 plantas de privacidade. `c1h/privacidade-dist.json` conserva essa saída e o resumo do log, sem repetir o portão. A conferência final de `medidas.json` e do relatório fica em `c1h/medidas.json` e `c1h/relatorio.json`.
+
+**Commits.** A lista integral está em `medidas.json`. Esta tabela continua a da C1g, com os assuntos literais.
+
+| Cabeça | Assunto |
+| --- | --- |
+| `f321d50aa8463b91675e6aec161a5452d96a69ba` | C1g: entregar as capturas finais, os portões e a retificação do relatório |
+| `9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8` | C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h |
+| `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos |
+
+O último commit contém apenas as provas, este relatório, `medidas.json` e `RESPOSTA-codex-c1h.md`. É filho da cabeça de código; o seu resumo é indicado fora do ramo. Nenhum envio para o remoto.
