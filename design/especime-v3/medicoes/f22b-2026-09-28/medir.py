@@ -160,7 +160,10 @@ def main():
             "prompt_reposto": ler(f22d / "prompt-reposto.json"),
             "excecao_do_detetor": "Só o exemplo com reticências do mandato é excluído; não identifica uma pasta.",
             "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."}
-        for nome in ("plantas-detalhe", "plantas-f22c-detalhe", "clone-detalhe"):
+        if (f22d / "fecho.json").exists():
+            dados["f22d"]["fecho"] = ler(f22d / "fecho.json")
+            dados["por_fazer"] = dados["f22d"]["fecho"]["pendencias"] + dados["por_fazer"]
+        for nome in ("plantas-detalhe", "plantas-f22c-detalhe", "clone-detalhe", "clone-antes-detalhe"):
             if (f22d / (nome + ".json")).exists():
                 dados["f22d"][nome] = ler(f22d / (nome + ".json"))
         if "core-final" in execucoes_d:

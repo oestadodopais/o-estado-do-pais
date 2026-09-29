@@ -97,29 +97,29 @@
         }
       },
       "contador_final": {
-        "instante": "2026-09-29T23:05:05.704Z",
+        "instante": "2026-09-29T23:26:56.575Z",
         "simbolos": {
-          "input_tokens": 25796983,
-          "cached_input_tokens": 25380608,
+          "input_tokens": 31157633,
+          "cached_input_tokens": 30689280,
           "cache_write_input_tokens": 0,
-          "output_tokens": 112124,
-          "reasoning_output_tokens": 44146,
-          "total_tokens": 25909107
+          "output_tokens": 146981,
+          "reasoning_output_tokens": 62143,
+          "total_tokens": 31304614
         }
       },
       "simbolos_do_segmento": {
-        "input_tokens": 4130477,
-        "cached_input_tokens": 4028544,
+        "input_tokens": 9491127,
+        "cached_input_tokens": 9337216,
         "cache_write_input_tokens": 0,
-        "output_tokens": 29955,
-        "reasoning_output_tokens": 12318,
-        "total_tokens": 4160432
+        "output_tokens": 64812,
+        "reasoning_output_tokens": 30315,
+        "total_tokens": 9555939
       },
-      "segundos": 1013.109
+      "segundos": 2323.98
     }
   },
-  "total_simbolos": 54156234,
-  "total_segundos_dos_segmentos": 10361.215,
+  "total_simbolos": 59551741,
+  "total_segundos_dos_segmentos": 11672.086,
   "fotografias_historicas": {
     "construcao": {
       "inicio_sessao": "2026-09-28T18:48:49.664Z",

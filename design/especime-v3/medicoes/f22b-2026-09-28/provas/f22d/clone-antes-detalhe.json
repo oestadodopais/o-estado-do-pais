@@ -1,0 +1,9 @@
+{
+  "comando_do_clone": "git clone --depth 1 --branch f22b-2026-09-28 file://<motor> <temporario>",
+  "comando_da_prova": "python3 -m indicators.rotinas_f22c_test",
+  "cabeca_do_clone": "f8a20fb2d20f89bec387acff2271c4b1672be034",
+  "arvore_do_clone": "3eadea89970657d143e54cd18fb221c2bce28707",
+  "raso": true,
+  "master_local": false,
+  "codigo": 1
+}

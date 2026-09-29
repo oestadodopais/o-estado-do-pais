@@ -1,17 +1,17 @@
 {
   "origem": "event_msg/token_count da sessão indicada",
   "inicio": "2026-09-29T21:08:52.877Z",
-  "instante_do_contador": "2026-09-29T23:05:05.704Z",
+  "instante_do_contador": "2026-09-29T23:26:56.575Z",
   "modelo_exposto": "gpt-6-astra",
   "simbolos": {
-    "input_tokens": 25796983,
-    "cached_input_tokens": 25380608,
+    "input_tokens": 31157633,
+    "cached_input_tokens": 30689280,
     "cache_write_input_tokens": 0,
-    "output_tokens": 112124,
-    "reasoning_output_tokens": 44146,
-    "total_tokens": 25909107
+    "output_tokens": 146981,
+    "reasoning_output_tokens": 62143,
+    "total_tokens": 31304614
   },
-  "segundos": 1013.109,
+  "segundos": 2323.98,
   "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido.",
   "inicio_passagem": "2026-09-29T22:48:12.595Z",
   "contador_anterior": {
@@ -26,11 +26,11 @@
     }
   },
   "acrescimo_na_passagem": {
-    "input_tokens": 4130477,
-    "cached_input_tokens": 4028544,
+    "input_tokens": 9491127,
+    "cached_input_tokens": 9337216,
     "cache_write_input_tokens": 0,
-    "output_tokens": 29955,
-    "reasoning_output_tokens": 12318,
-    "total_tokens": 4160432
+    "output_tokens": 64812,
+    "reasoning_output_tokens": 30315,
+    "total_tokens": 9555939
   }
 }
