@@ -1,0 +1,61 @@
+{
+  "brief": "design/observatorio/BRIEF-UE1-onde-portugal-fica-entre-os-27.md",
+  "guiao": "design/observatorio/medidas/BRIEF-UE1.py",
+  "cabeca_lida": "8e66b601",
+  "medidas": [
+    {
+      "nome": "linhas_da_uniao_nos_blocos",
+      "valor": 10,
+      "comando": "git show 8e66b601:src/data/primeira-pagina.mjs · os identificadores entre aspas que acabam em -ue",
+      "conhecido_positivo": {
+        "o_que": "a linha da dívida pública da União é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_uniao_do_eurostat",
+      "valor": 10,
+      "comando": "git show 8e66b601:ledger/claims/<id>.yml · o anfitrião do source_url de cada uma",
+      "conhecido_positivo": {
+        "o_que": "a da dívida pública da União vem do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gemeas_portuguesas",
+      "valor": 10,
+      "comando": "git show 8e66b601:ledger/claims/<id sem -ue>.yml · as que existem",
+      "conhecido_positivo": {
+        "o_que": "a linha portuguesa da dívida pública existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gemeas_do_eurostat",
+      "valor": 10,
+      "comando": "as mesmas, pelo anfitrião do source_url",
+      "conhecido_positivo": {
+        "o_que": "a linha portuguesa da dívida pública vem do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro",
+      "valor": 3009,
+      "comando": "git ls-tree --name-only 8e66b601:ledger/claims · os ficheiros .yml",
+      "conhecido_positivo": {
+        "o_que": "a linha da dívida pública está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_serie_no_livro",
+      "valor": 0,
+      "comando": "git ls-tree --name-only 8e66b601:ledger/series · os ficheiros .yml (a pasta não existir conta zero)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando sobre ledger/claims lista ficheiros",
+        "encontrado": true
+      }
+    }
+  ]
+}
