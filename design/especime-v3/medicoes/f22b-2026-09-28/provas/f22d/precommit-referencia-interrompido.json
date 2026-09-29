@@ -1,0 +1,20 @@
+{
+  "comando": "git -C <motor> commit -m F2.2d: fixar a referência expurgada do varrimento -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+  "ambiente_declarado": {},
+  "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+  "codigo_executado": {
+    "cabeca_base": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+    "arvore": "53fd88d1c30f1842b65bd6177b3f6f3be680a399",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      "indicators/monthly-68318e0.json",
+      "indicators/monthly-68318e0.sh",
+      "indicators/rotinas_f22c_test.py"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-29T23:40:22.206277+00:00",
+  "fim": "2026-09-29T23:41:12.845359+00:00",
+  "segundos": 50.639,
+  "codigo": -15
+}

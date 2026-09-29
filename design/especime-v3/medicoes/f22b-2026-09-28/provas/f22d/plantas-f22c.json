@@ -3,16 +3,16 @@
   "ambiente_declarado": {
     "F22C_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-detalhe.json"
   },
-  "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+  "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
   "codigo_executado": {
-    "cabeca_base": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
-    "arvore": "17172b54353956318a27b8f5e2c27d30c21881de",
+    "cabeca_base": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+    "arvore": "58cd8f1da4290839ace2b5be78078a2244f90087",
     "tipo": "commit",
     "alterados": [],
     "juncao_por_registar": []
   },
-  "inicio": "2026-09-29T23:23:18.882150+00:00",
-  "fim": "2026-09-29T23:23:20.054584+00:00",
-  "segundos": 1.172,
+  "inicio": "2026-09-29T23:50:51.514123+00:00",
+  "fim": "2026-09-29T23:50:52.614907+00:00",
+  "segundos": 1.101,
   "codigo": 0
 }

@@ -12,5 +12,5 @@
     "Substituir o identificador pessoal do comentário por <agente-do-portatil>.",
     "Substituir a pasta do portátil no cd por <motor-do-portatil>."
   ],
-  "estado": "A cópia ainda não foi guardada. A escolha entre a cópia exata e a regra de privacidade está pendente; o clone raso continua vermelho."
+  "estado": "Proposta histórica não aplicada. Substituída pela cópia de referencia-fixa.json, que troca só o nome do utilizador por <utilizador> e o caminho por <motor>."
 }

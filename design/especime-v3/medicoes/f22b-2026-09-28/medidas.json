@@ -1,13 +1,13 @@
 {
   "bloco": "F2.2b",
-  "medido_em": "2026-09-29T23:32:55.002051+00:00",
+  "medido_em": "2026-09-29T23:57:27.385320+00:00",
   "bases": {
     "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
     "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
   },
   "cabecas_lidas": {
-    "motor": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
-    "sitio": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1"
+    "motor": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+    "sitio": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed"
   },
   "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
   "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
@@ -19,7 +19,8 @@
     "e7dbae267919aa6e9eb0345d25a085f50e4c5a72 F2.2c: corrigir as guardas e conservar as rotinas com plantas nas entradas reais",
     "1a67dea9a4e479c00f4fe4c8d645364a3a943446 F2.2c: documentar as rotinas corrigidas e registar execução e custo",
     "f8a20fb2d20f89bec387acff2271c4b1672be034 F2.2d: corrigir o limiar, conservar o portátil e identificar as provas",
-    "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8 F2.2d: guardar a prova do clone raso sem master local"
+    "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8 F2.2d: guardar a prova do clone raso sem master local",
+    "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813 F2.2d: fixar a referência expurgada do varrimento"
   ],
   "commits_sitio_anteriores_ao_relatorio": [
     "2613664f73f178197ea869e9031ac6ba9f2bb0f9 PP1: as declarações do lugar de direção para a primeira página de um leitor comum (os cinco blocos de «O que se passa», com as palavras, as condições que os tornam verdadeiros e os desenhos, e as seis entradas com os cartões que cada uma agrupa) e o ensaio a seco que as rende nas duas edições, a testemunha independente contra o resolvedor do construtor (M31)",
@@ -107,7 +108,8 @@
     "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc F2.2c: corrigir a ordem da publicação e a natureza das medidas",
     "cb1600b6e147f2bdc05f73396404f344b3495c2b F2.2c: registar as provas finais e a resposta do construtor",
     "df1c262242dc94f5b6aef8d8e01f9e554209baf2 F2.2d: a releitura a frio da F2.2c pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o mandato da passagem F2.2d do Codex (as plantas do varrimento sem depender de um master local, que o portão do motor no GitHub não tem; o relatório de volta ao bloco inteiro; a recusa e o TLS num runner ditos e provados pela I116; o limiar à parte das linhas e com as mensagens do portátil de volta; e as plantas e as provas que faltavam)",
-    "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1 F2.2d: repor o relatório do bloco e a proveniência das provas"
+    "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1 F2.2d: repor o relatório do bloco e a proveniência das provas",
+    "ad4722fa92bafcacf7b99d3da56363f3b58dcbed F2.2d: guardar as provas e a paragem na referência pessoal do guião"
   ],
   "commits_dos_relatorios": {
     "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
@@ -453,7 +455,6 @@
     "conferencia_externa": "O lugar de direção mede os interruptores e os despachos na aterragem."
   },
   "por_fazer": [
-    "Ponto 1: guardar a referência fixa sem identificação pessoal, ligar as plantas a essa referência e obter o controlo verde no clone raso. A cópia exata de 68318e0 contém o identificador pessoal do agente e a pasta do portátil, em conflito com a regra do mandato.",
     "publicação dos ramos",
     "ensaios despachados no GitHub",
     "chaves e interruptores pelo diretor",
@@ -984,6 +985,24 @@
         "codigo_lido_de": "provas/f22d/clone-antes.codigo",
         "sha256_saida": "45f39df182ace8dcfad5a5899b70b67f3be5a2e5483ba214b18c66dc855abe05"
       },
+      "clone": {
+        "comando": "python3 <motor>/indicators/out/f22d-2026-09-29/clone_raso.py --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+        "codigo_executado": {
+          "cabeca_base": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+          "arvore": "58cd8f1da4290839ace2b5be78078a2244f90087",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:50:52.119287+00:00",
+        "fim": "2026-09-29T23:50:54.143670+00:00",
+        "segundos": 2.024,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/clone.codigo",
+        "sha256_saida": "401226eec27c1f43328983f3fe46c0b7718c3fcccbb4266dc49b65f6fd99f5f6"
+      },
       "commit-clone": {
         "comando": "git -C <motor> commit -m F2.2d: guardar a prova do clone raso sem master local -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
         "ambiente_declarado": {},
@@ -1062,7 +1081,7 @@
         "codigo_lido_de": "provas/f22d/commit-limiar.codigo",
         "sha256_saida": "0e82688c0254feda1754aabd136c9e2dd267943c316177062fa6aad3a969605f"
       },
-      "conferencia-relatorio": {
+      "conferencia-relatorio-parcial": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-detalhe.json",
         "ambiente_declarado": {},
         "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
@@ -1149,10 +1168,103 @@
         "fim": "2026-09-29T23:31:54.302642+00:00",
         "segundos": 0.079,
         "codigo": 0,
-        "codigo_lido_de": "provas/f22d/conferencia-relatorio.codigo",
+        "codigo_lido_de": "provas/f22d/conferencia-relatorio-parcial.codigo",
         "sha256_saida": "202525f53ba12db95438b4b401139ffabebd36e62691e5f869111580df4cb2d9"
       },
-      "conferencia-resposta": {
+      "conferencia-relatorio": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+        "codigo_executado": {
+          "cabeca_base": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+          "arvore": "c8c5525a02374c8f336c254afd5592386a631879",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medidas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/ambito-retoma.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-final.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-final.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-final.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/custo-bloco.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/custo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/fecho.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/referencia-fixa.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/referencia-pendente.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/referencia-proposta-historica.json"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:56:42.166977+00:00",
+        "fim": "2026-09-29T23:56:42.257838+00:00",
+        "segundos": 0.091,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/conferencia-relatorio.codigo",
+        "sha256_saida": "cb0a93faf64facb05b4b8f972b49234ea234619fcd6559a1cebbb209b52a2d88"
+      },
+      "conferencia-resposta-parcial": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
         "ambiente_declarado": {},
         "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
@@ -1233,10 +1345,102 @@
         "fim": "2026-09-29T23:31:53.534640+00:00",
         "segundos": 0.074,
         "codigo": 0,
-        "codigo_lido_de": "provas/f22d/conferencia-resposta.codigo",
+        "codigo_lido_de": "provas/f22d/conferencia-resposta-parcial.codigo",
         "sha256_saida": "1ad2439281ed2e2d52fc2076b69d344098a403bf5e1ff7e38d6bc2ff2f606b37"
       },
-      "core-final": {
+      "conferencia-resposta": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+        "codigo_executado": {
+          "cabeca_base": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+          "arvore": "e830c1cb77699018c29af2a9c99c4f8830166033",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medidas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/ambito-retoma.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/clone.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-parcial.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-parcial.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-antes-retoma.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-final.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-final.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/core-final.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/custo-bloco.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/custo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/fecho.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-antes-retoma.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-interrompido.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia-json.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/precommit-referencia.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/referencia-fixa.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/referencia-pendente.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/referencia-proposta-historica.json"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:56:44.783000+00:00",
+        "fim": "2026-09-29T23:56:44.870585+00:00",
+        "segundos": 0.087,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/conferencia-resposta.codigo",
+        "sha256_saida": "331f3f2a64eae4c88644085236f2a151a940ceaf2deca99cd23935b77bb38b9e"
+      },
+      "core-antes-retoma": {
         "comando": "python3 -m core.gate",
         "ambiente_declarado": {},
         "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
@@ -1250,6 +1454,24 @@
         "inicio": "2026-09-29T23:23:14.254985+00:00",
         "fim": "2026-09-29T23:26:47.460228+00:00",
         "segundos": 213.203,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/core-antes-retoma.codigo",
+        "sha256_saida": "91a85a9428b967e3e34e2380e3bdfd925ef06be9bfa18bdc5ee979bbc55935d2"
+      },
+      "core-final": {
+        "comando": "python3 -m core.gate",
+        "ambiente_declarado": {},
+        "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+        "codigo_executado": {
+          "cabeca_base": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+          "arvore": "58cd8f1da4290839ace2b5be78078a2244f90087",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:50:51.784643+00:00",
+        "fim": "2026-09-29T23:54:21.779920+00:00",
+        "segundos": 209.994,
         "codigo": 0,
         "codigo_lido_de": "provas/f22d/core-final.codigo",
         "sha256_saida": "91a85a9428b967e3e34e2380e3bdfd925ef06be9bfa18bdc5ee979bbc55935d2"
@@ -1352,7 +1574,7 @@
         "codigo_lido_de": "provas/f22d/medidor-planta.codigo",
         "sha256_saida": "dfb9843320e08227b571758cbaa21831bc601ea9c358c6fd00ad873068b351a2"
       },
-      "plantas-f22c": {
+      "plantas-f22c-antes-retoma": {
         "comando": "python3 -m indicators.rotinas_f22c_test --site <sitio>",
         "ambiente_declarado": {
           "F22C_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-detalhe.json"
@@ -1369,8 +1591,28 @@
         "fim": "2026-09-29T23:23:20.054584+00:00",
         "segundos": 1.172,
         "codigo": 0,
-        "codigo_lido_de": "provas/f22d/plantas-f22c.codigo",
+        "codigo_lido_de": "provas/f22d/plantas-f22c-antes-retoma.codigo",
         "sha256_saida": "df1906832efe509b874b669c1df860d8228a314d85273970b04e91f07b02d7f2"
+      },
+      "plantas-f22c": {
+        "comando": "python3 -m indicators.rotinas_f22c_test --site <sitio>",
+        "ambiente_declarado": {
+          "F22C_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/plantas-f22c-detalhe.json"
+        },
+        "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+        "codigo_executado": {
+          "cabeca_base": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+          "arvore": "58cd8f1da4290839ace2b5be78078a2244f90087",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:50:51.514123+00:00",
+        "fim": "2026-09-29T23:50:52.614907+00:00",
+        "segundos": 1.101,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/plantas-f22c.codigo",
+        "sha256_saida": "05db5aaf1167077f18d5f7dac2e004604d7892af24825f997474f4fb277eb1a7"
       },
       "plantas": {
         "comando": "python3 -m indicators.rotinas_test",
@@ -1391,6 +1633,72 @@
         "codigo": 0,
         "codigo_lido_de": "provas/f22d/plantas.codigo",
         "sha256_saida": "7f655f3e6b413a0de9a4aad0e5638a46975fd132f01c6eaa272a550494a8f76c"
+      },
+      "precommit-referencia-interrompido": {
+        "comando": "git -C <motor> commit -m F2.2d: fixar a referência expurgada do varrimento -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+        "codigo_executado": {
+          "cabeca_base": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+          "arvore": "53fd88d1c30f1842b65bd6177b3f6f3be680a399",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/monthly-68318e0.json",
+            "indicators/monthly-68318e0.sh",
+            "indicators/rotinas_f22c_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:40:22.206277+00:00",
+        "fim": "2026-09-29T23:41:12.845359+00:00",
+        "segundos": 50.639,
+        "codigo": -15,
+        "codigo_lido_de": "provas/f22d/precommit-referencia-interrompido.codigo",
+        "sha256_saida": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "precommit-referencia-json": {
+        "comando": "git -C <motor> commit -m F2.2d: fixar a referência expurgada do varrimento -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+        "codigo_executado": {
+          "cabeca_base": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+          "arvore": "46eec6b4bf1aea9d1ba42a43a800c550c1a8aad5",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/fixtures/monthly-68318e0.json",
+            "indicators/fixtures/monthly-68318e0.sh",
+            "indicators/rotinas_f22c_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:41:44.259648+00:00",
+        "fim": "2026-09-29T23:45:15.410450+00:00",
+        "segundos": 211.15,
+        "codigo": 1,
+        "codigo_lido_de": "provas/f22d/precommit-referencia-json.codigo",
+        "sha256_saida": "e3582c31015f6a5864b9b2277016dc86071d31374c1a2075c327638978a9f125"
+      },
+      "precommit-referencia": {
+        "comando": "git -C <motor> commit -m F2.2d: fixar a referência expurgada do varrimento -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+        "codigo_executado": {
+          "cabeca_base": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+          "arvore": "58cd8f1da4290839ace2b5be78078a2244f90087",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/fixtures/monthly-68318e0.md",
+            "indicators/fixtures/monthly-68318e0.sh",
+            "indicators/rotinas_f22c_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-29T23:47:02.370843+00:00",
+        "fim": "2026-09-29T23:50:32.059216+00:00",
+        "segundos": 209.687,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22d/precommit-referencia.codigo",
+        "sha256_saida": "cc2a93a8b790bf6d9b3a07d757b009400364300b1bc76acd9c54500aa5daf4c3"
       },
       "registro-planta": {
         "comando": "python3 -B <motor>/indicators/out/f22d-2026-09-29/provar_execucao.py",
@@ -1577,17 +1885,17 @@
     "custo": {
       "origem": "event_msg/token_count da sessão indicada",
       "inicio": "2026-09-29T21:08:52.877Z",
-      "instante_do_contador": "2026-09-29T23:26:56.575Z",
+      "instante_do_contador": "2026-09-29T23:53:41.789Z",
       "modelo_exposto": "gpt-6-astra",
       "simbolos": {
-        "input_tokens": 31157633,
-        "cached_input_tokens": 30689280,
+        "input_tokens": 35241588,
+        "cached_input_tokens": 34558720,
         "cache_write_input_tokens": 0,
-        "output_tokens": 146981,
-        "reasoning_output_tokens": 62143,
-        "total_tokens": 31304614
+        "output_tokens": 177963,
+        "reasoning_output_tokens": 71339,
+        "total_tokens": 35419551
       },
-      "segundos": 2323.98,
+      "segundos": 3929.194,
       "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido.",
       "inicio_passagem": "2026-09-29T22:48:12.595Z",
       "contador_anterior": {
@@ -1602,12 +1910,12 @@
         }
       },
       "acrescimo_na_passagem": {
-        "input_tokens": 9491127,
-        "cached_input_tokens": 9337216,
+        "input_tokens": 13575082,
+        "cached_input_tokens": 13206656,
         "cache_write_input_tokens": 0,
-        "output_tokens": 64812,
-        "reasoning_output_tokens": 30315,
-        "total_tokens": 9555939
+        "output_tokens": 95794,
+        "reasoning_output_tokens": 39511,
+        "total_tokens": 13670876
       }
     },
     "custo_do_bloco": {
@@ -1709,29 +2017,29 @@
             }
           },
           "contador_final": {
-            "instante": "2026-09-29T23:26:56.575Z",
+            "instante": "2026-09-29T23:53:41.789Z",
             "simbolos": {
-              "input_tokens": 31157633,
-              "cached_input_tokens": 30689280,
+              "input_tokens": 35241588,
+              "cached_input_tokens": 34558720,
               "cache_write_input_tokens": 0,
-              "output_tokens": 146981,
-              "reasoning_output_tokens": 62143,
-              "total_tokens": 31304614
+              "output_tokens": 177963,
+              "reasoning_output_tokens": 71339,
+              "total_tokens": 35419551
             }
           },
           "simbolos_do_segmento": {
-            "input_tokens": 9491127,
-            "cached_input_tokens": 9337216,
+            "input_tokens": 13575082,
+            "cached_input_tokens": 13206656,
             "cache_write_input_tokens": 0,
-            "output_tokens": 64812,
-            "reasoning_output_tokens": 30315,
-            "total_tokens": 9555939
+            "output_tokens": 95794,
+            "reasoning_output_tokens": 39511,
+            "total_tokens": 13670876
           },
-          "segundos": 2323.98
+          "segundos": 3929.194
         }
       },
-      "total_simbolos": 59551741,
-      "total_segundos_dos_segmentos": 11672.086,
+      "total_simbolos": 63666678,
+      "total_segundos_dos_segmentos": 13277.3,
       "fotografias_historicas": {
         "construcao": {
           "inicio_sessao": "2026-09-28T18:48:49.664Z",
@@ -1812,15 +2120,15 @@
     "excecao_do_detetor": "Só o exemplo com reticências do mandato é excluído; não identifica uma pasta.",
     "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção.",
     "fecho": {
-      "estado": "parcial, não pronto a aterrar",
-      "motor_cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
+      "estado": "Concluída no âmbito do mandato; ações externas por executar fora desta passagem.",
+      "motor_cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
       "sitio_cabeca_dos_portoes": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
       "portoes_locais": [
         {
           "comando": "python3 -m core.gate",
           "codigo": 0,
-          "cabeca": "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8",
-          "segundos": 213.203,
+          "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+          "segundos": 209.994,
           "ficheiro": "provas/f22d/core-final.codigo"
         },
         {
@@ -1848,16 +2156,68 @@
       "clone_raso": {
         "comando_do_clone": "git clone --depth 1 --branch f22b-2026-09-28 file://<motor> <temporario>",
         "comando_da_prova": "python3 -m indicators.rotinas_f22c_test",
-        "cabeca_do_clone": "f8a20fb2d20f89bec387acff2271c4b1672be034",
-        "arvore_do_clone": "3eadea89970657d143e54cd18fb221c2bce28707",
+        "cabeca_do_clone": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+        "arvore_do_clone": "58cd8f1da4290839ace2b5be78078a2244f90087",
         "raso": true,
         "master_local": false,
-        "codigo": 1
+        "codigo": 0
       },
-      "pendencias": [
-        "Ponto 1: guardar a referência fixa sem identificação pessoal, ligar as plantas a essa referência e obter o controlo verde no clone raso. A cópia exata de 68318e0 contém o identificador pessoal do agente e a pasta do portátil, em conflito com a regra do mandato."
-      ],
-      "limite_das_arvores_historicas": "Não foram fotografadas; os registos indicam as bases e referências posteriores sem as apresentar como fotografias da execução."
+      "pendencias": [],
+      "limite_das_arvores_historicas": "Não foram fotografadas; os registos indicam as bases e referências posteriores sem as apresentar como fotografias da execução.",
+      "referencia_fixa": {
+        "origem": {
+          "commit": "68318e0da2036cc29e4704fa1bb8a96dee246095",
+          "ficheiro": "sweeps/monthly.sh",
+          "sha256": "45336f7489b6f36bf6062c6c88aadad4bc847729f32be1465314753335f814fc",
+          "reproduzir_sha256": "git show 68318e0:sweeps/monthly.sh | shasum -a 256"
+        },
+        "copia": {
+          "ficheiro": "monthly-68318e0.sh",
+          "sha256": "d99ce84230204fdf55a80eae748897197f42c54a8375cc7dcdcb5f7b904dfa33",
+          "reproduzir_sha256": "shasum -a 256 indicators/fixtures/monthly-68318e0.sh"
+        },
+        "substituicoes": [
+          {
+            "linha": 3,
+            "mudanca": "Só o nome do utilizador no rótulo do agente passa a <utilizador>.",
+            "resultado": "# com.<utilizador>.researchhub-sweep (1st of the month, 09:00), and runnable by"
+          },
+          {
+            "linha": 23,
+            "mudanca": "Só o caminho do portátil no cd passa a <motor>.",
+            "resultado": "cd \"<motor>\" || exit 1"
+          }
+        ],
+        "conferencia": {
+          "linhas_alteradas": [
+            3,
+            23
+          ],
+          "restantes_bytes_iguais": true,
+          "linhas_python3_e_echo_iguais_byte_a_byte": true
+        },
+        "uso": "Referência fixa das plantas do portátil, sem depender de master local; não é um guião para executar.",
+        "ficheiro_no_motor": "indicators/fixtures/monthly-68318e0.sh",
+        "conferido_em": "2026-09-29T23:42:36.864562+00:00",
+        "codigo": 0,
+        "estado": "Referência fixa guardada e ligada às plantas; só as duas substituições autorizadas foram feitas.",
+        "proveniencia_no_motor": "indicators/fixtures/monthly-68318e0.md"
+      },
+      "ambito_da_retoma": {
+        "instante": "2026-09-29T23:53:36.742715+00:00",
+        "fase": "Antes do último commit das provas; não substitui a conferência da aterragem.",
+        "motor_cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+        "motor_ficheiros_do_ultimo_commit": [
+          "indicators/fixtures/monthly-68318e0.md",
+          "indicators/fixtures/monthly-68318e0.sh",
+          "indicators/rotinas_f22c_test.py"
+        ],
+        "sitio_cabeca_lida": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+        "sitio_cabeca_dos_portoes": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "mudancas_do_sitio_fora_do_pacote": [],
+        "prompt_igual_a_fb1dd0dd": true,
+        "decisao_dos_portoes": "Conservar os três portões verdes do sítio: a retoma só altera as provas, conforme o mandato final."
+      }
     },
     "plantas-detalhe": {
       "provas": 47,
@@ -1915,11 +2275,11 @@
       ]
     },
     "plantas-f22c-detalhe": {
-      "provas": 25,
+      "provas": 26,
       "falhas": 0,
       "erros": 0,
       "passou": true,
-      "sitio_real_cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+      "sitio_real_cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
       "nomes": [
         "test_api_cabecalho_da_versao",
         "test_api_erro_permanente_para_logo_com_causa",
@@ -1932,6 +2292,7 @@
         "test_mensal_portatil_calendario_falhou",
         "test_mensal_portatil_codigo_das_publicacoes",
         "test_mensal_portatil_verde",
+        "test_mensal_referencia_fixa_confere_sha_e_recusa_alteracao",
         "test_mensal_runner_conserva_bandeiras",
         "test_portao_conclusoes_da_api",
         "test_reforma_main_ensaio_no_lugar_de_real",
@@ -1948,6 +2309,15 @@
         "estados_reais_do_sitio"
       ]
     },
+    "clone-detalhe": {
+      "comando_do_clone": "git clone --depth 1 --branch f22b-2026-09-28 file://<motor> <temporario>",
+      "comando_da_prova": "python3 -m indicators.rotinas_f22c_test",
+      "cabeca_do_clone": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+      "arvore_do_clone": "58cd8f1da4290839ace2b5be78078a2244f90087",
+      "raso": true,
+      "master_local": false,
+      "codigo": 0
+    },
     "clone-antes-detalhe": {
       "comando_do_clone": "git clone --depth 1 --branch f22b-2026-09-28 file://<motor> <temporario>",
       "comando_da_prova": "python3 -m indicators.rotinas_f22c_test",
@@ -1960,7 +2330,7 @@
     "cabeca_dos_portoes_do_sitio": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1"
   },
   "varrimento_do_pacote": {
-    "ficheiros_lidos": 269,
+    "ficheiros_lidos": 315,
     "caminhos_pessoais": 0,
     "conhecido_positivo": true
   }
