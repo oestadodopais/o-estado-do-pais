@@ -18110,7 +18110,497 @@
         "anos": 3
       }
     },
-    "aceitacao_integral": true,
+    "aceitacao_integral": false,
+    "erros_da_medicao": [],
+    "aceitacao_integral_declarada_na_entrega": true,
+    "retificacao_C1h": "Faltavam as capturas dos cinco recibos do PRR cujas razões mudaram na C1g. A C1h entrega essa matriz."
+  },
+  "C1h": {
+    "registado_em": "2026-09-29T06:00:25.350476+00:00",
+    "base": "9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8",
+    "cabeca_codigo": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+    "portoes": {
+      "build": {
+        "codigo": 0,
+        "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+        "inicio": "2026-09-29T05:45:14.061511+00:00",
+        "fim": "2026-09-29T05:50:12.685613+00:00"
+      },
+      "verify": {
+        "codigo": 0,
+        "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+        "inicio": "2026-09-29T05:50:17.485941+00:00",
+        "fim": "2026-09-29T05:59:00.596317+00:00"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+        "inicio": "2026-09-29T05:59:03.923887+00:00",
+        "fim": "2026-09-29T05:59:04.284885+00:00"
+      }
+    },
+    "cruzamento": {
+      "ficheiro": "ledger/cruzamentos/evora.json",
+      "cabeca_da_corrida": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "sha256_comprometido": "69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46",
+      "sha256_atual": "69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46",
+      "sem_edicao_na_arvore_da_corrida": true,
+      "codigo": 0
+    },
+    "livro_e_registo_intactos": true,
+    "capturas": {
+      "ambito": "Cinco recibos do PRR, nas duas edições e nas cinco larguras.",
+      "ids": [
+        "evora-prr-aprovado-2026",
+        "evora-prr-municipio-contratado",
+        "evora-prr-pago-2026",
+        "evora-prr-universidade-contratado",
+        "evora-prr-vencido-aprovado-2026"
+      ],
+      "quantidade": 50,
+      "copias": 12,
+      "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "aceitacao": {
+        "passou": true,
+        "falhas": []
+      }
+    },
+    "privacidade_dist": {
+      "ficheiros": 12485,
+      "quantidade": 0,
+      "achados": [],
+      "plantas": [
+        {
+          "id": "nome-do-git-1",
+          "pagina_base": "404.html",
+          "mordeu": true,
+          "falha": "nome pessoal ou caminho local na página construída"
+        },
+        {
+          "id": "nome-do-git-2",
+          "pagina_base": "404.html",
+          "mordeu": true,
+          "falha": "nome pessoal ou caminho local na página construída"
+        },
+        {
+          "id": "nome-da-casa-real",
+          "nome_pessoal": true,
+          "esperado": "detetar",
+          "mordeu": true
+        },
+        {
+          "id": "nome-pessoal-portavel",
+          "mordeu": true
+        },
+        {
+          "id": "ligacao-home-na-conta-generica",
+          "mordeu": true
+        },
+        {
+          "id": "pasta-generica-raiz",
+          "mordeu": true
+        },
+        {
+          "id": "pasta-generica-root",
+          "mordeu": true
+        },
+        {
+          "id": "pasta-generica-runner",
+          "mordeu": true
+        },
+        {
+          "id": "pasta-generica-app",
+          "mordeu": true
+        },
+        {
+          "id": "pasta-generica-code",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-1",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-2",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-3",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-4",
+          "mordeu": true
+        },
+        {
+          "id": "caminho-5",
+          "mordeu": true
+        }
+      ],
+      "passou": true,
+      "origem": {
+        "ficheiro": "portoes/c1h/verify.log",
+        "sha256": "e821ec1a2b28d93cf9a4ab48a40a874ebfd507cf5e709953022d1b15f5f43ea5",
+        "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+        "codigo": 0
+      }
+    },
+    "privacidade_da_passagem": {
+      "ficheiros": 128,
+      "quantidade": 0,
+      "achados": [],
+      "conhecidos_positivos": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "custos": {
+      "c1g": {
+        "sessao": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+        "pedido": "2026-09-28T21:39:50.917Z",
+        "antes": {
+          "hora": "2026-09-28T20:56:15.306Z",
+          "cumulativos": {
+            "input_tokens": 102003957,
+            "cached_input_tokens": 100099072,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 416604,
+            "reasoning_output_tokens": 194589,
+            "total_tokens": 102420561
+          },
+          "percentagem_da_semana": 90.0
+        },
+        "ultima_leitura": {
+          "hora": "2026-09-28T22:06:42.180Z",
+          "cumulativos": {
+            "input_tokens": 109747217,
+            "cached_input_tokens": 107521536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 455335,
+            "reasoning_output_tokens": 206361,
+            "total_tokens": 110202552
+          },
+          "percentagem_da_semana": 94.0
+        },
+        "c1g": {
+          "input_tokens": 7743260,
+          "cached_input_tokens": 7422464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 38731,
+          "reasoning_output_tokens": 11772,
+          "total_tokens": 7781991
+        },
+        "segundos": 1611.263,
+        "registado_em": "2026-09-29T05:59:52.758660+00:00",
+        "unidade": "tokens expostos pelo runtime",
+        "duracao_de": "pedido",
+        "duracao_ate": "ultima_leitura.hora",
+        "limites": [
+          "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
+          "C1g termina no último contador antes do pedido C1h. C1h termina na leitura indicada, sem o fecho posterior.",
+          "Sem preço exposto. Sem subagentes."
+        ]
+      },
+      "c1h": {
+        "sessao": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+        "pedido": "2026-09-29T05:42:43.654Z",
+        "antes": {
+          "hora": "2026-09-28T22:06:42.180Z",
+          "cumulativos": {
+            "input_tokens": 109747217,
+            "cached_input_tokens": 107521536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 455335,
+            "reasoning_output_tokens": 206361,
+            "total_tokens": 110202552
+          },
+          "percentagem_da_semana": 94.0
+        },
+        "ultima_leitura": {
+          "hora": "2026-09-29T05:59:06.184Z",
+          "cumulativos": {
+            "input_tokens": 113894084,
+            "cached_input_tokens": 111531776,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 475448,
+            "reasoning_output_tokens": 215191,
+            "total_tokens": 114369532
+          },
+          "percentagem_da_semana": 95.0
+        },
+        "c1h": {
+          "input_tokens": 4146867,
+          "cached_input_tokens": 4010240,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 20113,
+          "reasoning_output_tokens": 8830,
+          "total_tokens": 4166980
+        },
+        "segundos": 982.53,
+        "registado_em": "2026-09-29T05:59:52.759062+00:00",
+        "unidade": "tokens expostos pelo runtime",
+        "duracao_de": "pedido",
+        "duracao_ate": "ultima_leitura.hora",
+        "limites": [
+          "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
+          "C1g termina no último contador antes do pedido C1h. C1h termina na leitura indicada, sem o fecho posterior.",
+          "Sem preço exposto. Sem subagentes."
+        ]
+      }
+    },
+    "relatorio": {
+      "relatorio": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "pasta": "design/especime-v3/medicoes/c1-2026-09-28",
+      "ficheiros_json_lidos": 257,
+      "ilegiveis": [],
+      "conhecido_positivo": {
+        "numero": 987654325,
+        "encontrado": true
+      },
+      "numeros_conferidos": 317,
+      "numeros_com_ficheiro": 317,
+      "numeros_sem_ficheiro": 0,
+      "sem_ficheiro": [],
+      "apagado_antes_de_contar": {
+        "codigo": 710,
+        "enderecos": 0,
+        "seccoes": 3,
+        "datas": 81,
+        "resumos": 0,
+        "ordinais": 50,
+        "identificadores": 259,
+        "anos": 3
+      }
+    },
+    "commits": [
+      {
+        "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+        "assunto": "C1: alinhar a dívida de Évora com o calendário dos mandatos"
+      },
+      {
+        "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+        "assunto": "C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos"
+      },
+      {
+        "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+        "assunto": "C1: separar valores e explicar as leituras e as conferências"
+      },
+      {
+        "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+        "assunto": "C1: registar as três releituras iguais do PIB real por habitante"
+      },
+      {
+        "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+        "assunto": "C1: separar também as unidades nos cartões dos concelhos"
+      },
+      {
+        "hash": "8656f66f838c31ec0ad63d58204df2edb5f90e91",
+        "assunto": "C1: fixar as palavras e preparar a medição da entrega"
+      },
+      {
+        "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+        "assunto": "C1: fechar os tipos do CSV e retirar a importação sem uso"
+      },
+      {
+        "hash": "6c16c719f7bbc5164182ea5c62a51b656bf4fd43",
+        "assunto": "C1: entregar as provas das correções de confiança"
+      },
+      {
+        "hash": "04ef76eb4ff04ac6110012934b76f9b7d0536b34",
+        "assunto": "C1: a resposta do construtor do Codex"
+      },
+      {
+        "hash": "533fea9d40720e72c009e2aeb0d0ba72ad0d1feb",
+        "assunto": "Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor"
+      },
+      {
+        "hash": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
+        "assunto": "C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento"
+      },
+      {
+        "hash": "7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18",
+        "assunto": "C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal"
+      },
+      {
+        "hash": "0a9213f5798acd2ceae2bcb66b8163eccd26e00c",
+        "assunto": "C1c: dizer cada releitura e distinguir o valor encontrado do publicado"
+      },
+      {
+        "hash": "feeb59754996ead2a31dff609a9a0000e99d5816",
+        "assunto": "C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio"
+      },
+      {
+        "hash": "93f0477b213fb58ac113291bfbaaad3de1bed2ed",
+        "assunto": "C1c: conservar a nota no ficheiro e situar a dívida no fim do ano"
+      },
+      {
+        "hash": "8d7ddbdba2e5ca98f5745dd144250e0b4c95d875",
+        "assunto": "C1c: entregar as provas e a paragem na história da fonte legal"
+      },
+      {
+        "hash": "e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e",
+        "assunto": "C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex"
+      },
+      {
+        "hash": "aa8f6ff13575af523d68d3263b0a190a4cb1d87d",
+        "assunto": "C1c: validar as releituras pela proveniência em vigor e repor a história"
+      },
+      {
+        "hash": "7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6",
+        "assunto": "C1c: citar os nomes antigos e tornar a planta independente do histórico Git"
+      },
+      {
+        "hash": "7aeb6e543b5dc8611e39cccdbae0795acd28fdef",
+        "assunto": "C1c: marcar a língua da edição também na história da proveniência"
+      },
+      {
+        "hash": "3362a4c0df19410129eaadce534fc3fd8a528318",
+        "assunto": "C1c: escrever as datas históricas na forma da casa e conferir a mesma data"
+      },
+      {
+        "hash": "6f59ad006b7755ea623adedc8f3a1a30f9d2291e",
+        "assunto": "C1c: entregar as provas da retoma e fechar a correção da história"
+      },
+      {
+        "hash": "a02c705c5b99c0f397c4cc784f7b5b3a5403d020",
+        "assunto": "Os registos de 28.09 à tarde: a §1.134 (a decisão do diretor sobre a atualização, a arrumação e a autonomia editorial, com a forma do ciclo, a ordem pela fase 2 do plano da fiabilidade e o que fica com ele), as I158 a I162 fechadas pelo C1 e as I163 a I167 abertas ou fechadas, as M35 a M37, e as quatro linhas novas do diretor (as chaves e o interruptor das corridas, o teto e a pausa do ciclo, a pré-visualização da primeira página, as calculadoras)"
+      },
+      {
+        "hash": "7b4328906d938bd6eeecb8f1e1fc18c1b809e964",
+        "assunto": "C1d: a segunda leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e vinte achados reais), com o registo das plantas, e o guião da passagem de correção C1d: o painel do motor volta a distinguir esta máquina da fonte, o livro prende o valor à última atualização, os excertos com a marca da fonte levam a sua entrada, o limite legal volta à forma cruzada do motor, e o recibo diz o que cada releitura confirmou"
+      },
+      {
+        "hash": "057c6db8456d71134eef328cb1135c7f0fcadce7",
+        "assunto": "C1d: prender o valor publicado à história e recusar a retirada da atualização"
+      },
+      {
+        "hash": "2f79c2f2c237731514707b972e09173193563245",
+        "assunto": "C1d: registar as marcas dos excertos e repor a origem do limite municipal"
+      },
+      {
+        "hash": "760ed6f7bb3d665c429d0f8c865a5671b91a38d9",
+        "assunto": "C1d: declarar os instantâneos do PRR e conferir toda a cadeia de endereços"
+      },
+      {
+        "hash": "03c689bc88cf9313dcf7fd5efdbb9a3d146ffa36",
+        "assunto": "C1d: começar os mandatos nas instalações seladas e declarar a data em falta"
+      },
+      {
+        "hash": "d25330a5bc095beabfaaa92c219ad3a2540cf1c1",
+        "assunto": "C1d: distinguir o objetivo institucional e citar uma frase inteira sobre competitividade"
+      },
+      {
+        "hash": "966e843589cc9bc4bfafc63425f9a678becdc312",
+        "assunto": "C1d: mostrar a estimativa e dizer o que cada releitura confirmou"
+      },
+      {
+        "hash": "6c794fe2edf0eda51f5309ea2c8ff2ed4d13b4dd",
+        "assunto": "C1d: conferir as frases estimadas no HTML e retirar o exemplo de caminho pessoal"
+      },
+      {
+        "hash": "e75de25f7c02a194c680261ab7b561f5139d7218",
+        "assunto": "C1d: declarar o tipo da lista de instantâneos aceite pela história"
+      },
+      {
+        "hash": "ea0f467d8ac8d1cd872fec9052f139d7917db558",
+        "assunto": "C1d: retirar as traduções que a nota comum da fonte tornou desnecessárias"
+      },
+      {
+        "hash": "6bbe1cee5f7167ba7bb317733ceef7e4b71ab413",
+        "assunto": "C1d: repor as declarações de língua da fonte do limite municipal"
+      },
+      {
+        "hash": "5cb9023f14143eddc381bd4305bfed83f2817d7f",
+        "assunto": "C1d: entregar os portões, as capturas, o relatório e a resposta do construtor"
+      },
+      {
+        "hash": "5c862efb38055965618a9d29f26ac12a25ac99eb",
+        "assunto": "C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas"
+      },
+      {
+        "hash": "69520d3ac921f80936191c58d69cf50f220048d5",
+        "assunto": "C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR"
+      },
+      {
+        "hash": "4653316e42feb4f50c314001ee26b1389caca08f",
+        "assunto": "C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo"
+      },
+      {
+        "hash": "abc6743a172e4e05f385b289b0a5f6309ef196af",
+        "assunto": "C1e: desenhar o início sem data como limite em aberto"
+      },
+      {
+        "hash": "d65f2bb74dd8edbded0dc5364779903b19a14667",
+        "assunto": "C1e: conferir nomes do Git e caminhos nas páginas construídas"
+      },
+      {
+        "hash": "ab47e595d283ecb9e8b8795cebf8a6e0cbdceede",
+        "assunto": "C1e: isolar as condições de endereço nas plantas dos instantâneos"
+      },
+      {
+        "hash": "2d063f9af1e707a4e8657a0e664bdce88eece4b6",
+        "assunto": "C1e: tipar a lista percorrida pela história da proveniência"
+      },
+      {
+        "hash": "9514cc6eea58426d39ef54d7085f9372a68c6cf2",
+        "assunto": "C1e: entregar as provas e registar a paragem da história do PRR"
+      },
+      {
+        "hash": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+        "assunto": "C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma"
+      },
+      {
+        "hash": "ffea781d22aec3cc80b7db14c825394627f8ecf1",
+        "assunto": "C1f: reconstituir pelo Git os acessos das cinco linhas do PRR"
+      },
+      {
+        "hash": "cd5557448c430a225eb58b6b257e7f11ef384818",
+        "assunto": "C1f: registar para leitura as duas contagens do inventário"
+      },
+      {
+        "hash": "eec9dc69a4cbf2f283c9ec3ff95b5ced36276b72",
+        "assunto": "C1f: entregar as provas dos acessos, os portões e os recibos"
+      },
+      {
+        "hash": "40f7684c21eb4742a6597eb0405a8f3516effec0",
+        "assunto": "C1g: a quarta leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco; a conferência da privacidade na construção de produção dependia da máquina e da história do Git), com o registo das plantas, e o guião da passagem C1g, a última antes da aterragem"
+      },
+      {
+        "hash": "c6eb9ef0d54dd74b14ffdbf6ad4610041941f14a",
+        "assunto": "C1g: reservar a privacidade ao verify e excluir nomes genéricos de pasta"
+      },
+      {
+        "hash": "c576cc5f8fa0f5da3e385ee140877ab595d3f247",
+        "assunto": "C1g: conferir o valor na página e limitar as frases e o tracejado ao que os dados sabem"
+      },
+      {
+        "hash": "fc83b7331703bc405ef03cc5268202e75f05023b",
+        "assunto": "C1g: afinar as razões do PRR e registar a data e as contagens da edição local"
+      },
+      {
+        "hash": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+        "assunto": "C1g: levar a dependência da contagem para a cópia isolada da travessia"
+      },
+      {
+        "hash": "f321d50aa8463b91675e6aec161a5452d96a69ba",
+        "assunto": "C1g: entregar as capturas finais, os portões e a retificação do relatório"
+      },
+      {
+        "hash": "9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8",
+        "assunto": "C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h"
+      },
+      {
+        "hash": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+        "assunto": "C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos"
+      }
+    ],
+    "aceitacao_do_mandato_c1h": true,
     "erros_da_medicao": []
   }
 }

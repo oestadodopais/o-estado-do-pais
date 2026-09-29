@@ -1,10 +1,265 @@
 {
-  "registado_em": "2026-09-28T22:04:44.641217+00:00",
-  "base": "40f7684c21eb4742a6597eb0405a8f3516effec0",
-  "cabeca_codigo": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
-  "motor": {
-    "cabeca": "68318e0da2036cc29e4704fa1bb8a96dee246095",
-    "limpa": true
+  "registado_em": "2026-09-29T06:00:25.350476+00:00",
+  "base": "9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8",
+  "cabeca_codigo": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "inicio": "2026-09-29T05:45:14.061511+00:00",
+      "fim": "2026-09-29T05:50:12.685613+00:00"
+    },
+    "verify": {
+      "codigo": 0,
+      "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "inicio": "2026-09-29T05:50:17.485941+00:00",
+      "fim": "2026-09-29T05:59:00.596317+00:00"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "inicio": "2026-09-29T05:59:03.923887+00:00",
+      "fim": "2026-09-29T05:59:04.284885+00:00"
+    }
+  },
+  "cruzamento": {
+    "ficheiro": "ledger/cruzamentos/evora.json",
+    "cabeca_da_corrida": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+    "sha256_comprometido": "69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46",
+    "sha256_atual": "69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46",
+    "sem_edicao_na_arvore_da_corrida": true,
+    "codigo": 0
+  },
+  "livro_e_registo_intactos": true,
+  "capturas": {
+    "ambito": "Cinco recibos do PRR, nas duas edições e nas cinco larguras.",
+    "ids": [
+      "evora-prr-aprovado-2026",
+      "evora-prr-municipio-contratado",
+      "evora-prr-pago-2026",
+      "evora-prr-universidade-contratado",
+      "evora-prr-vencido-aprovado-2026"
+    ],
+    "quantidade": 50,
+    "copias": 12,
+    "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+    "aceitacao": {
+      "passou": true,
+      "falhas": []
+    }
+  },
+  "privacidade_dist": {
+    "ficheiros": 12485,
+    "quantidade": 0,
+    "achados": [],
+    "plantas": [
+      {
+        "id": "nome-do-git-1",
+        "pagina_base": "404.html",
+        "mordeu": true,
+        "falha": "nome pessoal ou caminho local na página construída"
+      },
+      {
+        "id": "nome-do-git-2",
+        "pagina_base": "404.html",
+        "mordeu": true,
+        "falha": "nome pessoal ou caminho local na página construída"
+      },
+      {
+        "id": "nome-da-casa-real",
+        "nome_pessoal": true,
+        "esperado": "detetar",
+        "mordeu": true
+      },
+      {
+        "id": "nome-pessoal-portavel",
+        "mordeu": true
+      },
+      {
+        "id": "ligacao-home-na-conta-generica",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-raiz",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-root",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-runner",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-app",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-code",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-1",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-2",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-3",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-4",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-5",
+        "mordeu": true
+      }
+    ],
+    "passou": true,
+    "origem": {
+      "ficheiro": "portoes/c1h/verify.log",
+      "sha256": "e821ec1a2b28d93cf9a4ab48a40a874ebfd507cf5e709953022d1b15f5f43ea5",
+      "cabeca": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "codigo": 0
+    }
+  },
+  "privacidade_da_passagem": {
+    "ficheiros": 128,
+    "quantidade": 0,
+    "achados": [],
+    "conhecidos_positivos": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "custos": {
+    "c1g": {
+      "sessao": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+      "pedido": "2026-09-28T21:39:50.917Z",
+      "antes": {
+        "hora": "2026-09-28T20:56:15.306Z",
+        "cumulativos": {
+          "input_tokens": 102003957,
+          "cached_input_tokens": 100099072,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 416604,
+          "reasoning_output_tokens": 194589,
+          "total_tokens": 102420561
+        },
+        "percentagem_da_semana": 90.0
+      },
+      "ultima_leitura": {
+        "hora": "2026-09-28T22:06:42.180Z",
+        "cumulativos": {
+          "input_tokens": 109747217,
+          "cached_input_tokens": 107521536,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 455335,
+          "reasoning_output_tokens": 206361,
+          "total_tokens": 110202552
+        },
+        "percentagem_da_semana": 94.0
+      },
+      "c1g": {
+        "input_tokens": 7743260,
+        "cached_input_tokens": 7422464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 38731,
+        "reasoning_output_tokens": 11772,
+        "total_tokens": 7781991
+      },
+      "segundos": 1611.263,
+      "registado_em": "2026-09-29T05:59:52.758660+00:00",
+      "unidade": "tokens expostos pelo runtime",
+      "duracao_de": "pedido",
+      "duracao_ate": "ultima_leitura.hora",
+      "limites": [
+        "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
+        "C1g termina no último contador antes do pedido C1h. C1h termina na leitura indicada, sem o fecho posterior.",
+        "Sem preço exposto. Sem subagentes."
+      ]
+    },
+    "c1h": {
+      "sessao": "01a0e83e-ccb1-79a0-bcf3-bab909951eb3",
+      "pedido": "2026-09-29T05:42:43.654Z",
+      "antes": {
+        "hora": "2026-09-28T22:06:42.180Z",
+        "cumulativos": {
+          "input_tokens": 109747217,
+          "cached_input_tokens": 107521536,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 455335,
+          "reasoning_output_tokens": 206361,
+          "total_tokens": 110202552
+        },
+        "percentagem_da_semana": 94.0
+      },
+      "ultima_leitura": {
+        "hora": "2026-09-29T05:59:06.184Z",
+        "cumulativos": {
+          "input_tokens": 113894084,
+          "cached_input_tokens": 111531776,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 475448,
+          "reasoning_output_tokens": 215191,
+          "total_tokens": 114369532
+        },
+        "percentagem_da_semana": 95.0
+      },
+      "c1h": {
+        "input_tokens": 4146867,
+        "cached_input_tokens": 4010240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 20113,
+        "reasoning_output_tokens": 8830,
+        "total_tokens": 4166980
+      },
+      "segundos": 982.53,
+      "registado_em": "2026-09-29T05:59:52.759062+00:00",
+      "unidade": "tokens expostos pelo runtime",
+      "duracao_de": "pedido",
+      "duracao_ate": "ultima_leitura.hora",
+      "limites": [
+        "Entrada em cache incluída na entrada; raciocínio incluído na saída. Não somados duas vezes.",
+        "C1g termina no último contador antes do pedido C1h. C1h termina na leitura indicada, sem o fecho posterior.",
+        "Sem preço exposto. Sem subagentes."
+      ]
+    }
+  },
+  "relatorio": {
+    "relatorio": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+    "pasta": "design/especime-v3/medicoes/c1-2026-09-28",
+    "ficheiros_json_lidos": 257,
+    "ilegiveis": [],
+    "conhecido_positivo": {
+      "numero": 987654325,
+      "encontrado": true
+    },
+    "numeros_conferidos": 317,
+    "numeros_com_ficheiro": 317,
+    "numeros_sem_ficheiro": 0,
+    "sem_ficheiro": [],
+    "apagado_antes_de_contar": {
+      "codigo": 710,
+      "enderecos": 0,
+      "seccoes": 3,
+      "datas": 81,
+      "resumos": 0,
+      "ordinais": 50,
+      "identificadores": 259,
+      "anos": 3
+    }
   },
   "commits": [
     {
@@ -214,158 +469,20 @@
     {
       "hash": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
       "assunto": "C1g: levar a dependência da contagem para a cópia isolada da travessia"
+    },
+    {
+      "hash": "f321d50aa8463b91675e6aec161a5452d96a69ba",
+      "assunto": "C1g: entregar as capturas finais, os portões e a retificação do relatório"
+    },
+    {
+      "hash": "9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8",
+      "assunto": "C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h"
+    },
+    {
+      "hash": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+      "assunto": "C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos"
     }
   ],
-  "linhas_alteradas": [
-    "evora-prr-aprovado-2026",
-    "evora-prr-municipio-contratado",
-    "evora-prr-pago-2026",
-    "evora-prr-universidade-contratado",
-    "evora-prr-vencido-aprovado-2026"
-  ],
-  "valores_alterados": [],
-  "razoes_afinadas": 20,
-  "portoes": {
-    "build": {
-      "codigo": 0,
-      "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
-      "inicio": "2026-09-28T21:48:51.124777+00:00",
-      "fim": "2026-09-28T21:53:48.105638+00:00"
-    },
-    "verify": {
-      "codigo": 0,
-      "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
-      "inicio": "2026-09-28T21:53:59.306994+00:00",
-      "fim": "2026-09-28T22:02:32.137653+00:00"
-    },
-    "typecheck": {
-      "codigo": 0,
-      "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
-      "inicio": "2026-09-28T22:02:36.030589+00:00",
-      "fim": "2026-09-28T22:02:36.397105+00:00"
-    }
-  },
-  "capturas": {
-    "recibos_do_universo": 337,
-    "recibos_captados": 11,
-    "recibos_nao_captados": 326,
-    "imagens_dos_recibos": 110,
-    "imagens_da_faixa": 10,
-    "imagens": 120,
-    "copias": 27,
-    "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
-    "aceitacao": {
-      "passou": true,
-      "falhas": []
-    }
-  },
-  "privacidade_dist": {
-    "ficheiros": 12485,
-    "quantidade": 0,
-    "achados": [],
-    "plantas": [
-      {
-        "id": "nome-do-git-1",
-        "pagina_base": "404.html",
-        "mordeu": true,
-        "falha": "nome pessoal ou caminho local na página construída"
-      },
-      {
-        "id": "nome-do-git-2",
-        "pagina_base": "404.html",
-        "mordeu": true,
-        "falha": "nome pessoal ou caminho local na página construída"
-      },
-      {
-        "id": "pasta-generica-raiz",
-        "mordeu": true
-      },
-      {
-        "id": "pasta-generica-root",
-        "mordeu": true
-      },
-      {
-        "id": "pasta-generica-runner",
-        "mordeu": true
-      },
-      {
-        "id": "pasta-generica-app",
-        "mordeu": true
-      },
-      {
-        "id": "pasta-generica-code",
-        "mordeu": true
-      },
-      {
-        "id": "caminho-1",
-        "mordeu": true
-      },
-      {
-        "id": "caminho-2",
-        "mordeu": true
-      },
-      {
-        "id": "caminho-3",
-        "mordeu": true
-      },
-      {
-        "id": "caminho-4",
-        "mordeu": true
-      },
-      {
-        "id": "caminho-5",
-        "mordeu": true
-      }
-    ],
-    "passou": true,
-    "origem": {
-      "ficheiro": "portoes/c1g/verify.log",
-      "sha256": "5acee78702673b2d5eda50ce48e8588cc84dfacd36caff50d5a6bec168754385",
-      "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
-      "codigo": 0
-    }
-  },
-  "privacidade_da_passagem": {
-    "ficheiros": 275,
-    "quantidade": 0,
-    "achados": [],
-    "conhecidos_positivos": [
-      true,
-      true,
-      true,
-      true,
-      true,
-      true,
-      true,
-      true
-    ]
-  },
-  "relatorio": {
-    "relatorio": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
-    "pasta": "design/especime-v3/medicoes/c1-2026-09-28",
-    "ficheiros_json_lidos": 237,
-    "ilegiveis": [],
-    "conhecido_positivo": {
-      "numero": 987654327,
-      "encontrado": true
-    },
-    "numeros_conferidos": 287,
-    "numeros_com_ficheiro": 287,
-    "numeros_sem_ficheiro": 0,
-    "sem_ficheiro": [],
-    "apagado_antes_de_contar": {
-      "codigo": 659,
-      "enderecos": 0,
-      "seccoes": 3,
-      "datas": 81,
-      "resumos": 0,
-      "ordinais": 44,
-      "identificadores": 234,
-      "anos": 3
-    }
-  },
-  "aceitacao_integral": false,
-  "erros_da_medicao": [],
-  "aceitacao_integral_declarada_na_entrega": true,
-  "retificacao_C1h": "Faltavam as capturas dos cinco recibos do PRR cujas razões mudaram na C1g. A C1h entrega essa matriz."
+  "aceitacao_do_mandato_c1h": true,
+  "erros_da_medicao": []
 }

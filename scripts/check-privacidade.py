@@ -35,6 +35,18 @@ def medir(dist, prova):
             r['plantas'].append({'id':f'nome-do-git-{i+1}', 'pagina_base':str(pagina.relative_to(dist)),
                                 'mordeu':plantada['quantidade']==1, 'falha':'nome pessoal ou caminho local na página construída'})
         from unittest.mock import patch
+        # O nome real é lido e plantado só em memória, nunca no resultado.
+        nome_real = Path.home().name
+        pessoal = len(nome_real) >= 6 and nome_real.lower() not in detetor.CONTAS_GENERICAS
+        r['plantas'].append({'id': 'nome-da-casa-real', 'nome_pessoal': pessoal,
+                            'esperado': 'detetar' if pessoal else 'conta genérica ou curta',
+                            'mordeu': detetor.tem_caminho(b'<p>'+nome_real.encode()+b'</p>') == pessoal})
+        with patch.object(detetor.Path, 'home', return_value=Path('/')/'Users'/'mariaexemplo'):
+            r['plantas'].append({'id': 'nome-pessoal-portavel',
+                                'mordeu': detetor.tem_caminho(b'<p>mariaexemplo</p>')})
+        with patch.object(detetor.Path, 'home', return_value=Path('/')/'home'/'runner'):
+            r['plantas'].append({'id': 'ligacao-home-na-conta-generica',
+                                'mordeu': not detetor.tem_caminho(b'<a href="https://example.org/home/x">fonte</a>')})
         # A mesma página pode conter URL, seletor CSS e palavras de código.
         inocuo = b'<style>:root { color: red }</style><a href="https://example.org">root runner app</a>'
         for nome in ('', 'root', 'runner', 'app', 'code'):
