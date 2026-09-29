@@ -1,0 +1,80 @@
+{
+  "bloco": "UE1c",
+  "cabeca": "982d6446bdc1c312bef02228587da89b36839463",
+  "construcao": "982d6446bdc1c312bef02228587da89b36839463",
+  "plantas": 4,
+  "mordidas": 4,
+  "repostas_com_o_mesmo_sha256": 4,
+  "plantas_por_grupo": {
+    "empates": 1,
+    "o que conta": 3
+  },
+  "corridas_limpas": 2,
+  "corridas_limpas_a_zero": 2,
+  "resultados": [
+    {
+      "grupo": "empates",
+      "nome": "a F19d a ver só o primeiro país da ponta",
+      "ficheiro": "tests/cartao/faixa.mjs",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/a planta «a marca só no segundo país empatado, e a ponta sem ela» \\(pt\\) não mordeu/",
+      "passou": true,
+      "antes": "d161c9c11daaef5cc948106009ed8a8f96eda83ffe0560525a9de1662f6eb440",
+      "reposto": "d161c9c11daaef5cc948106009ed8a8f96eda83ffe0560525a9de1662f6eb440",
+      "segundos": 22.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1c/planta-a-f19d-a-ver-so-o-primeiro-pais-da-ponta.txt"
+    },
+    {
+      "grupo": "o que conta",
+      "nome": "a frase do recibo da pobreza com uma palavra a menos",
+      "ficheiro": "dist/livro-razao/series/risco-de-pobreza-ou-exclusao-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1c: o recibo da série «risco-de-pobreza-ou-exclusao-2025-paises» diz «[^»]*» e a leitura do cartão diz/",
+      "passou": true,
+      "antes": "f5181c61e514b3378a951e764a0bcaa424811c87c7bc49377a0190a2437fc638",
+      "reposto": "f5181c61e514b3378a951e764a0bcaa424811c87c7bc49377a0190a2437fc638",
+      "segundos": 73.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1c/planta-a-frase-do-recibo-da-pobreza-com-uma-palavra-a-menos.txt"
+    },
+    {
+      "grupo": "o que conta",
+      "nome": "a frase tirada do recibo inglês dos inquilinos",
+      "ficheiro": "dist/en/ledger/series/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1c: o recibo da série «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises» tem 0 frase\\(s\\) do que a medida conta/",
+      "passou": true,
+      "antes": "761ed205e6857f7884415d9be26588203c76e37e3ab041271fb582c2f7c33a78",
+      "reposto": "761ed205e6857f7884415d9be26588203c76e37e3ab041271fb582c2f7c33a78",
+      "segundos": 29.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1c/planta-a-frase-tirada-do-recibo-ingles-dos-inquilinos.txt"
+    },
+    {
+      "grupo": "o que conta",
+      "nome": "uma frase posta no recibo do rácio S80/S20, cuja leitura não a tem",
+      "ficheiro": "dist/livro-razao/series/racio-s80-s20-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1c: o recibo da série «racio-s80-s20-2025-paises» diz o que a medida conta, e a leitura do cartão não abre com essa frase/",
+      "passou": true,
+      "antes": "90f3a9a316e5cc64a2b8e14972e74af96c85dbd75057c39aa808d175f0d058e1",
+      "reposto": "90f3a9a316e5cc64a2b8e14972e74af96c85dbd75057c39aa808d175f0d058e1",
+      "segundos": 21.9,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1c/planta-uma-frase-posta-no-recibo-do-racio-s80-s20-cuja-leitura-nao-a-tem.txt"
+    }
+  ],
+  "limpas": [
+    {
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1c/limpa-check-formas.txt"
+    },
+    {
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1c/limpa-gate-html.txt"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_": "O custo da passagem UE1c. As horas leem-se do git e dos ficheiros dos portões; os símbolos são a leitura, à mão, do contador que o ambiente mostra ao agente, e o total que a ferramenta reporta ao lugar de direção é o que conta.",
+  "medidas": {
+    "inicio_da_passagem": {
+      "valor": "2026-09-29T20:07:33Z",
+      "comando": "git show -s --format=%cI 96a6035e (o commit da leitura a frio)",
+      "o_que": "a hora leu-se",
+      "encontrado": true
+    },
+    "fim_dos_portoes": {
+      "valor": "2026-09-29T20:51:03Z",
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/typecheck.fim",
+      "o_que": "o ficheiro existe e é uma hora UTC",
+      "encontrado": true
+    },
+    "segundos_da_passagem": {
+      "valor": 2610,
+      "comando": "a diferença entre as duas horas acima",
+      "o_que": "é positiva",
+      "encontrado": true
+    },
+    "simbolos_da_sessao_no_fecho_da_passagem": {
+      "valor": 1760279,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 13239721 (o que restava, lido à mão antes do último commit da passagem)",
+      "o_que": "é maior do que a leitura do fecho da passagem UE1b",
+      "encontrado": true
+    },
+    "simbolos_da_passagem": {
+      "valor": 207854,
+      "comando": "a leitura acima menos a do fecho da passagem UE1b (custo-ue1b.json)",
+      "o_que": "é positiva",
+      "encontrado": true
+    }
+  }
+}
