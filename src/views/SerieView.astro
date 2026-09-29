@@ -34,6 +34,11 @@
  * novo. Uma medida cuja leitura abre com o valor de Portugal não tem essa frase,
  * e o recibo não a inventa. O portão de HTML confere a frase contra a
  * declaração da leitura, e a presença contra a regra.
+ *
+ * A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, 29.09.2026). O recibo de uma
+ * série mostra sempre a União, e por isso leva a ressalva da Comissão onde a
+ * medida a declara (`src/data/ressalvas-da-uniao.mjs`); a K14 do
+ * `check:cartao` exige-a.
  */
 import Base from '../layouts/Base.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
@@ -45,6 +50,7 @@ import { getClaim } from '../lib/ledger.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import Frase from '../components/Frase.astro';
 import { definicaoDaMedida } from '../lib/leitura-da-medida.mjs';
+import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { getSerie, pontosDaSerie, paisesDaUniao, fonteDaTabelaDosPaises, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
 import { nomeDoCartao } from '../lib/nomes.mjs';
 import { routePath, LANGS } from '../lib/routes.mjs';
@@ -61,6 +67,7 @@ const serie = getSerie(id);
 const linhaPt = getClaim(String(serie.linha_de_portugal));
 const linhaUe = getClaim(String(serie.linha_da_uniao));
 const definicao = definicaoDaMedida(String(serie.linha_de_portugal), lang);
+const ressalva = ressalvaDaUniao(String(serie.linha_de_portugal), lang);
 const pontos = pontosDaSerie(serie);
 const documento = /** @type {Record<string, string>} */ (serie.document);
 const bandeiras = /** @type {Record<string, string>} */ (serie.bandeiras ?? {});
@@ -104,6 +111,11 @@ const descricao = `${s.livro.serie.eyebrow} · ${nome.texto} ${s.livro.serie.nos
         <p class="serie-o-que-conta" data-serie-o-que-conta={id}>
           <Frase partes={definicao} lang={lang} selos={false} />
         </p>
+      )
+    }
+    {
+      ressalva && (
+        <p class="serie-ressalva" data-ressalva-da-uniao={String(serie.linha_de_portugal)}>{ressalva}</p>
       )
     }
     <p class="serie-periodo">

@@ -45,6 +45,8 @@
  * nomeiam, todas no livro-razão (o §0 do brief mediu 30 em 30). Sem travessões.
  */
 
+import { RESSALVAS_DA_UNIAO } from './ressalvas-da-uniao.mjs';
+
 const PC = ' %';
 /** Um algarismo da definição de uma medida, com o motivo das leituras dos cartões. @param {string} n */
 const nl = (n) => ({ nl: n, motivo: 'escala-de-instrumento' });
@@ -160,10 +162,10 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
         condicao: [{ periodo: 'ipc-sem-habitacao-variacao-media-12-meses', mes: 8 }],
       },
     ],
-    ressalva: {
-      pt: 'Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.',
-      en: 'This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.',
-    },
+    /* A RESSALVA DA COMISSÃO vive desde a §1.140 (29.09.2026) numa fonte só, que
+       o cartão e os recibos da medida também leem: o texto é o que estava aqui,
+       sem uma palavra mudada. */
+    ressalva: RESSALVAS_DA_UNIAO['sobrecarga-do-custo-da-habitacao-2025'],
   },
   {
     id: 'trabalho',

@@ -147,6 +147,20 @@
   overflow-wrap: break-word;
 }
 
+/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026).
+   A da Comissão, por baixo da régua e da faixa, na letra da leitura, que era
+   onde ela estava antes de ter um bloco próprio. Sem cor: é uma ressalva sobre
+   como ler a comparação, e não um veredicto. */
+.cartao-medida-ressalva {
+  margin: 6px 0 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
 /* A FRASE DO QUE A MEDIDA MEDE. É prosa, e compõe-se como prosa: a mesma letra
    do corpo, um pouco mais pequena do que o nome, com a medida de linha curta que
    uma frase de uma linha e meia pede. */
