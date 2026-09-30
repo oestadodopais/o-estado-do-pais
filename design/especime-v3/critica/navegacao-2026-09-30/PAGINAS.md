@@ -1,0 +1,25 @@
+# As páginas do pacote, lidas do sítio no ar a 30.09.2026
+
+- /: HTTP 200, 2094 palavras
+- /temas/: HTTP 200, 5159 palavras
+- /o-meu-dinheiro/: HTTP 200, 2293 palavras
+- /o-meu-trabalho/: HTTP 200, 1170 palavras
+- /a-minha-casa/: HTTP 200, 1164 palavras
+- /a-escola-e-a-saude/: HTTP 200, 368 palavras
+- /o-estado-e-a-economia/: HTTP 200, 1693 palavras
+- /o-meu-lugar/: HTTP 404
+- /lugares/: HTTP 200, 735 palavras
+- /dominios/: HTTP 200, 133 palavras
+- /dominios/financas/: HTTP 404
+- /areas/: HTTP 200, 175 palavras
+- /areas/financas/: HTTP 200, 191 palavras
+- /uniao-europeia/: HTTP 200, 3726 palavras
+- /municipios/evora/: HTTP 200, 2007 palavras
+- /distritos/evora/: HTTP 200, 149 palavras
+- /estudos/: HTTP 200, 723 palavras
+- /livro-razao/taxa-de-desemprego-2025/: HTTP 200, 323 palavras
+- /livro-razao/series/taxa-de-desemprego-mip-2025-paises/: HTTP 200, 338 palavras
+- /sobre/: HTTP 200, 190 palavras
+- /metodo/: HTTP 200, 2235 palavras
+- /en/: HTTP 200, 1987 palavras
+- /en/my-money/: HTTP 200, 2105 palavras
