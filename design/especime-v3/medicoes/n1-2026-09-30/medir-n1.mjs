@@ -9,7 +9,10 @@ import { ENTRADAS } from '../../../../src/data/primeira-pagina.mjs';
 import { conferirBlocosUnicos, plantasDosBlocosUnicos } from '../../../../tests/inicio/blocos-unicos.mjs';
 import { conferirEntradas, plantasDasEntradas } from '../../../../tests/inicio/entradas.mjs';
 import { conferirConcelhosNosLugares, plantasDosConcelhos } from '../../../../tests/inicio/concelhos-nos-lugares.mjs';
+import { loadClaims, contagensDoRegisto } from '../../../../src/lib/ledger.mjs';
+import { conferirHistoriaDoValor } from '../../../../src/lib/historia-do-valor.mjs';
 const pasta = 'design/especime-v3/medicoes/n1-2026-09-30';
+const n1b = process.argv.includes('--n1b');
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 const json = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const html = (rota) => parse(fs.readFileSync(`dist/${rota.replace(/^\//, '')}index.html`, 'utf8'));
@@ -44,7 +47,34 @@ const desemprego = ['taxa-de-desemprego-mip-2025', 'taxa-de-desemprego-2025'].ma
   const esperado = c.excerpt.match(/2025: (\d+\.\d+)$/)?.[1].replace('.', ',');
   return { id, valor: c.value, excerto_decimal: esperado, igual_ao_excerto: c.value === esperado, historia: c.corrections };
 });
-medida('desemprego_com_a_casa_decimal', desemprego, desemprego.length === 2 && desemprego.every((r) => r.excerto_decimal === '6,0'), 'Os dois excertos publicam a casa decimal; esta medida permanece por cumprir enquanto os valores forem 6.');
+medida('desemprego_com_a_casa_decimal', desemprego, desemprego.length === 2 && desemprego.every((r) => r.excerto_decimal === '6,0'), 'Os dois excertos publicam a casa decimal; cada valor é comparado ao seu próprio excerto.');
+const primeiras = ['pt', 'en'].map((lang) => {
+  const bloco = html(lang === 'pt' ? '/' : '/en/').querySelector('[data-bloco="trabalho"]');
+  const lados = ['taxa-de-desemprego-mip-2025', 'taxa-de-desemprego-mip-2025-ue'].map((id) => {
+    const valores = bloco.querySelectorAll(`[data-claim="${id}"]`);
+    return { id, valores: valores.map((n) => n.textContent.trim()), percentagens: valores.every((n) => n.parentNode.textContent.includes('%')) };
+  });
+  return { lang, lados, cumpre: lados.every((l) => l.valores.length === 2 && l.valores.every((v) => v === '6,0') && l.percentagens) };
+});
+medida('desemprego_na_primeira_pagina', primeiras, primeiras.every((p) => p.lados[1].valores.length === 2 && p.lados[1].valores.every((v) => v === '6,0')), 'Valor no desenho e na lista acessível, nos lados Portugal e União, nas duas edições; a União é o conhecido-positivo.');
+const claims = loadClaims();
+const contador = claims.get('correcoes-publicadas');
+const seladas = json('ledger/historias-valores.json');
+const errosContador = [];
+conferirHistoriaDoValor(contador, seladas[contador.id], contador.id, errosContador);
+const atualizacao = contador.corrections.find((c) => c.kind === 'atualizacao' && c.old_value === '3' && c.new_value === '5');
+const conta = { publicado: contador.value, calculado: contagensDoRegisto(claims).correcoes_publicadas, historia: contador.corrections, seladas: seladas[contador.id] ?? [], erros: errosContador, cumpre: contador.value === '5' && contagensDoRegisto(claims).correcoes_publicadas === 5 && !!atualizacao && errosContador.length === 0 };
+medida('contador_das_correcoes_e_historia', conta, contador.check === 'correcoes_publicadas' && seladas['divida-das-familias-2025-ue'].length > 0, 'Recontagem pela função do livro e validação da história contra o registo selado; a história da dívida das famílias prova que o registo foi lido.');
+const publicadas = ['pt', 'en'].map((lang) => {
+  const root = html(lang === 'pt' ? '/correcoes/' : '/en/corrections/');
+  const itens = desemprego.map(({ id }) => {
+    const no = root.querySelector(`[data-mudou-registo] [data-correcao-entrada="${id}"]`);
+    const corr = claims.get(id).corrections.find((c) => c.kind === 'correcao' && c.new_value === '6,0');
+    return { id, presente: !!no, cumpre: !!no && !!corr && no.querySelector('[data-correcao-campo="old_value"]')?.textContent.trim() === '6' && no.querySelector('[data-correcao-campo="new_value"]')?.textContent.trim() === '6,0' && no.querySelector('[data-correcao-campo="reason"]')?.textContent.trim() === corr[lang === 'pt' ? 'reason' : 'reason_en'] };
+  });
+  return { lang, contador: root.querySelector('[data-claim="correcoes-publicadas"]')?.textContent.trim(), itens, cumpre: itens.every((i) => i.cumpre) };
+});
+medida('correcoes_do_desemprego_publicadas', publicadas, publicadas.every((p) => typeof p.contador === 'string' && p.contador.length > 0), 'Duas entradas por edição, com os valores e a razão próprios da língua; o contador existente prova a leitura da página.');
 const irma = 'retribuicao-minima-mensal-doze-meses-2026';
 medida('valor_irmao_do_salario_minimo', ['pt', 'en'].map((lang) => ({ lang, presente: html(ENTRADAS[1].rota[lang]).querySelector(`[data-valor-irmao="${irma}"] [data-claim="${irma}"]`) !== null })), fs.existsSync(`ledger/claims/${irma}.yml`), 'Valor exclusivo do domínio conservado fora de um cartão inteiro.');
 const capturas = fs.existsSync(`${pasta}/capturas-n1.json`) ? json(`${pasta}/capturas-n1.json`) : null;
@@ -58,10 +88,11 @@ const revela = (texto) => privados.some((p) => texto.includes(p));
 const fugas = ficheiros.filter((p) => revela(fs.readFileSync(p, 'utf8')));
 medida('ficheiros_com_caminho_ou_utilizador', fugas, revela(os.homedir()) && revela(os.userInfo().username) && ficheiros.length > 0, 'Controlo em memória; nenhum caminho pessoal é escrito no resultado.');
 const portoes = Object.fromEntries(['build', 'verify', 'typecheck'].map((nome) => {
-  const p = `${pasta}/portoes/${nome}`;
+  const p = `${pasta}/portoes/${n1b ? 'n1b/' : ''}${nome}`;
   return [nome, fs.existsSync(`${p}.codigo`) ? { codigo: Number(fs.readFileSync(`${p}.codigo`, 'utf8')), cabeca: fs.readFileSync(`${p}.cabeca`, 'utf8').trim() } : null];
 }));
-const resultado = { bloco: 'N1', medido_em: new Date().toISOString(), cabeca: git('rev-parse', 'HEAD'), construcao: json('dist/version.json'), medidas, plantas, portoes, erros: [...unicos.erros, ...entradas.erros, ...concelhos.erros], divergencias: ['O brief enumera cinco medidas de preços; a secção anterior e a atual têm seis.', ...(desemprego.some((d) => !d.igual_ao_excerto) ? ['Ponto 5 parado: classificar como correção altera a contagem calculada de correções publicadas, fora do mandato.'] : [])] };
+const ponto5 = desemprego.every((d) => d.igual_ao_excerto) && primeiras.every((p) => p.cumpre) && conta.cumpre && publicadas.every((p) => p.cumpre);
+const resultado = { bloco: n1b ? 'N1b' : 'N1', medido_em: new Date().toISOString(), cabeca: git('rev-parse', 'HEAD'), construcao: json('dist/version.json'), medidas, plantas, portoes, ponto5_cumprido: ponto5, erros: [...unicos.erros, ...entradas.erros, ...concelhos.erros], divergencias: ponto5 ? [] : ['Ponto 5 ainda não cumprido; ver a secção N1b do relatório e a prova do requisito adicional do contador.'] };
 fs.writeFileSync(`${pasta}/medidas.json`, JSON.stringify(resultado, null, 2) + '\n');
-console.log(`N1: ${medidas.length} medidas, ${plantas.length} plantas, ${resultado.erros.length} erros de navegação; ${resultado.divergencias.length} divergências registadas.`);
+console.log(`${resultado.bloco}: ${medidas.length} medidas, ${plantas.length} plantas, ${resultado.erros.length} erros de navegação; ponto 5 cumprido: ${ponto5}.`);
 process.exitCode = resultado.erros.length || fugas.length || plantas.some((p) => !p.mordeu) || medidas.some((m) => !m.conhecido_positivo) ? 1 : 0;

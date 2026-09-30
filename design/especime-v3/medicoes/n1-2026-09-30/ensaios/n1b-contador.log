@@ -1,0 +1,31 @@
+{
+  "cabeca": "dfc86083ed53345d1a688486a2a0bcae0dede51a",
+  "limpo": {
+    "pt": 3,
+    "en": 3
+  },
+  "correcoes_sem_historia_derivada": {
+    "pt": 5,
+    "en": 5
+  },
+  "historia_derivada": {
+    "pt": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+    "en": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão."
+  },
+  "erros_da_cadeia": [],
+  "contador": {
+    "anterior": "3",
+    "calculado": "5",
+    "historia": [
+      {
+        "date": "2026-09-30",
+        "kind": "atualizacao",
+        "old_value": "3",
+        "new_value": "5"
+      }
+    ]
+  },
+  "conhecido_positivo": true,
+  "impedimento_confirmado": true,
+  "reposto": true
+}

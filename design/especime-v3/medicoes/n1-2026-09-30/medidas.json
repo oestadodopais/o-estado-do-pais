@@ -1,7 +1,7 @@
 {
-  "bloco": "N1",
-  "medido_em": "2026-09-30T10:30:27.336Z",
-  "cabeca": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b",
+  "bloco": "N1b",
+  "medido_em": "2026-09-30T10:42:24.315Z",
+  "cabeca": "dfc86083ed53345d1a688486a2a0bcae0dede51a",
   "construcao": {
     "commit": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b",
     "ref": "n1-2026-09-30",
@@ -166,7 +166,112 @@
         }
       ],
       "conhecido_positivo": true,
-      "evidencia": "Os dois excertos publicam a casa decimal; esta medida permanece por cumprir enquanto os valores forem 6."
+      "evidencia": "Os dois excertos publicam a casa decimal; cada valor é comparado ao seu próprio excerto."
+    },
+    {
+      "nome": "desemprego_na_primeira_pagina",
+      "valor": [
+        {
+          "lang": "pt",
+          "lados": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "valores": [
+                "6",
+                "6"
+              ],
+              "percentagens": true
+            },
+            {
+              "id": "taxa-de-desemprego-mip-2025-ue",
+              "valores": [
+                "6,0",
+                "6,0"
+              ],
+              "percentagens": true
+            }
+          ],
+          "cumpre": false
+        },
+        {
+          "lang": "en",
+          "lados": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "valores": [
+                "6",
+                "6"
+              ],
+              "percentagens": true
+            },
+            {
+              "id": "taxa-de-desemprego-mip-2025-ue",
+              "valores": [
+                "6,0",
+                "6,0"
+              ],
+              "percentagens": true
+            }
+          ],
+          "cumpre": false
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Valor no desenho e na lista acessível, nos lados Portugal e União, nas duas edições; a União é o conhecido-positivo."
+    },
+    {
+      "nome": "contador_das_correcoes_e_historia",
+      "valor": {
+        "publicado": "3",
+        "calculado": 3,
+        "historia": [],
+        "seladas": [],
+        "erros": [],
+        "cumpre": false
+      },
+      "conhecido_positivo": true,
+      "evidencia": "Recontagem pela função do livro e validação da história contra o registo selado; a história da dívida das famílias prova que o registo foi lido."
+    },
+    {
+      "nome": "correcoes_do_desemprego_publicadas",
+      "valor": [
+        {
+          "lang": "pt",
+          "contador": "3",
+          "itens": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "presente": false,
+              "cumpre": false
+            },
+            {
+              "id": "taxa-de-desemprego-2025",
+              "presente": false,
+              "cumpre": false
+            }
+          ],
+          "cumpre": false
+        },
+        {
+          "lang": "en",
+          "contador": "3",
+          "itens": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "presente": false,
+              "cumpre": false
+            },
+            {
+              "id": "taxa-de-desemprego-2025",
+              "presente": false,
+              "cumpre": false
+            }
+          ],
+          "cumpre": false
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Duas entradas por edição, com os valores e a razão próprios da língua; o contador existente prova a leitura da página."
     },
     {
       "nome": "valor_irmao_do_salario_minimo",
@@ -308,22 +413,13 @@
     }
   ],
   "portoes": {
-    "build": {
-      "codigo": 0,
-      "cabeca": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b"
-    },
-    "verify": {
-      "codigo": 0,
-      "cabeca": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b"
-    },
-    "typecheck": {
-      "codigo": 0,
-      "cabeca": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b"
-    }
+    "build": null,
+    "verify": null,
+    "typecheck": null
   },
+  "ponto5_cumprido": false,
   "erros": [],
   "divergencias": [
-    "O brief enumera cinco medidas de preços; a secção anterior e a atual têm seis.",
-    "Ponto 5 parado: classificar como correção altera a contagem calculada de correções publicadas, fora do mandato."
+    "Ponto 5 ainda não cumprido; ver a secção N1b do relatório e a prova do requisito adicional do contador."
   ]
 }
