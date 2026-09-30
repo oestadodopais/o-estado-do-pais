@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T13:29:06+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/lugares/index.html",
+   "descricao": "a tabela dos ganhos em Lugares perde a referência de Portugal (o valor nacional com o selo)",
+   "sha256_antes": "17d03efcb7c75254fdc1bb281f96ab5866782828805c717bac0a472cd88e2f32",
+   "sha256_depois": "e8e3222338d3bcf7fb4ed37b9977c7c292fc447b3cb51944c386871bdda2d3e2",
+   "contexto_antes": ">2024</span>, com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos.</span><span data-referencia-portugal data-astro-cid-yutpy4em> Portugal: <span class=\"claim claim-com-chip\"><span data-claim=\"ganho-medio-mensal-2024\" data-astro-cid-yutpy4em=\"true\" class=\"claim-value\">1 576,0</span><span class=\"claim-sufixo\"> euros por mês</span><a class=\"src-chip\" href=\"/livro-razao/ganho-medio-mensal-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a></span>.</span></p><figure class=\"fo",
+   "contexto_depois": ">2024</span>, com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos.</span></a></span>.</span></p><figure class=\"forma forma-mapa\" data-instrumento=\"mapa-por-concelho-ganho\" data-forma=\"mapa-por-concelho\"><svg class=\"forma-mapa-svg\" vi"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/inicio/blocos-unicos.mjs",
+   "descricao": "a célula dos blocos únicos volta a contar o texto das pastilhas dos selos ao procurar as frases",
+   "sha256_antes": "dd91515e23604671983ccdc669367908163f1262c5558792b0b9660a222c2a79",
+   "sha256_depois": "d3aba9c3579ab1a97620c086b40737825ade998db2d1a1d71332fce2ec6cf418",
+   "contexto_antes": "ssão que ignore a estrutura. */\nconst textoSemSelos = (no) => {\n  const texto = (n) => {\n    if (!n) return '';\n    if (n.nodeType === 3) return n.textContent;\n    if (n.classList?.contains('src-chip') || ['SCRIPT', 'STYLE'].includes(n.tagName)) return '';\n    return (n.childNodes ?? []).map(texto).join('');\n  };\n  return normal(texto(no));\n};\nconst primeiraDoTexto = (s) => normal(s).split(/(?<=[.!?])\\s+/)[0];\nco",
+   "contexto_depois": "ssão que ignore a estrutura. */\nconst textoSemSelos = (no) => {\n  const texto = (n) => {\n    if (!n) return '';\n    if (n.nodeType === 3) return n.textContent;\n    if (['SCRIPT', 'STYLE'].includes(n.tagName)) return '';\n    return (n.childNodes ?? []).map(texto).join('');\n  };\n  return normal(texto(no));\n};\nconst primeiraDoTexto = (s) => normal(s).split(/(?<=[.!?])\\s+/)[0];\nco"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/components/ValorIrmao.astro",
+   "descricao": "a frase do valor irmão volta a dizer que o Eurostat ajusta os pagamentos, e não o valor",
+   "sha256_antes": "0fb001a8e3de5176c837aa9e6b5f84f097317319e1947d22c0dfb09f806c9a6e",
+   "sha256_depois": "08931531dca57c589467112ecfdbbb6c4487956f26c35878deff31455ac63880",
+   "contexto_antes": ", on a twelve-month basis: '}\n  <Claim id={id} lang={lang} chip sufixo={`\\u00a0${unidade.texto}`} />\n  {explica && <span data-base-doze-meses>{lang === 'pt' ? ' O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano.' : ' Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve m",
+   "contexto_depois": ", on a twelve-month basis: '}\n  <Claim id={id} lang={lang} chip sufixo={`\\u00a0${unidade.texto}`} />\n  {explica && <span data-base-doze-meses>{lang === 'pt' ? ' O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano.' : ' Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve m"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "scripts/pais-camaras.mjs",
+   "descricao": "a regra V2 deixa de recusar uma ligação para /lugares/ com outra marcação: só vê a classe",
+   "sha256_antes": "e1e92cd8d7ef5884ac30edee56358673d923c076d33c3d12fd47666f4781b2a6",
+   "sha256_depois": "c341fa88a420627a982fb10fd4259c5e79dda30401464b16491a2d3a3e6db06a",
+   "contexto_antes": "odoEsperado)\n    falha('o período escrito difere do período das linhas contadas.');\n  const portaParaSi = c.querySelectorAll('a[href]').some((a) => {\n    try {\n      const destino = new URL(a.getAttribute('href'), new URL(lang === 'pt' ? '/lugares/' : '/en/places/', SITE_URL));\n      return destino.origin === new URL(SITE_URL).origin && ['/lugares', '/en/places'].includes(destino.pathname.replace(/\\/+$/, '')) && destino.hash !== '#con",
+   "contexto_depois": "odoEsperado)\n    falha('o período escrito difere do período das linhas contadas.');\n  const portaParaSi = c.querySelectorAll('a[href]').some((a) => {\n    try {\n      return false; const destino = new URL(a.getAttribute('href'), new URL(lang === 'pt' ? '/lugares/' : '/en/places/', SITE_URL));\n      return destino.origin === new URL(SITE_URL).origin && ['/lugares', '/en/places'].includes(destino.pathname.replace(/\\/+$/, '')) && destino.hash !== '#con"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 29 medidas contra as 27 das provas",
+   "sha256_antes": "43a7a93495f2d048203ff900f6bedf433c8ef912c984cb1c69d2b6e2a28f1e5f",
+   "sha256_depois": "baaae5e623320c2b65f0e8696e628c3358a055484a65dc6a824b603a199df336",
+   "contexto_antes": "iro original das formas permanece intacto.\n<!-- N1D-PROVAS-FIM -->\n\n### Capturas e medidas\n\n<!-- N1D-MEDIDAS-INICIO -->\nO [medidor](medir-n1.mjs), com `--n1d`, produziu **27 medidas com conhecido-positivo**, **51 plantas que mordem** e **zero erros de navegação**. O ponto 5 continua falso. As dez primeiras frases declaradas coincidem com as rendidas; quatro c",
+   "contexto_depois": "iro original das formas permanece intacto.\n<!-- N1D-PROVAS-FIM -->\n\n### Capturas e medidas\n\n<!-- N1D-MEDIDAS-INICIO -->\nO [medidor](medir-n1.mjs), com `--n1d`, produziu **29 medidas com conhecido-positivo**, **51 plantas que mordem** e **zero erros de navegação**. O ponto 5 continua falso. As dez primeiras frases declaradas coincidem com as rendidas; quatro c"
+  }
+ ]
+}
