@@ -1,0 +1,23 @@
+A passagem **N1c**, a última antes da aterragem: retomas a mesma sessão. A leitura a frio do Claude Opus 5.5 achou as cinco plantas e defeitos reais, e o lugar de direção fez a triagem. A leitura inteira está no sítio, em `design/especime-v3/critica/LEITURA-n1-2026-09-30.md`, com a triagem no cabeçalho; lê-a antes de começar. As regras são as de sempre: caminhos explícitos; nenhum `push`; uma construção de cada vez; os trailers do Codex e da sessão; nenhum caminho da máquina nem o nome do utilizador; o ponto 5 do brief continua parado, como está registado.
+
+## O mandato, pelos achados da leitura
+
+1. **A linha do valor irmão do salário mínimo (o achado 3).** A linha por baixo do cartão lê o título e a unidade da própria linha do livro-razão (`retribuicao-minima-mensal-doze-meses-2026`: «euros por mês»), sem sufixo escrito à mão, e diz em que base é («em base de doze meses»), com as palavras que a linha ou a sua nota já têm; se a linha não disser porque difere, a linha da página não o inventa.
+2. **Os elementos municipais em «Lugares» dizem o que são (o achado 4).** As tabelas levam a unidade no cabeçalho, lida das linhas do livro-razão que as alimentam; o limite «150 %» diz de que é percentagem, com as palavras da linha que o guarda (`indice-de-divida-limite-legal` e o que ela cita); a legenda do mapa dos ganhos leva a unidade; a barra Évora contra Portugal ou ganha a sua frase (porque Évora, lida do que já está escrito sobre os estudos de Évora) ou sai da porta.
+3. **A ordem da habitação volta à da §1.127, decisão 5 (o achado 6):** os inquilinos a preço de mercado primeiro, o total depois, nas duas edições; a célula T10 volta, a ler a página da habitação; o relatório diz que o «pela mesma ordem» do brief cedeu à decisão escrita.
+4. **As três ligações da página da União (o achado 7)** dizem para onde vão, com o nome da porta («Ver em Emprego →», «Ver em Estado e economia →»; em inglês o mesmo), nas duas edições.
+5. **O cartão das câmaras em «Lugares» (o achado 11)** não leva porta para a página onde está; a regra do portão que exigia essa porta muda de forma (a porta obrigatória passa a ser a pesquisa dos concelhos, ou nenhuma), com a planta a morder.
+6. **O índice dos temas e as secções de «Lugares» (o achado 12)** leem a mesma declaração, ou os nomes alinham-se; uma célula compara o índice com os títulos da página.
+7. **As notas soltas (o achado 13):** as faixas etárias que repetem o texto do cartão saem; as atribuições dos valores de referência e a linha do salário irmão entram na caixa do seu cartão ou num parágrafo fora da grelha; as capturas a 1 280 px provam que ficam com o seu cartão.
+8. **A célula dos blocos únicos (o achado 16)** recusa também a primeira frase de um bloco noutra página, e o filtro do texto cru inclui as frases; com planta.
+9. **O `check-formas.mjs` (o achado 17)** chama às páginas de «Lugares» o que elas são, no contador e na mensagem.
+10. **O medidor do bloco (o achado 18):** os conhecidos-positivos provam o detetor (uma ligação antiga plantada; um ficheiro com um caminho plantado); a conferência municipal falha quando um mapa não tem a sua marca, em vez de o saltar.
+11. **O custo (o achado 19):** o `custo.json` com as duas amostras (N1 e N1b) e as sessões do revisor automático ditas com a sua base (símbolos cobrados, e com a cache), como o lugar de direção as mede: a linha «tokens used» de cada sessão.
+12. **As exceções da voz (o achado 20)** apontam às rotas onde o texto vive agora.
+13. **A estrutura (o achado 21):** a divergência dos «cinco preços» fecha-se no §2, com a nota do brief.
+14. **O relatório (o achado 15)** diz que a diferença «6 %» e «6,0 %» está também no cartão do desemprego em `/emprego/` e `/en/employment/`, e regista o achado 14 como limite conhecido (um redirecionamento não leva o fragmento).
+15. **Do lugar de direção:** nos dois índices (o «Por onde começar» da primeira página e `/temas/`), a linha de cada porta começa pelo assunto («Os preços dos bens e serviços.»), sem o «Os números de Portugal sobre»; a página da porta mantém a linha inteira, porque uma busca pode chegar-lhe sem passar pelo índice; a célula que compara o índice com a declaração conhece as duas formas, com planta.
+
+## No fim
+
+Os três portões na cabeça final, em `portoes/n1c/`, cada um no seu comando, com o código em ficheiro e a cabeça ao lado, e nada por registar depois do último commit; as capturas das páginas tocadas a 390 e a 1 280 px nas duas edições; a secção N1c no relatório; a resposta curta em `design/especime-v3/medicoes/n1-2026-09-30/RESPOSTA-construtor-n1c.md`, no último commit. Respondes com a cabeça final, os commits e os códigos lidos dos ficheiros.

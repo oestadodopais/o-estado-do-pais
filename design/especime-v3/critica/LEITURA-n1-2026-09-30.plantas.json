@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T11:02:55+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/habitacao/index.html",
+   "descricao": "a página da habitação volta a copiar o bloco da primeira página, título e frase",
+   "sha256_antes": "62ebba4793bdf89d79b69b3c32b959d6b9cc3c102415f07219fde7b0aebc5757",
+   "sha256_depois": "d0f76f82e9aa53215ad5f7791796c359c18af1be001d2b480aacd493c146316c",
+   "contexto_antes": "o o <span class=\"rotulo-ia-final\"><a href=\"/metodo#politica-de-ia\">Método</a>.</span></p></div><h1 class=\"entrada-titulo\" data-astro-cid-mgz4trxl>Habitação</h1><p class=\"entrada-linha\" data-astro-cid-mgz4trxl>Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção.</p><section class=\"pais-tema entrada-seccao\" data-entrada-seccao=\"0\" aria-labelledby=\"entrada-seccao-0\" data-astro-cid-mgz4trxl><h2 class=\"pais-tema-k entrada-secc",
+   "contexto_depois": "o o <span class=\"rotulo-ia-final\"><a href=\"/metodo#politica-de-ia\">Método</a>.</span></p></div><h1 class=\"entrada-titulo\" data-astro-cid-mgz4trxl>Habitação</h1><p class=\"entrada-linha\" data-astro-cid-mgz4trxl>Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção.</p><section data-bloco=\"casa\"><h2>A habitação: a média engana quem arrenda</h2><p>Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.</p></section><section class=\"pais-tema entrada-seccao\" data-entrada-seccao=\"0\" aria-labelledby=\"entrada-seccao-0\" data-astro-cid-mgz4trxl><h2 class=\"pais-tema-k entrada-secc"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "vercel.json",
+   "descricao": "a rota antiga /a-minha-casa/ deixa de redirecionar para /habitacao/",
+   "sha256_antes": "ab74a2351e9364bb61f4246367cda38c0be4f51b2a2720b5aeffa361816b3dfd",
+   "sha256_depois": "98c31420a3bb3a5bcbbdb54ed443911d6e8ecbec00f756645ce302857f6d3384",
+   "contexto_antes": "n\": \"/emprego/\"\n      }\n    },\n    {\n      \"src\": \"/en/my-work/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/en/employment/\"\n      }\n    },\n    {\n      \"src\": \"/a-minha-casa/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/habitacao/\"\n      }\n    },\n    {\n      \"src\": \"/en/my-home/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/en/housing/\"\n      }\n    },\n    {\n      \"src\": \"/a-escola-e-a-",
+   "contexto_depois": "n\": \"/emprego/\"\n      }\n    },\n    {\n      \"src\": \"/en/my-work/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/en/employment/\"\n      }\n    },\n    {\n      \"src\": \"/en/my-home/?\",\n      \"status\": 301,\n      \"headers\": {\n        \"Location\": \"/en/housing/\"\n      }\n    },\n    {\n      \"src\": \"/a-escola-e-a-"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "tests/inicio/blocos-unicos.mjs",
+   "descricao": "a célula dos blocos únicos lê as páginas inglesas com os títulos portugueses, e uma cópia inglesa passa",
+   "sha256_antes": "c2e27d2d4757af1623bc56eebf5a3fa4da94c9665ec888fa66ad87a534dae955",
+   "sha256_depois": "0d8a13b04a12ca3f9d9e1e270ae712718c2fe7a74a5dd91ed415cab4afb36136",
+   "contexto_antes": "toes)));\n  for (const rel of paginasHtml(dist)) {\n    contas.paginas++;\n    const texto = trocar.get(rel) ?? fs.readFileSync(path.join(dist, rel), 'utf8');\n    const lang = rel.startsWith('en/') ? 'en' : 'pt';\n    const titulos = BLOCOS_DA_PRIMEIRA_PAGINA.map((b) => b.titulo[lang]);\n    const destinosAntigos = REDIRECIONAMENTOS_N1.map(([origem]) => origem);\n    if (!",
+   "contexto_depois": "toes)));\n  for (const rel of paginasHtml(dist)) {\n    contas.paginas++;\n    const texto = trocar.get(rel) ?? fs.readFileSync(path.join(dist, rel), 'utf8');\n    const lang = 'pt';\n    const titulos = BLOCOS_DA_PRIMEIRA_PAGINA.map((b) => b.titulo[lang]);\n    const destinosAntigos = REDIRECIONAMENTOS_N1.map(([origem]) => origem);\n    if (!"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/data/primeira-pagina.mjs",
+   "descricao": "a linha de âmbito do emprego deixa de dizer de que país são os números",
+   "sha256_antes": "ef7a6e548349f7156060d65006cfb06359c66e56a5d2b014bef5cdede858b7cb",
+   "sha256_depois": "5e9f2fc1a6549e003bbabda79ea736b3b0bdeb1891700ae16f489d7f9f4d03d1",
+   "contexto_antes": "    }\n    ]\n  },\n  {\n    id: 'emprego',\n    rota: { pt: '/emprego/', en: '/en/employment/' },\n    nome: { pt: 'Emprego', en: 'Employment' },\n    linha: {\n      pt: 'Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho.',\n      en: 'Portugal’s figures on employment, unemployment, young people and labour costs.'\n    },\n    seccoes",
+   "contexto_depois": "    }\n    ]\n  },\n  {\n    id: 'emprego',\n    rota: { pt: '/emprego/', en: '/en/employment/' },\n    nome: { pt: 'Emprego', en: 'Employment' },\n    linha: {\n      pt: 'Os números sobre o emprego, o desemprego, os jovens e o custo do trabalho.',\n      en: 'Portugal’s figures on employment, unemployment, young people and labour costs.'\n    },\n    seccoes"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz quinze regras de redirecionamento contra as treze do vercel.json",
+   "sha256_antes": "218d861adf6169ac54872f5439172e8f4e4dc2ec0921dd0696230e107cfd516d",
+   "sha256_depois": "e31edf14cd80d2c65e81071af6ab0358a57c070efbbb36b57c0977ac221142cc",
+   "contexto_antes": "portas e cartões únicos | Sete assuntos com 47 cartões por edição, sem repetição entre assuntos; Lugares é a oitava porta. Dezasseis destinos no mapa do sítio, treze regras 301, zero ligações internas antigas. | Construído; os seis preços estão confirmados no §5 do brief |\n| 3 | Temas como índice | Oito portas nos dois índices, com os",
+   "contexto_depois": "portas e cartões únicos | Sete assuntos com 47 cartões por edição, sem repetição entre assuntos; Lugares é a oitava porta. Dezasseis destinos no mapa do sítio, quinze regras 301, zero ligações internas antigas. | Construído; os seis preços estão confirmados no §5 do brief |\n| 3 | Temas como índice | Oito portas nos dois índices, com os"
+  }
+ ]
+}
