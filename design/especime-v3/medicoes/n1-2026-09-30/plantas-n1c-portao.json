@@ -25,5 +25,8 @@
       "queixa": "✗ data-linha-claim=\"ganho-medio-mensal-2024\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice."
     }
   ],
-  "reposto": true
+  "reposto": true,
+  "cabeca": "530a04f2ed4003705c00fcfbe167ca9516b78145",
+  "estado_da_arvore": "árvore por registar",
+  "nota_n1d": "Ensaio anterior ao commit do código N1c; a repetição na cabeça final do código N1d fica em plantas-n1d-portao.json."
 }

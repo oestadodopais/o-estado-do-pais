@@ -8,6 +8,10 @@ if (!alvo || !comando) throw new Error('Uso: correr.mjs destino comando argument
 fs.mkdirSync(path.dirname(alvo), { recursive: true });
 for (const extensao of ['codigo', 'cabeca', 'json']) fs.rmSync(`${alvo}.${extensao}`, { force: true });
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const pendentes = execFileSync('git', ['status', '--porcelain', '--untracked-files=all'], { encoding: 'utf8' }).trimEnd().split('\n').filter(Boolean);
+const arvorePorRegistar = pendentes.length > 0;
+const codigoPorRegistar = pendentes.some((l) => /\.(?:mjs|py|js|astro|ts|css)$/.test(l.slice(3)) || (!l.slice(3).startsWith('design/especime-v3/medicoes/n1-2026-09-30/') && !l.slice(3).startsWith('design/especime-v3/capturas/n1-2026-09-30/')));
+const estadoDaArvore = arvorePorRegistar ? 'árvore por registar' : 'árvore limpa';
 const inicio = new Date().toISOString();
 const t = performance.now();
 const limpar = (s) => s.replaceAll(process.cwd(), '[repositorio]').replaceAll(os.homedir(), '[pasta-pessoal]').replaceAll(os.userInfo().username, '[utilizador]').replace(/\u001b\[[0-9;]*m/g, '').split('\n').map((l) => l.trimEnd()).join('\n').trimEnd() + '\n';
@@ -28,7 +32,7 @@ if (jsonDoBloco?.startsWith('design/especime-v3/medicoes/n1-2026-09-30/') && fs.
 fs.writeFileSync(`${alvo}.log`, limpar(saida));
 fs.writeFileSync(`${alvo}.codigo`, `${codigo}\n`);
 fs.writeFileSync(`${alvo}.cabeca`, `${cabeca}\n`);
-fs.writeFileSync(`${alvo}.json`, JSON.stringify({ comando: [comando, ...args].join(' '), cabeca, inicio, fim: new Date().toISOString(), segundos, codigo }, null, 2) + '\n');
-console.log(`${alvo}: código ${codigo}, ${segundos.toFixed(1)} s, cabeça ${cabeca}`);
+fs.writeFileSync(`${alvo}.json`, JSON.stringify({ comando: [comando, ...args].join(' '), cabeca, estado_da_arvore: estadoDaArvore, arvore_por_registar: arvorePorRegistar, codigo_por_registar: codigoPorRegistar, inicio, fim: new Date().toISOString(), segundos, codigo }, null, 2) + '\n');
+console.log(`${alvo}: código ${codigo}, ${segundos.toFixed(1)} s, cabeça ${cabeca}, ${estadoDaArvore}`);
 if (codigo) console.log(limpar(saida).slice(-10000));
 process.exitCode = Number(codigo);

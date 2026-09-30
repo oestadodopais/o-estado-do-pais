@@ -12,12 +12,14 @@ import { ENTRADAS } from '../../../../src/data/primeira-pagina.mjs';
 
 const dist = path.resolve('dist');
 const pasta = 'design/especime-v3/medicoes/n1-2026-09-30';
-const saida = 'design/especime-v3/capturas/n1-2026-09-30/n1c';
+const n1d = process.argv.includes('--n1d');
+const passagem = n1d ? 'n1d' : 'n1c';
+const saida = `design/especime-v3/capturas/n1-2026-09-30/${passagem}`;
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const versao = JSON.parse(await fs.readFile('dist/version.json', 'utf8'));
 if (versao.commit !== cabeca) throw new Error('A construção não é da cabeça atual.');
 const larguras = [390, 1280];
-const paginas = [{ id: 'primeira', rota: { pt: '/', en: '/en/' } }, ...ENTRADAS, { id: 'temas', rota: { pt: '/temas/', en: '/en/themes/' } }, { id: 'uniao', rota: { pt: '/uniao-europeia/', en: '/en/european-union/' } }];
+const paginas = n1d ? ENTRADAS.filter((e) => ['lugares', 'salarios-pensoes-e-apoios'].includes(e.id)) : [{ id: 'primeira', rota: { pt: '/', en: '/en/' } }, ...ENTRADAS, { id: 'temas', rota: { pt: '/temas/', en: '/en/themes/' } }, { id: 'uniao', rota: { pt: '/uniao-europeia/', en: '/en/european-union/' } }];
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp' };
 const servidor = http.createServer(async (pedido, resposta) => {
   try {
@@ -33,6 +35,7 @@ await new Promise((resolve) => servidor.listen(0, '127.0.0.1', resolve));
 const origem = `http://127.0.0.1:${servidor.address().port}`;
 const navegador = await chromium.launch();
 const resultados = [];
+const recortes = [];
 const problemas = [];
 const pedidosRecusados = [];
 const inicio = new Date().toISOString();
@@ -51,6 +54,7 @@ try {
         const caixa = (e) => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, largura: r.width, altura: r.height }; };
         const cartoes = [...document.querySelectorAll('[data-cartao-medida]')];
         return {
+          contextos_municipais: [...document.querySelectorAll('[data-contexto-municipal]')].map((e) => ({ chave: e.getAttribute('data-contexto-municipal'), texto: e.textContent.trim(), caixa: caixa(e), periodo: e.querySelector('[data-de-campo]')?.textContent })),
           salario_irmao: (() => {
             const p = document.querySelector('[data-valor-irmao]');
             if (!p) return null;
@@ -90,16 +94,21 @@ try {
       if (medidas.cartoes_que_transbordam.length) problemas.push(`${p.id}/${lang}/${largura}: cartões que transbordam: ${medidas.cartoes_que_transbordam.join(', ')}`);
       const ficheiro = `${saida}/${p.id}-${lang}-${largura}.png`;
       const bytes = await page.screenshot({ path: ficheiro, fullPage: true });
+      if (n1d && p.id === 'lugares') {
+        const detalhe = `${saida}/ganhos-contexto-${lang}-${largura}.png`;
+        const bytesDoRecorte = await page.locator('[data-contexto-municipal="ganho"]').screenshot({ path: detalhe });
+        recortes.push({ ficheiro: detalhe, lang, largura, sha256: createHash('sha256').update(bytesDoRecorte).digest('hex') });
+      }
       resultados.push({ ficheiro, pagina: p.id, rota: p.rota[lang], lang, largura, sha256: createHash('sha256').update(bytes).digest('hex'), medidas });
     }
     await contexto.close();
-    console.log(`N1c: ${lang}, ${largura} px, ${paginas.length} capturas.`);
+    console.log(`${passagem.toUpperCase()}: ${lang}, ${largura} px, ${paginas.length} capturas.`);
   }
 } finally {
   await navegador.close();
   servidor.close();
 }
-const manifesto = { bloco: 'N1c', cabeca, construcao: versao, inicio, fim: new Date().toISOString(), larguras, capturas: resultados.length, pedidos_recusados_para_fora: pedidosRecusados.length, problemas, resultados };
-await fs.writeFile(`${pasta}/capturas-n1c.json`, JSON.stringify(manifesto, null, 2) + '\n');
-console.log(`N1c: ${resultados.length} capturas, ${problemas.length} problemas.`);
+const manifesto = { bloco: n1d ? 'N1d' : 'N1c', cabeca, construcao: versao, inicio, fim: new Date().toISOString(), larguras, capturas: resultados.length, pedidos_recusados_para_fora: pedidosRecusados.length, problemas, resultados, recortes };
+await fs.writeFile(`${pasta}/capturas-${passagem}.json`, JSON.stringify(manifesto, null, 2) + '\n');
+console.log(`${passagem.toUpperCase()}: ${resultados.length} capturas, ${problemas.length} problemas.`);
 process.exitCode = problemas.length ? 1 : 0;
