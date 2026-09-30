@@ -11,10 +11,10 @@ unit: "correções"
 source: "O Estado do País"
 document:
   title: "Registo de correções"
-  edition: "12.08.2026"
+  edition: "30.09.2026"
 source_url: null
-access_date: "2026-08-12"
-reference_date: "2026-08-12"
+access_date: "2026-09-30"
+reference_date: "2026-09-30"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
@@ -27,7 +27,7 @@ derived_from: []
 check: "correcoes_publicadas"
 
 study: "o-estado-do-pais"
-note: "Não há excerto textual: o valor sai de uma contagem do próprio livro-razão. É reavaliado a cada build — se entrar uma correção nova e este número não mudar, o build falha. A partir de 2026-08-13 os campos que só um documento externo poderia preencher ficam a null, em vez de «a verificar»: não há documento externo, e marcar como por confirmar um campo que não pode ser confirmado inflava a dívida de proveniência e mantinha esta página fora do índice."
+note: "Esta edição corresponde à recontagem de 30.09.2026, que incluiu as duas correções da apresentação decimal do desemprego. As datas de referência e de leitura são as dessa recontagem do próprio livro-razão. O valor é reavaliado a cada construção: se entrar uma correção e o contador não mudar, a conferência falha. Os campos que só um documento externo poderia preencher ficam a null, pois a proveniência desta contagem é a sua derivação."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
