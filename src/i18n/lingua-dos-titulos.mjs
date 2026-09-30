@@ -444,6 +444,8 @@ export const LINGUA_DAS_EDICOES = {
      uma chave que nenhuma linha traz fecha a construção. */
   '12.08.2026': null,
   '16.09.2026': null,
+  /* A recontagem de Correções publicadas usa a data da edição, sem língua. */
+  '30.09.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */
   'TERRITORY-RESULTS-LOCAL-070500-CM.json': null,

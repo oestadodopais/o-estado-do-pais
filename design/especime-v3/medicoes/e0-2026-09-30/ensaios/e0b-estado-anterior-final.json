@@ -1,0 +1,10 @@
+{
+  "comando": "node design/especime-v3/medicoes/e0-2026-09-30/reproduzir-paragem.mjs",
+  "cabeca": "29f39453a55b7f14157c8c59725a26e625431da4",
+  "arvore_por_registar": true,
+  "codigo_por_registar": false,
+  "inicio": "2026-09-30T23:01:49.130Z",
+  "fim": "2026-09-30T23:01:49.417Z",
+  "segundos": 0.28563775,
+  "codigo": 0
+}

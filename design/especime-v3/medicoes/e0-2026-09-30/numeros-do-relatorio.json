@@ -1,14 +1,14 @@
 {
   "relatorio": "design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md",
   "pasta": "design/especime-v3/medicoes/e0-2026-09-30",
-  "ficheiros_json_lidos": 47,
+  "ficheiros_json_lidos": 51,
   "ilegiveis": [],
   "conhecido_positivo": {
     "numero": 987654321,
     "encontrado": true
   },
-  "numeros_conferidos": 82,
-  "numeros_com_ficheiro": 82,
+  "numeros_conferidos": 77,
+  "numeros_com_ficheiro": 77,
   "numeros_sem_ficheiro": 0,
   "sem_ficheiro": [],
   "apagado_antes_de_contar": {

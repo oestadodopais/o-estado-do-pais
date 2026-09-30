@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { load } from 'js-yaml';
+import { lerCodigoDaCorrida } from './detetores-e0b.mjs';
 const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
 const base = '728ffc67a702e4912f4919b8a8b356e28a66ea63';
 const json = p => JSON.parse(fs.readFileSync(`${pasta}/${p}`, 'utf8'));
@@ -21,6 +22,9 @@ const primeira = fs.existsSync(`${primeiraPasta}/cabeca`) ? {
   cabeca: fs.readFileSync(`${primeiraPasta}/cabeca`, 'utf8').trim(),
   codigos: Object.fromEntries(['build', 'verify', 'typecheck'].map(n => [n, Number(fs.readFileSync(`${primeiraPasta}/${n}.codigo`, 'utf8'))]))
 } : null;
+const interrompidaPasta = `${pasta}/ensaios/e0b-corrida-interrompida`;
+const interrompida = fs.existsSync(`${interrompidaPasta}/estado.json`)
+  ? JSON.parse(fs.readFileSync(`${interrompidaPasta}/estado.json`, 'utf8')) : null;
 const contador = load(fs.readFileSync('ledger/claims/correcoes-publicadas.yml', 'utf8'));
 const commits = execFileSync('git', ['log', '--reverse', '--format=%h|%s', `${base}..HEAD`], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
 const valor = n => medidas.medidas.find(m => m.nome === n)?.valor;
@@ -28,8 +32,16 @@ const finais = medidas.e0b?.restantes_conferidos === true && medidas.cabeca === 
 const nomes = medidas.e0b?.nomes_do_registo ?? [];
 const portas = ['build', 'verify', 'typecheck'].map(nome => {
   const f = `${pasta}/portoes/e0b/${nome}.json`;
-  return fs.existsSync(f) ? { nome, ...JSON.parse(fs.readFileSync(f, 'utf8')),
-    codigo: Number(fs.readFileSync(`${pasta}/portoes/e0b/${nome}.codigo`, 'utf8')) } : { nome, codigo: null, cabeca: null, segundos: null };
+  const pendente = { nome, codigo: null, cabeca: null, segundos: null };
+  if (!fs.existsSync(f)) return pendente;
+  const r = JSON.parse(fs.readFileSync(f, 'utf8'));
+  const cabecaCorrida = fs.readFileSync(`${pasta}/portoes/e0b/cabeca`, 'utf8').trim();
+  const inicio = fs.statSync(`${pasta}/portoes/e0b/${nome}.inicio`).mtimeMs;
+  const fim = fs.statSync(`${pasta}/portoes/e0b/${nome}.fim`).mtimeMs;
+  const lido = lerCodigoDaCorrida(`${pasta}/portoes/e0b/${nome}.codigo`, inicio, fim);
+  return r.cabeca === cabeca && cabecaCorrida === cabeca && r.cabeca_fim === cabeca
+    && r.medido_nesta_corrida && !r.codigo_por_registar && lido.medido && lido.codigo === r.codigo
+    ? { nome, ...r, codigo: lido.codigo } : pendente;
 });
 const estado = finais ? 'Os restantes pontos estão conferidos, com os três portões a zero na cabeça final.' : 'Os restantes pontos estão implementados; faltam os portões da cabeça final e as medidas do HTML renovado.';
 const inteiro = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
@@ -42,6 +54,7 @@ const dados = { passagem: 'E0b', base, cabeca, medido_em: new Date().toISOString
     medidas: medidas.cabeca, capturas: capturas.cabeca }, portoes: portas, custo: custo.e0b ?? null,
   custo_final_e0: finalE0.simbolos_finais, custo_amostra_e0: custoOriginal.construtor.simbolos_sem_cache_mais_saida };
 dados.primeira_corrida = primeira;
+dados.corrida_interrompida = interrompida;
 fs.writeFileSync(`${pasta}/e0b.json`, JSON.stringify(dados, null, 2) + '\n');
 const tabelaPortas = portas.map(p => `| \`npm run ${p.nome}\` | ${p.codigo === null ? 'Por correr' : `[${p.codigo}](portoes/e0b/${p.nome}.codigo)`} | ${p.cabeca ? `\`${p.cabeca}\`` : 'Por escrever'} | ${p.segundos === null ? 'Por medir' : decimal(p.segundos)} |`).join('\n');
 const secao = `
@@ -72,6 +85,8 @@ A alteração pedida para o cartão atribuía o limiar à média de três anos. 
 As plantas permanentes incluem agora a retirada do nome da recontagem, a retirada do nome da dívida das famílias e a data antiga do contador. ${finais ? `As ${valor('plantas_que_mordem').total} plantas morderam numa corrida que aceita o HTML limpo.` : 'A corrida do HTML limpo e das plantas fica por medir na cabeça final.'} Os detetores do medidor têm ainda plantas de decimal, de caminho de componente e de escrita antiga do código, em [detetores-e0b.json](detetores-e0b.json).
 
 ${primeira ? `A primeira corrida dos portões E0b, na cabeça \`${primeira.cabeca}\`, deu build ${primeira.codigos.build}, verify ${primeira.codigos.verify} e typecheck ${primeira.codigos.typecheck}. A guarda de campos do livro recusava o título da fonte fora das páginas do livro. A forma mudou por uma porta estreita: só name e document.title no nome da própria linha, dentro da sua entrada da página do registo. A comparação literal e a auditoria do selo continuam ativas. Uma planta no portão real tenta passar value por esta marca e é recusada; outras retiram o nome, trocam a linha e mudam a página. Os primeiros códigos e registos estão em ensaios/e0b-primeira-corrida.` : ''}
+
+${interrompida ? `A corrida seguinte, na cabeça \`${interrompida.cabeca}\`, deu build ${interrompida.build}: a edição do contador faltava na tabela das línguas. A corrida foi interrompida depois desta falha; não há código de conclusão de verify nem de typecheck a atribuir-lhe. A data passou a estar declarada sem língua e a conferência de língua foi repetida. O estado e o código efetivamente escrito estão em ensaios/e0b-corrida-interrompida.` : ''}
 
 | Prova | Cabeça lida do comprovativo |
 | --- | --- |
