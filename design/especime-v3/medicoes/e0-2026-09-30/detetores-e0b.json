@@ -1,6 +1,6 @@
 {
-  "cabeca": "4c1d39f08617d5044ed7e6e2689eee9bce39e844",
-  "medido_em": "2026-09-30T22:35:42.486Z",
+  "cabeca": "bd39e8bf5d8873c881d2d17fe0dc11c68506b9c7",
+  "medido_em": "2026-09-30T22:49:21.569Z",
   "decimais": [
     {
       "id": "taxa-de-desemprego-2025",
@@ -35,6 +35,11 @@
       "lido": 1,
       "escrito_nesta_corrida": true,
       "planta_antiga_recusada": true
+    },
+    {
+      "esperado": null,
+      "lido": null,
+      "planta_vazia_recusada": true
     }
   ],
   "conhecidos_positivos": {

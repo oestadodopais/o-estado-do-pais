@@ -29,7 +29,8 @@ try {
   assert.deepEqual(depois.slice(0, seladas.length), seladas);
   assert.equal(depois.length, seladas.length + 1);
   assert.equal(depois.at(-1).new_value, '4');
-  const r = { codigo: 0, antes: seladas.length, depois: depois.length, passado_conservado: true,
+  const r = { cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+    medido_em: new Date().toISOString(), codigo: 0, antes: seladas.length, depois: depois.length, passado_conservado: true,
     source_url: linha.source_url, derivation: linha.derivation, saida: saida.trim(),
     linha_real_conservada: fs.readFileSync(`ledger/claims/${id}.yml`, 'utf8') === original };
   assert.ok(r.linha_real_conservada);

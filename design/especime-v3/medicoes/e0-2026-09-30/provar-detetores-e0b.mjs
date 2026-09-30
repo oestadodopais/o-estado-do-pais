@@ -35,6 +35,12 @@ export function provarDetetores() {
       assert.equal(antigo.medido, false);
       codigos.push({ esperado, lido: atual.codigo, escrito_nesta_corrida: atual.medido, planta_antiga_recusada: !antigo.medido });
     }
+    const vazio = path.join(temporaria, 'vazio.codigo');
+    const inicio = Date.now();
+    fs.writeFileSync(vazio, '');
+    const lido = lerCodigoDaCorrida(vazio, inicio, Date.now() + 1);
+    assert.equal(lido.medido, false); assert.equal(lido.codigo, null);
+    codigos.push({ esperado: null, lido: lido.codigo, planta_vazia_recusada: !lido.medido });
   } finally { fs.rmSync(temporaria, { recursive: true }); }
   return { decimais, anatomia: { diff_lido: anatomia, planta_do_cartao_mordeu: plantaDoCartao }, codigos,
     conhecidos_positivos: { desemprego_com_decimal: decimais.every(d => d.lido === '6.0'), anatomia_mudada: anatomia.length > 0,

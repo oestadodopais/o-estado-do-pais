@@ -5,7 +5,8 @@ export const anatomiaDoDiff = (texto) => texto.split('\n').filter(p => /^(src\/c
 export function lerCodigoDaCorrida(ficheiro, inicio, fim) {
   if (!fs.existsSync(ficheiro)) return { medido: false, codigo: null, motivo: 'ficheiro ausente' };
   const escrito = fs.statSync(ficheiro).mtimeMs;
-  const codigo = Number(fs.readFileSync(ficheiro, 'utf8').trim());
-  const medido = Number.isInteger(codigo) && escrito >= inicio && escrito <= fim;
+  const texto = fs.readFileSync(ficheiro, 'utf8').trim();
+  const codigo = Number(texto);
+  const medido = /^(0|[1-9]\d*)$/.test(texto) && codigo <= 255 && escrito >= inicio && escrito <= fim;
   return { medido, codigo: medido ? codigo : null, motivo: medido ? 'escrito nesta corrida' : 'fora da corrida' };
 }
