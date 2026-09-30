@@ -3,14 +3,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { spawn, execFileSync } from 'node:child_process';
+import { lerEstadoDaArvore } from './estado-da-arvore.mjs';
 const [alvo, comando, ...args] = process.argv.slice(2);
 if (!alvo || !comando) throw new Error('Uso: correr.mjs destino comando argumentos');
 fs.mkdirSync(path.dirname(alvo), { recursive: true });
 for (const extensao of ['codigo', 'cabeca', 'json']) fs.rmSync(`${alvo}.${extensao}`, { force: true });
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
-const pendentes = execFileSync('git', ['status', '--porcelain', '--untracked-files=all'], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
-const codigoPorRegistar = pendentes.some(l => /\.(?:mjs|py|js|astro|ts|css)$/.test(l.slice(3)) ||
-  !l.slice(3).startsWith('design/especime-v3/medicoes/e0-2026-09-30/') && !l.slice(3).startsWith('design/especime-v3/capturas/e0-2026-09-30/'));
+const { pendentes, codigoPorRegistar } = lerEstadoDaArvore(execFileSync('git',
+  ['status', '--porcelain', '--untracked-files=all'], { encoding: 'utf8' }));
 const inicio = new Date().toISOString();
 const t = performance.now();
 const limpar = s => s.replaceAll(process.cwd(), '[repositorio]').replaceAll(os.homedir(), '[pasta-pessoal]')
