@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/assuntos.mjs(4,31): error TS7006: Parameter 'entrada' implicitly has an 'any' type.

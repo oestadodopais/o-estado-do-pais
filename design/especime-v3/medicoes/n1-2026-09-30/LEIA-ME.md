@@ -2,13 +2,13 @@
 
 Construção de 30.09.2026, no ramo `n1-2026-09-30`, por Codex `gpt-6-astra`. Base: `2cbc5cc46327697469347b98a2445494027861f4`.
 
-**Estado atual: ver a secção N1b no fim. A nota do §5 resolveu a contagem dos preços.** O teste de aceitação continua incompleto pelo requisito adicional do contador medido na N1b.
+**Estado atual: ver a secção N1c no fim. A nota do §5 resolveu a contagem dos preços.** O teste de aceitação continua incompleto pelo requisito adicional do contador medido na N1b.
 
 **No fecho anterior do N1**, o ponto 5 ficou parado: as duas linhas portuguesas do desemprego continuam em `6`. A organização das portas, a eliminação das cópias, a transferência dos dados municipais e as capturas estão construídas. O brief ainda chamava cinco aos seis cartões de preços existentes; preservaram-se os seis para conservar os 47 cartões nacionais.
 
 ## Mandato e medidas
 
-As medidas saem de `node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs`, em [medidas.json](medidas.json). Cada uma das 20 medidas tem um conhecido-positivo e a sua evidência; a ausência de qualquer um fecha o medidor. O código do medidor diz se a medição e as plantas correram; não declara cumprido o ponto 5.
+As medidas saem de `node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs`, em [medidas.json](medidas.json). Cada medida atual tem um conhecido-positivo e a sua evidência; a ausência de qualquer um fecha o medidor. O código do medidor diz se a medição e as plantas correram; não declara cumprido o ponto 5.
 
 O §0 do brief foi reproduzido pelo seu guião antes da mudança. As quinze medidas e os quinze conhecidos-positivos do estado anterior estão em [brief-antes.json](brief-antes.json), na cabeça histórica que o próprio guião lê.
 
@@ -17,7 +17,7 @@ O §0 do brief foi reproduzido pelo seu guião antes da mudança. As quinze medi
 | 1 | Blocos só na primeira página | Cinco blocos por edição, dez portas finais; zero blocos e zero títulos de bloco noutras páginas. `ENTRADAS` já não tem `blocos`. A cópia de um bloco e a cópia apenas do título são recusadas. | Construído |
 | 2 | Oito portas e cartões únicos | Sete assuntos com 47 cartões por edição, sem repetição entre assuntos; Lugares é a oitava porta. Dezasseis destinos no mapa do sítio, treze regras 301, zero ligações internas antigas. | Construído; os seis preços estão confirmados no §5 do brief |
 | 3 | Temas como índice | Oito portas nos dois índices, com os mesmos nomes, âmbitos e ordem. Temas acrescenta as secções e tem zero cartões inteiros. Um cartão das câmaras em Lugares por edição. | Construído |
-| 4 | Retirar os domínios sem perder conteúdo | Dois mapas e duas tabelas de 308 linhas por edição, uma barra Évora/Portugal e a ausência T4a em Lugares. Os seis elementos gráficos transferidos têm o mesmo SHA-256 do HTML anterior. | Construído |
+| 4 | Retirar os domínios sem perder conteúdo | Dois mapas e duas tabelas de 308 linhas por edição e a ausência T4a em Lugares. No N1, os seis elementos transferidos conservaram o HTML; na N1c, as tabelas e legendas ganham unidades e a barra isolada de Évora sai pelo mandato. | Construído |
 | 5 | As duas linhas do desemprego em `6,0` | Os dois excertos dizem `6.0`; os valores continuam `6`. A recontagem para cinco está autorizada; a sua história exige um lugar que esta medida do projeto não tem. | Parado no requisito adicional da N1b |
 | 6 | Documentos, provas, custo e capturas | Estrutura e mapa atualizados; mapa com 140 citações conferidas; 90 imagens, nas duas edições e cinco larguras, sem transbordo; relatório, guiões e medidas nesta pasta. | Ver portões e fecho abaixo |
 
@@ -34,19 +34,19 @@ O §0 do brief foi reproduzido pelo seu guião antes da mudança. As quinze medi
 | Estado e economia | 13 | `/estado-e-economia/`, `/en/state-and-economy/` |
 | Lugares | 0 nacionais, 1 das câmaras | `/lugares/`, `/en/places/` |
 
-Cada página começa com o âmbito dos números de Portugal; Estado e economia nomeia a justiça. A ordem das secções e dos cartões anteriores mantém-se. A secção «As contas do Estado» passou a «Contas públicas» para não repetir o título do bloco da primeira página. O componente do cartão não mudou. As áreas de governo são a exceção expressamente preservada pelo ponto 4 do mandato, fora das oito portas e do rodapé.
+Cada página começa com o âmbito dos números de Portugal; Estado e economia nomeia a justiça. As secções conservam a ordem anterior, com a exceção corrigida na N1c: a habitação abre pelos inquilinos e põe o total a seguir. O «pela mesma ordem» do brief cede à decisão 5 da §1.127. A secção «As contas do Estado» passou a «Contas públicas» para não repetir o título do bloco da primeira página. O componente do cartão não mudou. As áreas de governo são a exceção expressamente preservada pelo ponto 4 do mandato, fora das oito portas e do rodapé.
 
 ### Rotas antigas
 
 As nove rotas antigas das entradas e as quatro dos domínios têm regras 301 em `vercel.json`, com e sem barra final, antes de `filesystem`. O dinheiro abre Temas; as outras entradas abrem o assunto correspondente; os domínios abrem Temas. O endereço inglês de Estado e economia já era o atual e não ganha uma regra para si próprio. A célula compara cada origem e destino com uma lista independente, exige o destino construído e recusa a origem construída ou no mapa do sítio. Esta é uma conferência local da configuração e do resultado construído; não houve publicação nem ensaio num lançamento da Vercel.
 
-Os destinos do veredicto e as ligações internas da página da União foram atualizados. O conteúdo e a disposição da União permanecem os anteriores. O valor do salário mínimo na base de doze meses, os âmbitos etários do emprego e as atribuições dos valores de referência que só o domínio apresentava acompanham agora as medidas, sem criar cartões inteiros adicionais.
+Os destinos do veredicto e as ligações internas da página da União foram atualizados. O conteúdo e a disposição da União permanecem os anteriores. O valor do salário mínimo na base de doze meses e as atribuições dos valores de referência acompanham as medidas, sem criar cartões inteiros adicionais. A N1c retira as faixas etárias soltas, porque já estavam no texto dos cartões; a formulação anterior de que só o domínio as apresentava estava errada.
 
 ## O ponto 5 e a regra de paragem no fecho N1
 
 O ensaio leu a casa decimal dos excertos, acrescentou uma entrada datada com `old_value`, `new_value`, razão nas duas línguas e `kind: correcao`, e passou pelo selador da história dos valores. A razão diz que se repõe a precisão já presente no excerto, sem mudar a quantidade nem alegar uma revisão da fonte.
 
-`ledger:check` recusou o resultado: `correcoes-publicadas.yml`, calculado `5`, publicado `3`. A saída e o código estão em [ensaios/desemprego-correcao.log](ensaios/desemprego-correcao.log) e no ficheiro `.codigo` ao lado. Como esse contador é outro número fora do ponto 5, as duas linhas e a história selada foram repostas. O Git confirma que nenhum ficheiro de `ledger/` difere da base.
+`ledger:check` recusou o resultado: `correcoes-publicadas.yml`, calculado `5`, publicado `3`. A saída e o código estão em [ensaios/desemprego-correcao.log](ensaios/desemprego-correcao.log) e no ficheiro `.codigo` ao lado. Como esse contador é outro número fora do ponto 5, as duas linhas e a história selada foram repostas. Nesse fecho, o Git confirmou que nenhum ficheiro de `ledger/` diferia da base.
 
 [atualizar-desemprego.mjs](atualizar-desemprego.mjs) conserva o procedimento, mas por omissão só mede e diz que está parado. Não se trocou o tipo para `atualizacao` apenas para fazer o contador passar. Faltava decidir a classificação deste ajuste de apresentação ou autorizar a atualização derivada do contador. A decisão da N1b resolve essa questão; o requisito adicional encontrado está documentado no fim. A primeira página conserva a diferença de precisão entre os dois lados do desemprego.
 
@@ -160,3 +160,80 @@ Corridas completas na cabeça final `53938d130cbb668579510094b7f22434bc44a0a9`. 
 Commits da passagem: `dfc86083` (registos anteriores), `3890bbe3` (prova e medidas) e `53938d13` (relatório da paragem e resposta N1b). A cabeça final completa lê-se nos ficheiros `.cabeca` dos portões finais. Não houve `push`.
 
 Amostra do construtor a `2026-09-30T10:57:20.991Z`: **31 778 394 símbolos** cumulativos, dos quais 31 637 335 de entrada (30 692 864 em cache) e 141 059 de saída. Entrada sem cache: 944 471. Tempo decorrido desde o início desta sessão N1 e N1b até à medição: **6766.8 segundos**. São contadores cumulativos da sessão, não o custo isolado desta passagem. A amostra e os revisores automáticos estão separados em [custo.json](custo.json).
+
+
+## N1c · acertos da leitura a frio
+
+A leitura `design/especime-v3/critica/LEITURA-n1-2026-09-30.md`, com a triagem no cabeçalho, orientou esta passagem. As cinco plantas da leitura não eram defeitos do ramo. Os achados reais indicados no mandato foram tratados; o ponto 5 do brief conserva a paragem da N1b. Os problemas da anatomia e dos títulos dos cartões do achado 8 pertencem ao K2, conforme a triagem.
+
+### Mandato e prova
+
+| # | Achado ou decisão | Construção e medida |
+| --- | --- | --- |
+| 1 | 3, salário irmão | Nome pela própria linha, unidade «euros por mês» pelo livro e base de doze meses explícita. A explicação cita o sentido da ficha Eurostat já transcrita na nota, sem inventar a conta de catorze pagamentos. A célula recusa a perda da unidade mensal. |
+| 2 | 4, medidas municipais | A legenda e o cabeçalho de cada tabela leem a unidade comum das 308 linhas. A definição existente do índice explica a média da receita corrente líquida dos três anos anteriores. A barra isolada de Évora sai, como o mandato permite; a linha municipal continua na tabela e na página do concelho. |
+| 3 | 6, habitação | Inquilinos a preço de mercado antes do total nas duas edições. A T10 volta a ler Habitação e duas plantas invertem a ordem. O «pela mesma ordem» do brief cede à decisão 5 da §1.127. |
+| 4 | 7, União | As três portas dizem «Ver em Emprego» ou «Ver em Estado e economia», com o nome equivalente em inglês. A célula confere os três destinos e rótulos; a planta repõe o nome antigo. |
+| 5 | 11, câmaras | Sai a porta para a própria página. A V2 continua a recontar as parcelas, a conferir o período, o limite e o selo; recusa a porta reposta. A porta deixa também de ser obrigatória na contagem B2. |
+| 6 | 12, secções dos lugares | Os quatro títulos são lidos da mesma declaração que o índice. A célula E7 compara os títulos rendidos com as secções; uma planta troca o primeiro título. |
+| 7 | 13, notas soltas | As idades repetidas saem. Cada atribuição e a linha irmã ficam na mesma caixa visual do respetivo cartão, dentro de uma só célula da grelha. As capturas medem a caixa da nota e a do cartão, também a 1 280 px. |
+| 8 | 16, frases de bloco | O filtro do texto cru e a conferência do corpo incluem a primeira frase dos cinco blocos. Duas plantas copiam apenas a frase, sem título nem marcas, nas duas edições. |
+| 9 | 17, contador das formas | O contador chama-se `paginas_dos_lugares` e espera uma página por edição, sem depender do número de domínios. A mensagem nomeia os lugares. |
+| 10 | 18, conhecidos-positivos | Quatro plantas de ligações antigas, relativas e absolutas, e um ficheiro temporário com caminho fictício exercitam os mesmos detetores. A marca municipal ausente produz erro, com planta. |
+| 11 | 19, custo | O `custo.json` conserva as amostras N1 e N1b lidas do Git e os dois fechos «tokens used», confrontados com os eventos reais. Cada revisor declara a base sem cache e a soma com cache, com totais por amostra. |
+| 12 | 20, voz | O título do bloco fica autorizado só na primeira página; a leitura da justiça em Estado e economia. As razões do ganho médio e do salário mínimo apontam agora a Salários, pensões e apoios. |
+| 13 | 21, estrutura | O §2 fecha a divergência dos preços pela nota do §5 do brief em `c0cbc79b`: seis medidas. |
+| 14 | 15 e 14, limites | A diferença de precisão continua na primeira página e no cartão do desemprego em `/emprego/` e `/en/employment/`: valor principal `6 %`, régua da União e faixa com `6,0`. As ligações antigas com fragmento não encontram os cartões no índice novo. |
+| 15 | Linhas dos índices | Primeira página e Temas mostram o assunto, sem o prefixo de âmbito. As portas conservam a linha completa. A célula conhece as duas formas; recusa a linha longa no índice e a declaração que perde Portugal. |
+
+A guarda nova do portão de HTML admite apenas a unidade de uma linha presente na tabela, no cabeçalho ou na legenda do mapa dos lugares. A comparação literal contra o livro e a auditoria do selo mantêm-se. Três plantas pela função real recusam uma unidade trocada, um campo fora do mapa e uma linha alheia à tabela, depois de um controlo limpo; o HTML é reposto por resumo. O resultado está em `plantas-n1c-portao.json`.
+
+A exceção `ambito-da-medida` saiu de `ledger/allowlist.yml` porque já não dispensava texto nenhum: as idades vivem nas definições conferidas dos cartões. Nenhum valor, fonte ou história do livro-razão foi alterado nesta passagem.
+
+### Limites conhecidos
+
+O achado 14 fica registado: um redirecionamento do servidor não recebe o fragmento do endereço. Uma ligação antiga como `/o-meu-dinheiro/#m-…` abre Temas, onde o cartão deixou de viver; o fragmento não é convertido para a nova porta. O mesmo acontece a `/temas/#m-…`, que já é um índice. As ligações internas atuais usam os novos destinos e âncoras; não se declara restaurada a navegação por fragmentos antigos.
+
+O ponto 5 continua parado no requisito adicional do contador, sem aplicar as duas correções do desemprego. A N1c não transforma os portões verdes em aceitação desse ponto.
+
+### Capturas e medidas
+
+<!-- N1C-MEDIDAS-INICIO -->
+O [medidor](medir-n1.mjs), com `--n1c`, produziu **25 medidas**, todas com conhecido-positivo, **41 plantas que mordem** e **zero erros de navegação**. Os quatro conjuntos de 308 pares de identificador e valor dos mapas coincidem com os guardados antes do N1. O ponto 5 permanece falso.
+
+O [captor](captar-n1c.mjs) registou **44 imagens**: primeira página, Temas, União e as oito portas, a 390 e a 1 280 px, nas duas edições. O [manifesto](capturas-n1c.json) prende cada imagem ao seu SHA-256 e à cabeça `ffd62670acdeb441c4a035edf93c2dd8c036101f`. As tabelas municipais e as três leituras da União ficam abertas para mostrar os cabeçalhos e as portas.
+
+As dezasseis ocorrências das notas medidas ficam dentro da caixa do respetivo cartão, oito delas a 1 280 px. Não houve transbordo horizontal, cartões a transbordar ou erro de página. A inspeção visual incluiu Salários, pensões e apoios em português a 1 280 px e em inglês a 390 px, e Estado e economia em inglês a 1 280 px.
+
+A primeira inspeção encontrou uma quebra indevida do nome do salário irmão e o espaço colapsado entre valor e unidade. A verificação em curso foi interrompida, com código 1 conservado em `ensaios/n1c-verify-interrompido.codigo`; não foi uma corrida completa. A correção `ffd62670` retira a classe de lista do nome e preserva o espaço. As capturas foram repetidas: a separação medida é de 2,8125 px nas quatro combinações de língua e largura, e a planta que retira esse espaço é detetada nas quatro. A nova inspeção confirmou o nome a correr na frase.
+
+<!-- N1C-MEDIDAS-FIM -->
+
+### Portões e commits
+
+<!-- N1C-PORTOES-INICIO -->
+Corridas completas na cabeça do código `ffd62670acdeb441c4a035edf93c2dd8c036101f`. Códigos, cabeças e durações lidos dos ficheiros acabados de escrever.
+
+| Comando | Código lido | Cabeça | Segundos |
+| --- | ---: | --- | ---: |
+| `npm run build` | [0](portoes/n1c/build.codigo) | `ffd62670acdeb441c4a035edf93c2dd8c036101f` | 88.7 |
+| `npm run verify` | [0](portoes/n1c/verify.codigo) | `ffd62670acdeb441c4a035edf93c2dd8c036101f` | 600.5 |
+| `npm run typecheck` | [0](portoes/n1c/typecheck.codigo) | `ffd62670acdeb441c4a035edf93c2dd8c036101f` | 0.3 |
+<!-- N1C-PORTOES-FIM -->
+
+Os commits de código são `b3f0fdf9` (vistas, ordem, guardas, plantas e documentos), `a10ceb40` (medidor, captura, provas do portão e custo), `62d28810` (contrato de tipos da linha curta) e `ffd62670` (correção visual do salário irmão e prova do espaço). O último commit regista apenas os comprovativos, as capturas, este relatório e a resposta curta; o seu identificador lê-se em `git rev-parse HEAD`. Uma cabeça não pode ser escrita em ficheiros que façam parte do próprio commit; por isso, para deixar a árvore limpa, o relatório distingue a cabeça testada da cabeça posterior que regista as provas. Não houve `push`.
+
+### Custo e base de contagem
+
+<!-- N1C-CUSTO-INICIO -->
+Amostra do construtor a `2026-09-30T12:23:50.442Z`: **1 416 057 símbolos cobrados**, na base do contador «tokens used», e **51 416 057 símbolos com cache**. A entrada em cache é 50 000 000. Tempo decorrido desde o início desta sessão até à medição: **11959.6 segundos**, incluindo as passagens anteriores e as esperas. A amostra antecede o fecho da sessão, cuja linha final ainda não existe.
+
+Os **7 revisores automáticos** somam **340 980 símbolos cobrados** e **2 472 948 com cache**, separados do construtor. As bases e os contadores de cada sessão estão em [custo.json](custo.json).
+
+| Fecho lido do CLI | Símbolos «tokens used» | Total com cache no mesmo evento | Revisores na amostra histórica, cobrados / com cache |
+| --- | ---: | ---: | ---: |
+| N1 | 865 861 | 25 911 237 | 204 433 / 1 388 433 |
+| N1b | 1 096 982 | 32 087 574 | 243 206 / 1 576 198 |
+<!-- N1C-CUSTO-FIM -->
+
+Os dois fechos do construtor são cumulativos da mesma sessão e não se somam. As linhas literais «tokens used» ficam em `custo-contadores-cli.json`, com nome do registo, linha e resumo SHA-256, sem caminho local. Nos revisores automáticos não existe uma linha individual de terminal disponível: a base equivalente é calculada dos respetivos eventos `token_count`, como o ficheiro declara. Os valores não são preços em euros. As amostras N1 e N1b anteriores ficam conservadas, em vez de serem substituídas pela N1c.

@@ -1,0 +1,8 @@
+{
+  "comando": "node tests/inicio/navegacao.mjs --prova --json design/especime-v3/medicoes/n1-2026-09-30/navegacao-n1c.json",
+  "cabeca": "530a04f2ed4003705c00fcfbe167ca9516b78145",
+  "inicio": "2026-09-30T11:51:06.115Z",
+  "fim": "2026-09-30T11:51:11.174Z",
+  "segundos": 5.056677959000001,
+  "codigo": 0
+}

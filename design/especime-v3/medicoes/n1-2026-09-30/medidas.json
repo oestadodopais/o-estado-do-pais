@@ -1,14 +1,14 @@
 {
-  "bloco": "N1b",
-  "medido_em": "2026-09-30T10:58:14.650Z",
-  "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9",
+  "bloco": "N1c",
+  "medido_em": "2026-09-30T12:24:04.768Z",
+  "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f",
   "construcao": {
-    "commit": "53938d130cbb668579510094b7f22434bc44a0a9",
+    "commit": "ffd62670acdeb441c4a035edf93c2dd8c036101f",
     "ref": "n1-2026-09-30",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-09-30T10:45:41.624Z"
+    "construido_em": "2026-09-30T12:10:49.257Z"
   },
   "medidas": [
     {
@@ -22,6 +22,12 @@
       "valor": 0,
       "conhecido_positivo": true,
       "evidencia": "Título copiado sem atributos também recusado."
+    },
+    {
+      "nome": "primeiras_frases_fora_da_primeira",
+      "valor": 0,
+      "conhecido_positivo": true,
+      "evidencia": "A frase copiada sem marcas atravessa o filtro do texto cru e é recusada nas duas línguas."
     },
     {
       "nome": "portas_finais_dos_blocos",
@@ -72,7 +78,7 @@
       "nome": "ligacoes_internas_antigas",
       "valor": 0,
       "conhecido_positivo": true,
-      "evidencia": "Varredura das páginas construídas, com alvos antigos independentes da tabela atual."
+      "evidencia": "Ligações antigas relativas e absolutas plantadas nas duas edições provam o mesmo detetor que varre as páginas."
     },
     {
       "nome": "formas_municipais_preservadas",
@@ -82,58 +88,70 @@
           "forma": "mapa-por-concelho",
           "instrumento": "mapa-por-concelho-indice",
           "antes": "cd5a0af1a2be151612538e086fb98a686f7439a4cc391dfd66a40592e4502870",
-          "depois": "cd5a0af1a2be151612538e086fb98a686f7439a4cc391dfd66a40592e4502870",
-          "igual": true,
-          "linhas": 308
+          "depois": "ac68b123e248c3c6cd2c4533266683ca5fe6e8353683c93f974c98751b34e9ce",
+          "igual": false,
+          "linhas": 308,
+          "valores_iguais": true,
+          "alteracao_n1c": "Cabeçalho da tabela e legenda com a unidade das linhas."
         },
         {
           "lang": "pt",
           "forma": "barra-concelho-pais",
           "instrumento": "barra-concelho-pais",
           "antes": "bfdc33a7874f85a623ba8fc1533e47d0bc0b769bb6593a61af80779803a48a79",
-          "depois": "bfdc33a7874f85a623ba8fc1533e47d0bc0b769bb6593a61af80779803a48a79",
-          "igual": true,
-          "linhas": 4
+          "depois": null,
+          "igual": false,
+          "linhas": 4,
+          "valores_iguais": false,
+          "alteracao_n1c": "Barra isolada retirada pelo mandato N1c."
         },
         {
           "lang": "pt",
           "forma": "mapa-por-concelho",
           "instrumento": "mapa-por-concelho-ganho",
           "antes": "29feaa2a1b3ce400b5b9d88c92eeadbe55d95e3f835b0d501e391032b31d130b",
-          "depois": "29feaa2a1b3ce400b5b9d88c92eeadbe55d95e3f835b0d501e391032b31d130b",
-          "igual": true,
-          "linhas": 308
+          "depois": "8db0ff35b58a876496b2af2f9ea233fef60689486e0c19490663ff5c676217ce",
+          "igual": false,
+          "linhas": 308,
+          "valores_iguais": true,
+          "alteracao_n1c": "Cabeçalho da tabela e legenda com a unidade das linhas."
         },
         {
           "lang": "en",
           "forma": "mapa-por-concelho",
           "instrumento": "mapa-por-concelho-indice",
           "antes": "f07c16750f4a74fbf44f6dfe17ffe43ba04881601a15cbd189302df309ff7a90",
-          "depois": "f07c16750f4a74fbf44f6dfe17ffe43ba04881601a15cbd189302df309ff7a90",
-          "igual": true,
-          "linhas": 308
+          "depois": "eb0d05c0798f11aa8592c4d3dffffe8941ca66a1caa6860cdc254ea76a4ee8a3",
+          "igual": false,
+          "linhas": 308,
+          "valores_iguais": true,
+          "alteracao_n1c": "Cabeçalho da tabela e legenda com a unidade das linhas."
         },
         {
           "lang": "en",
           "forma": "barra-concelho-pais",
           "instrumento": "barra-concelho-pais",
           "antes": "a8af30e6b4a6bc5d490312a87b2723c666aabad53ef57eb1a6cc3670acc7077f",
-          "depois": "a8af30e6b4a6bc5d490312a87b2723c666aabad53ef57eb1a6cc3670acc7077f",
-          "igual": true,
-          "linhas": 4
+          "depois": null,
+          "igual": false,
+          "linhas": 4,
+          "valores_iguais": false,
+          "alteracao_n1c": "Barra isolada retirada pelo mandato N1c."
         },
         {
           "lang": "en",
           "forma": "mapa-por-concelho",
           "instrumento": "mapa-por-concelho-ganho",
           "antes": "e9e03f91bf79b88739145aae07c06309f9dc53ae985ac8b3cfbb9991f54122f7",
-          "depois": "e9e03f91bf79b88739145aae07c06309f9dc53ae985ac8b3cfbb9991f54122f7",
-          "igual": true,
-          "linhas": 308
+          "depois": "2360e2b9f78a453d2ee84c8aa3ef89484e413dc9b9a1baa1dc83bb10bc1613b0",
+          "igual": false,
+          "linhas": 308,
+          "valores_iguais": true,
+          "alteracao_n1c": "Cabeçalho da tabela e legenda com a unidade das linhas."
         }
       ],
       "conhecido_positivo": true,
-      "evidencia": "Resumo do HTML inteiro antes e depois, incluindo geometria, tabelas, valores e selos."
+      "evidencia": "O resumo do HTML regista as alterações autorizadas das legendas e dos cabeçalhos; as linhas dos dois mapas são comparadas ao estado anterior. A barra isolada saiu pelo mandato N1c."
     },
     {
       "nome": "tabelas_municipais",
@@ -141,7 +159,7 @@
         "mapas": 4,
         "tabelas": 4,
         "linhas": 1232,
-        "barras": 2,
+        "barras": 0,
         "camaras": 2
       },
       "conhecido_positivo": true,
@@ -220,6 +238,23 @@
       "evidencia": "Valor no desenho e na lista acessível, nos lados Portugal e União, nas duas edições; a União é o conhecido-positivo."
     },
     {
+      "nome": "desemprego_no_cartao",
+      "valor": [
+        {
+          "lang": "pt",
+          "valor_principal": "6",
+          "portugal_na_faixa": "6,0"
+        },
+        {
+          "lang": "en",
+          "valor_principal": "6",
+          "portugal_na_faixa": "6,0"
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "O achado 15 continua visível: a manchete e a faixa usam precisões diferentes também no cartão do emprego. O ponto 5 está parado."
+    },
+    {
       "nome": "contador_das_correcoes_e_historia",
       "valor": {
         "publicado": "3",
@@ -291,8 +326,8 @@
     {
       "nome": "capturas",
       "valor": {
-        "total": 90,
-        "resumos_conferidos": 90,
+        "total": 44,
+        "resumos_conferidos": 44,
         "problemas": []
       },
       "conhecido_positivo": true,
@@ -317,7 +352,124 @@
       "nome": "ficheiros_com_caminho_ou_utilizador",
       "valor": [],
       "conhecido_positivo": true,
-      "evidencia": "Controlo em memória; nenhum caminho pessoal é escrito no resultado."
+      "evidencia": "O mesmo detetor lê um ficheiro limpo, depois com um caminho fictício plantado; o ficheiro é removido no fim."
+    },
+    {
+      "nome": "acertos_n1c",
+      "valor": [
+        {
+          "lang": "pt",
+          "medida": "salario_irmao",
+          "correto": true,
+          "unidade": "euros por mês",
+          "texto": "Salário mínimo por mês, em base de doze meses: 1 073 euros por mêsfonte · Eurostat O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano."
+        },
+        {
+          "lang": "pt",
+          "medida": "portas_da_uniao",
+          "correto": true,
+          "portas": [
+            {
+              "href": "/estado-e-economia/#m-divida-publica-2025",
+              "texto": "Ver em Estado e economia →"
+            },
+            {
+              "href": "/emprego/#m-taxa-de-emprego-2025",
+              "texto": "Ver em Emprego →"
+            },
+            {
+              "href": "/emprego/#m-taxa-de-desemprego-mip-2025",
+              "texto": "Ver em Emprego →"
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "medida": "salario_irmao",
+          "correto": true,
+          "unidade": "euros per month",
+          "texto": "Monthly minimum wage, on a twelve-month basis: 1 073 euros per monthsource · Eurostat Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year."
+        },
+        {
+          "lang": "en",
+          "medida": "portas_da_uniao",
+          "correto": true,
+          "portas": [
+            {
+              "href": "/en/state-and-economy/#m-divida-publica-2025",
+              "texto": "See in State and economy →"
+            },
+            {
+              "href": "/en/employment/#m-taxa-de-emprego-2025",
+              "texto": "See in Employment →"
+            },
+            {
+              "href": "/en/employment/#m-taxa-de-desemprego-mip-2025",
+              "texto": "See in Employment →"
+            }
+          ]
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Os textos, unidades, caixas e destinos são conferidos pela célula integrada na construção."
+    },
+    {
+      "nome": "duas_amostras_de_custo",
+      "valor": [
+        {
+          "passagem": "N1",
+          "medido_em": "2026-09-30T10:30:21.825568+00:00",
+          "tokens_used": 865861,
+          "revisores": {
+            "sessoes": 3,
+            "simbolos_cobrados": 204433,
+            "simbolos_com_cache": 1388433
+          }
+        },
+        {
+          "passagem": "N1b",
+          "medido_em": "2026-09-30T10:57:26.259678+00:00",
+          "tokens_used": 1096982,
+          "revisores": {
+            "sessoes": 5,
+            "simbolos_cobrados": 243206,
+            "simbolos_com_cache": 1576198
+          }
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Duas linhas tokens used lidas dos registos e confrontadas com amostras reais do contador; os revisores indicam as duas bases."
+    },
+    {
+      "nome": "valores_municipais_conservados",
+      "valor": [
+        {
+          "lang": "pt",
+          "instrumento": "mapa-por-concelho-indice",
+          "linhas": 308,
+          "iguais": true
+        },
+        {
+          "lang": "pt",
+          "instrumento": "mapa-por-concelho-ganho",
+          "linhas": 308,
+          "iguais": true
+        },
+        {
+          "lang": "en",
+          "instrumento": "mapa-por-concelho-indice",
+          "linhas": 308,
+          "iguais": true
+        },
+        {
+          "lang": "en",
+          "instrumento": "mapa-por-concelho-ganho",
+          "linhas": 308,
+          "iguais": true
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Os 308 pares de identificador e valor de cada mapa são comparados aos guardados antes do N1."
     }
   ],
   "plantas": [
@@ -332,6 +484,46 @@
       "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
     },
     {
+      "nome": "primeira frase sem marcas (pt)",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: primeira frase de bloco fora da primeira página."
+    },
+    {
+      "nome": "título sem marcas (pt)",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (pt)",
+      "mordeu": true,
+      "queixa": "N1R emprego/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (pt)",
+      "mordeu": true,
+      "queixa": "N1R emprego/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "primeira frase sem marcas (en)",
+      "mordeu": true,
+      "queixa": "N1B en/employment/index.html: primeira frase de bloco fora da primeira página."
+    },
+    {
+      "nome": "título sem marcas (en)",
+      "mordeu": true,
+      "queixa": "N1B en/employment/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (en)",
+      "mordeu": true,
+      "queixa": "N1R en/employment/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (en)",
+      "mordeu": true,
+      "queixa": "N1R en/employment/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
       "nome": "cartão inteiro repetido noutra página de assunto",
       "mordeu": true,
       "queixa": "N1C pt: cartão pensao-media-anual-2025 inteiro em mais de uma página de assunto (salarios-pensoes-e-apoios, emprego)."
@@ -342,6 +534,16 @@
       "queixa": "E1 en: cartão licencas-de-construcao-2025 em falta nas páginas de assunto."
     },
     {
+      "nome": "inquilinos depois do total (pt)",
+      "mordeu": true,
+      "queixa": "T10 pt habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "inquilinos depois do total (en)",
+      "mordeu": true,
+      "queixa": "T10 en habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
       "nome": "cartão inteiro nos temas",
       "mordeu": true,
       "queixa": "N1I pt: o índice dos temas voltou a render cartões inteiros."
@@ -350,6 +552,16 @@
       "nome": "porta retirada da primeira página",
       "mordeu": true,
       "queixa": "E4 pt: a ordem das portas da primeira difere da declaração."
+    },
+    {
+      "nome": "linha longa indevida no índice",
+      "mordeu": true,
+      "queixa": "E4 en: porta precos da índice difere da declaração."
+    },
+    {
+      "nome": "título dos lugares diferente do índice",
+      "mordeu": true,
+      "queixa": "E7 pt: os títulos dos lugares diferem das secções do índice."
     },
     {
       "nome": "secção retirada do índice",
@@ -382,6 +594,36 @@
       "queixa": "N1R /en/my-work: redirecionamento incorreto."
     },
     {
+      "nome": "país retirado da declaração",
+      "mordeu": true,
+      "queixa": "E6 pt: o âmbito de emprego não nomeia Portugal."
+    },
+    {
+      "nome": "marca do mapa retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: falta a marca do mapa."
+    },
+    {
+      "nome": "unidade da tabela retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "unidade da legenda retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "base do limite retirada",
+      "mordeu": true,
+      "queixa": "N1M pt: falta a base da percentagem do limite."
+    },
+    {
+      "nome": "porta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
       "nome": "mapa retirado dos lugares",
       "mordeu": true,
       "queixa": "N1M pt: faltam mapas ou há mapas repetidos."
@@ -410,20 +652,46 @@
       "nome": "selo do limite municipal retirado",
       "mordeu": true,
       "queixa": "V2 pt: falta a marca da fonte da linha do limite."
+    },
+    {
+      "nome": "salário irmão sem unidade mensal",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base ou a sua caixa."
+    },
+    {
+      "nome": "atribuição fora da caixa do cartão",
+      "mordeu": true,
+      "queixa": "N1c en: a atribuição de divida-publica-2025 perdeu a sua caixa ou a frase."
+    },
+    {
+      "nome": "idade solta reposta",
+      "mordeu": true,
+      "queixa": "N1c pt: voltou uma faixa etária solta."
+    },
+    {
+      "nome": "nome antigo na porta da União",
+      "mordeu": true,
+      "queixa": "N1c en: as três portas da União não dizem o nome do destino."
+    },
+    {
+      "nome": "ficheiro com caminho plantado",
+      "limpo": true,
+      "mordeu": true,
+      "reposto": true
     }
   ],
   "portoes": {
     "build": {
       "codigo": 0,
-      "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9"
+      "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f"
     },
     "verify": {
       "codigo": 0,
-      "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9"
+      "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f"
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9"
+      "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f"
     }
   },
   "ponto5_cumprido": false,

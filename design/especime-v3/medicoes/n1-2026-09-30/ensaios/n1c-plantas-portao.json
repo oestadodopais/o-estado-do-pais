@@ -1,0 +1,8 @@
+{
+  "comando": "node design/especime-v3/medicoes/n1-2026-09-30/plantas-n1c-portao.mjs",
+  "cabeca": "530a04f2ed4003705c00fcfbe167ca9516b78145",
+  "inicio": "2026-09-30T11:58:18.663Z",
+  "fim": "2026-09-30T11:59:16.801Z",
+  "segundos": 58.134399291,
+  "codigo": 0
+}
