@@ -1,0 +1,613 @@
+{
+  "bloco": "N1d",
+  "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+  "construcao": {
+    "commit": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+    "ref": "n1-2026-09-30",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-30T13:10:26.914Z"
+  },
+  "inicio": "2026-09-30T13:11:57.430Z",
+  "fim": "2026-09-30T13:12:04.337Z",
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": 8,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/salarios-pensoes-e-apoios-pt-390.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "8c23e69d7e20d2a254a8a305b5998d67a34f81e43e0f6dab484d57d138c7a191",
+      "medidas": {
+        "contextos_municipais": [],
+        "salario_irmao": {
+          "espaco_px": 2.8125,
+          "nome_em_linha": true,
+          "planta_sem_espaco": true
+        },
+        "notas": [
+          {
+            "id": "retribuicao-minima-mensal-garantida-continente-2026",
+            "nota": {
+              "x": 18,
+              "y": 970.984375,
+              "largura": 354,
+              "altura": 152.96875
+            },
+            "contentor": {
+              "x": 18,
+              "y": 816.109375,
+              "largura": 354,
+              "altura": 308.84375
+            },
+            "cartao": {
+              "x": 18,
+              "y": 816.109375,
+              "largura": 354,
+              "altura": 154.875
+            },
+            "junta": true
+          }
+        ],
+        "janela": 390,
+        "documento": 390,
+        "altura": 3052,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/lugares-pt-390.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "163156786ef205abd19aeed8c2dacda0280eaf019a7a2bbe6dec73de5bdf960d",
+      "medidas": {
+        "contextos_municipais": [
+          {
+            "chave": "indice",
+            "texto": "Em 2024. A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.",
+            "caixa": {
+              "x": 18,
+              "y": 3384.4375,
+              "largura": 354,
+              "altura": 102.375
+            },
+            "periodo": "2024"
+          },
+          {
+            "chave": "ganho",
+            "texto": "É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em 2024, com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos. Portugal: 1 576,0 euros por mêsfonte · INE.",
+            "caixa": {
+              "x": 18,
+              "y": 12815.359375,
+              "largura": 354,
+              "altura": 154.5625
+            },
+            "periodo": "2024"
+          }
+        ],
+        "salario_irmao": null,
+        "notas": [],
+        "janela": 390,
+        "documento": 390,
+        "altura": 22788,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 30.234375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 220.1875,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 18,
+              "y": 2944.734375,
+              "largura": 354,
+              "altura": 19585.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/salarios-pensoes-e-apoios-pt-1280.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "519949ab8c1e503b73140a3fec6542128a5525a0524d9c1bc13fcf79846eff99",
+      "medidas": {
+        "contextos_municipais": [],
+        "salario_irmao": {
+          "espaco_px": 2.8125,
+          "nome_em_linha": true,
+          "planta_sem_espaco": true
+        },
+        "notas": [
+          {
+            "id": "retribuicao-minima-mensal-garantida-continente-2026",
+            "nota": {
+              "x": 656.625,
+              "y": 592.0625,
+              "largura": 248.046875,
+              "altura": 204.15625
+            },
+            "contentor": {
+              "x": 656.625,
+              "y": 371.296875,
+              "largura": 248.046875,
+              "altura": 434.109375
+            },
+            "cartao": {
+              "x": 656.625,
+              "y": 371.296875,
+              "largura": 248.046875,
+              "altura": 220.765625
+            },
+            "junta": true
+          }
+        ],
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1959,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/lugares-pt-1280.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "acd75ada7ec83e55d6ced29e911197abf7130a0b71fc8d5d91cb72089b4a0db2",
+      "medidas": {
+        "contextos_municipais": [
+          {
+            "chave": "indice",
+            "texto": "Em 2024. A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.",
+            "caixa": {
+              "x": 94,
+              "y": 2209.296875,
+              "largura": 520,
+              "altura": 76.78125
+            },
+            "periodo": "2024"
+          },
+          {
+            "chave": "ganho",
+            "texto": "É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em 2024, com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos. Portugal: 1 576,0 euros por mêsfonte · INE.",
+            "caixa": {
+              "x": 94,
+              "y": 11664.0625,
+              "largura": 520,
+              "altura": 103.375
+            },
+            "periodo": "2024"
+          }
+        ],
+        "salario_irmao": null,
+        "notas": [],
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 21487,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 230.359375,
+              "largura": 1092,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 303.71875,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 94,
+              "y": 1802.109375,
+              "largura": 1092,
+              "altura": 19501.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/salarios-pensoes-e-apoios-en-390.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "ea858c6947d29ee8a70e651cd5d0a561e242c221e3a0d96e0b96ce4e35bc08d2",
+      "medidas": {
+        "contextos_municipais": [],
+        "salario_irmao": {
+          "espaco_px": 2.8125,
+          "nome_em_linha": true,
+          "planta_sem_espaco": true
+        },
+        "notas": [
+          {
+            "id": "retribuicao-minima-mensal-garantida-continente-2026",
+            "nota": {
+              "x": 18,
+              "y": 950.6875,
+              "largura": 354,
+              "altura": 152.96875
+            },
+            "contentor": {
+              "x": 18,
+              "y": 795.8125,
+              "largura": 354,
+              "altura": 308.84375
+            },
+            "cartao": {
+              "x": 18,
+              "y": 795.8125,
+              "largura": 354,
+              "altura": 154.875
+            },
+            "junta": true
+          }
+        ],
+        "janela": 390,
+        "documento": 390,
+        "altura": 3084,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/lugares-en-390.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "78a0d5800500803acf2a3bc09dfc220af8627fbeea3e04423f72c801b71ddc3f",
+      "medidas": {
+        "contextos_municipais": [
+          {
+            "chave": "indice",
+            "texto": "In 2024. Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.",
+            "caixa": {
+              "x": 18,
+              "y": 3384.4375,
+              "largura": 354,
+              "altura": 102.375
+            },
+            "periodo": "2024"
+          },
+          {
+            "chave": "ganho",
+            "texto": "It is what a full-time employee earned per month, on average, in 2024, including what is paid on a regular basis for normal and overtime hours, before deductions. Portugal: 1 576,0 euros per monthsource · INE.",
+            "caixa": {
+              "x": 18,
+              "y": 12815.359375,
+              "largura": 354,
+              "altura": 128.96875
+            },
+            "periodo": "2024"
+          }
+        ],
+        "salario_irmao": null,
+        "notas": [],
+        "janela": 390,
+        "documento": 390,
+        "altura": 22809,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 30.234375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 220.1875,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 18,
+              "y": 2944.734375,
+              "largura": 354,
+              "altura": 19559.6875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/salarios-pensoes-e-apoios-en-1280.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "868ce45f450454d83bec71d08f018dc60d386cc5d47f400eec915c63246cae0a",
+      "medidas": {
+        "contextos_municipais": [],
+        "salario_irmao": {
+          "espaco_px": 2.8125,
+          "nome_em_linha": true,
+          "planta_sem_espaco": true
+        },
+        "notas": [
+          {
+            "id": "retribuicao-minima-mensal-garantida-continente-2026",
+            "nota": {
+              "x": 656.625,
+              "y": 592.0625,
+              "largura": 248.046875,
+              "altura": 204.15625
+            },
+            "contentor": {
+              "x": 656.625,
+              "y": 371.296875,
+              "largura": 248.046875,
+              "altura": 425.921875
+            },
+            "cartao": {
+              "x": 656.625,
+              "y": 371.296875,
+              "largura": 248.046875,
+              "altura": 220.765625
+            },
+            "junta": true
+          }
+        ],
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1954,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/lugares-en-1280.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "6bf5fb5407cba8032814061ab2d98f609b3c5b490a66451f186e6212df14b004",
+      "medidas": {
+        "contextos_municipais": [
+          {
+            "chave": "indice",
+            "texto": "In 2024. Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.",
+            "caixa": {
+              "x": 94,
+              "y": 2247.6875,
+              "largura": 520,
+              "altura": 76.78125
+            },
+            "periodo": "2024"
+          },
+          {
+            "chave": "ganho",
+            "texto": "It is what a full-time employee earned per month, on average, in 2024, including what is paid on a regular basis for normal and overtime hours, before deductions. Portugal: 1 576,0 euros per monthsource · INE.",
+            "caixa": {
+              "x": 94,
+              "y": 11702.453125,
+              "largura": 520,
+              "altura": 77.78125
+            },
+            "periodo": "2024"
+          }
+        ],
+        "salario_irmao": null,
+        "notas": [],
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 21500,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 230.359375,
+              "largura": 1092,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 303.71875,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 94,
+              "y": 1802.109375,
+              "largura": 1092,
+              "altura": 19514.078125
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "recortes": [
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/ganhos-contexto-pt-390.png",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "1b3d839c31b4f36d3ba6e6db7044514e632af9a31763301a350b691f646fbedc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/ganhos-contexto-pt-1280.png",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "2c35bd573d58488ae19ef16754eebac23ae58ff9c2ad7e584947b2aec7c2e237"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/ganhos-contexto-en-390.png",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "53ab2bc325180c3139c75f671781b4bc1f9d70656a4fcd805b8531b07b17ba6a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/n1d/ganhos-contexto-en-1280.png",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "d671d75fd3f9d1382f493513486a1316e4070c5c98c91a1aad40898d67ff0af2"
+    }
+  ]
+}

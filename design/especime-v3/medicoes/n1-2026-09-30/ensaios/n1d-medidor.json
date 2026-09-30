@@ -1,0 +1,11 @@
+{
+  "comando": "node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs --n1d",
+  "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+  "estado_da_arvore": "árvore por registar",
+  "arvore_por_registar": true,
+  "codigo_por_registar": false,
+  "inicio": "2026-09-30T13:24:36.563Z",
+  "fim": "2026-09-30T13:24:44.723Z",
+  "segundos": 8.157348417,
+  "codigo": 0
+}

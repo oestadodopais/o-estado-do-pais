@@ -1,0 +1,11 @@
+{
+  "comando": "npm run typecheck",
+  "cabeca": "bdec0994b5de8234adb912a154923c2e3530dac2",
+  "estado_da_arvore": "árvore por registar",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T13:04:29.771Z",
+  "fim": "2026-09-30T13:04:29.999Z",
+  "segundos": 0.22627166699999998,
+  "codigo": 0
+}

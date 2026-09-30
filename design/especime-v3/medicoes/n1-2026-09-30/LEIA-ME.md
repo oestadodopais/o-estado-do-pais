@@ -2,7 +2,7 @@
 
 Construção de 30.09.2026, no ramo `n1-2026-09-30`, por Codex `gpt-6-astra`. Base: `2cbc5cc46327697469347b98a2445494027861f4`.
 
-**Estado atual: ver a secção N1c no fim. A nota do §5 resolveu a contagem dos preços.** O teste de aceitação continua incompleto pelo requisito adicional do contador medido na N1b.
+**Estado atual: ver a secção N1d no fim. A nota do §5 resolveu a contagem dos preços.** O teste de aceitação continua incompleto pelo requisito adicional do contador medido na N1b.
 
 **No fecho anterior do N1**, o ponto 5 ficou parado: as duas linhas portuguesas do desemprego continuam em `6`. A organização das portas, a eliminação das cópias, a transferência dos dados municipais e as capturas estão construídas. O brief ainda chamava cinco aos seis cartões de preços existentes; preservaram-se os seis para conservar os 47 cartões nacionais.
 
@@ -237,3 +237,68 @@ Os **7 revisores automáticos** somam **340 980 símbolos cobrados** e **2 472 9
 <!-- N1C-CUSTO-FIM -->
 
 Os dois fechos do construtor são cumulativos da mesma sessão e não se somam. As linhas literais «tokens used» ficam em `custo-contadores-cli.json`, com nome do registo, linha e resumo SHA-256, sem caminho local. Nos revisores automáticos não existe uma linha individual de terminal disponível: a base equivalente é calculada dos respetivos eventos `token_count`, como o ficheiro declara. Os valores não são preços em euros. As amostras N1 e N1b anteriores ficam conservadas, em vez de serem substituídas pela N1c.
+
+
+## N1d · contexto municipal e provas que leem o texto rendido
+
+A releitura `design/especime-v3/critica/LEITURA-n1c-2026-09-30.md` distingue cinco plantas do pacote dos defeitos reais. Esta passagem trata os achados 3, 5, 9, 11, 12, 14 e 17, conforme a triagem. O ponto 5 do brief permanece parado no requisito adicional do contador. Nenhum valor, fonte ou história do livro-razão foi alterado.
+
+### Mandato e medida
+
+| # | Pedido | Alteração e prova |
+| --- | --- | --- |
+| 1 | Ano, definição e referência municipal | Por baixo de «Quanto se ganha?», a definição é a de `LEITURAS_DAS_MEDIDAS`: trabalhador por conta de outrem a tempo completo, média mensal, pagamentos regulares por horas normais e extraordinárias, antes de descontos. O período é lido das 308 linhas do mapa e conferido como comum. Portugal aparece pela linha `ganho-medio-mensal-2024`, com unidade e selo; período e unidade têm de coincidir com os municipais. A dívida mostra o período e a definição já declarada em `MEDIDAS_DO_CONCELHO`. As plantas retiram ou trocam ano, definição, referência e selo. |
+| 2 | Frase copiada com selo | Filtro e corpo usam a mesma normalização, que tira as pastilhas, os scripts e os estilos. As dez primeiras frases declaradas são comparadas às rendidas. As duas plantas copiam o HTML da primeira frase de Preços, com número e selo, sem título ou marcas de bloco, para Temas e União. A prova escreve `primeiraFrase`, `frase_rendida`, a igualdade e a presença do selo. |
+| 3 | Sentido da nota Eurostat | «O Eurostat ajusta os pagamentos» passa a «O Eurostat ajusta o valor para contar com esses pagamentos»; o inglês espelha. A célula compara o texto de `[data-base-doze-meses]` e recusa a sua ausência e a frase anterior. O comentário do componente declara a dependência da cadeia inglesa exata da nota. |
+| 4 | Contadores, portas e guiões | O contador de Lugares e os controlos F1 a F3 saem da condição de existência de domínios. Um controlo com a declaração de domínios vazia passa; três plantas retiram a contagem de Lugares, as datas e as formas. A V2 recusa ligações relativas e absolutas para a própria porta, sem depender de classes; conserva a possibilidade de uma âncora para a pesquisa dos concelhos. O medidor situa o salário irmão na caixa do seu cartão e o seu próprio detetor é exercitado antes e depois de retirar o valor. |
+| 5 | Provas, custo e fecho | A amostra desta passagem, as capturas pedidas, os três portões e a resposta curta ficam na pasta do bloco. O commit final das provas só toca medições e capturas. |
+
+O primeiro ensaio de construção recusou uma suposição do construtor: 307 linhas do índice guardam `reference_date`, mas a de Évora é derivada e lê o período nas suas origens. O resolvedor existente `periodoDasCamaras()` já confere essa cadeia e o período comum; passou a alimentar também o contexto do mapa. O período é 2024 nos dois mapas. O valor nacional dos ganhos é 1 576,0 euros por mês. Não se mudou a linha de Évora para satisfazer a vista.
+
+O segundo ensaio chegou à voz e pediu a classificação dos quatro contextos municipais. Foram classificados como conteúdo, e a exceção existente de «tempo completo» passou a incluir Lugares, pela mesma definição. A classificação foi conferida pelo portão da voz. A revisão editorial nova continua marcada como por ler antes de aterrar.
+
+### Registos históricos e provas na cabeça do código
+
+Os sete ensaios N1c `formas`, `navegacao`, `plantas-portao`, `primeiro-build`, `segundo-build`, `tipos` e `voz` conservam as saídas, os códigos e as cabeças que tinham. Os seus metadados dizem agora «árvore por registar», com `codigo_por_registar: true` e uma nota que distingue esse código da cabeça isolada. Os resultados históricos `navegacao-n1c.json` e `plantas-n1c-portao.json` dizem o mesmo. A marca acrescentada é retrospetiva e identificada como tal; não se inventou um resumo da árvore antiga.
+
+O ensaio de preparação `navegacao-n1d.json` também identifica a cabeça de base e o código por registar; as medidas finais estão em `medidas.json` e nos portões N1d.
+
+O corredor novo regista o estado da árvore no início e separa código por registar dos comprovativos pendentes. Um estado «árvore por registar» durante os portões finais pode corresponder apenas aos comprovativos que estão a ser escritos; `codigo_por_registar: false` explicita esse caso. Os guiões da própria pasta das medições contam como código.
+
+<!-- N1D-PROVAS-INICIO -->
+As duas provas foram repetidas na cabeça final do código `926e625bf5b704a9eac9c294d8e3491a528142d3`. Em [plantas-n1d-portao.json](plantas-n1d-portao.json), os quatro códigos são `0, 1, 1, 1`: o controlo limpo passa e cada alteração é recusada. O resumo confirma que o HTML foi reposto. Em [prova-formas-n1d.json](prova-formas-n1d.json), os quatro códigos também são `0, 1, 1, 1`; a declaração vazia de domínios não impede os três detetores de morder. O ficheiro original das formas permanece intacto.
+<!-- N1D-PROVAS-FIM -->
+
+### Capturas e medidas
+
+<!-- N1D-MEDIDAS-INICIO -->
+O [medidor](medir-n1.mjs), com `--n1d`, produziu **27 medidas com conhecido-positivo**, **51 plantas que mordem** e **zero erros de navegação**. O ponto 5 continua falso. As dez primeiras frases declaradas coincidem com as rendidas; quatro contextos mostram o período comum das linhas, e as duas edições mostram a referência nacional selada. Os quatro conjuntos municipais de 308 pares de identificador e valor mantêm-se iguais aos guardados antes do N1.
+
+O [manifesto das capturas](capturas-n1d.json) regista **8 páginas inteiras**: Lugares e Salários, pensões e apoios, a 390 e 1 280 px, nas duas edições. Junta **4 recortes do contexto dos ganhos**, nas mesmas combinações. Os doze resumos SHA-256 foram recalculados e conferidos. Não houve transbordo horizontal, cartão a transbordar ou erro de página. As tabelas ficam abertas nas capturas.
+
+A inspeção visual incluiu o contexto dos ganhos em português a 1 280 px e em inglês a 390 px, e a página dos salários nas mesmas combinações. A frase ajusta o valor, o nome e a unidade continuam legíveis, e a nota conserva a caixa do respetivo cartão. As quatro ocorrências do salário irmão mantêm a separação entre número e unidade, também conferida pela planta do espaço. A cabeça do manifesto é `926e625bf5b704a9eac9c294d8e3491a528142d3`.
+<!-- N1D-MEDIDAS-FIM -->
+
+### Portões e commits
+
+<!-- N1D-PORTOES-INICIO -->
+Os três comandos correram separadamente na cabeça final do código `926e625bf5b704a9eac9c294d8e3491a528142d3`. Todos os códigos, cabeças e durações abaixo foram lidos dos ficheiros; os três metadados dizem `codigo_por_registar: false`.
+
+| Comando | Código lido | Cabeça | Segundos |
+| --- | ---: | --- | ---: |
+| `npm run build` | [0](portoes/n1d/build.codigo) | `926e625bf5b704a9eac9c294d8e3491a528142d3` | 90.5 |
+| `npm run verify` | [0](portoes/n1d/verify.codigo) | `926e625bf5b704a9eac9c294d8e3491a528142d3` | 604.3 |
+| `npm run typecheck` | [0](portoes/n1d/typecheck.codigo) | `926e625bf5b704a9eac9c294d8e3491a528142d3` | 0.3 |
+<!-- N1D-PORTOES-FIM -->
+
+Commits de construção: `4eaf0905` (contexto municipal, frase Eurostat e células) e `926e625b` (guiões, conhecidos-positivos e identificação dos ensaios históricos). O commit seguinte contém apenas medições, capturas, este relatório e `RESPOSTA-construtor-n1d.md`. A cabeça final do ramo lê-se em `git rev-parse HEAD`; a cabeça final do código é a que acompanha os portões. Não houve `push`.
+
+### Custo
+
+<!-- N1D-CUSTO-INICIO -->
+Amostra N1d do construtor a `2026-09-30T13:24:22.023Z`: **1 635 872 símbolos cobrados**, na base «tokens used» (entrada sem cache mais saída), e **61 114 656 símbolos com cache**. A entrada em cache é **59 478 784**. Tempo decorrido desde o início desta sessão até à medição: **15596.8 segundos**.
+
+Os **8 revisores automáticos** somam **428 310 símbolos cobrados** e **3 502 358 com cache**. Os contadores individuais e as duas bases estão em [custo.json](custo.json), separados do construtor. A base dos revisores é calculada dos eventos `token_count`, sem alegar uma linha individual de terminal que não está disponível.
+<!-- N1D-CUSTO-FIM -->
+
+Os contadores são cumulativos da mesma sessão, com as passagens anteriores e as esperas. Não representam só o incremento N1d nem um preço em euros. As amostras N1 e N1b mantêm-se dentro do `custo.json`; a amostra N1c permanece no commit `471c88d5` e na secção histórica acima. O contador final do CLI desta passagem ainda não existe antes do fecho da sessão, e não foi inventado.
