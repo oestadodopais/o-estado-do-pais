@@ -2,7 +2,9 @@
 
 Construção de 30.09.2026, no ramo `n1-2026-09-30`, por Codex `gpt-6-astra`. Base: `2cbc5cc46327697469347b98a2445494027861f4`.
 
-**O teste de aceitação do §2 não está inteiramente cumprido.** O ponto 5 fica parado: as duas linhas portuguesas do desemprego continuam em `6`. A organização das portas, a eliminação das cópias, a transferência dos dados municipais e as capturas estão construídas. O brief também chama cinco aos seis cartões de preços existentes; preservaram-se os seis para conservar os 47 cartões nacionais.
+**Estado atual: ver a secção N1b no fim. A nota do §5 resolveu a contagem dos preços.** O teste de aceitação continua incompleto pelo requisito adicional do contador medido na N1b.
+
+**No fecho anterior do N1**, o ponto 5 ficou parado: as duas linhas portuguesas do desemprego continuam em `6`. A organização das portas, a eliminação das cópias, a transferência dos dados municipais e as capturas estão construídas. O brief ainda chamava cinco aos seis cartões de preços existentes; preservaram-se os seis para conservar os 47 cartões nacionais.
 
 ## Mandato e medidas
 
@@ -104,6 +106,51 @@ Amostra do construtor a `2026-09-30T10:29:35.535Z`: **25 445 981 símbolos** cum
 
 [medir-custo.py](medir-custo.py) lê apenas os metadados e os contadores das sessões desta árvore. [custo.json](custo.json) distingue o construtor dos revisores automáticos de aprovações. Os símbolos são os tokens cumulativos reportados, incluindo a entrada servida por cache; não são caracteres nem um preço em euros. A amostra é anterior ao fecho da sessão, explicitamente datada, e não finge ser o contador da última mensagem.
 
-## O que falta
+## O que faltava no fecho N1
 
 Aplicar o ponto 5 depois de resolver o tipo de atualização ou o contador derivado; reconciliar a menção a cinco preços no brief com os seis existentes; fazer a leitura a frio prevista antes da aterragem. O inventário marca a revisão editorial nova como por ler. Os portões locais verdes não substituem estes pontos nem uma publicação, que não foi pedida a este construtor.
+
+
+## N1b · Registos anteriores e requisito adicional do contador
+
+A nota do §5 do brief, em `c0cbc79b`, resolve a contagem dos preços: são os seis cartões já construídos. O mandato desta passagem está em `prompts/PROMPT-n1b-construtor.md`, acrescentado por `59e19d22`.
+
+### 1 · Registos anteriores conservados
+
+O commit `dfc86083` regista, tal como estavam na árvore de trabalho, os doze ficheiros pendentes: o relatório, `medidas.json`, `custo.json` e os comprovativos finais da cabeça `70ebf9b6`. Os três códigos lidos desses ficheiros eram zero. Não se repetiram comandos para substituir esses comprovativos históricos.
+
+### 2 · Ponto 5 parado no requisito adicional
+
+A decisão permite as duas entradas `correcao` do desemprego e a recontagem `3` → `5`. O ensaio pela função real `mudancasDoRegisto` confirmou o requisito seguinte:
+
+> mudancas: a linha "correcoes-publicadas" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+
+O erro ocorre nas duas edições. O registo exige um lugar para qualquer entrada `correcao` ou `atualizacao`. A linha derivada conta correções do próprio projeto; não está declarada como medida de Portugal, de uma região ou de um concelho. A história do contador precisa de `atualizacao`, porque a contagem anterior estava certa antes das duas publicações novas; classificá-la como `correcao` acrescentaria uma sexta correção.
+
+A [prova reproduzível](provar-contador-n1b.mjs), executada na cabeça `dfc86083`, trabalha apenas em memória e repõe os objetos no fim. O [resultado](prova-contador-n1b.json) e a [saída](ensaios/n1b-contador.log) mostram:
+
+| Passo do ensaio | Português | Inglês |
+| --- | ---: | ---: |
+| Registo original, conhecido-positivo | 3 correções | 3 correções |
+| Com as duas correções do desemprego, antes da história derivada | 5 correções | 5 correções |
+| Com a história 3 → 5 do contador | Recusado: falta lugar | Recusado: falta lugar |
+
+A cadeia proposta do contador passa pelo validador da história, com zero erros. O impedimento está no registo das mudanças. O código zero do ensaio significa que o impedimento foi reproduzido, não que a alteração foi publicada.
+
+O ponto 5 para aqui, pela instrução específica da N1b de parar se o mecanismo da linha derivada exigir algo que o brief não previu. Nenhum ficheiro do livro-razão foi alterado. Não se atribuiu uma contagem do projeto a Portugal para fazer passar o registo. É necessária uma decisão sobre a recontagem: ficar apenas no recibo e na história selada, ou ganhar um âmbito próprio do projeto no registo geral.
+
+### 3 · Medidas, portões e fecho da passagem
+
+`node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs --n1b` escreve o `medidas.json` atualizado. São agora vinte medidas com conhecido-positivo, incluindo três novas: os dois lados do desemprego na primeira página, a contagem com a história selada e as duas correções na página do registo em cada língua. A divergência antiga dos preços deixa de estar aberta.
+
+No estado conservado, as duas linhas portuguesas continuam em `6`, o contador continua em `3` e a primeira página mostra `6 %` para Portugal e `6,0 %` para a União, nas duas edições. A medida `ponto5_cumprido` é falsa. O medidor e os portões não são apresentados como aceitação integral do N1.
+
+Os três portões desta passagem correm depois do commit que contém `RESPOSTA-construtor-n1b.md`, cada um no seu comando. Os ficheiros novos ficam em `portoes/n1b/`, com cabeça, código, saída e duração. A tabela seguinte é atualizada só depois de ler esses ficheiros; os comprovativos da cabeça final e essa atualização do relatório ficam na árvore de trabalho, depois do último commit.
+
+<!-- N1B-PORTOES-INICIO -->
+Ainda por correr na cabeça final desta passagem.
+<!-- N1B-PORTOES-FIM -->
+
+Commits da passagem: `dfc86083` (registos anteriores), `3890bbe3` (prova e medidas) e o commit de fecho que contém a resposta N1b. O seu identificador lê-se nos ficheiros `.cabeca` dos portões finais. Não houve `push`.
+
+<!-- N1B-CUSTO -->
