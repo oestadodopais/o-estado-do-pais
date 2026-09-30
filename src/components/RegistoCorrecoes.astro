@@ -92,6 +92,7 @@ import Provenance from './Provenance.astro';
 import TituloDeTrabalho from './TituloDeTrabalho.astro';
 import ValorDaProva from './ValorDaProva.astro';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
@@ -199,6 +200,20 @@ const palavraRevisoes =
                     <span class="registo-mudanca-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
                       {e.nome.texto}
                     </span>
+                  )}
+                  {/* E0b: um nome lido do livro mantém a marca do campo e a
+                      língua da fonte, como o mesmo nome no cartão. */}
+                  {e.nome?.campo && (
+                    <CampoDaLinha
+                      id={e.claim}
+                      campo={e.nome.campo}
+                      valor={e.nome.texto}
+                      lang={lang}
+                      class="registo-mudanca-nome"
+                      lingua={e.nome.campo === 'name'
+                        ? linguaDoRotuloDaFonte(e.nome.texto, lang)
+                        : linguaDoTituloDoDocumento(e.nome.texto, lang)}
+                    />
                   )}
                   <span class="registo-mudanca-par">
                     <s

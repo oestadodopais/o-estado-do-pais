@@ -496,6 +496,11 @@ export const NOMES_DO_PROJETO = {
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DAS_LINHAS_DERIVADAS = {
+  // E0b: a medida nomeia-se pela contagem declarada na sua derivação.
+  'correcoes-publicadas': {
+    pt: 'Correções publicadas',
+    en: 'Published corrections',
+  },
   // A contagem e o lugar estão declarados na derivação desta linha.
   'estudos-evora-publicados': {
     pt: 'Estudos publicados sobre Évora',

@@ -38,8 +38,8 @@ corrections:
     kind: "correcao"
     old_value: "6"
     new_value: "6,0"
-    reason: "A apresentação omitira a casa decimal que o excerto da fonte já guardava: «6.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a quantidade nem declarar uma revisão da fonte."
-    reason_en: "The presentation omitted the decimal place already preserved in the source excerpt: «6.0». That decimal place is restored in the Portuguese number format, without changing the quantity or claiming a source revision."
+    reason: "A fonte escreve «6.0». A apresentação passa a conservar a casa decimal na forma portuguesa, sem mudar a quantidade nem declarar uma revisão da fonte."
+    reason_en: "The source writes «6.0». The presentation now preserves the decimal place in the Portuguese number format, without changing the quantity or claiming a source revision."
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
