@@ -13144,3 +13144,32 @@ O lugar de direção conferiu no ar a página da casa (as faixas e a ressalva no
 A reforma dos agentes do portátil corre-a o lugar de direção depois de duas corridas reais verdes de cada uma.
 
 **A aterragem.** A cabeça que aterra é a destes registos, com os três portões e a corrida «portão» do sítio por cima dela, e o motor avança o `master` de `e394307` para `4b46bef`, com a sua corrida «portao» verde nessa cabeça. Tudo aterra dormente: nenhum interruptor existe, e nenhuma corrida nova corre a sério até o diretor os pôr a `sim`. A avançada de `main` e do motor, o lançamento e o `verify:deploy` escrevem-se no registo seguinte, porque um registo não pode dizer a sua própria aterragem.
+
+### 1.142 O modelo do Codex é o mais recente que a conta aceita, a xhigh; o revisor automático das aprovações gastava um terço da quota; e a aterragem do F2.2b
+
+**Afecta:** nenhum
+
+**O que muda:** `scripts/leituras/construir-codex.sh` e `ler.sh` (o modelo por omissão passa a ser, por regra, o mais recente que a conta aceita, conferido por `sondar-modelo.sh`; as outras pastas com escrita entram em `--add-dir`); `retomar-codex.sh` passa para o repositório; `sondar-modelo.sh` é novo.
+
+**Data:** 30.09.2026.
+
+**A aterragem da §1.141 (o F2.2b).** O lugar de direção correu o guião da aterragem às 06:11 UTC:
+- a cabeça `bcec17de` passou os três portões às 05:59 (o relógio saltou das 01:00 para as 05:48, com o portátil suspenso, e a aterragem esperou por ele), a corrida «portão» do ramo passou às 06:11 (a 36676035692), e o ramo do motor passou a sua corrida (a 36675125620), a primeira das plantas do varrimento sem um `master` local;
+- `main` avançou de `3a37b809` para `bcec17de` e o motor de `e394307` para `4b46bef` às 06:12;
+- a Vercel publicou às 06:20, o `verify:deploy` passou com 0, e a corrida de `main` (a 36677013114) acabou verde às 06:22; o `master` do motor passou a sua corrida (a 36677015164).
+
+Tudo aterrou dormente, sem nenhum interruptor.
+
+**A pergunta do diretor.** A 30.09 de manhã o diretor perguntou porque gastava o Codex a quota tão depressa (25 % da semana numa noite, reposta na véspera) e se os modelos novos (o GPT-6.1 Sol, saído a 29.09) não deviam ser o padrão. O lugar de direção mediu nos registos das sessões do Codex:
+- o mostrador semanal foi de 5 % às 20:14 UTC de 29.09 a 25 % às 00:48 de 30.09, e o que o Codex cobra é a entrada fora da cache mais a saída (a linha «tokens used», conferida contra os contadores: 41 510 371 de entrada menos 40 620 672 em cache, mais 219 293 de saída, dá os 1 108 992 da sessão do construtor);
+- nessa janela o construtor (a sessão das passagens F2.2c a F2.2e) gastou 1 108 992 símbolos, as duas leituras do UE1 (gpt-5.6-sol) 663 206, e **o revisor automático das aprovações («codex-auto-review», sete sessões) 740 538**: um ponto da semana são cerca de 126 000 símbolos cobrados;
+- o `--approve-for-me` do lançamento, diz a ajuda do próprio Codex, «routes approval requests through automatic review»: cada escrita do construtor fora da sua pasta de arranque (a segunda worktree) pedia aprovação, e um modelo revisor lia o repositório para a dar. Provado com uma escrita numa pasta de fora: sem `--add-dir` abriu uma sessão do revisor; com `--add-dir` nenhuma, e o ficheiro ficou escrito.
+
+**As decisões do diretor (30.09.2026).**
+1. **O modelo do Codex por omissão é o mais recente**, como se faz com o Claude: quando sai um modelo novo, seja Astra, Sol ou outro nome, substitui o anterior. A 30.09 a conta recusou o `gpt-6.1-sol` («The 'gpt-6.1-sol' model is not supported when using Codex with a ChatGPT account»), por isso o construtor fica no `gpt-6-astra` e o leitor no `gpt-5.6-sol` até a sonda dizer que a conta o aceita; a sonda corre-se no arranque de cada sessão.
+2. **O raciocínio fica em xhigh**, o mais alto abaixo do máximo, em todas as corridas do Codex.
+3. **A otimização faz-se**: as outras pastas com escrita entram em `--add-dir`, e a leitura vem na última mensagem, que o `-o` guarda, sem pedir ao leitor que escreva um ficheiro.
+
+**A recomendação do lugar de direção sobre os dois lugares.** O leitor é a Sol (mais barata, e o lugar mede-se pelas plantas em cada leitura); o construtor é a Astra até uma experiência dizer outra coisa: quando a conta aceitar o GPT-6.1 Sol, um bloco constrói-se com ele e conta-se o que a leitura a frio acha e quantas passagens de correção precisa, contra a história da Astra (o F2.2b precisou de três passagens e quatro leituras); se for igual ou melhor, a Sol passa a construir e a Astra fica como recurso.
+
+**A poupança de Claude no mesmo período.** O lado do Claude foi de 50 % para 57 % da semana na mesma noite, com o construtor e o leitor do Opus 5.5 nas duas frentes e o lugar de direção; o plano do Codex é o «prolite», mais pequeno, e os mesmos símbolos são uma parte maior da semana dele.
