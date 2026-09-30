@@ -1,0 +1,38 @@
+{
+  "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+  "construcao": {
+    "commit": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+    "ref": "n1-2026-09-30",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-30T13:10:26.914Z"
+  },
+  "resultados": [
+    {
+      "nome": "limpo",
+      "codigo": 0,
+      "passou": true,
+      "queixa": null
+    },
+    {
+      "nome": "unidade municipal trocada",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "✗ o campo \"unit\" de \"agueda-indice-de-divida-2024\" não foi transcrito fielmente do livro-razão."
+    },
+    {
+      "nome": "campo municipal fora do mapa",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "✗ data-linha-claim=\"agueda-indice-de-divida-2024\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice."
+    },
+    {
+      "nome": "unidade de linha alheia à tabela",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "✗ data-linha-claim=\"ganho-medio-mensal-2024\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice."
+    }
+  ],
+  "reposto": true
+}

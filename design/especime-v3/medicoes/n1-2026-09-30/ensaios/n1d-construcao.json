@@ -1,0 +1,11 @@
+{
+  "comando": "npm run build",
+  "cabeca": "bdec0994b5de8234adb912a154923c2e3530dac2",
+  "estado_da_arvore": "árvore por registar",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T13:04:19.280Z",
+  "fim": "2026-09-30T13:04:29.285Z",
+  "segundos": 10.001278000000001,
+  "codigo": 1
+}

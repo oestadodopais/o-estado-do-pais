@@ -1,0 +1,11 @@
+{
+  "comando": "node scripts/check-voz.mjs",
+  "cabeca": "bdec0994b5de8234adb912a154923c2e3530dac2",
+  "estado_da_arvore": "árvore por registar",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T13:08:05.778Z",
+  "fim": "2026-09-30T13:08:30.286Z",
+  "segundos": 24.506055084,
+  "codigo": 0
+}

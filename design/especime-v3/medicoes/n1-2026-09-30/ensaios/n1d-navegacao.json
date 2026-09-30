@@ -1,0 +1,11 @@
+{
+  "comando": "node tests/inicio/navegacao.mjs --prova --json design/especime-v3/medicoes/n1-2026-09-30/navegacao-n1d.json",
+  "cabeca": "bdec0994b5de8234adb912a154923c2e3530dac2",
+  "estado_da_arvore": "árvore por registar",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T13:07:45.358Z",
+  "fim": "2026-09-30T13:07:52.385Z",
+  "segundos": 7.023145417,
+  "codigo": 0
+}

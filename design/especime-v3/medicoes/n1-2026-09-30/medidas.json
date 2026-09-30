@@ -1,14 +1,14 @@
 {
-  "bloco": "N1c",
-  "medido_em": "2026-09-30T12:24:04.768Z",
-  "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f",
+  "bloco": "N1d",
+  "medido_em": "2026-09-30T13:24:44.708Z",
+  "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3",
   "construcao": {
-    "commit": "ffd62670acdeb441c4a035edf93c2dd8c036101f",
+    "commit": "926e625bf5b704a9eac9c294d8e3491a528142d3",
     "ref": "n1-2026-09-30",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-09-30T12:10:49.257Z"
+    "construido_em": "2026-09-30T13:10:26.914Z"
   },
   "medidas": [
     {
@@ -27,7 +27,7 @@
       "nome": "primeiras_frases_fora_da_primeira",
       "valor": 0,
       "conhecido_positivo": true,
-      "evidencia": "A frase copiada sem marcas atravessa o filtro do texto cru e é recusada nas duas línguas."
+      "evidencia": "A cópia rendida conserva o valor e o selo, atravessa o filtro do texto cru e é recusada nas duas línguas."
     },
     {
       "nome": "portas_finais_dos_blocos",
@@ -160,7 +160,9 @@
         "tabelas": 4,
         "linhas": 1232,
         "barras": 0,
-        "camaras": 2
+        "camaras": 2,
+        "contextos": 4,
+        "referencias_portugal": 2
       },
       "conhecido_positivo": true,
       "evidencia": "Duas tabelas de 308 linhas por edição; o valor trocado também é recusado."
@@ -321,13 +323,13 @@
         }
       ],
       "conhecido_positivo": true,
-      "evidencia": "Valor exclusivo do domínio conservado fora de um cartão inteiro."
+      "evidencia": "O valor irmão aparece nas duas edições, dentro da caixa do cartão do salário mínimo; o mesmo detetor mede a cópia limpa e a cópia sem esse valor."
     },
     {
       "nome": "capturas",
       "valor": {
-        "total": 44,
-        "resumos_conferidos": 44,
+        "total": 8,
+        "resumos_conferidos": 8,
         "problemas": []
       },
       "conhecido_positivo": true,
@@ -362,7 +364,7 @@
           "medida": "salario_irmao",
           "correto": true,
           "unidade": "euros por mês",
-          "texto": "Salário mínimo por mês, em base de doze meses: 1 073 euros por mêsfonte · Eurostat O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano."
+          "texto": "Salário mínimo por mês, em base de doze meses: 1 073 euros por mêsfonte · Eurostat O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano."
         },
         {
           "lang": "pt",
@@ -388,7 +390,7 @@
           "medida": "salario_irmao",
           "correto": true,
           "unidade": "euros per month",
-          "texto": "Monthly minimum wage, on a twelve-month basis: 1 073 euros per monthsource · Eurostat Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year."
+          "texto": "Monthly minimum wage, on a twelve-month basis: 1 073 euros per monthsource · Eurostat Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve months a year."
         },
         {
           "lang": "en",
@@ -470,6 +472,92 @@
       ],
       "conhecido_positivo": true,
       "evidencia": "Os 308 pares de identificador e valor de cada mapa são comparados aos guardados antes do N1."
+    },
+    {
+      "nome": "frases_declaradas_iguais_as_rendidas",
+      "valor": [
+        {
+          "id": "precos",
+          "lang": "en",
+          "primeiraFrase": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+          "frase_rendida": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+          "igual": true
+        },
+        {
+          "id": "casa",
+          "lang": "en",
+          "primeiraFrase": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union.",
+          "frase_rendida": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union.",
+          "igual": true
+        },
+        {
+          "id": "trabalho",
+          "lang": "en",
+          "primeiraFrase": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same.",
+          "frase_rendida": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same.",
+          "igual": true
+        },
+        {
+          "id": "estado",
+          "lang": "en",
+          "primeiraFrase": "Public debt fell from 2024 to 2025 and is above the Union average.",
+          "frase_rendida": "Public debt fell from 2024 to 2025 and is above the Union average.",
+          "igual": true
+        },
+        {
+          "id": "pobreza",
+          "lang": "en",
+          "primeiraFrase": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union.",
+          "frase_rendida": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union.",
+          "igual": true
+        },
+        {
+          "id": "precos",
+          "lang": "pt",
+          "primeiraFrase": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+          "frase_rendida": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+          "igual": true
+        },
+        {
+          "id": "casa",
+          "lang": "pt",
+          "primeiraFrase": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União.",
+          "frase_rendida": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União.",
+          "igual": true
+        },
+        {
+          "id": "trabalho",
+          "lang": "pt",
+          "primeiraFrase": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo.",
+          "frase_rendida": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo.",
+          "igual": true
+        },
+        {
+          "id": "estado",
+          "lang": "pt",
+          "primeiraFrase": "A dívida pública desceu de 2024 para 2025 e está acima da média da União.",
+          "frase_rendida": "A dívida pública desceu de 2024 para 2025 e está acima da média da União.",
+          "igual": true
+        },
+        {
+          "id": "pobreza",
+          "lang": "pt",
+          "primeiraFrase": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União.",
+          "frase_rendida": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União.",
+          "igual": true
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "As dez primeiras frases são comparadas ao texto rendido sem selos; duas cópias rendidas com selo provam o detetor."
+    },
+    {
+      "nome": "contexto_dos_mapas",
+      "valor": {
+        "periodos": 4,
+        "referencias_portugal": 2
+      },
+      "conhecido_positivo": true,
+      "evidencia": "Quatro períodos das linhas, duas definições por edição e o valor nacional com unidade e selo; plantas retiram o ano, a definição, a referência e o selo."
     }
   ],
   "plantas": [
@@ -484,44 +572,52 @@
       "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
     },
     {
-      "nome": "primeira frase sem marcas (pt)",
+      "nome": "primeira frase rendida com selo (pt)",
       "mordeu": true,
-      "queixa": "N1B emprego/index.html: primeira frase de bloco fora da primeira página."
+      "queixa": "N1B temas/index.html: primeira frase de bloco fora da primeira página.",
+      "primeiraFrase": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "frase_rendida": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "iguais": true,
+      "com_selo": true
     },
     {
       "nome": "título sem marcas (pt)",
       "mordeu": true,
-      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+      "queixa": "N1B temas/index.html: título de bloco fora da primeira página."
     },
     {
       "nome": "ligação antiga relativa (pt)",
       "mordeu": true,
-      "queixa": "N1R emprego/index.html: ligação interna para /o-meu-dinheiro."
+      "queixa": "N1R temas/index.html: ligação interna para /o-meu-dinheiro."
     },
     {
       "nome": "ligação antiga absoluta (pt)",
       "mordeu": true,
-      "queixa": "N1R emprego/index.html: ligação interna para /o-meu-dinheiro."
+      "queixa": "N1R temas/index.html: ligação interna para /o-meu-dinheiro."
     },
     {
-      "nome": "primeira frase sem marcas (en)",
+      "nome": "primeira frase rendida com selo (en)",
       "mordeu": true,
-      "queixa": "N1B en/employment/index.html: primeira frase de bloco fora da primeira página."
+      "queixa": "N1B en/european-union/index.html: primeira frase de bloco fora da primeira página.",
+      "primeiraFrase": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "frase_rendida": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "iguais": true,
+      "com_selo": true
     },
     {
       "nome": "título sem marcas (en)",
       "mordeu": true,
-      "queixa": "N1B en/employment/index.html: título de bloco fora da primeira página."
+      "queixa": "N1B en/european-union/index.html: título de bloco fora da primeira página."
     },
     {
       "nome": "ligação antiga relativa (en)",
       "mordeu": true,
-      "queixa": "N1R en/employment/index.html: ligação interna para /o-meu-dinheiro."
+      "queixa": "N1R en/european-union/index.html: ligação interna para /o-meu-dinheiro."
     },
     {
       "nome": "ligação antiga absoluta (en)",
       "mordeu": true,
-      "queixa": "N1R en/employment/index.html: ligação interna para /o-meu-dinheiro."
+      "queixa": "N1R en/european-union/index.html: ligação interna para /o-meu-dinheiro."
     },
     {
       "nome": "cartão inteiro repetido noutra página de assunto",
@@ -624,6 +720,36 @@
       "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
     },
     {
+      "nome": "porta absoluta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
+      "nome": "ano dos ganhos retirado",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: o contexto perdeu o período das linhas."
+    },
+    {
+      "nome": "ano da dívida trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: o contexto perdeu o período das linhas."
+    },
+    {
+      "nome": "definição dos ganhos retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a definição municipal difere da declaração."
+    },
+    {
+      "nome": "referência de Portugal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo."
+    },
+    {
+      "nome": "selo da referência de Portugal retirado",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo."
+    },
+    {
       "nome": "mapa retirado dos lugares",
       "mordeu": true,
       "queixa": "N1M pt: faltam mapas ou há mapas repetidos."
@@ -656,7 +782,22 @@
     {
       "nome": "salário irmão sem unidade mensal",
       "mordeu": true,
-      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base ou a sua caixa."
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "valor irmão retirado",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "explicação da base retirada",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "explicação da base trocada",
+      "mordeu": true,
+      "queixa": "N1c en: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
     },
     {
       "nome": "atribuição fora da caixa do cartão",
@@ -674,6 +815,11 @@
       "queixa": "N1c en: as três portas da União não dizem o nome do destino."
     },
     {
+      "nome": "detetor do medidor sem valor irmão",
+      "limpo": true,
+      "mordeu": true
+    },
+    {
       "nome": "ficheiro com caminho plantado",
       "limpo": true,
       "mordeu": true,
@@ -683,15 +829,15 @@
   "portoes": {
     "build": {
       "codigo": 0,
-      "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f"
+      "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3"
     },
     "verify": {
       "codigo": 0,
-      "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f"
+      "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3"
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "ffd62670acdeb441c4a035edf93c2dd8c036101f"
+      "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3"
     }
   },
   "ponto5_cumprido": false,

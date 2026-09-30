@@ -1,0 +1,415 @@
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7452,
+    "blocos_na_primeira": 10,
+    "blocos_fora": 0,
+    "titulos_fora": 0,
+    "frases_fora": 0,
+    "portas_dos_blocos": 10,
+    "ligacoes_antigas": 0,
+    "cartoes_fora_dos_assuntos": 0
+  },
+  "frases_conferidas": [
+    {
+      "id": "precos",
+      "lang": "en",
+      "primeiraFrase": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "frase_rendida": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "igual": true
+    },
+    {
+      "id": "casa",
+      "lang": "en",
+      "primeiraFrase": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union.",
+      "frase_rendida": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union.",
+      "igual": true
+    },
+    {
+      "id": "trabalho",
+      "lang": "en",
+      "primeiraFrase": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same.",
+      "frase_rendida": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same.",
+      "igual": true
+    },
+    {
+      "id": "estado",
+      "lang": "en",
+      "primeiraFrase": "Public debt fell from 2024 to 2025 and is above the Union average.",
+      "frase_rendida": "Public debt fell from 2024 to 2025 and is above the Union average.",
+      "igual": true
+    },
+    {
+      "id": "pobreza",
+      "lang": "en",
+      "primeiraFrase": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union.",
+      "frase_rendida": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union.",
+      "igual": true
+    },
+    {
+      "id": "precos",
+      "lang": "pt",
+      "primeiraFrase": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "frase_rendida": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "igual": true
+    },
+    {
+      "id": "casa",
+      "lang": "pt",
+      "primeiraFrase": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União.",
+      "frase_rendida": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União.",
+      "igual": true
+    },
+    {
+      "id": "trabalho",
+      "lang": "pt",
+      "primeiraFrase": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo.",
+      "frase_rendida": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo.",
+      "igual": true
+    },
+    {
+      "id": "estado",
+      "lang": "pt",
+      "primeiraFrase": "A dívida pública desceu de 2024 para 2025 e está acima da média da União.",
+      "frase_rendida": "A dívida pública desceu de 2024 para 2025 e está acima da média da União.",
+      "igual": true
+    },
+    {
+      "id": "pobreza",
+      "lang": "pt",
+      "primeiraFrase": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União.",
+      "frase_rendida": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União.",
+      "igual": true
+    }
+  ],
+  "entradas": {
+    "edicoes": 2,
+    "cartoes_dos_temas": 0,
+    "cartoes_nas_entradas": 94,
+    "fora": 0,
+    "entradas_na_primeira": 16,
+    "entradas_no_indice": 16,
+    "mapas_do_sitio": 1,
+    "enderecos_no_mapa_do_sitio": 7402,
+    "entradas_no_mapa_do_sitio": 16,
+    "redirecionamentos": 13
+  },
+  "concelhos": {
+    "mapas": 4,
+    "tabelas": 4,
+    "linhas": 1232,
+    "barras": 0,
+    "camaras": 2,
+    "contextos": 4,
+    "referencias_portugal": 2
+  },
+  "acertos": [
+    {
+      "lang": "pt",
+      "medida": "salario_irmao",
+      "correto": true,
+      "unidade": "euros por mês",
+      "texto": "Salário mínimo por mês, em base de doze meses: 1 073 euros por mêsfonte · Eurostat O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano."
+    },
+    {
+      "lang": "pt",
+      "medida": "portas_da_uniao",
+      "correto": true,
+      "portas": [
+        {
+          "href": "/estado-e-economia/#m-divida-publica-2025",
+          "texto": "Ver em Estado e economia →"
+        },
+        {
+          "href": "/emprego/#m-taxa-de-emprego-2025",
+          "texto": "Ver em Emprego →"
+        },
+        {
+          "href": "/emprego/#m-taxa-de-desemprego-mip-2025",
+          "texto": "Ver em Emprego →"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "medida": "salario_irmao",
+      "correto": true,
+      "unidade": "euros per month",
+      "texto": "Monthly minimum wage, on a twelve-month basis: 1 073 euros per monthsource · Eurostat Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve months a year."
+    },
+    {
+      "lang": "en",
+      "medida": "portas_da_uniao",
+      "correto": true,
+      "portas": [
+        {
+          "href": "/en/state-and-economy/#m-divida-publica-2025",
+          "texto": "See in State and economy →"
+        },
+        {
+          "href": "/en/employment/#m-taxa-de-emprego-2025",
+          "texto": "See in Employment →"
+        },
+        {
+          "href": "/en/employment/#m-taxa-de-desemprego-mip-2025",
+          "texto": "See in Employment →"
+        }
+      ]
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "bloco copiado para outra página de assunto",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: 1 bloco(s) fora da primeira página."
+    },
+    {
+      "nome": "título copiado sem as marcas do bloco",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "primeira frase rendida com selo (pt)",
+      "mordeu": true,
+      "queixa": "N1B temas/index.html: primeira frase de bloco fora da primeira página.",
+      "primeiraFrase": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "frase_rendida": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "iguais": true,
+      "com_selo": true
+    },
+    {
+      "nome": "título sem marcas (pt)",
+      "mordeu": true,
+      "queixa": "N1B temas/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (pt)",
+      "mordeu": true,
+      "queixa": "N1R temas/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (pt)",
+      "mordeu": true,
+      "queixa": "N1R temas/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "primeira frase rendida com selo (en)",
+      "mordeu": true,
+      "queixa": "N1B en/european-union/index.html: primeira frase de bloco fora da primeira página.",
+      "primeiraFrase": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "frase_rendida": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "iguais": true,
+      "com_selo": true
+    },
+    {
+      "nome": "título sem marcas (en)",
+      "mordeu": true,
+      "queixa": "N1B en/european-union/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (en)",
+      "mordeu": true,
+      "queixa": "N1R en/european-union/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (en)",
+      "mordeu": true,
+      "queixa": "N1R en/european-union/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "cartão inteiro repetido noutra página de assunto",
+      "mordeu": true,
+      "queixa": "N1C pt: cartão pensao-media-anual-2025 inteiro em mais de uma página de assunto (salarios-pensoes-e-apoios, emprego)."
+    },
+    {
+      "nome": "cartão nacional omitido",
+      "mordeu": true,
+      "queixa": "E1 en: cartão licencas-de-construcao-2025 em falta nas páginas de assunto."
+    },
+    {
+      "nome": "inquilinos depois do total (pt)",
+      "mordeu": true,
+      "queixa": "T10 pt habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "inquilinos depois do total (en)",
+      "mordeu": true,
+      "queixa": "T10 en habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "cartão inteiro nos temas",
+      "mordeu": true,
+      "queixa": "N1I pt: o índice dos temas voltou a render cartões inteiros."
+    },
+    {
+      "nome": "porta retirada da primeira página",
+      "mordeu": true,
+      "queixa": "E4 pt: a ordem das portas da primeira difere da declaração."
+    },
+    {
+      "nome": "linha longa indevida no índice",
+      "mordeu": true,
+      "queixa": "E4 en: porta precos da índice difere da declaração."
+    },
+    {
+      "nome": "título dos lugares diferente do índice",
+      "mordeu": true,
+      "queixa": "E7 pt: os títulos dos lugares diferem das secções do índice."
+    },
+    {
+      "nome": "secção retirada do índice",
+      "mordeu": true,
+      "queixa": "E4 pt: as secções de precos não estão no índice pela ordem declarada."
+    },
+    {
+      "nome": "âmbito errado na página de assunto",
+      "mordeu": true,
+      "queixa": "E3 pt: o título ou o âmbito de emprego difere da declaração."
+    },
+    {
+      "nome": "cartão das câmaras retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1L pt: falta o cartão das câmaras nos lugares."
+    },
+    {
+      "nome": "porta omitida do mapa do sítio",
+      "mordeu": true,
+      "queixa": "E5 en: /en/employment/ não está no mapa do sítio."
+    },
+    {
+      "nome": "mapa nomeado em falta",
+      "mordeu": true,
+      "queixa": "E5: o índice do mapa do sítio nomeia /sitemap-1.xml, que a construção não tem."
+    },
+    {
+      "nome": "redirecionamento inglês para a página errada",
+      "mordeu": true,
+      "queixa": "N1R /en/my-work: redirecionamento incorreto."
+    },
+    {
+      "nome": "país retirado da declaração",
+      "mordeu": true,
+      "queixa": "E6 pt: o âmbito de emprego não nomeia Portugal."
+    },
+    {
+      "nome": "marca do mapa retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: falta a marca do mapa."
+    },
+    {
+      "nome": "unidade da tabela retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "unidade da legenda retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "base do limite retirada",
+      "mordeu": true,
+      "queixa": "N1M pt: falta a base da percentagem do limite."
+    },
+    {
+      "nome": "porta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
+      "nome": "porta absoluta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
+      "nome": "ano dos ganhos retirado",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: o contexto perdeu o período das linhas."
+    },
+    {
+      "nome": "ano da dívida trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: o contexto perdeu o período das linhas."
+    },
+    {
+      "nome": "definição dos ganhos retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a definição municipal difere da declaração."
+    },
+    {
+      "nome": "referência de Portugal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo."
+    },
+    {
+      "nome": "selo da referência de Portugal retirado",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo."
+    },
+    {
+      "nome": "mapa retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1M pt: faltam mapas ou há mapas repetidos."
+    },
+    {
+      "nome": "linha retirada da tabela",
+      "mordeu": true,
+      "queixa": "N1M pt indice: as linhas da tabela diferem dos concelhos declarados."
+    },
+    {
+      "nome": "valor municipal trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: valor da linha agueda-indice-de-divida-2024 diferente do livro-razão."
+    },
+    {
+      "nome": "geometria municipal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a geometria não tem um desenho por concelho."
+    },
+    {
+      "nome": "contagem das câmaras trocada",
+      "mordeu": true,
+      "queixa": "V2 pt: camaras_acima_do_limite: a contagem não coincide com as linhas do índice de dívida."
+    },
+    {
+      "nome": "selo do limite municipal retirado",
+      "mordeu": true,
+      "queixa": "V2 pt: falta a marca da fonte da linha do limite."
+    },
+    {
+      "nome": "salário irmão sem unidade mensal",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "valor irmão retirado",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "explicação da base retirada",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "explicação da base trocada",
+      "mordeu": true,
+      "queixa": "N1c en: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "atribuição fora da caixa do cartão",
+      "mordeu": true,
+      "queixa": "N1c en: a atribuição de divida-publica-2025 perdeu a sua caixa ou a frase."
+    },
+    {
+      "nome": "idade solta reposta",
+      "mordeu": true,
+      "queixa": "N1c pt: voltou uma faixa etária solta."
+    },
+    {
+      "nome": "nome antigo na porta da União",
+      "mordeu": true,
+      "queixa": "N1c en: as três portas da União não dizem o nome do destino."
+    }
+  ]
+}

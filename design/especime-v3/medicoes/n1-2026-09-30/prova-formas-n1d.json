@@ -1,0 +1,30 @@
+{
+  "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+  "original_intacto": true,
+  "resultados": [
+    {
+      "nome": "controlo sem domínios",
+      "codigo": 0,
+      "passou": true,
+      "queixa": null
+    },
+    {
+      "nome": "lugares ausentes sem domínios",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "· há uma página dos lugares em cada uma das 2 edições, e a varredura encontrou 0 página(s) dos lugares em vez de 2. Ou a construção não as fez, ou a leitura não as vê."
+    },
+    {
+      "nome": "datas ausentes sem domínios",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "· nenhuma data de linha foi encontrada em dist/, e os recibos e as leituras rendem três por medida. O conhecido-positivo da F1 falhou: a marca mudou de nome ou a leitura partiu-se."
+    },
+    {
+      "nome": "formas ausentes sem domínios",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "· nenhuma forma gráfica foi encontrada em dist/, e a página dos lugares desenha pelo menos uma. O conhecido-positivo da F2 e da F3 falhou."
+    }
+  ]
+}
