@@ -1,8 +1,8 @@
 # E0 · As linhas do projeto e a correção do desemprego
 
-O conteúdo e as provas locais estão medidos. Os três portões da cabeça final ainda estão por correr.
+O teste de aceitação do §2 está cumprido, com os três portões na cabeça final.
 
-Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça desta medição: `97ade15e42b7854b77d86bbafd2fc6d2d317af06`.
+Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça desta medição: `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c`.
 
 ## Mandato e medidas
 
@@ -35,7 +35,7 @@ As [plantas](plantas.json) usam processos isolados e cópias em memória. A plan
 
 As conferências dirigidas do livro, da travessia, dos tipos e do país passaram. Os primeiros ensaios da célula falharam por um seletor de planta que nomeava a linha irmã, ausente da primeira página, e por rótulos esperados com maiúscula onde o registo usa minúscula. Os dois erros da célula foram corrigidos; as saídas anteriores e a corrida limpa ficam em ensaios. A primeira tentativa de captura foi impedida pela restrição do servidor local; a corrida com acesso ao servidor local terminou com código 0.
 
-Uma primeira corrida dos três portões passou a zero, mas o guião dos comprovativos marcou erradamente os artefactos como código por registar: retirava o espaço inicial do formato porcelain antes de ler as colunas. A [prova do estado da árvore](estado-da-arvore.json) reproduz esse falso positivo e confirma que alterações de código ou do livro continuam a ser recusadas. Corrigiu-se a leitura; os portões serão repetidos na cabeça final. Os primeiros comprovativos conservam-se em ensaios.
+Uma primeira corrida dos três portões passou a zero, mas o guião dos comprovativos marcou erradamente os artefactos como código por registar: retirava o espaço inicial do formato porcelain antes de ler as colunas. A [prova do estado da árvore](estado-da-arvore.json) reproduz esse falso positivo e confirma que alterações de código ou do livro continuam a ser recusadas. Corrigiu-se a leitura; os portões foram repetidos na cabeça final. Os primeiros comprovativos conservam-se em ensaios.
 
 ## Capturas e inspeção
 
@@ -50,18 +50,19 @@ O captor segue os guiões N1: servidor efémero local, fontes carregadas, pedido
 - `1a281e1d`: Guarda a história E0 sem fixar a próxima recontagem.
 - `b52713ad`: Entrega as provas, as capturas e o relatório do E0.
 - `97ade15e`: Lê as decisões nos textos e conserva as capturas binárias.
+- `52eae9be`: Preserva as colunas de estado nos comprovativos E0.
 
 O último commit de entrega inclui [RESPOSTA-construtor-e0.md](RESPOSTA-construtor-e0.md). A cabeça final lê-se dos ficheiros .cabeca e da resposta de fecho da sessão, fora do ramo.
 
 ## Portões
 
-Os três comandos finais correm depois do commit de entrega, cada um no seu comando. Esta tabela será regenerada a partir dos ficheiros acabados de escrever.
+Os três comandos correram separadamente na cabeça final `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c`. Os códigos e cabeças foram lidos dos ficheiros acabados de escrever.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](portoes/build.codigo) | `97ade15e42b7854b77d86bbafd2fc6d2d317af06` | 98,2 |
-| `npm run verify` | [0](portoes/verify.codigo) | `97ade15e42b7854b77d86bbafd2fc6d2d317af06` | 648,9 |
-| `npm run typecheck` | [0](portoes/typecheck.codigo) | `97ade15e42b7854b77d86bbafd2fc6d2d317af06` | 0,2 |
+| `npm run build` | [0](portoes/build.codigo) | `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c` | 97,9 |
+| `npm run verify` | [0](portoes/verify.codigo) | `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c` | 649 |
+| `npm run typecheck` | [0](portoes/typecheck.codigo) | `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c` | 0,2 |
 
 Antes de cada corrida inteira, consulta-se a lista de processos da máquina. Os registos passam pela limpeza dos caminhos e do nome da conta local. O medidor encontrou 0 ficheiros com dados da máquina entre os ficheiros do bloco.
 
@@ -73,58 +74,80 @@ A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §
 
 ```text
 §1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
-    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:11582
-§1.38 · A ortografia do sítio passa a ser uma só
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:72
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:75
     design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:1
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:11582
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:11582
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1445
+§1.38 · A ortografia do sítio passa a ser uma só
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:77
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:3
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:250
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:250
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:245
 §1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
-    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:362
-§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:69
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:76
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:5
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:90
-    src/lib/mudancas.mjs:205
-§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:69
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:82
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:11
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:8
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:362
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:362
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:357
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1215
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1216
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1217
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1218
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1220
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:72
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:10
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:90
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:92
+    src/lib/mudancas.mjs:205
+§1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:646
+§1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:645
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:644
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:72
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:91
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:17
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:92
     scripts/check-pais.mjs:296
 §1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:88
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:17
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:98
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:24
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:54
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:103
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:91
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:20
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:29
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:54
 §1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:108
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:69
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:94
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:23
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:72
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:34
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:54
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:90
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:92
     scripts/check-pais.mjs:171
     src/data/lugar-das-linhas.mjs:22
     src/lib/mudancas.mjs:101
     tests/inicio/linhas-da-casa.mjs:1
-8 decisão(ões) citada(s) em 80 ficheiro(s)
+12 decisão(ões) citada(s) em 99 ficheiro(s)
 ```
 
 ## Custo e limites
 
-Amostra de 2026-09-30T21:40:49.830969+00:00, lida dos eventos token_count da sessão identificada pelo ambiente: 331 410 símbolos de entrada sem cache mais saída; 11 592 338 no total com cache; 11 260 928 em cache. Tempo decorrido desde o início da sessão até à amostra: 3005,9 segundos. Modelo efetivamente lido: `gpt-6.1-sol`. Os revisores automáticos das aprovações têm os seus próprios contadores em [custo.json](custo.json).
+Amostra de 2026-09-30T21:58:14.651847+00:00, lida dos eventos token_count da sessão identificada pelo ambiente: 401 031 símbolos de entrada sem cache mais saída; 14 364 423 no total com cache; 13 963 392 em cache. Tempo decorrido desde o início da sessão até à amostra: 4050,7 segundos. Modelo efetivamente lido: `gpt-6.1-sol`. Os revisores automáticos das aprovações têm os seus próprios contadores em [custo.json](custo.json).
 
 É uma amostra anterior ao fecho, não um custo em euros nem o contador final do terminal. A leitura a frio de outra família prevista no brief não foi feita nesta construção. O E1 continua a ser outro bloco. Não houve publicação.
 
 ## O que fica por fazer
 
-Correr os três portões na cabeça do commit de entrega, reler os códigos, regenerar as medidas e esta resposta. A leitura a frio e a aterragem pertencem à fase seguinte.
+Nenhum item do teste de aceitação E0 fica por cumprir. A leitura a frio e a aterragem pertencem à fase seguinte.
