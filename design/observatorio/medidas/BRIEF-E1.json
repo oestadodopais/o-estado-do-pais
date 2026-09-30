@@ -1,0 +1,111 @@
+{
+  "brief": "design/observatorio/BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md",
+  "guiao": "design/observatorio/medidas/BRIEF-E1.py",
+  "cabeca_lida": "24ba5b17",
+  "por_estudo": {
+    "evora-2027-prometido-painel-dinheiro": {
+      "palavras": 7273,
+      "seccoes": 11,
+      "linhas": 0
+    },
+    "evora-economia-investidores-portas-abertas-2026": {
+      "palavras": 3602,
+      "seccoes": 9,
+      "linhas": 8
+    },
+    "evora-orcamentado-pago-devido-2025": {
+      "palavras": 4074,
+      "seccoes": 14,
+      "linhas": 27
+    },
+    "evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+      "palavras": 11629,
+      "seccoes": 8,
+      "linhas": 7
+    },
+    "evora-prometido-pago-auditado-2026": {
+      "palavras": 6383,
+      "seccoes": 10,
+      "linhas": 7
+    },
+    "evora-quinze-anos-cinco-mandatos": {
+      "palavras": 10905,
+      "seccoes": 9,
+      "linhas": 20
+    }
+  },
+  "medidas": [
+    {
+      "nome": "estudos_de_evora_alojados",
+      "valor": 6,
+      "comando": "git ls-tree 24ba5b17:studies-src · as pastas que começam por evora-",
+      "conhecido_positivo": {
+        "o_que": "«evora-quinze-anos-cinco-mandatos» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_dos_seis_estudos",
+      "valor": 43866,
+      "comando": "as palavras do texto de studies-src/<estudo>/pt.html, somadas",
+      "conhecido_positivo": {
+        "o_que": "o mais longo tem mais de dez mil palavras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_com_mais_de_cinco_mil_palavras",
+      "valor": 4,
+      "comando": "os mesmos, contados acima de cinco mil",
+      "conhecido_positivo": {
+        "o_que": "«Quinze Anos» está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "seccoes_dos_seis_estudos",
+      "valor": 61,
+      "comando": "os <h2> de cada pt.html, somados",
+      "conhecido_positivo": {
+        "o_que": "cada estudo tem mais de cinco secções",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_de_evora_com_linhas_no_livro",
+      "valor": 5,
+      "comando": "git show 24ba5b17:ledger/claims/<id>.yml · o campo study que começa por evora-",
+      "conhecido_positivo": {
+        "o_que": "«evora-orcamentado-pago-devido-2025» tem linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro_dos_estudos_de_evora",
+      "valor": 69,
+      "comando": "as mesmas, somadas",
+      "conhecido_positivo": {
+        "o_que": "a linha do prazo médio de pagamento de 2025 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_de_evora_sem_linhas_proprias",
+      "valor": 1,
+      "comando": "os estudos alojados sem nenhuma linha com o seu study",
+      "conhecido_positivo": {
+        "o_que": "o estudo de 2027 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contador_dos_estudos_de_evora_publicados",
+      "valor": "6",
+      "comando": "git show 24ba5b17:ledger/claims/estudos-evora-publicados.yml · value",
+      "conhecido_positivo": {
+        "o_que": "a linha é derivada e tem check",
+        "encontrado": true
+      }
+    }
+  ]
+}
