@@ -1,0 +1,8 @@
+# As leituras de fora de 30.09.2026: os seis estudos de Évora, o que se repete, o que se contradiz e o conjunto coerente
+
+*Pedidas pelo diretor a 30.09.2026, depois da leitura dele (muitos estudos falam do mesmo ou de coisas que deviam estar juntas; foram feitos bloco a bloco; os títulos e os conteúdos misturam as mesmas coisas de maneiras diferentes). O mesmo brief (`PROMPT-leitura.md`) e o mesmo pacote (os textos dos seis estudos, do índice dos estudos e da página do concelho no ar nesse dia, em `PAGINAS.md`, e as linhas do livro-razão de cada estudo) para dois leitores: o Claude Opus 5.5 (340 386 símbolos, o total que a ferramenta reportou para o agente) e o Codex gpt-6-astra (129 013, a linha «tokens used»). As contagens de palavras do `PAGINAS.md` são as dos textos extraídos das páginas no ar; as do §0 do brief E1 são as das fontes em `studies-src/`, medidas pelo guião `design/observatorio/medidas/BRIEF-E1.py`, e não coincidem por serem ficheiros diferentes. A síntese e a decisão do lugar de direção estão na §1.145 de `DECISIONS.md`, o bloco que sai delas é o brief E1, e as oito contradições ficam na I180. Sem travessões no que é da casa; as leituras ficam como os leitores as escreveram.*
+
+- `LEITURA-claude-opus-5.5.md`
+- `LEITURA-codex-gpt-6-astra.md`
+
+As duas leituras convergem no diagnóstico (três objetos confundidos: as contas da câmara, o investimento no território e o programa cultural) e na proposta (quatro estudos: as contas da câmara, quem governou, a economia e o dinheiro de fora, o Évora 2027). O que diverge, e o que o lugar de direção decidiu de cada vez, está na §1.145.
