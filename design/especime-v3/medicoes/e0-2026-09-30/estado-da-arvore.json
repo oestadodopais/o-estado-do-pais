@@ -1,0 +1,54 @@
+{
+  "casos": [
+    {
+      "nome": "árvore limpa",
+      "esperado": false,
+      "lido": false,
+      "passou": true
+    },
+    {
+      "nome": "artefacto modificado com espaço inicial",
+      "esperado": false,
+      "lido": false,
+      "passou": true
+    },
+    {
+      "nome": "captura nova",
+      "esperado": false,
+      "lido": false,
+      "passou": true
+    },
+    {
+      "nome": "código modificado",
+      "esperado": true,
+      "lido": true,
+      "passou": true
+    },
+    {
+      "nome": "guião do bloco modificado",
+      "esperado": true,
+      "lido": true,
+      "passou": true
+    },
+    {
+      "nome": "linha do livro modificada",
+      "esperado": true,
+      "lido": true,
+      "passou": true
+    },
+    {
+      "nome": "ficheiro preparado",
+      "esperado": true,
+      "lido": true,
+      "passou": true
+    }
+  ],
+  "planta": {
+    "nome": "cortar os espaços antes de ler as colunas",
+    "correto": false,
+    "plantado": true,
+    "mordeu": true
+  },
+  "conhecido_positivo": true,
+  "passou": true
+}

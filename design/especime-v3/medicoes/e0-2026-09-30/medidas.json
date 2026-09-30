@@ -1,8 +1,8 @@
 {
   "bloco": "E0",
   "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
-  "cabeca": "1a281e1ddf9603aa37009c8bdf2b1f7c6ee533f0",
-  "medido_em": "2026-09-30T21:20:43.226Z",
+  "cabeca": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
+  "medido_em": "2026-09-30T21:42:47.837Z",
   "medidas": [
     {
       "nome": "selador_ja_aceitava_a_linha_do_projeto",
@@ -453,21 +453,27 @@
       "valor": [
         {
           "nome": "build",
-          "codigo": null,
-          "cabeca": null,
-          "segundos": null
+          "codigo": 0,
+          "cabeca": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
+          "segundos": 98.205784042,
+          "segundos_relatorio": 98.2,
+          "codigo_por_registar": false
         },
         {
           "nome": "verify",
-          "codigo": null,
-          "cabeca": null,
-          "segundos": null
+          "codigo": 0,
+          "cabeca": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
+          "segundos": 648.857245542,
+          "segundos_relatorio": 648.9,
+          "codigo_por_registar": true
         },
         {
           "nome": "typecheck",
-          "codigo": null,
-          "cabeca": null,
-          "segundos": null
+          "codigo": 0,
+          "cabeca": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
+          "segundos": 0.229322,
+          "segundos_relatorio": 0.2,
+          "codigo_por_registar": true
         }
       ],
       "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
@@ -480,40 +486,55 @@
     {
       "nome": "custo",
       "valor": {
-        "medido_em": "2026-09-30T21:13:01.206887+00:00",
-        "segundos_decorridos": 1337.3,
+        "medido_em": "2026-09-30T21:40:49.830969+00:00",
+        "segundos_decorridos": 3005.9,
         "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
         "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
         "construtor": {
           "sessao": "01a0f415-78a6-7501-96dd-3c3c6df57a5b",
           "modelo": "gpt-6.1-sol",
           "inicio": "2026-09-30T20:50:43.925Z",
-          "ultima_amostra": "2026-09-30T21:10:54.922Z",
+          "ultima_amostra": "2026-09-30T21:40:37.601Z",
           "simbolos": {
-            "input_tokens": 5571051,
-            "cached_input_tokens": 5379456,
+            "input_tokens": 11527225,
+            "cached_input_tokens": 11260928,
             "cache_write_input_tokens": 0,
-            "output_tokens": 32710,
-            "reasoning_output_tokens": 10554,
-            "total_tokens": 5603761
+            "output_tokens": 65113,
+            "reasoning_output_tokens": 28264,
+            "total_tokens": 11592338
           },
-          "simbolos_sem_cache_mais_saida": 224305
+          "simbolos_sem_cache_mais_saida": 331410
         },
         "revisores_automaticos": [
+          {
+            "sessao": "01a0f43e-a6b4-7671-8f9a-6876c20550cf",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T21:35:41.764Z",
+            "ultima_amostra": "2026-09-30T21:40:33.024Z",
+            "simbolos": {
+              "input_tokens": 146362,
+              "cached_input_tokens": 104704,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 519,
+              "reasoning_output_tokens": 77,
+              "total_tokens": 146881
+            },
+            "simbolos_sem_cache_mais_saida": 42177
+          },
           {
             "sessao": "01a0f415-7c33-76a0-a67c-c8681d7d1fbc",
             "modelo": "codex-auto-review",
             "inicio": "2026-09-30T20:52:56.622Z",
-            "ultima_amostra": "2026-09-30T21:07:39.747Z",
+            "ultima_amostra": "2026-09-30T21:31:23.044Z",
             "simbolos": {
-              "input_tokens": 154135,
-              "cached_input_tokens": 106496,
+              "input_tokens": 573827,
+              "cached_input_tokens": 500224,
               "cache_write_input_tokens": 0,
-              "output_tokens": 399,
-              "reasoning_output_tokens": 163,
-              "total_tokens": 154534
+              "output_tokens": 838,
+              "reasoning_output_tokens": 293,
+              "total_tokens": 574665
             },
-            "simbolos_sem_cache_mais_saida": 48038
+            "simbolos_sem_cache_mais_saida": 74441
           }
         ],
         "conhecido_positivo": true
@@ -528,7 +549,7 @@
     {
       "nome": "ficheiros_com_dados_da_maquina",
       "valor": {
-        "lidos": 87,
+        "lidos": 123,
         "fugas": []
       },
       "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",

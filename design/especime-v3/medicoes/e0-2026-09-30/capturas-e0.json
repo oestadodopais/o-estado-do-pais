@@ -1,15 +1,15 @@
 {
-  "cabeca": "96b058dfe7c6835b134de310354ce7830e291f66",
+  "cabeca": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
   "construcao": {
-    "commit": "96b058dfe7c6835b134de310354ce7830e291f66",
+    "commit": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
     "ref": "e0-2026-09-30",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-09-30T21:07:23.946Z"
+    "construido_em": "2026-09-30T21:26:41.748Z"
   },
-  "inicio": "2026-09-30T21:07:40.022Z",
-  "fim": "2026-09-30T21:07:48.195Z",
+  "inicio": "2026-09-30T21:28:27.963Z",
+  "fim": "2026-09-30T21:28:36.226Z",
   "larguras": [
     390,
     1280

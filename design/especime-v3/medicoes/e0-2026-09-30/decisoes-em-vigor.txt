@@ -1,34 +1,45 @@
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:11582
 §1.38 · A ortografia do sítio passa a ser uma só
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:71
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:72
     design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:1
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:250
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:362
 §1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:68
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:73
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:3
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:83
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:69
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:76
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:5
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:90
     src/lib/mudancas.mjs:205
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:68
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:75
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:5
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:83
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:69
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:82
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:11
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:90
     scripts/check-pais.mjs:296
 §1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:47
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:88
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:17
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:54
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:47
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:91
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:20
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:54
 §1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:68
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:77
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:7
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:47
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:83
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:69
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:94
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:23
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:54
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:90
     scripts/check-pais.mjs:171
     src/data/lugar-das-linhas.mjs:22
     src/lib/mudancas.mjs:101
     tests/inicio/linhas-da-casa.mjs:1
-6 decisão(ões) citada(s) em 75 ficheiro(s)
+8 decisão(ões) citada(s) em 80 ficheiro(s)

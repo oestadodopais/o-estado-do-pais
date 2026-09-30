@@ -61,6 +61,8 @@ As [plantas](plantas.json) usam processos isolados e cópias em memória. A plan
 
 As conferências dirigidas do livro, da travessia, dos tipos e do país passaram. Os primeiros ensaios da célula falharam por um seletor de planta que nomeava a linha irmã, ausente da primeira página, e por rótulos esperados com maiúscula onde o registo usa minúscula. Os dois erros da célula foram corrigidos; as saídas anteriores e a corrida limpa ficam em ensaios. A primeira tentativa de captura foi impedida pela restrição do servidor local; a corrida com acesso ao servidor local terminou com código 0.
 
+Uma primeira corrida dos três portões passou a zero, mas o guião dos comprovativos marcou erradamente os artefactos como código por registar: retirava o espaço inicial do formato porcelain antes de ler as colunas. A [prova do estado da árvore](estado-da-arvore.json) reproduz esse falso positivo e confirma que alterações de código ou do livro continuam a ser recusadas. Corrigiu-se a leitura; ${finais ? 'os portões foram repetidos na cabeça final' : 'os portões serão repetidos na cabeça final'}. Os primeiros comprovativos conservam-se em ensaios.
+
 ## Capturas e inspeção
 
 As ${valor('capturas').total} imagens estão em \`design/especime-v3/capturas/e0-2026-09-30/\`: primeira página integral, cartão do desemprego em Emprego e secção integral das mudanças, a 390 e a 1 280 px, nas duas edições. O [manifesto](capturas-e0.json) guarda cabeça construída, dimensões e SHA-256. O medidor recalculou todos os resumos e encontrou ${valor('capturas').problemas.length} problemas de captura ou transbordo.
