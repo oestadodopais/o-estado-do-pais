@@ -1045,6 +1045,15 @@ O registo de correções vive em dois sítios, lido do livro-razão e nunca escr
 à mão: em `/metodo`, todas as entradas agrupadas por natureza; e na página de
 cada linha, a história daquela linha.
 
+## As linhas de série (`series/`, bloco UE1, 29.09.2026)
+
+Uma linha de série é uma linha do livro-razão com vários pontos dentro: o corte
+entre países (`eixo: pais`) desde o bloco UE1, e a série no tempo do RP3 na
+mesma forma. Vive em `series/`, um ficheiro por série, gerada pelo motor e
+atravessada por `cruzamentos/series.json`, como as linhas cruzadas. As regras
+que o `ledger:check` impõe (S1 a S8), a forma e a tabela dos nomes dos países
+estão em `series/README.md`.
+
 ## O que NÃO é uma afirmação
 
 - **A escala de um instrumento.** Os números do eixo, ou o `100` que define a

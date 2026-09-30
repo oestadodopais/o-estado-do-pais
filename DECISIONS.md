@@ -13059,3 +13059,38 @@ rotas passam a ler **0**.
 **O guião no repositório.** Confere antes de mexer (a árvore principal em `main` e sem mudanças por registar; a cabeça pedida; `main` e `origin/main` dentro do ramo; a verificação «portao» verde nessa cabeça, lida no GitHub; o `master` e o `origin/master` do motor dentro do ramo do motor) e para no primeiro passo que falhar, com um código por passo. Não escreve nenhum caminho da máquina, e tem um modo de ensaio que só confere. Provado antes de entrar: o ensaio na cabeça no ar passa; uma cabeça errada para com o código 15; um commit por cima de `main` que nunca foi ao GitHub para com o 18; um ramo que não contém `main` para com o 16; um ramo do motor que não contém o `master` para com o 24; e a leitura da verificação dá «failure» no commit da planta vermelha do CI1.
 
 **O que fica ao diretor.** Uma regra nas definições do Claude Code que autorize só este guião, `Bash(zsh scripts/aterrar.sh:*)`, no `.claude/settings.local.json` do projeto (que o Git não segue) ou pelo comando `/permissions`. Com ela, as aterragens de rotina que ele decidiu a 28.09 (§1.134) deixam de precisar dele. A aterragem deste guião ainda é dele, porque o guião só chega a `main` por ela.
+
+### 1.140 Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+
+**Afecta:** nenhum
+
+**O que muda:** nos cartões das dez medidas que os blocos da primeira página comparam com a União, uma faixa por baixo do número de Portugal, nas duas edições: o país mais baixo e o mais alto dos 27, com os seus valores e as ressalvas da fonte em palavras, a média da União e o lugar de Portugal, com uma frase. Entra uma forma nova de linha do livro-razão, a série por país (`ledger/series/`, 28 pontos), gerada pelo motor da mesma consulta selada da linha da União e cruzada para o sítio, com o seu recibo: a tabela dos 27 com a definição declarada da medida. A média da União volta ao cartão da sobrecarga do custo da habitação no total, sempre com a ressalva da Comissão.
+
+**Data:** 29 e 30.09.2026.
+
+**O que se fez, e por quem.**
+- **O brief.** O lugar de direção escreveu-o (`09bca6c7`), com o §0 medido por guião na cabeça `8e66b601` e a sua própria leitura dos 27 países no Eurostat como testemunha. Juntou-lhe uma nota datada (`01a8e197`): a tabela do brief punha a pobreza ou exclusão de Portugal em 16.º, por ordenar sem empates, e o construtor mediu bem o 15.º.
+- **A construção.** O Claude Opus 5.5 (a definição `construtor`) construiu o bloco e quatro passagens de correção, UE1b a UE1e. A ferramenta reportou 280 262 símbolos no fim da construção, 617 368 no fim da UE1b, 816 217 no fim da UE1c, 417 873 no fim da UE1d e 583 249 no fim da UE1e. No motor ficam quatro commits, de `da6df0b` a `e394307`.
+- **A primeira leitura a frio**, pelo Codex gpt-5.6-sol (430 001 símbolos): quatro plantas em cinco, um defeito latente (um extremo empatado esconderia a ressalva do segundo país) e três faltas de leitura para quem não é do ofício. Duas dúvidas eram do pacote, e o lugar de direção conferiu-as: os 27 nomes contra os 27 corpos da tabela de autoridade alojados no motor, com 0 diferentes, e os 280 pontos e marcas contra a sua própria leitura, com 0 diferentes.
+- **As passagens.**
+  - A UE1c corrigiu os empates, pôs nos recibos das séries o que cada medida conta e acertou o número das páginas do relatório. Parou, bem, no cartão da sobrecarga no total, onde a faixa punha a média da União que a §1.124 calava.
+  - A UE1d executou a decisão 1 e trocou a frase dos recibos pela definição declarada.
+  - A segunda leitura a frio do Codex (450 109 símbolos) achou as cinco plantas e um defeito real: o recibo da série do índice harmonizado dizia «em Portugal» por cima da tabela dos 27. A UE1e corrigiu-o.
+  - A terceira leitura a frio do Codex, só da UE1e (213 097 símbolos), achou as cinco plantas e nenhum defeito no que a passagem mudou. Propôs que o recibo da série diga em palavras onde Portugal fica face à União, o que o cartão e a frase da faixa já dizem; fica como proposta para o bloco das séries (o RP3).
+
+**As decisões do lugar de direção.**
+1. **A §1.124 cumpriu a sua condição, e a proteção muda de forma.** A §1.124 calou a média da União no cartão da sobrecarga no total «até o B2 mostrar a medida por regime de ocupação». A razão: a Comissão Europeia adverte que o total só se lê com o regime de ocupação, e «6,3 ao lado de 7,7» levava o leitor a concluir que a habitação portuguesa está bem, quando quem arrenda a preço de mercado está pior do que na União. A medida por regime de ocupação está hoje no sítio (o cartão dos inquilinos a preço de mercado), e a primeira página já diz as duas comparações com a ressalva.
+   - A média volta ao cartão, nunca sem a ressalva: no cartão, no recibo da linha e no recibo da série, nas duas edições.
+   - O texto é o da primeira página, lido de uma fonte só (`src/data/ressalvas-da-uniao.mjs`).
+   - A K14 do `check:cartao` deixa de exigir o silêncio e passa a exigir a ressalva onde a União aparece, com plantas.
+2. **O que cada medida conta vem das definições declaradas** (`DEFINICOES_DAS_MEDIDAS`, cada uma citada da Comissão ou do Eurostat pela regra do F1.10), nos vinte recibos das séries, e não de uma frase cortada da leitura do cartão.
+   - Onde a definição do cartão nomeia o lugar, o recibo da série tem uma forma declarada sem ele, com a mesma origem. Hoje é só a do índice harmonizado.
+   - O portão de HTML exige que nenhuma definição de um recibo de série nomeie Portugal.
+3. **A lição do dia passa a ferramenta (a M42).** Duas vezes a 29.09 um bloco bateu numa decisão escrita citada no código que tocava, e só a leitura a frio o viu:
+   - este brief escolheu a medida cuja média a §1.124 calava;
+   - o F2.2b desligou a poda da §1.92(2).
+
+   `scripts/leituras/decisoes-em-vigor.py` lista as decisões que os ficheiros de um bloco citam. Corre-se no §0 de cada brief e antes de cada leitura a frio, e o construtor da UE1e já o correu sobre a sua passagem.
+4. **Uma questão nova**: o guião dos acertos do L1 já não descreve o ficheiro das leituras desde o RP1 (a I178).
+
+**A aterragem.** A cabeça que aterra é a destes registos, com os três portões e a corrida «portão» do sítio por cima dela, e o motor avança o `master` de `68318e0` para `e394307`. É a primeira aterragem que o lugar de direção corre pelo guião, com a regra do diretor de 29.09. A avançada de `main` e do motor, o lançamento e o `verify:deploy` escrevem-se no registo seguinte, porque um registo não pode dizer a sua própria aterragem.

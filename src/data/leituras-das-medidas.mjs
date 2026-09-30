@@ -22,7 +22,7 @@ import { LEITURAS_RP1 } from './leituras-rp1.mjs';
  *                                       um valor selado: a linha do cartão, a do período
  *                                       anterior ou a da União, as mesmas que a régua cita
  *                                       (`reguaDaMedida()`, com a União calada onde
- *                                       `semMediaEuropeia` a cala); rende por `<Claim>` sem
+ *                                       `semMediaEuropeia` a calava, até à §1.140); rende por `<Claim>` sem
  *                                       marca própria, dentro do invólucro `data-selo-em`
  *   { periodo: 'proprio'|'anterior' }   o `reference_date` dessa linha, pela `DataDaLinha`
  *   { referencia: 'unico'|'inferior'|'superior', semSinal? }
@@ -92,6 +92,16 @@ import { LEITURAS_RP1 } from './leituras-rp1.mjs';
  * disparidade salarial (o valor fecha a oração, e «provisório» fecha com ele) e
  * a das câmaras (a frase concorda com «o número», seja qual for a contagem),
  * vieram para aqui sem mudar uma palavra, com o A11 de sempre na primeira.
+ *
+ * NA PASSAGEM UE1d DE 29.09.2026, pela §1.140 do lugar de direção: a sobrecarga
+ * do custo da habitação no total passa a dizer em palavras se Portugal está
+ * acima, abaixo ou ao nível da média da União Europeia (`MEDIA_UE` e
+ * `EU_AVERAGE`, folhas comuns da auditoria, da classe «conta»), como as outras
+ * nove medidas que a faixa da União compara, agora que o cartão mostra outra vez
+ * a média da União. A frase da ressalva da Comissão, que fechava esta leitura,
+ * saiu dela: o cartão di-la num bloco próprio, lida da fonte única
+ * (`src/data/ressalvas-da-uniao.mjs`), que o recibo da linha, o recibo da série e
+ * a primeira página também leem, e dita duas vezes num cartão não diz mais.
  *
  * QUEM LÊ ISTO É `src/lib/leitura-da-medida.mjs`, que achata cada leitura numa
  * lista plana de pedaços de `Frase.astro`, e a célula K17 do `check:cartao`
@@ -372,8 +382,8 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['Among people living in a home rented at market price, it is the share whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, EU_AVERAGE],
   },
   'sobrecarga-do-custo-da-habitacao-2025': {
-    pt: ['No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, ' Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.'],
-    en: ['Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, ' This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.'],
+    pt: ['No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação.', SUBIU, MEDIA_UE],
+    en: ['Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than ', { nl: '40', motivo: 'escala-de-instrumento' }, ' % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs.', ROSE, EU_AVERAGE],
   },
   'precos-da-habitacao-2025': {
     pt: [

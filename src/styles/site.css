@@ -899,8 +899,14 @@ section {
 
    O invólucro deixa de ser `nowrap` quando a palavra entra, para a linha poder
    partir ANTES dela; o valor e a unidade ficam inteiros, que é o que o `nowrap`
-   existia para garantir. */
-.claim-provisorio {
+   existia para garantir.
+
+   UE1b (29.09.2026): a ressalva de um ponto de série numa ponta da faixa da
+   União (`.faixa-ue-ressalva`) tem a mesma forma, e por isso a mesma regra. A
+   classe é outra porque as células dos cartões leem `.claim-provisorio` como a
+   ressalva de um `data-claim`. */
+.claim-provisorio,
+.faixa-ue-ressalva {
   /* I153: o espaço inicial fica no texto acessível; no início da caixa
      em linha não ocupa largura, mantendo a margem visual existente. */
   display: inline-block;
@@ -4858,7 +4864,8 @@ a.marcador::after {
   /* o marcador dentro do selo */
   .src-chip .marcador,
   .marcador-gloss,
-  .claim-provisorio {
+  .claim-provisorio,
+  .faixa-ue-ressalva {
     font-size: 12px;
   }
   /* o arquivo e a página de um trabalho */

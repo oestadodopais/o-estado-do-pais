@@ -1,0 +1,10 @@
+# um país em falta no desenho
+# comando: node scripts/check-formas.mjs
+# código: 1
+
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+
+  PORTÃO DAS FORMAS · 1 problema(s):
+
+  · dist/temas/index.html: F19b · /temas/index.html · divida-publica-2025: falta no desenho a marca de MT
+

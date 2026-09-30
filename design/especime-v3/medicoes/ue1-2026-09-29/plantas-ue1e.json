@@ -1,0 +1,88 @@
+{
+  "bloco": "UE1e",
+  "cabeca": "9d696d3cdda09325a24f9a6c8883118e0808e731",
+  "construcao": "9d696d3cdda09325a24f9a6c8883118e0808e731",
+  "plantas": 5,
+  "mordidas": 5,
+  "repostas_com_o_mesmo_sha256": 5,
+  "plantas_por_grupo": {
+    "portugal": 3,
+    "forma": 2
+  },
+  "corridas_limpas": 1,
+  "corridas_limpas_a_zero": 1,
+  "resultados": [
+    {
+      "grupo": "portugal",
+      "nome": "o lugar posto de volta na definição do recibo português do índice harmonizado",
+      "ficheiro": "dist/livro-razao/series/ihpc-variacao-homologa-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1e: a definição do recibo da série «ihpc-variacao-homologa-paises» nomeia Portugal \\(«Portugal»\\)/",
+      "passou": true,
+      "antes": "e68baa0cadb7587d0d0cc24752ed5aa47cf23332e13d6f9df26a35dc42a5029a",
+      "reposto": "e68baa0cadb7587d0d0cc24752ed5aa47cf23332e13d6f9df26a35dc42a5029a",
+      "segundos": 12.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1e/planta-o-lugar-posto-de-volta-na-definicao-do-recibo-portugues-do-indice-harmonizado.txt"
+    },
+    {
+      "grupo": "portugal",
+      "nome": "o nome posto na definição do recibo inglês da dívida",
+      "ficheiro": "dist/en/ledger/series/divida-publica-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1e: a definição do recibo da série «divida-publica-2025-paises» nomeia Portugal \\(«Portugal»\\)/",
+      "passou": true,
+      "antes": "14d49c9a752c2fe685d805d3077e502629e2fac39f3a72d26d3784aab534633c",
+      "reposto": "14d49c9a752c2fe685d805d3077e502629e2fac39f3a72d26d3784aab534633c",
+      "segundos": 12.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1e/planta-o-nome-posto-na-definicao-do-recibo-ingles-da-divida.txt"
+    },
+    {
+      "grupo": "portugal",
+      "nome": "um gentílico posto na definição do recibo português dos preços da habitação",
+      "ficheiro": "dist/livro-razao/series/precos-da-habitacao-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1e: a definição do recibo da série «precos-da-habitacao-2025-paises» nomeia Portugal \\(«portuguesas»\\)/",
+      "passou": true,
+      "antes": "832c21863d77297a366df1c028d2c5fd35b944622fedaaab520ba4cd63e3ffbb",
+      "reposto": "832c21863d77297a366df1c028d2c5fd35b944622fedaaab520ba4cd63e3ffbb",
+      "segundos": 12.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1e/planta-um-gentilico-posto-na-definicao-do-recibo-portugues-dos-precos-da-habitacao.txt"
+    },
+    {
+      "grupo": "forma",
+      "nome": "a forma do recibo da série tirada da declaração",
+      "ficheiro": "src/data/medidas-rp1.mjs",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1d: o recibo da série «ihpc-variacao-homologa-paises» diz «Quanto mudaram os preços no consumidor face ao mesmo mês[^»]*» e a definição declarada é «Quanto mudaram os preços no consumidor em Portugal/",
+      "passou": true,
+      "antes": "30192a7cfc96285087b74bc6d16cb73e2226a4428cad70193b08ad44240b4382",
+      "reposto": "30192a7cfc96285087b74bc6d16cb73e2226a4428cad70193b08ad44240b4382",
+      "segundos": 12.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1e/planta-a-forma-do-recibo-da-serie-tirada-da-declaracao.txt"
+    },
+    {
+      "grupo": "forma",
+      "nome": "uma palavra mudada na forma do recibo da série",
+      "ficheiro": "src/data/medidas-rp1.mjs",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/UE1e: a forma do recibo da série de «ihpc-variacao-homologa» \\(pt\\) não é a pergunta do cartão sem o lugar/",
+      "passou": true,
+      "antes": "30192a7cfc96285087b74bc6d16cb73e2226a4428cad70193b08ad44240b4382",
+      "reposto": "30192a7cfc96285087b74bc6d16cb73e2226a4428cad70193b08ad44240b4382",
+      "segundos": 12.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1e/planta-uma-palavra-mudada-na-forma-do-recibo-da-serie.txt"
+    }
+  ],
+  "limpas": [
+    {
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/ue1e/limpa-gate-html.txt"
+    }
+  ]
+}

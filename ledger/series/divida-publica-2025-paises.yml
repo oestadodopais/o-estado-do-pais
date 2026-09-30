@@ -1,0 +1,161 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "divida-publica-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "General government gross debt (EDP concept), consolidated - annual data"
+name_source: "label"
+unit: "% do PIB"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "General government gross debt (EDP concept), consolidated - annual data"
+  edition: "tipsgo10, freq=A, na_item=GD, sector=S13, unit=PC_GDP"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipsgo10/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP"
+access_date: "2026-09-29"
+published_at: "2026-04-22"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "divida-publica-2025-ue"
+linha_de_portugal: "divida-publica-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras: {}
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "107,9"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Belgium — 2025: 107.9"
+    bandeira: null
+  - geo: "BG"
+    valor: "29,9"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Bulgaria — 2025: 29.9"
+    bandeira: null
+  - geo: "CZ"
+    valor: "44,3"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Czechia — 2025: 44.3"
+    bandeira: null
+  - geo: "DK"
+    valor: "27,9"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Denmark — 2025: 27.9"
+    bandeira: null
+  - geo: "DE"
+    valor: "63,5"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Germany — 2025: 63.5"
+    bandeira: null
+  - geo: "EE"
+    valor: "24,1"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Estonia — 2025: 24.1"
+    bandeira: null
+  - geo: "IE"
+    valor: "32,9"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Ireland — 2025: 32.9"
+    bandeira: null
+  - geo: "EL"
+    valor: "146,1"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Greece — 2025: 146.1"
+    bandeira: null
+  - geo: "ES"
+    valor: "100,7"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Spain — 2025: 100.7"
+    bandeira: null
+  - geo: "FR"
+    valor: "115,6"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — France — 2025: 115.6"
+    bandeira: null
+  - geo: "HR"
+    valor: "56,3"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Croatia — 2025: 56.3"
+    bandeira: null
+  - geo: "IT"
+    valor: "137,1"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Italy — 2025: 137.1"
+    bandeira: null
+  - geo: "CY"
+    valor: "55,0"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Cyprus — 2025: 55.0"
+    bandeira: null
+  - geo: "LV"
+    valor: "46,9"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Latvia — 2025: 46.9"
+    bandeira: null
+  - geo: "LT"
+    valor: "39,5"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Lithuania — 2025: 39.5"
+    bandeira: null
+  - geo: "LU"
+    valor: "26,5"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Luxembourg — 2025: 26.5"
+    bandeira: null
+  - geo: "HU"
+    valor: "74,6"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Hungary — 2025: 74.6"
+    bandeira: null
+  - geo: "MT"
+    valor: "46,4"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Malta — 2025: 46.4"
+    bandeira: null
+  - geo: "NL"
+    valor: "44,4"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Netherlands — 2025: 44.4"
+    bandeira: null
+  - geo: "AT"
+    valor: "81,5"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Austria — 2025: 81.5"
+    bandeira: null
+  - geo: "PL"
+    valor: "59,7"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Poland — 2025: 59.7"
+    bandeira: null
+  - geo: "PT"
+    valor: "89,7"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7"
+    bandeira: null
+  - geo: "RO"
+    valor: "59,3"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Romania — 2025: 59.3"
+    bandeira: null
+  - geo: "SI"
+    valor: "65,7"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Slovenia — 2025: 65.7"
+    bandeira: null
+  - geo: "SK"
+    valor: "61,4"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Slovakia — 2025: 61.4"
+    bandeira: null
+  - geo: "FI"
+    valor: "88,5"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Finland — 2025: 88.5"
+    bandeira: null
+  - geo: "SE"
+    valor: "35,1"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Sweden — 2025: 35.1"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "81,7"
+    excerto: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2025: 81.7"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «divida-publica-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «divida-publica-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, na_item=GD, sector=S13, unit=PC_GDP, time=2025. Corpo alojado: ue1/029-eurostat-divida-publica-2025-paises.json (sha256 4d8d1f2627221835…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,62 @@
+{
+  "bloco": "UE1e",
+  "commits": [
+    {
+      "commit": "a4c202be",
+      "o_que": "a forma da definição para o recibo da série (a do índice harmonizado sem «em Portugal»), o recibo a usá-la onde existe, e o portão de HTML a conferir cada recibo contra a forma que deve usar e que nenhuma definição de recibo de série nomeia Portugal",
+      "corridas": [
+        {
+          "comando": "npm run typecheck",
+          "codigo": 0,
+          "segundos_de_espera": null
+        },
+        {
+          "comando": "npm run build",
+          "codigo": 0,
+          "segundos_de_espera": 420
+        },
+        {
+          "comando": "npm run check:lugar",
+          "codigo": 0,
+          "segundos_de_espera": 0
+        },
+        {
+          "comando": "npm run check:cartao",
+          "codigo": 0,
+          "segundos_de_espera": 0
+        }
+      ]
+    }
+  ],
+  "mapa": {
+    "commit": "9d696d3c",
+    "o_que": "o mapa do repositório: as citações que as linhas novas deslocaram, remapeadas, e a forma do recibo da série na entrada do que a medida conta",
+    "corrida": {
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "contas": {
+        "conferidas_na_linha_citada": 141,
+        "no_ficheiro_mas_longe": 0,
+        "nao_encontradas": 0,
+        "para_la_do_fim": 0
+      }
+    },
+    "antes_da_emenda": {
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "contas": {
+        "conferidas_na_linha_citada": 124,
+        "no_ficheiro_mas_longe": 14,
+        "nao_encontradas": 0,
+        "para_la_do_fim": 0
+      }
+    },
+    "nota": "o guião sai sempre com 0; a prova são as contas"
+  },
+  "corridas": 4,
+  "corridas_a_zero": 4,
+  "mapa_sem_citacoes_perdidas": true,
+  "conhecido_positivo": {
+    "o_que": "um código que não existe lê-se como nulo e não como zero; e o mapa antes da emenda tem citações longe da linha citada",
+    "codigo_inexistente_nulo": true,
+    "mapa_antes_com_citacoes_longe": true
+  }
+}

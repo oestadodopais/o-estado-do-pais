@@ -122,7 +122,8 @@ export function referenciaNacionalDaLinha(id, linha) {
 
 /**
  * As medidas cuja discordância está declarada, conhecidas pelo nome e escritas
- * aqui, como a K14 conhece as medidas de média calada: tirar a testemunha de uma
+ * aqui, como a K14 conhece as medidas cuja comparação com a União exige a
+ * ressalva (antes da §1.140, as de média calada): tirar a testemunha de uma
  * delas voltava a esconder a discordância, e é isso que a catraca impede.
  */
 export const MEDIDAS_COM_TESTEMUNHA_DISCORDANTE = Object.freeze([

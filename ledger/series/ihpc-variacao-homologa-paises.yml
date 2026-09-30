@@ -1,0 +1,161 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "ihpc-variacao-homologa-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+name_source: "label"
+unit: "%"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2026-08"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+  edition: "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=TOTAL"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&lastTimePeriod=2"
+access_date: "2026-09-29"
+published_at: "2026-09-17"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — 2026-08"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "ihpc-variacao-homologa-ue"
+linha_de_portugal: "ihpc-variacao-homologa"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras: {}
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "4,2"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Belgium — 2026-08: 4.2"
+    bandeira: null
+  - geo: "BG"
+    valor: "5,0"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Bulgaria — 2026-08: 5.0"
+    bandeira: null
+  - geo: "CZ"
+    valor: "1,5"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Czechia — 2026-08: 1.5"
+    bandeira: null
+  - geo: "DK"
+    valor: "2,0"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Denmark — 2026-08: 2.0"
+    bandeira: null
+  - geo: "DE"
+    valor: "2,9"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Germany — 2026-08: 2.9"
+    bandeira: null
+  - geo: "EE"
+    valor: "1,3"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Estonia — 2026-08: 1.3"
+    bandeira: null
+  - geo: "IE"
+    valor: "3,4"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Ireland — 2026-08: 3.4"
+    bandeira: null
+  - geo: "EL"
+    valor: "3,7"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Greece — 2026-08: 3.7"
+    bandeira: null
+  - geo: "ES"
+    valor: "4,6"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Spain — 2026-08: 4.6"
+    bandeira: null
+  - geo: "FR"
+    valor: "2,6"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — France — 2026-08: 2.6"
+    bandeira: null
+  - geo: "HR"
+    valor: "3,7"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Croatia — 2026-08: 3.7"
+    bandeira: null
+  - geo: "IT"
+    valor: "3,2"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Italy — 2026-08: 3.2"
+    bandeira: null
+  - geo: "CY"
+    valor: "5,2"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Cyprus — 2026-08: 5.2"
+    bandeira: null
+  - geo: "LV"
+    valor: "3,0"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Latvia — 2026-08: 3.0"
+    bandeira: null
+  - geo: "LT"
+    valor: "5,6"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Lithuania — 2026-08: 5.6"
+    bandeira: null
+  - geo: "LU"
+    valor: "4,0"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Luxembourg — 2026-08: 4.0"
+    bandeira: null
+  - geo: "HU"
+    valor: "1,8"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Hungary — 2026-08: 1.8"
+    bandeira: null
+  - geo: "MT"
+    valor: "2,0"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Malta — 2026-08: 2.0"
+    bandeira: null
+  - geo: "NL"
+    valor: "2,8"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Netherlands — 2026-08: 2.8"
+    bandeira: null
+  - geo: "AT"
+    valor: "2,9"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Austria — 2026-08: 2.9"
+    bandeira: null
+  - geo: "PL"
+    valor: "3,5"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Poland — 2026-08: 3.5"
+    bandeira: null
+  - geo: "PT"
+    valor: "3,6"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Portugal — 2026-08: 3.6"
+    bandeira: null
+  - geo: "RO"
+    valor: "6,3"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Romania — 2026-08: 6.3"
+    bandeira: null
+  - geo: "SI"
+    valor: "3,4"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Slovenia — 2026-08: 3.4"
+    bandeira: null
+  - geo: "SK"
+    valor: "3,1"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Slovakia — 2026-08: 3.1"
+    bandeira: null
+  - geo: "FI"
+    valor: "2,4"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Finland — 2026-08: 2.4"
+    bandeira: null
+  - geo: "SE"
+    valor: "0,3"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Sweden — 2026-08: 0.3"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "3,2"
+    excerto: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — European Union - 27 countries (from 2020) — 2026-08: 3.2"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «ihpc-variacao-homologa», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «ihpc-variacao-homologa-ue», com os 27 países no lugar da União. Coordenadas: freq=M, unit=RCH_A, coicop18=TOTAL, time=2026-08. Corpo alojado: ue1/030-eurostat-ihpc-variacao-homologa-paises.json (sha256 3b6f92ccf611d2a0…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,44 @@
+# o ponto de Portugal da série a divergir da linha portuguesa
+# comando: node scripts/check-ledger.mjs
+# código: 1
+
+
+  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira
+  ✓ os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+  livro-razão · 3009 afirmações
+
+  10 aviso(s):
+    · [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+
+  ✓ 3009 afirmações válidas · 330 derivadas · 334 com aritmética reavaliada no build · 1896 com o rótulo da fonte
+  ✓ 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"
+    agua-nao-faturada-portugal-2024 → source_url, excerpt
+    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition
+    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition
+    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition
+    evora-prr-aprovado-2026 → excerpt
+    evora-prr-pago-2026 → excerpt
+    evora-prr-vencido-aprovado-2026 → excerpt
+    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition
+    Isto não impede o build. Impede que se diga que o livro-razão está fechado.
+
+  séries · 10 série(s) de 280 ponto(s), 20 com marca da fonte · 11 planta(s), uma ou mais por regra, vistas a morder
+
+  AS LINHAS DE SÉRIE NÃO PASSAM · 1 erro(s):
+
+    ✗ [series/divida-publica-2025-paises.yml] S6: o ponto PT («89,6») não é, como número, a linha «divida-publica-2025» («89,7»).
+
+  Uma série corrige-se no motor e volta a atravessar: o sítio não a escreve à mão.
+

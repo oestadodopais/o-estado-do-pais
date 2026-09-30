@@ -1,0 +1,11 @@
+# o sufixo «rd» declarado como «th»
+# comando: node scripts/check-formas.mjs
+# código: 1
+
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+
+  PORTÃO DAS FORMAS · 2 problema(s):
+
+  · src/data/faixa-da-uniao.mjs: F19g · o lugar 3 diz-se «3th» na edição inglesa e o ordinal é «3rd»
+  · src/data/faixa-da-uniao.mjs: F19g · o lugar 23 diz-se «23th» na edição inglesa e o ordinal é «23rd»
+

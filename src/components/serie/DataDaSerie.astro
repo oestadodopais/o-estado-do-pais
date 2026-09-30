@@ -1,0 +1,21 @@
+---
+/**
+ * UMA DATA DE UMA LINHA DE SÉRIE, NA FORMA DA CASA (bloco UE1, 29.09.2026).
+ *
+ * É a `DataDaLinha` para uma série: o mesmo motivo declarado (`data-da-linha`),
+ * e em vez de `data-de-linha` diz `data-linha-de-serie`, com o campo. O
+ * `check:formas` (F1) vai buscar o campo ao ficheiro da série, recompõe a data
+ * por conta própria e compara. `data-de-serie` não serve: é a marca das séries
+ * da frescura (`src/data/frescura.mjs`), que são outra coisa.
+ */
+import { dataDaCasa } from '../../lib/datas.mjs';
+
+const { serie, campo, valor, lang, class: klass = '' } = Astro.props;
+if (!lang) throw new Error(`<DataDaSerie serie="${serie}"> sem "lang".`);
+---
+<span
+  class:list={['data-da-linha', klass]}
+  data-nonledger="data-da-linha"
+  data-linha-de-serie={serie}
+  data-de-campo={campo}
+>{dataDaCasa(valor, lang)}</span>

@@ -1,0 +1,15 @@
+# a F19d a ver só o primeiro país da ponta
+# comando: node scripts/check-formas.mjs
+# código: 1
+
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+
+  PORTÃO DAS FORMAS · 6 problema(s):
+
+  · F19: a planta «a marca só no segundo país empatado, e a ponta sem ela» (pt) não mordeu (o controlo não passou: a ponta «alto» diz «Bélgica 5,0 e Grécia 5,0 (dado provisório)» e a recomposição dá «Bélgica 5,0»).
+  · F19: a planta «a marca só no primeiro país empatado, e a ponta a pô-la nos dois» (pt) não mordeu (o controlo não passou: a ponta «alto» diz «Bélgica 5,0 (dado provisório) e Grécia 5,0» e a recomposição dá «Bélgica 5,0 (dado provisório)»).
+  · F19: a planta «um empate com o valor só do primeiro país» (pt) não mordeu (o controlo não passou: a ponta «alto» diz «Bélgica 5,0 e Grécia 5,0» e a recomposição dá «Bélgica 5,0»).
+  · F19: a planta «a marca só no segundo país empatado, e a ponta sem ela» (en) não mordeu (o controlo não passou: a ponta «alto» diz «Belgium 5,0 and Greece 5,0 (provisional data)» e a recomposição dá «Belgium 5,0»).
+  · F19: a planta «a marca só no primeiro país empatado, e a ponta a pô-la nos dois» (en) não mordeu (o controlo não passou: a ponta «alto» diz «Belgium 5,0 (provisional data) and Greece 5,0» e a recomposição dá «Belgium 5,0 (provisional data)»).
+  · F19: a planta «um empate com o valor só do primeiro país» (en) não mordeu (o controlo não passou: a ponta «alto» diz «Belgium 5,0 and Greece 5,0» e a recomposição dá «Belgium 5,0»).
+

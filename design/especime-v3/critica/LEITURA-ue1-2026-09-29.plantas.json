@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T18:47:02+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/series/precos-da-habitacao-2025-paises.yml",
+   "descricao": "o ponto da Finlândia na série dos preços da habitação passa de −2,3 a −2,8, e o excerto continua a dizer -2.3",
+   "sha256_antes": "ac8871e4213fc56b9752f99eed42ee1e16051932336a28e1dd6f18d9f5699473",
+   "sha256_depois": "700804549da14427e679a58757e5aa0dca670cb7faab9b1c35acbe9bd8779ff3",
+   "contexto_antes": " geo: \"SK\"\n    valor: \"12,4\"\n    excerto: \"House price index, nominal - annual data — Annual average rate of change — Slovakia — 2025: 12.4\"\n    bandeira: null\n  - geo: \"FI\"\n    valor: \"−2,3\"\n    excerto: \"House price index, nominal - annual data — Annual average rate of change — Finland — 2025: -2.3\"\n    bandeira: null\n  - geo: \"SE\"\n    valor: \"1,0",
+   "contexto_depois": " geo: \"SK\"\n    valor: \"12,4\"\n    excerto: \"House price index, nominal - annual data — Annual average rate of change — Slovakia — 2025: 12.4\"\n    bandeira: null\n  - geo: \"FI\"\n    valor: \"−2,8\"\n    excerto: \"House price index, nominal - annual data — Annual average rate of change — Finland — 2025: -2.3\"\n    bandeira: null\n  - geo: \"SE\"\n    valor: \"1,0"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/a-minha-casa/index.html",
+   "descricao": "na ponta alta da faixa dos preços da habitação da página «A minha casa», o valor da Hungria passa de 18,3 a 18,8",
+   "sha256_antes": "6c30211ebed45ac1f0ae4ea25eefd5da6afc24984930d7d5af89551115f8b4b3",
+   "sha256_depois": "3269ceeb0bfb2196e3344e05a7599ee44a351a51b1662d1b6597235876cc040a",
+   "contexto_antes": "ss=\"nome-do-pais\" data-pais=\"FI\">Finlândia</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"precos-da-habitacao-2025-paises#FI\">−2,3</span></span><span class=\"faixa-ue-ponta faixa-ue-ponta-alto\" data-faixa-ponta=\"alto\"><span class=\"nome-do-pais\" data-pais=\"HU\">Hungria</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"precos-da-habitacao-2025-paises#HU\">18,3</span><span class=\"faixa-ue-ressalva\" data-faixa-ressalva=\"precos-da-habitacao-2025-paises#HU\" data-bandeira=\"p\"> (dado provisório)</span></span></p><p class=\"faixa-u",
+   "contexto_depois": "ss=\"nome-do-pais\" data-pais=\"FI\">Finlândia</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"precos-da-habitacao-2025-paises#FI\">−2,3</span></span><span class=\"faixa-ue-ponta faixa-ue-ponta-alto\" data-faixa-ponta=\"alto\"><span class=\"nome-do-pais\" data-pais=\"HU\">Hungria</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"precos-da-habitacao-2025-paises#HU\">18,8</span><span class=\"faixa-ue-ressalva\" data-faixa-ressalva=\"precos-da-habitacao-2025-paises#HU\" data-bandeira=\"p\"> (dado provisório)</span></span></p><p class=\"faixa-u"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/series.mjs",
+   "descricao": "a regra S6 deixa de comparar o ponto da União e o de Portugal com as linhas gémeas: só confere que os dois se leem como números",
+   "sha256_antes": "7f40ecd2da53a3739a7d32065dee4f76176f6ba54bc94e4c2bd0635a88697dc5",
+   "sha256_depois": "25e77487b3ae6b9354560b438db7bd08c571aaf42efd226494d16a9541d23c36",
+   "contexto_antes": "linha || !eMapa(ponto)) continue;\n      const a = parsePtNumber(ponto.valor);\n      const b = parsePtNumber(linha.value);\n      if (a === null || b === null || normalizaPtNumero(ponto.valor) === null || a !== b) {\n        erro(`S6: o ponto ${geo} («${String(ponto.valor)}») não é, como número, a linha «${linha.id}» («${String(linha.value)}»).`);\n      }\n    }\n\n    // S7 ·",
+   "contexto_depois": "linha || !eMapa(ponto)) continue;\n      const a = parsePtNumber(ponto.valor);\n      const b = parsePtNumber(linha.value);\n      if (a === null || b === null || normalizaPtNumero(ponto.valor) === null) {\n        erro(`S6: o ponto ${geo} («${String(ponto.valor)}») não é, como número, a linha «${linha.id}» («${String(linha.value)}»).`);\n      }\n    }\n\n    // S7 ·"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/lib/faixa-da-uniao.mjs",
+   "descricao": "a exceção dos ordinais ingleses deixa de cobrir o 13, e o 13.º lugar escreve-se «13rd»",
+   "sha256_antes": "63bf992e8127c9753991961a121c297d6d529d16b62f6ff9d4125887b8c61f5b",
+   "sha256_depois": "0e66b182393f67810cd171d6aa44ccd70d1d3999ba62ba3ff0e502895e4d0ddb",
+   "contexto_antes": "Ordinal(n, sufixos) {\n  if (!sufixos) throw new Error('faixa da União: a frase pede um ordinal e a língua não declara os sufixos');\n  const dezena = n % 100;\n  if (dezena >= 11 && dezena <= 13) return sufixos.th;\n  return [sufixos.th, sufixos.st, sufixos.nd, sufixos.rd][n % 10] ?? sufixos.th;\n}\n\n/** Como se ancora um rótulo: pela ponta mais perto, quando está junto a um",
+   "contexto_depois": "Ordinal(n, sufixos) {\n  if (!sufixos) throw new Error('faixa da União: a frase pede um ordinal e a língua não declara os sufixos');\n  const dezena = n % 100;\n  if (dezena >= 11 && dezena <= 12) return sufixos.th;\n  return [sufixos.th, sufixos.st, sufixos.nd, sufixos.rd][n % 10] ?? sufixos.th;\n}\n\n/** Como se ancora um rótulo: pela ponta mais perto, quando está junto a um"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 5 corridas limpas depois das plantas do UE1b, contra as 4 das provas",
+   "sha256_antes": "702d80461c874a1d694a4d8dd69ca9bc4ad6dedc80b7e326e6d4a28be58f2b6c",
+   "sha256_depois": "cda9b8c6c1ab71c688eee00e6433ce4760d6e724c50b223da717bc49cd2bc784",
+   "contexto_antes": "motor não mudou: a legenda só mostra o que a série já trazia, conferido.\n\n### As plantas da passagem\n\nEm `plantas-ue1b.json`, com as saídas em `plantas/ue1b/`: 17 plantas, 17 mordidas, 17 repostas pelo sha256, e as 4 corridas limpas a seguir, todas a 0.\n\n| grupo | as plantas | o portão que morde |\n|---|---|---|\n| ordinal | os sufixos «st», «nd», «rd» e «th» trocados na declaração; o «2nd» ",
+   "contexto_depois": "motor não mudou: a legenda só mostra o que a série já trazia, conferido.\n\n### As plantas da passagem\n\nEm `plantas-ue1b.json`, com as saídas em `plantas/ue1b/`: 17 plantas, 17 mordidas, 17 repostas pelo sha256, e as 5 corridas limpas a seguir, todas a 0.\n\n| grupo | as plantas | o portão que morde |\n|---|---|---|\n| ordinal | os sufixos «st», «nd», «rd» e «th» trocados na declaração; o «2nd» "
+  }
+ ]
+}

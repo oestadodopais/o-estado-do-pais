@@ -1,0 +1,3701 @@
+{
+  "bloco": "UE1b",
+  "construcao": {
+    "commit": "c9859d31e53784899a189d9b0d7dbac36a9257f3",
+    "ref": "ue1-2026-09-29",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-29T18:09:00.850Z"
+  },
+  "cabeca_esperada": "c9859d31e53784899a189d9b0d7dbac36a9257f3",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": {
+    "pt": [
+      "/temas/",
+      "/o-meu-dinheiro/",
+      "/o-meu-trabalho/",
+      "/a-minha-casa/",
+      "/o-estado-e-a-economia/",
+      "/a-escola-e-a-saude/"
+    ],
+    "en": [
+      "/en/themes/",
+      "/en/my-money/",
+      "/en/my-work/",
+      "/en/my-home/",
+      "/en/state-and-economy/",
+      "/en/school-and-health/"
+    ]
+  },
+  "paginas_medidas": 60,
+  "medicoes_de_faixa": 200,
+  "series_com_faixa_por_edicao": {
+    "pt": 10,
+    "en": 10
+  },
+  "medicoes_por_serie_e_edicao": {
+    "pt": {
+      "desemprego-de-longa-duracao-2025-paises": 10,
+      "divida-publica-2025-paises": 10,
+      "ihpc-variacao-homologa-paises": 10,
+      "precos-da-habitacao-2025-paises": 10,
+      "racio-s80-s20-2025-paises": 10,
+      "risco-de-pobreza-ou-exclusao-2025-paises": 10,
+      "sobrecarga-do-custo-da-habitacao-2025-paises": 10,
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises": 10,
+      "taxa-de-desemprego-mip-2025-paises": 10,
+      "taxa-de-emprego-2025-paises": 10
+    },
+    "en": {
+      "desemprego-de-longa-duracao-2025-paises": 10,
+      "divida-publica-2025-paises": 10,
+      "ihpc-variacao-homologa-paises": 10,
+      "precos-da-habitacao-2025-paises": 10,
+      "racio-s80-s20-2025-paises": 10,
+      "risco-de-pobreza-ou-exclusao-2025-paises": 10,
+      "sobrecarga-do-custo-da-habitacao-2025-paises": 10,
+      "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises": 10,
+      "taxa-de-desemprego-mip-2025-paises": 10,
+      "taxa-de-emprego-2025-paises": 10
+    }
+  },
+  "rotulos_por_faixa": [
+    4
+  ],
+  "plantas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/temas/",
+      "nome": "o rótulo de Portugal no lugar do da União",
+      "serie": "divida-publica-2025-paises",
+      "visto": true,
+      "detetor": {
+        "sobreposicoes": [
+          "portugal×uniao"
+        ],
+        "fora_do_cartao": [],
+        "janela": 390,
+        "documento": 390
+      }
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/temas/",
+      "nome": "a ponta mais alta fora do cartão",
+      "serie": "divida-publica-2025-paises",
+      "visto": true,
+      "detetor": {
+        "sobreposicoes": [],
+        "fora_do_cartao": [
+          "ponta-alto"
+        ],
+        "janela": 390,
+        "documento": 390
+      }
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/temas/",
+      "nome": "um elemento mais largo do que a janela",
+      "serie": null,
+      "visto": true,
+      "detetor": {
+        "sobreposicoes": null,
+        "fora_do_cartao": null,
+        "janela": 390,
+        "documento": 590
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/themes/",
+      "nome": "o rótulo de Portugal no lugar do da União",
+      "serie": "divida-publica-2025-paises",
+      "visto": true,
+      "detetor": {
+        "sobreposicoes": [
+          "portugal×uniao"
+        ],
+        "fora_do_cartao": [],
+        "janela": 390,
+        "documento": 390
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/themes/",
+      "nome": "a ponta mais alta fora do cartão",
+      "serie": "divida-publica-2025-paises",
+      "visto": true,
+      "detetor": {
+        "sobreposicoes": [],
+        "fora_do_cartao": [
+          "ponta-alto"
+        ],
+        "janela": 390,
+        "documento": 390
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/themes/",
+      "nome": "um elemento mais largo do que a janela",
+      "serie": null,
+      "visto": true,
+      "detetor": {
+        "sobreposicoes": null,
+        "fora_do_cartao": null,
+        "janela": 390,
+        "documento": 590
+      }
+    }
+  ],
+  "plantas_vistas": 6,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/temas/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/o-meu-dinheiro/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/o-meu-trabalho/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/a-minha-casa/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/o-estado-e-a-economia/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pagina": "/a-escola-e-a-saude/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": []
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pagina": "/temas/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pagina": "/o-meu-dinheiro/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pagina": "/o-meu-trabalho/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pagina": "/a-minha-casa/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pagina": "/o-estado-e-a-economia/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pagina": "/a-escola-e-a-saude/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": []
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pagina": "/temas/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pagina": "/o-meu-dinheiro/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pagina": "/o-meu-trabalho/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pagina": "/a-minha-casa/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pagina": "/o-estado-e-a-economia/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pagina": "/a-escola-e-a-saude/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": []
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pagina": "/temas/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pagina": "/o-meu-dinheiro/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pagina": "/o-meu-trabalho/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pagina": "/a-minha-casa/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pagina": "/o-estado-e-a-economia/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pagina": "/a-escola-e-a-saude/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": []
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pagina": "/temas/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pagina": "/o-meu-dinheiro/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pagina": "/o-meu-trabalho/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pagina": "/a-minha-casa/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pagina": "/o-estado-e-a-economia/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pagina": "/a-escola-e-a-saude/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": []
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/themes/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/my-money/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/my-work/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/my-home/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/state-and-economy/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pagina": "/en/school-and-health/",
+      "janela": 390,
+      "documento": 390,
+      "faixas": []
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pagina": "/en/themes/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pagina": "/en/my-money/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pagina": "/en/my-work/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pagina": "/en/my-home/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pagina": "/en/state-and-economy/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pagina": "/en/school-and-health/",
+      "janela": 768,
+      "documento": 768,
+      "faixas": []
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pagina": "/en/themes/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pagina": "/en/my-money/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pagina": "/en/my-work/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pagina": "/en/my-home/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pagina": "/en/state-and-economy/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pagina": "/en/school-and-health/",
+      "janela": 1024,
+      "documento": 1024,
+      "faixas": []
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pagina": "/en/themes/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pagina": "/en/my-money/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pagina": "/en/my-work/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pagina": "/en/my-home/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pagina": "/en/state-and-economy/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pagina": "/en/school-and-health/",
+      "janela": 1280,
+      "documento": 1280,
+      "faixas": []
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pagina": "/en/themes/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pagina": "/en/my-money/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "ihpc-variacao-homologa-paises",
+          "cartao": "ihpc-variacao-homologa",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "cartao": "risco-de-pobreza-ou-exclusao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "racio-s80-s20-2025-paises",
+          "cartao": "racio-s80-s20-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pagina": "/en/my-work/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "taxa-de-emprego-2025-paises",
+          "cartao": "taxa-de-emprego-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "cartao": "taxa-de-desemprego-mip-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "cartao": "desemprego-de-longa-duracao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pagina": "/en/my-home/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "cartao": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        },
+        {
+          "serie": "precos-da-habitacao-2025-paises",
+          "cartao": "precos-da-habitacao-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pagina": "/en/state-and-economy/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": [
+        {
+          "serie": "divida-publica-2025-paises",
+          "cartao": "divida-publica-2025",
+          "marcas": 28,
+          "rotulos": [
+            "portugal",
+            "uniao",
+            "ponta-baixo",
+            "ponta-alto"
+          ],
+          "sobreposicoes": [],
+          "fora_do_cartao": [],
+          "transborda": false,
+          "com_tamanho": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pagina": "/en/school-and-health/",
+      "janela": 1600,
+      "documento": 1600,
+      "faixas": []
+    }
+  ]
+}

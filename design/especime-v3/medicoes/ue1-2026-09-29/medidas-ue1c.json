@@ -1,0 +1,558 @@
+{
+  "bloco": "UE1c",
+  "cabeca_do_codigo": "982d6446bdc1c312bef02228587da89b36839463",
+  "base": "96a6035e",
+  "guiao": "design/especime-v3/medicoes/ue1-2026-09-29/medir-ue1c.mjs",
+  "medidas": [
+    {
+      "nome": "codigo_do_build",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (982d6446)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_build",
+      "valor": 256,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (982d6446)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_verify",
+      "valor": 733,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_typecheck",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (982d6446)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_typecheck",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_plantas_dos_empates",
+      "valor": 6,
+      "comando": "a linha da F19 do check:formas no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k18_plantas_dos_empates",
+      "valor": 6,
+      "comando": "a linha dos empates da K18 no verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_frases_do_que_conta",
+      "valor": 14,
+      "comando": "a parte «UE1c:» da linha do gate:html no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_recibos_sem_frase",
+      "valor": 6,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k17_cartoes_com_leitura",
+      "valor": 190,
+      "comando": "a linha da K17 no verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dist_da_cabeca",
+      "valor": true,
+      "comando": "dist/version.json contra portoes/ue1c/build.cabeca",
+      "conhecido_positivo": {
+        "o_que": "o carimbo tem um commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_a_frase_do_que_conta",
+      "valor": [
+        "desemprego-de-longa-duracao-2025-paises",
+        "divida-publica-2025-paises",
+        "risco-de-pobreza-ou-exclusao-2025-paises",
+        "sobrecarga-do-custo-da-habitacao-2025-paises",
+        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+        "taxa-de-desemprego-mip-2025-paises",
+        "taxa-de-emprego-2025-paises"
+      ],
+      "comando": "os recibos portugueses das séries com [data-serie-o-que-conta]",
+      "conhecido_positivo": {
+        "o_que": "o da pobreza tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_a_frase_do_que_conta_conta",
+      "valor": 7,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "o dos inquilinos tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_sem_a_frase_do_que_conta",
+      "valor": [
+        "ihpc-variacao-homologa-paises",
+        "precos-da-habitacao-2025-paises",
+        "racio-s80-s20-2025-paises"
+      ],
+      "comando": "o mesmo, as que não a têm",
+      "conhecido_positivo": {
+        "o_que": "o do rácio S80/S20 não a tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_sem_a_frase_do_que_conta_conta",
+      "valor": 3,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê a frase do da dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "as_duas_edicoes_com_as_mesmas_series",
+      "valor": true,
+      "comando": "os recibos ingleses com a frase contra os portugueses",
+      "conhecido_positivo": {
+        "o_que": "a edição inglesa da pobreza tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_a_comparacao_com_a_uniao_pt",
+      "valor": 9,
+      "comando": "as leituras dos dez cartões na página dos temas (pt) com a frase da comparação com a União",
+      "conhecido_positivo": {
+        "o_que": "a da dívida tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_a_comparacao_com_a_uniao_pt",
+      "valor": [
+        "sobrecarga-do-custo-da-habitacao-2025"
+      ],
+      "comando": "o mesmo, os que não a têm",
+      "conhecido_positivo": {
+        "o_que": "a leitura do cartão da sobrecarga no total leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_a_comparacao_com_a_uniao_en",
+      "valor": 9,
+      "comando": "as leituras dos dez cartões na página dos temas (en) com a frase da comparação com a União",
+      "conhecido_positivo": {
+        "o_que": "a da dívida tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_sem_a_comparacao_com_a_uniao_en",
+      "valor": [
+        "sobrecarga-do-custo-da-habitacao-2025"
+      ],
+      "comando": "o mesmo, os que não a têm",
+      "conhecido_positivo": {
+        "o_que": "a leitura do cartão da sobrecarga no total leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisao_que_cala_a_media_europeia",
+      "valor": "1.124",
+      "comando": "src/data/figuras.mjs, a entrada da sobrecarga do custo da habitação, semMediaEuropeia.decisao",
+      "conhecido_positivo": {
+        "o_que": "a razão fala do B2",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_da_uniao_da_faixa_no_cartao_calado",
+      "valor": 2,
+      "comando": "no cartão da sobrecarga no total, na página portuguesa dos temas, o valor e a marca da União da faixa",
+      "conhecido_positivo": {
+        "o_que": "o cartão tem a faixa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_que_a_k14_conta_no_cartao_calado",
+      "valor": 0,
+      "comando": "o mesmo cartão, as marcas que a K14 conta ([data-regua=\"ue\"] e [data-claim=\"…-ue\"])",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê a da régua num cartão sem silêncio (a dívida)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_de_portugal_da_sobrecarga_no_total",
+      "valor": "6,3",
+      "comando": "ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml, value",
+      "conhecido_positivo": {
+        "o_que": "o cartão da página dos temas mostra-o",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_da_uniao_da_sobrecarga_no_total",
+      "valor": "7,7",
+      "comando": "ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml, value",
+      "conhecido_positivo": {
+        "o_que": "a frase da faixa do cartão calado diz «a média da União é» e este valor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_de_portugal_do_racio_s80_s20",
+      "valor": "4,86",
+      "comando": "ledger/claims/racio-s80-s20-2025.yml, value",
+      "conhecido_positivo": {
+        "o_que": "a leitura do cartão do rácio, na página dos temas, traz o valor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_lidas_pelo_guiao_das_faixas",
+      "valor": 12,
+      "comando": "as páginas que faixas-ue1.mjs lê",
+      "conhecido_positivo": {
+        "o_que": "a dos temas está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_faixa",
+      "valor": 10,
+      "comando": "as dessas páginas com [data-faixa-ue] no dist/",
+      "conhecido_positivo": {
+        "o_que": "a dos temas tem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_sem_faixa",
+      "valor": [
+        "a-escola-e-a-saude",
+        "en/school-and-health"
+      ],
+      "comando": "o mesmo, as que não têm",
+      "conhecido_positivo": {
+        "o_que": "a da escola e da saúde leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_sem_faixa_conta",
+      "valor": 2,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê a faixa na página inglesa dos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/plantas-ue1c.json",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_que_morderam",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_repostas_pelo_sha256",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_limpas",
+      "valor": 2,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_limpas_a_zero",
+      "valor": 2,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 70,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/capturas-ue1c.json",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_recibos_com_frase",
+      "valor": 14,
+      "comando": "o mesmo, os recibos com a frase nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_com_problema",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_plantas_vistas",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_pedidos_para_fora",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_entre_commits",
+      "valor": 7,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/entre-commits-ue1c.json",
+      "conhecido_positivo": {
+        "o_que": "um código que não existe lê-se como nulo e não como zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_entre_commits_a_zero",
+      "valor": 7,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "um código que não existe lê-se como nulo e não como zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_no_sitio",
+      "valor": 135,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_por_encontrar",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro_mudadas",
+      "valor": 0,
+      "comando": "git diff --name-only 96a6035e <cabeça> -- ledger/claims",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_do_livro_mudadas",
+      "valor": 0,
+      "comando": "o mesmo, sobre as séries, os registos e a tabela dos nomes",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_mudadas",
+      "valor": 0,
+      "comando": "o mesmo, sobre as leituras dos cartões e a sua auditoria",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief_mudado",
+      "valor": 0,
+      "comando": "o mesmo, sobre o brief",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guiao_da_aterragem_mudado",
+      "valor": 0,
+      "comando": "o mesmo, sobre scripts/aterrar.sh",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_de_codigo_da_passagem",
+      "valor": 3,
+      "comando": "git rev-list --count 96a6035e..<cabeça>",
+      "conhecido_positivo": {
+        "o_que": "a base é antepassada da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_cabeca",
+      "valor": "e394307",
+      "comando": "git rev-parse HEAD, na worktree do motor",
+      "conhecido_positivo": {
+        "o_que": "é um commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_commits_da_passagem",
+      "valor": 0,
+      "comando": "git rev-list --count e394307..HEAD, na worktree do motor",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do UE1 é antepassada da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_inicio_da_passagem",
+      "valor": "2026-09-29T20:07:33Z",
+      "comando": "git show -s --format=%cI 96a6035e (o commit da leitura a frio)",
+      "conhecido_positivo": {
+        "o_que": "a hora leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_fim_dos_portoes",
+      "valor": "2026-09-29T20:51:03Z",
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1c/typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é uma hora UTC",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_segundos_da_passagem",
+      "valor": 2610,
+      "comando": "a diferença entre as duas horas acima",
+      "conhecido_positivo": {
+        "o_que": "é positiva",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos_da_sessao_no_fecho_da_passagem",
+      "valor": 1760279,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 13239721 (o que restava, lido à mão antes do último commit da passagem)",
+      "conhecido_positivo": {
+        "o_que": "é maior do que a leitura do fecho da passagem UE1b",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos_da_passagem",
+      "valor": 207854,
+      "comando": "a leitura acima menos a do fecho da passagem UE1b (custo-ue1b.json)",
+      "conhecido_positivo": {
+        "o_que": "é positiva",
+        "encontrado": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,1432 @@
+{
+ "lido_em": "2026-09-29",
+ "pelo": "lugar de direção (Claude Fable 5.1), com curl e o JSON-stat da API de disseminação do Eurostat",
+ "paises": [
+  "BE",
+  "BG",
+  "CZ",
+  "DK",
+  "DE",
+  "EE",
+  "IE",
+  "EL",
+  "ES",
+  "FR",
+  "HR",
+  "IT",
+  "CY",
+  "LV",
+  "LT",
+  "LU",
+  "HU",
+  "MT",
+  "NL",
+  "AT",
+  "PL",
+  "PT",
+  "RO",
+  "SI",
+  "SK",
+  "FI",
+  "SE"
+ ],
+ "medidas": {
+  "desemprego-de-longa-duracao-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&sex=T",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "indic_em": "LTU",
+    "age": "Y15-74",
+    "sex": "T",
+    "unit": "PC_ACT"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 1.9,
+   "pt": 2.2,
+   "pt_lugar_a_descer": 8,
+   "mais_baixo": [
+    "NL",
+    0.5
+   ],
+   "mais_alto": [
+    "EL",
+    5.0
+   ],
+   "marcas": {
+    "ES": "d",
+    "FR": "d",
+    "LU": "u"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 2.0,
+     "marca": null
+    },
+    "BG": {
+     "valor": 1.5,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 0.8,
+     "marca": null
+    },
+    "DK": {
+     "valor": 0.9,
+     "marca": null
+    },
+    "DE": {
+     "valor": 1.1,
+     "marca": null
+    },
+    "EE": {
+     "valor": 1.8,
+     "marca": null
+    },
+    "IE": {
+     "valor": 1.1,
+     "marca": null
+    },
+    "EL": {
+     "valor": 5.0,
+     "marca": null
+    },
+    "ES": {
+     "valor": 3.4,
+     "marca": "d"
+    },
+    "FR": {
+     "valor": 1.8,
+     "marca": "d"
+    },
+    "HR": {
+     "valor": 1.8,
+     "marca": null
+    },
+    "IT": {
+     "valor": 3.1,
+     "marca": null
+    },
+    "CY": {
+     "valor": 0.9,
+     "marca": null
+    },
+    "LV": {
+     "valor": 2.3,
+     "marca": null
+    },
+    "LT": {
+     "valor": 2.5,
+     "marca": null
+    },
+    "LU": {
+     "valor": 2.0,
+     "marca": "u"
+    },
+    "HU": {
+     "valor": 1.5,
+     "marca": null
+    },
+    "MT": {
+     "valor": 0.6,
+     "marca": null
+    },
+    "NL": {
+     "valor": 0.5,
+     "marca": null
+    },
+    "AT": {
+     "valor": 1.3,
+     "marca": null
+    },
+    "PL": {
+     "valor": 0.8,
+     "marca": null
+    },
+    "PT": {
+     "valor": 2.2,
+     "marca": null
+    },
+    "RO": {
+     "valor": 2.1,
+     "marca": null
+    },
+    "SI": {
+     "valor": 1.1,
+     "marca": null
+    },
+    "SK": {
+     "valor": 3.4,
+     "marca": null
+    },
+    "FI": {
+     "valor": 2.4,
+     "marca": null
+    },
+    "SE": {
+     "valor": 1.8,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 1.9,
+     "marca": null
+    }
+   }
+  },
+  "divida-publica-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&unit=PC_GDP",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "na_item": "GD",
+    "sector": "S13",
+    "unit": "PC_GDP"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 81.7,
+   "pt": 89.7,
+   "pt_lugar_a_descer": 6,
+   "mais_baixo": [
+    "EE",
+    24.1
+   ],
+   "mais_alto": [
+    "EL",
+    146.1
+   ],
+   "marcas": {},
+   "pontos": {
+    "BE": {
+     "valor": 107.9,
+     "marca": null
+    },
+    "BG": {
+     "valor": 29.9,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 44.3,
+     "marca": null
+    },
+    "DK": {
+     "valor": 27.9,
+     "marca": null
+    },
+    "DE": {
+     "valor": 63.5,
+     "marca": null
+    },
+    "EE": {
+     "valor": 24.1,
+     "marca": null
+    },
+    "IE": {
+     "valor": 32.9,
+     "marca": null
+    },
+    "EL": {
+     "valor": 146.1,
+     "marca": null
+    },
+    "ES": {
+     "valor": 100.7,
+     "marca": null
+    },
+    "FR": {
+     "valor": 115.6,
+     "marca": null
+    },
+    "HR": {
+     "valor": 56.3,
+     "marca": null
+    },
+    "IT": {
+     "valor": 137.1,
+     "marca": null
+    },
+    "CY": {
+     "valor": 55.0,
+     "marca": null
+    },
+    "LV": {
+     "valor": 46.9,
+     "marca": null
+    },
+    "LT": {
+     "valor": 39.5,
+     "marca": null
+    },
+    "LU": {
+     "valor": 26.5,
+     "marca": null
+    },
+    "HU": {
+     "valor": 74.6,
+     "marca": null
+    },
+    "MT": {
+     "valor": 46.4,
+     "marca": null
+    },
+    "NL": {
+     "valor": 44.4,
+     "marca": null
+    },
+    "AT": {
+     "valor": 81.5,
+     "marca": null
+    },
+    "PL": {
+     "valor": 59.7,
+     "marca": null
+    },
+    "PT": {
+     "valor": 89.7,
+     "marca": null
+    },
+    "RO": {
+     "valor": 59.3,
+     "marca": null
+    },
+    "SI": {
+     "valor": 65.7,
+     "marca": null
+    },
+    "SK": {
+     "valor": 61.4,
+     "marca": null
+    },
+    "FI": {
+     "valor": 88.5,
+     "marca": null
+    },
+    "SE": {
+     "valor": 35.1,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 81.7,
+     "marca": null
+    }
+   }
+  },
+  "ihpc-variacao-homologa-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&lastTimePeriod=2",
+   "dimensoes_fixas": {
+    "freq": "M",
+    "unit": "RCH_A",
+    "coicop18": "TOTAL"
+   },
+   "periodo": "2026-08",
+   "paises_com_valor": 27,
+   "ue": 3.2,
+   "pt": 3.6,
+   "pt_lugar_a_descer": 10,
+   "mais_baixo": [
+    "SE",
+    0.3
+   ],
+   "mais_alto": [
+    "RO",
+    6.3
+   ],
+   "marcas": {},
+   "pontos": {
+    "BE": {
+     "valor": 4.2,
+     "marca": null
+    },
+    "BG": {
+     "valor": 5.0,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 1.5,
+     "marca": null
+    },
+    "DK": {
+     "valor": 2.0,
+     "marca": null
+    },
+    "DE": {
+     "valor": 2.9,
+     "marca": null
+    },
+    "EE": {
+     "valor": 1.3,
+     "marca": null
+    },
+    "IE": {
+     "valor": 3.4,
+     "marca": null
+    },
+    "EL": {
+     "valor": 3.7,
+     "marca": null
+    },
+    "ES": {
+     "valor": 4.6,
+     "marca": null
+    },
+    "FR": {
+     "valor": 2.6,
+     "marca": null
+    },
+    "HR": {
+     "valor": 3.7,
+     "marca": null
+    },
+    "IT": {
+     "valor": 3.2,
+     "marca": null
+    },
+    "CY": {
+     "valor": 5.2,
+     "marca": null
+    },
+    "LV": {
+     "valor": 3.0,
+     "marca": null
+    },
+    "LT": {
+     "valor": 5.6,
+     "marca": null
+    },
+    "LU": {
+     "valor": 4.0,
+     "marca": null
+    },
+    "HU": {
+     "valor": 1.8,
+     "marca": null
+    },
+    "MT": {
+     "valor": 2.0,
+     "marca": null
+    },
+    "NL": {
+     "valor": 2.8,
+     "marca": null
+    },
+    "AT": {
+     "valor": 2.9,
+     "marca": null
+    },
+    "PL": {
+     "valor": 3.5,
+     "marca": null
+    },
+    "PT": {
+     "valor": 3.6,
+     "marca": null
+    },
+    "RO": {
+     "valor": 6.3,
+     "marca": null
+    },
+    "SI": {
+     "valor": 3.4,
+     "marca": null
+    },
+    "SK": {
+     "valor": 3.1,
+     "marca": null
+    },
+    "FI": {
+     "valor": 2.4,
+     "marca": null
+    },
+    "SE": {
+     "valor": 0.3,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 3.2,
+     "marca": null
+    }
+   }
+  },
+  "precos-da-habitacao-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&unit=RCH_A_AVG",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "unit": "RCH_A_AVG"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 5.5,
+   "pt": 17.6,
+   "pt_lugar_a_descer": 2,
+   "mais_baixo": [
+    "FI",
+    -2.3
+   ],
+   "mais_alto": [
+    "HU",
+    18.3
+   ],
+   "marcas": {
+    "EL": "ep",
+    "HU": "p",
+    "MT": "p"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 3.2,
+     "marca": null
+    },
+    "BG": {
+     "valor": 14.6,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 10.4,
+     "marca": null
+    },
+    "DK": {
+     "valor": 7.5,
+     "marca": null
+    },
+    "DE": {
+     "valor": 3.2,
+     "marca": null
+    },
+    "EE": {
+     "valor": 5.2,
+     "marca": null
+    },
+    "IE": {
+     "valor": 7.5,
+     "marca": null
+    },
+    "EL": {
+     "valor": 8.1,
+     "marca": "ep"
+    },
+    "ES": {
+     "valor": 12.7,
+     "marca": null
+    },
+    "FR": {
+     "valor": 0.7,
+     "marca": null
+    },
+    "HR": {
+     "valor": 13.9,
+     "marca": null
+    },
+    "IT": {
+     "valor": 4.0,
+     "marca": null
+    },
+    "CY": {
+     "valor": 4.5,
+     "marca": null
+    },
+    "LV": {
+     "valor": 7.6,
+     "marca": null
+    },
+    "LT": {
+     "valor": 9.8,
+     "marca": null
+    },
+    "LU": {
+     "valor": 1.6,
+     "marca": null
+    },
+    "HU": {
+     "valor": 18.3,
+     "marca": "p"
+    },
+    "MT": {
+     "valor": 6.0,
+     "marca": "p"
+    },
+    "NL": {
+     "valor": 8.5,
+     "marca": null
+    },
+    "AT": {
+     "valor": 2.6,
+     "marca": null
+    },
+    "PL": {
+     "valor": 4.9,
+     "marca": null
+    },
+    "PT": {
+     "valor": 17.6,
+     "marca": null
+    },
+    "RO": {
+     "valor": 5.7,
+     "marca": null
+    },
+    "SI": {
+     "valor": 7.3,
+     "marca": null
+    },
+    "SK": {
+     "valor": 12.4,
+     "marca": null
+    },
+    "FI": {
+     "valor": -2.3,
+     "marca": null
+    },
+    "SE": {
+     "valor": 1.0,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 5.5,
+     "marca": null
+    }
+   }
+  },
+  "racio-s80-s20-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&sex=T",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "age": "TOTAL",
+    "sex": "T",
+    "unit": "RAT"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 4.62,
+   "pt": 4.86,
+   "pt_lugar_a_descer": 8,
+   "mais_baixo": [
+    "BE",
+    3.25
+   ],
+   "mais_alto": [
+    "BG",
+    6.94
+   ],
+   "marcas": {
+    "LT": "p",
+    "LU": "b"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 3.25,
+     "marca": null
+    },
+    "BG": {
+     "valor": 6.94,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 3.34,
+     "marca": null
+    },
+    "DK": {
+     "valor": 4.12,
+     "marca": null
+    },
+    "DE": {
+     "valor": 4.68,
+     "marca": null
+    },
+    "EE": {
+     "valor": 5.07,
+     "marca": null
+    },
+    "IE": {
+     "valor": 3.89,
+     "marca": null
+    },
+    "EL": {
+     "valor": 5.17,
+     "marca": null
+    },
+    "ES": {
+     "valor": 5.24,
+     "marca": null
+    },
+    "FR": {
+     "valor": 4.74,
+     "marca": null
+    },
+    "HR": {
+     "valor": 4.78,
+     "marca": null
+    },
+    "IT": {
+     "valor": 5.13,
+     "marca": null
+    },
+    "CY": {
+     "valor": 4.6,
+     "marca": null
+    },
+    "LV": {
+     "valor": 6.68,
+     "marca": null
+    },
+    "LT": {
+     "valor": 6.54,
+     "marca": "p"
+    },
+    "LU": {
+     "valor": 4.6,
+     "marca": "b"
+    },
+    "HU": {
+     "valor": 4.68,
+     "marca": null
+    },
+    "MT": {
+     "valor": 4.49,
+     "marca": null
+    },
+    "NL": {
+     "valor": 3.76,
+     "marca": null
+    },
+    "AT": {
+     "valor": 4.25,
+     "marca": null
+    },
+    "PL": {
+     "valor": 3.63,
+     "marca": null
+    },
+    "PT": {
+     "valor": 4.86,
+     "marca": null
+    },
+    "RO": {
+     "valor": 4.37,
+     "marca": null
+    },
+    "SI": {
+     "valor": 3.55,
+     "marca": null
+    },
+    "SK": {
+     "valor": 3.27,
+     "marca": null
+    },
+    "FI": {
+     "valor": 3.93,
+     "marca": null
+    },
+    "SE": {
+     "valor": 4.58,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 4.62,
+     "marca": null
+    }
+   }
+  },
+  "risco-de-pobreza-ou-exclusao-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&unit=PC",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "sex": "T",
+    "unit": "PC",
+    "age": "TOTAL"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 20.9,
+   "pt": 18.6,
+   "pt_lugar_a_descer": 16,
+   "mais_baixo": [
+    "CZ",
+    11.5
+   ],
+   "mais_alto": [
+    "BG",
+    29.0
+   ],
+   "marcas": {
+    "LT": "p",
+    "LU": "b"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 16.5,
+     "marca": null
+    },
+    "BG": {
+     "valor": 29.0,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 11.5,
+     "marca": null
+    },
+    "DK": {
+     "valor": 17.9,
+     "marca": null
+    },
+    "DE": {
+     "valor": 21.2,
+     "marca": null
+    },
+    "EE": {
+     "valor": 21.8,
+     "marca": null
+    },
+    "IE": {
+     "valor": 18.8,
+     "marca": null
+    },
+    "EL": {
+     "valor": 27.5,
+     "marca": null
+    },
+    "ES": {
+     "valor": 25.7,
+     "marca": null
+    },
+    "FR": {
+     "valor": 20.8,
+     "marca": null
+    },
+    "HR": {
+     "valor": 20.7,
+     "marca": null
+    },
+    "IT": {
+     "valor": 22.6,
+     "marca": null
+    },
+    "CY": {
+     "valor": 17.1,
+     "marca": null
+    },
+    "LV": {
+     "valor": 24.7,
+     "marca": null
+    },
+    "LT": {
+     "valor": 26.3,
+     "marca": "p"
+    },
+    "LU": {
+     "valor": 18.2,
+     "marca": "b"
+    },
+    "HU": {
+     "valor": 19.5,
+     "marca": null
+    },
+    "MT": {
+     "valor": 19.4,
+     "marca": null
+    },
+    "NL": {
+     "valor": 15.8,
+     "marca": null
+    },
+    "AT": {
+     "valor": 18.6,
+     "marca": null
+    },
+    "PL": {
+     "valor": 15.0,
+     "marca": null
+    },
+    "PT": {
+     "valor": 18.6,
+     "marca": null
+    },
+    "RO": {
+     "valor": 27.4,
+     "marca": null
+    },
+    "SI": {
+     "valor": 15.5,
+     "marca": null
+    },
+    "SK": {
+     "valor": 16.7,
+     "marca": null
+    },
+    "FI": {
+     "valor": 17.2,
+     "marca": null
+    },
+    "SE": {
+     "valor": 18.6,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 20.9,
+     "marca": null
+    }
+   }
+  },
+  "sobrecarga-do-custo-da-habitacao-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&sex=T",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "unit": "PC",
+    "rskpovth": "TOTAL",
+    "age": "TOTAL",
+    "sex": "T"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 7.7,
+   "pt": 6.3,
+   "pt_lugar_a_descer": 13,
+   "mais_baixo": [
+    "CY",
+    2.4
+   ],
+   "mais_alto": [
+    "EL",
+    26.4
+   ],
+   "marcas": {
+    "DK": "b",
+    "LT": "p",
+    "LU": "b"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 6.7,
+     "marca": null
+    },
+    "BG": {
+     "valor": 6.9,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 8.2,
+     "marca": null
+    },
+    "DK": {
+     "valor": 23.4,
+     "marca": "b"
+    },
+    "DE": {
+     "valor": 11.2,
+     "marca": null
+    },
+    "EE": {
+     "valor": 8.8,
+     "marca": null
+    },
+    "IE": {
+     "valor": 5.3,
+     "marca": null
+    },
+    "EL": {
+     "valor": 26.4,
+     "marca": null
+    },
+    "ES": {
+     "valor": 7.2,
+     "marca": null
+    },
+    "FR": {
+     "valor": 6.4,
+     "marca": null
+    },
+    "HR": {
+     "valor": 3.2,
+     "marca": null
+    },
+    "IT": {
+     "valor": 5.0,
+     "marca": null
+    },
+    "CY": {
+     "valor": 2.4,
+     "marca": null
+    },
+    "LV": {
+     "valor": 5.7,
+     "marca": null
+    },
+    "LT": {
+     "valor": 5.7,
+     "marca": "p"
+    },
+    "LU": {
+     "valor": 8.1,
+     "marca": "b"
+    },
+    "HU": {
+     "valor": 5.3,
+     "marca": null
+    },
+    "MT": {
+     "valor": 6.0,
+     "marca": null
+    },
+    "NL": {
+     "valor": 6.5,
+     "marca": null
+    },
+    "AT": {
+     "valor": 6.1,
+     "marca": null
+    },
+    "PL": {
+     "valor": 4.1,
+     "marca": null
+    },
+    "PT": {
+     "valor": 6.3,
+     "marca": null
+    },
+    "RO": {
+     "valor": 5.0,
+     "marca": null
+    },
+    "SI": {
+     "valor": 3.5,
+     "marca": null
+    },
+    "SK": {
+     "valor": 3.5,
+     "marca": null
+    },
+    "FI": {
+     "valor": 4.7,
+     "marca": null
+    },
+    "SE": {
+     "valor": 10.8,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 7.7,
+     "marca": null
+    }
+   }
+  },
+  "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "unit": "PC",
+    "tenure": "RENT_MKT"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 18.6,
+   "pt": 27.2,
+   "pt_lugar_a_descer": 7,
+   "mais_baixo": [
+    "FI",
+    12.3
+   ],
+   "mais_alto": [
+    "RO",
+    56.0
+   ],
+   "marcas": {
+    "DK": "b",
+    "LT": "p",
+    "LU": "b"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 25.4,
+     "marca": null
+    },
+    "BG": {
+     "valor": 31.7,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 26.0,
+     "marca": null
+    },
+    "DK": {
+     "valor": 23.6,
+     "marca": "b"
+    },
+    "DE": {
+     "valor": 13.2,
+     "marca": null
+    },
+    "EE": {
+     "valor": 37.0,
+     "marca": null
+    },
+    "IE": {
+     "valor": 24.0,
+     "marca": null
+    },
+    "EL": {
+     "valor": 26.0,
+     "marca": null
+    },
+    "ES": {
+     "valor": 26.8,
+     "marca": null
+    },
+    "FR": {
+     "valor": 18.7,
+     "marca": null
+    },
+    "HR": {
+     "valor": 19.8,
+     "marca": null
+    },
+    "IT": {
+     "valor": 22.3,
+     "marca": null
+    },
+    "CY": {
+     "valor": 13.4,
+     "marca": null
+    },
+    "LV": {
+     "valor": 18.1,
+     "marca": null
+    },
+    "LT": {
+     "valor": 27.4,
+     "marca": "p"
+    },
+    "LU": {
+     "valor": 23.2,
+     "marca": "b"
+    },
+    "HU": {
+     "valor": 38.4,
+     "marca": null
+    },
+    "MT": {
+     "valor": 21.5,
+     "marca": null
+    },
+    "NL": {
+     "valor": 39.5,
+     "marca": null
+    },
+    "AT": {
+     "valor": 14.5,
+     "marca": null
+    },
+    "PL": {
+     "valor": 14.4,
+     "marca": null
+    },
+    "PT": {
+     "valor": 27.2,
+     "marca": null
+    },
+    "RO": {
+     "valor": 56.0,
+     "marca": null
+    },
+    "SI": {
+     "valor": 19.7,
+     "marca": null
+    },
+    "SK": {
+     "valor": 16.8,
+     "marca": null
+    },
+    "FI": {
+     "valor": 12.3,
+     "marca": null
+    },
+    "SE": {
+     "valor": 18.4,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 18.6,
+     "marca": null
+    }
+   }
+  },
+  "taxa-de-desemprego-mip-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&age=Y15-74",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "sex": "T",
+    "age": "Y15-74",
+    "unit": "PC_ACT"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 6.0,
+   "pt": 6.0,
+   "pt_lugar_a_descer": 14,
+   "mais_baixo": [
+    "CZ",
+    2.8
+   ],
+   "mais_alto": [
+    "ES",
+    10.5
+   ],
+   "marcas": {
+    "ES": "d",
+    "FR": "d"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 6.2,
+     "marca": null
+    },
+    "BG": {
+     "valor": 3.5,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 2.8,
+     "marca": null
+    },
+    "DK": {
+     "valor": 6.4,
+     "marca": null
+    },
+    "DE": {
+     "valor": 3.8,
+     "marca": null
+    },
+    "EE": {
+     "valor": 7.5,
+     "marca": null
+    },
+    "IE": {
+     "valor": 4.7,
+     "marca": null
+    },
+    "EL": {
+     "valor": 8.9,
+     "marca": null
+    },
+    "ES": {
+     "valor": 10.5,
+     "marca": "d"
+    },
+    "FR": {
+     "valor": 7.7,
+     "marca": "d"
+    },
+    "HR": {
+     "valor": 4.9,
+     "marca": null
+    },
+    "IT": {
+     "valor": 6.1,
+     "marca": null
+    },
+    "CY": {
+     "valor": 4.4,
+     "marca": null
+    },
+    "LV": {
+     "valor": 6.9,
+     "marca": null
+    },
+    "LT": {
+     "valor": 6.9,
+     "marca": null
+    },
+    "LU": {
+     "valor": 6.5,
+     "marca": null
+    },
+    "HU": {
+     "valor": 4.4,
+     "marca": null
+    },
+    "MT": {
+     "valor": 3.1,
+     "marca": null
+    },
+    "NL": {
+     "valor": 3.9,
+     "marca": null
+    },
+    "AT": {
+     "valor": 5.7,
+     "marca": null
+    },
+    "PL": {
+     "valor": 3.1,
+     "marca": null
+    },
+    "PT": {
+     "valor": 6.0,
+     "marca": null
+    },
+    "RO": {
+     "valor": 6.1,
+     "marca": null
+    },
+    "SI": {
+     "valor": 3.9,
+     "marca": null
+    },
+    "SK": {
+     "valor": 5.4,
+     "marca": null
+    },
+    "FI": {
+     "valor": 9.7,
+     "marca": null
+    },
+    "SE": {
+     "valor": 8.8,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 6.0,
+     "marca": null
+    }
+   }
+  },
+  "taxa-de-emprego-2025-ue": {
+   "url_da_uniao": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+   "dimensoes_fixas": {
+    "freq": "A",
+    "indic_em": "EMP_LFS",
+    "sex": "T",
+    "age": "Y20-64",
+    "unit": "PC_POP"
+   },
+   "periodo": "2025",
+   "paises_com_valor": 27,
+   "ue": 76.1,
+   "pt": 79.6,
+   "pt_lugar_a_descer": 12,
+   "mais_baixo": [
+    "IT",
+    67.6
+   ],
+   "mais_alto": [
+    "MT",
+    83.6
+   ],
+   "marcas": {
+    "ES": "d",
+    "FR": "d"
+   },
+   "pontos": {
+    "BE": {
+     "valor": 72.8,
+     "marca": null
+    },
+    "BG": {
+     "valor": 77.0,
+     "marca": null
+    },
+    "CZ": {
+     "valor": 82.9,
+     "marca": null
+    },
+    "DK": {
+     "valor": 79.8,
+     "marca": null
+    },
+    "DE": {
+     "valor": 81.1,
+     "marca": null
+    },
+    "EE": {
+     "valor": 81.7,
+     "marca": null
+    },
+    "IE": {
+     "valor": 80.2,
+     "marca": null
+    },
+    "EL": {
+     "valor": 71.0,
+     "marca": null
+    },
+    "ES": {
+     "valor": 72.4,
+     "marca": "d"
+    },
+    "FR": {
+     "valor": 75.4,
+     "marca": "d"
+    },
+    "HR": {
+     "valor": 74.4,
+     "marca": null
+    },
+    "IT": {
+     "valor": 67.6,
+     "marca": null
+    },
+    "CY": {
+     "valor": 81.3,
+     "marca": null
+    },
+    "LV": {
+     "valor": 78.2,
+     "marca": null
+    },
+    "LT": {
+     "valor": 80.0,
+     "marca": null
+    },
+    "LU": {
+     "valor": 73.9,
+     "marca": null
+    },
+    "HU": {
+     "valor": 81.1,
+     "marca": null
+    },
+    "MT": {
+     "valor": 83.6,
+     "marca": null
+    },
+    "NL": {
+     "valor": 83.4,
+     "marca": null
+    },
+    "AT": {
+     "valor": 77.6,
+     "marca": null
+    },
+    "PL": {
+     "valor": 78.8,
+     "marca": null
+    },
+    "PT": {
+     "valor": 79.6,
+     "marca": null
+    },
+    "RO": {
+     "valor": 69.0,
+     "marca": null
+    },
+    "SI": {
+     "valor": 78.3,
+     "marca": null
+    },
+    "SK": {
+     "valor": 78.1,
+     "marca": null
+    },
+    "FI": {
+     "valor": 76.3,
+     "marca": null
+    },
+    "SE": {
+     "valor": 81.8,
+     "marca": null
+    },
+    "EU27_2020": {
+     "valor": 76.1,
+     "marca": null
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,14 @@
+# o acerto F4 tirado do registo dos acertos
+# comando: python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py
+# código: 1
+
+  igual   pt · sem empate
+  igual   pt · um
+  igual   pt · varios
+  DIFERE  en · sem empate
+  DIFERE  en · um
+  DIFERE  en · varios
+ACERTOS_UE1: FAIL · 3 de 6 formas iguais, 8 acertos
+  x (en, sem empate): a declaração difere do brief com os acertos
+  x (en, um): a declaração difere do brief com os acertos
+  x (en, varios): a declaração difere do brief com os acertos

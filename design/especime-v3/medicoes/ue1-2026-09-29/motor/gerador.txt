@@ -1,0 +1,15 @@
+# python3 publisher/series_paises.py --site <worktree do sítio>
+# em <worktree do motor>
+# código: 0
+
+  desemprego-de-longa-duracao-2025-paises                        27 países · lugar 8 · baixo NL 0,5 · alto EL 5,0 · marcas 3
+  divida-publica-2025-paises                                     27 países · lugar 6 · baixo EE 24,1 · alto EL 146,1 · marcas 0
+  ihpc-variacao-homologa-paises                                  27 países · lugar 10 · baixo SE 0,3 · alto RO 6,3 · marcas 0
+  precos-da-habitacao-2025-paises                                27 países · lugar 2 · baixo FI −2,3 · alto HU 18,3 · marcas 3
+  racio-s80-s20-2025-paises                                      27 países · lugar 8 · baixo BE 3,25 · alto BG 6,94 · marcas 2
+  risco-de-pobreza-ou-exclusao-2025-paises                       27 países · lugar 15 a par de AT, SE · baixo CZ 11,5 · alto BG 29,0 · marcas 2
+  sobrecarga-do-custo-da-habitacao-2025-paises                   27 países · lugar 13 · baixo CY 2,4 · alto EL 26,4 · marcas 3
+  sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises 27 países · lugar 7 · baixo FI 12,3 · alto RO 56,0 · marcas 3
+  taxa-de-desemprego-mip-2025-paises                             27 países · lugar 14 · baixo CZ 2,8 · alto ES 10,5 · marcas 2
+  taxa-de-emprego-2025-paises                                    27 países · lugar 12 · baixo IT 67,6 · alto MT 83,6 · marcas 2
+SERIES_PAISES: PASS · 10 séries de 280 pontos

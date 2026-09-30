@@ -1,0 +1,8 @@
+{
+  "o_que_e": "Os registos dos portões da passagem UE1d, na cabeça 99b9f73a, com os caminhos da máquina trocados por marcas (<worktree do sítio>, <pasta temporária>, <pasta pessoal>, <utilizador>), para que nenhum ficheiro do ramo leve um caminho da máquina. Os códigos, as cabeças, as horas e o registo da espera não se tocam.",
+  "trocas": {
+    "build.log": 1,
+    "verify.log": 2,
+    "typecheck.log": 0
+  }
+}

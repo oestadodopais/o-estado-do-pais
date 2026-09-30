@@ -1,0 +1,762 @@
+{
+  "bloco": "UE1e",
+  "cabeca_do_codigo": "9d696d3cdda09325a24f9a6c8883118e0808e731",
+  "base": "aba0a48b",
+  "guiao": "design/especime-v3/medicoes/ue1-2026-09-29/medir-ue1e.mjs",
+  "medidas": [
+    {
+      "nome": "codigo_do_build",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (9d696d3c)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_build",
+      "valor": 81,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (9d696d3c)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_verify",
+      "valor": 531,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_typecheck",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (9d696d3c)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_typecheck",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_que_esperaram_antes_de_correr",
+      "valor": 3,
+      "comando": "as linhas de design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/espera.log, uma por portão",
+      "conhecido_positivo": {
+        "o_que": "o detetor da espera, em ensaio, viu 4 processo(s) de construção a correr (design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/espera-ensaio.txt)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_da_espera_processos",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/espera-ensaio.txt",
+      "conhecido_positivo": {
+        "o_que": "a linha do ensaio existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_da_espera_npm_run_verify",
+      "valor": 2,
+      "comando": "o mesmo, os «npm run verify»",
+      "conhecido_positivo": {
+        "o_que": "a linha do ensaio existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_da_espera_npm_run_build",
+      "valor": 2,
+      "comando": "o mesmo, os «npm run build»",
+      "conhecido_positivo": {
+        "o_que": "a linha do ensaio existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_codigo",
+      "valor": 0,
+      "comando": "a linha «# código:» de design/especime-v3/medicoes/ue1-2026-09-29/decisoes-em-vigor-ue1e.txt",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_da_passagem",
+      "valor": 25,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo aba0a48b..<cabeça>, guardada em design/especime-v3/medicoes/ue1-2026-09-29/decisoes-em-vigor-ue1e.txt",
+      "conhecido_positivo": {
+        "o_que": "a linha final existe (o guião sai com 2 se o seu conhecido-positivo falhar)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_lidos_pelo_decisoes_em_vigor",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha final existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_perto_do_diff",
+      "valor": [
+        "§1.3",
+        "§1.40",
+        "§1.64",
+        "§1.90",
+        "§1.115",
+        "§1.117",
+        "§1.120",
+        "§1.124",
+        "§1.140"
+      ],
+      "comando": "o mesmo, as decisões com uma citação a menos de 40 linhas de um pedaço mudado",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_perto_do_diff_conta",
+      "valor": 9,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_recibos_sem_portugal_no_build",
+      "valor": 20,
+      "comando": "a parte «UE1e:» da linha do gate:html no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_recibos_com_a_forma_da_serie_no_build",
+      "valor": 2,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_formas_declaradas_no_build",
+      "valor": 1,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_recibos_sem_portugal_no_verify",
+      "valor": 20,
+      "comando": "a parte «UE1e:» da linha do gate:html no verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_recibos_com_a_forma_da_serie_no_verify",
+      "valor": 2,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_formas_declaradas_no_verify",
+      "valor": 1,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_definicoes_declaradas",
+      "valor": 20,
+      "comando": "a parte «UE1d:» da linha do gate:html no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_declaradas",
+      "valor": 34,
+      "comando": "as entradas de DEFINICOES_DAS_MEDIDAS",
+      "conhecido_positivo": {
+        "o_que": "a do índice harmonizado está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_que_nomeiam_portugal_no_cartao",
+      "valor": [
+        "ihpc-variacao-homologa"
+      ],
+      "comando": "as entradas cuja pergunta do cartão nomeia Portugal ou um gentílico, em alguma das duas edições",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê «em Portugal» numa frase de prova",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_que_nomeiam_portugal_no_cartao_conta",
+      "valor": 1,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_do_recibo_da_serie_declaradas",
+      "valor": [
+        "ihpc-variacao-homologa"
+      ],
+      "comando": "as entradas com a forma do recibo da série (serie)",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê o campo numa entrada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "forma_igual_ao_pedido_pt",
+      "valor": true,
+      "comando": "a forma do recibo da série de ihpc-variacao-homologa (pt) contra o texto do pedido da passagem, carácter a carácter",
+      "conhecido_positivo": {
+        "o_que": "o texto do pedido é outro que a pergunta do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "forma_e_o_cartao_sem_o_lugar_pt",
+      "valor": true,
+      "comando": "a mesma forma contra a pergunta do cartão sem « em Portugal» ou « in Portugal»",
+      "conhecido_positivo": {
+        "o_que": "a pergunta do cartão diz o lugar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "forma_nomeia_portugal_pt",
+      "valor": false,
+      "comando": "a mesma forma, pelo detetor do nome de Portugal",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê-o na pergunta do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "forma_igual_ao_pedido_en",
+      "valor": true,
+      "comando": "a forma do recibo da série de ihpc-variacao-homologa (en) contra o texto do pedido da passagem, carácter a carácter",
+      "conhecido_positivo": {
+        "o_que": "o texto do pedido é outro que a pergunta do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "forma_e_o_cartao_sem_o_lugar_en",
+      "valor": true,
+      "comando": "a mesma forma contra a pergunta do cartão sem « em Portugal» ou « in Portugal»",
+      "conhecido_positivo": {
+        "o_que": "a pergunta do cartão diz o lugar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "forma_nomeia_portugal_en",
+      "valor": false,
+      "comando": "a mesma forma, pelo detetor do nome de Portugal",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê-o na pergunta do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "origens_da_forma",
+      "valor": {
+        "origens_proprias": false,
+        "origens_da_entrada": [
+          "rp1-ihpc-comparavel",
+          "rp1-ihpc-homologa"
+        ]
+      },
+      "comando": "a forma não declara origens próprias: as da entrada servem as duas formas",
+      "conhecido_positivo": {
+        "o_que": "a entrada declara origens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_serie",
+      "valor": 20,
+      "comando": "os recibos das séries no dist/, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o do índice harmonizado está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_com_a_definicao_da_forma_que_devem_usar",
+      "valor": 20,
+      "comando": "os recibos cuja [data-serie-o-que-conta] é, carácter a carácter, a forma do recibo da série onde a declaração a tem e a do cartão onde não tem, refeita aqui",
+      "conhecido_positivo": {
+        "o_que": "a comparação falha quando devia: a pergunta do cartão do índice harmonizado não é o texto do recibo dele",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_com_a_forma_da_serie",
+      "valor": 2,
+      "comando": "o mesmo, os que usam a forma do recibo da série",
+      "conhecido_positivo": {
+        "o_que": "a declaração tem a forma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_cuja_definicao_nomeia_portugal",
+      "valor": 0,
+      "comando": "o mesmo, as definições que nomeiam Portugal ou um gentílico",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê «Portugal» na célula do nome do país da tabela de cada recibo, fora da definição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "exemplo_do_texto_colado",
+      "valor": "59,7Portugal89,7",
+      "comando": "o texto inteiro da tabela do recibo português da dívida, como o leitor de HTML o junta, à volta de «Portugal»",
+      "conhecido_positivo": {
+        "o_que": "o nome está no texto colado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tabelas_em_que_o_detetor_ve_portugal_no_texto_colado",
+      "valor": 0,
+      "comando": "o detetor sobre o texto inteiro de cada tabela, com as células coladas pelo leitor de HTML",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê o nome na célula do país de cada tabela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_do_ihpc_com_a_pergunta_do_cartao",
+      "valor": 4,
+      "comando": "as frases [data-cartao-definicao=\"ihpc-variacao-homologa\"] de todo o dist/ iguais à pergunta do cartão, que diz o lugar",
+      "conhecido_positivo": {
+        "o_que": "há cartões do índice harmonizado no dist/",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_do_ihpc",
+      "valor": 4,
+      "comando": "o mesmo, todas",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas",
+      "valor": 5,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/plantas-ue1e.json",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_que_morderam",
+      "valor": 5,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_nome_de_portugal",
+      "valor": 3,
+      "comando": "o mesmo, o grupo da regra nova",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_forma",
+      "valor": 2,
+      "comando": "o mesmo, o grupo da forma que cada recibo deve usar",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_repostas_pelo_sha256",
+      "valor": 5,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_limpas",
+      "valor": 1,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_limpas_a_zero",
+      "valor": 1,
+      "comando": "o mesmo (o controlo)",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 20,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/capturas-ue1e.json",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_cabeca",
+      "valor": 10,
+      "comando": "o mesmo, por tipo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_janela",
+      "valor": 10,
+      "comando": "o mesmo, por tipo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_com_problema",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_plantas",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_plantas_vistas",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_pedidos_para_fora",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_entre_commits",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/entre-commits-ue1e.json",
+      "conhecido_positivo": {
+        "o_que": "um código que não existe lê-se como nulo e não como zero; e o mapa antes da emenda tem citações longe da linha citada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias_entre_commits_a_zero",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "um código que não existe lê-se como nulo e não como zero; e o mapa antes da emenda tem citações longe da linha citada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_antes_da_emenda_citacoes_longe",
+      "valor": 14,
+      "comando": "o mesmo, o conferir-mapa antes da emenda do mapa",
+      "conhecido_positivo": {
+        "o_que": "o registo tinha as contas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_no_sitio",
+      "valor": 141,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_por_encontrar",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_linhas_para_la_do_fim",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_mudados_pela_passagem",
+      "valor": 4,
+      "comando": "git diff --name-only aba0a48b <cabeça>",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_mudados_pela_passagem_lista",
+      "valor": [
+        "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+        "scripts/gate-html.mjs",
+        "src/data/medidas-rp1.mjs",
+        "src/views/SerieView.astro"
+      ],
+      "comando": "o mesmo, os nomes",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro_mudadas",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- ledger/claims",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_do_livro_mudadas",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- as séries, os registos e a tabela dos nomes",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "auditoria_das_perguntas_mudada",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- a auditoria das perguntas (K16)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_mudadas",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- as leituras dos cartões e a sua auditoria",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_das_frases_mudado",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- o inventário das frases",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief_mudado",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- o brief",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "acertos_l1_mudado",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- a pasta do acertos-l1.py",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guiao_da_aterragem_mudado",
+      "valor": 0,
+      "comando": "git diff --name-only aba0a48b <cabeça> -- scripts/aterrar.sh",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o recibo da série mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_de_codigo_da_passagem",
+      "valor": 2,
+      "comando": "git rev-list --count aba0a48b..<cabeça>",
+      "conhecido_positivo": {
+        "o_que": "a base é antepassada da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_cabeca",
+      "valor": "e394307",
+      "comando": "git rev-parse HEAD, na worktree do motor",
+      "conhecido_positivo": {
+        "o_que": "é um commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_commits_da_passagem",
+      "valor": 0,
+      "comando": "git rev-list --count e394307..HEAD, na worktree do motor",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do UE1 é antepassada da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_inicio_da_passagem",
+      "valor": "2026-09-29T22:53:37Z",
+      "comando": "git show -s --format=%cI aba0a48b (o commit do lugar de direção por cima do qual a passagem se construiu)",
+      "conhecido_positivo": {
+        "o_que": "a hora leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_fim_dos_portoes",
+      "valor": "2026-09-29T23:37:44Z",
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é uma hora UTC",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_segundos_da_passagem",
+      "valor": 2647,
+      "comando": "a diferença entre as duas horas acima",
+      "conhecido_positivo": {
+        "o_que": "é positiva",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_segundos_de_espera_pelos_portoes",
+      "valor": 0,
+      "comando": "a soma dos «esperei N s» das 3 linhas de design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/espera.log",
+      "conhecido_positivo": {
+        "o_que": "cada linha tem o seu número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos_da_sessao_no_fecho_da_passagem",
+      "valor": 2517527,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 12482473 (o que restava, lido à mão antes do último commit da passagem)",
+      "conhecido_positivo": {
+        "o_que": "é maior do que a leitura do fecho da passagem UE1d",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos_da_passagem",
+      "valor": 167797,
+      "comando": "a leitura acima menos a do fecho da passagem UE1d (custo-ue1d.json)",
+      "conhecido_positivo": {
+        "o_que": "é positiva",
+        "encontrado": true
+      }
+    }
+  ]
+}

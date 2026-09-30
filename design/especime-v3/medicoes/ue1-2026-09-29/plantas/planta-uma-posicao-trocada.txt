@@ -1,0 +1,10 @@
+# uma posição trocada
+# comando: node scripts/check-formas.mjs
+# código: 1
+
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+
+  PORTÃO DAS FORMAS · 1 problema(s):
+
+  · dist/temas/index.html: F19c · /temas/index.html · divida-publica-2025: a marca de PT está em 12.5 % e o valor dá 53.7705 %
+

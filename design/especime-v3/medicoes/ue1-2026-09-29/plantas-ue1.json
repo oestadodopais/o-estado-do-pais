@@ -1,0 +1,234 @@
+{
+  "bloco": "UE1",
+  "cabeca": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
+  "construcao": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
+  "plantas": 15,
+  "mordidas": 15,
+  "repostas_com_o_mesmo_sha256": 15,
+  "corridas_limpas": 5,
+  "corridas_limpas_a_zero": 5,
+  "resultados": [
+    {
+      "grupo": "faixa",
+      "nome": "um algarismo da faixa sem origem",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/algarismos fora do livro-razão: \"81,7\"/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 25.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-um-algarismo-da-faixa-sem-origem.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "um país em falta no desenho",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19b · \\/temas\\/index\\.html · divida-publica-2025: falta no desenho a marca de MT/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 5.2,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-um-pais-em-falta-no-desenho.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "uma posição trocada",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19c · \\/temas\\/index\\.html · divida-publica-2025: a marca de PT está em 12\\.5 %/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 8.5,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-uma-posicao-trocada.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "o ponto da União da faixa a divergir da série",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o ponto «EU27_2020» da série «divida-publica-2025-paises» foi renderizado como «81,8»/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 26.8,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-o-ponto-da-uniao-da-faixa-a-divergir-da-serie.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "o empate tirado da frase",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "/F19e · \\/temas\\/index\\.html · risco-de-pobreza-ou-exclusao-2025: a frase diz/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 7.1,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-o-empate-tirado-da-frase.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "um nome de país escrito à mão",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o nome do país «EL» foi renderizado como «Grecia»/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 24.5,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-um-nome-de-pais-escrito-a-mao.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "o lugar de Portugal trocado",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/«data-ponto-lugar» da série «divida-publica-2025-paises» diz «7» e a recontagem dos pontos dá «6»/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 20.5,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-o-lugar-de-portugal-trocado.txt"
+    },
+    {
+      "grupo": "faixa",
+      "nome": "a contagem dos países trocada",
+      "ficheiro": "dist/temas/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/«data-ponto-conta» da série «divida-publica-2025-paises» diz «26» e a recontagem dos pontos dá «27»/",
+      "passou": true,
+      "antes": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "reposto": "2da5a0eac64cbab0131dbd4204a71e69ca4c75b64c7ccf52823ee32a1a29e5e8",
+      "segundos": 22.3,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-a-contagem-dos-paises-trocada.txt"
+    },
+    {
+      "grupo": "recibo",
+      "nome": "um valor da tabela do recibo trocado",
+      "ficheiro": "dist/livro-razao/series/divida-publica-2025-paises/index.html",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "/o ponto «BE» da série «divida-publica-2025-paises» foi renderizado como «107,0»/",
+      "passou": true,
+      "antes": "80b9b8d37f9cf738873140d7dae391d2583cb83508d407a3d396476bc4d2ecfb",
+      "reposto": "80b9b8d37f9cf738873140d7dae391d2583cb83508d407a3d396476bc4d2ecfb",
+      "segundos": 26.5,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-um-valor-da-tabela-do-recibo-trocado.txt"
+    },
+    {
+      "grupo": "livro",
+      "nome": "o ponto da União da série a divergir da linha -ue",
+      "ficheiro": "ledger/series/divida-publica-2025-paises.yml",
+      "comando": "node scripts/check-ledger.mjs",
+      "codigo": 1,
+      "mordida": "/S6: o ponto EU27_2020 \\(«81,8»\\) não é, como número, a linha «divida-publica-2025-ue» \\(«81,7»\\)/",
+      "passou": true,
+      "antes": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "reposto": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "segundos": 0.6,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-o-ponto-da-uniao-da-serie-a-divergir-da-linha-ue.txt"
+    },
+    {
+      "grupo": "livro",
+      "nome": "o ponto de Portugal da série a divergir da linha portuguesa",
+      "ficheiro": "ledger/series/divida-publica-2025-paises.yml",
+      "comando": "node scripts/check-ledger.mjs",
+      "codigo": 1,
+      "mordida": "/S6: o ponto PT \\(«89,6»\\) não é, como número, a linha «divida-publica-2025» \\(«89,7»\\)/",
+      "passou": true,
+      "antes": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "reposto": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "segundos": 0.6,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-o-ponto-de-portugal-da-serie-a-divergir-da-linha-portuguesa.txt"
+    },
+    {
+      "grupo": "livro",
+      "nome": "um país em falta na série",
+      "ficheiro": "ledger/series/divida-publica-2025-paises.yml",
+      "comando": "node scripts/check-ledger.mjs",
+      "codigo": 1,
+      "mordida": "/S3: país em falta: MT/",
+      "passou": true,
+      "antes": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "reposto": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "segundos": 0.6,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-um-pais-em-falta-na-serie.txt"
+    },
+    {
+      "grupo": "livro",
+      "nome": "uma série editada à mão",
+      "ficheiro": "ledger/series/divida-publica-2025-paises.yml",
+      "comando": "node scripts/check-cruzamento.mjs",
+      "codigo": 1,
+      "mordida": "/\\[series\\.json\\] divida-publica-2025-paises: os bytes em disco já não são os que atravessaram/",
+      "passou": true,
+      "antes": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "reposto": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+      "segundos": 0.7,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-uma-serie-editada-a-mao.txt"
+    },
+    {
+      "grupo": "livro",
+      "nome": "uma série escrita à mão, sem travessia",
+      "ficheiro": "ledger/series/uma-serie-a-mao-paises.yml",
+      "comando": "node scripts/check-cruzamento.mjs",
+      "codigo": 1,
+      "mordida": "/série\\(s\\) em ledger\\/series\\/ que nenhum registo de travessia nomeia: uma-serie-a-mao-paises/",
+      "passou": true,
+      "antes": "ausente",
+      "reposto": "ausente",
+      "segundos": 0.4,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-uma-serie-escrita-a-mao-sem-travessia.txt"
+    },
+    {
+      "grupo": "palavras",
+      "nome": "uma palavra da frase mudada na declaração",
+      "ficheiro": "src/data/faixa-da-uniao.mjs",
+      "comando": "python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py",
+      "codigo": 1,
+      "mordida": "/DIFERE  pt · sem empate/",
+      "passou": true,
+      "antes": "eabc64da0162d6f18eb7140eadf9190684164d31fd4053ad40f1947c43961efd",
+      "reposto": "eabc64da0162d6f18eb7140eadf9190684164d31fd4053ad40f1947c43961efd",
+      "segundos": 0.1,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/planta-uma-palavra-da-frase-mudada-na-declaracao.txt"
+    }
+  ],
+  "limpas": [
+    {
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/limpa-gate-html.txt"
+    },
+    {
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/limpa-check-formas.txt"
+    },
+    {
+      "comando": "node scripts/check-ledger.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/limpa-check-ledger.txt"
+    },
+    {
+      "comando": "node scripts/check-cruzamento.mjs",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/limpa-check-cruzamento.txt"
+    },
+    {
+      "comando": "python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py",
+      "codigo": 0,
+      "saida": "design/especime-v3/medicoes/ue1-2026-09-29/plantas/limpa-acertos-ue1.txt"
+    }
+  ]
+}

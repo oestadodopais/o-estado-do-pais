@@ -1,0 +1,73 @@
+{
+  "bloco": "UE1b",
+  "commits": [
+    {
+      "commit": "63f54d18",
+      "o_que": "o ordinal inglês, as ressalvas da fonte nas pontas e a legenda das marcas do recibo da série (o estado sem a porta, construído à parte)",
+      "corridas": [
+        {
+          "comando": "python3 acertos-ue1.py",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:voz (depois de pôr o inventário em dia)",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run build",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:cartao",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run typecheck",
+          "codigo": 0
+        }
+      ]
+    },
+    {
+      "commit": "181ce25c",
+      "o_que": "a porta do recibo da linha portuguesa para a sua série",
+      "corridas": [
+        {
+          "comando": "npm run build",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:alvos",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:lugar",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run check:cartao",
+          "codigo": 0
+        },
+        {
+          "comando": "npm run typecheck",
+          "codigo": 0
+        }
+      ]
+    },
+    {
+      "commit": "c9859d31",
+      "o_que": "o mapa do repositório",
+      "corridas": [
+        {
+          "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+          "codigo": 0
+        }
+      ]
+    }
+  ],
+  "corridas": 11,
+  "corridas_a_zero": 11,
+  "conhecido_positivo": {
+    "o_que": "um código que não existe lê-se como nulo e não como zero",
+    "encontrado": true
+  }
+}
