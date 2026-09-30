@@ -24,6 +24,34 @@
     "memoria_isolada": true
   },
   {
+    "nome": "data antiga do contador",
+    "codigo": 1,
+    "mordida": "E0b datas: o contador tem uma data anterior",
+    "queixa": "E0b datas: o contador tem uma data anterior à sua última recontagem.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "valor pela marca do nome no portão real",
+    "codigo": 1,
+    "mordida": "data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão",
+    "queixa": "    \u001b[31m✗\u001b[0m data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "nome fora da página do registo",
+    "mordeu": true,
+    "queixa": "A porta estreita do portão recusa o contexto plantado.",
+    "memoria_isolada": true
+  },
+  {
+    "nome": "nome de outra linha na entrada",
+    "mordeu": true,
+    "queixa": "A porta estreita do portão recusa o contexto plantado.",
+    "memoria_isolada": true
+  },
+  {
     "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
     "codigo": 1,
     "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
@@ -57,6 +85,18 @@
     "nome": "lugar retirado do registo inglês",
     "mordeu": true,
     "queixa": "E0 registo en: correcoes-publicadas perdeu a mudança ou o lugar com a porta.",
+    "memoria_isolada": true
+  },
+  {
+    "nome": "nome retirado da recontagem",
+    "mordeu": true,
+    "queixa": "E0b nome pt: correcoes-publicadas, entrada 0, perdeu o nome da medida.",
+    "memoria_isolada": true
+  },
+  {
+    "nome": "nome retirado da dívida das famílias",
+    "mordeu": true,
+    "queixa": "E0b nome en: divida-das-familias-2025-ue, entrada 0, perdeu o nome da medida.",
     "memoria_isolada": true
   }
 ]

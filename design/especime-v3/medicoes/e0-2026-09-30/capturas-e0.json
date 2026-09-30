@@ -1,15 +1,15 @@
 {
-  "cabeca": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c",
+  "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
   "construcao": {
-    "commit": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c",
+    "commit": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
     "ref": "e0-2026-09-30",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-09-30T21:44:10.082Z"
+    "construido_em": "2026-09-30T23:12:14.884Z"
   },
-  "inicio": "2026-09-30T21:46:13.588Z",
-  "fim": "2026-09-30T21:46:21.625Z",
+  "inicio": "2026-09-30T23:25:37.309Z",
+  "fim": "2026-09-30T23:25:45.206Z",
   "larguras": [
     390,
     1280
@@ -66,13 +66,13 @@
       "seletor": "[aria-labelledby=\"registo-mudancas\"]",
       "lang": "pt",
       "largura": 390,
-      "sha256": "c8708982a92539c571d11c2062558303dc167d9515ae3f5ccbd16d655697919e",
+      "sha256": "211dc6f1315940e1617572e6f3bc7e4edcf3ac4060df7e6c64f4bf705a21aa73",
       "medidas": {
         "janela": 390,
         "documento": 390,
         "alvo": {
           "largura": 354,
-          "altura": 8546.296875,
+          "altura": 8594.359375,
           "scroll": 351,
           "client": 351
         },
@@ -140,13 +140,13 @@
       "seletor": "[aria-labelledby=\"registo-mudancas\"]",
       "lang": "pt",
       "largura": 1280,
-      "sha256": "28f631eb1290848c343019df158cc589594111dce5ac74494d69f046e33fc88f",
+      "sha256": "d248937f264eaecb7e3eeee9ad70996c95a6675e1f9f989ff0b4755bd05dd5fe",
       "medidas": {
         "janela": 1280,
         "documento": 1280,
         "alvo": {
           "largura": 544,
-          "altura": 8772.8125,
+          "altura": 8779.0625,
           "scroll": 541,
           "client": 541
         },
@@ -214,13 +214,13 @@
       "seletor": "[aria-labelledby=\"registo-mudancas\"]",
       "lang": "en",
       "largura": 390,
-      "sha256": "061f3c0049051181898e71fb59df20893ad6fc93c24ddcf0a1341ba170d78991",
+      "sha256": "056217a44a7278661db1c774c69d4d08da85fc803e71ef426b748b9f18c2d224",
       "medidas": {
         "janela": 390,
         "documento": 390,
         "alvo": {
           "largura": 354,
-          "altura": 8588.796875,
+          "altura": 8593.484375,
           "scroll": 351,
           "client": 351
         },
@@ -288,13 +288,13 @@
       "seletor": "[aria-labelledby=\"registo-mudancas\"]",
       "lang": "en",
       "largura": 1280,
-      "sha256": "5defaa9c704958ce473cc0ceab4bd75336998b6eb6fe699ba107e6dbb6f85051",
+      "sha256": "74d8a0211cb2dc50cc84d2647e321eb2353793a5a2c7a16f728fba873622fd6e",
       "medidas": {
         "janela": 1280,
         "documento": 1280,
         "alvo": {
           "largura": 544,
-          "altura": 8781.46875,
+          "altura": 8766.03125,
           "scroll": 541,
           "client": 541
         },

@@ -1,0 +1,15 @@
+{
+  "comando": "npm run build",
+  "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+  "cabeca_fim": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+  "inicio": "2026-09-30T23:11:59Z",
+  "fim": "2026-09-30T23:13:58Z",
+  "segundos": 119,
+  "codigo": 0,
+  "medido_nesta_corrida": true,
+  "codigo_por_registar": false,
+  "limites_da_escrita": {
+    "inicio": 1790809919788.208,
+    "fim": 1790810038468.8843
+  }
+}
