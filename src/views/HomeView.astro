@@ -21,6 +21,8 @@
  * serve: a maior parte das linhas do Eurostat não a tem.
  */
 import Base from '../layouts/Base.astro';
+import IndiceDosAssuntos from '../components/IndiceDosAssuntos.astro';
+import { portaDoCartao } from '../lib/assuntos.mjs';
 import Masthead from '../components/Masthead.astro';
 import BlocoDaPrimeiraPagina from '../components/inicio/BlocoDaPrimeiraPagina.astro';
 import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
@@ -36,7 +38,7 @@ import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { prova } from '../lib/prova.mjs';
 import { estudosRecentes } from '../lib/pais.mjs';
-import { idsDosBlocos, blocosDaPagina, periodoDosNumerosMaisRecentes, entradasDaPrimeiraPagina } from '../lib/primeira-pagina.mjs';
+import { idsDosBlocos, blocosDaPagina, periodoDosNumerosMaisRecentes } from '../lib/primeira-pagina.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -63,7 +65,7 @@ if (!lede?.ano || periodos.size !== 1 || !periodos.has(lede.ano)) throw new Erro
    componente, que pergunta ao mesmo resolvedor. */
 const ids = idsDosBlocos();
 const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
-const entradas = entradasDaPrimeiraPagina(lang);
+
 const cs = concelhosDaCarta();
 const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null);
 ---
@@ -82,16 +84,7 @@ const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug
 
   <section class="pp-entradas" data-entradas aria-labelledby="entradas-k">
     <h2 class="pp-sec-k" id="entradas-k">{s.primeira.porOndeComecar}</h2>
-    <ul class="pp-entradas-lista">
-      {entradas.map((e) => (
-        <li data-entrada={e.id}>
-          <a class="pp-entrada" href={e.rota}>
-            <span class="pp-entrada-nome">{e.nome}</span>
-            <span class="pp-entrada-linha">{e.linha}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <IndiceDosAssuntos lang={lang} />
   </section>
 
   {/* A PESQUISA DOS LUGARES E, AO LADO, O MAPA (o §2, ponto 3, do brief). É a mesma pesquisa da
@@ -122,7 +115,7 @@ const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug
   <section class="pais-sec pp-veredicto" data-veredicto-seccao aria-labelledby="veredicto-k">
     <div class="sec-head"><h2 class="eyebrow" id="veredicto-k">{s.primeira.veredicto}</h2></div>
     <p class="pais-leitura pais-veredicto" data-veredicto-pais>
-      {v.ano}<CampoDaLinha id={medidasDoPainel[0].claim} campo="reference_date" valor={lede.ano} lang={lang} />{v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={`${routePath('temas', lang)}#m-${m.claim}`}>{m.nome}</a></>)}</span></>}{v.fecha}
+      {v.ano}<CampoDaLinha id={medidasDoPainel[0].claim} campo="reference_date" valor={lede.ano} lang={lang} />{v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={portaDoCartao(m.claim, lang)}>{m.nome}</a></>)}</span></>}{v.fecha}
     </p>
     <p class="regra-portas"><a href={routePath('uniaoEuropeia', lang)}>{s.nav.uniaoEuropeia} →</a></p>
   </section>

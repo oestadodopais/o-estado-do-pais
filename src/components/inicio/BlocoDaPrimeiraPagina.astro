@@ -34,6 +34,8 @@ import DataDaLinha from '../DataDaLinha.astro';
 import NomeDaMedida from '../NomeDaMedida.astro';
 import DesenhoDoBloco from './DesenhoDoBloco.astro';
 import { blocoResolvido } from '../../lib/primeira-pagina.mjs';
+import { PORTAS_DOS_BLOCOS } from '../../lib/assuntos.mjs';
+import { ENTRADAS } from '../../data/primeira-pagina.mjs';
 import { getClaim } from '../../lib/ledger.mjs';
 import { t } from '../../i18n/strings.mjs';
 import { linguaDaFonte } from '../../i18n/lingua-dos-titulos.mjs';
@@ -43,6 +45,8 @@ const s = t(lang);
 const b = blocoResolvido(id, lang);
 const Titulo = nivel;
 const idDoTitulo = `bloco-${id}-t`;
+const porta = PORTAS_DOS_BLOCOS[id];
+const destino = ENTRADAS.find((e) => e.id === porta.entrada);
 ---
 
 {b.mostra && (
@@ -86,6 +90,7 @@ const idDoTitulo = `bloco-${id}-t`;
         ))}
       </ul>
     </details>
+    <p class="pp-porta-assunto"><a data-porta-assunto href={destino.rota[lang]}>{porta[lang]} →</a></p>
     </div>
   </section>
 )}

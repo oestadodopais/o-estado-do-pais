@@ -28,6 +28,8 @@
  * bloco, com o que ficou sem porta. Não se inventa aqui um lugar para isso.
  */
 import Base from '../layouts/Base.astro';
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
+import ComparacoesDosConcelhos from '../components/ComparacoesDosConcelhos.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
@@ -40,6 +42,7 @@ import { t } from '../i18n/strings.mjs';
    consumi-los sem ela seria um desenho sem regras. */
 import '../styles/inicio.css';
 import '../styles/lugar.css';
+import '../styles/primeira-pagina.css';
 import '../styles/municipio.css';
 
 const { lang = 'pt' } = Astro.props;
@@ -47,6 +50,7 @@ const s = t(lang);
 const r = ROTULOS_B1[lang];
 const path = routePath('lugares', lang);
 
+const entrada = ENTRADAS.find((e) => e.id === 'lugares');
 const cs = concelhosDaCarta();
 /* O destino de um resultado da busca é a página daquele concelho; um concelho
    sem página não é porta nenhuma, e a peça sabe o que fazer com o nulo. */
@@ -57,8 +61,9 @@ const regioes = regioesDaCarta();
 const distritos = distritosDaCarta();
 ---
 
-<Base lang={lang} path={path} title={`${r.lugares} · ${s.municipio.metaCauda}`} description={s.municipios.metaDescription}>
+<Base lang={lang} path={path} title={`${r.lugares} · ${s.municipio.metaCauda}`} description={entrada.linha[lang]}>
   <h1 class="lugares-nome">{r.lugares}</h1>
+  <p class="entrada-linha">{entrada.linha[lang]}</p>
 
   {/* DUAS COLUNAS A PARTIR DE 1 024 px (achado D7, 21.09.2026). A uma coluna, o
       primeiro ecrã de um portátil era a busca e o topo de um mapa com meio ecrã
@@ -124,6 +129,8 @@ const distritos = distritosDaCarta();
     <a class="ligacao-dados" href={DADOS.municipios} download>{s.municipios.dadosLink} ↓</a>
     <a class="ligacao-dados" href={DADOS.indicadoresDosConcelhos} download>{s.municipios.medidasLink} ↓</a>
   </p>
+
+  <ComparacoesDosConcelhos lang={lang} />
 
   <script src="/js/municipios.js" defer is:inline></script>
   <script src="/js/mapa-unidades.js" defer is:inline></script>

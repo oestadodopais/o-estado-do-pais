@@ -1,22 +1,10 @@
 ---
-/**
- * UMA ENTRADA POR PERGUNTA DA VIDA (bloco PP1, 28.09.2026; a decisão do diretor de 28.09.2026,
- * `DECISIONS.md` §1.133): «O meu dinheiro», «O meu trabalho», «A minha casa», «A escola e a saúde»
- * e «O Estado e a economia». A sexta entrada, «A minha terra», é a página dos lugares.
- *
- * O QUE A PÁGINA TEM, pelo §2, ponto 4, do brief: o nome da entrada no `<h1>` e a linha dela; os
- * blocos de «O que se passa» que lhe pertencem, com o mesmo componente e as mesmas condições da
- * primeira página; as secções com os cartões desenhados pelo mesmo componente da página dos temas,
- * com as mesmas âncoras e as mesmas leituras; os estudos do país sobre os temas da entrada (a regra
- * está em `estudosDaEntrada()`); e a porta «Todos os temas».
- *
- * AS PALAVRAS E AS LISTAS SÃO DO LUGAR DE DIREÇÃO, em `src/data/primeira-pagina.mjs`. O caminho da
- * rota também está lá, e tem de ser o da tabela das rotas: uma divergência fecha a construção.
- */
+/** N1: uma página por assunto, com os cartões e os estudos próprios. */
 import Base from '../layouts/Base.astro';
-import BlocoDaPrimeiraPagina from '../components/inicio/BlocoDaPrimeiraPagina.astro';
 import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
 import CartaoDaMedida from '../components/CartaoDaMedida.astro';
+import Claim from '../components/Claim.astro';
+import { medidaPelaChave } from '../data/dominios.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import { estudosDaEntrada } from '../lib/primeira-pagina.mjs';
 import { ENTRADA_DA_ROTA } from '../lib/caminho.mjs';
@@ -38,22 +26,33 @@ if (entrada.rota[lang] !== path) {
   throw new Error(`entradas: a declaração diz «${entrada.rota[lang]}» e a tabela das rotas diz «${path}» para ${chave} (${lang}).`);
 }
 const estudos = estudosDaEntrada(entrada.id, lang);
+const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
+const ambitos = ['T1', 'T2'].map(medidaPelaChave);
 ---
 <Base lang={lang} path={path} title={`${entrada.nome[lang]}${s.primeira.metaCauda}`} description={entrada.linha[lang]}>
   <h1 class="entrada-titulo">{entrada.nome[lang]}</h1>
   <p class="entrada-linha">{entrada.linha[lang]}</p>
 
-  {entrada.blocos.length > 0 && (
-    <div class="pp-blocos pp-blocos-entrada">
-      {entrada.blocos.map((id) => <BlocoDaPrimeiraPagina id={id} lang={lang} nivel="h2" />)}
-    </div>
-  )}
-
   {entrada.seccoes.map((seccao, i) => (
     <section class="pais-tema entrada-seccao" data-entrada-seccao={i} aria-labelledby={`entrada-seccao-${i}`}>
       <h2 class="pais-tema-k entrada-seccao-k" id={`entrada-seccao-${i}`}>{seccao.nome[lang]}</h2>
       <div class="pais-cartoes">
-        {seccao.cartoes.map((id) => <CartaoDaMedida linha={getClaim(id)} lang={lang} leitura />)}
+        {seccao.cartoes.map((id) => (
+          <>
+            <CartaoDaMedida linha={getClaim(id)} lang={lang} leitura />
+            {ambitos.filter((m) => m.claim === id || (m.chave === 'T2' && id === 'taxa-de-desemprego-mip-2025')).map((m) => (
+              <p class="entrada-referencia"><span data-nonledger="ambito-da-medida">{m.ambito[lang]}</span></p>
+            ))}
+            {referencias.filter((m) => m.claim === id).map((m) => (
+              <p class="entrada-referencia">{s.estado[m.limiarFixadoPor].frase}</p>
+            ))}
+            {id === medidaPelaChave('T5').claim && medidaPelaChave('T5').claims.map((irma) => (
+              <p class="entrada-valor-irmao" data-valor-irmao={irma.id}>
+                {irma.rotulo[lang]}:{' '}<Claim id={irma.id} lang={lang} sufixo=" €" chip />
+              </p>
+            ))}
+          </>
+        ))}
       </div>
     </section>
   ))}
@@ -67,3 +66,7 @@ const estudos = estudosDaEntrada(entrada.id, lang);
 
   <p class="regra-portas entrada-portas"><a href={routePath('temas', lang)}>{s.primeira.todosOsTemas} →</a></p>
 </Base>
+
+<style>
+  .entrada-valor-irmao, .entrada-referencia { margin: 0; padding: 0 0 1.5rem; font-size: 1rem; }
+</style>

@@ -169,6 +169,97 @@
       }
     },
     {
+      "src": "/o-meu-dinheiro/?",
+      "status": 301,
+      "headers": {
+        "Location": "/temas/"
+      }
+    },
+    {
+      "src": "/en/my-money/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/themes/"
+      }
+    },
+    {
+      "src": "/o-meu-trabalho/?",
+      "status": 301,
+      "headers": {
+        "Location": "/emprego/"
+      }
+    },
+    {
+      "src": "/en/my-work/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/employment/"
+      }
+    },
+    {
+      "src": "/a-minha-casa/?",
+      "status": 301,
+      "headers": {
+        "Location": "/habitacao/"
+      }
+    },
+    {
+      "src": "/en/my-home/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/housing/"
+      }
+    },
+    {
+      "src": "/a-escola-e-a-saude/?",
+      "status": 301,
+      "headers": {
+        "Location": "/educacao-e-saude/"
+      }
+    },
+    {
+      "src": "/en/school-and-health/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/education-and-health/"
+      }
+    },
+    {
+      "src": "/o-estado-e-a-economia/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estado-e-economia/"
+      }
+    },
+    {
+      "src": "/dominios/?",
+      "status": 301,
+      "headers": {
+        "Location": "/temas/"
+      }
+    },
+    {
+      "src": "/dominios/economia-e-financas-publicas/?",
+      "status": 301,
+      "headers": {
+        "Location": "/temas/"
+      }
+    },
+    {
+      "src": "/en/domains/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/themes/"
+      }
+    },
+    {
+      "src": "/en/domains/economia-e-financas-publicas/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/themes/"
+      }
+    },
+    {
       "handle": "filesystem"
     },
     {

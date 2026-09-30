@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'js-yaml';
 import { FIGURAS_PDM } from '../src/data/figuras.mjs';
+import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const lerLinha = id => load(fs.readFileSync(path.join(process.cwd(), 'ledger/claims', `${id}.yml`), 'utf8'));
@@ -72,11 +73,12 @@ export function verificaVeredictoDoPais(home, indice, lang, linha = lerLinha) {
   fora.forEach((f, i) => {
     const a = portas[i];
     const ancora = `m-${f.claim}`;
-    const destino = `${lang === 'pt' ? '/temas/' : '/en/themes/'}#${ancora}`;
+    const entrada = ENTRADAS.find((e) => e.seccoes.some((s) => s.cartoes.includes(f.claim)));
+    const destino = `${entrada?.rota[lang]}#${ancora}`;
     if (a?.tagName !== 'A' || a?.getAttribute('href') !== destino || normal(a?.textContent) !== nomes[i])
       falha(`${f.claim}: o nome ou a porta difere da declaração.`);
     const alvos = indice.querySelectorAll(`[id="${ancora}"]`);
-    if (alvos.length !== 1 || alvos[0].getAttribute('data-cartao-medida') !== f.claim)
+    if (alvos.length !== 1 || alvos[0].getAttribute('data-cartao-medida') !== f.claim || alvos[0].closest('[data-pagina-assunto]')?.getAttribute('data-pagina-assunto') !== entrada?.rota[lang])
       falha(`${f.claim}: a porta não abre exatamente o cartão da medida.`);
   });
   const lista = nomes.map((nome, i) => (i ? i === nomes.length - 1 ? lang === 'pt' ? ' e ' : ' and ' : ', ' : '') + nome).join('');

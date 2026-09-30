@@ -650,7 +650,6 @@ export function entradasDaPrimeiraPagina(lang) {
     linha: e.linha[lang],
     rota: e.rota[lang],
     existente: 'existente' in e && e.existente === true,
-    blocos: e.blocos,
     seccoes: e.seccoes.map((s) => ({ nome: s.nome[lang], cartoes: s.cartoes })),
   }));
 }

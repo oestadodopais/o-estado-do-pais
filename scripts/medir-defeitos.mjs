@@ -430,9 +430,12 @@ const ROTAS_QUE_PROVAM_A_RENDICAO = new Set(['sobre', 'metodo', 'linha']);
  */
 const ROTAS_COM_ORIGEM_LIDA = new Set([
   'home',
+  'lugares',
   /* AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) entram com elas, pela regra desta lista: são
      rotas novas, e as suas frases são classificadas no commit em que a página nasce. */
   'entradaDinheiro',
+  'entradaSalarios',
+  'entradaPobreza',
   'entradaTrabalho',
   'entradaCasa',
   'entradaEscolaESaude',
@@ -449,11 +452,11 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
 ]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
-  'home', 'temas',
+  'home', 'temas', 'lugares',
   /* As cinco páginas das entradas por pergunta da vida (bloco PP1, 28.09.2026) entram no commit em que
      nascem, que é a regra desta lista. São páginas do leitor como a dos temas: a Emenda 15 governa-as, e
      a sua autorreferência vai a zero. */
-  'entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado',
+  'entradaDinheiro', 'entradaSalarios', 'entradaPobreza', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado',
   /* «Portugal na União Europeia» entra no commit em que a sua página nasce, que
      é a regra desta lista (bloco F1.10, item 8.16, 08.09.2026). É uma página do
      leitor como as outras: a Emenda 15 governa-a e a sua autorreferência vai a
@@ -647,10 +650,10 @@ const BLOCO_DECLARADO = '[data-bloco-declarado]';
  * dos temas pedia uma linha do inventário por ramo de cada leitura, e uma atualização dos dados fechava
  * a construção. Ver `frasesDaCasa`.
  */
-const ROTAS_DAS_ENTRADAS = new Set(['entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado']);
+const ROTAS_DAS_ENTRADAS = new Set(['entradaDinheiro', 'entradaSalarios', 'entradaPobreza', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado']);
 const CARTAO_DOS_TEMAS = '[data-cartao-medida]';
 /** As rotas onde a marca dos blocos tira texto do inventário: as páginas onde a célula dos blocos corre. */
-const ROTAS_DOS_BLOCOS = new Set(['home', ...ROTAS_DAS_ENTRADAS]);
+const ROTAS_DOS_BLOCOS = new Set(['home']);
 /**
  * A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA, E SÓ LÁ (bloco PP1, 28.09.2026). A linha dela
  * no inventário era a frase com os valores e os nomes tirados, e por isso contava as vírgulas da lista

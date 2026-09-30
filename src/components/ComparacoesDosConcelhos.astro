@@ -1,0 +1,53 @@
+---
+/** N1: os mapas, as tabelas e a ausência municipal deixam a página do domínio. */
+import CartaoDasCamaras from './CartaoDasCamaras.astro';
+import BarraConcelhoPais from './formas/BarraConcelhoPais.astro';
+import MapaPorConcelho from './formas/MapaPorConcelho.astro';
+import GeometriaDosConcelhos from './formas/GeometriaDosConcelhos.astro';
+import { medidaPelaChave, AUSENCIAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
+import { mapaPorConcelho, barraConcelhoPais, linhasPorConcelho } from '../lib/dominios.mjs';
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/dominio.css';
+import '../styles/cartao-medida.css';
+import '../styles/pais.css';
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const limite = medidaPelaChave('E5');
+const ganho = medidaPelaChave('T3');
+const corte = parsePtNumber(getClaim(limite.claim).value);
+if (corte === null) throw new Error('O limite legal tem de ser um número.');
+const cortes = [1200, 1400, 1600, 1800];
+const marca = (n) => ({ nl: String(n), motivo: 'escala-de-instrumento' });
+const rotulosGanho = [
+  [s.dominios.mapaMenosDe, marca(cortes[0])],
+  ...cortes.slice(0, -1).map((c, i) => [marca(`${c}${s.dominios.mapaA}${cortes[i + 1]}`)]),
+  [marca(cortes.at(-1)), s.dominios.mapaOuMais],
+];
+const mapas = [
+  { chave: 'indice', medida: limite, mapa: mapaPorConcelho(linhasPorConcelho('indice'), [corte], { igualdadeDentro: true }), paleta: 'limiar', rotulos: [[s.estado.lei.dentro], [s.estado.lei.fora]] },
+  { chave: 'ganho', medida: ganho, mapa: mapaPorConcelho(linhasPorConcelho('ganho'), cortes), paleta: 'escala', rotulos: rotulosGanho },
+];
+const barra = barraConcelhoPais(linhasPorConcelho('ganho').get('evora'), ganho.claim);
+---
+<section class="lugar-sec" data-comparacoes-concelhos aria-labelledby="comparacoes-concelhos-k">
+  <h2 class="eyebrow" id="comparacoes-concelhos-k">{lang === 'pt' ? 'As medidas dos concelhos' : 'Municipal figures'}</h2>
+  <CartaoDasCamaras lang={lang} />
+  <GeometriaDosConcelhos mapa={mapas[0].mapa} />
+  {mapas.map(({ chave, medida, mapa, paleta, rotulos }) => (
+    <article class="dominio-medida" id={`m-${medida.chave.toLowerCase()}`} data-medida={medida.chave} data-leitura-linha={medida.claim}>
+      <h3 class="dominio-pergunta" id={`k-${medida.chave.toLowerCase()}`}>{medida.pergunta[lang]}</h3>
+      {chave === 'ganho' && <BarraConcelhoPais lang={lang} barra={barra} rotuloConcelho="Évora" rotuloPais="Portugal" unidade={medida.unidade[lang]} nomeada={`k-${medida.chave.toLowerCase()}`} />}
+      <MapaPorConcelho s={s} lang={lang} mapa={mapa} paleta={paleta} rotulos={rotulos} rota={(slug) => routePath('municipio', lang, { slug })} nomeada={`k-${medida.chave.toLowerCase()}`} chave={chave} />
+    </article>
+  ))}
+  {AUSENCIAS_DO_DOMINIO_1.map((a) => (
+    <article class="dominio-medida dominio-ausente" id={`m-${a.chave.toLowerCase()}`} data-ausencia={a.chave}>
+      <h3 class="dominio-pergunta">{a.pergunta[lang]}</h3>
+      <p class="dominio-sem-numero">{s.dominios.ausenciaResposta}</p>
+      <p class="dominio-fonte"><span class="dominio-data-k">{s.dominios.ausenciaProcurado}</span>{' '}<span>{a.procurado[lang]}</span><span data-nonledger="identificador-tecnico">{a.codigo}</span></p>
+      <p class="dominio-razao">{a.razao[lang]}</p>
+    </article>
+  ))}
+</section>

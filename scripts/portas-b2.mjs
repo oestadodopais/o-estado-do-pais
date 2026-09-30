@@ -10,20 +10,20 @@ const CHAVES_DO_VEREDICTO = ['painel_fora_do_limiar', 'painel_com_limiar', 'pain
 export function portasObrigatoriasB2(raiz, familia, lang, temas = null) {
   const portas = new Set();
   const erros = [];
-  if (familia !== 'home' && familia !== 'temas') return { portas, erros };
+  if (familia !== 'home' && familia !== 'lugares') return { portas, erros };
   /* O CARTÃO DAS CÂMARAS VIVE NA PÁGINA DOS TEMAS (bloco PP1, 28.09.2026). Os cartões saíram da
      primeira página, e com eles a contagem das câmaras; a V2 continua a conferi-lo onde ele está, e a
      primeira página fica com as portas do veredicto, conferidas pela V1. Um cartão das câmaras que volte
      à primeira página não sai da contagem por aqui: fica no contador, e o `check:pais` fecha a
      construção (T0, nenhum cartão na primeira página). */
-  if (familia === 'temas') erros.push(...verificaCartaoDasCamaras(raiz, lang));
+  if (familia === 'lugares') erros.push(...verificaCartaoDasCamaras(raiz, lang));
   if (familia === 'home') {
     if (!temas) erros.push(`V1 ${lang}: falta o documento dos temas para conferir as portas.`);
     else erros.push(...verificaVeredictoDoPais(raiz, temas, lang));
   }
   if (erros.length) return { portas, erros };
 
-  if (familia === 'temas') {
+  if (familia === 'lugares') {
     const camaras = raiz.querySelector('main [data-cartao-camaras]');
     portas.add(camaras.querySelector('.pais-porta-tema a'));
   }

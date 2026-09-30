@@ -82,7 +82,7 @@ const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
  *  duas edições. A primeira página deixou de render os cartões (o resumo dos temas saiu dela); as
  *  entradas rendem-nos com o mesmo componente e as mesmas leituras, e a K17 lê-os onde eles estão. */
 export const PAGINAS_DA_LEITURA = [
-  ['temas/index.html', 'pt'], ['en/themes/index.html', 'en'],
+  ['lugares/index.html', 'pt'], ['en/places/index.html', 'en'],
   ...ENTRADAS.filter((e) => !('existente' in e && e.existente)).flatMap((e) => /** @type {const} */ (['pt', 'en']).map((l) => [`${e.rota[l].replace(/^\//, '')}index.html`, l])),
 ];
 
@@ -771,10 +771,10 @@ export function plantasDaK17(dist) {
       'não tem leitura declarada nesta edição');
   }
   /* A segunda metade, sobre uma cópia da página dos temas em memória. */
-  const temas = fs.readFileSync(path.join(dist, 'temas/index.html'), 'utf8');
+  const temas = fs.readFileSync(path.join(dist, 'estado-e-economia/index.html'), 'utf8');
   const linhas = loadClaims();
   /** @param {(r: import('node-html-parser').HTMLElement) => void} estraga */
-  const pagina = (estraga) => { const r = parse(temas); estraga(r); return conferirPaginaDaLeitura(r, 'pt', '/temas/ (planta)', linhas).erros; };
+  const pagina = (estraga) => { const r = parse(temas); estraga(r); return conferirPaginaDaLeitura(r, 'pt', '/estado-e-economia/ (planta)', linhas).erros; };
   const leituraDe = (/** @type {any} */ r, /** @type {string} */ id) => r.querySelector(`[data-cartao-medida="${id}"] [data-cartao-leitura]`);
   regista('um algarismo escrito à mão na leitura', pagina((r) => { leituraDe(r, saldo).insertAdjacentHTML('beforeend', ' Em 12 anos subiu.'); }),
     'algarismo sem marca de origem');

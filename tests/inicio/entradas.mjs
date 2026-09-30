@@ -1,31 +1,15 @@
-/**
- * AS ENTRADAS POR PERGUNTA DA VIDA, CONFERIDAS CONTRA A PÁGINA DOS TEMAS (bloco PP1, 28.09.2026).
- *
- * O §2, ponto 4, do brief: «uma célula confere que cada cartão dos temas está numa só entrada, salvo o
- * declarado, e que cada cartão de uma entrada existe nos temas». A conta faz-se sobre as páginas
- * construídas, nas duas edições, e não sobre a declaração: a pergunta é o que o leitor encontra.
- *
- *   E1 · cada cartão da página dos temas está numa entrada, e só numa, salvo os de
- *        `CARTOES_FORA_DAS_ENTRADAS`, que não estão em nenhuma;
- *   E2 · cada cartão de uma entrada existe na página dos temas;
- *   E3 · cada entrada rende os cartões que a declaração lhe dá, pela ordem declarada, e mais nenhum;
- *   E4 · a primeira página tem as seis entradas, pela ordem declarada, cada uma com a porta da sua página,
- *        e a porta abre uma página construída;
- *   E5 · as dez páginas das entradas estão no mapa do sítio construído (bloco PP1b, a leitura a frio do
- *        PP1, achado 8): o índice (`sitemap-index.xml`) e cada mapa que ele nomeia existem na construção, e
- *        cada rota declarada de cada entrada, nas duas edições, é o endereço de uma `<url>` deles, na
- *        origem do sítio. O conhecido-positivo é a primeira página, que tem de lá estar também.
- *
- * Um cartão conhece-se pelo primeiro `data-claim` do seu artigo (`article.cartao-medida`, e o do
- * cartão das câmaras, `article[data-cartao-camaras]`), que é a conta que o §0 do brief fez sobre a
- * página dos temas: o cartão das câmaras conta como o índice da dívida do município em relação ao
- * limite legal, que é a sua primeira linha. Um artigo de estudo com um número na sinopse não é um
- * cartão (a página do dinheiro tem um).
+/** N1: as sete páginas de assunto, os dois índices, os lugares e as rotas antigas.
+ * E1/E2 confrontam o catálogo nacional independente com o HTML construído.
+ * E3 conserva secções, ordem, nomes e âmbito; E4 compara os dois índices.
+ * E5 lê o mapa do sítio e exige também a primeira página como conhecido-positivo.
+ * N1I recusa cartões no índice; N1C recusa cópias; N1R lê os redirecionamentos.
+ * Cada planta altera uma só condição em memória e exige a queixa correspondente.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
-import { ENTRADAS, CARTOES_FORA_DAS_ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+import { DOMINIO_DAS_MEDIDAS } from '../../src/data/dominios.mjs';
 import { SITE_URL } from '../../site.config.mjs';
 
 /** Os cartões de uma página, pela primeira linha de cada artigo do `<main>`. @param {any} root */
@@ -70,120 +54,108 @@ export function caminhosDoMapaDoSitio(lerTexto) {
   return { erros, caminhos, mapas: mapas.length };
 }
 
-/**
- * @param {string} dist
- * @param {{ ler?: (rota: string) => any }} [opcoes] `ler` deixa as plantas trocar uma página por uma cópia estragada
- */
+/** A lista antiga é independente das declarações que a página usa. */
+export const REDIRECIONAMENTOS_N1 = [
+  ['/o-meu-dinheiro', '/temas/'], ['/en/my-money', '/en/themes/'],
+  ['/o-meu-trabalho', '/emprego/'], ['/en/my-work', '/en/employment/'],
+  ['/a-minha-casa', '/habitacao/'], ['/en/my-home', '/en/housing/'],
+  ['/a-escola-e-a-saude', '/educacao-e-saude/'], ['/en/school-and-health', '/en/education-and-health/'],
+  ['/o-estado-e-a-economia', '/estado-e-economia/'],
+  ['/dominios', '/temas/'], ['/dominios/economia-e-financas-publicas', '/temas/'],
+  ['/en/domains', '/en/themes/'], ['/en/domains/economia-e-financas-publicas', '/en/themes/'],
+];
+
 export function conferirEntradas(dist, {
   ler = (rota) => parse(fs.readFileSync(ficheiro(dist, rota), 'utf8')),
-  lerTexto = (rel) => (fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null),
+  lerTexto = (rel) => fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null,
+  regras = JSON.parse(fs.readFileSync('vercel.json', 'utf8')).routes,
 } = {}) {
-  /** @type {string[]} */
   const erros = [];
-  const contas = { edicoes: 0, cartoes_dos_temas: 0, cartoes_nas_entradas: 0, fora: 0, entradas_na_primeira: 0, mapas_do_sitio: 0, enderecos_no_mapa_do_sitio: 0, entradas_no_mapa_do_sitio: 0 };
-  const paginas = ENTRADAS.filter((e) => !('existente' in e && e.existente));
-  for (const lang of /** @type {const} */ (['pt', 'en'])) {
+  const contas = { edicoes: 0, cartoes_dos_temas: 0, cartoes_nas_entradas: 0, fora: 0, entradas_na_primeira: 0, entradas_no_indice: 0, mapas_do_sitio: 0, enderecos_no_mapa_do_sitio: 0, entradas_no_mapa_do_sitio: 0, redirecionamentos: 0 };
+  const esperados = [...new Set(Object.keys(DOMINIO_DAS_MEDIDAS).filter((id) => id !== 'indice-de-divida-limite-legal').map((id) => id === 'taxa-de-desemprego-2025' ? 'taxa-de-desemprego-mip-2025' : id))];
+  const paginas = ENTRADAS.filter((e) => !e.existente);
+  for (const lang of ['pt', 'en']) {
     contas.edicoes++;
-    const temas = cartoesDaPagina(ler(lang === 'pt' ? '/temas/' : '/en/themes/'));
-    if (temas.length === 0) { erros.push(`E1 ${lang}: a página dos temas não tem cartão nenhum; a célula não mediu nada`); continue; }
-    contas.cartoes_dos_temas += temas.length;
-    /** @type {Map<string, string[]>} */
+    const indice = ler(lang === 'pt' ? '/temas/' : '/en/themes/');
+    const home = ler(lang === 'pt' ? '/' : '/en/');
+    const nosTemas = cartoesDaPagina(indice);
+    contas.cartoes_dos_temas += nosTemas.length;
+    if (nosTemas.length) erros.push(`N1I ${lang}: o índice dos temas voltou a render cartões inteiros.`);
     const onde = new Map();
     for (const e of paginas) {
-      const rendidos = cartoesDaPagina(ler(e.rota[lang]));
-      contas.cartoes_nas_entradas += rendidos.length;
+      const root = ler(e.rota[lang]);
+      const rendidos = cartoesDaPagina(root);
       const declarados = e.seccoes.flatMap((s) => s.cartoes);
-      if (JSON.stringify(rendidos) !== JSON.stringify(declarados)) {
-        const aMais = rendidos.filter((c) => !declarados.includes(c));
-        const aMenos = declarados.filter((c) => !rendidos.includes(c));
-        erros.push(`E3 ${lang}: a entrada «${e.id}» rende ${rendidos.length} cartões e a declaração dá-lhe ${declarados.length}` +
-          `${aMais.length ? `; a mais: ${aMais.join(', ')}` : ''}${aMenos.length ? `; a menos: ${aMenos.join(', ')}` : ''}${!aMais.length && !aMenos.length ? '; a ordem difere' : ''}.`);
-      }
-      for (const c of rendidos) {
-        onde.set(c, [...(onde.get(c) ?? []), e.id]);
-        if (!temas.includes(c)) erros.push(`E2 ${lang}: o cartão ${c} da entrada «${e.id}» não existe na página dos temas.`);
+      contas.cartoes_nas_entradas += rendidos.length;
+      if (JSON.stringify(rendidos) !== JSON.stringify(declarados)) erros.push(`E3 ${lang}: a ordem ou os cartões de ${e.id} diferem das secções declaradas.`);
+      if (root.querySelector('main h1')?.textContent.trim() !== e.nome[lang] || root.querySelector('main .entrada-linha')?.textContent.trim() !== e.linha[lang]) erros.push(`E3 ${lang}: o título ou o âmbito de ${e.id} difere da declaração.`);
+      for (const id of rendidos) {
+        onde.set(id, [...(onde.get(id) ?? []), e.id]);
+        if (!esperados.includes(id)) erros.push(`E2 ${lang}: cartão ${id} fora do catálogo nacional.`);
       }
     }
-    for (const c of temas) {
-      const n = onde.get(c) ?? [];
-      if (c in CARTOES_FORA_DAS_ENTRADAS) {
-        contas.fora++;
-        if (n.length) erros.push(`E1 ${lang}: o cartão ${c} está declarado fora das entradas e está em «${n.join(', ')}».`);
-      } else if (n.length === 0) erros.push(`E1 ${lang}: o cartão ${c} dos temas não está em entrada nenhuma.`);
-      else if (n.length > 1 || new Set(n).size !== n.length) erros.push(`E1 ${lang}: o cartão ${c} está em mais do que uma entrada (${n.join(', ')}).`);
+    for (const id of esperados) {
+      const donos = onde.get(id) ?? [];
+      if (!donos.length) erros.push(`E1 ${lang}: cartão ${id} em falta nas páginas de assunto.`);
+      if (donos.length > 1) erros.push(`N1C ${lang}: cartão ${id} inteiro em mais de uma página de assunto (${donos.join(', ')}).`);
     }
-    for (const [c, n] of onde) if (n.length > 1) erros.push(`E1 ${lang}: o cartão ${c} repete-se nas entradas (${n.join(', ')}).`);
-    /* E4 · as seis entradas na primeira página. */
-    const home = ler(lang === 'pt' ? '/' : '/en/');
-    const lis = home.querySelectorAll('main [data-entradas] li[data-entrada]');
-    contas.entradas_na_primeira += lis.length;
-    const ids = lis.map((li) => li.getAttribute('data-entrada'));
-    if (JSON.stringify(ids) !== JSON.stringify(ENTRADAS.map((e) => e.id))) erros.push(`E4 ${lang}: a primeira página tem as entradas «${ids.join(', ')}» e a declaração «${ENTRADAS.map((e) => e.id).join(', ')}».`);
-    for (const e of ENTRADAS) {
-      const li = lis.find((x) => x.getAttribute('data-entrada') === e.id);
-      const a = li?.querySelector('a');
-      const href = a?.getAttribute('href') ?? '';
-      if (!a || href !== e.rota[lang]) erros.push(`E4 ${lang}: a entrada «${e.id}» não leva à sua página (${href} em vez de ${e.rota[lang]}).`);
-      else if (!fs.existsSync(ficheiro(dist, href))) erros.push(`E4 ${lang}: a porta da entrada «${e.id}» abre ${href}, que a construção não tem.`);
-      if (li && (li.querySelector('.pp-entrada-nome')?.textContent.trim() !== e.nome[lang] || li.querySelector('.pp-entrada-linha')?.textContent.trim() !== e.linha[lang])) {
-        erros.push(`E4 ${lang}: o nome ou a linha da entrada «${e.id}» não são os declarados.`);
+    for (const [nome, root] of [['primeira', home], ['índice', indice]]) {
+      const lis = root.querySelectorAll('[data-indice-assuntos] > li[data-entrada]');
+      contas[nome === 'primeira' ? 'entradas_na_primeira' : 'entradas_no_indice'] += lis.length;
+      if (JSON.stringify(lis.map((li) => li.getAttribute('data-entrada'))) !== JSON.stringify(ENTRADAS.map((e) => e.id))) erros.push(`E4 ${lang}: a ordem das portas da ${nome} difere da declaração.`);
+      for (const e of ENTRADAS) {
+        const li = lis.find((x) => x.getAttribute('data-entrada') === e.id);
+        if (li?.querySelector('a')?.getAttribute('href') !== e.rota[lang] || li?.querySelector('.pp-entrada-nome')?.textContent.trim() !== e.nome[lang] || li?.querySelector('.pp-entrada-linha')?.textContent.trim() !== e.linha[lang]) erros.push(`E4 ${lang}: porta ${e.id} da ${nome} difere da declaração.`);
+        if (nome === 'índice' && JSON.stringify(li?.querySelectorAll('.assunto-seccoes li').map((n) => n.textContent.trim())) !== JSON.stringify(e.seccoes.map((s) => s.nome[lang]))) erros.push(`E4 ${lang}: as secções de ${e.id} não estão no índice pela ordem declarada.`);
       }
     }
+    const lugares = ler(lang === 'pt' ? '/lugares/' : '/en/places/');
+    if (lugares.querySelectorAll('[data-cartao-camaras]').length !== 1) erros.push(`N1L ${lang}: falta o cartão das câmaras nos lugares.`);
+    if (lugares.querySelector('[data-cartao-medida]')) erros.push(`N1C ${lang}: os lugares repetem um cartão nacional.`);
   }
-  /* E5 · AS DEZ PÁGINAS DAS ENTRADAS NO MAPA DO SÍTIO CONSTRUÍDO. */
   const mapa = caminhosDoMapaDoSitio(lerTexto);
   erros.push(...mapa.erros);
   contas.mapas_do_sitio = mapa.mapas;
   contas.enderecos_no_mapa_do_sitio = mapa.caminhos.size;
-  if (!mapa.caminhos.has('/')) erros.push('E5: a primeira página não está no mapa do sítio; a célula não leu o mapa.');
-  for (const e of paginas) {
-    for (const lang of /** @type {const} */ (['pt', 'en'])) {
-      if (mapa.caminhos.has(semBarra(e.rota[lang]))) contas.entradas_no_mapa_do_sitio++;
-      else erros.push(`E5 ${lang}: a página da entrada «${e.id}» (${e.rota[lang]}) não está no mapa do sítio.`);
-    }
+  if (!mapa.caminhos.has('/')) erros.push('E5: a primeira página não está no mapa do sítio.');
+  for (const e of ENTRADAS) for (const lang of ['pt', 'en']) {
+    if (!fs.existsSync(ficheiro(dist, e.rota[lang]))) erros.push(`E5 ${lang}: página ${e.rota[lang]} em falta.`);
+    if (mapa.caminhos.has(semBarra(e.rota[lang]))) contas.entradas_no_mapa_do_sitio++;
+    else erros.push(`E5 ${lang}: ${e.rota[lang]} não está no mapa do sítio.`);
+  }
+  for (const [origem, destino] of REDIRECIONAMENTOS_N1) {
+    const regra = regras.find((r) => r.src === `${origem}/?`);
+    if (regra?.status !== 301 || regra?.headers?.Location !== destino || regras.indexOf(regra) > regras.findIndex((r) => r.handle === 'filesystem')) erros.push(`N1R ${origem}: redirecionamento incorreto.`);
+    else contas.redirecionamentos++;
+    if (!fs.existsSync(ficheiro(dist, destino))) erros.push(`N1R ${origem}: destino em falta.`);
+    if (fs.existsSync(ficheiro(dist, origem)) || mapa.caminhos.has(origem)) erros.push(`N1R ${origem}: rota antiga ainda construída ou no mapa.`);
   }
   return { erros, contas };
 }
 
-/**
- * AS PLANTAS DA CÉLULA: um cartão repetido noutra entrada e um cartão em falta, cada um numa cópia em
- * memória da página construída, com a mordida esperada.
- *
- * @param {string} dist
- */
 export function plantasDasEntradas(dist) {
-  const cache = new Map();
-  const le = (/** @type {string} */ rota) => { if (!cache.has(rota)) cache.set(rota, fs.readFileSync(ficheiro(dist, rota), 'utf8')); return parse(cache.get(rota)); };
-  const lerTexto = (/** @type {string} */ rel) => (fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null);
-  /** @param {string} nome @param {Record<string, (r: any) => void>} estragos @param {RegExp} mordida @param {Record<string, (t: string) => string|null>} [textos] */
-  const planta = (nome, estragos, mordida, textos = {}) => {
-    const r = conferirEntradas(dist, {
-      ler: (rota) => { const x = le(rota); if (estragos[rota]) estragos[rota](x); return x; },
-      lerTexto: (rel) => { const t = lerTexto(rel); return textos[rel] && t !== null ? textos[rel](t) : t; },
-    });
-    const q = r.erros.find((e) => mordida.test(e)) ?? null;
-    return { nome, mordeu: q !== null, queixa: q ?? r.erros[0] ?? null };
+  const le = (rota) => parse(fs.readFileSync(ficheiro(dist, rota), 'utf8'));
+  const texto = (rel) => fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null;
+  const planta = (nome, rota, estraga, mordida, ficheiroTexto = null, estragaTexto = null) => {
+    const r = conferirEntradas(dist, { ler: (x) => { const root = le(x); if (x === rota) estraga(root); return root; }, lerTexto: (rel) => rel === ficheiroTexto ? estragaTexto(texto(rel)) : texto(rel) });
+    const queixa = r.erros.find((e) => mordida.test(e));
+    return { nome, mordeu: Boolean(queixa), queixa: queixa ?? null };
   };
-  const cartao = (/** @type {any} */ r, /** @type {string} */ id) => r.querySelector(`main article[data-cartao-medida="${id}"]`);
-  return [
-    planta('um cartão repetido noutra entrada', {
-      '/o-meu-trabalho/': (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', cartao(le('/o-meu-dinheiro/'), 'pensao-media-anual-2025').outerHTML),
-    }, /^E1 pt: o cartão pensao-media-anual-2025 está em mais do que uma entrada/),
-    planta('um cartão dos temas em falta nas entradas', {
-      '/en/my-home/': (r) => cartao(r, 'licencas-de-construcao-2025').remove(),
-    }, /^E1 en: o cartão licencas-de-construcao-2025 dos temas não está em entrada nenhuma/),
-    planta('um cartão de uma entrada que os temas não têm', {
-      '/temas/': (r) => cartao(r, 'jovens-nem-2025').remove(),
-    }, /^E2 pt: o cartão jovens-nem-2025 da entrada «trabalho» não existe na página dos temas/),
-    planta('uma entrada a mais na primeira página', {
-      '/': (r) => r.querySelector('main [data-entradas] ul').insertAdjacentHTML('beforeend', '<li data-entrada="saude"><a href="/a-minha-saude/">A minha saúde</a></li>'),
-    }, /^E4 pt: a primeira página tem as entradas/),
-    /* E5 (bloco PP1b): uma rota de uma entrada tirada do mapa do sítio, e o mapa que o índice nomeia em falta. */
-    planta('uma página de uma entrada em falta no mapa do sítio', {}, /^E5 en: a página da entrada «trabalho» \(\/en\/my-work\/\) não está no mapa do sítio/, {
-      'sitemap-0.xml': (t) => t.replace(/<url>\s*<loc>[^<]*\/en\/my-work<\/loc>[\s\S]*?<\/url>/, ''),
-    }),
-    planta('o mapa que o índice nomeia em falta na construção', {}, /^E5: o índice do mapa do sítio nomeia \/sitemap-1\.xml, que a construção não tem/, {
-      'sitemap-index.xml': (t) => t.replace('</sitemapindex>', `<sitemap><loc>${new URL('/sitemap-1.xml', SITE_URL).href}</loc></sitemap></sitemapindex>`),
-    }),
+  const cartao = le('/salarios-pensoes-e-apoios/').querySelector('[data-cartao-medida="pensao-media-anual-2025"]').outerHTML;
+  const plantas = [
+    planta('cartão inteiro repetido noutra página de assunto', '/emprego/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', cartao), /^N1C pt: cartão pensao-media-anual-2025/),
+    planta('cartão nacional omitido', '/en/housing/', (r) => r.querySelector('[data-cartao-medida="licencas-de-construcao-2025"]').remove(), /^E1 en: cartão licencas-de-construcao-2025/),
+    planta('cartão inteiro nos temas', '/temas/', (r) => r.querySelector('main').insertAdjacentHTML('beforeend', cartao), /^N1I pt:/),
+    planta('porta retirada da primeira página', '/', (r) => r.querySelector('[data-entrada]').remove(), /^E4 pt: a ordem/),
+    planta('secção retirada do índice', '/temas/', (r) => r.querySelector('.assunto-seccoes li').remove(), /^E4 pt: as secções/),
+    planta('âmbito errado na página de assunto', '/emprego/', (r) => r.querySelector('.entrada-linha').set_content('Uma frase sem o país.'), /^E3 pt: o título ou o âmbito/),
+    planta('cartão das câmaras retirado dos lugares', '/lugares/', (r) => r.querySelector('[data-cartao-camaras]').remove(), /^N1L pt:/),
+    planta('porta omitida do mapa do sítio', null, null, /^E5 en: \/en\/employment\//, 'sitemap-0.xml', (t) => t.replace(/<url>\s*<loc>[^<]*\/en\/employment<\/loc>[\s\S]*?<\/url>/, '')),
+    planta('mapa nomeado em falta', null, null, /^E5:.*sitemap-1/, 'sitemap-index.xml', (t) => t.replace('</sitemapindex>', `<sitemap><loc>${new URL('/sitemap-1.xml', SITE_URL).href}</loc></sitemap></sitemapindex>`)),
   ];
+  const regras = JSON.parse(fs.readFileSync('vercel.json', 'utf8')).routes;
+  regras.find((r) => r.src === '/en/my-work/?').headers.Location = '/en/themes/';
+  const erro = conferirEntradas(dist, { regras }).erros.find((e) => /^N1R \/en\/my-work:/.test(e));
+  plantas.push({ nome: 'redirecionamento inglês para a página errada', mordeu: Boolean(erro), queixa: erro ?? null });
+  return plantas;
 }

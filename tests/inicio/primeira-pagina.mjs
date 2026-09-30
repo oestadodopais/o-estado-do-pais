@@ -38,7 +38,7 @@ relatorio.auditoria = a.contas;
 const paginas = [
   { rota: '/', lang: /** @type {'pt'|'en'} */ ('pt'), ids: idsDosBlocos(), primeira: true },
   { rota: '/en/', lang: /** @type {'pt'|'en'} */ ('en'), ids: idsDosBlocos(), primeira: true },
-  ...ENTRADAS.filter((e) => !('existente' in e && e.existente)).flatMap((e) => /** @type {const} */ (['pt', 'en']).map((lang) => ({ rota: e.rota[lang], lang, ids: e.blocos, primeira: false }))),
+  ...ENTRADAS.filter((e) => !('existente' in e && e.existente)).flatMap((e) => /** @type {const} */ (['pt', 'en']).map((lang) => ({ rota: e.rota[lang], lang, ids: [], primeira: false }))),
 ];
 for (const p of paginas) {
   const f = path.join(DIST, p.rota.replace(/^\//, ''), 'index.html');

@@ -91,7 +91,7 @@ function ficheiroDe(caminho) {
   return fs.existsSync(comHtml) ? comHtml : null;
 }
 
-const partida = routePath('dominio', 'pt', { slug: 'economia-e-financas-publicas' });
+const partida = routePath('lugares', 'pt');
 /** @type {Set<string>} */
 const vistas = new Set();
 /** @type {Set<string>} */

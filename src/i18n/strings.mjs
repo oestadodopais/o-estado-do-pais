@@ -1712,7 +1712,7 @@ export const STRINGS = {
      */
     temas: {
       metaTitle: 'Temas · O Estado do País',
-      metaDescription: 'Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo.',
+      metaDescription: 'Os assuntos e os lugares de Portugal, com uma página para os números de cada assunto.',
     },
     /* A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026; a decisão do diretor de
        28.09.2026, `DECISIONS.md` §1.133). As palavras dos cinco blocos e das seis entradas são do
@@ -1754,7 +1754,7 @@ export const STRINGS = {
       /* PP1: a descrição acompanha a página nova, os blocos de «O que se passa» e as entradas.
          Não nomeia os blocos, que saem sozinhos quando os números deixam de lhes dar razão. */
       metaDescription:
-        'O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas: o meu dinheiro, o meu trabalho, a minha casa, a escola e a saúde, o Estado e a economia, a minha terra.',
+        'Os números de Portugal: preços, salários, pensões e apoios, pobreza e desigualdade, emprego, habitação, educação e saúde, Estado e economia, e os lugares.',
 
       numeros: {
         /* A linha do valor de referência de um cartão (IDENTIDADE.md §11). A
@@ -3495,7 +3495,7 @@ export const STRINGS = {
 
     temas: {
       metaTitle: 'Themes · O Estado do País',
-      metaDescription: "All the country's measures, by theme, each with its value, its source and its receipt.",
+      metaDescription: 'Subjects and places in Portugal: a page of figures for each subject.',
     },
     /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */
     primeira: {
@@ -3531,7 +3531,7 @@ export const STRINGS = {
       },
       metaTitle: 'O Estado do País',
       metaDescription:
-        'What is happening in the country, told by the official figures read together, each with its source, and the ways in: my money, my work, my home, school and health, the state and the economy, my area.',
+        'Portugal’s figures: prices, pay, pensions and benefits, poverty and inequality, employment, housing, education and health, state and economy, and places.',
 
       numeros: {
         /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */

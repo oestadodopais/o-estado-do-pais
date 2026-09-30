@@ -11,8 +11,8 @@ import { primeirasFrases } from '../src/lib/estudos-b1.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
-import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
+import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 import { t } from '../src/i18n/strings.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
@@ -42,14 +42,14 @@ export function verificaVozPais(raiz) {
     for (const rota of lang === 'pt' ? ['', 'temas'] : ['en','en/themes']) {
       const main = parse(fs.readFileSync(path.join(raiz,'dist',rota,'index.html'),'utf8')).querySelector('main');
       const primeira = rota === '' || rota === 'en';
-      /* O cartão das câmaras vive na página dos temas; a primeira página deixou de render os cartões. */
-      if (!primeira) erros.push(...verificaCartaoDasCamaras(main.parentNode, lang));
+      /* N1: o cartão das câmaras vive nos lugares e é conferido pela V2 e pela K17. */
+
       /* OS BLOCOS SÓ SAEM DA LISTA CONFERIDOS NA MESMA CORRIDA (bloco PP1): a célula da primeira página
          reconta o texto, os ramos e as linhas de cada bloco; se ela recusar, os blocos ficam na lista
          fechada e a prosa deles é medida como qualquer outra. */
       const blocosConferidos = primeira && conferirBlocosDaPagina(main.parentNode, lang, rota || '/', { ids: idsDosBlocos(), primeira: true }).erros.length === 0;
       if (primeira) {
-        const indice = parse(fs.readFileSync(path.join(raiz, 'dist', lang === 'pt' ? 'temas' : 'en/themes', 'index.html'), 'utf8'));
+        const indice = documentoDosAssuntos(path.join(raiz, 'dist'), lang);
         erros.push(...verificaVeredictoDoPais(main.parentNode, indice, lang));
       }
       /* O rótulo de IA do topo (bloco R1, 23.09.2026) é texto aprovado, que o
@@ -85,7 +85,7 @@ export function verificaVozPais(raiz) {
         s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
         `${s.primeira.todosOsTemas} →`, `${s.nav.livro} →`, `${ROTULOS_B1[lang].mudou} →`, `${s.nav.uniaoEuropeia} →`,
         ROTULOS_B1[lang].lugares, s.ambito.municipio, s.ambito.pesquisaSubmeter, s.ambito.pesquisaSemResultado,
-        ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang]]),
+        ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang], ...e.seccoes.map(s => s.nome[lang])]),
       ].map(normal));
       function anda(n) {
         if (dispensados.has(n)) return;
