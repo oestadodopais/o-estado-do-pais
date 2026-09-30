@@ -1,0 +1,11 @@
+/** E0b: os detetores usados pelas medidas e pelos seus conhecidos-positivos. */
+import fs from 'node:fs';
+export const decimalDoExcerto = (texto) => /2025:\s*(\d+\.\d+)\b/.exec(texto ?? '')?.[1] ?? null;
+export const anatomiaDoDiff = (texto) => texto.split('\n').filter(p => /^(src\/components|src\/views|src\/styles)\//.test(p));
+export function lerCodigoDaCorrida(ficheiro, inicio, fim) {
+  if (!fs.existsSync(ficheiro)) return { medido: false, codigo: null, motivo: 'ficheiro ausente' };
+  const escrito = fs.statSync(ficheiro).mtimeMs;
+  const codigo = Number(fs.readFileSync(ficheiro, 'utf8').trim());
+  const medido = Number.isInteger(codigo) && escrito >= inicio && escrito <= fim;
+  return { medido, codigo: medido ? codigo : null, motivo: medido ? 'escrito nesta corrida' : 'fora da corrida' };
+}

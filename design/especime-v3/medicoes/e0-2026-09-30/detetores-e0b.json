@@ -1,0 +1,46 @@
+{
+  "cabeca": "4c1d39f08617d5044ed7e6e2689eee9bce39e844",
+  "medido_em": "2026-09-30T22:35:42.486Z",
+  "decimais": [
+    {
+      "id": "taxa-de-desemprego-2025",
+      "campo_lido": "excerpt",
+      "lido": "6.0",
+      "valor_da_casa": "6,0",
+      "planta_mordeu": true
+    },
+    {
+      "id": "taxa-de-desemprego-mip-2025",
+      "campo_lido": "excerpt",
+      "lido": "6.0",
+      "valor_da_casa": "6,0",
+      "planta_mordeu": true
+    }
+  ],
+  "anatomia": {
+    "diff_lido": [
+      "src/components/RegistoCorrecoes.astro"
+    ],
+    "planta_do_cartao_mordeu": true
+  },
+  "codigos": [
+    {
+      "esperado": 0,
+      "lido": 0,
+      "escrito_nesta_corrida": true,
+      "planta_antiga_recusada": true
+    },
+    {
+      "esperado": 1,
+      "lido": 1,
+      "escrito_nesta_corrida": true,
+      "planta_antiga_recusada": true
+    }
+  ],
+  "conhecidos_positivos": {
+    "desemprego_com_decimal": true,
+    "anatomia_mudada": true,
+    "portoes": true
+  },
+  "passou": true
+}
