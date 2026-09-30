@@ -51,6 +51,24 @@ try {
         const caixa = (e) => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, largura: r.width, altura: r.height }; };
         const cartoes = [...document.querySelectorAll('[data-cartao-medida]')];
         return {
+          salario_irmao: (() => {
+            const p = document.querySelector('[data-valor-irmao]');
+            if (!p) return null;
+            const valor = p.querySelector('.claim-value'); const unidade = p.querySelector('.claim-sufixo');
+            const larguraDoEspaco = () => {
+              const r = document.createRange(); r.selectNodeContents(valor);
+              const fim = r.getBoundingClientRect().right;
+              const t = unidade.firstChild; const pos = t.textContent.search(/\S/);
+              r.setStart(t, pos); r.setEnd(t, pos + 1);
+              return r.getBoundingClientRect().left - fim;
+            };
+            const espaco = larguraDoEspaco();
+            const anterior = unidade.textContent;
+            unidade.textContent = anterior.trimStart();
+            const semEspaco = larguraDoEspaco();
+            unidade.textContent = anterior;
+            return { espaco_px: espaco, nome_em_linha: getComputedStyle(p.querySelector('[data-nome]')).display === 'inline', planta_sem_espaco: semEspaco < 1 };
+          })(),
           notas: [...document.querySelectorAll('[data-valor-irmao], [data-referencia-de]')].map((n) => {
             const pai = n.closest('[data-caixa-cartao]');
             const cartao = pai?.querySelector('[data-cartao-medida]');
@@ -66,6 +84,7 @@ try {
           caixas: [...document.querySelectorAll('main h1, .entrada-linha, [data-indice-assuntos], [data-comparacoes-concelhos]')].map((e) => ({ elemento: e.tagName, caixa: caixa(e) })),
         };
       });
+      if (medidas.salario_irmao && (medidas.salario_irmao.espaco_px < 2 || !medidas.salario_irmao.nome_em_linha || !medidas.salario_irmao.planta_sem_espaco)) problemas.push(`${p.id}/${lang}/${largura}: nome ou unidade do salário irmão sem separação correta`);
       if (medidas.notas.some((n) => !n.junta)) problemas.push(`${p.id}/${lang}/${largura}: nota fora da caixa do cartão`);
       if (medidas.documento > largura + 1) problemas.push(`${p.id}/${lang}/${largura}: transbordo horizontal`);
       if (medidas.cartoes_que_transbordam.length) problemas.push(`${p.id}/${lang}/${largura}: cartões que transbordam: ${medidas.cartoes_que_transbordam.join(', ')}`);
