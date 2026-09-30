@@ -3563,7 +3563,18 @@ As linhas das rotas retiradas saem desta tabela; as palavras genéricas não fic
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | , em base de doze meses: euros por mês O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano. | n1c | viva | A unidade é da linha; a explicação vem da ficha citada na nota da mesma linha. |
-| conteudo | , on a twelve-month basis: euros per month Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year. | n1c | viva | A mesma unidade e a mesma explicação na edição inglesa. |
+| conteudo | , em base de doze meses: euros por mês O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano. | n1c | retirada | N1d: a frase passa a dizer que se ajusta o valor para contar com os pagamentos. |
+| conteudo | , on a twelve-month basis: euros per month Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year. | n1c | retirada | N1d: a frase passa a dizer que se ajusta o valor para contar com os pagamentos. |
 | navegacao | Valor ( ) | n1c | viva | Cabeçalho da tabela, com a unidade conferida separadamente contra as linhas municipais. |
 | navegacao | Value ( ) | n1c | viva | O mesmo cabeçalho na edição inglesa. |
+
+## N1d · o contexto das medidas municipais e o valor ajustado, 30.09.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | , em base de doze meses: euros por mês O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano. | n1d | viva | A unidade é da linha; a explicação vem da ficha citada na nota da mesma linha. |
+| conteudo | , on a twelve-month basis: euros per month Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve months a year. | n1d | viva | A mesma unidade e a mesma explicação na edição inglesa. |
+| conteudo | Em . A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média. | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+| conteudo | In . Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average. | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+| conteudo | É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em , com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos. Portugal: euros por mês . | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+| conteudo | It is what a full-time employee earned per month, on average, in , including what is paid on a regular basis for normal and overtime hours, before deductions. Portugal: euros per month . | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |

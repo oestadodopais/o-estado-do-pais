@@ -1,11 +1,17 @@
 ---
 /** N1: os mapas, as tabelas e a ausência municipal deixam a página do domínio. */
+import Claim from './Claim.astro';
+import Frase from './Frase.astro';
+import { LEITURAS_DAS_MEDIDAS } from '../data/leituras-das-medidas.mjs';
+import { MEDIDAS_DO_CONCELHO } from '../data/concelhos.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import CartaoDasCamaras from './CartaoDasCamaras.astro';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import MapaPorConcelho from './formas/MapaPorConcelho.astro';
 import GeometriaDosConcelhos from './formas/GeometriaDosConcelhos.astro';
 import { medidaPelaChave, AUSENCIAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
 import { mapaPorConcelho, linhasPorConcelho } from '../lib/dominios.mjs';
+import { periodoDasCamaras } from '../lib/prova.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -29,6 +35,25 @@ const mapas = [
   { chave: 'indice', medida: limite, mapa: mapaPorConcelho(linhasPorConcelho('indice'), [corte], { igualdadeDentro: true }), paleta: 'limiar', rotulos: [[s.estado.lei.dentro], [s.estado.lei.fora]] },
   { chave: 'ganho', medida: ganho, mapa: mapaPorConcelho(linhasPorConcelho('ganho'), cortes), paleta: 'escala', rotulos: rotulosGanho },
 ];
+/* N1d: o período é comum às linhas efetivamente desenhadas, não ao limite legal.
+   A definição do ganho já está declarada; só se resolve o seu período municipal. */
+const contextos = Object.fromEntries(mapas.map(({ chave, medida, mapa }) => {
+  const linhas = mapa.unidades.flatMap((u) => u.concelhos).filter((c) => c.id).map((c) => getClaim(c.id));
+  /* Évora é derivada e não repete a data: o resolvedor existente lê as origens. */
+  const dataComum = chave === 'indice' ? periodoDasCamaras() : { id: linhas[0]?.id, periodo: linhas[0]?.reference_date };
+  if (!linhas.length || (chave === 'ganho' && (linhas.some((l) => !l.reference_date) || new Set(linhas.map((l) => l.reference_date)).size !== 1))) throw new Error(`O mapa ${chave} não tem um período comum nas suas linhas.`);
+  const periodo = { data: { id: dataComum.id, campo: 'reference_date', valor: dataComum.periodo } };
+  const nacional = chave === 'ganho' ? getClaim(medida.claim) : null;
+  if (nacional && (nacional.reference_date !== linhas[0].reference_date || linhas.some((l) => l.unit !== nacional.unit))) throw new Error('O ganho de Portugal não tem o período e a unidade das linhas municipais.');
+  const definicao = chave === 'ganho'
+    ? LEITURAS_DAS_MEDIDAS[medida.claim][lang].map((p) => {
+        if (typeof p === 'string') return p;
+        if (p.periodo === 'proprio') return periodo;
+        throw new Error('A definição do ganho ganhou um pedaço que o contexto municipal não resolve.');
+      })
+    : [lang === 'pt' ? 'Em ' : 'In ', periodo, '. ', ...MEDIDAS_DO_CONCELHO.find((m) => m.chave === chave).nota[lang]];
+  return [chave, { definicao, nacional, unidade: nacional && unidadeDaLinha(nacional.unit, lang).texto }];
+}));
 const entrada = ENTRADAS.find((e) => e.id === 'lugares');
 ---
 <section class="lugar-sec" data-comparacoes-concelhos aria-labelledby="comparacoes-concelhos-k">
@@ -38,6 +63,10 @@ const entrada = ENTRADAS.find((e) => e.id === 'lugares');
   {mapas.map(({ chave, medida, mapa, paleta, rotulos }) => (
     <article class="dominio-medida" id={`m-${medida.chave.toLowerCase()}`} data-medida={medida.chave} data-leitura-linha={medida.claim}>
       <h3 class="dominio-pergunta" id={`k-${medida.chave.toLowerCase()}`}>{medida.pergunta[lang]}</h3>
+      <p class="dominio-contexto" data-contexto-municipal={chave}>
+        <span data-definicao-municipal><Frase partes={contextos[chave].definicao} lang={lang} /></span>
+        {contextos[chave].nacional && <span data-referencia-portugal>{' Portugal: '}<Claim id={contextos[chave].nacional.id} lang={lang} chip sufixo={`\u00a0${contextos[chave].unidade}`} />.</span>}
+      </p>
       <MapaPorConcelho s={s} lang={lang} mapa={mapa} paleta={paleta} rotulos={rotulos} rota={(slug) => routePath('municipio', lang, { slug })} nomeada={`k-${medida.chave.toLowerCase()}`} chave={chave} />
     </article>
   ))}
@@ -50,3 +79,7 @@ const entrada = ENTRADAS.find((e) => e.id === 'lugares');
     </article>
   ))}
 </section>
+
+<style>
+  .dominio-contexto { max-width: 65ch; margin: 0 0 1.5rem; line-height: 1.6; }
+</style>

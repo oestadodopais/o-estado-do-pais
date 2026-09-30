@@ -19,8 +19,11 @@ export function conferirAcertosN1c(dist, ler = (rota) => pagina(dist, rota)) {
     const irmao = salarios.querySelector(`[data-valor-irmao="${id}"]`);
     const unidade = unidadeDaLinha(linha.unit, lang).texto;
     const base = lang === 'pt' ? 'em base de doze meses' : 'on a twelve-month basis';
-    const correto = irmao?.closest('[data-caixa-cartao]')?.getAttribute('data-caixa-cartao') === 'retribuicao-minima-mensal-garantida-continente-2026' && normal(irmao.querySelector('[data-nome]')?.textContent) === normal(nomeDoCartao(linha, lang)?.texto) && normal(irmao.querySelector('.claim-sufixo')?.textContent) === unidade && normal(irmao.querySelector('[data-claim]')?.textContent) === normal(linha.value) && irmao.textContent.includes(base);
-    if (!correto) erros.push(`N1c ${lang}: o salário irmão perdeu o nome, a unidade, a base ou a sua caixa.`);
+    const explicacao = lang === 'pt'
+      ? 'O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano.'
+      : 'Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve months a year.';
+    const correto = irmao?.closest('[data-caixa-cartao]')?.getAttribute('data-caixa-cartao') === 'retribuicao-minima-mensal-garantida-continente-2026' && normal(irmao.querySelector('[data-nome]')?.textContent) === normal(nomeDoCartao(linha, lang)?.texto) && normal(irmao.querySelector('.claim-sufixo')?.textContent) === unidade && normal(irmao.querySelector('[data-claim]')?.textContent) === normal(linha.value) && irmao.textContent.includes(base) && normal(irmao.querySelector('[data-base-doze-meses]')?.textContent) === explicacao;
+    if (!correto) erros.push(`N1c ${lang}: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa.`);
     medidas.push({ lang, medida: 'salario_irmao', correto, unidade, texto: normal(irmao?.textContent) });
     const estado = ler(lang === 'pt' ? 'estado-e-economia' : 'en/state-and-economy');
     for (const chave of ['E2', 'E3', 'E4']) {
@@ -51,6 +54,9 @@ export function conferirAcertosN1c(dist, ler = (rota) => pagina(dist, rota)) {
 export function plantasDosAcertosN1c(dist) {
   return [
     ['salário irmão sem unidade mensal', 'salarios-pensoes-e-apoios', (r) => r.querySelector('[data-valor-irmao] .claim-sufixo').set_content('euros'), /^N1c pt: o salário irmão/],
+    ['valor irmão retirado', 'salarios-pensoes-e-apoios', (r) => r.querySelector('[data-valor-irmao]').remove(), /^N1c pt: o salário irmão/],
+    ['explicação da base retirada', 'salarios-pensoes-e-apoios', (r) => r.querySelector('[data-base-doze-meses]').remove(), /^N1c pt: o salário irmão/],
+    ['explicação da base trocada', 'en/pay-pensions-and-benefits', (r) => r.querySelector('[data-base-doze-meses]').set_content('Eurostat adjusts the payments.'), /^N1c en: o salário irmão/],
     ['atribuição fora da caixa do cartão', 'en/state-and-economy', (r) => { const n = r.querySelector('[data-referencia-de]'); r.querySelector('.pais-cartoes').insertAdjacentHTML('beforeend', n.outerHTML); n.remove(); }, /^N1c en: a atribuição/],
     ['idade solta reposta', 'emprego', (r) => r.querySelector('.pais-cartoes').insertAdjacentHTML('beforeend', '<p class="entrada-referencia">dos 20 aos 64 anos</p>'), /^N1c pt: voltou uma faixa/],
     ['nome antigo na porta da União', 'en/european-union', (r) => r.querySelector('.dobra-porta a').set_content('See it in the domain →'), /^N1c en: as três portas/],

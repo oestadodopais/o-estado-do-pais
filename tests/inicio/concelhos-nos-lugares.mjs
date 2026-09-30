@@ -4,16 +4,18 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
 import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
+import { LEITURAS_DAS_MEDIDAS } from '../../src/data/leituras-das-medidas.mjs';
+import { SITE_URL } from '../../site.config.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../../src/data/municipios.mjs';
-import { verificaCartaoDasCamaras } from '../../scripts/pais-camaras.mjs';
+import { verificaCartaoDasCamaras, recontagemDasCamaras } from '../../scripts/pais-camaras.mjs';
 const linha = (id) => load(fs.readFileSync(`ledger/claims/${id}.yml`, 'utf8'));
 const ler = (dist, lang) => parse(fs.readFileSync(path.join(dist, lang === 'pt' ? 'lugares/index.html' : 'en/places/index.html'), 'utf8'));
 const normal = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
 
 export function conferirConcelhosNosLugares(dist, trocar = null) {
   const erros = [];
-  const contas = { mapas: 0, tabelas: 0, linhas: 0, barras: 0, camaras: 0 };
+  const contas = { mapas: 0, tabelas: 0, linhas: 0, barras: 0, camaras: 0, contextos: 0, referencias_portugal: 0 };
   for (const lang of ['pt', 'en']) {
     const root = ler(dist, lang);
     trocar?.(root, lang);
@@ -31,6 +33,24 @@ export function conferirConcelhosNosLugares(dist, trocar = null) {
       for (const seletor of ['thead [data-linha-campo="unit"]', '.forma-mapa-unidade [data-linha-campo="unit"]']) {
         const campo = mapa.querySelector(seletor);
         if (!unidade || normal(campo?.textContent) !== normal(unidade) || ![...alvos.values()].includes(campo?.getAttribute('data-linha-claim'))) erros.push(`N1M ${lang} ${chave}: a unidade do mapa ou da tabela não vem das linhas.`);
+      }
+      const contexto = root.querySelector(`[data-contexto-municipal="${chave}"]`);
+      const datas = chave === 'indice' ? recontagemDasCamaras(linha).datas : [...alvos.values()].map((id) => ({ id, periodo: linha(id).reference_date }));
+      const periodos = [...new Set(datas.map((d) => d.periodo))];
+      const data = contexto?.querySelector('[data-de-campo="reference_date"]');
+      const periodo = periodos.length === 1 ? periodos[0] : null;
+      if (!periodo || !data || !datas.some((d) => d.id === data.getAttribute('data-de-linha')) || normal(data.textContent) !== periodo) erros.push(`N1M ${lang} ${chave}: o contexto perdeu o período das linhas.`);
+      else contas.contextos++;
+      const definicao = chave === 'ganho'
+        ? LEITURAS_DAS_MEDIDAS['ganho-medio-mensal-2024'][lang].map((p) => typeof p === 'string' ? p : periodo).join('')
+        : `${lang === 'pt' ? 'Em' : 'In'} ${periodo}. ${MEDIDAS_DO_CONCELHO.find((m) => m.chave === chave).nota[lang].join('')}`;
+      if (normal(contexto?.querySelector('[data-definicao-municipal]')?.textContent) !== normal(definicao)) erros.push(`N1M ${lang} ${chave}: a definição municipal difere da declaração.`);
+      if (chave === 'ganho') {
+        const nacional = linha('ganho-medio-mensal-2024');
+        const ref = contexto?.querySelector('[data-referencia-portugal]');
+        const valor = ref?.querySelector('[data-claim]');
+        if (!ref?.textContent.includes('Portugal:') || valor?.getAttribute('data-claim') !== nacional.id || normal(valor?.textContent) !== normal(nacional.value) || normal(ref?.querySelector('.claim-sufixo')?.textContent) !== unidadeDaLinha(nacional.unit, lang).texto || ref?.querySelector('.src-chip')?.getAttribute('href') !== `${lang === 'pt' ? '/livro-razao' : '/en/ledger'}/${nacional.id}` || nacional.reference_date !== periodo) erros.push(`N1M ${lang} ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo.`);
+        else contas.referencias_portugal++;
       }
       const rows = mapa.querySelectorAll('tbody tr');
       contas.tabelas += mapa.querySelectorAll('table').length;
@@ -65,7 +85,13 @@ export function plantasDosConcelhos(dist) {
     ['unidade da tabela retirada', (r) => r.querySelector('thead [data-linha-campo="unit"]').remove(), /^N1M pt indice: a unidade/],
     ['unidade da legenda retirada', (r) => r.querySelector('[data-instrumento="mapa-por-concelho-ganho"] .forma-mapa-unidade').remove(), /^N1M pt ganho: a unidade/],
     ['base do limite retirada', (r) => r.querySelector('[data-camaras-base]').remove(), /^N1M pt: falta a base/],
-    ['porta das câmaras para si própria', (r) => r.querySelector('[data-cartao-camaras]').insertAdjacentHTML('beforeend', '<p class="pais-porta-tema"><a href="/lugares/">Os lugares →</a></p>'), /^V2 pt: o cartão das câmaras não leva porta/],
+    ['porta das câmaras para si própria', (r) => r.querySelector('[data-cartao-camaras]').insertAdjacentHTML('beforeend', '<a href="/lugares/">Os lugares →</a>'), /^V2 pt: o cartão das câmaras não leva porta/],
+    ['porta absoluta das câmaras para si própria', (r) => r.querySelector('[data-cartao-camaras]').insertAdjacentHTML('beforeend', `<a href="${new URL('/lugares/', SITE_URL).href}">Os lugares →</a>`), /^V2 pt: o cartão das câmaras não leva porta/],
+    ['ano dos ganhos retirado', (r) => r.querySelector('[data-contexto-municipal="ganho"] [data-de-campo]').remove(), /^N1M pt ganho: o contexto/],
+    ['ano da dívida trocado', (r) => r.querySelector('[data-contexto-municipal="indice"] [data-de-campo]').set_content('1999'), /^N1M pt indice: o contexto/],
+    ['definição dos ganhos retirada', (r) => r.querySelector('[data-contexto-municipal="ganho"] [data-definicao-municipal]').set_content('Ganho médio.'), /^N1M pt ganho: a definição/],
+    ['referência de Portugal retirada', (r) => r.querySelector('[data-referencia-portugal]').remove(), /^N1M pt ganho: a referência/],
+    ['selo da referência de Portugal retirado', (r) => r.querySelector('[data-referencia-portugal] .src-chip').remove(), /^N1M pt ganho: a referência/],
     ['mapa retirado dos lugares', (r) => r.querySelector('[data-forma="mapa-por-concelho"]').remove(), /^N1M pt: faltam mapas/],
     ['linha retirada da tabela', (r) => r.querySelector('[data-forma="mapa-por-concelho"] tbody tr').remove(), /^N1M pt indice: as linhas/],
     ['valor municipal trocado', (r) => r.querySelector('[data-forma="mapa-por-concelho"] tbody [data-claim]').set_content('999'), /^N1M pt indice: valor da linha/],

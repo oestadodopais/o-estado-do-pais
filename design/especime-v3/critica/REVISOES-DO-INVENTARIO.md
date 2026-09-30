@@ -509,3 +509,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | n1c | A unidade mensal, a base do salário irmão e os cabeçalhos das tabelas | por ler antes de aterrar | Codex gpt-6-astra aplica o mandato N1c: a barra isolada de Évora sai, as notas acompanham a caixa do cartão e os índices usam a forma curta da declaração. As unidades e os nomes conservam a conferência do livro-razão; a lista fechada conhece as duas formas da linha. |
+
+## N1d · o contexto municipal e o valor ajustado, 30.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| n1d | O contexto das duas tabelas e a explicação do salário irmão | por ler antes de aterrar | O ano vem das linhas municipais e a definição dos ganhos reutiliza a declaração da medida. Portugal entra como referência selada. A explicação Eurostat passa a dizer que se ajusta o valor para contar com os pagamentos. |
