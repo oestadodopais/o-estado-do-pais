@@ -1,0 +1,46 @@
+  B1: 28 páginas pela lista fechada; 7 temas conferidos.
+
+  PORTÃO DA VOZ · 39 problema(s)
+
+    · B1 lista fechada país: /: «Os preços dos bens e serviços.».
+    · B1 lista fechada país: /: «Os salários, as pensões e os apoios sociais.».
+    · B1 lista fechada país: /: «A pobreza, a desigualdade, as dívidas e o crédito das famílias.».
+    · B1 lista fechada país: /: «O emprego, o desemprego, os jovens e o custo do trabalho.».
+    · B1 lista fechada país: /: «O peso da habitação, as rendas, os preços e a construção.».
+    · B1 lista fechada país: /: «O abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde.».
+    · B1 lista fechada país: /: «As contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça.».
+    · B1 lista fechada país: /: «Os concelhos, os distritos, as ilhas e as regiões.».
+    · B1 lista fechada país: temas: «Os preços dos bens e serviços.».
+    · B1 lista fechada país: temas: «Os salários, as pensões e os apoios sociais.».
+    · B1 lista fechada país: temas: «A pobreza, a desigualdade, as dívidas e o crédito das famílias.».
+    · B1 lista fechada país: temas: «O emprego, o desemprego, os jovens e o custo do trabalho.».
+    · B1 lista fechada país: temas: «O peso da habitação, as rendas, os preços e a construção.».
+    · B1 lista fechada país: temas: «O abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde.».
+    · B1 lista fechada país: temas: «As contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça.».
+    · B1 lista fechada país: temas: «Os concelhos, os distritos, as ilhas e as regiões.».
+    · B1 lista fechada país: en: «The prices of goods and services.».
+    · B1 lista fechada país: en: «Pay, pensions and social benefits.».
+    · B1 lista fechada país: en: «Poverty, inequality, household debt and credit.».
+    · B1 lista fechada país: en: «Employment, unemployment, young people and labour costs.».
+    · B1 lista fechada país: en: «Housing costs, rents, prices and building.».
+    · B1 lista fechada país: en: «Early school leaving, digital skills, childcare and access to healthcare.».
+    · B1 lista fechada país: en: «Public accounts, growth, investment, external accounts, companies and justice.».
+    · B1 lista fechada país: en: «Municipalities, districts, islands and regions.».
+    · B1 lista fechada país: en/themes: «The prices of goods and services.».
+    · B1 lista fechada país: en/themes: «Pay, pensions and social benefits.».
+    · B1 lista fechada país: en/themes: «Poverty, inequality, household debt and credit.».
+    · B1 lista fechada país: en/themes: «Employment, unemployment, young people and labour costs.».
+    · B1 lista fechada país: en/themes: «Housing costs, rents, prices and building.».
+    · B1 lista fechada país: en/themes: «Early school leaving, digital skills, childcare and access to healthcare.».
+    · B1 lista fechada país: en/themes: «Public accounts, growth, investment, external accounts, companies and justice.».
+    · B1 lista fechada país: en/themes: «Municipalities, districts, islands and regions.».
+    · bloco por classificar em /en/pay-pensions-and-benefits: «, on a twelve-month basis: Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year.»
+    · bloco por classificar em /en/places: «Value ( )»
+    · bloco por classificar em /lugares: «Valor ( )»
+    · bloco por classificar em /salarios-pensoes-e-apoios: «, em base de doze meses: O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano.»
+    · design/especime-v3/INVENTARIO-FRASES.md:2042: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «: ; : .»
+    · design/especime-v3/INVENTARIO-FRASES.md:3557: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «em doze meses, na base do Eurostat: €»
+    · design/especime-v3/INVENTARIO-FRASES.md:3558: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «over twelve months, on the Eurostat basis: €»

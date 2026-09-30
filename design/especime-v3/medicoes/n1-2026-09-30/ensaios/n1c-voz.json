@@ -1,0 +1,8 @@
+{
+  "comando": "node scripts/check-voz.mjs",
+  "cabeca": "530a04f2ed4003705c00fcfbe167ca9516b78145",
+  "inicio": "2026-09-30T11:51:06.115Z",
+  "fim": "2026-09-30T11:51:30.620Z",
+  "segundos": 24.502401749999997,
+  "codigo": 1
+}

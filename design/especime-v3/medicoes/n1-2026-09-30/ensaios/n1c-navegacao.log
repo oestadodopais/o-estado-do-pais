@@ -1,0 +1,214 @@
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7452,
+    "blocos_na_primeira": 10,
+    "blocos_fora": 0,
+    "titulos_fora": 0,
+    "frases_fora": 0,
+    "portas_dos_blocos": 10,
+    "ligacoes_antigas": 0,
+    "cartoes_fora_dos_assuntos": 0
+  },
+  "entradas": {
+    "edicoes": 2,
+    "cartoes_dos_temas": 0,
+    "cartoes_nas_entradas": 94,
+    "fora": 0,
+    "entradas_na_primeira": 16,
+    "entradas_no_indice": 16,
+    "mapas_do_sitio": 1,
+    "enderecos_no_mapa_do_sitio": 7402,
+    "entradas_no_mapa_do_sitio": 16,
+    "redirecionamentos": 13
+  },
+  "concelhos": {
+    "mapas": 4,
+    "tabelas": 4,
+    "linhas": 1232,
+    "barras": 0,
+    "camaras": 2
+  },
+  "plantas": [
+    {
+      "nome": "bloco copiado para outra página de assunto",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: 1 bloco(s) fora da primeira página."
+    },
+    {
+      "nome": "título copiado sem as marcas do bloco",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "primeira frase sem marcas (pt)",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: primeira frase de bloco fora da primeira página."
+    },
+    {
+      "nome": "título sem marcas (pt)",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (pt)",
+      "mordeu": true,
+      "queixa": "N1R emprego/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (pt)",
+      "mordeu": true,
+      "queixa": "N1R emprego/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "primeira frase sem marcas (en)",
+      "mordeu": true,
+      "queixa": "N1B en/employment/index.html: primeira frase de bloco fora da primeira página."
+    },
+    {
+      "nome": "título sem marcas (en)",
+      "mordeu": true,
+      "queixa": "N1B en/employment/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (en)",
+      "mordeu": true,
+      "queixa": "N1R en/employment/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (en)",
+      "mordeu": true,
+      "queixa": "N1R en/employment/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "cartão inteiro repetido noutra página de assunto",
+      "mordeu": true,
+      "queixa": "N1C pt: cartão pensao-media-anual-2025 inteiro em mais de uma página de assunto (salarios-pensoes-e-apoios, emprego)."
+    },
+    {
+      "nome": "cartão nacional omitido",
+      "mordeu": true,
+      "queixa": "E1 en: cartão licencas-de-construcao-2025 em falta nas páginas de assunto."
+    },
+    {
+      "nome": "inquilinos depois do total (pt)",
+      "mordeu": true,
+      "queixa": "T10 pt habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "inquilinos depois do total (en)",
+      "mordeu": true,
+      "queixa": "T10 en habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "cartão inteiro nos temas",
+      "mordeu": true,
+      "queixa": "N1I pt: o índice dos temas voltou a render cartões inteiros."
+    },
+    {
+      "nome": "porta retirada da primeira página",
+      "mordeu": true,
+      "queixa": "E4 pt: a ordem das portas da primeira difere da declaração."
+    },
+    {
+      "nome": "linha longa indevida no índice",
+      "mordeu": true,
+      "queixa": "E4 en: porta precos da índice difere da declaração."
+    },
+    {
+      "nome": "título dos lugares diferente do índice",
+      "mordeu": true,
+      "queixa": "E7 pt: os títulos dos lugares diferem das secções do índice."
+    },
+    {
+      "nome": "secção retirada do índice",
+      "mordeu": true,
+      "queixa": "E4 pt: as secções de precos não estão no índice pela ordem declarada."
+    },
+    {
+      "nome": "âmbito errado na página de assunto",
+      "mordeu": true,
+      "queixa": "E3 pt: o título ou o âmbito de emprego difere da declaração."
+    },
+    {
+      "nome": "cartão das câmaras retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1L pt: falta o cartão das câmaras nos lugares."
+    },
+    {
+      "nome": "porta omitida do mapa do sítio",
+      "mordeu": true,
+      "queixa": "E5 en: /en/employment/ não está no mapa do sítio."
+    },
+    {
+      "nome": "mapa nomeado em falta",
+      "mordeu": true,
+      "queixa": "E5: o índice do mapa do sítio nomeia /sitemap-1.xml, que a construção não tem."
+    },
+    {
+      "nome": "redirecionamento inglês para a página errada",
+      "mordeu": true,
+      "queixa": "N1R /en/my-work: redirecionamento incorreto."
+    },
+    {
+      "nome": "país retirado da declaração",
+      "mordeu": true,
+      "queixa": "E6 pt: o âmbito de emprego não nomeia Portugal."
+    },
+    {
+      "nome": "marca do mapa retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: falta a marca do mapa."
+    },
+    {
+      "nome": "unidade da tabela retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "unidade da legenda retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "base do limite retirada",
+      "mordeu": true,
+      "queixa": "N1M pt: falta a base da percentagem do limite."
+    },
+    {
+      "nome": "porta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
+      "nome": "mapa retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1M pt: faltam mapas ou há mapas repetidos."
+    },
+    {
+      "nome": "linha retirada da tabela",
+      "mordeu": true,
+      "queixa": "N1M pt indice: as linhas da tabela diferem dos concelhos declarados."
+    },
+    {
+      "nome": "valor municipal trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: valor da linha agueda-indice-de-divida-2024 diferente do livro-razão."
+    },
+    {
+      "nome": "geometria municipal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a geometria não tem um desenho por concelho."
+    },
+    {
+      "nome": "contagem das câmaras trocada",
+      "mordeu": true,
+      "queixa": "V2 pt: camaras_acima_do_limite: a contagem não coincide com as linhas do índice de dívida."
+    },
+    {
+      "nome": "selo do limite municipal retirado",
+      "mordeu": true,
+      "queixa": "V2 pt: falta a marca da fonte da linha do limite."
+    }
+  ]
+}
