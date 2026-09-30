@@ -8,17 +8,17 @@ Construção de 30.09.2026, no ramo `n1-2026-09-30`, por Codex `gpt-6-astra`. Ba
 
 ## Mandato e medidas
 
-As medidas saem de `node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs`, em [medidas.json](medidas.json). Cada uma das 17 medidas tem um conhecido-positivo e a sua evidência; a ausência de qualquer um fecha o medidor. O código do medidor diz se a medição e as plantas correram; não declara cumprido o ponto 5.
+As medidas saem de `node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs`, em [medidas.json](medidas.json). Cada uma das 20 medidas tem um conhecido-positivo e a sua evidência; a ausência de qualquer um fecha o medidor. O código do medidor diz se a medição e as plantas correram; não declara cumprido o ponto 5.
 
 O §0 do brief foi reproduzido pelo seu guião antes da mudança. As quinze medidas e os quinze conhecidos-positivos do estado anterior estão em [brief-antes.json](brief-antes.json), na cabeça histórica que o próprio guião lê.
 
 | # | Mandato | Resultado medido | Estado |
 | --- | --- | --- | --- |
 | 1 | Blocos só na primeira página | Cinco blocos por edição, dez portas finais; zero blocos e zero títulos de bloco noutras páginas. `ENTRADAS` já não tem `blocos`. A cópia de um bloco e a cópia apenas do título são recusadas. | Construído |
-| 2 | Oito portas e cartões únicos | Sete assuntos com 47 cartões por edição, sem repetição entre assuntos; Lugares é a oitava porta. Dezasseis destinos no mapa do sítio, treze regras 301, zero ligações internas antigas. | Construído, com a divergência dos seis preços registada |
+| 2 | Oito portas e cartões únicos | Sete assuntos com 47 cartões por edição, sem repetição entre assuntos; Lugares é a oitava porta. Dezasseis destinos no mapa do sítio, treze regras 301, zero ligações internas antigas. | Construído; os seis preços estão confirmados no §5 do brief |
 | 3 | Temas como índice | Oito portas nos dois índices, com os mesmos nomes, âmbitos e ordem. Temas acrescenta as secções e tem zero cartões inteiros. Um cartão das câmaras em Lugares por edição. | Construído |
 | 4 | Retirar os domínios sem perder conteúdo | Dois mapas e duas tabelas de 308 linhas por edição, uma barra Évora/Portugal e a ausência T4a em Lugares. Os seis elementos gráficos transferidos têm o mesmo SHA-256 do HTML anterior. | Construído |
-| 5 | As duas linhas do desemprego em `6,0` | Os dois excertos dizem `6.0`; os valores continuam `6`. O ensaio tipado como `correcao` fez o contador calculado de correções passar a cinco, contra três publicados. | Parado no portão do número |
+| 5 | As duas linhas do desemprego em `6,0` | Os dois excertos dizem `6.0`; os valores continuam `6`. A recontagem para cinco está autorizada; a sua história exige um lugar que esta medida do projeto não tem. | Parado no requisito adicional da N1b |
 | 6 | Documentos, provas, custo e capturas | Estrutura e mapa atualizados; mapa com 140 citações conferidas; 90 imagens, nas duas edições e cinco larguras, sem transbordo; relatório, guiões e medidas nesta pasta. | Ver portões e fecho abaixo |
 
 ### Repartição dos cartões
@@ -42,13 +42,13 @@ As nove rotas antigas das entradas e as quatro dos domínios têm regras 301 em 
 
 Os destinos do veredicto e as ligações internas da página da União foram atualizados. O conteúdo e a disposição da União permanecem os anteriores. O valor do salário mínimo na base de doze meses, os âmbitos etários do emprego e as atribuições dos valores de referência que só o domínio apresentava acompanham agora as medidas, sem criar cartões inteiros adicionais.
 
-## O ponto 5 e a regra de paragem
+## O ponto 5 e a regra de paragem no fecho N1
 
 O ensaio leu a casa decimal dos excertos, acrescentou uma entrada datada com `old_value`, `new_value`, razão nas duas línguas e `kind: correcao`, e passou pelo selador da história dos valores. A razão diz que se repõe a precisão já presente no excerto, sem mudar a quantidade nem alegar uma revisão da fonte.
 
 `ledger:check` recusou o resultado: `correcoes-publicadas.yml`, calculado `5`, publicado `3`. A saída e o código estão em [ensaios/desemprego-correcao.log](ensaios/desemprego-correcao.log) e no ficheiro `.codigo` ao lado. Como esse contador é outro número fora do ponto 5, as duas linhas e a história selada foram repostas. O Git confirma que nenhum ficheiro de `ledger/` difere da base.
 
-[atualizar-desemprego.mjs](atualizar-desemprego.mjs) conserva o procedimento, mas por omissão só mede e diz que está parado. Não se trocou o tipo para `atualizacao` apenas para fazer o contador passar. Falta decidir a classificação deste ajuste de apresentação ou autorizar a atualização derivada do contador. Até lá, a primeira página conserva a diferença de precisão entre os dois lados do desemprego.
+[atualizar-desemprego.mjs](atualizar-desemprego.mjs) conserva o procedimento, mas por omissão só mede e diz que está parado. Não se trocou o tipo para `atualizacao` apenas para fazer o contador passar. Faltava decidir a classificação deste ajuste de apresentação ou autorizar a atualização derivada do contador. A decisão da N1b resolve essa questão; o requisito adicional encontrado está documentado no fim. A primeira página conserva a diferença de precisão entre os dois lados do desemprego.
 
 ## Portões que mudaram de forma e plantas
 
@@ -148,9 +148,15 @@ No estado conservado, as duas linhas portuguesas continuam em `6`, o contador co
 Os três portões desta passagem correm depois do commit que contém `RESPOSTA-construtor-n1b.md`, cada um no seu comando. Os ficheiros novos ficam em `portoes/n1b/`, com cabeça, código, saída e duração. A tabela seguinte é atualizada só depois de ler esses ficheiros; os comprovativos da cabeça final e essa atualização do relatório ficam na árvore de trabalho, depois do último commit.
 
 <!-- N1B-PORTOES-INICIO -->
-Ainda por correr na cabeça final desta passagem.
+Corridas completas na cabeça final `53938d130cbb668579510094b7f22434bc44a0a9`. Códigos e cabeças lidos dos ficheiros acabados de escrever.
+
+| Comando | Código lido | Cabeça | Segundos |
+| --- | ---: | --- | ---: |
+| `npm run build` | [0](portoes/n1b/build.codigo) | `53938d130cbb668579510094b7f22434bc44a0a9` | 85.1 |
+| `npm run verify` | [0](portoes/n1b/verify.codigo) | `53938d130cbb668579510094b7f22434bc44a0a9` | 598.1 |
+| `npm run typecheck` | [0](portoes/n1b/typecheck.codigo) | `53938d130cbb668579510094b7f22434bc44a0a9` | 0.3 |
 <!-- N1B-PORTOES-FIM -->
 
-Commits da passagem: `dfc86083` (registos anteriores), `3890bbe3` (prova e medidas) e o commit de fecho que contém a resposta N1b. O seu identificador lê-se nos ficheiros `.cabeca` dos portões finais. Não houve `push`.
+Commits da passagem: `dfc86083` (registos anteriores), `3890bbe3` (prova e medidas) e `53938d13` (relatório da paragem e resposta N1b). A cabeça final completa lê-se nos ficheiros `.cabeca` dos portões finais. Não houve `push`.
 
-<!-- N1B-CUSTO -->
+Amostra do construtor a `2026-09-30T10:57:20.991Z`: **31 778 394 símbolos** cumulativos, dos quais 31 637 335 de entrada (30 692 864 em cache) e 141 059 de saída. Entrada sem cache: 944 471. Tempo decorrido desde o início desta sessão N1 e N1b até à medição: **6766.8 segundos**. São contadores cumulativos da sessão, não o custo isolado desta passagem. A amostra e os revisores automáticos estão separados em [custo.json](custo.json).
