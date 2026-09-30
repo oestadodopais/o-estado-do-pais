@@ -1,0 +1,29 @@
+{
+  "resultados": [
+    {
+      "nome": "limpo",
+      "codigo": 0,
+      "passou": true,
+      "queixa": null
+    },
+    {
+      "nome": "unidade municipal trocada",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "✗ o campo \"unit\" de \"agueda-indice-de-divida-2024\" não foi transcrito fielmente do livro-razão."
+    },
+    {
+      "nome": "campo municipal fora do mapa",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "✗ data-linha-claim=\"agueda-indice-de-divida-2024\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice."
+    },
+    {
+      "nome": "unidade de linha alheia à tabela",
+      "codigo": 1,
+      "passou": true,
+      "queixa": "✗ data-linha-claim=\"ganho-medio-mensal-2024\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice."
+    }
+  ],
+  "reposto": true
+}
