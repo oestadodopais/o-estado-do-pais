@@ -1,10 +1,262 @@
 {
-  "medido_em": "2026-09-30T10:57:26.259678+00:00",
-  "segundos_decorridos": 6766.820678,
-  "limite": "Contadores até à última amostra escrita, anteriores ao fecho da sessão; entrada inclui cache. Não são euros nem contagem de caracteres.",
+  "medido_em": "2026-09-30T11:55:28.359068+00:00",
+  "segundos_decorridos": 10248.920068,
+  "base": "Símbolos cobrados usa a base do contador tokens used: entrada sem cache mais saída. Símbolos com cache usa o total cumulativo. Não são caracteres nem euros.",
+  "limite": "As linhas tokens used são os fechos N1 e N1b da mesma sessão, por isso não se somam. Nos revisores automáticos, a base equivalente é calculada dos eventos token_count; não há uma linha de terminal individual disponível. A amostra N1c é anterior ao fecho da sessão.",
   "conhecido_positivo": true,
+  "amostras": [
+    {
+      "passagem": "N1",
+      "origem_git": "dfc86083:design/especime-v3/medicoes/n1-2026-09-30/custo.json",
+      "amostra": {
+        "medido_em": "2026-09-30T10:30:21.825568+00:00",
+        "segundos_decorridos": 5142.386568,
+        "limite": "Contadores até à última amostra escrita, anteriores ao fecho da sessão; entrada inclui cache. Não são euros nem contagem de caracteres.",
+        "conhecido_positivo": true,
+        "sessoes": [
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T09:10:37.932Z",
+            "ultima_amostra": "2026-09-30T09:24:09.591Z",
+            "simbolos": {
+              "input_tokens": 129621,
+              "cached_input_tokens": 90112,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 300,
+              "reasoning_output_tokens": 92,
+              "total_tokens": 129921
+            },
+            "entrada_sem_cache": 39509,
+            "simbolos_cobrados": 39809,
+            "simbolos_com_cache": 129921,
+            "cache": 90112
+          },
+          {
+            "papel": "construtor",
+            "modelo": "gpt-6-astra",
+            "inicio": "2026-09-30T09:04:39.439Z",
+            "ultima_amostra": "2026-09-30T10:29:35.535Z",
+            "simbolos": {
+              "input_tokens": 25333195,
+              "cached_input_tokens": 24587008,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 112786,
+              "reasoning_output_tokens": 39921,
+              "total_tokens": 25445981
+            },
+            "entrada_sem_cache": 746187,
+            "simbolos_cobrados": 858973,
+            "simbolos_com_cache": 25445981,
+            "cache": 24587008
+          },
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T09:30:28.718Z",
+            "ultima_amostra": "2026-09-30T09:51:37.111Z",
+            "simbolos": {
+              "input_tokens": 483508,
+              "cached_input_tokens": 396288,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 619,
+              "reasoning_output_tokens": 209,
+              "total_tokens": 484127
+            },
+            "entrada_sem_cache": 87220,
+            "simbolos_cobrados": 87839,
+            "simbolos_com_cache": 484127,
+            "cache": 396288
+          },
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T09:59:13.724Z",
+            "ultima_amostra": "2026-09-30T10:29:11.741Z",
+            "simbolos": {
+              "input_tokens": 773314,
+              "cached_input_tokens": 697600,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1071,
+              "reasoning_output_tokens": 255,
+              "total_tokens": 774385
+            },
+            "entrada_sem_cache": 75714,
+            "simbolos_cobrados": 76785,
+            "simbolos_com_cache": 774385,
+            "cache": 697600
+          }
+        ]
+      },
+      "fecho_cli": {
+        "passagem": "N1",
+        "ficheiro": "construir-n1.log",
+        "sha256": "bbcd80c1608df09546242d317fe31604ee07a9d96454deeb7a10fba8645aa14b",
+        "linha": 202557,
+        "texto": "tokens used\n865,861",
+        "tokens_used": 865861,
+        "instante": "2026-09-30T10:31:14.961Z",
+        "simbolos": {
+          "input_tokens": 25795493,
+          "cached_input_tokens": 25045376,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 115744,
+          "reasoning_output_tokens": 41108,
+          "total_tokens": 25911237
+        }
+      },
+      "revisores": {
+        "sessoes": 3,
+        "simbolos_cobrados": 204433,
+        "simbolos_com_cache": 1388433
+      }
+    },
+    {
+      "passagem": "N1b",
+      "origem_git": "ae010fbb:design/especime-v3/medicoes/n1-2026-09-30/custo.json",
+      "amostra": {
+        "medido_em": "2026-09-30T10:57:26.259678+00:00",
+        "segundos_decorridos": 6766.820678,
+        "limite": "Contadores até à última amostra escrita, anteriores ao fecho da sessão; entrada inclui cache. Não são euros nem contagem de caracteres.",
+        "conhecido_positivo": true,
+        "sessoes": [
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T09:10:37.932Z",
+            "ultima_amostra": "2026-09-30T09:24:09.591Z",
+            "simbolos": {
+              "input_tokens": 129621,
+              "cached_input_tokens": 90112,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 300,
+              "reasoning_output_tokens": 92,
+              "total_tokens": 129921
+            },
+            "entrada_sem_cache": 39509,
+            "simbolos_cobrados": 39809,
+            "simbolos_com_cache": 129921,
+            "cache": 90112
+          },
+          {
+            "papel": "construtor",
+            "modelo": "gpt-6-astra",
+            "inicio": "2026-09-30T09:04:39.439Z",
+            "ultima_amostra": "2026-09-30T10:57:20.991Z",
+            "simbolos": {
+              "input_tokens": 31637335,
+              "cached_input_tokens": 30692864,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 141059,
+              "reasoning_output_tokens": 55354,
+              "total_tokens": 31778394
+            },
+            "entrada_sem_cache": 944471,
+            "simbolos_cobrados": 1085530,
+            "simbolos_com_cache": 31778394,
+            "cache": 30692864
+          },
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T10:56:39.870Z",
+            "ultima_amostra": "2026-09-30T10:56:45.670Z",
+            "simbolos": {
+              "input_tokens": 15726,
+              "cached_input_tokens": 4864,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 128,
+              "reasoning_output_tokens": 68,
+              "total_tokens": 15854
+            },
+            "entrada_sem_cache": 10862,
+            "simbolos_cobrados": 10990,
+            "simbolos_com_cache": 15854,
+            "cache": 4864
+          },
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T10:35:10.590Z",
+            "ultima_amostra": "2026-09-30T10:50:46.335Z",
+            "simbolos": {
+              "input_tokens": 171540,
+              "cached_input_tokens": 144128,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 371,
+              "reasoning_output_tokens": 140,
+              "total_tokens": 171911
+            },
+            "entrada_sem_cache": 27412,
+            "simbolos_cobrados": 27783,
+            "simbolos_com_cache": 171911,
+            "cache": 144128
+          },
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T09:30:28.718Z",
+            "ultima_amostra": "2026-09-30T09:51:37.111Z",
+            "simbolos": {
+              "input_tokens": 483508,
+              "cached_input_tokens": 396288,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 619,
+              "reasoning_output_tokens": 209,
+              "total_tokens": 484127
+            },
+            "entrada_sem_cache": 87220,
+            "simbolos_cobrados": 87839,
+            "simbolos_com_cache": 484127,
+            "cache": 396288
+          },
+          {
+            "papel": "revisor automático das aprovações",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T09:59:13.724Z",
+            "ultima_amostra": "2026-09-30T10:29:11.741Z",
+            "simbolos": {
+              "input_tokens": 773314,
+              "cached_input_tokens": 697600,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1071,
+              "reasoning_output_tokens": 255,
+              "total_tokens": 774385
+            },
+            "entrada_sem_cache": 75714,
+            "simbolos_cobrados": 76785,
+            "simbolos_com_cache": 774385,
+            "cache": 697600
+          }
+        ]
+      },
+      "fecho_cli": {
+        "passagem": "N1B",
+        "ficheiro": "construir-n1b.log",
+        "sha256": "5885fad7cbbb88df334034e211fb564559f2fd72f3536e9803aaf5910b5aa81f",
+        "linha": 6900,
+        "texto": "tokens used\n1,096,982",
+        "tokens_used": 1096982,
+        "instante": "2026-09-30T10:59:07.468Z",
+        "simbolos": {
+          "input_tokens": 31943630,
+          "cached_input_tokens": 30990592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 143944,
+          "reasoning_output_tokens": 56008,
+          "total_tokens": 32087574
+        }
+      },
+      "revisores": {
+        "sessoes": 5,
+        "simbolos_cobrados": 243206,
+        "simbolos_com_cache": 1576198
+      }
+    }
+  ],
   "sessoes": [
     {
+      "sessao": "01a0f18f-0df1-7e72-8c2c-7f68fe9e8906",
       "papel": "revisor automático das aprovações",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T09:10:37.932Z",
@@ -17,24 +269,51 @@
         "reasoning_output_tokens": 92,
         "total_tokens": 129921
       },
-      "entrada_sem_cache": 39509
+      "simbolos_cobrados": 39809,
+      "simbolos_com_cache": 129921,
+      "cache": 90112,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
     },
     {
+      "sessao": "01a0f18f-0d5e-7b50-961b-dbe144058450",
       "papel": "construtor",
       "modelo": "gpt-6-astra",
       "inicio": "2026-09-30T09:04:39.439Z",
-      "ultima_amostra": "2026-09-30T10:57:20.991Z",
+      "ultima_amostra": "2026-09-30T11:54:17.463Z",
       "simbolos": {
-        "input_tokens": 31637335,
-        "cached_input_tokens": 30692864,
+        "input_tokens": 37675765,
+        "cached_input_tokens": 36576896,
         "cache_write_input_tokens": 0,
-        "output_tokens": 141059,
-        "reasoning_output_tokens": 55354,
-        "total_tokens": 31778394
+        "output_tokens": 170123,
+        "reasoning_output_tokens": 63973,
+        "total_tokens": 37845888
       },
-      "entrada_sem_cache": 944471
+      "simbolos_cobrados": 1268992,
+      "simbolos_com_cache": 37845888,
+      "cache": 36576896,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
     },
     {
+      "sessao": "01a0f21c-0053-79d3-93ff-58be0f761c3e",
+      "papel": "revisor automático das aprovações",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-09-30T11:38:36.604Z",
+      "ultima_amostra": "2026-09-30T11:48:01.328Z",
+      "simbolos": {
+        "input_tokens": 29432,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 141,
+        "reasoning_output_tokens": 85,
+        "total_tokens": 29573
+      },
+      "simbolos_cobrados": 24709,
+      "simbolos_com_cache": 29573,
+      "cache": 4864,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
+    },
+    {
+      "sessao": "01a0f1f5-995e-7323-a53c-373c638a203c",
       "papel": "revisor automático das aprovações",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T10:56:39.870Z",
@@ -47,9 +326,13 @@
         "reasoning_output_tokens": 68,
         "total_tokens": 15854
       },
-      "entrada_sem_cache": 10862
+      "simbolos_cobrados": 10990,
+      "simbolos_com_cache": 15854,
+      "cache": 4864,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
     },
     {
+      "sessao": "01a0f1e1-ed20-73c2-bc28-e3d859a60efd",
       "papel": "revisor automático das aprovações",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T10:35:10.590Z",
@@ -62,9 +345,13 @@
         "reasoning_output_tokens": 140,
         "total_tokens": 171911
       },
-      "entrada_sem_cache": 27412
+      "simbolos_cobrados": 27783,
+      "simbolos_com_cache": 171911,
+      "cache": 144128,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
     },
     {
+      "sessao": "01a0f1a6-b19b-7772-a555-c08d33bd89da",
       "papel": "revisor automático das aprovações",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T09:30:28.718Z",
@@ -77,9 +364,13 @@
         "reasoning_output_tokens": 209,
         "total_tokens": 484127
       },
-      "entrada_sem_cache": 87220
+      "simbolos_cobrados": 87839,
+      "simbolos_com_cache": 484127,
+      "cache": 396288,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
     },
     {
+      "sessao": "01a0f1c1-03e9-7f72-bcb4-5c68df7675f7",
       "papel": "revisor automático das aprovações",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T09:59:13.724Z",
@@ -92,7 +383,15 @@
         "reasoning_output_tokens": 255,
         "total_tokens": 774385
       },
-      "entrada_sem_cache": 75714
+      "simbolos_cobrados": 76785,
+      "simbolos_com_cache": 774385,
+      "cache": 697600,
+      "base": "input_tokens menos cached_input_tokens mais output_tokens; o total com cache conserva total_tokens"
     }
-  ]
+  ],
+  "revisores": {
+    "sessoes": 6,
+    "simbolos_cobrados": 267915,
+    "simbolos_com_cache": 1605771
+  }
 }

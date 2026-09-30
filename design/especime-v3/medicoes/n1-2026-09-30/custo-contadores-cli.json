@@ -1,0 +1,18 @@
+[
+  {
+    "passagem": "N1",
+    "ficheiro": "construir-n1.log",
+    "sha256": "bbcd80c1608df09546242d317fe31604ee07a9d96454deeb7a10fba8645aa14b",
+    "linha": 202557,
+    "texto": "tokens used\n865,861",
+    "tokens_used": 865861
+  },
+  {
+    "passagem": "N1B",
+    "ficheiro": "construir-n1b.log",
+    "sha256": "5885fad7cbbb88df334034e211fb564559f2fd72f3536e9803aaf5910b5aa81f",
+    "linha": 6900,
+    "texto": "tokens used\n1,096,982",
+    "tokens_used": 1096982
+  }
+]
