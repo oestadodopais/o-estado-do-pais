@@ -1,10 +1,9 @@
-# F2.2b · as corridas prontas a armar, com F2.2c e F2.2d
+# F2.2b · as corridas prontas a armar, com F2.2c, F2.2d e F2.2e
 
-A F2.2d está concluída no âmbito do mandato. O clone raso sem `master` local
-e o portão da cabeça final do motor passaram. A referência fixa conserva os comandos, cabeçalhos, ordem e regra de
-saída do guião de `68318e0`. Só o nome do utilizador no rótulo do agente e o caminho
-do portátil foram trocados pelas marcas autorizadas. As provas de fecho estão
-na secção F2.2d.
+A F2.2e completa as plantas das guardas do painel e os registos das medidas.
+O motor recebe o UE1 de `master`. Nesta passagem, o sítio só recebe provas e
+relatório; os seus três portões ficam a cargo do lugar de direção na cabeça
+que aterra, conforme `prompts/PROMPT-f22e-construtor.md`.
 
 O bloco prepara a publicação dos ramos e os ensaios no GitHub. Os efeitos
 externos nulos são declarações do construtor, não medições pela API. Não houve
@@ -62,6 +61,9 @@ As provas originais estão em `provas/` e `portoes/`; as passagens têm subpasta
 pelos próprios provadores. As plantas usam fontes, GitHub e lançamento simulados;
 as cópias temporárias, patches e commits sintéticos usam Git real.
 
+No F2.2b passaram 34 plantas, com os nomes, zero falhas e zero erros em
+`provas/plantas-detalhe.json`, e a saída em `provas/plantas.log`.
+
 O §0 foi reproduzido por `BRIEF-F22b.py`, na cabeça histórica fixada no guião:
 3009 linhas, 91 reconferidas pelo painel, 2545 pelo corredor, seis commits semanais
 e 93 ficheiros no commit semanal observado, dos quais 91 linhas. Os sete
@@ -106,9 +108,24 @@ Os commits já registados da F2.2d são:
 | Sítio | `f97d7d60d3611f011cbaef26fc05cff92c9ac7a1` | Relatório do bloco, prompt reposto e proveniência das provas. |
 | Sítio | `ad4722fa92bafcacf7b99d3da56363f3b58dcbed` | Provas e resposta da entrega parcial, com a paragem na referência pessoal. |
 
+A entrada do UE1 e os commits da F2.2e são:
+
+| Repositório | Commit | Conteúdo |
+|---|---|---|
+| Motor | `da6df0b32e2ff00e6c02126549e6862bdb1f1829` | UE1 recebido: corpos das séries e tabela dos nomes. |
+| Motor | `50f8352a70ffcba1dc8ef7ddee863fd42a2b38cb` | UE1 recebido: geração das séries por país. |
+| Motor | `daa5355d88e4340b9768c3beeede03c2a3674e99` | UE1 recebido: travessia das séries e plantas no portão. |
+| Motor | `e394307d818f54477351846b9c97e5e81a590949` | Cabeça recebida de `master`, com o cliente comum dos pedidos. |
+| Motor | `06e126d154cc20141c55801b807dbf9c9173a8fd` | Junção de `master`, conservando as plantas do UE1 e das rotinas. |
+| Motor | `4b46befbac8decf1566f73b5959fd175e5458d66` | Plantas das guardas do painel e guiões reproduzíveis das provas. |
+| Sítio | `c1559d893fdc90eb83377ee92ee7daf99cdd78af` | Terceira leitura, triagem e decisão sobre a referência fixa. |
+| Sítio | `e97d7da8d81189691df84691ae7f538a032580d0` | Junção de `main` depois do UE1, recebida antes desta passagem. |
+| Sítio | `2ea04eef166359723bcafc05a68630456e9816e4` | Mandato da F2.2e, recebido antes desta passagem. |
+
 O inventário completo, incluindo os antepassados recebidos pela junção de
 `main`, fica em `medidas.json`. O último commit do sítio contém as provas de
-fecho e `RESPOSTA-construtor-f22d.md`; o seu SHA é comunicado fora do ramo.
+fecho da F2.2e e `RESPOSTA-construtor-f22e.md`; o seu SHA é comunicado fora do ramo.
+O fecho da F2.2d está em `e15037869c95a937e00c9ae60948d39d29463344`.
 O SHA do último commit das provas resolve-se pelo histórico da resposta da sua
 passagem e é comunicado fora do ramo: um commit não contém o seu próprio SHA.
 
@@ -136,16 +153,19 @@ do sítio ficam ao lado dos códigos. A F2.2c tem um `.exclusao.json` por portã
 com o último `pgrep` sem outra construção antes de iniciar. Não se atribui essa
 prova às corridas históricas que não a guardaram. Os portões da F2.2d conservam
 a mesma regra de exclusão. Nesta retoma só mudou o pacote de provas do sítio;
-os três portões já verdes conservam-se, conforme a condição do mandato final. A comparação posterior entre a cabeça dos portões
-e o último commit das provas cabe à direção na aterragem.
+os três portões já verdes conservaram-se, conforme a decisão registada em
+`prompts/PROMPT-f22d-resposta.md`. A comparação posterior entre a cabeça dos portões
+e o último commit das provas cabe à direção na aterragem. Na F2.2e, os três
+portões do sítio não correm pelo construtor; a direção corre-os na cabeça que
+aterra. Os resultados de F2.2b a F2.2d nesta tabela são históricos.
 
 ## O custo do bloco inteiro
 
 As fotografias históricas conservam-se: construção com 15830614 símbolos;
 retoma com acréscimo de 8587703 e cumulativo de 26360707; F2.2c com 21079437.
 Os contadores seguintes incluem também o fecho dessas passagens, até ao último
-contador antes da retoma seguinte ou ao fim da sessão antiga. A F2.2d usa a sua
-própria diferença, sem voltar a contar a F2.2c.
+contador antes da retoma seguinte ou ao fim da sessão antiga. Cada correção usa a sua própria diferença. A F2.2d termina no último contador
+anterior à F2.2e; a F2.2e começa com esse mesmo contador, sem dupla contagem.
 
 <!-- custo-bloco-inicio -->
 | Segmento | Símbolos do segmento | Contador cumulativo final | Segundos |
@@ -153,14 +173,17 @@ própria diferença, sem voltar a contar a F2.2c.
 | construcao | 17773004 | 17773004 | 3997,751 |
 | retoma | 10474123 | 28247127 | 1851,757 |
 | f22c | 21748675 | 21748675 | 3498,598 |
-| f22d | 13670876 | 35419551 | 3929,194 |
+| f22d | 14631871 | 36380546 | 4223,778 |
+| f22e | 4240124 | 40620670 | 1008,533 |
 
-Total observado: 63666678 símbolos e 13277,3 segundos dos segmentos.
+Total observado: 68867797 símbolos e 14580,417 segundos dos segmentos.
 <!-- custo-bloco-fim -->
 
 Os contadores, as fronteiras e as fotografias anteriores estão em
-`provas/f22d/custo-bloco.json`; o contador desta passagem está em
-`provas/f22d/custo.json`. Os símbolos incluem as releituras em cache. Os segundos
+`provas/f22e/custo-bloco.json`; o contador desta passagem está em
+`provas/f22e/custo.json`. `custo-extracao` e `custo-bloco-execucao`, nessa pasta,
+guardam os comandos, as saídas e os códigos dessas medições. As fotografias
+anteriores conservam-se nas pastas das respetivas passagens. Os símbolos incluem as releituras em cache. Os segundos
 são tempo decorrido, sem os intervalos entre passagens, e não tempo de CPU.
 A F2.2d inclui a pausa antes da decisão sobre as marcas da referência fixa.
 A fotografia desta passagem antecede o último commit e a resposta final.
@@ -178,7 +201,7 @@ os interruptores e os despachos na aterragem.
 | Ponto | Correção | Medida e planta |
 |---|---|---|
 | `0` | `master` entrou por fusão, conservando a C1e e a retoma. | `fusao-rede-local`, `fusao-rotinas`, `fusao-fluxo` e o pre-commit em `commit-fusao`. A primeira tentativa do servidor local foi impedida pelo sandbox; a repetição autorizada passou. |
-| `1` | A linha conserva as últimas quatro reconferências; o índice do arquivo conserva a história. O limite importa-se de `refresh.py`. | Quatro antigas e uma nova, seis antigas e uma nova: aceites após a poda exata. Reescrita, reordenação e poda excessiva: recusadas. A célula `13` do corredor conserva o teto. |
+| `1` | A linha conserva as últimas quatro reconferências; o índice do arquivo conserva a história. O limite importa-se de `refresh.py`. | Quatro antigas e uma nova, seis antigas e uma nova: aceites após a poda exata. Reescrita, reordenação e poda excessiva: recusadas. A célula `13` guarda duas reconferências, abaixo do teto de quatro, na repetição identificada em `provas/f22e/corredor-detalhe.json`. |
 | `2` | Só `success` dá verde. Erros permanentes param com causa; limites, servidor e rede repetem dentro do teto. | O próprio `esperar_portao` recebe pela API simulada cada conclusão pedida. HTTP `400`, `401`, `404`, `410` e `403` sem limite param; `403` e `429` de limite, `500`, `503` e rede repetem. A razão conserva o último erro. A versão mantém-se, com a fonte em `api-versoes.json`. |
 | `3` | `main --aplicar` prova as corridas antes de qualquer chamada a `launchctl`. | Sem provas, só uma corrida, identificadores repetidos e ensaio em vez de real: recusas sem chamadas. O controlo verde confere a ordem das chamadas, os bytes arquivados antes de apagar e os bytes finais. |
 | `4` | `fetch`, guarda contra `main`, ramo datado, portão, segunda guarda e avanço do mesmo SHA. | Uma mudança de valor é recusada antes de qualquer `push`; o diff fica no artefacto privado e a issue liga a corrida e diz a causa. O controlo verde faz os dois `push` do mesmo SHA por dublê. Corredor e retoma guardam `publicacao.*` mesmo quando a publicação falha. |
@@ -300,3 +323,75 @@ Publicação dos ramos, ensaios despachados, chaves, interruptores e reforma de
 agentes reais continuam fora do mandato. Duas corridas reais verdes de cada
 rotina continuam a ser condição da reforma. As plantas não provam que outro
 runner do GitHub terá outro IP.
+
+
+## F2.2e · as duas guardas com plantas e as medidas reproduzíveis
+
+A terceira leitura e a triagem estão em
+`design/especime-v3/critica/LEITURA-f22d-2026-09-30.md`. O mandato está em
+`prompts/PROMPT-f22e-construtor.md`. Não foi preciso alterar o código de produção
+do painel, do leitor ou do guião mensal. Mudaram as plantas e os guiões das provas.
+
+| Ponto | Entrega | Medida e planta |
+|---|---|---|
+| `0` | `master` entrou por `git merge`, com o UE1 e as plantas das rotinas no `core.gate`. | `commit-fusao.json` regista a junção ainda por confirmar, a sua árvore e `e394307` em `juncao_por_registar`. O pre-commit deu código 0. |
+| `1` | Recusa de ligação e TLS atravessam `painel.correr`, com o `probe` real na linha afetada e a falha aplicada à leitura de rede. | A linha mantém os bytes, não ganha reconferência, o anfitrião entra nos calados e no pedido de retoma, e nenhuma saída escreve «inacessível». A tentativa seguinte lê só esse anfitrião e completa o painel. Uma entrada escrita no ramo sem resposta faz falhar ambas as plantas. |
+| `2` | O vigia de rede cala apenas o anfitrião do limiar; as linhas são lidas. | `inteira` fica verdadeira, os calados das linhas ficam vazios e os carimbos são escritos. A retoma pede só o limiar. Retirar `if h in hosts:` faz falhar a planta. |
+| `3` | Contagem da célula `13`, plantas originais do F2.2b, custo e comparação da cópia fixa documentados. | `corredor.log` termina com a célula identificada: duas reconferências guardadas, limite de quatro; `corredor-detalhe.json` guarda a linha original e o código. As 34 plantas originais constam de `provas/plantas-detalhe.json`. `referencia` e os registos do custo têm comando, saída, código, cabeça e árvore. |
+
+### As plantas e as cópias com estragos
+
+`provas/f22e/plantas-detalhe.json` regista 50 plantas das rotinas, sem falhas nem
+erros. As três novas são `test_painel_linha_recusada_fica_sem_carimbo_e_retoma`,
+`test_painel_linha_tls_fica_sem_carimbo_e_retoma` e
+`test_painel_vigia_cala_so_limiar_e_conserva_inteira`.
+
+`provas/f22e/guardas.log` e `guardas-detalhe.json` mostram os três controlos
+verdes. A escrita indevida de uma reconferência dá duas falhas, uma por erro de
+rede; a remoção da guarda do limiar dá uma falha. Os estragos correm só em
+funções compiladas em memória. Os ficheiros de produção não são alterados.
+O provador devolve código 0 quando os controlos passam e essas falhas ocorrem.
+
+As provas `guardas`, `referencia` e `corredor` correram sobre a árvore
+`21ee3622e8ef16588e698716e3ecd41ae8016777`, ainda por registar sobre `06e126d1`.
+É a árvore depois registada em `4b46befb`. Os registos distinguem essa situação
+da execução das 50 plantas na cabeça já confirmada.
+
+A comparação da referência corre por `conferir_referencia.py`: lê o original
+de `68318e0` em memória, aplica só as duas marcas autorizadas, confere os bytes,
+as linhas `python3` e `echo` e os dois SHA-256. A saída de `referencia.log` e os
+campos de `referencia-detalhe.json` vêm dessa execução, com código em
+`referencia.codigo`. A prova anterior de F2.2d conserva-se como registo histórico;
+a F2.2e acrescenta o comando reproduzível que lhe faltava.
+
+
+### O portão final e os códigos lidos
+
+O portão do motor correu no commit `4b46befbac8decf1566f73b5959fd175e5458d66`,
+com a árvore `21ee3622e8ef16588e698716e3ecd41ae8016777`. Os `.codigo` foram lidos
+depois de terminarem os processos; os `.cabeca`, `.arvore`, `.json` e `.log`
+ficam ao lado, em `provas/f22e/`.
+
+| Execução | Código lido | Segundos | Ficheiro |
+|---|---:|---:|---|
+| `core-final` | 0 | 210,298 | `provas/f22e/core-final.codigo` |
+| `plantas` | 0 | 0,567 | `provas/f22e/plantas.codigo` |
+| `guardas` | 0 | 0,148 | `provas/f22e/guardas.codigo` |
+| `corredor` | 0 | 14,192 | `provas/f22e/corredor.codigo` |
+| `referencia` | 0 | 0,12 | `provas/f22e/referencia.codigo` |
+| `custo-extracao` | 0 | 0,078 | `provas/f22e/custo-extracao.codigo` |
+| `custo-bloco-execucao` | 0 | 0,059 | `provas/f22e/custo-bloco-execucao.codigo` |
+
+O contador da F2.2e é uma fotografia de `2026-09-30T00:51:55.842Z`:
+4240124 símbolos em 1008,533 segundos.
+O comando `custo.py` extrai apenas os contadores da sessão; `custo_bloco.py`
+reproduz as diferenças e a soma dos cinco segmentos. Os registos de execução
+estão em `custo-extracao` e `custo-bloco-execucao`; os contadores e as fronteiras
+ficam nos JSON de dados. O custo não inclui o trabalho posterior à fotografia,
+nem mede dinheiro. Os símbolos incluem cache.
+
+Os três portões do sítio não foram executados nesta passagem. Correm pelo lugar
+de direção na cabeça que aterra. Nenhuma pendência do construtor ficou aberta;
+os portões do sítio e as ações externas continuam a cargo da aterragem.
+O último commit do sítio contém esta secção, as provas, `medidas.json` e
+`RESPOSTA-construtor-f22e.md`; o seu SHA é dado fora do ramo.

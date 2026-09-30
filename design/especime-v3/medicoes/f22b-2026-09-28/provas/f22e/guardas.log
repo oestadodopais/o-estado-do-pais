@@ -1,0 +1,127 @@
+CASO: controlo
+test_painel_linha_recusada_fica_sem_carimbo_e_retoma (indicators.rotinas_test.Plantas.test_painel_linha_recusada_fica_sem_carimbo_e_retoma) ... # Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões das linhas por retomar: calado.invalid
+Limiar por retomar: não
+
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões das linhas por retomar: nenhum
+Limiar por retomar: não
+
+ok
+test_painel_linha_tls_fica_sem_carimbo_e_retoma (indicators.rotinas_test.Plantas.test_painel_linha_tls_fica_sem_carimbo_e_retoma) ... # Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões das linhas por retomar: calado.invalid
+Limiar por retomar: não
+
+# Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões das linhas por retomar: nenhum
+Limiar por retomar: não
+
+ok
+test_painel_vigia_cala_so_limiar_e_conserva_inteira (indicators.rotinas_test.Plantas.test_painel_vigia_cala_so_limiar_e_conserva_inteira) ... # Painel semanal
+
+Corrida: 123
+Estado: inteira
+Linhas lidas: 2 de 2
+Anfitriões das linhas por retomar: nenhum
+Limiar por retomar: sim
+
+* limiar: threshold: sem ligação ao limiar nesta tentativa
+ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.022s
+
+OK
+CASO: entrada_escrita_no_silencio
+test_painel_linha_recusada_fica_sem_carimbo_e_retoma (indicators.rotinas_test.Plantas.test_painel_linha_recusada_fica_sem_carimbo_e_retoma) ... # Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões das linhas por retomar: calado.invalid
+Limiar por retomar: não
+
+FAIL
+test_painel_linha_tls_fica_sem_carimbo_e_retoma (indicators.rotinas_test.Plantas.test_painel_linha_tls_fica_sem_carimbo_e_retoma) ... # Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 1 de 2
+Anfitriões das linhas por retomar: calado.invalid
+Limiar por retomar: não
+
+FAIL
+
+======================================================================
+FAIL: test_painel_linha_recusada_fica_sem_carimbo_e_retoma (indicators.rotinas_test.Plantas.test_painel_linha_recusada_fica_sem_carimbo_e_retoma)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<motor>/indicators/rotinas_test.py", line 604, in test_painel_linha_recusada_fica_sem_carimbo_e_retoma
+    self.ensaio_painel(erro_linha=ConnectionRefusedError(111, "ligação recusada"))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/indicators/rotinas_test.py", line 526, in ensaio_painel
+    self.assertEqual(claims[0][0].read_bytes(), linha_antes)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'excerpt: \'10\'\nid: a\nreference_date: [355 chars]l"\n' != b"excerpt: '10'\nid: a\nreference_date: '2[86 chars]0'\n"
+
+======================================================================
+FAIL: test_painel_linha_tls_fica_sem_carimbo_e_retoma (indicators.rotinas_test.Plantas.test_painel_linha_tls_fica_sem_carimbo_e_retoma)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<motor>/indicators/rotinas_test.py", line 607, in test_painel_linha_tls_fica_sem_carimbo_e_retoma
+    self.ensaio_painel(erro_linha=r.requests.exceptions.SSLError("certificado da planta"))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/indicators/rotinas_test.py", line 526, in ensaio_painel
+    self.assertEqual(claims[0][0].read_bytes(), linha_antes)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'excerpt: \'10\'\nid: a\nreference_date: [355 chars]l"\n' != b"excerpt: '10'\nid: a\nreference_date: '2[86 chars]0'\n"
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.007s
+
+FAILED (failures=2)
+CASO: limiar_nos_calados_das_linhas
+test_painel_vigia_cala_so_limiar_e_conserva_inteira (indicators.rotinas_test.Plantas.test_painel_vigia_cala_so_limiar_e_conserva_inteira) ... # Painel semanal
+
+Corrida: 123
+Estado: parcial, sem carimbo global
+Linhas lidas: 2 de 2
+Anfitriões das linhas por retomar: economy-finance.ec.europa.eu
+Limiar por retomar: sim
+
+* limiar: threshold: sem ligação ao limiar nesta tentativa
+FAIL
+
+======================================================================
+FAIL: test_painel_vigia_cala_so_limiar_e_conserva_inteira (indicators.rotinas_test.Plantas.test_painel_vigia_cala_so_limiar_e_conserva_inteira)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<motor>/indicators/rotinas_test.py", line 610, in test_painel_vigia_cala_so_limiar_e_conserva_inteira
+    self.ensaio_painel(vigia_limiar=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "<motor>/indicators/rotinas_test.py", line 474, in ensaio_painel
+    self.assertTrue(reg["inteira"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)
+PASS: três controlos verdes; a escrita indevida dá duas falhas; a mistura do limiar dá uma.

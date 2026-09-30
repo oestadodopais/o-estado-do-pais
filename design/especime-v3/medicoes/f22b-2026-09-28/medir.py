@@ -97,7 +97,8 @@ def main():
         "commits_dos_relatorios": {
             "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
             "f22c": "cb1600b6e147f2bdc05f73396404f344b3495c2b",
-            "f22d": "o último commit desta passagem, que contém a revisão de LEIA-ME.md e medidas.json, as provas F2.2d e RESPOSTA-construtor-f22d.md; o SHA é dado fora do ramo"},
+            "f22d": "e15037869c95a937e00c9ae60948d39d29463344",
+            "f22e": "o último commit desta passagem contém o relatório, as provas e RESPOSTA-construtor-f22e.md; o SHA é dado fora do ramo"},
         "alteracoes_protegidas": proibidos,
         "brief_reproduzido": ler(a.provas / "brief.json"),
         "plantas": ler(a.provas / "plantas-detalhe.json"),
@@ -168,15 +169,43 @@ def main():
                 dados["f22d"][nome] = ler(f22d / (nome + ".json"))
         if "core-final" in execucoes_d:
             final = execucoes_d["core-final"]
-            if final["cabeca"] != git(a.motor, "rev-parse", "HEAD"):
-                raise SystemExit("O portão F2.2d não correu na cabeça final do motor")
-            if final["codigo_executado"]["arvore"] != git(a.motor, "rev-parse", "HEAD^{tree}"):
-                raise SystemExit("A árvore do portão final do motor não é a do commit")
+            git(a.motor, "merge-base", "--is-ancestor", final["cabeca"], "HEAD")
+            if final["codigo_executado"]["arvore"] != git(a.motor, "rev-parse", final["cabeca"] + "^{tree}"):
+                raise SystemExit("A árvore do portão histórico F2.2d não é a do seu commit")
         if all(n in execucoes_d for n in ("build", "verify", "typecheck")):
             cabecas_d = {execucoes_d[n]["cabeca"] for n in ("build", "verify", "typecheck")}
             if len(cabecas_d) != 1:
                 raise SystemExit("Os portões F2.2d não têm a mesma cabeça")
             dados["f22d"]["cabeca_dos_portoes_do_sitio"] = cabecas_d.pop()
+    f22e = saida / "provas/f22e"
+    if (f22e / "fecho.json").exists():
+        execucoes_e = {}
+        for ficheiro in sorted(f22e.glob("*.codigo")):
+            base = ficheiro.with_suffix("")
+            registo = ler(base.with_suffix(".json"))
+            if int(ficheiro.read_text()) != registo["codigo"]:
+                raise SystemExit("Código incoerente: " + ficheiro.name)
+            if base.with_suffix(".cabeca").read_text().strip() != registo["cabeca"]:
+                raise SystemExit("Cabeça incoerente: " + ficheiro.name)
+            if base.with_suffix(".arvore").read_text().strip() != registo["codigo_executado"]["arvore"]:
+                raise SystemExit("Árvore incoerente: " + ficheiro.name)
+            registo["codigo_lido_de"] = str(ficheiro.relative_to(saida))
+            registo["sha256_saida"] = hashlib.sha256(base.with_suffix(".log").read_bytes()).hexdigest()
+            execucoes_e[base.name] = registo
+        final = execucoes_e["core-final"]
+        if final["codigo"] != 0 or final["cabeca"] != git(a.motor, "rev-parse", "HEAD"):
+            raise SystemExit("O portão F2.2e não está verde na cabeça final do motor")
+        if final["codigo_executado"]["arvore"] != git(a.motor, "rev-parse", "HEAD^{tree}"):
+            raise SystemExit("A árvore do portão F2.2e não é a do commit final")
+        dados["f22e"] = {"execucoes": execucoes_e, "fecho": ler(f22e / "fecho.json"),
+            "plantas": ler(f22e / "plantas-detalhe.json"),
+            "guardas": ler(f22e / "guardas-detalhe.json"),
+            "celula13": ler(f22e / "corredor-detalhe.json"),
+            "referencia_fixa": ler(f22e / "referencia-detalhe.json"),
+            "custo": ler(f22e / "custo.json"),
+            "custo_do_bloco": ler(f22e / "custo-bloco.json"),
+            "portoes_do_sitio": "Não corridos nesta passagem; o lugar de direção corre-os na cabeça que aterra."}
+        dados["por_fazer"].insert(0, "portões do sítio pelo lugar de direção na cabeça que aterra")
     texto = json.dumps(dados, ensure_ascii=False, indent=2) + "\n"
     # O conhecido-positivo exerce o mesmo detetor que percorre o pacote inteiro.
     positivo = "/" + "Users/" + "pessoa/" + "projeto/prova.log"

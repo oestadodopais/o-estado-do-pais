@@ -1,0 +1,16 @@
+{
+  "comando": "python3 -B <motor>/indicators/out/f22e-2026-09-30/custo_bloco.py --pacote <sitio>/design/especime-v3/medicoes/f22b-2026-09-28",
+  "ambiente_declarado": {},
+  "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+  "codigo_executado": {
+    "cabeca_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+    "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+    "tipo": "commit",
+    "alterados": [],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-30T00:52:17.117465+00:00",
+  "fim": "2026-09-30T00:52:17.177024+00:00",
+  "segundos": 0.059,
+  "codigo": 0
+}

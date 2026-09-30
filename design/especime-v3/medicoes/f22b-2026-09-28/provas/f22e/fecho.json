@@ -1,0 +1,81 @@
+{
+  "estado": "Concluída no âmbito do construtor.",
+  "motor_cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+  "motor_arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+  "execucoes": {
+    "commit-fusao": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/commit-fusao.codigo",
+      "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+      "arvore": "29458472cb49909b0ecd8f0404c15e1f87f71a83",
+      "segundos": 210.524
+    },
+    "commit-plantas": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/commit-plantas.codigo",
+      "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 210.41
+    },
+    "core-final": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/core-final.codigo",
+      "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 210.298
+    },
+    "plantas": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/plantas.codigo",
+      "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 0.567
+    },
+    "guardas": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/guardas.codigo",
+      "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 0.148
+    },
+    "corredor": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/corredor.codigo",
+      "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 14.192
+    },
+    "referencia": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/referencia.codigo",
+      "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 0.12
+    },
+    "custo-extracao": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/custo-extracao.codigo",
+      "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 0.078
+    },
+    "custo-bloco-execucao": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/custo-bloco-execucao.codigo",
+      "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+      "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "segundos": 0.059
+    },
+    "medidor-planta": {
+      "codigo": 0,
+      "ficheiro": "provas/f22e/medidor-planta.codigo",
+      "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+      "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
+      "segundos": 0.037
+    }
+  },
+  "pendencias_do_construtor": [],
+  "portoes_do_sitio": "Não executados na F2.2e; o lugar de direção corre-os na cabeça que aterra.",
+  "referencia_do_mandato": "prompts/PROMPT-f22e-construtor.md",
+  "efeitos_externos": "Declaração do construtor: nenhum push, despacho, interruptor ou agente real alterado."
+}

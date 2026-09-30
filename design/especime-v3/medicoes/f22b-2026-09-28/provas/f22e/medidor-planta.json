@@ -1,0 +1,43 @@
+{
+  "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
+  "ambiente_declarado": {},
+  "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+  "codigo_executado": {
+    "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+    "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+      "design/especime-v3/medicoes/f22b-2026-09-28/medir.py",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.arvore",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.cabeca",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.codigo",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.log",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.log",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor-detalhe.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.arvore",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.cabeca",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.codigo",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.log",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas-detalhe.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.arvore",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.cabeca",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.codigo",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.log",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia-detalhe.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.arvore",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.cabeca",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.codigo",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.json",
+      "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.log"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-30T00:45:58.574719+00:00",
+  "fim": "2026-09-30T00:45:58.612662+00:00",
+  "segundos": 0.037,
+  "codigo": 0
+}
