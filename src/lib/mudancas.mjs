@@ -98,6 +98,11 @@ function lugarPorChave(chave, lang) {
   if (chave === 'uniao-europeia') {
     return { chave, nome: lang === 'pt' ? 'União Europeia' : 'European Union', rota: routePath('temas', lang) };
   }
+  /* E0, §1.146: o projeto é um lugar declarado, pela mesma porta estreita
+     da União. O campo study não atribui este lugar a uma linha. */
+  if (chave === 'o-estado-do-pais') {
+    return { chave, nome: 'O Estado do País', rota: routePath('correcoes', lang) };
+  }
   if (chave === PORTUGAL) {
     return { chave, nome: ROTULOS_B1[lang].pais, rota: routePath('home', lang) };
   }

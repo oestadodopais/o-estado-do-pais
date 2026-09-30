@@ -15,10 +15,14 @@
  * e duas declarações que discordem também fecham a construção.
  *
  * A chave é o id da linha; o valor é `'portugal'`, o slug de uma região ou o
- * slug de um concelho.
+ * slug de um concelho, `'uniao-europeia'` ou `'o-estado-do-pais'`.
  */
 /** @type {Record<string, string>} */
 export const LUGAR_DECLARADO_DAS_LINHAS = {
+  /* E0, §1.146: a linha conta as confissões do próprio projeto. O seu lugar
+     é O Estado do País, com a porta para o registo das correções. Não mede
+     Portugal, uma região nem um concelho. */
+  'correcoes-publicadas': 'o-estado-do-pais',
   /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.
      A atualização pertence ao registo e aos temas, fora da lista do país. */
   'divida-das-familias-2025-ue': 'uniao-europeia',

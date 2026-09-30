@@ -168,6 +168,12 @@ function lugarDerivado(id) {
   const c = linha(id);
   /* A coordenada selada, por uma via independente da tabela de lugares. */
   if (c.source_url && new URL(c.source_url).searchParams.get('geo') === 'EU27_2020') return 'uniao-europeia';
+  /* E0, §1.146: esta conta mede as correções do próprio livro, pela expressão
+     verificada. A segunda leitura confirma a declaração, nunca a substitui:
+     sem a tabela explícita, a A3 continua a recusar a mudança. */
+  if (c.source === 'O Estado do País' && c.study === 'o-estado-do-pais' &&
+      c.check === 'correcoes_publicadas' && typeof c.derivation === 'string' && c.derivation.trim())
+    return 'o-estado-do-pais';
   const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
   const doId = lugarNoIdentificador(id);
   const d = [...new Set([doEstudo, doId].filter(x => typeof x === 'string'))];
@@ -214,6 +220,7 @@ for (const [id, chave] of Object.entries(LUGAR_DECLARADO_DAS_LINHAS)) {
 /** O nome e a porta de um lugar, na língua da edição, compostos aqui. */
 function nomeDoLugar(chave, lang) {
   if (chave === 'uniao-europeia') return lang === 'pt' ? 'União Europeia' : 'European Union';
+  if (chave === 'o-estado-do-pais') return 'O Estado do País';
   if (chave === PAIS) return ROTULOS_B1[lang].pais;
   const r = REGIOES.find(x => x.slug === chave);
   if (r) return r.nome[lang] ?? r.nome.pt;
@@ -222,6 +229,7 @@ function nomeDoLugar(chave, lang) {
 }
 function rotaDoLugar(chave, lang) {
   if (chave === 'uniao-europeia') return routePath('temas', lang);
+  if (chave === 'o-estado-do-pais') return routePath('correcoes', lang);
   if (chave === PAIS) return routePath('home', lang);
   if (REGIOES.some(x => x.slug === chave)) return routePath('regiao', lang, { slug: chave });
   return MUNICIPIOS_COM_PAGINA.some(x => x.slug === chave) ? routePath('municipio', lang, { slug: chave }) : null;
