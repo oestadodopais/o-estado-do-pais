@@ -1,0 +1,10 @@
+{
+  "comando": "node design/especime-v3/medicoes/e0-2026-09-30/provar-e1.mjs",
+  "cabeca": "29f39453a55b7f14157c8c59725a26e625431da4",
+  "arvore_por_registar": true,
+  "codigo_por_registar": false,
+  "inicio": "2026-09-30T23:01:49.542Z",
+  "fim": "2026-09-30T23:01:49.614Z",
+  "segundos": 0.07072624999999999,
+  "codigo": 0
+}
