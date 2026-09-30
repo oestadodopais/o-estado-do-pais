@@ -23,7 +23,7 @@ const valorComUnidade = el => {
 
 export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
   const erros = [];
-  const medidas = { linhas: [], registos: [], valores_visiveis: [] };
+  const medidas = { linhas: [], registos: [], nomes: [], valores_visiveis: [] };
   const historias = JSON.parse(fs.readFileSync('ledger/historias-valores.json', 'utf8'));
   const livros = fs.readdirSync('ledger/claims').filter(f => f.endsWith('.yml')).map(f => lerLinha(f.slice(0, -4)));
   const contadas = livros.reduce((n, c) => n + (c.corrections ?? []).filter(e => e.kind === 'correcao').length, 0);
@@ -54,6 +54,16 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
     const esperada = lang === 'pt' ? '/correcoes' : '/en/corrections';
     const registo = parse(fs.readFileSync(path.join(dist, esperada, 'index.html'), 'utf8'));
     estragar?.(registo, lang, 'registo');
+    /* E0b: cada mudança conserva o nome lido dos dados da sua medida,
+       incluindo nomes transcritos de campos da fonte. */
+    for (const e of mudancasDoRegisto(lang).filter(e => e.tipo === 'correcao')) {
+      const li = registo.querySelectorAll(`[data-mudou-registo] [data-correcao-entrada="${e.claim}"]`)
+        .find(li => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') === String(e.n));
+      const nome = li?.querySelector('.registo-mudanca-nome');
+      if (!e.nome || normal(nome?.textContent) !== normal(e.nome.texto))
+        erros.push(`E0b nome ${lang}: ${e.claim}, entrada ${e.n}, perdeu o nome da medida.`);
+      medidas.nomes.push({ lang, id: e.claim, n: e.n, lido: normal(nome?.textContent), esperado: e.nome?.texto ?? null });
+    }
     for (const id of ids) {
       const c = lerLinha(id);
       const entrada = entradaE0(c);
@@ -123,6 +133,8 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
       el.set_content(s.includes(',') ? s.split(',')[0] : s + '9');
     } }, /E0 visível pt primeira/],
     ['lugar retirado do registo inglês', (r, lang, p) => { if (lang === 'en' && p === 'registo') r.querySelector('[data-mudou-registo] [data-correcao-entrada="correcoes-publicadas"] .registo-lugar').remove(); }, /E0 registo en: correcoes-publicadas perdeu a mudança/],
+    ['nome retirado da recontagem', (r, lang, p) => { if (lang === 'pt' && p === 'registo') r.querySelector('[data-correcao-entrada="correcoes-publicadas"] .registo-mudanca-nome')?.remove(); }, /E0b nome pt: correcoes-publicadas/],
+    ['nome retirado da dívida das famílias', (r, lang, p) => { if (lang === 'en' && p === 'registo') r.querySelector('[data-correcao-entrada="divida-das-familias-2025-ue"] .registo-mudanca-nome')?.remove(); }, /E0b nome en: divida-das-familias-2025-ue/],
   ]) {
     const r = conferirLinhasDaCasa(dist, estraga);
     const queixa = r.erros.find(e => mordida.test(e));

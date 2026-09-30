@@ -35,5 +35,5 @@ corrections:
     kind: "atualizacao"
     old_value: "3"
     new_value: "5"
-    reason: "A contagem passou a incluir as duas correções da apresentação decimal do desemprego de Portugal publicadas a 30.09.2026. O valor anterior contava as correções existentes antes dessas publicações; a recontagem não é uma correção adicional."
-    reason_en: "The count now includes the two corrections to the decimal presentation of unemployment in Portugal published on 30.09.2026. The previous value counted the corrections present before those publications; the recount is not an additional correction."
+    reason: "Duas correções publicadas hoje repõem a casa decimal do desemprego de Portugal. A contagem passa a incluí-las; a recontagem não é uma correção adicional."
+    reason_en: "Two corrections published today restore the decimal place of unemployment in Portugal. The count now includes them; the recount is not an additional correction."
