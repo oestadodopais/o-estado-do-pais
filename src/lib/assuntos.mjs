@@ -1,6 +1,9 @@
 /** N1: a porta de cada cartão resolve numa única página de assunto. */
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
-/** A linha curta do índice conserva o assunto da linha completa da porta. */
+/** A linha curta do índice conserva o assunto da linha completa da porta.
+ * @param {{ id: string, linha: { pt: string, en: string } }} entrada
+ * @param {'pt'|'en'} lang
+ */
 export function linhaDoIndice(entrada, lang = 'pt') {
   const prefixo = lang === 'pt' ? 'Os números de Portugal sobre ' : 'Portugal’s figures on ';
   const linha = entrada.linha[lang];
