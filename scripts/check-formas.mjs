@@ -759,7 +759,7 @@ for (const ficheiro of paginasDe(DIST)) {
     }
   }
 
-  /* ------------------------------------------------------- as páginas de domínio */
+  /* ------------------------------------------------------- as páginas dos lugares */
   if (rota?.key === 'lugares') {
     contas.paginas_dos_lugares++;
 
@@ -931,28 +931,29 @@ for (const lang of LANGS) for (const planta of plantasDaFaixa(documentoDosAssunt
   contas.plantas_das_faixas++;
   if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
 }
+/* N1d: Lugares e os controlos F1 a F3 existem mesmo sem domínios. */
+const esperadas = LANGS.length;
+if (contas.paginas_dos_lugares !== esperadas) {
+  err(
+    `há uma página dos lugares em cada uma das ${LANGS.length} edições, e a varredura ` +
+      `encontrou ${contas.paginas_dos_lugares} página(s) dos lugares em vez de ${esperadas}. ` +
+      `Ou a construção não as fez, ou a leitura não as vê.`,
+  );
+}
+if (contas.datas_de_linha === 0) {
+  err(
+    'nenhuma data de linha foi encontrada em dist/, e os recibos e as leituras rendem três por ' +
+      'medida. O conhecido-positivo da F1 falhou: a marca mudou de nome ou a leitura partiu-se.',
+  );
+}
+if (contas.formas === 0) {
+  err(
+    'nenhuma forma gráfica foi encontrada em dist/, e a página dos lugares desenha ' +
+      'pelo menos uma. O conhecido-positivo da F2 e da F3 falhou.',
+  );
+}
 const dominios = slugsDosDominios();
 if (dominios.length > 0) {
-  const esperadas = LANGS.length;
-  if (contas.paginas_dos_lugares !== esperadas) {
-    err(
-      `há uma página dos lugares em cada uma das ${LANGS.length} edições, e a varredura ` +
-        `encontrou ${contas.paginas_dos_lugares} página(s) dos lugares em vez de ${esperadas}. ` +
-        `Ou a construção não as fez, ou a leitura não as vê.`,
-    );
-  }
-  if (contas.datas_de_linha === 0) {
-    err(
-      'nenhuma data de linha foi encontrada em dist/, e os recibos e as leituras rendem três por ' +
-        'medida. O conhecido-positivo da F1 falhou: a marca mudou de nome ou a leitura partiu-se.',
-    );
-  }
-  if (contas.formas === 0) {
-    err(
-      'nenhuma forma gráfica foi encontrada em dist/, e a página dos lugares desenha ' +
-        'pelo menos uma. O conhecido-positivo da F2 e da F3 falhou.',
-    );
-  }
   /* A leitura breve de cada medida declarada tem de estar na página, nas duas
      edições: é a segunda conta da mesma coisa, feita da declaração e não do
      HTML. */

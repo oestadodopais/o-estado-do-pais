@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'js-yaml';
 import { parse } from 'node-html-parser';
+import { SITE_URL } from '../site.config.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const lerLinha = id => load(fs.readFileSync(path.join(process.cwd(), 'ledger/claims', `${id}.yml`), 'utf8'));
@@ -57,11 +58,10 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
     falha('o cartão das câmaras não está nas comparações dos concelhos.');
   if (c.hasAttribute('data-cartao-medida')) falha('uma contagem aparece como linha publicada.');
   /* A LEITURA DAS CÂMARAS (bloco L1, 24.09.2026) diz as contagens por palavras,
-     com as mesmas chaves e a mesma porta comum. A ordem das quatro chaves
+     com as mesmas chaves. A ordem das quatro chaves
      continua a ser a da linha do valor e da régua, e confere-se fora da leitura;
      as da leitura conferem-se uma a uma contra a recontagem, como as outras, e
-     têm de ser `span` sem porta própria: a porta é a mesma, e é esta função que
-     diz ao portão de HTML que ela está lá. */
+     têm de ser `span` sem porta própria: o cartão já está nos lugares e as contagens não são portas. */
   const leituras = c.querySelectorAll('[data-cartao-leitura]');
   if (leituras.length > 1) falha(`o cartão das câmaras tem ${leituras.length} leituras; tem uma ou nenhuma.`);
   const daLeitura = new Set(leituras.flatMap(l => l.querySelectorAll('[data-prova]')));
@@ -75,7 +75,7 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
       continue;
     }
     if (normal(el.textContent) !== String(contagens[chave])) falha(`${chave}: a leitura não rende a contagem recontada (${contagens[chave]}).`);
-    if (el.tagName !== 'SPAN' || el.closest('a')) falha(`${chave}: a contagem da leitura deve usar a porta comum dos lugares.`);
+    if (el.tagName !== 'SPAN' || el.closest('a')) falha(`${chave}: a contagem da leitura deve ser um span sem ligação.`);
   }
   for (const l of leituras) {
     if (l.querySelectorAll('[data-claim]').length) falha('a leitura das câmaras cita uma linha, e só diz contagens.');
@@ -87,7 +87,7 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   for (const [chave, valor] of Object.entries(contagens)) {
     const el = provas.find(n => n.getAttribute('data-prova') === chave);
     if (!el || normal(el.textContent) !== String(valor)) falha(`${chave}: a contagem não coincide com as linhas do índice de dívida.`);
-    if (el?.tagName !== 'SPAN' || el.closest('a')) falha(`${chave}: a contagem deve usar a porta comum dos lugares.`);
+    if (el?.tagName !== 'SPAN' || el.closest('a')) falha(`${chave}: a contagem deve ser um span sem ligação.`);
   }
   const legal = c.querySelectorAll('[data-claim]');
   if (legal.length !== 1 || legal[0].getAttribute('data-claim') !== limite.id || normal(legal[0].textContent) !== limite.value)
@@ -123,7 +123,13 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
     falha('o valor principal ou a unidade da contagem difere.');
   if (!dataDoCartao?.classList?.contains('cartao-medida-periodo') || normal(dataDoCartao.textContent) !== periodoEsperado)
     falha('o período escrito difere do período das linhas contadas.');
-  if (c.querySelector('.pais-porta-tema'))
+  const portaParaSi = c.querySelectorAll('a[href]').some((a) => {
+    try {
+      const destino = new URL(a.getAttribute('href'), new URL(lang === 'pt' ? '/lugares/' : '/en/places/', SITE_URL));
+      return destino.origin === new URL(SITE_URL).origin && ['/lugares', '/en/places'].includes(destino.pathname.replace(/\/+$/, '')) && destino.hash !== '#concelhos-k';
+    } catch { return false; }
+  });
+  if (portaParaSi)
     falha('o cartão das câmaras não leva porta para a página onde está.');
   if (doc.querySelector('main [data-cartao-medida="indice-de-divida-limite-legal"]'))
     falha('o limite legal voltou a aparecer como uma medida do país.');
