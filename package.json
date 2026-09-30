@@ -35,7 +35,7 @@
     "check:lugar": "node scripts/check-lugar.mjs",
     "check:lingua": "node scripts/check-lingua.mjs",
     "check:alcance": "node tests/dominio/alcance.mjs",
-    "design:feixe": "node scripts/design-bundle.mjs",
+    "design:feixe": "node scripts/design-bundle.mjs --prova",
     "stamp:version": "node scripts/stamp-version.mjs",
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "provar:eyetext": "node scripts/provar-eyetext.mjs",

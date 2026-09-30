@@ -929,7 +929,7 @@ const folhaDeOrdem = (familias) => ORDEM_FAMILIAS.filter((f) => familias.include
  * pacotes minificados de `dist/_astro/`: quem desenha lê as razões. Quais são
  * elas é que se mede na página construída (`folhaDaPagina`).
  */
-function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '' }) {
+function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '', recorte = null }) {
   const root = arvore(rota);
   /* O título da página vai para dentro de um comentário: um `--` ali fecharia
      o comentário antes de tempo e o resto do cartão viraria texto. */
@@ -938,6 +938,15 @@ function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '' 
     .replace(/[<>]/g, '');
   const familias = folhaDaPagina(rota, root);
   const codigo = tiraCodigo(root);
+  /* N1: Lugares recebeu dois mapas e duas tabelas municipais. O feixe mostra
+     um recorte declarado da porta geográfica, conservando o teto e a regra de
+     autonomia do retrato. O HTML construído permanece inteiro e intocado. */
+  if (recorte) {
+    const partes = root.querySelectorAll(recorte);
+    if (partes.length !== 1) morre(`O recorte de ${rota} exige uma secção ${recorte}; encontrou ${partes.length}.`);
+    partes[0].remove();
+    root.querySelector('main').insertAdjacentHTML('beforeend', `<p class="sec-sub" data-ds-recorte>${escapa(nota)} <a href="/${rota.replace(/index\.html$/, '')}">Página completa</a>.</p>`);
+  }
   const cabeca = root.querySelector('head');
   cabeca.set_content(
     `<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">` +
@@ -2122,7 +2131,11 @@ const PAGINAS = [
   { ficheiro: '14-pagina-municipio.html', rota: 'municipios/evora/index.html', titulo: 'Página: município' },
   /* B1, peça 2: o retrato do índice dos concelhos passa a ser o da página dos
      lugares, que ficou no lugar dele. */
-  { ficheiro: '15-pagina-lugares.html', rota: 'lugares/index.html', titulo: 'Página: lugares' },
+  {
+    ficheiro: '15-pagina-lugares.html', rota: 'lugares/index.html', titulo: 'Página: lugares, recorte',
+    recorte: '[data-comparacoes-concelhos]',
+    nota: 'Recorte da página dos lugares: pesquisa, regiões e distritos. O cartão das câmaras, os mapas e as tabelas municipais continuam na página completa.',
+  },
   { ficheiro: '16-pagina-metodo.html', rota: 'metodo/index.html', titulo: 'Página: método' },
   { ficheiro: '17-pagina-agenda.html', rota: 'agenda/index.html', titulo: 'Página: agenda' },
   { ficheiro: '18-pagina-estudos.html', rota: 'estudos/index.html', titulo: 'Página: estudos' },
@@ -2139,6 +2152,7 @@ for (const p of PAGINAS) {
     titulo: p.titulo,
     tema: p.tema ?? null,
     nota: p.nota ?? '',
+    recorte: p.recorte ?? null,
   });
   regista(
     p.ficheiro,
@@ -2405,6 +2419,20 @@ function confere(ficheiro, html) {
 }
 
 const resultados = cartoes.map((c) => ({ ...confere(c.ficheiro, c.html), grupo: c.grupo }));
+
+if (process.argv.includes('--prova')) {
+  const amostra = cartoes.find((c) => c.ficheiro === '15-pagina-lugares.html');
+  if (!amostra || confere(amostra.ficheiro, amostra.html).falhas.length || !amostra.html.includes('data-ds-recorte')) morre('A prova do recorte não tem conhecido-positivo limpo.');
+  const plantas = [
+    ['tamanho', amostra.html + ' '.repeat(LIMITE_BYTES), /acima do tecto/],
+    ['dependência SVG', amostra.html.replace('</body>', '<svg><use href="https://example.invalid/mapa.svg#x"></use></svg></body>'), /<use>/],
+    ['imagem externa', amostra.html.replace('</body>', '<img src="https://example.invalid/mapa.png"></body>'), /src que não é data/],
+  ];
+  for (const [nome, html, mordida] of plantas) {
+    if (!confere(amostra.ficheiro, html).falhas.some((f) => mordida.test(f))) morre(`A planta do feixe não mordeu: ${nome}.`);
+    console.log(`  mordeu · feixe · ${nome}`);
+  }
+}
 
 const larguraFicheiro = Math.max(8, ...resultados.map((r) => r.ficheiro.length));
 const larguraGrupo = Math.max(5, ...resultados.map((r) => r.grupo.length));
