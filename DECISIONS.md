@@ -13176,7 +13176,9 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 ### 1.143 A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
 
-**Afecta:** a decisão 2 da §1.136 (as seis entradas por pergunta da vida), superada no nome e na forma das portas; o que ela protege fica.
+**Afecta:** nenhum
+
+**Revê:** a decisão 2 da §1.136 (as seis entradas por pergunta da vida), superada no nome e na forma das portas; o que ela protege fica.
 
 **O que muda:** as cinco páginas «O meu dinheiro», «O meu trabalho», «A minha casa», «A escola e a saúde» e «O Estado e a economia» dão lugar a sete páginas de assunto com o nome do conteúdo (os preços; os salários, as pensões e os apoios; a pobreza e a desigualdade; o emprego; a habitação; a educação e a saúde; o Estado e a economia), mais a porta dos lugares; os blocos da primeira página deixam de ser copiados; a página dos temas passa a índice; os domínios saem do caminho do leitor. É o bloco N1 (`design/observatorio/BRIEF-N1-uma-porta-por-assunto.md`).
 
