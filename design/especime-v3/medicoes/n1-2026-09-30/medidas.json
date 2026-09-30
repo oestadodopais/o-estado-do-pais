@@ -1,14 +1,14 @@
 {
   "bloco": "N1b",
-  "medido_em": "2026-09-30T10:42:24.315Z",
-  "cabeca": "dfc86083ed53345d1a688486a2a0bcae0dede51a",
+  "medido_em": "2026-09-30T10:58:14.650Z",
+  "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9",
   "construcao": {
-    "commit": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b",
+    "commit": "53938d130cbb668579510094b7f22434bc44a0a9",
     "ref": "n1-2026-09-30",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-09-30T10:17:58.526Z"
+    "construido_em": "2026-09-30T10:45:41.624Z"
   },
   "medidas": [
     {
@@ -413,9 +413,18 @@
     }
   ],
   "portoes": {
-    "build": null,
-    "verify": null,
-    "typecheck": null
+    "build": {
+      "codigo": 0,
+      "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9"
+    },
+    "verify": {
+      "codigo": 0,
+      "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "53938d130cbb668579510094b7f22434bc44a0a9"
+    }
   },
   "ponto5_cumprido": false,
   "erros": [],

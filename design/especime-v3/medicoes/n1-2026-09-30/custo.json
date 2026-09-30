@@ -1,6 +1,6 @@
 {
-  "medido_em": "2026-09-30T10:30:21.825568+00:00",
-  "segundos_decorridos": 5142.386568,
+  "medido_em": "2026-09-30T10:57:26.259678+00:00",
+  "segundos_decorridos": 6766.820678,
   "limite": "Contadores até à última amostra escrita, anteriores ao fecho da sessão; entrada inclui cache. Não são euros nem contagem de caracteres.",
   "conhecido_positivo": true,
   "sessoes": [
@@ -23,16 +23,46 @@
       "papel": "construtor",
       "modelo": "gpt-6-astra",
       "inicio": "2026-09-30T09:04:39.439Z",
-      "ultima_amostra": "2026-09-30T10:29:35.535Z",
+      "ultima_amostra": "2026-09-30T10:57:20.991Z",
       "simbolos": {
-        "input_tokens": 25333195,
-        "cached_input_tokens": 24587008,
+        "input_tokens": 31637335,
+        "cached_input_tokens": 30692864,
         "cache_write_input_tokens": 0,
-        "output_tokens": 112786,
-        "reasoning_output_tokens": 39921,
-        "total_tokens": 25445981
+        "output_tokens": 141059,
+        "reasoning_output_tokens": 55354,
+        "total_tokens": 31778394
       },
-      "entrada_sem_cache": 746187
+      "entrada_sem_cache": 944471
+    },
+    {
+      "papel": "revisor automático das aprovações",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-09-30T10:56:39.870Z",
+      "ultima_amostra": "2026-09-30T10:56:45.670Z",
+      "simbolos": {
+        "input_tokens": 15726,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 128,
+        "reasoning_output_tokens": 68,
+        "total_tokens": 15854
+      },
+      "entrada_sem_cache": 10862
+    },
+    {
+      "papel": "revisor automático das aprovações",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-09-30T10:35:10.590Z",
+      "ultima_amostra": "2026-09-30T10:50:46.335Z",
+      "simbolos": {
+        "input_tokens": 171540,
+        "cached_input_tokens": 144128,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 371,
+        "reasoning_output_tokens": 140,
+        "total_tokens": 171911
+      },
+      "entrada_sem_cache": 27412
     },
     {
       "papel": "revisor automático das aprovações",
