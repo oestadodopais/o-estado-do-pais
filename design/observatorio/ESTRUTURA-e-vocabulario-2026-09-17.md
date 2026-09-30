@@ -89,7 +89,7 @@ The typography (the two type families, the sizes, the black rule under the name)
 
 ## 8 · Sequência histórica de 17.09.2026 [P]
 
-A sequência em vigor a 30.09.2026 é N1 (no ar desde 30.09), K2, L2 e UE2, pela §1.143, e o E1 (os estudos de Évora de seis a quatro, §1.145) depois das reposições das subscrições de 05.10 e 06.10, com o seu pré-requisito (a história selada das linhas derivadas, I179) feito no K2. A proposta abaixo fica como histórico; não autoriza eliminar as áreas nem fundir a página da União no N1.
+A sequência em vigor a 30.09.2026 à tarde é N1 (no ar desde 30.09), E0 (o pré-requisito: as linhas da casa no registo das mudanças e a correção do desemprego, I179), E1 (os estudos de Évora de seis a quatro, §1.145), e depois K2, L2 e UE2 pela §1.143; a ordem mudou pela decisão do diretor de gastar o orçamento até ao fim (§1.146). A proposta abaixo fica como histórico; não autoriza eliminar as áreas nem fundir a página da União no N1.
 
 1. **B1 · The four pages that set the grammar:** the country page (the front page), the place page (Évora as the sample, then all 308 by the same template), the study page (Évora 2027), the studies list. The menu of five. The grey cell gone. Two weeks of the three go here, because everything else follows the grammar these four fix.
 2. **B2 · The themes:** the eighteen theme pages replace the domínios and the áreas de governo; the European comparison folds in.
