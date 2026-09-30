@@ -1,0 +1,17 @@
+{
+  "o_que_e": "A medição do lugar de direção na aterragem do F2.2b (§1.141): os interruptores e as corridas despachadas, lidos na API do GitHub.",
+  "instante": "2026-09-30T00:59:02Z",
+  "variaveis": {
+    "comando": "gh variable list -R oestadodopais/motor --json name --jq '[.[].name]'",
+    "saida": [],
+    "codigo": 0
+  },
+  "corridas": {
+    "comando": "gh run list -R oestadodopais/motor --workflow <painel.yml|varrimento.yml> --limit 5 --json databaseId",
+    "saida": "HTTP 404: o fluxo não existe no ramo por omissão do motor, por isso nenhuma corrida existe",
+    "conhecido_positivo": {
+      "comando": "gh run list -R oestadodopais/motor --workflow vigia.yml --limit 3 --json databaseId --jq length",
+      "saida": 3
+    }
+  }
+}

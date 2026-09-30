@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T00:58:04+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/indicators/rotinas_test.py",
+   "descricao": "a planta do limiar calado pelo vigia de rede deixa de exigir inteira e os calados das linhas vazios, e já não morde se o if h in hosts sair",
+   "sha256_antes": "fadd59cd709efc9bd1d80f52155de2df2930e0bd18c9af5e219e105be9affb02",
+   "sha256_depois": "be6039503666979e813b5848aae903e11c048a07586c0420f0a34da59db95f18",
+   "contexto_antes": ".read_bytes()\n            self.assertEqual(painel.correr(site, saida), 0)\n            if vigia_limiar:\n                reg = painel.ler(saida / \"corrida.json\")\n                self.assertTrue(reg[\"inteira\"])\n                self.assertEqual(reg[\"anfitrioes_calados\"], [])\n                self.assertEqual(reg[\"tentativas\"][0][\"calados\"], {})\n                self.assertEqual(reg[\"limiar_calado\"], \"sem ligação ao limiar nesta tentativa\")\n                self.assertEqual(set(chamadas), {c[\"source_url\"]",
+   "contexto_depois": ".read_bytes()\n            self.assertEqual(painel.correr(site, saida), 0)\n            if vigia_limiar:\n                reg = painel.ler(saida / \"corrida.json\")\n                self.assertEqual(reg[\"limiar_calado\"], \"sem ligação ao limiar nesta tentativa\")\n                self.assertEqual(set(chamadas), {c[\"source_url\"]"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/core/gate.py",
+   "descricao": "o portão do motor deixa de correr as plantas da F2.2c e seguintes",
+   "sha256_antes": "a627eafc0671418c85d2ef6bfaf267521cf38edd8fa77adebc428cccc5a159ac",
+   "sha256_depois": "eccfb084c9c3b312d09628fc33c1196618b1684219989d9fd5c99995d6c3d437",
+   "contexto_antes": "c1c_test\",\n    \"indicators.refresh_rede_real_test\",\n    # F2.2b: os ramos, a retoma, as saídas e o vigia, com dublês sem chaves.\n    \"indicators.rotinas_test\",\n    \"indicators.rotinas_f22c_test\",\n    # O portão da exportação, entrado 2026-09-21 (bloco M3, §1.115 do registo do\n    # sítio). Não é um portão novo desta lista: é a prova de um portão que pass",
+   "contexto_depois": "c1c_test\",\n    \"indicators.refresh_rede_real_test\",\n    # F2.2b: os ramos, a retoma, as saídas e o vigia, com dublês sem chaves.\n    \"indicators.rotinas_test\",\n    # O portão da exportação, entrado 2026-09-21 (bloco M3, §1.115 do registo do\n    # sítio). Não é um portão novo desta lista: é a prova de um portão que pass"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/indicators/rotinas_test.py",
+   "descricao": "a planta do TLS de uma linha passa um tempo esgotado em vez de um erro de TLS",
+   "sha256_antes": "be6039503666979e813b5848aae903e11c048a07586c0420f0a34da59db95f18",
+   "sha256_depois": "367302ce42abb71b9fba970118f2aa7c33b6f66a9d526490a4c2797bc0ae866d",
+   "contexto_antes": "\n        self.ensaio_painel(erro_linha=ConnectionRefusedError(111, \"ligação recusada\"))\n\n    def test_painel_linha_tls_fica_sem_carimbo_e_retoma(self):\n        self.ensaio_painel(erro_linha=r.requests.exceptions.SSLError(\"certificado da planta\"))\n\n    def test_painel_vigia_cala_so_limiar_e_conserva_inteira(self):\n        self.ensaio_painel(vigia_limiar=True)\n\n\ndef main():\n    suite = unittest.defaultTes",
+   "contexto_depois": "\n        self.ensaio_painel(erro_linha=ConnectionRefusedError(111, \"ligação recusada\"))\n\n    def test_painel_linha_tls_fica_sem_carimbo_e_retoma(self):\n        self.ensaio_painel(erro_linha=TimeoutError(\"certificado da planta\"))\n\n    def test_painel_vigia_cala_so_limiar_e_conserva_inteira(self):\n        self.ensaio_painel(vigia_limiar=True)\n\n\ndef main():\n    suite = unittest.defaultTes"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 52 plantas das rotinas contra as 50 das provas",
+   "sha256_antes": "03554ab3904e82f51ac194ddf53599dedd3bddb1e667781643cc1b6763fdc7a0",
+   "sha256_depois": "8687d32dc4a2ce6c292aec3f889b124a9a104044adaa1a92fca22b5fc7453410",
+   "contexto_antes": "`referencia` e os registos do custo têm comando, saída, código, cabeça e árvore. |\n\n### As plantas e as cópias com estragos\n\n`provas/f22e/plantas-detalhe.json` regista 50 plantas das rotinas, sem falhas nem\nerros. As três novas são `test_painel_linha_recusada_fica_sem_carimbo_e_retoma`,\n`test_painel_linha_tls_fica_sem_carimbo_e_retoma` e\n`test_pain",
+   "contexto_depois": "`referencia` e os registos do custo têm comando, saída, código, cabeça e árvore. |\n\n### As plantas e as cópias com estragos\n\n`provas/f22e/plantas-detalhe.json` regista 52 plantas das rotinas, sem falhas nem\nerros. As três novas são `test_painel_linha_recusada_fica_sem_carimbo_e_retoma`,\n`test_painel_linha_tls_fica_sem_carimbo_e_retoma` e\n`test_pain"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.log",
+   "descricao": "a saída da célula 13 diz cinco reconferências guardadas com o limite de quatro, e passa",
+   "sha256_antes": "95902a7c5bb1b49e3a62c6bdbef0078018cb9974a26441c5fedce1f25bc9efd3",
+   "sha256_depois": "9060790c640d4131f6fba63faabd9becf45932f047c3a18a8bb89f6e22a4807c",
+   "contexto_antes": "e `desde` ({'host': 'www.ine.pt'}). Um anfitrião calado sem nome ou sem hora não se retoma nem se publica.\n\n  anfitriões sem resposta nesta corrida: www.ine.pt\nCÉLULA 13: PASS, 2 reconferências guardadas, limite 4.\n",
+   "contexto_depois": "e `desde` ({'host': 'www.ine.pt'}). Um anfitrião calado sem nome ou sem hora não se retoma nem se publica.\n\n  anfitriões sem resposta nesta corrida: www.ine.pt\nCÉLULA 13: PASS, 5 reconferências guardadas, limite 4.\n"
+  }
+ ]
+}

@@ -13094,3 +13094,53 @@ rotas passam a ler **0**.
 4. **Uma questão nova**: o guião dos acertos do L1 já não descreve o ficheiro das leituras desde o RP1 (a I178).
 
 **A aterragem.** A cabeça que aterra é a destes registos, com os três portões e a corrida «portão» do sítio por cima dela, e o motor avança o `master` de `68318e0` para `e394307`. É a primeira aterragem que o lugar de direção corre pelo guião, com a regra do diretor de 29.09. A avançada de `main` e do motor, o lançamento e o `verify:deploy` escrevem-se no registo seguinte, porque um registo não pode dizer a sua própria aterragem.
+
+### 1.141 As corridas prontas a armar (o F2.2b): o sítio por um ramo com o portão verde antes de `main`, o painel semanal e o varrimento mensal no GitHub, dormentes até aos interruptores do diretor, lidas a frio quatro vezes; e a aterragem do UE1
+
+**Afecta:** nenhum
+
+**O que muda:** no motor, sem nada armado:
+- as corridas do motor publicam o commit do sítio num ramo datado e só empurram esse mesmo commit para `main` com a verificação «portão» verde nele (`indicators/publicar_rotina.py`), depois de uma guarda que corre antes de qualquer `push` e só deixa passar as reconferências acrescentadas, com a poda exata das mais velhas, e o estado da verificação;
+- o painel semanal (`painel.yml`) e o varrimento mensal (`varrimento.yml`) são corridas do GitHub, dormentes até `PAINEL_ARMADO` e `VARRIMENTO_ARMADO` serem exatamente `sim`;
+- o vigia confere também o painel e o varrimento armados;
+- um guião prepara a reforma dos dois agentes do portátil, e só a aplica com a prova de duas corridas reais verdes de cada uma.
+
+No sítio, só documentos e as provas do bloco.
+
+**Data:** 28 a 30.09.2026.
+
+**A aterragem da §1.140 (o UE1).** O lugar de direção correu o guião da aterragem a 30.09, a primeira vez com a regra do diretor de 29.09:
+- a cabeça `3a37b809` passou os três portões às 00:08 UTC, e a corrida «portão» do ramo passou às 00:17 (a 36648848845); o ramo do motor passou a sua corrida (a 36647946761);
+- `main` avançou de `8e66b601` para `3a37b809` e o motor de `68318e0` para `e394307` às 00:18;
+- a Vercel publicou às 00:25, o `verify:deploy` passou com 0, e a corrida de `main` (a 36649673316) acabou verde às 00:29.
+
+O lugar de direção conferiu no ar a página da casa (as faixas e a ressalva no cartão) e o recibo inglês da série do índice harmonizado (a definição sem o lugar), e apagou os ramos fundidos e as suas worktrees, sem forçar nenhum.
+
+**O que se fez, e por quem.**
+- **A construção.** O lugar de direção escreveu o brief (`24e7c875`), pela decisão do diretor de 28.09 (§1.134). O Codex gpt-6-astra construiu o bloco a 28.09, parou para guardar a semana do Codex, e acabou-o a 29.09, depois da reposição antecipada da semana.
+- **As quatro leituras a frio**, todas do Claude Opus 5.5, com cinco plantas cada, e as passagens de correção do Codex na mesma sessão (F2.2c, F2.2d e F2.2e):
+  - a primeira (378 504 símbolos) achou as cinco plantas e defeitos reais: a poda das quatro reconferências desligada, contra a §1.92(2); o candidato recusado já publicado num ramo do repositório público; alarmes diários falsos do vigia; o varrimento do portátil a perder duas bandeiras; guardas sem planta;
+  - a segunda (507 446) achou as cinco plantas e um defeito que impedia a aterragem: as plantas do varrimento liam o guião antigo de um `master` local, que a corrida do motor no GitHub não tem;
+  - a terceira (463 391) achou as cinco plantas e nenhum achado bloqueante, e duas guardas sem uma planta que mordesse na linha guardada;
+  - a quarta (377 272), da F2.2e, achou as cinco plantas e nenhum achado bloqueante: nos diffs, as duas guardas novas mordem (o leitor correu-as em memória com a linha guardada tirada), o portão do motor corre as plantas de todas as passagens e as do UE1, e o custo e a comparação da cópia fixa reproduzem-se.
+- **O custo.** A sessão do Codex das passagens acabou em 1 108 992 símbolos, na linha «tokens used» do seu registo. O relatório do bloco soma os contadores das sessões, com a cache incluída.
+
+**As decisões do lugar de direção**, fixadas nas triagens:
+1. **A §1.92(2) vale.** A linha guarda as últimas quatro reconferências, e a guarda aceita uma linha só se as entradas novas desta corrida, com a poda exata das mais velhas, a explicarem.
+2. **O que a guarda recusa nunca sai para o repositório público.** O diff fica como artefacto da corrida do motor, que é privado, e a issue liga a corrida.
+3. **O vigia não se aprende a ignorar.** Uma corrida devida que correu dormente não é um alarme, e cada rotina e data devida abre uma só issue. O despacho à mão do vigia corre sempre, como o F2.1 decidiu, para se pôr o vigia à prova antes do interruptor.
+4. **O limiar não decide o carimbo das linhas.** Só o silêncio de rede se repete noutro runner. As mensagens do painel do portátil ficam como em `master`, porque é esse painel que o lugar de direção revê até à reforma.
+5. **Num runner, uma ligação recusada ou um erro de TLS contam como «sem resposta»** e repetem-se noutro runner, porque o INE já bloqueou IPs de runners (a I116, com uma noite «recusado» a 03.09). É uma regra diferente da do portátil (a C1e), de propósito.
+6. **O varrimento do portátil faz exatamente o que fazia**, porque o agente corre o `monthly.sh` de `master` a 01.10. A cópia fixa do guião antigo, com que as plantas o comparam, entra com só o nome de utilizador e o caminho do portátil trocados por marcas.
+
+**O que se mediu na aterragem** (30.09.2026 às 00:59 UTC):
+- `gh variable list -R oestadodopais/motor` não lista nenhuma variável: nenhum dos três interruptores existe;
+- `painel.yml` e `varrimento.yml` ainda não estão no ramo por omissão do motor, e a API responde 404 às suas corridas; o conhecido-positivo é o `vigia.yml`, que lista corridas.
+
+**O que fica ao diretor**, com os passos no Google Doc que já está no Drive dele:
+- ligar as chaves de implantação na organização e guardar as duas chaves (`CHAVE_SITIO` e `CHAVE_ARQUIVO`) como segredos do motor;
+- pôr cada interruptor a `sim` quando quiser armar cada corrida.
+
+A reforma dos agentes do portátil corre-a o lugar de direção depois de duas corridas reais verdes de cada uma.
+
+**A aterragem.** A cabeça que aterra é a destes registos, com os três portões e a corrida «portão» do sítio por cima dela, e o motor avança o `master` de `e394307` para `4b46bef`, com a sua corrida «portao» verde nessa cabeça. Tudo aterra dormente: nenhum interruptor existe, e nenhuma corrida nova corre a sério até o diretor os pôr a `sim`. A avançada de `main` e do motor, o lançamento e o `verify:deploy` escrevem-se no registo seguinte, porque um registo não pode dizer a sua própria aterragem.
