@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { conferirValorUnidade } from './valor-unidade.mjs';
+import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
 import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
@@ -6134,6 +6135,10 @@ for (const file of ficheirosHtml(DIST)) {
     // continua a trocar a unidade de uma entrada pela de outra linha.
     const unidadeDeCorrecaoDoPais = ['home', 'correcoes'].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
+    /* E0b: o registo nomeia também a medida pelo campo da fonte. Só o nome,
+       só nesta entrada da própria linha; a comparação literal abaixo e a
+       auditoria dos selos continuam ativas. A célula E0 planta o campo value. */
+    const nomeDeCorrecao = nomeNoRegistoAdmitido(rota?.key, el, id, campo);
     /* N1c: a unidade comum das linhas municipais, só no cabeçalho da tabela
        ou na legenda do mapa dos lugares. A linha tem de estar nessa tabela;
        a comparação literal do campo e a auditoria dos selos mantêm-se. */
@@ -6141,7 +6146,7 @@ for (const file of ficheirosHtml(DIST)) {
     const unidadeDeMapaDosLugares = rota?.key === 'lugares' && campo === 'unit' && mapaDaUnidade !== null &&
       (el.closest('thead') !== null || el.closest('.forma-mapa-unidade') !== null) &&
       mapaDaUnidade.querySelectorAll('tbody [data-claim]').some((n) => n.getAttribute('data-claim') === id);
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
