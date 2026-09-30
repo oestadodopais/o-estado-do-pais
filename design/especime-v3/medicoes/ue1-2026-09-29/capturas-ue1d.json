@@ -1,0 +1,2198 @@
+{
+  "bloco": "UE1d",
+  "construcao": {
+    "commit": "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2",
+    "ref": "ue1-2026-09-29",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-29T22:21:18.953Z"
+  },
+  "cabeca_esperada": "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 140,
+  "capturas_por_tipo": {
+    "cartao": 30,
+    "recibo-da-linha": 10,
+    "cabeca-da-serie": 100
+  },
+  "plantas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "a ressalva tirada do cartão",
+      "visto": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "a definição tirada de um recibo",
+      "visto": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "a ressalva tirada do cartão",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "a definição tirada de um recibo",
+      "visto": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "nome": "um elemento mais largo do que a janela",
+      "visto": true
+    }
+  ],
+  "plantas_vistas": 6,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-pt-390.png",
+      "sha256": "408bfdfb52adb65b7a8e2bef38d354d2cc7f7ad9d364df8523b2a3c40102bc65",
+      "tipo": "cartao",
+      "pagina": "/temas/",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-pt-390.png",
+      "sha256": "52b28d2332815604f013388c70f0ffe38e49408491ae356f926a7db5d1380cc8",
+      "tipo": "cartao",
+      "pagina": "/a-minha-casa/",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-pt-390.png",
+      "sha256": "35fd0a0f340ebd9361b5d8b5f5abad574f4111fd27b86a3529bf7948e39d1143",
+      "tipo": "cartao",
+      "pagina": "/areas/infraestruturas-e-habitacao/",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-pt-390.png",
+      "sha256": "4d408a1e0fb76f500978e8bda06221f13f9a7bc068a2d108d808ea69f6d82e33",
+      "tipo": "recibo-da-linha",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-pt-390.png",
+      "sha256": "c39a2e6bc3be8f37b3193adbf874a30121fde27b94e9b83ba2d9be011422ccdf",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-pt-390.png",
+      "sha256": "1aac0f9814782fdf4c7b951920d40a9890f56139d9253dac9cb5ee06dc9e8166",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Quanto devem as administrações públicas, em percentagem do PIB?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-pt-390.png",
+      "sha256": "ac00580b48548c460ad0b2265e655487898203e0ad1583c0a01182032105b92e",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-pt-390.png",
+      "sha256": "287f0f3b6d5d2fe6b7be52f5517b9c736c2ea6e55c0b94c21fe77179de2604bc",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-pt-390.png",
+      "sha256": "af823b3c1f180521b711541bc8f2ca6094b5a8390fe77c1efdd7c527cf51d6da",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-pt-390.png",
+      "sha256": "17ea527d3cea6d54665513cfe47b00f78ba4d1fc957f7b9c44f6ec600120ac00",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-pt-390.png",
+      "sha256": "13cf2ec5960670f30d0b46924643d575f4d0ecc17edb97c69b0ed9fec54ab056",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-390.png",
+      "sha256": "7042e41338d4601925f0e3810a9f2986a189494bbdf312110450f6cb31305027",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-pt-390.png",
+      "sha256": "77a83641ad64d344ca21c4266d0b84a699f0ed861467b152703121c4322c6980",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-pt-390.png",
+      "sha256": "c56d7fd617cf07f4ed45f5efb670d8d7d844033b9c02f29dce271ab6885951be",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-pt-768.png",
+      "sha256": "efa87cb6ddca06915795abd3b555977869520217bab0f01ec39981bdc81ad026",
+      "tipo": "cartao",
+      "pagina": "/temas/",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-pt-768.png",
+      "sha256": "1be3fe12ea0244ae82fa6d7249963bc108e7123d546e2d8da12adba57f63fc05",
+      "tipo": "cartao",
+      "pagina": "/a-minha-casa/",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-pt-768.png",
+      "sha256": "0da980dc7b67683520408ca9631826db8ed6448170e9c6f92cbe16248d747a1d",
+      "tipo": "cartao",
+      "pagina": "/areas/infraestruturas-e-habitacao/",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-pt-768.png",
+      "sha256": "26c09b9d47476fa08ee8ab9d9e1e7cff6779cef800730ed11c1ef8bec6b59a86",
+      "tipo": "recibo-da-linha",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-pt-768.png",
+      "sha256": "5731f23d233845c63d9e2bd2bfbd79f23feefd97e231be3517fd1c31c7b0bbc5",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-pt-768.png",
+      "sha256": "af54aeef42b9f75ce8e5aeb26188c2f683028c1bb12dc0600b0112b8529e237d",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Quanto devem as administrações públicas, em percentagem do PIB?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-pt-768.png",
+      "sha256": "7c96b7cd1a1e0d612d87878ecd2503cb54069ba0c92c1e4d1905aea3e7875054",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-pt-768.png",
+      "sha256": "ccbdfa8a9e12d0fb426d191fe66ba46c1bd82da966caaa036eb49d23b156bc43",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-pt-768.png",
+      "sha256": "0064bfb76fa0c5df4886f0b4a12ad5ec2b65745b8ff05332f3b08b81d235f44c",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-pt-768.png",
+      "sha256": "2d6accca8945cd60201418ce36ab591b71d0a8309e9d27edd8ddd67c51e3613f",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-pt-768.png",
+      "sha256": "777abccd50e5ded4a7c9054735f63974205d3f96151278d6d34da0cb18b5c1c2",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-768.png",
+      "sha256": "80e5f5b77b89fbedb0fb1942400adf8366afcee1201e6000eecab869d4b46154",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-pt-768.png",
+      "sha256": "803644d052643eff694ba013dcd657da16d1cbe568614fb3640bd5a17c6d7370",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-pt-768.png",
+      "sha256": "f753f2e8b02b8cc666c94eda01303942bf1521fc212009c285c16d58b1cc42fd",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-pt-1024.png",
+      "sha256": "8b3fa1b583465ce9d0b00f9fab5725e84ed27a61fefbce3b5cc5023f908036cf",
+      "tipo": "cartao",
+      "pagina": "/temas/",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-pt-1024.png",
+      "sha256": "8ab560c8937c4e21434c08b7992a7820a3a3a3e89864cfe807cca4ca6723541e",
+      "tipo": "cartao",
+      "pagina": "/a-minha-casa/",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-pt-1024.png",
+      "sha256": "22ad603d3734040f4a330eb7825ade4822a40bb36c396297e853391dfefe0888",
+      "tipo": "cartao",
+      "pagina": "/areas/infraestruturas-e-habitacao/",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-pt-1024.png",
+      "sha256": "32079575bfae7cbd01bdf6fcc0618c6629176ec894ceee2064ee53fa39b09f69",
+      "tipo": "recibo-da-linha",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-pt-1024.png",
+      "sha256": "7df0938a51b421a75e3a96e6044769a7cba0649ba99c3bd9c0d2b09a310afa16",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-pt-1024.png",
+      "sha256": "001fe3fd70f12d157a711fed851defddf426d909870d3d54bfefc2040a1501bf",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Quanto devem as administrações públicas, em percentagem do PIB?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-pt-1024.png",
+      "sha256": "d86ec240bba039636d1f98f493be5414f743bfa76075ff82b932a4a311f5e5ff",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-pt-1024.png",
+      "sha256": "4ec4953184023c62a567e92c184d7424b98f344be0b91a852344334d689541c9",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-pt-1024.png",
+      "sha256": "1aef7497b9af25a0b0caec7469a53f0d370c377587ecec30fc15753a6a6179f0",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-pt-1024.png",
+      "sha256": "b4c53124155e437f0bdb5970be30a63d4e3f041b7565a38aa456141c753b1122",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-pt-1024.png",
+      "sha256": "043783f6b4cb036356a6bf0e7ef287f65b176f054dab0aad73ba20e45aeac767",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-1024.png",
+      "sha256": "f02d0e4966d1da5747dba40f2d5de0020a0a88437833affa48079394a2ef60b9",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-pt-1024.png",
+      "sha256": "e0bc2ea942288b09cf023f64290aee78a22d58d7549d8dff21921820cb384aaf",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-pt-1024.png",
+      "sha256": "fd6e82e4ca1280277a05ae52efb5ab591236d8a645ff0cd45f01bdbc4dac2792",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-pt-1280.png",
+      "sha256": "b3ea0b8685c9f8997399b707d3b7e14ddcc466a57bacdd3044cb7695115dfa8b",
+      "tipo": "cartao",
+      "pagina": "/temas/",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-pt-1280.png",
+      "sha256": "ca1911c33f075d9570f8e6e5f1dc8bc1888d62734d3e434c8e7f8dbac5bb79f3",
+      "tipo": "cartao",
+      "pagina": "/a-minha-casa/",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-pt-1280.png",
+      "sha256": "4337f50b8153def40fb0482328777361174b87d16c68af9a497acb16cd627c54",
+      "tipo": "cartao",
+      "pagina": "/areas/infraestruturas-e-habitacao/",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-pt-1280.png",
+      "sha256": "491f3c8a80c21291e25daf969313aded561e68ea074d06ab64428ced4339d188",
+      "tipo": "recibo-da-linha",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-pt-1280.png",
+      "sha256": "0fc0f08ae836acedf10950c652334055d498335fb8082e74e6011f82443895d3",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-pt-1280.png",
+      "sha256": "dbee47bf73e6773fbdd359eb47342b25a3a27078f6ee659a6648bde5367b7072",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Quanto devem as administrações públicas, em percentagem do PIB?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-pt-1280.png",
+      "sha256": "b7595995e0887c180eef180ddb098156ef11927f57e16193d2a1a7e3d9710b40",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-pt-1280.png",
+      "sha256": "5f8d05090a13c8a1e0a93053dd3e838eda3f34a3af8e3fde6c8e0d5df7a04ee9",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-pt-1280.png",
+      "sha256": "c23fe354f720e5ab5c738088191c8042e84749d1afc301cc74678c203fff4bb6",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-pt-1280.png",
+      "sha256": "2999f0c1c826b4cf08d04c71c2b96f1e947c0f6652dd768089c892287fb8c1ab",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-pt-1280.png",
+      "sha256": "2a3287dd73ac15fd87b875cdb93a1c0517718d50abf35547e9cabb589a4128b3",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-1280.png",
+      "sha256": "2a5d080d1345d99735c907f03bf83ee7ffe0eb6f5b743d126181451ef43c7a12",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-pt-1280.png",
+      "sha256": "b5d42832ef09abf442018d10d79159caeddd2449cb51e285e93f0288e453dae1",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-pt-1280.png",
+      "sha256": "1a34fbceae8538a9108caa145613056c8021be4e123999a894c3eb5347eef335",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-pt-1600.png",
+      "sha256": "b2b0e967053ef0a29bc347e121a8f4dca0c3165f290230fbf754b7f73505bb2e",
+      "tipo": "cartao",
+      "pagina": "/temas/",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-pt-1600.png",
+      "sha256": "85a1aef5644f6110d0e4a76a5d6a83cd4393bbeb4bb3dc41f6a7afbc3a429b58",
+      "tipo": "cartao",
+      "pagina": "/a-minha-casa/",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-pt-1600.png",
+      "sha256": "4337f50b8153def40fb0482328777361174b87d16c68af9a497acb16cd627c54",
+      "tipo": "cartao",
+      "pagina": "/areas/infraestruturas-e-habitacao/",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-pt-1600.png",
+      "sha256": "491f3c8a80c21291e25daf969313aded561e68ea074d06ab64428ced4339d188",
+      "tipo": "recibo-da-linha",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-pt-1600.png",
+      "sha256": "0fc0f08ae836acedf10950c652334055d498335fb8082e74e6011f82443895d3",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-pt-1600.png",
+      "sha256": "dbee47bf73e6773fbdd359eb47342b25a3a27078f6ee659a6648bde5367b7072",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Quanto devem as administrações públicas, em percentagem do PIB?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-pt-1600.png",
+      "sha256": "b7595995e0887c180eef180ddb098156ef11927f57e16193d2a1a7e3d9710b40",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-pt-1600.png",
+      "sha256": "5f8d05090a13c8a1e0a93053dd3e838eda3f34a3af8e3fde6c8e0d5df7a04ee9",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-pt-1600.png",
+      "sha256": "c23fe354f720e5ab5c738088191c8042e84749d1afc301cc74678c203fff4bb6",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-pt-1600.png",
+      "sha256": "2999f0c1c826b4cf08d04c71c2b96f1e947c0f6652dd768089c892287fb8c1ab",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-pt-1600.png",
+      "sha256": "2a3287dd73ac15fd87b875cdb93a1c0517718d50abf35547e9cabb589a4128b3",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": "Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-pt-1600.png",
+      "sha256": "2a5d080d1345d99735c907f03bf83ee7ffe0eb6f5b743d126181451ef43c7a12",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-pt-1600.png",
+      "sha256": "b5d42832ef09abf442018d10d79159caeddd2449cb51e285e93f0288e453dae1",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-pt-1600.png",
+      "sha256": "1a34fbceae8538a9108caa145613056c8021be4e123999a894c3eb5347eef335",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-en-390.png",
+      "sha256": "22d807559a3bdbb2e51f5d83ac18754c3f3884373305d9d4a25608d7f66cea16",
+      "tipo": "cartao",
+      "pagina": "/en/themes/",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-en-390.png",
+      "sha256": "e5c8b2787af08556fe418f9e7314d4d0e48071f39e5068bd8259dbe7d734fb34",
+      "tipo": "cartao",
+      "pagina": "/en/my-home/",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-en-390.png",
+      "sha256": "697abfe158e441ddc32b60fecf8bdccd961e7bc5b60b07d3ecba439bf0c4d4b6",
+      "tipo": "cartao",
+      "pagina": "/en/areas/infraestruturas-e-habitacao/",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-en-390.png",
+      "sha256": "bd71d893cc6cf2f4a4e2fc46d91f331997a0ea94c33b93aeebc2332e17c82700",
+      "tipo": "recibo-da-linha",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-en-390.png",
+      "sha256": "9d0bf268491a23225075e5b8d7bebb5c0600949555c04452df1faa99a1c57702",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-en-390.png",
+      "sha256": "4a86c819d90b887aacf911dd14a3ea63ad2963d2c030b93c4a0f5a65fcfd6d3b",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "How much does general government owe, as a percentage of GDP?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-en-390.png",
+      "sha256": "36297b334dd2f16eff1702e2a885656e2e723f00caf7f8a5faf0f49cca127f0f",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-en-390.png",
+      "sha256": "223d975e361f0069b1bdf7c18b2a608c19b4dca770ca6f346022311504ba95b5",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "How much have the transaction prices of homes purchased by households changed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-en-390.png",
+      "sha256": "83d4c54b5171d28bbb5768ef62db29ad44ce9b132fd3ee503e66d0c3d1940419",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-en-390.png",
+      "sha256": "fba7e8d8b5970377541969b5226ba2f7e77ce881c99ad2c240f55c0ae947c973",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-en-390.png",
+      "sha256": "c25cdde27bd38674453281938d2849c12ebfd6c816fb96af5c7f34a61ccbdcc9",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-390.png",
+      "sha256": "b6c53bb6e42de44c423546e3b6633e06fe7bae4d29c2adf7a6eec4202796088a",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-en-390.png",
+      "sha256": "f751f5d467454cadcbb1480ba138348e4264c730126cc031d812a4486a35af05",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "What share of the labour force aged 15 to 74 is unemployed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-en-390.png",
+      "sha256": "47c887e83bd51d755c887852d8717c8d55601f2c0adc1468e1662b10568a8067",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "definicao": "What share of people aged 20 to 64 is employed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-en-768.png",
+      "sha256": "f28b346fb45447c4174c81b66ee530979a43000b8a1f54ad4beab3e8cabee66b",
+      "tipo": "cartao",
+      "pagina": "/en/themes/",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-en-768.png",
+      "sha256": "42bb8935a6689a9f1aee3b3cc5317f58f7d6a944d41536c9d8236fb6bc76ad3b",
+      "tipo": "cartao",
+      "pagina": "/en/my-home/",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-en-768.png",
+      "sha256": "6a8838484701bc9677a0e35cd0f5695e764b3b0882ff8d28804d2875d57d7915",
+      "tipo": "cartao",
+      "pagina": "/en/areas/infraestruturas-e-habitacao/",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-en-768.png",
+      "sha256": "1b671c006f27d08f9c379e9a1ea7ea64b38b4232f7d8749ddd32061bfc8e37a2",
+      "tipo": "recibo-da-linha",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-en-768.png",
+      "sha256": "a5f7f3ec6897bc2554160684cefe12ec135333969385b42199b93f156339e6ab",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-en-768.png",
+      "sha256": "8fe795948773e68c4df1a5e09e053117fb8064ec2117fcb1e811ece15be2533c",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "How much does general government owe, as a percentage of GDP?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-en-768.png",
+      "sha256": "b74023b87e77a674b43c293e6c749973a3ba3b8fd8562f6fa88e3a3cd111160d",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-en-768.png",
+      "sha256": "3a7172657583503f1c98a00d16f029088f83bd80775475c562343217de9208b3",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "How much have the transaction prices of homes purchased by households changed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-en-768.png",
+      "sha256": "8d050e0deff6c991b40d565e76d56bf40e55896acdf5d40d77753e15bc5d47ef",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-en-768.png",
+      "sha256": "bdc85783f404b13a05d2ee122ed0609a637c35e47ba55a9d6f9978c09bf25b4a",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-en-768.png",
+      "sha256": "e015dc3565f4f8db74383694b87635721f91a57af274bafb20a8be2183706159",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-768.png",
+      "sha256": "cba130e9a3ae6d46436b755cffb831a01f723b97233a129048080d320b27aab4",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-en-768.png",
+      "sha256": "8a3123a7344125bba983af77deaed45def4a620802c226ba9b2d0c723602582d",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "What share of the labour force aged 15 to 74 is unemployed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-en-768.png",
+      "sha256": "dc1edc4422da87817453275fb0abbb6f4e011fb3130195a45b24a5311a24bec6",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "definicao": "What share of people aged 20 to 64 is employed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-en-1024.png",
+      "sha256": "abd670423bf711f87acbf4ff947e2b43107de773abc41746f4bffc4783ddb106",
+      "tipo": "cartao",
+      "pagina": "/en/themes/",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-en-1024.png",
+      "sha256": "f592f3d83e9f5fa60ac638779aafdaae841e9698849866147afbc548c50de2cd",
+      "tipo": "cartao",
+      "pagina": "/en/my-home/",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-en-1024.png",
+      "sha256": "98093ce4ff3b23cbdd8440aed09c0004a95ec5e44ae8e4a7a2c4ee81c2d3b89a",
+      "tipo": "cartao",
+      "pagina": "/en/areas/infraestruturas-e-habitacao/",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-en-1024.png",
+      "sha256": "f41c709bb205809e9d376240850b8021928a15c28b6c7f39dedd035432d47164",
+      "tipo": "recibo-da-linha",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-en-1024.png",
+      "sha256": "91dc3668d36f62a201f3bcd873159d0727de0a905de64a2c031fe4b55eebdb18",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-en-1024.png",
+      "sha256": "0a4d2f319d2828e358b5ea1ba2d4dd5bb46cd7a192de0ec10c8358567d4a4b21",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "How much does general government owe, as a percentage of GDP?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-en-1024.png",
+      "sha256": "5d41999cf388ef31cc093a956306c341ea97de04fb5452ae92995bb27ad1ee1f",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-en-1024.png",
+      "sha256": "54fadbd8751a37cc9fd40d11a4b8c39b65b4de839807d11ed7eaf51138d67c01",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "How much have the transaction prices of homes purchased by households changed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-en-1024.png",
+      "sha256": "ee66b459e8081e285f87dfd60e4c01f33c05e9d447ba2663aceb2651abce6e65",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-en-1024.png",
+      "sha256": "8fc8a83f2ab9f241d09d6509aca8ea7f884326d7431be76a9745c3d0876f2a56",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-en-1024.png",
+      "sha256": "618d56eaed12c45870b47953393af1fff146824c9469d95147a89d8d85054f99",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-1024.png",
+      "sha256": "8a4abd293e999b4fb8a5693c530df224b61d5d46a8fa88ae774bb3cbe9b65f02",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-en-1024.png",
+      "sha256": "aacc7bf62f12a3e432323cf6ba802d93230253ae27398b3d8d07f6a04b0b2ccb",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "What share of the labour force aged 15 to 74 is unemployed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-en-1024.png",
+      "sha256": "f80096adb9befded081cc7719b21ac6531500e98ec884b55df5fe38f5e45a581",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "definicao": "What share of people aged 20 to 64 is employed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-en-1280.png",
+      "sha256": "be2d2ace698334d64e8af8d9f38a44894959e3fcfafac419eeb232fb47f6147a",
+      "tipo": "cartao",
+      "pagina": "/en/themes/",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-en-1280.png",
+      "sha256": "7f5fac51102d48df5b49ec03349ea584ab47d6e8a8731c52d087904d8284a143",
+      "tipo": "cartao",
+      "pagina": "/en/my-home/",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-en-1280.png",
+      "sha256": "1c3f502cc683a964da906a9d8162b9c2b436628477991ad4b5f623f18f0be66e",
+      "tipo": "cartao",
+      "pagina": "/en/areas/infraestruturas-e-habitacao/",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-en-1280.png",
+      "sha256": "6433a9f1b60808033d11cf9fc009f301aab1320d8132908cdcd5c624fc23136a",
+      "tipo": "recibo-da-linha",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-en-1280.png",
+      "sha256": "ffcc466537822a0639b9d08991f1db40709ed02261dd69eca9cde00f0a623b70",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-en-1280.png",
+      "sha256": "d0d3cbd4291a449fe7fcec560ba11f1ebbe5b3f7de354ec0eb0c8709fd2e9f9a",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "How much does general government owe, as a percentage of GDP?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-en-1280.png",
+      "sha256": "eff183224cdecc38c527fb99d9fcf9eac98a6074db6baa464000b363eb70d74b",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-en-1280.png",
+      "sha256": "948ce73e464449fcae74811fad4d13e7e526be76f80bcfb238d9eb3cdbe5b8ee",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "How much have the transaction prices of homes purchased by households changed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-en-1280.png",
+      "sha256": "3fea55eae2b1ea1549c3d96120aaf1f990d057d8f6a945ac56c83065d63ab4fa",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-en-1280.png",
+      "sha256": "0f383da2ba2432d2e42b21afd68f61339df9fd531513e56f0c927b1429bf89d9",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-en-1280.png",
+      "sha256": "12647950ef92fe0919b0396b64e6dc642612a2649e71d85c83ae63b7120d5d49",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-1280.png",
+      "sha256": "7971d69c56b385a5b7e1701de2e52cd5ecc860616bac3aadd2b18a51b953b870",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-en-1280.png",
+      "sha256": "5356d7218b1eeb9493730381b74a0a294ceddc05e1be123014d89f6913c9b004",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "What share of the labour force aged 15 to 74 is unemployed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-en-1280.png",
+      "sha256": "32f93191aef75e8d23defe7cd400ac729821f905a422b2bcfa1975cdb9354ef8",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "definicao": "What share of people aged 20 to 64 is employed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-temas-en-1600.png",
+      "sha256": "cc90f9a8483314056697600f9373e225131e06ecdd2fadef500461c24852909a",
+      "tipo": "cartao",
+      "pagina": "/en/themes/",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-casa-en-1600.png",
+      "sha256": "8d4f3f590a1e7f455a28620ce7de963f67999fbff53e4cce120693dfd453a626",
+      "tipo": "cartao",
+      "pagina": "/en/my-home/",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/cartao-sobrecarga-area-en-1600.png",
+      "sha256": "1c3f502cc683a964da906a9d8162b9c2b436628477991ad4b5f623f18f0be66e",
+      "tipo": "cartao",
+      "pagina": "/en/areas/infraestruturas-e-habitacao/",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/recibo-da-linha-sobrecarga-en-1600.png",
+      "sha256": "6433a9f1b60808033d11cf9fc009f301aab1320d8132908cdcd5c624fc23136a",
+      "tipo": "recibo-da-linha",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "existe": true,
+        "mostra_uniao": true,
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/desemprego-de-longa-duracao-2025-paises-en-1600.png",
+      "sha256": "ffcc466537822a0639b9d08991f1db40709ed02261dd69eca9cde00f0a623b70",
+      "tipo": "cabeca-da-serie",
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/divida-publica-2025-paises-en-1600.png",
+      "sha256": "d0d3cbd4291a449fe7fcec560ba11f1ebbe5b3f7de354ec0eb0c8709fd2e9f9a",
+      "tipo": "cabeca-da-serie",
+      "serie": "divida-publica-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "How much does general government owe, as a percentage of GDP?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/ihpc-variacao-homologa-paises-en-1600.png",
+      "sha256": "eff183224cdecc38c527fb99d9fcf9eac98a6074db6baa464000b363eb70d74b",
+      "tipo": "cabeca-da-serie",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/precos-da-habitacao-2025-paises-en-1600.png",
+      "sha256": "948ce73e464449fcae74811fad4d13e7e526be76f80bcfb238d9eb3cdbe5b8ee",
+      "tipo": "cabeca-da-serie",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "How much have the transaction prices of homes purchased by households changed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/racio-s80-s20-2025-paises-en-1600.png",
+      "sha256": "3fea55eae2b1ea1549c3d96120aaf1f990d057d8f6a945ac56c83065d63ab4fa",
+      "tipo": "cabeca-da-serie",
+      "serie": "racio-s80-s20-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/risco-de-pobreza-ou-exclusao-2025-paises-en-1600.png",
+      "sha256": "0f383da2ba2432d2e42b21afd68f61339df9fd531513e56f0c927b1429bf89d9",
+      "tipo": "cabeca-da-serie",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-2025-paises-en-1600.png",
+      "sha256": "12647950ef92fe0919b0396b64e6dc642612a2649e71d85c83ae63b7120d5d49",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status.",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": "This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises-en-1600.png",
+      "sha256": "7971d69c56b385a5b7e1701de2e52cd5ecc860616bac3aadd2b18a51b953b870",
+      "tipo": "cabeca-da-serie",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-desemprego-mip-2025-paises-en-1600.png",
+      "sha256": "5356d7218b1eeb9493730381b74a0a294ceddc05e1be123014d89f6913c9b004",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "What share of the labour force aged 15 to 74 is unemployed?",
+        "ressalva": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/ue1d/taxa-de-emprego-2025-paises-en-1600.png",
+      "sha256": "32f93191aef75e8d23defe7cd400ac729821f905a422b2bcfa1975cdb9354ef8",
+      "tipo": "cabeca-da-serie",
+      "serie": "taxa-de-emprego-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "ressalva_esperada": null,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "definicao": "What share of people aged 20 to 64 is employed?",
+        "ressalva": null
+      }
+    }
+  ]
+}

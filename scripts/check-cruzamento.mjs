@@ -91,6 +91,8 @@ import { STUDY_IDS } from '../src/data/studies.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR_CRUZAMENTOS = path.join(RAIZ, 'ledger', 'cruzamentos');
 const DIR_CLAIMS = path.join(RAIZ, 'ledger', 'claims');
+/** As linhas de série (bloco UE1), que atravessam por um registo com um mapa `series`. */
+const DIR_SERIES = path.join(RAIZ, 'ledger', 'series');
 /** Onde aterram, por omissão, os ficheiros que atravessam inteiros. */
 const DIR_DADOS = path.join(RAIZ, 'src', 'data');
 
@@ -760,6 +762,8 @@ function main(argv) {
      adivinha. */
   const regsDeLinhas = regs.filter((r) => r.dados?.rows && typeof r.dados.rows === 'object');
   const regsDeFicheiros = regs.filter((r) => r.dados?.files && typeof r.dados.files === 'object');
+  /* UE1: um registo com um mapa `series` prende as linhas de série de `ledger/series/`. */
+  const regsDeSeries = regs.filter((r) => r.dados?.series && typeof r.dados.series === 'object');
   if (!regs.length) {
     console.log('');
     console.log(cinza('  cruzamentos · nenhum registo em ledger/cruzamentos/ — nada a conferir'));
@@ -768,9 +772,10 @@ function main(argv) {
   }
 
   for (const { ficheiro, dados } of regs) {
-    if (!dados?.rows && !dados?.files) {
+    if (!dados?.rows && !dados?.files && !dados?.series) {
       erros.push(
-        `[${ficheiro}] não traz nem um mapa "rows" (linhas) nem um mapa "files" (ficheiros).`,
+        `[${ficheiro}] não traz nem um mapa "rows" (linhas), nem um mapa "files" (ficheiros), ` +
+          `nem um mapa "series" (linhas de série).`,
       );
     }
   }
@@ -983,6 +988,7 @@ function main(argv) {
     }
   }
 
+  const series = confereSeries(regsDeSeries, erros, comOrigem);
   const rotulos = confereRotulos(regsDeLinhas, erros);
   const ficheirosCruzados = confereFicheiros(regsDeFicheiros, erros);
   confereRegistoDaTravessia(regsDeFicheiros, erros);
@@ -1001,6 +1007,13 @@ function main(argv) {
     cinza(
       `  rótulos da fonte · ${rotulos.comRotulo} de ${rotulos.ficheiros} linha(s) com "name", ` +
         `todas vindas do motor · ${rotulos.plantas} planta(s) vista(s)`,
+    ),
+  );
+  console.log(
+    cinza(
+      `  séries · ${series.conferidas} linha(s) de série em ${regsDeSeries.length} registo(s)` +
+        (series.origem !== null ? ` · ${series.origem} conferida(s) contra o motor` : '') +
+        ` · ${series.plantas} planta(s) vista(s)`,
     ),
   );
   if (regsDeFicheiros.length) {
@@ -1135,6 +1148,147 @@ function confereRotulos(regsDeLinhas, erros) {
     );
   }
   return { ficheiros, comRotulo: linhas.filter((l) => l.temRotulo).length, plantas: plantas.length };
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS LINHAS DE SÉRIE ATRAVESSAM COMO AS LINHAS CRUZADAS (bloco UE1, 29.09.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * Uma linha de série (`ledger/series/<id>.yml`) é gerada pelo motor e escrita
+ * aqui por `ResearchHub/publisher/export_series.py`, com uma entrada no mapa
+ * `series` de `ledger/cruzamentos/series.json`. A conferência é a das linhas:
+ * o ficheiro existe, os bytes são os que atravessaram (sem a exceção das
+ * reconferências, que uma série não tem), o `study` é um estudo do arquivo, e a
+ * contagem das correções é a do registo. E o outro lado, que as linhas também
+ * têm pelo rótulo: **uma série em `ledger/series/` que nenhum registo nomeia
+ * fecha a construção**, porque o sítio nunca escreve uma série à mão.
+ */
+const CAMPOS_DA_ENTRADA_DA_SERIE = [
+  'rh_study', 'rh_id', 'rh_ledger_sha256', 'origin_row_sha256', 'exported_row_sha256',
+  'corrections_at_export', 'exported_at', 'exporter',
+];
+
+/**
+ * Os erros de UMA entrada de série contra os bytes em disco. Função pura, para
+ * que a planta lhe possa passar um caso feito à mão.
+ */
+function errosDaEntradaDaSerie(onde, id, entrada, bytes) {
+  const out = [];
+  for (const k of Object.keys(entrada)) {
+    if (!CAMPOS_DA_ENTRADA_DA_SERIE.includes(k)) out.push(`${onde}: campo desconhecido "${k}".`);
+  }
+  for (const k of ['rh_study', 'rh_id', 'origin_row_sha256', 'exported_row_sha256']) {
+    if (!entrada[k]) out.push(`${onde}: falta "${k}".`);
+  }
+  if (bytes === null) {
+    out.push(`${onde}: o registo diz que esta série atravessou, e não há ledger/series/${id}.yml.`);
+    return out;
+  }
+  const actual = sha256(bytes);
+  if (actual !== entrada.exported_row_sha256) {
+    out.push(
+      `${onde}: os bytes em disco já não são os que atravessaram.\n` +
+        `        registo: ${entrada.exported_row_sha256}\n` +
+        `        disco:   ${actual}\n` +
+        `        Uma série não se edita à mão: corrige-se no motor e volta a atravessar ` +
+        `(ResearchHub/publisher/export_series.py --write).`,
+    );
+    return out;
+  }
+  let serie;
+  try {
+    serie = load(bytes.toString('utf8'));
+  } catch (err) {
+    out.push(`${onde}: YAML inválido: ${err.message}`);
+    return out;
+  }
+  if (serie?.id !== id) out.push(`${onde}: o ficheiro traz id "${serie?.id}".`);
+  if (!STUDY_IDS.has(serie?.study)) out.push(`${onde}: "study" é "${serie?.study}", que não consta de src/data/studies.mjs.`);
+  const nCorr = Array.isArray(serie?.corrections) ? serie.corrections.length : 0;
+  if (nCorr !== Number(entrada.corrections_at_export ?? 0)) {
+    out.push(`${onde}: a série tem ${nCorr} correção(ões) e o registo diz ${entrada.corrections_at_export}.`);
+  }
+  return out;
+}
+
+/** As séries em disco que nenhum registo nomeia. Função pura, pela mesma razão. */
+function seriesSemTravessia(emDisco, cruzadas) {
+  return emDisco.filter((id) => !cruzadas.has(id));
+}
+
+function confereSeries(regsDeSeries, erros, comOrigem) {
+  /* A PLANTA, ANTES DE QUALQUER CONTAGEM. Quatro casos: os bytes certos passam;
+     um valor mexido fecha; um ficheiro que falta fecha; e uma série em disco que
+     nenhum registo nomeia fecha. */
+  let plantas = 0;
+  const base = 'id: "s-paises"\nstudy: "quadro-institucional"\ncorrections: []\n';
+  const entrada = { rh_study: 'x', rh_id: 's-paises', origin_row_sha256: 'o', exported_row_sha256: sha256(Buffer.from(base, 'utf8')), corrections_at_export: 0 };
+  const casos = [
+    { nome: 'os bytes que atravessaram', bytes: Buffer.from(base, 'utf8'), espera: 0 },
+    { nome: 'um valor mexido', bytes: Buffer.from(base.replace('[]', '[ ]'), 'utf8'), espera: 1 },
+    { nome: 'um ficheiro que falta', bytes: null, espera: 1 },
+  ];
+  for (const c of casos) {
+    plantas++;
+    const r = errosDaEntradaDaSerie('[planta]', 's-paises', entrada, c.bytes);
+    if (r.length !== c.espera) {
+      erros.push(`a prova da régua das séries falhou no caso "${c.nome}": esperavam-se ${c.espera} erro(s) e deu ${r.length}. A conferência abaixo deixou de valer.`);
+    }
+  }
+  plantas++;
+  if (seriesSemTravessia(['a-paises', 'b-paises'], new Set(['a-paises'])).join() !== 'b-paises') {
+    erros.push('a prova da régua das séries falhou no caso "uma série que não atravessou": a série escrita à mão não foi vista.');
+  }
+
+  const cruzadas = new Set();
+  let conferidas = 0;
+  for (const { ficheiro, dados } of regsDeSeries) {
+    for (const [id, e] of Object.entries(dados.series)) {
+      cruzadas.add(id);
+      conferidas++;
+      const caminho = path.join(DIR_SERIES, `${id}.yml`);
+      const bytes = fs.existsSync(caminho) ? fs.readFileSync(caminho) : null;
+      erros.push(...errosDaEntradaDaSerie(`[${ficheiro}] ${id}`, id, e, bytes));
+    }
+  }
+  const emDisco = fs.existsSync(DIR_SERIES)
+    ? fs.readdirSync(DIR_SERIES).filter((f) => f.endsWith('.yml')).map((f) => f.slice(0, -4)).sort()
+    : [];
+  const soltas = seriesSemTravessia(emDisco, cruzadas);
+  if (soltas.length) {
+    erros.push(
+      `${soltas.length} série(s) em ledger/series/ que nenhum registo de travessia nomeia: ${soltas.join(', ')}.\n` +
+        `        Uma linha de série é gerada pelo motor e atravessa; não se escreve neste repositório.`,
+    );
+  }
+
+  /* O lado da origem, como o das linhas: fora da construção, só onde o motor está. */
+  let origem = null;
+  if (comOrigem) {
+    origem = 0;
+    const raizMotor = process.env.RESEARCHHUB_DIR
+      ? path.resolve(process.env.RESEARCHHUB_DIR)
+      : path.join(path.dirname(RAIZ), 'ResearchHub');
+    const cache = new Map();
+    for (const { ficheiro, dados } of regsDeSeries) {
+      for (const [id, e] of Object.entries(dados.series)) {
+        const f = path.join(raizMotor, 'content', e.rh_study, 'series.json');
+        if (!cache.has(f)) cache.set(f, fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null);
+        const doc = cache.get(f);
+        const linha = doc?.series?.find((s) => s.id === e.rh_id);
+        if (!linha) {
+          erros.push(`--with-origin: [${ficheiro}] ${id}: o motor não tem a série "${e.rh_id}" em ${e.rh_study}/series.json.`);
+          continue;
+        }
+        origem++;
+        if (canonicalSha(linha) !== e.origin_row_sha256) {
+          erros.push(`--with-origin: [${ficheiro}] ${id} já não é a série do motor que atravessou. Volte a cruzar: python3 publisher/export_series.py --write`);
+        }
+      }
+    }
+  }
+  return { conferidas, plantas, origem };
 }
 
 /** O resumo da linha do motor: JSON canónico, chaves ordenadas, sem espaços. */

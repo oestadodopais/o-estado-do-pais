@@ -1,0 +1,11 @@
+---
+import SerieView from '../../../../views/SerieView.astro';
+import { allSeries } from '../../../../lib/series.mjs';
+
+export function getStaticPaths() {
+  return allSeries().map((s) => ({ params: { slug: s.id } }));
+}
+
+const { slug } = Astro.params;
+---
+<SerieView lang="en" id={slug} />

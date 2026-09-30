@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-29T23:45:11+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/series/ihpc-variacao-homologa-paises/index.html",
+   "descricao": "o recibo português da série do índice harmonizado volta a dizer «em Portugal» na definição",
+   "sha256_antes": "e68baa0cadb7587d0d0cc24752ed5aa47cf23332e13d6f9df26a35dc42a5029a",
+   "sha256_depois": "fe734ebfe871b4dd0f09b7b9ee128b90cf2882d8bceff8a471366227710da7f1",
+   "contexto_antes": "na comparação europeia</span> <span data-voz>nos países da União</span></h1><p class=\"serie-o-que-conta\" data-serie-o-que-conta=\"ihpc-variacao-homologa-paises\">Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?</p><p class=\"serie-periodo\"><span class=\"linha-campo-k\" data-voz>Período</span> <span class=\"data-da-linha\" d",
+   "contexto_depois": "na comparação europeia</span> <span data-voz>nos países da União</span></h1><p class=\"serie-o-que-conta\" data-serie-o-que-conta=\"ihpc-variacao-homologa-paises\">Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?</p><p class=\"serie-periodo\"><span class=\"linha-campo-k\" data-voz>Período</span> <span class=\"data-da-linha\" d"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "a regra nova deixa de reconhecer a palavra «Portugal» e só vê os gentílicos",
+   "sha256_antes": "7fe14180cf80ebff0b186b0393443d6d6ab963841e5ccf5ee1b7d77cf95715fb",
+   "sha256_depois": "0e403224737f51c78aed2d3eccfcc3516559048e78af2b7b430ab747dfdfb9b4",
+   "contexto_antes": "e como se fosse sobre\n * Portugal. O nome, nas duas edições, e os gentílicos, que o dizem por outras\n * palavras («português», «portuguesa», «Portuguese»).\n */\nconst NOMEIA_PORTUGAL = /\\bPortugal\\b|\\bportugu[eê]s(?:es)?\\b|\\bportuguesas?\\b|\\bPortuguese\\b/i;\n/** A pergunta do cartão sem o lugar: sem « em Portugal» ou « in Portugal», uma vez. @param {string} t */\ncons",
+   "contexto_depois": "e como se fosse sobre\n * Portugal. O nome, nas duas edições, e os gentílicos, que o dizem por outras\n * palavras («português», «portuguesa», «Portuguese»).\n */\nconst NOMEIA_PORTUGAL = /\\bportugu[eê]s(?:es)?\\b|\\bportuguesas?\\b|\\bPortuguese\\b/i;\n/** A pergunta do cartão sem o lugar: sem « em Portugal» ou « in Portugal», uma vez. @param {string} t */\ncons"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/medidas-rp1.mjs",
+   "descricao": "a forma inglesa do recibo da série diz «a year earlier» em vez de «the same month a year earlier»: já não é a pergunta do cartão sem o lugar",
+   "sha256_antes": "30192a7cfc96285087b74bc6d16cb73e2226a4428cad70193b08ad44240b4382",
+   "sha256_depois": "866703f557364ca92d509cfd3325bd5953729d03faa6eee6fdd74e7d392ff9d0",
+   "contexto_antes": "preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?\"\n      ],\n      \"en\": [\n        \"How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?\"\n      ]\n    }\n  }\n};\n",
+   "contexto_depois": "preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?\"\n      ],\n      \"en\": [\n        \"How much have consumer prices changed since a year earlier, on the harmonised measure used to compare European Union countries?\"\n      ]\n    }\n  }\n};\n"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/views/SerieView.astro",
+   "descricao": "o recibo da série ignora a forma declarada para ele e usa sempre a do cartão",
+   "sha256_antes": "c5a27fccd3b0f1252d1c106acd0ba22ce75d2c279283e2a6ccca46c136660bc8",
+   "sha256_depois": "0ad2b02854385dcff283ba2e0dd3ed56d267b970affeb76daf09e044fca1a012",
+   "contexto_antes": "rtugal}» não tem definição declarada em DEFINICOES_DAS_MEDIDAS.`);\n/* A forma do recibo da série, onde a declaração a tem; a do cartão, onde não tem (UE1e). */\nconst definicao = (definicaoDeclarada.serie ?? definicaoDeclarada)[lang];\nconst ressalva = ressalvaDaUniao(String(serie.linha_de_portugal), lang);\nconst pontos = pontosDaSerie(serie);\nconst documento = /** @type {Record<string, strin",
+   "contexto_depois": "rtugal}» não tem definição declarada em DEFINICOES_DAS_MEDIDAS.`);\n/* A forma do recibo da série, onde a declaração a tem; a do cartão, onde não tem (UE1e). */\nconst definicao = definicaoDeclarada[lang];\nconst ressalva = ressalvaDaUniao(String(serie.linha_de_portugal), lang);\nconst pontos = pontosDaSerie(serie);\nconst documento = /** @type {Record<string, strin"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 22 capturas contra as 20 das provas",
+   "sha256_antes": "37e0fe52c19f75c06e5f88a936978e9b7d7a39fd10dd348f4725930b58f1782c",
+   "sha256_depois": "71f0c5d9692a0cf946405a938b07b9622d5e1613cf17f4e5f1d1bad94cf70cbd",
+   "contexto_antes": "as, em português e em inglês: a cabeça do recibo (10 capturas) e o que a janela mostra ao abrir a página, com a definição por cima do princípio da tabela (10); 20 capturas, com 0 problemas (a definição é a forma do recibo da série, carácter a carácter, não nomeia Portugal, a tabela está lá, e nenhuma página transborda), as 4 plantas dos detetores",
+   "contexto_depois": "as, em português e em inglês: a cabeça do recibo (10 capturas) e o que a janela mostra ao abrir a página, com a definição por cima do princípio da tabela (10); 22 capturas, com 0 problemas (a definição é a forma do recibo da série, carácter a carácter, não nomeia Portugal, a tabela está lá, e nenhuma página transborda), as 4 plantas dos detetores"
+  }
+ ]
+}

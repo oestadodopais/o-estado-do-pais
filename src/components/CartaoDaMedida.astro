@@ -80,12 +80,16 @@ import CampoDaLinha from './CampoDaLinha.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
 import Frase from './Frase.astro';
 import ReguaDoCartao from './ReguaDoCartao.astro';
+import FaixaDaUniao from './FaixaDaUniao.astro';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada, eNomeDeMedida } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 import { leituraDaMedida } from '../lib/leitura-da-medida.mjs';
+import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
+import { reguaDoCartao } from '../lib/enquadramento.mjs';
+import { serieDaLinha } from '../lib/series.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
    componente saiba o que elas são: é assim que a página de uma área lhe põe
@@ -155,6 +159,11 @@ if (comLeitura && nome === null) {
   throw new Error(`cartão nacional sem nome: a leitura de «${c.id}» não tem cartão onde viver`);
 }
 const leitura = comLeitura ? leituraDaMedida(c.id, lang) : null;
+/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026):
+   onde a medida a declara e o cartão mostra a União (a régua com a linha da
+   União, ou a faixa da União), a ressalva vai no mesmo cartão. */
+const mostraUniao = reguaDoCartao(c.id).ue !== null || (comLeitura && serieDaLinha(c.id) !== null);
+const ressalva = mostraUniao ? ressalvaDaUniao(c.id, lang) : null;
 const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
 /* O NOME DE UMA LINHA QUE NÃO SE RENDE COMO CARTÃO (bloco P3, 16.09.2026,
    item 1). A decisão do P2 fica: uma linha sem nome em degrau nenhum da escada
@@ -282,6 +291,21 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       )}
 
       <ReguaDoCartao id={c.id} lang={lang} s={s} />
+
+      {/* A FAIXA DA UNIÃO (bloco UE1, 29.09.2026): onde Portugal fica entre os
+          27, por baixo do número e da régua, só nos cartões nacionais (os que
+          levam a leitura: a página dos temas e as das entradas) e só nas medidas
+          que têm série de países em `ledger/series/`. Onde não há série, não se
+          desenha nada. */}
+      {comLeitura && <FaixaDaUniao id={c.id} lang={lang} />}
+
+      {/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, 29.09.2026): a da
+          Comissão, lida da fonte única (`src/data/ressalvas-da-uniao.mjs`), por
+          baixo da régua e da faixa, onde a União aparece. A K1 admite este bloco
+          só nas medidas que a K14 nomeia, e a K14 exige-o onde a União aparece. */}
+      {ressalva && (
+        <p class="cartao-medida-ressalva" data-ressalva-da-uniao={c.id}>{ressalva}</p>
+      )}
 
       {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
       {frase && (

@@ -1,0 +1,23 @@
+{
+  "_": "Os acertos às palavras do lugar de direção (o §3, ponto 5, do brief UE1), e só estes. Cada um é uma troca de cadeia sobre o texto do brief; o guião acertos-ue1.py aplica-os e compara o resultado com src/data/faixa-da-uniao.mjs, em cada língua e em cada ramo.",
+  "acertos": [
+    {"id": "F0", "lingua": "pt", "de": "Entre os 27 países", "para": "Entre os {conta} países",
+     "porque": "o 27 é o número de países com valor na série, recontado dos pontos: um algarismo nas palavras fixas não tem origem que o portão aceite"},
+    {"id": "F0", "lingua": "en", "de": "Among the 27 EU countries", "para": "Among the {conta} EU countries",
+     "porque": "a mesma razão, na edição inglesa"},
+    {"id": "F1", "lingua": "pt", "de": "o valor mais baixo é o de {país} ({valor}) e o mais alto o de {país} ({valor})", "para": "o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país})",
+     "porque": "em português de Portugal um nome de país pede quase sempre o artigo («o da Grécia», «o dos Países Baixos», mas «o de Malta»), e a tabela de autoridade dá o nome curto sem o artigo; entre parênteses o nome não o pede"},
+    {"id": "F1", "lingua": "en", "de": "the lowest value is {país}'s ({valor}) and the highest is {país}'s ({valor})", "para": "the lowest value is {valor} ({país}) and the highest is {valor} ({país})",
+     "porque": "a mesma forma nas duas edições; o nome inglês da tabela é «Netherlands», e «Netherlands's» não se escreve"},
+    {"id": "F2", "lingua": "pt", "ramo": "um", "de": "a par de {país}", "para": ", a par de outro país com o mesmo valor ({país})",
+     "porque": "o empate acrescenta-se no fim da frase do lugar; «a par de Áustria» pedia o artigo pela razão de F1, e o ramo de vários países nomeia-os todos"},
+    {"id": "F2", "lingua": "pt", "ramo": "varios", "de": "a par de {país}", "para": ", a par de outros países com o mesmo valor ({país})",
+     "porque": "na pobreza ou exclusão de 2025 Portugal tem o mesmo valor que dois países (a série de 29.09.2026)"},
+    {"id": "F2", "lingua": "en", "ramo": "um", "de": "level with {país}", "para": ", level with another country with the same value ({país})",
+     "porque": "a mesma forma na edição inglesa"},
+    {"id": "F2", "lingua": "en", "ramo": "varios", "de": "level with {país}", "para": ", level with other countries with the same value ({país})",
+     "porque": "a mesma forma na edição inglesa"},
+    {"id": "F4", "lingua": "en", "de": "ranks {n} from the highest", "para": "ranks {n}{ordinal} from the highest",
+     "porque": "a decisão do lugar de direção na passagem UE1b (29.09.2026): na edição inglesa o lugar diz-se com o ordinal («ranks 15th from the highest»); os sufixos são palavras declaradas e a regra que escolhe um é a do inglês"}
+  ]
+}

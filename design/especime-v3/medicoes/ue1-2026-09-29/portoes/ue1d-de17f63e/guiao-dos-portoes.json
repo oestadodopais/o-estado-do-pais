@@ -1,0 +1,7 @@
+{
+  "_": "O guião dos portões da UE1d: o sha256 da cópia guardada durante a corrida do build (antes das do verify e do typecheck, e sem escrita nenhuma no ficheiro desde que foi criado), o do ficheiro do ramo, e as linhas que diferem, fora e dentro dos comentários.",
+  "sha256_do_que_correu": "c8a5dfec4976344d4c402c1b23aafc9115b6fb2ad9d1f82bd4e15bfd312312c7",
+  "sha256_do_ramo": "fe2c7e929131f0a1cfa777d0e608222808ddd5c93ee37ae56712ab11436de038",
+  "linhas_de_codigo_diferentes": 0,
+  "linhas_de_comentario_diferentes": 11
+}

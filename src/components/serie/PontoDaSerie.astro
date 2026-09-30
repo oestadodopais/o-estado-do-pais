@@ -1,0 +1,24 @@
+---
+/**
+ * O VALOR DE UM PONTO DE UMA SÉRIE (bloco UE1, 29.09.2026).
+ *
+ * É a única maneira de pôr na página um valor de uma linha de série, como o
+ * `<Claim>` é a de uma linha escalar: o elemento sai com
+ * `data-ponto="<id da série>#<geografia>"`, e o portão de HTML admite-o como
+ * origem de algarismos só quando o texto é, carácter a carácter pela regra da
+ * forma do valor, o `valor` daquele ponto no ficheiro da série. Um ponto que a
+ * série não tem atira na construção.
+ *
+ * O separador dos milhares sai em U+00A0, pela razão escrita em `Claim.astro`,
+ * e é a única coisa que muda na cadeia.
+ */
+import { getSerie, pontoDaSerie } from '../../lib/series.mjs';
+
+const { serie: id, geo, class: klass = '' } = Astro.props;
+const ponto = pontoDaSerie(getSerie(id), geo);
+if (!ponto || typeof ponto.valor !== 'string') {
+  throw new Error(`série «${id}»: não há ponto «${geo}».`);
+}
+const valor = ponto.valor.replace(/(?<=\d)[   ](?=\d)/g, ' ');
+---
+<span class:list={['ponto-da-serie', klass]} data-ponto={`${id}#${geo}`}>{valor}</span>

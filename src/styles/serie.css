@@ -1,0 +1,159 @@
+/* O RECIBO DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026).
+ *
+ * A disposição é a do recibo de uma linha (`linha.css`); esta folha acrescenta a
+ * tabela dos pontos e a cabeça da série. Sem cor: a IDENTIDADE §2 guarda a cor
+ * para um valor de referência publicado, e uma série de países não tem nenhum.
+ * Portugal distingue-se pelo peso da letra, e a União por um fio. */
+
+.serie-titulo {
+  font-family: var(--f-prosa);
+  font-weight: 500;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.15;
+  margin: 6px 0 10px;
+}
+
+/* O QUE A MEDIDA CONTA (a passagem UE1c, 29.09.2026): a frase da leitura do
+   cartão, por baixo do título, na letra do texto corrido. */
+.serie-o-que-conta {
+  font-family: var(--f-prosa);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 62ch;
+  margin: 0 0 12px;
+}
+
+/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d): por baixo
+   da definição, na mesma letra, sem cor. */
+.serie-ressalva {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 62ch;
+  margin: 0 0 12px;
+}
+
+.serie-periodo {
+  font-family: var(--f-instr);
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.serie-tabela {
+  width: 100%;
+  max-width: 34rem;
+  border-collapse: collapse;
+  font-family: var(--f-instr);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.serie-tabela th,
+.serie-tabela td {
+  text-align: left;
+  padding: 5px 12px 5px 0;
+  border-bottom: 1px solid var(--g3);
+  vertical-align: baseline;
+}
+
+.serie-tabela thead th {
+  font-weight: 500;
+  color: var(--g1);
+  border-bottom-color: var(--g2);
+}
+
+.serie-tabela tbody th {
+  font-weight: 400;
+}
+
+.serie-tabela .serie-num {
+  text-align: right;
+}
+
+.serie-tabela .serie-portugal th,
+.serie-tabela .serie-portugal td {
+  font-weight: 700;
+}
+
+.serie-tabela .serie-uniao th,
+.serie-tabela .serie-uniao td {
+  border-top: 1px solid var(--g2);
+}
+
+.serie-marca-rotulo {
+  color: var(--g1);
+}
+
+/* O QUE QUER DIZER CADA MARCA (a passagem UE1b, 29.09.2026): ao lado da tabela
+   a partir dos 768 px, por baixo dela nos ecrãs estreitos. A tabela fica da
+   largura do seu conteúdo quando tem a legenda ao lado, para as duas caberem na
+   coluna do corpo. Sem cor, como a tabela. */
+.serie-pontos-corpo {
+  display: grid;
+  gap: 18px 32px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .serie-pontos-com-marcas {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+  .serie-pontos-com-marcas .serie-tabela {
+    width: auto;
+  }
+}
+
+.serie-marcas {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.serie-marcas-titulo {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--g1);
+  margin: 0 0 8px;
+}
+
+.serie-marcas-lista {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.serie-marca-entrada {
+  display: grid;
+  grid-template-columns: 2.25em minmax(0, 1fr);
+  gap: 0 8px;
+}
+
+.serie-marcas-lista dt {
+  font-family: var(--f-instr);
+  font-weight: 600;
+}
+
+.serie-marcas-lista dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.serie-marcas-nota {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+.serie-pedido {
+  overflow-wrap: anywhere;
+}
+
+.serie-prova p,
+.serie-nomes p {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,52 @@
+{
+  "brief": "design/observatorio/BRIEF-UE1-onde-portugal-fica-entre-os-27.md",
+  "declaracao": "src/data/faixa-da-uniao.mjs",
+  "acertos": 9,
+  "formas": 6,
+  "iguais": 6,
+  "falhas": [],
+  "resultado": [
+    {
+      "lingua": "pt",
+      "ramo": "sem empate",
+      "esperado": "Entre os {conta} países da União, em {período}, o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país}); a média da União é {valor}. Portugal ({valor}) está em {n}.º lugar, do mais alto para o mais baixo.",
+      "declarado": "Entre os {conta} países da União, em {período}, o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país}); a média da União é {valor}. Portugal ({valor}) está em {n}.º lugar, do mais alto para o mais baixo.",
+      "igual": true
+    },
+    {
+      "lingua": "pt",
+      "ramo": "um",
+      "esperado": "Entre os {conta} países da União, em {período}, o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país}); a média da União é {valor}. Portugal ({valor}) está em {n}.º lugar, do mais alto para o mais baixo, a par de outro país com o mesmo valor ({país}).",
+      "declarado": "Entre os {conta} países da União, em {período}, o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país}); a média da União é {valor}. Portugal ({valor}) está em {n}.º lugar, do mais alto para o mais baixo, a par de outro país com o mesmo valor ({país}).",
+      "igual": true
+    },
+    {
+      "lingua": "pt",
+      "ramo": "varios",
+      "esperado": "Entre os {conta} países da União, em {período}, o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país}); a média da União é {valor}. Portugal ({valor}) está em {n}.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor ({país}).",
+      "declarado": "Entre os {conta} países da União, em {período}, o valor mais baixo é {valor} ({país}) e o mais alto {valor} ({país}); a média da União é {valor}. Portugal ({valor}) está em {n}.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor ({país}).",
+      "igual": true
+    },
+    {
+      "lingua": "en",
+      "ramo": "sem empate",
+      "esperado": "Among the {conta} EU countries in {período}, the lowest value is {valor} ({país}) and the highest is {valor} ({país}); the EU average is {valor}. Portugal ({valor}) ranks {n}{ordinal} from the highest.",
+      "declarado": "Among the {conta} EU countries in {período}, the lowest value is {valor} ({país}) and the highest is {valor} ({país}); the EU average is {valor}. Portugal ({valor}) ranks {n}{ordinal} from the highest.",
+      "igual": true
+    },
+    {
+      "lingua": "en",
+      "ramo": "um",
+      "esperado": "Among the {conta} EU countries in {período}, the lowest value is {valor} ({país}) and the highest is {valor} ({país}); the EU average is {valor}. Portugal ({valor}) ranks {n}{ordinal} from the highest, level with another country with the same value ({país}).",
+      "declarado": "Among the {conta} EU countries in {período}, the lowest value is {valor} ({país}) and the highest is {valor} ({país}); the EU average is {valor}. Portugal ({valor}) ranks {n}{ordinal} from the highest, level with another country with the same value ({país}).",
+      "igual": true
+    },
+    {
+      "lingua": "en",
+      "ramo": "varios",
+      "esperado": "Among the {conta} EU countries in {período}, the lowest value is {valor} ({país}) and the highest is {valor} ({país}); the EU average is {valor}. Portugal ({valor}) ranks {n}{ordinal} from the highest, level with other countries with the same value ({país}).",
+      "declarado": "Among the {conta} EU countries in {período}, the lowest value is {valor} ({país}) and the highest is {valor} ({país}); the EU average is {valor}. Portugal ({valor}) ranks {n}{ordinal} from the highest, level with other countries with the same value ({país}).",
+      "igual": true
+    }
+  ]
+}

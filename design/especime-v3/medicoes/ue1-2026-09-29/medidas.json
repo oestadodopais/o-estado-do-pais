@@ -1,0 +1,1043 @@
+{
+  "bloco": "UE1",
+  "cabeca_do_codigo": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
+  "base": "8e66b601",
+  "guiao": "design/especime-v3/medicoes/ue1-2026-09-29/medir-ue1.mjs",
+  "medidas": [
+    {
+      "nome": "series_no_livro",
+      "valor": 10,
+      "comando": "ls ledger/series/*.yml",
+      "conhecido_positivo": {
+        "o_que": "a série da dívida pública está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_por_serie",
+      "valor": "28",
+      "comando": "o comprimento de «pontos» em cada série",
+      "conhecido_positivo": {
+        "o_que": "a série da dívida tem o ponto da União",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_no_livro",
+      "valor": 280,
+      "comando": "a soma dos pontos das séries",
+      "conhecido_positivo": {
+        "o_que": "o ponto de Portugal da dívida é 89,7",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_com_marca_da_fonte",
+      "valor": 20,
+      "comando": "os pontos com «bandeira» não nula",
+      "conhecido_positivo": {
+        "o_que": "a Hungria nos preços da habitação leva «p»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_marcas",
+      "valor": 8,
+      "comando": "as séries com «bandeiras» não vazio",
+      "conhecido_positivo": {
+        "o_que": "a série do desemprego de longa duração tem «u»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_iguais_a_testemunha",
+      "valor": 280,
+      "comando": "cada ponto contra o ponto da testemunha, como número",
+      "conhecido_positivo": {
+        "o_que": "a União da dívida é 81,7 nas duas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_diferentes_da_testemunha",
+      "valor": 0,
+      "comando": "o mesmo, os que não batem",
+      "conhecido_positivo": {
+        "o_que": "a comparação vê uma diferença plantada (81,8 contra 81,7)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_iguais_a_testemunha",
+      "valor": 280,
+      "comando": "cada marca contra a da testemunha",
+      "conhecido_positivo": {
+        "o_que": "a Hungria leva «p» nas duas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ordem_dos_paises_igual_a_testemunha",
+      "valor": true,
+      "comando": "a ordem da tabela dos nomes contra a lista da testemunha",
+      "conhecido_positivo": {
+        "o_que": "a Bélgica é a primeira nas duas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lugares_iguais_ao_brief",
+      "valor": 9,
+      "comando": "o lugar de Portugal (1 mais os países com valor maior) contra o do §1 do brief",
+      "conhecido_positivo": {
+        "o_que": "a dívida dá 6 nas duas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lugar_da_pobreza_pela_regra",
+      "valor": 15,
+      "comando": "1 mais o número de países com valor maior que o de Portugal (18,6)",
+      "conhecido_positivo": {
+        "o_que": "a regra dá 6 na dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lugar_da_pobreza_no_brief",
+      "valor": 16,
+      "comando": "pt_lugar_a_descer da testemunha e a tabela do §1 do brief",
+      "conhecido_positivo": {
+        "o_que": "a testemunha tem o campo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_a_par_de_portugal_na_pobreza",
+      "valor": "AT,SE",
+      "comando": "os países com o valor de Portugal na pobreza ou exclusão",
+      "conhecido_positivo": {
+        "o_que": "a Áustria tem 18,6",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_maiores_que_portugal_na_pobreza",
+      "valor": 14,
+      "comando": "os países com valor maior que 18,6",
+      "conhecido_positivo": {
+        "o_que": "a Bulgária (29,0) é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_de_portugal_na_pobreza",
+      "valor": "18,6",
+      "comando": "o ponto PT da série da pobreza ou exclusão",
+      "conhecido_positivo": {
+        "o_que": "a Áustria tem o mesmo valor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_a_par_de_portugal_na_pobreza_conta",
+      "valor": 2,
+      "comando": "o mesmo, quantos países têm o valor de Portugal",
+      "conhecido_positivo": {
+        "o_que": "a Suécia é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontas_com_marca_da_fonte",
+      "valor": [
+        "precos-da-habitacao-2025-paises · alto · HU · 18,3 · p",
+        "taxa-de-desemprego-mip-2025-paises · alto · ES · 10,5 · d"
+      ],
+      "comando": "o país mais baixo e o mais alto de cada série, com a marca do ponto, quando a leva",
+      "conhecido_positivo": {
+        "o_que": "a Hungria, a mais alta dos preços da habitação, com «p»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontas_com_marca_da_fonte_conta",
+      "valor": 2,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "o valor mais baixo dos preços da habitação, com o sinal de menos tipográfico, lê-se como número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_na_tabela_dos_nomes",
+      "valor": 27,
+      "comando": "src/data/paises-da-uniao.json, paises",
+      "conhecido_positivo": {
+        "o_que": "a Grécia é «Grécia» e «Greece» com o código EL",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dia_da_leitura_da_tabela",
+      "valor": "2026-09-29",
+      "comando": "o dia de lido_em dos 27",
+      "conhecido_positivo": {
+        "o_que": "a Grécia foi lida nesse dia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_registo_da_travessia",
+      "valor": 10,
+      "comando": "ledger/cruzamentos/series.json, series",
+      "conhecido_positivo": {
+        "o_que": "a da dívida está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_no_registo_da_travessia",
+      "valor": 1,
+      "comando": "ledger/cruzamentos/series.json, files",
+      "conhecido_positivo": {
+        "o_que": "a tabela dos nomes está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_livro_mudadas",
+      "valor": 0,
+      "comando": "git diff --name-only 8e66b601 <cabeça> -- ledger/claims",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê as séries novas em ledger/series",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_da_primeira_pagina_mudados",
+      "valor": 0,
+      "comando": "o mesmo, sobre a vista, as declarações, o resolvedor e os componentes da primeira página",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o cartão mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_das_leituras_mudados",
+      "valor": 0,
+      "comando": "o mesmo, sobre as leituras das medidas e do RP1",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o cartão mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guiao_da_aterragem_mudado",
+      "valor": 0,
+      "comando": "o mesmo, sobre scripts/aterrar.sh",
+      "conhecido_positivo": {
+        "o_que": "o guião existe na base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cruzamentos_anteriores",
+      "valor": 6,
+      "comando": "git ls-tree --name-only 8e66b601 ledger/cruzamentos/",
+      "conhecido_positivo": {
+        "o_que": "o registo de Évora está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cruzamentos_anteriores_mudados",
+      "valor": 0,
+      "comando": "o mesmo diff, sobre os registos de travessia que já existiam na base",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê o registo novo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dist_da_cabeca",
+      "valor": true,
+      "comando": "dist/version.json contra portoes/build.cabeca",
+      "conhecido_positivo": {
+        "o_que": "o carimbo tem um commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_nos_temas",
+      "valor": 20,
+      "comando": "as marcas data-faixa-ue nas duas páginas dos temas",
+      "conhecido_positivo": {
+        "o_que": "a faixa da dívida está na página portuguesa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_nas_entradas",
+      "valor": 20,
+      "comando": "as marcas data-faixa-ue nas dez páginas das entradas",
+      "conhecido_positivo": {
+        "o_que": "a página «O meu dinheiro» tem a da pobreza",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_na_primeira_pagina",
+      "valor": 0,
+      "comando": "as marcas data-faixa-ue na primeira página, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê as dos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_serie_construidos",
+      "valor": 20,
+      "comando": "as pastas com index.html em dist/livro-razao/series e dist/en/ledger/series",
+      "conhecido_positivo": {
+        "o_que": "o recibo da dívida está nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_num_recibo",
+      "valor": 28,
+      "comando": "as marcas data-ponto no recibo português da dívida",
+      "conhecido_positivo": {
+        "o_que": "o valor da Bélgica está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_build",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (33ed14a0)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_build",
+      "valor": 178,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (33ed14a0)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_verify",
+      "valor": 756,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_typecheck",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida é desta cabeça (33ed14a0)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_typecheck",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/portoes/typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_paginas_de_serie",
+      "valor": 20,
+      "comando": "a linha «séries:» do gate:html no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_pontos",
+      "valor": 800,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_nomes_de_pais",
+      "valor": 788,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_campos_de_serie",
+      "valor": 200,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_html_recontagens",
+      "valor": 80,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_faixas",
+      "valor": 40,
+      "comando": "a linha da F19 do check:formas no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_marcas",
+      "valor": 1120,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_frases",
+      "valor": 40,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_frases_com_empate",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_plantas",
+      "valor": 12,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f19_datas_de_serie",
+      "valor": 100,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ledger_check_series",
+      "valor": 10,
+      "comando": "a linha «séries ·» do ledger:check no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ledger_check_plantas",
+      "valor": 11,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k18_faixas",
+      "valor": 40,
+      "comando": "a linha da K18 do check:cartao no verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k18_plantas",
+      "valor": 12,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_cruzamento_series",
+      "valor": 10,
+      "comando": "a linha «séries ·» do check:cruzamento no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_cruzamento_plantas",
+      "valor": 4,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_vivas_rendidas",
+      "valor": 778,
+      "comando": "a linha do check:voz no build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_inventario_do_bloco",
+      "valor": 6,
+      "comando": "as linhas do inventário com o bloco «ue1»",
+      "conhecido_positivo": {
+        "o_que": "a linha «média da União» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_bloco",
+      "valor": 15,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/plantas-ue1.json",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_que_morderam",
+      "valor": 15,
+      "comando": "o mesmo, as que deram código diferente de zero com a queixa esperada e repostas",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_repostas_pelo_sha256",
+      "valor": 15,
+      "comando": "o mesmo, as que voltaram ao sha256 de antes",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_limpas_a_zero",
+      "valor": 5,
+      "comando": "o mesmo, os portões corridos limpos depois das plantas",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 40,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/capturas-ue1.json",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_com_problema",
+      "valor": 0,
+      "comando": "o mesmo, a lista dos problemas medidos",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_para_fora_nas_capturas",
+      "valor": 0,
+      "comando": "o mesmo, os pedidos recusados",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_de_cartoes",
+      "valor": 20,
+      "comando": "o mesmo, as de tipo «cartao»",
+      "conhecido_positivo": {
+        "o_que": "o cartão da pobreza (o do empate) está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_de_recibos",
+      "valor": 20,
+      "comando": "o mesmo, as de tipo «recibo»",
+      "conhecido_positivo": {
+        "o_que": "o recibo dos preços da habitação está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "larguras_das_capturas",
+      "valor": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "comando": "o mesmo, as larguras",
+      "conhecido_positivo": {
+        "o_que": "a de 390 está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "larguras_das_capturas_conta",
+      "valor": 5,
+      "comando": "o mesmo, quantas",
+      "conhecido_positivo": {
+        "o_que": "a de 1600 está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_medidas_nas_larguras",
+      "valor": 200,
+      "comando": "node design/especime-v3/medicoes/ue1-2026-09-29/faixas-ue1.mjs, cada faixa de cada página nas cinco larguras",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas (um rótulo sobre outro, uma ponta fora do cartão, a página a transbordar), nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_paginas_com_faixa",
+      "valor": 12,
+      "comando": "o mesmo, as páginas medidas por largura",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas (um rótulo sobre outro, uma ponta fora do cartão, a página a transbordar), nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_series_por_edicao",
+      "valor": 10,
+      "comando": "o mesmo, as séries com faixa em cada edição",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas (um rótulo sobre outro, uma ponta fora do cartão, a página a transbordar), nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_com_problema",
+      "valor": 0,
+      "comando": "o mesmo, a lista dos problemas medidos",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas (um rótulo sobre outro, uma ponta fora do cartão, a página a transbordar), nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_plantas_vistas",
+      "valor": 6,
+      "comando": "o mesmo, as plantas do detetor que ele viu",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_pedidos_para_fora",
+      "valor": 0,
+      "comando": "o mesmo, os pedidos recusados",
+      "conhecido_positivo": {
+        "o_que": "o manifesto é desta cabeça e o detetor viu as suas plantas (um rótulo sobre outro, uma ponta fora do cartão, a página a transbordar), nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "acertos_declarados",
+      "valor": 8,
+      "comando": "python3 design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.py",
+      "conhecido_positivo": {
+        "o_que": "as frases do brief encontraram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_da_frase_iguais",
+      "valor": 6,
+      "comando": "o mesmo, as formas iguais",
+      "conhecido_positivo": {
+        "o_que": "as frases do brief encontraram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "grupos_de_acertos",
+      "valor": 3,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1.json, os id distintos",
+      "conhecido_positivo": {
+        "o_que": "o F1 está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ramos_da_frase",
+      "valor": 3,
+      "comando": "design/especime-v3/medicoes/ue1-2026-09-29/acertos-ue1-resultado.json, os ramos distintos",
+      "conhecido_positivo": {
+        "o_que": "o ramo de vários países está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linguas_da_frase",
+      "valor": 2,
+      "comando": "o mesmo, as línguas distintas",
+      "conhecido_positivo": {
+        "o_que": "o inglês está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_cabeca",
+      "valor": "e394307",
+      "comando": "git rev-parse HEAD, no motor",
+      "conhecido_positivo": {
+        "o_que": "é um commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_suite_codigo",
+      "valor": 0,
+      "comando": "python3 -m publisher.series_paises_test",
+      "conhecido_positivo": {
+        "o_que": "a suíte diz quantas conferências fez",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_suite_conferencias",
+      "valor": 27,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha PASS existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_suite_plantas",
+      "valor": 12,
+      "comando": "o mesmo, as plantas que morderam",
+      "conhecido_positivo": {
+        "o_que": "a planta «um ponto trocado» está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_gerador_codigo",
+      "valor": 0,
+      "comando": "python3 publisher/series_paises.py --site <worktree do sítio>",
+      "conhecido_positivo": {
+        "o_que": "a linha PASS existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_gerador_pontos",
+      "valor": 280,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a série da pobreza diz «a par de AT, SE»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_travessia_seca_codigo",
+      "valor": 0,
+      "comando": "python3 publisher/export_series.py --site <worktree do sítio>",
+      "conhecido_positivo": {
+        "o_que": "a linha PASS existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_travessia_escrita_codigo",
+      "valor": 0,
+      "comando": "python3 publisher/export_series.py --site <worktree do sítio> --write",
+      "conhecido_positivo": {
+        "o_que": "a travessia escreveu os doze ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_travessia_ficheiros_mudados_no_sitio",
+      "valor": 0,
+      "comando": "git status --porcelain sobre o que a travessia escreve, depois de a escrever outra vez",
+      "conhecido_positivo": {
+        "o_que": "o mesmo git status vê um ficheiro plantado na pasta das séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_cruzamento_com_origem_codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> node scripts/check-cruzamento.mjs --with-origin",
+      "conhecido_positivo": {
+        "o_que": "a linha das séries existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_cruzamento_series_contra_o_motor",
+      "valor": 10,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha das séries existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_core_gate_codigo",
+      "valor": 0,
+      "comando": "python3 -m core.gate, no motor",
+      "conhecido_positivo": {
+        "o_que": "a suíte do bloco está no portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_pedidos",
+      "valor": 37,
+      "comando": "as linhas de indicators/out/ue1-2026-09-29/pedidos.jsonl, no motor",
+      "conhecido_positivo": {
+        "o_que": "o primeiro é o RDF da Áustria",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_pedidos_lidos",
+      "valor": 37,
+      "comando": "o mesmo, os de estado «lido»",
+      "conhecido_positivo": {
+        "o_que": "o da dívida pública está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_pedidos_ao_servico_das_publicacoes",
+      "valor": 27,
+      "comando": "o mesmo, pelo anfitrião",
+      "conhecido_positivo": {
+        "o_que": "o anfitrião aparece",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_pedidos_ao_eurostat",
+      "valor": 10,
+      "comando": "o mesmo, pelo anfitrião",
+      "conhecido_positivo": {
+        "o_que": "o anfitrião aparece",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_segundos_do_primeiro_ao_ultimo_pedido",
+      "valor": 5,
+      "comando": "a diferença entre a primeira e a última timestamp_utc do registo",
+      "conhecido_positivo": {
+        "o_que": "as horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_espera_com_o_cliente_partilhado",
+      "valor": 2,
+      "comando": "cliente() do pedir.py corrigido, duas chamadas seguidas ao regulador do mesmo anfitrião, em segundos",
+      "conhecido_positivo": {
+        "o_que": "o mesmo cliente volta nas duas chamadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_ficheiros_do_sitio_no_programa",
+      "valor": 84,
+      "comando": "node design/especime-v3/medicoes/ue1-2026-09-29/tipos-ue1.mjs (tsc -p tsconfig.check.json --listFilesOnly)",
+      "conhecido_positivo": {
+        "o_que": "astro.config.mjs, que o include nomeia, está na lista, e a corrida é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_series_no_programa",
+      "valor": true,
+      "comando": "o mesmo, src/lib/series.mjs",
+      "conhecido_positivo": {
+        "o_que": "a mesma lista tem src/tipos.d.ts",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_faixa_dos_testes_no_programa",
+      "valor": false,
+      "comando": "o mesmo, tests/cartao/faixa.mjs",
+      "conhecido_positivo": {
+        "o_que": "a mesma lista tem src/lib/series.mjs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_series_do_portao_no_programa",
+      "valor": false,
+      "comando": "o mesmo, scripts/series-do-portao.mjs",
+      "conhecido_positivo": {
+        "o_que": "a mesma lista tem src/lib/faixa-da-uniao.mjs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_corrida_limpa_codigo",
+      "valor": 0,
+      "comando": "npm run typecheck, corrido pelo guião antes das plantas",
+      "conhecido_positivo": {
+        "o_que": "a corrida é desta cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_planta_em_series_codigo",
+      "valor": 1,
+      "comando": "npm run typecheck com um nome de tipo que não existe na linha de «@returns {x is Serie}» de src/lib/series.mjs",
+      "conhecido_positivo": {
+        "o_que": "a queixa TS2304 aponta essa linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_planta_em_series_linha",
+      "valor": 70,
+      "comando": "o mesmo, a linha",
+      "conhecido_positivo": {
+        "o_que": "a queixa TS2304 aponta essa linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_plantas_fora_do_programa_a_zero",
+      "valor": 2,
+      "comando": "a mesma anotação acrescentada no fim de tests/cartao/faixa.mjs e de scripts/series-do-portao.mjs",
+      "conhecido_positivo": {
+        "o_que": "a mesma anotação fecha o typecheck em src/lib/series.mjs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_plantas_repostas",
+      "valor": 3,
+      "comando": "o sha256 de cada ficheiro antes e depois da planta",
+      "conhecido_positivo": {
+        "o_que": "as plantas estão no manifesto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tipos_checkjs_do_tsconfig_json",
+      "valor": false,
+      "comando": "tsconfig.json, compilerOptions.checkJs",
+      "conhecido_positivo": {
+        "o_que": "o do tsconfig.check.json lê-se true pelo mesmo leitor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_primeiro_pedido",
+      "valor": "2026-09-29T14:11:43Z",
+      "comando": "a primeira linha de indicators/out/ue1-2026-09-29/pedidos.jsonl, no motor (commit da6df0b)",
+      "conhecido_positivo": {
+        "o_que": "o registo tem 37 pedidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_fim_dos_portoes",
+      "valor": "2026-09-29T16:16:29Z",
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é uma hora UTC",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_segundos_do_primeiro_pedido_ao_fim_dos_portoes",
+      "valor": 7486,
+      "comando": "a diferença entre as duas horas acima",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos_da_sessao_ate_aqui",
+      "valor": 951859,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 14 048 141 (o que restava, lido à mão antes de escrever este ficheiro)",
+      "conhecido_positivo": {
+        "o_que": "o contador desceu durante o bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos_da_sessao_no_fecho",
+      "valor": 1219541,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 13 780 459 (o que restava, lido à mão antes do último commit, depois do relatório)",
+      "conhecido_positivo": {
+        "o_que": "é maior do que a leitura ao fim dos portões (951 859)",
+        "encontrado": true
+      }
+    }
+  ]
+}

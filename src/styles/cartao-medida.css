@@ -147,6 +147,20 @@
   overflow-wrap: break-word;
 }
 
+/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026).
+   A da Comissão, por baixo da régua e da faixa, na letra da leitura, que era
+   onde ela estava antes de ter um bloco próprio. Sem cor: é uma ressalva sobre
+   como ler a comparação, e não um veredicto. */
+.cartao-medida-ressalva {
+  margin: 6px 0 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
 /* A FRASE DO QUE A MEDIDA MEDE. É prosa, e compõe-se como prosa: a mesma letra
    do corpo, um pouco mais pequena do que o nome, com a medida de linha curta que
    uma frase de uma linha e meia pede. */
@@ -194,4 +208,122 @@
   .cartao-medida-num {
     font-size: 24px;
   }
+}
+
+/* ---------------------------------------------------------------------------
+ * A FAIXA DA UNIÃO (bloco UE1, 29.09.2026): onde Portugal fica entre os 27
+ * ---------------------------------------------------------------------------
+ * Por baixo do número, uma linha do valor mais baixo ao mais alto dos 27, uma
+ * marca por país a cinzento, a de Portugal maior e a tinta, e a média da União
+ * como um traço a tinta. SEM COR: a IDENTIDADE §2 guarda-a para um valor de
+ * referência publicado, e um lugar num ordenamento diz-se por palavras. As
+ * posições escrevem-se em percentagem no próprio elemento, e a F19 do
+ * `check:formas` refá-las a partir dos valores.
+ *
+ * Três andares no desenho: o nome de Portugal por cima do eixo, o eixo com as
+ * marcas, e o rótulo da média da União por baixo, para que os dois nunca se
+ * sobreponham quando os valores estão juntos (na taxa de desemprego de 2025 são
+ * o mesmo). As pontas, com o nome e o valor, escrevem-se a seguir, em texto. */
+.cartao-medida-faixa {
+  display: grid;
+  gap: 4px;
+  margin: 4px 0 0;
+  max-width: 34rem;
+  min-width: 0;
+}
+.faixa-ue-desenho {
+  position: relative;
+  height: 48px;
+  margin: 0 6px;
+}
+.faixa-ue-eixo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 23px;
+  height: 0;
+  border-top: 1px solid var(--axis);
+}
+.faixa-ue-marca {
+  position: absolute;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  margin: -4px 0 0 -3.5px;
+  border-radius: 50%;
+  background: var(--g2);
+}
+.faixa-ue-marca.faixa-ue-portugal {
+  width: 11px;
+  height: 11px;
+  margin: -6px 0 0 -5.5px;
+  background: var(--ink);
+  z-index: 2;
+}
+.faixa-ue-marca.faixa-ue-uniao {
+  width: 0;
+  height: 15px;
+  margin: -8px 0 0 -1px;
+  border-radius: 0;
+  background: none;
+  border-left: 2px solid var(--ink);
+  z-index: 1;
+}
+.faixa-ue-rotulo {
+  position: absolute;
+  white-space: nowrap;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--ink);
+  transform: translateX(-50%);
+}
+.faixa-ue-rotulo[data-ancora='inicio'] {
+  transform: translateX(-4px);
+}
+.faixa-ue-rotulo[data-ancora='fim'] {
+  transform: translateX(calc(-100% + 4px));
+}
+.faixa-ue-rotulo-portugal {
+  top: 0;
+  font-weight: 600;
+}
+.faixa-ue-rotulo-uniao {
+  top: 33px;
+  color: var(--muted);
+}
+.faixa-ue-pontas {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px 12px;
+  flex-wrap: wrap;
+  margin: 0;
+  font-family: var(--f-prosa);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.faixa-ue-ponta-alto {
+  margin-left: auto;
+  text-align: right;
+}
+.faixa-ue-valor,
+.faixa-ue-conta,
+.faixa-ue-lugar {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.faixa-ue-frase {
+  margin: 2px 0 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+.faixa-ue-porta {
+  margin: 0;
+  font-family: var(--f-prosa);
+  font-size: 13px;
 }

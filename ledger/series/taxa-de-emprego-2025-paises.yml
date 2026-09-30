@@ -1,0 +1,162 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "taxa-de-emprego-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Employment and labour force by sex and age - annual data"
+name_source: "label"
+unit: "% da população"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Employment and labour force by sex and age - annual data"
+  edition: "lfsi_emp_a, freq=A, indic_em=EMP_LFS, sex=T, age=Y20-64, unit=PC_POP"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP"
+access_date: "2026-09-29"
+published_at: "2026-09-10"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "taxa-de-emprego-2025-ue"
+linha_de_portugal: "taxa-de-emprego-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "d": "definition differs (see metadata)"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "72,8"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Belgium — 2025: 72.8"
+    bandeira: null
+  - geo: "BG"
+    valor: "77,0"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Bulgaria — 2025: 77.0"
+    bandeira: null
+  - geo: "CZ"
+    valor: "82,9"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Czechia — 2025: 82.9"
+    bandeira: null
+  - geo: "DK"
+    valor: "79,8"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Denmark — 2025: 79.8"
+    bandeira: null
+  - geo: "DE"
+    valor: "81,1"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Germany — 2025: 81.1"
+    bandeira: null
+  - geo: "EE"
+    valor: "81,7"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Estonia — 2025: 81.7"
+    bandeira: null
+  - geo: "IE"
+    valor: "80,2"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Ireland — 2025: 80.2"
+    bandeira: null
+  - geo: "EL"
+    valor: "71,0"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Greece — 2025: 71.0"
+    bandeira: null
+  - geo: "ES"
+    valor: "72,4"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Spain — 2025: 72.4 d"
+    bandeira: "d"
+  - geo: "FR"
+    valor: "75,4"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — France — 2025: 75.4 d"
+    bandeira: "d"
+  - geo: "HR"
+    valor: "74,4"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Croatia — 2025: 74.4"
+    bandeira: null
+  - geo: "IT"
+    valor: "67,6"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Italy — 2025: 67.6"
+    bandeira: null
+  - geo: "CY"
+    valor: "81,3"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Cyprus — 2025: 81.3"
+    bandeira: null
+  - geo: "LV"
+    valor: "78,2"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Latvia — 2025: 78.2"
+    bandeira: null
+  - geo: "LT"
+    valor: "80,0"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Lithuania — 2025: 80.0"
+    bandeira: null
+  - geo: "LU"
+    valor: "73,9"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Luxembourg — 2025: 73.9"
+    bandeira: null
+  - geo: "HU"
+    valor: "81,1"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Hungary — 2025: 81.1"
+    bandeira: null
+  - geo: "MT"
+    valor: "83,6"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Malta — 2025: 83.6"
+    bandeira: null
+  - geo: "NL"
+    valor: "83,4"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Netherlands — 2025: 83.4"
+    bandeira: null
+  - geo: "AT"
+    valor: "77,6"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Austria — 2025: 77.6"
+    bandeira: null
+  - geo: "PL"
+    valor: "78,8"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Poland — 2025: 78.8"
+    bandeira: null
+  - geo: "PT"
+    valor: "79,6"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Portugal — 2025: 79.6"
+    bandeira: null
+  - geo: "RO"
+    valor: "69,0"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Romania — 2025: 69.0"
+    bandeira: null
+  - geo: "SI"
+    valor: "78,3"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Slovenia — 2025: 78.3"
+    bandeira: null
+  - geo: "SK"
+    valor: "78,1"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Slovakia — 2025: 78.1"
+    bandeira: null
+  - geo: "FI"
+    valor: "76,3"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Finland — 2025: 76.3"
+    bandeira: null
+  - geo: "SE"
+    valor: "81,8"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — Sweden — 2025: 81.8"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "76,1"
+    excerto: "Employment and labour force by sex and age - annual data — Employment indicator: Total employment (resident population concept - LFS) — Age class: From 20 to 64 years — Percentage of total population — European Union - 27 countries (from 2020) — 2025: 76.1"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «taxa-de-emprego-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «taxa-de-emprego-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, indic_em=EMP_LFS, sex=T, age=Y20-64, unit=PC_POP, time=2025. Corpo alojado: ue1/037-eurostat-taxa-de-emprego-2025-paises.json (sha256 e8980462017674c7…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

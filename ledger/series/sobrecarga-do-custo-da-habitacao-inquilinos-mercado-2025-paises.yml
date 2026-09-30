@@ -1,0 +1,163 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Housing cost overburden rate by tenure status - EU-SILC survey"
+name_source: "label"
+unit: "%"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Housing cost overburden rate by tenure status - EU-SILC survey"
+  edition: "tessi164, freq=A, unit=PC, tenure=RENT_MKT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tessi164/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020"
+access_date: "2026-09-29"
+published_at: "2026-09-17"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue"
+linha_de_portugal: "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "b": "break in time series"
+  "p": "provisional"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "25,4"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Belgium — 2025: 25.4"
+    bandeira: null
+  - geo: "BG"
+    valor: "31,7"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Bulgaria — 2025: 31.7"
+    bandeira: null
+  - geo: "CZ"
+    valor: "26,0"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Czechia — 2025: 26.0"
+    bandeira: null
+  - geo: "DK"
+    valor: "23,6"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Denmark — 2025: 23.6 b"
+    bandeira: "b"
+  - geo: "DE"
+    valor: "13,2"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Germany — 2025: 13.2"
+    bandeira: null
+  - geo: "EE"
+    valor: "37,0"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Estonia — 2025: 37.0"
+    bandeira: null
+  - geo: "IE"
+    valor: "24,0"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Ireland — 2025: 24.0"
+    bandeira: null
+  - geo: "EL"
+    valor: "26,0"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Greece — 2025: 26.0"
+    bandeira: null
+  - geo: "ES"
+    valor: "26,8"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Spain — 2025: 26.8"
+    bandeira: null
+  - geo: "FR"
+    valor: "18,7"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — France — 2025: 18.7"
+    bandeira: null
+  - geo: "HR"
+    valor: "19,8"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Croatia — 2025: 19.8"
+    bandeira: null
+  - geo: "IT"
+    valor: "22,3"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Italy — 2025: 22.3"
+    bandeira: null
+  - geo: "CY"
+    valor: "13,4"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Cyprus — 2025: 13.4"
+    bandeira: null
+  - geo: "LV"
+    valor: "18,1"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Latvia — 2025: 18.1"
+    bandeira: null
+  - geo: "LT"
+    valor: "27,4"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Lithuania — 2025: 27.4 p"
+    bandeira: "p"
+  - geo: "LU"
+    valor: "23,2"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Luxembourg — 2025: 23.2 b"
+    bandeira: "b"
+  - geo: "HU"
+    valor: "38,4"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Hungary — 2025: 38.4"
+    bandeira: null
+  - geo: "MT"
+    valor: "21,5"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Malta — 2025: 21.5"
+    bandeira: null
+  - geo: "NL"
+    valor: "39,5"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Netherlands — 2025: 39.5"
+    bandeira: null
+  - geo: "AT"
+    valor: "14,5"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Austria — 2025: 14.5"
+    bandeira: null
+  - geo: "PL"
+    valor: "14,4"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Poland — 2025: 14.4"
+    bandeira: null
+  - geo: "PT"
+    valor: "27,2"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Portugal — 2025: 27.2"
+    bandeira: null
+  - geo: "RO"
+    valor: "56,0"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Romania — 2025: 56.0"
+    bandeira: null
+  - geo: "SI"
+    valor: "19,7"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Slovenia — 2025: 19.7"
+    bandeira: null
+  - geo: "SK"
+    valor: "16,8"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Slovakia — 2025: 16.8"
+    bandeira: null
+  - geo: "FI"
+    valor: "12,3"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Finland — 2025: 12.3"
+    bandeira: null
+  - geo: "SE"
+    valor: "18,4"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — Sweden — 2025: 18.4"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "18,6"
+    excerto: "Housing cost overburden rate by tenure status - EU-SILC survey — Annual — Percentage — Tenure status: Tenant, rent at market price — European Union - 27 countries (from 2020) — 2025: 18.6"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, tenure=RENT_MKT, time=2025. Corpo alojado: ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json (sha256 8e482910fe1af170…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

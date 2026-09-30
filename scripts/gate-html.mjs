@@ -5,6 +5,46 @@ import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
+import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
+/**
+ * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
+ * pelo lugar de direção). As palavras e os algarismos declarados (`nl`) da
+ * definição da medida em `DEFINICOES_DAS_MEDIDAS` (`src/data/figuras.mjs`), que
+ * vem citada da Comissão ou do Eurostat, juntos pela ordem; `null` quando a
+ * medida não a tem ou a definição traz um pedaço que não é palavra nem algarismo
+ * declarado, e aí o recibo não se confere por texto e o portão di-lo.
+ *
+ * A FORMA DO RECIBO DA SÉRIE (a passagem UE1e, 30.09.2026, pela §1.140): com
+ * `forma` igual a `'serie'`, lê a forma que a declaração tem para o recibo da
+ * série (`serie`, a pergunta do cartão sem o lugar) onde ela existe, e a do
+ * cartão onde não existe, que é a regra do `SerieView.astro`.
+ *
+ * @param {string} id @param {'pt'|'en'} lang @param {'cartao'|'serie'} [forma]
+ * @returns {string|null}
+ */
+function definicaoDoPortao(id, lang, forma = 'cartao') {
+  const entrada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id];
+  const partes = (forma === 'serie' && entrada?.serie ? entrada.serie : entrada)?.[lang];
+  if (!Array.isArray(partes)) return null;
+  let texto = '';
+  for (const p of partes) {
+    if (typeof p === 'string') texto += p;
+    else if (p && typeof p === 'object' && !Array.isArray(p) && 'nl' in p) texto += String(p.nl);
+    else return null;
+  }
+  return normalizeWhitespace(texto);
+}
+/**
+ * O QUE NOMEIA PORTUGAL NA DEFINIÇÃO DE UM RECIBO DE SÉRIE (a passagem UE1e,
+ * 30.09.2026, pela §1.140). O recibo é a tabela dos 27 países, e uma definição
+ * que nomeie Portugal faz o número de cada outro país ler-se como se fosse sobre
+ * Portugal. O nome, nas duas edições, e os gentílicos, que o dizem por outras
+ * palavras («português», «portuguesa», «Portuguese»).
+ */
+const NOMEIA_PORTUGAL = /\bPortugal\b|\bportugu[eê]s(?:es)?\b|\bportuguesas?\b|\bPortuguese\b/i;
+/** A pergunta do cartão sem o lugar: sem « em Portugal» ou « in Portugal», uma vez. @param {string} t */
+const semOLugar = (t) => t.replace(/ (?:em|in) Portugal\b/, '');
 /**
  * Portão (a) e (c): varrimento do HTML construído.
  *
@@ -84,7 +124,7 @@ import {
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
+import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
@@ -211,6 +251,11 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+/* AS LINHAS DE SÉRIE E A TABELA DOS NOMES DOS PAÍSES (bloco UE1, 29.09.2026),
+   pelo leitor próprio dos portões (`scripts/series-do-portao.mjs`), e não pelo
+   módulo que as páginas usam. */
+const SERIES_DO_PORTAO = lerSeriesDoPortao();
+const PAISES_DO_PORTAO = lerPaisesDoPortao();
 
 /**
  * A prova, nas duas edições. As chaves e os valores são os mesmos; o que muda
@@ -488,6 +533,18 @@ const avisos = [];
 const idsUsados = new Set();
 /** Páginas de linha construídas, por «língua:id» — para conferir que existem todas. */
 const linhasConstruidas = new Set();
+/** UE1: as páginas de série construídas, por «língua:id», e as origens das séries conferidas. */
+const seriesConstruidas = new Set();
+/* UE1b: as portas dos recibos das linhas portuguesas para as suas séries, e as
+   legendas das marcas dos recibos das séries, vistas. */
+const portasDasSeriesVistas = new Set();
+const UE1B = { portas: 0, legendas: 0, marcasNasLegendas: 0 };
+/* UE1c e UE1d: a definição declarada de cada medida, nos recibos das séries. */
+const UE1D = { definicoes: 0 };
+/* UE1e: os recibos das séries sem Portugal na definição, os que usam a forma do
+   recibo da série, e as formas declaradas. */
+const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
+const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 let ficheiros = 0;
 let documentos = 0;
 /** O rótulo de IA, contado pelo lado da página: rodapé, topo, ficha e frase. */
@@ -944,6 +1001,12 @@ function eCitado(no) {
   const attrs = no.attributes ?? {};
   if ('data-verbatim' in attrs) return true;
   if ('data-linha-campo' in attrs) return true;
+  /* UE1 (29.09.2026): um campo de uma linha de série e o nome de um país são
+     transcritos (da resposta da fonte e da tabela de autoridade dos países), e
+     o portão compara-os carácter a carácter, como a um `data-linha-campo`. A
+     edição de uma série diz «sector=S13», que é o nome de uma dimensão do
+     Eurostat e não prosa da casa. */
+  if ('data-serie-campo' in attrs || 'data-pais' in attrs) return true;
   /* Uma unidade da página de leitura é o texto de um documento fixado, e é
      comparada carácter a carácter com ele (a nona origem, L2). A grafia dela
      não é da casa: converter um travessão que o documento imprime seria a
@@ -4404,6 +4467,101 @@ for (const file of ficheirosHtml(DIST)) {
       linhasConstruidas.add(`${rota.lang}:${claimDaPagina.id}`);
     }
   }
+  if (rota?.key === 'serie') {
+    if (!SERIES_DO_PORTAO.has(rota.params.slug)) {
+      err(`há uma página de série para "${rota.params.slug}", que não é nenhuma série de ledger/series/.`);
+    } else {
+      seriesConstruidas.add(`${rota.lang}:${rota.params.slug}`);
+      /* UE1b (29.09.2026): o que quer dizer cada marca, ao lado da tabela. As
+         marcas da legenda são as da tabela, nem mais nem menos, e as da série;
+         as palavras de cada uma são as declaradas da faixa; a definição vai por
+         `data-serie-campo="bandeiras.<marca>"`, que o laço das origens compara
+         com a série, carácter a carácter. */
+      const sid = rota.params.slug;
+      const serie = SERIES_DO_PORTAO.get(sid);
+      /* O QUE A MEDIDA CONTA (a passagem UE1c, os achados 9 e 10 da leitura a
+         frio; na forma da UE1d, 29.09.2026): por baixo do título, a definição
+         declarada da medida, carácter a carácter, em cada um dos vinte recibos. */
+      {
+        const linguaDoRecibo = rota.lang === 'en' ? 'en' : 'pt';
+        const medidaDaSerie = String(serie.linha_de_portugal);
+        /* UE1e: a forma do recibo da série, onde a declaração a tem, e a do cartão onde não tem. */
+        const temForma = Boolean(/** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[medidaDaSerie]?.serie);
+        const esperada = definicaoDoPortao(medidaDaSerie, linguaDoRecibo, 'serie');
+        const frases = root.querySelectorAll('[data-serie-o-que-conta]');
+        if (esperada === null) {
+          err(`UE1d: a medida «${serie.linha_de_portugal}» da série «${sid}» não tem uma definição declarada que o portão leia em DEFINICOES_DAS_MEDIDAS.`);
+        } else if (frases.length !== 1 || frases[0].getAttribute('data-serie-o-que-conta') !== sid) {
+          err(`UE1d: o recibo da série «${sid}» tem ${frases.length} definição(ões) da medida, e tem de ter uma, a declarada.`);
+        } else if (textoTranscrito(frases[0]) !== esperada) {
+          err(`UE1d: o recibo da série «${sid}» diz «${textoTranscrito(frases[0]).slice(0, 90)}» e a definição declarada${temForma ? ' para o recibo da série' : ''} é «${esperada.slice(0, 90)}».`);
+        } else {
+          UE1D.definicoes++;
+          if (temForma) UE1E.formaDaSerie++;
+        }
+        /* UE1e: a definição de nenhum recibo de série nomeia Portugal, nem a que
+           se rende nem a que a declaração manda render. */
+        const nomeia = [...frases.map((f) => textoTranscrito(f)), esperada ?? ''].find((t) => NOMEIA_PORTUGAL.test(t));
+        if (nomeia !== undefined) {
+          err(`UE1e: a definição do recibo da série «${sid}» nomeia Portugal («${String(nomeia.match(NOMEIA_PORTUGAL)?.[0])}»), e o recibo é a tabela dos 27 países: o número de cada outro país lia-se como se fosse sobre Portugal.`);
+        } else if (frases.length === 1) {
+          UE1E.semPortugal++;
+        }
+      }
+      const naTabela = [...new Set(root.querySelectorAll('[data-serie-tabela] [data-ponto-bandeira]').map((e) => textoTranscrito(e)))];
+      const naSerie = Object.keys(serie.bandeiras ?? {});
+      const legenda = root.querySelectorAll(`[data-serie-marcas="${sid}"]`);
+      const entradas = legenda.length === 1 ? legenda[0].querySelectorAll('[data-serie-marca]') : [];
+      const naLegenda = entradas.map((e) => String(e.getAttribute('data-serie-marca') ?? '').split('#')[1]);
+      const mesmas = (a, b) => [...a].sort().join(',') === [...b].sort().join(',');
+      if (naTabela.length === 0) {
+        if (legenda.length) err(`UE1b: o recibo da série «${sid}» tem legenda das marcas e a tabela não tem marca nenhuma.`);
+      } else if (legenda.length !== 1) {
+        err(`UE1b: o recibo da série «${sid}» tem ${legenda.length} legenda(s) das marcas e a tabela mostra ${naTabela.join(', ')}; tem de ter uma, ao lado da tabela.`);
+      } else if (!mesmas(naLegenda, naTabela) || !mesmas(naLegenda, naSerie) || new Set(naLegenda).size !== naLegenda.length) {
+        err(`UE1b: a legenda do recibo da série «${sid}» diz as marcas ${naLegenda.join(', ') || 'nenhuma'}; a tabela mostra ${naTabela.join(', ')} e a série define ${naSerie.join(', ')}.`);
+      } else {
+        UE1B.legendas++;
+        const lingua = rota.lang === 'en' ? 'en' : 'pt';
+        for (const e of entradas) {
+          const marca = String(e.getAttribute('data-serie-marca')).split('#')[1];
+          const entrada = e.closest('.serie-marca-entrada');
+          const palavras = entrada?.querySelector(`[data-serie-marca-palavras="${sid}#${marca}"]`);
+          const definicao = entrada?.querySelector(`[data-serie][data-serie-campo="bandeiras.${marca}"]`);
+          if (textoTranscrito(e) !== marca) err(`UE1b: a legenda do recibo da série «${sid}» escreve a marca «${textoTranscrito(e)}» onde diz «${marca}».`);
+          if (!palavras || textoTranscrito(palavras) !== PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca]) {
+            err(`UE1b: na legenda do recibo da série «${sid}», as palavras da marca «${marca}» são «${palavras ? textoTranscrito(palavras) : 'nenhumas'}» e as declaradas são «${PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca] ?? 'nenhumas'}».`);
+          }
+          if (!definicao || definicao.getAttribute('data-serie') !== sid) err(`UE1b: na legenda do recibo da série «${sid}», a marca «${marca}» não tem a definição da série.`);
+          UE1B.marcasNasLegendas++;
+        }
+      }
+    }
+  }
+  /* UE1b (29.09.2026): a porta do recibo da linha portuguesa para a sua série, e
+     só ela. O recibo de cada linha que é a portuguesa de uma série de países tem
+     uma porta, dentro do bloco «O enquadramento», para o recibo da série na
+     edição da página; nenhuma outra página tem uma. */
+  {
+    const portas = root.querySelectorAll('[data-porta-da-serie]');
+    if (rota?.key === 'linha' && claimDaPagina) {
+      const serieDaPagina = serieDaLinhaDoPortao(SERIES_DO_PORTAO, claimDaPagina.id);
+      if (serieDaPagina) {
+        const destino = routePath('serie', rota.lang, { slug: serieDaPagina.id });
+        const certa = portas.filter((a) => a.getAttribute('data-porta-da-serie') === serieDaPagina.id && a.getAttribute('href') === destino && a.closest('#enquadramento'));
+        if (portas.length !== 1 || certa.length !== 1) {
+          err(`UE1b: o recibo da linha «${claimDaPagina.id}» tem ${portas.length} porta(s) para uma série, e tem de ter uma, no bloco «O enquadramento», para «${destino}».`);
+        } else {
+          portasDasSeriesVistas.add(`${rota.lang}:${serieDaPagina.id}`);
+          UE1B.portas++;
+        }
+      } else if (portas.length) {
+        err(`UE1b: o recibo da linha «${claimDaPagina.id}» tem uma porta para a série «${portas[0].getAttribute('data-porta-da-serie')}», e a linha não é a portuguesa de série nenhuma.`);
+      }
+    } else if (portas.length) {
+      err(`UE1b: esta página tem ${portas.length} porta(s) «data-porta-da-serie», que só o recibo da linha portuguesa de uma série leva.`);
+    }
+  }
   /* C1: a I143 abrange também todos os cartões, qualquer que seja a família. */
   const separacao = conferirValorUnidade(root);
   titulosDeLinhaConferidos += separacao.contas.titulos;
@@ -5533,6 +5691,115 @@ for (const file of ficheirosHtml(DIST)) {
       const antes = erros.length;
       auditaSelo(el, id, rota.lang, err);
       if (erros.length > antes) valoresSemSelo++;
+    }
+    aRemover.push(el);
+  }
+
+  /**
+   * ---------------------------------------------------------------------------
+   * AS ORIGENS DAS LINHAS DE SÉRIE (bloco UE1, 29.09.2026)
+   * ---------------------------------------------------------------------------
+   * Sete marcas, e todas são comparações e não dispensas, contra o leitor
+   * próprio dos portões (`scripts/series-do-portao.mjs`):
+   *   · `data-ponto="<série>#<geo>"`, o valor de um ponto, pela forma do valor
+   *     (a regra do `data-claim`);
+   *   · `data-ponto-bandeira`, a marca da fonte de um ponto, carácter a carácter;
+   *   · `data-pais="<geo>"`, o nome de um país, que tem de ser o da tabela dos
+   *     nomes na língua da página: nenhum nome de país se escreve à mão;
+   *   · `data-serie` com `data-serie-campo`, um campo de texto da série (a
+   *     unidade pela tabela das unidades, como a de uma linha);
+   *   · `data-ponto-conta="<série>"`, quantos países a série tem, recontado;
+   *   · `data-ponto-lugar="<série>"`, o lugar de Portugal, recontado (1 mais o
+   *     número de países com valor maior);
+   *   · `data-tabela-dos-paises="lido_em"`, o dia em que a tabela foi lida.
+   * As datas de uma série vão pelo motivo `data-da-linha` com
+   * `data-linha-de-serie`, e é o `check:formas` que as recompõe (F1).
+   */
+  const linguaDaSerie = rota?.lang ?? linguaPagina ?? 'pt';
+  const serieDaMarca = (el, atributo) => {
+    const [sid, geo] = String(el.getAttribute(atributo) ?? '').split('#');
+    const serie = SERIES_DO_PORTAO.get(sid) ?? null;
+    return { sid, geo, serie, ponto: serie?.pontos?.find((p) => p.geo === geo) ?? null };
+  };
+  for (const el of body.querySelectorAll('[data-ponto]')) {
+    ORIGENS_DAS_SERIES.pontos++;
+    const { sid, geo, ponto } = serieDaMarca(el, 'data-ponto');
+    if (!ponto) {
+      err(`UE1: um valor diz vir do ponto «${geo}» da série «${sid}», e a série não o tem.`);
+    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(String(ponto.valor))) {
+      err(
+        `UE1: o ponto «${geo}» da série «${sid}» foi renderizado como «${textoTranscrito(el)}» e a ` +
+          `série diz «${ponto.valor}». Dentro de [data-ponto] vai o valor do ponto e mais nada.`,
+      );
+    }
+    aRemover.push(el);
+  }
+  for (const el of body.querySelectorAll('[data-ponto-bandeira]')) {
+    ORIGENS_DAS_SERIES.bandeiras++;
+    const { sid, geo, ponto } = serieDaMarca(el, 'data-ponto-bandeira');
+    if (!ponto || !ponto.bandeira || textoTranscrito(el) !== String(ponto.bandeira)) {
+      err(`UE1: a marca da fonte do ponto «${geo}» da série «${sid}» não é a que a série escreve («${ponto?.bandeira ?? 'nenhuma'}»).`);
+    }
+    aRemover.push(el);
+  }
+  for (const el of body.querySelectorAll('[data-pais]')) {
+    ORIGENS_DAS_SERIES.paises++;
+    const geo = el.getAttribute('data-pais') ?? '';
+    const pais = PAISES_DO_PORTAO.get(geo);
+    const esperado = pais ? (linguaDaSerie === 'en' ? pais.en : pais.pt) : null;
+    if (!esperado) {
+      err(`UE1: um nome diz ser do país «${geo}», que a tabela dos nomes não tem.`);
+    } else if (textoTranscrito(el) !== esperado) {
+      err(
+        `UE1: o nome do país «${geo}» foi renderizado como «${textoTranscrito(el)}» e a tabela de ` +
+          `autoridade diz «${esperado}». Nenhum nome de país se escreve à mão.`,
+      );
+    }
+    aRemover.push(el);
+  }
+  for (const el of body.querySelectorAll('[data-serie-campo]')) {
+    ORIGENS_DAS_SERIES.campos++;
+    const sid = el.getAttribute('data-serie') ?? '';
+    const campo = el.getAttribute('data-serie-campo') ?? '';
+    const serie = SERIES_DO_PORTAO.get(sid);
+    let esperado = null;
+    if (serie) {
+      if (campo === 'unit') esperado = unidadeDaLinha(serie.unit, linguaDaSerie).texto;
+      else if (campo.startsWith('document.')) esperado = serie.document?.[campo.slice('document.'.length)] ?? null;
+      else if (campo.startsWith('bandeiras.')) esperado = serie.bandeiras?.[campo.slice('bandeiras.'.length)] ?? null;
+      else if (['id', 'source', 'source_url', 'excerpt'].includes(campo)) esperado = serie[campo] ?? null;
+    }
+    if (esperado === null || esperado === undefined) {
+      err(`UE1: o campo «${campo}» da série «${sid}» não é um campo que o recibo possa render.`);
+    } else if (textoTranscrito(el) !== normalizeWhitespace(String(esperado))) {
+      err(`UE1: o campo «${campo}» da série «${sid}» foi renderizado como «${textoTranscrito(el).slice(0, 80)}» e a série diz «${String(esperado).slice(0, 80)}».`);
+    }
+    aRemover.push(el);
+  }
+  for (const [atributo, chave] of [['data-ponto-conta', 'conta'], ['data-ponto-lugar', 'lugar']]) {
+    for (const el of body.querySelectorAll(`[${atributo}]`)) {
+      ORIGENS_DAS_SERIES[chave === 'conta' ? 'contas' : 'lugares']++;
+      const sid = el.getAttribute(atributo) ?? '';
+      const serie = SERIES_DO_PORTAO.get(sid);
+      let esperado = null;
+      try {
+        esperado = serie ? String(contaDaFaixa(serie)[chave]) : null;
+      } catch (e) {
+        err(`UE1: a série «${sid}» não se reconta: ${e.message}`);
+      }
+      if (esperado === null) err(`UE1: «${atributo}» nomeia a série «${sid}», que não existe.`);
+      else if (textoTranscrito(el) !== esperado) {
+        err(`UE1: «${atributo}» da série «${sid}» diz «${textoTranscrito(el)}» e a recontagem dos pontos dá «${esperado}».`);
+      }
+      aRemover.push(el);
+    }
+  }
+  for (const el of body.querySelectorAll('[data-tabela-dos-paises]')) {
+    ORIGENS_DAS_SERIES.tabela++;
+    const dias = [...new Set([...PAISES_DO_PORTAO.values()].map((p) => String(p.lido_em).slice(0, 10)))];
+    const esperado = dias.length === 1 ? dataDaCasaGate(dias[0]) : null;
+    if (el.getAttribute('data-tabela-dos-paises') !== 'lido_em' || textoTranscrito(el) !== esperado) {
+      err(`UE1: o dia da leitura da tabela dos nomes diz «${textoTranscrito(el)}» e a tabela dá «${esperado ?? `${dias.length} dias`}».`);
     }
     aRemover.push(el);
   }
@@ -8052,6 +8319,62 @@ for (const [id] of claims) {
     }
   }
 }
+/* UE1: uma página por série, nas duas edições, da mesma construção; e as origens
+   das séries vistas, porque um zero aqui seria um detetor que não viu nada. */
+for (const [id] of SERIES_DO_PORTAO) {
+  for (const lang of LANGS) {
+    if (!seriesConstruidas.has(`${lang}:${id}`)) {
+      erros.push({
+        rel: routePath('serie', lang, { slug: id }),
+        msg: `a série "${id}" não tem página construída na edição "${lang}". A faixa do cartão abre-a.`,
+      });
+    }
+  }
+}
+/* UE1d: a definição declarada em cada um dos recibos das séries, nas duas edições. */
+if (UE1D.definicoes !== LANGS.length * SERIES_DO_PORTAO.size) {
+  erros.push({ rel: 'ledger/series', msg: `UE1d: os recibos das séries têm ${UE1D.definicoes} definição(ões) declarada(s), e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
+}
+/* UE1e: cada forma do recibo da série é a pergunta do cartão sem o lugar, sem
+   mais nenhuma palavra mudada, e não nomeia Portugal; e os vinte recibos foram
+   vistos, cada um, sem Portugal na definição. */
+for (const [idDaForma, d] of Object.entries(/** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS))) {
+  if (!d?.serie) continue;
+  UE1E.formasDeclaradas++;
+  for (const lang of /** @type {const} */ (['pt', 'en'])) {
+    const doCartao = definicaoDoPortao(idDaForma, lang, 'cartao');
+    const daSerie = definicaoDoPortao(idDaForma, lang, 'serie');
+    if (doCartao === null || daSerie === null) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a pergunta de «${idDaForma}» (${lang}) não se lê como texto, no cartão ou na forma do recibo da série.` });
+      continue;
+    }
+    if (semOLugar(doCartao) === doCartao) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a pergunta do cartão de «${idDaForma}» (${lang}) não diz o lugar, e a forma do recibo da série é a do cartão sem o lugar: não tem razão de existir.` });
+    } else if (daSerie !== semOLugar(doCartao)) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a forma do recibo da série de «${idDaForma}» (${lang}) não é a pergunta do cartão sem o lugar: diz «${daSerie.slice(0, 90)}» e a do cartão sem o lugar é «${semOLugar(doCartao).slice(0, 90)}».` });
+    }
+    if (NOMEIA_PORTUGAL.test(daSerie)) {
+      erros.push({ rel: 'src/data/figuras.mjs', msg: `UE1e: a forma do recibo da série de «${idDaForma}» (${lang}) nomeia Portugal.` });
+    }
+  }
+}
+if (UE1E.semPortugal !== LANGS.length * SERIES_DO_PORTAO.size) {
+  erros.push({ rel: 'ledger/series', msg: `UE1e: ${UE1E.semPortugal} recibo(s) das séries vistos sem Portugal na definição, e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
+}
+/* UE1b: a porta de cada série, nas duas edições, no recibo da linha portuguesa. */
+for (const [id] of SERIES_DO_PORTAO) {
+  for (const lang of LANGS) {
+    if (!portasDasSeriesVistas.has(`${lang}:${id}`)) {
+      erros.push({
+        rel: routePath('serie', lang, { slug: id }),
+        msg: `UE1b: o recibo da linha portuguesa da série "${id}" não abre a série na edição "${lang}".`,
+      });
+    }
+  }
+}
+if (SERIES_DO_PORTAO.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
+  erros.push({ rel: 'ledger/series', msg: 'UE1: há séries e nenhuma página rendeu um ponto ou um nome de país: o detetor não viu nada.' });
+}
 /* O CONHECIDO-POSITIVO DA CÉLULA DO TÍTULO (bloco R1): uma construção com
    páginas de linha e nenhum título conferido é uma célula que não viu nada. */
 if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
@@ -8078,7 +8401,13 @@ console.log(
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
         : '') +
-      ` · ${paginasComONome} página(s) com o nome de quem responde`,
+      ` · ${paginasComONome} página(s) com o nome de quem responde` +
+      ` · séries: ${seriesConstruidas.size} página(s), ${ORIGENS_DAS_SERIES.pontos} ponto(s), ` +
+      `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
+      `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
+      ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
+      ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries` +
+      ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))`,
   ),
 );
 console.log(

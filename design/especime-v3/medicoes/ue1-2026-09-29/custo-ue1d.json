@@ -1,0 +1,41 @@
+{
+  "_": "O custo da passagem UE1d. As horas leem-se do git e dos ficheiros dos portões; os símbolos são a leitura, à mão, do contador que o ambiente mostra ao agente, e o total que a ferramenta reporta ao lugar de direção é o que conta.",
+  "medidas": {
+    "inicio_da_passagem": {
+      "valor": "2026-09-29T20:58:38Z",
+      "comando": "git show -s --format=%cI 42a368a3 (o commit das provas da UE1c)",
+      "o_que": "a hora leu-se",
+      "encontrado": true
+    },
+    "fim_dos_portoes": {
+      "valor": "2026-09-29T22:37:10Z",
+      "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1d/typecheck.fim",
+      "o_que": "o ficheiro existe e é uma hora UTC",
+      "encontrado": true
+    },
+    "segundos_da_passagem": {
+      "valor": 5912,
+      "comando": "a diferença entre as duas horas acima",
+      "o_que": "é positiva",
+      "encontrado": true
+    },
+    "segundos_de_espera_pelos_portoes": {
+      "valor": 435,
+      "comando": "a soma dos «esperei N s» das 6 linhas de design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1d-de17f63e/espera.log e design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1d/espera.log",
+      "o_que": "cada linha tem o seu número",
+      "encontrado": true
+    },
+    "simbolos_da_sessao_no_fecho_da_passagem": {
+      "valor": 2349730,
+      "comando": "15 000 000 (o total da sessão que o ambiente deu ao agente) menos 12650270 (o que restava, lido à mão antes do último commit da passagem)",
+      "o_que": "é maior do que a leitura do fecho da passagem UE1c",
+      "encontrado": true
+    },
+    "simbolos_da_passagem": {
+      "valor": 589451,
+      "comando": "a leitura acima menos a do fecho da passagem UE1c (custo-ue1c.json)",
+      "o_que": "é positiva",
+      "encontrado": true
+    }
+  }
+}

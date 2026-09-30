@@ -220,6 +220,73 @@ interface Linha {
 }
 
 /* ========================================================================== */
+/* As linhas de série (bloco UE1, 29.09.2026)                                 */
+/* ========================================================================== */
+
+/**
+ * Um ponto de uma linha de série com `eixo: pais`: o código do Eurostat da
+ * geografia, o valor como a fonte o escreve na forma da casa, o excerto da
+ * resposta e a marca da fonte. Os quatro campos saem de `CAMPOS_DO_PONTO`, em
+ * `src/lib/series.mjs`, e o carregador não os confere: quem diz se estão certos
+ * é `validateSeries()`, e por isso ficam `unknown` até lá.
+ */
+interface PontoDaSerie {
+  geo: unknown;
+  valor: unknown;
+  excerto: unknown;
+  bandeira: unknown;
+}
+
+/**
+ * Uma linha de série do livro-razão, como `loadSeries()` a serve. O `id` é o
+ * que o carregador garante; o resto é o que o ficheiro trouxer, conferido campo
+ * a campo por `validateSeries()`.
+ */
+interface Serie {
+  id: string;
+  eixo: unknown;
+  name: unknown;
+  name_source: unknown;
+  unit: unknown;
+  periodo: unknown;
+  source: unknown;
+  document: unknown;
+  source_url: unknown;
+  access_date: unknown;
+  published_at: unknown;
+  excerpt: unknown;
+  linha_da_uniao: unknown;
+  linha_de_portugal: unknown;
+  bandeiras: unknown;
+  pontos: unknown;
+  attributed_to: unknown;
+  study: unknown;
+  note?: unknown;
+  corrections: unknown;
+  /** O ficheiro de onde a série veio; posto pelo carregador. */
+  __file?: string;
+}
+
+/**
+ * Um país da tabela dos nomes (`src/data/paises-da-uniao.json`), que atravessa
+ * do motor com o endereço, a hora e o resumo do documento RDF de onde saiu.
+ */
+interface PaisDaUniao {
+  geo: string;
+  codigo: string;
+  pt: string;
+  en: string;
+  ordem: string;
+  versao_da_tabela: string | null;
+  endereco: string;
+  lido_em: string;
+  sha256: string;
+  excerto_pt: string;
+  excerto_en: string;
+  excerto_geo: string;
+}
+
+/* ========================================================================== */
 /* O limiar do quadro                                                         */
 /* ========================================================================== */
 

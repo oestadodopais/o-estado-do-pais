@@ -148,6 +148,8 @@ import {
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
+import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from '../tests/cartao/faixa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -262,6 +264,9 @@ const MOTIVOS_DO_DOMINIO = new Set([
 ]);
 
 const claims = loadClaims();
+/** UE1: as linhas de série, pelo leitor próprio dos portões (F1 e F19). */
+const SERIES_DO_PORTAO = lerSeriesDoPortao();
+const PAISES_DO_PORTAO = lerPaisesDoPortao();
 
 /** @param {string} dir */
 function paginasDe(dir) {
@@ -409,6 +414,20 @@ const contas = {
   paginas: 0,
   paginas_de_dominio: 0,
   datas_de_linha: 0,
+  datas_de_serie: 0,
+  /* F19, UE1: as faixas da União e as suas plantas. */
+  faixas: 0,
+  faixas_nos_temas: 0,
+  marcas_das_faixas: 0,
+  frases_das_faixas: 0,
+  empates_nas_faixas: 0,
+  plantas_das_faixas: 0,
+  ressalvas_nas_pontas: 0,
+  ressalvas_nos_temas: 0,
+  ordinais_conferidos: 0,
+  marcas_com_palavras: 0,
+  plantas_das_palavras: 0,
+  plantas_dos_empates: 0,
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
   medidas_com_leitura: 0,
@@ -466,9 +485,35 @@ for (const ficheiro of paginasDe(DIST)) {
   const caminho = '/' + path.relative(DIST, ficheiro).split(path.sep).join('/');
   const rota = matchPath(caminho.replace(/index\.html$/, ''));
   if (rota?.key === 'documento') continue;
-  const root = parse(fs.readFileSync(ficheiro, 'utf8'));
+  const html = fs.readFileSync(ficheiro, 'utf8');
+  const root = parse(html);
   const rel = path.relative(RAIZ, ficheiro);
   contas.paginas++;
+
+  /* F19, UE1 (29.09.2026): a faixa da União em cada cartão nacional das medidas
+     com série de países, refeita dos pontos (`tests/cartao/faixa.mjs`, que a K18
+     do `check:cartao` também chama). Nas duas páginas dos temas correm também as
+     plantas em memória, e cada uma tem de morder. */
+  if (html.includes('data-cartao-medida') || html.includes('data-faixa-ue')) {
+    const lingua = rota?.lang === 'en' ? 'en' : 'pt';
+    const f19 = conferirFaixas(root, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO });
+    for (const e of f19.erros) err(`${rel}: ${e}`);
+    contas.faixas += f19.contas.faixas;
+    contas.marcas_das_faixas += f19.contas.marcas;
+    contas.frases_das_faixas += f19.contas.frases;
+    contas.empates_nas_faixas += f19.contas.empates;
+    contas.ressalvas_nas_pontas += f19.contas.ressalvas;
+    if (rota?.key === 'temas') {
+      contas.faixas_nos_temas += f19.contas.faixas;
+      contas.ressalvas_nos_temas += f19.contas.ressalvas;
+      if (!f19.erros.length) {
+        for (const planta of plantasDaFaixa(html, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO })) {
+          contas.plantas_das_faixas++;
+          if (!planta.passou) err(`${rel}: F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
+        }
+      }
+    }
+  }
 
   /* F18, C1: o ano de cada dívida ocupa a sua posição no calendário comum.
      A célula independente relê as origens da conta e prova as lacunas com
@@ -494,6 +539,26 @@ for (const ficheiro of paginasDe(DIST)) {
   /* ------------------------------------------------------------------ F1 --- */
   for (const el of root.querySelectorAll('[data-nonledger="data-da-linha"]')) {
     contas.datas_de_linha++;
+    /* UMA DATA DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026): o mesmo motivo, e
+       em vez da linha diz a série (`data-linha-de-serie`). O campo vai-se buscar
+       ao ficheiro da série, pelo leitor próprio dos portões, e recompõe-se pela
+       mesma regra. */
+    if (el.hasAttribute('data-linha-de-serie')) {
+      const sid = el.getAttribute('data-linha-de-serie') ?? '';
+      const campo = el.getAttribute('data-de-campo') ?? '';
+      const serie = SERIES_DO_PORTAO.get(sid);
+      const bruto = serie && ['periodo', 'access_date', 'published_at'].includes(campo) ? serie[campo] : null;
+      if (typeof bruto !== 'string') {
+        err(`${rel}: uma data diz vir do campo "${campo}" da série "${sid}", e a série não o tem.`);
+        continue;
+      }
+      contas.datas_de_serie++;
+      const esperado = dataDaCasa(bruto, rota?.lang === 'en' ? 'en' : 'pt');
+      if (texto(el) !== esperado) {
+        err(`${rel}: a data do campo "${campo}" da série "${sid}" não é a da série.\n      na série: ${bruto} · na forma da casa: ${esperado}\n      renderizado: ${texto(el)}`);
+      }
+      continue;
+    }
     const id = el.getAttribute('data-de-linha') ?? '';
     const campo = el.getAttribute('data-de-campo') ?? '';
     const linha = claims.get(id);
@@ -1238,6 +1303,54 @@ if (dominios.length > 0 && contas.formas > 0) {
   }
 }
 
+/* F19 · o conhecido-positivo: cada série de países tem a sua faixa nas duas
+   páginas dos temas, e as plantas correram. Zero faixas com séries no livro é
+   um detetor que não viu nada. */
+if (SERIES_DO_PORTAO.size && contas.faixas_nos_temas !== 2 * SERIES_DO_PORTAO.size) {
+  err(`F19: as páginas dos temas rendem ${contas.faixas_nos_temas} faixa(s) da União e há ${SERIES_DO_PORTAO.size} série(s) de países; esperavam-se ${2 * SERIES_DO_PORTAO.size}, uma por série e por edição.`);
+}
+if (SERIES_DO_PORTAO.size && contas.plantas_das_faixas === 0) {
+  err('F19: nenhuma planta da faixa correu: a célula não provou que morde.');
+}
+
+/* F19g · F19h (UE1b, 29.09.2026): as palavras da faixa, uma vez por corrida e
+   sem página (o ordinal inglês contra a tabela escrita dos 27, e as palavras de
+   cada marca que um ponto leva), com as suas plantas. E o conhecido-positivo das
+   ressalvas: cada ponta cujo ponto leva marca mostra-a nas duas páginas dos
+   temas, e o número esperado sai das séries e não de uma contagem à mão. */
+if (SERIES_DO_PORTAO.size) {
+  const palavrasDaFaixa = conferirPalavrasDaFaixa(SERIES_DO_PORTAO);
+  for (const e of palavrasDaFaixa.erros) err(`src/data/faixa-da-uniao.mjs: ${e}`);
+  contas.ordinais_conferidos = palavrasDaFaixa.contas.ordinais;
+  contas.marcas_com_palavras = palavrasDaFaixa.contas.marcas;
+  if (!palavrasDaFaixa.erros.length) {
+    for (const planta of plantasDasPalavrasDaFaixa(SERIES_DO_PORTAO)) {
+      contas.plantas_das_palavras++;
+      if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
+    }
+  }
+  /* UE1c (o achado 5): os empates num extremo, feitos em memória, com a marca só
+     num dos países empatados; cada planta tem de morder e o seu controlo passar. */
+  for (const lingua of ['pt', 'en']) {
+    for (const planta of plantasDosEmpates(SERIES_DO_PORTAO, PAISES_DO_PORTAO, lingua)) {
+      contas.plantas_dos_empates++;
+      if (!planta.passou) err(`F19: a planta «${planta.nome}» (${lingua}) não mordeu (${planta.porque}).`);
+    }
+  }
+  let pontasComMarca = 0;
+  for (const serie of SERIES_DO_PORTAO.values()) {
+    try {
+      const c = contaDaFaixa(serie);
+      for (const geo of [c.baixo[0], c.alto[0]]) if (serie.pontos.find((p) => p.geo === geo)?.bandeira) pontasComMarca++;
+    } catch {
+      /* a série que não se reconta já fechou a F19 acima */
+    }
+  }
+  if (contas.ressalvas_nos_temas !== 2 * pontasComMarca) {
+    err(`F19: as páginas dos temas mostram ${contas.ressalvas_nos_temas} ressalva(s) nas pontas e as séries têm ${pontasComMarca} ponta(s) com marca; esperavam-se ${2 * pontasComMarca}, uma por ponta e por edição.`);
+  }
+}
+
 /* ========================================================================== */
 
 if (erros.length > 0) {
@@ -1263,6 +1376,12 @@ console.log(
         ` ${contas.periodos_da_fonte} período(s) da fonte conferido(s)` +
         ` · frescura nos cartões de concelho: ${contas.frescura_nos_cartoes.pt} pt e ${contas.frescura_nos_cartoes.en} en, de ${contas.frescura_esperada.pt} e ${contas.frescura_esperada.en} cartões numa série atrasada (F17)` +
         ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)` +
-        ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas`,
+        ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas` +
+        ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos temas, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
+        `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder, ` +
+        `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos temas), ${contas.ordinais_conferidos} ordinais e ` +
+        `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder, ` +
+        `${contas.plantas_dos_empates} plantas dos empates a morder` +
+        ` · ${contas.datas_de_serie} data(s) de série`,
     ),
 );

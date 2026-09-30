@@ -2105,6 +2105,40 @@ export const STRINGS = {
       conjuntoAmbito:
         'A licença cobre o conjunto: a estrutura, os valores deste projeto, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou.',
 
+      /* O RECIBO DE UMA LINHA DE SÉRIE (bloco UE1, 29.09.2026): os países da União
+         numa tabela, com a fonte e a proveniência como os recibos das linhas. Os
+         nomes dos países não estão aqui: vêm da tabela de autoridade do Serviço
+         das Publicações (`src/data/paises-da-uniao.json`). */
+      serie: {
+        eyebrow: 'Série do livro-razão',
+        nosPaises: 'nos países da União',
+        metaSufixo: 'os países da União',
+        periodoK: 'Período',
+        pontosK: 'Os países e a União',
+        paisK: 'País',
+        valorK: 'Valor',
+        marcaK: 'Marca da fonte',
+        /* O QUE QUER DIZER CADA MARCA (a passagem UE1b, 29.09.2026): ao lado da
+           tabela, cada marca que aparece nela, com as palavras com que a faixa do
+           cartão a diz e a definição que a própria resposta do Eurostat traz. */
+        marcasK: 'O que quer dizer cada marca',
+        naResposta: 'na resposta do Eurostat,',
+        marcasFrase: 'A definição é a da resposta do Eurostat, tal como ela a escreve.',
+        pedidoK: 'O pedido',
+        paginaDaFonteK: 'A página da série na fonte',
+        literalK: 'O que a resposta escreve',
+        lidoK: 'Lido a',
+        publicadoK: 'Atualizado pela fonte a',
+        gemeasK: 'As linhas que o cartão mostra',
+        linhaDePortugal: 'A linha de Portugal',
+        linhaDaUniao: 'A linha da União',
+        nomesK: 'Os nomes dos países',
+        nomesFrase: 'Os nomes dos países são os da tabela de autoridade dos países do Serviço das Publicações da União Europeia, lida a',
+        nomesPorta: 'A tabela',
+        estudoK: 'Estudo',
+        noutraEdicao: 'Esta série na edição inglesa',
+        outraEdicaoK: 'Noutra edição',
+      },
       linha: {
         eyebrow: 'Linha do livro-razão',
         aparelhoK: 'Proveniência',
@@ -2260,6 +2294,10 @@ export const STRINGS = {
         enquadramentoK: 'O enquadramento',
         enquadramentoAnterior: 'Período anterior',
         enquadramentoUe: 'União Europeia',
+        /* A PORTA PARA A SÉRIE (a passagem UE1b, 29.09.2026): no recibo da linha
+           portuguesa de uma medida com série de países, a ligação para o recibo
+           da série, com as palavras da porta da faixa do cartão. */
+        enquadramentoPaises: 'Países da União',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
            não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
@@ -3684,6 +3722,34 @@ export const STRINGS = {
       conjuntoAmbito:
         'The licence covers the dataset: its structure, this project’s values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms.',
 
+      /** Ver a razão na edição portuguesa (bloco UE1, 29.09.2026). */
+      serie: {
+        eyebrow: 'Ledger series',
+        nosPaises: 'in the EU countries',
+        metaSufixo: 'the EU countries',
+        periodoK: 'Period',
+        pontosK: 'The countries and the Union',
+        paisK: 'Country',
+        valorK: 'Value',
+        marcaK: 'Source mark',
+        marcasK: 'What each mark means',
+        naResposta: 'in Eurostat’s response,',
+        marcasFrase: 'The definition is the one in Eurostat’s response, as the response writes it.',
+        pedidoK: 'The request',
+        paginaDaFonteK: 'The series page at the source',
+        literalK: 'What the response says',
+        lidoK: 'Read on',
+        publicadoK: 'Updated by the source on',
+        gemeasK: 'The lines the card shows',
+        linhaDePortugal: 'The line for Portugal',
+        linhaDaUniao: 'The line for the Union',
+        nomesK: 'The country names',
+        nomesFrase: 'The country names are those of the countries authority table of the Publications Office of the European Union, read on',
+        nomesPorta: 'The table',
+        estudoK: 'Study',
+        noutraEdicao: 'This series in the Portuguese edition',
+        outraEdicaoK: 'In the other edition',
+      },
       linha: {
         eyebrow: 'Ledger row',
         aparelhoK: 'Provenance',
@@ -3747,6 +3813,7 @@ export const STRINGS = {
         enquadramentoK: 'The comparisons',
         enquadramentoAnterior: 'Previous period',
         enquadramentoUe: 'European Union',
+        enquadramentoPaises: 'EU countries',
         semRespostaK: 'No answer since',
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',

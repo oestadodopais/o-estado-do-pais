@@ -88,7 +88,6 @@ import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from '.
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
 import { temAviso } from './aviso-do-motor.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
-import { FIGURAS } from '../data/figuras.mjs';
 
 /**
  * A PASTA DOS FICHEIROS DO MOTOR, PROCURADA E NÃO COMPOSTA.
@@ -462,21 +461,24 @@ export function reguaDaMedida(id) {
  * A RÉGUA QUE O CARTÃO DESENHA, e a que a leitura dele cita (bloco L1,
  * 24.09.2026).
  *
- * É `reguaDaMedida()` com a média da União calada onde a declaração da medida
- * a cala (`semMediaEuropeia`, bloco R1, I138). Estava escrita dentro de
- * `ReguaDoCartao.astro`, e a leitura de cada medida passou a precisar da mesma
- * resposta: a leitura só compara com as linhas que a régua do cartão cita, e
- * duas cópias da mesma regra acabavam a dizer coisas diferentes na primeira
- * correção. A régua e a leitura chamam esta função, e a régua rende o mesmo
- * que rendia.
+ * É `reguaDaMedida()`. Estava escrita dentro de `ReguaDoCartao.astro`, e a
+ * leitura de cada medida passou a precisar da mesma resposta: a leitura só
+ * compara com as linhas que a régua do cartão cita, e duas cópias da mesma regra
+ * acabavam a dizer coisas diferentes na primeira correção. A régua e a leitura
+ * chamam esta função, e a régua rende o mesmo que rendia.
+ *
+ * ATÉ À §1.140 (29.09.2026) calava a média da União onde a declaração da medida
+ * a calava (`semMediaEuropeia`, a §1.124, bloco R1, I138). A única medida calada,
+ * a sobrecarga do custo da habitação no total, voltou a mostrá-la com a ressalva
+ * da Comissão (`src/data/ressalvas-da-uniao.mjs`), e o silêncio saiu com a
+ * declaração: um silêncio novo precisa de uma decisão e de uma célula que o
+ * confira, e esta função não o inventa.
  *
  * @param {string} id  o identificador da linha da medida
  * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null }}
  */
 export function reguaDoCartao(id) {
-  const figura = FIGURAS.find((f) => f.claim === id) ?? null;
-  const inteira = reguaDaMedida(id);
-  return figura && 'semMediaEuropeia' in figura && figura.semMediaEuropeia ? { ...inteira, ue: null } : inteira;
+  return reguaDaMedida(id);
 }
 
 /**

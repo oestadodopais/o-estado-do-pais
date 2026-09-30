@@ -1,0 +1,2044 @@
+{
+  "bloco": "UE1",
+  "construcao": {
+    "commit": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
+    "ref": "ue1-2026-09-29",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-29T16:01:11.528Z"
+  },
+  "cabeca_esperada": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 40,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-pt-390.png",
+      "sha256": "0501396936784cc93d64145b45c80b91ce5ef5533a8c242543014abbb2d909bf",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 169.671875,
+          "largura": 354,
+          "altura": 560.390625,
+          "direita": 372,
+          "fundo": 730.0625
+        },
+        "faixa": {
+          "x": 18,
+          "y": 450.421875,
+          "largura": 354,
+          "altura": 202.46875,
+          "direita": 372,
+          "fundo": 652.890625
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 139.296875,
+              "y": 450.421875,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 186.203125,
+              "fundo": 464.421875
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 165.9140625,
+              "y": 483.421875,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 249.4609375,
+              "fundo": 497.421875
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 18,
+              "y": 502.421875,
+              "largura": 79.03125,
+              "altura": 18.1875,
+              "direita": 97.03125,
+              "fundo": 520.609375
+            },
+            "texto": "Chéquia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 292.65625,
+              "y": 502.421875,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 372,
+              "fundo": 520.609375
+            },
+            "texto": "Bulgária 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-pt-390.png",
+      "sha256": "b3942837a995c22b4cd3d74a2cac500604b0edd956819dde2b8fd473516b7160",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 196.625,
+          "largura": 354,
+          "altura": 506.5,
+          "direita": 372,
+          "fundo": 703.125
+        },
+        "faixa": {
+          "x": 18,
+          "y": 461.171875,
+          "largura": 354,
+          "altura": 182.171875,
+          "direita": 372,
+          "fundo": 643.34375
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 311.46875,
+              "y": 461.171875,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 358.375,
+              "fundo": 475.171875
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 111.7109375,
+              "y": 494.171875,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 195.2578125,
+              "fundo": 508.171875
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 18,
+              "y": 513.171875,
+              "largura": 84.671875,
+              "altura": 18.1875,
+              "direita": 102.671875,
+              "fundo": 531.359375
+            },
+            "texto": "Finlândia −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 282.953125,
+              "y": 513.171875,
+              "largura": 89.046875,
+              "altura": 18.1875,
+              "direita": 372,
+              "fundo": 531.359375
+            },
+            "texto": "Hungria 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-pt-390.png",
+      "sha256": "d7d57edc0d5af06ff4e768bd09fcbd7baee6cce1423d3f28d3b8c1139eb19855",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 2959,
+        "h1": "Preços da habitação nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-pt-390.png",
+      "sha256": "792ff01c9213e3db99f8cae33b294d2e216b30669dd841bd4e839e3720f91c4c",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 3069,
+        "h1": "Inflação na comparação europeia nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-pt-768.png",
+      "sha256": "f24855835011840306164906e5dee2a3648268e22a878360155e8583851ed1d0",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 167.671875,
+          "largura": 343.296875,
+          "altura": 564,
+          "direita": 374.015625,
+          "fundo": 731.671875
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 452.03125,
+          "largura": 343.296875,
+          "altura": 202.46875,
+          "direita": 374.015625,
+          "fundo": 654.5
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 147.671875,
+              "y": 452.03125,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 194.578125,
+              "fundo": 466.03125
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 172.8984375,
+              "y": 485.03125,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 256.4453125,
+              "fundo": 499.03125
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 30.71875,
+              "y": 504.03125,
+              "largura": 79.03125,
+              "altura": 18.1875,
+              "direita": 109.75,
+              "fundo": 522.21875
+            },
+            "texto": "Chéquia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 294.671875,
+              "y": 504.03125,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 374.015625,
+              "fundo": 522.21875
+            },
+            "texto": "Bulgária 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-pt-768.png",
+      "sha256": "4ad71afa61cce272c3148acc90b9d95149171798511afb758362ea9276bd4ea5",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 195.171875,
+          "largura": 343.296875,
+          "altura": 510.109375,
+          "direita": 374.015625,
+          "fundo": 705.28125
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 463.328125,
+          "largura": 343.296875,
+          "altura": 182.171875,
+          "direita": 374.015625,
+          "fundo": 645.5
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 313.84375,
+              "y": 463.328125,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 360.75,
+              "fundo": 477.328125
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 120.3828125,
+              "y": 496.328125,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 203.9296875,
+              "fundo": 510.328125
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 30.71875,
+              "y": 515.328125,
+              "largura": 84.671875,
+              "altura": 18.1875,
+              "direita": 115.390625,
+              "fundo": 533.515625
+            },
+            "texto": "Finlândia −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 284.96875,
+              "y": 515.328125,
+              "largura": 89.046875,
+              "altura": 18.1875,
+              "direita": 374.015625,
+              "fundo": 533.515625
+            },
+            "texto": "Hungria 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-pt-768.png",
+      "sha256": "34c6a1d2f2e68a48f029e564cd0d5dfb0a9c25dee1e78646b7a334beca6253d3",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 2629,
+        "h1": "Preços da habitação nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-pt-768.png",
+      "sha256": "ed71b9215becc149534adcdf909492fa7ef04833c7f5752988f7572074d7e2b6",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 2743,
+        "h1": "Inflação na comparação europeia nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-pt-1024.png",
+      "sha256": "bc312d3ba20e099185073954929429965ad9ccd3584e8a6e5ea04c36a74f442e",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 40.953125,
+          "y": 138.84375,
+          "largura": 296.28125,
+          "altura": 621.984375,
+          "direita": 337.234375,
+          "fundo": 760.828125
+        },
+        "faixa": {
+          "x": 40.953125,
+          "y": 443.5,
+          "largura": 296.28125,
+          "altura": 222.765625,
+          "direita": 337.234375,
+          "fundo": 666.265625
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 138.828125,
+              "y": 443.5,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 185.734375,
+              "fundo": 457.5
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 157.8671875,
+              "y": 476.5,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 241.4140625,
+              "fundo": 490.5
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 40.953125,
+              "y": 495.5,
+              "largura": 79.03125,
+              "altura": 18.1875,
+              "direita": 119.984375,
+              "fundo": 513.6875
+            },
+            "texto": "Chéquia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 257.890625,
+              "y": 495.5,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 337.234375,
+              "fundo": 513.6875
+            },
+            "texto": "Bulgária 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-pt-1024.png",
+      "sha256": "b4dfa5cf8e538ffa5b5dcaf44854248b36f85f9ee4631b65a34a4277583030ae",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 686.75,
+          "y": 90.15625,
+          "largura": 296.28125,
+          "altura": 720.5625,
+          "direita": 983.03125,
+          "fundo": 810.71875
+        },
+        "faixa": {
+          "x": 686.75,
+          "y": 399.796875,
+          "largura": 296.28125,
+          "altura": 202.46875,
+          "direita": 983.03125,
+          "fundo": 602.265625
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 924.453125,
+              "y": 399.796875,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 971.359375,
+              "fundo": 413.796875
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 758.6015625,
+              "y": 432.796875,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 842.1484375,
+              "fundo": 446.796875
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 686.75,
+              "y": 451.796875,
+              "largura": 84.671875,
+              "altura": 18.1875,
+              "direita": 771.421875,
+              "fundo": 469.984375
+            },
+            "texto": "Finlândia −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 893.984375,
+              "y": 451.796875,
+              "largura": 89.046875,
+              "altura": 18.1875,
+              "direita": 983.03125,
+              "fundo": 469.984375
+            },
+            "texto": "Hungria 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-pt-1024.png",
+      "sha256": "c5b2512509b08f9298bfcb781b677950f7f57a59761bb46b8136a8c36e772e0b",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 2532,
+        "h1": "Preços da habitação nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-pt-1024.png",
+      "sha256": "6a81f5a9dcf53cd09962d2350416a4516d5cb750761371aea21647350edb79ec",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 2636,
+        "h1": "Inflação na comparação europeia nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-pt-1280.png",
+      "sha256": "71d00b29680a5cfca6cdc9cd1e087e4f0d9f8fb1881612ef745623d6fa360179",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 94,
+          "y": 79.5625,
+          "largura": 248.046875,
+          "altura": 741.359375,
+          "direita": 342.046875,
+          "fundo": 820.921875
+        },
+        "faixa": {
+          "x": 94,
+          "y": 465.90625,
+          "largura": 248.046875,
+          "altura": 243.0625,
+          "direita": 342.046875,
+          "fundo": 708.96875
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 172.3125,
+              "y": 465.90625,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 219.21875,
+              "fundo": 479.90625
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 185.0078125,
+              "y": 498.90625,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 268.5546875,
+              "fundo": 512.90625
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 94,
+              "y": 517.90625,
+              "largura": 79.03125,
+              "altura": 18.1875,
+              "direita": 173.03125,
+              "fundo": 536.09375
+            },
+            "texto": "Chéquia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 262.703125,
+              "y": 517.90625,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 342.046875,
+              "fundo": 536.09375
+            },
+            "texto": "Bulgária 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-pt-1280.png",
+      "sha256": "c55c8f115e180fbb46865213e4f19535bcc8182030ae2cb36c10eda22ac9cd7d",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 656.625,
+          "y": 40.625,
+          "largura": 248.046875,
+          "altura": 819.140625,
+          "direita": 904.671875,
+          "fundo": 859.765625
+        },
+        "faixa": {
+          "x": 656.625,
+          "y": 407.953125,
+          "largura": 248.046875,
+          "altura": 202.46875,
+          "direita": 904.671875,
+          "fundo": 610.421875
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 847.734375,
+              "y": 407.953125,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 894.640625,
+              "fundo": 421.953125
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 710.2265625,
+              "y": 440.953125,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 793.7734375,
+              "fundo": 454.953125
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 656.625,
+              "y": 459.953125,
+              "largura": 84.671875,
+              "altura": 18.1875,
+              "direita": 741.296875,
+              "fundo": 478.140625
+            },
+            "texto": "Finlândia −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 815.625,
+              "y": 459.953125,
+              "largura": 89.046875,
+              "altura": 18.1875,
+              "direita": 904.671875,
+              "fundo": 478.140625
+            },
+            "texto": "Hungria 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-pt-1280.png",
+      "sha256": "d0744b74b1b0126b78068d5339973f38eeb26d11a9edb6156d20d0ba3e46eb66",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 2568,
+        "h1": "Preços da habitação nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-pt-1280.png",
+      "sha256": "0f9e6e3579c3627aacca67cf3719bb995216009090aac17dbe7016472b4d33fd",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 2672,
+        "h1": "Inflação na comparação europeia nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-pt-1600.png",
+      "sha256": "f50f1a2952501d95a2f9449b1e01b911f2bfd5d9644495b0a9cd0bd4ea711087",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 254,
+          "y": 168.359375,
+          "largura": 341.328125,
+          "altura": 564,
+          "direita": 595.328125,
+          "fundo": 732.359375
+        },
+        "faixa": {
+          "x": 254,
+          "y": 452.71875,
+          "largura": 341.328125,
+          "altura": 202.46875,
+          "direita": 595.328125,
+          "fundo": 655.1875
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é 11,5 (Chéquia) e o mais alto 29,0 (Bulgária); a média da União é 20,9. Portugal (18,6) está em 15.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 370.15625,
+              "y": 452.71875,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 417.0625,
+              "fundo": 466.71875
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 395.1171875,
+              "y": 485.71875,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 478.6640625,
+              "fundo": 499.71875
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 254,
+              "y": 504.71875,
+              "largura": 79.03125,
+              "altura": 18.1875,
+              "direita": 333.03125,
+              "fundo": 522.90625
+            },
+            "texto": "Chéquia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 515.984375,
+              "y": 504.71875,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 595.328125,
+              "fundo": 522.90625
+            },
+            "texto": "Bulgária 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-pt-1600.png",
+      "sha256": "eda50f36c785839e74fba98139243d6101649088c138cdd67374f490383c8e24",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 1004.65625,
+          "y": 110.109375,
+          "largura": 341.34375,
+          "altura": 679.96875,
+          "direita": 1346,
+          "fundo": 790.078125
+        },
+        "faixa": {
+          "x": 1004.65625,
+          "y": 378.265625,
+          "largura": 341.34375,
+          "altura": 182.171875,
+          "direita": 1346,
+          "fundo": 560.4375
+        },
+        "frase": "Entre os 27 países da União, em 2025, o valor mais baixo é −2,3 (Finlândia) e o mais alto 18,3 (Hungria); a média da União é 5,5. Portugal (17,6) está em 2.º lugar, do mais alto para o mais baixo.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 1285.890625,
+              "y": 378.265625,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 1332.796875,
+              "fundo": 392.265625
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 1093.5703125,
+              "y": 411.265625,
+              "largura": 83.546875,
+              "altura": 14,
+              "direita": 1177.1171875,
+              "fundo": 425.265625
+            },
+            "texto": "média da União"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 1004.65625,
+              "y": 430.265625,
+              "largura": 84.671875,
+              "altura": 18.1875,
+              "direita": 1089.328125,
+              "fundo": 448.453125
+            },
+            "texto": "Finlândia −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 1256.953125,
+              "y": 430.265625,
+              "largura": 89.046875,
+              "altura": 18.1875,
+              "direita": 1346,
+              "fundo": 448.453125
+            },
+            "texto": "Hungria 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-pt-1600.png",
+      "sha256": "72396c603d6c8f31b422a3b0008c028031a29181b3d96462c7dd61c184c38f81",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 2574,
+        "h1": "Preços da habitação nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-pt-1600.png",
+      "sha256": "1444523009a2dd3cd4f587b0c8b19c851b0b6a0c2c4b60cfd8c1ec84a091e73c",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 2679,
+        "h1": "Inflação na comparação europeia nos países da União",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-en-390.png",
+      "sha256": "30007ffc38458fc59b8d958c4709ee7a6218a23ed9ce78f70629ba2cc7886661",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 179.90625,
+          "largura": 354,
+          "altura": 540.09375,
+          "direita": 372,
+          "fundo": 720
+        },
+        "faixa": {
+          "x": 18,
+          "y": 440.359375,
+          "largura": 354,
+          "altura": 202.46875,
+          "direita": 372,
+          "fundo": 642.828125
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15 from the highest, level with other countries with the same value (Austria and Sweden).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 139.296875,
+              "y": 440.359375,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 186.203125,
+              "fundo": 454.359375
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 177.234375,
+              "y": 473.359375,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 238.140625,
+              "fundo": 487.359375
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 18,
+              "y": 492.359375,
+              "largura": 76.515625,
+              "altura": 18.1875,
+              "direita": 94.515625,
+              "fundo": 510.546875
+            },
+            "texto": "Czechia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 292.65625,
+              "y": 492.359375,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 372,
+              "fundo": 510.546875
+            },
+            "texto": "Bulgaria 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-en-390.png",
+      "sha256": "d70c80f9e55ba3b9081702fa7a28c6e3830684297fc7ff20a2fdf5c8321a6cfd",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "cartao": {
+          "x": 18,
+          "y": 216.6875,
+          "largura": 354,
+          "altura": 465.90625,
+          "direita": 372,
+          "fundo": 682.59375
+        },
+        "faixa": {
+          "x": 18,
+          "y": 460.9375,
+          "largura": 354,
+          "altura": 161.875,
+          "direita": 372,
+          "fundo": 622.8125
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2 from the highest.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 311.46875,
+              "y": 460.9375,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 358.375,
+              "fundo": 474.9375
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 123.03125,
+              "y": 493.9375,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 183.9375,
+              "fundo": 507.9375
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 18,
+              "y": 512.9375,
+              "largura": 74.234375,
+              "altura": 18.1875,
+              "direita": 92.234375,
+              "fundo": 531.125
+            },
+            "texto": "Finland −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 280.78125,
+              "y": 512.9375,
+              "largura": 91.21875,
+              "altura": 18.1875,
+              "direita": 372,
+              "fundo": 531.125
+            },
+            "texto": "Hungary 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-en-390.png",
+      "sha256": "bcb35ac5f206223a3cc026be472c01e11f6b305bbc78088e3c3b948df2cb50cf",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 3007,
+        "h1": "House prices in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-en-390.png",
+      "sha256": "c37edc3eda1bcc303ceea075d252d59aa31b286ce12b8a2e60ec41b1ed31aa49",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 3135,
+        "h1": "Inflation in the European comparison in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-en-768.png",
+      "sha256": "1623722edf8c03e7965acb5238053b4b08235fb794eac7a2a1f18c5ba38b034b",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 168.171875,
+          "largura": 343.296875,
+          "altura": 564,
+          "direita": 374.015625,
+          "fundo": 732.171875
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 452.53125,
+          "largura": 343.296875,
+          "altura": 202.46875,
+          "direita": 374.015625,
+          "fundo": 655
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15 from the highest, level with other countries with the same value (Austria and Sweden).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 147.671875,
+              "y": 452.53125,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 194.578125,
+              "fundo": 466.53125
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 184.21875,
+              "y": 485.53125,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 245.125,
+              "fundo": 499.53125
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 30.71875,
+              "y": 504.53125,
+              "largura": 76.515625,
+              "altura": 18.1875,
+              "direita": 107.234375,
+              "fundo": 522.71875
+            },
+            "texto": "Czechia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 294.671875,
+              "y": 504.53125,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 374.015625,
+              "fundo": 522.71875
+            },
+            "texto": "Bulgaria 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-en-768.png",
+      "sha256": "a0107410c92d19c6877bf4d5c66fcf166285407d42ed76728073aea1ac9e9b87",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "cartao": {
+          "x": 30.71875,
+          "y": 205.484375,
+          "largura": 343.296875,
+          "altura": 489.8125,
+          "direita": 374.015625,
+          "fundo": 695.296875
+        },
+        "faixa": {
+          "x": 30.71875,
+          "y": 453.34375,
+          "largura": 343.296875,
+          "altura": 182.171875,
+          "direita": 374.015625,
+          "fundo": 635.515625
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2 from the highest.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 313.84375,
+              "y": 453.34375,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 360.75,
+              "fundo": 467.34375
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 131.703125,
+              "y": 486.34375,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 192.609375,
+              "fundo": 500.34375
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 30.71875,
+              "y": 505.34375,
+              "largura": 74.234375,
+              "altura": 18.1875,
+              "direita": 104.953125,
+              "fundo": 523.53125
+            },
+            "texto": "Finland −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 282.796875,
+              "y": 505.34375,
+              "largura": 91.21875,
+              "altura": 18.1875,
+              "direita": 374.015625,
+              "fundo": 523.53125
+            },
+            "texto": "Hungary 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-en-768.png",
+      "sha256": "50972fcec6d14fd74f0ba4d134fc65a5bc3d10502c6a9f369dfade20266914cb",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 2629,
+        "h1": "House prices in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-en-768.png",
+      "sha256": "902062bbf85b5fd88d5c3f93857d6c3991f77d8f52971ca8ff005e6d64e312ac",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 2743,
+        "h1": "Inflation in the European comparison in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-en-1024.png",
+      "sha256": "c0f28858e1ed97086833ab13dd021e45c89f18c76dae863385ce1bc58002f5c6",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 40.953125,
+          "y": 139.265625,
+          "largura": 296.28125,
+          "altura": 621.984375,
+          "direita": 337.234375,
+          "fundo": 761.25
+        },
+        "faixa": {
+          "x": 40.953125,
+          "y": 443.921875,
+          "largura": 296.28125,
+          "altura": 222.765625,
+          "direita": 337.234375,
+          "fundo": 666.6875
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15 from the highest, level with other countries with the same value (Austria and Sweden).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 138.828125,
+              "y": 443.921875,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 185.734375,
+              "fundo": 457.921875
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 169.1875,
+              "y": 476.921875,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 230.09375,
+              "fundo": 490.921875
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 40.953125,
+              "y": 495.921875,
+              "largura": 76.515625,
+              "altura": 18.1875,
+              "direita": 117.46875,
+              "fundo": 514.109375
+            },
+            "texto": "Czechia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 257.890625,
+              "y": 495.921875,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 337.234375,
+              "fundo": 514.109375
+            },
+            "texto": "Bulgaria 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-en-1024.png",
+      "sha256": "e8b0ba99bbab097db8eede372708ddd8b55df10572f79cfee6bfc1d11aa87996",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "cartao": {
+          "x": 686.75,
+          "y": 108.78125,
+          "largura": 296.28125,
+          "altura": 682.875,
+          "direita": 983.03125,
+          "fundo": 791.65625
+        },
+        "faixa": {
+          "x": 686.75,
+          "y": 398.125,
+          "largura": 296.28125,
+          "altura": 182.171875,
+          "direita": 983.03125,
+          "fundo": 580.296875
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2 from the highest.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 924.453125,
+              "y": 398.125,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 971.359375,
+              "fundo": 412.125
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 769.921875,
+              "y": 431.125,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 830.828125,
+              "fundo": 445.125
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 686.75,
+              "y": 450.125,
+              "largura": 74.234375,
+              "altura": 18.1875,
+              "direita": 760.984375,
+              "fundo": 468.3125
+            },
+            "texto": "Finland −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 891.8125,
+              "y": 450.125,
+              "largura": 91.21875,
+              "altura": 18.1875,
+              "direita": 983.03125,
+              "fundo": 468.3125
+            },
+            "texto": "Hungary 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-en-1024.png",
+      "sha256": "67028f3ddb7f73f17838b1ad587cbff08261f224b79d8c88aee68dd37a0c3514",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 2489,
+        "h1": "House prices in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-en-1024.png",
+      "sha256": "7802352c0418b986540b0cc76f3531a24aa55f9f9d17388f474c694a4b654167",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 2637,
+        "h1": "Inflation in the European comparison in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-en-1280.png",
+      "sha256": "05b99b158b9c912a2538955e4d2373bb45777fd0474b86f02f36b4dd2f7acc94",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 94,
+          "y": 89.515625,
+          "largura": 248.046875,
+          "altura": 721.0625,
+          "direita": 342.046875,
+          "fundo": 810.578125
+        },
+        "faixa": {
+          "x": 94,
+          "y": 455.5625,
+          "largura": 248.046875,
+          "altura": 243.0625,
+          "direita": 342.046875,
+          "fundo": 698.625
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15 from the highest, level with other countries with the same value (Austria and Sweden).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 172.3125,
+              "y": 455.5625,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 219.21875,
+              "fundo": 469.5625
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 196.328125,
+              "y": 488.5625,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 257.234375,
+              "fundo": 502.5625
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 94,
+              "y": 507.5625,
+              "largura": 76.515625,
+              "altura": 18.1875,
+              "direita": 170.515625,
+              "fundo": 525.75
+            },
+            "texto": "Czechia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 262.703125,
+              "y": 507.5625,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 342.046875,
+              "fundo": 525.75
+            },
+            "texto": "Bulgaria 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-en-1280.png",
+      "sha256": "0ad0d6c3ff5a738ccf50bdaa039dd59f5b4368e0ddd6a03aa0617066ebc94175",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "cartao": {
+          "x": 656.625,
+          "y": 69.890625,
+          "largura": 248.046875,
+          "altura": 761.15625,
+          "direita": 904.671875,
+          "fundo": 831.046875
+        },
+        "faixa": {
+          "x": 656.625,
+          "y": 414.828125,
+          "largura": 248.046875,
+          "altura": 202.46875,
+          "direita": 904.671875,
+          "fundo": 617.296875
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2 from the highest.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 847.734375,
+              "y": 414.828125,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 894.640625,
+              "fundo": 428.828125
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 721.546875,
+              "y": 447.828125,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 782.453125,
+              "fundo": 461.828125
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 656.625,
+              "y": 466.828125,
+              "largura": 74.234375,
+              "altura": 18.1875,
+              "direita": 730.859375,
+              "fundo": 485.015625
+            },
+            "texto": "Finland −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 813.453125,
+              "y": 466.828125,
+              "largura": 91.21875,
+              "altura": 18.1875,
+              "direita": 904.671875,
+              "fundo": 485.015625
+            },
+            "texto": "Hungary 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-en-1280.png",
+      "sha256": "f732ceaf9174283a582aa133e9b4d0ec893389f2114f8cb4fd6c4cddce4d10dc",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 2524,
+        "h1": "House prices in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-en-1280.png",
+      "sha256": "cfbc37348f7ba19f7c64818eb2dd2c7bbf2e35e186c5c7913e308e52d80ec1d9",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 2672,
+        "h1": "Inflation in the European comparison in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-pobreza-en-1600.png",
+      "sha256": "a0fab1b536b4206a3568ebadf4e1f4e3c640c0428e07ae3cc232a9e3c5a104d4",
+      "tipo": "cartao",
+      "linha": "risco-de-pobreza-ou-exclusao-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 254,
+          "y": 168.0625,
+          "largura": 341.328125,
+          "altura": 564,
+          "direita": 595.328125,
+          "fundo": 732.0625
+        },
+        "faixa": {
+          "x": 254,
+          "y": 452.421875,
+          "largura": 341.328125,
+          "altura": 202.46875,
+          "direita": 595.328125,
+          "fundo": 654.890625
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is 11,5 (Czechia) and the highest is 29,0 (Bulgaria); the EU average is 20,9. Portugal (18,6) ranks 15 from the highest, level with other countries with the same value (Austria and Sweden).",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 370.15625,
+              "y": 452.421875,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 417.0625,
+              "fundo": 466.421875
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 406.4375,
+              "y": 485.421875,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 467.34375,
+              "fundo": 499.421875
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 254,
+              "y": 504.421875,
+              "largura": 76.515625,
+              "altura": 18.1875,
+              "direita": 330.515625,
+              "fundo": 522.609375
+            },
+            "texto": "Czechia 11,5"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 515.984375,
+              "y": 504.421875,
+              "largura": 79.34375,
+              "altura": 18.1875,
+              "direita": 595.328125,
+              "fundo": 522.609375
+            },
+            "texto": "Bulgaria 29,0"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/cartao-habitacao-en-1600.png",
+      "sha256": "bf5910c799337d727710a94ebda30d02266facb1b1e03e78258ee2d7f7a61f8f",
+      "tipo": "cartao",
+      "linha": "precos-da-habitacao-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "cartao": {
+          "x": 1004.65625,
+          "y": 128.71875,
+          "largura": 341.34375,
+          "altura": 642.28125,
+          "direita": 1346,
+          "fundo": 771
+        },
+        "faixa": {
+          "x": 1004.65625,
+          "y": 397.765625,
+          "largura": 341.34375,
+          "altura": 182.171875,
+          "direita": 1346,
+          "fundo": 579.9375
+        },
+        "frase": "Among the 27 EU countries in 2025, the lowest value is −2,3 (Finland) and the highest is 18,3 (Hungary); the EU average is 5,5. Portugal (17,6) ranks 2 from the highest.",
+        "marcas": 28,
+        "rotulos": [
+          {
+            "nome": "portugal",
+            "caixa": {
+              "x": 1285.890625,
+              "y": 397.765625,
+              "largura": 46.90625,
+              "altura": 14,
+              "direita": 1332.796875,
+              "fundo": 411.765625
+            },
+            "texto": "Portugal"
+          },
+          {
+            "nome": "uniao",
+            "caixa": {
+              "x": 1104.890625,
+              "y": 430.765625,
+              "largura": 60.90625,
+              "altura": 14,
+              "direita": 1165.796875,
+              "fundo": 444.765625
+            },
+            "texto": "EU average"
+          },
+          {
+            "nome": "ponta-baixo",
+            "caixa": {
+              "x": 1004.65625,
+              "y": 449.765625,
+              "largura": 74.234375,
+              "altura": 18.1875,
+              "direita": 1078.890625,
+              "fundo": 467.953125
+            },
+            "texto": "Finland −2,3"
+          },
+          {
+            "nome": "ponta-alto",
+            "caixa": {
+              "x": 1254.78125,
+              "y": 449.765625,
+              "largura": 91.21875,
+              "altura": 18.1875,
+              "direita": 1346,
+              "fundo": 467.953125
+            },
+            "texto": "Hungary 18,3 p"
+          }
+        ],
+        "sobreposicoes": [],
+        "fora_do_cartao": [],
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-habitacao-en-1600.png",
+      "sha256": "ace3e0f4aa5deefd321099a6c84039b9b54f1636fdf7bbb26477f9a417605312",
+      "tipo": "recibo",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 2531,
+        "h1": "House prices in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue1-2026-09-29/recibo-ihpc-en-1600.png",
+      "sha256": "9f026069875ba42ecdaa0a37f7f92387c52a0f9e68fa8446d54867a343f1af7e",
+      "tipo": "recibo",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 2679,
+        "h1": "Inflation in the European comparison in the EU countries",
+        "linhas_da_tabela": 28,
+        "pontos": 28,
+        "transborda": false
+      }
+    }
+  ]
+}
