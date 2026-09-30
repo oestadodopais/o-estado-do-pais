@@ -37,7 +37,7 @@ Nenhuma mudança à identidade (§1.86). Nenhuma mudança ao cartão (a ordem do
 
 1. **Uma coisa, um lugar, também na navegação** (o F1.10 já o dizia dos documentos). Um cartão nacional inteiro vive numa página de assunto e em mais nenhuma; a primeira página cita números nos seus blocos e é o único lugar dos blocos; a página dos temas é um índice.
 2. **As portas dizem o que têm, e não a quem pertencem.** As sete páginas de assunto, pela ordem da primeira página, com as rotas nas duas edições:
-   - «Preços» (`/precos/`, `/en/prices/`): as cinco medidas dos preços de hoje em «O meu dinheiro».
+   - «Preços» (`/precos/`, `/en/prices/`): as medidas da secção «Os preços» de hoje em «O meu dinheiro». *(Nota do lugar de direção, 30.09.2026, depois da construção: o brief dizia «cinco», e a secção tem seis; são as seis, como o construtor as pôs.)*
    - «Salários, pensões e apoios» (`/salarios-pensoes-e-apoios/`, `/en/pay-pensions-and-benefits/`): «O salário» e «As pensões e os apoios».
    - «Pobreza e desigualdade» (`/pobreza-e-desigualdade/`, `/en/poverty-and-inequality/`): «A pobreza e a desigualdade» e «As dívidas e o crédito das famílias».
    - «Emprego» (`/emprego/`, `/en/employment/`): as três secções de «O meu trabalho».
