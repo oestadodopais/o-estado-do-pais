@@ -1,14 +1,14 @@
 {
   "passagem": "E0b",
   "base": "728ffc67a702e4912f4919b8a8b356e28a66ea63",
-  "cabeca": "29f39453a55b7f14157c8c59725a26e625431da4",
-  "medido_em": "2026-09-30T23:10:39.049Z",
+  "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+  "medido_em": "2026-09-30T23:26:47.277Z",
   "completa": false,
   "pontos_do_mandato": 7,
   "ponto_1": "ponto 1 parado por fonte",
-  "restantes_conferidos": false,
-  "nomes_conferidos": 0,
-  "plantas": 8,
+  "restantes_conferidos": true,
+  "nomes_conferidos": 40,
+  "plantas": 14,
   "contador": {
     "valor": "5",
     "referencia": "2026-09-30",
@@ -16,37 +16,67 @@
     "edicao": "30.09.2026"
   },
   "provas": {
-    "estado_anterior": "29f39453a55b7f14157c8c59725a26e625431da4",
-    "e1": "29f39453a55b7f14157c8c59725a26e625431da4",
-    "detetores": "bd39e8bf5d8873c881d2d17fe0dc11c68506b9c7",
-    "medidas": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c",
-    "capturas": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c"
+    "estado_anterior": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+    "e1": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+    "detetores": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+    "medidas": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+    "capturas": "a595201bbc440a6d57d2f23cd95321b26099b7d4"
   },
   "portoes": [
     {
       "nome": "build",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run build",
+      "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+      "cabeca_fim": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+      "inicio": "2026-09-30T23:11:59Z",
+      "fim": "2026-09-30T23:13:58Z",
+      "segundos": 119,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790809919788.208,
+        "fim": 1790810038468.8843
+      }
     },
     {
       "nome": "verify",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run verify",
+      "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+      "cabeca_fim": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+      "inicio": "2026-09-30T23:13:58Z",
+      "fim": "2026-09-30T23:25:04Z",
+      "segundos": 666,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790810038470.5742,
+        "fim": 1790810704716.007
+      }
     },
     {
       "nome": "typecheck",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run typecheck",
+      "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+      "cabeca_fim": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+      "inicio": "2026-09-30T23:25:04Z",
+      "fim": "2026-09-30T23:25:04Z",
+      "segundos": 0,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790810704717.689,
+        "fim": 1790810704979.1824
+      }
     }
   ],
   "custo": {
     "inicio": "2026-09-30T22:26:35.480Z",
-    "segundos_decorridos": 2642.4,
+    "segundos_decorridos": 3565.5,
     "mesma_sessao_do_e0": true,
-    "simbolos_desde_final_e0": 353566,
+    "simbolos_desde_final_e0": 408878,
     "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5."
   },
   "custo_final_e0": 412261,

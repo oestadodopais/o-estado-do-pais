@@ -1,0 +1,15 @@
+{
+  "comando": "npm run typecheck",
+  "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+  "cabeca_fim": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+  "inicio": "2026-09-30T23:25:04Z",
+  "fim": "2026-09-30T23:25:04Z",
+  "segundos": 0,
+  "codigo": 0,
+  "medido_nesta_corrida": true,
+  "codigo_por_registar": false,
+  "limites_da_escrita": {
+    "inicio": 1790810704717.689,
+    "fim": 1790810704979.1824
+  }
+}

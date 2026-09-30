@@ -1,24 +1,24 @@
 {
   "relatorio": "design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md",
   "pasta": "design/especime-v3/medicoes/e0-2026-09-30",
-  "ficheiros_json_lidos": 51,
+  "ficheiros_json_lidos": 54,
   "ilegiveis": [],
   "conhecido_positivo": {
     "numero": 987654321,
     "encontrado": true
   },
-  "numeros_conferidos": 77,
-  "numeros_com_ficheiro": 77,
+  "numeros_conferidos": 85,
+  "numeros_com_ficheiro": 85,
   "numeros_sem_ficheiro": 0,
   "sem_ficheiro": [],
   "apagado_antes_de_contar": {
-    "codigo": 55,
+    "codigo": 61,
     "enderecos": 3,
-    "seccoes": 7,
+    "seccoes": 8,
     "datas": 11,
     "resumos": 0,
     "ordinais": 5,
-    "identificadores": 82,
+    "identificadores": 85,
     "anos": 0
   }
 }
