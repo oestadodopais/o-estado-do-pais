@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T23:30:03+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "ledger/claims/correcoes-publicadas.yml",
+   "descricao": "a data de referência do contador volta a 12.08.2026, o defeito 11 por corrigir",
+   "sha256_antes": "eac92b342ec137ac46fd0cf922fa4ef73927148538120685bc759a8043fac1a7",
+   "sha256_depois": "fdc9e512b4456b0d89398ce4ed014a36e14544de752cae94f52ac40a2d3c5e9c",
+   "contexto_antes": "iência é a das origens.\nsource: \"O Estado do País\"\ndocument:\n  title: \"Registo de correções\"\n  edition: \"30.09.2026\"\nsource_url: null\naccess_date: \"2026-09-30\"\nreference_date: \"2026-09-30\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: null\n\n# null quando o valor é publicado; a aritmética explicada quando é calcul",
+   "contexto_depois": "iência é a das origens.\nsource: \"O Estado do País\"\ndocument:\n  title: \"Registo de correções\"\n  edition: \"30.09.2026\"\nsource_url: null\naccess_date: \"2026-09-30\"\nreference_date: \"2026-08-12\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: null\n\n# null quando o valor é publicado; a aritmética explicada quando é calcul"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "scripts/nome-no-registo.mjs",
+   "descricao": "a guarda do nome no registo deixa passar um nome fora do registo (a condição do closest fica invertida)",
+   "sha256_antes": "15108790d499dd150b590931dc5afcec24334f3e46ec051706928a3f32b094f8",
+   "sha256_depois": "77c77afb63a24fb14a459fb8bc51b9ffa1996d743de99a37d2ac1d31262d047b",
+   "contexto_antes": "egistoAdmitido(rota, el, id, campo) {\n  return rota === 'correcoes' && ['name', 'document.title'].includes(campo) &&\n    el.matches('.registo-mudanca-nome') && el.closest('[data-mudou-registo]') !== null &&\n    el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;\n}\n",
+   "contexto_depois": "egistoAdmitido(rota, el, id, campo) {\n  return rota === 'correcoes' && ['name', 'document.title'].includes(campo) &&\n    el.matches('.registo-mudanca-nome') && el.closest('[data-mudou-registo]') === null &&\n    el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;\n}\n"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "built/correcoes/index.html",
+   "descricao": "a página construída da recontagem perde o nome da medida",
+   "sha256_antes": "520a97a28bae5776b38c64994aaa8a574d6dc7d2559902a330746491a5ba7b32",
+   "sha256_depois": "1a46c200d5b32330cc4096656280a8cf13a6556f3a71e5c9ad30c6bad178875e",
+   "contexto_antes": "<div class=\"registo-mudanca-corpo\"><p class=\"registo-mudanca-o-que\"><span class=\"registo-mudanca-nome\" data-nome=\"projeto\" data-de-linha=\"correcoes-publicadas\">Correções publicadas</span><span class=\"registo-mudanca-par\"><s data-correcao-claim=\"correcoes-publicadas\" data-correcao-n=\"0\" data-correcao-campo=\"old_value\">3</s> → <span data-correcao-",
+   "contexto_depois": "<div class=\"registo-mudanca-corpo\"><p class=\"registo-mudanca-o-que\"><span class=\"registo-mudanca-nome\" data-nome=\"projeto\" data-de-linha=\"correcoes-publicadas\"></span><span class=\"registo-mudanca-par\"><s data-correcao-claim=\"correcoes-publicadas\" data-correcao-n=\"0\" data-correcao-campo=\"old_value\">3</s> → <span data-correcao-"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "ledger/claims/taxa-de-desemprego-mip-2025.yml",
+   "descricao": "a razão da correção volta à palavra de máquina «excerto», o achado 13 por corrigir numa das duas linhas",
+   "sha256_antes": "87216c25af6e07d159427479aef7961e1a24df84c901f46250c65a2c401f05f6",
+   "sha256_depois": "1845e1bbcc13a15b28086b3b027e393907f6e60701815412fa218694151a17b4",
+   "contexto_antes": "datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n  - date: \"2026-09-30\"\n    kind: \"correcao\"\n    old_value: \"6\"\n    new_value: \"6,0\"\n    reason: \"A fonte escreve «6.0». A apresentação passa a conservar a casa decimal na forma portuguesa, sem mudar a quantidade nem declarar uma revisão da fonte.\"\n    reason_en: \"The source writ",
+   "contexto_depois": "datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n  - date: \"2026-09-30\"\n    kind: \"correcao\"\n    old_value: \"6\"\n    new_value: \"6,0\"\n    reason: \"O excerto escreve «6.0». A apresentação passa a conservar a casa decimal na forma portuguesa, sem mudar a quantidade nem declarar uma revisão da fonte.\"\n    reason_en: \"The source writ"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 15 plantas onde o registo das plantas tem 14",
+   "sha256_antes": "23f6bde0c07650e761047639c1d90fc2657ff18ffe9678d769673d3babd2e9ca",
+   "sha256_depois": "82e5c73af2e06006a5dc37794b5284b7a5ed3203b394b0d8b54d2a434c4118f6",
+   "contexto_antes": "beças das provas\n\nAs plantas permanentes incluem agora a retirada do nome da recontagem, a retirada do nome da dívida das famílias e a data antiga do contador. As 14 plantas morderam numa corrida que aceita o HTML limpo. Os detetores do medidor têm ainda plantas de decimal, de caminho de componente e de escrita antiga do código, em [detetores-e0b.json](detetores-e0b.json).\n\nA p",
+   "contexto_depois": "beças das provas\n\nAs plantas permanentes incluem agora a retirada do nome da recontagem, a retirada do nome da dívida das famílias e a data antiga do contador. As 15 plantas morderam numa corrida que aceita o HTML limpo. Os detetores do medidor têm ainda plantas de decimal, de caminho de componente e de escrita antiga do código, em [detetores-e0b.json](detetores-e0b.json).\n\nA p"
+  }
+ ]
+}

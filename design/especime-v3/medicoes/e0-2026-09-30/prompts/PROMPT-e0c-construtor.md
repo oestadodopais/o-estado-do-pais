@@ -1,0 +1,11 @@
+# A passagem E0c · o mandato do lugar de direção (30.09.2026, à noite, depois da releitura)
+
+Continuas o bloco E0 na mesma worktree e no mesmo ramo, depois da releitura a frio do Claude Opus 5.5 (`design/especime-v3/critica/LEITURA-e0b-2026-09-30.md`, com a triagem no cabeçalho). As regras de sempre mantêm-se (caminhos explícitos, sem `push`, sem caminhos da máquina, os mesmos trailers). Os achados 1 a 5 são as plantas; não lhes toques. O 7 e o 11 ficam registados sem passagem. O 10 já está corrigido no ramo pelo lugar de direção (`scripts/leituras/portoes.sh`); não lhe toques.
+
+## O que fazes, por esta ordem
+
+1. **O achado 6.** A entrada da dívida das famílias em «O que mudou» diz um nome da casa nas duas línguas, e não o título inglês do conjunto de dados do Eurostat: o nome que o cartão da faixa da União já usa para essa linha (procura `divida-das-familias-2025-ue` em `src/data/figuras.mjs` e nos cartões; se o cartão não a nomear, o nome é «Dívida das famílias» / «Household debt», com o âmbito «União Europeia» que o lugar da entrada já diz). O nome entra pela tabela `src/data/nomes-das-medidas.mjs`, e a célula continua a conferir os vinte nomes por edição.
+2. **O achado 8.** `correcoes_publicadas` prova que a recontagem conta a correção de `pib-pc-alentejo-2024` (retira-a numa cópia em memória e vê o contador baixar); `historia_anterior_conservada` altera uma entrada selada numa cópia e vê a queixa.
+3. **O achado 9.** O custo da E0b no relatório e no `custo.json` inclui as duas sessões do revisor automático (63 492 e 27 007 símbolos, as duas abertas para correr os portões, que precisam de sair da caixa de areia), com o total cobrado da passagem ao lado do do construtor.
+4. **O achado 12.** A razão permanente da recontagem diz «duas correções publicadas a 30.09.2026» e não «hoje», nas duas línguas (a entrada selada não muda: só o texto da razão); o relatório diz que o nome da recontagem vem da tabela dos nomes das linhas derivadas, e a frase «Todas as 14» passa a contar o que lista.
+5. No fim, os três portões pela tranca (`sh scripts/leituras/portoes.sh <worktree> <pasta>`), com os códigos em ficheiro em `portoes/e0c/`, as capturas de «O que mudou» refeitas nas duas edições, a secção «E0c» no relatório e a resposta curta em `RESPOSTA-construtor-e0c.md`. Respondes com a cabeça final, os commits e os códigos lidos dos ficheiros.

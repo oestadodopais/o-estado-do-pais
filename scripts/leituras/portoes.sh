@@ -13,8 +13,11 @@
 # encontra espera. Uma tranca com mais de quarenta minutos é de um processo que morreu (os três portões levam
 # cerca de quinze) e ignora-se, com aviso.
 set -u
-W="$1"; O="$2"; mkdir -p "$O"
+W="$1"; O="$2"
 cd "$W" || exit 9
+# A PASTA DE SAÍDA CRIA-SE DEPOIS DE ENTRAR NA WORKTREE (a releitura do E0b, achado 10): antes, um caminho
+# relativo era criado na árvore de quem chamava, e cada redirecionamento seguinte falhava.
+mkdir -p "$O"
 comum="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null || git rev-parse --git-common-dir)"
 case "$comum" in /*) ;; *) comum="$W/$comum";; esac
 tranca="$comum/oedp-construcao.lock"
@@ -26,13 +29,19 @@ while [ -f "$tranca" ]; do
   esperou=1; sleep 10
 done
 printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "$$" > "$tranca"
-trap 'rm -f "$tranca"' EXIT INT TERM
+# UMA INTERRUPÇÃO SOLTA A TRANCA E SAI (o mesmo achado 10): a primeira redação soltava-a e seguia para o portão
+# seguinte sem ela.
+trap 'rm -f "$tranca"' EXIT
+trap 'rm -f "$tranca"; exit 130' INT TERM
 git rev-parse HEAD > "$O/cabeca"
 for g in build verify typecheck; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
   npm run $g > "$O/$g.log" 2>&1
   echo $? > "$O/$g.codigo"
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.fim"
+  # UM PORTÃO MORTO POR UM SINAL (código acima de 128) PARA A CORRIDA: a tranca solta-se na saída e os portões
+  # seguintes não correm, porque o que se lia deles não seria de uma corrida inteira.
+  if [ "$(cat "$O/$g.codigo")" -gt 128 ]; then echo "portão $g interrompido (código $(cat "$O/$g.codigo")); a corrida para aqui" >&2; exit "$(cat "$O/$g.codigo")"; fi
 done
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --short > "$O/estado.fim"
