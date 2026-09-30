@@ -1,0 +1,86 @@
+{
+  "brief": "design/observatorio/BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md",
+  "guiao": "design/observatorio/medidas/BRIEF-E0.py",
+  "cabeca_lida": "2273d725",
+  "linhas_do_desemprego": [
+    "taxa-de-desemprego-2025",
+    "taxa-de-desemprego-mip-2025"
+  ],
+  "lugares_especiais": [
+    "uniao-europeia"
+  ],
+  "medidas": [
+    {
+      "nome": "linhas_do_desemprego_com_o_inteiro_onde_a_fonte_escreve_o_decimal",
+      "valor": 2,
+      "comando": "git show 2273d725:ledger/claims/taxa-de-desemprego*.yml · value «6» e excerpt a acabar em «2025: 6.0»",
+      "conhecido_positivo": {
+        "o_que": "«taxa-de-desemprego-2025» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "correcoes_publicadas_contadas_no_livro",
+      "valor": 3,
+      "comando": "as entradas kind: correcao de corrections em todas as linhas do livro, somadas",
+      "conhecido_positivo": {
+        "o_que": "a de «pib-pc-alentejo-2024» conta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "valor_do_contador_das_correcoes",
+      "valor": "3",
+      "comando": "git show 2273d725:ledger/claims/correcoes-publicadas.yml · value",
+      "conhecido_positivo": {
+        "o_que": "a linha é derivada e tem check",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_historia_selada",
+      "valor": 9,
+      "comando": "git show 2273d725:ledger/historias-valores.json · as chaves",
+      "conhecido_positivo": {
+        "o_que": "«estudos-evora-publicados» tem história",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_seladas_do_contador_das_correcoes",
+      "valor": 0,
+      "comando": "a lista de «correcoes-publicadas» nessa história",
+      "conhecido_positivo": {
+        "o_que": "a de «pib-pc-alentejo-2024» tem uma entrada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_lugar_declarado_a_mao",
+      "valor": 2,
+      "comando": "git show 2273d725:src/data/lugar-das-linhas.mjs · as entradas de LUGAR_DECLARADO_DAS_LINHAS",
+      "conhecido_positivo": {
+        "o_que": "«estudos-evora-publicados» está declarada a Évora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lugares_fora_do_pais_que_o_registo_aceita",
+      "valor": 1,
+      "comando": "git show 2273d725:src/lib/mudancas.mjs · as chaves comparadas literalmente (chave === '…')",
+      "conhecido_positivo": {
+        "o_que": "«uniao-europeia» é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "o_contador_das_correcoes_tem_lugar_declarado",
+      "valor": false,
+      "comando": "a mesma tabela, procurada por «correcoes-publicadas»",
+      "conhecido_positivo": {
+        "o_que": "a tabela tem pelo menos uma entrada",
+        "encontrado": true
+      }
+    }
+  ]
+}
