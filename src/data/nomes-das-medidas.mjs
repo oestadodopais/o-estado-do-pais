@@ -74,6 +74,11 @@ import { NOMES_RP1 } from './medidas-rp1.mjs';
  * @type {Record<string, ParDeLinguas>}
  */
 export const NOMES_DO_PROJETO = {
+  /* E0c: o mesmo nome corrente do cartão; a entrada já diz o lugar da União. */
+  'divida-das-familias-2025-ue': {
+    pt: 'Dívida das famílias',
+    en: 'Household debt',
+  },
   'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
     pt: 'Sobrecarga do custo da habitação, inquilinos a preço de mercado',
     en: 'Housing cost overburden, tenants at market rent',
