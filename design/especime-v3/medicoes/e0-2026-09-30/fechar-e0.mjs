@@ -7,8 +7,15 @@ const medidas = json(`${pasta}/medidas.json`);
 const valor = nome => medidas.medidas.find(m => m.nome === nome).valor;
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const commits = execFileSync('git', ['log', '--reverse', '--format=%h|%s', `${medidas.base}..HEAD`], { encoding: 'utf8' }).trim().split('\n');
-const decisoes = execFileSync('python3', ['scripts/leituras/decisoes-em-vigor.py', '--intervalo', `${medidas.base}..HEAD`], { encoding: 'utf8' });
+const tocados = execFileSync('git', ['diff', '--name-only', `${medidas.base}..HEAD`], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
+/* O leitor de decisões lê texto: as capturas PNG não têm decisões citadas.
+   Usam-se os caminhos explícitos dos textos, como o mandato pede. */
+const textos = tocados.filter(p => !p.endsWith('.png'));
+const argumentosDasDecisoes = ['scripts/leituras/decisoes-em-vigor.py', ...textos];
+const decisoes = execFileSync('python3', argumentosDasDecisoes, { encoding: 'utf8' });
 fs.writeFileSync(`${pasta}/decisoes-em-vigor.txt`, decisoes);
+fs.writeFileSync(`${pasta}/decisoes-em-vigor.json`, JSON.stringify({ cabeca, comando: ['python3', ...argumentosDasDecisoes].join(' '),
+  textos, capturas_excluidas: tocados.filter(p => p.endsWith('.png')), conhecido_positivo: decisoes.includes('§1.117') && decisoes.includes('§1.127') }, null, 2) + '\n');
 const custo = valor('custo');
 const construtor = custo.construtor;
 const inteiro = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
@@ -80,7 +87,7 @@ Um commit não pode conter o seu próprio identificador. Os comprovativos finais
 
 ## Decisões em vigor nos ficheiros tocados
 
-A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §1.127 em check-pais. Ambas se conservaram. A §1.146 é citada nas novas guardas do E0. A lista final foi obtida por \`python3 scripts/leituras/decisoes-em-vigor.py --intervalo ${medidas.base}..HEAD\`, também guardada em [decisoes-em-vigor.txt](decisoes-em-vigor.txt).
+A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §1.127 em check-pais. Ambas se conservaram. A §1.146 é citada nas novas guardas do E0. A lista final foi obtida por \`python3 scripts/leituras/decisoes-em-vigor.py\` com os caminhos explícitos dos textos tocados. O modo por intervalo falha ao tentar ler uma captura PNG; o fecho passou a dar-lhe apenas texto. O comando completo e os caminhos estão em [decisoes-em-vigor.json](decisoes-em-vigor.json), e a lista em [decisoes-em-vigor.txt](decisoes-em-vigor.txt).
 
 \`\`\`text
 ${decisoes.trimEnd()}
