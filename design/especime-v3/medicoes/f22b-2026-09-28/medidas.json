@@ -1,13 +1,13 @@
 {
   "bloco": "F2.2b",
-  "medido_em": "2026-09-29T23:57:27.385320+00:00",
+  "medido_em": "2026-09-30T00:55:20.262582+00:00",
   "bases": {
     "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
     "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
   },
   "cabecas_lidas": {
-    "motor": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
-    "sitio": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed"
+    "motor": "4b46befbac8decf1566f73b5959fd175e5458d66",
+    "sitio": "2ea04eef166359723bcafc05a68630456e9816e4"
   },
   "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
   "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
@@ -15,12 +15,18 @@
     "6432b88b000cdcdc47a08a8721bafac8f7ab023a Prepara a publicação guardada e as rotinas transportáveis",
     "5335e129b3167c93d1822c8af7cecbb909922877 Liga os fluxos dormentes às guardas e às plantas do F2.2b",
     "68318e0da2036cc29e4704fa1bb8a96dee246095 C1e: consultar o vigia quando o transporte não tem causa classificada",
+    "da6df0b32e2ff00e6c02126549e6862bdb1f1829 UE1: pedir e alojar os corpos das séries por país e da tabela dos nomes",
+    "50f8352a70ffcba1dc8ef7ddee863fd42a2b38cb UE1: gerar as dez linhas de série por país (eixo: pais) pelas coordenadas seladas da linha da União",
+    "daa5355d88e4340b9768c3beeede03c2a3674e99 UE1: atravessar as séries para o livro-razão do sítio, com as plantas no core.gate",
+    "e394307d818f54477351846b9c97e5e81a590949 UE1: um cliente só para todos os pedidos, para que o intervalo por anfitrião valha",
     "f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1 F2.2c: juntar master conservando a classificação do transporte e a retoma",
     "e7dbae267919aa6e9eb0345d25a085f50e4c5a72 F2.2c: corrigir as guardas e conservar as rotinas com plantas nas entradas reais",
     "1a67dea9a4e479c00f4fe4c8d645364a3a943446 F2.2c: documentar as rotinas corrigidas e registar execução e custo",
     "f8a20fb2d20f89bec387acff2271c4b1672be034 F2.2d: corrigir o limiar, conservar o portátil e identificar as provas",
     "7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8 F2.2d: guardar a prova do clone raso sem master local",
-    "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813 F2.2d: fixar a referência expurgada do varrimento"
+    "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813 F2.2d: fixar a referência expurgada do varrimento",
+    "06e126d154cc20141c55801b807dbf9c9173a8fd F2.2e: juntar master com as plantas do UE1 e das rotinas",
+    "4b46befbac8decf1566f73b5959fd175e5458d66 F2.2e: provar as duas guardas do painel e os números do relatório"
   ],
   "commits_sitio_anteriores_ao_relatorio": [
     "2613664f73f178197ea869e9031ac6ba9f2bb0f9 PP1: as declarações do lugar de direção para a primeira página de um leitor comum (os cinco blocos de «O que se passa», com as palavras, as condições que os tornam verdadeiros e os desenhos, e as seis entradas com os cartões que cada uma agrupa) e o ensaio a seco que as rende nas duas edições, a testemunha independente contra o resolvedor do construtor (M31)",
@@ -102,19 +108,55 @@
     "1d7fb91cfeb8df4e73126fb19c13f388b7433711 §1.138: a leitura a frio do Codex (cinco plantas em cinco) e a triagem; o nome do ministro da Defesa Nacional reposto na lista do Governo (o único terceiro que a redação atingira); a atribuição do documento alojado do Alentejo e do Algarve reduzida a «Prepared by Claude (claude-fable-5)», com os resumos e as medidas novas no manifesto; as provas da auditoria (os relatórios do gitleaks com os valores redigidos, o do motor só em resumo, o conhecido-positivo e a planta da página antiga); a I177 aberta",
     "9802d0d01d8f0ff83f21dd694c7adb01e280afe9 A cópia do prompt da sessão seguinte com a I177",
     "8e66b60180312c7e6ca7fa8cf997700cd55c8bba §1.139: o guião da aterragem passa para o repositório (scripts/aterrar.sh: confere antes de mexer, para no primeiro passo que falhar, tem ensaio, não escreve caminhos da máquina), com as provas do ensaio; o registo da aterragem de 29.09 às 12:03 UTC; a M40; e a regra que o diretor junta para o autorizar",
+    "09bca6c7baa827c84981ec448c46d267fe2eb68d UE1: o brief de onde Portugal fica entre os 27 (a faixa da União nos cartões das dez medidas da primeira página), com o §0 medido pelo guião do brief e os 27 países lidos na API do Eurostat pelo lugar de direção",
+    "a182c200dec4a8d9bf0a74a82c3e64039da0f033 UE1: as dez linhas de série por país atravessam do motor, com a tabela dos nomes dos 27",
+    "42cedfd9c036e94b1400e9f9258b273a30918022 UE1: o livro-razão lê as séries (as regras S1 a S8 no ledger:check, e a travessia no check:cruzamento)",
+    "e1c201470be77d7ecd05cf1341d0f5b1841dd28a UE1: o recibo de cada série, nas duas edições, e as origens das séries no portão de HTML",
+    "7ae82d82a94a2b58e671ff7a829b4f4b4fef120b UE1: a faixa da União nos cartões das dez medidas, com a frase do lugar de Portugal, e a F19 e a K18 que a refazem dos pontos",
+    "ac965c61b61bd8b93897835065382aa5a698c046 UE1: a prova das palavras da frase (acertos-ue1.py), o acerto F0 dito, e as duas datas do recibo em linhas próprias",
+    "b6991e78a284f63f36adb6e7174d7675a2f5404c UE1: tirar a importação que a célula da faixa não lê (numeroDoPortao)",
+    "ee95f3cab7f0cff5a8942be91b41d804260c7958 UE1: o caminho no cabeçalho do recibo de uma série (a L5 do check:lugar)",
+    "33ed14a0a609e7ac9c3830c4fb777c0840b02f36 UE1: o mapa do repositório com a rota das séries e a secção do UE1",
+    "0f75298fce6771cfeec03643598b06041e5c4ca6 UE1: as provas do bloco (os portões da cabeça 33ed14a0 lidos de ficheiro, as 15 plantas, as 40 capturas, as 200 medições das faixas nas cinco larguras, o programa do typecheck, as corridas do motor e os pedidos), o medidas.json, o relatório e a resposta do construtor",
+    "63f54d187e720d2620fcd398fc6a75933f249637 UE1b: o ordinal inglês do lugar de Portugal (o acerto F4, «ranks 15th from the highest»), a ressalva da fonte nas pontas da faixa pelas palavras declaradas em vez da letra crua, e o que quer dizer cada marca ao lado da tabela do recibo da série, com a definição da resposta do Eurostat",
+    "181ce25c7d82c2404eb839cab28f7b743bf9cdbf UE1b: a porta do recibo da linha portuguesa de cada medida para a sua série dos países da União, no bloco «O enquadramento», nas dez medidas e nas duas edições",
+    "c9859d31e53784899a189d9b0d7dbac36a9257f3 UE1b: o mapa do repositório com o ordinal inglês, as ressalvas da fonte, a legenda das marcas do recibo da série e a porta do recibo da linha portuguesa, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 126 no sítio, 0 longe, 0 por encontrar)",
+    "a4f59f219ee7537ebaadbf7859c86494f1374ab0 UE1b: as provas da passagem de correção (os portões da cabeça c9859d31 lidos de ficheiro, as conferências entre os commits, as 17 plantas, as 70 capturas, as 200 faixas medidas outra vez, o custo), o medidas-ue1b.json, a secção UE1b do relatório e a resposta curta",
+    "01a8e1974454e36e0a7d85485cc9af83052c6c2e UE1: a nota do lugar de direção na tabela do §1 do brief (o lugar de Portugal na pobreza é 15.º, a par da Áustria e da Suécia, pela regra do mandato; a tabela ordenara sem empates)",
+    "ad21faefb8c939cc44ba9b2831838cdf046d5d72 UE1: as linhas novas do inventário das frases (ue1 e ue1b) lidas pelo lugar de direção, com as quatro palavras novas das marcas da fonte conferidas com as definições do Eurostat",
+    "96a6035e8bf6947b228c8998347adb1ac5b24529 UE1: a leitura a frio do Codex (quatro plantas em cinco) com o registo das plantas e a triagem do lugar de direção, que conferiu os 27 nomes contra os corpos alojados e os 280 pontos contra a sua própria leitura do Eurostat",
     "77d9e4076eb8098a45e6ca0cd3c27964d54a9301 Regista as provas e a resposta do F2.2b",
+    "baa82bce1486caaec56b9b9f838965803a8584a3 UE1c: num extremo empatado, cada país da ponta da faixa com o seu valor e a sua ressalva da fonte, e não só o primeiro (o achado 5 da leitura a frio)",
+    "2a12ff68c3c888b2158fcca0f9985be9443b7a75 UE1c: o que cada medida conta, por baixo do título do recibo da sua série, com a frase da leitura do cartão (os achados 9 e 10 da leitura a frio)",
+    "982d6446bdc1c312bef02228587da89b36839463 UE1c: o mapa do repositório com os extremos empatados, o que cada medida conta no recibo da série e a armadilha da média europeia calada, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 135 no sítio, 0 longe, 0 por encontrar)",
+    "42a368a3077b4c94df95ee2fb37488841d5640b9 UE1c: as provas da passagem depois da leitura a frio (os portões da cabeça 982d6446 lidos de ficheiro, as conferências entre os commits, as 4 plantas, as 70 capturas das cabeças dos recibos, o custo), o medidas-ue1c.json, a secção UE1c do relatório com o ponto onde parei (a §1.124 contra a faixa do cartão da sobrecarga no total), as duas frases das 12 páginas corrigidas para 10, e a resposta curta",
     "22510cd9119ae01a9bca8a75c4382654cbf7e0b2 F2.2b: juntar main ao ramo antes da passagem de correção (C1, PP1, CI1, a redação de 29.09 e o guião da aterragem), pelo lugar de direção: no registo das melhorias, as linhas M37 a M40 de main e a linha do F2.2b renumerada M41, dentro da tabela; no §2 da frescura, a forma de main da linha datada (a redação de 29.09, em português certo), que substitui a do construtor",
     "fb1dd0dd442684221a5e4aceae3b8ac5491d5546 F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)",
     "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc F2.2c: corrigir a ordem da publicação e a natureza das medidas",
+    "530d5edc5d786f02cbe75d10581ab9602c576a68 UE1d: a média da União volta ao cartão da sobrecarga do custo da habitação no total, e nunca sem a ressalva da Comissão (a §1.140 do lugar de direção)",
+    "165650cfa1798bef1c0e6b17b3fa926463877deb UE1d: o que cada medida conta, no recibo da série, com a definição declarada da medida, nas dez séries e nos vinte recibos",
+    "de17f63e86a1754e0cf2667bb04c9a1fa34696e9 UE1d: o mapa do repositório com a média da União de volta ao cartão da sobrecarga no total com a ressalva, a K14 na forma nova e a definição declarada no recibo da série, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 138 no sítio, 0 longe, 0 por encontrar)",
     "cb1600b6e147f2bdc05f73396404f344b3495c2b F2.2c: registar as provas finais e a resposta do construtor",
+    "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2 UE1d: o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem, e a K14 diz porquê",
+    "ff0465368618af80d13dfe16c392bb7aa6b2da6b UE1d: as provas da passagem da §1.140 e das definições (os portões da cabeça 99b9f73a lidos de ficheiro, e os da primeira corrida em de17f63e; as conferências entre os commits; as 8 plantas, e a primeira corrida delas com a planta da declaração a rebentar; as 140 capturas; as medidas com o conhecido-positivo; a secção UE1d do relatório e a resposta curta; e o comando da UE1b que dizia «doze páginas»)",
     "df1c262242dc94f5b6aef8d8e01f9e554209baf2 F2.2d: a releitura a frio da F2.2c pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o mandato da passagem F2.2d do Codex (as plantas do varrimento sem depender de um master local, que o portão do motor no GitHub não tem; o relatório de volta ao bloco inteiro; a recusa e o TLS num runner ditos e provados pela I116; o limiar à parte das linhas e com as mensagens do portátil de volta; e as plantas e as provas que faltavam)",
+    "aba0a48b750ac9aae9afcd2998e7620fdce52224 UE1: as decisões em vigor nos ficheiros de um bloco (scripts/leituras/decisoes-em-vigor.py, a M42, com o conhecido-positivo que o faz sair com 2), depois dos dois choques de 29.09 com decisões escritas no código tocado (a §1.92(2) no F2.2b, a §1.124 no brief do UE1); a I178 (o guião dos acertos do L1 já não descreve o ficheiro das leituras desde o RP1); a revisão ue1d do inventário lida pelo lugar de direção; e a M40 em vigor com a regra do diretor",
     "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1 F2.2d: repor o relatório do bloco e a proveniência das provas",
-    "ad4722fa92bafcacf7b99d3da56363f3b58dcbed F2.2d: guardar as provas e a paragem na referência pessoal do guião"
+    "a4c202be15e6fe17b31cdebfc6e68cd828d1de2c UE1e: a definição do índice harmonizado no recibo da série sem «em Portugal» (a forma do recibo da série, com as mesmas origens), o recibo a usá-la onde existe, e o portão de HTML a conferir cada recibo contra a forma que deve usar, que a forma é a pergunta do cartão sem o lugar, e que a definição de nenhum recibo de série nomeia Portugal",
+    "9d696d3cdda09325a24f9a6c8883118e0808e731 UE1e: o mapa do repositório com a forma da definição para o recibo da série (a do índice harmonizado, sem o lugar) e as citações do portão de HTML que as linhas novas deslocaram, remapeadas (conferir-mapa: 141 no sítio, 0 longe, 0 por encontrar)",
+    "ad4722fa92bafcacf7b99d3da56363f3b58dcbed F2.2d: guardar as provas e a paragem na referência pessoal do guião",
+    "aca6ea5b515a052b281f253c9984d4bf972f84ad UE1e: as provas da passagem da forma do recibo da série (os portões da cabeça 9d696d3c lidos de ficheiro, as conferências entre os commits, as decisões em vigor sobre o intervalo, as 5 plantas com o controlo, as 20 capturas dos dois recibos do índice harmonizado, as medidas com o conhecido-positivo, a secção UE1e do relatório e a resposta curta)",
+    "3a37b809ea71d98af4fe9e0c89f947f2f1995c26 §1.140: onde Portugal fica entre os 27 (as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, as definições declaradas nos recibos das séries sem o lugar), com a segunda e a terceira leituras a frio do Codex (cinco plantas em cinco nas duas) e as triagens do lugar de direção",
+    "e15037869c95a937e00c9ae60948d39d29463344 F2.2d: fechar a referência fixa e a prova do clone raso",
+    "c1559d893fdc90eb83377ee92ee7daf99cdd78af F2.2e: a terceira leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco, nenhum achado bloqueante no código), com o registo das plantas e a triagem do lugar de direção no cabeçalho; e a decisão do lugar de direção durante a F2.2d sobre a cópia fixa do guião mensal (só as duas linhas pessoais trocadas por marcas), agora com os prompts",
+    "e97d7da8d81189691df84691ae7f538a032580d0 F2.2e: juntar main ao ramo depois da aterragem do UE1 (a §1.140, a M42, a I178 e o guião das decisões em vigor), pelo lugar de direção: no registo das melhorias, a M40 de main com o estado posto em dia, a M41 do F2.2b e a M42 de main, por esta ordem",
+    "2ea04eef166359723bcafc05a68630456e9816e4 F2.2e: o mandato da passagem do Codex (o master do motor com o UE1, as plantas das duas guardas que não mordiam, e as provas que o relatório afirma)"
   ],
   "commits_dos_relatorios": {
     "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
     "f22c": "cb1600b6e147f2bdc05f73396404f344b3495c2b",
-    "f22d": "o último commit desta passagem, que contém a revisão de LEIA-ME.md e medidas.json, as provas F2.2d e RESPOSTA-construtor-f22d.md; o SHA é dado fora do ramo"
+    "f22d": "e15037869c95a937e00c9ae60948d39d29463344",
+    "f22e": "o último commit desta passagem contém o relatório, as provas e RESPOSTA-construtor-f22e.md; o SHA é dado fora do ramo"
   },
   "alteracoes_protegidas": [],
   "brief_reproduzido": {
@@ -455,6 +497,7 @@
     "conferencia_externa": "O lugar de direção mede os interruptores e os despachos na aterragem."
   },
   "por_fazer": [
+    "portões do sítio pelo lugar de direção na cabeça que aterra",
     "publicação dos ramos",
     "ensaios despachados no GitHub",
     "chaves e interruptores pelo diretor",
@@ -2329,8 +2372,1020 @@
     },
     "cabeca_dos_portoes_do_sitio": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1"
   },
+  "f22e": {
+    "execucoes": {
+      "commit-fusao": {
+        "comando": "git -C <motor> commit -m F2.2e: juntar master com as plantas do UE1 e das rotinas -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+        "codigo_executado": {
+          "cabeca_base": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+          "arvore": "29458472cb49909b0ecd8f0404c15e1f87f71a83",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "content/13 Dominios/series.json",
+            "content/13 Dominios/source/FETCH.json",
+            "content/13 Dominios/source/MANIFEST.sha256",
+            "content/13 Dominios/source/ue1/001-op-country-AUT.rdf",
+            "content/13 Dominios/source/ue1/002-op-country-BEL.rdf",
+            "content/13 Dominios/source/ue1/003-op-country-BGR.rdf",
+            "content/13 Dominios/source/ue1/004-op-country-CYP.rdf",
+            "content/13 Dominios/source/ue1/005-op-country-CZE.rdf",
+            "content/13 Dominios/source/ue1/006-op-country-DEU.rdf",
+            "content/13 Dominios/source/ue1/007-op-country-DNK.rdf",
+            "content/13 Dominios/source/ue1/008-op-country-ESP.rdf",
+            "content/13 Dominios/source/ue1/009-op-country-EST.rdf",
+            "content/13 Dominios/source/ue1/010-op-country-FIN.rdf",
+            "content/13 Dominios/source/ue1/011-op-country-FRA.rdf",
+            "content/13 Dominios/source/ue1/012-op-country-GRC.rdf",
+            "content/13 Dominios/source/ue1/013-op-country-HRV.rdf",
+            "content/13 Dominios/source/ue1/014-op-country-HUN.rdf",
+            "content/13 Dominios/source/ue1/015-op-country-IRL.rdf",
+            "content/13 Dominios/source/ue1/016-op-country-ITA.rdf",
+            "content/13 Dominios/source/ue1/017-op-country-LTU.rdf",
+            "content/13 Dominios/source/ue1/018-op-country-LUX.rdf",
+            "content/13 Dominios/source/ue1/019-op-country-LVA.rdf",
+            "content/13 Dominios/source/ue1/020-op-country-MLT.rdf",
+            "content/13 Dominios/source/ue1/021-op-country-NLD.rdf",
+            "content/13 Dominios/source/ue1/022-op-country-POL.rdf",
+            "content/13 Dominios/source/ue1/023-op-country-PRT.rdf",
+            "content/13 Dominios/source/ue1/024-op-country-ROU.rdf",
+            "content/13 Dominios/source/ue1/025-op-country-SVK.rdf",
+            "content/13 Dominios/source/ue1/026-op-country-SVN.rdf",
+            "content/13 Dominios/source/ue1/027-op-country-SWE.rdf",
+            "content/13 Dominios/source/ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json",
+            "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json",
+            "content/13 Dominios/source/ue1/030-eurostat-ihpc-variacao-homologa-paises.json",
+            "content/13 Dominios/source/ue1/031-eurostat-precos-da-habitacao-2025-paises.json",
+            "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json",
+            "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json",
+            "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json",
+            "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json",
+            "content/13 Dominios/source/ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json",
+            "content/13 Dominios/source/ue1/037-eurostat-taxa-de-emprego-2025-paises.json",
+            "core/gate.py",
+            "indicators/out/ue1-2026-09-29/001-op-country-AUT.rdf",
+            "indicators/out/ue1-2026-09-29/002-op-country-BEL.rdf",
+            "indicators/out/ue1-2026-09-29/003-op-country-BGR.rdf",
+            "indicators/out/ue1-2026-09-29/004-op-country-CYP.rdf",
+            "indicators/out/ue1-2026-09-29/005-op-country-CZE.rdf",
+            "indicators/out/ue1-2026-09-29/006-op-country-DEU.rdf",
+            "indicators/out/ue1-2026-09-29/007-op-country-DNK.rdf",
+            "indicators/out/ue1-2026-09-29/008-op-country-ESP.rdf",
+            "indicators/out/ue1-2026-09-29/009-op-country-EST.rdf",
+            "indicators/out/ue1-2026-09-29/010-op-country-FIN.rdf",
+            "indicators/out/ue1-2026-09-29/011-op-country-FRA.rdf",
+            "indicators/out/ue1-2026-09-29/012-op-country-GRC.rdf",
+            "indicators/out/ue1-2026-09-29/013-op-country-HRV.rdf",
+            "indicators/out/ue1-2026-09-29/014-op-country-HUN.rdf",
+            "indicators/out/ue1-2026-09-29/015-op-country-IRL.rdf",
+            "indicators/out/ue1-2026-09-29/016-op-country-ITA.rdf",
+            "indicators/out/ue1-2026-09-29/017-op-country-LTU.rdf",
+            "indicators/out/ue1-2026-09-29/018-op-country-LUX.rdf",
+            "indicators/out/ue1-2026-09-29/019-op-country-LVA.rdf",
+            "indicators/out/ue1-2026-09-29/020-op-country-MLT.rdf",
+            "indicators/out/ue1-2026-09-29/021-op-country-NLD.rdf",
+            "indicators/out/ue1-2026-09-29/022-op-country-POL.rdf",
+            "indicators/out/ue1-2026-09-29/023-op-country-PRT.rdf",
+            "indicators/out/ue1-2026-09-29/024-op-country-ROU.rdf",
+            "indicators/out/ue1-2026-09-29/025-op-country-SVK.rdf",
+            "indicators/out/ue1-2026-09-29/026-op-country-SVN.rdf",
+            "indicators/out/ue1-2026-09-29/027-op-country-SWE.rdf",
+            "indicators/out/ue1-2026-09-29/028-eurostat-desemprego-de-longa-duracao-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/029-eurostat-divida-publica-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/030-eurostat-ihpc-variacao-homologa-paises.json",
+            "indicators/out/ue1-2026-09-29/031-eurostat-precos-da-habitacao-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/032-eurostat-racio-s80-s20-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/036-eurostat-taxa-de-desemprego-mip-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/037-eurostat-taxa-de-emprego-2025-paises.json",
+            "indicators/out/ue1-2026-09-29/alojar.py",
+            "indicators/out/ue1-2026-09-29/pedidos.jsonl",
+            "indicators/out/ue1-2026-09-29/pedir.py",
+            "publisher/export_series.py",
+            "publisher/fixtures/ue1/ORIGEM.md",
+            "publisher/fixtures/ue1/claims/desemprego-de-longa-duracao-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/desemprego-de-longa-duracao-2025.yml",
+            "publisher/fixtures/ue1/claims/divida-publica-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/divida-publica-2025.yml",
+            "publisher/fixtures/ue1/claims/ihpc-variacao-homologa-ue.yml",
+            "publisher/fixtures/ue1/claims/ihpc-variacao-homologa.yml",
+            "publisher/fixtures/ue1/claims/precos-da-habitacao-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/precos-da-habitacao-2025.yml",
+            "publisher/fixtures/ue1/claims/racio-s80-s20-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/racio-s80-s20-2025.yml",
+            "publisher/fixtures/ue1/claims/risco-de-pobreza-ou-exclusao-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/risco-de-pobreza-ou-exclusao-2025.yml",
+            "publisher/fixtures/ue1/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/sobrecarga-do-custo-da-habitacao-2025.yml",
+            "publisher/fixtures/ue1/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025.yml",
+            "publisher/fixtures/ue1/claims/taxa-de-desemprego-mip-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/taxa-de-desemprego-mip-2025.yml",
+            "publisher/fixtures/ue1/claims/taxa-de-emprego-2025-ue.yml",
+            "publisher/fixtures/ue1/claims/taxa-de-emprego-2025.yml",
+            "publisher/series_paises.py",
+            "publisher/series_paises_test.py"
+          ],
+          "juncao_por_registar": [
+            "e394307d818f54477351846b9c97e5e81a590949"
+          ]
+        },
+        "inicio": "2026-09-30T00:36:35.575463+00:00",
+        "fim": "2026-09-30T00:40:06.099245+00:00",
+        "segundos": 210.524,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/commit-fusao.codigo",
+        "sha256_saida": "bb44e0bdbc7e332aa022ddb8a48f148e8d024b6dd310a05696d4ce5c91c2db80"
+      },
+      "commit-plantas": {
+        "comando": "git -C <motor> commit -m F2.2e: provar as duas guardas do painel e os números do relatório -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+        "ambiente_declarado": {},
+        "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+        "codigo_executado": {
+          "cabeca_base": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/out/f22e-2026-09-30/conferir_referencia.py",
+            "indicators/out/f22e-2026-09-30/custo_bloco.py",
+            "indicators/out/f22e-2026-09-30/provar_celula13.py",
+            "indicators/out/f22e-2026-09-30/provar_guardas.py",
+            "indicators/rotinas_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:44:15.050575+00:00",
+        "fim": "2026-09-30T00:47:45.460145+00:00",
+        "segundos": 210.41,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/commit-plantas.codigo",
+        "sha256_saida": "fbb1bfef1ac3b1d97964ceffd8a25dee265e4e158edc6a37aaca4884f709154f"
+      },
+      "conferencia-relatorio": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+        "codigo_executado": {
+          "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "arvore": "601fa534bff594b4095b4aa2ade3caf09d40018a",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22e.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medidas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medir.py",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/ambito.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/fecho.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.log"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:54:26.984505+00:00",
+        "fim": "2026-09-30T00:54:27.106392+00:00",
+        "segundos": 0.122,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/conferencia-relatorio.codigo",
+        "sha256_saida": "f5b60212f55f46bf11c498d04eb36dcad9d32699b229699e960415e497caf8ec"
+      },
+      "conferencia-resposta": {
+        "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22e.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-resposta-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+        "codigo_executado": {
+          "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "arvore": "33c3c5f31c532272bb4ecb093ae0b9f9eec2649b",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22e.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medidas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medir.py",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/ambito.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/core-final.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco-execucao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-bloco.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo-extracao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/fecho.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/medidor-planta.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.log"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:54:30.884632+00:00",
+        "fim": "2026-09-30T00:54:30.997142+00:00",
+        "segundos": 0.112,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/conferencia-resposta.codigo",
+        "sha256_saida": "dab0644d1320a877a50d84c04fecb50ebc475f0bece3f59b9563f5cd532fc264"
+      },
+      "core-final": {
+        "comando": "python3 -m core.gate",
+        "ambiente_declarado": {},
+        "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+        "codigo_executado": {
+          "cabeca_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:48:22.109848+00:00",
+        "fim": "2026-09-30T00:51:52.406839+00:00",
+        "segundos": 210.298,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/core-final.codigo",
+        "sha256_saida": "aef1cba848c55713936bb3c421ccc9e1977a11afd6d7dd9d9178f8fb85fc3324"
+      },
+      "corredor": {
+        "comando": "python3 -B <motor>/indicators/out/f22e-2026-09-30/provar_celula13.py --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+        "codigo_executado": {
+          "cabeca_base": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/out/f22e-2026-09-30/conferir_referencia.py",
+            "indicators/out/f22e-2026-09-30/custo_bloco.py",
+            "indicators/out/f22e-2026-09-30/provar_celula13.py",
+            "indicators/out/f22e-2026-09-30/provar_guardas.py",
+            "indicators/rotinas_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:43:31.879388+00:00",
+        "fim": "2026-09-30T00:43:46.070947+00:00",
+        "segundos": 14.192,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/corredor.codigo",
+        "sha256_saida": "95902a7c5bb1b49e3a62c6bdbef0078018cb9974a26441c5fedce1f25bc9efd3"
+      },
+      "custo-bloco-execucao": {
+        "comando": "python3 -B <motor>/indicators/out/f22e-2026-09-30/custo_bloco.py --pacote <sitio>/design/especime-v3/medicoes/f22b-2026-09-28",
+        "ambiente_declarado": {},
+        "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+        "codigo_executado": {
+          "cabeca_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:52:17.117465+00:00",
+        "fim": "2026-09-30T00:52:17.177024+00:00",
+        "segundos": 0.059,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/custo-bloco-execucao.codigo",
+        "sha256_saida": "ad4f2da226e0033fc5b4583096ebee3498397f5c2b190e5404afcb4c4ec39f6a"
+      },
+      "custo-extracao": {
+        "comando": "python3 -B <motor>/indicators/out/f22c-2026-09-29/custo.py --inicio 2026-09-29T21:08:52.877Z --desde 2026-09-30T00:35:07.309Z --saida <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/custo.json",
+        "ambiente_declarado": {},
+        "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+        "codigo_executado": {
+          "cabeca_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:52:14.235895+00:00",
+        "fim": "2026-09-30T00:52:14.313704+00:00",
+        "segundos": 0.078,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/custo-extracao.codigo",
+        "sha256_saida": "cbf749f11065d46e7d22f526a9eb5ac9fa787e31bfdabfc19b6fe227dc162f26"
+      },
+      "guardas": {
+        "comando": "python3 -B <motor>/indicators/out/f22e-2026-09-30/provar_guardas.py --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+        "codigo_executado": {
+          "cabeca_base": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/out/f22e-2026-09-30/conferir_referencia.py",
+            "indicators/out/f22e-2026-09-30/custo_bloco.py",
+            "indicators/out/f22e-2026-09-30/provar_celula13.py",
+            "indicators/out/f22e-2026-09-30/provar_guardas.py",
+            "indicators/rotinas_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:43:32.625674+00:00",
+        "fim": "2026-09-30T00:43:32.773663+00:00",
+        "segundos": 0.148,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/guardas.codigo",
+        "sha256_saida": "2855b3b05ea05838432903cc70229973456a38bab3a6f22faa05e7bbc685a717"
+      },
+      "medidor-planta": {
+        "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
+        "ambiente_declarado": {},
+        "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+        "codigo_executado": {
+          "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md",
+            "design/especime-v3/medicoes/f22b-2026-09-28/medir.py",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-fusao.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/commit-plantas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/corredor.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/guardas.log",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia-detalhe.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.arvore",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.cabeca",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.codigo",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.json",
+            "design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia.log"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:45:58.574719+00:00",
+        "fim": "2026-09-30T00:45:58.612662+00:00",
+        "segundos": 0.037,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/medidor-planta.codigo",
+        "sha256_saida": "dfb9843320e08227b571758cbaa21831bc601ea9c358c6fd00ad873068b351a2"
+      },
+      "plantas": {
+        "comando": "python3 -m indicators.rotinas_test",
+        "ambiente_declarado": {
+          "F22B_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas-detalhe.json"
+        },
+        "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+        "codigo_executado": {
+          "cabeca_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "commit",
+          "alterados": [],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:48:21.228877+00:00",
+        "fim": "2026-09-30T00:48:21.795576+00:00",
+        "segundos": 0.567,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/plantas.codigo",
+        "sha256_saida": "cfcf93b49ef71ff389d20cbd1262acad4dcc2b78de5b6bfb2371af404f70ea77"
+      },
+      "referencia": {
+        "comando": "python3 -B <motor>/indicators/out/f22e-2026-09-30/conferir_referencia.py --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/referencia-detalhe.json",
+        "ambiente_declarado": {},
+        "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+        "codigo_executado": {
+          "cabeca_base": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "tipo": "arvore_de_trabalho",
+          "alterados": [
+            "indicators/out/f22e-2026-09-30/conferir_referencia.py",
+            "indicators/out/f22e-2026-09-30/custo_bloco.py",
+            "indicators/out/f22e-2026-09-30/provar_celula13.py",
+            "indicators/out/f22e-2026-09-30/provar_guardas.py",
+            "indicators/rotinas_test.py"
+          ],
+          "juncao_por_registar": []
+        },
+        "inicio": "2026-09-30T00:43:31.898695+00:00",
+        "fim": "2026-09-30T00:43:32.018539+00:00",
+        "segundos": 0.12,
+        "codigo": 0,
+        "codigo_lido_de": "provas/f22e/referencia.codigo",
+        "sha256_saida": "84fd2519dfe282ea0e8811f520d4c95bbe2afb6df2a828d8571e59335358b064"
+      }
+    },
+    "fecho": {
+      "estado": "Concluída no âmbito do construtor.",
+      "motor_cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+      "motor_arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+      "execucoes": {
+        "commit-fusao": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/commit-fusao.codigo",
+          "cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
+          "arvore": "29458472cb49909b0ecd8f0404c15e1f87f71a83",
+          "segundos": 210.524
+        },
+        "commit-plantas": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/commit-plantas.codigo",
+          "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 210.41
+        },
+        "core-final": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/core-final.codigo",
+          "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 210.298
+        },
+        "plantas": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/plantas.codigo",
+          "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 0.567
+        },
+        "guardas": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/guardas.codigo",
+          "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 0.148
+        },
+        "corredor": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/corredor.codigo",
+          "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 14.192
+        },
+        "referencia": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/referencia.codigo",
+          "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 0.12
+        },
+        "custo-extracao": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/custo-extracao.codigo",
+          "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 0.078
+        },
+        "custo-bloco-execucao": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/custo-bloco-execucao.codigo",
+          "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+          "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+          "segundos": 0.059
+        },
+        "medidor-planta": {
+          "codigo": 0,
+          "ficheiro": "provas/f22e/medidor-planta.codigo",
+          "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
+          "segundos": 0.037
+        }
+      },
+      "pendencias_do_construtor": [],
+      "portoes_do_sitio": "Não executados na F2.2e; o lugar de direção corre-os na cabeça que aterra.",
+      "referencia_do_mandato": "prompts/PROMPT-f22e-construtor.md",
+      "efeitos_externos": "Declaração do construtor: nenhum push, despacho, interruptor ou agente real alterado."
+    },
+    "plantas": {
+      "provas": 50,
+      "falhas": 0,
+      "erros": 0,
+      "passou": true,
+      "nomes": [
+        "test_api_cadencia_teto_e_vermelho",
+        "test_api_exige_o_commit_e_o_fluxo",
+        "test_cadencia_mensal_com_folga",
+        "test_comentario_editorial_conservado",
+        "test_data_autor_path_campos_recusados",
+        "test_decisoes_exige_site_e_aceita_ambiente",
+        "test_diff_real_recusa_outro_ficheiro",
+        "test_diff_recusado_nao_publica",
+        "test_estados_so_dados",
+        "test_fluxos_transportam_a_recusa_local",
+        "test_limiar_503_avisa_sem_retoma_e_carimba",
+        "test_limiar_calado_com_linha_no_mesmo_anfitriao_carimba",
+        "test_limiar_recusa_retoma_noutro_runner",
+        "test_limiar_sem_numeros_avisa_e_carimba",
+        "test_limiar_sem_resposta_retoma_sem_bloquear_carimbo",
+        "test_limiar_tls_retoma_noutro_runner",
+        "test_main_avancou_fica_no_ramo",
+        "test_mensagens_do_limiar_do_portatil_conservadas",
+        "test_painel_calado_persistente_nao_escreve_inacessivel",
+        "test_painel_calado_retoma_so_o_anfitriao",
+        "test_painel_ensaio_inteiro_quatro_saidas",
+        "test_painel_linha_recusada_fica_sem_carimbo_e_retoma",
+        "test_painel_linha_tls_fica_sem_carimbo_e_retoma",
+        "test_painel_revisao_abre_issue_e_conserva_valor",
+        "test_painel_vigia_cala_so_limiar_e_conserva_inteira",
+        "test_poda_a_mais_e_reordenacao_recusadas",
+        "test_poda_e_reescrita_recusadas",
+        "test_portao_do_motor_vermelho_nao_commita",
+        "test_portao_local_vermelho_conserva_ramo",
+        "test_portao_vermelho_retém_main_e_abre_issue",
+        "test_quatro_reconferencias_mais_nova_podadas",
+        "test_quatro_reconferencias_mais_nova_sem_poda_recusadas",
+        "test_recusa_nas_linhas_e_limiar_pede_outro_runner",
+        "test_reforma_recusa_ensaio_e_exige_duas_corridas",
+        "test_reforma_so_ensaio_com_definicoes_sinteticas",
+        "test_relatorio_ilegivel_abre_issue",
+        "test_retoma_do_limiar_tira_silencio_e_conserva_revisao",
+        "test_retomadas_so_quando_calados",
+        "test_segunda_sem_corrida_abre_issue",
+        "test_seis_reconferencias_mais_nova_podadas",
+        "test_sem_segredos_nos_ensaios_e_cron",
+        "test_silencio_do_leitor_e_http_sao_distintos",
+        "test_tls_nas_linhas_e_limiar_pede_outro_runner",
+        "test_transporte_do_patch_para_outro_runner",
+        "test_valor_excerto_endereco_rejeitados",
+        "test_varrimento_achado_abre_issue",
+        "test_varrimento_leitor_falhado_nao_carimba",
+        "test_verde_publica_exatamente_o_sha_conferido",
+        "test_vigia_dormente_nao_pede",
+        "test_vigia_recusa_ensaio_vermelho_incompleto"
+      ]
+    },
+    "guardas": {
+      "casos": [
+        {
+          "caso": "controlo",
+          "plantas": [
+            "test_painel_linha_recusada_fica_sem_carimbo_e_retoma",
+            "test_painel_linha_tls_fica_sem_carimbo_e_retoma",
+            "test_painel_vigia_cala_so_limiar_e_conserva_inteira"
+          ],
+          "executadas": 3,
+          "falhas": 0,
+          "erros": 0,
+          "codigo_da_suite": 0,
+          "falhas_esperadas": 0
+        },
+        {
+          "caso": "entrada_escrita_no_silencio",
+          "plantas": [
+            "test_painel_linha_recusada_fica_sem_carimbo_e_retoma",
+            "test_painel_linha_tls_fica_sem_carimbo_e_retoma"
+          ],
+          "executadas": 2,
+          "falhas": 2,
+          "erros": 0,
+          "codigo_da_suite": 1,
+          "falhas_esperadas": 2
+        },
+        {
+          "caso": "limiar_nos_calados_das_linhas",
+          "plantas": [
+            "test_painel_vigia_cala_so_limiar_e_conserva_inteira"
+          ],
+          "executadas": 1,
+          "falhas": 1,
+          "erros": 0,
+          "codigo_da_suite": 1,
+          "falhas_esperadas": 1
+        }
+      ],
+      "passou": true,
+      "isolamento": "Estragos em funções compiladas em memória; os ficheiros do painel não mudam."
+    },
+    "celula13": {
+      "comando": "python3 indicators/corredor.py --provar",
+      "codigo": 0,
+      "celula": 13,
+      "reconferencias_guardadas": 2,
+      "limite_importado": 4,
+      "linha_da_saida": "    vermelho   o valor publicado, depois de tudo isto         continua «10,0» · 2 conferência(s) guardada(s)",
+      "conferencias": 59
+    },
+    "referencia_fixa": {
+      "origem": "68318e0:sweeps/monthly.sh",
+      "sha256_original": "45336f7489b6f36bf6062c6c88aadad4bc847729f32be1465314753335f814fc",
+      "sha256_copia": "d99ce84230204fdf55a80eae748897197f42c54a8375cc7dcdcb5f7b904dfa33",
+      "linhas_trocadas": [
+        3,
+        23
+      ],
+      "restantes_bytes_iguais": true,
+      "linhas_python3_e_echo_iguais": true
+    },
+    "custo": {
+      "origem": "event_msg/token_count da sessão indicada",
+      "inicio": "2026-09-29T21:08:52.877Z",
+      "instante_do_contador": "2026-09-30T00:51:55.842Z",
+      "modelo_exposto": "gpt-6-astra",
+      "simbolos": {
+        "input_tokens": 40408562,
+        "cached_input_tokens": 39532160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 212108,
+        "reasoning_output_tokens": 84450,
+        "total_tokens": 40620670
+      },
+      "segundos": 1008.533,
+      "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido.",
+      "inicio_passagem": "2026-09-30T00:35:07.309Z",
+      "contador_anterior": {
+        "instante": "2026-09-29T23:58:36.373Z",
+        "simbolos": {
+          "input_tokens": 36195124,
+          "cached_input_tokens": 35496064,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 185422,
+          "reasoning_output_tokens": 73600,
+          "total_tokens": 36380546
+        }
+      },
+      "acrescimo_na_passagem": {
+        "input_tokens": 4213438,
+        "cached_input_tokens": 4036096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26686,
+        "reasoning_output_tokens": 10850,
+        "total_tokens": 4240124
+      }
+    },
+    "custo_do_bloco": {
+      "origem": "Contadores token_count das sessões; extração e soma com comandos registados.",
+      "segmentos": {
+        "construcao": {
+          "inicio": "2026-09-28T18:48:49.664Z",
+          "contador_anterior": null,
+          "contador_final": {
+            "instante": "2026-09-28T19:55:27.415Z",
+            "simbolos": {
+              "input_tokens": 17676626,
+              "cached_input_tokens": 17072512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 96378,
+              "reasoning_output_tokens": 29551,
+              "total_tokens": 17773004
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 17676626,
+            "cached_input_tokens": 17072512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 96378,
+            "reasoning_output_tokens": 29551,
+            "total_tokens": 17773004
+          },
+          "segundos": 3997.751
+        },
+        "retoma": {
+          "inicio": "2026-09-29T19:46:50.923Z",
+          "contador_anterior": {
+            "instante": "2026-09-28T19:55:27.415Z",
+            "simbolos": {
+              "input_tokens": 17676626,
+              "cached_input_tokens": 17072512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 96378,
+              "reasoning_output_tokens": 29551,
+              "total_tokens": 17773004
+            }
+          },
+          "contador_final": {
+            "instante": "2026-09-29T20:17:42.680Z",
+            "simbolos": {
+              "input_tokens": 28115814,
+              "cached_input_tokens": 27284864,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 131313,
+              "reasoning_output_tokens": 50438,
+              "total_tokens": 28247127
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 10439188,
+            "cached_input_tokens": 10212352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 34935,
+            "reasoning_output_tokens": 20887,
+            "total_tokens": 10474123
+          },
+          "segundos": 1851.757
+        },
+        "f22c": {
+          "inicio": "2026-09-29T21:08:52.877Z",
+          "contador_anterior": null,
+          "contador_final": {
+            "instante": "2026-09-29T22:07:11.475Z",
+            "simbolos": {
+              "input_tokens": 21666506,
+              "cached_input_tokens": 21352064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82169,
+              "reasoning_output_tokens": 31828,
+              "total_tokens": 21748675
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 21666506,
+            "cached_input_tokens": 21352064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 82169,
+            "reasoning_output_tokens": 31828,
+            "total_tokens": 21748675
+          },
+          "segundos": 3498.598
+        },
+        "f22d": {
+          "inicio": "2026-09-29T22:48:12.595Z",
+          "contador_anterior": {
+            "instante": "2026-09-29T22:07:11.475Z",
+            "simbolos": {
+              "input_tokens": 21666506,
+              "cached_input_tokens": 21352064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82169,
+              "reasoning_output_tokens": 31828,
+              "total_tokens": 21748675
+            }
+          },
+          "contador_final": {
+            "instante": "2026-09-29T23:58:36.373Z",
+            "simbolos": {
+              "input_tokens": 36195124,
+              "cached_input_tokens": 35496064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 185422,
+              "reasoning_output_tokens": 73600,
+              "total_tokens": 36380546
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 14528618,
+            "cached_input_tokens": 14144000,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 103253,
+            "reasoning_output_tokens": 41772,
+            "total_tokens": 14631871
+          },
+          "segundos": 4223.778
+        },
+        "f22e": {
+          "inicio": "2026-09-30T00:35:07.309Z",
+          "contador_anterior": {
+            "instante": "2026-09-29T23:58:36.373Z",
+            "simbolos": {
+              "input_tokens": 36195124,
+              "cached_input_tokens": 35496064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 185422,
+              "reasoning_output_tokens": 73600,
+              "total_tokens": 36380546
+            }
+          },
+          "contador_final": {
+            "instante": "2026-09-30T00:51:55.842Z",
+            "simbolos": {
+              "input_tokens": 40408562,
+              "cached_input_tokens": 39532160,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 212108,
+              "reasoning_output_tokens": 84450,
+              "total_tokens": 40620670
+            }
+          },
+          "simbolos_do_segmento": {
+            "input_tokens": 4213438,
+            "cached_input_tokens": 4036096,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 26686,
+            "reasoning_output_tokens": 10850,
+            "total_tokens": 4240124
+          },
+          "segundos": 1008.533
+        }
+      },
+      "total_simbolos": 68867797,
+      "total_segundos_dos_segmentos": 14580.417,
+      "fotografias_historicas": {
+        "construcao": {
+          "inicio_sessao": "2026-09-28T18:48:49.664Z",
+          "ultima_medicao": "2026-09-28T19:48:02.322Z",
+          "segundos_ate_medicao": 3552.658,
+          "simbolos": {
+            "input_tokens": 15742780,
+            "cached_input_tokens": 15150336,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 87834,
+            "reasoning_output_tokens": 24637,
+            "total_tokens": 15830614
+          },
+          "fonte": "contador cumulativo token_count da sessão de construção",
+          "limite": "fotografia antes do commit do relatório; não inclui a resposta final"
+        },
+        "retoma": {
+          "primeiro_evento_da_retoma": "2026-09-29T19:46:50.923Z",
+          "ultima_medicao": "2026-09-29T20:10:49.328Z",
+          "segundos_ate_medicao": 1438.405,
+          "contador_anterior_a_retoma": {
+            "instante": "2026-09-28T19:55:27.415Z",
+            "simbolos": {
+              "input_tokens": 17676626,
+              "cached_input_tokens": 17072512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 96378,
+              "reasoning_output_tokens": 29551,
+              "total_tokens": 17773004
+            }
+          },
+          "simbolos_cumulativos": {
+            "input_tokens": 26238673,
+            "cached_input_tokens": 25434880,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 122034,
+            "reasoning_output_tokens": 46587,
+            "total_tokens": 26360707
+          },
+          "acrescimo_na_retoma": {
+            "input_tokens": 8562047,
+            "cached_input_tokens": 8362368,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 25656,
+            "reasoning_output_tokens": 17036,
+            "total_tokens": 8587703
+          },
+          "fonte": "eventos token_count da mesma sessão",
+          "limite": "fotografia durante o fecho; não inclui os atos posteriores nem a resposta final"
+        },
+        "f22c": {
+          "origem": "event_msg/token_count da sessão indicada",
+          "inicio": "2026-09-29T21:08:52.877Z",
+          "instante_do_contador": "2026-09-29T22:02:04.021Z",
+          "modelo_exposto": "gpt-6-astra",
+          "simbolos": {
+            "input_tokens": 21005236,
+            "cached_input_tokens": 20722560,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 74201,
+            "reasoning_output_tokens": 30442,
+            "total_tokens": 21079437
+          },
+          "segundos": 3191.144,
+          "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido."
+        },
+        "f22d": {
+          "origem": "event_msg/token_count da sessão indicada",
+          "inicio": "2026-09-29T21:08:52.877Z",
+          "instante_do_contador": "2026-09-29T23:53:41.789Z",
+          "modelo_exposto": "gpt-6-astra",
+          "simbolos": {
+            "input_tokens": 35241588,
+            "cached_input_tokens": 34558720,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 177963,
+            "reasoning_output_tokens": 71339,
+            "total_tokens": 35419551
+          },
+          "segundos": 3929.194,
+          "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido.",
+          "inicio_passagem": "2026-09-29T22:48:12.595Z",
+          "contador_anterior": {
+            "instante": "2026-09-29T22:07:11.475Z",
+            "simbolos": {
+              "input_tokens": 21666506,
+              "cached_input_tokens": 21352064,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82169,
+              "reasoning_output_tokens": 31828,
+              "total_tokens": 21748675
+            }
+          },
+          "acrescimo_na_passagem": {
+            "input_tokens": 13575082,
+            "cached_input_tokens": 13206656,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 95794,
+            "reasoning_output_tokens": 39511,
+            "total_tokens": 13670876
+          }
+        }
+      },
+      "limite": "Inclui o fecho das passagens anteriores. A F2.2e termina na fotografia do contador, antes do último commit e da resposta. Símbolos incluem cache; segundos são tempo decorrido dos segmentos, incluindo a pausa dentro da F2.2d; não há medição monetária."
+    },
+    "portoes_do_sitio": "Não corridos nesta passagem; o lugar de direção corre-os na cabeça que aterra."
+  },
   "varrimento_do_pacote": {
-    "ficheiros_lidos": 315,
+    "ficheiros_lidos": 388,
     "caminhos_pessoais": 0,
     "conhecido_positivo": true
   }

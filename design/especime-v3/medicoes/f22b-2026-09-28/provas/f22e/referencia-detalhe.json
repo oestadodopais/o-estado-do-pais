@@ -1,0 +1,11 @@
+{
+  "origem": "68318e0:sweeps/monthly.sh",
+  "sha256_original": "45336f7489b6f36bf6062c6c88aadad4bc847729f32be1465314753335f814fc",
+  "sha256_copia": "d99ce84230204fdf55a80eae748897197f42c54a8375cc7dcdcb5f7b904dfa33",
+  "linhas_trocadas": [
+    3,
+    23
+  ],
+  "restantes_bytes_iguais": true,
+  "linhas_python3_e_echo_iguais": true
+}

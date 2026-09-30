@@ -1,0 +1,9 @@
+{
+  "comando": "python3 indicators/corredor.py --provar",
+  "codigo": 0,
+  "celula": 13,
+  "reconferencias_guardadas": 2,
+  "limite_importado": 4,
+  "linha_da_saida": "    vermelho   o valor publicado, depois de tudo isto         continua «10,0» · 2 conferência(s) guardada(s)",
+  "conferencias": 59
+}

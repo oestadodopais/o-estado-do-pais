@@ -1,0 +1,42 @@
+{
+  "casos": [
+    {
+      "caso": "controlo",
+      "plantas": [
+        "test_painel_linha_recusada_fica_sem_carimbo_e_retoma",
+        "test_painel_linha_tls_fica_sem_carimbo_e_retoma",
+        "test_painel_vigia_cala_so_limiar_e_conserva_inteira"
+      ],
+      "executadas": 3,
+      "falhas": 0,
+      "erros": 0,
+      "codigo_da_suite": 0,
+      "falhas_esperadas": 0
+    },
+    {
+      "caso": "entrada_escrita_no_silencio",
+      "plantas": [
+        "test_painel_linha_recusada_fica_sem_carimbo_e_retoma",
+        "test_painel_linha_tls_fica_sem_carimbo_e_retoma"
+      ],
+      "executadas": 2,
+      "falhas": 2,
+      "erros": 0,
+      "codigo_da_suite": 1,
+      "falhas_esperadas": 2
+    },
+    {
+      "caso": "limiar_nos_calados_das_linhas",
+      "plantas": [
+        "test_painel_vigia_cala_so_limiar_e_conserva_inteira"
+      ],
+      "executadas": 1,
+      "falhas": 1,
+      "erros": 0,
+      "codigo_da_suite": 1,
+      "falhas_esperadas": 1
+    }
+  ],
+  "passou": true,
+  "isolamento": "Estragos em funções compiladas em memória; os ficheiros do painel não mudam."
+}

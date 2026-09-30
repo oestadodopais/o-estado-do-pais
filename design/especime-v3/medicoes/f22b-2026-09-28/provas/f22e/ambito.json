@@ -1,0 +1,14 @@
+{
+  "motor_cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+  "motor_fusao": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+  "master_recebido": "e394307d818f54477351846b9c97e5e81a590949",
+  "plantas_no_portao": [
+    "publisher.series_paises_test",
+    "indicators.rotinas_test",
+    "indicators.rotinas_f22c_test"
+  ],
+  "painel_refresh_e_monthly_iguais_a_f22d": true,
+  "sitio_base_da_passagem": "2ea04eef166359723bcafc05a68630456e9816e4",
+  "sitio_alteracoes_fora_do_pacote": [],
+  "limite": "Conferência antes do último commit das provas. Os portões do sítio ficam para a aterragem."
+}

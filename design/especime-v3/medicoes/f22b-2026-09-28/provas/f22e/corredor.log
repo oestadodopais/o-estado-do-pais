@@ -1,0 +1,130 @@
+
+  1 pedido(s) a 1 endereço(s) alvo, de 1 · 2 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 0.0s · 2 conferência(s) por escrever · 0 linha(s) por rever
+  ALARME  o leitor «concelhos» saiu com 3
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 2 adiada(s)
+
+  2 pedido(s) a 2 endereço(s) alvo, de 2 · 3 linha(s)
+  2 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 1.1s · 3 conferência(s) por escrever · 0 linha(s) por rever
+  ALARME  o leitor «concelhos» saiu com 3
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 3 adiada(s)
+
+  1 pedido(s) a 1 endereço(s) alvo, de 1 · 2 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 0.0s · 2 conferência(s) por escrever · 0 linha(s) por rever
+  leitor «concelhos»: 8 fonte(s) · 3 sem resposta · 0 com alarme · 9 pedido(s) HTTP a publicadores
+  parcial: o leitor «concelhos» deu 3 de 8 fonte(s) por «sem resposta», e não leu o que elas dizem hoje
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 0 adiada(s)
+
+  1 pedido(s) a 1 endereço(s) alvo, de 1 · 2 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 0.0s · 2 conferência(s) por escrever · 0 linha(s) por rever
+  ALARME  o leitor «concelhos» saiu com 1
+  leitor «concelhos»: 8 fonte(s) · 3 sem resposta · 1 com alarme · 9 pedido(s) HTTP a publicadores
+  parcial: o leitor «concelhos» deu 3 de 8 fonte(s) por «sem resposta», e não leu o que elas dizem hoje
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 2 adiada(s)
+
+  1 pedido(s) a 1 endereço(s) alvo, de 1 · 2 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 0.0s · 2 conferência(s) por escrever · 0 linha(s) por rever
+  ALARME  o leitor «concelhos» saiu com 0 e não deixou o resumo que lhe foi pedido: esta corrida não sabe quantas fontes ele viu nem quantas ficaram sem resposta
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 2 adiada(s)
+
+  1 pedido(s) a 1 endereço(s) alvo, de 1 · 2 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 0.0s · 2 conferência(s) por escrever · 0 linha(s) por rever
+  ALARME  o resumo do leitor «concelhos» não se lê: Expecting value: line 1 column 1
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 2 adiada(s)
+
+  1 pedido(s) a 1 endereço(s) alvo, de 1 · 2 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 0 sem resposta · 0 com erro
+  0 bytes · 0.0s · 2 conferência(s) por escrever · 0 linha(s) por rever
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 0 adiada(s)
+
+  2 pedido(s) a 2 endereço(s) alvo, de 2 · 3 linha(s)
+  1 a 304 · 0 a 200 igual · 0 a 200 novo · 0 primeira captura · 1 sem resposta · 0 com erro
+  0 bytes · 0.0s · 3 conferência(s) por escrever · 0 linha(s) por rever
+  0 «igual» + 0 «inacessível» escrita(s) no sítio · 0 adiada(s)
+  ALARME: não há carimbo em <caminho-local> O corredor nunca correu, ou o carimbo desapareceu.
+  ok: a última corrida foi há 0.0 hora(s), 1 endereço(s)
+  ALARME: a última corrida foi há 27.0 hora(s) (o limite é 26). O sítio está a publicar uma conferência que já não se faz.
+
+    vermelho   duas linhas, um ficheiro, um pedido            2 linhas · 1 endereço
+    vermelho   nada mudou, com validadores                    304 · 0 bytes · If-None-Match no pedido
+    vermelho   o 304 no índice, sem bandeira nenhuma          1 linha(s)
+    vermelho   nada mudou, sem validadores                    200 igual · 17 bytes
+    vermelho   a invariante do arquivo, ao fim de 3 corridas  todo o sha256 tem ficheiro, e todo o ficheiro é citado
+    vermelho   um byte muda, e o LEITOR lê a versão guardada  captura nova · as duas versões no arquivo · 2 por rever, 0 escritas · o leitor lê os mesmos bytes
+    vermelho   um leitor partido (sai com 3)                  a corrida sai com 1
+    vermelho   uma corrida vermelha e o sítio intacto         3 escrita(s) adiada(s) · 0 de 3 ficheiro(s) mexidos
+    vermelho   fontes caladas: verde, e dita parcial          a corrida sai com 0 · 1 frase(s) de parcialidade · a tabela dos leitores no relatório
+    vermelho   vermelha E parcial: o markdown diz as duas     saiu com 1 · 1 alarme(s) no relatório · «VERMELHA» e «PARCIAL» no markdown
+    vermelho   o resumo que falta conta para o veredicto      em falta 1 · ilegível 1 · nunca pedido 0
+    vermelho   o endereço a 404                               «respondeu-com-erro» e não «sem-resposta», no índice e no sítio
+    vermelho   o anfitrião que não atende                     «sem-resposta», e o 404 do caso anterior era outra coisa
+    vermelho   um endereço calado: carimba, e conta o que leu linhas 2 de 3 · carimbo do cabeçalho mantido · 0 anfitriões calados
+    vermelho   uma linha do índice reescrita                  o índice do arquivo NÃO foi escrit
+    vermelho   um resumo que não é o dos bytes                o resumo dado (5edcfa2635edc92dc32
+    vermelho   o carimbo de há 27 horas                       vermelho (a conta é em horas)
+    vermelho   o meio-dia sem nada devido, de ponta a ponta   0 pedidos · 0 leitores · o sinal do sítio intacto
+    vermelho   uma entrada plantada como devida hoje          1 endereço, 1 pedido
+    vermelho   --so-anfitrioes com um anfitrião que não há    a corrida recusa antes de pedir
+    vermelho   --so-anfitrioes com dois anfitriões na fixture 1 endereço de 2, o do anfitrião pedido
+    vermelho   a máquina na linha do índice                   Mac (Darwin arm64)
+    vermelho   a corrida parcial: estado sim, carimbo não     CONFERENCIA byte a byte igual · 1 anfitrião calado
+    vermelho   sem --simular-calado, nada muda                2 pedido(s) · 0 anfitriões calados
+    vermelho   --simular-calado: 0 pedidos, classe simulada   1 pedido(s) contra 2 sem a bandeira · 1 endereço(s) sem pedido
+    vermelho   o silêncio simulado diz-se em três sítios      1 linha(s) do índice · a frase · o markdown
+    vermelho   a saída anfitrioes_calados, do relatório       anfitrioes_calados=127.0.0.1:50417
+    vermelho   a bandeira do ensaio recusada em real e a escrever os dois caminhos saem com 1, e dizem porquê
+    vermelho   --simular-calado mal escrito pára a corrida    o anfitrião que não há e a seleção vazia, as duas recusadas
+    vermelho   um relatório sem o campo não é «ninguém se calou» 4 estrago(s) com código 1 e `erro=sim`; o bom com 0
+    vermelho   a espera presumida é só de quem abriu a pedir  simulado 1 · a sério 2
+    vermelho   o disjuntor cala o anfitrião, e o sítio di-lo  2 endereços em estado · 1 anfitrião calado, «peloDisjuntor» · com um a responder, 0
+    vermelho   a data do anfitrião: o último a cair           2026-09-02 e não 2026-05-01 · máquina M
+    vermelho   dois estados no mesmo anfitrião                0 anfitriões calados: nenhum dos dois é «o anfitrião»
+    vermelho   --so-anfitrioes só com vírgulas ou espaços     a corrida recusa, e não pergunta a todos
+    vermelho   um anfitrião real cruzado com zero devidas     a corrida recusa em vez de sair verde
+    vermelho   --sem-arquivo escreve o estado desta corrida   1 observação(ões) desta corrida no sinal
+    vermelho   a cópia arquivada com os bytes declarados      «igual», com o `path` da cópia e não o source_url
+    vermelho   a cópia arquivada com outros bytes             nada escrito na linha · 1 linha por rever · fora do arquivo
+    vermelho   dois resumos para a mesma cópia arquivada      a corrida recusa
+    vermelho   o valor publicado, depois de tudo isto         continua «10,0» · 2 conferência(s) guardada(s)
+    vermelho   o ramo da releitura dos calendários            INE 40 data(s) da cópia · Eurostat 6 em 6 janela(s) · marcas ['Eurostat', 'INE'] · 1 atrasado confirmado
+    vermelho   a) tempo esgotado: abre à PRIMEIRA             1 pedido · 4 ausências a 0,0s · 1.0s no total (sem disjuntor seriam 5 esperas)
+    vermelho   a2) os pedidos contam pedidos, e não alvos     2 pedido(s) a 6 endereço(s) alvo · 4 poupado(s) pelo disjuntor
+    vermelho   b) ligação recusada: abre à SEGUNDA seguida    2 pedidos · 3 ausências sem pedido · classe «ligacao»
+    vermelho   c) 503 em todos: o disjuntor NUNCA abre        5 pedidos · 5 «respondeu com erro» · 0 anfitriões calados
+    vermelho   d) a classe do erro, e não o relógio           SSLError e HTTP 404 não abrem nada; 4 de tempo, 3 de ligação
+    vermelho   bytes novos com a comparação igual             classe «igual» · as DUAS versões no arquivo · a invariante fecha
+    vermelho   o carimbo do pedido do INE, cortado do texto cru só o carimbo é igual; o valor E a ordem das chaves ficam vermelhos
+    vermelho   um corpo do INE sem o membro declarado         cai no resumo cru, e a nota di-lo
+    vermelho   uma corrida sem --so-conferir                  recusada, com a razão escrita
+    vermelho   o leitor como guião solto vs. como módulo      solto: ModuleNotFoundError · -m indicators.refresh: aponta o arquivo
+    vermelho   a máquina sem pdftotext                        `pdftotext` não existe nesta máquina: Mac (D
+    vermelho   o que a fase 1 sabe chega ao leitor            `--anfitrioes-calados www.ine.pt=<hora>` e `--resumo`; sem anfitriões calados, sem bandeira
+    vermelho   a corrida parcial, dita pelo nome              «parcial: www.ine.pt não respondeu a esta máq…» · uma corrida inteira não diz nada
+    vermelho   o cabeçalho leva o ALVO, e não os pedidos      enderecos 79 com 69 pedidos feitos · o mesmo num relatório anterior a 08.09
+    vermelho   o cabeçalho conta o que leu, e nomeia o calado linhas 1641 + 931 sem resposta + 5 com erro = 2577
+    vermelho   as duas contas das linhas têm de bater certo   as duas contas das linhas desta corrida não 
+    vermelho   um nome de módulo que já não existe            17 alcunha(s) lidas, 0 em falta neste ficheiro · a planta dá CAL.nao_existe, ARQ.tambem_nao_existe
+
+CORREDOR: PASS — 59 conferência(s), com os argumentos da produção
+
+  anfitriões sem resposta nesta corrida: 127.0.0.1:50417
+
+  RECUSADO: <caminho-local> não tem o campo `anfitrioes_sem_resposta`. Uma corrida em que ninguém se calou escreve `[]`; a falta do campo é um relatório que não sabemos ler, e não uma noite boa.
+
+
+  RECUSADO: <caminho-local> tem `anfitrioes_sem_resposta` a NoneType e não a lista. `null` não é «ninguém».
+
+
+  RECUSADO: <caminho-local> a entrada 0 de `anfitrioes_sem_resposta` não tem `host` e `desde` ({'desde': '2026-09-08'}). Um anfitrião calado sem nome ou sem hora não se retoma nem se publica.
+
+
+  RECUSADO: <caminho-local> a entrada 0 de `anfitrioes_sem_resposta` não tem `host` e `desde` ({'host': 'www.ine.pt'}). Um anfitrião calado sem nome ou sem hora não se retoma nem se publica.
+
+  anfitriões sem resposta nesta corrida: www.ine.pt
+CÉLULA 13: PASS, 2 reconferências guardadas, limite 4.

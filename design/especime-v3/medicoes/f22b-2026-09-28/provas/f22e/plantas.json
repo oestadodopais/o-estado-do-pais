@@ -1,0 +1,18 @@
+{
+  "comando": "python3 -m indicators.rotinas_test",
+  "ambiente_declarado": {
+    "F22B_PROVAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/plantas-detalhe.json"
+  },
+  "cabeca": "4b46befbac8decf1566f73b5959fd175e5458d66",
+  "codigo_executado": {
+    "cabeca_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+    "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+    "tipo": "commit",
+    "alterados": [],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-30T00:48:21.228877+00:00",
+  "fim": "2026-09-30T00:48:21.795576+00:00",
+  "segundos": 0.567,
+  "codigo": 0
+}

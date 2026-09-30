@@ -1,0 +1,22 @@
+{
+  "comando": "git -C <motor> commit -m F2.2e: provar as duas guardas do painel e os números do relatório -m Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>",
+  "ambiente_declarado": {},
+  "cabeca": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+  "codigo_executado": {
+    "cabeca_base": "06e126d154cc20141c55801b807dbf9c9173a8fd",
+    "arvore": "21ee3622e8ef16588e698716e3ecd41ae8016777",
+    "tipo": "arvore_de_trabalho",
+    "alterados": [
+      "indicators/out/f22e-2026-09-30/conferir_referencia.py",
+      "indicators/out/f22e-2026-09-30/custo_bloco.py",
+      "indicators/out/f22e-2026-09-30/provar_celula13.py",
+      "indicators/out/f22e-2026-09-30/provar_guardas.py",
+      "indicators/rotinas_test.py"
+    ],
+    "juncao_por_registar": []
+  },
+  "inicio": "2026-09-30T00:44:15.050575+00:00",
+  "fim": "2026-09-30T00:47:45.460145+00:00",
+  "segundos": 210.41,
+  "codigo": 0
+}
