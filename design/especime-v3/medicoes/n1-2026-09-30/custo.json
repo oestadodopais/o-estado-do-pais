@@ -1,6 +1,6 @@
 {
-  "medido_em": "2026-09-30T10:15:35.216607+00:00",
-  "segundos_decorridos": 4255.777607,
+  "medido_em": "2026-09-30T10:30:21.825568+00:00",
+  "segundos_decorridos": 5142.386568,
   "limite": "Contadores até à última amostra escrita, anteriores ao fecho da sessão; entrada inclui cache. Não são euros nem contagem de caracteres.",
   "conhecido_positivo": true,
   "sessoes": [
@@ -23,16 +23,16 @@
       "papel": "construtor",
       "modelo": "gpt-6-astra",
       "inicio": "2026-09-30T09:04:39.439Z",
-      "ultima_amostra": "2026-09-30T10:14:57.584Z",
+      "ultima_amostra": "2026-09-30T10:29:35.535Z",
       "simbolos": {
-        "input_tokens": 21750757,
-        "cached_input_tokens": 21030016,
+        "input_tokens": 25333195,
+        "cached_input_tokens": 24587008,
         "cache_write_input_tokens": 0,
-        "output_tokens": 98493,
-        "reasoning_output_tokens": 30602,
-        "total_tokens": 21849250
+        "output_tokens": 112786,
+        "reasoning_output_tokens": 39921,
+        "total_tokens": 25445981
       },
-      "entrada_sem_cache": 720741
+      "entrada_sem_cache": 746187
     },
     {
       "papel": "revisor automático das aprovações",
@@ -53,16 +53,16 @@
       "papel": "revisor automático das aprovações",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T09:59:13.724Z",
-      "ultima_amostra": "2026-09-30T10:10:50.508Z",
+      "ultima_amostra": "2026-09-30T10:29:11.741Z",
       "simbolos": {
-        "input_tokens": 246763,
-        "cached_input_tokens": 197888,
+        "input_tokens": 773314,
+        "cached_input_tokens": 697600,
         "cache_write_input_tokens": 0,
-        "output_tokens": 643,
-        "reasoning_output_tokens": 237,
-        "total_tokens": 247406
+        "output_tokens": 1071,
+        "reasoning_output_tokens": 255,
+        "total_tokens": 774385
       },
-      "entrada_sem_cache": 48875
+      "entrada_sem_cache": 75714
     }
   ]
 }

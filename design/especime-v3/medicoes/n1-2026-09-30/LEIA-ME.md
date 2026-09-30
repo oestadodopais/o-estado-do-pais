@@ -77,16 +77,16 @@ A inspeção visual incluiu Preços e a primeira página a 390 px em português,
 Os códigos são lidos dos ficheiros escritos por [correr.mjs](correr.mjs). O guião guarda saída, código, cabeça, início, fim e segundos, retirando os caminhos e o nome da conta local. Cada portão corre no seu comando. Antes das corridas completas, a lista de processos é consultada e não se inicia outra construção concorrente.
 
 <!-- PORTOES-INICIO -->
-Primeira corrida completa, antes do ajuste do feixe. Os três comprovativos finais serão escritos de novo depois do commit de fecho.
+Corridas completas na cabeça final `70ebf9b64ba9f0a7340f69848cd09146f4d7555b`. Códigos e cabeças lidos dos ficheiros acabados de escrever.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](ensaios/primeiro-build.codigo) | `c22c21e881696897294e292c0ed63ab5b78cf6b6` | 86.0 |
-| `npm run verify` | [1](ensaios/primeiro-verify.codigo) | `c22c21e881696897294e292c0ed63ab5b78cf6b6` | 601.5 |
-| `npm run typecheck` | [0](ensaios/primeiro-typecheck.codigo) | `c22c21e881696897294e292c0ed63ab5b78cf6b6` | 0.3 |
+| `npm run build` | [0](portoes/build.codigo) | `70ebf9b64ba9f0a7340f69848cd09146f4d7555b` | 85.5 |
+| `npm run verify` | [0](portoes/verify.codigo) | `70ebf9b64ba9f0a7340f69848cd09146f4d7555b` | 599.3 |
+| `npm run typecheck` | [0](portoes/typecheck.codigo) | `70ebf9b64ba9f0a7340f69848cd09146f4d7555b` | 0.3 |
 <!-- PORTOES-FIM -->
 
-Os primeiros resultados ficam registados antes do commit de fecho. Depois desse commit, os três comandos voltam a correr na cabeça final e os ficheiros de `portoes/` são escritos de novo, juntamente com `medidas.json`. Esses comprovativos finais ficam na árvore de trabalho, fora do último commit: um commit não pode conter um ficheiro que já conheça o seu próprio identificador. A resposta final da sessão lê estes ficheiros e dá a cabeça efetivamente conferida. Não se confunde a cabeça das capturas com a cabeça posterior que só acrescenta documentação e provas.
+Os primeiros resultados estão conservados em `ensaios/primeiro-*`, incluindo a falha do feixe. Depois do commit de fecho, os três comandos correram na cabeça final e os ficheiros de `portoes/` foram escritos de novo. Este relatório, `medidas.json`, `custo.json` e esses comprovativos finais ficam atualizados na árvore de trabalho, fora do último commit: um commit não pode conter um ficheiro que já conheça o seu próprio identificador. A resposta final da sessão lê estes ficheiros e dá a cabeça efetivamente conferida. Não se confunde a cabeça das capturas com a cabeça posterior que só acrescenta documentação e provas.
 
 ## Commits
 
@@ -94,12 +94,13 @@ Os primeiros resultados ficam registados antes do commit de fecho. Depois desse 
 - `c22c21e8`: Dá uma página própria a cada assunto.
 - `e5143eaa`: Recorta o retrato dos lugares no feixe de desenho.
 - `dc5944ae`: Regista as medidas e as noventa capturas do N1.
+- `70ebf9b6`: Fecha o relatório parcial e a resposta do construtor N1.
 
 O último commit acrescenta este relatório e `RESPOSTA-construtor-n1.md`. O identificador desse commit lê-se em `git rev-parse HEAD` e nos três ficheiros `.cabeca` da conferência final. Não houve `push`.
 
 ## Custo medido
 
-Amostra do construtor a `2026-09-30T10:14:57.584Z`: **21 849 250 símbolos** cumulativos, dos quais 21 750 757 de entrada (21 030 016 em cache) e 98 493 de saída. Entrada sem cache: 720 741. Tempo decorrido até à medição: **4255.8 segundos**.
+Amostra do construtor a `2026-09-30T10:29:35.535Z`: **25 445 981 símbolos** cumulativos, dos quais 25 333 195 de entrada (24 587 008 em cache) e 112 786 de saída. Entrada sem cache: 746 187. Tempo decorrido até à medição: **5142.4 segundos**.
 
 [medir-custo.py](medir-custo.py) lê apenas os metadados e os contadores das sessões desta árvore. [custo.json](custo.json) distingue o construtor dos revisores automáticos de aprovações. Os símbolos são os tokens cumulativos reportados, incluindo a entrada servida por cache; não são caracteres nem um preço em euros. A amostra é anterior ao fecho da sessão, explicitamente datada, e não finge ser o contador da última mensagem.
 
