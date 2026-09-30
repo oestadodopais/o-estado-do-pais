@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T00:00:25+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/indicators/fixtures/monthly-68318e0.sh",
+   "descricao": "a cópia fixa do guião antigo perde o --quiet do core.describe, e deixa de ser o original com só as linhas pessoais trocadas",
+   "sha256_antes": "d99ce84230204fdf55a80eae748897197f42c54a8375cc7dcdcb5f7b904dfa33",
+   "sha256_depois": "8f86acf11083e8f3c05ccf93ea562ff80f0d2f1e3f0df95c159af90a50eb8d1f",
+   "contexto_antes": " monthly live health checks ==\"\npython3 -m core.health_check\npython3 -m servers.pt_public_money.health_check\npython3 -m servers.pt_tribunal_contas.health_check\npython3 -m core.describe --quiet\n\necho \"== watches: the next external publications ==\"\npython3 \"content/08 Évora Mandates/Technical Source/watch_next_events.py\"\nwatch_status=$?\n\necho \"== the s",
+   "contexto_depois": " monthly live health checks ==\"\npython3 -m core.health_check\npython3 -m servers.pt_public_money.health_check\npython3 -m servers.pt_tribunal_contas.health_check\npython3 -m core.describe\n\necho \"== watches: the next external publications ==\"\npython3 \"content/08 Évora Mandates/Technical Source/watch_next_events.py\"\nwatch_status=$?\n\necho \"== the s"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/indicators/painel.py",
+   "descricao": "o silêncio do limiar volta a entrar nos anfitriões calados, e com ele no carimbo das linhas",
+   "sha256_antes": "f44732563a08d43c089ca38d82198f554fabd8804def51fb339e2c085ed06a15",
+   "sha256_depois": "78863819f888ac8f7a5c27659239419a3178e42d66786589bbe977596747e040",
+   "contexto_antes": "   limiar_calado = None\n    for h in hosts_vigia:\n        problema = \"silêncio simulado no ensaio\" if h in simular else r.vigia_de_rede(h)\n        if problema:\n            if h in hosts:\n                calados[h] = str(problema)\n            if pedir_limiar and h == th_host:\n                limiar_calado = str(problema)\n    stamp = registo[\"inicio\"][:10]\n    recentes = {}\n    for _, c i",
+   "contexto_depois": "   limiar_calado = None\n    for h in hosts_vigia:\n        problema = \"silêncio simulado no ensaio\" if h in simular else r.vigia_de_rede(h)\n        if problema:\n            calados[h] = str(problema)\n            if pedir_limiar and h == th_host:\n                limiar_calado = str(problema)\n    stamp = registo[\"inicio\"][:10]\n    recentes = {}\n    for _, c i"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/indicators/refresh.py",
+   "descricao": "a mensagem do limiar do portátil deixa de ser a de master: «unavailable» em vez de «unreachable»",
+   "sha256_antes": "5e31d63564612f24b9555618e040b4edfd3937321792ff27e8f3ffc28b5a03a8",
+   "sha256_depois": "065276fa9f2a433bd575be6dec5a0c1fa07fbb49913bd504a4cf8e34366a92fe",
+   "contexto_antes": " — e a falha é DESTA MÁQUINA, não da Comissão: {rede}\"\n                   if rede else \"\")\n        return None, (\"threshold\", \"notice\",\n                      f\"threshold watch unreachable: {e}{de_onde}\")\n    if n == 0:\n        if para_retoma:\n            return None, (\"threshold\", \"notice\",\n                          \"a página do limiar não tem n",
+   "contexto_depois": " — e a falha é DESTA MÁQUINA, não da Comissão: {rede}\"\n                   if rede else \"\")\n        return None, (\"threshold\", \"notice\",\n                      f\"threshold watch unavailable: {e}{de_onde}\")\n    if n == 0:\n        if para_retoma:\n            return None, (\"threshold\", \"notice\",\n                          \"a página do limiar não tem n"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/indicators/rotinas_test.py",
+   "descricao": "a planta da linha sem poda passa a recusar pelo autor da entrada nova, e já não prova a poda",
+   "sha256_antes": "426a417a81780ccfa30b5f1f835b6ed6b9ac7b8b4600a8449997c1f9243878fe",
+   "sha256_depois": "ba9e1f894f34208c85cc5d822f17d2a824510f3789a27b532217cb4833009e0f",
+   "contexto_antes": "ias_mais_nova_sem_poda_recusadas(self):\n        velhas = [dict(ENTRADA, date=f\"2026-09-{d:02}\") for d in range(1, 5)]\n        with self.assertRaises(p.Recusa):\n            p.guarda_linha(linha_com(velhas), linha_com(velhas + [ENTRADA]), DIA)\n\n    def test_poda_a_mais_e_reordenacao_recusadas(self):\n        velhas = [dict(ENTRADA, date=f\"2026-09-{d:02}\") for d in range(1, 5)]\n        boas = (velhas + [ENTRADA])[-r.MAX_VERIFICACOES:]\n        for mal in (boa",
+   "contexto_depois": "ias_mais_nova_sem_poda_recusadas(self):\n        velhas = [dict(ENTRADA, date=f\"2026-09-{d:02}\") for d in range(1, 5)]\n        with self.assertRaises(p.Recusa):\n            p.guarda_linha(linha_com(velhas), linha_com(velhas + [dict(ENTRADA, by=\"outro\")]), DIA)\n\n    def test_poda_a_mais_e_reordenacao_recusadas(self):\n        velhas = [dict(ENTRADA, date=f\"2026-09-{d:02}\") for d in range(1, 5)]\n        boas = (velhas + [ENTRADA])[-r.MAX_VERIFICACOES:]\n        for mal in (boa"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 49 plantas das rotinas contra as 47 das provas",
+   "sha256_antes": "4ab5f2bd0fd8310e7df94667c30c7d7d519a78dccc8243bcca9888531c4c9ef5",
+   "sha256_depois": "c62fe972cd139f4d22423b485175dceee70bb88074d0271bbc2e467d861a1253",
+   "contexto_antes": "asta-pessoal>/...`, que não é um caminho, e continua a recusar caminhos reais e continuações desse exemplo. Os prompts da direção não voltam a ser editados. |\n\nNesta passagem passaram 47 plantas das rotinas, 26 adicionais e 94\nconferências dos fluxos: `provas/f22d/plantas`, `plantas-f22c` e `fluxo`, com\nnomes e resultados nos JSON de detalhe e nas saídas. Cada reg",
+   "contexto_depois": "asta-pessoal>/...`, que não é um caminho, e continua a recusar caminhos reais e continuações desse exemplo. Os prompts da direção não voltam a ser editados. |\n\nNesta passagem passaram 49 plantas das rotinas, 26 adicionais e 94\nconferências dos fluxos: `provas/f22d/plantas`, `plantas-f22c` e `fluxo`, com\nnomes e resultados nos JSON de detalhe e nas saídas. Cada reg"
+  }
+ ]
+}
