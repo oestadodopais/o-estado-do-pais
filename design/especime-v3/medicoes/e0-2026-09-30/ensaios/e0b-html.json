@@ -1,0 +1,10 @@
+{
+  "comando": "npm run gate:html",
+  "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T22:56:49.472Z",
+  "fim": "2026-09-30T22:57:04.975Z",
+  "segundos": 15.498299166999999,
+  "codigo": 0
+}

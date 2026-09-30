@@ -1,0 +1,10 @@
+{
+  "comando": "node tests/inicio/linhas-da-casa.mjs --prova --json design/especime-v3/medicoes/e0-2026-09-30/celula-e0b.json",
+  "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T22:55:50.903Z",
+  "fim": "2026-09-30T22:56:13.822Z",
+  "segundos": 22.916645499999998,
+  "codigo": 0
+}
