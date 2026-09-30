@@ -1,0 +1,10 @@
+{
+  "comando": "npm run ledger:check",
+  "cabeca": "728ffc67a702e4912f4919b8a8b356e28a66ea63",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T22:31:06.374Z",
+  "fim": "2026-09-30T22:31:08.721Z",
+  "segundos": 2.345112084,
+  "codigo": 0
+}

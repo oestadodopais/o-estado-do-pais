@@ -1,0 +1,20 @@
+{
+  "estado": "ponto 1 parado por fonte",
+  "lido_em": "2026-09-30T22:31:25Z",
+  "cabeca_antes_da_passagem": "728ffc67a702e4912f4919b8a8b356e28a66ea63",
+  "comissao": {
+    "url": "https://economy-finance.ec.europa.eu/economic-governance-framework/macroeconomic-imbalance-procedure/scoreboard_en",
+    "citacao": "unemployment rate (% of labour force Y15-74), with a threshold of 10%"
+  },
+  "eurostat": {
+    "url": "https://ec.europa.eu/eurostat/cache/metadata/en/tipsun20_esms.htm",
+    "secao": "3.1. Data description",
+    "categoria": "Additional indicators published in this domain are",
+    "citacao": "Unemployment rate - % of labour force aged 15-74 (3 year average)."
+  },
+  "formula": {
+    "url": "https://ec.europa.eu/eurostat/web/macroeconomic-imbalances-procedure/information-data",
+    "citacao": "U at time t divided by LF at time t."
+  },
+  "conclusao": "As fontes atuais não confirmam a média de três anos como a medida a que se aplica este limiar. O cartão e a nota não foram alterados neste ponto."
+}

@@ -1,30 +1,28 @@
 {
-  "medido_em": "2026-09-30T22:45:00.469023+00:00",
-  "segundos_decorridos": 6856.5,
+  "medido_em": "2026-09-30T21:58:14.651847+00:00",
+  "segundos_decorridos": 4050.7,
   "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
   "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
   "construtor": {
     "sessao": "01a0f415-78a6-7501-96dd-3c3c6df57a5b",
     "modelo": "gpt-6.1-sol",
     "inicio": "2026-09-30T20:50:43.925Z",
-    "inicio_e0b": "2026-09-30T22:26:35.480Z",
-    "ultima_amostra": "2026-09-30T22:44:39.128Z",
+    "ultima_amostra": "2026-09-30T21:58:05.939Z",
     "simbolos": {
-      "input_tokens": 17562865,
-      "cached_input_tokens": 17020800,
+      "input_tokens": 14288198,
+      "cached_input_tokens": 13963392,
       "cache_write_input_tokens": 0,
-      "output_tokens": 105678,
-      "reasoning_output_tokens": 45289,
-      "total_tokens": 17668543
+      "output_tokens": 76225,
+      "reasoning_output_tokens": 32285,
+      "total_tokens": 14364423
     },
-    "simbolos_sem_cache_mais_saida": 647743
+    "simbolos_sem_cache_mais_saida": 401031
   },
   "revisores_automaticos": [
     {
       "sessao": "01a0f43e-a6b4-7671-8f9a-6876c20550cf",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T21:35:41.764Z",
-      "inicio_e0b": null,
       "ultima_amostra": "2026-09-30T21:58:05.781Z",
       "simbolos": {
         "input_tokens": 954627,
@@ -40,7 +38,6 @@
       "sessao": "01a0f415-7c33-76a0-a67c-c8681d7d1fbc",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T20:52:56.622Z",
-      "inicio_e0b": null,
       "ultima_amostra": "2026-09-30T21:31:23.044Z",
       "simbolos": {
         "input_tokens": 573827,
@@ -53,12 +50,5 @@
       "simbolos_sem_cache_mais_saida": 74441
     }
   ],
-  "conhecido_positivo": true,
-  "e0b": {
-    "inicio": "2026-09-30T22:26:35.480Z",
-    "segundos_decorridos": 1105.0,
-    "mesma_sessao_do_e0": true,
-    "simbolos_desde_final_e0": 235482,
-    "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5."
-  }
+  "conhecido_positivo": true
 }

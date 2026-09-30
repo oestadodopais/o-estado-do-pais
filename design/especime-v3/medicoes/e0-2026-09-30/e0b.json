@@ -1,0 +1,54 @@
+{
+  "passagem": "E0b",
+  "base": "728ffc67a702e4912f4919b8a8b356e28a66ea63",
+  "cabeca": "bd39e8bf5d8873c881d2d17fe0dc11c68506b9c7",
+  "medido_em": "2026-09-30T22:50:24.868Z",
+  "completa": false,
+  "pontos_do_mandato": 7,
+  "ponto_1": "ponto 1 parado por fonte",
+  "restantes_conferidos": false,
+  "nomes_conferidos": 0,
+  "plantas": 8,
+  "contador": {
+    "valor": "5",
+    "referencia": "2026-09-30",
+    "leitura": "2026-09-30",
+    "edicao": "30.09.2026"
+  },
+  "provas": {
+    "estado_anterior": "1a281e1ddf9603aa37009c8bdf2b1f7c6ee533f0",
+    "e1": null,
+    "detetores": "bd39e8bf5d8873c881d2d17fe0dc11c68506b9c7",
+    "medidas": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c",
+    "capturas": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c"
+  },
+  "portoes": [
+    {
+      "nome": "build",
+      "codigo": null,
+      "cabeca": null,
+      "segundos": null
+    },
+    {
+      "nome": "verify",
+      "codigo": null,
+      "cabeca": null,
+      "segundos": null
+    },
+    {
+      "nome": "typecheck",
+      "codigo": null,
+      "cabeca": null,
+      "segundos": null
+    }
+  ],
+  "custo": {
+    "inicio": "2026-09-30T22:26:35.480Z",
+    "segundos_decorridos": 1105,
+    "mesma_sessao_do_e0": true,
+    "simbolos_desde_final_e0": 235482,
+    "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5."
+  },
+  "custo_final_e0": 412261,
+  "custo_amostra_e0": 401031
+}

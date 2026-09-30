@@ -96,15 +96,22 @@ const fugas = alterados.filter(p => revela(fs.readFileSync(p).toString()));
 medida('ficheiros_com_dados_da_maquina', { lidos: alterados.length, fugas },
   'O mesmo detetor vê o caminho real só em memória e aceita uma frase limpa.', revela(process.cwd()) && !revela('Uma frase do projeto.'), 'Ficheiros alterados e novos, sem guardar a cadeia privada da planta.');
 const erros = [...celula.erros];
+const contadorE0b = load(fs.readFileSync('ledger/claims/correcoes-publicadas.yml', 'utf8'));
+if (contadorE0b.reference_date !== '2026-09-30' || contadorE0b.access_date !== '2026-09-30' || contadorE0b.document.edition !== '30.09.2026')
+  erros.push('E0b: as datas do contador não são as da recontagem.');
 if (linhas.filter(c => c.id.startsWith('taxa-')).some(c => c.valor !== '6,0') ||
     celula.medidas.correcoes_contadas !== 5 || linhas.find(c => c.id === 'correcoes-publicadas').valor !== '5')
   erros.push('Os valores do teste de aceitação E0 não são 6,0, 6,0 e 5.');
 if (plantas.some(p => !p.mordeu)) erros.push('Uma planta não mordeu.');
 if (decimais.some(c => c.decimal_da_fonte?.replace('.', ',') !== c.valor)) erros.push('A precisão da casa diverge dos dois campos excerpt.');
 if (!conservadas || valoresMudados.length !== 3 || anatomia.some(p => p !== 'src/components/RegistoCorrecoes.astro') || fugas.length) erros.push('História, âmbito ou privacidade divergentes.');
-if (imagens.length !== 12 || imagens.some(i => !i.confere) || capturas.problemas.length) erros.push('Capturas incompletas ou divergentes.');
+if (imagens.length !== 12 || imagens.some(i => !i.confere) || capturas.problemas.length || capturas.cabeca !== cabeca) erros.push('Capturas incompletas, divergentes ou de outra cabeça.');
 const finais = portas.every(p => p.medido && p.codigo === 0 && p.cabeca === cabeca && !p.codigo_por_registar);
 const r = { bloco: 'E0', base, cabeca, medido_em: new Date().toISOString(), medidas, erros,
+  e0b: { base: '728ffc67a702e4912f4919b8a8b356e28a66ea63', ponto_1: 'parado por fonte, ver fontes-e0b.json',
+    nomes_do_registo: celula.medidas.nomes, contador: { value: contadorE0b.value, reference_date: contadorE0b.reference_date,
+      access_date: contadorE0b.access_date, edition: contadorE0b.document.edition },
+    restantes_conferidos: erros.length === 0 && finais, completa: false },
   contagens: { medidas: medidas.length, conhecidos_positivos: medidas.filter(m => m.conhecido_positivo.encontrado).length,
     linhas_desemprego: linhas.filter(c => c.id.startsWith('taxa-')).length, edicoes: new Set(celula.medidas.registos.map(r => r.lang)).size },
   aceitação: { conteudo_e_provas: erros.length === 0, portoes_na_cabeca_final: finais, completa: erros.length === 0 && finais } };
