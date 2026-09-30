@@ -11,7 +11,7 @@ const corridaInicio = fs.statSync(`${pasta}/cabeca`).mtimeMs;
 const { codigoPorRegistar } = lerEstadoDaArvore(execFileSync('git', ['status', '--porcelain', '--untracked-files=all'], { encoding: 'utf8' }));
 const cabecaAtual = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const limpar = s => s.replaceAll(process.cwd(), '[repositorio]').replaceAll(os.homedir(), '[pasta-pessoal]')
-  .replaceAll(os.userInfo().username, '[utilizador]').replace(/\u001b\[[0-9;]*m/g, '').split('\n').map(l => l.trimEnd()).join('\n');
+  .replaceAll(os.userInfo().username, '[utilizador]').replace(/\u001b\[[0-9;]*m/g, '').split('\n').map(l => l.trimEnd()).join('\n').trimEnd() + '\n';
 for (const nome of ['build', 'verify', 'typecheck']) {
   const p = `${pasta}/${nome}`;
   const inicio = fs.readFileSync(`${p}.inicio`, 'utf8').trim();

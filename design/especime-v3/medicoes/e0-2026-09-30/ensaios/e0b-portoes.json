@@ -1,0 +1,10 @@
+{
+  "comando": "sh scripts/leituras/portoes.sh . design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b",
+  "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+  "arvore_por_registar": false,
+  "codigo_por_registar": false,
+  "inicio": "2026-09-30T22:51:22.051Z",
+  "fim": "2026-09-30T22:53:20.796Z",
+  "segundos": 118.70252962500001,
+  "codigo": 0
+}

@@ -16,6 +16,11 @@ const custo = json('custo.json');
 const custoOriginal = json('custo-e0-original.json');
 const finalE0 = json('custo-final-e0.json');
 const capturas = json('capturas-e0.json');
+const primeiraPasta = `${pasta}/ensaios/e0b-primeira-corrida`;
+const primeira = fs.existsSync(`${primeiraPasta}/cabeca`) ? {
+  cabeca: fs.readFileSync(`${primeiraPasta}/cabeca`, 'utf8').trim(),
+  codigos: Object.fromEntries(['build', 'verify', 'typecheck'].map(n => [n, Number(fs.readFileSync(`${primeiraPasta}/${n}.codigo`, 'utf8'))]))
+} : null;
 const contador = load(fs.readFileSync('ledger/claims/correcoes-publicadas.yml', 'utf8'));
 const commits = execFileSync('git', ['log', '--reverse', '--format=%h|%s', `${base}..HEAD`], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
 const valor = n => medidas.medidas.find(m => m.nome === n)?.valor;
@@ -36,6 +41,7 @@ const dados = { passagem: 'E0b', base, cabeca, medido_em: new Date().toISOString
   provas: { estado_anterior: anteriores.executado_na_cabeca, e1: e1.cabeca ?? null, detetores: detetores.cabeca,
     medidas: medidas.cabeca, capturas: capturas.cabeca }, portoes: portas, custo: custo.e0b ?? null,
   custo_final_e0: finalE0.simbolos_finais, custo_amostra_e0: custoOriginal.construtor.simbolos_sem_cache_mais_saida };
+dados.primeira_corrida = primeira;
 fs.writeFileSync(`${pasta}/e0b.json`, JSON.stringify(dados, null, 2) + '\n');
 const tabelaPortas = portas.map(p => `| \`npm run ${p.nome}\` | ${p.codigo === null ? 'Por correr' : `[${p.codigo}](portoes/e0b/${p.nome}.codigo)`} | ${p.cabeca ? `\`${p.cabeca}\`` : 'Por escrever'} | ${p.segundos === null ? 'Por medir' : decimal(p.segundos)} |`).join('\n');
 const secao = `
@@ -64,6 +70,8 @@ A alteração pedida para o cartão atribuía o limiar à média de três anos. 
 ### Plantas e cabeças das provas
 
 As plantas permanentes incluem agora a retirada do nome da recontagem, a retirada do nome da dívida das famílias e a data antiga do contador. ${finais ? `As ${valor('plantas_que_mordem').total} plantas morderam numa corrida que aceita o HTML limpo.` : 'A corrida do HTML limpo e das plantas fica por medir na cabeça final.'} Os detetores do medidor têm ainda plantas de decimal, de caminho de componente e de escrita antiga do código, em [detetores-e0b.json](detetores-e0b.json).
+
+${primeira ? `A primeira corrida dos portões E0b, na cabeça \`${primeira.cabeca}\`, deu build ${primeira.codigos.build}, verify ${primeira.codigos.verify} e typecheck ${primeira.codigos.typecheck}. A guarda de campos do livro recusava o título da fonte fora das páginas do livro. A forma mudou por uma porta estreita: só name e document.title no nome da própria linha, dentro da sua entrada da página do registo. A comparação literal e a auditoria do selo continuam ativas. Uma planta no portão real tenta passar value por esta marca e é recusada; outras retiram o nome, trocam a linha e mudam a página. Os primeiros códigos e registos estão em ensaios/e0b-primeira-corrida.` : ''}
 
 | Prova | Cabeça lida do comprovativo |
 | --- | --- |

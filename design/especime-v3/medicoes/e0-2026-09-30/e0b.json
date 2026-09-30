@@ -1,8 +1,8 @@
 {
   "passagem": "E0b",
   "base": "728ffc67a702e4912f4919b8a8b356e28a66ea63",
-  "cabeca": "bd39e8bf5d8873c881d2d17fe0dc11c68506b9c7",
-  "medido_em": "2026-09-30T22:50:24.868Z",
+  "cabeca": "baf8c5dd76ae31f8a82f654ea563a52d1f17a4a3",
+  "medido_em": "2026-09-30T22:58:28.999Z",
   "completa": false,
   "pontos_do_mandato": 7,
   "ponto_1": "ponto 1 parado por fonte",
@@ -16,8 +16,8 @@
     "edicao": "30.09.2026"
   },
   "provas": {
-    "estado_anterior": "1a281e1ddf9603aa37009c8bdf2b1f7c6ee533f0",
-    "e1": null,
+    "estado_anterior": "5aece94099bc964163234b725d4b6e23f66df4e8",
+    "e1": "5aece94099bc964163234b725d4b6e23f66df4e8",
     "detetores": "bd39e8bf5d8873c881d2d17fe0dc11c68506b9c7",
     "medidas": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c",
     "capturas": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c"
@@ -25,21 +25,51 @@
   "portoes": [
     {
       "nome": "build",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run build",
+      "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+      "cabeca_fim": "5aece94099bc964163234b725d4b6e23f66df4e8",
+      "inicio": "2026-09-30T22:51:22Z",
+      "fim": "2026-09-30T22:52:03Z",
+      "segundos": 41,
+      "codigo": 1,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790808682067.3154,
+        "fim": 1790808723718.9417
+      }
     },
     {
       "nome": "verify",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run verify",
+      "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+      "cabeca_fim": "5aece94099bc964163234b725d4b6e23f66df4e8",
+      "inicio": "2026-09-30T22:52:03Z",
+      "fim": "2026-09-30T22:53:20Z",
+      "segundos": 77,
+      "codigo": 1,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790808723720.5728,
+        "fim": 1790808800495.433
+      }
     },
     {
       "nome": "typecheck",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run typecheck",
+      "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+      "cabeca_fim": "5aece94099bc964163234b725d4b6e23f66df4e8",
+      "inicio": "2026-09-30T22:53:20Z",
+      "fim": "2026-09-30T22:53:20Z",
+      "segundos": 0,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790808800497.0554,
+        "fim": 1790808800754.3257
+      }
     }
   ],
   "custo": {
@@ -50,5 +80,13 @@
     "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5."
   },
   "custo_final_e0": 412261,
-  "custo_amostra_e0": 401031
+  "custo_amostra_e0": 401031,
+  "primeira_corrida": {
+    "cabeca": "5aece94099bc964163234b725d4b6e23f66df4e8",
+    "codigos": {
+      "build": 1,
+      "verify": 1,
+      "typecheck": 0
+    }
+  }
 }
