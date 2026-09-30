@@ -1073,7 +1073,7 @@ check-datas · 18 edição(ões) datadas, 76 data(s) impressa(s) em 36 página(s
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção c22c21e881696897294e292c0ed63ab5b78cf6b6; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 70ebf9b64ba9f0a7340f69848cd09146f4d7555b; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -3725,11 +3725,14 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
   palavras ✓ 20 de 20 plantas vistas (14 palavras, 6 buracos da superfície) · 7452 página(s) medidas em repouso, 0 achados · 44 página(s) com a superfície estreitada por rota declarada
 
 > o-estado-do-pais@0.1.0 design:feixe
-> node scripts/design-bundle.mjs
+> node scripts/design-bundle.mjs --prova
 
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
 
   O feixe de cartões do sistema de desenho
-  design-system/ · de dist/ no commit c22c21e · 20 cartões, 11 ficheiros de letra e um README
+  design-system/ · de dist/ no commit 70ebf9b · 20 cartões, 11 ficheiros de letra e um README
 
   ficheiro                          grupo          bytes  ok
   01-cor.html                       Fundamentos   376376  ✓
@@ -3744,7 +3747,7 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
   12-pagina-linha-livro-razao.html  Páginas       226374  ✓
   13-pagina-livro-razao.html        Páginas       609713  ✓
   14-pagina-municipio.html          Páginas       277781  ✓
-  15-pagina-lugares.html            Páginas      1249576  ✗  tem 616 <use> · 1220.3 KiB acima do tecto de 596.75 KiB
+  15-pagina-lugares.html            Páginas       485586  ✓
   16-pagina-metodo.html             Páginas       256182  ✓
   17-pagina-agenda.html             Páginas       293005  ✓
   18-pagina-estudos.html            Páginas       216965  ✓
@@ -3753,8 +3756,89 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
   21-pagina-404.html                Páginas       197657  ✓
   30-regras.html                    Fundamentos   240444  ✓
 
-  7588.7 KiB de cartões · maior cartão 1220.3 KiB · tecto 596.75 KiB
+  6842.6 KiB de cartões · maior cartão 595.4 KiB · tecto 596.75 KiB
   11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto
   ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)
+  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida
 
-  ✗ 1 cartão(ões) reprovado(s).
+  7452 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.
+  ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.
+
+
+> o-estado-do-pais@0.1.0 check:privacidade
+> PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova
+
+{
+  "ficheiros": 12516,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "nome-do-git-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-do-git-2",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-da-casa-real",
+      "nome_pessoal": true,
+      "esperado": "detetar",
+      "mordeu": true
+    },
+    {
+      "id": "nome-pessoal-portavel",
+      "mordeu": true
+    },
+    {
+      "id": "ligacao-home-na-conta-generica",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-raiz",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-root",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-runner",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-app",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-code",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    }
+  ],
+  "passou": true
+}

@@ -1,8 +1,8 @@
 {
   "comando": "npm run verify",
-  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
-  "inicio": "2026-09-30T10:01:45.000Z",
-  "fim": "2026-09-30T10:11:46.476Z",
-  "segundos": 601.4684932079999,
-  "codigo": 1
+  "cabeca": "70ebf9b64ba9f0a7340f69848cd09146f4d7555b",
+  "inicio": "2026-09-30T10:19:36.247Z",
+  "fim": "2026-09-30T10:29:35.532Z",
+  "segundos": 599.292662292,
+  "codigo": 0
 }
