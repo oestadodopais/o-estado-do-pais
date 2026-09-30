@@ -1,0 +1,10 @@
+{
+  "comando": "npm run typecheck",
+  "cabeca": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T20:55:56.594Z",
+  "fim": "2026-09-30T20:55:57.307Z",
+  "segundos": 0.7109303339999999,
+  "codigo": 0
+}

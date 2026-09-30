@@ -1,0 +1,29 @@
+{
+  "cabeca": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+  "registo_limpo": {
+    "pt": 3,
+    "en": 3
+  },
+  "bloqueio_sem_lugar": {
+    "pt": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+    "en": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão."
+  },
+  "selador_derivado": {
+    "codigo": 0,
+    "saida": "correcoes-publicadas: 0 entradas anteriores conservadas; 1 seladas.",
+    "historia": [
+      {
+        "date": "2026-09-30",
+        "kind": "atualizacao",
+        "old_value": "3",
+        "new_value": "5"
+      }
+    ],
+    "source_url": null,
+    "derivation": "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão. As atualizações não contam: uma atualização não é um erro admitido, e este número é o das confissões."
+  },
+  "conhecido_positivo": true,
+  "bloqueio_confirmado": true,
+  "selador_ja_aceita_derivadas": true,
+  "reposto": true
+}
