@@ -2,7 +2,7 @@
 
 O conteúdo e as provas locais estão medidos. Os três portões da cabeça final ainda estão por correr.
 
-Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça desta medição: `1a281e1ddf9603aa37009c8bdf2b1f7c6ee533f0`.
+Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça desta medição: `b52713ade5cece301c95f27d69f60dba5d5db338`.
 
 ## Mandato e medidas
 
@@ -46,6 +46,7 @@ O captor segue os guiões N1: servidor efémero local, fontes carregadas, pedido
 - `bd7886ed`: Declara o lugar do projeto no registo das mudanças.
 - `96b058df`: Corrige a precisão do desemprego e sela a recontagem.
 - `1a281e1d`: Guarda a história E0 sem fixar a próxima recontagem.
+- `b52713ad`: Entrega as provas, as capturas e o relatório do E0.
 
 O último commit de entrega inclui [RESPOSTA-construtor-e0.md](RESPOSTA-construtor-e0.md). A cabeça final lê-se dos ficheiros .cabeca e da resposta de fecho da sessão, fora do ramo.
 
@@ -65,21 +66,43 @@ Um commit não pode conter o seu próprio identificador. Os comprovativos finais
 
 ## Decisões em vigor nos ficheiros tocados
 
-A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §1.127 em check-pais. Ambas se conservaram. A §1.146 é citada nas novas guardas do E0. A lista final foi obtida por `python3 scripts/leituras/decisoes-em-vigor.py --intervalo 07549ee1e9ec2b39186f9e9f13eeac4914bf5e76..HEAD`, também guardada em [decisoes-em-vigor.txt](decisoes-em-vigor.txt).
+A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §1.127 em check-pais. Ambas se conservaram. A §1.146 é citada nas novas guardas do E0. A lista final foi obtida por `python3 scripts/leituras/decisoes-em-vigor.py` com os caminhos explícitos dos textos tocados. O modo por intervalo falha ao tentar ler uma captura PNG; o fecho passou a dar-lhe apenas texto. O comando completo e os caminhos estão em [decisoes-em-vigor.json](decisoes-em-vigor.json), e a lista em [decisoes-em-vigor.txt](decisoes-em-vigor.txt).
 
 ```text
 §1.38 · A ortografia do sítio passa a ser uma só
-    design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241 (perto do diff)
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:71
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:1
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241
 §1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:68
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:73
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:3
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:83
     src/lib/mudancas.mjs:205
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:68
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:75
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:5
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:83
     scripts/check-pais.mjs:296
+§1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:47
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:47
 §1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
-    scripts/check-pais.mjs:171 (perto do diff)
-    src/data/lugar-das-linhas.mjs:22 (perto do diff)
-    src/lib/mudancas.mjs:101 (perto do diff)
-    tests/inicio/linhas-da-casa.mjs:1 (perto do diff)
-4 decisão(ões) citada(s) em 45 ficheiro(s)
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:68
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:77
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:7
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:47
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:83
+    scripts/check-pais.mjs:171
+    src/data/lugar-das-linhas.mjs:22
+    src/lib/mudancas.mjs:101
+    tests/inicio/linhas-da-casa.mjs:1
+6 decisão(ões) citada(s) em 75 ficheiro(s)
 ```
 
 ## Custo e limites
