@@ -1,0 +1,217 @@
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova
+
+T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 7434 menus, 4 mudanças declaradas, 2 listas com teto 8, 2 registos de 37 mudanças, 76 títulos de edição.
+B1 país: todas as conferências a 0.
+{
+  "erros": [
+    "E0 registo pt: taxa-de-desemprego-2025 perdeu o campo kind.",
+    "E0 registo pt: taxa-de-desemprego-mip-2025 perdeu o campo kind.",
+    "E0 registo pt: correcoes-publicadas perdeu o campo kind.",
+    "E0 registo en: taxa-de-desemprego-2025 perdeu o campo kind.",
+    "E0 registo en: taxa-de-desemprego-mip-2025 perdeu o campo kind.",
+    "E0 registo en: correcoes-publicadas perdeu o campo kind."
+  ],
+  "medidas": {
+    "linhas": [
+      {
+        "id": "taxa-de-desemprego-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "correcoes-publicadas",
+        "valor": "5",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "atualizacao",
+          "old_value": "3",
+          "new_value": "5"
+        },
+        "seladas": 1
+      }
+    ],
+    "registos": [
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-mip-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/"
+      },
+      {
+        "lang": "pt",
+        "id": "correcoes-publicadas",
+        "itens": 1,
+        "lugar": "O Estado do País",
+        "porta": "/correcoes"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/en"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-mip-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/en"
+      },
+      {
+        "lang": "en",
+        "id": "correcoes-publicadas",
+        "itens": 1,
+        "lugar": "O Estado do País",
+        "porta": "/en/corrections"
+      }
+    ],
+    "valores_visiveis": [
+      {
+        "lang": "pt",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "pt",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      }
+    ],
+    "correcoes_contadas": 5
+  },
+  "plantas": [
+    {
+      "nome": "A: contador sem declaração, A3",
+      "codigo": 1,
+      "mordida": "A3: .*uma linha do registo sem lugar",
+      "queixa": "A3: correcoes/index.html: uma linha do registo sem lugar que se possa compor.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "A: contador sem declaração, resolvedor",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas.*nenhuma declaração diz de que lugar é",
+      "queixa": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "declaração falsa de Portugal",
+      "codigo": 1,
+      "mordida": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»",
+      "queixa": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais».",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-mip-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-mip-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: correcoes-publicadas sem entrada selada",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "decimal retirado da primeira",
+      "mordeu": true,
+      "queixa": "E0 visível pt primeira: falta «6,0 %».",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "lugar retirado do registo inglês",
+      "mordeu": true,
+      "queixa": "E0 registo en: correcoes-publicadas perdeu a mudança ou o lugar com a porta.",
+      "memoria_isolada": true
+    }
+  ]
+}

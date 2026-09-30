@@ -118,5 +118,29 @@
       "old_value": "77,2",
       "new_value": "77"
     }
+  ],
+  "taxa-de-desemprego-2025": [
+    {
+      "date": "2026-09-30",
+      "kind": "correcao",
+      "old_value": "6",
+      "new_value": "6,0"
+    }
+  ],
+  "taxa-de-desemprego-mip-2025": [
+    {
+      "date": "2026-09-30",
+      "kind": "correcao",
+      "old_value": "6",
+      "new_value": "6,0"
+    }
+  ],
+  "correcoes-publicadas": [
+    {
+      "date": "2026-09-30",
+      "kind": "atualizacao",
+      "old_value": "3",
+      "new_value": "5"
+    }
   ]
 }

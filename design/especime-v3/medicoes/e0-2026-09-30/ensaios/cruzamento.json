@@ -1,0 +1,10 @@
+{
+  "comando": "npm run check:cruzamento",
+  "cabeca": "bd7886ed730b95d93f5711358d9c95eaa2c65e82",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T21:00:34.456Z",
+  "fim": "2026-09-30T21:00:34.837Z",
+  "segundos": 0.378894792,
+  "codigo": 0
+}
