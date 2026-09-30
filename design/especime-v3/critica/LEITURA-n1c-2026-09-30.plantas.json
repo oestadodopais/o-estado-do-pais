@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T12:28:36+00:00",
+ "copia": "<pacote da leitura, no scratchpad da sessão>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "scripts/check-pais.mjs",
+   "descricao": "a célula T10 da ordem da habitação sai do portão outra vez, e a ordem da §1.127 fica sem guarda",
+   "sha256_antes": "ba6652dec6f3a274bee3c32a62885b5192435646e80f65b630c4330a31a4d582",
+   "sha256_depois": "ba48c2b5c0f83dda2ca29efaeeff0c72536a7109a933254c7b1610909d4cc681",
+   "contexto_antes": "...verificaCartaoDasCamaras(le(lang === 'pt' ? 'lugares' : 'en/places'), lang, linha));\n  /* T10: a decisão 5 da §1.127 mantém os inquilinos antes do total. */\n  erros.push(...conferirOrdemDaHabitacao(le(lang === 'pt' ? 'habitacao' : 'en/housing'), lang));\n  /* T9 · A COR DO ESTADO NOS CARTÕES COM VALOR DE REFERÊNCIA (bloco R1,\n     23.09.2026, I139). O Método diz «âmbar quando o valor está fora dele,\n     cobalto",
+   "contexto_depois": "...verificaCartaoDasCamaras(le(lang === 'pt' ? 'lugares' : 'en/places'), lang, linha));\n  /* T10: a decisão 5 da §1.127 mantém os inquilinos antes do total. */\n  /* T9 · A COR DO ESTADO NOS CARTÕES COM VALOR DE REFERÊNCIA (bloco R1,\n     23.09.2026, I139). O Método diz «âmbar quando o valor está fora dele,\n     cobalto"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/uniao-europeia/index.html",
+   "descricao": "uma das ligações da página da União volta a dizer «Ver no domínio»",
+   "sha256_antes": "6fa51eb7070f4b6bacbde73e16bab295fd2460f5e225900c1c41abafc389a8a4",
+   "sha256_depois": "145d50c76d4cedfaacf2e5a0ccd44395f59190f233a75cece4cd2fbc4fd93e88",
+   "contexto_antes": "</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></p><p class=\"dobra-porta\"><a class=\"lig\" href=\"/estado-e-economia/#m-divida-publica-2025\">Ver em Estado e economia →</a></p></div></details><details class=\"dobra\" id=\"m-posicao-de-investimento-internacional-2025\" data-leitura=\"posicao-de-investimento-internacional-2025\" data-",
+   "contexto_depois": "</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></p><p class=\"dobra-porta\"><a class=\"lig\" href=\"/estado-e-economia/#m-divida-publica-2025\">Ver no domínio →</a></p></div></details><details class=\"dobra\" id=\"m-posicao-de-investimento-internacional-2025\" data-leitura=\"posicao-de-investimento-internacional-2025\" data-"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/assuntos.mjs",
+   "descricao": "a linha do índice deixa de recusar um âmbito que não nomeie Portugal: devolve-o calada",
+   "sha256_antes": "0af1b4c83dfb92d8964dbf79b1d3255a38d2c6a7c625b80acf7d5a5d2333e637",
+   "sha256_depois": "f7c837231c79ecac3a013c4717139fc57d160486efe7ef5fecf6adb4ae483b68",
+   "contexto_antes": "dice(entrada, lang = 'pt') {\n  const prefixo = lang === 'pt' ? 'Os números de Portugal sobre ' : 'Portugal’s figures on ';\n  const linha = entrada.linha[lang];\n  if (!linha.startsWith(prefixo)) throw new Error(`O âmbito de ${entrada.id} não nomeia Portugal.`);\n  const assunto = linha.slice(prefixo.length);\n  return assunto.charAt(0).toUpperCase() + assunto.slice(1);\n}\n/** @param {string} id @param {'pt'|'en'} lang */",
+   "contexto_depois": "dice(entrada, lang = 'pt') {\n  const prefixo = lang === 'pt' ? 'Os números de Portugal sobre ' : 'Portugal’s figures on ';\n  const linha = entrada.linha[lang];\n  if (!linha.startsWith(prefixo)) return linha;\n  const assunto = linha.slice(prefixo.length);\n  return assunto.charAt(0).toUpperCase() + assunto.slice(1);\n}\n/** @param {string} id @param {'pt'|'en'} lang */"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/temas/index.html",
+   "descricao": "no índice dos temas, uma porta volta a levar o prefixo «Os números de Portugal sobre», ao contrário das outras sete",
+   "sha256_antes": "52246ed4533e40f35cc7615ddd4c46dd070df796a86eea3af587b11db35f7390",
+   "sha256_depois": "b2e4ddb057b3f9d107a30358b701a6abf2a82ed1384ae215b1fa36ebe9065e59",
+   "contexto_antes": "ref=\"/precos/\" data-astro-cid-4locjw7o><span class=\"pp-entrada-nome\" data-astro-cid-4locjw7o>Preços</span><span class=\"pp-entrada-linha\" data-astro-cid-4locjw7o>Os preços dos bens e serviços.</span></a><ul class=\"assunto-seccoes\" data-astro-cid-4locjw7o><li data-astro-cid-4locjw7o>Os preços</li></ul></li><li data-entrada=\"salarios-pensoes-e-apoios\" d",
+   "contexto_depois": "ref=\"/precos/\" data-astro-cid-4locjw7o><span class=\"pp-entrada-nome\" data-astro-cid-4locjw7o>Preços</span><span class=\"pp-entrada-linha\" data-astro-cid-4locjw7o>Os números de Portugal sobre os preços dos bens e serviços.</span></a><ul class=\"assunto-seccoes\" data-astro-cid-4locjw7o><li data-astro-cid-4locjw7o>Os preços</li></ul></li><li data-entrada=\"salarios-pensoes-e-apoios\" d"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 43 plantas que mordem contra as 41 das provas",
+   "sha256_antes": "fa288e5665a8c698726881b8b0f22467ef712056de205fae03aa1295279e619e",
+   "sha256_depois": "60c6ff2eb50ea81e1d57364a77449a3621c60295e30377e4e15ad6b1bc70c6e5",
+   "contexto_antes": "se ponto.\n\n### Capturas e medidas\n\n<!-- N1C-MEDIDAS-INICIO -->\nO [medidor](medir-n1.mjs), com `--n1c`, produziu **25 medidas**, todas com conhecido-positivo, **41 plantas que mordem** e **zero erros de navegação**. Os quatro conjuntos de 308 pares de identificador e valor dos mapas coincidem com os guardados antes do N1. O ponto 5 permanec",
+   "contexto_depois": "se ponto.\n\n### Capturas e medidas\n\n<!-- N1C-MEDIDAS-INICIO -->\nO [medidor](medir-n1.mjs), com `--n1c`, produziu **25 medidas**, todas com conhecido-positivo, **43 plantas que mordem** e **zero erros de navegação**. Os quatro conjuntos de 308 pares de identificador e valor dos mapas coincidem com os guardados antes do N1. O ponto 5 permanec"
+  }
+ ]
+}

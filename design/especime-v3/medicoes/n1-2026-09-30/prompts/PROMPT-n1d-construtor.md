@@ -1,0 +1,13 @@
+A passagem **N1d**, a última: retomas a mesma sessão. A releitura do Claude Opus 5.5 achou as cinco plantas e o que fica abaixo. A leitura está no sítio, em `design/especime-v3/critica/LEITURA-n1c-2026-09-30.md`, com a triagem no cabeçalho. As regras são as de sempre. O ponto 5 do brief continua parado.
+
+## O mandato
+
+1. **A tabela dos ganhos em «Lugares» diz o que mostra (o achado 3).** Por baixo da pergunta «Quanto se ganha?», uma linha lida das linhas do livro-razão que a alimentam e da definição declarada da medida: o ano, de quem são os ganhos (os trabalhadores por conta de outrem a tempo completo, antes dos descontos, se é isso que a declaração diz) e o valor de Portugal como referência (a linha nacional `ganho-medio-mensal-2024`, com o seu selo). O mesmo para a tabela da dívida, com o ano. Nada escrito de cabeça: o que a declaração e as linhas não disserem, não se diz.
+2. **A célula dos blocos únicos (o achado 5)** normaliza o texto cru como o corpo (tira as pastilhas dos selos antes de procurar as frases), para que uma cópia rendida com o número e o selo não escape ao filtro; a planta passa a inserir uma cópia rendida, com a pastilha, e a prova diz que `primeiraFrase` é igual à frase rendida.
+3. **A frase do valor irmão (o achado 9)** diz o que a nota do Eurostat diz: que o valor é ajustado para contar com esses pagamentos, e não que se ajustam os pagamentos; a célula N1c confere também `[data-base-doze-meses]`; a dependência da cadeia inglesa exata da nota passa a ser dita no código.
+4. **Os pequenos das provas e dos guiões (os achados 11, 12, 14 e 17):** o contador das páginas de «Lugares» no `check-formas.mjs` corre haja ou não domínios, e o comentário chama-lhe o que é; a regra V2 recusa uma ligação para `/lugares/` no cartão das câmaras, e não só a classe; os registos dos ensaios da N1c que correram sobre código por registar dizem-no (a cabeça e «árvore por registar»), e as plantas do portão de HTML voltam a correr na cabeça final e ficam registadas lá; o medidor deixa de dizer que o valor irmão está «fora de um cartão inteiro» e o seu conhecido-positivo prova a medida.
+5. **O relatório:** a secção N1d; o custo com a amostra desta passagem; a resposta curta em `design/especime-v3/medicoes/n1-2026-09-30/RESPOSTA-construtor-n1d.md`, no último commit.
+
+## No fim
+
+Os três portões na cabeça final do código, em `portoes/n1d/`, cada um no seu comando, com o código em ficheiro e a cabeça ao lado; o commit das provas, se houver depois disso, só toca a pasta das medições e das capturas; as capturas de «Lugares» e da página dos salários a 390 e 1 280 px nas duas edições. Respondes com a cabeça final, os commits e os códigos lidos dos ficheiros.
