@@ -71,6 +71,7 @@ import { estadoDaMedida } from '../lib/estado.mjs';
 import { ledeDoPainel } from '../lib/inicio.mjs';
 import { dominioDaLinha } from '../lib/dominios.mjs';
 import { portaDoCartao } from '../lib/assuntos.mjs';
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -93,7 +94,9 @@ const verificacao = estadoDaVerificacao();
 const portaDaLeitura = (claim) => {
   const dominio = dominioDaLinha(claim);
   if (!dominio) return null;
-  return portaDoCartao(claim, lang);
+  const href = portaDoCartao(claim, lang);
+  const assunto = ENTRADAS.find((e) => href.startsWith(e.rota[lang]));
+  return { href, nome: assunto.nome[lang] };
 };
 
 const medidas = FIGURAS_PDM.map((f) => {

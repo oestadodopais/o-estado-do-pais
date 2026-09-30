@@ -147,19 +147,6 @@ contexts:
       impressa contra o JSON, e o JSON contra o `git` quando a árvore tem
       história; a célula I9 de `tests/livro/indice.mjs` refaz as duas contas por
       sua conta.
-  - id: ambito-da-medida
-    why: >-
-      O intervalo que faz parte da DEFINIÇÃO publicada de um indicador, e não do
-      seu valor: as idades da taxa de emprego («dos 20 aos 64 anos», dimensão
-      age=Y20-64 do conjunto que a fonte publica) e as da taxa de desemprego
-      («dos 15 aos 74 anos», age=Y15-74). É o âmbito da contagem, e está no nome
-      com que o publicador nomeia a série; não é uma medição de Portugal, é o que
-      se conta. Sem ele o nome da medida ficava «taxa de emprego» sozinho, que é
-      outra medida: o Eurostat publica taxas de emprego para vários intervalos, e
-      um nome que não diz qual delas é convida a comparar o incomparável.
-      Acrescentado em 2026-09-03, com a página do primeiro domínio. O intervalo é
-      declarado em `src/data/dominios.mjs`, ao lado do id da linha cujo
-      `source_url` traz a dimensão.
   - id: periodo-da-fonte
     why: >-
       O último período que a fonte de uma série publicou, quando a casa continua

@@ -1,5 +1,13 @@
 /** N1: a porta de cada cartão resolve numa única página de assunto. */
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
+/** A linha curta do índice conserva o assunto da linha completa da porta. */
+export function linhaDoIndice(entrada, lang = 'pt') {
+  const prefixo = lang === 'pt' ? 'Os números de Portugal sobre ' : 'Portugal’s figures on ';
+  const linha = entrada.linha[lang];
+  if (!linha.startsWith(prefixo)) throw new Error(`O âmbito de ${entrada.id} não nomeia Portugal.`);
+  const assunto = linha.slice(prefixo.length);
+  return assunto.charAt(0).toUpperCase() + assunto.slice(1);
+}
 /** @param {string} id @param {'pt'|'en'} lang */
 export function portaDoCartao(id, lang = 'pt') {
   const reunido = id === 'taxa-de-desemprego-2025' ? 'taxa-de-desemprego-mip-2025' : id;

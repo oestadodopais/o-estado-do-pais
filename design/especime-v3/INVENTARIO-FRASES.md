@@ -2039,7 +2039,7 @@ frase, sem os números.
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | : ; : . | dominio | viva | o molde da frase da barra do ganho contra o país (`BarraConcelhoPais.astro`), sem os dois nomes de lugar, os dois valores e as duas unidades, que saem por `data-lugar`, `data-claim` e `data-medida-unidade` |
+| conteudo | : ; : . | dominio | retirada | N1c: a barra isolada de Évora saiu dos lugares; o molde da frase da barra do ganho contra o país (`BarraConcelhoPais.astro`), sem os dois nomes de lugar, os dois valores e as duas unidades, que saem por `data-lugar`, `data-claim` e `data-medida-unidade` |
 | conteudo | A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | dominio | viva | a ressalva de T1 (Blocking 4): a meta de 2030 do Plano de Ação do Pilar Europeu é da União e não de Portugal, e a carta di-lo; a meta nacional própria não está pesquisada · o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para a página da sua linha, que é o recibo daquela linha: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. As palavras não mudaram, e o marcador é dívida de proveniência e palavra pendente do diretor. A rota `linha` é uma das três que a Emenda 15 isenta da contagem («o Método, o Sobre e o recibo») e prova só que a linha se rende |
 | conteudo | This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published . | dominio | viva |o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para a página da sua linha, que é o recibo daquela linha: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. As palavras não mudaram, e o marcador é dívida de proveniência e palavra pendente do diretor. A rota `linha` é uma das três que a Emenda 15 isenta da contagem («o Método, o Sobre e o recibo») e prova só que a linha se rende |
 | conteudo | Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | dominio | viva | a ressalva de T5 (Blocking 4): paráfrase do artigo 2.º do diploma, «Âmbito territorial», citado ao carácter em `document.locator` da linha `retribuicao-minima-mensal-garantida-continente-2026` · o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para a página da sua linha, que é o recibo daquela linha: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. As palavras não mudaram, e o marcador é dívida de proveniência e palavra pendente do diretor. A rota `linha` é uma das três que a Emenda 15 isenta da contagem («o Método, o Sobre e o recibo») e prova só que a linha se rende |
@@ -3554,7 +3554,16 @@ As linhas das rotas retiradas saem desta tabela; as palavras genéricas não fic
 | navegacao | Preços | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
 | navegacao | Salários, pensões e apoios | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
 | navegacao | State and economy | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
-| conteudo | em doze meses, na base do Eurostat: € | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
-| conteudo | over twelve months, on the Eurostat basis: € | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| conteudo | em doze meses, na base do Eurostat: € | n1 | retirada | N1c: a linha passa a ler o nome e a unidade mensal do livro, com a base explícita. |
+| conteudo | over twelve months, on the Eurostat basis: € | n1 | retirada | N1c: a edição inglesa acompanha o nome, a unidade mensal e a base. |
 | navegacao | · concelhos | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
 | navegacao | · municipalities | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+
+## N1c · as unidades e as notas junto dos números, 30.09.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | , em base de doze meses: euros por mês O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano. | n1c | viva | A unidade é da linha; a explicação vem da ficha citada na nota da mesma linha. |
+| conteudo | , on a twelve-month basis: euros per month Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year. | n1c | viva | A mesma unidade e a mesma explicação na edição inglesa. |
+| navegacao | Valor ( ) | n1c | viva | Cabeçalho da tabela, com a unidade conferida separadamente contra as linhas municipais. |
+| navegacao | Value ( ) | n1c | viva | O mesmo cabeçalho na edição inglesa. |

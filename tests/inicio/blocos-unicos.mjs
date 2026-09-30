@@ -5,7 +5,8 @@ import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
 import { BLOCOS_DA_PRIMEIRA_PAGINA, ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 import { PORTAS_DOS_BLOCOS } from '../../src/lib/assuntos.mjs';
-import { blocoResolvido } from '../../src/lib/primeira-pagina.mjs';
+import { SITE_URL } from '../../site.config.mjs';
+import { blocoResolvido, textoDosPedacos } from '../../src/lib/primeira-pagina.mjs';
 import { REDIRECIONAMENTOS_N1 } from './entradas.mjs';
 
 export function paginasHtml(dir, base = dir) {
@@ -14,22 +15,30 @@ export function paginasHtml(dir, base = dir) {
     return e.isDirectory() ? paginasHtml(f, base) : e.name.endsWith('.html') ? [path.relative(base, f)] : [];
   });
 }
-export function conferirBlocosUnicos(dist, trocar = new Map()) {
+const normal = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
+const primeiraFrase = (id, lang) => normal(textoDosPedacos(blocoResolvido(id, lang).frase, lang)).split(/(?<=[.!?])\s+/)[0];
+
+export function conferirBlocosUnicos(dist, trocar = new Map(), { paginas = paginasHtml(dist) } = {}) {
   const erros = [];
-  const contas = { paginas: 0, blocos_na_primeira: 0, blocos_fora: 0, titulos_fora: 0, portas_dos_blocos: 0, ligacoes_antigas: 0, cartoes_fora_dos_assuntos: 0 };
+  const contas = { paginas: 0, blocos_na_primeira: 0, blocos_fora: 0, titulos_fora: 0, frases_fora: 0, portas_dos_blocos: 0, ligacoes_antigas: 0, cartoes_fora_dos_assuntos: 0 };
   const nacionais = new Set(ENTRADAS.flatMap((e) => e.seccoes.flatMap((s) => s.cartoes)));
-  for (const rel of paginasHtml(dist)) {
+  const frasesDaEdicao = Object.fromEntries(['pt', 'en'].map((lang) => [lang, BLOCOS_DA_PRIMEIRA_PAGINA.map((b) => primeiraFrase(b.id, lang)).filter(Boolean)]));
+  for (const rel of paginas) {
     contas.paginas++;
     const texto = trocar.get(rel) ?? fs.readFileSync(path.join(dist, rel), 'utf8');
     const lang = rel.startsWith('en/') ? 'en' : 'pt';
     const titulos = BLOCOS_DA_PRIMEIRA_PAGINA.map((b) => b.titulo[lang]);
+    const frases = frasesDaEdicao[lang];
+    const textoCru = normal(texto.replace(/<[^>]*>/g, ''));
     const destinosAntigos = REDIRECIONAMENTOS_N1.map(([origem]) => origem);
-    if (!texto.includes('data-bloco') && !texto.includes('data-cartao-medida') && !texto.includes('data-cartao-camaras') && !titulos.some((t) => texto.includes(t)) && !destinosAntigos.some((t) => texto.includes(t))) continue;
+    if (!texto.includes('data-bloco') && !texto.includes('data-cartao-medida') && !texto.includes('data-cartao-camaras') && !titulos.some((t) => texto.includes(t)) && !frases.some((f) => textoCru.includes(f)) && !destinosAntigos.some((t) => texto.includes(t))) continue;
     const root = parse(texto);
     for (const a of root.querySelectorAll('a[href]')) {
       const href = a.getAttribute('href');
-      if (!href.startsWith('/')) continue;
-      const alvo = href.split(/[?#]/)[0].replace(/\/+$/, '');
+      let url;
+      try { url = new URL(href, SITE_URL); } catch { continue; }
+      if (url.origin !== new URL(SITE_URL).origin) continue;
+      const alvo = url.pathname.replace(/\/+$/, '');
       if (destinosAntigos.includes(alvo)) { contas.ligacoes_antigas++; erros.push(`N1R ${rel}: ligação interna para ${alvo}.`); }
     }
     const assunto = ENTRADAS.some((e) => `${e.rota[lang].replace(/^\//, '')}index.html` === rel);
@@ -62,6 +71,12 @@ export function conferirBlocosUnicos(dist, trocar = new Map()) {
       const repetidos = root.querySelectorAll('h1,h2,h3,h4').filter((h) => titulos.includes(h.textContent.trim()));
       contas.titulos_fora += repetidos.length;
       if (repetidos.length) erros.push(`N1B ${rel}: título de bloco fora da primeira página.`);
+      const corpo = parse(root.querySelector('main')?.outerHTML ?? '');
+      corpo.querySelectorAll('.src-chip, script, style').forEach((n) => n.remove());
+      const textoDoCorpo = normal(corpo.textContent);
+      const copiadas = frases.filter((f) => textoDoCorpo.includes(f));
+      contas.frases_fora += copiadas.length;
+      if (copiadas.length) erros.push(`N1B ${rel}: primeira frase de bloco fora da primeira página.`);
     }
   }
   if (!contas.paginas || !fs.existsSync(path.join(dist, 'index.html')) || !fs.existsSync(path.join(dist, 'en/index.html'))) erros.push('N1B: não foram vistas as duas primeiras páginas.');
@@ -73,12 +88,30 @@ export function plantasDosBlocosUnicos(dist) {
   assert.ok(bloco, 'O conhecido-positivo tem de conter um bloco.');
   const rel = 'emprego/index.html';
   const original = fs.readFileSync(path.join(dist, rel), 'utf8');
-  return [
+  const plantas = [
     ['bloco copiado para outra página de assunto', bloco.outerHTML, /N1B emprego\/index.html: .*bloco\(s\) fora/],
     ['título copiado sem as marcas do bloco', `<h2>${bloco.querySelector('[data-bloco-titulo]').textContent}</h2>`, /N1B emprego\/index.html: título de bloco fora/],
   ].map(([nome, copia, mordida]) => {
-    const r = conferirBlocosUnicos(dist, new Map([[rel, original.replace('</main>', `${copia}</main>`)]]));
+    const r = conferirBlocosUnicos(dist, new Map([[rel, original.replace('</main>', `${copia}</main>`)]]), { paginas: [rel] });
     const queixa = r.erros.find((e) => mordida.test(e));
     return { nome, mordeu: Boolean(queixa), queixa: queixa ?? null };
   });
+  for (const lang of ['pt', 'en']) {
+    const destino = lang === 'pt' ? 'emprego/index.html' : 'en/employment/index.html';
+    const frase = primeiraFrase(BLOCOS_DA_PRIMEIRA_PAGINA[0].id, lang);
+    const titulo = BLOCOS_DA_PRIMEIRA_PAGINA[0].titulo[lang];
+    for (const [nome, copia, mordida] of [
+      ['primeira frase sem marcas', `<p>${frase}</p>`, 'primeira frase de bloco fora'],
+      ['título sem marcas', `<h2>${titulo}</h2>`, 'título de bloco fora'],
+      ['ligação antiga relativa', '<a href="/o-meu-dinheiro/">Porta antiga</a>', 'N1R'],
+      ['ligação antiga absoluta', `<a href="${new URL('/o-meu-dinheiro/', SITE_URL).href}">Porta antiga</a>`, 'N1R'],
+    ]) {
+      /* Só a cópia tem conteúdo: a planta da frase tem de atravessar o filtro de texto cru. */
+      const r = conferirBlocosUnicos(dist, new Map([[destino, `<html><main>${copia}</main></html>`]]), { paginas: [destino] });
+      const queixa = r.erros.find((e) => e.includes(destino) && e.includes(mordida));
+      plantas.push({ nome: `${nome} (${lang})`, mordeu: Boolean(queixa), queixa: queixa ?? null });
+    }
+  }
+  return plantas;
+
 }

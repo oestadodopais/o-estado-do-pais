@@ -62,6 +62,9 @@ import FonteDaCarta from '../FonteDaCarta.astro';
 import Frase from '../Frase.astro';
 import Provenance from '../Provenance.astro';
 import Claim from '../Claim.astro';
+import CampoDaLinha from '../CampoDaLinha.astro';
+import { getClaim } from '../../lib/ledger.mjs';
+import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 
 /* A PORTA PARA `/livro-razao/concelhos` SAIU DAQUI (F1.10, §7.7, 09.09.2026).
    Eram duas coisas com o mesmo nome no mesmo canto do mapa: «Os valores, concelho
@@ -88,6 +91,12 @@ const campo = mapa.campo;
    sem valor diz-o com a mesma palavra do mapa («sem valor publicado»), nunca
    com uma cor de escala fingida em texto. */
 const linhas = mapa.unidades.flatMap((u) => u.concelhos);
+const fontesDaUnidade = linhas.filter((c) => c.id !== null).map((c) => getClaim(c.id));
+if (!fontesDaUnidade.length || new Set(fontesDaUnidade.map((c) => c.unit)).size !== 1) {
+  throw new Error(`O mapa ${chave} não tem uma unidade comum nas linhas que mostra.`);
+}
+const linhaDaUnidade = fontesDaUnidade[0];
+const unidade = unidadeDaLinha(linhaDaUnidade.unit, lang);
 ---
 
 <figure class="forma forma-mapa" data-instrumento={`mapa-por-concelho-${chave}`} data-forma="mapa-por-concelho">
@@ -127,6 +136,7 @@ const linhas = mapa.unidades.flatMap((u) => u.concelhos);
     {/* A ESCALA, COM OS CORTES ESCRITOS. Cada corte é uma marca de régua e vai
         debaixo do seu motivo declarado; o rótulo de cada classe é uma palavra da
         edição e não um número. */}
+    <p class="forma-mapa-unidade"><CampoDaLinha id={linhaDaUnidade.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /></p>
     <ul class="forma-mapa-escala">
       {
         rotulos.map((partes, i) => (
@@ -161,7 +171,7 @@ const linhas = mapa.unidades.flatMap((u) => u.concelhos);
         <thead>
           <tr>
             <th scope="col">{s.dominios.mapaTabelaConcelho}</th>
-            <th scope="col">{s.dominios.mapaTabelaValor}</th>
+            <th scope="col">{s.dominios.mapaTabelaValor} (<CampoDaLinha id={linhaDaUnidade.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} />)</th>
           </tr>
         </thead>
         <tbody>

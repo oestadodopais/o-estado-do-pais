@@ -13,6 +13,7 @@ import { POR_VERIFICAR } from '../src/data/marcador.mjs';
 import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
+import { linhaDoIndice } from '../src/lib/assuntos.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 import { t } from '../src/i18n/strings.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
@@ -85,7 +86,7 @@ export function verificaVozPais(raiz) {
         s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
         `${s.primeira.todosOsTemas} →`, `${s.nav.livro} →`, `${ROTULOS_B1[lang].mudou} →`, `${s.nav.uniaoEuropeia} →`,
         ROTULOS_B1[lang].lugares, s.ambito.municipio, s.ambito.pesquisaSubmeter, s.ambito.pesquisaSemResultado,
-        ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang], ...e.seccoes.map(s => s.nome[lang])]),
+        ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang], linhaDoIndice(e, lang), ...e.seccoes.map(s => s.nome[lang])]),
       ].map(normal));
       function anda(n) {
         if (dispensados.has(n)) return;

@@ -3,7 +3,7 @@
 import Base from '../layouts/Base.astro';
 import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
 import CartaoDaMedida from '../components/CartaoDaMedida.astro';
-import Claim from '../components/Claim.astro';
+import ValorIrmao from '../components/ValorIrmao.astro';
 import { medidaPelaChave } from '../data/dominios.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import { estudosDaEntrada } from '../lib/primeira-pagina.mjs';
@@ -27,7 +27,6 @@ if (entrada.rota[lang] !== path) {
 }
 const estudos = estudosDaEntrada(entrada.id, lang);
 const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
-const ambitos = ['T1', 'T2'].map(medidaPelaChave);
 ---
 <Base lang={lang} path={path} title={`${entrada.nome[lang]}${s.primeira.metaCauda}`} description={entrada.linha[lang]}>
   <h1 class="entrada-titulo">{entrada.nome[lang]}</h1>
@@ -38,20 +37,15 @@ const ambitos = ['T1', 'T2'].map(medidaPelaChave);
       <h2 class="pais-tema-k entrada-seccao-k" id={`entrada-seccao-${i}`}>{seccao.nome[lang]}</h2>
       <div class="pais-cartoes">
         {seccao.cartoes.map((id) => (
-          <>
+          <div class="entrada-cartao" data-caixa-cartao={id}>
             <CartaoDaMedida linha={getClaim(id)} lang={lang} leitura />
-            {ambitos.filter((m) => m.claim === id || (m.chave === 'T2' && id === 'taxa-de-desemprego-mip-2025')).map((m) => (
-              <p class="entrada-referencia"><span data-nonledger="ambito-da-medida">{m.ambito[lang]}</span></p>
-            ))}
             {referencias.filter((m) => m.claim === id).map((m) => (
-              <p class="entrada-referencia">{s.estado[m.limiarFixadoPor].frase}</p>
+              <p class="entrada-referencia" data-referencia-de={id}>{s.estado[m.limiarFixadoPor].frase}</p>
             ))}
             {id === medidaPelaChave('T5').claim && medidaPelaChave('T5').claims.map((irma) => (
-              <p class="entrada-valor-irmao" data-valor-irmao={irma.id}>
-                {irma.rotulo[lang]}:{' '}<Claim id={irma.id} lang={lang} sufixo=" €" chip />
-              </p>
+              <ValorIrmao id={irma.id} lang={lang} />
             ))}
-          </>
+          </div>
         ))}
       </div>
     </section>
@@ -68,5 +62,7 @@ const ambitos = ['T1', 'T2'].map(medidaPelaChave);
 </Base>
 
 <style>
-  .entrada-valor-irmao, .entrada-referencia { margin: 0; padding: 0 0 1.5rem; font-size: 1rem; }
+  .entrada-cartao { min-width: 0; border-bottom: 1px solid var(--rule); }
+  .entrada-cartao :global(.cartao-medida) { border-bottom: 0; }
+  .entrada-referencia { margin: 0; padding: 0 0 1.5rem; font-size: 1rem; }
 </style>

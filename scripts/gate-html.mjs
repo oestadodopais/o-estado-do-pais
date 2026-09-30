@@ -6134,7 +6134,14 @@ for (const file of ficheirosHtml(DIST)) {
     // continua a trocar a unidade de uma entrada pela de outra linha.
     const unidadeDeCorrecaoDoPais = ['home', 'correcoes'].includes(rota?.key) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !campoDeBloco) {
+    /* N1c: a unidade comum das linhas municipais, só no cabeçalho da tabela
+       ou na legenda do mapa dos lugares. A linha tem de estar nessa tabela;
+       a comparação literal do campo e a auditoria dos selos mantêm-se. */
+    const mapaDaUnidade = el.closest('[data-forma="mapa-por-concelho"]');
+    const unidadeDeMapaDosLugares = rota?.key === 'lugares' && campo === 'unit' && mapaDaUnidade !== null &&
+      (el.closest('thead') !== null || el.closest('.forma-mapa-unidade') !== null) &&
+      mapaDaUnidade.querySelectorAll('tbody [data-claim]').some((n) => n.getAttribute('data-claim') === id);
+    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +

@@ -74,13 +74,14 @@ const distritos = distritosDaCarta();
   {/* A BUSCA É A DA PRIMEIRA PÁGINA, e é a mesma peça: um `<form>` com destino.
       Os resultados estão no documento, fechados, e são acesos por
       `public/js/municipios.js`, que troca `hidden` e mais nada. */}
-  <div class="pesquisa-bloco" data-pesquisa-bloco>
+  <section class="pesquisa-bloco" data-pesquisa-bloco aria-labelledby="concelhos-k">
+    <h2 class="eyebrow" id="concelhos-k" data-lugares-seccao>{entrada.seccoes[0].nome[lang]}</h2>
     <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={path} resultadosOcultos={true} />
-  </div>
+  </section>
 
   <section class="lugar-sec" aria-labelledby="regioes-k">
     <div class="sec-head">
-      <h2 class="eyebrow" id="regioes-k">{r.regioes}</h2>
+      <h2 class="eyebrow" id="regioes-k" data-lugares-seccao>{entrada.seccoes[1].nome[lang]}</h2>
     </div>
     <ul class="lugares-lista" data-lista-lugares="regioes">
       {
@@ -97,7 +98,7 @@ const distritos = distritosDaCarta();
 
   <section class="lugar-sec" aria-labelledby="distritos-k">
     <div class="sec-head">
-      <h2 class="eyebrow" id="distritos-k">{r.distritos}</h2>
+      <h2 class="eyebrow" id="distritos-k" data-lugares-seccao>{entrada.seccoes[2].nome[lang]}</h2>
     </div>
     <ul class="lugares-lista" data-lista-lugares="distritos">
       {
