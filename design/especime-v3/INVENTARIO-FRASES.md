@@ -747,9 +747,7 @@ portão reconta do registo em disco.*
 | --- | --- | --- | --- | --- |
 | conteudo | As linhas deste documento | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
-| navegacao | Como ler | lugar | viva | — |
 | navegacao | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
-| navegacao | How to read | lugar | viva | — |
 | conteudo | O documento original | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
 | conteudo | O registo de conteúdo | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
 | conteudo | The content record | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
@@ -1359,8 +1357,6 @@ lhes mexeu no número.*
 | conteudo | As medidas | regioes | viva | — |
 | navegacao | O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho. | lugar | viva | achado 11 da leitura cruzada do inventário (Codex, 14.09.2026), e a classe FICA: a frase diz como este sítio organiza o território (é a frase de hierarquia do §2.2 do brief, a mesma nos cinco índices, e o que ela faz é dizer a quem lê por onde pode entrar). A única afirmação sobre o país que ela traz («as regiões não contêm distritos inteiros») foi conferida nos dados da CAOP antes de se escrever, e saiu da frase quando a conferência a dispensou |
 | navegacao | The country is read at four levels: country, NUTS II region, district or island, municipality. | lugar | viva | ver a razão na gémea portuguesa (achado 11, 14.09.2026) |
-| navegacao | Um domínio é um assunto da carta dos conteúdos; uma área de governo é um ministério. | lugar | viva | — |
-| navegacao | A domain is a subject from the content charter; a government area is a ministry. | lugar | viva | — |
 | navegacao | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | lugar | viva | — |
 | navegacao | A government area is a ministry; a domain is a subject from the content charter. | lugar | viva | — |
 | conteudo | A leitura de cada medida | lugar | viva | — |
@@ -1960,12 +1956,8 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| navegacao | Domínios | dominio | viva | — |
-| navegacao | Domains | dominio | viva | — |
 | conteudo | As áreas da vida do país com medidas publicadas, e as que ainda não têm medidas conferidas. | dominio| retirada | a segunda metade da descrição saiu com o §7.8 e o §9.1: o índice deixou de listar as dezasseis áreas sem medidas conferidas, que passaram ao Método, e uma frase que descreve a página tem de ser verdadeira sobre a página (bloco F1.10, 08.09.2026) |
 | conteudo | The areas of the country’s life with published measures, and the ones with no verified measures yet. | dominio| retirada | a segunda metade da descrição saiu com o §7.8 e o §9.1: o índice deixou de listar as dezasseis áreas sem medidas conferidas, que passaram ao Método, e uma frase que descreve a página tem de ser verdadeira sobre a página (bloco F1.10, 08.09.2026) |
-| navegacao | Por domínio | dominio | viva | o §9.5 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: é um rótulo de navegação e não uma afirmação sobre o mundo, como a gémea «Municipality» já estava classificada: é o rótulo da porta para o domínio de uma medida |
-| navegacao | By domain | dominio | viva | o §9.5 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: é um rótulo de navegação e não uma afirmação sobre o mundo, como a gémea «Municipality» já estava classificada: é o rótulo da porta para o domínio de uma medida |
 | conteudo | no ar primeira vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
 | conteudo | live first wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
 | conteudo | as medidas estão em primeira vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
@@ -1978,32 +1970,14 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | no verified measures yet third wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
 | conteudo | A dívida pública é % do PIB, fora do limiar da Comissão de %; o saldo das administrações públicas é % do PIB, dentro do limiar do Pacto de Estabilidade e Crescimento de − %. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
 | conteudo | Government debt is % of GDP, outside the Commission threshold of %; the general government balance is % of GDP, within the Stability and Growth Pact threshold of − %. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
-| conteudo | As medidas de <nome>, com a fonte, o período e as datas de cada uma. | dominio | viva | o §9.9 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: a gémea inglesa dizia «the dates of each one» e esta dizia «a data». A página imprime três datas por medida, e as duas passam a dizer o mesmo |
-| conteudo | The measures of <nome>, with the source, the period and the dates of each one. | dominio | viva | — |
 | conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
 | conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | retirada | achado 10 da leitura cruzada do inventário (Codex, 14.09.2026): «nenhum publicador oficial calcula» é uma afirmação sobre TODOS os publicadores do país, e o que a casa leu foi um indicador (o `0012661` do INE sobre os Quadros de Pessoal do MTSSS/GEP, que por concelho dá um coeficiente de variação do ganho). A frase passa a dizer a ausência na forma da casa, pela regra 6 da carta, e o cartão da ausência T4a, na mesma página, diz onde se procurou. A frase nova está viva neste ficheiro |
 | conteudo | This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes. | lugar | retirada | ver a razão na gémea portuguesa (achado 10, 14.09.2026) |
-| conteudo | Quanto cresce a economia por pessoa? | dominio | viva | — |
-| conteudo | As contas públicas estão em equilíbrio? | dominio | viva | — |
-| conteudo | Quanto deve o Estado? | dominio | viva | — |
-| conteudo | O Estado gasta dentro da regra europeia? | dominio | viva | — |
 | conteudo | Quanto deve a minha câmara, e qual é o limite? | dominio | viva | — |
-| conteudo | Quantas pessoas trabalham? | dominio | viva | — |
-| conteudo | Quantas procuram trabalho e não encontram? | dominio | viva | — |
 | conteudo | Quanto se ganha? | dominio | viva | — |
-| conteudo | As mulheres ganham o mesmo? | dominio | viva | — |
-| conteudo | Qual é o salário mínimo em vigor? | dominio | viva | — |
 | conteudo | As mulheres ganham o mesmo, no meu concelho? | dominio | viva | — |
-| conteudo | How much does the economy grow per person? | dominio | viva | — |
-| conteudo | Are the public accounts in balance? | dominio | viva | — |
-| conteudo | How much does the State owe? | dominio | viva | — |
-| conteudo | Does the State spend within the European rule? | dominio | viva | — |
 | conteudo | How much does my municipality owe, and what is the cap? | dominio | viva | — |
-| conteudo | How many people work? | dominio | viva | — |
-| conteudo | How many are looking for work and not finding it? | dominio | viva | — |
 | conteudo | How much do people earn? | dominio | viva | — |
-| conteudo | Do women earn the same? | dominio | viva | — |
-| conteudo | What is the minimum wage in force? | dominio | viva | — |
 | conteudo | Do women earn the same, in my municipality? | dominio | viva | — |
 | conteudo | Não há número público para isto. | dominio | viva | — |
 | conteudo | There is no published figure for this. | dominio | viva | — |
@@ -2029,10 +2003,6 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | fora do limite legal | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean». As duas classes do mapa do índice de dívida são o teto legal, e não um limiar da Comissão |
 | conteudo | within the legal limit | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
 | conteudo | outside the legal limit | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
-| conteudo | o limite legal | dominio | viva | — |
-| conteudo | the legal cap | dominio | viva | — |
-| conteudo | em doze meses, na base do Eurostat | dominio | viva | — |
-| conteudo | over twelve months, on the Eurostat basis | dominio | viva | — |
 | conteudo | menos de | dominio | viva | — |
 | conteudo | less than | dominio | viva | — |
 | conteudo | ou mais | dominio | viva | — |
@@ -2740,20 +2710,14 @@ dizia mais do que a fonte, ou entra porque se rendia sem estar declarada.*
 | conteudo | The percentage of the population living in households where total housing costs, net of housing allowances, take more than % of disposable income, net of housing allowances. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
 | conteudo | Oito das medidas principais do Painel Social Europeu. | lugar | viva | achado 2 da leitura cruzada do inventário (Codex, 14.09.2026): a fração fica, porque sem ela um leitor que veja «Painel Social Europeu · 8 medidas» pensa que o painel tem oito; o denominador sai, porque nenhuma página da Comissão ou do Eurostat escreve o número das medidas principais, e a decisão (5) da §1.98 só o deixa dizer quando estiver conferido numa delas |
 | conteudo | Eight of the headline measures of the European Social Scoreboard. | lugar | viva | ver a razão na gémea portuguesa (achado 2, 14.09.2026) |
-| navegacao | Os domínios da carta dos conteúdos, cada um com a contagem das suas medidas e a porta para a sua página. | lugar | viva | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026): a descrição pública do índice dos domínios deixa de dizer o que a casa publicou e passa a dizer o que a página tem, que é o que o §8.13 pôs lá: os nomes, a contagem das medidas de cada domínio vivo e a porta |
-| navegacao | The domains of the content charter, each with the count of its measures and the door to its page. | lugar | viva | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
 | navegacao | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu. | lugar | viva | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026): a descrição pública da página europeia perde a cauda («cada uma com a sua linha»), que era a casa a dizer o que guarda, e fica a dizer o que a página mostra |
 | navegacao | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard. | lugar | viva | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
 | navegacao | Os estudos, com as suas edições em português e em inglês. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
 | navegacao | The studies, with their Portuguese and English editions. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
-| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, para a qual não há número público. | lugar | viva | achado 10 da leitura cruzada do inventário (Codex, 14.09.2026): a frase da fronteira deixa de afirmar o que TODOS os publicadores fazem e passa a dizer a ausência na forma da casa, que é a da regra 6 da carta e a mesma palavra do cartão da ausência. Onde a casa procurou diz-se no cartão T4a, na mesma página, com a fonte e o código do indicador |
-| conteudo | This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, for which there is no published figure. | lugar | viva | ver a razão na gémea portuguesa (achado 10, 14.09.2026) |
 | navegacao | das medidas de cabeça dos domínios | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
-| navegacao | das medidas deste domínio | lugar | viva | ver a razão na primeira das quatro (achado 3, 14.09.2026) |
 | navegacao | das medidas deste concelho | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
 | navegacao | das medidas dos dois quadros da União Europeia | lugar | viva | ver a razão na primeira das quatro (achado 3, 14.09.2026) |
 | navegacao | of the head measures of the domains | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
-| navegacao | of the measures of this domain | lugar | viva | ver a razão na gémea portuguesa (achado 3, 14.09.2026) |
 | navegacao | of the measures of this municipality | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
 | navegacao | of the measures of the two European Union scoreboards | lugar | viva | ver a razão na gémea portuguesa (achado 3, 14.09.2026) |
 | conteudo | O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro; o nome por extenso da sigla permanece [a verificar] . | r1 | retirada | a sigla sai da definição (bloco R1, 23.09.2026, I142): a resposta do Eurostat ao pedido da linha da dívida das empresas (`tipspd30`) escreve o setor por extenso, «Non-financial corporations», e passou a ser uma origem da definição; a frase nova escreve «sociedades não financeiras», sem marcador |
@@ -2868,12 +2832,6 @@ o sítio fala de si, diz «este projeto» ou «O Estado do País».
 | divulgacao | Free of charge | palavras-do-rodape | viva | a ficha da primeira página, com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026, por decisão do diretor). Continua `divulgacao` porque continua a ser o artigo 15.º, n.º 1 da Lei de Imprensa a pedi-la; o que saiu foi o nome do diretor, e a leitura do artigo fica escrita em `src/data/politica-ia.mjs` com a data da saída |
 | navegacao | Os domínios do país, e os números que este projeto já publica em cada um. | correcao-p1p2 | retirada | a linha de abertura da secção dos domínios sai (achados 9 e 10 da leitura a frio de 15.09.2026). Duas coisas erradas ao mesmo tempo: é prosa sobre o projeto numa página de conteúdo, que a norma §1.4 manda para o Sobre e para o Método, e promete «os números que este projeto já publica em cada um» quando a contagem é a das medidas que se leem nas páginas (duas linhas do livro-razão sem página de conteúdo não entram, e a triagem do lugar de direção mantém as contagens como estão). A lista diz o que é sem uma frase por cima: dezoito nomes e, ao lado de cada um, quantas medidas se leem nele |
 | navegacao | The country’s domains, and the numbers this project already publishes in each. | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achados 9 e 10, 15.09.2026) |
-| navegacao | medida | palavras-do-rodape | viva | o rótulo da contagem de medidas de um domínio, no singular e no plural (item 6 do brief do P1, 15.09.2026). A lista passou a ter domínios de uma medida só, e «1 medidas» é português a mais numa linha de quatro palavras. É a numeração de uma lista rendida e não uma medição de Portugal: o número leva `data-nonledger="numeracao"`, e por isso não está no texto acima |
-| navegacao | medidas | palavras-do-rodape | viva | o rótulo da contagem de medidas de um domínio, no singular e no plural (item 6 do brief do P1, 15.09.2026). A lista passou a ter domínios de uma medida só, e «1 medidas» é português a mais numa linha de quatro palavras. É a numeração de uma lista rendida e não uma medição de Portugal: o número leva `data-nonledger="numeracao"`, e por isso não está no texto acima |
-| navegacao | measure | palavras-do-rodape | viva | o rótulo da contagem de medidas de um domínio, no singular e no plural (item 6 do brief do P1, 15.09.2026). A lista passou a ter domínios de uma medida só, e «1 medidas» é português a mais numa linha de quatro palavras. É a numeração de uma lista rendida e não uma medição de Portugal: o número leva `data-nonledger="numeracao"`, e por isso não está no texto acima |
-| navegacao | measures | palavras-do-rodape | viva | o rótulo da contagem de medidas de um domínio, no singular e no plural (item 6 do brief do P1, 15.09.2026). A lista passou a ter domínios de uma medida só, e «1 medidas» é português a mais numa linha de quatro palavras. É a numeração de uma lista rendida e não uma medição de Portugal: o número leva `data-nonledger="numeracao"`, e por isso não está no texto acima |
-| conteudo | A dívida pública é % do PIB, acima do valor de referência de %; o saldo das administrações públicas é % do PIB, acima do valor de referência de − %. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
-| conteudo | Government debt is % of GDP, above the reference value of %; the general government balance is % of GDP, above the reference value of − %. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
 | conteudo | O valor de referência é o do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
 | conteudo | The reference value is the one of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
 | conteudo | O valor de referência é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
@@ -3079,8 +3037,6 @@ compõe-o do registo do motor, e a régua tira da superfície a região `data-re
 | --- | --- | --- | --- | --- |
 | navegacao | A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes. | pp1 | retirada | a descrição da primeira página saiu com o bloco PP1 (28.09.2026): a leitura do país e os números por tema deixaram de estar na primeira página, e a descrição passou a dizer o que se passa e as seis entradas (linha nova na secção do PP1). Estava ditada pelo lugar de direção no B1 |
 | navegacao | The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies. | pp1 | retirada | edição inglesa da descrição retirada; ver a razão na gémea portuguesa (bloco PP1, 28.09.2026) |
-| navegacao | Todas as medidas do país, por tema, cada uma com o seu valor, a sua fonte e o seu recibo. | b1-peca3-correcao2 | viva | descrição da página dos temas ditada pelo lugar de direção e conferida pela D1. |
-| navegacao | All the country's measures, by theme, each with its value, its source and its receipt. | b1-peca3-correcao2 | viva | edição inglesa da descrição ditada. |
 
 ## As frases do bloco R1 · o lado do leitor depois da leitura de fora (23.09.2026)
 
@@ -3482,29 +3438,8 @@ leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da fra
 | conteudo | Os valores de referência da Comissão Europeia | pp1 | viva | o título da secção do veredicto, que passou a ter título seu na primeira página (§2, ponto 3, do brief do PP1); a frase do veredicto continua conferida pela V1 |
 | conteudo | The European Commission’s reference values | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | Places | pp1 | viva | o título da secção dos lugares na edição inglesa da primeira página (`ROTULOS_B1.lugares`); a portuguesa, «Lugares», já estava declarada |
-| navegacao | O que se passa no país, dito pelos números oficiais lidos juntos, cada um com a sua fonte, e as entradas: o meu dinheiro, o meu trabalho, a minha casa, a escola e a saúde, o Estado e a economia, a minha terra. | pp1 | viva | a descrição da primeira página, reescrita pelo construtor do PP1 porque a anterior dizia a leitura do país e os números por tema, que saíram da página; diz o que a página tem: o que se passa e as seis entradas, pelos nomes das declarações |
-| navegacao | What is happening in the country, told by the official figures read together, each with its source, and the ways in: my money, my work, my home, school and health, the state and the economy, my area. | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | O meu dinheiro | pp1 | viva | o nome de uma entrada (o `<h1>` da sua página), das declarações do lugar de direção em `src/data/primeira-pagina.mjs` |
-| navegacao | My money | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | O meu trabalho | pp1 | viva | o nome de uma entrada, das declarações |
-| navegacao | My work | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | A minha casa | pp1 | viva | o nome de uma entrada, das declarações; é o nome da pergunta do leitor («a minha casa»), e não a casa a falar de si |
-| navegacao | My home | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | A escola e a saúde | pp1 | viva | o nome de uma entrada, das declarações |
-| navegacao | School and health | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | O Estado e a economia | pp1 | viva | o nome de uma entrada, das declarações |
-| navegacao | The state and the economy | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | Os preços, os salários, as pensões e os apoios. | pp1 | viva | a linha de uma entrada, das declarações; é também a descrição da página dela |
-| navegacao | Prices, pay, pensions and benefits. | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | O emprego, o desemprego e os jovens. | pp1 | viva | a linha de uma entrada, das declarações, e a descrição da página dela |
-| navegacao | Employment, unemployment and young people. | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | O peso da habitação, as rendas e os preços. | pp1 | viva | a linha de uma entrada, das declarações (com o acerto A3 do PP1, «casa» por «habitação»), e a descrição da página dela |
-| navegacao | The cost of housing, rents and prices. | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | O abandono escolar, a creche e o acesso aos cuidados. | pp1 | viva | a linha de uma entrada, das declarações, e a descrição da página dela |
-| navegacao | Early school leaving, childcare and access to care. | pp1 | viva | ver a razão na gémea portuguesa |
-| navegacao | <nome>, childcare and access to care. | pp1 | viva | a descrição inglesa da página «School and health» como a régua a conta: o nome do cartão do abandono escolar, «Early school leaving», é um nome declarado (`data-nome`) da mesma página, e a régua põe `<nome>` no lugar dele na descrição, pela regra das descrições das páginas de área |
-| navegacao | A dívida, o défice, o crescimento e as contas com o exterior. | pp1 | viva | a linha de uma entrada, das declarações, e a descrição da página dela |
-| navegacao | Debt, the deficit, growth and the external accounts. | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | Os números de <lugar>: preços, salários, pensões e apoios, pobreza e desigualdade, emprego, habitação, educação e saúde, Estado e economia, e os lugares. | pp1 | viva | a descrição da primeira página, reescrita pelo construtor do PP1 porque a anterior dizia a leitura do país e os números por tema, que saíram da página; diz o que a página tem: o que se passa e as seis entradas, pelos nomes das declarações |
+| navegacao | <lugar>’s figures: prices, pay, pensions and benefits, poverty and inequality, employment, housing, education and health, state and economy, and places. | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | Os preços | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
 | conteudo | Prices | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | O salário | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
@@ -3531,8 +3466,6 @@ leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da fra
 | conteudo | School | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | A saúde | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
 | conteudo | Health | pp1 | viva | ver a razão na gémea portuguesa |
-| conteudo | As contas do Estado | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
-| conteudo | The state’s accounts | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | O crescimento e o investimento | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
 | conteudo | Growth and investment | pp1 | viva | ver a razão na gémea portuguesa |
 | conteudo | As contas com o exterior | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
@@ -3572,3 +3505,56 @@ por linha e só os ramos que se rendem. A porta «Todos os países» vive dentro
 | conteudo | Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs. Down from . Below the European Union average. | ue1d | viva | ver a razão na gémea portuguesa |
 | conteudo | Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação. | ue1d | viva | A ressalva da Comissão num cartão da sobrecarga do custo da habitação no total (a passagem UE1d, 29.09.2026, a §1.140): onde a comparação com a União aparece, a ressalva aparece no mesmo cartão, num bloco próprio. O texto é o que a primeira página já dizia no bloco `casa`, lido agora da fonte única `src/data/ressalvas-da-uniao.mjs`, e a primeira página prende-o ao seu literal em `tests/inicio/blocos-provados.json`; a K14 do `check:cartao` exige-o onde a União aparece, e a K1 admite o bloco só nas medidas que a K14 nomeia. |
 | conteudo | This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status. | ue1d | viva | ver a razão na gémea portuguesa |
+
+## N1 · as portas por assunto
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Contas públicas | n1 | viva | A secção conserva os cartões e distingue-se do título do bloco da primeira página. |
+| conteudo | Public accounts | n1 | viva | A edição inglesa da mesma secção. |
+
+As linhas das rotas retiradas saem desta tabela; as palavras genéricas não ficam proibidas noutros contextos. A lista exata das linhas removidas está em `medicoes/n1-2026-09-30/inventario-retirado.json`. As frases que identificam quem fixou os valores de referência passam para Estado e economia. As linhas novas nomeiam os assuntos, o âmbito, as secções e as comparações municipais. A linha do salário mínimo a doze meses conserva a medida do Eurostat.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | <lugar>’s figures on municipalities, districts, islands and regions. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | As medidas dos concelhos | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | As regiões | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Education and health | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Educação e saúde | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Employment | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Emprego | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Estado e economia | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Habitação | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Housing | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Municipal figures | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Municipalities | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os assuntos e os lugares de Portugal, com uma página para os números de cada assunto. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os distritos e as ilhas | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de <lugar> sobre os concelhos, os distritos, as ilhas e as regiões. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre a pobreza, a desigualdade, as dívidas e o crédito das famílias. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre as contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre o abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre os concelhos, os distritos, as ilhas e as regiões. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre os preços dos bens e serviços. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre os salários, as pensões e os apoios sociais. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Pay, pensions and benefits | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Pobreza e desigualdade | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on early school leaving, digital skills, childcare and access to healthcare. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on employment, unemployment, young people and labour costs. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on housing costs, rents, prices and building. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on municipalities, districts, islands and regions. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on pay, pensions and social benefits. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on poverty, inequality, household debt and credit. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on public accounts, growth, investment, external accounts, companies and justice. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on the prices of goods and services. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Subjects and places in Portugal: a page of figures for each subject. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Preços | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Salários, pensões e apoios | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | State and economy | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| conteudo | em doze meses, na base do Eurostat: € | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| conteudo | over twelve months, on the Eurostat basis: € | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | · concelhos | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | · municipalities | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |

@@ -1,0 +1,21 @@
+---
+/** A mesma lista, na mesma ordem, na primeira página e no índice dos temas. */
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
+import '../styles/primeira-pagina.css';
+const { lang = 'pt', seccoes = false } = Astro.props;
+---
+<ul class="pp-entradas-lista" data-indice-assuntos>
+  {ENTRADAS.map((e) => (
+    <li data-entrada={e.id}>
+      <a class="pp-entrada" href={e.rota[lang]}>
+        <span class="pp-entrada-nome">{e.nome[lang]}</span>
+        <span class="pp-entrada-linha">{e.linha[lang]}</span>
+      </a>
+      {seccoes && <ul class="assunto-seccoes">{e.seccoes.map((s) => <li>{s.nome[lang]}</li>)}</ul>}
+    </li>
+  ))}
+</ul>
+<style>
+  .assunto-seccoes { margin: 0 0 20px; padding-left: 20px; font-size: 14px; }
+  .assunto-seccoes li { padding-block: 2px; }
+</style>

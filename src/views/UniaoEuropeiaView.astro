@@ -70,6 +70,7 @@ import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { ledeDoPainel } from '../lib/inicio.mjs';
 import { dominioDaLinha } from '../lib/dominios.mjs';
+import { portaDoCartao } from '../lib/assuntos.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -92,7 +93,7 @@ const verificacao = estadoDaVerificacao();
 const portaDaLeitura = (claim) => {
   const dominio = dominioDaLinha(claim);
   if (!dominio) return null;
-  return `${routePath('dominio', lang, { slug: dominio.slug })}#${dominio.ancora}`;
+  return portaDoCartao(claim, lang);
 };
 
 const medidas = FIGURAS_PDM.map((f) => {

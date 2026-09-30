@@ -64,13 +64,11 @@ import { nomeDaMedida } from './nomes.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** A chave de rota de cada entrada, e o identificador dela nas declarações (bloco PP1). */
-export const ENTRADA_DA_ROTA = /** @type {const} */ ({
-  entradaDinheiro: 'dinheiro',
-  entradaTrabalho: 'trabalho',
-  entradaCasa: 'casa',
-  entradaEscolaESaude: 'escola-e-saude',
-  entradaEstado: 'estado',
-});
+export const ENTRADA_DA_ROTA = {
+  entradaDinheiro: 'precos', entradaSalarios: 'salarios-pensoes-e-apoios',
+  entradaPobreza: 'pobreza-e-desigualdade', entradaTrabalho: 'emprego',
+  entradaCasa: 'habitacao', entradaEscolaESaude: 'educacao-e-saude', entradaEstado: 'estado-e-economia',
+};
 
 /**
  * AS DUAS FAMÍLIAS DE TRANSCRIÇÃO (§3 do brief). A mesma lista está em
@@ -99,12 +97,14 @@ export const PAI_DA_ROTA = {
   marcador: 'home',
   agenda: 'home',
   uniaoEuropeia: 'home',
-  /* As cinco entradas por pergunta da vida (bloco PP1, 28.09.2026) nascem da primeira página. */
-  entradaDinheiro: 'home',
-  entradaTrabalho: 'home',
-  entradaCasa: 'home',
-  entradaEscolaESaude: 'home',
-  entradaEstado: 'home',
+  /* N1: as sete páginas de assunto pertencem ao índice dos temas. */
+  entradaDinheiro: 'temas',
+  entradaSalarios: 'temas',
+  entradaPobreza: 'temas',
+  entradaTrabalho: 'temas',
+  entradaCasa: 'temas',
+  entradaEscolaESaude: 'temas',
+  entradaEstado: 'temas',
   estudos: 'home',
   estudo: 'estudos',
   /* B1, peça 2: a escada do território passa pela página dos lugares, que é a

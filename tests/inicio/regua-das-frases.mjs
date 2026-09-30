@@ -49,7 +49,7 @@ export function plantasDaReguaDasFrases(dist) {
     const concelho = fs.readdirSync(path.join(dist, 'municipios'), { withFileTypes: true }).find((d) => d.isDirectory() && fs.existsSync(path.join(dist, 'municipios', d.name, 'index.html')));
     if (!concelho) throw new Error('a construção não tem página de concelho nenhuma');
     copia('', (h) => antesDoFimDoMain(h, `<p data-bloco-declarado>${MARCADA_NA_PRIMEIRA}</p>`));
-    copia('o-meu-dinheiro', (h) => {
+    copia('precos', (h) => {
       const i = h.indexOf('data-cartao-medida="');
       const j = h.indexOf('>', i) + 1;
       if (i < 0 || j <= 0) throw new Error('a entrada não tem cartão nenhum');
@@ -67,12 +67,12 @@ export function plantasDaReguaDasFrases(dist) {
     const rotaDoConcelho = `/municipios/${concelho.name}`;
     const lidas = Object.keys(porRota).length;
     return [
-      { nome: 'uma frase com um valor fora dos cartões de uma entrada fica por classificar', mordeu: naoClassificados('/o-meu-dinheiro').includes(FORA), queixa: naoClassificados('/o-meu-dinheiro').includes(FORA) ? `bloco por classificar em /o-meu-dinheiro: «${FORA}»` : `a régua leu ${lidas} rota(s) e não a viu` },
+      { nome: 'uma frase com um valor fora dos cartões de uma entrada fica por classificar', mordeu: naoClassificados('/precos').includes(FORA), queixa: naoClassificados('/precos').includes(FORA) ? `bloco por classificar em /precos: «${FORA}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       { nome: 'a marca dos blocos numa página de concelho não tira nada do inventário', mordeu: naoClassificados(rotaDoConcelho).includes(MARCADA_NO_CONCELHO), queixa: naoClassificados(rotaDoConcelho).includes(MARCADA_NO_CONCELHO) ? `bloco por classificar em ${rotaDoConcelho}: «${MARCADA_NO_CONCELHO}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       /* A frase do veredicto só sai do inventário na primeira página, onde a V1 a confere. */
       { nome: 'a marca do veredicto numa página de concelho não tira nada do inventário', mordeu: naoClassificados(rotaDoConcelho).includes(VEREDICTO_NO_CONCELHO), queixa: naoClassificados(rotaDoConcelho).includes(VEREDICTO_NO_CONCELHO) ? `bloco por classificar em ${rotaDoConcelho}: «${VEREDICTO_NO_CONCELHO}»` : `a régua leu ${lidas} rota(s) e não a viu` },
       /* Os dois controlos: a dispensa existe onde foi escrita, e só lá. */
-      { nome: 'controlo: dentro de um cartão de uma entrada, a régua faz o que faz na página dos temas', mordeu: !naoClassificados('/o-meu-dinheiro').includes(DENTRO) && porRota['/o-meu-dinheiro'] !== undefined, queixa: naoClassificados('/o-meu-dinheiro').includes(DENTRO) ? 'a frase do cartão ficou por classificar' : null },
+      { nome: 'controlo: dentro de um cartão de uma entrada, a régua faz o que faz na página dos temas', mordeu: !naoClassificados('/precos').includes(DENTRO) && porRota['/precos'] !== undefined, queixa: naoClassificados('/precos').includes(DENTRO) ? 'a frase do cartão ficou por classificar' : null },
       { nome: 'controlo: a marca dos blocos na primeira página tira a frase do inventário', mordeu: !naoClassificados('/').includes(MARCADA_NA_PRIMEIRA) && porRota['/'] !== undefined, queixa: naoClassificados('/').includes(MARCADA_NA_PRIMEIRA) ? 'a frase marcada ficou por classificar' : null },
     ];
   } finally {

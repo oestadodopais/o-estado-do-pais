@@ -698,7 +698,7 @@ const CANDIDATAS_DA_PECA_SEM_LIMIAR = [
 const CANDIDATAS_DO_ESTADO_PINTADO = [
   'index.html',
   routePath('uniaoEuropeia', 'pt').replace(/^\//, '') + '/index.html',
-  'dominios/economia-e-financas-publicas/index.html',
+  'estado-e-economia/index.html',
   'municipios/evora/index.html',
 ];
 

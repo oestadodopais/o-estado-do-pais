@@ -22,8 +22,7 @@
  * O valor de cada barra lê-se do número desenhado ao lado dela (o `data-claim` do seu `<svg>`), que a
  * célula dos blocos (`tests/inicio/blocos.mjs`) já confere contra a linha: esta célula não confere o
  * número, confere o desenho dele. A primeira página corre nas duas edições a 390 e a 1 280 px e nos
- * dois temas; as páginas das entradas com blocos correm na edição portuguesa a 1 280 px, e a da
- * habitação também a 390.
+ * dois temas. N1: as páginas de assunto não têm blocos; a célula da navegação fecha se algum voltar.
  *
  * `--prova` corre as catorze plantas da maqueta (um número solto, um valor trocado, o identificador de
  * outra linha, uma linha retirada, um número das palavras fixas mudado, a unidade dentro do elemento do
@@ -42,7 +41,6 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { parse } from 'node-html-parser';
 import { conferirBlocosDaPagina, idsDosBlocos } from './blocos.mjs';
-import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
@@ -212,8 +210,6 @@ const falhas = [];
 try {
   const limpas = [
     ['/', 390, 'light'], ['/', 1280, 'light'], ['/', 390, 'dark'], ['/', 1280, 'dark'], ['/en/', 390, 'light'], ['/en/', 1280, 'light'],
-    ...ENTRADAS.filter((e) => e.blocos.length && !('existente' in e && e.existente)).map((e) => [e.rota.pt, 1280, 'light']),
-    ['/a-minha-casa/', 390, 'light'],
   ];
   for (const [rota, largura, tema] of limpas) {
     const r = await correr(rota, largura, tema);

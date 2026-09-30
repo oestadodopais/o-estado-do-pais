@@ -3157,7 +3157,7 @@ const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
  * AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026), pela chave da rota. Escritas aqui, e não lidas
  * da vista, como as outras listas deste portão; a tabela das rotas confere que existem.
  */
-const ROTAS_DAS_ENTRADAS = ['entradaDinheiro', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado'];
+const ROTAS_DAS_ENTRADAS = ['entradaDinheiro', 'entradaSalarios', 'entradaPobreza', 'entradaTrabalho', 'entradaCasa', 'entradaEscolaESaude', 'entradaEstado'];
 for (const chave of ROTAS_DAS_ENTRADAS) routePath(/** @type {any} */ (chave), 'pt');
 
 /**
@@ -6122,7 +6122,7 @@ for (const file of ficheirosHtml(DIST)) {
        cartão, que rende o título do documento como campo. A porta é estreita como as outras: só estes
        campos, só dentro de um bloco, na primeira página e nas entradas, e cada um continua comparado
        carácter a carácter com a linha; `auditaSelo()` continua a correr nestas páginas. */
-    const campoDeBloco = ['home', ...ROTAS_DAS_ENTRADAS].includes(rota?.key) && el.closest('[data-bloco]') !== null && (
+    const campoDeBloco = rota?.key === 'home' && el.closest('[data-bloco]') !== null && (
       (campo === 'source' && el.closest('[data-bloco-fonte]') !== null) ||
       (['document.title', 'name'].includes(String(campo)) && el.closest('[data-bloco-numero]') !== null));
     // Uma unidade do registo é conferida contra a linha da própria entrada,
@@ -7094,7 +7094,7 @@ for (const file of ficheirosHtml(DIST)) {
     // A exceção exige o cartão inteiro e só vale para estas chaves e páginas.
     const noCartaoDasCamaras = el.closest('[data-cartao-camaras]');
     const portaComumDasCamaras = Boolean(noCartaoDasCamaras)
-      && ['index.html', 'en/index.html', 'temas/index.html', 'en/themes/index.html'].includes(rel)
+      && ['lugares/index.html', 'en/places/index.html'].includes(rel)
       && ['camaras_acima_do_limite', 'municipios_com_pagina', 'camaras_dentro_do_limite', 'camaras_sem_valor'].includes(chave)
       && verificaCartaoDasCamaras(body, linguaPagina ?? 'pt').length === 0;
     let temPorta = portaComumDasCamaras;

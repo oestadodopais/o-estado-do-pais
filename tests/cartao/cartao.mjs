@@ -203,6 +203,7 @@
  */
 
 import fs from 'node:fs';
+import { documentoDosAssuntos } from '../inicio/paginas-dos-assuntos.mjs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -439,12 +440,7 @@ function corre(dist) {
         for (const e of k18.erros) erros.push(`K18 · ${e}`);
         contas.faixas_k18 += k18.contas.faixas;
         contas.ressalvas_k18 += k18.contas.ressalvas;
-        if (PROVA && /^\/(en\/themes|temas)\/$/.test(rota) && !k18.erros.length) {
-          for (const planta of plantasDaFaixa(html, langPagina, rota, { series: SERIES_DA_K18, paises: PAISES_DA_K18 })) {
-            contas.plantas_k18++;
-            if (!planta.passou) erros.push(`K18 · ${rota}: a planta «${planta.nome}» não mordeu (${planta.porque})`);
-          }
-        }
+
       }
 
       /* K8 · a linha do tipo e a legenda da marca. */
@@ -1656,6 +1652,11 @@ if (!fs.existsSync(DIST)) {
 }
 
 const r = corre(DIST);
+    if (PROVA) for (const lang of ['pt', 'en']) for (const planta of plantasDaFaixa(documentoDosAssuntos(DIST, lang).outerHTML, lang, `assuntos-${lang}`, { series: SERIES_DA_K18, paises: PAISES_DA_K18 })) {
+  r.contas.plantas_k18++;
+  if (!planta.passou) r.erros.push(`K18: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
+}
+
 const motor = ficheirosDoMotor();
 
 /* -------------------------------------------------------------------- K14 */

@@ -173,8 +173,13 @@ const FAMILIAS = [
   ['regiao', { slug: 'alentejo' }],
   ['areas', null],
   ['area', { slug: 'administracao-interna' }],
-  ['dominios', null],
-  ['dominio', { slug: 'economia-e-financas-publicas' }],
+  ['entradaDinheiro', null],
+  ['entradaSalarios', null],
+  ['entradaPobreza', null],
+  ['entradaTrabalho', null],
+  ['entradaCasa', null],
+  ['entradaEscolaESaude', null],
+  ['entradaEstado', null],
   ['livro', null],
   ['livroConcelhos', null],
   ['livroConcelho', { slug: 'evora' }],
@@ -1075,7 +1080,8 @@ function medeNaPagina(cfg) {
     alvos,
     caixas,
     unidades,
-    portasDeConcelho: portasDeConcelho.length,
+    portasDeConcelho: portasDeConcelho.filter((a) => !a.closest('[data-comparacoes-concelhos] [data-forma="mapa-por-concelho"] table')).length,
+    tabelasDeConcelhos: [...document.querySelectorAll('[data-comparacoes-concelhos] [data-forma="mapa-por-concelho"] table')].map((t) => ({ linhas: t.querySelectorAll('tbody tr').length, portas: new Set([...t.querySelectorAll('tbody th a')].map((a) => a.getAttribute('href'))).size })),
     naListaAgrupada: naListaAgrupada.length,
     h1: h1.length,
     rotulosTopoIA,
@@ -1866,7 +1872,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
    */
   const doIndice = p.paginas.filter((pg) => pg.familia === 'lugares');
   const indiceMau = doIndice.filter(
-    (pg) => pg.portasDeConcelho !== CONCELHOS_DA_CARTA || pg.naListaAgrupada !== CONCELHOS_DA_CARTA,
+    (pg) => pg.portasDeConcelho !== CONCELHOS_DA_CARTA || pg.naListaAgrupada !== CONCELHOS_DA_CARTA || pg.tabelasDeConcelhos.length !== 2 || pg.tabelasDeConcelhos.some((t) => t.linhas !== CONCELHOS_DA_CARTA || t.portas !== CONCELHOS_DA_CARTA),
   );
   conta(
     'H13',
@@ -1874,7 +1880,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     `/lugares nas duas edições e nas ${LARGURAS.length} larguras: ${doIndice.length} ` +
       `passagem(ns) · portas de concelho por página: ` +
       `${[...new Set(doIndice.map((pg) => pg.portasDeConcelho))].sort((a, b) => a - b).join(', ')} ` +
-      `(esperado ${CONCELHOS_DA_CARTA}) · dentro da lista agrupada: ` +
+      `(esperado ${CONCELHOS_DA_CARTA}, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: ` +
       `${[...new Set(doIndice.map((pg) => pg.naListaAgrupada))].sort((a, b) => a - b).join(', ')}`,
   );
 

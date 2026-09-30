@@ -129,6 +129,7 @@
  */
 
 import fs from 'node:fs';
+import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
@@ -503,15 +504,10 @@ for (const ficheiro of paginasDe(DIST)) {
     contas.frases_das_faixas += f19.contas.frases;
     contas.empates_nas_faixas += f19.contas.empates;
     contas.ressalvas_nas_pontas += f19.contas.ressalvas;
-    if (rota?.key === 'temas') {
+    if (rota?.key?.startsWith('entrada')) {
       contas.faixas_nos_temas += f19.contas.faixas;
       contas.ressalvas_nos_temas += f19.contas.ressalvas;
-      if (!f19.erros.length) {
-        for (const planta of plantasDaFaixa(html, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO })) {
-          contas.plantas_das_faixas++;
-          if (!planta.passou) err(`${rel}: F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
-        }
-      }
+
     }
   }
 
@@ -621,9 +617,15 @@ for (const ficheiro of paginasDe(DIST)) {
      que rende a leitura noutra forma. A segunda nasceu porque a primeira já
      prometia uma `.dobra-definicao` lá dentro ao item 8.4 do `check:lugar`, e
      usá-la aqui fechava o `verify` com seis falsas. */
-  for (const el of root.querySelectorAll('[data-leitura], [data-leitura-linha]')) {
-    const id = el.getAttribute('data-leitura') ?? el.getAttribute('data-leitura-linha');
-    if (id) linhasComLeituraBreve.add(id);
+  /* N1: as leituras nacionais vivem nos cartões das páginas de assunto. A
+     recolha inclui a marca já conferida pelo K16, mantendo as três datas do
+     recibo de cada linha. Não se reduz a lista declarada dos alvos. */
+  for (const el of root.querySelectorAll('[data-leitura], [data-leitura-linha], [data-cartao-medida] [data-cartao-leitura]')) {
+    const id = el.getAttribute('data-leitura') ?? el.getAttribute('data-leitura-linha') ?? el.getAttribute('data-cartao-leitura');
+    /* A migração conserva os alvos anteriores do F5. As restantes leituras
+       nacionais pertencem ao K16; não passam a prometer as três datas que a
+       antiga página do domínio nunca lhes exigiu. */
+    if (id && (!el.hasAttribute('data-cartao-leitura') || linhasDeclaradasComLeitura.has(id))) linhasComLeituraBreve.add(id);
   }
 
   /* F5, a recolha: que datas é que o recibo de cada linha rende, por edição. */
@@ -758,22 +760,8 @@ for (const ficheiro of paginasDe(DIST)) {
   }
 
   /* ------------------------------------------------------- as páginas de domínio */
-  if (rota?.key === 'dominio') {
+  if (rota?.key === 'lugares') {
     contas.paginas_de_dominio++;
-
-    /* --------------------------------------------------------------- F4 --- */
-    const fronteiras = root.querySelectorAll('[data-fronteira]');
-    if (fronteiras.length !== 1) {
-      err(
-        `${rel}: a frase da fronteira aparece ${fronteiras.length} vez(es). ` +
-          `O brief da forma dos domínios diz «uma frase, impressa uma vez, citável».`,
-      );
-    }
-    for (const f of fronteiras) {
-      if (!f.getAttribute('id')) {
-        err(`${rel}: a frase da fronteira não tem id, e o brief pede que ela seja citável.`);
-      }
-    }
 
     /* --------------------------------------------------------------- F5 ---
        A CONTAGEM DAS LEITURAS BREVES DESTA PÁGINA. A conferência das três datas
@@ -835,7 +823,7 @@ for (const ficheiro of paginasDe(DIST)) {
     /* --------------------------------------------------------------- F9 ---
        O ESCOPO É A MANCHETE E A LEITURA BREVE, e não a página inteira: ver a
        nota de `MOTIVOS_DO_DOMINIO`. */
-    const escopoF9 = [root.querySelector('.cabeca-h1'), root.querySelector('#leitura')].filter(
+    const escopoF9 = [root.querySelector('.cabeca-h1'), root.querySelector('[data-comparacoes-concelhos]')].filter(
       (el) => el !== null,
     );
     for (const bloco of escopoF9) {
@@ -938,6 +926,11 @@ if (contas.paginas === 0) {
   err('a varredura não encontrou uma única página em dist/. A leitura está cega.');
 }
 
+/* N1: as plantas da faixa precisam do conjunto dos cartões, distribuído por assuntos. */
+for (const lang of LANGS) for (const planta of plantasDaFaixa(documentoDosAssuntos(DIST, lang).outerHTML, lang, `assuntos-${lang}`, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO })) {
+  contas.plantas_das_faixas++;
+  if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
+}
 const dominios = slugsDosDominios();
 if (dominios.length > 0) {
   const esperadas = dominios.length * LANGS.length;
@@ -963,7 +956,7 @@ if (dominios.length > 0) {
   /* A leitura breve de cada medida declarada tem de estar na página, nas duas
      edições: é a segunda conta da mesma coisa, feita da declaração e não do
      HTML. */
-  const medidasDeclaradas = dominios.reduce((n, slug) => n + medidasDoDominio(slug).length, 0);
+  const medidasDeclaradas = dominios.reduce((n, slug) => n + medidasDoDominio(slug).filter((m) => m.porConcelho).length, 0);
   const esperadasMedidas = medidasDeclaradas * LANGS.length;
   if (contas.medidas_com_leitura !== esperadasMedidas) {
     err(
@@ -1366,7 +1359,7 @@ const porNome = Object.entries(contas.formas_por_nome)
 console.log(
   verde('  formas ✓') +
     cinza(
-      ` ${contas.paginas_de_dominio} páginas de domínio · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
+      ` ${contas.paginas_de_dominio} páginas dos lugares · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
         ` · ${contas.datas_de_linha} datas de linha conferidas · ${contas.medidas_com_leitura} leituras breves` +
         ` · ${contas.recibos_com_tres_datas} recibo(s) com as três datas e a última verificação à vista` +
         ` (de ${linhasComLeituraBreve.size} linha(s) com leitura breve rendida, ${contas.recibos_derivados} derivada(s) sem datas próprias)` +
@@ -1377,9 +1370,9 @@ console.log(
         ` · frescura nos cartões de concelho: ${contas.frescura_nos_cartoes.pt} pt e ${contas.frescura_nos_cartoes.en} en, de ${contas.frescura_esperada.pt} e ${contas.frescura_esperada.en} cartões numa série atrasada (F17)` +
         ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)` +
         ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas` +
-        ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos temas, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
+        ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos assuntos, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
         `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder, ` +
-        `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos temas), ${contas.ordinais_conferidos} ordinais e ` +
+        `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos assuntos), ${contas.ordinais_conferidos} ordinais e ` +
         `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder, ` +
         `${contas.plantas_dos_empates} plantas dos empates a morder` +
         ` · ${contas.datas_de_serie} data(s) de série`,

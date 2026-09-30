@@ -1,0 +1,15 @@
+{
+  "o_que_e": "N1: a catraca L1 desce ao total lido no registo da conferência; não se aumenta a tolerância.",
+  "data": "2026-09-30",
+  "origem": "design/especime-v3/medicoes/n1-2026-09-30/ensaios/check-lugar.log",
+  "contagens": {
+    "estudos": 2337,
+    "teto_anterior": 2349,
+    "reducao": 12
+  },
+  "conhecido_positivo": {
+    "rota": "/agenda",
+    "destinos_repetidos": 8,
+    "visto": true
+  }
+}

@@ -53,8 +53,8 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
     return erros;
   }
   const c = cartoes[0];
-  if (c.closest('[data-tema]')?.getAttribute('data-tema') !== 'economia-e-financas-publicas')
-    falha('o cartão das câmaras não está no tema da economia e finanças públicas.');
+  if (!c.closest('[data-comparacoes-concelhos]'))
+    falha('o cartão das câmaras não está nas comparações dos concelhos.');
   if (c.hasAttribute('data-cartao-medida')) falha('uma contagem aparece como linha publicada.');
   const ordem = c.parentNode.querySelectorAll('[data-cartao-medida], [data-cartao-camaras]');
   if (ordem[ordem.length - 1] !== c) falha('o cartão das câmaras não fecha a fila do tema.');

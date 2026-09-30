@@ -2,6 +2,7 @@ import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
 /** RP1: as réguas recusam outra série e a data conserva o período publicado. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { documentoDosAssuntos } from '../inicio/paginas-dos-assuntos.mjs';
 import { parse } from 'node-html-parser';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
 import { REGUAS_DECLARADAS, conferirReguaDeclarada, linhasDeEnquadramento, reguaDaMedida } from '../../src/lib/enquadramento.mjs';
@@ -114,8 +115,9 @@ function unidadeAntesDaRessalva(card) {
 }
 let paginas = 0, cartoes = 0;
 if (!process.argv.includes('--declaracoes')) {
-  for (const [ficheiro, lang] of [['temas/index.html','pt'],['en/themes/index.html','en']]) {
-    const root = parse(fs.readFileSync('dist/'+ficheiro,'utf8')); paginas++;
+  for (const lang of ['pt', 'en']) {
+    const ficheiro = `assuntos-${lang}`;
+    const root = documentoDosAssuntos('dist', lang); paginas++;
     for (const id of Object.keys(DOMINIOS_RP1)) {
       const card = root.querySelector(`[data-cartao-medida="${id}"]`);
       assert.ok(card, `${ficheiro}: cartão ausente ${id}`);cartoes++;

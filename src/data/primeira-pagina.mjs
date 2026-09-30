@@ -75,7 +75,7 @@ export const ACERTOS_DAS_PALAVRAS = [
 export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   {
     id: 'precos',
-    entrada: 'dinheiro',
+    entrada: 'precos',
     titulo: { pt: 'Os preços: os combustíveis sobem mais do que o resto', en: 'Prices: fuel is rising faster than the rest' },
     frase: {
       pt: ['Em ', { periodo: 'ipc-combustiveis-variacao-homologa' }, ', os combustíveis estavam ', { claim: 'ipc-combustiveis-variacao-homologa', sufixo: PC }, ' mais caros do que um ano antes. Os preços no seu conjunto subiram ', { claim: 'ipc-variacao-homologa', sufixo: PC }, '.'],
@@ -117,7 +117,7 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   },
   {
     id: 'casa',
-    entrada: 'casa',
+    entrada: 'habitacao',
     titulo: { pt: 'A habitação: a média engana quem arrenda', en: 'Housing: the average hides the renters' },
     frase: {
       pt: ['Em Portugal, a parte das pessoas que gastam mais de ', nl('40'), ' % do rendimento disponível com a habitação é menor do que na União. Entre quem arrenda a preço de mercado, é maior.'],
@@ -169,7 +169,7 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   },
   {
     id: 'trabalho',
-    entrada: 'trabalho',
+    entrada: 'emprego',
     titulo: { pt: 'O trabalho: mais emprego, e mais desemprego de longa duração', en: 'Work: more employment, and more long-term unemployment' },
     frase: {
       pt: ['Em ', { periodo: 'taxa-de-emprego-2025' }, ', a parte das pessoas dos ', nl('20'), ' aos ', nl('64'), ' anos com emprego era maior em Portugal do que na União, e o desemprego ', { compara: ['taxa-de-desemprego-mip-2025', 'taxa-de-desemprego-mip-2025-ue'], menor: ['era mais baixo'], maior: ['era mais alto'], igual: ['era o mesmo'] }, '. Mas era maior a parte de quem procura trabalho há um ano ou mais.'],
@@ -204,7 +204,7 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   },
   {
     id: 'estado',
-    entrada: 'estado',
+    entrada: 'estado-e-economia',
     titulo: { pt: 'As contas do Estado', en: 'The state’s accounts' },
     frase: {
       pt: ['A dívida pública ', { compara: ['divida-publica-2025', 'divida-publica-2024'], menor: ['desceu'], maior: ['subiu'], igual: ['não mudou'] }, ' de ', { periodo: 'divida-publica-2024' }, ' para ', { periodo: 'divida-publica-2025' }, ' e está acima da média da União. Para a Comissão Europeia, uma dívida acima de ', { referencia: 'divida-publica-2025' }, ' % do PIB é sinal de possível desequilíbrio, e a de Portugal está acima.'],
@@ -245,7 +245,7 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   },
   {
     id: 'pobreza',
-    entrada: 'dinheiro',
+    entrada: 'pobreza-e-desigualdade',
     titulo: { pt: 'Pobreza e desigualdade não são a mesma coisa', en: 'Poverty and inequality are not the same thing' },
     frase: {
       pt: ['Em ', { periodo: 'risco-de-pobreza-ou-exclusao-2025' }, ', a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União. Mas os ', nl('20'), ' % com mais rendimento recebiam ', { claim: 'racio-s80-s20-2025' }, ' vezes o que recebiam os ', nl('20'), ' % com menos, contra ', { claim: 'racio-s80-s20-2025-ue' }, ' na União.'],
@@ -271,93 +271,195 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   },
 ];
 
-/**
- * AS SEIS ENTRADAS (por baixo dos blocos). Cinco são páginas novas que agrupam os cartões
- * que o sítio já tem, pelo que um leitor procura; a sexta é a página dos lugares, que já
- * existe. Cada cartão dos temas está numa entrada, e só numa, salvo o índice da dívida do
- * município em relação ao limite legal, que é de um concelho e fica nos temas e na página
- * de Évora. Os blocos de cada entrada são os mesmos da primeira página, com as mesmas
- * condições.
- */
+/** N1: as oito portas por assunto, com as secções e os cartões existentes. */
 export const ENTRADAS = [
   {
-    id: 'dinheiro',
-    rota: { pt: '/o-meu-dinheiro/', en: '/en/my-money/' },
-    nome: { pt: 'O meu dinheiro', en: 'My money' },
-    linha: { pt: 'Os preços, os salários, as pensões e os apoios.', en: 'Prices, pay, pensions and benefits.' },
-    blocos: ['precos', 'pobreza'],
+    id: 'precos',
+    rota: { pt: '/precos/', en: '/en/prices/' },
+    nome: { pt: 'Preços', en: 'Prices' },
+    linha: {
+      pt: 'Os números de Portugal sobre os preços dos bens e serviços.',
+      en: 'Portugal’s figures on the prices of goods and services.'
+    },
     seccoes: [
-      { nome: { pt: 'Os preços', en: 'Prices' }, cartoes: ['ipc-variacao-homologa', 'ipc-variacao-media-12-meses', 'ipc-alimentacao-variacao-homologa', 'ipc-energia-em-casa-variacao-homologa', 'ipc-combustiveis-variacao-homologa', 'ihpc-variacao-homologa'] },
-      { nome: { pt: 'O salário', en: 'Pay' }, cartoes: ['remuneracao-bruta-mensal-media', 'ganho-medio-mensal-2024', 'retribuicao-minima-mensal-garantida-continente-2026', 'disparidade-salarial-entre-sexos-2024'] },
-      { nome: { pt: 'As pensões e os apoios', en: 'Pensions and benefits' }, cartoes: ['pensao-media-anual-2025', 'beneficiarios-do-rsi-por-mil-2024', 'linha-de-risco-de-pobreza-2025'] },
-      { nome: { pt: 'A pobreza e a desigualdade', en: 'Poverty and inequality' }, cartoes: ['risco-de-pobreza-ou-exclusao-2025', 'racio-s80-s20-2025'] },
-      { nome: { pt: 'As dívidas e o crédito das famílias', en: 'Household debt and credit' }, cartoes: ['divida-das-familias-2025', 'fluxo-de-credito-as-familias-2025'] },
-    ],
+      {
+        nome: { pt: 'Os preços', en: 'Prices' },
+        cartoes: [
+          'ipc-variacao-homologa',
+          'ipc-variacao-media-12-meses',
+          'ipc-alimentacao-variacao-homologa',
+          'ipc-energia-em-casa-variacao-homologa',
+          'ipc-combustiveis-variacao-homologa',
+          'ihpc-variacao-homologa'
+        ]
+      }
+    ]
   },
   {
-    id: 'trabalho',
-    rota: { pt: '/o-meu-trabalho/', en: '/en/my-work/' },
-    nome: { pt: 'O meu trabalho', en: 'My work' },
-    linha: { pt: 'O emprego, o desemprego e os jovens.', en: 'Employment, unemployment and young people.' },
-    blocos: ['trabalho'],
+    id: 'salarios-pensoes-e-apoios',
+    rota: { pt: '/salarios-pensoes-e-apoios/', en: '/en/pay-pensions-and-benefits/' },
+    nome: { pt: 'Salários, pensões e apoios', en: 'Pay, pensions and benefits' },
+    linha: {
+      pt: 'Os números de Portugal sobre os salários, as pensões e os apoios sociais.',
+      en: 'Portugal’s figures on pay, pensions and social benefits.'
+    },
     seccoes: [
-      { nome: { pt: 'O emprego e o desemprego', en: 'Employment and unemployment' }, cartoes: ['taxa-de-emprego-2025', 'taxa-de-actividade-2025', 'taxa-de-desemprego-mip-2025', 'desemprego-de-longa-duracao-2025'] },
-      { nome: { pt: 'Os jovens e as diferenças entre homens e mulheres', en: 'Young people and the gaps between men and women' }, cartoes: ['jovens-nem-2025', 'disparidade-de-emprego-entre-sexos-2025'] },
-      { nome: { pt: 'O custo do trabalho', en: 'The cost of labour' }, cartoes: ['custo-unitario-do-trabalho-2025'] },
-    ],
+      {
+        nome: { pt: 'O salário', en: 'Pay' },
+        cartoes: [
+          'remuneracao-bruta-mensal-media',
+          'ganho-medio-mensal-2024',
+          'retribuicao-minima-mensal-garantida-continente-2026',
+          'disparidade-salarial-entre-sexos-2024'
+        ]
+      },
+      {
+        nome: { pt: 'As pensões e os apoios', en: 'Pensions and benefits' },
+        cartoes: [ 'pensao-media-anual-2025', 'beneficiarios-do-rsi-por-mil-2024', 'linha-de-risco-de-pobreza-2025' ]
+      }
+    ]
   },
   {
-    id: 'casa',
-    rota: { pt: '/a-minha-casa/', en: '/en/my-home/' },
-    nome: { pt: 'A minha casa', en: 'My home' },
-    linha: { pt: 'O peso da habitação, as rendas e os preços.', en: 'The cost of housing, rents and prices.' },
-    blocos: ['casa'],
+    id: 'pobreza-e-desigualdade',
+    rota: { pt: '/pobreza-e-desigualdade/', en: '/en/poverty-and-inequality/' },
+    nome: { pt: 'Pobreza e desigualdade', en: 'Poverty and inequality' },
+    linha: {
+      pt: 'Os números de Portugal sobre a pobreza, a desigualdade, as dívidas e o crédito das famílias.',
+      en: 'Portugal’s figures on poverty, inequality, household debt and credit.'
+    },
     seccoes: [
-      { nome: { pt: 'O peso da habitação', en: 'The cost of housing' }, cartoes: ['sobrecarga-do-custo-da-habitacao-2025', 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025'] },
-      { nome: { pt: 'As rendas', en: 'Rents' }, cartoes: ['ipc-rendas-variacao-homologa', 'ipc-sem-habitacao-variacao-media-12-meses'] },
-      { nome: { pt: 'Os preços e a construção', en: 'Prices and building' }, cartoes: ['precos-da-habitacao-2025', 'licencas-de-construcao-2025'] },
-    ],
+      {
+        nome: { pt: 'A pobreza e a desigualdade', en: 'Poverty and inequality' },
+        cartoes: [ 'risco-de-pobreza-ou-exclusao-2025', 'racio-s80-s20-2025' ]
+      },
+      {
+        nome: { pt: 'As dívidas e o crédito das famílias', en: 'Household debt and credit' },
+        cartoes: [ 'divida-das-familias-2025', 'fluxo-de-credito-as-familias-2025' ]
+      }
+    ]
   },
   {
-    id: 'escola-e-saude',
-    rota: { pt: '/a-escola-e-a-saude/', en: '/en/school-and-health/' },
-    nome: { pt: 'A escola e a saúde', en: 'School and health' },
-    linha: { pt: 'O abandono escolar, a creche e o acesso aos cuidados.', en: 'Early school leaving, childcare and access to care.' },
-    blocos: [],
+    id: 'emprego',
+    rota: { pt: '/emprego/', en: '/en/employment/' },
+    nome: { pt: 'Emprego', en: 'Employment' },
+    linha: {
+      pt: 'Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho.',
+      en: 'Portugal’s figures on employment, unemployment, young people and labour costs.'
+    },
     seccoes: [
-      { nome: { pt: 'A escola', en: 'School' }, cartoes: ['abandono-escolar-precoce-2025', 'competencias-digitais-2025', 'criancas-em-creche-2025'] },
-      { nome: { pt: 'A saúde', en: 'Health' }, cartoes: ['necessidades-medicas-nao-satisfeitas-2025'] },
-    ],
+      {
+        nome: { pt: 'O emprego e o desemprego', en: 'Employment and unemployment' },
+        cartoes: [
+          'taxa-de-emprego-2025',
+          'taxa-de-actividade-2025',
+          'taxa-de-desemprego-mip-2025',
+          'desemprego-de-longa-duracao-2025'
+        ]
+      },
+      {
+        nome: {
+          pt: 'Os jovens e as diferenças entre homens e mulheres',
+          en: 'Young people and the gaps between men and women'
+        },
+        cartoes: [ 'jovens-nem-2025', 'disparidade-de-emprego-entre-sexos-2025' ]
+      },
+      {
+        nome: { pt: 'O custo do trabalho', en: 'The cost of labour' },
+        cartoes: [ 'custo-unitario-do-trabalho-2025' ]
+      }
+    ]
   },
   {
-    id: 'estado',
-    rota: { pt: '/o-estado-e-a-economia/', en: '/en/state-and-economy/' },
-    nome: { pt: 'O Estado e a economia', en: 'The state and the economy' },
-    linha: { pt: 'A dívida, o défice, o crescimento e as contas com o exterior.', en: 'Debt, the deficit, growth and the external accounts.' },
-    blocos: ['estado'],
+    id: 'habitacao',
+    rota: { pt: '/habitacao/', en: '/en/housing/' },
+    nome: { pt: 'Habitação', en: 'Housing' },
+    linha: {
+      pt: 'Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção.',
+      en: 'Portugal’s figures on housing costs, rents, prices and building.'
+    },
     seccoes: [
-      { nome: { pt: 'As contas do Estado', en: 'The state’s accounts' }, cartoes: ['divida-publica-2025', 'saldo-das-administracoes-publicas-2025', 'crescimento-da-despesa-liquida-2025'] },
-      { nome: { pt: 'O crescimento e o investimento', en: 'Growth and investment' }, cartoes: ['pib-real-per-capita-2025', 'formacao-bruta-de-capital-fixo-2025', 'despesa-em-id-2024'] },
-      { nome: { pt: 'As contas com o exterior', en: 'The external accounts' }, cartoes: ['saldo-da-balanca-corrente-2025', 'posicao-de-investimento-internacional-2025', 'taxa-de-cambio-efectiva-real-2025', 'desempenho-das-exportacoes-2025'] },
-      { nome: { pt: 'As empresas', en: 'Companies' }, cartoes: ['divida-das-empresas-2025', 'fluxo-de-credito-as-empresas-2025'] },
-      { nome: { pt: 'A justiça', en: 'Justice' }, cartoes: ['independencia-da-justica-2025'] },
-    ],
+      {
+        nome: { pt: 'O peso da habitação', en: 'The cost of housing' },
+        cartoes: [ 'sobrecarga-do-custo-da-habitacao-2025', 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025' ]
+      },
+      {
+        nome: { pt: 'As rendas', en: 'Rents' },
+        cartoes: [ 'ipc-rendas-variacao-homologa', 'ipc-sem-habitacao-variacao-media-12-meses' ]
+      },
+      {
+        nome: { pt: 'Os preços e a construção', en: 'Prices and building' },
+        cartoes: [ 'precos-da-habitacao-2025', 'licencas-de-construcao-2025' ]
+      }
+    ]
   },
   {
-    id: 'terra',
+    id: 'educacao-e-saude',
+    rota: { pt: '/educacao-e-saude/', en: '/en/education-and-health/' },
+    nome: { pt: 'Educação e saúde', en: 'Education and health' },
+    linha: {
+      pt: 'Os números de Portugal sobre o abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde.',
+      en: 'Portugal’s figures on early school leaving, digital skills, childcare and access to healthcare.'
+    },
+    seccoes: [
+      {
+        nome: { pt: 'A escola', en: 'School' },
+        cartoes: [ 'abandono-escolar-precoce-2025', 'competencias-digitais-2025', 'criancas-em-creche-2025' ]
+      },
+      { nome: { pt: 'A saúde', en: 'Health' }, cartoes: [ 'necessidades-medicas-nao-satisfeitas-2025' ] }
+    ]
+  },
+  {
+    id: 'estado-e-economia',
+    rota: { pt: '/estado-e-economia/', en: '/en/state-and-economy/' },
+    nome: { pt: 'Estado e economia', en: 'State and economy' },
+    linha: {
+      pt: 'Os números de Portugal sobre as contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça.',
+      en: 'Portugal’s figures on public accounts, growth, investment, external accounts, companies and justice.'
+    },
+    seccoes: [
+      {
+        nome: { pt: 'Contas públicas', en: 'Public accounts' },
+        cartoes: [ 'divida-publica-2025', 'saldo-das-administracoes-publicas-2025', 'crescimento-da-despesa-liquida-2025' ]
+      },
+      {
+        nome: { pt: 'O crescimento e o investimento', en: 'Growth and investment' },
+        cartoes: [ 'pib-real-per-capita-2025', 'formacao-bruta-de-capital-fixo-2025', 'despesa-em-id-2024' ]
+      },
+      {
+        nome: { pt: 'As contas com o exterior', en: 'The external accounts' },
+        cartoes: [
+          'saldo-da-balanca-corrente-2025',
+          'posicao-de-investimento-internacional-2025',
+          'taxa-de-cambio-efectiva-real-2025',
+          'desempenho-das-exportacoes-2025'
+        ]
+      },
+      {
+        nome: { pt: 'As empresas', en: 'Companies' },
+        cartoes: [ 'divida-das-empresas-2025', 'fluxo-de-credito-as-empresas-2025' ]
+      },
+      { nome: { pt: 'A justiça', en: 'Justice' }, cartoes: [ 'independencia-da-justica-2025' ] }
+    ]
+  },
+  {
+    id: 'lugares',
     rota: { pt: '/lugares/', en: '/en/places/' },
-    nome: { pt: 'A minha terra', en: 'My area' },
-    linha: { pt: 'O concelho, o distrito e a região.', en: 'The municipality, the district and the region.' },
-    blocos: [],
-    seccoes: [],
-    existente: true,
-  },
+    nome: { pt: 'Lugares', en: 'Places' },
+    linha: {
+      pt: 'Os números de Portugal sobre os concelhos, os distritos, as ilhas e as regiões.',
+      en: 'Portugal’s figures on municipalities, districts, islands and regions.'
+    },
+    seccoes: [
+      { nome: { pt: 'Os concelhos', en: 'Municipalities' }, cartoes: [] },
+      { nome: { pt: 'As regiões', en: 'Regions' }, cartoes: [] },
+      { nome: { pt: 'Os distritos e as ilhas', en: 'Districts and islands' }, cartoes: [] },
+      { nome: { pt: 'As medidas dos concelhos', en: 'Municipal figures' }, cartoes: [] }
+    ],
+    existente: true
+  }
 ];
 
-/**
- * OS CARTÕES DOS TEMAS QUE NENHUMA ENTRADA LEVA, com a razão (o §0 do brief mediu um só).
- * A célula das entradas (`tests/inicio/entradas.mjs`) lê esta lista e mais nenhuma.
- */
+/** O limite legal pertence às comparações municipais, nos lugares. */
 export const CARTOES_FORA_DAS_ENTRADAS = {
-  'indice-de-divida-limite-legal': 'O índice da dívida do município em relação ao limite legal é de um concelho: fica nos temas e na página de Évora.',
+  "indice-de-divida-limite-legal": "O limite legal e a contagem das câmaras pertencem aos lugares."
 };

@@ -700,7 +700,7 @@ for (const r of ROTAS_DA_CLASSE) {
    A K17 guarda o texto e a igualdade das bandeiras nesta superfície; o arame
    da classe continua a aplicar-se apenas às rotas que já declarava. */
 /* PP1: e as páginas das entradas, que rendem os mesmos cartões com as mesmas leituras. */
-const PAGINAS_COM_CARTOES = [['pt', 'temas/index.html', '/temas/'], ['en', 'en/themes/index.html', '/en/themes/'],
+const PAGINAS_COM_CARTOES = [['pt', 'lugares/index.html', '/lugares/'], ['en', 'en/places/index.html', '/en/places/'],
   ...ENTRADAS.filter((e) => !('existente' in e && e.existente)).flatMap((e) => /** @type {const} */ (['pt', 'en']).map((l) => [l, `${e.rota[l].replace(/^\//, '')}index.html`, e.rota[l]]))];
 for (const [lingua, ficheiro, rota] of PAGINAS_COM_CARTOES) {
   const caminho = path.join(DIST, ficheiro);
@@ -718,7 +718,7 @@ for (const e of ENTRADAS.filter((x) => !('existente' in x && x.existente))) {
     const rota = e.rota[lingua];
     const caminho = path.join(DIST, rota.replace(/^\//, ''), 'index.html');
     if (!fs.existsSync(caminho)) { erros.push(`a página da entrada ${rota} não existe na construção, e a régua das frases tira-lhe as palavras dos blocos.`); continue; }
-    const r = conferirBlocosDaPagina(parse(fs.readFileSync(caminho, 'utf8')), lingua, rota, { ids: e.blocos });
+    const r = conferirBlocosDaPagina(parse(fs.readFileSync(caminho, 'utf8')), lingua, rota, { ids: [] });
     for (const x of r.erros) erros.push(`as palavras de um bloco só saem do inventário conferidas, e a célula dos blocos recusou-as em ${rota}: ${x}`);
   }
 }

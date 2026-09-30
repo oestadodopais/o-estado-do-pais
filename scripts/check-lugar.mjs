@@ -50,6 +50,7 @@
  * aberta esquecida, e fecha a construção como uma violação fecharia.
  */
 import fs from 'node:fs';
+import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
@@ -78,6 +79,7 @@ import { ANCORA_DA_POLITICA } from '../src/data/politica-ia.mjs';
 import { temRegisto } from '../src/lib/registos.mjs';
 import { documentosDoEstudo } from '../src/lib/documentos.mjs';
 import { portasObrigatoriasB2 } from './portas-b2.mjs';
+import { REGIOES } from '../src/data/regioes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -567,7 +569,7 @@ const EXCECOES_DO_VOCABULARIO = [
        nenhuma nomeia um estudo: é o trabalho de quem lê. */
     conta: 'trabalho',
     porque: '«trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo',
-    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho|[Oo] meu trabalho|O custo do trabalho|O trabalho: mais emprego/,
+    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho|[Oo] custo do trabalho|O trabalho: mais emprego/,
   },
   {
     /* «indicador» A NOMEAR O CAMPO DA FONTE, e não a medida da casa (Major 5,
@@ -986,7 +988,7 @@ for (const lang of LANGS) {
        continua a exigir a frase onde ela é matéria — o índice dos domínios e o
        das áreas de governo, onde duas famílias com nomes parecidos precisam de
        uma linha que as distinga. */
-    { url: routePath('dominios', lang), frase: s.hierarquia?.dominio, nome: 'dominios' },
+    /* N1: o índice dos domínios é um redirecionamento, sem prosa própria. */
     { url: routePath('areas', lang), frase: s.hierarquia?.area, nome: 'areas' },
   );
 }
@@ -1041,7 +1043,7 @@ for (const ficheiro of paginas) {
      devolvidos depois dessa prova saem da conta; outra âncora dentro ou fora
      dos blocos continua a ser uma porta de navegação contada pela L1. */
   const temasB2 = chaveDaRota === 'home'
-    ? parse(fs.readFileSync(path.join(DIST, lang === 'pt' ? 'temas' : 'en/themes', 'index.html'), 'utf8'))
+    ? documentoDosAssuntos(DIST, lang)
     : null;
   const b2 = portasObrigatoriasB2(raiz, chaveDaRota, lang, temasB2);
   for (const erro of b2.erros) falhas.push(`L1 B2 · ${url}: ${erro}`);
@@ -1263,7 +1265,13 @@ for (const ficheiro of paginas) {
         if (m?.key === 'regiao') regioes.add(normalizePath(href));
       }
       if (regioes.size < 9) continue;
-      if (bloco.querySelectorAll('[data-claim]').length < 9) continue;
+      /* N1: a lista das regiões ao lado de valores MUNICIPAIS não é a régua
+         regional. As nove portas têm de acompanhar os valores das regiões.
+         O marcador continua a contar sempre, e a planta copia a régua real
+         sem marcador para provar a deteção pela forma. */
+      const valoresRegionais = new Set(REGIOES.filter((r) => !r.referencia).map((r) => r.valor));
+      const rendidos = new Set(bloco.querySelectorAll('[data-claim]').map((n) => n.getAttribute('data-claim')));
+      if ([...valoresRegionais].filter((id) => rendidos.has(id)).length < 9) continue;
       /* CONTA-SE O BLOCO DE FORA, UMA VEZ: os ascendentes vêm primeiro na ordem
          do documento, e um deles a casar com a forma torna todos os que estão
          dentro dele a mesma régua vista de mais perto. Sem isto, uma régua

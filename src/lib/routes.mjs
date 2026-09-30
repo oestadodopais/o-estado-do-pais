@@ -241,23 +241,14 @@ export const ROUTES = {
    * os domínios deixaram nos pendentes.
    */
   uniaoEuropeia: { pt: '/uniao-europeia', en: '/en/european-union' },
-  /**
-   * AS CINCO ENTRADAS POR PERGUNTA DA VIDA (bloco PP1, 28.09.2026; a decisão do diretor de
-   * 28.09.2026, `DECISIONS.md` §1.133). Cada uma agrupa os cartões que o sítio já tem pelo que um
-   * leitor procura, com os blocos de «O que se passa» que lhe pertencem; a sexta entrada é a página
-   * dos lugares, que existe. As palavras e as listas dos cartões são do lugar de direção, em
-   * `src/data/primeira-pagina.mjs`, que declara também estes caminhos: a vista confere que são os
-   * mesmos, e uma divergência fecha a construção.
-   *
-   * CINCO CHAVES LITERAIS, E NÃO UMA COM `:slug`: o caminho é uma frase em cada edição
-   * («o-meu-dinheiro», «my-money»), e a regra desta tabela é que o que se traduz é o rótulo e nunca
-   * a chave. É a forma da página europeia, que também tem um caminho por edição.
-   */
-  entradaDinheiro: { pt: '/o-meu-dinheiro/', en: '/en/my-money/' },
-  entradaTrabalho: { pt: '/o-meu-trabalho/', en: '/en/my-work/' },
-  entradaCasa: { pt: '/a-minha-casa/', en: '/en/my-home/' },
-  entradaEscolaESaude: { pt: '/a-escola-e-a-saude/', en: '/en/school-and-health/' },
-  entradaEstado: { pt: '/o-estado-e-a-economia/', en: '/en/state-and-economy/' },
+  /** N1: as páginas de assunto. As rotas antigas redirecionam no servidor. */
+  entradaDinheiro: { pt: '/precos/', en: '/en/prices/' },
+  entradaSalarios: { pt: '/salarios-pensoes-e-apoios/', en: '/en/pay-pensions-and-benefits/' },
+  entradaPobreza: { pt: '/pobreza-e-desigualdade/', en: '/en/poverty-and-inequality/' },
+  entradaTrabalho: { pt: '/emprego/', en: '/en/employment/' },
+  entradaCasa: { pt: '/habitacao/', en: '/en/housing/' },
+  entradaEscolaESaude: { pt: '/educacao-e-saude/', en: '/en/education-and-health/' },
+  entradaEstado: { pt: '/estado-e-economia/', en: '/en/state-and-economy/' },
   agenda: { pt: '/agenda', en: '/en/agenda' },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
   /**

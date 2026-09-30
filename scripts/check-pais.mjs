@@ -18,6 +18,8 @@ import { t } from '../src/i18n/strings.mjs';
 import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
+import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
+import { conferirEntradas } from '../tests/inicio/entradas.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
@@ -25,7 +27,6 @@ const erros = [];
 const normal = s => (s ?? '').replace(/\s+/g, ' ').trim();
 const le = rel => parse(fs.readFileSync(path.join(dist, rel, 'index.html'), 'utf8'));
 const linha = id => load(fs.readFileSync(path.join(raiz, 'ledger/claims', `${id}.yml`), 'utf8'));
-const caminho = (lang, pt, en) => lang === 'pt' ? pt : en;
 const data = iso => iso.split('-').reverse().join('.');
 const decisoes = fs.readFileSync('DECISIONS.md', 'utf8');
 const capitulos = new Set([...decisoes.matchAll(/^### (\d+\.\d+)\s/gm)].map(m => m[1]));
@@ -251,12 +252,13 @@ let listasMedidas = 0;
 const estadosVistos = { cartoes: 0, fora: 0, dentro: 0 };
 let titulosMedidos = 0;
 let registosMedidos = 0;
+erros.push(...conferirEntradas(dist).erros);
 for (const lang of ['pt', 'en']) {
   const home = le(lang === 'pt' ? '' : 'en');
   const indice = le(lang === 'pt' ? 'temas' : 'en/themes');
   /* V1, B2: a frase do veredicto contra a leitura independente das linhas,
      das referências e dos nomes; as portas têm de abrir os cartões certos. */
-  erros.push(...verificaVeredictoDoPais(home, indice, lang, linha));
+  erros.push(...verificaVeredictoDoPais(home, documentoDosAssuntos(dist, lang), lang, linha));
   for (const [nome, doc, declarado] of [['país', home, t(lang).home], ['temas', indice, t(lang).temas]]) {
     for (const [seletor, esperado] of [
       ['head title', declarado.metaTitle], ['head meta[property="og:title"]', declarado.metaTitle],
@@ -280,37 +282,9 @@ for (const lang of ['pt', 'en']) {
      páginas das entradas. As células T correm na página dos temas, e a primeira página não os rende. */
   if (home.querySelectorAll('main [data-cartao-medida], main [data-cartao-camaras]').length)
     erros.push(`T0 ${lang}: a primeira página voltou a render cartões das medidas.`);
-  for (const [nome, doc, resumo] of [['temas', indice, false]]) {
-    erros.push(...verificaCartaoDasCamaras(doc, lang, linha));
-    const cards = doc.querySelectorAll('main [data-cartao-medida]');
-    const vistos = new Set();
-    for (const c of cards) {
-      const id = c.getAttribute('data-cartao-medida');
-      const tema = c.closest('[data-tema]')?.getAttribute('data-tema');
-      if (!DOMINIO_DAS_MEDIDAS[id]) erros.push(`T2 ${lang} ${nome}: ${id} sem tema na tabela.`);
-      else if (DOMINIO_DAS_MEDIDAS[id] !== tema) erros.push(`T3 ${lang} ${nome}: ${id} no tema ${tema}, a tabela dá-lhe ${DOMINIO_DAS_MEDIDAS[id]}.`);
-      if (vistos.has(id) || id === 'taxa-de-desemprego-2025') erros.push(`T4 ${lang} ${nome}: medida repetida ${id}.`);
-      vistos.add(id);
-    }
-    if (!resumo && reunidas.some(id => !vistos.has(id))) erros.push(`T5 ${lang}: faltam medidas publicadas na página dos temas.`);
-    const grupos = doc.querySelectorAll('main [data-tema]');
-    const esperados = [...new Set(Object.values(DOMINIO_DAS_MEDIDAS))];
-    if (grupos.length !== esperados.length || esperados.some(t => !grupos.some(g => g.getAttribute('data-tema') === t))) erros.push(`T6 ${lang} ${nome}: conjunto de temas diferente da tabela.`);
-    for (const g of grupos) {
-      const slug = g.getAttribute('data-tema');
-      const n = g.querySelectorAll('[data-cartao-medida], [data-cartao-camaras]').length;
-      if (!n || (resumo && n > 4)) erros.push(`T7 ${lang}: fila vazia ou demasiado longa em ${slug}.`);
-      if (!resumo && g.id !== slug) erros.push(`T8 ${lang}: âncora de tema em falta.`);
-      if (resumo && !g.querySelector(`a[href="${caminho(lang, '/temas/', '/en/themes/')}#${slug}"]`)) erros.push(`T8 ${lang}: porta do tema em falta.`);
-      /* B2: a habitação começa pelo regime que a fonte manda distinguir;
-         o total de todos os regimes vem imediatamente a seguir. */
-      if (slug === 'habitacao') {
-        const primeiras = g.querySelectorAll('[data-cartao-medida]').slice(0, 2).map(c => c.getAttribute('data-cartao-medida'));
-        const esperadas = ['sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025', 'sobrecarga-do-custo-da-habitacao-2025'];
-        if (JSON.stringify(primeiras) !== JSON.stringify(esperadas)) erros.push(`T10 ${lang} ${nome}: a habitação não abre com os inquilinos a preço de mercado, seguidos do total.`);
-      }
-    }
-  }
+  /* N1: T1 a T8 passam à distribuição das páginas de assunto. A célula E lê o catálogo
+     nacional por conta própria e exige cada cartão uma vez, na secção e na ordem declaradas. */
+  erros.push(...verificaCartaoDasCamaras(le(lang === 'pt' ? 'lugares' : 'en/places'), lang, linha));
   /* T9 · A COR DO ESTADO NOS CARTÕES COM VALOR DE REFERÊNCIA (bloco R1,
      23.09.2026, I139). O Método diz «âmbar quando o valor está fora dele,
      cobalto quando está dentro», e a primeira página e os temas não tinham cor
