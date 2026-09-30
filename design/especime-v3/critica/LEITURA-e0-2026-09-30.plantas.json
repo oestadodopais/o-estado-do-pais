@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-09-30T22:02:29+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/taxa-de-desemprego-2025.yml",
+   "descricao": "a correção escreve um valor que a fonte não tem: 6,1 em vez de 6,0",
+   "sha256_antes": "c8818f9bea35be571525d81162c3513b0085bf3a08454e302d906d814e5364b2",
+   "sha256_depois": "dde4425678c95ab807fed66dbac46836d14b4da541ba2c92629b4d022d4dea75",
+   "contexto_antes": "lve o mesmo valor.\"\n\n# Correcções datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n  - date: \"2026-09-30\"\n    kind: \"correcao\"\n    old_value: \"6\"\n    new_value: \"6,0\"\n    reason: \"A apresentação omitira a casa decimal que o excerto da fonte já guardava: «6.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a qua",
+   "contexto_depois": "lve o mesmo valor.\"\n\n# Correcções datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n  - date: \"2026-09-30\"\n    kind: \"correcao\"\n    old_value: \"6\"\n    new_value: \"6,1\"\n    reason: \"A apresentação omitira a casa decimal que o excerto da fonte já guardava: «6.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a qua"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/data/lugar-das-linhas.mjs",
+   "descricao": "o contador da casa atribuído a Portugal, o que o brief proíbe",
+   "sha256_antes": "255dabc1b48ec317f2be18e48285f3d2821ec22d4d995cd41577dd7206271f04",
+   "sha256_depois": "d626283c28d6d64e49f07e9f4fdd1b0dbadb79add96cd90c824ef11436db83d4",
+   "contexto_antes": "ssões do próprio projeto. O seu lugar\n     é O Estado do País, com a porta para o registo das correções. Não mede\n     Portugal, uma região nem um concelho. */\n  'correcoes-publicadas': 'o-estado-do-pais',\n  /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.\n     A atualização pertence ao registo e aos temas, fora da lista do país. */\n  '",
+   "contexto_depois": "ssões do próprio projeto. O seu lugar\n     é O Estado do País, com a porta para o registo das correções. Não mede\n     Portugal, uma região nem um concelho. */\n  'correcoes-publicadas': 'portugal',\n  /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.\n     A atualização pertence ao registo e aos temas, fora da lista do país. */\n  '"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/mudancas.mjs",
+   "descricao": "a porta do lugar do projeto manda para a primeira página, não para as correções",
+   "sha256_antes": "68d066682874fd647a0a1f4d5812aa8b05945ed9c87c0e6b952af7558501bc9a",
+   "sha256_depois": "64e8ead06d46992d28359ad4fd01e6c0dfe8beaf164a9f89b42f3cdbb0c82226",
+   "contexto_antes": "ojeto é um lugar declarado, pela mesma porta estreita\n     da União. O campo study não atribui este lugar a uma linha. */\n  if (chave === 'o-estado-do-pais') {\n    return { chave, nome: 'O Estado do País', rota: routePath('correcoes', lang) };\n  }\n  if (chave === PORTUGAL) {\n    return { chave, nome: ROTULOS_B1[lang].pais, rota: routePath('home', lang) };\n  }\n  const regiao = REGIOES.find((r) => r.sl",
+   "contexto_depois": "ojeto é um lugar declarado, pela mesma porta estreita\n     da União. O campo study não atribui este lugar a uma linha. */\n  if (chave === 'o-estado-do-pais') {\n    return { chave, nome: 'O Estado do País', rota: routePath('home', lang) };\n  }\n  if (chave === PORTUGAL) {\n    return { chave, nome: ROTULOS_B1[lang].pais, rota: routePath('home', lang) };\n  }\n  const regiao = REGIOES.find((r) => r.sl"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 15 medidas e o medidas.json tem 14",
+   "sha256_antes": "2355bf723c20351da0ccccba642ba784254302dce7a9ed6d01365fe46f302887",
+   "sha256_depois": "ba925caeb80a96f0609fe01840eb64b929f435baeef9bff137a80460675529bc",
+   "contexto_antes": "ça desta medição: `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c`.\n\n## Mandato e medidas\n\nO guião [medir-e0.mjs](medir-e0.mjs) escreve [medidas.json](medidas.json), com 14 medidas e um conhecido-positivo por medida. O código do medidor confirma as medições e as plantas; a aceitação completa exige também os portões na cabeça final. O §0 do brief foi reproduzido pelo seu gu",
+   "contexto_depois": "ça desta medição: `52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c`.\n\n## Mandato e medidas\n\nO guião [medir-e0.mjs](medir-e0.mjs) escreve [medidas.json](medidas.json), com 15 medidas e um conhecido-positivo por medida. O código do medidor confirma as medições e as plantas; a aceitação completa exige também os portões na cabeça final. O §0 do brief foi reproduzido pelo seu gu"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/emprego/index.html",
+   "descricao": "a página construída ainda mostra 6 no cartão do desemprego, sem o decimal",
+   "sha256_antes": "91a69dbd40c33f96aa10eef852d9aa43018b5d6451eb82079f5a3378a12b4843",
+   "sha256_depois": "d0cfcc9f0f652120526920c895b84202fc90c281c7c51e769332f2fe62cd73b7",
+   "contexto_antes": "-de-linha=\"taxa-de-desemprego-mip-2025\">Taxa de desemprego</span><p class=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"taxa-de-desemprego-mip-2025\" class=\"claim-value cartao-medida-num\">6,0</span> <span class=\"campo-valor cartao-medida-unidade\" lang=\"pt-PT\" data-linha-claim=\"taxa-de-desemprego-mip-2025\" data-linha-campo=\"unit\">% da população ativa</span>",
+   "contexto_depois": "-de-linha=\"taxa-de-desemprego-mip-2025\">Taxa de desemprego</span><p class=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"taxa-de-desemprego-mip-2025\" class=\"claim-value cartao-medida-num\">6</span> <span class=\"campo-valor cartao-medida-unidade\" lang=\"pt-PT\" data-linha-claim=\"taxa-de-desemprego-mip-2025\" data-linha-campo=\"unit\">% da população ativa</span>"
+  }
+ ]
+}
