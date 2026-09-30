@@ -46,6 +46,10 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
     medidas.linhas.push({ id, valor: c.value, entrada: e && assinatura(e), seladas: historias[id]?.length ?? 0 });
   }
   const contador = lerLinha('correcoes-publicadas');
+  const ultimaRecontagem = contador.corrections.filter(e => e.kind === 'atualizacao').at(-1)?.date;
+  const edicao = contador.document.edition.split('.').reverse().join('-');
+  if ([contador.reference_date, contador.access_date, edicao].some(d => !d || d < ultimaRecontagem))
+    erros.push('E0b datas: o contador tem uma data anterior à sua última recontagem.');
   if (contador.value !== String(contadas) || contador.check !== 'correcoes_publicadas')
     erros.push('E0 contagem: o contador não coincide com as correções do livro.');
   if (LUGAR_DECLARADO_DAS_LINHAS[contador.id] !== 'o-estado-do-pais') erros.push('E0 declaração: falta o lugar do projeto.');
@@ -123,6 +127,9 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
   executar('declaração falsa de Portugal',
     'import {LUGAR_DECLARADO_DAS_LINHAS as lugares} from "./src/data/lugar-das-linhas.mjs"; lugares["correcoes-publicadas"]="portugal"; await import("./scripts/check-pais.mjs");',
     /A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»/)];
+  plantas.push(executar('data antiga do contador',
+    'import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); return String(f).endsWith("ledger/claims/correcoes-publicadas.yml") ? String(b).replace(/reference_date: "[^"]+"/, "reference_date: \\"2026-08-12\\"") : b;}; const {conferirLinhasDaCasa}=await import("./tests/inicio/linhas-da-casa.mjs"); const r=conferirLinhasDaCasa(process.env.OEDP_DIST); for(const e of r.erros) console.log(e); if(r.erros.some(e=>e.startsWith("E0b datas:"))) process.exitCode=1;',
+    /E0b datas: o contador tem uma data anterior/));
   for (const id of ids) plantas.push(executar(`B: ${id} sem entrada selada`,
     `import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); if(String(f).endsWith("ledger/historias-valores.json")) {const h=JSON.parse(b); delete h[${JSON.stringify(id)}]; return JSON.stringify(h);} return b;}; await import("./scripts/check-ledger.mjs");`,
     new RegExp(`${id}\\.yml.*história do valor: a lista tem ${lerLinha(id).corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind)).length} entradas e o registo sela 0`)));
