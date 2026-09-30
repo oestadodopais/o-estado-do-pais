@@ -1,10 +1,14 @@
 /** N1c: a porta estreita das unidades mantém a conferência literal e de contexto. */
 import fs from 'node:fs';
-import { spawnSync } from 'node:child_process';
+import { spawnSync, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
 const pasta = 'design/especime-v3/medicoes/n1-2026-09-30';
+const n1d = process.argv.includes('--n1d');
+const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const construcao = JSON.parse(fs.readFileSync('dist/version.json', 'utf8'));
+if (n1d && construcao.commit !== cabeca) throw new Error('As plantas exigem a construção da cabeça atual.');
 const ficheiro = 'dist/lugares/index.html';
 const antes = fs.readFileSync(ficheiro, 'utf8');
 const sha = (s) => createHash('sha256').update(s).digest('hex');
@@ -31,6 +35,6 @@ try {
 } finally {
   fs.writeFileSync(ficheiro, antes);
   const reposto = sha(fs.readFileSync(ficheiro)) === sha(antes);
-  fs.writeFileSync(`${pasta}/plantas-n1c-portao.json`, JSON.stringify({ resultados, reposto }, null, 2) + '\n');
+  fs.writeFileSync(`${pasta}/plantas-${n1d ? 'n1d' : 'n1c'}-portao.json`, JSON.stringify({ cabeca, construcao, resultados, reposto }, null, 2) + '\n');
 }
 console.log(`N1c: ${resultados.length} provas do portão de HTML.`);

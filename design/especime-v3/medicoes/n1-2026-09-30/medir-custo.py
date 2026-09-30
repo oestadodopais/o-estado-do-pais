@@ -1,11 +1,13 @@
 """Conserva N1 e N1b e distingue a base «tokens used» da soma com cache."""
 import json
 import os
+import sys
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
 pasta = Path('design/especime-v3/medicoes/n1-2026-09-30')
+passagem_atual = 'N1d' if '--n1d' in sys.argv else 'N1c'
 agora = datetime.now(timezone.utc)
 base = Path.home() / '.codex' / 'sessions' / agora.strftime('%Y/%m/%d')
 cli = json.loads((pasta / 'custo-contadores-cli.json').read_text())
@@ -54,9 +56,9 @@ for passagem, commit in [('N1', 'dfc86083'), ('N1b', 'ae010fbb')]:
     historicas.append({'passagem': passagem, 'origem_git': origem, 'amostra': amostra, 'fecho_cli': {**contagem, **confirmados[contagem['tokens_used']]}, 'revisores': {'sessoes': sum(s['papel'] != 'construtor' for s in amostra['sessoes']), 'simbolos_cobrados': sum(s['simbolos_cobrados'] for s in amostra['sessoes'] if s['papel'] != 'construtor'), 'simbolos_com_cache': sum(s['simbolos_com_cache'] for s in amostra['sessoes'] if s['papel'] != 'construtor')}})
 inicio = datetime.fromisoformat(construtores[0]['inicio'].replace('Z', '+00:00'))
 revisores = [s for s in sessoes if s['papel'] != 'construtor']
-resultado = {'medido_em': agora.isoformat(), 'segundos_decorridos': (agora - inicio).total_seconds(),
+resultado = {'passagem': passagem_atual, 'medido_em': agora.isoformat(), 'segundos_decorridos': (agora - inicio).total_seconds(),
     'base': 'Símbolos cobrados usa a base do contador tokens used: entrada sem cache mais saída. Símbolos com cache usa o total cumulativo. Não são caracteres nem euros.',
-    'limite': 'As linhas tokens used são os fechos N1 e N1b da mesma sessão, por isso não se somam. Nos revisores automáticos, a base equivalente é calculada dos eventos token_count; não há uma linha de terminal individual disponível. A amostra N1c é anterior ao fecho da sessão.',
+    'limite': f'As linhas tokens used são os fechos N1 e N1b da mesma sessão, por isso não se somam. Nos revisores automáticos, a base equivalente é calculada dos eventos token_count; não há uma linha de terminal individual disponível. A amostra {passagem_atual} é anterior ao fecho da sessão.',
     'conhecido_positivo': len(confirmados) == 2, 'amostras': historicas, 'sessoes': sessoes,
     'revisores': {'sessoes': len(revisores), 'simbolos_cobrados': sum(s['simbolos_cobrados'] for s in revisores), 'simbolos_com_cache': sum(s['simbolos_com_cache'] for s in revisores)}}
 (pasta / 'custo.json').write_text(json.dumps(resultado, ensure_ascii=False, indent=2) + '\n')

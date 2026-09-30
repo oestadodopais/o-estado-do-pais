@@ -13,7 +13,8 @@ import { conferirConcelhosNosLugares, plantasDosConcelhos } from '../../../../te
 import { loadClaims, contagensDoRegisto } from '../../../../src/lib/ledger.mjs';
 import { conferirHistoriaDoValor } from '../../../../src/lib/historia-do-valor.mjs';
 const pasta = 'design/especime-v3/medicoes/n1-2026-09-30';
-const n1c = process.argv.includes('--n1c');
+const n1d = process.argv.includes('--n1d');
+const n1c = n1d || process.argv.includes('--n1c');
 const n1b = process.argv.includes('--n1b');
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 const json = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -22,12 +23,12 @@ const sha = (s) => createHash('sha256').update(s).digest('hex');
 const unicos = conferirBlocosUnicos('dist');
 const entradas = conferirEntradas('dist');
 const concelhos = conferirConcelhosNosLugares('dist');
-const plantas = [...plantasDosBlocosUnicos('dist'), ...plantasDasEntradas('dist'), ...plantasDosConcelhos('dist'), ...(n1c ? plantasDosAcertosN1c('dist') : [])];
+const plantas = [...plantasDosBlocosUnicos('dist'), ...plantasDasEntradas('dist'), ...plantasDosConcelhos('dist'), ...plantasDosAcertosN1c('dist')];
 const medidas = [];
 const medida = (nome, valor, conhecido_positivo, evidencia) => medidas.push({ nome, valor, conhecido_positivo, evidencia });
 medida('blocos_fora_da_primeira', unicos.contas.blocos_fora, unicos.contas.blocos_na_primeira === 10, 'Dez blocos lidos nas duas primeiras páginas; a planta copia um para Emprego.');
 medida('titulos_de_bloco_fora_da_primeira', unicos.contas.titulos_fora, plantas.find((p) => p.nome.startsWith('título copiado')).mordeu, 'Título copiado sem atributos também recusado.');
-medida('primeiras_frases_fora_da_primeira', unicos.contas.frases_fora, plantas.filter((p) => p.nome.startsWith('primeira frase sem marcas')).length === 2 && plantas.filter((p) => p.nome.startsWith('primeira frase sem marcas')).every((p) => p.mordeu), 'A frase copiada sem marcas atravessa o filtro do texto cru e é recusada nas duas línguas.');
+medida('primeiras_frases_fora_da_primeira', unicos.contas.frases_fora, plantas.filter((p) => p.nome.startsWith('primeira frase rendida com selo')).length === 2 && plantas.filter((p) => p.nome.startsWith('primeira frase rendida com selo')).every((p) => p.mordeu), 'A cópia rendida conserva o valor e o selo, atravessa o filtro do texto cru e é recusada nas duas línguas.');
 medida('portas_finais_dos_blocos', unicos.contas.portas_dos_blocos, html('/').querySelector('[data-porta-assunto]')?.getAttribute('href') === '/precos/', 'A primeira porta abre Preços; as dez são comparadas à declaração.');
 medida('cartoes_por_edicao', entradas.contas.cartoes_nas_entradas / 2, html('/precos/').querySelectorAll('[data-cartao-medida]').length === 6, 'Os seis cartões atuais de Preços são lidos, incluindo o IHPC.');
 medida('repeticoes_de_cartoes_nacionais', entradas.erros.filter((e) => e.startsWith('N1C')).length + unicos.contas.cartoes_fora_dos_assuntos, plantas.find((p) => p.nome.startsWith('cartão inteiro repetido')).mordeu, 'A planta repete uma pensão em Emprego; áreas de governo são a exceção expressa do mandato.');
@@ -88,8 +89,14 @@ const publicadas = ['pt', 'en'].map((lang) => {
 });
 medida('correcoes_do_desemprego_publicadas', publicadas, publicadas.every((p) => typeof p.contador === 'string' && p.contador.length > 0), 'Duas entradas por edição, com os valores e a razão próprios da língua; o contador existente prova a leitura da página.');
 const irma = 'retribuicao-minima-mensal-doze-meses-2026';
-medida('valor_irmao_do_salario_minimo', ['pt', 'en'].map((lang) => ({ lang, presente: html(ENTRADAS[1].rota[lang]).querySelector(`[data-valor-irmao="${irma}"] [data-claim="${irma}"]`) !== null })), fs.existsSync(`ledger/claims/${irma}.yml`), 'Valor exclusivo do domínio conservado fora de um cartão inteiro.');
-const manifestoCapturas = `${pasta}/${n1c ? 'capturas-n1c' : 'capturas-n1'}.json`;
+const valorIrmaoPresente = (root) => root.querySelector(`[data-caixa-cartao="retribuicao-minima-mensal-garantida-continente-2026"] [data-valor-irmao="${irma}"] [data-claim="${irma}"]`) !== null;
+const salariosDeProva = html(ENTRADAS[1].rota.pt);
+const irmaoLimpo = valorIrmaoPresente(salariosDeProva);
+salariosDeProva.querySelector(`[data-valor-irmao="${irma}"]`)?.remove();
+const irmaoRetirado = !valorIrmaoPresente(salariosDeProva);
+plantas.push({ nome: 'detetor do medidor sem valor irmão', limpo: irmaoLimpo, mordeu: irmaoLimpo && irmaoRetirado });
+medida('valor_irmao_do_salario_minimo', ['pt', 'en'].map((lang) => ({ lang, presente: valorIrmaoPresente(html(ENTRADAS[1].rota[lang])) })), irmaoLimpo && irmaoRetirado, 'O valor irmão aparece nas duas edições, dentro da caixa do cartão do salário mínimo; o mesmo detetor mede a cópia limpa e a cópia sem esse valor.');
+const manifestoCapturas = `${pasta}/${n1d ? 'capturas-n1d' : n1c ? 'capturas-n1c' : 'capturas-n1'}.json`;
 const capturas = fs.existsSync(manifestoCapturas) ? json(manifestoCapturas) : null;
 const imagens = capturas?.resultados.map((r) => ({ ficheiro: r.ficheiro, confere: fs.existsSync(r.ficheiro) && sha(fs.readFileSync(r.ficheiro)) === r.sha256 })) ?? [];
 medida('capturas', { total: imagens.length, resumos_conferidos: imagens.filter((r) => r.confere).length, problemas: capturas?.problemas ?? ['capturas por fazer'] }, imagens.some((r) => r.confere), 'O resumo de cada PNG é recalculado; o manifesto mede largura e transbordo.');
@@ -108,12 +115,16 @@ if (n1c) {
   medida('duas_amostras_de_custo', custo.amostras.map((a) => ({ passagem: a.passagem, medido_em: a.amostra.medido_em, tokens_used: a.fecho_cli.tokens_used, revisores: a.revisores })), custo.conhecido_positivo && custo.amostras.length === 2, 'Duas linhas tokens used lidas dos registos e confrontadas com amostras reais do contador; os revisores indicam as duas bases.');
   medida('valores_municipais_conservados', transferencias.filter((x) => x.forma === 'mapa-por-concelho').map((x) => ({ lang: x.lang, instrumento: x.instrumento, linhas: x.linhas, iguais: x.valores_iguais })), transferencias.filter((x) => x.forma === 'mapa-por-concelho').every((x) => x.linhas === 308) && plantas.find((p) => p.nome === 'valor municipal trocado').mordeu, 'Os 308 pares de identificador e valor de cada mapa são comparados aos guardados antes do N1.');
 }
+if (n1d) {
+  medida('frases_declaradas_iguais_as_rendidas', unicos.frases_conferidas, unicos.frases_conferidas.length === 10 && unicos.frases_conferidas.every((f) => f.igual) && plantas.filter((p) => p.nome.startsWith('primeira frase rendida')).every((p) => p.iguais && p.com_selo && p.mordeu), 'As dez primeiras frases são comparadas ao texto rendido sem selos; duas cópias rendidas com selo provam o detetor.');
+  medida('contexto_dos_mapas', { periodos: concelhos.contas.contextos, referencias_portugal: concelhos.contas.referencias_portugal }, concelhos.contas.contextos === 4 && concelhos.contas.referencias_portugal === 2 && plantas.find((p) => p.nome === 'selo da referência de Portugal retirado')?.mordeu, 'Quatro períodos das linhas, duas definições por edição e o valor nacional com unidade e selo; plantas retiram o ano, a definição, a referência e o selo.');
+}
 const portoes = Object.fromEntries(['build', 'verify', 'typecheck'].map((nome) => {
-  const p = `${pasta}/portoes/${n1c ? 'n1c/' : n1b ? 'n1b/' : ''}${nome}`;
+  const p = `${pasta}/portoes/${n1d ? 'n1d/' : n1c ? 'n1c/' : n1b ? 'n1b/' : ''}${nome}`;
   return [nome, fs.existsSync(`${p}.codigo`) ? { codigo: Number(fs.readFileSync(`${p}.codigo`, 'utf8')), cabeca: fs.readFileSync(`${p}.cabeca`, 'utf8').trim() } : null];
 }));
 const ponto5 = desemprego.every((d) => d.igual_ao_excerto) && primeiras.every((p) => p.cumpre) && conta.cumpre && publicadas.every((p) => p.cumpre);
-const resultado = { bloco: n1c ? 'N1c' : n1b ? 'N1b' : 'N1', medido_em: new Date().toISOString(), cabeca: git('rev-parse', 'HEAD'), construcao: json('dist/version.json'), medidas, plantas, portoes, ponto5_cumprido: ponto5, erros: [...unicos.erros, ...entradas.erros, ...concelhos.erros], divergencias: ponto5 ? [] : ['Ponto 5 ainda não cumprido; ver a secção N1b do relatório e a prova do requisito adicional do contador.'] };
+const resultado = { bloco: n1d ? 'N1d' : n1c ? 'N1c' : n1b ? 'N1b' : 'N1', medido_em: new Date().toISOString(), cabeca: git('rev-parse', 'HEAD'), construcao: json('dist/version.json'), medidas, plantas, portoes, ponto5_cumprido: ponto5, erros: [...unicos.erros, ...entradas.erros, ...concelhos.erros], divergencias: ponto5 ? [] : ['Ponto 5 ainda não cumprido; ver a secção N1b do relatório e a prova do requisito adicional do contador.'] };
 fs.writeFileSync(`${pasta}/medidas.json`, JSON.stringify(resultado, null, 2) + '\n');
 console.log(`${resultado.bloco}: ${medidas.length} medidas, ${plantas.length} plantas, ${resultado.erros.length} erros de navegação; ponto 5 cumprido: ${ponto5}.`);
 process.exitCode = resultado.erros.length || fugas.length || plantas.some((p) => !p.mordeu) || medidas.some((m) => !m.conhecido_positivo) ? 1 : 0;

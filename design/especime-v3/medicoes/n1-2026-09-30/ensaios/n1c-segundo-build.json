@@ -4,5 +4,8 @@
   "inicio": "2026-09-30T11:55:50.823Z",
   "fim": "2026-09-30T11:57:17.790Z",
   "segundos": 86.96138695900001,
-  "codigo": 0
+  "codigo": 0,
+  "estado_da_arvore": "árvore por registar",
+  "codigo_por_registar": true,
+  "nota_n1d": "Metadado acrescentado na N1d: esta corrida usou alterações de código ainda por registar sobre a cabeça indicada; não prova o código desse commit isolado."
 }

@@ -210,5 +210,8 @@
       "mordeu": true,
       "queixa": "V2 pt: falta a marca da fonte da linha do limite."
     }
-  ]
+  ],
+  "cabeca": "530a04f2ed4003705c00fcfbe167ca9516b78145",
+  "estado_da_arvore": "árvore por registar",
+  "nota_n1d": "Ensaio anterior ao commit do código N1c; o resultado final está nos portões de cada passagem."
 }
