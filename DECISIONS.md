@@ -13261,3 +13261,26 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **A aterragem dos registos do E1 (§1.145).** `main` avançou de `24ba5b17` para `88b1cfff` às 15:50 UTC de 30.09.2026 pelo guião; a Vercel «Ready» às 15:56 com `version.json` a dizer `88b1cfff`; `verify:deploy` a 0; a corrida de `main` (36739781601) verde às 16:02; o guião declarou às 16:03. O prompt da sessão seguinte aterrou a seguir (`2273d725`, às 16:58, corrida 36745256364 verde).
 
 **A aterragem destes registos.** A cabeça que aterra é a destes registos (o brief E0 e o seu guião, o leitor e a sonda, esta decisão, a M45), com os três portões e a corrida «portão» por cima dela. A avançada de `main` escreve-se no registo seguinte.
+
+### 1.147 O Opus constrói e o Sol lê (decisão do diretor, 30.09.2026 à noite): o construtor de sempre é o Claude Opus 5.5, o Codex fica nas leituras a frio (o 6.1 Sol em todas, a Astra numa segunda leitura dos blocos grandes) e como construtor de recurso; a tranca da máquina (M46); e a aterragem da §1.146
+
+**Afecta:** nenhum
+
+**O que muda:** desde 30.09.2026 à noite o construtor de todos os blocos, no motor e no sítio, é o Claude Opus 5.5 (a definição `construtor`); o Codex constrói só como recurso, quando a semana do Claude não tem margem para acabar um bloco, e cada troca regista-se. As leituras a frio do que o Claude constrói são do Codex `gpt-6.1-sol`, e nos blocos grandes (os estudos, a reconstrução de uma superfície) a `gpt-6-astra` faz uma segunda leitura depois do Sol; o que o Codex construir lê-o o Opus, como até aqui. O lugar de direção revê cada leitura e cada bloco antes de aterrar, mas não é o leitor a frio do que o Opus constrói, porque é da mesma família. O `CLAUDE.md` do projeto diz a regra nova nos «lugares».
+
+**Data:** 30.09.2026.
+
+**As perguntas do diretor, e o que se conferiu.** À noite, com o E0 lido e o E1 a construir, o diretor perguntou se não seria melhor ter um só modelo a construir, pela coerência; se o Sol não estaria melhor a rever do que a construir, por não lhe parecer tão bom como a Astra ou o Opus; se se podia construir com o Opus; e se isso pouparia a subscrição do Codex sem perder qualidade. O que se lhe disse, com os números da casa:
+- a coerência do conteúdo não vem da memória do construtor, porque cada construção é uma sessão nova mesmo com o mesmo modelo; vem do brief, do mapa do repositório, do livro-razão, dos portões e da leitura da outra família. Um construtor por omissão vale pela previsibilidade (uma história comparável, prompts afinados a um modelo), não pela coerência;
+- o ensaio do Sol como construtor (o E0) deu um ponto a seu favor, mas magro: um bloco pequeno, as cinco plantas apanhadas pela leitura do Opus, nenhum defeito real bloqueante, oito achados reais dos quais cinco menores e três anteriores ao bloco. Não chega para dizer que constrói um bloco grande tão bem como a Astra;
+- na noite de 29 para 30.09, o construtor do Codex e o seu revisor automático gastaram 1 849 530 símbolos contra 663 206 das leituras: cerca de três quartos do gasto do Codex eram construção. Com o Opus a construir, o Codex paga só as leituras, que custaram entre 213 097 e 450 109 símbolos com o 5.6 Sol; o 6.1 Sol custa metade dos créditos do 5.6 Sol por símbolo (50 contra 100 por milhão de entrada, 250 contra 500 de saída, na lista da OpenAI), e o peso de cada modelo no mostrador semanal não está publicado, por isso o que cada leitura pesa mede-se na próxima;
+- a qualidade das leituras mede-se pelas plantas: as duas leituras do Sol 5.6 ao UE1 apanharam cinco em cinco (450 109 e 213 097 símbolos), como as quatro do Opus ao F2.2 (entre 377 272 e 507 446); as construções do Opus são a melhor história da casa em prosa e investigação, que é o que os estudos são;
+- o que se desloca é a semana do Claude: uma construção do Opus custou entre 600 000 e 1 800 000 símbolos, e o mostrador estava a 72 % com o E1 a correr; a reposição gratuita do diretor cobre-o, e o número diz-se em cada relatório.
+
+**A decisão do diretor**, nas palavras dele: «opus builds and sol reads, do it». A recomendação do lugar de direção, que ele aceitou: a Astra faz a segunda leitura dos blocos grandes e fica como construtor de recurso.
+
+**A tranca da máquina (M46).** A causa das sessões do revisor automático que restavam (M43) leu-se nos pedidos de aprovação do E0: o `pgrep` com que os construtores do Codex cumpriam «uma construção de cada vez» pede uma saída da caixa de areia («sandbox_permissions: require_escalated»), e cada pedido abre uma sessão do revisor, cobrada (no E0, 2 sessões e 156 558 símbolos, 27 % do bloco). A regra cumpre-se agora por um ficheiro de tranca na pasta comum do Git (`scripts/leituras/portoes.sh`, que toma a tranca, corre os três portões com os códigos em ficheiro e a solta; uma tranca com mais de quarenta minutos ignora-se com aviso), provado com uma tranca velha e uma viva antes de entrar. Nenhum prompt de construtor volta a mandar `pgrep`.
+
+**A aterragem da §1.146.** `main` avançou de `2273d725` para `07549ee1` às 21:01 UTC de 30.09.2026 pelo guião; a Vercel «Ready» com `07549ee1` no ar; `verify:deploy` a 0 às 21:07; a corrida de `main` (36776682335) verde às 21:19; o guião declarou às 21:20.
+
+**A aterragem destes registos.** A cabeça que aterra é a destes registos, com os três portões e a corrida «portão» por cima dela; escreve-se no registo seguinte.
