@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
+import { linhaDoIndice } from '../../src/lib/assuntos.mjs';
 import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../../src/data/dominios.mjs';
 import { SITE_URL } from '../../site.config.mjs';
@@ -65,16 +66,25 @@ export const REDIRECIONAMENTOS_N1 = [
   ['/en/domains', '/en/themes/'], ['/en/domains/economia-e-financas-publicas', '/en/themes/'],
 ];
 
+/** T10: a ordem protege a leitura dos inquilinos antes da média de todos. */
+export function conferirOrdemDaHabitacao(root, lang) {
+  const ordem = root.querySelectorAll('main [data-cartao-medida]').map((c) => c.getAttribute('data-cartao-medida'));
+  return ordem[0] === 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025' && ordem[1] === 'sobrecarga-do-custo-da-habitacao-2025' ? [] : [`T10 ${lang} habitacao: a habitação não abre com os inquilinos e o total a seguir.`];
+}
+
 export function conferirEntradas(dist, {
   ler = (rota) => parse(fs.readFileSync(ficheiro(dist, rota), 'utf8')),
   lerTexto = (rel) => fs.existsSync(path.join(dist, rel)) ? fs.readFileSync(path.join(dist, rel), 'utf8') : null,
+  entradas = ENTRADAS,
   regras = JSON.parse(fs.readFileSync('vercel.json', 'utf8')).routes,
 } = {}) {
   const erros = [];
   const contas = { edicoes: 0, cartoes_dos_temas: 0, cartoes_nas_entradas: 0, fora: 0, entradas_na_primeira: 0, entradas_no_indice: 0, mapas_do_sitio: 0, enderecos_no_mapa_do_sitio: 0, entradas_no_mapa_do_sitio: 0, redirecionamentos: 0 };
   const esperados = [...new Set(Object.keys(DOMINIO_DAS_MEDIDAS).filter((id) => id !== 'indice-de-divida-limite-legal').map((id) => id === 'taxa-de-desemprego-2025' ? 'taxa-de-desemprego-mip-2025' : id))];
-  const paginas = ENTRADAS.filter((e) => !e.existente);
+  const paginas = entradas.filter((e) => !e.existente);
   for (const lang of ['pt', 'en']) {
+    const prefixo = lang === 'pt' ? 'Os números de Portugal sobre ' : 'Portugal’s figures on ';
+    for (const e of entradas) if (!e.linha[lang].startsWith(prefixo)) erros.push(`E6 ${lang}: o âmbito de ${e.id} não nomeia Portugal.`);
     contas.edicoes++;
     const indice = ler(lang === 'pt' ? '/temas/' : '/en/themes/');
     const home = ler(lang === 'pt' ? '/' : '/en/');
@@ -84,6 +94,7 @@ export function conferirEntradas(dist, {
     const onde = new Map();
     for (const e of paginas) {
       const root = ler(e.rota[lang]);
+      if (e.id === 'habitacao') erros.push(...conferirOrdemDaHabitacao(root, lang));
       const rendidos = cartoesDaPagina(root);
       const declarados = e.seccoes.flatMap((s) => s.cartoes);
       contas.cartoes_nas_entradas += rendidos.length;
@@ -102,14 +113,17 @@ export function conferirEntradas(dist, {
     for (const [nome, root] of [['primeira', home], ['índice', indice]]) {
       const lis = root.querySelectorAll('[data-indice-assuntos] > li[data-entrada]');
       contas[nome === 'primeira' ? 'entradas_na_primeira' : 'entradas_no_indice'] += lis.length;
-      if (JSON.stringify(lis.map((li) => li.getAttribute('data-entrada'))) !== JSON.stringify(ENTRADAS.map((e) => e.id))) erros.push(`E4 ${lang}: a ordem das portas da ${nome} difere da declaração.`);
-      for (const e of ENTRADAS) {
+      if (JSON.stringify(lis.map((li) => li.getAttribute('data-entrada'))) !== JSON.stringify(entradas.map((e) => e.id))) erros.push(`E4 ${lang}: a ordem das portas da ${nome} difere da declaração.`);
+      for (const e of entradas) {
         const li = lis.find((x) => x.getAttribute('data-entrada') === e.id);
-        if (li?.querySelector('a')?.getAttribute('href') !== e.rota[lang] || li?.querySelector('.pp-entrada-nome')?.textContent.trim() !== e.nome[lang] || li?.querySelector('.pp-entrada-linha')?.textContent.trim() !== e.linha[lang]) erros.push(`E4 ${lang}: porta ${e.id} da ${nome} difere da declaração.`);
+        if (li?.querySelector('a')?.getAttribute('href') !== e.rota[lang] || li?.querySelector('.pp-entrada-nome')?.textContent.trim() !== e.nome[lang] || li?.querySelector('.pp-entrada-linha')?.textContent.trim() !== (e.linha[lang].startsWith(prefixo) ? linhaDoIndice(e, lang) : null)) erros.push(`E4 ${lang}: porta ${e.id} da ${nome} difere da declaração.`);
         if (nome === 'índice' && JSON.stringify(li?.querySelectorAll('.assunto-seccoes li').map((n) => n.textContent.trim())) !== JSON.stringify(e.seccoes.map((s) => s.nome[lang]))) erros.push(`E4 ${lang}: as secções de ${e.id} não estão no índice pela ordem declarada.`);
       }
     }
     const lugares = ler(lang === 'pt' ? '/lugares/' : '/en/places/');
+    const secoes = lugares.querySelectorAll('[data-lugares-seccao]').map((n) => n.textContent.trim());
+    const declaradas = entradas.find((e) => e.id === 'lugares').seccoes.map((s) => s.nome[lang]);
+    if (JSON.stringify(secoes) !== JSON.stringify(declaradas)) erros.push(`E7 ${lang}: os títulos dos lugares diferem das secções do índice.`);
     if (lugares.querySelectorAll('[data-cartao-camaras]').length !== 1) erros.push(`N1L ${lang}: falta o cartão das câmaras nos lugares.`);
     if (lugares.querySelector('[data-cartao-medida]')) erros.push(`N1C ${lang}: os lugares repetem um cartão nacional.`);
   }
@@ -118,7 +132,7 @@ export function conferirEntradas(dist, {
   contas.mapas_do_sitio = mapa.mapas;
   contas.enderecos_no_mapa_do_sitio = mapa.caminhos.size;
   if (!mapa.caminhos.has('/')) erros.push('E5: a primeira página não está no mapa do sítio.');
-  for (const e of ENTRADAS) for (const lang of ['pt', 'en']) {
+  for (const e of entradas) for (const lang of ['pt', 'en']) {
     if (!fs.existsSync(ficheiro(dist, e.rota[lang]))) erros.push(`E5 ${lang}: página ${e.rota[lang]} em falta.`);
     if (mapa.caminhos.has(semBarra(e.rota[lang]))) contas.entradas_no_mapa_do_sitio++;
     else erros.push(`E5 ${lang}: ${e.rota[lang]} não está no mapa do sítio.`);
@@ -145,8 +159,11 @@ export function plantasDasEntradas(dist) {
   const plantas = [
     planta('cartão inteiro repetido noutra página de assunto', '/emprego/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', cartao), /^N1C pt: cartão pensao-media-anual-2025/),
     planta('cartão nacional omitido', '/en/housing/', (r) => r.querySelector('[data-cartao-medida="licencas-de-construcao-2025"]').remove(), /^E1 en: cartão licencas-de-construcao-2025/),
+    ...['pt', 'en'].map((lang) => planta(`inquilinos depois do total (${lang})`, lang === 'pt' ? '/habitacao/' : '/en/housing/', (r) => { const cs = r.querySelectorAll('[data-cartao-medida]'); const primeiro = cs[0].outerHTML; cs[0].replaceWith(cs[1].outerHTML); cs[1].replaceWith(primeiro); }, new RegExp(`^T10 ${lang} habitacao:`))),
     planta('cartão inteiro nos temas', '/temas/', (r) => r.querySelector('main').insertAdjacentHTML('beforeend', cartao), /^N1I pt:/),
     planta('porta retirada da primeira página', '/', (r) => r.querySelector('[data-entrada]').remove(), /^E4 pt: a ordem/),
+    planta('linha longa indevida no índice', '/en/themes/', (r) => r.querySelector('.pp-entrada-linha').set_content(ENTRADAS[0].linha.en), /^E4 en: porta precos/),
+    planta('título dos lugares diferente do índice', '/lugares/', (r) => r.querySelector('[data-lugares-seccao]').set_content('Outra secção'), /^E7 pt:/),
     planta('secção retirada do índice', '/temas/', (r) => r.querySelector('.assunto-seccoes li').remove(), /^E4 pt: as secções/),
     planta('âmbito errado na página de assunto', '/emprego/', (r) => r.querySelector('.entrada-linha').set_content('Uma frase sem o país.'), /^E3 pt: o título ou o âmbito/),
     planta('cartão das câmaras retirado dos lugares', '/lugares/', (r) => r.querySelector('[data-cartao-camaras]').remove(), /^N1L pt:/),
@@ -157,5 +174,9 @@ export function plantasDasEntradas(dist) {
   regras.find((r) => r.src === '/en/my-work/?').headers.Location = '/en/themes/';
   const erro = conferirEntradas(dist, { regras }).erros.find((e) => /^N1R \/en\/my-work:/.test(e));
   plantas.push({ nome: 'redirecionamento inglês para a página errada', mordeu: Boolean(erro), queixa: erro ?? null });
+  const semPais = structuredClone(ENTRADAS);
+  semPais.find((e) => e.id === 'emprego').linha.pt = 'Os números sobre o emprego.';
+  const pais = conferirEntradas(dist, { entradas: semPais }).erros.find((e) => /^E6 pt:/.test(e));
+  plantas.push({ nome: 'país retirado da declaração', mordeu: Boolean(pais), queixa: pais ?? null });
   return plantas;
 }

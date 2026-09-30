@@ -1,0 +1,19 @@
+---
+/** N1c: a unidade é da linha; a explicação da base é a que a sua nota cita. */
+import Claim from './Claim.astro';
+import NomeDaMedida from './NomeDaMedida.astro';
+import { getClaim } from '../lib/ledger.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+const { id, lang = 'pt' } = Astro.props;
+const linha = getClaim(id);
+const unidade = unidadeDaLinha(linha.unit, lang);
+const explica = linha.note?.includes('when the minimum wage is paid for more than 12 months per year, data have been adjusted to take these payments into account');
+---
+<p class="entrada-valor-irmao" data-valor-irmao={id}>
+  <NomeDaMedida linha={linha} lang={lang} escada="cartao" />{lang === 'pt' ? ', em base de doze meses: ' : ', on a twelve-month basis: '}
+  <Claim id={id} lang={lang} chip sufixo={` ${unidade.texto}`} />
+  {explica && <span data-base-doze-meses>{lang === 'pt' ? ' O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano.' : ' Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year.'}</span>}
+</p>
+<style>
+  .entrada-valor-irmao { margin: 0; padding: 0 0 1.5rem; font-size: 1rem; }
+</style>

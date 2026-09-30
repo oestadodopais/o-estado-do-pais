@@ -380,7 +380,7 @@ export const ENTRADAS = [
     seccoes: [
       {
         nome: { pt: 'O peso da habitação', en: 'The cost of housing' },
-        cartoes: [ 'sobrecarga-do-custo-da-habitacao-2025', 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025' ]
+        cartoes: [ 'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025', 'sobrecarga-do-custo-da-habitacao-2025' ]
       },
       {
         nome: { pt: 'As rendas', en: 'Rents' },

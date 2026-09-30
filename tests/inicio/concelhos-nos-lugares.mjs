@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { load } from 'js-yaml';
+import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
+import { MEDIDAS_DO_CONCELHO } from '../../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../../src/data/municipios.mjs';
 import { verificaCartaoDasCamaras } from '../../scripts/pais-camaras.mjs';
 const linha = (id) => load(fs.readFileSync(`ledger/claims/${id}.yml`, 'utf8'));
@@ -21,9 +23,15 @@ export function conferirConcelhosNosLugares(dist, trocar = null) {
     if (mapas.length !== 2) erros.push(`N1M ${lang}: faltam mapas ou há mapas repetidos.`);
     for (const chave of ['indice', 'ganho']) {
       const mapa = root.querySelector(`[data-instrumento="mapa-por-concelho-${chave}"]`);
-      if (!mapa) continue;
+      if (!mapa) { erros.push(`N1M ${lang} ${chave}: falta a marca do mapa.`); continue; }
       contas.mapas++;
       const alvos = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.slug, chave === 'indice' ? m.distancia.indice : m.relance.find((r) => r.claim?.includes('-ganho-medio-mensal-'))?.claim]));
+      const unidades = [...new Set([...alvos.values()].map((id) => linha(id).unit))];
+      const unidade = unidades.length === 1 ? unidadeDaLinha(unidades[0], lang).texto : null;
+      for (const seletor of ['thead [data-linha-campo="unit"]', '.forma-mapa-unidade [data-linha-campo="unit"]']) {
+        const campo = mapa.querySelector(seletor);
+        if (!unidade || normal(campo?.textContent) !== normal(unidade) || ![...alvos.values()].includes(campo?.getAttribute('data-linha-claim'))) erros.push(`N1M ${lang} ${chave}: a unidade do mapa ou da tabela não vem das linhas.`);
+      }
       const rows = mapa.querySelectorAll('tbody tr');
       contas.tabelas += mapa.querySelectorAll('table').length;
       contas.linhas += rows.length;
@@ -43,12 +51,9 @@ export function conferirConcelhosNosLugares(dist, trocar = null) {
     }
     const barras = root.querySelectorAll('[data-forma="barra-concelho-pais"]');
     contas.barras += barras.length;
-    if (barras.length !== 1) erros.push(`N1M ${lang}: falta a barra do concelho e do país.`);
-    const valores = barras.flatMap((b) => b.querySelectorAll('[data-claim]')).map((c) => [c.getAttribute('data-claim'), normal(c.textContent)]);
-    const esperados = [MUNICIPIOS_COM_PAGINA.find((m) => m.slug === 'evora').relance.find((r) => r.claim?.includes('-ganho-medio-mensal-')).claim, 'ganho-medio-mensal-2024'];
-    const ambos = esperados.map((id) => [id, normal(linha(id).value)]);
-    /* A barra mostra os valores no desenho e na legenda acessível. */
-    if (JSON.stringify(valores) !== JSON.stringify([...ambos, ...ambos])) erros.push(`N1M ${lang}: a barra não mostra as duas linhas do ganho.`);
+    if (barras.length) erros.push(`N1M ${lang}: voltou a barra isolada de um concelho.`);
+    const base = MEDIDAS_DO_CONCELHO.find((m) => m.chave === 'indice').nota[lang].join('');
+    if (normal(root.querySelector('[data-camaras-base]')?.textContent) !== normal(base)) erros.push(`N1M ${lang}: falta a base da percentagem do limite.`);
     if (root.querySelectorAll('[data-ausencia="T4a"]').length !== 1) erros.push(`N1M ${lang}: falta a ausência declarada da disparidade salarial municipal.`);
   }
   return { erros, contas };
@@ -56,6 +61,11 @@ export function conferirConcelhosNosLugares(dist, trocar = null) {
 
 export function plantasDosConcelhos(dist) {
   return [
+    ['marca do mapa retirada', (r) => r.querySelector('[data-forma="mapa-por-concelho"]').removeAttribute('data-instrumento'), /^N1M pt indice: falta a marca/],
+    ['unidade da tabela retirada', (r) => r.querySelector('thead [data-linha-campo="unit"]').remove(), /^N1M pt indice: a unidade/],
+    ['unidade da legenda retirada', (r) => r.querySelector('[data-instrumento="mapa-por-concelho-ganho"] .forma-mapa-unidade').remove(), /^N1M pt ganho: a unidade/],
+    ['base do limite retirada', (r) => r.querySelector('[data-camaras-base]').remove(), /^N1M pt: falta a base/],
+    ['porta das câmaras para si própria', (r) => r.querySelector('[data-cartao-camaras]').insertAdjacentHTML('beforeend', '<p class="pais-porta-tema"><a href="/lugares/">Os lugares →</a></p>'), /^V2 pt: o cartão das câmaras não leva porta/],
     ['mapa retirado dos lugares', (r) => r.querySelector('[data-forma="mapa-por-concelho"]').remove(), /^N1M pt: faltam mapas/],
     ['linha retirada da tabela', (r) => r.querySelector('[data-forma="mapa-por-concelho"] tbody tr').remove(), /^N1M pt indice: as linhas/],
     ['valor municipal trocado', (r) => r.querySelector('[data-forma="mapa-por-concelho"] tbody [data-claim]').set_content('999'), /^N1M pt indice: valor da linha/],

@@ -1,11 +1,11 @@
 ---
 /** N1: os mapas, as tabelas e a ausência municipal deixam a página do domínio. */
 import CartaoDasCamaras from './CartaoDasCamaras.astro';
-import BarraConcelhoPais from './formas/BarraConcelhoPais.astro';
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import MapaPorConcelho from './formas/MapaPorConcelho.astro';
 import GeometriaDosConcelhos from './formas/GeometriaDosConcelhos.astro';
 import { medidaPelaChave, AUSENCIAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
-import { mapaPorConcelho, barraConcelhoPais, linhasPorConcelho } from '../lib/dominios.mjs';
+import { mapaPorConcelho, linhasPorConcelho } from '../lib/dominios.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -29,16 +29,15 @@ const mapas = [
   { chave: 'indice', medida: limite, mapa: mapaPorConcelho(linhasPorConcelho('indice'), [corte], { igualdadeDentro: true }), paleta: 'limiar', rotulos: [[s.estado.lei.dentro], [s.estado.lei.fora]] },
   { chave: 'ganho', medida: ganho, mapa: mapaPorConcelho(linhasPorConcelho('ganho'), cortes), paleta: 'escala', rotulos: rotulosGanho },
 ];
-const barra = barraConcelhoPais(linhasPorConcelho('ganho').get('evora'), ganho.claim);
+const entrada = ENTRADAS.find((e) => e.id === 'lugares');
 ---
 <section class="lugar-sec" data-comparacoes-concelhos aria-labelledby="comparacoes-concelhos-k">
-  <h2 class="eyebrow" id="comparacoes-concelhos-k">{lang === 'pt' ? 'As medidas dos concelhos' : 'Municipal figures'}</h2>
+  <h2 class="eyebrow" id="comparacoes-concelhos-k" data-lugares-seccao>{entrada.seccoes[3].nome[lang]}</h2>
   <CartaoDasCamaras lang={lang} />
   <GeometriaDosConcelhos mapa={mapas[0].mapa} />
   {mapas.map(({ chave, medida, mapa, paleta, rotulos }) => (
     <article class="dominio-medida" id={`m-${medida.chave.toLowerCase()}`} data-medida={medida.chave} data-leitura-linha={medida.claim}>
       <h3 class="dominio-pergunta" id={`k-${medida.chave.toLowerCase()}`}>{medida.pergunta[lang]}</h3>
-      {chave === 'ganho' && <BarraConcelhoPais lang={lang} barra={barra} rotuloConcelho="Évora" rotuloPais="Portugal" unidade={medida.unidade[lang]} nomeada={`k-${medida.chave.toLowerCase()}`} />}
       <MapaPorConcelho s={s} lang={lang} mapa={mapa} paleta={paleta} rotulos={rotulos} rota={(slug) => routePath('municipio', lang, { slug })} nomeada={`k-${medida.chave.toLowerCase()}`} chave={chave} />
     </article>
   ))}

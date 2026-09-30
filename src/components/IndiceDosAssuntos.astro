@@ -1,5 +1,6 @@
 ---
 /** A mesma lista, na mesma ordem, na primeira página e no índice dos temas. */
+import { linhaDoIndice } from '../lib/assuntos.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import '../styles/primeira-pagina.css';
 const { lang = 'pt', seccoes = false } = Astro.props;
@@ -9,7 +10,7 @@ const { lang = 'pt', seccoes = false } = Astro.props;
     <li data-entrada={e.id}>
       <a class="pp-entrada" href={e.rota[lang]}>
         <span class="pp-entrada-nome">{e.nome[lang]}</span>
-        <span class="pp-entrada-linha">{e.linha[lang]}</span>
+        <span class="pp-entrada-linha">{linhaDoIndice(e, lang)}</span>
       </a>
       {seccoes && <ul class="assunto-seccoes">{e.seccoes.map((s) => <li>{s.nome[lang]}</li>)}</ul>}
     </li>

@@ -503,3 +503,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | n1 | Os nomes, as linhas de âmbito e as portas dos assuntos | por ler antes de aterrar | Os blocos ficam apenas na primeira página. «Contas públicas» distingue a secção dos cartões do bloco «As contas do Estado». As linhas antigas desses títulos saem da tabela porque continuam nos blocos, onde a auditoria própria as confere. As páginas de assunto e os lugares conservam os números, as fontes e as leituras conferidas. |
+
+## N1c · acertos da leitura a frio, 30.09.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| n1c | A unidade mensal, a base do salário irmão e os cabeçalhos das tabelas | por ler antes de aterrar | Codex gpt-6-astra aplica o mandato N1c: a barra isolada de Évora sai, as notas acompanham a caixa do cartão e os índices usam a forma curta da declaração. As unidades e os nomes conservam a conferência do livro-razão; a lista fechada conhece as duas formas da linha. |

@@ -371,8 +371,8 @@ for (let i = 0; i < RANHURAS.length; i++) {
               extenso no cabeçalho de `porta`. */}
           {l.porta && (
             <p class="dobra-porta">
-              <a class="lig" href={l.porta}>
-                {s.dominios.verNoDominio} →
+              <a class="lig" href={l.porta.href}>
+                {lang === 'pt' ? 'Ver em' : 'See in'} {l.porta.nome} →
               </a>
             </p>
           )}

@@ -413,7 +413,7 @@ const datasDoRecibo = new Map();
 
 const contas = {
   paginas: 0,
-  paginas_de_dominio: 0,
+  paginas_dos_lugares: 0,
   datas_de_linha: 0,
   datas_de_serie: 0,
   /* F19, UE1: as faixas da União e as suas plantas. */
@@ -761,7 +761,7 @@ for (const ficheiro of paginasDe(DIST)) {
 
   /* ------------------------------------------------------- as páginas de domínio */
   if (rota?.key === 'lugares') {
-    contas.paginas_de_dominio++;
+    contas.paginas_dos_lugares++;
 
     /* --------------------------------------------------------------- F5 ---
        A CONTAGEM DAS LEITURAS BREVES DESTA PÁGINA. A conferência das três datas
@@ -933,23 +933,23 @@ for (const lang of LANGS) for (const planta of plantasDaFaixa(documentoDosAssunt
 }
 const dominios = slugsDosDominios();
 if (dominios.length > 0) {
-  const esperadas = dominios.length * LANGS.length;
-  if (contas.paginas_de_dominio !== esperadas) {
+  const esperadas = LANGS.length;
+  if (contas.paginas_dos_lugares !== esperadas) {
     err(
-      `há ${dominios.length} domínio(s) com medidas e ${LANGS.length} edições, e a varredura ` +
-        `encontrou ${contas.paginas_de_dominio} página(s) de domínio em vez de ${esperadas}. ` +
+      `há uma página dos lugares em cada uma das ${LANGS.length} edições, e a varredura ` +
+        `encontrou ${contas.paginas_dos_lugares} página(s) dos lugares em vez de ${esperadas}. ` +
         `Ou a construção não as fez, ou a leitura não as vê.`,
     );
   }
   if (contas.datas_de_linha === 0) {
     err(
-      'nenhuma data de linha foi encontrada em dist/, e as páginas de domínio rendem três por ' +
+      'nenhuma data de linha foi encontrada em dist/, e os recibos e as leituras rendem três por ' +
         'medida. O conhecido-positivo da F1 falhou: a marca mudou de nome ou a leitura partiu-se.',
     );
   }
   if (contas.formas === 0) {
     err(
-      'nenhuma forma gráfica foi encontrada em dist/, e a página do primeiro domínio desenha ' +
+      'nenhuma forma gráfica foi encontrada em dist/, e a página dos lugares desenha ' +
         'pelo menos uma. O conhecido-positivo da F2 e da F3 falhou.',
     );
   }
@@ -1359,7 +1359,7 @@ const porNome = Object.entries(contas.formas_por_nome)
 console.log(
   verde('  formas ✓') +
     cinza(
-      ` ${contas.paginas_de_dominio} páginas dos lugares · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
+      ` ${contas.paginas_dos_lugares} páginas dos lugares · ${contas.formas} desenhos (${porNome || 'nenhum'})` +
         ` · ${contas.datas_de_linha} datas de linha conferidas · ${contas.medidas_com_leitura} leituras breves` +
         ` · ${contas.recibos_com_tres_datas} recibo(s) com as três datas e a última verificação à vista` +
         ` (de ${linhasComLeituraBreve.size} linha(s) com leitura breve rendida, ${contas.recibos_derivados} derivada(s) sem datas próprias)` +

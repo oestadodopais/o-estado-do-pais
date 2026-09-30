@@ -36,13 +36,13 @@ A §1.143 de `DECISIONS.md` e o `BRIEF-N1-uma-porta-por-assunto.md` substituem a
 | Estado e economia | `/estado-e-economia/` | `/en/state-and-economy/` |
 | Lugares | `/lugares/` | `/en/places/` |
 
-As sete páginas de assunto repartem os 47 cartões nacionais. Cada cartão inteiro vive numa só delas. O título é o nome do assunto e a linha de âmbito começa por «Os números de Portugal sobre…»; a edição inglesa espelha. Estado e economia inclui a justiça. As secções conservam a ordem anterior; a secção dos cartões das contas do Estado chama-se «Contas públicas», distinguindo-se do título do bloco da primeira página.
+As sete páginas de assunto repartem os 47 cartões nacionais. Cada cartão inteiro vive numa só delas. O título é o nome do assunto e a linha de âmbito começa por «Os números de Portugal sobre…»; a edição inglesa espelha. Estado e economia inclui a justiça. Nos dois índices, a linha começa pelo assunto, sem repetir «Os números de Portugal sobre». A página de cada porta conserva a linha inteira. A habitação abre pelos inquilinos a preço de mercado, seguida do total, conforme a decisão 5 da §1.127; esta ordem prevalece sobre o «pela mesma ordem» do brief. Nas restantes secções conserva-se a ordem anterior; a secção dos cartões das contas do Estado chama-se «Contas públicas», distinguindo-se do título do bloco da primeira página.
 
-Temas é o índice destas oito portas, com os mesmos nomes, âmbitos e ordem da primeira página, e os nomes das secções. Não contém cartões inteiros. Lugares reúne a pesquisa, as regiões, os distritos e as ilhas, o cartão das câmaras e os mapas e tabelas municipais que estavam no domínio. As páginas dos domínios redirecionam para Temas. As áreas de governo mantêm-se, fora das oito portas e do rodapé. A página da União continua separada; só as suas ligações internas acompanham os novos destinos.
+Temas é o índice destas oito portas, com os mesmos nomes, linhas curtas e ordem da primeira página, e os nomes das secções. Não contém cartões inteiros. Lugares reúne a pesquisa, as regiões, os distritos e as ilhas, o cartão das câmaras e os mapas e tabelas municipais que estavam no domínio. As páginas dos domínios redirecionam para Temas. As áreas de governo mantêm-se, fora das oito portas e do rodapé. A página da União continua separada; só as suas ligações internas acompanham os novos destinos.
 
 Os endereços antigos das entradas redirecionam para os novos. «O meu dinheiro», repartido por três assuntos, redireciona para Temas. A construção exige ausência de ligações internas antigas e publica apenas os novos endereços no mapa do sítio.
 
-A contagem de preços escrita no §5 do brief diverge da declaração anterior: são seis cartões, não cinco. A construção preserva os seis e os 47 no conjunto; a divergência fica no relatório N1, sem eliminar uma medida para satisfazer uma contagem errada.
+A nota do lugar de direção no §5 do brief, em `c0cbc79b`, fecha a divergência dos preços: são seis cartões, como construídos. O conjunto conserva os 47 cartões nacionais.
 
 ## 3 · The studies: one door, attached to their place [P]
 

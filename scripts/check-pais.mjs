@@ -19,7 +19,7 @@ import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
-import { conferirEntradas } from '../tests/inicio/entradas.mjs';
+import { conferirEntradas, conferirOrdemDaHabitacao } from '../tests/inicio/entradas.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
@@ -285,6 +285,8 @@ for (const lang of ['pt', 'en']) {
   /* N1: T1 a T8 passam à distribuição das páginas de assunto. A célula E lê o catálogo
      nacional por conta própria e exige cada cartão uma vez, na secção e na ordem declaradas. */
   erros.push(...verificaCartaoDasCamaras(le(lang === 'pt' ? 'lugares' : 'en/places'), lang, linha));
+  /* T10: a decisão 5 da §1.127 mantém os inquilinos antes do total. */
+  erros.push(...conferirOrdemDaHabitacao(le(lang === 'pt' ? 'habitacao' : 'en/housing'), lang));
   /* T9 · A COR DO ESTADO NOS CARTÕES COM VALOR DE REFERÊNCIA (bloco R1,
      23.09.2026, I139). O Método diz «âmbar quando o valor está fora dele,
      cobalto quando está dentro», e a primeira página e os temas não tinham cor

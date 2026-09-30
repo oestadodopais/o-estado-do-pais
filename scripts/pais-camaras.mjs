@@ -56,8 +56,6 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   if (!c.closest('[data-comparacoes-concelhos]'))
     falha('o cartão das câmaras não está nas comparações dos concelhos.');
   if (c.hasAttribute('data-cartao-medida')) falha('uma contagem aparece como linha publicada.');
-  const ordem = c.parentNode.querySelectorAll('[data-cartao-medida], [data-cartao-camaras]');
-  if (ordem[ordem.length - 1] !== c) falha('o cartão das câmaras não fecha a fila do tema.');
   /* A LEITURA DAS CÂMARAS (bloco L1, 24.09.2026) diz as contagens por palavras,
      com as mesmas chaves e a mesma porta comum. A ordem das quatro chaves
      continua a ser a da linha do valor e da régua, e confere-se fora da leitura;
@@ -86,7 +84,6 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
         falha('o período da leitura não vem das linhas contadas.');
     }
   }
-  const porta = lang === 'pt' ? '/lugares/' : '/en/places/';
   for (const [chave, valor] of Object.entries(contagens)) {
     const el = provas.find(n => n.getAttribute('data-prova') === chave);
     if (!el || normal(el.textContent) !== String(valor)) falha(`${chave}: a contagem não coincide com as linhas do índice de dívida.`);
@@ -126,10 +123,8 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
     falha('o valor principal ou a unidade da contagem difere.');
   if (!dataDoCartao?.classList?.contains('cartao-medida-periodo') || normal(dataDoCartao.textContent) !== periodoEsperado)
     falha('o período escrito difere do período das linhas contadas.');
-  const textoDaPorta = lang === 'pt' ? 'Os lugares →' : 'The places →';
-  const portas = c.querySelectorAll('.pais-porta-tema a');
-  if (portas.length !== 1 || portas[0].getAttribute('href') !== porta || normal(portas[0].textContent) !== textoDaPorta)
-    falha('a porta final não abre os lugares com o nome aprovado.');
+  if (c.querySelector('.pais-porta-tema'))
+    falha('o cartão das câmaras não leva porta para a página onde está.');
   if (doc.querySelector('main [data-cartao-medida="indice-de-divida-limite-legal"]'))
     falha('o limite legal voltou a aparecer como uma medida do país.');
   return erros;
