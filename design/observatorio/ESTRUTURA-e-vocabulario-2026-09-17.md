@@ -2,7 +2,7 @@
 
 *Written by the direction seat (Claude Fable 5.1) on 17.09.2026 at [o diretor]'s request, after his reading of the live site on 16.09 and 17.09: pages that explain themselves, several doors to the same thing, two names for the same subject, studies scattered from the places they are about, words translated from English. This decides the surface of the site: what each page is for, how the pages connect, and which words the site uses. It does not touch the foundations: the ledger with every number traced to its source, the receipts, the checks, the motor, the studies' ledgers, the data of the 308 municipalities, the map. Facts about the site as it is today are marked [F]; the seat's proposals [P]; what [o diretor] decides [D].*
 
-## 0 · What is wrong today, in five lines
+## 0 · Diagnóstico de 17.09.2026, conservado como histórico
 
 [F] The menu has thirteen entries: Início, Concelhos, Estudos, Números e fontes, Regiões, Distritos, Domínios, Áreas de governo, Portugal na União Europeia, Sobre, Método, Correções, Agenda. [F] The measures live under nine "áreas de governo" (the ministries' names) while the front page lists eighteen "domínios" with counts; a reader meets two taxonomies for one thing. [F] The studies have their own island: a study page with an "Edições" box, two doors ("Ler no sítio", "Ler o documento"), and a list grouped by subject; the Évora page lists them by hand and missed the newest. [F] Nearly every page opens with a sentence that explains the page or the project, and source credits repeat under the map, under the cards, in the text. [F] Several words are English words in Portuguese clothes ("sítio" for the website, "casa" for the project).
 
@@ -19,19 +19,38 @@ Portugal is read along one line: **the country, the regions (7), the districts a
 5. **What changed.** Dated lines: a new value, a new study, a correction. Newest first.
 6. **Where to go from here.** The places inside this one (a district lists its municipalities; a region its districts), and nothing else.
 
-The front page is the country's page with the map as the door to the places: the map, then the reading, then the numbers by subject, then the latest studies, then what changed. No subtitle under the name. No credit under the map (it lives on the Método page, once, as the licence requires).
+Proposta histórica, substituída pelo PP1 e pelo N1 no país. The front page is the country's page with the map as the door to the places: the map, then the reading, then the numbers by subject, then the latest studies, then what changed. No subtitle under the name. No credit under the map (it lives on the Método page, once, as the licence requires).
 
-## 2 · The subjects: one axis, one word [P]
+## 2 · Os assuntos: oito portas em vigor no N1 (30.09.2026)
 
-The eighteen domains of the content charter are the only subject axis. The nine "áreas de governo" disappear as pages; which ministry publishes a measure is a fact of the measure's receipt, not a place to browse. For the reader the word is **«Temas»** (the eighteen themes), because that is the word a Portuguese newspaper uses for its sections; "domínio" stays a word of the charter and the code. Each theme has one page: the reading for the theme, its measures for the country, and the places where the theme has numbers. Portugal in the European Union is a theme's view, not a separate page family: the European comparison lives inside each measure (the ruler already shows it) and the "Portugal na União Europeia" page becomes the theme page's European section.
+A §1.143 de `DECISIONS.md` e o `BRIEF-N1-uma-porta-por-assunto.md` substituem aqui as seis entradas do PP1. A primeira página tem os cinco blocos de «O que se passa» e, a seguir, as oito portas abaixo. Cada bloco acaba com a porta do seu assunto. Os blocos não aparecem nas páginas de assunto.
+
+| Porta | Português | Inglês |
+| --- | --- | --- |
+| Preços | `/precos/` | `/en/prices/` |
+| Salários, pensões e apoios | `/salarios-pensoes-e-apoios/` | `/en/pay-pensions-and-benefits/` |
+| Pobreza e desigualdade | `/pobreza-e-desigualdade/` | `/en/poverty-and-inequality/` |
+| Emprego | `/emprego/` | `/en/employment/` |
+| Habitação | `/habitacao/` | `/en/housing/` |
+| Educação e saúde | `/educacao-e-saude/` | `/en/education-and-health/` |
+| Estado e economia | `/estado-e-economia/` | `/en/state-and-economy/` |
+| Lugares | `/lugares/` | `/en/places/` |
+
+As sete páginas de assunto repartem os 47 cartões nacionais. Cada cartão inteiro vive numa só delas. O título é o nome do assunto e a linha de âmbito começa por «Os números de Portugal sobre…»; a edição inglesa espelha. Estado e economia inclui a justiça. As secções conservam a ordem anterior; a secção dos cartões das contas do Estado chama-se «Contas públicas», distinguindo-se do título do bloco da primeira página.
+
+Temas é o índice destas oito portas, com os mesmos nomes, âmbitos e ordem da primeira página, e os nomes das secções. Não contém cartões inteiros. Lugares reúne a pesquisa, as regiões, os distritos e as ilhas, o cartão das câmaras e os mapas e tabelas municipais que estavam no domínio. As páginas dos domínios redirecionam para Temas. As áreas de governo mantêm-se, fora das oito portas e do rodapé. A página da União continua separada; só as suas ligações internas acompanham os novos destinos.
+
+Os endereços antigos das entradas redirecionam para os novos. «O meu dinheiro», repartido por três assuntos, redireciona para Temas. A construção exige ausência de ligações internas antigas e publica apenas os novos endereços no mapa do sítio.
+
+A contagem de preços escrita no §5 do brief diverge da declaração anterior: são seis cartões, não cinco. A construção preserva os seis e os 47 no conjunto; a divergência fica no relatório N1, sem eliminar uma medida para satisfazer uma contagem errada.
 
 ## 3 · The studies: one door, attached to their place [P]
 
 A study is a page with: the title; the project's reading (the opening: «Em resumo», «O que este projeto conclui», «O que podia funcionar melhor»); the text of the study; at the end, one line: «Documento original (PDF)» for the edition as published, and the date. There is no "Edições" box and no second door. The English edition is reached by the site's language switch, as every other page. The studies list shows every study newest first, with its title, its place and theme, its date and the first paragraph of its reading. The front page and each place page show their studies the same way. A study's numbers keep their receipts exactly as today.
 
-## 4 · The menu: five entries [P]
+## 4 · O menu: cinco entradas
 
-**Portugal · Lugares · Temas · Estudos · Sobre.** "Portugal" is the country's page (the front page). "Lugares" opens the line: the map, the regions, the districts, the search for a municipality. "Temas" opens the eighteen. "Estudos" the list. "Sobre" holds what the site says about itself, once: who makes it and how (today's Sobre and Método, joined), the corrections and the right of reply, the agenda of the next official releases. Método, Correções and Agenda stay as pages, reached from Sobre and from the footer. "Números e fontes" (the ledger index) stays reachable from every receipt and from the footer; it is not a menu entry.
+**Portugal · Lugares · Temas · Estudos · Sobre.** Portugal abre a primeira página. Lugares abre a geografia. Temas abre as oito portas do §2. Estudos abre a lista. Sobre reúne as portas do que o projeto diz sobre si. Método, Correções, Agenda, Números e fontes e Portugal na União Europeia continuam acessíveis pelo rodapé. Os domínios e as áreas de governo saem dele.
 
 ## 5 · The three rules that the checks enforce [P]
 
@@ -68,7 +87,9 @@ English words that shall not be translated one to one: site (→ projeto/página
 
 The typography (the two type families, the sizes, the black rule under the name), the cards' anatomy from the P2 block (name, value, sentence, ruler, one mark), the receipts, the map and its insets, the language switch, the corrections channel, the AI label in the footer (one line), the checks.
 
-## 8 · The blocks, in order, each on captures before landing [P]
+## 8 · Sequência histórica de 17.09.2026 [P]
+
+A sequência em vigor a 30.09.2026 é N1, K2, L2 e UE2, pela §1.143. A proposta abaixo fica como histórico; não autoriza eliminar as áreas nem fundir a página da União no N1.
 
 1. **B1 · The four pages that set the grammar:** the country page (the front page), the place page (Évora as the sample, then all 308 by the same template), the study page (Évora 2027), the studies list. The menu of five. The grey cell gone. Two weeks of the three go here, because everything else follows the grammar these four fix.
 2. **B2 · The themes:** the eighteen theme pages replace the domínios and the áreas de governo; the European comparison folds in.
@@ -76,7 +97,9 @@ The typography (the two type families, the sizes, the black rule under the name)
 4. **B4 · The older studies:** their openings written by the seat and approved by [o diretor]; the paragraphs about the project's own method cut from their texts; the two contradictions between studies corrected.
 5. **B5 · Sobre, Método, the vocabulary check and the editor's read:** Sobre and Método consolidated so that the project explains itself once; the vocabulary check in the build; and on every block from B1 on, a reader from another family whose only question is whether an editor of a Portuguese daily would print the page as it is.
 
-## 9 · What [o diretor] decides [D]
+## 9 · Questões apresentadas a 17.09.2026 [histórico]
+
+Para os assuntos, as portas e o menu, prevalecem os §§2 e 4 atualizados acima.
 
 1. The menu of five and its words: Portugal · Lugares · Temas · Estudos · Sobre.
 2. «Temas» as the reader's word for the eighteen subjects, and the áreas de governo gone as pages.

@@ -1,0 +1,8 @@
+{
+  "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+  "inicio": "2026-09-30T10:14:26.675Z",
+  "fim": "2026-09-30T10:14:26.726Z",
+  "segundos": 0.04877,
+  "codigo": 0
+}

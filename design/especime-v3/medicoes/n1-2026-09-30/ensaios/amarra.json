@@ -1,0 +1,8 @@
+{
+  "comando": "npm run ledger:check",
+  "cabeca": "2cbc5cc46327697469347b98a2445494027861f4",
+  "inicio": "2026-09-30T09:34:20.485Z",
+  "fim": "2026-09-30T09:34:22.602Z",
+  "segundos": 2.115055667,
+  "codigo": 0
+}

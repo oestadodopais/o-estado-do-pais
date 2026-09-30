@@ -1,0 +1,8 @@
+{
+  "comando": "node design/especime-v3/medicoes/n1-2026-09-30/medir-n1.mjs",
+  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+  "inicio": "2026-09-30T10:10:50.652Z",
+  "fim": "2026-09-30T10:10:57.677Z",
+  "segundos": 7.023293916000001,
+  "codigo": 0
+}

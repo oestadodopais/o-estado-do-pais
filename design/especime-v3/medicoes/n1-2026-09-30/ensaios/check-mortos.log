@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, num directório temporário.
+
+  ✓ identificadores · 295 ficheiro(s) lidos, nenhuma declaração morta

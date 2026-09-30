@@ -1,0 +1,8 @@
+{
+  "comando": "node -e process.exitCode = 7",
+  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+  "inicio": "2026-09-30T10:06:39.412Z",
+  "fim": "2026-09-30T10:06:39.433Z",
+  "segundos": 0.018848749999999997,
+  "codigo": 7
+}

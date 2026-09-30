@@ -1,0 +1,8 @@
+{
+  "comando": "node tests/acessibilidade/alvos.mjs --vermelhos --so lista-a-dobrar --json design/especime-v3/medicoes/n1-2026-09-30/planta-h13.json",
+  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+  "inicio": "2026-09-30T10:04:03.938Z",
+  "fim": "2026-09-30T10:13:06.594Z",
+  "segundos": 542.6495942080002,
+  "codigo": 0
+}

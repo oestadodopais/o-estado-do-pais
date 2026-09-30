@@ -1,0 +1,13 @@
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, num directório temporário.
+
+  IDENTIFICADORES MORTOS · 1 em 295 ficheiros
+
+    ✗ scripts/check-pais.mjs:30 · const "caminho" declarada e nunca usada no código.
+
+    Uma declaração que ninguém usa diz a quem lê que o ficheiro faz uma coisa que ele
+    já não faz. Tire-a, ou volte a usá-la. Um nome citado só num comentário ou dentro
+    de uma cadeia não conta como uso: o que conta é o código.

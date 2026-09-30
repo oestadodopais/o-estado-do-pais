@@ -1,0 +1,142 @@
+{
+  "brief": "design/observatorio/BRIEF-N1-uma-porta-por-assunto.md",
+  "guiao": "design/observatorio/medidas/BRIEF-N1.py",
+  "cabeca_lida": "1d9e5b2e",
+  "medidas": [
+    {
+      "nome": "entradas_com_pagina",
+      "valor": 5,
+      "comando": "ENTRADAS de src/data/primeira-pagina.mjs, as que têm cartões",
+      "conhecido_positivo": {
+        "o_que": "«O meu dinheiro» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nas_entradas",
+      "valor": 47,
+      "comando": "a soma dos cartões das secções das entradas",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública está numa entrada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_distintos_nas_entradas",
+      "valor": 47,
+      "comando": "os mesmos, sem repetições",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública conta uma vez",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nos_temas",
+      "valor": 47,
+      "comando": "temasDoPais('pt') de src/lib/pais.mjs, os cartões dos nove temas (sem o cartão das câmaras)",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública está nos temas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_nas_entradas_e_nos_temas",
+      "valor": 47,
+      "comando": "a interseção das duas listas",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública está nas duas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_so_numa_das_duas",
+      "valor": 0,
+      "comando": "a diferença simétrica das duas listas",
+      "conhecido_positivo": {
+        "o_que": "a lista dos temas foi lida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_da_primeira_pagina",
+      "valor": 5,
+      "comando": "BLOCOS_DA_PRIMEIRA_PAGINA",
+      "conhecido_positivo": {
+        "o_que": "o bloco «precos» existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_copiados_nas_entradas",
+      "valor": 5,
+      "comando": "a soma dos `blocos` das ENTRADAS (cada um é um bloco da primeira página repetido por inteiro na entrada)",
+      "conhecido_positivo": {
+        "o_que": "«O meu dinheiro» copia o bloco «precos»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_que_copiam_blocos",
+      "valor": 4,
+      "comando": "as ENTRADAS com `blocos` não vazio",
+      "conhecido_positivo": {
+        "o_que": "«A escola e a saúde» não copia nenhum",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas",
+      "valor": 9,
+      "comando": "temasDoPais('pt'), o número de temas",
+      "conhecido_positivo": {
+        "o_que": "há mais de um tema",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dominios",
+      "valor": 18,
+      "comando": "DOMINIOS de src/data/dominios.mjs",
+      "conhecido_positivo": {
+        "o_que": "há mais de um domínio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dominios_no_ar",
+      "valor": 1,
+      "comando": "os DOMINIOS com estado «no-ar»",
+      "conhecido_positivo": {
+        "o_que": "os estados foram lidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dominios_sem_pagina",
+      "valor": 16,
+      "comando": "os DOMINIOS com estado «sem»",
+      "conhecido_positivo": {
+        "o_que": "os estados foram lidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "areas",
+      "valor": 9,
+      "comando": "AREAS de src/data/areas.mjs",
+      "conhecido_positivo": {
+        "o_que": "há mais de uma área",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_desemprego_com_6_onde_a_fonte_escreve_6_0",
+      "valor": 2,
+      "comando": "git show 1d9e5b2e:ledger/claims/<id>.yml · value «6» e excerpt a acabar em «6.0»",
+      "conhecido_positivo": {
+        "o_que": "a linha da União escreve «6,0»",
+        "encontrado": true
+      }
+    }
+  ]
+}

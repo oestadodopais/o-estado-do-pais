@@ -1,0 +1,329 @@
+{
+  "bloco": "N1",
+  "medido_em": "2026-09-30T10:15:39.109Z",
+  "cabeca": "e5143eaad9ea09de3baa2bddb3af72a079d2aa22",
+  "construcao": {
+    "commit": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+    "ref": "n1-2026-09-30",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-30T09:59:41.093Z"
+  },
+  "medidas": [
+    {
+      "nome": "blocos_fora_da_primeira",
+      "valor": 0,
+      "conhecido_positivo": true,
+      "evidencia": "Dez blocos lidos nas duas primeiras páginas; a planta copia um para Emprego."
+    },
+    {
+      "nome": "titulos_de_bloco_fora_da_primeira",
+      "valor": 0,
+      "conhecido_positivo": true,
+      "evidencia": "Título copiado sem atributos também recusado."
+    },
+    {
+      "nome": "portas_finais_dos_blocos",
+      "valor": 10,
+      "conhecido_positivo": true,
+      "evidencia": "A primeira porta abre Preços; as dez são comparadas à declaração."
+    },
+    {
+      "nome": "cartoes_por_edicao",
+      "valor": 47,
+      "conhecido_positivo": true,
+      "evidencia": "Os seis cartões atuais de Preços são lidos, incluindo o IHPC."
+    },
+    {
+      "nome": "repeticoes_de_cartoes_nacionais",
+      "valor": 0,
+      "conhecido_positivo": true,
+      "evidencia": "A planta repete uma pensão em Emprego; áreas de governo são a exceção expressa do mandato."
+    },
+    {
+      "nome": "portas_em_cada_indice",
+      "valor": {
+        "primeira": 8,
+        "temas": 8
+      },
+      "conhecido_positivo": true,
+      "evidencia": "Lugares é visto como oitava porta; nomes, âmbito, ordem e secções são comparados."
+    },
+    {
+      "nome": "cartoes_inteiros_nos_temas",
+      "valor": 0,
+      "conhecido_positivo": true,
+      "evidencia": "A cópia de um cartão para Temas é recusada."
+    },
+    {
+      "nome": "redirecionamentos",
+      "valor": 13,
+      "conhecido_positivo": true,
+      "evidencia": "Treze regras 301, origem com e sem barra, destino existente e antes de filesystem."
+    },
+    {
+      "nome": "portas_no_mapa_do_sitio",
+      "valor": 16,
+      "conhecido_positivo": true,
+      "evidencia": "Dezasseis portas nas duas edições; a primeira página é controlo independente."
+    },
+    {
+      "nome": "ligacoes_internas_antigas",
+      "valor": 0,
+      "conhecido_positivo": true,
+      "evidencia": "Varredura das páginas construídas, com alvos antigos independentes da tabela atual."
+    },
+    {
+      "nome": "formas_municipais_preservadas",
+      "valor": [
+        {
+          "lang": "pt",
+          "forma": "mapa-por-concelho",
+          "instrumento": "mapa-por-concelho-indice",
+          "antes": "cd5a0af1a2be151612538e086fb98a686f7439a4cc391dfd66a40592e4502870",
+          "depois": "cd5a0af1a2be151612538e086fb98a686f7439a4cc391dfd66a40592e4502870",
+          "igual": true,
+          "linhas": 308
+        },
+        {
+          "lang": "pt",
+          "forma": "barra-concelho-pais",
+          "instrumento": "barra-concelho-pais",
+          "antes": "bfdc33a7874f85a623ba8fc1533e47d0bc0b769bb6593a61af80779803a48a79",
+          "depois": "bfdc33a7874f85a623ba8fc1533e47d0bc0b769bb6593a61af80779803a48a79",
+          "igual": true,
+          "linhas": 4
+        },
+        {
+          "lang": "pt",
+          "forma": "mapa-por-concelho",
+          "instrumento": "mapa-por-concelho-ganho",
+          "antes": "29feaa2a1b3ce400b5b9d88c92eeadbe55d95e3f835b0d501e391032b31d130b",
+          "depois": "29feaa2a1b3ce400b5b9d88c92eeadbe55d95e3f835b0d501e391032b31d130b",
+          "igual": true,
+          "linhas": 308
+        },
+        {
+          "lang": "en",
+          "forma": "mapa-por-concelho",
+          "instrumento": "mapa-por-concelho-indice",
+          "antes": "f07c16750f4a74fbf44f6dfe17ffe43ba04881601a15cbd189302df309ff7a90",
+          "depois": "f07c16750f4a74fbf44f6dfe17ffe43ba04881601a15cbd189302df309ff7a90",
+          "igual": true,
+          "linhas": 308
+        },
+        {
+          "lang": "en",
+          "forma": "barra-concelho-pais",
+          "instrumento": "barra-concelho-pais",
+          "antes": "a8af30e6b4a6bc5d490312a87b2723c666aabad53ef57eb1a6cc3670acc7077f",
+          "depois": "a8af30e6b4a6bc5d490312a87b2723c666aabad53ef57eb1a6cc3670acc7077f",
+          "igual": true,
+          "linhas": 4
+        },
+        {
+          "lang": "en",
+          "forma": "mapa-por-concelho",
+          "instrumento": "mapa-por-concelho-ganho",
+          "antes": "e9e03f91bf79b88739145aae07c06309f9dc53ae985ac8b3cfbb9991f54122f7",
+          "depois": "e9e03f91bf79b88739145aae07c06309f9dc53ae985ac8b3cfbb9991f54122f7",
+          "igual": true,
+          "linhas": 308
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Resumo do HTML inteiro antes e depois, incluindo geometria, tabelas, valores e selos."
+    },
+    {
+      "nome": "tabelas_municipais",
+      "valor": {
+        "mapas": 4,
+        "tabelas": 4,
+        "linhas": 1232,
+        "barras": 2,
+        "camaras": 2
+      },
+      "conhecido_positivo": true,
+      "evidencia": "Duas tabelas de 308 linhas por edição; o valor trocado também é recusado."
+    },
+    {
+      "nome": "desemprego_com_a_casa_decimal",
+      "valor": [
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "valor": "6",
+          "excerto_decimal": "6,0",
+          "igual_ao_excerto": false,
+          "historia": []
+        },
+        {
+          "id": "taxa-de-desemprego-2025",
+          "valor": "6",
+          "excerto_decimal": "6,0",
+          "igual_ao_excerto": false,
+          "historia": []
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Os dois excertos publicam a casa decimal; esta medida permanece por cumprir enquanto os valores forem 6."
+    },
+    {
+      "nome": "valor_irmao_do_salario_minimo",
+      "valor": [
+        {
+          "lang": "pt",
+          "presente": true
+        },
+        {
+          "lang": "en",
+          "presente": true
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Valor exclusivo do domínio conservado fora de um cartão inteiro."
+    },
+    {
+      "nome": "capturas",
+      "valor": {
+        "total": 90,
+        "resumos_conferidos": 90,
+        "problemas": []
+      },
+      "conhecido_positivo": true,
+      "evidencia": "O resumo de cada PNG é recalculado; o manifesto mede largura e transbordo."
+    },
+    {
+      "nome": "documentos_atualizados",
+      "valor": [
+        {
+          "ficheiro": "design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md",
+          "n1": true
+        },
+        {
+          "ficheiro": "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+          "n1": true
+        }
+      ],
+      "conhecido_positivo": true,
+      "evidencia": "Dois documentos existentes, lidos em disco."
+    },
+    {
+      "nome": "ficheiros_com_caminho_ou_utilizador",
+      "valor": [],
+      "conhecido_positivo": true,
+      "evidencia": "Controlo em memória; nenhum caminho pessoal é escrito no resultado."
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "bloco copiado para outra página de assunto",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: 1 bloco(s) fora da primeira página."
+    },
+    {
+      "nome": "título copiado sem as marcas do bloco",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "cartão inteiro repetido noutra página de assunto",
+      "mordeu": true,
+      "queixa": "N1C pt: cartão pensao-media-anual-2025 inteiro em mais de uma página de assunto (salarios-pensoes-e-apoios, emprego)."
+    },
+    {
+      "nome": "cartão nacional omitido",
+      "mordeu": true,
+      "queixa": "E1 en: cartão licencas-de-construcao-2025 em falta nas páginas de assunto."
+    },
+    {
+      "nome": "cartão inteiro nos temas",
+      "mordeu": true,
+      "queixa": "N1I pt: o índice dos temas voltou a render cartões inteiros."
+    },
+    {
+      "nome": "porta retirada da primeira página",
+      "mordeu": true,
+      "queixa": "E4 pt: a ordem das portas da primeira difere da declaração."
+    },
+    {
+      "nome": "secção retirada do índice",
+      "mordeu": true,
+      "queixa": "E4 pt: as secções de precos não estão no índice pela ordem declarada."
+    },
+    {
+      "nome": "âmbito errado na página de assunto",
+      "mordeu": true,
+      "queixa": "E3 pt: o título ou o âmbito de emprego difere da declaração."
+    },
+    {
+      "nome": "cartão das câmaras retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1L pt: falta o cartão das câmaras nos lugares."
+    },
+    {
+      "nome": "porta omitida do mapa do sítio",
+      "mordeu": true,
+      "queixa": "E5 en: /en/employment/ não está no mapa do sítio."
+    },
+    {
+      "nome": "mapa nomeado em falta",
+      "mordeu": true,
+      "queixa": "E5: o índice do mapa do sítio nomeia /sitemap-1.xml, que a construção não tem."
+    },
+    {
+      "nome": "redirecionamento inglês para a página errada",
+      "mordeu": true,
+      "queixa": "N1R /en/my-work: redirecionamento incorreto."
+    },
+    {
+      "nome": "mapa retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1M pt: faltam mapas ou há mapas repetidos."
+    },
+    {
+      "nome": "linha retirada da tabela",
+      "mordeu": true,
+      "queixa": "N1M pt indice: as linhas da tabela diferem dos concelhos declarados."
+    },
+    {
+      "nome": "valor municipal trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: valor da linha agueda-indice-de-divida-2024 diferente do livro-razão."
+    },
+    {
+      "nome": "geometria municipal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a geometria não tem um desenho por concelho."
+    },
+    {
+      "nome": "contagem das câmaras trocada",
+      "mordeu": true,
+      "queixa": "V2 pt: camaras_acima_do_limite: a contagem não coincide com as linhas do índice de dívida."
+    },
+    {
+      "nome": "selo do limite municipal retirado",
+      "mordeu": true,
+      "queixa": "V2 pt: falta a marca da fonte da linha do limite."
+    }
+  ],
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6"
+    },
+    "verify": {
+      "codigo": 1,
+      "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6"
+    }
+  },
+  "erros": [],
+  "divergencias": [
+    "O brief enumera cinco medidas de preços; a secção anterior e a atual têm seis.",
+    "Ponto 5 parado: classificar como correção altera a contagem calculada de correções publicadas, fora do mandato."
+  ]
+}
