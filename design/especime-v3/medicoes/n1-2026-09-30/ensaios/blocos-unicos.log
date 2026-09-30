@@ -1,0 +1,21 @@
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7452,
+    "blocos_na_primeira": 10,
+    "blocos_fora": 0,
+    "titulos_fora": 0
+  },
+  "plantas": [
+    {
+      "nome": "bloco copiado para outra página",
+      "mordeu": true,
+      "queixa": "N1B temas/index.html: 1 bloco(s) fora da primeira página."
+    },
+    {
+      "nome": "título copiado sem as marcas do bloco",
+      "mordeu": true,
+      "queixa": "N1B temas/index.html: título de bloco fora da primeira página."
+    }
+  ]
+}

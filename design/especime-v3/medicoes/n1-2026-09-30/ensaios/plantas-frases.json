@@ -1,0 +1,8 @@
+{
+  "comando": "node --input-type=module -e import {plantasDaReguaDasFrases} from \"./tests/inicio/regua-das-frases.mjs\"; const r=plantasDaReguaDasFrases(\"dist\"); console.log(JSON.stringify(r,null,2)); process.exitCode=r.some(p=>!p.mordeu)?1:0",
+  "cabeca": "f76c58982a37df28325880ed7a5a062e81b512b5",
+  "inicio": "2026-09-30T09:42:33.052Z",
+  "fim": "2026-09-30T09:42:33.886Z",
+  "segundos": 0.8320062500000001,
+  "codigo": 0
+}

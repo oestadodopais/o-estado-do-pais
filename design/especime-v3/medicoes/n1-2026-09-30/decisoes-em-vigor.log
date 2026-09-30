@@ -1,0 +1,807 @@
+§1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
+    src/i18n/strings.mjs:2899
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    DECISIONS.md:1067
+    DECISIONS.md:12210
+    DECISIONS.md:1900
+    design/especime-v3/INVENTARIO-FRASES.md:1809
+    design/especime-v3/INVENTARIO-FRASES.md:2667
+    design/especime-v3/INVENTARIO-FRASES.md:2897
+    design/especime-v3/INVENTARIO-FRASES.md:320
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:121
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:220
+    scripts/check-voz.mjs:49
+    scripts/check-voz.mjs:727
+    scripts/check-voz.mjs:795
+    src/data/primeira-pagina.mjs:63
+    src/i18n/strings.mjs:552
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    DECISIONS.md:12208
+    design/especime-v3/INVENTARIO-FRASES.md:2344
+    design/especime-v3/INVENTARIO-FRASES.md:2833
+    design/especime-v3/INVENTARIO-FRASES.md:2904
+    design/especime-v3/INVENTARIO-FRASES.md:2921
+    design/especime-v3/INVENTARIO-FRASES.md:2934
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:114
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:116
+    src/i18n/strings.mjs:1081
+    src/i18n/strings.mjs:1497
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    DECISIONS.md:12284
+    DECISIONS.md:12819
+    scripts/medir-defeitos.mjs:675
+    src/i18n/strings.mjs:2265
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    DECISIONS.md:1030
+    DECISIONS.md:12818
+    DECISIONS.md:483
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:13
+§1.7 · As descrições dos estudos são reformulações do título
+    DECISIONS.md:1559
+    DECISIONS.md:2117
+    DECISIONS.md:2141
+    DECISIONS.md:713
+§1.8 · As páginas de estudo estão fora do índice até à migração
+    DECISIONS.md:1054
+    DECISIONS.md:1122
+    DECISIONS.md:2027
+    DECISIONS.md:2039
+    DECISIONS.md:520
+    DECISIONS.md:724
+§1.9 · Não há botão de tema
+    DECISIONS.md:12819
+    DECISIONS.md:8287
+    DECISIONS.md:8289
+    DECISIONS.md:8292
+    DECISIONS.md:8297
+§1.10 · Estudos e edições contam-se em separado
+    DECISIONS.md:193
+§1.11 · A contagem de Évora: 4 → 3 → 4, e o que isso revelou
+    DECISIONS.md:1590
+    DECISIONS.md:2760
+    DECISIONS.md:429
+§1.13 · O texto do Método
+    DECISIONS.md:2902
+    DECISIONS.md:462
+§1.14 · O décimo trabalho entrou como uma só alteração
+    DECISIONS.md:1579
+    DECISIONS.md:182
+§1.15 · «Three Seats, One Ledger» fica de fora do arquivo
+    DECISIONS.md:385
+§1.16 · Uma ligação para fora do domínio
+    DECISIONS.md:1095
+    DECISIONS.md:8761
+§1.17 · O motivo de uma correção passou a existir nas duas línguas
+    DECISIONS.md:1023
+    DECISIONS.md:1036
+    DECISIONS.md:1311
+    DECISIONS.md:268
+    DECISIONS.md:8482
+    DECISIONS.md:8793
+§1.18 · Os dados por trás dos gráficos passaram a ser descarregáveis
+    DECISIONS.md:366
+    DECISIONS.md:8434
+    DECISIONS.md:8709
+§1.19 · Os estudos migram para dois sítios, não um
+    DECISIONS.md:11638
+    DECISIONS.md:157
+    DECISIONS.md:639
+    DECISIONS.md:724
+    scripts/gate-html.mjs:1192
+    scripts/gate-html.mjs:5236
+    scripts/gate-html.mjs:8774
+§1.20 · Os documentos entraram, e trouxeram um contrato de determinismo
+    DECISIONS.md:743
+    DECISIONS.md:833
+    DECISIONS.md:8434
+    DECISIONS.md:8809
+    DECISIONS.md:8831
+§1.21 · A décima terceira edição, e a diferença entre extrair e transcrever
+    DECISIONS.md:1570
+    DECISIONS.md:611
+    DECISIONS.md:706
+    DECISIONS.md:8809
+    DECISIONS.md:8843
+§1.23 · A auditoria de identidade, e a regra que dela saiu
+    DECISIONS.md:1407
+    DECISIONS.md:921
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    DECISIONS.md:1121
+    DECISIONS.md:1359
+    DECISIONS.md:1516
+    DECISIONS.md:1532
+    DECISIONS.md:1724
+    DECISIONS.md:2941
+    DECISIONS.md:3252
+    DECISIONS.md:8520
+    scripts/gate-html.mjs:141
+    scripts/gate-html.mjs:146
+    scripts/gate-html.mjs:2712
+    scripts/gate-html.mjs:2868
+    scripts/gate-html.mjs:3542
+    scripts/gate-html.mjs:3746
+    scripts/gate-html.mjs:3760
+§1.26 · O endereço das correções passou a existir, e é o domínio sem acento
+    DECISIONS.md:2919
+§1.27 · A dívida de proveniência tinha impossíveis lá dentro
+    DECISIONS.md:1244
+    DECISIONS.md:1348
+    DECISIONS.md:1389
+    DECISIONS.md:1408
+§1.28 · A bandeira que a fonte punha e o livro-razão não
+    DECISIONS.md:1371
+    DECISIONS.md:1389
+    DECISIONS.md:1532
+    DECISIONS.md:2008
+§1.29 · As quatro linhas que ficaram sem função, e o que custa retirá-las
+    DECISIONS.md:3064
+    DECISIONS.md:3539
+    src/lib/routes.mjs:61
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    DECISIONS.md:10486
+    DECISIONS.md:12666
+    DECISIONS.md:1613
+    DECISIONS.md:1735
+    DECISIONS.md:1759
+    DECISIONS.md:2326
+    DECISIONS.md:4943
+    DECISIONS.md:4960
+    DECISIONS.md:5812
+    DECISIONS.md:7235
+    DECISIONS.md:8454
+    DECISIONS.md:8497
+    DECISIONS.md:8565
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:56
+    scripts/gate-html.mjs:2591
+    scripts/gate-html.mjs:855
+    scripts/gate-html.mjs:878
+§1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    DECISIONS.md:1784
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    DECISIONS.md:12853
+    DECISIONS.md:2222
+    DECISIONS.md:2231
+    DECISIONS.md:2986
+    DECISIONS.md:2993
+    DECISIONS.md:3255
+    DECISIONS.md:3488
+    DECISIONS.md:8543
+    scripts/gate-html.mjs:3203
+    scripts/gate-html.mjs:3312
+    scripts/gate-html.mjs:3985
+    scripts/gate-html.mjs:7063
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    DECISIONS.md:3457
+    src/i18n/strings.mjs:2757
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    DECISIONS.md:12323
+    DECISIONS.md:12591
+    DECISIONS.md:12806
+    DECISIONS.md:2624
+    DECISIONS.md:3477
+    DECISIONS.md:4658
+    DECISIONS.md:4691
+    DECISIONS.md:8441
+    scripts/gate-html.mjs:5066
+    src/i18n/strings.mjs:350
+    src/i18n/strings.mjs:407
+    src/lib/routes.mjs:127
+    src/lib/routes.mjs:86
+§1.37 · O selo do cabeçalho passa a ser só o glifo
+    DECISIONS.md:12310
+    DECISIONS.md:3011
+    DECISIONS.md:4271
+§1.38 · A ortografia do sítio passa a ser uma só
+    DECISIONS.md:2857
+    DECISIONS.md:3114
+    DECISIONS.md:3129
+    DECISIONS.md:3313
+    DECISIONS.md:3325
+    DECISIONS.md:3331
+    DECISIONS.md:3474
+    DECISIONS.md:3531
+    DECISIONS.md:3559
+    DECISIONS.md:3875
+    DECISIONS.md:5110
+    DECISIONS.md:5256
+    DECISIONS.md:5602
+    DECISIONS.md:6685
+    DECISIONS.md:7192
+    DECISIONS.md:7371
+    DECISIONS.md:8182
+    DECISIONS.md:8444
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    DECISIONS.md:12632
+    DECISIONS.md:12633
+    DECISIONS.md:12799
+    DECISIONS.md:12855
+    DECISIONS.md:3286
+    DECISIONS.md:3332
+    DECISIONS.md:3341
+    DECISIONS.md:3356
+    DECISIONS.md:3362
+    DECISIONS.md:3645
+    DECISIONS.md:3740
+    DECISIONS.md:3831
+    DECISIONS.md:4127
+    DECISIONS.md:4206
+    DECISIONS.md:5113
+    DECISIONS.md:8447
+    DECISIONS.md:8543
+    scripts/gate-html.mjs:4941
+    scripts/gate-html.mjs:7943
+    scripts/gate-html.mjs:8642
+    src/i18n/strings.mjs:1707
+    src/i18n/strings.mjs:394
+    src/lib/routes.mjs:52
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    DECISIONS.md:12572
+    DECISIONS.md:12630
+    DECISIONS.md:12631
+    DECISIONS.md:12634
+    DECISIONS.md:12666
+    DECISIONS.md:12859
+    DECISIONS.md:2644
+    DECISIONS.md:2847
+    DECISIONS.md:3357
+    DECISIONS.md:4277
+    DECISIONS.md:4371
+    DECISIONS.md:4786
+    DECISIONS.md:5047
+    DECISIONS.md:5363
+    DECISIONS.md:7487
+    DECISIONS.md:7532
+    DECISIONS.md:7533
+    DECISIONS.md:7562
+    DECISIONS.md:8575
+    DECISIONS.md:8810
+    scripts/gate-html.mjs:267
+    scripts/gate-html.mjs:359
+    scripts/gate-html.mjs:3849
+    scripts/gate-html.mjs:77
+    src/i18n/strings.mjs:2172
+    src/i18n/strings.mjs:2177
+    src/lib/routes.mjs:219
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    DECISIONS.md:12837
+    DECISIONS.md:12863
+    DECISIONS.md:12867
+    DECISIONS.md:12881
+    DECISIONS.md:3867
+    DECISIONS.md:3868
+    DECISIONS.md:3989
+    DECISIONS.md:4021
+    DECISIONS.md:4042
+    DECISIONS.md:4045
+    DECISIONS.md:4127
+    DECISIONS.md:4570
+    DECISIONS.md:4757
+    DECISIONS.md:4894
+    DECISIONS.md:5021
+    DECISIONS.md:5050
+    DECISIONS.md:8467
+    DECISIONS.md:8546
+    DECISIONS.md:8577
+    DECISIONS.md:8666
+    DECISIONS.md:8689
+    DECISIONS.md:8714
+    scripts/gate-html.mjs:3004
+    scripts/gate-html.mjs:3047
+§1.42 · Segunda revisão cruzada do bloco V
+    DECISIONS.md:12829
+    DECISIONS.md:12837
+    DECISIONS.md:12838
+    DECISIONS.md:12840
+    DECISIONS.md:12844
+    DECISIONS.md:3847
+    DECISIONS.md:4444
+    DECISIONS.md:4570
+    DECISIONS.md:4757
+    DECISIONS.md:4894
+    DECISIONS.md:5050
+    DECISIONS.md:5195
+    DECISIONS.md:7487
+    DECISIONS.md:7533
+    DECISIONS.md:8718
+    DECISIONS.md:8725
+    DECISIONS.md:8730
+    DECISIONS.md:8739
+    scripts/gate-html.mjs:3026
+    scripts/gate-html.mjs:3047
+    scripts/gate-html.mjs:3418
+    scripts/gate-html.mjs:7354
+§1.43 · A identidade v2: a direção S construída
+    DECISIONS.md:12638
+    DECISIONS.md:4555
+    DECISIONS.md:4722
+    DECISIONS.md:4793
+    DECISIONS.md:4837
+    DECISIONS.md:4870
+    DECISIONS.md:5012
+    DECISIONS.md:5098
+    DECISIONS.md:5390
+    DECISIONS.md:5751
+§1.44 · A revisão cruzada da identidade v2
+    DECISIONS.md:12647
+    DECISIONS.md:12653
+    DECISIONS.md:12655
+    DECISIONS.md:12656
+    DECISIONS.md:12657
+    DECISIONS.md:12667
+    DECISIONS.md:12670
+    DECISIONS.md:5226
+    DECISIONS.md:6607
+    DECISIONS.md:7016
+    scripts/check-voz.mjs:409
+    scripts/gate-html.mjs:870
+    scripts/medir-defeitos.mjs:971
+§1.45 · A direção decide as vigilâncias, sela a pergunta da habitação, e o Método diz «medição»
+    DECISIONS.md:12670
+    DECISIONS.md:12675
+    DECISIONS.md:5259
+    DECISIONS.md:5264
+    DECISIONS.md:5274
+    DECISIONS.md:5305
+    DECISIONS.md:5351
+    DECISIONS.md:5353
+    DECISIONS.md:5359
+    DECISIONS.md:5361
+    DECISIONS.md:5364
+    DECISIONS.md:5369
+    DECISIONS.md:5584
+    DECISIONS.md:5602
+    DECISIONS.md:5812
+    DECISIONS.md:6685
+    DECISIONS.md:9004
+§1.46 · A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+    DECISIONS.md:12560
+    DECISIONS.md:12670
+    DECISIONS.md:12677
+    DECISIONS.md:5240
+    DECISIONS.md:5246
+    DECISIONS.md:5371
+    DECISIONS.md:6646
+    DECISIONS.md:6685
+    DECISIONS.md:9004
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    DECISIONS.md:10575
+    DECISIONS.md:12333
+    DECISIONS.md:12339
+    DECISIONS.md:12560
+    DECISIONS.md:12567
+    DECISIONS.md:12582
+    DECISIONS.md:12587
+    DECISIONS.md:12588
+    DECISIONS.md:12589
+    DECISIONS.md:12590
+    DECISIONS.md:12592
+    DECISIONS.md:12593
+    DECISIONS.md:12594
+    DECISIONS.md:12596
+    DECISIONS.md:12597
+    DECISIONS.md:12598
+    DECISIONS.md:12599
+    DECISIONS.md:12601
+    DECISIONS.md:12604
+    DECISIONS.md:12658
+    DECISIONS.md:12660
+    DECISIONS.md:12666
+    DECISIONS.md:12667
+    DECISIONS.md:12684
+    DECISIONS.md:12692
+    DECISIONS.md:12762
+    DECISIONS.md:12812
+    DECISIONS.md:12870
+    DECISIONS.md:12876
+    DECISIONS.md:5865
+    DECISIONS.md:7010
+    DECISIONS.md:7193
+    DECISIONS.md:7210
+    DECISIONS.md:7362
+    DECISIONS.md:7466
+    DECISIONS.md:7534
+    DECISIONS.md:7795
+    DECISIONS.md:7932
+    scripts/gate-html.mjs:879
+    src/i18n/strings.mjs:2348
+§1.48 · A direção decide: a licença do conjunto é CC BY 4.0, e a regra 6 diz o que se faz
+    DECISIONS.md:12687
+    DECISIONS.md:12724
+    DECISIONS.md:12751
+    DECISIONS.md:12767
+    DECISIONS.md:12777
+    DECISIONS.md:7652
+    DECISIONS.md:7666
+    DECISIONS.md:7971
+    DECISIONS.md:7987
+    DECISIONS.md:7992
+§1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
+    DECISIONS.md:10311
+    DECISIONS.md:12589
+    DECISIONS.md:12590
+    DECISIONS.md:12593
+    DECISIONS.md:12594
+    DECISIONS.md:12600
+    DECISIONS.md:12696
+    DECISIONS.md:12704
+    DECISIONS.md:12706
+    DECISIONS.md:12714
+    DECISIONS.md:12730
+    DECISIONS.md:12737
+    DECISIONS.md:7599
+    DECISIONS.md:8034
+    DECISIONS.md:9533
+§1.50 · O redesenho v3 abre: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados
+    scripts/design-bundle.mjs:586
+    scripts/design-bundle.mjs:590
+§1.51 · A direção responde às sete decisões do plano, e três entram na mobília partilhada
+    DECISIONS.md:11921
+    DECISIONS.md:8250
+    DECISIONS.md:8252
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    src/i18n/strings.mjs:267
+§1.55 · O registo de correções ganha a porta que a decisão (c) pediu, e a correção passa a dizer-se por forma
+    DECISIONS.md:9035
+§1.63 · O Método explica o marcador «(inferência)», que as páginas de leitura vão imprimir
+    DECISIONS.md:10220
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    DECISIONS.md:10024
+    DECISIONS.md:10367
+    DECISIONS.md:8531
+    DECISIONS.md:8636
+    scripts/gate-html.mjs:3961
+    scripts/gate-html.mjs:84
+    scripts/gate-html.mjs:8642
+    src/lib/routes.mjs:79
+§1.66 · As correções de UX depois da auditoria de 25.08, bloco A
+    DECISIONS.md:10849
+    DECISIONS.md:11334
+    DECISIONS.md:11537
+    design/especime-v3/INVENTARIO-FRASES.md:1134
+    design/especime-v3/INVENTARIO-FRASES.md:816
+§1.67 · O mapa da primeira página é navegação: a retirada da vista de escolha
+    DECISIONS.md:10810
+§1.68 · As páginas dos 308 concelhos
+    DECISIONS.md:11226
+    scripts/gate-html.mjs:4748
+    scripts/gate-html.mjs:92
+§1.72 · O mapa por distritos
+    DECISIONS.md:11503
+§1.75 · As regiões
+    scripts/design-bundle.mjs:1555
+§1.79 · A marca: o «e» minúsculo, e o sítio como aplicação no telemóvel (Emenda 22)
+    DECISIONS.md:11751
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    DECISIONS.md:11761
+    scripts/gate-html.mjs:1593
+§1.83 · Correções pequenas, sexta passagem: o nome de cada linha vindo do rótulo da fonte, o subconjunto dos tipos, I37
+    DECISIONS.md:11753
+§1.84 · A primeira página: os nomes do mapa ao lado, com o mapa a responder-lhes, e os dois painéis com nome (Emenda 24)
+    DECISIONS.md:11825
+    DECISIONS.md:11829
+§1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
+    DECISIONS.md:11751
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:46
+§1.86 · A identidade fecha: o nome, a marca e os tipos ficam como estão
+    DECISIONS.md:11657
+    DECISIONS.md:11829
+§1.88 · O observatório a sério: a carta dos conteúdos, o inventário das fontes, a frescura e a automação, a forma dos domínios, a diligência legal e a política da autonomia
+    DECISIONS.md:11839
+§1.89 · A divulgação pela via B: o rótulo de IA em todas as páginas, a secção da política em `/metodo`, o nome do diretor e a gratuitidade na primeira página
+    DECISIONS.md:11813
+    DECISIONS.md:12208
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    DECISIONS.md:11817
+    DECISIONS.md:11915
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:197
+    tests/dominio/alcance.mjs:135
+    tests/dominio/alcance.mjs:157
+    tests/dominio/alcance.mjs:19
+    tests/dominio/alcance.mjs:21
+    tests/dominio/alcance.mjs:4
+    tests/dominio/alcance.mjs:54
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    DECISIONS.md:11939
+    DECISIONS.md:12472
+    scripts/gate-html.mjs:5841
+    scripts/gate-html.mjs:6735
+    scripts/gate-html.mjs:7957
+    scripts/gate-html.mjs:851
+§1.92 · O corredor a duas velocidades construído como piloto: a pergunta com validadores, o arquivo por sha256 com índice, os dois fluxos com ensaio e real
+    DECISIONS.md:11855
+    DECISIONS.md:13091 (2)
+    DECISIONS.md:13122 (2)
+    DECISIONS.md:13129 (2)
+§1.93 · A fase 0 do plano de fiabilidade, os três primeiros blocos: o portão do motor verde, o portão reprodutível e em CI, a CI do sítio exigida em `main`
+    DECISIONS.md:11867
+    DECISIONS.md:11881
+    DECISIONS.md:11895
+§1.94 · A fase 0 do plano, os blocos F0.5 e F0.6: uma só resolução por número, e o portão dos números do registo
+    DECISIONS.md:11881
+    DECISIONS.md:11903
+§1.95 · A fase 0 do plano, os blocos F0.7 e F0.8: a higiene pública e de dados, e o corredor pronto para o ensaio verde
+    DECISIONS.md:11895
+    DECISIONS.md:11903
+§1.96 · A fase 0 do plano, os cinco últimos blocos: as duas passagens nas três suites, a DGAL do portátil, as dez linhas nunca relidas, o typecheck a valer e as frases sem linha
+    DECISIONS.md:11911
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    DECISIONS.md:11944
+    DECISIONS.md:11957
+    DECISIONS.md:11971
+    DECISIONS.md:11977
+    DECISIONS.md:11987
+    DECISIONS.md:11999
+    DECISIONS.md:12009
+    DECISIONS.md:12027
+    DECISIONS.md:12059
+    DECISIONS.md:12072
+    DECISIONS.md:12091
+    DECISIONS.md:12102
+    DECISIONS.md:12113
+    DECISIONS.md:12127
+    DECISIONS.md:12143
+    DECISIONS.md:12199
+    DECISIONS.md:12210
+    design/especime-v3/INVENTARIO-FRASES.md:1255
+    design/especime-v3/INVENTARIO-FRASES.md:1297
+    design/especime-v3/INVENTARIO-FRASES.md:1302
+    design/especime-v3/INVENTARIO-FRASES.md:1556
+    design/especime-v3/INVENTARIO-FRASES.md:1558
+    design/especime-v3/INVENTARIO-FRASES.md:1580
+    design/especime-v3/INVENTARIO-FRASES.md:165
+    design/especime-v3/INVENTARIO-FRASES.md:1660
+    design/especime-v3/INVENTARIO-FRASES.md:172
+    design/especime-v3/INVENTARIO-FRASES.md:182
+    design/especime-v3/INVENTARIO-FRASES.md:1973
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2147
+    design/especime-v3/INVENTARIO-FRASES.md:2151
+    design/especime-v3/INVENTARIO-FRASES.md:2180
+    design/especime-v3/INVENTARIO-FRASES.md:2251
+    design/especime-v3/INVENTARIO-FRASES.md:247
+    design/especime-v3/INVENTARIO-FRASES.md:2513
+    design/especime-v3/INVENTARIO-FRASES.md:2517
+    design/especime-v3/INVENTARIO-FRASES.md:2549
+    design/especime-v3/INVENTARIO-FRASES.md:2653
+    design/especime-v3/INVENTARIO-FRASES.md:2660
+    design/especime-v3/INVENTARIO-FRASES.md:271
+    design/especime-v3/INVENTARIO-FRASES.md:2711
+    design/especime-v3/INVENTARIO-FRASES.md:291
+    design/especime-v3/INVENTARIO-FRASES.md:298
+    design/especime-v3/INVENTARIO-FRASES.md:333
+    design/especime-v3/INVENTARIO-FRASES.md:442
+    design/especime-v3/INVENTARIO-FRASES.md:454
+    design/especime-v3/INVENTARIO-FRASES.md:471
+    design/especime-v3/INVENTARIO-FRASES.md:472
+    design/especime-v3/INVENTARIO-FRASES.md:473
+    design/especime-v3/INVENTARIO-FRASES.md:479
+    design/especime-v3/INVENTARIO-FRASES.md:840
+    design/especime-v3/INVENTARIO-FRASES.md:892
+    design/especime-v3/INVENTARIO-FRASES.md:911
+    design/especime-v3/INVENTARIO-FRASES.md:915
+    design/especime-v3/INVENTARIO-FRASES.md:971
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:66
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:67
+    scripts/check-formas.mjs:1122
+    scripts/check-lugar.mjs:424
+    scripts/check-lugar.mjs:436
+    scripts/check-lugar.mjs:437
+    scripts/check-lugar.mjs:438
+    scripts/check-lugar.mjs:439
+    scripts/check-lugar.mjs:440
+    scripts/check-lugar.mjs:441
+    scripts/check-lugar.mjs:442
+    scripts/check-lugar.mjs:443
+    scripts/check-lugar.mjs:444
+    scripts/check-lugar.mjs:445
+    scripts/check-lugar.mjs:446
+    scripts/check-lugar.mjs:447
+    scripts/check-lugar.mjs:448
+    scripts/check-voz.mjs:464
+    src/i18n/strings.mjs:112
+    src/i18n/strings.mjs:141
+    src/i18n/strings.mjs:1615
+    src/i18n/strings.mjs:1655
+    src/i18n/strings.mjs:200
+    src/i18n/strings.mjs:2325
+    src/i18n/strings.mjs:31
+    src/i18n/strings.mjs:80
+§1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
+    DECISIONS.md:11961
+    DECISIONS.md:11995
+    DECISIONS.md:11999
+    DECISIONS.md:12387
+§1.100 · O Portal BASE declarado no Método: a única fonte que a casa lê com a identidade de um navegador
+    DECISIONS.md:11961
+    DECISIONS.md:11995
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    DECISIONS.md:12011
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2564
+    src/i18n/strings.mjs:1156
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    DECISIONS.md:12119
+    DECISIONS.md:12127
+    DECISIONS.md:12129
+    DECISIONS.md:12133
+    DECISIONS.md:12149
+    design/especime-v3/INVENTARIO-FRASES.md:2580
+§1.103 · As quatro leituras de aparelho saem do cabeçalho de todas as páginas, e a regra 6 do Método diz onde elas passam a viver
+    DECISIONS.md:12133
+§1.106 · «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+    DECISIONS.md:12133
+    DECISIONS.md:12167
+    scripts/check-lugar.mjs:498
+§1.107 · A sessão de 14.09: o painel semanal, as cinco noites lidas e a corrida abatida pelo GitHub, a resposta do INE, e a aterragem do F1.10
+    DECISIONS.md:12149
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    DECISIONS.md:12183
+    design/especime-v3/INVENTARIO-FRASES.md:1292
+    design/especime-v3/INVENTARIO-FRASES.md:1293
+    design/especime-v3/INVENTARIO-FRASES.md:1295
+    design/especime-v3/INVENTARIO-FRASES.md:1296
+    design/especime-v3/INVENTARIO-FRASES.md:1748
+    design/especime-v3/INVENTARIO-FRASES.md:1750
+    design/especime-v3/INVENTARIO-FRASES.md:1752
+    design/especime-v3/INVENTARIO-FRASES.md:1753
+    design/especime-v3/INVENTARIO-FRASES.md:1971
+    design/especime-v3/INVENTARIO-FRASES.md:1972
+    design/especime-v3/INVENTARIO-FRASES.md:1992
+    design/especime-v3/INVENTARIO-FRASES.md:1993
+    design/especime-v3/INVENTARIO-FRASES.md:1994
+    design/especime-v3/INVENTARIO-FRASES.md:1995
+    design/especime-v3/INVENTARIO-FRASES.md:1996
+    design/especime-v3/INVENTARIO-FRASES.md:1997
+    design/especime-v3/INVENTARIO-FRASES.md:1998
+    design/especime-v3/INVENTARIO-FRASES.md:1999
+    design/especime-v3/INVENTARIO-FRASES.md:2000
+    design/especime-v3/INVENTARIO-FRASES.md:2001
+    design/especime-v3/INVENTARIO-FRASES.md:257
+    design/especime-v3/INVENTARIO-FRASES.md:260
+    design/especime-v3/INVENTARIO-FRASES.md:261
+    design/especime-v3/INVENTARIO-FRASES.md:272
+    design/especime-v3/INVENTARIO-FRASES.md:273
+    design/especime-v3/INVENTARIO-FRASES.md:274
+    design/especime-v3/INVENTARIO-FRASES.md:275
+    design/especime-v3/INVENTARIO-FRASES.md:276
+    design/especime-v3/INVENTARIO-FRASES.md:277
+    design/especime-v3/INVENTARIO-FRASES.md:2821
+    design/especime-v3/INVENTARIO-FRASES.md:2835
+    design/especime-v3/INVENTARIO-FRASES.md:2836
+    design/especime-v3/INVENTARIO-FRASES.md:2837
+    design/especime-v3/INVENTARIO-FRASES.md:2838
+    design/especime-v3/INVENTARIO-FRASES.md:2839
+    design/especime-v3/INVENTARIO-FRASES.md:2840
+    design/especime-v3/INVENTARIO-FRASES.md:2847
+    design/especime-v3/INVENTARIO-FRASES.md:2848
+    design/especime-v3/INVENTARIO-FRASES.md:2851
+    design/especime-v3/INVENTARIO-FRASES.md:2852
+    design/especime-v3/INVENTARIO-FRASES.md:2853
+    design/especime-v3/INVENTARIO-FRASES.md:2854
+    design/especime-v3/INVENTARIO-FRASES.md:2855
+    design/especime-v3/INVENTARIO-FRASES.md:2856
+    design/especime-v3/INVENTARIO-FRASES.md:2857
+    design/especime-v3/INVENTARIO-FRASES.md:287
+    design/especime-v3/INVENTARIO-FRASES.md:290
+    design/especime-v3/INVENTARIO-FRASES.md:293
+    design/especime-v3/INVENTARIO-FRASES.md:305
+    design/especime-v3/INVENTARIO-FRASES.md:306
+    design/especime-v3/INVENTARIO-FRASES.md:307
+    design/especime-v3/INVENTARIO-FRASES.md:308
+    design/especime-v3/INVENTARIO-FRASES.md:309
+    design/especime-v3/INVENTARIO-FRASES.md:310
+    scripts/gate-html.mjs:4133
+    scripts/gate-html.mjs:4189
+    scripts/gate-html.mjs:4330
+    src/i18n/strings.mjs:1188
+    src/i18n/strings.mjs:1262
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    DECISIONS.md:12175
+    DECISIONS.md:12183
+    scripts/gate-html.mjs:4134
+    scripts/gate-html.mjs:4189
+    scripts/gate-html.mjs:4330
+§1.110 · «A casa» sai do Método e do Sobre
+    DECISIONS.md:12187
+    design/especime-v3/INVENTARIO-FRASES.md:2917
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:115
+§1.112 · O lugar de direção dirige o sítio; o diretor é o leitor
+    DECISIONS.md:12262
+    DECISIONS.md:12268
+    DECISIONS.md:12401
+    DECISIONS.md:12964
+§1.113 · O Codex constrói e o Claude lê: a primeira peça da reconstrução da superfície
+    DECISIONS.md:12498
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    DECISIONS.md:12349
+    DECISIONS.md:12387
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:123
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:120
+    scripts/design-bundle.mjs:1238
+    scripts/design-bundle.mjs:2117
+    scripts/design-bundle.mjs:511
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    DECISIONS.md:12411
+    DECISIONS.md:12417
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:103
+    scripts/gate-html.mjs:4155
+§1.121 · O M4: o estudo 11 não entra no portão do motor como está, a razão é medida, e o portão passa a ver um livro-razão que ninguém declara
+    DECISIONS.md:12455
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    DECISIONS.md:12472
+    DECISIONS.md:13076
+    DECISIONS.md:13082
+    DECISIONS.md:13090
+    design/especime-v3/INVENTARIO-FRASES.md:3006
+    design/especime-v3/INVENTARIO-FRASES.md:3045
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:410
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:199
+    tests/cartao/cartao.mjs:129
+    tests/cartao/cartao.mjs:131
+§1.125 · O M4b: o livro-razão do estudo 11 reparado e declarado no portão, a peça corrigida no ar, e o construtor que passou a ser o Opus 5.5
+    DECISIONS.md:12470
+§1.126 · O Portal BASE caído no motor e no Método (R1, mandato 10)
+    DECISIONS.md:12463
+    DECISIONS.md:12470
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    DECISIONS.md:12507
+§1.128 · O lançamento do construtor do Codex passa ao lugar de direção
+    DECISIONS.md:12507
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    DECISIONS.md:12523
+    design/especime-v3/INVENTARIO-FRASES.md:3167
+    tests/cartao/leituras.mjs:6
+§1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
+    DECISIONS.md:12549
+§1.131 · O L1 lido a frio pelo Codex e corrigido, as duas decisões do diretor de 26.09 (a reserva da semana gasta na aterragem; o cabaz da DECO fica fora), a ideia do tracker dos rendimentos e dos preços, e a aterragem
+    DECISIONS.md:12895
+    DECISIONS.md:12916
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    DECISIONS.md:12999
+    DECISIONS.md:13187
+    design/especime-v3/INVENTARIO-FRASES.md:3057
+    src/i18n/strings.mjs:1718
+    src/views/HomeView.astro:4
+§1.134 · O sítio que se atualiza e pensa sozinho: a decisão do diretor de 28.09.2026 sobre a atualização, a arrumação e a autonomia editorial
+    DECISIONS.md:13061
+    DECISIONS.md:13120
+§1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
+    DECISIONS.md:13057
+§1.136 · A primeira página de um leitor comum: cinco blocos com condições em vez de valores presos, seis entradas por pergunta da vida, e a aterragem
+    DECISIONS.md:13181
+    DECISIONS.md:13187
+    DECISIONS.md:13193
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    DECISIONS.md:13057
+    scripts/gate-html.mjs:227
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    DECISIONS.md:13112
+    design/especime-v3/INVENTARIO-FRASES.md:3504
+    design/especime-v3/INVENTARIO-FRASES.md:3506
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:499
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:379
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:380
+    scripts/gate-html.mjs:18
+    scripts/gate-html.mjs:40
+    src/data/primeira-pagina.mjs:165
+    tests/cartao/cartao.mjs:127
+    tests/cartao/cartao.mjs:1666
+    tests/cartao/cartao.mjs:27
+    tests/cartao/cartao.mjs:273
+    tests/cartao/cartao.mjs:300
+    tests/cartao/cartao.mjs:398
+    tests/cartao/cartao.mjs:469
+    tests/cartao/leituras.mjs:401
+    tests/cartao/leituras.mjs:97
+§1.141 · As corridas prontas a armar (o F2.2b): o sítio por um ramo com o portão verde antes de `main`, o painel semanal e o varrimento mensal no GitHub, dormentes até aos interruptores do diretor, lidas a frio quatro vezes; e a aterragem do UE1
+    DECISIONS.md:13156
+§1.142 · O modelo do Codex é o mais recente que a conta aceita, a xhigh; o revisor automático das aprovações gastava um terço da quota; e a aterragem do F2.2b
+    DECISIONS.md:13189
+102 decisão(ões) citada(s) em 64 ficheiro(s)

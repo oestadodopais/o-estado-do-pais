@@ -1,0 +1,3436 @@
+{
+  "bloco": "N1",
+  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+  "construcao": {
+    "commit": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+    "ref": "n1-2026-09-30",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-30T09:59:41.093Z"
+  },
+  "inicio": "2026-09-30T10:01:05.456Z",
+  "fim": "2026-09-30T10:02:01.450Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 90,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-pt-390.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "9d5194738c54cede0a1a718d69ddd021188fbcaceb590fecaa229678e80f1d77",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 7194,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 18,
+              "y": 3980.359375,
+              "largura": 354,
+              "altura": 778
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-pt-390.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "6cecd58b5b54d9e879dc645742884a84c78d018e93fc5d3426e03604ef4d0999",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2502,
+        "h1": "Preços",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-pt-390.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "208b40712a71acd0c658231d004f9de7611f34fd3ea0f66e3502fac140e8bb4d",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2976,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-pt-390.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/pobreza-e-desigualdade/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "4c59d2b30075ffb08bdb848f4e14a4d9a3327bbbfde7756215ec788c9e364556",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2442,
+        "h1": "Pobreza e desigualdade",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 73.921875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-pt-390.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "41b6595d9658207d16ab8b1c7c7858385e35a72b387f11e47c5920ad18f2856a",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3386,
+        "h1": "Emprego",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-pt-390.png",
+      "pagina": "habitacao",
+      "rota": "/habitacao/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "ee8af7203b321a15ae2850fcaea091c24a186300665decf8b566fad856031a7c",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3274,
+        "h1": "Habitação",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-pt-390.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/educacao-e-saude/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "545d4d466f873be39fffea93e4d450e9a57d68fe92791c38b017a57fc203e9c9",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1679,
+        "h1": "Educação e saúde",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 73.921875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-pt-390.png",
+      "pagina": "estado-e-economia",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "6b2e3d8e80aa427ebc45f746583b68d0ec59b108ff1a11ad15e2c8c5e4f1097a",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6051,
+        "h1": "Estado e economia",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 73.921875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-pt-390.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "2c6a784010a963b385419ad5414e1012cba51b126638b9fc17fe1d3e0a77b86a",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 5321,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 30.234375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 220.1875,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 18,
+              "y": 2883.9375,
+              "largura": 354,
+              "altura": 2179.0625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-pt-768.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "2f2709dda05b816baebca4042eb7a583821909e4cdfd40f39524a184506665e2",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5824,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 30.71875,
+              "y": 3316.71875,
+              "largura": 706.5625,
+              "altura": 431
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-pt-768.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "7e05d09ec0be89480031db7d9579a4678a77c0e40db7f2a926aaf57728509145",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1729,
+        "h1": "Preços",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-pt-768.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "970d366edb97565df4c00be75af376588e19b369a8d612937326e3a9828390ce",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2472,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-pt-768.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/pobreza-e-desigualdade/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "b982cefc3f899a6c240abfecfb9f0abd20d58b677ab0ede453e548dc7381d78e",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1634,
+        "h1": "Pobreza e desigualdade",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-pt-768.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "445679a8be518fb7cdb7039bb766dc5c63e8ee516d8e1c5a0a75c4f047fb5351",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2676,
+        "h1": "Emprego",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-pt-768.png",
+      "pagina": "habitacao",
+      "rota": "/habitacao/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "73e6a1d0c7af39832ed994c74efdc3e950eb29dcc37ff285b92dba37c3b78394",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2199,
+        "h1": "Habitação",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-pt-768.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/educacao-e-saude/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "9e4afacf52caf090dab61ebb3b27060944ba1129e0e9ae36d65c35a60aae4d5f",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1428,
+        "h1": "Educação e saúde",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-pt-768.png",
+      "pagina": "estado-e-economia",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "eea3ceb7b0713794396dcaba8af0be5673b93f0851c2b8a10367eda138778067",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 4363,
+        "h1": "Estado e economia",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-pt-768.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "a8ff7f4f399810ea737bc6a9fafbea8827579b23fa408f5a9af0cf3e3adaf476",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 4032,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 205.875,
+              "largura": 706.5625,
+              "altura": 36.5
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 262.328125,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 30.71875,
+              "y": 1723.4375,
+              "largura": 706.5625,
+              "altura": 2098.828125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-pt-1024.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "9b8575f3b9fd50a3b9ca321b69eed4ee994e2ad1beecb02651ec0c293f94c564",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5266,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 40.953125,
+              "y": 2940.5,
+              "largura": 942.09375,
+              "altura": 381
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-pt-1024.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "f77e4e0a75dcf11d8cef201f8781d0f57ebabff12a0f194acaa1a8b5b31134c7",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1541,
+        "h1": "Preços",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-pt-1024.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "6e2a39692b851ba5cccc6edef0fb88ccedee9a8f065fd37fa6f6c3942b5f5173",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2050,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-pt-1024.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/pobreza-e-desigualdade/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "599d2fd7fd87f3b588124c5a85cbcb845b11e4fdbe3596c94e63019d791a6f61",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1782,
+        "h1": "Pobreza e desigualdade",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-pt-1024.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "2ffefa8e2eb7f64f8a64142e18f6afb068f62bee61ebad91bc9dddd31263cd7d",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2436,
+        "h1": "Emprego",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-pt-1024.png",
+      "pagina": "habitacao",
+      "rota": "/habitacao/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "7ccba619e2a3feeb4eb01a91bc5cfc5b111bae55937b94f71a11ffe8adf13882",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2360,
+        "h1": "Habitação",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-pt-1024.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/educacao-e-saude/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "ef949ee7b3364b75b6fc42cee25159074a51b7e1a6907f623b150e24cffd0167",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1230,
+        "h1": "Educação e saúde",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-pt-1024.png",
+      "pagina": "estado-e-economia",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "e763e20d83cb32acf88a71485ddff0740c6438f20bc73ed3610ed6650d754b65",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4132,
+        "h1": "Estado e economia",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-pt-1024.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "d49b270b4bce878a906e8400eebee1c5509f90ffc2df1c86a058098ea3a2812b",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3995,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 229.953125,
+              "largura": 942.09375,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 301.921875,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 40.953125,
+              "y": 1657.3125,
+              "largura": 942.09375,
+              "altura": 2172.484375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-pt-1280.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "6b8e634c4b2e88a98a0d819d0d12ed6aaffd7eced3807c585cfcdb4bff59c4f4",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 5125,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 94,
+              "y": 2756.734375,
+              "largura": 1092,
+              "altura": 339
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-pt-1280.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "a64e90d272321ff3a07c01f93c1f0f9ff09fe1cb9d01c67931b4639785104c62",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1722,
+        "h1": "Preços",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-pt-1280.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "ba29c132026091191cc61c43010ad0eeae3b656bb2d4eb629f5cc1c4cf09441c",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2272,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-pt-1280.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/pobreza-e-desigualdade/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "847abbb1e0ca9511fdbe50aa3d5f1ab49d077e2ae81a2c6122cd545dc925c941",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2025,
+        "h1": "Pobreza e desigualdade",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-pt-1280.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "44a0a111302641279a4526560d742cf0e355870dfd4e1f74a3131f9bdc988ed9",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2796,
+        "h1": "Emprego",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-pt-1280.png",
+      "pagina": "habitacao",
+      "rota": "/habitacao/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "1f48697c70fd57c69561fde206c51158979d0994f9706cd62de943eae9bcd89b",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2644,
+        "h1": "Habitação",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-pt-1280.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/educacao-e-saude/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "6d3bffcb6ad7c56e6e7fe4ca9869c9479f68342b52758dadce7e94590d7271c4",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1332,
+        "h1": "Educação e saúde",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-pt-1280.png",
+      "pagina": "estado-e-economia",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "8a5a7fd99ff939d227d3f88a7c7a026943a457566bc46b85b1038c863e9a6a03",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4214,
+        "h1": "Estado e economia",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-pt-1280.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "219ccd3cfaf03052d63abbd480efc7d3dec2ad693a4d98e53b995630609736fe",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4088,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 230.359375,
+              "largura": 1092,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 303.71875,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 94,
+              "y": 1706.359375,
+              "largura": 1092,
+              "altura": 2197.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-pt-1600.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "cb0ba3be64ce94cb034ec9c36a914423b24fb413dcbd1b2e28006d5f40e3f3b6",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 5143,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 254,
+              "y": 2761.390625,
+              "largura": 1092,
+              "altura": 339
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-pt-1600.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "b21acb29138e2327660e8f2139ff0eb137bd774c9f09ea1d0c18ef33ca2708db",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1503,
+        "h1": "Preços",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-pt-1600.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "58b1fcb7e82d4c600700bd19013fe3240f30b34f501422aef6494081fe37c63d",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2058,
+        "h1": "Salários, pensões e apoios",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-pt-1600.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/pobreza-e-desigualdade/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "c82359b0ada163ca256f4ea05ee1e77b778025b3475bb569b037657c6c2661ee",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1702,
+        "h1": "Pobreza e desigualdade",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-pt-1600.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "5643f056f62765110ee80b00b4d27125ef8c1a193ec02e27db13a5d5b8bbdae8",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2305,
+        "h1": "Emprego",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-pt-1600.png",
+      "pagina": "habitacao",
+      "rota": "/habitacao/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "4fcb1e84149b2704363810345d6259796c4cdfb84b3b34a6c2cfb41fef5ea098",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2291,
+        "h1": "Habitação",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-pt-1600.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/educacao-e-saude/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "b06eaa994b7f4da93e8819cc2eb98e90dde0a38cceec25442c3d13ccfb91d9ce",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1236,
+        "h1": "Educação e saúde",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-pt-1600.png",
+      "pagina": "estado-e-economia",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "067e7b6e83cbf8241abf3884e48904448a828fb61dd680b9fdb9778f703632bb",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3930,
+        "h1": "Estado e economia",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-pt-1600.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "a93ce7b415f3c2e3b1095be2a3fcf0a2731ff177e9560393fc71d926a7908324",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4103,
+        "h1": "Lugares",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 230.359375,
+              "largura": 1092,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 303.71875,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 254,
+              "y": 1712.453125,
+              "largura": 1092,
+              "altura": 2200.59375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-en-390.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "65d3ad9ef64b27eefcd4c4c0947c205dc3822c117ad5ff5fe28c3490bf6b9908",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 7138,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 18,
+              "y": 3918.859375,
+              "largura": 354,
+              "altura": 757
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-en-390.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "9d23a3bf21d8682527a1a207e358e0d5e861d7857feffa24a86e19e2408b2c08",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2508,
+        "h1": "Prices",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-en-390.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "95893dc108b57ef4b88229003f7a3d9ecf59f8a8a70859e1246a0ebc5d8e7cfe",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3008,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-en-390.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/en/poverty-and-inequality/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "4f39461691c44bcdf887509991c95498a6761415af2dc5fac4f65865111b94d5",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2462,
+        "h1": "Poverty and inequality",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-en-390.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "ffb2bc309128178dad1cc2b616ee8937b117e46fcdcdc6bbcc0b949189416218",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3393,
+        "h1": "Employment",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-en-390.png",
+      "pagina": "habitacao",
+      "rota": "/en/housing/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "f00c614e8961befd112c76c0ee061d458c474b5b567bd9aad7f2616bb33f0a93",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3201,
+        "h1": "Housing",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-en-390.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/en/education-and-health/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "e9bad9c4944cd2cec39b74c8e6769acdb035df2b89ab81bbd01eaf6f1e7c660a",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1685,
+        "h1": "Education and health",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 73.921875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-en-390.png",
+      "pagina": "estado-e-economia",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "fd939ea94ee7a4a9b5941529a527d9d5f1103521974ec8e4bd9804bd94d0e58e",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6067,
+        "h1": "State and economy",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 32.1875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 210.140625,
+              "largura": 354,
+              "altura": 73.921875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-en-390.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "ec513009cd612475498b04d28d5c5bd1759f08ee827cb73dcb22fa845d93a54e",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 5368,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 18,
+              "y": 171.953125,
+              "largura": 354,
+              "altura": 30.234375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 18,
+              "y": 220.1875,
+              "largura": 354,
+              "altura": 49.28125
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 18,
+              "y": 2883.9375,
+              "largura": 354,
+              "altura": 2179.0625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-en-768.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "895c7a1b92ee558e25549f88c226df0ec47ecbb1531813c1ae86cd637586b780",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5850,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 30.71875,
+              "y": 3316.71875,
+              "largura": 706.5625,
+              "altura": 410
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-en-768.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "261424eeead4fae609a7ba0c894ecc52c32a2113159d96302826e857467b5c87",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1691,
+        "h1": "Prices",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-en-768.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "6a4b6e651ada3c9483db947bbdd88b58ec45fc89624c8fe0e4840bf5aaa87cc2",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2393,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-en-768.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/en/poverty-and-inequality/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "0bec26e92f49f9596e4a3db266559f55928565cc202dd25f4c2d71a8cb7c14e1",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1596,
+        "h1": "Poverty and inequality",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-en-768.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "fd7f06a21b1dd8c049415a058d6300aef35fff6aded7ce60473ea8eb82cbe201",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2679,
+        "h1": "Employment",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-en-768.png",
+      "pagina": "habitacao",
+      "rota": "/en/housing/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "d5fc6cab3c267f3bd525b82a82e20c495357803ce549415e4ac5520ce074c6b2",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2154,
+        "h1": "Housing",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-en-768.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/en/education-and-health/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "7f4e66a8644c87176e148c0f4d4a3badf73696d084545c60461c0bdaa0fb74f6",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1408,
+        "h1": "Education and health",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-en-768.png",
+      "pagina": "estado-e-economia",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "123be515da4318d880df792b55c2e0eeed5773f1bb50b75cae75cbc686f2be0e",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 4397,
+        "h1": "State and economy",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 202.203125,
+              "largura": 706.5625,
+              "altura": 38.859375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 247.0625,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-en-768.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "b150f7ecdef8fc82c393b86005d482de28c50c0b22babfdfac964bcd73bc11ab",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 4032,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 30.71875,
+              "y": 205.875,
+              "largura": 706.5625,
+              "altura": 36.5
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 30.71875,
+              "y": 262.328125,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 30.71875,
+              "y": 1723.4375,
+              "largura": 706.5625,
+              "altura": 2098.828125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-en-1024.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "4ead8465032f67ddeeeb75145182517350db10d121240c6138a8c8b6663e7ff5",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5361,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 40.953125,
+              "y": 3039.546875,
+              "largura": 942.09375,
+              "altura": 318
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-en-1024.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "a0d7a2d77410cc2824eba247cb9008e448c881f97c06317adcd96eca2bd0376b",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1538,
+        "h1": "Prices",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-en-1024.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "f9582df02bb4599c5f91387a267100495efef3ca80e1082ef5767a8f2777f77d",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2048,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-en-1024.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/en/poverty-and-inequality/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "39811d3106a15976a3359ac8dd2b6d731524d95e051abc6c4ccf07be0641b84e",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1758,
+        "h1": "Poverty and inequality",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-en-1024.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "ca697d74c9bede6bd1efbe69572755046b27f62aad8e4d27514fdea7fc9f486c",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2402,
+        "h1": "Employment",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-en-1024.png",
+      "pagina": "habitacao",
+      "rota": "/en/housing/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "dcb6af6dce4c47faeea157f773ebfda034a342811087ce5ee7c0f763873b1da7",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2330,
+        "h1": "Housing",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-en-1024.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/en/education-and-health/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "6290b05a344f5c54d222199992d02c24c37457863159908e35ca7e52c7f16b5a",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1244,
+        "h1": "Education and health",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-en-1024.png",
+      "pagina": "estado-e-economia",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "e9fedc536f22e330092c353b873104ec736cd029221e18a9b6a15430e6d134f4",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4178,
+        "h1": "State and economy",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 223.953125,
+              "largura": 942.09375,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 278.25,
+              "largura": 612,
+              "altura": 49.28125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-en-1024.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "344c6eac59bdb78919b3edf64aefb1d9e5b3fe000062039050b222540c486721",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4030,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 40.953125,
+              "y": 229.953125,
+              "largura": 942.09375,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 40.953125,
+              "y": 301.921875,
+              "largura": 612,
+              "altura": 24.640625
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 40.953125,
+              "y": 1657.3125,
+              "largura": 942.09375,
+              "altura": 2172.484375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-en-1280.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "637e48f34481e869d88c1e652a2992c93aa04b8acdc1b1dda616acdd1d8ebcf1",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 5206,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 94,
+              "y": 2811.984375,
+              "largura": 1092,
+              "altura": 318
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-en-1280.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "2e4786128730737103556e95722f342cebe4a42093a5573288d4475baa7fe5ab",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1656,
+        "h1": "Prices",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-en-1280.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "c40b02cefc0b8e455e9eac39a2e6dc28b8a02c5971c3513fbee6436b4b5e1017",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2214,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-en-1280.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/en/poverty-and-inequality/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "d0e2dec6f4b2ac331725cb5f3d4fec6d3ed3ff45ad46fbe747f08040ca44bdb9",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1934,
+        "h1": "Poverty and inequality",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-en-1280.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "d18f1203e0f326b27fc88076abf695f70a8aac0c217be6de2867509775013618",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2748,
+        "h1": "Employment",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-en-1280.png",
+      "pagina": "habitacao",
+      "rota": "/en/housing/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "3710caf0672db0cfdd08f8fbc624486bdbf0569b1dda27347489ae752d555f8b",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2556,
+        "h1": "Housing",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-en-1280.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/en/education-and-health/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "d985912eaaa154a0e542f028bd643bef63d742c7b5373f1f83ae2d4c2c2ce72f",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1291,
+        "h1": "Education and health",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-en-1280.png",
+      "pagina": "estado-e-economia",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "379af541f9b978cbfd6698eb2f347674a4847918c6950d4ed32c4356e01e0a4e",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4110,
+        "h1": "State and economy",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-en-1280.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "37026ea481bc57309a0c93cc7e500d7f194a57e1797afad1128777328ea858f5",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4126,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 94,
+              "y": 230.359375,
+              "largura": 1092,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 94,
+              "y": 303.71875,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 94,
+              "y": 1706.359375,
+              "largura": 1092,
+              "altura": 2235.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/primeira-en-1600.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "39f0952be913da052f03ad3539b74f968ab0b40fdbb249027628fdc153ba728c",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 5224,
+        "blocos": 5,
+        "portas": 8,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "UL",
+            "caixa": {
+              "x": 254,
+              "y": 2816.640625,
+              "largura": 1092,
+              "altura": 318
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/precos-en-1600.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "1334cd6282e004440e1020e05ffa2147d9ff1ddcdfddb1e1acf58bb22e14e07d",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1503,
+        "h1": "Prices",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/salarios-pensoes-e-apoios-en-1600.png",
+      "pagina": "salarios-pensoes-e-apoios",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "0499a6e147030182670d638f04382036f76245a4c7e3e9507ab343ee86921ad3",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2000,
+        "h1": "Pay, pensions and benefits",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/pobreza-e-desigualdade-en-1600.png",
+      "pagina": "pobreza-e-desigualdade",
+      "rota": "/en/poverty-and-inequality/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "3655a2bd985fa2efac498e926ad1d230961ff8f4aa73e3155d2042604464d618",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1654,
+        "h1": "Poverty and inequality",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/emprego-en-1600.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "86fef681628d1b3549ceb28e81b86fb65b9e6dabdc9f4ebc14ed0b0baea4ff63",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2318,
+        "h1": "Employment",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 7,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/habitacao-en-1600.png",
+      "pagina": "habitacao",
+      "rota": "/en/housing/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "9893eb19e4e148de99a863f5c4c9fa2e283c44321613cceb1d8921adf89972fb",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2247,
+        "h1": "Housing",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 6,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/educacao-e-saude-en-1600.png",
+      "pagina": "educacao-e-saude",
+      "rota": "/en/education-and-health/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "f6a07049a91985bb0d7b539353e93f17a701fbac2c886953b1ba19182da00638",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1215,
+        "h1": "Education and health",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 4,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/estado-e-economia-en-1600.png",
+      "pagina": "estado-e-economia",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "6465532da82709bcf3883e16c0cce1d931c80a0ebf2ce74af4d19c78db3f0683",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3930,
+        "h1": "State and economy",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 13,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 224.359375,
+              "largura": 1092,
+              "altura": 48.296875
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 278.65625,
+              "largura": 684,
+              "altura": 55.09375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/n1-2026-09-30/lugares-en-1600.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "03e555c8c2db191e002e1e2709e1bebf816dadef7596b477db491757bf550a5a",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4141,
+        "h1": "Places",
+        "blocos": 0,
+        "portas": 0,
+        "cartoes": 0,
+        "cartoes_que_transbordam": [],
+        "caixas": [
+          {
+            "elemento": "H1",
+            "caixa": {
+              "x": 254,
+              "y": 230.359375,
+              "largura": 1092,
+              "altura": 45.359375
+            }
+          },
+          {
+            "elemento": "P",
+            "caixa": {
+              "x": 254,
+              "y": 303.71875,
+              "largura": 684,
+              "altura": 27.546875
+            }
+          },
+          {
+            "elemento": "SECTION",
+            "caixa": {
+              "x": 254,
+              "y": 1712.453125,
+              "largura": 1092,
+              "altura": 2238.984375
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

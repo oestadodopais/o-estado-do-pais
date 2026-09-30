@@ -1,0 +1,40 @@
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
+
+  O feixe de cartões do sistema de desenho
+  design-system/ · de dist/ no commit c22c21e · 20 cartões, 11 ficheiros de letra e um README
+
+  ficheiro                          grupo          bytes  ok
+  01-cor.html                       Fundamentos   376376  ✓
+  02-tipo.html                      Fundamentos   372529  ✓
+  03-selo-e-marcador.html           Componentes   410181  ✓
+  04-regua.html                     Disposições   374621  ✓
+  05-mapa.html                      Disposições   440941  ✓
+  06-estados.html                   Componentes   372004  ✓
+  07-cartoes.html                   Componentes   287419  ✓
+  10-pagina-primeira.html           Páginas       545222  ✓
+  11-pagina-primeira-escuro.html    Páginas       546133  ✓
+  12-pagina-linha-livro-razao.html  Páginas       226374  ✓
+  13-pagina-livro-razao.html        Páginas       609713  ✓
+  14-pagina-municipio.html          Páginas       277781  ✓
+  15-pagina-lugares.html            Páginas       485586  ✓
+  16-pagina-metodo.html             Páginas       256182  ✓
+  17-pagina-agenda.html             Páginas       293005  ✓
+  18-pagina-estudos.html            Páginas       216965  ✓
+  19-pagina-sobre.html              Páginas       198922  ✓
+  20-pagina-correcoes.html          Páginas       278754  ✓
+  21-pagina-404.html                Páginas       197657  ✓
+  30-regras.html                    Fundamentos   240444  ✓
+
+  6842.6 KiB de cartões · maior cartão 595.4 KiB · tecto 596.75 KiB
+  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto
+  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)
+  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida
+
+  7452 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.
+  ✓ 20 cartões, 11 ficheiros de letra e um README em design-system/.

@@ -1,0 +1,8 @@
+{
+  "comando": "node design/especime-v3/medicoes/n1-2026-09-30/plantas-portoes.mjs",
+  "cabeca": "f76c58982a37df28325880ed7a5a062e81b512b5",
+  "inicio": "2026-09-30T09:46:09.449Z",
+  "fim": "2026-09-30T09:47:03.106Z",
+  "segundos": 53.655341,
+  "codigo": 0
+}

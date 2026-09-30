@@ -1,0 +1,27 @@
+[
+  {
+    "nome": "uma frase com um valor fora dos cartões de uma entrada fica por classificar",
+    "mordeu": true,
+    "queixa": "bloco por classificar em /precos: «Frase plantada fora dos cartões de uma entrada, com um valor ao lado.»"
+  },
+  {
+    "nome": "a marca dos blocos numa página de concelho não tira nada do inventário",
+    "mordeu": true,
+    "queixa": "bloco por classificar em /municipios/abrantes: «Frase plantada com a marca dos blocos numa página de concelho.»"
+  },
+  {
+    "nome": "a marca do veredicto numa página de concelho não tira nada do inventário",
+    "mordeu": true,
+    "queixa": "bloco por classificar em /municipios/abrantes: «Frase plantada com a marca do veredicto numa página de concelho.»"
+  },
+  {
+    "nome": "controlo: dentro de um cartão de uma entrada, a régua faz o que faz na página dos temas",
+    "mordeu": true,
+    "queixa": null
+  },
+  {
+    "nome": "controlo: a marca dos blocos na primeira página tira a frase do inventário",
+    "mordeu": true,
+    "queixa": null
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "resultados": [
+    {
+      "nome": "convergencia-sem-marca",
+      "ficheiro": "lugares/index.html",
+      "comando": "scripts/check-lugar.mjs",
+      "codigo": 1,
+      "mordida": "réguas da convergência fora de \\/regioes: 1, acima do teto 0",
+      "antes": "276c24b03f2ea3e6f7fac32f3cc9081153f74b7bc8b9dfd0ae13cf86c231d599",
+      "reposto": "276c24b03f2ea3e6f7fac32f3cc9081153f74b7bc8b9dfd0ae13cf86c231d599",
+      "log": "design/especime-v3/medicoes/n1-2026-09-30/ensaios/planta-convergencia-sem-marca.log",
+      "passou": true
+    },
+    {
+      "nome": "trabalho-como-estudo",
+      "ficheiro": "index.html",
+      "comando": "scripts/check-lugar.mjs",
+      "codigo": 1,
+      "mordida": "L3 · palavras fora do vocabulário fechado: 1, acima do teto 0",
+      "antes": "f6111af6b87cab98432ec5f29825d628b249b5c7c83b2e17e5d936cce4f4ca32",
+      "reposto": "f6111af6b87cab98432ec5f29825d628b249b5c7c83b2e17e5d936cce4f4ca32",
+      "log": "design/especime-v3/medicoes/n1-2026-09-30/ensaios/planta-trabalho-como-estudo.log",
+      "passou": true
+    },
+    {
+      "nome": "data-do-recibo",
+      "ficheiro": "livro-razao/pib-real-per-capita-2025/index.html",
+      "comando": "scripts/check-formas.mjs",
+      "codigo": 1,
+      "mordida": "recibo da linha \"pib-real-per-capita-2025\".*falta\\(m\\) verificacao",
+      "antes": "0554cecf61f66421189ddde62b1f697a26edc797d9465adba6489ac99777490d",
+      "reposto": "0554cecf61f66421189ddde62b1f697a26edc797d9465adba6489ac99777490d",
+      "log": "design/especime-v3/medicoes/n1-2026-09-30/ensaios/planta-data-do-recibo.log",
+      "passou": true
+    },
+    {
+      "nome": "selo-nos-lugares",
+      "ficheiro": "lugares/index.html",
+      "comando": "scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordida": "falta.*(marca|selo)|sem selo|não tem.*selo",
+      "antes": "276c24b03f2ea3e6f7fac32f3cc9081153f74b7bc8b9dfd0ae13cf86c231d599",
+      "reposto": "276c24b03f2ea3e6f7fac32f3cc9081153f74b7bc8b9dfd0ae13cf86c231d599",
+      "log": "design/especime-v3/medicoes/n1-2026-09-30/ensaios/planta-selo-nos-lugares.log",
+      "passou": true
+    },
+    {
+      "nome": "veredicto-destino-pt",
+      "conhecido_positivo": true,
+      "passou": true,
+      "queixas": [
+        "V1 pt: divida-publica-2025: o nome ou a porta difere da declaração."
+      ]
+    },
+    {
+      "nome": "veredicto-destino-en",
+      "conhecido_positivo": true,
+      "passou": true,
+      "queixas": [
+        "V1 en: divida-publica-2025: o nome ou a porta difere da declaração."
+      ]
+    }
+  ]
+}
