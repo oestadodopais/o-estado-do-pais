@@ -51,7 +51,7 @@
     "check:nomes": "node scripts/check-nomes-oficiais.mjs --prova",
     "check:palavras": "node tests/voz/palavras-proibidas.mjs --prova",
     "check:lugares": "node scripts/check-lugares.mjs",
-    "check:pais": "node scripts/check-pais.mjs",
+    "check:pais": "node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova",
     "check:primeira": "node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/pesquisa-da-primeira.mjs --prova",
     "check:privacidade": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova",
     "sinais": "node scripts/sinais-da-primeira-pagina.mjs --prova",

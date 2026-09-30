@@ -6,7 +6,7 @@
 id: "taxa-de-desemprego-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "6"
+value: "6,0"
 unit: "% da população ativa"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -33,7 +33,13 @@ study: "quadro-institucional"
 note: "Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 6.0. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-09-30"
+    kind: "correcao"
+    old_value: "6"
+    new_value: "6,0"
+    reason: "A apresentação omitira a casa decimal que o excerto da fonte já guardava: «6.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a quantidade nem declarar uma revisão da fonte."
+    reason_en: "The presentation omitted the decimal place already preserved in the source excerpt: «6.0». That decimal place is restored in the Portuguese number format, without changing the quantity or claiming a source revision."
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
