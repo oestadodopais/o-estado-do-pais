@@ -9,6 +9,7 @@ import { load } from 'js-yaml';
 import { parse } from 'node-html-parser';
 import { mudancasDoRegisto } from '../../src/lib/mudancas.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../../src/data/lugar-das-linhas.mjs';
+import { nomeNoRegistoAdmitido } from '../../scripts/nome-no-registo.mjs';
 const ids = ['taxa-de-desemprego-2025', 'taxa-de-desemprego-mip-2025', 'correcoes-publicadas'];
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const lerLinha = id => load(fs.readFileSync(`ledger/claims/${id}.yml`, 'utf8'));
@@ -66,6 +67,9 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
       const nome = li?.querySelector('.registo-mudanca-nome');
       if (!e.nome || normal(nome?.textContent) !== normal(e.nome.texto))
         erros.push(`E0b nome ${lang}: ${e.claim}, entrada ${e.n}, perdeu o nome da medida.`);
+      if (e.nome?.campo && nome && (!nomeNoRegistoAdmitido('correcoes', nome, e.claim, e.nome.campo) ||
+          nome.getAttribute('data-linha-claim') !== e.claim || nome.getAttribute('data-linha-campo') !== e.nome.campo))
+        erros.push(`E0b marca ${lang}: ${e.claim} perdeu a marca do campo do seu nome.`);
       medidas.nomes.push({ lang, id: e.claim, n: e.n, lido: normal(nome?.textContent), esperado: e.nome?.texto ?? null });
     }
     for (const id of ids) {
@@ -130,6 +134,16 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
   plantas.push(executar('data antiga do contador',
     'import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); return String(f).endsWith("ledger/claims/correcoes-publicadas.yml") ? String(b).replace(/reference_date: "[^"]+"/, "reference_date: \\"2026-08-12\\"") : b;}; const {conferirLinhasDaCasa}=await import("./tests/inicio/linhas-da-casa.mjs"); const r=conferirLinhasDaCasa(process.env.OEDP_DIST); for(const e of r.erros) console.log(e); if(r.erros.some(e=>e.startsWith("E0b datas:"))) process.exitCode=1;',
     /E0b datas: o contador tem uma data anterior/));
+  plantas.push(executar('valor pela marca do nome no portão real',
+    'import fs from "node:fs"; import {parse} from "node-html-parser"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); if(String(f).endsWith("/dist/correcoes/index.html")) {const r=parse(String(b)); r.querySelector("[data-correcao-entrada=divida-das-familias-2025-ue] .registo-mudanca-nome").setAttribute("data-linha-campo","value"); return r.toString();} return b;}; await import("./scripts/gate-html.mjs");',
+    /data-linha-claim="divida-das-familias-2025-ue" numa página que não é do livro-razão/));
+  const registo = parse(fs.readFileSync(path.join(dist, 'correcoes/index.html'), 'utf8'));
+  const nomeDaFonte = registo.querySelector('[data-correcao-entrada="divida-das-familias-2025-ue"] .registo-mudanca-nome');
+  for (const [nome, rota, id, campo] of [
+    ['nome fora da página do registo', 'home', 'divida-das-familias-2025-ue', 'document.title'],
+    ['nome de outra linha na entrada', 'correcoes', 'correcoes-publicadas', 'document.title'],
+  ]) plantas.push({ nome, mordeu: Boolean(nomeDaFonte) && !nomeNoRegistoAdmitido(rota, nomeDaFonte, id, campo),
+    queixa: 'A porta estreita do portão recusa o contexto plantado.', memoria_isolada: true });
   for (const id of ids) plantas.push(executar(`B: ${id} sem entrada selada`,
     `import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); if(String(f).endsWith("ledger/historias-valores.json")) {const h=JSON.parse(b); delete h[${JSON.stringify(id)}]; return JSON.stringify(h);} return b;}; await import("./scripts/check-ledger.mjs");`,
     new RegExp(`${id}\\.yml.*história do valor: a lista tem ${lerLinha(id).corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind)).length} entradas e o registo sela 0`)));
