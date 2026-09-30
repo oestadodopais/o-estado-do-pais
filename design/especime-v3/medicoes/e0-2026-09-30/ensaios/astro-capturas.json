@@ -1,0 +1,10 @@
+{
+  "comando": "npm run astro -- build",
+  "cabeca": "96b058dfe7c6835b134de310354ce7830e291f66",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T21:07:05.721Z",
+  "fim": "2026-09-30T21:07:16.408Z",
+  "segundos": 10.681188375,
+  "codigo": 0
+}

@@ -1,5 +1,6 @@
 {
   "cabeca": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+  "executado_na_cabeca": "1a281e1ddf9603aa37009c8bdf2b1f7c6ee533f0",
   "registo_limpo": {
     "pt": 3,
     "en": 3
@@ -22,6 +23,7 @@
     "source_url": null,
     "derivation": "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão. As atualizações não contam: uma atualização não é um erro admitido, e este número é o das confissões."
   },
+  "selador_original_conservado": true,
   "conhecido_positivo": true,
   "bloqueio_confirmado": true,
   "selador_ja_aceita_derivadas": true,

@@ -1,0 +1,101 @@
+/** E0: escreve o relatório a partir das medidas e dos comprovativos efetivos. */
+import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
+const json = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+const medidas = json(`${pasta}/medidas.json`);
+const valor = nome => medidas.medidas.find(m => m.nome === nome).valor;
+const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const commits = execFileSync('git', ['log', '--reverse', '--format=%h|%s', `${medidas.base}..HEAD`], { encoding: 'utf8' }).trim().split('\n');
+const decisoes = execFileSync('python3', ['scripts/leituras/decisoes-em-vigor.py', '--intervalo', `${medidas.base}..HEAD`], { encoding: 'utf8' });
+fs.writeFileSync(`${pasta}/decisoes-em-vigor.txt`, decisoes);
+const custo = valor('custo');
+const construtor = custo.construtor;
+const inteiro = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+const decimal = n => String(n).replace('.', ',');
+const portoes = valor('portoes');
+const finais = medidas.aceitação.completa && medidas.cabeca === cabeca;
+const estado = finais ? 'O teste de aceitação do §2 está cumprido, com os três portões na cabeça final.' : 'O conteúdo e as provas locais estão medidos. Os três portões da cabeça final ainda estão por correr.';
+const linhas = portoes.map(p => `| \`npm run ${p.nome}\` | ${p.codigo === null ? 'Por correr' : `[${p.codigo}](portoes/${p.nome}.codigo)`} | ${p.cabeca ? `\`${p.cabeca}\`` : 'Por escrever'} | ${p.segundos === null ? 'Por medir' : decimal(p.segundos_relatorio)} |`).join('\n');
+const relatorio = `# E0 · As linhas do projeto e a correção do desemprego
+
+${estado}
+
+Construção por Codex \`${construtor.modelo}\`, no ramo \`e0-2026-09-30\`. Base: \`${medidas.base}\`. Cabeça desta medição: \`${cabeca}\`.
+
+## Mandato e medidas
+
+O guião [medir-e0.mjs](medir-e0.mjs) escreve [medidas.json](medidas.json), com ${medidas.medidas.length} medidas e um conhecido-positivo por medida. O código do medidor confirma as medições e as plantas; a aceitação completa exige também os portões na cabeça final. O §0 do brief foi reproduzido pelo seu guião antes da mudança.
+
+| # | Mandato | Medida e resultado |
+| --- | --- | --- |
+| 1 | O lugar do projeto | O resolvedor aceita a chave declarada, com o nome O Estado do País e a porta de Correções nas duas edições. A A3 recusa a falta da declaração; a A1 recusa uma declaração falsa de Portugal. |
+| 2 | As correções do desemprego | As 2 linhas estão em 6,0, cada uma com uma correção de 6 para 6,0, datada de 30.09.2026 e selada pelo guião. Os excertos conservam 6.0. |
+| 3 | A recontagem | O contador está em 5, com uma atualização de 3 para 5. A contagem direta do livro dá 5. O ledger:check dirigido deu 0 em [ensaios/livro.codigo](ensaios/livro.codigo). |
+| 4 | O que o leitor vê | A primeira página e o cartão do desemprego mostram 6,0 % nas duas edições. O registo mostra as 3 mudanças em cada edição, com Portugal nas correções e O Estado do País na recontagem. |
+| 5 | A célula e as decisões | A célula [linhas-da-casa.mjs](../../../../tests/inicio/linhas-da-casa.mjs) corre em check:pais, portanto no build e no verify. As ${valor('plantas_que_mordem').total} plantas mordem. A lista das decisões fica abaixo. |
+| 6 | O relatório e as provas | Este relatório, o medidor, as plantas, o custo e as ${valor('capturas').total} capturas estão nesta entrega. Os comprovativos finais atualizam-se depois do commit de entrega. |
+
+## O diagnóstico medido e o mecanismo
+
+A parte do diagnóstico que atribuía ao selador uma exigência de localizador externo não se reproduziu. A [prova do estado anterior](estado-anterior.json) recompõe em memória as linhas da base e confirma que os bytes do selador continuam iguais aos dessa base. Sela a entrada 3 para 5 numa cópia de uma linha com source_url nulo e derivação declarada, com código 0. O registo das mudanças recusa a mesma entrada sem lugar, nas duas edições. A prova corre também na cabeça final, sem checkout. A própria prova N1b já distinguia estas duas coisas.
+
+Parou-se nesse ponto da interpretação: não se reescreveu um selador que já aceita as linhas do projeto. A localização continua a ser a derivação. O [ensaio para E1](prova-e1.json) usa o mesmo selador numa cópia: conserva as ${valor('selador_disponivel_para_e1').antes} entradas de Évora e acrescenta uma atualização. A linha real de Évora fica em 6.
+
+[atualizar-linhas.mjs](atualizar-linhas.mjs) acrescenta as entradas datadas e chama o selador para cada linha. As ${valor('historia_anterior_conservada').linhas_anteriores} listas anteriores da história selada conservam os seus prefixos. Só mudaram os valores das 3 linhas autorizadas. Nenhum componente, vista ou folha de estilo mudou, incluindo a anatomia do cartão reservada ao K2. Nenhum ficheiro do repositório foi apagado.
+
+O lugar do projeto entra pela mesma resolução de chave que a União Europeia. O campo study não atribui automaticamente esse lugar. A segunda leitura da A3 verifica a declaração contra a origem interna e a expressão da contagem, mas não substitui a declaração em falta. As decisões §1.144, §1.145 e §1.146 continuam a orientar o mecanismo e o seu uso no E1.
+
+A célula permanente conserva as entradas históricas do E0, compara o valor atual com a última entrada selada e reconta todas as correções. Permite que a história cresça numa atualização futura. O medidor deste bloco exige os valores de aceitação 6,0, 6,0 e 5.
+
+## Plantas e conferências dirigidas
+
+As [plantas](plantas.json) usam processos isolados e cópias em memória. A planta A retira o lugar e exige código 1 com a queixa A3 do portão real, na mesma corrida que aceita a declaração. O resolvedor também recusa a falta. Uma declaração falsa de Portugal é recusada pela segunda leitura. As plantas B retiram cada entrada selada, separadamente, e exigem código 1 com a queixa de história do valor. Há ainda uma planta que retira o decimal da primeira página e outra que retira o lugar do registo inglês. Todas as ${valor('plantas_que_mordem').total} plantas mordem; os ficheiros reais ficam intactos.
+
+As conferências dirigidas do livro, da travessia, dos tipos e do país passaram. Os primeiros ensaios da célula falharam por um seletor de planta que nomeava a linha irmã, ausente da primeira página, e por rótulos esperados com maiúscula onde o registo usa minúscula. Os dois erros da célula foram corrigidos; as saídas anteriores e a corrida limpa ficam em ensaios. A primeira tentativa de captura foi impedida pela restrição do servidor local; a corrida com acesso ao servidor local terminou com código 0.
+
+## Capturas e inspeção
+
+As ${valor('capturas').total} imagens estão em \`design/especime-v3/capturas/e0-2026-09-30/\`: primeira página integral, cartão do desemprego em Emprego e secção integral das mudanças, a 390 e a 1 280 px, nas duas edições. O [manifesto](capturas-e0.json) guarda cabeça construída, dimensões e SHA-256. O medidor recalculou todos os resumos e encontrou ${valor('capturas').problemas.length} problemas de captura ou transbordo.
+
+O captor segue os guiões N1: servidor efémero local, fontes carregadas, pedidos externos recusados, movimento reduzido e escala do dispositivo fixa. A inspeção visual incluiu a primeira página e a secção das mudanças em português a 390 px, e o cartão em português a 390 px e em inglês a 390 e a 1 280 px. A disposição do cartão existente mantém-se.
+
+## Commits
+
+${commits.map(c => { const [h, texto] = c.split('|'); return `- \`${h}\`: ${texto}.`; }).join('\n')}
+
+O último commit de entrega inclui [RESPOSTA-construtor-e0.md](RESPOSTA-construtor-e0.md). A cabeça final lê-se dos ficheiros .cabeca e da resposta de fecho da sessão, fora do ramo.
+
+## Portões
+
+${finais ? `Os três comandos correram separadamente na cabeça final \`${cabeca}\`. Os códigos e cabeças foram lidos dos ficheiros acabados de escrever.` : 'Os três comandos finais correm depois do commit de entrega, cada um no seu comando. Esta tabela será regenerada a partir dos ficheiros acabados de escrever.'}
+
+| Comando | Código lido | Cabeça | Segundos |
+| --- | ---: | --- | ---: |
+${linhas}
+
+Antes de cada corrida inteira, consulta-se a lista de processos da máquina. Os registos passam pela limpeza dos caminhos e do nome da conta local. O medidor encontrou ${valor('ficheiros_com_dados_da_maquina').fugas.length} ficheiros com dados da máquina entre os ficheiros do bloco.
+
+Um commit não pode conter o seu próprio identificador. Os comprovativos finais, a atualização deste relatório, a resposta, o custo e o medidas.json ficam na árvore de trabalho depois do último commit, sem fazer outro commit que invalidasse a cabeça conferida. Os guiões que os reproduzem estão no ramo. A cabeça das capturas está declarada no manifesto e pode anteceder o commit que só entrega documentação e provas.
+
+## Decisões em vigor nos ficheiros tocados
+
+A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §1.127 em check-pais. Ambas se conservaram. A §1.146 é citada nas novas guardas do E0. A lista final foi obtida por \`python3 scripts/leituras/decisoes-em-vigor.py --intervalo ${medidas.base}..HEAD\`, também guardada em [decisoes-em-vigor.txt](decisoes-em-vigor.txt).
+
+\`\`\`text
+${decisoes.trimEnd()}
+\`\`\`
+
+## Custo e limites
+
+Amostra de ${custo.medido_em}, lida dos eventos token_count da sessão identificada pelo ambiente: ${inteiro(construtor.simbolos_sem_cache_mais_saida)} símbolos de entrada sem cache mais saída; ${inteiro(construtor.simbolos.total_tokens)} no total com cache; ${inteiro(construtor.simbolos.cached_input_tokens)} em cache. Tempo decorrido desde o início da sessão até à amostra: ${decimal(custo.segundos_decorridos)} segundos. Modelo efetivamente lido: \`${construtor.modelo}\`. Os revisores automáticos das aprovações têm os seus próprios contadores em [custo.json](custo.json).
+
+É uma amostra anterior ao fecho, não um custo em euros nem o contador final do terminal. A leitura a frio de outra família prevista no brief não foi feita nesta construção. O E1 continua a ser outro bloco. Não houve publicação.
+
+## O que fica por fazer
+
+${finais ? 'Nenhum item do teste de aceitação E0 fica por cumprir. A leitura a frio e a aterragem pertencem à fase seguinte.' : 'Correr os três portões na cabeça do commit de entrega, reler os códigos, regenerar as medidas e esta resposta. A leitura a frio e a aterragem pertencem à fase seguinte.'}
+`;
+fs.writeFileSync(`${pasta}/LEIA-ME.md`, relatorio);
+fs.writeFileSync(`${pasta}/RESPOSTA-construtor-e0.md`, `# E0 · Resposta do construtor\n\n${estado}\n\nAs 2 linhas do desemprego estão em 6,0, o contador está em 5 e as 3 mudanças têm lugar no registo. As histórias foram seladas pelo guião. A anatomia do cartão conserva-se.\n\nCabeça lida: \`${cabeca}\`. Commits: ${commits.map(c => `\`${c.split('|')[0]}\``).join(', ')}. Relatório: [LEIA-ME.md](LEIA-ME.md).\n\nCódigos lidos: ${portoes.map(p => `${p.nome}: ${p.codigo ?? 'por correr'}`).join('; ')}. Capturas e medidas nos caminhos do relatório.\n\n${finais ? 'Falta a leitura a frio e a aterragem, fora da construção E0.' : 'Faltam os portões da cabeça final e a atualização dos comprovativos.'}\n`);
+console.log(`E0: relatório e resposta escritos a partir da cabeça ${cabeca}; aceitação completa: ${finais}.`);
