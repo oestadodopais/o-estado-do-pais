@@ -1,38 +1,38 @@
 {
-  "medido_em": "2026-09-30T21:40:49.830969+00:00",
-  "segundos_decorridos": 3005.9,
+  "medido_em": "2026-09-30T21:58:14.651847+00:00",
+  "segundos_decorridos": 4050.7,
   "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
   "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
   "construtor": {
     "sessao": "01a0f415-78a6-7501-96dd-3c3c6df57a5b",
     "modelo": "gpt-6.1-sol",
     "inicio": "2026-09-30T20:50:43.925Z",
-    "ultima_amostra": "2026-09-30T21:40:37.601Z",
+    "ultima_amostra": "2026-09-30T21:58:05.939Z",
     "simbolos": {
-      "input_tokens": 11527225,
-      "cached_input_tokens": 11260928,
+      "input_tokens": 14288198,
+      "cached_input_tokens": 13963392,
       "cache_write_input_tokens": 0,
-      "output_tokens": 65113,
-      "reasoning_output_tokens": 28264,
-      "total_tokens": 11592338
+      "output_tokens": 76225,
+      "reasoning_output_tokens": 32285,
+      "total_tokens": 14364423
     },
-    "simbolos_sem_cache_mais_saida": 331410
+    "simbolos_sem_cache_mais_saida": 401031
   },
   "revisores_automaticos": [
     {
       "sessao": "01a0f43e-a6b4-7671-8f9a-6876c20550cf",
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T21:35:41.764Z",
-      "ultima_amostra": "2026-09-30T21:40:33.024Z",
+      "ultima_amostra": "2026-09-30T21:58:05.781Z",
       "simbolos": {
-        "input_tokens": 146362,
-        "cached_input_tokens": 104704,
+        "input_tokens": 954627,
+        "cached_input_tokens": 874240,
         "cache_write_input_tokens": 0,
-        "output_tokens": 519,
-        "reasoning_output_tokens": 77,
-        "total_tokens": 146881
+        "output_tokens": 1730,
+        "reasoning_output_tokens": 244,
+        "total_tokens": 956357
       },
-      "simbolos_sem_cache_mais_saida": 42177
+      "simbolos_sem_cache_mais_saida": 82117
     },
     {
       "sessao": "01a0f415-7c33-76a0-a67c-c8681d7d1fbc",

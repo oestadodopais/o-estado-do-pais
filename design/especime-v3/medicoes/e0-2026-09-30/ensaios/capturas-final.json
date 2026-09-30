@@ -1,10 +1,10 @@
 {
   "comando": "node design/especime-v3/medicoes/e0-2026-09-30/captar-e0.mjs",
-  "cabeca": "97ade15e42b7854b77d86bbafd2fc6d2d317af06",
+  "cabeca": "52eae9be3c6c1b1d28dfb8f0cbb1053c4956b79c",
   "arvore_por_registar": true,
   "codigo_por_registar": false,
-  "inicio": "2026-09-30T21:28:27.773Z",
-  "fim": "2026-09-30T21:28:36.232Z",
-  "segundos": 8.457242875,
+  "inicio": "2026-09-30T21:46:13.402Z",
+  "fim": "2026-09-30T21:46:21.631Z",
+  "segundos": 8.226984708,
   "codigo": 0
 }
