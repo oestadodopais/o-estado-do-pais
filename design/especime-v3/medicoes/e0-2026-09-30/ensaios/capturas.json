@@ -1,0 +1,10 @@
+{
+  "comando": "node design/especime-v3/medicoes/e0-2026-09-30/captar-e0.mjs",
+  "cabeca": "96b058dfe7c6835b134de310354ce7830e291f66",
+  "arvore_por_registar": true,
+  "codigo_por_registar": true,
+  "inicio": "2026-09-30T21:07:24.080Z",
+  "fim": "2026-09-30T21:07:24.277Z",
+  "segundos": 0.19488987500000002,
+  "codigo": 1
+}

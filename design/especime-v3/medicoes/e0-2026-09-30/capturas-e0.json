@@ -1,0 +1,318 @@
+{
+  "cabeca": "96b058dfe7c6835b134de310354ce7830e291f66",
+  "construcao": {
+    "commit": "96b058dfe7c6835b134de310354ce7830e291f66",
+    "ref": "e0-2026-09-30",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-09-30T21:07:23.946Z"
+  },
+  "inicio": "2026-09-30T21:07:40.022Z",
+  "fim": "2026-09-30T21:07:48.195Z",
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": 12,
+  "pedidos_externos_recusados": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-pt-390.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "seletor": null,
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "9598b6c84ffb8b87ecf43e6f194c3116ef5850b077cb86b8111117c4f5f78995",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "alvo": {
+          "largura": 354,
+          "altura": 6699.875,
+          "scroll": 354,
+          "client": 354
+        },
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-pt-390.png",
+      "pagina": "desemprego",
+      "rota": "/emprego/",
+      "seletor": "[data-cartao-medida=\"taxa-de-desemprego-mip-2025\"]",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "ee59558001b5da7cde4a9d76c07c1f3afc544b0396c0f1346c9bfff0b4806c30",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "alvo": {
+          "largura": 354,
+          "altura": 505.5,
+          "scroll": 354,
+          "client": 354
+        },
+        "valor": "6,0 % da população ativa",
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-pt-390.png",
+      "pagina": "mudancas",
+      "rota": "/correcoes",
+      "seletor": "[aria-labelledby=\"registo-mudancas\"]",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "c8708982a92539c571d11c2062558303dc167d9515ae3f5ccbd16d655697919e",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "alvo": {
+          "largura": 354,
+          "altura": 8546.296875,
+          "scroll": 351,
+          "client": 351
+        },
+        "mudancas": [
+          {
+            "id": "correcoes-publicadas",
+            "lugar": "O Estado do País"
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "lugar": "Portugal"
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "lugar": "Portugal"
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-pt-1280.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "seletor": null,
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "a661f2bdadceb55751832577ed207116044710b1476e64231adb6f5b4d2691a6",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "alvo": {
+          "largura": 1092,
+          "altura": 4678.15625,
+          "scroll": 1092,
+          "client": 1092
+        },
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-pt-1280.png",
+      "pagina": "desemprego",
+      "rota": "/emprego/",
+      "seletor": "[data-cartao-medida=\"taxa-de-desemprego-mip-2025\"]",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "9bdf44f19d75e2eb89f695761891219c794f0b4f71b7145de80ef476a83eaca6",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "alvo": {
+          "largura": 248.046875,
+          "altura": 650.765625,
+          "scroll": 248,
+          "client": 248
+        },
+        "valor": "6,0 % da população ativa",
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-pt-1280.png",
+      "pagina": "mudancas",
+      "rota": "/correcoes",
+      "seletor": "[aria-labelledby=\"registo-mudancas\"]",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "28f631eb1290848c343019df158cc589594111dce5ac74494d69f046e33fc88f",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "alvo": {
+          "largura": 544,
+          "altura": 8772.8125,
+          "scroll": 541,
+          "client": 541
+        },
+        "mudancas": [
+          {
+            "id": "correcoes-publicadas",
+            "lugar": "O Estado do País"
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "lugar": "Portugal"
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "lugar": "Portugal"
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-en-390.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "seletor": null,
+      "lang": "en",
+      "largura": 390,
+      "sha256": "2c1e93c78c7b39aef082ca0ccf1138fc5f05c64514637ec9ff99f10683eafd31",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "alvo": {
+          "largura": 354,
+          "altura": 6578.1875,
+          "scroll": 354,
+          "client": 354
+        },
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-en-390.png",
+      "pagina": "desemprego",
+      "rota": "/en/employment/",
+      "seletor": "[data-cartao-medida=\"taxa-de-desemprego-mip-2025\"]",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "37e40783a2085c9719ff380ba04fa001c9fe60009d9c1c110f2004be6c85e52b",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "alvo": {
+          "largura": 354,
+          "altura": 488.109375,
+          "scroll": 354,
+          "client": 354
+        },
+        "valor": "6,0 % of the labour force",
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-en-390.png",
+      "pagina": "mudancas",
+      "rota": "/en/corrections",
+      "seletor": "[aria-labelledby=\"registo-mudancas\"]",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "061f3c0049051181898e71fb59df20893ad6fc93c24ddcf0a1341ba170d78991",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "alvo": {
+          "largura": 354,
+          "altura": 8588.796875,
+          "scroll": 351,
+          "client": 351
+        },
+        "mudancas": [
+          {
+            "id": "correcoes-publicadas",
+            "lugar": "O Estado do País"
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "lugar": "Portugal"
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "lugar": "Portugal"
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-en-1280.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "seletor": null,
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "01c3d4025846ce18b479872ac2a0d122779d72ef62a7f6b13bb095a85fcd633d",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "alvo": {
+          "largura": 1092,
+          "altura": 4738.40625,
+          "scroll": 1092,
+          "client": 1092
+        },
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-en-1280.png",
+      "pagina": "desemprego",
+      "rota": "/en/employment/",
+      "seletor": "[data-cartao-medida=\"taxa-de-desemprego-mip-2025\"]",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "38bd59097c175a22828d317f3b6af06fbc5c408425ba250addfdced2be1ffb2b",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "alvo": {
+          "largura": 248.046875,
+          "altura": 606.1875,
+          "scroll": 248,
+          "client": 248
+        },
+        "valor": "6,0 % of the labour force",
+        "mudancas": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-en-1280.png",
+      "pagina": "mudancas",
+      "rota": "/en/corrections",
+      "seletor": "[aria-labelledby=\"registo-mudancas\"]",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "5defaa9c704958ce473cc0ceab4bd75336998b6eb6fe699ba107e6dbb6f85051",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "alvo": {
+          "largura": 544,
+          "altura": 8781.46875,
+          "scroll": 541,
+          "client": 541
+        },
+        "mudancas": [
+          {
+            "id": "correcoes-publicadas",
+            "lugar": "O Estado do País"
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "lugar": "Portugal"
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "lugar": "Portugal"
+          }
+        ]
+      }
+    }
+  ]
+}

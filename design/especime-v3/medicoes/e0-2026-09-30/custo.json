@@ -1,0 +1,39 @@
+{
+  "medido_em": "2026-09-30T21:13:01.206887+00:00",
+  "segundos_decorridos": 1337.3,
+  "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
+  "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
+  "construtor": {
+    "sessao": "01a0f415-78a6-7501-96dd-3c3c6df57a5b",
+    "modelo": "gpt-6.1-sol",
+    "inicio": "2026-09-30T20:50:43.925Z",
+    "ultima_amostra": "2026-09-30T21:10:54.922Z",
+    "simbolos": {
+      "input_tokens": 5571051,
+      "cached_input_tokens": 5379456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 32710,
+      "reasoning_output_tokens": 10554,
+      "total_tokens": 5603761
+    },
+    "simbolos_sem_cache_mais_saida": 224305
+  },
+  "revisores_automaticos": [
+    {
+      "sessao": "01a0f415-7c33-76a0-a67c-c8681d7d1fbc",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-09-30T20:52:56.622Z",
+      "ultima_amostra": "2026-09-30T21:07:39.747Z",
+      "simbolos": {
+        "input_tokens": 154135,
+        "cached_input_tokens": 106496,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 399,
+        "reasoning_output_tokens": 163,
+        "total_tokens": 154534
+      },
+      "simbolos_sem_cache_mais_saida": 48038
+    }
+  ],
+  "conhecido_positivo": true
+}

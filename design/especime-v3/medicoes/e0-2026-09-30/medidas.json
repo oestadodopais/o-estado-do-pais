@@ -1,0 +1,554 @@
+{
+  "bloco": "E0",
+  "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+  "cabeca": "1a281e1ddf9603aa37009c8bdf2b1f7c6ee533f0",
+  "medido_em": "2026-09-30T21:20:43.226Z",
+  "medidas": [
+    {
+      "nome": "selador_ja_aceitava_a_linha_do_projeto",
+      "valor": true,
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "A entrada 3 para 5 foi escrita pelo selador original numa cópia sem source_url.",
+        "encontrado": true
+      },
+      "evidencia": "estado-anterior.json"
+    },
+    {
+      "nome": "desemprego_com_decimal",
+      "valor": [
+        {
+          "id": "taxa-de-desemprego-2025",
+          "valor": "6,0",
+          "entrada": {
+            "date": "2026-09-30",
+            "kind": "correcao",
+            "old_value": "6",
+            "new_value": "6,0"
+          },
+          "seladas": 1
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "valor": "6,0",
+          "entrada": {
+            "date": "2026-09-30",
+            "kind": "correcao",
+            "old_value": "6",
+            "new_value": "6,0"
+          },
+          "seladas": 1
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "O decimal é lido nos dois excertos e a planta retira-o da primeira página.",
+        "encontrado": true
+      },
+      "evidencia": "Livro e célula E0."
+    },
+    {
+      "nome": "correcoes_publicadas",
+      "valor": {
+        "contado": 5,
+        "linha": {
+          "id": "correcoes-publicadas",
+          "valor": "5",
+          "entrada": {
+            "date": "2026-09-30",
+            "kind": "atualizacao",
+            "old_value": "3",
+            "new_value": "5"
+          },
+          "seladas": 1
+        }
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "A correção histórica do PIB do Alentejo entra na mesma recontagem.",
+        "encontrado": true
+      },
+      "evidencia": "Recontagem direta de todos os YAML."
+    },
+    {
+      "nome": "tres_mudancas_com_lugar",
+      "valor": [
+        {
+          "lang": "pt",
+          "id": "taxa-de-desemprego-2025",
+          "itens": 1,
+          "lugar": "Portugal",
+          "porta": "/"
+        },
+        {
+          "lang": "pt",
+          "id": "taxa-de-desemprego-mip-2025",
+          "itens": 1,
+          "lugar": "Portugal",
+          "porta": "/"
+        },
+        {
+          "lang": "pt",
+          "id": "correcoes-publicadas",
+          "itens": 1,
+          "lugar": "O Estado do País",
+          "porta": "/correcoes"
+        },
+        {
+          "lang": "en",
+          "id": "taxa-de-desemprego-2025",
+          "itens": 1,
+          "lugar": "Portugal",
+          "porta": "/en"
+        },
+        {
+          "lang": "en",
+          "id": "taxa-de-desemprego-mip-2025",
+          "itens": 1,
+          "lugar": "Portugal",
+          "porta": "/en"
+        },
+        {
+          "lang": "en",
+          "id": "correcoes-publicadas",
+          "itens": 1,
+          "lugar": "O Estado do País",
+          "porta": "/en/corrections"
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "O lugar do contador é visto nas duas edições; a planta retira-o da inglesa.",
+        "encontrado": true
+      },
+      "evidencia": "HTML de /correcoes e /en/corrections."
+    },
+    {
+      "nome": "desemprego_visivel",
+      "valor": [
+        {
+          "lang": "pt",
+          "pagina": "primeira",
+          "valores": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "texto": "6,0",
+              "com_unidade": true
+            },
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "texto": "6,0",
+              "com_unidade": true
+            }
+          ]
+        },
+        {
+          "lang": "pt",
+          "pagina": "emprego",
+          "valores": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "texto": "6,0",
+              "com_unidade": true
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "pagina": "primeira",
+          "valores": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "texto": "6,0",
+              "com_unidade": true
+            },
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "texto": "6,0",
+              "com_unidade": true
+            }
+          ]
+        },
+        {
+          "lang": "en",
+          "pagina": "emprego",
+          "valores": [
+            {
+              "id": "taxa-de-desemprego-mip-2025",
+              "texto": "6,0",
+              "com_unidade": true
+            }
+          ]
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "A primeira página tem as duas representações da medida e o cartão tem a sua quantidade.",
+        "encontrado": true
+      },
+      "evidencia": "HTML da primeira página e de Emprego, nas duas edições."
+    },
+    {
+      "nome": "plantas_que_mordem",
+      "valor": {
+        "total": 8,
+        "mordidas": 8,
+        "plantas": [
+          {
+            "nome": "A: contador sem declaração, A3",
+            "codigo": 1,
+            "mordida": "A3: .*uma linha do registo sem lugar",
+            "queixa": "A3: correcoes/index.html: uma linha do registo sem lugar que se possa compor.",
+            "mordeu": true,
+            "memoria_isolada": true
+          },
+          {
+            "nome": "A: contador sem declaração, resolvedor",
+            "codigo": 1,
+            "mordida": "correcoes-publicadas.*nenhuma declaração diz de que lugar é",
+            "queixa": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+            "mordeu": true,
+            "memoria_isolada": true
+          },
+          {
+            "nome": "declaração falsa de Portugal",
+            "codigo": 1,
+            "mordida": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»",
+            "queixa": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais».",
+            "mordeu": true,
+            "memoria_isolada": true
+          },
+          {
+            "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
+            "codigo": 1,
+            "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+            "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+            "mordeu": true,
+            "memoria_isolada": true
+          },
+          {
+            "nome": "B: taxa-de-desemprego-mip-2025 sem entrada selada",
+            "codigo": 1,
+            "mordida": "taxa-de-desemprego-mip-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+            "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+            "mordeu": true,
+            "memoria_isolada": true
+          },
+          {
+            "nome": "B: correcoes-publicadas sem entrada selada",
+            "codigo": 1,
+            "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+            "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+            "mordeu": true,
+            "memoria_isolada": true
+          },
+          {
+            "nome": "decimal retirado da primeira",
+            "mordeu": true,
+            "queixa": "E0 visível pt primeira: falta o valor publicado com a unidade.",
+            "memoria_isolada": true
+          },
+          {
+            "nome": "lugar retirado do registo inglês",
+            "mordeu": true,
+            "queixa": "E0 registo en: correcoes-publicadas perdeu a mudança ou o lugar com a porta.",
+            "memoria_isolada": true
+          }
+        ]
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "A planta A produz código 1 com a queixa A3 do portão real.",
+        "encontrado": true
+      },
+      "evidencia": "Processos isolados e cópias em memória; nenhum ficheiro real é plantado."
+    },
+    {
+      "nome": "historia_anterior_conservada",
+      "valor": {
+        "linhas_anteriores": 9,
+        "conservadas": true,
+        "linhas_novas": [
+          "taxa-de-desemprego-2025",
+          "taxa-de-desemprego-mip-2025",
+          "correcoes-publicadas"
+        ]
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "As quatro entradas anteriores de estudos-evora-publicados são lidas da base e do ficheiro atual.",
+        "encontrado": true
+      },
+      "evidencia": "Comparação do prefixo de cada lista selada com a base."
+    },
+    {
+      "nome": "valores_mudados",
+      "valor": [
+        {
+          "id": "correcoes-publicadas",
+          "antes": "3",
+          "depois": "5"
+        },
+        {
+          "id": "taxa-de-desemprego-2025",
+          "antes": "6",
+          "depois": "6,0"
+        },
+        {
+          "id": "taxa-de-desemprego-mip-2025",
+          "antes": "6",
+          "depois": "6,0"
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "A linha do contador é encontrada entre os valores alterados.",
+        "encontrado": true
+      },
+      "evidencia": "git diff contra a base, com leitura dos valores YAML."
+    },
+    {
+      "nome": "anatomia_mudada",
+      "valor": [],
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "O cartão do desemprego é encontrado e tem quantidade com unidade no HTML.",
+        "encontrado": true
+      },
+      "evidencia": "Nenhum componente, vista ou folha mudou."
+    },
+    {
+      "nome": "capturas",
+      "valor": {
+        "total": 12,
+        "resumos_conferidos": 12,
+        "problemas": [],
+        "imagens": [
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-pt-390.png",
+            "lang": "pt",
+            "largura_janela": 390,
+            "largura_png": 390,
+            "altura_png": 7110,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-pt-390.png",
+            "lang": "pt",
+            "largura_janela": 390,
+            "largura_png": 354,
+            "altura_png": 507,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-pt-390.png",
+            "lang": "pt",
+            "largura_janela": 390,
+            "largura_png": 354,
+            "altura_png": 8548,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-pt-1280.png",
+            "lang": "pt",
+            "largura_janela": 1280,
+            "largura_png": 1280,
+            "altura_png": 5083,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-pt-1280.png",
+            "lang": "pt",
+            "largura_janela": 1280,
+            "largura_png": 249,
+            "altura_png": 652,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-pt-1280.png",
+            "lang": "pt",
+            "largura_janela": 1280,
+            "largura_png": 544,
+            "altura_png": 8774,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-en-390.png",
+            "lang": "en",
+            "largura_janela": 390,
+            "largura_png": 390,
+            "altura_png": 7012,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-en-390.png",
+            "lang": "en",
+            "largura_janela": 390,
+            "largura_png": 354,
+            "altura_png": 489,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-en-390.png",
+            "lang": "en",
+            "largura_janela": 390,
+            "largura_png": 354,
+            "altura_png": 8590,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/primeira-en-1280.png",
+            "lang": "en",
+            "largura_janela": 1280,
+            "largura_png": 1280,
+            "altura_png": 5143,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/desemprego-en-1280.png",
+            "lang": "en",
+            "largura_janela": 1280,
+            "largura_png": 249,
+            "altura_png": 608,
+            "confere": true
+          },
+          {
+            "ficheiro": "design/especime-v3/capturas/e0-2026-09-30/mudancas-en-1280.png",
+            "lang": "en",
+            "largura_janela": 1280,
+            "largura_png": 544,
+            "altura_png": 8782,
+            "confere": true
+          }
+        ]
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "A primeira imagem é um PNG; trocar um byte faz o resumo divergir pelo mesmo detetor.",
+        "encontrado": true
+      },
+      "evidencia": "capturas-e0.json e PNG, com resumos recalculados."
+    },
+    {
+      "nome": "selador_disponivel_para_e1",
+      "valor": {
+        "codigo": 0,
+        "antes": 4,
+        "depois": 5,
+        "passado_conservado": true,
+        "source_url": null,
+        "derivation": "Contagem dos trabalhos do arquivo cujo objeto é o município de Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025», «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram» e «Évora — Prometido, Pago, Auditado 2026» e «Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas». As edições inglesas do terceiro, do quinto e do sexto são traduções do mesmo trabalho, não estudos à parte.",
+        "saida": "estudos-evora-publicados: 4 entradas anteriores conservadas; 5 seladas.",
+        "linha_real_conservada": true
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "As quatro entradas seladas de Évora são preservadas e a quinta é acrescentada só na cópia.",
+        "encontrado": true
+      },
+      "evidencia": "prova-e1.json"
+    },
+    {
+      "nome": "portoes",
+      "valor": [
+        {
+          "nome": "build",
+          "codigo": null,
+          "cabeca": null,
+          "segundos": null
+        },
+        {
+          "nome": "verify",
+          "codigo": null,
+          "cabeca": null,
+          "segundos": null
+        },
+        {
+          "nome": "typecheck",
+          "codigo": null,
+          "cabeca": null,
+          "segundos": null
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "O código zero do ledger:check é lido de ficheiro e coincide com o registo JSON.",
+        "encontrado": true
+      },
+      "evidencia": "Ficheiros .codigo, .cabeca e .json, acabados de escrever."
+    },
+    {
+      "nome": "custo",
+      "valor": {
+        "medido_em": "2026-09-30T21:13:01.206887+00:00",
+        "segundos_decorridos": 1337.3,
+        "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
+        "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
+        "construtor": {
+          "sessao": "01a0f415-78a6-7501-96dd-3c3c6df57a5b",
+          "modelo": "gpt-6.1-sol",
+          "inicio": "2026-09-30T20:50:43.925Z",
+          "ultima_amostra": "2026-09-30T21:10:54.922Z",
+          "simbolos": {
+            "input_tokens": 5571051,
+            "cached_input_tokens": 5379456,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 32710,
+            "reasoning_output_tokens": 10554,
+            "total_tokens": 5603761
+          },
+          "simbolos_sem_cache_mais_saida": 224305
+        },
+        "revisores_automaticos": [
+          {
+            "sessao": "01a0f415-7c33-76a0-a67c-c8681d7d1fbc",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T20:52:56.622Z",
+            "ultima_amostra": "2026-09-30T21:07:39.747Z",
+            "simbolos": {
+              "input_tokens": 154135,
+              "cached_input_tokens": 106496,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 399,
+              "reasoning_output_tokens": 163,
+              "total_tokens": 154534
+            },
+            "simbolos_sem_cache_mais_saida": 48038
+          }
+        ],
+        "conhecido_positivo": true
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "O evento token_count tem saída e total cumulativo, na sessão identificada pelo ambiente.",
+        "encontrado": true
+      },
+      "evidencia": "custo.json, extraído por medir-custo.py."
+    },
+    {
+      "nome": "ficheiros_com_dados_da_maquina",
+      "valor": {
+        "lidos": 87,
+        "fugas": []
+      },
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "conhecido_positivo": {
+        "o_que": "O mesmo detetor vê o caminho real só em memória e aceita uma frase limpa.",
+        "encontrado": true
+      },
+      "evidencia": "Ficheiros alterados e novos, sem guardar a cadeia privada da planta."
+    }
+  ],
+  "erros": [],
+  "contagens": {
+    "medidas": 14,
+    "conhecidos_positivos": 14,
+    "linhas_desemprego": 2,
+    "edicoes": 2
+  },
+  "aceitação": {
+    "conteudo_e_provas": true,
+    "portoes_na_cabeca_final": false,
+    "completa": false
+  }
+}

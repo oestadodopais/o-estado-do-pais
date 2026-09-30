@@ -1,0 +1,10 @@
+{
+  "codigo": 0,
+  "antes": 4,
+  "depois": 5,
+  "passado_conservado": true,
+  "source_url": null,
+  "derivation": "Contagem dos trabalhos do arquivo cujo objeto é o município de Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025», «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram» e «Évora — Prometido, Pago, Auditado 2026» e «Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em linhas». As edições inglesas do terceiro, do quinto e do sexto são traduções do mesmo trabalho, não estudos à parte.",
+  "saida": "estudos-evora-publicados: 4 entradas anteriores conservadas; 5 seladas.",
+  "linha_real_conservada": true
+}

@@ -1,0 +1,12 @@
+§1.38 · A ortografia do sítio passa a ser uma só
+    design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241 (perto do diff)
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    src/lib/mudancas.mjs:205
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    scripts/check-pais.mjs:296
+§1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    scripts/check-pais.mjs:171 (perto do diff)
+    src/data/lugar-das-linhas.mjs:22 (perto do diff)
+    src/lib/mudancas.mjs:101 (perto do diff)
+    tests/inicio/linhas-da-casa.mjs:1 (perto do diff)
+4 decisão(ões) citada(s) em 45 ficheiro(s)

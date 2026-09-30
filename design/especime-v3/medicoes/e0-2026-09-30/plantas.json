@@ -1,0 +1,62 @@
+[
+  {
+    "nome": "A: contador sem declaração, A3",
+    "codigo": 1,
+    "mordida": "A3: .*uma linha do registo sem lugar",
+    "queixa": "A3: correcoes/index.html: uma linha do registo sem lugar que se possa compor.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "A: contador sem declaração, resolvedor",
+    "codigo": 1,
+    "mordida": "correcoes-publicadas.*nenhuma declaração diz de que lugar é",
+    "queixa": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "declaração falsa de Portugal",
+    "codigo": 1,
+    "mordida": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»",
+    "queixa": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais».",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
+    "codigo": 1,
+    "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+    "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "B: taxa-de-desemprego-mip-2025 sem entrada selada",
+    "codigo": 1,
+    "mordida": "taxa-de-desemprego-mip-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+    "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "B: correcoes-publicadas sem entrada selada",
+    "codigo": 1,
+    "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+    "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+    "mordeu": true,
+    "memoria_isolada": true
+  },
+  {
+    "nome": "decimal retirado da primeira",
+    "mordeu": true,
+    "queixa": "E0 visível pt primeira: falta o valor publicado com a unidade.",
+    "memoria_isolada": true
+  },
+  {
+    "nome": "lugar retirado do registo inglês",
+    "mordeu": true,
+    "queixa": "E0 registo en: correcoes-publicadas perdeu a mudança ou o lugar com a porta.",
+    "memoria_isolada": true
+  }
+]
