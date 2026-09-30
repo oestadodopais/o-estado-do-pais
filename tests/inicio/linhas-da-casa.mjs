@@ -13,6 +13,13 @@ const ids = ['taxa-de-desemprego-2025', 'taxa-de-desemprego-mip-2025', 'correcoe
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const lerLinha = id => load(fs.readFileSync(`ledger/claims/${id}.yml`, 'utf8'));
 const assinatura = e => ({ date: e.date, kind: e.kind, old_value: e.old_value, new_value: e.new_value });
+const entradaE0 = c => (c.corrections ?? []).find(e => e.date === '2026-09-30' &&
+  e.kind === (c.id === 'correcoes-publicadas' ? 'atualizacao' : 'correcao') &&
+  e.old_value === (c.id === 'correcoes-publicadas' ? '3' : '6') && e.new_value === (c.id === 'correcoes-publicadas' ? '5' : '6,0'));
+const valorComUnidade = el => {
+  const c = lerLinha(el.getAttribute('data-claim'));
+  return normal(el.textContent) === c.value && normal(el.parentNode.textContent).includes(`${c.value} %`);
+};
 
 export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
   const erros = [];
@@ -23,21 +30,23 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
   for (const id of ids) {
     const c = lerLinha(id);
     const entradas = c.corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind));
-    const e = entradas.at(-1);
+    /* A guarda conserva a entrada do E0; uma atualização futura pode crescer
+       a lista. A aceitação dos valores deste bloco é medida por medir-e0. */
+    const e = entradaE0(c);
     const desemprego = id !== 'correcoes-publicadas';
     const esperado = { date: '2026-09-30', kind: desemprego ? 'correcao' : 'atualizacao',
       old_value: desemprego ? '6' : '3', new_value: desemprego ? '6,0' : '5' };
-    if (c.value !== esperado.new_value || !e || JSON.stringify(assinatura(e)) !== JSON.stringify(esperado))
+    if (c.value !== entradas.at(-1)?.new_value || !e || JSON.stringify(assinatura(e)) !== JSON.stringify(esperado))
       erros.push(`E0 valor: ${id} perdeu o valor ou a entrada datada.`);
     if (JSON.stringify(historias[id]) !== JSON.stringify(entradas.map(assinatura)))
       erros.push(`E0 história: ${id} não tem todas as entradas seladas.`);
     if (!e?.reason || !e?.reason_en) erros.push(`E0 motivo: ${id} não tem as duas edições.`);
-    if (desemprego && (!c.excerpt.endsWith('2025: 6.0') || !e?.reason.includes('6.0') || !e?.reason_en.includes('6.0')))
+    if (desemprego && (!e?.reason.includes('6.0') || !e?.reason_en.includes('6.0')))
       erros.push(`E0 fonte: ${id} não conserva a precisão do excerto no motivo.`);
     medidas.linhas.push({ id, valor: c.value, entrada: e && assinatura(e), seladas: historias[id]?.length ?? 0 });
   }
   const contador = lerLinha('correcoes-publicadas');
-  if (contadas !== 5 || contador.value !== String(contadas) || contador.check !== 'correcoes_publicadas')
+  if (contador.value !== String(contadas) || contador.check !== 'correcoes_publicadas')
     erros.push('E0 contagem: o contador não coincide com as correções do livro.');
   if (LUGAR_DECLARADO_DAS_LINHAS[contador.id] !== 'o-estado-do-pais') erros.push('E0 declaração: falta o lugar do projeto.');
   medidas.correcoes_contadas = contadas;
@@ -46,23 +55,30 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
     const registo = parse(fs.readFileSync(path.join(dist, esperada, 'index.html'), 'utf8'));
     estragar?.(registo, lang, 'registo');
     for (const id of ids) {
-      const itens = registo.querySelectorAll(`[data-mudou-registo] [data-correcao-entrada="${id}"]`);
+      const c = lerLinha(id);
+      const entrada = entradaE0(c);
+      const indice = c.corrections.indexOf(entrada);
+      const itens = registo.querySelectorAll(`[data-mudou-registo] [data-correcao-entrada="${id}"]`)
+        .filter(li => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') === String(indice));
       const porta = itens[0]?.querySelector('.registo-lugar');
       const lugar = id === contador.id ? 'O Estado do País' : 'Portugal';
       const rota = id === contador.id ? esperada : lang === 'pt' ? '/' : '/en';
       if (itens.length !== 1 || normal(porta?.textContent) !== lugar || porta?.getAttribute('href') !== rota)
         erros.push(`E0 registo ${lang}: ${id} perdeu a mudança ou o lugar com a porta.`);
-      const entrada = lerLinha(id).corrections.at(-1);
       for (const campo of ['old_value', 'new_value', 'date', 'kind', 'reason']) {
         const el = itens[0]?.querySelector(`[data-correcao-campo="${campo}"]`);
         const texto = campo === 'date' ? '30.09.2026' : campo === 'kind'
           ? (id === contador.id ? (lang === 'pt' ? 'atualização' : 'update') : (lang === 'pt' ? 'correção' : 'correction'))
-          : campo === 'reason' ? entrada[lang === 'pt' ? 'reason' : 'reason_en'] : entrada[campo];
+          : campo === 'reason' ? entrada?.[lang === 'pt' ? 'reason' : 'reason_en'] : entrada?.[campo];
         if (normal(el?.textContent) !== normal(texto)) erros.push(`E0 registo ${lang}: ${id} perdeu o campo ${campo}.`);
       }
       medidas.registos.push({ lang, id, itens: itens.length, lugar: normal(porta?.textContent), porta: porta?.getAttribute('href') });
     }
-    const resolvidas = mudancasDoRegisto(lang).filter(e => ids.includes(e.claim));
+    const resolvidas = mudancasDoRegisto(lang).filter(e => {
+      if (!ids.includes(e.claim)) return false;
+      const c = lerLinha(e.claim);
+      return e.n === c.corrections.indexOf(entradaE0(c));
+    });
     if (resolvidas.length !== 3 || resolvidas.find(e => e.claim === contador.id)?.lugar.chave !== 'o-estado-do-pais')
       erros.push(`E0 resolvedor ${lang}: as mudanças não têm os lugares declarados.`);
     for (const [pagina, rota] of [['primeira', lang === 'pt' ? '/' : '/en/'], ['emprego', lang === 'pt' ? '/emprego/' : '/en/employment/']]) {
@@ -70,9 +86,9 @@ export function conferirLinhasDaCasa(dist = 'dist', estragar = null) {
       estragar?.(doc, lang, pagina);
       const escopo = pagina === 'emprego' ? doc.querySelector('[data-cartao-medida="taxa-de-desemprego-mip-2025"]') : doc.querySelector('main');
       const valores = escopo?.querySelectorAll('[data-claim]').filter(e => ids.slice(0, 2).includes(e.getAttribute('data-claim'))) ?? [];
-      if (!valores.length || valores.some(e => normal(e.textContent) !== '6,0' || !/6,0\s+%/.test(normal(e.parentNode.textContent))))
-        erros.push(`E0 visível ${lang} ${pagina}: falta «6,0 %».`);
-      medidas.valores_visiveis.push({ lang, pagina, valores: valores.map(e => ({ id: e.getAttribute('data-claim'), texto: normal(e.textContent), com_unidade: /6,0\s+%/.test(normal(e.parentNode.textContent)) })) });
+      if (!valores.length || valores.some(e => !valorComUnidade(e)))
+        erros.push(`E0 visível ${lang} ${pagina}: falta o valor publicado com a unidade.`);
+      medidas.valores_visiveis.push({ lang, pagina, valores: valores.map(e => ({ id: e.getAttribute('data-claim'), texto: normal(e.textContent), com_unidade: valorComUnidade(e) })) });
     }
   }
   return { erros, medidas };
@@ -99,9 +115,13 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
     /A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»/)];
   for (const id of ids) plantas.push(executar(`B: ${id} sem entrada selada`,
     `import fs from "node:fs"; const ler=fs.readFileSync; fs.readFileSync=function(f,...a) {const b=ler.call(this,f,...a); if(String(f).endsWith("ledger/historias-valores.json")) {const h=JSON.parse(b); delete h[${JSON.stringify(id)}]; return JSON.stringify(h);} return b;}; await import("./scripts/check-ledger.mjs");`,
-    new RegExp(`${id}\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0`)));
+    new RegExp(`${id}\\.yml.*história do valor: a lista tem ${lerLinha(id).corrections.filter(e => ['correcao', 'atualizacao'].includes(e.kind)).length} entradas e o registo sela 0`)));
   for (const [nome, estraga, mordida] of [
-    ['decimal retirado da primeira', (r, lang, p) => { if (lang === 'pt' && p === 'primeira') r.querySelector('[data-claim="taxa-de-desemprego-mip-2025"]').set_content('6'); }, /E0 visível pt primeira/],
+    ['decimal retirado da primeira', (r, lang, p) => { if (lang === 'pt' && p === 'primeira') {
+      const el = r.querySelector('[data-claim="taxa-de-desemprego-mip-2025"]');
+      const s = normal(el.textContent);
+      el.set_content(s.includes(',') ? s.split(',')[0] : s + '9');
+    } }, /E0 visível pt primeira/],
     ['lugar retirado do registo inglês', (r, lang, p) => { if (lang === 'en' && p === 'registo') r.querySelector('[data-mudou-registo] [data-correcao-entrada="correcoes-publicadas"] .registo-lugar').remove(); }, /E0 registo en: correcoes-publicadas perdeu a mudança/],
   ]) {
     const r = conferirLinhasDaCasa(dist, estraga);
