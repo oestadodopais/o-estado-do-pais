@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-01T23:34:01+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "V1",
+   "ficheiro": "src/lib/faixa-do-concelho.mjs",
+   "descricao": "o lugar conta ao contrário na ordem do mais baixo (conta os maiores), e o índice de dívida fica com o lugar invertido",
+   "sha256_antes": "2c7f33e05346a66b7301f0e42e426c3853bfaee90c2786e0fea52da3e059f5e4",
+   "sha256_depois": "c95e9ba0aa68477d12fd2748b01c0dcbeb1ec9cf264560d8ae8bb5257e0ce003",
+   "contexto_antes": " contagem têm de ser a mesma.`,\n    );\n  }\n  const este = comValor.find((c) => c.slug === slug) ?? null;\n  const ordem = declaracao.ordem;\n  const lugar = este\n    ? 1 + comValor.filter((c) => (ordem === 'do-mais-baixo' ? c.n < este.n : c.n > este.n)).length\n    : null;\n  const aPar = este ? comValor.filter((c) => c.slug !== slug && c.n === este.n).length : 0;\n\n  /* A comparação com Portugal: a linha nacional da me",
+   "contexto_depois": " contagem têm de ser a mesma.`,\n    );\n  }\n  const este = comValor.find((c) => c.slug === slug) ?? null;\n  const ordem = declaracao.ordem;\n  const lugar = este\n    ? 1 + comValor.filter((c) => (ordem === 'do-mais-baixo' ? c.n > este.n : c.n > este.n)).length\n    : null;\n  const aPar = este ? comValor.filter((c) => c.slug !== slug && c.n === este.n).length : 0;\n\n  /* A comparação com Portugal: a linha nacional da me"
+  },
+  {
+   "id": "V2",
+   "ficheiro": "built/municipios/evora/index.html",
+   "descricao": "a página construída de Évora diz o 13.º lugar no poder de compra onde a recontagem dá 12",
+   "sha256_antes": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450",
+   "sha256_depois": "8af1172fc2bf90e199ab885a58f8af5f821a6690353d853410bce1f79cb1da75",
+   "contexto_antes": "Compra\"><span data-lugar>Évora</span> (<span data-claim=\"evora-poder-de-compra-2023\" class=\"claim-value fc-valor\">111,47</span>) está em <span class=\"fc-lugar\" data-concelho-lugar=\"poderDeCompra#evora\">12</span>.º lugar entre os <span class=\"fc-conta\" data-concelho-conta=\"poderDeCompra\">308</span> concelhos com valor, do mais alto para o mais baixo.</p><p class=\"fc-com",
+   "contexto_depois": "Compra\"><span data-lugar>Évora</span> (<span data-claim=\"evora-poder-de-compra-2023\" class=\"claim-value fc-valor\">111,47</span>) está em <span class=\"fc-lugar\" data-concelho-lugar=\"poderDeCompra#evora\">13</span>.º lugar entre os <span class=\"fc-conta\" data-concelho-conta=\"poderDeCompra\">308</span> concelhos com valor, do mais alto para o mais baixo.</p><p class=\"fc-com"
+  },
+  {
+   "id": "V3",
+   "ficheiro": "src/data/faixa-do-concelho.mjs",
+   "descricao": "o índice de dívida passa a ordenar-se do mais alto, e o lugar deixa de dizer o que a razão diz",
+   "sha256_antes": "bf10289e1a32805a78ac9e60d82639263cb4e13807d0212429232d104f12c4b7",
+   "sha256_depois": "c33de1e9c798a50aaea946ee6c2d491874ba8e0b068ed983ab632827166d0b40",
+   "contexto_antes": "mede contra o seu limite legal.',\n    ordem: null,\n    porqueAOrdem: null,\n    comparacao: null,\n    porqueAComparacao: null,\n  },\n  indice: {\n    faixa: true,\n    porqueAFaixa: 'É um rácio, a dívida contra o limite legal de cada câmara: compara câmaras de tamanhos diferentes.',\n    ordem: 'do-mais-baixo',\n    porqueAOrdem:\n      'Um índice maior é uma dívida mais perto do limite que a lei fixa (150 nesta escala), ou acima dele: conta-se do mais baixo.',\n    comp",
+   "contexto_depois": "mede contra o seu limite legal.',\n    ordem: null,\n    porqueAOrdem: null,\n    comparacao: null,\n    porqueAComparacao: null,\n  },\n  indice: {\n    faixa: true,\n    porqueAFaixa: 'É um rácio, a dívida contra o limite legal de cada câmara: compara câmaras de tamanhos diferentes.',\n    ordem: 'do-mais-alto',\n    porqueAOrdem:\n      'Um índice maior é uma dívida mais perto do limite que a lei fixa (150 nesta escala), ou acima dele: conta-se do mais baixo.',\n    comp"
+  },
+  {
+   "id": "V4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 2 480 faixas onde a construção rende 2 464",
+   "sha256_antes": "1172b47029b4bee371c79e9097e694c1c5c5544c08c696b24a7a7eff75670f6c",
+   "sha256_depois": "67f85402d79cc81b5fc9d728b325fc9abd6c8e5da76edc74f2efa674ed4fc903",
+   "contexto_antes": "tao` tira a do ganho, e a planta `l2b-b-faixa-numa-contagem` põe uma no cartão da população; as duas mordem na FC1.\n- **O que a construção da cabeça `1a747a32` rende:** 2464 faixas, 616 em cada uma das quatro medidas; 2464 cartões de contagem, com 0 faixas; 2444 lugares, com 0 diferentes da recontagem independente; 20 faixas sem valor publicado, que dizem que não têm lugar;",
+   "contexto_depois": "tao` tira a do ganho, e a planta `l2b-b-faixa-numa-contagem` põe uma no cartão da população; as duas mordem na FC1.\n- **O que a construção da cabeça `1a747a32` rende:** 2480 faixas, 620 em cada uma das quatro medidas; 2464 cartões de contagem, com 0 faixas; 2444 lugares, com 0 diferentes da recontagem independente; 20 faixas sem valor publicado, que dizem que não têm lugar;"
+  },
+  {
+   "id": "V5",
+   "ficheiro": "built/municipios/evora/index.html",
+   "descricao": "a leitura breve de Évora diz «acima de Portugal» no ganho onde as linhas dizem abaixo (1 484,5 contra 1 576,0)",
+   "sha256_antes": "8af1172fc2bf90e199ab885a58f8af5f821a6690353d853410bce1f79cb1da75",
+   "sha256_depois": "124dc21ed565d690af3c81f3694ace82bb460ebe85d796af14a15cb558e33575",
+   "contexto_antes": "-nonledger=\"proveniencia\" data-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a></span>, <span data-voz>abaixo de Portugal</span>, onde é de <span class=\"claim claim-com-chip\"><span data-claim=\"ganho-medio-mensal-2024\" class=\"claim-value\">1 576,0</span><span class=\"claim-sufixo\"> euros por mês</span",
+   "contexto_depois": "-nonledger=\"proveniencia\" data-selo-etiqueta=\"INE\" title=\"INE\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>INE</span></span></a></span>, <span data-voz>acima de Portugal</span>, onde é de <span class=\"claim claim-com-chip\"><span data-claim=\"ganho-medio-mensal-2024\" class=\"claim-value\">1 576,0</span><span class=\"claim-sufixo\"> euros por mês</span"
+  }
+ ]
+}
