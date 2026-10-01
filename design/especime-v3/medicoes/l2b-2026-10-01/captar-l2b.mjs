@@ -9,6 +9,9 @@
  *     (sobre `dist/`, que tem de ser uma construção da cabeça atual)
  *   node design/especime-v3/medicoes/l2b-2026-10-01/captar-l2b.mjs antes <pasta da construção de base> <cabeça de base>
  *     (a pasta fica fora do repositório, e o manifesto não a nomeia: guarda só a cabeça que o `version.json` dela diz)
+ *   node design/especime-v3/medicoes/l2b-2026-10-01/captar-l2b.mjs l2b-b
+ *     (a passagem L2b-b: as mesmas páginas nas cinco larguras sobre `dist/`, com as imagens `l2b-b-*.png` e o
+ *     manifesto em `l2b-b/capturas.json`, para não tocar nas capturas do L2b nem no seu manifesto)
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -18,7 +21,7 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 
 const fase = process.argv[2];
-if (fase !== 'antes' && fase !== 'depois') throw new Error('Uso: captar-l2b.mjs antes <dist> <cabeça> | depois');
+if (!['antes', 'depois', 'l2b-b'].includes(fase)) throw new Error('Uso: captar-l2b.mjs antes <dist> <cabeça> | depois | l2b-b');
 const dist = path.resolve(fase === 'antes' ? process.argv[3] : 'dist');
 const cabeca = fase === 'antes' ? process.argv[4] : execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const pasta = 'design/especime-v3/medicoes/l2b-2026-10-01';
@@ -68,6 +71,8 @@ const medir = () => {
     h1: document.querySelector('main h1')?.textContent.trim() ?? null,
     cartoes: document.querySelectorAll('[data-cartao-medida]').length,
     faixas: faixas.length,
+    /* L2b-b: as faixas nas quatro contagens, que não as têm. */
+    faixas_em_contagens: document.querySelectorAll('[data-medida-chave="populacao"] [data-faixa-concelho], [data-medida-chave="desempregoRegistado"] [data-faixa-concelho], [data-medida-chave="empresas"] [data-faixa-concelho], [data-medida-chave="divida"] [data-faixa-concelho]').length,
     faixas_que_cabem_no_cartao: cabe,
     primeira_faixa_y: faixas[0] ? Math.round(faixas[0].getBoundingClientRect().y + scrollY) : null,
     leitura: leitura ? leitura.textContent.replace(/\s+/g, ' ').trim() : null,
@@ -86,7 +91,7 @@ try {
       await page.evaluate(() => document.fonts.ready);
       const medidas = await page.evaluate(medir);
       if (medidas.documento > largura + 1) problemas.push(`${p.id}/${lang}/${largura}: transbordo horizontal`);
-      if (fase === 'depois' && medidas.faixas_que_cabem_no_cartao !== medidas.faixas) problemas.push(`${p.id}/${lang}/${largura}: ${medidas.faixas - medidas.faixas_que_cabem_no_cartao} faixa(s) a sair do cartão`);
+      if (fase !== 'antes' && medidas.faixas_que_cabem_no_cartao !== medidas.faixas) problemas.push(`${p.id}/${lang}/${largura}: ${medidas.faixas - medidas.faixas_que_cabem_no_cartao} faixa(s) a sair do cartão`);
       const ficheiro = `${saida}/${fase}-${p.id}-${lang}-${largura}.png`;
       const bytes = await page.screenshot({ path: ficheiro, fullPage: true });
       resultados.push({ ficheiro, pagina: p.id, rota: p.rota[lang], lang, largura, sha256: createHash('sha256').update(bytes).digest('hex'), medidas });
@@ -99,6 +104,6 @@ try {
   servidor.close();
 }
 const manifesto = { bloco: 'L2b', fase, cabeca, construcao: { commit: versao.commit, ref: versao.ref, construido_em: versao.construido_em }, inicio, fim: new Date().toISOString(), larguras, capturas: resultados.length, pedidos_recusados_para_fora: pedidosRecusados.length, problemas, resultados };
-await fs.writeFile(`${pasta}/capturas-${fase}.json`, JSON.stringify(manifesto, null, 2) + '\n');
+await fs.writeFile(fase === 'l2b-b' ? `${pasta}/l2b-b/capturas.json` : `${pasta}/capturas-${fase}.json`, JSON.stringify(manifesto, null, 2) + '\n');
 console.log(`L2b ${fase}: ${resultados.length} capturas, ${problemas.length} problemas.`);
 process.exitCode = problemas.length ? 1 : 0;
