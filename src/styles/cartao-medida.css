@@ -338,11 +338,20 @@
  * da faixa da União. Três andares no desenho: o nome do concelho por cima, as
  * marcas, e o nome de Portugal por baixo, para que os dois nunca se sobreponham.
  * O traço fino não engrossa quando a régua estica: `vector-effect` mantém-lhe a
- * largura de um píxel em qualquer largura do cartão. */
+ * largura de um píxel em qualquer largura do cartão.
+ *
+ * O DESENHO DEIXA PASSAR O TOQUE. A faixa vem a seguir à linha do valor, onde
+ * está a marca da fonte com a sua área de 44 px (o `::after` de `.src-chip`); o
+ * desenho é posicionado e vem depois na árvore, e por isso, se as duas coisas se
+ * tocassem, ficava por cima da área da marca. É um desenho `aria-hidden`, sem
+ * portas, e o toque atravessa-o. Medido no navegador a 390 e a 768 px na página
+ * de Évora: as oito marcas dos cartões respondem ao toque a 21 px por baixo do
+ * centro, com e sem esta regra; é uma precaução, e não o conserto de um defeito
+ * medido. */
 .cartao-medida-faixa-concelho {
   display: grid;
   gap: 4px;
-  margin: 4px 0 0;
+  margin: 8px 0 0;
   max-width: 34rem;
   min-width: 0;
 }
@@ -350,6 +359,7 @@
   position: relative;
   height: 48px;
   margin: 0 6px;
+  pointer-events: none;
 }
 .fc-eixo {
   position: absolute;
