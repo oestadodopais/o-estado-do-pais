@@ -1,7 +1,7 @@
 {
   "passagem": "L2b-b",
-  "cabeca": "1a747a3215f32043efdbeb64642e0a13813fc9dc",
-  "construcao": "1a747a3215f32043efdbeb64642e0a13813fc9dc",
+  "cabeca": "bfa7c3b24a5f539018d9678becb1927820411ec7",
+  "construcao": "bfa7c3b24a5f539018d9678becb1927820411ec7",
   "guiao": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/medir-l2b-b.mjs",
   "medidas": [
     {
@@ -33,7 +33,7 @@
     },
     {
       "nome": "l2b_b_construcao",
-      "valor": "1a747a3215f32043efdbeb64642e0a13813fc9dc",
+      "valor": "bfa7c3b24a5f539018d9678becb1927820411ec7",
       "comando": "dist/version.json · commit",
       "conhecido_positivo": {
         "o_que": "a construção é desta cabeça ou de uma cabeça só com ficheiros desta pasta por cima",
@@ -465,56 +465,56 @@
     },
     {
       "nome": "l2b_b_portao_build_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>, copiado para design/especime-v3/medicoes/l2b-2026-10-01/portoes/l2b-b",
       "conhecido_positivo": {
         "o_que": "o ficheiro da cabeça da corrida existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2b_b_portao_build_segundos",
-      "valor": "NÃO LIDO",
+      "valor": 121,
       "comando": "idem · build.fim menos build.inicio",
       "conhecido_positivo": {
         "o_que": "idem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2b_b_portao_verify_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>, copiado para design/especime-v3/medicoes/l2b-2026-10-01/portoes/l2b-b",
       "conhecido_positivo": {
         "o_que": "o ficheiro da cabeça da corrida existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2b_b_portao_verify_segundos",
-      "valor": "NÃO LIDO",
+      "valor": 714,
       "comando": "idem · verify.fim menos verify.inicio",
       "conhecido_positivo": {
         "o_que": "idem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2b_b_portao_typecheck_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>, copiado para design/especime-v3/medicoes/l2b-2026-10-01/portoes/l2b-b",
       "conhecido_positivo": {
         "o_que": "o ficheiro da cabeça da corrida existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2b_b_portao_typecheck_segundos",
-      "valor": "NÃO LIDO",
+      "valor": 1,
       "comando": "idem · typecheck.fim menos typecheck.inicio",
       "conhecido_positivo": {
         "o_que": "idem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
