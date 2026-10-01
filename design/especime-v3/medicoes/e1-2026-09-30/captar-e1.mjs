@@ -12,6 +12,11 @@
  * Na passagem E1c (01.10.2026): com `OEDP_E1_BLOCO=E1c` entram também as duas fichas de mandato
  * que o ponto 2 do mandato mudou, a de 2021 a 2025 e a do mandato que começou em 2025, onde a dívida
  * de 31.12.2025 deixou de se dizer deixada e herdada.
+ *
+ * Na passagem E1d (01.10.2026): com `OEDP_E1_BLOCO=E1d` a lista é só a da passagem, as quatro fichas de
+ * mandato com valores de fim de ano (2013 a 2017, 2017 a 2021, 2021 a 2025 e o mandato que começou em
+ * 2025) e o estudo da economia, a cabeça e a secção do enquadramento, onde a frase da região mudou; o
+ * modo `ancora` leva o título da secção ao alto da janela e fotografa a janela.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -32,7 +37,7 @@ const bloco = process.env.OEDP_E1_BLOCO ?? 'E1';
 const larguras = [390, 1280];
 /* cada página: o id, a rota por língua, e o que se captura (a cabeça da janela, a página
    inteira, ou um elemento) */
-const paginas = [
+const paginasDoE1 = [
   { id: 'contas', rota: { pt: '/estudos/evora-contas-da-camara-2010-2025', en: '/en/studies/evora-contas-da-camara-2010-2025' }, modo: 'cabeca' },
   { id: 'quem-governou', rota: { pt: '/estudos/evora-quem-governou-a-camara-2009-2025', ...(bloco === 'E1' ? {} : { en: '/en/studies/evora-quem-governou-a-camara-2009-2025' }) }, modo: 'cabeca' },
   { id: 'economia', rota: { pt: '/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara', en: '/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara' }, modo: 'cabeca' },
@@ -47,6 +52,16 @@ const paginas = [
     { id: 'concelho-mandato-2025', rota: { pt: '/municipios/evora', en: '/en/municipalities/evora' }, modo: 'elemento', seletor: '#mandato-2025' },
   ] : []),
 ];
+const evora = { pt: '/municipios/evora', en: '/en/municipalities/evora' };
+const economia = { pt: '/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara', en: '/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara' };
+const paginas = bloco === 'E1d' ? [
+  { id: 'concelho-mandato-2013', rota: evora, modo: 'elemento', seletor: '#mandato-2013-2017' },
+  { id: 'concelho-mandato-2017', rota: evora, modo: 'elemento', seletor: '#mandato-2017-2021' },
+  { id: 'concelho-mandato-2021', rota: evora, modo: 'elemento', seletor: '#mandato-2021-2025' },
+  { id: 'concelho-mandato-2025', rota: evora, modo: 'elemento', seletor: '#mandato-2025' },
+  { id: 'economia', rota: economia, modo: 'cabeca' },
+  { id: 'economia-enquadramento', rota: economia, modo: 'ancora', seletor: '#bloco-20' },
+] : paginasDoE1;
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp' };
 const servidor = http.createServer(async (pedido, resposta) => {
   try {
@@ -95,6 +110,10 @@ try {
         if (await el.count() === 0) { problemas.push(`${p.id}/${lang}/${largura}: sem ${p.seletor}`); continue; }
         await el.scrollIntoViewIfNeeded();
         bytes = await el.screenshot({ path: ficheiro });
+      } else if (p.modo === 'ancora') {
+        if (await page.locator(p.seletor).count() === 0) { problemas.push(`${p.id}/${lang}/${largura}: sem ${p.seletor}`); continue; }
+        await page.evaluate((s) => document.querySelector(s).scrollIntoView({ block: 'start' }), p.seletor);
+        bytes = await page.screenshot({ path: ficheiro, fullPage: false });
       } else bytes = await page.screenshot({ path: ficheiro, fullPage: false });
       resultados.push({ ficheiro, pagina: p.id, rota, lang, largura, modo: p.modo, sha256: createHash('sha256').update(bytes).digest('hex'), medidas });
     }
