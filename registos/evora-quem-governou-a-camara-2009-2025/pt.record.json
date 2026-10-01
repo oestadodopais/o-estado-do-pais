@@ -134,7 +134,7 @@
   {
    "figures": [
     {
-     "end": 209,
+     "end": 336,
      "others": [
       "am2025-cdu-seats",
       "am2025-chega-seats",
@@ -160,13 +160,20 @@
      "row": "exec2025-ps-seats",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 208,
+     "start": 335,
      "value": "3"
     }
    ],
    "i": 8,
    "kind": "paragraph",
-   "text": "A aritmética decide. A divisão de mandatos que deixou um executivo com dois mandatos em sete governar quatro anos é a mesma que deixou cinco votos rejeitar um ano de contas. O executivo instalado em 2025 tem 3 mandatos em sete, e na assembleia municipal a sua lista tem sete dos vinte e um mandatos de eleição direta, a par da coligação que ficou atrás dela."
+   "links": [
+    {
+     "end": 299,
+     "href": "/estudos/evora-contas-da-camara-2010-2025",
+     "start": 258
+    }
+   ],
+   "text": "Governou-se quatro anos em minoria. A divisão de mandatos de 2021 deixou na câmara um executivo com dois mandatos em sete, e esse executivo viu as contas de 2024 rejeitadas pela câmara; a votação, e o que os documentos dizem e não dizem dela, está no estudo As contas da Câmara de Évora, 2010 a 2025. O executivo instalado em 2025 tem 3 mandatos em sete, e na assembleia municipal a sua lista tem sete dos vinte e um mandatos de eleição direta, a par da coligação que ficou atrás dela."
   },
   {
    "figures": [],
@@ -9914,25 +9921,31 @@
   {
    "figures": [],
    "i": 141,
+   "kind": "paragraph",
+   "text": "Nas tabelas que se seguem, os valores estão em euros. A coluna «Plano» é o que o município executou nesse ano do seu plano de investimentos e das suas atividades mais relevantes, na linha das contas da primeira coluna; a coluna «Custo» é o que o serviço dessa linha custou nesse ano, segundo a contabilidade de custos do próprio município."
+  },
+  {
+   "figures": [],
+   "i": 142,
    "kind": "heading",
    "level": 3,
    "text": "2013–2017, lido através dos anos de contas de 2015 e 2016"
   },
   {
    "figures": [],
-   "i": 142,
+   "i": 143,
    "kind": "heading",
    "level": 4,
    "text": "Carlos Manuel Rodrigues Pinto de Sá"
   },
   {
    "figures": [],
-   "i": 143,
+   "i": 144,
    "kind": "paragraph",
    "text": "A pasta do próprio presidente é administrativa e estratégica — coordenação, relações institucionais, administração e pessoal, área jurídica, desenvolvimento económico e planeamento, auditoria e modernização organizacional. Duas linhas das contas respondem-lhe."
   },
   {
-   "i": 144,
+   "i": 145,
    "kind": "table",
    "rows": [
     [
@@ -9949,22 +9962,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2015​"
+      "text": "Plano 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2016​"
+      "text": "Plano 2016 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2015​"
+      "text": "Custo 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2016​"
+      "text": "Custo 2016 (€)​"
      }
     ],
     [
@@ -10111,25 +10124,25 @@
   },
   {
    "figures": [],
-   "i": 145,
+   "i": 146,
    "kind": "paragraph",
    "text": "Os relatórios não trazem nenhum item de atividade quantificado para as áreas desta pasta em nenhum destes dois anos."
   },
   {
    "figures": [],
-   "i": 146,
+   "i": 147,
    "kind": "heading",
    "level": 4,
    "text": "Élia Maria Andrade Mira"
   },
   {
    "figures": [],
-   "i": 147,
+   "i": 148,
    "kind": "paragraph",
    "text": "A vice-presidente tem o bloco social — educação e intervenção social, juventude, desporto e saúde, o gabinete da cidade educadora, e as relações com as freguesias."
   },
   {
-   "i": 148,
+   "i": 149,
    "kind": "table",
    "rows": [
     [
@@ -10146,22 +10159,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2015​"
+      "text": "Plano 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2016​"
+      "text": "Plano 2016 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2015​"
+      "text": "Custo 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2016​"
+      "text": "Custo 2016 (€)​"
      }
     ],
     [
@@ -10505,25 +10518,25 @@
      "value": "330 881"
     }
    ],
-   "i": 149,
+   "i": 150,
    "kind": "paragraph",
    "text": "A ação social escolar apoiou 1 007 alunos num total de 40 387 €, a par do programa de transportes escolares. O relatório de 2016 regista 330 881 refeições escolares servidas, entregues com as freguesias e os agrupamentos de escolas. Não lhe associa período nenhum — ao contrário do relatório de 2018, que atribui o seu próprio número de refeições a um ano letivo nomeado — pelo que este é o valor que o relatório de 2016 imprime, sobre uma base que não declara."
   },
   {
    "figures": [],
-   "i": 150,
+   "i": 151,
    "kind": "heading",
    "level": 4,
    "text": "Eduardo Jorge Pratas Fernandes Luciano"
   },
   {
    "figures": [],
-   "i": 151,
+   "i": 152,
    "kind": "paragraph",
    "text": "Este vereador tem cultura, património, ordenamento, gestão urbanística e fiscalização municipal — e, na redação do relatório de gestão embora não na da página do executivo, turismo. Daí decorre uma linha de função inteira; o resto da sua pasta só atinge as contas através das linhas de custo mais finas sob duas funções repartidas."
   },
   {
-   "i": 152,
+   "i": 153,
    "kind": "table",
    "rows": [
     [
@@ -10540,22 +10553,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2015​"
+      "text": "Plano 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2016​"
+      "text": "Plano 2016 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2015​"
+      "text": "Custo 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2016​"
+      "text": "Custo 2016 (€)​"
      }
     ],
     [
@@ -10749,25 +10762,25 @@
      "value": "26"
     }
    ],
-   "i": 153,
+   "i": 154,
    "kind": "paragraph",
    "text": "No património, o programa escolar do Projeto Educativo do Património de Évora envolveu 1 068 alunos em 26 atividades nesse ano."
   },
   {
    "figures": [],
-   "i": 154,
+   "i": 155,
    "kind": "heading",
    "level": 4,
    "text": "João Manuel da Horta Rodrigues"
   },
   {
    "figures": [],
-   "i": 155,
+   "i": 156,
    "kind": "paragraph",
    "text": "A pasta operacional — serviços operacionais, obras municipais, água e saneamento, ambiente, higiene e mobilidade, serviços veterinários, proteção civil — é a que toca em mais parte da cidade física. A ordem pública não é só dele: o relatório de gestão dá a segurança pública ao presidente, pelo que a função fica repartida e só a linha de custo da proteção civil abaixo é dele."
   },
   {
-   "i": 156,
+   "i": 157,
    "kind": "table",
    "rows": [
     [
@@ -10784,22 +10797,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2015​"
+      "text": "Plano 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2016​"
+      "text": "Plano 2016 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2015​"
+      "text": "Custo 2015 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2016​"
+      "text": "Custo 2016 (€)​"
      }
     ],
     [
@@ -11127,32 +11140,32 @@
      "value": "60 000"
     }
    ],
-   "i": 157,
+   "i": 158,
    "kind": "paragraph",
    "text": "Uma nova viatura de recolha de resíduos adaptada ao Centro Histórico foi adquirida por 60 000 € e pôs-se a trabalhar em dezembro."
   },
   {
    "figures": [],
-   "i": 158,
+   "i": 159,
    "kind": "heading",
    "level": 3,
    "text": "2017–2021, lido através dos anos de contas de 2018 e 2019"
   },
   {
    "figures": [],
-   "i": 159,
+   "i": 160,
    "kind": "heading",
    "level": 4,
    "text": "Carlos Manuel Rodrigues Pinto de Sá"
   },
   {
    "figures": [],
-   "i": 160,
+   "i": 161,
    "kind": "paragraph",
    "text": "A pasta do presidente ganhou a palavra «Financeira» na redistribuição de agosto de 2019 e não a trazia antes, pelo que o serviço da dívida municipal não lhe é atribuído neste mandato e não aparece abaixo. A segurança pública é dele durante todo o mandato, o que separa a função de ordem pública da proteção civil e lhe deixa a única linha de custo por baixo dela."
   },
   {
-   "i": 161,
+   "i": 162,
    "kind": "table",
    "rows": [
     [
@@ -11169,22 +11182,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2018​"
+      "text": "Plano 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2019​"
+      "text": "Plano 2019 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2018​"
+      "text": "Custo 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2019​"
+      "text": "Custo 2019 (€)​"
      }
     ],
     [
@@ -11402,25 +11415,25 @@
   },
   {
    "figures": [],
-   "i": 162,
+   "i": 163,
    "kind": "paragraph",
    "text": "Os relatórios não trazem nenhum item de atividade quantificado para as áreas desta pasta em nenhum destes dois anos."
   },
   {
    "figures": [],
-   "i": 163,
+   "i": 164,
    "kind": "heading",
    "level": 4,
    "text": "Sara Luísa Dimas Fernandes"
   },
   {
    "figures": [],
-   "i": 164,
+   "i": 165,
    "kind": "paragraph",
    "text": "A pasta social deste mandato acrescenta o ambiente, o que tira uma linha de custo da pasta operacional onde antes estava. A titular passou a vice-presidente na redistribuição que o relatório de gestão data de agosto de 2019, sem que a sua pasta mudasse; a página do executivo só levou o novo título no mês seguinte."
   },
   {
-   "i": 165,
+   "i": 166,
    "kind": "table",
    "rows": [
     [
@@ -11437,22 +11450,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2018​"
+      "text": "Plano 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2019​"
+      "text": "Plano 2019 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2018​"
+      "text": "Custo 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2019​"
+      "text": "Custo 2019 (€)​"
      }
     ],
     [
@@ -11841,25 +11854,25 @@
      "value": "402 381"
     }
    ],
-   "i": 166,
+   "i": 167,
    "kind": "paragraph",
    "text": "Os transportes escolares apoiaram 488 alunos por 339 746 €. A piscina municipal registou 75 207† utentes — valor com adaga: toda a secção de desporto do relatório desse ano é o texto do ano anterior reimpresso, e o município não publicou nenhum valor próprio para o ano. Os transportes escolares apoiaram 462 alunos por 402 381 €."
   },
   {
    "figures": [],
-   "i": 167,
+   "i": 168,
    "kind": "heading",
    "level": 4,
    "text": "Eduardo Jorge Pratas Fernandes Luciano"
   },
   {
    "figures": [],
-   "i": 168,
+   "i": 169,
    "kind": "paragraph",
    "text": "O turismo fica com este vereador aqui como já ficava no mandato anterior, e pela mesma fonte: o relatório de gestão nomeia-o na sua pasta com todas as letras, onde a página do executivo nomeia apenas cultura e património. Comércio e turismo é atribuída nestes dois mandatos e em nenhum dos dois seguintes."
   },
   {
-   "i": 169,
+   "i": 170,
    "kind": "table",
    "rows": [
     [
@@ -11876,22 +11889,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2018​"
+      "text": "Plano 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2019​"
+      "text": "Plano 2019 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2018​"
+      "text": "Custo 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2019​"
+      "text": "Custo 2019 (€)​"
      }
     ],
     [
@@ -12075,25 +12088,25 @@
      "value": "182"
     }
    ],
-   "i": 170,
+   "i": 171,
    "kind": "paragraph",
    "text": "No instrumento de reabilitação urbana o município registou 182 atendimentos e emitiu alguns pareceres vinculativos."
   },
   {
    "figures": [],
-   "i": 171,
+   "i": 172,
    "kind": "heading",
    "level": 4,
    "text": "João Manuel da Horta Rodrigues"
   },
   {
    "figures": [],
-   "i": 172,
+   "i": 173,
    "kind": "paragraph",
    "text": "Esta pasta mudou de mãos dentro da janela delimitada acima: Horta Rodrigues teve-a desde o início do mandato, Alexandre Varela a partir de algum dia entre 2019-07-23 e 2019-08-15, com as designações inalteradas. Os dois anos abaixo atravessam portanto a passagem, e as contas não podem dizer qual dos dois gastou que parte da coluna de 2019."
   },
   {
-   "i": 173,
+   "i": 174,
    "kind": "table",
    "rows": [
     [
@@ -12110,22 +12123,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2018​"
+      "text": "Plano 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2019​"
+      "text": "Plano 2019 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2018​"
+      "text": "Custo 2018 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2019​"
+      "text": "Custo 2019 (€)​"
      }
     ],
     [
@@ -12464,32 +12477,32 @@
   },
   {
    "figures": [],
-   "i": 174,
+   "i": 175,
    "kind": "paragraph",
    "text": "Os relatórios não trazem nenhum item de atividade quantificado para as áreas desta pasta em nenhum destes dois anos."
   },
   {
    "figures": [],
-   "i": 175,
+   "i": 176,
    "kind": "heading",
    "level": 3,
    "text": "2021–2025, lido através dos anos de contas de 2022 e 2023"
   },
   {
    "figures": [],
-   "i": 176,
+   "i": 177,
    "kind": "heading",
    "level": 4,
    "text": "Carlos Manuel Rodrigues Pinto de Sá"
   },
   {
    "figures": [],
-   "i": 177,
+   "i": 178,
    "kind": "paragraph",
    "text": "No executivo mais estreito do período o presidente retoma o ordenamento, a gestão urbanística, a cultura e o património — o bloco inteiro que o seu próprio vereador teve nos dois mandatos anteriores — enquanto as finanças saem da redação da sua pasta."
   },
   {
-   "i": 178,
+   "i": 179,
    "kind": "table",
    "rows": [
     [
@@ -12506,22 +12519,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2022​"
+      "text": "Plano 2022 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2023​"
+      "text": "Plano 2023 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2022​"
+      "text": "Custo 2022 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2023​"
+      "text": "Custo 2023 (€)​"
      }
     ],
     [
@@ -12785,25 +12798,25 @@
      "value": "38"
     }
    ],
-   "i": 179,
+   "i": 180,
    "kind": "paragraph",
    "text": "Através da empresa municipal de habitação, uma candidatura de reabilitação no valor de 455 222 € cobriu 38 fogos num bairro."
   },
   {
    "figures": [],
-   "i": 180,
+   "i": 181,
    "kind": "heading",
    "level": 4,
    "text": "Alexandre Manuel Rosa Varela"
   },
   {
    "figures": [],
-   "i": 181,
+   "i": 182,
    "kind": "paragraph",
    "text": "O vice-presidente deste mandato tem ao mesmo tempo a pasta operacional e a social inteira: freguesias, obras, água e saneamento, ambiente e mobilidade, fiscalização, serviços veterinários, proteção civil, educação e intervenção social, desporto e juventude, e saúde. É a maior pasta individual deste documento."
   },
   {
-   "i": 182,
+   "i": 183,
    "kind": "table",
    "rows": [
     [
@@ -12820,22 +12833,22 @@
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2022​"
+      "text": "Plano 2022 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Plano 2023​"
+      "text": "Plano 2023 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2022​"
+      "text": "Custo 2022 (€)​"
      },
      {
       "figures": [],
       "header": true,
-      "text": "Custo 2023​"
+      "text": "Custo 2023 (€)​"
      }
     ],
     [
@@ -13501,25 +13514,25 @@
      "value": "4 000"
     }
    ],
-   "i": 183,
+   "i": 184,
    "kind": "paragraph",
    "text": "Os transportes escolares são reportados como apoiando mais de 420† alunos — valor com adaga: este parágrafo é reimpresso do relatório do ano anterior, valores e ano letivo incluídos. Os contratos-programa de desenvolvimento desportivo com clubes e associações meteram mais de 350 000 € no sector nesse ano. A higiene pública removeu mais de 4 000 depósitos ilegais de lixo por todo o concelho."
   },
   {
    "figures": [],
-   "i": 184,
+   "i": 185,
    "kind": "heading",
    "level": 3,
    "text": "Os três anos de charneira"
   },
   {
    "figures": [],
-   "i": 185,
+   "i": 186,
    "kind": "paragraph",
    "text": "As eleições de 2017, de 2021 e de 2025 caem dentro do ano de contas. As contas de cada um desses anos cobrem por isso parte de um mandato e parte do seguinte. São mostrados aqui ao nível de grupo, que é o único nível que os três partilham, e não são usados em nenhum painel de pelouro acima."
   },
   {
-   "i": 186,
+   "i": 187,
    "kind": "table",
    "rows": [
     [
@@ -13730,7 +13743,7 @@
   },
   {
    "figures": [],
-   "i": 187,
+   "i": 188,
    "kind": "paragraph",
    "links": [
     {
@@ -13742,18 +13755,18 @@
    "text": "A execução de 2025 por grupo de funções está no estudo As contas da Câmara de Évora, 2010 a 2025, na secção sobre o que o plano comprou."
   },
   {
-   "i": 188,
+   "i": 189,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 189,
+   "i": 190,
    "kind": "heading",
    "level": 2,
    "text": "O que pode e o que não pode ser comparado entre as eras"
   },
   {
-   "i": 190,
+   "i": 191,
    "kind": "table",
    "rows": [
     [
@@ -14421,7 +14434,7 @@
     }
    ],
    "figures": [],
-   "i": 191,
+   "i": 192,
    "kind": "paragraph",
    "text": "O que compara. A coluna de execução do plano compara ao longo de todo o período. A sua estrutura não muda: os mesmos quatro grupos, as mesmas linhas de função nomeadas, as mesmas duas componentes — plano de investimentos e atividades mais relevantes — em todos os anos lidos. A junção de uma linha de Saúde em 2023 acrescenta uma linha; não renumera as outras. Quem comparar 2015 com 2023 nesta coluna está a comparar coisas iguais."
   },
@@ -14434,7 +14447,7 @@
     }
    ],
    "figures": [],
-   "i": 192,
+   "i": 193,
    "kind": "paragraph",
    "links": [
     {
@@ -14447,7 +14460,7 @@
   },
   {
    "figures": [],
-   "i": 193,
+   "i": 194,
    "kind": "paragraph",
    "text": "Para 2025 há a execução do plano, que está no estudo das contas, e não há custo do serviço."
   },
@@ -14460,17 +14473,17 @@
     }
    ],
    "figures": [],
-   "i": 194,
+   "i": 195,
    "kind": "paragraph",
    "text": "O que nunca compara. As linhas de custo mais finas sob uma função repartida — cultura contra desporto, saneamento contra água — são o único lugar das contas onde as áreas de um só titular de pelouro podem sequer ser custeadas. Só existem onde existe balancete, ou seja em oito dos nove anos lidos e em nenhum de 2020, de 2024 ou de 2025. Qualquer série construída sobre elas tem buracos por construção."
   },
   {
-   "i": 195,
+   "i": 196,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 196,
+   "i": 197,
    "kind": "heading",
    "level": 2,
    "text": "O que vem a seguir"
@@ -14491,23 +14504,23 @@
      "value": "21"
     }
    ],
-   "i": 197,
+   "i": 198,
    "kind": "paragraph",
    "text": "Se a distribuição a três de 2025 — 21 designações, um despacho assinado — sobrevive às suas primeiras contas, previstas por volta da primavera de 2027. Se o relatório de 2026 continua a imprimir as listas de pelouros por membro. E se a habitação, a cultura e o desporto ganham um dia uma fronteira de pelouro que as contas consigam seguir."
   },
   {
    "figures": [],
-   "i": 198,
+   "i": 199,
    "kind": "paragraph",
    "text": "Como vota a assembleia municipal as contas de 2026, as primeiras do executivo instalado em 2025, com a repartição de mandatos que a secção das eleições conta."
   },
   {
-   "i": 199,
+   "i": 200,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 200,
+   "i": 201,
    "kind": "heading",
    "level": 2,
    "text": "Fontes e lacunas"
@@ -14540,7 +14553,7 @@
      "value": "18"
     }
    ],
-   "i": 201,
+   "i": 202,
    "kind": "paragraph",
    "text": "Como o mapa foi datado. O município não publica um histórico da sua própria página do executivo, e o histórico vem do Internet Archive. Uma mudança de pessoal é então datada não a um dia mas ao intervalo fechado entre a última captura que ainda mostra o estado antigo e a primeira que mostra o novo — 24 dias para o primeiro evento de 2019 e 18 para o segundo. É o limite mais apertado que o arquivo permite."
   },
@@ -14553,7 +14566,7 @@
     }
    ],
    "figures": [],
-   "i": 202,
+   "i": 203,
    "kind": "paragraph",
    "text": "O despacho, e o que prova. Para o mandato instalado em 2025 existe o próprio instrumento: o despacho «Distribuição de Pelouros», assinado a 2025-11-10, mais dois despachos de delegação de competências que o citam pela data. Para os outros mandatos não foi encontrado despacho em forma legível: o de 2017–2021 existe no arquivo mas é uma imagem digitalizada sem camada de texto."
   },
@@ -14566,12 +14579,12 @@
     }
    ],
    "figures": [],
-   "i": 203,
+   "i": 204,
    "kind": "paragraph",
    "text": "Fontes."
   },
   {
-   "i": 204,
+   "i": 205,
    "items": [
     {
      "emphasis": [
@@ -14623,24 +14636,24 @@
   },
   {
    "figures": [],
-   "i": 205,
+   "i": 206,
    "kind": "paragraph",
    "text": "O relato de atividades de 2025 traz três itens possivelmente já registados noutro lado: um compromisso de habitação ao abrigo do plano de recuperação, um plano de investimento cultural submetido a financiamento europeu, e a recuperação estrutural de uns antigos celeiros. Nenhum dos três valores é idêntico às linhas já registadas — são vizinhos temáticos, não o mesmo número. O valor dos celeiros é ainda inutilizável tal como impresso: a fonte apresenta-o num formato decimal que não se lê como um número só. Mais dois valores ficaram de fora pela mesma classe de razão — um investimento em piscinas que o relatório de 2022 imprime com um algarismo evidentemente caído, e um valor de apoio que o relatório de 2025 imprime duas vezes com valores diferentes."
   },
   {
    "figures": [],
-   "i": 206,
+   "i": 207,
    "kind": "paragraph",
    "text": "A correspondência não foi rederivada sobre a redação dos relatórios de gestão. Cita a página do executivo exceto em três linhas, porque a página é a única fonte que cobre os cinco mandatos e os quatro quadros têm de continuar comparáveis; mas para todos os mandatos que as contas cobrem existe uma segunda redação de primeira mão, que difere nos dois mais antigos, e uma correspondência construída sobre ela voltaria a diferir. Até a rederivação estar feita, todas as contagens do quadro de estatísticas devem ser lidas como contagens sobre a redação da página, não sobre os pelouros do município em abstrato."
   },
   {
    "figures": [],
-   "i": 207,
+   "i": 208,
    "kind": "paragraph",
    "text": "Não há mapa de pelouros para 2009–2013 para além da biografia retrospetiva de um membro. Não há contas legíveis para 2014, nenhumas para 2020 e nenhum documento de contas de todo para 2024, pelo que cada mandato é lido através de dois anos de contas em vez de quatro. Não há balancete do plano analítico para 2025, por admissão escrita do próprio município. Não foi examinada nenhuma captura de arquivo da página do executivo de 2021–2025 de 2023 nem dos últimos meses do mandato, pelo que uma mudança tardia nesse mandato não teria sido apanhada. Abaixo do nível de função, os quadros de execução do plano dos anos POCAL não trazem nenhum quadro monetário de sub-função — as sub-funções aparecem nesses relatórios como códigos narrativos sem euros associados — pelo que a atribuição mais fina dos painéis vem da contabilidade de custos e só existe onde esta existe."
   },
   {
-   "i": 208,
+   "i": 209,
    "items": [
     {
      "emphasis": [
@@ -14670,7 +14683,7 @@
   },
   {
    "figures": [],
-   "i": 209,
+   "i": 210,
    "kind": "paragraph",
    "text": "Lacunas das eleições. O nome legal completo do presidente interino é [a verificar]. A data exata da instalação do mandato de 2009 não foi fixada a partir de uma fonte oficial. O resultado da assembleia de 2021 assenta somente no portal de resultados, que publica contagens provisórias."
   }
