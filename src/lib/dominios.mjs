@@ -167,7 +167,13 @@ export const dataDaMedida = (valor) => dataDaCasa(valor);
  * O ÍNDICE DE DÍVIDA VEM DA DISTÂNCIA, e não do relance, porque é ali que a
  * entrada gerada o declara com o seu teto legal.
  *
- * @param {'ganho'|'indice'} chave
+ * AS OITO CHAVES DO RELANCE (bloco L2b, 01.10.2026). A faixa do concelho
+ * (`src/lib/faixa-do-concelho.mjs`) pede as 308 linhas de cada medida que tem
+ * cartão, e a regra é a mesma para todas: a linha que o relance de cada
+ * concelho declara para aquela chave. Até ao L2b só o ganho e o índice eram
+ * pedidos, pelos dois mapas de «Lugares», e a função só os conhecia.
+ *
+ * @param {string} chave  uma chave de `MEDIDAS_DO_CONCELHO`
  * @returns {Map<string, string>}
  */
 export function linhasPorConcelho(chave) {
@@ -177,7 +183,7 @@ export function linhasPorConcelho(chave) {
     const id =
       chave === 'indice'
         ? c.distancia?.indice
-        : c.relance.find((m) => m.chave === 'ganho')?.claim;
+        : c.relance.find((m) => m.chave === chave)?.claim;
     if (typeof id === 'string' && hasClaim(id)) porSlug.set(c.slug, id);
   }
   return porSlug;
