@@ -474,14 +474,28 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                     )}
                   </dd>
 
+                  {/* A FRASE ANTES DOS VALORES (passagem E1c, 01.10.2026, ponto 2 do mandato).
+                      Um valor que não é da data da mudança de executivo não se diz herdado nem
+                      deixado: a dívida de 31.12.2025 é de dois meses depois da instalação de
+                      31.10.2025, e o estudo das contas não reparte as contas do ano pelos dois
+                      executivos. `herdouAntes` e `deixouAntes` são a frase que diz a data do
+                      valor e de onde ele vem, em pedaços do `Frase` (a data com a marca de
+                      data de referência), e os valores seguem-na com o seu selo. */}
                   <dt>{s.municipio.tempoHerdou}</dt>
                   <dd>
                     {mandato.herdou ? (
-                      mandato.herdou.map((v) => (
-                        <>
-                          <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
-                        </>
-                      ))
+                      <>
+                        {mandato.herdouAntes && (
+                          <>
+                            <Frase partes={mandato.herdouAntes[lang]} lang={lang} />{' '}
+                          </>
+                        )}
+                        {mandato.herdou.map((v) => (
+                          <>
+                            <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                          </>
+                        ))}
+                      </>
                     ) : (
                       <span class="mun-campo-vazio">{mandato.herdouNota[lang]}</span>
                     )}
@@ -519,11 +533,18 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                   <dt>{s.municipio.tempoDeixou}</dt>
                   <dd>
                     {mandato.deixou ? (
-                      mandato.deixou.map((v) => (
-                        <>
-                          <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
-                        </>
-                      ))
+                      <>
+                        {mandato.deixouAntes && (
+                          <>
+                            <Frase partes={mandato.deixouAntes[lang]} lang={lang} />{' '}
+                          </>
+                        )}
+                        {mandato.deixou.map((v) => (
+                          <>
+                            <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                          </>
+                        ))}
+                      </>
                     ) : (
                       <span class="mun-campo-vazio">{mandato.deixouNota[lang]}</span>
                     )}
