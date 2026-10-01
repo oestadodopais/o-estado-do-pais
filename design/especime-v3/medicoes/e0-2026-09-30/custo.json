@@ -1,6 +1,6 @@
 {
-  "medido_em": "2026-09-30T23:26:00.999446+00:00",
-  "segundos_decorridos": 9317.1,
+  "medido_em": "2026-10-01T00:02:38.984512+00:00",
+  "segundos_decorridos": 11515.1,
   "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
   "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
   "construtor": {
@@ -8,16 +8,18 @@
     "modelo": "gpt-6.1-sol",
     "inicio": "2026-09-30T20:50:43.925Z",
     "inicio_e0b": "2026-09-30T22:26:35.480Z",
-    "ultima_amostra": "2026-09-30T23:25:47.623Z",
+    "inicio_e0c": "2026-09-30T23:55:48.135Z",
+    "uso_inicio_e0c": 836455,
+    "ultima_amostra": "2026-10-01T00:01:03.530Z",
     "simbolos": {
-      "input_tokens": 25110521,
-      "cached_input_tokens": 24437760,
+      "input_tokens": 26518789,
+      "cached_input_tokens": 25733632,
       "cache_write_input_tokens": 0,
-      "output_tokens": 148378,
-      "reasoning_output_tokens": 67166,
-      "total_tokens": 25258899
+      "output_tokens": 160538,
+      "reasoning_output_tokens": 72587,
+      "total_tokens": 26679327
     },
-    "simbolos_sem_cache_mais_saida": 821139
+    "simbolos_sem_cache_mais_saida": 945695
   },
   "revisores_automaticos": [
     {
@@ -25,6 +27,8 @@
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T21:35:41.764Z",
       "inicio_e0b": null,
+      "inicio_e0c": null,
+      "uso_inicio_e0c": null,
       "ultima_amostra": "2026-09-30T21:58:05.781Z",
       "simbolos": {
         "input_tokens": 954627,
@@ -41,6 +45,8 @@
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T20:52:56.622Z",
       "inicio_e0b": null,
+      "inicio_e0c": null,
+      "uso_inicio_e0c": null,
       "ultima_amostra": "2026-09-30T21:31:23.044Z",
       "simbolos": {
         "input_tokens": 573827,
@@ -57,6 +63,8 @@
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T22:26:34.160Z",
       "inicio_e0b": null,
+      "inicio_e0c": null,
+      "uso_inicio_e0c": null,
       "ultima_amostra": "2026-09-30T23:06:02.575Z",
       "simbolos": {
         "input_tokens": 119553,
@@ -73,6 +81,8 @@
       "modelo": "codex-auto-review",
       "inicio": "2026-09-30T23:11:54.744Z",
       "inicio_e0b": null,
+      "inicio_e0c": null,
+      "uso_inicio_e0c": null,
       "ultima_amostra": "2026-09-30T23:25:37.026Z",
       "simbolos": {
         "input_tokens": 57956,
@@ -91,6 +101,56 @@
     "segundos_decorridos": 3565.5,
     "mesma_sessao_do_e0": true,
     "simbolos_desde_final_e0": 408878,
-    "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5."
+    "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5.",
+    "medido_em": "2026-09-30T23:26:00.999446+00:00",
+    "proveniencia": "custo.json na cabeça a99d45cc e mandato E0c, ponto 3.",
+    "construtor_simbolos": 408878,
+    "revisores_automaticos": [
+      {
+        "sessao": "01a0f46d-3a10-7143-ae1c-eca7ea3b2a98",
+        "modelo": "codex-auto-review",
+        "inicio": "2026-09-30T22:26:34.160Z",
+        "inicio_e0b": null,
+        "ultima_amostra": "2026-09-30T23:06:02.575Z",
+        "simbolos": {
+          "input_tokens": 119553,
+          "cached_input_tokens": 56576,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 515,
+          "reasoning_output_tokens": 272,
+          "total_tokens": 120068
+        },
+        "simbolos_sem_cache_mais_saida": 63492
+      },
+      {
+        "sessao": "01a0f496-bd66-7793-a953-2a8eb522ebb1",
+        "modelo": "codex-auto-review",
+        "inicio": "2026-09-30T23:11:54.744Z",
+        "inicio_e0b": null,
+        "ultima_amostra": "2026-09-30T23:25:37.026Z",
+        "simbolos": {
+          "input_tokens": 57956,
+          "cached_input_tokens": 31232,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 283,
+          "reasoning_output_tokens": 135,
+          "total_tokens": 58239
+        },
+        "simbolos_sem_cache_mais_saida": 27007
+      }
+    ],
+    "revisores_simbolos": 90499,
+    "total_cobrado_simbolos": 499377
+  },
+  "e0c": {
+    "inicio": "2026-09-30T23:55:48.135Z",
+    "medido_em": "2026-10-01T00:02:38.984512+00:00",
+    "segundos_decorridos": 410.8,
+    "construtor_simbolos": 109240,
+    "revisores_automaticos": [],
+    "revisores_simbolos": 0,
+    "base_do_delta": "Último token_count anterior à mensagem de retoma E0c.",
+    "criterio_dos_revisores": "Mesma worktree, início desde a retoma E0c e sessão fora das listas E0 e E0b.",
+    "total_cobrado_simbolos": 109240
   }
 }
