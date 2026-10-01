@@ -1,0 +1,27 @@
+# git rebase main, no ramo e1-2026-09-30 do sítio, a 2026-10-01 (passagem E1b). Primeira corrida, código 1:
+Rebasing (1/11)
+Rebasing (2/11)
+Rebasing (3/11)
+Rebasing (4/11)
+Rebasing (5/11)
+Auto-merging ledger/historias-valores.json
+Auto-merging src/i18n/lingua-dos-titulos.mjs
+CONFLICT (content): Merge conflict in src/i18n/lingua-dos-titulos.mjs
+error: could not apply 822b93b3... E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply 822b93b3... # E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas
+
+# a resolução: as duas chaves de src/i18n/lingua-dos-titulos.mjs, a de main (30.09.2026) e a do E1 (01.10.2026), pela ordem das datas; depois git rebase --continue, código 0:
+[detached HEAD 43d9f3eb] E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas
+ 3 files changed, 22 insertions(+), 7 deletions(-)
+Rebasing (6/11)
+Rebasing (7/11)
+Rebasing (8/11)
+Rebasing (9/11)
+Rebasing (10/11)
+Rebasing (11/11)
+Successfully rebased and updated refs/heads/e1-2026-09-30.

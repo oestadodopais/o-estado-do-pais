@@ -25,7 +25,8 @@ import { spawnSync } from 'node:child_process';
 
 const env = { ...process.env, OEDP_DIST: path.resolve('dist'), NO_COLOR: '1' };
 delete env.FORCE_COLOR;
-const redigir = (s) => s.replaceAll(process.cwd(), '[repositorio]').replaceAll(os.homedir(), '[pasta-pessoal]').replaceAll(os.userInfo().username, '[utilizador]');
+/* O ledger:check pinta as queixas mesmo com NO_COLOR; as cores saem antes de procurar a queixa. */
+const redigir = (s) => s.replace(/\x1b\[[0-9;]*m/g, '').replaceAll(process.cwd(), '[repositorio]').replaceAll(os.homedir(), '[pasta-pessoal]').replaceAll(os.userInfo().username, '[utilizador]');
 function correr(nome, codigo, mordida, esperado = 1) {
   const r = spawnSync('node', ['--input-type=module', '-e', codigo], { encoding: 'utf8', env, maxBuffer: 64 * 1024 * 1024 });
   const saida = redigir((r.stdout ?? '') + (r.stderr ?? ''));

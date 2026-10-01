@@ -1,0 +1,132 @@
+{
+ "plantas": [
+  {
+   "nome": "limpo: check-pais",
+   "codigo": 0,
+   "esperado": 0,
+   "mordida": null,
+   "queixa": null,
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "limpo: ledger:check",
+   "codigo": 0,
+   "esperado": 0,
+   "mordida": null,
+   "queixa": null,
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "A3: estudos-publicados sem declaração",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "A3: .*uma linha do registo sem lugar",
+   "queixa": "A3: correcoes/index.html: uma linha do registo sem lugar que se possa compor.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "A1: estudos-publicados declarada de Portugal",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "A1: estudos-publicados é declarado de «portugal» e deriva de «o-estado-do-pais»",
+   "queixa": "A1: estudos-publicados é declarado de «portugal» e deriva de «o-estado-do-pais».",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "A1b: estudos-publicados sem a expressão verificada do arquivo",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "A1: estudos-publicados está em lugar-das-linhas.mjs e não deriva lugar nenhum",
+   "queixa": "A1: estudos-publicados está em lugar-das-linhas.mjs e não deriva lugar nenhum.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "R: estudos-publicados sem declaração no resolvedor",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "estudos-publicados.*nenhuma declaração diz de que lugar é",
+   "queixa": "mudancas: a linha \"estudos-publicados\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "H: estudos-publicados sem a história selada",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "estudos-publicados\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+   "queixa": "    ✗ [estudos-publicados.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "V: estudos-publicados com o valor antigo",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "\\[estudos-publicados\\.yml\\] a aritmética não bate certo",
+   "queixa": "    ✗ [estudos-publicados.yml] a aritmética não bate certo.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "A3: edicoes-publicadas sem declaração",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "A3: .*uma linha do registo sem lugar",
+   "queixa": "A3: correcoes/index.html: uma linha do registo sem lugar que se possa compor.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "A1: edicoes-publicadas declarada de Portugal",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "A1: edicoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»",
+   "queixa": "A1: edicoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais».",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "A1b: edicoes-publicadas sem a expressão verificada do arquivo",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "A1: edicoes-publicadas está em lugar-das-linhas.mjs e não deriva lugar nenhum",
+   "queixa": "A1: edicoes-publicadas está em lugar-das-linhas.mjs e não deriva lugar nenhum.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "R: edicoes-publicadas sem declaração no resolvedor",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "edicoes-publicadas.*nenhuma declaração diz de que lugar é",
+   "queixa": "mudancas: a linha \"edicoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "H: edicoes-publicadas sem a história selada",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "edicoes-publicadas\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+   "queixa": "    ✗ [edicoes-publicadas.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+   "mordeu": true,
+   "memoria_isolada": true
+  },
+  {
+   "nome": "V: edicoes-publicadas com o valor antigo",
+   "codigo": 1,
+   "esperado": 1,
+   "mordida": "\\[edicoes-publicadas\\.yml\\] a aritmética não bate certo",
+   "queixa": "    ✗ [edicoes-publicadas.yml] a aritmética não bate certo.",
+   "mordeu": true,
+   "memoria_isolada": true
+  }
+ ],
+ "mordidas": 14,
+ "total": 14
+}

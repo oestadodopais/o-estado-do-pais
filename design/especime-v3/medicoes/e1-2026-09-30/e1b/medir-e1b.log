@@ -1,0 +1,17 @@
+E1b · medidas
+  cabecas_e1b: {"sitio": {"cabeca_de_codigo": "64ff4b4a14e839d47484c6caef109a3261409bdd", "cabeca_na_medida": "64ff4b4a14e839d47484c6caef109a3261409bdd", "base": "dd7f6208cde1f3a3ef1cba2a6e8f752e
+  rebase_sobre_main: {"base": "dd7f6208", "merge_base_da_cabeca": "dd7f6208", "rebaseado": true, "commits_reposicionados": 11, "commits_antes": 11, "conflitos": ["src/i18n/lingua-dos-titulos.mjs"], "ma
+  datas_de_publicacao: {"edicoes_novas": 7, "batem_com_o_git": 7, "com_o_commit_antigo": 0, "datas": ["2026-10-01"], "edicoes": [{"edicao": "evora-2027-capital-europeia-da-cultura/pt", "data": "2026-10-0
+  contadores_do_arquivo: {"estudos-publicados": {"valor": "17", "conta": 17, "bate": true, "check": "estudos_no_arquivo", "edicao": "01.10.2026", "entradas": [{"date": "2026-10-01", "kind": "atualizacao", 
+  plantas_dos_contadores: {"mordidas": 14, "total": 14, "plantas": [{"nome": "limpo: check-pais", "codigo": 0, "esperado": 0, "mordeu": true}, {"nome": "limpo: ledger:check", "codigo": 0, "esperado": 0, "mo
+  emendas_das_aberturas: {"todas_feitas": true, "trocas": [{"estudo": "18", "lingua": "pt", "onde": "abertura", "velho": "Évora é uma cidade relativamente próspera numa região pobre", "novo": "Évora é um c
+  sinal_do_euro: {"16 pt": {"antes": {"abertura": {"sinal_antes": 10, "sinal_depois": 0, "palavra": 0}, "corpo": {"sinal_antes": 328, "sinal_depois": 1, "palavra": 0}}, "depois": {"abertura": {"sin
+  cortes_inalterados: {"ficheiros": 6, "iguais": 6, "operacoes": 0, "lista": [{"ficheiro": "As contas da Câmara de Évora, 2010 a 2025 (pt-PT).cortes.json", "igual": true, "operacoes": 0}, {"ficheiro": "
+  travessia_e1b: {"registos": [{"edicao": "evora-contas-da-camara-2010-2025/pt", "commit": "79ab4d5", "resumo_bate": true}, {"edicao": "evora-contas-da-camara-2010-2025/en", "commit": "79ab4d5", "r
+  leituras_conferidas: {"falhas_antes": 3, "falhas_depois": 0, "estudos": [{"slug": "evora-contas-da-camara-2010-2025", "pt": true, "en": true}, {"slug": "evora-quem-governou-a-camara-2009-2025", "pt": t
+  leitura_do_19_e_pagina_inglesa_do_17: {"construcao": "64ff4b4a14e839d47484c6caef109a3261409bdd", "da_cabeca_de_codigo": true, "evora_2027": {"/estudos/evora-2027-capital-europeia-da-cultura": {"robots": null, "no_mapa_
+  divida_da_edicao_inglesa_do_17: {"fontes_inglesas": {"08 Évora Mandates": {"registo_ingles_no_motor": true, "blocos": 173, "alojado_no_sitio": false}, "09 Évora Pelouros": {"registo_ingles_no_motor": true, "bloco
+  portoes_e1b: {"sitio_cabeca_de_codigo": {"cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd", "build": 0, "build_inicio": "2026-10-01T03:37:54Z", "build_fim": "2026-10-01T03:39:49Z", "verify":
+  capturas_e1b: {"capturas": 34, "sha256_conferidos": 34, "problemas": [], "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd", "larguras": [390, 1280], "pedidos_recusados_para_fora": 0}
+  custo_e1b: {"modelo": "Claude Opus 5.5", "inicio": "2026-10-01T03:38:12+01:00", "medido_em": "2026-10-01T03:56:55+00:00", "segundos_de_relogio": 4723, "simbolos": 772242, "fonte_dos_simbolos"
+E1b · 15 medidas; conhecidos-positivos que não morderam: nenhum

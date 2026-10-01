@@ -170,3 +170,135 @@ O modelo: Claude Opus 5.5, na definição `construtor`, em todo o bloco (no moto
 2. **As células das tabelas sem linha do sítio** (o segundo ponto medido, no «Em resumo»): decidir se o §2 do brief quer linhas do sítio ou do estudo.
 3. **A revisão do lugar de direção:** as aberturas dos quatro estudos («Em resumo», «O que este projeto conclui», «O que podia funcionar melhor») são prosa nova minha, com cada número por marcador de uma linha; as três leituras copiadas para os estudos novos (`src/data/leituras.mjs`: a das contas para o 16, a dos pelouros para o 17 e a do dinheiro público para o 18); e a edição inglesa do 17.
 4. **A leitura a frio** do Codex `gpt-6.1-sol`, e a segunda leitura da `gpt-6-astra` por ser um bloco grande (§1.147), com cinco estragos plantados nas cópias do pacote.
+
+## E1b · a passagem de 01.10.2026
+
+*Relatório do construtor da passagem E1b: Claude Opus 5.5 (a definição `construtor`), a 01.10.2026, pelo mandato [prompts/PROMPT-e1b-construtor.md](prompts/PROMPT-e1b-construtor.md), com as quatro decisões do lugar de direção sobre os pontos de paragem do E1 e as emendas às quatro aberturas. Cada número desta secção está em [medidas.json](medidas.json), na chave `e1b`, escrito por [e1b/medir-e1b.py](e1b/medir-e1b.py) com o nome, o valor, o comando e um conhecido-positivo de cada medida, ou num ficheiro de [e1b/](e1b/) e de [portoes/](portoes/) com o código escrito depois de o processo acabar. As secções 1 a 11, acima, são do construtor anterior e ficam como ele as escreveu: os identificadores dos commits do sítio que elas citam são os de antes do rebase, e a correspondência está em E1b.5.*
+
+### E1b.0 · Em resumo
+
+O mandato fez-se pela ordem que ele diz. O ramo do sítio está rebaseado sobre `main`, com o mecanismo do E0. Os dois contadores do arquivo mudaram por esse mecanismo, `estudos-publicados` de 13 para 17 e `edicoes-publicadas` de 18 para 25, cada um com o lugar `o-estado-do-pais`, a razão escrita, uma entrada de atualização selada e a derivação a bater com o `check`. As emendas às aberturas fizeram-se no motor, no 16, no 18 e no 19, nas duas línguas onde há edição inglesa, com o portão do motor a 0, e atravessaram para o sítio com o `check:documentos` a 0, também com a origem conferida contra o motor. O Évora 2027 tem a sua leitura e entrou no índice dos motores de busca e no mapa do sítio. A conferência das cópias das leituras achou a origem da leitura do 18 fora da letra do documento, e ela foi refeita. A edição inglesa do 17 fica como dívida (E1b.10).
+
+Um ponto medido e dito, que não fiz: o 19 escreve o sinal do euro depois do número, na abertura e no corpo, como o estudo de setembro de onde vem (E1b.3).
+
+### E1b.1 · O mandato, ponto a ponto
+
+| # | O que | O que ficou | A medida |
+|---|---|---|---|
+| 1 | O rebase do ramo do sítio sobre `main` | Rebaseado sobre a cabeça em que o E0 aterrou: 11 commits reposicionados, 1 conflito (`src/i18n/lingua-dos-titulos.mjs`, as chaves das datas), resolvido guardando as duas pela ordem das datas. As 7 datas de publicação dos documentos novos passaram ao commit novo, e batem com o `git` | `rebase_sobre_main`, `datas_de_publicacao` |
+| 1 | Os dois contadores do arquivo, pelo mecanismo | `estudos-publicados` de 13 para 17 e `edicoes-publicadas` de 18 para 25, cada um com o lugar `o-estado-do-pais`, a razão escrita, uma entrada de atualização selada e a derivação a bater com o `check`; 14 plantas, todas a morder | `contadores_do_arquivo`, `plantas_dos_contadores` |
+| 2 | As emendas às quatro aberturas, no motor | As 9 trocas, cada uma 0 vezes a frase velha e 1 a nova, no motor e no documento alojado, nas duas línguas onde há edição inglesa; os negritos das frases de abertura de «O que este projeto conclui» no 19, 5 por edição, passam a 0. O 17 não tinha emenda | `emendas_das_aberturas`, `sinal_do_euro` |
+| 2 | Os `.md` e os `.html` pelo mesmo caminho, os registos e os `.cortes.json` refeitos | Os gabaritos de cada pasta, o `core/compor.py`, o `make_html.py` da pasta e o `publisher/export_records.py`, o caminho com que os estudos foram compostos; 6 registos refeitos e 6 `.cortes.json` relidos, iguais e sem operações | `cortes_inalterados`, `travessia_e1b` |
+| 2 | O portão do motor a 0 | 0 na cabeça do motor, e o pre-commit a passar nos dois commits | `portoes_e1b` |
+| 2 | A travessia, com o `check:documentos` a 0 | Os 6 registos e os 6 documentos do 16, do 18 e do 19 com os resumos a bater no sítio e no motor; o `check:documentos` com 0, e com 0 com a origem conferida contra o motor | `travessia_e1b` |
+| 2 | As cópias das leituras refeitas, e a conferência | Antes, 3 cópias por bater (a do 18 nas duas línguas, e o 19 sem leitura); depois, 0 | `leituras_conferidas` |
+| 3 | A leitura do 19 | No índice e no mapa do sítio, nas duas línguas (antes da passagem, as duas páginas tinham noindex, como a captura do E1 regista); a lista dos estudos rende a frase como resumo | `leitura_do_19_e_pagina_inglesa_do_17` |
+| 3 | A nota de dívida da edição inglesa do 17 | A página inglesa mostra o título português, a nota dos estudos que sucede e a porta para o documento português, como as dos dois estudos antigos; a dívida em E1b.10 | `divida_da_edicao_inglesa_do_17` |
+| 4 | Os portões, as capturas, o relatório | Os três portões do sítio pela tranca na cabeça de código e a corrida final na cabeça do relatório; 34 capturas, nas larguras de 390 e de 1280 px, com 0 problemas; esta secção e a resposta curta | `portoes_e1b`, `capturas_e1b`, `custo_e1b` |
+
+### E1b.2 · As decisões do lugar de direção, e o que se fez com cada uma
+
+1. **Os dois contadores do arquivo mudam pelo mecanismo.** O ramo rebaseou-se sobre `main` (`git rebase main`, no ramo ainda não publicado), e as duas linhas ganharam o lugar `o-estado-do-pais` em `src/data/lugar-das-linhas.mjs`, com a razão escrita ao lado (medem o próprio projeto, não Portugal, uma região nem um concelho), e uma entrada `atualizacao` cada, com a razão do mandato: os quatro estudos e as sete edições publicados a 01.10.2026, e as edições antigas que continuam alojadas e contam. As duas entradas estão seladas em `ledger/historias-valores.json` pelo `scripts/selar-historia-valores.mjs`. O `ensaio-2-contadores-do-arquivo.patch` foi o ponto de partida, adaptado ao mecanismo que aterrou: a segunda leitura do `check-pais` deixa de ser um bloco à parte e passa a ser a lista das expressões verificadas das contagens do projeto (`CONTAGENS_DO_PROJETO`: a das correções, que o E0 já tinha, e as duas do arquivo), a mesma porta estreita, de onde a dos estudos sobre Évora fica de fora, porque mede Évora; os nomes das duas medidas entram nas linhas derivadas, e a chave `16.09.2026` sai da língua das edições, porque nenhuma linha a traz. O `ensaio-1` não aterrou: o mecanismo é o de `main`.
+2. **As células das tabelas ficam com a linha do próprio estudo.** Nenhuma linha atravessou. A medida `celulas_e_linhas_do_sitio` do E1 fica como está (§5, acima): nos quatro estudos novos, 1107 figuras em células, 69 com linha do sítio e 1038 sem ela, todas com a linha do livro do estudo no motor.
+3. **O 17 fica só em português.** A página inglesa do sítio mostra o título português, a nota dos estudos que sucede e a porta para o documento português, como as dos dois estudos antigos de onde vem; a edição inglesa do «Quinze Anos» (e a de «Os Pelouros») que o motor tem e o sítio nunca alojou fica como dívida em E1b.10.
+4. **O Évora 2027 ganha a sua leitura.** Em `src/data/leituras.mjs`, como as outras três: a frase assenta nas duas frases impressas na abertura do estudo que a origem cita, letra a letra, com a linha; não tem números, porque o estudo não tem linhas no livro-razão do sítio, e por isso também não tem medidas. Entrou no índice e no mapa do sítio nas duas línguas.
+
+### E1b.3 · O que medi e digo, e o que não fiz
+
+- **O sinal do euro no 19.** O mandato pede, no «Em resumo» do 18, os valores em prosa com o mesmo sinal nos quatro estudos, na forma «€576 491 544», «como as outras frases do mesmo estudo e os outros estudos». Medi as três formas (o sinal antes, o sinal depois, a palavra «euros») na leitura de abertura e no corpo das sete edições, antes e depois da passagem (`sinal_do_euro`). O 18 escrevia a palavra duas vezes na abertura, nas duas línguas, e passa a zero; o 16 e o 17 escrevem o sinal antes. O 19 escreve o sinal depois do número, na abertura (5 vezes em cada edição) e no corpo (127 em cada edição), que é a forma do estudo de setembro de onde vem. Pôr o sinal à frente só na abertura do 19 partia o estudo em duas formas, e pô-lo também no corpo era mexer no texto copiado, fora das aberturas, que o mandato deixa como está. Fiz o 18, que é o caso que o mandato nomeia, e deixei o 19: a premissa «como os outros estudos» não vale para ele, e a decisão é do lugar de direção.
+- **As edições inglesas.** O mandato escreve as emendas em português. As aberturas do 16, do 18 e do 19 existem nas duas línguas e dizem o mesmo, e por isso a mesma emenda entrou na edição inglesa de cada um: «a relatively prosperous municipality in a region below the national average» e o sinal à frente no 18, as frases de abertura sem negrito no 19, «project» no 16. A medida conta as duas línguas.
+- **As outras «obras» do 16.** A palavra mudou onde o achado 2 do §6 a pôs: a tabela do Évora 2027 no orçamento de 2026, onde a Prestação de Contas 2025 escreve «intervenções estruturantes no âmbito do projeto Évora 2027, financiado pelo PRR» (o excerto da linha `om-2025-saldo-integrado` no livro do estudo). Ficam duas: a da abertura («como as obras do plano de recuperação», a síntese do mecanismo da execução, que não cita essa frase da fonte) e a do bloco copiado do «Orçamentado» («as obras do projeto «Évora 2027» financiado pelo PRR»), que já diz «projeto» onde a fonte o diz.
+- **As palavras da leitura do 19.** A frase da leitura diz «o da câmara é o que falta» onde o estudo diz «o do município é o que falta»: «município» fica fora do vocabulário fechado do sítio quando é a voz do projeto (§1.98), e a L3 do `check:lugar` mediu-a na segunda corrida dos portões. A edição inglesa diz «the council's», como a leitura do 18. A origem continua a citar a frase do estudo letra a letra.
+
+### E1b.4 · Achados
+
+1. **A origem da leitura do 18 não era a frase impressa.** Citava «As localizações de projeto vencidas levam 61,32% do valor aprovado para o concelho.», com ponto final, e o documento continua com uma vírgula («…para o concelho, e as datas de conclusão…»); a conferência das cópias apanhou-a nas duas línguas (antes da correção, 3 falhas: o 18 nas duas línguas e o 19 sem leitura). E o «paga» da frase não assentava em nenhuma das duas linhas citadas. A origem passou a citar a frase inteira e a da abertura com o dinheiro pago; a frase da leitura não mudou. As origens do 16 e do 17 batiam.
+2. **Um rebase muda o commit que acrescentou cada documento.** O `src/data/datas-de-publicacao.json` guarda a data e o commit de cada edição, e o `check-datas`, com a história completa, compara os dois (`scripts/check-datas.mjs`, «declarada.commit !== commit»). Depois do rebase, as 7 edições novas apontavam para o commit de antes; o `node scripts/datas-de-publicacao.mjs` reescreveu-as, e as datas ficaram. Um ramo rebaseado que traga documentos novos tem de correr esse guião.
+3. **As leituras dos estudos já só rendem as duas primeiras frases.** Desde o B1 a página do estudo rende o documento, e a lista dos estudos, a página de Évora e a primeira página leem só as duas primeiras frases da leitura; as medidas e a nota das leituras ficam no ficheiro e o portão de HTML confere as duas línguas delas, mas nenhuma página as mostra. A do 19 não tem medidas nem nota.
+4. **Dois portões pediram a forma da frase nova**, e as duas paragens ficam nas corridas intermédias, com a razão no commit seguinte: o portão da voz pediu-a no inventário das frases (primeira corrida, 4 blocos por classificar: as duas línguas, na lista e na página de Évora), e a L3 do `check:lugar` pediu «a câmara» (segunda corrida, 2 ocorrências de «município»).
+5. **Os ficheiros de operações de voz não mudam com o texto.** Os `.cortes.json` dos estudos compostos estão vazios por decisão escrita, e o exportador de registos relê-os em cada corrida: os 6 do 16, do 18 e do 19 ficaram iguais, sem operações.
+
+### E1b.5 · Os commits
+
+No motor, ramo `e1-2026-09-30` sobre `master`, só com o `Co-Authored-By`, cada um com o `python3 -m core.gate` do pre-commit a passar (os registos em [e1b/motor-travessia/](e1b/motor-travessia/)):
+
+- `8c8f227` E1b: as emendas do lugar de direção às aberturas do 16, do 18 e do 19
+- `79ab4d5` E1b: os registos de conteúdo do 16, do 18 e do 19 refeitos depois das emendas
+
+No sítio, ramo `e1-2026-09-30`, rebaseado sobre `main` (`dd7f6208`), com o `Co-Authored-By` e o `Claude-Session`:
+
+- `90b1ba0a` E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit (o primeiro commit desta passagem, feito antes do rebase como `3741a05b`)
+- `992241f5` E1b: as datas de publicação apontam para os commits do ramo rebaseado sobre main
+- `8ffcf085` E1b: as duas contagens do arquivo passam a 17 estudos e a 25 edições pelo mecanismo das linhas do projeto
+- `df9a3f73` E1b: os documentos e os registos do 16, do 18 e do 19 voltam do motor depois das emendas às aberturas
+- `335e0ef0` E1b: o Évora 2027 ganha a sua leitura, e as cópias das leituras dos quatro estudos conferem com o texto do motor
+- `634aea12` E1b: a leitura do Évora 2027 entra no inventário das frases, e a primeira corrida dos portões fica com a razão
+- `64ff4b4a` E1b: a leitura do Évora 2027 diz «a câmara», a palavra do sítio para quem governa o concelho, e a segunda corrida dos portões fica com a razão (a cabeça de código)
+- o commit deste relatório, com as provas da passagem, que não pode trazer o seu próprio identificador
+- e o commit seguinte, com os códigos da corrida final dos portões na cabeça do relatório
+
+O rebase deu identificadores novos aos commits do E1 e aos dois primeiros desta passagem; a correspondência, lida do `git` e emparelhada pelo assunto (a medida `rebase_sobre_main`):
+
+| antes do rebase | depois | assunto |
+|---|---|---|
+| `8e2fe1d6` | `779bb7b6` | E1: os documentos dos quatro estudos de Évora, alojados como vieram do motor |
+| `fcc2ad44` | `0f39d121` | E1: os registos dos quatro estudos de Évora e os documentos realojados |
+| `1c811075` | `a0bdcdeb` | E1: as 69 linhas de Évora mudam de estudo, e o cruzamento conhece as origens |
+| `0abba32c` | `8a4941a0` | E1: os quatro estudos entram no arquivo, e os seis antigos ficam como edições datadas com a nota do sucessor |
+| `822b93b3` | `43d9f3eb` | E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas |
+| `b84039d0` | `76157bc8` | E1: a estrutura, o plano da fiabilidade, o mapa do repositório e o README dizem os quatro estudos de Évora |
+| `3cab1215` | `ecef4c56` | E1: a nota dos pelouros do mandato de 2009 a 2013 diz o que o estudo de quem governou a câmara diz |
+| `441c2eb8` | `cbf489b8` | E1: a nota do sucessor diz «a 01.10.2026 sucedeu-lhe», e não «sucedido por» |
+| `c6bdf941` | `1f4cc320` | E1: o relatório do construtor, as medidas, as capturas e os portões |
+| `413505a4` | `634cfae0` | E1b: o mandato da passagem E1b, com as decisões do lugar de direção sobre os pontos de paragem e as emendas às quatro aberturas |
+| `3741a05b` | `90b1ba0a` | E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit |
+
+### E1b.6 · Os portões
+
+Os três portões do sítio correram sempre pela tranca da máquina (`sh scripts/leituras/portoes.sh`), cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar e a cabeça ao lado ([portoes/e1b-intermedias/](portoes/e1b-intermedias/)). Os registos levam o caminho da árvore trocado por `[repositorio]` e o do motor por `[motor]` ([e1b/redigir.py](e1b/redigir.py)).
+
+| Corrida | Cabeça | `npm run build` | `npm run verify` | `npm run typecheck` | O que parou |
+|---|---|---:|---:|---:|---|
+| 1 | `335e0ef0` | 1 | 1 | 0 | o portão da voz: 4 blocos por classificar, a frase da leitura do 19 |
+| 2 | `634aea12` | 0 | 1 | 0 | a L3 do `check:lugar`: 2 ocorrências de «município», na mesma frase |
+| 3, a cabeça de código | `64ff4b4a` | 0 | 0 | 0 | nada: os três a 0, com a árvore limpa no fim |
+
+A corrida final, na cabeça do commit deste relatório, faz-se depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1b/](portoes/e1b/). O portão do motor, `python3 -m core.gate`, na cabeça final do motor: código 0 em `79ab4d5` ([e1b/motor/](e1b/motor/)), de 2026-10-01T03:52:17Z a 2026-10-01T03:56:05Z, com a árvore do motor limpa; e o pre-commit passou nos dois commits do motor. A corrida «portão» do GitHub corre quando o lugar de direção publicar o ramo; esta passagem não faz `push`.
+
+### E1b.7 · As medidas e os conhecidos-positivos
+
+| Medida | O valor | O conhecido-positivo | Mordeu |
+|---|---|---|---|
+| `cabecas_e1b` | sítio: a cabeça de código `64ff4b4a` sobre `dd7f6208`; motor: `79ab4d5` sobre `4b46bef`, depois de `6ed528b` | `git cat-file -t` de cada cabeça diz «commit» | sim |
+| `rebase_sobre_main` | rebaseado (a base de fusão é a cabeça de `main`), 11 de 11 commits reposicionados, 1 conflito | a cabeça de antes do rebase tem a base antiga por base de fusão | sim |
+| `datas_de_publicacao` | 7 edições novas, 7 a bater com o `git`, 0 com o commit antigo, todas de 01.10.2026 | o ficheiro de antes da passagem não batia em nenhuma das 7 | sim |
+| `contadores_do_arquivo` | 17 contra a conta 17 e 25 contra a conta 25, cada uma com 1 entrada selada e o lugar `o-estado-do-pais` | as mesmas linhas antes da passagem (13 e 18) contra a conta de hoje | sim |
+| `plantas_dos_contadores` | 14 de 14 a morder | os dois portões sem estrago saem com 0 | sim |
+| `emendas_das_aberturas` | as 9 trocas feitas no motor e no documento alojado; os negritos do 19 de 5 para 0 em cada edição | cada frase velha está no motor antes da passagem, e os negritos antes são 5 | sim |
+| `sinal_do_euro` | a abertura do 18 de 2 para 0 na palavra, nas duas línguas; o 19 com o sinal depois, 5 na abertura e 127 no corpo, em cada edição | uma cadeia plantada com uma forma de cada dá 1, 1 e 1 | sim |
+| `cortes_inalterados` | 6 de 6 iguais, 0 operações | o leitor da lista conta 1 numa lista plantada com uma operação | sim |
+| `travessia_e1b` | 6 registos e 6 documentos com os resumos a bater; `check:documentos` 0, e 0 com a origem | o resumo que o manifesto de antes dava ao documento do 16 já não é o dos bytes alojados | sim |
+| `leituras_conferidas` | 3 falhas antes, 0 depois | o detetor diz «não está» a duas frases que as emendas tiraram e a uma cópia com uma palavra trocada | sim |
+| `leitura_do_19_e_pagina_inglesa_do_17` | as duas páginas do 19 sem noindex e no mapa do sítio; a lista rende a frase; a página inglesa do 17 aponta o documento português | a edição datada do Évora 2027 de setembro tem noindex e não está no mapa, e a página inglesa do 16 rende o documento inglês | sim |
+| `divida_da_edicao_inglesa_do_17` | os registos ingleses do 08 e do 09 no motor (173 e 138 blocos), nenhum alojado; sem gabarito inglês no 17 | o mesmo detetor vê o gabarito inglês do 16 | sim |
+| `portoes_e1b` | as três corridas do sítio (E1b.6) e o portão do motor a 0 | o código do portão do motor concorda com a última linha do seu registo | sim |
+| `capturas_e1b` | 34 de 34 sha256 conferidos, 0 problemas, 0 pedidos para fora | dois corpos que diferem num byte dão resumos diferentes | sim |
+| `custo_e1b` | E1b.9 | o reflog do ramo tem a linha do primeiro commit da passagem | sim |
+
+O `python3 scripts/leituras/conferir-relatorio.py` corre sobre este relatório inteiro e lê os JSON da pasta ([e1b/conferir-relatorio-e1b.json](e1b/conferir-relatorio-e1b.json)): os números sem ficheiro que aponta são todos das secções 1 a 11, do E1, e nesta secção não aponta nenhum.
+
+### E1b.8 · As decisões em vigor
+
+O `python3 scripts/leituras/decisoes-em-vigor.py` correu sobre os ficheiros que a passagem ia tocar, antes de mexer ([sítio](decisoes-em-vigor-sitio-e1b-antes.log), [motor](decisoes-em-vigor-motor-e1b-antes.log)), e de novo sobre os dois intervalos da passagem ([sítio](e1b/decisoes-em-vigor-sitio-e1b-intervalo.log), [motor](e1b/decisoes-em-vigor-motor-e1b-intervalo.log)): nenhuma citação de uma decisão saiu num diff, e nenhum ficheiro foi apagado. As que estão perto das mudanças de código e que conferi: a §1.146 (a porta estreita do lugar do projeto, que a segunda leitura do `check-pais` alarga às duas contagens do arquivo sem dispensar a tabela), a §1.98 (o vocabulário fechado, que a frase da leitura do 19 passou a seguir), a §1.111 (a abertura de cada estudo, que as emendas tocam) e a §1.145 (os quatro estudos).
+
+### E1b.9 · O custo
+
+O modelo: Claude Opus 5.5, na definição `construtor`, em toda a passagem, no motor e no sítio. O relógio: 4723 segundos desde o primeiro commit da passagem (2026-10-01T03:38:12+01:00, o reflog do ramo do sítio) até à medida (2026-10-01T03:56:55+00:00); a leitura dos documentos antes desse commit não está contada. Os símbolos: 772242, a diferença entre o contador do orçamento que a ferramenta mostra ao agente no início da sessão e o que mostrava antes da medida; o total que conta é o que a ferramenta reporta ao lugar de direção no fim do agente, que inclui este relatório, a corrida final dos portões e o fecho.
+
+### E1b.10 · O que fica por fazer
+
+1. **A edição inglesa do 17** (decisão 3), como dívida: o motor tem as edições inglesas do «Quinze Anos» e de «Os Pelouros», com os registos de conteúdo (173 e 138 blocos), e o sítio nunca as alojou; o 17 não tem gabarito inglês, e no mapa de migração do E1 os blocos ingleses que iam para o 17 ficaram sem destino (87 dos 534). Compor o 17 em inglês é um gabarito novo no motor, pelo mesmo `core/compor.py`, com as atribuições e a leitura de abertura em inglês. O lugar de direção abre a issue.
+2. **O sinal do euro no 19**, se o lugar de direção o quiser à frente: é uma emenda à abertura e ao corpo copiado do estudo de setembro, e não só à abertura (E1b.3).
+3. **A leitura a frio** do E1 e da E1b, pelo Codex `gpt-6.1-sol` e, por ser um bloco grande, pela segunda leitura da `gpt-6-astra` (§1.147), com cinco estragos plantados nas cópias do pacote.
+4. **As revisões do inventário** dos blocos e1 e e1b ficam «por ler pelo lugar de direção antes de aterrar», como o portão da voz deixa enquanto o bloco está em construção.
+5. **As secções 1 a 11 deste relatório** citam os commits do sítio de antes do rebase; a correspondência está em E1b.5, e os ficheiros de medição do E1 (`medidas.json` fora da chave `e1b`, `capturas-e1.json`, `l1-e1.json`) ficam como o construtor anterior os escreveu, com as cabeças de então.

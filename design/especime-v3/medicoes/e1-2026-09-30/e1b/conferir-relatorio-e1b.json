@@ -1,0 +1,144 @@
+{
+  "relatorio": "design/especime-v3/medicoes/e1-2026-09-30/LEIA-ME.md",
+  "pasta": "design/especime-v3/medicoes/e1-2026-09-30",
+  "ficheiros_json_lidos": 10,
+  "ilegiveis": [],
+  "conhecido_positivo": {
+    "numero": 987654322,
+    "encontrado": true
+  },
+  "numeros_conferidos": 525,
+  "numeros_com_ficheiro": 508,
+  "numeros_sem_ficheiro": 17,
+  "sem_ficheiro": [
+    {
+      "bruto": "2022",
+      "forma": "2022",
+      "valor": 2022.0,
+      "linha": 18,
+      "contexto": "| 1 | As contas da Câmara de Évora, 2010 a 2025 | No motor (16) e no sítio, nas duas línguas. A série do regulador impressa uma vez; a votação das contas de 202"
+    },
+    {
+      "bruto": "2023",
+      "forma": "2023",
+      "valor": 2023.0,
+      "linha": 18,
+      "contexto": "| 1 | As contas da Câmara de Évora, 2010 a 2025 | No motor (16) e no sítio, nas duas línguas. A série do regulador impressa uma vez; a votação das contas de 202"
+    },
+    {
+      "bruto": "200",
+      "forma": "200",
+      "valor": 200.0,
+      "linha": 22,
+      "contexto": "| 5 | Os seis estudos antigos | Alojados como estavam, a responder 200 (no `dist/` local), com a nota do sucessor à cabeça nas duas línguas, fora do índice dos "
+    },
+    {
+      "bruto": "3 984 060",
+      "forma": "3984060",
+      "valor": 3984060.0,
+      "linha": 65,
+      "contexto": "3. **O Évora 2027 no orçamento de 2026.** O 16 («O que o plano de 2026 diz») tem a tabela dos três valores: €3 984 060, a parte de 2026 das obras do «Évora 2027"
+    },
+    {
+      "bruto": "7 470 000",
+      "forma": "7470000",
+      "valor": 7470000.0,
+      "linha": 65,
+      "contexto": "3. **O Évora 2027 no orçamento de 2026.** O 16 («O que o plano de 2026 diz») tem a tabela dos três valores: €3 984 060, a parte de 2026 das obras do «Évora 2027"
+    },
+    {
+      "bruto": "14 798 219",
+      "forma": "14798219",
+      "valor": 14798219.0,
+      "linha": 65,
+      "contexto": "3. **O Évora 2027 no orçamento de 2026.** O 16 («O que o plano de 2026 diz») tem a tabela dos três valores: €3 984 060, a parte de 2026 das obras do «Évora 2027"
+    },
+    {
+      "bruto": "2024",
+      "forma": "2024",
+      "valor": 2024.0,
+      "linha": 66,
+      "contexto": "4. **Os ganhos que «param em 2022».** A frase saiu; a série socioeconómica do «Quinze Anos» veio para o 18, que chega a 2024."
+    },
+    {
+      "bruto": "2013",
+      "forma": "2013",
+      "valor": 2013.0,
+      "linha": 67,
+      "contexto": "5. **O mandato de 2009 a 2013.** O 17 diz que as fontes dos pelouros não registam o presidente desse mandato nem os outros membros, e que só sobrevive a biograf"
+    },
+    {
+      "bruto": "2024",
+      "forma": "2024",
+      "valor": 2024.0,
+      "linha": 68,
+      "contexto": "6. **A direção da dívida.** O 16 («A direção da dívida, lida de três maneiras») põe as três leituras numa tabela, cada uma com o que mede: o total legal desce c"
+    },
+    {
+      "bruto": "2023",
+      "forma": "2023",
+      "valor": 2023.0,
+      "linha": 68,
+      "contexto": "6. **A direção da dívida.** O 16 («A direção da dívida, lida de três maneiras») põe as três leituras numa tabela, cada uma com o que mede: o total legal desce c"
+    },
+    {
+      "bruto": "2022",
+      "forma": "2022",
+      "valor": 2022.0,
+      "linha": 69,
+      "contexto": "7. **Os 69 e os 64 dias de 2022.** A tabela no 16: 69 dias na série da Prestação de Contas 2025; 64 dias no relatório de gestão de 2022, que cita o regulador; o"
+    },
+    {
+      "bruto": "2022",
+      "forma": "2022",
+      "valor": 2022.0,
+      "linha": 69,
+      "contexto": "7. **Os 69 e os 64 dias de 2022.** A tabela no 16: 69 dias na série da Prestação de Contas 2025; 64 dias no relatório de gestão de 2022, que cita o regulador; o"
+    },
+    {
+      "bruto": "2024",
+      "forma": "2024",
+      "valor": 2024.0,
+      "linha": 72,
+      "contexto": "**As repetições.** A série da dívida do regulador, a votação das contas de 2024, a declaração de impossibilidade do auditor, os 137 dias e os €4 976 172 em atra"
+    },
+    {
+      "bruto": "1 141",
+      "forma": "1141",
+      "valor": 1141.0,
+      "linha": 81,
+      "contexto": "- **O âmbito da prova do olho (`scripts/provar-eyetext.mjs`).** Sobe de 7 para 14 edições, relida sobre as sete novas: 1 141 blocos lidos contra 1 141 no regist"
+    },
+    {
+      "bruto": "1 141",
+      "forma": "1141",
+      "valor": 1141.0,
+      "linha": 81,
+      "contexto": "- **O âmbito da prova do olho (`scripts/provar-eyetext.mjs`).** Sobe de 7 para 14 edições, relida sobre as sete novas: 1 141 blocos lidos contra 1 141 no regist"
+    },
+    {
+      "bruto": "5 980",
+      "forma": "5980",
+      "valor": 5980.0,
+      "linha": 81,
+      "contexto": "- **O âmbito da prova do olho (`scripts/provar-eyetext.mjs`).** Sobe de 7 para 14 edições, relida sobre as sete novas: 1 141 blocos lidos contra 1 141 no regist"
+    },
+    {
+      "bruto": "3 984 060",
+      "forma": "3984060",
+      "valor": 3984060.0,
+      "linha": 113,
+      "contexto": "2. **O «Orçamentado» dizia que o orçamento de 2026 tinha €3 984 060 para as obras do «Évora 2027».** O valor vem da Prestação de Contas 2025 (a linha `evora2027"
+    }
+  ],
+  "apagado_antes_de_contar": {
+    "codigo": 306,
+    "enderecos": 0,
+    "seccoes": 36,
+    "datas": 40,
+    "resumos": 2,
+    "ordinais": 8,
+    "identificadores": 144,
+    "anos": 59
+  }
+}

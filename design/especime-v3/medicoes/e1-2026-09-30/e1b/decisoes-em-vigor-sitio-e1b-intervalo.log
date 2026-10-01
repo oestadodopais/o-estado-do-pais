@@ -1,0 +1,237 @@
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/especime-v3/INVENTARIO-FRASES.md:1809
+    design/especime-v3/INVENTARIO-FRASES.md:2667
+    design/especime-v3/INVENTARIO-FRASES.md:2897
+    design/especime-v3/INVENTARIO-FRASES.md:320
+    design/especime-v3/medicoes/e1-2026-09-30/e1b/check-voz-inventario.log:3 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/build.log:11981 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:1829 (perto do diff)
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    design/especime-v3/INVENTARIO-FRASES.md:2344
+    design/especime-v3/INVENTARIO-FRASES.md:2833
+    design/especime-v3/INVENTARIO-FRASES.md:2904
+    design/especime-v3/INVENTARIO-FRASES.md:2921
+    design/especime-v3/INVENTARIO-FRASES.md:2934
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:114
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:116
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:1 (perto do diff)
+    src/data/nomes-das-medidas.mjs:145
+    src/data/nomes-das-medidas.mjs:6
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-motor-e1b-antes.log:1 (perto do diff)
+§1.8 · As páginas de estudo estão fora do índice até à migração
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:4 (perto do diff)
+    src/data/leituras.mjs:7
+§1.19 · Os estudos migram para dois sítios, não um
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:6 (perto do diff)
+    src/data/leituras.mjs:7
+§1.21 · A décima terceira edição, e a diferença entre extrair e transcrever
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:8 (perto do diff)
+    studies-src/manifest.yml:57
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:11 (perto do diff)
+    studies-src/manifest.yml:44
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:14 (perto do diff)
+    src/data/leituras.mjs:19
+    src/data/leituras.mjs:270
+§1.38 · A ortografia do sítio passa a ser uma só
+    design/especime-v3/medicoes/e1-2026-09-30/e1b/ledger-check-contadores.log:37 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/build.log:250 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:245 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/build.log:250 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:245 (perto do diff)
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:18 (perto do diff)
+§1.44 · A revisão cruzada da identidade v2
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:23 (perto do diff)
+§1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:25 (perto do diff)
+    studies-src/manifest.yml:64
+    studies-src/manifest.yml:92
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:31 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/e1b/check-documentos-com-origem.log:21 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/e1b/check-documentos.log:21 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/build.log:366 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:361 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/build.log:366 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:361 (perto do diff)
+§1.66 · As correções de UX depois da auditoria de 25.08, bloco A
+    design/especime-v3/INVENTARIO-FRASES.md:1134
+    design/especime-v3/INVENTARIO-FRASES.md:816
+§1.68 · As páginas dos 308 concelhos
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:33 (perto do diff)
+§1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:46
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:1235 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:1236 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:1237 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:1238 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:1240 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:1235 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:1236 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:1237 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:1238 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:1240 (perto do diff)
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    design/especime-v3/INVENTARIO-FRASES.md:1255
+    design/especime-v3/INVENTARIO-FRASES.md:1297
+    design/especime-v3/INVENTARIO-FRASES.md:1302
+    design/especime-v3/INVENTARIO-FRASES.md:1556
+    design/especime-v3/INVENTARIO-FRASES.md:1558
+    design/especime-v3/INVENTARIO-FRASES.md:1580
+    design/especime-v3/INVENTARIO-FRASES.md:165
+    design/especime-v3/INVENTARIO-FRASES.md:1660
+    design/especime-v3/INVENTARIO-FRASES.md:172
+    design/especime-v3/INVENTARIO-FRASES.md:182
+    design/especime-v3/INVENTARIO-FRASES.md:1973
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2147
+    design/especime-v3/INVENTARIO-FRASES.md:2151
+    design/especime-v3/INVENTARIO-FRASES.md:2180
+    design/especime-v3/INVENTARIO-FRASES.md:2251
+    design/especime-v3/INVENTARIO-FRASES.md:247
+    design/especime-v3/INVENTARIO-FRASES.md:2513
+    design/especime-v3/INVENTARIO-FRASES.md:2517
+    design/especime-v3/INVENTARIO-FRASES.md:2549
+    design/especime-v3/INVENTARIO-FRASES.md:2653
+    design/especime-v3/INVENTARIO-FRASES.md:2660
+    design/especime-v3/INVENTARIO-FRASES.md:271
+    design/especime-v3/INVENTARIO-FRASES.md:2711
+    design/especime-v3/INVENTARIO-FRASES.md:291
+    design/especime-v3/INVENTARIO-FRASES.md:298
+    design/especime-v3/INVENTARIO-FRASES.md:3016 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:333
+    design/especime-v3/INVENTARIO-FRASES.md:442
+    design/especime-v3/INVENTARIO-FRASES.md:454
+    design/especime-v3/INVENTARIO-FRASES.md:471
+    design/especime-v3/INVENTARIO-FRASES.md:472
+    design/especime-v3/INVENTARIO-FRASES.md:473
+    design/especime-v3/INVENTARIO-FRASES.md:479
+    design/especime-v3/INVENTARIO-FRASES.md:840
+    design/especime-v3/INVENTARIO-FRASES.md:892
+    design/especime-v3/INVENTARIO-FRASES.md:911
+    design/especime-v3/INVENTARIO-FRASES.md:915
+    design/especime-v3/INVENTARIO-FRASES.md:971
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:66
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:67
+    src/data/leituras.mjs:596 (perto do diff)
+§1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:36 (perto do diff)
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2564
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    design/especime-v3/INVENTARIO-FRASES.md:2580
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    design/especime-v3/INVENTARIO-FRASES.md:1292
+    design/especime-v3/INVENTARIO-FRASES.md:1293
+    design/especime-v3/INVENTARIO-FRASES.md:1295
+    design/especime-v3/INVENTARIO-FRASES.md:1296
+    design/especime-v3/INVENTARIO-FRASES.md:1748
+    design/especime-v3/INVENTARIO-FRASES.md:1750
+    design/especime-v3/INVENTARIO-FRASES.md:1752
+    design/especime-v3/INVENTARIO-FRASES.md:1753
+    design/especime-v3/INVENTARIO-FRASES.md:1971
+    design/especime-v3/INVENTARIO-FRASES.md:1972
+    design/especime-v3/INVENTARIO-FRASES.md:1992
+    design/especime-v3/INVENTARIO-FRASES.md:1993
+    design/especime-v3/INVENTARIO-FRASES.md:1994
+    design/especime-v3/INVENTARIO-FRASES.md:1995
+    design/especime-v3/INVENTARIO-FRASES.md:1996
+    design/especime-v3/INVENTARIO-FRASES.md:1997
+    design/especime-v3/INVENTARIO-FRASES.md:1998
+    design/especime-v3/INVENTARIO-FRASES.md:1999
+    design/especime-v3/INVENTARIO-FRASES.md:2000
+    design/especime-v3/INVENTARIO-FRASES.md:2001
+    design/especime-v3/INVENTARIO-FRASES.md:257
+    design/especime-v3/INVENTARIO-FRASES.md:260
+    design/especime-v3/INVENTARIO-FRASES.md:261
+    design/especime-v3/INVENTARIO-FRASES.md:272
+    design/especime-v3/INVENTARIO-FRASES.md:273
+    design/especime-v3/INVENTARIO-FRASES.md:274
+    design/especime-v3/INVENTARIO-FRASES.md:275
+    design/especime-v3/INVENTARIO-FRASES.md:276
+    design/especime-v3/INVENTARIO-FRASES.md:277
+    design/especime-v3/INVENTARIO-FRASES.md:2821
+    design/especime-v3/INVENTARIO-FRASES.md:2835
+    design/especime-v3/INVENTARIO-FRASES.md:2836
+    design/especime-v3/INVENTARIO-FRASES.md:2837
+    design/especime-v3/INVENTARIO-FRASES.md:2838
+    design/especime-v3/INVENTARIO-FRASES.md:2839
+    design/especime-v3/INVENTARIO-FRASES.md:2840
+    design/especime-v3/INVENTARIO-FRASES.md:2847
+    design/especime-v3/INVENTARIO-FRASES.md:2848
+    design/especime-v3/INVENTARIO-FRASES.md:2851
+    design/especime-v3/INVENTARIO-FRASES.md:2852
+    design/especime-v3/INVENTARIO-FRASES.md:2853
+    design/especime-v3/INVENTARIO-FRASES.md:2854
+    design/especime-v3/INVENTARIO-FRASES.md:2855
+    design/especime-v3/INVENTARIO-FRASES.md:2856
+    design/especime-v3/INVENTARIO-FRASES.md:2857
+    design/especime-v3/INVENTARIO-FRASES.md:287
+    design/especime-v3/INVENTARIO-FRASES.md:290
+    design/especime-v3/INVENTARIO-FRASES.md:293
+    design/especime-v3/INVENTARIO-FRASES.md:305
+    design/especime-v3/INVENTARIO-FRASES.md:306
+    design/especime-v3/INVENTARIO-FRASES.md:307
+    design/especime-v3/INVENTARIO-FRASES.md:308
+    design/especime-v3/INVENTARIO-FRASES.md:309
+    design/especime-v3/INVENTARIO-FRASES.md:310
+§1.110 · «A casa» sai do Método e do Sobre
+    design/especime-v3/INVENTARIO-FRASES.md:2917
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:115
+§1.111 · Todo o estudo abre com a leitura do projeto: o resumo, o que se conclui, o que podia funcionar melhor
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-motor-e1b-antes.log:3 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:38 (perto do diff)
+    studies-src/manifest.yml:273
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:40 (perto do diff)
+    src/data/nomes-das-medidas.mjs:143
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:42 (perto do diff)
+§1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:657 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:657 (perto do diff)
+§1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:656 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:656 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/1/verify.log:655 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/portoes/e1b-intermedias/2/verify.log:655 (perto do diff)
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/especime-v3/INVENTARIO-FRASES.md:3006 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:3063
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:410
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:44 (perto do diff)
+    scripts/check-pais.mjs:301
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    design/especime-v3/INVENTARIO-FRASES.md:3185
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    design/especime-v3/INVENTARIO-FRASES.md:3075
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:46 (perto do diff)
+    studies-src/manifest.yml:181
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    design/especime-v3/INVENTARIO-FRASES.md:3522
+    design/especime-v3/INVENTARIO-FRASES.md:3524
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:499 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-motor-e1b-antes.log:5 (perto do diff)
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:48 (perto do diff)
+    src/data/lugar-das-linhas.mjs:26 (perto do diff)
+§1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    design/especime-v3/medicoes/e1-2026-09-30/decisoes-em-vigor-sitio-e1b-antes.log:57 (perto do diff)
+    scripts/check-pais.mjs:173 (perto do diff)
+    src/data/lugar-das-linhas.mjs:22 (perto do diff)
+38 decisão(ões) citada(s) em 92 ficheiro(s)
