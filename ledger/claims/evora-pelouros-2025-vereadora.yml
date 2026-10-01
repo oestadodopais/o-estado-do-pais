@@ -34,14 +34,15 @@ check: null
 attributed_to:
   - "Município de Évora"
 
-study: "evora-os-pelouros-quem-os-teve-o-que-fizeram"
+study: "evora-quem-governou-a-camara-2009-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "[derivation do motor] the length of this member's recorded pelouro list, every entry of which was checked present verbatim in the member's own excerpt · Cruzado de ResearchHub content/09 Évora Pelouros · map-2025-carvalheira-count."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-09-01"
     path: "https://www.cm-evora.pt/municipe/camara-municipal/executivo/"

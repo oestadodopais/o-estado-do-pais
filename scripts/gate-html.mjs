@@ -1849,7 +1849,10 @@ function verificaTexto({ rota, root, err }) {
     return;
   }
 
-  const linhaDoSitio = (row) => LINHA_DO_SITIO.get(`${entrada.rh_study} ${row}`) ?? null;
+  /* Um estudo composto (bloco E1) diz a vertical de cada linha que atravessa em
+     `rh_origens`; as outras procuram-se no próprio estudo, como antes. */
+  const linhaDoSitio = (row) =>
+    LINHA_DO_SITIO.get(`${entrada.rh_origens?.[row] ?? entrada.rh_study} ${row}`) ?? null;
 
   /* ---------------------------------------------------------------- L1 ---
      A sequência de blocos: índice, género, nível, ordenação e contagens. */
@@ -7688,14 +7691,17 @@ for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
   } else manifestosConferidos.icones++;
 }
 
-// B1: as dez mudanças de endereço pertencem ao servidor, nunca ao HTML.
+// B1: as mudanças de endereço das páginas de texto pertencem ao servidor, nunca ao
+// HTML. Eram dez, uma por registo; desde o bloco E1 (01.10.2026) são dezassete,
+// e a conferência é a de sempre: uma entrada por registo, nem uma a mais nem uma
+// a menos, cada uma 301 incondicional para a página do estudo, antes do filesystem.
 {
   const tabela = TABELA_VERCEL_B1;
   const entradas = tabela.filter(r => /\/(?:texto|text)\/\?$/.test(r.src ?? ''));
   const chaves = Object.keys(TRAVESSIA_DOS_REGISTOS ?? {});
   const falha = msg => erros.push({ rel: 'vercel.json', msg: `B1 redirecionamento: ${msg}` });
-  if (entradas.length !== 10 || chaves.length !== 10)
-    falha(`esperadas dez entradas, tabela ${entradas.length}, registos ${chaves.length}.`);
+  if (!chaves.length || entradas.length !== chaves.length)
+    falha(`esperada uma entrada por registo, tabela ${entradas.length}, registos ${chaves.length}.`);
   for (const chave of chaves) {
     const corte = chave.lastIndexOf('/');
     const slug = chave.slice(0, corte), lang = chave.slice(corte + 1);

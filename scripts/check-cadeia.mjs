@@ -468,7 +468,7 @@ for (const chave of chaves) {
            dizer, e inventar aqui uma segunda queixa a partir da primeira não
            acrescentava nada. */
         const siteId = figura.row
-          ? (DO_MOTOR.get(`${entrada.rh_study} ${figura.row}`) ?? null)
+          ? (DO_MOTOR.get(`${entrada.rh_origens?.[figura.row] ?? entrada.rh_study} ${figura.row}`) ?? null)
           : null;
         if (siteId) {
           const linha = linhaDoLivro(siteId);
@@ -560,7 +560,7 @@ for (const chave of chaves) {
         const dentroDeLigacao = ligacaoDoDocumento(el, artigo);
         let irmao;
         if (dentroDeLigacao) {
-          const naLigacao = dentroDeLigacao.querySelectorAll('[data-registo]').filter(f => DO_MOTOR.has(`${entrada.rh_study} ${atributo(f, 'data-registo-row')}`));
+          const naLigacao = dentroDeLigacao.querySelectorAll('[data-registo]').filter(f => DO_MOTOR.has(`${entrada.rh_origens?.[atributo(f, 'data-registo-row')] ?? entrada.rh_study} ${atributo(f, 'data-registo-row')}`));
           const k = naLigacao.indexOf(el);
           irmao = irmaosColados(dentroDeLigacao)[k] ?? null;
         } else {
