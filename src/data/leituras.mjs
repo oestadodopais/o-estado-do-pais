@@ -557,9 +557,9 @@ export const LEITURAS = {
         { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'pt') },
         '. Da soma aprovada para o concelho, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
-        ' está vencida contra ',
+        ' está em localizações de projeto vencidas e ',
         { claim: 'evora-prr-execucao-2026', sufixo: '%' },
-        ' paga.',
+        ' já foi paga, e as duas partes sobrepõem-se: as localizações vencidas também receberam dinheiro.',
       ],
       en: [
         'Of the recovery-plan money contracted in the municipality, the university holds more than the council: ',
@@ -568,19 +568,23 @@ export const LEITURAS = {
         { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'en') },
         '. Of the sum approved for the municipality, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
-        ' is overdue against ',
+        ' sits in overdue project locations and ',
         { claim: 'evora-prr-execucao-2026', sufixo: '%' },
-        ' paid.',
+        ' has been paid, and the two parts overlap: the overdue locations have also received money.',
       ],
     },
     /* A ORIGEM REFEITA NA PASSAGEM E1B (01.10.2026), pela conferência das cópias:
        a segunda frase citada acabava num ponto onde o documento continua com uma
        vírgula, e já não era a frase impressa. Fica a frase inteira, e a do dinheiro
        pago (a linha da abertura), em que assenta o «paga» da frase acima. */
+    /* E A FRASE DO ESTUDO QUE DIZ QUE AS DUAS PARTES SE SOBREPÕEM (passagem E1c, 01.10.2026,
+       ponto 8 do mandato): a frase da leitura punha o vencido «contra» o pago, como se fossem
+       duas metades; o estudo regista dinheiro já pago dentro das localizações vencidas, e a
+       origem passa a citar essa frase, da secção do que está vencido. */
     origem: {
-      onde: 'content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md:11, :13, :7',
-      pt: 'O dinheiro de fora não passa pela câmara. · As localizações de projeto vencidas levam 61,32% do valor aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo acabam exatamente na data prevista. · O plano de recuperação atribui ao concelho €167 372 756, dos quais €86 944 669 pagos no instantâneo de 2026-08-19, e a maior parte passa por organismos que não são a câmara.',
-      en: 'The outside money does not go through the council. · The overdue project locations carry 61.32% of the value approved for the municipality, and the completion dates that would soften that reading are the frailest field in the register: 1 011 of the 1 445 on-time locations end exactly on their planned date. · The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council.',
+      onde: 'content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md:11, :13, :7, :280',
+      pt: 'O dinheiro de fora não passa pela câmara. · As localizações de projeto vencidas levam 61,32% do valor aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo acabam exatamente na data prevista. · O plano de recuperação atribui ao concelho €167 372 756, dos quais €86 944 669 pagos no instantâneo de 2026-08-19, e a maior parte passa por organismos que não são a câmara. · Em Évora são 608 localizações de projeto que transportam €102 624 704 de dinheiro aprovado — 61,32 % de tudo o que foi aprovado para o concelho —, dos quais €41 693 864 foram pagos.',
+      en: 'The outside money does not go through the council. · The overdue project locations carry 61.32% of the value approved for the municipality, and the completion dates that would soften that reading are the frailest field in the register: 1 011 of the 1 445 on-time locations end exactly on their planned date. · The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council. · In Évora that is 608 project-locations carrying €102 624 704 of approved money — 61.32% of everything approved for the concelho — of which €41 693 864 has been paid.',
     },
   },
 

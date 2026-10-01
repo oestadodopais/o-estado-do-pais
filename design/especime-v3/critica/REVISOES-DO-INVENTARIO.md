@@ -528,3 +528,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | e1b | 2 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem E1b: a leitura do Évora 2027 nas duas línguas (decisão 4 do lugar de direção), que a lista dos estudos e a página de Évora passam a render como resumo do estudo, no lugar da descrição. A frase são as duas frases impressas na abertura do estudo, sem as duas datas e com «a câmara» no lugar de «o município» (a L3 do check:lugar mediu a palavra na segunda corrida dos portões), e não tem números. Nenhuma cadeia sai. |
+
+## E1c · a leitura do estudo da economia, 01.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| e1c | 2 cadeias novas, 2 retiradas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem E1c: a frase da leitura do estudo da economia nas duas línguas (ponto 8 do mandato), que a primeira página rende como resumo do estudo, deixa de pôr o vencido «contra» o pago e diz que as duas partes se sobrepõem; as duas linhas da frase antiga passam a retiradas, com a razão. |
