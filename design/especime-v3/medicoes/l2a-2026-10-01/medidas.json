@@ -18,6 +18,33 @@
       }
     },
     {
+      "nome": "pecas_de_lugares_antes_do_mapa_no_brief",
+      "valor": 3,
+      "comando": "design/observatorio/medidas/BRIEF-L2a.json, a medida pecas_de_lugares_antes_do_mapa (o §0 do brief, na cabeça 1395c9de)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do brief nomeia a cabeça que leu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "concelhos_na_carta",
+      "valor": 308,
+      "comando": "node · lugaresDaCarta().length em src/data/carta-dos-lugares.mjs (a contagem da C1 do check:lugares)",
+      "conhecido_positivo": {
+        "o_que": "Évora é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_de_distrito_recusadas_pela_ancora_do_mapa",
+      "valor": 58,
+      "comando": "as queixas do gate:html na primeira construção do bloco, guardadas em gate-html-ancora-do-mapa-primeira-construcao.txt",
+      "conhecido_positivo": {
+        "o_que": "as queixas nomeiam páginas das duas edições",
+        "encontrado": true
+      }
+    },
+    {
       "nome": "construcao_medida",
       "valor": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
       "comando": "dist/version.json, campo commit",
@@ -303,6 +330,123 @@
       "conhecido_positivo": {
         "o_que": "a pasta dos portões tem a cabeça ao lado",
         "encontrado": false
+      }
+    },
+    {
+      "nome": "segundos_build_portoes_intermedio",
+      "valor": 115,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes-intermedio/build.inicio e build.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_verify_portoes_intermedio",
+      "valor": 702,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes-intermedio/verify.inicio e verify.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_typecheck_portoes_intermedio",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes-intermedio/typecheck.inicio e typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_build_portoes_intermedio",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes-intermedio/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_verify_portoes_intermedio",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes-intermedio/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_typecheck_portoes_intermedio",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes-intermedio/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_build_portoes",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/build.inicio e build.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "segundos_verify_portoes",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/verify.inicio e verify.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "segundos_typecheck_portoes",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/typecheck.inicio e typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "codigo_build_portoes",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "codigo_verify_portoes",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "codigo_typecheck_portoes",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "simbolos_da_sessao_do_construtor",
+      "valor": 636000,
+      "comando": "OEDP_SIMBOLOS_INICIO menos OEDP_SIMBOLOS_RESTANTES: o contador de símbolos restantes que a ferramenta mostra ao agente, lido no início e na hora desta corrida",
+      "conhecido_positivo": {
+        "o_que": "os dois valores foram passados",
+        "encontrado": true
       }
     }
   ]
