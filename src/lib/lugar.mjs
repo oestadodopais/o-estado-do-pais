@@ -184,9 +184,9 @@ export function leituraDoLugar(m, pecas, lang, s) {
 
 /**
  * A FRASE DO GANHO MÉDIO CONTRA PORTUGAL (bloco L2b): «O ganho médio mensal é de
- * <valor do concelho> euros por mês, abaixo de Portugal (<valor de Portugal>
- * euros por mês).» Os dois valores são linhas seladas, a unidade é a da linha
- * pela tabela das unidades, e a palavra do lado é a da faixa do cartão.
+ * <valor do concelho> euros por mês, abaixo de Portugal, onde é de <valor de
+ * Portugal> euros por mês.» Os dois valores são linhas seladas, a unidade é a da
+ * linha pela tabela das unidades, e a palavra do lado é a da faixa do cartão.
  *
  * @param {{ claim: string|null, linha: any } | null} peca  o cartão do ganho deste concelho
  * @param {'pt'|'en'} lang
