@@ -425,8 +425,19 @@ function r6(m) {
        na página de distrito continua a ser a figura. */
     /* Desde o L2a a figura e a legenda vivem em «Lugares», irmãs dentro do
        contentor do mapa, e é lá que a menção tem de estar: ao pé do mapa, e não
-       só algures na página (os dois mapas das medidas, mais abaixo, levam a sua). */
-    const legenda = pg.tipo === 'lugares' ? pg.root.querySelector('[data-mapa-legenda]') : null;
+       só algures na página (os dois mapas das medidas, mais abaixo, levam a sua).
+
+       AO PÉ DO MAPA QUER DIZER UMA DE DUAS COISAS, E LÊ-SE NA ÁRVORE (L2a-b,
+       01.10.2026, o achado 5 da leitura a frio): a legenda dentro do contentor do
+       mapa (`[data-lugares-mapa]`, o mais próximo que contém a figura), ou o
+       elemento logo a seguir à figura. A primeira forma desta regra procurava
+       `[data-mapa-legenda]` em toda a página, e uma legenda movida para o fim do
+       `<main>` passava. */
+    const contentor = pg.tipo === 'lugares' ? figura.closest('[data-lugares-mapa]') : null;
+    const aSeguir = figura.nextElementSibling;
+    const legenda = pg.tipo !== 'lugares'
+      ? null
+      : (contentor?.querySelector('[data-mapa-legenda]') ?? (aSeguir?.hasAttribute('data-mapa-legenda') ? aSeguir : null));
     const selos = [...figura.querySelectorAll('a.src-chip'), ...(legenda ? legenda.querySelectorAll('a.src-chip') : [])]
       .map((a) => (a.getAttribute('href') ?? '').split('#')[0]);
     if (!selos.includes(portaDaLinha(pg.lang))) {
@@ -439,8 +450,9 @@ function r6(m) {
        lugares, a da legenda do mapa. */
     if (pg.tipo === 'lugares' && !legenda?.querySelector('[data-fonte-da-carta]')) {
       erros.push(
-        `${pg.rota}: o mapa inteiro não tem a menção da fonte na sua legenda. A Emenda 20e põe-na ` +
-          `onde o mapa está, e não só algures na página.`,
+        `${pg.rota}: o mapa inteiro não tem a menção da fonte na sua legenda, ao pé dele (dentro do ` +
+          `contentor do mapa ou logo a seguir à figura). A Emenda 20e põe-na onde o mapa está, e não ` +
+          `só algures na página.`,
       );
       continue;
     }
@@ -866,10 +878,17 @@ const ESTRAGOS = {
   },
   /* L2a: a menção da legenda do mapa retirada, com as dos dois mapas das medidas
      ainda na página. A menção é ao pé do mapa, e não algures na página. */
+  /* L2a-b (o achado 5 da leitura a frio): a planta MOVE a legenda inteira, com a
+     menção e tudo, para o fim do `<main>`, em vez de a apagar. Apagá-la provava
+     outra condição (a falta da menção); movê-la prova a proximidade, que é o que
+     a regra diz. */
   'R6 (a menção longe do mapa)': (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'lugares');
-    pg.root.querySelector('[data-mapa-legenda] [data-fonte-da-carta]').remove();
-    return 'a menção retirada da legenda do mapa da página dos lugares, com as dos mapas das medidas no sítio';
+    const legenda = pg.root.querySelector('[data-mapa-legenda]');
+    const html = legenda.outerHTML;
+    legenda.remove();
+    pg.root.querySelector('main').insertAdjacentHTML('beforeend', html);
+    return 'a legenda do mapa da página dos lugares, com a menção e tudo, movida para o fim do <main>';
   },
   /* L2a: o sinal da porta dos lugares sem a menção, na página dos temas. */
   'R6 (o sinal sem a menção)': (m) => {

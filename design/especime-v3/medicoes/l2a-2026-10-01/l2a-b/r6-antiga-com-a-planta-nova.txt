@@ -1,0 +1,47 @@
+
+  vermelho ✓  R1 · um byte trocado em mapa/pais.json
+              mapa/pais.json: o resumo dos bytes é fd79f3fb83e9 e o manifesto diz 9ed61a53f542.
+  vermelho ✓  R2 · o concelho "agueda" apagado da página de aveiro
+              o concelho "agueda" está na Carta e não aparece em nenhuma página de distrito.
+  vermelho ✓  R3 · um nome a menos na lista de aveiro
+              /distritos/aveiro: 18 nomes na lista para 19 concelhos no ficheiro.
+  vermelho ✓  R4 · uma unidade a menos nas áreas do mapa da página dos lugares
+              /lugares/: 28 ligações de área para 29 unidades.
+  vermelho ✓  R4 (o mapa de volta à primeira página) · o mapa inteiro copiado da página dos lugares para o fim da primeira página
+              /: 29 ligações de área do mapa inteiro. Desde o L2a o mapa vive em «Lugares» e só lá; esta página leva a porta com o sinal.
+  vermelho ✓  R5 · o mapa da página dos lugares declarado role="img" por cima das 29 ligações
+              /lugares/: 29 ligação(ões) dentro de um role="img". Uma imagem pode achatar o que tem dentro, e uma porta achatada desaparece.
+  vermelho ✓  R6 · o selo da Carta retirado da figura e da legenda do mapa da página dos lugares
+              /lugares/: o mapa não tem, na sua figura, o selo que abre /livro-razao/municipios-portugal-caop-2025.
+  vermelho ✓  R6 (a menção) · o nome da entidade proprietária retirado da menção ao pé do mapa da página dos lugares
+              /lugares/: a menção da fonte não escreve a entidade proprietária, «Direção-Geral do Território», tal como o manifesto do motor a traz. Está lá: «· Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY 4.0».
+  NÃO APANHOU ✗  R6 (a menção longe do mapa) · a legenda movida para o fim do <main>, contra a R6 antiga
+  vermelho ✓  R6 (o sinal sem a menção) · a menção retirada do item da porta dos lugares na página dos temas
+              /temas/: o sinal da porta dos lugares é um desenho da Carta e o seu item não escreve a menção da fonte inteira, fora da ligação («Direção-Geral do Território», «Carta Administrativa Oficial de Portugal (CAOP) 2025», «CC BY 4.0»).
+  vermelho ✓  R6 (a linha) · a entidade proprietária trocada na página da linha da Carta
+              /livro-razao/municipios-portugal-caop-2025: a página da linha da Carta não nomeia «Direção-Geral do Território», que é a atribuição que o manifesto do motor traz da fonte.
+  vermelho ✓  R7 · «Aveiro» e «Beja» trocadas nos caminhos de mapa/pais.json
+              mapa/pais.json, os caminhos das unidades: «Beja» está na posição 1 e «Aveiro» na 2, e a colação portuguesa põe-nos ao contrário.
+  vermelho ✓  R7 (um distrito) · «Águeda» e «Albergaria-a-Velha» trocados nos caminhos de mapa/distritos/aveiro.json
+              mapa/distritos/aveiro.json, os caminhos dos concelhos: «Albergaria-a-Velha» está na posição 1 e «Águeda» na 2, e a colação portuguesa põe-nos ao contrário.
+  vermelho ✓  R7 (o manifesto) · «Aveiro» e «Beja» trocadas nas unidades do manifesto
+              mapa/manifest.json, as unidades: «Beja» está na posição 1 e «Aveiro» na 2, e a colação portuguesa põe-nos ao contrário.
+  vermelho ✓  R7 (a lista dos distritos e ilhas) · «Aveiro» e «Beja» trocados na lista dos distritos de /lugares/
+              /lugares/, a lista dos distritos e ilhas: «Beja» está na posição 1 e «Aveiro» na 2, e a colação portuguesa põe-nos ao contrário.
+  vermelho ✓  R7 (a lista de um distrito) · «Águeda» e «Albergaria-a-Velha» trocados na lista de /distritos/aveiro
+              /distritos/aveiro, a lista dos concelhos: «Albergaria-a-Velha» está na posição 1 e «Águeda» na 2, e a colação portuguesa põe-nos ao contrário.
+  vermelho ✓  R8 · um nome mudado dentro de public/ e dist/ dados/mapa/unidade-aveiro.json
+              public/dados/mapa/unidade-aveiro.json não é mapa/distritos/aveiro.json (16750 B contra 16749 B).
+  vermelho ✓  R8 (dist diferente de public) · dist/dados/mapa/unidade-beja.json com mais um byte do que o de public/
+              dist/dados/mapa/unidade-beja.json não é igual ao de public/.
+  vermelho ✓  R8 (um ficheiro a mais) · public/dados/mapa/unidade-condado-portucalense.json servido a mais
+              public/dados/mapa/unidade-condado-portucalense.json não corresponde a unidade nenhuma.
+  vermelho ✓  R8 (a área a pedir outro ficheiro) · a área de "aveiro" em /lugares/ a pedir o ficheiro de "evora"
+              /lugares/: a área de "aveiro" pede "/dados/mapa/unidade-evora.json" e não "/dados/mapa/unidade-aveiro.json".
+  vermelho ✓  R9 · a primeira página inglesa (/en) por construir
+              1 página(s) de tipo "inicio" que o mapa promete não estão em dist/: /en.
+  vermelho ✓  R9 (uma página de unidade) · a página de unidade /distritos/aveiro por construir
+              1 página(s) de tipo "distrito" que o mapa promete não estão em dist/: /distritos/aveiro.
+  vermelho ✓  R9 (uma página de concelho) · a página de concelho /municipios/agueda por construir
+              1 página(s) de tipo "municipio" que o mapa promete não estão em dist/: /municipios/agueda.
+
