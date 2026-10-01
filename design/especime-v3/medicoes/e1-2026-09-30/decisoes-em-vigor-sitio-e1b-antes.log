@@ -1,0 +1,62 @@
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    src/data/nomes-das-medidas.mjs:145
+    src/data/nomes-das-medidas.mjs:6
+§1.8 · As páginas de estudo estão fora do índice até à migração
+    src/data/leituras.mjs:7
+§1.19 · Os estudos migram para dois sítios, não um
+    src/data/leituras.mjs:7
+§1.21 · A décima terceira edição, e a diferença entre extrair e transcrever
+    scripts/check-documentos.mjs:575
+    studies-src/manifest.yml:57
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    scripts/check-documentos.mjs:151
+    studies-src/manifest.yml:44
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/data/leituras.mjs:19
+    src/data/leituras.mjs:270
+    src/data/verbatim.mjs:134
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    src/data/studies.mjs:271
+    src/data/studies.mjs:327
+    src/data/studies.mjs:38
+    src/data/verbatim.mjs:134
+§1.44 · A revisão cruzada da identidade v2
+    src/data/verbatim.mjs:242
+§1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
+    src/data/studies.mjs:200
+    src/data/studies.mjs:232
+    src/data/studies.mjs:320
+    studies-src/manifest.yml:64
+    studies-src/manifest.yml:92
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    scripts/check-documentos.mjs:422
+§1.68 · As páginas dos 308 concelhos
+    src/data/studies.mjs:620
+    src/data/studies.mjs:694
+§1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
+    src/data/studies.mjs:16
+§1.111 · Todo o estudo abre com a leitura do projeto: o resumo, o que se conclui, o que podia funcionar melhor
+    studies-src/manifest.yml:273
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    src/data/nomes-das-medidas.mjs:143
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    src/lib/mudancas.mjs:205
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    scripts/check-pais.mjs:296
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    studies-src/manifest.yml:181
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    src/data/studies.mjs:189
+    src/data/studies.mjs:214
+    src/data/studies.mjs:229
+    src/data/studies.mjs:257
+    src/data/studies.mjs:303
+    src/data/studies.mjs:351
+    src/data/studies.mjs:815
+    src/data/studies.mjs:96
+§1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    scripts/check-pais.mjs:171
+    src/data/lugar-das-linhas.mjs:22
+    src/lib/mudancas.mjs:101
+    tests/inicio/linhas-da-casa.mjs:1
+19 decisão(ões) citada(s) em 17 ficheiro(s)
