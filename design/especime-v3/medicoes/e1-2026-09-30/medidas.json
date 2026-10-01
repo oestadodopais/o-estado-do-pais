@@ -9422,5 +9422,315 @@
     }
    }
   ]
+ },
+ "e1d": {
+  "bloco": "E1d",
+  "guiao": "design/especime-v3/medicoes/e1-2026-09-30/e1d/medir-e1d.py",
+  "medido_em": "2026-10-01T07:15:32+00:00",
+  "conhecidos_positivos_que_nao_morderam": [],
+  "medidas": [
+   {
+    "nome": "cabecas_e1d",
+    "valor": {
+     "sitio": "30dcec5cb00b8951383e53135e848873fb8255d0",
+     "motor": "7187b8235c45caac3cbe81b31d2493f0c728edff",
+     "sitio_na_e1c": "e986468d",
+     "motor_na_e1c": "932eaee",
+     "commits_do_sitio": [
+      "30dcec5c E1d: os guiões da passagem: as medidas, o realojamento do 18 e as capturas das fichas e do estudo da economia",
+      "b07aa130 E1d: as fichas dos mandatos de 2013 a 2025 dizem a data das dívidas de fim de ano e de onde vêm",
+      "72c680b0 E1d: os documentos e os registos do 18 voltam do motor depois da emenda do corpo"
+     ],
+     "commits_do_motor": [
+      "7187b82 E1d: os registos de conteúdo do 18 refeitos depois da emenda do corpo",
+      "4f3165a E1d: o corpo do 18 diz «uma região abaixo da média do país», como a abertura"
+     ],
+     "arvore_do_motor_limpa": true
+    },
+    "comando": "git rev-parse HEAD e git log <cabeça da E1c>..HEAD nas duas árvores",
+    "conhecido_positivo": {
+     "descricao": "git cat-file -t de cada cabeça diz «commit»",
+     "resultado": {
+      "30dcec5cb00b8951383e53135e848873fb8255d0": "commit",
+      "7187b8235c45caac3cbe81b31d2493f0c728edff": "commit",
+      "e986468d": "commit",
+      "932eaee": "commit"
+     },
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "fichas_e1d",
+    "valor": {
+     "edicoes": {
+      "pt": {
+       "mandato-2013-2017/deixou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a 31.12.2017 , depois da saída, o relatório de gestão da câmara regista 69 532 414,48 fonte · Município de Évora euros de d",
+        "certo": true
+       },
+       "mandato-2017-2021/herdou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a 31.12.2017 , depois da tomada de posse, o relatório de gestão da câmara regista 69 532 414,48 fonte · Município de Évora ",
+        "certo": true
+       },
+       "mandato-2017-2021/deixou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a 31.12.2021 , depois da saída, o relatório de gestão da câmara regista 57 293 550,23 fonte · Município de Évora euros de d",
+        "certo": true
+       },
+       "mandato-2021-2025/herdou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a 31.12.2021 , depois da tomada de posse, o relatório de gestão da câmara regista 57 293 550,23 fonte · Município de Évora ",
+        "certo": true
+       },
+       "mandato-2021-2025/deixou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a 31.12.2025 , dois meses depois da saída, a prestação de contas da câmara regista 54 379 034,55 fonte · Município de Évora",
+        "certo": true
+       },
+       "mandato-2025/herdou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a 31.12.2025 , dois meses depois da tomada de posse, a prestação de contas da câmara regista 54 379 034,55 fonte · Municípi",
+        "certo": true
+       },
+       "mandato-2013-2017/herdou (31.10.2013)": {
+        "sem_a_frase": true,
+        "a_linha_de_31_10_2013": true
+       }
+      },
+      "en": {
+       "mandato-2013-2017/deixou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "The accounts of the year of the change exist only as a whole year and are not split between the two executives; at 31.12.2017 , after the departure, the council’s management report records 69 532 414,48 source · Municípi",
+        "certo": true
+       },
+       "mandato-2017-2021/herdou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "The accounts of the year of the change exist only as a whole year and are not split between the two executives; at 31.12.2017 , after taking office, the council’s management report records 69 532 414,48 source · Municípi",
+        "certo": true
+       },
+       "mandato-2017-2021/deixou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "The accounts of the year of the change exist only as a whole year and are not split between the two executives; at 31.12.2021 , after the departure, the council’s management report records 57 293 550,23 source · Municípi",
+        "certo": true
+       },
+       "mandato-2021-2025/herdou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "The accounts of the year of the change exist only as a whole year and are not split between the two executives; at 31.12.2021 , after taking office, the council’s management report records 57 293 550,23 source · Municípi",
+        "certo": true
+       },
+       "mandato-2021-2025/deixou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "The accounts of the year of the change exist only as a whole year and are not split between the two executives; at 31.12.2025 , two months after the departure, the council’s accounts report records 54 379 034,55 source ·",
+        "certo": true
+       },
+       "mandato-2025/herdou": {
+        "existe": true,
+        "abre_com_a_frase": true,
+        "a_data": true,
+        "a_linha": true,
+        "texto": "The accounts of the year of the change exist only as a whole year and are not split between the two executives; at 31.12.2025 , two months after taking office, the council’s accounts report records 54 379 034,55 source ·",
+        "certo": true
+       },
+       "mandato-2013-2017/herdou (31.10.2013)": {
+        "sem_a_frase": true,
+        "a_linha_de_31_10_2013": true
+       }
+      }
+     },
+     "campos_certos": 12,
+     "campos": 12
+    },
+    "comando": "dist/municipios/evora e dist/en/municipalities/evora: o <dd> a seguir a «Herdou»/«Inherited» ou «Deixou»/«Left» em cada ficha com um valor de fim de ano, lido pelo texto visível e pelas marcas (a data em data-nonledger=\"data-de-referencia\", o data-claim da dívida)",
+    "conhecido_positivo": {
+     "descricao": "a ficha de 2017 a 2021 como estava (a dívida logo a seguir a «Herdou», sem a frase) é dada como errada",
+     "planta": {
+      "existe": true,
+      "abre_com_a_frase": false,
+      "a_data": false,
+      "a_linha": true,
+      "texto": "69 532 414,48 euros de dívida total.",
+      "certo": false
+     },
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "regiao_e1d",
+    "valor": {
+     "edicoes": {
+      "pt": {
+       "sai_motor_antes": 1,
+       "sai_motor_agora": 0,
+       "sai_documento_antes": 1,
+       "sai_documento_agora": 0,
+       "entra_motor": 1,
+       "entra_documento": 1
+      },
+      "en": {
+       "sai_motor_antes": 1,
+       "sai_motor_agora": 0,
+       "sai_documento_antes": 1,
+       "sai_documento_agora": 0,
+       "entra_motor": 1,
+       "entra_documento": 1
+      }
+     },
+     "certo": true
+    },
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1c, 932eaee) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1c, e986468d), contadas a frase que sai e a que entra",
+    "conhecido_positivo": {
+     "descricao": "a frase que sai estava no motor e no documento alojado na E1c (o mesmo detetor vê-a lá)",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "travessia_e1d",
+    "valor": {
+     "documentos_realojados": 2,
+     "mudaram": 2,
+     "commit_do_motor_dos_bytes": [
+      "4f3165a"
+     ],
+     "registos": {
+      "novos": 0,
+      "alterados": 2,
+      "inalterados": 15
+     },
+     "check_documentos": 0,
+     "check_documentos_com_origem": 0,
+     "registos_conferidos_contra_o_motor": 17,
+     "conferencia_das_leituras": {
+      "codigo": 0,
+      "falhas": 0
+     }
+    },
+    "comando": "e1d/republicar-documentos-e1d.json, o registo do publisher/export_records_site.py --write, os códigos do check:documentos (com e sem --with-origin) e da conferência das leituras da E1c, cada um escrito num ficheiro depois de o processo acabar",
+    "conhecido_positivo": {
+     "descricao": "os quatro conhecidos-positivos da conferência das leituras morderam",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "motor_e1d",
+    "valor": {
+     "portao": {
+      "codigo": 0,
+      "cabeca": "7187b8235c45caac3cbe81b31d2493f0c728edff",
+      "inicio": "2026-10-01T07:06:52Z",
+      "fim": "2026-10-01T07:10:40Z",
+      "linha_final_pass": true
+     },
+     "commits": {
+      "primeira_tentativa": 1,
+      "o_que_parou_a_primeira": [
+       "R5 18 Évora Economia e Dinheiro de Fora: A economia de Évora e o dinheiro público que chega a"
+      ],
+      "commit_1": 0,
+      "commit_2": 0
+     },
+     "composicao": 0,
+     "html": 0,
+     "atribuicoes": 0,
+     "registos_do_motor": 0
+    },
+    "comando": "python3 -m core.gate na cabeça final do motor, com o código escrito em e1d/motor/gate.codigo depois de o processo acabar; e os códigos de cada passo da travessia em e1d/motor-travessia/",
+    "conhecido_positivo": {
+     "descricao": "o código lido do ficheiro concorda com a última linha do registo, e a primeira tentativa do commit deu código diferente de zero",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "portoes_e1d",
+    "valor": {
+     "construcao_da_cabeca_de_codigo": {
+      "cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0",
+      "build": 0
+     }
+    },
+    "comando": "npm run build na cabeça de código, pela tranca da máquina (e1c/com-tranca.sh), com o código escrito num ficheiro depois de o processo acabar; a corrida final dos três portões faz-se depois do commit do relatório, em portoes/e1d/",
+    "conhecido_positivo": {
+     "descricao": "o leitor dos ficheiros de código lê 1 num ficheiro da E1c que tem 1 (a construção intermédia da E1c)",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "capturas_e1d",
+    "valor": {
+     "capturas": 24,
+     "sha256_conferidos": 24,
+     "cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0",
+     "estado": "cabeca-limpa",
+     "problemas": [],
+     "pedidos_recusados_para_fora": 0,
+     "larguras": [
+      390,
+      1280
+     ]
+    },
+    "comando": "o sha256 de cada PNG recalculado e comparado com o de capturas-e1d.json, escrito pelo captar-e1.mjs com OEDP_E1_BLOCO=E1d",
+    "conhecido_positivo": {
+     "descricao": "dois corpos que diferem num byte dão resumos diferentes",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "custo_e1d",
+    "valor": {
+     "modelo": "Claude Opus 5.5",
+     "primeiro_commit_da_passagem": "2026-10-01T07:52:16+01:00 4f3165a E1d: o corpo do 18 diz «uma região abaixo da média do país», como a abertura",
+     "inicio": "2026-10-01T07:52:16+01:00",
+     "medido_em": "2026-10-01T07:15:32+00:00",
+     "segundos_de_relogio_desde_o_primeiro_commit": 1396,
+     "simbolos": {
+      "o_que_e": "Uma transcrição, não uma medida: o construtor leu o contador do orçamento de símbolos que a ferramenta lhe mostra no contexto, no fim da passagem E1c (a leitura que acompanhou a entrega da E1c, antes da mensagem do lugar de direção que abriu a E1d) e antes desta medida, e escreveu aqui os dois valores e a hora da segunda leitura. Nenhum guião lê este contador.",
+      "no_fim_da_e1c": 14164752,
+      "na_leitura_antes_da_medida": 14121293,
+      "hora_da_leitura": "2026-10-01T07:15:09Z",
+      "diferenca": 43459,
+      "o_total_que_conta": "o que a ferramenta reporta ao lugar de direção no fim do agente, que inclui a escrita da secção, a corrida final dos portões e o fecho"
+     }
+    },
+    "comando": "git log --reverse --format=%cI 932eaee..HEAD no motor (o primeiro commit da passagem) até à hora da medida; os símbolos são uma transcrição, não uma medida deste guião",
+    "conhecido_positivo": {
+     "descricao": "o primeiro commit da passagem no motor é o da emenda do corpo do 18, 4f3165a",
+     "mordeu": true
+    }
+   }
+  ]
  }
 }

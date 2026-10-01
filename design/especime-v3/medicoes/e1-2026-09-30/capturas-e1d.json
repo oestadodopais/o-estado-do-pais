@@ -1,0 +1,665 @@
+{
+  "bloco": "E1d",
+  "cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0",
+  "arvore_limpa": true,
+  "estado": "cabeca-limpa",
+  "construcao": {
+    "commit": "30dcec5cb00b8951383e53135e848873fb8255d0",
+    "ref": "e1-2026-09-30",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-01T07:12:27.446Z"
+  },
+  "inicio": "2026-10-01T07:14:26.734Z",
+  "fim": "2026-10-01T07:14:41.323Z",
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": 24,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2013-pt-390.png",
+      "pagina": "concelho-mandato-2013",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "364d0bc8707039fde5235961a522ff75c4d34a96d25cf5ce22edcaef78beced5",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8806,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2017-pt-390.png",
+      "pagina": "concelho-mandato-2017",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "fb80c0dfb342d957ca67eb72ca6f61bae3f8995ddcbda5dd9f92948fede4a22d",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8806,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2021-pt-390.png",
+      "pagina": "concelho-mandato-2021",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "3a71c62698ed660294b6b84bac9b7bfad215e7cd398eb902a5eb2e6af48e40a8",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8806,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2025-pt-390.png",
+      "pagina": "concelho-mandato-2025",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "611f61a05359cd7d6a36d80f11fc75f28c7d2946a013bf079bf50e412d1cbfaf",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8806,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-pt-390.png",
+      "pagina": "economia",
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "pt",
+      "largura": 390,
+      "modo": "cabeca",
+      "sha256": "5fb86bd4a95c6334c1ca6e8a069eac135c2e9af4dc1b600a19b45c14aadc30a8",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 45244,
+        "h1": "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara",
+        "nota_do_sucessor": null,
+        "antecessores": "Sucede a Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 e Évora — Prometido, Pago, Auditado 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-enquadramento-pt-390.png",
+      "pagina": "economia-enquadramento",
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "pt",
+      "largura": 390,
+      "modo": "ancora",
+      "sha256": "cde7e7d1b131f0ec17ccec9c1f6e84685c11355e644f2f804c15dd3dbf783afa",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 45244,
+        "h1": "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara",
+        "nota_do_sucessor": null,
+        "antecessores": "Sucede a Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 e Évora — Prometido, Pago, Auditado 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2013-en-390.png",
+      "pagina": "concelho-mandato-2013",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "664d040b13aba043c3eb95ffcff8977d96b5ea45495b5e610e6a90f3ef43d042",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8932,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2017-en-390.png",
+      "pagina": "concelho-mandato-2017",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "13de13468f2e01cfd028c975ea41847c9191362760fc00d5d6d328894657d007",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8932,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2021-en-390.png",
+      "pagina": "concelho-mandato-2021",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "458a993953caaa664b7c779aca246d2e8dc7f0a7b69bbfa20d99fa53758c99fb",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8932,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2025-en-390.png",
+      "pagina": "concelho-mandato-2025",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 390,
+      "modo": "elemento",
+      "sha256": "ae6f48c53b0646a2fc62970eb56f305fefa06185986e0e1316999afe579466d2",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8932,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-en-390.png",
+      "pagina": "economia",
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "en",
+      "largura": 390,
+      "modo": "cabeca",
+      "sha256": "a779c47ddc8b673203b0e848b196dd9bcdd3f9b0696de2c520a6c05ec41c2b5e",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 42743,
+        "h1": "The economy of Évora and the public money that reaches the municipality outside the council",
+        "nota_do_sucessor": null,
+        "antecessores": "Succeeds Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 and Évora — Promised, Paid, Audited 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-enquadramento-en-390.png",
+      "pagina": "economia-enquadramento",
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "en",
+      "largura": 390,
+      "modo": "ancora",
+      "sha256": "27c5e67b4ecb0efec9c625f32d6758e40514add559f4ebd9dba53e3bb4b2b7ae",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 42743,
+        "h1": "The economy of Évora and the public money that reaches the municipality outside the council",
+        "nota_do_sucessor": null,
+        "antecessores": "Succeeds Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 and Évora — Promised, Paid, Audited 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2013-pt-1280.png",
+      "pagina": "concelho-mandato-2013",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "db44241c131e2f9f313f2152d3acbb2ccd3f241aaf98a4eb94c3c2ecde419bb6",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6294,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2017-pt-1280.png",
+      "pagina": "concelho-mandato-2017",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "de7930adcb0ad3066446a52e9b788fef520899ae1a181a7b6036419e3b152d3b",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6294,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2021-pt-1280.png",
+      "pagina": "concelho-mandato-2021",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "31225b4c15e3ec7b2866705bb88c92c182de399be72a9dbd82d694d17b462ff8",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6294,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2025-pt-1280.png",
+      "pagina": "concelho-mandato-2025",
+      "rota": "/municipios/evora",
+      "lang": "pt",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "8a485f005dbfbc7d3e92c1dad0ab95bbab99f4d67388a9f8068c945abb363370",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6294,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?",
+          "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-pt-1280.png",
+      "pagina": "economia",
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "pt",
+      "largura": 1280,
+      "modo": "cabeca",
+      "sha256": "75ae282d744ebc2ce959871bf65adc932d07b46b5e556968afeb2ade68eaa9db",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 35182,
+        "h1": "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara",
+        "nota_do_sucessor": null,
+        "antecessores": "Sucede a Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 e Évora — Prometido, Pago, Auditado 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-enquadramento-pt-1280.png",
+      "pagina": "economia-enquadramento",
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "pt",
+      "largura": 1280,
+      "modo": "ancora",
+      "sha256": "0f88d0c2513db86f72df60a29cf7d25e09f689cebd5687b596449052183018c8",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 35182,
+        "h1": "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara",
+        "nota_do_sucessor": null,
+        "antecessores": "Sucede a Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 e Évora — Prometido, Pago, Auditado 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2013-en-1280.png",
+      "pagina": "concelho-mandato-2013",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "12a4779af417dcea38487d868e79955c1a5a8cbedede1bae257ebe2420823bde",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6354,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2017-en-1280.png",
+      "pagina": "concelho-mandato-2017",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "147b8efc0b641e15e0ea6e90e869c66f6a57f3c04706fa3df6a33d94ad2d24e5",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6354,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2021-en-1280.png",
+      "pagina": "concelho-mandato-2021",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "2dd3af038f83d50911ff97b1937d876df38d070867a5a4d0f628d2fa301a3581",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6354,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-concelho-mandato-2025-en-1280.png",
+      "pagina": "concelho-mandato-2025",
+      "rota": "/en/municipalities/evora",
+      "lang": "en",
+      "largura": 1280,
+      "modo": "elemento",
+      "sha256": "baf72dd3f81941d3e8fb4889dd852ca4f53c545511f3c600fce09713c5df430d",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6354,
+        "h1": "Évora",
+        "nota_do_sucessor": null,
+        "antecessores": null,
+        "perguntas": [
+          "What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?",
+          "Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?",
+          "What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?",
+          "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?"
+        ],
+        "estudos_na_lista": [
+          "evora-contas-da-camara-2010-2025",
+          "evora-quem-governou-a-camara-2009-2025",
+          "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+          "evora-2027-capital-europeia-da-cultura"
+        ],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-en-1280.png",
+      "pagina": "economia",
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "en",
+      "largura": 1280,
+      "modo": "cabeca",
+      "sha256": "8ab86da925791aa7638601e8d04fd97c6dfbf4daf48f20c1eb265dcb3e1f64c1",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 32979,
+        "h1": "The economy of Évora and the public money that reaches the municipality outside the council",
+        "nota_do_sucessor": null,
+        "antecessores": "Succeeds Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 and Évora — Promised, Paid, Audited 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/e1-2026-09-30/e1d-economia-enquadramento-en-1280.png",
+      "pagina": "economia-enquadramento",
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "en",
+      "largura": 1280,
+      "modo": "ancora",
+      "sha256": "e364c9f12bf6fde89901f767ef68c52e2949efae531012373910e1dccc1b9b91",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 32979,
+        "h1": "The economy of Évora and the public money that reaches the municipality outside the council",
+        "nota_do_sucessor": null,
+        "antecessores": "Succeeds Évora — Quinze Anos, Cinco Mandatos, Évora — Economia, Investidores, Portas Abertas 2026 and Évora — Promised, Paid, Audited 2026.",
+        "perguntas": [],
+        "estudos_na_lista": [],
+        "robots": null
+      }
+    }
+  ]
+}
