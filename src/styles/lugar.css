@@ -260,7 +260,11 @@
    baixo da outra, cada uma uma linha que se abre. O nome da secção e a contagem
    ficam na letra do antetítulo, a tinta, porque são a linha em que se toca. */
 .lugares-mapa { margin-top: clamp(18px, 2.4vw, 26px); }
-.lugares-dobra { margin-top: clamp(18px, 2.4vw, 26px); }
+/* O AR DE UMA SECÇÃO NÃO SE SOMA ENTRE AS DUAS LINHAS. `site.css` dá a cada
+   `<section>` um `padding-top` de secção, e as duas gavetas são duas secções:
+   medido a 390 px, cada uma media 75 px para uma linha de 44, e a segunda ficava
+   30 px abaixo da primeira. As duas linhas leem-se como uma lista de duas. */
+.lugares-dobra { margin-top: clamp(18px, 2.4vw, 26px); padding-top: 0; }
 .lugares-dobra + .lugares-dobra { margin-top: 0; }
 [data-dobra-lugares='distritos'] .gaveta { border-bottom: 1px solid var(--rule); }
 .lugares-dobra .gaveta-abrir { gap: 0; }
