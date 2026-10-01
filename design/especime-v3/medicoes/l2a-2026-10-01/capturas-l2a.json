@@ -1,0 +1,822 @@
+{
+  "bloco": "L2a",
+  "cabeca": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
+  "construcao": {
+    "commit": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
+    "ref": "l2a-2026-10-01",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-01T18:54:37.337Z"
+  },
+  "inicio": "2026-10-01T18:56:28.620Z",
+  "fim": "2026-10-01T18:56:43.972Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 22,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-pt-390.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "5c6de9c7411c9df513dee584dd630b6438c6423f634fab45f6bb36b90ec3a436",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3762,
+        "h1": "Lugares",
+        "pesquisa": {
+          "x": 18,
+          "y": 269,
+          "largura": 354,
+          "altura": 105
+        },
+        "mapa": {
+          "x": 18,
+          "y": 392,
+          "largura": 354,
+          "altura": 524
+        },
+        "gaveta_das_regioes": {
+          "x": 18,
+          "y": 935,
+          "largura": 354,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 18,
+          "y": 980,
+          "largura": 354,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-pt-390.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "57f0c17f626b1e826d0a42ba294a06f7759607e8fe63b07e240408aaaf79782c",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6609,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 18,
+          "y": 4622,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-regioes-abertas-pt-390.png",
+      "pagina": "lugares-regioes-abertas",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "d4e3ae0e5b61b51b4e875b359f8e30f8317baf57fe99b8441b71cbcdcbb9c7dc",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 4178,
+        "h1": "Lugares",
+        "pesquisa": {
+          "x": 18,
+          "y": 269,
+          "largura": 354,
+          "altura": 105
+        },
+        "mapa": {
+          "x": 18,
+          "y": 392,
+          "largura": 354,
+          "altura": 524
+        },
+        "gaveta_das_regioes": {
+          "x": 18,
+          "y": 935,
+          "largura": 354,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 18,
+          "y": 1396,
+          "largura": 354,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 9,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-pt-768.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "51f4761c33a1cfc1c657e4be44cd49b8ceecfb691161f911c30d7045831c582b",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 3503,
+        "h1": "Lugares",
+        "pesquisa": {
+          "x": 31,
+          "y": 287,
+          "largura": 707,
+          "altura": 105
+        },
+        "mapa": {
+          "x": 31,
+          "y": 410,
+          "largura": 707,
+          "altura": 498
+        },
+        "gaveta_das_regioes": {
+          "x": 31,
+          "y": 928,
+          "largura": 707,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 31,
+          "y": 973,
+          "largura": 707,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-pt-768.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "70ed195eea76d676ffd0fff60242b04a47ba7adfc07128aba6f44436c17c94d3",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5147,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 396,
+          "y": 3590,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-pt-1024.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "b11ab7ce0ae54313b94af394f73e9d86918ee5ea9a6ab3c5b9c3a8db996ab1be",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3469,
+        "h1": "Lugares",
+        "pesquisa": {
+          "x": 41,
+          "y": 327,
+          "largura": 477,
+          "altura": 108
+        },
+        "mapa": {
+          "x": 553,
+          "y": 327,
+          "largura": 430,
+          "altura": 626
+        },
+        "gaveta_das_regioes": {
+          "x": 41,
+          "y": 466,
+          "largura": 477,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 41,
+          "y": 511,
+          "largura": 477,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-pt-1024.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "2c5297ac9e1d871bd3ec64f5727f298f57a9900812ea5b05cbf25eb80d360283",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4758,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 365,
+          "y": 3164,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-pt-1280.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "7f25bec195006a2805e7361362e0a1d5b4041925a8354ffe23cd2c264a6ea795",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 3527,
+        "h1": "Lugares",
+        "pesquisa": {
+          "x": 94,
+          "y": 331,
+          "largura": 618,
+          "altura": 116
+        },
+        "mapa": {
+          "x": 756,
+          "y": 331,
+          "largura": 430,
+          "altura": 626
+        },
+        "gaveta_das_regioes": {
+          "x": 94,
+          "y": 482,
+          "largura": 618,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 94,
+          "y": 527,
+          "largura": 618,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-pt-1280.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "e79a4cd6e323c8340e8c94527301ba3c8b4d718c4c3e543b5e5da26faf6c9acd",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4627,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 469,
+          "y": 2959,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-pt-1600.png",
+      "pagina": "lugares",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "f92685f6af6f795f0c223bb6bc6c51024cadc91fed296bfb9e2588ea3efd2306",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3537,
+        "h1": "Lugares",
+        "pesquisa": {
+          "x": 254,
+          "y": 331,
+          "largura": 610,
+          "altura": 119
+        },
+        "mapa": {
+          "x": 916,
+          "y": 331,
+          "largura": 430,
+          "altura": 626
+        },
+        "gaveta_das_regioes": {
+          "x": 254,
+          "y": 485,
+          "largura": 610,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 254,
+          "y": 530,
+          "largura": 610,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-pt-1600.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "f6d97b9ddcfc6a45321cdcff0d840ade170fc4cc7ee21e542771c8dbc05e6581",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4644,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 629,
+          "y": 2964,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-en-390.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "c336efab65d5d7034d194782a453ceb8481dd521580b74da8e029e9c3258a296",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3784,
+        "h1": "Places",
+        "pesquisa": {
+          "x": 18,
+          "y": 269,
+          "largura": 354,
+          "altura": 105
+        },
+        "mapa": {
+          "x": 18,
+          "y": 392,
+          "largura": 354,
+          "altura": 524
+        },
+        "gaveta_das_regioes": {
+          "x": 18,
+          "y": 935,
+          "largura": 354,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 18,
+          "y": 980,
+          "largura": 354,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-en-390.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "2f1f3d266e2fd559335cf3e8effb490df79350fe11eea71b02f916c675ebc4fb",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6488,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 18,
+          "y": 4497,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-regioes-abertas-en-390.png",
+      "pagina": "lugares-regioes-abertas",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "6b8e34db69e55ea8c60813001d5b5a6dc4862c48f6c2b8ac041fd683781f028d",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 4200,
+        "h1": "Places",
+        "pesquisa": {
+          "x": 18,
+          "y": 269,
+          "largura": 354,
+          "altura": 105
+        },
+        "mapa": {
+          "x": 18,
+          "y": 392,
+          "largura": 354,
+          "altura": 524
+        },
+        "gaveta_das_regioes": {
+          "x": 18,
+          "y": 935,
+          "largura": 354,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 18,
+          "y": 1396,
+          "largura": 354,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 9,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-en-768.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "2b9be0cb01cfebbc4db6e49e35fc900df6cbc971035ae25d926242a2bf48177b",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 3478,
+        "h1": "Places",
+        "pesquisa": {
+          "x": 31,
+          "y": 287,
+          "largura": 707,
+          "altura": 105
+        },
+        "mapa": {
+          "x": 31,
+          "y": 410,
+          "largura": 707,
+          "altura": 498
+        },
+        "gaveta_das_regioes": {
+          "x": 31,
+          "y": 928,
+          "largura": 707,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 31,
+          "y": 973,
+          "largura": 707,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-en-768.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "709cffe4ede60165cef4dd833b7a859a33f8de518e4a0b2e87cb41582cb81f60",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5171,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 396,
+          "y": 3590,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-en-1024.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "e1ff4e322143c882e27953f97a7c8b1385c87da00ea2a30592926626917630d3",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3478,
+        "h1": "Places",
+        "pesquisa": {
+          "x": 41,
+          "y": 327,
+          "largura": 477,
+          "altura": 108
+        },
+        "mapa": {
+          "x": 553,
+          "y": 327,
+          "largura": 430,
+          "altura": 626
+        },
+        "gaveta_das_regioes": {
+          "x": 41,
+          "y": 466,
+          "largura": 477,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 41,
+          "y": 511,
+          "largura": 477,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-en-1024.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "e8117a18614b7fd903dc2d02766a5339cc298a52474484da7c8360776a89a0dd",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4872,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 365,
+          "y": 3242,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-en-1280.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "1462b3bd1c259231b1f5476eee285804d40e064d936b67399cfcb65d13657926",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 3540,
+        "h1": "Places",
+        "pesquisa": {
+          "x": 94,
+          "y": 331,
+          "largura": 618,
+          "altura": 116
+        },
+        "mapa": {
+          "x": 756,
+          "y": 331,
+          "largura": 430,
+          "altura": 626
+        },
+        "gaveta_das_regioes": {
+          "x": 94,
+          "y": 482,
+          "largura": 618,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 94,
+          "y": 527,
+          "largura": 618,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-en-1280.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "a44855d122a5725fbc2e0a2ff0f153cfcaa461d92e3c0e5c5101627b73553345",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4686,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 469,
+          "y": 2993,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/lugares-en-1600.png",
+      "pagina": "lugares",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "4b8118a512af32f45b7e86dc5c25b70ebbeb27dcb2e1ca2cc755e7147c4ab57b",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3550,
+        "h1": "Places",
+        "pesquisa": {
+          "x": 254,
+          "y": 331,
+          "largura": 610,
+          "altura": 119
+        },
+        "mapa": {
+          "x": 916,
+          "y": 331,
+          "largura": 430,
+          "altura": 626
+        },
+        "gaveta_das_regioes": {
+          "x": 254,
+          "y": 485,
+          "largura": 610,
+          "altura": 44
+        },
+        "gaveta_dos_distritos": {
+          "x": 254,
+          "y": 530,
+          "largura": 610,
+          "altura": 44
+        },
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 1,
+        "pesquisas": 1,
+        "sinal": null,
+        "portas": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2a-2026-10-01/primeira-en-1600.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "b0e811dfffd5cdad0b524e9f5362fedd9380c9cc39119d50261083ccd48f7014",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4703,
+        "h1": null,
+        "pesquisa": null,
+        "mapa": null,
+        "gaveta_das_regioes": null,
+        "gaveta_dos_distritos": null,
+        "nomes_das_listas_a_vista": 0,
+        "mapas_inteiros": 0,
+        "pesquisas": 0,
+        "sinal": {
+          "x": 629,
+          "y": 2998,
+          "largura": 40,
+          "altura": 53
+        },
+        "portas": 8
+      }
+    }
+  ]
+}

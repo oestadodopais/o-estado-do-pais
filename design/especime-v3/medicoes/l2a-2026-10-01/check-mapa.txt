@@ -1,0 +1,13 @@
+
+  [32m✓[0m R1 · os resumos de mapa/ batem com o manifesto
+  [32m✓[0m R2 · a junção: 308 concelhos, uma vez cada, com os slugs da Carta
+  [32m✓[0m R3 · cada página de distrito com tantas ligações quantos concelhos
+  [32m✓[0m R4 · a página dos lugares com 29 ligações de área, e mais nenhuma página com elas
+  [32m✓[0m R5 · nenhuma ligação debaixo de role="img"
+  [32m✓[0m R6 · a atribuição da DGT onde o mapa está
+  [32m✓[0m R7 · a colação portuguesa nos artefactos e nas listas construídas
+  [32m✓[0m R8 · os 29 ficheiros do segundo nível são os artefactos
+  [32m✓[0m R9 · as páginas que o mapa promete estão todas construídas
+[90m
+  mapa · 30 ficheiros conferidos · 29 unidades · 308 concelhos, uma vez cada · 680 páginas prometidas e construídas (58 de unidade e 616 de concelho, nas duas edições)
+[0m
