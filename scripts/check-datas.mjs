@@ -306,7 +306,9 @@ function prendeNoIndice(rota, doc) {
 /** B1, peça 2: a página de um lugar, com os estudos sobre ele. */
 function prendeNaPaginaDoLugar(rota, doc) {
   const slug = rota.split('/').pop();
-  prendeEdicoesB1(rota, doc, null, WORKS.filter((w) => w.subject === slug).length);
+  /* Sem os estudos que têm sucessor (bloco E1, 01.10.2026): a página do lugar lista
+     os que lhes sucedem, e as edições datadas não entram na lista. */
+  prendeEdicoesB1(rota, doc, null, WORKS.filter((w) => w.subject === slug && !w.sucedidoPor).length);
 }
 function prendeNaPaginaDoTrabalho(rota, slug, doc) {
   prendeEdicoesB1(rota, doc, slug);
@@ -347,7 +349,41 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
     if (marca) presasAqui.add(marca);
     prende(rota, slug, lang, marca?.textContent.trim() ?? null, `a edição ${slug}/${lang}`);
   }
+  if (slugDaPagina) prendeSucessor(rota, doc, slugDaPagina, presasAqui);
   orfas(rota, doc, presasAqui);
+}
+
+/**
+ * A NOTA DO SUCESSOR (bloco E1, 01.10.2026). Um estudo que outro sucedeu leva, à
+ * cabeça, a data de publicação da edição do sucessor. A marca
+ * `[data-sucessor-edicao]` diz de que edição é a data, e a regra é a das outras:
+ * uma data só, a da edição declarada em datas-de-publicacao.json, junto da porta
+ * para a página desse estudo; e o estudo nomeado tem de estar no `sucedidoPor`
+ * do trabalho desta página. Uma nota que não se prenda fica órfã e fecha.
+ *
+ * @param {string} rota
+ * @param {any} doc
+ * @param {string} slugDaPagina
+ * @param {Set<unknown>} presasAqui
+ */
+function prendeSucessor(rota, doc, slugDaPagina, presasAqui) {
+  const work = WORKS.find((w) => w.slug === slugDaPagina);
+  const linguaDaPagina = (rota === '/en' || rota.startsWith('/en/')) ? 'en' : 'pt';
+  for (const bloco of doc.querySelectorAll('[data-sucessor-edicao]')) {
+    const [slug, lang] = (bloco.getAttribute('data-sucessor-edicao') ?? '').split('/');
+    if (!work?.sucedidoPor?.some((s) => s.slug === slug)) {
+      falhas.push(`${rota}: a nota do sucessor nomeia ${slug}, que não sucede este estudo.`);
+      continue;
+    }
+    const porta = linguaDaPagina === 'pt' ? `/estudos/${slug}` : `/en/studies/${slug}`;
+    const portas = bloco.querySelectorAll('a[href]').map((a) => (a.getAttribute('href') ?? '').replace(/\/$/, ''));
+    if (!portas.includes(porta)) falhas.push(`${rota}: a nota do sucessor não tem a porta para ${porta}.`);
+    const marcas = marcasDeData(bloco);
+    if (marcas.length !== 1) falhas.push(`${rota}: a nota do sucessor tem ${marcas.length} datas, esperada uma.`);
+    const marca = marcas[0];
+    if (marca) presasAqui.add(marca);
+    prende(rota, slug, lang, marca?.textContent.trim() ?? null, `a nota do sucessor, ${slug}/${lang}`);
+  }
 }
 
 /* AS CINCO PÁGINAS DAS ENTRADAS (bloco PP1, 28.09.2026) têm os estudos do país sobre os seus temas, com

@@ -1,0 +1,46 @@
+---
+/**
+ * A NOTA DO SUCESSOR, à cabeça de um estudo que outro estudo sucedeu (bloco E1,
+ * 01.10.2026, DECISIONS.md §1.145). Os seis estudos de Évora de agosto e setembro
+ * ficam alojados como edições datadas; esta nota diz, logo abaixo do título, que
+ * estudo lhes sucede e desde quando, com a porta para ele.
+ *
+ * A data é a de publicação da edição do sucessor, lida de
+ * `src/data/datas-de-publicacao.json` como todas as datas de publicação do sítio,
+ * e rende-se com a mesma marca `data-nonledger`. Um sucessor sem data nesse
+ * ficheiro fecha a construção: uma nota com a data por dizer seria uma nota a meio.
+ */
+import TituloDeTrabalho from './TituloDeTrabalho.astro';
+import { workById } from '../data/studies.mjs';
+import { dataDaEdicaoNoRepositorio } from '../lib/datas-do-repositorio.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+
+const { work, lang = 'pt' } = Astro.props;
+const r = ROTULOS_B1[lang];
+const sucessores = (work.sucedidoPor ?? []).map((s) => {
+  const sucessor = workById(s.slug);
+  if (!sucessor) throw new Error(`NotaDoSucessor: ${work.slug} nomeia o sucessor desconhecido ${s.slug}.`);
+  const edicao = sucessor.editions.find((e) => e.lang === lang) ?? sucessor.editions[0];
+  const data = dataDaEdicaoNoRepositorio(sucessor.slug, edicao.lang);
+  if (!data) throw new Error(`NotaDoSucessor: ${sucessor.slug}/${edicao.lang} não tem data em datas-de-publicacao.json.`);
+  return { edicao, data, parte: s.parte?.[lang] ?? null, rota: routePath('estudo', lang, { slug: sucessor.slug }) };
+});
+const data = sucessores[0]?.data;
+---
+{sucessores.length > 0 && (
+  <p class="estudo-sucessor" role="note" data-sucessor-edicao={`${work.sucedidoPor[0].slug}/${sucessores[0].edicao.lang}`}>
+    <strong>{r.edicaoDatada}</strong>{' '}<span>{r.sucedidoA}</span>{' '}
+    <time datetime={data} data-nonledger="data-do-repositorio">{dataDaCasa(data)}</time>{' '}
+    {sucessores.length === 1 ? (
+      <><span>{r.sucedidoPor}</span>{' '}<a href={sucessores[0].rota}><TituloDeTrabalho edicao={sucessores[0].edicao} lang={lang} /></a><span>.</span></>
+    ) : (
+      <><span>{r.sucedidoPorVarios}</span>{' '}
+        {sucessores.map((s, i) => (
+          <><span>{s.parte}</span>{' '}<span>{r.sucedidoEm}</span>{' '}<a href={s.rota}><TituloDeTrabalho edicao={s.edicao} lang={lang} /></a><span>{i < sucessores.length - 1 ? ';' : '.'}</span>{' '}</>
+        ))}
+      </>
+    )}
+  </p>
+)}

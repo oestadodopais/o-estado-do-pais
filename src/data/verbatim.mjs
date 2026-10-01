@@ -151,6 +151,51 @@ export const VERBATIM = {
      que é de onde vêm os valores do instantâneo de 2026-08-19. Uma transcrição
      não se atualiza de memória; estas foram extraídas do próprio ficheiro
      alojado, que é o que o `check:documentos` prende ao seu resumo. */
+  /* AS PERGUNTAS DOS QUATRO ESTUDOS DE ÉVORA (bloco E1, 01.10.2026): a primeira
+     frase da leitura que abre cada documento, transcrita. O índice dos estudos e
+     a página do concelho rendem-nas com a marca, e o portão compara-as aqui. */
+  'estudo-contas-camara-pergunta-pt': {
+    lang: 'pt',
+    origem: 'Primeira frase da leitura de abertura de studies-src/evora-contas-da-camara-2010-2025/pt.html.',
+    text: `O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?`,
+  },
+
+  'estudo-contas-camara-pergunta-en': {
+    lang: 'en',
+    origem: 'First sentence of the opening reading of studies-src/evora-contas-da-camara-2010-2025/en.html.',
+    text: `What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?`,
+  },
+
+  'estudo-quem-governou-pergunta-pt': {
+    lang: 'pt',
+    origem: 'Primeira frase da leitura de abertura de studies-src/evora-quem-governou-a-camara-2009-2025/pt.html.',
+    text: `Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?`,
+  },
+
+  'estudo-economia-pergunta-pt': {
+    lang: 'pt',
+    origem: 'Primeira frase da leitura de abertura de studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html.',
+    text: `O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?`,
+  },
+
+  'estudo-economia-pergunta-en': {
+    lang: 'en',
+    origem: 'First sentence of the opening reading of studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html.',
+    text: `What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?`,
+  },
+
+  'estudo-evora-2027-pergunta-pt': {
+    lang: 'pt',
+    origem: 'Primeira frase da leitura de abertura de studies-src/evora-2027-capital-europeia-da-cultura/pt.html.',
+    text: `O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?`,
+  },
+
+  'estudo-evora-2027-pergunta-en': {
+    lang: 'en',
+    origem: 'First sentence of the opening reading of studies-src/evora-2027-capital-europeia-da-cultura/en.html.',
+    text: `What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?`,
+  },
+
   'estudo-prometido-abertura-pt': {
     lang: 'pt',
     origem: 'Frase de abertura de studies-src/evora-prometido-pago-auditado-2026/pt.html.',

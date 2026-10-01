@@ -371,6 +371,215 @@ export const LEITURAS = {
   },
 
   /* ----------------------------------------------------------------- 11 */
+  /* ------------------------------------------------ os estudos de Évora de 01.10.2026 */
+  'evora-contas-da-camara-2010-2025': {
+    /* A leitura de «evora-orcamentado-pago-devido-2025», que o estudo novo sucede (bloco E1, 01.10.2026):
+       as medidas, a nota e a frase são as mesmas, e a frase assenta na leitura de
+       abertura do documento novo, que a origem abaixo cita. A leitura antiga fica
+       na página datada. */
+    medidas: [
+      {
+        claim: 'evora-execucao-da-receita-2025',
+        nome: {
+          pt: ['% do orçamento foi de facto cobrado no último ano de contas'],
+          en: ['% of the budget was actually collected in the latest year of accounts'],
+        },
+      },
+      {
+        claim: 'evora-execucao-da-receita-2021',
+        nome: { pt: ['% quatro anos antes'], en: ['% four years earlier'] },
+      },
+    ],
+    /* AS RESSALVAS QUE SOBREVIVEM VIVEM NA NOTA DAS MEDIDAS (G6, decisão do
+       diretor de 26.08.2026). A camada «Método e ressalvas» saiu das páginas de
+       trabalho: o método vive no Método e no recibo de cada linha. Uma ressalva
+       só fica quando muda a leitura de um número desta página, e então fica como
+       UMA frase, com o facto por sujeito. As que saíram estão na tabela de
+       `design/especime-v3/notas/grelha-da-voz.md`, uma a uma, com a razão. */
+    medidasNota: {
+      pt: [
+        [
+          'As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.',
+        ],
+      ],
+      en: [
+        [
+          'The accounts of the second-to-last year were rejected in a vote and were never certified.',
+        ],
+      ],
+    },
+    frase: {
+      pt: [
+        'O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal: ',
+        { claim: 'evora-prazo-medio-de-pagamento-2025' },
+        ' dias para pagar a um fornecedor, e ',
+        { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0' + unidade('evora-pagamentos-em-atraso-2025', 'pt') },
+        ' em atraso, com a dívida total ainda abaixo do limite.',
+      ],
+      en: [
+        'Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt: ',
+        { claim: 'evora-prazo-medio-de-pagamento-2025' },
+        ' days to pay a supplier, and ',
+        { claim: 'evora-pagamentos-em-atraso-2025', sufixo: '\u00A0' + unidade('evora-pagamentos-em-atraso-2025', 'en') },
+        ' overdue, with total debt still below the limit.',
+      ],
+    },
+    origem: {
+      onde: 'content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md:7',
+      pt: 'A dívida total fechou o ano em €54 379 035, dentro do limite legal e com €28 192 653 de margem. O aperto está nos fornecedores: 137 dias, em média, para pagar uma fatura, e €4 976 172 em pagamentos em atraso.',
+      en: 'Total debt closed the year at €54 379 035, inside the legal limit and with €28 192 653 of headroom. The squeeze is on suppliers: 137 days, on average, to pay an invoice, and €4 976 172 in overdue payments.',
+    },
+  },
+  'evora-quem-governou-a-camara-2009-2025': {
+    /* A leitura de «evora-os-pelouros-quem-os-teve-o-que-fizeram», que o estudo novo sucede (bloco E1, 01.10.2026):
+       as medidas, a nota e a frase são as mesmas, e a frase assenta na leitura de
+       abertura do documento novo, que a origem abaixo cita. A leitura antiga fica
+       na página datada. */
+    medidas: [
+      {
+        claim: 'evora-pelouros-2021-total',
+        nome: {
+          pt: ['designações de pelouro carregadas por duas pessoas, no mandato de ', { ref: '2021–2025' }],
+          en: ['portfolio designations carried by two people, in the ', { ref: '2021–2025' }, ' term'],
+        },
+      },
+      {
+        claim: 'evora-pelouros-2025-total',
+        nome: {
+          pt: ['designações, por três pessoas, no executivo seguinte'],
+          en: ['designations, over three people, in the next executive'],
+        },
+      },
+    ],
+    /* AS RESSALVAS QUE SOBREVIVEM VIVEM NA NOTA DAS MEDIDAS (G6, decisão do
+       diretor de 26.08.2026). A camada «Método e ressalvas» saiu das páginas de
+       trabalho: o método vive no Método e no recibo de cada linha. Uma ressalva
+       só fica quando muda a leitura de um número desta página, e então fica como
+       UMA frase, com o facto por sujeito. As que saíram estão na tabela de
+       `design/especime-v3/notas/grelha-da-voz.md`, uma a uma, com a razão. */
+    medidasNota: {
+      pt: [
+        [
+          'Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
+        ],
+      ],
+      en: [
+        [
+          'Each count is the list of portfolios the council’s page attributes to that person.',
+        ],
+      ],
+    },
+    frase: {
+      pt: [
+        'Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de ',
+        { ref: '2021–2025' },
+        ', ',
+        { claim: 'evora-pelouros-2021-presidente' },
+        ' e ',
+        { claim: 'evora-pelouros-2021-vice-presidente' },
+        ' designações repartidas por duas pessoas; a câmara instalada em ',
+        { ref: '2025' },
+        ' tem ',
+        { claim: 'evora-camara-lugares' },
+        ' lugares.',
+      ],
+      en: [
+        'Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the ',
+        { ref: '2021–2025' },
+        ' term, ',
+        { claim: 'evora-pelouros-2021-presidente' },
+        ' and ',
+        { claim: 'evora-pelouros-2021-vice-presidente' },
+        ' designations split between two people; the council installed in ',
+        { ref: '2025' },
+        ' has ',
+        { claim: 'evora-camara-lugares' },
+        ' seats.',
+      ],
+    },
+    origem: {
+      onde: 'content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md:11, :13',
+      pt: 'O executivo real é mais pequeno do que o eleito. · Os pelouros não se deixam contar em dinheiro.',
+      en: 'The real executive is smaller than the elected one. · The portfolios cannot be counted in money.',
+    },
+  },
+  'evora-economia-e-dinheiro-publico-de-fora-da-camara': {
+    /* A leitura de «evora-prometido-pago-auditado-2026», que o estudo novo sucede (bloco E1, 01.10.2026):
+       as medidas, a nota e a frase são as mesmas, e a frase assenta na leitura de
+       abertura do documento novo, que a origem abaixo cita. A leitura antiga fica
+       na página datada. */
+    medidas: [
+      {
+        claim: 'evora-prr-aprovado-2026',
+        nome: {
+          pt: [`${unidade('evora-prr-aprovado-2026', 'pt')} aprovados e atribuídos ao concelho pelo registo do plano de recuperação`],
+          en: [`${unidade('evora-prr-aprovado-2026', 'en')} approved and attributed to the municipality by the recovery-plan register`],
+        },
+      },
+      {
+        claim: 'evora-prr-pago-2026',
+        nome: { pt: [`${unidade('evora-prr-pago-2026', 'pt')} efetivamente pagos`], en: [`${unidade('evora-prr-pago-2026', 'en')} actually paid`] },
+      },
+    ],
+    /* A NOTA DAS MEDIDAS FICA COM O QUE MUDA A LEITURA DE UM NÚMERO (G6, decisão
+       do diretor de 26.08.2026). Ficam duas coisas: que estes dois valores são
+       somas sobre um registo inteiro e não linhas de um documento, e o que
+       «vencido» quer dizer, que é uma palavra do dia a dia com outro sentido
+       aqui. Saiu a oração sobre o excerto por confirmar e o selo tracejado: é o
+       sítio a explicar a sua própria marca de incerteza, e ela tem página
+       própria, `/a-verificar`, à distância do selo.
+
+       A camada «Método e ressalvas» saiu inteira desta página, com as outras
+       cinco: ver a tabela de `design/especime-v3/notas/grelha-da-voz.md`. */
+    medidasNota: {
+      pt: [
+        [
+          'Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada.',
+        ],
+      ],
+      en: [
+        [
+          'These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded.',
+        ],
+      ],
+    },
+    /* Reescrita a 15.08.2026, segunda revisão cruzada. Dizia «a maior parte do
+       dinheiro é administrada e recebida fora da câmara» — que é a leitura
+       assinada de 04, não uma coisa que os números desta página estabeleçam:
+       o que a página mostra é a universidade com mais dinheiro contratado do
+       que a câmara, o que prova «mais», não «a maior parte». A leitura de 04
+       continua na página, no fundo, atribuída a 04. */
+    frase: {
+      pt: [
+        'Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: ',
+        { claim: 'evora-prr-universidade-contratado', sufixo: '\u00A0' + unidade('evora-prr-universidade-contratado', 'pt') },
+        ' contra ',
+        { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'pt') },
+        '. Da soma aprovada para o concelho, ',
+        { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
+        ' está vencida contra ',
+        { claim: 'evora-prr-execucao-2026', sufixo: '%' },
+        ' paga.',
+      ],
+      en: [
+        'Of the recovery-plan money contracted in the municipality, the university holds more than the council: ',
+        { claim: 'evora-prr-universidade-contratado', sufixo: '\u00A0' + unidade('evora-prr-universidade-contratado', 'en') },
+        ' against ',
+        { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'en') },
+        '. Of the sum approved for the municipality, ',
+        { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
+        ' is overdue against ',
+        { claim: 'evora-prr-execucao-2026', sufixo: '%' },
+        ' paid.',
+      ],
+    },
+    origem: {
+      onde: 'content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md:11, :13',
+      pt: 'O dinheiro de fora não passa pela câmara. · As localizações de projeto vencidas levam 61,32% do valor aprovado para o concelho.',
+      en: 'The outside money does not go through the council. · The overdue project locations carry 61.32% of the value approved for the municipality.',
+    },
+  },
+
   'penalizacoes-por-reforma-antecipada-2026': {
     medidas: [
       {
@@ -463,6 +672,19 @@ export const LEITURAS = {
  */
 export function temLeitura(id) {
   return Object.prototype.hasOwnProperty.call(LEITURAS, id);
+}
+
+/**
+ * Este trabalho oferece-se ao índice? Com leitura escrita e sem sucessor (bloco E1,
+ * 01.10.2026): um estudo que outro sucedeu fica alojado como edição datada, com a
+ * sua leitura, e sai do índice e do mapa do sítio. É a resposta que a página, o
+ * mapa do sítio e a prova leem, para as três metades não divergirem.
+ *
+ * @param {{ id: string, sucedidoPor?: unknown }} work
+ * @returns {boolean}
+ */
+export function indexavel(work) {
+  return temLeitura(work.id) && !work.sucedidoPor;
 }
 
 /** A leitura de um trabalho, ou null. @param {string} id */

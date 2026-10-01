@@ -93,11 +93,108 @@ export function subjectLabel(subject, lang = 'pt') {
 }
 
 export const WORKS = [
+  /* OS QUATRO ESTUDOS DE ÉVORA DE 01.10.2026 (bloco E1, DECISIONS.md §1.145).
+     Os seis estudos de Évora de agosto e setembro passaram a quatro, compostos no
+     motor a partir dos registos dos antigos (content/16 a 19 do ResearchHub). O
+     título de cada edição é o que o documento imprime no `<h1>`. A pergunta é a
+     primeira frase da leitura que abre o documento, transcrita, e o portão de HTML
+     confere-a pelo `src/data/verbatim.mjs`. A data de cada edição é a do commit do
+     motor que escreveu os seus bytes pela última vez, como a do «Évora 2027» de
+     setembro; as descrições são reformulações do título, sem números. */
+  {
+    id: 'evora-contas-da-camara-2010-2025',
+    slug: 'evora-contas-da-camara-2010-2025',
+    tema: 'economia-e-financas-publicas',
+    subject: 'evora',
+    editions: [
+      { lang: 'pt', title: 'As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação', date: '2026-10-01', updated: null },
+      { lang: 'en', title: 'The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification', date: '2026-10-01', updated: null },
+    ],
+    artifactUrl: null,
+    pergunta: {
+      pt: 'O que a Câmara de Évora orçamenta, cobra, paga e deve, e como chegou até aqui a dívida herdada do resgate?',
+      en: 'What does the Câmara de Évora budget, collect, pay and owe, and how did the debt inherited from the rescue get to where it is?',
+    },
+    verbatimDaPergunta: { pt: 'estudo-contas-camara-pergunta-pt', en: 'estudo-contas-camara-pergunta-en' },
+    description: {
+      pt: 'O orçamento, a cobrança, a dívida e a certificação das contas da Câmara de Évora.',
+      en: 'The budget, what was collected, the debt and the certification of the accounts of the Câmara de Évora.',
+    },
+  },
+  {
+    id: 'evora-quem-governou-a-camara-2009-2025',
+    slug: 'evora-quem-governou-a-camara-2009-2025',
+    tema: 'governo-e-democracia',
+    subject: 'evora',
+    /* Só em português, como os dois estudos de onde vem («Quinze Anos» e «Os
+       Pelouros»), que o sítio só aloja em português. */
+    editions: [
+      { lang: 'pt', title: 'Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões', date: '2026-10-01', updated: null },
+    ],
+    artifactUrl: null,
+    pergunta: {
+      pt: 'Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo?',
+    },
+    verbatimDaPergunta: { pt: 'estudo-quem-governou-pergunta-pt' },
+    description: {
+      pt: 'As eleições, os executivos, os pelouros e as decisões da Câmara de Évora.',
+      en: 'The elections, the executives, the portfolios and the decisions of the Câmara de Évora.',
+    },
+  },
+  {
+    id: 'evora-economia-e-dinheiro-publico-de-fora-da-camara',
+    slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara',
+    tema: 'economia-e-financas-publicas',
+    subject: 'evora',
+    editions: [
+      { lang: 'pt', title: 'A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara', date: '2026-10-01', updated: null },
+      { lang: 'en', title: 'The economy of Évora and the public money that reaches the municipality outside the council', date: '2026-10-01', updated: null },
+    ],
+    artifactUrl: null,
+    pergunta: {
+      pt: 'O que produz o concelho de Évora, que dinheiro público lhe chega por fora da câmara, por que mãos, e quanto está atrasado?',
+      en: 'What does the municipality of Évora produce, what public money reaches it outside the council, through whose hands, and how much of it is late?',
+    },
+    verbatimDaPergunta: { pt: 'estudo-economia-pergunta-pt', en: 'estudo-economia-pergunta-en' },
+    description: {
+      pt: 'A economia do concelho de Évora e o dinheiro público que lhe chega por fora da câmara.',
+      en: 'The economy of the municipality of Évora and the public money that reaches it outside the council.',
+    },
+  },
+  {
+    id: 'evora-2027-capital-europeia-da-cultura',
+    slug: 'evora-2027-capital-europeia-da-cultura',
+    tema: 'cultura',
+    subject: 'evora',
+    editions: [
+      { lang: 'pt', title: 'Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos', date: '2026-10-01', updated: null },
+      { lang: 'en', title: 'Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts', date: '2026-10-01', updated: null },
+    ],
+    artifactUrl: null,
+    pergunta: {
+      pt: 'O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos?',
+      en: "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts?",
+    },
+    verbatimDaPergunta: { pt: 'estudo-evora-2027-pergunta-pt', en: 'estudo-evora-2027-pergunta-en' },
+    description: {
+      pt: 'O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos.',
+      en: 'What Évora’s bid for European Capital of Culture promised, what the European panel wrote and the money in the official acts.',
+    },
+  },
   {
     id: 'evora-quinze-anos-cinco-mandatos',
     slug: 'evora-quinze-anos-cinco-mandatos',
     tema: 'governo-e-democracia',
     subject: 'evora',
+    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145) por três estudos: as finanças
+       e o pessoal foram para as contas, as eleições e as decisões para quem
+       governou, e a série socioeconómica para a economia. Fica alojado como
+       edição datada, fora do índice dos estudos e da página do concelho. */
+    sucedidoPor: [
+      { slug: 'evora-contas-da-camara-2010-2025', parte: { pt: 'as finanças e o pessoal', en: 'the finances and the staff' } },
+      { slug: 'evora-quem-governou-a-camara-2009-2025', parte: { pt: 'as eleições e as decisões', en: 'the elections and the decisions' } },
+      { slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara', parte: { pt: 'a série socioeconómica', en: 'the socio-economic series' } },
+    ],
     /* Republicado a 2026-08-20 do motor: os excertos da ilha de recibos ganharam
        a janela que o extractor corrigido produz, e nenhum valor mexeu. A razão é
        de ponteiro, e a prova é o portão das edições do motor. DECISIONS §1.49. */
@@ -114,6 +211,8 @@ export const WORKS = [
     slug: 'evora-economia-investidores-portas-abertas-2026',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
+    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     editions: [
       { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null, updated: null },
     ],
@@ -127,6 +226,8 @@ export const WORKS = [
     slug: 'evora-orcamentado-pago-devido-2025',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
+    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    sucedidoPor: [{ slug: 'evora-contas-da-camara-2010-2025' }],
     /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de
        ponteiro. DECISIONS §1.49. */
     editions: [
@@ -153,6 +254,8 @@ export const WORKS = [
     slug: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
     tema: 'governo-e-democracia',
     subject: 'evora',
+    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    sucedidoPor: [{ slug: 'evora-quem-governou-a-camara-2009-2025' }],
     editions: [
       {
         lang: 'pt',
@@ -197,6 +300,8 @@ export const WORKS = [
     slug: 'evora-prometido-pago-auditado-2026',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
+    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     /**
      * A DATA, e como foi encontrada. Este trabalho nunca passou por um
      * anfitrião de artefactos: foi produzido no motor de investigação
@@ -243,6 +348,8 @@ export const WORKS = [
     slug: 'evora-2027-prometido-painel-dinheiro',
     tema: 'cultura',
     subject: 'evora',
+    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    sucedidoPor: [{ slug: 'evora-2027-capital-europeia-da-cultura' }],
     /**
      * O TÍTULO É O QUE O DOCUMENTO IMPRIME, palavra por palavra (16.09.2026,
      * leitura a frio do Codex, achado 1). Está lido do `<h1>` de cada edição, e
@@ -705,5 +812,8 @@ export const COUNTS = {
    * uma tradução não é um estudo novo. É esta a contagem que reconcilia a
    * afirmação estudos-evora-publicados com o arquivo.
    */
-  estudos_evora_no_arquivo: WORKS.filter((w) => w.subject === 'evora').length,
+  /* Desde 01.10.2026 (bloco E1, §1.145), só os trabalhos sem sucessor: os seis
+     estudos de Évora de agosto e setembro ficam alojados como edições datadas,
+     e a linha estudos-evora-publicados conta os quatro que lhes sucedem. */
+  estudos_evora_no_arquivo: WORKS.filter((w) => w.subject === 'evora' && !w.sucedidoPor).length,
 };

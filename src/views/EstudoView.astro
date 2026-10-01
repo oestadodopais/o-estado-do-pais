@@ -4,6 +4,8 @@ import Base from '../layouts/Base.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import PecasDoEstudo from '../components/PecasDoEstudo.astro';
 import EdicaoPublicada from '../components/EdicaoPublicada.astro';
+import NotaDoSucessor from '../components/NotaDoSucessor.astro';
+import NotaDosAntecessores from '../components/NotaDosAntecessores.astro';
 import { workById } from '../data/studies.mjs';
 import { registoDaEdicao, manifestoDosRegistos } from '../lib/registos.mjs';
 import { pecasDoCorpo, linhasDoDocumento, titulosDoDocumento } from '../lib/registo-html.mjs';
@@ -17,7 +19,7 @@ import DefinicaoDoMarcador from '../components/DefinicaoDoMarcador.astro';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { FONTE_DIGITAL_GERADA_POR_IA } from '../data/politica-ia.mjs';
-import { leituraDe } from '../data/leituras.mjs';
+import { leituraDe, indexavel } from '../data/leituras.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ROTULOS_B1, TITULOS_DA_LEITURA } from '../data/rotulos-b1.mjs';
 import '../styles/texto.css';
@@ -31,7 +33,7 @@ const principal = work.editions.find(e => e.lang === lang) ?? work.editions[0];
 const registo = registoDaEdicao(slug, lang);
 const chave = `${slug}/${lang}`;
 const entrada = manifestoDosRegistos().registos[chave];
-const linhaDoSitio = entrada ? linhaDoSitioDoEstudo(entrada.rh_study) : () => null;
+const linhaDoSitio = entrada ? linhaDoSitioDoEstudo(entrada.rh_study, entrada.rh_origens ?? {}) : () => null;
 const path = routePath('estudo', lang, { slug });
 const titulos = registo ? titulosDoDocumento(registo) : [];
 const seccoes = titulos.filter(t => t.nivel === 2).length;
@@ -96,11 +98,12 @@ const jsonld = {
 };
 ---
 <Base lang={lang} path={path} title={`${jsonld.headline} · ${SITE_NAME}`}
-  description={work.description[lang]} jsonld={jsonld} noindex={!leituraDe(work.id)}>
+  description={work.description[lang]} jsonld={jsonld} noindex={!indexavel(work)}>
   {registo ? (
     <div class="estudo-b1 texto-corpo" style={`--seccoes: ${seccoes}`} data-seccoes={seccoes}>
       <div id="documento" data-registo-edicao={chave}>
         <div class="estudo-b1-titulo"><PecasDoEstudo pecas={titulo} lang={lang} /></div>
+        <NotaDoSucessor work={work} lang={lang} />
     {titulos.length > 0 && (
       <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k">
         <details class="texto-indice-dobra">
@@ -160,12 +163,17 @@ const jsonld = {
           </ul>
         </section>
       </details>}
+      <NotaDosAntecessores work={work} lang={lang} />
       <EdicaoPublicada work={work} lang={lang} />
     </div>
   ) : (
     <div class="estudo-b1">
       <TituloDeTrabalho as="h1" class="estudo-titulo" edicao={principal} lang={lang} />
+      {/* E1: a página de uma língua sem edição própria diz também que estudo lhe
+          sucede e a que estudos ele sucede, como a página com o corpo do registo. */}
+      <NotaDoSucessor work={work} lang={lang} />
       <p class="estudo-descricao" data-verbatim={work.verbatimDaAbertura?.[lang]}>{work.description[lang]}</p>
+      <NotaDosAntecessores work={work} lang={lang} />
       <EdicaoPublicada work={work} lang={lang} />
     </div>
   )}

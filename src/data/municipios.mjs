@@ -437,9 +437,15 @@ const EVORA = {
              trabalho e a frase era a sua citação sobre os seus próprios limites.
              O facto é que a repartição não foi estabelecida, e é ele que muda a
              leitura do campo vazio ao lado. */
+          /* UMA SÓ AFIRMAÇÃO NA FICHA (bloco E1, 01.10.2026, §1.145). A nota dizia
+             que o presidente deste mandato não fora identificado, e a mesma ficha
+             nomeia-o acima, com a data da substituição: eram duas afirmações sobre
+             a mesma coisa. O que as fontes dos pelouros não registam são os
+             membros do mandato e a repartição; quem presidiu está nas eleições,
+             que o campo `quem` transcreve. */
           pelourosNota: {
-            pt: ['Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados.'],
-            en: ['Not established: the president of that mandate, and every other member of it, were not identified.'],
+            pt: ['Não estabelecido: as fontes dos pelouros não registam nenhum membro deste mandato.'],
+            en: ['Not established: the portfolio sources record no member of this term.'],
           },
         },
         {
@@ -486,9 +492,13 @@ const EVORA = {
              alcance da leitura da casa, e «o mandato seguinte» era o de 2017–2021,
              que também não tem pelouros lidos. O primeiro mandato com repartição
              de pelouros nos dados é o de 2021–2025, e é esse que a frase nomeia. */
+          /* A FRASE ENVELHECIDA SAIU (bloco E1, 01.10.2026, I180). Dizia que as
+             capturas da repartição começavam no mandato de 2021–2025, e o estudo dos
+             pelouros data-as de outubro de 2014 e reconstrói os mapas deste mandato e
+             do seguinte; o que falta aqui é a linha deste sítio, não a fonte. */
           pelourosNota: {
-            pt: ['As capturas da repartição de pelouros começam no mandato de ', { ref: '2021–2025' }, '.'],
-            en: ['The captures behind the portfolio split begin with the ', { ref: '2021–2025' }, ' term.'],
+            pt: ['As fontes dos pelouros registam a repartição deste mandato, e ela está no estudo de quem governou a câmara.'],
+            en: ['The portfolio sources record this term’s split, and it is in the study of who governed the council.'],
           },
         },
         {
@@ -522,8 +532,8 @@ const EVORA = {
              anterior, que é o que explica o campo vazio: as capturas começam
              depois deste mandato. */
           pelourosNota: {
-            pt: ['As capturas da repartição de pelouros começam no mandato de ', { ref: '2021–2025' }, '.'],
-            en: ['The captures behind the portfolio split begin with the ', { ref: '2021–2025' }, ' term.'],
+            pt: ['As fontes dos pelouros registam a repartição deste mandato, e ela está no estudo de quem governou a câmara.'],
+            en: ['The portfolio sources record this term’s split, and it is in the study of who governed the council.'],
           },
         },
         {

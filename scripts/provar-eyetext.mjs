@@ -297,8 +297,14 @@ conferencias++;
    prometido, o que o painel escreveu, e o dinheiro em linhas» (bloco E1). O número está escrito para que
    uma mudança de âmbito não passe em silêncio, e não passou: a prova foi relida
    sobre as duas edições novas e as duas dão 119 blocos lidos contra 119 no
-   registo, 880 unidades iguais carácter a carácter, 0 isentas e 0 apagadas. */
-const EDICOES_DA_PROVA = 7;
+   registo, 880 unidades iguais carácter a carácter, 0 isentas e 0 apagadas.
+   O ÂMBITO SOBE DE 7 PARA 14 a 01.10.2026, com as sete edições dos quatro estudos
+   de Évora que sucedem aos seis de agosto e setembro (o bloco E1 de 30.09.2026,
+   §1.145). A prova foi relida sobre as sete edições novas: 1 141 blocos lidos
+   contra 1 141 no registo, 5 980 unidades iguais carácter a carácter, 0 isentas e
+   0 apagadas (o registo da corrida está em
+   design/especime-v3/medicoes/e1-2026-09-30/). */
+const EDICOES_DA_PROVA = 14;
 if (edicoesProvadas !== EDICOES_DA_PROVA) {
   falhas.push(
     `esta prova corre sobre ${EDICOES_DA_PROVA} edições (as que têm prova "edicao-html" e bytes ` +

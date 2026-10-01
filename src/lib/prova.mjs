@@ -60,7 +60,7 @@ import { unidadesDoBloco, MOTIVOS_SEM_RESUMO } from './registo-html.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
 import { WORKS, EDITIONS, SUBJECTS } from '../data/studies.mjs';
 import { portaDoLugar } from './estudos-b1.mjs';
-import { temLeitura } from '../data/leituras.mjs';
+import { indexavel } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { contagensDosConcelhos } from './livro-concelhos.mjs';
 import { MUNICIPIOS } from '../data/caop-centroids.mjs';
@@ -320,7 +320,8 @@ function contagensDosRegistos(doMotor) {
           c.algarismos++;
           if (figura.row) {
             c.resolvidos++;
-            const rh = /** @type {{ rh_study?: unknown }} */ (entrada).rh_study;
+            const e = /** @type {{ rh_study?: unknown, rh_origens?: Record<string, string> }} */ (entrada);
+            const rh = e.rh_origens?.[figura.row] ?? e.rh_study;
             if (doMotor.has(`${rh} ${figura.row}`)) c.com_linha_do_sitio++;
           } else {
             c.por_resolver++;
@@ -829,13 +830,14 @@ export function prova(lang = 'pt') {
     /* ---- o arquivo ---- */
     // B1: cada contagem abre a secção que contém os estudos desse lugar.
     ...Object.fromEntries(Object.keys(SUBJECTS).map(lugar => [`estudos_lugar_${lugar}`, {
-      valor: WORKS.filter(w => w.subject === lugar).length,
+      /* Os estudos que a página do lugar lista: sem os que têm sucessor (bloco E1). */
+      valor: WORKS.filter(w => w.subject === lugar && !w.sucedidoPor).length,
       origem: lang === 'pt' ? 'estudos sobre este lugar' : 'studies about this place',
       porta: portaDoLugar(lugar, lang),
     }])),
     estudos: k('estudos', WORKS.length, routePath('estudos', lang)),
     edicoes: k('edicoes', EDITIONS.length, routePath('estudos', lang)),
-    leituras: k('leituras', WORKS.filter((w) => temLeitura(w.id)).length, routePath('estudos', lang)),
+    leituras: k('leituras', WORKS.filter((w) => indexavel(w)).length, routePath('estudos', lang)),
 
     /* ---- o painel da primeira página (v3, etapa 2a) ----
        A manchete da primeira página diz «<n> limiares europeus ultrapassados»,
