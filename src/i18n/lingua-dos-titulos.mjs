@@ -441,11 +441,11 @@ export const LINGUA_DAS_EDICOES = {
      quando «Évora 2027: o prometido, o que o painel escreveu, e o dinheiro em
      linhas» entrou e as três
      linhas passaram a 16.09.2026 (bloco E1). A tabela declara o que existe, e
-     uma chave que nenhuma linha traz fecha a construção. A contagem dos estudos
-     sobre Évora passou a 01.10.2026, quando os seis estudos de Évora passaram a
-     quatro (bloco E1 dos estudos de Évora). */
+     uma chave que nenhuma linha traz fecha a construção. As três passaram a
+     01.10.2026, quando os seis estudos de Évora passaram a quatro (bloco E1
+     dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
+     e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  '16.09.2026': null,
   /* A recontagem de Correções publicadas usa a data da edição, sem língua. */
   '30.09.2026': null,
   '01.10.2026': null,

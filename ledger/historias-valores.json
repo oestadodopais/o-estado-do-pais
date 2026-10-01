@@ -148,5 +148,21 @@
       "old_value": "3",
       "new_value": "5"
     }
+  ],
+  "estudos-publicados": [
+    {
+      "date": "2026-10-01",
+      "kind": "atualizacao",
+      "old_value": "13",
+      "new_value": "17"
+    }
+  ],
+  "edicoes-publicadas": [
+    {
+      "date": "2026-10-01",
+      "kind": "atualizacao",
+      "old_value": "18",
+      "new_value": "25"
+    }
   ]
 }

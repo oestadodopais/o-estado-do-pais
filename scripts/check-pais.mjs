@@ -163,6 +163,8 @@ function lugarNoIdentificador(id) {
   }
   return maior;
 }
+/** As expressões verificadas das contagens que medem o próprio projeto. */
+const CONTAGENS_DO_PROJETO = new Set(['correcoes_publicadas', 'estudos_no_arquivo', 'edicoes_no_arquivo']);
 /** O lugar DERIVADO, sem olhar para nenhuma tabela de lugares declarados. */
 function lugarDerivado(id) {
   const c = linha(id);
@@ -170,9 +172,12 @@ function lugarDerivado(id) {
   if (c.source_url && new URL(c.source_url).searchParams.get('geo') === 'EU27_2020') return 'uniao-europeia';
   /* E0, §1.146: esta conta mede as correções do próprio livro, pela expressão
      verificada. A segunda leitura confirma a declaração, nunca a substitui:
-     sem a tabela explícita, a A3 continua a recusar a mudança. */
+     sem a tabela explícita, a A3 continua a recusar a mudança.
+     E1b (01.10.2026): as duas contagens do arquivo medem também o próprio
+     projeto, pelas suas expressões verificadas; a dos estudos sobre Évora
+     não está na lista, porque mede Évora. */
   if (c.source === 'O Estado do País' && c.study === 'o-estado-do-pais' &&
-      c.check === 'correcoes_publicadas' && typeof c.derivation === 'string' && c.derivation.trim())
+      CONTAGENS_DO_PROJETO.has(String(c.check)) && typeof c.derivation === 'string' && c.derivation.trim())
     return 'o-estado-do-pais';
   const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
   const doId = lugarNoIdentificador(id);
