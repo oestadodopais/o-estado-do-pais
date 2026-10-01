@@ -46,7 +46,7 @@
     },
     {
       "nome": "construcao_medida",
-      "valor": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
+      "valor": "a66ab832fbba2f29764a31109377bf4a596d2150",
       "comando": "dist/version.json, campo commit",
       "conhecido_positivo": {
         "o_que": "o ficheiro da versão existe e nomeia um commit",
@@ -307,29 +307,29 @@
     },
     {
       "nome": "portao_build",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/build.codigo, escrito por scripts/leituras/portoes.sh",
       "conhecido_positivo": {
         "o_que": "a pasta dos portões tem a cabeça ao lado",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_verify",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/verify.codigo, escrito por scripts/leituras/portoes.sh",
       "conhecido_positivo": {
         "o_que": "a pasta dos portões tem a cabeça ao lado",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_typecheck",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/typecheck.codigo, escrito por scripts/leituras/portoes.sh",
       "conhecido_positivo": {
         "o_que": "a pasta dos portões tem a cabeça ao lado",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
@@ -388,61 +388,61 @@
     },
     {
       "nome": "segundos_build_portoes",
-      "valor": "NÃO LIDO",
+      "valor": 120,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/build.inicio e build.fim",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "segundos_verify_portoes",
-      "valor": "NÃO LIDO",
+      "valor": 719,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/verify.inicio e verify.fim",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "segundos_typecheck_portoes",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/typecheck.inicio e typecheck.fim",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "codigo_build_portoes",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/build.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "codigo_verify_portoes",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/verify.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "codigo_typecheck_portoes",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/typecheck.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "simbolos_da_sessao_do_construtor",
-      "valor": 636000,
+      "valor": 653000,
       "comando": "OEDP_SIMBOLOS_INICIO menos OEDP_SIMBOLOS_RESTANTES: o contador de símbolos restantes que a ferramenta mostra ao agente, lido no início e na hora desta corrida",
       "conhecido_positivo": {
         "o_que": "os dois valores foram passados",
