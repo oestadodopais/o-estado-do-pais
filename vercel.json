@@ -78,6 +78,20 @@
       }
     },
     {
+      "src": "/en/studies/evora-2027-capital-europeia-da-cultura/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-capital-europeia-da-cultura/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
       "src": "/en/studies/evora-2027-prometido-painel-dinheiro/text/?",
       "status": 301,
       "headers": {
@@ -89,6 +103,34 @@
       "status": 301,
       "headers": {
         "Location": "/estudos/evora-2027-prometido-painel-dinheiro/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-contas-da-camara-2010-2025/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-contas-da-camara-2010-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
       }
     },
     {
@@ -131,6 +173,13 @@
       "status": 301,
       "headers": {
         "Location": "/estudos/evora-prometido-pago-auditado-2026/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quem-governou-a-camara-2009-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quem-governou-a-camara-2009-2025/"
       }
     },
     {
