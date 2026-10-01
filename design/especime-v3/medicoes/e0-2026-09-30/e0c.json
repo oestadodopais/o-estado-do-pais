@@ -1,0 +1,180 @@
+{
+  "passagem": "E0c",
+  "base": "a99d45cc44281dff386561b6826440610e1df60e",
+  "cabeca": "e64fff59914356c5d54eedc0f14cb2b97a12369a",
+  "medido_em": "2026-10-01T00:14:55.358Z",
+  "completa": false,
+  "triagem": {
+    "fonte": "prompts/PROMPT-e0c-construtor.md",
+    "plantas_do_pacote": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "registados_sem_passagem": [
+      7,
+      11
+    ],
+    "guiao_corrigido_antes_da_passagem": 10
+  },
+  "nomes_da_divida": [
+    {
+      "lang": "pt",
+      "texto": "Dívida das famílias",
+      "fonte": "projeto",
+      "campo": null
+    },
+    {
+      "lang": "en",
+      "texto": "Household debt",
+      "fonte": "projeto",
+      "campo": null
+    }
+  ],
+  "nomes_conferidos": 0,
+  "plantas": 14,
+  "detetores": {
+    "cabeca": "ddb2bc8efa379a20b147b6352f988356d99bb09a",
+    "correcoes_publicadas": {
+      "antes": 5,
+      "depois": 4,
+      "linha_retirada": "pib-pc-alentejo-2024",
+      "indice": 0,
+      "entrada_retirada": {
+        "date": "2026-08-13",
+        "kind": "correcao",
+        "old_value": "77,2",
+        "new_value": "77",
+        "reason": "O valor publicado trazia uma casa decimal que a fonte não sustenta. Era calculado a partir dos valores absolutos em paridades de poder de compra; o Eurostat publica este índice arredondado à unidade (77) e marca o valor de 2024 como provisório. Publicar um décimo de ponto sobre um número que a fonte espera rever afirmava uma precisão que não existe. Passa a publicar-se o índice tal como a fonte o publica.",
+        "reason_en": "The published value carried a decimal the source does not support. It was computed from the absolute purchasing-power-standard values; Eurostat publishes this index rounded to the unit (77) and marks the 2024 value provisional. Publishing a tenth of a point on a number the source expects to revise asserted a precision that does not exist. The index is now published as the source publishes it."
+      },
+      "baixou_uma": true,
+      "livro_real_conservado": true
+    },
+    "historia_anterior_conservada": {
+      "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+      "linhas_anteriores": 9,
+      "linha_plantada": "estudos-evora-publicados",
+      "indice": 0,
+      "campo": "new_value",
+      "antes": "3",
+      "plantado": "39",
+      "erros_limpos": [],
+      "queixas": [
+        "história anterior: estudos-evora-publicados perdeu ou alterou uma entrada selada."
+      ],
+      "historia_real_conservada": true
+    }
+  },
+  "razoes": {
+    "pt": "Duas correções publicadas a 30.09.2026 repõem a casa decimal do desemprego de Portugal. A contagem passa a incluí-las; a recontagem não é uma correção adicional.",
+    "en": "Two corrections published on 30.09.2026 restore the decimal place of unemployment in Portugal. The count now includes them; the recount is not an additional correction."
+  },
+  "valor_conservado": true,
+  "assinatura_conservada": true,
+  "historia_selada_conservada": true,
+  "portoes": [
+    {
+      "nome": "build",
+      "codigo": null,
+      "cabeca": null,
+      "segundos": null
+    },
+    {
+      "nome": "verify",
+      "codigo": null,
+      "cabeca": null,
+      "segundos": null
+    },
+    {
+      "nome": "typecheck",
+      "codigo": null,
+      "cabeca": null,
+      "segundos": null
+    }
+  ],
+  "capturas": {
+    "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+    "total": 12,
+    "problemas": []
+  },
+  "custo_e0b": {
+    "inicio": "2026-09-30T22:26:35.480Z",
+    "segundos_decorridos": 3565.5,
+    "mesma_sessao_do_e0": true,
+    "simbolos_desde_final_e0": 408878,
+    "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5.",
+    "medido_em": "2026-09-30T23:26:00.999446+00:00",
+    "proveniencia": "custo.json na cabeça a99d45cc e mandato E0c, ponto 3.",
+    "construtor_simbolos": 408878,
+    "revisores_automaticos": [
+      {
+        "sessao": "01a0f46d-3a10-7143-ae1c-eca7ea3b2a98",
+        "modelo": "codex-auto-review",
+        "inicio": "2026-09-30T22:26:34.160Z",
+        "inicio_e0b": null,
+        "ultima_amostra": "2026-09-30T23:06:02.575Z",
+        "simbolos": {
+          "input_tokens": 119553,
+          "cached_input_tokens": 56576,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 515,
+          "reasoning_output_tokens": 272,
+          "total_tokens": 120068
+        },
+        "simbolos_sem_cache_mais_saida": 63492
+      },
+      {
+        "sessao": "01a0f496-bd66-7793-a953-2a8eb522ebb1",
+        "modelo": "codex-auto-review",
+        "inicio": "2026-09-30T23:11:54.744Z",
+        "inicio_e0b": null,
+        "ultima_amostra": "2026-09-30T23:25:37.026Z",
+        "simbolos": {
+          "input_tokens": 57956,
+          "cached_input_tokens": 31232,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 283,
+          "reasoning_output_tokens": 135,
+          "total_tokens": 58239
+        },
+        "simbolos_sem_cache_mais_saida": 27007
+      }
+    ],
+    "revisores_simbolos": 90499,
+    "total_cobrado_simbolos": 499377
+  },
+  "custo_e0c": {
+    "inicio": "2026-09-30T23:55:48.135Z",
+    "medido_em": "2026-10-01T00:14:54.944757+00:00",
+    "segundos_decorridos": 1146.8,
+    "construtor_simbolos": 175397,
+    "revisores_automaticos": [
+      {
+        "sessao": "01a0f4be-e6fd-7420-8c7d-270042630163",
+        "modelo": "codex-auto-review",
+        "inicio": "2026-09-30T23:55:46.845Z",
+        "inicio_e0b": null,
+        "inicio_e0c": null,
+        "uso_inicio_e0c": null,
+        "ultima_amostra": "2026-10-01T00:06:56.746Z",
+        "simbolos": {
+          "input_tokens": 154458,
+          "cached_input_tokens": 114688,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 631,
+          "reasoning_output_tokens": 383,
+          "total_tokens": 155089
+        },
+        "simbolos_sem_cache_mais_saida": 40401
+      }
+    ],
+    "revisores_simbolos": 40401,
+    "base_do_delta": "Último token_count anterior à mensagem de retoma E0c.",
+    "criterio_dos_revisores": "Sessões de revisor da mesma worktree fora das listas conservadas E0 e E0b, incluindo o guardião criado antes da mensagem de retoma.",
+    "total_cobrado_simbolos": 215798
+  },
+  "pedido_do_limiar_e0b": "Retirado na triagem da releitura, sem defeito no cartão."
+}

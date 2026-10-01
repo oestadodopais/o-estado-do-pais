@@ -1,8 +1,8 @@
 # E0 · As linhas do projeto e a correção do desemprego
 
-O teste de aceitação do §2 está cumprido, com os três portões na cabeça final.
+O conteúdo e as provas locais estão medidos. Os três portões da cabeça final ainda estão por correr.
 
-Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça do ramo: `a595201bbc440a6d57d2f23cd95321b26099b7d4`. Cabeça das medidas: `a595201bbc440a6d57d2f23cd95321b26099b7d4`.
+Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça do ramo: `e64fff59914356c5d54eedc0f14cb2b97a12369a`. Cabeça das medidas: `a595201bbc440a6d57d2f23cd95321b26099b7d4`.
 
 ## Mandato e medidas
 
@@ -52,7 +52,7 @@ Foram conferidas 14 plantas, das quais 14 morderam; os ficheiros reais ficam int
 
 As conferências dirigidas do livro, da travessia, dos tipos e do país passaram. Os primeiros ensaios da célula falharam por um seletor de planta que nomeava a linha irmã, ausente da primeira página, e por rótulos esperados com maiúscula onde o registo usa minúscula. Os dois erros da célula foram corrigidos; as saídas anteriores e a corrida limpa ficam em ensaios. A primeira tentativa de captura foi impedida pela restrição do servidor local; a corrida com acesso ao servidor local terminou com código 0.
 
-Uma primeira corrida dos três portões passou a zero, mas o guião dos comprovativos marcou erradamente os artefactos como código por registar: retirava o espaço inicial do formato porcelain antes de ler as colunas. A [prova do estado da árvore](estado-da-arvore.json) reproduz esse falso positivo e confirma que alterações de código ou do livro continuam a ser recusadas. Corrigiu-se a leitura; os portões foram repetidos na cabeça final. Os primeiros comprovativos conservam-se em ensaios.
+Uma primeira corrida dos três portões passou a zero, mas o guião dos comprovativos marcou erradamente os artefactos como código por registar: retirava o espaço inicial do formato porcelain antes de ler as colunas. A [prova do estado da árvore](estado-da-arvore.json) reproduz esse falso positivo e confirma que alterações de código ou do livro continuam a ser recusadas. Corrigiu-se a leitura; os portões serão repetidos na cabeça final. Os primeiros comprovativos conservam-se em ensaios.
 
 ## Capturas e inspeção
 
@@ -78,12 +78,18 @@ O captor segue os guiões N1: servidor efémero local, fontes carregadas, pedido
 - `baf8c5dd`: Admite só o campo do nome na própria entrada do registo.
 - `29f39453`: Guarda a primeira corrida E0b e a prova da guarda dos nomes.
 - `a595201b`: Declara a edição do contador sem língua e regista a corrida interrompida.
+- `321a2427`: E0b: os comprovativos finais e as capturas renovadas, deixados na árvore pelo construtor depois do último commit.
+- `a99d45cc`: E0c: a releitura a frio da E0b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem, as duas faltas do portoes.sh corrigidas com provas (a pasta de saída depois do cd, a corrida para quando um portão morre por um sinal), e o mandato da passagem E0c.
+- `ddb2bc8e`: Nomeia a dívida das famílias da União nas duas edições do registo.
+- `fff4acaa`: Prova a recontagem e a conservação da história pelos próprios detetores.
+- `32d8238b`: Inclui os dois revisores no custo cobrado da passagem E0b.
+- `e64fff59`: Data a razão permanente e conta todas as plantas listadas no relatório.
 
 O último commit de entrega inclui [RESPOSTA-construtor-e0.md](RESPOSTA-construtor-e0.md). A cabeça final lê-se dos ficheiros .cabeca e da resposta de fecho da sessão, fora do ramo.
 
 ## Portões
 
-Os três comandos correram separadamente na cabeça final `a595201bbc440a6d57d2f23cd95321b26099b7d4`. Os códigos e cabeças foram lidos dos ficheiros acabados de escrever.
+Os três comandos finais correm depois do commit de entrega, cada um no seu comando. Esta tabela será regenerada a partir dos ficheiros acabados de escrever.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
@@ -103,28 +109,30 @@ A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §
 
 ```text
 §1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:87
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:105
     design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:1
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:11582
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:11582
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/build.log:11904
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1445
     design/especime-v3/medicoes/e0-2026-09-30/portoes/build.log:11582
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/build.log:11904
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1767
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1445
 §1.5 · A linha de método e a linha de autoria não são traduzidas
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:95
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:9
-    src/data/nomes-das-medidas.mjs:140
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:114
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:10
+    src/data/nomes-das-medidas.mjs:145
     src/data/nomes-das-medidas.mjs:6
 §1.19 · Os estudos migram para dois sítios, não um
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:100
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:14
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:119
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:15
     scripts/gate-html.mjs:1193
     scripts/gate-html.mjs:5237
     scripts/gate-html.mjs:8786
 §1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:106
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:20
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:125
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:21
     scripts/gate-html.mjs:142
     scripts/gate-html.mjs:147
     scripts/gate-html.mjs:2713
@@ -133,25 +141,25 @@ A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §
     scripts/gate-html.mjs:3747
     scripts/gate-html.mjs:3761
 §1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:116
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:30
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:135
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:31
     scripts/gate-html.mjs:2592
     scripts/gate-html.mjs:856
     scripts/gate-html.mjs:879
 §1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:122
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:36
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:141
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:37
     scripts/gate-html.mjs:3204
     scripts/gate-html.mjs:3313
     scripts/gate-html.mjs:3986
     scripts/gate-html.mjs:7075
 §1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:129
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:43
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:148
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:44
     scripts/gate-html.mjs:5067
 §1.38 · A ortografia do sítio passa a ser uma só
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:133
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:47
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:152
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:48
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:250
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:250
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/build.log:250
@@ -163,43 +171,45 @@ A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:245
     design/especime-v3/medicoes/e0-2026-09-30/portoes/build.log:250
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/build.log:250
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:245
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:245
 §1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:146
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:60
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:167
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:63
     scripts/gate-html.mjs:4942
     scripts/gate-html.mjs:7955
     scripts/gate-html.mjs:8654
 §1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:152
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:66
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:173
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:69
     scripts/gate-html.mjs:268
     scripts/gate-html.mjs:360
     scripts/gate-html.mjs:3850
     scripts/gate-html.mjs:78
 §1.41 · A revisão cruzada do bloco V, e o que ela mudou
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:159
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:73
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:180
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:76
     scripts/gate-html.mjs:3005
     scripts/gate-html.mjs:3048
 §1.42 · Segunda revisão cruzada do bloco V
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:164
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:78
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:185
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:81
     scripts/gate-html.mjs:3027
     scripts/gate-html.mjs:3048
     scripts/gate-html.mjs:3419
     scripts/gate-html.mjs:7366
 §1.44 · A revisão cruzada da identidade v2
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:171
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:85
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:192
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:88
     scripts/gate-html.mjs:871
 §1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:175
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:89
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:196
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:92
     scripts/gate-html.mjs:880
 §1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:179
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:93
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:200
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:96
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:362
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:362
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/build.log:362
@@ -208,123 +218,135 @@ A leitura anterior aos ficheiros existentes mostrou a §1.117 em mudancas e a §
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:357
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:357
     design/especime-v3/medicoes/e0-2026-09-30/portoes/build.log:362
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/build.log:362
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:357
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:357
     scripts/gate-html.mjs:3962
     scripts/gate-html.mjs:85
     scripts/gate-html.mjs:8654
 §1.68 · As páginas dos 308 concelhos
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:192
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:106
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:215
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:111
     scripts/gate-html.mjs:4749
     scripts/gate-html.mjs:93
 §1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:197
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:111
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:220
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:116
     scripts/gate-html.mjs:1594
 §1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:201
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:115
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:224
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:120
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1215
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1216
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1217
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1218
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1220
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1215
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1216
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1217
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1218
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1220
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1215
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1216
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1217
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1218
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1220
 §1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:214
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:128
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:237
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:133
     scripts/gate-html.mjs:5842
     scripts/gate-html.mjs:6747
     scripts/gate-html.mjs:7969
     scripts/gate-html.mjs:852
 §1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:221
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:135
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:244
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:140
     scripts/gate-html.mjs:4134
     scripts/gate-html.mjs:4190
     scripts/gate-html.mjs:4331
 §1.109 · A regra 9 do Método deixa de nomear o diretor
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:227
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:141
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:250
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:146
     scripts/gate-html.mjs:4135
     scripts/gate-html.mjs:4190
     scripts/gate-html.mjs:4331
 §1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:233
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:147
-    src/data/nomes-das-medidas.mjs:138
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:256
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:152
+    src/data/nomes-das-medidas.mjs:143
 §1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:237
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:151
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:102
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:260
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:156
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:100
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:96
     src/lib/mudancas.mjs:205
 §1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:244
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:158
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:267
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:163
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/verify.log:646
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:646
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:646
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:646
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:646
 §1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:250
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:164
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:274
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:170
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/verify.log:645
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:645
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:645
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:645
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:645
 §1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:256
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:170
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:281
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:177
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/verify.log:644
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:644
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:644
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:644
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:644
     scripts/gate-html.mjs:4156
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:263
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:177
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:102
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:289
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:185
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:100
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:96
     scripts/check-pais.mjs:296
 §1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:270
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:184
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:296
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:192
     scripts/gate-html.mjs:228
 §1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:274
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:188
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:300
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:196
     scripts/gate-html.mjs:19
     scripts/gate-html.mjs:41
 §1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
     design/especime-v3/critica/LEITURA-e0-2026-09-30.md:5
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:279
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:193
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:305
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:201
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:56
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:285
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:199
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:311
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:207
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:56
 §1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:102
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:290
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:204
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:316
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:212
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:100
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:56
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:96
     scripts/check-pais.mjs:171
     src/data/lugar-das-linhas.mjs:22
     src/lib/mudancas.mjs:101
     tests/inicio/linhas-da-casa.mjs:1
-32 decisão(ões) citada(s) em 197 ficheiro(s)
+§1.148 · sem título em DECISIONS.md
+    design/especime-v3/critica/LEITURA-e0b-2026-09-30.md:5
+33 decisão(ões) citada(s) em 234 ficheiro(s)
 ```
 
 ## Custo e limites
@@ -335,74 +357,59 @@ Amostra de 2026-09-30T23:26:00.999446+00:00, lida dos eventos token_count da ses
 
 ## O que fica por fazer
 
-Nenhum item do teste de aceitação original E0 fica por cumprir. O estado do mandato E0b e a paragem por fonte estão na secção seguinte. Falta a aterragem.
+Correr os portões E0b na cabeça final, reler os códigos e regenerar as medidas. O estado do mandato E0b está na secção seguinte. Falta a aterragem.
 
-## E0b
+## E0b, registo histórico e custo corrigido
 
-O ponto 1 do mandato está parado por fonte. Os restantes pontos estão conferidos, com os três portões a zero na cabeça final. Cabeça desta passagem: `a595201bbc440a6d57d2f23cd95321b26099b7d4`; base: `728ffc67a702e4912f4919b8a8b356e28a66ea63`.
+A passagem E0b correu na cabeça `a595201bbc440a6d57d2f23cd95321b26099b7d4`, com os três portões a zero, em portoes/e0b/. O [comprovativo E0b](e0b.json) conserva as cabeças das provas dessa passagem. O pedido sobre a média de três anos foi retirado na [triagem da releitura](../../critica/LEITURA-e0b-2026-09-30.md): o cartão do desemprego está certo, e esse ponto fecha sem defeito.
 
-### O mandato e o que se mediu
+O nome Correções publicadas, ou Published corrections na edição inglesa, vem de NOMES_DAS_LINHAS_DERIVADAS em src/data/nomes-das-medidas.mjs. A localização continua a vir da derivação declarada.
+
+A amostra E0b de 2026-09-30T23:26:00.999446+00:00 dá 408 878 símbolos do construtor e 63 492 e 27 007 nas duas sessões do revisor automático. Os revisores somam 90 499; o total cobrado na amostra é 499 377, ao lado dos 408 878 do construtor. O tempo medido foi 3565,5 segundos. São os contadores lidos de [custo-e0b.json](custo-e0b.json), também no campo e0b de [custo.json](custo.json). A E0c não prolonga essa amostra. O custo final do E0 continua distinguido acima.
+
+## E0c
+
+Os acertos E0c estão implementados; faltam os portões finais, as capturas e as medidas do HTML renovado. Cabeça: `e64fff59914356c5d54eedc0f14cb2b97a12369a`. Base recebida: `a99d45cc44281dff386561b6826440610e1df60e`.
+
+### Mandato e medidas
 
 | # | Mandato | Resultado e prova |
 | --- | --- | --- |
-| 1 | Limiar do Procedimento no cartão | Parado. A página atual da Comissão lista a taxa com limiar de 10 %. O Eurostat lista a média de três anos entre os indicadores adicionais e publica a fórmula U(t)/LF(t). Não se alteraram o limiar, o veredicto, a ressalva nem a nota do cartão para afirmar o contrário. |
-| 2 | Nomes e razões do registo | Correções publicadas e Published corrections vêm da tabela NOMES_DAS_LINHAS_DERIVADAS em src/data/nomes-das-medidas.mjs. O componente também imprime os nomes lidos dos campos da fonte, conservando as marcas de campo e de língua. As razões das três entradas usam a fonte e as duas correções publicadas a 30.09.2026. A célula conferiu 40 nomes de entradas nas duas edições. |
-| 3 | Positivos do medidor | Os três detetores foram exercitados na cabeça `a595201bbc440a6d57d2f23cd95321b26099b7d4`. Leem os dois campos excerpt; encontram RegistoCorrecoes no diff real e uma planta do cartão; leem códigos 0 e 1 de processos desta corrida e recusam os mesmos ficheiros envelhecidos. |
-| 4 | Datas do contador | Valor 5; reference_date e access_date em 2026-09-30; edição 30.09.2026. A nota explica a recontagem. A planta da data antiga exige a queixa E0b datas. |
-| 5 | Relatório verificável | Cada prova tem a sua cabeça abaixo. Saiu a atribuição sobre o localizador externo. O alcance do typecheck está escrito acima. As capturas binárias e os dois contadores de custo do E0 estão distinguidos. |
-| 6 | Tranca da máquina | Os portões inteiros usam scripts/leituras/portoes.sh, pela M46. A chamada usa a worktree corrente, sem procurar processos. |
-| 7 | Portões, capturas e resposta | Portões a zero na cabeça final, lidos dos ficheiros da corrida. O captor conserva as larguras e as duas edições. A resposta está em RESPOSTA-construtor-e0b.md. |
+| 1 | Nome da dívida das famílias | A tabela NOMES_DO_PROJETO declara Dívida das famílias e Household debt, os nomes correntes do cartão. O lugar diz União Europeia ou European Union. A conferência dos vinte nomes de cada edição fica para a corrida final. |
+| 2 | Positivos da recontagem e da história | O mesmo detetor da medida reconta 5 e, sem a correção do PIB do Alentejo numa cópia, 4. Alterar new_value de uma entrada selada de Évora numa cópia produz a queixa de história alterada. O livro e a história reais conservaram-se. Prova: detetores-e0c.json, cabeça `ddb2bc8efa379a20b147b6352f988356d99bb09a`. |
+| 3 | Custo completo da E0b | 408 878 do construtor + 90 499 dos dois revisores = 499 377 na amostra, nos ficheiros e na secção histórica acima. |
+| 4 | Razão permanente e frases do relatório | A razão diz duas correções publicadas a 30.09.2026, e published on 30.09.2026. Valor, assinatura e ficheiro da história selada conservados. O relatório identifica a tabela do nome e lista todas as 14 plantas que conta. |
+| 5 | Portões, capturas, relatório e resposta | Portões finais por correr. A resposta está em RESPOSTA-construtor-e0c.md. |
 
-### A fonte que faz parar o ponto 1
+Os achados 1 a 5 da releitura são as plantas do pacote e ficaram intactos. Os achados 7 e 11 ficam registados sem passagem. O achado 10 já vinha corrigido no guião portoes.sh, que se conservou. O cartão do desemprego e os números do livro ficaram intactos.
 
-A [Comissão](https://economy-finance.ec.europa.eu/economic-governance-framework/macroeconomic-imbalance-procedure/scoreboard_en) diz «unemployment rate (% of labour force Y15-74), with a threshold of 10%». A frase da média móvel de três anos, nessa página, pertence ao saldo da balança corrente. A secção 3.1 dos [metadados do Eurostat](https://ec.europa.eu/eurostat/cache/metadata/en/tipsun20_esms.htm) coloca a média de três anos na lista dos indicadores adicionais. A [fórmula atual do Eurostat](https://ec.europa.eu/eurostat/web/macroeconomic-imbalances-procedure/information-data) divide desempregados pela população ativa no mesmo período. Estas fontes foram lidas em 2026-09-30T22:31:25Z; os locais e as citações curtas estão em [fontes-e0b.json](fontes-e0b.json).
+### Plantas e capturas
 
-A alteração pedida para o cartão atribuía o limiar à média de três anos. Não se encontrou apoio para essa atribuição nas fontes atuais. Aplica-se a regra de paragem nesse ponto, e os outros pontos continuam. Falta uma decisão corrigida ou uma fonte específica do painel que sustente o período pedido. Nenhum dos cinco estragos do pacote foi tratado como defeito do ramo. Os achados do K2 ficaram no K2.
+A lista completa das 14 plantas está na secção de conferências dirigidas acima, gerada do mesmo comprovativo que conta 14 mordidas. Os dois positivos novos estão separados em detetores-e0c.json e usam os detetores que escrevem as medidas, com cópias em memória.
 
-### Plantas e cabeças das provas
+O captor existente renovará as doze capturas, incluindo O que mudou nas duas edições e nas duas larguras. Os resumos SHA-256 são recalculados pelo medidor.
 
-As plantas permanentes incluem agora a retirada do nome da recontagem, a retirada do nome da dívida das famílias e a data antiga do contador. As 14 plantas morderam numa corrida que aceita o HTML limpo. Os detetores do medidor têm ainda plantas de decimal, de caminho de componente e de escrita antiga do código, em [detetores-e0b.json](detetores-e0b.json).
+### Commits E0c
 
-A primeira corrida dos portões E0b, na cabeça `5aece94099bc964163234b725d4b6e23f66df4e8`, deu build 1, verify 1 e typecheck 0. A guarda de campos do livro recusava o título da fonte fora das páginas do livro. A forma mudou por uma porta estreita: só name e document.title no nome da própria linha, dentro da sua entrada da página do registo. A comparação literal e a auditoria do selo continuam ativas. Uma planta no portão real tenta passar value por esta marca e é recusada; outras retiram o nome, trocam a linha e mudam a página. Os primeiros códigos e registos estão em ensaios/e0b-primeira-corrida.
+- `ddb2bc8e`: Nomeia a dívida das famílias da União nas duas edições do registo.
+- `fff4acaa`: Prova a recontagem e a conservação da história pelos próprios detetores.
+- `32d8238b`: Inclui os dois revisores no custo cobrado da passagem E0b.
+- `e64fff59`: Data a razão permanente e conta todas as plantas listadas no relatório.
 
-A corrida seguinte, na cabeça `29f39453a55b7f14157c8c59725a26e625431da4`, deu build 1: a edição do contador faltava na tabela das línguas. A corrida foi interrompida depois desta falha; não há código de conclusão de verify nem de typecheck a atribuir-lhe. A data passou a estar declarada sem língua e a conferência de língua foi repetida. O estado e o código efetivamente escrito estão em ensaios/e0b-corrida-interrompida.
+### Portões E0c
 
-| Prova | Cabeça lida do comprovativo |
-| --- | --- |
-| Estado anterior recomposto | `a595201bbc440a6d57d2f23cd95321b26099b7d4` |
-| Atualização isolada para E1 | `a595201bbc440a6d57d2f23cd95321b26099b7d4` |
-| Detetores revistos | `a595201bbc440a6d57d2f23cd95321b26099b7d4` |
-| Medidor e plantas | `a595201bbc440a6d57d2f23cd95321b26099b7d4` |
-| Capturas | `a595201bbc440a6d57d2f23cd95321b26099b7d4` |
-
-As 12 capturas PNG originais existem no ramo em design/especime-v3/capturas/e0-2026-09-30/. O pacote da leitura a frio omite-as por serem binárias. O captor volta a escrever o cartão e O que mudou nas duas edições, a 390 e a 1 280 px, e regista a cabeça construída no manifesto. Os comprovativos e as capturas renovados depois do commit final ficam na worktree, como no fecho do E0.
-
-### Commits desta passagem
-
-- `4c1d39f0`: Nomeia cada medida no registo e simplifica as razões E0.
-- `2858cead`: Exercita os detetores do medidor com positivos da corrida.
-- `bd39e8bf`: Data o contador pela recontagem e recusa datas anteriores.
-- `5aece940`: Entrega a E0b e documenta a paragem por fonte do limiar.
-- `baf8c5dd`: Admite só o campo do nome na própria entrada do registo.
-- `29f39453`: Guarda a primeira corrida E0b e a prova da guarda dos nomes.
-- `a595201b`: Declara a edição do contador sem língua e regista a corrida interrompida.
-
-### Portões da E0b
-
-Chamada: `sh scripts/leituras/portoes.sh . design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b`. O guião guarda cabeca, cabeca.fim, início, fim e código de cada comando. O recolhedor recusa códigos cuja escrita não esteja entre os ficheiros de início e fim desta corrida. A duração tem a resolução de segundos do guião, não uma precisão inferida.
+Chamada: `sh scripts/leituras/portoes.sh . design/especime-v3/medicoes/e0-2026-09-30/portoes/e0c`. O recolhedor e o medidor recusam códigos antigos, cabeças diferentes ou código por registar. As durações têm a resolução de segundos do guião.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](portoes/e0b/build.codigo) | `a595201bbc440a6d57d2f23cd95321b26099b7d4` | 119 |
-| `npm run verify` | [0](portoes/e0b/verify.codigo) | `a595201bbc440a6d57d2f23cd95321b26099b7d4` | 666 |
-| `npm run typecheck` | [0](portoes/e0b/typecheck.codigo) | `a595201bbc440a6d57d2f23cd95321b26099b7d4` | 0 |
+| `npm run build` | Por correr | Por escrever | Por medir |
+| `npm run verify` | Por correr | Por escrever | Por medir |
+| `npm run typecheck` | Por correr | Por escrever | Por medir |
 
-### Custo
+### Custo E0c e limite
 
-O E0 acabou em 412 261 símbolos na linha tokens used, segundo o ponto 5 do mandato. A amostra conservada em [custo-e0-original.json](custo-e0-original.json) tinha 401 031; foi lida antes do fim. O terminal original não está no ramo, e o valor final é transcrito do mandato, com essa proveniência em [custo-final-e0.json](custo-final-e0.json).
-
-Nesta passagem, o início foi lido da mensagem de retoma da sessão: 2026-09-30T22:26:35.480Z. A amostra de 2026-09-30T23:26:00.999446+00:00 mede 3565,5 segundos desde a retoma e 408 878 símbolos do construtor desde o contador final E0. As duas sessões do revisor automático acrescentam 63 492 e 27 007, somando 90 499 símbolos. O total cobrado da passagem nesta amostra é 499 377, ao lado dos 408 878 do construtor. A amostra conserva-se em custo-e0b.json e no campo e0b de custo.json; a E0c não prolonga esse contador. Modelo lido do contexto da sessão: `gpt-6.1-sol`. É uma amostra antes do fecho, não uma linha final do terminal.
+A amostra de 2026-10-01T00:14:54.944757+00:00 dá 175 397 símbolos do construtor, 40 401 dos revisores e 215 798 no total cobrado; 1146,8 segundos desde a retoma de 2026-09-30T23:55:48.135Z. O delta começa no último token_count anterior à retoma. O critério dos revisores está em custo.json. Modelo lido: `gpt-6.1-sol`. É uma amostra anterior ao fecho. Os mostradores foram lidos antes dos portões e estão em uso-e0c.json.
 
 ### O que fica por fazer
 
-O ponto 1 continua parado por fonte. Os outros pontos desta passagem estão conferidos. Falta a nova leitura a frio e a aterragem. Não houve publicação.
+Faltam os portões finais, as capturas renovadas e a medição do HTML. Os comprovativos e a resposta finais atualizam-se na worktree depois do último commit, conservando a cabeça conferida. Não houve publicação.

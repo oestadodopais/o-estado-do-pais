@@ -69,7 +69,9 @@ if construtor['inicio_e0c']:
     r['e0b'] = json.loads(f.read_text())
     ids_anteriores = {s['sessao'] for s in json.loads((pasta / 'custo-e0-original.json').read_text())['revisores_automaticos']}
     ids_anteriores.update(s['sessao'] for s in r['e0b']['revisores_automaticos'])
-    rev_e0c = [s for s in revisores if s['sessao'] not in ids_anteriores and s['inicio'] >= construtor['inicio_e0c']]
+    # O guardião da retoma é criado antes da primeira mensagem. Um corte nessa
+    # mensagem excluiria uma sessão já cobrada à passagem, como aconteceu na E0b.
+    rev_e0c = [s for s in revisores if s['sessao'] not in ids_anteriores]
     inicio_passagem = datetime.fromisoformat(construtor['inicio_e0c'].replace('Z', '+00:00'))
     simbolos_e0c = construtor['simbolos_sem_cache_mais_saida'] - construtor['uso_inicio_e0c']
     r['e0c'] = {'inicio': construtor['inicio_e0c'], 'medido_em': agora.isoformat(),
@@ -77,7 +79,7 @@ if construtor['inicio_e0c']:
                 'construtor_simbolos': simbolos_e0c, 'revisores_automaticos': rev_e0c,
                 'revisores_simbolos': sum(s['simbolos_sem_cache_mais_saida'] for s in rev_e0c),
                 'base_do_delta': 'Último token_count anterior à mensagem de retoma E0c.',
-                'criterio_dos_revisores': 'Mesma worktree, início desde a retoma E0c e sessão fora das listas E0 e E0b.'}
+                'criterio_dos_revisores': 'Sessões de revisor da mesma worktree fora das listas conservadas E0 e E0b, incluindo o guardião criado antes da mensagem de retoma.'}
     r['e0c']['total_cobrado_simbolos'] = simbolos_e0c + r['e0c']['revisores_simbolos']
 elif construtor['inicio_e0b']:
     inicio_passagem = datetime.fromisoformat(construtor['inicio_e0b'].replace('Z', '+00:00'))

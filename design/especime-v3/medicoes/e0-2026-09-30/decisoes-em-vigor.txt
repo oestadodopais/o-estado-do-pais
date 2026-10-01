@@ -1,26 +1,28 @@
 §1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:87
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:105
     design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:1
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:11582
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:11582
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/build.log:11904
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1445
     design/especime-v3/medicoes/e0-2026-09-30/portoes/build.log:11582
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/build.log:11904
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1767
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1445
 §1.5 · A linha de método e a linha de autoria não são traduzidas
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:95
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:9
-    src/data/nomes-das-medidas.mjs:140
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:114
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:10
+    src/data/nomes-das-medidas.mjs:145
     src/data/nomes-das-medidas.mjs:6
 §1.19 · Os estudos migram para dois sítios, não um
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:100
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:14
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:119
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:15
     scripts/gate-html.mjs:1193
     scripts/gate-html.mjs:5237
     scripts/gate-html.mjs:8786
 §1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:106
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:20
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:125
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:21
     scripts/gate-html.mjs:142
     scripts/gate-html.mjs:147
     scripts/gate-html.mjs:2713
@@ -29,25 +31,25 @@
     scripts/gate-html.mjs:3747
     scripts/gate-html.mjs:3761
 §1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:116
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:30
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:135
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:31
     scripts/gate-html.mjs:2592
     scripts/gate-html.mjs:856
     scripts/gate-html.mjs:879
 §1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:122
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:36
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:141
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:37
     scripts/gate-html.mjs:3204
     scripts/gate-html.mjs:3313
     scripts/gate-html.mjs:3986
     scripts/gate-html.mjs:7075
 §1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:129
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:43
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:148
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:44
     scripts/gate-html.mjs:5067
 §1.38 · A ortografia do sítio passa a ser uma só
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:133
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:47
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:152
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:48
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:250
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:250
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/build.log:250
@@ -59,43 +61,45 @@
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/livro.log:241
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:245
     design/especime-v3/medicoes/e0-2026-09-30/portoes/build.log:250
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/build.log:250
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:245
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:245
 §1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:146
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:60
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:167
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:63
     scripts/gate-html.mjs:4942
     scripts/gate-html.mjs:7955
     scripts/gate-html.mjs:8654
 §1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:152
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:66
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:173
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:69
     scripts/gate-html.mjs:268
     scripts/gate-html.mjs:360
     scripts/gate-html.mjs:3850
     scripts/gate-html.mjs:78
 §1.41 · A revisão cruzada do bloco V, e o que ela mudou
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:159
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:73
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:180
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:76
     scripts/gate-html.mjs:3005
     scripts/gate-html.mjs:3048
 §1.42 · Segunda revisão cruzada do bloco V
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:164
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:78
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:185
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:81
     scripts/gate-html.mjs:3027
     scripts/gate-html.mjs:3048
     scripts/gate-html.mjs:3419
     scripts/gate-html.mjs:7366
 §1.44 · A revisão cruzada da identidade v2
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:171
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:85
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:192
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:88
     scripts/gate-html.mjs:871
 §1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:175
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:89
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:196
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:92
     scripts/gate-html.mjs:880
 §1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:179
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:93
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:200
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:96
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-anterior.log:362
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/build-cabeca-97ade15e.log:362
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/build.log:362
@@ -104,120 +108,132 @@
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:357
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:357
     design/especime-v3/medicoes/e0-2026-09-30/portoes/build.log:362
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/build.log:362
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:357
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:357
     scripts/gate-html.mjs:3962
     scripts/gate-html.mjs:85
     scripts/gate-html.mjs:8654
 §1.68 · As páginas dos 308 concelhos
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:192
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:106
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:215
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:111
     scripts/gate-html.mjs:4749
     scripts/gate-html.mjs:93
 §1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:197
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:111
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:220
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:116
     scripts/gate-html.mjs:1594
 §1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:201
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:115
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:224
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:120
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1215
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1216
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1217
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1218
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:1220
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1215
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1216
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1217
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1218
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:1220
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1215
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1216
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1217
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1218
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:1220
 §1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:214
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:128
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:237
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:133
     scripts/gate-html.mjs:5842
     scripts/gate-html.mjs:6747
     scripts/gate-html.mjs:7969
     scripts/gate-html.mjs:852
 §1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:221
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:135
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:244
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:140
     scripts/gate-html.mjs:4134
     scripts/gate-html.mjs:4190
     scripts/gate-html.mjs:4331
 §1.109 · A regra 9 do Método deixa de nomear o diretor
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:227
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:141
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:250
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:146
     scripts/gate-html.mjs:4135
     scripts/gate-html.mjs:4190
     scripts/gate-html.mjs:4331
 §1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:233
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:147
-    src/data/nomes-das-medidas.mjs:138
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:256
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:152
+    src/data/nomes-das-medidas.mjs:143
 §1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:237
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:151
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:102
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:260
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:156
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:100
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:96
     src/lib/mudancas.mjs:205
 §1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:244
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:158
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:267
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:163
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/verify.log:646
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:646
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:646
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:646
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:646
 §1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:250
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:164
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:274
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:170
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/verify.log:645
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:645
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:645
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:645
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:645
 §1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:256
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:170
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:281
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:177
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-corrida-interrompida/verify.log:644
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/e0b-primeira-corrida/verify.log:644
     design/especime-v3/medicoes/e0-2026-09-30/ensaios/verify-cabeca-97ade15e.log:644
+    design/especime-v3/medicoes/e0-2026-09-30/portoes/e0b/verify.log:644
     design/especime-v3/medicoes/e0-2026-09-30/portoes/verify.log:644
     scripts/gate-html.mjs:4156
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:263
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:177
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:102
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:289
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:185
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:100
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:18
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:96
     scripts/check-pais.mjs:296
 §1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:270
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:184
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:296
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:192
     scripts/gate-html.mjs:228
 §1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:274
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:188
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:300
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:196
     scripts/gate-html.mjs:19
     scripts/gate-html.mjs:41
 §1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
     design/especime-v3/critica/LEITURA-e0-2026-09-30.md:5
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:279
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:193
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:305
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:201
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:56
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:285
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:199
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:311
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:207
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:56
 §1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:102
     design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:28
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:290
-    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:84
-    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:204
+    design/especime-v3/medicoes/e0-2026-09-30/LEIA-ME.md:316
+    design/especime-v3/medicoes/e0-2026-09-30/decisoes-em-vigor.txt:212
+    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:100
     design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:56
-    design/especime-v3/medicoes/e0-2026-09-30/fechar-e0.mjs:96
     scripts/check-pais.mjs:171
     src/data/lugar-das-linhas.mjs:22
     src/lib/mudancas.mjs:101
     tests/inicio/linhas-da-casa.mjs:1
-32 decisão(ões) citada(s) em 197 ficheiro(s)
+§1.148 · sem título em DECISIONS.md
+    design/especime-v3/critica/LEITURA-e0b-2026-09-30.md:5
+33 decisão(ões) citada(s) em 234 ficheiro(s)

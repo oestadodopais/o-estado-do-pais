@@ -11,6 +11,7 @@ import { provarDetetores } from './provar-detetores-e0b.mjs';
 import { provarDetetoresE0c } from './provar-detetores-e0c.mjs';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
+const passagem = process.argv.includes('--e0c') ? 'e0c' : 'e0b';
 const base = '07549ee1e9ec2b39186f9e9f13eeac4914bf5e76';
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8' }).trim();
 const json = p => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -25,7 +26,7 @@ const positivosE0c = provarDetetoresE0c();
 fs.writeFileSync(`${pasta}/detetores-e0c.json`, JSON.stringify({ cabeca, medido_em: new Date().toISOString(), ...positivosE0c }, null, 2) + '\n');
 const medida = (nome, valor, o_que, encontrado, evidencia) => {
   assert.ok(encontrado, `${nome}: o conhecido-positivo não foi encontrado.`);
-  medidas.push({ nome, valor, comando: `node ${pasta}/medir-e0.mjs`, conhecido_positivo: { o_que, encontrado }, evidencia });
+  medidas.push({ nome, valor, comando: `node ${pasta}/medir-e0.mjs${passagem === 'e0c' ? ' --e0c' : ''}`, conhecido_positivo: { o_que, encontrado }, evidencia });
 };
 const anteriores = json(`${pasta}/estado-anterior.json`);
 medida('selador_ja_aceitava_a_linha_do_projeto', anteriores.selador_ja_aceita_derivadas,
@@ -82,18 +83,18 @@ const e1 = json(`${pasta}/prova-e1.json`);
 medida('selador_disponivel_para_e1', e1, 'As quatro entradas seladas de Évora são preservadas e a quinta é acrescentada só na cópia.',
   e1.antes === 4 && e1.depois === 5 && e1.passado_conservado && e1.linha_real_conservada, 'prova-e1.json');
 const portas = ['build', 'verify', 'typecheck'].map(nome => {
-  const p = `${pasta}/portoes/e0b/${nome}`;
+  const p = `${pasta}/portoes/${passagem}/${nome}`;
   if (!fs.existsSync(`${p}.json`)) return { nome, codigo: null, cabeca: null, segundos: null, medido: false };
   const r = json(`${p}.json`);
   const lido = lerCodigoDaCorrida(`${p}.codigo`, r.limites_da_escrita.inicio, r.limites_da_escrita.fim);
   const codigo = lido.codigo;
-  const head = fs.readFileSync(`${pasta}/portoes/e0b/cabeca`, 'utf8').trim();
+  const head = fs.readFileSync(`${pasta}/portoes/${passagem}/cabeca`, 'utf8').trim();
   assert.equal(codigo, r.codigo); assert.equal(head, r.cabeca);
   return { nome, codigo, cabeca: head, segundos: r.segundos, segundos_relatorio: Number(r.segundos.toFixed(1)),
     medido: lido.medido && r.medido_nesta_corrida, codigo_por_registar: r.codigo_por_registar };
 });
 medida('portoes', portas, 'O detetor lê o código 1 de um processo desta corrida e recusa a mesma escrita envelhecida.',
-  positivosRevistos.conhecidos_positivos.portoes, 'portoes/e0b, produzido por portoes.sh, e detetores-e0b.json.');
+  positivosRevistos.conhecidos_positivos.portoes, `portoes/${passagem}, produzido por portoes.sh, e detetores-e0b.json.`);
 const custo = json(`${pasta}/custo.json`);
 medida('custo', custo, 'O evento token_count tem saída e total cumulativo, na sessão identificada pelo ambiente.',
   custo.conhecido_positivo && custo.construtor.sessao === process.env.CODEX_THREAD_ID, 'custo.json, extraído por medir-custo.py.');
@@ -115,13 +116,15 @@ if (!conservadas || valoresMudados.length !== 3 || anatomia.some(p => p !== 'src
 if (imagens.length !== 12 || imagens.some(i => !i.confere) || capturas.problemas.length || capturas.cabeca !== cabeca) erros.push('Capturas incompletas, divergentes ou de outra cabeça.');
 const finais = portas.every(p => p.medido && p.codigo === 0 && p.cabeca === cabeca && !p.codigo_por_registar);
 const r = { bloco: 'E0', base, cabeca, medido_em: new Date().toISOString(), medidas, erros,
-  e0b: { base: '728ffc67a702e4912f4919b8a8b356e28a66ea63', ponto_1: 'parado por fonte, ver fontes-e0b.json',
+  e0b: { base: '728ffc67a702e4912f4919b8a8b356e28a66ea63', ponto_1: passagem === 'e0c' ? 'Pedido retirado na triagem da releitura E0b.' : 'parado por fonte, ver fontes-e0b.json',
     nomes_do_registo: celula.medidas.nomes, contador: { value: contadorE0b.value, reference_date: contadorE0b.reference_date,
       access_date: contadorE0b.access_date, edition: contadorE0b.document.edition },
-    restantes_conferidos: erros.length === 0 && finais, completa: false },
+    restantes_conferidos: erros.length === 0 && finais, completa: passagem === 'e0c' && erros.length === 0 && finais },
   contagens: { medidas: medidas.length, conhecidos_positivos: medidas.filter(m => m.conhecido_positivo.encontrado).length,
     linhas_desemprego: linhas.filter(c => c.id.startsWith('taxa-')).length, edicoes: new Set(celula.medidas.registos.map(r => r.lang)).size },
   aceitação: { conteudo_e_provas: erros.length === 0, portoes_na_cabeca_final: finais, completa: erros.length === 0 && finais } };
+if (passagem === 'e0c') r.e0c = { nomes_do_registo: celula.medidas.nomes, detetores: positivosE0c,
+  completa: erros.length === 0 && finais };
 fs.writeFileSync(`${pasta}/plantas.json`, JSON.stringify(plantas, null, 2) + '\n');
 fs.writeFileSync(`${pasta}/medidas.json`, JSON.stringify(r, null, 2) + '\n');
 console.log(`E0: ${medidas.length} medidas com conhecido-positivo, ${plantas.length} plantas, ${erros.length} erros, aceitação completa: ${r.aceitação.completa}.`);

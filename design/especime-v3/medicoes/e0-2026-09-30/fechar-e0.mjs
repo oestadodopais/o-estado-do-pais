@@ -23,9 +23,10 @@ const construtor = custo.construtor;
 const inteiro = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 const decimal = n => String(n).replace('.', ',');
 const portoes = valor('portoes');
+const passagem = medidas.e0c ? 'e0c' : 'e0b';
 const finais = medidas.aceitação.completa && medidas.cabeca === cabeca;
 const estado = finais ? 'O teste de aceitação do §2 está cumprido, com os três portões na cabeça final.' : 'O conteúdo e as provas locais estão medidos. Os três portões da cabeça final ainda estão por correr.';
-const linhas = portoes.map(p => `| \`npm run ${p.nome}\` | ${p.codigo === null ? 'Por correr' : `[${p.codigo}](portoes/e0b/${p.nome}.codigo)`} | ${p.cabeca ? `\`${p.cabeca}\`` : 'Por escrever'} | ${p.segundos === null ? 'Por medir' : decimal(p.segundos_relatorio)} |`).join('\n');
+const linhas = portoes.map(p => `| \`npm run ${p.nome}\` | ${p.codigo === null ? 'Por correr' : `[${p.codigo}](portoes/${passagem}/${p.nome}.codigo)`} | ${p.cabeca ? `\`${p.cabeca}\`` : 'Por escrever'} | ${p.segundos === null ? 'Por medir' : decimal(p.segundos_relatorio)} |`).join('\n');
 const relatorio = `# E0 · As linhas do projeto e a correção do desemprego
 
 ${estado}
