@@ -8,9 +8,11 @@
  *
  *   FC0 · as páginas dos 308 concelhos estão construídas nas duas edições, e cada uma tem os cartões das
  *         medidas da tabela das ordens (`src/data/faixa-do-concelho.mjs`);
- *   FC1 · cada cartão de uma medida da tabela tem uma faixa, e uma só, que diz ser da sua medida e cuja
- *         porta é a marca única do cartão (`data-selo-em` igual à linha do cartão), e a linha do cartão é a
- *         que o ficheiro do motor dá àquele concelho;
+ *   FC1 · cada cartão de uma medida que a tabela declara com faixa (as taxas e os rácios) tem uma faixa, e
+ *         uma só, que diz ser da sua medida e cuja porta é a marca única do cartão (`data-selo-em` igual à
+ *         linha do cartão), e a linha do cartão é a que o ficheiro do motor dá àquele concelho; e, desde a
+ *         passagem L2b-b, o cartão de uma medida que a tabela declara sem faixa (as quatro contagens) não
+ *         tem faixa nenhuma, porque uma contagem não se ordena (§1.143, decisão 4);
  *   FC2 · as marcas: o caminho do desenho tem uma marca por concelho com valor, e mais nenhuma, cada uma na
  *         posição que o valor dá, com quatro casas;
  *   FC3 · a marca e o rótulo do concelho estão na posição do valor dele, e não existem quando ele não tem
@@ -94,12 +96,24 @@ export function frasesEsperadas(c, lang) {
  */
 export function conferirPagina(root, { slug, nome, lang, rota, faixas, recibo }) {
   const erros = [];
-  const contas = { faixas: 0, marcas: 0, lugares: 0, comparacoes: { linha: 0, base: 0, nenhuma: 0 }, recibos: 0, semValor: 0 };
+  const contas = { faixas: 0, marcas: 0, lugares: 0, comparacoes: { linha: 0, base: 0, nenhuma: 0 }, recibos: 0, semValor: 0, semFaixa: 0 };
   const erro = (celula, chave, msg) => erros.push(`${celula} · ${rota} · ${chave}: ${msg}`);
   for (const faixa of root.querySelectorAll('[data-faixa-concelho]')) {
     if (!faixa.closest('[data-cartao-medida]')) erro('FC1', faixa.getAttribute('data-faixa-concelho'), 'uma faixa do concelho fora de um cartão');
   }
-  for (const chave of Object.keys(FAIXA_DAS_MEDIDAS_DO_CONCELHO)) {
+  for (const [chave, declaracao] of Object.entries(FAIXA_DAS_MEDIDAS_DO_CONCELHO)) {
+    /* L2b-b · UMA CONTAGEM NÃO TEM FAIXA: o cartão existe, e a faixa não. */
+    if (!declaracao.faixa) {
+      const cartoes = root.querySelectorAll(`[data-cartao-medida][data-medida-chave="${chave}"]`);
+      if (cartoes.length !== 1) {
+        erro('FC0', chave, `a página tem ${cartoes.length} cartão(ões) da contagem; tem de ter um`);
+        continue;
+      }
+      const tiras = cartoes[0].querySelectorAll('[data-faixa-concelho]');
+      if (tiras.length) erro('FC1', chave, `o cartão de uma contagem tem ${tiras.length} faixa(s), e uma contagem não se ordena (§1.143, decisão 4)`);
+      else contas.semFaixa++;
+      continue;
+    }
     const conta = faixas.contas.get(chave);
     const id = faixas.porMedida.get(chave)?.get(slug) ?? null;
     if (!conta || !id) {
@@ -257,7 +271,7 @@ export function conferirOrdinais(palavras = t('en').municipio.faixaDoConcelho.or
 export function conferirFaixasDosConcelhos(dist, opcoes = {}) {
   const faixas = opcoes.faixas ?? faixasDoPortao();
   const erros = [];
-  const contas = { paginas: 0, faixas: 0, marcas: 0, lugares: 0, sem_valor: 0, comparacoes: { linha: 0, base: 0, nenhuma: 0 }, recibos: 0, ordinais: Object.keys(ORDINAIS_DA_TABELA).length };
+  const contas = { paginas: 0, faixas: 0, cartoes_de_contagem_sem_faixa: 0, marcas: 0, lugares: 0, sem_valor: 0, comparacoes: { linha: 0, base: 0, nenhuma: 0 }, recibos: 0, ordinais: Object.keys(ORDINAIS_DA_TABELA).length };
   const slugs = opcoes.so ?? faixas.concelhos.map((c) => c.slug);
   if (!opcoes.so && slugs.length !== 308) erros.push(`FC0 · o ficheiro do motor tem ${slugs.length} concelhos, e são 308`);
   for (const lang of /** @type {const} */ (['pt', 'en'])) {
@@ -286,6 +300,7 @@ export function conferirFaixasDosConcelhos(dist, opcoes = {}) {
       erros.push(...r.erros);
       contas.paginas++;
       contas.faixas += r.contas.faixas;
+      contas.cartoes_de_contagem_sem_faixa += r.contas.semFaixa;
       contas.marcas += r.contas.marcas;
       contas.lugares += r.contas.lugares;
       contas.sem_valor += r.contas.semValor;
@@ -383,11 +398,21 @@ export function plantasDasFaixasDosConcelhos(dist) {
       return true;
     },
   });
+  /* Os dois lados da regra da passagem L2b-b: uma taxa sem a faixa, e uma contagem com ela. */
   planta('l2b-faixa-tirada-de-um-cartao', 'FC1', {
     trocar: (root) => {
       const f = doGanho(root);
       if (!f) return false;
       f.remove();
+      return true;
+    },
+  });
+  planta('l2b-b-faixa-numa-contagem', 'FC1', {
+    trocar: (root) => {
+      const f = doGanho(root);
+      const c = root.querySelector('[data-cartao-medida][data-medida-chave="populacao"]');
+      if (!f || !c) return false;
+      c.insertAdjacentHTML('beforeend', f.outerHTML.replaceAll('data-faixa-concelho="ganho"', 'data-faixa-concelho="populacao"'));
       return true;
     },
   });

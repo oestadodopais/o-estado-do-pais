@@ -7,7 +7,7 @@ import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
-import { faixasDoPortao, linhaDePortugalDoPortao } from './concelhos-do-portao.mjs';
+import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA } from './concelhos-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
@@ -3394,10 +3394,12 @@ function auditaSelo(el, id, lang, err) {
      mesma unidade e o mesmo período, com Portugal no localizador). Uma linha de Portugal de outro período,
      um valor de outro cartão ou uma faixa sem `data-selo-em` caem no erro de sempre; as plantas
      `l2b-faixa-*` de `tests/municipio/faixa-do-concelho.mjs` correm-no. */
+  /* L2b-b: só numa faixa de uma medida com faixa (as taxas e os rácios); numa contagem a faixa não existe, e um
+     valor lá dentro cai no erro de sempre. */
   const faixaDoConcelho = el.closest('[data-faixa-concelho][data-selo-em]');
   const cartaoDaFaixa = faixaDoConcelho?.closest('[data-cartao-medida]');
   const daFaixa = cartaoDaFaixa?.getAttribute('data-cartao-medida');
-  if (daFaixa && faixaDoConcelho.getAttribute('data-selo-em') === daFaixa) {
+  if (daFaixa && faixaDoConcelho.getAttribute('data-selo-em') === daFaixa && FAIXAS_DO_PORTAO.contas.has(faixaDoConcelho.getAttribute('data-faixa-concelho') ?? '')) {
     const chave = faixaDoConcelho.getAttribute('data-faixa-concelho') ?? '';
     const permitido = id === daFaixa || (portugalDaLinha(daFaixa, chave) === id);
     if (permitido && temChipPara(cartaoDaFaixa, [routePath('linha', lang, { slug: daFaixa })])) {
@@ -5858,7 +5860,13 @@ for (const file of ficheirosHtml(DIST)) {
       const [chave, slug] = String(el.getAttribute(atributo) ?? '').split('#');
       const conta = FAIXAS_DO_PORTAO.contas.get(chave);
       let esperado = null;
-      if (!conta) err(`L2b: «${atributo}» nomeia a medida «${chave}», que não tem linhas para os concelhos.`);
+      if (!conta) {
+        err(
+          MEDIDAS_SEM_FAIXA.has(chave)
+            ? `L2b-b: «${atributo}» dá um lugar na medida «${chave}», que é uma contagem e não tem faixa: uma contagem não se ordena (§1.143, decisão 4).`
+            : `L2b: «${atributo}» nomeia a medida «${chave}», que não tem linhas para os concelhos.`,
+        );
+      }
       else if (qual === 'contas') esperado = String(conta.conta);
       else {
         const n = qual === 'lugares' ? conta.lugar(slug) : conta.aPar(slug);
