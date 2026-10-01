@@ -2,6 +2,12 @@
  * e duas edições datadas com a nota do sucessor, a 390 e a 1 280 px, nas edições que há.
  * O servidor efémero e o bloqueio de pedidos para fora seguem o captor do N1. O manifesto
  * conserva a cabeça do ramo, a construção, o estado da árvore e o resumo de cada captura.
+ *
+ * Na passagem E1b (01.10.2026): `OEDP_E1_BLOCO` dá o nome do manifesto, o rótulo do
+ * bloco e o prefixo das imagens (por omissão, o E1 sem prefixo, como antes, para as
+ * capturas do E1 continuarem a bater com o seu manifesto), e a página inglesa do estudo
+ * de quem governou entra na lista, porque mostra o documento português com a nota
+ * (decisão 3).
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -18,12 +24,13 @@ const arvoreLimpa = execFileSync('git', ['status', '--porcelain', '--untracked-f
 const versao = JSON.parse(await fs.readFile('dist/version.json', 'utf8'));
 if (versao.commit !== cabeca) throw new Error('A construção não é da cabeça atual.');
 const estado = process.env.OEDP_E1_ESTADO ?? (arvoreLimpa ? 'cabeca-limpa' : 'arvore-com-alteracoes');
+const bloco = process.env.OEDP_E1_BLOCO ?? 'E1';
 const larguras = [390, 1280];
 /* cada página: o id, a rota por língua, e o que se captura (a cabeça da janela, a página
    inteira, ou um elemento) */
 const paginas = [
   { id: 'contas', rota: { pt: '/estudos/evora-contas-da-camara-2010-2025', en: '/en/studies/evora-contas-da-camara-2010-2025' }, modo: 'cabeca' },
-  { id: 'quem-governou', rota: { pt: '/estudos/evora-quem-governou-a-camara-2009-2025' }, modo: 'cabeca' },
+  { id: 'quem-governou', rota: { pt: '/estudos/evora-quem-governou-a-camara-2009-2025', ...(bloco === 'E1' ? {} : { en: '/en/studies/evora-quem-governou-a-camara-2009-2025' }) }, modo: 'cabeca' },
   { id: 'economia', rota: { pt: '/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara', en: '/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara' }, modo: 'cabeca' },
   { id: 'evora-2027', rota: { pt: '/estudos/evora-2027-capital-europeia-da-cultura', en: '/en/studies/evora-2027-capital-europeia-da-cultura' }, modo: 'cabeca' },
   { id: 'lista', rota: { pt: '/estudos', en: '/en/studies' }, modo: 'inteira' },
@@ -72,7 +79,7 @@ try {
         robots: document.querySelector('meta[name="robots"]')?.getAttribute('content') ?? null,
       }));
       if (medidas.documento > largura + 1) problemas.push(`${p.id}/${lang}/${largura}: transbordo horizontal`);
-      const ficheiro = `${saida}/${p.id}-${lang}-${largura}.png`;
+      const ficheiro = `${saida}/${bloco === 'E1' ? '' : bloco.toLowerCase() + '-'}${p.id}-${lang}-${largura}.png`;
       let bytes;
       if (p.modo === 'inteira') bytes = await page.screenshot({ path: ficheiro, fullPage: true });
       else if (p.modo === 'elemento') {
@@ -84,14 +91,14 @@ try {
       resultados.push({ ficheiro, pagina: p.id, rota, lang, largura, modo: p.modo, sha256: createHash('sha256').update(bytes).digest('hex'), medidas });
     }
     await contexto.close();
-    console.log(`E1: ${lang}, ${largura} px.`);
+    console.log(`${bloco}: ${lang}, ${largura} px.`);
   }
 } finally {
   await navegador.close();
   servidor.close();
 }
-const manifesto = { bloco: 'E1', cabeca, arvore_limpa: arvoreLimpa, estado, construcao: versao, inicio, fim: new Date().toISOString(), larguras,
+const manifesto = { bloco, cabeca, arvore_limpa: arvoreLimpa, estado, construcao: versao, inicio, fim: new Date().toISOString(), larguras,
   capturas: resultados.length, pedidos_recusados_para_fora: pedidosRecusados.length, problemas, resultados };
-await fs.writeFile(`${pasta}/capturas-e1.json`, JSON.stringify(manifesto, null, 2) + '\n');
-console.log(`E1: ${resultados.length} capturas, ${problemas.length} problemas.`);
+await fs.writeFile(`${pasta}/capturas-${bloco.toLowerCase()}.json`, JSON.stringify(manifesto, null, 2) + '\n');
+console.log(`${bloco}: ${resultados.length} capturas, ${problemas.length} problemas.`);
 process.exitCode = problemas.length ? 1 : 0;

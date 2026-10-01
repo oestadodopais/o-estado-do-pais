@@ -522,3 +522,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | e1 | 18 cadeias novas, 2 retiradas, 2 que saem do ficheiro | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do E1: as leituras dos estudos das contas e de quem governou (as frases das leituras do «Orçamentado, Pago, Devido» e de «Os Pelouros», que a primeira página e a lista passam a render), as descrições dos quatro estudos nas duas línguas, o lugar e o tema do estudo de quem governou na primeira página, a nota do mandato de 2009 a 2013 na ficha de Évora, que passa a dizer uma coisa só, e a dos mandatos de 2013 a 2017 e de 2017 a 2021, que dizia que as capturas dos pelouros começavam em 2021 (I180). Saem as duas linhas compostas da Cultura na primeira página (o «Évora 2027» deixou de estar entre os três estudos mais recentes), e retiram-se as duas notas antigas do mandato de 2009 a 2013. |
 
+
+## E1b · a leitura do Évora 2027, 01.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| e1b | 2 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem E1b: a leitura do Évora 2027 nas duas línguas (decisão 4 do lugar de direção), que a lista dos estudos e a página de Évora passam a render como resumo do estudo, no lugar da descrição. A frase são as duas frases impressas na abertura do estudo, sem as duas datas, e não tem números. Nenhuma cadeia sai. |
