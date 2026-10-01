@@ -2416,11 +2416,14 @@ export const STRINGS = {
         /* O GANHO MÉDIO CONTRA PORTUGAL (bloco L2b, 01.10.2026, o §3 do brief, ponto 3; a I182). Uma
            frase a seguir às outras, com os dois valores das linhas, selados: o do concelho e o da linha
            nacional da mesma medida e do mesmo período. A palavra do lado é a da faixa do cartão
-           (`faixaDoConcelho.acima`, `.abaixo`, `.igual`), escrita uma vez. */
+           (`faixaDoConcelho.acima`, `.abaixo`, `.igual`), escrita uma vez. O valor de Portugal vem depois
+           de «onde é de» e não entre parênteses: o valor com a sua marca é uma caixa em linha, e um
+           parêntese de abrir antes dela ficava sozinho no fim da linha (visto nas capturas do bloco, a 768
+           e a 1 600 px). */
         ganhoA: 'O ganho médio mensal é de ',
         ganhoB: ', ',
-        ganhoC: ' (',
-        ganhoD: ').',
+        ganhoC: ', onde é de ',
+        ganhoD: '.',
       },
       /* =====================================================================
        * A FAIXA DO CONCELHO (bloco L2b, 01.10.2026)
@@ -3917,8 +3920,8 @@ export const STRINGS = {
         /* L2b: average earnings against Portugal; see the Portuguese edition. */
         ganhoA: 'Average monthly earnings are ',
         ganhoB: ', ',
-        ganhoC: ' (',
-        ganhoD: ').',
+        ganhoC: ', where they are ',
+        ganhoD: '.',
       },
       /* The municipality strip (L2b). See the Portuguese edition. */
       faixaDoConcelho: {
