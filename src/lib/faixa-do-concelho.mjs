@@ -8,6 +8,9 @@
  * conta-se na vista a partir das 308 linhas da medida, e as linhas são o recibo (o brief L2b, §5, decisão 1).
  * Nenhuma linha nova no livro-razão.
  *
+ * SÓ AS TAXAS E OS RÁCIOS TÊM FAIXA (a passagem L2b-b, 01.10.2026, pela §1.143, decisão 4): uma medida que a
+ * tabela declara sem faixa (as quatro contagens) devolve `null`, e o cartão fica como estava antes do L2b.
+ *
  * AS REGRAS DA CONTA, as mesmas que os portões recontam por conta própria em `scripts/concelhos-do-portao.mjs`
  * (e não importam daqui):
  *   · as linhas da medida são as que `linhasPorConcelho()` dá para a chave, uma por concelho;
@@ -141,7 +144,7 @@ export function linhaDePortugalDaLinha(id) {
  */
 export function faixaDoConcelho(chave, slug, idDoConcelho) {
   const declaracao = FAIXA_DAS_MEDIDAS_DO_CONCELHO[chave];
-  if (!declaracao) return null;
+  if (!declaracao?.faixa || !declaracao.ordem) return null;
   const { linhas, comValor, periodo, min, max } = contaDaMedida(chave);
   if (linhas.get(slug) !== idDoConcelho) {
     throw new Error(
