@@ -1,9 +1,9 @@
 # E0c · Resposta do construtor
 
-Os acertos E0c estão implementados; faltam os portões finais, as capturas e as medidas do HTML renovado.
+O mandato E0c está conferido, com os três portões a zero na cabeça final.
 
-Cabeça: `e64fff59914356c5d54eedc0f14cb2b97a12369a`. Commits: `ddb2bc8e`, `fff4acaa`, `32d8238b`, `e64fff59`.
+Cabeça: `472cba4257942989faf41f945760f120a6988171`. Commits: `ddb2bc8e`, `fff4acaa`, `32d8238b`, `e64fff59`, `472cba42`.
 
-Códigos lidos: build: por correr; verify: por correr; typecheck: por correr. Relatório: [LEIA-ME.md](LEIA-ME.md), secção E0c.
+Códigos lidos: build: 0; verify: 0; typecheck: 0. Relatório: [LEIA-ME.md](LEIA-ME.md), secção E0c.
 
-Faltam os portões finais, as capturas e as medidas do HTML.
+Falta a conferência do diff e a aterragem. O pedido sobre a média de três anos foi retirado na triagem da releitura E0b.

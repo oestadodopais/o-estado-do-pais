@@ -1,0 +1,15 @@
+{
+  "comando": "npm run verify",
+  "cabeca": "472cba4257942989faf41f945760f120a6988171",
+  "cabeca_fim": "472cba4257942989faf41f945760f120a6988171",
+  "inicio": "2026-10-01T00:17:35Z",
+  "fim": "2026-10-01T00:29:38Z",
+  "segundos": 723,
+  "codigo": 0,
+  "medido_nesta_corrida": true,
+  "codigo_por_registar": false,
+  "limites_da_escrita": {
+    "inicio": 1790813855953.813,
+    "fim": 1790814578708.8691
+  }
+}

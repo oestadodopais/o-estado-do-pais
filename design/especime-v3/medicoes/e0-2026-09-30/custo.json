@@ -1,6 +1,6 @@
 {
-  "medido_em": "2026-10-01T00:14:54.944757+00:00",
-  "segundos_decorridos": 12251.0,
+  "medido_em": "2026-10-01T00:32:43.002733+00:00",
+  "segundos_decorridos": 13319.1,
   "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
   "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
   "construtor": {
@@ -10,16 +10,16 @@
     "inicio_e0b": "2026-09-30T22:26:35.480Z",
     "inicio_e0c": "2026-09-30T23:55:48.135Z",
     "uso_inicio_e0c": 836455,
-    "ultima_amostra": "2026-10-01T00:14:00.125Z",
+    "ultima_amostra": "2026-10-01T00:32:26.789Z",
     "simbolos": {
-      "input_tokens": 28400027,
-      "cached_input_tokens": 27570688,
+      "input_tokens": 32075709,
+      "cached_input_tokens": 31225216,
       "cache_write_input_tokens": 0,
-      "output_tokens": 182513,
-      "reasoning_output_tokens": 82683,
-      "total_tokens": 28582540
+      "output_tokens": 197493,
+      "reasoning_output_tokens": 94576,
+      "total_tokens": 32273202
     },
-    "simbolos_sem_cache_mais_saida": 1011852
+    "simbolos_sem_cache_mais_saida": 1047986
   },
   "revisores_automaticos": [
     {
@@ -101,16 +101,16 @@
       "inicio_e0b": null,
       "inicio_e0c": null,
       "uso_inicio_e0c": null,
-      "ultima_amostra": "2026-10-01T00:06:56.746Z",
+      "ultima_amostra": "2026-10-01T00:32:25.625Z",
       "simbolos": {
-        "input_tokens": 154458,
-        "cached_input_tokens": 114688,
+        "input_tokens": 267589,
+        "cached_input_tokens": 211456,
         "cache_write_input_tokens": 0,
-        "output_tokens": 631,
-        "reasoning_output_tokens": 383,
-        "total_tokens": 155089
+        "output_tokens": 896,
+        "reasoning_output_tokens": 515,
+        "total_tokens": 268485
       },
-      "simbolos_sem_cache_mais_saida": 40401
+      "simbolos_sem_cache_mais_saida": 57029
     }
   ],
   "conhecido_positivo": true,
@@ -162,9 +162,9 @@
   },
   "e0c": {
     "inicio": "2026-09-30T23:55:48.135Z",
-    "medido_em": "2026-10-01T00:14:54.944757+00:00",
-    "segundos_decorridos": 1146.8,
-    "construtor_simbolos": 175397,
+    "medido_em": "2026-10-01T00:32:43.002733+00:00",
+    "segundos_decorridos": 2214.9,
+    "construtor_simbolos": 211531,
     "revisores_automaticos": [
       {
         "sessao": "01a0f4be-e6fd-7420-8c7d-270042630163",
@@ -173,21 +173,21 @@
         "inicio_e0b": null,
         "inicio_e0c": null,
         "uso_inicio_e0c": null,
-        "ultima_amostra": "2026-10-01T00:06:56.746Z",
+        "ultima_amostra": "2026-10-01T00:32:25.625Z",
         "simbolos": {
-          "input_tokens": 154458,
-          "cached_input_tokens": 114688,
+          "input_tokens": 267589,
+          "cached_input_tokens": 211456,
           "cache_write_input_tokens": 0,
-          "output_tokens": 631,
-          "reasoning_output_tokens": 383,
-          "total_tokens": 155089
+          "output_tokens": 896,
+          "reasoning_output_tokens": 515,
+          "total_tokens": 268485
         },
-        "simbolos_sem_cache_mais_saida": 40401
+        "simbolos_sem_cache_mais_saida": 57029
       }
     ],
-    "revisores_simbolos": 40401,
+    "revisores_simbolos": 57029,
     "base_do_delta": "Último token_count anterior à mensagem de retoma E0c.",
     "criterio_dos_revisores": "Sessões de revisor da mesma worktree fora das listas conservadas E0 e E0b, incluindo o guardião criado antes da mensagem de retoma.",
-    "total_cobrado_simbolos": 215798
+    "total_cobrado_simbolos": 268560
   }
 }

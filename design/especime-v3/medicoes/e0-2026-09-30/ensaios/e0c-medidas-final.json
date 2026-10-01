@@ -1,0 +1,10 @@
+{
+  "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
+  "cabeca": "472cba4257942989faf41f945760f120a6988171",
+  "arvore_por_registar": true,
+  "codigo_por_registar": false,
+  "inicio": "2026-10-01T00:32:43.242Z",
+  "fim": "2026-10-01T00:33:09.811Z",
+  "segundos": 26.566474542,
+  "codigo": 0
+}

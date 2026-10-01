@@ -1,9 +1,9 @@
 {
   "passagem": "E0c",
   "base": "a99d45cc44281dff386561b6826440610e1df60e",
-  "cabeca": "e64fff59914356c5d54eedc0f14cb2b97a12369a",
-  "medido_em": "2026-10-01T00:14:55.358Z",
-  "completa": false,
+  "cabeca": "472cba4257942989faf41f945760f120a6988171",
+  "medido_em": "2026-10-01T00:33:44.633Z",
+  "completa": true,
   "triagem": {
     "fonte": "prompts/PROMPT-e0c-construtor.md",
     "plantas_do_pacote": [
@@ -33,10 +33,10 @@
       "campo": null
     }
   ],
-  "nomes_conferidos": 0,
+  "nomes_conferidos": 40,
   "plantas": 14,
   "detetores": {
-    "cabeca": "ddb2bc8efa379a20b147b6352f988356d99bb09a",
+    "cabeca": "472cba4257942989faf41f945760f120a6988171",
     "correcoes_publicadas": {
       "antes": 5,
       "depois": 4,
@@ -78,25 +78,55 @@
   "portoes": [
     {
       "nome": "build",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run build",
+      "cabeca": "472cba4257942989faf41f945760f120a6988171",
+      "cabeca_fim": "472cba4257942989faf41f945760f120a6988171",
+      "inicio": "2026-10-01T00:15:24Z",
+      "fim": "2026-10-01T00:17:35Z",
+      "segundos": 131,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790813724566.4155,
+        "fim": 1790813855947.9946
+      }
     },
     {
       "nome": "verify",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run verify",
+      "cabeca": "472cba4257942989faf41f945760f120a6988171",
+      "cabeca_fim": "472cba4257942989faf41f945760f120a6988171",
+      "inicio": "2026-10-01T00:17:35Z",
+      "fim": "2026-10-01T00:29:38Z",
+      "segundos": 723,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790813855953.813,
+        "fim": 1790814578708.8691
+      }
     },
     {
       "nome": "typecheck",
-      "codigo": null,
-      "cabeca": null,
-      "segundos": null
+      "comando": "npm run typecheck",
+      "cabeca": "472cba4257942989faf41f945760f120a6988171",
+      "cabeca_fim": "472cba4257942989faf41f945760f120a6988171",
+      "inicio": "2026-10-01T00:29:38Z",
+      "fim": "2026-10-01T00:29:39Z",
+      "segundos": 1,
+      "codigo": 0,
+      "medido_nesta_corrida": true,
+      "codigo_por_registar": false,
+      "limites_da_escrita": {
+        "inicio": 1790814578714.056,
+        "fim": 1790814579020.2417
+      }
     }
   ],
   "capturas": {
-    "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
+    "cabeca": "472cba4257942989faf41f945760f120a6988171",
     "total": 12,
     "problemas": []
   },
@@ -148,9 +178,9 @@
   },
   "custo_e0c": {
     "inicio": "2026-09-30T23:55:48.135Z",
-    "medido_em": "2026-10-01T00:14:54.944757+00:00",
-    "segundos_decorridos": 1146.8,
-    "construtor_simbolos": 175397,
+    "medido_em": "2026-10-01T00:32:43.002733+00:00",
+    "segundos_decorridos": 2214.9,
+    "construtor_simbolos": 211531,
     "revisores_automaticos": [
       {
         "sessao": "01a0f4be-e6fd-7420-8c7d-270042630163",
@@ -159,22 +189,22 @@
         "inicio_e0b": null,
         "inicio_e0c": null,
         "uso_inicio_e0c": null,
-        "ultima_amostra": "2026-10-01T00:06:56.746Z",
+        "ultima_amostra": "2026-10-01T00:32:25.625Z",
         "simbolos": {
-          "input_tokens": 154458,
-          "cached_input_tokens": 114688,
+          "input_tokens": 267589,
+          "cached_input_tokens": 211456,
           "cache_write_input_tokens": 0,
-          "output_tokens": 631,
-          "reasoning_output_tokens": 383,
-          "total_tokens": 155089
+          "output_tokens": 896,
+          "reasoning_output_tokens": 515,
+          "total_tokens": 268485
         },
-        "simbolos_sem_cache_mais_saida": 40401
+        "simbolos_sem_cache_mais_saida": 57029
       }
     ],
-    "revisores_simbolos": 40401,
+    "revisores_simbolos": 57029,
     "base_do_delta": "Último token_count anterior à mensagem de retoma E0c.",
     "criterio_dos_revisores": "Sessões de revisor da mesma worktree fora das listas conservadas E0 e E0b, incluindo o guardião criado antes da mensagem de retoma.",
-    "total_cobrado_simbolos": 215798
+    "total_cobrado_simbolos": 268560
   },
   "pedido_do_limiar_e0b": "Retirado na triagem da releitura, sem defeito no cartão."
 }
