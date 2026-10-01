@@ -29,6 +29,10 @@
  *   FC7 · o ordinal inglês: para os lugares de uma tabela escrita à mão (os que acabam em 1, 2, 3 e as
  *         exceções dos 11 a 13 em cada centena até 308), o sufixo que a regra dos portões escolhe entre as
  *         palavras declaradas é o da tabela.
+ *   FC8 · a tabela da vista bate com a autoridade dos portões para a direção de cada medida com faixa e para
+ *         as contagens sem faixa (`conferirTabelaDaVista`, em `scripts/concelhos-do-portao.mjs`; a passagem
+ *         L2b-c, o achado 4 da leitura a frio): a célula reconta os lugares pela autoridade dos portões, e a
+ *         vista rende-os pela sua tabela, e as duas têm de dizer o mesmo.
  *
  * O que ela NÃO confere, porque outro portão já o faz: que o texto de cada `data-claim` é o valor da linha
  * e que o lugar, a contagem e os empates são os recontados (o portão de HTML, pelas mesmas contas), que o
@@ -39,7 +43,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 
-import { faixasDoPortao, linhaDePortugalDoPortao, valorDoPortao, baseDoPortao, contaDaMedidaDoPortao } from '../../scripts/concelhos-do-portao.mjs';
+import { faixasDoPortao, linhaDePortugalDoPortao, valorDoPortao, baseDoPortao, contaDaMedidaDoPortao, conferirTabelaDaVista } from '../../scripts/concelhos-do-portao.mjs';
 import { posicaoNaFaixa, sufixoOrdinalDoPortao } from '../../scripts/series-do-portao.mjs';
 import { FAIXA_DAS_MEDIDAS_DO_CONCELHO } from '../../src/data/faixa-do-concelho.mjs';
 import { t } from '../../src/i18n/strings.mjs';
@@ -309,6 +313,7 @@ export function conferirFaixasDosConcelhos(dist, opcoes = {}) {
     }
   }
   erros.push(...conferirOrdinais());
+  erros.push(...conferirTabelaDaVista(opcoes.tabela).map((e) => `FC8 · ${e}`));
   if (!opcoes.so && contas.faixas === 0) erros.push('FC0 · nenhuma faixa vista em página nenhuma: a célula não viu nada (regra 14 da casa)');
   return { erros, contas };
 }
@@ -470,6 +475,14 @@ export function plantasDasFaixasDosConcelhos(dist) {
       },
     }, [comEmpate]);
   } else resultados.push({ nome: 'l2b-faixa-o-empate-tirado-da-frase', celula: 'FC4', mordeu: false, queixa: 'não há concelho com mais de um empate no prazo médio de pagamento' });
+  /* FC8 · a direção do índice de dívida trocada na tabela da vista, numa cópia em memória (L2b-c). A planta que
+     reconstrói a página com a tabela trocada e corre o portão de HTML está em
+     `design/especime-v3/medicoes/l2b-2026-10-01/l2b-c/planta-direcao-trocada.mjs`. */
+  {
+    const tabela = JSON.parse(JSON.stringify(FAIXA_DAS_MEDIDAS_DO_CONCELHO));
+    tabela.indice.ordem = tabela.indice.ordem === 'do-mais-baixo' ? 'do-mais-alto' : 'do-mais-baixo';
+    planta('l2b-c-direcao-trocada-na-tabela-da-vista', 'FC8', { faixas, tabela });
+  }
   /* FC7 · o ordinal inglês sem a exceção dos 11 a 13. */
   {
     const erros = conferirOrdinais(undefined, (n, s) => (n % 10 === 1 ? s.st : n % 10 === 2 ? s.nd : n % 10 === 3 ? s.rd : s.th));

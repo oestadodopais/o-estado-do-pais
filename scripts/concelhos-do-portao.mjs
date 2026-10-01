@@ -13,8 +13,11 @@
  *   · as linhas do livro-razão (`ledger/claims/*.yml`), lidas aqui: as do ganho médio, que o ficheiro do
  *     motor não traz, ligam-se ao concelho pelo código geográfico do INE que o localizador de cada uma
  *     escreve, e não pelo nome do ficheiro;
- *   · a tabela declarada das ordens e das comparações (`src/data/faixa-do-concelho.mjs`), que é uma
- *     declaração e não uma conta.
+ *   · a sua própria autoridade para a direção de cada medida com faixa e para as contagens sem faixa
+ *     (`DIRECOES_DO_PORTAO` e `CONTAGENS_DO_PORTAO`, abaixo), escrita aqui com a razão, desde a passagem L2b-c.
+ *     A tabela da vista (`src/data/faixa-do-concelho.mjs`) tem de a bater (`conferirTabelaDaVista`): até à
+ *     L2b-c o portão lia a direção da mesma tabela que a vista usa, e uma direção trocada lá passava coerente
+ *     nas duas pontas (o achado 4 da leitura a frio do L2b).
  *
  * Quem o chama: o portão de HTML (as origens `data-concelho-lugar`, `data-concelho-conta`,
  * `data-concelho-a-par`, e a linha de Portugal dentro da faixa de um cartão) e a célula da faixa do
@@ -37,6 +40,52 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { numeroDoPortao, posicaoNaFaixa } from './series-do-portao.mjs';
 import { FAIXA_DAS_MEDIDAS_DO_CONCELHO } from '../src/data/faixa-do-concelho.mjs';
+
+/**
+ * A AUTORIDADE DO PORTÃO PARA A DIREÇÃO (a passagem L2b-c, 01.10.2026, o achado 4 da leitura a frio). As quatro
+ * medidas com faixa e de que ponta se conta o lugar de cada uma, escritas aqui, à parte da tabela da vista, com
+ * a razão. O portão conta os lugares por esta, e não pela da vista; e a da vista tem de dizer o mesmo, medida a
+ * medida, ou a construção fecha. Mudar a direção de uma medida é mudar as duas, de propósito: uma só não chega.
+ */
+export const DIRECOES_DO_PORTAO = Object.freeze({
+  indice: { ordem: 'do-mais-baixo', porque: 'um índice maior é uma dívida mais perto do limite legal, ou acima dele' },
+  pmp: { ordem: 'do-mais-baixo', porque: 'mais dias é pagar mais tarde aos fornecedores' },
+  ganho: { ordem: 'do-mais-alto', porque: 'um ganho maior é mais dinheiro por mês para quem trabalha' },
+  poderDeCompra: { ordem: 'do-mais-alto', porque: 'um índice maior é mais poder de compra por pessoa face à média do país' },
+});
+
+/** As contagens, que não têm faixa porque uma contagem não se ordena (§1.143, decisão 4). */
+export const CONTAGENS_DO_PORTAO = Object.freeze({
+  populacao: 'uma contagem de pessoas',
+  desempregoRegistado: 'uma contagem de pessoas inscritas',
+  empresas: 'uma contagem de empresas',
+  divida: 'um total em euros, que cresce com o tamanho da câmara',
+});
+
+/**
+ * A tabela da vista contra a autoridade do portão: as mesmas medidas com faixa, a mesma ordem em cada uma, e as
+ * mesmas contagens sem faixa. Devolve as discordâncias, uma por linha; vazia, as duas dizem o mesmo.
+ *
+ * @param {Record<string, { faixa?: boolean, ordem?: string | null }>} [tabela]
+ */
+export function conferirTabelaDaVista(tabela = FAIXA_DAS_MEDIDAS_DO_CONCELHO) {
+  const erros = [];
+  for (const [chave, d] of Object.entries(DIRECOES_DO_PORTAO)) {
+    const v = tabela[chave];
+    if (!v) erros.push(`a tabela da vista não tem a medida «${chave}», que o portão conta com faixa`);
+    else if (!v.faixa) erros.push(`a tabela da vista tira a faixa a «${chave}», que o portão conta com faixa (${d.porque})`);
+    else if (v.ordem !== d.ordem) erros.push(`a tabela da vista conta «${chave}» ${v.ordem ?? 'sem ordem'} e o portão ${d.ordem} (${d.porque})`);
+  }
+  for (const [chave, porque] of Object.entries(CONTAGENS_DO_PORTAO)) {
+    const v = tabela[chave];
+    if (!v) erros.push(`a tabela da vista não tem a contagem «${chave}»`);
+    else if (v.faixa) erros.push(`a tabela da vista dá faixa a «${chave}», que é ${porque}, e uma contagem não se ordena (§1.143, decisão 4)`);
+  }
+  for (const chave of Object.keys(tabela)) {
+    if (!(chave in DIRECOES_DO_PORTAO) && !(chave in CONTAGENS_DO_PORTAO)) erros.push(`a tabela da vista tem a medida «${chave}», que o portão não conhece`);
+  }
+  return erros;
+}
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -71,7 +120,7 @@ export function linhasDasMedidasDoPortao(linhas, concelhos) {
     if (m) porDico.set(m[2], id);
   }
   const out = new Map();
-  for (const chave of Object.keys(FAIXA_DAS_MEDIDAS_DO_CONCELHO)) {
+  for (const chave of [...Object.keys(DIRECOES_DO_PORTAO), ...Object.keys(CONTAGENS_DO_PORTAO)]) {
     const porSlug = new Map();
     for (const c of concelhos) {
       const id = chave === 'ganho' ? porDico.get(String(c.dico)) : c.linhas?.[chave];
@@ -125,9 +174,10 @@ export function baseDoPortao(linha) {
  * A conta de uma medida, recontada das linhas: os concelhos com valor e sem valor, o mínimo e o máximo,
  * e, para cada concelho, o lugar e os empates.
  */
-export function contaDaMedidaDoPortao(linhas, porSlug, chave) {
-  const ordem = FAIXA_DAS_MEDIDAS_DO_CONCELHO[chave]?.ordem;
-  if (!ordem) throw new Error(`a medida «${chave}» não está na tabela das ordens`);
+export function contaDaMedidaDoPortao(linhas, porSlug, chave, direcoes = DIRECOES_DO_PORTAO) {
+  /* A ORDEM É A DO PORTÃO (L2b-c), e não a da tabela da vista. */
+  const ordem = direcoes[chave]?.ordem;
+  if (!ordem) throw new Error(`a medida «${chave}» não tem direção na autoridade do portão`);
   const todos = [...porSlug].map(([slug, id]) => ({ slug, id, n: valorDoPortao(linhas.get(id)) }));
   const comValor = todos.filter((c) => c.n !== null);
   const min = Math.min(...comValor.map((c) => c.n));
@@ -169,10 +219,10 @@ export function faixasDoPortao(raiz = RAIZ) {
   const porMedida = linhasDasMedidasDoPortao(linhas, concelhos);
   const contas = new Map();
   for (const [chave, porSlug] of porMedida) {
-    if (porSlug.size && FAIXA_DAS_MEDIDAS_DO_CONCELHO[chave]?.faixa) contas.set(chave, contaDaMedidaDoPortao(linhas, porSlug, chave));
+    if (porSlug.size && chave in DIRECOES_DO_PORTAO) contas.set(chave, contaDaMedidaDoPortao(linhas, porSlug, chave));
   }
   return { linhas, concelhos, porMedida, contas };
 }
 
-/** As medidas que a tabela declara sem faixa (as contagens), para o portão dizer porque recusa. */
-export const MEDIDAS_SEM_FAIXA = new Set(Object.entries(FAIXA_DAS_MEDIDAS_DO_CONCELHO).filter(([, d]) => !d.faixa).map(([k]) => k));
+/** As contagens, pela autoridade do portão, para ele dizer porque recusa um lugar numa delas. */
+export const MEDIDAS_SEM_FAIXA = new Set(Object.keys(CONTAGENS_DO_PORTAO));
