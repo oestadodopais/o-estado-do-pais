@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-01T19:18:51+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "U1",
+   "ficheiro": "src/views/LugaresView.astro",
+   "descricao": "a vista volta a pôr o mapa depois da pesquisa e das listas? não: o mapa perde a passagem dos concelhos, e o mapa de Lugares fica sem concelhos",
+   "sha256_antes": "eac9a3da2cca3b0b850a888e56e876420acb4264a556c8c22c258b7dcf91bcc2",
+   "sha256_depois": "a4810a7932c48898a4e62cb95ed0aede82d1038145e0c6738a9067dfcc73a4da",
+   "contexto_antes": "   unidades da Carta como áreas, cada uma porta da sua página, e a menção da\n      fonte por baixo dele. */}\n  <div class=\"lugares-mapa\" data-lugares-mapa>\n    <MapaRespira s={s} lang={lang} concelhos={cs} />\n    <LegendaDoMapa />\n  </div>\n\n  {/* AS DUAS LISTAS, DOBRADAS. O `<h2>` vive dentro do `<summary>`, que o aceita\n      (o conteúdo de um `<summary>` é texto c",
+   "contexto_depois": "   unidades da Carta como áreas, cada uma porta da sua página, e a menção da\n      fonte por baixo dele. */}\n  <div class=\"lugares-mapa\" data-lugares-mapa>\n    <MapaRespira s={s} lang={lang} concelhos={[]} />\n    <LegendaDoMapa />\n  </div>\n\n  {/* AS DUAS LISTAS, DOBRADAS. O `<h2>` vive dentro do `<summary>`, que o aceita\n      (o conteúdo de um `<summary>` é texto c"
+  },
+  {
+   "id": "U2",
+   "ficheiro": "built/lugares/index.html",
+   "descricao": "a gaveta das regiões conta 10 onde a carta tem 9",
+   "sha256_antes": "f0b32e0f2e291155014666c330d0c4a03314de22781d3f30f5948d32ec7f89f8",
+   "sha256_depois": "796f263d5a78e30fb109ce21c1e8f2b1bb7dd22f03140ae8dd3f25cc398ccbda",
+   "contexto_antes": "f>As regiões</h2><span class=\"lugares-dobra-conta\" data-conta-da-lista=\"regioes\" data-astro-cid-6ulougkf>, <span class=\"prova-valor\" data-prova=\"regioes_total\" title=\"regiões NUTS II de Portugal\">9</span></span></summary><div class=\"gaveta-corpo\"><ul class=\"lugares-lista\" data-lista-lugares=\"regioes\" data-astro-cid-6ulougkf><li data-astro-cid-6ulougkf><a href=\"/",
+   "contexto_depois": "f>As regiões</h2><span class=\"lugares-dobra-conta\" data-conta-da-lista=\"regioes\" data-astro-cid-6ulougkf>, <span class=\"prova-valor\" data-prova=\"regioes_total\" title=\"regiões NUTS II de Portugal\">10</span></span></summary><div class=\"gaveta-corpo\"><ul class=\"lugares-lista\" data-lista-lugares=\"regioes\" data-astro-cid-6ulougkf><li data-astro-cid-6ulougkf><a href=\"/"
+  },
+  {
+   "id": "U3",
+   "ficheiro": "built/index.html",
+   "descricao": "a primeira página construída perde a menção da fonte do contorno (a licença da Carta exige-a)",
+   "sha256_antes": "068950c3812b0318e9ab97486acaf28ead6a98e493aa75992730519397ca21fd",
+   "sha256_depois": "309706b40f2c954451c9fba4de410a50b674b402bdd9b1b7ab40d8c943dcf920",
+   "contexto_antes": "an></a><p class=\"pp-entrada-fonte\" data-fonte-do-sinal data-astro-cid-4locjw7o><span class=\"fonte-da-carta\" data-fonte-da-carta data-nonledger=\"fonte-da-carta\">Direção-Geral do Território · Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY 4.0</span></p></li></ul></section><section class=\"pais-sec\" id=\"trabalhos\" aria-labelledby=\"estudos-k\"><div class=\"sec-head\"><h2 class=\"eyebrow\" id=\"estudos-k\">Est",
+   "contexto_depois": "an></a><p class=\"pp-entrada-fonte\" data-fonte-do-sinal data-astro-cid-4locjw7o><span class=\"fonte-da-carta\" data-fonte-da-carta data-nonledger=\"fonte-da-carta\">Carta Administrativa Oficial de Portugal (CAOP) 2025</span></p></li></ul></section><section class=\"pais-sec\" id=\"trabalhos\" aria-labelledby=\"estudos-k\"><div class=\"sec-head\"><h2 class=\"eyebrow\" id=\"estudos-k\">Est"
+  },
+  {
+   "id": "U4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 3 962 px onde a captura mede 3762",
+   "sha256_antes": "159e90cdc5731a3cc75c1800bddd9aff33596fb18a4339567078ade94e09e7d1",
+   "sha256_depois": "6d58f257ad7cb67e4e4e664edc3912104a95f4e224e3c9826f462f48e0b1b497",
+   "contexto_antes": "ra dele, para a pesquisa e as gavetas ficarem juntas no topo da coluna da esquerda. A menção da fonte veio com o mapa (`LegendaDoMapa.astro`, por baixo dele) | a captura de «Lugares» a 390 mede 3762 px de altura, contra 5321 na do N1 |\n| 2.º | As listas dobradas | `Gaveta.astro` (o `<details>` da casa) ganha a ranhura `nome`, e cada lista vive numa gaveta com o `<h2>` da secção e a contagem",
+   "contexto_depois": "ra dele, para a pesquisa e as gavetas ficarem juntas no topo da coluna da esquerda. A menção da fonte veio com o mapa (`LegendaDoMapa.astro`, por baixo dele) | a captura de «Lugares» a 390 mede 3962 px de altura, contra 5321 na do N1 |\n| 2.º | As listas dobradas | `Gaveta.astro` (o `<details>` da casa) ganha a ranhura `nome`, e cada lista vive numa gaveta com o `<h2>` da secção e a contagem"
+  },
+  {
+   "id": "U5",
+   "ficheiro": "src/components/IndiceDosAssuntos.astro",
+   "descricao": "o sinal perde o texto alternativo (o rótulo deixa de ser passado), e um leitor de ecrã fica sem o nome do desenho",
+   "sha256_antes": "7ec76f9bfa30a19a43b3dbefab2ec6eb545cba6d3e4c9882bd9b961940f7ab75",
+   "sha256_depois": "5030a63d4fb2d3e57a00d4eefe7c4e0b916ee90949f6399ee5bff392904c24ad",
+   "contexto_antes": ".map((e) => (\n    <li data-entrada={e.id}>\n      <a class:list={['pp-entrada', 'sinal' in e && e.sinal && 'pp-entrada-com-sinal']} href={e.rota[lang]}>\n        {'sinal' in e && e.sinal && <SinalDosLugares rotulo={s.primeira.sinalDosLugares} />}\n        <span class=\"pp-entrada-nome\">{e.nome[lang]}</span>\n        <span class=\"pp-entrada-linha\">{linhaDoIndice(e, lang)}</span>\n      </a>\n      {'sinal' in",
+   "contexto_depois": ".map((e) => (\n    <li data-entrada={e.id}>\n      <a class:list={['pp-entrada', 'sinal' in e && e.sinal && 'pp-entrada-com-sinal']} href={e.rota[lang]}>\n        {'sinal' in e && e.sinal && <SinalDosLugares rotulo={''} />}\n        <span class=\"pp-entrada-nome\">{e.nome[lang]}</span>\n        <span class=\"pp-entrada-linha\">{linhaDoIndice(e, lang)}</span>\n      </a>\n      {'sinal' in"
+  }
+ ]
+}
