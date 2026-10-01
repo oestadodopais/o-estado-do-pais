@@ -1,0 +1,20 @@
+E1c · medidas
+  cabecas_e1c: {"sitio": "ca24ea9b72d3342ed02e992cc6be97040239204e", "sitio_base": "dd7f6208cde1f3a3ef1cba2a6e8f752e8308255a", "motor": "932eaee2572162753d15a0787186
+  celulas_de_tabela_sem_linha: {"16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md": {"contagem": {"numeros": 466, "com_linha": 297}, "casos": []}, "16 Évora Cont
+  celulas_e_linha_citada: {"registos": {"16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).record.json": {"figuras": 297}, "16 Évora Contas da Câmara/The accoun
+  contradicoes_i180: {"pontos": [{"ponto": "1-prr-tres-datas", "o_que_era": "os totais do PRR com três datas de leitura e dois valores", "saem": {"167 372 756": {"nos_antigos": {"ev
+  celulas_e_linhas_do_sitio: {"antigos_pt": {"07 Évora Municipal Accounts": {"figuras_nas_celulas": 67, "com_linha_do_sitio": 19, "sem_linha_do_sitio": 48}, "08 Évora Mandates": {"figuras_n
+  celulas_nas_paginas_construidas: {"por_estudo": {"evora-contas-da-camara-2010-2025": {"figuras_nas_celulas": 297, "com_marca_da_fonte_do_sitio": 43, "sem_ela": 254}, "evora-quem-governou-a-cama
+  celulas_registos_contra_paginas: {"diferencas": 6, "casos": [{"estudo": "evora-contas-da-camara-2010-2025", "figura": "113.4.1.0", "impresso": "69 826 899", "linha_do_estudo": "dgal-d
+  emendas_e1c: {"emendas": [{"ponto": 1, "estudo": "19", "lingua": "pt", "saem": [{"cadeia": "Total da tabela", "motor_antes": 1, "motor_agora": 0, "documento_antes"
+  total_das_obras_e1c: {"obras_na_tabela": 8, "soma_das_oito_obras": "23 008 223,21", "o_que_a_linha_imprimia": "39 336 001,42", "a_linha_que_citava": "bbs-cap-total", "o_ex
+  selos_corrigidos_e1c: {"correcoes_escritas_no_19": 9, "aplicadas": {"pt": 6, "en": 8}, "celulas": [{"bloco_no_14": 31, "bloco_no_19": 31, "unidade": ".t1.0", "impresso": "4
+  ficha_de_evora_e1c: {"edicoes": {"pt": {"mandato_2021_2025_deixou": {"existe": true, "abre_com_a_frase": true, "data_de_referencia": true, "a_divida_de_2025": true, "text
+  leitura_da_economia_e1c: {"paginas": {"/estudos": {"sai": 0, "entra": 1}, "/municipios/evora": {"sai": 0, "entra": 1}, "/": {"sai": 0, "entra": 1}, "/en/studies": {"sai": 0, "
+  travessia_e1c: {"documentos_realojados": 7, "mudaram": 7, "commit_do_motor_dos_bytes": ["a8febe0"], "registos": {"novos": 0, "alterados": 7, "inalterados": 10}, "che
+  motor_e1c: {"portao": {"codigo": 0, "cabeca": "932eaee2572162753d15a0787186c9c5805c4c2e", "inicio": "2026-10-01T06:00:53Z", "fim": "2026-10-01T06:04:40Z", "linha
+  portoes_e1c: {"e1c-codigo": {"cabeca": "ca24ea9b72d3342ed02e992cc6be97040239204e", "build": 0, "verify": 0, "typecheck": 0}}
+  capturas_e1c: {"capturas": 42, "sha256_conferidos": 42, "divergem": [], "cabeca": "ca24ea9b72d3342ed02e992cc6be97040239204e", "estado": "cabeca-limpa", "problemas":
+  mapa_de_migracao_e1c: {"pt": {"blocos": 673, "destinos": 678, "sem_destino": 0, "repartidos_por_tres_estudos": ["08 Évora Mandates 171", "08 Évora Mandates 172"], "repartid
+  custo_e1c: {"modelo": "Claude Opus 5.5", "primeiro_commit_do_motor": "2026-10-01T06:32:06+01:00 a8febe0 E1c: as emendas do mandato às edições do 16, do 17, do 18
+E1c · 18 medidas; conhecidos-positivos que não morderam: nenhum

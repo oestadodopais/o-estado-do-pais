@@ -1,0 +1,278 @@
+{
+ "cabeca_do_motor": "932eaee2572162753d15a0787186c9c5805c4c2e",
+ "positivos": [
+  {
+   "o_que": "a frase do 18 que a emenda tirou não está na cabeça e estava na cabeça da E1b",
+   "mordeu": true
+  },
+  {
+   "o_que": "a «uma origem só» do 19 não está na cabeça e estava na cabeça da E1b",
+   "mordeu": true
+  },
+  {
+   "o_que": "o «A um ano e meio de 2027» do 19 não está na cabeça, e «A três meses de 2027» está",
+   "mordeu": true
+  },
+  {
+   "o_que": "uma cópia com uma palavra trocada não está",
+   "mordeu": true
+  }
+ ],
+ "estudos": [
+  {
+   "slug": "evora-contas-da-camara-2010-2025",
+   "onde": "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md:7",
+   "linhas": [
+    7
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md",
+     "documento_alojado": "studies-src/evora-contas-da-camara-2010-2025/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "A dívida total fechou o ano em €54 379 035, dentro do limite legal e com €28 192 653 de margem. O aperto está nos fornecedores: 137 dias, em média, para pagar uma fatura, e €4 976 172 em pagamentos em atraso.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "évora",
+      "afastou",
+      "dinheiro",
+      "que",
+      "chega",
+      "aparece",
+      "nas",
+      "faturas",
+      "por",
+      "fila",
+      "pagamento",
+      "não",
+      "fornecedor",
+      "ainda",
+      "abaixo"
+     ]
+    },
+    "en": {
+     "edicao_no_motor": "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.md",
+     "documento_alojado": "studies-src/evora-contas-da-camara-2010-2025/en.html",
+     "pedacos": [
+      {
+       "pedaco": "Total debt closed the year at €54 379 035, inside the legal limit and with €28 192 653 of headroom. The squeeze is on suppliers: 137 days, on average, to pay an invoice, and €4 976 172 in overdue payments.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "évora's",
+      "has",
+      "drifted",
+      "from",
+      "money",
+      "that",
+      "arrives",
+      "strain",
+      "shows",
+      "unpaid",
+      "invoices",
+      "payment",
+      "queue",
+      "not",
+      "supplier",
+      "still",
+      "below"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "evora-quem-governou-a-camara-2009-2025",
+   "onde": "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md:11, :13",
+   "linhas": [
+    11,
+    13
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md",
+     "documento_alojado": "studies-src/evora-quem-governou-a-camara-2009-2025/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "O executivo real é mais pequeno do que o eleito.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "Os pelouros não se deixam contar em dinheiro.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "évora",
+      "nos",
+      "mandatos",
+      "publica",
+      "repartição",
+      "são",
+      "cortadas",
+      "maneira",
+      "permita",
+      "dizer",
+      "quanto",
+      "gastou",
+      "cada",
+      "pessoas",
+      "instalada",
+      "tem",
+      "lugares"
+     ]
+    },
+    "en": {
+     "edicao_no_motor": null,
+     "nota": "o estudo não tem esta edição no motor"
+    }
+   }
+  },
+  {
+   "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+   "onde": "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md:11, :13, :7, :280",
+   "linhas": [
+    11,
+    13,
+    7,
+    280
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md",
+     "documento_alojado": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "O dinheiro de fora não passa pela câmara.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "As localizações de projeto vencidas levam 61,32% do valor aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo acabam exatamente na data prevista.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "O plano de recuperação atribui ao concelho €167 372 756, dos quais €86 944 669 pagos no instantâneo de 2026-08-19, e a maior parte passa por organismos que não são a câmara.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "Em Évora são 608 localizações de projeto que transportam €102 624 704 de dinheiro aprovado — 61,32 % de tudo o que foi aprovado para o concelho —, dos quais €41 693 864 foram pagos.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "contra",
+      "soma",
+      "aprovada",
+      "está",
+      "paga",
+      "partes",
+      "sobrepõem",
+      "também",
+      "receberam"
+     ]
+    },
+    "en": {
+     "edicao_no_motor": "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.md",
+     "documento_alojado": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html",
+     "pedacos": [
+      {
+       "pedaco": "The outside money does not go through the council.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "The overdue project locations carry 61.32% of the value approved for the municipality, and the completion dates that would soften that reading are the frailest field in the register: 1 011 of the 1 445 on-time locations end exactly on their planned date.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "In Évora that is 608 project-locations carrying €102 624 704 of approved money — 61.32% of everything approved for the concelho — of which €41 693 864 has been paid.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "against",
+      "sum",
+      "sits",
+      "parts",
+      "overlap",
+      "have",
+      "also",
+      "received"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "evora-2027-capital-europeia-da-cultura",
+   "onde": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md:9, :5",
+   "linhas": [
+    9,
+    5
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md",
+     "documento_alojado": "studies-src/evora-2027-capital-europeia-da-cultura/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "O dinheiro do Estado é o que chegou; o do município é o que falta.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo de junho de 2023 que reparte o dinheiro entre as partes não está publicado.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": []
+    },
+    "en": {
+     "edicao_no_motor": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md",
+     "documento_alojado": "studies-src/evora-2027-capital-europeia-da-cultura/en.html",
+     "pedacos": [
+      {
+       "pedaco": "The State's money is what arrived; the municipality's is what is missing.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "the documents show three different totals for the cost of the event and no document that reconciles them, because the June 2023 protocol that divides the money between the parties is not published.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "council's"
+     ]
+    }
+   }
+  }
+ ],
+ "falhas": 0
+}
