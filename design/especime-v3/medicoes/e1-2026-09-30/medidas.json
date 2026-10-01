@@ -4510,5 +4510,980 @@
     "mordeu": true
    }
   }
- ]
+ ],
+ "e1b": {
+  "passagem": "E1b",
+  "guiao": "design/especime-v3/medicoes/e1-2026-09-30/e1b/medir-e1b.py",
+  "medido_em": "2026-10-01T03:56:55+00:00",
+  "conhecidos_positivos_que_nao_morderam": [],
+  "medidas": [
+   {
+    "nome": "cabecas_e1b",
+    "valor": {
+     "sitio": {
+      "cabeca_de_codigo": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+      "cabeca_na_medida": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+      "base": "dd7f6208cde1f3a3ef1cba2a6e8f752e8308255a"
+     },
+     "motor": {
+      "cabeca": "79ab4d5082e626dde450eb7953adad9682b9e524",
+      "master": "4b46befbac8decf1566f73b5959fd175e5458d66",
+      "cabeca_do_construtor_anterior": "6ed528bb509b9d2be3a751ef3e7c1b6b29dc29a9"
+     }
+    },
+    "comando": "git rev-parse nas duas árvores; a cabeça de código é a que portoes/e1b-intermedias/3/cabeca diz",
+    "conhecido_positivo": {
+     "descricao": "git cat-file -t de cada cabeça diz «commit»",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "rebase_sobre_main",
+    "valor": {
+     "base": "dd7f6208",
+     "merge_base_da_cabeca": "dd7f6208",
+     "rebaseado": true,
+     "commits_reposicionados": 11,
+     "commits_antes": 11,
+     "conflitos": [
+      "src/i18n/lingua-dos-titulos.mjs"
+     ],
+     "mapa": [
+      {
+       "antes": "8e2fe1d6",
+       "depois": "779bb7b6",
+       "assunto": "E1: os documentos dos quatro estudos de Évora, alojados como vieram do motor"
+      },
+      {
+       "antes": "fcc2ad44",
+       "depois": "0f39d121",
+       "assunto": "E1: os registos dos quatro estudos de Évora e os documentos realojados"
+      },
+      {
+       "antes": "1c811075",
+       "depois": "a0bdcdeb",
+       "assunto": "E1: as 69 linhas de Évora mudam de estudo, e o cruzamento conhece as origens"
+      },
+      {
+       "antes": "0abba32c",
+       "depois": "8a4941a0",
+       "assunto": "E1: os quatro estudos entram no arquivo, e os seis antigos ficam como edições datadas com a nota do sucessor"
+      },
+      {
+       "antes": "822b93b3",
+       "depois": "43d9f3eb",
+       "assunto": "E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas"
+      },
+      {
+       "antes": "b84039d0",
+       "depois": "76157bc8",
+       "assunto": "E1: a estrutura, o plano da fiabilidade, o mapa do repositório e o README dizem os quatro estudos de Évora"
+      },
+      {
+       "antes": "3cab1215",
+       "depois": "ecef4c56",
+       "assunto": "E1: a nota dos pelouros do mandato de 2009 a 2013 diz o que o estudo de quem governou a câmara diz"
+      },
+      {
+       "antes": "441c2eb8",
+       "depois": "cbf489b8",
+       "assunto": "E1: a nota do sucessor diz «a 01.10.2026 sucedeu-lhe», e não «sucedido por»"
+      },
+      {
+       "antes": "c6bdf941",
+       "depois": "1f4cc320",
+       "assunto": "E1: o relatório do construtor, as medidas, as capturas e os portões"
+      },
+      {
+       "antes": "413505a4",
+       "depois": "634cfae0",
+       "assunto": "E1b: o mandato da passagem E1b, com as decisões do lugar de direção sobre os pontos de paragem e as emendas às quatro aberturas"
+      },
+      {
+       "antes": "3741a05b",
+       "depois": "90b1ba0a",
+       "assunto": "E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit"
+      }
+     ]
+    },
+    "comando": "git merge-base <cabeça de código> main; git log das duas gamas emparelhado pelo assunto; os conflitos lidos do registo do rebase (rebase-e1b.log)",
+    "conhecido_positivo": {
+     "descricao": "a cabeça de antes do rebase tem a base antiga por merge-base, e o detetor diz que não estava rebaseada",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "datas_de_publicacao",
+    "valor": {
+     "edicoes_novas": 7,
+     "batem_com_o_git": 7,
+     "com_o_commit_antigo": 0,
+     "datas": [
+      "2026-10-01"
+     ],
+     "edicoes": [
+      {
+       "edicao": "evora-2027-capital-europeia-da-cultura/pt",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      },
+      {
+       "edicao": "evora-2027-capital-europeia-da-cultura/en",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      },
+      {
+       "edicao": "evora-contas-da-camara-2010-2025/pt",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      },
+      {
+       "edicao": "evora-contas-da-camara-2010-2025/en",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      },
+      {
+       "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      },
+      {
+       "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/en",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      },
+      {
+       "edicao": "evora-quem-governou-a-camara-2009-2025/pt",
+       "data": "2026-10-01",
+       "commit": "779bb7b6",
+       "git": "779bb7b6",
+       "bate": true
+      }
+     ]
+    },
+    "comando": "src/data/datas-de-publicacao.json contra git log --diff-filter=A --format='%ad %H' --date=short -- <ficheiro>",
+    "conhecido_positivo": {
+     "descricao": "o mesmo ficheiro antes da passagem (90b1ba0a) aponta para o commit de antes do rebase, e o detetor dá-o por não bater",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "contadores_do_arquivo",
+    "valor": {
+     "estudos-publicados": {
+      "valor": "17",
+      "conta": 17,
+      "bate": true,
+      "check": "estudos_no_arquivo",
+      "edicao": "01.10.2026",
+      "entradas": [
+       {
+        "date": "2026-10-01",
+        "kind": "atualizacao",
+        "old_value": "13",
+        "new_value": "17"
+       }
+      ],
+      "seladas": [
+       {
+        "date": "2026-10-01",
+        "kind": "atualizacao",
+        "old_value": "13",
+        "new_value": "17"
+       }
+      ],
+      "lugar_declarado": "o-estado-do-pais"
+     },
+     "edicoes-publicadas": {
+      "valor": "25",
+      "conta": 25,
+      "bate": true,
+      "check": "edicoes_no_arquivo",
+      "edicao": "01.10.2026",
+      "entradas": [
+       {
+        "date": "2026-10-01",
+        "kind": "atualizacao",
+        "old_value": "18",
+        "new_value": "25"
+       }
+      ],
+      "seladas": [
+       {
+        "date": "2026-10-01",
+        "kind": "atualizacao",
+        "old_value": "18",
+        "new_value": "25"
+       }
+      ],
+      "lugar_declarado": "o-estado-do-pais"
+     }
+    },
+    "comando": "as duas linhas em ledger/claims, COUNTS de src/data/studies.mjs, ledger/historias-valores.json e LUGAR_DECLARADO_DAS_LINHAS, lidos pelos próprios módulos",
+    "conhecido_positivo": {
+     "descricao": "as mesmas linhas antes da passagem (90b1ba0a) diziam 13 e 18 contra a conta de hoje do arquivo, e o detetor vê a diferença",
+     "mordeu": true,
+     "antes": {
+      "estudos-publicados": "13",
+      "edicoes-publicadas": "18"
+     }
+    }
+   },
+   {
+    "nome": "plantas_dos_contadores",
+    "valor": {
+     "mordidas": 14,
+     "total": 14,
+     "plantas": [
+      {
+       "nome": "limpo: check-pais",
+       "codigo": 0,
+       "esperado": 0,
+       "mordeu": true
+      },
+      {
+       "nome": "limpo: ledger:check",
+       "codigo": 0,
+       "esperado": 0,
+       "mordeu": true
+      },
+      {
+       "nome": "A3: estudos-publicados sem declaração",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "A1: estudos-publicados declarada de Portugal",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "A1b: estudos-publicados sem a expressão verificada do arquivo",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "R: estudos-publicados sem declaração no resolvedor",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "H: estudos-publicados sem a história selada",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "V: estudos-publicados com o valor antigo",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "A3: edicoes-publicadas sem declaração",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "A1: edicoes-publicadas declarada de Portugal",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "A1b: edicoes-publicadas sem a expressão verificada do arquivo",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "R: edicoes-publicadas sem declaração no resolvedor",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "H: edicoes-publicadas sem a história selada",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      },
+      {
+       "nome": "V: edicoes-publicadas com o valor antigo",
+       "codigo": 1,
+       "esperado": 1,
+       "mordeu": true
+      }
+     ]
+    },
+    "comando": "node design/especime-v3/medicoes/e1-2026-09-30/e1b/provar-contadores-e1b.mjs --json e1b/plantas-contadores-e1b.json",
+    "conhecido_positivo": {
+     "descricao": "os dois portões sem estrago saem com 0 (o conhecido-negativo), e cada estrago dá 1 com a queixa esperada",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "emendas_das_aberturas",
+    "valor": {
+     "todas_feitas": true,
+     "trocas": [
+      {
+       "estudo": "18",
+       "lingua": "pt",
+       "onde": "abertura",
+       "velho": "Évora é uma cidade relativamente próspera numa região pobre",
+       "novo": "Évora é um concelho relativamente próspero numa região abaixo da média do país",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "18",
+       "lingua": "en",
+       "onde": "abertura",
+       "velho": "Évora is a relatively prosperous town in a poor region",
+       "novo": "Évora is a relatively prosperous municipality in a region below the national average",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "18",
+       "lingua": "pt",
+       "onde": "abertura",
+       "velho": "geraram 576 491 544 euros de valor acrescentado",
+       "novo": "geraram €576 491 544 de valor acrescentado",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "18",
+       "lingua": "en",
+       "onde": "abertura",
+       "velho": "generated 576 491 544 euros of value added",
+       "novo": "generated €576 491 544 of value added",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "18",
+       "lingua": "pt",
+       "onde": "abertura",
+       "velho": "é de 23 004 euros, contra 31 900 no país",
+       "novo": "é de €23 004, contra €31 900 no país",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "18",
+       "lingua": "en",
+       "onde": "abertura",
+       "velho": "is 23 004 euros, against 31 900 in the country",
+       "novo": "is €23 004, against €31 900 in the country",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "19",
+       "lingua": "pt",
+       "onde": "abertura",
+       "velho": "A ano e meio de 2027",
+       "novo": "A um ano e meio de 2027",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "16",
+       "lingua": "pt",
+       "onde": "documento",
+       "velho": "a parte de 2026 das obras do «Évora 2027» financiadas pelo plano de recuperação",
+       "novo": "a parte de 2026 do projeto «Évora 2027» financiado pelo plano de recuperação",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      },
+      {
+       "estudo": "16",
+       "lingua": "en",
+       "onde": "documento",
+       "velho": "the 2026 share of the recovery-plan-funded «Évora 2027» works",
+       "novo": "the 2026 share of the recovery-plan-funded «Évora 2027» project",
+       "velho_no_motor": 0,
+       "novo_no_motor": 1,
+       "velho_no_alojado": 0,
+       "novo_no_alojado": 1
+      }
+     ],
+     "negritos_do_19_em_o_que_este_projeto_conclui": {
+      "pt": {
+       "antes": 5,
+       "depois": 0
+      },
+      "en": {
+       "antes": 5,
+       "depois": 0
+      }
+     }
+    },
+    "comando": "cada frase velha e nova contada na leitura de abertura (até «Os limites deste documento»; a do 16, no documento inteiro) do .md do motor na cabeça (git show) e do texto visível do documento alojado no sítio; os parágrafos que abrem com negrito na secção, antes (6ed528b) e depois",
+    "conhecido_positivo": {
+     "descricao": "cada frase velha é encontrada pelo mesmo detetor no .md do motor antes da passagem (6ed528b), e os negritos antes são cinco por edição",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "sinal_do_euro",
+    "valor": {
+     "16 pt": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 10,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 328,
+        "sinal_depois": 1,
+        "palavra": 0
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 10,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 328,
+        "sinal_depois": 1,
+        "palavra": 0
+       }
+      }
+     },
+     "16 en": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 10,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 328,
+        "sinal_depois": 1,
+        "palavra": 0
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 10,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 328,
+        "sinal_depois": 1,
+        "palavra": 0
+       }
+      }
+     },
+     "17 pt": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 2,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 14,
+        "sinal_depois": 6,
+        "palavra": 0
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 2,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 14,
+        "sinal_depois": 6,
+        "palavra": 0
+       }
+      }
+     },
+     "18 pt": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 4,
+        "sinal_depois": 0,
+        "palavra": 2
+       },
+       "corpo": {
+        "sinal_antes": 46,
+        "sinal_depois": 0,
+        "palavra": 50
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 7,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 46,
+        "sinal_depois": 0,
+        "palavra": 50
+       }
+      }
+     },
+     "18 en": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 4,
+        "sinal_depois": 0,
+        "palavra": 2
+       },
+       "corpo": {
+        "sinal_antes": 98,
+        "sinal_depois": 0,
+        "palavra": 3
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 7,
+        "sinal_depois": 0,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 98,
+        "sinal_depois": 0,
+        "palavra": 3
+       }
+      }
+     },
+     "19 pt": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 0,
+        "sinal_depois": 5,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 12,
+        "sinal_depois": 127,
+        "palavra": 1
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 0,
+        "sinal_depois": 5,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 12,
+        "sinal_depois": 127,
+        "palavra": 1
+       }
+      }
+     },
+     "19 en": {
+      "antes": {
+       "abertura": {
+        "sinal_antes": 0,
+        "sinal_depois": 5,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 12,
+        "sinal_depois": 127,
+        "palavra": 1
+       }
+      },
+      "depois": {
+       "abertura": {
+        "sinal_antes": 0,
+        "sinal_depois": 5,
+        "palavra": 0
+       },
+       "corpo": {
+        "sinal_antes": 12,
+        "sinal_depois": 127,
+        "palavra": 1
+       }
+      }
+     }
+    },
+    "comando": "as formas €N, N € e N euros contadas na leitura de abertura (até «Os limites deste documento») e no corpo de cada edição do motor, antes (6ed528b) e depois",
+    "conhecido_positivo": {
+     "descricao": "uma cadeia plantada com uma forma de cada dá 1, 1 e 1",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "cortes_inalterados",
+    "valor": {
+     "ficheiros": 6,
+     "iguais": 6,
+     "operacoes": 0,
+     "lista": [
+      {
+       "ficheiro": "As contas da Câmara de Évora, 2010 a 2025 (pt-PT).cortes.json",
+       "igual": true,
+       "operacoes": 0
+      },
+      {
+       "ficheiro": "The accounts of the Câmara de Évora, 2010 to 2025.cortes.json",
+       "igual": true,
+       "operacoes": 0
+      },
+      {
+       "ficheiro": "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).cortes.json",
+       "igual": true,
+       "operacoes": 0
+      },
+      {
+       "ficheiro": "The economy of Évora and the public money that reaches the municipality outside the council.cortes.json",
+       "igual": true,
+       "operacoes": 0
+      },
+      {
+       "ficheiro": "Évora 2027, Capital Europeia da Cultura (pt-PT).cortes.json",
+       "igual": true,
+       "operacoes": 0
+      },
+      {
+       "ficheiro": "Évora 2027, European Capital of Culture.cortes.json",
+       "igual": true,
+       "operacoes": 0
+      }
+     ]
+    },
+    "comando": "sha256 de cada .cortes.json do 16, do 18 e do 19 no motor antes (6ed528b) e na cabeça, e o comprimento da lista «operacoes»",
+    "conhecido_positivo": {
+     "descricao": "o leitor da lista conta 1 num ficheiro plantado com uma operação",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "travessia_e1b",
+    "valor": {
+     "registos": [
+      {
+       "edicao": "evora-contas-da-camara-2010-2025/pt",
+       "commit": "79ab4d5",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-contas-da-camara-2010-2025/en",
+       "commit": "79ab4d5",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt",
+       "commit": "79ab4d5",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/en",
+       "commit": "79ab4d5",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-2027-capital-europeia-da-cultura/pt",
+       "commit": "79ab4d5",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-2027-capital-europeia-da-cultura/en",
+       "commit": "79ab4d5",
+       "resumo_bate": true
+      }
+     ],
+     "documentos": [
+      {
+       "edicao": "evora-contas-da-camara-2010-2025/pt",
+       "commit": "8c8f227",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-contas-da-camara-2010-2025/en",
+       "commit": "8c8f227",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt",
+       "commit": "8c8f227",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/en",
+       "commit": "8c8f227",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-2027-capital-europeia-da-cultura/pt",
+       "commit": "8c8f227",
+       "resumo_bate": true
+      },
+      {
+       "edicao": "evora-2027-capital-europeia-da-cultura/en",
+       "commit": "8c8f227",
+       "resumo_bate": true
+      }
+     ],
+     "codigos": {
+      "check-documentos": 0,
+      "check-documentos-com-origem": 0
+     },
+     "cabeca_do_motor": "79ab4d5"
+    },
+    "comando": "registos/manifest.json e studies-src/manifest.yml do sítio contra os bytes em disco e contra git show <commit>:<ficheiro> no motor; os códigos do check:documentos lidos dos ficheiros",
+    "conhecido_positivo": {
+     "descricao": "o resumo que o manifesto de antes da passagem dava ao documento do 16 já não é o dos bytes alojados",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "leituras_conferidas",
+    "valor": {
+     "falhas_antes": 3,
+     "falhas_depois": 0,
+     "estudos": [
+      {
+       "slug": "evora-contas-da-camara-2010-2025",
+       "pt": true,
+       "en": true
+      },
+      {
+       "slug": "evora-quem-governou-a-camara-2009-2025",
+       "pt": true,
+       "en": null
+      },
+      {
+       "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "pt": true,
+       "en": true
+      },
+      {
+       "slug": "evora-2027-capital-europeia-da-cultura",
+       "pt": true,
+       "en": true
+      }
+     ]
+    },
+    "comando": "node design/especime-v3/medicoes/e1-2026-09-30/e1b/conferir-leituras-e1b.mjs <motor> --json …, antes da correção da origem do 18 e depois",
+    "conhecido_positivo": {
+     "descricao": "o detetor diz «não está» às duas frases que as emendas tiraram do motor e a uma cópia com uma palavra trocada",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "leitura_do_19_e_pagina_inglesa_do_17",
+    "valor": {
+     "construcao": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+     "da_cabeca_de_codigo": true,
+     "evora_2027": {
+      "/estudos/evora-2027-capital-europeia-da-cultura": {
+       "robots": null,
+       "no_mapa_do_sitio": true
+      },
+      "/en/studies/evora-2027-capital-europeia-da-cultura": {
+       "robots": null,
+       "no_mapa_do_sitio": true
+      }
+     },
+     "resumo_na_lista": "O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado.",
+     "pagina_inglesa_do_17": {
+      "edicao_mostrada": "evora-quem-governou-a-camara-2009-2025/pt",
+      "porta_do_documento": "/estudos/evora-quem-governou-a-camara-2009-2025/documento",
+      "lingua_do_documento": "pt-PT",
+      "titulo_em_portugues": true,
+      "nota_dos_antecessores": 1
+     }
+    },
+    "comando": "o dist/ da construção da corrida dos portões na cabeça de código: a meta robots e o mapa do sítio das duas páginas do 19, o resumo da lista dos estudos, e o documento da página inglesa do 17",
+    "conhecido_positivo": {
+     "descricao": "a edição datada do Évora 2027 de setembro tem noindex e não está no mapa do sítio, e a página inglesa do 16 rende o documento inglês",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "divida_da_edicao_inglesa_do_17",
+    "valor": {
+     "fontes_inglesas": {
+      "08 Évora Mandates": {
+       "registo_ingles_no_motor": true,
+       "blocos": 173,
+       "alojado_no_sitio": false
+      },
+      "09 Évora Pelouros": {
+       "registo_ingles_no_motor": true,
+       "blocos": 138,
+       "alojado_no_sitio": false
+      }
+     },
+     "gabarito_ingles_do_17": false
+    },
+    "comando": "git ls-tree e git show na cabeça do motor (os registos ingleses do 08 e do 09 e o gabarito inglês do 17); registos/manifest.json do sítio",
+    "conhecido_positivo": {
+     "descricao": "o mesmo detetor vê o gabarito inglês do 16",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "portoes_e1b",
+    "valor": {
+     "sitio_cabeca_de_codigo": {
+      "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+      "build": 0,
+      "build_inicio": "2026-10-01T03:37:54Z",
+      "build_fim": "2026-10-01T03:39:49Z",
+      "verify": 0,
+      "verify_inicio": "2026-10-01T03:39:49Z",
+      "verify_fim": "2026-10-01T03:51:40Z",
+      "typecheck": 0,
+      "typecheck_inicio": "2026-10-01T03:51:40Z",
+      "typecheck_fim": "2026-10-01T03:51:40Z"
+     },
+     "sitio_corridas": {
+      "1": {
+       "cabeca": "335e0ef048e078eb5e3d0eea502d026f0c5d9a29",
+       "build": 1,
+       "build_inicio": "2026-10-01T03:13:06Z",
+       "build_fim": "2026-10-01T03:14:46Z",
+       "build_queixas": [
+        "PORTÃO DA VOZ · 4 problema(s)",
+        "· bloco por classificar em /en/municipalities/evora: «The State’s money is what arrived; the municipality’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, becaus",
+        "· bloco por classificar em /en/studies: «The State’s money is what arrived; the municipality’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protoco",
+        "· bloco por classificar em /estudos: «O dinheiro do Estado é o que chegou; o do município é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte ",
+        "· bloco por classificar em /municipios/evora: «O dinheiro do Estado é o que chegou; o do município é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que"
+       ],
+       "verify": 1,
+       "verify_inicio": "2026-10-01T03:14:46Z",
+       "verify_fim": "2026-10-01T03:23:43Z",
+       "verify_queixas": [
+        "PORTÃO DA VOZ · 4 problema(s)",
+        "· bloco por classificar em /en/municipalities/evora: «The State’s money is what arrived; the municipality’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, becaus",
+        "· bloco por classificar em /en/studies: «The State’s money is what arrived; the municipality’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protoco",
+        "· bloco por classificar em /estudos: «O dinheiro do Estado é o que chegou; o do município é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte ",
+        "· bloco por classificar em /municipios/evora: «O dinheiro do Estado é o que chegou; o do município é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que"
+       ],
+       "typecheck": 0,
+       "typecheck_inicio": "2026-10-01T03:23:43Z",
+       "typecheck_fim": "2026-10-01T03:23:43Z"
+      },
+      "2": {
+       "cabeca": "634aea12cd3d004c39a6a32a91eb46d4cc3f0f9b",
+       "build": 0,
+       "build_inicio": "2026-10-01T03:25:03Z",
+       "build_fim": "2026-10-01T03:26:57Z",
+       "verify": 1,
+       "verify_inicio": "2026-10-01T03:26:57Z",
+       "verify_fim": "2026-10-01T03:36:16Z",
+       "verify_queixas": [
+        "voz ✓ 65 marcadores · 15 exceções (0 de registo) · 1084 frases distintas, 23841 ocorrências em 1396 rotas · autorreferência 0 · nada por classificar · divulgação 1398 ocorrência(s) nas rotas medidas · 1419 linhas do inventário com bloco (78",
+        "L3 · palavras fora do vocabulário fechado                        2  (teto 0) ACIMA DO TETO",
+        "check:lugar · 1 falha(s):",
+        "✗ L3 · palavras fora do vocabulário fechado: 2, acima do teto 0."
+       ],
+       "typecheck": 0,
+       "typecheck_inicio": "2026-10-01T03:36:16Z",
+       "typecheck_fim": "2026-10-01T03:36:17Z"
+      },
+      "3": {
+       "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+       "build": 0,
+       "build_inicio": "2026-10-01T03:37:54Z",
+       "build_fim": "2026-10-01T03:39:49Z",
+       "verify": 0,
+       "verify_inicio": "2026-10-01T03:39:49Z",
+       "verify_fim": "2026-10-01T03:51:40Z",
+       "typecheck": 0,
+       "typecheck_inicio": "2026-10-01T03:51:40Z",
+       "typecheck_fim": "2026-10-01T03:51:40Z"
+      }
+     },
+     "motor": {
+      "codigo": 0,
+      "cabeca": "79ab4d5082e626dde450eb7953adad9682b9e524",
+      "ultima_linha": "GATE: PASS"
+     }
+    },
+    "comando": "os ficheiros .codigo que scripts/leituras/portoes.sh escreve depois de cada processo, e o do portão do motor (python3 -m core.gate)",
+    "conhecido_positivo": {
+     "descricao": "o código do portão do motor concorda com a última linha do seu registo (PASS com 0, FAIL sem 0)",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "capturas_e1b",
+    "valor": {
+     "capturas": 34,
+     "sha256_conferidos": 34,
+     "problemas": [],
+     "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+     "larguras": [
+      390,
+      1280
+     ],
+     "pedidos_recusados_para_fora": 0
+    },
+    "comando": "OEDP_E1_BLOCO=E1b node design/especime-v3/medicoes/e1-2026-09-30/captar-e1.mjs, e o sha256 de cada PNG relido",
+    "conhecido_positivo": {
+     "descricao": "dois corpos que diferem num byte dão sha256 diferentes",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "custo_e1b",
+    "valor": {
+     "modelo": "Claude Opus 5.5",
+     "inicio": "2026-10-01T03:38:12+01:00",
+     "medido_em": "2026-10-01T03:56:55+00:00",
+     "segundos_de_relogio": 4723,
+     "simbolos": 772242,
+     "fonte_dos_simbolos": "a diferença entre o contador do orçamento que a ferramenta mostra ao agente no início da sessão e antes desta medida, passada em OEDP_E1B_SIMBOLOS"
+    },
+    "comando": "git reflog do ramo: o primeiro commit desta passagem até à hora da medida",
+    "conhecido_positivo": {
+     "descricao": "o reflog do ramo tem a linha do primeiro commit da passagem",
+     "mordeu": true
+    }
+   }
+  ]
+ }
 }

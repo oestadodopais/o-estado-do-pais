@@ -1,0 +1,31 @@
+
+  travessia dos registos de conteúdo · motor 79ab4d5082e6 · destino [repositorio]/registos
+
+  03 pt  → avaliacao-economica-regional-de-portugal-2026/pt        blocos  53 · refs 411 · edicao-html            · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja
+  19 en  → evora-2027-capital-europeia-da-cultura/en               blocos 134 · refs 174 · edicao-html            · o D5 corre e NÃO bate: o motor prova d9b54468ad625c64691940178ed09edcc883d45dae13f93ebd64594ce0af24ff e o sítio aloja 53f67280f4b7ac91ab2ba0fce02644368d371993efc76d6bdc1cd3fd572f2933. Republique os bytes do documento
+  19 pt  → evora-2027-capital-europeia-da-cultura/pt               blocos 134 · refs 174 · edicao-html            · o D5 corre e NÃO bate: o motor prova 1ed3f37e5bdc5438337fec06e76eddb3633623012d29d67fd9d29ea2b1c6b1ad e o sítio aloja 9e6c290f9c974197e8df2d5e8c48d3ed094f6b8252bb42633441e80fa97dd018. Republique os bytes do documento
+  14 en  → evora-2027-prometido-painel-dinheiro/en                 blocos 130 · refs 190 · edicao-html            · o D5 corre e bate
+  14 pt  → evora-2027-prometido-painel-dinheiro/pt                 blocos 130 · refs 190 · edicao-html            · o D5 corre e bate
+  16 en  → evora-contas-da-camara-2010-2025/en                     blocos 171 · refs 486 · edicao-html            · o D5 corre e NÃO bate: o motor prova c0162af30b4112de7312304e349864c2891cd80475804cf5d8acea88d0cd1c94 e o sítio aloja 17903ac9626cbc02cf24624fd33639bcd39ce4da2046ddf74755ad0105452873. Republique os bytes do documento
+  16 pt  → evora-contas-da-camara-2010-2025/pt                     blocos 172 · refs 486 · edicao-html            · o D5 corre e NÃO bate: o motor prova f2bbbfa4b255a1e41608c1249b3c3d39eb767e9e2f2e5aff5dc4c664c402681c e o sítio aloja 11d75d9f8f51072606dca97d81c94726531ed8cb5cb24e77ccb7f3166aa1c3e6. Republique os bytes do documento
+  18 en  → evora-economia-e-dinheiro-publico-de-fora-da-camara/en  blocos 160 · refs 530 · edicao-html            · o D5 corre e NÃO bate: o motor prova 4ce8ec943d9d48d3b97306e99a14f61d8633098ba84f87d23061437cbf7312fb e o sítio aloja 02a344c4097fb4c6a8f9b1f19d06030851f4f443a50636e2727e5425374c540b. Republique os bytes do documento
+  18 pt  → evora-economia-e-dinheiro-publico-de-fora-da-camara/pt  blocos 160 · refs 530 · edicao-html            · o D5 corre e NÃO bate: o motor prova 5523f27d460233fe869c09219538667beed997f1823ba383def67a814ca2727d e o sítio aloja 8b88ba7a829c558217dc5b078acb333f9d7e401e2f1785612b0f888861ad2897. Republique os bytes do documento
+  06 pt  → evora-economia-investidores-portas-abertas-2026/pt      blocos  49 · refs 171 · edicao-html            · o D5 corre e bate
+  07 en  → evora-orcamentado-pago-devido-2025/en                   blocos  87 · refs 194 · edicao-html            · o D5 corre e bate
+  07 pt  → evora-orcamentado-pago-devido-2025/pt                   blocos  88 · refs 194 · edicao-html            · o D5 corre e bate
+  09 pt  → evora-os-pelouros-quem-os-teve-o-que-fizeram/pt         blocos 138 · refs 296 · edicao-html            · o D5 corre e bate
+  04 en  → evora-prometido-pago-auditado-2026/en                   blocos  95 · refs 324 · render-sem-graficos    · o D5 corre e bate
+  04 pt  → evora-prometido-pago-auditado-2026/pt                   blocos  95 · refs 324 · render-sem-graficos    · o D5 corre e bate
+  17 pt  → evora-quem-governou-a-camara-2009-2025/pt               blocos 210 · refs 484 · edicao-html            · o D5 corre e bate
+  08 pt  → evora-quinze-anos-cinco-mandatos/pt                     blocos 173 · refs 682 · edicao-html            · o D5 corre e bate
+
+  «03 en»: sem edição alojada no sítio
+  «06 en»: sem edição alojada no sítio
+  «08 en»: sem edição alojada no sítio
+  «09 en»: sem edição alojada no sítio
+
+  D5 corre em 10 edição(ões) e não corre em 7: avaliacao-economica-regional-de-portugal-2026/pt, evora-2027-capital-europeia-da-cultura/en, evora-2027-capital-europeia-da-cultura/pt, evora-contas-da-camara-2010-2025/en, evora-contas-da-camara-2010-2025/pt, evora-economia-e-dinheiro-publico-de-fora-da-camara/en, evora-economia-e-dinheiro-publico-de-fora-da-camara/pt
+  0 nova(s) · 6 alterada(s) · 11 inalterada(s)
+
+  Ensaio. Nada escrito, passe --write.
+
