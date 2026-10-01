@@ -39,14 +39,15 @@ check: null
 attributed_to:
   - "Município de Évora"
 
-study: "evora-quinze-anos-cinco-mandatos"
+study: "evora-contas-da-camara-2010-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "A dívida que o executivo entrante registou à data da tomada de posse. · [derivation do motor] the source prints 82.871.522,82; printed here to the nearest euro · [note do motor] the debt the incoming executive recorded at the handover date · Cruzado de ResearchHub content/08 Évora Mandates · divida-31out2013."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-09-01"
     path: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestao_2015.pdf#page=11"

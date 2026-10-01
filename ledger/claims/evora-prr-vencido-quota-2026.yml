@@ -28,7 +28,7 @@ derived_from:
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: "round ( evora-prr-vencido-aprovado-2026 / evora-prr-aprovado-2026 * 100 , 2 )"
 
-study: "evora-prometido-pago-auditado-2026"
+study: "evora-economia-e-dinheiro-publico-de-fora-da-camara"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "[derivation do motor] overdue approved money as a share of all approved money attributed to Évora · Cruzado de ResearchHub content/04 Évora Public Money · prr-overdue-approved-share."
 

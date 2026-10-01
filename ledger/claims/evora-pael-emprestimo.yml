@@ -39,14 +39,15 @@ check: null
 attributed_to:
   - "Município de Évora"
 
-study: "evora-quinze-anos-cinco-mandatos"
+study: "evora-quem-governou-a-camara-2009-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "[derivation do motor] the source prints 32.166.372,20; printed here to the nearest euro · Cruzado de ResearchHub content/08 Évora Mandates · pael-total."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-09-01"
     path: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=84"

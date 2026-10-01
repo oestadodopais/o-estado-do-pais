@@ -34,14 +34,15 @@ check: null
 attributed_to:
   - "IEFP"
 
-study: "evora-quinze-anos-cinco-mandatos"
+study: "evora-economia-e-dinheiro-publico-de-fora-da-camara"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "Cruzado de ResearchHub content/08 Évora Mandates · socio-registered-unemployment-2013."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-08-15"
     path: "https://www.iefp.pt/documents/10181/283855/SIE+-+Desemprego+registado+por+concelhos+dezembro+2013.pdf/bc2198f3-f017-498f-8b28-527773348d76"

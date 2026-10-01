@@ -39,14 +39,15 @@ check: null
 attributed_to:
   - "INE"
 
-study: "evora-economia-investidores-portas-abertas-2026"
+study: "evora-economia-e-dinheiro-publico-de-fora-da-camara"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "Cruzado de ResearchHub content/06 Évora Economy · pop-evora-2021."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-09-01"
     path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012918&Dim1=S7A2021%2CS7A2024%2CS7A2025&lang=PT&Dim2=1C40705"

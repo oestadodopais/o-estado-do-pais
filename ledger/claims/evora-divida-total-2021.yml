@@ -44,14 +44,15 @@ check: null
 attributed_to:
   - "Município de Évora"
 
-study: "evora-quinze-anos-cinco-mandatos"
+study: "evora-contas-da-camara-2010-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "[derivation do motor] the source prints 57 293 550,23; printed here to the nearest euro · [note do motor] source note: Componente 'Dívida Orçamental (1)' sem participadas: 57.120.644,71 (mesma página; igual à Dívida Global Apurada do Quadro 3, p.30). · Cruzado de ResearchHub content/08 Évora Mandates · ind-divida-total-2021."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-09-01"
     path: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=83"

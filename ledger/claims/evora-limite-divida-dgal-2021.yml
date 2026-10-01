@@ -34,14 +34,15 @@ check: null
 attributed_to:
   - "DGAL"
 
-study: "evora-orcamentado-pago-devido-2025"
+study: "evora-contas-da-camara-2010-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "Pai de evora-indice-de-divida-2021: a página que imprimir o índice deve imprimir também as duas pontas da conta. · [derivation do motor] DGAL 'Evolução endividamento total 2021', Évora row, limit column · [note do motor] column (1): limit under art. 52.º n.º 1, Lei 73/2013 · Cruzado de ResearchHub content/07 Évora Municipal Accounts · dgal-limite-2021."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-08-15"
     path: "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=266f4a32-848e-4d2c-99c6-ad5b5511d7fe&content_id=61A011D7-3594-4FBA-8B73-C3B5258440F6&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2022-12-13082811"

@@ -44,14 +44,15 @@ check: null
 attributed_to:
   - "Município de Évora"
 
-study: "evora-orcamentado-pago-devido-2025"
+study: "evora-contas-da-camara-2010-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: "[derivation do motor] printed to the nearest euro · Cruzado de ResearchHub content/07 Évora Municipal Accounts · limite-divida-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
 
-# Reconferências. Do exportador (registo de releitura) e dos leitores da casa.
+# Reconferências. Escritas pelo motor (indicators/refresh.py e
+# indicators/corredor.py), nunca à mão.
 verifications:
   - date: "2026-08-15"
     path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
