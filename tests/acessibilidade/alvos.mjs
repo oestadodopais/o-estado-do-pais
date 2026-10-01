@@ -861,7 +861,8 @@ function medeNaPagina(cfg) {
    */
   const eI105 = (el) =>
     el.matches(
-      '.rodape-b1 .ligacao-email,.pais-porta-lugares,.pais-porta-tema a,.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig,' +
+      /* `.pais-porta-lugares` saiu com o mapa da primeira página (L2a, 01.10.2026). */
+      '.rodape-b1 .ligacao-email,.pais-porta-tema a,.porta-correccoes-linha .ligacao-email,.porta-correccoes-linha > a,a.porta,a.lig,' +
         /* PP1: as portas da primeira página nova (as seis entradas, a da página europeia e as três do
            fim) e a das páginas das entradas, que são a mobília que as portas dos temas eram. */
         'a.pp-entrada,.pp-veredicto .regra-portas > a,.pp-portas .regra-portas > a,.entrada-portas > a',
