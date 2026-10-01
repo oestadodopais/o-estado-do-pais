@@ -27,6 +27,13 @@
  * 19, e o «Évora consome melhor do que produz» do 18), que estavam na cabeça da E1b
  * (`79ab4d5`), e a uma cópia com uma palavra trocada; se não disser, a conferência sai com 2
  * sem conferir nada. Sai 1 com uma cópia que não bate, e 0 quando todas batem.
+ *
+ * DESDE A PASSAGEM E1e (a releitura do Sol, achado 11): um documento alojado em falta conta como
+ * falha (o `null` deixou de passar por «igual»), e um gabarito de edição que está na pasta do motor
+ * e não se consegue ler conta como falha, em vez de a edição ser saltada em silêncio. Um estudo sem
+ * gabarito inglês (o 17) não lista esse gabarito, e por isso não falha. Com `--prova`, a conferência
+ * corre também com os leitores plantados (o documento português do 16 em falta; o gabarito inglês do
+ * 18 ilegível) e sai com 0 só se as duas plantas fizerem falhar e a corrida real não falhar.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -42,7 +49,7 @@ const ESTUDOS = [
 ];
 const [motor] = process.argv.slice(2);
 if (!motor || motor.startsWith('--')) {
-  console.error('Uso: node conferir-leituras-e1c.mjs <motor> [--json <ficheiro>]');
+  console.error('Uso: node conferir-leituras-e1c.mjs <motor> [--json <ficheiro>] [--prova]');
   process.exit(2);
 }
 const git = (...a) => execFileSync('git', ['-C', motor, '-c', 'core.quotepath=off', ...a], { encoding: 'utf8', maxBuffer: 64 << 20 });
@@ -57,18 +64,29 @@ const lida = (md) => normal(md
 const pedacos = (s) => s.split(' · ').map(normal).filter(Boolean);
 const naLinha = (pedaco, linhas) => linhas.some((l) => l.includes(pedaco));
 
-function edicoesDaPasta(pasta) {
-  const saida = {};
-  for (const lingua of ['pt', 'en']) {
-    const caminho = `${pasta}/Technical Source/documento.${lingua}.md.tmpl`;
+/** Os leitores reais: o motor pelo `git` na cabeça do ramo, e os documentos alojados pelo disco. */
+const LEITORES = {
+  listarGabaritos: (pasta) => git('ls-tree', '--name-only', cabeca, '--', `${pasta}/Technical Source/`)
+    .split('\n').map((l) => l.split('/').pop()).filter((n) => /^documento\.(pt|en)\.md\.tmpl$/.test(n)),
+  lerGabarito: (caminho) => git('show', `${cabeca}:${caminho}`),
+  lerEdicao: (md) => git('show', `${cabeca}:${md}`),
+  lerAlojado: (ficheiro) => (fs.existsSync(ficheiro) ? normal(parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('body')?.textContent ?? '') : null),
+};
+
+/** As edições de uma pasta, pelos gabaritos que a pasta tem; um gabarito que está lá e não se lê é um erro. */
+function edicoesDaPasta(pasta, leitores) {
+  const saida = {}, erros = [];
+  for (const nome of leitores.listarGabaritos(pasta)) {
+    const lingua = nome.split('.')[1];
+    const caminho = `${pasta}/Technical Source/${nome}`;
     let gabarito;
-    try { gabarito = git('show', `${cabeca}:${caminho}`); } catch { continue; }
+    try { gabarito = leitores.lerGabarito(caminho); } catch (e) { erros.push({ gabarito: caminho, erro: String(e.message ?? e).split('\n')[0] }); continue; }
     const linha = gabarito.split('\n').find((l) => l.startsWith('@@edicao '));
     if (linha) saida[lingua] = `${pasta}/${linha.slice('@@edicao '.length).trim()}`;
+    else erros.push({ gabarito: caminho, erro: 'o gabarito não diz a edição (@@edicao)' });
   }
-  return saida;
+  return { edicoes: saida, erros };
 }
-const visivel = (ficheiro) => normal(parse(fs.readFileSync(ficheiro, 'utf8')).querySelector('body')?.textContent ?? '');
 
 /* O conhecido-positivo, sobre o mesmo detetor e as mesmas linhas. */
 const CABECA_DA_E1B = '79ab4d5';
@@ -94,6 +112,7 @@ if (positivos.some((p) => !p.mordeu)) {
   process.exit(2);
 }
 
+function conferir(leitores) {
 const resultados = [];
 let falhas = 0;
 for (const slug of ESTUDOS) {
@@ -102,29 +121,48 @@ for (const slug of ESTUDOS) {
   const [ficheiro, ...resto] = l.origem.onde.split(':');
   const numeros = [resto.join(':')].join('').split(',').map((x) => Number(x.replace(/[^0-9]/g, ''))).filter(Boolean);
   const pasta = ficheiro.split('/').slice(0, 2).join('/');
-  const edicoes = edicoesDaPasta(pasta);
+  const { edicoes, erros } = edicoesDaPasta(pasta, leitores);
   const r = { slug, onde: l.origem.onde, linhas: numeros, edicoes: {} };
+  if (erros.length) { r.erros_dos_gabaritos = erros; falhas += erros.length; }
   for (const lingua of ['pt', 'en']) {
     const md = edicoes[lingua];
     const copia = l.origem[lingua];
     if (!md) { r.edicoes[lingua] = { edicao_no_motor: null, nota: 'o estudo não tem esta edição no motor' }; continue; }
     if (lingua === 'pt' && md !== ficheiro) { r.edicoes[lingua] = { erro: `a origem cita ${ficheiro} e a edição é ${md}` }; falhas++; continue; }
-    const linhas = git('show', `${cabeca}:${md}`).split('\n').map(lida);
+    const linhas = leitores.lerEdicao(md).split('\n').map(lida);
     const citadas = numeros.map((n) => linhas[n - 1] ?? '');
     const alojado = `studies-src/${slug}/${lingua}.html`;
-    const texto = fs.existsSync(alojado) ? visivel(alojado) : null;
+    const texto = leitores.lerAlojado(alojado);
     const cada = pedacos(copia ?? '').map((p) => ({ pedaco: p, no_motor: naLinha(p, citadas), no_documento_alojado: texto === null ? null : texto.includes(p) }));
     const frase = (l.frase?.[lingua] ?? []).filter((x) => typeof x === 'string').join(' ');
     const palavrasDasLinhas = new Set(citadas.join(' ').toLowerCase().match(/[\p{L}’']{3,}/gu) ?? []);
     const fora = [...new Set((frase.toLowerCase().replace(/’/g, "'").match(/[\p{L}']{3,}/gu) ?? []).filter((w) => !palavrasDasLinhas.has(w) && !palavrasDasLinhas.has(w.replace(/'/g, '’'))))];
-    const ok = cada.length > 0 && cada.every((c) => c.no_motor && c.no_documento_alojado !== false);
+    // um documento alojado em falta não é «igual»: cada pedaço tem de estar nele (passagem E1e)
+    const ok = texto !== null && cada.length > 0 && cada.every((c) => c.no_motor && c.no_documento_alojado === true);
     if (!ok) falhas++;
-    r.edicoes[lingua] = { edicao_no_motor: md, documento_alojado: texto === null ? null : alojado, pedacos: cada, bate: ok, palavras_da_frase_fora_das_linhas_citadas: fora };
+    r.edicoes[lingua] = { edicao_no_motor: md, documento_alojado: texto === null ? null : alojado, ...(texto === null ? { erro: `o documento alojado ${alojado} não existe` } : {}), pedacos: cada, bate: ok, palavras_da_frase_fora_das_linhas_citadas: fora };
   }
   resultados.push(r);
 }
-const saida = { cabeca_do_motor: cabeca, positivos, estudos: resultados, falhas };
+return { resultados, falhas };
+}
+
+const { resultados, falhas } = conferir(LEITORES);
+let prova = null;
+if (process.argv.includes('--prova')) {
+  const semDocumento = conferir({ ...LEITORES, lerAlojado: (f) => (f === 'studies-src/evora-contas-da-camara-2010-2025/pt.html' ? null : LEITORES.lerAlojado(f)) });
+  const gabaritoIlegivel = conferir({ ...LEITORES, lerGabarito: (c) => { if (c.startsWith('content/18 ') && c.endsWith('documento.en.md.tmpl')) throw new Error('planta: o gabarito não se lê'); return LEITORES.lerGabarito(c); } });
+  prova = {
+    corrida_real: { falhas },
+    documento_alojado_em_falta: { planta: 'studies-src/evora-contas-da-camara-2010-2025/pt.html lido como inexistente', falhas: semDocumento.falhas,
+      mordeu: semDocumento.falhas > falhas && semDocumento.resultados.find((x) => x.slug === 'evora-contas-da-camara-2010-2025').edicoes.pt.bate === false },
+    gabarito_ilegivel: { planta: 'o gabarito inglês do 18 a falhar na leitura', falhas: gabaritoIlegivel.falhas,
+      mordeu: gabaritoIlegivel.falhas > falhas && (gabaritoIlegivel.resultados.find((x) => x.slug === 'evora-economia-e-dinheiro-publico-de-fora-da-camara').erros_dos_gabaritos ?? []).length === 1 },
+  };
+}
+const saida = { cabeca_do_motor: cabeca, positivos, estudos: resultados, falhas, ...(prova ? { prova } : {}) };
 const j = process.argv.indexOf('--json');
 if (j >= 0) fs.writeFileSync(process.argv[j + 1], JSON.stringify(saida, null, 1) + '\n');
 console.log(JSON.stringify(saida, null, 1));
+if (prova) process.exit(prova.documento_alojado_em_falta.mordeu && prova.gabarito_ilegivel.mordeu && falhas === 0 ? 0 : 2);
 process.exit(falhas ? 1 : 0);

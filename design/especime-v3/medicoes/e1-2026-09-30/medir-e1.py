@@ -297,8 +297,10 @@ def medir_numeros_em_dois_estudos():
 #   C2 · quando a linha da tabela escreve onde o valor foi lido («p. 88», «folha 43 do PDF»), a
 #        linha citada é dessa página ou folha, pelo seu excerto;
 #   C3 · uma linha que se diz o total da tabela («Total», «Total da tabela», «Table total») é a
-#        soma de linhas da mesma coluna (de um subconjunto delas, porque há tabelas com
-#        subtotais), dentro do arredondamento que os números impressos trazem.
+#        soma de duas ou mais linhas da mesma coluna (de um subconjunto delas, porque há tabelas
+#        com subtotais), procuradas primeiro nas linhas que a precedem na tabela, dentro do
+#        arredondamento que os números impressos trazem. Desde a E1e, uma linha isolada não passa
+#        por total (a releitura do Sol, achado 9, aceitava-a com um subconjunto de uma linha).
 #
 # A C1 sozinha não morde neste caso, e diz-se: a célula do total citava a linha cujo valor
 # imprimia, e a página que escrevia era a dessa linha; o que estava errado era o objeto, e é a C3
@@ -388,24 +390,34 @@ def citadas(registo, livro):
                                            "localizacao_da_tabela": sorted(locs), "localizacao_da_linha": sorted(locs_do_excerto(c.get("excerpt"))), **onde})
                             continue
                     if rotulo in TOTAIS:
+                        # UM TOTAL É A SOMA DE PELO MENOS DUAS LINHAS (passagem E1c, e a E1e pela releitura do Sol, achado
+                        # 9): um subconjunto de uma linha só deixava passar por total uma parcela isolada. Procura-se
+                        # primeiro nas linhas que precedem o total na mesma tabela; só se elas não derem a soma se
+                        # procura em toda a coluna (o total que abre a tabela, como o da receita operacional do 19).
                         conta["totais_da_tabela"] += 1
                         alvo = numero(f["printed"])
-                        outros = []
+                        antes, toda = [], []
                         for rj, l2 in enumerate(rows):
                             if rj == ri or ci >= len(l2): continue
                             for f2 in l2[ci].get("figures", []):
                                 n2 = numero(f2["printed"])
-                                if n2 is not None: outros.append((n2, meia_unidade(f2["printed"])))
-                        achou = None
-                        if alvo is not None and len(outros) <= 18:
-                            for k in range(1, len(outros) + 1):
-                                for comb in itertools.combinations(outros, k):
+                                if n2 is not None:
+                                    toda.append((n2, meia_unidade(f2["printed"])))
+                                    if rj < ri: antes.append(toda[-1])
+                        def soma_de(parcelas):
+                            if alvo is None or len(parcelas) > 18: return None
+                            for k in range(2, len(parcelas) + 1):
+                                for comb in itertools.combinations(parcelas, k):
                                     tol = sum(m for _, m in comb) + meia_unidade(f["printed"])
-                                    if abs(sum(n for n, _ in comb) - alvo) <= tol: achou = k; break
-                                if achou: break
-                        if not achou:
-                            falhas.append({"celula": "C3", "o_que": "a linha diz-se o total da tabela e não é a soma de linhas da sua coluna",
-                                           "soma_de_todas": str(sum(n for n, _ in outros)), **onde})
+                                    if abs(sum(n for n, _ in comb) - alvo) <= tol: return k
+                            return None
+                        if soma_de(antes):
+                            conta["totais_das_linhas_que_o_precedem"] += 1
+                        elif soma_de(toda):
+                            conta["totais_de_linhas_de_toda_a_coluna"] += 1
+                        else:
+                            falhas.append({"celula": "C3", "o_que": "a linha diz-se o total da tabela e não é a soma de duas ou mais linhas da sua coluna",
+                                           "soma_de_todas": str(sum(n for n, _ in toda)), **onde})
     return dict(conta), falhas
 
 def plantar(registo, planta):
@@ -427,6 +439,12 @@ def plantar(registo, planta):
         b = tabela("linha | valor escrito | onde")
         alvo = next(l for l in b["rows"] if l[0]["text"].replace("​", "").strip() == "Total")
         alvo[1]["figures"][0]["row"] = "bbs-desp-total"
+    elif planta == "linha-isolada-como-total":
+        # a releitura do Sol (achado 9): o total dos grupos de funções de 2017 com o valor e a linha da primeira parcela;
+        # o número é o da linha que cita (a C1 passa), e só a C3 o pode ver
+        b = tabela("Grupo de funções | 2017 | 2021")
+        alvo = next(l for l in b["rows"] if l[0]["text"].replace("​", "").strip() == "Total")
+        alvo[1]["figures"] = [dict(b["rows"][1][1]["figures"][0])]
     return r
 
 pedidos = json.loads(sys.stdin.read()); saida = {}
@@ -470,6 +488,8 @@ def medir_celulas():
     plantas = {}
     for planta in ("total-da-tabela", "valor-de-outra-linha", "linha-de-outra-pagina"):
         plantas[planta] = dict(registos[reg19], nome=f"planta:{planta}", planta=planta)
+    reg17 = next(n for n in registos if n.startswith(NOVOS["evora-quem-governou-a-camara-2009-2025"]) and "(pt-PT)" in n)
+    plantas["linha-isolada-como-total"] = dict(registos[reg17], nome="planta:linha-isolada-como-total", planta="linha-isolada-como-total")
     saida = correr_celulas(pedidos + list(registos.values()) + list(plantas.values()))
     planta = saida.pop("planta")
     base16 = saida[f"{NOVOS['evora-contas-da-camara-2010-2025']}/{md16.name}"]
@@ -495,7 +515,7 @@ def medir_celulas():
             classes[nome][c["classe"]] += 1
     falhas_reais = [dict(f, registo=n) for n, (_c, fs) in cit.items() for f in fs]
     mordidas = {k: sorted({f["celula"] for f in fs}) for k, (_c, fs) in plt.items()}
-    esperadas = {"total-da-tabela": ["C3"], "valor-de-outra-linha": ["C1"], "linha-de-outra-pagina": ["C2"]}
+    esperadas = {"total-da-tabela": ["C3"], "valor-de-outra-linha": ["C1"], "linha-de-outra-pagina": ["C2"], "linha-isolada-como-total": ["C3"]}
     medida("celulas_de_tabela_sem_linha", {n: {"contagem": c, "casos": casos} for n, (c, casos) in sem.items()} |
            {"_classes_das_celulas_sem_linha": {n: dict(c) for n, c in classes.items()},
             "_outras_no_19": sum(c.get("outro", 0) for n, c in classes.items() if n.startswith("19")),
@@ -508,15 +528,18 @@ def medir_celulas():
                                       "figuras_nas_celulas": sum(c.get("figuras", 0) for c, _f in cit.values()),
                                       "com_localizacao_na_linha_da_tabela": sum(c.get("com_localizacao", 0) for c, _f in cit.values()),
                                       "totais_da_tabela": sum(c.get("totais_da_tabela", 0) for c, _f in cit.values()),
+                                      "totais_das_linhas_que_o_precedem": sum(c.get("totais_das_linhas_que_o_precedem", 0) for c, _f in cit.values()),
+                                      "totais_de_linhas_de_toda_a_coluna": sum(c.get("totais_de_linhas_de_toda_a_coluna", 0) for c, _f in cit.values()),
                                       "falhas": len(falhas_reais), "casos": falhas_reais},
            "os registos de conteúdo (record.json) das sete edições no motor, lidos com o livro do estudo por core.reconcile: em cada "
            "figura de cada célula, C1 o número é uma forma da linha que a célula cita, C2 a linha citada é da página ou da folha que a "
            "linha da tabela escreve (pelo excerto da linha), C3 uma linha «Total», «Total da tabela» ou «Table total» é a soma de "
-           "linhas da sua coluna, dentro do arredondamento impresso",
+           "duas ou mais linhas da sua coluna, primeiro das que a precedem na tabela, dentro do arredondamento impresso",
            {"descricao": "três plantas numa cópia em memória do registo português do 19: a linha «Total da tabela | 39 336 001,42 € | "
                          "p. 88» de volta à tabela das obras (o caso das duas leituras) tem de dar a C3; uma obra a citar a linha do "
                          "total de capital, de outro valor, a C1; e o total da receita operacional da folha 43 a citar a despesa total "
-                         "da p. 87, com o mesmo valor, a C2",
+                         "da p. 87, com o mesmo valor, a C2; e, numa cópia do registo português do 17, o total dos grupos de funções de "
+                         "2017 com o valor e a linha da primeira parcela (uma linha isolada que se dizia total) dá a C3",
             "mordidas_por_planta": mordidas, "esperadas": esperadas,
             "mordeu": mordidas == esperadas})
 

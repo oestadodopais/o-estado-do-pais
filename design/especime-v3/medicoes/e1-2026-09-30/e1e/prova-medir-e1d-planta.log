@@ -1,0 +1,10 @@
+E1d · medidas
+  cabecas_e1d: {"sitio": "72efe6846180ba2677c35351f5f9281fa59376e0", "motor": "d2495a7d0d023dccb6eb4014b917bf06554438f6", "sitio_na_e1c": "e986468d", "motor_na_e1c":
+  fichas_e1d: {"edicoes": {"pt": {"mandato-2013-2017/deixou": {"existe": true, "abre_com_a_frase": false, "a_data": true, "a_linha": true, "texto": "As contas do an
+  regiao_e1d: {"edicoes": {"pt": {"sai_motor_antes": 1, "sai_motor_agora": 0, "sai_documento_antes": 1, "sai_documento_agora": 0, "entra_motor": 1, "entra_documento
+  travessia_e1d: {"documentos_realojados": 2, "mudaram": 2, "commit_do_motor_dos_bytes": ["4f3165a"], "registos": {"novos": 0, "alterados": 2, "inalterados": 15}, "che
+  motor_e1d: {"portao": {"codigo": 0, "cabeca": "7187b8235c45caac3cbe81b31d2493f0c728edff", "inicio": "2026-10-01T07:06:52Z", "fim": "2026-10-01T07:10:40Z", "linha
+  portoes_e1d: {"construcao_da_cabeca_de_codigo": {"cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0", "build": 0}}
+  capturas_e1d: {"capturas": 24, "sha256_conferidos": 24, "cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0", "estado": "cabeca-limpa", "problemas": [], "pedidos_re
+  custo_e1d: {"modelo": "Claude Opus 5.5", "primeiro_commit_da_passagem": "2026-10-01T07:52:16+01:00 4f3165a E1d: o corpo do 18 diz «uma região abaixo da média do 
+E1d · 8 medidas; conhecidos-positivos que não morderam: nenhum; medidas reais que falharam: ['fichas_e1d']

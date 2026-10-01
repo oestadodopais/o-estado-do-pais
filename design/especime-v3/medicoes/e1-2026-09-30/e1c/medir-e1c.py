@@ -15,6 +15,13 @@ nas páginas construídas; a travessia, os portões, as capturas, o mapa de migr
 Cada medida traz o nome, o valor, o comando e um conhecido-positivo: o mesmo detetor sobre uma entrada
 cuja resposta se sabe. As outras chaves do medidas.json (o E1 e a E1b) ficam como estavam. Nenhum caminho
 da máquina vai para os ficheiros: as árvores dizem-se pelas cabeças.
+
+O GUIÃO SAI COM 1 QUANDO UMA MEDIDA REAL FALHA (passagem E1e, a releitura do Sol, achado 10), e não só
+quando um conhecido-positivo não morde: `falhas_reais()` diz, medida a medida, o que é uma falha (uma
+emenda por fazer, uma célula com a linha errada, um portão vermelho, uma captura que não confere), e a
+lista vai para o ficheiro. Para a prova, `OEDP_DIST` aponta para outra construção (uma cópia com um campo
+errado) e `OEDP_MEDIDAS_JSON` para outro ficheiro de saída, para que a corrida de prova não toque no
+medidas.json nem no mapa de migração do bloco.
 """
 import hashlib
 import importlib.util
@@ -34,7 +41,10 @@ _spec = importlib.util.spec_from_file_location("medir_e1", PASTA / "medir-e1.py"
 m1 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(m1)
 MOTOR = m1.MOTOR
-DIST = SITIO / "dist"
+DIST = Path(os.environ["OEDP_DIST"]).resolve() if os.environ.get("OEDP_DIST") else SITIO / "dist"
+m1.DIST = DIST
+ALVO = Path(os.environ["OEDP_MEDIDAS_JSON"]) if os.environ.get("OEDP_MEDIDAS_JSON") else PASTA / "medidas.json"
+MAPA_SAIDA = ALVO.parent / "mapa-de-migracao.json" if os.environ.get("OEDP_MEDIDAS_JSON") else PASTA / "mapa-de-migracao.json"
 CABECA_E1B_MOTOR = "79ab4d5"
 CABECA_E1B_SITIO = "0fa073e9"
 # o commit do lugar de direção com as duas leituras e o mandato desta passagem: a base do trabalho do construtor no sítio
@@ -414,7 +424,7 @@ def medir_mapa():
                                             "ou de onde sai com a razão escrita no gabarito, nas duas línguas. Escrito por e1c/medir-e1c.py a partir de "
                                             "core.compor.mapa_de_migracao no motor.",
                 "motor": corre(["git", "rev-parse", "HEAD"], cwd=MOTOR).strip(), "contas": contas, "blocos": blocos}
-    (PASTA / "mapa-de-migracao.json").write_text(json.dumps(ficheiro, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    MAPA_SAIDA.write_text(json.dumps(ficheiro, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     pt = contas["pt"]
     soma = pt["blocos"] + 2 * len(pt["repartidos_por_tres_estudos"]) + len(pt["repartidos_por_dois_estudos"]) + len(pt["que_entram_num_estudo_e_saem_declarados_de_outro"])
     medida("mapa_de_migracao_e1c", {**contas, "a_soma_bate_em_portugues": {"blocos": pt["blocos"], "mais_dois_por_bloco_repartido_por_tres": 2 * len(pt["repartidos_por_tres_estudos"]),
@@ -477,6 +487,27 @@ def medir_custo():
            {"descricao": "o primeiro commit da passagem no motor é o das emendas, a8febe0", "mordeu": bool(m and m.split()[1] == "a8febe0")})
 
 
+def falhas_reais(medidas):
+    """O que é uma falha em cada medida real; as medidas que só contam (o custo, as repartições das células) não falham."""
+    v = {m["nome"]: m["valor"] for m in medidas}
+    regras = {
+        "emendas_e1c": lambda x: bool(x["falhas"]),
+        "celulas_e_linha_citada": lambda x: x["falhas"] > 0,
+        "celulas_de_tabela_sem_linha": lambda x: x["_quantidades_sem_linha_16_17_18"] > 0 or x["_outras_no_19"] > 0,
+        "contradicoes_i180": lambda x: not x["a_reconciliacao_passa"],
+        "selos_corrigidos_e1c": lambda x: x["certas_no_19"] != len(x["celulas"]),
+        "ficha_de_evora_e1c": lambda x: not x["as_quatro_fichas_dizem_a_data_e_a_origem"],
+        "leitura_da_economia_e1c": lambda x: not x["em_todas_a_frase_nova_e_nenhuma_antiga"],
+        "travessia_e1c": lambda x: (x["check_documentos"] != 0 or x["check_documentos_com_origem"] != 0 or x["mudaram"] != x["documentos_realojados"]
+                                    or x["conferencia_das_leituras"]["codigo"] != 0 or x["conferencia_das_leituras"]["falhas"] != 0),
+        "motor_e1c": lambda x: x["portao"]["codigo"] != 0 or not x["portao"]["linha_final_pass"] or x["commits"]["commit_1"] != 0 or x["commits"]["commit_2"] != 0,
+        "portoes_e1c": lambda x: any(c not in (0, None) for corrida in x.values() for k, c in corrida.items() if k in ("build", "verify", "typecheck")),
+        "capturas_e1c": lambda x: bool(x["divergem"]) or bool(x["problemas"]) or x["sha256_conferidos"] != x["capturas"],
+        "mapa_de_migracao_e1c": lambda x: not x["a_soma_bate_em_portugues"]["bate"] or x["pt"]["sem_destino"] > 0,
+    }
+    return sorted(n for n, regra in regras.items() if n in v and regra(v[n]))
+
+
 def main():
     os.chdir(SITIO)
     print("E1c · medidas")
@@ -500,18 +531,20 @@ def main():
     medir_mapa()
     medir_custo()
     falhou = [x["nome"] for x in MEDIDAS if not x["conhecido_positivo"].get("mordeu")]
-    alvo = PASTA / "medidas.json"
-    tudo = json.loads(ler(alvo))
+    reais = falhas_reais(MEDIDAS)
+    alvo = ALVO
+    tudo = json.loads(ler(alvo)) if alvo.exists() else {}
     tudo["e1c"] = {"bloco": "E1c", "guiao": "design/especime-v3/medicoes/e1-2026-09-30/e1c/medir-e1c.py",
                    "medido_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                   "conhecidos_positivos_que_nao_morderam": falhou, "medidas": MEDIDAS}
+                   "conhecidos_positivos_que_nao_morderam": falhou, "medidas_reais_que_falharam": reais, "medidas": MEDIDAS}
     texto = json.dumps(tudo, ensure_ascii=False, indent=1) + "\n"
     for proibido in (str(Path.home()), str(MOTOR), str(SITIO)):
         if proibido and proibido in texto:
             raise SystemExit("Um caminho da máquina ia para o medidas.json; nada escrito.")
     alvo.write_text(texto, encoding="utf-8")
-    print(f"E1c · {len(MEDIDAS)} medidas; conhecidos-positivos que não morderam: {falhou or 'nenhum'}")
-    return 1 if falhou else 0
+    print(f"E1c · {len(MEDIDAS)} medidas; conhecidos-positivos que não morderam: {falhou or 'nenhum'}; "
+          f"medidas reais que falharam: {reais or 'nenhuma'}")
+    return 1 if falhou or reais else 0
 
 
 if __name__ == "__main__":
