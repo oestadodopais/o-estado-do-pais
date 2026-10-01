@@ -922,9 +922,15 @@ export function prova(lang = 'pt') {
        uma região sem linhas que ganhasse página, ou uma região com linhas que a
        perdesse, dá dois números diferentes e a construção fecha.
 
-       A PORTA DAS DUAS É A RÉGUA, na própria página do índice: o que elas contam
-       vê-se ali mesmo, linha a linha, e é o que a IDENTIDADE §10 permite. */
-    regioes_total: k('regioes_total', contagensDasRegioes().declaradas, `${routePath('regioes', lang)}#regua`),
+       A PORTA DAS DUAS ERA A RÉGUA, na própria página do índice: o que elas
+       contam vê-se ali mesmo, linha a linha, e é o que a IDENTIDADE §10 permite.
+
+       A DE `regioes_total` PASSA A SER A LISTA DAS REGIÕES EM «LUGARES» (bloco
+       L2a, 01.10.2026; §1.149). Nenhuma página a rendia, e a gaveta das regiões
+       passa a dizê-la ao lado do nome da secção; a porta de um número é a lista
+       que ele conta, na página onde ele se lê, como a de `mapa_unidades`. A
+       recontagem do portão não muda. */
+    regioes_total: k('regioes_total', contagensDasRegioes().declaradas, `${routePath('lugares', lang)}#regioes-k`),
     regioes_com_linha: k(
       'regioes_com_linha',
       contagensDasRegioes().comLinha,

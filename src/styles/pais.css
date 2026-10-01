@@ -5,10 +5,8 @@
 .pais-leitura .claim-value, .pais-leitura .claim-sufixo { font-weight: 600; }
 .pais-leitura .claim-sufixo { white-space: pre; }
 .pais-leitura .src-chip { margin-inline-start: 4px; }
-.pais-mapa { margin-top: 22px; }
-.pais-mapa .mapa-tela { width: 100%; max-width: 360px; }
-.pais-porta-lugares { margin-right: 12px; position: relative; z-index: 1; display: inline-flex; gap: .3em; align-items: baseline; color: var(--ink); text-decoration: none; min-height: 44px; }
-.pais-porta-lugares:hover { text-decoration: underline; }
+/* L2a (01.10.2026): o mapa da primeira página e a sua porta para «Lugares» saíram (§1.149), e as
+   regras de `.pais-mapa` e de `.pais-porta-lugares` saíram com eles. */
 .pais-temas, .pais-sec { margin-top: clamp(34px, 4.6vw, 58px); }
 .pais-temas .sec-head, .pais-sec .sec-head { margin-bottom: clamp(18px, 2.4vw, 26px); }
 .pais-tema { padding-top: 0; }

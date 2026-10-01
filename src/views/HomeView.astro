@@ -5,10 +5,15 @@
  *
  * A ordem é a do brief (§2, ponto 3): o rótulo de inteligência artificial, como hoje (vem do
  * `Base`); «O que se passa», com a data dos números mais recentes e os cinco blocos pela ordem
- * declarada; «Por onde começar», com as seis entradas; a pesquisa dos lugares e, ao lado, o mapa,
- * que desce do topo para aqui como porta dos lugares; «Estudos recentes», como hoje; o veredicto dos
- * valores de referência da Comissão Europeia, com um título seu e a porta da página da União; e as
- * portas «Todos os temas», «Números e fontes» e «O que mudou».
+ * declarada; «Por onde começar», com as portas dos assuntos e a dos lugares; «Estudos recentes», como
+ * hoje; o veredicto dos valores de referência da Comissão Europeia, com um título seu e a porta da
+ * página da União; e as portas «Todos os temas», «Números e fontes» e «O que mudou».
+ *
+ * O MAPA E A PESQUISA DOS LUGARES SAÍRAM DAQUI (bloco L2a, 01.10.2026; `DECISIONS.md` §1.149). O
+ * diretor leu no telemóvel que o mapa ficava muito em baixo, depois dos cinco blocos e das portas, e
+ * os dois eram uma segunda cópia do que «Lugares» tem (uma coisa, um lugar, §1.143). A porta
+ * «Lugares» do índice leva agora um mapa pequeno como sinal (`SinalDosLugares.astro`), e o mapa
+ * inteiro, a pesquisa e a menção da fonte vivem em «Lugares», logo a seguir à pesquisa.
  *
  * SAÍRAM DAQUI, e cada coisa tem outro lugar: a leitura do país (`LeituraDoPais.astro`, que prendia
  * nove valores e fechava a construção quando um mudava; o que ela dizia está nos blocos da habitação,
@@ -26,13 +31,10 @@ import { portaDoCartao } from '../lib/assuntos.mjs';
 import Masthead from '../components/Masthead.astro';
 import BlocoDaPrimeiraPagina from '../components/inicio/BlocoDaPrimeiraPagina.astro';
 import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
-import Pesquisa from '../components/inicio/Pesquisa.astro';
-import MapaRespira from '../components/inicio/MapaRespira.astro';
-import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
-import { concelhos as concelhosDaCarta, ledeDoPainel } from '../lib/inicio.mjs';
+import { ledeDoPainel } from '../lib/inicio.mjs';
 import { FIGURAS_PDM } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
@@ -65,9 +67,6 @@ if (!lede?.ano || periodos.size !== 1 || !periodos.has(lede.ano)) throw new Erro
    componente, que pergunta ao mesmo resolvedor. */
 const ids = idsDosBlocos();
 const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
-
-const cs = concelhosDaCarta();
-const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null);
 ---
 <Base lang={lang} path={path} title={s.home.metaTitle} description={s.home.metaDescription}>
   <Masthead slot="masthead" lang={lang} path={path} />
@@ -85,24 +84,6 @@ const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug
   <section class="pp-entradas" data-entradas aria-labelledby="entradas-k">
     <h2 class="pp-sec-k" id="entradas-k">{s.primeira.porOndeComecar}</h2>
     <IndiceDosAssuntos lang={lang} />
-  </section>
-
-  {/* A PESQUISA DOS LUGARES E, AO LADO, O MAPA (o §2, ponto 3, do brief). É a mesma pesquisa da
-      página dos lugares (`Pesquisa.astro` e `CampoDeBusca.astro`): um formulário que leva a
-      `/lugares/` sem guião, e a fila dos resultados fechada do servidor, que o guião dessa página
-      acende. O mapa é o da primeira página de antes, com a porta dos lugares, até ao passo 5 da
-      ordem (o mapa com uma medida por concelho). */}
-  <section class="pp-lugares" aria-labelledby="lugares-k">
-    <h2 class="pp-sec-k" id="lugares-k">{r.lugares}</h2>
-    <div class="pp-lugares-grelha">
-      <div class="pesquisa-bloco pp-pesquisa" data-pesquisa-bloco>
-        <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={routePath('lugares', lang)} resultadosOcultos={true} />
-      </div>
-      <div class="pais-mapa pp-mapa">
-        <MapaRespira s={s} lang={lang} concelhos={cs} portaLugares />
-        <LegendaDoMapa />
-      </div>
-    </div>
   </section>
 
   <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
@@ -125,7 +106,4 @@ const destinoDoConcelho = (c) => (c.pagina ? routePath('municipio', lang, { slug
     <p class="regra-portas"><a href={routePath('livro', lang)}>{s.nav.livro} →</a></p>
     <p class="regra-portas"><a href={routePath('correcoes', lang)}>{r.mudou} →</a></p>
   </div>
-
-  <script src="/js/municipios.js" defer is:inline></script>
-  <script src="/js/mapa-unidades.js" defer is:inline></script>
 </Base>

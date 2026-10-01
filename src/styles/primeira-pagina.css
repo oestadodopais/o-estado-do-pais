@@ -281,7 +281,7 @@
 .pp-numero-valor .src-chip { margin-inline-start: 6px; }
 .pp-numero-periodo { color: var(--muted); text-align: right; white-space: nowrap; }
 
-/* ── «Por onde começar», os lugares e as portas ──────────────── */
+/* ── «Por onde começar» e as portas ──────────────── */
 
 .pp-sec-k {
   font-family: var(--f-versal);
@@ -310,9 +310,20 @@
 .pp-entrada::after { content: '→'; grid-column: 2; grid-row: 1 / span 2; font-family: var(--f-prosa); font-size: 19px; color: var(--muted); }
 .pp-entrada:hover .pp-entrada-nome { text-decoration: underline; text-underline-offset: 4px; }
 
-.pp-lugares { margin-top: clamp(30px, 4vw, 52px); padding-top: 18px; border-top: 1px solid var(--rule); }
-.pp-lugares-grelha { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
-.pp-mapa .mapa-tela { width: 100%; max-width: 360px; }
+/* O SINAL DA PORTA «LUGARES» (bloco L2a, 01.10.2026; §1.149). O mapa inteiro saiu daqui para
+   «Lugares», e a porta leva um mapa pequeno à esquerda do nome: o contorno do país, com o traço de
+   um píxel do mapa inteiro e as molduras na cor delas. A largura vem nos atributos do `<svg>`. A
+   menção da fonte vai logo por baixo da porta, fora da ligação, na letra da mobília de
+   proveniência, escrita aqui outra vez porque a página dos temas não liga `mapa.css`. */
+.pp-entrada-com-sinal { grid-template-columns: auto minmax(0, 1fr) auto; }
+.pp-entrada-com-sinal .pp-sinal { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+.pp-entrada-com-sinal .pp-entrada-nome, .pp-entrada-com-sinal .pp-entrada-linha { grid-column: 2; }
+.pp-entrada-com-sinal::after { grid-column: 3; }
+.pp-sinal { display: block; overflow: visible; }
+.pp-sinal-contorno { fill: none; stroke: var(--ink); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.pp-sinal-moldura { fill: none; stroke: var(--g3); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.pp-entrada-fonte { margin: -4px 0 12px; }
+.pp-entrada-fonte, .pp-entrada-fonte .fonte-da-carta { font-family: var(--f-instr); font-size: 12px; line-height: 1.45; color: var(--muted); }
 
 .pp-veredicto .pais-leitura { font-size: clamp(18px, 1.9vw, 22px); }
 .pp-portas { margin-top: clamp(26px, 3.4vw, 40px); display: flex; flex-wrap: wrap; gap: 0 28px; }
@@ -360,7 +371,6 @@
   .pp-desenho { grid-area: desenho; margin-top: 14px; }
   .pp-notas { grid-area: notas; }
   .pp-entradas-lista { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .pp-lugares-grelha { grid-template-columns: minmax(0, 1fr) 360px; column-gap: clamp(24px, 3vw, 48px); align-items: start; }
   .pp-plot { --pp-altura: 220px; grid-template-columns: repeat(var(--pp-colunas), 54px); column-gap: 16px; }
   .pp-col-periodos { grid-template-columns: repeat(var(--pp-colunas), 54px); column-gap: 16px; }
 }

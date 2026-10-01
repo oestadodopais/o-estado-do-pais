@@ -36,13 +36,20 @@
    teclado e para quem ouve, e não existia para quem vê. A gaveta continua a ser
    uma gaveta — fecha-se, e o `<summary>` continua a ser um alvo de 44 px que
    funciona sem guião —, o que muda é o estado com que chega. */
-const { rotulo, chave, aberta = false } = Astro.props;
+/* O NOME PODE SER UM TÍTULO (bloco L2a, 01.10.2026). As duas listas de
+   «Lugares» dobram-se em gavetas, e o nome de cada uma é o título da sua secção
+   com a contagem ao lado: um `<h2>` dentro do `<summary>`, que o conteúdo de um
+   `<summary>` admite. Quem precisa disso passa a ranhura `nome`; quem passa só
+   `rotulo` rende como sempre rendeu. */
+const { rotulo = null, chave, aberta = false } = Astro.props;
+const comNome = Astro.slots.has('nome');
+if (!comNome && !rotulo) throw new Error('Gaveta: uma gaveta sem nome não se anuncia.');
 ---
 
 <details class="gaveta" data-gaveta={chave} open={aberta || undefined}>
   <summary class="gaveta-abrir">
     <span class="gaveta-seta" aria-hidden="true"></span>
-    <span class="gaveta-nome">{rotulo}</span>
+    {comNome ? <slot name="nome" /> : <span class="gaveta-nome">{rotulo}</span>}
   </summary>
   <div class="gaveta-corpo">
     <slot />

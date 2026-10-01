@@ -1,17 +1,31 @@
 ---
-/** A mesma lista, na mesma ordem, na primeira página e no índice dos temas. */
+/** A mesma lista, na mesma ordem, na primeira página e no índice dos temas.
+ *
+ * O SINAL DA PORTA «LUGARES» (bloco L2a, 01.10.2026; §1.149). A entrada que o
+ * declara (`sinal` em `ENTRADAS`) leva um mapa pequeno dentro da ligação, antes
+ * do nome: o contorno do país, sem dados. A menção da fonte do desenho fica fora
+ * da ligação e logo a seguir a ela, dentro do mesmo item: é a única obrigação da
+ * licença da Carta, escrita onde o desenho está (Emenda 20e), e não faz parte do
+ * nome da porta. A R6 do `check:mapa` confere-a.
+ */
 import { linhaDoIndice } from '../lib/assuntos.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
+import { t } from '../i18n/strings.mjs';
+import SinalDosLugares from './inicio/SinalDosLugares.astro';
+import FonteDaCarta from './FonteDaCarta.astro';
 import '../styles/primeira-pagina.css';
 const { lang = 'pt', seccoes = false } = Astro.props;
+const s = t(lang);
 ---
 <ul class="pp-entradas-lista" data-indice-assuntos>
   {ENTRADAS.map((e) => (
     <li data-entrada={e.id}>
-      <a class="pp-entrada" href={e.rota[lang]}>
+      <a class:list={['pp-entrada', 'sinal' in e && e.sinal && 'pp-entrada-com-sinal']} href={e.rota[lang]}>
+        {'sinal' in e && e.sinal && <SinalDosLugares rotulo={s.primeira.sinalDosLugares} />}
         <span class="pp-entrada-nome">{e.nome[lang]}</span>
         <span class="pp-entrada-linha">{linhaDoIndice(e, lang)}</span>
       </a>
+      {'sinal' in e && e.sinal && <p class="pp-entrada-fonte" data-fonte-do-sinal><FonteDaCarta /></p>}
       {seccoes && <ul class="assunto-seccoes">{e.seccoes.map((s) => <li>{s.nome[lang]}</li>)}</ul>}
     </li>
   ))}

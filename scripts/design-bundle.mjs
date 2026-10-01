@@ -1663,7 +1663,16 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
 
 /* ---------------------------------------------------- 05. O mapa por unidades */
 {
-  const mapa = peca('index.html', 'figure#mapa');
+  /* O MAPA INTEIRO VIVE EM «LUGARES» DESDE O L2a (01.10.2026; `DECISIONS.md`
+     §1.149). O cartão retratava-o em `dist/index.html`, e o diretor leu-o lá muito
+     em baixo, depois dos cinco blocos e das portas; o mapa, a pesquisa e a menção
+     da fonte passaram para a página dos lugares, logo a seguir à pesquisa, e a
+     primeira página ficou com a porta «Lugares» e um contorno do país como sinal.
+     O que o cartão confere não muda: as 29 áreas iguais, cada uma a sua porta, e
+     os nomes das mesmas unidades; muda a página de onde as lê, e passa a exigir
+     o sinal na porta da primeira página e nenhum mapa inteiro lá. */
+  const CASA_DO_MAPA = routePath('lugares', 'pt').replace(/^\//, '') + 'index.html';
+  const mapa = peca(CASA_DO_MAPA, 'figure#mapa');
   /* O CARTÃO LOCALIZADOR SAIU DA PÁGINA DE UM CONCELHO (B1, peça 2,
      21.09.2026). A página de um lugar passou a dizer onde ele fica pela linha
      «Portugal › região › distrito › concelho», com quatro portas em vez de uma,
@@ -1671,7 +1680,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
      fica dita, com a ausência MEDIDA, como já ficou a da banda das regiões e a
      do selo do telemóvel: um cartão que apaga uma secção em silêncio deixa quem
      desenha a pensar que a forma nunca existiu. */
-  const linha = peca('index.html', '.mapa-linha');
+  const linha = peca(CASA_DO_MAPA, '.mapa-linha');
 
   /* O SELO DO TELEMÓVEL JÁ NÃO RENDE, e a corrida confere-o antes de o cartão o
      dizer, como faz com a legenda de neutralidade mais abaixo. É a mesma
@@ -1712,12 +1721,12 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
      do artefacto do motor, que é o mesmo de onde o desenho sai. */
   const NOMES_DA_LISTA = UNIDADES_DA_CARTA;
 
-  const casaMapa = arvore('index.html');
+  const casaMapa = arvore(CASA_DO_MAPA);
   const areas = casaMapa.querySelectorAll('#mapa path.uni');
   const unidades = areas.length;
   if (unidades !== UNIDADES_DA_CARTA) {
     morre(
-      `o mapa de \`dist/index.html\` tem ${unidades} áreas (\`path.uni\`) e as unidades da Carta ` +
+      `o mapa de \`dist/${CASA_DO_MAPA}\` tem ${unidades} áreas (\`path.uni\`) e as unidades da Carta ` +
         `são ${UNIDADES_DA_CARTA}. O cartão retrata o mapa do país inteiro, e um mapa a que falte ` +
         `uma unidade não é esse mapa.`,
     );
@@ -1737,7 +1746,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     ),
   );
   if (feitios.size !== 1) {
-    morre(`as ${unidades} unidades do mapa de \`dist/index.html\` não são todas iguais: ${feitios.size} feitios diferentes. O cartão do mapa diz que são iguais, e ou são, ou o cartão mente.`);
+    morre(`as ${unidades} unidades do mapa de \`dist/${CASA_DO_MAPA}\` não são todas iguais: ${feitios.size} feitios diferentes. O cartão do mapa diz que são iguais, e ou são, ou o cartão mente.`);
   }
   /* CADA UNIDADE É UMA PORTA, E É A SUA. Contar âncoras e caminhos e ver o
      mesmo número não prova o emparelhamento: duas âncoras à volta de um
@@ -1745,11 +1754,11 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const portasDoMapa = casaMapa.querySelectorAll('#mapa a.uni-porta');
   const portas = portasDoMapa.length;
   if (portas !== UNIDADES_DA_CARTA) {
-    morre(`o mapa de \`dist/index.html\` tem ${portas} portas (\`a.uni-porta\`) para as ${UNIDADES_DA_CARTA} unidades do desenho. A Emenda 20a diz que cada área é uma ligação para a sua página.`);
+    morre(`o mapa de \`dist/${CASA_DO_MAPA}\` tem ${portas} portas (\`a.uni-porta\`) para as ${UNIDADES_DA_CARTA} unidades do desenho. A Emenda 20a diz que cada área é uma ligação para a sua página.`);
   }
   const semUmCaminho = portasDoMapa.filter((a) => a.querySelectorAll('path.uni').length !== 1).length;
   if (semUmCaminho) {
-    morre(`${semUmCaminho} das ${portas} portas do mapa de \`dist/index.html\` não levam exactamente um \`path.uni\` dentro. Uma porta por unidade quer dizer uma porta À VOLTA de cada unidade, e não o mesmo número das duas coisas.`);
+    morre(`${semUmCaminho} das ${portas} portas do mapa de \`dist/${CASA_DO_MAPA}\` não levam exactamente um \`path.uni\` dentro. Uma porta por unidade quer dizer uma porta À VOLTA de cada unidade, e não o mesmo número das duas coisas.`);
   }
   const foraDePorta = areas.filter((c) => {
     for (let a = c.parentNode; a; a = a.parentNode) {
@@ -1758,15 +1767,22 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     return true;
   }).length;
   if (foraDePorta) {
-    morre(`${foraDePorta} das ${unidades} unidades do mapa de \`dist/index.html\` não estão dentro de uma âncora.`);
+    morre(`${foraDePorta} das ${unidades} unidades do mapa de \`dist/${CASA_DO_MAPA}\` não estão dentro de uma âncora.`);
   }
   /* E OS NOMES ESTÃO POR BAIXO, um por unidade: é a rede da Emenda 20c, e a
      decisão de 29.08 sobre a I101 diz que ela não se esconde. */
-  /* B1: a lista está nos Lugares, a um toque da contagem do país. */
-  const nomes = arvore('lugares/index.html').querySelectorAll('[data-lista-lugares="distritos"] li').length;
-  if (!casaMapa.querySelector('a.pais-porta-lugares[href="/lugares/"]')) morre('o mapa do país perdeu a porta dos lugares');
+  /* B1: a lista está nos Lugares; desde o L2a, dobrada numa gaveta por baixo da pesquisa. */
+  const nomes = casaMapa.querySelectorAll('[data-lista-lugares="distritos"] li').length;
+  /* L2a: a primeira página fica com a porta e o sinal, e sem o mapa inteiro. */
+  const primeira = arvore('index.html');
+  if (!primeira.querySelector(`[data-entrada="lugares"] a.pp-entrada[href="${routePath('lugares', 'pt')}"] svg[data-sinal-dos-lugares]`)) {
+    morre('a porta «Lugares» da primeira página perdeu o sinal do mapa (o contorno do país, §1.149).');
+  }
+  if (primeira.querySelector('figure#mapa, [data-mapa-areas]')) {
+    morre('o mapa inteiro voltou a \`dist/index.html\`. Desde o L2a ele vive em «Lugares» e só lá; ou sai da primeira página, ou este cartão volta a retratá-lo nas duas.');
+  }
   if (nomes !== NOMES_DA_LISTA) {
-    morre(`a lista de nomes por baixo do mapa de \`dist/index.html\` tem ${nomes} nomes para as ${UNIDADES_DA_CARTA} unidades da Carta.`);
+    morre(`a lista dos distritos e ilhas de \`dist/${CASA_DO_MAPA}\` tem ${nomes} nomes para as ${UNIDADES_DA_CARTA} unidades da Carta.`);
   }
 
   /* O DISTRITO ABERTO: os concelhos daquela unidade, também como áreas. */
@@ -1841,7 +1857,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   const corpo = `  <header class="ds-cabeca">
     <span class="eyebrow">Disposições</span>
     <h1>O mapa por unidades</h1>
-    <p class="sec-sub">A primeira página mostra as ${unidades} unidades da Carta, cada uma a porta da sua página; uma unidade aberta mostra os seus concelhos; e a página de um concelho mostra a região dele, com o seu concelho marcado.</p>
+    <p class="sec-sub">A página dos lugares mostra as ${unidades} unidades da Carta logo a seguir à pesquisa, cada uma a porta da sua página; uma unidade aberta mostra os seus concelhos; e a primeira página leva a porta «Lugares» com o contorno do país como sinal.</p>
   </header>
 
   <section class="ds-bloco">
@@ -1852,11 +1868,11 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
   </section>
 
   <section class="ds-bloco">
-    <h2>O mapa inteiro, na primeira página</h2>
+    <h2>O mapa inteiro, na página dos lugares</h2>
     <div class="ds-mostra ds-mostra-larga">${mapa}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · ${unidades} áreas, que são as ${UNIDADES_DA_CARTA} unidades da Carta lidas do artefacto do motor, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. A porta da contagem leva a Lugares, onde estão os ${nomes} nomes das mesmas ${UNIDADES_DA_CARTA} unidades. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito.</p>
+    <p class="ds-nota"><code class="ds-mono">dist/${CASA_DO_MAPA}</code> · ${unidades} áreas, que são as ${UNIDADES_DA_CARTA} unidades da Carta lidas do artefacto do motor, todas com a mesma classe e o mesmo desenho de traço e enchimento, nenhuma destacada. Cada uma está dentro da SUA ligação, e isso é contado por âncora e não pelo total: ${portas} portas, cada uma com um caminho só lá dentro. Por baixo da pesquisa, a gaveta dos distritos e das ilhas tem os ${nomes} nomes das mesmas ${UNIDADES_DA_CARTA} unidades. Não há preenchimento de cobertura e não há capital: nem a do país, nem as de distrito. Desde o L2a (§1.149) o mapa vive só aqui, e a primeira página leva a porta «Lugares» com um contorno do país, sem dados, como sinal.</p>
     <div class="ds-mostra">${linha}</div>
-    <p class="ds-nota">A única linha por baixo do mapa, e é a da Emenda 17.</p>
+    <p class="ds-nota">A única linha por baixo do mapa, e é a menção da fonte que a licença da Carta obriga a escrever onde o desenho está (Emenda 20e).</p>
   </section>
 
   <section class="ds-bloco">

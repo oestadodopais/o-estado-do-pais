@@ -1310,7 +1310,6 @@ export const STRINGS = {
       coberturaA: ' de ',
       coberturaB: ' concelhos · ',
       fonteK: 'De onde vem a lista',
-      mapaLink: 'O mapa dos concelhos',
       /* A CHAVE `comPaginaK` SAIU (bloco dos 308, P2). Era o título da secção
          que listava os concelhos com página antes da lista por distritos, e
          existia porque um em 308 a tinha. Com os 308 construídos, essa secção
@@ -1728,6 +1727,8 @@ export const STRINGS = {
       todosOsTemas: 'Todos os temas',
       estudos: 'Estudos',
       metaCauda: ' · O Estado do País',
+      /* L2a (01.10.2026): o texto alternativo do sinal da porta «Lugares». */
+      sinalDosLugares: 'Mapa de Portugal',
     },
     camaras: {
       nome: 'Câmaras com a dívida acima do limite legal',
@@ -3367,7 +3368,6 @@ export const STRINGS = {
       coberturaA: ' of ',
       coberturaB: ' municipalities · ',
       fonteK: 'Where the list comes from',
-      mapaLink: 'The map of municipalities',
       parcelaContinente: 'Mainland',
       parcelaAcores: 'Azores',
       parcelaMadeira: 'Madeira',
@@ -3508,6 +3508,8 @@ export const STRINGS = {
       todosOsTemas: 'All themes',
       estudos: 'Studies',
       metaCauda: ' · O Estado do País',
+      /* Ver a razão na edição portuguesa (bloco L2a, 01.10.2026). */
+      sinalDosLugares: 'Map of Portugal',
     },
     camaras: {
       nome: 'Councils with debt above the legal limit',

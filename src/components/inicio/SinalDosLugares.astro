@@ -1,0 +1,58 @@
+---
+/**
+ * O SINAL DA PORTA «LUGARES» (bloco L2a, 01.10.2026; `DECISIONS.md` §1.149).
+ *
+ * Um mapa pequeno, estático, sem dados e sem legenda de valores: o contorno do
+ * país, com os Açores e a Madeira nas mesmas molduras do mapa inteiro. Diz que a
+ * porta leva ao mapa, e não é o mapa: nenhuma área é uma ligação, nenhum número
+ * se escreve e nenhum guião o acende. O mapa inteiro vive em «Lugares», e só lá.
+ *
+ * O DESENHO SAI DO ARTEFACTO, e a conta está em `src/lib/sinal-dos-lugares.mjs`.
+ * O que se decide aqui é o tamanho, e o tamanho decide a simplificação: o sinal
+ * rende-se a `LARGURA_EM_PIXEIS` de largura, e a tolerância e o passo da grelha
+ * são frações do que um píxel mede no campo. A folga das molduras é a mesma
+ * conta que `MapaRespira.astro` faz (a linha do nome de um arquipélago no campo
+ * do desenho), para que o sinal seja esse mapa em pequeno.
+ *
+ * O TEXTO ALTERNATIVO é uma cadeia de `strings.mjs` nas duas línguas, e o
+ * desenho é `role="img"`: é uma imagem, e não tem ligações dentro (a R5 do
+ * `check:mapa`). A menção da fonte não vive aqui, porque esta peça está DENTRO
+ * da ligação da porta e a menção não é parte do nome da porta: quem rende o
+ * sinal escreve-a ao lado, e a R6 do `check:mapa` confere que ela lá está.
+ */
+import { contornoDoPais } from '../../lib/sinal-dos-lugares.mjs';
+import { paisDoMapa } from '../../lib/mapa.mjs';
+import { FIELD_W } from '../../data/caop-centroids.mjs';
+
+const { rotulo } = Astro.props;
+if (!rotulo) throw new Error('SinalDosLugares: o sinal precisa do texto alternativo.');
+
+/* O tamanho em píxeis a que o sinal se rende. A folha não lhe muda a largura:
+   o `<svg>` leva-a nos atributos, e a conta da simplificação lê-a daqui. */
+const LARGURA_EM_PIXEIS = 40;
+const campo = paisDoMapa().campo;
+const unidadesPorPixel = campo.largura / LARGURA_EM_PIXEIS;
+/* Um terço de píxel de tolerância e um sexto de píxel de grelha: abaixo do que
+   o olho separa a esta largura, e acima do que pesaria no documento. */
+const tolerancia = unidadesPorPixel / 3;
+const passo = Math.max(1, Math.round(unidadesPorPixel / 6));
+/* A mesma folga das molduras do mapa inteiro (`MapaRespira.astro`). */
+const uDoCampo = campo.largura / FIELD_W;
+const folga = Math.round(13 * uDoCampo) + Math.round(6 * uDoCampo);
+
+const c = contornoDoPais({ passo, tolerancia, folga });
+const altura = Math.round((LARGURA_EM_PIXEIS * c.altura) / c.largura);
+---
+
+<svg
+  class="pp-sinal"
+  width={LARGURA_EM_PIXEIS}
+  height={altura}
+  viewBox={`0 0 ${c.largura} ${c.altura}`}
+  role="img"
+  aria-label={rotulo}
+  data-sinal-dos-lugares
+>
+  {c.molduras.map(([x, y, w, h]) => <rect class="pp-sinal-moldura" x={x} y={y} width={w} height={h} />)}
+  <path class="pp-sinal-contorno" d={c.d} />
+</svg>
