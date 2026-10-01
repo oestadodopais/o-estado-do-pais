@@ -557,8 +557,18 @@ const EVORA = {
               },
             },
           ],
+          /* OS VALORES DE 31.12.2025 NÃO FORAM DEIXADOS NA SAÍDA (passagem E1c, 01.10.2026,
+             ponto 2 do mandato). O executivo saiu a 31.10.2025, e a dívida, o prazo de
+             pagamento e os pagamentos em atraso são os do fecho das contas de 2025, dois
+             meses depois; o estudo das contas não atribui as contas do ano a um ou ao outro
+             executivo («a cavalo da mudança de executivo»). A ficha diz a data dos valores e
+             de onde vêm, e não que este executivo os deixou. */
+          deixouAntes: {
+            pt: ['As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a ', { ref: '31.12.2025' }, ', dois meses depois da saída, a prestação de contas da câmara regista'],
+            en: ['The accounts of the year of the change exist only as a whole year and are not split between the two executives; at ', { ref: '31.12.2025' }, ', two months after the departure, the council’s accounts report records'],
+          },
           deixou: [
-            { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt.` } },
+            { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total,`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt,` } },
             {
               claim: 'evora-prazo-medio-de-pagamento-2025',
               texto: { pt: 'dias de prazo médio de pagamento a fornecedores, e', en: 'days of average time to pay suppliers, and' },
@@ -594,6 +604,14 @@ const EVORA = {
           lista: 'PS',
           lugares: 'evora-camara-mandatos-ps-2025',
           lugaresTotal: 'evora-camara-lugares',
+          /* A DÍVIDA DE 31.12.2025 NÃO FOI HERDADA NA POSSE (passagem E1c, 01.10.2026, ponto 2
+             do mandato): é a do fecho das contas de 2025, dois meses depois da instalação, e
+             as contas do ano não se repartem pelos dois executivos. Ver `deixouAntes` no
+             mandato anterior. */
+          herdouAntes: {
+            pt: ['As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a ', { ref: '31.12.2025' }, ', dois meses depois da tomada de posse, a prestação de contas da câmara regista'],
+            en: ['The accounts of the year of the change exist only as a whole year and are not split between the two executives; at ', { ref: '31.12.2025' }, ', two months after taking office, the council’s accounts report records'],
+          },
           herdou: [
             { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt.` } },
           ],
