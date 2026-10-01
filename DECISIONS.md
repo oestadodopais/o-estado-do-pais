@@ -13312,3 +13312,21 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **A aterragem do E1.** O ramo do motor publicado primeiro, com a sua corrida «portao» verde em `d2495a7`; a corrida «portão» do sítio verde em `c87c2a31`; o guião da aterragem às 09:08 UTC de 01.10.2026: o `master` do motor de `4b46bef` para `d2495a7` e `main` de `dd7f6208` para `c87c2a31`; a Vercel «Ready» com `c87c2a31` no ar; `verify:deploy` a 0; a corrida de `main` (36840834248) verde às 09:22; o guião declarou às 09:23. Os quatro estudos, o índice e a página de Évora estão no ar.
 
 **A aterragem destes registos.** A cabeça que aterra é a destes registos (esta decisão e as I181 a I184, com a I179 e a I180 fechadas), com os três portões e a corrida «portão» por cima dela; escreve-se no registo seguinte.
+
+### 1.149 A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+
+**Afecta:** nenhum
+
+**O que muda:** no bloco L2 (o próximo dos lugares, §1.143), a página «Lugares» passa a mostrar o mapa logo a seguir à pesquisa em todas as larguras, e as listas das regiões e dos distritos e ilhas passam a duas linhas fechadas que se abrem (um `<details>` cada, que funciona sem guião); a primeira página deixa de ter o mapa inteiro e a segunda caixa de pesquisa no fundo, porque duplicam «Lugares» (uma coisa, um lugar, §1.143), e a porta «Lugares» em «Por onde começar» ganha um mapa pequeno como sinal.
+
+**Data:** 01.10.2026.
+
+**O que o diretor viu**, nas palavras dele: o mapa na primeira página ficou muito em baixo no deslocamento; em «Lugares», em vez do mapa logo, vêm todos os nomes dos concelhos em texto, um buraco grande que se percorre sem ter de estar em sítio nenhum; o mapa devia vir logo, com os nomes numa lista que se abra; não se sente confortável a andar na página.
+
+**O que o lugar de direção mediu** (nas capturas do N1 a 390 px e na página no ar a 1 364 px): em «Lugares», a 390 px, a ordem é a pesquisa, as 9 regiões, os 29 distritos e ilhas numa coluna só (as duas listas ocupam 942 px) e só depois o mapa; a 1 364 px o mapa está ao lado das listas, a 331 px do topo, e por isso não se nota. A lista dos 308 concelhos da pesquisa está escondida até se escrever (o `hidden` da lista vale: `display: none` medido no navegador). Na primeira página a 390 px, o mapa vem depois dos cinco blocos de «O que se passa» e das oito portas, a cerca de cinco mil pixels de uma página de 7 194.
+
+**A decisão.** O mapa é de «Lugares» e vem primeiro; os nomes dobram-se; a primeira página fica com a porta e o sinal. Se o diretor preferir o mapa na primeira página, sobe para logo a seguir a «O que se passa» em vez de sair; fica a pergunta feita. Constrói-se no L2, pelo Opus com leitura do Sol, depois da reposição da semana do Claude (a 89 % às 10:30 UTC) ou antes, se o diretor usar a reposição gratuita.
+
+**A aterragem da §1.148.** `main` avançou de `c87c2a31` para `6e6755b0` às 09:51 UTC de 01.10.2026; a Vercel «Ready»; `verify:deploy` a 0; a corrida de `main` (36845421726) verde às 10:02; o guião declarou às 10:02. O prompt da sessão seguinte aterrou a seguir (`b0e8b00e`, às 10:45).
+
+**A aterragem destes registos.** Escreve-se no registo seguinte.
