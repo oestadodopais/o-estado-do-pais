@@ -67,6 +67,23 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 /** @param {string} id @param {string} lang */
 const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
 
+/* A FRASE ANTES DE UM VALOR DE FIM DE ANO NUMA FICHA DE MANDATO (passagens E1c e E1d, 01.10.2026).
+   Os executivos de Évora instalaram-se em outubro (2013-10-18, 2017-10-20, 2021-10-15 e 2025-10-31), e
+   a dívida que as contas e os relatórios de gestão registam é a de 31 de dezembro: não foi deixada por
+   quem saiu nem herdada por quem entrou, e as contas do ano da mudança não se repartem pelos dois
+   executivos (o estudo das contas e o de quem governou dizem-no). A ficha diz a data do valor e de onde
+   ele vem, numa frase só, escrita aqui uma vez para as seis fichas; a data vai na marca de data de
+   referência, pelo `{ ref }` do Frase. */
+const DEPOIS_DA_SAIDA = { pt: 'depois da saída', en: 'after the departure' };
+const DEPOIS_DA_POSSE = { pt: 'depois da tomada de posse', en: 'after taking office' };
+const RELATORIO_DE_GESTAO = { pt: 'o relatório de gestão da câmara', en: 'the council’s management report' };
+const PRESTACAO_DE_CONTAS = { pt: 'a prestação de contas da câmara', en: 'the council’s accounts report' };
+/** @param {string} dia @param {{pt: string, en: string}} quando @param {{pt: string, en: string}} documento */
+const antesDoFimDoAno = (dia, quando, documento) => ({
+  pt: ['As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a ', { ref: dia }, `, ${quando.pt}, ${documento.pt} regista`],
+  en: ['The accounts of the year of the change exist only as a whole year and are not split between the two executives; at ', { ref: dia }, `, ${quando.en}, ${documento.en} records`],
+});
+
 const EVORA = {
     slug: 'evora',
     nome: { pt: 'Évora', en: 'Évora' },
@@ -475,10 +492,12 @@ const EVORA = {
               },
             },
           ],
+          /* A dívida de 31.12.2017 é de depois da instalação do executivo seguinte (passagem E1d). */
+          deixouAntes: antesDoFimDoAno('31.12.2017', DEPOIS_DA_SAIDA, RELATORIO_DE_GESTAO),
           deixou: [
             {
               claim: 'evora-divida-total-2017',
-              texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dívida total, na conta do próprio município.`, en: `${unidade('evora-divida-total-2017', 'en')} of total debt, on the municipality’s own account.` },
+              texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2017', 'en')} of total debt.` },
             },
           ],
           regulador: [
@@ -509,6 +528,9 @@ const EVORA = {
           quemData: null,
           lista: 'CDU',
           lugares: 'evora-camara-mandatos-cdu-2017',
+          /* As dívidas de 31.12.2017 e de 31.12.2021 são de depois das instalações de 2017-10-20 e de
+             2021-10-15 (passagem E1d). */
+          herdouAntes: antesDoFimDoAno('31.12.2017', DEPOIS_DA_POSSE, RELATORIO_DE_GESTAO),
           herdou: [
             { claim: 'evora-divida-total-2017', texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2017', 'en')} of total debt.` } },
           ],
@@ -520,6 +542,7 @@ const EVORA = {
              a nulo e `decidiuNota` a nulo, a vista rende «sem linha ainda» /
              «no row yet», que é a mesma cadeia que uma peça vazia usa. */
           decidiuNota: null,
+          deixouAntes: antesDoFimDoAno('31.12.2021', DEPOIS_DA_SAIDA, RELATORIO_DE_GESTAO),
           deixou: [
             { claim: 'evora-divida-total-2021', texto: { pt: `${unidade('evora-divida-total-2021', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2021', 'en')} of total debt.` } },
           ],
@@ -545,6 +568,8 @@ const EVORA = {
           lista: 'CDU',
           listaNota: { pt: 'em minoria', en: 'in minority' },
           lugares: 'evora-camara-mandatos-cdu-2021',
+          /* A dívida de 31.12.2021 é de depois da instalação de 2021-10-15 (passagem E1d). */
+          herdouAntes: antesDoFimDoAno('31.12.2021', DEPOIS_DA_POSSE, RELATORIO_DE_GESTAO),
           herdou: [
             { claim: 'evora-divida-total-2021', texto: { pt: `${unidade('evora-divida-total-2021', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2021', 'en')} of total debt.` } },
           ],
@@ -563,10 +588,7 @@ const EVORA = {
              meses depois; o estudo das contas não atribui as contas do ano a um ou ao outro
              executivo («a cavalo da mudança de executivo»). A ficha diz a data dos valores e
              de onde vêm, e não que este executivo os deixou. */
-          deixouAntes: {
-            pt: ['As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a ', { ref: '31.12.2025' }, ', dois meses depois da saída, a prestação de contas da câmara regista'],
-            en: ['The accounts of the year of the change exist only as a whole year and are not split between the two executives; at ', { ref: '31.12.2025' }, ', two months after the departure, the council’s accounts report records'],
-          },
+          deixouAntes: antesDoFimDoAno('31.12.2025', { pt: 'dois meses depois da saída', en: 'two months after the departure' }, PRESTACAO_DE_CONTAS),
           deixou: [
             { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total,`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt,` } },
             {
@@ -608,10 +630,7 @@ const EVORA = {
              do mandato): é a do fecho das contas de 2025, dois meses depois da instalação, e
              as contas do ano não se repartem pelos dois executivos. Ver `deixouAntes` no
              mandato anterior. */
-          herdouAntes: {
-            pt: ['As contas do ano da mudança só existem como ano inteiro e não se repartem pelos dois executivos; a ', { ref: '31.12.2025' }, ', dois meses depois da tomada de posse, a prestação de contas da câmara regista'],
-            en: ['The accounts of the year of the change exist only as a whole year and are not split between the two executives; at ', { ref: '31.12.2025' }, ', two months after taking office, the council’s accounts report records'],
-          },
+          herdouAntes: antesDoFimDoAno('31.12.2025', { pt: 'dois meses depois da tomada de posse', en: 'two months after taking office' }, PRESTACAO_DE_CONTAS),
           herdou: [
             { claim: 'evora-divida-total-2025', texto: { pt: `${unidade('evora-divida-total-2025', 'pt')} de dívida total.`, en: `${unidade('evora-divida-total-2025', 'en')} of total debt.` } },
           ],
