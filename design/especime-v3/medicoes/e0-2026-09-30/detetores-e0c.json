@@ -1,0 +1,39 @@
+{
+  "cabeca": "ddb2bc8efa379a20b147b6352f988356d99bb09a",
+  "medido_em": "2026-10-01T00:00:27.203Z",
+  "correcoes_publicadas": {
+    "antes": 5,
+    "depois": 4,
+    "linha_retirada": "pib-pc-alentejo-2024",
+    "indice": 0,
+    "entrada_retirada": {
+      "date": "2026-08-13",
+      "kind": "correcao",
+      "old_value": "77,2",
+      "new_value": "77",
+      "reason": "O valor publicado trazia uma casa decimal que a fonte não sustenta. Era calculado a partir dos valores absolutos em paridades de poder de compra; o Eurostat publica este índice arredondado à unidade (77) e marca o valor de 2024 como provisório. Publicar um décimo de ponto sobre um número que a fonte espera rever afirmava uma precisão que não existe. Passa a publicar-se o índice tal como a fonte o publica.",
+      "reason_en": "The published value carried a decimal the source does not support. It was computed from the absolute purchasing-power-standard values; Eurostat publishes this index rounded to the unit (77) and marks the 2024 value provisional. Publishing a tenth of a point on a number the source expects to revise asserted a precision that does not exist. The index is now published as the source publishes it."
+    },
+    "baixou_uma": true,
+    "livro_real_conservado": true
+  },
+  "historia_anterior_conservada": {
+    "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+    "linhas_anteriores": 9,
+    "linha_plantada": "estudos-evora-publicados",
+    "indice": 0,
+    "campo": "new_value",
+    "antes": "3",
+    "plantado": "39",
+    "erros_limpos": [],
+    "queixas": [
+      "história anterior: estudos-evora-publicados perdeu ou alterou uma entrada selada."
+    ],
+    "historia_real_conservada": true
+  },
+  "conhecidos_positivos": {
+    "correcoes_publicadas": true,
+    "historia_anterior_conservada": true
+  },
+  "passou": true
+}
