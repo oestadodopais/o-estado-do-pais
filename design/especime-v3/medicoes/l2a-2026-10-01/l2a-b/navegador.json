@@ -1,0 +1,503 @@
+{
+  "dist_construido_de": "a66ab832fbba2f29764a31109377bf4a596d2150",
+  "portas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "portas": 1,
+      "sinalAVista": true,
+      "sinal": {
+        "largura": 40,
+        "altura": 53
+      },
+      "estado": 200,
+      "aterra": "/lugares",
+      "passa": true
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "portas": 1,
+      "sinalAVista": true,
+      "sinal": {
+        "largura": 40,
+        "altura": 53
+      },
+      "estado": 200,
+      "aterra": "/lugares",
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "portas": 1,
+      "sinalAVista": true,
+      "sinal": {
+        "largura": 40,
+        "altura": 53
+      },
+      "estado": 200,
+      "aterra": "/en/places",
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "portas": 1,
+      "sinalAVista": true,
+      "sinal": {
+        "largura": 40,
+        "altura": 53
+      },
+      "estado": 200,
+      "aterra": "/en/places",
+      "passa": true
+    }
+  ],
+  "ordens": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "pesquisa": {
+        "cima": 269,
+        "baixo": 374,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "mapa": {
+        "cima": 392,
+        "baixo": 916,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "regioes": {
+        "cima": 935,
+        "baixo": 979,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "distritos": {
+        "cima": 980,
+        "baixo": 1024,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "nomesAVista": 0,
+      "forma": "uma coluna",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "pesquisa": {
+        "cima": 287,
+        "baixo": 392,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "mapa": {
+        "cima": 410,
+        "baixo": 908,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "regioes": {
+        "cima": 928,
+        "baixo": 972,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "distritos": {
+        "cima": 973,
+        "baixo": 1017,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "nomesAVista": 0,
+      "forma": "uma coluna",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "pt",
+      "largura": 1024,
+      "pesquisa": {
+        "cima": 327,
+        "baixo": 434,
+        "esquerda": 41,
+        "direita": 518
+      },
+      "mapa": {
+        "cima": 327,
+        "baixo": 953,
+        "esquerda": 553,
+        "direita": 983
+      },
+      "regioes": {
+        "cima": 466,
+        "baixo": 510,
+        "esquerda": 41,
+        "direita": 518
+      },
+      "distritos": {
+        "cima": 511,
+        "baixo": 555,
+        "esquerda": 41,
+        "direita": 518
+      },
+      "nomesAVista": 0,
+      "forma": "duas colunas",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "pesquisa": {
+        "cima": 331,
+        "baixo": 447,
+        "esquerda": 94,
+        "direita": 712
+      },
+      "mapa": {
+        "cima": 331,
+        "baixo": 957,
+        "esquerda": 756,
+        "direita": 1186
+      },
+      "regioes": {
+        "cima": 482,
+        "baixo": 526,
+        "esquerda": 94,
+        "direita": 712
+      },
+      "distritos": {
+        "cima": 527,
+        "baixo": 571,
+        "esquerda": 94,
+        "direita": 712
+      },
+      "nomesAVista": 0,
+      "forma": "duas colunas",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "pt",
+      "largura": 1600,
+      "pesquisa": {
+        "cima": 331,
+        "baixo": 450,
+        "esquerda": 254,
+        "direita": 864
+      },
+      "mapa": {
+        "cima": 331,
+        "baixo": 957,
+        "esquerda": 916,
+        "direita": 1346
+      },
+      "regioes": {
+        "cima": 485,
+        "baixo": 529,
+        "esquerda": 254,
+        "direita": 864
+      },
+      "distritos": {
+        "cima": 530,
+        "baixo": 574,
+        "esquerda": 254,
+        "direita": 864
+      },
+      "nomesAVista": 0,
+      "forma": "duas colunas",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "pesquisa": {
+        "cima": 269,
+        "baixo": 374,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "mapa": {
+        "cima": 392,
+        "baixo": 916,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "regioes": {
+        "cima": 935,
+        "baixo": 979,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "distritos": {
+        "cima": 980,
+        "baixo": 1024,
+        "esquerda": 18,
+        "direita": 372
+      },
+      "nomesAVista": 0,
+      "forma": "uma coluna",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "pesquisa": {
+        "cima": 287,
+        "baixo": 392,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "mapa": {
+        "cima": 410,
+        "baixo": 908,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "regioes": {
+        "cima": 928,
+        "baixo": 972,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "distritos": {
+        "cima": 973,
+        "baixo": 1017,
+        "esquerda": 31,
+        "direita": 737
+      },
+      "nomesAVista": 0,
+      "forma": "uma coluna",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 1024,
+      "pesquisa": {
+        "cima": 327,
+        "baixo": 434,
+        "esquerda": 41,
+        "direita": 518
+      },
+      "mapa": {
+        "cima": 327,
+        "baixo": 953,
+        "esquerda": 553,
+        "direita": 983
+      },
+      "regioes": {
+        "cima": 466,
+        "baixo": 510,
+        "esquerda": 41,
+        "direita": 518
+      },
+      "distritos": {
+        "cima": 511,
+        "baixo": 555,
+        "esquerda": 41,
+        "direita": 518
+      },
+      "nomesAVista": 0,
+      "forma": "duas colunas",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "pesquisa": {
+        "cima": 331,
+        "baixo": 447,
+        "esquerda": 94,
+        "direita": 712
+      },
+      "mapa": {
+        "cima": 331,
+        "baixo": 957,
+        "esquerda": 756,
+        "direita": 1186
+      },
+      "regioes": {
+        "cima": 482,
+        "baixo": 526,
+        "esquerda": 94,
+        "direita": 712
+      },
+      "distritos": {
+        "cima": 527,
+        "baixo": 571,
+        "esquerda": 94,
+        "direita": 712
+      },
+      "nomesAVista": 0,
+      "forma": "duas colunas",
+      "ordemCerta": true,
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "largura": 1600,
+      "pesquisa": {
+        "cima": 331,
+        "baixo": 450,
+        "esquerda": 254,
+        "direita": 864
+      },
+      "mapa": {
+        "cima": 331,
+        "baixo": 957,
+        "esquerda": 916,
+        "direita": 1346
+      },
+      "regioes": {
+        "cima": 485,
+        "baixo": 529,
+        "esquerda": 254,
+        "direita": 864
+      },
+      "distritos": {
+        "cima": 530,
+        "baixo": 574,
+        "esquerda": 254,
+        "direita": 864
+      },
+      "nomesAVista": 0,
+      "forma": "duas colunas",
+      "ordemCerta": true,
+      "passa": true
+    }
+  ],
+  "gavetas": [
+    {
+      "lang": "pt",
+      "gavetas": [
+        {
+          "chave": "regioes",
+          "nomes": 9,
+          "antes": 0,
+          "sumarios": 1,
+          "aberta": 9,
+          "fechada": 0,
+          "passa": true
+        },
+        {
+          "chave": "distritos",
+          "nomes": 29,
+          "antes": 0,
+          "sumarios": 1,
+          "aberta": 29,
+          "fechada": 0,
+          "passa": true
+        }
+      ],
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "gavetas": [
+        {
+          "chave": "regioes",
+          "nomes": 9,
+          "antes": 0,
+          "sumarios": 1,
+          "aberta": 9,
+          "fechada": 0,
+          "passa": true
+        },
+        {
+          "chave": "distritos",
+          "nomes": 29,
+          "antes": 0,
+          "sumarios": 1,
+          "aberta": 29,
+          "fechada": 0,
+          "passa": true
+        }
+      ],
+      "passa": true
+    }
+  ],
+  "sem_guiao": [
+    {
+      "lang": "pt",
+      "rota": "/lugares/",
+      "escrita": "mourao",
+      "campo": 1,
+      "resultadosAntes": 0,
+      "aterra": "/lugares?concelho=mourao",
+      "estado": 200,
+      "aterraNosLugares": true,
+      "resultadosDepois": 0,
+      "procura": false,
+      "portaDoDistrito": "/distritos/evora",
+      "portaEscondidaComAGavetaFechada": true,
+      "portaAVistaComAGavetaAberta": true,
+      "estadoDoDistrito": 200,
+      "portaDoConcelhoAVista": 1,
+      "estadoDoConcelho": 200,
+      "aterraNoConcelho": true,
+      "passa": true
+    },
+    {
+      "lang": "en",
+      "rota": "/en/places/",
+      "escrita": "mourao",
+      "campo": 1,
+      "resultadosAntes": 0,
+      "aterra": "/en/places?concelho=mourao",
+      "estado": 200,
+      "aterraNosLugares": true,
+      "resultadosDepois": 0,
+      "procura": false,
+      "portaDoDistrito": "/en/districts/evora",
+      "portaEscondidaComAGavetaFechada": true,
+      "portaAVistaComAGavetaAberta": true,
+      "estadoDoDistrito": 200,
+      "portaDoConcelhoAVista": 1,
+      "estadoDoConcelho": 200,
+      "aterraNoConcelho": true,
+      "passa": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "o mapa depois das gavetas em «Lugares», a 390",
+      "mordeu": true,
+      "queixa": "pt 390 (uma coluna): pesquisa 269 · mapa 501–1025 à esquerda 18 · regiões 393 · distritos 438 · nomes à vista 0"
+    },
+    {
+      "nome": "a porta «Lugares» da primeira página para uma página que não existe",
+      "mordeu": true,
+      "queixa": "en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places-that-do-not-exist (404)"
+    },
+    {
+      "nome": "o <summary> das regiões trocado por um bloco qualquer",
+      "mordeu": true,
+      "queixa": "pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ? · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0"
+    },
+    {
+      "nome": "o <summary> dos distritos e das ilhas trocado por um bloco qualquer",
+      "mordeu": true,
+      "queixa": "en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ?"
+    },
+    {
+      "nome": "a porta do distrito de Mourão tirada da gaveta dos distritos e das ilhas",
+      "mordeu": true,
+      "queixa": "pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de NENHUM distrito escondida com a gaveta fechada ?, à vista com ela aberta ?, abre (?) e nela a porta de Mourão à vista 0×, que abre (?)"
+    },
+    {
+      "nome": "o formulário de «Lugares» sem destino",
+      "mordeu": true,
+      "queixa": "en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places-that-do-not-exist?concelho=mourao (404), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)"
+    }
+  ]
+}

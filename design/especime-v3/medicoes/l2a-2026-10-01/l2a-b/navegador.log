@@ -1,0 +1,25 @@
+✓ a porta · pt 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+✓ a porta · pt 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+✓ a porta · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+✓ a porta · en 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+✓ a ordem · pt 390 (uma coluna): pesquisa 269 · mapa 392–916 à esquerda 18 · regiões 935 · distritos 980 · nomes à vista 0
+✓ a ordem · pt 768 (uma coluna): pesquisa 287 · mapa 410–908 à esquerda 31 · regiões 928 · distritos 973 · nomes à vista 0
+✓ a ordem · pt 1024 (duas colunas): pesquisa 327 · mapa 327–953 à esquerda 553 · regiões 466 · distritos 511 · nomes à vista 0
+✓ a ordem · pt 1280 (duas colunas): pesquisa 331 · mapa 331–957 à esquerda 756 · regiões 482 · distritos 527 · nomes à vista 0
+✓ a ordem · pt 1600 (duas colunas): pesquisa 331 · mapa 331–957 à esquerda 916 · regiões 485 · distritos 530 · nomes à vista 0
+✓ a ordem · en 390 (uma coluna): pesquisa 269 · mapa 392–916 à esquerda 18 · regiões 935 · distritos 980 · nomes à vista 0
+✓ a ordem · en 768 (uma coluna): pesquisa 287 · mapa 410–908 à esquerda 31 · regiões 928 · distritos 973 · nomes à vista 0
+✓ a ordem · en 1024 (duas colunas): pesquisa 327 · mapa 327–953 à esquerda 553 · regiões 466 · distritos 511 · nomes à vista 0
+✓ a ordem · en 1280 (duas colunas): pesquisa 331 · mapa 331–957 à esquerda 756 · regiões 482 · distritos 527 · nomes à vista 0
+✓ a ordem · en 1600 (duas colunas): pesquisa 331 · mapa 331–957 à esquerda 916 · regiões 485 · distritos 530 · nomes à vista 0
+✓ as gavetas · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+✓ as gavetas · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+✓ a pesquisa · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /distritos/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+✓ a pesquisa · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+  mordeu · o mapa depois das gavetas em «Lugares», a 390 · pt 390 (uma coluna): pesquisa 269 · mapa 501–1025 à esquerda 18 · regiões 393 · distritos 438 · nomes à vista 0
+  mordeu · a porta «Lugares» da primeira página para uma página que não existe · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places-that-do-not-exist (404)
+  mordeu · o <summary> das regiões trocado por um bloco qualquer · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ? · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+  mordeu · o <summary> dos distritos e das ilhas trocado por um bloco qualquer · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ?
+  mordeu · a porta do distrito de Mourão tirada da gaveta dos distritos e das ilhas · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de NENHUM distrito escondida com a gaveta fechada ?, à vista com ela aberta ?, abre (?) e nela a porta de Mourão à vista 0×, que abre (?)
+  mordeu · o formulário de «Lugares» sem destino · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places-that-do-not-exist?concelho=mourao (404), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+a porta e a página dos lugares · 18 medições no navegador, todas a cumprir · 6 de 6 plantas mordidas.

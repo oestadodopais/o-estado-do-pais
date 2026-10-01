@@ -15,18 +15,23 @@
  *     que o leitor vê e não com o atributo: abaixo de 1 024 px, a pesquisa, o mapa e só depois as duas
  *     gavetas, de cima para baixo; a partir de 1 024 px, o mapa à direita das gavetas e as gavetas por baixo
  *     da pesquisa. Nas duas formas as gavetas chegam fechadas: nenhum nome das listas à vista.
- *   AS GAVETAS · num navegador com o JavaScript desligado, o foco no `<summary>` das regiões e a tecla Enter
- *     abrem a lista (os nomes ficam à vista) e a mesma tecla fecha-a.
- *   SEM GUIÃO · a pesquisa dos lugares com o JavaScript desligado, que a H15 do `check:alvos` não cobre:
- *     «mourao» e Enter submetem o formulário para a página dos lugares da mesma edição, que abre; nela está
- *     à vista a porta do distrito que tem Mourão (uma área do mapa, que vem logo a seguir à pesquisa); e na
- *     página do distrito está à vista a porta de Mourão. Com guião, a mesma pesquisa é a H15.
+ *   AS GAVETAS · num navegador com o JavaScript desligado, nas duas gavetas (as regiões, e os distritos e as
+ *     ilhas), o foco no `<summary>` e a tecla Enter abrem a lista (os nomes todos ficam à vista) e a mesma
+ *     tecla fecha-a.
+ *   SEM GUIÃO · com o JavaScript desligado, que a H15 do `check:alvos` não cobre, duas medidas separadas (L2a-b):
+ *     a pesquisa NÃO PROCURA (o formulário leva à página dos lugares da mesma edição, que é estática: recarrega
+ *     com o que se escreveu no endereço e nenhum resultado à vista, e isso regista-se sem se dar por procura);
+ *     e o caminho para um concelho são as gavetas (a porta do distrito de Mourão, dentro da gaveta dos
+ *     distritos e das ilhas, só à vista com ela aberta, abre a página do distrito, onde a porta de Mourão está
+ *     à vista e abre a página dele). Com guião, a pesquisa é a H15.
  *
- * `--prova` corre quatro plantas, cada uma a trocar a página que o servidor entrega:
+ * `--prova` corre seis plantas, cada uma a trocar a página que o servidor entrega:
  *   · o mapa depois das gavetas em «Lugares»: a ordem a 390 morde;
  *   · a porta «Lugares» da primeira página para uma página que não existe: o toque dá 404;
- *   · o `<summary>` das regiões trocado por um bloco qualquer: o Enter já não abre a lista;
- *   · o formulário de «Lugares» sem destino: sem guião, o Enter dá 404.
+ *   · o `<summary>` das regiões trocado por um bloco qualquer: o Enter já não abre essa lista;
+ *   · o `<summary>` dos distritos e das ilhas trocado por um bloco qualquer: o Enter já não abre essa lista;
+ *   · o formulário de «Lugares» sem destino: sem guião, o Enter dá 404;
+ *   · a porta do distrito de Mourão tirada da gaveta: o caminho pelas gavetas deixa de chegar a Mourão.
  *
  * Uso: node tests/inicio/lugares-no-navegador.mjs [--prova] [--json saída]   (OEDP_DIST aponta outra construção)
  */
@@ -147,7 +152,9 @@ async function medeAOrdem(nav, lang, largura, { preparar = null } = {}) {
 }
 
 /**
- * AS GAVETAS: sem guião, o foco no `<summary>` das regiões e o Enter abrem a lista, e o Enter fecha-a.
+ * AS GAVETAS: sem guião, em cada uma das duas (as regiões e os distritos e as ilhas), o foco no `<summary>` e o
+ * Enter abrem a lista, com os nomes todos à vista, e o Enter fecha-a. A primeira redação só abria a das
+ * regiões (L2a-b, o achado 6 da leitura a frio): a dos distritos e das ilhas, com os 29 nomes, ficava sem prova.
  * @param {import('playwright').Browser} nav @param {'pt'|'en'} lang
  * @param {{ preparar?: ((c: import('playwright').BrowserContext) => Promise<void>)|null }} [opcoes]
  */
@@ -156,32 +163,47 @@ async function medeAsGavetas(nav, lang, { preparar = null } = {}) {
   if (preparar) await preparar(contexto);
   const pagina = await contexto.newPage();
   /** @type {Record<string, any>} */
-  const r = { lang };
+  const r = { lang, gavetas: [] };
   try {
     await pagina.goto(base + routePath('lugares', lang), { waitUntil: 'load' });
-    const nomes = pagina.locator('ul[data-lista-lugares="regioes"] a');
-    const aVista = async () => { let n = 0; for (const a of await nomes.all()) if (await a.isVisible()) n++; return n; };
-    r.nomes = await nomes.count();
-    r.antes = await aVista();
-    const sumario = pagina.locator('[data-dobra-lugares="regioes"] summary');
-    r.sumarios = await sumario.count();
-    if (r.sumarios === 1) {
-      await sumario.focus();
-      await pagina.keyboard.press('Enter');
-      r.aberta = await aVista();
-      await pagina.keyboard.press('Enter');
-      r.fechada = await aVista();
+    for (const chave of ['regioes', 'distritos']) {
+      const nomes = pagina.locator(`ul[data-lista-lugares="${chave}"] a`);
+      const aVista = async () => { let n = 0; for (const a of await nomes.all()) if (await a.isVisible()) n++; return n; };
+      /** @type {Record<string, any>} */
+      const g = { chave, nomes: await nomes.count(), antes: await aVista() };
+      const sumario = pagina.locator(`[data-dobra-lugares="${chave}"] summary`);
+      g.sumarios = await sumario.count();
+      if (g.sumarios === 1) {
+        await sumario.focus();
+        await pagina.keyboard.press('Enter');
+        g.aberta = await aVista();
+        await pagina.keyboard.press('Enter');
+        g.fechada = await aVista();
+      }
+      g.passa = g.nomes > 0 && g.antes === 0 && g.sumarios === 1 && g.aberta === g.nomes && g.fechada === 0;
+      r.gavetas.push(g);
     }
   } finally {
     await contexto.close();
   }
-  r.passa = r.nomes > 0 && r.antes === 0 && r.sumarios === 1 && r.aberta === r.nomes && r.fechada === 0;
+  r.passa = r.gavetas.length === 2 && r.gavetas.every((/** @type {any} */ g) => g.passa);
   return r;
 }
 
 /**
- * SEM GUIÃO: o que acontece a quem escreve «mourao» na pesquisa de «Lugares» e carrega em Enter com o
- * JavaScript desligado.
+ * SEM GUIÃO, MEDIDO COMO É (L2a-b, o achado 4 da leitura a frio). A primeira redação desta função contava como
+ * uma procura o que não o era: sem guião, o formulário de «Lugares» submete para a própria página, que é
+ * estática e não lê o que se escreveu; a página recarrega com «mourao» no endereço e nenhum resultado, e a
+ * célula achava o distrito de Mourão pelas áreas do mapa, que a pesquisa não deu ao leitor. Agora mede as duas
+ * coisas em separado, e só a segunda é um caminho:
+ *
+ *   · A PESQUISA SEM GUIÃO NÃO PROCURA. «mourao» e Enter levam à página dos lugares da mesma edição (e não a um
+ *     404), com o que se escreveu no endereço, e nenhum resultado à vista. Regista-se o que acontece; não se
+ *     exige uma procura que a página não faz.
+ *   · O CAMINHO SEM GUIÃO PARA UM CONCELHO SÃO AS GAVETAS. A porta do distrito de Mourão (lida das páginas de
+ *     distrito construídas, que são as que a têm) está dentro da gaveta dos distritos e das ilhas: escondida
+ *     com a gaveta fechada, à vista depois de a abrir; tocá-la abre a página do distrito, e nela a porta de
+ *     Mourão está à vista e abre a página de Mourão.
  * @param {import('playwright').Browser} nav @param {'pt'|'en'} lang
  * @param {{ preparar?: ((c: import('playwright').BrowserContext) => Promise<void>)|null }} [opcoes]
  */
@@ -189,43 +211,65 @@ async function medeSemGuiao(nav, lang, { preparar = null } = {}) {
   const rota = routePath('lugares', lang);
   const lugares = semBarra(rota);
   const destino = semBarra(routePath('municipio', lang, { slug: ALVO }));
-  const prefixoDoDistrito = routePath('distrito', lang, { slug: 'x' }).replace(/x$/, '');
   const contexto = await nav.newContext({ viewport: { width: 390, height: 900 }, javaScriptEnabled: false });
   if (preparar) await preparar(contexto);
   const pagina = await contexto.newPage();
   /** @type {Record<string, any>} */
   const r = { lang, rota, escrita: ESCRITAS.unico };
+  const resultadosAVista = async () => { let n = 0; for (const a of await pagina.locator('[data-pesquisa-bloco] .pesquisa-item a[href]').all()) if (await a.isVisible()) n++; return n; };
   try {
+    /* 1 · a pesquisa sem guião, como é */
     await pagina.goto(base + rota, { waitUntil: 'load' });
     const campo = pagina.locator('[data-pesquisa-bloco] input[type="search"]');
     r.campo = await campo.count();
-    let aVista = 0;
-    for (const a of await pagina.locator('[data-pesquisa-bloco] .pesquisa-item a[href]').all()) if (await a.isVisible()) aVista++;
-    r.resultadosAVista = aVista;
+    r.resultadosAntes = await resultadosAVista();
     await campo.fill(ESCRITAS.unico);
     const [resposta] = await Promise.all([pagina.waitForNavigation({ timeout: 6000 }).catch(() => null), campo.press('Enter')]);
     const url = new URL(pagina.url());
     r.aterra = `${semBarra(url.pathname)}${url.search}`;
     r.estado = resposta?.status() ?? null;
     r.aterraNosLugares = semBarra(url.pathname) === lugares && url.searchParams.get('concelho') === ESCRITAS.unico;
+    r.resultadosDepois = await resultadosAVista();
+    r.procura = r.resultadosDepois > 0;
+
+    /* 2 · o caminho pelas gavetas: a porta do distrito de Mourão dentro da gaveta dos distritos e das ilhas */
+    await pagina.goto(base + rota, { waitUntil: 'load' });
+    const nomes = pagina.locator('ul[data-lista-lugares="distritos"] a');
     /** @type {string[]} */
-    const portas = [];
-    for (const a of await pagina.locator(`a[href^="${prefixoDoDistrito}"]`).all()) if (await a.isVisible()) portas.push(semBarra(await a.getAttribute('href')));
-    r.portasDeDistritoAVista = new Set(portas).size;
-    const doConcelho = [...new Set(portas)].find((h) => {
+    const destinos = [];
+    for (const a of await nomes.all()) destinos.push(semBarra(await a.getAttribute('href')));
+    const doDistrito = destinos.find((h) => {
       const f = path.join(DIST, h.replace(/^\//, ''), 'index.html');
       return fs.existsSync(f) && fs.readFileSync(f, 'utf8').includes(`href="${destino}"`);
     }) ?? null;
-    r.portaDoDistrito = doConcelho;
-    r.portaDoConcelhoAVista = 0;
-    if (doConcelho) {
-      await pagina.goto(base + doConcelho, { waitUntil: 'load' });
-      for (const a of await pagina.locator(`a[href="${destino}"]`).all()) if (await a.isVisible()) r.portaDoConcelhoAVista++;
+    r.portaDoDistrito = doDistrito;
+    if (doDistrito) {
+      const porta = pagina.locator(`ul[data-lista-lugares="distritos"] a[href="${doDistrito}"], ul[data-lista-lugares="distritos"] a[href="${doDistrito}/"]`).first();
+      r.portaEscondidaComAGavetaFechada = !(await porta.isVisible());
+      const sumario = pagina.locator('[data-dobra-lugares="distritos"] summary');
+      await sumario.focus();
+      await pagina.keyboard.press('Enter');
+      r.portaAVistaComAGavetaAberta = await porta.isVisible();
+      const [noDistrito] = await Promise.all([pagina.waitForNavigation({ timeout: 6000 }).catch(() => null), porta.click()]);
+      r.estadoDoDistrito = noDistrito?.status() ?? null;
+      /* A PORTA DE MOURÃO QUE SE TOCA É A DA LISTA DOS CONCELHOS DA PÁGINA DO DISTRITO (`#concelhos`). A área
+         do mapa da mesma página também é uma porta, mas o toque do navegador sem cabeça cai no `<svg>`, e o
+         caminho sem guião que esta medida descreve é o das listas. */
+      const doConcelho = pagina.locator(`#concelhos a[href="${destino}"], #concelhos a[href="${destino}/"]`);
+      r.portaDoConcelhoAVista = 0;
+      for (const a of await doConcelho.all()) if (await a.isVisible()) r.portaDoConcelhoAVista++;
+      if (r.portaDoConcelhoAVista) {
+        const [noConcelho] = await Promise.all([pagina.waitForNavigation({ timeout: 6000 }).catch(() => null), doConcelho.first().click({ timeout: 6000 })]);
+        r.estadoDoConcelho = noConcelho?.status() ?? null;
+        r.aterraNoConcelho = semBarra(new URL(pagina.url()).pathname) === destino;
+      }
     }
   } finally {
     await contexto.close();
   }
-  r.passa = r.campo === 1 && r.resultadosAVista === 0 && r.estado === 200 && r.aterraNosLugares && r.portaDoDistrito !== null && r.portaDoConcelhoAVista > 0;
+  r.passa = r.campo === 1 && r.resultadosAntes === 0 && r.estado === 200 && r.aterraNosLugares
+    && r.portaDoDistrito !== null && r.portaEscondidaComAGavetaFechada === true && r.portaAVistaComAGavetaAberta === true
+    && r.estadoDoDistrito === 200 && r.portaDoConcelhoAVista > 0 && r.estadoDoConcelho === 200 && r.aterraNoConcelho === true;
   return r;
 }
 
@@ -234,11 +278,12 @@ const resumoDaPorta = (r) => `${r.lang} ${r.largura}: porta «Lugares» ${r.port
 /** @param {Record<string, any>} r */
 const resumoDaOrdem = (r) => `${r.lang} ${r.largura} (${r.forma}): pesquisa ${r.pesquisa?.cima ?? '?'} · mapa ${r.mapa?.cima ?? '?'}–${r.mapa?.baixo ?? '?'} à esquerda ${r.mapa?.esquerda ?? '?'} · regiões ${r.regioes?.cima ?? '?'} · distritos ${r.distritos?.cima ?? '?'} · nomes à vista ${r.nomesAVista}`;
 /** @param {Record<string, any>} r */
-const resumoDasGavetas = (r) => `${r.lang} sem guião: ${r.nomes} nomes das regiões · à vista antes ${r.antes}, depois do Enter ${r.aberta ?? '?'}, depois do segundo Enter ${r.fechada ?? '?'}`;
+const resumoDasGavetas = (r) => `${r.lang} sem guião: ` + (r.gavetas ?? []).map((/** @type {any} */ g) => `${g.chave}, ${g.nomes} nomes · à vista antes ${g.antes}, depois do Enter ${g.aberta ?? '?'}, depois do segundo Enter ${g.fechada ?? '?'}`).join(' · ');
 /** @param {Record<string, any>} r */
 const resumoSemGuiao = (r) =>
-  `${r.lang} sem guião: ${r.resultadosAVista} resultado(s) à vista · «${r.escrita}» + Enter aterra em ${r.aterra} (${r.estado}) · ` +
-  `${r.portasDeDistritoAVista} porta(s) de distrito à vista, a de Mourão ${r.portaDoDistrito ?? 'NENHUMA'} · a porta de Mourão à vista nela ${r.portaDoConcelhoAVista}×`;
+  `${r.lang} sem guião: a pesquisa ${r.procura ? 'PROCURA' : 'não procura'}: «${r.escrita}» + Enter aterra em ${r.aterra} (${r.estado}), com ${r.resultadosDepois ?? '?'} resultado(s) à vista · ` +
+  `o caminho pelas gavetas: a porta de ${r.portaDoDistrito ?? 'NENHUM distrito'} escondida com a gaveta fechada ${r.portaEscondidaComAGavetaFechada ?? '?'}, à vista com ela aberta ${r.portaAVistaComAGavetaAberta ?? '?'}, ` +
+  `abre (${r.estadoDoDistrito ?? '?'}) e nela a porta de Mourão à vista ${r.portaDoConcelhoAVista ?? 0}×, que abre (${r.estadoDoConcelho ?? '?'})`;
 
 const nav = await chromium.launch({ headless: true });
 /** @type {any[]} */ const portas = [];
@@ -285,7 +330,27 @@ try {
       const s = root.querySelector('[data-dobra-lugares="regioes"] summary');
       s.replaceWith(`<div class="gaveta-abrir">${s.innerHTML}</div>`);
       return root.toString();
-    }) }), resumoDasGavetas);
+    }) }), resumoDasGavetas, (r) => r.gavetas?.find((/** @type {any} */ g) => g.chave === 'regioes')?.passa === false);
+    /* L2a-b (o achado 6): a mesma planta na gaveta dos distritos e das ilhas, na edição inglesa. */
+    await planta('o <summary> dos distritos e das ilhas trocado por um bloco qualquer', () => medeAsGavetas(nav, 'en', { preparar: trocaPagina(routePath('lugares', 'en'), (h) => {
+      const root = parse(h, { comment: true });
+      const s = root.querySelector('[data-dobra-lugares="distritos"] summary');
+      s.replaceWith(`<div class="gaveta-abrir">${s.innerHTML}</div>`);
+      return root.toString();
+    }) }), resumoDasGavetas, (r) => r.gavetas?.find((/** @type {any} */ g) => g.chave === 'distritos')?.passa === false);
+    /* L2a-b (o achado 4): o distrito de Mourão tirado da gaveta. As áreas do mapa continuam a levar a ele, e a
+       primeira redação desta célula passava por elas; agora o caminho medido é o da gaveta, e a planta morde. */
+    await planta('a porta do distrito de Mourão tirada da gaveta dos distritos e das ilhas', () => medeSemGuiao(nav, 'pt', { preparar: trocaPagina(lugaresPt, (h) => {
+      const root = parse(h, { comment: true });
+      const lista = root.querySelectorAll('ul[data-lista-lugares="distritos"] li');
+      const comMourao = lista.find((li) => {
+        const h2 = li.querySelector('a')?.getAttribute('href') ?? '';
+        const f = path.join(DIST, h2.replace(/^\//, ''), 'index.html');
+        return fs.existsSync(f) && fs.readFileSync(f, 'utf8').includes(`href="${semBarra(routePath('municipio', 'pt', { slug: ALVO }))}"`);
+      });
+      comMourao?.remove();
+      return root.toString();
+    }) }), resumoSemGuiao, (r) => !r.passa && r.portaDoDistrito === null);
     await planta('o formulário de «Lugares» sem destino', () => medeSemGuiao(nav, 'en', { preparar: trocaPagina(routePath('lugares', 'en'), (h) => h.replace(`action="${routePath('lugares', 'en')}"`, 'action="/en/places-that-do-not-exist/"')) }), resumoSemGuiao, (r) => !r.passa && r.estado === 404);
   }
 } finally {
