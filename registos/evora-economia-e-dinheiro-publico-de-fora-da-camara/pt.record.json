@@ -23,25 +23,25 @@
   {
    "figures": [
     {
-     "end": 120,
+     "end": 139,
      "printed": "111,5",
      "row": "pc-evora-2023",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 115,
+     "start": 134,
      "value": "111.5"
     },
     {
-     "end": 143,
+     "end": 162,
      "printed": "93,9",
      "row": "pc-ac-2023",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 139,
+     "start": 158,
      "value": "93.9"
     },
     {
-     "end": 182,
+     "end": 201,
      "others": [
       "empresas-dim-total",
       "socio-enterprises-2024"
@@ -50,40 +50,40 @@
      "row": "empresas-evora-2024",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 177,
+     "start": 196,
      "value": "7 907"
     },
     {
-     "end": 232,
+     "end": 252,
      "printed": "576 491 544",
      "row": "vab-evora-2024",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 221,
+     "start": 241,
      "value": "576 491 544"
     },
     {
-     "end": 325,
+     "end": 339,
      "printed": "167 372 756",
      "row": "prr-approved-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 314,
+     "start": 328,
      "value": "167 372 756"
     },
     {
-     "end": 348,
+     "end": 362,
      "printed": "86 944 669",
      "row": "prr-paid-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 338,
+     "start": 352,
      "value": "86 944 669"
     }
    ],
    "i": 3,
    "kind": "paragraph",
-   "text": "Évora é uma cidade relativamente próspera numa região pobre: o índice de poder de compra de 2023 põe o concelho em 111,5 e a sua região em 93,9, com a média nacional em cem. As 7 907 empresas sediadas no concelho geraram 576 491 544 euros de valor acrescentado em 2024. O plano de recuperação atribui ao concelho €167 372 756, dos quais €86 944 669 pagos no instantâneo de 2026-08-19, e a maior parte passa por organismos que não são a câmara."
+   "text": "Évora é um concelho relativamente próspero numa região abaixo da média do país: o índice de poder de compra de 2023 põe o concelho em 111,5 e a sua região em 93,9, com a média nacional em cem. As 7 907 empresas sediadas no concelho geraram €576 491 544 de valor acrescentado em 2024. O plano de recuperação atribui ao concelho €167 372 756, dos quais €86 944 669 pagos no instantâneo de 2026-08-19, e a maior parte passa por organismos que não são a câmara."
   },
   {
    "figures": [],
@@ -175,27 +175,27 @@
      "value": "2.6"
     },
     {
-     "end": 204,
+     "end": 205,
      "printed": "23 004",
      "row": "vab-per-worker-evora",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 198,
+     "start": 199,
      "value": "23 004"
     },
     {
-     "end": 225,
+     "end": 221,
      "printed": "31 900",
      "row": "vab-per-worker-pt",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 219,
+     "start": 215,
      "value": "31 900"
     }
    ],
    "i": 7,
    "kind": "paragraph",
-   "text": "A economia é concentrada e produz menos do que consome. Quatro empresas têm 21,5% do valor acrescentado empresarial do concelho, contra 2,6% no país; o valor acrescentado por pessoa ao serviço é de 23 004 euros, contra 31 900 no país; e o polo aeronáutico exporta muito mais do que gera no concelho. O poder de compra acima da média nacional convive com uma produtividade abaixo dela: Évora consome melhor do que produz."
+   "text": "A economia é concentrada e produz menos do que consome. Quatro empresas têm 21,5% do valor acrescentado empresarial do concelho, contra 2,6% no país; o valor acrescentado por pessoa ao serviço é de €23 004, contra €31 900 no país; e o polo aeronáutico exporta muito mais do que gera no concelho. O poder de compra acima da média nacional convive com uma produtividade abaixo dela: Évora consome melhor do que produz."
   },
   {
    "figures": [

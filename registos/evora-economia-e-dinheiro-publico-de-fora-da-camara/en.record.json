@@ -23,25 +23,25 @@
   {
    "figures": [
     {
-     "end": 118,
+     "end": 148,
      "printed": "111.5",
      "row": "pc-evora-2023",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 113,
+     "start": 143,
      "value": "111.5"
     },
     {
-     "end": 141,
+     "end": 171,
      "printed": "93.9",
      "row": "pc-ac-2023",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 137,
+     "start": 167,
      "value": "93.9"
     },
     {
-     "end": 194,
+     "end": 224,
      "others": [
       "empresas-dim-total",
       "socio-enterprises-2024"
@@ -50,40 +50,40 @@
      "row": "empresas-evora-2024",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 189,
+     "start": 219,
      "value": "7 907"
     },
     {
-     "end": 254,
+     "end": 285,
      "printed": "576 491 544",
      "row": "vab-evora-2024",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 243,
+     "start": 274,
      "value": "576 491 544"
     },
     {
-     "end": 326,
+     "end": 351,
      "printed": "167 372 756",
      "row": "prr-approved-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 315,
+     "start": 340,
      "value": "167 372 756"
     },
     {
-     "end": 368,
+     "end": 393,
      "printed": "86 944 669",
      "row": "prr-paid-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 358,
+     "start": 383,
      "value": "86 944 669"
     }
    ],
    "i": 3,
    "kind": "paragraph",
-   "text": "Évora is a relatively prosperous town in a poor region: the 2023 purchasing-power index puts the municipality at 111.5 and its region at 93.9, with the national average at one hundred. The 7 907 enterprises based in the municipality generated 576 491 544 euros of value added in 2024. The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council."
+   "text": "Évora is a relatively prosperous municipality in a region below the national average: the 2023 purchasing-power index puts the municipality at 111.5 and its region at 93.9, with the national average at one hundred. The 7 907 enterprises based in the municipality generated €576 491 544 of value added in 2024. The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council."
   },
   {
    "figures": [],
@@ -175,27 +175,27 @@
      "value": "2.6"
     },
     {
-     "end": 208,
+     "end": 209,
      "printed": "23 004",
      "row": "vab-per-worker-evora",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 202,
+     "start": 203,
      "value": "23 004"
     },
     {
-     "end": 230,
+     "end": 226,
      "printed": "31 900",
      "row": "vab-per-worker-pt",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 224,
+     "start": 220,
      "value": "31 900"
     }
    ],
    "i": 7,
    "kind": "paragraph",
-   "text": "The economy is concentrated and produces less than it consumes. Four enterprises hold 21.5% of the municipality's enterprise value added, against 2.6% in the country; value added per person employed is 23 004 euros, against 31 900 in the country; and the aeronautics cluster exports far more than it generates in the municipality. Purchasing power above the national average sits beside productivity below it: Évora consumes better than it produces."
+   "text": "The economy is concentrated and produces less than it consumes. Four enterprises hold 21.5% of the municipality's enterprise value added, against 2.6% in the country; value added per person employed is €23 004, against €31 900 in the country; and the aeronautics cluster exports far more than it generates in the municipality. Purchasing power above the national average sits beside productivity below it: Évora consumes better than it produces."
   },
   {
    "figures": [

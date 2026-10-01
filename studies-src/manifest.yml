@@ -312,24 +312,24 @@ edicoes:
     lang: pt
     title: "As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação"
     origin: researchhub
-    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ 2ff34de64a63567c78678fbacebbb4de38a4c7cf"
+    origin_ref: "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ 8c8f2274a5e5b2910f7930968c32029a5ef47de7"
     raw_file: _raw/evora-contas-da-camara-2010-2025.pt.html
-    fetched_utc: 2026-09-30T23:45:55Z
-    bytes_raw: 60531
-    bytes_normalized: 60531
-    sha256_raw: 11d75d9f8f51072606dca97d81c94726531ed8cb5cb24e77ccb7f3166aa1c3e6
-    sha256_normalized: 11d75d9f8f51072606dca97d81c94726531ed8cb5cb24e77ccb7f3166aa1c3e6
+    fetched_utc: 2026-10-01T03:03:34Z
+    bytes_raw: 60528
+    bytes_normalized: 60528
+    sha256_raw: f2bbbfa4b255a1e41608c1249b3c3d39eb767e9e2f2e5aff5dc4c664c402681c
+    sha256_normalized: f2bbbfa4b255a1e41608c1249b3c3d39eb767e9e2f2e5aff5dc4c664c402681c
   - slug: evora-contas-da-camara-2010-2025
     lang: en
     title: "The accounts of the Câmara de Évora, 2010 to 2025: the budget, what was collected, the debt and the certification"
     origin: researchhub
-    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ 2ff34de64a63567c78678fbacebbb4de38a4c7cf"
+    origin_ref: "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ 8c8f2274a5e5b2910f7930968c32029a5ef47de7"
     raw_file: _raw/evora-contas-da-camara-2010-2025.en.html
-    fetched_utc: 2026-09-30T23:45:55Z
-    bytes_raw: 57731
-    bytes_normalized: 57731
-    sha256_raw: 17903ac9626cbc02cf24624fd33639bcd39ce4da2046ddf74755ad0105452873
-    sha256_normalized: 17903ac9626cbc02cf24624fd33639bcd39ce4da2046ddf74755ad0105452873
+    fetched_utc: 2026-10-01T03:03:34Z
+    bytes_raw: 57733
+    bytes_normalized: 57733
+    sha256_raw: c0162af30b4112de7312304e349864c2891cd80475804cf5d8acea88d0cd1c94
+    sha256_normalized: c0162af30b4112de7312304e349864c2891cd80475804cf5d8acea88d0cd1c94
   - slug: evora-quem-governou-a-camara-2009-2025
     lang: pt
     title: "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões"
@@ -345,43 +345,43 @@ edicoes:
     lang: pt
     title: "A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara"
     origin: researchhub
-    origin_ref: "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 2ff34de64a63567c78678fbacebbb4de38a4c7cf"
+    origin_ref: "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 8c8f2274a5e5b2910f7930968c32029a5ef47de7"
     raw_file: _raw/evora-economia-e-dinheiro-publico-de-fora-da-camara.pt.html
-    fetched_utc: 2026-09-30T23:45:55Z
-    bytes_raw: 64885
-    bytes_normalized: 64885
-    sha256_raw: 8b88ba7a829c558217dc5b078acb333f9d7e401e2f1785612b0f888861ad2897
-    sha256_normalized: 8b88ba7a829c558217dc5b078acb333f9d7e401e2f1785612b0f888861ad2897
+    fetched_utc: 2026-10-01T03:03:34Z
+    bytes_raw: 64903
+    bytes_normalized: 64903
+    sha256_raw: 5523f27d460233fe869c09219538667beed997f1823ba383def67a814ca2727d
+    sha256_normalized: 5523f27d460233fe869c09219538667beed997f1823ba383def67a814ca2727d
   - slug: evora-economia-e-dinheiro-publico-de-fora-da-camara
     lang: en
     title: "The economy of Évora and the public money that reaches the municipality outside the council"
     origin: researchhub
-    origin_ref: "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 2ff34de64a63567c78678fbacebbb4de38a4c7cf"
+    origin_ref: "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 8c8f2274a5e5b2910f7930968c32029a5ef47de7"
     raw_file: _raw/evora-economia-e-dinheiro-publico-de-fora-da-camara.en.html
-    fetched_utc: 2026-09-30T23:45:55Z
-    bytes_raw: 60974
-    bytes_normalized: 60974
-    sha256_raw: 02a344c4097fb4c6a8f9b1f19d06030851f4f443a50636e2727e5425374c540b
-    sha256_normalized: 02a344c4097fb4c6a8f9b1f19d06030851f4f443a50636e2727e5425374c540b
+    fetched_utc: 2026-10-01T03:03:34Z
+    bytes_raw: 61001
+    bytes_normalized: 61001
+    sha256_raw: 4ce8ec943d9d48d3b97306e99a14f61d8633098ba84f87d23061437cbf7312fb
+    sha256_normalized: 4ce8ec943d9d48d3b97306e99a14f61d8633098ba84f87d23061437cbf7312fb
   - slug: evora-2027-capital-europeia-da-cultura
     lang: pt
     title: "Évora 2027, Capital Europeia da Cultura: o que a candidatura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos"
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ bba572e3cb04a0da255c3c59878c09a99492866a"
+    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ 8c8f2274a5e5b2910f7930968c32029a5ef47de7"
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.pt.html
-    fetched_utc: 2026-10-01T00:25:33Z
-    bytes_raw: 71245
-    bytes_normalized: 71245
-    sha256_raw: 9e6c290f9c974197e8df2d5e8c48d3ed094f6b8252bb42633441e80fa97dd018
-    sha256_normalized: 9e6c290f9c974197e8df2d5e8c48d3ed094f6b8252bb42633441e80fa97dd018
+    fetched_utc: 2026-10-01T03:03:34Z
+    bytes_raw: 71163
+    bytes_normalized: 71163
+    sha256_raw: 1ed3f37e5bdc5438337fec06e76eddb3633623012d29d67fd9d29ea2b1c6b1ad
+    sha256_normalized: 1ed3f37e5bdc5438337fec06e76eddb3633623012d29d67fd9d29ea2b1c6b1ad
   - slug: evora-2027-capital-europeia-da-cultura
     lang: en
     title: "Évora 2027, European Capital of Culture: what the bid promised, what the European panel wrote and the money in the official acts"
     origin: researchhub
-    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ bba572e3cb04a0da255c3c59878c09a99492866a"
+    origin_ref: "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ 8c8f2274a5e5b2910f7930968c32029a5ef47de7"
     raw_file: _raw/evora-2027-capital-europeia-da-cultura.en.html
-    fetched_utc: 2026-10-01T00:25:33Z
-    bytes_raw: 69333
-    bytes_normalized: 69333
-    sha256_raw: 53f67280f4b7ac91ab2ba0fce02644368d371993efc76d6bdc1cd3fd572f2933
-    sha256_normalized: 53f67280f4b7ac91ab2ba0fce02644368d371993efc76d6bdc1cd3fd572f2933
+    fetched_utc: 2026-10-01T03:03:34Z
+    bytes_raw: 69248
+    bytes_normalized: 69248
+    sha256_raw: d9b54468ad625c64691940178ed09edcc883d45dae13f93ebd64594ce0af24ff
+    sha256_normalized: d9b54468ad625c64691940178ed09edcc883d45dae13f93ebd64594ce0af24ff
