@@ -1,7 +1,7 @@
 {
   "bloco": "L2b",
-  "cabeca": "7de721c72ea2f1a935cc810e5d484492b921c1fc",
-  "construcao": "7de721c72ea2f1a935cc810e5d484492b921c1fc",
+  "cabeca": "cc067e564e67ed39d4985ed09d7056c0a012434c",
+  "construcao": "cc067e564e67ed39d4985ed09d7056c0a012434c",
   "guiao": "design/especime-v3/medicoes/l2b-2026-10-01/medir-l2b.mjs",
   "exemplos_de_lugares_diferentes": [],
   "medidas": [
@@ -763,56 +763,56 @@
     },
     {
       "nome": "portao_build_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/l2b-2026-10-01/portoes",
       "conhecido_positivo": {
         "o_que": "o ficheiro da cabeça da corrida existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_build_segundos",
-      "valor": "NÃO LIDO",
+      "valor": 125,
       "comando": "idem · build.fim menos build.inicio",
       "conhecido_positivo": {
         "o_que": "idem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_verify_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/l2b-2026-10-01/portoes",
       "conhecido_positivo": {
         "o_que": "o ficheiro da cabeça da corrida existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_verify_segundos",
-      "valor": "NÃO LIDO",
+      "valor": 724,
       "comando": "idem · verify.fim menos verify.inicio",
       "conhecido_positivo": {
         "o_que": "idem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_typecheck_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/l2b-2026-10-01/portoes",
       "conhecido_positivo": {
         "o_que": "o ficheiro da cabeça da corrida existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_typecheck_segundos",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "idem · typecheck.fim menos typecheck.inicio",
       "conhecido_positivo": {
         "o_que": "idem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {

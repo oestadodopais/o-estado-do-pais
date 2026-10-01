@@ -17,7 +17,7 @@ O do §2 do brief, ponto por ponto:
 | a leitura breve diz, para o ganho médio, se está acima ou abaixo de Portugal, lido das linhas | a P1 do `check:lugares` reconta a palavra e exige as duas linhas na leitura, nas 616 páginas | Évora e Penedono, nas duas edições: «abaixo de Portugal» com as duas linhas seladas |
 | as duas réguas à mão procuram o mapa em «Lugares» | a secção do ponto 4, abaixo | a `correcoes-c.mjs` sim, e corre a 0; a `matriz.mjs` não: parei nesse ponto, e digo porquê |
 | uma célula prova a faixa, com plantas (um lugar errado, uma referência de outro período, uma marca a menos) | `navegacao.json` | 14 plantas da célula, as três do brief entre elas, todas a morder; e 5 do portão de HTML, todas a morder com os bytes repostos |
-| os três portões a 0 | `portoes/` (a corrida final, na cabeça do commit deste relatório; os códigos entram no commit seguinte) e `portoes-intermedio/` | ver a secção dos portões |
+| os três portões a 0 | `portoes/` (a corrida final, na cabeça do commit deste relatório, `cc067e56`) e `portoes-intermedio/` | `build` 0, `verify` 0 e `typecheck` 0 na corrida final; ver a secção dos portões |
 | as capturas de Évora e de um concelho pequeno nas cinco larguras e nas duas edições | `capturas-depois.json` e `capturas-antes.json` | 20 capturas depois e 8 antes, 0 problemas |
 
 ## O mandato, ponto por ponto
@@ -29,7 +29,7 @@ O do §2 do brief, ponto por ponto:
 | 3 | A referência na leitura breve | `src/lib/lugar.mjs` acaba a leitura, nos 308 e na de Évora, com «O ganho médio mensal é de 1 484,5 euros por mês, abaixo de Portugal, onde é de 1 576,0 euros por mês.» (os dois valores selados, a palavra do lado escolhida pelos dois, nas duas línguas); a P1 do `check:lugares` reconta-a | as leituras de Évora e de Penedono, nas duas edições, dizem «abaixo de Portugal» com as duas linhas (4 medidas a 1 em `medidas.json`) |
 | 4 | As réguas à mão | a `correcoes-c.mjs` mudou para «Lugares» e corre a 0 (12 réguas em 12); as outras cinco rebentam antes e depois do bloco, nas mesmas linhas | ver a secção do ponto 4 |
 | 5 | As células | a célula FC no `check:navegacao`, a K1 e a K10 do `check:cartao`, a P1 do `check:lugares`, as três origens novas do portão de HTML e a H2 do `check:alvos`, cada uma com a sua planta | 14 plantas da célula, 5 do portão, 1 da K1 e 1 da H2, todas a morder |
-| 6 | O relatório | este ficheiro, `medidas.json` por `medir-l2b.mjs`, as capturas em `design/especime-v3/capturas/l2b-2026-10-01/` | completos, com os códigos da corrida final dos portões no commit seguinte |
+| 6 | O relatório | este ficheiro, `medidas.json` por `medir-l2b.mjs`, as capturas em `design/especime-v3/capturas/l2b-2026-10-01/` | completos, com os códigos da corrida final dos portões |
 
 ## A tabela das ordens e das comparações (as direções)
 
@@ -105,7 +105,7 @@ As plantas da célula, pelo nome: um lugar errado, uma referência de outro per�
 
 A corrida intermédia, por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `9fe85b64` (`portoes-intermedio/`): `build` 0 em 126 s, `verify` 1 em 477 s (a H2, acima, e o `verify` para no primeiro vermelho), `typecheck` 0. Depois dela, cada conferência que a mudança tocou correu sozinha, com os códigos em ficheiro: a `check:alvos` a 0 com a H2 nova, o estrago dela a morder, e o `build` inteiro a 0 na cabeça `7de721c7`, a do código final.
 
-A corrida final corre pelo mesmo guião na cabeça do commit deste relatório, e os códigos, as horas e os registos entram no commit seguinte, em `portoes/`, com `medidas.json` reescrito por `medir-l2b.mjs` a lê-los.
+A corrida final, pelo mesmo guião, na cabeça `cc067e56`, a do commit deste relatório e da resposta curta (`portoes/cabeca`, e a mesma em `portoes/cabeca.fim`, com a árvore limpa no fim em `portoes/estado.fim`): `build` 0 em 125 s, `verify` 0 em 724 s, `typecheck` 0 em 0 s, cada código lido do seu ficheiro. Os registos estão ao lado, com os caminhos da máquina trocados por marcas. O commit que os traz só acrescenta ficheiros desta pasta: os de `portoes/`, `medidas.json` reescrito por `medir-l2b.mjs` a lê-los (só as seis medidas dos portões mudam) e esta secção.
 
 ## As capturas
 
