@@ -15,7 +15,7 @@ O do §2 do brief, à letra, ponto por ponto:
 | a porta «Lugares» de «Por onde começar» com um mapa pequeno como sinal | a L2A4, «a porta» no navegador e a R6 do `check:mapa` | 1 sinal na primeira página e 1 nos temas, só na porta «Lugares», com o texto alternativo da edição; o toque na porta abre «Lugares» da mesma edição |
 | os dois mapas de «As medidas dos concelhos» e as suas tabelas ficam como estão | a célula N1M do `check:navegacao` (`tests/inicio/concelhos-nos-lugares.mjs`), que não mudou | verde |
 | as células que protegem a pesquisa, o mapa e as listas mudam de forma com uma planta cada | a tabela das réguas, abaixo | 14 plantas da célula nova, 4 da célula no navegador, 23 do `check:mapa` (quatro delas novas), 2 da voz e 1 do feixe, todas a morder |
-| os três portões a 0 | `portoes-intermedio/` (cabeça `86635e62`) e `portoes/` (a cabeça final, num commit a seguir a este) | 0, 0 e 0 na corrida intermédia |
+| os três portões a 0 | `portoes/`, na cabeça `a66ab832`, e `portoes-intermedio/`, na cabeça `86635e62` | 0, 0 e 0 nas duas corridas |
 | as capturas de «Lugares» e da primeira página nas cinco larguras e nas duas edições | `capturas-l2a.json` | 22 capturas e 0 problemas, em `design/especime-v3/capturas/l2a-2026-10-01/` |
 
 ## O mandato, ponto por ponto
@@ -72,11 +72,14 @@ O contorno é a fronteira da união das 29 unidades, lida pelas arestas: das 553
 - `86635e62` a I11 segue o mapa, e dois seletores e uma planta deixam a porta que saiu
 - `488f62c4` as duas gavetas sem o ar de secção entre elas
 - `1be6d6cc` as capturas, as plantas e as medidas
-- o commit deste relatório e da resposta curta; e, a seguir, o dos códigos da corrida final dos portões
+- `a66ab832` o relatório do construtor, a resposta curta e as medidas com o custo e a corrida intermédia dos portões
+- o commit seguinte: os códigos e os registos da corrida final dos portões, e este relatório com eles
 
 ## Os portões
 
-Corrida intermédia, por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `86635e62` (`portoes-intermedio/cabeca`): `build` 0 em 115 s, `verify` 0 em 702 s, `typecheck` 0 em 1 s, cada código lido do seu ficheiro. Desde essa cabeça mudou uma regra da folha (`488f62c4`), reconstruída a 0 antes das capturas, e o resto são ficheiros de medição. A corrida final na cabeça deste commit escreve em `portoes/`, e os códigos entram no commit seguinte.
+Corrida final, por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `a66ab832`, a do commit do relatório e da resposta curta (`portoes/cabeca`, e a mesma em `portoes/cabeca.fim`, com a árvore limpa no fim em `portoes/estado.fim`): `build` 0 em 120 s, `verify` 0 em 719 s, `typecheck` 0 em 0 s, cada código lido do seu ficheiro. Os registos estão ao lado, com os caminhos da máquina tornados relativos. O commit que os traz só acrescenta ficheiros desta pasta.
+
+Corrida intermédia, pelo mesmo guião, na cabeça `86635e62` (`portoes-intermedio/`): `build` 0 em 115 s, `verify` 0 em 702 s, `typecheck` 0 em 1 s.
 
 ## As capturas
 
@@ -88,7 +91,7 @@ Em `design/especime-v3/capturas/l2a-2026-10-01/`, sobre a construção da cabeç
 
 ## O custo
 
-Símbolos: 636000 até este commit, a diferença entre o contador de símbolos restantes que a ferramenta mostra ao agente no início da sessão e na hora em que `medir-l2a.py` correu para este relatório (o valor está em `medidas.json`, com o comando). Segundos: os dos portões, acima. Modelo: Claude Opus 5.5 do princípio ao fim; nenhum subagente.
+Símbolos: 653000 até à corrida final dos portões, a diferença entre o contador de símbolos restantes que a ferramenta mostra ao agente no início da sessão e na hora em que `medir-l2a.py` correu para este relatório (o valor está em `medidas.json`, com o comando). Segundos: os dos portões, acima. Modelo: Claude Opus 5.5 do princípio ao fim; nenhum subagente.
 
 ## O que ficou por fazer
 
