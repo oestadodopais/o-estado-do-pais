@@ -31,6 +31,12 @@
       "kind": "atualizacao",
       "old_value": "5",
       "new_value": "6"
+    },
+    {
+      "date": "2026-10-01",
+      "kind": "atualizacao",
+      "old_value": "6",
+      "new_value": "4"
     }
   ],
   "evora-prr-aprovado-2026": [
