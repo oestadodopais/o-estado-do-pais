@@ -1,0 +1,30 @@
+---
+/**
+ * AS EDIÇÕES DATADAS QUE UM ESTUDO SUCEDE (bloco E1, 01.10.2026, DECISIONS.md
+ * §1.145). Os seis estudos de Évora de agosto e setembro saíram do índice dos
+ * estudos e da página do concelho, e ficam alojados como edições datadas; a porta
+ * para cada um passa a ser a página do estudo que lhe sucede, aqui, antes da edição
+ * publicada. A lista lê-se do `sucedidoPor` do arquivo, ao contrário, e não se
+ * escreve à mão.
+ */
+import TituloDeTrabalho from './TituloDeTrabalho.astro';
+import { WORKS } from '../data/studies.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+
+const { work, lang = 'pt' } = Astro.props;
+const r = ROTULOS_B1[lang];
+const antecessores = WORKS.filter((w) => (w.sucedidoPor ?? []).some((s) => s.slug === work.slug)).map((w) => ({
+  edicao: w.editions.find((e) => e.lang === lang) ?? w.editions[0],
+  rota: routePath('estudo', lang, { slug: w.slug }),
+}));
+const separador = (i) => (i === antecessores.length - 1 ? '.' : i === antecessores.length - 2 ? ` ${r.e} ` : ', ');
+---
+{antecessores.length > 0 && (
+  <p class="estudo-antecessores" data-antecessores={antecessores.map((a) => a.rota).join(' ')}>
+    <span>{r.sucedeA}</span>{' '}
+    {antecessores.map((a, i) => (
+      <><a href={a.rota}><TituloDeTrabalho edicao={a.edicao} lang={lang} /></a><span>{separador(i)}</span></>
+    ))}
+  </p>
+)}

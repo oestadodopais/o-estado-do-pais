@@ -6,7 +6,7 @@ import { SITE_URL } from './site.config.mjs';
 import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
 import { loadClaims, provenienciaIncompleta } from './src/lib/ledger.mjs';
 import { WORKS } from './src/data/studies.mjs';
-import { temLeitura } from './src/data/leituras.mjs';
+import { indexavel } from './src/data/leituras.mjs';
 
 /**
  * Uma alternativa de língua, tal como routes.mjs a devolve.
@@ -79,7 +79,9 @@ export default defineConfig({
         if (hit?.key === 'texto') return false;
         if (hit?.key === 'estudo') {
           const work = WORKS.find((w) => w.slug === hit.params.slug);
-          return work ? temLeitura(work.id) : false;
+          /* Com leitura escrita e sem sucessor (bloco E1): um estudo sucedido é
+             uma edição datada e não se oferece ao índice. */
+          return work ? indexavel(work) : false;
         }
         if (hit?.key === 'linha') {
           const claim = loadClaims().get(hit.params.slug ?? '');

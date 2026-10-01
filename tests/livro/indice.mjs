@@ -733,6 +733,7 @@ celula('I6', 'o marcador com um destino só', (falhas) => {
   let semPorta = 0;
   let dentroDoSelo = 0;
   let soltos = 0;
+  let noDocumentoAlojado = 0;
   for (const pag of paginas) {
     const raiz = dom(pag);
     const transcritos = new Set();
@@ -772,6 +773,15 @@ celula('I6', 'o marcador com um destino só', (falhas) => {
       /* Dentro de uma transcrição, o marcador pode ser o texto do campo: é o
          registo a dizer que o campo falta, e o texto é do registo. */
       if (transcritos.has(el)) continue;
+      /* E DENTRO DE UM DOCUMENTO ALOJADO (bloco E1, 01.10.2026), a cadeia é do
+         documento: a moldura (`data-oedp-moldura`, src/lib/documentos.mjs) leva
+         o documento byte a byte, e a casa não edita o que aloja, como nas I2 e
+         I4. O estudo de quem governou a câmara foi o primeiro documento alojado
+         a escrever a cadeia da casa (a edição portuguesa do «Quinze Anos»
+         escrevia «[verify]»); a mesma frase no corpo do registo, na página do
+         estudo, já passava como transcrição. Conta-se à parte e imprime-se; fora
+         da moldura a regra fica igual, e a planta do bloco E1 prova que morde. */
+      if (el.closest('[data-oedp-moldura]')) { noDocumentoAlojado++; continue; }
       soltos++;
       falhas.push(`${pag.rota}: a cadeia do marcador escrita sem a marca ("${proprio.trim().slice(0, 60)}").`);
     }
@@ -791,10 +801,11 @@ celula('I6', 'o marcador com um destino só', (falhas) => {
     sem_porta: semPorta,
     dentro_do_selo: dentroDoSelo,
     soltos,
+    em_documentos_alojados: noDocumentoAlojado,
   };
   const nPt = [...destinos.pt.values()].reduce((a, b) => a + b, 0);
   const nEn = [...destinos.en.values()].reduce((a, b) => a + b, 0);
-  return `${nPt} ligação(ões) em «pt» e ${nEn} em «en», uma página cada · ${dentroDoSelo} marcador(es) dentro de um selo (excepção da Emenda 2)`;
+  return `${nPt} ligação(ões) em «pt» e ${nEn} em «en», uma página cada · ${dentroDoSelo} marcador(es) dentro de um selo (excepção da Emenda 2) · ${noDocumentoAlojado} cadeia(s) dentro de documentos alojados, que são o texto do documento`;
 });
 
 /* --------------------------------------------------------------------- I8 */

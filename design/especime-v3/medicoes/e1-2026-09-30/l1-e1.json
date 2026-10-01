@@ -1,0 +1,54 @@
+{
+  "o_que_e": "E1: a catraca L1 sobe de 2 337 para 2 342 porque o sítio ganhou as sete páginas dos documentos alojados dos quatro estudos novos (16 e 18 e 19 nas duas línguas, 17 em português), e cada página de documento traz a mesma mobília de todas as outras: a porta para a página do estudo, duas vezes. As páginas que já existiam contam 2 335, abaixo do teto anterior; nenhuma página antiga ganhou um destino repetido para uma rota de um estudo de Évora (a medida l1_paginas_antigas do medidas.json do bloco).",
+  "data": "2026-10-01",
+  "origem": "design/especime-v3/medicoes/e1-2026-09-30/l1-check-lugar.log",
+  "comando": "AMOSTRA=5000 node scripts/check-lugar.mjs, sobre o dist/ da construção do ensaio do E1",
+  "contagens": {
+    "estudos": 2342,
+    "teto_anterior": 2337,
+    "paginas_novas": 7,
+    "paginas_que_ja_existiam": 2335
+  },
+  "paginas_novas": [
+    {
+      "rota": "/en/studies/evora-2027-capital-europeia-da-cultura/document",
+      "destinos_repetidos": 3,
+      "exemplo": "/en/studies/evora-2027-capital-europeia-da-cultura ×2"
+    },
+    {
+      "rota": "/en/studies/evora-contas-da-camara-2010-2025/document",
+      "destinos_repetidos": 2,
+      "exemplo": "/en/studies/evora-contas-da-camara-2010-2025 ×2"
+    },
+    {
+      "rota": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/document",
+      "destinos_repetidos": 2,
+      "exemplo": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara ×2"
+    },
+    {
+      "rota": "/estudos/evora-2027-capital-europeia-da-cultura/documento",
+      "destinos_repetidos": 3,
+      "exemplo": "/estudos/evora-2027-capital-europeia-da-cultura ×2"
+    },
+    {
+      "rota": "/estudos/evora-contas-da-camara-2010-2025/documento",
+      "destinos_repetidos": 2,
+      "exemplo": "/estudos/evora-contas-da-camara-2010-2025 ×2"
+    },
+    {
+      "rota": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/documento",
+      "destinos_repetidos": 2,
+      "exemplo": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara ×2"
+    },
+    {
+      "rota": "/estudos/evora-quem-governou-a-camara-2009-2025/documento",
+      "destinos_repetidos": 2,
+      "exemplo": "/estudos/evora-quem-governou-a-camara-2009-2025 ×2"
+    }
+  ],
+  "conhecido_positivo": {
+    "rota": "/agenda",
+    "destinos_repetidos": 8,
+    "visto": true
+  }
+}

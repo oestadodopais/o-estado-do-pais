@@ -2076,14 +2076,21 @@ const COLECOES_DOS_ESTUDOS = {
   texto: WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
   indice: LANGS.length,
   edicoes: WORKS.length * LANGS.length,
-  linhas: WORKS.length * LANGS.length,
+  /* E1 (01.10.2026): a lista traz os estudos sem sucessor; um estudo com
+     sucessor continua a ter a sua página (estudo, edições), mas a sua linha da
+     lista passou a ser a do estudo que lhe sucede. */
+  linhas: WORKS.filter(w => !w.sucedidoPor).length * LANGS.length,
 };
 // B1: toda a coleção existe, cada estudo sai da lista, e o de um lugar sai
 // também da página desse lugar.
 for (const lang of LANGS) {
   for (const w of WORKS) {
-    const rotas = [routePath('estudos', lang)];
-    if (w.subject) rotas.push(routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject }));
+    /* Um estudo com sucessor (bloco E1, 01.10.2026) saiu da lista e da página do
+       lugar: alcança-se da página de cada estudo que lhe sucede, e de lá só. */
+    const rotas = w.sucedidoPor
+      ? w.sucedidoPor.map(s => routePath('estudo', lang, { slug: s.slug }))
+      : [routePath('estudos', lang)];
+    if (w.subject && !w.sucedidoPor) rotas.push(routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject }));
     for (const rota of rotas) {
       const f = path.join(DIST, rota.slice(1), 'index.html');
       const doc = fs.existsSync(f) ? parse(fs.readFileSync(f, 'utf8')) : null;

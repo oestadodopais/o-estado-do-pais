@@ -515,3 +515,10 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | n1d | O contexto das duas tabelas e a explicação do salário irmão | por ler antes de aterrar | O ano vem das linhas municipais e a definição dos ganhos reutiliza a declaração da medida. Portugal entra como referência selada. A explicação Eurostat passa a dizer que se ajusta o valor para contar com os pagamentos. |
+
+## E1 · os estudos de Évora, de seis a quatro, 01.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| e1 | 18 cadeias novas, 2 retiradas, 2 que saem do ficheiro | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do E1: as leituras dos estudos das contas e de quem governou (as frases das leituras do «Orçamentado, Pago, Devido» e de «Os Pelouros», que a primeira página e a lista passam a render), as descrições dos quatro estudos nas duas línguas, o lugar e o tema do estudo de quem governou na primeira página, a nota do mandato de 2009 a 2013 na ficha de Évora, que passa a dizer uma coisa só, e a dos mandatos de 2013 a 2017 e de 2017 a 2021, que dizia que as capturas dos pelouros começavam em 2021 (I180). Saem as duas linhas compostas da Cultura na primeira página (o «Évora 2027» deixou de estar entre os três estudos mais recentes), e retiram-se as duas notas antigas do mandato de 2009 a 2013. |
+

@@ -43,6 +43,20 @@
       "ficheiro": "studies-src/evolucao-de-portugal-desde-1981/pt.html"
     },
     {
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "lang": "pt",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-2027-capital-europeia-da-cultura/pt.html"
+    },
+    {
+      "slug": "evora-2027-capital-europeia-da-cultura",
+      "lang": "en",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-2027-capital-europeia-da-cultura/en.html"
+    },
+    {
       "slug": "evora-2027-prometido-painel-dinheiro",
       "lang": "pt",
       "data": "2026-09-16",
@@ -55,6 +69,34 @@
       "data": "2026-09-16",
       "commit": "7a12f9fe818efd5391d14500305ad508690ccecc",
       "ficheiro": "studies-src/evora-2027-prometido-painel-dinheiro/en.html"
+    },
+    {
+      "slug": "evora-contas-da-camara-2010-2025",
+      "lang": "pt",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-contas-da-camara-2010-2025/pt.html"
+    },
+    {
+      "slug": "evora-contas-da-camara-2010-2025",
+      "lang": "en",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-contas-da-camara-2010-2025/en.html"
+    },
+    {
+      "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "pt",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html"
+    },
+    {
+      "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "lang": "en",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html"
     },
     {
       "slug": "evora-economia-investidores-portas-abertas-2026",
@@ -97,6 +139,13 @@
       "data": "2026-08-15",
       "commit": "ec152217f0ab7a8490b49cede57886e07f14c8cd",
       "ficheiro": "studies-src/evora-prometido-pago-auditado-2026/en.html"
+    },
+    {
+      "slug": "evora-quem-governou-a-camara-2009-2025",
+      "lang": "pt",
+      "data": "2026-10-01",
+      "commit": "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9",
+      "ficheiro": "studies-src/evora-quem-governou-a-camara-2009-2025/pt.html"
     },
     {
       "slug": "evora-quinze-anos-cinco-mandatos",

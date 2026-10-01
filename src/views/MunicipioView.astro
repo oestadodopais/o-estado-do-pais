@@ -217,6 +217,7 @@ const jsonld = {
                 diz («o valor da afirmação aparece sem selo para a sua própria
                 linha»). O que a maqueta desenhou não passou por um portão; este
                 passou. O ar que os dois selos precisam está na folha. */}
+            {e.pergunta && <p class="lugar-estudo-pergunta estudo-pergunta" data-verbatim={e.verbatimDaPergunta}>{e.pergunta}</p>}
             <p class="lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}>
               <Frase partes={e.resumo} lang={lang} selos={true} />
             </p>

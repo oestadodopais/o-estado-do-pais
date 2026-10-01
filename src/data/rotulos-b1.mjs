@@ -28,14 +28,21 @@ export const ROTULOS_B1 = {
     temas: 'Temas', estudosDoLugar: 'Estudos sobre este lugar', estudosRecentes: 'Estudos recentes', mudou: 'O que mudou',
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
     todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '',
-    todasAsMudancas: 'Todas as mudanças' },
+    todasAsMudancas: 'Todas as mudanças',
+    /* A nota do sucessor, à cabeça de um estudo com sucessor (bloco E1). */
+    edicaoDatada: 'Edição datada.', sucedidoA: 'Sucedido a', sucedidoPor: 'por',
+    sucedidoPorVarios: 'por três estudos:', sucedidoEm: 'em',
+    sucedeA: 'Sucede a', e: 'e' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
     pais: 'Portugal', outraLingua: '(in Portuguese)', indice: 'On this page',
     temas: 'Themes', estudosDoLugar: 'Studies about this place', estudosRecentes: 'Recent studies', mudou: 'What changed',
     lugares: 'Places', regioes: 'Regions', distritos: 'Districts and islands',
     todasAsMedidasA: 'All measures for ', todasAsMedidasB: '',
-    todasAsMudancas: 'All changes' },
+    todasAsMudancas: 'All changes',
+    edicaoDatada: 'Dated edition.', sucedidoA: 'Succeeded on', sucedidoPor: 'by',
+    sucedidoPorVarios: 'by three studies:', sucedidoEm: 'in',
+    sucedeA: 'Succeeds', e: 'and' },
 };
 
 /** Os títulos que delimitam a leitura já aprovada, nas duas edições. */

@@ -245,14 +245,21 @@ export const AREAS = [
               'O prazo médio de pagamento a fornecedores é uma medida da execução financeira de uma autarquia local.',
           },
           {
-            estudos: ['evora-orcamentado-pago-devido-2025', 'evora-os-pelouros-quem-os-teve-o-que-fizeram'],
-            id: /^evora-/,
+            /* Desde o bloco E1 (01.10.2026) as linhas do «Orçamentado, Pago, Devido» são
+               do estudo das contas, e as dos pelouros do estudo de quem governou; no
+               estudo das contas vivem também as da dívida herdada, que a regra
+               seguinte cobre, e por isso esta nomeia as suas: a do orçamento, da
+               cobrança, da dívida legal e do regulador, e as dos pelouros. */
+            estudos: ['evora-contas-da-camara-2010-2025', 'evora-quem-governou-a-camara-2009-2025'],
+            id: /^evora-(contas-2024-votos-|despesa-paga-|divergencia-municipio-dgal-|divida-dgal-|divida-total-202[45]$|execucao-da-receita-|indice-de-divida-|limite-divida-|margem-endividamento-|orcamento-|pagamentos-em-atraso-|prazo-medio-de-pagamento-|receita-cobrada-|pelouros-)/,
             razao:
               'O orçamento, a receita, a despesa, a dívida, a margem de endividamento, o prazo de pagamento e os pelouros de uma câmara municipal são o funcionamento de uma autarquia local, e a certificação das contas dela e o voto que a aprovou são a prestação de contas dessa autarquia.',
           },
           {
-            estudos: ['evora-quinze-anos-cinco-mandatos'],
-            id: /^evora-(divida-|excesso-endividamento-|pael-emprestimo|saneamento-financeiro-)/,
+            /* Bloco E1: a dívida herdada e o excesso ficaram no estudo das contas, e o
+               PAEL e o saneamento financeiro nas decisões de quem governou. */
+            estudos: ['evora-contas-da-camara-2010-2025', 'evora-quem-governou-a-camara-2009-2025'],
+            id: /^evora-(divida-31-10-2013|divida-inicio-mandato-reexpressa|divida-total-201[7]|divida-total-2021|excesso-endividamento-|pael-emprestimo|saneamento-financeiro-)/,
             razao:
               'A dívida do município ao longo de quinze anos, o excesso sobre o limite legal, o empréstimo do PAEL e o saneamento financeiro são as contas de uma autarquia local.',
           },
@@ -283,7 +290,7 @@ export const AREAS = [
               'O poder de compra per capita de um concelho, com Portugal em 100, mede a distância desse território à média do País. É a desigualdade territorial que a matéria da coesão territorial tem por objeto.',
           },
           {
-            estudos: ['evora-economia-investidores-portas-abertas-2026'],
+            estudos: ['evora-economia-e-dinheiro-publico-de-fora-da-camara'],
             id: /-poder-de-compra-\d{4}$/,
             razao:
               'O poder de compra per capita de Évora e do Alentejo Central, com Portugal em 100, mede a distância daqueles territórios à média do País.',
@@ -302,13 +309,13 @@ export const AREAS = [
               'O produto interno bruto real por habitante é a medida do tamanho da economia por pessoa. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia o produto interno bruto nem o nível da economia: nomeia as políticas dirigidas ao seu crescimento.',
           },
           {
-            estudos: ['evora-economia-investidores-portas-abertas-2026'],
+            estudos: ['evora-economia-e-dinheiro-publico-de-fora-da-camara'],
             id: /^evora-vab-empresarial-/,
             razao:
               'O valor acrescentado bruto das empresas de um concelho é o tamanho da economia dele. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia o valor acrescentado nem o nível da economia de um território: nomeia as políticas dirigidas ao seu crescimento.',
           },
           {
-            estudos: ['evora-economia-investidores-portas-abertas-2026'],
+            estudos: ['evora-economia-e-dinheiro-publico-de-fora-da-camara'],
             id: /^(evora-concentracao-vab4-|portugal-concentracao-vab4-)/,
             razao:
               'A parte do valor acrescentado que cabe às quatro maiores empresas mede o quanto uma economia depende de poucas. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia a concentração nem a estrutura de mercado, e «concorrência» não ocorre no diploma.',
@@ -372,7 +379,7 @@ export const AREAS = [
           'O Ministério da Economia e da Coesão Territorial tem ainda por missão formular, conduzir e avaliar as estratégias de desenvolvimento económico e social relacionadas com os objetivos da convergência e da coesão, assim como definir e executar a estratégia, as prioridades, as orientações, a monitorização, a avaliação e a gestão global dos programas financiados por fundos europeus, nomeadamente no âmbito da política de coesão da União Europeia e do Plano de Recuperação e Resiliência (PRR).',
         regras: [
           {
-            estudos: ['evora-prometido-pago-auditado-2026'],
+            estudos: ['evora-economia-e-dinheiro-publico-de-fora-da-camara'],
             id: /^evora-prr-/,
             razao:
               'O aprovado, o contratado, o pago e o vencido do PRR num concelho são a execução do Plano de Recuperação e Resiliência, que este número da lei nomeia pelo nome. A Estrutura de Missão que publica as listagens não é nomeada em artigo nenhum, e pela regra antiga estas linhas ficavam sem área; pela regra da matéria não ficam, porque o assunto está escrito na lei.',
@@ -458,7 +465,7 @@ export const AREAS = [
           'O Ministério da Administração Interna é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de segurança interna, do controlo de fronteiras, de proteção e socorro, de planeamento civil de emergência, de segurança rodoviária e de administração eleitoral.',
         regras: [
           {
-            estudos: ['evora-quinze-anos-cinco-mandatos'],
+            estudos: ['evora-quem-governou-a-camara-2009-2025'],
             id: /^evora-(camara-lugares|camara-mandatos-|executivo-)/,
             razao:
               'Os lugares de uma câmara municipal, os mandatos que cada lista ganhou em cada eleição e a composição do executivo saído da última são resultados eleitorais. A matéria chama-se administração eleitoral, e é a mesma área que já publicava estes números.',
@@ -554,7 +561,7 @@ export const AREAS = [
           'O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de emprego, de formação profissional, de relações laborais e condições de trabalho, solidariedade e segurança social, bem como a coordenação das políticas sociais de apoio à família, crianças e jovens em risco, idosos e natalidade, de inclusão das pessoas com deficiência, de combate à pobreza e de promoção da inclusão social, de fortalecimento do setor cooperativo, da economia social e do voluntariado.',
         regras: [
           {
-            estudos: ['concelhos-2026', 'evora-quinze-anos-cinco-mandatos'],
+            estudos: ['concelhos-2026', 'evora-economia-e-dinheiro-publico-de-fora-da-camara'],
             id: /-desemprego-registado-/,
             razao:
               'As pessoas inscritas como desempregadas nos serviços de emprego de um concelho têm por assunto o emprego. Trinta destas linhas são publicadas pelas direções regionais dos Açores e da Madeira, que são dos governos regionais: pela regra antiga ficavam de fora, e pela regra da matéria não ficam, porque o desemprego de um concelho é o mesmo assunto onde quer que ele seja medido.',
@@ -743,7 +750,7 @@ export const SEM_AREA = [
   },
   {
     assunto: 'A população residente de um concelho',
-    estudos: ['concelhos-2026', 'evora-economia-investidores-portas-abertas-2026'],
+    estudos: ['concelhos-2026', 'evora-economia-e-dinheiro-publico-de-fora-da-camara'],
     id: /-populacao-\d{4}$/,
     motivo:
       'Uma contagem de pessoas não é uma política. Nenhum ministério tem «estatística» nas suas matérias: neste diploma a palavra só ocorre no nome de dois organismos, o Instituto Nacional de Estatística e a Direção-Geral de Estatísticas da Educação e Ciência. E «população» não ocorre uma única vez. O mais perto que a lei chega é o artigo 24.º, n.º 10, e o artigo 26.º, n.º 7, que dão a duas ministras, em conjunto, a superintendência de um conselho consultivo «no que diz respeito às matérias de demografia e desigualdade»: é o alcance de um poder sobre um conselho, e não uma matéria do ministério.',
@@ -756,7 +763,7 @@ export const SEM_AREA = [
   },
   {
     assunto: 'O número de empresas de um concelho',
-    estudos: ['concelhos-2026', 'evora-economia-investidores-portas-abertas-2026'],
+    estudos: ['concelhos-2026', 'evora-economia-e-dinheiro-publico-de-fora-da-camara'],
     id: /-empresas-\d{4}$/,
     motivo:
       'Uma contagem de empresas é uma estatística do tecido empresarial, e não uma política. As matérias vizinhas do artigo 15.º, n.º 1, são «a internacionalização das empresas» e «a promoção da indústria, do comércio, dos serviços e do turismo»: nenhuma tem por objeto quantas empresas existem num concelho. O valor que elas produzem tem área, porque o assunto dele é o tamanho da economia.',

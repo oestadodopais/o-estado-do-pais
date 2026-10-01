@@ -18,6 +18,12 @@ export function fichaDoEstudo(work, lang) {
        declará-las como a abertura transcrita do documento era dizer que o
        portão compara duas coisas diferentes. */
     temLeitura: Boolean(leitura),
+    /* A PERGUNTA A QUE O ESTUDO RESPONDE (bloco E1, 01.10.2026): a da língua da
+       edição que a ficha rende, transcrita da leitura de abertura do documento, com
+       a chave do `verbatim.mjs` que o portão confere. Um estudo que não a declara
+       não a tem, e a ficha fica como estava. */
+    pergunta: /** @type {Record<string, string> | undefined} */ (work.pergunta)?.[edicao.lang] ?? null,
+    verbatimDaPergunta: /** @type {Record<string, string> | undefined} */ (work.verbatimDaPergunta)?.[edicao.lang] ?? null,
     resumo: primeirasFrases(leitura?.frase[lang] ?? [work.description[lang]]).map(p =>
       typeof p !== 'string' && 'claim' in p && getClaim(p.claim).unit === '%' && !p.sufixo
         ? { ...p, sufixo: '%' } : p),
@@ -53,7 +59,9 @@ export function primeirasFrases(partes) {
  * @param {'pt'|'en'} lang
  */
 export function todosOsEstudos(lang) {
-  return WORKS.map(w => fichaDoEstudo(w, lang))
+  /* Os estudos com sucessor (bloco E1, 01.10.2026) ficam alojados como edições
+     datadas e saem da lista: quem os lista agora são os estudos que lhes sucedem. */
+  return WORKS.filter(w => !w.sucedidoPor).map(w => fichaDoEstudo(w, lang))
     .sort((a, b) => (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
 /** @param {string} lugar @param {'pt'|'en'} lang */

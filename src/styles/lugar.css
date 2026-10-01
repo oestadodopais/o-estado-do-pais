@@ -125,6 +125,16 @@
   margin-right: 4px;
 }
 
+/* A pergunta a que o estudo responde (bloco E1), antes da leitura. */
+.lugar-estudo-pergunta {
+  font-family: var(--f-prosa);
+  font-style: italic;
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
 .lugar-estudo-leitura {
   font-family: var(--f-prosa);
   color: var(--ink);

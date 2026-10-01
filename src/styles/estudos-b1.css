@@ -27,6 +27,19 @@
   color: var(--muted); font-size: 12px; margin: 7px 0 0; display: flex; flex-wrap: wrap; gap: 2px 12px; }
 .estudo-meta > :not(:first-child)::before { content: '· '; color: var(--rule-strong); margin-right: 4px; }
 .estudo-lingua { font-family: var(--f-instr); letter-spacing: .02em; color: var(--muted); font-size: 13px; font-weight: 400; }
+/* A nota do sucessor (bloco E1): logo abaixo do título de uma edição datada. */
+.estudo-sucessor { font-family: var(--f-prosa); color: var(--ink); max-width: 64ch; margin: 12px 0 18px;
+  padding: 10px 12px; border-left: 3px solid var(--rule-strong); background: var(--paper-2, transparent);
+  font-size: 15px; line-height: 1.5; }
+.estudo-sucessor a { color: var(--ink); }
+
+/* As edições datadas que um estudo sucede (bloco E1), antes da edição publicada. */
+.estudo-antecessores { font-family: var(--f-prosa); color: var(--muted); max-width: 64ch; margin: 24px 0 0; font-size: 14px; line-height: 1.5; }
+.estudo-antecessores a { color: var(--ink); }
+
+/* A pergunta a que o estudo responde (bloco E1): a primeira frase da leitura do
+   documento, na voz dele, antes do resumo. */
+.estudo-pergunta { font-family: var(--f-prosa); font-style: italic; color: var(--ink); max-width: 64ch; margin: 9px 0 0; font-size: 15px; line-height: 1.5; }
 .estudos-lista .estudo-resumo { font-family: var(--f-prosa); color: var(--ink); max-width: 64ch; margin: 9px 0 0; font-size: 15px; line-height: 1.55; }
 
 .estudos-lista .arquivo-porta { border-bottom: 0; }
