@@ -1,0 +1,13 @@
+E1e · medidas
+  cabecas_e1e: {"sitio": "527d8b1c31e982ae19a98ec07a1bf6e878cb8518", "motor": "d2495a7d0d023dccb6eb4014b917bf06554438f6", "sitio_na_e1d": "90640cf6", "motor_na_e1d":
+  ponto1_aritmetica_e1e: {"edicoes": {"17/pt": {"sai_motor_antes": 1, "sai_motor_agora": 0, "sai_documento_antes": 1, "sai_documento_agora": 0, "entra_motor": 1, "entra_docume
+  ponto2_paridades_e1e: {"edicoes": {"18/pt": {"sai_motor_antes": 1, "sai_motor_agora": 0, "sai_documento_antes": 1, "sai_documento_agora": 0, "entra_motor": 1, "entra_docume
+  celulas_de_tabela_sem_linha: {"16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md": {"contagem": {"numeros": 466, "com_linha": 297}, "casos": []}, "16 Évora Cont
+  celulas_e_linha_citada: {"registos": {"16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).record.json": {"figuras": 297}, "16 Évora Contas da Câmara/The accoun
+  ponto3_c3_e1e: {"onde_estao_os_totais": [{"registo": "17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).record.json", "cabeca_da_tabela": [
+  ponto4_saida_dos_guioes_e1e: {"e1c": {"real": {"codigo": 0, "medidas_reais_que_falharam": "nenhuma"}, "planta": {"codigo": 1, "medidas_reais_que_falharam": "['leitura_da_economia_
+  ponto5_conferencia_e1e: {"corrida_real": {"codigo": 0, "falhas": 0, "positivos": [true, true, true, true]}, "prova": {"codigo": 0, "corrida_real": {"falhas": 0}, "documento_a
+  travessia_e1e: {"documentos_realojados": 3, "mudaram": 3, "commit_do_motor_dos_bytes": ["1f1fe1b"], "registos": {"novos": 0, "alterados": 3, "inalterados": 14}, "che
+  motor_e1e: {"portao": {"codigo": 0, "cabeca": "d2495a7d0d023dccb6eb4014b917bf06554438f6", "inicio": "2026-10-01T08:26:37Z", "fim": "2026-10-01T08:30:24Z", "linha
+  custo_e1e: {"modelo": "Claude Opus 5.5", "primeiro_commit_da_passagem": "2026-10-01T09:06:34+01:00 1f1fe1b E1e: o corpo do 17 deixa de fazer a aritmética produzi
+E1e · 9 medidas; conhecidos-positivos que não morderam: nenhum; medidas reais que falharam: nenhuma
