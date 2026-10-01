@@ -1,0 +1,114 @@
+{
+  "reguas": [
+    {
+      "nome": "C4 · sem guião a pesquisa não procura, e os 308 resultados vêm do servidor numa lista escondida · pt",
+      "passa": true,
+      "prova": "bloco presente, formulário para «/lugares/» · lista com hidden: true · 308 resultados, 308 com a porta da sua página · a página cita /js/municipios.js: true"
+    },
+    {
+      "nome": "C4 · a lista por distritos é a gaveta dos 29 distritos e ilhas da Carta · pt",
+      "passa": true,
+      "prova": "29 portas na gaveta, 29 para páginas de distrito ou ilha"
+    },
+    {
+      "nome": "C4 · sem guião a pesquisa não procura, e os 308 resultados vêm do servidor numa lista escondida · en",
+      "passa": true,
+      "prova": "bloco presente, formulário para «/en/places/» · lista com hidden: true · 308 resultados, 308 com a porta da sua página · a página cita /js/municipios.js: true"
+    },
+    {
+      "nome": "C4 · a lista por distritos é a gaveta dos 29 distritos e ilhas da Carta · en",
+      "passa": true,
+      "prova": "29 portas na gaveta, 29 para páginas de distrito ou ilha"
+    },
+    {
+      "nome": "C2 · o índice de metodo cabe no primeiro ecrã, com 44px de alvo e sem sobreposições · 390 pt",
+      "passa": true,
+      "prova": "11 de 12 entradas dentro dos 664px (antes do bloco B: 10) · índice 375.3px (antes do bloco B: 349.5px; o tecto é 399.5px) · alvos abaixo de 44px: 0 (o menor mede 62.3×44.0) · pares sobrepostos: 0"
+    },
+    {
+      "nome": "C2 · o índice de metodo cabe no primeiro ecrã, com 44px de alvo e sem sobreposições · 390 en",
+      "passa": true,
+      "prova": "10 de 12 entradas dentro dos 664px (antes do bloco B: 10) · índice 397.8px (antes do bloco B: 349.5px; o tecto é 399.5px) · alvos abaixo de 44px: 0 (o menor mede 79.7×44.0) · pares sobrepostos: 0"
+    },
+    {
+      "nome": "C2 · o índice de agenda cabe no primeiro ecrã, com 44px de alvo e sem sobreposições · 390 pt",
+      "passa": true,
+      "prova": "5 de 5 entradas dentro dos 664px (antes do bloco B: 5) · índice 199.8px (antes do bloco B: 190px; o tecto é 240.0px) · alvos abaixo de 44px: 0 (o menor mede 62.6×44.0) · pares sobrepostos: 0"
+    },
+    {
+      "nome": "C2 · o índice de agenda cabe no primeiro ecrã, com 44px de alvo e sem sobreposições · 390 en",
+      "passa": true,
+      "prova": "5 de 5 entradas dentro dos 664px (antes do bloco B: 5) · índice 199.8px (antes do bloco B: 190px; o tecto é 240.0px) · alvos abaixo de 44px: 0 (o menor mede 71.7×44.0) · pares sobrepostos: 0"
+    },
+    {
+      "nome": "C4 · o campo de pesquisa está dentro do primeiro ecrã · 390 pt",
+      "passa": true,
+      "prova": "campo a 356.3px de 664, 234.5×44px, dentro true"
+    },
+    {
+      "nome": "C4 · escrever um nome acende o concelho, e é porta se e só se tem página · 390 pt",
+      "passa": true,
+      "prova": "a lista distingue: false · «evora» → 1 resultado(s): Évora [sem etiqueta] → /municipios/evora · «beja» → 1 resultado(s): Beja [sem etiqueta] → /municipios/beja"
+    },
+    {
+      "nome": "C4 · o campo de pesquisa está dentro do primeiro ecrã · 390 en",
+      "passa": true,
+      "prova": "campo a 356.3px de 664, 255.8×44px, dentro true"
+    },
+    {
+      "nome": "C4 · escrever um nome acende o concelho, e é porta se e só se tem página · 390 en",
+      "passa": true,
+      "prova": "a lista distingue: false · «evora» → 1 resultado(s): Évora [sem etiqueta] → /en/municipalities/evora · «beja» → 1 resultado(s): Beja [sem etiqueta] → /en/municipalities/beja"
+    }
+  ],
+  "medidas": {
+    "c4_html": {
+      "itens": 308,
+      "comPorta": 308,
+      "distritos": 29
+    },
+    "c2_metodo": {
+      "ecra": 664,
+      "entradas": 12,
+      "alturaDoIndice": 375.3,
+      "noPrimeiroEcra": 11,
+      "pequenos": 0,
+      "menor": "62.3×44.0",
+      "pares": 0,
+      "quais": []
+    },
+    "c2_agenda": {
+      "ecra": 664,
+      "entradas": 5,
+      "alturaDoIndice": 199.8,
+      "noPrimeiroEcra": 5,
+      "pequenos": 0,
+      "menor": "62.6×44.0",
+      "pares": 0,
+      "quais": []
+    },
+    "c4_campo": {
+      "ecra": 664,
+      "topo": 356.3,
+      "largura": 234.5,
+      "altura": 44,
+      "dentroDoPrimeiroEcra": true
+    },
+    "c4_escritos": {
+      "evora": [
+        {
+          "nome": "Évora",
+          "estado": null,
+          "porta": "/municipios/evora"
+        }
+      ],
+      "beja": [
+        {
+          "nome": "Beja",
+          "estado": null,
+          "porta": "/municipios/beja"
+        }
+      ]
+    }
+  }
+}

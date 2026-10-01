@@ -1,0 +1,14 @@
+# Resposta do construtor do L2b
+
+*Claude Opus 5.5 (a definição `construtor`), 01.10.2026, ramo `l2b-2026-10-01`. O relatório inteiro é `LEIA-ME.md`, na mesma pasta; os números estão em `medidas.json`. Sem travessões.*
+
+- **Feito, pelo §3 do brief.** Em cada uma das 616 páginas de concelho, cada cartão das oito medidas com cartão leva a faixa (4928): as marcas dos concelhos com valor, o concelho destacado, Portugal como traço quando há com que comparar, a frase do lugar («Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor, do mais alto para o mais baixo.») e a da comparação. O lugar conta-se na vista a partir das 308 linhas, sem linha nova no livro; o portão de HTML reconta-o pelo caminho do lugar de Portugal na faixa da União, com um leitor próprio, e `medir-l2b.mjs` reconta-o outra vez: 0 diferenças em 4906.
+- **A tabela das direções** está em `src/data/faixa-do-concelho.mjs`, com a razão de cada medida: o índice de dívida e o prazo contam-se do mais baixo; as outras do mais alto, as contagens e os totais como ordem e sem juízo. A comparação com Portugal: a linha nacional no ganho médio, a base do índice no poder de compra, e nas outras seis a faixa diz «Sem comparação com Portugal no mesmo período.»
+- **A leitura breve** acaba com o ganho médio contra Portugal, com as duas linhas seladas, nos 308 e em Évora; a P1 do `check:lugares` reconta a palavra.
+- **Parei no ponto 4**, medido: as seis réguas à mão falham na base, não duas; cinco rebentam na primeira vez que procuram o mapa da primeira página, e a matriz falha 20 células sobre a primeira página antiga antes de rebentar. A `correcoes-c.mjs` mudou para «Lugares» e corre a 0; as outras cinco são um bloco à parte.
+- **Para o lugar de direção decidir**, cada uma numa entrada da tabela: as contagens contra a segunda metade da §1.143(4) («nunca sobre contagens»), que segui o brief em não aplicar; e a base do índice como Portugal no poder de compra.
+- **Fora da letra do brief**: o recibo de cada linha do ganho médio lista Portugal em «O enquadramento» (616), para o valor de Portugal na faixa não pedir uma segunda marca no cartão (a K10); a H2 do `check:alvos` conta os selos da leitura do lugar como prosa corrida, com um estrago, porque a frase nova pôs quatro selos em linhas vizinhas; o mapa do repositório ganhou a secção do L2b.
+- **Plantas**: 14 da célula nova, 5 do portão de HTML, 1 da K1 e 1 da H2, todas a morder.
+- **Portões**: a corrida intermédia saiu com a H2 vermelha, corrigida e conferida sozinha; a corrida final corre na cabeça deste commit e os códigos entram no commit seguinte, em `portoes/`.
+- **Capturas**: Évora e Penedono (o ganho mais baixo dos 308, e quatro cartões sem valor), 20 depois nas cinco larguras e nas duas edições e 8 antes, sem problemas.
+- **Custo**: 764496 símbolos e 5696 segundos até ao relatório, das duas leituras em ficheiro.

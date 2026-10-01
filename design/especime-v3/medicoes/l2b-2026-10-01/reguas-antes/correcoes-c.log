@@ -1,0 +1,15 @@
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<worktree>/dist/municipios/index.html'
+    at Object.readFileSync (node:fs:440:20)
+    at file://<worktree>/tests/municipio/correcoes-c.mjs:130:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<worktree>/dist/municipios/index.html'
+}
+
+Node.js v22.23.1

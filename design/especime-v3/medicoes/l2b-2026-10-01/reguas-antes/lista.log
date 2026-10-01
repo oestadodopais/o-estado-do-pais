@@ -1,0 +1,9 @@
+file://<worktree>/tests/inicio/lista.mjs:560
+        const naBanda = Math.abs(r.lado.x - r.cabeca.x) < 1 && Math.abs(r.lado.w - r.cabeca.w) < 1;
+                                        ^
+
+TypeError: Cannot read properties of null (reading 'x')
+    at correTudo (file://<worktree>/tests/inicio/lista.mjs:560:41)
+    at async file://<worktree>/tests/inicio/lista.mjs:1307:1
+
+Node.js v22.23.1
