@@ -420,3 +420,54 @@ O modelo: Claude Opus 5.5, na definição `construtor`, em toda a passagem, no m
 4. **O corpo do 18** ainda diz «região pobre» onde a abertura diz «região abaixo da média do país» (E1c.3).
 5. **As dívidas da E1b continuam:** a edição inglesa do 17 e o sinal do euro no 19.
 6. **A leitura a frio da E1c**, pela outra família, e as revisões do inventário dos blocos e1, e1b e e1c, que ficam «por ler pelo lugar de direção antes de aterrar».
+
+## E1d · a passagem de 01.10.2026, sobre as duas coisas que a E1c deixou ditas
+
+*Relatório do construtor da passagem E1d: Claude Opus 5.5 (a definição `construtor`), a 01.10.2026, pela mensagem do lugar de direção que pediu os dois primeiros pontos que a secção E1c deixou ditos sem os fazer (E1c.2 e E1c.9: as fichas dos mandatos com valores de fim de ano, e a região no corpo do estudo da economia). Cada número desta secção está em [medidas.json](medidas.json), na chave `e1d`, escrito por [e1d/medir-e1d.py](e1d/medir-e1d.py) com o nome, o valor, o comando e um conhecido-positivo de cada medida, ou num ficheiro de [e1d/](e1d/) e de [portoes/](portoes/). A lista das decisões em vigor correu nas duas árvores antes de mexer ([sítio](e1d/decisoes-em-vigor-sitio-e1d-antes.log), [motor](e1d/decisoes-em-vigor-motor-e1d-antes.log)).*
+
+### E1d.1 · Os dois pontos
+
+| # | O que | O que ficou | A medida |
+|---|---|---|---|
+| 1 | As fichas dos mandatos com valores de fim de ano | Nas fichas dos mandatos de 2013 a 2017 («Deixou»), de 2017 a 2021 («Herdou» e «Deixou») e de 2021 a 2025 («Herdou»), a frase antes dos valores diz que as contas do ano da mudança só existem como ano inteiro, a data dos valores (31.12.2017 e 31.12.2021, na marca de data de referência) e que vêm do relatório de gestão da câmara, nas duas edições. A frase escreve-se uma vez, numa função de `src/data/municipios.mjs`, para as seis fichas com valores de fim de ano; as duas de 2025 passam por ela com o texto que já tinham. Os valores de 31.10.2013, que o executivo entrante registou à data da posse, não são de fim de ano e ficam em «Herdou» na ficha de 2013 a 2017, sem a frase. Nas páginas construídas, 12 de 12 campos certos | `fichas_e1d` |
+| 2 | A região no corpo do estudo da economia | «uma região pobre» passa a «uma região abaixo da média do país» («a region below the national average»), a forma da abertura, no bloco do enquadramento copiado do estudo da economia de setembro, nas duas edições; os `.html`, os registos e a travessia refeitos, e o portão do motor a 0. A frase não tem números, e as contas das entregas não mudaram | `regiao_e1d`, `travessia_e1d`, `motor_e1d` |
+
+As capturas: 24 ([capturas-e1d.json](capturas-e1d.json), prefixo `e1d-`), as quatro fichas com valores de fim de ano e o estudo da economia (a cabeça e a secção do enquadramento), a 390 e a 1 280 px, nas duas edições.
+
+### E1d.2 · Os commits
+
+No motor, só com o `Co-Authored-By`, cada um com o `python3 -m core.gate` do pre-commit a passar:
+
+- `4f3165a` E1d: o corpo do 18 diz «uma região abaixo da média do país», como a abertura
+- `7187b82` E1d: os registos de conteúdo do 18 refeitos depois da emenda do corpo
+
+No sítio, com o `Co-Authored-By` e o `Claude-Session`:
+
+- `72c680b0` E1d: os documentos e os registos do 18 voltam do motor depois da emenda do corpo
+- `b07aa130` E1d: as fichas dos mandatos de 2013 a 2025 dizem a data das dívidas de fim de ano e de onde vêm
+- `30dcec5c` E1d: os guiões da passagem: as medidas, o realojamento do 18 e as capturas das fichas e do estudo da economia (a cabeça de código)
+- o commit desta secção, com as provas, as capturas e a resposta curta
+- e o commit seguinte, com os códigos da corrida final dos portões
+
+### E1d.3 · Os portões
+
+O portão do motor na cabeça final do motor: código 0 em `7187b82` ([e1d/motor/](e1d/motor/)), de 2026-10-01T07:06:52Z a 2026-10-01T07:10:40Z. A primeira tentativa do primeiro commit do motor saiu com 1, no `export_records_test` (o registo do 18 na árvore de trabalho ainda era o de antes da emenda, e o portão confere a árvore); com os registos refeitos antes do commit, os dois commits passaram (0 e 0).
+
+No sítio, o `check:documentos` saiu com 0, e com 0 com a origem conferida contra o motor (17 registos); a conferência das leituras da E1c, com 0 falhas. Uma construção na cabeça de código `30dcec5c`, pela tranca, saiu com 0 ([e1d/intermedias/](e1d/intermedias/)), e as capturas são dela. A corrida final dos três portões, pela tranca (`sh scripts/leituras/portoes.sh`), faz-se na cabeça do commit desta secção, depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1d/](portoes/e1d/).
+
+### E1d.4 · As medidas e os conhecidos-positivos
+
+| Medida | O valor | O conhecido-positivo | Mordeu |
+|---|---|---|---|
+| `cabecas_e1d` | sítio `30dcec5c`, motor `7187b82`, depois da E1c (`e986468d`, `932eaee`) | `git cat-file -t` de cada cabeça diz «commit» | sim |
+| `fichas_e1d` | 12 de 12 campos com a frase, a data e a linha, nas duas edições; os de 31.10.2013 sem a frase | a ficha de 2017 a 2021 como estava é dada como errada | sim |
+| `regiao_e1d` | a frase antiga a 0 e a nova presente, no motor e no documento alojado, nas duas edições | a frase antiga estava no motor e no documento alojado na E1c | sim |
+| `travessia_e1d` | 2 documentos realojados dos bytes de `4f3165a`; registos: 2 alterados e 15 inalterados | os conhecidos-positivos da conferência das leituras morderam | sim |
+| `motor_e1d` | o portão a 0; a primeira tentativa a 1, os dois commits a 0 | o código lido concorda com a última linha do registo | sim |
+| `portoes_e1d` | a construção da cabeça de código a 0 | o leitor dos códigos lê o 1 da construção intermédia da E1c | sim |
+| `capturas_e1d` | 24 de 24 resumos conferidos, 0 problemas, 0 pedidos para fora | dois corpos que diferem num byte dão resumos diferentes | sim |
+| `custo_e1d` | E1d.5 | o primeiro commit da passagem no motor é o da emenda do 18 | sim |
+
+### E1d.5 · O custo
+
+O modelo: Claude Opus 5.5, na definição `construtor`, em toda a passagem. O relógio: 1396 segundos desde o primeiro commit da passagem (o `4f3165a` do motor, 2026-10-01T06:52:16Z) até à medida (2026-10-01T07:15:32+00:00), lidos do `git log` pelo guião; o que veio antes desse commit não está contado. Os símbolos: 43459, uma transcrição e não uma medida: o contador do orçamento de símbolos que a ferramenta mostra ao construtor dizia 14164752 no fim da E1c e 14121293 na leitura das 07:15 UTC ([e1d/custo-simbolos-transcrito.json](e1d/custo-simbolos-transcrito.json)); nenhum guião lê esse contador, e o total que conta é o que a ferramenta reporta ao lugar de direção no fim do agente.

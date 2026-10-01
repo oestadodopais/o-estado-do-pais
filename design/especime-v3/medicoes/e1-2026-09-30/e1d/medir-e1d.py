@@ -167,7 +167,7 @@ def medir_motor():
     medida("motor_e1d", {"portao": {"codigo": cod, "cabeca": ler(p / "cabeca").strip(), "inicio": ler(p / "gate.inicio").strip(),
                                     "fim": ler(p / "gate.fim").strip(), "linha_final_pass": "GATE: PASS" in log},
                          "commits": {"primeira_tentativa": int(ler(tr / "commit-motor-1-primeira-tentativa.codigo").strip()),
-                                     "o_que_parou_a_primeira": re.findall(r"^\s+- (R5 [^\n]{0,90})", primeira, re.M)[:1],
+                                     "o_que_parou_a_primeira": re.findall(r"^\s+(R5 [^\n]{0,90})", primeira, re.M)[:1],
                                      "commit_1": int(ler(tr / "commit-motor-1.codigo").strip()), "commit_2": int(ler(tr / "commit-motor-2.codigo").strip())},
                          "composicao": int(ler(tr / "compor-escrever-18.codigo").strip()), "html": int(ler(tr / "make-html-18.codigo").strip()),
                          "atribuicoes": int(ler(tr / "atribuicoes-18.codigo").strip()), "registos_do_motor": int(ler(tr / "export-records-escrever.codigo").strip())},
