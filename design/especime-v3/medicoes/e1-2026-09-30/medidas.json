@@ -9732,5 +9732,339 @@
     }
    }
   ]
+ },
+ "e1e": {
+  "bloco": "E1e",
+  "guiao": "design/especime-v3/medicoes/e1-2026-09-30/e1e/medir-e1e.py",
+  "medido_em": "2026-10-01T08:36:24+00:00",
+  "conhecidos_positivos_que_nao_morderam": [],
+  "medidas_reais_que_falharam": [],
+  "medidas": [
+   {
+    "nome": "cabecas_e1e",
+    "valor": {
+     "sitio": "527d8b1c31e982ae19a98ec07a1bf6e878cb8518",
+     "motor": "d2495a7d0d023dccb6eb4014b917bf06554438f6",
+     "sitio_na_e1d": "90640cf6",
+     "motor_na_e1d": "7187b82",
+     "commits_do_sitio": [
+      "527d8b1c E1e: a C3 pede duas linhas para um total, os guiões de medida saem com 1 numa medida real que falha, e a conferência das leituras conta o documento em falta e o gabarito ilegível",
+      "72efe684 E1e: os documentos e os registos do 17 e do 18 voltam do motor depois das emendas"
+     ],
+     "commits_do_motor": [
+      "d2495a7 E1e: os registos de conteúdo do 17 e do 18 refeitos depois das emendas",
+      "1f1fe1b E1e: o corpo do 17 deixa de fazer a aritmética produzir a rejeição das contas, e o 18 explica as paridades de poder de compra"
+     ]
+    },
+    "comando": "git rev-parse HEAD e git log <cabeça da E1d>..HEAD nas duas árvores",
+    "conhecido_positivo": {
+     "descricao": "git cat-file -t de cada cabeça diz «commit»",
+     "resultado": {
+      "527d8b1c31e982ae19a98ec07a1bf6e878cb8518": "commit",
+      "d2495a7d0d023dccb6eb4014b917bf06554438f6": "commit",
+      "90640cf6": "commit",
+      "7187b82": "commit"
+     },
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "ponto1_aritmetica_e1e",
+    "valor": {
+     "edicoes": {
+      "17/pt": {
+       "sai_motor_antes": 1,
+       "sai_motor_agora": 0,
+       "sai_documento_antes": 1,
+       "sai_documento_agora": 0,
+       "entra_motor": 1,
+       "entra_documento": 1,
+       "remete_para_o_estudo_das_contas_no_motor": true,
+       "edicoes_do_estudo_no_motor": [
+        "Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md"
+       ]
+      }
+     },
+     "certo": true
+    },
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1d, 90640cf6), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
+    "conhecido_positivo": {
+     "descricao": "a frase que sai estava no motor e no documento alojado na E1d (o mesmo detetor vê-a lá), e lá a primeira vez não trazia a explicação",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "ponto2_paridades_e1e",
+    "valor": {
+     "edicoes": {
+      "18/pt": {
+       "sai_motor_antes": 1,
+       "sai_motor_agora": 0,
+       "sai_documento_antes": 1,
+       "sai_documento_agora": 0,
+       "entra_motor": 1,
+       "entra_documento": 1,
+       "vezes_que_a_expressao_aparece_no_motor": 1,
+       "vezes_que_a_expressao_aparece_no_documento": 1,
+       "a_primeira_vez_traz_a_explicacao_no_motor": true,
+       "a_primeira_vez_traz_a_explicacao_no_documento": true,
+       "a_primeira_vez_trazia_a_explicacao_na_e1d": false
+      },
+      "18/en": {
+       "sai_motor_antes": 1,
+       "sai_motor_agora": 0,
+       "sai_documento_antes": 1,
+       "sai_documento_agora": 0,
+       "entra_motor": 1,
+       "entra_documento": 1,
+       "vezes_que_a_expressao_aparece_no_motor": 1,
+       "vezes_que_a_expressao_aparece_no_documento": 1,
+       "a_primeira_vez_traz_a_explicacao_no_motor": true,
+       "a_primeira_vez_traz_a_explicacao_no_documento": true,
+       "a_primeira_vez_trazia_a_explicacao_na_e1d": false
+      }
+     },
+     "certo": true
+    },
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1d, 90640cf6), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
+    "conhecido_positivo": {
+     "descricao": "a frase que sai estava no motor e no documento alojado na E1d (o mesmo detetor vê-a lá), e lá a primeira vez não trazia a explicação",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "ponto3_c3_e1e",
+    "valor": {
+     "onde_estao_os_totais": [
+      {
+       "registo": "17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).record.json",
+       "cabeca_da_tabela": [
+        "Grupo de funções",
+        "2017",
+        "2021"
+       ],
+       "linha_do_total": 5,
+       "linhas_da_tabela": 6,
+       "colunas_com_valor": 2
+      },
+      {
+       "registo": "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).record.json",
+       "cabeca_da_tabela": [
+        "linha",
+        "valor escrito",
+        "onde"
+       ],
+       "linha_do_total": 1,
+       "linhas_da_tabela": 8,
+       "colunas_com_valor": 1
+      },
+      {
+       "registo": "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).record.json",
+       "cabeca_da_tabela": [
+        "linha",
+        "valor escrito",
+        "onde"
+       ],
+       "linha_do_total": 6,
+       "linhas_da_tabela": 7,
+       "colunas_com_valor": 1
+      },
+      {
+       "registo": "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.record.json",
+       "cabeca_da_tabela": [
+        "line",
+        "value as written",
+        "where"
+       ],
+       "linha_do_total": 1,
+       "linhas_da_tabela": 8,
+       "colunas_com_valor": 1
+      },
+      {
+       "registo": "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.record.json",
+       "cabeca_da_tabela": [
+        "line",
+        "value as written",
+        "where"
+       ],
+       "linha_do_total": 6,
+       "linhas_da_tabela": 7,
+       "colunas_com_valor": 1
+      }
+     ],
+     "figuras_nas_celulas": 1820,
+     "totais_da_tabela": 6,
+     "totais_das_linhas_que_o_precedem": 4,
+     "totais_de_linhas_de_toda_a_coluna": 2,
+     "falhas": 0,
+     "mordidas_por_planta": {
+      "total-da-tabela": [
+       "C3"
+      ],
+      "valor-de-outra-linha": [
+       "C1"
+      ],
+      "linha-de-outra-pagina": [
+       "C2"
+      ],
+      "linha-isolada-como-total": [
+       "C3"
+      ]
+     },
+     "valor_plantado_no_total": "3 568 697",
+     "parcelas_da_coluna": 4,
+     "regra_antiga_aceitava_com_um_subconjunto_de": 1,
+     "regra_nova_aceita_com_um_subconjunto_de": null
+    },
+    "comando": "a régua das células do medir-e1.py (medir_celulas, chamada daqui) sobre os sete registos e as quatro plantas; e a planta da linha isolada refeita sobre a tabela dos grupos de funções do 17, pela regra antiga (subconjuntos de uma linha ou mais) e pela nova (duas ou mais)",
+    "conhecido_positivo": {
+     "descricao": "a planta da linha isolada como total morde na C3, e a regra antiga aceitava-a com um subconjunto de uma linha",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "ponto4_saida_dos_guioes_e1e",
+    "valor": {
+     "e1c": {
+      "real": {
+       "codigo": 0,
+       "medidas_reais_que_falharam": "nenhuma"
+      },
+      "planta": {
+       "codigo": 1,
+       "medidas_reais_que_falharam": "['leitura_da_economia_e1c']"
+      }
+     },
+     "e1d": {
+      "real": {
+       "codigo": 0,
+       "medidas_reais_que_falharam": "nenhuma"
+      },
+      "planta": {
+       "codigo": 1,
+       "medidas_reais_que_falharam": "['fichas_e1d']"
+      }
+     }
+    },
+    "comando": "cada guião corrido duas vezes, com OEDP_MEDIDAS_JSON num ficheiro fora do repositório: sobre o estado real, e com OEDP_DIST numa cópia das páginas que ele lê com um campo real errado (no índice dos estudos, a frase da sobreposição da leitura do estudo da economia cortada, para o e1c; na página de Évora, a primeira frase das fichas cortada, para o e1d); o código escrito num ficheiro depois de o processo acabar",
+    "conhecido_positivo": {
+     "descricao": "a corrida com o campo real errado sai com 1 e nomeia a medida que falhou, e a corrida real sai com 0",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "ponto5_conferencia_e1e",
+    "valor": {
+     "corrida_real": {
+      "codigo": 0,
+      "falhas": 0,
+      "positivos": [
+       true,
+       true,
+       true,
+       true
+      ]
+     },
+     "prova": {
+      "codigo": 0,
+      "corrida_real": {
+       "falhas": 0
+      },
+      "documento_alojado_em_falta": {
+       "planta": "studies-src/evora-contas-da-camara-2010-2025/pt.html lido como inexistente",
+       "falhas": 1,
+       "mordeu": true
+      },
+      "gabarito_ilegivel": {
+       "planta": "o gabarito inglês do 18 a falhar na leitura",
+       "falhas": 1,
+       "mordeu": true
+      }
+     }
+    },
+    "comando": "node e1c/conferir-leituras-e1c.mjs <motor>, e de novo com --prova (o documento português do 16 lido como inexistente; o gabarito inglês do 18 a falhar na leitura), cada código escrito num ficheiro depois de o processo acabar",
+    "conhecido_positivo": {
+     "descricao": "as duas plantas fazem a conferência contar uma falha cada, e a corrida real não falha",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "travessia_e1e",
+    "valor": {
+     "documentos_realojados": 3,
+     "mudaram": 3,
+     "commit_do_motor_dos_bytes": [
+      "1f1fe1b"
+     ],
+     "registos": {
+      "novos": 0,
+      "alterados": 3,
+      "inalterados": 14
+     },
+     "check_documentos": 0,
+     "check_documentos_com_origem": 0,
+     "registos_conferidos_contra_o_motor": 17
+    },
+    "comando": "e1e/republicar-documentos-e1e.json, o registo do publisher/export_records_site.py --write e os códigos do check:documentos (com e sem --with-origin), cada um escrito num ficheiro depois de o processo acabar",
+    "conhecido_positivo": {
+     "descricao": "os documentos realojados são os bytes do commit das emendas no motor, 1f1fe1b",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "motor_e1e",
+    "valor": {
+     "portao": {
+      "codigo": 0,
+      "cabeca": "d2495a7d0d023dccb6eb4014b917bf06554438f6",
+      "inicio": "2026-10-01T08:26:37Z",
+      "fim": "2026-10-01T08:30:24Z",
+      "linha_final_pass": true
+     },
+     "commits": {
+      "commit_1": 0,
+      "commit_2": 0
+     },
+     "composicoes": {
+      "17": 0,
+      "18": 0
+     },
+     "html": {
+      "17": 0,
+      "18": 0
+     },
+     "registos_do_motor": 0,
+     "update_do_registo_do_portao": 0
+    },
+    "comando": "python3 -m core.gate na cabeça final do motor, com o código escrito em e1e/motor/gate.codigo depois de o processo acabar; e os códigos de cada passo da travessia em e1e/motor-travessia/",
+    "conhecido_positivo": {
+     "descricao": "o código lido do ficheiro concorda com a última linha do registo (PASS com 0)",
+     "mordeu": true
+    }
+   },
+   {
+    "nome": "custo_e1e",
+    "valor": {
+     "modelo": "Claude Opus 5.5",
+     "primeiro_commit_da_passagem": "2026-10-01T09:06:34+01:00 1f1fe1b E1e: o corpo do 17 deixa de fazer a aritmética produzir a rejeição das contas, e o 18 explica as paridades de poder de compra",
+     "inicio": "2026-10-01T09:06:34+01:00",
+     "medido_em": "2026-10-01T08:36:24+00:00",
+     "segundos_de_relogio_desde_o_primeiro_commit": 1790,
+     "simbolos": {
+      "o_que_e": "Uma transcrição, não uma medida: o construtor leu o contador do orçamento de símbolos que a ferramenta lhe mostra no contexto, no fim da passagem E1d (a leitura que acompanhou a entrega da E1d, antes da mensagem do lugar de direção que abriu a E1e) e antes desta medida, e escreveu aqui os dois valores e a hora da segunda leitura. Nenhum guião lê este contador. Entre as duas leituras a ferramenta resumiu uma vez o contexto do construtor; se o custo desse resumo entra no contador, o construtor não sabe.",
+      "no_fim_da_e1d": 14100935,
+      "na_leitura_antes_da_medida": 13942501,
+      "hora_da_leitura": "2026-10-01T08:30:40Z",
+      "diferenca": 158434,
+      "o_total_que_conta": "o que a ferramenta reporta ao lugar de direção no fim do agente, que inclui a escrita da secção, a corrida final dos portões e o fecho"
+     }
+    },
+    "comando": "git log --reverse --format=%cI 7187b82..HEAD no motor (o primeiro commit da passagem) até à hora da medida; os símbolos são uma transcrição, não uma medida deste guião",
+    "conhecido_positivo": {
+     "descricao": "o primeiro commit da passagem no motor é o das emendas, 1f1fe1b",
+     "mordeu": true
+    }
+   }
+  ]
  }
 }

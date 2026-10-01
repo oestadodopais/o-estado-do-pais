@@ -471,3 +471,63 @@ No sítio, o `check:documentos` saiu com 0, e com 0 com a origem conferida contr
 ### E1d.5 · O custo
 
 O modelo: Claude Opus 5.5, na definição `construtor`, em toda a passagem. O relógio: 1396 segundos desde o primeiro commit da passagem (o `4f3165a` do motor, 2026-10-01T06:52:16Z) até à medida (2026-10-01T07:15:32+00:00), lidos do `git log` pelo guião; o que veio antes desse commit não está contado. Os símbolos: 43459, uma transcrição e não uma medida: o contador do orçamento de símbolos que a ferramenta mostra ao construtor dizia 14164752 no fim da E1c e 14121293 na leitura das 07:15 UTC ([e1d/custo-simbolos-transcrito.json](e1d/custo-simbolos-transcrito.json)); nenhum guião lê esse contador, e o total que conta é o que a ferramenta reporta ao lugar de direção no fim do agente.
+
+## E1e · a passagem de 01.10.2026, sobre os cinco achados reais da releitura a frio da E1c e da E1d
+
+*Relatório do construtor da passagem E1e: Claude Opus 5.5 (a definição `construtor`), a 01.10.2026, pela mensagem do lugar de direção com os cinco achados reais da releitura a frio do Codex `gpt-6.1-sol` às passagens E1c e E1d. Cada número desta secção está em [medidas.json](medidas.json), na chave `e1e`, escrito por [e1e/medir-e1e.py](e1e/medir-e1e.py) com o nome, o valor, o comando e um conhecido-positivo de cada medida, ou num ficheiro de [e1e/](e1e/) e de [portoes/](portoes/). A lista das decisões em vigor correu nas duas árvores antes de mexer ([sítio](e1e/decisoes-em-vigor-sitio-e1e-antes.log), [motor](e1e/decisoes-em-vigor-motor-e1e-antes.log)); a dos documentos e registos que a travessia reescreveu correu depois da travessia, e a do `medidas.json` antes de o escrever ([e1e/decisoes-em-vigor-sitio-e1e-travessia-e-medidas.log](e1e/decisoes-em-vigor-sitio-e1e-travessia-e-medidas.log)), sem decisão nenhuma que a primeira não tivesse.*
+
+### E1e.1 · Os cinco pontos
+
+| # | O que | O que ficou | A medida |
+|---|---|---|---|
+| 1 | O corpo do 17 fazia a aritmética eleitoral «produzir» a rejeição das contas | A frase «Quatro anos depois, essa aritmética produz a rejeição de um ano de contas.» passa a dizer o que a abertura já diz: «No último ano do mandato, esse executivo viu as contas de 2024 rejeitadas pela câmara, e os documentos não dizem porque votou assim cada membro; a votação está no estudo As contas da Câmara de Évora, 2010 a 2025», com a ligação ao estudo das contas. A linha apontada está na secção das eleições, no ano de 2021, e não na das decisões, que já remetia a rejeição para o mesmo estudo. O 17 só tem a edição portuguesa. A frase antiga sai do motor e do documento alojado, e a nova entra uma vez em cada | `ponto1_aritmetica_e1e` |
+| 2 | O 18 dava o produto por habitante face à média da UE-27 «em paridades de poder de compra» sem dizer o que isso é | Na primeira vez que a expressão aparece, que é a única, segue-se «que é o valor por habitante comparado com a média da União, posta em cem, depois de descontar as diferenças de preços entre os países» («which is the value per inhabitant compared with the EU average, set at one hundred, after discounting the differences in prices between countries»), nas duas edições, sem mudar o valor. O «cem» por extenso é a forma do resto do estudo («com a média nacional em cem») | `ponto2_paridades_e1e` |
+| 3 | A C3 do `medir-e1.py` aceitava como total um subconjunto de uma só linha | Um total tem de ser a soma de duas linhas ou mais da sua coluna, primeiro das que o precedem na tabela e só depois de toda a coluna. Dos 6 totais dos sete registos, 4 são a soma de linhas que os precedem e 2 de linhas de toda a coluna (o total escrito na primeira linha depois da cabeça de uma tabela do 19, antes das parcelas, nas duas edições); 0 falhas em 1820 figuras. A planta nova, o total de 2017 dos grupos de funções do 17 com o valor e a linha da primeira parcela, morde na C3: a regra antiga aceitava-a com um subconjunto de uma linha, e a nova não a aceita com nenhum. As três plantas da E1c continuam a morder (C3, C1 e C2) | `ponto3_c3_e1e` |
+| 4 | Os guiões `e1c/medir-e1c.py` e `e1d/medir-e1d.py` só saíam com 1 quando um conhecido-positivo não mordia | Saem também com 1 quando uma medida real falha (uma função `falhas_reais()` em cada um, com a regra de cada medida) e escrevem as que falharam. A prova: cada guião corrido sobre o estado real e sobre uma cópia das páginas que lê com um campo real errado; no índice dos estudos, a leitura do estudo da economia sem a frase de que as duas partes se sobrepõem, para o `e1c`; na página de Évora, a primeira frase das fichas cortada, para o `e1d`. O estado real dá 0 nos dois, a cópia dá 1 nos dois, com a medida nomeada. As corridas da prova escrevem o seu `medidas.json` fora do repositório (`OEDP_MEDIDAS_JSON`) e leem a cópia por `OEDP_DIST` | `ponto4_saida_dos_guioes_e1e` |
+| 5 | A conferência das cópias das leituras (`e1c/conferir-leituras-e1c.mjs`) dava um documento alojado em falta como «igual» e não contava um gabarito que não se lê | Um documento alojado em falta é uma falha (o `null` não é igual a nada), e um gabarito listado que não se consegue ler, ou que não declara a edição, conta como falha. A prova, com `--prova`: o documento português do 16 lido como inexistente dá 1 falha, o gabarito inglês do 18 a falhar na leitura dá 1 falha, e a corrida real dá 0 falhas; a prova sai com 0 só quando as duas plantas mordem e a corrida real não falha | `ponto5_conferencia_e1e` |
+
+A travessia: os três documentos alojados (o 17 em português e o 18 nas duas edições) voltam dos bytes do commit das emendas no motor (`1f1fe1b`), e os registos com eles (3 alterados, 14 inalterados); o `check:documentos` saiu com 0, e com 0 com a origem conferida contra o motor (17 registos).
+
+### E1e.2 · Os commits
+
+No motor, só com o `Co-Authored-By`, cada um com o `python3 -m core.gate` do pre-commit a passar (os registos em [e1e/motor-travessia/](e1e/motor-travessia/)):
+
+- `1f1fe1b` E1e: o corpo do 17 deixa de fazer a aritmética produzir a rejeição das contas, e o 18 explica as paridades de poder de compra
+- `d2495a7` E1e: os registos de conteúdo do 17 e do 18 refeitos depois das emendas
+
+No sítio, com o `Co-Authored-By` e o `Claude-Session`:
+
+- `72efe684` E1e: os documentos e os registos do 17 e do 18 voltam do motor depois das emendas
+- `527d8b1c` E1e: a C3 pede duas linhas para um total, os guiões de medida saem com 1 numa medida real que falha, e a conferência das leituras conta o documento em falta e o gabarito ilegível (a cabeça de código, com as provas)
+- o commit desta secção, com as medidas, o guião delas e a resposta curta
+- e o commit seguinte, com os códigos da corrida final dos portões
+
+### E1e.3 · Os portões
+
+O portão do motor na cabeça final do motor: código 0 em `d2495a7` ([e1e/motor/](e1e/motor/)), de 2026-10-01T08:26:37Z a 2026-10-01T08:30:24Z, com a árvore limpa no fim; os dois commits do motor passaram o pre-commit (0 e 0). No sítio, o `check:documentos` e a conferência das leituras como acima. A corrida final dos três portões, pela tranca (`sh scripts/leituras/portoes.sh`), faz-se na cabeça do commit desta secção, depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1e/](portoes/e1e/), com a cabeça ao lado. Não houve construção intermédia nem capturas: o que muda à vista é uma frase do 17 e uma do 18 dentro dos documentos alojados, e a mensagem não pediu capturas.
+
+### E1e.4 · As medidas e os conhecidos-positivos
+
+| Medida | O conhecido-positivo | Mordeu |
+|---|---|---|
+| `cabecas_e1e` | `git cat-file -t` de cada cabeça diz «commit» | sim |
+| `ponto1_aritmetica_e1e` | a frase antiga estava no motor e no documento alojado na E1d | sim |
+| `ponto2_paridades_e1e` | a expressão estava no motor e no documento alojado na E1d, sem a explicação | sim |
+| `ponto3_c3_e1e` | a planta da linha isolada morde na C3, e a regra antiga aceitava-a | sim |
+| `ponto4_saida_dos_guioes_e1e` | a cópia com o campo real errado dá 1, o estado real dá 0 | sim |
+| `ponto5_conferencia_e1e` | as duas plantas fazem a conferência contar uma falha cada | sim |
+| `travessia_e1e` | os documentos realojados são os bytes de `1f1fe1b` | sim |
+| `motor_e1e` | o código lido concorda com a última linha do registo | sim |
+| `custo_e1e` | o primeiro commit da passagem no motor é o das emendas | sim |
+
+O guião sai com 1 quando um conhecido-positivo não morde ou quando uma medida real falha; saiu com 0.
+
+### E1e.5 · O custo
+
+O modelo: Claude Opus 5.5, na definição `construtor`, em toda a passagem. O relógio: 1790 segundos desde o primeiro commit da passagem (o `1f1fe1b` do motor, 2026-10-01T09:06:34+01:00) até à medida (2026-10-01T08:36:24+00:00), lidos do `git log` pelo guião; o que veio antes desse commit não está contado. Os símbolos: 158434, uma transcrição e não uma medida: o contador do orçamento de símbolos que a ferramenta mostra ao construtor dizia 14100935 no fim da E1d e 13942501 na leitura de 2026-10-01T08:30:40Z ([e1e/custo-simbolos-transcrito.json](e1e/custo-simbolos-transcrito.json)); entre as duas leituras a ferramenta resumiu uma vez o contexto do construtor, e se o custo desse resumo entra no contador o construtor não sabe. Nenhum guião lê esse contador, e o total que conta é o que a ferramenta reporta ao lugar de direção no fim do agente.
+
+### E1e.6 · O que fica por fazer
+
+- Os outros achados da releitura a frio (plantas, ou de blocos anteriores) ficam para o K2 e o L2, como a mensagem disse; esta passagem não lhes tocou.
+- O 17 diz agora a rejeição das contas de 2024 na abertura, na secção das eleições e na das decisões, sempre com a ligação ao estudo das contas. Foi a forma pedida; se as três se juntam numa é uma decisão de conteúdo do lugar de direção.
+- Os ramos não foram publicados.
