@@ -1,0 +1,169 @@
+{
+  "regra": "anulada",
+  "larguras": {
+    "390": [
+      {
+        "pe": "auto",
+        "cartao": "poderDeCompra",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "empresas",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "divida",
+        "texto": "fonte · Direção-Gera",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "pmp",
+        "texto": "fonte · Direção-Gera",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "indice",
+        "texto": "fonte · calculado",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "desempregoRegistado",
+        "texto": "fonte · Instituto do",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "ganho",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "populacao",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      }
+    ],
+    "768": [
+      {
+        "pe": "auto",
+        "cartao": "poderDeCompra",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "empresas",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "divida",
+        "texto": "fonte · Direção-Gera",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "pmp",
+        "texto": "fonte · Direção-Gera",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "indice",
+        "texto": "fonte · calculado",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "desempregoRegistado",
+        "texto": "fonte · Instituto do",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "ganho",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      },
+      {
+        "pe": "auto",
+        "cartao": "populacao",
+        "texto": "fonte · INE",
+        "af": "absolute 52.5pxx44px top:9.59375px",
+        "baixo10": "a.src-chip",
+        "baixo16": "a.src-chip",
+        "baixo21": "a.src-chip",
+        "cima16": "a.src-chip"
+      }
+    ]
+  }
+}
