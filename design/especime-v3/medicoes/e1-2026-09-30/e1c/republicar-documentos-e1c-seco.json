@@ -1,0 +1,77 @@
+{
+ "cabeca_do_motor": "932eaee2572162753d15a0787186c9c5805c4c2e",
+ "escrito": false,
+ "fetched_utc": null,
+ "edicoes": [
+  {
+   "slug": "evora-contas-da-camara-2010-2025",
+   "lingua": "pt",
+   "origem": "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 60801,
+   "sha256_antes": "f2bbbfa4b255a1e41608c1249b3c3d39eb767e9e2f2e5aff5dc4c664c402681c",
+   "sha256_depois": "619f0972f44b6fdba91a115476435198b903eb28b0e4ab3efd8fbaf4c59b7839",
+   "mudou": true
+  },
+  {
+   "slug": "evora-contas-da-camara-2010-2025",
+   "lingua": "en",
+   "origem": "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 58013,
+   "sha256_antes": "c0162af30b4112de7312304e349864c2891cd80475804cf5d8acea88d0cd1c94",
+   "sha256_depois": "edd49eef7bcb3c4886eb79c1dd6ce1d23b65cff1df48b983face6b7b08f00a87",
+   "mudou": true
+  },
+  {
+   "slug": "evora-quem-governou-a-camara-2009-2025",
+   "lingua": "pt",
+   "origem": "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 93763,
+   "sha256_antes": "4c789c855737cf6f237f31b141bf8720e4b035a34498c8c305e1f3b863590f79",
+   "sha256_depois": "dfbdcf0472b2099f386869f6ce31e599b317b22fdde319879ff08632427edc87",
+   "mudou": true
+  },
+  {
+   "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+   "lingua": "pt",
+   "origem": "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 65437,
+   "sha256_antes": "5523f27d460233fe869c09219538667beed997f1823ba383def67a814ca2727d",
+   "sha256_depois": "45768c15fe6d5c10a81c58c445cc381c9fb9aeb5f817c6affef68109dadb8402",
+   "mudou": true
+  },
+  {
+   "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+   "lingua": "en",
+   "origem": "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 61616,
+   "sha256_antes": "4ce8ec943d9d48d3b97306e99a14f61d8633098ba84f87d23061437cbf7312fb",
+   "sha256_depois": "238413fbe22e10bd3216e9d14da7b0a3abf6a14342fda169c3dc8a38f60d7f39",
+   "mudou": true
+  },
+  {
+   "slug": "evora-2027-capital-europeia-da-cultura",
+   "lingua": "pt",
+   "origem": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 71339,
+   "sha256_antes": "1ed3f37e5bdc5438337fec06e76eddb3633623012d29d67fd9d29ea2b1c6b1ad",
+   "sha256_depois": "d0001684b6576ad0c209e012e81f72691316e3b0e16a08e75d42e54a0ae94569",
+   "mudou": true
+  },
+  {
+   "slug": "evora-2027-capital-europeia-da-cultura",
+   "lingua": "en",
+   "origem": "content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html",
+   "commit": "a8febe004599c0ebcf62d62d6c45487ccf0542d4",
+   "bytes": 69408,
+   "sha256_antes": "d9b54468ad625c64691940178ed09edcc883d45dae13f93ebd64594ce0af24ff",
+   "sha256_depois": "515ef8adfbc8585de4f4d0ae4e41f3f82963d87ff011836e12216298ba1aa291",
+   "mudou": true
+  }
+ ]
+}

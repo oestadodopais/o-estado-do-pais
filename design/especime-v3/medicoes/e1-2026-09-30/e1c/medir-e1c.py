@@ -37,6 +37,8 @@ MOTOR = m1.MOTOR
 DIST = SITIO / "dist"
 CABECA_E1B_MOTOR = "79ab4d5"
 CABECA_E1B_SITIO = "0fa073e9"
+# o commit do lugar de direção com as duas leituras e o mandato desta passagem: a base do trabalho do construtor no sítio
+CABECA_DO_MANDATO = "e7a9e908"
 MEDIDAS = []
 
 
@@ -275,7 +277,9 @@ def medir_leitura():
             r[f"/{rota}"] = {"sai": t.count(sai[lang]), "entra": t.count(entra[lang])}
     ok = all(v["sai"] == 0 and v["entra"] >= 1 for v in r.values())
     planta = visivel("<p>Da soma aprovada para o concelho, <span>61,32</span>% está vencida contra <span>51,95</span>% paga.</p>")
-    medida("leitura_da_economia_e1c", {"paginas": r, "em_todas_a_frase_nova_e_nenhuma_antiga": ok},
+    linhas = {i: re.search(r'^value: "([^"]*)"', ler(SITIO / f"ledger/claims/{i}.yml"), re.M).group(1)
+              for i in ("evora-prr-vencido-quota-2026", "evora-prr-execucao-2026")}
+    medida("leitura_da_economia_e1c", {"paginas": r, "em_todas_a_frase_nova_e_nenhuma_antiga": ok, "as_duas_linhas_da_frase": linhas},
            "o texto visível da lista dos estudos, da página de Évora e da primeira página construídas, nas duas línguas, procurado pela "
            "frase antiga («está vencida contra», «is overdue against») e pela nova («as duas partes sobrepõem-se», «the two parts overlap»)",
            {"descricao": "a frase antiga, numa página plantada, é contada uma vez", "mordeu": planta.count(sai["pt"]) == 1})
@@ -316,13 +320,21 @@ def medir_motor():
     tr = AQUI / "motor-travessia"
     primeira = ler(tr / "commit-motor-1-primeira-tentativa.log")
     suites = re.findall(r"^GATE  (\S+)\s+FAIL", primeira, re.M)
+    # o `core.gate update` refaz as contas de todas as entregas; a de uma entrega que não é deste bloco ficou como estava
+    upd = re.search(r"^BASELINE  dominios-d1: (\{.*?\}) → (\{.*?\})$", ler(tr / "gate-update.log"), re.M)
+    fora = {"entrega": "dominios-d1", "matched_registado": json.loads(upd.group(1).replace("'", '"'))["matched"],
+            "matched_medido_pelo_update": json.loads(upd.group(2).replace("'", '"'))["matched"],
+            "no_registo_depois_do_commit": next(d["counts"]["matched"] for d in json.loads(ler(MOTOR / "core/gate_baselines.json"))["deliverables"]
+                                                if d["name"] == "dominios-d1")} if upd else None
     medida("motor_e1c", {"portao": {"codigo": cod, "cabeca": ler(pasta / "cabeca").strip(), "inicio": ler(pasta / "gate.inicio").strip(),
                                     "fim": ler(pasta / "gate.fim").strip(), "linha_final_pass": "GATE: PASS" in log},
                          "commits": {"primeira_tentativa": int(ler(tr / "commit-motor-1-primeira-tentativa.codigo").strip()), "suites_que_pararam": suites,
                                      "commit_1": int(ler(tr / "commit-motor-1.codigo").strip()), "commit_2": int(ler(tr / "commit-motor-2.codigo").strip())},
                          "composicoes": {n: int(ler(tr / f"compor-escrever-{n}.codigo").strip()) for n in ("16", "17", "18", "19")},
                          "html": {n: int(ler(tr / f"make-html-{n}.codigo").strip()) for n in ("16", "17", "18", "19")},
-                         "registos_do_motor": int(ler(tr / "export-records-escrever.codigo").strip())},
+                         "registos_do_motor": int(ler(tr / "export-records-escrever.codigo").strip()),
+                         "update_do_registo_do_portao": int(ler(tr / "gate-update.codigo").strip()),
+                         "conta_de_fora_do_bloco_que_ficou_como_estava": fora},
            "python3 -m core.gate na cabeça final do motor, com o código escrito em e1c/motor/gate.codigo depois de o processo acabar; "
            "e os códigos de cada passo da travessia em e1c/motor-travessia/",
            {"descricao": "o código lido do ficheiro concorda com a última linha do registo (PASS com 0), e a primeira tentativa do commit, "
@@ -406,6 +418,7 @@ def medir_mapa():
     pt = contas["pt"]
     soma = pt["blocos"] + 2 * len(pt["repartidos_por_tres_estudos"]) + len(pt["repartidos_por_dois_estudos"]) + len(pt["que_entram_num_estudo_e_saem_declarados_de_outro"])
     medida("mapa_de_migracao_e1c", {**contas, "a_soma_bate_em_portugues": {"blocos": pt["blocos"], "mais_dois_por_bloco_repartido_por_tres": 2 * len(pt["repartidos_por_tres_estudos"]),
+                                                                           "blocos_com_os_destinos_dos_repartidos": pt["blocos"] + 2 * len(pt["repartidos_por_tres_estudos"]),
                                                                            "mais_um_por_bloco_que_entra_e_sai": len(pt["que_entram_num_estudo_e_saem_declarados_de_outro"]),
                                                                            "da": soma, "destinos": pt["destinos"], "bate": soma == pt["destinos"]}},
            "core.compor.mapa_de_migracao no motor, sobre os gabaritos das pastas 16 a 19, escrito bloco a bloco em mapa-de-migracao.json",
@@ -448,7 +461,7 @@ def medir_celulas_registos_contra_paginas():
 # ------------------------------------------------------------------ o custo
 def medir_custo():
     def primeira(cwd):
-        linhas = corre(["git", "log", "--reverse", "--format=%cI %h %s", f"{CABECA_E1B_MOTOR if cwd == MOTOR else CABECA_E1B_SITIO}..HEAD"], cwd=cwd).splitlines()
+        linhas = corre(["git", "log", "--reverse", "--format=%cI %h %s", f"{CABECA_E1B_MOTOR if cwd == MOTOR else CABECA_DO_MANDATO}..HEAD"], cwd=cwd).splitlines()
         return linhas[0] if linhas else None
     m, s = primeira(MOTOR), primeira(SITIO)
     inicio = min(datetime.fromisoformat(x.split()[0]) for x in (m, s) if x)
@@ -458,7 +471,8 @@ def medir_custo():
                          "inicio": inicio.isoformat(), "medido_em": agora.isoformat(timespec="seconds"),
                          "segundos_de_relogio_desde_o_primeiro_commit": int((agora - inicio).total_seconds()),
                          "simbolos": transcrito},
-           "git log --reverse --format=%cI <cabeça da E1b>..HEAD nas duas árvores (o primeiro commit da passagem) até à hora da medida; "
+           "git log --reverse --format=%cI <base da passagem>..HEAD nas duas árvores (no motor, a cabeça da E1b; no sítio, o commit do mandato), "
+           "o primeiro commit da passagem, até à hora da medida; a leitura dos documentos antes dele não está contada; "
            "os símbolos são uma transcrição, não uma medida deste guião (ver o campo simbolos)",
            {"descricao": "o primeiro commit da passagem no motor é o das emendas, a8febe0", "mordeu": bool(m and m.split()[1] == "a8febe0")})
 
