@@ -506,6 +506,15 @@ export const NOMES_DAS_LINHAS_DERIVADAS = {
     pt: 'Correções publicadas',
     en: 'Published corrections',
   },
+  // E1b: as duas contagens do arquivo, nomeadas pela contagem que a derivação declara.
+  'estudos-publicados': {
+    pt: 'Estudos publicados',
+    en: 'Published studies',
+  },
+  'edicoes-publicadas': {
+    pt: 'Edições publicadas',
+    en: 'Published editions',
+  },
   // A contagem e o lugar estão declarados na derivação desta linha.
   'estudos-evora-publicados': {
     pt: 'Estudos publicados sobre Évora',

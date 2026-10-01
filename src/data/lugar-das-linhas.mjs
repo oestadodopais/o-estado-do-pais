@@ -23,6 +23,14 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
      é O Estado do País, com a porta para o registo das correções. Não mede
      Portugal, uma região nem um concelho. */
   'correcoes-publicadas': 'o-estado-do-pais',
+  /* E1b, §1.145: as duas contagens do arquivo também medem o próprio projeto,
+     e não Portugal, uma região nem um concelho: contam os estudos e as edições
+     que O Estado do País publicou. A 01.10.2026 entraram no arquivo os quatro
+     estudos de Évora e as sete edições deles, e os seis estudos de agosto e
+     setembro continuam alojados e contam. A porta é a do registo das
+     correções, como a da linha de cima. */
+  'estudos-publicados': 'o-estado-do-pais',
+  'edicoes-publicadas': 'o-estado-do-pais',
   /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.
      A atualização pertence ao registo e aos temas, fora da lista do país. */
   'divida-das-familias-2025-ue': 'uniao-europeia',
