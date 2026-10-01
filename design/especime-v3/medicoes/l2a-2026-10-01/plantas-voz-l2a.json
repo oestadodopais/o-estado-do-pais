@@ -1,0 +1,25 @@
+{
+  "bloco": "L2a",
+  "funcao": "scripts/voz-pais.mjs · verificaVozPais()",
+  "limpo": {
+    "queixas_da_lista_fechada": 0
+  },
+  "plantas": [
+    {
+      "nome": "a menção da fonte do sinal com outro texto",
+      "ficheiro": "index.html",
+      "mordeu": true,
+      "queixa": "B1 lista fechada país: /: «Instituto Geográfico Português · Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY 4.0».",
+      "original_antes": "068950c3812b0318e9ab97486acaf28ead6a98e493aa75992730519397ca21fd",
+      "original_depois": "068950c3812b0318e9ab97486acaf28ead6a98e493aa75992730519397ca21fd"
+    },
+    {
+      "nome": "a cadeia da pesquisa de volta à primeira página inglesa",
+      "ficheiro": "en/index.html",
+      "mordeu": true,
+      "queixa": "B1 lista fechada país: en: «Municipality».",
+      "original_antes": "7d8622cbd21c4b795b9d61ca76ae3a0ad5c59a11ca8ae4c2fbfcf58ab408b17b",
+      "original_depois": "7d8622cbd21c4b795b9d61ca76ae3a0ad5c59a11ca8ae4c2fbfcf58ab408b17b"
+    }
+  ]
+}

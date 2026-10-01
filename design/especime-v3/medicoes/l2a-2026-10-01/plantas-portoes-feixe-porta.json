@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "feixe-porta",
+    "comando": "node scripts/design-bundle.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "perdeu o sinal do mapa"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "068950c3812b0318e9ab97486acaf28ead6a98e493aa75992730519397ca21fd",
+        "reposto": "068950c3812b0318e9ab97486acaf28ead6a98e493aa75992730519397ca21fd"
+      }
+    ]
+  }
+]

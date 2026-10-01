@@ -1,0 +1,309 @@
+{
+  "bloco": "L2a",
+  "guiao": "design/especime-v3/medicoes/l2a-2026-10-01/medir-l2a.py",
+  "ordem_em_lugares": [
+    "pesquisa",
+    "mapa",
+    "regioes",
+    "distritos"
+  ],
+  "medidas": [
+    {
+      "nome": "pecas_de_lugares_antes_do_mapa",
+      "valor": 1,
+      "comando": "a ordem de <Pesquisa, das duas listas e de <MapaRespira em src/views/LugaresView.astro (o detetor do §0 do brief)",
+      "conhecido_positivo": {
+        "o_que": "a pesquisa vem antes do mapa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "construcao_medida",
+      "valor": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
+      "comando": "dist/version.json, campo commit",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro da versão existe e nomeia um commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gavetas_fechadas_em_lugares",
+      "valor": 2,
+      "comando": "dist/lugares/index.html · os <details class=\"gaveta\" data-gaveta=\"…\"> sem o atributo open",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê as duas gavetas, abertas ou fechadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nomes_na_lista_das_regioes",
+      "valor": 9,
+      "comando": "dist/lugares/index.html · os <li> de ul[data-lista-lugares=\"regioes\"]",
+      "conhecido_positivo": {
+        "o_que": "«Alentejo» é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contagem_no_sumario_das_regioes",
+      "valor": 9,
+      "comando": "dist/lugares/index.html · o número da prova em [data-conta-da-lista=\"regioes\"]",
+      "conhecido_positivo": {
+        "o_que": "a contagem é uma marca data-prova, que o portão de HTML reconta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nomes_na_lista_dos_distritos_e_ilhas",
+      "valor": 29,
+      "comando": "dist/lugares/index.html · os <li> de ul[data-lista-lugares=\"distritos\"]",
+      "conhecido_positivo": {
+        "o_que": "«Évora» é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contagem_no_sumario_dos_distritos_e_ilhas",
+      "valor": 29,
+      "comando": "dist/lugares/index.html · o número da prova em [data-conta-da-lista=\"distritos\"]",
+      "conhecido_positivo": {
+        "o_que": "a contagem é uma marca data-prova, que o portão de HTML reconta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisas_na_primeira_pagina",
+      "valor": 0,
+      "comando": "dist/index.html · as ocorrências de data-pesquisa-bloco",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra data-pesquisa-bloco em dist/lugares/index.html",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapas_inteiros_na_primeira_pagina",
+      "valor": 0,
+      "comando": "dist/index.html · as ocorrências de data-mapa-raiz",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra data-mapa-raiz em dist/lugares/index.html",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sinais_na_primeira_pagina",
+      "valor": 1,
+      "comando": "dist/index.html · as ocorrências de data-sinal-dos-lugares",
+      "conhecido_positivo": {
+        "o_que": "o sinal está na porta «Lugares» (li data-entrada=\"lugares\")",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sinais_nos_temas",
+      "valor": 1,
+      "comando": "dist/temas/index.html · as ocorrências de data-sinal-dos-lugares",
+      "conhecido_positivo": {
+        "o_que": "o sinal está na porta «Lugares» (li data-entrada=\"lugares\")",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "bytes_do_desenho_do_sinal",
+      "valor": 1432,
+      "comando": "dist/index.html · o comprimento do atributo d do contorno do sinal",
+      "conhecido_positivo": {
+        "o_que": "o caminho começa por um M, no formato do artefacto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contorno_arestas",
+      "valor": 5537,
+      "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
+      "conhecido_positivo": {
+        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contorno_gemeas",
+      "valor": 3781,
+      "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
+      "conhecido_positivo": {
+        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contorno_fronteira",
+      "valor": 1756,
+      "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
+      "conhecido_positivo": {
+        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contorno_linhas",
+      "valor": 90,
+      "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
+      "conhecido_positivo": {
+        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contorno_pontos",
+      "valor": 179,
+      "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
+      "conhecido_positivo": {
+        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "contorno_bytes_iguais_aos_da_pagina",
+      "valor": 1432,
+      "comando": "o comprimento do d devolvido pela função, contra o da página",
+      "conhecido_positivo": {
+        "o_que": "é igual ao comprimento lido em dist/index.html",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_captura_de_lugares_a_390",
+      "valor": 3762,
+      "comando": "a altura do PNG design/especime-v3/capturas/l2a-2026-10-01/lugares-pt-390.png (o cabeçalho IHDR)",
+      "conhecido_positivo": {
+        "o_que": "a largura do PNG é 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_captura_de_lugares_a_390_no_n1",
+      "valor": 5321,
+      "comando": "o §0 do brief (design/observatorio/medidas/BRIEF-L2a.json)",
+      "conhecido_positivo": {
+        "o_que": "o valor está no ficheiro do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_captura_da_primeira_pagina_a_390",
+      "valor": 6609,
+      "comando": "a altura do PNG design/especime-v3/capturas/l2a-2026-10-01/primeira-pt-390.png (o cabeçalho IHDR)",
+      "conhecido_positivo": {
+        "o_que": "a largura do PNG é 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_captura_da_primeira_pagina_a_390_no_n1",
+      "valor": 7194,
+      "comando": "o §0 do brief (design/observatorio/medidas/BRIEF-L2a.json)",
+      "conhecido_positivo": {
+        "o_que": "o valor está no ficheiro do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_do_bloco",
+      "valor": 22,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/capturas-l2a.json, campo capturas",
+      "conhecido_positivo": {
+        "o_que": "cada imagem do manifesto existe na pasta das capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "problemas_das_capturas",
+      "valor": 0,
+      "comando": "o mesmo manifesto, campo problemas (transbordo, HTTP, erros de página)",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem o campo problemas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_mapa_primeiro_mordidas",
+      "valor": 14,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/navegacao.json, as plantas L2A do check:navegacao",
+      "conhecido_positivo": {
+        "o_que": "o registo tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_mapa_primeiro_total",
+      "valor": 14,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/navegacao.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_porta_e_de_lugares_no_navegador_mordidas",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/navegador.json, as plantas de tests/inicio/lugares-no-navegador.mjs",
+      "conhecido_positivo": {
+        "o_que": "o registo tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_porta_e_de_lugares_no_navegador_total",
+      "valor": 4,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/navegador.json",
+      "conhecido_positivo": {
+        "o_que": "o registo tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_check_mapa_mordidas",
+      "valor": 23,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/check-mapa-vermelhos.txt (node scripts/check-mapa.mjs --vermelhos)",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a planta nova «R4 (o mapa de volta à primeira página)»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_check_mapa_que_nao_morderam",
+      "valor": 0,
+      "comando": "o mesmo registo",
+      "conhecido_positivo": {
+        "o_que": "o registo tem a linha de cada planta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/build.codigo, escrito por scripts/leituras/portoes.sh",
+      "conhecido_positivo": {
+        "o_que": "a pasta dos portões tem a cabeça ao lado",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "portao_verify",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/verify.codigo, escrito por scripts/leituras/portoes.sh",
+      "conhecido_positivo": {
+        "o_que": "a pasta dos portões tem a cabeça ao lado",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "portao_typecheck",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/typecheck.codigo, escrito por scripts/leituras/portoes.sh",
+      "conhecido_positivo": {
+        "o_que": "a pasta dos portões tem a cabeça ao lado",
+        "encontrado": false
+      }
+    }
+  ]
+}
