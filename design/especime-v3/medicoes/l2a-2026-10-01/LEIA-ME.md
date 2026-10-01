@@ -110,8 +110,8 @@ Símbolos: 653000 até à corrida final dos portões, a diferença entre o conta
 - **`13` · o conhecido-positivo do contorno.** Só conta com as três contagens lidas; corrido com o módulo do contorno trocado por um que não existe, os cinco ficam por encontrar (`l2a-b/prova-do-conhecido-positivo-do-contorno.txt`).
 - **`14` · a igualdade do sinal.** Compara o atributo `d` inteiro, carácter a carácter, e o conhecido-positivo é a mesma comparação a recusar uma cópia com um algarismo trocado e o mesmo comprimento. Resultado: igual («sim» em `medidas.json`, com o sha256 do desenho ao lado).
 
-**Os commits da passagem:** `dd57abb1` (os achados `13` e `14`), `be4fe4e0` (o `5`), `7a0f963c` (o `4` e o `6`), o do relatório e da resposta curta, e o seguinte, com os códigos dos portões.
+**Os commits da passagem:** `dd57abb1` (os achados `13` e `14`), `be4fe4e0` (o `5`), `7a0f963c` (o `4` e o `6`), `401d0576` (esta secção, a resposta curta e as medidas), e o seguinte, com os códigos dos portões.
 
-**Os portões:** pela tranca, em `portoes/l2a-b/`, na cabeça do commit do relatório; os códigos entram no commit seguinte.
+**Os portões:** por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `401d0576`, a mesma no fim, com a árvore limpa (`portoes/l2a-b/cabeca`, `cabeca.fim` e `estado.fim`): `build` 0 em 115 s, `verify` 0 em 706 s, `typecheck` 0 em 1 s, cada código lido do seu ficheiro, com os registos ao lado e os caminhos da máquina tornados relativos. O commit que os traz só acrescenta ficheiros desta pasta.
 
-**O custo:** 36677 símbolos nesta passagem até ao relatório, a diferença entre as duas leituras do contador de símbolos restantes guardadas em `custo-l2a-b.json` (a primeira à chegada da mensagem do lugar de direção, a segunda ao escrever esta secção); os segundos dos portões entram com os códigos. Modelo: Claude Opus 5.5, sem subagentes.
+**O custo:** 36677 símbolos nesta passagem até ao relatório, a diferença entre as duas leituras do contador de símbolos restantes guardadas em `custo-l2a-b.json` (a primeira à chegada da mensagem do lugar de direção, a segunda ao escrever esta secção); os segundos dos portões estão acima. Modelo: Claude Opus 5.5, sem subagentes.
