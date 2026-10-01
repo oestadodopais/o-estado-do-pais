@@ -34,6 +34,13 @@
  *        Confere também que um lugar cujo índice a fonte não publica não tem essa
  *        metade da leitura. **É P**: uma palavra trocada aqui é uma afirmação
  *        falsa sobre uma câmara, e a leitura a frio de 21.09 leu uma.
+ *        **Desde o L2b (01.10.2026)**, também o ganho médio mensal contra
+ *        Portugal: a linha nacional acha-se pelo leitor dos portões
+ *        (`scripts/concelhos-do-portao.mjs`: a mesma edição do documento, a
+ *        mesma unidade e o mesmo período, com Portugal no localizador), a
+ *        palavra do lado reconta-se dos dois valores, e a leitura tem de a dizer
+ *        e de citar as duas linhas, nas duas formas (a composta e a de Évora);
+ *        sem valor do concelho ou sem linha nacional, nenhuma das três palavras.
  *   **T2** · toda a medida rendida numa página de concelho de `dist/` diz a sua
  *        chave, e o tema debaixo do qual ela se rende é o que a tabela dá àquela
  *        chave. É a célula que o mandato pede à letra: «o portão falha se uma
@@ -63,6 +70,7 @@ import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { getClaim, parsePtNumber, eValorTextual } from '../src/lib/ledger.mjs';
 import { t as cadeias } from '../src/i18n/strings.mjs';
 import { routePath, LANGS } from '../src/lib/routes.mjs';
+import { faixasDoPortao, linhaDePortugalDoPortao, valorDoPortao } from './concelhos-do-portao.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -171,6 +179,11 @@ medidas.chaves_com_tema = Object.keys(TEMA_DA_MEDIDA_DE_CONCELHO).length;
 /* ------------------------------------------------------------------ T2 */
 let cartoes = 0;
 let paginas = 0;
+/* L2b: as leituras com o ganho contra Portugal, e as que ficaram sem ele por não haver com que comparar. */
+let leiturasComGanho = 0;
+let leiturasSemGanho = 0;
+const FAIXAS = faixasDoPortao();
+const idsDoGanho = FAIXAS.contas.get('ganho')?.ids ?? new Set();
 if (!fs.existsSync(DIST)) {
   falhas.push('T2 · não existe dist/. Corra o build primeiro: esta célula lê o que foi construído.');
 } else {
@@ -291,6 +304,36 @@ if (!fs.existsSync(DIST)) {
           );
         }
       }
+
+      /* L2b · O GANHO MÉDIO CONTRA PORTUGAL, recontado aqui (o brief L2b, §3, ponto 3). As duas formas da
+         leitura dizem-no, porque a frase é composta nas duas: a de Évora acaba com ela. */
+      const F = s.municipio.faixaDoConcelho;
+      const palavrasDoGanho = [F.acima, F.abaixo, F.igual];
+      const textoInteiro = leitura ? leitura.text.replace(/\s+/g, ' ') : '';
+      const pGanho = peca('ganho');
+      const idNacional = pGanho ? linhaDePortugalDoPortao(FAIXAS.linhas, pGanho.claim, idsDoGanho) : null;
+      const vGanho = pGanho ? valorDoPortao(FAIXAS.linhas.get(pGanho.claim)) : null;
+      const vNacional = idNacional ? valorDoPortao(FAIXAS.linhas.get(idNacional)) : null;
+      if (pGanho && vGanho !== null && vNacional !== null) {
+        const certa = vGanho > vNacional ? F.acima : vGanho < vNacional ? F.abaixo : F.igual;
+        const erradas = palavrasDoGanho.filter((p) => p !== certa);
+        const citaAs = leitura?.querySelector(`[data-claim="${pGanho.claim}"]`) && leitura?.querySelector(`[data-claim="${idNacional}"]`);
+        if (!textoInteiro.includes(certa) || erradas.some((p) => textoInteiro.includes(p)) || !citaAs) {
+          falhas.push(
+            `P1 · ${rota}: o ganho médio é ${FAIXAS.linhas.get(pGanho.claim).value} e o de Portugal ` +
+              `${FAIXAS.linhas.get(idNacional).value}, e a leitura não diz «${certa}» com as duas linhas.`,
+          );
+        } else {
+          leiturasComGanho++;
+        }
+      } else {
+        leiturasSemGanho++;
+        for (const palavra of palavrasDoGanho) {
+          if (textoInteiro.includes(palavra)) {
+            falhas.push(`P1 · ${rota}: não há com que comparar o ganho médio, e a leitura diz «${palavra}».`);
+          }
+        }
+      }
     }
   }
   if (cartoes === 0) {
@@ -302,6 +345,11 @@ if (!fs.existsSync(DIST)) {
 }
 medidas.paginas = paginas;
 medidas.cartoes = cartoes;
+medidas.leituras_com_ganho = leiturasComGanho;
+medidas.leituras_sem_ganho = leiturasSemGanho;
+if (paginas > 0 && leiturasComGanho === 0) {
+  falhas.push('P1 · nenhuma leitura com o ganho médio contra Portugal: o detetor não viu nada (regra 14 da casa).');
+}
 
 console.log('');
 if (falhas.length) {
@@ -318,6 +366,7 @@ console.log(
     `${medidas.sem_base === 0 ? 'as 308 linhas do poder de compra declaram a base do índice' : ''} · ` +
     `${medidas.chaves_com_tema} chaves com tema · ${medidas.cartoes} medida(s) rendidas em ` +
     `${medidas.paginas} página(s), todas debaixo do tema que a tabela lhes dá · as palavras da ` +
-    `leitura e da régua recalculadas do livro-razão em todas elas`,
+    `leitura e da régua recalculadas do livro-razão em todas elas · o ganho médio contra Portugal ` +
+    `recontado em ${medidas.leituras_com_ganho} leitura(s), e ${medidas.leituras_sem_ganho} sem com que comparar`,
 );
 console.log('');
