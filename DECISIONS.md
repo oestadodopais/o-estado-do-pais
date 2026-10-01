@@ -13330,3 +13330,25 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **A aterragem da §1.148.** `main` avançou de `c87c2a31` para `6e6755b0` às 09:51 UTC de 01.10.2026; a Vercel «Ready»; `verify:deploy` a 0; a corrida de `main` (36845421726) verde às 10:02; o guião declarou às 10:02. O prompt da sessão seguinte aterrou a seguir (`b0e8b00e`, às 10:45).
 
 **A aterragem destes registos.** Escreve-se no registo seguinte.
+
+### 1.150 O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
+
+**Afecta:** nenhum
+
+**O que muda:** o que a §1.149 decidiu, construído e no ar: em «Lugares» a ordem é a pesquisa, o mapa (com a menção da fonte ao pé) e só depois as duas listas, que são gavetas fechadas (`<details>`) com o nome e a contagem no `<summary>`, lida da carta; a partir de 1 024 px o mapa fica à direita e as gavetas por baixo da pesquisa; a primeira página perdeu a secção dos lugares inteira (o mapa e a segunda pesquisa), e a porta «Lugares» no índice dos assuntos leva o contorno do país como sinal, estático, com texto alternativo nas duas línguas e a menção da Direção-Geral do Território ao lado, fora da ligação, porque a licença da Carta a exige onde o desenho está; a porta «O mapa dos concelhos» saiu das 58 páginas de distrito, porque abria o mapa que a primeira página já não tem. As alturas das capturas a 390 px: «Lugares» de 5 321 para 3 762 pixels; a primeira página de 7 194 para 6 609.
+
+**Data:** 01.10.2026.
+
+**O que se fez, e por quem.** O diretor decidiu construir antes da reposição e usar a reposição gratuita do Claude quando o mostrador se aproximasse do fim, em vez de a gastar com 11 % por usar; o lugar de direção partiu o L2 em dois (o L2a, este, e o L2b, o concelho entre os 308 e a referência do ganho médio) e lançou o L2a a 95 % da semana. O Claude Opus 5.5 construiu-o das 17:55 às 19:11 UTC (653 000 símbolos pelo seu contador; 664 001 pelo que a ferramenta reporta) e fez a passagem L2a-b das 19:38 às 20:02 (36 677 pelo seu contador). O Codex gpt-6.1-sol leu a frio uma vez (236 881 símbolos, das 19:19 às 19:32), apanhou as cinco plantas e não achou nada bloqueante; os achados reais foram cinco, todos corrigidos na L2a-b: a pesquisa sem guião recarrega a página sem procurar e a célula fazia-o passar por procura (a célula mede-o agora como é, e o caminho sem guião para um concelho é a gaveta dos distritos e das ilhas, porque as páginas das regiões não têm portas para concelhos); a R6 do `check:mapa` não exigia a menção ao pé do mapa (exige agora, com a planta a movê-la e não a apagá-la); a prova do teclado só abria a gaveta das regiões (abre as duas); dois conhecidos-positivos do medidor que não mordiam. Os três achados de linguagem simples são de blocos anteriores: as designações dos pelouros e as localizações vencidas nos cartões dos estudos (K2), o ganho médio de Évora sem a referência nacional dita (L2b, I182).
+
+**As decisões do lugar de direção.**
+1. A menção da fonte do contorno fica ao lado do sinal, como o construtor a pôs: a licença manda, e um sinal sem a menção não é mais limpo, é incompleto.
+2. Nas páginas de distrito a menção fica onde está, no bloco da proveniência depois da lista dos concelhos, com a regra antiga; a regra da proximidade é da página «Lugares», onde o mapa é a figura principal.
+3. As seis réguas que só se correm à mão e ainda procuram o mapa na primeira página (`tests/inicio/correcoes-a.mjs`, `lista.mjs`, `mapa-distritos.mjs`, `mapa-unidades.mjs`, `matriz.mjs`, `tests/municipio/correcoes-c.mjs`) atualizam-se no L2b; nenhuma está num portão.
+4. O caminho sem guião para um concelho é a gaveta dos distritos e das ilhas, e a célula prova-o; a pesquisa sem guião não procura, e o relatório di-lo.
+
+**A aterragem da §1.149.** `main` avançou de `b0e8b00e` para `1395c9de`: o guião parou no `push` (a ligação ao GitHub caiu por um momento, «No route to host», às 17:40 UTC) e o lugar de direção fez o `push` à mão antes das 17:41, com a vigia da Vercel, o `verify:deploy` (a 0) e a corrida de `main` (verde) feitos pelos mesmos passos do guião.
+
+**A aterragem do L2a.** O ramo publicado e a corrida «portão» verde em `a9509193`; o guião às 20:11 UTC: `main` de `1395c9de` para `a9509193`; a Vercel «Ready»; `verify:deploy` a 0; a corrida de `main` (36919744609) verde às 20:48; o guião declarou às 20:49.
+
+**A aterragem destes registos.** Escreve-se no registo seguinte.
