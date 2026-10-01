@@ -21,6 +21,8 @@ import {
   eValorTextual,
 } from './ledger.mjs';
 import { routePath } from './routes.mjs';
+import { linhaDePortugal } from './faixa-do-concelho.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
 
 /**
  * ---------------------------------------------------------------------------
@@ -80,6 +82,15 @@ export function linhaDoLugar(slug, nome, lang) {
  * NENHUM NÚMERO NOVO. Não há aqui diferenças calculadas («8,5 % abaixo»): o que
  * a frase leva são os valores das linhas, selados, e as palavras entre eles.
  *
+ * O GANHO MÉDIO CONTRA PORTUGAL (bloco L2b, 01.10.2026, o §3 do brief, ponto 3;
+ * a I182). Nos 308, Évora incluída, a leitura acaba com uma frase do ganho
+ * médio mensal: o valor do concelho e o da linha nacional da mesma medida e do
+ * mesmo período, os dois selados, e a palavra do lado («acima de Portugal»,
+ * «abaixo de Portugal», «igual a Portugal») escolhida pelos dois valores, que
+ * é a palavra da faixa do cartão. Sem a linha nacional do mesmo período, ou sem
+ * valor do concelho, a frase não se escreve. O `check:lugares` (P1) reconta a
+ * palavra e confere os dois valores na página.
+ *
  * @param {{ slug: string, nome: Record<string,string>, distancia?: Record<string, string|null> }} m
  * @param {{ chave: string, claim: string|null, vazia: boolean, linha: any }[]} pecas
  * @param {'pt'|'en'} lang
@@ -90,6 +101,10 @@ export function leituraDoLugar(m, pecas, lang, s) {
 
   /* ÉVORA TEM A SUA, e é a única escrita: os dois valores são linhas, os dois
      anos são datas de referência, e o resto são as palavras da emenda. */
+  /** @param {string} chave */
+  const peca = (chave) => pecas.find((p) => p.chave === chave && !p.vazia) ?? null;
+  const ganho = fraseDoGanho(peca('ganho'), lang, s);
+
   if (m.slug === 'evora') {
     const L = s.municipio.leituraDeEvora;
     return {
@@ -103,14 +118,13 @@ export function leituraDoLugar(m, pecas, lang, s) {
         L.d,
         { ref: '2024' },
         L.e,
+        ...(ganho ? [' ', ...ganho.partes] : []),
       ],
-      citadas: ['evora-indice-de-divida-2014', 'evora-indice-de-divida-2024'],
+      citadas: ['evora-indice-de-divida-2014', 'evora-indice-de-divida-2024', ...(ganho?.citadas ?? [])],
     };
   }
 
   const L = s.municipio.leituraDoLugar;
-  /** @param {string} chave */
-  const peca = (chave) => pecas.find((p) => p.chave === chave && !p.vazia) ?? null;
 
   /* (a) a dívida da câmara contra o limite legal. */
   const indice = peca('indice');
@@ -136,7 +150,7 @@ export function leituraDoLugar(m, pecas, lang, s) {
     valorDoPoder !== null && valorDaBase !== null && valorDoPoder !== valorDaBase;
   const acima = temPoder ? valorDoPoder > valorDaBase : null;
 
-  if (!temIndice && !temPoder) return null;
+  if (!temIndice && !temPoder && !ganho) return null;
 
   const citadas = [];
   /** @type {any[]} */
@@ -159,8 +173,48 @@ export function leituraDoLugar(m, pecas, lang, s) {
     else partes.push(L.poderSoA, { lugar: nome }, L.poderSoB);
     partes.push({ voz: acima ? L.acima : L.abaixo }, L.poderC, { claim: poder.claim }, L.poderD);
   }
-  partes.push(L.fim);
+  if (temIndice || temPoder) partes.push(L.fim);
+  if (ganho) {
+    if (partes.length) partes.push(' ');
+    partes.push(...ganho.partes);
+    citadas.push(...ganho.citadas);
+  }
   return { partes, citadas, forma: 'composta' };
+}
+
+/**
+ * A FRASE DO GANHO MÉDIO CONTRA PORTUGAL (bloco L2b): «O ganho médio mensal é de
+ * <valor do concelho> euros por mês, abaixo de Portugal (<valor de Portugal>
+ * euros por mês).» Os dois valores são linhas seladas, a unidade é a da linha
+ * pela tabela das unidades, e a palavra do lado é a da faixa do cartão.
+ *
+ * @param {{ claim: string|null, linha: any } | null} peca  o cartão do ganho deste concelho
+ * @param {'pt'|'en'} lang
+ * @param {any} s
+ * @returns {{ partes: any[], citadas: string[] } | null}
+ */
+function fraseDoGanho(peca, lang, s) {
+  if (!peca?.claim || eValorTextual(peca.linha?.value)) return null;
+  const nacional = linhaDePortugal('ganho', peca.claim);
+  if (!nacional) return null;
+  const vc = parsePtNumber(peca.linha.value);
+  const vp = parsePtNumber(getClaim(nacional.id).value);
+  if (vc === null || vp === null) return null;
+  const F = s.municipio.faixaDoConcelho;
+  const L = s.municipio.leituraDoLugar;
+  const sufixo = `\u00a0${unidadeDaLinha(peca.linha.unit, lang).texto}`;
+  return {
+    partes: [
+      L.ganhoA,
+      { claim: peca.claim, sufixo },
+      L.ganhoB,
+      { voz: vc > vp ? F.acima : vc < vp ? F.abaixo : F.igual },
+      L.ganhoC,
+      { claim: nacional.id, sufixo: `\u00a0${unidadeDaLinha(getClaim(nacional.id).unit, lang).texto}` },
+      L.ganhoD,
+    ],
+    citadas: [peca.claim, nacional.id],
+  };
 }
 
 /**
