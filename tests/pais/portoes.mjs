@@ -309,3 +309,8 @@ planta('l2b-portao-portugal-de-outra-linha','scripts/gate-html.mjs',[
 planta('l2b-portao-faixa-sem-a-porta-do-cartao','scripts/gate-html.mjs',[
  ['municipios/evora/index.html',r=>r.querySelector('[data-faixa-concelho="ganho"]').removeAttribute('data-selo-em')]
 ],[/o valor da afirmação "evora-ganho-medio-mensal-2024" aparece sem selo para a sua própria linha/,/o valor da afirmação "ganho-medio-mensal-2024" aparece sem selo para a sua própria linha/]);
+/* L2b-b (01.10.2026, pela §1.143, decisão 4): uma contagem não tem faixa, e o portão de HTML recusa um lugar
+   numa contagem, mesmo que o número seja o que a ordem daria. */
+planta('l2b-b-portao-lugar-numa-contagem','scripts/gate-html.mjs',[
+ ['municipios/evora/index.html',r=>r.querySelector('[data-cartao-medida][data-medida-chave="populacao"] .cartao-medida-valor').insertAdjacentHTML('afterend','<p class="planta-l2b-b">Évora está em <span data-concelho-lugar="populacao#evora">51</span>.º lugar.</p>')]
+],[/L2b-b: «data-concelho-lugar» dá um lugar na medida «populacao», que é uma contagem e não tem faixa/]);

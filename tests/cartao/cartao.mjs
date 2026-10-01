@@ -29,9 +29,11 @@
  *        vez, só num cartão de uma medida que a lista da K14 nomeia.
  *        **Desde o L2b (01.10.2026) há a faixa do concelho**
  *        (`cartao-medida-faixa-concelho`), uma vez, só num cartão de concelho
- *        (`data-medida-chave`) cuja medida está na tabela das ordens
- *        (`src/data/faixa-do-concelho.mjs`); num cartão nacional, ou num de uma
- *        medida fora da tabela, é um bloco a mais.
+ *        (`data-medida-chave`) cuja medida a tabela das ordens
+ *        (`src/data/faixa-do-concelho.mjs`) declara com faixa: desde a passagem
+ *        L2b-b, só as taxas e os rácios, porque uma contagem não se ordena
+ *        (§1.143, decisão 4). Num cartão nacional, ou no de uma contagem, é um
+ *        bloco a mais.
  *   K18 · **a faixa da União refeita dos pontos** · a mesma célula que a F19 do
  *        `check:formas` corre na construção (`tests/cartao/faixa.mjs`): a faixa em
  *        cada cartão nacional com série, o desenho com uma marca por país na
@@ -575,11 +577,15 @@ function corre(dist) {
           erros.push(`K1 · ${rota} · ${id}: o cartão tem a ressalva da comparação com a União e a medida não está na lista da K14`);
         }
         if (ressalvasNoCartao > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${ressalvasNoCartao} ressalvas da comparação com a União`);
-        /* L2b: a faixa do concelho só num cartão de concelho de uma medida da tabela, e uma vez. */
+        /* L2b: a faixa do concelho só num cartão de concelho de uma medida com faixa, e uma vez.
+           L2b-b: uma contagem não tem faixa (a tabela di-lo por medida, com a razão). */
         const faixasDoConcelho = classes.filter((c) => c === 'cartao-medida-faixa-concelho').length;
         const chaveDoConcelho = cartao.getAttribute('data-medida-chave');
-        if (faixasDoConcelho && !(chaveDoConcelho && Object.hasOwn(FAIXA_DAS_MEDIDAS_DO_CONCELHO, chaveDoConcelho))) {
+        const declaracaoDaFaixa = chaveDoConcelho ? FAIXA_DAS_MEDIDAS_DO_CONCELHO[chaveDoConcelho] : undefined;
+        if (faixasDoConcelho && !declaracaoDaFaixa) {
           erros.push(`K1 · ${rota} · ${id}: o cartão tem a faixa do concelho e não é um cartão de concelho de uma medida da tabela das ordens`);
+        } else if (faixasDoConcelho && !declaracaoDaFaixa.faixa) {
+          erros.push(`K1 · ${rota} · ${id}: o cartão tem a faixa do concelho e a medida «${chaveDoConcelho}» é uma contagem, que não tem faixa`);
         }
         if (faixasDoConcelho > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${faixasDoConcelho} faixas do concelho`);
         if (faixasDoConcelho) contas.cartoes_com_faixa_do_concelho++;
@@ -1161,6 +1167,13 @@ function montaAProva() {
       '<p class="cartao-medida-valor"><span data-claim="taxa-de-desemprego-2024">6,5</span>' + chip('taxa-de-desemprego-2024') + '</p>' +
       '<div class="cartao-medida-faixa-concelho" data-faixa-concelho="ganho"></div>' +
       '</article>' +
+      /* PLANTA 14 (K1, L2b-b): a faixa do concelho no cartão de uma contagem (a
+         população de Évora). Uma contagem não se ordena, e a K1 recusa-a. */
+      '<article class="cartao-medida" data-cartao-medida="evora-populacao-2025" data-medida-chave="populacao">' +
+      '<span class="cartao-medida-nome">População residente</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="evora-populacao-2025">58 567</span>' + chip('evora-populacao-2025') + '</p>' +
+      '<div class="cartao-medida-faixa-concelho" data-faixa-concelho="populacao"></div>' +
+      '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
       '</body></html>',
@@ -1234,6 +1247,7 @@ if (PROVA) {
     ['K14', 'o recibo mostra a União e sem a ressalva'],
     ['K1', 'a faixa da União e a linha não tem série'],
     ['K1', 'a faixa do concelho e não é um cartão de concelho'],
+    ['K1', 'a faixa do concelho e a medida «populacao» é uma contagem'],
   ];
   for (const [celula, pedaco] of esperado) {
     const vistos = dessaCelula(celula);

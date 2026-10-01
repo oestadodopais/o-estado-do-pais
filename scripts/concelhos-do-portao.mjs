@@ -156,14 +156,23 @@ export function contaDaMedidaDoPortao(linhas, porSlug, chave) {
   };
 }
 
-/** Tudo o que os portões precisam, lido uma vez: as linhas, os concelhos e a conta de cada medida. */
+/**
+ * Tudo o que os portões precisam, lido uma vez: as linhas, os concelhos e a conta de cada medida COM FAIXA.
+ *
+ * UMA CONTAGEM NÃO TEM CONTA (a passagem L2b-b, 01.10.2026, pela §1.143, decisão 4): a tabela declara sem faixa
+ * as quatro contagens, e para elas não há lugar, contagem nem empates a recontar. Uma marca de lugar numa
+ * contagem fecha a construção no portão de HTML, com a razão, e não passa por ter uma conta a que bater.
+ */
 export function faixasDoPortao(raiz = RAIZ) {
   const linhas = lerLinhasDoPortao(raiz);
   const concelhos = lerConcelhosDoPortao(raiz);
   const porMedida = linhasDasMedidasDoPortao(linhas, concelhos);
   const contas = new Map();
   for (const [chave, porSlug] of porMedida) {
-    if (porSlug.size) contas.set(chave, contaDaMedidaDoPortao(linhas, porSlug, chave));
+    if (porSlug.size && FAIXA_DAS_MEDIDAS_DO_CONCELHO[chave]?.faixa) contas.set(chave, contaDaMedidaDoPortao(linhas, porSlug, chave));
   }
   return { linhas, concelhos, porMedida, contas };
 }
+
+/** As medidas que a tabela declara sem faixa (as contagens), para o portão dizer porque recusa. */
+export const MEDIDAS_SEM_FAIXA = new Set(Object.entries(FAIXA_DAS_MEDIDAS_DO_CONCELHO).filter(([, d]) => !d.faixa).map(([k]) => k));
