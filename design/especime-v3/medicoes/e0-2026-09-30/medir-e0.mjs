@@ -6,8 +6,10 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { load } from 'js-yaml';
 import { conferirLinhasDaCasa, plantasDasLinhasDaCasa } from '../../../../tests/inicio/linhas-da-casa.mjs';
-import { decimalDoExcerto, anatomiaDoDiff, lerCodigoDaCorrida } from './detetores-e0b.mjs';
+import { decimalDoExcerto, anatomiaDoDiff, lerCodigoDaCorrida, recontarCorrecoes, conferirPrefixosDaHistoria } from './detetores-e0b.mjs';
 import { provarDetetores } from './provar-detetores-e0b.mjs';
+import { provarDetetoresE0c } from './provar-detetores-e0c.mjs';
+import { loadClaims } from '../../../../src/lib/ledger.mjs';
 const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
 const base = '07549ee1e9ec2b39186f9e9f13eeac4914bf5e76';
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8' }).trim();
@@ -19,6 +21,8 @@ const plantas = plantasDasLinhasDaCasa('dist');
 const medidas = [];
 const positivosRevistos = provarDetetores();
 fs.writeFileSync(`${pasta}/detetores-e0b.json`, JSON.stringify({ cabeca, medido_em: new Date().toISOString(), ...positivosRevistos }, null, 2) + '\n');
+const positivosE0c = provarDetetoresE0c();
+fs.writeFileSync(`${pasta}/detetores-e0c.json`, JSON.stringify({ cabeca, medido_em: new Date().toISOString(), ...positivosE0c }, null, 2) + '\n');
 const medida = (nome, valor, o_que, encontrado, evidencia) => {
   assert.ok(encontrado, `${nome}: o conhecido-positivo não foi encontrado.`);
   medidas.push({ nome, valor, comando: `node ${pasta}/medir-e0.mjs`, conhecido_positivo: { o_que, encontrado }, evidencia });
@@ -32,9 +36,11 @@ const decimais = linhas.filter(c => c.id.startsWith('taxa-')).map(c => ({ ...c,
   campo_lido: 'excerpt', decimal_da_fonte: decimalDoExcerto(load(fs.readFileSync(`ledger/claims/${c.id}.yml`, 'utf8')).excerpt) }));
 medida('desemprego_com_decimal', decimais, 'O detetor lê 6.0 no campo excerpt de cada linha e recusa a planta com 6.',
   positivosRevistos.conhecidos_positivos.desemprego_com_decimal, 'detetores-e0b.json e leitura dos dois YAML.');
-medida('correcoes_publicadas', { contado: celula.medidas.correcoes_contadas, linha: linhas.find(c => c.id === 'correcoes-publicadas') },
-  'A correção histórica do PIB do Alentejo entra na mesma recontagem.',
-  load(fs.readFileSync('ledger/claims/pib-pc-alentejo-2024.yml', 'utf8')).corrections.some(e => e.kind === 'correcao'), 'Recontagem direta de todos os YAML.');
+const contado = recontarCorrecoes(loadClaims());
+assert.equal(contado, celula.medidas.correcoes_contadas);
+medida('correcoes_publicadas', { contado, linha: linhas.find(c => c.id === 'correcoes-publicadas') },
+  'Retirar a correção do PIB do Alentejo numa cópia baixa uma unidade no mesmo detetor da recontagem.',
+  positivosE0c.conhecidos_positivos.correcoes_publicadas, 'detetores-e0c.json e contagensDoRegisto.');
 medida('tres_mudancas_com_lugar', celula.medidas.registos,
   'O lugar do contador é visto nas duas edições; a planta retira-o da inglesa.',
   celula.medidas.registos.filter(r => r.id === 'correcoes-publicadas' && r.lugar === 'O Estado do País').length === 2 && plantas.find(p => p.nome === 'lugar retirado do registo inglês').mordeu, 'HTML de /correcoes e /en/corrections.');
@@ -46,10 +52,11 @@ medida('plantas_que_mordem', { total: plantas.length, mordidas: plantas.filter(p
   plantas.find(p => p.nome === 'A: contador sem declaração, A3')?.codigo === 1 && plantas.find(p => p.nome === 'A: contador sem declaração, A3')?.mordeu, 'Processos isolados e cópias em memória; nenhum ficheiro real é plantado.');
 const historiaAntes = JSON.parse(git('show', `${base}:ledger/historias-valores.json`));
 const historia = json('ledger/historias-valores.json');
-const conservadas = Object.entries(historiaAntes).every(([id, e]) => JSON.stringify(historia[id]?.slice(0, e.length)) === JSON.stringify(e));
+const queixasDaHistoria = conferirPrefixosDaHistoria(historiaAntes, historia);
+const conservadas = queixasDaHistoria.length === 0;
 medida('historia_anterior_conservada', { linhas_anteriores: Object.keys(historiaAntes).length, conservadas, linhas_novas: Object.keys(historia).filter(id => !(id in historiaAntes)) },
-  'As quatro entradas anteriores de estudos-evora-publicados são lidas da base e do ficheiro atual.',
-  historiaAntes['estudos-evora-publicados'].length === 4 && historia['estudos-evora-publicados'].length === 4, 'Comparação do prefixo de cada lista selada com a base.');
+  'Alterar uma entrada selada de Évora numa cópia produz a queixa do mesmo detetor que confere os prefixos.',
+  positivosE0c.conhecidos_positivos.historia_anterior_conservada, 'detetores-e0c.json e comparação dos prefixos com a base.');
 const valoresMudados = git('diff', '--name-only', base, '--', 'ledger/claims').split('\n').filter(Boolean).map(p => {
   const antes = load(git('show', `${base}:${p}`));
   const depois = load(fs.readFileSync(p, 'utf8'));
