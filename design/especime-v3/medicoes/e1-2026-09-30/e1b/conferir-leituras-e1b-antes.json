@@ -1,0 +1,199 @@
+{
+ "cabeca_do_motor": "79ab4d5082e626dde450eb7953adad9682b9e524",
+ "positivos": [
+  {
+   "o_que": "a frase do 18 que a emenda tirou não está na cabeça e estava antes dela",
+   "mordeu": true
+  },
+  {
+   "o_que": "o «A ano e meio de 2027» do 19 não está na cabeça",
+   "mordeu": true
+  },
+  {
+   "o_que": "uma cópia com uma palavra trocada não está",
+   "mordeu": true
+  }
+ ],
+ "estudos": [
+  {
+   "slug": "evora-contas-da-camara-2010-2025",
+   "onde": "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md:7",
+   "linhas": [
+    7
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md",
+     "documento_alojado": "studies-src/evora-contas-da-camara-2010-2025/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "A dívida total fechou o ano em €54 379 035, dentro do limite legal e com €28 192 653 de margem. O aperto está nos fornecedores: 137 dias, em média, para pagar uma fatura, e €4 976 172 em pagamentos em atraso.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "évora",
+      "afastou",
+      "dinheiro",
+      "que",
+      "chega",
+      "aparece",
+      "nas",
+      "faturas",
+      "por",
+      "fila",
+      "pagamento",
+      "não",
+      "fornecedor",
+      "ainda",
+      "abaixo"
+     ]
+    },
+    "en": {
+     "edicao_no_motor": "content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.md",
+     "documento_alojado": "studies-src/evora-contas-da-camara-2010-2025/en.html",
+     "pedacos": [
+      {
+       "pedaco": "Total debt closed the year at €54 379 035, inside the legal limit and with €28 192 653 of headroom. The squeeze is on suppliers: 137 days, on average, to pay an invoice, and €4 976 172 in overdue payments.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "évora's",
+      "has",
+      "drifted",
+      "from",
+      "money",
+      "that",
+      "arrives",
+      "strain",
+      "shows",
+      "unpaid",
+      "invoices",
+      "payment",
+      "queue",
+      "not",
+      "supplier",
+      "still",
+      "below"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "evora-quem-governou-a-camara-2009-2025",
+   "onde": "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md:11, :13",
+   "linhas": [
+    11,
+    13
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md",
+     "documento_alojado": "studies-src/evora-quem-governou-a-camara-2009-2025/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "O executivo real é mais pequeno do que o eleito.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "Os pelouros não se deixam contar em dinheiro.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      }
+     ],
+     "bate": true,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "évora",
+      "nos",
+      "mandatos",
+      "publica",
+      "repartição",
+      "são",
+      "cortadas",
+      "maneira",
+      "permita",
+      "dizer",
+      "quanto",
+      "gastou",
+      "cada",
+      "pessoas",
+      "instalada",
+      "tem",
+      "lugares"
+     ]
+    },
+    "en": {
+     "edicao_no_motor": null,
+     "nota": "o estudo não tem esta edição no motor"
+    }
+   }
+  },
+  {
+   "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+   "onde": "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md:11, :13",
+   "linhas": [
+    11,
+    13
+   ],
+   "edicoes": {
+    "pt": {
+     "edicao_no_motor": "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md",
+     "documento_alojado": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html",
+     "pedacos": [
+      {
+       "pedaco": "O dinheiro de fora não passa pela câmara.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "As localizações de projeto vencidas levam 61,32% do valor aprovado para o concelho.",
+       "no_motor": false,
+       "no_documento_alojado": false
+      }
+     ],
+     "bate": false,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "contra",
+      "soma",
+      "aprovada",
+      "está",
+      "vencida",
+      "paga"
+     ]
+    },
+    "en": {
+     "edicao_no_motor": "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.md",
+     "documento_alojado": "studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/en.html",
+     "pedacos": [
+      {
+       "pedaco": "The outside money does not go through the council.",
+       "no_motor": true,
+       "no_documento_alojado": true
+      },
+      {
+       "pedaco": "The overdue project locations carry 61.32% of the value approved for the municipality.",
+       "no_motor": false,
+       "no_documento_alojado": false
+      }
+     ],
+     "bate": false,
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "against",
+      "sum"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "evora-2027-capital-europeia-da-cultura",
+   "erro": "sem leitura"
+  }
+ ],
+ "falhas": 3
+}
