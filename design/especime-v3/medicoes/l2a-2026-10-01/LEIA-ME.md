@@ -91,7 +91,7 @@ Em `design/especime-v3/capturas/l2a-2026-10-01/`, sobre a construção da cabeç
 
 ## O custo
 
-Símbolos: 653000 até à corrida final dos portões, a diferença entre o contador de símbolos restantes que a ferramenta mostra ao agente no início da sessão e na hora em que `medir-l2a.py` correu para este relatório (o valor está em `medidas.json`, com o comando). Segundos: os dos portões, acima. Modelo: Claude Opus 5.5 do princípio ao fim; nenhum subagente.
+Símbolos: 653000 até à corrida final dos portões, a diferença entre o contador de símbolos restantes que a ferramenta mostra ao agente no início da sessão e depois dessa corrida; as duas leituras estão em `custo-l2a.json` desde a passagem L2a-b, e a diferença em `medidas.json`, com o comando. Segundos: os dos portões, acima. Modelo: Claude Opus 5.5 do princípio ao fim; nenhum subagente.
 
 ## O que ficou por fazer
 
@@ -99,3 +99,19 @@ Símbolos: 653000 até à corrida final dos portões, a diferença entre o conta
 - **A menção da fonte do sinal** espera a palavra do lugar de direção (o ponto acima).
 - **A leitura a frio** pelo Codex, e a entrada `l2a` em `critica/REVISOES-DO-INVENTARIO.md`, que está «por ler».
 - **O mapa do repositório para construtores** não ganhou a secção do L2a: as citações que tocam neste bloco (a R4 e a R6 do `check:mapa`, o cartão `05-mapa.html` do feixe, a célula da pesquisa da primeira página) estão descritas aqui.
+
+## L2a-b · a passagem depois da leitura a frio, 01.10.2026
+
+*A leitura a frio do Codex gpt-6.1-sol está em `design/especime-v3/critica/LEITURA-l2a-2026-10-01.md`, com a triagem do lugar de direção no cabeçalho: os achados `1`, `2`, `3`, `10` e `11` são as plantas; o `7`, o `8` e o `9` são de outros blocos (o K2 e o L2b); esta passagem trata o `4`, o `5`, o `6`, o `13` e o `14`. Construtor: Claude Opus 5.5. Os registos da passagem estão em `l2a-b/`, e as medidas novas em `medidas.json`, com o prefixo `l2a_b_` ou junto das que corrigem.*
+
+- **`4` · a pesquisa sem guião.** Medido: com o JavaScript desligado, «mourao» e Enter levam à página dos lugares da mesma edição, com 200 e o que se escreveu no endereço, e com 0 resultados à vista; a página é estática e não procura. A célula `tests/inicio/lugares-no-navegador.mjs` regista-o sem o dar por procura, e mede à parte o caminho sem guião para um concelho, que são as gavetas: a porta do distrito de Mourão está escondida com a gaveta dos distritos e das ilhas fechada e à vista com ela aberta, abre a página do distrito, e a porta de Mourão da lista dos concelhos abre a página dele, com 200, nas duas edições. Uma diferença do que se pediu, medida: a gaveta das regiões não leva a um concelho, porque as 9 páginas das regiões têm 0 portas para concelhos (o mesmo detetor acha 28 na página do distrito de Évora). O caminho sem guião para um concelho é, portanto, a gaveta dos distritos e das ilhas; as áreas do mapa são as mesmas portas dos distritos. Planta nova: a porta do distrito de Mourão tirada da gaveta, e o caminho deixa de chegar a Mourão.
+- **`5` · a menção ao pé do mapa.** A R6 do `check:mapa` exige a legenda do mapa de «Lugares», com a menção, dentro do contentor do mapa ou logo a seguir à figura, e já não em qualquer ponto da página. A planta «R6 (a menção longe do mapa)» move a legenda inteira para o fim do `<main>` em vez de a apagar, e morde: 23 plantas em 23 (`l2a-b/check-mapa-vermelhos.txt`). A mesma planta corrida contra a R6 antiga não morde (`l2a-b/r6-antiga-com-a-planta-nova.txt`, 1 planta que não apanhou). Fica de fora a página de um distrito, onde a menção vive no bloco da proveniência, depois da lista dos concelhos: exigir-lhe a proximidade é mudar essa página, e fica para o lugar de direção.
+- **`6` · as duas gavetas ao teclado.** A prova sem guião abre e fecha as duas gavetas, nas duas edições: 29 nomes à vista com a dos distritos e das ilhas aberta, e 0 fechada. Planta nova: o `<summary>` dos distritos e das ilhas trocado por um bloco qualquer. A célula tem agora 6 plantas, todas a morder (`l2a-b/navegador.json`).
+- **`13` · o conhecido-positivo do contorno.** Só conta com as três contagens lidas; corrido com o módulo do contorno trocado por um que não existe, os cinco ficam por encontrar (`l2a-b/prova-do-conhecido-positivo-do-contorno.txt`).
+- **`14` · a igualdade do sinal.** Compara o atributo `d` inteiro, carácter a carácter, e o conhecido-positivo é a mesma comparação a recusar uma cópia com um algarismo trocado e o mesmo comprimento. Resultado: igual («sim» em `medidas.json`, com o sha256 do desenho ao lado).
+
+**Os commits da passagem:** `dd57abb1` (os achados `13` e `14`), `be4fe4e0` (o `5`), `7a0f963c` (o `4` e o `6`), o do relatório e da resposta curta, e o seguinte, com os códigos dos portões.
+
+**Os portões:** pela tranca, em `portoes/l2a-b/`, na cabeça do commit do relatório; os códigos entram no commit seguinte.
+
+**O custo:** 36677 símbolos nesta passagem até ao relatório, a diferença entre as duas leituras do contador de símbolos restantes guardadas em `custo-l2a-b.json` (a primeira à chegada da mensagem do lugar de direção, a segunda ao escrever esta secção); os segundos dos portões entram com os códigos. Modelo: Claude Opus 5.5, sem subagentes.
