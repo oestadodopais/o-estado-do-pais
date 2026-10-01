@@ -18,9 +18,12 @@
  *       os que `slugsDaCarta()` devolve;
  *   R3  cada página de distrito com tantas ligações de área quantos concelhos o
  *       seu ficheiro tem, e a lista com as mesmas;
- *   R4  a primeira página com 29 ligações de área, uma por unidade da Carta;
+ *   R4  a página dos lugares com 29 ligações de área, uma por unidade da Carta,
+ *       e nenhuma noutra página que não seja de unidade (desde o L2a, o mapa
+ *       inteiro vive em «Lugares» e só lá);
  *   R5  nenhum `<a>` debaixo de um `role="img"`;
- *   R6  a atribuição da DGT presente onde o mapa está;
+ *   R6  a atribuição da DGT presente onde o mapa está, e onde está o sinal da
+ *       porta dos lugares, que é um desenho da mesma Carta;
  *   R7  a ordem dos caminhos de cada `svg`, a das unidades do manifesto, e a
  *       das listas de `/municipios` e de cada página de distrito, na colação
  *       portuguesa (I84);
@@ -201,6 +204,11 @@ function leMundo() {
        isso é onde uma ordem errada se lê de uma vez. */
     const indice = lePagina(routePath('lugares', lang));
     if (indice) paginas.push({ ...indice, lang, tipo: 'lugares' });
+    /* O ÍNDICE DOS TEMAS ENTRA COM O L2a (01.10.2026): é a mesma lista de portas
+       da primeira página, e a porta «Lugares» leva lá o mesmo sinal, que é um
+       desenho da Carta e leva a mesma menção (R6). */
+    const temas = lePagina(routePath('temas', lang));
+    if (temas) paginas.push({ ...temas, lang, tipo: 'temas' });
   }
 
   /* O SEGUNDO NÍVEL SERVIDO (R8). Os bytes de cada `unidade-<slug>.json` dos
@@ -321,15 +329,34 @@ function r3(m) {
   return erros;
 }
 
-/** R4 · a primeira página com 29 ligações de área, uma por unidade. */
+/** R4 · a página dos lugares com 29 ligações de área, uma por unidade, e a primeira sem nenhuma. */
 function r4(m) {
   const erros = [];
-  /* AS ÁREAS DA PRIMEIRA PÁGINA SÃO AS 29 UNIDADES DA CARTA (Emenda 20; F1.1e,
+  /* AS ÁREAS DO MAPA INTEIRO SÃO AS 29 UNIDADES DA CARTA (Emenda 20; F1.1e,
      08.09.2026). Foram as nove regiões NUTS II durante um dia (F1.1d) e voltaram
      às 29 por decisão do diretor. A lista esperada vem de `mapa/pais.json`, que é
-     o artefacto, e não de uma lista da casa. */
+     o artefacto, e não de uma lista da casa.
+
+     A REGRA MUDOU DE PÁGINA COM O MAPA (bloco L2a, 01.10.2026; §1.149). O mapa
+     inteiro saiu da primeira página para «Lugares», logo a seguir à pesquisa, e
+     é lá que as 29 se contam agora. O que a regra protege não muda (cada unidade
+     uma área, e cada área a sua porta); o que ela ganha é a outra metade da
+     decisão: uma coisa, um lugar. A primeira página e a dos temas, que levam a
+     porta com o sinal, não podem levar uma área de unidade. */
   const esperado = m.pais.unidades.map((u) => u.slug).sort();
-  for (const pg of m.paginas.filter((p) => p.tipo === 'inicio')) {
+  for (const pg of m.paginas.filter((p) => p.tipo === 'inicio' || p.tipo === 'temas')) {
+    const areas = areasDaPagina(pg, 'data-uni-porta');
+    if (areas.length) {
+      erros.push(
+        `${pg.rota}: ${areas.length} ligações de área do mapa inteiro. Desde o L2a o mapa vive em ` +
+          `«Lugares» e só lá; esta página leva a porta com o sinal.`,
+      );
+    }
+  }
+  if (!m.paginas.some((p) => p.tipo === 'lugares')) {
+    erros.push('a página dos lugares não está construída, e é ela que leva o mapa inteiro.');
+  }
+  for (const pg of m.paginas.filter((p) => p.tipo === 'lugares')) {
     const areas = areasDaPagina(pg, 'data-uni-porta').sort();
     if (areas.length !== esperado.length) {
       erros.push(`${pg.rota}: ${areas.length} ligações de área para ${esperado.length} unidades.`);
@@ -381,7 +408,7 @@ function r6(m) {
   const { atribuicao, carta, licenca } = m.manifesto.fonte;
   const portaDaLinha = (lang) => routePath('linha', lang, { slug: LINHA_DA_CARTA });
 
-  for (const pg of m.paginas.filter((p) => p.tipo === 'inicio' || p.tipo === 'distrito')) {
+  for (const pg of m.paginas.filter((p) => p.tipo === 'lugares' || p.tipo === 'distrito')) {
     const figura = pg.root.querySelector('[data-mapa-areas]')
       ? pg.root.querySelector('[data-mapa-raiz]')
       : pg.root.querySelector('[data-instrumento="mapa-do-distrito"]');
@@ -396,7 +423,10 @@ function r6(m) {
        grelha da cabeça, para poder ficar por baixo dos nomes a partir de 1280.
        «Onde o mapa está» passa a ser a figura ou a legenda dela, na mesma página;
        na página de distrito continua a ser a figura. */
-    const legenda = pg.tipo === 'inicio' ? pg.root.querySelector('[data-mapa-legenda]') : null;
+    /* Desde o L2a a figura e a legenda vivem em «Lugares», irmãs dentro do
+       contentor do mapa, e é lá que a menção tem de estar: ao pé do mapa, e não
+       só algures na página (os dois mapas das medidas, mais abaixo, levam a sua). */
+    const legenda = pg.tipo === 'lugares' ? pg.root.querySelector('[data-mapa-legenda]') : null;
     const selos = [...figura.querySelectorAll('a.src-chip'), ...(legenda ? legenda.querySelectorAll('a.src-chip') : [])]
       .map((a) => (a.getAttribute('href') ?? '').split('#')[0]);
     if (!selos.includes(portaDaLinha(pg.lang))) {
@@ -405,8 +435,18 @@ function r6(m) {
       );
     }
 
-    /* (b) a menção escrita, com as três cadeias do manifesto. */
-    const blocos = pg.root.querySelectorAll('[data-fonte-da-carta]');
+    /* (b) a menção escrita, com as três cadeias do manifesto; na página dos
+       lugares, a da legenda do mapa. */
+    if (pg.tipo === 'lugares' && !legenda?.querySelector('[data-fonte-da-carta]')) {
+      erros.push(
+        `${pg.rota}: o mapa inteiro não tem a menção da fonte na sua legenda. A Emenda 20e põe-na ` +
+          `onde o mapa está, e não só algures na página.`,
+      );
+      continue;
+    }
+    const blocos = pg.tipo === 'lugares'
+      ? legenda.querySelectorAll('[data-fonte-da-carta]')
+      : pg.root.querySelectorAll('[data-fonte-da-carta]');
     if (blocos.length === 0) {
       erros.push(
         `${pg.rota}: a página desenha um mapa e não escreve a menção da fonte. ` +
@@ -425,6 +465,30 @@ function r6(m) {
         erros.push(
           `${pg.rota}: a menção da fonte não escreve ${nome}, «${cadeia}», ` +
             `tal como o manifesto do motor a traz. Está lá: «${texto}».`,
+        );
+      }
+    }
+  }
+
+  /* (b') O SINAL DA PORTA DOS LUGARES (bloco L2a, 01.10.2026). É um desenho da
+     mesma Carta, em pequeno, na primeira página e na dos temas, e leva a mesma
+     menção, escrita no item da porta e fora da ligação: a única obrigação da
+     licença não muda de tamanho com o desenho. Cada sinal conta; uma página que
+     o devia ter e não tem é a célula do sinal que o diz
+     (`tests/inicio/mapa-primeiro.mjs`). */
+  for (const pg of m.paginas.filter((p) => p.tipo === 'inicio' || p.tipo === 'temas')) {
+    for (const sinal of pg.root.querySelectorAll('[data-sinal-dos-lugares]')) {
+      let item = sinal.parentNode;
+      while (item && String(item.rawTagName ?? '').toLowerCase() !== 'li') item = item.parentNode;
+      const mencao = item?.querySelector('[data-fonte-da-carta]') ?? null;
+      const texto = mencao ? mencao.text.replace(/\s+/g, ' ').trim() : '';
+      const dentroDaLigacao = mencao
+        ? (() => { for (let n = mencao.parentNode; n && n !== item; n = n.parentNode) if (String(n.rawTagName ?? '').toLowerCase() === 'a') return true; return false; })()
+        : false;
+      if (!mencao || dentroDaLigacao || ![atribuicao, carta, licenca].every((c) => texto.includes(c))) {
+        erros.push(
+          `${pg.rota}: o sinal da porta dos lugares é um desenho da Carta e o seu item não escreve ` +
+            `a menção da fonte inteira, fora da ligação («${atribuicao}», «${carta}», «${licenca}»).`,
         );
       }
     }
@@ -658,10 +722,11 @@ function r8(m) {
     if (fora.length) erros.push(`fora dos ficheiros servidos: ${fora.slice(0, 6).join(', ')}.`);
   }
 
-  /* CADA ÁREA DA PRIMEIRA PÁGINA APONTA PARA O FICHEIRO DA SUA UNIDADE. É o que
+  /* CADA ÁREA DO MAPA INTEIRO APONTA PARA O FICHEIRO DA SUA UNIDADE. É o que
      liga o desenho ao que se serve: sem isto, um mapa correcto podia pedir a
-     geometria de outra unidade e a R8 continuava verde. */
-  for (const pg of m.paginas.filter((p) => p.tipo === 'inicio')) {
+     geometria de outra unidade e a R8 continuava verde. Desde o L2a o mapa
+     inteiro vive em «Lugares», e é lá que se lê. */
+  for (const pg of m.paginas.filter((p) => p.tipo === 'lugares')) {
     for (const a of pg.root.querySelectorAll('[data-uni-porta]')) {
       const slug = a.getAttribute('data-uni-porta');
       const esperado = `/dados/mapa/unidade-${slug}.json`;
@@ -695,7 +760,7 @@ const REGRAS = [
   { id: 'R1', nome: 'os resumos de mapa/ batem com o manifesto', fn: r1 },
   { id: 'R2', nome: 'a junção: 308 concelhos, uma vez cada, com os slugs da Carta', fn: r2 },
   { id: 'R3', nome: 'cada página de distrito com tantas ligações quantos concelhos', fn: r3 },
-  { id: 'R4', nome: 'a primeira página com 29 ligações de área', fn: r4 },
+  { id: 'R4', nome: 'a página dos lugares com 29 ligações de área, e mais nenhuma página com elas', fn: r4 },
   { id: 'R5', nome: 'nenhuma ligação debaixo de role="img"', fn: r5 },
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
   { id: 'R7', nome: 'a colação portuguesa nos artefactos e nas listas construídas', fn: r7 },
@@ -763,33 +828,54 @@ const ESTRAGOS = {
     return `um nome a menos na lista de ${pg.slug}`;
   },
   R4: (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
     pg.root.querySelector('[data-uni-porta]').removeAttribute('data-uni-porta');
-    return 'uma unidade a menos nas áreas da primeira página';
+    return 'uma unidade a menos nas áreas do mapa da página dos lugares';
+  },
+  /* L2a: o mapa inteiro de volta à primeira página, copiado da página dos
+     lugares, é uma segunda cópia da mesma coisa, e a R4 recusa-a. */
+  'R4 (o mapa de volta à primeira página)': (m) => {
+    const de = m.paginas.find((p) => p.tipo === 'lugares');
+    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    pg.root.querySelector('main').insertAdjacentHTML('beforeend', de.root.querySelector('[data-mapa-raiz]').outerHTML);
+    return 'o mapa inteiro copiado da página dos lugares para o fim da primeira página';
   },
   R5: (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
     pg.root.querySelector('[data-mapa-areas]').setAttribute('role', 'img');
-    return 'o mapa da primeira página declarado role="img" por cima das 29 ligações';
+    return 'o mapa da página dos lugares declarado role="img" por cima das 29 ligações';
   },
   R6: (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
     for (const raiz of ['[data-mapa-raiz]', '[data-mapa-legenda]']) {
       const bloco = pg.root.querySelector(raiz);
       if (bloco) for (const a of bloco.querySelectorAll('a.src-chip')) a.remove();
     }
-    return 'o selo da Carta retirado da figura e da legenda do mapa da primeira página';
+    return 'o selo da Carta retirado da figura e da legenda do mapa da página dos lugares';
   },
   /* A MENÇÃO ESCRITA NA PRIMEIRA PÁGINA (Emenda 20e). É a metade nova da regra e
      é a que a licença obriga: o nome da entidade proprietária, ao pé do mapa
      mais visto do sítio. Retira-se do bloco da fonte e mais nada, para que o que
      apanhe o estrago seja a conferência da menção e não a do selo. */
   'R6 (a menção)': (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
     const nome = m.manifesto.fonte.atribuicao;
-    const bloco = pg.root.querySelector('[data-fonte-da-carta]');
+    const bloco = pg.root.querySelector('[data-mapa-legenda] [data-fonte-da-carta]');
     bloco.set_content(bloco.innerHTML.split(nome).join(''));
-    return 'o nome da entidade proprietária retirado da menção da primeira página';
+    return 'o nome da entidade proprietária retirado da menção ao pé do mapa da página dos lugares';
+  },
+  /* L2a: a menção da legenda do mapa retirada, com as dos dois mapas das medidas
+     ainda na página. A menção é ao pé do mapa, e não algures na página. */
+  'R6 (a menção longe do mapa)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
+    pg.root.querySelector('[data-mapa-legenda] [data-fonte-da-carta]').remove();
+    return 'a menção retirada da legenda do mapa da página dos lugares, com as dos mapas das medidas no sítio';
+  },
+  /* L2a: o sinal da porta dos lugares sem a menção, na página dos temas. */
+  'R6 (o sinal sem a menção)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'temas');
+    pg.root.querySelector('[data-sinal-dos-lugares]').parentNode.parentNode.querySelector('[data-fonte-da-carta]').remove();
+    return 'a menção retirada do item da porta dos lugares na página dos temas';
   },
   /* A R6 TEM TRÊS METADES E POR ISSO TEM TRÊS ESTRAGOS: o selo que abre a linha,
      a menção escrita ao pé do mapa, e a linha que nomeia a entidade
@@ -872,7 +958,7 @@ const ESTRAGOS = {
     return 'public/dados/mapa/unidade-condado-portucalense.json servido a mais';
   },
   'R8 (a área a pedir outro ficheiro)': (m) => {
-    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const pg = m.paginas.find((p) => p.tipo === 'lugares');
     const a = pg.root.querySelector('[data-uni-porta]');
     const slug = a.getAttribute('data-uni-porta');
     a.setAttribute('data-ficheiro', '/dados/mapa/unidade-evora.json');

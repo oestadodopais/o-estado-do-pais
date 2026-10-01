@@ -100,13 +100,15 @@
  * recibo, que é o que a marca abre.
  */
 import Claim from '../Claim.astro';
-import { prova } from '../../lib/prova.mjs';
 import Provenance from '../Provenance.astro';
-const { s, lang = 'pt', niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null, portaLugares = null } = Astro.props;
+/* `portaLugares` SAIU COM O MAPA DA PRIMEIRA PÁGINA (bloco L2a, 01.10.2026).
+   Na primeira página a contagem do país era a porta de «Lugares»; o mapa vive
+   agora só em «Lugares», e o nível do país diz sempre o território, a contagem
+   e a marca da fonte, como na página de um distrito. */
+const { s, lang = 'pt', niveis = ['pais', 'unidade'], voltar = null, pais = null, unidade = null } = Astro.props;
 
 /** A legenda de repouso de um nível, ou `null` quando ela não vem feita. */
 const REPOUSO = { pais, unidade };
-const contagem = prova(lang).municipios_total;
 ---
 
 <div class="mapa-nome" role="group" aria-label={s.inicio.mapa.lugarLabel} data-mapa-nome>
@@ -114,7 +116,7 @@ const contagem = prova(lang).municipios_total;
     {
       niveis.map((nivel, i) => (
         <p class="mapa-nome-repouso" data-mapa-repouso={nivel} hidden={i > 0}>
-          {nivel === 'pais' && portaLugares ? (<><a class="pais-porta-lugares" href={portaLugares}><span data-prova="municipios_total">{contagem.valor}</span>{' '}{REPOUSO[nivel].palavra}</a><Provenance id={REPOUSO[nivel].linha} lang={lang} /></>) : REPOUSO[nivel] && (
+          {REPOUSO[nivel] && (
             <>
               <span data-lugar>{REPOUSO[nivel].nome}</span>
               {REPOUSO[nivel].linha && (

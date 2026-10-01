@@ -137,7 +137,6 @@ const {
   p,
   concelhos,
   postura = 'inteiro',
-  portaLugares = false,
   escolhido = null,
   nivel = postura === 'inteiro' ? 'pais' : 'pontos',
   unidade = null,
@@ -312,7 +311,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       folha lê-o para esconder as molduras, para trocar as duas frases vazias e
       para acender a porta de voltar. */}
   data-nivel={nivel === 'pontos' ? undefined : nivel}
-  aria-describedby={postura === 'inteiro' && !portaLugares ? 'mapa-legenda' : undefined}
+  aria-describedby={postura === 'inteiro' ? 'mapa-legenda' : undefined}
 >
   {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
       Era o comando que devolvia o mapa à coluna, no canto superior direito do
@@ -781,11 +780,18 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       s={s}
       lang={lang}
       niveis={['pais', 'unidade']}
-      voltar={routePath('home', lang)}
+      voltar={routePath('lugares', lang)}
       pais={repousoDoPais(s)}
-      portaLugares={portaLugares ? routePath('lugares', lang) : null}
     />
   )}
+  {/* A PORTA DOS LUGARES E A PRIMEIRA PÁGINA COMO DESTINO DE VOLTAR SAÍRAM COM O
+      MAPA DA PRIMEIRA PÁGINA (bloco L2a, 01.10.2026; §1.149). A contagem do
+      lugar do nome era ali a porta de «Lugares», e o mapa vive agora em
+      «Lugares»: uma porta para a página em que se está não leva a lado nenhum.
+      O destino de voltar ao país, que o guião segura e só o leitor sem guião
+      seguiria se o visse, passa a ser esta página, que é onde o mapa está. A
+      `aria-describedby` aponta sempre para a menção da fonte, que vem com o
+      mapa. */}
   {/* NO NÍVEL DA UNIDADE HÁ UM NÍVEL SÓ, e por isso não há porta de voltar: o
       desenho não cresceu de lado nenhum. É a mesma forma que a página de um
       distrito já rende desde o F1.1d. */}

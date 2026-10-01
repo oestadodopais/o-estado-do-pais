@@ -24,6 +24,18 @@
  * SEM FRASE DE ABERTURA E SEM OS NÍVEIS EXPLICADOS. O que a página é lê-se do
  * que ela tem: um mapa, uma caixa de busca e duas listas de nomes.
  *
+ * O MAPA VEM LOGO A SEGUIR À PESQUISA, E AS LISTAS DOBRAM-SE (bloco L2a,
+ * 01.10.2026; `DECISIONS.md` §1.149). O diretor leu no telemóvel, em vez do
+ * mapa, os nomes todos em texto: a 390 px as nove regiões e os 29 distritos e
+ * ilhas ocupavam 942 px antes do mapa. A ordem do documento é a ordem do
+ * telemóvel, e passa a ser a pesquisa, o mapa e só depois as listas; cada lista
+ * é uma gaveta fechada (`Gaveta.astro`, um `<details>` que abre sem guião), com
+ * o nome da secção e a contagem no `<summary>`, e lá dentro os mesmos nomes com
+ * as mesmas portas. A partir de 1 024 px a grelha do achado D7 continua: o mapa
+ * à direita, a pesquisa e as gavetas à esquerda (a folha põe cada peça na sua
+ * área). O mapa veio da primeira página com a sua menção da fonte
+ * (`LegendaDoMapa.astro`), que a licença da Carta manda escrever onde ele está.
+ *
  * O QUE `/municipios` TINHA E ESTA PÁGINA NÃO TEM está escrito no relatório do
  * bloco, com o que ficou sem porta. Não se inventa aqui um lugar para isso.
  */
@@ -32,6 +44,10 @@ import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import ComparacoesDosConcelhos from '../components/ComparacoesDosConcelhos.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
+import LegendaDoMapa from '../components/inicio/LegendaDoMapa.astro';
+import Gaveta from '../components/inicio/Gaveta.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import { prova } from '../lib/prova.mjs';
 import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
 import { regioesDaCarta, distritosDaCarta } from '../data/carta-dos-lugares.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -59,6 +75,12 @@ const destinoDoConcelho = (c) =>
 
 const regioes = regioesDaCarta();
 const distritos = distritosDaCarta();
+/* AS CONTAGENS DAS DUAS GAVETAS NÃO SE ESCREVEM: são as chaves da prova que
+   contam o que cada lista tem (`regioes_total` e `mapa_unidades`), que o portão
+   de HTML reconta por conta própria e cuja porta é a própria lista, nesta
+   página. A célula do mapa primeiro (`tests/inicio/mapa-primeiro.mjs`) exige
+   ainda que cada uma seja o número de nomes da sua lista. */
+const p = prova(lang);
 ---
 
 <Base lang={lang} path={path} title={`${r.lugares} · ${s.municipio.metaCauda}`} description={entrada.linha[lang]}>
@@ -68,9 +90,11 @@ const distritos = distritosDaCarta();
   {/* DUAS COLUNAS A PARTIR DE 1 024 px (achado D7, 21.09.2026). A uma coluna, o
       primeiro ecrã de um portátil era a busca e o topo de um mapa com meio ecrã
       vazio ao lado, e as duas listas ficavam 1 300 px abaixo. À esquerda a busca
-      e as listas, à direita o mapa; a 390 e a 768 a ordem vertical mantém-se. */}
+      e as listas, à direita o mapa. Desde o L2a (01.10.2026) as quatro peças são
+      filhas diretas da grelha, pela ordem do telemóvel (a pesquisa, o mapa, as
+      regiões, os distritos e as ilhas), e é a folha que põe o mapa na coluna da
+      direita a partir de 1 024 px. */}
   <div class="lugares-grelha">
-  <div class="lugares-coluna">
   {/* A BUSCA É A DA PRIMEIRA PÁGINA, e é a mesma peça: um `<form>` com destino.
       Os resultados estão no documento, fechados, e são acesos por
       `public/js/municipios.js`, que troca `hidden` e mais nada. */}
@@ -79,46 +103,58 @@ const distritos = distritosDaCarta();
     <Pesquisa s={s} concelhos={cs} destino={destinoDoConcelho} forma={path} resultadosOcultos={true} />
   </section>
 
-  <section class="lugar-sec" aria-labelledby="regioes-k">
-    <div class="sec-head">
-      <h2 class="eyebrow" id="regioes-k" data-lugares-seccao>{entrada.seccoes[1].nome[lang]}</h2>
-    </div>
-    <ul class="lugares-lista" data-lista-lugares="regioes">
-      {
-        regioes.map((x) => (
-          <li>
-            <a href={routePath('regiao', lang, { slug: x.slug })} data-lugar>
-              {x.nome[lang] ?? x.nome.pt}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
-  <section class="lugar-sec" aria-labelledby="distritos-k">
-    <div class="sec-head">
-      <h2 class="eyebrow" id="distritos-k" data-lugares-seccao>{entrada.seccoes[2].nome[lang]}</h2>
-    </div>
-    <ul class="lugares-lista" data-lista-lugares="distritos">
-      {
-        distritos.map((x) => (
-          <li>
-            <a href={routePath('distrito', lang, { slug: x.slug })} data-lugar>
-              {x.nome}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-  </div>
-
-  {/* O MAPA É O DA PRIMEIRA PÁGINA, na postura inteira: as 29 unidades da Carta
-      como áreas, cada uma porta da sua página. */}
-  <div class="lugares-mapa">
+  {/* O MAPA É O QUE ESTAVA NA PRIMEIRA PÁGINA, na postura inteira: as 29
+      unidades da Carta como áreas, cada uma porta da sua página, e a menção da
+      fonte por baixo dele. */}
+  <div class="lugares-mapa" data-lugares-mapa>
     <MapaRespira s={s} lang={lang} concelhos={cs} />
+    <LegendaDoMapa />
   </div>
+
+  {/* AS DUAS LISTAS, DOBRADAS. O `<h2>` vive dentro do `<summary>`, que o aceita
+      (o conteúdo de um `<summary>` é texto corrido com títulos), e por isso o
+      nome da secção continua a ser um título e a porta da contagem continua a
+      ter a sua âncora (`#regioes-k`, `#distritos-k`). A contagem fica fora do
+      título, para que o título seja o nome da secção e mais nada. */}
+  <section class="lugares-dobra" data-dobra-lugares="regioes" aria-labelledby="regioes-k">
+    <Gaveta chave="regioes">
+      <Fragment slot="nome">
+        <h2 class="eyebrow gaveta-nome" id="regioes-k" data-lugares-seccao>{entrada.seccoes[1].nome[lang]}</h2>
+        <span class="lugares-dobra-conta" data-conta-da-lista="regioes">, <ValorDaProva chave="regioes_total" item={p.regioes_total} lang={lang} semPorta={true} /></span>
+      </Fragment>
+      <ul class="lugares-lista" data-lista-lugares="regioes">
+        {
+          regioes.map((x) => (
+            <li>
+              <a href={routePath('regiao', lang, { slug: x.slug })} data-lugar>
+                {x.nome[lang] ?? x.nome.pt}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Gaveta>
+  </section>
+
+  <section class="lugares-dobra" data-dobra-lugares="distritos" aria-labelledby="distritos-k">
+    <Gaveta chave="distritos">
+      <Fragment slot="nome">
+        <h2 class="eyebrow gaveta-nome" id="distritos-k" data-lugares-seccao>{entrada.seccoes[2].nome[lang]}</h2>
+        <span class="lugares-dobra-conta" data-conta-da-lista="distritos">, <ValorDaProva chave="mapa_unidades" item={p.mapa_unidades} lang={lang} semPorta={true} /></span>
+      </Fragment>
+      <ul class="lugares-lista" data-lista-lugares="distritos">
+        {
+          distritos.map((x) => (
+            <li>
+              <a href={routePath('distrito', lang, { slug: x.slug })} data-lugar>
+                {x.nome}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Gaveta>
+  </section>
   </div>
 
   {/* A PORTA DO FICHEIRO DOS 308 (B1, peça 2). Segue a lista que o ficheiro

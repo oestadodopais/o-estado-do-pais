@@ -254,9 +254,11 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
     {/* DUAS PORTAS PARA A MESMA PÁGINA SÃO UMA (B1, peça 2, correção de
         21.09.2026). «Voltar ao índice» e «Voltar aos concelhos» abriam dois
         índices, e os dois passaram a ser a página dos lugares: fica a porta com o
-        nome do que ela abre. */}
+        nome do que ela abre. A PORTA «O MAPA DOS CONCELHOS» SAIU PELA MESMA
+        RAZÃO (bloco L2a, 01.10.2026; §1.149): abria o mapa da primeira página, e
+        o mapa passou para a página dos lugares, logo a seguir à pesquisa, que é
+        o que a porta de cima já abre. */}
     <a href={routePath('lugares', lang)}>{r.lugares}</a>
-    <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
   </p>
 
   {/* O MESMO GUIÃO DA PRIMEIRA PÁGINA (F1.1d, item 7): aqui ele encontra um

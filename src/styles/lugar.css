@@ -254,14 +254,47 @@
 }
 .lugar-mudou-par s { color: var(--g1, var(--muted)); }
 
-/* --------------------------- a página dos lugares, em duas colunas */
+/* ------------------- o mapa logo a seguir à pesquisa, e as listas dobradas
+   (bloco L2a, 01.10.2026; §1.149). Numa coluna, a ordem do documento é a do
+   ecrã: a pesquisa, o mapa com a menção da fonte, e as duas gavetas, uma por
+   baixo da outra, cada uma uma linha que se abre. O nome da secção e a contagem
+   ficam na letra do antetítulo, a tinta, porque são a linha em que se toca. */
+.lugares-mapa { margin-top: clamp(18px, 2.4vw, 26px); }
+.lugares-dobra { margin-top: clamp(18px, 2.4vw, 26px); }
+.lugares-dobra + .lugares-dobra { margin-top: 0; }
+[data-dobra-lugares='distritos'] .gaveta { border-bottom: 1px solid var(--rule); }
+.lugares-dobra .gaveta-abrir { gap: 0; }
+.lugares-dobra .gaveta-seta { margin-right: 10px; }
+.lugares-dobra .gaveta-abrir .eyebrow { color: var(--ink); }
+.lugares-dobra-conta {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+.lugares-dobra .lugares-lista { border-top: 0; padding-top: 0; }
+
+/* --------------------------- a página dos lugares, em duas colunas
+   (achado D7, 21.09.2026). Desde o L2a as quatro peças são filhas diretas da
+   grelha, e cada uma tem a sua área: o mapa ocupa a coluna da direita nas
+   quatro filas, e a quarta fila fica com o que sobra da altura dele, para que a
+   pesquisa e as duas gavetas fiquem juntas no topo da coluna da esquerda. */
 @media (width >= 1024px) {
   .lugares-grelha {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
-    gap: clamp(24px, 3.4vw, 52px);
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      'pesquisa mapa'
+      'regioes mapa'
+      'distritos mapa'
+      '. mapa';
+    column-gap: clamp(24px, 3.4vw, 52px);
     align-items: start;
   }
-  .lugares-grelha .lugares-coluna > .lugar-sec:first-of-type { margin-top: clamp(24px, 3vw, 34px); }
-  .lugares-mapa { position: sticky; top: 16px; }
+  .lugares-grelha > .pesquisa-bloco { grid-area: pesquisa; }
+  .lugares-grelha > .lugares-mapa { grid-area: mapa; margin-top: 0; position: sticky; top: 16px; }
+  .lugares-grelha > [data-dobra-lugares='regioes'] { grid-area: regioes; margin-top: clamp(24px, 3vw, 34px); }
+  .lugares-grelha > [data-dobra-lugares='distritos'] { grid-area: distritos; }
 }

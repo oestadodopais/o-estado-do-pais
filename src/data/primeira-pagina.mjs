@@ -455,7 +455,10 @@ export const ENTRADAS = [
       { nome: { pt: 'Os distritos e as ilhas', en: 'Districts and islands' }, cartoes: [] },
       { nome: { pt: 'As medidas dos concelhos', en: 'Municipal figures' }, cartoes: [] }
     ],
-    existente: true
+    existente: true,
+    /* L2a (01.10.2026, §1.149): o mapa inteiro saiu da primeira página e é de «Lugares»; a porta
+       leva um sinal, o contorno do país, sem dados (`SinalDosLugares.astro`). */
+    sinal: 'contorno-do-pais'
   }
 ];
 
