@@ -1,0 +1,37 @@
+{
+ "cabeca_do_motor": "d2495a7d0d023dccb6eb4014b917bf06554438f6",
+ "escrito": true,
+ "fetched_utc": "2026-10-01T08:15:37Z",
+ "edicoes": [
+  {
+   "slug": "evora-quem-governou-a-camara-2009-2025",
+   "lingua": "pt",
+   "origem": "content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html",
+   "commit": "1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087",
+   "bytes": 93962,
+   "sha256_antes": "dfbdcf0472b2099f386869f6ce31e599b317b22fdde319879ff08632427edc87",
+   "sha256_depois": "f65b11cc5c0501d31c1ada5a884cc6e001ba1e2d521558dc88893e67b8ba0d1b",
+   "mudou": true
+  },
+  {
+   "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+   "lingua": "pt",
+   "origem": "content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html",
+   "commit": "1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087",
+   "bytes": 65598,
+   "sha256_antes": "02b1adf543821c61d1bf74e451750777e7987b7d23802e4cc25180e68b421d74",
+   "sha256_depois": "0d905c1f545e05f85a9d0128666781d05fec684d653c1ca3d0d584a71457384d",
+   "mudou": true
+  },
+  {
+   "slug": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+   "lingua": "en",
+   "origem": "content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html",
+   "commit": "1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087",
+   "bytes": 61785,
+   "sha256_antes": "ecb7a7e02502364deda05809632fea3953eb080b965620f99764e4226cbc4ec4",
+   "sha256_depois": "29d030c203705f9559cb2aa6af9399086f5c379f23d6189fe2bfe6facac0dd5d",
+   "mudou": true
+  }
+ ]
+}

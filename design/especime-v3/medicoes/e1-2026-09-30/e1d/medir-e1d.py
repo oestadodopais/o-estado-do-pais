@@ -8,6 +8,10 @@ fichas dos mandatos com valores de fim de ano, e a frase da região no corpo do 
 travessia, o motor, os portões, as capturas e o custo. Cada medida traz o nome, o valor, o comando e um
 conhecido-positivo. As outras chaves do medidas.json ficam como estavam, e nenhum caminho da máquina vai
 para o ficheiro.
+
+O GUIÃO SAI COM 1 QUANDO UMA MEDIDA REAL FALHA (passagem E1e, a releitura do Sol, achado 10), e não só
+quando um conhecido-positivo não morde (`falhas_reais()`). Para a prova, `OEDP_DIST` aponta para outra
+construção e `OEDP_MEDIDAS_JSON` para outro ficheiro de saída.
 """
 import hashlib
 import json
@@ -24,7 +28,8 @@ SITIO = PASTA.parents[3]
 if not os.environ.get("OEDP_MOTOR"):
     sys.exit("Falta OEDP_MOTOR: a árvore do motor na cabeça do ramo.")
 MOTOR = Path(os.environ["OEDP_MOTOR"]).resolve()
-DIST = SITIO / "dist"
+DIST = Path(os.environ["OEDP_DIST"]).resolve() if os.environ.get("OEDP_DIST") else SITIO / "dist"
+ALVO = Path(os.environ["OEDP_MEDIDAS_JSON"]) if os.environ.get("OEDP_MEDIDAS_JSON") else PASTA / "medidas.json"
 CABECA_E1C_SITIO = "e986468d"
 CABECA_E1C_MOTOR = "932eaee"
 MEDIDAS = []
@@ -207,23 +212,44 @@ def medir_custo():
            {"descricao": "o primeiro commit da passagem no motor é o da emenda do corpo do 18, 4f3165a", "mordeu": primeiro.split()[1] == "4f3165a"})
 
 
+def falhas_reais(medidas):
+    """O que é uma falha em cada medida real; as cabeças e o custo só contam."""
+    v = {m["nome"]: m["valor"] for m in medidas}
+    def fichas(x):
+        antigas = [y for e in x["edicoes"].values() for k, y in e.items() if "31.10.2013" in k]
+        return x["campos_certos"] != x["campos"] or not all(y["sem_a_frase"] and y["a_linha_de_31_10_2013"] for y in antigas)
+    regras = {
+        "fichas_e1d": fichas,
+        "regiao_e1d": lambda x: not x["certo"],
+        "travessia_e1d": lambda x: (x["check_documentos"] != 0 or x["check_documentos_com_origem"] != 0 or x["mudaram"] != x["documentos_realojados"]
+                                    or x["conferencia_das_leituras"]["codigo"] != 0 or x["conferencia_das_leituras"]["falhas"] != 0),
+        "motor_e1d": lambda x: x["portao"]["codigo"] != 0 or not x["portao"]["linha_final_pass"] or x["commits"]["commit_1"] != 0 or x["commits"]["commit_2"] != 0,
+        "portoes_e1d": lambda x: x["construcao_da_cabeca_de_codigo"]["build"] != 0,
+        "capturas_e1d": lambda x: bool(x["problemas"]) or x["sha256_conferidos"] != x["capturas"],
+    }
+    return sorted(n for n, regra in regras.items() if n in v and regra(v[n]))
+
+
 def main():
     os.chdir(SITIO)
     print("E1d · medidas")
     for f in (medir_cabecas, medir_fichas, medir_regiao, medir_travessia, medir_motor, medir_portoes, medir_capturas, medir_custo):
         f()
     falhou = [x["nome"] for x in MEDIDAS if not x["conhecido_positivo"].get("mordeu")]
-    alvo = PASTA / "medidas.json"
-    tudo = json.loads(ler(alvo))
+    reais = falhas_reais(MEDIDAS)
+    alvo = ALVO
+    tudo = json.loads(ler(alvo)) if alvo.exists() else {}
     tudo["e1d"] = {"bloco": "E1d", "guiao": "design/especime-v3/medicoes/e1-2026-09-30/e1d/medir-e1d.py",
-                   "medido_em": datetime.now(timezone.utc).isoformat(timespec="seconds"), "conhecidos_positivos_que_nao_morderam": falhou, "medidas": MEDIDAS}
+                   "medido_em": datetime.now(timezone.utc).isoformat(timespec="seconds"), "conhecidos_positivos_que_nao_morderam": falhou,
+                   "medidas_reais_que_falharam": reais, "medidas": MEDIDAS}
     texto = json.dumps(tudo, ensure_ascii=False, indent=1) + "\n"
     for proibido in (str(Path.home()), str(MOTOR), str(SITIO)):
         if proibido and proibido in texto:
             raise SystemExit("Um caminho da máquina ia para o medidas.json; nada escrito.")
     alvo.write_text(texto, encoding="utf-8")
-    print(f"E1d · {len(MEDIDAS)} medidas; conhecidos-positivos que não morderam: {falhou or 'nenhum'}")
-    return 1 if falhou else 0
+    print(f"E1d · {len(MEDIDAS)} medidas; conhecidos-positivos que não morderam: {falhou or 'nenhum'}; "
+          f"medidas reais que falharam: {reais or 'nenhuma'}")
+    return 1 if falhou or reais else 0
 
 
 if __name__ == "__main__":
