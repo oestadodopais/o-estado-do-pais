@@ -1,0 +1,7 @@
+{
+  "o_que": "as duas leituras do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escritas à mão pelo construtor, para o bloco L2a",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "no início da sessão do construtor",
+  "simbolos_restantes_no_fim": 14347000,
+  "lido_no_fim": "depois da corrida final dos portões do L2a, na cabeça a66ab832 (o valor com que medidas.json foi escrito para o commit 219dbefb)"
+}

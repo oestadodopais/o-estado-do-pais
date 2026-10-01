@@ -193,10 +193,45 @@ for pasta in ["portoes-intermedio", "portoes"]:
     for g, v in c.items():
         medicao(f"codigo_{g}_{pasta.replace('-', '_')}", int(v) if v.isdigit() else NAO, f"design/especime-v3/medicoes/l2a-2026-10-01/{pasta}/{g}.codigo",
                 "a pasta tem a cabeça em que correu", bool(cab))
-inicio_s, resta_s = os.environ.get("OEDP_SIMBOLOS_INICIO"), os.environ.get("OEDP_SIMBOLOS_RESTANTES")
-usados = int(inicio_s) - int(resta_s) if (inicio_s or "").isdigit() and (resta_s or "").isdigit() else NAO
-medicao("simbolos_da_sessao_do_construtor", usados, "OEDP_SIMBOLOS_INICIO menos OEDP_SIMBOLOS_RESTANTES: o contador de símbolos restantes que a ferramenta mostra ao agente, lido no início e na hora desta corrida",
-        "os dois valores foram passados", usados != NAO)
+# L2a-b: as leituras do L2a passam para um ficheiro (custo-l2a.json), como as da passagem, e deixam de vir de
+# variáveis de ambiente que mudavam o valor a cada corrida (o achado 12 da leitura a frio).
+cl = json.loads(ler(PASTA / "custo-l2a.json") or "{}")
+i0, f0 = cl.get("simbolos_restantes_no_inicio"), cl.get("simbolos_restantes_no_fim")
+medicao("simbolos_da_sessao_do_construtor", i0 - f0 if isinstance(i0, int) and isinstance(f0, int) else NAO,
+        "design/especime-v3/medicoes/l2a-2026-10-01/custo-l2a.json: simbolos_restantes_no_inicio menos simbolos_restantes_no_fim",
+        "as duas leituras estão no ficheiro e a do fim é menor", isinstance(i0, int) and isinstance(f0, int) and f0 < i0)
+
+# L2a-b: os registos da passagem, na subpasta l2a-b, e os códigos dos portões em portoes/l2a-b.
+nb = json.loads(ler(PASTA / "l2a-b/navegador.json") or "{}")
+pb = nb.get("plantas", [])
+medicao("l2a_b_plantas_no_navegador_mordidas", sum(1 for x in pb if x.get("mordeu")) if pb else NAO,
+        "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/navegador.json, campo plantas", "o registo tem plantas", bool(pb))
+medicao("l2a_b_plantas_no_navegador_total", len(pb) if pb else NAO, "o mesmo registo", "o registo tem plantas", bool(pb))
+gav = [g for r in nb.get("gavetas", []) for g in r.get("gavetas", []) if g.get("chave") == "distritos"]
+medicao("l2a_b_nomes_a_vista_com_a_gaveta_dos_distritos_aberta", gav[0].get("aberta", NAO) if gav else NAO,
+        "o mesmo registo, as gavetas: a dos distritos e das ilhas aberta ao teclado, sem guião, na edição portuguesa",
+        "a mesma medida dá 0 com a gaveta fechada", bool(gav) and gav[0].get("antes") == 0)
+sg = nb.get("sem_guiao", [])
+medicao("l2a_b_resultados_a_vista_depois_da_pesquisa_sem_guiao", sg[0].get("resultadosDepois", NAO) if sg else NAO,
+        "o mesmo registo, sem_guiao: os resultados à vista depois de «mourao» e Enter com o JavaScript desligado",
+        "o Enter levou à página dos lugares, com 200", bool(sg) and sg[0].get("estado") == 200)
+medicao("l2a_b_caminho_pelas_gavetas_ate_mourao", sg[0].get("estadoDoConcelho", NAO) if sg else NAO,
+        "o mesmo registo: o código HTTP da página de Mourão, aberta pela porta da lista do distrito, aberto pela gaveta",
+        "a porta do distrito estava escondida com a gaveta fechada", bool(sg) and sg[0].get("portaEscondidaComAGavetaFechada") is True)
+vb = ler(PASTA / "l2a-b/check-mapa-vermelhos.txt") or ""
+medicao("l2a_b_plantas_do_check_mapa_mordidas", vb.count("vermelho ✓"), "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/check-mapa-vermelhos.txt",
+        "o registo traz a planta que move a legenda", "movida para o fim do <main>" in vb)
+va = ler(PASTA / "l2a-b/r6-antiga-com-a-planta-nova.txt") or ""
+medicao("l2a_b_r6_antiga_nao_apanha_a_legenda_movida", va.count("NÃO APANHOU ✗  R6 (a menção longe do mapa)"),
+        "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/r6-antiga-com-a-planta-nova.txt (a R6 de 219dbefb com a planta nova)",
+        "o registo traz a linha das outras plantas da R6", "R6 (a menção)" in va)
+cb = (ler(PASTA / "portoes/l2a-b/cabeca") or "").strip()
+for g in ["build", "verify", "typecheck"]:
+    c = (ler(PASTA / f"portoes/l2a-b/{g}.codigo") or "").strip()
+    medicao(f"l2a_b_codigo_{g}", int(c) if c.isdigit() else NAO, f"design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/{g}.codigo",
+            "a pasta tem a cabeça em que correu", bool(cb))
+    medicao(f"l2a_b_segundos_{g}", segundos("portoes/l2a-b", g), f"design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/{g}.inicio e {g}.fim",
+            "a pasta tem a cabeça em que correu", bool(cb))
 
 # L2a-b: o custo da passagem, com as duas leituras do contador guardadas num ficheiro (o achado 12 pedia as leituras).
 custo = json.loads(ler(PASTA / "custo-l2a-b.json") or "{}")

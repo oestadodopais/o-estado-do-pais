@@ -1,0 +1,7 @@
+o guião estragado (o módulo do contorno trocado por src/lib/nao-existe.mjs) saiu com 0
+contorno_arestas = NÃO LIDO · conhecido-positivo encontrado: False
+contorno_gemeas = NÃO LIDO · conhecido-positivo encontrado: False
+contorno_fronteira = NÃO LIDO · conhecido-positivo encontrado: False
+contorno_linhas = NÃO LIDO · conhecido-positivo encontrado: False
+contorno_pontos = NÃO LIDO · conhecido-positivo encontrado: False
+contorno_da_funcao_igual_ao_da_pagina = NÃO LIDO · conhecido-positivo encontrado: True

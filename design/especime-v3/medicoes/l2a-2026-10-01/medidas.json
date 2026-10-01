@@ -148,7 +148,7 @@
       "valor": 5537,
       "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
       "conhecido_positivo": {
-        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "o_que": "o subprocesso correu, e as arestas da fronteira mais as gémeas são as arestas todas",
         "encontrado": true
       }
     },
@@ -157,7 +157,7 @@
       "valor": 3781,
       "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
       "conhecido_positivo": {
-        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "o_que": "o subprocesso correu, e as arestas da fronteira mais as gémeas são as arestas todas",
         "encontrado": true
       }
     },
@@ -166,7 +166,7 @@
       "valor": 1756,
       "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
       "conhecido_positivo": {
-        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "o_que": "o subprocesso correu, e as arestas da fronteira mais as gémeas são as arestas todas",
         "encontrado": true
       }
     },
@@ -175,7 +175,7 @@
       "valor": 90,
       "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
       "conhecido_positivo": {
-        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "o_que": "o subprocesso correu, e as arestas da fronteira mais as gémeas são as arestas todas",
         "encontrado": true
       }
     },
@@ -184,16 +184,52 @@
       "valor": 179,
       "comando": "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
       "conhecido_positivo": {
-        "o_que": "as arestas da fronteira mais as gémeas são as arestas todas",
+        "o_que": "o subprocesso correu, e as arestas da fronteira mais as gémeas são as arestas todas",
         "encontrado": true
       }
     },
     {
-      "nome": "contorno_bytes_iguais_aos_da_pagina",
-      "valor": 1432,
-      "comando": "o comprimento do d devolvido pela função, contra o da página",
+      "nome": "contorno_da_funcao_igual_ao_da_pagina",
+      "valor": "sim",
+      "comando": "mesmo_desenho(): o atributo d devolvido por contornoDoPais() comparado, carácter a carácter, com o de dist/index.html",
       "conhecido_positivo": {
-        "o_que": "é igual ao comprimento lido em dist/index.html",
+        "o_que": "a mesma função diz igual ao caminho da página contra si próprio e diferente contra uma cópia dele com um algarismo trocado e o mesmo comprimento",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sha256_do_desenho_do_sinal",
+      "valor": "42dc867f0ae73a947f1ec83cc4d915d0b5628b871a91448e6472c48063723e58",
+      "comando": "o sha256 do atributo d do contorno em dist/index.html",
+      "conhecido_positivo": {
+        "o_que": "o caminho foi lido da página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_de_regiao_lidas",
+      "valor": 9,
+      "comando": "as páginas dist/regioes/*/index.html",
+      "conhecido_positivo": {
+        "o_que": "o Alentejo é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_para_concelhos_nas_paginas_das_regioes",
+      "valor": 0,
+      "comando": "as ligações para /municipios/… nessas páginas",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha portas de concelho na página do distrito de Évora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_para_concelhos_na_pagina_do_distrito_de_evora",
+      "valor": 28,
+      "comando": "as ligações para /municipios/… em dist/distritos/evora/index.html (o mapa e a lista)",
+      "conhecido_positivo": {
+        "o_que": "a página do distrito existe",
         "encontrado": true
       }
     },
@@ -443,9 +479,135 @@
     {
       "nome": "simbolos_da_sessao_do_construtor",
       "valor": 653000,
-      "comando": "OEDP_SIMBOLOS_INICIO menos OEDP_SIMBOLOS_RESTANTES: o contador de símbolos restantes que a ferramenta mostra ao agente, lido no início e na hora desta corrida",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/custo-l2a.json: simbolos_restantes_no_inicio menos simbolos_restantes_no_fim",
       "conhecido_positivo": {
-        "o_que": "os dois valores foram passados",
+        "o_que": "as duas leituras estão no ficheiro e a do fim é menor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_plantas_no_navegador_mordidas",
+      "valor": 6,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/navegador.json, campo plantas",
+      "conhecido_positivo": {
+        "o_que": "o registo tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_plantas_no_navegador_total",
+      "valor": 6,
+      "comando": "o mesmo registo",
+      "conhecido_positivo": {
+        "o_que": "o registo tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_nomes_a_vista_com_a_gaveta_dos_distritos_aberta",
+      "valor": 29,
+      "comando": "o mesmo registo, as gavetas: a dos distritos e das ilhas aberta ao teclado, sem guião, na edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "a mesma medida dá 0 com a gaveta fechada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_resultados_a_vista_depois_da_pesquisa_sem_guiao",
+      "valor": 0,
+      "comando": "o mesmo registo, sem_guiao: os resultados à vista depois de «mourao» e Enter com o JavaScript desligado",
+      "conhecido_positivo": {
+        "o_que": "o Enter levou à página dos lugares, com 200",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_caminho_pelas_gavetas_ate_mourao",
+      "valor": 200,
+      "comando": "o mesmo registo: o código HTTP da página de Mourão, aberta pela porta da lista do distrito, aberto pela gaveta",
+      "conhecido_positivo": {
+        "o_que": "a porta do distrito estava escondida com a gaveta fechada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_plantas_do_check_mapa_mordidas",
+      "valor": 23,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/check-mapa-vermelhos.txt",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a planta que move a legenda",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_r6_antiga_nao_apanha_a_legenda_movida",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/r6-antiga-com-a-planta-nova.txt (a R6 de 219dbefb com a planta nova)",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a linha das outras plantas da R6",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2a_b_codigo_build",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2a_b_segundos_build",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/build.inicio e build.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2a_b_codigo_verify",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2a_b_segundos_verify",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/verify.inicio e verify.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2a_b_codigo_typecheck",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2a_b_segundos_typecheck",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/typecheck.inicio e typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça em que correu",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "simbolos_da_passagem_l2a_b",
+      "valor": 36677,
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/custo-l2a-b.json: simbolos_restantes_no_inicio menos simbolos_restantes_no_fim",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras estão no ficheiro e a do fim é menor",
         "encontrado": true
       }
     }
