@@ -3598,3 +3598,14 @@ As linhas das rotas retiradas saem desta tabela; as palavras genéricas não fic
 | conteudo | In . Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average. | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
 | conteudo | É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em , com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos. Portugal: euros por mês . | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
 | conteudo | It is what a full-time employee earned per month, on average, in , including what is paid on a regular basis for normal and overtime hours, before deductions. Portugal: euros per month . | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+
+## L2a · o mapa primeiro, 01.10.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Mapa de Portugal | l2a | viva | O texto alternativo do sinal da porta «Lugares», na primeira página e na dos temas (§1.149): o contorno do país, sem dados. |
+| navegacao | Map of Portugal | l2a | viva | O mesmo texto alternativo na edição inglesa. |
+| conteudo | regiões NUTS II de Portugal | l2a | viva | A glosa (`title`) da contagem das regiões na gaveta de «Lugares», a chave `regioes_total`, que o portão de HTML reconta. |
+| conteudo | NUTS II regions of Portugal | l2a | viva | A mesma glosa na edição inglesa. |
+| conteudo | distritos e ilhas da Carta Administrativa Oficial de Portugal | l2a | viva | A glosa (`title`) da contagem dos distritos e das ilhas na gaveta de «Lugares», a chave `mapa_unidades`; a glosa antiga, com «unidades», continua retirada. |
+| conteudo | districts and islands of Portugal’s official administrative map | l2a | viva | A mesma glosa na edição inglesa. |

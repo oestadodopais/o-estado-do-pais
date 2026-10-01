@@ -2,6 +2,7 @@
  * comparados antes de saírem da leitura; uma marca sozinha não basta. */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 import { WORKS, SUBJECTS } from '../src/data/studies.mjs';
@@ -17,6 +18,12 @@ import { linhaDoIndice } from '../src/lib/assuntos.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 import { t } from '../src/i18n/strings.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
+/* A MENÇÃO DA FONTE DO SINAL DA PORTA DOS LUGARES (bloco L2a, 01.10.2026), lida
+   do manifesto do motor por este leitor e não pelo módulo que a página usa. */
+const FONTE_DA_CARTA = (() => {
+  const f = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'mapa', 'manifest.json'), 'utf8')).fonte;
+  return normal(`${f.atribuicao} · ${f.carta} · ${f.licenca}`);
+})();
 const texto = el => {
   const copia = parse(el.outerHTML);
   copia.querySelectorAll('.src-chip, .claim-provisorio').forEach(n=>n.remove());
@@ -56,7 +63,11 @@ export function verificaVozPais(raiz) {
       /* O rótulo de IA do topo (bloco R1, 23.09.2026) é texto aprovado, que o
          `gate:html` compara carácter a carácter com o oráculo; não é prosa da
          lista fechada destas páginas. */
-      const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mapa-raiz], [data-mapa-legenda], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"], [data-pesquisa-lista], [data-nonledger="data-da-linha"]'));
+      /* O MAPA, A SUA LEGENDA E A FILA DA PESQUISA SAÍRAM DAQUI (bloco L2a, 01.10.2026; §1.149): vivem
+         em «Lugares», e as suas marcas deixaram de ser dispensas nestas páginas. Entra a menção da fonte do
+         sinal da porta dos lugares, e só quando o texto é, carácter a carácter, o do manifesto. */
+      const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"], [data-nonledger="data-da-linha"]'));
+      for (const m of main.querySelectorAll('[data-fonte-do-sinal]')) if (texto(m) === FONTE_DA_CARTA) dispensados.add(m);
       if (blocosConferidos) for (const b of main.querySelectorAll('[data-bloco]')) dispensados.add(b);
       for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
       /* A marca só sai da lista depois de a V1 conferir a frase inteira. */
@@ -81,11 +92,12 @@ export function verificaVozPais(raiz) {
            cadeia declarada e não prosa da casa. */
         POR_VERIFICAR,
         '·','→',
-        /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as seis
-           entradas das declarações do lugar de direção, a pesquisa dos lugares, e as três portas. */
+        /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as
+           entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa
+           dos lugares saíram com ela (L2a): a pesquisa vive em «Lugares», e aqui seria uma segunda cópia. */
         s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
         `${s.primeira.todosOsTemas} →`, `${s.nav.livro} →`, `${ROTULOS_B1[lang].mudou} →`, `${s.nav.uniaoEuropeia} →`,
-        ROTULOS_B1[lang].lugares, s.ambito.municipio, s.ambito.pesquisaSubmeter, s.ambito.pesquisaSemResultado,
+        ROTULOS_B1[lang].lugares,
         ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang], linhaDoIndice(e, lang), ...e.seccoes.map(s => s.nome[lang])]),
       ].map(normal));
       function anda(n) {

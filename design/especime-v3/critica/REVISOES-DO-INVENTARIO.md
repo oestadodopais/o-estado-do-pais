@@ -534,3 +534,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | e1c | 2 cadeias novas, 2 retiradas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem E1c: a frase da leitura do estudo da economia nas duas línguas (ponto 8 do mandato), que a primeira página rende como resumo do estudo, deixa de pôr o vencido «contra» o pago e diz que as duas partes se sobrepõem; as duas linhas da frase antiga passam a retiradas, com a razão. |
+
+## L2a · o mapa primeiro, 01.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| l2a | 6 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do L2a: o texto alternativo do sinal da porta «Lugares» nas duas línguas, e as glosas das duas contagens que as gavetas de «Lugares» passam a dizer ao lado do nome da secção, nas duas línguas; a glosa dos distritos e das ilhas muda de palavras porque a antiga está retirada desde a peça 2 do B1 e diz «unidades». Nenhuma cadeia sai do inventário: as da pesquisa e do mapa continuam a render-se em «Lugares». |

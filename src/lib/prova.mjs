@@ -614,9 +614,13 @@ const FRASES = {
     pt: 'figuras cuja linha traz, em vez do resumo, um motivo da lista fechada do motor',
     en: 'figures whose row carries, instead of the digest, a reason from the engine closed list',
   },
+  /* A GLOSA MUDOU DE PALAVRAS COM O L2a (01.10.2026). A contagem voltou a uma
+     página, ao lado do nome da gaveta dos distritos e das ilhas em «Lugares», e a
+     frase antiga está retirada no inventário desde a peça 2 do B1 e diz
+     «unidades», que o vocabulário do §6 da estrutura tira do texto do leitor. */
   mapa_unidades: {
-    pt: 'unidades da Carta Administrativa: os distritos e as ilhas',
-    en: 'units of the official administrative map: the districts and the islands',
+    pt: 'distritos e ilhas da Carta Administrativa Oficial de Portugal',
+    en: 'districts and islands of Portugal’s official administrative map',
   },
   /* AS DUAS CONTAGENS DAS REGIÕES (Emenda 21, 27.08.2026). Hoje são iguais, e é
      por isso que são duas: no dia em que o motor declarar uma região antes de a
