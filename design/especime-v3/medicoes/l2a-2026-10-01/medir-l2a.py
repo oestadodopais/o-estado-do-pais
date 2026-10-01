@@ -96,14 +96,47 @@ r = subprocess.run(["node", "-e", (
     "Promise.all([import('./src/lib/sinal-dos-lugares.mjs'), import('./src/lib/mapa.mjs'), import('./src/data/caop-centroids.mjs')])"
     ".then(([s, m, c]) => { const L = 40, campo = m.paisDoMapa().campo, u = campo.largura / L, uc = campo.largura / c.FIELD_W;"
     " const x = s.contornoDoPais({ passo: Math.max(1, Math.round(u / 6)), tolerancia: u / 3, folga: Math.round(13 * uc) + Math.round(6 * uc) });"
-    " console.log(JSON.stringify({ arestas: x.arestas, gemeas: x.gemeas, fronteira: x.fronteira, linhas: x.linhas, pontos: x.pontos, bytes: x.d.length })); })")],
+    " console.log(JSON.stringify({ arestas: x.arestas, gemeas: x.gemeas, fronteira: x.fronteira, linhas: x.linhas, pontos: x.pontos, d: x.d })); })")],
     cwd=str(SITIO), capture_output=True, text=True)
 contorno = json.loads(r.stdout) if r.returncode == 0 and r.stdout.strip() else {}
+# L2a-b, o achado 13 da leitura a frio: um subprocesso que falhava deixava `contorno` vazio, e a soma dos valores por
+# omissão (-1 + -1 == -2) dava o conhecido-positivo por encontrado. Agora só conta com as três contagens lidas, números.
+lidas = all(isinstance(contorno.get(k), int) for k in ["arestas", "gemeas", "fronteira"])
+soma = lidas and contorno["fronteira"] + contorno["gemeas"] == contorno["arestas"]
 for k in ["arestas", "gemeas", "fronteira", "linhas", "pontos"]:
     medicao(f"contorno_{k}", contorno.get(k, NAO), "node · contornoDoPais() de src/lib/sinal-dos-lugares.mjs, com a largura de 40 px do sinal",
-            "as arestas da fronteira mais as gémeas são as arestas todas", contorno.get("fronteira", -1) + contorno.get("gemeas", -1) == contorno.get("arestas", -2))
-medicao("contorno_bytes_iguais_aos_da_pagina", contorno.get("bytes", NAO), "o comprimento do d devolvido pela função, contra o da página",
-        "é igual ao comprimento lido em dist/index.html", bool(d) and contorno.get("bytes") == len(d.group(1)))
+            "o subprocesso correu, e as arestas da fronteira mais as gémeas são as arestas todas", r.returncode == 0 and soma)
+# L2a-b, o achado 14: a igualdade compara o desenho inteiro, carácter a carácter, e não o comprimento. O conhecido-positivo
+# é a mesma comparação a apanhar uma cópia do caminho da página com um algarismo trocado e o mesmo comprimento.
+import hashlib
+pagina_d = d.group(1) if d else None
+funcao_d = contorno.get("d")
+def mesmo_desenho(x, y):
+    return isinstance(x, str) and isinstance(y, str) and x == y
+estragado = None
+if pagina_d:
+    i = next((k for k, ch in enumerate(pagina_d) if ch.isdigit()), None)
+    if i is not None:
+        estragado = pagina_d[:i] + ("1" if pagina_d[i] != "1" else "2") + pagina_d[i + 1:]
+medicao("contorno_da_funcao_igual_ao_da_pagina",
+        ("sim" if mesmo_desenho(funcao_d, pagina_d) else "não") if isinstance(funcao_d, str) and pagina_d else NAO,
+        "mesmo_desenho(): o atributo d devolvido por contornoDoPais() comparado, carácter a carácter, com o de dist/index.html",
+        "a mesma função diz igual ao caminho da página contra si próprio e diferente contra uma cópia dele com um algarismo trocado e o mesmo comprimento",
+        estragado is not None and len(estragado) == len(pagina_d) and mesmo_desenho(pagina_d, pagina_d) and not mesmo_desenho(pagina_d, estragado))
+medicao("sha256_do_desenho_do_sinal", hashlib.sha256(pagina_d.encode("utf-8")).hexdigest() if pagina_d else NAO,
+        "o sha256 do atributo d do contorno em dist/index.html", "o caminho foi lido da página", pagina_d is not None)
+
+# L2a-b, o achado 4: o caminho sem guião para um concelho. As páginas das regiões não levam portas de concelho; as dos
+# distritos levam (o conhecido-positivo é a de Évora).
+portas_regioes = {f.parent.name: len(re.findall(r'href="/municipios/[^"#]+"', f.read_text(encoding="utf-8")))
+                  for f in sorted((DIST / "regioes").glob("*/index.html"))}
+portas_evora = len(re.findall(r'href="/municipios/[^"#]+"', ler(DIST / "distritos/evora/index.html") or ""))
+medicao("paginas_de_regiao_lidas", len(portas_regioes) or NAO, "as páginas dist/regioes/*/index.html",
+        "o Alentejo é uma delas", "alentejo" in portas_regioes)
+medicao("portas_para_concelhos_nas_paginas_das_regioes", sum(portas_regioes.values()) if portas_regioes else NAO,
+        "as ligações para /municipios/… nessas páginas", "o mesmo detetor acha portas de concelho na página do distrito de Évora", portas_evora > 0)
+medicao("portas_para_concelhos_na_pagina_do_distrito_de_evora", portas_evora, "as ligações para /municipios/… em dist/distritos/evora/index.html (o mapa e a lista)",
+        "a página do distrito existe", bool(ler(DIST / "distritos/evora/index.html")))
 
 # 4 · as capturas a 390
 for nome, ficheiro, antes in [("altura_da_captura_de_lugares_a_390", "lugares-pt-390.png", 5321), ("altura_da_captura_da_primeira_pagina_a_390", "primeira-pt-390.png", 7194)]:
@@ -164,6 +197,13 @@ inicio_s, resta_s = os.environ.get("OEDP_SIMBOLOS_INICIO"), os.environ.get("OEDP
 usados = int(inicio_s) - int(resta_s) if (inicio_s or "").isdigit() and (resta_s or "").isdigit() else NAO
 medicao("simbolos_da_sessao_do_construtor", usados, "OEDP_SIMBOLOS_INICIO menos OEDP_SIMBOLOS_RESTANTES: o contador de símbolos restantes que a ferramenta mostra ao agente, lido no início e na hora desta corrida",
         "os dois valores foram passados", usados != NAO)
+
+# L2a-b: o custo da passagem, com as duas leituras do contador guardadas num ficheiro (o achado 12 pedia as leituras).
+custo = json.loads(ler(PASTA / "custo-l2a-b.json") or "{}")
+ini, fim = custo.get("simbolos_restantes_no_inicio"), custo.get("simbolos_restantes_no_fim")
+medicao("simbolos_da_passagem_l2a_b", ini - fim if isinstance(ini, int) and isinstance(fim, int) else NAO,
+        "design/especime-v3/medicoes/l2a-2026-10-01/custo-l2a-b.json: simbolos_restantes_no_inicio menos simbolos_restantes_no_fim",
+        "as duas leituras estão no ficheiro e a do fim é menor", isinstance(ini, int) and isinstance(fim, int) and fim < ini)
 
 saida = {"bloco": "L2a", "guiao": "design/especime-v3/medicoes/l2a-2026-10-01/medir-l2a.py", "ordem_em_lugares": ordem, "medidas": medidas}
 alvo = os.environ.get("OEDP_MEDIDAS_JSON") or str(PASTA / "medidas.json")
