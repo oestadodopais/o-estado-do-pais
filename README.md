@@ -260,10 +260,12 @@ por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
 ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
 cada um tiver a sua linha no livro-razão.
 
-Hoje estão alojados **dezoito documentos** a 16.09.2026: todas as dezoito
-edições do arquivo, dos seus treze trabalhos. Não falta nenhuma. A frase dizia
-«dezasseis documentos a 02.09.2026: todas as dezasseis edições do arquivo, dos
-seus doze trabalhos».
+Hoje estão alojados **vinte e cinco documentos** a 01.10.2026: todas as vinte e
+cinco edições do arquivo, dos seus dezassete trabalhos. Não falta nenhuma. Os
+estudos de Évora de agosto e setembro ficam como edições datadas, sucedidas pelos
+de 01.10.2026. A frase dizia «dezoito
+documentos a 16.09.2026: todas as dezoito edições do arquivo, dos seus treze
+trabalhos».
 
 ### Pôr o documento de um estudo no sítio
 

@@ -156,3 +156,8 @@ Os contadores, todos medidos e nenhum escrito à mão: os dias seguidos com `che
 ## 11 · O primeiro gesto da sessão seguinte
 
 F0.1, F0.2 e F0.3, por esta ordem, antes de qualquer outra coisa; depois F0.5 e F0.6; as decisões da fase 0 pedidas ao diretor uma vez, no início. Nenhum bloco da fase 1 arranca com um portão vermelho ou sem CI exigida.
+
+## 12 · Os estudos de Évora, desde 01.10.2026 (E1, §1.145)
+
+O arquivo tem quatro estudos de Évora correntes, compostos no motor a partir dos registos dos seis de agosto e setembro, que ficam alojados como edições datadas com a nota do sucessor: as contas da câmara, quem governou a câmara, a economia e o dinheiro público de fora da câmara, e o Évora 2027. A fiabilidade deles é a dos antigos, linha a linha: cada linha que atravessa para o sítio guarda o seu identificador e o resumo da linha de origem, cada figura leva a linha que o registo de origem lhe dava salvo as correções de selo escritas e conferidas pelo compositor, e as contradições que a I180 contou estão em tabelas de reconciliação com a fonte de cada valor. As duas contagens do arquivo, a dos estudos e a das edições, mudam com estes estudos e dependem do lugar «o projeto» que o E0 declara; o relatório do E1 diz onde parou.
+
