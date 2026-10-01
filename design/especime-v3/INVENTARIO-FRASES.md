@@ -3609,3 +3609,25 @@ As linhas das rotas retiradas saem desta tabela; as palavras genéricas não fic
 | conteudo | NUTS II regions of Portugal | l2a | viva | A mesma glosa na edição inglesa. |
 | conteudo | distritos e ilhas da Carta Administrativa Oficial de Portugal | l2a | viva | A glosa (`title`) da contagem dos distritos e das ilhas na gaveta de «Lugares», a chave `mapa_unidades`; a glosa antiga, com «unidades», continua retirada. |
 | conteudo | districts and islands of Portugal’s official administrative map | l2a | viva | A mesma glosa na edição inglesa. |
+
+## L2b · o concelho entre os 308, 01.10.2026
+
+As frases da faixa de cada cartão de concelho e da leitura do ganho médio contra Portugal que a régua lê. A frase do lugar
+(«Évora (…) está em …º lugar entre os … concelhos com valor, do mais alto para o mais baixo.») e a frase do ganho na leitura
+do lugar levam marcas de origem (o nome do lugar, os valores, o lugar e a contagem recontados pelo portão de HTML) e a régua
+salta-as nas páginas de concelho, como salta o resto da leitura; ficam conferidas carácter a carácter pela célula FC4 do
+`check:navegacao` e pela P1 do `check:lugares`. Rendem-se só os ramos que os valores de hoje dão: o «igual a Portugal» não se
+rende em página nenhuma e não entra; entra quando se render.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | abaixo de Portugal | l2b | viva | A palavra do lado na faixa do cartão e na frase do ganho médio da leitura do lugar, escolhida pelos dois valores das linhas (o do concelho e o de Portugal, ou a base do índice); a FC5 e a P1 recontam-na. |
+| conteudo | acima de Portugal | l2b | viva | A mesma palavra, quando o valor do concelho é maior. |
+| conteudo | below Portugal | l2b | viva | A mesma palavra na edição inglesa. |
+| conteudo | above Portugal | l2b | viva | A mesma palavra na edição inglesa. |
+| conteudo | Está abaixo de Portugal , que é a base do índice. | l2b | viva | A comparação do poder de compra com Portugal, que é a base do índice escrita na unidade de cada uma das 308 linhas («índice (Portugal = 100)»); sem número, porque a unidade do cartão já o escreve. |
+| conteudo | Está acima de Portugal , que é a base do índice. | l2b | viva | A mesma comparação, quando o índice do concelho passa a base. |
+| conteudo | It is below Portugal , which is the base of the index. | l2b | viva | A mesma comparação na edição inglesa. |
+| conteudo | It is above Portugal , which is the base of the index. | l2b | viva | A mesma comparação na edição inglesa. |
+| conteudo | Sem comparação com Portugal no mesmo período. | l2b | viva | A faixa de uma medida sem linha nacional da mesma medida e do mesmo período diz que não compara, e não escolhe outro período (o brief L2b, §5, decisão 3); não diz que o valor do país não existe, que é coisa que as linhas não provam. |
+| conteudo | No comparison with Portugal for the same period. | l2b | viva | A mesma frase na edição inglesa. |

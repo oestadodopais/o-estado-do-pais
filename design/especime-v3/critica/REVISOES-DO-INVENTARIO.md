@@ -540,3 +540,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | l2a | 6 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do L2a: o texto alternativo do sinal da porta «Lugares» nas duas línguas, e as glosas das duas contagens que as gavetas de «Lugares» passam a dizer ao lado do nome da secção, nas duas línguas; a glosa dos distritos e das ilhas muda de palavras porque a antiga está retirada desde a peça 2 do B1 e diz «unidades». Nenhuma cadeia sai do inventário: as da pesquisa e do mapa continuam a render-se em «Lugares». |
+
+## L2b · o concelho entre os 308, 01.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| l2b | 10 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do L2b: as palavras do lado («acima de Portugal», «abaixo de Portugal») nas duas línguas, que a faixa de cada cartão de concelho e a frase do ganho médio da leitura do lugar dizem; as duas frases da comparação do poder de compra com a base do índice, nas duas línguas; e a frase de uma faixa sem linha nacional do mesmo período, nas duas línguas. Nenhuma cadeia sai do inventário. |
