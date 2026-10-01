@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-01T04:16:51+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "src/data/studies.mjs",
+   "descricao": "o estudo antigo das contas aponta para o sucessor errado (o da economia), e o leitor é mandado para o estudo que não tem as suas finanças",
+   "sha256_antes": "2229d2e8e930736fd505fc3a11a8889eb6849c2ef63be4458a9308b4bba6a434",
+   "sha256_depois": "ce168d4e245bdb7f4685637c50f3e4d0d63a56c0b561bfc394adcb40c0ee0967",
+   "contexto_antes": " 'economia-e-financas-publicas',\n    subject: 'evora',\n    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */\n    sucedidoPor: [{ slug: 'evora-contas-da-camara-2010-2025' }],\n    /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de\n       ponteiro. DECISIONS §1.49. */\n    editions: [\n      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null, updated: '2026-08-20' },\n",
+   "contexto_depois": " 'economia-e-financas-publicas',\n    subject: 'evora',\n    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */\n    sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],\n    /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de\n       ponteiro. DECISIONS §1.49. */\n    editions: [\n      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null, updated: '2026-08-20' },\n"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "ledger/claims/evora-prazo-medio-de-pagamento-2025.yml",
+   "descricao": "uma linha das contas fica com o estudo antigo no campo study, contra o mapa de migração",
+   "sha256_antes": "2f2cff6356f7a03c32317f4a8c8590f0fc35eca8baaa119da92d2624e0996415",
+   "sha256_depois": "d621709919d07f1a2bcd787bd8d072ae88fc8c9c1e90e3032123b123f54f2a0b",
+   "contexto_antes": " tem de dar exactamente o valor acima.\ncheck: null\n\n# A quem o valor é creditado. Lista de entidades, ou campo nenhum.\nattributed_to:\n  - \"Município de Évora\"\n\nstudy: \"evora-contas-da-camara-2010-2025\"\n# Nota interna. NÃO é publicada: ver DECISIONS §1.24.\nnote: \"Cruzado de ResearchHub content/07 Évora Municipal Accounts · pmp-2025.\"\n\n# Correcções datadas. Nun",
+   "contexto_depois": " tem de dar exactamente o valor acima.\ncheck: null\n\n# A quem o valor é creditado. Lista de entidades, ou campo nenhum.\nattributed_to:\n  - \"Município de Évora\"\n\nstudy: \"evora-orcamentado-pago-devido-2025\"\n# Nota interna. NÃO é publicada: ver DECISIONS §1.24.\nnote: \"Cruzado de ResearchHub content/07 Évora Municipal Accounts · pmp-2025.\"\n\n# Correcções datadas. Nun"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "motor/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md",
+   "descricao": "a tabela de reconciliação dos prazos de 2022 atribui os 64 dias à fonte errada (a Prestação de Contas 2025), e a contradição deixa de estar reconciliada",
+   "sha256_antes": "f72bf0af3af5d79ebc7be702778a2bb159921fde2ec01ad1336f8a4a890320e4",
+   "sha256_depois": "8647b707f6654d23927f0dec5a339cc17f976b7e0b2442738cd8d3a378f46ebf",
+   "contexto_antes": "or | Onde | O que diz ser |\n|---|---|---|\n| 69 dias | a série da Prestação de Contas 2025, a tabela acima | o prazo médio de pagamento a fornecedores em 2022 |\n| 64 dias | o relatório de gestão de 2022, que cita o regulador como fonte, e a tabela das finanças acima | o mesmo indicador, no mesmo ano |\n\nOs dois são do próprio município e do mesmo indicador do regulador. Nenhum documento lido explica a diferença, e os dois registos ficam de pé.\n\n### Bancos: a ",
+   "contexto_depois": "or | Onde | O que diz ser |\n|---|---|---|\n| 69 dias | a série da Prestação de Contas 2025, a tabela acima | o prazo médio de pagamento a fornecedores em 2022 |\n| 64 dias | a série da Prestação de Contas 2025, a tabela acima | o mesmo indicador, no mesmo ano |\n\nOs dois são do próprio município e do mesmo indicador do regulador. Nenhum documento lido explica a diferença, e os dois registos ficam de pé.\n\n### Bancos: a "
+  },
+  {
+   "id": "R4",
+   "ficheiro": "ledger/claims/estudos-publicados.yml",
+   "descricao": "o contador dos estudos publicados escreve 18 onde a derivação conta 17",
+   "sha256_antes": "dafe0fa73304f295f647c89657c44b96c587773a2a25f19578817e1ae8760579",
+   "sha256_depois": "ea38622d086aa1580641ce661db1c353462b1c1face1e8632d9603acdff3f48a",
+   "contexto_antes": " Campos obrigatórios e regras: ver ledger/README.md.\n\nid: \"estudos-publicados\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"17\"\nunit: \"estudos\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"O Estado do País\"\ndocument:\n  title: \"Arquivo de est",
+   "contexto_depois": " Campos obrigatórios e regras: ver ledger/README.md.\n\nid: \"estudos-publicados\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"18\"\nunit: \"estudos\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"O Estado do País\"\ndocument:\n  title: \"Arquivo de est"
+  },
+  {
+   "id": "R5",
+   "ficheiro": "built/estudos/evora-quinze-anos-cinco-mandatos/index.html",
+   "descricao": "a nota do sucessor da página antiga do «Quinze Anos» perde a porta para o estudo das eleições e das decisões",
+   "sha256_antes": "c6903f97deb2d18a22afece248c6e424971bcc953fe4c241f57c1aae8be167db",
+   "sha256_depois": "8484b8ff4dac3e84508c477be44ffeb32a6b3334348fed4082326c5fbe50a659",
+   "contexto_antes": "><span data-nonledger=\"titulo-de-estudo\">As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação</span></a><span>;</span> <span>as eleições e as decisões</span> <span>em</span> <a href=\"/estudos/evora-quem-governou-a-camara-2009-2025\"><span data-nonledger=\"titulo-de-estudo\">Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões</span></a><span>;</s",
+   "contexto_depois": "><span data-nonledger=\"titulo-de-estudo\">As contas da Câmara de Évora, 2010 a 2025: o orçamento, a cobrança, a dívida e a certificação</span></a><span>;</span> <span>as eleições e as decisões</span> <span>em</span> <a href=\"/estudos/evora-quinze-anos-cinco-mandatos\"><span data-nonledger=\"titulo-de-estudo\">Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões</span></a><span>;</s"
+  }
+ ]
+}
