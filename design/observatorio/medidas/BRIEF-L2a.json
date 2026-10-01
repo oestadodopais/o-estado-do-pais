@@ -1,0 +1,92 @@
+{
+  "brief": "design/observatorio/BRIEF-L2a-o-mapa-primeiro.md",
+  "guiao": "design/observatorio/medidas/BRIEF-L2a.py",
+  "cabeca_lida": "1395c9de",
+  "ordem_em_lugares": [
+    "pesquisa",
+    "regioes",
+    "distritos",
+    "mapa"
+  ],
+  "seccoes_da_primeira_pagina": [
+    "pp-o-que-se-passa",
+    "pp-entradas",
+    "pp-lugares",
+    "pais-sec",
+    "pais-sec"
+  ],
+  "medidas": [
+    {
+      "nome": "pecas_de_lugares_antes_do_mapa",
+      "valor": 3,
+      "comando": "git show 1395c9de:src/views/LugaresView.astro · a ordem de <Pesquisa, das duas listas e de <MapaRespira no documento",
+      "conhecido_positivo": {
+        "o_que": "a pesquisa vem antes do mapa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regioes_na_lista",
+      "valor": 9,
+      "comando": "node · regioesDaCarta().length em src/data/carta-dos-lugares.mjs",
+      "conhecido_positivo": {
+        "o_que": "o Alentejo é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "distritos_e_ilhas_na_lista",
+      "valor": 29,
+      "comando": "node · distritosDaCarta().length",
+      "conhecido_positivo": {
+        "o_que": "Évora é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "seccoes_da_primeira_pagina_antes_dos_lugares",
+      "valor": 2,
+      "comando": "git show 1395c9de:src/views/HomeView.astro · as <section class=…> por ordem até pp-lugares",
+      "conhecido_positivo": {
+        "o_que": "a secção «O que se passa» vem primeiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pesquisas_na_primeira_pagina",
+      "valor": 1,
+      "comando": "as ocorrências de <Pesquisa na vista",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapas_inteiros_na_primeira_pagina",
+      "valor": 1,
+      "comando": "as ocorrências de <MapaRespira na vista",
+      "conhecido_positivo": {
+        "o_que": "o mapa leva a porta dos lugares",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_captura_de_lugares_a_390",
+      "valor": 5321,
+      "comando": "a altura do PNG design/especime-v3/capturas/n1-2026-09-30/lugares-pt-390.png (o cabeçalho IHDR)",
+      "conhecido_positivo": {
+        "o_que": "a largura do PNG é 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_captura_da_primeira_pagina_a_390",
+      "valor": 7194,
+      "comando": "a altura do PNG primeira-pt-390.png",
+      "conhecido_positivo": {
+        "o_que": "a primeira página é mais alta do que «Lugares»",
+        "encontrado": true
+      }
+    }
+  ]
+}
