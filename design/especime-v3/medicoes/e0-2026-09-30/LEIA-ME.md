@@ -31,7 +31,24 @@ A célula permanente conserva as entradas históricas do E0, compara o valor atu
 
 ## Plantas e conferências dirigidas
 
-As [plantas](plantas.json) usam processos isolados e cópias em memória. A planta A retira o lugar e exige código 1 com a queixa A3 do portão real, na mesma corrida que aceita a declaração. O resolvedor também recusa a falta. Uma declaração falsa de Portugal é recusada pela segunda leitura. As plantas B retiram cada entrada selada, separadamente, e exigem código 1 com a queixa de história do valor. Há ainda uma planta que retira o decimal da primeira página e outra que retira o lugar do registo inglês. Todas as 14 plantas mordem; os ficheiros reais ficam intactos.
+As [plantas](plantas.json) usam processos isolados e cópias em memória. A planta A exige código 1 com a queixa A3 do portão real, na mesma corrida que aceita a declaração. Esta é a lista completa lida do comprovativo:
+
+- A: contador sem declaração, A3: mordeu.
+- A: contador sem declaração, resolvedor: mordeu.
+- declaração falsa de Portugal: mordeu.
+- data antiga do contador: mordeu.
+- valor pela marca do nome no portão real: mordeu.
+- nome fora da página do registo: mordeu.
+- nome de outra linha na entrada: mordeu.
+- B: taxa-de-desemprego-2025 sem entrada selada: mordeu.
+- B: taxa-de-desemprego-mip-2025 sem entrada selada: mordeu.
+- B: correcoes-publicadas sem entrada selada: mordeu.
+- decimal retirado da primeira: mordeu.
+- lugar retirado do registo inglês: mordeu.
+- nome retirado da recontagem: mordeu.
+- nome retirado da dívida das famílias: mordeu.
+
+Foram conferidas 14 plantas, das quais 14 morderam; os ficheiros reais ficam intactos.
 
 As conferências dirigidas do livro, da travessia, dos tipos e do país passaram. Os primeiros ensaios da célula falharam por um seletor de planta que nomeava a linha irmã, ausente da primeira página, e por rótulos esperados com maiúscula onde o registo usa minúscula. Os dois erros da célula foram corrigidos; as saídas anteriores e a corrida limpa ficam em ensaios. A primeira tentativa de captura foi impedida pela restrição do servidor local; a corrida com acesso ao servidor local terminou com código 0.
 
@@ -329,7 +346,7 @@ O ponto 1 do mandato está parado por fonte. Os restantes pontos estão conferid
 | # | Mandato | Resultado e prova |
 | --- | --- | --- |
 | 1 | Limiar do Procedimento no cartão | Parado. A página atual da Comissão lista a taxa com limiar de 10 %. O Eurostat lista a média de três anos entre os indicadores adicionais e publica a fórmula U(t)/LF(t). Não se alteraram o limiar, o veredicto, a ressalva nem a nota do cartão para afirmar o contrário. |
-| 2 | Nomes e razões do registo | A declaração da contagem dá Correções publicadas e Published corrections. O componente também imprime os nomes lidos dos campos da fonte, conservando as marcas de campo e de língua. As razões das três entradas usam a fonte e as duas correções publicadas hoje. A célula conferiu 40 nomes de entradas nas duas edições. |
+| 2 | Nomes e razões do registo | Correções publicadas e Published corrections vêm da tabela NOMES_DAS_LINHAS_DERIVADAS em src/data/nomes-das-medidas.mjs. O componente também imprime os nomes lidos dos campos da fonte, conservando as marcas de campo e de língua. As razões das três entradas usam a fonte e as duas correções publicadas a 30.09.2026. A célula conferiu 40 nomes de entradas nas duas edições. |
 | 3 | Positivos do medidor | Os três detetores foram exercitados na cabeça `a595201bbc440a6d57d2f23cd95321b26099b7d4`. Leem os dois campos excerpt; encontram RegistoCorrecoes no diff real e uma planta do cartão; leem códigos 0 e 1 de processos desta corrida e recusam os mesmos ficheiros envelhecidos. |
 | 4 | Datas do contador | Valor 5; reference_date e access_date em 2026-09-30; edição 30.09.2026. A nota explica a recontagem. A planta da data antiga exige a queixa E0b datas. |
 | 5 | Relatório verificável | Cada prova tem a sua cabeça abaixo. Saiu a atribuição sobre o localizador externo. O alcance do typecheck está escrito acima. As capturas binárias e os dois contadores de custo do E0 estão distinguidos. |

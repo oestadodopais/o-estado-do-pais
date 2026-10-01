@@ -59,7 +59,11 @@ A célula permanente conserva as entradas históricas do E0, compara o valor atu
 
 ## Plantas e conferências dirigidas
 
-As [plantas](plantas.json) usam processos isolados e cópias em memória. A planta A retira o lugar e exige código 1 com a queixa A3 do portão real, na mesma corrida que aceita a declaração. O resolvedor também recusa a falta. Uma declaração falsa de Portugal é recusada pela segunda leitura. As plantas B retiram cada entrada selada, separadamente, e exigem código 1 com a queixa de história do valor. Há ainda uma planta que retira o decimal da primeira página e outra que retira o lugar do registo inglês. Todas as ${valor('plantas_que_mordem').total} plantas mordem; os ficheiros reais ficam intactos.
+As [plantas](plantas.json) usam processos isolados e cópias em memória. A planta A exige código 1 com a queixa A3 do portão real, na mesma corrida que aceita a declaração. Esta é a lista completa lida do comprovativo:
+
+${valor('plantas_que_mordem').plantas.map(p => `- ${p.nome}: ${p.mordeu ? 'mordeu' : 'não mordeu'}.`).join('\n')}
+
+Foram conferidas ${valor('plantas_que_mordem').total} plantas, das quais ${valor('plantas_que_mordem').mordidas} morderam; os ficheiros reais ficam intactos.
 
 As conferências dirigidas do livro, da travessia, dos tipos e do país passaram. Os primeiros ensaios da célula falharam por um seletor de planta que nomeava a linha irmã, ausente da primeira página, e por rótulos esperados com maiúscula onde o registo usa minúscula. Os dois erros da célula foram corrigidos; as saídas anteriores e a corrida limpa ficam em ensaios. A primeira tentativa de captura foi impedida pela restrição do servidor local; a corrida com acesso ao servidor local terminou com código 0.
 
