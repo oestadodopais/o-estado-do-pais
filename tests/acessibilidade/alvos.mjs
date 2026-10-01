@@ -329,6 +329,21 @@ const ESTRAGOS = [
     faz: (html) => html.replaceAll('class="arquivo-desc estudo-resumo"', 'class="arquivo-desc"'),
   },
   {
+    /* L2b, 01.10.2026: os selos da leitura do lugar fora da prosa corrida. A leitura de Évora passou a
+       acabar com o ganho médio contra Portugal, com quatro selos em linhas vizinhas; sem a classe, os selos
+       voltam a contar como caixas na faixa dos 641 aos 1023 px, e a H2 cai. A folha da leitura vai com a
+       classe nova (as declarações de `.lugar-leitura` em `src/styles/lugar.css`), para que o parágrafo tenha
+       a mesma letra e a mesma entrelinha e só a classe mude: um estrago que mudasse a quebra das linhas
+       podia separar os selos e não provar nada. */
+    nome: 'leitura-do-lugar-sem-classe · os selos da leitura de um lugar fora da prosa corrida',
+    celulas: ['H2'],
+    amostra: '/municipios/evora/',
+    faz: (html) =>
+      html
+        .replaceAll('class="lugar-leitura"', 'class="lugar-x"')
+        .replace('</head>', '<style>.lugar-x{font-family:var(--f-prosa);font-weight:500;font-size:clamp(20px,2.3vw,27px);line-height:1.3;max-width:36em;margin:clamp(18px,2.6vw,30px) 0 0}</style></head>'),
+  },
+  {
     /* PP1, 28.09.2026: os selos das frases e das peças dos blocos fora da prosa corrida. Sem a classe,
        os selos voltam a contar como caixas, e a H2 cai: é a classe que os dispensa, e só ela. */
     nome: 'bloco-sem-classe · os selos das frases dos blocos fora da prosa corrida',
@@ -934,7 +949,14 @@ function medeNaPagina(cfg) {
            ficou no lugar da leitura do país, com os selos dos seus números ao lado de cada valor; entram
            pela mesma razão da leitura (I127), e o estrago «bloco-sem-classe» prova que é a classe que os
            dispensa. A porta não se perde: cada número está também na lista «Os números deste bloco». */
-        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto'),
+        /* L2b, 01.10.2026: a leitura de um lugar (`.lugar-leitura`) entra na prosa corrida pela razão da
+           leitura do país. A frase do ganho médio contra Portugal pôs quatro selos em linhas vizinhas da
+           leitura de Évora, e a área de 44 px de um cruza a do seguinte na faixa dos 641 aos 1023 px (a
+           corrida intermédia do bloco: dois selos por edição, 26,8 px de toque no do ganho de Évora, que o
+           selo de Portugal, na linha de baixo, cobre); a entrelinha não se estica para 44 px (I127), e cada
+           selo continua a ser a porta da sua linha, com a área inteira a 390 px. O estrago
+           «leitura-do-lugar-sem-classe» prova que é a classe que os dispensa, e só ela. */
+        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto'),
         ok: ok44,
         ok32,
         ok44,
