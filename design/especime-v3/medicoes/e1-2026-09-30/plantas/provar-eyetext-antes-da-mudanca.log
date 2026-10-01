@@ -1,0 +1,29 @@
+=== provar:eyetext
+
+> o-estado-do-pais@0.1.0 provar:eyetext
+> node scripts/provar-eyetext.mjs
+
+
+A leitura do olho, provada contra o motor:
+  evora-2027-capital-europeia-da-cultura/en         134 blocos lidos ·  134 no registo ·  903 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-capital-europeia-da-cultura/pt         134 blocos lidos ·  134 no registo ·  903 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-prometido-painel-dinheiro/en           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-prometido-painel-dinheiro/pt           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-contas-da-camara-2010-2025/en               171 blocos lidos ·  171 no registo ·  702 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-contas-da-camara-2010-2025/pt               172 blocos lidos ·  172 no registo ·  703 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-e-dinheiro-publico-de-fora-da-camara/en  160 blocos lidos ·  160 no registo ·  660 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-e-dinheiro-publico-de-fora-da-camara/pt  160 blocos lidos ·  160 no registo ·  660 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·   49 no registo ·   83 unidades iguais · 21 isentas em 16 bloco(s) editado(s) · 4 apagado(s)
+  evora-orcamentado-pago-devido-2025/en              94 blocos lidos ·   87 no registo ·  179 unidades iguais · 30 isentas em 27 bloco(s) editado(s) · 7 apagado(s)
+  evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  179 unidades iguais · 31 isentas em 28 bloco(s) editado(s) · 7 apagado(s)
+  evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+  evora-quem-governou-a-camara-2009-2025/pt         210 blocos lidos ·  210 no registo · 1449 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+  juntas apertadas na 07 pt                          20 · 0 imprimem um espaço
+
+  14 edições · 1982 blocos lidos · 10395 unidades · 10199 iguais carácter a carácter · 196 isentas
+  375 operações da passagem de voz: 174 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+
+[31mEYETEXT: FALHA — 1 problema(s) em 612 conferências[0m
+ - esta prova corre sobre 7 edições (as que têm prova "edicao-html" e bytes alojados do motor) e correu sobre 14. Se o âmbito mudou, a prova tem de ser relida.
+FALHOU provar:eyetext

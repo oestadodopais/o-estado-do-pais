@@ -1,0 +1,449 @@
+§1.2 · Campos acrescentados ao formato do livro-razão
+    src/data/municipios.mjs:300
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/especime-v3/INVENTARIO-FRASES.md:1809
+    design/especime-v3/INVENTARIO-FRASES.md:2667
+    design/especime-v3/INVENTARIO-FRASES.md:2897
+    design/especime-v3/INVENTARIO-FRASES.md:320
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:125 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:224
+    src/data/municipios.mjs:348
+    src/lib/lugar.mjs:178
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    design/especime-v3/INVENTARIO-FRASES.md:2344
+    design/especime-v3/INVENTARIO-FRASES.md:2833
+    design/especime-v3/INVENTARIO-FRASES.md:2904
+    design/especime-v3/INVENTARIO-FRASES.md:2921
+    design/especime-v3/INVENTARIO-FRASES.md:2934
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:114
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:116
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:13
+§1.8 · As páginas de estudo estão fora do índice até à migração
+    src/data/leituras.mjs:7
+§1.19 · Os estudos migram para dois sítios, não um
+    README.md:314
+    scripts/gate-html.mjs:1192
+    scripts/gate-html.mjs:5239
+    scripts/gate-html.mjs:8787
+    src/data/leituras.mjs:7
+§1.20 · Os documentos entraram, e trouxeram um contrato de determinismo
+    README.md:290 (perto do diff)
+§1.21 · A décima terceira edição, e a diferença entre extrair e transcrever
+    studies-src/manifest.yml:57
+§1.22 · Uma ferramenta para quem vier de fora conferir
+    README.md:304 (perto do diff)
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    README.md:545
+    ledger/claims/alentejo-central-poder-de-compra-2023.yml:43 (perto do diff)
+    ledger/claims/evora-camara-lugares.yml:38 (perto do diff)
+    ledger/claims/evora-camara-mandatos-cdu-2013.yml:39 (perto do diff)
+    ledger/claims/evora-camara-mandatos-cdu-2017.yml:39 (perto do diff)
+    ledger/claims/evora-camara-mandatos-cdu-2021.yml:38 (perto do diff)
+    ledger/claims/evora-camara-mandatos-ps-2009.yml:39 (perto do diff)
+    ledger/claims/evora-camara-mandatos-ps-2025.yml:38 (perto do diff)
+    ledger/claims/evora-concentracao-vab4-2024.yml:43 (perto do diff)
+    ledger/claims/evora-contas-2024-votos-contra.yml:43 (perto do diff)
+    ledger/claims/evora-contas-2024-votos-favor.yml:43 (perto do diff)
+    ledger/claims/evora-desemprego-registado-2013.yml:38 (perto do diff)
+    ledger/claims/evora-desemprego-registado-2024.yml:38 (perto do diff)
+    ledger/claims/evora-despesa-paga-2025.yml:43 (perto do diff)
+    ledger/claims/evora-divergencia-municipio-dgal-2024.yml:32 (perto do diff)
+    ledger/claims/evora-divida-31-10-2013.yml:43 (perto do diff)
+    ledger/claims/evora-divida-dgal-2014.yml:38 (perto do diff)
+    ledger/claims/evora-divida-dgal-2017.yml:43 (perto do diff)
+    ledger/claims/evora-divida-dgal-2021.yml:38 (perto do diff)
+    ledger/claims/evora-divida-dgal-2024.yml:38 (perto do diff)
+    ledger/claims/evora-divida-inicio-mandato-reexpressa.yml:48 (perto do diff)
+    ledger/claims/evora-divida-total-2017.yml:48 (perto do diff)
+    ledger/claims/evora-divida-total-2021.yml:48 (perto do diff)
+    ledger/claims/evora-divida-total-2024.yml:43 (perto do diff)
+    ledger/claims/evora-divida-total-2025.yml:48 (perto do diff)
+    ledger/claims/evora-empresas-2024.yml:43 (perto do diff)
+    ledger/claims/evora-excesso-endividamento-2014.yml:43 (perto do diff)
+    ledger/claims/evora-excesso-endividamento-2019.yml:43 (perto do diff)
+    ledger/claims/evora-execucao-da-receita-2021.yml:43 (perto do diff)
+    ledger/claims/evora-execucao-da-receita-2025.yml:43 (perto do diff)
+    ledger/claims/evora-executivo-2025-ad.yml:38 (perto do diff)
+    ledger/claims/evora-executivo-2025-cdu.yml:38 (perto do diff)
+    ledger/claims/evora-executivo-2025-chega.yml:38 (perto do diff)
+    ledger/claims/evora-executivo-2025-ps.yml:38 (perto do diff)
+    ledger/claims/evora-indice-de-divida-2014.yml:33 (perto do diff)
+    ledger/claims/evora-indice-de-divida-2017.yml:33 (perto do diff)
+    ledger/claims/evora-indice-de-divida-2021.yml:33 (perto do diff)
+    ledger/claims/evora-indice-de-divida-2024.yml:33 (perto do diff)
+    ledger/claims/evora-limite-divida-2025.yml:48 (perto do diff)
+    ledger/claims/evora-limite-divida-dgal-2014.yml:38 (perto do diff)
+    ledger/claims/evora-limite-divida-dgal-2017.yml:43 (perto do diff)
+    ledger/claims/evora-limite-divida-dgal-2021.yml:38 (perto do diff)
+    ledger/claims/evora-limite-divida-dgal-2024.yml:38 (perto do diff)
+    ledger/claims/evora-margem-endividamento-2025.yml:43 (perto do diff)
+    ledger/claims/evora-orcamento-2025.yml:43 (perto do diff)
+    ledger/claims/evora-pael-emprestimo.yml:43 (perto do diff)
+    ledger/claims/evora-pagamentos-em-atraso-2025.yml:43 (perto do diff)
+    ledger/claims/evora-pelouros-2021-presidente.yml:38 (perto do diff)
+    ledger/claims/evora-pelouros-2021-total.yml:32 (perto do diff)
+    ledger/claims/evora-pelouros-2021-vice-presidente.yml:38 (perto do diff)
+    ledger/claims/evora-pelouros-2025-presidente.yml:38 (perto do diff)
+    ledger/claims/evora-pelouros-2025-total.yml:33 (perto do diff)
+    ledger/claims/evora-pelouros-2025-vereadora.yml:38 (perto do diff)
+    ledger/claims/evora-pelouros-2025-vice-presidente.yml:38 (perto do diff)
+    ledger/claims/evora-poder-de-compra-2023.yml:43 (perto do diff)
+    ledger/claims/evora-populacao-2021.yml:43 (perto do diff)
+    ledger/claims/evora-populacao-2025.yml:43 (perto do diff)
+    ledger/claims/evora-prazo-medio-de-pagamento-2023.yml:43 (perto do diff)
+    ledger/claims/evora-prazo-medio-de-pagamento-2025.yml:43 (perto do diff)
+    ledger/claims/evora-prr-aprovado-2026.yml:50 (perto do diff)
+    ledger/claims/evora-prr-execucao-2026.yml:32 (perto do diff)
+    ledger/claims/evora-prr-municipio-contratado.yml:50 (perto do diff)
+    ledger/claims/evora-prr-pago-2026.yml:50 (perto do diff)
+    ledger/claims/evora-prr-universidade-contratado.yml:50 (perto do diff)
+    ledger/claims/evora-prr-vencido-aprovado-2026.yml:58 (perto do diff)
+    ledger/claims/evora-prr-vencido-quota-2026.yml:32 (perto do diff)
+    ledger/claims/evora-receita-cobrada-2025.yml:43 (perto do diff)
+    ledger/claims/evora-saneamento-financeiro-2016.yml:43 (perto do diff)
+    ledger/claims/evora-vab-empresarial-2024.yml:43 (perto do diff)
+    ledger/claims/indice-de-divida-limite-legal.yml:39 (perto do diff)
+    ledger/claims/portugal-concentracao-vab4-2024.yml:43 (perto do diff)
+    scripts/gate-html.mjs:141
+    scripts/gate-html.mjs:146
+    scripts/gate-html.mjs:2715
+    scripts/gate-html.mjs:2871
+    scripts/gate-html.mjs:3545
+    scripts/gate-html.mjs:3749
+    scripts/gate-html.mjs:3763
+§1.30 · A conferência que faltava: o que está no ar contra o que está no repositório
+    README.md:108
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:58 (perto do diff)
+    scripts/gate-html.mjs:2594
+    scripts/gate-html.mjs:855
+    scripts/gate-html.mjs:878
+    studies-src/manifest.yml:44
+§1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    README.md:113
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    scripts/gate-html.mjs:3206
+    scripts/gate-html.mjs:3315
+    scripts/gate-html.mjs:3988
+    scripts/gate-html.mjs:7073
+    src/data/municipios.mjs:31
+    src/data/municipios.mjs:355
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/data/leituras.mjs:19
+    src/data/leituras.mjs:270
+    src/data/verbatim.mjs:134 (perto do diff)
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    astro.config.mjs:140
+    scripts/gate-html.mjs:5069
+§1.38 · A ortografia do sítio passa a ser uma só
+    README.md:34
+    README.md:62
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    README.md:66
+    scripts/gate-html.mjs:4944
+    scripts/gate-html.mjs:7956
+    scripts/gate-html.mjs:8655
+    src/lib/prova.mjs:213
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    README.md:178
+    README.md:69
+    scripts/gate-html.mjs:267
+    scripts/gate-html.mjs:359
+    scripts/gate-html.mjs:3852
+    scripts/gate-html.mjs:77
+    src/data/studies.mjs:271 (perto do diff)
+    src/data/studies.mjs:327 (perto do diff)
+    src/data/studies.mjs:38
+    src/data/verbatim.mjs:134 (perto do diff)
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    scripts/gate-html.mjs:3007
+    scripts/gate-html.mjs:3050
+    src/lib/prova.mjs:823 (perto do diff)
+§1.42 · Segunda revisão cruzada do bloco V
+    scripts/gate-html.mjs:3029
+    scripts/gate-html.mjs:3050
+    scripts/gate-html.mjs:3421
+    scripts/gate-html.mjs:7364
+§1.44 · A revisão cruzada da identidade v2
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:10
+    scripts/gate-html.mjs:870
+    src/data/verbatim.mjs:242
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    README.md:339
+    astro.config.mjs:140
+    scripts/gate-html.mjs:879
+    src/lib/prova.mjs:979
+§1.48 · A direção decide: a licença do conjunto é CC BY 4.0, e a regra 6 diz o que se faz
+    src/lib/prova.mjs:804 (perto do diff)
+§1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
+    src/data/studies.mjs:200 (perto do diff)
+    src/data/studies.mjs:232 (perto do diff)
+    src/data/studies.mjs:320 (perto do diff)
+    studies-src/manifest.yml:64
+    studies-src/manifest.yml:92
+§1.50 · O redesenho v3 abre: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados
+    README.md:464
+    README.md:496
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    README.md:484
+§1.62 · A ronda pós-fusão, 22.08: a direção decide as cinco pendências por recomendação do lugar de direção
+    README.md:529
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    README.md:74
+    README.md:83
+    scripts/check-cadeia.mjs:638
+    scripts/gate-html.mjs:3964
+    scripts/gate-html.mjs:84
+    scripts/gate-html.mjs:8655
+    src/lib/prova.mjs:1044
+    src/lib/prova.mjs:279
+§1.66 · As correções de UX depois da auditoria de 25.08, bloco A
+    design/especime-v3/INVENTARIO-FRASES.md:1134
+    design/especime-v3/INVENTARIO-FRASES.md:816
+§1.68 · As páginas dos 308 concelhos
+    scripts/gate-html.mjs:4751
+    scripts/gate-html.mjs:92
+    src/data/studies.mjs:620
+    src/data/studies.mjs:694
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    scripts/gate-html.mjs:1593
+§1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:46
+§1.86 · A identidade fecha: o nome, a marca e os tipos ficam como estão
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:146 (perto do diff)
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:201 (perto do diff)
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:43
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:56
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    scripts/gate-html.mjs:5844
+    scripts/gate-html.mjs:6745
+    scripts/gate-html.mjs:7970
+    scripts/gate-html.mjs:851
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    design/especime-v3/INVENTARIO-FRASES.md:1255
+    design/especime-v3/INVENTARIO-FRASES.md:1297
+    design/especime-v3/INVENTARIO-FRASES.md:1302
+    design/especime-v3/INVENTARIO-FRASES.md:1556
+    design/especime-v3/INVENTARIO-FRASES.md:1558
+    design/especime-v3/INVENTARIO-FRASES.md:1580
+    design/especime-v3/INVENTARIO-FRASES.md:165
+    design/especime-v3/INVENTARIO-FRASES.md:1660
+    design/especime-v3/INVENTARIO-FRASES.md:172
+    design/especime-v3/INVENTARIO-FRASES.md:182
+    design/especime-v3/INVENTARIO-FRASES.md:1973
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2147
+    design/especime-v3/INVENTARIO-FRASES.md:2151
+    design/especime-v3/INVENTARIO-FRASES.md:2180
+    design/especime-v3/INVENTARIO-FRASES.md:2251
+    design/especime-v3/INVENTARIO-FRASES.md:247
+    design/especime-v3/INVENTARIO-FRASES.md:2513
+    design/especime-v3/INVENTARIO-FRASES.md:2517
+    design/especime-v3/INVENTARIO-FRASES.md:2549
+    design/especime-v3/INVENTARIO-FRASES.md:2653
+    design/especime-v3/INVENTARIO-FRASES.md:2660
+    design/especime-v3/INVENTARIO-FRASES.md:271
+    design/especime-v3/INVENTARIO-FRASES.md:2711
+    design/especime-v3/INVENTARIO-FRASES.md:291
+    design/especime-v3/INVENTARIO-FRASES.md:298
+    design/especime-v3/INVENTARIO-FRASES.md:333
+    design/especime-v3/INVENTARIO-FRASES.md:442
+    design/especime-v3/INVENTARIO-FRASES.md:454
+    design/especime-v3/INVENTARIO-FRASES.md:471
+    design/especime-v3/INVENTARIO-FRASES.md:472
+    design/especime-v3/INVENTARIO-FRASES.md:473
+    design/especime-v3/INVENTARIO-FRASES.md:479
+    design/especime-v3/INVENTARIO-FRASES.md:840
+    design/especime-v3/INVENTARIO-FRASES.md:892
+    design/especime-v3/INVENTARIO-FRASES.md:911
+    design/especime-v3/INVENTARIO-FRASES.md:915
+    design/especime-v3/INVENTARIO-FRASES.md:971
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:66
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:67
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:61
+    scripts/check-lugar.mjs:424
+    scripts/check-lugar.mjs:436
+    scripts/check-lugar.mjs:437
+    scripts/check-lugar.mjs:438
+    scripts/check-lugar.mjs:439
+    scripts/check-lugar.mjs:440
+    scripts/check-lugar.mjs:441
+    scripts/check-lugar.mjs:442
+    scripts/check-lugar.mjs:443
+    scripts/check-lugar.mjs:444
+    scripts/check-lugar.mjs:445
+    scripts/check-lugar.mjs:446
+    scripts/check-lugar.mjs:447
+    scripts/check-lugar.mjs:448
+    src/data/municipios.mjs:153
+    src/lib/prova.mjs:469
+    tests/livro/indice.mjs:150
+    tests/livro/indice.mjs:45
+    tests/livro/indice.mjs:697 (perto do diff)
+    tests/livro/indice.mjs:74
+§1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:59
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:61
+    src/data/studies.mjs:16
+§1.100 · O Portal BASE declarado no Método: a única fonte que a casa lê com a identidade de um navegador
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:61
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2564
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:59
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:61
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:66
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:86
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:87
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:95
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:97
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    design/especime-v3/INVENTARIO-FRASES.md:2580
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:67
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:69
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:86
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:87
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:88
+§1.106 · «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+    scripts/check-lugar.mjs:498
+§1.107 · A sessão de 14.09: o painel semanal, as cinco noites lidas e a corrida abatida pelo GitHub, a resposta do INE, e a aterragem do F1.10
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:69
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:86
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    design/especime-v3/INVENTARIO-FRASES.md:1292
+    design/especime-v3/INVENTARIO-FRASES.md:1293
+    design/especime-v3/INVENTARIO-FRASES.md:1295
+    design/especime-v3/INVENTARIO-FRASES.md:1296
+    design/especime-v3/INVENTARIO-FRASES.md:1748
+    design/especime-v3/INVENTARIO-FRASES.md:1750
+    design/especime-v3/INVENTARIO-FRASES.md:1752
+    design/especime-v3/INVENTARIO-FRASES.md:1753
+    design/especime-v3/INVENTARIO-FRASES.md:1971
+    design/especime-v3/INVENTARIO-FRASES.md:1972
+    design/especime-v3/INVENTARIO-FRASES.md:1992
+    design/especime-v3/INVENTARIO-FRASES.md:1993
+    design/especime-v3/INVENTARIO-FRASES.md:1994
+    design/especime-v3/INVENTARIO-FRASES.md:1995
+    design/especime-v3/INVENTARIO-FRASES.md:1996
+    design/especime-v3/INVENTARIO-FRASES.md:1997
+    design/especime-v3/INVENTARIO-FRASES.md:1998
+    design/especime-v3/INVENTARIO-FRASES.md:1999
+    design/especime-v3/INVENTARIO-FRASES.md:2000
+    design/especime-v3/INVENTARIO-FRASES.md:2001
+    design/especime-v3/INVENTARIO-FRASES.md:257
+    design/especime-v3/INVENTARIO-FRASES.md:260
+    design/especime-v3/INVENTARIO-FRASES.md:261
+    design/especime-v3/INVENTARIO-FRASES.md:272
+    design/especime-v3/INVENTARIO-FRASES.md:273
+    design/especime-v3/INVENTARIO-FRASES.md:274
+    design/especime-v3/INVENTARIO-FRASES.md:275
+    design/especime-v3/INVENTARIO-FRASES.md:276
+    design/especime-v3/INVENTARIO-FRASES.md:277
+    design/especime-v3/INVENTARIO-FRASES.md:2821
+    design/especime-v3/INVENTARIO-FRASES.md:2835
+    design/especime-v3/INVENTARIO-FRASES.md:2836
+    design/especime-v3/INVENTARIO-FRASES.md:2837
+    design/especime-v3/INVENTARIO-FRASES.md:2838
+    design/especime-v3/INVENTARIO-FRASES.md:2839
+    design/especime-v3/INVENTARIO-FRASES.md:2840
+    design/especime-v3/INVENTARIO-FRASES.md:2847
+    design/especime-v3/INVENTARIO-FRASES.md:2848
+    design/especime-v3/INVENTARIO-FRASES.md:2851
+    design/especime-v3/INVENTARIO-FRASES.md:2852
+    design/especime-v3/INVENTARIO-FRASES.md:2853
+    design/especime-v3/INVENTARIO-FRASES.md:2854
+    design/especime-v3/INVENTARIO-FRASES.md:2855
+    design/especime-v3/INVENTARIO-FRASES.md:2856
+    design/especime-v3/INVENTARIO-FRASES.md:2857
+    design/especime-v3/INVENTARIO-FRASES.md:287
+    design/especime-v3/INVENTARIO-FRASES.md:290
+    design/especime-v3/INVENTARIO-FRASES.md:293
+    design/especime-v3/INVENTARIO-FRASES.md:305
+    design/especime-v3/INVENTARIO-FRASES.md:306
+    design/especime-v3/INVENTARIO-FRASES.md:307
+    design/especime-v3/INVENTARIO-FRASES.md:308
+    design/especime-v3/INVENTARIO-FRASES.md:309
+    design/especime-v3/INVENTARIO-FRASES.md:310
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:71
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:72
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:73
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:74
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:86
+    scripts/gate-html.mjs:4136
+    scripts/gate-html.mjs:4192
+    scripts/gate-html.mjs:4333
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    scripts/gate-html.mjs:4137
+    scripts/gate-html.mjs:4192
+    scripts/gate-html.mjs:4333
+§1.110 · «A casa» sai do Método e do Sobre
+    design/especime-v3/INVENTARIO-FRASES.md:2917
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:115
+§1.111 · Todo o estudo abre com a leitura do projeto: o resumo, o que se conclui, o que podia funcionar melhor
+    studies-src/manifest.yml:273 (perto do diff)
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:127 (perto do diff)
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:124 (perto do diff)
+    src/views/MunicipioView.astro:253 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:107
+    scripts/gate-html.mjs:4158
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/especime-v3/INVENTARIO-FRASES.md:3006 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:3061 (perto do diff)
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:410
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:203 (perto do diff)
+    src/data/areas.mjs:734 (perto do diff)
+    src/data/areas.mjs:747 (perto do diff)
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:39
+    scripts/check-pais.mjs:288
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    design/especime-v3/INVENTARIO-FRASES.md:3183
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    design/especime-v3/INVENTARIO-FRASES.md:3073 (perto do diff)
+§1.134 · O sítio que se atualiza e pensa sozinho: a decisão do diretor de 28.09.2026 sobre a atualização, a arrumação e a autonomia editorial
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:100
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    scripts/gate-html.mjs:227
+    studies-src/manifest.yml:181
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    design/especime-v3/INVENTARIO-FRASES.md:3520
+    design/especime-v3/INVENTARIO-FRASES.md:3522
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:499 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:383
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:384
+    scripts/gate-html.mjs:18
+    scripts/gate-html.mjs:40
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:26
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:94 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:92 (perto do diff)
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:94 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:60 (perto do diff)
+    design/observatorio/PLANO-fiabilidade-2026-09-02.md:160 (perto do diff)
+    scripts/provar-eyetext.mjs:303 (perto do diff)
+    src/components/NotaDoSucessor.astro:4 (perto do diff)
+    src/components/NotaDosAntecessores.astro:4 (perto do diff)
+    src/data/municipios.mjs:440 (perto do diff)
+    src/data/studies.mjs:189 (perto do diff)
+    src/data/studies.mjs:214 (perto do diff)
+    src/data/studies.mjs:229 (perto do diff)
+    src/data/studies.mjs:257 (perto do diff)
+    src/data/studies.mjs:303 (perto do diff)
+    src/data/studies.mjs:351 (perto do diff)
+    src/data/studies.mjs:815 (perto do diff)
+    src/data/studies.mjs:96 (perto do diff)
+§1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md:94 (perto do diff)
+60 decisão(ões) citada(s) em 142 ficheiro(s)

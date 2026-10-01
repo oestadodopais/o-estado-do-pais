@@ -1,0 +1,81 @@
+{
+  "o_que_e": "Os códigos das corridas dos três portões em cabeças anteriores à final do E1, lidos dos ficheiros .codigo que o scripts/leituras/portoes.sh escreveu depois de cada processo acabar; as pastas saíram do relatório depois desta leitura, e as corridas finais estão em real/ e ensaio/.",
+  "corridas": [
+    {
+      "corrida": "ensaio-3cab1215",
+      "cabeca": "3cab1215f543278dbd9bd433b7f3817339561b4d",
+      "build": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:48:02Z",
+        "fim": "2026-10-01T01:49:34Z"
+      },
+      "verify": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:49:34Z",
+        "fim": "2026-10-01T02:00:57Z"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "inicio": "2026-10-01T02:00:57Z",
+        "fim": "2026-10-01T02:00:57Z"
+      }
+    },
+    {
+      "corrida": "ensaio-b84039d0",
+      "cabeca": "b84039d03dccb095f74db7f6cca735b5b276d682",
+      "build": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:33:21Z",
+        "fim": "2026-10-01T01:34:52Z"
+      },
+      "verify": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:34:52Z",
+        "fim": "2026-10-01T01:46:13Z"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:46:13Z",
+        "fim": "2026-10-01T01:46:14Z"
+      }
+    },
+    {
+      "corrida": "real-3cab1215",
+      "cabeca": "3cab1215f543278dbd9bd433b7f3817339561b4d",
+      "build": {
+        "codigo": 1,
+        "inicio": "2026-10-01T01:47:42Z",
+        "fim": "2026-10-01T01:47:43Z"
+      },
+      "verify": {
+        "codigo": 1,
+        "inicio": "2026-10-01T01:47:43Z",
+        "fim": "2026-10-01T01:47:43Z"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:47:43Z",
+        "fim": "2026-10-01T01:47:43Z"
+      }
+    },
+    {
+      "corrida": "real-b84039d0",
+      "cabeca": "b84039d03dccb095f74db7f6cca735b5b276d682",
+      "build": {
+        "codigo": 1,
+        "inicio": "2026-10-01T01:31:27Z",
+        "fim": "2026-10-01T01:31:27Z"
+      },
+      "verify": {
+        "codigo": 1,
+        "inicio": "2026-10-01T01:31:27Z",
+        "fim": "2026-10-01T01:31:27Z"
+      },
+      "typecheck": {
+        "codigo": 0,
+        "inicio": "2026-10-01T01:31:27Z",
+        "fim": "2026-10-01T01:31:28Z"
+      }
+    }
+  ]
+}
