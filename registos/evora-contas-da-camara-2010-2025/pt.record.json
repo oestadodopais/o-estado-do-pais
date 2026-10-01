@@ -3887,19 +3887,19 @@
      "value": "1 712 963"
     },
     {
-     "end": 277,
+     "end": 288,
      "printed": "1 984 259",
      "row": "resultado-2016-corrigido",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2016_relatorio_gestao.pdf",
      "source_sha256": "3f193caed76483c02108abd38760fa376fb53819ae13d10f77309ee797d02303",
      "source_sha256_prefix": "3f193caed76483c0",
-     "start": 268,
+     "start": 279,
      "value": "1 984 259"
     }
    ],
    "i": 63,
    "kind": "paragraph",
-   "text": "Um número da tabela precisa de levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório faz a subtração e apresenta o valor corrigido como um prejuízo de €1 984 259. Os dois números são do próprio município."
+   "text": "Um número da tabela precisa de levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório escreve a subtração dos dois e apresenta como valor corrigido um prejuízo de €1 984 259, mas a subtração que imprime não dá esse valor. Os dois resultados são do próprio município: a tabela usa o primeiro, o resultado líquido do exercício, porque é o que as contas registam e é a mesma medida dos outros anos; o corrigido fica como o relatório o escreve, sem uma conta que o explique."
   },
   {
    "figures": [],

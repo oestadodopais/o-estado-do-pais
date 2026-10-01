@@ -40,11 +40,41 @@
      "source_sha256": null,
      "start": 666,
      "value": "15 000 000"
+    },
+    {
+     "end": 855,
+     "printed": "1 841 566,89",
+     "row": "rc-gepac",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 843,
+     "value": "1 841 566,89"
+    },
+    {
+     "end": 906,
+     "printed": "31 949,23",
+     "row": "rc-iefp",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 897,
+     "value": "31 949,23"
+    },
+    {
+     "end": 1019,
+     "others": [
+      "plano-saldo-turismo"
+     ],
+     "printed": "3.920.000",
+     "row": "plano-turismo-pago-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 1010,
+     "value": "3.920.000"
     }
    ],
    "i": 2,
    "kind": "paragraph",
-   "text": "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos? Évora candidatou-se em 2022 a Capital Europeia da Cultura com um orçamento de funcionamento de 45 784 603,10 € para 2022 a 2028, a pagar pelo Estado, pelo município, pela região e pela União Europeia, e com uma lista de obras nos equipamentos culturais da cidade. O painel europeu recomendou Évora em dezembro de 2022, e desde então acompanha o que a cidade prometeu, em três relatórios datados. O Estado criou a associação que gere o evento em dezembro de 2023 e fixou a sua parte em 15 000 000 € até 2027. A associação só ficou plenamente operacional em outubro de 2024, quase dois anos depois da escolha, e em 2025 recebeu dinheiro de uma origem só, o gabinete do Ministério da Cultura. A um ano e meio de 2027, os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo de junho de 2023 que reparte o dinheiro entre as partes não está publicado."
+   "text": "O que prometeu a candidatura de Évora a Capital Europeia da Cultura, o que escreveram sobre ela os peritos europeus que a acompanham, e que dinheiro está escrito nos atos públicos? Évora candidatou-se em 2022 a Capital Europeia da Cultura com um orçamento de funcionamento de 45 784 603,10 € para 2022 a 2028, a pagar pelo Estado, pelo município, pela região e pela União Europeia, e com uma lista de obras nos equipamentos culturais da cidade. O painel europeu recomendou Évora em dezembro de 2022, e desde então acompanha o que a cidade prometeu, em três relatórios datados. O Estado criou a associação que gere o evento em dezembro de 2023 e fixou a sua parte em 15 000 000 € até 2027. A associação só ficou plenamente operacional em outubro de 2024, quase dois anos depois da escolha. As contas de 2025 da associação registam como receita 1 841 566,89 € do gabinete do Ministério da Cultura e 31 949,23 € do apoio do IEFP à contratação. O dinheiro pago é outra coisa: o plano de 2026 da associação regista 3.920.000 € pagos pelo Turismo de Portugal no fim de 2025, que nas contas de 2025 são uma linha sem valor. A três meses de 2027, os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo de junho de 2023 que reparte o dinheiro entre as partes não está publicado."
   },
   {
    "figures": [],
@@ -755,10 +785,10 @@
        {
         "end": 69,
         "others": [
-         "bbs-op-total"
+         "bbs-desp-total"
         ],
         "printed": "45 784 603,10",
-        "row": "bbs-desp-total",
+        "row": "bbs-op-total",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 56,
@@ -865,10 +895,10 @@
     {
      "end": 144,
      "others": [
-      "bbs-op-total"
+      "bbs-desp-total"
      ],
      "printed": "45 784 603,10",
-     "row": "bbs-desp-total",
+     "row": "bbs-op-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
      "start": 131,
@@ -1974,10 +2004,10 @@
        {
         "end": 13,
         "others": [
-         "bbs-op-total"
+         "bbs-desp-total"
         ],
         "printed": "45 784 603,10",
-        "row": "bbs-desp-total",
+        "row": "bbs-op-total",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 0,
@@ -2707,30 +2737,6 @@
      {
       "figures": [],
       "text": "p. 108​"
-     }
-    ],
-    [
-     {
-      "figures": [],
-      "text": "Total da tabela​"
-     },
-     {
-      "figures": [
-       {
-        "end": 13,
-        "printed": "39 336 001,42",
-        "row": "bbs-cap-total",
-        "source_digest_kind": "pdf-sem-resumo",
-        "source_sha256": null,
-        "start": 0,
-        "value": "39 336 001,42"
-       }
-      ],
-      "text": "39 336 001,42 €​"
-     },
-     {
-      "figures": [],
-      "text": "p. 88​"
      }
     ]
    ]

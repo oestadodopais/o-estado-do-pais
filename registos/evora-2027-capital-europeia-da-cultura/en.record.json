@@ -40,11 +40,41 @@
      "source_sha256": null,
      "start": 644,
      "value": "15 000 000"
+    },
+    {
+     "end": 829,
+     "printed": "1 841 566,89",
+     "row": "rc-gepac",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 817,
+     "value": "1 841 566,89"
+    },
+    {
+     "end": 880,
+     "printed": "31 949,23",
+     "row": "rc-iefp",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 871,
+     "value": "31 949,23"
+    },
+    {
+     "end": 984,
+     "others": [
+      "plano-saldo-turismo"
+     ],
+     "printed": "3.920.000",
+     "row": "plano-turismo-pago-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 975,
+     "value": "3.920.000"
     }
    ],
    "i": 2,
    "kind": "paragraph",
-   "text": "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts? Évora bid in 2022 to be European Capital of Culture with an operating budget of 45 784 603,10 € for 2022 to 2028, to be paid by the State, the municipality, the region and the European Union, and with a list of works on the city's cultural venues. The European panel recommended Évora in December 2022 and has followed what the city promised ever since, in three dated reports. The State created the association that runs the event in December 2023 and fixed its share at 15 000 000 € up to 2027. The association only became fully operational in October 2024, almost two years after the choice, and in 2025 it received money from one source only, the culture ministry's office. A year and a half before 2027, the documents show three different totals for the cost of the event and no document that reconciles them, because the June 2023 protocol that divides the money between the parties is not published."
+   "text": "What did Évora's bid for European Capital of Culture promise, what did the European experts who follow it write about it, and what money is written into the official acts? Évora bid in 2022 to be European Capital of Culture with an operating budget of 45 784 603,10 € for 2022 to 2028, to be paid by the State, the municipality, the region and the European Union, and with a list of works on the city's cultural venues. The European panel recommended Évora in December 2022 and has followed what the city promised ever since, in three dated reports. The State created the association that runs the event in December 2023 and fixed its share at 15 000 000 € up to 2027. The association only became fully operational in October 2024, almost two years after the choice. The association's 2025 accounts record as revenue 1 841 566,89 € from the culture ministry's office and 31 949,23 € from IEFP hiring support. Money paid is another matter: the association's 2026 plan records 3.920.000 € paid by Turismo de Portugal at the end of 2025, which in the 2025 accounts is a line with no value. Three months before 2027, the documents show three different totals for the cost of the event and no document that reconciles them, because the June 2023 protocol that divides the money between the parties is not published."
   },
   {
    "figures": [],
@@ -755,10 +785,10 @@
        {
         "end": 60,
         "others": [
-         "bbs-op-total"
+         "bbs-desp-total"
         ],
         "printed": "45 784 603,10",
-        "row": "bbs-desp-total",
+        "row": "bbs-op-total",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 47,
@@ -1974,10 +2004,10 @@
        {
         "end": 13,
         "others": [
-         "bbs-op-total"
+         "bbs-desp-total"
         ],
         "printed": "45 784 603,10",
-        "row": "bbs-desp-total",
+        "row": "bbs-op-total",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 0,
@@ -2708,30 +2738,6 @@
       "figures": [],
       "text": "p. 108​"
      }
-    ],
-    [
-     {
-      "figures": [],
-      "text": "Table total​"
-     },
-     {
-      "figures": [
-       {
-        "end": 13,
-        "printed": "39 336 001,42",
-        "row": "bbs-cap-total",
-        "source_digest_kind": "pdf-sem-resumo",
-        "source_sha256": null,
-        "start": 0,
-        "value": "39 336 001,42"
-       }
-      ],
-      "text": "39 336 001,42 €​"
-     },
-     {
-      "figures": [],
-      "text": "p. 88​"
-     }
     ]
    ]
   },
@@ -3170,15 +3176,15 @@
        {
         "end": 12,
         "others": [
-         "plano-gepac",
-         "rcm-2025"
+         "rcm-2025",
+         "rcm-2026"
         ],
         "printed": "3 750 000,00",
-        "row": "rcm-2026",
+        "row": "plano-gepac",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 0,
-        "value": "3 750 000"
+        "value": "3 750 000,00"
        }
       ],
       "text": "3 750 000,00 €​"
@@ -4123,16 +4129,16 @@
        {
         "end": 7,
         "others": [
+         "bbs-obra-arquivo",
          "bbs-obra-remedios",
-         "prr-arena",
-         "prr-arquivo"
+         "prr-arena"
         ],
         "printed": "500 000",
-        "row": "bbs-obra-arquivo",
+        "row": "prr-arquivo",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 0,
-        "value": "500 000,00"
+        "value": "500 000"
        }
       ],
       "text": "500 000 €​"
@@ -5273,14 +5279,14 @@
        {
         "end": 12,
         "others": [
-         "plano-protocolo-economia"
+         "plano-alentejo-a"
         ],
         "printed": "4.000.000,00",
-        "row": "plano-alentejo-a",
+        "row": "plano-protocolo-economia",
         "source_digest_kind": "pdf-sem-resumo",
         "source_sha256": null,
         "start": 0,
-        "value": "4 000 000,00"
+        "value": "4.000.000,00"
        },
        {
         "end": 46,

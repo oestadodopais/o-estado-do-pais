@@ -63,27 +63,27 @@
      "value": "576 491 544"
     },
     {
-     "end": 351,
+     "end": 415,
      "printed": "167 372 756",
      "row": "prr-approved-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 340,
+     "start": 404,
      "value": "167 372 756"
     },
     {
-     "end": 393,
+     "end": 457,
      "printed": "86 944 669",
      "row": "prr-paid-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 383,
+     "start": 447,
      "value": "86 944 669"
     }
    ],
    "i": 3,
    "kind": "paragraph",
-   "text": "Évora is a relatively prosperous municipality in a region below the national average: the 2023 purchasing-power index puts the municipality at 111.5 and its region at 93.9, with the national average at one hundred. The 7 907 enterprises based in the municipality generated €576 491 544 of value added in 2024. The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council."
+   "text": "Évora is a relatively prosperous municipality in a region below the national average: the 2023 purchasing-power index puts the municipality at 111.5 and its region at 93.9, with the national average at one hundred. The 7 907 enterprises based in the municipality generated €576 491 544 of value added in 2024 (what they produced minus what they bought in order to produce). The recovery plan attributes €167 372 756 to the municipality, of which €86 944 669 was paid in the snapshot of 2026-08-19, and most of it goes through bodies that are not the council."
   },
   {
    "figures": [],
@@ -157,45 +157,45 @@
   {
    "figures": [
     {
-     "end": 90,
+     "end": 162,
      "printed": "21.5",
      "row": "conc-vab4-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 86,
+     "start": 158,
      "value": "21.5"
     },
     {
-     "end": 149,
+     "end": 221,
      "printed": "2.6",
      "row": "conc-vab4-pt",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 146,
+     "start": 218,
      "value": "2.6"
     },
     {
-     "end": 209,
+     "end": 281,
      "printed": "23 004",
      "row": "vab-per-worker-evora",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 203,
+     "start": 275,
      "value": "23 004"
     },
     {
-     "end": 226,
+     "end": 298,
      "printed": "31 900",
      "row": "vab-per-worker-pt",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 220,
+     "start": 292,
      "value": "31 900"
     }
    ],
    "i": 7,
    "kind": "paragraph",
-   "text": "The economy is concentrated and produces less than it consumes. Four enterprises hold 21.5% of the municipality's enterprise value added, against 2.6% in the country; value added per person employed is €23 004, against €31 900 in the country; and the aeronautics cluster exports far more than it generates in the municipality. Purchasing power above the national average sits beside productivity below it: Évora consumes better than it produces."
+   "text": "The economy is concentrated, and each person employed by the municipality's enterprises generates less value added than in the country. Four enterprises hold 21.5% of the municipality's enterprise value added, against 2.6% in the country; value added per person employed is €23 004, against €31 900 in the country; and the aeronautics cluster exports far more than it generates in the municipality. The purchasing-power index puts the municipality above the national average and value added per person employed puts it below, but they are different measures of different populations (those who live in the municipality, in one case, and those who work for the enterprises based there, in the other), and they do not say how much the municipality consumes."
   },
   {
    "figures": [
@@ -9698,6 +9698,12 @@
    "text": "Where the unexplored room is"
   },
   {
+   "figures": [],
+   "i": 149,
+   "kind": "paragraph",
+   "text": "The funding doors this section quotes are those of the annex, read on 2026-08-10; the deadlines up to 2026-09-09 have passed, as the annex says."
+  },
+  {
    "emphasis": [
     {
      "end": 64,
@@ -9752,7 +9758,7 @@
      "value": "21.5"
     }
    ],
-   "i": 149,
+   "i": 150,
    "kind": "paragraph",
    "text": "1. The aerospace cluster exports far more than it feeds locally. Chapter 88 alone exports €199 951 040, yet division 30 shows €24 573 447 of GVA and 914 jobs, and four firms hold 21.5% of all enterprise GVA. The gap between a world-scale export figure and a modest local value-added figure is what a thin supplier base looks like: machining, treatment, tooling, logistics and certification services around three anchor plants are the classic entry points, and the funding geometry fits — BPF guarantee lines are standing, the PT2030 company calls are open, and ESA BIC incubation exists precisely for that adjacency. The last State-contracted anchor is a decade old; the next tier was never contracted."
   },
@@ -9793,7 +9799,7 @@
      "value": "3 000 000"
     }
    ],
-   "i": 150,
+   "i": 151,
    "kind": "paragraph",
    "text": "2. Tourism's constraint is the short stay, and the Capital of Culture year will test capacity it hasn't built. Intensity already runs well above the national average, yet the average guest stays 1.7 nights and total accommodation revenue is €53 779 000 — a pass-through profile, with 2027 about to multiply demand onto it. The doors are open now — Qualification of Supply to €3 000 000 per project, Crescer com o Turismo until end-2026 — and close before the demand peak arrives. Capacity and stay-lengthening investment made in 2026 meets the 2027 test; investment decided in 2027 does not."
   },
@@ -9816,7 +9822,7 @@
      "value": "1 620 000"
     }
    ],
-   "i": 151,
+   "i": 152,
    "kind": "paragraph",
    "links": [
     {
@@ -9855,9 +9861,9 @@
      "value": "65 103 634"
     }
    ],
-   "i": 152,
+   "i": 153,
    "kind": "paragraph",
-   "text": "4. The countryside's door is not where its money is. Agriculture generates €45 228 740 of enterprise GVA and €65 103 634 of live-animal exports, but PEPAC's open windows are forestry-only and Portugal 2030 structurally excludes farmers. An Évora landowner's near-term openings are the six forestry and ecosystem calls closing between August and September 2026 — money for the montado rather than for the herd. Anyone waiting for the next productive-investment or young-farmers window is waiting on IFAP's calendar, not on Portugal 2030's."
+   "text": "4. The countryside's door is not where its money is. Agriculture generates €45 228 740 of enterprise GVA and €65 103 634 of live-animal exports, but PEPAC's open windows are forestry-only and Portugal 2030 structurally excludes farmers. On 2026-08-10, the windows open to an Évora landowner were the six forestry and ecosystem calls with deadlines between August and September 2026, and those deadlines have passed; it was money for the montado rather than for the herd. Anyone waiting for the next productive-investment or young-farmers window is waiting on IFAP's calendar, not on Portugal 2030's."
   },
   {
    "emphasis": [
@@ -9896,7 +9902,7 @@
      "value": "2 106"
     }
    ],
-   "i": 153,
+   "i": 154,
    "kind": "paragraph",
    "text": "5. The city's own execution is the quiet constraint. €102 624 704 of PRR money attributed to Évora sits, in the snapshot of 2026-08-19, in overdue locations while the construction section already generates €49 641 927 of GVA with 2 106 workers. Deadlines (PRR closes 2026) turn unbuilt approvals into forfeited money; execution capacity — project management, licensed contractors, works supervision — is itself a market in Évora for exactly as long as the backlog exists."
   },
@@ -9967,28 +9973,28 @@
      "value": "111.5"
     },
     {
-     "end": 467,
+     "end": 499,
      "printed": "9 106",
      "row": "uevora-students",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 462,
+     "start": 494,
      "value": "9 106"
     }
    ],
-   "i": 154,
+   "i": 155,
    "kind": "paragraph",
-   "text": "6. The productivity gap is the compound finding. GVA per worker of €23 004 against €31 900 nationally, wages €1 282 against €1 362 (2022), a micro-enterprise base of 7 605 firms — and, at the same time, an above-average purchasing-power index of 111.5. Évora consumes better than it produces; the difference is public salaries and pensions. The doors that act on the production side — innovation and qualification calls, research money through a university with 9 106 students, guarantee-backed investment credit — are the ones that are open."
+   "text": "6. The productivity gap is the compound finding. GVA per worker of €23 004 against €31 900 nationally, wages €1 282 against €1 362 (2022), a micro-enterprise base of 7 605 firms — and, at the same time, an above-average purchasing-power index of 111.5. The two measures are of different populations, and this study does not measure what explains the distance between them. The doors that act on the production side — innovation and qualification calls, research money through a university with 9 106 students, guarantee-backed investment credit — are the ones that are open."
   },
   {
    "figures": [],
-   "i": 155,
+   "i": 156,
    "kind": "heading",
    "level": 2,
    "text": "Sources"
   },
   {
-   "i": 156,
+   "i": 157,
    "kind": "table",
    "rows": [
     [
@@ -10158,7 +10164,7 @@
    ]
   },
   {
-   "i": 157,
+   "i": 158,
    "items": [
     {
      "emphasis": [
@@ -10176,7 +10182,7 @@
    "ordered": false
   },
   {
-   "i": 158,
+   "i": 159,
    "items": [
     {
      "emphasis": [
@@ -10195,7 +10201,7 @@
   },
   {
    "figures": [],
-   "i": 159,
+   "i": 160,
    "kind": "paragraph",
    "text": "Gaps of the series. Municipal population and tourist-nights series do not exist before 2011."
   }

@@ -3887,19 +3887,19 @@
      "value": "1 712 963"
     },
     {
-     "end": 278,
+     "end": 280,
      "printed": "1 984 259",
      "row": "resultado-2016-corrigido",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2016_relatorio_gestao.pdf",
      "source_sha256": "3f193caed76483c02108abd38760fa376fb53819ae13d10f77309ee797d02303",
      "source_sha256_prefix": "3f193caed76483c0",
-     "start": 269,
+     "start": 271,
      "value": "1 984 259"
     }
    ],
    "i": 63,
    "kind": "paragraph",
-   "text": "One number in the table needs its footnote printed beside it. The 2016 result of minus €3 337 288 includes, as a cost of 2016, VAT relating to the years 2009 to 2011 — €1 712 963. The report performs the subtraction itself and states the corrected figure as a loss of €1 984 259. Both numbers are the municipality's own."
+   "text": "One number in the table needs its footnote printed beside it. The 2016 result of minus €3 337 288 includes, as a cost of 2016, VAT relating to the years 2009 to 2011 — €1 712 963. The report writes the subtraction of the two and states as the corrected figure a loss of €1 984 259, but the subtraction it prints does not give that figure. Both results are the municipality's own: the table uses the first, the net result for the year, because it is what the accounts record and the same measure as the other years; the corrected one stays as the report writes it, with no arithmetic that explains it."
   },
   {
    "figures": [],
