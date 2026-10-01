@@ -3489,7 +3489,14 @@
    ],
    "i": 49,
    "kind": "paragraph",
-   "text": "É esta a aritmética que decide os quatro anos seguintes: a lista vencedora tem 2 dos 7 mandatos. O seu presidente mantém a presidência; o seu executivo não mantém a maioria. Quatro anos depois, essa aritmética produz a rejeição de um ano de contas."
+   "links": [
+    {
+     "end": 385,
+     "href": "/estudos/evora-contas-da-camara-2010-2025",
+     "start": 344
+    }
+   ],
+   "text": "É esta a aritmética que decide os quatro anos seguintes: a lista vencedora tem 2 dos 7 mandatos. O seu presidente mantém a presidência; o seu executivo não mantém a maioria. No último ano do mandato, esse executivo viu as contas de 2024 rejeitadas pela câmara, e os documentos não dizem porque votou assim cada membro; a votação está no estudo As contas da Câmara de Évora, 2010 a 2025."
   },
   {
    "figures": [],
