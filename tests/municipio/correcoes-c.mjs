@@ -36,6 +36,17 @@
  *      primeiro ecrã; escrever um nome acende o concelho certo; o que tem
  *      página abre-a e o que não tem não é porta nenhuma; e a secção «Com
  *      página» vem antes da lista por distritos.
+ *
+ * O C4 MUDOU DE PÁGINA (bloco L2b, 01.10.2026; a decisão 3 da §1.150). O índice
+ * dos concelhos (`/municipios`) deixou de existir (é um redirecionamento para
+ * «Lugares» desde a peça 2 do B1), e a régua rebentava a ler um ficheiro que já
+ * não é construído. A pesquisa dos 308 vive hoje em «Lugares», logo a seguir ao
+ * título, e é lá que o C4 mede a mesma pergunta, na forma que a página tem: o
+ * formulário vem do servidor e, sem guião, recarrega a página sem procurar (a
+ * decisão 4 da §1.150); os 308 resultados vêm do servidor numa lista escondida,
+ * cada um com a porta da sua página; a lista por distritos é a gaveta dos 29
+ * distritos e ilhas da Carta; e, no navegador, escrever um nome acende o
+ * concelho certo e abre a página dele.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -115,56 +126,59 @@ const INDICES = {
   metodo: { pt: '/metodo', en: '/en/method', antesDoBlocoB: 10, indiceAntes: 349.5 },
   agenda: { pt: '/agenda', en: '/en/agenda', antesDoBlocoB: 5, indiceAntes: 190.0 },
 };
-const MUNICIPIOS = { pt: '/municipios', en: '/en/municipalities' };
+/* L2b: a pesquisa dos 308 vive em «Lugares» (ver a nota do C4, acima). */
+const LUGARES = { pt: '/lugares/', en: '/en/places/' };
 
 /* ========================================================================== */
 /* C4, a parte que se lê do disco: a página construída, sem navegador.         */
 /* ========================================================================== */
 
-/* SEM SCRIPT A CAIXA NÃO APARECE, e é a regra da peça: «uma caixa de pesquisa
-   que não pesquisa é pior do que nenhuma». O bloco sai do servidor com `hidden`,
-   e quem o acende é `public/js/municipios.js`. A régua confere as duas metades:
-   o `hidden` no HTML e a página a citar o ficheiro que o tira. */
+/* SEM GUIÃO A PESQUISA NÃO PROCURA, e a régua mede-o como é (L2b; a decisão 4
+   da §1.150). Era a regra da peça de 25.08: «uma caixa de pesquisa que não
+   pesquisa é pior do que nenhuma», e o bloco saía do servidor com `hidden`. Em
+   «Lugares» o formulário vem à vista e, sem guião, submete para a própria página;
+   o que vem escondido é a LISTA dos 308 resultados, e quem a acende é
+   `public/js/municipios.js`. A régua confere as três metades: o formulário com o
+   destino, a lista escondida com os 308 resultados e a porta de cada um, e a
+   página a citar o guião que a acende. */
 for (const edicao of ['pt', 'en']) {
-  const f = path.join(DIST, MUNICIPIOS[edicao].replace(/^\//, ''), 'index.html');
+  const f = path.join(DIST, LUGARES[edicao].replace(/^\//, ''), 'index.html');
   const html = fs.readFileSync(f, 'utf8');
   const root = parse(html);
   const bloco = root.querySelector('[data-pesquisa-bloco]');
-  const itens = root.querySelectorAll('.pesquisa-item');
-  const comPagina = root.querySelectorAll('.pesquisa-item[data-tem-pagina]');
-  const escondidos = itens.filter((el) => el.hasAttribute('hidden'));
+  const formulario = bloco?.querySelector('form[role="search"]');
+  const lista = bloco?.querySelector('[data-pesquisa-lista]');
+  const itens = lista ? lista.querySelectorAll('.pesquisa-item') : [];
+  const daRota = (slug) => (edicao === 'pt' ? `/municipios/${slug}` : `/en/municipalities/${slug}`);
+  const comPorta = itens.filter((el) => el.querySelector('a[href]')?.getAttribute('href') === daRota(el.getAttribute('data-caop')));
   const script = html.includes('/js/municipios.js');
-  const secoes = root.querySelectorAll('.concelhos-grupo-k').map((el) => el.textContent.trim());
+  const distritos = root.querySelectorAll('[data-dobra-lugares="distritos"] a[href]');
+  const deDistrito = distritos.filter((a) => /^(\/en)?\/(distritos|districts)\/[^/]+\/?$/.test(a.getAttribute('href') ?? ''));
   conta(
-    /* A COBERTURA NÃO SE FIXA (bloco dos 308, P2). A célula pedia «um com página
-       e 307 escondidos», que era a cobertura da tarde em que nasceu. A regra é
-       outra: são 308 resultados, um por concelho da Carta; os que TÊM página
-       vêm à vista e são porta, e os que não têm vêm escondidos. As duas
-       parcelas somam 308, e é isso que se mede. */
-    `C4 · sem script a pesquisa não aparece, e os 308 resultados vêm do servidor · ${edicao}`,
+    /* A COBERTURA NÃO SE FIXA (bloco dos 308, P2): são 308 resultados, um por
+       concelho da Carta, e cada um é a porta da página do seu concelho. */
+    `C4 · sem guião a pesquisa não procura, e os 308 resultados vêm do servidor numa lista escondida · ${edicao}`,
     Boolean(bloco) &&
-      bloco.hasAttribute('hidden') &&
+      Boolean(formulario) &&
+      formulario.getAttribute('action') === LUGARES[edicao] &&
+      !bloco.hasAttribute('hidden') &&
+      Boolean(lista) &&
+      lista.hasAttribute('hidden') &&
       itens.length === 308 &&
-      comPagina.length + escondidos.length === 308 &&
-      escondidos.every((el) => !el.hasAttribute('data-tem-pagina')) &&
+      comPorta.length === 308 &&
       script,
-    `bloco com hidden: ${bloco ? bloco.hasAttribute('hidden') : 'não há bloco'} · ${itens.length} resultados, ${comPagina.length} com página, ${escondidos.length} escondidos · a página cita /js/municipios.js: ${script} · ${secoes.length} secções, a primeira «${secoes[0] ?? '(nenhuma)'}»`,
+    `bloco ${bloco ? 'presente' : 'ausente'}, formulário para «${formulario?.getAttribute('action') ?? '(nenhum)'}» · lista com hidden: ${lista ? lista.hasAttribute('hidden') : 'não há lista'} · ${itens.length} resultados, ${comPorta.length} com a porta da sua página · a página cita /js/municipios.js: ${script}`,
   );
-  /* A CÉLULA DA SECÇÃO «COM PÁGINA» PERDEU O OBJECTO (bloco dos 308, P2). Media
-     que os concelhos com página vinham numa secção antes da lista por distritos,
-     e essa secção existia porque um em 308 tinha página: chegar a esse um era
-     varrer 308 nomes. Com os 308 construídos, a secção era a lista inteira
-     repetida por cima da lista inteira, e saiu. O que fica medido é o que passou
-     a ser o índice: a pesquisa em cima, a cobertura pelas duas chaves da prova,
-     e a lista por distrito — as três na régua `tests/municipio/concelhos.mjs`,
-     que conta os 29 grupos da Carta e mais nenhum. */
+  /* A LISTA POR DISTRITOS É A GAVETA DOS DISTRITOS E DAS ILHAS (L2a, §1.149):
+     os 29 da Carta, cada um com a porta da sua página, numa lista fechada que se
+     abre sem guião. */
   conta(
-    `C4 · a lista é a dos distritos da Carta, sem secção repetida por cima · ${edicao}`,
-    secoes.length === 29 && !secoes.includes(edicao === 'pt' ? 'Com página' : 'With a page'),
-    `${secoes.length} secções · a primeira é «${secoes[0] ?? '(nenhuma)'}», a última «${secoes[secoes.length - 1] ?? '(nenhuma)'}»`,
+    `C4 · a lista por distritos é a gaveta dos 29 distritos e ilhas da Carta · ${edicao}`,
+    deDistrito.length === 29 && distritos.length === 29 && Boolean(root.querySelector('[data-dobra-lugares="distritos"] details')),
+    `${distritos.length} portas na gaveta, ${deDistrito.length} para páginas de distrito ou ilha`,
   );
   if (edicao === 'pt') {
-    medidas.c4_html = { itens: itens.length, comPagina: comPagina.length, escondidos: escondidos.length, secoes: secoes.slice(0, 3) };
+    medidas.c4_html = { itens: itens.length, comPorta: comPorta.length, distritos: distritos.length };
   }
 }
 
@@ -292,7 +306,7 @@ for (const [nome, cfg] of Object.entries(INDICES)) {
 /* ---------------------------------------------------------- C4 · a pesquisa, viva */
 for (const edicao of ['pt', 'en']) {
   const p = await ctx.newPage();
-  await p.goto(base + MUNICIPIOS[edicao], { waitUntil: 'networkidle' });
+  await p.goto(base + LUGARES[edicao], { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
 
   const campo = await p.evaluate(() => {
@@ -370,7 +384,7 @@ for (const edicao of ['pt', 'en']) {
     fs.mkdirSync(DIR_CAPTURAS, { recursive: true });
     const ctx2 = await navMovel.newContext({ ...devices['iPhone 13'], deviceScaleFactor: 2 });
     for (const [nome, rota] of [
-      ['municipios', MUNICIPIOS.pt],
+      ['lugares', LUGARES.pt],
       ['metodo', INDICES.metodo.pt],
       ['agenda', INDICES.agenda.pt],
     ]) {
