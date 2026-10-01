@@ -7,7 +7,7 @@ import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
-import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA } from './concelhos-do-portao.mjs';
+import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA, conferirTabelaDaVista } from './concelhos-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
@@ -8474,6 +8474,10 @@ for (const [id] of SERIES_DO_PORTAO) {
 if (SERIES_DO_PORTAO.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
   erros.push({ rel: 'ledger/series', msg: 'UE1: há séries e nenhuma página rendeu um ponto ou um nome de país: o detetor não viu nada.' });
 }
+/* L2b-c (o achado 4 da leitura a frio): a direção de cada medida na tabela da vista tem de bater com a autoridade
+   do portão, que é com a que ele reconta os lugares. Uma direção trocada só na vista dava lugares que a recontagem
+   recusa; trocada nas duas, já não passa calada, porque são duas declarações escritas à parte. */
+for (const msg of conferirTabelaDaVista()) erros.push({ rel: 'src/data/faixa-do-concelho.mjs', msg: `L2b-c: ${msg}.` });
 /* L2b: há medidas de concelho com linhas e nenhuma página rendeu um lugar ou uma contagem: o detetor das
    origens da faixa não viu nada. */
 if (FAIXAS_DO_PORTAO.contas.size && (ORIGENS_DOS_CONCELHOS.lugares === 0 || ORIGENS_DOS_CONCELHOS.contas === 0 || ORIGENS_DOS_CONCELHOS.portugal === 0)) {

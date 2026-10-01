@@ -1,0 +1,22 @@
+{
+  "nome": "l2b-c-portao-direcao-trocada-na-tabela-da-vista",
+  "ficheiro": "src/data/faixa-do-concelho.mjs",
+  "plantado": "a ordem do índice de dívida na tabela da vista, «do-mais-baixo» trocada por «do-mais-alto»",
+  "comando": "node scripts/gate-html.mjs, depois de npx astro build, scripts/stamp-version.mjs e scripts/cartoes.mjs com a tabela plantada",
+  "codigo": 1,
+  "mordidas": [
+    {
+      "re": "L2b-c: a tabela da vista conta «indice» do-mais-alto e o portão do-mais-baixo",
+      "viu": true
+    },
+    {
+      "re": "L2b: «data-concelho-lugar» de «indice#[a-z-]+» diz «\\d+» e a recontagem das linhas dá «\\d+»",
+      "viu": true
+    }
+  ],
+  "lugares_do_indice_recusados": 612,
+  "antes": "bf10289e1a32805a78ac9e60d82639263cb4e13807d0212429232d104f12c4b7",
+  "sha_plantado": "c33de1e9c798a50aaea946ee6c2d491874ba8e0b068ed983ab632827166d0b40",
+  "reposto": "bf10289e1a32805a78ac9e60d82639263cb4e13807d0212429232d104f12c4b7",
+  "passou": true
+}
