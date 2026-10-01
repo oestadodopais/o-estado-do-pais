@@ -1,0 +1,15 @@
+{
+  "o_que": "o peso das páginas antes da passagem L2b-b, medido na construção que estava em dist/ (a da cabeça do relatório do L2b, com as oito faixas por página)",
+  "construcao": "cc067e564e67ed39d4985ed09d7056c0a012434c",
+  "comando": "stat dos ficheiros de dist/ e a soma de todos os ficheiros (os.walk), antes de mexer",
+  "paginas": {
+    "abrantes": 58530,
+    "evora": 115366,
+    "penedono": 56051
+  },
+  "construcao_inteira": {
+    "bytes": 184717904,
+    "ficheiros": 12532,
+    "paginas_html": 7467
+  }
+}

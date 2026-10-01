@@ -1,0 +1,539 @@
+{
+  "passagem": "L2b-b",
+  "cabeca": "1a747a3215f32043efdbeb64642e0a13813fc9dc",
+  "construcao": "1a747a3215f32043efdbeb64642e0a13813fc9dc",
+  "guiao": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/medir-l2b-b.mjs",
+  "medidas": [
+    {
+      "nome": "l2b_b_medidas_com_faixa",
+      "valor": 4,
+      "comando": "src/data/faixa-do-concelho.mjs · as entradas com faixa: true",
+      "conhecido_positivo": {
+        "o_que": "o ganho médio tem faixa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_medidas_sem_faixa",
+      "valor": 4,
+      "comando": "idem · as entradas com faixa: false",
+      "conhecido_positivo": {
+        "o_que": "a população não tem faixa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_medidas_sem_faixa_com_a_razao_escrita",
+      "valor": 4,
+      "comando": "idem · as entradas sem faixa cuja razão diz «contagem»",
+      "conhecido_positivo": {
+        "o_que": "a razão da dívida diz contagem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_construcao",
+      "valor": "1a747a3215f32043efdbeb64642e0a13813fc9dc",
+      "comando": "dist/version.json · commit",
+      "conhecido_positivo": {
+        "o_que": "a construção é desta cabeça ou de uma cabeça só com ficheiros desta pasta por cima",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_paginas_de_concelho_lidas",
+      "valor": 616,
+      "comando": "node design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/medir-l2b-b.mjs · as páginas dos 308 nas duas edições em dist/",
+      "conhecido_positivo": {
+        "o_que": "a página de Évora existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_rendidas",
+      "valor": 2464,
+      "comando": "idem · os [data-faixa-concelho] das páginas de concelho",
+      "conhecido_positivo": {
+        "o_que": "Évora tem a faixa do ganho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_poderDeCompra",
+      "valor": 616,
+      "comando": "idem · os [data-faixa-concelho=\"poderDeCompra\"]",
+      "conhecido_positivo": {
+        "o_que": "a medida «poderDeCompra» tem faixa na tabela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_indice",
+      "valor": 616,
+      "comando": "idem · os [data-faixa-concelho=\"indice\"]",
+      "conhecido_positivo": {
+        "o_que": "a medida «indice» tem faixa na tabela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_pmp",
+      "valor": 616,
+      "comando": "idem · os [data-faixa-concelho=\"pmp\"]",
+      "conhecido_positivo": {
+        "o_que": "a medida «pmp» tem faixa na tabela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_ganho",
+      "valor": 616,
+      "comando": "idem · os [data-faixa-concelho=\"ganho\"]",
+      "conhecido_positivo": {
+        "o_que": "a medida «ganho» tem faixa na tabela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_cartoes_de_contagem",
+      "valor": 2464,
+      "comando": "idem · os cartões das quatro medidas sem faixa",
+      "conhecido_positivo": {
+        "o_que": "Évora tem o cartão da população",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_em_cartoes_de_contagem",
+      "valor": 0,
+      "comando": "idem · os [data-faixa-concelho] dentro dos cartões das contagens",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê a faixa do ganho no cartão do ganho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_lugares_rendidos",
+      "valor": 2444,
+      "comando": "idem · os [data-concelho-lugar] dentro das faixas",
+      "conhecido_positivo": {
+        "o_que": "o lugar de Évora no ganho está rendido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_lugares_diferentes_da_recontagem_independente",
+      "valor": 0,
+      "comando": "idem · cada lugar rendido contra a recontagem deste guião",
+      "conhecido_positivo": {
+        "o_que": "a recontagem dá a Évora um lugar no ganho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_abrantes_antes",
+      "valor": 58530,
+      "comando": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/bytes-antes.json · stat dos ficheiros de dist/ e a soma de todos os ficheiros (os.walk), antes de mexer",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro de antes diz a construção que mediu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_abrantes_depois",
+      "valor": 39023,
+      "comando": "stat -f %z dist/municipios/abrantes/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_evora_antes",
+      "valor": 115366,
+      "comando": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/bytes-antes.json · stat dos ficheiros de dist/ e a soma de todos os ficheiros (os.walk), antes de mexer",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro de antes diz a construção que mediu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_evora_depois",
+      "valor": 95923,
+      "comando": "stat -f %z dist/municipios/evora/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_penedono_antes",
+      "valor": 56051,
+      "comando": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/bytes-antes.json · stat dos ficheiros de dist/ e a soma de todos os ficheiros (os.walk), antes de mexer",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro de antes diz a construção que mediu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_penedono_depois",
+      "valor": 36837,
+      "comando": "stat -f %z dist/municipios/penedono/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_da_construcao_antes",
+      "valor": 184717904,
+      "comando": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/bytes-antes.json · a soma de todos os ficheiros de dist/",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_bytes_da_construcao_depois",
+      "valor": 172657105,
+      "comando": "a soma dos tamanhos de todos os ficheiros de dist/ (fs.readdirSync recursivo)",
+      "conhecido_positivo": {
+        "o_que": "a construção tem páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_paginas_html_depois",
+      "valor": 7467,
+      "comando": "idem · os ficheiros .html",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_codigo_do_check_navegacao",
+      "valor": 0,
+      "comando": "node tests/inicio/navegacao.mjs --prova --json design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/navegacao.json",
+      "conhecido_positivo": {
+        "o_que": "a célula contou páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_erros_do_check_navegacao",
+      "valor": 0,
+      "comando": "idem · erros",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_conferidas_pela_celula",
+      "valor": 2464,
+      "comando": "idem · faixas_dos_concelhos.faixas",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_cartoes_de_contagem_sem_faixa_conferidos",
+      "valor": 2464,
+      "comando": "idem · faixas_dos_concelhos.cartoes_de_contagem_sem_faixa",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_marcas_conferidas_pela_celula",
+      "valor": 752752,
+      "comando": "idem · faixas_dos_concelhos.marcas",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_lugares_conferidos_pela_celula",
+      "valor": 2444,
+      "comando": "idem · faixas_dos_concelhos.lugares",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_sem_valor",
+      "valor": 20,
+      "comando": "idem · faixas_dos_concelhos.sem_valor",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_comparacoes_sem_portugal",
+      "valor": 1232,
+      "comando": "idem · comparacoes.nenhuma",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_plantas_da_celula",
+      "valor": 15,
+      "comando": "idem · as plantas com o nome a começar por l2b",
+      "conhecido_positivo": {
+        "o_que": "a planta da faixa numa contagem está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_plantas_da_celula_que_morderam",
+      "valor": 15,
+      "comando": "idem · mordeu",
+      "conhecido_positivo": {
+        "o_que": "a planta da faixa tirada de um cartão mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_plantas_do_check_navegacao",
+      "valor": 78,
+      "comando": "idem · todas as plantas da corrida",
+      "conhecido_positivo": {
+        "o_que": "há plantas de outros blocos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_plantas_do_check_navegacao_que_morderam",
+      "valor": 78,
+      "comando": "idem · mordeu",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_check_cartao_codigo",
+      "valor": 0,
+      "comando": "node tests/cartao/cartao.mjs --prova > design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/check-cartao-prova.log",
+      "conhecido_positivo": {
+        "o_que": "a K1 contou cartões de concelho com a faixa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_check_cartao_estragos_plantados",
+      "valor": 16,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_check_cartao_estragos_vistos",
+      "valor": 16,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_check_cartao_cartoes_de_concelho_com_a_faixa",
+      "valor": 2464,
+      "comando": "idem · a linha da K1",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_plantas_do_portao",
+      "valor": 6,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/l2b-2026-10-01/l2b-b node tests/pais/portoes.mjs --prefixo l2b-",
+      "conhecido_positivo": {
+        "o_que": "a planta do lugar numa contagem está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_plantas_do_portao_que_morderam_com_os_bytes_repostos",
+      "valor": 6,
+      "comando": "idem · passou, código 1 e sha256 antes igual ao reposto",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_capturas",
+      "valor": 20,
+      "comando": "node design/especime-v3/medicoes/l2b-2026-10-01/captar-l2b.mjs l2b-b",
+      "conhecido_positivo": {
+        "o_que": "há uma captura de Penedono a 390 px em português",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_problemas_nas_capturas",
+      "valor": 0,
+      "comando": "idem · problemas (transbordo, HTTP, faixas a sair do cartão)",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem resultados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_faixas_em_contagens_nas_capturas",
+      "valor": 0,
+      "comando": "idem · faixas_em_contagens, somadas nas 20 capturas",
+      "conhecido_positivo": {
+        "o_que": "as capturas contam faixas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_altura_evora_pt_390",
+      "valor": 9435,
+      "comando": "idem · a altura da página a 390 px, em português",
+      "conhecido_positivo": {
+        "o_que": "a captura existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_altura_penedono_pt_390",
+      "valor": 2645,
+      "comando": "idem · a altura da página a 390 px, em português",
+      "conhecido_positivo": {
+        "o_que": "a captura existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_mapa_citacoes_na_linha",
+      "valor": 156,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md > design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/conferir-mapa.txt",
+      "conhecido_positivo": {
+        "o_que": "o mapa cita o ficheiro com o nome novo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_mapa_citacoes_longe_da_linha",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_mapa_citacoes_nao_encontradas",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_decisoes_citadas_nos_ficheiros_a_tocar",
+      "valor": 27,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros> > design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/decisoes-em-vigor-antes.txt",
+      "conhecido_positivo": {
+        "o_que": "a §1.130 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_ficheiros_lidos_pelas_decisoes_em_vigor",
+      "valor": 8,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_portao_build_codigo",
+      "valor": "NÃO LIDO",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>, copiado para design/especime-v3/medicoes/l2b-2026-10-01/portoes/l2b-b",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro da cabeça da corrida existe",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2b_b_portao_build_segundos",
+      "valor": "NÃO LIDO",
+      "comando": "idem · build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2b_b_portao_verify_codigo",
+      "valor": "NÃO LIDO",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>, copiado para design/especime-v3/medicoes/l2b-2026-10-01/portoes/l2b-b",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro da cabeça da corrida existe",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2b_b_portao_verify_segundos",
+      "valor": "NÃO LIDO",
+      "comando": "idem · verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2b_b_portao_typecheck_codigo",
+      "valor": "NÃO LIDO",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>, copiado para design/especime-v3/medicoes/l2b-2026-10-01/portoes/l2b-b",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro da cabeça da corrida existe",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2b_b_portao_typecheck_segundos",
+      "valor": "NÃO LIDO",
+      "comando": "idem · typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "l2b_b_simbolos_gastos",
+      "valor": "NÃO MEDIDO: o contador que a ferramenta mostra ao agente não andou durante a passagem",
+      "comando": "design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/custo-inicio.json menos design/especime-v3/medicoes/l2b-2026-10-01/l2b-b/custo-fim.json (as duas leituras do contador)",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l2b_b_segundos_de_parede",
+      "valor": 807,
+      "comando": "idem · fim_utc menos inicio_utc",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    }
+  ]
+}
