@@ -244,7 +244,9 @@ fatal: path 'content/17 Évora Quem Governou/Technical Source/documento.en.md.tm
       }
      ],
      "bate": true,
-     "palavras_da_frase_fora_das_linhas_citadas": []
+     "palavras_da_frase_fora_das_linhas_citadas": [
+      "council's"
+     ]
     }
    }
   }

@@ -527,4 +527,4 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
-| e1b | 2 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem E1b: a leitura do Évora 2027 nas duas línguas (decisão 4 do lugar de direção), que a lista dos estudos e a página de Évora passam a render como resumo do estudo, no lugar da descrição. A frase são as duas frases impressas na abertura do estudo, sem as duas datas, e não tem números. Nenhuma cadeia sai. |
+| e1b | 2 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem E1b: a leitura do Évora 2027 nas duas línguas (decisão 4 do lugar de direção), que a lista dos estudos e a página de Évora passam a render como resumo do estudo, no lugar da descrição. A frase são as duas frases impressas na abertura do estudo, sem as duas datas e com «a câmara» no lugar de «o município» (a L3 do check:lugar mediu a palavra na segunda corrida dos portões), e não tem números. Nenhuma cadeia sai. |

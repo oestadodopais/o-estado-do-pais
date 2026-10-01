@@ -591,14 +591,16 @@ export const LEITURAS = {
        sítio (os seus números vivem no documento alojado, com o livro do próprio
        estudo), e por isso a leitura não tem medidas nem números: a frase são as
        duas frases impressas que a origem abaixo cita, sem as duas datas que as
-       trariam (o ano do evento e o mês do protocolo), e não diz mais do que elas. */
+       trariam (o ano do evento e o mês do protocolo), e com «a câmara» no lugar
+       de «o município», que é a palavra do sítio para quem governa o concelho
+       (a L3 do check:lugar, §1.98); não diz mais do que elas. */
     medidas: [],
     frase: {
       pt: [
-        'O dinheiro do Estado é o que chegou; o do município é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado.',
+        'O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado.',
       ],
       en: [
-        'The State’s money is what arrived; the municipality’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published.',
+        'The State’s money is what arrived; the council’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published.',
       ],
     },
     origem: {
