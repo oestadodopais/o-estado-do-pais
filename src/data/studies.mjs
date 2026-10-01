@@ -186,7 +186,7 @@ export const WORKS = [
     slug: 'evora-quinze-anos-cinco-mandatos',
     tema: 'governo-e-democracia',
     subject: 'evora',
-    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145) por três estudos: as finanças
+    /* A 01.10.2026 SUCEDERAM-LHE TRÊS ESTUDOS (bloco E1, §1.145): as finanças
        e o pessoal foram para as contas, as eleições e as decisões para quem
        governou, e a série socioeconómica para a economia. Fica alojado como
        edição datada, fora do índice dos estudos e da página do concelho. */
@@ -211,7 +211,7 @@ export const WORKS = [
     slug: 'evora-economia-investidores-portas-abertas-2026',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
-    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
     sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     editions: [
       { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null, updated: null },
@@ -226,7 +226,7 @@ export const WORKS = [
     slug: 'evora-orcamentado-pago-devido-2025',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
-    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
     sucedidoPor: [{ slug: 'evora-contas-da-camara-2010-2025' }],
     /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de
        ponteiro. DECISIONS §1.49. */
@@ -254,7 +254,7 @@ export const WORKS = [
     slug: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
     tema: 'governo-e-democracia',
     subject: 'evora',
-    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
     sucedidoPor: [{ slug: 'evora-quem-governou-a-camara-2009-2025' }],
     editions: [
       {
@@ -300,7 +300,7 @@ export const WORKS = [
     slug: 'evora-prometido-pago-auditado-2026',
     tema: 'economia-e-financas-publicas',
     subject: 'evora',
-    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
     sucedidoPor: [{ slug: 'evora-economia-e-dinheiro-publico-de-fora-da-camara' }],
     /**
      * A DATA, e como foi encontrada. Este trabalho nunca passou por um
@@ -348,7 +348,7 @@ export const WORKS = [
     slug: 'evora-2027-prometido-painel-dinheiro',
     tema: 'cultura',
     subject: 'evora',
-    /* SUCEDIDO A 01.10.2026 (bloco E1, §1.145), e alojado como edição datada. */
+    /* A 01.10.2026 SUCEDEU-LHE UM ESTUDO NOVO (bloco E1, §1.145), e fica alojado como edição datada. */
     sucedidoPor: [{ slug: 'evora-2027-capital-europeia-da-cultura' }],
     /**
      * O TÍTULO É O QUE O DOCUMENTO IMPRIME, palavra por palavra (16.09.2026,

@@ -29,9 +29,10 @@ export const ROTULOS_B1 = {
     lugares: 'Lugares', regioes: 'Regiões', distritos: 'Distritos e ilhas',
     todasAsMedidasA: 'Todas as medidas de ', todasAsMedidasB: '',
     todasAsMudancas: 'Todas as mudanças',
-    /* A nota do sucessor, à cabeça de um estudo com sucessor (bloco E1). */
-    edicaoDatada: 'Edição datada.', sucedidoA: 'Sucedido a', sucedidoPor: 'por',
-    sucedidoPorVarios: 'por três estudos:', sucedidoEm: 'em',
+    /* A nota do sucessor, à cabeça de um estudo com sucessor (bloco E1). «Suceder a»
+       não tem passiva: diz-se «a 01.10.2026 sucedeu-lhe», e não «foi sucedido por». */
+    edicaoDatada: 'Edição datada.', sucedidoA: 'A', sucedidoPor: 'sucedeu-lhe',
+    sucedidoPorVarios: 'sucederam-lhe três estudos:', sucedidoEm: 'em',
     sucedeA: 'Sucede a', e: 'e' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
