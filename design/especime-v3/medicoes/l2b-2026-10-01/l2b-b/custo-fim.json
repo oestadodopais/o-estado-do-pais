@@ -1,0 +1,9 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor, e a hora do relógio da máquina, para a passagem L2b-b",
+  "simbolos_restantes_no_fim": 14177781,
+  "lido_no_fim": "ao escrever a secção L2b-b do relatório, antes da corrida final dos portões da passagem",
+  "contador_parado": true,
+  "porque": "o contador que a ferramenta mostra ao agente ficou em 14177781 em todas as chamadas desta passagem, desde a chegada da mensagem do lugar de direção: não se pôs em dia a meio da passagem, e a diferença entre as duas leituras (0) não é o custo. Os símbolos desta passagem ficam por medir aqui; o lugar de direção tem o total que a ferramenta reporta para o agente no fim.",
+  "fim_utc": "2026-10-01T23:15:37Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ no momento da leitura"
+}

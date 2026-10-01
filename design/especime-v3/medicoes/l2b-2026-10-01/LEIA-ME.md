@@ -2,6 +2,8 @@
 
 *Bloco L2b, 01.10.2026, pelo brief `design/observatorio/BRIEF-L2b-o-concelho-entre-os-308.md`, pela §1.143 e pela §1.149, com a §1.140 como modelo. Construtor: Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `l2b-2026-10-01`, sobre o commit do brief, `9b41123a`. Cada número deste relatório está num ficheiro desta pasta, quase todos em `medidas.json`, escrito por `medir-l2b.mjs`, com o comando e um conhecido-positivo em cada medida. Sem travessões.*
 
+*A passagem L2b-b, no fim, tirou a faixa às quatro contagens, pela decisão do lugar de direção sobre a §1.143(4); as secções até lá descrevem o bloco na cabeça do seu relatório, `cc067e56`, com as oito faixas por página.*
+
 ## O teste de aceitação, e onde se mede
 
 O do §2 do brief, ponto por ponto:
@@ -126,3 +128,25 @@ Símbolos: 764496 até ao início deste relatório, a diferença entre as duas l
 - **A leitura a frio** pelo Codex, e a entrada `l2b` em `critica/REVISOES-DO-INVENTARIO.md`, que está «por ler».
 - **Uma citação do mapa do repositório**, na secção do PP1, aponta para `tests/inicio/pesquisa-da-primeira.mjs`, que o L2a mudou de nome; não lhe mexi, porque descreve outro bloco. As outras 154 citações conferem à linha (`conferir-mapa.txt`), com as que as linhas novas do L2b empurraram já acertadas.
 - **A região e o distrito** como referência ficam para depois, como o brief decide (§5, decisão 2).
+
+## L2b-b · só as taxas e os rácios têm faixa, 01.10.2026
+
+*As decisões do lugar de direção sobre os dois pontos deixados pelo L2b: a §1.143(4) manda, e o brief estava errado ao enumerar as contagens; o poder de compra compara-se com a base do índice, e fica. Construtor: Claude Opus 5.5, na mesma worktree e no mesmo ramo, sobre `fd85903a`. Os registos da passagem estão em `l2b-b/`, e as medidas em `l2b-b/medidas.json`, escrito por `l2b-b/medir-l2b-b.mjs`; as do L2b ficam em `medidas.json`, como estavam.*
+
+- **A tabela diz, por medida, se o cartão leva a faixa e porquê** (`src/data/faixa-do-concelho.mjs`: `faixa` e `porqueAFaixa`). Têm faixa as quatro taxas e rácios, o índice de dívida, o ganho médio mensal, o poder de compra e o prazo médio de pagamento; não a têm as quatro contagens, a população, o desemprego registado, as empresas e a dívida em euros, porque uma contagem não se ordena e o lugar só diria o tamanho do concelho (§1.143, decisão 4, agora citada na tabela). O resolvedor devolve `null` para uma medida sem faixa, e esses cartões ficam como estavam antes do L2b.
+- **Os portões e a célula, com uma planta de cada lado.** O leitor dos portões só faz a conta das medidas com faixa, e o portão de HTML recusa uma marca de lugar numa contagem, com a razão (planta `l2b-b-portao-lugar-numa-contagem`); a regra do selo da faixa só vale numa medida com faixa. A K1 recusa a faixa no cartão de uma contagem (planta 14 da prova do `check:cartao`). A célula FC exige a faixa nas quatro taxas e rácios e a ausência dela nas quatro contagens: a planta `l2b-faixa-tirada-de-um-cartao` tira a do ganho, e a planta `l2b-b-faixa-numa-contagem` põe uma no cartão da população; as duas mordem na FC1.
+- **O que a construção da cabeça `1a747a32` rende:** 2464 faixas, 616 em cada uma das quatro medidas; 2464 cartões de contagem, com 0 faixas; 2444 lugares, com 0 diferentes da recontagem independente; 20 faixas sem valor publicado, que dizem que não têm lugar; 1232 que dizem «Sem comparação com Portugal no mesmo período.» (o índice e o prazo); 752752 marcas refeitas dos valores pela célula.
+- **As plantas:** 15 da célula, todas a morder, e 78 do `check:navegacao`, todas a morder; 16 estragos plantados na prova do `check:cartao` e 16 vistos; 6 do portão de HTML, todas a sair com 1 e a mordida esperada, com os bytes repostos.
+- **O mapa do repositório:** a citação da secção do PP1 aponta para `tests/inicio/lugares-no-navegador.mjs`, o nome que o L2a deu ao ficheiro, e a secção do L2b diz a regra das contagens; 156 citações conferidas à linha, 0 longe e 0 perdidas (`l2b-b/conferir-mapa.txt`).
+- **O peso, antes e depois desta passagem:** a página de Abrantes passa de 58530 para 39023 bytes, a de Évora de 115366 para 95923 e a de Penedono de 56051 para 36837; a construção inteira, de 184717904 para 172657105 bytes, com as mesmas 7467 páginas (`l2b-b/bytes-antes.json`, medido na construção de `cc067e56` antes de mexer).
+- **As capturas**, refeitas nas cinco larguras e nas duas edições sobre a construção de `1a747a32`, como `l2b-b-<evora|penedono>-<pt|en>-<largura>.png` na mesma pasta das capturas, com o manifesto em `l2b-b/capturas.json`: 20 capturas, 0 problemas e 0 faixas nas contagens; a 390 px, a página de Évora mede 9435 px de altura e a de Penedono 2645. As capturas do L2b ficam como estavam.
+- **As decisões em vigor** nos ficheiros que a passagem tocou: 27 decisões citadas em 8 ficheiros, lidas antes de mexer (`l2b-b/decisoes-em-vigor-antes.txt`). A §1.130 (nenhuma palavra de juízo) e a §1.140 (a faixa da União como modelo) ficam; a §1.143(4) é a que esta passagem aplica.
+
+**Os commits da passagem:** `6ede3c92` (a tabela e o resolvedor), `c45d0f5a` (os portões, a K1, a célula e as plantas), `a74049c4` (o mapa do repositório), `1a747a32` (o captor com a fase da passagem), o commit desta secção, das medidas, das provas e da resposta curta, e o seguinte, com os códigos dos portões.
+
+**Os portões:** correm por `scripts/leituras/portoes.sh` (a tranca da máquina) na cabeça do commit desta secção, e os códigos, as horas e os registos entram no commit seguinte, em `portoes/l2b-b/`, com a cabeça ao lado.
+
+**O custo:** os símbolos desta passagem ficam por medir aqui. O contador que a ferramenta mostra ao agente ficou em 14177781 em todas as chamadas da passagem, desde a chegada da mensagem do lugar de direção, e a diferença entre as duas leituras não é o custo (`l2b-b/custo-inicio.json` e `l2b-b/custo-fim.json` dizem-no); o lugar de direção tem o total que a ferramenta reporta para o agente. Os segundos de parede, da chegada da mensagem ao começo desta secção: 807, das duas horas guardadas nos mesmos ficheiros. Modelo: Claude Opus 5.5, sem subagentes.
+
+**O que fica:** as cinco réguas à mão que rebentam desde o L2a, para um bloco à parte; a leitura a frio.
+

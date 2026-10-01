@@ -1,0 +1,99 @@
+[
+  {
+    "nome": "l2b-portao-um-lugar-errado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L2b: «data-concelho-lugar» de «ganho#evora» diz «\\d+» e a recontagem das linhas dá «\\d+»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450",
+        "reposto": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450"
+      }
+    ]
+  },
+  {
+    "nome": "l2b-portao-uma-contagem-errada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L2b: «data-concelho-conta» de «pmp» diz «\\d+» e a recontagem das linhas dá «\\d+»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/municipalities/evora/index.html",
+        "antes": "0a3344d3ef30c2533c31e3439f7b84e1afebd8fe5a024ec3a02099ed5d834269",
+        "reposto": "0a3344d3ef30c2533c31e3439f7b84e1afebd8fe5a024ec3a02099ed5d834269"
+      }
+    ]
+  },
+  {
+    "nome": "l2b-portao-um-empate-errado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L2b: «data-concelho-a-par» de «pmp#agueda» diz «\\d+» e a recontagem das linhas dá «\\d+»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/agueda/index.html",
+        "antes": "ff30635cbebb49af43066544b4d6a5f4d82747f25f836b418c112e24d029554a",
+        "reposto": "ff30635cbebb49af43066544b4d6a5f4d82747f25f836b418c112e24d029554a"
+      }
+    ]
+  },
+  {
+    "nome": "l2b-portao-portugal-de-outra-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"taxa-de-desemprego-2024\" aparece sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450",
+        "reposto": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450"
+      }
+    ]
+  },
+  {
+    "nome": "l2b-portao-faixa-sem-a-porta-do-cartao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"evora-ganho-medio-mensal-2024\" aparece sem selo para a sua própria linha",
+      "o valor da afirmação \"ganho-medio-mensal-2024\" aparece sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450",
+        "reposto": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450"
+      }
+    ]
+  },
+  {
+    "nome": "l2b-b-portao-lugar-numa-contagem",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L2b-b: «data-concelho-lugar» dá um lugar na medida «populacao», que é uma contagem e não tem faixa"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450",
+        "reposto": "fd757689f6cc7a6a41b9cf7c42ddc969fa67473a58dd064cbaa6bff2cb8bd450"
+      }
+    ]
+  }
+]
