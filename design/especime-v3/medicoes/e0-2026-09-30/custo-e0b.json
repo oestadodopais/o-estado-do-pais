@@ -1,0 +1,46 @@
+{
+  "inicio": "2026-09-30T22:26:35.480Z",
+  "segundos_decorridos": 3565.5,
+  "mesma_sessao_do_e0": true,
+  "simbolos_desde_final_e0": 408878,
+  "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5.",
+  "medido_em": "2026-09-30T23:26:00.999446+00:00",
+  "proveniencia": "custo.json na cabeça a99d45cc e mandato E0c, ponto 3.",
+  "construtor_simbolos": 408878,
+  "revisores_automaticos": [
+    {
+      "sessao": "01a0f46d-3a10-7143-ae1c-eca7ea3b2a98",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-09-30T22:26:34.160Z",
+      "inicio_e0b": null,
+      "ultima_amostra": "2026-09-30T23:06:02.575Z",
+      "simbolos": {
+        "input_tokens": 119553,
+        "cached_input_tokens": 56576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 515,
+        "reasoning_output_tokens": 272,
+        "total_tokens": 120068
+      },
+      "simbolos_sem_cache_mais_saida": 63492
+    },
+    {
+      "sessao": "01a0f496-bd66-7793-a953-2a8eb522ebb1",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-09-30T23:11:54.744Z",
+      "inicio_e0b": null,
+      "ultima_amostra": "2026-09-30T23:25:37.026Z",
+      "simbolos": {
+        "input_tokens": 57956,
+        "cached_input_tokens": 31232,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 283,
+        "reasoning_output_tokens": 135,
+        "total_tokens": 58239
+      },
+      "simbolos_sem_cache_mais_saida": 27007
+    }
+  ],
+  "revisores_simbolos": 90499,
+  "total_cobrado_simbolos": 499377
+}

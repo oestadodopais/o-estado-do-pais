@@ -384,7 +384,7 @@ Chamada: `sh scripts/leituras/portoes.sh . design/especime-v3/medicoes/e0-2026-0
 
 O E0 acabou em 412 261 símbolos na linha tokens used, segundo o ponto 5 do mandato. A amostra conservada em [custo-e0-original.json](custo-e0-original.json) tinha 401 031; foi lida antes do fim. O terminal original não está no ramo, e o valor final é transcrito do mandato, com essa proveniência em [custo-final-e0.json](custo-final-e0.json).
 
-Nesta passagem, o início foi lido da mensagem de retoma da sessão: 2026-09-30T22:26:35.480Z. A amostra de 2026-09-30T23:26:00.999446+00:00 mede 3565,5 segundos desde a retoma e 408 878 símbolos desde o contador final E0. Modelo lido do contexto da sessão: `gpt-6.1-sol`. É uma amostra antes do fecho, não uma linha final do terminal.
+Nesta passagem, o início foi lido da mensagem de retoma da sessão: 2026-09-30T22:26:35.480Z. A amostra de 2026-09-30T23:26:00.999446+00:00 mede 3565,5 segundos desde a retoma e 408 878 símbolos do construtor desde o contador final E0. As duas sessões do revisor automático acrescentam 63 492 e 27 007, somando 90 499 símbolos. O total cobrado da passagem nesta amostra é 499 377, ao lado dos 408 878 do construtor. A amostra conserva-se em custo-e0b.json e no campo e0b de custo.json; a E0c não prolonga esse contador. Modelo lido do contexto da sessão: `gpt-6.1-sol`. É uma amostra antes do fecho, não uma linha final do terminal.
 
 ### O que fica por fazer
 
