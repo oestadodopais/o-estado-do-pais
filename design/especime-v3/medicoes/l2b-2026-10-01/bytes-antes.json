@@ -1,0 +1,16 @@
+{
+  "o_que": "o tamanho em bytes de três páginas de concelho na construção de base, antes do bloco",
+  "construcao": "9b41123a182e48676b18ca17f50d53304eeb3c8b",
+  "comando": "stat -f %z <construção de base>/municipios/<slug>/index.html (a construção de base guardada fora do repositório, da cabeça que o version.json dela diz)",
+  "paginas": {
+    "evora": 78684,
+    "abrantes": 21206,
+    "penedono": 19956
+  },
+  "construcao_inteira": {
+    "bytes": 161265223,
+    "ficheiros": 12531,
+    "paginas_html": 7467,
+    "comando": "a soma dos tamanhos de todos os ficheiros da construção de base (os.walk), fora do repositório"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "brief": "design/observatorio/BRIEF-L2b-o-concelho-entre-os-308.md",
+  "guiao": "design/observatorio/medidas/BRIEF-L2b.py",
+  "cabeca_lida": "a9509193",
+  "linhas_por_sufixo": {
+    "populacao-2025": 308,
+    "divida-dgal-2024": 308,
+    "limite-divida-dgal-2024": 308,
+    "indice-de-divida-2024": 308,
+    "ganho-medio-mensal-2024": 308,
+    "desemprego-registado-2025-12": 308,
+    "empresas-2024": 308,
+    "poder-de-compra-2023": 308,
+    "prazo-medio-de-pagamento-2025-12": 308
+  },
+  "reguas_com_o_mapa_antigo": [
+    "tests/inicio/matriz.mjs",
+    "tests/municipio/correcoes-c.mjs"
+  ],
+  "medidas": [
+    {
+      "nome": "concelhos_com_linha_de_populacao",
+      "valor": 308,
+      "comando": "git ls-tree a9509193:ledger/claims · os ids que acabam em -populacao-2025",
+      "conhecido_positivo": {
+        "o_que": "«evora» é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medidas_com_linhas_por_concelho",
+      "valor": 9,
+      "comando": "os sufixos de medida com pelo menos trezentas linhas de concelho",
+      "conhecido_positivo": {
+        "o_que": "o ganho médio mensal de 2024 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_ganho_medio_por_concelho",
+      "valor": 308,
+      "comando": "os ids que acabam em -ganho-medio-mensal-2024",
+      "conhecido_positivo": {
+        "o_que": "a de Abrantes existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_faixa_da_uniao_que_contam_o_lugar",
+      "valor": 1,
+      "comando": "git show a9509193:src/lib/faixa-da-uniao.mjs · «const lugar = 1 + paises.filter»",
+      "conhecido_positivo": {
+        "o_que": "a função posicao existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_na_pagina_do_concelho",
+      "valor": 0,
+      "comando": "git show a9509193:src/views/MunicipioView.astro · as ocorrências de <Faixa",
+      "conhecido_positivo": {
+        "o_que": "a vista rende cartões do lugar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "referencias_nacionais_na_leitura_do_lugar",
+      "valor": 0,
+      "comando": "git show a9509193:src/lib/lugar.mjs · as citações da linha nacional ganho-medio-mensal-2024",
+      "conhecido_positivo": {
+        "o_que": "a leitura do lugar lê as peças por chave",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "reguas_a_mao_que_procuram_o_mapa_na_primeira_pagina",
+      "valor": 2,
+      "comando": "as seis réguas do relatório do L2a, procuradas por pp-lugares, /#mapa ou pesquisa-bloco",
+      "conhecido_positivo": {
+        "o_que": "a matriz é uma delas",
+        "encontrado": true
+      }
+    }
+  ]
+}

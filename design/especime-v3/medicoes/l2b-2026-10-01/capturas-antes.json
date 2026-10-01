@@ -1,0 +1,173 @@
+{
+  "bloco": "L2b",
+  "fase": "antes",
+  "cabeca": "9b41123a182e48676b18ca17f50d53304eeb3c8b",
+  "construcao": {
+    "commit": "9b41123a182e48676b18ca17f50d53304eeb3c8b",
+    "ref": "l2b-2026-10-01",
+    "construido_em": "2026-10-01T21:09:33.881Z"
+  },
+  "inicio": "2026-10-01T22:27:45.423Z",
+  "fim": "2026-10-01T22:27:50.809Z",
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": 8,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-evora-pt-390.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "dcd661f2b7b3fbf7e82b2c1f07f1db5948d9c3ca5e91e9ca3e29cbb11ee77637",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8806,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-penedono-pt-390.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "bd6cc9a028020db4c573a946ed34bbb9e159064a560ae3dd01915bb19f0fa63f",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2016,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base)."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-evora-pt-1280.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "0101d79fee4c7d6042aeedb313e1e93677941353db9b181ea4f7f22b138a295a",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6294,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-penedono-pt-1280.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "cc4f1f0dd09f5c631a156ff5c64f5416482d1385fc96e43f4083e88725b4a887",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1634,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base)."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-evora-en-390.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "62279bd6dfece61834b5f364bec39022106c1f0926f878e29d84b1f38ac54076",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8932,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-penedono-en-390.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "dfca9a87dd88941cb7d1239294c6f3f9ef7510100be76351a7b10aef655724c7",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2047,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base)."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-evora-en-1280.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "52917185b04aade569a80e1224da42f96121cf79fef85ad4e26662ae76dd1801",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6354,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/antes-penedono-en-1280.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "fce4dc5f81bb49b65b3c7a990b8c1497a28e9e667f004732fe364bd67d655d7d",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1651,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 0,
+        "faixas_que_cabem_no_cartao": 0,
+        "primeira_faixa_y": null,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base)."
+      }
+    }
+  ]
+}

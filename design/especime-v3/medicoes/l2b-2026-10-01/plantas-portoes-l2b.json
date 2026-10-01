@@ -10,8 +10,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/evora/index.html",
-        "antes": "5bb92e425d6ec754087e1f1aad68288ca2bb5326c94cb0fb54006d3f7bdd8627",
-        "reposto": "5bb92e425d6ec754087e1f1aad68288ca2bb5326c94cb0fb54006d3f7bdd8627"
+        "antes": "e962e806c54def76d2f0de113e4262d2eafd6e7d28438e51d997d60939349aba",
+        "reposto": "e962e806c54def76d2f0de113e4262d2eafd6e7d28438e51d997d60939349aba"
       }
     ]
   },
@@ -26,8 +26,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/en/municipalities/evora/index.html",
-        "antes": "d00da99054bf984b9d2483b4b7011418cb41244cd9ef37830d0170dba2c88679",
-        "reposto": "d00da99054bf984b9d2483b4b7011418cb41244cd9ef37830d0170dba2c88679"
+        "antes": "d817f16531c61e9400975fd62e3494945ded7f380d0d987ff16e56d1479f093c",
+        "reposto": "d817f16531c61e9400975fd62e3494945ded7f380d0d987ff16e56d1479f093c"
       }
     ]
   },
@@ -42,8 +42,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/agueda/index.html",
-        "antes": "90cf026fa4345fa00e62b76fef9186c3aebbaf96f4f482e291e333b0d0668f9d",
-        "reposto": "90cf026fa4345fa00e62b76fef9186c3aebbaf96f4f482e291e333b0d0668f9d"
+        "antes": "58d08119140da032c6ae653dc6bf57635ba25ccba0c9dc1be54aaf51d1040d6d",
+        "reposto": "58d08119140da032c6ae653dc6bf57635ba25ccba0c9dc1be54aaf51d1040d6d"
       }
     ]
   },
@@ -58,8 +58,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/evora/index.html",
-        "antes": "5bb92e425d6ec754087e1f1aad68288ca2bb5326c94cb0fb54006d3f7bdd8627",
-        "reposto": "5bb92e425d6ec754087e1f1aad68288ca2bb5326c94cb0fb54006d3f7bdd8627"
+        "antes": "e962e806c54def76d2f0de113e4262d2eafd6e7d28438e51d997d60939349aba",
+        "reposto": "e962e806c54def76d2f0de113e4262d2eafd6e7d28438e51d997d60939349aba"
       }
     ]
   },
@@ -75,8 +75,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/evora/index.html",
-        "antes": "5bb92e425d6ec754087e1f1aad68288ca2bb5326c94cb0fb54006d3f7bdd8627",
-        "reposto": "5bb92e425d6ec754087e1f1aad68288ca2bb5326c94cb0fb54006d3f7bdd8627"
+        "antes": "e962e806c54def76d2f0de113e4262d2eafd6e7d28438e51d997d60939349aba",
+        "reposto": "e962e806c54def76d2f0de113e4262d2eafd6e7d28438e51d997d60939349aba"
       }
     ]
   }

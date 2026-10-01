@@ -1,0 +1,404 @@
+{
+  "bloco": "L2b",
+  "fase": "depois",
+  "cabeca": "7de721c72ea2f1a935cc810e5d484492b921c1fc",
+  "construcao": {
+    "commit": "7de721c72ea2f1a935cc810e5d484492b921c1fc",
+    "ref": "l2b-2026-10-01",
+    "construido_em": "2026-10-01T22:29:38.785Z"
+  },
+  "inicio": "2026-10-01T22:31:50.474Z",
+  "fim": "2026-10-01T22:32:04.586Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 20,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-pt-390.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "30d078f74586753c58a3ccd4abda3a38102890afb949e67d4823d93f98755b36",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9959,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 699,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024. O ganho médio mensal é de 1 484,5 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-pt-390.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "e9170d49812cf0d3e98efa106a02a78c826f0c71623ba63d5bbadf240c207d70",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3189,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 672,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base). O ganho médio mensal é de 1 034,1 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-pt-768.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "db405efe05d0557bf251de8cf78bbe22da56ef6e2176564f002571b14470f0a7",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 7082,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 645,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024. O ganho médio mensal é de 1 484,5 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-pt-768.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 768,
+      "sha256": "fedc24fbb7f16c5888b06e41cd7b0758c584abf11173fe021c109ae523479710",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2307,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 618,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base). O ganho médio mensal é de 1 034,1 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-pt-1024.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "355fe98f7f5452530522be5947e3c0a1bf2aa63b347eaca30bc3c81c10801bef",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6902,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 748,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024. O ganho médio mensal é de 1 484,5 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-pt-1024.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 1024,
+      "sha256": "52d2a761a24c7c843719fcfc27b806dd032cdb20019091489393557fb9644c14",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2312,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 696,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base). O ganho médio mensal é de 1 034,1 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-pt-1280.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "4336cc1c079caa92568003a3c2f2fc01afd81b5f10fedc771ee6a398afe284a8",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 7017,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 759,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024. O ganho médio mensal é de 1 484,5 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-pt-1280.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "7350e68e630e1d4763eca0ab36359bbe5e06c0e9b863f8ebc95471cbb6c10a02",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2412,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 738,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base). O ganho médio mensal é de 1 034,1 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-pt-1600.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "329b6e5a70172ec9efaa829e81d31edaf5ac24efdfbdac97b3f288f0eaa478b7",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6760,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 741,
+        "leitura": "A câmara de Évora deve menos do que a lei lhe permite, e o índice de dívida caiu para menos de metade em dez anos: de 242,6%fonte · calculado em 2014 para 105,5%fonte · calculado em 2024. O ganho médio mensal é de 1 484,5 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-pt-1600.png",
+      "pagina": "penedono",
+      "rota": "/municipios/penedono/",
+      "lang": "pt",
+      "largura": 1600,
+      "sha256": "6ccade55eaf4530b6d2db1a2b63d668f90d379664a21d8291e6092a6b7ecda97",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2180,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 741,
+        "leitura": "O poder de compra por pessoa em Penedono está abaixo da média do país (índice de 66,27fonte · INE, com a média do país como base). O ganho médio mensal é de 1 034,1 euros por mêsfonte · INE, abaixo de Portugal, onde é de 1 576,0 euros por mêsfonte · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-en-390.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "89e051df2a794856f0720fec9c90e19ade5be0b83a7b2d764c45d7f2ae6c3a60",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 10106,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 699,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024. Average monthly earnings are 1 484,5 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-en-390.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "d37cded529aea5ac76a143c3d190ff459ded352714466d1eac29e6889ef9b9f0",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3261,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 672,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base). Average monthly earnings are 1 034,1 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-en-768.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "e68cd5946480f6d287d998a9450efade42e96774d71303758184eaba198ac628",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 7145,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 639,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024. Average monthly earnings are 1 484,5 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-en-768.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 768,
+      "sha256": "eaacab331fd9b5ebe5e078c724a6cf77223fbe498d878843439cb4d7fe9c5bdc",
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2383,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 618,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base). Average monthly earnings are 1 034,1 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-en-1024.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "00680d6a5d83719dcc4b248313b9861af436089190c9022e99ea926ab26257b9",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 7011,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 717,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024. Average monthly earnings are 1 484,5 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-en-1024.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 1024,
+      "sha256": "96c19cee6608dd4750fc1e283251080cb7ef91544ba037a3275d135c0200fe01",
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2364,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 696,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base). Average monthly earnings are 1 034,1 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-en-1280.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "37a1f36b031f31a0af1c0da6b6da51c2bfccc7821e5fb4e4655f0d140576aaa6",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 7112,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 759,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024. Average monthly earnings are 1 484,5 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-en-1280.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "b2aca9a79ac1e8c223ed217cc75db9bbbfca48144f910d606ac33dbf6007e2e3",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2429,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 738,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base). Average monthly earnings are 1 034,1 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-evora-en-1600.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "d8d357835723fcecdb4f5bd1a723490649bfe1989b616826377065e36e164d26",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6870,
+        "h1": "Évora",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 762,
+        "leitura": "Évora’s council owes less than the law allows, and its debt index has fallen to less than half in ten years: from 242,6%source · calculated in 2014 to 105,5%source · calculated in 2024. Average monthly earnings are 1 484,5 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/l2b-2026-10-01/depois-penedono-en-1600.png",
+      "pagina": "penedono",
+      "rota": "/en/municipalities/penedono/",
+      "lang": "en",
+      "largura": 1600,
+      "sha256": "a89110c2998db8dd3a581eea4c6512c3f7fdf0a28e6753cafa2acc0fe6e02891",
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2253,
+        "h1": "Penedono",
+        "cartoes": 8,
+        "faixas": 8,
+        "faixas_que_cabem_no_cartao": 8,
+        "primeira_faixa_y": 741,
+        "leitura": "Purchasing power per person in Penedono is below the country average (index of 66,27source · INE, with the country average as the base). Average monthly earnings are 1 034,1 euros per monthsource · INE, below Portugal, where they are 1 576,0 euros per monthsource · INE."
+      }
+    }
+  ]
+}
