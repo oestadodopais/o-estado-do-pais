@@ -49,10 +49,11 @@ const semBarra = (s) => String(s ?? '').replace(/\/+$/, '');
  * Os cinco passos numa edição, sobre uma página já aberta num contexto novo.
  *
  * A ROTA É UMA OPÇÃO DESDE O BLOCO PP1 (28.09.2026, a leitura a frio, achado 7): a primeira página passou
- * a ter a mesma pesquisa (`Pesquisa.astro`, com o formulário para a página dos lugares), e a célula da
- * primeira página (`tests/inicio/pesquisa-da-primeira.mjs`) corre estes mesmos cinco passos nela. Por
- * omissão continua a ser a página dos lugares, que é o que a H15 mede. `preparar` recebe o contexto do
- * navegador antes de a página abrir, e é por onde uma planta troca o que o servidor entrega.
+ * a ter a mesma pesquisa, e a célula da primeira página corria estes mesmos cinco passos nela. Desde o L2a
+ * (01.10.2026, §1.149) a pesquisa vive só na página dos lugares, que é o que a H15 mede, e a célula que
+ * era da primeira página (`tests/inicio/lugares-no-navegador.mjs`) mede a porta com o sinal e o caminho
+ * sem guião. `preparar` recebe o contexto do navegador antes de a página abrir, e é por onde uma planta
+ * troca o que o servidor entrega.
  *
  * @param {import('playwright').Browser} nav
  * @param {string} base  a origem do servidor local (`http://127.0.0.1:<porta>`)
