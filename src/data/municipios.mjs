@@ -440,12 +440,13 @@ const EVORA = {
           /* UMA SÓ AFIRMAÇÃO NA FICHA (bloco E1, 01.10.2026, §1.145). A nota dizia
              que o presidente deste mandato não fora identificado, e a mesma ficha
              nomeia-o acima, com a data da substituição: eram duas afirmações sobre
-             a mesma coisa. O que as fontes dos pelouros não registam são os
-             membros do mandato e a repartição; quem presidiu está nas eleições,
-             que o campo `quem` transcreve. */
+             a mesma coisa. Das fontes dos pelouros, deste mandato, só há a
+             biografia de uma vereadora, escrita depois (o estudo de quem governou
+             a câmara di-lo); não registam o presidente nem os outros membros, e
+             quem presidiu está nas eleições, que o campo `quem` transcreve. */
           pelourosNota: {
-            pt: ['Não estabelecido: as fontes dos pelouros não registam nenhum membro deste mandato.'],
-            en: ['Not established: the portfolio sources record no member of this term.'],
+            pt: ['Não estabelecido: as fontes dos pelouros só têm, deste mandato, a biografia de uma vereadora, escrita depois; não registam o presidente nem os outros membros.'],
+            en: ['Not established: of this term, the portfolio sources hold only a councillor’s biography, written afterwards; they record neither the president nor the other members.'],
           },
         },
         {
