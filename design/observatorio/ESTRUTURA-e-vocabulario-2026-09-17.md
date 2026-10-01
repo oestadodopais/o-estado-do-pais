@@ -89,6 +89,8 @@ The typography (the two type families, the sizes, the black rule under the name)
 
 ## 8 · Sequência histórica de 17.09.2026 [P]
 
+**Os estudos de Évora são quatro desde 01.10.2026 (E1, §1.145)**: «As contas da Câmara de Évora, 2010 a 2025», «Quem governou a Câmara de Évora, 2009 a 2025», «A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara» e «Évora 2027, Capital Europeia da Cultura». Cada um abre com a pergunta a que responde e com a leitura do projeto, e um número vive num deles só. Os seis estudos de Évora de agosto e setembro ficam alojados como edições datadas: saem da lista dos estudos e da página do concelho, levam à cabeça a nota do estudo que os sucede, e a porta para eles é a página desse estudo.
+
 A sequência em vigor a 30.09.2026 à tarde é N1 (no ar desde 30.09), E0 (o pré-requisito: as linhas da casa no registo das mudanças e a correção do desemprego, I179), E1 (os estudos de Évora de seis a quatro, §1.145), e depois K2, L2 e UE2 pela §1.143; a ordem mudou pela decisão do diretor de gastar o orçamento até ao fim (§1.146). A proposta abaixo fica como histórico; não autoriza eliminar as áreas nem fundir a página da União no N1.
 
 1. **B1 · The four pages that set the grammar:** the country page (the front page), the place page (Évora as the sample, then all 308 by the same template), the study page (Évora 2027), the studies list. The menu of five. The grey cell gone. Two weeks of the three go here, because everything else follows the grammar these four fix.
