@@ -1,13 +1,13 @@
 {
   "bloco": "E0",
   "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
-  "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
-  "medido_em": "2026-09-30T23:26:26.595Z",
+  "cabeca": "472cba4257942989faf41f945760f120a6988171",
+  "medido_em": "2026-10-01T00:33:09.801Z",
   "medidas": [
     {
       "nome": "selador_ja_aceitava_a_linha_do_projeto",
       "valor": true,
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "A entrada 3 para 5 foi escrita pelo selador original numa cópia sem source_url.",
         "encontrado": true
@@ -44,7 +44,7 @@
           "decimal_da_fonte": "6.0"
         }
       ],
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "O detetor lê 6.0 no campo excerpt de cada linha e recusa a planta com 6.",
         "encontrado": true
@@ -67,12 +67,12 @@
           "seladas": 1
         }
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
-        "o_que": "A correção histórica do PIB do Alentejo entra na mesma recontagem.",
+        "o_que": "Retirar a correção do PIB do Alentejo numa cópia baixa uma unidade no mesmo detetor da recontagem.",
         "encontrado": true
       },
-      "evidencia": "Recontagem direta de todos os YAML."
+      "evidencia": "detetores-e0c.json e contagensDoRegisto."
     },
     {
       "nome": "tres_mudancas_com_lugar",
@@ -120,7 +120,7 @@
           "porta": "/en/corrections"
         }
       ],
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "O lugar do contador é visto nas duas edições; a planta retira-o da inglesa.",
         "encontrado": true
@@ -185,7 +185,7 @@
           ]
         }
       ],
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "A primeira página tem as duas representações da medida e o cartão tem a sua quantidade.",
         "encontrado": true
@@ -300,7 +300,7 @@
           }
         ]
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "A planta A produz código 1 com a queixa A3 do portão real.",
         "encontrado": true
@@ -318,12 +318,12 @@
           "correcoes-publicadas"
         ]
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
-        "o_que": "As quatro entradas anteriores de estudos-evora-publicados são lidas da base e do ficheiro atual.",
+        "o_que": "Alterar uma entrada selada de Évora numa cópia produz a queixa do mesmo detetor que confere os prefixos.",
         "encontrado": true
       },
-      "evidencia": "Comparação do prefixo de cada lista selada com a base."
+      "evidencia": "detetores-e0c.json e comparação dos prefixos com a base."
     },
     {
       "nome": "valores_mudados",
@@ -344,7 +344,7 @@
           "depois": "6,0"
         }
       ],
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "A linha do contador é encontrada entre os valores alterados.",
         "encontrado": true
@@ -356,7 +356,7 @@
       "valor": [
         "src/components/RegistoCorrecoes.astro"
       ],
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "O detetor encontra RegistoCorrecoes no diff real e vê a planta de CartaoDaMedida no mesmo formato.",
         "encontrado": true
@@ -391,7 +391,7 @@
             "lang": "pt",
             "largura_janela": 390,
             "largura_png": 354,
-            "altura_png": 8596,
+            "altura_png": 8572,
             "confere": true
           },
           {
@@ -415,7 +415,7 @@
             "lang": "pt",
             "largura_janela": 1280,
             "largura_png": 544,
-            "altura_png": 8780,
+            "altura_png": 8734,
             "confere": true
           },
           {
@@ -439,7 +439,7 @@
             "lang": "en",
             "largura_janela": 390,
             "largura_png": 354,
-            "altura_png": 8595,
+            "altura_png": 8572,
             "confere": true
           },
           {
@@ -463,12 +463,12 @@
             "lang": "en",
             "largura_janela": 1280,
             "largura_png": 544,
-            "altura_png": 8767,
+            "altura_png": 8720,
             "confere": true
           }
         ]
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "A primeira imagem é um PNG; trocar um byte faz o resumo divergir pelo mesmo detetor.",
         "encontrado": true
@@ -489,7 +489,7 @@
         "saida": "estudos-evora-publicados: 4 entradas anteriores conservadas; 5 seladas.",
         "linha_real_conservada": true
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "As quatro entradas seladas de Évora são preservadas e a quinta é acrescentada só na cópia.",
         "encontrado": true
@@ -502,43 +502,43 @@
         {
           "nome": "build",
           "codigo": 0,
-          "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
-          "segundos": 119,
-          "segundos_relatorio": 119,
+          "cabeca": "472cba4257942989faf41f945760f120a6988171",
+          "segundos": 131,
+          "segundos_relatorio": 131,
           "medido": true,
           "codigo_por_registar": false
         },
         {
           "nome": "verify",
           "codigo": 0,
-          "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
-          "segundos": 666,
-          "segundos_relatorio": 666,
+          "cabeca": "472cba4257942989faf41f945760f120a6988171",
+          "segundos": 723,
+          "segundos_relatorio": 723,
           "medido": true,
           "codigo_por_registar": false
         },
         {
           "nome": "typecheck",
           "codigo": 0,
-          "cabeca": "a595201bbc440a6d57d2f23cd95321b26099b7d4",
-          "segundos": 0,
-          "segundos_relatorio": 0,
+          "cabeca": "472cba4257942989faf41f945760f120a6988171",
+          "segundos": 1,
+          "segundos_relatorio": 1,
           "medido": true,
           "codigo_por_registar": false
         }
       ],
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "O detetor lê o código 1 de um processo desta corrida e recusa a mesma escrita envelhecida.",
         "encontrado": true
       },
-      "evidencia": "portoes/e0b, produzido por portoes.sh, e detetores-e0b.json."
+      "evidencia": "portoes/e0c, produzido por portoes.sh, e detetores-e0b.json."
     },
     {
       "nome": "custo",
       "valor": {
-        "medido_em": "2026-09-30T23:26:00.999446+00:00",
-        "segundos_decorridos": 9317.1,
+        "medido_em": "2026-10-01T00:32:43.002733+00:00",
+        "segundos_decorridos": 13319.1,
         "base": "Contadores cumulativos token_count; entrada sem cache mais saída e total com cache em campos distintos.",
         "limite": "A amostra antecede o fecho da sessão. Não é um preço em euros nem um contador final tokens used.",
         "construtor": {
@@ -546,16 +546,18 @@
           "modelo": "gpt-6.1-sol",
           "inicio": "2026-09-30T20:50:43.925Z",
           "inicio_e0b": "2026-09-30T22:26:35.480Z",
-          "ultima_amostra": "2026-09-30T23:25:47.623Z",
+          "inicio_e0c": "2026-09-30T23:55:48.135Z",
+          "uso_inicio_e0c": 836455,
+          "ultima_amostra": "2026-10-01T00:32:26.789Z",
           "simbolos": {
-            "input_tokens": 25110521,
-            "cached_input_tokens": 24437760,
+            "input_tokens": 32075709,
+            "cached_input_tokens": 31225216,
             "cache_write_input_tokens": 0,
-            "output_tokens": 148378,
-            "reasoning_output_tokens": 67166,
-            "total_tokens": 25258899
+            "output_tokens": 197493,
+            "reasoning_output_tokens": 94576,
+            "total_tokens": 32273202
           },
-          "simbolos_sem_cache_mais_saida": 821139
+          "simbolos_sem_cache_mais_saida": 1047986
         },
         "revisores_automaticos": [
           {
@@ -563,6 +565,8 @@
             "modelo": "codex-auto-review",
             "inicio": "2026-09-30T21:35:41.764Z",
             "inicio_e0b": null,
+            "inicio_e0c": null,
+            "uso_inicio_e0c": null,
             "ultima_amostra": "2026-09-30T21:58:05.781Z",
             "simbolos": {
               "input_tokens": 954627,
@@ -579,6 +583,8 @@
             "modelo": "codex-auto-review",
             "inicio": "2026-09-30T20:52:56.622Z",
             "inicio_e0b": null,
+            "inicio_e0c": null,
+            "uso_inicio_e0c": null,
             "ultima_amostra": "2026-09-30T21:31:23.044Z",
             "simbolos": {
               "input_tokens": 573827,
@@ -595,6 +601,8 @@
             "modelo": "codex-auto-review",
             "inicio": "2026-09-30T22:26:34.160Z",
             "inicio_e0b": null,
+            "inicio_e0c": null,
+            "uso_inicio_e0c": null,
             "ultima_amostra": "2026-09-30T23:06:02.575Z",
             "simbolos": {
               "input_tokens": 119553,
@@ -611,6 +619,8 @@
             "modelo": "codex-auto-review",
             "inicio": "2026-09-30T23:11:54.744Z",
             "inicio_e0b": null,
+            "inicio_e0c": null,
+            "uso_inicio_e0c": null,
             "ultima_amostra": "2026-09-30T23:25:37.026Z",
             "simbolos": {
               "input_tokens": 57956,
@@ -621,6 +631,24 @@
               "total_tokens": 58239
             },
             "simbolos_sem_cache_mais_saida": 27007
+          },
+          {
+            "sessao": "01a0f4be-e6fd-7420-8c7d-270042630163",
+            "modelo": "codex-auto-review",
+            "inicio": "2026-09-30T23:55:46.845Z",
+            "inicio_e0b": null,
+            "inicio_e0c": null,
+            "uso_inicio_e0c": null,
+            "ultima_amostra": "2026-10-01T00:32:25.625Z",
+            "simbolos": {
+              "input_tokens": 267589,
+              "cached_input_tokens": 211456,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 896,
+              "reasoning_output_tokens": 515,
+              "total_tokens": 268485
+            },
+            "simbolos_sem_cache_mais_saida": 57029
           }
         ],
         "conhecido_positivo": true,
@@ -629,10 +657,79 @@
           "segundos_decorridos": 3565.5,
           "mesma_sessao_do_e0": true,
           "simbolos_desde_final_e0": 408878,
-          "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5."
+          "base_do_delta": "412 261, contador final E0 informado no mandato E0b, ponto 5.",
+          "medido_em": "2026-09-30T23:26:00.999446+00:00",
+          "proveniencia": "custo.json na cabeça a99d45cc e mandato E0c, ponto 3.",
+          "construtor_simbolos": 408878,
+          "revisores_automaticos": [
+            {
+              "sessao": "01a0f46d-3a10-7143-ae1c-eca7ea3b2a98",
+              "modelo": "codex-auto-review",
+              "inicio": "2026-09-30T22:26:34.160Z",
+              "inicio_e0b": null,
+              "ultima_amostra": "2026-09-30T23:06:02.575Z",
+              "simbolos": {
+                "input_tokens": 119553,
+                "cached_input_tokens": 56576,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 515,
+                "reasoning_output_tokens": 272,
+                "total_tokens": 120068
+              },
+              "simbolos_sem_cache_mais_saida": 63492
+            },
+            {
+              "sessao": "01a0f496-bd66-7793-a953-2a8eb522ebb1",
+              "modelo": "codex-auto-review",
+              "inicio": "2026-09-30T23:11:54.744Z",
+              "inicio_e0b": null,
+              "ultima_amostra": "2026-09-30T23:25:37.026Z",
+              "simbolos": {
+                "input_tokens": 57956,
+                "cached_input_tokens": 31232,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 283,
+                "reasoning_output_tokens": 135,
+                "total_tokens": 58239
+              },
+              "simbolos_sem_cache_mais_saida": 27007
+            }
+          ],
+          "revisores_simbolos": 90499,
+          "total_cobrado_simbolos": 499377
+        },
+        "e0c": {
+          "inicio": "2026-09-30T23:55:48.135Z",
+          "medido_em": "2026-10-01T00:32:43.002733+00:00",
+          "segundos_decorridos": 2214.9,
+          "construtor_simbolos": 211531,
+          "revisores_automaticos": [
+            {
+              "sessao": "01a0f4be-e6fd-7420-8c7d-270042630163",
+              "modelo": "codex-auto-review",
+              "inicio": "2026-09-30T23:55:46.845Z",
+              "inicio_e0b": null,
+              "inicio_e0c": null,
+              "uso_inicio_e0c": null,
+              "ultima_amostra": "2026-10-01T00:32:25.625Z",
+              "simbolos": {
+                "input_tokens": 267589,
+                "cached_input_tokens": 211456,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 896,
+                "reasoning_output_tokens": 515,
+                "total_tokens": 268485
+              },
+              "simbolos_sem_cache_mais_saida": 57029
+            }
+          ],
+          "revisores_simbolos": 57029,
+          "base_do_delta": "Último token_count anterior à mensagem de retoma E0c.",
+          "criterio_dos_revisores": "Sessões de revisor da mesma worktree fora das listas conservadas E0 e E0b, incluindo o guardião criado antes da mensagem de retoma.",
+          "total_cobrado_simbolos": 268560
         }
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "O evento token_count tem saída e total cumulativo, na sessão identificada pelo ambiente.",
         "encontrado": true
@@ -642,10 +739,10 @@
     {
       "nome": "ficheiros_com_dados_da_maquina",
       "valor": {
-        "lidos": 236,
+        "lidos": 277,
         "fugas": []
       },
-      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs",
+      "comando": "node design/especime-v3/medicoes/e0-2026-09-30/medir-e0.mjs --e0c",
       "conhecido_positivo": {
         "o_que": "O mesmo detetor vê o caminho real só em memória e aceita uma frase limpa.",
         "encontrado": true
@@ -656,7 +753,7 @@
   "erros": [],
   "e0b": {
     "base": "728ffc67a702e4912f4919b8a8b356e28a66ea63",
-    "ponto_1": "parado por fonte, ver fontes-e0b.json",
+    "ponto_1": "Pedido retirado na triagem da releitura E0b.",
     "nomes_do_registo": [
       {
         "lang": "pt",
@@ -683,8 +780,8 @@
         "lang": "pt",
         "id": "divida-das-familias-2025-ue",
         "n": 0,
-        "lido": "Household debt including non-profit institutions serving households, consolidated",
-        "esperado": "Household debt including non-profit institutions serving households, consolidated"
+        "lido": "Dívida das famílias",
+        "esperado": "Dívida das famílias"
       },
       {
         "lang": "pt",
@@ -823,8 +920,8 @@
         "lang": "en",
         "id": "divida-das-familias-2025-ue",
         "n": 0,
-        "lido": "Household debt including non-profit institutions serving households, consolidated",
-        "esperado": "Household debt including non-profit institutions serving households, consolidated"
+        "lido": "Household debt",
+        "esperado": "Household debt"
       },
       {
         "lang": "en",
@@ -946,7 +1043,7 @@
       "edition": "30.09.2026"
     },
     "restantes_conferidos": true,
-    "completa": false
+    "completa": true
   },
   "contagens": {
     "medidas": 14,
@@ -957,6 +1054,328 @@
   "aceitação": {
     "conteudo_e_provas": true,
     "portoes_na_cabeca_final": true,
+    "completa": true
+  },
+  "e0c": {
+    "nomes_do_registo": [
+      {
+        "lang": "pt",
+        "id": "correcoes-publicadas",
+        "n": 0,
+        "lido": "Correções publicadas",
+        "esperado": "Correções publicadas"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-2025",
+        "n": 0,
+        "lido": "Taxa de desemprego",
+        "esperado": "Taxa de desemprego"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-mip-2025",
+        "n": 0,
+        "lido": "Taxa de desemprego",
+        "esperado": "Taxa de desemprego"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-familias-2025-ue",
+        "n": 0,
+        "lido": "Dívida das famílias",
+        "esperado": "Dívida das famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 3,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-aprovado-2026",
+        "n": 5,
+        "lido": "Verbas do PRR aprovadas para Évora",
+        "esperado": "Verbas do PRR aprovadas para Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-execucao-2026",
+        "n": 1,
+        "lido": "Parte das verbas aprovadas que já foi paga",
+        "esperado": "Parte das verbas aprovadas que já foi paga"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-pago-2026",
+        "n": 5,
+        "lido": "Verbas do PRR pagas em Évora",
+        "esperado": "Verbas do PRR pagas em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 5,
+        "lido": "Verbas aprovadas em projetos fora de prazo",
+        "esperado": "Verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 1,
+        "lido": "Parte das verbas aprovadas em projetos fora de prazo",
+        "esperado": "Parte das verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-aprovado-2026",
+        "n": 3,
+        "lido": "Verbas do PRR aprovadas para Évora",
+        "esperado": "Verbas do PRR aprovadas para Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-execucao-2026",
+        "n": 0,
+        "lido": "Parte das verbas aprovadas que já foi paga",
+        "esperado": "Parte das verbas aprovadas que já foi paga"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-pago-2026",
+        "n": 3,
+        "lido": "Verbas do PRR pagas em Évora",
+        "esperado": "Verbas do PRR pagas em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 3,
+        "lido": "Verbas aprovadas em projetos fora de prazo",
+        "esperado": "Verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 0,
+        "lido": "Parte das verbas aprovadas em projetos fora de prazo",
+        "esperado": "Parte das verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 2,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-pc-alentejo-2000",
+        "n": 0,
+        "lido": "Produto interno bruto por habitante no Alentejo",
+        "esperado": "Produto interno bruto por habitante no Alentejo"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-pc-alentejo-2024",
+        "n": 0,
+        "lido": "Produto interno bruto por habitante no Alentejo",
+        "esperado": "Produto interno bruto por habitante no Alentejo"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 0,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 1,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "en",
+        "id": "correcoes-publicadas",
+        "n": 0,
+        "lido": "Published corrections",
+        "esperado": "Published corrections"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-2025",
+        "n": 0,
+        "lido": "Unemployment rate",
+        "esperado": "Unemployment rate"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-mip-2025",
+        "n": 0,
+        "lido": "Unemployment rate",
+        "esperado": "Unemployment rate"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-familias-2025-ue",
+        "n": 0,
+        "lido": "Household debt",
+        "esperado": "Household debt"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 3,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-aprovado-2026",
+        "n": 5,
+        "lido": "PRR funds approved for Évora",
+        "esperado": "PRR funds approved for Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-execucao-2026",
+        "n": 1,
+        "lido": "Share of approved funds already paid",
+        "esperado": "Share of approved funds already paid"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-pago-2026",
+        "n": 5,
+        "lido": "PRR funds paid in Évora",
+        "esperado": "PRR funds paid in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 5,
+        "lido": "Approved funds in projects past their deadline",
+        "esperado": "Approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 1,
+        "lido": "Share of approved funds in projects past their deadline",
+        "esperado": "Share of approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-aprovado-2026",
+        "n": 3,
+        "lido": "PRR funds approved for Évora",
+        "esperado": "PRR funds approved for Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-execucao-2026",
+        "n": 0,
+        "lido": "Share of approved funds already paid",
+        "esperado": "Share of approved funds already paid"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-pago-2026",
+        "n": 3,
+        "lido": "PRR funds paid in Évora",
+        "esperado": "PRR funds paid in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 3,
+        "lido": "Approved funds in projects past their deadline",
+        "esperado": "Approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 0,
+        "lido": "Share of approved funds in projects past their deadline",
+        "esperado": "Share of approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 2,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "pib-pc-alentejo-2000",
+        "n": 0,
+        "lido": "Gross domestic product per inhabitant in the Alentejo",
+        "esperado": "Gross domestic product per inhabitant in the Alentejo"
+      },
+      {
+        "lang": "en",
+        "id": "pib-pc-alentejo-2024",
+        "n": 0,
+        "lido": "Gross domestic product per inhabitant in the Alentejo",
+        "esperado": "Gross domestic product per inhabitant in the Alentejo"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 0,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 1,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      }
+    ],
+    "detetores": {
+      "correcoes_publicadas": {
+        "antes": 5,
+        "depois": 4,
+        "linha_retirada": "pib-pc-alentejo-2024",
+        "indice": 0,
+        "entrada_retirada": {
+          "date": "2026-08-13",
+          "kind": "correcao",
+          "old_value": "77,2",
+          "new_value": "77",
+          "reason": "O valor publicado trazia uma casa decimal que a fonte não sustenta. Era calculado a partir dos valores absolutos em paridades de poder de compra; o Eurostat publica este índice arredondado à unidade (77) e marca o valor de 2024 como provisório. Publicar um décimo de ponto sobre um número que a fonte espera rever afirmava uma precisão que não existe. Passa a publicar-se o índice tal como a fonte o publica.",
+          "reason_en": "The published value carried a decimal the source does not support. It was computed from the absolute purchasing-power-standard values; Eurostat publishes this index rounded to the unit (77) and marks the 2024 value provisional. Publishing a tenth of a point on a number the source expects to revise asserted a precision that does not exist. The index is now published as the source publishes it."
+        },
+        "baixou_uma": true,
+        "livro_real_conservado": true
+      },
+      "historia_anterior_conservada": {
+        "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+        "linhas_anteriores": 9,
+        "linha_plantada": "estudos-evora-publicados",
+        "indice": 0,
+        "campo": "new_value",
+        "antes": "3",
+        "plantado": "39",
+        "erros_limpos": [],
+        "queixas": [
+          "história anterior: estudos-evora-publicados perdeu ou alterou uma entrada selada."
+        ],
+        "historia_real_conservada": true
+      },
+      "conhecidos_positivos": {
+        "correcoes_publicadas": true,
+        "historia_anterior_conservada": true
+      },
+      "passou": true
+    },
     "completa": true
   }
 }

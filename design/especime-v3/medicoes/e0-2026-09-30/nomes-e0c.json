@@ -1,0 +1,31 @@
+{
+  "cabeca": "472cba4257942989faf41f945760f120a6988171",
+  "medido_em": "2026-10-01T00:35:51.713Z",
+  "fonte": "conferirLinhasDaCasa(dist).medidas.nomes, com comparação dos nomes do HTML pelo detetor permanente.",
+  "resultados": [
+    {
+      "lang": "pt",
+      "nomes_conferidos": 20,
+      "nome_da_divida": "Dívida das famílias",
+      "conhecido_positivo": {
+        "retirado": "divida-das-familias-2025-ue",
+        "contagem_plantada": 19,
+        "baixou_uma": true
+      }
+    },
+    {
+      "lang": "en",
+      "nomes_conferidos": 20,
+      "nome_da_divida": "Household debt",
+      "conhecido_positivo": {
+        "retirado": "divida-das-familias-2025-ue",
+        "contagem_plantada": 19,
+        "baixou_uma": true
+      }
+    }
+  ],
+  "total": 40,
+  "erros": [],
+  "procedimento": "node --input-type=module: importar conferirLinhasDaCasa de tests/inicio/linhas-da-casa.mjs; conferir dist; contar medidas.nomes por lang; retirar a entrada da dívida numa cópia e recontar.",
+  "detetor_da_contagem": "nomes.filter(n => n.lang === lang).length"
+}
