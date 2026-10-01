@@ -8,6 +8,10 @@
  * capturas do E1 continuarem a bater com o seu manifesto), e a página inglesa do estudo
  * de quem governou entra na lista, porque mostra o documento português com a nota
  * (decisão 3).
+ *
+ * Na passagem E1c (01.10.2026): com `OEDP_E1_BLOCO=E1c` entram também as duas fichas de mandato
+ * que o ponto 2 do mandato mudou, a de 2021 a 2025 e a do mandato que começou em 2025, onde a dívida
+ * de 31.12.2025 deixou de se dizer deixada e herdada.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -38,6 +42,10 @@ const paginas = [
   { id: 'concelho-mandatos', rota: { pt: '/municipios/evora', en: '/en/municipalities/evora' }, modo: 'elemento', seletor: '#mandato-2009-2013' },
   { id: 'datada-orcamentado', rota: { pt: '/estudos/evora-orcamentado-pago-devido-2025', en: '/en/studies/evora-orcamentado-pago-devido-2025' }, modo: 'cabeca' },
   { id: 'datada-quinze-anos', rota: { pt: '/estudos/evora-quinze-anos-cinco-mandatos' }, modo: 'cabeca' },
+  ...(bloco === 'E1c' ? [
+    { id: 'concelho-mandato-2021', rota: { pt: '/municipios/evora', en: '/en/municipalities/evora' }, modo: 'elemento', seletor: '#mandato-2021-2025' },
+    { id: 'concelho-mandato-2025', rota: { pt: '/municipios/evora', en: '/en/municipalities/evora' }, modo: 'elemento', seletor: '#mandato-2025' },
+  ] : []),
 ];
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp' };
 const servidor = http.createServer(async (pedido, resposta) => {

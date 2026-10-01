@@ -285,9 +285,28 @@ def medir_numeros_em_dois_estudos():
 
 
 # ------------------------------------------------------- as células das tabelas
-def medir_celulas():
-    prog = r'''
-import json, re, sys, collections
+#
+# A RÉGUA DAS CÉLULAS CONFERE A LINHA QUE A CÉLULA CITA (passagem E1c, 01.10.2026, ponto 1 do
+# mandato). Até à E1c esta régua procurava o número de cada célula nas formas de QUALQUER linha
+# do livro do estudo, e por isso passava a linha «Total da tabela» das obras do 19, que imprimia
+# um número que existe no livro (o total do financiamento de capital da p. 88) como o total das
+# oito obras da p. 108. Passa a ler os registos de conteúdo (cada figura com a linha que o registo
+# lhe dá) e a conferir três coisas em cada figura de cada célula de tabela:
+#
+#   C1 · o número impresso é uma das formas da linha que a célula cita, e não de outra linha;
+#   C2 · quando a linha da tabela escreve onde o valor foi lido («p. 88», «folha 43 do PDF»), a
+#        linha citada é dessa página ou folha, pelo seu excerto;
+#   C3 · uma linha que se diz o total da tabela («Total», «Total da tabela», «Table total») é a
+#        soma de linhas da mesma coluna (de um subconjunto delas, porque há tabelas com
+#        subtotais), dentro do arredondamento que os números impressos trazem.
+#
+# A C1 sozinha não morde neste caso, e diz-se: a célula do total citava a linha cujo valor
+# imprimia, e a página que escrevia era a dessa linha; o que estava errado era o objeto, e é a C3
+# que o vê. A contagem antiga das células sem linha nenhuma (identificadores, endereços, carimbos)
+# continua, sobre o Markdown, como estava.
+PROG_CELULAS = r"""
+import json, re, sys, collections, itertools, copy
+from decimal import Decimal
 from core import documento_md, eyetext
 from core.eyetext import Text
 from core.reconcile import extract_numbers, claim_value_canonical, indexed_forms
@@ -300,7 +319,7 @@ LIMPA = [re.compile(r"\d{4}-\d{2}-\d{2}"), re.compile(r"\d{4}-\d{2}"),
 def limpa(t):
     for r in LIMPA: t = r.sub(" ", t)
     return t
-def medir(md, livro):
+def sem_linha(md, livro):
     valores = set()
     for c in livro["claims"]:
         for f in indexed_forms(c): valores.add(claim_value_canonical(str(f)))
@@ -317,24 +336,141 @@ def medir(md, livro):
                         cont["sem_linha"] += 1
                         casos.append({"bloco": bi, "celula": f"{r}.{c}", "impresso": o.printed, "texto": txt[:140]})
     return dict(cont), casos
+
+LOC = re.compile(r"(?i)\b(p\.|página|folha|sheet|page)\s*(\d+)")
+def locs_da_linha_da_tabela(linha):
+    out = set()
+    for c in linha:
+        for m in LOC.finditer(c.get("text", "")):
+            k = m.group(1).lower()
+            out.add(("folha" if k in ("folha", "sheet") else "p", int(m.group(2))))
+    return out
+def locs_do_excerto(e):
+    out = set()
+    for m in re.finditer(r"\(folha (\d+)(?:, página impressa (\d+))?\)", e or ""):
+        out.add(("folha", int(m.group(1))))
+        if m.group(2): out.add(("p", int(m.group(2))))
+    for m in re.finditer(r"PDF p\.\s?(\d+)", e or ""): out.add(("folha", int(m.group(1)))); out.add(("p", int(m.group(1))))
+    for m in re.finditer(r"(?<![A-Za-z])p\.\s?(\d+)", e or ""): out.add(("p", int(m.group(1))))
+    return out
+def numero(p):
+    s = p.replace(" ", " ").replace(" ", " ").replace(" ", "")
+    if re.fullmatch(r"\d{1,3}(\.\d{3})+(,\d+)?", s): s = s.replace(".", "").replace(",", ".")
+    elif "," in s: s = s.replace(",", ".")
+    try: return Decimal(s)
+    except Exception: return None
+def meia_unidade(p):
+    m = re.search(r",(\d+)$", p.strip())
+    return Decimal(5) / (Decimal(10) ** (len(m.group(1)) + 1)) if m else Decimal("0.5")
+TOTAIS = {"total", "total da tabela", "table total"}
+def citadas(registo, livro):
+    linhas = {c["id"]: c for c in livro["claims"]}
+    formas = {i: {claim_value_canonical(str(f)) for f in indexed_forms(c)} for i, c in linhas.items()}
+    falhas = []; conta = collections.Counter()
+    for b in registo["blocks"]:
+        if b["kind"] != "table": continue
+        rows = b["rows"]
+        for ri, linha in enumerate(rows):
+            locs = locs_da_linha_da_tabela(linha)
+            rotulo = linha[0].get("text", "").replace("​", "").strip().lower() if linha else ""
+            for ci, cel in enumerate(linha):
+                for f in cel.get("figures", []):
+                    conta["figuras"] += 1
+                    onde = {"bloco": b["i"], "linha": ri, "coluna": ci, "impresso": f["printed"], "linha_citada": f["row"],
+                            "rotulo": linha[0].get("text", "").replace("​", "")[:60] if linha else ""}
+                    c = linhas.get(f["row"])
+                    if c is None or claim_value_canonical(f["printed"]) not in formas[f["row"]]:
+                        falhas.append({"celula": "C1", "o_que": "o número não é uma forma da linha que a célula cita", **onde}); continue
+                    if locs:
+                        conta["com_localizacao"] += 1
+                        if not (locs & locs_do_excerto(c.get("excerpt"))):
+                            falhas.append({"celula": "C2", "o_que": "a linha citada não é da página ou da folha que a linha da tabela escreve",
+                                           "localizacao_da_tabela": sorted(locs), "localizacao_da_linha": sorted(locs_do_excerto(c.get("excerpt"))), **onde})
+                            continue
+                    if rotulo in TOTAIS:
+                        conta["totais_da_tabela"] += 1
+                        alvo = numero(f["printed"])
+                        outros = []
+                        for rj, l2 in enumerate(rows):
+                            if rj == ri or ci >= len(l2): continue
+                            for f2 in l2[ci].get("figures", []):
+                                n2 = numero(f2["printed"])
+                                if n2 is not None: outros.append((n2, meia_unidade(f2["printed"])))
+                        achou = None
+                        if alvo is not None and len(outros) <= 18:
+                            for k in range(1, len(outros) + 1):
+                                for comb in itertools.combinations(outros, k):
+                                    tol = sum(m for _, m in comb) + meia_unidade(f["printed"])
+                                    if abs(sum(n for n, _ in comb) - alvo) <= tol: achou = k; break
+                                if achou: break
+                        if not achou:
+                            falhas.append({"celula": "C3", "o_que": "a linha diz-se o total da tabela e não é a soma de linhas da sua coluna",
+                                           "soma_de_todas": str(sum(n for n, _ in outros)), **onde})
+    return dict(conta), falhas
+
+def plantar(registo, planta):
+    r = copy.deepcopy(registo)
+    def tabela(cabeca):
+        for b in r["blocks"]:
+            if b["kind"] == "table" and b["rows"] and " | ".join(c["text"].replace("​", "") for c in b["rows"][0]).startswith(cabeca):
+                return b
+        raise SystemExit(f"a planta não acha a tabela que começa por {cabeca!r}")
+    if planta == "total-da-tabela":
+        b = tabela("obra | custo escrito | onde")
+        b["rows"].append([{"text": "Total da tabela", "figures": []},
+                          {"text": "39 336 001,42 €", "figures": [{"printed": "39 336 001,42", "row": "bbs-cap-total", "start": 0, "end": 13, "value": "39 336 001,42"}]},
+                          {"text": "p. 88", "figures": []}])
+    elif planta == "valor-de-outra-linha":
+        b = tabela("obra | custo escrito | onde")
+        b["rows"][1][1]["figures"][0]["row"] = "bbs-cap-total"
+    elif planta == "linha-de-outra-pagina":
+        b = tabela("linha | valor escrito | onde")
+        alvo = next(l for l in b["rows"] if l[0]["text"].replace("​", "").strip() == "Total")
+        alvo[1]["figures"][0]["row"] = "bbs-desp-total"
+    return r
+
 pedidos = json.loads(sys.stdin.read()); saida = {}
-for nome, md_path, livro_path, extra in pedidos:
-    md = open(md_path, encoding="utf-8").read() + extra
-    saida[nome] = medir(md, json.load(open(livro_path, encoding="utf-8")))
+for p in pedidos:
+    livro = json.load(open(p["livro"], encoding="utf-8"))
+    if p["tipo"] == "md":
+        md = open(p["md"], encoding="utf-8").read() + p.get("extra", "")
+        saida[p["nome"]] = sem_linha(md, livro)
+    else:
+        reg = json.load(open(p["registo"], encoding="utf-8"))
+        if p.get("planta"): reg = plantar(reg, p["planta"])
+        saida[p["nome"]] = citadas(reg, livro)
 print(json.dumps(saida, ensure_ascii=False))
-'''
+"""
+
+
+def correr_celulas(pedidos):
+    r = subprocess.run([sys.executable, "-c", PROG_CELULAS], cwd=MOTOR, input=json.dumps(pedidos), capture_output=True, text=True)
+    if r.returncode != 0:
+        raise RuntimeError(r.stderr[-800:])
+    return json.loads(r.stdout)
+
+
+def medir_celulas():
     pedidos = []
+    registos = {}
     for slug, pasta in NOVOS.items():
         d = MOTOR / "content" / pasta
         for md in sorted(d.glob("*.md")):
-            pedidos.append([f"{pasta}/{md.name}", str(md), str(d / "ledger.json"), ""])
+            pedidos.append({"tipo": "md", "nome": f"{pasta}/{md.name}", "md": str(md), "livro": str(d / "ledger.json")})
+        man = json.loads((d / "records.manifest.json").read_text(encoding="utf-8"))
+        for r in man["registos"]:
+            nome = f"{pasta}/{r['registo']}"
+            registos[nome] = {"tipo": "registo", "nome": nome, "registo": str(d / r["registo"]), "livro": str(d / "ledger.json")}
     d16 = MOTOR / "content" / NOVOS["evora-contas-da-camara-2010-2025"]
     md16 = sorted(d16.glob("*(pt-PT).md"))[0]
-    pedidos.append(["planta", str(md16), str(d16 / "ledger.json"), "\n\n| Coluna | Valor |\n|---|---|\n| plantada | 123 456 |\n"])
-    r = subprocess.run([sys.executable, "-c", prog], cwd=MOTOR, input=json.dumps(pedidos), capture_output=True, text=True)
-    if r.returncode != 0:
-        raise RuntimeError(r.stderr[-800:])
-    saida = json.loads(r.stdout)
+    pedidos.append({"tipo": "md", "nome": "planta", "md": str(md16), "livro": str(d16 / "ledger.json"),
+                    "extra": "\n\n| Coluna | Valor |\n|---|---|\n| plantada | 123 456 |\n"})
+    d19 = MOTOR / "content" / NOVOS["evora-2027-capital-europeia-da-cultura"]
+    reg19 = next(n for n in registos if n.startswith(NOVOS["evora-2027-capital-europeia-da-cultura"]) and "(pt-PT)" in n)
+    plantas = {}
+    for planta in ("total-da-tabela", "valor-de-outra-linha", "linha-de-outra-pagina"):
+        plantas[planta] = dict(registos[reg19], nome=f"planta:{planta}", planta=planta)
+    saida = correr_celulas(pedidos + list(registos.values()) + list(plantas.values()))
     planta = saida.pop("planta")
     base16 = saida[f"{NOVOS['evora-contas-da-camara-2010-2025']}/{md16.name}"]
     def classe_de(t):
@@ -349,19 +485,40 @@ print(json.dumps(saida, ensure_ascii=False))
         if re.search(r"(?i)\bart(?:igo|icle)?\.?\b|n\.º|\d\.ª|\bs[ée]rie|\bseries\b|\bissue\b", t):
             return "identificador de diploma ou de publicação"
         return "outro"
+    sem = {n: v for n, v in saida.items() if n.endswith(".md")}
+    cit = {n: v for n, v in saida.items() if n.endswith(".record.json")}
+    plt = {n.split(":", 1)[1]: v for n, v in saida.items() if n.startswith("planta:")}
     classes = collections.defaultdict(collections.Counter)
-    for nome, (cont, casos) in saida.items():
+    for nome, (cont, casos) in sem.items():
         for c in casos:
             c["classe"] = classe_de(c["texto"])
             classes[nome][c["classe"]] += 1
-    medida("celulas_de_tabela_sem_linha", {n: {"contagem": c, "casos": casos} for n, (c, casos) in saida.items()} |
+    falhas_reais = [dict(f, registo=n) for n, (_c, fs) in cit.items() for f in fs]
+    mordidas = {k: sorted({f["celula"] for f in fs}) for k, (_c, fs) in plt.items()}
+    esperadas = {"total-da-tabela": ["C3"], "valor-de-outra-linha": ["C1"], "linha-de-outra-pagina": ["C2"]}
+    medida("celulas_de_tabela_sem_linha", {n: {"contagem": c, "casos": casos} for n, (c, casos) in sem.items()} |
            {"_classes_das_celulas_sem_linha": {n: dict(c) for n, c in classes.items()},
             "_outras_no_19": sum(c.get("outro", 0) for n, c in classes.items() if n.startswith("19")),
-            "_quantidades_sem_linha_16_17_18": sum(c.get("sem_linha", 0) for n, (c, _) in saida.items() if not n.startswith("19"))},
+            "_quantidades_sem_linha_16_17_18": sum(c.get("sem_linha", 0) for n, (c, _) in sem.items() if not n.startswith("19"))},
            "core.documento_md + core.eyetext + core.reconcile no motor: cada número das células das tabelas, tirado o que não é "
            "quantidade (datas, anos, códigos, páginas, números de lei), procurado nas formas indexadas das linhas do livro do estudo",
            {"descricao": "uma tabela plantada no fim do 16 com «123 456» dá uma célula sem linha a mais",
             "sem_linha_na_planta": planta[0].get("sem_linha", 0), "mordeu": planta[0].get("sem_linha", 0) == base16[0].get("sem_linha", 0) + 1})
+    medida("celulas_e_linha_citada", {"registos": {n: c for n, (c, _f) in cit.items()},
+                                      "figuras_nas_celulas": sum(c.get("figuras", 0) for c, _f in cit.values()),
+                                      "com_localizacao_na_linha_da_tabela": sum(c.get("com_localizacao", 0) for c, _f in cit.values()),
+                                      "totais_da_tabela": sum(c.get("totais_da_tabela", 0) for c, _f in cit.values()),
+                                      "falhas": len(falhas_reais), "casos": falhas_reais},
+           "os registos de conteúdo (record.json) das sete edições no motor, lidos com o livro do estudo por core.reconcile: em cada "
+           "figura de cada célula, C1 o número é uma forma da linha que a célula cita, C2 a linha citada é da página ou da folha que a "
+           "linha da tabela escreve (pelo excerto da linha), C3 uma linha «Total», «Total da tabela» ou «Table total» é a soma de "
+           "linhas da sua coluna, dentro do arredondamento impresso",
+           {"descricao": "três plantas numa cópia em memória do registo português do 19: a linha «Total da tabela | 39 336 001,42 € | "
+                         "p. 88» de volta à tabela das obras (o caso das duas leituras) tem de dar a C3; uma obra a citar a linha do "
+                         "total de capital, de outro valor, a C1; e o total da receita operacional da folha 43 a citar a despesa total "
+                         "da p. 87, com o mesmo valor, a C2",
+            "mordidas_por_planta": mordidas, "esperadas": esperadas,
+            "mordeu": mordidas == esperadas})
 
 
 # ------------------------------------------------------- o mapa de migração
@@ -437,6 +594,45 @@ def medir_celulas_e_linhas_do_sitio():
             "mordeu": novos[NOVOS["evora-contas-da-camara-2010-2025"]]["com_linha_do_sitio"] > 0 and soma(antigos)["sem_linha_do_sitio"] > 0})
 
 
+# ------------------------------- as células das tabelas nas páginas construídas (passagem E1c)
+# A marca da fonte tem duas classes: «src-chip» e, numa linha com um campo por confirmar, «src-chip
+# is-unverified» (o quadrado tracejado). As duas abrem a página da linha, e as duas contam.
+FIGURA_DE_CELULA = re.compile(r'<span class="texto-figura" data-registo="([^"#]+)#(\d+)\.(\d+)\.(\d+)\.(\d+)"[^>]*>[^<]*</span>(<a class="src-chip(?: [^"]*)?" href="/livro-razao/[^"]+")?')
+
+
+def celulas_de_uma_pagina(html):
+    """(figuras das células de tabela, das quais com a marca da fonte de uma linha do sítio logo a seguir)."""
+    total = com = 0
+    for m in FIGURA_DE_CELULA.finditer(html or ""):
+        total += 1
+        if m.group(6):
+            com += 1
+    return total, com
+
+
+def medir_celulas_nas_paginas():
+    """A repartição das figuras das células com linha do livro-razão do sítio, lida das páginas construídas
+    (passagem E1c, ponto 11 do mandato): a da medida `celulas_e_linhas_do_sitio`, acima, sai dos registos e
+    das linhas que atravessaram (69), e a das páginas é a que o leitor vê."""
+    por = {}
+    for slug in NOVOS:
+        f = DIST / "estudos" / slug / "index.html"
+        tot, com = celulas_de_uma_pagina(f.read_text(encoding="utf-8") if f.exists() else "")
+        por[slug] = {"figuras_nas_celulas": tot, "com_marca_da_fonte_do_sitio": com, "sem_ela": tot - com}
+    soma = {k: sum(v[k] for v in por.values()) for k in ("figuras_nas_celulas", "com_marca_da_fonte_do_sitio", "sem_ela")}
+    planta = ('<td><span class="texto-figura" data-registo="x/pt#1.2.3.0" data-registo-row="a">1</span><a class="src-chip" href="/livro-razao/y">'
+              '</a></td><td><span class="texto-figura" data-registo="x/pt#1.2.4.0" data-registo-row="b">2</span></td>'
+              '<td><span class="texto-figura" data-registo="x/pt#1.2.5.0" data-registo-row="d">4</span><a class="src-chip is-unverified" href="/livro-razao/w"></a></td>'
+              '<p><span class="texto-figura" data-registo="x/pt#5.0" data-registo-row="c">3</span><a class="src-chip" href="/livro-razao/z"></a></p>')
+    medida("celulas_nas_paginas_construidas", {"por_estudo": por, "soma": soma},
+           "as páginas portuguesas dos quatro estudos no dist/ (dist/estudos/<slug>/index.html): cada span.texto-figura cujo "
+           "data-registo tem quatro números (bloco, linha, coluna, figura) é uma figura de célula, e conta como «com marca da fonte "
+           "do sítio» quando a seguir vem a.src-chip com href para /livro-razao/",
+           {"descricao": "uma página plantada com uma figura de célula com a marca, uma com a marca tracejada, uma sem marca e uma "
+                         "figura de parágrafo com marca dá 3 figuras de célula e 2 com marca",
+            "mordeu": celulas_de_uma_pagina(planta) == (3, 2)})
+
+
 # ------------------------------------------------------------------ os selos
 def medir_selos():
     por = {}
@@ -465,8 +661,12 @@ def medir_selos():
 # ------------------------------- as oito contradições da I180 e as repetições
 I180 = [
     # (id, o que era, frases que saem: lidas nos antigos e nos novos; âncoras que entram: lidas nos novos)
+    # O VALOR DE UMA FRASE QUE SAI É O ESTUDO NOVO ONDE ELA PODE FICAR (passagem E1c), ou None se não pode
+    # ficar em nenhum: os totais do PRR vivem no 18, num instantâneo só, com a leitura de 2026-08-07 na tabela
+    # das duas leituras, e saem do 16 e do 17.
     ("1-prr-tres-datas", "os totais do PRR com três datas de leitura e dois valores",
-     {"167 372 756": None, "167 337 246": None}, []),
+     {"167 372 756": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "167 337 246": "evora-economia-e-dinheiro-publico-de-fora-da-camara"}, []),
     ("2-hospital", "o equipamento do hospital «a comprar-lhe agora» num estudo e com zero pago noutro",
      {"comprar-lhe agora": None}, []),
     ("3-evora-2027-no-orcamento-2026", "o Évora 2027 no orçamento de 2026 com três valores",
@@ -486,31 +686,60 @@ I180 = [
 ]
 REPETICOES = [
     ("serie-da-divida-do-regulador", "a série da dívida da DGAL impressa por inteiro", "€77 961 663"),
-    ("votacao-das-contas-de-2024", "a votação das contas de 2024", "2 votos a favor"),
+    # A VOTAÇÃO APANHA-SE TAMBÉM POR EXTENSO (passagem E1c, ponto 4 do mandato): a agulha era só «2 votos a
+    # favor», e os «cinco votos» da abertura de quem governou passavam por ela. São agora as duas formas, com
+    # algarismos e por extenso, do voto a favor e do voto contra.
+    ("votacao-das-contas-de-2024", "a votação das contas de 2024",
+     [r"\b(?:2|dois)\s+votos?\s+a\s+favor\b", r"\b(?:5|cinco)\s+votos?\b", r"\b(?:5|cinco)\s+contra\b",
+      r"\b(?:2|two)\s+votes?\s+in\s+favou?r\b", r"\b(?:5|five)\s+votes?\b", r"\b(?:5|five)\s+against\b"]),
     ("declaracao-do-auditor", "a declaração de impossibilidade do auditor", "Declaração de Impossibilidade"),
     ("cento-e-trinta-e-sete-dias", "os 137 dias de prazo médio de pagamento", "137 dias"),
     ("pagamentos-em-atraso", "os €4 976 172 em atraso", "4 976 172"),
 ]
 
 
-def medir_i180():
-    textos_antigos = {s: texto_de_html(documento(s)) for s in ANTIGOS}
-    textos_novos = {s: texto_de_html(documento(s)) for s in NOVOS}
+def tem_agulha(texto, agulha):
+    """Uma agulha é uma cadeia (procurada tal como está) ou uma lista de expressões regulares."""
+    if isinstance(agulha, str):
+        return agulha in texto
+    return any(re.search(a, texto, re.I) for a in agulha)
+
+
+def avaliar_i180(textos_antigos, textos_novos):
+    """A reconciliação das oito contradições e das repetições, sobre os textos dados.
+
+    Devolve os pontos, as repetições e três contas: as frases que saem vistas nos antigos, as que
+    ficaram nos novos, e as âncoras que entram presentes nos novos. Uma função só, para que o
+    conhecido-positivo corra exatamente o mesmo detetor sobre os estudos novos vazios."""
     pontos = []
     for pid, oque, saem, entram in I180:
         r = {"ponto": pid, "o_que_era": oque, "saem": {}, "entram": []}
-        for frase in saem:
+        for frase, onde_pode_ficar in saem.items():
             antes = {s: conta(t, frase) for s, t in textos_antigos.items() if conta(t, frase)}
             depois = {s: conta(t, frase) for s, t in textos_novos.items() if conta(t, frase)}
-            r["saem"][frase] = {"nos_antigos": antes, "nos_novos": depois}
+            r["saem"][frase] = {"nos_antigos": antes, "nos_novos": depois, "onde_pode_ficar": onde_pode_ficar,
+                                "fora_do_seu_lugar": {s: n for s, n in depois.items() if s != onde_pode_ficar}}
         for slug, ancora in entram:
-            r["entram"].append({"estudo": slug, "ancora": ancora, "vezes": conta(textos_novos[slug], ancora)})
+            r["entram"].append({"estudo": slug, "ancora": ancora, "vezes": conta(textos_novos.get(slug, ""), ancora)})
         pontos.append(r)
     reps = []
     for rid, oque, agulha in REPETICOES:
         reps.append({"repeticao": rid, "o_que_era": oque, "agulha": agulha,
-                     "estudos_antigos_com_ela": sorted(s for s, t in textos_antigos.items() if agulha in t),
-                     "estudos_novos_com_ela": sorted(s for s, t in textos_novos.items() if agulha in t)})
+                     "estudos_antigos_com_ela": sorted(s for s, t in textos_antigos.items() if tem_agulha(t, agulha)),
+                     "estudos_novos_com_ela": sorted(s for s, t in textos_novos.items() if tem_agulha(t, agulha))})
+    vistas = {f: any(conta(t, f) for t in textos_antigos.values()) for _, _, saem, _ in I180 for f in saem}
+    ficaram = {f: v["fora_do_seu_lugar"] for p in pontos for f, v in p["saem"].items() if v["fora_do_seu_lugar"]}
+    ancoras = [(a["estudo"], a["ancora"], a["vezes"]) for p in pontos for a in p["entram"]]
+    em_dois = {r["repeticao"]: r["estudos_novos_com_ela"] for r in reps if len(r["estudos_novos_com_ela"]) > 1}
+    return pontos, reps, {"frases_que_saem_vistas_nos_antigos": vistas, "frases_que_saem_e_ficaram_nos_novos": ficaram,
+                          "ancoras_que_entram": len(ancoras), "ancoras_presentes": sum(1 for *_x, v in ancoras if v >= 1),
+                          "repeticoes_em_dois_estudos_novos": em_dois}
+
+
+def medir_i180():
+    textos_antigos = {s: texto_de_html(documento(s)) for s in ANTIGOS}
+    textos_novos = {s: texto_de_html(documento(s)) for s in NOVOS}
+    pontos, reps, contas = avaliar_i180(textos_antigos, textos_novos)
     # os três valores da mesma obra de São Bento de Cástris, numa tabela do 19
     t19 = textos_novos["evora-2027-capital-europeia-da-cultura"]
     i = t19.find("O Mosteiro de São Bento de Cástris, em três documentos")
@@ -521,15 +750,31 @@ def medir_i180():
                "6 000 000 no 19": "6 000 000" in t19, "6 000 000 no 18, na linha de Cástris": "Mosteiro de São Bento de Cástris 6 000 000 " in t18}
     # o PRR: um só instantâneo, datado, no 18; quantas datas de leitura os novos imprimem ao lado de um total
     datas_prr = {s: sorted(set(re.findall(r"2026-08-(?:04|07|19)", t))) for s, t in textos_novos.items()}
-    # conhecido-positivo: cada frase que sai tem de ser vista em pelo menos um estudo antigo
-    vistas = {f: any(conta(t, f) for t in textos_antigos.values()) for _, _, saem, _ in I180 for f in saem}
-    medida("contradicoes_i180", {"pontos": pontos, "repeticoes": reps, "castris_no_19": castris, "datas_de_leitura_do_prr_nos_novos": datas_prr},
+    # O CONHECIDO-POSITIVO EXIGE QUE A RECONCILIAÇÃO SOBREVIVA (passagem E1c, ponto 10 do mandato). Até à
+    # E1c ele só conferia que as frases que saem tinham sido vistas nos antigos, e passava com os estudos
+    # novos vazios: as âncoras que entram contavam zero e «mordeu» ficava verdadeiro. Passa a exigir também
+    # cada âncora presente nos novos, nenhuma frase que sai ainda lá, e nenhuma repetição em dois estudos
+    # novos; e corre o mesmo detetor sobre os estudos novos vazios e sobre o 17 com os «cinco votos»
+    # plantados, que têm de o fazer falhar.
+    def passa(c):
+        return (all(c["frases_que_saem_vistas_nos_antigos"].values()) and not c["frases_que_saem_e_ficaram_nos_novos"]
+                and c["ancoras_presentes"] == c["ancoras_que_entram"] and not c["repeticoes_em_dois_estudos_novos"])
+    _p, _r, vazios = avaliar_i180(textos_antigos, {s: "" for s in NOVOS})
+    plantados = dict(textos_novos)
+    plantados["evora-quem-governou-a-camara-2009-2025"] += " A mesma aritmética deixou cinco votos rejeitar um ano de contas."
+    _p, _r, com_votos = avaliar_i180(textos_antigos, plantados)
+    medida("contradicoes_i180", {"pontos": pontos, "repeticoes": reps, "castris_no_19": castris, "datas_de_leitura_do_prr_nos_novos": datas_prr,
+                                 "contas": contas, "a_reconciliacao_passa": passa(contas)},
            "o texto visível dos documentos alojados (studies-src/<slug>/pt.html), sem marcação e com os espaços finos tornados espaço, "
-           "procurado frase a frase nos seis antigos e nos quatro novos",
-           {"descricao": "cada frase que sai foi vista em pelo menos um dos seis antigos, e cada repetição em pelo menos dois",
-            "frases_vistas_nos_antigos": vistas,
-            "repeticoes_vistas_em_dois_antigos": {r["repeticao"]: len(r["estudos_antigos_com_ela"]) >= 2 for r in reps},
-            "mordeu": all(vistas.values())})
+           "procurado frase a frase nos seis antigos e nos quatro novos; as repetições, por cadeia ou pela lista de expressões da agulha",
+           {"descricao": "cada frase que sai foi vista nos antigos e não está nos novos, cada âncora que entra está nos novos e nenhuma "
+                         "repetição está em dois estudos novos; o mesmo detetor tem de falhar com os quatro estudos novos vazios e com os "
+                         "«cinco votos» plantados no texto do 17",
+            "com_os_estudos_novos_vazios": {"ancoras_presentes": vazios["ancoras_presentes"], "ancoras_que_entram": vazios["ancoras_que_entram"],
+                                            "passa": passa(vazios)},
+            "com_os_cinco_votos_plantados_no_17": {"repeticoes_em_dois_estudos_novos": com_votos["repeticoes_em_dois_estudos_novos"],
+                                                   "passa": passa(com_votos)},
+            "mordeu": passa(contas) and not passa(vazios) and not passa(com_votos)})
 
 
 # ------------------------------------------------------ as frases envelhecidas
@@ -806,6 +1051,7 @@ def main():
     medir_numeros_em_dois_estudos()
     medir_celulas()
     medir_celulas_e_linhas_do_sitio()
+    medir_celulas_nas_paginas()
     medir_selos()
     medir_mapa_de_migracao()
     medir_i180()
@@ -821,6 +1067,12 @@ def main():
     saida = {"bloco": "E1", "guiao": "design/especime-v3/medicoes/e1-2026-09-30/medir-e1.py",
              "medido_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
              "conhecidos_positivos_que_nao_morderam": falhou, "medidas": MEDIDAS}
+    # AS CHAVES DAS PASSAGENS FICAM (passagem E1c): a E1b e a E1c escrevem as suas medidas em `e1b` e `e1c`, e
+    # uma corrida deste guião reescrevia o ficheiro inteiro sem elas.
+    anterior = json.loads((AQUI / "medidas.json").read_text(encoding="utf-8")) if (AQUI / "medidas.json").exists() else {}
+    for chave, valor in anterior.items():
+        if re.fullmatch(r"e1[b-z]", chave):
+            saida[chave] = valor
     texto = json.dumps(saida, ensure_ascii=False, indent=1) + "\n"
     for proibido in (str(Path.home()), str(MOTOR), str(SITIO)):
         if proibido and proibido in texto:
