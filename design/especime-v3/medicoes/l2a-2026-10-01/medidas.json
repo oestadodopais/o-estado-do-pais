@@ -46,7 +46,7 @@
     },
     {
       "nome": "construcao_medida",
-      "valor": "a66ab832fbba2f29764a31109377bf4a596d2150",
+      "valor": "401d057640e3add07e147879891d4098d93e8e01",
       "comando": "dist/version.json, campo commit",
       "conhecido_positivo": {
         "o_que": "o ficheiro da versão existe e nomeia um commit",
@@ -550,56 +550,56 @@
     },
     {
       "nome": "l2a_b_codigo_build",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/build.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2a_b_segundos_build",
-      "valor": "NÃO LIDO",
+      "valor": 115,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/build.inicio e build.fim",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2a_b_codigo_verify",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/verify.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2a_b_segundos_verify",
-      "valor": "NÃO LIDO",
+      "valor": 706,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/verify.inicio e verify.fim",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2a_b_codigo_typecheck",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/typecheck.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "l2a_b_segundos_typecheck",
-      "valor": "NÃO LIDO",
+      "valor": 1,
       "comando": "design/especime-v3/medicoes/l2a-2026-10-01/portoes/l2a-b/typecheck.inicio e typecheck.fim",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça em que correu",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
