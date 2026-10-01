@@ -1331,13 +1331,15 @@ async function comNavegador() {
      * «308concelhos», e é o que faz cada corrida de texto solto virar um item
      * anónimo com o espaço aparado nas duas pontas.
      */
-    /** Onde um número é seguido de uma palavra, na primeira página. */
+    /** Onde um número é seguido de uma palavra: desde o L2a, na página dos lugares, que é onde o mapa vive. */
     const CAIXAS_DO_PAR = '.dominios-estado, .mapa-nome-repouso';
     /** A planta: a caixa do par vira um contentor flexível sem folga. */
     /* B1, peça 3: o par do mapa passou para dentro da ligação dos Lugares.
        Estragar só o parágrafo pai já não retirava o gap da ligação. A medida
        e o mínimo ficam iguais; a planta atinge também a caixa que tem o par. */
-    const PLANTA_DO_PAR = '.dominios-estado,.mapa-nome-repouso,.pais-porta-lugares{display:flex;gap:0}';
+    /* L2a (01.10.2026): a ligação `.pais-porta-lugares` saiu com o mapa da primeira página, e o par
+       voltou a viver no parágrafo do lugar do nome, em «Lugares». */
+    const PLANTA_DO_PAR = '.dominios-estado,.mapa-nome-repouso{display:flex;gap:0}';
     /** @type {string[]} */
     const falhas = [];
     const notas = [];
@@ -1415,7 +1417,11 @@ async function comNavegador() {
     const ctx = await nav.newContext({ viewport: { width: 390, height: 800 } });
     /** @type {Record<string, unknown>} */
     const medidos = {};
-    for (const rota of ['/', '/en/']) {
+    /* A RÉGUA SEGUE O MAPA (bloco L2a, 01.10.2026; §1.149). O par número-palavra que esta célula mede na
+       primeira página era o «308 concelhos» do lugar do nome do mapa; o mapa passou para «Lugares», e o par
+       com ele. Medir a primeira página deixava a célula a contar zero pares, que é o modo mais silencioso
+       de uma régua morrer; mede-se onde o par está. */
+    for (const rota of ['/lugares/', '/en/places/']) {
       const pag = await ctx.newPage();
       await pag.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
 

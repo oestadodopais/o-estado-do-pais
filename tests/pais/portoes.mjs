@@ -77,9 +77,11 @@ planta('lugar','scripts/check-lugar.mjs',[
 planta('voz','scripts/check-voz.mjs',[
  ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Esta página explica a média europeia.</p>')]
 ],[/B1 lista fechada país/,/FRASE DA CLASSE POR PROVAR/]);
+/* L2a (01.10.2026): o mapa saiu da primeira página e a porta dele com ele; o feixe exige agora o sinal
+   na porta «Lugares» do índice, e esta planta tira-o. */
 planta('feixe-porta','scripts/design-bundle.mjs',[
- ['index.html',r=>r.querySelector('.pais-porta-lugares').remove()]
-],[/perdeu a porta dos lugares/]);
+ ['index.html',r=>r.querySelector('[data-sinal-dos-lugares]').remove()]
+],[/perdeu o sinal do mapa/]);
 /* A PEÇA DA CORREÇÃO NO FEIXE CONTINUA A MORDER (B1c): o feixe deixou de a ler
    por `.log-linha`, que saiu com a tabela de quatro colunas, e passou a lê-la
    pela linha de correção da lista única. Sem uma, fecha. */
