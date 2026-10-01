@@ -327,3 +327,107 @@
   font-family: var(--f-prosa);
   font-size: 13px;
 }
+
+/* ---------------------------------------------------------------------------
+ * A FAIXA DO CONCELHO (bloco L2b, 01.10.2026): onde o concelho fica entre os 308
+ * ---------------------------------------------------------------------------
+ * A gramática da faixa da União, acima, com os 308: uma linha do valor mais
+ * baixo ao mais alto dos concelhos com valor, cada concelho um traço fino a
+ * cinzento (um só caminho de SVG), o concelho da página um ponto maior a tinta,
+ * e Portugal um traço a tinta quando há com que comparar. SEM COR, pela razão
+ * da faixa da União. Três andares no desenho: o nome do concelho por cima, as
+ * marcas, e o nome de Portugal por baixo, para que os dois nunca se sobreponham.
+ * O traço fino não engrossa quando a régua estica: `vector-effect` mantém-lhe a
+ * largura de um píxel em qualquer largura do cartão. */
+.cartao-medida-faixa-concelho {
+  display: grid;
+  gap: 4px;
+  margin: 4px 0 0;
+  max-width: 34rem;
+  min-width: 0;
+}
+.fc-desenho {
+  position: relative;
+  height: 48px;
+  margin: 0 6px;
+}
+.fc-eixo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 17px;
+  height: 13px;
+}
+.fc-tapete {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.fc-tapete path {
+  fill: none;
+  stroke: var(--g2);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+.fc-marca {
+  position: absolute;
+}
+.fc-marca.fc-concelho {
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 2px var(--paper);
+  z-index: 2;
+}
+.fc-marca.fc-portugal {
+  top: -2px;
+  width: 0;
+  height: 17px;
+  margin-left: -1px;
+  border-left: 2px solid var(--ink);
+  z-index: 1;
+}
+.fc-rotulo {
+  position: absolute;
+  white-space: nowrap;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--ink);
+  transform: translateX(-50%);
+}
+.fc-rotulo[data-ancora='inicio'] {
+  transform: translateX(-4px);
+}
+.fc-rotulo[data-ancora='fim'] {
+  transform: translateX(calc(-100% + 4px));
+}
+.fc-rotulo-concelho {
+  top: 0;
+  font-weight: 600;
+}
+.fc-rotulo-portugal {
+  top: 33px;
+  color: var(--muted);
+}
+.fc-valor,
+.fc-lugar,
+.fc-conta {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.fc-frase,
+.fc-comparacao {
+  margin: 0;
+  max-width: 58ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}

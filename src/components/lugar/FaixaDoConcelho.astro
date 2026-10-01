@@ -1,0 +1,102 @@
+---
+/**
+ * A FAIXA DO CONCELHO NUM CARTÃO (bloco L2b, 01.10.2026): onde o concelho fica entre os 308.
+ *
+ * Por baixo do valor de um cartão de concelho, uma linha do valor mais baixo ao mais alto dos concelhos
+ * com valor, com uma marca por concelho, a deste concelho maior e a tinta, a de Portugal como um traço
+ * quando há com que comparar, e duas frases: o lugar do concelho, e a comparação com Portugal. É a faixa
+ * da União (`src/components/FaixaDaUniao.astro`) aplicada aos 308. O modelo vem de
+ * `src/lib/faixa-do-concelho.mjs`, que fez as contas: aqui não se calcula nada.
+ *
+ * A DERIVAÇÃO DO LUGAR, DECLARADA (o brief L2b, §5, decisão 1): o lugar é 1 mais o número de concelhos
+ * com valor maior, ou com valor menor nas medidas que a tabela de `src/data/faixa-do-concelho.mjs` conta
+ * do mais baixo; os concelhos com o mesmo valor ficam no mesmo lugar, e a frase diz quantos são os outros.
+ * As 308 linhas da medida são o recibo: o portão de HTML reconta o lugar, a contagem e os empates a partir
+ * delas (`scripts/concelhos-do-portao.mjs`), como reconta o lugar de Portugal entre os 27 a partir da série.
+ * Nenhuma linha nova no livro-razão.
+ *
+ * SEM COR (IDENTIDADE §2): uma posição num ordenamento não é um valor de referência publicado, e diz-se
+ * por palavras e a tinta. O concelho distingue-se pelo tamanho da marca e pelo rótulo; Portugal, pela forma.
+ *
+ * O DESENHO VAI `aria-hidden`: as frases dizem o que ele mostra, com os valores, o nome e o lugar. As
+ * marcas dos concelhos com valor são um só caminho de SVG (uma por concelho, do valor mais baixo ao mais
+ * alto), e não 308 elementos: oito faixas por página em 616 páginas pesavam mais do que a página inteira.
+ * Não há algarismos no desenho, e o caminho não é uma das formas da casa (`data-forma`): é a régua de um
+ * cartão, como a da faixa da União.
+ *
+ * CADA ALGARISMO TEM ORIGEM: o valor do concelho e o de Portugal são linhas do livro-razão (`<Claim>`),
+ * sem marca própria, dentro do invólucro `data-selo-em` do cartão, cuja marca única abre o recibo da linha
+ * do concelho, onde «O enquadramento» lista a linha de Portugal (a K10); o lugar (`data-concelho-lugar`), a
+ * contagem (`data-concelho-conta`) e os empates (`data-concelho-a-par`) são marcas que o portão de HTML
+ * reconta. O nome de Portugal vem da tabela de autoridade dos países (`NomeDoPais`); o do concelho, da
+ * Carta, com a marca de lugar.
+ */
+import Claim from '../Claim.astro';
+import NomeDoPais from '../serie/NomeDoPais.astro';
+import { faixaDoConcelho } from '../../lib/faixa-do-concelho.mjs';
+
+const { tile, slug, nome, lang = 'pt', s } = Astro.props;
+const f = tile?.claim ? faixaDoConcelho(tile.chave, slug, tile.claim) : null;
+const p = s.municipio.faixaDoConcelho;
+/* O sufixo do ordinal: em português, «.º» depois de qualquer número; em inglês, `st`, `nd` e `rd` para os
+   números acabados em 1, 2 e 3, `th` para os outros e para os acabados em 11, 12 e 13. As palavras são as
+   declaradas; a regra é a da língua, e a célula confere-a contra uma tabela escrita à mão. */
+const sufixo = (n) => {
+  const d = n % 100;
+  if (d >= 11 && d <= 13) return p.ordinal.th;
+  return [p.ordinal.th, p.ordinal.st, p.ordinal.nd, p.ordinal.rd][n % 10] ?? p.ordinal.th;
+};
+const caminho = f ? f.tiques.map((x) => `M${x} 0V10`).join('') : '';
+---
+
+{
+  f && (
+    <div class="cartao-medida-faixa-concelho" data-faixa-concelho={f.chave} data-selo-em={f.claim}>
+      <div class="fc-desenho" aria-hidden="true" data-faixa-concelho-desenho={f.chave}>
+        {f.concelho && (
+          <span class="fc-rotulo fc-rotulo-concelho" data-faixa-rotulo="concelho" data-ancora={f.concelho.ancora} style={`left:${f.concelho.esquerda}%`}>
+            <span data-lugar>{nome}</span>
+          </span>
+        )}
+        <span class="fc-eixo">
+          <svg class="fc-tapete" viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false">
+            <path d={caminho} data-faixa-tiques={f.chave} />
+          </svg>
+          {f.portugal && (
+            <span class="fc-marca fc-portugal" data-faixa-portugal={f.portugal.tipo} style={`left:${f.portugal.esquerda}%`} />
+          )}
+          {f.concelho && <span class="fc-marca fc-concelho" data-faixa-concelho-marca={`${f.chave}#${f.slug}`} style={`left:${f.concelho.esquerda}%`} />}
+        </span>
+        {f.portugal && (
+          <span class="fc-rotulo fc-rotulo-portugal" data-faixa-rotulo="portugal" data-ancora={f.portugal.ancora} style={`left:${f.portugal.esquerda}%`}>
+            <NomeDoPais geo="PT" lang={lang} />
+          </span>
+        )}
+      </div>
+      {f.lugar !== null ? (
+        <p class="fc-frase" data-faixa-concelho-frase={f.chave}>
+          <span data-lugar>{nome}</span>{' ('}<Claim id={f.claim} lang={lang} as="span" class="fc-valor" />{')'}{p.lugarA}<span class="fc-lugar" data-concelho-lugar={`${f.chave}#${f.slug}`}>{f.lugar}</span>{sufixo(f.lugar)}{p.lugarB}<span class="fc-conta" data-concelho-conta={f.chave}>{f.conta}</span>{p.lugarC}{p.ordem[f.ordem]}{f.aPar === 1 ? p.aParUm : f.aPar > 1 ? <>{p.aParVariosA}<span class="fc-conta" data-concelho-a-par={`${f.chave}#${f.slug}`}>{f.aPar}</span>{p.aParVariosB}</> : null}{p.fim}
+        </p>
+      ) : (
+        <p class="fc-frase" data-faixa-concelho-frase={f.chave}>
+          <span data-lugar>{nome}</span>{p.semValorA}<span class="fc-conta" data-concelho-conta={f.chave}>{f.conta}</span>{p.semValorB}
+        </p>
+      )}
+      {f.lado && f.portugal?.tipo === 'linha' && (
+        <p class="fc-comparacao" data-faixa-comparacao="linha">
+          {p.comparacaoA}<span data-voz>{p[f.lado]}</span>{p.comparacaoLinhaA}<Claim id={f.portugal.id} lang={lang} as="span" class="fc-valor" />{p.comparacaoLinhaB}
+        </p>
+      )}
+      {f.lado && f.portugal?.tipo === 'base' && (
+        <p class="fc-comparacao" data-faixa-comparacao="base">
+          {p.comparacaoA}<span data-voz>{p[f.lado]}</span>{p.comparacaoBase}
+        </p>
+      )}
+      {!f.portugal && (
+        <p class="fc-comparacao" data-faixa-comparacao="nenhuma">
+          <span data-voz>{p.semComparacao}</span>
+        </p>
+      )}
+    </div>
+  )
+}
