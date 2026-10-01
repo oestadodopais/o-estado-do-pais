@@ -2299,6 +2299,10 @@ export const STRINGS = {
            portuguesa de uma medida com série de países, a ligação para o recibo
            da série, com as palavras da porta da faixa do cartão. */
         enquadramentoPaises: 'Países da União',
+        /* L2b (01.10.2026): a linha de Portugal com que a linha de um concelho se compara, no mesmo
+           período e na mesma unidade. A faixa do cartão do concelho mostra o valor de Portugal sem marca
+           própria, e é aqui que a marca única do cartão o paga (a K10). */
+        enquadramentoPortugal: 'Portugal, no mesmo período',
         /* O ESTADO DE UMA FONTE SÃO DOIS ESTADOS, e não um (03.09.2026,
            segunda passagem do F0.11, Major 4 da leitura a frio). É uma data e
            não um adjectivo: o que a casa sabe é desde quando. E é uma de duas
@@ -2409,6 +2413,51 @@ export const STRINGS = {
         acima: 'acima da média do país',
         abaixo: 'abaixo da média do país',
         fim: '.',
+        /* O GANHO MÉDIO CONTRA PORTUGAL (bloco L2b, 01.10.2026, o §3 do brief, ponto 3; a I182). Uma
+           frase a seguir às outras, com os dois valores das linhas, selados: o do concelho e o da linha
+           nacional da mesma medida e do mesmo período. A palavra do lado é a da faixa do cartão
+           (`faixaDoConcelho.acima`, `.abaixo`, `.igual`), escrita uma vez. */
+        ganhoA: 'O ganho médio mensal é de ',
+        ganhoB: ', ',
+        ganhoC: ' (',
+        ganhoD: ').',
+      },
+      /* =====================================================================
+       * A FAIXA DO CONCELHO (bloco L2b, 01.10.2026)
+       * =====================================================================
+       * As palavras da faixa de cada cartão de um concelho: o lugar entre os
+       * concelhos com valor, a ordem em que se conta, os empates e a
+       * comparação com Portugal. Os algarismos não estão aqui: o lugar, a
+       * contagem e os empates são marcas que o portão de HTML reconta das 308
+       * linhas, e os valores são linhas do livro-razão. A ordem diz-se e não
+       * se julga: nenhuma palavra diz «melhor» nem «pior» (§1.130).
+       *
+       * O ORDINAL É UMA CHAVE NAS DUAS EDIÇÕES, porque as duas partilham as
+       * chaves: em português é «.º» depois de qualquer número; em inglês, o
+       * sufixo que a regra do inglês escolhe, como na faixa da União. */
+      faixaDoConcelho: {
+        lugarA: ' está em ',
+        ordinal: { st: '.º', nd: '.º', rd: '.º', th: '.º' },
+        lugarB: ' lugar entre os ',
+        lugarC: ' concelhos com valor, ',
+        ordem: {
+          'do-mais-alto': 'do mais alto para o mais baixo',
+          'do-mais-baixo': 'do mais baixo para o mais alto',
+        },
+        aParUm: ', a par de outro concelho com o mesmo valor',
+        aParVariosA: ', a par de ',
+        aParVariosB: ' outros concelhos com o mesmo valor',
+        fim: '.',
+        semValorA: ' não tem valor publicado neste período, e por isso não tem lugar entre os ',
+        semValorB: ' concelhos com valor.',
+        comparacaoA: 'Está ',
+        comparacaoLinhaA: ' (',
+        comparacaoLinhaB: ').',
+        comparacaoBase: ', que é a base do índice.',
+        acima: 'acima de Portugal',
+        abaixo: 'abaixo de Portugal',
+        igual: 'igual a Portugal',
+        semComparacao: 'Sem comparação com Portugal no mesmo período.',
       },
       /* O VALOR QUE A FONTE NÃO PUBLICOU (B1, peça 2; a nota D4 da maqueta).
          Onde a lista da Direção-Geral não determina a figura de um concelho, o
@@ -3816,6 +3865,8 @@ export const STRINGS = {
         enquadramentoAnterior: 'Previous period',
         enquadramentoUe: 'European Union',
         enquadramentoPaises: 'EU countries',
+        /* L2b: see the Portuguese edition. */
+        enquadramentoPortugal: 'Portugal, same period',
         semRespostaK: 'No answer since',
         respondeuComErroK: 'Answering with an error since',
         aEstaMaquinaK: 'to this machine',
@@ -3863,6 +3914,36 @@ export const STRINGS = {
         acima: 'above the country average',
         abaixo: 'below the country average',
         fim: '.',
+        /* L2b: average earnings against Portugal; see the Portuguese edition. */
+        ganhoA: 'Average monthly earnings are ',
+        ganhoB: ', ',
+        ganhoC: ' (',
+        ganhoD: ').',
+      },
+      /* The municipality strip (L2b). See the Portuguese edition. */
+      faixaDoConcelho: {
+        lugarA: ' ranks ',
+        ordinal: { st: 'st', nd: 'nd', rd: 'rd', th: 'th' },
+        lugarB: ' of the ',
+        lugarC: ' municipalities with a value, ',
+        ordem: {
+          'do-mais-alto': 'from the highest to the lowest',
+          'do-mais-baixo': 'from the lowest to the highest',
+        },
+        aParUm: ', level with another municipality with the same value',
+        aParVariosA: ', level with ',
+        aParVariosB: ' other municipalities with the same value',
+        fim: '.',
+        semValorA: ' has no published value for this period, so it has no place among the ',
+        semValorB: ' municipalities with a value.',
+        comparacaoA: 'It is ',
+        comparacaoLinhaA: ' (',
+        comparacaoLinhaB: ').',
+        comparacaoBase: ', which is the base of the index.',
+        acima: 'above Portugal',
+        abaixo: 'below Portugal',
+        igual: 'level with Portugal',
+        semComparacao: 'No comparison with Portugal for the same period.',
       },
       /* Ver a razão na edição portuguesa (B1, peça 2). */
       semValorPublicado: 'no published value',

@@ -166,7 +166,7 @@ const jsonld = {
           <h3 class="lugar-tema-k" data-nome="dominios">{tema.nome}</h3>
           <div class="lugar-cartoes">
             {tema.medidas.map((tile) => (
-              <CartaoDoLugar tile={tile} lang={lang} s={s} />
+              <CartaoDoLugar tile={tile} lang={lang} s={s} slug={slug} nome={nome} />
             ))}
           </div>
         </div>

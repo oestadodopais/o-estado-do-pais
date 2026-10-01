@@ -27,6 +27,11 @@
  *        põe-na num desses cartões. **Desde a UE1d (29.09.2026, §1.140) há a
  *        ressalva da comparação com a União** (`cartao-medida-ressalva`), uma
  *        vez, só num cartão de uma medida que a lista da K14 nomeia.
+ *        **Desde o L2b (01.10.2026) há a faixa do concelho**
+ *        (`cartao-medida-faixa-concelho`), uma vez, só num cartão de concelho
+ *        (`data-medida-chave`) cuja medida está na tabela das ordens
+ *        (`src/data/faixa-do-concelho.mjs`); num cartão nacional, ou num de uma
+ *        medida fora da tabela, é um bloco a mais.
  *   K18 · **a faixa da União refeita dos pontos** · a mesma célula que a F19 do
  *        `check:formas` corre na construção (`tests/cartao/faixa.mjs`): a faixa em
  *        cada cartão nacional com série, o desenho com uma marca por país na
@@ -242,6 +247,7 @@ import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../../scripts/series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from './faixa.mjs';
 import { RESSALVAS_DA_UNIAO } from '../../src/data/ressalvas-da-uniao.mjs';
+import { FAIXA_DAS_MEDIDAS_DO_CONCELHO } from '../../src/data/faixa-do-concelho.mjs';
 
 /**
  * K14 · A RESSALVA NUM CARTÃO OU NUM RECIBO: uma e uma só marca
@@ -300,6 +306,9 @@ const PECAS_PERMITIDAS = new Set([
   /* UE1d, 29.09.2026 (§1.140): a ressalva da comparação com a União, só num
      cartão de uma medida que a lista da K14 nomeia, e uma vez. */
   'cartao-medida-ressalva',
+  /* L2b, 01.10.2026: a faixa do concelho, só num cartão de concelho de uma
+     medida da tabela das ordens, e uma vez (a K1 confere as duas coisas). */
+  'cartao-medida-faixa-concelho',
 ]);
 /** As séries de países e a tabela dos nomes, pelo leitor próprio dos portões (K1, K18). */
 const SERIES_DA_K18 = lerSeriesDoPortao();
@@ -403,6 +412,8 @@ function corre(dist) {
     cartoes_com_veredicto: 0,
     /* UE1: os cartões com a faixa da União, e o que a K18 conferiu nelas. */
     cartoes_com_faixa: 0,
+    /* L2b: os cartões de concelho com a faixa do concelho (K1). */
+    cartoes_com_faixa_do_concelho: 0,
     faixas_k18: 0,
     plantas_k18: 0,
     /* UE1b: as ressalvas das pontas, e as palavras da faixa (F19g, F19h). */
@@ -564,6 +575,14 @@ function corre(dist) {
           erros.push(`K1 · ${rota} · ${id}: o cartão tem a ressalva da comparação com a União e a medida não está na lista da K14`);
         }
         if (ressalvasNoCartao > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${ressalvasNoCartao} ressalvas da comparação com a União`);
+        /* L2b: a faixa do concelho só num cartão de concelho de uma medida da tabela, e uma vez. */
+        const faixasDoConcelho = classes.filter((c) => c === 'cartao-medida-faixa-concelho').length;
+        const chaveDoConcelho = cartao.getAttribute('data-medida-chave');
+        if (faixasDoConcelho && !(chaveDoConcelho && Object.hasOwn(FAIXA_DAS_MEDIDAS_DO_CONCELHO, chaveDoConcelho))) {
+          erros.push(`K1 · ${rota} · ${id}: o cartão tem a faixa do concelho e não é um cartão de concelho de uma medida da tabela das ordens`);
+        }
+        if (faixasDoConcelho > 1) erros.push(`K1 · ${rota} · ${id}: o cartão tem ${faixasDoConcelho} faixas do concelho`);
+        if (faixasDoConcelho) contas.cartoes_com_faixa_do_concelho++;
         /* ----------------------------------------------------------- K11 */
         /* UM CARTÃO SEM NOME FECHA A CONSTRUÇÃO (achado 3 da leitura a frio de
            15.09.2026: «The card gate can pass cards missing mandatory content,
@@ -724,6 +743,10 @@ function corre(dist) {
                porta dela é a marca única que a primeira metade desta célula já
                conta; não é uma linha de enquadramento e o recibo não a lista. */
             if (daRegua === id && item.hasAttribute('data-cartao-leitura')) continue;
+            /* L2b: a faixa do concelho escreve o valor do próprio cartão, cuja porta
+               é a mesma marca única; a linha de Portugal que ela escreve fica
+               nas enquadradas, e o recibo tem de a listar. */
+            if (daRegua === id && item.hasAttribute('data-faixa-concelho')) continue;
             if (daRegua) enquadradas.push({ rota, cartao: id, linha: daRegua, lang: langPagina });
           }
         }
@@ -1131,6 +1154,13 @@ function montaAProva() {
       '<p class="cartao-medida-valor"><span data-claim="formacao-bruta-de-capital-fixo-2025">19,8</span>' + chip('formacao-bruta-de-capital-fixo-2025') + '</p>' +
       '<div class="cartao-medida-faixa" data-faixa-ue="divida-publica-2025-paises"></div>' +
       '</article>' +
+      /* PLANTA 13 (K1, L2b): a faixa do concelho num cartão nacional, que não é um
+         cartão de concelho. É um bloco a mais, e a K1 recusa-o. */
+      '<article data-cartao-medida="taxa-de-desemprego-2024">' +
+      '<span class="cartao-medida-nome">Taxa de desemprego</span>' +
+      '<p class="cartao-medida-valor"><span data-claim="taxa-de-desemprego-2024">6,5</span>' + chip('taxa-de-desemprego-2024') + '</p>' +
+      '<div class="cartao-medida-faixa-concelho" data-faixa-concelho="ganho"></div>' +
+      '</article>' +
       /* PLANTA 6 (K8): a legenda da marca numa página de área. */
       '<p class="marca-legenda">Ao pé de cada número, a marca da fonte.</p>' +
       '</body></html>',
@@ -1203,6 +1233,7 @@ if (PROVA) {
     ['K14', 'o cartão mostra a União e sem a ressalva'],
     ['K14', 'o recibo mostra a União e sem a ressalva'],
     ['K1', 'a faixa da União e a linha não tem série'],
+    ['K1', 'a faixa do concelho e não é um cartão de concelho'],
   ];
   for (const [celula, pedaco] of esperado) {
     const vistos = dessaCelula(celula);
@@ -1848,6 +1879,7 @@ console.log(
 console.log(cinza(`    cartões com veredicto conferido (K15)                 ${r.contas.cartoes_com_veredicto}`));
 console.log(cinza(`    a União com a ressalva (K14): cartões e recibos        ${r.contas.cartoes_com_uniao_e_ressalva} · ${r.contas.recibos_com_uniao_e_ressalva}`));
 console.log(cinza(`    cartões com a faixa da União (K1, K18)                 ${r.contas.cartoes_com_faixa}`));
+console.log(cinza(`    cartões de concelho com a faixa do concelho (K1)       ${r.contas.cartoes_com_faixa_do_concelho}`));
 console.log(cinza(`    faixas refeitas dos pontos (K18)                       ${r.contas.faixas_k18}${PROVA ? ` · ${r.contas.plantas_k18} planta(s) a morder` : ''}`));
 console.log(cinza(`    ressalvas nas pontas e ordinais (K18, UE1b)            ${r.contas.ressalvas_k18} · ${r.contas.ordinais_k18}${PROVA ? ` · ${r.contas.plantas_das_palavras_k18} planta(s) das palavras a morder` : ''}`));
 console.log(cinza(`    empates num extremo, em memória (K18, UE1c)            ${PROVA ? `${r.contas.plantas_dos_empates_k18} planta(s) a morder` : 'sem --prova'}`));

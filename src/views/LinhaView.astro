@@ -73,6 +73,7 @@ import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
+import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
@@ -136,6 +137,11 @@ const serieDosPaises = serieDaLinha(id);
 /* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026):
    onde a medida a declara e o enquadramento mostra a União, vai no mesmo bloco. */
 const ressalvaDaComparacao = enquadramento?.ue ? ressalvaDaUniao(id, lang) : null;
+/* A LINHA DE PORTUGAL DE UMA LINHA DE CONCELHO (bloco L2b, 01.10.2026): a linha nacional da mesma
+   medida, na mesma unidade e no mesmo período, que a faixa do cartão do concelho mostra sem marca própria.
+   A marca única do cartão abre este recibo, e é aqui que ela paga esse valor, como paga os da régua de um
+   cartão nacional (a K10 do `check:cartao`). Hoje são as 308 linhas do ganho médio. */
+const portugalDoConcelho = linhaDePortugalDaLinha(id);
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
    juízo. A nota ao lado di-lo por palavras.
@@ -1289,13 +1295,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           cita as outras. O período é o campo `reference_date` da própria linha.
           ------------------------------------------------------------------- */}
       {
-        temEnquadramento && (
+        (temEnquadramento || portugalDoConcelho) && (
           <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k">
             <h2 class="linha-bloco-titulo" id="enquadramento-k">
               {s.livro.linha.enquadramentoK}
             </h2>
             <dl class="linha-verificacoes">
-              {enquadramento.anterior && (
+              {enquadramento?.anterior && (
                 <>
                   <dt>{s.livro.linha.enquadramentoAnterior}</dt>
                   <dd>
@@ -1314,7 +1320,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   </dd>
                 </>
               )}
-              {enquadramento.ue && (
+              {enquadramento?.ue && (
                 <>
                   <dt>{s.livro.linha.enquadramentoUe}</dt>
                   <dd>
@@ -1327,6 +1333,17 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   cartão, com as mesmas palavras; o portão de HTML confere que
                   está nos recibos das dez linhas, nas duas edições, e em mais
                   nenhum. */}
+              {/* L2b: a linha de Portugal de uma linha de concelho, com o valor, a marca e o período. */}
+              {portugalDoConcelho && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoPortugal}</dt>
+                  <dd data-enquadramento-portugal={portugalDoConcelho.id}>
+                    <Claim id={portugalDoConcelho.id} lang={lang} as="span" chip={true} />
+                    {' · '}
+                    <CampoDaLinha id={portugalDoConcelho.id} campo="reference_date" valor={portugalDoConcelho.periodo} lang={lang} />
+                  </dd>
+                </>
+              )}
               {serieDosPaises && (
                 <>
                   <dt>{s.livro.linha.enquadramentoPaises}</dt>

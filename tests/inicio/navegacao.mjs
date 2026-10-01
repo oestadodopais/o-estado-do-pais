@@ -6,6 +6,9 @@ import { conferirEntradas, plantasDasEntradas } from './entradas.mjs';
 import { conferirConcelhosNosLugares, plantasDosConcelhos } from './concelhos-nos-lugares.mjs';
 /* L2a (01.10.2026, §1.149): o mapa primeiro em «Lugares», as listas dobradas, e a porta com o sinal. */
 import { conferirMapaPrimeiro, plantasDoMapaPrimeiro } from './mapa-primeiro.mjs';
+/* L2b (01.10.2026, o brief L2b, §3, ponto 5): a faixa do concelho em cada cartão das medidas com linhas para
+   os 308, nas 616 páginas, refeita das linhas pelas contas dos portões. */
+import { conferirFaixasDosConcelhos, plantasDasFaixasDosConcelhos } from '../municipio/faixa-do-concelho.mjs';
 const dist = process.env.OEDP_DIST ?? 'dist';
 const r = conferirBlocosUnicos(dist);
 const entradas = conferirEntradas(dist);
@@ -16,9 +19,14 @@ const acertos = conferirAcertosN1c(dist);
 r.erros.push(...acertos.erros);
 const mapaPrimeiro = conferirMapaPrimeiro(dist);
 r.erros.push(...mapaPrimeiro.erros);
-const plantas = process.argv.includes('--prova') ? [...plantasDosBlocosUnicos(dist), ...plantasDasEntradas(dist), ...plantasDosConcelhos(dist), ...plantasDosAcertosN1c(dist), ...plantasDoMapaPrimeiro(dist)] : [];
+const faixasDosConcelhos = conferirFaixasDosConcelhos(dist);
+r.erros.push(...faixasDosConcelhos.erros);
+const prova = process.argv.includes('--prova');
+const plantasDasFaixas = prova ? plantasDasFaixasDosConcelhos(dist) : { controlo: null, resultados: [] };
+if (plantasDasFaixas.controlo?.erros.length) r.erros.push(...plantasDasFaixas.controlo.erros.map((e) => `o controlo das plantas da faixa do concelho não passou: ${e}`));
+const plantas = prova ? [...plantasDosBlocosUnicos(dist), ...plantasDasEntradas(dist), ...plantasDosConcelhos(dist), ...plantasDosAcertosN1c(dist), ...plantasDoMapaPrimeiro(dist), ...plantasDasFaixas.resultados] : [];
 for (const p of plantas) if (!p.mordeu) r.erros.push(`A planta não mordeu: ${p.nome}`);
-const relatorio = { ...r, entradas: entradas.contas, concelhos: concelhos.contas, acertos: acertos.medidas, mapa_primeiro: mapaPrimeiro.contas, plantas };
+const relatorio = { ...r, entradas: entradas.contas, concelhos: concelhos.contas, acertos: acertos.medidas, mapa_primeiro: mapaPrimeiro.contas, faixas_dos_concelhos: faixasDosConcelhos.contas, plantas };
 const j = process.argv.indexOf('--json');
 if (j >= 0) fs.writeFileSync(process.argv[j + 1], JSON.stringify(relatorio, null, 2) + '\n');
 console.log(JSON.stringify(relatorio, null, 2));

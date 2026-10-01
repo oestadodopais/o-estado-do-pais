@@ -25,6 +25,14 @@
  *
  * A AUSÊNCIA NÃO SE ESCREVE. Sem régua, o cartão não diz «sem valor de
  * referência»: não se diz o que não há.
+ *
+ * A FAIXA DO CONCELHO (bloco L2b, 01.10.2026). Cada cartão de uma medida com
+ * linhas para os 308 leva, depois da régua e antes da frase, a faixa que diz
+ * onde o concelho fica entre os concelhos com valor e como se compara com
+ * Portugal (`FaixaDoConcelho.astro`). É a sexta coisa do cartão, e só neste
+ * cartão, como a faixa da União é a sexta coisa de um cartão nacional com
+ * série: a K1 do `check:cartao` admite-a só aqui e uma vez. A anatomia das
+ * cinco não muda.
  */
 import Claim from '../Claim.astro';
 import CampoDaLinha from '../CampoDaLinha.astro';
@@ -34,8 +42,9 @@ import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 import { marcaDoValor, provenienciaIncompleta } from '../../lib/ledger.mjs';
 import { atrasoDaLinha } from '../../lib/frescura.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
+import FaixaDoConcelho from './FaixaDoConcelho.astro';
 
-const { tile, lang = 'pt', s } = Astro.props;
+const { tile, lang = 'pt', s, slug = null, nome = null } = Astro.props;
 
 const marca = marcaDoValor(tile.linha?.value);
 /* A UNIDADE É A DA LINHA, TAL COMO A LINHA A ESCREVE (achado D2 da leitura do
@@ -145,5 +154,6 @@ const periodoDaFonte = (() => {
       </p>
     )
   }
+  {slug && nome && <FaixaDoConcelho tile={tile} slug={slug} nome={nome} lang={lang} s={s} />}
   {frase && <p class="cartao-medida-frase"><Frase partes={frase} lang={lang} /></p>}
 </article>

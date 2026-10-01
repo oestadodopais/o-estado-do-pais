@@ -7,6 +7,7 @@ import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
+import { faixasDoPortao, linhaDePortugalDoPortao } from './concelhos-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
@@ -257,6 +258,25 @@ const claims = loadClaims();
    módulo que as páginas usam. */
 const SERIES_DO_PORTAO = lerSeriesDoPortao();
 const PAISES_DO_PORTAO = lerPaisesDoPortao();
+/* AS 308 LINHAS DE CADA MEDIDA DE CONCELHO (bloco L2b, 01.10.2026), pelo leitor próprio dos portões
+   (`scripts/concelhos-do-portao.mjs`), e não pelo resolvedor da faixa. É daqui que se recontam o lugar de
+   um concelho, a contagem dos concelhos com valor e os empates, e que se acha a linha de Portugal com que
+   a faixa de um cartão compara a linha do concelho. */
+const FAIXAS_DO_PORTAO = faixasDoPortao();
+/** A linha de Portugal de cada linha de concelho, achada uma vez. @type {Map<string, string|null>} */
+const PORTUGAL_DA_LINHA = new Map();
+/** @param {string} idDoConcelho @param {string} chave */
+const portugalDaLinha = (idDoConcelho, chave) => {
+  const chaveDaCache = `${chave}#${idDoConcelho}`;
+  if (!PORTUGAL_DA_LINHA.has(chaveDaCache)) {
+    const conta = FAIXAS_DO_PORTAO.contas.get(chave);
+    PORTUGAL_DA_LINHA.set(
+      chaveDaCache,
+      conta && conta.ids.has(idDoConcelho) ? linhaDePortugalDoPortao(FAIXAS_DO_PORTAO.linhas, idDoConcelho, conta.ids) : null,
+    );
+  }
+  return PORTUGAL_DA_LINHA.get(chaveDaCache) ?? null;
+};
 
 /**
  * A prova, nas duas edições. As chaves e os valores são os mesmos; o que muda
@@ -546,6 +566,8 @@ const UE1D = { definicoes: 0 };
    recibo da série, e as formas declaradas. */
 const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
+/** L2b: as origens da faixa do concelho, contadas pelo lado da página. */
+const ORIGENS_DOS_CONCELHOS = { lugares: 0, contas: 0, empates: 0, valoresNaFaixa: 0, portugal: 0 };
 let ficheiros = 0;
 let documentos = 0;
 /** O rótulo de IA, contado pelo lado da página: rodapé, topo, ficha e frase. */
@@ -3363,6 +3385,26 @@ function auditaSelo(el, id, lang, err) {
       linhaDaReguaDoCartao(doCartao, id, 'anterior') || linhaDaReguaDoCartao(doCartao, id, 'ue');
     if (permitido && temChipPara(cartaoDaLeitura, [routePath('linha', lang, { slug: doCartao })])) return;
   }
+  /* L2b, 01.10.2026: A FAIXA DO CONCELHO, pela mesma regra da leitura do cartão. A faixa de um cartão de
+     concelho escreve o valor do próprio concelho e, quando há, o valor de Portugal, sem marca própria,
+     dentro do invólucro `data-faixa-concelho` com `data-selo-em` igual à linha do cartão; a porta de cada
+     um é a marca única do cartão, que abre o recibo da linha do concelho, onde «O enquadramento» lista a
+     linha de Portugal (a K10 do `check:cartao`). O que se aceita é só isto: a linha do próprio cartão, ou
+     a linha de Portugal que este portão acha por conta própria para ela (a mesma edição do documento, a
+     mesma unidade e o mesmo período, com Portugal no localizador). Uma linha de Portugal de outro período,
+     um valor de outro cartão ou uma faixa sem `data-selo-em` caem no erro de sempre; as plantas
+     `l2b-faixa-*` de `tests/municipio/faixa-do-concelho.mjs` correm-no. */
+  const faixaDoConcelho = el.closest('[data-faixa-concelho][data-selo-em]');
+  const cartaoDaFaixa = faixaDoConcelho?.closest('[data-cartao-medida]');
+  const daFaixa = cartaoDaFaixa?.getAttribute('data-cartao-medida');
+  if (daFaixa && faixaDoConcelho.getAttribute('data-selo-em') === daFaixa) {
+    const chave = faixaDoConcelho.getAttribute('data-faixa-concelho') ?? '';
+    const permitido = id === daFaixa || (portugalDaLinha(daFaixa, chave) === id);
+    if (permitido && temChipPara(cartaoDaFaixa, [routePath('linha', lang, { slug: daFaixa })])) {
+      ORIGENS_DOS_CONCELHOS[id === daFaixa ? 'valoresNaFaixa' : 'portugal']++;
+      return;
+    }
+  }
 
 
   err(
@@ -5794,6 +5836,37 @@ for (const file of ficheirosHtml(DIST)) {
       if (esperado === null) err(`UE1: «${atributo}» nomeia a série «${sid}», que não existe.`);
       else if (textoTranscrito(el) !== esperado) {
         err(`UE1: «${atributo}» da série «${sid}» diz «${textoTranscrito(el)}» e a recontagem dos pontos dá «${esperado}».`);
+      }
+      aRemover.push(el);
+    }
+  }
+  /**
+   * ---------------------------------------------------------------------------
+   * AS ORIGENS DA FAIXA DO CONCELHO (bloco L2b, 01.10.2026)
+   * ---------------------------------------------------------------------------
+   * Três marcas, e as três são comparações e não dispensas, contra o leitor próprio dos portões
+   * (`scripts/concelhos-do-portao.mjs`), pelo mesmo caminho por que o lugar de Portugal entre os 27
+   * (`data-ponto-lugar`) se aceita:
+   *   · `data-concelho-conta="<chave>"`, quantos concelhos têm valor na medida, recontado das 308 linhas;
+   *   · `data-concelho-lugar="<chave>#<slug>"`, o lugar do concelho, recontado (1 mais o número de
+   *     concelhos com valor maior, ou menor nas medidas que a tabela conta do mais baixo);
+   *   · `data-concelho-a-par="<chave>#<slug>"`, quantos outros concelhos têm o mesmo valor, recontado.
+   */
+  for (const [atributo, qual] of [['data-concelho-conta', 'contas'], ['data-concelho-lugar', 'lugares'], ['data-concelho-a-par', 'empates']]) {
+    for (const el of body.querySelectorAll(`[${atributo}]`)) {
+      ORIGENS_DOS_CONCELHOS[qual]++;
+      const [chave, slug] = String(el.getAttribute(atributo) ?? '').split('#');
+      const conta = FAIXAS_DO_PORTAO.contas.get(chave);
+      let esperado = null;
+      if (!conta) err(`L2b: «${atributo}» nomeia a medida «${chave}», que não tem linhas para os concelhos.`);
+      else if (qual === 'contas') esperado = String(conta.conta);
+      else {
+        const n = qual === 'lugares' ? conta.lugar(slug) : conta.aPar(slug);
+        if (n === null) err(`L2b: «${atributo}» dá um lugar ao concelho «${slug}», que não tem valor na medida «${chave}».`);
+        else esperado = String(n);
+      }
+      if (esperado !== null && textoTranscrito(el) !== esperado) {
+        err(`L2b: «${atributo}» de «${chave}${slug ? `#${slug}` : ''}» diz «${textoTranscrito(el)}» e a recontagem das linhas dá «${esperado}».`);
       }
       aRemover.push(el);
     }
@@ -8393,6 +8466,11 @@ for (const [id] of SERIES_DO_PORTAO) {
 if (SERIES_DO_PORTAO.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
   erros.push({ rel: 'ledger/series', msg: 'UE1: há séries e nenhuma página rendeu um ponto ou um nome de país: o detetor não viu nada.' });
 }
+/* L2b: há medidas de concelho com linhas e nenhuma página rendeu um lugar ou uma contagem: o detetor das
+   origens da faixa não viu nada. */
+if (FAIXAS_DO_PORTAO.contas.size && (ORIGENS_DOS_CONCELHOS.lugares === 0 || ORIGENS_DOS_CONCELHOS.contas === 0 || ORIGENS_DOS_CONCELHOS.portugal === 0)) {
+  erros.push({ rel: '/municipios', msg: `L2b: há ${FAIXAS_DO_PORTAO.contas.size} medida(s) de concelho com linhas e as páginas renderam ${ORIGENS_DOS_CONCELHOS.lugares} lugar(es), ${ORIGENS_DOS_CONCELHOS.contas} contagem(ns) e ${ORIGENS_DOS_CONCELHOS.portugal} valor(es) de Portugal nas faixas: o detetor não viu nada.` });
+}
 /* O CONHECIDO-POSITIVO DA CÉLULA DO TÍTULO (bloco R1): uma construção com
    páginas de linha e nenhum título conferido é uma célula que não viu nada. */
 if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
@@ -8425,7 +8503,8 @@ console.log(
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
       ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
       ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries` +
-      ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))`,
+      ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))` +
+      ` · L2b: ${ORIGENS_DOS_CONCELHOS.lugares} lugar(es), ${ORIGENS_DOS_CONCELHOS.contas} contagem(ns) e ${ORIGENS_DOS_CONCELHOS.empates} empate(s) recontados das linhas dos concelhos, ${ORIGENS_DOS_CONCELHOS.valoresNaFaixa} valor(es) do concelho e ${ORIGENS_DOS_CONCELHOS.portugal} de Portugal nas faixas, pela marca do cartão`,
   ),
 );
 console.log(
