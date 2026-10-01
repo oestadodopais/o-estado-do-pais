@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-01T07:32:52+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "motor/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md",
+   "descricao": "a frase da subtração de 2016 volta a dizer que o relatório faz a subtração, sem dizer que não dá o valor escrito (o achado 2 do Sol por corrigir)",
+   "sha256_antes": "6bc577bca1f3506a5b6e19764628b91cafe45454f477c408138ea7a9ba8ec2f7",
+   "sha256_depois": "9abfa736ab7e0aa267d6cd5c53e6352452a4189b525e39a8f23f51d36537d695",
+   "contexto_antes": "e levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório escreve a subtração dos dois e apresenta como valor corrigido um prejuízo de €1 984 259, mas a subtração que imprime não dá esse valor. Os dois resultados são do próprio município: a tabela usa o primeiro, o resultado líquido do exercício, porque é o que as contas registam e é a mesma medida do",
+   "contexto_depois": "e levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório faz a subtração dos dois e apresenta como valor corrigido um prejuízo de €1 984 259. Os dois resultados são do próprio município: a tabela usa o primeiro, o resultado líquido do exercício, porque é o que as contas registam e é a mesma medida do"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "src/data/municipios.mjs",
+   "descricao": "a ficha de 2013 a 2017 data a dívida de fim de ano em 31.10.2017, a data da saída, e não em 31.12.2017",
+   "sha256_antes": "0ad0f09bc5b774b4af785ffd2d352a266e3a186a14cc6f0e8e73f0a8c8e3b980",
+   "sha256_depois": "127f99fe0ef0fcca686fc75c2c7a35858fca5d4d05dee2c9ba45425fee0357f6",
+   "contexto_antes": ",\n              },\n            },\n          ],\n          /* A dívida de 31.12.2017 é de depois da instalação do executivo seguinte (passagem E1d). */\n          deixouAntes: antesDoFimDoAno('31.12.2017', DEPOIS_DA_SAIDA, RELATORIO_DE_GESTAO),\n          deixou: [\n            {\n              claim: 'evora-divida-total-2017',\n              texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dí",
+   "contexto_depois": ",\n              },\n            },\n          ],\n          /* A dívida de 31.12.2017 é de depois da instalação do executivo seguinte (passagem E1d). */\n          deixouAntes: antesDoFimDoAno('31.10.2017', DEPOIS_DA_SAIDA, RELATORIO_DE_GESTAO),\n          deixou: [\n            {\n              claim: 'evora-divida-total-2017',\n              texto: { pt: `${unidade('evora-divida-total-2017', 'pt')} de dí"
+  },
+  {
+   "id": "T3",
+   "ficheiro": "motor/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md",
+   "descricao": "a linha do total errado das obras volta à tabela, no texto de origem",
+   "sha256_antes": "436ed29346ef1bd89ddf0b2e8e3f889e59be0bf9fe705b34d320ac0cee43b844",
+   "sha256_depois": "1be44164d1a6ff31d31271268a92aac7d009371a6775ebd8192e2bec999584c2",
+   "contexto_antes": "Antigos Celeiros da EPAC | 1 200 000,00 € | p. 108 |\n| Convento dos Remédios | 500 000,00 € | p. 108 |\n| Arquivo Fotográfico de Évora | 500 000,00 € | p. 108 |\n| Arena de Évora | 250 000,00 € | p. 108 |\n\n### O dossiê de candidatura, fase de pré-seleção\n\n| linha | valor escrito | onde |\n|---|---|---|\n| Receita para cobrir despesas operacionais, total | 44 290 0",
+   "contexto_depois": "Antigos Celeiros da EPAC | 1 200 000,00 € | p. 108 |\n| Convento dos Remédios | 500 000,00 € | p. 108 |\n| Arquivo Fotográfico de Évora | 500 000,00 € | p. 108 |\n| Arena de Évora | 250 000,00 € | p. 108 |\n| Total da tabela | 39 336 001,42 € | p. 88 |\n\n### O dossiê de candidatura, fase de pré-seleção\n\n| linha | valor escrito | onde |\n|---|---|---|\n| Receita para cobrir despesas operacionais, total | 44 290 0"
+  },
+  {
+   "id": "T4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 76 figuras com linha do sítio nas páginas construídas onde a medida diz 75",
+   "sha256_antes": "f44b511354b0a6775c16588b735bf044dbbf2cb02d1effe705830f7cd5ce847b",
+   "sha256_depois": "a1926cc5264117a24dcf575c65c3bc519f98a483a1b85ef034bf6a6fc3143136",
+   "contexto_antes": "o.\n2. **A medida das células pelos registos perdia seis figuras.** A medida `celulas_e_linhas_do_sitio` do E1 contava 69 figuras de células com linha do sítio, e as páginas construídas mostram 75. As seis são as três linhas da dívida do regulador de 2017, 2021 e 2024, impressas em duas tabelas do 16, que vieram do 07 e do 08 com os mesmos bytes: o registo",
+   "contexto_depois": "o.\n2. **A medida das células pelos registos perdia seis figuras.** A medida `celulas_e_linhas_do_sitio` do E1 contava 69 figuras de células com linha do sítio, e as páginas construídas mostram 76. As seis são as três linhas da dívida do regulador de 2017, 2021 e 2024, impressas em duas tabelas do 16, que vieram do 07 e do 08 com os mesmos bytes: o registo"
+  },
+  {
+   "id": "T5",
+   "ficheiro": "built/estudos/index.html",
+   "descricao": "a página do índice perde a frase que diz que o vencido e o pago se sobrepõem",
+   "sha256_antes": "0907fe83ccc0200bd1ac52c10e45b45488a8e8a178881f51ce56c6eb09ea4735",
+   "sha256_depois": "22d420f73bf5d279c295452fc63390309fc0883ad5699c352a7a096d46363870",
+   "contexto_antes": "nledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> já foi paga, e as duas partes sobrepõem-se: as localizações vencidas também receberam dinheiro.</p></article><article class=\"arquivo-item estudo-item\" data-estudo=\"evora-2027-capital-europeia-da-cultura\" data-estudo-edicao=\"evora-2027-capital-europeia-da-",
+   "contexto_depois": "nledger=\"proveniencia\" data-selo-etiqueta=\"calculado\" title=\"calculado\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · calculado</span></a></span> já foi paga.</p></article><article class=\"arquivo-item estudo-item\" data-estudo=\"evora-2027-capital-europeia-da-cultura\" data-estudo-edicao=\"evora-2027-capital-europeia-da-"
+  }
+ ]
+}
