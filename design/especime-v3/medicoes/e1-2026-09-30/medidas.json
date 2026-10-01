@@ -1,0 +1,4514 @@
+{
+ "bloco": "E1",
+ "guiao": "design/especime-v3/medicoes/e1-2026-09-30/medir-e1.py",
+ "medido_em": "2026-10-01T02:29:05+00:00",
+ "conhecidos_positivos_que_nao_morderam": [],
+ "medidas": [
+  {
+   "nome": "cabecas",
+   "valor": {
+    "sitio": "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6",
+    "sitio_base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+    "motor": "6ed528bb509b9d2be3a751ef3e7c1b6b29dc29a9",
+    "motor_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
+    "sitio_arvore_limpa": true
+   },
+   "comando": "git rev-parse HEAD; git merge-base HEAD main (sítio); git -C $OEDP_MOTOR merge-base HEAD master",
+   "conhecido_positivo": {
+    "descricao": "git cat-file -t de cada cabeça diz «commit»",
+    "resultado": {
+     "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6": "commit",
+     "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76": "commit",
+     "6ed528bb509b9d2be3a751ef3e7c1b6b29dc29a9": "commit",
+     "4b46befbac8decf1566f73b5959fd175e5458d66": "commit"
+    },
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "motor_estudos_novos_ficheiros",
+   "valor": {
+    "edicoes": 7,
+    "em_falta": 0,
+    "por_pasta": {
+     "16 Évora Contas da Câmara": {
+      "edicoes": 2,
+      "estado": "fixado",
+      "fixado_em": "2026-09-30",
+      "ficheiros": 10,
+      "em_falta": 0
+     },
+     "17 Évora Quem Governou": {
+      "edicoes": 1,
+      "estado": "fixado",
+      "fixado_em": "2026-10-01",
+      "ficheiros": 6,
+      "em_falta": 0
+     },
+     "18 Évora Economia e Dinheiro de Fora": {
+      "edicoes": 2,
+      "estado": "fixado",
+      "fixado_em": "2026-09-30",
+      "ficheiros": 10,
+      "em_falta": 0
+     },
+     "19 Évora 2027 Capital Europeia da Cultura": {
+      "edicoes": 2,
+      "estado": "fixado",
+      "fixado_em": "2026-10-01",
+      "ficheiros": 10,
+      "em_falta": 0
+     }
+    }
+   },
+   "comando": "git -C $OEDP_MOTOR ls-files content/ contra os records.manifest.json das pastas 16 a 19",
+   "conhecido_positivo": {
+    "descricao": "uma edição plantada que não existe é dada em falta",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "motor_medidas_das_entregas",
+   "valor": {
+    "entregas": 14,
+    "iguais_ao_registo_do_portao": 14,
+    "divergem": [],
+    "divida_declarada": {
+     "evora-quem-governou-pt": {
+      "misattributions": 15
+     },
+     "evora-quem-governou-pt-html": {
+      "misattributions": 20
+     },
+     "evora-economia-dinheiro-de-fora-pt": {
+      "misattributions": 34
+     },
+     "evora-economia-dinheiro-de-fora-pt-html": {
+      "misattributions": 34
+     },
+     "evora-economia-dinheiro-de-fora-en": {
+      "misattributions": 37
+     },
+     "evora-economia-dinheiro-de-fora-en-html": {
+      "misattributions": 38
+     }
+    },
+    "contas": {
+     "evora-contas-camara-pt": {
+      "numbers": 895,
+      "matched": 486,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-contas-camara-pt-html": {
+      "numbers": 890,
+      "matched": 486,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-contas-camara-en": {
+      "numbers": 895,
+      "matched": 486,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-contas-camara-en-html": {
+      "numbers": 890,
+      "matched": 486,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-quem-governou-pt": {
+      "numbers": 915,
+      "matched": 485,
+      "orphans": 0,
+      "misattributions": 15,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-quem-governou-pt-html": {
+      "numbers": 905,
+      "matched": 485,
+      "orphans": 0,
+      "misattributions": 20,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-economia-dinheiro-de-fora-pt": {
+      "numbers": 743,
+      "matched": 612,
+      "orphans": 0,
+      "misattributions": 34,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-economia-dinheiro-de-fora-pt-html": {
+      "numbers": 739,
+      "matched": 612,
+      "orphans": 0,
+      "misattributions": 34,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-economia-dinheiro-de-fora-en": {
+      "numbers": 743,
+      "matched": 612,
+      "orphans": 0,
+      "misattributions": 37,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-economia-dinheiro-de-fora-en-html": {
+      "numbers": 739,
+      "matched": 612,
+      "orphans": 0,
+      "misattributions": 38,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-2027-capital-europeia-da-cultura-pt": {
+      "numbers": 548,
+      "matched": 191,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-2027-capital-europeia-da-cultura-pt-html": {
+      "numbers": 543,
+      "matched": 191,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-2027-capital-europeia-da-cultura-en": {
+      "numbers": 548,
+      "matched": 191,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     },
+     "evora-2027-capital-europeia-da-cultura-en-html": {
+      "numbers": 543,
+      "matched": 191,
+      "orphans": 0,
+      "misattributions": 0,
+      "undeclared": 0,
+      "undeclared_assertions": 0,
+      "failed_assertions": 0,
+      "number_adjacencies": 0
+     }
+    }
+   },
+   "comando": "python3 -c 'from core import gate; gate.measure(documento, livro)' no motor, para cada entrega de core/gate_baselines.json",
+   "conhecido_positivo": {
+    "descricao": "uma cópia do 16 com «€987 654 321» sem linha dá um órfão a mais",
+    "orfaos_na_planta": 1,
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "motor_portao",
+   "valor": {
+    "codigo": 0,
+    "cabeca": "6ed528bb509b9d2be3a751ef3e7c1b6b29dc29a9",
+    "linha_final_pass": true,
+    "linhas_fail": 0
+   },
+   "comando": "python3 -m core.gate no motor, com o código escrito em portoes/motor/gate.codigo depois de o processo acabar",
+   "conhecido_positivo": {
+    "descricao": "o código lido do ficheiro concorda com a última linha do registo (PASS com 0, FAIL sem 0)",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "linhas_que_mudam_de_estudo",
+   "valor": {
+    "linhas": 69,
+    "para_um_estudo_novo": 69,
+    "com_outro_campo_mudado": 0,
+    "outras_diferencas": [],
+    "origem_no_motor_igual": 69,
+    "com_o_comentario_das_reconferencias": 60,
+    "linhas_cruzadas_que_so_mudam_o_comentario": [
+     "indice-de-divida-limite-legal"
+    ],
+    "pares": {
+     "evora-economia-investidores-portas-abertas-2026 -> evora-economia-e-dinheiro-publico-de-fora-da-camara": 8,
+     "evora-orcamentado-pago-devido-2025 -> evora-contas-da-camara-2010-2025": 27,
+     "evora-os-pelouros-quem-os-teve-o-que-fizeram -> evora-quem-governou-a-camara-2009-2025": 7,
+     "evora-prometido-pago-auditado-2026 -> evora-economia-e-dinheiro-publico-de-fora-da-camara": 7,
+     "evora-quinze-anos-cinco-mandatos -> evora-contas-da-camara-2010-2025": 6,
+     "evora-quinze-anos-cinco-mandatos -> evora-economia-e-dinheiro-publico-de-fora-da-camara": 2,
+     "evora-quinze-anos-cinco-mandatos -> evora-quem-governou-a-camara-2009-2025": 12
+    }
+   },
+   "comando": "as linhas de ledger/claims/ cujo study na base é um dos seis estudos com sucessor, lidas na base (git show) e na árvore, comparadas campo a campo; e o rh_study e o origin_row_sha256 de ledger/cruzamentos/evora.json na base e na árvore",
+   "conhecido_positivo": {
+    "descricao": "uma cópia de uma linha com o valor mudado aparece como diferença no campo value",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "numeros_em_dois_estudos_novos",
+   "valor": {
+    "linhas_de_origem_em_dois_estudos": 0,
+    "pares": {
+     "evora-contas-da-camara-2010-2025 & evora-quem-governou-a-camara-2009-2025": [],
+     "evora-contas-da-camara-2010-2025 & evora-economia-e-dinheiro-publico-de-fora-da-camara": [],
+     "evora-contas-da-camara-2010-2025 & evora-2027-capital-europeia-da-cultura": [],
+     "evora-quem-governou-a-camara-2009-2025 & evora-economia-e-dinheiro-publico-de-fora-da-camara": [],
+     "evora-quem-governou-a-camara-2009-2025 & evora-2027-capital-europeia-da-cultura": [],
+     "evora-economia-e-dinheiro-publico-de-fora-da-camara & evora-2027-capital-europeia-da-cultura": []
+    },
+    "linhas_de_origem_por_estudo": {
+     "evora-contas-da-camara-2010-2025": 389,
+     "evora-quem-governou-a-camara-2009-2025": 438,
+     "evora-economia-e-dinheiro-publico-de-fora-da-camara": 435,
+     "evora-2027-capital-europeia-da-cultura": 121
+    },
+    "valores_iguais_de_medidas_diferentes": [
+     {
+      "valor": "0",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-invalid-id-returns",
+       "04·comp-c07-overdue",
+       "04·proj-hospital-equip-paid",
+       "04·proj-malagueira-paid",
+       "04·tc-evora-freguesia-match",
+       "04·tc-evora-longer-municipality-only",
+       "04·tc-evora-risks",
+       "04·tcq-gesamb",
+       "04·tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+       "06·p3-new-since",
+       "06·prr-open-avisos",
+       "08·el2001-be-seats",
+       "08·el2001-cds-pp-seats",
+       "08·el2001-mpt-seats",
+       "08·el2001-ppdpsd-seats",
+       "08·el2005-be-seats",
+       "08·el2005-cds-pp-seats",
+       "08·el2005-ppm-seats",
+       "08·el2009-be-seats",
+       "08·el2009-cds-pp-seats",
+       "08·el2013-be-seats",
+       "08·el2017-be-seats",
+       "08·el2017-cds-pp-mpt-ppm-seats",
+       "08·el2017-pan-seats",
+       "08·el2021-be-seats",
+       "08·el2021-chega-seats",
+       "08·el2025-be-seats",
+       "08·el2025-il-seats",
+       "08·el2025-mce-seats",
+       "09·bal-2018-policia-municipal",
+       "09·gop-2018-seguranca-social",
+       "09·gop-2019-seguranca-social",
+       "09·map-20092013-without"
+      ]
+     },
+     {
+      "valor": "1",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·comp-c07-locations",
+       "04·comp-c21-overdue",
+       "04·fin-geosat-projects",
+       "04·proj-castris-locations",
+       "04·proj-hospital-equip-locations",
+       "04·proj-malagueira-locations",
+       "04·tc-evora-entity-match",
+       "04·tc-gap-vic",
+       "04·tc-report-1-2008",
+       "04·tcq-administracao-regional-de-saude-do-alentejo",
+       "04·tcq-infraestruturas-de-portugal",
+       "06·p3-class-indiv",
+       "08·am2025-mce-seats",
+       "08·el2005-ppdpsd-seats",
+       "08·el2009-ppdpsd-seats",
+       "08·el2013-ppdpsd-cds-pp-seats",
+       "08·el2017-ppdpsd-seats",
+       "08·el2021-ncrir-seats",
+       "08·el2025-chega-seats",
+       "08·el2025-pcp-pev-seats",
+       "08·exec2025-cdu-seats",
+       "08·exec2025-chega-seats",
+       "08·freg2025-cdu-lead",
+       "09·map-20092013-members"
+      ]
+     },
+     {
+      "valor": "1 362",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "06·ganho-pt-2022",
+       "08·el2017-cds-pp-mpt-ppm-votes"
+      ]
+     },
+     {
+      "valor": "10",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·tc-gap-total",
+       "08·wf-2023-info",
+       "09·map-20212025-varela-count",
+       "09·trail-captures-reshuffle"
+      ]
+     },
+     {
+      "valor": "10.5",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "06·vab-evora-growth",
+       "14·painel-protocolo-municipio"
+      ]
+     },
+     {
+      "valor": "12",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-cimac-contracts",
+       "06·door-maisemprego",
+       "07·anuario-excederam-2023",
+       "08·cec-cidades",
+       "09·map-20092013-pelouros",
+       "09·map-20212025-psa-count"
+      ]
+     },
+     {
+      "valor": "13",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·comp-count",
+       "04·fin-arsalentejo-projects",
+       "04·tc-thematic-body-mentions",
+       "06·p3-class-univ",
+       "09·funcao-lines-2015",
+       "09·funcao-lines-2016",
+       "09·funcao-lines-2017",
+       "09·funcao-lines-2018",
+       "09·funcao-lines-2019",
+       "09·funcao-lines-2021",
+       "09·funcao-lines-2022"
+      ]
+     },
+     {
+      "valor": "14",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-undermerge-contracts",
+       "04·comp-c19-overdue",
+       "04·ine-alentejo-central-municipalities",
+       "04·tc-report-14-2018",
+       "06·ac-municipalities",
+       "09·funcao-lines-2023",
+       "09·xw-20132017-lines",
+       "09·xw-20172021-lines",
+       "09·xw-20212025-lines",
+       "09·xw-2025-lines"
+      ]
+     },
+     {
+      "valor": "15",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "06·vab-sections-count",
+       "08·wf-change-2014"
+      ]
+     },
+     {
+      "valor": "19",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "04·proj-newspace-locations",
+       "07·gop-gerais-share",
+       "08·wf-2023-outros"
+      ]
+     },
+     {
+      "valor": "2",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-municipio-spellings",
+       "04·comp-c08-overdue",
+       "04·tc-fifth-family-evora",
+       "04·tc-gap-auditoria",
+       "04·tc-report-2-2012",
+       "04·tcq-ihru",
+       "04·tcq-universidade-de-evora",
+       "07·clc-2024-votos-favor",
+       "08·el2013-ps-seats",
+       "08·el2017-ps-seats",
+       "08·el2021-pcp-pev-seats",
+       "08·el2021-ppdpsd-cds-pp-mpt-ppm-seats",
+       "08·el2021-ps-seats",
+       "08·el2025-ppdpsd-cds-pp-ppm-seats",
+       "08·exec2025-ad-seats",
+       "09·map-20212025-with",
+       "09·xw-2025-split"
+      ]
+     },
+     {
+      "valor": "21",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-gesamb-contracts",
+       "04·prr-components-total",
+       "04·tc-report-21-2019",
+       "07·evora-rank-2024",
+       "08·am2025-seats-total",
+       "08·wf-2023-dirigente",
+       "09·map-2025-pelouros"
+      ]
+     },
+     {
+      "valor": "22",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·prr-managers-distinct",
+       "07·gop-outras-share",
+       "07·pmp-2023",
+       "08·wf-2022-dirigente",
+       "09·map-20132017-pelouros",
+       "09·map-20212025-pelouros"
+      ]
+     },
+     {
+      "valor": "23",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "04·base-gesamb-group-contracts",
+       "04·comp-c01-locations",
+       "04·prr-managers-count",
+       "07·municipios-over100-2024"
+      ]
+     },
+     {
+      "valor": "24",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·comp-c03-overdue",
+       "08·wf-change-2013",
+       "09·evt-a-days"
+      ]
+     },
+     {
+      "valor": "28",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "04·comp-c06-overdue",
+       "06·p3-alt-calls",
+       "08·wf-change-2015"
+      ]
+     },
+     {
+      "valor": "3",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-gesamb-spellings",
+       "04·base-place-checks",
+       "04·base-ulsac-spellings",
+       "04·comp-c11-locations",
+       "04·comp-c11-overdue",
+       "04·tcq-administracao-central-do-sistema-de-saude",
+       "04·tcq-iapmei",
+       "08·am2025-cdu-seats",
+       "08·am2025-chega-seats",
+       "08·el2001-pcp-pev-seats",
+       "08·el2005-pcp-pev-seats",
+       "08·el2005-ps-seats",
+       "08·el2009-pcp-pev-seats",
+       "08·el2009-ps-seats",
+       "08·el2025-ps-seats",
+       "08·exec2025-ps-seats",
+       "08·freg2025-ad-lead",
+       "09·map-20132017-without",
+       "09·map-20172021-without",
+       "09·map-2025-with",
+       "09·rg2019-luto-dias",
+       "09·xw-20132017-split",
+       "09·xw-20132017-unmapped",
+       "09·xw-20172021-split",
+       "09·xw-20172021-unmapped",
+       "09·xw-20212025-split",
+       "09·xw-2025-unmapped"
+      ]
+     },
+     {
+      "valor": "3 000 000",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "06·door-qualificacao-max",
+       "08·cca-emprestimo"
+      ]
+     },
+     {
+      "valor": "30",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "06·inv-mecachrome-eur",
+       "08·gop26-imi-minoracao"
+      ]
+     },
+     {
+      "valor": "308",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "04·comp-c21-locations",
+       "04·tc-gazetteer-municipalities",
+       "07·municipios-total"
+      ]
+     },
+     {
+      "valor": "34",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "07·bens-servicos-share",
+       "08·wf-change-2017",
+       "09·map-20172021-pelouros",
+       "14·painel-transferido"
+      ]
+     },
+     {
+      "valor": "36",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "04·prr-notyetdue-evora",
+       "08·wf-change-2021"
+      ]
+     },
+     {
+      "valor": "39",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-evora2027-contracts",
+       "04·base-municipio-contracts",
+       "04·comp-c02-locations",
+       "04·comp-c02-overdue",
+       "06·empresas-dim-medias",
+       "06·p3-class-ipss",
+       "09·bal-lines-2015",
+       "09·bal-lines-2016",
+       "09·bal-lines-2017",
+       "09·bal-lines-2018",
+       "09·bal-lines-2019",
+       "14·painel-estado-garantido"
+      ]
+     },
+     {
+      "valor": "4",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·comp-c08-locations",
+       "04·tc-families",
+       "08·el2001-ps-seats",
+       "08·el2013-pcp-pev-seats",
+       "08·el2017-pcp-pev-seats",
+       "09·grupo-lines",
+       "09·map-20132017-mira-count",
+       "09·map-20132017-with",
+       "09·map-20172021-luciano-count",
+       "09·map-2025-without",
+       "09·xw-20212025-unmapped"
+      ]
+     },
+     {
+      "valor": "40",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "06·inv-mecachrome-eib",
+       "09·bal-lines-2021",
+       "09·bal-lines-2022"
+      ]
+     },
+     {
+      "valor": "49",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025"
+      ],
+      "linhas": [
+       "07·emp-pael-share",
+       "08·ind-pmp-dias-2021",
+       "14·painel-orcamento-49"
+      ]
+     },
+     {
+      "valor": "5",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-multi-spelling-entities",
+       "04·comp-c04-overdue",
+       "04·fin-patrimonio-projects",
+       "04·tc-evora-name-mention",
+       "06·p3-delisted",
+       "07·clc-2024-votos-contra",
+       "07·evora2027-receita-prevista",
+       "09·map-20132017-luciano-count",
+       "09·map-20172021-with",
+       "09·map-20212025-without",
+       "09·xw-20132017-inferential",
+       "09·xw-20172021-inferential",
+       "09·xw-20212025-inferential",
+       "14·painel-cimac"
+      ]
+     },
+     {
+      "valor": "500 000",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "06·pite-area",
+       "14·prr-arena",
+       "14·prr-arquivo"
+      ]
+     },
+     {
+      "valor": "56",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara"
+      ],
+      "linhas": [
+       "04·base-entities-in-window",
+       "07·pessoal-share-correntes"
+      ]
+     },
+     {
+      "valor": "6",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·prr-suppliers-count",
+       "04·tc-evora-matches",
+       "04·tcq-alentejo",
+       "06·pepac-open-forestry",
+       "07·emp-invest-share",
+       "08·wf-change-2020",
+       "09·map-20132017-horta-count",
+       "09·map-20172021-sara-count",
+       "09·xw-2025-inferential"
+      ]
+     },
+     {
+      "valor": "60",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·base-ulsac-a-contracts",
+       "06·doors-total",
+       "08·pael-adca-pct"
+      ]
+     },
+     {
+      "valor": "69",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·comp-c16-overdue",
+       "07·pmp-2022",
+       "09·bal-lines-2023"
+      ]
+     },
+     {
+      "valor": "7",
+      "estudos": [
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·tc-gap-vec",
+       "04·tcq-divino-espirito-santo",
+       "06·p3-closed-since",
+       "08·am2025-ad-seats",
+       "08·am2025-ps-seats",
+       "08·el2001-seats-total",
+       "08·el2005-seats-total",
+       "08·el2009-seats-total",
+       "08·el2021-seats-total",
+       "08·el2025-seats-total",
+       "09·map-20132017-members",
+       "09·map-20132017-psa-count",
+       "09·map-20212025-members",
+       "09·map-2025-carvalheira-count",
+       "09·map-2025-members",
+       "09·map-2025-vaqueiro-count",
+       "09·map-2025-zorrinho-count",
+       "09·xw-20212025-mapped"
+      ]
+     },
+     {
+      "valor": "76",
+      "estudos": [
+       "evora-contas-da-camara-2010-2025",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "07·exec-2023-pct",
+       "08·el2005-ppm-votes"
+      ]
+     },
+     {
+      "valor": "8",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·fin-habevora-projects",
+       "04·tcq-espirito-santo",
+       "06·empresas-dim-grandes",
+       "08·freg2025-ps-lead",
+       "09·map-20172021-horta-count",
+       "09·map-20172021-members",
+       "09·map-20172021-psa-count",
+       "09·map-20172021-varela-count",
+       "09·xw-20132017-mapped",
+       "09·xw-20172021-mapped",
+       "14·painel-interno"
+      ]
+     },
+     {
+      "valor": "85",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025"
+      ],
+      "linhas": [
+       "07·exec-2019-pct",
+       "14·painel-precontratacao"
+      ]
+     },
+     {
+      "valor": "9",
+      "estudos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "linhas": [
+       "04·fin-hospital-projects",
+       "08·wf-2022-info",
+       "08·wf-change-2023",
+       "09·xw-2025-mapped",
+       "14·painel-buraco"
+      ]
+     }
+    ]
+   },
+   "comando": "as figuras dos registos (record.json) dos quatro estudos no motor, cada uma levada à linha de origem por Technical Source/origem-das-linhas.json (fonte, id_na_fonte), e as interseções dos conjuntos dois a dois",
+   "conhecido_positivo": {
+    "descricao": "uma linha de origem do 16 plantada no conjunto do 17 dá uma repetição",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "celulas_de_tabela_sem_linha",
+   "valor": {
+    "16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).md": {
+     "contagem": {
+      "numeros": 466,
+      "com_linha": 297
+     },
+     "casos": []
+    },
+    "16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.md": {
+     "contagem": {
+      "numeros": 466,
+      "com_linha": 297
+     },
+     "casos": []
+    },
+    "17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).md": {
+     "contagem": {
+      "numeros": 585,
+      "com_linha": 392
+     },
+     "casos": []
+    },
+    "18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).md": {
+     "contagem": {
+      "numeros": 395,
+      "com_linha": 273
+     },
+     "casos": []
+    },
+    "18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.md": {
+     "contagem": {
+      "numeros": 395,
+      "com_linha": 273
+     },
+     "casos": []
+    },
+    "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md": {
+     "contagem": {
+      "numeros": 895,
+      "sem_linha": 169,
+      "com_linha": 143
+     },
+     "casos": [
+      {
+       "bloco": 23,
+       "celula": "17.3",
+       "impresso": "31",
+       "texto": "o endereço publicado escreve «31MAR26»",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "17.3",
+       "impresso": "26",
+       "texto": "o endereço publicado escreve «31MAR26»",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 57,
+       "celula": "1.2",
+       "impresso": "14",
+       "texto": "«The payment of the 1,5 million Euro Prize is however deferred until 2027, in line with Article 14 of the Decision. It is conditional.» e «T",
+       "classe": "identificador de diploma ou de publicação"
+      },
+      {
+       "bloco": 107,
+       "celula": "1.0",
+       "impresso": "27",
+       "texto": "VAGAR, Capital Europeia da Cultura Évora 27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 107,
+       "celula": "2.0",
+       "impresso": "27",
+       "texto": "VAGAR, Capital Europeia da Cultura Évora 27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 107,
+       "celula": "3.0",
+       "impresso": "27",
+       "texto": "Internacionalização Évora_27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 107,
+       "celula": "4.0",
+       "impresso": "27",
+       "texto": "Internacionalização Évora_27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "2027",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "2022",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "2",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "04",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "12",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.3",
+       "impresso": "38",
+       "texto": "2026-09-15T11:38:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:38:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.2",
+       "impresso": "2027",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.3",
+       "impresso": "38",
+       "texto": "2026-09-15T11:38:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:38:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "3.2",
+       "impresso": "2896",
+       "texto": "https://culture.ec.europa.eu/node/2896 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "3.3",
+       "impresso": "40",
+       "texto": "2026-09-15T11:40:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "3.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:40:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "4.3",
+       "impresso": "41",
+       "texto": "2026-09-15T11:41:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "4.3",
+       "impresso": "28",
+       "texto": "2026-09-15T11:41:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "5.2",
+       "impresso": "124",
+       "texto": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/124-2023-835674289 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "5.2",
+       "impresso": "5674289",
+       "texto": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/124-2023-835674289 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "5.3",
+       "impresso": "41",
+       "texto": "2026-09-15T11:41:29Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.2",
+       "impresso": "124",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.2",
+       "impresso": "12",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.2",
+       "impresso": "26",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.3",
+       "impresso": "41",
+       "texto": "2026-09-15T11:41:55Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.3",
+       "impresso": "55",
+       "texto": "2026-09-15T11:41:55Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.2",
+       "impresso": "124",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.2",
+       "impresso": "12",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.2",
+       "impresso": "26",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.3",
+       "impresso": "19",
+       "texto": "2026-09-15T11:42:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.0",
+       "impresso": "1",
+       "texto": "Diário da República, 1.ª série, n.º 247, número completo",
+       "classe": "identificador de diploma ou de publicação"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.2",
+       "impresso": "1",
+       "texto": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.2",
+       "impresso": "12",
+       "texto": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.2",
+       "impresso": "24700",
+       "texto": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.3",
+       "impresso": "21",
+       "texto": "2026-09-15T11:42:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.2",
+       "impresso": "47",
+       "texto": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.2",
+       "impresso": "03",
+       "texto": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.2",
+       "impresso": "27",
+       "texto": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.3",
+       "impresso": "43",
+       "texto": "2026-09-15T11:43:29Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.2",
+       "impresso": "203",
+       "texto": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.2",
+       "impresso": "12",
+       "texto": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.2",
+       "impresso": "28",
+       "texto": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.3",
+       "impresso": "57",
+       "texto": "2026-09-15T11:57:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.3",
+       "impresso": "21",
+       "texto": "2026-09-15T11:57:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "02",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "202027",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.3",
+       "impresso": "57",
+       "texto": "2026-09-15T11:57:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:57:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.2",
+       "impresso": "32014",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.2",
+       "impresso": "0445",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:10Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.3",
+       "impresso": "10",
+       "texto": "2026-09-15T11:58:10Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.2",
+       "impresso": "32014",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.2",
+       "impresso": "0445",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.3",
+       "impresso": "20",
+       "texto": "2026-09-15T11:58:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "14.2",
+       "impresso": "445",
+       "texto": "https://eur-lex.europa.eu/eli/dec/2014/445/oj/por/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "14.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "14.3",
+       "impresso": "31",
+       "texto": "2026-09-15T11:58:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "15.2",
+       "impresso": "1",
+       "texto": "https://culture.ec.europa.eu/sites/default/files/2022-04/ecoc-2027-portugual-preselection-report_v1.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "15.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:49Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "16.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:51Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "16.3",
+       "impresso": "51",
+       "texto": "2026-09-15T11:42:51Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.2",
+       "impresso": "89",
+       "texto": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.2",
+       "impresso": "2023",
+       "texto": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:53Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:42:53Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "18.2",
+       "impresso": "1223",
+       "texto": "https://culture.ec.europa.eu/node/1223 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "18.3",
+       "impresso": "46",
+       "texto": "2026-09-15T11:46:59Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "18.3",
+       "impresso": "59",
+       "texto": "2026-09-15T11:46:59Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "19.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:47:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "19.3",
+       "impresso": "14",
+       "texto": "2026-09-15T11:47:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "20.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:47:45Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "20.3",
+       "impresso": "45",
+       "texto": "2026-09-15T11:47:45Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "21.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:05Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "22.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "22.3",
+       "impresso": "02",
+       "texto": "2026-09-15T11:48:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "23.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "23.3",
+       "impresso": "28",
+       "texto": "2026-09-15T11:48:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "24.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:29Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "25.3",
+       "impresso": "43",
+       "texto": "2026-09-15T11:43:50Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "25.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:43:50Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "26.3",
+       "impresso": "43",
+       "texto": "2026-09-15T11:43:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "26.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:43:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "27.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:11Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "27.3",
+       "impresso": "11",
+       "texto": "2026-09-15T11:44:11Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "28.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:17Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "28.3",
+       "impresso": "17",
+       "texto": "2026-09-15T11:44:17Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "29.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "29.3",
+       "impresso": "14",
+       "texto": "2026-09-15T11:44:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "30.3",
+       "impresso": "55",
+       "texto": "2026-09-15T11:55:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "30.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:55:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "31.2",
+       "impresso": "2027",
+       "texto": "https://www.evora2027.com/fileadmin/Estatutos__Associac__a__o_E__vora_2027.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "31.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:36Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "31.3",
+       "impresso": "36",
+       "texto": "2026-09-15T11:44:36Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "32.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/user_upload/E_27_Plano.de.Atividades.e.Orcamento.2026_Final.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "32.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:38Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "32.3",
+       "impresso": "38",
+       "texto": "2026-09-15T11:44:38Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "33.2",
+       "impresso": "2025",
+       "texto": "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "33.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:40Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "33.3",
+       "impresso": "40",
+       "texto": "2026-09-15T11:44:40Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "2026",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "31",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "26",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:42Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:44:42Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "35.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "35.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:44:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "36.0",
+       "impresso": "27",
+       "texto": "Ficha da operação Internacionalização Évora_27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 133,
+       "celula": "36.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "36.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:44:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.2",
+       "impresso": "01",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.2",
+       "impresso": "2026",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:33Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.3",
+       "impresso": "33",
+       "texto": "2026-09-15T11:48:33Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "38.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:49:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "39.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:50:00Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "39.3",
+       "impresso": "00",
+       "texto": "2026-09-15T11:50:00Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "40.2",
+       "impresso": "01",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2025/01/Opcoes-do-Plano-e-Orcamento-2025.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "40.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:50:15Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "40.3",
+       "impresso": "15",
+       "texto": "2026-09-15T11:50:15Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.2",
+       "impresso": "01",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.2",
+       "impresso": "2024",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:50:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.3",
+       "impresso": "19",
+       "texto": "2026-09-15T11:50:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "42.3",
+       "impresso": "56",
+       "texto": "2026-09-15T11:56:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "42.3",
+       "impresso": "28",
+       "texto": "2026-09-15T11:56:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "43.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:52:03Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "43.3",
+       "impresso": "03",
+       "texto": "2026-09-15T11:52:03Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "44.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:52:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "44.3",
+       "impresso": "20",
+       "texto": "2026-09-15T11:52:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "45.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:52:22Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "45.3",
+       "impresso": "22",
+       "texto": "2026-09-15T11:52:22Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "46.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "46.3",
+       "impresso": "02",
+       "texto": "2026-09-15T11:53:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "47.2",
+       "impresso": "1",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Edital-da-RPC-de-03-de-setembro-de-2026-1.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "47.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:07Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "47.3",
+       "impresso": "07",
+       "texto": "2026-09-15T11:53:07Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.2",
+       "impresso": "89",
+       "texto": "https://www.base.gov.pt/Base4/pt/resultados/?type=contratos&texto=%C3%89vora%202027 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.2",
+       "impresso": "202027",
+       "texto": "https://www.base.gov.pt/Base4/pt/resultados/?type=contratos&texto=%C3%89vora%202027 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.3",
+       "impresso": "31",
+       "texto": "2026-09-15T11:53:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "49.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "49.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:53:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "50.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:56Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "50.3",
+       "impresso": "56",
+       "texto": "2026-09-15T11:53:56Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "51.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:46Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "51.3",
+       "impresso": "46",
+       "texto": "2026-09-15T11:58:46Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "52.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:54Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "13",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "07",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "30",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "2026",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.3",
+       "impresso": "59",
+       "texto": "2026-09-15T11:59:03Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.3",
+       "impresso": "03",
+       "texto": "2026-09-15T11:59:03Z",
+       "classe": "carimbo de hora"
+      }
+     ]
+    },
+    "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md": {
+     "contagem": {
+      "numeros": 895,
+      "sem_linha": 178,
+      "com_linha": 143
+     },
+     "casos": [
+      {
+       "bloco": 23,
+       "celula": "9.2",
+       "impresso": "203",
+       "texto": "Resolution 203/2023, preamble",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "11.2",
+       "impresso": "203",
+       "texto": "Resolution 203/2023",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "12.2",
+       "impresso": "124",
+       "texto": "Decree-law 124/2023",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "13.2",
+       "impresso": "203",
+       "texto": "Resolution 203/2023",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "15.2",
+       "impresso": "47",
+       "texto": "Decree-law 47/2025",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "17.3",
+       "impresso": "31",
+       "texto": "the published address writes «31MAR26»",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 23,
+       "celula": "17.3",
+       "impresso": "26",
+       "texto": "the published address writes «31MAR26»",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 57,
+       "celula": "1.2",
+       "impresso": "14",
+       "texto": "«The payment of the 1,5 million Euro Prize is however deferred until 2027, in line with Article 14 of the Decision. It is conditional.» and ",
+       "classe": "identificador de diploma ou de publicação"
+      },
+      {
+       "bloco": 107,
+       "celula": "1.0",
+       "impresso": "27",
+       "texto": "VAGAR, Capital Europeia da Cultura Évora 27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 107,
+       "celula": "2.0",
+       "impresso": "27",
+       "texto": "VAGAR, Capital Europeia da Cultura Évora 27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 107,
+       "celula": "3.0",
+       "impresso": "27",
+       "texto": "Internacionalização Évora_27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 107,
+       "celula": "4.0",
+       "impresso": "27",
+       "texto": "Internacionalização Évora_27",
+       "classe": "nome"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "2027",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "2022",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "2",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "04",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.2",
+       "impresso": "12",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_2022_AF5-2_PT_04_12_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.3",
+       "impresso": "38",
+       "texto": "2026-09-15T11:38:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "1.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:38:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.2",
+       "impresso": "2027",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/Evora_2027_v.3.0/bidbook/E27_Bidbook_PT_AF.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.3",
+       "impresso": "38",
+       "texto": "2026-09-15T11:38:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "2.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:38:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "3.2",
+       "impresso": "2896",
+       "texto": "https://culture.ec.europa.eu/node/2896 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "3.3",
+       "impresso": "40",
+       "texto": "2026-09-15T11:40:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "3.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:40:52Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "4.3",
+       "impresso": "41",
+       "texto": "2026-09-15T11:41:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "4.3",
+       "impresso": "28",
+       "texto": "2026-09-15T11:41:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "5.2",
+       "impresso": "124",
+       "texto": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/124-2023-835674289 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "5.2",
+       "impresso": "5674289",
+       "texto": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/124-2023-835674289 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "5.3",
+       "impresso": "41",
+       "texto": "2026-09-15T11:41:29Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.2",
+       "impresso": "124",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.2",
+       "impresso": "12",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.2",
+       "impresso": "26",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/html ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.3",
+       "impresso": "41",
+       "texto": "2026-09-15T11:41:55Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "6.3",
+       "impresso": "55",
+       "texto": "2026-09-15T11:41:55Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.0",
+       "impresso": "124",
+       "texto": "Decree-law 124/2023, creating the Évora 2027 Association",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.2",
+       "impresso": "124",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.2",
+       "impresso": "12",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.2",
+       "impresso": "26",
+       "texto": "https://data.dre.pt/eli/dec-lei/124/2023/12/26/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "7.3",
+       "impresso": "19",
+       "texto": "2026-09-15T11:42:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.0",
+       "impresso": "1",
+       "texto": "Diário da República, series 1, issue 247, complete",
+       "classe": "identificador de diploma ou de publicação"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.0",
+       "impresso": "247",
+       "texto": "Diário da República, series 1, issue 247, complete",
+       "classe": "identificador de diploma ou de publicação"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.2",
+       "impresso": "1",
+       "texto": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.2",
+       "impresso": "12",
+       "texto": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.2",
+       "impresso": "24700",
+       "texto": "https://files.diariodarepublica.pt/gratuitos/1s/2023/12/24700.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "8.3",
+       "impresso": "21",
+       "texto": "2026-09-15T11:42:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.0",
+       "impresso": "47",
+       "texto": "Decree-law 47/2025, first amendment to the above",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.2",
+       "impresso": "47",
+       "texto": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.2",
+       "impresso": "03",
+       "texto": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.2",
+       "impresso": "27",
+       "texto": "https://data.dre.pt/eli/dec-lei/47/2025/03/27/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "9.3",
+       "impresso": "43",
+       "texto": "2026-09-15T11:43:29Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.0",
+       "impresso": "203",
+       "texto": "Council of Ministers resolution 203/2023",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.2",
+       "impresso": "203",
+       "texto": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.2",
+       "impresso": "12",
+       "texto": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.2",
+       "impresso": "28",
+       "texto": "https://data.dre.pt/eli/resolconsmin/203/2023/12/28/p/dre/pt/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.3",
+       "impresso": "57",
+       "texto": "2026-09-15T11:57:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "10.3",
+       "impresso": "21",
+       "texto": "2026-09-15T11:57:21Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "02",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "202027",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.2",
+       "impresso": "20",
+       "texto": "https://www.ecoc2027.mc.gov.pt/upload/ficheiros/02_Rules%20of%20procedure%20for%20ECOC%202027%20competition_ENG.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.3",
+       "impresso": "57",
+       "texto": "2026-09-15T11:57:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "11.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:57:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.2",
+       "impresso": "32014",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.2",
+       "impresso": "0445",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:10Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "12.3",
+       "impresso": "10",
+       "texto": "2026-09-15T11:58:10Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.2",
+       "impresso": "32014",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.2",
+       "impresso": "0445",
+       "texto": "https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32014D0445 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "13.3",
+       "impresso": "20",
+       "texto": "2026-09-15T11:58:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "14.2",
+       "impresso": "445",
+       "texto": "https://eur-lex.europa.eu/eli/dec/2014/445/oj/por/pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "14.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "14.3",
+       "impresso": "31",
+       "texto": "2026-09-15T11:58:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "15.2",
+       "impresso": "1",
+       "texto": "https://culture.ec.europa.eu/sites/default/files/2022-04/ecoc-2027-portugual-preselection-report_v1.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "15.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:49Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "16.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:51Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "16.3",
+       "impresso": "51",
+       "texto": "2026-09-15T11:42:51Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.2",
+       "impresso": "89",
+       "texto": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.2",
+       "impresso": "2023",
+       "texto": "https://culture.ec.europa.eu/sites/default/files/2023-10/%C3%89vora-first-monitoring-report-September-2023_en.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:42:53Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "17.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:42:53Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "18.2",
+       "impresso": "1223",
+       "texto": "https://culture.ec.europa.eu/node/1223 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "18.3",
+       "impresso": "46",
+       "texto": "2026-09-15T11:46:59Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "18.3",
+       "impresso": "59",
+       "texto": "2026-09-15T11:46:59Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "19.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:47:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "19.3",
+       "impresso": "14",
+       "texto": "2026-09-15T11:47:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "20.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:47:45Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "20.3",
+       "impresso": "45",
+       "texto": "2026-09-15T11:47:45Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "21.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:05Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "22.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "22.3",
+       "impresso": "02",
+       "texto": "2026-09-15T11:48:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "23.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "23.3",
+       "impresso": "28",
+       "texto": "2026-09-15T11:48:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "24.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:29Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "25.3",
+       "impresso": "43",
+       "texto": "2026-09-15T11:43:50Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "25.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:43:50Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "26.3",
+       "impresso": "43",
+       "texto": "2026-09-15T11:43:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "26.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:43:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "27.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:11Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "27.3",
+       "impresso": "11",
+       "texto": "2026-09-15T11:44:11Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "28.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:17Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "28.3",
+       "impresso": "17",
+       "texto": "2026-09-15T11:44:17Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "29.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "29.3",
+       "impresso": "14",
+       "texto": "2026-09-15T11:44:14Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "30.3",
+       "impresso": "55",
+       "texto": "2026-09-15T11:55:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "30.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:55:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "31.2",
+       "impresso": "2027",
+       "texto": "https://www.evora2027.com/fileadmin/Estatutos__Associac__a__o_E__vora_2027.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "31.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:36Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "31.3",
+       "impresso": "36",
+       "texto": "2026-09-15T11:44:36Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "32.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/user_upload/E_27_Plano.de.Atividades.e.Orcamento.2026_Final.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "32.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:38Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "32.3",
+       "impresso": "38",
+       "texto": "2026-09-15T11:44:38Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "33.2",
+       "impresso": "2025",
+       "texto": "https://www.evora2027.com/fileadmin/user_upload/Relatorio.de.Atividades.e.Contas_2025_Final_com_Anexo.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "33.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:40Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "33.3",
+       "impresso": "40",
+       "texto": "2026-09-15T11:44:40Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "2026",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "27",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "31",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.2",
+       "impresso": "26",
+       "texto": "https://www.evora2027.com/fileadmin/Apresentacao__Programacao_2026_E27_31MAR26_compressed.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:42Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "34.3",
+       "impresso": "42",
+       "texto": "2026-09-15T11:44:42Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "35.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "35.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:44:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "36.0",
+       "impresso": "27",
+       "texto": "Internacionalização Évora_27 operation sheet",
+       "classe": "nome"
+      },
+      {
+       "bloco": 133,
+       "celula": "36.3",
+       "impresso": "44",
+       "texto": "2026-09-15T11:44:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "36.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:44:48Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.2",
+       "impresso": "01",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.2",
+       "impresso": "2026",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2026/01/Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.3",
+       "impresso": "48",
+       "texto": "2026-09-15T11:48:33Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "37.3",
+       "impresso": "33",
+       "texto": "2026-09-15T11:48:33Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "38.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:49:58Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "39.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:50:00Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "39.3",
+       "impresso": "00",
+       "texto": "2026-09-15T11:50:00Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "40.2",
+       "impresso": "01",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2025/01/Opcoes-do-Plano-e-Orcamento-2025.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "40.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:50:15Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "40.3",
+       "impresso": "15",
+       "texto": "2026-09-15T11:50:15Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.2",
+       "impresso": "01",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.2",
+       "impresso": "2024",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2024/01/OPs_ORCAMENTO2024_DocCompleto_Assinado.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.3",
+       "impresso": "50",
+       "texto": "2026-09-15T11:50:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "41.3",
+       "impresso": "19",
+       "texto": "2026-09-15T11:50:19Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "42.3",
+       "impresso": "56",
+       "texto": "2026-09-15T11:56:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "42.3",
+       "impresso": "28",
+       "texto": "2026-09-15T11:56:28Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "43.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:52:03Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "43.3",
+       "impresso": "03",
+       "texto": "2026-09-15T11:52:03Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "44.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:52:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "44.3",
+       "impresso": "20",
+       "texto": "2026-09-15T11:52:20Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "45.3",
+       "impresso": "52",
+       "texto": "2026-09-15T11:52:22Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "45.3",
+       "impresso": "22",
+       "texto": "2026-09-15T11:52:22Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "46.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "46.3",
+       "impresso": "02",
+       "texto": "2026-09-15T11:53:02Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "47.2",
+       "impresso": "1",
+       "texto": "https://www.cm-evora.pt/wp-content/uploads/2026/09/Edital-da-RPC-de-03-de-setembro-de-2026-1.pdf ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "47.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:07Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "47.3",
+       "impresso": "07",
+       "texto": "2026-09-15T11:53:07Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.2",
+       "impresso": "89",
+       "texto": "https://www.base.gov.pt/Base4/pt/resultados/?type=contratos&texto=%C3%89vora%202027 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.2",
+       "impresso": "202027",
+       "texto": "https://www.base.gov.pt/Base4/pt/resultados/?type=contratos&texto=%C3%89vora%202027 ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "48.3",
+       "impresso": "31",
+       "texto": "2026-09-15T11:53:31Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "49.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "49.3",
+       "impresso": "47",
+       "texto": "2026-09-15T11:53:47Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "50.3",
+       "impresso": "53",
+       "texto": "2026-09-15T11:53:56Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "50.3",
+       "impresso": "56",
+       "texto": "2026-09-15T11:53:56Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "51.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:46Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "51.3",
+       "impresso": "46",
+       "texto": "2026-09-15T11:58:46Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "52.3",
+       "impresso": "58",
+       "texto": "2026-09-15T11:58:54Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "13",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "07",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "30",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.2",
+       "impresso": "2026",
+       "texto": "https://alentejo.portugal2030.pt/wp-content/uploads/sites/13/2026/07/lista_operacoes_30_junho_2026.xlsx ",
+       "classe": "endereço"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.3",
+       "impresso": "59",
+       "texto": "2026-09-15T11:59:03Z",
+       "classe": "carimbo de hora"
+      },
+      {
+       "bloco": 133,
+       "celula": "53.3",
+       "impresso": "03",
+       "texto": "2026-09-15T11:59:03Z",
+       "classe": "carimbo de hora"
+      }
+     ]
+    },
+    "_classes_das_celulas_sem_linha": {
+     "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).md": {
+      "endereço": 63,
+      "identificador de diploma ou de publicação": 2,
+      "nome": 5,
+      "carimbo de hora": 99
+     },
+     "19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.md": {
+      "endereço": 71,
+      "identificador de diploma ou de publicação": 3,
+      "nome": 5,
+      "carimbo de hora": 99
+     }
+    },
+    "_outras_no_19": 0,
+    "_quantidades_sem_linha_16_17_18": 0
+   },
+   "comando": "core.documento_md + core.eyetext + core.reconcile no motor: cada número das células das tabelas, tirado o que não é quantidade (datas, anos, códigos, páginas, números de lei), procurado nas formas indexadas das linhas do livro do estudo",
+   "conhecido_positivo": {
+    "descricao": "uma tabela plantada no fim do 16 com «123 456» dá uma célula sem linha a mais",
+    "sem_linha_na_planta": 1,
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "celulas_e_linhas_do_sitio",
+   "valor": {
+    "antigos_pt": {
+     "07 Évora Municipal Accounts": {
+      "figuras_nas_celulas": 67,
+      "com_linha_do_sitio": 19,
+      "sem_linha_do_sitio": 48
+     },
+     "08 Évora Mandates": {
+      "figuras_nas_celulas": 499,
+      "com_linha_do_sitio": 34,
+      "sem_linha_do_sitio": 465
+     },
+     "09 Évora Pelouros": {
+      "figuras_nas_celulas": 253,
+      "com_linha_do_sitio": 9,
+      "sem_linha_do_sitio": 244
+     },
+     "04 Évora Public Money": {
+      "figuras_nas_celulas": 197,
+      "com_linha_do_sitio": 7,
+      "sem_linha_do_sitio": 190
+     },
+     "06 Évora Economy": {
+      "figuras_nas_celulas": 31,
+      "com_linha_do_sitio": 0,
+      "sem_linha_do_sitio": 31
+     },
+     "14 Évora 2027": {
+      "figuras_nas_celulas": 149,
+      "com_linha_do_sitio": 0,
+      "sem_linha_do_sitio": 149
+     }
+    },
+    "novos_pt": {
+     "16 Évora Contas da Câmara": {
+      "figuras_nas_celulas": 297,
+      "com_linha_do_sitio": 37,
+      "sem_linha_do_sitio": 260
+     },
+     "17 Évora Quem Governou": {
+      "figuras_nas_celulas": 392,
+      "com_linha_do_sitio": 21,
+      "sem_linha_do_sitio": 371
+     },
+     "18 Évora Economia e Dinheiro de Fora": {
+      "figuras_nas_celulas": 285,
+      "com_linha_do_sitio": 11,
+      "sem_linha_do_sitio": 274
+     },
+     "19 Évora 2027 Capital Europeia da Cultura": {
+      "figuras_nas_celulas": 133,
+      "com_linha_do_sitio": 0,
+      "sem_linha_do_sitio": 133
+     }
+    },
+    "soma_antigos": {
+     "figuras_nas_celulas": 1196,
+     "com_linha_do_sitio": 69,
+     "sem_linha_do_sitio": 1127
+    },
+    "soma_novos": {
+     "figuras_nas_celulas": 1107,
+     "com_linha_do_sitio": 69,
+     "sem_linha_do_sitio": 1038
+    }
+   },
+   "comando": "as figuras das células das tabelas dos registos portugueses no motor (record.json), levadas à linha de origem e procuradas nas linhas que atravessaram para o sítio (ledger/cruzamentos/evora.json: rh_study, rh_id)",
+   "conhecido_positivo": {
+    "descricao": "o detetor vê figuras com linha do sítio (a tabela do regulador no 16) e sem ela (nos antigos)",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "selos_das_figuras",
+   "valor": {
+    "por_estudo": {
+     "16 Évora Contas da Câmara": {
+      "decisoes_corrigidas_escritas": 0,
+      "acrescenta_linhas": 3,
+      "mesma_medida": 8,
+      "edicoes": {
+       "decisoes.en.json": {
+        "figuras": 486,
+        "nao_figuras": 0,
+        "nao_numeros_selados": 0,
+        "corrigidas": 0
+       },
+       "decisoes.pt.json": {
+        "figuras": 486,
+        "nao_figuras": 0,
+        "nao_numeros_selados": 0,
+        "corrigidas": 0
+       }
+      }
+     },
+     "17 Évora Quem Governou": {
+      "decisoes_corrigidas_escritas": 50,
+      "acrescenta_linhas": 0,
+      "mesma_medida": 0,
+      "edicoes": {
+       "decisoes.pt.json": {
+        "figuras": 484,
+        "nao_figuras": 1,
+        "nao_numeros_selados": 1,
+        "corrigidas": 50
+       }
+      }
+     },
+     "18 Évora Economia e Dinheiro de Fora": {
+      "decisoes_corrigidas_escritas": 31,
+      "acrescenta_linhas": 0,
+      "mesma_medida": 0,
+      "edicoes": {
+       "decisoes.en.json": {
+        "figuras": 530,
+        "nao_figuras": 82,
+        "nao_numeros_selados": 39,
+        "corrigidas": 30
+       },
+       "decisoes.pt.json": {
+        "figuras": 530,
+        "nao_figuras": 82,
+        "nao_numeros_selados": 39,
+        "corrigidas": 30
+       }
+      }
+     },
+     "19 Évora 2027 Capital Europeia da Cultura": {
+      "decisoes_corrigidas_escritas": 3,
+      "acrescenta_linhas": 0,
+      "mesma_medida": 0,
+      "edicoes": {
+       "decisoes.en.json": {
+        "figuras": 174,
+        "nao_figuras": 17,
+        "nao_numeros_selados": 17,
+        "corrigidas": 3
+       },
+       "decisoes.pt.json": {
+        "figuras": 174,
+        "nao_figuras": 17,
+        "nao_numeros_selados": 17,
+        "corrigidas": 3
+       }
+      }
+     }
+    },
+    "corrigidas_aplicadas_pt": 83,
+    "nao_numeros_selados_pt": 57,
+    "corrigidas_escritas": 84
+   },
+   "comando": "Technical Source/ajustes.json (decisoes_corrigidas, acrescenta_linhas, mesma_medida) e decisoes.<língua>.json (contagem, corrigidas) das pastas 16 a 19, escritos pelo python3 -m core.compor",
+   "conhecido_positivo": {
+    "descricao": "o compositor recusa uma correção que não cai em nenhuma figura: a planta está no core/compor_test.py, que o portão do motor corre (a contagem de PASS no registo do portão)",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "mapa_de_migracao",
+   "valor": {
+    "pt": {
+     "blocos": 673,
+     "faltas": 0,
+     "repetidos": 2,
+     "repartidos": [
+      [
+       "08 Évora Mandates",
+       171,
+       [
+        "16 Évora Contas da Câmara",
+        "17 Évora Quem Governou",
+        "18 Évora Economia e Dinheiro de Fora"
+       ]
+      ],
+      [
+       "08 Évora Mandates",
+       172,
+       [
+        "16 Évora Contas da Câmara",
+        "17 Évora Quem Governou",
+        "18 Évora Economia e Dinheiro de Fora"
+       ]
+      ]
+     ],
+     "por_origem_e_destino": [
+      [
+       "04 Évora Public Money",
+       "18 Évora Economia e Dinheiro de Fora",
+       "entra",
+       82
+      ],
+      [
+       "04 Évora Public Money",
+       "18 Évora Economia e Dinheiro de Fora",
+       "sai",
+       13
+      ],
+      [
+       "06 Évora Economy",
+       "18 Évora Economia e Dinheiro de Fora",
+       "entra",
+       44
+      ],
+      [
+       "06 Évora Economy",
+       "18 Évora Economia e Dinheiro de Fora",
+       "sai",
+       5
+      ],
+      [
+       "07 Évora Municipal Accounts",
+       "16 Évora Contas da Câmara",
+       "entra",
+       64
+      ],
+      [
+       "07 Évora Municipal Accounts",
+       "16 Évora Contas da Câmara",
+       "sai",
+       24
+      ],
+      [
+       "08 Évora Mandates",
+       "16 Évora Contas da Câmara",
+       "entra",
+       67
+      ],
+      [
+       "08 Évora Mandates",
+       "16 Évora Contas da Câmara",
+       "sai",
+       8
+      ],
+      [
+       "08 Évora Mandates",
+       "17 Évora Quem Governou",
+       "entra",
+       65
+      ],
+      [
+       "08 Évora Mandates",
+       "17 Évora Quem Governou",
+       "sai",
+       25
+      ],
+      [
+       "08 Évora Mandates",
+       "18 Évora Economia e Dinheiro de Fora",
+       "entra",
+       12
+      ],
+      [
+       "08 Évora Mandates",
+       "18 Évora Economia e Dinheiro de Fora",
+       "sai",
+       1
+      ],
+      [
+       "09 Évora Pelouros",
+       "17 Évora Quem Governou",
+       "entra",
+       124
+      ],
+      [
+       "09 Évora Pelouros",
+       "17 Évora Quem Governou",
+       "sai",
+       14
+      ],
+      [
+       "14 Évora 2027",
+       "19 Évora 2027 Capital Europeia da Cultura",
+       "entra",
+       129
+      ],
+      [
+       "14 Évora 2027",
+       "19 Évora 2027 Capital Europeia da Cultura",
+       "sai",
+       1
+      ]
+     ]
+    },
+    "en": {
+     "blocos": 534,
+     "faltas": 87,
+     "repetidos": 2,
+     "repartidos": [
+      [
+       "08 Évora Mandates",
+       171,
+       [
+        "16 Évora Contas da Câmara",
+        "18 Évora Economia e Dinheiro de Fora"
+       ]
+      ],
+      [
+       "08 Évora Mandates",
+       172,
+       [
+        "16 Évora Contas da Câmara",
+        "18 Évora Economia e Dinheiro de Fora"
+       ]
+      ]
+     ],
+     "por_origem_e_destino": [
+      [
+       "04 Évora Public Money",
+       "18 Évora Economia e Dinheiro de Fora",
+       "entra",
+       82
+      ],
+      [
+       "04 Évora Public Money",
+       "18 Évora Economia e Dinheiro de Fora",
+       "sai",
+       13
+      ],
+      [
+       "06 Évora Economy",
+       "18 Évora Economia e Dinheiro de Fora",
+       "entra",
+       44
+      ],
+      [
+       "06 Évora Economy",
+       "18 Évora Economia e Dinheiro de Fora",
+       "sai",
+       5
+      ],
+      [
+       "07 Évora Municipal Accounts",
+       "16 Évora Contas da Câmara",
+       "entra",
+       63
+      ],
+      [
+       "07 Évora Municipal Accounts",
+       "16 Évora Contas da Câmara",
+       "sai",
+       24
+      ],
+      [
+       "08 Évora Mandates",
+       "16 Évora Contas da Câmara",
+       "entra",
+       67
+      ],
+      [
+       "08 Évora Mandates",
+       "16 Évora Contas da Câmara",
+       "sai",
+       8
+      ],
+      [
+       "08 Évora Mandates",
+       "18 Évora Economia e Dinheiro de Fora",
+       "entra",
+       12
+      ],
+      [
+       "08 Évora Mandates",
+       "18 Évora Economia e Dinheiro de Fora",
+       "sai",
+       1
+      ],
+      [
+       "14 Évora 2027",
+       "19 Évora 2027 Capital Europeia da Cultura",
+       "entra",
+       129
+      ],
+      [
+       "14 Évora 2027",
+       "19 Évora 2027 Capital Europeia da Cultura",
+       "sai",
+       1
+      ]
+     ]
+    }
+   },
+   "comando": "core.compor.mapa_de_migracao no motor sobre os gabaritos das pastas 16 a 19 (o mesmo que python3 -m core.compor --mapa): para cada bloco dos registos antigos, o estudo novo onde entra ou de onde sai com a razão escrita",
+   "conhecido_positivo": {
+    "descricao": "o mesmo mapa sem o gabarito do 17 dá faltas: os blocos do «Quinze Anos» que entram no 17 ficam sem destino",
+    "faltas_na_planta": 87,
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "contradicoes_i180",
+   "valor": {
+    "pontos": [
+     {
+      "ponto": "1-prr-tres-datas",
+      "o_que_era": "os totais do PRR com três datas de leitura e dois valores",
+      "saem": {
+       "167 372 756": {
+        "nos_antigos": {
+         "evora-orcamentado-pago-devido-2025": 2,
+         "evora-prometido-pago-auditado-2026": 2
+        },
+        "nos_novos": {
+         "evora-economia-e-dinheiro-publico-de-fora-da-camara": 4
+        }
+       },
+       "167 337 246": {
+        "nos_antigos": {
+         "evora-economia-investidores-portas-abertas-2026": 1
+        },
+        "nos_novos": {
+         "evora-economia-e-dinheiro-publico-de-fora-da-camara": 1
+        }
+       }
+      },
+      "entram": []
+     },
+     {
+      "ponto": "2-hospital",
+      "o_que_era": "o equipamento do hospital «a comprar-lhe agora» num estudo e com zero pago noutro",
+      "saem": {
+       "comprar-lhe agora": {
+        "nos_antigos": {
+         "evora-economia-investidores-portas-abertas-2026": 1
+        },
+        "nos_novos": {}
+       }
+      },
+      "entram": []
+     },
+     {
+      "ponto": "3-evora-2027-no-orcamento-2026",
+      "o_que_era": "o Évora 2027 no orçamento de 2026 com três valores",
+      "saem": {},
+      "entram": [
+       {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "ancora": "o objetivo do anexo de investimentos que carrega a iniciativa, para 2026",
+        "vezes": 1
+       }
+      ]
+     },
+     {
+      "ponto": "4-ganhos-param-em-2022",
+      "o_que_era": "os ganhos que «param em 2022» num estudo e chegam a 2024 noutro",
+      "saem": {
+       "param em 2022": {
+        "nos_antigos": {
+         "evora-economia-investidores-portas-abertas-2026": 1
+        },
+        "nos_novos": {}
+       }
+      },
+      "entram": []
+     },
+     {
+      "ponto": "5-mandato-2009-2013",
+      "o_que_era": "o mandato de 2009 a 2013 sem presidente registado num estudo e com os dois nomes noutro",
+      "saem": {},
+      "entram": [
+       {
+        "estudo": "evora-quem-governou-a-camara-2009-2025",
+        "ancora": "As fontes dos pelouros não registam o presidente desse mandato",
+        "vezes": 1
+       }
+      ]
+     },
+     {
+      "ponto": "6-direcao-da-divida",
+      "o_que_era": "a direção da dívida (a piorar, parada, a subir) e as duas séries que divergem em 2020 a 2023",
+      "saem": {},
+      "entram": [
+       {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "ancora": "A direção da dívida, lida de três maneiras",
+        "vezes": 1
+       },
+       {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "ancora": "Nenhum documento lido explica a distância de 2020 a 2023",
+        "vezes": 1
+       }
+      ]
+     },
+     {
+      "ponto": "7-prazo-2022-69-e-64",
+      "o_que_era": "69 e 64 dias de prazo de pagamento em 2022",
+      "saem": {},
+      "entram": [
+       {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "ancora": "69 dias a série da Prestação de Contas 2025",
+        "vezes": 1
+       },
+       {
+        "estudo": "evora-contas-da-camara-2010-2025",
+        "ancora": "64 dias o relatório de gestão de 2022",
+        "vezes": 1
+       }
+      ]
+     },
+     {
+      "ponto": "8-correcao-envelhecida",
+      "o_que_era": "a correção envelhecida dos «Pelouros» ao «Quinze Anos» («não têm linha de cultura»)",
+      "saem": {
+       "não têm linha de cultura": {
+        "nos_antigos": {
+         "evora-os-pelouros-quem-os-teve-o-que-fizeram": 1
+        },
+        "nos_novos": {}
+       }
+      },
+      "entram": []
+     }
+    ],
+    "repeticoes": [
+     {
+      "repeticao": "serie-da-divida-do-regulador",
+      "o_que_era": "a série da dívida da DGAL impressa por inteiro",
+      "agulha": "€77 961 663",
+      "estudos_antigos_com_ela": [
+       "evora-orcamentado-pago-devido-2025",
+       "evora-quinze-anos-cinco-mandatos"
+      ],
+      "estudos_novos_com_ela": [
+       "evora-contas-da-camara-2010-2025"
+      ]
+     },
+     {
+      "repeticao": "votacao-das-contas-de-2024",
+      "o_que_era": "a votação das contas de 2024",
+      "agulha": "2 votos a favor",
+      "estudos_antigos_com_ela": [
+       "evora-orcamentado-pago-devido-2025",
+       "evora-quinze-anos-cinco-mandatos"
+      ],
+      "estudos_novos_com_ela": [
+       "evora-contas-da-camara-2010-2025"
+      ]
+     },
+     {
+      "repeticao": "declaracao-do-auditor",
+      "o_que_era": "a declaração de impossibilidade do auditor",
+      "agulha": "Declaração de Impossibilidade",
+      "estudos_antigos_com_ela": [
+       "evora-orcamentado-pago-devido-2025",
+       "evora-quinze-anos-cinco-mandatos"
+      ],
+      "estudos_novos_com_ela": [
+       "evora-contas-da-camara-2010-2025"
+      ]
+     },
+     {
+      "repeticao": "cento-e-trinta-e-sete-dias",
+      "o_que_era": "os 137 dias de prazo médio de pagamento",
+      "agulha": "137 dias",
+      "estudos_antigos_com_ela": [
+       "evora-orcamentado-pago-devido-2025",
+       "evora-quinze-anos-cinco-mandatos"
+      ],
+      "estudos_novos_com_ela": [
+       "evora-contas-da-camara-2010-2025"
+      ]
+     },
+     {
+      "repeticao": "pagamentos-em-atraso",
+      "o_que_era": "os €4 976 172 em atraso",
+      "agulha": "4 976 172",
+      "estudos_antigos_com_ela": [
+       "evora-orcamentado-pago-devido-2025",
+       "evora-quinze-anos-cinco-mandatos"
+      ],
+      "estudos_novos_com_ela": [
+       "evora-contas-da-camara-2010-2025"
+      ]
+     }
+    ],
+    "castris_no_19": {
+     "tabela_no_19": true,
+     "3 000 000 no 19": true,
+     "6 750 000 no 19": true,
+     "o do registo liga ao 18": true,
+     "6 000 000 no 19": false,
+     "6 000 000 no 18, na linha de Cástris": true
+    },
+    "datas_de_leitura_do_prr_nos_novos": {
+     "evora-contas-da-camara-2010-2025": [],
+     "evora-quem-governou-a-camara-2009-2025": [],
+     "evora-economia-e-dinheiro-publico-de-fora-da-camara": [
+      "2026-08-04",
+      "2026-08-07",
+      "2026-08-19"
+     ],
+     "evora-2027-capital-europeia-da-cultura": [
+      "2026-08-19"
+     ]
+    }
+   },
+   "comando": "o texto visível dos documentos alojados (studies-src/<slug>/pt.html), sem marcação e com os espaços finos tornados espaço, procurado frase a frase nos seis antigos e nos quatro novos",
+   "conhecido_positivo": {
+    "descricao": "cada frase que sai foi vista em pelo menos um dos seis antigos, e cada repetição em pelo menos dois",
+    "frases_vistas_nos_antigos": {
+     "167 372 756": true,
+     "167 337 246": true,
+     "comprar-lhe agora": true,
+     "param em 2022": true,
+     "não têm linha de cultura": true
+    },
+    "repeticoes_vistas_em_dois_antigos": {
+     "serie-da-divida-do-regulador": true,
+     "votacao-das-contas-de-2024": true,
+     "declaracao-do-auditor": true,
+     "cento-e-trinta-e-sete-dias": true,
+     "pagamentos-em-atraso": true
+    },
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "frases_envelhecidas",
+   "valor": {
+    "frases": {
+     "documento companheiro": {
+      "nos_antigos": 22,
+      "nos_novos": 0,
+      "na_ficha_do_concelho": 0
+     },
+     "comprar-lhe agora": {
+      "nos_antigos": 1,
+      "nos_novos": 0,
+      "na_ficha_do_concelho": 0
+     },
+     "param em 2022": {
+      "nos_antigos": 1,
+      "nos_novos": 0,
+      "na_ficha_do_concelho": 0
+     },
+     "não têm linha de cultura": {
+      "nos_antigos": 1,
+      "nos_novos": 0,
+      "na_ficha_do_concelho": 0
+     },
+     "começam no mandato de 2021": {
+      "nos_antigos": 0,
+      "nos_novos": 0,
+      "na_ficha_do_concelho": 0
+     },
+     "companion document": {
+      "nos_antigos": 2,
+      "nos_novos": 0,
+      "na_ficha_do_concelho": 0
+     }
+    },
+    "nos_novos_total": 0,
+    "na_ficha_total": 0,
+    "anexo_das_portas_diz_que_os_prazos_passaram_no_18": {
+     "cabeca_com_a_data": true,
+     "diz_que_os_prazos_ja_passaram": true
+    }
+   },
+   "comando": "as frases envelhecidas que as leituras de fora citaram, procuradas no texto visível dos documentos alojados (antigos e novos, nas duas línguas) e em src/data/municipios.mjs",
+   "conhecido_positivo": {
+    "descricao": "as frases são vistas nos antigos (a soma nos antigos é maior do que zero)",
+    "soma_nos_antigos": 27,
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "achados",
+   "valor": {
+    "verify_ingles_no_quinze_anos_pt": 2,
+    "verify_ingles_no_17": 0,
+    "a_verificar_no_17": 2,
+    "frases_inglesas_nos_pelouros_pt": 9,
+    "frases_inglesas_no_17": 0,
+    "asteriscos_a_vista_no_evora_2027_de_setembro": 1,
+    "asteriscos_a_vista_no_19": 0,
+    "a_linha_dos_3_984_060": {
+     "id": "evora2027-gop-2026",
+     "documento": "PRESTACAO_CONTAS_2025.pdf",
+     "pagina_no_excerto": "109"
+    },
+    "o_par_do_prr": {
+     "id": "prr-approved-evora-0804",
+     "data_no_endereco": "20260819"
+    },
+    "selos_da_linha_el2013_pcp_pev_seats": {
+     "no_quinze_anos": [
+      {
+       "bloco": 17,
+       "linha_da_tabela": "2001–2005",
+       "impresso": "4"
+      },
+      {
+       "bloco": 17,
+       "linha_da_tabela": "2013–2017",
+       "impresso": "4"
+      },
+      {
+       "bloco": 17,
+       "linha_da_tabela": "2017–2021",
+       "impresso": "4"
+      },
+      {
+       "bloco": 20,
+       "linha_da_tabela": "PS",
+       "impresso": "4"
+      },
+      {
+       "bloco": 31,
+       "linha_da_tabela": "PCP-PEV",
+       "impresso": "4"
+      },
+      {
+       "bloco": 34,
+       "linha_da_tabela": "PCP-PEV",
+       "impresso": "4"
+      }
+     ],
+     "no_17": [
+      {
+       "bloco": 27,
+       "linha_da_tabela": "2013–2017",
+       "impresso": "4"
+      },
+      {
+       "bloco": 41,
+       "linha_da_tabela": "PCP-PEV",
+       "impresso": "4"
+      }
+     ]
+    }
+   },
+   "comando": "o texto visível dos documentos alojados, procurado pelas cadeias de cada achado, e as duas linhas do livro do 07 no motor",
+   "conhecido_positivo": {
+    "descricao": "cada detetor encontra o defeito no estudo antigo onde ele estava",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "paginas",
+   "valor": {
+    "construcao": {
+     "commit": "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6",
+     "da_cabeca": true,
+     "estado_da_arvore": "ensaio: a construção da cabeça 441c2eb8 com os remendos ensaio-1-mecanismo-do-e0.patch e ensaio-2-contadores-do-arquivo.patch desta pasta (as medidas das linhas, dos contadores e dos textos leem a árvore no estado real, a cabeça sem remendos)"
+    },
+    "lista_dos_estudos": {
+     "pt": {
+      "evora_novos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "evora_antigos": [],
+      "todos": 11,
+      "perguntas": 4
+     },
+     "en": {
+      "evora_novos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "evora_antigos": [],
+      "todos": 11,
+      "perguntas": 4
+     }
+    },
+    "perguntas_na_pagina_do_concelho": {
+     "pt": 4,
+     "en": 4
+    },
+    "pagina_do_concelho_trabalhos": {
+     "pt": {
+      "novos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "antigos": []
+     },
+     "en": {
+      "novos": [
+       "evora-2027-capital-europeia-da-cultura",
+       "evora-contas-da-camara-2010-2025",
+       "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+       "evora-quem-governou-a-camara-2009-2025"
+      ],
+      "antigos": []
+     }
+    },
+    "paginas_antigas": {
+     "pt/evora-orcamentado-pago-devido-2025": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "en/evora-orcamentado-pago-devido-2025": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "pt/evora-quinze-anos-cinco-mandatos": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "en/evora-quinze-anos-cinco-mandatos": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "pt/evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "en/evora-os-pelouros-quem-os-teve-o-que-fizeram": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "pt/evora-prometido-pago-auditado-2026": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "en/evora-prometido-pago-auditado-2026": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "pt/evora-economia-investidores-portas-abertas-2026": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "en/evora-economia-investidores-portas-abertas-2026": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "pt/evora-2027-prometido-painel-dinheiro": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     },
+     "en/evora-2027-prometido-painel-dinheiro": {
+      "existe": true,
+      "nota_do_sucessor": true,
+      "noindex": true
+     }
+    },
+    "paginas_novas": {
+     "pt/evora-contas-da-camara-2010-2025": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": false
+     },
+     "en/evora-contas-da-camara-2010-2025": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": false
+     },
+     "pt/evora-quem-governou-a-camara-2009-2025": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": false
+     },
+     "en/evora-quem-governou-a-camara-2009-2025": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": false
+     },
+     "pt/evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": false
+     },
+     "en/evora-economia-e-dinheiro-publico-de-fora-da-camara": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": false
+     },
+     "pt/evora-2027-capital-europeia-da-cultura": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": true
+     },
+     "en/evora-2027-capital-europeia-da-cultura": {
+      "existe": true,
+      "antecessores": true,
+      "noindex": true
+     }
+    },
+    "sitemap": {
+     "antigos": 0,
+     "novos": 6
+    },
+    "redirecionamentos_dos_antigos": 0
+   },
+   "comando": "o dist/ da última construção: data-estudo na lista dos estudos, as ligações na secção #trabalhos da página de Évora, data-sucessor-edicao, data-antecessores e o meta robots em cada página de estudo, os endereços nos sitemap*.xml, e os redirecionamentos de vercel.json",
+   "conhecido_positivo": {
+    "descricao": "os detetores de data-estudo e de data-sucessor-edicao veem-nos numa página plantada",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "l1_paginas_antigas",
+   "valor": {
+    "teto": {
+     "estudos": 2342,
+     "teto_anterior": 2337,
+     "paginas_novas": 7,
+     "paginas_que_ja_existiam": 2335
+    },
+    "paginas_novas_com_repeticao_de_estudo": 14,
+    "documentos_antigos_com_a_porta_do_proprio_estudo_duas_vezes": 9,
+    "outras_paginas_antigas": [
+     {
+      "rota": "/agenda",
+      "repetidos": {
+       "/estudos/evora-quinze-anos-cinco-mandatos/documento": 2
+      }
+     },
+     {
+      "rota": "/en/agenda",
+      "repetidos": {
+       "/estudos/evora-quinze-anos-cinco-mandatos/documento": 2
+      }
+     }
+    ],
+    "agenda_json_igual_a_cabeca": true
+   },
+   "comando": "cada index.html do dist/: as ligações fora do cabeçalho e do rodapé, sem fragmento, contadas por destino; ficam as repetidas que são rotas de um dos dez estudos de Évora, separadas em páginas novas, páginas de documento com a porta do próprio estudo duas vezes (a mobília de todas as páginas de documento) e outras",
+   "conhecido_positivo": {
+    "descricao": "uma página plantada com duas ligações no corpo para o estudo das contas (e uma no cabeçalho) dá um destino repetido",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "contador_dos_estudos_de_evora",
+   "valor": {
+    "valor_da_linha": "4",
+    "conta_do_arquivo": 4,
+    "entradas_seladas": 5,
+    "ultima_selada": {
+     "date": "2026-10-01",
+     "kind": "atualizacao",
+     "old_value": "6",
+     "new_value": "4"
+    }
+   },
+   "comando": "o value de ledger/claims/estudos-evora-publicados.yml, a COUNTS.estudos_evora_no_arquivo de src/data/studies.mjs (importado pelo node) e a lista selada em ledger/historias-valores.json",
+   "conhecido_positivo": {
+    "descricao": "a mesma conta sobre o studies.mjs da base dá o valor que a linha tinha na base",
+    "base": {
+     "conta": 6,
+     "linha": "6"
+    },
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "contadores_do_arquivo_a_paragem",
+   "valor": {
+    "estudos-publicados": {
+     "valor_da_linha": "13",
+     "conta_do_arquivo": 17,
+     "concordam": false,
+     "base": {
+      "valor_da_linha": "13",
+      "conta_do_arquivo": 13
+     }
+    },
+    "edicoes-publicadas": {
+     "valor_da_linha": "18",
+     "conta_do_arquivo": 25,
+     "concordam": false,
+     "base": {
+      "valor_da_linha": "18",
+      "conta_do_arquivo": 18
+     }
+    }
+   },
+   "comando": "o value de ledger/claims/estudos-publicados.yml e edicoes-publicadas.yml contra COUNTS.estudos_no_arquivo e edicoes_no_arquivo de src/data/studies.mjs, na árvore e na base",
+   "conhecido_positivo": {
+    "descricao": "na base, a mesma comparação concorda (a linha e a conta dão o mesmo número)",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "capturas",
+   "valor": {
+    "capturas": 32,
+    "sha256_conferidos": 32,
+    "divergem": [],
+    "cabeca": "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6",
+    "estado": "ensaio: a cabeça 441c2eb8 com os remendos ensaio-1-mecanismo-do-e0.patch e ensaio-2-contadores-do-arquivo.patch desta pasta",
+    "problemas": [],
+    "pedidos_recusados_para_fora": 0
+   },
+   "comando": "o sha256 de cada PNG recalculado e comparado com o de capturas-e1.json, escrito pelo captar-e1.mjs",
+   "conhecido_positivo": {
+    "descricao": "dois corpos que diferem num byte dão sha256 diferentes",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "portoes_do_sitio",
+   "valor": {
+    "real": {
+     "cabeca": "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6",
+     "build": 1,
+     "build_falhas": [
+      "\"[edicoes-publicadas.yml] a aritmética não bate certo.\\n    check: edicoes_no_arquivo\\n    calculado: 25\\n    publicado: 18 (18)\\n    A comparação é exata: não há tolerância nenhuma, e uma derivação que só bate arredondada diz o arredondamento na própria expressão.\",",
+      "\"[estudos-publicados.yml] a aritmética não bate certo.\\n    check: estudos_no_arquivo\\n    calculado: 17\\n    publicado: 13 (13)\\n    A comparação é exata: não há tolerância nenhuma, e uma derivação que só bate arredondada diz o arredondamento na própria expressão.\""
+     ],
+     "verify": 1,
+     "verify_falhas": [
+      "\"[edicoes-publicadas.yml] a aritmética não bate certo.\\n    check: edicoes_no_arquivo\\n    calculado: 25\\n    publicado: 18 (18)\\n    A comparação é exata: não há tolerância nenhuma, e uma derivação que só bate arredondada diz o arredondamento na própria expressão.\",",
+      "\"[estudos-publicados.yml] a aritmética não bate certo.\\n    check: estudos_no_arquivo\\n    calculado: 17\\n    publicado: 13 (13)\\n    A comparação é exata: não há tolerância nenhuma, e uma derivação que só bate arredondada diz o arredondamento na própria expressão.\""
+     ],
+     "typecheck": 0,
+     "typecheck_falhas": []
+    },
+    "ensaio": {
+     "cabeca": "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6",
+     "build": 0,
+     "build_falhas": [],
+     "verify": 0,
+     "verify_falhas": [],
+     "typecheck": 0,
+     "typecheck_falhas": []
+    }
+   },
+   "comando": "os códigos de npm run build, npm run verify e npm run typecheck, cada um no seu comando, escritos em portoes/<estado>/<portão>.codigo depois de o processo acabar (scripts/leituras/portoes.sh da §1.147)",
+   "conhecido_positivo": {
+    "descricao": "o leitor dos ficheiros de código lê 1 num ficheiro plantado com 1",
+    "mordeu": true
+   }
+  },
+  {
+   "nome": "custo",
+   "valor": {
+    "modelo": "Claude Opus 5.5",
+    "inicio_dos_ramos": "2026-09-30T21:54:34+01:00",
+    "medido_em": "2026-10-01T02:29:05+00:00",
+    "segundos_de_relogio": 20071,
+    "simbolos": "2502873 (o contador do orçamento que a ferramenta mostra ao agente: 15000000 no início da sessão do construtor e 12497127 na leitura antes desta medida, a 01.10.2026)",
+    "fonte_dos_simbolos": "o contador do orçamento que a ferramenta mostra ao agente (diferença entre o início e o fim), passado em OEDP_E1_SIMBOLOS"
+   },
+   "comando": "git reflog show --date=iso-strict e1-2026-09-30 nas duas árvores (a criação do ramo) até à hora da medida",
+   "conhecido_positivo": {
+    "descricao": "a criação do ramo é a última linha do reflog e diz «branch: Created from»",
+    "mordeu": true
+   }
+  }
+ ]
+}

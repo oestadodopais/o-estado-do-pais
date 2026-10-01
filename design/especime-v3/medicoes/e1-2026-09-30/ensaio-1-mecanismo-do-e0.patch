@@ -1,0 +1,130 @@
+diff --git a/scripts/check-pais.mjs b/scripts/check-pais.mjs
+index 463fe482..fb815407 100644
+--- a/scripts/check-pais.mjs
++++ b/scripts/check-pais.mjs
+@@ -168,6 +168,12 @@ function lugarDerivado(id) {
+   const c = linha(id);
+   /* A coordenada selada, por uma via independente da tabela de lugares. */
+   if (c.source_url && new URL(c.source_url).searchParams.get('geo') === 'EU27_2020') return 'uniao-europeia';
++  /* E0, §1.146: esta conta mede as correções do próprio livro, pela expressão
++     verificada. A segunda leitura confirma a declaração, nunca a substitui:
++     sem a tabela explícita, a A3 continua a recusar a mudança. */
++  if (c.source === 'O Estado do País' && c.study === 'o-estado-do-pais' &&
++      c.check === 'correcoes_publicadas' && typeof c.derivation === 'string' && c.derivation.trim())
++    return 'o-estado-do-pais';
+   const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
+   const doId = lugarNoIdentificador(id);
+   const d = [...new Set([doEstudo, doId].filter(x => typeof x === 'string'))];
+@@ -214,6 +220,7 @@ for (const [id, chave] of Object.entries(LUGAR_DECLARADO_DAS_LINHAS)) {
+ /** O nome e a porta de um lugar, na língua da edição, compostos aqui. */
+ function nomeDoLugar(chave, lang) {
+   if (chave === 'uniao-europeia') return lang === 'pt' ? 'União Europeia' : 'European Union';
++  if (chave === 'o-estado-do-pais') return 'O Estado do País';
+   if (chave === PAIS) return ROTULOS_B1[lang].pais;
+   const r = REGIOES.find(x => x.slug === chave);
+   if (r) return r.nome[lang] ?? r.nome.pt;
+@@ -222,6 +229,7 @@ function nomeDoLugar(chave, lang) {
+ }
+ function rotaDoLugar(chave, lang) {
+   if (chave === 'uniao-europeia') return routePath('temas', lang);
++  if (chave === 'o-estado-do-pais') return routePath('correcoes', lang);
+   if (chave === PAIS) return routePath('home', lang);
+   if (REGIOES.some(x => x.slug === chave)) return routePath('regiao', lang, { slug: chave });
+   return MUNICIPIOS_COM_PAGINA.some(x => x.slug === chave) ? routePath('municipio', lang, { slug: chave }) : null;
+diff --git a/src/components/RegistoCorrecoes.astro b/src/components/RegistoCorrecoes.astro
+index 589968c2..af43d682 100644
+--- a/src/components/RegistoCorrecoes.astro
++++ b/src/components/RegistoCorrecoes.astro
+@@ -92,6 +92,7 @@ import Provenance from './Provenance.astro';
+ import TituloDeTrabalho from './TituloDeTrabalho.astro';
+ import ValorDaProva from './ValorDaProva.astro';
+ import { unidadeDaLinha } from '../i18n/unidades.mjs';
++import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
+ import { t } from '../i18n/strings.mjs';
+ 
+ const { lang = 'pt' } = Astro.props;
+@@ -200,6 +201,20 @@ const palavraRevisoes =
+                       {e.nome.texto}
+                     </span>
+                   )}
++                  {/* E0b: um nome lido do livro mantém a marca do campo e a
++                      língua da fonte, como o mesmo nome no cartão. */}
++                  {e.nome?.campo && (
++                    <CampoDaLinha
++                      id={e.claim}
++                      campo={e.nome.campo}
++                      valor={e.nome.texto}
++                      lang={lang}
++                      class="registo-mudanca-nome"
++                      lingua={e.nome.campo === 'name'
++                        ? linguaDoRotuloDaFonte(e.nome.texto, lang)
++                        : linguaDoTituloDoDocumento(e.nome.texto, lang)}
++                    />
++                  )}
+                   <span class="registo-mudanca-par">
+                     <s
+                       data-correcao-claim={e.claim}
+diff --git a/src/data/lugar-das-linhas.mjs b/src/data/lugar-das-linhas.mjs
+index 0a2bd757..f5e528f4 100644
+--- a/src/data/lugar-das-linhas.mjs
++++ b/src/data/lugar-das-linhas.mjs
+@@ -15,10 +15,14 @@
+  * e duas declarações que discordem também fecham a construção.
+  *
+  * A chave é o id da linha; o valor é `'portugal'`, o slug de uma região ou o
+- * slug de um concelho.
++ * slug de um concelho, `'uniao-europeia'` ou `'o-estado-do-pais'`.
+  */
+ /** @type {Record<string, string>} */
+ export const LUGAR_DECLARADO_DAS_LINHAS = {
++  /* E0, §1.146: a linha conta as confissões do próprio projeto. O seu lugar
++     é O Estado do País, com a porta para o registo das correções. Não mede
++     Portugal, uma região nem um concelho. */
++  'correcoes-publicadas': 'o-estado-do-pais',
+   /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.
+      A atualização pertence ao registo e aos temas, fora da lista do país. */
+   'divida-das-familias-2025-ue': 'uniao-europeia',
+diff --git a/src/data/nomes-das-medidas.mjs b/src/data/nomes-das-medidas.mjs
+index 6ba6f375..53b3d500 100644
+--- a/src/data/nomes-das-medidas.mjs
++++ b/src/data/nomes-das-medidas.mjs
+@@ -74,6 +74,11 @@ import { NOMES_RP1 } from './medidas-rp1.mjs';
+  * @type {Record<string, ParDeLinguas>}
+  */
+ export const NOMES_DO_PROJETO = {
++  /* E0c: o mesmo nome corrente do cartão; a entrada já diz o lugar da União. */
++  'divida-das-familias-2025-ue': {
++    pt: 'Dívida das famílias',
++    en: 'Household debt',
++  },
+   'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
+     pt: 'Sobrecarga do custo da habitação, inquilinos a preço de mercado',
+     en: 'Housing cost overburden, tenants at market rent',
+@@ -496,6 +501,11 @@ export const NOMES_DO_PROJETO = {
+  * @type {Record<string, ParDeLinguas>}
+  */
+ export const NOMES_DAS_LINHAS_DERIVADAS = {
++  // E0b: a medida nomeia-se pela contagem declarada na sua derivação.
++  'correcoes-publicadas': {
++    pt: 'Correções publicadas',
++    en: 'Published corrections',
++  },
+   // A contagem e o lugar estão declarados na derivação desta linha.
+   'estudos-evora-publicados': {
+     pt: 'Estudos publicados sobre Évora',
+diff --git a/src/lib/mudancas.mjs b/src/lib/mudancas.mjs
+index d9a3ac13..a9f59229 100644
+--- a/src/lib/mudancas.mjs
++++ b/src/lib/mudancas.mjs
+@@ -98,6 +98,11 @@ function lugarPorChave(chave, lang) {
+   if (chave === 'uniao-europeia') {
+     return { chave, nome: lang === 'pt' ? 'União Europeia' : 'European Union', rota: routePath('temas', lang) };
+   }
++  /* E0, §1.146: o projeto é um lugar declarado, pela mesma porta estreita
++     da União. O campo study não atribui este lugar a uma linha. */
++  if (chave === 'o-estado-do-pais') {
++    return { chave, nome: 'O Estado do País', rota: routePath('correcoes', lang) };
++  }
+   if (chave === PORTUGAL) {
+     return { chave, nome: ROTULOS_B1[lang].pais, rota: routePath('home', lang) };
+   }

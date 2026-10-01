@@ -1,0 +1,33 @@
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    publisher/export_records.py:728
+§1.111 · Todo o estudo abre com a leitura do projeto: o resumo, o que se conclui, o que podia funcionar melhor
+    content/16 Évora Contas da Câmara/records.manifest.json:5 (perto do diff)
+    content/17 Évora Quem Governou/records.manifest.json:5 (perto do diff)
+    content/18 Évora Economia e Dinheiro de Fora/records.manifest.json:5 (perto do diff)
+    content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json:5 (perto do diff)
+    publisher/export_records.py:371 (perto do diff)
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    core/gate.py:199 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    content/16 Évora Contas da Câmara/Technical Source/documento.pt.md.tmpl:1 (perto do diff)
+    content/16 Évora Contas da Câmara/records.manifest.json:5 (perto do diff)
+    content/17 Évora Quem Governou/Technical Source/documento.pt.md.tmpl:1 (perto do diff)
+    content/17 Évora Quem Governou/records.manifest.json:5 (perto do diff)
+    content/18 Évora Economia e Dinheiro de Fora/Technical Source/documento.pt.md.tmpl:1 (perto do diff)
+    content/18 Évora Economia e Dinheiro de Fora/records.manifest.json:5 (perto do diff)
+    content/19 Évora 2027 Capital Europeia da Cultura/Technical Source/documento.pt.md.tmpl:1 (perto do diff)
+    content/19 Évora 2027 Capital Europeia da Cultura/records.manifest.json:5 (perto do diff)
+    content/README.md:299 (perto do diff)
+    core/gate.py:229 (perto do diff)
+    core/gate_baselines.json:674 (perto do diff)
+    core/gate_baselines.json:690 (perto do diff)
+    core/gate_baselines.json:706 (perto do diff)
+    core/gate_baselines.json:722 (perto do diff)
+    core/gate_baselines.json:738 (perto do diff)
+    core/gate_baselines.json:754 (perto do diff)
+    publisher/export_records.py:260 (perto do diff)
+    publisher/export_records.py:367 (perto do diff)
+    publisher/export_records_site.py:125 (perto do diff)
+    publisher/export_records_test.py:614 (perto do diff)
+    publisher/manifest.evora.json:9 (perto do diff)
+4 decisão(ões) citada(s) em 78 ficheiro(s)

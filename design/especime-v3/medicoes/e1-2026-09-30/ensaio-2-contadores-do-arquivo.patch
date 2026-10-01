@@ -1,0 +1,157 @@
+diff --git a/ledger/claims/edicoes-publicadas.yml b/ledger/claims/edicoes-publicadas.yml
+index 5a81429b..6ef0df79 100644
+--- a/ledger/claims/edicoes-publicadas.yml
++++ b/ledger/claims/edicoes-publicadas.yml
+@@ -4,17 +4,17 @@
+ id: "edicoes-publicadas"
+ 
+ # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+-value: "18"
++value: "25"
+ unit: "edições"
+ 
+ # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+ source: "O Estado do País"
+ document:
+   title: "Arquivo de estudos"
+-  edition: "16.09.2026"
++  edition: "01.10.2026"
+ source_url: null
+-access_date: "2026-09-16"
+-reference_date: "2026-09-16"
++access_date: "2026-10-01"
++reference_date: "2026-10-01"
+ 
+ # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+ excerpt: null
+@@ -30,4 +30,10 @@ study: "o-estado-do-pais"
+ note: "Verificado no build contra src/data/studies.mjs: se o arquivo mudar e este número não, o build falha. A partir de 2026-08-13 os campos que só um documento externo poderia preencher ficam a null, em vez de «a verificar»: não há documento externo, e marcar como por confirmar um campo que não pode ser confirmado inflava a dívida de proveniência e mantinha esta página fora do índice."
+ 
+ # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+-corrections: []
++corrections:
++  - date: "2026-10-01"
++    kind: "atualizacao"
++    old_value: "18"
++    new_value: "25"
++    reason: "Entraram no arquivo as sete edições dos quatro estudos de Évora que sucedem aos seis de agosto e setembro."
++    reason_en: "The seven editions of the four Évora studies that succeed the six of August and September entered the archive."
+diff --git a/ledger/claims/estudos-publicados.yml b/ledger/claims/estudos-publicados.yml
+index 9c15ba98..7b1948cb 100644
+--- a/ledger/claims/estudos-publicados.yml
++++ b/ledger/claims/estudos-publicados.yml
+@@ -4,17 +4,17 @@
+ id: "estudos-publicados"
+ 
+ # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+-value: "13"
++value: "17"
+ unit: "estudos"
+ 
+ # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+ source: "O Estado do País"
+ document:
+   title: "Arquivo de estudos"
+-  edition: "16.09.2026"
++  edition: "01.10.2026"
+ source_url: null
+-access_date: "2026-09-16"
+-reference_date: "2026-09-16"
++access_date: "2026-10-01"
++reference_date: "2026-10-01"
+ 
+ # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+ excerpt: null
+@@ -30,4 +30,10 @@ study: "o-estado-do-pais"
+ note: "Verificado no build contra src/data/studies.mjs: se o arquivo mudar e este número não, o build falha. A partir de 2026-08-13 os campos que só um documento externo poderia preencher ficam a null, em vez de «a verificar»: não há documento externo, e marcar como por confirmar um campo que não pode ser confirmado inflava a dívida de proveniência e mantinha esta página fora do índice."
+ 
+ # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+-corrections: []
++corrections:
++  - date: "2026-10-01"
++    kind: "atualizacao"
++    old_value: "13"
++    new_value: "17"
++    reason: "Entraram no arquivo os quatro estudos de Évora que sucedem aos seis de agosto e setembro; os seis ficam alojados como edições datadas e continuam no arquivo."
++    reason_en: "The four Évora studies that succeed the six of August and September entered the archive; the six stay hosted as dated editions and remain in the archive."
+diff --git a/ledger/historias-valores.json b/ledger/historias-valores.json
+index ba44a944..3b71db12 100644
+--- a/ledger/historias-valores.json
++++ b/ledger/historias-valores.json
+@@ -124,5 +124,21 @@
+       "old_value": "77,2",
+       "new_value": "77"
+     }
++  ],
++  "estudos-publicados": [
++    {
++      "date": "2026-10-01",
++      "kind": "atualizacao",
++      "old_value": "13",
++      "new_value": "17"
++    }
++  ],
++  "edicoes-publicadas": [
++    {
++      "date": "2026-10-01",
++      "kind": "atualizacao",
++      "old_value": "18",
++      "new_value": "25"
++    }
+   ]
+ }
+diff --git a/scripts/check-pais.mjs b/scripts/check-pais.mjs
+index fb815407..d680d4d5 100644
+--- a/scripts/check-pais.mjs
++++ b/scripts/check-pais.mjs
+@@ -174,6 +174,10 @@ function lugarDerivado(id) {
+   if (c.source === 'O Estado do País' && c.study === 'o-estado-do-pais' &&
+       c.check === 'correcoes_publicadas' && typeof c.derivation === 'string' && c.derivation.trim())
+     return 'o-estado-do-pais';
++  /* ENSAIO E1 sobre o E0: as duas contagens do arquivo. */
++  if (c.source === 'O Estado do País' && c.study === 'o-estado-do-pais' &&
++      ['estudos_no_arquivo', 'edicoes_no_arquivo'].includes(String(c.check)) && typeof c.derivation === 'string' && c.derivation.trim())
++    return 'o-estado-do-pais';
+   const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
+   const doId = lugarNoIdentificador(id);
+   const d = [...new Set([doEstudo, doId].filter(x => typeof x === 'string'))];
+diff --git a/src/data/lugar-das-linhas.mjs b/src/data/lugar-das-linhas.mjs
+index f5e528f4..f689277d 100644
+--- a/src/data/lugar-das-linhas.mjs
++++ b/src/data/lugar-das-linhas.mjs
+@@ -23,6 +23,9 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
+      é O Estado do País, com a porta para o registo das correções. Não mede
+      Portugal, uma região nem um concelho. */
+   'correcoes-publicadas': 'o-estado-do-pais',
++  /* ENSAIO E1 sobre o E0: as duas linhas do arquivo, que o E1 faz mudar. */
++  'estudos-publicados': 'o-estado-do-pais',
++  'edicoes-publicadas': 'o-estado-do-pais',
+   /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.
+      A atualização pertence ao registo e aos temas, fora da lista do país. */
+   'divida-das-familias-2025-ue': 'uniao-europeia',
+diff --git a/src/data/nomes-das-medidas.mjs b/src/data/nomes-das-medidas.mjs
+index 53b3d500..218b47e2 100644
+--- a/src/data/nomes-das-medidas.mjs
++++ b/src/data/nomes-das-medidas.mjs
+@@ -501,6 +501,9 @@ export const NOMES_DO_PROJETO = {
+  * @type {Record<string, ParDeLinguas>}
+  */
+ export const NOMES_DAS_LINHAS_DERIVADAS = {
++  // ENSAIO E1 sobre o E0: as duas contagens do arquivo que o E1 faz mudar.
++  'estudos-publicados': { pt: 'Estudos publicados', en: 'Published studies' },
++  'edicoes-publicadas': { pt: 'Edições publicadas', en: 'Published editions' },
+   // E0b: a medida nomeia-se pela contagem declarada na sua derivação.
+   'correcoes-publicadas': {
+     pt: 'Correções publicadas',
+diff --git a/src/i18n/lingua-dos-titulos.mjs b/src/i18n/lingua-dos-titulos.mjs
+index e413ddc5..3a61093b 100644
+--- a/src/i18n/lingua-dos-titulos.mjs
++++ b/src/i18n/lingua-dos-titulos.mjs
+@@ -445,7 +445,6 @@ export const LINGUA_DAS_EDICOES = {
+      sobre Évora passou a 01.10.2026, quando os seis estudos de Évora passaram a
+      quatro (bloco E1 dos estudos de Évora). */
+   '12.08.2026': null,
+-  '16.09.2026': null,
+   '01.10.2026': null,
+ 
+   /* --- os nomes de ficheiro do publicador -------------------------------- */
