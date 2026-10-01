@@ -291,3 +291,21 @@ planta('pp1-forma-de-bloco-desconhecida','scripts/check-formas.mjs',[
 planta('pp1-trabalho-como-nome-de-estudo','scripts/check-lugar.mjs',[
  ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>O trabalho deste projeto sobre a água.</p>')]
 ],[/L3 .*ACIMA DO TETO/]);
+/* L2b (01.10.2026): as origens da faixa do concelho no portão de HTML. O lugar, a contagem e os empates
+   recontam-se das 308 linhas pelo leitor dos portões, e um valor na faixa só passa sem marca própria se for
+   a linha do cartão ou a linha de Portugal que o portão acha para ela. `--prefixo l2b-` corre só estas. */
+planta('l2b-portao-um-lugar-errado','scripts/gate-html.mjs',[
+ ['municipios/evora/index.html',r=>{const m=r.querySelector('[data-faixa-concelho="ganho"] [data-concelho-lugar]');m.set_content(String(Number(m.text)+1));}]
+],[/L2b: «data-concelho-lugar» de «ganho#evora» diz «\d+» e a recontagem das linhas dá «\d+»/]);
+planta('l2b-portao-uma-contagem-errada','scripts/gate-html.mjs',[
+ ['en/municipalities/evora/index.html',r=>{const m=r.querySelector('[data-faixa-concelho="pmp"] [data-concelho-conta]');m.set_content(String(Number(m.text)+9));}]
+],[/L2b: «data-concelho-conta» de «pmp» diz «\d+» e a recontagem das linhas dá «\d+»/]);
+planta('l2b-portao-um-empate-errado','scripts/gate-html.mjs',[
+ ['municipios/agueda/index.html',r=>{const m=r.querySelector('[data-faixa-concelho="pmp"] [data-concelho-a-par]');m.set_content(String(Number(m.text)+1));}]
+],[/L2b: «data-concelho-a-par» de «pmp#agueda» diz «\d+» e a recontagem das linhas dá «\d+»/]);
+planta('l2b-portao-portugal-de-outra-linha','scripts/gate-html.mjs',[
+ ['municipios/evora/index.html',r=>{const v=r.querySelector('[data-faixa-concelho="ganho"] [data-faixa-comparacao] [data-claim]');v.setAttribute('data-claim','taxa-de-desemprego-2024');v.set_content(getClaim('taxa-de-desemprego-2024').value);}]
+],[/o valor da afirmação "taxa-de-desemprego-2024" aparece sem selo para a sua própria linha/]);
+planta('l2b-portao-faixa-sem-a-porta-do-cartao','scripts/gate-html.mjs',[
+ ['municipios/evora/index.html',r=>r.querySelector('[data-faixa-concelho="ganho"]').removeAttribute('data-selo-em')]
+],[/o valor da afirmação "evora-ganho-medio-mensal-2024" aparece sem selo para a sua própria linha/,/o valor da afirmação "ganho-medio-mensal-2024" aparece sem selo para a sua própria linha/]);

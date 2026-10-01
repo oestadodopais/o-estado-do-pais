@@ -1,0 +1,7 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor no momento da leitura, e a hora de início do relógio da máquina",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "na primeira mensagem da sessão do construtor do L2b, antes de qualquer ferramenta",
+  "inicio_utc": "2026-10-01T21:00:55Z",
+  "inicio_origem": "date '+%Y-%m-%dT%H:%M:%S%z' na primeira chamada, que deu 2026-10-01T22:00:55+0100"
+}
