@@ -1,0 +1,116 @@
+  distritos/aveiro/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/beja/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/braga/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/braganca/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/castelo-branco/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/coimbra/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/evora/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/faro/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/guarda/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-da-graciosa/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-da-madeira/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-das-flores/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-de-porto-santo/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-de-santa-maria/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-de-sao-jorge/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-de-sao-miguel/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-do-corvo/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-do-faial/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-do-pico/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/ilha-terceira/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/leiria/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/lisboa/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/portalegre/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/porto/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/santarem/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/setubal/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/viana-do-castelo/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/vila-real/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  distritos/viseu/index.html
+    ✗ a ligação interna "/#mapa" aponta para a âncora "#mapa", que não existe em "/".
+  en/districts/aveiro/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/beja/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/braga/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/braganca/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/castelo-branco/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/coimbra/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/evora/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/faro/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/guarda/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-da-graciosa/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-da-madeira/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-das-flores/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-de-porto-santo/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-de-santa-maria/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-de-sao-jorge/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-de-sao-miguel/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-do-corvo/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-do-faial/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-do-pico/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/ilha-terceira/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/leiria/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/lisboa/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/portalegre/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/porto/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/santarem/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/setubal/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/viana-do-castelo/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/vila-real/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".
+  en/districts/viseu/index.html
+    ✗ a ligação interna "/en#mapa" aponta para a âncora "#mapa", que não existe em "/en".

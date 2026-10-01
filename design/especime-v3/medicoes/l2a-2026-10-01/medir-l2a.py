@@ -45,6 +45,20 @@ medicao("pecas_de_lugares_antes_do_mapa", ordem.index("mapa") if "mapa" in ordem
         "a ordem de <Pesquisa, das duas listas e de <MapaRespira em src/views/LugaresView.astro (o detetor do §0 do brief)",
         "a pesquisa vem antes do mapa", ordem[:1] == ["pesquisa"] and "mapa" in ordem)
 
+b = json.loads(ler(SITIO / "design/observatorio/medidas/BRIEF-L2a.json") or "{}")
+antes = next((x["valor"] for x in b.get("medidas", []) if x["nome"] == "pecas_de_lugares_antes_do_mapa"), NAO)
+medicao("pecas_de_lugares_antes_do_mapa_no_brief", antes, "design/observatorio/medidas/BRIEF-L2a.json, a medida pecas_de_lugares_antes_do_mapa (o §0 do brief, na cabeça 1395c9de)",
+        "o ficheiro do brief nomeia a cabeça que leu", bool(b.get("cabeca_lida")))
+r = subprocess.run(["node", "-e", "import('./src/data/carta-dos-lugares.mjs').then(m=>{const L=m.lugaresDaCarta();console.log(JSON.stringify({n:L.length,evora:L.some(x=>x.nome==='Évora')}))})"],
+                   cwd=str(SITIO), capture_output=True, text=True)
+c = json.loads(r.stdout) if r.returncode == 0 and r.stdout.strip() else {}
+medicao("concelhos_na_carta", c.get("n", NAO), "node · lugaresDaCarta().length em src/data/carta-dos-lugares.mjs (a contagem da C1 do check:lugares)",
+        "Évora é um deles", c.get("evora", False))
+g = ler(PASTA / "gate-html-ancora-do-mapa-primeira-construcao.txt") or ""
+medicao("paginas_de_distrito_recusadas_pela_ancora_do_mapa", g.count('aponta para a âncora "#mapa"'),
+        "as queixas do gate:html na primeira construção do bloco, guardadas em gate-html-ancora-do-mapa-primeira-construcao.txt",
+        "as queixas nomeiam páginas das duas edições", "en/districts/" in g and "\n  distritos/" in "\n" + g)
+
 # 2 · a construção: as gavetas, as listas, as contagens, a primeira página e o sinal
 versao = json.loads(ler(DIST / "version.json") or "{}")
 lug = ler(DIST / "lugares/index.html") or ""
@@ -126,6 +140,30 @@ for g in ["build", "verify", "typecheck"]:
     c = (ler(PASTA / f"portoes/{g}.codigo") or "").strip()
     medicao(f"portao_{g}", int(c) if c.isdigit() else NAO, f"design/especime-v3/medicoes/l2a-2026-10-01/portoes/{g}.codigo, escrito por scripts/leituras/portoes.sh",
             "a pasta dos portões tem a cabeça ao lado", bool((ler(PASTA / "portoes/cabeca") or "").strip()))
+
+# 7 · o custo: os segundos de cada portão, lidos das horas escritas por portoes.sh, e os símbolos da sessão, lidos do
+# contador que a ferramenta mostra ao agente (o que resta de um orçamento que começou em OEDP_SIMBOLOS_INICIO), passado
+# a este guião em OEDP_SIMBOLOS_RESTANTES por quem o corre; sem ele, a medida fica «NÃO LIDO».
+from datetime import datetime
+def segundos(pasta, g):
+    i, f = (ler(PASTA / pasta / f"{g}.inicio") or "").strip(), (ler(PASTA / pasta / f"{g}.fim") or "").strip()
+    try:
+        return int((datetime.fromisoformat(f.replace("Z", "+00:00")) - datetime.fromisoformat(i.replace("Z", "+00:00"))).total_seconds())
+    except ValueError:
+        return NAO
+for pasta in ["portoes-intermedio", "portoes"]:
+    cab = (ler(PASTA / pasta / "cabeca") or "").strip()
+    for g in ["build", "verify", "typecheck"]:
+        medicao(f"segundos_{g}_{pasta.replace('-', '_')}", segundos(pasta, g), f"design/especime-v3/medicoes/l2a-2026-10-01/{pasta}/{g}.inicio e {g}.fim",
+                "a pasta tem a cabeça em que correu", bool(cab))
+    c = {g: (ler(PASTA / pasta / f"{g}.codigo") or "").strip() for g in ["build", "verify", "typecheck"]}
+    for g, v in c.items():
+        medicao(f"codigo_{g}_{pasta.replace('-', '_')}", int(v) if v.isdigit() else NAO, f"design/especime-v3/medicoes/l2a-2026-10-01/{pasta}/{g}.codigo",
+                "a pasta tem a cabeça em que correu", bool(cab))
+inicio_s, resta_s = os.environ.get("OEDP_SIMBOLOS_INICIO"), os.environ.get("OEDP_SIMBOLOS_RESTANTES")
+usados = int(inicio_s) - int(resta_s) if (inicio_s or "").isdigit() and (resta_s or "").isdigit() else NAO
+medicao("simbolos_da_sessao_do_construtor", usados, "OEDP_SIMBOLOS_INICIO menos OEDP_SIMBOLOS_RESTANTES: o contador de símbolos restantes que a ferramenta mostra ao agente, lido no início e na hora desta corrida",
+        "os dois valores foram passados", usados != NAO)
 
 saida = {"bloco": "L2a", "guiao": "design/especime-v3/medicoes/l2a-2026-10-01/medir-l2a.py", "ordem_em_lugares": ordem, "medidas": medidas}
 alvo = os.environ.get("OEDP_MEDIDAS_JSON") or str(PASTA / "medidas.json")
