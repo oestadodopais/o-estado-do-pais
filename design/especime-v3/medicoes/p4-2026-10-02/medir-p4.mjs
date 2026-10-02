@@ -221,6 +221,57 @@ const naBaseLivro = git('ls-tree', '-r', '--name-only', BASE, '--', 'ledger').sa
 medida('ficheiros_do_livro_razao_e_dos_registos_mudados', doLivro.length, `git diff --name-only ${BASE}..HEAD -- ledger registos`,
   `a base tem ficheiros no livro-razão (${naBaseLivro}), e a mesma leitura vê-os`, naBaseLivro > 0);
 
+/* ============================================================================================ a passagem P4-c */
+/* Achado 4: a regra das casas decimais com o registo do INE sem a forma publicada. */
+const lcC = semCor(ler(`${PASTA}/p4-c/ledger-check.log`));
+const semForma = lcC.match(/linhas do INE sem a forma publicada: (\d+)/);
+const semRegisto = lcC.match(/(\d+) linha\(s\) do INE com o excerto sem o registo da resposta, pelo caminho geral: ([^\n]*)/);
+const plantasC = lcC.match(/· (\d+) planta\(s\), (\d+) certa\(s\)/);
+const ine = lerJson(`${PASTA}/linhas-do-ine.json`);
+medida('p4c_linhas_do_ine_sem_a_forma_publicada', semForma ? +semForma[1] : NAO,
+  'npm run ledger:check (p4-c/ledger-check.log), a linha «linhas do INE sem a forma publicada»',
+  `as plantas da regra estão certas (${plantasC?.[2]} de ${plantasC?.[1]}), e as duas do registo sem a forma mordem hoje e calavam com a célula de 4012a35c (p4-c/plantas-casas.log)`,
+  plantasC && plantasC[1] === plantasC[2] && /2 que mordem hoje e calavam/.test(ler(`${PASTA}/p4-c/plantas-casas.log`) ?? ''),
+  { linhas_do_ine: ine?.contas?.do_ine ?? NAO, com_a_forma: ine?.contas?.com_a_forma_publicada ?? NAO, sem_o_registo_da_resposta: semRegisto ? +semRegisto[1] : NAO,
+    sem_a_forma_da_api: ine?.contas?.sem_a_forma_da_api ?? NAO, sem_a_forma_de_outras_paginas: ine?.contas?.sem_a_forma_de_outras_paginas ?? NAO,
+    plantas_que_mordem_hoje_e_calavam_antes: +(((ler(`${PASTA}/p4-c/plantas-casas.log`) ?? '').match(/(\d+) que mordem hoje e calavam/) ?? [])[1] ?? NaN),
+    sem_o_registo_nomes: semRegisto ? semRegisto[2].split(', ').map((s) => s.trim()) : NAO, plantas: plantasC ? `${plantasC[2]} de ${plantasC[1]}` : NAO });
+/* Achado 5: a TM3 com o caminho inteiro do leitor. */
+const tmC = semCor(ler(`${PASTA}/p4-c/tema-e-menu.log`));
+const tmCl = tmC.match(/tema e menu · TM1 (\d+) corrida\(s\), TM2 (\d+), TM3 (\d+), TM4 (\d+) · (\d+) planta\(s\), (\d+) a morder/);
+medida('p4c_tema_e_menu', tmCl ? { TM1: +tmCl[1], TM2: +tmCl[2], TM3: +tmCl[3], TM4: +tmCl[4], plantas: `${tmCl[6]} de ${tmCl[5]}`, codigo: codigo(`${PASTA}/p4-c/tema-e-menu.codigo`) } : NAO,
+  'node tests/inicio/tema-e-menu.mjs --prova (p4-c/tema-e-menu.log)', 'a planta do manipulador que aplica o claro a todos os cliques morde',
+  /mordeu · um manipulador que aplica o claro a todos os cliques/.test(tmC));
+/* Achado 6: o guião das decisões no modo dos ficheiros. */
+const pd = ler(`${PASTA}/p4-c/plantas-decisoes.log`) ?? '';
+medida('p4c_decisoes_no_modo_dos_ficheiros', { ficheiro_que_existe: codigo(`${PASTA}/p4-c/decisoes-ficheiro-certo.codigo`), nome_que_nao_existe: codigo(`${PASTA}/p4-c/decisoes-ficheiro-inexistente.codigo`), intervalo_do_bloco: codigo(`${PASTA}/p4-c/decisoes-intervalo.codigo`),
+    conhecido_positivo_plantado: +((pd.match(/existe: código (\d+) \(o conhecido-positivo/) ?? [])[1] ?? NaN) },
+  'python3 scripts/leituras/decisoes-em-vigor.py, com um ficheiro que existe, com um nome que não existe, e sobre o intervalo do bloco (p4-c/decisoes-*.txt)',
+  'o conhecido-positivo plantado (o nome «que não existe» trocado por um que existe) sai com 2, e o guião de 4012a35c saía com 0 no nome que não existe (p4-c/plantas-decisoes.log)',
+  /código 2 \(o conhecido-positivo tem de falhar com 2\)/.test(pd) && /antes \(4012a35c\): .*→ código 0; o mesmo e «scripts\/nao-existe-de-todo\.mjs» → código 0/.test(pd));
+/* O achado do diretor: o cartão do índice de dívida. */
+const id = lerJson(`${PASTA}/p4-c/indice-de-divida.json`);
+medida('p4c_cartao_do_indice_de_divida', id ? { ...id.contas, falhas: id.falhas.length, plantas: `${id.plantas.filter((x) => x.mordeu).length} de ${id.plantas.length}`, unidade_da_casa: id.unidade_da_casa, teto: id.teto } : NAO,
+  'node tests/municipio/indice-de-divida.mjs --prova --json (p4-c/indice-de-divida.json), no check:lugares',
+  'a planta da unidade antiga morde, e as 616 páginas são as 308 nas duas edições', id && id.plantas.some((x) => x.nome === 'a unidade antiga de volta' && x.mordeu) && id.contas.paginas === 616);
+const cartaoC = semCor(ler(`${PASTA}/p4-c/check-cartao.log`));
+medida('p4c_tetos_vistos_pela_k10', +((cartaoC.match(/tetos na linha do estado \(P4-c\)\s+(\d+)/) ?? [])[1] ?? NaN) || NAO,
+  'npm run check:cartao (p4-c/check-cartao.log), a conta «tetos na linha do estado»', 'a planta do recibo sem a porta do teto morde na K10 (plantas-portoes-p4-c)',
+  (lerJson(`${PASTA}/plantas-portoes-p4-c/plantas-portoes-p4c.json`) ?? []).some((x) => x.nome === 'p4c-recibo-sem-a-porta-do-teto' && x.codigo === 1 && x.passou));
+const plC = lerJson(`${PASTA}/plantas-portoes-p4-c/plantas-portoes-p4c.json`) ?? [];
+medida('p4c_plantas_dos_portoes', plC.length ? `${plC.filter((x) => x.codigo === 1 && x.passou).length} de ${plC.length}` : NAO,
+  'OEDP_MEDICOES=<pasta> node tests/pais/portoes.mjs --prefixo p4c- (plantas-portoes-p4-c/plantas-portoes-p4c.json)', 'cada planta repõe os bytes que mudou (sha256 antes igual ao reposto)',
+  plC.length > 0 && plC.every((x) => x.ficheiros.every((f) => f.antes === f.reposto)));
+const capC = lerJson(`${PASTA}/capturas-p4-c.json`);
+medida('p4c_capturas', capC ? { capturas: capC.capturas, problemas: capC.problemas.length, construcao: capC.construcao.commit, diz: capC.resultados.map((r) => `${r.lang} ${r.largura}: ${r.diz.valor} ${r.diz.unidade} · ${r.diz.estado} ${r.diz.teto}`) } : NAO,
+  `node ${PASTA}/captar-p4-c.mjs (capturas-p4-c.json, com o sha256 de cada imagem)`, 'cada imagem tem o seu sha256 no manifesto', capC && capC.resultados.every((r) => /^[0-9a-f]{64}$/.test(r.sha256)));
+const ciC = lerJson(`${PASTA}/custo-inicio-p4-c.json`), cfC = lerJson(`${PASTA}/custo-fim-p4-c.json`);
+medida('p4c_custo', ciC && cfC ? { simbolos: ciC.simbolos_restantes_no_inicio - cfC.simbolos_restantes_no_fim, segundos: Math.round((Date.parse(cfC.fim_utc) - Date.parse(ciC.inicio_utc)) / 1000) } : NAO,
+  'custo-inicio-p4-c.json e custo-fim-p4-c.json: as duas leituras do contador «total_tokens left» e as duas horas do relógio', 'as duas leituras existem e a do fim é menor', ciC && cfC && cfC.simbolos_restantes_no_fim < ciC.simbolos_restantes_no_inicio);
+const PC = `${PASTA}/portoes-c`;
+const portoesC = fs.existsSync(`${PC}/cabeca`) ? { cabeca: (ler(`${PC}/cabeca`) ?? '').trim(), build: codigo(`${PC}/build.codigo`), verify: codigo(`${PC}/verify.codigo`), typecheck: codigo(`${PC}/typecheck.codigo`) } : 'por correr: os portões da P4-c correm depois do último commit da passagem, e os códigos entram no commit seguinte';
+medida('p4c_portoes', portoesC, `sh scripts/leituras/portoes.sh <worktree> ${PC}`, 'o guião escreve a cabeça ao lado dos códigos', typeof portoesC === 'string' || /^[0-9a-f]{40}$/.test(portoesC.cabeca));
+
 /* as capturas, o custo e os portões */
 medida('capturas', cap ? { capturas: cap.capturas, problemas: cap.problemas.length, construcao: cap.construcao.commit } : NAO, `node ${PASTA}/captar-p4.mjs (capturas-p4.json, com o sha256 de cada imagem)`,
   'cada imagem tem o seu sha256 no manifesto', cap && cap.resultados.every((r) => /^[0-9a-f]{64}$/.test(r.sha256)));
@@ -232,7 +283,7 @@ const portoes = fs.existsSync(`${P}/cabeca`) ? { cabeca: (ler(`${P}/cabeca`) ?? 
 medida('portoes', portoes, `sh scripts/leituras/portoes.sh <worktree> ${P}`, 'o guião escreve a cabeça ao lado dos códigos', typeof portoes === 'string' || /^[0-9a-f]{40}$/.test(portoes.cabeca));
 
 const falhas = medidas.filter((m) => m.valor === NAO || !m.conhecido_positivo.encontrado);
-const saida = { bloco: 'P4', construtor: 'Claude Opus 5.5', base: BASE, cabeca: git('rev-parse', 'HEAD').saida.trim(), guiao: `${PASTA}/medir-p4.mjs`, escrito_em: new Date().toISOString(), medidas_escritas: medidas.length, medidas };
+const saida = { bloco: 'P4', construtor: 'Claude Opus 5.5', base: BASE, cabeca: git('rev-parse', 'HEAD').saida.trim(), guiao: `${PASTA}/medir-p4.mjs`, escrito_em: new Date().toISOString(), medidas_escritas: medidas.length, medidas_do_p4: medidas.filter((m) => !m.nome.startsWith('p4c_')).length, medidas_da_p4c: medidas.filter((m) => m.nome.startsWith('p4c_')).length, medidas };
 fs.writeFileSync(`${PASTA}/medidas.json`, JSON.stringify(saida, null, 2) + '\n');
 console.log(`P4: ${medidas.length} medidas escritas em ${PASTA}/medidas.json; ${falhas.length} por ler ou com o conhecido-positivo por encontrar.`);
 for (const f of falhas) console.log(`  ${f.nome}: ${f.valor === NAO ? NAO : 'conhecido-positivo por encontrar'} (${f.conhecido_positivo.o_que})`);

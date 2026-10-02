@@ -8,7 +8,9 @@
     "com_a_forma_publicada": 1250,
     "sem_a_forma_publicada": 11,
     "sem_a_forma_mas_com_o_literal_do_fim": 0,
-    "sem_a_forma_e_sem_literal": 11
+    "sem_a_forma_e_sem_literal": 11,
+    "sem_a_forma_da_api": 8,
+    "sem_a_forma_de_outras_paginas": 3
   },
   "sem_a_forma_publicada": [
     {

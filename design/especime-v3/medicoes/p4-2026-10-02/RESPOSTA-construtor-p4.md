@@ -14,3 +14,17 @@
 - **Portões**: na cabeça `716af503`, pela tranca, `build` 0, `verify` 1 e `typecheck` 0 (`portoes/`). O `verify` fechou no portão dos briefs: a medição do guião das decisões no `BRIEF-P4.py` corre o guião da árvore de trabalho, que o item 6 corrigiu, e dá 0 onde o §0 diz 1; é o ficheiro do lugar de direção, que o corrige e volta a correr os portões.
 - **Por fazer**: as duas réguas a 1, que pedem um bloco de forma decidido pelo lugar de direção; a leitura a frio; o rebase sobre `main` (`62ed13c6`, sem ficheiros em comum); a emenda à decisão do menu de cinco.
 - **Custo**: 1 344 535 símbolos e 11 788 segundos até ao relatório, das duas leituras em ficheiro.
+
+## P4-c · a passagem de correção (02.10.2026)
+
+*Sobre `4012a35c`, a leitura a frio do Sol com a triagem do lugar de direção, e o achado do diretor na página de Évora. O relatório é a secção «P4-c» de `LEIA-ME.md`; as medidas têm o prefixo `p4c_` em `medidas.json`.*
+
+- **Achado 4.** Um registo da resposta do INE sem o `ind_string` é um erro, contado: «linhas do INE sem a forma publicada: 0». Das 1 261 linhas do INE, 11 não trazem a forma, e nenhuma é um registo da resposta (8 da API em prosa, 3 do portal): a célula diz-lhes os nomes. As 2 plantas do registo sem a forma mordem hoje e calavam antes; 19 plantas, 19 certas.
+- **Achado 9.** A planta da provisória arredondada usa `1 840`, e morde.
+- **Achado 5.** A TM3 faz o caminho inteiro do leitor, do botão «escuro» (o atributo, a chave e a cor da mobília) à recarga escura e ao «claro»; a planta do manipulador que aplica o claro a todos os cliques morde; 9 plantas, 9 a morder.
+- **Achado 6.** No modo dos ficheiros, um ficheiro pedido que não se lê dá 1, com o nome; o conhecido-positivo plantado dá 2; o guião de antes dava 0, calado.
+- **O cartão do índice de dívida.** «105,5 % da receita de três anos» e «dentro do limite legal, que é 150 %», com o 150 lido da linha do limite, sem marca própria e com a porta na aritmética do recibo; as mesmas palavras no cartão das câmaras; a dobra e os valores não mudam. A célula ID: 616 páginas, 614 com valor (594 dentro, 20 fora), 2 sem valor, 6 plantas a morder; 6 plantas `p4c-` dos portões a morder.
+- **Capturas**: 4, do cartão de Évora a 390 e a 1280 px nas duas edições, com 0 problemas.
+- **Portões da passagem**: correm pela tranca na cabeça do commit desta resposta, e os códigos entram no commit seguinte, em `portoes-c/`.
+- **Por fazer**: as duas réguas à mão a 1; a unidade antiga na legenda e na tabela do mapa da dívida em «Lugares», se o lugar de direção a quiser igual; as 11 linhas do INE em prosa, no motor; a leitura a frio da passagem.
+- **Custo da passagem**: 241 964 símbolos e 4 780 segundos, das duas leituras em ficheiro.

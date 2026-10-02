@@ -22,4 +22,7 @@ for (const l of doINE) {
   if (fim) c.sem_a_forma_mas_com_o_literal_do_fim++; else c.sem_a_forma_e_sem_literal++;
   semForma.push({ id: l.id, caminho: new URL(l.source_url).pathname, literal_do_fim: fim?.literal ?? null, valor: l.value, inicio_do_excerto: excerto.slice(0, 90) });
 }
+/* Das que não trazem a forma: quantas são da API das respostas (`/ine/json_indicador/`) e quantas de outras páginas. */
+c.sem_a_forma_da_api = semForma.filter((s) => s.caminho.startsWith('/ine/json_indicador/')).length;
+c.sem_a_forma_de_outras_paginas = semForma.length - c.sem_a_forma_da_api;
 console.log(JSON.stringify({ contas: c, sem_a_forma_publicada: semForma }, null, 2));
