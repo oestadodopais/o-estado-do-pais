@@ -1,0 +1,30 @@
+  ✓ get
+  ✓ armadilha
+  ✓ vazia
+  ✓ boa
+  ✓ boa-en
+  ✓ limite
+  ✓ cheia
+  ✓ rede
+  ✓ sem-sal
+  ✓ corte
+  ✓ de-fora
+  ✓ exportacoes
+  ✓ planta controlo-sem-troca ((todos)) · a cópia sem troca passa
+  ✓ planta get-para-outra-pagina (get) · mordeu
+  ✓ planta armadilha-invertida (armadilha) · mordeu
+  ✓ planta vazia-invertida (vazia) · mordeu
+  ✓ planta marca-sem-separador (boa) · mordeu
+  ✓ planta marca-do-ultimo-endereco (boa) · mordeu
+  ✓ planta campo-em-branco-como-cadeia-vazia (boa) · mordeu
+  ✓ planta pagina-sem-o-de-do-referer (boa) · mordeu
+  ✓ planta lingua-sempre-portuguesa (boa-en) · mordeu
+  ✓ planta limite-invertido (limite) · mordeu
+  ✓ planta cheia-como-limite (cheia) · mordeu
+  ✓ planta rede-como-obrigado (rede) · mordeu
+  ✓ planta sal-invertido (sem-sal) · mordeu
+  ✓ planta corte-em-unidades-de-utf16 (corte) · mordeu
+  ✓ planta de-de-fora-aceite (de-fora) · mordeu
+  ✓ planta exportacao-a-mais (exportacoes) · mordeu
+
+  a função das sugestões: 12 casos verdes, 15 plantas que mordem e a cópia de controlo verde.
