@@ -6,8 +6,12 @@
  *   'palavras'                    — texto corrido
  *   { claim: 'id' }               — um número, citado do livro-razão. Com a
  *                                   propriedade `selos`, sai com o selo ao lado.
- *   { claim: 'id', sufixo: '%' }  — o mesmo, com o símbolo da unidade colado
- *                                   ao valor e antes do selo (§11).
+ *   { claim: 'id', sufixo: ' %' } — o mesmo, com o símbolo da unidade a seguir
+ *                                   ao valor e antes do selo (§11). Desde o K2
+ *                                   (02.10.2026, item 5 do brief) o símbolo leva
+ *                                   o espaço antes dele, e a célula
+ *                                   `tests/inicio/formato-dos-numeros.mjs` (F4)
+ *                                   recusa o «%» e o «€» colados.
  *   { ref: '2024' }               — ano ou período de referência dos dados
  *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
  *   { referencia: 'id', nl, motivo } · o valor de referência da linha `id`, com o

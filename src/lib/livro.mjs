@@ -39,18 +39,17 @@ export function caminhoDoLivro(lang) {
 }
 
 /**
- * O valor com a sua unidade, escrito como a §11 da constituição manda.
+ * O valor com a sua unidade, com o espaço entre os dois: «26,5 %», «89,7 % do
+ * PIB», «82 índice (UE-27 = 100)», «54 681 562 euros».
  *
- * Uma unidade que **começa por um símbolo** cola-se ao número: «26,5%»,
- * «89,7% do PIB». Uma unidade que começa por uma palavra leva o espaço:
- * «82 índice (UE-27 = 100)», «54 681 562 euros». Colar sempre daria
- * «82índice (UE-27 = 100)», e separar sempre dá «26,5 %», que é o que a §11
- * recusa: a percentagem escreve-se colada ao número.
- *
- * Hoje o único símbolo em uso é `%`: trinta e seis das 132 linhas começam a
- * unidade por ele. A regra é escrita pela forma da unidade e não por uma lista
- * de unidades, para não haver uma segunda lista a manter ao lado do
- * livro-razão.
+ * ATÉ AO K2-b (02.10.2026) a unidade que começava por um símbolo colava-se ao
+ * número («26,5%»), pela §11 da constituição e pela §1.44 (item 5). A forma da
+ * casa passou a ser o espaço em todas as superfícies, a que a decisão do
+ * diretor de 28.09.2026 pôs nos cartões (§1.135), e o título, a descrição e o
+ * cartão de partilha da página de uma linha escrevem-na como o cartão. O
+ * dinheiro escreve-se com a palavra («euros por mês», e não «€ por mês»), pela
+ * decisão 4 da §1.127: é `unidadeDaLinha()` que o faz, e por isso o título, o
+ * cartão e o recibo dizem a mesma coisa.
  *
  * @param {Linha} claim
  * @param {string | null} [lang]
@@ -69,10 +68,15 @@ export function valorComUnidade(claim, lang = null) {
      em português ao lado de uma página que já a escrevia em inglês. O que fica
      por passar a língua é quem NÃO tem edição: `dados.mjs`, que escreve a
      descarga em CSV a partir do livro-razão e não de uma página. */
+  /* O ESPAÇO ENTRE O VALOR E A UNIDADE, SEMPRE (bloco K2-b, 02.10.2026, a decisão do lugar de direção sobre o ponto
+     em que o K2 parou). A §1.44 (item 5) colava a unidade que começa por um símbolo («6,1%») e deixava o espaço à
+     que começa por uma palavra; desde a decisão do diretor de 28.09.2026 (§1.135, o C1: «o espaço entre o número e a
+     unidade em todos os cartões») a forma da casa é o espaço, e o título, a descrição e o cartão de partilha de uma
+     página de linha passam a escrevê-la como o cartão («6,1 %», «89,2 % do PIB»). Sem língua, a unidade continua a
+     ser a cadeia do livro-razão, como a nota acima diz. */
   const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang).texto;
   if (!unidade) return String(claim.value);
-  const comecaPorLetra = /^\p{L}/u.test(unidade);
-  return comecaPorLetra ? `${claim.value} ${unidade}` : `${claim.value}${unidade}`;
+  return `${claim.value} ${unidade}`;
 }
 
 /**
