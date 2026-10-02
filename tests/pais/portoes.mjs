@@ -366,3 +366,27 @@ planta('p4-datas-nota-sem-a-reconciliacao','scripts/check-datas.mjs',[
 planta('p4-datas-nota-inglesa-com-a-frase-portuguesa','scripts/check-datas.mjs',[
  ['en/studies/evora-2027-prometido-painel-dinheiro/index.html',r=>r.querySelector('[data-sucessor-reconcilia]').set_content('O estudo que lhe sucedeu reconcilia o que esta edição escreveu.')]
 ],[/evora-2027-prometido-painel-dinheiro: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia/]);
+/* P4-c (02.10.2026, a leitura do diretor de 02.10 à noite na página de Évora): o cartão do índice de dívida diz de que
+   é a percentagem, «% da receita de três anos», e o teto na linha do estado, «dentro do limite legal, que é 150 %», com
+   o 150 lido da linha do limite, sem marca própria. O portão de HTML aceita a unidade da casa de uma medida de concelho
+   só com o texto da declaração e no cartão da sua linha, e o teto só como a linha que a derivação do cartão usa e com
+   `data-selo-em` igual à linha do cartão; a K10 exige a porta do teto na aritmética do recibo; e a V2 do `check:pais`
+   exige as mesmas palavras no cartão das câmaras. Cada planta estraga uma dessas coisas e tem de morder. */
+planta('p4c-unidade-antiga','scripts/gate-html.mjs',[
+ ['municipios/evora/index.html',r=>r.querySelector('[data-cartao-medida="evora-indice-de-divida-2024"] [data-unidade-da-casa]').set_content('% (limite legal = 150)')]
+],[/P4-c: a unidade da casa de "evora-indice-de-divida-2024" diz «% \(limite legal = 150\)»/]);
+planta('p4c-unidade-de-outra-medida','scripts/gate-html.mjs',[
+ ['en/municipalities/evora/index.html',r=>r.querySelector('[data-cartao-medida="evora-indice-de-divida-2024"] [data-unidade-da-casa]').setAttribute('data-unidade-da-medida','pmp')]
+],[/P4-c: a unidade da casa de "evora-indice-de-divida-2024" diz ser da medida «pmp», e a medida não declara/]);
+planta('p4c-teto-de-outra-linha','scripts/gate-html.mjs',[
+ ['municipios/agueda/index.html',r=>{const v=r.querySelector('[data-regua="limite"] [data-claim]');v.setAttribute('data-claim','agueda-limite-divida-dgal-2024');}]
+],[/o valor da afirmação "agueda-limite-divida-dgal-2024" aparece sem selo para a sua própria linha/]);
+planta('p4c-teto-sem-selo-em','scripts/gate-html.mjs',[
+ ['en/municipalities/agueda/index.html',r=>r.querySelector('[data-regua="limite"]').removeAttribute('data-selo-em')]
+],[/o valor da afirmação "indice-de-divida-limite-legal" aparece sem selo para a sua própria linha/]);
+planta('p4c-recibo-sem-a-porta-do-teto','tests/cartao/cartao.mjs',[
+ ['livro-razao/agueda-indice-de-divida-2024/index.html',r=>r.querySelector('a.linha-deriva-ligacao[href="/livro-razao/indice-de-divida-limite-legal"]').removeAttribute('href')]
+],[/K10 · .*agueda-indice-de-divida-2024: a linha do estado cita o teto «indice-de-divida-limite-legal» sem marca própria/]);
+planta('p4c-camaras-palavras-de-antes','scripts/check-pais.mjs',[
+ ['lugares/index.html',r=>{const c=r.querySelector('[data-cartao-camaras] [data-camaras-regua]');c.set_content(c.innerHTML.replace('dentro do limite legal, que é ','dentro do limite legal (').replace('; <span data-prova="camaras_sem_valor"',') ; <span data-prova="camaras_sem_valor"'));}]
+],[/V2 pt: a régua difere das contagens e do limite lidos nas linhas/]);

@@ -1260,6 +1260,11 @@ export const STRINGS = {
       lei: {
         fora: 'fora do limite legal',
         dentro: 'dentro do limite legal',
+        /* A LINHA DO ESTADO DO CARTÃO DO ÍNDICE DE DÍVIDA DIZ O TETO (passagem P4-c, 02.10.2026, pela leitura do
+           diretor de 02.10 à noite): «dentro do limite legal, que é 150 %», com o 150 lido da linha do limite. As
+           palavras sozinhas ficam onde já estavam (as classes do mapa e a leitura do lugar). */
+        foraQueE: 'fora do limite legal, que é',
+        dentroQueE: 'dentro do limite legal, que é',
         rotulo: 'limite legal',
       },
       /* O limite de défice do saldo das administrações públicas. A frase é a da
@@ -1766,8 +1771,9 @@ export const STRINGS = {
       periodo: 'em ',
       de: 'de ',
       total: ' câmaras; ',
-      dentro: ' dentro do limite legal (',
-      sem: '); ',
+      /* P4-c (02.10.2026): as mesmas palavras do cartão do índice de dívida, «dentro do limite legal, que é 150 %». */
+      dentro: ' dentro do limite legal, que é ',
+      sem: '; ',
       falta: ' sem valor publicado',
       porta: 'Os lugares',
     },
@@ -3429,6 +3435,9 @@ export const STRINGS = {
       lei: {
         fora: 'outside the legal limit',
         dentro: 'within the legal limit',
+        /* Ver a razão na edição portuguesa (passagem P4-c, 02.10.2026). */
+        foraQueE: 'outside the legal limit, which is',
+        dentroQueE: 'within the legal limit, which is',
         rotulo: 'legal limit',
       },
       pacto: {
@@ -3610,8 +3619,9 @@ export const STRINGS = {
       periodo: 'in ',
       de: 'of ',
       total: ' councils; ',
-      dentro: ' within the legal limit (',
-      sem: '); ',
+      /* P4-c (02.10.2026): as mesmas palavras do cartão do índice de dívida, na edição inglesa. */
+      dentro: ' within the legal limit, which is ',
+      sem: '; ',
       falta: ' with no published value',
       porta: 'The places',
     },

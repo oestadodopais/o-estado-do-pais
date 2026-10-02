@@ -50,7 +50,7 @@
     "check:cartao": "node tests/cartao/cartao.mjs --prova && node tests/cartao/rp1.mjs && node tests/confianca/c1.mjs",
     "check:nomes": "node scripts/check-nomes-oficiais.mjs --prova",
     "check:palavras": "node tests/voz/palavras-proibidas.mjs --prova",
-    "check:lugares": "node scripts/check-lugares.mjs",
+    "check:lugares": "node scripts/check-lugares.mjs && node tests/municipio/indice-de-divida.mjs --prova",
     "check:pais": "node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova",
     "check:primeira": "node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/lugares-no-navegador.mjs --prova && node tests/inicio/tema-e-menu.mjs --prova",
     "check:privacidade": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova",

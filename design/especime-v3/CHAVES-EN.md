@@ -1339,3 +1339,21 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | chave | pt (antes → depois) | en (antes → depois) | nota |
 |---|---|---|---|
 | `uniaoEuropeia.metaDescription` | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. → Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu. | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. → Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard. | a cauda «cada uma com a sua linha» saiu a 14.09.2026 (achado 6 da leitura cruzada do inventário: era o sítio a dizer o que guarda), e os países entraram a 02.10.2026, na passagem UE2-b, pela ordem em que a página os mostra |
+
+#### P4-c · o cartão do índice de dívida (02.10.2026)
+
+*A passagem P4-c, pela leitura do diretor de 02.10.2026 à noite na página de Évora: «105,5 % (limite legal = 150)» lia-se «105,5 % de 150». As cadeias abaixo foram lidas de `src/i18n/strings.mjs` e de `src/data/concelhos.mjs` na construção da passagem.*
+
+**Duas chaves novas:**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estado.lei.dentroQueE` · `estado.lei.foraQueE` | dentro do limite legal, que é · fora do limite legal, que é | within the legal limit, which is · outside the legal limit, which is | a linha do estado do cartão do índice de dívida, seguida do teto lido da linha `indice-de-divida-limite-legal` («150 %»); as palavras sozinhas (`estado.lei.dentro`, `estado.lei.fora`) ficam nas classes do mapa e na leitura do lugar |
+
+**Duas chaves que mudam de texto:**
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `camaras.dentro` · `camaras.sem` | « dentro do limite legal (» · «); » → « dentro do limite legal, que é » · «; » | « within the legal limit (» · «); » → « within the legal limit, which is » · «; » | o cartão «Câmaras com a dívida acima do limite legal» diz as mesmas palavras do cartão do índice, «dentro do limite legal, que é 150 %» |
+
+**A unidade da casa do índice de dívida** não é uma chave de `strings.mjs`: declara-se uma vez na medida, em `src/data/concelhos.mjs` (`unidadeDaCasa`: «% da receita de três anos» / «% of three-year revenue»), com o apoio que a derivação de cada linha tem de dizer (`apoioDaUnidadeDaCasa`: «média da receita corrente líquida dos três anos anteriores» / «three-year average of net current revenue»). A unidade da linha, «% (limite legal = 150)» / «% (legal cap = 150)», fica no recibo e no livro-razão.
