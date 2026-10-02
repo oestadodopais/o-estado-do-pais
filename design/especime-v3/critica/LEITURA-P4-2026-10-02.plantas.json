@@ -1,0 +1,51 @@
+{
+  "registado_em": "2026-10-02T21:12:26+00:00",
+  "copia": "<o pacote da leitura, fora do repositório>",
+  "plantas": [
+    {
+      "id": "p4-1",
+      "ficheiro": "relatorio-construtor.md",
+      "descricao": "o relatório troca a contagem das linhas por ler antes do bloco (2535 passa a 2355), e o brief diz 2535",
+      "sha256_antes": "d7690b3bb90367c29e96295f32cb28be99f4dfcf19bafe82d9611b5740bba9ec",
+      "sha256_depois": "cbf6976cd29b02c93d767e9022a9c65b5f3022c591ea0fc48586d68963fded4c",
+      "contexto_antes": "gra da marca de provisório, e diz quantas lê e quantas deixa (as 2535 descem) | 1367 lidas (117 pelo literal, 1250 pela forma do INE, 1 com o sinal declarado); 1285 por ler (eram 2535); 16 plantas certas | cumprido, verificado |\n| os dois termos explicados em palavras comuns nas definições, pela forma única, com a auditoria em dia | `perguntas_com_os_dois_termo",
+      "contexto_depois": "gra da marca de provisório, e diz quantas lê e quantas deixa (as 2535 descem) | 1367 lidas (117 pelo literal, 1250 pela forma do INE, 1 com o sinal declarado); 1285 por ler (eram 2355); 16 plantas certas | cumprido, verificado |\n| os dois termos explicados em palavras comuns nas definições, pela forma única, com a auditoria em dia | `perguntas_com_os_dois_termo"
+    },
+    {
+      "id": "p4-2",
+      "ficheiro": "scripts/check-pais.mjs",
+      "descricao": "a cópia da N3 compara só o comprimento da guarda, não o texto carácter a carácter; o diff tem a comparação inteira",
+      "sha256_antes": "8971f58c18db3cea74a07b3270b3037f6e2c16f8e76d539a4992a4114e399aaa",
+      "sha256_depois": "b17583597752a00d5c7069cc53e8ae0e585663b334a95260aad4c8d00fc7402c",
+      "contexto_antes": ".`);\n  const guardas = doc.querySelectorAll('head script:not([src])').filter(s => /data-theme|localStorage/.test(s.textContent));\n  if (guardas.length !== 1 || guardas[0].textContent !== GUARDA_APROVADA)\n    erros.push(`N3: a guarda do tema no <head> de ${rel} não é a aprovada (${guardas.length} guião(ões) do tema em linha).`);\n  const adiados = doc.querySelec",
+      "contexto_depois": ".`);\n  const guardas = doc.querySelectorAll('head script:not([src])').filter(s => /data-theme|localStorage/.test(s.textContent));\n  if (guardas.length !== 1 || guardas[0].textContent.length !== GUARDA_APROVADA.length)\n    erros.push(`N3: a guarda do tema no <head> de ${rel} não é a aprovada (${guardas.length} guião(ões) do tema em linha).`);\n  const adiados = doc.querySelec"
+    },
+    {
+      "id": "p4-3",
+      "ficheiro": "built/en/places/index.html",
+      "descricao": "a página «Places» construída é servida já com data-theme=dark na raiz, contra o que a N3 e o relatório afirmam",
+      "sha256_antes": "4f9663ac4a036cf42c34501d22117871f60b4207e3d32c5ca15717f44dcedbac",
+      "sha256_depois": "3fddc89ad0b49e1835ede8ecb6db9854fbad80f21c089e99b8fe77f91cceac84",
+      "contexto_antes": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Places · the municipality, measured · O Estado do País</t",
+      "contexto_depois": "<!DOCTYPE html><html lang=\"en\" data-theme=\"dark\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Places · the municipality, measured · O Estado do País</t"
+    },
+    {
+      "id": "p4-4",
+      "ficheiro": "src/lib/navegacao.mjs",
+      "descricao": "a cópia da tabela do menu põe a União depois de «Sobre», contra o diff, o brief e as páginas construídas",
+      "sha256_antes": "5740ad96167986df74c9154f30d5b65f15522ac45f2472bf850538b27e62d696",
+      "sha256_depois": "4a9305016508be8c255db970ebbec5f4c02f1c18d2086f0db0ce68b4caefd779",
+      "contexto_antes": "oco P4 tem a medida). O rodapé, que é\n * o índice do sítio, continua a dizer o nome inteiro da página. */\nexport const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'uniaoEuropeia', 'sobre'];\nexport const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'uniaoEuropeia'];\nexport const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda',",
+      "contexto_depois": "oco P4 tem a medida). O rodapé, que é\n * o índice do sítio, continua a dizer o nome inteiro da página. */\nexport const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'sobre', 'uniaoEuropeia'];\nexport const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'uniaoEuropeia'];\nexport const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda',"
+    },
+    {
+      "id": "p4-5",
+      "ficheiro": "public/js/tema.js",
+      "descricao": "a cópia do guião do tema escreve um papel escuro (#151719) que não é o dos tokens (#15171a), e o relatório diz que o portão confere os dois papéis contra os tokens",
+      "sha256_antes": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+      "sha256_depois": "58d2687aa57fad212ae09bd5332475bbfb2fe2007bf8933d1893091ebbdfda02",
+      "contexto_antes": "ensão que a tire —, e nesse caso não se cria nenhuma:\n     o que este ficheiro faz é acompanhar o que o `<head>` já disse. */\n  var PAPEL = { light: '#f6f7f4', dark: '#15171a' };\n  var etiquetaDaCor = document.querySelector('meta[name=\"theme-color\"]');\n\n  function aplica(tema, guardar) {\n    var escuro = tema === ESCURO;\n    if (escu",
+      "contexto_depois": "ensão que a tire —, e nesse caso não se cria nenhuma:\n     o que este ficheiro faz é acompanhar o que o `<head>` já disse. */\n  var PAPEL = { light: '#f6f7f4', dark: '#151719' };\n  var etiquetaDaCor = document.querySelector('meta[name=\"theme-color\"]');\n\n  function aplica(tema, guardar) {\n    var escuro = tema === ESCURO;\n    if (escu"
+    }
+  ]
+}
