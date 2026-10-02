@@ -1,0 +1,269 @@
+{
+  "passagem": "K2-b",
+  "cabeca": "1dea65729ee8ffa18c4da7fc69aba505183393ff",
+  "construcao": {
+    "commit": "1dea65729ee8ffa18c4da7fc69aba505183393ff",
+    "construido_em": "2026-10-02T10:14:38.440Z"
+  },
+  "construcao_do_k2": {
+    "commit": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c"
+  },
+  "medidas": [
+    {
+      "nome": "valores_com_o_percento_colado",
+      "valor": 0,
+      "comando": "node tests/inicio/formato-dos-numeros.mjs --prova (a F4)",
+      "conhecido_positivo": {
+        "o_que": "a mesma célula na construção do K2 acha 701",
+        "encontrado": true
+      },
+      "antes": 701,
+      "simbolo": {
+        "%": {
+          "colado": 0,
+          "com_espaco": 2546
+        },
+        "€": {
+          "depois": 0,
+          "antes": 0
+        }
+      },
+      "simbolo_antes": {
+        "%": {
+          "colado": 701,
+          "com_espaco": 1845
+        },
+        "€": {
+          "depois": 24,
+          "antes": 0
+        }
+      }
+    },
+    {
+      "nome": "valores_com_o_euro_ao_lado",
+      "valor": 0,
+      "comando": "node tests/inicio/formato-dos-numeros.mjs --prova (a F5)",
+      "conhecido_positivo": {
+        "o_que": "a mesma célula na construção do K2 acha 24",
+        "encontrado": true
+      },
+      "antes": 24,
+      "paginas_antes": [
+        "areas/trabalho-solidariedade-e-seguranca-social/index.html",
+        "en/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+        "en/ledger/linha-de-risco-de-pobreza-2024/index.html",
+        "en/ledger/linha-de-risco-de-pobreza-2025/index.html",
+        "en/ledger/pensao-media-anual-2024/index.html",
+        "en/ledger/pensao-media-anual-2025/index.html",
+        "en/ledger/remuneracao-bruta-mensal-media-periodo-anterior/index.html",
+        "en/ledger/remuneracao-bruta-mensal-media/index.html",
+        "en/pay-pensions-and-benefits/index.html",
+        "livro-razao/linha-de-risco-de-pobreza-2024/index.html",
+        "livro-razao/linha-de-risco-de-pobreza-2025/index.html",
+        "livro-razao/pensao-media-anual-2024/index.html",
+        "livro-razao/pensao-media-anual-2025/index.html",
+        "livro-razao/remuneracao-bruta-mensal-media-periodo-anterior/index.html",
+        "livro-razao/remuneracao-bruta-mensal-media/index.html",
+        "salarios-pensoes-e-apoios/index.html"
+      ]
+    },
+    {
+      "nome": "plantas_do_formato_que_morderam",
+      "valor": 8,
+      "comando": "node tests/inicio/formato-dos-numeros.mjs --prova (as plantas em memória)",
+      "conhecido_positivo": {
+        "o_que": "as plantas da F5 são das que mordem",
+        "encontrado": true
+      },
+      "de": 8,
+      "plantas": [
+        {
+          "nome": "F1 · os milhares com o espaço comum, num valor de um cartão",
+          "mordeu": true
+        },
+        {
+          "nome": "F1 · os milhares sem separador",
+          "mordeu": true
+        },
+        {
+          "nome": "F2 · o ponto decimal",
+          "mordeu": true
+        },
+        {
+          "nome": "F3 · o hífen no lugar do sinal menos",
+          "mordeu": true
+        },
+        {
+          "nome": "F4 · o «%» colado ao valor por um sufixo",
+          "mordeu": true
+        },
+        {
+          "nome": "F4 · o «%» colado a um valor de referência",
+          "mordeu": true
+        },
+        {
+          "nome": "F5 · a unidade com o símbolo do euro, depois do valor",
+          "mordeu": true
+        },
+        {
+          "nome": "F5 · o símbolo do euro antes do valor",
+          "mordeu": true
+        }
+      ]
+    },
+    {
+      "nome": "titulos_com_o_percento_colado",
+      "valor": 0,
+      "comando": "cada <title> das páginas construídas, à procura de um algarismo colado a «%»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na construção do K2 acha 834",
+        "encontrado": true
+      },
+      "antes": 834
+    },
+    {
+      "nome": "atributos_com_o_percento_colado",
+      "valor": 0,
+      "comando": "os atributos content, aria-label, title e alt das páginas construídas, à procura de um algarismo colado a «%» (um endereço codificado, «%2C», não conta)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na construção do K2 acha 2502",
+        "encontrado": true
+      },
+      "antes": 2502
+    },
+    {
+      "nome": "texto_visivel_com_o_percento_colado_fora_das_fontes",
+      "valor": 0,
+      "comando": "o texto visível das páginas construídas, fora dos excertos, das citações (<q>), das transcrições dos estudos (data-registo) e dos endereços codificados",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta 140 dentro das fontes, que ficam como a fonte as escreve",
+        "encontrado": true
+      },
+      "nas_fontes": 140,
+      "antes": 0,
+      "nas_fontes_antes": 140
+    },
+    {
+      "nome": "campos_de_unidade_com_o_simbolo_do_euro",
+      "valor": 0,
+      "comando": "os campos data-linha-campo=\"unit\" das páginas construídas que começam por «€»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na construção do K2 acha 36",
+        "encontrado": true
+      },
+      "antes": 36,
+      "titulos": 0,
+      "titulos_antes": 12
+    },
+    {
+      "nome": "linhas_do_livro_com_o_simbolo_na_unidade",
+      "valor": 6,
+      "comando": "ledger/claims/*.yml: as linhas cuja unidade começa por «€» (ficam como o motor as escreveu; a palavra é da formatação)",
+      "conhecido_positivo": {
+        "o_que": "uma delas é a da remuneração média",
+        "encontrado": true
+      },
+      "linhas": [
+        "linha-de-risco-de-pobreza-2024 · € por ano",
+        "linha-de-risco-de-pobreza-2025 · € por ano",
+        "pensao-media-anual-2024 · € por pensionista por ano",
+        "pensao-media-anual-2025 · € por pensionista por ano",
+        "remuneracao-bruta-mensal-media-periodo-anterior · € por mês",
+        "remuneracao-bruta-mensal-media · € por mês"
+      ]
+    },
+    {
+      "nome": "cartoes_nacionais_com_variacao_sob_nome_de_nivel",
+      "valor": 0,
+      "comando": "as páginas de assunto construídas: os cartões cuja unidade diz «variação» ou cuja linha é uma variação de preços, e cujo nome não diz a variação, a inflação nem o crescimento",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na construção do K2 acha 6",
+        "encontrado": true
+      },
+      "antes": [
+        "ipc-alimentacao-variacao-homologa",
+        "ipc-energia-em-casa-variacao-homologa",
+        "ipc-combustiveis-variacao-homologa",
+        "ipc-rendas-variacao-homologa",
+        "ipc-sem-habitacao-variacao-media-12-meses",
+        "desempenho-das-exportacoes-2025"
+      ],
+      "nomes_agora": {
+        "ipc-alimentacao-variacao-homologa": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano",
+        "ipc-energia-em-casa-variacao-homologa": "Preços da energia em casa, variação num ano",
+        "ipc-combustiveis-variacao-homologa": "Preços dos combustíveis, variação num ano",
+        "ipc-rendas-variacao-homologa": "Preços das rendas, variação num ano",
+        "ipc-sem-habitacao-variacao-media-12-meses": "Preços sem a habitação, variação média em doze meses",
+        "desempenho-das-exportacoes-2025": "Quota nas exportações, variação em três anos"
+      }
+    },
+    {
+      "nome": "nomes_novos_rendidos_em_paginas",
+      "valor": 12,
+      "comando": "os doze nomes novos (seis por edição), contados nas páginas construídas onde aparecem",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha o nome antigo «Preços dos combustíveis» na construção do K2",
+        "encontrado": true
+      },
+      "de": 12,
+      "paginas_por_nome": {
+        "Quota nas exportações, variação em três anos": 5,
+        "Preços dos alimentos e das bebidas não alcoólicas, variação num ano": 5,
+        "Preços da energia em casa, variação num ano": 5,
+        "Preços dos combustíveis, variação num ano": 5,
+        "Preços das rendas, variação num ano": 5,
+        "Preços sem a habitação, variação média em doze meses": 5,
+        "Share of exports, three-year change": 5,
+        "Prices of food and non-alcoholic beverages, change over a year": 5,
+        "Home energy prices, change over a year": 5,
+        "Fuel prices, change over a year": 5,
+        "Rent prices, change over a year": 5,
+        "Prices excluding housing, twelve-month average change": 5
+      }
+    },
+    {
+      "nome": "linha_k2_do_inventario_aprovada",
+      "valor": true,
+      "comando": "design/especime-v3/critica/REVISOES-DO-INVENTARIO.md · a linha «k2»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor acha «por ler» na linha do K2 na cabeça cc7734fe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_k2_b",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/captar-k2.mjs k2-b",
+      "conhecido_positivo": {
+        "o_que": "o manifesto das capturas de depois do K2 tem 40",
+        "encontrado": true
+      },
+      "problemas": 0,
+      "larguras": [
+        390,
+        1280
+      ],
+      "cabeca": "1dea65729ee8ffa18c4da7fc69aba505183393ff",
+      "pedidos_recusados_para_fora": 0
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_tocados_pela_k2_b",
+      "valor": 22,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo cc7734fe..<cabeça>",
+      "conhecido_positivo": {
+        "o_que": "a §1.127 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_gastos_na_k2_b_ate_ao_relatorio",
+      "valor": 91104,
+      "comando": "design/especime-v3/medicoes/k2-2026-10-02/custo-inicio-k2-b.json e design/especime-v3/medicoes/k2-2026-10-02/custo-fim-k2-b.json (a diferença das duas leituras do contador)",
+      "conhecido_positivo": {
+        "o_que": "o contador do fim é menor do que o do início",
+        "encontrado": true
+      },
+      "segundos": 1378
+    }
+  ]
+}

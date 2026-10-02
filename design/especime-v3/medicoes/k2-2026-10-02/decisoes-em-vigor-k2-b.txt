@@ -1,0 +1,68 @@
+§1.2 · Campos acrescentados ao formato do livro-razão
+    src/data/municipios.mjs:317 (perto do diff)
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    src/data/municipios.mjs:365
+    src/lib/lugar.mjs:232
+§1.8 · As páginas de estudo estão fora do índice até à migração
+    src/data/leituras.mjs:7
+§1.19 · Os estudos migram para dois sítios, não um
+    src/data/leituras.mjs:7
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    src/i18n/unidades.mjs:220 (perto do diff)
+    src/i18n/unidades.mjs:248 (perto do diff)
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    src/components/lugar/InstrumentoDosMandatos.astro:422
+    src/data/municipios.mjs:31
+    src/data/municipios.mjs:372
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/data/leituras.mjs:19
+    src/data/leituras.mjs:285
+§1.43 · A identidade v2: a direção S construída
+    tests/inicio/formato-dos-numeros.mjs:17 (perto do diff)
+§1.44 · A revisão cruzada da identidade v2
+    src/data/figuras.mjs:113
+    src/lib/livro.mjs:46 (perto do diff)
+    src/lib/livro.mjs:72 (perto do diff)
+    tests/inicio/formato-dos-numeros.mjs:17 (perto do diff)
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    src/views/DominioView.astro:8
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    src/components/inicio/LeituraBreve.astro:163
+    src/data/figuras.mjs:2513
+    src/data/figuras.mjs:2783
+    src/data/leituras.mjs:615 (perto do diff)
+    src/data/municipios.mjs:170
+    src/views/DominioView.astro:447
+    src/views/DominioView.astro:453
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    src/components/inicio/LeituraBreve.astro:300 (perto do diff)
+    src/data/figuras.mjs:2512
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    src/data/figuras.mjs:2595
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    src/lib/inicio.mjs:485 (perto do diff)
+    src/views/DominioView.astro:514
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    src/data/figuras.mjs:517
+    src/data/mudancas-do-projeto.mjs:31 (perto do diff)
+§1.125 · O M4b: o livro-razão do estudo 11 reparado e declarado no portão, a peça corrigida no ar, e o construtor que passou a ser o Opus 5.5
+    src/data/mudancas-do-projeto.mjs:50 (perto do diff)
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    src/i18n/unidades.mjs:244 (perto do diff)
+    src/i18n/unidades.mjs:58 (perto do diff)
+    src/lib/livro.mjs:51 (perto do diff)
+    tests/inicio/formato-dos-numeros.mjs:21 (perto do diff)
+§1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
+    src/lib/livro.mjs:48 (perto do diff)
+    src/lib/livro.mjs:73 (perto do diff)
+    tests/inicio/formato-dos-numeros.mjs:16 (perto do diff)
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    src/data/figuras.mjs:516
+    src/data/medidas-rp1.mjs:259
+§1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
+    tests/inicio/formato-dos-numeros.mjs:27 na base (saiu no diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    src/data/municipios.mjs:457
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    scripts/voz-pais.mjs:68 (perto do diff)
+22 decisão(ões) citada(s) em 17 ficheiro(s)

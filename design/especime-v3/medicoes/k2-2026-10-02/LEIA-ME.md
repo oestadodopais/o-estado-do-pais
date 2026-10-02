@@ -2,6 +2,8 @@
 
 *Bloco K2, 02.10.2026, pelo brief `design/observatorio/BRIEF-K2-o-cartao-para-o-telemovel.md`, pela §1.143 e pela §1.144. Construtor: Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `k2-2026-10-02`, sobre a cabeça de partida `1722244d`, sem subagentes. Cada número deste relatório está num ficheiro desta pasta, quase todos em `medidas.json`, escrito por `medir-k2.mjs`, com o comando e um conhecido-positivo em cada medida; as medidas do `dist/` em `medidas.json` são da construção da corrida final dos portões (a cabeça `a6b4de99`, o commit deste relatório, com o mesmo código da `3ee67971`), e as capturas, as plantas do portão de HTML, o alvo da dobra e as conferências desta pasta são da construção da `3ee67971`. Sem travessões.*
 
+*A passagem K2-b, no fim, aplicou as decisões do lugar de direção sobre os pontos em que o bloco parou (o espaço antes de «%», os seis nomes) e sobre o «€» ao lado dos valores; as secções até lá descrevem o bloco na cabeça do seu relatório, `a6b4de99`.*
+
 ## O teste de aceitação, e onde se mede
 
 O do §2 do brief, ponto por ponto:
@@ -124,3 +126,33 @@ Duas leituras do contador de símbolos restantes que a ferramenta mostra ao agen
 - A linha do K2 em `critica/REVISOES-DO-INVENTARIO.md` está «por ler pelo lugar de direção antes de aterrar».
 - A leitura a frio de outra família, com as cinco plantas.
 - Fora do mandato, visto pela célula: 24 valores levam o «€» depois deles, os de seis linhas cuja unidade no livro-razão é «€ por mês», «€ por ano» ou «€ por pensionista por ano», nas páginas das áreas e nos recibos, iguais na construção de base; a decisão 4 da §1.127 escreve o dinheiro com a palavra da unidade.
+
+## K2-b · as decisões do lugar de direção, aplicadas
+
+*Passagem curta na mesma worktree e no mesmo ramo, sobre a cabeça `cc7734fe`. Os números estão em `medidas-k2-b.json`, escrito por `medir-k2-b.mjs`, que mede a construção da passagem contra a construção da cabeça do relatório do K2 (`a6b4de99`), guardada fora do repositório.*
+
+**Os pontos, como o lugar de direção os decidiu:**
+
+| # | a decisão | como ficou | a medida |
+|---|---|---|---|
+| 1 | O espaço antes de «%» é a forma da casa, em todas as superfícies (pela §1.135; a §1.43, a §1.44 e a `IDENTIDADE.md` §11 cedem-lhe, e a emenda é do lugar de direção ao aterrar) | voltou o que o `2eab45e7` fazia: os sufixos das leituras dos estudos, da leitura de cada concelho, da manchete, das fichas e da mudança do projeto, e os valores de referência da página da União; `valorComUnidade()` deixa de colar a unidade que começa por um símbolo, e o título, a descrição e o cartão de partilha da página de uma linha escrevem o «%» com o espaço; a F4 do `check:formato` volta a exigir o espaço. O que vem copiado de uma fonte fica como a fonte o escreve | valores com o «%» colado: 0 (701 na construção do K2), e 2 546 com o espaço; títulos com o «%» colado: 0 (834); atributos (descrições, títulos de partilha): 0 (2 502); no texto visível, 140 dentro das fontes (excertos, citações, transcrições dos estudos), que ficam |
+| 2 | Os seis nomes mudam pela tabela do relatório | «Quota nas exportações, variação em três anos», com o veredicto e a forma da frase a acompanhar; os cinco cartões de preços do RP1 com «variação num ano» e, o da habitação, «variação média em doze meses», nas duas línguas, e a linha do período anterior de cada um com o mesmo nome. O nome inglês dos alimentos ficou o que era, «Prices of food and non-alcoholic beverages», com a variação acrescentada: a tabela do relatório tinha outro nome inglês de base, por engano meu | cartões com variação sob nome de nível: 0 (6 na construção do K2); os 12 nomes novos rendem-se, cada um em 5 páginas |
+| 3 | Os 24 valores com «€» passam à forma da §1.127, decisão 4, na formatação | `unidadeDaLinha()` escreve o símbolo à cabeça de uma unidade com a palavra «euros», pela forma e não por uma lista (`dinheiroComPalavra()`), e o dicionário inglês diz «euros per month»; as seis linhas do livro-razão ficam como o motor as escreveu; o cartão, o recibo, o título e o cartão de partilha dizem «euros por mês», e o portão de HTML confere a unidade pela mesma função. A F5 nova do `check:formato` recusa o «€» depois de um valor (colado ou a um espaço) e antes dele no mesmo texto | valores com o «€» ao lado: 0 (24); campos de unidade com o símbolo: 0 (36); títulos com o símbolo: 0 (12); linhas do livro com o símbolo na unidade: 6, sem mudança |
+| 4 | A linha k2 do inventário, aprovada como está | a linha do K2 em `critica/REVISOES-DO-INVENTARIO.md` diz «lida pelo lugar de direção a 02.10.2026, aprovada como está». A passagem não mudou nenhuma cadeia do inventário: o `check:voz` passa com o inventário como estava | a linha diz a aprovação; na cabeça `cc7734fe` dizia «por ler» |
+
+**As plantas.** A célula do formato corre com oito plantas em memória, e as oito mordem: as quatro do K2 (os milhares, o ponto decimal, o hífen), as duas da F4 (o «%» colado por um sufixo e a um valor de referência) e as duas da F5 (a unidade de uma linha de dinheiro com o símbolo, que é o defeito que a passagem corrigiu, reposto numa cópia; e o símbolo antes de um valor). Na construção do K2 a mesma célula acha 701 desvios da F4 e 24 da F5. O portão de HTML não mudou: compara o título, a descrição e o campo da unidade com as mesmas funções que os escrevem.
+
+**As decisões em vigor** nos ficheiros que a passagem tocou: 22 (`decisoes-em-vigor-k2-b.txt`). As que contam aqui: a §1.135 (o espaço nos cartões, que a passagem estende a todas as superfícies); a §1.127, decisão 4 (o dinheiro com a palavra); a §1.43 e a §1.44, que escreviam a percentagem colada e que o lugar de direção emenda ao aterrar; a §1.24 (a unidade é prosa da casa, e por isso se formata).
+
+**As capturas** de `/emprego/`, da página da União, da ficha de Évora e do índice dos estudos, a 390 e a 1 280 px nas duas edições, refeitas da construção da cabeça `1dea6572`: 16, sem problemas e sem pedidos para fora (`capturas-k2-b.json`, `k2-b-*.png`).
+
+**Os commits da passagem**, sobre `cc7734fe`:
+
+- `7cd3b762` o espaço antes de «%» em todas as superfícies;
+- `f37673b4` o dinheiro com a palavra da unidade, e a F5;
+- `1dea6572` os seis nomes que dizem a variação;
+- o commit deste relatório, com o mapa do repositório posto em dia, a linha do inventário, as medidas, as capturas e a resposta curta (`RESPOSTA-construtor-k2-b.md`); e o seguinte, com os códigos da corrida final dos portões.
+
+**Os portões.** A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório, para `portoes/k2-b/`; os códigos entram no commit seguinte, com a cabeça ao lado.
+
+**O custo.** Duas leituras do contador de símbolos restantes, em `custo-inicio-k2-b.json` e `custo-fim-k2-b.json`: 91 104 símbolos e 1 378 segundos até à escrita desta secção (`medidas-k2-b.json`, `simbolos_gastos_na_k2_b_ate_ao_relatorio`). O modelo foi o Claude Opus 5.5, sem subagentes.
