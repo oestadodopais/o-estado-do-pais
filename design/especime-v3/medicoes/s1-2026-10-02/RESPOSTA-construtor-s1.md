@@ -1,0 +1,17 @@
+# Resposta do construtor do S1
+
+*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `s1-2026-10-02`. O relatório inteiro é `LEIA-ME.md`, na mesma pasta; os números estão em `medidas.json`. Sem travessões.*
+
+- **Não aterra sem duas decisões do diretor.** A nota do que fica guardado está à letra e é rascunho; ao lê-la contra a função, a marca que ela diz «cifrada» é um resumo com sal (um pseudónimo do endereço durante uma hora, e não um anonimato), e o artigo 13.º do Regulamento (UE) 2016/679 pede coisas que ela não diz (quem responde pelo tratamento, a base legal, quem recebe os dados, o direito de reclamar). E a caixa contradiz a recusa publicada no Método, «Este projeto não guarda dados pessoais dos leitores nem os põe no repositório», que é do diretor pela política da autonomia: parei nesse ponto, não lhe toquei, e deixo no relatório uma proposta de redação.
+- **A função**: um 303 relativo para as páginas estáticas, pela tabela das rotas; os campos em branco como `null`; o corte em caracteres; só o GET e o POST; no `typecheck`; em Dublin (`vercel inspect` lista a função em `dub1`). A célula `check:sugestoes`, no `verify`: 12 casos verdes e 15 plantas que mordem.
+- **As páginas**: as 10 da caixa construídas, com os 24 textos do brief à letra; as 8 do resultado com `noindex` e fora do mapa do sítio, os 2 formulários dentro dele; sem guião nenhum.
+- **A porta do rodapé** está em 7452 páginas, as mesmas que levam a das correções, ao lado dela e com `?de=` igual ao caminho da página; o portão de HTML conta-a e a H16 do `check:alvos` mede-a; os 25 documentos alojados não têm nenhuma das duas.
+- **A privacidade e os mortos**: `api/` sem segredo, sem caminho e sem nome, com 10 plantas; os mortos leem `api/`; o `verify:deploy` pede o 303 e a região da função, e hoje falha só nisso, como deve antes de a função estar no ar.
+- **A prova de caminho**: a pré-visualização `Ready`, com a função em `dub1`; atrás da autenticação, o `x-vercel-id` da pré-visualização é o da borda, e contornar a proteção pedia criar um segredo no projeto, que não criei. O comportamento contra a base real: 11 pedidos, 5 envios guardados, a armadilha e a vazia sem chamar a base, e o sexto envio da hora na mesma marca recusado.
+- **As cinco linhas de ensaio na base**, para o lugar de direção confirmar e apagar: entre as 21:26:24 e as 21:26:25 UTC de 02.10.2026, com os identificadores em `prova-do-caminho/respostas.json` e no relatório.
+- **Decisões**: a função importa a tabela das rotas; o `Location` relativo; os textos à letra, com o apóstrofo do brief, que a régua das frases lê como `&#39;`; a dispensa da sentinela de «Language» só para a frase inteira da nota inglesa; as regras da base, ditas por extenso, conferidas pelo portão contra o registo da base; a frase da página das correções é minha e está por ler.
+- **Onde o brief não bate**: a §1.29 é a das quatro linhas retiradas, e o endereço das correções é a §1.26.
+- **Capturas**: 16, com 0 problemas.
+- **Portões**: `build` 0, `verify` 0 e `typecheck` 0 na cabeça `b4ab49e4`, lidos de `portoes/`.
+- **Por fazer**: as duas decisões do diretor; apagar as linhas de ensaio e a pré-visualização; o passo da leitura da caixa no `CLAUDE.md` ao aterrar; a leitura a frio por outra família e a releitura do diff do inventário (o bloco `s1` está «por ler»).
+- **Custo**: 810 299 símbolos e 6091 segundos de parede, das duas leituras em ficheiro.
