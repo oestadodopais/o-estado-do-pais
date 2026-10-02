@@ -21,19 +21,25 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-02",
       "o_que": "o UE2, item 3 do brief: as formas da página da União das sete perguntas com termos técnicos, pedaço a pedaço, escritas por design/especime-v3/medicoes/ue2-2026-10-02/auditoria-das-formas.mjs, com as origens já seladas que as leituras dos cartões nacionais citam"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-02",
+      "o_que": "a passagem UE2-b: a forma em palavras comuns passa a ser a única, nas 18 perguntas que mudaram, pedaço a pedaço, com os termos que a leitura a frio do UE2 apontou explicados; as entradas das formas da página da União saem. Escrito por design/especime-v3/medicoes/ue2-2026-10-02/auditoria-das-perguntas.mjs"
     }
   ],
   "perguntas": [
     {
       "id": "divida-publica-2025",
       "origens": [
-        "pdm-divida-publica"
+        "pdm-divida-publica",
+        "eurostat-tipsna40-descricao"
       ],
       "pergunta": {
-        "pt": "Quanto devem as administrações públicas, em percentagem do PIB?",
-        "en": "How much does general government owe, as a percentage of GDP?"
+        "pt": "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?",
+        "en": "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
       },
-      "mudanca": "As duas perguntas passam a dizer PIB/GDP, a unidade que a origem escreve. Sai a explicação «do que o país produz num ano», sem definição própria de PIB na origem declarada.",
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O PIB diz-se pelo que mede, o valor dos bens e serviços finais que a economia produz num ano, pela descrição do Eurostat, e a sigla fica entre parênteses.",
       "pedacos": [
         {
           "pt": "Quanto devem as administrações públicas, ",
@@ -47,13 +53,39 @@
           ]
         },
         {
-          "pt": "em percentagem do PIB?",
-          "en": "as a percentage of GDP?",
+          "pt": "em percentagem do valor dos bens e serviços finais que a economia produz num ano ",
+          "en": "as a percentage of the value of the final goods and services the economy produces in a year ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy within a certain period of time."
+            },
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "the average population of a specific year"
+            },
+            {
+              "origem": "pdm-divida-publica",
+              "campo": "excerto",
+              "literal": "in % of GDP"
+            }
+          ]
+        },
+        {
+          "pt": "(o PIB)?",
+          "en": "(GDP)?",
           "apoios": [
             {
               "origem": "pdm-divida-publica",
               "campo": "excerto",
               "literal": "in % of GDP"
+            },
+            {
+              "linha": "divida-publica-2025",
+              "campo": "excerpt",
+              "literal": "Percentage of gross domestic product (GDP)"
             }
           ]
         }
@@ -63,38 +95,81 @@
       "id": "posicao-de-investimento-internacional-2025",
       "origens": [
         "bdp-pii",
-        "pdm-posicao-de-investimento"
+        "pdm-posicao-de-investimento",
+        "eurostat-tipsna40-descricao"
       ],
       "pergunta": {
-        "pt": "Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB?",
-        "en": "What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP?"
+        "pt": "Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?",
+        "en": "What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). Os ativos financeiros e os passivos dizem-se pelo que são, o que os residentes têm no resto do mundo e o que lhe devem, com as palavras da leitura do cartão nacional, e o PIB pelo que mede.",
       "pedacos": [
         {
-          "pt": "Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, ",
-          "en": "What is the difference between residents’ financial assets and liabilities relative to the rest of the world, ",
+          "pt": "Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem ",
+          "en": "What is the difference between what the country’s residents own in the rest of the world and what they owe to it ",
           "apoios": [
             {
               "origem": "bdp-pii",
               "campo": "excerto",
-              "literal": "apresenta o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo."
+              "literal": "o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo"
             },
             {
               "origem": "bdp-pii",
               "campo": "excertoEn",
-              "literal": "represents the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world."
+              "literal": "the difference between financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world"
             }
           ]
         },
         {
-          "pt": "em percentagem do PIB?",
-          "en": "as a percentage of GDP?",
+          "pt": "(os ativos financeiros e os passivos face ao exterior), ",
+          "en": "(financial assets and liabilities relative to the rest of the world), ",
+          "apoios": [
+            {
+              "origem": "bdp-pii",
+              "campo": "excerto",
+              "literal": "os ativos financeiros e os passivos"
+            },
+            {
+              "origem": "bdp-pii",
+              "campo": "excertoEn",
+              "literal": "financial assets and liabilities"
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do valor dos bens e serviços finais que a economia produz num ano ",
+          "en": "as a percentage of the value of the final goods and services the economy produces in a year ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy within a certain period of time."
+            },
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "the average population of a specific year"
+            },
+            {
+              "origem": "pdm-posicao-de-investimento",
+              "campo": "excerto",
+              "literal": "as percent of GDP"
+            }
+          ]
+        },
+        {
+          "pt": "(o PIB)?",
+          "en": "(GDP)?",
           "apoios": [
             {
               "origem": "pdm-posicao-de-investimento",
               "campo": "excerto",
               "literal": "as percent of GDP"
+            },
+            {
+              "linha": "posicao-de-investimento-internacional-2025",
+              "campo": "excerpt",
+              "literal": "Percentage of gross domestic product (GDP)"
             }
           ]
         }
@@ -103,13 +178,14 @@
     {
       "id": "custo-unitario-do-trabalho-2025",
       "origens": [
-        "pdm-custo-do-trabalho"
+        "pdm-custo-do-trabalho",
+        "eurostat-tipslm10-descricao"
       ],
       "pergunta": {
-        "pt": "Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?",
-        "en": "How much has the nominal unit labour cost index, per hour worked, changed over three years?"
+        "pt": "Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?",
+        "en": "How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O índice nominal do custo unitário do trabalho diz-se em palavras comuns (a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho), pela descrição do Eurostat que a leitura do cartão nacional já cita, e o termo da Comissão fica entre parênteses.",
       "pedacos": [
         {
           "pt": "Quanto mudou em três anos ",
@@ -123,29 +199,61 @@
           ]
         },
         {
-          "pt": "o índice nominal do custo unitário do trabalho, ",
-          "en": "the nominal unit labour cost index, ",
+          "pt": "a remuneração por hora de trabalho",
+          "en": "pay per hour of work",
           "apoios": [
             {
-              "origem": "pdm-custo-do-trabalho",
+              "origem": "eurostat-tipslm10-descricao",
               "campo": "excerto",
-              "literal": "nominal unit labour cost index"
+              "literal": "labour cost is the ratio of compensation of employees (current prices) to hours worked by employees"
             }
           ]
         },
         {
-          "pt": "por hora trabalhada?",
-          "en": "per hour worked, changed over three years?",
+          "pt": ", aos preços de cada ano",
+          "en": ", at each year’s prices",
           "apoios": [
             {
-              "origem": "pdm-custo-do-trabalho",
+              "origem": "eurostat-tipslm10-descricao",
               "campo": "excerto",
-              "literal": "per hour worked"
+              "literal": "compensation of employees (current prices)"
+            }
+          ]
+        },
+        {
+          "pt": ", a dividir pelo que se produz numa hora de trabalho ",
+          "en": ", divided by what an hour of work produces, changed over three years ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslm10-descricao",
+              "campo": "excerto",
+              "literal": "the ratio of labour cost to labour productivity"
+            },
+            {
+              "origem": "eurostat-tipslm10-descricao",
+              "campo": "excerto",
+              "literal": "labour productivity is the ratio of gross domestic product"
+            },
+            {
+              "origem": "eurostat-tipslm10-descricao",
+              "campo": "excerto",
+              "literal": "to total hours worked"
             },
             {
               "origem": "pdm-custo-do-trabalho",
               "campo": "excerto",
               "literal": "3-year percentage change"
+            }
+          ]
+        },
+        {
+          "pt": "(o índice nominal do custo unitário do trabalho, por hora trabalhada)?",
+          "en": "(the nominal unit labour cost index, per hour worked)?",
+          "apoios": [
+            {
+              "origem": "pdm-custo-do-trabalho",
+              "campo": "excerto",
+              "literal": "nominal unit labour cost index, per hour worked"
             }
           ]
         }
@@ -154,33 +262,39 @@
     {
       "id": "precos-da-habitacao-2025",
       "origens": [
-        "glossario-hpi"
+        "glossario-hpi",
+        "eurostat-tipsho20-descricao"
       ],
       "pergunta": {
-        "pt": "Quanto mudaram os preços de transação das casas compradas pelas famílias?",
-        "en": "How much have the transaction prices of homes purchased by households changed?"
+        "pt": "Quanto mudaram num ano os preços de transação das casas compradas pelas famílias?",
+        "en": "How much have the transaction prices of homes purchased by households changed in a year?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A pergunta diz a base da comparação, um ano, pela descrição do Eurostat do indicador do painel (a variação num ano do índice).",
       "pedacos": [
         {
-          "pt": "Quanto mudaram os preços de transação ",
-          "en": "How much have the transaction prices ",
+          "pt": "Quanto mudaram num ano ",
+          "en": "How much have ",
           "apoios": [
             {
-              "origem": "glossario-hpi",
+              "origem": "eurostat-tipsho20-descricao",
               "campo": "excerto",
-              "literal": "measures the changes in the transaction prices"
+              "literal": "The MIP Scoreboard indicator is expressed as the 1-year percentage change of the HPI."
             }
           ]
         },
         {
-          "pt": "das casas compradas pelas famílias?",
-          "en": "of homes purchased by households changed?",
+          "pt": "os preços de transação das casas compradas pelas famílias?",
+          "en": "the transaction prices of homes purchased by households changed in a year?",
           "apoios": [
             {
               "origem": "glossario-hpi",
               "campo": "excerto",
-              "literal": "dwellings purchased by households"
+              "literal": "measures the changes in the transaction prices of dwellings purchased by households"
+            },
+            {
+              "origem": "eurostat-tipsho20-descricao",
+              "campo": "excerto",
+              "literal": "1-year percentage change"
             }
           ]
         }
@@ -189,13 +303,15 @@
     {
       "id": "desempenho-das-exportacoes-2025",
       "origens": [
-        "pdm-exportacoes"
+        "pdm-exportacoes",
+        "eurostat-tipsbp60-descricao",
+        "eurostat-sec2010-ocde"
       ],
       "pergunta": {
-        "pt": "Quanto mudou em três anos o desempenho das exportações do país face às economias avançadas?",
-        "en": "How much has the country’s export performance against advanced economies changed over three years?"
+        "pt": "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?",
+        "en": "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). As economias avançadas dizem-se pelo que a descrição do Eurostat conta, e a OCDE pelo nome por extenso, que o SEC 2010 escreve ao lado da sigla.",
       "pedacos": [
         {
           "pt": "Quanto mudou em três anos ",
@@ -209,23 +325,51 @@
           ]
         },
         {
-          "pt": "o desempenho das exportações do país face às economias avançadas?",
-          "en": "the country’s export performance against advanced economies changed over three years?",
+          "pt": "a parte que as exportações de bens e serviços do país têm no total das exportações dos países ",
+          "en": "the part that the country’s exports of goods and services make up of the total exports of the countries ",
           "apoios": [
             {
-              "origem": "pdm-exportacoes",
+              "origem": "eurostat-tipsbp60-descricao",
               "campo": "excerto",
-              "literal": "export performance against advanced economies"
+              "literal": "shares of exports of goods and services of EU Member States in relation to total exports of goods and services of OECD countries and non-OECD EU Member States"
+            }
+          ]
+        },
+        {
+          "pt": "da Organização para a Cooperação e Desenvolvimento Económico (OCDE) ",
+          "en": "of the Organisation for Economic Cooperation and Development (OECD) ",
+          "apoios": [
+            {
+              "origem": "eurostat-sec2010-ocde",
+              "campo": "excerto",
+              "literal": "the Organisation for Economic Cooperation and Development (OECD)"
+            }
+          ]
+        },
+        {
+          "pt": "e dos países da União que não são da OCDE ",
+          "en": "and of EU countries outside the OECD changed over three years ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsbp60-descricao",
+              "campo": "excerto",
+              "literal": "OECD countries and non-OECD EU Member States"
             },
             {
               "origem": "pdm-exportacoes",
               "campo": "excerto",
               "literal": "3-year percentage change"
-            },
+            }
+          ]
+        },
+        {
+          "pt": "(o desempenho das exportações face às economias avançadas)?",
+          "en": "(export performance against advanced economies)?",
+          "apoios": [
             {
-              "linha": "desempenho-das-exportacoes-2025",
-              "campo": "excerpt",
-              "literal": "Portugal"
+              "origem": "pdm-exportacoes",
+              "campo": "excerto",
+              "literal": "export performance against advanced economies"
             }
           ]
         }
@@ -235,17 +379,20 @@
       "id": "divida-das-empresas-2025",
       "origens": [
         "pdm-divida-das-empresas",
-        "eurostat-tipspd30"
+        "eurostat-tipspd30",
+        "eurostat-tipspd30-descricao",
+        "eurostat-tipspc30-descricao",
+        "eurostat-tipsna40-descricao"
       ],
       "pergunta": {
-        "pt": "Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB?",
-        "en": "How much do non-financial corporations owe in consolidated debt, as a percentage of GDP?"
+        "pt": "Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?",
+        "en": "How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). As sociedades não financeiras dizem-se como as empresas que não são financeiras, a dívida pelos instrumentos que a descrição do Eurostat conta, «consolidada» pelo que a descrição do Eurostat do mesmo setor diz dos dados consolidados, e o PIB pelo que mede.",
       "pedacos": [
         {
-          "pt": "Quanto devem as sociedades não financeiras, ",
-          "en": "How much do non-financial corporations owe ",
+          "pt": "Quanto devem as empresas que não são financeiras",
+          "en": "How much do companies other than financial companies owe",
           "apoios": [
             {
               "origem": "eurostat-tipspd30",
@@ -255,24 +402,77 @@
           ]
         },
         {
-          "pt": "em dívida consolidada e ",
-          "en": "in consolidated debt, ",
+          "pt": ", em empréstimos e títulos de dívida",
+          "en": " in loans and debt securities",
           "apoios": [
             {
-              "origem": "pdm-divida-das-empresas",
+              "origem": "eurostat-tipspd30-descricao",
               "campo": "excerto",
-              "literal": "consolidated debt"
+              "literal": "Debt securities (F.3) and Loans (F.4)"
             }
           ]
         },
         {
-          "pt": "em percentagem do PIB?",
-          "en": "as a percentage of GDP?",
+          "pt": ", sem contar o que devem umas às outras ",
+          "en": ", leaving out what they owe one another ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspc30-descricao",
+              "campo": "excerto",
+              "literal": "Data are presented in consolidated terms (i.e. excluding intra-sector transactions)"
+            }
+          ]
+        },
+        {
+          "pt": "(a dívida consolidada das sociedades não financeiras)",
+          "en": "(the consolidated debt of non-financial corporations)",
+          "apoios": [
+            {
+              "origem": "pdm-divida-das-empresas",
+              "campo": "excerto",
+              "literal": "NFC consolidated debt"
+            },
+            {
+              "origem": "eurostat-tipspd30",
+              "campo": "excerto",
+              "literal": "Non-financial corporations debt, consolidated"
+            }
+          ]
+        },
+        {
+          "pt": ", em percentagem do valor dos bens e serviços finais que a economia produz num ano ",
+          "en": ", as a percentage of the value of the final goods and services the economy produces in a year ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy within a certain period of time."
+            },
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "the average population of a specific year"
+            },
+            {
+              "origem": "pdm-divida-das-empresas",
+              "campo": "excerto",
+              "literal": "in % of GDP"
+            }
+          ]
+        },
+        {
+          "pt": "(o PIB)?",
+          "en": "(GDP)?",
           "apoios": [
             {
               "origem": "pdm-divida-das-empresas",
               "campo": "excerto",
               "literal": "in % of GDP"
+            },
+            {
+              "linha": "divida-das-empresas-2025",
+              "campo": "excerpt",
+              "literal": "Percentage of gross domestic product (GDP)"
             }
           ]
         }
@@ -282,33 +482,58 @@
       "id": "divida-das-familias-2025",
       "origens": [
         "pdm-divida-das-familias",
-        "glossario-npish"
+        "glossario-npish",
+        "eurostat-tipspd22-descricao",
+        "eurostat-tipspc40-descricao",
+        "eurostat-tipsna40-descricao"
       ],
       "pergunta": {
-        "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em dívida consolidada e em percentagem do PIB?",
-        "en": "How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP?"
+        "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?",
+        "en": "How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A dívida diz-se pelos instrumentos que a descrição do Eurostat conta, «consolidada» pelo que a descrição do Eurostat do mesmo setor diz dos dados consolidados, e o PIB pelo que mede.",
       "pedacos": [
         {
-          "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, ",
-          "en": "How much do households and non-profit institutions serving them owe ",
+          "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço",
+          "en": "How much do households and non-profit institutions serving them owe",
           "apoios": [
             {
               "origem": "pdm-divida-das-familias",
               "campo": "excerto",
-              "literal": "household (incl. NPISH)"
+              "literal": "household (incl. NPISH) consolidated debt"
             },
             {
               "origem": "glossario-npish",
               "campo": "excerto",
-              "literal": "Non-profit institutions serving households, abbreviated as NPISH"
+              "literal": "Non-profit institutions serving households"
             }
           ]
         },
         {
-          "pt": "em dívida consolidada e ",
-          "en": "in consolidated debt, ",
+          "pt": ", em empréstimos e títulos de dívida",
+          "en": " in loans and debt securities",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspd22-descricao",
+              "campo": "excerto",
+              "literal": "Debt securities (F.3) and Loans (F.4)"
+            }
+          ]
+        },
+        {
+          "pt": ", sem contar o que devem umas às outras ",
+          "en": ", leaving out what they owe one another ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspc40-descricao",
+              "campo": "excerto",
+              "literal": "transactions within the same sector are not taken into account"
+            }
+          ]
+        },
+        {
+          "pt": "(a dívida consolidada)",
+          "en": "(consolidated debt)",
           "apoios": [
             {
               "origem": "pdm-divida-das-familias",
@@ -318,13 +543,39 @@
           ]
         },
         {
-          "pt": "em percentagem do PIB?",
-          "en": "as a percentage of GDP?",
+          "pt": ", em percentagem do valor dos bens e serviços finais que a economia produz num ano ",
+          "en": ", as a percentage of the value of the final goods and services the economy produces in a year ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy within a certain period of time."
+            },
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "the average population of a specific year"
+            },
+            {
+              "origem": "pdm-divida-das-familias",
+              "campo": "excerto",
+              "literal": "in % of GDP"
+            }
+          ]
+        },
+        {
+          "pt": "(o PIB)?",
+          "en": "(GDP)?",
           "apoios": [
             {
               "origem": "pdm-divida-das-familias",
               "campo": "excerto",
               "literal": "in % of GDP"
+            },
+            {
+              "linha": "divida-das-familias-2025",
+              "campo": "excerpt",
+              "literal": "Percentage of gross domestic product (GDP)"
             }
           ]
         }
@@ -335,17 +586,73 @@
       "origens": [
         "pdm-credito-as-empresas",
         "glossario-fdi",
-        "eurostat-tipspd30"
+        "eurostat-tipspd30",
+        "eurostat-tipspc30-descricao",
+        "eurostat-sec2010-registo-liquido"
       ],
       "pergunta": {
-        "pt": "Quanto representa o fluxo de crédito consolidado às sociedades não financeiras na dívida que tinham no período anterior, excluindo o investimento direto estrangeiro das duas parcelas?",
-        "en": "What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts?"
+        "pt": "Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?",
+        "en": "How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O fluxo de crédito consolidado diz-se com as palavras da leitura do cartão nacional (o crédito contraído num ano, descontado o que se reembolsou), pela descrição do Eurostat e pelo SEC 2010, e «consolidado» pelo que a descrição diz dos dados consolidados; a dívida do período anterior diz-se no fim do ano anterior, como a descrição a diz.",
       "pedacos": [
         {
-          "pt": "Quanto representa o fluxo de crédito consolidado às sociedades não financeiras ",
-          "en": "What percentage of non-financial corporations’ debt in the previous period ",
+          "pt": "Quanto crédito contraíram num ano ",
+          "en": "How much credit did ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspc30-descricao",
+              "campo": "excerto",
+              "literal": "the net amount of liabilities incurred during the year"
+            }
+          ]
+        },
+        {
+          "pt": "as empresas que não são financeiras",
+          "en": "companies other than financial companies take on in a year",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspd30",
+              "campo": "excerto",
+              "literal": "Non-financial corporations debt"
+            },
+            {
+              "origem": "eurostat-tipspc30-descricao",
+              "campo": "excerto",
+              "literal": "non-financial corporations sector (S.11)"
+            },
+            {
+              "origem": "eurostat-tipspc30-descricao",
+              "campo": "excerto",
+              "literal": "the net amount of liabilities incurred during the year"
+            }
+          ]
+        },
+        {
+          "pt": ", descontado o que reembolsaram",
+          "en": ", minus what they repaid",
+          "apoios": [
+            {
+              "origem": "eurostat-sec2010-registo-liquido",
+              "campo": "excerto",
+              "literal": "incurrences of liabilities are shown net of repayments of liabilities"
+            }
+          ]
+        },
+        {
+          "pt": " e sem contar as operações entre elas ",
+          "en": " and leaving out operations among themselves ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspc30-descricao",
+              "campo": "excerto",
+              "literal": "Data are presented in consolidated terms (i.e. excluding intra-sector transactions)"
+            }
+          ]
+        },
+        {
+          "pt": "(o fluxo de crédito consolidado das sociedades não financeiras)",
+          "en": "(the consolidated credit flow of non-financial corporations)",
           "apoios": [
             {
               "origem": "pdm-credito-as-empresas",
@@ -356,28 +663,23 @@
               "origem": "eurostat-tipspd30",
               "campo": "excerto",
               "literal": "Non-financial corporations"
-            },
-            {
-              "origem": "pdm-credito-as-empresas",
-              "campo": "excerto",
-              "literal": "in % of NFC debt stock in t-1"
             }
           ]
         },
         {
-          "pt": "na dívida que tinham no período anterior, ",
-          "en": "does their consolidated credit flow represent, ",
+          "pt": ", em percentagem da dívida que tinham no fim do ano anterior",
+          "en": ", as a percentage of the debt they had at the end of the previous year",
           "apoios": [
             {
-              "origem": "pdm-credito-as-empresas",
+              "origem": "eurostat-tipspc30-descricao",
               "campo": "excerto",
-              "literal": "NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI)"
+              "literal": "expressed as a percentage of the corresponding stocks (excluding FDI) at the end of the previous year"
             }
           ]
         },
         {
-          "pt": "excluindo o investimento direto estrangeiro das duas parcelas?",
-          "en": "excluding foreign direct investment from both amounts?",
+          "pt": ", excluindo o investimento direto estrangeiro das duas parcelas?",
+          "en": ", excluding foreign direct investment from both amounts?",
           "apoios": [
             {
               "origem": "pdm-credito-as-empresas",
@@ -391,30 +693,37 @@
             }
           ]
         }
-      ],
-      "nota_da_leitura": "A ordem gramatical PT e EN é diferente. O primeiro pedaço inglês já traz o denominador. A exclusão do investimento direto estrangeiro qualifica o fluxo e a dívida do período anterior."
+      ]
     },
     {
       "id": "fluxo-de-credito-as-familias-2025",
       "origens": [
         "pdm-credito-as-familias",
-        "glossario-npish"
+        "glossario-npish",
+        "eurostat-tipspc40-descricao",
+        "eurostat-sec2010-registo-liquido"
       ],
       "pergunta": {
-        "pt": "Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem?",
-        "en": "What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?"
+        "pt": "Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?",
+        "en": "How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O fluxo de crédito consolidado diz-se com as palavras da leitura do cartão nacional (o crédito contraído num ano, descontado o que se reembolsou), pela descrição do Eurostat e pelo SEC 2010, e «consolidado» pelo que a descrição diz dos dados consolidados; a dívida do período anterior diz-se no fim do ano anterior, como a descrição a diz.",
       "pedacos": [
         {
-          "pt": "Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço ",
-          "en": "What percentage of the debt of households and non-profit institutions serving them ",
+          "pt": "Quanto crédito contraíram num ano ",
+          "en": "How much credit did ",
           "apoios": [
             {
-              "origem": "pdm-credito-as-familias",
+              "origem": "eurostat-tipspc40-descricao",
               "campo": "excerto",
-              "literal": "in % of household debt stock"
-            },
+              "literal": "have incurred during the year"
+            }
+          ]
+        },
+        {
+          "pt": "as famílias e as instituições sem fim lucrativo ao seu serviço",
+          "en": "households and non-profit institutions serving them take on in a year",
+          "apoios": [
             {
               "origem": "pdm-credito-as-familias",
               "campo": "excerto",
@@ -423,29 +732,61 @@
             {
               "origem": "glossario-npish",
               "campo": "excerto",
-              "literal": "Non-profit institutions serving households, abbreviated as NPISH"
+              "literal": "Non-profit institutions serving households"
+            },
+            {
+              "origem": "eurostat-tipspc40-descricao",
+              "campo": "excerto",
+              "literal": "have incurred during the year"
             }
           ]
         },
         {
-          "pt": "no período anterior ",
-          "en": "in the previous period ",
+          "pt": ", descontado o que reembolsaram",
+          "en": ", minus what they repaid",
           "apoios": [
             {
-              "origem": "pdm-credito-as-familias",
+              "origem": "eurostat-sec2010-registo-liquido",
               "campo": "excerto",
-              "literal": "in t-1"
+              "literal": "net of repayments of liabilities"
+            },
+            {
+              "origem": "eurostat-tipspc40-descricao",
+              "campo": "excerto",
+              "literal": "the net amount of liabilities"
             }
           ]
         },
         {
-          "pt": "representa o fluxo de crédito consolidado que recebem?",
-          "en": "does their consolidated credit flow represent?",
+          "pt": " e sem contar as operações entre elas ",
+          "en": " and leaving out operations among themselves ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspc40-descricao",
+              "campo": "excerto",
+              "literal": "transactions within the same sector are not taken into account"
+            }
+          ]
+        },
+        {
+          "pt": "(o fluxo de crédito consolidado)",
+          "en": "(the consolidated credit flow)",
           "apoios": [
             {
               "origem": "pdm-credito-as-familias",
               "campo": "excerto",
               "literal": "consolidated credit flow"
+            }
+          ]
+        },
+        {
+          "pt": ", em percentagem da dívida que tinham no fim do ano anterior?",
+          "en": ", as a percentage of the debt they had at the end of the previous year?",
+          "apoios": [
+            {
+              "origem": "eurostat-tipspc40-descricao",
+              "campo": "excerto",
+              "literal": "expressed in percentage of the related stocks at the end of the previous year"
             }
           ]
         }
@@ -454,17 +795,46 @@
     {
       "id": "saldo-da-balanca-corrente-2025",
       "origens": [
-        "pdm-balanca-corrente"
+        "pdm-balanca-corrente",
+        "eurostat-tipsbp10-descricao",
+        "eurostat-tipsna40-descricao"
       ],
       "pergunta": {
-        "pt": "Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás?",
-        "en": "What is the current account balance as a percentage of GDP, on a three-year backward moving average?"
+        "pt": "Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos (o saldo da balança corrente), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB), na média desse ano e dos dois anteriores (a média móvel de três anos para trás)?",
+        "en": "What is the difference between what the country received from the rest of the world and what it paid to it, for goods, services and income (the current account balance), as a percentage of the value of the final goods and services the economy produces in a year (GDP), on the average of that year and the two before it (the three-year backward moving average)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A balança corrente diz-se pelo que mede, com as palavras da leitura do cartão nacional e a descrição do Eurostat; o PIB pelo que mede; e a média móvel de três anos para trás como a média desse ano e dos dois anteriores. Os termos ficam entre parênteses.",
       "pedacos": [
         {
-          "pt": "Qual é o saldo da balança corrente ",
-          "en": "What is the current account balance ",
+          "pt": "Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, ",
+          "en": "What is the difference between what the country received from the rest of the world and what it paid to it, ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsbp10-descricao",
+              "campo": "excerto",
+              "literal": "the transactions of a country with the rest of the world"
+            },
+            {
+              "origem": "eurostat-tipsbp10-descricao",
+              "campo": "excerto",
+              "literal": "marked as a credit, a debit or a balance"
+            }
+          ]
+        },
+        {
+          "pt": "por bens, serviços e rendimentos ",
+          "en": "for goods, services and income ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsbp10-descricao",
+              "campo": "excerto",
+              "literal": "in goods, services, primary income and secondary income"
+            }
+          ]
+        },
+        {
+          "pt": "(o saldo da balança corrente), ",
+          "en": "(the current account balance), ",
           "apoios": [
             {
               "origem": "pdm-balanca-corrente",
@@ -474,9 +844,19 @@
           ]
         },
         {
-          "pt": "em percentagem do PIB, ",
-          "en": "as a percentage of GDP, ",
+          "pt": "em percentagem do valor dos bens e serviços finais que a economia produz num ano ",
+          "en": "as a percentage of the value of the final goods and services the economy produces in a year ",
           "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy within a certain period of time."
+            },
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "the average population of a specific year"
+            },
             {
               "origem": "pdm-balanca-corrente",
               "campo": "excerto",
@@ -485,8 +865,40 @@
           ]
         },
         {
-          "pt": "na média móvel de três anos para trás?",
-          "en": "on a three-year backward moving average?",
+          "pt": "(o PIB), ",
+          "en": "(GDP), ",
+          "apoios": [
+            {
+              "origem": "pdm-balanca-corrente",
+              "campo": "excerto",
+              "literal": "as percent of GDP"
+            },
+            {
+              "linha": "saldo-da-balanca-corrente-2025",
+              "campo": "excerpt",
+              "literal": "Percentage of GDP"
+            }
+          ]
+        },
+        {
+          "pt": "na média desse ano e dos dois anteriores ",
+          "en": "on the average of that year and the two before it ",
+          "apoios": [
+            {
+              "origem": "pdm-balanca-corrente",
+              "campo": "excerto",
+              "literal": "3-year backward moving average"
+            },
+            {
+              "linha": "saldo-da-balanca-corrente-2025",
+              "campo": "unit",
+              "literal": "média de três anos"
+            }
+          ]
+        },
+        {
+          "pt": "(a média móvel de três anos para trás)?",
+          "en": "(the three-year backward moving average)?",
           "apoios": [
             {
               "origem": "pdm-balanca-corrente",
@@ -501,60 +913,87 @@
       "id": "taxa-de-actividade-2025",
       "origens": [
         "glossario-atividade",
-        "pdm-taxa-de-actividade"
+        "pdm-taxa-de-actividade",
+        "eurostat-tipslm60-idade"
       ],
       "pergunta": {
-        "pt": "Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável?",
-        "en": "How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years?"
+        "pt": "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?",
+        "en": "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A população comparável diz-se pelo grupo de idades que a descrição do Eurostat do mesmo indicador escreve, as pessoas ativas pelo que são, e os pontos percentuais pela conta que o excerto da linha escreve (a diferença entre o ano e três anos antes).",
       "pedacos": [
         {
-          "pt": "Quanto mudou em três anos ",
-          "en": "How much has ",
+          "pt": "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos ",
+          "en": "How much has the share of people aged 15 to 64 ",
           "apoios": [
             {
               "origem": "pdm-taxa-de-actividade",
               "campo": "excerto",
               "literal": "3-year change in pps"
+            },
+            {
+              "origem": "eurostat-tipslm60-idade",
+              "campo": "excerto",
+              "literal": "the percentage of economically active population aged 15-64 on the total population of the same age"
             }
           ]
         },
         {
-          "pt": "a percentagem de pessoas ativas, ",
-          "en": "the percentage of active people, ",
+          "pt": "que trabalham ou procuram trabalho ",
+          "en": "who work or are looking for work ",
           "apoios": [
             {
               "origem": "glossario-atividade",
               "campo": "excerto",
-              "literal": "percentage of active persons"
+              "literal": "The economically active population comprises employed and unemployed persons."
             }
           ]
         },
         {
-          "pt": "empregadas ou desempregadas, ",
-          "en": "employed or unemployed, ",
+          "pt": "(as pessoas ativas, empregadas ou desempregadas), ",
+          "en": "(active people, employed or unemployed) changed over three years, ",
           "apoios": [
+            {
+              "origem": "glossario-atividade",
+              "campo": "excerto",
+              "literal": "Activity rate is the percentage of active persons"
+            },
             {
               "origem": "glossario-atividade",
               "campo": "excerto",
               "literal": "comprises employed and unemployed persons"
-            }
-          ]
-        },
-        {
-          "pt": "na população comparável?",
-          "en": "in the comparable total population changed over three years?",
-          "apoios": [
-            {
-              "origem": "glossario-atividade",
-              "campo": "excerto",
-              "literal": "in relation to the comparable total population"
             },
             {
               "origem": "pdm-taxa-de-actividade",
               "campo": "excerto",
               "literal": "3-year change in pps"
+            }
+          ]
+        },
+        {
+          "pt": "contada como a diferença entre a percentagem desse ano e a de três anos antes ",
+          "en": "counted as the difference between that year’s percentage and the one three years earlier ",
+          "apoios": [
+            {
+              "linha": "taxa-de-actividade-2025",
+              "campo": "excerpt",
+              "literal": "Percentage point change (t-(t-3))"
+            }
+          ]
+        },
+        {
+          "pt": "(em pontos percentuais)?",
+          "en": "(in percentage points)?",
+          "apoios": [
+            {
+              "origem": "pdm-taxa-de-actividade",
+              "campo": "excerto",
+              "literal": "3-year change in pps"
+            },
+            {
+              "linha": "taxa-de-actividade-2025",
+              "campo": "unit",
+              "literal": "pontos percentuais"
             }
           ]
         }
@@ -563,17 +1002,18 @@
     {
       "id": "taxa-de-cambio-efectiva-real-2025",
       "origens": [
-        "pdm-cambio-efectivo-real"
+        "pdm-cambio-efectivo-real",
+        "eurostat-tipser10-descricao"
       ],
       "pergunta": {
-        "pt": "Quanto mudou em três anos a taxa de câmbio efetiva real face a outros 41 países industriais, com base nos deflatores dos índices de preços no consumidor?",
-        "en": "How much has the real effective exchange rate relative to 41 other industrial countries, based on consumer price index deflators, changed over three years?"
+        "pt": "Quanto mudaram em três anos os preços do país face aos de outros 41 países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?",
+        "en": "How much have the country’s prices relative to those of 41 other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A taxa de câmbio efetiva real diz-se pelo que mede (os preços do país face aos de outros países, contando as taxas de câmbio e os preços no consumidor), pela descrição do Eurostat que a leitura do cartão nacional já cita, e os deflatores ficam entre parênteses, com o termo.",
       "pedacos": [
         {
-          "pt": "Quanto mudou em três anos ",
-          "en": "How much has ",
+          "pt": "Quanto mudaram em três anos ",
+          "en": "How much have ",
           "apoios": [
             {
               "origem": "pdm-cambio-efectivo-real",
@@ -583,13 +1023,13 @@
           ]
         },
         {
-          "pt": "a taxa de câmbio efetiva real face a outros 41 países industriais, ",
-          "en": "the real effective exchange rate relative to 41 other industrial countries, ",
+          "pt": "os preços do país face aos de outros 41 países industriais, ",
+          "en": "the country’s prices relative to those of 41 other industrial countries, ",
           "apoios": [
             {
-              "origem": "pdm-cambio-efectivo-real",
+              "origem": "eurostat-tipser10-descricao",
               "campo": "excerto",
-              "literal": "real effective exchange rates"
+              "literal": "price or cost competitiveness relative to its principal competitors"
             },
             {
               "origem": "pdm-cambio-efectivo-real",
@@ -599,18 +1039,39 @@
           ]
         },
         {
-          "pt": "com base nos deflatores dos índices de preços no consumidor?",
-          "en": "based on consumer price index deflators, changed over three years?",
+          "pt": "contando as taxas de câmbio e os preços no consumidor de cada um ",
+          "en": "allowing for exchange rates and each country’s consumer prices, changed over three years ",
           "apoios": [
             {
-              "origem": "pdm-cambio-efectivo-real",
+              "origem": "eurostat-tipser10-descricao",
               "campo": "excerto",
-              "literal": "based on HICP/CPI deflators"
+              "literal": "depend not only on exchange rate movements but also on cost and price trends"
+            },
+            {
+              "origem": "eurostat-tipser10-descricao",
+              "campo": "excerto",
+              "literal": "deflated by the consumer price indices"
             },
             {
               "origem": "pdm-cambio-efectivo-real",
               "campo": "excerto",
               "literal": "3-year percentage change"
+            }
+          ]
+        },
+        {
+          "pt": "(a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?",
+          "en": "(the real effective exchange rate, based on consumer price index deflators)?",
+          "apoios": [
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "real effective exchange rates"
+            },
+            {
+              "origem": "pdm-cambio-efectivo-real",
+              "campo": "excerto",
+              "literal": "based on HICP/CPI deflators"
             }
           ]
         }
@@ -619,29 +1080,24 @@
     {
       "id": "taxa-de-desemprego-mip-2025",
       "origens": [
-        "glossario-desemprego"
+        "glossario-desemprego",
+        "eurostat-tipsun20-descricao"
       ],
       "pergunta": {
-        "pt": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
-        "en": "What share of the labour force aged 15 to 74 is unemployed?"
+        "pt": "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?",
+        "en": "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A população ativa diz-se pelo que é, as pessoas que trabalham ou procuram trabalho, pela descrição do Eurostat da taxa de desemprego do painel, e o termo fica entre parênteses.",
       "pedacos": [
         {
-          "pt": "Que parte da população ativa ",
-          "en": "What share of the labour force ",
+          "pt": "Que parte das pessoas dos 15 aos 74 anos ",
+          "en": "What share of people aged 15 to 74 ",
           "apoios": [
             {
               "origem": "glossario-desemprego",
               "campo": "excerto",
-              "literal": "as a percentage of the labour force"
-            }
-          ]
-        },
-        {
-          "pt": "dos 15 aos 74 anos ",
-          "en": "aged 15 to 74 ",
-          "apoios": [
+              "literal": "the number of people unemployed as a percentage of the labour force"
+            },
             {
               "linha": "taxa-de-desemprego-mip-2025",
               "campo": "excerpt",
@@ -650,32 +1106,19 @@
           ]
         },
         {
-          "pt": "está sem emprego?",
-          "en": "is unemployed?",
+          "pt": "que trabalham ou procuram trabalho ",
+          "en": "who work or are looking for work ",
           "apoios": [
             {
-              "origem": "glossario-desemprego",
+              "origem": "eurostat-tipsun20-descricao",
               "campo": "excerto",
-              "literal": "number of people unemployed"
+              "literal": "The labour force is the total number of people employed and unemployed."
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "taxa-de-desemprego-2025",
-      "origens": [
-        "glossario-desemprego"
-      ],
-      "pergunta": {
-        "pt": "Que parte da população ativa dos 15 aos 74 anos está sem emprego?",
-        "en": "What share of the labour force aged 15 to 74 is unemployed?"
-      },
-      "mudanca": null,
-      "pedacos": [
+        },
         {
-          "pt": "Que parte da população ativa ",
-          "en": "What share of the labour force ",
+          "pt": "(a população ativa) ",
+          "en": "(the labour force) ",
           "apoios": [
             {
               "origem": "glossario-desemprego",
@@ -685,13 +1128,65 @@
           ]
         },
         {
-          "pt": "dos 15 aos 74 anos ",
-          "en": "aged 15 to 74 ",
+          "pt": "está sem emprego?",
+          "en": "is unemployed?",
           "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "The unemployment rate is the number of people unemployed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxa-de-desemprego-2025",
+      "origens": [
+        "glossario-desemprego",
+        "eurostat-tipsun20-descricao"
+      ],
+      "pergunta": {
+        "pt": "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?",
+        "en": "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?"
+      },
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A população ativa diz-se pelo que é, as pessoas que trabalham ou procuram trabalho, pela descrição do Eurostat da taxa de desemprego do painel, e o termo fica entre parênteses.",
+      "pedacos": [
+        {
+          "pt": "Que parte das pessoas dos 15 aos 74 anos ",
+          "en": "What share of people aged 15 to 74 ",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "the number of people unemployed as a percentage of the labour force"
+            },
             {
               "linha": "taxa-de-desemprego-2025",
               "campo": "excerpt",
               "literal": "Age class: From 15 to 74 years"
+            }
+          ]
+        },
+        {
+          "pt": "que trabalham ou procuram trabalho ",
+          "en": "who work or are looking for work ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsun20-descricao",
+              "campo": "excerto",
+              "literal": "The labour force is the total number of people employed and unemployed."
+            }
+          ]
+        },
+        {
+          "pt": "(a população ativa) ",
+          "en": "(the labour force) ",
+          "apoios": [
+            {
+              "origem": "glossario-desemprego",
+              "campo": "excerto",
+              "literal": "as a percentage of the labour force"
             }
           ]
         },
@@ -702,7 +1197,7 @@
             {
               "origem": "glossario-desemprego",
               "campo": "excerto",
-              "literal": "number of people unemployed"
+              "literal": "The unemployment rate is the number of people unemployed"
             }
           ]
         }
@@ -758,55 +1253,56 @@
       "id": "desemprego-de-longa-duracao-2025",
       "origens": [
         "glossario-longa-duracao",
-        "eurostat-tesem130-denominador"
+        "eurostat-tesem130-denominador",
+        "glossario-atividade"
       ],
       "pergunta": {
-        "pt": "Que parte da população ativa dos 15 aos 74 anos está sem trabalho e procura emprego ativamente há pelo menos um ano?",
-        "en": "What share of the labour force aged 15 to 74 is out of work and has been actively seeking employment for at least a year?"
+        "pt": "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+        "en": "What share of people aged 15 to 74 who work or are looking for work (the labour force) is out of work and has been actively seeking employment for at least a year?"
       },
-      "mudanca": "O título selado não escreve o denominador. A nova origem cita extension.description do tesem130, recebido pelo core.http, e sustenta a população ativa e o grupo dos 15 aos 74 anos agora escrito nas duas perguntas. O glossário continua a sustentar a falta de trabalho e a procura ativa durante pelo menos um ano.",
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). A população ativa diz-se pelo que é, as pessoas que trabalham ou procuram trabalho, pelo glossário do Eurostat da taxa de atividade, e o termo fica entre parênteses.",
       "pedacos": [
         {
-          "pt": "Que parte da população ativa ",
-          "en": "What share of the labour force ",
+          "pt": "Que parte das pessoas dos 15 aos 74 anos ",
+          "en": "What share of people aged 15 to 74 ",
           "apoios": [
             {
               "origem": "eurostat-tesem130-denominador",
               "campo": "excerto",
-              "literal": "as a percentage of the active population of the same age"
+              "literal": "the number of long-term unemployed aged 15-74 as a percentage of the active population of the same age"
             }
           ]
         },
         {
-          "pt": "dos 15 aos 74 anos ",
-          "en": "aged 15 to 74 ",
+          "pt": "que trabalham ou procuram trabalho ",
+          "en": "who work or are looking for work ",
+          "apoios": [
+            {
+              "origem": "glossario-atividade",
+              "campo": "excerto",
+              "literal": "The economically active population comprises employed and unemployed persons."
+            }
+          ]
+        },
+        {
+          "pt": "(a população ativa) ",
+          "en": "(the labour force) ",
           "apoios": [
             {
               "origem": "eurostat-tesem130-denominador",
               "campo": "excerto",
-              "literal": "aged 15-74"
+              "literal": "as a percentage of the active population"
             }
           ]
         },
         {
-          "pt": "está sem trabalho e procura emprego ativamente ",
-          "en": "is out of work and has been actively seeking employment ",
+          "pt": "está sem trabalho e procura emprego ativamente há pelo menos um ano?",
+          "en": "is out of work and has been actively seeking employment for at least a year?",
           "apoios": [
             {
               "origem": "glossario-longa-duracao",
               "campo": "excerto",
-              "literal": "people who are out of work and have been actively seeking employment"
-            }
-          ]
-        },
-        {
-          "pt": "há pelo menos um ano?",
-          "en": "for at least a year?",
-          "apoios": [
-            {
-              "origem": "glossario-longa-duracao",
-              "campo": "excerto",
-              "literal": "for at least a year"
+              "literal": "the number of people who are out of work and have been actively seeking employment for at least a year"
             }
           ]
         }
@@ -932,28 +1428,57 @@
     {
       "id": "risco-de-pobreza-ou-exclusao-2025",
       "origens": [
-        "glossario-arope"
+        "glossario-arope",
+        "eurostat-tipslc10-descricao",
+        "eurostat-glossario-mediana",
+        "eurostat-tipslc10-privacao"
       ],
       "pergunta": {
-        "pt": "Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?",
-        "en": "What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?"
+        "pt": "Que parte da população está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano (risco de pobreza); pelo menos sete de treze privações por falta de recursos (privação material e social grave); ou viver num agregado onde quase ninguém trabalha (intensidade de trabalho muito baixa), contando cada pessoa uma única vez?",
+        "en": "What share of the population is in at least one of three situations: income below 60 % of the income that leaves half of the country’s population above it and half below, the median (at risk of poverty); at least seven out of thirteen deprivations because of a lack of resources (severe material and social deprivation); or living in a household where almost nobody works (very low work intensity), counting each person only once?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). As três situações dizem-se pelo que são, quem entra em cada uma: o rendimento abaixo de 60 % do rendimento que deixa metade da população do país acima dele e metade abaixo, pela descrição do Eurostat e pelo glossário da mediana; as privações, pela descrição do Eurostat que a resposta selada ao pedido da linha traz; e o agregado onde quase ninguém trabalha, pelo glossário. Os termos ficam entre parênteses.",
       "pedacos": [
         {
-          "pt": "Que parte da população ",
-          "en": "What share of the population ",
+          "pt": "Que parte da população está em pelo menos uma de três situações: ",
+          "en": "What share of the population is in at least one of three situations: ",
           "apoios": [
             {
               "origem": "glossario-arope",
               "campo": "excerto",
-              "literal": "share of the total population"
+              "literal": "The AROPE rate is the share of the total population which is at risk of poverty or social exclusion."
+            },
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "the sum of persons who are either at risk of poverty, or severely materially and socially deprived or living in a household with a very low work intensity"
             }
           ]
         },
         {
-          "pt": "está em risco de pobreza, ",
-          "en": "is at risk of poverty, ",
+          "pt": "rendimento abaixo de 60 % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano ",
+          "en": "income below 60 % of the income that leaves half of the country’s population above it and half below, the median ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslc10-descricao",
+              "campo": "excerto",
+              "literal": "with an equalised disposable income below the risk-of-poverty threshold, which is set at 60 % of the national median equalised disposable income"
+            },
+            {
+              "origem": "eurostat-glossario-mediana",
+              "campo": "excerto",
+              "literal": "The median is the middle value in a group of numbers ranked in order of size."
+            },
+            {
+              "origem": "eurostat-glossario-mediana",
+              "campo": "excerto",
+              "literal": "so that 50% of the scores are above and 50% are below"
+            }
+          ]
+        },
+        {
+          "pt": "(risco de pobreza); ",
+          "en": "(at risk of poverty); ",
           "apoios": [
             {
               "origem": "glossario-arope",
@@ -963,8 +1488,19 @@
           ]
         },
         {
-          "pt": "em privação material e social grave ",
-          "en": "severely materially and socially deprived ",
+          "pt": "pelo menos sete de treze privações por falta de recursos ",
+          "en": "at least seven out of thirteen deprivations because of a lack of resources ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipslc10-privacao",
+              "campo": "excerto",
+              "literal": "having living conditions severely constrained by a lack of resources, they experience at least seven out of thirteen deprivation items"
+            }
+          ]
+        },
+        {
+          "pt": "(privação material e social grave); ",
+          "en": "(severe material and social deprivation); ",
           "apoios": [
             {
               "origem": "glossario-arope",
@@ -974,8 +1510,19 @@
           ]
         },
         {
-          "pt": "ou num agregado com intensidade de trabalho muito baixa, ",
-          "en": "or living in a household with very low work intensity, ",
+          "pt": "ou viver num agregado onde quase ninguém trabalha ",
+          "en": "or living in a household where almost nobody works ",
+          "apoios": [
+            {
+              "origem": "glossario-arope",
+              "campo": "excerto",
+              "literal": "(quasi-)jobless households"
+            }
+          ]
+        },
+        {
+          "pt": "(intensidade de trabalho muito baixa), ",
+          "en": "(very low work intensity), ",
           "apoios": [
             {
               "origem": "glossario-arope",
@@ -991,7 +1538,7 @@
             {
               "origem": "glossario-arope",
               "campo": "excerto",
-              "literal": "People are included only once even if they are in more than one of the situations mentioned above."
+              "literal": "People are included only once"
             }
           ]
         }
@@ -1048,13 +1595,14 @@
       "id": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
       "origens": [
         "glossario-sobrecarga",
-        "eurostat-tessi164-inquilinos"
+        "eurostat-tessi164-inquilinos",
+        "eurostat-glossario-rendimento-disponivel"
       ],
       "pergunta": {
-        "pt": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
-        "en": "What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?"
+        "pt": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
+        "en": "What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
       },
-      "mudanca": null,
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O rendimento disponível diz-se pelo que é, o que o agregado recebe depois de pagos os impostos e as contribuições sociais, pelo glossário do Eurostat, e «líquido de subsídios à habitação» como «descontados os apoios à habitação», pelo glossário da sobrecarga; o termo fica entre parênteses.",
       "pedacos": [
         {
           "pt": "Que parte dos inquilinos a preço de mercado ",
@@ -1079,8 +1627,8 @@
           ]
         },
         {
-          "pt": "líquido de subsídios à habitação, ",
-          "en": "net of housing allowances, ",
+          "pt": "descontados os apoios à habitação, ",
+          "en": "after deducting housing allowances, ",
           "apoios": [
             {
               "origem": "glossario-sobrecarga",
@@ -1090,19 +1638,46 @@
           ]
         },
         {
-          "pt": "leva mais de 40 % do rendimento disponível, ",
-          "en": "take more than 40 % of disposable income, ",
+          "pt": "leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, ",
+          "en": "take more than 40 % of what the household receives from work, investment and social benefits, ",
           "apoios": [
             {
               "origem": "glossario-sobrecarga",
               "campo": "excerto",
               "literal": "represent more than 40 % of disposable income"
+            },
+            {
+              "origem": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits"
             }
           ]
         },
         {
-          "pt": "também líquido de subsídios à habitação?",
-          "en": "also net of housing allowances?",
+          "pt": "depois de pagos os impostos e as contribuições sociais ",
+          "en": "after paying taxes and social contributions ",
+          "apoios": [
+            {
+              "origem": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+            }
+          ]
+        },
+        {
+          "pt": "(o rendimento disponível), ",
+          "en": "(disposable income), ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "of disposable income"
+            }
+          ]
+        },
+        {
+          "pt": "também descontados os apoios à habitação?",
+          "en": "also after deducting housing allowances?",
           "apoios": [
             {
               "origem": "glossario-sobrecarga",
@@ -1111,20 +1686,20 @@
             }
           ]
         }
-      ],
-      "nota_da_leitura": "O excerto da linha principal contém Tenure status: Tenant, rent at market price; a origem da pergunta cita a mesma etiqueta da resposta alojada."
+      ]
     },
     {
       "id": "sobrecarga-do-custo-da-habitacao-2025",
       "origens": [
         "glossario-sobrecarga",
-        "eurostat-tespm140-populacao"
+        "eurostat-tespm140-populacao",
+        "eurostat-glossario-rendimento-disponivel"
       ],
       "pergunta": {
-        "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de 40 % do rendimento disponível, também líquido de subsídios à habitação?",
-        "en": "What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than 40 % of disposable income, also net of housing allowances?"
+        "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
+        "en": "What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
       },
-      "mudanca": "Texto preservado. Acrescenta-se a metainformação do tespm140 à origem do glossário para prender a referência à população geral ao pedido concreto da linha.",
+      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O rendimento disponível diz-se pelo que é, o que o agregado recebe depois de pagos os impostos e as contribuições sociais, pelo glossário do Eurostat, e «líquido de subsídios à habitação» como «descontados os apoios à habitação», pelo glossário da sobrecarga; o termo fica entre parênteses.",
       "pedacos": [
         {
           "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, ",
@@ -1149,8 +1724,8 @@
           ]
         },
         {
-          "pt": "líquido de subsídios à habitação, ",
-          "en": "net of housing allowances, ",
+          "pt": "descontados os apoios à habitação, ",
+          "en": "after deducting housing allowances, ",
           "apoios": [
             {
               "origem": "glossario-sobrecarga",
@@ -1160,19 +1735,46 @@
           ]
         },
         {
-          "pt": "leva mais de 40 % do rendimento disponível, ",
-          "en": "take more than 40 % of disposable income, ",
+          "pt": "leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, ",
+          "en": "take more than 40 % of what the household receives from work, investment and social benefits, ",
           "apoios": [
             {
               "origem": "glossario-sobrecarga",
               "campo": "excerto",
               "literal": "represent more than 40 % of disposable income"
+            },
+            {
+              "origem": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "all monetary incomes received from any source by each member of a household are added up; these include income from work, investment and social benefits"
             }
           ]
         },
         {
-          "pt": "também líquido de subsídios à habitação?",
-          "en": "also net of housing allowances?",
+          "pt": "depois de pagos os impostos e as contribuições sociais ",
+          "en": "after paying taxes and social contributions ",
+          "apoios": [
+            {
+              "origem": "eurostat-glossario-rendimento-disponivel",
+              "campo": "excerto",
+              "literal": "taxes and social contributions that have been paid, are deducted from this sum"
+            }
+          ]
+        },
+        {
+          "pt": "(o rendimento disponível), ",
+          "en": "(disposable income), ",
+          "apoios": [
+            {
+              "origem": "glossario-sobrecarga",
+              "campo": "excerto",
+              "literal": "of disposable income"
+            }
+          ]
+        },
+        {
+          "pt": "também descontados os apoios à habitação?",
+          "en": "also after deducting housing allowances?",
           "apoios": [
             {
               "origem": "glossario-sobrecarga",
@@ -1181,8 +1783,7 @@
             }
           ]
         }
-      ],
-      "nota_da_leitura": "A descrição do tespm140 define a percentagem da população sem a restringir a qualquer regime de ocupação. «Todos os regimes» explicita essa população geral; a resposta não tem dimensão tenure. A pergunta dos inquilinos tem a seleção RENT_MKT, distinta e literal, na sua própria origem."
+      ]
     },
     {
       "id": "ipc-variacao-homologa",
@@ -1603,590 +2204,6 @@
               "origem": "eurostat-tesem060-descricao",
               "campo": "excerto",
               "literal": "employment rates of men and women"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "custo-unitario-do-trabalho-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-custo-do-trabalho",
-        "eurostat-tipslm10-descricao"
-      ],
-      "pergunta": {
-        "pt": "Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?",
-        "en": "How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?"
-      },
-      "mudanca": "UE2: a forma da página da União. O índice nominal do custo unitário do trabalho diz-se em palavras comuns (a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho), pela descrição do Eurostat que a leitura do cartão nacional já cita, e o termo da Comissão fica entre parênteses.",
-      "pedacos": [
-        {
-          "pt": "Quanto mudou em três anos ",
-          "en": "How much has ",
-          "apoios": [
-            {
-              "origem": "pdm-custo-do-trabalho",
-              "campo": "excerto",
-              "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "a remuneração por hora de trabalho",
-          "en": "pay per hour of work",
-          "apoios": [
-            {
-              "origem": "eurostat-tipslm10-descricao",
-              "campo": "excerto",
-              "literal": "labour cost is the ratio of compensation of employees (current prices) to hours worked by employees"
-            }
-          ]
-        },
-        {
-          "pt": ", aos preços de cada ano",
-          "en": ", at each year’s prices",
-          "apoios": [
-            {
-              "origem": "eurostat-tipslm10-descricao",
-              "campo": "excerto",
-              "literal": "compensation of employees (current prices)"
-            }
-          ]
-        },
-        {
-          "pt": ", a dividir pelo que se produz numa hora de trabalho ",
-          "en": ", divided by what an hour of work produces, changed over three years ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipslm10-descricao",
-              "campo": "excerto",
-              "literal": "the ratio of labour cost to labour productivity"
-            },
-            {
-              "origem": "eurostat-tipslm10-descricao",
-              "campo": "excerto",
-              "literal": "labour productivity is the ratio of gross domestic product"
-            },
-            {
-              "origem": "eurostat-tipslm10-descricao",
-              "campo": "excerto",
-              "literal": "to total hours worked"
-            },
-            {
-              "origem": "pdm-custo-do-trabalho",
-              "campo": "excerto",
-              "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "(o índice nominal do custo unitário do trabalho, por hora trabalhada)?",
-          "en": "(the nominal unit labour cost index, per hour worked)?",
-          "apoios": [
-            {
-              "origem": "pdm-custo-do-trabalho",
-              "campo": "excerto",
-              "literal": "nominal unit labour cost index, per hour worked"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "desempenho-das-exportacoes-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-exportacoes",
-        "eurostat-tipsbp60-descricao"
-      ],
-      "pergunta": {
-        "pt": "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?",
-        "en": "How much has the part that the country’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD changed over three years (export performance against advanced economies)?"
-      },
-      "mudanca": "UE2: a forma da página da União. As economias avançadas dizem-se pelo que a descrição do Eurostat conta (os países da OCDE e os países da União que não são da OCDE), com as palavras da leitura do cartão nacional, e o termo da Comissão fica entre parênteses.",
-      "pedacos": [
-        {
-          "pt": "Quanto mudou em três anos ",
-          "en": "How much has ",
-          "apoios": [
-            {
-              "origem": "pdm-exportacoes",
-              "campo": "excerto",
-              "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "a parte que as exportações de bens e serviços do país têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE ",
-          "en": "the part that the country’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD changed over three years ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipsbp60-descricao",
-              "campo": "excerto",
-              "literal": "shares of exports of goods and services of EU Member States in relation to total exports of goods and services of OECD countries and non-OECD EU Member States"
-            },
-            {
-              "origem": "pdm-exportacoes",
-              "campo": "excerto",
-              "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "(o desempenho das exportações face às economias avançadas)?",
-          "en": "(export performance against advanced economies)?",
-          "apoios": [
-            {
-              "origem": "pdm-exportacoes",
-              "campo": "excerto",
-              "literal": "export performance against advanced economies"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "divida-das-empresas-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-divida-das-empresas",
-        "eurostat-tipspd30",
-        "eurostat-tipspd30-descricao",
-        "eurostat-tipspc30-descricao"
-      ],
-      "pergunta": {
-        "pt": "Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do PIB?",
-        "en": "How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of GDP?"
-      },
-      "mudanca": "UE2: a forma da página da União. As sociedades não financeiras dizem-se como as empresas que não são financeiras, a dívida pelos instrumentos que a descrição do Eurostat conta (empréstimos e títulos de dívida), e «consolidada» pelo que a descrição do Eurostat do mesmo setor diz dos dados consolidados (sem as operações dentro do setor); o termo fica entre parênteses.",
-      "pedacos": [
-        {
-          "pt": "Quanto devem as empresas que não são financeiras",
-          "en": "How much do companies other than financial companies owe",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspd30",
-              "campo": "excerto",
-              "literal": "Non-financial corporations debt"
-            }
-          ]
-        },
-        {
-          "pt": ", em empréstimos e títulos de dívida",
-          "en": " in loans and debt securities",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspd30-descricao",
-              "campo": "excerto",
-              "literal": "Debt securities (F.3) and Loans (F.4)"
-            }
-          ]
-        },
-        {
-          "pt": ", sem contar o que devem umas às outras ",
-          "en": ", leaving out what they owe one another ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc30-descricao",
-              "campo": "excerto",
-              "literal": "Data are presented in consolidated terms (i.e. excluding intra-sector transactions)"
-            }
-          ]
-        },
-        {
-          "pt": "(a dívida consolidada das sociedades não financeiras)",
-          "en": "(the consolidated debt of non-financial corporations)",
-          "apoios": [
-            {
-              "origem": "pdm-divida-das-empresas",
-              "campo": "excerto",
-              "literal": "NFC consolidated debt"
-            },
-            {
-              "origem": "eurostat-tipspd30",
-              "campo": "excerto",
-              "literal": "Non-financial corporations debt, consolidated"
-            }
-          ]
-        },
-        {
-          "pt": ", em percentagem do PIB?",
-          "en": ", as a percentage of GDP?",
-          "apoios": [
-            {
-              "origem": "pdm-divida-das-empresas",
-              "campo": "excerto",
-              "literal": "in % of GDP"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "divida-das-familias-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-divida-das-familias",
-        "glossario-npish",
-        "eurostat-tipspd22-descricao",
-        "eurostat-tipspc40-descricao"
-      ],
-      "pergunta": {
-        "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do PIB?",
-        "en": "How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of GDP?"
-      },
-      "mudanca": "UE2: a forma da página da União. A dívida diz-se pelos instrumentos que a descrição do Eurostat conta (empréstimos e títulos de dívida), e «consolidada» pelo que a descrição do Eurostat do mesmo setor diz dos dados consolidados (sem as operações dentro do setor); o termo fica entre parênteses.",
-      "pedacos": [
-        {
-          "pt": "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço",
-          "en": "How much do households and non-profit institutions serving them owe",
-          "apoios": [
-            {
-              "origem": "pdm-divida-das-familias",
-              "campo": "excerto",
-              "literal": "household (incl. NPISH) consolidated debt"
-            },
-            {
-              "origem": "glossario-npish",
-              "campo": "excerto",
-              "literal": "Non-profit institutions serving households"
-            }
-          ]
-        },
-        {
-          "pt": ", em empréstimos e títulos de dívida",
-          "en": " in loans and debt securities",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspd22-descricao",
-              "campo": "excerto",
-              "literal": "Debt securities (F.3) and Loans (F.4)"
-            }
-          ]
-        },
-        {
-          "pt": ", sem contar o que devem umas às outras ",
-          "en": ", leaving out what they owe one another ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc40-descricao",
-              "campo": "excerto",
-              "literal": "transactions within the same sector are not taken into account"
-            }
-          ]
-        },
-        {
-          "pt": "(a dívida consolidada)",
-          "en": "(consolidated debt)",
-          "apoios": [
-            {
-              "origem": "pdm-divida-das-familias",
-              "campo": "excerto",
-              "literal": "consolidated debt"
-            }
-          ]
-        },
-        {
-          "pt": ", em percentagem do PIB?",
-          "en": ", as a percentage of GDP?",
-          "apoios": [
-            {
-              "origem": "pdm-divida-das-familias",
-              "campo": "excerto",
-              "literal": "in % of GDP"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "fluxo-de-credito-as-empresas-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-credito-as-empresas",
-        "glossario-fdi",
-        "eurostat-tipspd30",
-        "eurostat-tipspc30-descricao",
-        "eurostat-sec2010-registo-liquido"
-      ],
-      "pergunta": {
-        "pt": "Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?",
-        "en": "How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?"
-      },
-      "mudanca": "UE2: a forma da página da União. O fluxo de crédito consolidado diz-se com as palavras da leitura do cartão nacional (o crédito contraído num ano, descontado o que se reembolsou), pela descrição do Eurostat e pelo SEC 2010, e «consolidado» pelo que a descrição diz dos dados consolidados; o termo fica entre parênteses, e a dívida do período anterior diz-se no fim do ano anterior, como a descrição a diz.",
-      "pedacos": [
-        {
-          "pt": "Quanto crédito contraíram num ano ",
-          "en": "How much credit did ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc30-descricao",
-              "campo": "excerto",
-              "literal": "the net amount of liabilities incurred during the year"
-            }
-          ]
-        },
-        {
-          "pt": "as empresas que não são financeiras",
-          "en": "companies other than financial companies take on in a year",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspd30",
-              "campo": "excerto",
-              "literal": "Non-financial corporations debt"
-            },
-            {
-              "origem": "eurostat-tipspc30-descricao",
-              "campo": "excerto",
-              "literal": "non-financial corporations sector (S.11)"
-            },
-            {
-              "origem": "eurostat-tipspc30-descricao",
-              "campo": "excerto",
-              "literal": "the net amount of liabilities incurred during the year"
-            }
-          ]
-        },
-        {
-          "pt": ", descontado o que reembolsaram",
-          "en": ", minus what they repaid",
-          "apoios": [
-            {
-              "origem": "eurostat-sec2010-registo-liquido",
-              "campo": "excerto",
-              "literal": "incurrences of liabilities are shown net of repayments of liabilities"
-            }
-          ]
-        },
-        {
-          "pt": " e sem contar as operações entre elas ",
-          "en": " and leaving out operations among themselves ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc30-descricao",
-              "campo": "excerto",
-              "literal": "Data are presented in consolidated terms (i.e. excluding intra-sector transactions)"
-            }
-          ]
-        },
-        {
-          "pt": "(o fluxo de crédito consolidado das sociedades não financeiras)",
-          "en": "(the consolidated credit flow of non-financial corporations)",
-          "apoios": [
-            {
-              "origem": "pdm-credito-as-empresas",
-              "campo": "excerto",
-              "literal": "consolidated credit flow"
-            },
-            {
-              "origem": "eurostat-tipspd30",
-              "campo": "excerto",
-              "literal": "Non-financial corporations"
-            }
-          ]
-        },
-        {
-          "pt": ", em percentagem da dívida que tinham no fim do ano anterior",
-          "en": ", as a percentage of the debt they had at the end of the previous year",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc30-descricao",
-              "campo": "excerto",
-              "literal": "expressed as a percentage of the corresponding stocks (excluding FDI) at the end of the previous year"
-            }
-          ]
-        },
-        {
-          "pt": ", excluindo o investimento direto estrangeiro das duas parcelas?",
-          "en": ", excluding foreign direct investment from both amounts?",
-          "apoios": [
-            {
-              "origem": "pdm-credito-as-empresas",
-              "campo": "excerto",
-              "literal": "NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI)"
-            },
-            {
-              "origem": "glossario-fdi",
-              "campo": "excerto",
-              "literal": "Foreign direct investment, abbreviated as FDI"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "fluxo-de-credito-as-familias-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-credito-as-familias",
-        "glossario-npish",
-        "eurostat-tipspc40-descricao",
-        "eurostat-sec2010-registo-liquido"
-      ],
-      "pergunta": {
-        "pt": "Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?",
-        "en": "How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?"
-      },
-      "mudanca": "UE2: a forma da página da União. O fluxo de crédito consolidado diz-se com as palavras da leitura do cartão nacional (o crédito contraído num ano, descontado o que se reembolsou), pela descrição do Eurostat e pelo SEC 2010, e «consolidado» pelo que a descrição diz dos dados consolidados; o termo fica entre parênteses, e a dívida do período anterior diz-se no fim do ano anterior, como a descrição a diz.",
-      "pedacos": [
-        {
-          "pt": "Quanto crédito contraíram num ano ",
-          "en": "How much credit did ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc40-descricao",
-              "campo": "excerto",
-              "literal": "have incurred during the year"
-            }
-          ]
-        },
-        {
-          "pt": "as famílias e as instituições sem fim lucrativo ao seu serviço",
-          "en": "households and non-profit institutions serving them take on in a year",
-          "apoios": [
-            {
-              "origem": "pdm-credito-as-familias",
-              "campo": "excerto",
-              "literal": "household (incl. NPISH)"
-            },
-            {
-              "origem": "glossario-npish",
-              "campo": "excerto",
-              "literal": "Non-profit institutions serving households"
-            },
-            {
-              "origem": "eurostat-tipspc40-descricao",
-              "campo": "excerto",
-              "literal": "have incurred during the year"
-            }
-          ]
-        },
-        {
-          "pt": ", descontado o que reembolsaram",
-          "en": ", minus what they repaid",
-          "apoios": [
-            {
-              "origem": "eurostat-sec2010-registo-liquido",
-              "campo": "excerto",
-              "literal": "net of repayments of liabilities"
-            },
-            {
-              "origem": "eurostat-tipspc40-descricao",
-              "campo": "excerto",
-              "literal": "the net amount of liabilities"
-            }
-          ]
-        },
-        {
-          "pt": " e sem contar as operações entre elas ",
-          "en": " and leaving out operations among themselves ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc40-descricao",
-              "campo": "excerto",
-              "literal": "transactions within the same sector are not taken into account"
-            }
-          ]
-        },
-        {
-          "pt": "(o fluxo de crédito consolidado)",
-          "en": "(the consolidated credit flow)",
-          "apoios": [
-            {
-              "origem": "pdm-credito-as-familias",
-              "campo": "excerto",
-              "literal": "consolidated credit flow"
-            }
-          ]
-        },
-        {
-          "pt": ", em percentagem da dívida que tinham no fim do ano anterior?",
-          "en": ", as a percentage of the debt they had at the end of the previous year?",
-          "apoios": [
-            {
-              "origem": "eurostat-tipspc40-descricao",
-              "campo": "excerto",
-              "literal": "expressed in percentage of the related stocks at the end of the previous year"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "taxa-de-cambio-efectiva-real-2025",
-      "forma": "uniao",
-      "origens": [
-        "pdm-cambio-efectivo-real",
-        "eurostat-tipser10-descricao"
-      ],
-      "pergunta": {
-        "pt": "Quanto mudaram em três anos os preços do país face aos de outros 41 países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?",
-        "en": "How much have the country’s prices relative to those of 41 other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?"
-      },
-      "mudanca": "UE2: a forma da página da União. A taxa de câmbio efetiva real diz-se pelo que mede (os preços do país face aos de outros países, contando as taxas de câmbio e os preços no consumidor), pela descrição do Eurostat que a leitura do cartão nacional já cita, e os deflatores ficam entre parênteses, com o termo.",
-      "pedacos": [
-        {
-          "pt": "Quanto mudaram em três anos ",
-          "en": "How much have ",
-          "apoios": [
-            {
-              "origem": "pdm-cambio-efectivo-real",
-              "campo": "excerto",
-              "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "os preços do país face aos de outros 41 países industriais, ",
-          "en": "the country’s prices relative to those of 41 other industrial countries, ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipser10-descricao",
-              "campo": "excerto",
-              "literal": "price or cost competitiveness relative to its principal competitors"
-            },
-            {
-              "origem": "pdm-cambio-efectivo-real",
-              "campo": "excerto",
-              "literal": "relative to 41 other industrial countries"
-            }
-          ]
-        },
-        {
-          "pt": "contando as taxas de câmbio e os preços no consumidor de cada um ",
-          "en": "allowing for exchange rates and each country’s consumer prices, changed over three years ",
-          "apoios": [
-            {
-              "origem": "eurostat-tipser10-descricao",
-              "campo": "excerto",
-              "literal": "depend not only on exchange rate movements but also on cost and price trends"
-            },
-            {
-              "origem": "eurostat-tipser10-descricao",
-              "campo": "excerto",
-              "literal": "deflated by the consumer price indices"
-            },
-            {
-              "origem": "pdm-cambio-efectivo-real",
-              "campo": "excerto",
-              "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "(a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?",
-          "en": "(the real effective exchange rate, based on consumer price index deflators)?",
-          "apoios": [
-            {
-              "origem": "pdm-cambio-efectivo-real",
-              "campo": "excerto",
-              "literal": "real effective exchange rates"
-            },
-            {
-              "origem": "pdm-cambio-efectivo-real",
-              "campo": "excerto",
-              "literal": "based on HICP/CPI deflators"
             }
           ]
         }
