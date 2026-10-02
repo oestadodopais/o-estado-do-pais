@@ -433,3 +433,12 @@ planta('s1-mapa-com-resultado','scripts/gate-html.mjs',[
 planta('s1-correcoes-sem-a-frase','scripts/gate-html.mjs',[
  ['correcoes/index.html',r=>r.querySelector('[data-sugestoes-nas-correcoes]').remove()]
 ],[/S1 correções: a página tem 0 bloco\(s\) \[data-sugestoes-nas-correcoes\]/]);
+/* S1 (02.10.2026): a dispensa da sentinela de «Language» é a frase inteira da nota inglesa e mais nenhuma. A palavra
+   sozinha na mesma página volta a morder, e a nota com uma palavra mudada também, porque deixa de ser a frase dispensada. */
+planta('s1-voz-language-de-volta','scripts/check-voz.mjs',[
+ ['en/suggestions/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Language</p>')]
+],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/«Language»/]);
+planta('s1-voz-nota-mudada-com-language','scripts/check-voz.mjs',[
+ ['en/suggestions/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('ninety days','sixty days'));}]
+],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/]);
+
