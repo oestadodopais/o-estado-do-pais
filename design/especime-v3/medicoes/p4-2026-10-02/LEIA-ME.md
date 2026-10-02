@@ -111,6 +111,10 @@ Que estes achados são de antes do P4 é inferido: as classes e as folhas que os
 
 A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça `716af503`, a do commit deste relatório, com os ficheiros em `portoes/` (a cabeça ao lado dos códigos, `portoes/cabeca`): `build` 0, `verify` 1 e `typecheck` 0, lidos de `portoes/build.codigo`, `portoes/verify.codigo` e `portoes/typecheck.codigo`. O `verify` fechou no portão dos briefs, porque a medição `codigo_do_decisoes_em_vigor_num_intervalo_com_png` de `design/observatorio/medidas/BRIEF-P4.py` corre o `decisoes-em-vigor.py` da árvore de trabalho, que o item 6 corrigiu, e por isso dá 0 onde o §0 escreveu 1 e já não vê o «0x89» do seu conhecido-positivo (`portoes/verify.log`); o ficheiro das medições do brief é do lugar de direção, que o corrige para ler o guião na cabeça presa e volta a correr os portões, e as conferências do `verify` depois do portão dos briefs não correram nesta corrida.
 
+## Os portões, a segunda corrida (o lugar de direção, 02.10.2026)
+
+A corrida final do construtor, na cabeça `716af503`, deu `build` 0, `verify` 1 e `typecheck` 0 (`portoes/`): o `verify` fechou no portão dos briefs, porque a medição 5 de `design/observatorio/medidas/BRIEF-P4.py` corria o guião das decisões da árvore de trabalho, que o item 6 corrigiu, e lia 0 onde o §0 mediu 1. A correção é do lugar de direção e não do construtor (o commit `f5458f71`, P4-b): a medição passa a correr o guião tal como estava em `642e9d56`. A segunda corrida, pela tranca, na cabeça `f5458f71`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-b/` e a cabeça ao lado.
+
 ## O que ficou por fazer, e porquê
 
 - **As duas réguas a 1.** A régua das correções de UX do bloco A (10 células) e a matriz (3) ficam vermelhas pelos achados acima. Fechá-las pede mudar a forma da primeira página e da página do concelho, ou levar os endereços antigos de volta à região, e isso é um bloco que o lugar de direção decide; as células não se afrouxaram.
