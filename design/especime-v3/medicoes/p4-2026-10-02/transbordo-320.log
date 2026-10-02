@@ -1,0 +1,18 @@
+/ transbordo 2 elementos para lá da janela 12
+    span.claim.claim-com-chip.claim-com-provisorio right=321.9 «1 835 euros por mês (dado provisório)fon»
+    a.src-chip right=321.9 «fonte · INE»
+    span.src-chip-texto right=321.9 «fonte»
+    span.vh right=321.9 «· INE»
+    span. right=350.5 «INE»
+    span. right=332.1 «INE»
+    span. right=375.2 «Município de Évora»
+    span. right=350.9 «Município de Évora»
+/en/ transbordo 15 elementos para lá da janela 15
+    span. right=324.0 «Eurostat»
+    span.claim.claim-com-chip.claim-com-provisorio right=334.6 «1 835 euros a month (provisional data)so»
+    a.src-chip right=334.6 «source · INE»
+    span.src-chip-texto right=334.6 «source»
+    span.vh right=334.6 «· INE»
+    span. right=363.3 «INE»
+    span. right=344.7 «INE»
+    span. right=323.2 «INE»
