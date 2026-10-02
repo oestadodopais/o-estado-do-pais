@@ -1,0 +1,84 @@
+[
+  {
+    "nome": "ue2-portao-conta-da-tabela-errada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE2: a contagem dos países da tabela dos nomes diz «28» e a tabela tem 27"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "015a30f1773a225e28871f957fac517af0ca50bf0c8948e56b5429a26ee864bb",
+        "reposto": "015a30f1773a225e28871f957fac517af0ca50bf0c8948e56b5429a26ee864bb"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-portao-valor-escondido-trocado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE1: o ponto «EL» da série «divida-publica-2025-paises» foi renderizado como «146,2»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/european-union/index.html",
+        "antes": "2af1821d0c023f0a74fe8cb276e257ac40b644856218d721bddd91344b05c2b3",
+        "reposto": "2af1821d0c023f0a74fe8cb276e257ac40b644856218d721bddd91344b05c2b3"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-portao-nome-da-lista-a-mao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE1: o nome do país «MT» foi renderizado como «Malta e Gozo»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "015a30f1773a225e28871f957fac517af0ca50bf0c8948e56b5429a26ee864bb",
+        "reposto": "015a30f1773a225e28871f957fac517af0ca50bf0c8948e56b5429a26ee864bb"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-b-lugar-pergunta-antiga-na-pagina-da-uniao",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "8\\.4 · definições de painel fora da declaração: \\d+, acima do teto 0",
+      "custo-unitario-do-trabalho-2025»: a página diz «Quanto mudou em três anos o índice nominal",
+      "a página rende 1 bloco\\(s\\) de origem e a declaração diz 2"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "015a30f1773a225e28871f957fac517af0ca50bf0c8948e56b5429a26ee864bb",
+        "reposto": "015a30f1773a225e28871f957fac517af0ca50bf0c8948e56b5429a26ee864bb"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-b-cartao-pergunta-antiga-numa-pagina-de-assunto",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K6 · \\/emprego\\/ · taxa-de-desemprego-mip-2025: a frase do cartão diz «Que parte da população ativa dos 15 aos 74"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "c8d68f3beed7dabda1b25fa4299e5c1780087d2bbdd1eb0eaa0f191762f7ffda",
+        "reposto": "c8d68f3beed7dabda1b25fa4299e5c1780087d2bbdd1eb0eaa0f191762f7ffda"
+      }
+    ]
+  }
+]
