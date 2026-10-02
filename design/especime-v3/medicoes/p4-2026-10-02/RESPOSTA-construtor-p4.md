@@ -11,6 +11,6 @@
 - **5, `CHAVES-EN.md`.** 8 de 8 cadeias iguais às de hoje; a linha do concelho já era a de hoje, e a que estava para trás era a da página da União.
 - **6, as decisões em vigor.** Código 0 no intervalo do UE2 (era 1), 53 binários saltados e ditos; no intervalo do P4, 70 decisões em 177 ficheiros de texto, 37 binários saltados.
 - **Capturas**: 37, sobre a construção de `ccdd9fa2`, com 0 problemas.
-- **Portões**: a corrida final corre pela tranca na cabeça do commit desta resposta, e os códigos entram no commit seguinte, em `portoes/`.
+- **Portões**: na cabeça `716af503`, pela tranca, `build` 0, `verify` 1 e `typecheck` 0 (`portoes/`). O `verify` fechou no portão dos briefs: a medição do guião das decisões no `BRIEF-P4.py` corre o guião da árvore de trabalho, que o item 6 corrigiu, e dá 0 onde o §0 diz 1; é o ficheiro do lugar de direção, que o corrige e volta a correr os portões.
 - **Por fazer**: as duas réguas a 1, que pedem um bloco de forma decidido pelo lugar de direção; a leitura a frio; o rebase sobre `main` (`62ed13c6`, sem ficheiros em comum); a emenda à decisão do menu de cinco.
 - **Custo**: 1 344 535 símbolos e 11 788 segundos até ao relatório, das duas leituras em ficheiro.

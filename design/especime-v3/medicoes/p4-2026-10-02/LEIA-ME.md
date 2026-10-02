@@ -109,7 +109,7 @@ Que estes achados são de antes do P4 é inferido: as classes e as folhas que os
 
 ## Os portões
 
-A corrida final corre pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça do commit deste relatório, e os códigos, lidos dos ficheiros, entram no commit seguinte, em `portoes/`, com esta secção posta em dia.
+A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça `716af503`, a do commit deste relatório, com os ficheiros em `portoes/` (a cabeça ao lado dos códigos, `portoes/cabeca`): `build` 0, `verify` 1 e `typecheck` 0, lidos de `portoes/build.codigo`, `portoes/verify.codigo` e `portoes/typecheck.codigo`. O `verify` fechou no portão dos briefs, porque a medição `codigo_do_decisoes_em_vigor_num_intervalo_com_png` de `design/observatorio/medidas/BRIEF-P4.py` corre o `decisoes-em-vigor.py` da árvore de trabalho, que o item 6 corrigiu, e por isso dá 0 onde o §0 escreveu 1 e já não vê o «0x89» do seu conhecido-positivo (`portoes/verify.log`); o ficheiro das medições do brief é do lugar de direção, que o corrige para ler o guião na cabeça presa e volta a correr os portões, e as conferências do `verify` depois do portão dos briefs não correram nesta corrida.
 
 ## O que ficou por fazer, e porquê
 
