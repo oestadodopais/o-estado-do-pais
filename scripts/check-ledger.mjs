@@ -508,7 +508,8 @@ if (MARCADORES_RECUSADOS.length) {
  * compara-se só com o literal do excerto que é o próprio número, o que vem depois dos dois pontos no fim de um
  * excerto composto, e os números agrupados à inglesa leem-se. Desde o bloco P4 (02.10.2026) as linhas do INE leem-se
  * pela forma que o INE publica (o campo «ind_string»), com a regra escrita para a marca de provisório, e a linha da
- * célula diz quantas linhas lê e quantas deixa por ler. A célula e as plantas vivem em
+ * célula diz quantas linhas lê e quantas deixa por ler. Desde a passagem P4-c um registo da resposta do INE sem a forma
+ * publicada é um erro, contado numa linha própria, e as linhas do INE sem o registo dizem-se pelo nome. A célula e as plantas vivem em
  * `scripts/casas-decimais.mjs`; as plantas correm aqui, antes de a célula dizer zero, sobre cópias em memória das
  * linhas reais, e uma que não morda (ou um controlo que morda) fecha a construção como um caso real. */
 {
@@ -524,6 +525,15 @@ if (MARCADORES_RECUSADOS.length) {
         `${casas.contas.por_ler} por ler (sem nenhum dos dois), ` +
         `${casas.contas.com_derivacao} derivada(s) fora da regra · ${plantasDasCasas.length} planta(s), ` +
         `${plantasDasCasas.filter((p) => p.certo).length} certa(s)`,
+    ),
+  );
+  /* A P4-c (02.10.2026, achado 4 da leitura a frio): um registo da resposta do INE sem a forma publicada é um erro, e
+     conta-se aqui; as linhas do INE cujo excerto não é o registo seguem o caminho geral e dizem-se pelo nome. */
+  console.log(cinza(`  casas decimais do excerto · linhas do INE sem a forma publicada: ${casas.contas.ine_sem_a_forma_publicada}`));
+  console.log(
+    cinza(
+      `  casas decimais do excerto · ${casas.contas.ine_sem_o_registo_da_resposta} linha(s) do INE com o excerto sem o registo da resposta, ` +
+        `pelo caminho geral: ${casas.ineSemORegisto.join(', ') || 'nenhuma'}`,
     ),
   );
   if (cegas.length || casas.erros.length) {

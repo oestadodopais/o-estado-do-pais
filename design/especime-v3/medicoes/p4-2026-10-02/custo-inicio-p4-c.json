@@ -1,0 +1,7 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), na passagem P4-c, escrita à mão pelo construtor, e a hora do relógio da máquina na primeira chamada da passagem",
+  "simbolos_restantes_no_inicio": 13579748,
+  "lido_no_inicio": "na linha «total_tokens left» que acompanha a mensagem do lugar de direção que abre a passagem P4-c, antes de qualquer ferramenta da passagem",
+  "inicio_utc": "2026-10-02T21:29:16Z",
+  "inicio_origem": "date -u, a primeira chamada ao relógio da passagem"
+}

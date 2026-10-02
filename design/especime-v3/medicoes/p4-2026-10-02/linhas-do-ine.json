@@ -1,0 +1,92 @@
+{
+  "contas": {
+    "linhas_do_livro": 3009,
+    "do_ine": 1261,
+    "derivadas": 0,
+    "sem_excerto": 0,
+    "nao_numericas": 0,
+    "com_a_forma_publicada": 1250,
+    "sem_a_forma_publicada": 11,
+    "sem_a_forma_mas_com_o_literal_do_fim": 0,
+    "sem_a_forma_e_sem_literal": 11
+  },
+  "sem_a_forma_publicada": [
+    {
+      "id": "alentejo-central-poder-de-compra-2023",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "93,86",
+      "inicio_do_excerto": "valor 93.86"
+    },
+    {
+      "id": "divida-publica-2024-notificacao-ine-2026-09",
+      "caminho": "/xportal/xmain",
+      "literal_do_fim": null,
+      "valor": "93,0",
+      "inicio_do_excerto": "A dívida bruta das AP terá diminuído para 89,2% do PIB (93,0% no ano anterior)."
+    },
+    {
+      "id": "divida-publica-2025-notificacao-ine-2026-09",
+      "caminho": "/xportal/xmain",
+      "literal_do_fim": null,
+      "valor": "89,2",
+      "inicio_do_excerto": "A dívida bruta das AP terá diminuído para 89,2% do PIB (93,0% no ano anterior)."
+    },
+    {
+      "id": "evora-concentracao-vab4-2024",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "21,5",
+      "inicio_do_excerto": "valor 21.5"
+    },
+    {
+      "id": "evora-empresas-2024",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "7 907",
+      "inicio_do_excerto": "valor 7907"
+    },
+    {
+      "id": "evora-poder-de-compra-2023",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "111,47",
+      "inicio_do_excerto": "valor 111.47"
+    },
+    {
+      "id": "evora-populacao-2021",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "55 711",
+      "inicio_do_excerto": "Dados[\"2021\"], valor 55711"
+    },
+    {
+      "id": "evora-populacao-2025",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "58 567",
+      "inicio_do_excerto": "Dados[\"2025\"], geocod 1C40705, valor 58567"
+    },
+    {
+      "id": "evora-vab-empresarial-2024",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "576 491 544",
+      "inicio_do_excerto": "valor 576491544"
+    },
+    {
+      "id": "portugal-concentracao-vab4-2024",
+      "caminho": "/ine/json_indicador/pindica.jsp",
+      "literal_do_fim": null,
+      "valor": "2,56",
+      "inicio_do_excerto": "valor 2.56"
+    },
+    {
+      "id": "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09",
+      "caminho": "/xportal/xmain",
+      "literal_do_fim": null,
+      "valor": "0,7",
+      "inicio_do_excerto": "De acordo com os resultados provisórios obtidos neste exercício, as Administrações Pública"
+    }
+  ]
+}

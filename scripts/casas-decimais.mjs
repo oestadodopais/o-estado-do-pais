@@ -51,6 +51,17 @@
  * marca da fonte e não o número (o recibo da linha mostra-a pela nota da fonte). Uma forma com um sinal que o excerto
  * não declara, ou um excerto com mais de um «ind_string», não se lê como número e fecha a construção: a célula não
  * adivinha qual é o número.
+ *
+ * UM REGISTO DA RESPOSTA DO INE SEM A FORMA PUBLICADA É UM ERRO (passagem P4-c, 02.10.2026; achado 4 da leitura a frio
+ * do P4, `design/especime-v3/critica/LEITURA-P4-2026-10-02.md`). O leitor tirou o «ind_string» do excerto de uma linha
+ * do INE com uma casa a menos («86,6» contra «86,60»), e a linha passou de errada a «por ler», sem erro nenhum: a
+ * cobertura podia descer sem ninguém ver. Um excerto que cita o registo da resposta do INE (os campos «"geocod" :» e
+ * «"valor" :», a forma em que o motor os copia) traz sempre o «ind_string» ao lado (medido a 02.10.2026: as 1 250 linhas
+ * com a forma publicada têm os dois campos, e nenhum registo sem ela); um registo sem ela é um excerto partido, e fecha
+ * a construção, contado («linhas do INE sem a forma publicada»). As linhas do INE cujo excerto não é o registo da
+ * resposta (11 a 02.10.2026: oito da mesma API com o excerto escrito em prosa, «valor 111.47», e três das páginas do
+ * portal, com o texto do comunicado) não trazem forma nenhuma para ler: seguem o caminho geral, e a célula conta-as e
+ * diz-lhes os nomes, em vez de as deixar cair caladas em «por ler».
  */
 
 /** Normaliza um número exato: sem zeros à esquerda na parte inteira, sem zeros à direita nas casas. */
@@ -110,6 +121,16 @@ export function formaPublicadaDoINE(linha) {
   return { ...n, literal: formas[0], sinal };
 }
 
+/** Se a fonte da linha é o INE (`www.ine.pt`). @param {Record<string, any>} linha */
+function eDoINE(linha) {
+  try { return new URL(String(linha.source_url ?? '')).host === ANFITRIAO_DO_INE; } catch { return false; }
+}
+
+/** Se o excerto cita o registo da resposta do INE, pelos campos «"geocod" :» e «"valor" :». @param {string} excerto */
+export function citaORegistoDoINE(excerto) {
+  return /"geocod"\s*:/.test(excerto) && /"valor"\s*:/.test(excerto);
+}
+
 /** A comparação do valor de uma linha com o número que a fonte escreve, e a queixa, ou `null` se batem. */
 function queixaDasCasas(l, v, fonte, onde) {
   if (fonte.n === v.n && fonte.casas > v.casas) {
@@ -135,8 +156,11 @@ export function conferirCasasDecimais(linhas) {
   const contas = {
     linhas: 0, com_derivacao: 0, sem_excerto: 0, nao_numericas: 0,
     com_literal_do_valor: 0, pela_forma_publicada_do_ine: 0, com_sinal_da_fonte: 0,
+    ine_sem_a_forma_publicada: 0, ine_sem_o_registo_da_resposta: 0,
     sem_literal_do_valor: 0, lidas: 0, por_ler: 0,
   };
+  /** As linhas do INE cujo excerto não é o registo da resposta: seguem o caminho geral, e ditas pelo nome. */
+  const ineSemORegisto = [];
   for (const l of linhas) {
     contas.linhas++;
     if (l.derivation) { contas.com_derivacao++; continue; }
@@ -153,6 +177,15 @@ export function conferirCasasDecimais(linhas) {
       if (q) erros.push(q);
       continue;
     }
+    if (eDoINE(l)) {
+      if (citaORegistoDoINE(excerto)) {
+        contas.ine_sem_a_forma_publicada++;
+        erros.push(`D · ${l.id}: o excerto cita o registo da resposta do INE («geocod», «valor») sem a forma que o INE publica («ind_string»), e sem ela a célula não lê as casas decimais do valor. Um registo da resposta traz sempre a forma publicada: o excerto corrige-se no motor.`);
+        continue;
+      }
+      contas.ine_sem_o_registo_da_resposta++;
+      ineSemORegisto.push(l.id);
+    }
     const fim = literalDoValor(excerto);
     if (!fim) { contas.sem_literal_do_valor++; continue; }
     contas.com_literal_do_valor++;
@@ -161,7 +194,7 @@ export function conferirCasasDecimais(linhas) {
   }
   contas.lidas = contas.com_literal_do_valor + contas.pela_forma_publicada_do_ine;
   contas.por_ler = contas.sem_literal_do_valor;
-  return { erros, contas };
+  return { erros, contas, ineSemORegisto };
 }
 
 /**
@@ -196,8 +229,18 @@ export function linhasDasPlantas(linhas) {
       linha: copia('abrantes-ganho-medio-mensal-2024', (l) => ({ ...l, value: '1 383,6' })), morde: true },
     { nome: 'a linha provisória do INE com um sinal que o excerto não declara, «1 835 x» com o sinal «&»',
       linha: copia('remuneracao-bruta-mensal-media', (l) => ({ ...l, excerpt: String(l.excerpt).replace('"ind_string" : "1 835 &"', '"ind_string" : "1 835 x"') })), morde: true },
-    { nome: 'a linha provisória do INE arredondada, «1 84» contra «1 835 &»',
-      linha: copia('remuneracao-bruta-mensal-media', (l) => ({ ...l, value: '1 84' })), morde: true },
+    /* A PROVISÓRIA ARREDONDADA DE VERDADE (passagem P4-c, achado 9 da leitura a frio): a planta escrevia «1 84», que a
+       leitura do valor lê como 184, e provava a recusa de outro número. Um arredondamento de 1 835 às dezenas é 1 840. */
+    { nome: 'a linha provisória do INE arredondada às dezenas, «1 840» contra «1 835 &»',
+      linha: copia('remuneracao-bruta-mensal-media', (l) => ({ ...l, value: '1 840' })), morde: true },
+    /* O REGISTO SEM A FORMA PUBLICADA (passagem P4-c, achado 4): o caso do leitor, a casa a menos com o campo tirado, e o
+       mesmo registo com o valor certo, que tem de morder na mesma, porque sem a forma a célula não lê as casas. */
+    { nome: 'uma linha do INE com o «ind_string» tirado do excerto e uma casa a menos, «86,6» (o caso do leitor)',
+      linha: copia('alcacer-do-sal-poder-de-compra-2023', (l) => ({ ...l, value: '86,6', excerpt: String(l.excerpt).replace(/"ind_string"\s*:\s*"[^"]*",\s*/, '') })), morde: true },
+    { nome: 'uma linha do INE com o «ind_string» tirado do excerto e o valor certo, «86,60»',
+      linha: copia('alcacer-do-sal-poder-de-compra-2023', (l) => ({ ...l, excerpt: String(l.excerpt).replace(/"ind_string"\s*:\s*"[^"]*",\s*/, '') })), morde: true },
+    { nome: 'o controlo: uma linha do INE com o excerto em prosa, que não é o registo da resposta, como está («valor 111.47»)',
+      linha: copia('evora-poder-de-compra-2023', (l) => l), morde: false },
     { nome: 'o controlo: a linha provisória do INE como está, «1 835» contra «1 835 &» com o sinal declarado',
       linha: copia('remuneracao-bruta-mensal-media', (l) => l), morde: false },
     { nome: 'o controlo: uma linha do INE como está, «1 422,4»',
