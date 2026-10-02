@@ -8,11 +8,12 @@
  *   node design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2.mjs <pasta da construção de base>
  */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 
-import { FIGURAS, DEFINICOES_DAS_MEDIDAS, textoDaDefinicao } from '../../../../src/data/figuras.mjs';
+import { FIGURAS, DEFINICOES_DAS_MEDIDAS, textoDaDefinicao, conferirOrigensDeclaradas } from '../../../../src/data/figuras.mjs';
 import { faixasDaPaginaDaUniao } from '../../../../src/lib/faixa-da-uniao.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao } from '../../../../scripts/series-do-portao.mjs';
 import { conferirSeccaoDosPaises, plantasDaSeccao, plantaDaTabela, ordemEsperada } from '../../../../tests/uniao/paises.mjs';
@@ -40,6 +41,26 @@ const doBrief = (nome) => brief.medidas.find((m) => m.nome === nome)?.valor ?? n
 const medidas = [];
 const medida = (nome, valor, comando, o_que, encontrado) =>
   medidas.push({ nome, valor, comando, conhecido_positivo: { o_que, encontrado: Boolean(encontrado) } });
+
+/* ------------------------------------------------------------------ o §0 do brief, reproduzido */
+{
+  const tmp = path.join(os.tmpdir(), `brief-ue2-${process.pid}.json`);
+  execFileSync('python3', ['design/observatorio/medidas/BRIEF-UE2.py'], { env: { ...process.env, OEDP_MEDIDAS_JSON: tmp }, stdio: 'ignore' });
+  const hoje = JSON.parse(fs.readFileSync(tmp, 'utf8'));
+  fs.rmSync(tmp);
+  const valores = Object.fromEntries(hoje.medidas.map((m) => [m.nome, m.valor]));
+  medida('secao_0_do_brief_reproduzida', valores, 'python3 design/observatorio/medidas/BRIEF-UE2.py, com OEDP_MEDIDAS_JSON num ficheiro temporário, comparado com BRIEF-UE2.json',
+    'os valores de hoje são os do ficheiro do brief, e cada conhecido-positivo do guião foi encontrado',
+    JSON.stringify(hoje.medidas) === JSON.stringify(brief.medidas) && hoje.medidas.every((m) => m.conhecido_positivo.encontrado));
+  /* O MESMO DETETOR DO §0 SOBRE O FICHEIRO DE HOJE: conta as ocorrências em todo o `figuras.mjs` (comentários e
+     excertos incluídos), e por isso sobe com as formas, que escrevem o termo entre parênteses; e não conta
+     «consolidada». A medida que diz se um termo ficou sem explicação é a das definições rendidas, abaixo. */
+  const fig = fs.readFileSync('src/data/figuras.mjs', 'utf8');
+  const raizes = ['nominal unit labour cost', 'deflat', 'economias avançadas', 'advanced economies', 'consolidado', 'consolidated'];
+  const n = raizes.reduce((t, r) => t + (fig.match(new RegExp(r, 'gi')) ?? []).length, 0);
+  medida('termos_do_brief_no_ficheiro_das_figuras_hoje', n, 'o detetor do §0 (as seis raízes do guião do brief) sobre src/data/figuras.mjs da cabeça',
+    'o detetor acha «deflat» no ficheiro', /deflat/i.test(fig));
+}
 
 /* ------------------------------------------------------------------ o repositório */
 const series = lerSeriesDoPortao();
@@ -79,13 +100,35 @@ const k16 = auditarPerguntas();
     'a auditoria em vigor passa e as plantas mordem', k16.erros.length === 0 && mordidas.length === plantas.length);
 }
 
+/* A GUARDA DAS ORIGENS DA FORMA (`conferirOrigensDeclaradas`, em src/data/figuras.mjs): uma forma que perca uma
+   origem da pergunta do cartão, e uma forma que cite uma origem que não existe, fecham a construção. */
+{
+  const d = structuredClone(/** @type {any} */ (DEFINICOES_DAS_MEDIDAS)['divida-das-empresas-2025']);
+  const semUma = { ...d, uniao: { ...d.uniao, origens: d.uniao.origens.filter((o) => o !== 'eurostat-tipspd30') } };
+  const inventada = { ...d, uniao: { ...d.uniao, origens: [...d.uniao.origens, 'origem-que-nao-existe'] } };
+  const morde = (entrada, texto) => { try { conferirOrigensDeclaradas('planta', { x: entrada }); return false; } catch (e) { return String(e.message).includes(texto); } };
+  const plantas = [morde(semUma, 'não cita eurostat-tipspd30'), morde(inventada, 'origem-que-nao-existe')];
+  let limpa = true;
+  try { conferirOrigensDeclaradas('controlo', { x: d }); } catch { limpa = false; }
+  medida('guarda_das_origens_da_forma', { plantas: plantas.length, a_morder: plantas.filter(Boolean).length, controlo_passa: limpa },
+    'conferirOrigensDeclaradas() de src/data/figuras.mjs sobre cópias da definição da dívida das empresas',
+    'a definição em vigor passa e as duas plantas mordem', limpa && plantas.every(Boolean));
+}
+
 /* ------------------------------------------------------------------ as duas construções */
 const raiz = (d, lang) => parse(ler(d, PAGINA[lang]));
 const porEdicao = (f) => Object.fromEntries(LANGS.map((l) => [l, f(l)]));
 const rBase = porEdicao((l) => raiz(BASE, l));
 const rFinal = porEdicao((l) => raiz(FINAL, l));
-medida('construcoes_medidas', { base: vBase.commit, final: vFinal.commit, cabeca_ao_medir: cabeca },
-  'o version.json de cada construção', 'a construção final é a da cabeça atual', vFinal.commit === cabeca);
+/* O QUE A CONSTRUÇÃO LÊ É O DA CABEÇA: os commits depois dela (o relatório, as medidas, as plantas de `tests/`, os
+   códigos dos portões) não mudam nada do que o `dist/` medido é. `tests/` fica de fora porque nenhum ficheiro dele
+   entra na construção: são as células e as plantas que a leem. */
+const CODIGO = ['src', 'scripts', 'public', 'ledger', 'registos', 'studies-src', 'mapa', 'package.json', 'astro.config.mjs', 'site.config.mjs', 'vercel.json'];
+const mudadoDesde = execFileSync('git', ['diff', '--name-only', vFinal.commit, 'HEAD', '--', ...CODIGO], { encoding: 'utf8' }).split('\n').filter(Boolean);
+medida('construcoes_medidas', { base: vBase.commit, final: vFinal.commit, cabeca_ao_medir: cabeca, codigo_mudado_desde_a_construcao: mudadoDesde },
+  `o version.json de cada construção, e git diff --name-only <final> HEAD -- ${CODIGO.join(' ')}`,
+  'a construção final é antepassada da cabeça, e o que a construção lê não mudou desde ela',
+  execFileSync('git', ['merge-base', '--is-ancestor', vFinal.commit, 'HEAD']).length === 0 && mudadoDesde.length === 0);
 
 medida('faixas_dos_paises_por_edicao', { antes: porEdicao((l) => rBase[l].querySelectorAll('[data-faixa-paises]').length), depois: porEdicao((l) => rFinal[l].querySelectorAll('[data-faixa-paises]').length) },
   'os [data-faixa-paises] da página da União, nas duas construções', 'o mesmo leitor vê os 21 cartões da fila nas duas construções',
@@ -214,6 +257,15 @@ if (fs.existsSync(path.join(P, 'cabeca'))) {
   medida('portoes_a_zero', { cabeca: c.slice(0, 8), build: cod('build'), verify: cod('verify'), typecheck: cod('typecheck'), segundos: { build: seg('build'), verify: seg('verify'), typecheck: seg('typecheck') }, cabeca_igual_no_fim: c === fs.readFileSync(path.join(P, 'cabeca.fim'), 'utf8').trim() },
     'sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ue2-2026-10-02/portoes; cada código lido de portoes/<portão>.codigo',
     'o registo do build diz a F20 da secção dos países', fs.readFileSync(path.join(P, 'build.log'), 'utf8').includes('secção dos países (F20)'));
+}
+
+/* As decisões citadas nos ficheiros que o bloco tocou, da última linha do guião das decisões em vigor. */
+{
+  const txt = fs.existsSync(path.join(PASTA, 'decisoes-em-vigor-depois.txt')) ? fs.readFileSync(path.join(PASTA, 'decisoes-em-vigor-depois.txt'), 'utf8') : '';
+  const m = /(\d+) decisão\(ões\) citada\(s\) em (\d+) ficheiro\(s\)/.exec(txt);
+  medida('decisoes_citadas_nos_ficheiros_tocados', m ? { decisoes: Number(m[1]), ficheiros: Number(m[2]) } : null,
+    'xargs python3 scripts/leituras/decisoes-em-vigor.py < ficheiros-tocados.txt > decisoes-em-vigor-depois.txt',
+    'a §1.140 está entre as citadas', txt.includes('§1.140 ·'));
 }
 
 /* O custo, das duas leituras do contador, quando a segunda já está escrita. */
