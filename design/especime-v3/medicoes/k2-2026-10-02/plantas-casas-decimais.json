@@ -1,0 +1,27 @@
+{
+  "o_que": "as plantas do portão inteiro da célula das casas decimais (ledger:check sobre uma cópia estragada do livro)",
+  "plantas": [
+    {
+      "nome": "a linha do crédito malparado arredondada, «2» onde o excerto composto acaba em «2.1 p»",
+      "linha": "credito-malparado-2025",
+      "codigo": 1,
+      "mordida": "D2 · credito-malparado-2025: o excerto composto acaba em «2\\.1 p»",
+      "queixa": "✗ D2 · credito-malparado-2025: o excerto composto acaba em «2.1 p» e o valor da linha é «2»: o literal do fim de um excerto composto é o valor, com as mesmas casas.",
+      "mordeu": true,
+      "resumo_antes": "dce2decf5063ff5801321a9a4b3e3bdf6a782f6a8520b9a6dc7e0c77a83a12b0",
+      "resumo_depois": "dce2decf5063ff5801321a9a4b3e3bdf6a782f6a8520b9a6dc7e0c77a83a12b0",
+      "linha_real_intacta": true
+    },
+    {
+      "nome": "a retribuição mínima sem os cêntimos do diploma, «920» onde o excerto escreve «€ 920,00»",
+      "linha": "retribuicao-minima-mensal-garantida-continente-2026",
+      "codigo": 1,
+      "mordida": "D1 · retribuicao-minima-mensal-garantida-continente-2026: o valor «920» escreve 0 casa\\(s\\)",
+      "queixa": "✗ D1 · retribuicao-minima-mensal-garantida-continente-2026: o valor «920» escreve 0 casa(s) decimal(is) e o excerto escreve o mesmo número com 2 («920,00»). A precisão é a da fonte (§1.127, decisão 3): corrige-se pelo mecanismo, com uma entrada «correcao» selada e o contador recontado.",
+      "mordeu": true,
+      "resumo_antes": "d1db001e094b83f8d061e59d20af1a0f2325b718d3db4b56419865f5c4fbe17d",
+      "resumo_depois": "d1db001e094b83f8d061e59d20af1a0f2325b718d3db4b56419865f5c4fbe17d",
+      "linha_real_intacta": true
+    }
+  ]
+}

@@ -147,6 +147,12 @@
       "kind": "atualizacao",
       "old_value": "3",
       "new_value": "5"
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "atualizacao",
+      "old_value": "5",
+      "new_value": "7"
     }
   ],
   "estudos-publicados": [
@@ -163,6 +169,22 @@
       "kind": "atualizacao",
       "old_value": "18",
       "new_value": "25"
+    }
+  ],
+  "jovens-nem-2025": [
+    {
+      "date": "2026-10-02",
+      "kind": "correcao",
+      "old_value": "8",
+      "new_value": "8,0"
+    }
+  ],
+  "fluxo-de-credito-as-empresas-2025": [
+    {
+      "date": "2026-10-02",
+      "kind": "correcao",
+      "old_value": "3",
+      "new_value": "3,0"
     }
   ]
 }

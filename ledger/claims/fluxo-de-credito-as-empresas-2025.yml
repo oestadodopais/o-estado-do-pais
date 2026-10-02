@@ -6,7 +6,7 @@
 id: "fluxo-de-credito-as-empresas-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "3"
+value: "3,0"
 unit: "% do stock no final do período anterior"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -33,7 +33,13 @@ study: "quadro-institucional"
 note: "Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: 13%. Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 3.0. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-02"
+    kind: "correcao"
+    old_value: "3"
+    new_value: "3,0"
+    reason: "A apresentação omitira a casa decimal que o excerto da fonte já guardava: «3.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a quantidade nem declarar uma revisão da fonte."
+    reason_en: "The presentation omitted the decimal place already preserved in the source excerpt: «3.0». That decimal place is restored in the Portuguese number format, without changing the quantity or claiming a source revision."
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
