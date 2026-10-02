@@ -1,0 +1,9 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor, e a hora do relógio da máquina na primeira chamada que a leu",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "na primeira mensagem da sessão do construtor do K2, antes de qualquer ferramenta",
+  "simbolos_restantes_na_primeira_hora": 14783272,
+  "lido_na_primeira_hora": "o contador mostrado logo a seguir à primeira chamada ao relógio, depois de ler o mapa, o brief e as decisões",
+  "inicio_utc": "2026-10-02T01:34:43Z",
+  "inicio_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, a primeira chamada ao relógio da sessão"
+}

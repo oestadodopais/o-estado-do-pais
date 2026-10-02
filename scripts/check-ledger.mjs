@@ -25,6 +25,7 @@ import { lerSeries, validateSeries, paisesDaUniao, SERIES_DIR } from '../src/lib
 import { Decimal } from '../src/lib/decimal.mjs';
 import { REGRAS, ABERTURA, LEITURA_BREVE, FECHO } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
+import { conferirCasasDecimais, plantasDasCasasDecimais } from './casas-decimais.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
@@ -497,6 +498,38 @@ if (MARCADORES_RECUSADOS.length) {
   );
   console.error('');
   process.exit(1);
+}
+
+/* ===========================================================================
+ * AS CASAS DECIMAIS DO EXCERTO (bloco K2, 02.10.2026, item 6 do brief)
+ * ===========================================================================
+ * Uma linha sem derivação não escreve menos casas decimais do que o excerto da fonte: «8» onde a fonte escreve
+ * «8.0» é um número que a fonte não escreveu (§1.127, decisão 3). A célula e as plantas vivem em
+ * `scripts/casas-decimais.mjs`; as plantas correm aqui, antes de a célula dizer zero, sobre cópias em memória das
+ * linhas reais, e uma que não morda (ou um controlo que morda) fecha a construção como um caso real. */
+{
+  const linhasDasCasas = loadClaims();
+  const plantasDasCasas = plantasDasCasasDecimais(linhasDasCasas);
+  const cegas = plantasDasCasas.filter((p) => !p.certo);
+  const casas = conferirCasasDecimais(linhasDasCasas.values());
+  console.log('');
+  console.log(
+    cinza(
+      `  casas decimais do excerto · ${casas.contas.lidas_d1} linha(s) lidas pelo número (D1), ` +
+        `${casas.contas.compostas_d2} com excerto composto (D2), ${casas.contas.sem_par_d1} sem o número no excerto, ` +
+        `${casas.contas.com_derivacao} derivada(s) fora da regra · ${plantasDasCasas.length} planta(s), ` +
+        `${plantasDasCasas.filter((p) => p.certo).length} certa(s)`,
+    ),
+  );
+  if (cegas.length || casas.erros.length) {
+    console.error('');
+    console.error(vermelho(`  AS CASAS DECIMAIS DO EXCERTO NÃO PASSAM · ${cegas.length + casas.erros.length} erro(s):`));
+    for (const p of cegas) console.error('    ' + vermelho('✗') + ` a planta «${p.nome}» devia ${p.esperado} e não o fez (${p.queixa ?? 'sem queixa'})`);
+    for (const e of casas.erros) console.error('    ' + vermelho('✗') + ' ' + e);
+    console.error('');
+    process.exit(1);
+  }
+  console.log('  ' + verde('✓') + ' nenhuma linha sem derivação escreve menos casas decimais do que o excerto da sua fonte.');
 }
 console.log(
   '  ' +

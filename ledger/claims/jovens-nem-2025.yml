@@ -6,7 +6,7 @@
 id: "jovens-nem-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "8"
+value: "8,0"
 unit: "% da população"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -33,7 +33,13 @@ study: "quadro-institucional"
 note: "Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 8.0. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor. O título que o catálogo do Eurostat dá a este quadro diz «aged 15-24» e a dimensão `age` da resposta ao endereço em source_url diz «From 15 to 29 years»: a série é dos 15 aos 29. As duas leituras são de 22.09.2026. O título fica como a fonte o escreve; o excerto passa a trazer a etiqueta da idade. Nenhum valor mudou."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-10-02"
+    kind: "correcao"
+    old_value: "8"
+    new_value: "8,0"
+    reason: "A apresentação omitira a casa decimal que o excerto da fonte já guardava: «8.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a quantidade nem declarar uma revisão da fonte."
+    reason_en: "The presentation omitted the decimal place already preserved in the source excerpt: «8.0». That decimal place is restored in the Portuguese number format, without changing the quantity or claiming a source revision."
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
