@@ -3,7 +3,7 @@
  * efémero e o bloqueio dos pedidos de fora seguem o captor do K2 (`design/especime-v3/medicoes/k2-2026-10-02/
  * captar-k2.mjs`). O manifesto guarda a cabeça da construção, o resumo de cada imagem e as medidas de cada página: a
  * altura, o transbordo horizontal, as faixas da secção dos países, a forma da fila dos 21 cartões (quantas colunas e
- * se corre de lado) e a altura de cada faixa.
+ * se corre de lado) e a altura de cada faixa; e, depois, a definição de um cartão aberta, em palavras comuns.
  * Uso, da raiz da worktree:
  *   node design/especime-v3/medicoes/ue2-2026-10-02/captar-ue2.mjs depois
  *     (sobre `dist/`, que tem de ser uma construção da cabeça atual)
@@ -129,6 +129,23 @@ try {
       const ficheiro = `${saida}/depois-toque-${lang}-390-${geo.toLowerCase()}.png`;
       const bytes = await faixa.screenshot({ path: ficheiro });
       await guarda(bytes, ficheiro, { tipo: 'toque', serie: sid, marca: geo, lang, largura: 390, etiqueta_a_vista: visivel[0] ?? null });
+      await c.close();
+    }
+    /* UMA DEFINIÇÃO EM PALAVRAS COMUNS, aberta pela porta do seu cartão (o endereço `#m-<linha>`, que o guião das
+       leituras abre), a 390 px: a do fluxo de crédito às empresas, com o termo da fonte entre parênteses. */
+    for (const lang of ['pt', 'en']) {
+      const c = await contexto(390);
+      const page = await c.newPage();
+      const id = 'fluxo-de-credito-as-empresas-2025';
+      await page.goto(`${origem}${rotas[lang]}#m-${id}`, { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const dobra = page.locator(`[data-leitura="${id}"]`);
+      const aberta = await dobra.evaluate((d) => d.open);
+      if (!aberta) problemas.push(`definição/${lang}: a leitura não abriu`);
+      const texto = await dobra.locator('.dobra-definicao').evaluate((e) => e.textContent.replace(/\s+/g, ' ').trim());
+      const ficheiro = `${saida}/depois-definicao-${lang}-390.png`;
+      const bytes = await dobra.screenshot({ path: ficheiro });
+      await guarda(bytes, ficheiro, { tipo: 'definicao', linha: id, lang, largura: 390, aberta, definicao: texto });
       await c.close();
     }
   }
