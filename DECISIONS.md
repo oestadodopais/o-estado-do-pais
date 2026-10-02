@@ -13377,3 +13377,25 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **A aterragem do K2.** O ramo publicado e a corrida «portão» verde em `636cb657`; o guião às 12:12 UTC de 02.10.2026: `main` de `bfc6d16a` para `636cb657`; a Vercel «Ready»; `verify:deploy` a 0; a corrida de `main` (37005360343) verde às 12:26; o guião declarou às 12:27.
 
 **A aterragem destes registos.** Escreve-se no registo seguinte.
+
+### 1.152 O UE2 construído pelo Opus e lido a frio pelo Sol: a página da União como a página dos países, as definições em palavras comuns como única forma em todo o sítio, o espaço antes de «%» confirmado pelo diretor, e a aterragem da §1.151
+
+**Afecta:** nenhum
+
+**O que muda:** no ar desde 02.10.2026, a página da União (`/uniao-europeia/` e `/en/european-union/`) tem, depois da manchete dos dois quadros, a secção dos 27 países: dez faixas à largura inteira, uma por medida com série, empilhadas e ordenadas do valor mais alto ao mais baixo, com as 27 marcas, Portugal destacado e a média da União marcada, pelo modelo da faixa do cartão; cada faixa diz por baixo do nome o que a medida conta (a população e a base da comparação, lidas da definição declarada na forma do recibo da série) e leva a lista dobrada «Os 27 por ordem», que abre sem guião, com o nome e o valor de cada país e a média na sua posição; com guião, o toque numa marca mostra o nome e o valor; a ordem das duas séries fora dos quadros está numa tabela com razões (os inquilinos a preço de mercado logo a seguir à sobrecarga, pela ressalva da §1.140; o índice harmonizado no fim); os 21 cartões ficam em pilha no telemóvel; e **as definições das medidas passam a ter uma só forma, em palavras comuns, com o termo da fonte entre parênteses, em todo o sítio** (nas páginas de assunto também: 18 perguntas mudaram, 8 das 14 páginas de assunto mudaram o `<main>` só nessas perguntas), com quinze termos explicados na primeira vez (o PIB, os ativos e passivos financeiros, a balança corrente e a média móvel, a OCDE, a população ativa, os pontos percentuais, a privação material e social grave, o risco de pobreza, a intensidade de trabalho muito baixa, o rendimento disponível, os apoios à habitação, o custo unitário do trabalho, os deflatores, as economias avançadas, o fluxo de crédito consolidado). A página da União a 390 px passou de 1 205 para 9 580 pixels de altura, porque a fila que mostrava um cartão de cada vez passou a pilha e as dez faixas dizem o que contam.
+
+**Data:** 02.10.2026.
+
+**O que se fez, e por quem.** O Claude Opus 5.5 construiu o UE2 em duas passagens (o UE2 com o primeiro commit às 14:11 UTC e o relatório às 14:47; a UE2-b com o primeiro commit às 16:10 e o relatório às 16:22; 904 094 e 451 162 símbolos pelo contador do construtor). O Codex gpt-6.1-sol leu a frio uma vez (230 593 símbolos, das 15:06 às 15:23), apanhou as cinco plantas e não achou nada bloqueante; os achados reais (os termos por explicar além dos quatro do brief, as faixas sem a população nem a base, a planta da tabela que só mordia porque a cópia já falhava) corrigiram-se na UE2-b, com a triagem em `design/especime-v3/critica/LEITURA-ue2-2026-10-02.md`.
+
+**As decisões do lugar de direção.**
+1. **Uma definição é uma coisa e vive num lugar**: a forma em palavras comuns, que o construtor tinha feito só para a página da União por respeito ao §4 do brief, passou a única forma em todo o sítio; o custo foi a mudança das perguntas de oito páginas de assunto, e a auditoria (a K16) e a 8.4 ficaram sem a noção de «forma».
+2. **A altura da página da União no telemóvel** fica como está: cada faixa diz o que conta porque a leitura o pediu, e dobrar isso esconderia o que o leitor precisa para ler o número.
+3. **O espaço antes de «%»** (§1.151, decisão 2) foi confirmado pelo diretor a 02.10 («we can keep the space before %»).
+4. **O que fica para blocos pequenos, registado**: «em pontos percentuais» na definição da diferença de emprego entre sexos e «regimes de ocupação» na da sobrecarga total, que só as páginas de assunto rendem; a linha da descrição em `design/especime-v3/CHAVES-EN.md`, desatualizada desde 14.09; o modo `--intervalo` do `decisoes-em-vigor.py`, que falha quando o intervalo tem PNG (a M47, por fazer); a regra das casas decimais a ler as linhas do INE pelo campo da forma publicada (§1.151, decisão 5); as cinco réguas à mão que rebentam desde o L2a; e as dívidas do E1 (I181, I183, I184).
+
+**A aterragem da §1.151.** `main` avançou de `636cb657` para `74ce7657` às 12:59 UTC de 02.10.2026 pelo guião; a Vercel «Ready»; `verify:deploy` a 0; a corrida de `main` verde; o guião declarou às 13:13.
+
+**A aterragem do UE2.** O ramo publicado e a corrida «portão» verde em `642e9d56`; o guião às 16:55 UTC de 02.10.2026: `main` de `74ce7657` para `642e9d56`; a Vercel «Ready»; `verify:deploy` a 0; a corrida de `main` (37037273910) verde às 17:06; o guião declarou às 17:06.
+
+**A aterragem destes registos.** Escreve-se no registo seguinte.
