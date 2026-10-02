@@ -1,0 +1,5 @@
+o conhecido-positivo falhou: o nome que não existe (scripts/check-lugar.mjs) não foi recusado como ilegível
+hoje: um ficheiro que existe → código 0; o mesmo e «scripts/nao-existe-de-todo.mjs» → código 1, e a saída diz o nome
+antes (4012a35c): um ficheiro que existe → código 0; o mesmo e «scripts/nao-existe-de-todo.mjs» → código 0, e a saída não diz o nome
+hoje, com o nome que não existe trocado por um que existe: código 2 (o conhecido-positivo tem de falhar com 2)
+as provas do modo dos ficheiros: certas

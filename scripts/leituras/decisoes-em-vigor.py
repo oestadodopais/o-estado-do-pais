@@ -18,9 +18,11 @@ decisão citada em `src/data/figuras.mjs`. As duas vieram à tona na leitura a f
 construídas. Corre-se no §0 de cada brief, sobre os ficheiros que o bloco vai tocar, e o brief diz
 as decisões que ficam em vigor; corre-se de novo sobre o intervalo do bloco antes da leitura a frio.
 
-Sai 0 com a lista; 1 se não conseguir ler `DECISIONS.md` ou o repositório; 2 se o seu
-conhecido-positivo falhar (a §1.98 citada em `scripts/check-lugar.mjs`, que a cita catorze vezes,
-na cabeça do sítio onde o guião vive), porque uma lista vazia de um detetor calado não diria nada.
+Sai 0 com a lista; 1 se não conseguir ler `DECISIONS.md` ou o repositório, ou, no modo dos ficheiros,
+se um ficheiro pedido não se ler (dito com o nome); 2 se o seu conhecido-positivo falhar (a §1.98
+citada em `scripts/check-lugar.mjs`, que a cita catorze vezes, na cabeça do sítio onde o guião vive,
+e, desde a passagem P4-c, um nome que não existe recusado como ilegível), porque uma lista vazia de
+um detetor calado não diria nada.
 
 OS FICHEIROS BINÁRIOS SALTAM-SE, E DIZ-SE QUANTOS (bloco P4, 02.10.2026, item 6 do brief P4; a M47).
 Até aqui o guião lia cada ficheiro como texto, e o primeiro PNG de um intervalo (as capturas que
@@ -29,6 +31,15 @@ nada das decisões. Um ficheiro é binário quando o próprio Git o diz (o `--nu
 escreve «-» nas duas contagens) ou quando os seus bytes não se leem como UTF-8 ou têm um byte nulo;
 salta-se, conta-se, e a última linha diz quantos se saltaram, com os primeiros nomes. Um binário
 não cita decisões, e por isso saltá-lo não esconde nenhuma.
+
+UM FICHEIRO PEDIDO QUE NÃO SE LÊ É UM ERRO (passagem P4-c, 02.10.2026; achado 6 da leitura a frio
+do P4, `design/especime-v3/critica/LEITURA-P4-2026-10-02.md`). No modo dos ficheiros, um erro do
+Git ao ler um ficheiro pedido (um nome que não existe na cabeça, um ficheiro ainda por juntar)
+virava uma cadeia vazia, e o guião dizia zero decisões e saía com 0 sem ter lido o que lhe pediram.
+Agora diz o nome do ficheiro e a razão, e sai com 1. No modo do intervalo um ficheiro que o
+intervalo apagou não existe na cabeça, e isso não é erro: lê-se na base, e as citações dele saem
+como «saiu no diff». O conhecido-positivo passa a provar os dois lados: lê a §1.98 onde ela está,
+e recusa um nome que não existe.
 """
 import argparse
 import re
@@ -83,12 +94,25 @@ def citacoes(texto):
             yield n, m.group(1), (m.group(2) or "")
 
 
+NOME_QUE_NAO_EXISTE = "scripts/leituras/este-ficheiro-nao-existe-p4c.mjs"
+
+
 def conhecido_positivo():
+    """A §1.98 lê-se em `scripts/check-lugar.mjs`, e um nome que não existe recusa-se como ilegível: devolve `None`
+    quando os dois se veem, ou a razão da falha."""
     try:
         texto = git(SITIO, "show", "HEAD:scripts/check-lugar.mjs")
     except RuntimeError:
-        return False
-    return any(d == "1.98" for _, d, _ in citacoes(texto))
+        texto = ""
+    if not any(d == "1.98" for _, d, _ in citacoes(texto)):
+        return "a §1.98 não se leu em scripts/check-lugar.mjs na cabeça do sítio"
+    try:
+        texto_do_git(SITIO, f"HEAD:{NOME_QUE_NAO_EXISTE}")
+    except RuntimeError:
+        return None
+    except Binario:
+        pass
+    return f"o nome que não existe ({NOME_QUE_NAO_EXISTE}) não foi recusado como ilegível"
 
 
 def pedacos(repo, base, cabeca, ficheiro):
@@ -107,14 +131,16 @@ def main():
     p.add_argument("--intervalo")
     p.add_argument("ficheiros", nargs="*")
     a = p.parse_args()
-    if not conhecido_positivo():
-        print("o conhecido-positivo falhou: a §1.98 não se leu em scripts/check-lugar.mjs na cabeça do sítio", file=sys.stderr)
+    falha = conhecido_positivo()
+    if falha:
+        print(f"o conhecido-positivo falhou: {falha}", file=sys.stderr)
         return 2
     try:
         tit = titulos()
         repo = Path(a.repo)
         vistos = {}
         saltados = []
+        ilegiveis = []
         if a.intervalo:
             base, cabeca = a.intervalo.split("..", 1)
             ficheiros = [f for f in git(repo, "diff", "--name-only", f"{base}..{cabeca}").splitlines() if f]
@@ -130,7 +156,12 @@ def main():
             except Binario:
                 saltados.append(f)
                 continue
-            except RuntimeError:
+            except RuntimeError as e:
+                if not base:
+                    # No modo dos ficheiros, um ficheiro pedido que não se lê é um erro, com o nome (P4-c).
+                    ilegiveis.append((f, str(e)))
+                    continue
+                # No modo do intervalo, um ficheiro que o intervalo apagou não existe na cabeça.
                 texto = ""
             muda = pedacos(repo, base, cabeca, f) if base else []
             agora = set()
@@ -154,10 +185,16 @@ def main():
         print(f"§{d} · {tit.get(d, 'sem título em DECISIONS.md')}")
         for onde in sorted(set(vistos[d])):
             print(f"    {onde}")
-    lidos = len(ficheiros) - len(saltados)
+    lidos = len(ficheiros) - len(saltados) - len(ilegiveis)
     print(f"{len(vistos)} decisão(ões) citada(s) em {lidos} ficheiro(s) de texto")
     exemplos = ", ".join(saltados[:3]) + (", …" if len(saltados) > 3 else "")
     print(f"{len(saltados)} ficheiro(s) binário(s) saltado(s){': ' + exemplos if saltados else ''}")
+    print(f"conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe ({NOME_QUE_NAO_EXISTE}) recusado como ilegível")
+    if ilegiveis:
+        for f, razao in ilegiveis:
+            print(f"não se leu o ficheiro pedido {f}: {razao}", file=sys.stderr)
+        print(f"{len(ilegiveis)} ficheiro(s) pedido(s) por ler: a lista acima não vale por eles", file=sys.stderr)
+        return 1
     return 0
 
 
