@@ -565,6 +565,8 @@ const UE1D = { definicoes: 0 };
 /* UE1e: os recibos das séries sem Portugal na definição, os que usam a forma do
    recibo da série, e as formas declaradas. */
 const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
+/* K2-c: as unidades da casa vistas nos cartões (a conta que o fim da corrida exige diferente de zero). */
+const UNIDADES_DA_CASA = { vistas: 0 };
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 /** L2b: as origens da faixa do concelho, contadas pelo lado da página. */
 const ORIGENS_DOS_CONCELHOS = { lugares: 0, contas: 0, empates: 0, valoresNaFaixa: 0, portugal: 0 };
@@ -6146,6 +6148,34 @@ for (const file of ficheirosHtml(DIST)) {
     );
   }
 
+  /* --- a unidade da casa de um cartão (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex) ---
+     Onde a definição declarada traz uma unidade (`unidade` em `DEFINICOES_DAS_MEDIDAS`), o cartão mostra-a em vez da
+     etiqueta da fonte, que fica no recibo. A marca entra por uma porta estreita: só dentro do cartão da sua própria
+     linha, com o texto da declaração na língua da página, carácter a carácter; e a declaração tem de ser um pedaço da
+     pergunta declarada da mesma medida, cujas origens a K16 audita. O selo do cartão (`seloDoValorDoCartao`) aceita
+     esta marca como a unidade da mesma linha, e só ela. */
+  for (const el of body.querySelectorAll('[data-unidade-da-casa]')) {
+    const id = el.getAttribute('data-unidade-da-casa') ?? '';
+    UNIDADES_DA_CASA.vistas++;
+    const lang = linguaPagina === 'en' ? 'en' : 'pt';
+    const declarada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id]?.unidade?.[lang] ?? null;
+    const texto = normalizeWhitespace(decodeEntities(textoDe(el)));
+    if (typeof declarada !== 'string' || !declarada) {
+      err(`K2-c: a unidade da casa de "${id}" aparece na página e a definição de "${id}" não declara unidade nenhuma em ${lang}.`);
+      continue;
+    }
+    if (el.closest?.('[data-cartao-medida]')?.getAttribute('data-cartao-medida') !== id) {
+      err(`K2-c: a unidade da casa de "${id}" está fora do cartão da sua linha: só a linha do valor desse cartão a pode mostrar.`);
+    }
+    if (texto !== declarada) {
+      err(`K2-c: a unidade da casa de "${id}" diz «${texto}» e a definição declara «${declarada}» (${lang}).`);
+    }
+    const pergunta = definicaoDoPortao(id, lang, 'cartao');
+    if (pergunta === null || !pergunta.includes(declarada)) {
+      err(`K2-c: a unidade da casa de "${id}" («${declarada}») não é um pedaço da pergunta declarada da medida (${lang}).`);
+    }
+  }
+
   /* --- os campos de uma linha do livro-razão, na página dessa linha --- */
   /**
    * O CAMINHO DO CABEÇALHO É UMA LISTA DE NOMES (F1.10, §2.5, 09.09.2026).
@@ -8440,6 +8470,11 @@ for (const [id] of SERIES_DO_PORTAO) {
       });
     }
   }
+}
+/* K2-c: o cartão da diferença de emprego entre sexos mostra a unidade da casa nas duas edições, nas páginas do emprego
+   e da área do trabalho; uma corrida que não veja nenhuma deixou de conferir o que diz conferir. */
+if (UNIDADES_DA_CASA.vistas === 0) {
+  erros.push({ rel: 'dist', msg: 'K2-c: nenhuma unidade da casa vista em página nenhuma, e a definição da diferença de emprego entre sexos declara uma: o leitor está cego.' });
 }
 /* UE1d: a definição declarada em cada um dos recibos das séries, nas duas edições. */
 if (UE1D.definicoes !== LANGS.length * SERIES_DO_PORTAO.size) {

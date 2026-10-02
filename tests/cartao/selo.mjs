@@ -17,10 +17,15 @@ const plantas = [
   ['duas marcas', fonte.replace('</p>', `<a class="src-chip" href="${alvo}"></a></p>`)],
   ['unidade de outra linha', fonte.replace(`data-linha-claim="${id}"`, 'data-linha-claim="divida-publica-2025"')],
   ['dois valores na linha', fonte.replace('</p>', `<span data-claim="${id}"></span></p>`)],
+  /* K2-c: a unidade da casa, de outra linha, e as duas marcas de unidade ao mesmo tempo. */
+  ['unidade da casa de outra linha', fonte.replace(`data-linha-campo="unit" data-linha-claim="${id}"`, 'data-unidade-da-casa="divida-publica-2025"')],
+  ['unidade da linha e unidade da casa', fonte.replace('</span></span>', `</span><span data-unidade-da-casa="${id}"></span></span>`)],
 ];
 for (const [nome, html] of plantas) {
   assert.equal(conferir(html), false, nome);
   console.log(`planta: ${nome}, recusada`);
 }
 assert.equal(conferir(fonte), true);
-console.log('selo do cartão: forma legítima aceite, plantas recusadas, reposição aceite');
+/* K2-c: a unidade da casa da mesma linha é a forma legítima de um cartão cuja definição declara unidade. */
+assert.equal(conferir(fonte.replace(`data-linha-campo="unit" data-linha-claim="${id}"`, `data-unidade-da-casa="${id}"`)), true);
+console.log('selo do cartão: forma legítima aceite (com a unidade da linha e com a unidade da casa), plantas recusadas, reposição aceite');

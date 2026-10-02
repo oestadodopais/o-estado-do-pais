@@ -154,9 +154,13 @@ const LISTA_PDM = [
     nome: { pt: 'Custo unitário do trabalho, variação em três anos', en: 'Unit labour cost, three-year change' },
     nomeNoVeredicto: { pt: 'a variação em três anos do custo unitário do trabalho', en: 'the three-year change in unit labour cost' },
     nomeNaFrase: { pt: 'variação em três anos do custo unitário do trabalho', en: 'three-year change in unit labour cost' },
+    /* A UNIDADE DO VALOR NA FAIXA DA UNIÃO (passagem K2-c, 02.10.2026, achado 6 da leitura a frio do Codex): «21,3» com
+       «Variação em três anos» não dizia que o número é uma percentagem, e os outros cartões dizem a unidade («Percentagem
+       do PIB»). A unidade da linha é «variação em três anos, %»; a da taxa de atividade já dizia «em pontos
+       percentuais». O mesmo nos preços da habitação e na taxa de câmbio efetiva real. */
     medida: {
-      pt: ['Variação em três anos · ', { ref: '2025' }],
-      en: ['Three-year change · ', { ref: '2025' }],
+      pt: ['Variação em três anos, em percentagem · ', { ref: '2025' }],
+      en: ['Three-year change, as a percentage · ', { ref: '2025' }],
     },
     /* nota: «… +9% (EA).» */
     limiar: { nl: '9', lado: 'superior', simbolo: '%' },
@@ -170,8 +174,8 @@ const LISTA_PDM = [
     nomeNoVeredicto: { pt: 'a variação anual dos preços da habitação', en: 'the annual change in house prices' },
     nomeNaFrase: { pt: 'variação anual dos preços da habitação', en: 'annual change in house prices' },
     medida: {
-      pt: ['Variação anual · ', { ref: '2025' }],
-      en: ['Annual change · ', { ref: '2025' }],
+      pt: ['Variação anual, em percentagem · ', { ref: '2025' }],
+      en: ['Annual change, as a percentage · ', { ref: '2025' }],
     },
     /* nota: «… +9%.» */
     limiar: { nl: '9', lado: 'superior', simbolo: '%' },
@@ -332,8 +336,8 @@ const LISTA_PDM = [
     nomeNoVeredicto: { pt: 'a variação em três anos da taxa de câmbio efetiva real', en: 'the three-year change in the real effective exchange rate' },
     nomeNaFrase: { pt: 'variação em três anos da taxa de câmbio efetiva real', en: 'three-year change in the real effective exchange rate' },
     medida: {
-      pt: ['Variação em três anos · ', { ref: '2025' }],
-      en: ['Three-year change · ', { ref: '2025' }],
+      pt: ['Variação em três anos, em percentagem · ', { ref: '2025' }],
+      en: ['Three-year change, as a percentage · ', { ref: '2025' }],
     },
     /* nota: «… +/-3% (EA).» É uma BANDA simétrica, escrita com os dois lados. */
     limiar: {
@@ -659,6 +663,14 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     publicador: 'Eurostat',
     documento:
       'Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group',
+    /* A CLASSE ETÁRIA DA RESPOSTA, AO LADO DO TÍTULO DO CONJUNTO (passagem K2-c, 02.10.2026, achado 2 da leitura a frio
+       do Codex). O título que o catálogo do Eurostat dá ao quadro diz «aged 15-24», e a dimensão `age` da resposta ao
+       mesmo endereço diz «From 15 to 29 years» (`dimension.age`, no ficheiro do selo abaixo, com o sha256 conferido por
+       `design/especime-v3/medicoes/k2-2026-10-02/origens-k2-c.py`): o indicador é dos 15 aos 29. A página mostra a
+       coordenada como o excerto da linha a escreve, pelo caminho das séries com coordenadas (a etiqueta da dimensão e a
+       da categoria, com «: »); a linha não muda, e a K16 exige que a coordenada seja um segmento do excerto de uma linha
+       lida neste endereço. */
+    coordenadas: 'Age class: From 15 to 29 years',
     url: 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP',
     lido: '2026-09-23',
     excerto: 'Sex: Total',
@@ -2195,6 +2207,13 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
      fica como a fonte a escreve, no recibo e no cartão; o recibo mostra esta pergunta com as duas origens. */
   'disparidade-de-emprego-entre-sexos-2025': {
     origens: ['eurostat-tesem060-descricao', 'ce-swd-2026-222-disparidade-de-emprego'],
+    /* A UNIDADE QUE O CARTÃO MOSTRA (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex): a linha do
+       valor dizia «5,4 % da população», a etiqueta que o Eurostat escreve, e só a dobra dizia que o número é a
+       diferença entre duas taxas. O cartão passa a mostrar a unidade da casa, que vem desta definição: cada forma é
+       um pedaço da pergunta declarada na sua língua (a K16 confere-o), e a pergunta tem as suas origens auditadas. A
+       etiqueta da fonte fica no recibo e na linha, como a fonte a escreve; o portão de HTML confere a unidade da casa
+       contra esta declaração. */
+    unidade: { pt: 'pontos percentuais', en: 'percentage points' },
     pt: [
       'Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ',
       { nl: '20', motivo: 'escala-de-instrumento' },

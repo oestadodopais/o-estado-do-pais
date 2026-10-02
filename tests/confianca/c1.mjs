@@ -78,6 +78,10 @@ for (const [nome, html, mordida] of [
   ['quantidade-sem-valor', '<span class="cartao-medida-quantidade"><span data-linha-campo="unit">%</span></span>', 'faltam o valor ou a unidade'],
 ]) planta('valor-unidade', nome, conferirValorUnidade(parse(html)).erros, mordida);
 controlo('valor-unidade', 'marca-sem-unidade', conferirValorUnidade(parse('<span class="cartao-medida-quantidade"><span class="cartao-medida-marca">sem valor publicado</span></span>')).erros);
+/* K2-c (02.10.2026): a unidade da casa, que um cartão mostra onde a definição a declara, entra na mesma conta do
+   espaço entre o número e a unidade. */
+controlo('valor-unidade', 'unidade-da-casa-com-espaco', conferirValorUnidade(parse('<span class="cartao-medida-quantidade"><span data-claim="caso-sintetico">5,4</span> <span data-unidade-da-casa="caso-sintetico">pontos percentuais</span></span>')).erros);
+planta('valor-unidade', 'unidade-da-casa-colada', conferirValorUnidade(parse('<span class="cartao-medida-quantidade"><span data-claim="caso-sintetico">5,4</span><span data-unidade-da-casa="caso-sintetico">pontos percentuais</span></span>')).erros, 'cola o valor à unidade');
 const camarasSinteticas = '<span class="cartao-medida-quantidade"><span data-prova="camaras_acima_do_limite">3</span> <span class="cartao-medida-unidade">câmaras</span></span>';
 controlo('valor-unidade', 'contagem-com-prova-v2', conferirValorUnidade(parse(camarasSinteticas)).erros);
 planta('valor-unidade', 'contagem-com-prova-v2-colada', conferirValorUnidade(parse(camarasSinteticas.replace('</span> <span', '</span><span'))).erros, 'cola o valor à unidade');

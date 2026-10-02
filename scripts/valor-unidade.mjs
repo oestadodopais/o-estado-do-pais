@@ -8,7 +8,9 @@ export function conferirValorUnidade(root) {
     /* A contagem das câmaras vem da prova V2, que a confere separadamente. */
     const contagem = el.querySelector('[data-prova="camaras_acima_do_limite"]');
     const valor = el.querySelector('[data-claim]') ?? contagem;
-    const unidade = el.querySelector('[data-linha-campo="unit"]') ?? (contagem ? el.querySelector('.cartao-medida-unidade') : null);
+    /* K2-c (02.10.2026): a unidade é o campo da linha ou, onde a definição declarada a traz, a unidade da casa; o
+       espaço entre o número e a unidade exige-se nas duas (§1.135). */
+    const unidade = el.querySelector('[data-linha-campo="unit"]') ?? el.querySelector('[data-unidade-da-casa]') ?? (contagem ? el.querySelector('.cartao-medida-unidade') : null);
     const tipo = el.tagName === 'H1' ? 'titulos' : 'cartoes';
     contas[tipo]++;
     const marca = el.querySelector('.cartao-medida-marca');
