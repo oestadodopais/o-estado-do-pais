@@ -1,0 +1,15 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor, e a hora da primeira escrita da sessão, lida do relógio do sistema de ficheiros",
+  "modelo": "Claude Opus 5.5 (a definição de agente construtor)",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "na primeira mensagem da sessão do construtor do S1, antes de qualquer ferramenta",
+  "simbolos_restantes_na_primeira_leitura": 14958481,
+  "lido_na_primeira_leitura": "o contador mostrado logo a seguir às duas primeiras chamadas (o estado da worktree e a leitura do mapa do repositório)",
+  "inicio_utc": "2026-10-02T20:37:33Z",
+  "inicio_origem": "a hora de escrita do primeiro ficheiro que a sessão escreveu (uma cópia de leitura do mapa do repositório na pasta de rascunho da sessão), lida com stat; a sessão não leu o relógio antes disso",
+  "semana_da_conta_no_inicio": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (os campos rate_limits do ficheiro de uso da conta) às 20:52 UTC; o ficheiro não se copia para aqui porque traz caminhos da máquina",
+    "sete_dias_usados_por_cento": 29,
+    "cinco_horas_usadas_por_cento": 15
+  }
+}
