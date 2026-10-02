@@ -1,0 +1,124 @@
+{
+  "brief": "design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md",
+  "guiao": "design/observatorio/medidas/BRIEF-S1.py",
+  "cabeca_lida": "62ed13c6",
+  "medidas": [
+    {
+      "nome": "ficheiros_na_pasta_das_funcoes",
+      "valor": 0,
+      "comando": "git ls-tree -r --name-only 62ed13c6:api · conta os ficheiros",
+      "conhecido_positivo": {
+        "o_que": "o mesmo listador conta os guiões de public/js",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_rodape_para_escrever_ao_projeto",
+      "valor": 1,
+      "comando": "git show 62ed13c6:src/components/SiteFooter.astro · os atributos data-porta-",
+      "conhecido_positivo": {
+        "o_que": "a das correções é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_codigo_que_leem_a_porta_das_correcoes",
+      "valor": 5,
+      "comando": "git grep -l data-porta-correccoes 62ed13c6 -- tests scripts src · só .mjs, .astro e .py",
+      "conhecido_positivo": {
+        "o_que": "o portão de HTML é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "vistas_com_formulario",
+      "valor": 2,
+      "comando": "git grep -l '<form' 62ed13c6 -- src/pages src/views",
+      "conhecido_positivo": {
+        "o_que": "a dos lugares é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_fonte_que_falam_de_sugestoes",
+      "valor": 0,
+      "comando": "git grep -il sugest 62ed13c6 -- src",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha «correc» no rodapé",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_declaradas",
+      "valor": 35,
+      "comando": "git show 62ed13c6:src/lib/routes.mjs · as chaves de ROUTES",
+      "conhecido_positivo": {
+        "o_que": "a das correções é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_sugestoes_declaradas",
+      "valor": 0,
+      "comando": "as chaves de ROUTES com «sugest»",
+      "conhecido_positivo": {
+        "o_que": "a mesma leitura vê a chave uniaoEuropeia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tabelas_no_registo_da_base",
+      "valor": 2,
+      "comando": "as linhas «create table public.» em supabase/migrations/2026-10-02-caixa-das-sugestoes.sql",
+      "conhecido_positivo": {
+        "o_que": "a das sugestões é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "funcoes_no_registo_da_base",
+      "valor": 1,
+      "comando": "as linhas «create or replace function public.» no mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "a enviar_sugestao é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "envios_por_marca_e_por_hora",
+      "valor": 5,
+      "comando": "o «if v_n > N then» da função, no mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "a janela da marca é de 1 hora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "envios_por_dia_na_caixa_inteira",
+      "valor": 200,
+      "comando": "o «if v_dia >= N then» da função",
+      "conhecido_positivo": {
+        "o_que": "a janela do dia é de 24 horas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dias_de_retencao_depois_da_decisao",
+      "valor": 90,
+      "comando": "o «interval 'N days'» da tarefa de retenção",
+      "conhecido_positivo": {
+        "o_que": "a tarefa chama-se sugestoes-retencao",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "papeis_que_podem_chamar_a_funcao",
+      "valor": 1,
+      "comando": "as linhas «grant execute on function public.enviar_sugestao» no mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "o papel é o anon, o da chave pública",
+        "encontrado": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+01-get-en · 303 · https://ensaio.local/en/suggestions/
+02-armadilha · 303 · https://ensaio.local/sugestoes/obrigado/
+03-vazia · 400 · <!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewpo
+04-boa-pt · 303 · https://ensaio.local/sugestoes/obrigado/
+05-boa-en · 303 · https://ensaio.local/en/suggestions/thank-you/
+06-limite-1 · 303 · https://ensaio.local/sugestoes/obrigado/
+06-limite-2 · 303 · https://ensaio.local/sugestoes/obrigado/
+06-limite-3 · 303 · https://ensaio.local/sugestoes/obrigado/
+06-limite-4 · 429 · <!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewpo
+06-limite-5 · 429 · <!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewpo
+06-limite-6 · 429 · <!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewpo
+hora 18:24:13
