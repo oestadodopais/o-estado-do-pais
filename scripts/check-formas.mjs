@@ -151,6 +151,7 @@ import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/cale
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from '../tests/cartao/faixa.mjs';
+import { conferirSeccaoDosPaises, plantasDaSeccao, plantaDaTabela } from '../tests/uniao/paises.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
@@ -428,6 +429,15 @@ const contas = {
   ordinais_conferidos: 0,
   marcas_com_palavras: 0,
   plantas_das_palavras: 0,
+  /* F20, UE2: a secção dos países da página da União e as suas plantas. */
+  seccoes_dos_paises: 0,
+  faixas_dos_paises: 0,
+  marcas_dos_paises: 0,
+  etiquetas_do_toque: 0,
+  listas_dos_paises: 0,
+  itens_das_listas: 0,
+  ressalvas_da_uniao_nos_paises: 0,
+  plantas_dos_paises: 0,
   plantas_dos_empates: 0,
   formas: 0,
   formas_por_nome: /** @type {Record<string, number>} */ ({}),
@@ -509,6 +519,31 @@ for (const ficheiro of paginasDe(DIST)) {
       contas.ressalvas_nos_temas += f19.contas.ressalvas;
 
     }
+  }
+
+  /* F20, UE2 (02.10.2026): a secção dos países da página da União, refeita dos pontos pela mesma função da faixa
+     do cartão, com a lista dobrada e as etiquetas do toque (`tests/uniao/paises.mjs`); e, nas duas edições dela, as
+     plantas em memória, que têm de morder. Uma faixa dos países noutra página fecha a construção. */
+  if (rota?.key === 'uniaoEuropeia') {
+    const lingua = rota.lang === 'en' ? 'en' : 'pt';
+    const ctx = { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO };
+    const f20 = conferirSeccaoDosPaises(root, lingua, caminho, ctx);
+    for (const e of f20.erros) err(`${rel}: ${e}`);
+    contas.seccoes_dos_paises += f20.contas.seccoes;
+    contas.faixas_dos_paises += f20.contas.faixas;
+    contas.marcas_dos_paises += f20.contas.marcas;
+    contas.etiquetas_do_toque += f20.contas.etiquetas;
+    contas.listas_dos_paises += f20.contas.listas;
+    contas.itens_das_listas += f20.contas.itens;
+    contas.ressalvas_da_uniao_nos_paises += f20.contas.ressalvas_da_uniao;
+    if (!f20.erros.length) {
+      for (const planta of plantasDaSeccao(html, lingua, caminho, ctx)) {
+        contas.plantas_dos_paises++;
+        if (!planta.passou) err(`F20: a planta «${planta.nome}» (${lingua}) não mordeu (${planta.porque}).`);
+      }
+    }
+  } else if (html.includes('data-faixa-paises')) {
+    err(`${rel}: F20a · uma faixa da secção dos países fora da página da União`);
   }
 
   /* F18, C1: o ano de cada dívida ocupa a sua posição no calendário comum.
@@ -1307,6 +1342,18 @@ if (SERIES_DO_PORTAO.size && contas.plantas_das_faixas === 0) {
   err('F19: nenhuma planta da faixa correu: a célula não provou que morde.');
 }
 
+/* F20 · o conhecido-positivo: a secção dos países nas duas edições da página da União, com uma faixa por série de
+   países em cada uma, e as plantas a correr; e a planta da tabela, uma vez por corrida e sem página. */
+if (SERIES_DO_PORTAO.size) {
+  if (contas.seccoes_dos_paises !== 2 || contas.faixas_dos_paises !== 2 * SERIES_DO_PORTAO.size) {
+    err(`F20: a página da União rende ${contas.seccoes_dos_paises} secção(ões) dos países com ${contas.faixas_dos_paises} faixa(s), e há ${SERIES_DO_PORTAO.size} série(s) de países; esperavam-se 2 secções e ${2 * SERIES_DO_PORTAO.size} faixas, uma por série e por edição.`);
+  }
+  if (contas.plantas_dos_paises === 0) err('F20: nenhuma planta da secção dos países correu: a célula não provou que morde.');
+  const tabela = plantaDaTabela();
+  contas.plantas_dos_paises++;
+  if (!tabela.passou) err(`F20: a planta «${tabela.nome}» não mordeu (${tabela.porque}).`);
+}
+
 /* F19g · F19h (UE1b, 29.09.2026): as palavras da faixa, uma vez por corrida e
    sem página (o ordinal inglês contra a tabela escrita dos 27, e as palavras de
    cada marca que um ponto leva), com as suas plantas. E o conhecido-positivo das
@@ -1376,6 +1423,9 @@ console.log(
         `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos assuntos), ${contas.ordinais_conferidos} ordinais e ` +
         `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder, ` +
         `${contas.plantas_dos_empates} plantas dos empates a morder` +
+        ` · secção dos países (F20): ${contas.seccoes_dos_paises} secção(ões), ${contas.faixas_dos_paises} faixa(s), ${contas.marcas_dos_paises} marcas refeitas do valor, ` +
+        `${contas.etiquetas_do_toque} etiquetas do toque, ${contas.listas_dos_paises} listas com ${contas.itens_das_listas} itens, ` +
+        `${contas.ressalvas_da_uniao_nos_paises} ressalva(s) da Comissão, ${contas.plantas_dos_paises} plantas a morder` +
         ` · ${contas.datas_de_serie} data(s) de série`,
     ),
 );

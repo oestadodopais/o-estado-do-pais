@@ -265,13 +265,41 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
     const faixa = faixas[0];
     contas.faixas++;
     if (faixa.getAttribute('data-faixa-ue') !== serie.id) erro('F19a', id, `a faixa diz ser da série «${faixa.getAttribute('data-faixa-ue')}» e a linha é gémea de «${serie.id}»`);
+    const r = conferirPecasDaFaixa(faixa, { serie, lang, paises, id, erro, celula: 'F19' });
+    contas.marcas += r.marcas;
+    contas.ressalvas += r.ressalvas;
+    contas.frases += r.frases;
+    contas.empates += r.empates;
+  }
+  return { erros, contas };
+}
+
+/**
+ * AS PEÇAS DE UMA FAIXA, RECONTADAS DOS PONTOS (F19b a F19f; desde o bloco UE2, 02.10.2026, uma função só).
+ *
+ * O desenho (uma marca por país e uma da União, cada uma na posição que o valor dá), os rótulos de Portugal e da
+ * União, as pontas, a frase e a porta do recibo da série. Era o corpo do laço de `conferirFaixas()`, e saiu para aqui
+ * sem mudar uma comparação, para que a faixa à largura inteira da página da União (a F20 do `check:formas`,
+ * `tests/uniao/paises.mjs`) se reconte pelo mesmo código que a faixa do cartão: o brief UE2 manda «como a faixa do
+ * cartão», e duas cópias das mesmas regras afastavam-se na primeira mudança. A letra da célula vem de quem chama
+ * (`celula`: «F19» no cartão, «F20» na página da União), e as mensagens são as de sempre.
+ *
+ * @param {import('node-html-parser').HTMLElement} faixa
+ * @param {{ serie: any, lang: 'pt'|'en', paises: Map<string, any>, id: string, erro: (celula: string, id: string, msg: string) => void, celula: string }} ctx
+ * @returns {{ marcas: number, ressalvas: number, frases: number, empates: number, conta: any }}
+ */
+export function conferirPecasDaFaixa(faixa, { serie, lang, paises, id, erro: erroDe, celula }) {
+  const contas = { marcas: 0, ressalvas: 0, frases: 0, empates: 0, conta: null };
+  const erro = (c, i, msg) => erroDe(c.replace(/^F19/, celula), i, msg);
+  {
     let c;
     try {
       c = contaDaFaixa(serie);
     } catch (e) {
       erro('F19b', id, `a série não se reconta: ${e.message}`);
-      continue;
+      return contas;
     }
+    contas.conta = c;
     /* F19b, F19c · o desenho */
     const marcas = new Map();
     for (const m of faixa.querySelectorAll('[data-faixa-marca]')) {
@@ -350,7 +378,7 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
     const destino = routePath('serie', lang, { slug: serie.id });
     if (!porta || porta.getAttribute('href') !== destino) erro('F19f', id, `a porta da faixa abre «${porta?.getAttribute('href') ?? 'nada'}» e o recibo da série é «${destino}»`);
   }
-  return { erros, contas };
+  return contas;
 }
 
 /**
