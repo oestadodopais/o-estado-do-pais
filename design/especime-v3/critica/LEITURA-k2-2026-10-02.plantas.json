@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-02T10:45:47+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "W1",
+   "ficheiro": "ledger/claims/jovens-nem-2025.yml",
+   "descricao": "a correção escreve 8,1 onde a fonte escreve 8.0",
+   "sha256_antes": "035870314d2ea367a7cdc2996c601bf90953dcf32011d3229fcf423abe4da50d",
+   "sha256_depois": "2ddbc2b672d93e220354e6366035980bc5c2ecdf90822a056b9807cbd209f8b8",
+   "contexto_antes": "enhum valor mudou.\"\n\n# Correcções datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n  - date: \"2026-10-02\"\n    kind: \"correcao\"\n    old_value: \"8\"\n    new_value: \"8,0\"\n    reason: \"A apresentação omitira a casa decimal que o excerto da fonte já guardava: «8.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a qua",
+   "contexto_depois": "enhum valor mudou.\"\n\n# Correcções datadas. Nunca apagar um valor: acrescentar aqui.\ncorrections:\n  - date: \"2026-10-02\"\n    kind: \"correcao\"\n    old_value: \"8\"\n    new_value: \"8,1\"\n    reason: \"A apresentação omitira a casa decimal que o excerto da fonte já guardava: «8.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a qua"
+  },
+  {
+   "id": "W2",
+   "ficheiro": "src/data/figuras.mjs",
+   "descricao": "o nome da taxa de atividade volta a esconder que o valor é uma variação em três anos",
+   "sha256_antes": "3f847e596611ab48dda21427861cbb1b27683fa69b25c984986761bd50bc5a91",
+   "sha256_depois": "74c9a524aabd7f356bbd8b457e9dac9f2383442200faf98a95631c75bfe4169a",
+   "contexto_antes": "O (bloco K2, item 2; o exemplo do brief): o valor, 2,6, é a variação em três anos em\n       pontos percentuais, e o nome de uma taxa lia-se como a taxa. */\n    nome: { pt: 'Taxa de atividade, variação em três anos', en: 'Activity rate, three-year change' },\n    nomeNoVeredicto: { pt: 'a variação em três anos da taxa de atividade', en: 'the three-year change in the activit",
+   "contexto_depois": "O (bloco K2, item 2; o exemplo do brief): o valor, 2,6, é a variação em três anos em\n       pontos percentuais, e o nome de uma taxa lia-se como a taxa. */\n    nome: { pt: 'Taxa de atividade', en: 'Activity rate, three-year change' },\n    nomeNoVeredicto: { pt: 'a variação em três anos da taxa de atividade', en: 'the three-year change in the activit"
+  },
+  {
+   "id": "W3",
+   "ficheiro": "ledger/claims/correcoes-publicadas.yml",
+   "descricao": "o contador das correções escreve 6 onde o livro conta 7",
+   "sha256_antes": "8bae798095254001b2f1abeb1576c06389f4c324d24807e51057b22e50765bff",
+   "sha256_depois": "27ccbe4e4793af71eb75ae257a416597add64e931e6ca49aa97492b5249bba03",
+   "contexto_antes": "ampos obrigatórios e regras: ver ledger/README.md.\n\nid: \"correcoes-publicadas\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"7\"\nunit: \"correções\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"O Estado do País\"\ndocument:\n  title: \"Registo de c",
+   "contexto_depois": "ampos obrigatórios e regras: ver ledger/README.md.\n\nid: \"correcoes-publicadas\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"6\"\nunit: \"correções\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"O Estado do País\"\ndocument:\n  title: \"Registo de c"
+  },
+  {
+   "id": "W4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 2 646 valores com o espaço onde a medida diz 2 546",
+   "sha256_antes": "8acf4b497e2b5b83a1ba082dec747dcdb634e95d26bec4da2560ea0aed74dd5a",
+   "sha256_depois": "9864c64c4c9ab7bb7d7e199ee6bed931bcce6e0505f0efc9a82980fd92f5cdb8",
+   "contexto_antes": " o «%» com o espaço; a F4 do `check:formato` volta a exigir o espaço. O que vem copiado de uma fonte fica como a fonte o escreve | valores com o «%» colado: 0 (701 na construção do K2), e 2 546 com o espaço; títulos com o «%» colado: 0 (834); atributos (descrições, títulos de partilha): 0 (2 502); no texto visível, 140 dentro das fontes (excertos, citações, transc",
+   "contexto_depois": " o «%» com o espaço; a F4 do `check:formato` volta a exigir o espaço. O que vem copiado de uma fonte fica como a fonte o escreve | valores com o «%» colado: 0 (701 na construção do K2), e 2 646 com o espaço; títulos com o «%» colado: 0 (834); atributos (descrições, títulos de partilha): 0 (2 502); no texto visível, 140 dentro das fontes (excertos, citações, transc"
+  },
+  {
+   "id": "W5",
+   "ficheiro": "built/emprego/index.html",
+   "descricao": "a página construída do emprego cola o % ao valor do desemprego, contra a forma da casa que o bloco fixa",
+   "sha256_antes": "569add84e0925968b3b9eaee52224a7643474ff87462d969d89321844e749f98",
+   "sha256_depois": "ba481b5b70cede1510dbafc5509fad86d95981162fef3cefb4fb85985b26b1c3",
+   "contexto_antes": "nome=\"figuras\" data-de-linha=\"taxa-de-desemprego-mip-2025\">Taxa de desemprego</span><p class=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"taxa-de-desemprego-mip-2025\" class=\"claim-value cartao-medida-num\">6,0</span> <span class=\"campo-valor cartao-medida-unidade\" lang=\"pt-PT\" data-linha-claim=\"taxa-de-desemprego-mip-2025\" data-linha-campo=\"unit\">% da população ativa</span></span><span class=\"cartao-medida-periodo\"><span",
+   "contexto_depois": "nome=\"figuras\" data-de-linha=\"taxa-de-desemprego-mip-2025\">Taxa de desemprego</span><p class=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"taxa-de-desemprego-mip-2025\" class=\"claim-value cartao-medida-num\">6,0</span><span class=\"campo-valor cartao-medida-unidade\" lang=\"pt-PT\" data-linha-claim=\"taxa-de-desemprego-mip-2025\" data-linha-campo=\"unit\">% da população ativa</span></span><span class=\"cartao-medida-periodo\"><span"
+  }
+ ]
+}
