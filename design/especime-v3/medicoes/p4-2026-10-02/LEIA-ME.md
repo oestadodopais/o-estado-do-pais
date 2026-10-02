@@ -121,3 +121,53 @@ A corrida final do construtor, na cabeça `716af503`, deu `build` 0, `verify` 1 
 - **A leitura a frio do bloco**, que é de outra família.
 - **O rebase sobre `main`**, que tem `62ed13c6` por cima da base deste ramo, sem ficheiros em comum.
 - **A emenda à decisão do menu de cinco** (a peça 3 do B1), que o brief diz que o lugar de direção faz ao aterrar.
+
+## P4-c · a passagem de correção depois da leitura a frio, e o achado do diretor
+
+*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, na mesma worktree, sobre a cabeça `4012a35c` (a leitura a frio do Codex `gpt-6.1-sol` com a triagem do lugar de direção, `design/especime-v3/critica/LEITURA-P4-2026-10-02.md`). Quatro achados reais da leitura (4, 5, 6 e 9) e o achado do diretor de 02.10.2026 à noite, na página de Évora, cada um com a sua planta a morder. As medidas desta passagem estão em `medidas.json`, com o prefixo `p4c_`, e os ficheiros em `p4-c/`.*
+
+### Por achado
+
+| achado | o que mudou | a medida | a planta | commit |
+|---|---|---|---|---|
+| 4 · a regra das casas decimais | Um excerto que cita o registo da resposta do INE («"geocod" :» e «"valor" :») sem o `ind_string` é um erro da célula, contado numa linha própria do `ledger:check`: «linhas do INE sem a forma publicada: 0». As linhas do INE cujo excerto não é o registo da resposta seguem o caminho geral e a célula diz-lhes os nomes, em vez de as deixar cair caladas em «por ler». | Medido antes de mudar (`linhas-do-ine.mjs`): das 1 261 linhas do INE, 1 250 trazem a forma publicada e 11 não, e nenhuma das 11 é um registo da resposta: 8 são da API com o excerto escrito em prosa («valor 111.47») e 3 de páginas do portal, com o texto do comunicado. Depois: 0 registos sem a forma, as 11 ditas pelo nome. | O caso do leitor (o `ind_string` tirado e uma casa a menos, `86,6`) e o mesmo registo com o valor certo mordem; mordem hoje e calavam com a célula de `4012a35c` (2 plantas, `p4-c/plantas-casas.log`); o controlo de uma linha do INE em prosa cala. 19 plantas, 19 certas. | `daf63d96` |
+| 9 · a planta da provisória arredondada | A planta passa de `1 84` (que a leitura do valor lê como `184`) a `1 840`, o arredondamento de 1 835 às dezenas, que a regra recusa. | O mesmo `ledger:check`. | A planta morde (`p4-c/plantas-casas.log`). | `daf63d96` |
+| 5 · as células do tema | A TM3 faz o caminho inteiro do leitor: sem nada guardado, a página abre clara com a cor da mobília do papel claro; o toque em «escuro» põe o atributo na raiz, guarda «dark», pinta o papel escuro e troca a cor da mobília; a recarga continua escura, com o atributo antes do corpo; o toque em «claro» tira o atributo, guarda «light» e devolve a cor; e a recarga fica clara. | TM3 com 6 corridas, a 0; TM1 24, TM2 30, TM4 42 (`p4-c/tema-e-menu.log`). | Um manipulador que aplica o claro a todos os cliques, servido no lugar do guião do tema, morde; se a linha do manipulador mudar e a troca não se fizer, a régua di-lo. 9 plantas, 9 a morder. | `12118623` |
+| 6 · o guião das decisões em vigor | No modo dos ficheiros, um ficheiro pedido que o Git não lê é um erro: o guião diz o nome e a razão e sai com 1. No modo do intervalo, um ficheiro que o intervalo apagou continua a ler-se na base. O conhecido-positivo prova os dois lados: lê a §1.98 em `scripts/check-lugar.mjs` e recusa um nome que não existe, e a saída di-lo. | Um ficheiro que existe: 0; com um nome que não existe: 1, com o nome dito; o intervalo do bloco: 0 (`p4-c/decisoes-*.txt`). | O conhecido-positivo plantado (o nome «que não existe» trocado por um que existe) sai com 2; o guião de `4012a35c` saía com 0 no nome que não existe, calado (`p4-c/plantas-decisoes.log`). | `de34f795` |
+| o diretor · o cartão do índice de dívida | A unidade do cartão é a da casa, declarada uma vez na medida: «% da receita de três anos» / «% of three-year revenue», com o apoio que a derivação de cada linha tem de dizer. A linha do estado diz o teto: «dentro do limite legal, que é 150 %» / «within the legal limit, which is 150 %», e «fora» / «outside», com o 150 lido da linha `indice-de-divida-limite-legal` por `<Claim/>`, num item da régua sem marca própria. O cartão «Câmaras com a dívida acima do limite legal» diz as mesmas palavras. A dobra «O que é este número» não muda, e nenhum valor nem o livro-razão mudam. | A célula nova ID (`tests/municipio/indice-de-divida.mjs`, no `check:lugares`): 616 páginas de concelho, 614 com valor (594 dentro e 20 fora do limite), 2 sem valor, a 0; a K10 vê 614 tetos com a porta na aritmética do recibo. | Na célula ID, 6 plantas a morder (a unidade antiga de volta, o teto escrito à mão, as palavras do estado de antes, o estado trocado, a dobra mudada, e as palavras de antes no cartão das câmaras); nos portões, 6 plantas `p4c-` a morder, com os bytes repostos (`plantas-portoes-p4-c/`). | `a43787cc` |
+
+### As decisões do construtor, e porquê
+
+1. **O erro é do registo da resposta, e não de toda a linha do INE.** A mensagem pedia que uma linha do INE sem o `ind_string` fosse um erro, com a contagem a 0. Medido antes de mudar: 11 linhas do INE não o trazem, e nenhuma o perdeu, porque nenhuma cita o registo da resposta; com a regra à letra a contagem ficava em 11 e a construção fechava em linhas que não têm forma publicada nenhuma para ler. O que o leitor achou foi um registo que perde o campo, e é isso que fecha a construção; as 11 dizem-se pelo nome na saída, e corrigi-las é refazer o excerto no motor.
+2. **O teto vai sem marca própria, pela regra das réguas.** O cartão de uma medida leva uma marca da fonte só (a decisão de 15.09.2026, a K10), e o teto entra num item da régua cuja porta é a marca do cartão. A porta do teto está na aritmética do recibo da linha do cartão, que já ligava a linha do limite; a K10 passou a procurá-la lá para este item, e o portão aceita-o só com a linha que a derivação do cartão usa.
+3. **A unidade da casa de uma medida de concelho declara-se na medida.** A da passagem K2-c é de uma linha nacional e apoia-se na pergunta declarada; esta medida tem 308 linhas, e o apoio é a derivação de cada uma, que tem de dizer de que é a percentagem, na língua da página.
+4. **O cartão das câmaras ganha as mesmas palavras.** «dentro do limite legal, que é 150 %» substitui «dentro do limite legal (150 %)», e a V2 do `check:pais` confere a forma nova com as contagens e o limite lidos das linhas.
+
+### Onde a mensagem não bate com o que se mediu
+
+- **A contagem das linhas do INE sem a forma publicada a 0** só vale para os registos da resposta (decisão 1 acima): as 11 linhas sem forma nenhuma são da API em prosa ou do portal.
+- **«O cartão desta medida, em todas as páginas onde aparece»**: o cartão do índice de dívida vive só nas 616 páginas de concelho. A unidade «% (limite legal = 150)» continua, como a linha a escreve, no recibo e no índice do livro-razão, na página de área (onde as quatro linhas de Évora se rendem como linhas sem nome, com a aritmética) e na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares»; nenhum destes é o cartão, e ficam para o lugar de direção decidir.
+- **As palavras da unidade** são as da mensagem. A dobra diz o resto («a média da receita corrente líquida cobrada nos três anos anteriores»); se o lugar de direção quiser a média na própria unidade, é a declaração de `src/data/concelhos.mjs` e o apoio ao lado dela.
+
+### As capturas
+
+4, do cartão do índice de dívida de Évora a 390 e a 1280 px nas duas edições, em `design/especime-v3/capturas/p4-2026-10-02/p4-c-cartao-indice-evora-*.png`, sobre a construção de `a43787cc`, com o manifesto em `capturas-p4-c.json` (o sha256 de cada imagem e o que o cartão diz) e 0 problemas.
+
+### Os commits da passagem
+
+`daf63d96` (achados 4 e 9), `12118623` (achado 5), `de34f795` (achado 6), `a43787cc` (o achado do diretor), e o commit desta secção, com o mapa do repositório, as medidas e a resposta curta. Os códigos dos portões entram no commit seguinte, em `portoes-c/`.
+
+### O custo da passagem
+
+241 964 símbolos e 4 780 segundos, das duas leituras em ficheiro (`custo-inicio-p4-c.json` e `custo-fim-p4-c.json`, o contador «total_tokens left» e o relógio da máquina), até esta secção; o modelo foi o Claude Opus 5.5.
+
+### Os portões da passagem
+
+A corrida final corre pela tranca na cabeça do commit desta secção, e os códigos, lidos dos ficheiros, entram no commit seguinte, em `portoes-c/`, com esta linha posta em dia.
+
+### O que fica por fazer
+
+- As duas réguas à mão a 1, como antes (a régua das correções de UX do bloco A e a matriz).
+- A unidade antiga na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares», se o lugar de direção a quiser igual à do cartão.
+- As 11 linhas do INE cujo excerto não é o registo da resposta, que a regra das casas decimais não lê: refazer o excerto no motor.
+- A leitura a frio desta passagem, por outra família.

@@ -2,10 +2,12 @@
   "bloco": "P4",
   "construtor": "Claude Opus 5.5",
   "base": "afc4fb20",
-  "cabeca": "716af503e39f393042f04c9a41baa1d8ed605476",
+  "cabeca": "a43787cc6856ca65ff869aa00ccd75bc7985743d",
   "guiao": "design/especime-v3/medicoes/p4-2026-10-02/medir-p4.mjs",
-  "escrito_em": "2026-10-02T20:50:56.739Z",
-  "medidas_escritas": 28,
+  "escrito_em": "2026-10-02T22:50:35.881Z",
+  "medidas_escritas": 37,
+  "medidas_do_p4": 28,
+  "medidas_da_p4c": 9,
   "medidas": [
     {
       "nome": "folhas_que_seguem_a_preferencia_do_aparelho",
@@ -509,6 +511,149 @@
       "comando": "git diff --name-only afc4fb20..HEAD -- ledger registos",
       "conhecido_positivo": {
         "o_que": "a base tem ficheiros no livro-razão (3031), e a mesma leitura vê-os",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_linhas_do_ine_sem_a_forma_publicada",
+      "valor": 0,
+      "comando": "npm run ledger:check (p4-c/ledger-check.log), a linha «linhas do INE sem a forma publicada»",
+      "conhecido_positivo": {
+        "o_que": "as plantas da regra estão certas (19 de 19), e as duas do registo sem a forma mordem hoje e calavam com a célula de 4012a35c (p4-c/plantas-casas.log)",
+        "encontrado": true
+      },
+      "linhas_do_ine": 1261,
+      "com_a_forma": 1250,
+      "sem_o_registo_da_resposta": 11,
+      "sem_a_forma_da_api": 8,
+      "sem_a_forma_de_outras_paginas": 3,
+      "plantas_que_mordem_hoje_e_calavam_antes": 2,
+      "sem_o_registo_nomes": [
+        "alentejo-central-poder-de-compra-2023",
+        "divida-publica-2024-notificacao-ine-2026-09",
+        "divida-publica-2025-notificacao-ine-2026-09",
+        "evora-concentracao-vab4-2024",
+        "evora-empresas-2024",
+        "evora-poder-de-compra-2023",
+        "evora-populacao-2021",
+        "evora-populacao-2025",
+        "evora-vab-empresarial-2024",
+        "portugal-concentracao-vab4-2024",
+        "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09"
+      ],
+      "plantas": "19 de 19"
+    },
+    {
+      "nome": "p4c_tema_e_menu",
+      "valor": {
+        "TM1": 24,
+        "TM2": 30,
+        "TM3": 6,
+        "TM4": 42,
+        "plantas": "9 de 9",
+        "codigo": 0
+      },
+      "comando": "node tests/inicio/tema-e-menu.mjs --prova (p4-c/tema-e-menu.log)",
+      "conhecido_positivo": {
+        "o_que": "a planta do manipulador que aplica o claro a todos os cliques morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_decisoes_no_modo_dos_ficheiros",
+      "valor": {
+        "ficheiro_que_existe": 0,
+        "nome_que_nao_existe": 1,
+        "intervalo_do_bloco": 0,
+        "conhecido_positivo_plantado": 2
+      },
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py, com um ficheiro que existe, com um nome que não existe, e sobre o intervalo do bloco (p4-c/decisoes-*.txt)",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo plantado (o nome «que não existe» trocado por um que existe) sai com 2, e o guião de 4012a35c saía com 0 no nome que não existe (p4-c/plantas-decisoes.log)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_cartao_do_indice_de_divida",
+      "valor": {
+        "paginas": 616,
+        "com_valor": 614,
+        "sem_valor": 2,
+        "dentro": 594,
+        "fora": 20,
+        "falhas": 0,
+        "plantas": "6 de 6",
+        "unidade_da_casa": {
+          "pt": "% da receita de três anos",
+          "en": "% of three-year revenue"
+        },
+        "teto": {
+          "linha": "indice-de-divida-limite-legal",
+          "valor": "150",
+          "unidade": "%"
+        }
+      },
+      "comando": "node tests/municipio/indice-de-divida.mjs --prova --json (p4-c/indice-de-divida.json), no check:lugares",
+      "conhecido_positivo": {
+        "o_que": "a planta da unidade antiga morde, e as 616 páginas são as 308 nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_tetos_vistos_pela_k10",
+      "valor": 614,
+      "comando": "npm run check:cartao (p4-c/check-cartao.log), a conta «tetos na linha do estado»",
+      "conhecido_positivo": {
+        "o_que": "a planta do recibo sem a porta do teto morde na K10 (plantas-portoes-p4-c)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_plantas_dos_portoes",
+      "valor": "6 de 6",
+      "comando": "OEDP_MEDICOES=<pasta> node tests/pais/portoes.mjs --prefixo p4c- (plantas-portoes-p4-c/plantas-portoes-p4c.json)",
+      "conhecido_positivo": {
+        "o_que": "cada planta repõe os bytes que mudou (sha256 antes igual ao reposto)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_capturas",
+      "valor": {
+        "capturas": 4,
+        "problemas": 0,
+        "construcao": "a43787cc6856ca65ff869aa00ccd75bc7985743d",
+        "diz": [
+          "pt 390: 105,5 % da receita de três anos · dentro do limite legal, que é 150",
+          "pt 1280: 105,5 % da receita de três anos · dentro do limite legal, que é 150",
+          "en 390: 105,5 % of three-year revenue · within the legal limit, which is 150",
+          "en 1280: 105,5 % of three-year revenue · within the legal limit, which is 150"
+        ]
+      },
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/captar-p4-c.mjs (capturas-p4-c.json, com o sha256 de cada imagem)",
+      "conhecido_positivo": {
+        "o_que": "cada imagem tem o seu sha256 no manifesto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_custo",
+      "valor": {
+        "simbolos": 241964,
+        "segundos": 4780
+      },
+      "comando": "custo-inicio-p4-c.json e custo-fim-p4-c.json: as duas leituras do contador «total_tokens left» e as duas horas do relógio",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras existem e a do fim é menor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4c_portoes",
+      "valor": "por correr: os portões da P4-c correm depois do último commit da passagem, e os códigos entram no commit seguinte",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/p4-2026-10-02/portoes-c",
+      "conhecido_positivo": {
+        "o_que": "o guião escreve a cabeça ao lado dos códigos",
         "encontrado": true
       }
     },
