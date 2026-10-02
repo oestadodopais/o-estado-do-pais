@@ -107,23 +107,17 @@
  * nenhum. Com guião a mesma caixa mede zero, e é a A5 de `tests/inicio/porta.mjs`
  * que o mede.
  *
- * U5 · a altura da primeira página a 390, contra a de partida. O «antes» lê-se do
- * artefacto que a régua do F1.1d gravou (`mapa-medidas.json`, cabeça `c9823939`,
- * 390 × 664 em Chromium), que é a mesma largura e o mesmo motor desta célula. O
- * «depois» é esta árvore, e a exigência do brief é «igual ou menor». A célula
- * escreve também a altura com a gaveta dos nomes aberta e sem guião, que são
- * duas leituras da MESMA construção e servem para saber quanto pesa a gaveta,
- * não para dizer de onde a página veio.
+ * U5 · a altura da primeira página a 390, contra a de partida do F1.1d. SAIU no
+ * bloco P4 (02.10.2026), com a razão escrita no lugar dela: o mapa saiu da
+ * primeira página no L2a.
  *
  * U6 · o portão do mapa. Não é uma célula desta régua: é `npm run check:mapa`, e
  * a regra que mede o segundo nível servido é a R8.
  *
- * U7 · a página do concelho com o nível da unidade. A página do concelho é de
- * outro bloco, e este NÃO LHE TOCA: o que ele entrega é o nível como parâmetro
- * do componente. A célula constrói uma PÁGINA DE PROVA (uma página Astro de uma
- * linha, que rende `MapaRespira` com `nivel="unidade"`, na mesma postura de
- * localizador em que a página do concelho o rende) e mede-a. Nada disso entra no
- * sítio nem no repositório: vive em `dist/`, e leva menos de dois segundos.
+ * U7 · a página do concelho com o nível da unidade, por uma página de prova.
+ * SAIU no bloco P4 (02.10.2026), com a razão escrita no lugar dela: nenhuma
+ * página rende o nível da unidade com um concelho escolhido desde o item 8.17 do
+ * F1.10.
  *
  * U8 · as réguas e os portões. Os comandos são de fora; as três células U8 são as
  * P7 do F1.1d herdadas (o contraste do lugar do nome nos dois temas e o que se
@@ -163,6 +157,19 @@
  * mede, nas cinco larguras do bloco P1, a distância entre a TINTA de cada
  * polígono e a TINTA da sua moldura, e exige que ela seja maior do que zero em
  * todas. A sua planta põe a margem a zero.
+ *
+ * ---------------------------------------------------------------------------
+ * O MAPA MUDOU DE PÁGINA, E A RÉGUA FOI ATRÁS DELE (bloco P4, 02.10.2026)
+ * ---------------------------------------------------------------------------
+ * Desde o L2a (01.10.2026, §1.149 e §1.150) o mapa das 29 unidades, com o mesmo
+ * componente e o mesmo guião, vive em «Lugares», e a primeira página ficou com a
+ * porta e o sinal. A régua rebentava na linha 439 a procurar o mapa na primeira
+ * página, e uma régua que rebenta mente por omissão (§5 do brief P4, decisão 1).
+ * As células medem agora «Lugares» (`LUGARES`, nas duas edições) e o fragmento
+ * `#unidade=` lá; a rede de nomes é a gaveta dos distritos e das ilhas (as 29) e
+ * as listas das páginas das 29 unidades (os 308), que é o caminho sem guião que
+ * o L2a decidiu (§1.150, decisão 4); a U5, que media a altura da primeira página
+ * contra a de partida do F1.1d, sai com a razão escrita no lugar dela.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -174,6 +181,9 @@ import { chromium, webkit } from 'playwright';
    a célula mede o que o navegador desenha e não sabe deste número. Uma planta
    que diz «põe a margem a zero» tem de ler a margem que o sítio declara. */
 import { MARGEM_DA_MOLDURA } from '../../src/lib/mapa.mjs';
+import { parse } from 'node-html-parser';
+/* A PÁGINA DO MAPA DAS 29 (bloco P4): «Lugares», nas duas edições, desde o L2a. */
+const LUGARES = { pt: '/lugares/', en: '/en/places/' };
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -435,7 +445,7 @@ async function u1() {
   const pontosDaUnidade = Object.fromEntries(UNIDADES.map((u) => [u.slug, u.ponto]));
   medidas.alvos = {};
   for (const largura of [390, 1280]) {
-    const p = await pagina('/', largura);
+    const p = await pagina(LUGARES.pt, largura);
     const desenho = await p.evaluate(() => {
       const b = document.querySelector('[data-mapa-areas]').getBoundingClientRect();
       return [Math.round(b.width), Math.round(b.height)];
@@ -475,7 +485,7 @@ async function u1() {
   }
 
   /* U1b · os concelhos, unidade a unidade, no nível em que se tocam. */
-  const p = await pagina('/', 390);
+  const p = await pagina(LUGARES.pt, 390);
   let total = 0;
   let chegam = 0;
   const todos = [];
@@ -484,7 +494,7 @@ async function u1() {
   for (const r of UNIDADES) {
     const cliente = JSON.parse(fs.readFileSync(path.join(DIST, ficheiroDaUnidade(r.slug)), 'utf8'));
     const pontos = Object.fromEntries(cliente.concelhos.map((c) => [c.slug, c.ponto]));
-    await p.goto(`${base}/#unidade=${r.slug}`, { waitUntil: 'networkidle' });
+    await p.goto(`${base}${LUGARES.pt}#unidade=${r.slug}`, { waitUntil: 'networkidle' });
     await p.waitForFunction(
       (n) => document.querySelectorAll('[data-areas-concelhos] [data-concelho-porta]').length === n,
       cliente.concelhos.length,
@@ -556,18 +566,27 @@ async function u1() {
      nome: «fechada» era o estado com guião, e com guião a lista já não se vê.
      Que ela não ocupa píxel nenhum com guião é a A5 de `tests/inicio/porta.mjs`;
      que ela está à vista sem guião é a U4, aqui ao lado. */
-  const semGuiao = await pagina('/', 390, { guiao: false });
+  /* A REDE DE NOMES DE «LUGARES» (bloco P4). As 29 leem-se na gaveta dos
+     distritos e das ilhas, sem guião, e os 308 nas listas das páginas das 29
+     unidades, que é o caminho sem guião para um concelho desde o L2a (§1.150,
+     decisão 4: «o caminho sem guião para um concelho é a gaveta dos distritos e
+     das ilhas»). O índice `/municipios` que esta célula lia saiu da construção
+     com a peça 2 do B1 (é um redirecionamento do servidor para «Lugares»), e a
+     lista dos 308 da pesquisa está escondida sem guião. As 29 páginas leem-se do
+     disco, como o servidor as daria. */
+  const semGuiao = await pagina(LUGARES.pt, 390, { guiao: false });
   const rede = await semGuiao.evaluate(() => ({
-    unidades: [...document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]')].map((a) => a.getAttribute('data-lista-porta')),
+    unidades: [...document.querySelectorAll('[data-lista-lugares="distritos"] a[href^="/distritos/"]')]
+      .map((a) => a.getAttribute('href').replace(/^\/distritos\//, '').replace(/\/$/, '')),
   }));
   await semGuiao.__ctx.close();
-  const indice = await pagina('/municipios', 390, { guiao: false });
-  const ligacoes = await indice.evaluate(() =>
-    [...document.querySelectorAll('a[href^="/municipios/"]')]
-      .map((a) => (a.getAttribute('href') ?? '').replace(/^\/municipios\//, '').replace(/\/$/, ''))
-      .filter((s) => s !== ''),
-  );
-  await indice.__ctx.close();
+  const ligacoes = [];
+  for (const u of UNIDADES) {
+    const html = fs.readFileSync(path.join(DIST, 'distritos', u.slug, 'index.html'), 'utf8');
+    for (const a of parse(html).querySelectorAll('#concelhos li a[href^="/municipios/"]')) {
+      ligacoes.push((a.getAttribute('href') ?? '').replace(/^\/municipios\//, '').replace(/\/$/, ''));
+    }
+  }
   const contaPorSlug = new Map();
   for (const s of ligacoes) contaPorSlug.set(s, (contaPorSlug.get(s) ?? 0) + 1);
   const repetidos = [...contaPorSlug.entries()].filter(([, n]) => n > 1).map(([s, n]) => `${s} ×${n}`);
@@ -576,7 +595,7 @@ async function u1() {
   const emFalta = UNIDADES.map((u) => u.slug).filter((s) => !rede.unidades.includes(s));
   const naListaAMais = rede.unidades.filter((s) => !UNIDADES.some((u) => u.slug === s));
   conta(
-    'U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na lista (lida sem guião, que é onde ela está à vista) e os 308 no índice, uma ligação cada',
+    'U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na gaveta dos distritos e das ilhas (lida sem guião) e os 308 nas páginas das 29 unidades, uma ligação cada',
     emFalta.length === 0 &&
       naListaAMais.length === 0 &&
       rede.unidades.length === 29 &&
@@ -584,8 +603,8 @@ async function u1() {
       aMais.length === 0 &&
       repetidos.length === 0 &&
       contaPorSlug.size === OS_308.length,
-    `a lista dos nomes tem ${rede.unidades.length} unidades da Carta · ` +
-      `o índice dos concelhos tem ${ligacoes.length} ligações para ${contaPorSlug.size} de ${OS_308.length} slugs da Carta` +
+    `a gaveta dos nomes tem ${rede.unidades.length} unidades da Carta · ` +
+      `as páginas das 29 unidades têm ${ligacoes.length} ligações para ${contaPorSlug.size} de ${OS_308.length} slugs da Carta` +
       (emFalta.length ? ` · unidades em falta: ${emFalta.join(', ')}` : '') +
       (naListaAMais.length ? ` · unidades a mais na lista: ${naListaAMais.join(', ')}` : '') +
       (semLigacao.length ? ` · concelhos sem ligação: ${semLigacao.slice(0, 6).join(', ')}` : '') +
@@ -606,8 +625,8 @@ async function u1() {
 async function u2() {
   medidas.nome = {};
   for (const [lang, casa] of [
-    ['pt', '/'],
-    ['en', '/en'],
+    ['pt', LUGARES.pt],
+    ['en', LUGARES.en],
   ]) {
     const p = await pagina(casa, 1280);
     const lidos = [];
@@ -649,7 +668,7 @@ async function u2() {
     const amostra = [];
     for (const slug of AS_TRES_MAIORES) {
       const cliente = JSON.parse(fs.readFileSync(path.join(DIST, ficheiroDaUnidade(slug)), 'utf8'));
-      await q.goto(`${base}${casa === '/' ? '' : casa}/#unidade=${slug}`, { waitUntil: 'networkidle' });
+      await q.goto(`${base}${casa}#unidade=${slug}`, { waitUntil: 'networkidle' });
       await q.waitForSelector('[data-areas-concelhos] [data-concelho-porta]', { timeout: 5000 });
       for (let i = 0; i < 10; i++) {
         const c = cliente.concelhos[Math.floor((i * cliente.concelhos.length) / 10)];
@@ -775,7 +794,7 @@ async function u2() {
     const toqueNosConcelhos = [];
     for (const slug of AS_TRES_MAIORES) {
       const cliente = JSON.parse(fs.readFileSync(path.join(DIST, ficheiroDaUnidade(slug)), 'utf8'));
-      await t.goto(`${base}${casa === '/' ? '' : casa}/#unidade=${slug}`, { waitUntil: 'networkidle' });
+      await t.goto(`${base}${casa}#unidade=${slug}`, { waitUntil: 'networkidle' });
       await t.waitForSelector('[data-areas-concelhos] [data-concelho-porta]', { timeout: 5000 });
       for (let i = 0; i < 10; i++) {
         const c = cliente.concelhos[Math.floor((i * cliente.concelhos.length) / 10)];
@@ -859,7 +878,7 @@ async function leituraQueSobrevive(p, fn, semPagina) {
 
 /** U3a · com o dedo, num motor. */
 async function u3aNum(motor, browser) {
-  const p = await pagina('/', 390, { toque: true, motor: browser });
+  const p = await pagina(LUGARES.pt, 390, { toque: true, motor: browser });
   const norte = uni(A_QUE_CRESCE);
   /* O NOME ESPERADO É O DA CARTA (`mapa/pais.json`), e a célula AFIRMA-O depois:
      escrever o nome na prova e não o comparar era a régua a imprimir o que quer
@@ -915,13 +934,13 @@ async function u3aNum(motor, browser) {
   conta(
     `U3a · ${motor}, com o dedo: a unidade cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre`,
     depoisDaUnidade.nivel === 'unidade' &&
-      depoisDaUnidade.caminho === '/' &&
+      depoisDaUnidade.caminho === LUGARES.pt &&
       depoisDaUnidade.hash === `#unidade=${A_QUE_CRESCE}` &&
       depoisDaUnidade.concelhos === doNorte.concelhos.length &&
       !!nomeDoNorte &&
       depoisDaUnidade.nome === nomeDoNorte &&
       depoisDaUnidade.porta === `/distritos/${A_QUE_CRESCE}` &&
-      depoisDoPrimeiro.caminho === '/' &&
+      depoisDoPrimeiro.caminho === LUGARES.pt &&
       depoisDoPrimeiro.nome === maior.nome &&
       depoisDoSegundo === `/municipios/${primeiro}`,
     `a unidade: nível «${depoisDaUnidade.nivel}», ${depoisDaUnidade.concelhos} concelhos (o artefacto tem ${doNorte.concelhos.length}), ` +
@@ -936,7 +955,7 @@ async function u3aNum(motor, browser) {
 /** O resto da U3: o rato, a porta do lugar do nome e a página de um distrito. */
 async function u3resto() {
   /* Com o rato, e o botão de voltar do navegador. */
-  const q = await pagina('/', 1280);
+  const q = await pagina(LUGARES.pt, 1280);
   const alentejo = uni('beja');
   const ondeAlentejo = await noEcraDaUnidade(q, alentejo);
   await q.mouse.click(ondeAlentejo.x, ondeAlentejo.y);
@@ -967,7 +986,7 @@ async function u3resto() {
   );
 
   /* A porta do lugar do nome abre a página da unidade. */
-  await q.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await q.goto(`${base}${LUGARES.pt}`, { waitUntil: 'networkidle' });
   const algarve = uni('faro');
   const ondeAlgarve = await noEcraDaUnidade(q, algarve);
   await q.mouse.move(ondeAlgarve.x, ondeAlgarve.y);
@@ -1063,7 +1082,7 @@ async function u3resto() {
  * servidor escreveu.
  */
 async function u3eFalha() {
-  const p = await pagina('/', 390, { toque: true });
+  const p = await pagina(LUGARES.pt, 390, { toque: true });
   const algarve = uni('faro');
   await p.route(`**/${ficheiroDaUnidade(algarve.slug)}`, (rota) => rota.fulfill({ status: 404, body: '404' }));
   const onde = await noEcraDaUnidade(p, algarve);
@@ -1093,7 +1112,7 @@ async function u3eFalha() {
   conta(
     'U3e · com o ficheiro de uma unidade a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela',
     depoisDoPrimeiro.nivel === 'pais' &&
-      depoisDoPrimeiro.caminho === '/' &&
+      depoisDoPrimeiro.caminho === LUGARES.pt &&
       depoisDoPrimeiro.aviso === true &&
       depoisDoPrimeiro.nome === algarve.nome &&
       depoisDoPrimeiro.porta === '/distritos/faro' &&
@@ -1137,7 +1156,7 @@ async function u3ordem() {
   const B = 'beja';
 
   /* U3f · duas respostas com a ordem trocada. */
-  const p = await pagina('/', 390, { toque: true });
+  const p = await pagina(LUGARES.pt, 390, { toque: true });
   await comAtraso(p, A, ATRASO_LONGO);
   await comAtraso(p, B, ATRASO_CURTO);
   const ondeA = await noEcraDaUnidade(p, uni(A));
@@ -1180,7 +1199,7 @@ async function u3ordem() {
   await p.__ctx.close();
 
   /* U3g · o fragmento limpo com um pedido a meio. */
-  const q = await pagina('/', 390);
+  const q = await pagina(LUGARES.pt, 390);
   await comAtraso(q, A, ATRASO_LONGO);
   await q.evaluate((s) => {
     location.hash = `#unidade=${s}`;
@@ -1212,8 +1231,8 @@ async function u3ordem() {
 /* ======================================================================= U4 */
 async function u4() {
   for (const [lang, casa, prefixo] of [
-    ['pt', '/', '/distritos/'],
-    ['en', '/en', '/en/districts/'],
+    ['pt', LUGARES.pt, '/distritos/'],
+    ['en', LUGARES.en, '/en/districts/'],
   ]) {
     const p = await pagina(`${casa}#unidade=evora`, 390, { guiao: false });
     const r = await p.evaluate((pre) => {
@@ -1222,7 +1241,11 @@ async function u4() {
         areas: areas.length,
         comDestino: areas.filter((a) => (a.getAttribute('href') || '').startsWith(pre)).length,
         destinos: areas.map((a) => a.getAttribute('href')),
-        gaveta: document.querySelector('[data-cabeca-nomes] details')?.hasAttribute('open') ?? null,
+        /* A GAVETA DOS NOMES É A DOS DISTRITOS E DAS ILHAS DE «LUGARES» (bloco P4):
+           a gaveta «Os nomes no mapa» da primeira página saiu com o mapa no L2a, e
+           a rede sem guião passou à gaveta, que chega fechada com o nome e a
+           contagem à vista e abre sem guião (§1.150). */
+        gaveta: document.querySelector('[data-gaveta="distritos"]')?.hasAttribute('open') ?? null,
         /* A GAVETA ESTÁ À VISTA SEM GUIÃO (item 3 do F1.13, 15.09.2026). A folha
            da primeira página tira-a da composição, e `HomeView.astro` serve,
            dentro de um `<noscript>` do `<head>`, a regra que a devolve. Este
@@ -1232,25 +1255,25 @@ async function u4() {
            a abre. Com guião a mesma caixa mede zero, e é a A5 de
            `tests/inicio/porta.mjs` que o mede. */
         caixaDaGaveta: (() => {
-          const el = document.querySelector('[data-cabeca-nomes]');
+          const el = document.querySelector('[data-gaveta="distritos"]');
           if (!el) return null;
           const r = el.getBoundingClientRect();
           return { largura: +r.width.toFixed(1), altura: +r.height.toFixed(1), area: Math.round(r.width * r.height) };
         })(),
         sumarioAVista:
-          document.querySelector('[data-gaveta="nomes"] > summary')?.checkVisibility({
+          document.querySelector('[data-gaveta="distritos"] > summary')?.checkVisibility({
             contentVisibilityAuto: true,
             opacityProperty: true,
             visibilityProperty: true,
           }) ?? null,
-        naLista: document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]').length,
+        naLista: document.querySelectorAll('[data-lista-lugares="distritos"] a[href]').length,
         /* NENHUMA REGIÃO NO DESENHO NEM NA LISTA (U4 do F1.1e): uma ligação para
            `/regioes/` dentro do mapa ou da lista dos nomes é uma região a voltar
            ao desenho, e é isso que esta contagem proíbe. As nove continuam a ter
            página e a estar no menu, que é outra superfície. */
         regioesDesenhadas: document.querySelectorAll(
           '[data-mapa-areas] a[href*="/regioes/"], [data-mapa-areas] a[href*="/regions/"], ' +
-            '[data-mapa-ilhas] a[href*="/regioes/"], [data-mapa-ilhas] a[href*="/regions/"]',
+            '[data-lista-lugares="distritos"] a[href*="/regioes/"], [data-lista-lugares="distritos"] a[href*="/regions/"]',
         ).length,
         lugar: document.querySelector('[data-mapa-nome]')?.hidden ?? null,
         segundoNivel: document.querySelectorAll('[data-areas-concelhos] *').length,
@@ -1269,7 +1292,7 @@ async function u4() {
       codigos.push(resposta.status);
     }
     conta(
-      `U4 · ${lang}: sem guião, 29 ligações para as 29 páginas, a gaveta dos nomes À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado`,
+      `U4 · ${lang}: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado`,
       r.areas === 29 &&
         r.comDestino === 29 &&
         codigos.length === 29 &&
@@ -1307,224 +1330,29 @@ async function u4() {
 }
 
 /* ======================================================================= U5 */
-/**
- * O «ANTES» DESTE BLOCO É A PÁGINA DE PARTIDA, E O NÚMERO LÊ-SE DO ARTEFACTO QUE
- * O BLOCO ANTERIOR GRAVOU.
- *
- * A U5 do brief pede que a altura de `/` a 390 fique «igual ou menor do que a de
- * partida (`c9823939`, a medida da P5 do F1.1d)». `c9823939` é a cabeça em que o
- * F1.1d fechou o seu relatório, e a medida está no ficheiro que a régua desse
- * bloco gravou: `mapa-medidas.json`, `medidas.altura.depois`. É do mesmo motor e
- * da mesma largura desta célula (Chromium, 390 × 664), na primeira página
- * portuguesa com guião, em repouso.
- *
- * NÃO SE VOLTA A MEDIR O ANTES NESTA ÁRVORE, e a razão é a mesma que a leitura a
- * frio do Codex escreveu sobre a P5 (achado 11): a página de partida tinha outro
- * desenho e outra lista, e não se reconstrói mexendo na página de agora.
- */
-const ANTES_DO_F11D = {
-  ficheiro: 'design/especime-v3/medicoes/mapa-medidas.json',
-  chave: 'medidas.altura.depois',
-  cabeca: 'c9823939, a cabeça em que o F1.1d fechou o relatório',
-};
-
-async function u5() {
-  const doF11d = JSON.parse(fs.readFileSync(path.join(RAIZ, ANTES_DO_F11D.ficheiro), 'utf8'));
-  const antes = doF11d.medidas?.altura?.depois ?? null;
-
-  const p = await pagina('/', 390);
-  const depois = await p.evaluate(() => document.documentElement.scrollHeight);
-  await p.evaluate(() => {
-    const d = document.querySelector('[data-cabeca-nomes] details');
-    if (d) d.open = true;
-  });
-  await p.waitForTimeout(150);
-  const comAGavetaAberta = await p.evaluate(() => document.documentElement.scrollHeight);
-  await p.__ctx.close();
-  const semGuiao = await pagina('/', 390, { guiao: false });
-  const sem = await semGuiao.evaluate(() => document.documentElement.scrollHeight);
-  await semGuiao.__ctx.close();
-
-  medidas.altura = {
-    antes,
-    antesDe: ANTES_DO_F11D,
-    depois,
-    comAGavetaAberta,
-    semGuiao: sem,
-  };
-  conta(
-    'U5 · a altura de `/` a 390 depois deste bloco é igual ou menor do que a de partida',
-    typeof antes === 'number' && depois <= antes,
-    `antes ${antes} px (${ANTES_DO_F11D.ficheiro}, «${ANTES_DO_F11D.chave}», cabeça ${ANTES_DO_F11D.cabeca}) · ` +
-      `depois ${depois} px, na mesma largura e no mesmo motor (${antes - depois} px a menos) · ` +
-      `na mesma construção, a gaveta dos nomes aberta dá ${comAGavetaAberta} px e sem guião ${sem} px`,
-  );
-}
+/* A U5 SAIU NO BLOCO P4 (02.10.2026). Media a altura de `/` a 390 px contra a de
+   partida do F1.1d (`design/especime-v3/medicoes/mapa-medidas.json`, «medidas.
+   altura.depois», cabeça `c9823939`), para provar que o mapa das unidades não
+   alongava a primeira página. O L2a tirou o mapa da primeira página (§1.149 e
+   §1.150): o objeto da célula, o mapa na primeira página, deixou de existir, e a
+   altura da primeira página a 390 px passou a ser uma medida do L2a, nas capturas
+   desse bloco (de 7 194 para 6 609 px). Comparar a página de hoje, sem mapa, com
+   uma de setembro, com outro mapa, seria a régua a dizer verde sem medir nada do
+   que a célula prometia. */
 
 /* ======================================================================= U7 */
-/**
- * ---------------------------------------------------------------------------
- * A PÁGINA DE PROVA DO NÍVEL DA UNIDADE, CONSTRUÍDA POR ESTA RÉGUA
- * ---------------------------------------------------------------------------
- * A U7 do brief mede «a página do concelho com o nível da unidade, 0 pontos, o
- * concelho marcado, a porta a abrir o vizinho apontado». A página do concelho é
- * de outro bloco que corre em paralelo (o F1.10, item 8.17), e este bloco NÃO
- * TOCA em `src/views/MunicipioView.astro`: o que ele entrega é o nível como
- * parâmetro do componente, e a troca de uma linha fica escrita no relatório.
- *
- * Uma medida sobre o componente não pode esperar por essa troca, e por isso a
- * régua CONSTRÓI a página de prova: uma página Astro com uma linha, que rende
- * `MapaRespira` com `nivel="unidade"` e `escolhido="evora"`, na mesma postura de
- * localizador em que a página do concelho o rende. É uma construção própria, com
- * a sua configuração, para dentro de `dist/`, e leva menos de dois segundos: o
- * sítio construído não ganha página nenhuma, e o repositório não ganha ficheiro
- * nenhum (tudo o que ela escreve fica em `dist/`, que o `.gitignore` não segue).
- *
- * A FOLHA É A DO SÍTIO, e o nome dela não se escreve aqui: leem-se as folhas que
- * a PÁGINA DO CONCELHO construída declara, que é a superfície que esta célula
- * prova. Sem elas o anel do concelho escolhido não teria espessura para medir, e
- * uma folha escolhida à mão seria a régua a medir outra página.
- */
-const PROVA = {
-  dir: path.join(DIST, '_prova-nivel-da-unidade'),
-  rota: '/_prova-nivel-da-unidade/saida/',
-  unidade: 'evora',
-  escolhido: 'evora',
-};
-
-/** Constrói a página de prova. Devolve a lista dos concelhos da unidade. */
-function constroiAProva() {
-  const folhas = [
-    ...fs
-      .readFileSync(path.join(DIST, 'municipios', PROVA.escolhido, 'index.html'), 'utf8')
-      .matchAll(/<link rel="stylesheet" href="([^"]+)"/g),
-  ].map((m) => m[1]);
-  if (folhas.length === 0) {
-    throw new Error(`a página de /municipios/${PROVA.escolhido} não declara folha nenhuma`);
-  }
-  fs.rmSync(PROVA.dir, { recursive: true, force: true });
-  fs.mkdirSync(path.join(PROVA.dir, 'pages'), { recursive: true });
-  fs.mkdirSync(path.join(PROVA.dir, 'vazio'), { recursive: true });
-  fs.writeFileSync(
-    path.join(PROVA.dir, 'astro.config.mjs'),
-    `import { defineConfig } from 'astro/config';\n` +
-      `export default defineConfig({\n` +
-      `  root: ${JSON.stringify(RAIZ)},\n` +
-      `  srcDir: ${JSON.stringify(PROVA.dir)},\n` +
-      `  publicDir: ${JSON.stringify(path.join(PROVA.dir, 'vazio'))},\n` +
-      `  outDir: ${JSON.stringify(path.join(PROVA.dir, 'saida'))},\n` +
-      `  output: 'static',\n  build: { format: 'directory' },\n  devToolbar: { enabled: false },\n});\n`,
-  );
-  fs.writeFileSync(
-    path.join(PROVA.dir, 'pages', 'index.astro'),
-    `---\n` +
-      `import MapaRespira from ${JSON.stringify(path.join(RAIZ, 'src/components/inicio/MapaRespira.astro'))};\n` +
-      `import { t } from ${JSON.stringify(path.join(RAIZ, 'src/i18n/strings.mjs'))};\n` +
-      `import { concelhos } from ${JSON.stringify(path.join(RAIZ, 'src/lib/inicio.mjs'))};\n` +
-      `const s = t('pt');\n---\n` +
-      `<html lang="pt"><head><meta charset="utf-8" /><title>prova do nível da unidade</title>\n` +
-      folhas.map((f) => `<link rel="stylesheet" href="${f}" />`).join('\n') +
-      `\n</head><body>\n` +
-      `<MapaRespira s={s} lang="pt" concelhos={concelhos()} postura="localizador" ` +
-      `nivel="unidade" escolhido="${PROVA.escolhido}" />\n` +
-      `</body></html>\n`,
-  );
-  const saida = spawnSync(
-    'npx',
-    ['astro', 'build', '--config', path.relative(RAIZ, path.join(PROVA.dir, 'astro.config.mjs'))],
-    { cwd: RAIZ, encoding: 'utf8' },
-  );
-  if (saida.status !== 0) {
-    throw new Error(`a página de prova não construiu:\n${saida.stdout ?? ''}${saida.stderr ?? ''}`);
-  }
-  return concelhosDe(PROVA.unidade);
-}
-
-/* A PÁGINA DE PROVA NÃO FICA EM `dist/`. É uma página construída dentro da pasta
-   que os portões varrem, e uma página a mais ali seria uma página do sítio para
-   `gate:html`, para `check:voz` e para o feixe do desenho. Apaga-se no fim da
-   corrida, nos dois caminhos (as células e as plantas). */
-function limpaAProva() {
-  fs.rmSync(PROVA.dir, { recursive: true, force: true });
-}
-
-async function u7() {
-  let daUnidade;
-  try {
-    daUnidade = constroiAProva();
-  } catch (erro) {
-    conta('U7 · a página de prova com o nível da unidade', false, String(erro.message ?? erro));
-    return;
-  }
-  const p = await pagina(PROVA.rota, 390, { toque: true });
-  const r = await p.evaluate(() => {
-    const svg = document.querySelector('[data-mapa-concelhos]');
-    const areas = [...(svg?.querySelectorAll('[data-concelho-porta]') ?? [])];
-    const anel = svg?.querySelector('.uni-escolhida');
-    return {
-      svg: !!svg,
-      areas: areas.length,
-      destinos: areas.map((a) => a.getAttribute('href')),
-      nivel: document.querySelector('[data-mapa-raiz]')?.getAttribute('data-nivel') ?? null,
-      pontos: document.querySelectorAll('.mapa-pontos .mun').length,
-      anelDe: anel?.getAttribute('data-unidade') ?? null,
-      tracoDoAnel: anel ? Number.parseFloat(getComputedStyle(anel).strokeWidth) : null,
-      tracoDosOutros: Math.max(
-        ...[...(svg?.querySelectorAll('.uni:not(.uni-escolhida)') ?? [])].map((el) =>
-          Number.parseFloat(getComputedStyle(el).strokeWidth),
-        ),
-      ),
-      lugar: !!document.querySelector('[data-mapa-nome]'),
-      voltar: document.querySelectorAll('[data-mapa-voltar]').length,
-      /* O rótulo do desenho é o do nível da unidade, e não o do país. */
-      rotulo: svg?.getAttribute('aria-label') ?? null,
-    };
-  });
-
-  /* A PORTA ABRE O VIZINHO APONTADO: aponta-se um concelho que NÃO é o da
-     página, lê-se o nome no lugar e segue-se a porta. É o gesto que a página do
-     concelho ganha com o nível da unidade: sair para o vizinho sem voltar ao
-     país. */
-  const vizinho = daUnidade.find((c) => c.slug !== PROVA.escolhido);
-  await p.locator('[data-mapa-concelhos]').scrollIntoViewIfNeeded();
-  const onde = await p.evaluate((pt) => {
-    const svg = document.querySelector('[data-mapa-concelhos]');
-    const q = new DOMPoint(pt[0], pt[1]).matrixTransform(svg.getScreenCTM());
-    return { x: q.x, y: q.y };
-  }, vizinho.ponto);
-  await p.touchscreen.tap(onde.x, onde.y);
-  await p.waitForTimeout(200);
-  const apontado = await p.evaluate(() => ({
-    nome: document.querySelector('[data-mapa-nome-texto]')?.textContent.trim() ?? null,
-    porta: document.querySelector('[data-mapa-porta]')?.getAttribute('href') ?? null,
-  }));
-  const viagem = p.waitForURL(`**/municipios/${vizinho.slug}`, { timeout: 5000 }).catch(() => null);
-  if (apontado.porta) await p.click('[data-mapa-porta]');
-  await viagem;
-  const chegou = await p.evaluate(() => location.pathname);
-  await p.__ctx.close();
-
-  medidas.nivelDaUnidade = { ...r, apontado, chegou, vizinho: vizinho.slug };
-  conta(
-    'U7 · o nível da unidade rendido pelo servidor: os concelhos da unidade, 0 pontos, o concelho da página com o anel, e a porta a abrir o vizinho apontado',
-    r.svg &&
-      r.nivel === 'unidade' &&
-      r.areas === daUnidade.length &&
-      r.destinos.every((d, i) => d === `/municipios/${daUnidade[i].slug}`) &&
-      r.pontos === 0 &&
-      r.anelDe === PROVA.escolhido &&
-      r.tracoDoAnel > r.tracoDosOutros &&
-      r.lugar &&
-      r.voltar === 0 &&
-      apontado.nome === vizinho.nome &&
-      apontado.porta === `/municipios/${vizinho.slug}` &&
-      chegou === `/municipios/${vizinho.slug}`,
-    `nível «${r.nivel}» · ${r.areas} áreas para os ${daUnidade.length} concelhos de ${PROVA.unidade} · ` +
-      `${r.pontos} pontos · anel em «${r.anelDe}» com traço ${r.tracoDoAnel} contra ${r.tracoDosOutros} nos outros · ` +
-      `${r.voltar} porta(s) de voltar (um nível só não sobe) · rótulo «${r.rotulo}» · ` +
-      `ao apontar o vizinho o lugar diz «${apontado.nome}» (esperado «${vizinho.nome}») com a porta «${apontado.porta}», e ela leva a «${chegou}»`,
-  );
-}
+/* A U7 SAIU NO BLOCO P4 (02.10.2026). Construía uma página de prova que rendia
+   `MapaRespira` com `nivel="unidade"` e `escolhido="evora"`, na postura de
+   localizador em que a página do concelho o ia render, com as folhas que a página
+   do concelho declara, e media o anel do concelho escolhido e a porta do vizinho.
+   O item 8.17 do F1.10 tirou o cartão localizador da página do concelho, e hoje
+   nenhuma página rende o nível da unidade com um concelho escolhido: o único uso
+   do componente é o de «Lugares», sem `escolhido`, e a página do concelho já não
+   liga a folha do mapa (`mapa.css`, onde vive `.uni-escolhida`), por isso o anel
+   media 1 px contra 1. A célula media uma capacidade do componente sem página que
+   a use, com as folhas de uma página que já não a mostra; saiu com a sua planta.
+   O nível da unidade que «Lugares» mostra quando uma unidade cresce mede-se na U1b,
+   na U2b, na U3 e na U4. */
 
 /* ======================================================================= U8 */
 /* AS CÉLULAS DO CONTRASTE E DA REGIÃO VIVA SÃO AS P7 DO F1.1d, HERDADAS.
@@ -1585,7 +1413,7 @@ const CONTRASTE = () => {
 async function u8() {
   medidas.contraste = {};
   for (const tema of ['light', 'dark']) {
-    const p = await pagina('/', 1280, { tema });
+    const p = await pagina(LUGARES.pt, 1280, { tema });
     /* O TEMA DA CASA NÃO SE LÊ DO SISTEMA, e isso está escrito em `tokens.css`:
        o escuro é `:root[data-theme='dark']`, e quem o põe é o comando do leitor
        em `public/js/tema.js`. Medir com `colorScheme: 'dark'` e mais nada media
@@ -1609,7 +1437,7 @@ async function u8() {
     await p.__ctx.close();
   }
 
-  const p = await pagina('/', 1280);
+  const p = await pagina(LUGARES.pt, 1280);
   const antes = await p.locator('[data-mapa-nome]').ariaSnapshot();
   const doNorte = uni('evora');
   const onde = await noEcraDaUnidade(p, doNorte);
@@ -1670,7 +1498,7 @@ const TOLERANCIA_DA_MOLDURA = 1;
 async function u10() {
   medidas.molduras = {};
   for (const largura of [390, 768, 1280]) {
-    const p = await pagina('/', largura);
+    const p = await pagina(LUGARES.pt, largura);
     const r = await p.evaluate(() => {
       const cx = (el) => {
         const b = el.getBoundingClientRect();
@@ -1864,7 +1692,7 @@ async function u12() {
   const leituras = [];
   medidas.margemDaMoldura = {};
   for (const largura of [390, 768, 1024, 1280, 1600]) {
-    const p = await pagina('/', largura);
+    const p = await pagina(LUGARES.pt, largura);
     const r = await p.evaluate(() => {
       const svg = document.querySelector('[data-mapa-areas]');
       const caixa = (el) => {
@@ -1952,8 +1780,6 @@ async function corre(quais) {
     U2: u2,
     U3: u3,
     U4: u4,
-    U5: u5,
-    U7: u7,
     U8: u8,
     U10: u10,
     U11: u11,
@@ -2064,14 +1890,14 @@ const PLANTAS = [
         : texto,
   },
   {
-    nome: 'a lista fechada dos nomes aberta por defeito',
+    nome: 'a gaveta dos distritos e das ilhas aberta por defeito',
     celulas: ['U4'],
     quais: ['U4'],
     estrago: (texto, rota, ext) =>
       ext === '.html'
         ? texto.replace(
-            '<details class="gaveta" data-gaveta="nomes">',
-            '<details class="gaveta" data-gaveta="nomes" open>',
+            '<details class="gaveta" data-gaveta="distritos">',
+            '<details class="gaveta" data-gaveta="distritos" open>',
           )
         : texto,
   },
@@ -2102,18 +1928,7 @@ const PLANTAS = [
             .replace('href="/en/districts/beja"', 'href="/en/regions/alentejo"')
         : texto,
   },
-  {
-    /* O CONCELHO DA PÁGINA SEM O ANEL: a marca do lugar onde se está desaparece,
-       e o mapa da página do concelho passa a ser um mapa da unidade sem dizer
-       qual é o concelho. */
-    nome: 'o concelho da página sem o anel, no nível da unidade',
-    celulas: ['U7'],
-    quais: ['U7'],
-    estrago: (texto, rota, ext) =>
-      ext === '.html' && rota.indexOf('/_prova-nivel-da-unidade/') === 0
-        ? texto.replace('uni uni-escolhida', 'uni')
-        : texto,
-  },
+  /* A PLANTA DO ANEL (U7) SAIU COM A CÉLULA, no bloco P4 (a razão está na secção da U7). */
   {
     /* O GUIÃO SEM A MARCA DO GESTO. As duas condições saem, e com elas sai a
        regra inteira: uma resposta atrasada volta a mandar no desenho e no
@@ -2214,15 +2029,13 @@ if (VERMELHOS) {
     for (const c of tocadas) console.log(cinza(`              ${c.passa ? 'PASSA (e devia falhar)' : 'falha ✓'} ${c.nome}`));
   }
   console.log('');
-  limpaAProva();
   await nav.close();
   await navWebkit.close();
   servidor.close();
   process.exit(falhou ? 1 : 0);
 }
 
-await corre(['U1', 'U2', 'U3', 'U4', 'U5', 'U7', 'U8', 'U10', 'U11', 'U12']);
-limpaAProva();
+await corre(['U1', 'U2', 'U3', 'U4', 'U8', 'U10', 'U11', 'U12']);
 await nav.close();
 await navWebkit.close();
 servidor.close();

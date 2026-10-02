@@ -170,7 +170,12 @@ const p = prova(lang);
   <ComparacoesDosConcelhos lang={lang} />
 
   <script src="/js/municipios.js" defer is:inline></script>
-  <script src="/js/mapa-unidades.js" defer is:inline></script>
+  {/* O GUIÃO DO MAPA VEM COM O MAPA (bloco P4, 02.10.2026): `MapaRespira` já o
+      serve, e uma segunda etiqueta aqui fazia-o correr duas vezes, com duas
+      cópias de cada ouvinte; cada «Voltar ao país» escrevia duas entradas no
+      histórico, e o voltar do navegador precisava de dois toques para regressar
+      à unidade. A U3b de `tests/inicio/mapa-unidades.mjs` apanhou-o quando a
+      régua passou a medir esta página. */}
 </Base>
 
 <style>
