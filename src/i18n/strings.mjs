@@ -674,8 +674,11 @@ export const STRINGS = {
          dizer porquê. A frase diz o que acontece; é a mesma nas duas páginas que
          rendem a caixa dos concelhos, e vive dentro de um `<noscript>`, que é o
          único sítio onde ela é verdade. */
+      /* L2b-c (01.10.2026, os achados 5 e 6 da leitura a frio do L2b): a nota volta, verdadeira. Sem guião, o
+         formulário de «Lugares» submete para a própria página e não procura; o caminho para um concelho é a
+         gaveta dos distritos e das ilhas, logo abaixo (a decisão 4 da §1.150), e é isso que a nota diz. */
       pesquisaSemGuiao:
-        'Sem JavaScript, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha.',
+        'Sem JavaScript, a pesquisa não procura: para chegar a um concelho, use a lista dos distritos e das ilhas, abaixo.',
       /* O COMANDO DA BUSCA, QUE PASSOU A SER UM `<form>` (F1.1, item 12).
          Sem guião a caixa não filtrava nada e a página não tinha maneira de
          levar a lado nenhum: agora a busca é um formulário com destino, e o
@@ -3234,7 +3237,7 @@ export const STRINGS = {
       pesquisaSemResultado: 'No municipality by that name.',
       /* Ver a razão na edição portuguesa. */
       pesquisaSemGuiao:
-        'Without JavaScript, the button leads to the full list of municipalities, grouped by district and island.',
+        'Without JavaScript, the search finds nothing: to reach a municipality, use the list of districts and islands below.',
       /* O comando da busca. Ver a razão na edição portuguesa. */
       pesquisaSubmeter: 'Search',
     },

@@ -304,6 +304,34 @@ for (const [nome, cfg] of Object.entries(INDICES)) {
 }
 
 /* ---------------------------------------------------------- C4 · a pesquisa, viva */
+/**
+ * ESCREVER «evora» E «beja» E LER O QUE FICA À VISTA, PELAS DUAS MARCAS (L2b-c, 01.10.2026, o achado 6 da
+ * leitura a frio do L2b). A primeira forma lia só o `hidden` de cada item, e aceitava resultados que ninguém vê:
+ * com a lista mãe escondida, os itens que casam acendem-se dentro de uma caixa fechada, e a régua contava-os. Um
+ * resultado só está à vista se a lista mãe (`[data-pesquisa-lista]`) está aberta E o item não está escondido.
+ */
+async function escreveEOsResultados(p) {
+  const escritos = {};
+  for (const [chave, texto] of [['evora', 'evora'], ['beja', 'beja']]) {
+    await p.fill('#pesquisa-concelho', '');
+    await p.fill('#pesquisa-concelho', texto);
+    escritos[chave] = await p.evaluate(() => {
+      const lista = document.querySelector('[data-pesquisa-lista]');
+      const aberta = Boolean(lista) && !lista.hidden;
+      const vis = aberta ? [...lista.querySelectorAll('.pesquisa-item')].filter((li) => !li.hidden) : [];
+      return vis.map((li) => {
+        const a = li.querySelector('a[href]');
+        return {
+          nome: li.querySelector('.pesquisa-nome')?.textContent.trim() ?? null,
+          estado: li.querySelector('[data-cobertura]')?.getAttribute('data-cobertura') ?? null,
+          porta: a ? a.getAttribute('href') : null,
+        };
+      });
+    });
+  }
+  return escritos;
+}
+
 for (const edicao of ['pt', 'en']) {
   const p = await ctx.newPage();
   await p.goto(base + LUGARES[edicao], { waitUntil: 'networkidle' });
@@ -338,22 +366,7 @@ for (const edicao of ['pt', 'en']) {
   const distingue = await p.evaluate(() =>
     [...document.querySelectorAll('.pesquisa-item')].some((li) => !li.hasAttribute('data-tem-pagina')),
   );
-  const escritos = {};
-  for (const [chave, texto] of [['evora', 'evora'], ['beja', 'beja']]) {
-    await p.fill('#pesquisa-concelho', '');
-    await p.fill('#pesquisa-concelho', texto);
-    escritos[chave] = await p.evaluate(() => {
-      const vis = [...document.querySelectorAll('.pesquisa-item')].filter((li) => !li.hidden);
-      return vis.map((li) => {
-        const a = li.querySelector('a[href]');
-        return {
-          nome: li.querySelector('.pesquisa-nome')?.textContent.trim() ?? null,
-          estado: li.querySelector('[data-cobertura]')?.getAttribute('data-cobertura') ?? null,
-          porta: a ? a.getAttribute('href') : null,
-        };
-      });
-    });
-  }
+  const escritos = await escreveEOsResultados(p);
   const evora = escritos.evora;
   const beja = escritos.beja;
   const destino = edicao === 'pt' ? '/municipios/evora' : '/en/municipalities/evora';
@@ -401,6 +414,31 @@ for (const edicao of ['pt', 'en']) {
     await ctx2.close();
   }
   await p.close();
+}
+
+/* --------------------------------------------- C4 · a planta da lista mãe escondida (L2b-c) */
+/* O defeito que a leitura de fora de 23.09.2026 encontrou, reposto no guião que o servidor entrega: a linha que abre
+   a lista sai, e os itens que casam acendem-se dentro de uma caixa que continua fechada. É a planta «lista-escondida»
+   da H15 do `check:alvos`, aqui contra a C4. A régua passa só se a C4, corrida com o guião plantado, encontrar zero
+   resultados à vista em «evora», onde o guião intacto encontra um. */
+{
+  const guiao = fs.readFileSync(path.join(DIST, 'js', 'municipios.js'), 'utf8');
+  const linha = 'if (lista) lista.hidden = q.length === 0;';
+  const plantado = guiao.replace(linha, '');
+  const ctxPlanta = await navMovel.newContext({ ...devices['iPhone 13'], deviceScaleFactor: 1 });
+  await ctxPlanta.route('**/js/municipios.js', (rota) => rota.fulfill({ status: 200, contentType: 'text/javascript; charset=utf-8', body: plantado }));
+  const p = await ctxPlanta.newPage();
+  await p.goto(base + LUGARES.pt, { waitUntil: 'networkidle' });
+  const escritos = await escreveEOsResultados(p);
+  const mordeu = guiao.includes(linha) && plantado !== guiao && escritos.evora.length === 0;
+  conta(
+    'C4 · a planta: com a lista mãe escondida pelo guião, «evora» não tem resultados à vista e a C4 cai · 390 pt',
+    mordeu,
+    `o guião tinha a linha que abre a lista: ${guiao.includes(linha)} · com ela tirada, «evora» → ${escritos.evora.length} resultado(s) à vista, «beja» → ${escritos.beja.length}`,
+  );
+  medidas.c4_planta_lista_mae_escondida = { mordeu, evora: escritos.evora.length, beja: escritos.beja.length };
+  await p.close();
+  await ctxPlanta.close();
 }
 
 await ctx.close();

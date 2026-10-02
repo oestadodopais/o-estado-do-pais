@@ -95,6 +95,10 @@ const {
      o guião não corre. É opcional porque nem todas as buscas fazem o mesmo sem
      guião, e cada página que a passa diz a sua. */
   semGuiao = null,
+  /* A NOTA À VISTA (L2b-c, 01.10.2026, os achados 5 e 6 da leitura a frio do L2b). Em «Lugares», quem não tem
+     guião escreve um nome, carrega em «Procurar» e não acontece nada que se veja: a nota tem de se ver, e não só
+     de se ouvir. É opcional, e por omissão a nota continua escondida à vista, como a regra acima diz. */
+  semGuiaoAVista = false,
 } = Astro.props;
 
 if (!rotulo || !id) {
@@ -138,7 +142,7 @@ if (accao && !submeter) {
       </span>
       {semGuiao && (
         <noscript>
-          <p class="busca-sem-guiao vh">{semGuiao}</p>
+          <p class:list={['busca-sem-guiao', !semGuiaoAVista && 'vh']} data-busca-sem-guiao>{semGuiao}</p>
         </noscript>
       )}
     </form>
