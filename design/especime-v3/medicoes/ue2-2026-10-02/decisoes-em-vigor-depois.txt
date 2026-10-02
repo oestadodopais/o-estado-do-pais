@@ -1,0 +1,330 @@
+§1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
+    src/i18n/strings.mjs:2970
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/especime-v3/INVENTARIO-FRASES.md:1809
+    design/especime-v3/INVENTARIO-FRASES.md:2667
+    design/especime-v3/INVENTARIO-FRASES.md:2897
+    design/especime-v3/INVENTARIO-FRASES.md:320
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:131
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:231
+    src/i18n/strings.mjs:552
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    design/especime-v3/INVENTARIO-FRASES.md:2344
+    design/especime-v3/INVENTARIO-FRASES.md:2833
+    design/especime-v3/INVENTARIO-FRASES.md:2904
+    design/especime-v3/INVENTARIO-FRASES.md:2921
+    design/especime-v3/INVENTARIO-FRASES.md:2934
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:114
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:116
+    src/i18n/strings.mjs:1084
+    src/i18n/strings.mjs:1514
+    src/styles/inicio.css:3512
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    src/i18n/strings.mjs:2284
+§1.19 · Os estudos migram para dois sítios, não um
+    scripts/gate-html.mjs:1228
+    scripts/gate-html.mjs:5297
+    scripts/gate-html.mjs:8940
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    scripts/gate-html.mjs:143
+    scripts/gate-html.mjs:148
+    scripts/gate-html.mjs:2751
+    scripts/gate-html.mjs:2907
+    scripts/gate-html.mjs:3603
+    scripts/gate-html.mjs:3807
+    scripts/gate-html.mjs:3821
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:64
+    scripts/gate-html.mjs:2630
+    scripts/gate-html.mjs:880
+    scripts/gate-html.mjs:914
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    scripts/gate-html.mjs:3242
+    scripts/gate-html.mjs:3351
+    scripts/gate-html.mjs:4046
+    scripts/gate-html.mjs:7211
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/i18n/strings.mjs:2828
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    scripts/gate-html.mjs:5127
+    src/i18n/strings.mjs:350
+    src/i18n/strings.mjs:407
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    scripts/gate-html.mjs:5002
+    scripts/gate-html.mjs:8094
+    scripts/gate-html.mjs:8808
+    src/i18n/strings.mjs:1724
+    src/i18n/strings.mjs:394
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    scripts/gate-html.mjs:288
+    scripts/gate-html.mjs:380
+    scripts/gate-html.mjs:3910
+    scripts/gate-html.mjs:79
+    src/i18n/strings.mjs:2191
+    src/i18n/strings.mjs:2196
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    scripts/gate-html.mjs:3043
+    scripts/gate-html.mjs:3086
+§1.42 · Segunda revisão cruzada do bloco V
+    scripts/gate-html.mjs:3065
+    scripts/gate-html.mjs:3086
+    scripts/gate-html.mjs:3479
+    scripts/gate-html.mjs:7502
+§1.44 · A revisão cruzada da identidade v2
+    scripts/gate-html.mjs:906
+    src/data/figuras.mjs:113
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    scripts/gate-html.mjs:915
+    src/i18n/strings.mjs:2371
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    src/i18n/strings.mjs:267
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    scripts/gate-html.mjs:4022
+    scripts/gate-html.mjs:86
+    scripts/gate-html.mjs:8808
+§1.66 · As correções de UX depois da auditoria de 25.08, bloco A
+    design/especime-v3/INVENTARIO-FRASES.md:1134
+    design/especime-v3/INVENTARIO-FRASES.md:816
+§1.68 · As páginas dos 308 concelhos
+    scripts/gate-html.mjs:4809
+    scripts/gate-html.mjs:94
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    scripts/gate-html.mjs:1629
+§1.84 · A primeira página: os nomes do mapa ao lado, com o mapa a responder-lhes, e os dois painéis com nome (Emenda 24)
+    src/styles/inicio.css:1246
+    src/styles/inicio.css:1490
+    src/styles/inicio.css:237
+    src/styles/inicio.css:3176
+    src/styles/inicio.css:3302
+    src/styles/inicio.css:3553
+    src/styles/inicio.css:985
+§1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:46
+§1.86 · A identidade fecha: o nome, a marca e os tipos ficam como estão
+    src/styles/inicio.css:2964
+    src/styles/inicio.css:3270
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:208
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    scripts/gate-html.mjs:5950
+    scripts/gate-html.mjs:6883
+    scripts/gate-html.mjs:8108
+    scripts/gate-html.mjs:876
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    design/especime-v3/INVENTARIO-FRASES.md:1255
+    design/especime-v3/INVENTARIO-FRASES.md:1297
+    design/especime-v3/INVENTARIO-FRASES.md:1302
+    design/especime-v3/INVENTARIO-FRASES.md:1556
+    design/especime-v3/INVENTARIO-FRASES.md:1558
+    design/especime-v3/INVENTARIO-FRASES.md:1580
+    design/especime-v3/INVENTARIO-FRASES.md:165
+    design/especime-v3/INVENTARIO-FRASES.md:1660
+    design/especime-v3/INVENTARIO-FRASES.md:172
+    design/especime-v3/INVENTARIO-FRASES.md:182
+    design/especime-v3/INVENTARIO-FRASES.md:1973
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2147
+    design/especime-v3/INVENTARIO-FRASES.md:2151
+    design/especime-v3/INVENTARIO-FRASES.md:2180
+    design/especime-v3/INVENTARIO-FRASES.md:2251
+    design/especime-v3/INVENTARIO-FRASES.md:247
+    design/especime-v3/INVENTARIO-FRASES.md:2513
+    design/especime-v3/INVENTARIO-FRASES.md:2517
+    design/especime-v3/INVENTARIO-FRASES.md:2549
+    design/especime-v3/INVENTARIO-FRASES.md:2653
+    design/especime-v3/INVENTARIO-FRASES.md:2660
+    design/especime-v3/INVENTARIO-FRASES.md:271
+    design/especime-v3/INVENTARIO-FRASES.md:2711
+    design/especime-v3/INVENTARIO-FRASES.md:291
+    design/especime-v3/INVENTARIO-FRASES.md:298
+    design/especime-v3/INVENTARIO-FRASES.md:3016
+    design/especime-v3/INVENTARIO-FRASES.md:333
+    design/especime-v3/INVENTARIO-FRASES.md:442
+    design/especime-v3/INVENTARIO-FRASES.md:454
+    design/especime-v3/INVENTARIO-FRASES.md:471
+    design/especime-v3/INVENTARIO-FRASES.md:472
+    design/especime-v3/INVENTARIO-FRASES.md:473
+    design/especime-v3/INVENTARIO-FRASES.md:479
+    design/especime-v3/INVENTARIO-FRASES.md:840
+    design/especime-v3/INVENTARIO-FRASES.md:892
+    design/especime-v3/INVENTARIO-FRASES.md:911
+    design/especime-v3/INVENTARIO-FRASES.md:915
+    design/especime-v3/INVENTARIO-FRASES.md:971
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:66
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:67
+    scripts/check-formas.mjs:1158
+    scripts/check-lugar.mjs:425
+    scripts/check-lugar.mjs:437
+    scripts/check-lugar.mjs:438
+    scripts/check-lugar.mjs:439
+    scripts/check-lugar.mjs:440
+    scripts/check-lugar.mjs:441
+    scripts/check-lugar.mjs:442
+    scripts/check-lugar.mjs:443
+    scripts/check-lugar.mjs:444
+    scripts/check-lugar.mjs:445
+    scripts/check-lugar.mjs:446
+    scripts/check-lugar.mjs:447
+    scripts/check-lugar.mjs:448
+    scripts/check-lugar.mjs:449
+    src/components/inicio/LeituraBreve.astro:168
+    src/data/figuras.mjs:2646
+    src/data/figuras.mjs:2916
+    src/i18n/strings.mjs:112
+    src/i18n/strings.mjs:141
+    src/i18n/strings.mjs:1632
+    src/i18n/strings.mjs:1672
+    src/i18n/strings.mjs:200
+    src/i18n/strings.mjs:2348
+    src/i18n/strings.mjs:31
+    src/i18n/strings.mjs:80
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2564
+    src/components/inicio/LeituraBreve.astro:305
+    src/data/figuras.mjs:2645
+    src/i18n/strings.mjs:1174
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    design/especime-v3/INVENTARIO-FRASES.md:2580
+    src/data/figuras.mjs:2728
+§1.106 · «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+    scripts/check-lugar.mjs:499
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    design/especime-v3/INVENTARIO-FRASES.md:1292
+    design/especime-v3/INVENTARIO-FRASES.md:1293
+    design/especime-v3/INVENTARIO-FRASES.md:1295
+    design/especime-v3/INVENTARIO-FRASES.md:1296
+    design/especime-v3/INVENTARIO-FRASES.md:1748
+    design/especime-v3/INVENTARIO-FRASES.md:1750
+    design/especime-v3/INVENTARIO-FRASES.md:1752
+    design/especime-v3/INVENTARIO-FRASES.md:1753
+    design/especime-v3/INVENTARIO-FRASES.md:1971
+    design/especime-v3/INVENTARIO-FRASES.md:1972
+    design/especime-v3/INVENTARIO-FRASES.md:1992
+    design/especime-v3/INVENTARIO-FRASES.md:1993
+    design/especime-v3/INVENTARIO-FRASES.md:1994
+    design/especime-v3/INVENTARIO-FRASES.md:1995
+    design/especime-v3/INVENTARIO-FRASES.md:1996
+    design/especime-v3/INVENTARIO-FRASES.md:1997
+    design/especime-v3/INVENTARIO-FRASES.md:1998
+    design/especime-v3/INVENTARIO-FRASES.md:1999
+    design/especime-v3/INVENTARIO-FRASES.md:2000
+    design/especime-v3/INVENTARIO-FRASES.md:2001
+    design/especime-v3/INVENTARIO-FRASES.md:257
+    design/especime-v3/INVENTARIO-FRASES.md:260
+    design/especime-v3/INVENTARIO-FRASES.md:261
+    design/especime-v3/INVENTARIO-FRASES.md:272
+    design/especime-v3/INVENTARIO-FRASES.md:273
+    design/especime-v3/INVENTARIO-FRASES.md:274
+    design/especime-v3/INVENTARIO-FRASES.md:275
+    design/especime-v3/INVENTARIO-FRASES.md:276
+    design/especime-v3/INVENTARIO-FRASES.md:277
+    design/especime-v3/INVENTARIO-FRASES.md:2821
+    design/especime-v3/INVENTARIO-FRASES.md:2835
+    design/especime-v3/INVENTARIO-FRASES.md:2836
+    design/especime-v3/INVENTARIO-FRASES.md:2837
+    design/especime-v3/INVENTARIO-FRASES.md:2838
+    design/especime-v3/INVENTARIO-FRASES.md:2839
+    design/especime-v3/INVENTARIO-FRASES.md:2840
+    design/especime-v3/INVENTARIO-FRASES.md:2847
+    design/especime-v3/INVENTARIO-FRASES.md:2848
+    design/especime-v3/INVENTARIO-FRASES.md:2851
+    design/especime-v3/INVENTARIO-FRASES.md:2852
+    design/especime-v3/INVENTARIO-FRASES.md:2853
+    design/especime-v3/INVENTARIO-FRASES.md:2854
+    design/especime-v3/INVENTARIO-FRASES.md:2855
+    design/especime-v3/INVENTARIO-FRASES.md:2856
+    design/especime-v3/INVENTARIO-FRASES.md:2857
+    design/especime-v3/INVENTARIO-FRASES.md:287
+    design/especime-v3/INVENTARIO-FRASES.md:290
+    design/especime-v3/INVENTARIO-FRASES.md:293
+    design/especime-v3/INVENTARIO-FRASES.md:305
+    design/especime-v3/INVENTARIO-FRASES.md:306
+    design/especime-v3/INVENTARIO-FRASES.md:307
+    design/especime-v3/INVENTARIO-FRASES.md:308
+    design/especime-v3/INVENTARIO-FRASES.md:309
+    design/especime-v3/INVENTARIO-FRASES.md:310
+    scripts/gate-html.mjs:4194
+    scripts/gate-html.mjs:4250
+    scripts/gate-html.mjs:4391
+    src/i18n/strings.mjs:1206
+    src/i18n/strings.mjs:1280
+    src/styles/inicio.css:668
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    scripts/gate-html.mjs:4195
+    scripts/gate-html.mjs:4250
+    scripts/gate-html.mjs:4391
+§1.110 · «A casa» sai do Método e do Sobre
+    design/especime-v3/INVENTARIO-FRASES.md:2917
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:115
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:134
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:130
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:113
+    scripts/gate-html.mjs:4216
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/especime-v3/INVENTARIO-FRASES.md:3006
+    design/especime-v3/INVENTARIO-FRASES.md:3063
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:410
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:210
+    src/data/figuras.mjs:521
+    tests/cartao/cartao.mjs:141
+    tests/cartao/cartao.mjs:143
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:133
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    design/especime-v3/INVENTARIO-FRASES.md:3187
+§1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
+    src/components/FaixaDosPaises.astro:28
+    src/i18n/strings.mjs:2454
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    design/especime-v3/INVENTARIO-FRASES.md:3075
+    src/i18n/strings.mjs:1735
+§1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:133
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    scripts/gate-html.mjs:229
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    design/especime-v3/INVENTARIO-FRASES.md:3526
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:499
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:390
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:391
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:438
+    scripts/gate-html.mjs:20
+    scripts/gate-html.mjs:42
+    src/components/FaixaDosPaises.astro:159
+    src/components/FaixaDosPaises.astro:24
+    src/data/faixa-da-uniao.mjs:95
+    src/data/figuras.mjs:520
+    tests/cartao/cartao.mjs:139
+    tests/cartao/cartao.mjs:1757
+    tests/cartao/cartao.mjs:27
+    tests/cartao/cartao.mjs:287
+    tests/cartao/cartao.mjs:314
+    tests/cartao/cartao.mjs:421
+    tests/cartao/cartao.mjs:507
+    tests/uniao/paises.mjs:28
+    tests/uniao/paises.mjs:62
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:413
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:438
+    scripts/gate-html.mjs:5879
+    src/views/UniaoEuropeiaView.astro:53
+    tests/cartao/cartao.mjs:35
+    tests/pais/portoes.mjs:312
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:66
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    design/especime-v3/INVENTARIO-FRASES.md:3606
+§1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
+    design/especime-v3/INVENTARIO-FRASES.md:3647
+    src/i18n/strings.mjs:679
+48 decisão(ões) citada(s) em 24 ficheiro(s)

@@ -339,3 +339,8 @@ planta('ue2-portao-valor-escondido-trocado','scripts/gate-html.mjs',[
 planta('ue2-portao-nome-da-lista-a-mao','scripts/gate-html.mjs',[
  ['uniao-europeia/index.html',r=>r.querySelector('[data-lista-ponto="taxa-de-emprego-2025-paises#MT"] [data-pais]').set_content('Malta e Gozo')]
 ],[/UE1: o nome do país «MT» foi renderizado como «Malta e Gozo»/]);
+/* UE2: a 8.4 do `check:lugar` escolhe a forma da definição pela rota. A página da União a render a pergunta do cartão
+   onde a declaração tem a forma da página da União, e sem a origem que explica o termo, tem de morder. */
+planta('ue2-lugar-pergunta-do-cartao-na-pagina-da-uniao','scripts/check-lugar.mjs',[
+ ['uniao-europeia/index.html',r=>{const d=r.querySelector('[data-leitura="custo-unitario-do-trabalho-2025"]');d.querySelector('.dobra-definicao').set_content('Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?');d.querySelector('[data-def-origem="eurostat-tipslm10-descricao"]').remove();}]
+],[/8\.4 · definições de painel fora da declaração: \d+, acima do teto 0/,/custo-unitario-do-trabalho-2025»: a página diz «Quanto mudou em três anos o índice nominal/,/a página rende 1 bloco\(s\) de origem e a declaração diz 2/]);
