@@ -1,0 +1,44 @@
+{
+  "o_que": "a origem nova do K2 conferida contra os bytes selados no motor, com o conhecido-positivo do L1",
+  "certo": true,
+  "resultados": [
+    {
+      "origem": "ce-swd-2026-222-habitacao",
+      "existe": true,
+      "conhecido_positivo": true,
+      "pdf": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf",
+      "sha256_do_pdf_declarado": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+      "sha256_do_pdf_medido": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+      "pdf_confere": true,
+      "extracao": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt",
+      "sha256_da_extracao_declarado": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725",
+      "sha256_da_extracao_medido": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725",
+      "extracao_confere": true,
+      "pedido_registado": true,
+      "hora_do_pedido": "2026-09-24T06:29:43Z",
+      "hora_confere": true,
+      "url_do_pedido_igual": true,
+      "excerto": "The overburden rate should be read together with the tenure structure (homeowner, tenants), that may differ across country and regions.",
+      "excerto_no_texto": true
+    },
+    {
+      "origem": "ce-swd-2026-222-disparidade-de-emprego",
+      "existe": true,
+      "conhecido_positivo": false,
+      "pdf": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf",
+      "sha256_do_pdf_declarado": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+      "sha256_do_pdf_medido": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+      "pdf_confere": true,
+      "extracao": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt",
+      "sha256_da_extracao_declarado": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725",
+      "sha256_da_extracao_medido": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725",
+      "extracao_confere": true,
+      "pedido_registado": true,
+      "hora_do_pedido": "2026-09-24T06:29:43Z",
+      "hora_confere": true,
+      "url_do_pedido_igual": true,
+      "excerto": "Gender employment gap (percentage points, population aged 20-64, 2025)",
+      "excerto_no_texto": true
+    }
+  ]
+}

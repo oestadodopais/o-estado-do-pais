@@ -148,8 +148,12 @@ const LISTA_PDM = [
   {
     claim: 'custo-unitario-do-trabalho-2025',
     quadro: 'pdm',
-    nome: { pt: 'Custo unitário do trabalho', en: 'Unit labour cost' },
-    nomeNoVeredicto: { pt: 'o custo unitário do trabalho' },
+    /* O NOME DIZ A VARIAÇÃO (bloco K2, 02.10.2026, item 2 do brief): o valor é a variação em três anos do índice, e
+       o nome de nível lia-se como o custo. A linha da unidade continua a dizer o período (decisão 2 do brief); o
+       veredicto e a lista da lede dizem a mesma coisa, sem a vírgula do nome, que partiria a lista. */
+    nome: { pt: 'Custo unitário do trabalho, variação em três anos', en: 'Unit labour cost, three-year change' },
+    nomeNoVeredicto: { pt: 'a variação em três anos do custo unitário do trabalho', en: 'the three-year change in unit labour cost' },
+    nomeNaFrase: { pt: 'variação em três anos do custo unitário do trabalho', en: 'three-year change in unit labour cost' },
     medida: {
       pt: ['Variação em três anos · ', { ref: '2025' }],
       en: ['Three-year change · ', { ref: '2025' }],
@@ -161,8 +165,10 @@ const LISTA_PDM = [
   {
     claim: 'precos-da-habitacao-2025',
     quadro: 'pdm',
-    nome: { pt: 'Preços da habitação', en: 'House prices' },
-    nomeNoVeredicto: { pt: 'os preços da habitação' },
+    /* O NOME DIZ A VARIAÇÃO (bloco K2, item 2): o valor é a variação anual dos preços, e não um preço. */
+    nome: { pt: 'Preços da habitação, variação anual', en: 'House prices, annual change' },
+    nomeNoVeredicto: { pt: 'a variação anual dos preços da habitação', en: 'the annual change in house prices' },
+    nomeNaFrase: { pt: 'variação anual dos preços da habitação', en: 'annual change in house prices' },
     medida: {
       pt: ['Variação anual · ', { ref: '2025' }],
       en: ['Annual change · ', { ref: '2025' }],
@@ -299,8 +305,11 @@ const LISTA_PDM = [
   {
     claim: 'taxa-de-actividade-2025',
     quadro: 'pdm',
-    nome: { pt: 'Taxa de atividade', en: 'Activity rate' },
-    nomeNoVeredicto: { pt: 'a taxa de atividade' },
+    /* O NOME DIZ A VARIAÇÃO (bloco K2, item 2; o exemplo do brief): o valor, 2,6, é a variação em três anos em
+       pontos percentuais, e o nome de uma taxa lia-se como a taxa. */
+    nome: { pt: 'Taxa de atividade, variação em três anos', en: 'Activity rate, three-year change' },
+    nomeNoVeredicto: { pt: 'a variação em três anos da taxa de atividade', en: 'the three-year change in the activity rate' },
+    nomeNaFrase: { pt: 'variação em três anos da taxa de atividade', en: 'three-year change in the activity rate' },
     medida: {
       pt: ['Variação em três anos, em pontos percentuais · ', { ref: '2025' }],
       en: ['Three-year change, in percentage points · ', { ref: '2025' }],
@@ -314,8 +323,10 @@ const LISTA_PDM = [
   {
     claim: 'taxa-de-cambio-efectiva-real-2025',
     quadro: 'pdm',
-    nome: { pt: 'Taxa de câmbio efetiva real', en: 'Real effective exchange rate' },
-    nomeNoVeredicto: { pt: 'a taxa de câmbio efetiva real' },
+    /* O NOME DIZ A VARIAÇÃO (bloco K2, item 2): o valor é a variação em três anos da taxa. */
+    nome: { pt: 'Taxa de câmbio efetiva real, variação em três anos', en: 'Real effective exchange rate, three-year change' },
+    nomeNoVeredicto: { pt: 'a variação em três anos da taxa de câmbio efetiva real', en: 'the three-year change in the real effective exchange rate' },
+    nomeNaFrase: { pt: 'variação em três anos da taxa de câmbio efetiva real', en: 'three-year change in the real effective exchange rate' },
     medida: {
       pt: ['Variação em três anos · ', { ref: '2025' }],
       en: ['Three-year change · ', { ref: '2025' }],
@@ -1434,6 +1445,29 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
       extracao: {"ficheiro": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt", "sha256": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725", "ferramenta": "pdftotext version 26.03.0"},
     },
   },
+  /* A DIFERENÇA DE EMPREGO ENTRE SEXOS EM PONTOS PERCENTUAIS (bloco K2, 02.10.2026, item 3 do brief). A linha escreve a
+     unidade que o Eurostat escreve, «% da população» («Percentage of total population», na resposta selada), e um leitor
+     lia uma parte da população onde o número é a diferença entre duas taxas. A descrição do Eurostat diz a diferença
+     entre as taxas de emprego dos homens e das mulheres; a unidade em pontos percentuais di-la o quadro do Painel Social
+     do Relatório por País de Portugal da Comissão, o mesmo documento que o L1 já pediu e selou no motor (o quadro A14.1,
+     «Social Scoreboard for Portugal»). O excerto é a linha do quadro com os espaços da extração colapsados, conferida
+     por `design/especime-v3/medicoes/k2-2026-10-02/origens-k2.py` contra os bytes do PDF e da extração. */
+  "ce-swd-2026-222-disparidade-de-emprego": {
+    publicador: "Comissão Europeia",
+    documento: "2026 Country Report – Portugal, SWD(2026) 222 final",
+    url: "https://economy-finance.ec.europa.eu/document/download/295e2168-d2a6-4e13-9496-a65e01a24bbb_en",
+    lido: "2026-09-24",
+    lingua: "en",
+    excerto: "Gender employment gap (percentage points, population aged 20-64, 2025)",
+    selo: {
+      motor: "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf",
+      campo: "a extração pdftotext -layout, o quadro A14.1 «Social Scoreboard for Portugal», a linha do Gender employment gap",
+      hora: "2026-09-24T06:29:43Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+      extracao: {"ficheiro": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt", "sha256": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725", "ferramenta": "pdftotext version 26.03.0"},
+    },
+  },
   "dre-dlr-37-2023-a": {
     publicador: "Diário da República",
     documento: "Decreto Legislativo Regional n.º 37/2023/A, de 20 de outubro (republica o Decreto Legislativo Regional n.º 8/2002/A)",
@@ -2150,6 +2184,26 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       ' to ',
       { nl: '24', motivo: 'escala-de-instrumento' },
       ' has completed at most lower secondary education and is not in education or training?',
+    ],
+  },
+  /* A DIFERENÇA DE EMPREGO ENTRE SEXOS (bloco K2, item 3 do brief): a pergunta diz as duas coisas que a unidade da
+     fonte não diz, que o número é a diferença entre duas taxas e que se conta em pontos percentuais. A unidade da linha
+     fica como a fonte a escreve, no recibo e no cartão; o recibo mostra esta pergunta com as duas origens. */
+  'disparidade-de-emprego-entre-sexos-2025': {
+    origens: ['eurostat-tesem060-descricao', 'ce-swd-2026-222-disparidade-de-emprego'],
+    pt: [
+      'Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ',
+      { nl: '20', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '64', motivo: 'escala-de-instrumento' },
+      ' anos e a das mulheres?',
+    ],
+    en: [
+      'What is the difference, in percentage points, between the employment rate of men aged ',
+      { nl: '20', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '64', motivo: 'escala-de-instrumento' },
+      ' and that of women?',
     ],
   },
   'risco-de-pobreza-ou-exclusao-2025': {

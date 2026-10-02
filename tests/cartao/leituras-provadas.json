@@ -21,6 +21,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-09-29",
       "o_que": "a passagem UE1d, pela §1.140 do lugar de direção: a leitura da sobrecarga do custo da habitação no total ganha a comparação com a média da União (as folhas comuns de MEDIA_UE e EU_AVERAGE, da classe «conta») e perde a frase da ressalva da Comissão, que o cartão diz num bloco próprio, lido da fonte única src/data/ressalvas-da-uniao.mjs; sai a folha dessa frase e a origem ce-swd-2026-222-habitacao da lista da medida, que só essa folha usava (a primeira página continua a prendê-la ao literal em tests/inicio/blocos-provados.json)"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-02",
+      "o_que": "o K2, items 3 e 4 do brief: a diferença de emprego entre sexos diz que é a diferença entre duas taxas, em pontos percentuais (com a origem nova do quadro do Painel Social no Relatório por País de Portugal); a quota nas exportações diz em palavras comuns o que é a quota e quem são as economias avançadas; o PIB por habitante diz o que a unidade chama volumes encadeados"
     }
   ],
   "comuns": [
@@ -585,8 +590,8 @@
       ],
       "folhas": [
         {
-          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços.",
-          "en": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices.",
+          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a unidade chama volumes encadeados.",
+          "en": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the unit calls chain linked volumes.",
           "partes": [
             {
               "pt": "É o valor de tudo o que o país produziu",
@@ -658,6 +663,23 @@
                   "origem": "eurostat-glossario-inflacao",
                   "campo": "excerto",
                   "literal": "Inflation is an increase in the general price level of goods and services."
+                }
+              ]
+            },
+            {
+              "pt": ", a que a unidade chama volumes encadeados",
+              "en": ", which the unit calls chain linked volumes",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "volumes encadeados"
+                },
+                {
+                  "origem": "eurostat-nama10-volumes",
+                  "campo": "excerto",
+                  "literal": "presented as chain linked volumes"
                 }
               ]
             },
@@ -2022,12 +2044,12 @@
       ],
       "folhas": [
         {
-          "pt": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas.",
-          "en": "It is how much Portugal’s share of the exports of advanced economies changed over three years.",
+          "pt": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas: a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE.",
+          "en": "It is how much Portugal’s share of the exports of advanced economies changed over three years: the part that Portugal’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD.",
           "partes": [
             {
-              "pt": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas.",
-              "en": "It is how much Portugal’s share of the exports of advanced economies changed over three years.",
+              "pt": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas",
+              "en": "It is how much Portugal’s share of the exports of advanced economies changed over three years",
               "classe": "diz",
               "apoios": [
                 {
@@ -2046,6 +2068,28 @@
                   "literal": "calculated as the 3 year % change"
                 }
               ]
+            },
+            {
+              "pt": ": a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE",
+              "en": ": the part that Portugal’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsbp60-descricao",
+                  "campo": "excerto",
+                  "literal": "shares of exports of goods and services of EU Member States in relation to total exports of goods and services of OECD countries and non-OECD EU Member States"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% do total OCDE e UE não-OCDE"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         },
@@ -3220,34 +3264,40 @@
     {
       "id": "disparidade-de-emprego-entre-sexos-2025",
       "origens": [
-        "eurostat-tesem060-descricao"
+        "eurostat-tesem060-descricao",
+        "ce-swd-2026-222-disparidade-de-emprego"
       ],
       "folhas": [
         {
-          "pt": "É a diferença entre a percentagem de homens dos ",
-          "en": "It is the difference between the percentage of men aged ",
+          "pt": "É a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ",
+          "en": "It is the difference, in percentage points, between the employment rate of men aged ",
           "partes": [
             {
-              "pt": "É a diferença entre a percentagem de homens dos ",
-              "en": "It is the difference between the percentage of men aged ",
+              "pt": "É a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ",
+              "en": "It is the difference, in percentage points, between the employment rate of men aged ",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "eurostat-tesem060-descricao",
                   "campo": "excerto",
                   "literal": "the difference between the employment rates of men and women"
+                },
+                {
+                  "origem": "ce-swd-2026-222-disparidade-de-emprego",
+                  "campo": "excerto",
+                  "literal": "Gender employment gap (percentage points"
                 }
               ]
             }
           ]
         },
         {
-          "pt": " anos com emprego e a percentagem de mulheres com emprego.",
-          "en": " in employment and the percentage of women in employment.",
+          "pt": " anos e a das mulheres.",
+          "en": " and that of women.",
           "partes": [
             {
-              "pt": " anos com emprego e a percentagem de mulheres com emprego.",
-              "en": " in employment and the percentage of women in employment.",
+              "pt": " anos e a das mulheres.",
+              "en": " and that of women.",
               "classe": "diz",
               "apoios": [
                 {

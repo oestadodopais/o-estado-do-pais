@@ -348,7 +348,10 @@ export function ledeDoPainel(medidas, gramatica, lang) {
   const fora = medidas.filter((m) => m.estado === 'fora');
   if (fora.length === 0) return null;
 
-  const nomes = fora.map((m) => nomeEmFrase(m.nome[lang] ?? m.nome.pt));
+  /* K2 (02.10.2026): um nome que diz a variação depois de uma vírgula («Custo unitário do trabalho, variação em três
+     anos») partia a lista, e o portão conta os itens pelos separadores; a medida declara então a sua forma em frase,
+     sem vírgula, ao lado do nome. As outras descem de caixa, como sempre. */
+  const nomes = fora.map((m) => m.nomeNaFrase?.[lang] ?? nomeEmFrase(m.nome[lang] ?? m.nome.pt));
 
   /* B2: a mesma seleção dá as portas e a forma frásica do veredicto do país.
      Os artigos e a forma aprovada de um nome vivem junto da medida, nunca

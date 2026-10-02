@@ -156,8 +156,11 @@ const PERCENTAGEM_DO_PIB_EN = 'as a percentage of GDP, the value of everything t
 export const LEITURAS_DAS_MEDIDAS = {
   /* ------------------------------------------------- 1 · Economia e finanças públicas */
   'pib-real-per-capita-2025': {
-    pt: ['É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços.', SUBIU, MEDIA_UE],
-    en: ['It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices.', ROSE, EU_AVERAGE],
+    /* K2 (02.10.2026, item 4 do brief): a frase diz o que a unidade chama «volumes encadeados», que nenhuma página
+       explicava (a leitura a frio da N1c, achado 4). Os literais estão na auditoria (a unidade da linha e a
+       metainformação das contas nacionais do Eurostat). */
+    pt: ['É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a unidade chama volumes encadeados.', SUBIU, MEDIA_UE],
+    en: ['It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the unit calls chain linked volumes.', ROSE, EU_AVERAGE],
   },
   'saldo-das-administracoes-publicas-2025': {
     pt: [
@@ -245,13 +248,14 @@ export const LEITURAS_DAS_MEDIDAS = {
   },
   'desempenho-das-exportacoes-2025': {
     pt: [
-      'É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas.',
+      /* K2 (item 4 do brief): a quota e as economias avançadas ditas em palavras comuns, pelo literal do Eurostat. */
+      'É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas: a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE.',
       { sinal: { positivo: [' Positiva quer dizer que Portugal ganhou quota.'], negativo: [' Negativa quer dizer que Portugal perdeu quota.'], zero: [' Zero quer dizer que a quota não mudou.'] } },
       VARIACAO,
       ...CHAO_PT(['uma perda de mais de ', { referencia: 'unico', semSinal: true }, ' % em três anos']),
     ],
     en: [
-      'It is how much Portugal’s share of the exports of advanced economies changed over three years.',
+      'It is how much Portugal’s share of the exports of advanced economies changed over three years: the part that Portugal’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD.',
       { sinal: { positivo: [' Positive means Portugal gained share.'], negativo: [' Negative means Portugal lost share.'], zero: [' Zero means the share did not change.'] } },
       CHANGE,
       ...CHAO_EN(['a loss of more than ', { referencia: 'unico', semSinal: true }, ' % over three years']),
@@ -314,8 +318,10 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['It is the share of young people aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ', { nl: '29', motivo: 'escala-de-instrumento' }, ' who are not working, not studying and not in training.', ROSE, EU_AVERAGE],
   },
   'disparidade-de-emprego-entre-sexos-2025': {
-    pt: ['É a diferença entre a percentagem de homens dos ', { nl: '20', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos com emprego e a percentagem de mulheres com emprego.', DIFERENCA, DIFERENCA_UE],
-    en: ['It is the difference between the percentage of men aged ', { nl: '20', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' in employment and the percentage of women in employment.', GAP, GAP_EU],
+    /* K2 (02.10.2026, item 3 do brief): a diferença entre duas taxas, em pontos percentuais; a unidade da linha fica
+       como a fonte a escreve («% da população»), e é esta frase que diz o que o número é. */
+    pt: ['É a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ', { nl: '20', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos e a das mulheres.', DIFERENCA, DIFERENCA_UE],
+    en: ['It is the difference, in percentage points, between the employment rate of men aged ', { nl: '20', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' and that of women.', GAP, GAP_EU],
   },
   'taxa-de-actividade-2025': {
     pt: [
