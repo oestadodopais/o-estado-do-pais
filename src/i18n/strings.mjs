@@ -1125,6 +1125,16 @@ export const STRINGS = {
          de chegada com a seta, que é a forma da casa para uma porta («O
          livro-razão →» na lista social, «Estudos» na fila dos estudos). */
       porta: 'Portugal na União Europeia',
+      /* A SECÇÃO DOS PAÍSES (bloco UE2, 02.10.2026, o §3, item 1, do brief): «Os 27 países», com a contagem dos
+         países da tabela de autoridade no meio, que o portão de HTML reconta (`data-tabela-dos-paises="conta"`); e o
+         resumo da lista dobrada de cada faixa, «Os 27 por ordem», com a contagem dos países da série
+         (`data-ponto-conta`), e o sentido da ordem dito com as palavras da frase do lugar de Portugal («do mais alto
+         para o mais baixo»). As palavras do brief são «Os 27 países» e «Os 27 por ordem»; o sentido acrescenta-se
+         porque uma lista ordenada que não diz por onde começa lê-se das duas maneiras. Nenhum algarismo aqui. */
+      paisesA: 'Os ',
+      paisesFim: ' países',
+      listaA: 'Os ',
+      listaFim: ' por ordem, do mais alto para o mais baixo',
     },
 
     /**
@@ -3372,6 +3382,12 @@ export const STRINGS = {
         'The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard.',
       h1: 'Portugal in the European Union',
       porta: 'Portugal in the European Union',
+      /* Ver a razão na gémea portuguesa (bloco UE2, 02.10.2026). «from highest to lowest» é o sentido da frase do
+         lugar de Portugal na edição inglesa («ranks 15th from the highest»). */
+      paisesA: 'The ',
+      paisesFim: ' countries',
+      listaA: 'The ',
+      listaFim: ' in order, from highest to lowest',
     },
 
     estado: {

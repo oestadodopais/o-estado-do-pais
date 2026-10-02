@@ -71,6 +71,35 @@
  * é melhor ou pior continua na leitura do cartão (a decisão 3 do §6 do brief).
  */
 
+/**
+ * AS MEDIDAS COM SÉRIE QUE OS DOIS QUADROS NÃO TÊM, E O LUGAR DELAS NA SECÇÃO DOS PAÍSES (bloco UE2,
+ * 02.10.2026).
+ *
+ * A secção «Os 27 países» da página da União mostra uma faixa por série de países, pela ordem dos dois
+ * quadros (o §3, item 1, do `BRIEF-UE2-a-pagina-dos-paises.md`). Das dez séries, oito são de medidas dos
+ * quadros e duas não são, e o brief não lhes dá lugar: a sobrecarga do custo da habitação dos inquilinos a
+ * preço de mercado e a variação homóloga do índice harmonizado de preços no consumidor. Esta tabela dá-lho,
+ * e é a única: uma série nova que não seja de uma medida dos quadros nem esteja aqui fecha a construção (o
+ * resolvedor, `faixasDaPaginaDaUniao()`), e a célula F20 do `check:formas` tem a sua própria cópia da regra.
+ *
+ *   `depoisDe` · a medida dos quadros a seguir à qual a faixa entra; `null` põe-na no fim, pela ordem desta
+ *                tabela.
+ *
+ * @type {Record<string, { depoisDe: string | null, razao: string }>}
+ */
+export const MEDIDAS_FORA_DOS_QUADROS = {
+  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
+    depoisDe: 'sobrecarga-do-custo-da-habitacao-2025',
+    razao:
+      'é a mesma medida num regime de ocupação, e a Comissão Europeia diz que o total se lê com a estrutura ' +
+      'por regime de ocupação (a ressalva da §1.140): as duas faixas leem-se uma por baixo da outra',
+  },
+  'ihpc-variacao-homologa': {
+    depoisDe: null,
+    razao: 'não é uma medida dos quadros nem a repartição de uma delas, e entra no fim',
+  },
+};
+
 /** @typedef {'baixo' | 'alto' | 'uniao' | 'portugal'} PapelDoValor */
 /** @typedef {'baixo' | 'alto' | 'aPar'} PapelDosPaises */
 /**

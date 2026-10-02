@@ -48,6 +48,26 @@
  * NÃO TRAZ COMANDO DE DENSIDADE. O item 8.14 tira-o: fica uma só interação, o
  * toque num cartão a abrir a leitura daquele cartão. O guião é
  * `public/js/leituras.js`, e sem ele as vinte e uma ficam à vista, fechadas.
+ *
+ * ---------------------------------------------------------------------------
+ * A PÁGINA DOS PAÍSES (bloco UE2, 02.10.2026, pela §1.143)
+ * ---------------------------------------------------------------------------
+ * Logo a seguir à manchete, a secção «Os 27 países»: uma faixa à largura
+ * inteira por cada medida com série de países no livro-razão, empilhadas pela
+ * ordem dos dois quadros (`faixasDaPaginaDaUniao()`), cada uma com o nome da
+ * medida, o desenho dos 27 com Portugal e a média da União, a frase do lugar de
+ * Portugal e a lista dobrada «Os 27 por ordem». O leitor que pergunta onde fica
+ * Portugal entre os 27 vê as dez respostas uma por baixo da outra (a decisão 1
+ * do §5 do brief). As contas são do modelo, e a vista só as rende. O toque numa
+ * marca, com guião, mostra o país e o valor dela: `public/js/paises.js`, que
+ * troca `hidden` e mais nada; sem guião, a lista dobrada é o caminho.
+ *
+ * A FAIXA DOS 21 CARTÕES NÃO CORRE DE LADO NESTA PÁGINA (o item 4 do brief): a
+ * `forma="pilha"` pô-la numa grelha que dobra em todas as larguras, e a 390 px
+ * a página lê-se de cima a baixo. As definições dobradas dos 21 cartões usam a
+ * forma da página da União, quando a definição a declara (`uniao`, em
+ * `DEFINICOES_DAS_MEDIDAS`): as palavras comuns primeiro, e o termo da fonte ao
+ * lado, entre parênteses (a decisão 3 do §5 do brief).
  */
 import Base from '../layouts/Base.astro';
 import '../styles/pais.css';
@@ -56,6 +76,9 @@ import LeituraBreve from '../components/inicio/LeituraBreve.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Frase from '../components/Frase.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
+import FaixaDosPaises from '../components/FaixaDosPaises.astro';
+import { faixasDaPaginaDaUniao } from '../lib/faixa-da-uniao.mjs';
+import { paisesDaUniao } from '../lib/series.mjs';
 import {
   FIGURAS_PDM,
   FIGURAS_SOCIAL,
@@ -179,6 +202,11 @@ const foraDoLimiar = p.painel_fora_do_limiar.valor;
 const cauda =
   foraDoLimiar === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.tituloPaisMuitos;
 const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
+
+/* AS FAIXAS DA SECÇÃO DOS PAÍSES (bloco UE2), pela ordem que o modelo dá, e quantos países a tabela de autoridade
+   tem, para o título; o portão de HTML reconta-o da tabela (`data-tabela-dos-paises="conta"`). */
+const faixasDosPaises = faixasDaPaginaDaUniao();
+const contaDosPaises = paisesDaUniao().length;
 ---
 
 <Base
@@ -201,6 +229,15 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
     )}
   </header>
 
+  {/* A SECÇÃO DOS PAÍSES (bloco UE2, 02.10.2026): depois da manchete, as faixas das medidas com série de países,
+      uma por baixo da outra. Ver a nota do cabeçalho deste ficheiro. */}
+  <section class="paises" id="paises" aria-labelledby="paises-titulo" data-paises>
+    <h2 class="paises-titulo" id="paises-titulo">
+      {s.uniaoEuropeia.paisesA}<span data-tabela-dos-paises="conta">{contaDosPaises}</span>{s.uniaoEuropeia.paisesFim}
+    </h2>
+    {faixasDosPaises.map((x) => <FaixaDosPaises linha={x.linha} lang={lang} />)}
+  </section>
+
   <Faixa
     s={s}
     lang={lang}
@@ -208,6 +245,7 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
     cartoes={cartoes}
     total={cartoes.length}
     conjunto={s.inicio.faixa.conjuntoUniao}
+    forma="pilha"
   />
 
   {/* ----------------------------------------------------------------------
@@ -250,7 +288,7 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
       />
     </div>
 
-    <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} />
+    <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} formaDaDefinicao="uniao" />
 
     <hr class="paineis-separador" data-separador-paineis />
 
@@ -283,7 +321,7 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
         </p>
       </div>
 
-      <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} />
+      <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} formaDaDefinicao="uniao" />
     </section>
 
     {/* ------------------------------------------------------------------
@@ -324,4 +362,5 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
   </section>
 
   <script src="/js/leituras.js" defer is:inline></script>
+  <script src="/js/paises.js" defer is:inline></script>
 </Base>

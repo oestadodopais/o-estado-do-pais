@@ -119,7 +119,14 @@ import { palavraDoEstado } from '../../lib/estado.mjs';
    contador de cada cartão: «1 de 5 das medidas de cabeça dos domínios». Ver a
    razão por extenso ao pé de `inicio.faixa.conjuntoCabeca` em
    `src/i18n/strings.mjs`. */
-const { s, lang, rotulo, cartoes, total = null, conjunto = null } = Astro.props;
+/* `forma` — «fila» (por omissão) ou «pilha» (bloco UE2, 02.10.2026, o item 4 do brief). Na fila, abaixo de 768 px,
+   os cartões correm de lado, como o conceito do diretor de 31.08 os pôs. Na pilha, dobram numa grelha em todas as
+   larguras, e a página lê-se de cima a baixo: é a forma da página da União desde o UE2, onde a fila mostrava um
+   cartão de cada vez a 390 px. Uma pilha não se desloca, e por isso não leva o `tabindex` da caixa que se desloca. */
+const { s, lang, rotulo, cartoes, total = null, conjunto = null, forma = 'fila' } = Astro.props;
+if (forma !== 'fila' && forma !== 'pilha') {
+  throw new Error(`<Faixa>: forma desconhecida «${forma}» (é «fila» ou «pilha»).`);
+}
 if (total !== null && !conjunto) {
   throw new Error(
     '<Faixa> com total e sem "conjunto": um contador que diz «1 de 5» sem dizer de que ' +
@@ -208,7 +215,7 @@ const palavraDoCartao = (c) =>
       etiqueta que já tem um, que é a mesma regra que a C3 de
       `tests/documentos/moldura.mjs` escreve («um papel próprio que a obra já
       declarava»). */}
-  <ol class="faixa" data-faixa aria-label={rotulo} tabindex="0">
+  <ol class:list={['faixa', forma === 'pilha' && 'faixa-pilha']} data-faixa data-faixa-forma={forma} aria-label={rotulo} tabindex={forma === 'fila' ? '0' : undefined}>
     {
       cartoes.map((c) => {
         const palavra = palavraDoCartao(c);

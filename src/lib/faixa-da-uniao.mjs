@@ -26,12 +26,26 @@
  * empatado, cada país da ponta leva o seu valor e a sua ressalva, e não só o
  * primeiro; as palavras da lista (`lista`) vão com a faixa para o componente as
  * pôr entre eles.
+ *
+ * O BLOCO UE2 (02.10.2026): a página da União mostra as dez faixas à largura
+ * inteira, uma por baixo da outra, e cada uma leva duas coisas que a faixa do
+ * cartão não leva, as duas feitas aqui e não na vista:
+ *   · `ordem`, os 27 países e a média da União pela ordem dos valores, do mais
+ *     alto para o mais baixo (o sentido do lugar de Portugal na frase), com os
+ *     valores iguais pela ordem da série, que é a protocolar com a União no fim;
+ *     é a lista dobrada «Os 27 por ordem», o caminho sem guião;
+ *   · `toques`, uma etiqueta por marca, com o país e a ressalva do ponto, na
+ *     posição da marca: o nome e o valor vão no documento, escondidos, e o guião
+ *     do toque (`public/js/paises.js`) só mostra o que já lá está.
+ * E `faixasDaPaginaDaUniao()` diz que faixas são e por que ordem: a dos dois
+ * quadros, com as medidas de fora deles no lugar que a tabela declarada lhes dá.
  */
 
 import { parsePtNumber } from './ledger.mjs';
-import { serieDaLinha, pontosDaSerie, AGREGADO_DA_UNIAO } from './series.mjs';
+import { serieDaLinha, pontosDaSerie, allSeries, AGREGADO_DA_UNIAO } from './series.mjs';
 import { routePath } from './routes.mjs';
-import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
+import { PALAVRAS_DA_FAIXA, MEDIDAS_FORA_DOS_QUADROS } from '../data/faixa-da-uniao.mjs';
+import { FIGURAS } from '../data/figuras.mjs';
 
 /**
  * @typedef {string
@@ -136,30 +150,48 @@ export function faixaDaMedida(idDaLinha, lang) {
   }
 
   /* Uma ponta: o país, a marca que a fonte põe ao ponto, e as palavras
-     declaradas dessa marca, que é o que a faixa mostra (UE1b). */
+     declaradas dessa marca, que é o que a faixa mostra (UE1b). Desde o UE2 vale
+     para qualquer ponto, também o da União: a lista dobrada e as etiquetas do
+     toque mostram a ressalva de cada um como as pontas a mostram. */
   /** @param {string} geo */
   const ponta = (geo) => {
-    const bandeira = paises.find((p) => p.geo === geo)?.bandeira ?? null;
+    const bandeira = pontos.find((p) => p.geo === geo)?.bandeira ?? null;
     if (!bandeira) return { geo, bandeira: null, ressalva: null };
-    const ressalva = palavras.ressalvas[bandeira];
+    const ressalva = palavras.ressalvas[String(bandeira)];
     if (!ressalva) {
       throw new Error(
         `faixa da União: o ponto de ${geo} em «${serie.id}» leva a marca «${bandeira}», que não tem palavras ` +
           `declaradas em src/data/faixa-da-uniao.mjs (${lang}). Nenhuma letra crua chega a uma página.`,
       );
     }
-    return { geo, bandeira, ressalva };
+    return { geo, bandeira: String(bandeira), ressalva };
   };
 
   const esquerdaPt = posicao(pt.n, min, max);
   const esquerdaUe = posicao(nUe, min, max);
+  const marcas = [
+    ...paises.map((p) => ({ geo: p.geo, esquerda: posicao(p.n, min, max), papel: p.geo === 'PT' ? 'portugal' : 'pais' })),
+    { geo: AGREGADO_DA_UNIAO, esquerda: esquerdaUe, papel: 'uniao' },
+  ];
+
+  /* A ORDEM DOS 27 E DA MÉDIA DA UNIÃO (UE2): do valor mais alto para o mais
+     baixo, que é o sentido em que a frase conta o lugar de Portugal, e os valores
+     iguais pela ordem da série (a protocolar, com a União no fim). A ordenação é
+     estável, e por isso a ordem da série desempata sem uma segunda regra. */
+  const naSerie = [...paises.map((p) => ({ geo: p.geo, n: p.n })), { geo: AGREGADO_DA_UNIAO, n: nUe }];
+  const ordem = [...naSerie]
+    .sort((a, b) => b.n - a.n)
+    .map((p) => ({
+      ...ponta(p.geo),
+      papel: p.geo === AGREGADO_DA_UNIAO ? 'uniao' : p.geo === 'PT' ? 'portugal' : 'pais',
+    }));
+
   return {
     serie: serie.id,
+    /* Quantos países a série tem (UE2: o resumo da lista dobrada di-lo); o portão reconta-o dos pontos. */
+    conta: paises.length,
     pedacos,
-    marcas: [
-      ...paises.map((p) => ({ geo: p.geo, esquerda: posicao(p.n, min, max), papel: p.geo === 'PT' ? 'portugal' : 'pais' })),
-      { geo: AGREGADO_DA_UNIAO, esquerda: esquerdaUe, papel: 'uniao' },
-    ],
+    marcas,
     rotulos: {
       portugal: { esquerda: esquerdaPt, ancora: ancora(esquerdaPt) },
       uniao: { esquerda: esquerdaUe, ancora: ancora(esquerdaUe) },
@@ -168,7 +200,78 @@ export function faixaDaMedida(idDaLinha, lang) {
       baixo: papeis.baixo.map((geo) => ponta(geo)),
       alto: papeis.alto.map((geo) => ponta(geo)),
     },
+    ordem,
+    /* AS ETIQUETAS DO TOQUE (UE2): uma por marca, na posição dela e ancorada
+       pela ponta mais perto, como os rótulos; o nome e o valor saem na vista
+       pelos componentes da série, e a ressalva vem daqui. */
+    toques: marcas.map((m) => ({ ...ponta(m.geo), papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda) })),
     porta: routePath('serie', lang, { slug: serie.id }),
     palavras: { uniao: palavras.uniao, porta: palavras.porta, lista: palavras.lista },
   };
+}
+
+/**
+ * AS FAIXAS DA SECÇÃO DOS PAÍSES, E A ORDEM DELAS (bloco UE2, 02.10.2026).
+ *
+ * Uma por série de países do livro-razão. A ordem é a dos dois quadros (o
+ * Procedimento e depois o Painel Social, como `FIGURAS` os declara), e as
+ * medidas com série que os quadros não têm entram no lugar que
+ * `MEDIDAS_FORA_DOS_QUADROS` lhes dá: a seguir à medida dos quadros que a tabela
+ * nomeia, ou no fim, pela ordem da tabela. Uma série que não seja de uma medida
+ * dos quadros nem esteja na tabela fecha a construção, e uma entrada da tabela
+ * sem série também: nenhuma faixa entra nem sai sem uma decisão escrita.
+ *
+ * @returns {{ serie: string, linha: string }[]}
+ */
+export function faixasDaPaginaDaUniao() {
+  const quadros = FIGURAS.map((f) => f.claim);
+  const series = allSeries().filter((s) => s.eixo === 'pais');
+  /** @param {{ linha_de_portugal?: unknown }} s */
+  const linhaDe = (s) => String(s.linha_de_portugal);
+  const fora = series.filter((s) => !quadros.includes(linhaDe(s))).map(linhaDe);
+  for (const linha of fora) {
+    if (!(linha in MEDIDAS_FORA_DOS_QUADROS)) {
+      throw new Error(
+        `faixa da União: a série da linha «${linha}» não é de uma medida dos dois quadros e não tem lugar declarado ` +
+          `em MEDIDAS_FORA_DOS_QUADROS (src/data/faixa-da-uniao.mjs). A secção dos países não a põe por adivinhação.`,
+      );
+    }
+  }
+  for (const linha of Object.keys(MEDIDAS_FORA_DOS_QUADROS)) {
+    if (!fora.includes(linha)) {
+      throw new Error(
+        `faixa da União: MEDIDAS_FORA_DOS_QUADROS declara «${linha}», que não é a linha de uma série de países fora ` +
+          `dos dois quadros. Uma entrada sem razão de existir tira-se da tabela.`,
+      );
+    }
+  }
+  const ordem = series
+    .filter((s) => quadros.includes(linhaDe(s)))
+    .map(linhaDe)
+    .sort((a, b) => quadros.indexOf(a) - quadros.indexOf(b));
+  /** @type {string[]} */
+  const noFim = [];
+  /** @type {Map<string, number>} as que já entraram a seguir a cada medida dos quadros */
+  const seguidas = new Map();
+  for (const [linha, regra] of Object.entries(MEDIDAS_FORA_DOS_QUADROS)) {
+    if (regra.depoisDe === null) {
+      noFim.push(linha);
+      continue;
+    }
+    const i = ordem.indexOf(regra.depoisDe);
+    if (i < 0) {
+      throw new Error(
+        `faixa da União: «${linha}» entra a seguir a «${regra.depoisDe}», que não é uma medida dos quadros com série.`,
+      );
+    }
+    const ja = seguidas.get(regra.depoisDe) ?? 0;
+    ordem.splice(i + 1 + ja, 0, linha);
+    seguidas.set(regra.depoisDe, ja + 1);
+  }
+  ordem.push(...noFim);
+  return ordem.map((linha) => {
+    const s = series.find((x) => linhaDe(x) === linha);
+    if (!s) throw new Error(`faixa da União: a linha «${linha}» não tem série de países.`);
+    return { serie: s.id, linha };
+  });
 }

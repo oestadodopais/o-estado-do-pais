@@ -5894,6 +5894,17 @@ for (const file of ficheirosHtml(DIST)) {
   }
   for (const el of body.querySelectorAll('[data-tabela-dos-paises]')) {
     ORIGENS_DAS_SERIES.tabela++;
+    /* QUANTOS PAÍSES A TABELA TEM (bloco UE2, 02.10.2026): o título da secção dos países da página da União diz
+       «Os 27 países», e o algarismo é a contagem da tabela de autoridade, recontada aqui pelo leitor próprio dos
+       portões (`lerPaisesDoPortao`), como o dia da leitura. Uma comparação, e não uma dispensa. */
+    if (el.getAttribute('data-tabela-dos-paises') === 'conta') {
+      const esperado = String(PAISES_DO_PORTAO.size);
+      if (textoTranscrito(el) !== esperado) {
+        err(`UE2: a contagem dos países da tabela dos nomes diz «${textoTranscrito(el)}» e a tabela tem ${esperado}.`);
+      }
+      aRemover.push(el);
+      continue;
+    }
     const dias = [...new Set([...PAISES_DO_PORTAO.values()].map((p) => String(p.lido_em).slice(0, 10)))];
     const esperado = dias.length === 1 ? dataDaCasaGate(dias[0]) : null;
     if (el.getAttribute('data-tabela-dos-paises') !== 'lido_em' || textoTranscrito(el) !== esperado) {
