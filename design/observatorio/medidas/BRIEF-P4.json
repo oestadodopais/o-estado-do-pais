@@ -85,7 +85,7 @@
     {
       "nome": "codigo_do_decisoes_em_vigor_num_intervalo_com_png",
       "valor": 1,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 74ce7657..642e9d56 (o UE2, que tem capturas PNG)",
+      "comando": "git show 642e9d56:scripts/leituras/decisoes-em-vigor.py > scripts/leituras/<transitório>.py; python3 scripts/leituras/<transitório>.py --intervalo 74ce7657..642e9d56 (o UE2, que tem capturas PNG); apagar o transitório",
       "conhecido_positivo": {
         "o_que": "a saída diz que não leu um byte 0x89",
         "encontrado": true
