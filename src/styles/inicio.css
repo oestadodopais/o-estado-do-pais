@@ -572,7 +572,12 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   padding: var(--cartao-pad-y) var(--cartao-pad-x) var(--cartao-pad-b);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto auto 1fr auto var(--cartao-pe);
+  /* A PRIMEIRA FILA RESERVA TRÊS LINHAS DE NOME (K2, 02.10.2026), e é a fila que as reserva, e não o nome: com a
+     reserva no elemento, a caixa do nome enchia a fila e o texto ficava no cimo dela, com o papel entre ele e o
+     valor; com a reserva na fila, o nome tem a altura do seu texto e encosta-se ao fundo dela, logo por cima do
+     valor. Três linhas a 15 px com a entrelinha de 1,25: o corpo e a entrelinha de `.cartao-nome`. */
+  --cartao-nome-reserva: calc(3 * 1.25 * 15px);
+  grid-template-rows: minmax(var(--cartao-nome-reserva), auto) auto 1fr auto var(--cartao-pe);
   row-gap: 4px;
 }
 /* A COLUNA DECLARA-SE EM TODOS OS FILHOS, E NÃO É DECORAÇÃO. A porta ocupa a
@@ -744,18 +749,14 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    e os dois casos deixam o pé no mesmo sítio. */
 .cartao-nome {
   grid-row: 1;
-  /* ENCOSTADO AO VALOR (K2): com três linhas reservadas, um nome curto ficava com duas linhas de papel entre ele e o
-     número; encostado ao fundo da sua fila, o nome lê-se logo por cima do valor, e os valores continuam à mesma altura
-     em todos os cartões. */
+  /* ENCOSTADO AO VALOR (K2, 02.10.2026): o nome passou a abrir o cartão, e os valores de cartões vizinhos só ficam à
+     mesma altura se os nomes ocuparem a mesma; a primeira fila da grelha reserva três linhas (`.cartao`, acima), porque
+     os nomes que dizem a variação («Taxa de câmbio efetiva real, variação em três anos») dobram em três linhas a
+     390 px, e o nome encosta-se ao fundo dela, para se ler logo por cima do valor. */
   align-self: end;
   margin: 0;
   font-size: 15px;
   line-height: 1.25;
-  /* TRÊS LINHAS RESERVADAS DESDE O K2 (02.10.2026): o nome passou a abrir o
-     cartão, e os valores de cartões vizinhos só ficam à mesma altura se os
-     nomes ocuparem a mesma; os nomes que dizem a variação («Taxa de câmbio
-     efetiva real, variação em três anos») dobram em três linhas a 390 px. */
-  min-height: calc(3 * 1.25em);
   /* O sublinhado declara-se em píxeis pela mesma razão da lista dos nomes: a
      marca do par vai de 1 para 3 px, e `auto` é uma cadeia e não uma grandeza. */
   text-decoration: underline;
