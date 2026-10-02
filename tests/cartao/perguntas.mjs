@@ -203,6 +203,36 @@ export function auditarPerguntas({
   }
   contas.origens_usadas = usadasEmTudo.size;
 
+  /* A UNIDADE DA CASA (passagem K2-c, 02.10.2026). Onde a definição declara uma unidade para o cartão mostrar, cada
+     forma tem de ser um pedaço da pergunta declarada na mesma língua: é assim que ela «vem da definição», e herda as
+     origens que a auditoria acima confere pedaço a pedaço. */
+  for (const [id, d] of Object.entries(definicoes)) {
+    if (!d?.unidade) continue;
+    contas.unidades_da_casa = (contas.unidades_da_casa ?? 0) + 1;
+    for (const lang of /** @type {const} */ (['pt', 'en'])) {
+      const u = d.unidade[lang];
+      const pergunta = textoDaDefinicao(d[lang] ?? []);
+      if (typeof u !== 'string' || !u.trim() || !pergunta.includes(u)) {
+        falha(id, `a unidade da casa «${u ?? ''}» (${lang}) não é um pedaço da pergunta declarada («${curto(pergunta)}»)`);
+      }
+    }
+  }
+
+  /* AS COORDENADAS DE UMA ORIGEM (passagem K2-c, 02.10.2026). Uma origem pode declarar, ao lado do título do conjunto,
+     a coordenada que a resposta da fonte fixa («Age class: From 15 to 29 years»), quando o título do conjunto diz outra
+     coisa. A coordenada tem de ser um segmento do excerto de uma linha do livro-razão lida no mesmo endereço, como o
+     motor o compôs das etiquetas da resposta (« — » entre etiquetas): a linha é o selo, e nada se escreve à mão. */
+  for (const [chave, o] of Object.entries(origens)) {
+    if (o?.coordenadas === undefined) continue;
+    contas.origens_com_coordenadas = (contas.origens_com_coordenadas ?? 0) + 1;
+    const c = String(o.coordenadas);
+    const daMesmaFonte = [...linhas.values()].filter((l) => l?.source_url === o.url);
+    const segmento = (excerto) => String(excerto ?? '').split(' — ').includes(c);
+    if (!/^[^:]+: \S/.test(c) || !daMesmaFonte.some((l) => segmento(l.excerpt))) {
+      erros.push(`K16 · origem «${chave}»: as coordenadas «${c}» não são um segmento do excerto de nenhuma linha lida no endereço da origem`);
+    }
+  }
+
   /* O SELO DE CADA RESPOSTA DA API. */
   for (const [chave, o] of Object.entries(origens)) {
     const daApi = API_DO_EUROSTAT.test(o?.url ?? '');

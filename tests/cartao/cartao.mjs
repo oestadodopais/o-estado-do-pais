@@ -1682,6 +1682,11 @@ if (PROVA) {
         { origens: { ...origensReais, 'eurostat-tesem130-denominador': { ...origensReais['eurostat-tesem130-denominador'], selo: undefined } } }],
       ['o sha256 tirado', 'origem «eurostat-tipspd30»', 'o selo não diz o sha256',
         { origens: { ...origensReais, 'eurostat-tipspd30': { ...origensReais['eurostat-tipspd30'], selo: { ...origensReais['eurostat-tipspd30'].selo, sha256: '' } } } }],
+      /* K2-c: a unidade da casa fora da pergunta, e as coordenadas de uma origem que a resposta não escreve. */
+      ['a unidade da casa fora da pergunta', 'disparidade-de-emprego-entre-sexos-2025', 'não é um pedaço da pergunta declarada',
+        { definicoes: { ...definicoes, 'disparidade-de-emprego-entre-sexos-2025': { ...definicoes['disparidade-de-emprego-entre-sexos-2025'], unidade: { pt: '% da população', en: 'percentage points' } } } }],
+      ['as coordenadas de outra classe etária', 'origem «eurostat-tipslm90-sexo»', 'não são um segmento do excerto',
+        { origens: { ...origensReais, 'eurostat-tipslm90-sexo': { ...origensReais['eurostat-tipslm90-sexo'], coordenadas: 'Age class: From 15 to 24 years' } } }],
     ];
     for (const [nome, alvo, mordida, entrada] of plantas) {
       const vistos = auditarPerguntas(entrada).erros.filter((e) => e.startsWith(`K16 · ${alvo}:`));

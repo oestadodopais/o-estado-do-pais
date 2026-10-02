@@ -56,6 +56,10 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
       ...(o.excertoEn
         ? [[`origem-${chave}-excerto-en`, { lang: 'en', origem: onde, text: o.excertoEn }]]
         : []),
+      /* K2-c: a coordenada que a resposta fixa, ao lado do título do conjunto, quando a origem a declara. */
+      ...(/** @type {{ coordenadas?: string }} */ (/** @type {unknown} */ (origem)).coordenadas
+        ? [[`origem-${chave}-coordenadas`, { lang: lingua, origem: onde, text: /** @type {{ coordenadas: string }} */ (/** @type {unknown} */ (origem)).coordenadas }]]
+        : []),
     ];
   }),
 );

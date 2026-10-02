@@ -121,6 +121,13 @@ const definicao = /** @type {Record<string, { pt: readonly unknown[], en: readon
 )[c.id];
 const frase = definicao ? definicao[lang] ?? definicao.pt : null;
 
+/* A UNIDADE DA CASA (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex). Onde a definição declarada
+   traz uma unidade (`unidade` em `DEFINICOES_DAS_MEDIDAS`), a linha do valor mostra-a em vez da etiqueta da fonte:
+   «5,4 pontos percentuais», e não «5,4 % da população», onde o número é a diferença entre duas taxas. A etiqueta
+   fica no recibo e na linha, como a fonte a escreve. O portão de HTML confere o texto contra a declaração, e o selo
+   do cartão aceita esta marca como a unidade da mesma linha (`scripts/selo-do-cartao.mjs`). */
+const unidadeDaCasa = /** @type {Record<string, { unidade?: Record<string, string> }>} */ (DEFINICOES_DAS_MEDIDAS)[c.id]?.unidade?.[lang] ?? null;
+
 /* ---------------------------------------------------------------------------
  * UM CARTÃO SEM NOME NÃO É UM CARTÃO (achado 3 da leitura a frio de 15.09.2026)
  * ---------------------------------------------------------------------------
@@ -202,14 +209,18 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       <p class="cartao-medida-valor">
         <span class="cartao-medida-quantidade">
         <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" plano separarUnidade>
-        <CampoDaLinha slot="sufixo"
-          id={c.id}
-          campo="unit"
-          valor={unidade.texto}
-          lang={lang}
-          class="cartao-medida-unidade"
-          lingua={unidade.lingua}
-        />
+        {unidadeDaCasa ? (
+          <span slot="sufixo" class="cartao-medida-unidade" data-unidade-da-casa={c.id}>{unidadeDaCasa}</span>
+        ) : (
+          <CampoDaLinha slot="sufixo"
+            id={c.id}
+            campo="unit"
+            valor={unidade.texto}
+            lang={lang}
+            class="cartao-medida-unidade"
+            lingua={unidade.lingua}
+          />
+        )}
         </Claim>
         </span>
         {periodo && (
@@ -257,14 +268,18 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       <p class="cartao-medida-valor">
         <span class="cartao-medida-quantidade">
         <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" plano separarUnidade>
-        <CampoDaLinha slot="sufixo"
-          id={c.id}
-          campo="unit"
-          valor={unidade.texto}
-          lang={lang}
-          class="cartao-medida-unidade"
-          lingua={unidade.lingua}
-        />
+        {unidadeDaCasa ? (
+          <span slot="sufixo" class="cartao-medida-unidade" data-unidade-da-casa={c.id}>{unidadeDaCasa}</span>
+        ) : (
+          <CampoDaLinha slot="sufixo"
+            id={c.id}
+            campo="unit"
+            valor={unidade.texto}
+            lang={lang}
+            class="cartao-medida-unidade"
+            lingua={unidade.lingua}
+          />
+        )}
         </Claim>
         </span>
         {periodo && (
