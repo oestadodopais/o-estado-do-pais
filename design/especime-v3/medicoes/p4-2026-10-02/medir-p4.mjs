@@ -65,7 +65,9 @@ medida('comando_do_tema_na_linha_da_marca_a_390', a390.length ? `${a390.filter((
   `node ${PASTA}/fila-da-marca.mjs (fila-da-marca.log): a primeira página e «Lugares», nas duas edições`,
   'na primeira página a 320 px o comando desce, e a medida di-lo', /^\/ 320: .*desce/m.test(fila),
   { antes: `${filaAntes.split('\n').filter((l) => / 390:/.test(l) && /na linha da marca/.test(l)).length} de ${filaAntes.split('\n').filter((l) => / 390:/.test(l)).length} (fila-da-marca-antes.log)`,
-    alvos: (fila.match(/botões ([^)]*)/) ?? [])[1] ?? NAO });
+    alvos: (fila.match(/botões ([^)]*)/) ?? [])[1] ?? NAO,
+    a_390: Object.fromEntries([...fila.matchAll(/^(\S+) 390: coluna ([\d.]+) · marca ([\d.]+) · comando ([\d.]+)/gm)].map((m) => [m[1], { coluna: +m[2], marca: +m[3], comando: +m[4] }])),
+    a_390_antes: Object.fromEntries([...filaAntes.matchAll(/^(\S+) 390: coluna ([\d.]+) · marca ([\d.]+) · comando ([\d.]+)/gm)].map((m) => [m[1], { coluna: +m[2], marca: +m[3], comando: +m[4] }])) });
 const nome = ler(`${PASTA}/nome-do-botao.log`) ?? '';
 const nomes = [...nome.matchAll(/button "([^"]*)"(?! \[pressed\])/g)].map((m) => m[1]);
 medida('nome_do_botao_escuro_na_arvore_de_acessibilidade', nomes[0] ?? NAO,
@@ -77,6 +79,11 @@ const pares = (c) => Object.entries(c?.estados ?? {}).flatMap(([e, l]) => l.map(
 const pA = pares(cA), pD = pares(cD);
 medida('pares_de_contraste_que_mudaram', cA && cD ? pD.filter((x, i) => x !== pA[i]).length + Math.abs(pA.length - pD.length) : NAO,
   `node scripts/medir-contraste.mjs, antes e depois (contraste-antes.json, contraste-depois.json)`, `os dois ficheiros têm pares (${pA.length} e ${pD.length})`, pA.length > 0 && pD.length > 0);
+
+const pp = lerJson(`${PASTA}/conferencias-00-0/pais-plantas.json`);
+medida('provas_do_check_pais', Array.isArray(pp) ? { provas: pp.length, certas: pp.filter((x) => x.passou).length, plantas_n3: pp.filter((x) => x.celula === 'N3' && x.codigo === 1).length, plantas_n1: pp.filter((x) => x.celula === 'N1' && x.codigo === 1).length } : NAO,
+  'node tests/pais/pais.mjs --prova (conferencias-00-0/pais-plantas.json)', 'a prova sem estrago passa com 0 e as plantas saem com 1',
+  Array.isArray(pp) && pp.some((x) => x.nome === 'páginas sem estrago' && x.codigo === 0) && pp.some((x) => x.codigo === 1));
 
 /* 0 · o menu */
 const navAgora = ler('src/lib/navegacao.mjs') ?? '';
@@ -91,7 +98,7 @@ medida('paginas_com_as_seis_portas_numa_linha', cap ? `${comMenuCerto.length} de
   'com o nome inteiro da União, a 390 px, o menu dobra em duas linhas nas duas edições, e a medida di-lo',
   cabecalhos.filter((r) => r.variante === 'nome-inteiro' && r.medidas.linhas_do_menu === 2).length === 2);
 const menu = ler(`${PASTA}/menu-a-390.log`) ?? '';
-const formas = [...menu.matchAll(/^(pt|en) · ([^:]+): ([\d.]+) px de portas numa coluna de (\d+) · (\d) linha/gm)].map((m) => ({ lang: m[1], forma: m[2], portas: +m[3], coluna: +m[4], linhas: +m[5] }));
+const formas = [...menu.matchAll(/^(pt|en) · ([^:]+): ([\d.]+) px de portas numa coluna de (\d+) · (\d) linha\(s\) · a porta mais estreita ([\d.]+) px/gm)].map((m) => ({ lang: m[1], forma: m[2], portas: +m[3], coluna: +m[4], linhas: +m[5], porta_mais_estreita: +m[6] }));
 medida('menu_a_390_nas_quatro_formas', formas.length ? formas : NAO, `node ${PASTA}/menu-a-390.mjs (menu-a-390.log)`,
   'a forma com o nome inteiro mede duas linhas: a medida vê o menu a dobrar', formas.some((f) => /nome inteiro/.test(f.forma) && f.linhas === 2));
 
@@ -110,7 +117,8 @@ medida('reguas_a_mao', reguas, `sh ${PASTA}/reguas-a-mao.sh ${PASTA}/reguas-depo
 const vermelhas = (r) => {
   const todo = semCor(ler(`${PASTA}/reguas-depois/${r}.log`));
   const i = todo.indexOf('matriz de aceitação ·');
-  return (i >= 0 ? todo.slice(i) : todo).split('\n').filter((l) => /^\s+falha\s/.test(l)).map((l) => l.replace(/^\s+falha\s+/, '').trim());
+  const l = (i >= 0 ? todo.slice(i) : todo).split('\n');
+  return l.flatMap((x, k) => (/^\s+falha\s/.test(x) ? [{ celula: x.replace(/^\s+falha\s+/, '').trim(), prova: (l[k + 1] ?? '').trim() }] : []));
 };
 medida('celulas_vermelhas_das_reguas', { 'correcoes-a': vermelhas('correcoes-a'), matriz: vermelhas('matriz') },
   'as linhas «falha» dos registos de reguas-depois', 'as células vermelhas contam-se pela mesma linha que o resumo da régua diz',
@@ -190,6 +198,29 @@ medida('codigo_do_decisoes_em_vigor_num_intervalo_com_png', codigo(`${PASTA}/dec
   /0x89/.test(ler(`${PASTA}/decisoes-em-vigor-intervalo-ue2-antes.txt`) ?? '') && codigo(`${PASTA}/decisoes-em-vigor-intervalo-ue2-antes.codigo`) === 1,
   { antes: antesDoBrief('codigo_do_decisoes_em_vigor_num_intervalo_com_png'), binarios_saltados_no_ue2: bin(dUe2), binarios_saltados_no_p4: bin(dP4), codigo_no_p4: codigo(`${PASTA}/decisoes-em-vigor-depois.codigo`) });
 
+const dCont = dP4.match(/(\d+) decisão\(ões\) citada\(s\) em (\d+) ficheiro\(s\) de texto/);
+medida('decisoes_citadas_no_intervalo_do_bloco', dCont ? { decisoes: +dCont[1], ficheiros_de_texto: +dCont[2], citacoes_que_sairam: (dP4.match(/saiu no diff/g) ?? []).length } : NAO,
+  `python3 scripts/leituras/decisoes-em-vigor.py --intervalo ${BASE}..HEAD (decisoes-em-vigor-depois.txt)`, 'o conhecido-positivo do próprio guião (a §1.98 em scripts/check-lugar.mjs) passou: o código é 0 e não 2',
+  codigo(`${PASTA}/decisoes-em-vigor-depois.codigo`) === 0);
+
+/* a folga do maior cartão do feixe, contra o tecto que scripts/design-bundle.mjs escreve */
+const db = ler('scripts/design-bundle.mjs') ?? '';
+const kib = +((db.match(/const MAIOR_CARTAO_MEDIDO_KIB = ([\d.]+)/) ?? [])[1] ?? NaN);
+const margem = +((db.match(/const MARGEM_DO_TECTO = ([\d.]+)/) ?? [])[1] ?? NaN);
+const tecto = Math.round(kib * (1 + margem) * 1024);
+const cartoes = fs.existsSync('design-system') ? fs.readdirSync('design-system').filter((f) => f.endsWith('.html')).map((f) => fs.statSync(path.join('design-system', f)).size) : [];
+const maior = cartoes.length ? Math.max(...cartoes) : NaN;
+medida('folga_do_maior_cartao_do_feixe_em_bytes', Number.isFinite(maior) && Number.isFinite(tecto) ? tecto - maior : NAO,
+  'o maior ficheiro .html de design-system/ (npm run design:feixe, na corrida de conferencias-tema) contra o tecto de scripts/design-bundle.mjs',
+  `o tecto lê-se do guião (${kib} KiB mais ${margem}) e há cartões (${cartoes.length})`, Number.isFinite(tecto) && cartoes.length > 0,
+  { maior_cartao_em_bytes: maior, tecto_em_bytes: tecto });
+
+/* nenhum valor de linha mudou: nenhum ficheiro do livro-razão nem dos registos no intervalo */
+const doLivro = git('diff', '--name-only', `${BASE}..HEAD`, '--', 'ledger', 'registos').saida.split('\n').filter(Boolean);
+const naBaseLivro = git('ls-tree', '-r', '--name-only', BASE, '--', 'ledger').saida.split('\n').filter(Boolean).length;
+medida('ficheiros_do_livro_razao_e_dos_registos_mudados', doLivro.length, `git diff --name-only ${BASE}..HEAD -- ledger registos`,
+  `a base tem ficheiros no livro-razão (${naBaseLivro}), e a mesma leitura vê-os`, naBaseLivro > 0);
+
 /* as capturas, o custo e os portões */
 medida('capturas', cap ? { capturas: cap.capturas, problemas: cap.problemas.length, construcao: cap.construcao.commit } : NAO, `node ${PASTA}/captar-p4.mjs (capturas-p4.json, com o sha256 de cada imagem)`,
   'cada imagem tem o seu sha256 no manifesto', cap && cap.resultados.every((r) => /^[0-9a-f]{64}$/.test(r.sha256)));
@@ -201,7 +232,7 @@ const portoes = fs.existsSync(`${P}/cabeca`) ? { cabeca: (ler(`${P}/cabeca`) ?? 
 medida('portoes', portoes, `sh scripts/leituras/portoes.sh <worktree> ${P}`, 'o guião escreve a cabeça ao lado dos códigos', typeof portoes === 'string' || /^[0-9a-f]{40}$/.test(portoes.cabeca));
 
 const falhas = medidas.filter((m) => m.valor === NAO || !m.conhecido_positivo.encontrado);
-const saida = { bloco: 'P4', construtor: 'Claude Opus 5.5', base: BASE, cabeca: git('rev-parse', 'HEAD').saida.trim(), guiao: `${PASTA}/medir-p4.mjs`, escrito_em: new Date().toISOString(), medidas };
+const saida = { bloco: 'P4', construtor: 'Claude Opus 5.5', base: BASE, cabeca: git('rev-parse', 'HEAD').saida.trim(), guiao: `${PASTA}/medir-p4.mjs`, escrito_em: new Date().toISOString(), medidas_escritas: medidas.length, medidas };
 fs.writeFileSync(`${PASTA}/medidas.json`, JSON.stringify(saida, null, 2) + '\n');
 console.log(`P4: ${medidas.length} medidas escritas em ${PASTA}/medidas.json; ${falhas.length} por ler ou com o conhecido-positivo por encontrar.`);
 for (const f of falhas) console.log(`  ${f.nome}: ${f.valor === NAO ? NAO : 'conhecido-positivo por encontrar'} (${f.conhecido_positivo.o_que})`);

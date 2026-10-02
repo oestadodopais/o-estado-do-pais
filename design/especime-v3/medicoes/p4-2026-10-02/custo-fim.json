@@ -1,0 +1,13 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), no bloco P4, escrita à mão pelo construtor, e a hora do relógio da máquina; tomada antes de escrever o relatório e antes da corrida final dos portões",
+  "simbolos_restantes_no_fim": 13655465,
+  "lido_no_fim": "na linha «total_tokens left» do resultado da última ferramenta antes desta escrita (a leitura da hora da linha de estado)",
+  "fim_utc": "2026-10-02T20:39:54Z",
+  "fim_origem": "date -u, na mesma chamada que escreveu este ficheiro",
+  "semana_da_conta_no_fim": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (os campos rate_limits), escrita às 20:39:31 UTC",
+    "sete_dias_usados_por_cento": 29,
+    "cinco_horas_usadas_por_cento": 12
+  },
+  "nota": "o contador é o total cumulativo que a ferramenta reporta para este agente, e inclui a parte da conversa que foi resumida a meio do bloco"
+}

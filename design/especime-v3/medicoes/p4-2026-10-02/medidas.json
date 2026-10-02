@@ -1,0 +1,550 @@
+{
+  "bloco": "P4",
+  "construtor": "Claude Opus 5.5",
+  "base": "afc4fb20",
+  "cabeca": "afc2b7557d99b598566f3fdd9ce2fb0cf9d26a81",
+  "guiao": "design/especime-v3/medicoes/p4-2026-10-02/medir-p4.mjs",
+  "escrito_em": "2026-10-02T20:43:21.310Z",
+  "medidas_escritas": 28,
+  "medidas": [
+    {
+      "nome": "folhas_que_seguem_a_preferencia_do_aparelho",
+      "valor": 0,
+      "comando": "as três folhas de src/styles com «prefers-color-scheme: dark», na árvore",
+      "conhecido_positivo": {
+        "o_que": "as mesmas folhas na base afc4fb20 têm-no (3)",
+        "encontrado": true
+      },
+      "antes": 3
+    },
+    {
+      "nome": "lugares_onde_o_comando_do_tema_e_rendido",
+      "valor": 1,
+      "comando": "git grep -l ControloDeTema HEAD -- src/layouts src/components src/views, sem o próprio componente",
+      "conhecido_positivo": {
+        "o_que": "o componente existe na árvore",
+        "encontrado": true
+      },
+      "antes": 0,
+      "onde": [
+        "src/components/Masthead.astro"
+      ]
+    },
+    {
+      "nome": "paginas_claras_num_aparelho_escuro_sem_escolha",
+      "valor": "30 de 30",
+      "comando": "design/especime-v3/medicoes/p4-2026-10-02/capturas-p4.json (node design/especime-v3/medicoes/p4-2026-10-02/captar-p4.mjs): sem data-theme, papel rgb(246, 247, 244) e o comando à vista",
+      "conhecido_positivo": {
+        "o_que": "as capturas escuras, com a escolha guardada, leem data-theme=dark e o papel rgb(21, 23, 26): a medida distingue os dois",
+        "encontrado": true
+      },
+      "escuras": "3 de 3"
+    },
+    {
+      "nome": "tema_e_menu",
+      "valor": {
+        "TM1": 24,
+        "TM2": 30,
+        "TM3": 6,
+        "TM4": 42,
+        "codigo": 0
+      },
+      "comando": "npm run check:primeira (tests/inicio/tema-e-menu.mjs --prova), registo em conferencias-tema/check-primeira.log",
+      "conhecido_positivo": {
+        "o_que": "as plantas mordem (8 de 8)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "comando_do_tema_na_linha_da_marca_a_390",
+      "valor": "4 de 4",
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/fila-da-marca.mjs (fila-da-marca.log): a primeira página e «Lugares», nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "na primeira página a 320 px o comando desce, e a medida di-lo",
+        "encontrado": true
+      },
+      "antes": "3 de 4 (fila-da-marca-antes.log)",
+      "alvos": "44.0×44.0, 53.6×44.0",
+      "a_390": {
+        "/": {
+          "coluna": 354,
+          "marca": 248.2,
+          "comando": 101.6
+        },
+        "/en/": {
+          "coluna": 354,
+          "marca": 248.2,
+          "comando": 92
+        },
+        "/lugares/": {
+          "coluna": 354,
+          "marca": 175.2,
+          "comando": 101.6
+        },
+        "/en/places/": {
+          "coluna": 354,
+          "marca": 175.2,
+          "comando": 92
+        }
+      },
+      "a_390_antes": {
+        "/": {
+          "coluna": 354,
+          "marca": 248.2,
+          "comando": 102.5
+        },
+        "/en/": {
+          "coluna": 354,
+          "marca": 248.2,
+          "comando": 90
+        },
+        "/lugares/": {
+          "coluna": 354,
+          "marca": 175.2,
+          "comando": 102.5
+        },
+        "/en/places/": {
+          "coluna": 354,
+          "marca": 175.2,
+          "comando": 90
+        }
+      }
+    },
+    {
+      "nome": "nome_do_botao_escuro_na_arvore_de_acessibilidade",
+      "valor": "escuro",
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/nome-do-botao.mjs (nome-do-botao.log), o ariaSnapshot do Chromium",
+      "conhecido_positivo": {
+        "o_que": "com o «·» de antes do P4 posto na medição, o nome lê-se «· escuro»",
+        "encontrado": true
+      },
+      "antes": "· escuro"
+    },
+    {
+      "nome": "pares_de_contraste_que_mudaram",
+      "valor": 0,
+      "comando": "node scripts/medir-contraste.mjs, antes e depois (contraste-antes.json, contraste-depois.json)",
+      "conhecido_positivo": {
+        "o_que": "os dois ficheiros têm pares (42 e 42)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas_do_check_pais",
+      "valor": {
+        "provas": 38,
+        "certas": 38,
+        "plantas_n3": 6,
+        "plantas_n1": 2
+      },
+      "comando": "node tests/pais/pais.mjs --prova (conferencias-00-0/pais-plantas.json)",
+      "conhecido_positivo": {
+        "o_que": "a prova sem estrago passa com 0 e as plantas saem com 1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_do_menu",
+      "valor": 6,
+      "comando": "src/lib/navegacao.mjs · ROTAS_NAV",
+      "conhecido_positivo": {
+        "o_que": "na base afc4fb20 são 5 e nenhuma é a da União",
+        "encontrado": true
+      },
+      "antes": 5,
+      "ordem": [
+        "home",
+        "lugares",
+        "temas",
+        "estudos",
+        "uniaoEuropeia",
+        "sobre"
+      ]
+    },
+    {
+      "nome": "paginas_com_as_seis_portas_numa_linha",
+      "valor": "33 de 33",
+      "comando": "design/especime-v3/medicoes/p4-2026-10-02/capturas-p4.json: as três páginas, as cinco larguras, as duas edições, e as três escuras",
+      "conhecido_positivo": {
+        "o_que": "com o nome inteiro da União, a 390 px, o menu dobra em duas linhas nas duas edições, e a medida di-lo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_a_390_nas_quatro_formas",
+      "valor": [
+        {
+          "lang": "pt",
+          "forma": "publicada (rótulo curto, 13 px, 6 px)",
+          "portas": 343.7,
+          "coluna": 354,
+          "linhas": 1,
+          "porta_mais_estreita": 39.6
+        },
+        {
+          "lang": "pt",
+          "forma": "nome inteiro, 13 px, 6 px",
+          "portas": 401.9,
+          "coluna": 354,
+          "linhas": 2,
+          "porta_mais_estreita": 39.6
+        },
+        {
+          "lang": "pt",
+          "forma": "nome inteiro, 12 px, 6 px",
+          "portas": 373.3,
+          "coluna": 354,
+          "linhas": 2,
+          "porta_mais_estreita": 36.5
+        },
+        {
+          "lang": "pt",
+          "forma": "rótulo curto, a letra de antes do P4 (13,5 px, 0,03 em, 12 px)",
+          "portas": 401.1,
+          "coluna": 354,
+          "linhas": 2,
+          "porta_mais_estreita": 43.1
+        },
+        {
+          "lang": "en",
+          "forma": "publicada (rótulo curto, 13 px, 6 px)",
+          "portas": 341.2,
+          "coluna": 354,
+          "linhas": 1,
+          "porta_mais_estreita": 43.7
+        },
+        {
+          "lang": "en",
+          "forma": "nome inteiro, 13 px, 6 px",
+          "portas": 405.2,
+          "coluna": 354,
+          "linhas": 2,
+          "porta_mais_estreita": 43.7
+        },
+        {
+          "lang": "en",
+          "forma": "nome inteiro, 12 px, 6 px",
+          "portas": 376.3,
+          "coluna": 354,
+          "linhas": 2,
+          "porta_mais_estreita": 40.4
+        },
+        {
+          "lang": "en",
+          "forma": "rótulo curto, a letra de antes do P4 (13,5 px, 0,03 em, 12 px)",
+          "portas": 398.6,
+          "coluna": 354,
+          "linhas": 2,
+          "porta_mais_estreita": 47.4
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/menu-a-390.mjs (menu-a-390.log)",
+      "conhecido_positivo": {
+        "o_que": "a forma com o nome inteiro mede duas linhas: a medida vê o menu a dobrar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "reguas_a_mao",
+      "valor": {
+        "correcoes-a": {
+          "codigo": 1,
+          "segundos": 14,
+          "resumo": "10 de 30 réguas falham.",
+          "antes": 1
+        },
+        "lista": {
+          "codigo": 0,
+          "segundos": 9,
+          "resumo": "50 células, todas verdes.",
+          "antes": 1
+        },
+        "mapa-distritos": {
+          "codigo": 0,
+          "segundos": 64,
+          "resumo": "39 células, todas verdes.",
+          "antes": 1
+        },
+        "mapa-unidades": {
+          "codigo": 0,
+          "segundos": 73,
+          "resumo": "33 de 33 células passam.",
+          "antes": 1
+        },
+        "matriz": {
+          "codigo": 1,
+          "segundos": 110,
+          "resumo": "3 de 89 células falham.",
+          "antes": 1
+        }
+      },
+      "comando": "sh design/especime-v3/medicoes/p4-2026-10-02/reguas-a-mao.sh design/especime-v3/medicoes/p4-2026-10-02/reguas-depois, com a tranca (com-tranca.sh), sobre a construção da cabeça ccdd9fa2",
+      "conhecido_positivo": {
+        "o_que": "as plantas das três réguas que as têm mordem todas (--vermelhos), e antes do bloco as cinco saíam com 1",
+        "encontrado": true
+      },
+      "plantas": {
+        "lista": {
+          "codigo": 0,
+          "mordem": 6,
+          "nao": 0
+        },
+        "mapa-distritos": {
+          "codigo": 0,
+          "mordem": 6,
+          "nao": 0
+        },
+        "mapa-unidades": {
+          "codigo": 0,
+          "mordem": 13,
+          "nao": 0
+        }
+      }
+    },
+    {
+      "nome": "celulas_vermelhas_das_reguas",
+      "valor": {
+        "correcoes-a": [
+          {
+            "celula": "A9 · nenhum texto abaixo de 12px na rota home · 390 pt",
+            "prova": "11.5px span.pp-escala-ponta «0» · 11.5px span.pp-escala-ponta «100» · 11.5px span.pp-escala-ponta «0» · 11.5px span.pp-escala-ponta «10» · 11.5px span.pp-escala-ponta «0» · 11.5px span.pp-escala-ponta «10»"
+          },
+          {
+            "celula": "A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 pt",
+            "prova": "71 alvos · 11 abaixo de 44 fora da mobília e do mapa (summary «Os números deste bloco» 143.9×40, a «Ver os números dos preços » 203.8×24.4, summary «Os números deste bloco» 143.9×40, a «Ver os números da habitaçã» 218.3×24.4, summary «Os números deste bloco» 143.9×40, a «Ver os números do emprego » 212.4×24.4) · 8 pares sobrepostos (a.src-chip«fonte · Eurostat» × a.src-chip«fonte · Eurostat» | a.src-chip«fonte · Estrutura de Missã» × a.src-chip«fonte · Estrutura de Missã» | a.src-chip«fonte · Estrutura de Missã» × a.src-chip«fonte · calculado») · medidos ao lado, na manchete, que é prosa: 0 de 0 (nenhum) · exceção medida na mobília: a 42.6×44, a 39.6×44 · medidas ao lado, no mapa: 0 de 0 áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)"
+          },
+          {
+            "celula": "A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 390 pt",
+            "prova": "maior banda no main: 64px em y=4828 (era 97px em y=824) · 234 bandas julgadas · dentro da caixa do mapa, medida e não julgada (o mar dentro do viewBox): nenhuma · fora do main, na composição da mobília e do pé: 71px@6548, 54px@101 · página 6844px"
+          },
+          {
+            "celula": "A9 · nenhum texto abaixo de 12px na rota home · 390 en",
+            "prova": "11.5px span.pp-escala-ponta «0» · 11.5px span.pp-escala-ponta «100» · 11.5px span.pp-escala-ponta «0» · 11.5px span.pp-escala-ponta «10» · 11.5px span.pp-escala-ponta «0» · 11.5px span.pp-escala-ponta «10»"
+          },
+          {
+            "celula": "A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 en",
+            "prova": "71 alvos · 12 abaixo de 44 fora da mobília e do mapa (summary «The figures in this block» 143.1×40, a «See the price figures →» 158.6×24.4, summary «The figures in this block» 143.1×40, a «See the housing figures →» 179.6×24.4, summary «The figures in this block» 143.1×40, a «See the employment figures» 210.8×24.4) · 10 pares sobrepostos (a.src-chip«source · Eurostat» × a.src-chip«source · Eurostat» | a.src-chip«source · Estrutura de Miss» × a.src-chip«source · calculated» | a.prova-valor«4» × a.prova-valor«13») · medidos ao lado, na manchete, que é prosa: 0 de 0 (nenhum) · exceção medida na mobília: a 43.7×44 · medidas ao lado, no mapa: 0 de 0 áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)"
+          },
+          {
+            "celula": "A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 390 en",
+            "prova": "maior banda no main: 64px em y=4703 (era 97px em y=824) · 220 bandas julgadas · dentro da caixa do mapa, medida e não julgada (o mar dentro do viewBox): nenhuma · fora do main, na composição da mobília e do pé: 73px@6448, 54px@101 · página 6770px"
+          },
+          {
+            "celula": "A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 1280 pt",
+            "prova": "maior banda no main: 99px em y=3139 (era 125px em y=1043) · fora do main: 107px@4564, 61px@154, 54px@45 · página 4789px"
+          },
+          {
+            "celula": "A8 · o mesmo no concelho, e os quatro primeiros valores dos cartões dentro do primeiro ecrã · 1280 pt",
+            "prova": "maior banda no main: 113px em y=2062 (era 86px, o ar da secção) · 4 de 4 valores do relance (na cartões) dentro dos 800px, o primeiro a 703px (era 582 nas peças) · cartão 660..1003px (era 545..908)"
+          },
+          {
+            "celula": "A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 1280 en",
+            "prova": "maior banda no main: 99px em y=3153 (era 125px em y=1043) · fora do main: 108px@4625, 61px@154, 54px@45 · página 4850px"
+          },
+          {
+            "celula": "A8 · o mesmo no concelho, e os quatro primeiros valores dos cartões dentro do primeiro ecrã · 1280 en",
+            "prova": "maior banda no main: 113px em y=2062 (era 86px, o ar da secção) · 4 de 4 valores do relance (na cartões) dentro dos 800px, o primeiro a 703px (era 582 nas peças) · cartão 660..1003px (era 545..908)"
+          }
+        ],
+        "matriz": [
+          {
+            "celula": "largura 320 · sem transbordo horizontal",
+            "prova": "scrollWidth − clientWidth = 2"
+          },
+          {
+            "celula": "ISSUES I20 · 3 estados × 5 larguras sem transbordo, e o rótulo dentro da régua",
+            "prova": "14 de 15 a zero · 65 rótulo(s) de régua medidos · pais-relance@320:2 · pais-relance@390:0 · pais-relance@768:0 · pais-relance@1024:0 · pais-relance@1280:0 · pesquisa-aberta@320:0 · pesquisa-aberta@390:0 · pesquisa-aberta@768:0 · pesquisa-aberta@1024:0 · pesquisa-aberta@1280:0 · uniao-europeia@320:0 · uniao-europeia@390:0 · uniao-europeia@768:0 · uniao-europeia@1024:0 · uniao-europeia@1280:0"
+          },
+          {
+            "celula": "2i·1 · a primeira página não tem região, e um endereço antigo leva à página dela",
+            "prova": "0 cabeças e 0 painéis de região · índice das regiões → null (no menu: false) · banda e pastilhas fora da página (0 pontos, 0 pastilhas) · destinos /, /, /"
+          }
+        ]
+      },
+      "comando": "as linhas «falha» dos registos de reguas-depois",
+      "conhecido_positivo": {
+        "o_que": "as células vermelhas contam-se pela mesma linha que o resumo da régua diz",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "transbordo_da_primeira_pagina_a_320",
+      "valor": [
+        {
+          "rota": "/",
+          "transbordo": 2,
+          "elementos": 12
+        },
+        {
+          "rota": "/en/",
+          "transbordo": 15,
+          "elementos": 15
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/transbordo-320.mjs (transbordo-320.log)",
+      "conhecido_positivo": {
+        "o_que": "a medida lista os elementos que passam a margem, e nenhum é do cabeçalho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_que_a_regra_das_casas_decimais_le",
+      "valor": {
+        "lidas": 1367,
+        "pelo_literal": 117,
+        "pela_forma_do_ine": 1250,
+        "com_sinal_declarado": 1
+      },
+      "comando": "npm run ledger:check (scripts/casas-decimais.mjs pela scripts/check-ledger.mjs), registo em conferencias-fim/ledger-check.log",
+      "conhecido_positivo": {
+        "o_que": "as plantas da regra estão certas (16 de 16)",
+        "encontrado": true
+      },
+      "antes": 117
+    },
+    {
+      "nome": "linhas_que_a_regra_das_casas_decimais_deixa_por_ler",
+      "valor": 1285,
+      "comando": "a mesma linha do registo",
+      "conhecido_positivo": {
+        "o_que": "a soma das lidas e das por ler passa de duas mil",
+        "encontrado": true
+      },
+      "antes": 2535
+    },
+    {
+      "nome": "perguntas_com_os_dois_termos_fora_dos_parenteses",
+      "valor": 0,
+      "comando": "src/data/figuras.mjs: DEFINICOES_DAS_MEDIDAS pela textoDaDefinicao, as duas edições; um termo conta quando não está dentro de um parêntese",
+      "conhecido_positivo": {
+        "o_que": "a pergunta da base («Qual é a diferença, em pontos percentuais, …») conta 1",
+        "encontrado": true
+      },
+      "perguntas_com_os_termos": 6,
+      "antes_ocorrencias_no_ficheiro": 6
+    },
+    {
+      "nome": "auditoria_das_duas_perguntas",
+      "valor": {
+        "codigo_da_auditoria": 0,
+        "check_cartao": 0,
+        "linha": "P4: 2 perguntas auditadas, 14 pedaços, 18 apoios (só conferido)."
+      },
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/auditoria-das-perguntas-p4.mjs --confere, e npm run check:cartao (a K16)",
+      "conhecido_positivo": {
+        "o_que": "as plantas das perguntas antigas mordem na K6 (plantas-portoes-p4.json)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "notas_do_sucessor_com_a_reconciliacao",
+      "valor": 12,
+      "comando": "npm run check:datas, registo em conferencias-fim/check-datas.log",
+      "conhecido_positivo": {
+        "o_que": "as duas plantas da nota (sem a frase, e a inglesa com a frase portuguesa) mordem",
+        "encontrado": true
+      },
+      "antes_palavras_no_rotulo": 0,
+      "palavras_no_rotulo_agora": 9
+    },
+    {
+      "nome": "plantas_dos_portoes_do_bloco",
+      "valor": "4 de 4",
+      "comando": "design/especime-v3/medicoes/p4-2026-10-02/plantas-portoes/plantas-portoes-p4.json (tests/pais/portoes.mjs --prefixo p4-)",
+      "conhecido_positivo": {
+        "o_que": "cada planta restaura os bytes que mudou (sha256 antes igual ao reposto)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cadeias_da_seccao_p4_de_chaves_en_iguais_as_de_hoje",
+      "valor": "8 de 8",
+      "comando": "design/especime-v3/CHAVES-EN.md, secção P4, contra t(lang) de src/i18n/strings.mjs: cada cadeia tem de aparecer na secção tal como a página a escreve",
+      "conhecido_positivo": {
+        "o_que": "a descrição de hoje da página da União não está no ficheiro da base afc4fb20",
+        "encontrado": true
+      },
+      "diferentes": []
+    },
+    {
+      "nome": "codigo_do_decisoes_em_vigor_num_intervalo_com_png",
+      "valor": 0,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 74ce7657..642e9d56 (o UE2)",
+      "conhecido_positivo": {
+        "o_que": "o guião antigo, no mesmo intervalo, saiu com 1 e «0x89» (decisoes-em-vigor-intervalo-ue2-antes.txt)",
+        "encontrado": true
+      },
+      "antes": 1,
+      "binarios_saltados_no_ue2": 53,
+      "binarios_saltados_no_p4": 37,
+      "codigo_no_p4": 0
+    },
+    {
+      "nome": "decisoes_citadas_no_intervalo_do_bloco",
+      "valor": {
+        "decisoes": 70,
+        "ficheiros_de_texto": 177,
+        "citacoes_que_sairam": 0
+      },
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo afc4fb20..HEAD (decisoes-em-vigor-depois.txt)",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo do próprio guião (a §1.98 em scripts/check-lugar.mjs) passou: o código é 0 e não 2",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "folga_do_maior_cartao_do_feixe_em_bytes",
+      "valor": 110,
+      "comando": "o maior ficheiro .html de design-system/ (npm run design:feixe, na corrida de conferencias-tema) contra o tecto de scripts/design-bundle.mjs",
+      "conhecido_positivo": {
+        "o_que": "o tecto lê-se do guião (542.5 KiB mais 0.1) e há cartões (20)",
+        "encontrado": true
+      },
+      "maior_cartao_em_bytes": 610962,
+      "tecto_em_bytes": 611072
+    },
+    {
+      "nome": "ficheiros_do_livro_razao_e_dos_registos_mudados",
+      "valor": 0,
+      "comando": "git diff --name-only afc4fb20..HEAD -- ledger registos",
+      "conhecido_positivo": {
+        "o_que": "a base tem ficheiros no livro-razão (3031), e a mesma leitura vê-os",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": {
+        "capturas": 37,
+        "problemas": 0,
+        "construcao": "ccdd9fa2f18ec714e2cc20d834b2c0a3160388e4"
+      },
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/captar-p4.mjs (capturas-p4.json, com o sha256 de cada imagem)",
+      "conhecido_positivo": {
+        "o_que": "cada imagem tem o seu sha256 no manifesto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo",
+      "valor": {
+        "simbolos": 1344535,
+        "segundos": 11788
+      },
+      "comando": "custo-inicio.json e custo-fim.json: as duas leituras do contador «total_tokens left» e as duas horas do relógio",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras existem e a do fim é menor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes",
+      "valor": "por correr: os portões correm depois do último commit do bloco, e os códigos entram no commit seguinte",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/p4-2026-10-02/portoes",
+      "conhecido_positivo": {
+        "o_que": "o guião escreve a cabeça ao lado dos códigos",
+        "encontrado": true
+      }
+    }
+  ]
+}
