@@ -553,3 +553,8 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | l2b-c | 6 cadeias novas, 4 retiradas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem L2b-c: a frase do cartão do poder de compra diz o que o índice é, com Portugal a valer cem, e a do ganho médio diz que é antes de descontos, nas duas línguas, e as quatro frases antigas passam a retiradas, com a razão; a nota da pesquisa de «Lugares» sem guião volta, verdadeira e à vista, nas duas línguas. |
 
+## K2 · o cartão para o telemóvel, 02.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| k2 | 8 cadeias novas, 46 retiradas, 4 mudadas de texto (as contagens da prova com os milhares separados) | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do K2: a linha «O que é este número» que abre a definição dobrada de cada cartão, nas duas línguas; as frases dos três estudos com os termos explicados (a designação de pelouro, a localização de projeto vencida, o valor atuarialmente neutro e as duas portas), nas duas línguas; e retiradas as leituras inteiras dos cartões nacionais, que passam a render-se em duas metades conferidas pela K17, e as frases antigas dos estudos. A leitura cruzada do diff faz-se antes da fusão. |
