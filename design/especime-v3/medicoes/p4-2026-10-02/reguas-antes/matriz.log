@@ -1,0 +1,113 @@
+  falha  estado inicial · País · Relance
+         null · null · 0 peças
+  falha  8.15 · a manchete de `/` é uma frase com dois algarismos selados no máximo
+         sem manchete na primeira página
+  passa  2l · a manchete da União leva as duas contagens da Emenda 16
+         Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9. · painel_fora_do_limiar + painel_dentro_do_limiar
+  passa  a área de leitura da União com 13 leituras do Procedimento e 21 ao todo (Emenda 16)
+         13 do Procedimento · 21 ao todo
+  passa  8.16 · a primeira página não tem leitura nenhuma dos painéis
+         em /: 0 leitura(s), marca «null»
+  falha  ordem do teclado · porta do concelho → faixa → portas
+         porta do concelho -1 · faixa -1 · portas -1 · 98 paragens
+  passa  mudança · estado de defeito · país
+         / · null
+  passa  mudança · âmbito → modo concelho
+         /?ambito=municipio · null
+  passa  a página não tem comando de estado nenhum
+         0 linha(s) de comando · 0 comando(s) de âmbito · 0 de densidade
+  passa  `?densidade=leitura` já não muda nada em `/` (itens 8.14 e 8.16)
+         sem o estado: 0 leitura(s), 0 aberta(s) · com o estado: 0 leitura(s), 0 aberta(s) · bloco «null» nos dois
+  passa  para trás, cinco vezes
+         cada passo repôs o seu estado
+  passa  para a frente
+         /?ambito=municipio
+  passa  recarga em cada estado
+         / → null · /?ambito=municipio → null
+  passa  uma leitura abre só a sua
+         1 abertas · toque no cartão «divida-publica-2025»
+  passa  ordem do teclado com uma leitura aberta · faixa → o <summary> dela → rodapé
+         «divida-publica-2025» aberta: true · faixa 31 · <summary> 76 · rodapé 83 · 91 paragens
+  passa  8.12 e 8.14 · em repouso nenhuma leitura aberta e nenhum cabeçalho de painel à vista
+         0 de 21 abertas · marca da área «sim» · linha de instrução: fora da página · 0 de 2 cabeçalhos de painel à vista
+  falha  valor inválido · ambito=lisboa
+         âmbito null · densidade null · endereço "/?ambito=lisboa" · valor ecoado: false
+  falha  valor inválido · densidade=fundo
+         âmbito null · densidade null · endereço "/?densidade=fundo" · valor ecoado: false
+  falha  valor inválido · ambito com injecção
+         âmbito null · densidade null · endereço "/?ambito=municipio:evora;alert(1)" · valor ecoado: false
+  falha  valor inválido · o plural de um valor válido
+         âmbito null · densidade null · endereço "/?ambito=municipios" · valor ecoado: false
+  falha  valor inválido · o prefixo sem concelho
+         âmbito null · densidade null · endereço "/?ambito=municipio:" · valor ecoado: false
+  falha  valor inválido · ambito de 2 000 caracteres
+         âmbito null · densidade null · endereço "/?ambito=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" · valor ecoado: false
+  falha  edição pt · estado do endereço
+         null · null
+  falha  edição pt · a ligação de idioma leva o estado
+         
+  falha  edição en · estado do endereço
+         null · null
+  falha  edição en · a ligação de idioma leva o estado
+         
+  falha  largura 320 · sem transbordo horizontal
+         scrollWidth − clientWidth = 33
+  passa  largura 390 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 768 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 1024 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  largura 1280 · sem transbordo horizontal
+         scrollWidth − clientWidth = 0
+  passa  tema claro · papel e tinta
+         papel rgb(246, 247, 244) · tinta rgb(23, 25, 27)
+  falha  tema claro · o contorno do marcador é a tinta do tema
+         contorno null
+  passa  tema escuro · papel e tinta
+         papel rgb(246, 247, 244) · tinta rgb(23, 25, 27)
+  falha  tema escuro · o contorno do marcador é a tinta do tema
+         contorno null
+  passa  movimento reduzido · a leitura não tem transição
+         transition-duration 1e-05s
+  passa  o selo de cada leitura é alvo de 44×44
+         21 de 21 selos de leitura em 21 cartão(ões) · mínimo 52.5×44
+  passa  nenhum selo dentro de outro alvo
+         0 aninhados em 21
+  passa  nenhum par de áreas de toque sobrepostas na leitura
+         0 pares em 21 leitura(s) abertas uma a uma
+  passa  cada leitura tem o seu selo e uma porta por origem declarada (09.09.2026, no lugar do «selo maior»)
+         21 de 21 leitura(s) abertas · 58 bloco(s) de origem · 0 sem selo · 0 sem origem · 0 com um bloco de origem que não tem uma porta · 0 com uma porta abaixo de 44px
+  falha  sem JavaScript · /
+         completo e correcto: 0 cartão(ões) na faixa, 0 leituras de painel
+  passa  sem JavaScript · nenhuma nota de mecânica · /
+         nota no documento: false
+  falha  sem JavaScript · /?ambito=regiao:alentejo
+         mostra o defeito (null), com os comandos como ligações que abrem: 
+  passa  sem JavaScript · nenhuma nota de mecânica · /?ambito=regiao:alentejo
+         nota no documento: false
+  falha  sem JavaScript · /?ambito=municipio:beja
+         mostra o defeito (null), com os comandos como ligações que abrem: 
+  passa  sem JavaScript · nenhuma nota de mecânica · /?ambito=municipio:beja
+         nota no documento: false
+  falha  sem JavaScript · /?ambito=municipio
+         mostra o defeito (null), com os comandos como ligações que abrem: 
+  passa  sem JavaScript · nenhuma nota de mecânica · /?ambito=municipio
+         nota no documento: false
+  passa  sem JavaScript · /uniao-europeia
+         completo e correcto: 21 leituras, 0 valores, 21 selos
+  passa  sem JavaScript · nenhuma nota de mecânica · /uniao-europeia
+         nota no documento: false
+  passa  2l · a data da reconferência saiu da primeira página e do cabeçalho, e vive dentro do painel
+         em / : 0 na página, 0 no cabeçalho · em /uniao-europeia: 1 leitura(s) dentro de #painel, marca «data-de-atualizacao», texto «28.09.2026», 0 âncora(s)
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Cannot read properties of null (reading 'getAttribute')
+    at eval (eval at evaluate (:302:30), <anonymous>:4:26)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at <worktree>/tests/inicio/matriz.mjs:1090:21
+
+Node.js v22.23.1

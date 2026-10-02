@@ -1,0 +1,69 @@
+{
+  "papeis": {
+    "claro": "#f6f7f4",
+    "escuro": "#15171a"
+  },
+  "contas": {
+    "tm1": 24,
+    "tm2": 30,
+    "tm3": 6,
+    "tm4": 42
+  },
+  "falhas": [],
+  "plantas": [
+    {
+      "nome": "a paleta escura pela preferência do sistema",
+      "mordeu": true,
+      "queixa": "TM1 · / a 390 px, aparelho escuro, com guião: o fundo é rgb(21, 23, 26) e o papel claro é rgb(246, 247, 244)."
+    },
+    {
+      "nome": "a guarda tirada do <head>",
+      "mordeu": true,
+      "queixa": "TM3 · /lugares/ a 390 px, «dark» guardado: a escolha não se aplicou antes da primeira pintura (ordem lida: [\"corpo\",\"tema\"])."
+    },
+    {
+      "nome": "a guarda no fim do <body>",
+      "mordeu": true,
+      "queixa": "TM3 · /en/ a 390 px, «dark» guardado: a escolha não se aplicou antes da primeira pintura (ordem lida: [\"corpo\",\"tema\",\"tema\"])."
+    },
+    {
+      "nome": "o comando tirado do cabeçalho",
+      "mordeu": true,
+      "queixa": "TM2 · /uniao-europeia/ a 1024 px: não há comando do tema no cabeçalho."
+    },
+    {
+      "nome": "um botão do tema com 30 px",
+      "mordeu": true,
+      "queixa": "TM2 · /en/places/ a 390 px: o botão «light» mede 41.5 por 30.0 px, e o alvo é de 44 por 44."
+    },
+    {
+      "nome": "uma sétima porta no menu",
+      "mordeu": true,
+      "queixa": "TM4 · / a 1280 px: o menu tem 7 portas, e são seis."
+    },
+    {
+      "nome": "a letra do menu de antes do P4",
+      "mordeu": true,
+      "queixa": "TM4 · / a 390 px: as portas não estão numa linha dentro do menu (2 linha(s))."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "queixa": "TM4 · /en/ a 320 px: o menu empurra a página para o lado (a última porta acaba a 359 px numa janela de 320)."
+    }
+  ],
+  "documentos_mais_largos_do_que_a_janela": [
+    {
+      "rota": "/",
+      "largura": 320,
+      "documento": 322,
+      "janela": 320
+    },
+    {
+      "rota": "/en/",
+      "largura": 320,
+      "documento": 335,
+      "janela": 320
+    }
+  ]
+}

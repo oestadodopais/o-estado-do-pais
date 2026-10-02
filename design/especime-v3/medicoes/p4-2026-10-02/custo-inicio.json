@@ -1,0 +1,12 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), no bloco P4, escrita à mão pelo construtor, e a hora do relógio da máquina na primeira chamada do bloco",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "na mensagem do lugar de direção que abre o bloco P4, antes de qualquer ferramenta do bloco",
+  "inicio_utc": "2026-10-02T17:23:26Z",
+  "inicio_origem": "date, a primeira chamada ao relógio do bloco, que imprimiu «Fri  2 Oct 2026 18:23:26 BST» (a hora de verão britânica, uma hora à frente do tempo universal)",
+  "semana_da_conta_no_inicio": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (os campos rate_limits) às 17:26:18 UTC",
+    "sete_dias_usados_por_cento": 23,
+    "cinco_horas_usadas_por_cento": 29
+  }
+}
