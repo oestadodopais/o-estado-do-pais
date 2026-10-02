@@ -43,6 +43,7 @@
  */
 import { execFileSync } from 'node:child_process';
 import { SITE_HOST, SITE_HOST_UNACCENTED } from '../site.config.mjs';
+import { routePath } from '../src/lib/routes.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -249,6 +250,28 @@ conferir('/en/404 lang', lingua(paginaEn.corpo), 'en');
 const paginaPt = await ler(`https://${host}/404`, { comCorpo: true });
 conferir('/404 estado', paginaPt.estado, 404);
 conferir('/404 lang', lingua(paginaPt.corpo), 'pt-PT');
+
+/* (f) A FUNÇÃO DA CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026). Um GET a
+   `/api/sugestoes` tem de responder com um 303 para a página do formulário (a
+   função responde sempre com redirecionamentos, e o caminho vai relativo), e a
+   resposta tem de vir da região de Dublin, para os dados não saírem da União.
+   A região lê-se do `x-vercel-id`: a documentação da Vercel diz que o cabeçalho
+   traz as regiões por onde o pedido passou e a região onde a função correu; o
+   formato medido a 02.10.2026 em respostas reais da Vercel é
+   «<regiões separadas por ":" ou "::">::<identificador>», com a região da função
+   em último lugar antes do identificador («lhr1::iad1::…» e
+   «lhr1:lhr1:lhr1:sfo1::…»). Esta pergunta lê essa última região, e imprime o
+   cabeçalho inteiro para quem quiser conferir. */
+/* Um GET, e não o HEAD de omissão de `ler()`: a função exporta o GET e o POST, e é o GET que se afirma. */
+const funcao = await ler(`https://${host}/api/sugestoes`, { comCorpo: true });
+conferir('/api/sugestoes estado', funcao.estado, 303);
+conferir('/api/sugestoes location', funcao.cabecalho('location'), routePath('sugestoes', 'pt'));
+const idDaVercel = funcao.cabecalho('x-vercel-id');
+const regioesDoPedido = idDaVercel
+  ? idDaVercel.slice(0, idDaVercel.lastIndexOf('::')).split(':').filter(Boolean)
+  : [];
+console.log(cinza(`      x-vercel-id observado: ${mostrar(idDaVercel)}`));
+conferir('/api/sugestoes região da função', regioesDoPedido.at(-1) ?? null, 'dub1');
 
 console.log();
 
