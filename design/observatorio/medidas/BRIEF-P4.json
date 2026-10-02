@@ -1,0 +1,104 @@
+{
+  "brief": "design/observatorio/BRIEF-P4-os-pequenos-do-sitio.md",
+  "guiao": "design/observatorio/medidas/BRIEF-P4.py",
+  "cabeca_lida": "642e9d56",
+  "reguas_com_a_primeira_pagina_antiga": [
+    "tests/inicio/correcoes-a.mjs",
+    "tests/inicio/lista.mjs",
+    "tests/inicio/mapa-distritos.mjs",
+    "tests/inicio/mapa-unidades.mjs",
+    "tests/inicio/matriz.mjs"
+  ],
+  "medidas": [
+    {
+      "nome": "folhas_que_seguem_a_preferencia_do_aparelho",
+      "valor": 3,
+      "comando": "as folhas de src/styles com «prefers-color-scheme: dark»",
+      "conhecido_positivo": {
+        "o_que": "tokens.css é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lugares_onde_o_comando_do_tema_e_rendido",
+      "valor": 0,
+      "comando": "git grep -l ControloDeTema 642e9d56 -- src/layouts src/components src/views, sem o próprio componente",
+      "conhecido_positivo": {
+        "o_que": "o componente existe na cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_do_menu",
+      "valor": 5,
+      "comando": "git show 642e9d56:src/lib/navegacao.mjs · ROTAS_NAV",
+      "conhecido_positivo": {
+        "o_que": "«lugares» é uma delas e «uniao-europeia» não",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "reguas_a_mao_que_leem_a_primeira_pagina_antiga",
+      "valor": 5,
+      "comando": "as cinco réguas do relatório do L2b, procuradas por pp-lugares, /#mapa, pesquisa-bloco, MapaRespira ou mapa-svg",
+      "conhecido_positivo": {
+        "o_que": "a matriz é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_que_a_regra_das_casas_decimais_le",
+      "valor": 117,
+      "comando": "git show 642e9d56:design/especime-v3/medicoes/k2-2026-10-02/medidas-k2-c.json · a medida linhas_lidas_pelo_literal_do_valor",
+      "conhecido_positivo": {
+        "o_que": "a medida existe e tem evidência",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_que_a_regra_das_casas_decimais_deixa_por_ler",
+      "valor": 2535,
+      "comando": "a mesma medida, o campo sem_literal_do_valor",
+      "conhecido_positivo": {
+        "o_que": "as duas somam mais de duas mil linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ocorrencias_dos_dois_termos_nas_definicoes",
+      "valor": 6,
+      "comando": "git show 642e9d56:src/data/figuras.mjs · «em pontos percentuais» e «regimes de ocupação»",
+      "conhecido_positivo": {
+        "o_que": "«regimes de ocupação» aparece",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_da_nota_do_sucessor_que_dizem_a_reconciliacao",
+      "valor": 0,
+      "comando": "git show 642e9d56:src/data/rotulos-b1.mjs · «reconcilia»",
+      "conhecido_positivo": {
+        "o_que": "o rótulo «sucedeu-lhe» existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_decisoes_em_vigor_num_intervalo_com_png",
+      "valor": 1,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 74ce7657..642e9d56 (o UE2, que tem capturas PNG)",
+      "conhecido_positivo": {
+        "o_que": "a saída diz que não leu um byte 0x89",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_chaves_en_com_a_descricao_de_setembro",
+      "valor": 8,
+      "comando": "git show 642e9d56:design/especime-v3/CHAVES-EN.md · «metaDescricao»",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro tem a tabela das chaves",
+        "encontrado": true
+      }
+    }
+  ]
+}
