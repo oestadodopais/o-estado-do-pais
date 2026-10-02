@@ -310,9 +310,12 @@ if (fs.existsSync(`${D}/custo-fim.json`)) {
     { segundos: Math.round((Date.parse(cf.fim_utc) - Date.parse(ci.inicio_utc)) / 1000) });
 }
 if (fs.existsSync(`${D}/portoes/build.codigo`)) {
-  const p = (g) => ({ codigo: Number(fs.readFileSync(`${D}/portoes/${g}.codigo`, 'utf8').trim()), segundos: Math.round((Date.parse(fs.readFileSync(`${D}/portoes/${g}.fim`, 'utf8').trim()) - Date.parse(fs.readFileSync(`${D}/portoes/${g}.inicio`, 'utf8').trim())) / 1000) });
-  const g = { build: p('build'), verify: p('verify'), typecheck: p('typecheck'), cabeca: fs.readFileSync(`${D}/portoes/cabeca`, 'utf8').trim() };
-  medicao('portoes_a_zero', ['build', 'verify', 'typecheck'].filter((k) => g[k].codigo === 0).length, `sh scripts/leituras/portoes.sh <worktree> ${D}/portoes`, 'os três códigos leem-se de ficheiros acabados de escrever', true, { portoes: g });
+  const codigoDe = (f) => Number(fs.readFileSync(f, 'utf8').trim());
+  const p = (g) => ({ codigo: codigoDe(`${D}/portoes/${g}.codigo`), segundos: Math.round((Date.parse(fs.readFileSync(`${D}/portoes/${g}.fim`, 'utf8').trim()) - Date.parse(fs.readFileSync(`${D}/portoes/${g}.inicio`, 'utf8').trim())) / 1000) });
+  const g = { build: p('build'), verify: p('verify'), typecheck: p('typecheck'), cabeca: fs.readFileSync(`${D}/portoes/cabeca`, 'utf8').trim(), cabeca_no_fim: fs.readFileSync(`${D}/portoes/cabeca.fim`, 'utf8').trim() };
+  /* O conhecido-positivo: o mesmo leitor de códigos lê o 1 da corrida intermédia do check:alvos, que falhou na H2. */
+  const intermedio = fs.existsSync(`${D}/alvos-intermedio.codigo`) ? codigoDe(`${D}/alvos-intermedio.codigo`) : null;
+  medicao('portoes_a_zero', ['build', 'verify', 'typecheck'].filter((k) => g[k].codigo === 0).length, `sh scripts/leituras/portoes.sh <worktree> ${D}/portoes`, 'o mesmo leitor de códigos lê o 1 de alvos-intermedio.codigo, a corrida intermédia do check:alvos que falhou', intermedio === 1 && g.cabeca === g.cabeca_no_fim, { portoes: g });
 }
 
 const saida = { bloco: 'K2', cabeca, construcao: { commit: versao.commit, construido_em: versao.construido_em }, base: { cabeca: BASE, construcao: versaoBase.commit }, medidas };
