@@ -34,9 +34,10 @@
  *     alto para o mais baixo (o sentido do lugar de Portugal na frase), com os
  *     valores iguais pela ordem da série, que é a protocolar com a União no fim;
  *     é a lista dobrada «Os 27 por ordem», o caminho sem guião;
- *   · `toques`, uma etiqueta por marca, com o país e a ressalva do ponto, na
- *     posição da marca: o nome e o valor vão no documento, escondidos, e o guião
- *     do toque (`public/js/paises.js`) só mostra o que já lá está.
+ *   · `toques`, uma etiqueta por marca, na posição da marca, com o grupo dos
+ *     pontos que têm o valor dela (um país só, salvo num empate) e a ressalva de
+ *     cada um: o nome e o valor vão no documento, escondidos, e o guião do toque
+ *     (`public/js/paises.js`) só mostra o que já lá está.
  * E `faixasDaPaginaDaUniao()` diz que faixas são e por que ordem: a dos dois
  * quadros, com as medidas de fora deles no lugar que a tabela declarada lhes dá.
  */
@@ -203,8 +204,19 @@ export function faixaDaMedida(idDaLinha, lang) {
     ordem,
     /* AS ETIQUETAS DO TOQUE (UE2): uma por marca, na posição dela e ancorada
        pela ponta mais perto, como os rótulos; o nome e o valor saem na vista
-       pelos componentes da série, e a ressalva vem daqui. */
-    toques: marcas.map((m) => ({ ...ponta(m.geo), papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda) })),
+       pelos componentes da série, e a ressalva vem daqui. UMA MARCA COM O MESMO
+       VALOR DE OUTRAS ESTÁ NO MESMO SÍTIO DELAS, e um toque ali não escolhe
+       entre países que o desenho não separa: a etiqueta de cada uma diz o grupo
+       inteiro dos pontos com esse valor, pela ordem da série, com as palavras da
+       lista entre eles («Áustria 18,6, Portugal 18,6 e Suécia 18,6»). */
+    toques: marcas.map((m) => {
+      const n = m.geo === AGREGADO_DA_UNIAO ? nUe : /** @type {{ n: number }} */ (paises.find((p) => p.geo === m.geo)).n;
+      const grupo = naSerie.filter((p) => p.n === n).map((p) => ({
+        ...ponta(p.geo),
+        papel: p.geo === AGREGADO_DA_UNIAO ? 'uniao' : p.geo === 'PT' ? 'portugal' : 'pais',
+      }));
+      return { geo: m.geo, papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda), grupo };
+    }),
     porta: routePath('serie', lang, { slug: serie.id }),
     palavras: { uniao: palavras.uniao, porta: palavras.porta, lista: palavras.lista },
   };
