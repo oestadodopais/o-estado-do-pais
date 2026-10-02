@@ -235,16 +235,76 @@ function comparacaoNaGramatica(linha, limiar, onde) {
 }
 
 /**
- * A leitura resolvida de uma medida numa edição.
+ * ===========================================================================
+ * O CORTE DA LEITURA (bloco K2, 02.10.2026, item 1 do brief)
+ * ===========================================================================
+ * O cartão para o telemóvel mostra o nome, o valor com a unidade, a comparação e só depois a definição, dobrada numa
+ * linha que se abre sem guião («O que é este número»). A leitura de cada medida tem as duas coisas, por esta ordem:
+ * primeiro o que o número é («É a parte das pessoas dos 20 aos 64 anos que tem emprego.», e o que o seu sinal quer
+ * dizer), depois como se compara («Subiu face a 2024. Está acima da média da União Europeia.», e o veredicto). As
+ * palavras não mudam; o que muda é onde cada metade se rende.
  *
- * @param {string} id  o identificador da linha do cartão, ou `camaras`
- * @param {'pt'|'en'} lang
- * @returns {{ pedacos: PedacoDaFrase[], ramos: RamoEscolhido[], citadas: string[] }}
+ * O CORTE LÊ-SE DA DECLARAÇÃO, E NÃO SE ESCREVE: a parte do que o número é são os pedaços de topo do princípio que não
+ * comparam (nenhum `compara`, `estado` ou `comparacao`, a qualquer profundidade, dentro de um ramo do sinal também), e
+ * a comparação começa no primeiro pedaço de topo que compara. Uma leitura sem comparação nenhuma (o ganho médio, a
+ * retribuição mínima, as câmaras) é toda definição; as duas edições cortam no mesmo pedaço, porque têm a mesma forma, e
+ * um corte diferente fecha a construção. A K17 do `check:cartao` corta pela sua própria conta e confere as duas metades.
  */
-export function leituraDaMedida(id, lang) {
+
+/** Um pedaço declarado que compara, a qualquer profundidade. @param {unknown} parte @returns {boolean} */
+export function pedacoQueCompara(parte) {
+  if (Array.isArray(parte)) return parte.some(pedacoQueCompara);
+  if (!parte || typeof parte !== 'object') return false;
+  const o = /** @type {Record<string, any>} */ (parte);
+  if ('compara' in o || 'estado' in o || 'comparacao' in o) return true;
+  if ('sinal' in o) return Object.values(o.sinal ?? {}).some(pedacoQueCompara);
+  return false;
+}
+
+/** O índice do primeiro pedaço de topo que compara, ou o comprimento da leitura. @param {readonly unknown[]} partes */
+export function corteDaLeitura(partes) {
+  const i = partes.findIndex(pedacoQueCompara);
+  return i < 0 ? partes.length : i;
+}
+
+/**
+ * A leitura de uma medida nas suas duas metades, resolvidas: o que o número é (`oQueE`) e a comparação (`comparacao`).
+ * Uma metade que não tem pedaços, ou que resolve para nada (uma comparação com linhas que a régua não tem), é `null`.
+ *
+ * @param {string} id @param {'pt'|'en'} lang
+ * @returns {{ corte: number, oQueE: { pedacos: PedacoDaFrase[], ramos: RamoEscolhido[], citadas: string[] } | null, comparacao: { pedacos: PedacoDaFrase[], ramos: RamoEscolhido[], citadas: string[] } | null }}
+ */
+export function partesDaLeitura(id, lang) {
   const declaracao = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id];
   const partes = declaracao?.[lang];
   if (!Array.isArray(partes)) throw fecha(`${id} · ${lang}`, 'não há leitura declarada para esta medida nesta edição.');
+  const corte = corteDaLeitura(partes);
+  const outra = declaracao?.[lang === 'pt' ? 'en' : 'pt'];
+  if (Array.isArray(outra) && corteDaLeitura(outra) !== corte) {
+    throw fecha(`${id}`, `as duas edições cortam a leitura em pedaços diferentes (${corte} e ${corteDaLeitura(outra)}).`);
+  }
+  const oQueE = corte > 0 ? leituraDaMedida(id, lang, [0, corte], true) : null;
+  const comparacao = corte < partes.length ? leituraDaMedida(id, lang, [corte, partes.length], true) : null;
+  return { corte, oQueE: oQueE && oQueE.pedacos.length ? oQueE : null, comparacao: comparacao && comparacao.pedacos.length ? comparacao : null };
+}
+
+/**
+ * A leitura resolvida de uma medida numa edição.
+ *
+ * `fatia` resolve só os pedaços de topo entre dois índices (o corte da leitura, acima), e `podeSerVazia` deixa uma
+ * fatia resolver para nada sem fechar a construção; a leitura inteira continua a fechar quando resolve para nada.
+ *
+ * @param {string} id  o identificador da linha do cartão, ou `camaras`
+ * @param {'pt'|'en'} lang
+ * @param {[number, number] | null} [fatia]
+ * @param {boolean} [podeSerVazia]
+ * @returns {{ pedacos: PedacoDaFrase[], ramos: RamoEscolhido[], citadas: string[] }}
+ */
+export function leituraDaMedida(id, lang, fatia = null, podeSerVazia = false) {
+  const declaracao = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id];
+  const todas = declaracao?.[lang];
+  if (!Array.isArray(todas)) throw fecha(`${id} · ${lang}`, 'não há leitura declarada para esta medida nesta edição.');
+  const partes = fatia ? todas.slice(fatia[0], fatia[1]) : todas;
   const camaras = id === LEITURA_DAS_CAMARAS;
   const linha = camaras ? null : getClaim(id);
   const valor = linha ? parsePtNumber(linha.value) : null;
@@ -362,7 +422,7 @@ export function leituraDaMedida(id, lang) {
     if (typeof p === 'string' && typeof ultimo === 'string') pedacos[pedacos.length - 1] = ultimo + p;
     else pedacos.push(p);
   }
-  if (pedacos.length === 0) throw fecha(`${id} · ${lang}`, 'a leitura resolveu para nada.');
+  if (pedacos.length === 0 && !podeSerVazia) throw fecha(`${id} · ${lang}`, 'a leitura resolveu para nada.');
   return { pedacos, ramos, citadas };
 }
 

@@ -31,7 +31,9 @@
  *   (c) **a régua**, quando as linhas existem (ver `src/lib/enquadramento.mjs`);
  *   (d) **a pergunta do leitor**, declarada em
  *       `src/data/figuras.mjs` e em mais lado nenhum, com as origens seladas no
- *       F1.10. As medidas sem definição declarada não levam frase;
+ *       F1.10. As medidas sem definição declarada não levam frase. Desde o K2
+ *       (02.10.2026) vai dobrada no fim, com a metade da leitura que diz o que o
+ *       número é, numa linha que se abre sem guião;
  *   (e) **a marca da fonte**, que abre o recibo. É o `<a class="src-chip">` que
  *       o `<Provenance>` põe depois do período, e é a única porta da proveniência
  *       que o cartão mostra.
@@ -86,7 +88,7 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada, eNomeDeMedida } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
-import { leituraDaMedida } from '../lib/leitura-da-medida.mjs';
+import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { reguaDoCartao } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
@@ -158,7 +160,10 @@ const nome = nomeDoCartao(c, lang);
 if (comLeitura && nome === null) {
   throw new Error(`cartão nacional sem nome: a leitura de «${c.id}» não tem cartão onde viver`);
 }
-const leitura = comLeitura ? leituraDaMedida(c.id, lang) : null;
+/* O CORTE DA LEITURA (bloco K2, 02.10.2026): a metade que diz o que o número é vai para a dobra, com a pergunta; a
+   metade que compara fica à vista, logo a seguir ao valor. As duas são a mesma leitura, cortada no primeiro pedaço
+   que compara (`partesDaLeitura()`), e a K17 confere-as juntas. */
+const leitura = comLeitura ? partesDaLeitura(c.id, lang) : null;
 /* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026):
    onde a medida a declara e o cartão mostra a União (a régua com a linha da
    União, ou a faixa da União), a ressalva vai no mesmo cartão. */
@@ -284,9 +289,10 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           própria, dentro do invólucro `data-selo-em`, como os da régua: a porta
           do recibo é a marca única do cartão (K10), e o portão de HTML aceita
           um valor aqui dentro pela mesma regra do item da régua. */}
-      {leitura && (
-        <p class="cartao-medida-leitura" data-cartao-leitura={c.id} data-selo-em={c.id}>
-          <Frase partes={leitura.pedacos} lang={lang} selos={false} />
+      {/* K2 (02.10.2026): a metade da leitura que compara, à vista; a que diz o que o número é vai para a dobra. */}
+      {leitura?.comparacao && (
+        <p class="cartao-medida-leitura" data-cartao-leitura={c.id} data-selo-em={c.id} data-leitura-parte="comparacao">
+          <Frase partes={leitura.comparacao.pedacos} lang={lang} selos={false} />
         </p>
       )}
 
@@ -307,11 +313,28 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         <p class="cartao-medida-ressalva" data-ressalva-da-uniao={c.id}>{ressalva}</p>
       )}
 
-      {/* (c) A FRASE DO QUE A MEDIDA MEDE. */}
-      {frase && (
-        <p class="cartao-medida-frase" data-cartao-definicao={c.id}>
-          <Frase partes={frase} lang={lang} selos={true} />
-        </p>
+      {/* (c) A DEFINIÇÃO, DOBRADA (bloco K2, 02.10.2026, item 1 e decisão 1 do brief). O que o número é (a metade da
+          leitura que o diz) e a pergunta do leitor vão numa linha que se abre sem guião, «O que é este número», como as
+          listas de «Lugares»: um `<details>` nativo, fechado em todas as larguras, que não custa a quem não o quer. A
+          ordem que um leitor vê é o nome, o valor com a unidade, a comparação e só depois isto; a célula da ordem do
+          `check:cartao` lê-a no documento. A pergunta conserva a marca `data-cartao-definicao` que a K6 confere. */}
+      {(leitura?.oQueE || frase) && (
+        <details class="cartao-medida-dobra" data-cartao-dobra={c.id}>
+          <summary class="cartao-medida-dobra-abrir">
+            <span class="cartao-medida-dobra-seta" aria-hidden="true"></span>
+            <span class="cartao-medida-dobra-rotulo" data-voz>{s.cartao.oQueE}</span>
+          </summary>
+          {leitura?.oQueE && (
+            <p class="cartao-medida-leitura cartao-medida-o-que-e" data-cartao-leitura={c.id} data-selo-em={c.id} data-leitura-parte="o-que-e">
+              <Frase partes={leitura.oQueE.pedacos} lang={lang} selos={false} />
+            </p>
+          )}
+          {frase && (
+            <p class="cartao-medida-frase" data-cartao-definicao={c.id}>
+              <Frase partes={frase} lang={lang} selos={true} />
+            </p>
+          )}
+        </details>
       )}
 
     </article>

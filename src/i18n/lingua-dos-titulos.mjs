@@ -446,8 +446,9 @@ export const LINGUA_DAS_EDICOES = {
      dos estudos de Évora, e a passagem E1b para as duas contagens do arquivo),
      e a de 16.09.2026 saiu. */
   '12.08.2026': null,
-  /* A recontagem de Correções publicadas usa a data da edição, sem língua. */
-  '30.09.2026': null,
+  /* A recontagem de Correções publicadas usa a data da edição, sem língua. A de 30.09.2026 (o E0) passou a
+     02.10.2026 com a recontagem do K2, e a chave anda com ela. */
+  '02.10.2026': null,
   '01.10.2026': null,
 
   /* --- os nomes de ficheiro do publicador -------------------------------- */

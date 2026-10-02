@@ -2969,6 +2969,9 @@ export const STRINGS = {
       fonteJaPublicou: 'a fonte já publicou',
       lidoA: 'lido a',
       meses: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+      /* A LINHA QUE ABRE A DEFINIÇÃO DOBRADA DE UM CARTÃO (bloco K2, 02.10.2026, item 1 do brief): as palavras são as
+         do brief, «O que é este número». */
+      oQueE: 'O que é este número',
     },
   },
 
@@ -4121,6 +4124,7 @@ export const STRINGS = {
       fonteJaPublicou: 'the source has already published',
       lidoA: 'read on',
       meses: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      oQueE: 'What this number is',
     },
   },
 };

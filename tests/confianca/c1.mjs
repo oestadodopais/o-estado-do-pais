@@ -15,7 +15,7 @@ import { parse } from 'node-html-parser';
 import { conferirValorUnidade } from '../../scripts/valor-unidade.mjs';
 import { conferirCampoRelido, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from '../../scripts/verificacao-legivel.mjs';
 import { conferirPaginaDaLeitura, leituraIndependente, normal } from '../cartao/leituras.mjs';
-import { leituraDaMedida, textoDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
+import { leituraDaMedida, textoDaLeitura, partesDaLeitura } from '../../src/lib/leitura-da-medida.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { reguaDoCartao } from '../../src/lib/enquadramento.mjs';
 import { LEITURAS_RP1 } from '../../src/data/leituras-rp1.mjs';
@@ -189,17 +189,27 @@ function paginaSintetica(id, lang, resolvida, regua) {
     const nota = l.source_flag === 'e' ? (lang === 'en' ? l.source_flag_note_en : l.source_flag_note) : l.source_flag === 'p' ? (lang === 'en' ? 'provisional data' : 'dado provisório') : '';
     return `<span data-claim="${alvo}">${escape(l.value)}</span>${escape(sufixo)}${nota ? `<span class="claim-provisorio"> (${escape(nota)})</span>` : ''}`;
   };
-  const partes = resolvida.pedacos.map((p) => {
+  const pedacos = (lista) => lista.map((p) => {
     if (typeof p === 'string') return escape(p);
     if ('claim' in p) return cita(p.claim, p.sufixo ?? '');
     if ('nl' in p) return `<span data-nonledger="${escape(p.motivo)}">${escape(p.nl)}</span>`;
     if ('data' in p) return `<span data-nonledger="data-da-linha" data-de-linha="${p.data.id}" data-de-campo="${p.data.campo}">${escape(dataDaCasa(p.data.valor, lang))}</span>`;
     throw new Error('o ensaio dos preços encontrou um tipo de pedaço que não declara');
   }).join('');
+  /* K2 (02.10.2026): a página sintética rende a leitura como o cartão a rende desde o K2, em duas metades: a que
+     compara à vista e a que diz o que o número é dentro da dobra. A leitura inteira (`resolvida`) continua a ser a que
+     as conferências deste ensaio comparam com a conta da K17. */
+  const metades = partesDaLeitura(id, lang);
+  const comparacao = metades.comparacao ? `<p data-cartao-leitura="${id}" data-selo-em="${id}" data-leitura-parte="comparacao">${pedacos(metades.comparacao.pedacos)}</p>` : '';
+  const oQueE = metades.oQueE ? `<details class="cartao-medida-dobra"><summary>o que é</summary><p data-cartao-leitura="${id}" data-selo-em="${id}" data-leitura-parte="o-que-e">${pedacos(metades.oQueE.pedacos)}</p></details>` : '';
+  if (normal(textoDaLeitura(resolvida.pedacos, lang)) !== normal(`${metades.oQueE ? textoDaLeitura(metades.oQueE.pedacos, lang) : ''}${metades.comparacao ? textoDaLeitura(metades.comparacao.pedacos, lang) : ''}`)) {
+    throw new Error('as duas metades da leitura não são a leitura inteira');
+  }
   return parse(`<main><article class="cartao-medida" data-cartao-medida="${id}">
     <span class="cartao-medida-quantidade">${cita(id)} <span data-linha-campo="unit">%</span></span>
-    <p data-cartao-leitura="${id}" data-selo-em="${id}">${partes}</p>
+    ${comparacao}
     ${Object.entries(regua).filter(([, alvo]) => alvo).map(([tipo, alvo]) => `<span data-regua="${tipo}">${cita(alvo)}</span>`).join('')}
+    ${oQueE}
     </article></main>`);
 }
 
