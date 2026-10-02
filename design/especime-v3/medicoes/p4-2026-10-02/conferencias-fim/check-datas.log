@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:datas
+> node scripts/check-datas.mjs
+
+[90mcheck-datas: história completa · 25 edição(ões) do ficheiro refeitas do `git`.[0m
+[32mcheck-datas[0m · 25 edição(ões) datadas, 88 data(s) impressa(s) em 44 página(s), 88 laço(s) data-edição em 658 página(s) conferida(s), 0 edição(ões) sem data e nenhuma caixa de aviso; 12 nota(s) do sucessor com a frase da reconciliação.
