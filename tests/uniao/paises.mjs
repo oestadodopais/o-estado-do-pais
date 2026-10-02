@@ -15,7 +15,11 @@
  *          (`conferirPecasDaFaixa()`, de `tests/cartao/faixa.mjs`): as marcas e as posições, os rótulos, as pontas,
  *          a frase e a porta do recibo da série;
  *   F20g · o cabeçalho de cada faixa: o nome é o de um cartão da linha portuguesa da série (`data-de-linha`), e a
- *          unidade e o período são os campos da série (o texto deles confere-o o portão de HTML e a F1);
+ *          unidade e o período são os campos da série (o texto deles confere-o o portão de HTML e a F1); e (a passagem
+ *          UE2-b, o achado 7 da leitura a frio do UE2) por baixo do nome, uma vez, o que a medida conta: a definição
+ *          declarada, na forma do recibo da série onde a declaração a tem e na do cartão onde não tem, carácter a
+ *          carácter, resolvida aqui por conta própria (`definicaoDaFaixa()`), e sem nomear Portugal, porque a faixa é
+ *          dos 27 (a regra da UE1e para o recibo da série). É ela que diz a população e a base da comparação;
  *   F20h · as etiquetas do toque: uma por marca e mais nenhuma, todas escondidas no documento servido (`hidden`),
  *          cada uma com o grupo dos pontos que têm o valor da sua marca (quase sempre um país só: marcas com o mesmo
  *          valor estão no mesmo sítio, e o toque não as separa), pela ordem da série, cada ponto com o nome do país
@@ -35,14 +39,47 @@
  */
 import { parse } from 'node-html-parser';
 
-import { contaDaFaixa, AGREGADO } from '../../scripts/series-do-portao.mjs';
+import { contaDaFaixa, AGREGADO, lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { conferirPecasDaFaixa } from '../cartao/faixa.mjs';
 import { PALAVRAS_DA_FAIXA, MEDIDAS_FORA_DOS_QUADROS } from '../../src/data/faixa-da-uniao.mjs';
 import { RESSALVAS_DA_UNIAO } from '../../src/data/ressalvas-da-uniao.mjs';
-import { FIGURAS } from '../../src/data/figuras.mjs';
+import { FIGURAS, DEFINICOES_DAS_MEDIDAS } from '../../src/data/figuras.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 
 const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
+
+/**
+ * O QUE A MEDIDA CONTA, RESOLVIDO DO LADO DOS PORTÕES (a passagem UE2-b): a definição declarada da medida, na forma do
+ * recibo da série onde a declaração a tem (`serie`) e na do cartão onde não tem, com os pedaços de texto e os de
+ * escala (`{ nl }`) juntos, e mais nenhum: um pedaço de outra espécie dá `null`, e a F20g recusa. É a regra do
+ * `SerieView.astro` e da `definicaoDoPortao()` do portão de HTML, escrita aqui de novo para não perguntar à vista.
+ *
+ * @param {string} linha @param {'pt'|'en'} lang @returns {string|null}
+ */
+export function definicaoDaFaixa(linha, lang) {
+  const entrada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[linha];
+  return juntarPartes((entrada?.serie ?? entrada)?.[lang]);
+}
+
+/** A pergunta do cartão de uma medida (sem a forma do recibo da série), para as plantas. @param {string} linha @param {'pt'|'en'} lang */
+export function perguntaDoCartao(linha, lang) {
+  return juntarPartes(/** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[linha]?.[lang]);
+}
+
+/** @param {unknown} partes @returns {string|null} */
+function juntarPartes(partes) {
+  if (!Array.isArray(partes)) return null;
+  let texto = '';
+  for (const p of partes) {
+    if (typeof p === 'string') texto += p;
+    else if (p && typeof p === 'object' && !Array.isArray(p) && 'nl' in p) texto += String(p.nl);
+    else return null;
+  }
+  return norm(texto);
+}
+
+/** O que nomeia Portugal numa definição de uma faixa dos 27: a regra da UE1e do portão de HTML, nas duas edições. */
+export const NOMEIA_PORTUGAL_NA_FAIXA = /\bPortugal\b|\bportugu[eê]s(?:es)?\b|\bportuguesas?\b|\bPortuguese\b/i;
 
 /**
  * AS MEDIDAS COM SÉRIE DE FORA DOS DOIS QUADROS, E O SEU LUGAR, ESCRITAS AQUI DO LADO DOS PORTÕES: a medida dos
@@ -174,7 +211,7 @@ export function grupoDoValor(serie, geo) {
  */
 export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
   const erros = [];
-  const contas = { seccoes: 0, faixas: 0, marcas: 0, frases: 0, etiquetas: 0, listas: 0, itens: 0, ressalvas_da_uniao: 0, ressalvas_dos_pontos: 0 };
+  const contas = { seccoes: 0, faixas: 0, marcas: 0, frases: 0, definicoes: 0, etiquetas: 0, listas: 0, itens: 0, ressalvas_da_uniao: 0, ressalvas_dos_pontos: 0 };
   const erro = (celula, id, msg) => erros.push(`${celula} · ${rota} · ${id}: ${msg}`);
   const s = t(lang);
 
@@ -220,6 +257,27 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
     const periodo = faixa.querySelectorAll('.paises-unidade [data-linha-de-serie]');
     if (periodo.length !== 1 || periodo[0].getAttribute('data-linha-de-serie') !== sid || periodo[0].getAttribute('data-de-campo') !== 'periodo') {
       erro('F20g', sid, 'o período do cabeçalho não é o campo «periodo» da série');
+    }
+    /* F20g · o que a medida conta (a passagem UE2-b) */
+    {
+      const linhaDaFaixa = String(serie.linha_de_portugal);
+      const esperada = definicaoDaFaixa(linhaDaFaixa, lang);
+      const ditas = faixa.querySelectorAll('[data-faixa-o-que-conta]');
+      const nomeia = [...ditas.map((d) => norm(d.text)), esperada ?? ''].find((x) => NOMEIA_PORTUGAL_NA_FAIXA.test(x));
+      if (esperada === null) {
+        erro('F20g', sid, `a medida «${linhaDaFaixa}» não tem uma definição declarada que esta célula leia em DEFINICOES_DAS_MEDIDAS`);
+      } else if (ditas.length !== 1 || ditas[0].getAttribute('data-faixa-o-que-conta') !== sid) {
+        erro('F20g', sid, `a faixa tem ${ditas.length} definição(ões) da medida, e tem uma, a declarada`);
+      } else if (norm(ditas[0].text) !== esperada) {
+        erro('F20g', sid, `a definição diz «${norm(ditas[0].text).slice(0, 90)}» e a declarada é «${esperada.slice(0, 90)}»`);
+      } else if (ditas[0].previousElementSibling?.tagName !== 'H3') {
+        erro('F20g', sid, 'a definição não está logo por baixo do nome da medida');
+      } else if (nomeia === undefined) {
+        contas.definicoes++;
+      }
+      if (nomeia !== undefined) {
+        erro('F20g', sid, `a definição nomeia Portugal («${String(nomeia.match(NOMEIA_PORTUGAL_NA_FAIXA)?.[0])}»), e a faixa é dos 27: o número de cada outro país lia-se como se fosse sobre Portugal`);
+      }
     }
 
     /* F20h · as etiquetas do toque */
@@ -293,12 +351,15 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
  */
 export function plantasDaSeccao(html, lang, rota, ctx) {
   const resultados = [];
-  const planta = (nome, celula, estraga) => {
+  /* `mordida`, quando a planta a diz, é o pedaço da mensagem que prova que mordeu pela regra que planta, e não por
+     outra da mesma célula (UE2-b). */
+  const planta = (nome, celula, estraga, mordida = '') => {
     const copia = parse(html);
     const achou = estraga(copia);
     if (!achou) return void resultados.push({ nome, passou: false, porque: 'a planta não achou o nó que estraga' });
     const { erros } = conferirSeccaoDosPaises(copia, lang, rota, ctx);
-    resultados.push({ nome, passou: erros.some((e) => e.startsWith(`${celula} ·`)), porque: erros[0] ?? 'nenhum erro' });
+    const vistos = erros.filter((e) => e.startsWith(`${celula} ·`));
+    resultados.push({ nome, passou: vistos.some((e) => e.includes(mordida)), porque: vistos[0] ?? erros[0] ?? 'nenhum erro' });
   };
   const lista = (r) => r.querySelector('details[data-lista-paises]');
   /* AS QUATRO DO BRIEF */
@@ -391,12 +452,62 @@ export function plantasDaSeccao(html, lang, rota, ctx) {
     f.querySelector('.faixa-ue-frase')?.insertAdjacentHTML('afterend', x.outerHTML);
     return true;
   });
+  /* AS DA DEFINIÇÃO DE CADA FAIXA (a passagem UE2-b, o achado 7 da leitura a frio do UE2) */
+  planta('a definição de outra medida numa faixa', 'F20g', (r) => {
+    const d = r.querySelectorAll('[data-faixa-o-que-conta]');
+    if (d.length < 2 || norm(d[0].text) === norm(d[1].text)) return false;
+    d[0].set_content(d[1].innerHTML);
+    return true;
+  }, 'a definição diz');
+  planta('a pergunta do cartão, que diz Portugal, na faixa da inflação', 'F20g', (r) => {
+    const d = r.querySelector('[data-faixa-o-que-conta="ihpc-variacao-homologa-paises"]');
+    const doCartao = perguntaDoCartao('ihpc-variacao-homologa', lang);
+    if (!d || !doCartao || !NOMEIA_PORTUGAL_NA_FAIXA.test(doCartao)) return false;
+    d.set_content(doCartao);
+    return true;
+  }, 'nomeia Portugal');
+  planta('a definição tirada de uma faixa', 'F20g', (r) => {
+    const d = r.querySelector('[data-faixa-o-que-conta]');
+    if (!d) return false;
+    d.remove();
+    return true;
+  }, 'definição(ões) da medida');
+  planta('a definição por baixo da unidade, e não do nome', 'F20g', (r) => {
+    const d = r.querySelector('[data-faixa-o-que-conta]');
+    const u = d?.parentNode?.querySelector('.paises-unidade');
+    if (!d || !u) return false;
+    const html = d.outerHTML;
+    d.remove();
+    u.insertAdjacentHTML('afterend', html);
+    return true;
+  }, 'logo por baixo do nome');
   return resultados;
 }
 
-/** A F20a de uma tabela da vista trocada só de um lado, sem página (uma vez por corrida). */
-export function plantaDaTabela() {
-  const trocada = Object.fromEntries(Object.entries(MEDIDAS_FORA_DOS_QUADROS).map(([l, r]) => [l, { ...r, depoisDe: null }]));
+/**
+ * A F20a de uma tabela da vista trocada só de um lado, sem página (uma vez por corrida).
+ *
+ * A PLANTA MUDA UMA ENTRADA PARA OUTRA POSIÇÃO REAL, E SÓ CONTA SE A TABELA INTACTA PASSA (a passagem UE2-b, a segunda
+ * parte do achado 4 da leitura a frio do UE2). Antes punha as duas entradas no fim; numa cópia em que a tabela da vista
+ * já estava trocada, isso não mudava nada e a planta «mordia» só porque a base já falhava. Agora: a tabela intacta tem
+ * de passar (o controlo); a primeira entrada com lugar declarado passa para a seguir a outra medida dos quadros que tem
+ * faixa na secção (uma posição que existe na página, e não uma inventada); a tabela trocada tem de ser diferente da
+ * intacta; e a F20a tem de a recusar.
+ *
+ * @param {Map<string, any>} [series] as séries pelo leitor dos portões
+ */
+export function plantaDaTabela(series = lerSeriesDoPortao()) {
+  const base = conferirTabelaDaSeccao();
+  const entrada = Object.entries(MEDIDAS_FORA_DOS_QUADROS).find(([, r]) => r.depoisDe !== null);
+  const quadros = FIGURAS.map((f) => f.claim);
+  const comFaixa = [...series.values()].filter((x) => x.eixo === 'pais').map((x) => String(x.linha_de_portugal)).filter((l) => quadros.includes(l));
+  const outra = entrada ? comFaixa.find((l) => l !== entrada[1].depoisDe && l !== entrada[0]) : undefined;
+  if (!entrada || !outra) return { nome: 'a tabela da vista com uma entrada noutra posição real', passou: false, porque: 'a planta não achou uma entrada com lugar nem outra posição real' };
+  const [linha, regra] = entrada;
+  const trocada = { ...MEDIDAS_FORA_DOS_QUADROS, [linha]: { ...regra, depoisDe: outra } };
+  const nome = `a tabela da vista com «${linha}» a seguir a «${outra}», e não a «${regra.depoisDe}»`;
+  if (base.length) return { nome, passou: false, porque: `a tabela intacta já falha, e a planta não provaria nada: ${base[0]}` };
+  if (JSON.stringify(trocada) === JSON.stringify(MEDIDAS_FORA_DOS_QUADROS)) return { nome, passou: false, porque: 'a tabela trocada é igual à intacta' };
   const erros = conferirTabelaDaSeccao(trocada);
-  return { nome: 'a tabela da vista com as medidas de fora dos quadros todas no fim', passou: erros.some((e) => e.startsWith('F20a ·')), porque: erros[0] ?? 'nenhum erro' };
+  return { nome, passou: erros.some((e) => e.startsWith('F20a ·')), porque: erros[0] ?? 'nenhum erro' };
 }

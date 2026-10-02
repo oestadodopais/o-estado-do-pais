@@ -433,6 +433,8 @@ const contas = {
   seccoes_dos_paises: 0,
   faixas_dos_paises: 0,
   marcas_dos_paises: 0,
+  /* UE2-b: a definição declarada por baixo do nome de cada faixa (F20g). */
+  definicoes_dos_paises: 0,
   etiquetas_do_toque: 0,
   listas_dos_paises: 0,
   itens_das_listas: 0,
@@ -532,6 +534,7 @@ for (const ficheiro of paginasDe(DIST)) {
     contas.seccoes_dos_paises += f20.contas.seccoes;
     contas.faixas_dos_paises += f20.contas.faixas;
     contas.marcas_dos_paises += f20.contas.marcas;
+    contas.definicoes_dos_paises += f20.contas.definicoes;
     contas.etiquetas_do_toque += f20.contas.etiquetas;
     contas.listas_dos_paises += f20.contas.listas;
     contas.itens_das_listas += f20.contas.itens;
@@ -1349,7 +1352,11 @@ if (SERIES_DO_PORTAO.size) {
     err(`F20: a página da União rende ${contas.seccoes_dos_paises} secção(ões) dos países com ${contas.faixas_dos_paises} faixa(s), e há ${SERIES_DO_PORTAO.size} série(s) de países; esperavam-se 2 secções e ${2 * SERIES_DO_PORTAO.size} faixas, uma por série e por edição.`);
   }
   if (contas.plantas_dos_paises === 0) err('F20: nenhuma planta da secção dos países correu: a célula não provou que morde.');
-  const tabela = plantaDaTabela();
+  /* UE2-b: cada faixa das duas edições diz o que a medida conta, e a conta esperada sai das séries. */
+  if (contas.definicoes_dos_paises !== 2 * SERIES_DO_PORTAO.size) {
+    err(`F20g: ${contas.definicoes_dos_paises} faixa(s) dos países dizem a definição declarada da medida, e são ${2 * SERIES_DO_PORTAO.size}, uma por série e por edição.`);
+  }
+  const tabela = plantaDaTabela(SERIES_DO_PORTAO);
   contas.plantas_dos_paises++;
   if (!tabela.passou) err(`F20: a planta «${tabela.nome}» não mordeu (${tabela.porque}).`);
 }
@@ -1423,7 +1430,7 @@ console.log(
         `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos assuntos), ${contas.ordinais_conferidos} ordinais e ` +
         `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder, ` +
         `${contas.plantas_dos_empates} plantas dos empates a morder` +
-        ` · secção dos países (F20): ${contas.seccoes_dos_paises} secção(ões), ${contas.faixas_dos_paises} faixa(s), ${contas.marcas_dos_paises} marcas refeitas do valor, ` +
+        ` · secção dos países (F20): ${contas.seccoes_dos_paises} secção(ões), ${contas.faixas_dos_paises} faixa(s), ${contas.definicoes_dos_paises} definição(ões) declarada(s), ${contas.marcas_dos_paises} marcas refeitas do valor, ` +
         `${contas.etiquetas_do_toque} etiquetas do toque, ${contas.listas_dos_paises} listas com ${contas.itens_das_listas} itens, ` +
         `${contas.ressalvas_da_uniao_nos_paises} ressalva(s) da Comissão, ${contas.plantas_dos_paises} plantas a morder` +
         ` · ${contas.datas_de_serie} data(s) de série`,

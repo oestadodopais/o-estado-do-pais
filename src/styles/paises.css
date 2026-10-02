@@ -44,6 +44,18 @@
   line-height: 1.3;
 }
 
+/* O QUE A MEDIDA CONTA (a passagem UE2-b, o achado 7 da leitura a frio do UE2): por baixo do nome, a definição
+   declarada da medida, na letra da prosa e na tinta do texto, mais pequena do que o nome e com a medida de linha da
+   frase do lugar, para que a pergunta se leia antes do desenho sem lhe tomar o lugar de título. */
+.paises-o-que-conta {
+  margin: 0;
+  max-width: 70ch;
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
 .paises-unidade {
   margin: 0;
   font-family: var(--f-instr);
