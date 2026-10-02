@@ -31,7 +31,7 @@ def carrega(path):
     return cache[path]
 def janela(conteudo, ln, r=7):
     return ' '.join(norm(c) for c in conteudo[max(0, ln - 1 - r): ln + r])
-RE_FICH = re.compile(r'`((?:scripts|tests|src|design|ledger|public|registos|studies-src)/[^`\s:]+?\.(?:mjs|astro|json|md|py|yml|js|css)|package\.json|vercel\.json|CLAUDE\.md|DECISIONS\.md)(?::(\d+))?`')
+RE_FICH = re.compile(r'`((?:scripts|tests|src|design|ledger|public|registos|studies-src|api|supabase)/[^`\s:]+?\.(?:mjs|astro|json|md|py|yml|js|css|sql)|package\.json|vercel\.json|CLAUDE\.md|DECISIONS\.md)(?::(\d+))?`')
 RE_NODE = re.compile(r'`node ((?:scripts|tests)/[^\s`]+\.mjs)')
 RE_BARE = re.compile(r'`:(\d+)`')
 RE_QUOTE = re.compile(r'«([^«»]{15,})»')
