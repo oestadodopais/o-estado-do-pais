@@ -1316,3 +1316,26 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 **Quatro chaves saíram do uso, e nenhuma saiu por esquecimento.** `inicio.portas.abrir` («a página inteira» / «the whole page») era a etiqueta única das três portas, e o item 2 dá a cada uma a sua; `livro.seloK`, `seloCheio` e `seloTracejado` eram o título do aparelho e os nomes dos dois estados, e o item 5 põe no lugar deles uma linha em palavras. As linhas do inventário da voz que elas rendiam estão tratadas em `INVENTARIO-FRASES.md`, na secção do bloco `palavras-da-porta`: sete passaram a `retirada` com a razão escrita, e três saíram do ficheiro porque ficariam num estado impossível (a razão está lá, e é a definição da régua).
 
 **Uma chave da regra 5 do Método NÃO mudou, e a razão não é esquecimento.** O item 5 escreve que a marca passa a chamar-se «a marca da fonte» em toda a prosa que o leitor vê, e dá ao Método o direito de dizer uma vez «a marca da fonte, o selo no vocabulário da casa». A regra 5 do Método é TEXTO GOVERNADO: a `DECISIONS.md` §1.106 carimba o sha256 de `src/data/metodo.mjs` e a `IDENTIDADE.md` §5 cita-a palavra por palavra («Ao lado de cada medição há um selo que abre a sua linha…»). Trocar-lhe as palavras pede uma entrada nova na `DECISIONS.md` e uma emenda à constituição, e nenhuma das duas é do construtor deste bloco. A passagem fica para o lugar de direção, e está no relatório.
+
+
+### P4 · os pequenos do sítio depois do UE2 (02.10.2026)
+
+*O brief `design/observatorio/BRIEF-P4-os-pequenos-do-sitio.md`, itens 00, 0 e 5. As cadeias abaixo foram lidas de `src/i18n/strings.mjs` na construção do bloco, e o guião das medidas do bloco (`design/especime-v3/medicoes/p4-2026-10-02/medir-p4.mjs`) confere que cada uma é igual à cadeia.*
+
+**Uma chave nova:**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.uniaoEuropeiaNoMenu` | Europa | Europe | a sexta porta do menu do cabeçalho, a página da União (item 0). O brief manda «União Europeia» se as seis portas couberem numa linha a 390 px, e «Europa» se não couberem: não cabem nem com a letra do menu a 12 px (373 px de portas numa coluna de 354), e com «Europa» cabem, com a letra a 13 px. O rodapé continua a dizer o nome inteiro da página (`nav.uniaoEuropeia`), e a regra do F1.10 («um nome por coisa») cede só no menu, por decisão do brief |
+
+**Três chaves que voltam a render-se, sem mudar de texto:**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `tema.rotulo` · `tema.claro` · `tema.escuro` | Tema · claro · escuro | Theme · light · dark | o comando do tema volta ao cabeçalho de todas as páginas, na fila da marca (item 00; a Emenda 12 de volta). O nome do grupo só se ouve, e por isso está no inventário das frases; os dois botões só aparecem com guião |
+
+**A descrição que ficou para trás neste ficheiro.** O brief pede «a linha da página do concelho com a descrição de hoje». Medido na construção do bloco: a linha de `municipio.metaDescricaoB` (etapa 4, commit 4-0) é igual à cadeia de hoje nas duas edições, e a descrição que a página do concelho rende é `municipio.metaDescricaoA`, o nome do concelho e `municipio.metaDescricaoB` («O que as fontes publicam sobre o concelho de …: população, poder de compra, emprego, empresas, dívida e execução orçamental.» / «What the sources publish about the municipality of …: population, purchasing power, employment, enterprises, debt and budget execution.»). A linha que ficou para trás é a da página da União, de que fala o relatório do UE2-b: a de 08.09 (aceite a 07.09), que perdeu a cauda a 14.09 e ganhou os países a 02.10. O registo de 08.09 fica como estava, e a forma de hoje regista-se aqui:
+
+| chave | pt (antes → depois) | en (antes → depois) | nota |
+|---|---|---|---|
+| `uniaoEuropeia.metaDescription` | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. → Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu. | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. → Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard. | a cauda «cada uma com a sua linha» saiu a 14.09.2026 (achado 6 da leitura cruzada do inventário: era o sítio a dizer o que guarda), e os países entraram a 02.10.2026, na passagem UE2-b, pela ordem em que a página os mostra |
