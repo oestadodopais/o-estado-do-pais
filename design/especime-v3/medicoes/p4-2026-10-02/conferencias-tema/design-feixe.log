@@ -1,0 +1,41 @@
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit 17564ea · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   380180  [32m✓[0m
+  02-tipo.html                      Fundamentos   376326  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   414074  [32m✓[0m
+  04-regua.html                     Disposições   383558  [32m✓[0m
+  05-mapa.html                      Disposições   444997  [32m✓[0m
+  06-estados.html                   Componentes   375814  [32m✓[0m
+  07-cartoes.html                   Componentes   289007  [32m✓[0m
+  10-pagina-primeira.html           Páginas       438980  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       439851  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       227097  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       610962  [32m✓[0m
+  14-pagina-municipio.html          Páginas       299884  [32m✓[0m
+  15-pagina-lugares.html            Páginas       491109  [32m✓[0m
+  16-pagina-metodo.html             Páginas       256936  [32m✓[0m
+  17-pagina-agenda.html             Páginas       293727  [32m✓[0m
+  18-pagina-estudos.html            Páginas       214225  [32m✓[0m
+  19-pagina-sobre.html              Páginas       199644  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       298607  [32m✓[0m
+  21-pagina-404.html                Páginas       198379  [32m✓[0m
+  30-regras.html                    Fundamentos   240811  [32m✓[0m
+
+[90m  6713.1 KiB de cartões · maior cartão 596.6 KiB · tecto 596.75 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7467 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
+
