@@ -51,7 +51,8 @@ medicao('cartoes_dos_quadros_com_variacao_sob_nome_de_nivel', agora1.length, 'o 
    variação (a unidade da linha diz «variação», ou a linha é uma variação de um índice de preços) e cujo nome não o diz. */
 const { ENTRADAS } = await import(pathToFileURL(path.resolve('src/data/primeira-pagina.mjs')).href);
 const rotasDosAssuntos = ENTRADAS.filter((e) => e.seccoes?.length).map((e) => e.rota.pt.replace(/^\//, ''));
-function variacaoNosAssuntos(dist) {
+const detalhes2 = new Map();
+function variacaoNosAssuntos(dist, guardar = false) {
   const out = new Set();
   for (const r of rotasDosAssuntos) {
     const f = path.join(dist, r, 'index.html');
@@ -62,15 +63,18 @@ function variacaoNosAssuntos(dist) {
       const unidade = normal(c.querySelector('[data-linha-campo="unit"]')?.textContent);
       const variacao = /variaç/i.test(unidade) || /variacao/.test(id);
       const diz = /variaç|inflaç|crescimento/i.test(nome);
-      if (variacao && !diz) out.add(id);
+      if (variacao && !diz) {
+        out.add(id);
+        if (guardar) detalhes2.set(id, { id, pagina: r, nome, unidade, rotulo_da_fonte: load(fs.readFileSync(`ledger/claims/${id}.yml`, 'utf8')).name });
+      }
     }
   }
   return [...out].sort();
 }
-const agora2 = variacaoNosAssuntos(DIST);
+const agora2 = variacaoNosAssuntos(DIST, true);
 const antes2 = variacaoNosAssuntos(DIST_BASE);
 medicao('cartoes_nacionais_com_variacao_sob_nome_de_nivel', agora2.length, 'as páginas de assunto construídas: os cartões cuja unidade diz «variação» ou cuja linha é uma variação de preços, e cujo nome não diz a variação, a inflação nem o crescimento',
-  `o mesmo detetor na construção de base acha ${antes2.length}, com a taxa de atividade`, antes2.includes('taxa-de-actividade-2025'), { antes: antes2.length, lista_antes: antes2, lista_agora: agora2 });
+  `o mesmo detetor na construção de base acha ${antes2.length}, com a taxa de atividade`, antes2.includes('taxa-de-actividade-2025'), { antes: antes2.length, lista_antes: antes2, lista_agora: agora2, detalhe_agora: agora2.map((id) => detalhes2.get(id)) });
 
 /* 3 · A UNIDADE DA DIFERENÇA DE EMPREGO, que fica como a fonte a escreve. */
 const disp = load(fs.readFileSync('ledger/claims/disparidade-de-emprego-entre-sexos-2025.yml', 'utf8'));
@@ -185,6 +189,74 @@ const ordemBase = ordem(DIST_BASE);
 const plantasOrdem = plantasDaOrdem((rel) => fs.readFileSync(path.join(DIST, rel), 'utf8'));
 medicao('cartoes_fora_da_ordem', ordemAgora.erros, 'node tests/cartao/cartao.mjs --prova (a K19 do check:cartao, tests/cartao/ordem.mjs)',
   `a mesma célula na construção de base acha ${ordemBase.erros} queixas`, ordemBase.erros > 0, { contas: ordemAgora, contas_base: ordemBase, plantas: plantasOrdem.length, plantas_mordidas: plantasOrdem.filter((p) => p.mordeu).length });
+
+/* 9b · AS LEITURAS DOS CARTÕES EM DUAS METADES: a que diz o que o número é (dobrada) e a que compara (à vista), pelo
+   corte de `partesDaLeitura()`, e se as duas metades juntas dão a leitura inteira, palavra por palavra. */
+const { LEITURAS_DAS_MEDIDAS } = await import(pathToFileURL(path.resolve('src/data/leituras-das-medidas.mjs')).href);
+const { partesDaLeitura, leituraDaMedida, textoDaLeitura } = await import(pathToFileURL(path.resolve('src/lib/leitura-da-medida.mjs')).href);
+const metades = { duas_metades: 0, so_o_que_e: 0, so_comparacao: 0, juntas_iguais_a_inteira: 0, leituras: 0, so_o_que_e_ids: [] };
+let desempregoComDuas = false;
+for (const id of Object.keys(LEITURAS_DAS_MEDIDAS)) for (const lang of ['pt', 'en']) {
+  const p = partesDaLeitura(id, lang);
+  metades.leituras++;
+  if (p.oQueE && p.comparacao) metades.duas_metades++;
+  else if (p.oQueE) { metades.so_o_que_e++; if (lang === 'pt') metades.so_o_que_e_ids.push(id); }
+  else metades.so_comparacao++;
+  const juntas = normal([p.oQueE, p.comparacao].filter(Boolean).map((x) => textoDaLeitura(x.pedacos, lang)).join(' '));
+  if (juntas === normal(textoDaLeitura(leituraDaMedida(id, lang).pedacos, lang))) metades.juntas_iguais_a_inteira++;
+  if (id === 'taxa-de-desemprego-2025' && p.oQueE && p.comparacao) desempregoComDuas = true;
+}
+medicao('leituras_dos_cartoes_em_duas_metades', metades.duas_metades, 'src/lib/leitura-da-medida.mjs · partesDaLeitura() sobre cada leitura declarada em src/data/leituras-das-medidas.mjs, nas duas edições',
+  'a leitura da taxa de desemprego, que diz o que o número é e compara-o com o ano anterior, sai em duas metades', desempregoComDuas, metades);
+
+/* 9c · O QUE MUDOU NO TEXTO VISÍVEL DA PRIMEIRA PÁGINA (o brief, §4: nenhuma mudança na ordem dos blocos nem nos
+   cartões que vivem nela). O texto das duas edições, sem guiões nem etiquetas, linha a linha, contra a construção de
+   base; o conhecido-positivo é o mesmo comparador sobre a página de base com uma palavra trocada em memória. */
+const textoVisivel = (html) => html.replace(/<script[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style[^>]*>[\s\S]*?<\/style>/g, '')
+  .replace(/<[^>]+>/g, '\n').split('\n').map((x) => normal(x.replace(/&nbsp;/g, ' '))).filter(Boolean);
+function diferencas(a, b) {
+  /* As linhas que só uma das versões tem, contadas com repetição (um multiconjunto): a ordem dos blocos não mudou, e o
+     que se quer ver é o texto que entrou e o que saiu. */
+  const conta = (xs) => xs.reduce((m, x) => m.set(x, (m.get(x) ?? 0) + 1), new Map());
+  const ca = conta(a), cb = conta(b);
+  const saiu = [], entrou = [];
+  for (const [x, n] of ca) for (let i = 0; i < n - (cb.get(x) ?? 0); i++) saiu.push(x);
+  for (const [x, n] of cb) for (let i = 0; i < n - (ca.get(x) ?? 0); i++) entrou.push(x);
+  return { saiu, entrou };
+}
+const primeira = {};
+for (const [lang, rel] of [['pt', 'index.html'], ['en', 'en/index.html']]) {
+  const d = diferencas(textoVisivel(fs.readFileSync(path.join(DIST_BASE, rel), 'utf8')), textoVisivel(fs.readFileSync(path.join(DIST, rel), 'utf8')));
+  primeira[lang] = { saiu: d.saiu, entrou: d.entrou };
+}
+const baseHome = fs.readFileSync(path.join(DIST_BASE, 'index.html'), 'utf8');
+const plantadaHome = baseHome.replace('Preços da habitação<', 'Preços das casas<');
+const positivoHome = diferencas(textoVisivel(baseHome), textoVisivel(plantadaHome));
+medicao('linhas_de_texto_da_primeira_pagina_que_mudaram', primeira.pt.entrou.length + primeira.en.entrou.length, 'o texto visível de dist/index.html e dist/en/index.html, linha a linha, contra a construção de base (as linhas que entraram)',
+  'o mesmo comparador acha a troca de uma palavra plantada em memória na página de base', plantadaHome !== baseHome && positivoHome.entrou.length === 1 && positivoHome.saiu.length === 1, primeira);
+
+/* 9d · A RESSALVA DA UNIÃO À VISTA (§1.124, §1.140): em cada página de assunto, cada ressalva de um cartão fica fora da
+   dobra. O conhecido-positivo é a mesma conta sobre a página da habitação com a ressalva metida na dobra, em memória. */
+function ressalvas(raiz) {
+  let fora = 0, dentro = 0;
+  for (const x of raiz.querySelectorAll('.cartao-medida-ressalva')) { let p = x.parentNode, d = false; while (p) { if (p.tagName === 'DETAILS') { d = true; break; } p = p.parentNode; } d ? dentro++ : fora++; }
+  return { fora, dentro };
+}
+const contaRessalvas = { fora: 0, dentro: 0, paginas: [] };
+for (const r of rotasDosAssuntos) for (const pre of ['', 'en/']) {
+  const rel = pre ? path.join('en', ENTRADAS.find((e) => e.rota.pt.replace(/^\//, '') === r).rota.en.replace(/^\/en\//, ''), 'index.html') : path.join(r, 'index.html');
+  if (!fs.existsSync(path.join(DIST, rel))) continue;
+  const c = ressalvas(parse(fs.readFileSync(path.join(DIST, rel), 'utf8')));
+  contaRessalvas.fora += c.fora; contaRessalvas.dentro += c.dentro;
+  if (c.fora + c.dentro) contaRessalvas.paginas.push(rel);
+}
+const habitacao = parse(fs.readFileSync(path.join(DIST, 'habitacao', 'index.html'), 'utf8'));
+const ressalvaH = habitacao.querySelector('.cartao-medida-ressalva');
+const dobraH = ressalvaH?.parentNode?.querySelector('details.cartao-medida-dobra');
+if (ressalvaH && dobraH) { ressalvaH.remove(); dobraH.appendChild(ressalvaH); }
+const positivoRessalva = ressalvas(habitacao);
+medicao('ressalvas_da_uniao_dentro_da_dobra', contaRessalvas.dentro, 'as páginas de assunto construídas, nas duas edições: cada `.cartao-medida-ressalva` e se tem um `<details>` por cima',
+  'a mesma conta acha a ressalva da habitação dentro da dobra quando a planta a mete lá, em memória', Boolean(dobraH) && positivoRessalva.dentro === 1, contaRessalvas);
 
 /* 10 · AS CAPTURAS, e a ordem dos cartões a 390 px, lidas dos manifestos do captor. */
 const depois = lerJson(`${D}/capturas-depois.json`);

@@ -91,8 +91,16 @@ const medir = () => {
     return v ? Math.round(v.getBoundingClientRect().top - c.getBoundingClientRect().top) : null;
   }).filter((x) => x !== null);
   const faixa = relativa('.cartao-valor');
-  /* O conhecido-positivo do mesmo detetor: o topo dos nomes, que muda com o número de linhas de cada nome. */
-  const topos = relativa('.cartao-nome');
+  /* O conhecido-positivo do mesmo detetor: o topo da primeira linha do texto de cada nome, que muda com o número de
+     linhas do nome (a caixa do nome tem a mesma altura em todos os cartões, e o texto encosta-se ao fundo dela). */
+  const topos = [...document.querySelectorAll('[data-faixa] li.cartao')].map((c) => {
+    const n = c.querySelector('.cartao-nome');
+    if (!n) return null;
+    const r = document.createRange();
+    r.selectNodeContents(n);
+    const primeira = r.getClientRects()[0];
+    return primeira ? Math.round(primeira.top - c.getBoundingClientRect().top) : null;
+  }).filter((x) => x !== null);
   return {
     janela: innerWidth,
     documento: document.documentElement.scrollWidth,
