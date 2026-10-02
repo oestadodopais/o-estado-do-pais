@@ -197,6 +197,17 @@ medida('paginas_de_assunto_com_o_main_mudado', { paginas: paginasDeAssunto.lengt
   'o innerHTML do <main> das sete páginas de assunto nas duas edições, comparado entre as duas construções',
   'o mesmo detetor vê a página da União mudada', mainDe(BASE, PAGINA.pt) !== mainDe(FINAL, PAGINA.pt));
 
+/* AS PERGUNTAS DAS SETE MEDIDAS COM A FORMA, NAS PÁGINAS DE ASSUNTO DA CONSTRUÇÃO DE BASE: onde a dobra do cartão
+   nacional as rende (`data-cartao-definicao`). É o que a forma da página da União evita mudar (o §4 do brief). */
+{
+  const onde = Object.fromEntries(comForma.map((id) => [id, paginasDeAssunto.filter((f) => ler(BASE, f).includes(`data-cartao-definicao="${id}"`))]));
+  const pt = [...new Set(Object.values(onde).flat().filter((f) => !f.startsWith('en/')))];
+  const en = [...new Set(Object.values(onde).flat().filter((f) => f.startsWith('en/')))];
+  medida('perguntas_das_formas_nas_paginas_de_assunto', { onde, paginas_pt: pt.length, paginas_en: en.length },
+    'as páginas de assunto da construção de base onde aparece data-cartao-definicao="<medida>", para cada uma das medidas com a forma',
+    'a pergunta do custo unitário do trabalho rende-se na página do emprego', (onde['custo-unitario-do-trabalho-2025'] ?? []).includes('emprego/index.html'));
+}
+
 /* A F20 sobre a construção final, e as suas plantas. */
 {
   const ctx = { series, paises };
@@ -257,6 +268,27 @@ if (fs.existsSync(path.join(P, 'cabeca'))) {
   medida('portoes_a_zero', { cabeca: c.slice(0, 8), build: cod('build'), verify: cod('verify'), typecheck: cod('typecheck'), segundos: { build: seg('build'), verify: seg('verify'), typecheck: seg('typecheck') }, cabeca_igual_no_fim: c === fs.readFileSync(path.join(P, 'cabeca.fim'), 'utf8').trim() },
     'sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ue2-2026-10-02/portoes; cada código lido de portoes/<portão>.codigo',
     'o registo do build diz a F20 da secção dos países', fs.readFileSync(path.join(P, 'build.log'), 'utf8').includes('secção dos países (F20)'));
+}
+
+/* A F19, a F20, a K16, a K18 e a K19 na corrida final, lidas dos registos dela (portoes/build.log e verify.log). */
+if (fs.existsSync(path.join(P, 'verify.log'))) {
+  const semCor = (t) => t.replace(/\x1b\[[0-9;]*m/g, '');
+  const build = semCor(fs.readFileSync(path.join(P, 'build.log'), 'utf8'));
+  const verify = semCor(fs.readFileSync(path.join(P, 'verify.log'), 'utf8'));
+  const n = (re, t) => { const m = re.exec(t); return m ? m.slice(1).map(Number) : null; };
+  const f19 = n(/faixa da União \(F19\): (\d+) faixa\(s\), (\d+) nos assuntos, (\d+) marcas refeitas do valor, (\d+) frases recompostas \((\d+) com empate\), (\d+) plantas a morder/, build);
+  const f20 = n(/secção dos países \(F20\): (\d+) secção\(ões\), (\d+) faixa\(s\), (\d+) marcas refeitas do valor, (\d+) etiquetas do toque, (\d+) listas com (\d+) itens, (\d+) ressalva\(s\) da Comissão, (\d+) plantas a morder/, build);
+  const k19 = n(/a ordem do cartão \(K19\): cartões, com dobra, da faixa\s+(\d+) · (\d+) · (\d+) · (\d+) de (\d+) plantas a morder/, verify.replace(/(\d) (\d{3})/g, '$1$2'));
+  const k18 = n(/faixas refeitas dos pontos \(K18\)\s+(\d+) · (\d+) planta/, verify);
+  const k16 = n(/perguntas com cada pedaço apoiado \(K16\)\s+(\d+) \((\d+) pedaços, (\d+) apoios/, verify);
+  medida('celulas_na_corrida_final', {
+    f19: f19 && { faixas: f19[0], nos_assuntos: f19[1], marcas: f19[2], frases: f19[3], com_empate: f19[4], plantas_a_morder: f19[5] },
+    f20: f20 && { seccoes: f20[0], faixas: f20[1], marcas: f20[2], etiquetas: f20[3], listas: f20[4], itens: f20[5], ressalvas: f20[6], plantas_a_morder: f20[7] },
+    k19: k19 && { cartoes: k19[0], com_dobra: k19[1], da_faixa_da_uniao: k19[2], plantas_a_morder: k19[3], plantas: k19[4] },
+    k18: k18 && { faixas: k18[0], plantas_a_morder: k18[1] },
+    k16: k16 && { perguntas: k16[0], pedacos: k16[1], apoios: k16[2] },
+  }, 'as linhas do check:formas em portoes/build.log e as do check:cartao em portoes/verify.log, sem as cores',
+  'as cinco linhas foram lidas, e a K19 conta os 21 cartões da faixa da União em cada edição', Boolean(f19 && f20 && k19 && k18 && k16 && k19[2] === 42));
 }
 
 /* As decisões citadas nos ficheiros que o bloco tocou, da última linha do guião das decisões em vigor. */

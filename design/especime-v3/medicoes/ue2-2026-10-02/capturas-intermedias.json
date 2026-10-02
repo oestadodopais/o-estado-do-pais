@@ -1,0 +1,9 @@
+{
+  "bloco": "UE2",
+  "o_que": "uma captura de uma construção intermédia, que não chegou a commit: a fila dos 21 cartões da página da União em duas colunas a 390 px (a forma «pilha» com colunas de 160 px no mínimo), recusada pelo construtor e trocada por uma coluna de 220 px no mínimo",
+  "construcao": "a árvore de trabalho sobre a cabeça de partida ec1a00db, antes do primeiro commit do bloco, com a folha `src/styles/inicio.css` a declarar `minmax(160px, 1fr)` na pilha; construída só pelo `astro build`, sem os portões",
+  "captor": "um guião de olhar do construtor, fora do repositório, com o Chromium sem cabeça (Playwright) a 390 px de janela e deviceScaleFactor 2, a captura do elemento [data-faixa-bloco], cortada aos primeiros 1 400 px de imagem",
+  "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/intermedio-fila-em-duas-colunas-pt-390.png",
+  "sha256": "dd6c8a4353c4bd369de91b8de466476112aaa45b2378b9c2a414ea113bcab06e",
+  "o_que_se_ve": "no cartão do custo unitário do trabalho, «(dado provisório)» por cima do valor «21,3»; nos cartões da quota nas exportações e da dívida das empresas, a palavra do estado partida em várias linhas"
+}

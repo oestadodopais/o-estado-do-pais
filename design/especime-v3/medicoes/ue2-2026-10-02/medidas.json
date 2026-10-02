@@ -1,8 +1,8 @@
 {
   "bloco": "UE2",
   "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2.mjs",
-  "cabeca_ao_medir": "04b5a2f26192becd4e84e2fea6d3f6a7c0a30253",
-  "medido_em": "2026-10-02T14:46:28.522Z",
+  "cabeca_ao_medir": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
+  "medido_em": "2026-10-02T15:02:57.793Z",
   "medidas": [
     {
       "nome": "secao_0_do_brief_reproduzida",
@@ -137,8 +137,8 @@
       "nome": "construcoes_medidas",
       "valor": {
         "base": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
-        "final": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
-        "cabeca_ao_medir": "04b5a2f26192becd4e84e2fea6d3f6a7c0a30253",
+        "final": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
+        "cabeca_ao_medir": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
         "codigo_mudado_desde_a_construcao": []
       },
       "comando": "o version.json de cada construção, e git diff --name-only <final> HEAD -- src scripts public ledger registos studies-src mapa package.json astro.config.mjs site.config.mjs vercel.json",
@@ -293,6 +293,48 @@
       "comando": "o innerHTML do <main> das sete páginas de assunto nas duas edições, comparado entre as duas construções",
       "conhecido_positivo": {
         "o_que": "o mesmo detetor vê a página da União mudada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perguntas_das_formas_nas_paginas_de_assunto",
+      "valor": {
+        "onde": {
+          "custo-unitario-do-trabalho-2025": [
+            "emprego/index.html",
+            "en/employment/index.html"
+          ],
+          "desempenho-das-exportacoes-2025": [
+            "estado-e-economia/index.html",
+            "en/state-and-economy/index.html"
+          ],
+          "divida-das-empresas-2025": [
+            "estado-e-economia/index.html",
+            "en/state-and-economy/index.html"
+          ],
+          "divida-das-familias-2025": [
+            "pobreza-e-desigualdade/index.html",
+            "en/poverty-and-inequality/index.html"
+          ],
+          "fluxo-de-credito-as-empresas-2025": [
+            "estado-e-economia/index.html",
+            "en/state-and-economy/index.html"
+          ],
+          "fluxo-de-credito-as-familias-2025": [
+            "pobreza-e-desigualdade/index.html",
+            "en/poverty-and-inequality/index.html"
+          ],
+          "taxa-de-cambio-efectiva-real-2025": [
+            "estado-e-economia/index.html",
+            "en/state-and-economy/index.html"
+          ]
+        },
+        "paginas_pt": 3,
+        "paginas_en": 3
+      },
+      "comando": "as páginas de assunto da construção de base onde aparece data-cartao-definicao=\"<medida>\", para cada uma das medidas com a forma",
+      "conhecido_positivo": {
+        "o_que": "a pergunta do custo unitário do trabalho rende-se na página do emprego",
         "encontrado": true
       }
     },
@@ -466,6 +508,70 @@
       "comando": "node tests/pais/portoes.mjs --prefixo ue2- (OEDP_MEDICOES nesta pasta), plantas-portoes-ue2.json",
       "conhecido_positivo": {
         "o_que": "cada planta saiu com o código 1 e as mordidas previstas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_a_zero",
+      "valor": {
+        "cabeca": "da6d2d91",
+        "build": 0,
+        "verify": 0,
+        "typecheck": 0,
+        "segundos": {
+          "build": 126,
+          "verify": 744,
+          "typecheck": 0
+        },
+        "cabeca_igual_no_fim": true
+      },
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ue2-2026-10-02/portoes; cada código lido de portoes/<portão>.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo do build diz a F20 da secção dos países",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_na_corrida_final",
+      "valor": {
+        "f19": {
+          "faixas": 20,
+          "nos_assuntos": 20,
+          "marcas": 560,
+          "frases": 20,
+          "com_empate": 2,
+          "plantas_a_morder": 20
+        },
+        "f20": {
+          "seccoes": 2,
+          "faixas": 20,
+          "marcas": 560,
+          "etiquetas": 560,
+          "listas": 20,
+          "itens": 560,
+          "ressalvas": 2,
+          "plantas_a_morder": 27
+        },
+        "k19": {
+          "cartoes": 5248,
+          "com_dobra": 5066,
+          "da_faixa_da_uniao": 42,
+          "plantas_a_morder": 7,
+          "plantas": 7
+        },
+        "k18": {
+          "faixas": 20,
+          "plantas_a_morder": 20
+        },
+        "k16": {
+          "perguntas": 42,
+          "pedacos": 124,
+          "apoios": 169
+        }
+      },
+      "comando": "as linhas do check:formas em portoes/build.log e as do check:cartao em portoes/verify.log, sem as cores",
+      "conhecido_positivo": {
+        "o_que": "as cinco linhas foram lidas, e a K19 conta os 21 cartões da faixa da União em cada edição",
         "encontrado": true
       }
     },
