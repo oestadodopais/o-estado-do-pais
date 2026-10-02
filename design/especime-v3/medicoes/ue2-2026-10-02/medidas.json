@@ -1,0 +1,435 @@
+{
+  "bloco": "UE2",
+  "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2.mjs",
+  "cabeca_ao_medir": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
+  "medido_em": "2026-10-02T14:41:20.185Z",
+  "medidas": [
+    {
+      "nome": "series_de_paises_no_livro",
+      "valor": 10,
+      "comando": "ls ledger/series/*.yml",
+      "conhecido_positivo": {
+        "o_que": "a da dívida pública é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_de_medidas_dos_quadros",
+      "valor": 8,
+      "comando": "as séries cuja linha portuguesa é um dos cartões de FIGURAS (src/data/figuras.mjs)",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública é um cartão dos quadros com série",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_de_fora_dos_quadros",
+      "valor": [
+        "ihpc-variacao-homologa",
+        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025"
+      ],
+      "comando": "as séries cuja linha portuguesa não é um cartão de FIGURAS",
+      "conhecido_positivo": {
+        "o_que": "a sobrecarga dos inquilinos a preço de mercado tem série e não é cartão dos quadros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_dos_dois_quadros",
+      "valor": 21,
+      "comando": "FIGURAS.length em src/data/figuras.mjs",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ordem_das_faixas",
+      "valor": [
+        "divida-publica-2025-paises",
+        "precos-da-habitacao-2025-paises",
+        "taxa-de-desemprego-mip-2025-paises",
+        "taxa-de-emprego-2025-paises",
+        "desemprego-de-longa-duracao-2025-paises",
+        "risco-de-pobreza-ou-exclusao-2025-paises",
+        "racio-s80-s20-2025-paises",
+        "sobrecarga-do-custo-da-habitacao-2025-paises",
+        "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+        "ihpc-variacao-homologa-paises"
+      ],
+      "comando": "faixasDaPaginaDaUniao() (src/lib/faixa-da-uniao.mjs), igual à ordemEsperada() da F20",
+      "conhecido_positivo": {
+        "o_que": "a primeira faixa é a da dívida pública, e a regra da célula dá a mesma ordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_com_a_forma_da_pagina_da_uniao",
+      "valor": [
+        "custo-unitario-do-trabalho-2025",
+        "desempenho-das-exportacoes-2025",
+        "divida-das-empresas-2025",
+        "divida-das-familias-2025",
+        "fluxo-de-credito-as-empresas-2025",
+        "fluxo-de-credito-as-familias-2025",
+        "taxa-de-cambio-efectiva-real-2025"
+      ],
+      "comando": "as entradas de DEFINICOES_DAS_MEDIDAS com «uniao»",
+      "conhecido_positivo": {
+        "o_que": "a do custo unitário do trabalho tem a forma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k16_com_as_formas",
+      "valor": {
+        "perguntas": 42,
+        "pedacos": 124,
+        "apoios": 169,
+        "erros": 0,
+        "plantas_das_formas": 4,
+        "plantas_das_formas_a_morder": 4
+      },
+      "comando": "auditarPerguntas() de tests/cartao/perguntas.mjs, e as quatro plantas das formas em memória",
+      "conhecido_positivo": {
+        "o_que": "a auditoria em vigor passa e as plantas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "construcoes_medidas",
+      "valor": {
+        "base": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
+        "final": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
+        "cabeca_ao_medir": "8abc7bd10e96bbeedd7188876d46ac535d24802d"
+      },
+      "comando": "o version.json de cada construção",
+      "conhecido_positivo": {
+        "o_que": "a construção final é a da cabeça atual",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_dos_paises_por_edicao",
+      "valor": {
+        "antes": {
+          "pt": 0,
+          "en": 0
+        },
+        "depois": {
+          "pt": 10,
+          "en": 10
+        }
+      },
+      "comando": "os [data-faixa-paises] da página da União, nas duas construções",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor vê os 21 cartões da fila nas duas construções",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "listas_dos_27_por_edicao",
+      "valor": {
+        "listas": {
+          "pt": 10,
+          "en": 10
+        },
+        "itens_por_lista": [
+          28
+        ],
+        "fechadas": {
+          "pt": 10,
+          "en": 10
+        }
+      },
+      "comando": "os details[data-lista-paises] da página da União construída, e os seus itens",
+      "conhecido_positivo": {
+        "o_que": "Portugal tem um item em cada lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_nomeados_em_cada_faixa",
+      "valor": {
+        "antes_na_faixa_do_cartao": 2,
+        "depois_na_lista": [
+          27
+        ]
+      },
+      "comando": "os países distintos com nome (data-pais) em cada lista dobrada; antes, o §0 do brief (o mais baixo e o mais alto)",
+      "conhecido_positivo": {
+        "o_que": "Portugal está nomeado em cada lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_do_toque_por_edicao",
+      "valor": {
+        "etiquetas": {
+          "pt": 280,
+          "en": 280
+        },
+        "escondidas": {
+          "pt": 280,
+          "en": 280
+        },
+        "de_empates": {
+          "pt": 62,
+          "en": 62
+        }
+      },
+      "comando": "os [data-toque-de] da página da União construída, os que têm hidden e os que dizem mais de um ponto",
+      "conhecido_positivo": {
+        "o_que": "cada etiqueta traz o valor de um ponto da série",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ressalva_da_comissao_na_seccao",
+      "valor": {
+        "pt": [
+          "sobrecarga-do-custo-da-habitacao-2025"
+        ],
+        "en": [
+          "sobrecarga-do-custo-da-habitacao-2025"
+        ]
+      },
+      "comando": "os [data-ressalva-da-uniao] dentro das faixas dos países",
+      "conhecido_positivo": {
+        "o_que": "a ressalva está na faixa da sobrecarga do custo da habitação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "termos_tecnicos_nas_definicoes_da_pagina",
+      "valor": {
+        "antes": {
+          "pt": {
+            "definicoes": 21,
+            "ocorrencias": 7,
+            "fora_de_parenteses": 7
+          },
+          "en": {
+            "definicoes": 21,
+            "ocorrencias": 7,
+            "fora_de_parenteses": 7
+          }
+        },
+        "depois": {
+          "pt": {
+            "definicoes": 21,
+            "ocorrencias": 7,
+            "fora_de_parenteses": 0
+          },
+          "en": {
+            "definicoes": 21,
+            "ocorrencias": 7,
+            "fora_de_parenteses": 0
+          }
+        }
+      },
+      "comando": "as ocorrências das quatro raízes no texto das .dobra-definicao da página da União, e as que estão fora de parênteses",
+      "conhecido_positivo": {
+        "o_que": "o detetor acha «deflat» nas definições da construção de base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "definicoes_na_forma_da_uniao_rendidas",
+      "valor": {
+        "pt": 7,
+        "en": 7
+      },
+      "comando": "a .dobra-definicao de cada medida com a forma, comparada com textoDaDefinicao(uniao)",
+      "conhecido_positivo": {
+        "o_que": "na construção de base a mesma dobra rende a pergunta do cartão, e o detetor vê a diferença",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_de_assunto_com_o_main_mudado",
+      "valor": {
+        "paginas": 14,
+        "mudadas": []
+      },
+      "comando": "o innerHTML do <main> das sete páginas de assunto nas duas edições, comparado entre as duas construções",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê a página da União mudada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f20_sobre_a_construcao_final",
+      "valor": {
+        "erros": 0,
+        "plantas": 27,
+        "plantas_a_morder": 27,
+        "contas": {
+          "pt": {
+            "seccoes": 1,
+            "faixas": 10,
+            "marcas": 280,
+            "frases": 10,
+            "etiquetas": 280,
+            "listas": 10,
+            "itens": 280,
+            "ressalvas_da_uniao": 1,
+            "ressalvas_dos_pontos": 2
+          },
+          "en": {
+            "seccoes": 1,
+            "faixas": 10,
+            "marcas": 280,
+            "frases": 10,
+            "etiquetas": 280,
+            "listas": 10,
+            "itens": 280,
+            "ressalvas_da_uniao": 1,
+            "ressalvas_dos_pontos": 2
+          }
+        }
+      },
+      "comando": "conferirSeccaoDosPaises() e plantasDaSeccao() de tests/uniao/paises.mjs sobre as duas edições, e plantaDaTabela()",
+      "conhecido_positivo": {
+        "o_que": "as plantas mordem, e a página intacta passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_pagina_a_390",
+      "valor": {
+        "antes": {
+          "pt": 1205,
+          "en": 1198
+        },
+        "depois": {
+          "pt": 8541,
+          "en": 8538
+        },
+        "antes_no_brief": 1205
+      },
+      "comando": "a altura do documento a 390 px, medida pelo captor (capturas-antes.json e capturas-depois.json)",
+      "conhecido_positivo": {
+        "o_que": "a captura de base a 390 px mede o que o §0 do brief mediu na do K2",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fila_dos_cartoes_a_390",
+      "valor": {
+        "antes": {
+          "pt": {
+            "display": "flex",
+            "colunas": null,
+            "corre_de_lado": true,
+            "cartoes": 21,
+            "altura": 232
+          },
+          "en": {
+            "display": "flex",
+            "colunas": null,
+            "corre_de_lado": true,
+            "cartoes": 21,
+            "altura": 232
+          }
+        },
+        "depois": {
+          "pt": {
+            "display": "grid",
+            "colunas": 1,
+            "corre_de_lado": false,
+            "cartoes": 21,
+            "altura": 3724
+          },
+          "en": {
+            "display": "grid",
+            "colunas": 1,
+            "corre_de_lado": false,
+            "cartoes": 21,
+            "altura": 3749
+          }
+        }
+      },
+      "comando": "a forma da fila dos 21 cartões a 390 px, medida pelo captor",
+      "conhecido_positivo": {
+        "o_que": "o captor vê os 21 cartões nas duas construções",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": {
+        "antes": 10,
+        "depois": 20,
+        "problemas": 0,
+        "pedidos_para_fora": 0,
+        "transbordo": 0
+      },
+      "comando": "os manifestos das capturas",
+      "conhecido_positivo": {
+        "o_que": "há uma captura da página da União a 390 px depois do bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_do_toque",
+      "valor": {
+        "pt": {
+          "toques_ao_dedo": 30,
+          "certos": 30,
+          "etiquetas_a_vista_depois_de_um_toque_fora": 0,
+          "rato": true,
+          "sem_guiao": {
+            "guiao": null,
+            "etiquetas": 280,
+            "etiquetas_a_vista": 0,
+            "listas": 10,
+            "listas_abertas": 0,
+            "abertas_ao_toque": 10,
+            "itens_a_vista_por_lista": [
+              28
+            ]
+          }
+        },
+        "en": {
+          "toques_ao_dedo": 30,
+          "certos": 30,
+          "etiquetas_a_vista_depois_de_um_toque_fora": 0,
+          "rato": true,
+          "sem_guiao": {
+            "guiao": null,
+            "etiquetas": 280,
+            "etiquetas_a_vista": 0,
+            "listas": 10,
+            "listas_abertas": 0,
+            "abertas_ao_toque": 10,
+            "itens_a_vista_por_lista": [
+              28
+            ]
+          }
+        }
+      },
+      "comando": "toque-ue2.mjs, no Chromium sem cabeça, sobre a construção final",
+      "conhecido_positivo": {
+        "o_que": "antes de cada toque a etiqueta da marca estava escondida, e o detetor viu-a aparecer",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_portao_de_html",
+      "valor": {
+        "plantas": 4,
+        "a_morder": 4,
+        "codigos": [
+          1
+        ],
+        "bytes_repostos": true
+      },
+      "comando": "node tests/pais/portoes.mjs --prefixo ue2- (OEDP_MEDICOES nesta pasta), plantas-portoes-ue2.json",
+      "conhecido_positivo": {
+        "o_que": "cada planta saiu com o código 1 e as mordidas previstas",
+        "encontrado": true
+      }
+    }
+  ]
+}

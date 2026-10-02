@@ -1,0 +1,68 @@
+[
+  {
+    "nome": "ue2-portao-conta-da-tabela-errada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE2: a contagem dos países da tabela dos nomes diz «28» e a tabela tem 27"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290",
+        "reposto": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-portao-valor-escondido-trocado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE1: o ponto «EL» da série «divida-publica-2025-paises» foi renderizado como «146,2»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/european-union/index.html",
+        "antes": "3bf7c1e5abc435e2f3dbfaf2ad3dc57c2f42dc22138358d89412d30ca97decd8",
+        "reposto": "3bf7c1e5abc435e2f3dbfaf2ad3dc57c2f42dc22138358d89412d30ca97decd8"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-portao-nome-da-lista-a-mao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE1: o nome do país «MT» foi renderizado como «Malta e Gozo»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290",
+        "reposto": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290"
+      }
+    ]
+  },
+  {
+    "nome": "ue2-lugar-pergunta-do-cartao-na-pagina-da-uniao",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "8\\.4 · definições de painel fora da declaração: \\d+, acima do teto 0",
+      "custo-unitario-do-trabalho-2025»: a página diz «Quanto mudou em três anos o índice nominal",
+      "a página rende 1 bloco\\(s\\) de origem e a declaração diz 2"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290",
+        "reposto": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290"
+      }
+    ]
+  }
+]

@@ -1,0 +1,666 @@
+{
+  "bloco": "UE2",
+  "cabeca": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
+  "construcao": {
+    "commit": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
+    "construido_em": "2026-10-02T14:34:25.152Z"
+  },
+  "inicio": "2026-10-02T14:36:31.551Z",
+  "edicoes": {
+    "pt": {
+      "dedo": [
+        {
+          "marca": "divida-publica-2025-paises#EL",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "divida-publica-2025-paises#EL",
+          "texto": "Grécia 146,1",
+          "esperado": "Grécia 146,1",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "divida-publica-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "divida-publica-2025-paises#PT",
+          "texto": "Portugal 89,7",
+          "esperado": "Portugal 89,7",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "divida-publica-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "divida-publica-2025-paises#EU27_2020",
+          "texto": "média da União 81,7",
+          "esperado": "média da União 81,7",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "precos-da-habitacao-2025-paises#HU",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "precos-da-habitacao-2025-paises#HU",
+          "texto": "Hungria 18,3 (dado provisório)",
+          "esperado": "Hungria 18,3 (dado provisório)",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "precos-da-habitacao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "precos-da-habitacao-2025-paises#PT",
+          "texto": "Portugal 17,6",
+          "esperado": "Portugal 17,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "precos-da-habitacao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "precos-da-habitacao-2025-paises#EU27_2020",
+          "texto": "média da União 5,5",
+          "esperado": "média da União 5,5",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-desemprego-mip-2025-paises#ES",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-desemprego-mip-2025-paises#ES",
+          "texto": "Espanha 10,5 (definição diferente)",
+          "esperado": "Espanha 10,5 (definição diferente)",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-desemprego-mip-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-desemprego-mip-2025-paises#PT",
+          "texto": "Portugal 6,0 e média da União 6,0",
+          "esperado": "Portugal 6,0 e média da União 6,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-desemprego-mip-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-desemprego-mip-2025-paises#PT",
+          "texto": "Portugal 6,0 e média da União 6,0",
+          "esperado": "Portugal 6,0 e média da União 6,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-emprego-2025-paises#MT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-emprego-2025-paises#MT",
+          "texto": "Malta 83,6",
+          "esperado": "Malta 83,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-emprego-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-emprego-2025-paises#PT",
+          "texto": "Portugal 79,6",
+          "esperado": "Portugal 79,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-emprego-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-emprego-2025-paises#EU27_2020",
+          "texto": "média da União 76,1",
+          "esperado": "média da União 76,1",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "desemprego-de-longa-duracao-2025-paises#EL",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "desemprego-de-longa-duracao-2025-paises#EL",
+          "texto": "Grécia 5,0",
+          "esperado": "Grécia 5,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "desemprego-de-longa-duracao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "desemprego-de-longa-duracao-2025-paises#PT",
+          "texto": "Portugal 2,2",
+          "esperado": "Portugal 2,2",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "desemprego-de-longa-duracao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "desemprego-de-longa-duracao-2025-paises#EU27_2020",
+          "texto": "média da União 1,9",
+          "esperado": "média da União 1,9",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "risco-de-pobreza-ou-exclusao-2025-paises#BG",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "risco-de-pobreza-ou-exclusao-2025-paises#BG",
+          "texto": "Bulgária 29,0",
+          "esperado": "Bulgária 29,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "risco-de-pobreza-ou-exclusao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "risco-de-pobreza-ou-exclusao-2025-paises#AT",
+          "texto": "Áustria 18,6, Portugal 18,6 e Suécia 18,6",
+          "esperado": "Áustria 18,6, Portugal 18,6 e Suécia 18,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "risco-de-pobreza-ou-exclusao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "risco-de-pobreza-ou-exclusao-2025-paises#EU27_2020",
+          "texto": "média da União 20,9",
+          "esperado": "média da União 20,9",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "racio-s80-s20-2025-paises#BG",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "racio-s80-s20-2025-paises#BG",
+          "texto": "Bulgária 6,94",
+          "esperado": "Bulgária 6,94",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "racio-s80-s20-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "racio-s80-s20-2025-paises#PT",
+          "texto": "Portugal 4,86",
+          "esperado": "Portugal 4,86",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "racio-s80-s20-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "racio-s80-s20-2025-paises#EU27_2020",
+          "texto": "média da União 4,62",
+          "esperado": "média da União 4,62",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-2025-paises#EL",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-2025-paises#EL",
+          "texto": "Grécia 26,4",
+          "esperado": "Grécia 26,4",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-2025-paises#PT",
+          "texto": "Portugal 6,3",
+          "esperado": "Portugal 6,3",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-2025-paises#EU27_2020",
+          "texto": "média da União 7,7",
+          "esperado": "média da União 7,7",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#RO",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#RO",
+          "texto": "Roménia 56,0",
+          "esperado": "Roménia 56,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#PT",
+          "texto": "Portugal 27,2",
+          "esperado": "Portugal 27,2",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#EU27_2020",
+          "texto": "média da União 18,6",
+          "esperado": "média da União 18,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "ihpc-variacao-homologa-paises#RO",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "ihpc-variacao-homologa-paises#RO",
+          "texto": "Roménia 6,3",
+          "esperado": "Roménia 6,3",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "ihpc-variacao-homologa-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "ihpc-variacao-homologa-paises#PT",
+          "texto": "Portugal 3,6",
+          "esperado": "Portugal 3,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "ihpc-variacao-homologa-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "ihpc-variacao-homologa-paises#IT",
+          "texto": "Itália 3,2 e média da União 3,2",
+          "esperado": "Itália 3,2 e média da União 3,2",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        }
+      ],
+      "rato": {
+        "marca": "taxa-de-emprego-2025-paises#PT",
+        "visivel_ao_pousar": true,
+        "texto": "Portugal 79,6",
+        "visiveis_ao_sair": 0
+      },
+      "sem_guiao": {
+        "guiao": null,
+        "etiquetas": 280,
+        "etiquetas_a_vista": 0,
+        "listas": 10,
+        "listas_abertas": 0,
+        "abertas_ao_toque": 10,
+        "itens_a_vista_por_lista": [
+          28
+        ]
+      },
+      "toque_fora": {
+        "etiquetas_a_vista": 0
+      },
+      "guiao": "sim",
+      "faixas": 10
+    },
+    "en": {
+      "dedo": [
+        {
+          "marca": "divida-publica-2025-paises#EL",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "divida-publica-2025-paises#EL",
+          "texto": "Greece 146,1",
+          "esperado": "Greece 146,1",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "divida-publica-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "divida-publica-2025-paises#PT",
+          "texto": "Portugal 89,7",
+          "esperado": "Portugal 89,7",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "divida-publica-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "divida-publica-2025-paises#EU27_2020",
+          "texto": "EU average 81,7",
+          "esperado": "EU average 81,7",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "precos-da-habitacao-2025-paises#HU",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "precos-da-habitacao-2025-paises#HU",
+          "texto": "Hungary 18,3 (provisional data)",
+          "esperado": "Hungary 18,3 (provisional data)",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "precos-da-habitacao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "precos-da-habitacao-2025-paises#PT",
+          "texto": "Portugal 17,6",
+          "esperado": "Portugal 17,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "precos-da-habitacao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "precos-da-habitacao-2025-paises#EU27_2020",
+          "texto": "EU average 5,5",
+          "esperado": "EU average 5,5",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-desemprego-mip-2025-paises#ES",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-desemprego-mip-2025-paises#ES",
+          "texto": "Spain 10,5 (definition differs)",
+          "esperado": "Spain 10,5 (definition differs)",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-desemprego-mip-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-desemprego-mip-2025-paises#PT",
+          "texto": "Portugal 6,0 and EU average 6,0",
+          "esperado": "Portugal 6,0 and EU average 6,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-desemprego-mip-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-desemprego-mip-2025-paises#PT",
+          "texto": "Portugal 6,0 and EU average 6,0",
+          "esperado": "Portugal 6,0 and EU average 6,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-emprego-2025-paises#MT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-emprego-2025-paises#MT",
+          "texto": "Malta 83,6",
+          "esperado": "Malta 83,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-emprego-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-emprego-2025-paises#PT",
+          "texto": "Portugal 79,6",
+          "esperado": "Portugal 79,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "taxa-de-emprego-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "taxa-de-emprego-2025-paises#EU27_2020",
+          "texto": "EU average 76,1",
+          "esperado": "EU average 76,1",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "desemprego-de-longa-duracao-2025-paises#EL",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "desemprego-de-longa-duracao-2025-paises#EL",
+          "texto": "Greece 5,0",
+          "esperado": "Greece 5,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "desemprego-de-longa-duracao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "desemprego-de-longa-duracao-2025-paises#PT",
+          "texto": "Portugal 2,2",
+          "esperado": "Portugal 2,2",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "desemprego-de-longa-duracao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "desemprego-de-longa-duracao-2025-paises#EU27_2020",
+          "texto": "EU average 1,9",
+          "esperado": "EU average 1,9",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "risco-de-pobreza-ou-exclusao-2025-paises#BG",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "risco-de-pobreza-ou-exclusao-2025-paises#BG",
+          "texto": "Bulgaria 29,0",
+          "esperado": "Bulgaria 29,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "risco-de-pobreza-ou-exclusao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "risco-de-pobreza-ou-exclusao-2025-paises#AT",
+          "texto": "Austria 18,6, Portugal 18,6 and Sweden 18,6",
+          "esperado": "Austria 18,6, Portugal 18,6 and Sweden 18,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "risco-de-pobreza-ou-exclusao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "risco-de-pobreza-ou-exclusao-2025-paises#EU27_2020",
+          "texto": "EU average 20,9",
+          "esperado": "EU average 20,9",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "racio-s80-s20-2025-paises#BG",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "racio-s80-s20-2025-paises#BG",
+          "texto": "Bulgaria 6,94",
+          "esperado": "Bulgaria 6,94",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "racio-s80-s20-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "racio-s80-s20-2025-paises#PT",
+          "texto": "Portugal 4,86",
+          "esperado": "Portugal 4,86",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "racio-s80-s20-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "racio-s80-s20-2025-paises#EU27_2020",
+          "texto": "EU average 4,62",
+          "esperado": "EU average 4,62",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-2025-paises#EL",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-2025-paises#EL",
+          "texto": "Greece 26,4",
+          "esperado": "Greece 26,4",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-2025-paises#PT",
+          "texto": "Portugal 6,3",
+          "esperado": "Portugal 6,3",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-2025-paises#EU27_2020",
+          "texto": "EU average 7,7",
+          "esperado": "EU average 7,7",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#RO",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#RO",
+          "texto": "Romania 56,0",
+          "esperado": "Romania 56,0",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#PT",
+          "texto": "Portugal 27,2",
+          "esperado": "Portugal 27,2",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#EU27_2020",
+          "texto": "EU average 18,6",
+          "esperado": "EU average 18,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "ihpc-variacao-homologa-paises#RO",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "ihpc-variacao-homologa-paises#RO",
+          "texto": "Romania 6,3",
+          "esperado": "Romania 6,3",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "ihpc-variacao-homologa-paises#PT",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "ihpc-variacao-homologa-paises#PT",
+          "texto": "Portugal 3,6",
+          "esperado": "Portugal 3,6",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        },
+        {
+          "marca": "ihpc-variacao-homologa-paises#EU27_2020",
+          "escondida_antes": true,
+          "visiveis_depois": 1,
+          "mostrada": "ihpc-variacao-homologa-paises#IT",
+          "texto": "Italy 3,2 and EU average 3,2",
+          "esperado": "Italy 3,2 and EU average 3,2",
+          "anel_na_mesma_posicao": true,
+          "certo": true
+        }
+      ],
+      "rato": {
+        "marca": "taxa-de-emprego-2025-paises#PT",
+        "visivel_ao_pousar": true,
+        "texto": "Portugal 79,6",
+        "visiveis_ao_sair": 0
+      },
+      "sem_guiao": {
+        "guiao": null,
+        "etiquetas": 280,
+        "etiquetas_a_vista": 0,
+        "listas": 10,
+        "listas_abertas": 0,
+        "abertas_ao_toque": 10,
+        "itens_a_vista_por_lista": [
+          28
+        ]
+      },
+      "toque_fora": {
+        "etiquetas_a_vista": 0
+      },
+      "guiao": "sim",
+      "faixas": 10
+    }
+  },
+  "fim": "2026-10-02T14:36:37.051Z",
+  "pedidos_recusados_para_fora": 0,
+  "problemas": []
+}

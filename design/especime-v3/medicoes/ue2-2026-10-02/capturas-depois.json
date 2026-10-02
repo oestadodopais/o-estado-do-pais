@@ -1,0 +1,470 @@
+{
+  "bloco": "UE2",
+  "fase": "depois",
+  "cabeca": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
+  "construcao": {
+    "commit": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
+    "ref": "ue2-2026-10-02",
+    "construido_em": "2026-10-02T14:34:25.152Z"
+  },
+  "inicio": "2026-10-02T14:36:17.493Z",
+  "fim": "2026-10-02T14:36:31.297Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 20,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8541,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          358,
+          358,
+          358,
+          358,
+          358,
+          379,
+          358,
+          425,
+          382,
+          358
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 1,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 3724
+        },
+        "definicoes": 21
+      },
+      "sha256": "e34cc8843aa345342de3e43a935125db509271b8e27ee964987b037e31701eeb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-pt-768.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 6105,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 3,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1603
+        },
+        "definicoes": 21
+      },
+      "sha256": "09dc5fd1a77aa6a8473d6b46db243b9a86a3f64ca06c3e03065ffa1886528792"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-pt-1024.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5934,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 4,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1391
+        },
+        "definicoes": 21
+      },
+      "sha256": "b83b682e3747c1e7f461a0b289f2e8b1264845569b5232dd7425203a7519c2a5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 5793,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1194
+        },
+        "definicoes": 21
+      },
+      "sha256": "20b2cf43ba3b691daa6f6d649cca866f53cc87882f6e6d41a2c8560e07de6361"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-pt-1600.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 5809,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1194
+        },
+        "definicoes": 21
+      },
+      "sha256": "91c67e2419eb99131046ce67c6623b1e976064932b26546d16baa12fdffdf667"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 8538,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          358,
+          358,
+          358,
+          358,
+          338,
+          379,
+          358,
+          425,
+          382,
+          358
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 1,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 3749
+        },
+        "definicoes": 21
+      },
+      "sha256": "cccdec498e6c94425c7da2ea8a44269eacc5c94ba924e19727a0efd029c4d86e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-en-768.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 6028,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 3,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1588
+        },
+        "definicoes": 21
+      },
+      "sha256": "be7af4849c0537ad84b6dbb32ba05e9f4d51b858ae3df4faa855eda79f54a4ae"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-en-1024.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5882,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 4,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1375
+        },
+        "definicoes": 21
+      },
+      "sha256": "097e5c76f8098388e6e558440435daeaba45877090adb20666e4887ebd1354a8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 5704,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1178
+        },
+        "definicoes": 21
+      },
+      "sha256": "5f5099587662d5ad9c95e098ddea658b5a70eacbae1e3fec1258f127a6aaed21"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-uniao-en-1600.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 5720,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "alturas_das_faixas": [
+          338,
+          338,
+          338,
+          338,
+          338,
+          358,
+          338,
+          385,
+          338,
+          338
+        ],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1178
+        },
+        "definicoes": 21
+      },
+      "sha256": "9a5c208f015905e26b3942aebdd6ba9453e01b2ac255a70732befc6a65a489d2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-lista-aberta-pt-390.png",
+      "tipo": "lista",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "aberta": true,
+      "sha256": "2dfe5858951f5d2ddc366b321d46efc3d1a6699c4c91ad0c4e4192ce1dcce445"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-lista-aberta-pt-1280.png",
+      "tipo": "lista",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "aberta": true,
+      "sha256": "2dcdeb598c28e600ccfcb7a9076e14831e47b681e60061dae9674686ae68df49"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-lista-aberta-en-390.png",
+      "tipo": "lista",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "aberta": true,
+      "sha256": "888328446380711b9e03bb352bb7efd890cf1e2913bb3c9de668bc66f89f53de"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-lista-aberta-en-1280.png",
+      "tipo": "lista",
+      "serie": "precos-da-habitacao-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "aberta": true,
+      "sha256": "6918b6823c8af0f7195f57c9a6ce88de2e4cb5b5ea51659e600a85e29fd9f282"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-toque-pt-390-el.png",
+      "tipo": "toque",
+      "serie": "divida-publica-2025-paises",
+      "marca": "EL",
+      "lang": "pt",
+      "largura": 390,
+      "etiqueta_a_vista": "Grécia 146,1",
+      "sha256": "006bf5b5ee0f1105fea62ece8442188bff4ccc50ad9cfdb87ec0882f5178531a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-toque-pt-390-pt.png",
+      "tipo": "toque",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "marca": "PT",
+      "lang": "pt",
+      "largura": 390,
+      "etiqueta_a_vista": "Áustria 18,6, Portugal 18,6 e Suécia 18,6",
+      "sha256": "b6b6d8a084f5c4cacb17697d4a5d806e75be777c04028c373fc22be9ffdd011f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-toque-en-390-el.png",
+      "tipo": "toque",
+      "serie": "divida-publica-2025-paises",
+      "marca": "EL",
+      "lang": "en",
+      "largura": 390,
+      "etiqueta_a_vista": "Greece 146,1",
+      "sha256": "ad4ead0aaeb8ac91b31fcda5f0688685a3b9c31ec164cf54593e39e2f55675ac"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-toque-en-390-pt.png",
+      "tipo": "toque",
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "marca": "PT",
+      "lang": "en",
+      "largura": 390,
+      "etiqueta_a_vista": "Austria 18,6, Portugal 18,6 and Sweden 18,6",
+      "sha256": "4287a23652abe57edde3c9fcf83e186c4f1d476f911efb61ece5728f7193c692"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-definicao-pt-390.png",
+      "tipo": "definicao",
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "lang": "pt",
+      "largura": 390,
+      "aberta": true,
+      "definicao": "Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?",
+      "sha256": "20f85d897a58c564441c20d032e9fead6037e7ae227f1d4b5c692e8558b805c0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/depois-definicao-en-390.png",
+      "tipo": "definicao",
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "lang": "en",
+      "largura": 390,
+      "aberta": true,
+      "definicao": "How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?",
+      "sha256": "7946e00c7891306e78511b6b830dd1a53017e1d0cf1e48fac3e0aafbc8891ece"
+    }
+  ]
+}
